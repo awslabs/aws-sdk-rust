@@ -2,7 +2,7 @@
 
 /// <p>A ProfileObject in a list of ProfileObjects.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ListProfileObjectsItem {
     /// <p>Specifies the kind of object being added to a profile, such as "Salesforce-Account."</p>
     pub object_type_name: ::std::option::Option<::std::string::String>,
@@ -25,6 +25,15 @@ impl ListProfileObjectsItem {
         self.object.as_deref()
     }
 }
+impl ::std::fmt::Debug for ListProfileObjectsItem {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("ListProfileObjectsItem");
+        formatter.field("object_type_name", &self.object_type_name);
+        formatter.field("profile_object_unique_key", &self.profile_object_unique_key);
+        formatter.field("object", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl ListProfileObjectsItem {
     /// Creates a new builder-style object to manufacture [`ListProfileObjectsItem`](crate::types::ListProfileObjectsItem).
     pub fn builder() -> crate::types::builders::ListProfileObjectsItemBuilder {
@@ -34,7 +43,7 @@ impl ListProfileObjectsItem {
 
 /// A builder for [`ListProfileObjectsItem`](crate::types::ListProfileObjectsItem).
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct ListProfileObjectsItemBuilder {
     pub(crate) object_type_name: ::std::option::Option<::std::string::String>,
     pub(crate) profile_object_unique_key: ::std::option::Option<::std::string::String>,
@@ -90,5 +99,14 @@ impl ListProfileObjectsItemBuilder {
             profile_object_unique_key: self.profile_object_unique_key,
             object: self.object,
         }
+    }
+}
+impl ::std::fmt::Debug for ListProfileObjectsItemBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("ListProfileObjectsItemBuilder");
+        formatter.field("object_type_name", &self.object_type_name);
+        formatter.field("profile_object_unique_key", &self.profile_object_unique_key);
+        formatter.field("object", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

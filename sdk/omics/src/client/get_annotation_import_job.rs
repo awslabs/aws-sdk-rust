@@ -7,6 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetAnnotationImportJobOutput`](crate::operation::get_annotation_import_job::GetAnnotationImportJobOutput) with field(s):
     ///   - [`id(Option<String>)`](crate::operation::get_annotation_import_job::GetAnnotationImportJobOutput::id): <p>The job's ID.</p>
     ///   - [`destination_name(Option<String>)`](crate::operation::get_annotation_import_job::GetAnnotationImportJobOutput::destination_name): <p>The job's destination annotation store.</p>
+    ///   - [`version_name(Option<String>)`](crate::operation::get_annotation_import_job::GetAnnotationImportJobOutput::version_name): <p> The name of the annotation store version. </p>
     ///   - [`role_arn(Option<String>)`](crate::operation::get_annotation_import_job::GetAnnotationImportJobOutput::role_arn): <p>The job's service role ARN.</p>
     ///   - [`status(Option<JobStatus>)`](crate::operation::get_annotation_import_job::GetAnnotationImportJobOutput::status): <p>The job's status.</p>
     ///   - [`status_message(Option<String>)`](crate::operation::get_annotation_import_job::GetAnnotationImportJobOutput::status_message): <p>The job's status message.</p>

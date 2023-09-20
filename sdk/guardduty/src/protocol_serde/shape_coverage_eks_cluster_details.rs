@@ -38,6 +38,13 @@ where
                         "addonDetails" => {
                             builder = builder.set_addon_details(crate::protocol_serde::shape_addon_details::de_addon_details(tokens)?);
                         }
+                        "managementType" => {
+                            builder = builder.set_management_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::ManagementType::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

@@ -174,17 +174,17 @@ impl CreateMatchingWorkflowFluentBuilder {
     pub fn get_output_source_config(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OutputSource>> {
         self.inner.get_output_source_config()
     }
-    /// <p>An object which defines the <code>resolutionType</code> and the <code>ruleBasedProperties</code> </p>
+    /// <p>An object which defines the <code>resolutionType</code> and the <code>ruleBasedProperties</code>.</p>
     pub fn resolution_techniques(mut self, input: crate::types::ResolutionTechniques) -> Self {
         self.inner = self.inner.resolution_techniques(input);
         self
     }
-    /// <p>An object which defines the <code>resolutionType</code> and the <code>ruleBasedProperties</code> </p>
+    /// <p>An object which defines the <code>resolutionType</code> and the <code>ruleBasedProperties</code>.</p>
     pub fn set_resolution_techniques(mut self, input: ::std::option::Option<crate::types::ResolutionTechniques>) -> Self {
         self.inner = self.inner.set_resolution_techniques(input);
         self
     }
-    /// <p>An object which defines the <code>resolutionType</code> and the <code>ruleBasedProperties</code> </p>
+    /// <p>An object which defines the <code>resolutionType</code> and the <code>ruleBasedProperties</code>.</p>
     pub fn get_resolution_techniques(&self) -> &::std::option::Option<crate::types::ResolutionTechniques> {
         self.inner.get_resolution_techniques()
     }
@@ -202,17 +202,17 @@ impl CreateMatchingWorkflowFluentBuilder {
     pub fn get_incremental_run_config(&self) -> &::std::option::Option<crate::types::IncrementalRunConfig> {
         self.inner.get_incremental_run_config()
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM role. AWS Entity Resolution assumes this role to create resources on your behalf as part of workflow execution.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role. Entity Resolution assumes this role to create resources on your behalf as part of workflow execution.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.role_arn(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM role. AWS Entity Resolution assumes this role to create resources on your behalf as part of workflow execution.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role. Entity Resolution assumes this role to create resources on your behalf as part of workflow execution.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_role_arn(input);
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM role. AWS Entity Resolution assumes this role to create resources on your behalf as part of workflow execution.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role. Entity Resolution assumes this role to create resources on your behalf as part of workflow execution.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_role_arn()
     }

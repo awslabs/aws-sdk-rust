@@ -4,12 +4,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateAccountSendingEnabledInput {
-    /// <p>Describes whether email sending is enabled or disabled for your Amazon SES account in the current AWS Region.</p>
-    pub enabled: bool,
+    /// <p>Describes whether email sending is enabled or disabled for your Amazon SES account in the current Amazon Web Services Region.</p>
+    pub enabled: ::std::option::Option<bool>,
 }
 impl UpdateAccountSendingEnabledInput {
-    /// <p>Describes whether email sending is enabled or disabled for your Amazon SES account in the current AWS Region.</p>
-    pub fn enabled(&self) -> bool {
+    /// <p>Describes whether email sending is enabled or disabled for your Amazon SES account in the current Amazon Web Services Region.</p>
+    pub fn enabled(&self) -> ::std::option::Option<bool> {
         self.enabled
     }
 }
@@ -27,17 +27,17 @@ pub struct UpdateAccountSendingEnabledInputBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
 }
 impl UpdateAccountSendingEnabledInputBuilder {
-    /// <p>Describes whether email sending is enabled or disabled for your Amazon SES account in the current AWS Region.</p>
+    /// <p>Describes whether email sending is enabled or disabled for your Amazon SES account in the current Amazon Web Services Region.</p>
     pub fn enabled(mut self, input: bool) -> Self {
         self.enabled = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Describes whether email sending is enabled or disabled for your Amazon SES account in the current AWS Region.</p>
+    /// <p>Describes whether email sending is enabled or disabled for your Amazon SES account in the current Amazon Web Services Region.</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enabled = input;
         self
     }
-    /// <p>Describes whether email sending is enabled or disabled for your Amazon SES account in the current AWS Region.</p>
+    /// <p>Describes whether email sending is enabled or disabled for your Amazon SES account in the current Amazon Web Services Region.</p>
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
         &self.enabled
     }
@@ -48,8 +48,6 @@ impl UpdateAccountSendingEnabledInputBuilder {
         crate::operation::update_account_sending_enabled::UpdateAccountSendingEnabledInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(crate::operation::update_account_sending_enabled::UpdateAccountSendingEnabledInput {
-            enabled: self.enabled.unwrap_or_default(),
-        })
+        ::std::result::Result::Ok(crate::operation::update_account_sending_enabled::UpdateAccountSendingEnabledInput { enabled: self.enabled })
     }
 }

@@ -8,3 +8,13 @@ pub(crate) fn reflens_list_routing_controls_output_next_token(
     };
     ::std::option::Option::Some(input)
 }
+
+pub(crate) fn lens_list_routing_controls_output_routing_controls(
+    input: crate::operation::list_routing_controls::ListRoutingControlsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::RoutingControl>> {
+    let input = match input.routing_controls {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}

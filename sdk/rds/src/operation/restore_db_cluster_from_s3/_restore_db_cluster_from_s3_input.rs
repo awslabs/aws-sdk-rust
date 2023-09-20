@@ -44,7 +44,7 @@ pub struct RestoreDbClusterFromS3Input {
     /// <p>To list all of the available engine versions for <code>aurora-mysql</code> (Aurora MySQL), use the following command:</p>
     /// <p> <code>aws rds describe-db-engine-versions --engine aurora-mysql --query "DBEngineVersions[].EngineVersion"</code> </p>
     /// <p> <b>Aurora MySQL</b> </p>
-    /// <p>Examples: <code>5.7.mysql_aurora.2.07.1</code>, <code>8.0.mysql_aurora.3.02.0</code> </p>
+    /// <p>Examples: <code>5.7.mysql_aurora.2.12.0</code>, <code>8.0.mysql_aurora.3.04.0</code> </p>
     pub engine_version: ::std::option::Option<::std::string::String>,
     /// <p>The port number on which the instances in the restored DB cluster accept connections.</p>
     /// <p>Default: <code>3306</code> </p>
@@ -98,8 +98,8 @@ pub struct RestoreDbClusterFromS3Input {
     /// <p>Valid values: <code>mysql</code> </p>
     pub source_engine: ::std::option::Option<::std::string::String>,
     /// <p>The version of the database that the backup files were created from.</p>
-    /// <p>MySQL versions 5.5, 5.6, and 5.7 are supported.</p>
-    /// <p>Example: <code>5.6.40</code>, <code>5.7.28</code> </p>
+    /// <p>MySQL versions 5.7 and 8.0 are supported.</p>
+    /// <p>Example: <code>5.7.40</code>, <code>8.0.28</code> </p>
     pub source_engine_version: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Amazon S3 bucket that contains the data used to create the Amazon Aurora DB cluster.</p>
     pub s3_bucket_name: ::std::option::Option<::std::string::String>,
@@ -221,7 +221,7 @@ impl RestoreDbClusterFromS3Input {
     /// <p>To list all of the available engine versions for <code>aurora-mysql</code> (Aurora MySQL), use the following command:</p>
     /// <p> <code>aws rds describe-db-engine-versions --engine aurora-mysql --query "DBEngineVersions[].EngineVersion"</code> </p>
     /// <p> <b>Aurora MySQL</b> </p>
-    /// <p>Examples: <code>5.7.mysql_aurora.2.07.1</code>, <code>8.0.mysql_aurora.3.02.0</code> </p>
+    /// <p>Examples: <code>5.7.mysql_aurora.2.12.0</code>, <code>8.0.mysql_aurora.3.04.0</code> </p>
     pub fn engine_version(&self) -> ::std::option::Option<&str> {
         self.engine_version.as_deref()
     }
@@ -299,8 +299,8 @@ impl RestoreDbClusterFromS3Input {
         self.source_engine.as_deref()
     }
     /// <p>The version of the database that the backup files were created from.</p>
-    /// <p>MySQL versions 5.5, 5.6, and 5.7 are supported.</p>
-    /// <p>Example: <code>5.6.40</code>, <code>5.7.28</code> </p>
+    /// <p>MySQL versions 5.7 and 8.0 are supported.</p>
+    /// <p>Example: <code>5.7.40</code>, <code>8.0.28</code> </p>
     pub fn source_engine_version(&self) -> ::std::option::Option<&str> {
         self.source_engine_version.as_deref()
     }
@@ -640,7 +640,7 @@ impl RestoreDbClusterFromS3InputBuilder {
     /// <p>To list all of the available engine versions for <code>aurora-mysql</code> (Aurora MySQL), use the following command:</p>
     /// <p> <code>aws rds describe-db-engine-versions --engine aurora-mysql --query "DBEngineVersions[].EngineVersion"</code> </p>
     /// <p> <b>Aurora MySQL</b> </p>
-    /// <p>Examples: <code>5.7.mysql_aurora.2.07.1</code>, <code>8.0.mysql_aurora.3.02.0</code> </p>
+    /// <p>Examples: <code>5.7.mysql_aurora.2.12.0</code>, <code>8.0.mysql_aurora.3.04.0</code> </p>
     pub fn engine_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine_version = ::std::option::Option::Some(input.into());
         self
@@ -649,7 +649,7 @@ impl RestoreDbClusterFromS3InputBuilder {
     /// <p>To list all of the available engine versions for <code>aurora-mysql</code> (Aurora MySQL), use the following command:</p>
     /// <p> <code>aws rds describe-db-engine-versions --engine aurora-mysql --query "DBEngineVersions[].EngineVersion"</code> </p>
     /// <p> <b>Aurora MySQL</b> </p>
-    /// <p>Examples: <code>5.7.mysql_aurora.2.07.1</code>, <code>8.0.mysql_aurora.3.02.0</code> </p>
+    /// <p>Examples: <code>5.7.mysql_aurora.2.12.0</code>, <code>8.0.mysql_aurora.3.04.0</code> </p>
     pub fn set_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.engine_version = input;
         self
@@ -658,7 +658,7 @@ impl RestoreDbClusterFromS3InputBuilder {
     /// <p>To list all of the available engine versions for <code>aurora-mysql</code> (Aurora MySQL), use the following command:</p>
     /// <p> <code>aws rds describe-db-engine-versions --engine aurora-mysql --query "DBEngineVersions[].EngineVersion"</code> </p>
     /// <p> <b>Aurora MySQL</b> </p>
-    /// <p>Examples: <code>5.7.mysql_aurora.2.07.1</code>, <code>8.0.mysql_aurora.3.02.0</code> </p>
+    /// <p>Examples: <code>5.7.mysql_aurora.2.12.0</code>, <code>8.0.mysql_aurora.3.04.0</code> </p>
     pub fn get_engine_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.engine_version
     }
@@ -910,22 +910,22 @@ impl RestoreDbClusterFromS3InputBuilder {
         &self.source_engine
     }
     /// <p>The version of the database that the backup files were created from.</p>
-    /// <p>MySQL versions 5.5, 5.6, and 5.7 are supported.</p>
-    /// <p>Example: <code>5.6.40</code>, <code>5.7.28</code> </p>
+    /// <p>MySQL versions 5.7 and 8.0 are supported.</p>
+    /// <p>Example: <code>5.7.40</code>, <code>8.0.28</code> </p>
     pub fn source_engine_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_engine_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of the database that the backup files were created from.</p>
-    /// <p>MySQL versions 5.5, 5.6, and 5.7 are supported.</p>
-    /// <p>Example: <code>5.6.40</code>, <code>5.7.28</code> </p>
+    /// <p>MySQL versions 5.7 and 8.0 are supported.</p>
+    /// <p>Example: <code>5.7.40</code>, <code>8.0.28</code> </p>
     pub fn set_source_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_engine_version = input;
         self
     }
     /// <p>The version of the database that the backup files were created from.</p>
-    /// <p>MySQL versions 5.5, 5.6, and 5.7 are supported.</p>
-    /// <p>Example: <code>5.6.40</code>, <code>5.7.28</code> </p>
+    /// <p>MySQL versions 5.7 and 8.0 are supported.</p>
+    /// <p>Example: <code>5.7.40</code>, <code>8.0.28</code> </p>
     pub fn get_source_engine_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.source_engine_version
     }

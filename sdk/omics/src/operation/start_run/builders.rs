@@ -19,7 +19,8 @@ impl StartRunInputBuilder {
 }
 /// Fluent builder constructing a request to `StartRun`.
 ///
-/// <p>Starts a run.</p>
+/// <p>Starts a workflow run. To duplicate a run, specify the run's ID and a role ARN. The remaining parameters are copied from the previous run.</p>
+/// <p>The total number of runs in your account is subject to a quota per Region. To avoid needing to delete runs manually, you can set the retention mode to <code>REMOVE</code>. Runs with this setting are deleted automatically when the run quoata is exceeded.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartRunFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -112,31 +113,31 @@ impl StartRunFluentBuilder {
     pub fn get_workflow_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_workflow_id()
     }
-    /// <p>The run's workflows type.</p>
+    /// <p>The run's workflow type.</p>
     pub fn workflow_type(mut self, input: crate::types::WorkflowType) -> Self {
         self.inner = self.inner.workflow_type(input);
         self
     }
-    /// <p>The run's workflows type.</p>
+    /// <p>The run's workflow type.</p>
     pub fn set_workflow_type(mut self, input: ::std::option::Option<crate::types::WorkflowType>) -> Self {
         self.inner = self.inner.set_workflow_type(input);
         self
     }
-    /// <p>The run's workflows type.</p>
+    /// <p>The run's workflow type.</p>
     pub fn get_workflow_type(&self) -> &::std::option::Option<crate::types::WorkflowType> {
         self.inner.get_workflow_type()
     }
-    /// <p>The run's ID.</p>
+    /// <p>The ID of a run to duplicate.</p>
     pub fn run_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.run_id(input.into());
         self
     }
-    /// <p>The run's ID.</p>
+    /// <p>The ID of a run to duplicate.</p>
     pub fn set_run_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_run_id(input);
         self
     }
-    /// <p>The run's ID.</p>
+    /// <p>The ID of a run to duplicate.</p>
     pub fn get_run_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_run_id()
     }
@@ -283,5 +284,19 @@ impl StartRunFluentBuilder {
     /// <p>To ensure that requests don't run multiple times, specify a unique ID for each request.</p>
     pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_request_id()
+    }
+    /// <p>The retention mode for the run.</p>
+    pub fn retention_mode(mut self, input: crate::types::RunRetentionMode) -> Self {
+        self.inner = self.inner.retention_mode(input);
+        self
+    }
+    /// <p>The retention mode for the run.</p>
+    pub fn set_retention_mode(mut self, input: ::std::option::Option<crate::types::RunRetentionMode>) -> Self {
+        self.inner = self.inner.set_retention_mode(input);
+        self
+    }
+    /// <p>The retention mode for the run.</p>
+    pub fn get_retention_mode(&self) -> &::std::option::Option<crate::types::RunRetentionMode> {
+        self.inner.get_retention_mode()
     }
 }

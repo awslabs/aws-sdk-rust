@@ -18,5 +18,8 @@ pub fn ser_list_requested_service_quota_change_history_input(
             ::aws_smithy_types::Number::NegInt((*var_4).into()),
         );
     }
+    if let Some(var_5) = &input.quota_requested_at_level {
+        object.key("QuotaRequestedAtLevel").string(var_5.as_str());
+    }
     Ok(())
 }

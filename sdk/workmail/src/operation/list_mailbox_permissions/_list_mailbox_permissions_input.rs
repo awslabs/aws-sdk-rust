@@ -5,7 +5,13 @@
 pub struct ListMailboxPermissionsInput {
     /// <p>The identifier of the organization under which the user, group, or resource exists.</p>
     pub organization_id: ::std::option::Option<::std::string::String>,
-    /// <p>The identifier of the user, group, or resource for which to list mailbox permissions.</p>
+    /// <p>The identifier of the user, or resource for which to list mailbox permissions.</p>
+    /// <p>The entity ID can accept <i>UserId or ResourceId</i>, <i>Username or Resourcename</i>, or <i>email</i>.</p>
+    /// <ul>
+    /// <li> <p>Entity ID: 12345678-1234-1234-1234-123456789012, or r-0123456789a0123456789b0123456789</p> </li>
+    /// <li> <p>Email address: entity@domain.tld</p> </li>
+    /// <li> <p>Entity name: entity</p> </li>
+    /// </ul>
     pub entity_id: ::std::option::Option<::std::string::String>,
     /// <p>The token to use to retrieve the next page of results. The first call does not contain any tokens.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -17,7 +23,13 @@ impl ListMailboxPermissionsInput {
     pub fn organization_id(&self) -> ::std::option::Option<&str> {
         self.organization_id.as_deref()
     }
-    /// <p>The identifier of the user, group, or resource for which to list mailbox permissions.</p>
+    /// <p>The identifier of the user, or resource for which to list mailbox permissions.</p>
+    /// <p>The entity ID can accept <i>UserId or ResourceId</i>, <i>Username or Resourcename</i>, or <i>email</i>.</p>
+    /// <ul>
+    /// <li> <p>Entity ID: 12345678-1234-1234-1234-123456789012, or r-0123456789a0123456789b0123456789</p> </li>
+    /// <li> <p>Email address: entity@domain.tld</p> </li>
+    /// <li> <p>Entity name: entity</p> </li>
+    /// </ul>
     pub fn entity_id(&self) -> ::std::option::Option<&str> {
         self.entity_id.as_deref()
     }
@@ -61,17 +73,35 @@ impl ListMailboxPermissionsInputBuilder {
     pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.organization_id
     }
-    /// <p>The identifier of the user, group, or resource for which to list mailbox permissions.</p>
+    /// <p>The identifier of the user, or resource for which to list mailbox permissions.</p>
+    /// <p>The entity ID can accept <i>UserId or ResourceId</i>, <i>Username or Resourcename</i>, or <i>email</i>.</p>
+    /// <ul>
+    /// <li> <p>Entity ID: 12345678-1234-1234-1234-123456789012, or r-0123456789a0123456789b0123456789</p> </li>
+    /// <li> <p>Email address: entity@domain.tld</p> </li>
+    /// <li> <p>Entity name: entity</p> </li>
+    /// </ul>
     pub fn entity_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.entity_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of the user, group, or resource for which to list mailbox permissions.</p>
+    /// <p>The identifier of the user, or resource for which to list mailbox permissions.</p>
+    /// <p>The entity ID can accept <i>UserId or ResourceId</i>, <i>Username or Resourcename</i>, or <i>email</i>.</p>
+    /// <ul>
+    /// <li> <p>Entity ID: 12345678-1234-1234-1234-123456789012, or r-0123456789a0123456789b0123456789</p> </li>
+    /// <li> <p>Email address: entity@domain.tld</p> </li>
+    /// <li> <p>Entity name: entity</p> </li>
+    /// </ul>
     pub fn set_entity_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.entity_id = input;
         self
     }
-    /// <p>The identifier of the user, group, or resource for which to list mailbox permissions.</p>
+    /// <p>The identifier of the user, or resource for which to list mailbox permissions.</p>
+    /// <p>The entity ID can accept <i>UserId or ResourceId</i>, <i>Username or Resourcename</i>, or <i>email</i>.</p>
+    /// <ul>
+    /// <li> <p>Entity ID: 12345678-1234-1234-1234-123456789012, or r-0123456789a0123456789b0123456789</p> </li>
+    /// <li> <p>Email address: entity@domain.tld</p> </li>
+    /// <li> <p>Entity name: entity</p> </li>
+    /// </ul>
     pub fn get_entity_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.entity_id
     }

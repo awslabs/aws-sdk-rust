@@ -17,6 +17,7 @@
 ///     RecommendationSourceType::Ec2Instance => { /* ... */ },
 ///     RecommendationSourceType::EcsService => { /* ... */ },
 ///     RecommendationSourceType::LambdaFunction => { /* ... */ },
+///     RecommendationSourceType::License => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -54,6 +55,8 @@ pub enum RecommendationSourceType {
     EcsService,
     #[allow(missing_docs)] // documentation missing in model
     LambdaFunction,
+    #[allow(missing_docs)] // documentation missing in model
+    License,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
@@ -65,6 +68,7 @@ impl ::std::convert::From<&str> for RecommendationSourceType {
             "Ec2Instance" => RecommendationSourceType::Ec2Instance,
             "EcsService" => RecommendationSourceType::EcsService,
             "LambdaFunction" => RecommendationSourceType::LambdaFunction,
+            "License" => RecommendationSourceType::License,
             other => RecommendationSourceType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -85,12 +89,13 @@ impl RecommendationSourceType {
             RecommendationSourceType::Ec2Instance => "Ec2Instance",
             RecommendationSourceType::EcsService => "EcsService",
             RecommendationSourceType::LambdaFunction => "LambdaFunction",
+            RecommendationSourceType::License => "License",
             RecommendationSourceType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AutoScalingGroup", "EbsVolume", "Ec2Instance", "EcsService", "LambdaFunction"]
+        &["AutoScalingGroup", "EbsVolume", "Ec2Instance", "EcsService", "LambdaFunction", "License"]
     }
 }
 impl ::std::convert::AsRef<str> for RecommendationSourceType {

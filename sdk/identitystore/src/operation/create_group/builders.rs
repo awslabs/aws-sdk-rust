@@ -124,17 +124,17 @@ impl CreateGroupFluentBuilder {
     pub fn get_identity_store_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_identity_store_id()
     }
-    /// <p>A string containing the name of the group. This value is commonly displayed when the group is referenced. "Administrator" and "AWSAdministrators" are reserved names and can't be used for users or groups.</p>
+    /// <p>A string containing the name of the group. This value is commonly displayed when the group is referenced. <code>Administrator</code> and <code>AWSAdministrators</code> are reserved names and can't be used for users or groups.</p>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.display_name(input.into());
         self
     }
-    /// <p>A string containing the name of the group. This value is commonly displayed when the group is referenced. "Administrator" and "AWSAdministrators" are reserved names and can't be used for users or groups.</p>
+    /// <p>A string containing the name of the group. This value is commonly displayed when the group is referenced. <code>Administrator</code> and <code>AWSAdministrators</code> are reserved names and can't be used for users or groups.</p>
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_display_name(input);
         self
     }
-    /// <p>A string containing the name of the group. This value is commonly displayed when the group is referenced. "Administrator" and "AWSAdministrators" are reserved names and can't be used for users or groups.</p>
+    /// <p>A string containing the name of the group. This value is commonly displayed when the group is referenced. <code>Administrator</code> and <code>AWSAdministrators</code> are reserved names and can't be used for users or groups.</p>
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_display_name()
     }

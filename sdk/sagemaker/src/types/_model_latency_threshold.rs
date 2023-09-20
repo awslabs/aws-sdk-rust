@@ -4,13 +4,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModelLatencyThreshold {
-    /// <p>The model latency percentile threshold.</p>
+    /// <p>The model latency percentile threshold. Acceptable values are <code>P95</code> and <code>P99</code>. For custom load tests, specify the value as <code>P95</code>.</p>
     pub percentile: ::std::option::Option<::std::string::String>,
     /// <p>The model latency percentile value in milliseconds.</p>
     pub value_in_milliseconds: i32,
 }
 impl ModelLatencyThreshold {
-    /// <p>The model latency percentile threshold.</p>
+    /// <p>The model latency percentile threshold. Acceptable values are <code>P95</code> and <code>P99</code>. For custom load tests, specify the value as <code>P95</code>.</p>
     pub fn percentile(&self) -> ::std::option::Option<&str> {
         self.percentile.as_deref()
     }
@@ -34,17 +34,17 @@ pub struct ModelLatencyThresholdBuilder {
     pub(crate) value_in_milliseconds: ::std::option::Option<i32>,
 }
 impl ModelLatencyThresholdBuilder {
-    /// <p>The model latency percentile threshold.</p>
+    /// <p>The model latency percentile threshold. Acceptable values are <code>P95</code> and <code>P99</code>. For custom load tests, specify the value as <code>P95</code>.</p>
     pub fn percentile(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.percentile = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The model latency percentile threshold.</p>
+    /// <p>The model latency percentile threshold. Acceptable values are <code>P95</code> and <code>P99</code>. For custom load tests, specify the value as <code>P95</code>.</p>
     pub fn set_percentile(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.percentile = input;
         self
     }
-    /// <p>The model latency percentile threshold.</p>
+    /// <p>The model latency percentile threshold. Acceptable values are <code>P95</code> and <code>P99</code>. For custom load tests, specify the value as <code>P95</code>.</p>
     pub fn get_percentile(&self) -> &::std::option::Option<::std::string::String> {
         &self.percentile
     }

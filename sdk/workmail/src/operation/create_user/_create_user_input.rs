@@ -11,6 +11,15 @@ pub struct CreateUserInput {
     pub display_name: ::std::option::Option<::std::string::String>,
     /// <p>The password for the new user.</p>
     pub password: ::std::option::Option<::std::string::String>,
+    /// <p>The role of the new user.</p>
+    /// <p>You cannot pass <i>SYSTEM_USER</i> or <i>RESOURCE</i> role in a single request. When a user role is not selected, the default role of <i>USER</i> is selected.</p>
+    pub role: ::std::option::Option<crate::types::UserRole>,
+    /// <p>The first name of the new user.</p>
+    pub first_name: ::std::option::Option<::std::string::String>,
+    /// <p>The last name of the new user. </p>
+    pub last_name: ::std::option::Option<::std::string::String>,
+    /// <p>If this parameter is enabled, the user will be hidden from the address book.</p>
+    pub hidden_from_global_address_list: ::std::option::Option<bool>,
 }
 impl CreateUserInput {
     /// <p>The identifier of the organization for which the user is created.</p>
@@ -29,14 +38,35 @@ impl CreateUserInput {
     pub fn password(&self) -> ::std::option::Option<&str> {
         self.password.as_deref()
     }
+    /// <p>The role of the new user.</p>
+    /// <p>You cannot pass <i>SYSTEM_USER</i> or <i>RESOURCE</i> role in a single request. When a user role is not selected, the default role of <i>USER</i> is selected.</p>
+    pub fn role(&self) -> ::std::option::Option<&crate::types::UserRole> {
+        self.role.as_ref()
+    }
+    /// <p>The first name of the new user.</p>
+    pub fn first_name(&self) -> ::std::option::Option<&str> {
+        self.first_name.as_deref()
+    }
+    /// <p>The last name of the new user. </p>
+    pub fn last_name(&self) -> ::std::option::Option<&str> {
+        self.last_name.as_deref()
+    }
+    /// <p>If this parameter is enabled, the user will be hidden from the address book.</p>
+    pub fn hidden_from_global_address_list(&self) -> ::std::option::Option<bool> {
+        self.hidden_from_global_address_list
+    }
 }
 impl ::std::fmt::Debug for CreateUserInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CreateUserInput");
         formatter.field("organization_id", &self.organization_id);
         formatter.field("name", &self.name);
-        formatter.field("display_name", &self.display_name);
+        formatter.field("display_name", &"*** Sensitive Data Redacted ***");
         formatter.field("password", &"*** Sensitive Data Redacted ***");
+        formatter.field("role", &self.role);
+        formatter.field("first_name", &"*** Sensitive Data Redacted ***");
+        formatter.field("last_name", &"*** Sensitive Data Redacted ***");
+        formatter.field("hidden_from_global_address_list", &self.hidden_from_global_address_list);
         formatter.finish()
     }
 }
@@ -55,6 +85,10 @@ pub struct CreateUserInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) display_name: ::std::option::Option<::std::string::String>,
     pub(crate) password: ::std::option::Option<::std::string::String>,
+    pub(crate) role: ::std::option::Option<crate::types::UserRole>,
+    pub(crate) first_name: ::std::option::Option<::std::string::String>,
+    pub(crate) last_name: ::std::option::Option<::std::string::String>,
+    pub(crate) hidden_from_global_address_list: ::std::option::Option<bool>,
 }
 impl CreateUserInputBuilder {
     /// <p>The identifier of the organization for which the user is created.</p>
@@ -113,6 +147,65 @@ impl CreateUserInputBuilder {
     pub fn get_password(&self) -> &::std::option::Option<::std::string::String> {
         &self.password
     }
+    /// <p>The role of the new user.</p>
+    /// <p>You cannot pass <i>SYSTEM_USER</i> or <i>RESOURCE</i> role in a single request. When a user role is not selected, the default role of <i>USER</i> is selected.</p>
+    pub fn role(mut self, input: crate::types::UserRole) -> Self {
+        self.role = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The role of the new user.</p>
+    /// <p>You cannot pass <i>SYSTEM_USER</i> or <i>RESOURCE</i> role in a single request. When a user role is not selected, the default role of <i>USER</i> is selected.</p>
+    pub fn set_role(mut self, input: ::std::option::Option<crate::types::UserRole>) -> Self {
+        self.role = input;
+        self
+    }
+    /// <p>The role of the new user.</p>
+    /// <p>You cannot pass <i>SYSTEM_USER</i> or <i>RESOURCE</i> role in a single request. When a user role is not selected, the default role of <i>USER</i> is selected.</p>
+    pub fn get_role(&self) -> &::std::option::Option<crate::types::UserRole> {
+        &self.role
+    }
+    /// <p>The first name of the new user.</p>
+    pub fn first_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.first_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The first name of the new user.</p>
+    pub fn set_first_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.first_name = input;
+        self
+    }
+    /// <p>The first name of the new user.</p>
+    pub fn get_first_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.first_name
+    }
+    /// <p>The last name of the new user. </p>
+    pub fn last_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.last_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The last name of the new user. </p>
+    pub fn set_last_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.last_name = input;
+        self
+    }
+    /// <p>The last name of the new user. </p>
+    pub fn get_last_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_name
+    }
+    /// <p>If this parameter is enabled, the user will be hidden from the address book.</p>
+    pub fn hidden_from_global_address_list(mut self, input: bool) -> Self {
+        self.hidden_from_global_address_list = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>If this parameter is enabled, the user will be hidden from the address book.</p>
+    pub fn set_hidden_from_global_address_list(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.hidden_from_global_address_list = input;
+        self
+    }
+    /// <p>If this parameter is enabled, the user will be hidden from the address book.</p>
+    pub fn get_hidden_from_global_address_list(&self) -> &::std::option::Option<bool> {
+        &self.hidden_from_global_address_list
+    }
     /// Consumes the builder and constructs a [`CreateUserInput`](crate::operation::create_user::CreateUserInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_user::CreateUserInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_user::CreateUserInput {
@@ -120,6 +213,10 @@ impl CreateUserInputBuilder {
             name: self.name,
             display_name: self.display_name,
             password: self.password,
+            role: self.role,
+            first_name: self.first_name,
+            last_name: self.last_name,
+            hidden_from_global_address_list: self.hidden_from_global_address_list,
         })
     }
 }
@@ -128,8 +225,12 @@ impl ::std::fmt::Debug for CreateUserInputBuilder {
         let mut formatter = f.debug_struct("CreateUserInputBuilder");
         formatter.field("organization_id", &self.organization_id);
         formatter.field("name", &self.name);
-        formatter.field("display_name", &self.display_name);
+        formatter.field("display_name", &"*** Sensitive Data Redacted ***");
         formatter.field("password", &"*** Sensitive Data Redacted ***");
+        formatter.field("role", &self.role);
+        formatter.field("first_name", &"*** Sensitive Data Redacted ***");
+        formatter.field("last_name", &"*** Sensitive Data Redacted ***");
+        formatter.field("hidden_from_global_address_list", &self.hidden_from_global_address_list);
         formatter.finish()
     }
 }

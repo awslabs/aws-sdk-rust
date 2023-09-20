@@ -16,6 +16,8 @@ pub struct FolderSummary {
     pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time that the folder was last updated.</p>
     pub last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The sharing scope of the folder.</p>
+    pub sharing_model: ::std::option::Option<crate::types::SharingModel>,
 }
 impl FolderSummary {
     /// <p>The Amazon Resource Name (ARN) of the folder.</p>
@@ -42,6 +44,10 @@ impl FolderSummary {
     pub fn last_updated_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
     }
+    /// <p>The sharing scope of the folder.</p>
+    pub fn sharing_model(&self) -> ::std::option::Option<&crate::types::SharingModel> {
+        self.sharing_model.as_ref()
+    }
 }
 impl FolderSummary {
     /// Creates a new builder-style object to manufacture [`FolderSummary`](crate::types::FolderSummary).
@@ -60,6 +66,7 @@ pub struct FolderSummaryBuilder {
     pub(crate) folder_type: ::std::option::Option<crate::types::FolderType>,
     pub(crate) created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) sharing_model: ::std::option::Option<crate::types::SharingModel>,
 }
 impl FolderSummaryBuilder {
     /// <p>The Amazon Resource Name (ARN) of the folder.</p>
@@ -146,6 +153,20 @@ impl FolderSummaryBuilder {
     pub fn get_last_updated_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_updated_time
     }
+    /// <p>The sharing scope of the folder.</p>
+    pub fn sharing_model(mut self, input: crate::types::SharingModel) -> Self {
+        self.sharing_model = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The sharing scope of the folder.</p>
+    pub fn set_sharing_model(mut self, input: ::std::option::Option<crate::types::SharingModel>) -> Self {
+        self.sharing_model = input;
+        self
+    }
+    /// <p>The sharing scope of the folder.</p>
+    pub fn get_sharing_model(&self) -> &::std::option::Option<crate::types::SharingModel> {
+        &self.sharing_model
+    }
     /// Consumes the builder and constructs a [`FolderSummary`](crate::types::FolderSummary).
     pub fn build(self) -> crate::types::FolderSummary {
         crate::types::FolderSummary {
@@ -155,6 +176,7 @@ impl FolderSummaryBuilder {
             folder_type: self.folder_type,
             created_time: self.created_time,
             last_updated_time: self.last_updated_time,
+            sharing_model: self.sharing_model,
         }
     }
 }

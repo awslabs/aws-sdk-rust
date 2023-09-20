@@ -163,6 +163,8 @@ pub use crate::types::_click_feedback::ClickFeedbackBuilder;
 
 pub use crate::types::_retrieve_result_item::RetrieveResultItemBuilder;
 
+pub use crate::types::_score_attributes::ScoreAttributesBuilder;
+
 pub use crate::types::_document_attribute::DocumentAttributeBuilder;
 
 pub use crate::types::_user_context::UserContextBuilder;
@@ -200,8 +202,6 @@ pub use crate::types::_table_excerpt::TableExcerptBuilder;
 pub use crate::types::_table_row::TableRowBuilder;
 
 pub use crate::types::_table_cell::TableCellBuilder;
-
-pub use crate::types::_score_attributes::ScoreAttributesBuilder;
 
 pub use crate::types::_spell_correction_configuration::SpellCorrectionConfigurationBuilder;
 

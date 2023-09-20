@@ -9,8 +9,8 @@ pub fn ser_import_migration_task_input(
     if let Some(var_2) = &input.migration_task_name {
         object.key("MigrationTaskName").string(var_2.as_str());
     }
-    if input.dry_run {
-        object.key("DryRun").boolean(input.dry_run);
+    if let Some(var_3) = &input.dry_run {
+        object.key("DryRun").boolean(*var_3);
     }
     Ok(())
 }

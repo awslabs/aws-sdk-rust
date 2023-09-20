@@ -186,17 +186,23 @@ impl UpdateEventDataStoreFluentBuilder {
     pub fn get_organization_enabled(&self) -> &::std::option::Option<bool> {
         self.inner.get_organization_enabled()
     }
-    /// <p>The retention period, in days.</p>
+    /// <p>The retention period of the event data store, in days. You can set a retention period of up to 2557 days, the equivalent of seven years. CloudTrail Lake determines whether to retain an event by checking if the <code>eventTime</code> of the event is within the specified retention period. For example, if you set a retention period of 90 days, CloudTrail will remove events when the <code>eventTime</code> is older than 90 days.</p> <note>
+    /// <p>If you decrease the retention period of an event data store, CloudTrail will remove any events with an <code>eventTime</code> older than the new retention period. For example, if the previous retention period was 365 days and you decrease it to 100 days, CloudTrail will remove events with an <code>eventTime</code> older than 100 days.</p>
+    /// </note>
     pub fn retention_period(mut self, input: i32) -> Self {
         self.inner = self.inner.retention_period(input);
         self
     }
-    /// <p>The retention period, in days.</p>
+    /// <p>The retention period of the event data store, in days. You can set a retention period of up to 2557 days, the equivalent of seven years. CloudTrail Lake determines whether to retain an event by checking if the <code>eventTime</code> of the event is within the specified retention period. For example, if you set a retention period of 90 days, CloudTrail will remove events when the <code>eventTime</code> is older than 90 days.</p> <note>
+    /// <p>If you decrease the retention period of an event data store, CloudTrail will remove any events with an <code>eventTime</code> older than the new retention period. For example, if the previous retention period was 365 days and you decrease it to 100 days, CloudTrail will remove events with an <code>eventTime</code> older than 100 days.</p>
+    /// </note>
     pub fn set_retention_period(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_retention_period(input);
         self
     }
-    /// <p>The retention period, in days.</p>
+    /// <p>The retention period of the event data store, in days. You can set a retention period of up to 2557 days, the equivalent of seven years. CloudTrail Lake determines whether to retain an event by checking if the <code>eventTime</code> of the event is within the specified retention period. For example, if you set a retention period of 90 days, CloudTrail will remove events when the <code>eventTime</code> is older than 90 days.</p> <note>
+    /// <p>If you decrease the retention period of an event data store, CloudTrail will remove any events with an <code>eventTime</code> older than the new retention period. For example, if the previous retention period was 365 days and you decrease it to 100 days, CloudTrail will remove events with an <code>eventTime</code> older than 100 days.</p>
+    /// </note>
     pub fn get_retention_period(&self) -> &::std::option::Option<i32> {
         self.inner.get_retention_period()
     }

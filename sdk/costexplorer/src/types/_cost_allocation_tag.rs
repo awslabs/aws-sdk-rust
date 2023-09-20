@@ -10,6 +10,10 @@ pub struct CostAllocationTag {
     pub r#type: ::std::option::Option<crate::types::CostAllocationTagType>,
     /// <p>The status of a cost allocation tag. </p>
     pub status: ::std::option::Option<crate::types::CostAllocationTagStatus>,
+    /// <p>The last date that the tag was either activated or deactivated.</p>
+    pub last_updated_date: ::std::option::Option<::std::string::String>,
+    /// <p>The last month that the tag was used on an Amazon Web Services resource.</p>
+    pub last_used_date: ::std::option::Option<::std::string::String>,
 }
 impl CostAllocationTag {
     /// <p>The key for the cost allocation tag. </p>
@@ -23,6 +27,14 @@ impl CostAllocationTag {
     /// <p>The status of a cost allocation tag. </p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::CostAllocationTagStatus> {
         self.status.as_ref()
+    }
+    /// <p>The last date that the tag was either activated or deactivated.</p>
+    pub fn last_updated_date(&self) -> ::std::option::Option<&str> {
+        self.last_updated_date.as_deref()
+    }
+    /// <p>The last month that the tag was used on an Amazon Web Services resource.</p>
+    pub fn last_used_date(&self) -> ::std::option::Option<&str> {
+        self.last_used_date.as_deref()
     }
 }
 impl CostAllocationTag {
@@ -39,6 +51,8 @@ pub struct CostAllocationTagBuilder {
     pub(crate) tag_key: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::CostAllocationTagType>,
     pub(crate) status: ::std::option::Option<crate::types::CostAllocationTagStatus>,
+    pub(crate) last_updated_date: ::std::option::Option<::std::string::String>,
+    pub(crate) last_used_date: ::std::option::Option<::std::string::String>,
 }
 impl CostAllocationTagBuilder {
     /// <p>The key for the cost allocation tag. </p>
@@ -83,12 +97,42 @@ impl CostAllocationTagBuilder {
     pub fn get_status(&self) -> &::std::option::Option<crate::types::CostAllocationTagStatus> {
         &self.status
     }
+    /// <p>The last date that the tag was either activated or deactivated.</p>
+    pub fn last_updated_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.last_updated_date = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The last date that the tag was either activated or deactivated.</p>
+    pub fn set_last_updated_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.last_updated_date = input;
+        self
+    }
+    /// <p>The last date that the tag was either activated or deactivated.</p>
+    pub fn get_last_updated_date(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_updated_date
+    }
+    /// <p>The last month that the tag was used on an Amazon Web Services resource.</p>
+    pub fn last_used_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.last_used_date = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The last month that the tag was used on an Amazon Web Services resource.</p>
+    pub fn set_last_used_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.last_used_date = input;
+        self
+    }
+    /// <p>The last month that the tag was used on an Amazon Web Services resource.</p>
+    pub fn get_last_used_date(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_used_date
+    }
     /// Consumes the builder and constructs a [`CostAllocationTag`](crate::types::CostAllocationTag).
     pub fn build(self) -> crate::types::CostAllocationTag {
         crate::types::CostAllocationTag {
             tag_key: self.tag_key,
             r#type: self.r#type,
             status: self.status,
+            last_updated_date: self.last_updated_date,
+            last_used_date: self.last_used_date,
         }
     }
 }

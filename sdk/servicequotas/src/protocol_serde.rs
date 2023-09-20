@@ -157,6 +157,8 @@ pub(crate) mod shape_error_reason;
 
 pub(crate) mod shape_metric_info;
 
+pub(crate) mod shape_quota_context_info;
+
 pub(crate) mod shape_quota_period;
 
 pub(crate) mod shape_service_info;

@@ -6,6 +6,8 @@
 pub struct TraceSummary {
     /// <p>The unique identifier for the request that generated the trace's segments and subsegments.</p>
     pub id: ::std::option::Option<::std::string::String>,
+    /// <p>The start time of a trace, based on the earliest trace segment start time.</p>
+    pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The length of time in seconds between the start time of the root segment and the end time of the last segment that completed.</p>
     pub duration: ::std::option::Option<f64>,
     /// <p>The length of time in seconds between the start and end times of the root segment. If the service performs work asynchronously, the response time measures the time before the response is sent to the user, while the duration measures the amount of time before the last traced activity completes.</p>
@@ -49,6 +51,10 @@ impl TraceSummary {
     /// <p>The unique identifier for the request that generated the trace's segments and subsegments.</p>
     pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
+    }
+    /// <p>The start time of a trace, based on the earliest trace segment start time.</p>
+    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.start_time.as_ref()
     }
     /// <p>The length of time in seconds between the start time of the root segment and the end time of the last segment that completed.</p>
     pub fn duration(&self) -> ::std::option::Option<f64> {
@@ -141,6 +147,7 @@ impl TraceSummary {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TraceSummaryBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) duration: ::std::option::Option<f64>,
     pub(crate) response_time: ::std::option::Option<f64>,
     pub(crate) has_fault: ::std::option::Option<bool>,
@@ -176,6 +183,20 @@ impl TraceSummaryBuilder {
     /// <p>The unique identifier for the request that generated the trace's segments and subsegments.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
+    }
+    /// <p>The start time of a trace, based on the earliest trace segment start time.</p>
+    pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.start_time = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The start time of a trace, based on the earliest trace segment start time.</p>
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.start_time = input;
+        self
+    }
+    /// <p>The start time of a trace, based on the earliest trace segment start time.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
     }
     /// <p>The length of time in seconds between the start time of the root segment and the end time of the last segment that completed.</p>
     pub fn duration(mut self, input: f64) -> Self {
@@ -506,6 +527,7 @@ impl TraceSummaryBuilder {
     pub fn build(self) -> crate::types::TraceSummary {
         crate::types::TraceSummary {
             id: self.id,
+            start_time: self.start_time,
             duration: self.duration,
             response_time: self.response_time,
             has_fault: self.has_fault,

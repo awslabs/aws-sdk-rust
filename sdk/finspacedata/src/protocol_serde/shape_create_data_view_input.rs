@@ -9,35 +9,35 @@ pub fn ser_create_data_view_input(
             ::aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if input.auto_update {
-        object.key("autoUpdate").boolean(input.auto_update);
+    if let Some(var_2) = &input.auto_update {
+        object.key("autoUpdate").boolean(*var_2);
     }
-    if let Some(var_2) = &input.client_token {
-        object.key("clientToken").string(var_2.as_str());
+    if let Some(var_3) = &input.client_token {
+        object.key("clientToken").string(var_3.as_str());
     }
-    if let Some(var_3) = &input.destination_type_params {
+    if let Some(var_4) = &input.destination_type_params {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("destinationTypeParams").start_object();
-        crate::protocol_serde::shape_data_view_destination_type_params::ser_data_view_destination_type_params(&mut object_4, var_3)?;
-        object_4.finish();
+        let mut object_5 = object.key("destinationTypeParams").start_object();
+        crate::protocol_serde::shape_data_view_destination_type_params::ser_data_view_destination_type_params(&mut object_5, var_4)?;
+        object_5.finish();
     }
-    if let Some(var_5) = &input.partition_columns {
-        let mut array_6 = object.key("partitionColumns").start_array();
-        for item_7 in var_5 {
+    if let Some(var_6) = &input.partition_columns {
+        let mut array_7 = object.key("partitionColumns").start_array();
+        for item_8 in var_6 {
             {
-                array_6.value().string(item_7.as_str());
+                array_7.value().string(item_8.as_str());
             }
         }
-        array_6.finish();
+        array_7.finish();
     }
-    if let Some(var_8) = &input.sort_columns {
-        let mut array_9 = object.key("sortColumns").start_array();
-        for item_10 in var_8 {
+    if let Some(var_9) = &input.sort_columns {
+        let mut array_10 = object.key("sortColumns").start_array();
+        for item_11 in var_9 {
             {
-                array_9.value().string(item_10.as_str());
+                array_10.value().string(item_11.as_str());
             }
         }
-        array_9.finish();
+        array_10.finish();
     }
     Ok(())
 }

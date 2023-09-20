@@ -36,35 +36,41 @@ pub fn ser_audio_codec_settings(
         crate::protocol_serde::shape_eac3_settings::ser_eac3_settings(&mut object_11, var_10)?;
         object_11.finish();
     }
-    if let Some(var_12) = &input.mp2_settings {
+    if let Some(var_12) = &input.flac_settings {
         #[allow(unused_mut)]
-        let mut object_13 = object.key("mp2Settings").start_object();
-        crate::protocol_serde::shape_mp2_settings::ser_mp2_settings(&mut object_13, var_12)?;
+        let mut object_13 = object.key("flacSettings").start_object();
+        crate::protocol_serde::shape_flac_settings::ser_flac_settings(&mut object_13, var_12)?;
         object_13.finish();
     }
-    if let Some(var_14) = &input.mp3_settings {
+    if let Some(var_14) = &input.mp2_settings {
         #[allow(unused_mut)]
-        let mut object_15 = object.key("mp3Settings").start_object();
-        crate::protocol_serde::shape_mp3_settings::ser_mp3_settings(&mut object_15, var_14)?;
+        let mut object_15 = object.key("mp2Settings").start_object();
+        crate::protocol_serde::shape_mp2_settings::ser_mp2_settings(&mut object_15, var_14)?;
         object_15.finish();
     }
-    if let Some(var_16) = &input.opus_settings {
+    if let Some(var_16) = &input.mp3_settings {
         #[allow(unused_mut)]
-        let mut object_17 = object.key("opusSettings").start_object();
-        crate::protocol_serde::shape_opus_settings::ser_opus_settings(&mut object_17, var_16)?;
+        let mut object_17 = object.key("mp3Settings").start_object();
+        crate::protocol_serde::shape_mp3_settings::ser_mp3_settings(&mut object_17, var_16)?;
         object_17.finish();
     }
-    if let Some(var_18) = &input.vorbis_settings {
+    if let Some(var_18) = &input.opus_settings {
         #[allow(unused_mut)]
-        let mut object_19 = object.key("vorbisSettings").start_object();
-        crate::protocol_serde::shape_vorbis_settings::ser_vorbis_settings(&mut object_19, var_18)?;
+        let mut object_19 = object.key("opusSettings").start_object();
+        crate::protocol_serde::shape_opus_settings::ser_opus_settings(&mut object_19, var_18)?;
         object_19.finish();
     }
-    if let Some(var_20) = &input.wav_settings {
+    if let Some(var_20) = &input.vorbis_settings {
         #[allow(unused_mut)]
-        let mut object_21 = object.key("wavSettings").start_object();
-        crate::protocol_serde::shape_wav_settings::ser_wav_settings(&mut object_21, var_20)?;
+        let mut object_21 = object.key("vorbisSettings").start_object();
+        crate::protocol_serde::shape_vorbis_settings::ser_vorbis_settings(&mut object_21, var_20)?;
         object_21.finish();
+    }
+    if let Some(var_22) = &input.wav_settings {
+        #[allow(unused_mut)]
+        let mut object_23 = object.key("wavSettings").start_object();
+        crate::protocol_serde::shape_wav_settings::ser_wav_settings(&mut object_23, var_22)?;
+        object_23.finish();
     }
     Ok(())
 }
@@ -106,6 +112,9 @@ where
                         }
                         "eac3Settings" => {
                             builder = builder.set_eac3_settings(crate::protocol_serde::shape_eac3_settings::de_eac3_settings(tokens)?);
+                        }
+                        "flacSettings" => {
+                            builder = builder.set_flac_settings(crate::protocol_serde::shape_flac_settings::de_flac_settings(tokens)?);
                         }
                         "mp2Settings" => {
                             builder = builder.set_mp2_settings(crate::protocol_serde::shape_mp2_settings::de_mp2_settings(tokens)?);

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`CreateTemplate`](crate::operation::create_template::builders::CreateTemplateFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`template(Template)`](crate::operation::create_template::builders::CreateTemplateFluentBuilder::template) / [`set_template(Option<Template>)`](crate::operation::create_template::builders::CreateTemplateFluentBuilder::set_template): <p>The content of the email, composed of a subject line, an HTML part, and a text-only part.</p>
+    ///   - [`template(Template)`](crate::operation::create_template::builders::CreateTemplateFluentBuilder::template) / [`set_template(Option<Template>)`](crate::operation::create_template::builders::CreateTemplateFluentBuilder::set_template): <p>The content of the email, composed of a subject line and either an HTML part or a text-only part.</p>
     /// - On success, responds with [`CreateTemplateOutput`](crate::operation::create_template::CreateTemplateOutput)
     /// - On failure, responds with [`SdkError<CreateTemplateError>`](crate::operation::create_template::CreateTemplateError)
     pub fn create_template(&self) -> crate::operation::create_template::builders::CreateTemplateFluentBuilder {

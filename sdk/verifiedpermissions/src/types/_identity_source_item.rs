@@ -3,7 +3,7 @@
 /// <p>A structure that defines an identity source.</p>
 /// <p>This data type is used as a request parameter for the <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_ListIdentityStores.html">ListIdentityStores</a> operation.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct IdentitySourceItem {
     /// <p>The date and time the identity source was originally created.</p>
     pub created_date: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -44,6 +44,18 @@ impl IdentitySourceItem {
         self.principal_entity_type.as_deref()
     }
 }
+impl ::std::fmt::Debug for IdentitySourceItem {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("IdentitySourceItem");
+        formatter.field("created_date", &self.created_date);
+        formatter.field("details", &self.details);
+        formatter.field("identity_source_id", &self.identity_source_id);
+        formatter.field("last_updated_date", &self.last_updated_date);
+        formatter.field("policy_store_id", &self.policy_store_id);
+        formatter.field("principal_entity_type", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl IdentitySourceItem {
     /// Creates a new builder-style object to manufacture [`IdentitySourceItem`](crate::types::IdentitySourceItem).
     pub fn builder() -> crate::types::builders::IdentitySourceItemBuilder {
@@ -53,7 +65,7 @@ impl IdentitySourceItem {
 
 /// A builder for [`IdentitySourceItem`](crate::types::IdentitySourceItem).
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct IdentitySourceItemBuilder {
     pub(crate) created_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) details: ::std::option::Option<crate::types::IdentitySourceItemDetails>,
@@ -157,5 +169,17 @@ impl IdentitySourceItemBuilder {
             policy_store_id: self.policy_store_id,
             principal_entity_type: self.principal_entity_type,
         }
+    }
+}
+impl ::std::fmt::Debug for IdentitySourceItemBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("IdentitySourceItemBuilder");
+        formatter.field("created_date", &self.created_date);
+        formatter.field("details", &self.details);
+        formatter.field("identity_source_id", &self.identity_source_id);
+        formatter.field("last_updated_date", &self.last_updated_date);
+        formatter.field("policy_store_id", &self.policy_store_id);
+        formatter.field("principal_entity_type", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

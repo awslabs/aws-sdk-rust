@@ -4,6 +4,9 @@ pub use ::aws_http::request_id::RequestId;
 /// Types for the `BatchGetMetricData` operation.
 pub mod batch_get_metric_data;
 
+/// Types for the `CancelExportJob` operation.
+pub mod cancel_export_job;
+
 /// Types for the `CreateConfigurationSet` operation.
 pub mod create_configuration_set;
 
@@ -33,6 +36,9 @@ pub mod create_email_identity_policy;
 
 /// Types for the `CreateEmailTemplate` operation.
 pub mod create_email_template;
+
+/// Types for the `CreateExportJob` operation.
+pub mod create_export_job;
 
 /// Types for the `CreateImportJob` operation.
 pub mod create_import_job;
@@ -118,8 +124,14 @@ pub mod get_email_identity_policies;
 /// Types for the `GetEmailTemplate` operation.
 pub mod get_email_template;
 
+/// Types for the `GetExportJob` operation.
+pub mod get_export_job;
+
 /// Types for the `GetImportJob` operation.
 pub mod get_import_job;
+
+/// Types for the `GetMessageInsights` operation.
+pub mod get_message_insights;
 
 /// Types for the `GetSuppressedDestination` operation.
 pub mod get_suppressed_destination;
@@ -150,6 +162,9 @@ pub mod list_email_identities;
 
 /// Types for the `ListEmailTemplates` operation.
 pub mod list_email_templates;
+
+/// Types for the `ListExportJobs` operation.
+pub mod list_export_jobs;
 
 /// Types for the `ListImportJobs` operation.
 pub mod list_import_jobs;

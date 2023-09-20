@@ -40,6 +40,22 @@ pub fn de_restore_db_cluster_to_point_in_time_http_error(
                 tmp
             })
         }
+        "DBClusterAutomatedBackupNotFoundFault" => {
+            crate::operation::restore_db_cluster_to_point_in_time::RestoreDBClusterToPointInTimeError::DbClusterAutomatedBackupNotFoundFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::DbClusterAutomatedBackupNotFoundFaultBuilder::default();
+                    output = crate::protocol_serde::shape_db_cluster_automated_backup_not_found_fault::de_db_cluster_automated_backup_not_found_fault_xml_err(_response_body, output).map_err(crate::operation::restore_db_cluster_to_point_in_time::RestoreDBClusterToPointInTimeError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         "DBClusterNotFoundFault" => {
             crate::operation::restore_db_cluster_to_point_in_time::RestoreDBClusterToPointInTimeError::DbClusterNotFoundFault({
                 #[allow(unused_mut)]

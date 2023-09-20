@@ -4,6 +4,9 @@ pub use ::aws_http::request_id::RequestId;
 /// Types for the `AbortMultipartReadSetUpload` operation.
 pub mod abort_multipart_read_set_upload;
 
+/// Types for the `AcceptShare` operation.
+pub mod accept_share;
+
 /// Types for the `BatchDeleteReadSet` operation.
 pub mod batch_delete_read_set;
 
@@ -22,6 +25,9 @@ pub mod complete_multipart_read_set_upload;
 /// Types for the `CreateAnnotationStore` operation.
 pub mod create_annotation_store;
 
+/// Types for the `CreateAnnotationStoreVersion` operation.
+pub mod create_annotation_store_version;
+
 /// Types for the `CreateMultipartReadSetUpload` operation.
 pub mod create_multipart_read_set_upload;
 
@@ -34,6 +40,9 @@ pub mod create_run_group;
 /// Types for the `CreateSequenceStore` operation.
 pub mod create_sequence_store;
 
+/// Types for the `CreateShare` operation.
+pub mod create_share;
+
 /// Types for the `CreateVariantStore` operation.
 pub mod create_variant_store;
 
@@ -42,6 +51,9 @@ pub mod create_workflow;
 
 /// Types for the `DeleteAnnotationStore` operation.
 pub mod delete_annotation_store;
+
+/// Types for the `DeleteAnnotationStoreVersions` operation.
+pub mod delete_annotation_store_versions;
 
 /// Types for the `DeleteReference` operation.
 pub mod delete_reference;
@@ -58,6 +70,9 @@ pub mod delete_run_group;
 /// Types for the `DeleteSequenceStore` operation.
 pub mod delete_sequence_store;
 
+/// Types for the `DeleteShare` operation.
+pub mod delete_share;
+
 /// Types for the `DeleteVariantStore` operation.
 pub mod delete_variant_store;
 
@@ -69,6 +84,9 @@ pub mod get_annotation_import_job;
 
 /// Types for the `GetAnnotationStore` operation.
 pub mod get_annotation_store;
+
+/// Types for the `GetAnnotationStoreVersion` operation.
+pub mod get_annotation_store_version;
 
 /// Types for the `GetReadSet` operation.
 pub mod get_read_set;
@@ -109,6 +127,9 @@ pub mod get_run_task;
 /// Types for the `GetSequenceStore` operation.
 pub mod get_sequence_store;
 
+/// Types for the `GetShare` operation.
+pub mod get_share;
+
 /// Types for the `GetVariantImportJob` operation.
 pub mod get_variant_import_job;
 
@@ -120,6 +141,9 @@ pub mod get_workflow;
 
 /// Types for the `ListAnnotationImportJobs` operation.
 pub mod list_annotation_import_jobs;
+
+/// Types for the `ListAnnotationStoreVersions` operation.
+pub mod list_annotation_store_versions;
 
 /// Types for the `ListAnnotationStores` operation.
 pub mod list_annotation_stores;
@@ -163,6 +187,9 @@ pub mod list_runs;
 /// Types for the `ListSequenceStores` operation.
 pub mod list_sequence_stores;
 
+/// Types for the `ListShares` operation.
+pub mod list_shares;
+
 /// Types for the `ListTagsForResource` operation.
 pub mod list_tags_for_resource;
 
@@ -204,6 +231,9 @@ pub mod untag_resource;
 
 /// Types for the `UpdateAnnotationStore` operation.
 pub mod update_annotation_store;
+
+/// Types for the `UpdateAnnotationStoreVersion` operation.
+pub mod update_annotation_store_version;
 
 /// Types for the `UpdateRunGroup` operation.
 pub mod update_run_group;

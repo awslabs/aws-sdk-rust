@@ -4,13 +4,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceMapping {
-    /// <p>The name of the resource this resource is mapped to.</p>
+    /// <p>Name of the resource that the resource is mapped to.</p>
     pub resource_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the CloudFormation stack this resource is mapped to.</p>
     pub logical_stack_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the application this resource is mapped to.</p>
     pub app_registry_app_name: ::std::option::Option<::std::string::String>,
-    /// <p>The name of the resource group this resource is mapped to.</p>
+    /// <p>Name of the resource group that the resource is mapped to.</p>
     pub resource_group_name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the type of resource mapping.</p>
     /// <dl>
@@ -40,17 +40,17 @@ pub struct ResourceMapping {
     /// </dd>
     /// </dl>
     pub mapping_type: ::std::option::Option<crate::types::ResourceMappingType>,
-    /// <p>The identifier of this resource.</p>
+    /// <p>Identifier of the physical resource.</p>
     pub physical_resource_id: ::std::option::Option<crate::types::PhysicalResourceId>,
     /// <p> The short name of the Terraform source. </p>
     pub terraform_source_name: ::std::option::Option<::std::string::String>,
-    /// <p>The name of the Amazon Elastic Kubernetes Service cluster and namespace this resource belongs to.</p> <note>
+    /// <p>Name of the Amazon Elastic Kubernetes Service cluster and namespace this resource belongs to.</p> <note>
     /// <p>This parameter accepts values in "eks-cluster/namespace" format.</p>
     /// </note>
     pub eks_source_name: ::std::option::Option<::std::string::String>,
 }
 impl ResourceMapping {
-    /// <p>The name of the resource this resource is mapped to.</p>
+    /// <p>Name of the resource that the resource is mapped to.</p>
     pub fn resource_name(&self) -> ::std::option::Option<&str> {
         self.resource_name.as_deref()
     }
@@ -62,7 +62,7 @@ impl ResourceMapping {
     pub fn app_registry_app_name(&self) -> ::std::option::Option<&str> {
         self.app_registry_app_name.as_deref()
     }
-    /// <p>The name of the resource group this resource is mapped to.</p>
+    /// <p>Name of the resource group that the resource is mapped to.</p>
     pub fn resource_group_name(&self) -> ::std::option::Option<&str> {
         self.resource_group_name.as_deref()
     }
@@ -96,7 +96,7 @@ impl ResourceMapping {
     pub fn mapping_type(&self) -> ::std::option::Option<&crate::types::ResourceMappingType> {
         self.mapping_type.as_ref()
     }
-    /// <p>The identifier of this resource.</p>
+    /// <p>Identifier of the physical resource.</p>
     pub fn physical_resource_id(&self) -> ::std::option::Option<&crate::types::PhysicalResourceId> {
         self.physical_resource_id.as_ref()
     }
@@ -104,7 +104,7 @@ impl ResourceMapping {
     pub fn terraform_source_name(&self) -> ::std::option::Option<&str> {
         self.terraform_source_name.as_deref()
     }
-    /// <p>The name of the Amazon Elastic Kubernetes Service cluster and namespace this resource belongs to.</p> <note>
+    /// <p>Name of the Amazon Elastic Kubernetes Service cluster and namespace this resource belongs to.</p> <note>
     /// <p>This parameter accepts values in "eks-cluster/namespace" format.</p>
     /// </note>
     pub fn eks_source_name(&self) -> ::std::option::Option<&str> {
@@ -132,17 +132,17 @@ pub struct ResourceMappingBuilder {
     pub(crate) eks_source_name: ::std::option::Option<::std::string::String>,
 }
 impl ResourceMappingBuilder {
-    /// <p>The name of the resource this resource is mapped to.</p>
+    /// <p>Name of the resource that the resource is mapped to.</p>
     pub fn resource_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the resource this resource is mapped to.</p>
+    /// <p>Name of the resource that the resource is mapped to.</p>
     pub fn set_resource_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_name = input;
         self
     }
-    /// <p>The name of the resource this resource is mapped to.</p>
+    /// <p>Name of the resource that the resource is mapped to.</p>
     pub fn get_resource_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_name
     }
@@ -174,17 +174,17 @@ impl ResourceMappingBuilder {
     pub fn get_app_registry_app_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.app_registry_app_name
     }
-    /// <p>The name of the resource group this resource is mapped to.</p>
+    /// <p>Name of the resource group that the resource is mapped to.</p>
     pub fn resource_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_group_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the resource group this resource is mapped to.</p>
+    /// <p>Name of the resource group that the resource is mapped to.</p>
     pub fn set_resource_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_group_name = input;
         self
     }
-    /// <p>The name of the resource group this resource is mapped to.</p>
+    /// <p>Name of the resource group that the resource is mapped to.</p>
     pub fn get_resource_group_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_group_name
     }
@@ -280,17 +280,17 @@ impl ResourceMappingBuilder {
     pub fn get_mapping_type(&self) -> &::std::option::Option<crate::types::ResourceMappingType> {
         &self.mapping_type
     }
-    /// <p>The identifier of this resource.</p>
+    /// <p>Identifier of the physical resource.</p>
     pub fn physical_resource_id(mut self, input: crate::types::PhysicalResourceId) -> Self {
         self.physical_resource_id = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The identifier of this resource.</p>
+    /// <p>Identifier of the physical resource.</p>
     pub fn set_physical_resource_id(mut self, input: ::std::option::Option<crate::types::PhysicalResourceId>) -> Self {
         self.physical_resource_id = input;
         self
     }
-    /// <p>The identifier of this resource.</p>
+    /// <p>Identifier of the physical resource.</p>
     pub fn get_physical_resource_id(&self) -> &::std::option::Option<crate::types::PhysicalResourceId> {
         &self.physical_resource_id
     }
@@ -308,21 +308,21 @@ impl ResourceMappingBuilder {
     pub fn get_terraform_source_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.terraform_source_name
     }
-    /// <p>The name of the Amazon Elastic Kubernetes Service cluster and namespace this resource belongs to.</p> <note>
+    /// <p>Name of the Amazon Elastic Kubernetes Service cluster and namespace this resource belongs to.</p> <note>
     /// <p>This parameter accepts values in "eks-cluster/namespace" format.</p>
     /// </note>
     pub fn eks_source_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.eks_source_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the Amazon Elastic Kubernetes Service cluster and namespace this resource belongs to.</p> <note>
+    /// <p>Name of the Amazon Elastic Kubernetes Service cluster and namespace this resource belongs to.</p> <note>
     /// <p>This parameter accepts values in "eks-cluster/namespace" format.</p>
     /// </note>
     pub fn set_eks_source_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.eks_source_name = input;
         self
     }
-    /// <p>The name of the Amazon Elastic Kubernetes Service cluster and namespace this resource belongs to.</p> <note>
+    /// <p>Name of the Amazon Elastic Kubernetes Service cluster and namespace this resource belongs to.</p> <note>
     /// <p>This parameter accepts values in "eks-cluster/namespace" format.</p>
     /// </note>
     pub fn get_eks_source_name(&self) -> &::std::option::Option<::std::string::String> {

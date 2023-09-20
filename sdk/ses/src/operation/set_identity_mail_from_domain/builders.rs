@@ -23,7 +23,7 @@ impl SetIdentityMailFromDomainInputBuilder {
 /// Fluent builder constructing a request to `SetIdentityMailFromDomain`.
 ///
 /// <p>Enables or disables the custom MAIL FROM domain setup for a verified identity (an email address or a domain).</p> <important>
-/// <p>To send emails using the specified MAIL FROM domain, you must add an MX record to your MAIL FROM domain's DNS settings. If you want your emails to pass Sender Policy Framework (SPF) checks, you must also add or update an SPF record. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from-set.html">Amazon SES Developer Guide</a>.</p>
+/// <p>To send emails using the specified MAIL FROM domain, you must add an MX record to your MAIL FROM domain's DNS settings. To ensure that your emails pass Sender Policy Framework (SPF) checks, you must also add or update an SPF record. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/dg/mail-from.html">Amazon SES Developer Guide</a>.</p>
 /// </important>
 /// <p>You can execute this operation no more than once per second.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -113,47 +113,47 @@ impl SetIdentityMailFromDomainFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The verified identity for which you want to enable or disable the specified custom MAIL FROM domain.</p>
+    /// <p>The verified identity.</p>
     pub fn identity(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.identity(input.into());
         self
     }
-    /// <p>The verified identity for which you want to enable or disable the specified custom MAIL FROM domain.</p>
+    /// <p>The verified identity.</p>
     pub fn set_identity(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_identity(input);
         self
     }
-    /// <p>The verified identity for which you want to enable or disable the specified custom MAIL FROM domain.</p>
+    /// <p>The verified identity.</p>
     pub fn get_identity(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_identity()
     }
-    /// <p>The custom MAIL FROM domain that you want the verified identity to use. The MAIL FROM domain must 1) be a subdomain of the verified identity, 2) not be used in a "From" address if the MAIL FROM domain is the destination of email feedback forwarding (for more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from.html">Amazon SES Developer Guide</a>), and 3) not be used to receive emails. A value of <code>null</code> disables the custom MAIL FROM setting for the identity.</p>
+    /// <p>The custom MAIL FROM domain for the verified identity to use. The MAIL FROM domain must 1) be a subdomain of the verified identity, 2) not be used in a "From" address if the MAIL FROM domain is the destination of email feedback forwarding (for more information, see the <a href="https://docs.aws.amazon.com/ses/latest/dg/mail-from.html">Amazon SES Developer Guide</a>), and 3) not be used to receive emails. A value of <code>null</code> disables the custom MAIL FROM setting for the identity.</p>
     pub fn mail_from_domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.mail_from_domain(input.into());
         self
     }
-    /// <p>The custom MAIL FROM domain that you want the verified identity to use. The MAIL FROM domain must 1) be a subdomain of the verified identity, 2) not be used in a "From" address if the MAIL FROM domain is the destination of email feedback forwarding (for more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from.html">Amazon SES Developer Guide</a>), and 3) not be used to receive emails. A value of <code>null</code> disables the custom MAIL FROM setting for the identity.</p>
+    /// <p>The custom MAIL FROM domain for the verified identity to use. The MAIL FROM domain must 1) be a subdomain of the verified identity, 2) not be used in a "From" address if the MAIL FROM domain is the destination of email feedback forwarding (for more information, see the <a href="https://docs.aws.amazon.com/ses/latest/dg/mail-from.html">Amazon SES Developer Guide</a>), and 3) not be used to receive emails. A value of <code>null</code> disables the custom MAIL FROM setting for the identity.</p>
     pub fn set_mail_from_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_mail_from_domain(input);
         self
     }
-    /// <p>The custom MAIL FROM domain that you want the verified identity to use. The MAIL FROM domain must 1) be a subdomain of the verified identity, 2) not be used in a "From" address if the MAIL FROM domain is the destination of email feedback forwarding (for more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from.html">Amazon SES Developer Guide</a>), and 3) not be used to receive emails. A value of <code>null</code> disables the custom MAIL FROM setting for the identity.</p>
+    /// <p>The custom MAIL FROM domain for the verified identity to use. The MAIL FROM domain must 1) be a subdomain of the verified identity, 2) not be used in a "From" address if the MAIL FROM domain is the destination of email feedback forwarding (for more information, see the <a href="https://docs.aws.amazon.com/ses/latest/dg/mail-from.html">Amazon SES Developer Guide</a>), and 3) not be used to receive emails. A value of <code>null</code> disables the custom MAIL FROM setting for the identity.</p>
     pub fn get_mail_from_domain(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_mail_from_domain()
     }
-    /// <p>The action that you want Amazon SES to take if it cannot successfully read the required MX record when you send an email. If you choose <code>UseDefaultValue</code>, Amazon SES will use amazonses.com (or a subdomain of that) as the MAIL FROM domain. If you choose <code>RejectMessage</code>, Amazon SES will return a <code>MailFromDomainNotVerified</code> error and not send the email.</p>
+    /// <p>The action for Amazon SES to take if it cannot successfully read the required MX record when you send an email. If you choose <code>UseDefaultValue</code>, Amazon SES uses amazonses.com (or a subdomain of that) as the MAIL FROM domain. If you choose <code>RejectMessage</code>, Amazon SES returns a <code>MailFromDomainNotVerified</code> error and not send the email.</p>
     /// <p>The action specified in <code>BehaviorOnMXFailure</code> is taken when the custom MAIL FROM domain setup is in the <code>Pending</code>, <code>Failed</code>, and <code>TemporaryFailure</code> states.</p>
     pub fn behavior_on_mx_failure(mut self, input: crate::types::BehaviorOnMxFailure) -> Self {
         self.inner = self.inner.behavior_on_mx_failure(input);
         self
     }
-    /// <p>The action that you want Amazon SES to take if it cannot successfully read the required MX record when you send an email. If you choose <code>UseDefaultValue</code>, Amazon SES will use amazonses.com (or a subdomain of that) as the MAIL FROM domain. If you choose <code>RejectMessage</code>, Amazon SES will return a <code>MailFromDomainNotVerified</code> error and not send the email.</p>
+    /// <p>The action for Amazon SES to take if it cannot successfully read the required MX record when you send an email. If you choose <code>UseDefaultValue</code>, Amazon SES uses amazonses.com (or a subdomain of that) as the MAIL FROM domain. If you choose <code>RejectMessage</code>, Amazon SES returns a <code>MailFromDomainNotVerified</code> error and not send the email.</p>
     /// <p>The action specified in <code>BehaviorOnMXFailure</code> is taken when the custom MAIL FROM domain setup is in the <code>Pending</code>, <code>Failed</code>, and <code>TemporaryFailure</code> states.</p>
     pub fn set_behavior_on_mx_failure(mut self, input: ::std::option::Option<crate::types::BehaviorOnMxFailure>) -> Self {
         self.inner = self.inner.set_behavior_on_mx_failure(input);
         self
     }
-    /// <p>The action that you want Amazon SES to take if it cannot successfully read the required MX record when you send an email. If you choose <code>UseDefaultValue</code>, Amazon SES will use amazonses.com (or a subdomain of that) as the MAIL FROM domain. If you choose <code>RejectMessage</code>, Amazon SES will return a <code>MailFromDomainNotVerified</code> error and not send the email.</p>
+    /// <p>The action for Amazon SES to take if it cannot successfully read the required MX record when you send an email. If you choose <code>UseDefaultValue</code>, Amazon SES uses amazonses.com (or a subdomain of that) as the MAIL FROM domain. If you choose <code>RejectMessage</code>, Amazon SES returns a <code>MailFromDomainNotVerified</code> error and not send the email.</p>
     /// <p>The action specified in <code>BehaviorOnMXFailure</code> is taken when the custom MAIL FROM domain setup is in the <code>Pending</code>, <code>Failed</code>, and <code>TemporaryFailure</code> states.</p>
     pub fn get_behavior_on_mx_failure(&self) -> &::std::option::Option<crate::types::BehaviorOnMxFailure> {
         self.inner.get_behavior_on_mx_failure()

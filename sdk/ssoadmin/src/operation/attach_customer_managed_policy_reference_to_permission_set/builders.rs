@@ -140,17 +140,17 @@ impl AttachCustomerManagedPolicyReferenceToPermissionSetFluentBuilder {
     pub fn get_permission_set_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_permission_set_arn()
     }
-    /// <p>Specifies the name and path of a customer managed policy. You must have an IAM policy that matches the name and path in each AWS account where you want to deploy your permission set.</p>
+    /// <p>Specifies the name and path of a customer managed policy. You must have an IAM policy that matches the name and path in each Amazon Web Services account where you want to deploy your permission set.</p>
     pub fn customer_managed_policy_reference(mut self, input: crate::types::CustomerManagedPolicyReference) -> Self {
         self.inner = self.inner.customer_managed_policy_reference(input);
         self
     }
-    /// <p>Specifies the name and path of a customer managed policy. You must have an IAM policy that matches the name and path in each AWS account where you want to deploy your permission set.</p>
+    /// <p>Specifies the name and path of a customer managed policy. You must have an IAM policy that matches the name and path in each Amazon Web Services account where you want to deploy your permission set.</p>
     pub fn set_customer_managed_policy_reference(mut self, input: ::std::option::Option<crate::types::CustomerManagedPolicyReference>) -> Self {
         self.inner = self.inner.set_customer_managed_policy_reference(input);
         self
     }
-    /// <p>Specifies the name and path of a customer managed policy. You must have an IAM policy that matches the name and path in each AWS account where you want to deploy your permission set.</p>
+    /// <p>Specifies the name and path of a customer managed policy. You must have an IAM policy that matches the name and path in each Amazon Web Services account where you want to deploy your permission set.</p>
     pub fn get_customer_managed_policy_reference(&self) -> &::std::option::Option<crate::types::CustomerManagedPolicyReference> {
         self.inner.get_customer_managed_policy_reference()
     }

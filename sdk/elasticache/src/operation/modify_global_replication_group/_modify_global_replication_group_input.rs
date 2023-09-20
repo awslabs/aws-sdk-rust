@@ -6,7 +6,7 @@ pub struct ModifyGlobalReplicationGroupInput {
     /// <p>The name of the Global datastore</p>
     pub global_replication_group_id: ::std::option::Option<::std::string::String>,
     /// <p>This parameter causes the modifications in this request and any pending modifications to be applied, asynchronously and as soon as possible. Modifications to Global Replication Groups cannot be requested to be applied in PreferredMaintenceWindow. </p>
-    pub apply_immediately: bool,
+    pub apply_immediately: ::std::option::Option<bool>,
     /// <p>A valid cache node type that you want to scale this Global datastore to.</p>
     pub cache_node_type: ::std::option::Option<::std::string::String>,
     /// <p>The upgraded version of the cache engine to be run on the clusters in the Global datastore. </p>
@@ -24,7 +24,7 @@ impl ModifyGlobalReplicationGroupInput {
         self.global_replication_group_id.as_deref()
     }
     /// <p>This parameter causes the modifications in this request and any pending modifications to be applied, asynchronously and as soon as possible. Modifications to Global Replication Groups cannot be requested to be applied in PreferredMaintenceWindow. </p>
-    pub fn apply_immediately(&self) -> bool {
+    pub fn apply_immediately(&self) -> ::std::option::Option<bool> {
         self.apply_immediately
     }
     /// <p>A valid cache node type that you want to scale this Global datastore to.</p>
@@ -175,7 +175,7 @@ impl ModifyGlobalReplicationGroupInputBuilder {
     > {
         ::std::result::Result::Ok(crate::operation::modify_global_replication_group::ModifyGlobalReplicationGroupInput {
             global_replication_group_id: self.global_replication_group_id,
-            apply_immediately: self.apply_immediately.unwrap_or_default(),
+            apply_immediately: self.apply_immediately,
             cache_node_type: self.cache_node_type,
             engine_version: self.engine_version,
             cache_parameter_group_name: self.cache_parameter_group_name,

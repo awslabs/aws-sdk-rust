@@ -8,7 +8,8 @@ pub struct IngestionS3InputConfiguration {
     pub bucket: ::std::option::Option<::std::string::String>,
     /// <p>The prefix for the S3 location being used for the input data for the data ingestion. </p>
     pub prefix: ::std::option::Option<::std::string::String>,
-    /// <p> Pattern for matching the Amazon S3 files which will be used for ingestion. If no KeyPattern is provided, we will use the default hierarchy file structure, which is same as KeyPattern {prefix}/{component_name}/* </p>
+    /// <p> The pattern for matching the Amazon S3 files that will be used for ingestion. If the schema was created previously without any KeyPattern, then the default KeyPattern {prefix}/{component_name}/* is used to download files from Amazon S3 according to the schema. This field is required when ingestion is being done for the first time.</p>
+    /// <p>Valid Values: {prefix}/{component_name}_* | {prefix}/{component_name}/* | {prefix}/{component_name}[DELIMITER]* (Allowed delimiters : space, dot, underscore, hyphen)</p>
     pub key_pattern: ::std::option::Option<::std::string::String>,
 }
 impl IngestionS3InputConfiguration {
@@ -20,7 +21,8 @@ impl IngestionS3InputConfiguration {
     pub fn prefix(&self) -> ::std::option::Option<&str> {
         self.prefix.as_deref()
     }
-    /// <p> Pattern for matching the Amazon S3 files which will be used for ingestion. If no KeyPattern is provided, we will use the default hierarchy file structure, which is same as KeyPattern {prefix}/{component_name}/* </p>
+    /// <p> The pattern for matching the Amazon S3 files that will be used for ingestion. If the schema was created previously without any KeyPattern, then the default KeyPattern {prefix}/{component_name}/* is used to download files from Amazon S3 according to the schema. This field is required when ingestion is being done for the first time.</p>
+    /// <p>Valid Values: {prefix}/{component_name}_* | {prefix}/{component_name}/* | {prefix}/{component_name}[DELIMITER]* (Allowed delimiters : space, dot, underscore, hyphen)</p>
     pub fn key_pattern(&self) -> ::std::option::Option<&str> {
         self.key_pattern.as_deref()
     }
@@ -69,17 +71,20 @@ impl IngestionS3InputConfigurationBuilder {
     pub fn get_prefix(&self) -> &::std::option::Option<::std::string::String> {
         &self.prefix
     }
-    /// <p> Pattern for matching the Amazon S3 files which will be used for ingestion. If no KeyPattern is provided, we will use the default hierarchy file structure, which is same as KeyPattern {prefix}/{component_name}/* </p>
+    /// <p> The pattern for matching the Amazon S3 files that will be used for ingestion. If the schema was created previously without any KeyPattern, then the default KeyPattern {prefix}/{component_name}/* is used to download files from Amazon S3 according to the schema. This field is required when ingestion is being done for the first time.</p>
+    /// <p>Valid Values: {prefix}/{component_name}_* | {prefix}/{component_name}/* | {prefix}/{component_name}[DELIMITER]* (Allowed delimiters : space, dot, underscore, hyphen)</p>
     pub fn key_pattern(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_pattern = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> Pattern for matching the Amazon S3 files which will be used for ingestion. If no KeyPattern is provided, we will use the default hierarchy file structure, which is same as KeyPattern {prefix}/{component_name}/* </p>
+    /// <p> The pattern for matching the Amazon S3 files that will be used for ingestion. If the schema was created previously without any KeyPattern, then the default KeyPattern {prefix}/{component_name}/* is used to download files from Amazon S3 according to the schema. This field is required when ingestion is being done for the first time.</p>
+    /// <p>Valid Values: {prefix}/{component_name}_* | {prefix}/{component_name}/* | {prefix}/{component_name}[DELIMITER]* (Allowed delimiters : space, dot, underscore, hyphen)</p>
     pub fn set_key_pattern(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key_pattern = input;
         self
     }
-    /// <p> Pattern for matching the Amazon S3 files which will be used for ingestion. If no KeyPattern is provided, we will use the default hierarchy file structure, which is same as KeyPattern {prefix}/{component_name}/* </p>
+    /// <p> The pattern for matching the Amazon S3 files that will be used for ingestion. If the schema was created previously without any KeyPattern, then the default KeyPattern {prefix}/{component_name}/* is used to download files from Amazon S3 according to the schema. This field is required when ingestion is being done for the first time.</p>
+    /// <p>Valid Values: {prefix}/{component_name}_* | {prefix}/{component_name}/* | {prefix}/{component_name}[DELIMITER]* (Allowed delimiters : space, dot, underscore, hyphen)</p>
     pub fn get_key_pattern(&self) -> &::std::option::Option<::std::string::String> {
         &self.key_pattern
     }

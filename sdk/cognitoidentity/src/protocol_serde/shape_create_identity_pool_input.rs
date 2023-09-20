@@ -6,66 +6,64 @@ pub fn ser_create_identity_pool_input(
     if let Some(var_1) = &input.identity_pool_name {
         object.key("IdentityPoolName").string(var_1.as_str());
     }
-    {
-        object
-            .key("AllowUnauthenticatedIdentities")
-            .boolean(input.allow_unauthenticated_identities);
+    if let Some(var_2) = &input.allow_unauthenticated_identities {
+        object.key("AllowUnauthenticatedIdentities").boolean(*var_2);
     }
-    if let Some(var_2) = &input.allow_classic_flow {
-        object.key("AllowClassicFlow").boolean(*var_2);
+    if let Some(var_3) = &input.allow_classic_flow {
+        object.key("AllowClassicFlow").boolean(*var_3);
     }
-    if let Some(var_3) = &input.supported_login_providers {
+    if let Some(var_4) = &input.supported_login_providers {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("SupportedLoginProviders").start_object();
-        for (key_5, value_6) in var_3 {
+        let mut object_5 = object.key("SupportedLoginProviders").start_object();
+        for (key_6, value_7) in var_4 {
             {
-                object_4.key(key_5.as_str()).string(value_6.as_str());
+                object_5.key(key_6.as_str()).string(value_7.as_str());
             }
         }
-        object_4.finish();
+        object_5.finish();
     }
-    if let Some(var_7) = &input.developer_provider_name {
-        object.key("DeveloperProviderName").string(var_7.as_str());
+    if let Some(var_8) = &input.developer_provider_name {
+        object.key("DeveloperProviderName").string(var_8.as_str());
     }
-    if let Some(var_8) = &input.open_id_connect_provider_ar_ns {
-        let mut array_9 = object.key("OpenIdConnectProviderARNs").start_array();
-        for item_10 in var_8 {
+    if let Some(var_9) = &input.open_id_connect_provider_ar_ns {
+        let mut array_10 = object.key("OpenIdConnectProviderARNs").start_array();
+        for item_11 in var_9 {
             {
-                array_9.value().string(item_10.as_str());
+                array_10.value().string(item_11.as_str());
             }
         }
-        array_9.finish();
+        array_10.finish();
     }
-    if let Some(var_11) = &input.cognito_identity_providers {
-        let mut array_12 = object.key("CognitoIdentityProviders").start_array();
-        for item_13 in var_11 {
+    if let Some(var_12) = &input.cognito_identity_providers {
+        let mut array_13 = object.key("CognitoIdentityProviders").start_array();
+        for item_14 in var_12 {
             {
                 #[allow(unused_mut)]
-                let mut object_14 = array_12.value().start_object();
-                crate::protocol_serde::shape_cognito_identity_provider::ser_cognito_identity_provider(&mut object_14, item_13)?;
-                object_14.finish();
+                let mut object_15 = array_13.value().start_object();
+                crate::protocol_serde::shape_cognito_identity_provider::ser_cognito_identity_provider(&mut object_15, item_14)?;
+                object_15.finish();
             }
         }
-        array_12.finish();
+        array_13.finish();
     }
-    if let Some(var_15) = &input.saml_provider_ar_ns {
-        let mut array_16 = object.key("SamlProviderARNs").start_array();
-        for item_17 in var_15 {
+    if let Some(var_16) = &input.saml_provider_ar_ns {
+        let mut array_17 = object.key("SamlProviderARNs").start_array();
+        for item_18 in var_16 {
             {
-                array_16.value().string(item_17.as_str());
+                array_17.value().string(item_18.as_str());
             }
         }
-        array_16.finish();
+        array_17.finish();
     }
-    if let Some(var_18) = &input.identity_pool_tags {
+    if let Some(var_19) = &input.identity_pool_tags {
         #[allow(unused_mut)]
-        let mut object_19 = object.key("IdentityPoolTags").start_object();
-        for (key_20, value_21) in var_18 {
+        let mut object_20 = object.key("IdentityPoolTags").start_object();
+        for (key_21, value_22) in var_19 {
             {
-                object_19.key(key_20.as_str()).string(value_21.as_str());
+                object_20.key(key_21.as_str()).string(value_22.as_str());
             }
         }
-        object_19.finish();
+        object_20.finish();
     }
     Ok(())
 }

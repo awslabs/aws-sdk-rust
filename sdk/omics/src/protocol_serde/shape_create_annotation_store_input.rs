@@ -40,5 +40,8 @@ pub fn ser_create_annotation_store_input(
         }
         object_11.finish();
     }
+    if let Some(var_14) = &input.version_name {
+        object.key("versionName").string(var_14.as_str());
+    }
     Ok(())
 }

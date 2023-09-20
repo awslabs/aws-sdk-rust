@@ -31,6 +31,10 @@ pub enum Error {
     CustomDbEngineVersionQuotaExceededFault(crate::types::error::CustomDbEngineVersionQuotaExceededFault),
     /// <p>The user already has a DB cluster with the given identifier.</p>
     DbClusterAlreadyExistsFault(crate::types::error::DbClusterAlreadyExistsFault),
+    /// <p>No automated backup for this DB cluster was found.</p>
+    DbClusterAutomatedBackupNotFoundFault(crate::types::error::DbClusterAutomatedBackupNotFoundFault),
+    /// <p>The quota for retained automated backups was exceeded. This prevents you from retaining any additional automated backups. The retained automated backups quota is the same as your DB cluster quota.</p>
+    DbClusterAutomatedBackupQuotaExceededFault(crate::types::error::DbClusterAutomatedBackupQuotaExceededFault),
     /// <p> <code>BacktrackIdentifier</code> doesn't refer to an existing backtrack.</p>
     DbClusterBacktrackNotFoundFault(crate::types::error::DbClusterBacktrackNotFoundFault),
     /// <p>The specified custom endpoint can't be created because it already exists.</p>
@@ -59,7 +63,7 @@ pub enum Error {
     DbInstanceAlreadyExistsFault(crate::types::error::DbInstanceAlreadyExistsFault),
     /// <p>No automated backup for this DB instance was found.</p>
     DbInstanceAutomatedBackupNotFoundFault(crate::types::error::DbInstanceAutomatedBackupNotFoundFault),
-    /// <p>The quota for retained automated backups was exceeded. This prevents you from retaining any additional automated backups. The retained automated backups quota is the same as your DB Instance quota.</p>
+    /// <p>The quota for retained automated backups was exceeded. This prevents you from retaining any additional automated backups. The retained automated backups quota is the same as your DB instance quota.</p>
     DbInstanceAutomatedBackupQuotaExceededFault(crate::types::error::DbInstanceAutomatedBackupQuotaExceededFault),
     /// <p> <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.</p>
     DbInstanceNotFoundFault(crate::types::error::DbInstanceNotFoundFault),
@@ -155,6 +159,8 @@ pub enum Error {
     InvalidBlueGreenDeploymentStateFault(crate::types::error::InvalidBlueGreenDeploymentStateFault),
     /// <p>You can't delete the CEV.</p>
     InvalidCustomDbEngineVersionStateFault(crate::types::error::InvalidCustomDbEngineVersionStateFault),
+    /// <p>The automated backup is in an invalid state. For example, this automated backup is associated with an active cluster.</p>
+    InvalidDbClusterAutomatedBackupStateFault(crate::types::error::InvalidDbClusterAutomatedBackupStateFault),
     /// <p> <code>Capacity</code> isn't a valid Aurora Serverless DB cluster capacity. Valid capacity values are <code>2</code>, <code>4</code>, <code>8</code>, <code>16</code>, <code>32</code>, <code>64</code>, <code>128</code>, and <code>256</code>.</p>
     InvalidDbClusterCapacityFault(crate::types::error::InvalidDbClusterCapacityFault),
     /// <p>The requested operation can't be performed on the endpoint while the endpoint is in this state.</p>
@@ -276,6 +282,8 @@ impl ::std::fmt::Display for Error {
             Error::CustomDbEngineVersionNotFoundFault(inner) => inner.fmt(f),
             Error::CustomDbEngineVersionQuotaExceededFault(inner) => inner.fmt(f),
             Error::DbClusterAlreadyExistsFault(inner) => inner.fmt(f),
+            Error::DbClusterAutomatedBackupNotFoundFault(inner) => inner.fmt(f),
+            Error::DbClusterAutomatedBackupQuotaExceededFault(inner) => inner.fmt(f),
             Error::DbClusterBacktrackNotFoundFault(inner) => inner.fmt(f),
             Error::DbClusterEndpointAlreadyExistsFault(inner) => inner.fmt(f),
             Error::DbClusterEndpointNotFoundFault(inner) => inner.fmt(f),
@@ -338,6 +346,7 @@ impl ::std::fmt::Display for Error {
             Error::InsufficientStorageClusterCapacityFault(inner) => inner.fmt(f),
             Error::InvalidBlueGreenDeploymentStateFault(inner) => inner.fmt(f),
             Error::InvalidCustomDbEngineVersionStateFault(inner) => inner.fmt(f),
+            Error::InvalidDbClusterAutomatedBackupStateFault(inner) => inner.fmt(f),
             Error::InvalidDbClusterCapacityFault(inner) => inner.fmt(f),
             Error::InvalidDbClusterEndpointStateFault(inner) => inner.fmt(f),
             Error::InvalidDbClusterSnapshotStateFault(inner) => inner.fmt(f),
@@ -1622,6 +1631,9 @@ where
 impl From<crate::operation::delete_db_cluster::DeleteDBClusterError> for Error {
     fn from(err: crate::operation::delete_db_cluster::DeleteDBClusterError) -> Self {
         match err {
+            crate::operation::delete_db_cluster::DeleteDBClusterError::DbClusterAutomatedBackupQuotaExceededFault(inner) => {
+                Error::DbClusterAutomatedBackupQuotaExceededFault(inner)
+            }
             crate::operation::delete_db_cluster::DeleteDBClusterError::DbClusterNotFoundFault(inner) => Error::DbClusterNotFoundFault(inner),
             crate::operation::delete_db_cluster::DeleteDBClusterError::DbClusterSnapshotAlreadyExistsFault(inner) => {
                 Error::DbClusterSnapshotAlreadyExistsFault(inner)
@@ -1632,6 +1644,38 @@ impl From<crate::operation::delete_db_cluster::DeleteDBClusterError> for Error {
             crate::operation::delete_db_cluster::DeleteDBClusterError::InvalidDbClusterStateFault(inner) => Error::InvalidDbClusterStateFault(inner),
             crate::operation::delete_db_cluster::DeleteDBClusterError::SnapshotQuotaExceededFault(inner) => Error::SnapshotQuotaExceededFault(inner),
             crate::operation::delete_db_cluster::DeleteDBClusterError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::delete_db_cluster_automated_backup::DeleteDBClusterAutomatedBackupError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<crate::operation::delete_db_cluster_automated_backup::DeleteDBClusterAutomatedBackupError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_db_cluster_automated_backup::DeleteDBClusterAutomatedBackupError> for Error {
+    fn from(err: crate::operation::delete_db_cluster_automated_backup::DeleteDBClusterAutomatedBackupError) -> Self {
+        match err {
+            crate::operation::delete_db_cluster_automated_backup::DeleteDBClusterAutomatedBackupError::DbClusterAutomatedBackupNotFoundFault(
+                inner,
+            ) => Error::DbClusterAutomatedBackupNotFoundFault(inner),
+            crate::operation::delete_db_cluster_automated_backup::DeleteDBClusterAutomatedBackupError::InvalidDbClusterAutomatedBackupStateFault(
+                inner,
+            ) => Error::InvalidDbClusterAutomatedBackupStateFault(inner),
+            crate::operation::delete_db_cluster_automated_backup::DeleteDBClusterAutomatedBackupError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2160,6 +2204,33 @@ impl From<crate::operation::describe_certificates::DescribeCertificatesError> fo
                 Error::CertificateNotFoundFault(inner)
             }
             crate::operation::describe_certificates::DescribeCertificatesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::describe_db_cluster_automated_backups::DescribeDBClusterAutomatedBackupsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<crate::operation::describe_db_cluster_automated_backups::DescribeDBClusterAutomatedBackupsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_db_cluster_automated_backups::DescribeDBClusterAutomatedBackupsError> for Error {
+    fn from(err: crate::operation::describe_db_cluster_automated_backups::DescribeDBClusterAutomatedBackupsError) -> Self {
+        match err {
+            crate::operation::describe_db_cluster_automated_backups::DescribeDBClusterAutomatedBackupsError::DbClusterAutomatedBackupNotFoundFault(inner) => Error::DbClusterAutomatedBackupNotFoundFault(inner),
+            crate::operation::describe_db_cluster_automated_backups::DescribeDBClusterAutomatedBackupsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -4492,6 +4563,9 @@ impl From<crate::operation::restore_db_cluster_from_snapshot::RestoreDBClusterFr
             crate::operation::restore_db_cluster_from_snapshot::RestoreDBClusterFromSnapshotError::DbSnapshotNotFoundFault(inner) => {
                 Error::DbSnapshotNotFoundFault(inner)
             }
+            crate::operation::restore_db_cluster_from_snapshot::RestoreDBClusterFromSnapshotError::DbSubnetGroupDoesNotCoverEnoughAZs(inner) => {
+                Error::DbSubnetGroupDoesNotCoverEnoughAZs(inner)
+            }
             crate::operation::restore_db_cluster_from_snapshot::RestoreDBClusterFromSnapshotError::DbSubnetGroupNotFoundFault(inner) => {
                 Error::DbSubnetGroupNotFoundFault(inner)
             }
@@ -4560,6 +4634,9 @@ impl From<crate::operation::restore_db_cluster_to_point_in_time::RestoreDBCluste
             crate::operation::restore_db_cluster_to_point_in_time::RestoreDBClusterToPointInTimeError::DbClusterAlreadyExistsFault(inner) => {
                 Error::DbClusterAlreadyExistsFault(inner)
             }
+            crate::operation::restore_db_cluster_to_point_in_time::RestoreDBClusterToPointInTimeError::DbClusterAutomatedBackupNotFoundFault(
+                inner,
+            ) => Error::DbClusterAutomatedBackupNotFoundFault(inner),
             crate::operation::restore_db_cluster_to_point_in_time::RestoreDBClusterToPointInTimeError::DbClusterNotFoundFault(inner) => {
                 Error::DbClusterNotFoundFault(inner)
             }
@@ -5251,6 +5328,41 @@ impl From<crate::operation::switchover_blue_green_deployment::SwitchoverBlueGree
         }
     }
 }
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::switchover_global_cluster::SwitchoverGlobalClusterError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::switchover_global_cluster::SwitchoverGlobalClusterError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::switchover_global_cluster::SwitchoverGlobalClusterError> for Error {
+    fn from(err: crate::operation::switchover_global_cluster::SwitchoverGlobalClusterError) -> Self {
+        match err {
+            crate::operation::switchover_global_cluster::SwitchoverGlobalClusterError::DbClusterNotFoundFault(inner) => {
+                Error::DbClusterNotFoundFault(inner)
+            }
+            crate::operation::switchover_global_cluster::SwitchoverGlobalClusterError::GlobalClusterNotFoundFault(inner) => {
+                Error::GlobalClusterNotFoundFault(inner)
+            }
+            crate::operation::switchover_global_cluster::SwitchoverGlobalClusterError::InvalidDbClusterStateFault(inner) => {
+                Error::InvalidDbClusterStateFault(inner)
+            }
+            crate::operation::switchover_global_cluster::SwitchoverGlobalClusterError::InvalidGlobalClusterStateFault(inner) => {
+                Error::InvalidGlobalClusterStateFault(inner)
+            }
+            crate::operation::switchover_global_cluster::SwitchoverGlobalClusterError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::switchover_read_replica::SwitchoverReadReplicaError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -5296,6 +5408,8 @@ impl ::std::error::Error for Error {
             Error::CustomDbEngineVersionNotFoundFault(inner) => inner.source(),
             Error::CustomDbEngineVersionQuotaExceededFault(inner) => inner.source(),
             Error::DbClusterAlreadyExistsFault(inner) => inner.source(),
+            Error::DbClusterAutomatedBackupNotFoundFault(inner) => inner.source(),
+            Error::DbClusterAutomatedBackupQuotaExceededFault(inner) => inner.source(),
             Error::DbClusterBacktrackNotFoundFault(inner) => inner.source(),
             Error::DbClusterEndpointAlreadyExistsFault(inner) => inner.source(),
             Error::DbClusterEndpointNotFoundFault(inner) => inner.source(),
@@ -5358,6 +5472,7 @@ impl ::std::error::Error for Error {
             Error::InsufficientStorageClusterCapacityFault(inner) => inner.source(),
             Error::InvalidBlueGreenDeploymentStateFault(inner) => inner.source(),
             Error::InvalidCustomDbEngineVersionStateFault(inner) => inner.source(),
+            Error::InvalidDbClusterAutomatedBackupStateFault(inner) => inner.source(),
             Error::InvalidDbClusterCapacityFault(inner) => inner.source(),
             Error::InvalidDbClusterEndpointStateFault(inner) => inner.source(),
             Error::InvalidDbClusterSnapshotStateFault(inner) => inner.source(),
@@ -5429,6 +5544,8 @@ impl ::aws_http::request_id::RequestId for Error {
             Self::CustomDbEngineVersionNotFoundFault(e) => e.request_id(),
             Self::CustomDbEngineVersionQuotaExceededFault(e) => e.request_id(),
             Self::DbClusterAlreadyExistsFault(e) => e.request_id(),
+            Self::DbClusterAutomatedBackupNotFoundFault(e) => e.request_id(),
+            Self::DbClusterAutomatedBackupQuotaExceededFault(e) => e.request_id(),
             Self::DbClusterBacktrackNotFoundFault(e) => e.request_id(),
             Self::DbClusterEndpointAlreadyExistsFault(e) => e.request_id(),
             Self::DbClusterEndpointNotFoundFault(e) => e.request_id(),
@@ -5491,6 +5608,7 @@ impl ::aws_http::request_id::RequestId for Error {
             Self::InsufficientStorageClusterCapacityFault(e) => e.request_id(),
             Self::InvalidBlueGreenDeploymentStateFault(e) => e.request_id(),
             Self::InvalidCustomDbEngineVersionStateFault(e) => e.request_id(),
+            Self::InvalidDbClusterAutomatedBackupStateFault(e) => e.request_id(),
             Self::InvalidDbClusterCapacityFault(e) => e.request_id(),
             Self::InvalidDbClusterEndpointStateFault(e) => e.request_id(),
             Self::InvalidDbClusterSnapshotStateFault(e) => e.request_id(),

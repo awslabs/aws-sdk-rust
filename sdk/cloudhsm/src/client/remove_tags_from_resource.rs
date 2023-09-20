@@ -8,6 +8,7 @@ impl super::Client {
     /// - On success, responds with [`RemoveTagsFromResourceOutput`](crate::operation::remove_tags_from_resource::RemoveTagsFromResourceOutput) with field(s):
     ///   - [`status(Option<String>)`](crate::operation::remove_tags_from_resource::RemoveTagsFromResourceOutput::status): <p>The status of the operation.</p>
     /// - On failure, responds with [`SdkError<RemoveTagsFromResourceError>`](crate::operation::remove_tags_from_resource::RemoveTagsFromResourceError)
+    #[deprecated(note = "This API is deprecated.")]
     pub fn remove_tags_from_resource(&self) -> crate::operation::remove_tags_from_resource::builders::RemoveTagsFromResourceFluentBuilder {
         crate::operation::remove_tags_from_resource::builders::RemoveTagsFromResourceFluentBuilder::new(self.handle.clone())
     }

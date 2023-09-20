@@ -39,9 +39,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[deprecated]
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::hash::Hash)]
 pub enum Gender {
     #[allow(missing_docs)] // documentation missing in model
     Female,
@@ -87,5 +85,10 @@ impl Gender {
 impl ::std::convert::AsRef<str> for Gender {
     fn as_ref(&self) -> &str {
         self.as_str()
+    }
+}
+impl ::std::fmt::Debug for Gender {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        ::std::write!(f, "*** Sensitive Data Redacted ***")
     }
 }

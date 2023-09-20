@@ -13,6 +13,8 @@
 /// # let resourcenotfoundexceptionreason = unimplemented!();
 /// match resourcenotfoundexceptionreason {
 ///     ResourceNotFoundExceptionReason::DependencyResourceNotFound => { /* ... */ },
+///     ResourceNotFoundExceptionReason::GrantNotFound => { /* ... */ },
+///     ResourceNotFoundExceptionReason::ImageNotFound => { /* ... */ },
 ///     ResourceNotFoundExceptionReason::SnapshotNotFound => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -44,6 +46,10 @@ pub enum ResourceNotFoundExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
     DependencyResourceNotFound,
     #[allow(missing_docs)] // documentation missing in model
+    GrantNotFound,
+    #[allow(missing_docs)] // documentation missing in model
+    ImageNotFound,
+    #[allow(missing_docs)] // documentation missing in model
     SnapshotNotFound,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
@@ -52,6 +58,8 @@ impl ::std::convert::From<&str> for ResourceNotFoundExceptionReason {
     fn from(s: &str) -> Self {
         match s {
             "DEPENDENCY_RESOURCE_NOT_FOUND" => ResourceNotFoundExceptionReason::DependencyResourceNotFound,
+            "GRANT_NOT_FOUND" => ResourceNotFoundExceptionReason::GrantNotFound,
+            "IMAGE_NOT_FOUND" => ResourceNotFoundExceptionReason::ImageNotFound,
             "SNAPSHOT_NOT_FOUND" => ResourceNotFoundExceptionReason::SnapshotNotFound,
             other => ResourceNotFoundExceptionReason::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
@@ -69,13 +77,20 @@ impl ResourceNotFoundExceptionReason {
     pub fn as_str(&self) -> &str {
         match self {
             ResourceNotFoundExceptionReason::DependencyResourceNotFound => "DEPENDENCY_RESOURCE_NOT_FOUND",
+            ResourceNotFoundExceptionReason::GrantNotFound => "GRANT_NOT_FOUND",
+            ResourceNotFoundExceptionReason::ImageNotFound => "IMAGE_NOT_FOUND",
             ResourceNotFoundExceptionReason::SnapshotNotFound => "SNAPSHOT_NOT_FOUND",
             ResourceNotFoundExceptionReason::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DEPENDENCY_RESOURCE_NOT_FOUND", "SNAPSHOT_NOT_FOUND"]
+        &[
+            "DEPENDENCY_RESOURCE_NOT_FOUND",
+            "GRANT_NOT_FOUND",
+            "IMAGE_NOT_FOUND",
+            "SNAPSHOT_NOT_FOUND",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for ResourceNotFoundExceptionReason {

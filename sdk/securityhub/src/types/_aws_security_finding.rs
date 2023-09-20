@@ -105,6 +105,8 @@ pub struct AwsSecurityFinding {
     pub finding_provider_fields: ::std::option::Option<crate::types::FindingProviderFields>,
     /// <p>Indicates whether the finding is a sample finding.</p>
     pub sample: bool,
+    /// <p>Provides metadata for the Amazon CodeGuru detector associated with a finding. This field pertains to findings that relate to Lambda functions. Amazon Inspector identifies policy violations and vulnerabilities in Lambda function code based on internal detectors developed in collaboration with Amazon CodeGuru. Security Hub receives those findings. </p>
+    pub generator_details: ::std::option::Option<crate::types::GeneratorDetails>,
 }
 impl AwsSecurityFinding {
     /// <p>The schema version that a finding is formatted for.</p>
@@ -288,6 +290,10 @@ impl AwsSecurityFinding {
     pub fn sample(&self) -> bool {
         self.sample
     }
+    /// <p>Provides metadata for the Amazon CodeGuru detector associated with a finding. This field pertains to findings that relate to Lambda functions. Amazon Inspector identifies policy violations and vulnerabilities in Lambda function code based on internal detectors developed in collaboration with Amazon CodeGuru. Security Hub receives those findings. </p>
+    pub fn generator_details(&self) -> ::std::option::Option<&crate::types::GeneratorDetails> {
+        self.generator_details.as_ref()
+    }
 }
 impl AwsSecurityFinding {
     /// Creates a new builder-style object to manufacture [`AwsSecurityFinding`](crate::types::AwsSecurityFinding).
@@ -341,6 +347,7 @@ pub struct AwsSecurityFindingBuilder {
     pub(crate) action: ::std::option::Option<crate::types::Action>,
     pub(crate) finding_provider_fields: ::std::option::Option<crate::types::FindingProviderFields>,
     pub(crate) sample: ::std::option::Option<bool>,
+    pub(crate) generator_details: ::std::option::Option<crate::types::GeneratorDetails>,
 }
 impl AwsSecurityFindingBuilder {
     /// <p>The schema version that a finding is formatted for.</p>
@@ -1042,6 +1049,20 @@ impl AwsSecurityFindingBuilder {
     pub fn get_sample(&self) -> &::std::option::Option<bool> {
         &self.sample
     }
+    /// <p>Provides metadata for the Amazon CodeGuru detector associated with a finding. This field pertains to findings that relate to Lambda functions. Amazon Inspector identifies policy violations and vulnerabilities in Lambda function code based on internal detectors developed in collaboration with Amazon CodeGuru. Security Hub receives those findings. </p>
+    pub fn generator_details(mut self, input: crate::types::GeneratorDetails) -> Self {
+        self.generator_details = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Provides metadata for the Amazon CodeGuru detector associated with a finding. This field pertains to findings that relate to Lambda functions. Amazon Inspector identifies policy violations and vulnerabilities in Lambda function code based on internal detectors developed in collaboration with Amazon CodeGuru. Security Hub receives those findings. </p>
+    pub fn set_generator_details(mut self, input: ::std::option::Option<crate::types::GeneratorDetails>) -> Self {
+        self.generator_details = input;
+        self
+    }
+    /// <p>Provides metadata for the Amazon CodeGuru detector associated with a finding. This field pertains to findings that relate to Lambda functions. Amazon Inspector identifies policy violations and vulnerabilities in Lambda function code based on internal detectors developed in collaboration with Amazon CodeGuru. Security Hub receives those findings. </p>
+    pub fn get_generator_details(&self) -> &::std::option::Option<crate::types::GeneratorDetails> {
+        &self.generator_details
+    }
     /// Consumes the builder and constructs a [`AwsSecurityFinding`](crate::types::AwsSecurityFinding).
     pub fn build(self) -> crate::types::AwsSecurityFinding {
         crate::types::AwsSecurityFinding {
@@ -1086,6 +1107,7 @@ impl AwsSecurityFindingBuilder {
             action: self.action,
             finding_provider_fields: self.finding_provider_fields,
             sample: self.sample.unwrap_or_default(),
+            generator_details: self.generator_details,
         }
     }
 }

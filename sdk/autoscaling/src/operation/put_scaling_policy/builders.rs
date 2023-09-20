@@ -227,19 +227,19 @@ impl PutScalingPolicyFluentBuilder {
     pub fn get_min_adjustment_magnitude(&self) -> &::std::option::Option<i32> {
         self.inner.get_min_adjustment_magnitude()
     }
-    /// <p>The amount by which to scale, based on the specified adjustment type. A positive value adds to the current capacity while a negative number removes from the current capacity. For exact capacity, you must specify a positive value.</p>
+    /// <p>The amount by which to scale, based on the specified adjustment type. A positive value adds to the current capacity while a negative number removes from the current capacity. For exact capacity, you must specify a non-negative value.</p>
     /// <p>Required if the policy type is <code>SimpleScaling</code>. (Not used with any other policy type.) </p>
     pub fn scaling_adjustment(mut self, input: i32) -> Self {
         self.inner = self.inner.scaling_adjustment(input);
         self
     }
-    /// <p>The amount by which to scale, based on the specified adjustment type. A positive value adds to the current capacity while a negative number removes from the current capacity. For exact capacity, you must specify a positive value.</p>
+    /// <p>The amount by which to scale, based on the specified adjustment type. A positive value adds to the current capacity while a negative number removes from the current capacity. For exact capacity, you must specify a non-negative value.</p>
     /// <p>Required if the policy type is <code>SimpleScaling</code>. (Not used with any other policy type.) </p>
     pub fn set_scaling_adjustment(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_scaling_adjustment(input);
         self
     }
-    /// <p>The amount by which to scale, based on the specified adjustment type. A positive value adds to the current capacity while a negative number removes from the current capacity. For exact capacity, you must specify a positive value.</p>
+    /// <p>The amount by which to scale, based on the specified adjustment type. A positive value adds to the current capacity while a negative number removes from the current capacity. For exact capacity, you must specify a non-negative value.</p>
     /// <p>Required if the policy type is <code>SimpleScaling</code>. (Not used with any other policy type.) </p>
     pub fn get_scaling_adjustment(&self) -> &::std::option::Option<i32> {
         self.inner.get_scaling_adjustment()

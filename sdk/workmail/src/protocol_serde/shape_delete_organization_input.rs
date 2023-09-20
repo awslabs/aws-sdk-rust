@@ -9,8 +9,11 @@ pub fn ser_delete_organization_input(
     if let Some(var_2) = &input.organization_id {
         object.key("OrganizationId").string(var_2.as_str());
     }
-    {
-        object.key("DeleteDirectory").boolean(input.delete_directory);
+    if let Some(var_3) = &input.delete_directory {
+        object.key("DeleteDirectory").boolean(*var_3);
+    }
+    if let Some(var_4) = &input.force_delete {
+        object.key("ForceDelete").boolean(*var_4);
     }
     Ok(())
 }

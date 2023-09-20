@@ -22,7 +22,7 @@ impl UpdateAccountSendingEnabledInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateAccountSendingEnabled`.
 ///
-/// <p>Enables or disables email sending across your entire Amazon SES account in the current AWS Region. You can use this operation in conjunction with Amazon CloudWatch alarms to temporarily pause email sending across your Amazon SES account in a given AWS Region when reputation metrics (such as your bounce or complaint rates) reach certain thresholds.</p>
+/// <p>Enables or disables email sending across your entire Amazon SES account in the current Amazon Web Services Region. You can use this operation in conjunction with Amazon CloudWatch alarms to temporarily pause email sending across your Amazon SES account in a given Amazon Web Services Region when reputation metrics (such as your bounce or complaint rates) reach certain thresholds.</p>
 /// <p>You can execute this operation no more than once per second.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateAccountSendingEnabledFluentBuilder {
@@ -111,17 +111,17 @@ impl UpdateAccountSendingEnabledFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>Describes whether email sending is enabled or disabled for your Amazon SES account in the current AWS Region.</p>
+    /// <p>Describes whether email sending is enabled or disabled for your Amazon SES account in the current Amazon Web Services Region.</p>
     pub fn enabled(mut self, input: bool) -> Self {
         self.inner = self.inner.enabled(input);
         self
     }
-    /// <p>Describes whether email sending is enabled or disabled for your Amazon SES account in the current AWS Region.</p>
+    /// <p>Describes whether email sending is enabled or disabled for your Amazon SES account in the current Amazon Web Services Region.</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_enabled(input);
         self
     }
-    /// <p>Describes whether email sending is enabled or disabled for your Amazon SES account in the current AWS Region.</p>
+    /// <p>Describes whether email sending is enabled or disabled for your Amazon SES account in the current Amazon Web Services Region.</p>
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
         self.inner.get_enabled()
     }

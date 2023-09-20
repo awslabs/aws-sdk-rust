@@ -23,7 +23,7 @@ impl CreateReceiptFilterInputBuilder {
 /// Fluent builder constructing a request to `CreateReceiptFilter`.
 ///
 /// <p>Creates a new IP address filter.</p>
-/// <p>For information about setting up IP address filters, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-ip-filters.html">Amazon SES Developer Guide</a>.</p>
+/// <p>For information about setting up IP address filters, see the <a href="https://docs.aws.amazon.com/ses/latest/dg/receiving-email-ip-filtering-console-walkthrough.html">Amazon SES Developer Guide</a>.</p>
 /// <p>You can execute this operation no more than once per second.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateReceiptFilterFluentBuilder {

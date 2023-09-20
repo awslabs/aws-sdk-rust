@@ -22,7 +22,7 @@ impl ListTemplatesInputBuilder {
 }
 /// Fluent builder constructing a request to `ListTemplates`.
 ///
-/// <p>Lists the email templates present in your Amazon SES account in the current AWS Region.</p>
+/// <p>Lists the email templates present in your Amazon SES account in the current Amazon Web Services Region.</p>
 /// <p>You can execute this operation no more than once per second.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListTemplatesFluentBuilder {
@@ -125,17 +125,17 @@ impl ListTemplatesFluentBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }
-    /// <p>The maximum number of templates to return. This value must be at least 1 and less than or equal to 10. If you do not specify a value, or if you specify a value less than 1 or greater than 10, the operation will return up to 10 results.</p>
+    /// <p>The maximum number of templates to return. This value must be at least 1 and less than or equal to 100. If more than 100 items are requested, the page size will automatically set to 100. If you do not specify a value, 10 is the default page size. </p>
     pub fn max_items(mut self, input: i32) -> Self {
         self.inner = self.inner.max_items(input);
         self
     }
-    /// <p>The maximum number of templates to return. This value must be at least 1 and less than or equal to 10. If you do not specify a value, or if you specify a value less than 1 or greater than 10, the operation will return up to 10 results.</p>
+    /// <p>The maximum number of templates to return. This value must be at least 1 and less than or equal to 100. If more than 100 items are requested, the page size will automatically set to 100. If you do not specify a value, 10 is the default page size. </p>
     pub fn set_max_items(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_items(input);
         self
     }
-    /// <p>The maximum number of templates to return. This value must be at least 1 and less than or equal to 10. If you do not specify a value, or if you specify a value less than 1 or greater than 10, the operation will return up to 10 results.</p>
+    /// <p>The maximum number of templates to return. This value must be at least 1 and less than or equal to 100. If more than 100 items are requested, the page size will automatically set to 100. If you do not specify a value, 10 is the default page size. </p>
     pub fn get_max_items(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_items()
     }

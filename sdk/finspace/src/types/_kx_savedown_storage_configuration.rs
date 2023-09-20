@@ -9,7 +9,7 @@ pub struct KxSavedownStorageConfiguration {
     /// <li> <p>SDS01 – This type represents 3000 IOPS and io2 ebs volume type.</p> </li>
     /// </ul>
     pub r#type: ::std::option::Option<crate::types::KxSavedownStorageType>,
-    /// <p>The size of temporary storage in bytes.</p>
+    /// <p>The size of temporary storage in gibibytes.</p>
     pub size: i32,
 }
 impl KxSavedownStorageConfiguration {
@@ -20,7 +20,7 @@ impl KxSavedownStorageConfiguration {
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::KxSavedownStorageType> {
         self.r#type.as_ref()
     }
-    /// <p>The size of temporary storage in bytes.</p>
+    /// <p>The size of temporary storage in gibibytes.</p>
     pub fn size(&self) -> i32 {
         self.size
     }
@@ -63,17 +63,17 @@ impl KxSavedownStorageConfigurationBuilder {
     pub fn get_type(&self) -> &::std::option::Option<crate::types::KxSavedownStorageType> {
         &self.r#type
     }
-    /// <p>The size of temporary storage in bytes.</p>
+    /// <p>The size of temporary storage in gibibytes.</p>
     pub fn size(mut self, input: i32) -> Self {
         self.size = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The size of temporary storage in bytes.</p>
+    /// <p>The size of temporary storage in gibibytes.</p>
     pub fn set_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.size = input;
         self
     }
-    /// <p>The size of temporary storage in bytes.</p>
+    /// <p>The size of temporary storage in gibibytes.</p>
     pub fn get_size(&self) -> &::std::option::Option<i32> {
         &self.size
     }

@@ -127,6 +127,37 @@ impl From<crate::operation::batch_get_code_snippet::BatchGetCodeSnippetError> fo
         }
     }
 }
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::batch_get_finding_details::BatchGetFindingDetailsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::batch_get_finding_details::BatchGetFindingDetailsError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::batch_get_finding_details::BatchGetFindingDetailsError> for Error {
+    fn from(err: crate::operation::batch_get_finding_details::BatchGetFindingDetailsError) -> Self {
+        match err {
+            crate::operation::batch_get_finding_details::BatchGetFindingDetailsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::batch_get_finding_details::BatchGetFindingDetailsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::batch_get_finding_details::BatchGetFindingDetailsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::batch_get_finding_details::BatchGetFindingDetailsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::batch_get_finding_details::BatchGetFindingDetailsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::batch_get_free_trial_info::BatchGetFreeTrialInfoError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

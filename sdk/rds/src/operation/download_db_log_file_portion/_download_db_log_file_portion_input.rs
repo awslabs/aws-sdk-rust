@@ -22,7 +22,7 @@ pub struct DownloadDbLogFilePortionInput {
     /// <li> <p>If Marker is specified as "0", then the specified number of lines from the beginning of the log file are returned.</p> </li>
     /// <li> <p>You can download the log file in blocks of lines by specifying the size of the block using the NumberOfLines parameter, and by specifying a value of "0" for the Marker parameter in your first request. Include the Marker value returned in the response as the Marker value for the next request, continuing until the AdditionalDataPending response element returns false.</p> </li>
     /// </ul>
-    pub number_of_lines: i32,
+    pub number_of_lines: ::std::option::Option<i32>,
 }
 impl DownloadDbLogFilePortionInput {
     /// <p>The customer-assigned name of the DB instance that contains the log files you want to list.</p>
@@ -49,7 +49,7 @@ impl DownloadDbLogFilePortionInput {
     /// <li> <p>If Marker is specified as "0", then the specified number of lines from the beginning of the log file are returned.</p> </li>
     /// <li> <p>You can download the log file in blocks of lines by specifying the size of the block using the NumberOfLines parameter, and by specifying a value of "0" for the Marker parameter in your first request. Include the Marker value returned in the response as the Marker value for the next request, continuing until the AdditionalDataPending response element returns false.</p> </li>
     /// </ul>
-    pub fn number_of_lines(&self) -> i32 {
+    pub fn number_of_lines(&self) -> ::std::option::Option<i32> {
         self.number_of_lines
     }
 }
@@ -170,7 +170,7 @@ impl DownloadDbLogFilePortionInputBuilder {
             db_instance_identifier: self.db_instance_identifier,
             log_file_name: self.log_file_name,
             marker: self.marker,
-            number_of_lines: self.number_of_lines.unwrap_or_default(),
+            number_of_lines: self.number_of_lines,
         })
     }
 }

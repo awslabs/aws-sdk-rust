@@ -283,6 +283,8 @@ pub enum CreateDistributionWithTagsError {
     DistributionAlreadyExists(crate::types::error::DistributionAlreadyExists),
     /// <p>The specified configuration for field-level encryption can't be associated with the specified cache behavior.</p>
     IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior(crate::types::error::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior),
+    /// <p>An origin cannot contain both an origin access control (OAC) and an origin access identity (OAI).</p>
+    IllegalOriginAccessConfiguration(crate::types::error::IllegalOriginAccessConfiguration),
     /// <p>The value of <code>Quantity</code> and the size of <code>Items</code> don't match.</p>
     InconsistentQuantities(crate::types::error::InconsistentQuantities),
     /// <p>An argument is invalid.</p>
@@ -369,6 +371,9 @@ pub enum CreateDistributionWithTagsError {
     TooManyDistributionsAssociatedToFieldLevelEncryptionConfig(crate::types::error::TooManyDistributionsAssociatedToFieldLevelEncryptionConfig),
     /// <p>The number of distributions that reference this key group is more than the maximum allowed. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.</p>
     TooManyDistributionsAssociatedToKeyGroup(crate::types::error::TooManyDistributionsAssociatedToKeyGroup),
+    /// <p>The maximum number of distributions have been associated with the specified origin access control.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    TooManyDistributionsAssociatedToOriginAccessControl(crate::types::error::TooManyDistributionsAssociatedToOriginAccessControl),
     /// <p>The maximum number of distributions have been associated with the specified origin request policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.</p>
     TooManyDistributionsAssociatedToOriginRequestPolicy(crate::types::error::TooManyDistributionsAssociatedToOriginRequestPolicy),
     /// <p>The maximum number of distributions have been associated with the specified response headers policy.</p>
@@ -425,6 +430,7 @@ impl ::std::fmt::Display for CreateDistributionWithTagsError {
             Self::ContinuousDeploymentPolicyInUse(_inner) => _inner.fmt(f),
             Self::DistributionAlreadyExists(_inner) => _inner.fmt(f),
             Self::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior(_inner) => _inner.fmt(f),
+            Self::IllegalOriginAccessConfiguration(_inner) => _inner.fmt(f),
             Self::InconsistentQuantities(_inner) => _inner.fmt(f),
             Self::InvalidArgument(_inner) => _inner.fmt(f),
             Self::InvalidDefaultRootObject(_inner) => _inner.fmt(f),
@@ -468,6 +474,7 @@ impl ::std::fmt::Display for CreateDistributionWithTagsError {
             Self::TooManyDistributionsAssociatedToCachePolicy(_inner) => _inner.fmt(f),
             Self::TooManyDistributionsAssociatedToFieldLevelEncryptionConfig(_inner) => _inner.fmt(f),
             Self::TooManyDistributionsAssociatedToKeyGroup(_inner) => _inner.fmt(f),
+            Self::TooManyDistributionsAssociatedToOriginAccessControl(_inner) => _inner.fmt(f),
             Self::TooManyDistributionsAssociatedToOriginRequestPolicy(_inner) => _inner.fmt(f),
             Self::TooManyDistributionsAssociatedToResponseHeadersPolicy(_inner) => _inner.fmt(f),
             Self::TooManyDistributionsWithFunctionAssociations(_inner) => _inner.fmt(f),
@@ -498,6 +505,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for CreateDistrib
             Self::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior(_inner) => {
                 ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
+            Self::IllegalOriginAccessConfiguration(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InconsistentQuantities(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidArgument(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidDefaultRootObject(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
@@ -543,6 +551,9 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for CreateDistrib
                 ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
             Self::TooManyDistributionsAssociatedToKeyGroup(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::TooManyDistributionsAssociatedToOriginAccessControl(_inner) => {
+                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
             Self::TooManyDistributionsAssociatedToOriginRequestPolicy(_inner) => {
                 ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
@@ -604,6 +615,7 @@ impl CreateDistributionWithTagsError {
             Self::ContinuousDeploymentPolicyInUse(e) => e.meta(),
             Self::DistributionAlreadyExists(e) => e.meta(),
             Self::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior(e) => e.meta(),
+            Self::IllegalOriginAccessConfiguration(e) => e.meta(),
             Self::InconsistentQuantities(e) => e.meta(),
             Self::InvalidArgument(e) => e.meta(),
             Self::InvalidDefaultRootObject(e) => e.meta(),
@@ -647,6 +659,7 @@ impl CreateDistributionWithTagsError {
             Self::TooManyDistributionsAssociatedToCachePolicy(e) => e.meta(),
             Self::TooManyDistributionsAssociatedToFieldLevelEncryptionConfig(e) => e.meta(),
             Self::TooManyDistributionsAssociatedToKeyGroup(e) => e.meta(),
+            Self::TooManyDistributionsAssociatedToOriginAccessControl(e) => e.meta(),
             Self::TooManyDistributionsAssociatedToOriginRequestPolicy(e) => e.meta(),
             Self::TooManyDistributionsAssociatedToResponseHeadersPolicy(e) => e.meta(),
             Self::TooManyDistributionsWithFunctionAssociations(e) => e.meta(),
@@ -685,6 +698,10 @@ impl CreateDistributionWithTagsError {
     /// Returns `true` if the error kind is `CreateDistributionWithTagsError::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior`.
     pub fn is_illegal_field_level_encryption_config_association_with_cache_behavior(&self) -> bool {
         matches!(self, Self::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior(_))
+    }
+    /// Returns `true` if the error kind is `CreateDistributionWithTagsError::IllegalOriginAccessConfiguration`.
+    pub fn is_illegal_origin_access_configuration(&self) -> bool {
+        matches!(self, Self::IllegalOriginAccessConfiguration(_))
     }
     /// Returns `true` if the error kind is `CreateDistributionWithTagsError::InconsistentQuantities`.
     pub fn is_inconsistent_quantities(&self) -> bool {
@@ -858,6 +875,10 @@ impl CreateDistributionWithTagsError {
     pub fn is_too_many_distributions_associated_to_key_group(&self) -> bool {
         matches!(self, Self::TooManyDistributionsAssociatedToKeyGroup(_))
     }
+    /// Returns `true` if the error kind is `CreateDistributionWithTagsError::TooManyDistributionsAssociatedToOriginAccessControl`.
+    pub fn is_too_many_distributions_associated_to_origin_access_control(&self) -> bool {
+        matches!(self, Self::TooManyDistributionsAssociatedToOriginAccessControl(_))
+    }
     /// Returns `true` if the error kind is `CreateDistributionWithTagsError::TooManyDistributionsAssociatedToOriginRequestPolicy`.
     pub fn is_too_many_distributions_associated_to_origin_request_policy(&self) -> bool {
         matches!(self, Self::TooManyDistributionsAssociatedToOriginRequestPolicy(_))
@@ -931,6 +952,7 @@ impl ::std::error::Error for CreateDistributionWithTagsError {
             Self::ContinuousDeploymentPolicyInUse(_inner) => ::std::option::Option::Some(_inner),
             Self::DistributionAlreadyExists(_inner) => ::std::option::Option::Some(_inner),
             Self::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior(_inner) => ::std::option::Option::Some(_inner),
+            Self::IllegalOriginAccessConfiguration(_inner) => ::std::option::Option::Some(_inner),
             Self::InconsistentQuantities(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidArgument(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidDefaultRootObject(_inner) => ::std::option::Option::Some(_inner),
@@ -974,6 +996,7 @@ impl ::std::error::Error for CreateDistributionWithTagsError {
             Self::TooManyDistributionsAssociatedToCachePolicy(_inner) => ::std::option::Option::Some(_inner),
             Self::TooManyDistributionsAssociatedToFieldLevelEncryptionConfig(_inner) => ::std::option::Option::Some(_inner),
             Self::TooManyDistributionsAssociatedToKeyGroup(_inner) => ::std::option::Option::Some(_inner),
+            Self::TooManyDistributionsAssociatedToOriginAccessControl(_inner) => ::std::option::Option::Some(_inner),
             Self::TooManyDistributionsAssociatedToOriginRequestPolicy(_inner) => ::std::option::Option::Some(_inner),
             Self::TooManyDistributionsAssociatedToResponseHeadersPolicy(_inner) => ::std::option::Option::Some(_inner),
             Self::TooManyDistributionsWithFunctionAssociations(_inner) => ::std::option::Option::Some(_inner),

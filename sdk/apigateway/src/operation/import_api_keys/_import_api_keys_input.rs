@@ -9,7 +9,7 @@ pub struct ImportApiKeysInput {
     /// <p>A query parameter to specify the input format to imported API keys. Currently, only the <code>csv</code> format is supported.</p>
     pub format: ::std::option::Option<crate::types::ApiKeysFormat>,
     /// <p>A query parameter to indicate whether to rollback ApiKey importation (<code>true</code>) or not (<code>false</code>) when error is encountered.</p>
-    pub fail_on_warnings: bool,
+    pub fail_on_warnings: ::std::option::Option<bool>,
 }
 impl ImportApiKeysInput {
     /// <p>The payload of the POST request to import API keys. For the payload format, see API Key File Format.</p>
@@ -21,7 +21,7 @@ impl ImportApiKeysInput {
         self.format.as_ref()
     }
     /// <p>A query parameter to indicate whether to rollback ApiKey importation (<code>true</code>) or not (<code>false</code>) when error is encountered.</p>
-    pub fn fail_on_warnings(&self) -> bool {
+    pub fn fail_on_warnings(&self) -> ::std::option::Option<bool> {
         self.fail_on_warnings
     }
 }
@@ -90,7 +90,7 @@ impl ImportApiKeysInputBuilder {
         ::std::result::Result::Ok(crate::operation::import_api_keys::ImportApiKeysInput {
             body: self.body,
             format: self.format,
-            fail_on_warnings: self.fail_on_warnings.unwrap_or_default(),
+            fail_on_warnings: self.fail_on_warnings,
         })
     }
 }

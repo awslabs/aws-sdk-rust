@@ -8,6 +8,8 @@ pub struct RowAlternateColorOptions {
     pub status: ::std::option::Option<crate::types::WidgetStatus>,
     /// <p>Determines the list of row alternate colors.</p>
     pub row_alternate_colors: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The primary background color options for alternate rows.</p>
+    pub use_primary_background_color: ::std::option::Option<crate::types::WidgetStatus>,
 }
 impl RowAlternateColorOptions {
     /// <p>Determines the widget status.</p>
@@ -17,6 +19,10 @@ impl RowAlternateColorOptions {
     /// <p>Determines the list of row alternate colors.</p>
     pub fn row_alternate_colors(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.row_alternate_colors.as_deref()
+    }
+    /// <p>The primary background color options for alternate rows.</p>
+    pub fn use_primary_background_color(&self) -> ::std::option::Option<&crate::types::WidgetStatus> {
+        self.use_primary_background_color.as_ref()
     }
 }
 impl RowAlternateColorOptions {
@@ -32,6 +38,7 @@ impl RowAlternateColorOptions {
 pub struct RowAlternateColorOptionsBuilder {
     pub(crate) status: ::std::option::Option<crate::types::WidgetStatus>,
     pub(crate) row_alternate_colors: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) use_primary_background_color: ::std::option::Option<crate::types::WidgetStatus>,
 }
 impl RowAlternateColorOptionsBuilder {
     /// <p>Determines the widget status.</p>
@@ -68,11 +75,26 @@ impl RowAlternateColorOptionsBuilder {
     pub fn get_row_alternate_colors(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.row_alternate_colors
     }
+    /// <p>The primary background color options for alternate rows.</p>
+    pub fn use_primary_background_color(mut self, input: crate::types::WidgetStatus) -> Self {
+        self.use_primary_background_color = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The primary background color options for alternate rows.</p>
+    pub fn set_use_primary_background_color(mut self, input: ::std::option::Option<crate::types::WidgetStatus>) -> Self {
+        self.use_primary_background_color = input;
+        self
+    }
+    /// <p>The primary background color options for alternate rows.</p>
+    pub fn get_use_primary_background_color(&self) -> &::std::option::Option<crate::types::WidgetStatus> {
+        &self.use_primary_background_color
+    }
     /// Consumes the builder and constructs a [`RowAlternateColorOptions`](crate::types::RowAlternateColorOptions).
     pub fn build(self) -> crate::types::RowAlternateColorOptions {
         crate::types::RowAlternateColorOptions {
             status: self.status,
             row_alternate_colors: self.row_alternate_colors,
+            use_primary_background_color: self.use_primary_background_color,
         }
     }
 }

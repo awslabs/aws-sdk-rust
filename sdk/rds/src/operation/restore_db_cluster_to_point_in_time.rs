@@ -260,6 +260,8 @@ pub type RestoreDBClusterToPointInTimeErrorKind = RestoreDBClusterToPointInTimeE
 pub enum RestoreDBClusterToPointInTimeError {
     /// <p>The user already has a DB cluster with the given identifier.</p>
     DbClusterAlreadyExistsFault(crate::types::error::DbClusterAlreadyExistsFault),
+    /// <p>No automated backup for this DB cluster was found.</p>
+    DbClusterAutomatedBackupNotFoundFault(crate::types::error::DbClusterAutomatedBackupNotFoundFault),
     /// <p> <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.</p>
     DbClusterNotFoundFault(crate::types::error::DbClusterNotFoundFault),
     /// <p> <code>DBClusterParameterGroupName</code> doesn't refer to an existing DB cluster parameter group.</p>
@@ -313,6 +315,7 @@ impl ::std::fmt::Display for RestoreDBClusterToPointInTimeError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
             Self::DbClusterAlreadyExistsFault(_inner) => _inner.fmt(f),
+            Self::DbClusterAutomatedBackupNotFoundFault(_inner) => _inner.fmt(f),
             Self::DbClusterNotFoundFault(_inner) => _inner.fmt(f),
             Self::DbClusterParameterGroupNotFoundFault(_inner) => _inner.fmt(f),
             Self::DbClusterQuotaExceededFault(_inner) => _inner.fmt(f),
@@ -338,6 +341,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for RestoreDBClus
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::DbClusterAlreadyExistsFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::DbClusterAutomatedBackupNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::DbClusterNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::DbClusterParameterGroupNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::DbClusterQuotaExceededFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
@@ -392,6 +396,7 @@ impl RestoreDBClusterToPointInTimeError {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         match self {
             Self::DbClusterAlreadyExistsFault(e) => e.meta(),
+            Self::DbClusterAutomatedBackupNotFoundFault(e) => e.meta(),
             Self::DbClusterNotFoundFault(e) => e.meta(),
             Self::DbClusterParameterGroupNotFoundFault(e) => e.meta(),
             Self::DbClusterQuotaExceededFault(e) => e.meta(),
@@ -415,6 +420,10 @@ impl RestoreDBClusterToPointInTimeError {
     /// Returns `true` if the error kind is `RestoreDBClusterToPointInTimeError::DbClusterAlreadyExistsFault`.
     pub fn is_db_cluster_already_exists_fault(&self) -> bool {
         matches!(self, Self::DbClusterAlreadyExistsFault(_))
+    }
+    /// Returns `true` if the error kind is `RestoreDBClusterToPointInTimeError::DbClusterAutomatedBackupNotFoundFault`.
+    pub fn is_db_cluster_automated_backup_not_found_fault(&self) -> bool {
+        matches!(self, Self::DbClusterAutomatedBackupNotFoundFault(_))
     }
     /// Returns `true` if the error kind is `RestoreDBClusterToPointInTimeError::DbClusterNotFoundFault`.
     pub fn is_db_cluster_not_found_fault(&self) -> bool {
@@ -489,6 +498,7 @@ impl ::std::error::Error for RestoreDBClusterToPointInTimeError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
             Self::DbClusterAlreadyExistsFault(_inner) => ::std::option::Option::Some(_inner),
+            Self::DbClusterAutomatedBackupNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
             Self::DbClusterNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
             Self::DbClusterParameterGroupNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
             Self::DbClusterQuotaExceededFault(_inner) => ::std::option::Option::Some(_inner),

@@ -2,7 +2,7 @@
 
 /// An endpoint for ingesting source content for a Channel.
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct IngestEndpoint {
     /// The system generated unique identifier for the IngestEndpoint
     pub id: ::std::option::Option<::std::string::String>,
@@ -31,6 +31,16 @@ impl IngestEndpoint {
         self.username.as_deref()
     }
 }
+impl ::std::fmt::Debug for IngestEndpoint {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("IngestEndpoint");
+        formatter.field("id", &self.id);
+        formatter.field("password", &"*** Sensitive Data Redacted ***");
+        formatter.field("url", &self.url);
+        formatter.field("username", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl IngestEndpoint {
     /// Creates a new builder-style object to manufacture [`IngestEndpoint`](crate::types::IngestEndpoint).
     pub fn builder() -> crate::types::builders::IngestEndpointBuilder {
@@ -40,7 +50,7 @@ impl IngestEndpoint {
 
 /// A builder for [`IngestEndpoint`](crate::types::IngestEndpoint).
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct IngestEndpointBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) password: ::std::option::Option<::std::string::String>,
@@ -112,5 +122,15 @@ impl IngestEndpointBuilder {
             url: self.url,
             username: self.username,
         }
+    }
+}
+impl ::std::fmt::Debug for IngestEndpointBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("IngestEndpointBuilder");
+        formatter.field("id", &self.id);
+        formatter.field("password", &"*** Sensitive Data Redacted ***");
+        formatter.field("url", &self.url);
+        formatter.field("username", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

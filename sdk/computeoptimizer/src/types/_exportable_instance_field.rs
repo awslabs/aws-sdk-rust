@@ -13,6 +13,7 @@
 /// # let exportableinstancefield = unimplemented!();
 /// match exportableinstancefield {
 ///     ExportableInstanceField::AccountId => { /* ... */ },
+///     ExportableInstanceField::CurrentInstanceGpuInfo => { /* ... */ },
 ///     ExportableInstanceField::CurrentInstanceType => { /* ... */ },
 ///     ExportableInstanceField::CurrentMemory => { /* ... */ },
 ///     ExportableInstanceField::CurrentNetwork => { /* ... */ },
@@ -30,6 +31,7 @@
 ///     ExportableInstanceField::ExternalMetricStatusReason => { /* ... */ },
 ///     ExportableInstanceField::Finding => { /* ... */ },
 ///     ExportableInstanceField::FindingReasonCodes => { /* ... */ },
+///     ExportableInstanceField::Idle => { /* ... */ },
 ///     ExportableInstanceField::InferredWorkloadTypes => { /* ... */ },
 ///     ExportableInstanceField::InstanceArn => { /* ... */ },
 ///     ExportableInstanceField::InstanceName => { /* ... */ },
@@ -38,6 +40,7 @@
 ///     ExportableInstanceField::LookbackPeriodInDays => { /* ... */ },
 ///     ExportableInstanceField::RecommendationOptionsEstimatedMonthlySavingsCurrency => { /* ... */ },
 ///     ExportableInstanceField::RecommendationOptionsEstimatedMonthlySavingsValue => { /* ... */ },
+///     ExportableInstanceField::RecommendationOptionsInstanceGpuInfo => { /* ... */ },
 ///     ExportableInstanceField::RecommendationOptionsInstanceType => { /* ... */ },
 ///     ExportableInstanceField::RecommendationOptionsMemory => { /* ... */ },
 ///     ExportableInstanceField::RecommendationOptionsMigrationEffort => { /* ... */ },
@@ -46,6 +49,8 @@
 ///     ExportableInstanceField::RecommendationOptionsPerformanceRisk => { /* ... */ },
 ///     ExportableInstanceField::RecommendationOptionsPlatformDifferences => { /* ... */ },
 ///     ExportableInstanceField::RecommendationOptionsProjectedUtilizationMetricsCpuMaximum => { /* ... */ },
+///     ExportableInstanceField::RecommendationOptionsProjectedUtilizationMetricsGpuMemoryPercentageMaximum => { /* ... */ },
+///     ExportableInstanceField::RecommendationOptionsProjectedUtilizationMetricsGpuPercentageMaximum => { /* ... */ },
 ///     ExportableInstanceField::RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum => { /* ... */ },
 ///     ExportableInstanceField::RecommendationOptionsSavingsOpportunityPercentage => { /* ... */ },
 ///     ExportableInstanceField::RecommendationOptionsStandardOneYearNoUpfrontReservedPrice => { /* ... */ },
@@ -64,6 +69,8 @@
 ///     ExportableInstanceField::UtilizationMetricsEbsReadOpsPerSecondMaximum => { /* ... */ },
 ///     ExportableInstanceField::UtilizationMetricsEbsWriteBytesPerSecondMaximum => { /* ... */ },
 ///     ExportableInstanceField::UtilizationMetricsEbsWriteOpsPerSecondMaximum => { /* ... */ },
+///     ExportableInstanceField::UtilizationMetricsGpuMemoryPercentageMaximum => { /* ... */ },
+///     ExportableInstanceField::UtilizationMetricsGpuPercentageMaximum => { /* ... */ },
 ///     ExportableInstanceField::UtilizationMetricsMemoryMaximum => { /* ... */ },
 ///     ExportableInstanceField::UtilizationMetricsNetworkInBytesPerSecondMaximum => { /* ... */ },
 ///     ExportableInstanceField::UtilizationMetricsNetworkOutBytesPerSecondMaximum => { /* ... */ },
@@ -99,6 +106,8 @@ pub enum ExportableInstanceField {
     #[allow(missing_docs)] // documentation missing in model
     AccountId,
     #[allow(missing_docs)] // documentation missing in model
+    CurrentInstanceGpuInfo,
+    #[allow(missing_docs)] // documentation missing in model
     CurrentInstanceType,
     #[allow(missing_docs)] // documentation missing in model
     CurrentMemory,
@@ -133,6 +142,8 @@ pub enum ExportableInstanceField {
     #[allow(missing_docs)] // documentation missing in model
     FindingReasonCodes,
     #[allow(missing_docs)] // documentation missing in model
+    Idle,
+    #[allow(missing_docs)] // documentation missing in model
     InferredWorkloadTypes,
     #[allow(missing_docs)] // documentation missing in model
     InstanceArn,
@@ -149,6 +160,8 @@ pub enum ExportableInstanceField {
     #[allow(missing_docs)] // documentation missing in model
     RecommendationOptionsEstimatedMonthlySavingsValue,
     #[allow(missing_docs)] // documentation missing in model
+    RecommendationOptionsInstanceGpuInfo,
+    #[allow(missing_docs)] // documentation missing in model
     RecommendationOptionsInstanceType,
     #[allow(missing_docs)] // documentation missing in model
     RecommendationOptionsMemory,
@@ -164,6 +177,10 @@ pub enum ExportableInstanceField {
     RecommendationOptionsPlatformDifferences,
     #[allow(missing_docs)] // documentation missing in model
     RecommendationOptionsProjectedUtilizationMetricsCpuMaximum,
+    #[allow(missing_docs)] // documentation missing in model
+    RecommendationOptionsProjectedUtilizationMetricsGpuMemoryPercentageMaximum,
+    #[allow(missing_docs)] // documentation missing in model
+    RecommendationOptionsProjectedUtilizationMetricsGpuPercentageMaximum,
     #[allow(missing_docs)] // documentation missing in model
     RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum,
     #[allow(missing_docs)] // documentation missing in model
@@ -201,6 +218,10 @@ pub enum ExportableInstanceField {
     #[allow(missing_docs)] // documentation missing in model
     UtilizationMetricsEbsWriteOpsPerSecondMaximum,
     #[allow(missing_docs)] // documentation missing in model
+    UtilizationMetricsGpuMemoryPercentageMaximum,
+    #[allow(missing_docs)] // documentation missing in model
+    UtilizationMetricsGpuPercentageMaximum,
+    #[allow(missing_docs)] // documentation missing in model
     UtilizationMetricsMemoryMaximum,
     #[allow(missing_docs)] // documentation missing in model
     UtilizationMetricsNetworkInBytesPerSecondMaximum,
@@ -217,6 +238,7 @@ impl ::std::convert::From<&str> for ExportableInstanceField {
     fn from(s: &str) -> Self {
         match s {
             "AccountId" => ExportableInstanceField::AccountId,
+            "CurrentInstanceGpuInfo" => ExportableInstanceField::CurrentInstanceGpuInfo,
             "CurrentInstanceType" => ExportableInstanceField::CurrentInstanceType,
             "CurrentMemory" => ExportableInstanceField::CurrentMemory,
             "CurrentNetwork" => ExportableInstanceField::CurrentNetwork,
@@ -242,6 +264,7 @@ impl ::std::convert::From<&str> for ExportableInstanceField {
             "ExternalMetricStatusReason" => ExportableInstanceField::ExternalMetricStatusReason,
             "Finding" => ExportableInstanceField::Finding,
             "FindingReasonCodes" => ExportableInstanceField::FindingReasonCodes,
+            "Idle" => ExportableInstanceField::Idle,
             "InferredWorkloadTypes" => ExportableInstanceField::InferredWorkloadTypes,
             "InstanceArn" => ExportableInstanceField::InstanceArn,
             "InstanceName" => ExportableInstanceField::InstanceName,
@@ -250,6 +273,7 @@ impl ::std::convert::From<&str> for ExportableInstanceField {
             "LookbackPeriodInDays" => ExportableInstanceField::LookbackPeriodInDays,
             "RecommendationOptionsEstimatedMonthlySavingsCurrency" => ExportableInstanceField::RecommendationOptionsEstimatedMonthlySavingsCurrency,
             "RecommendationOptionsEstimatedMonthlySavingsValue" => ExportableInstanceField::RecommendationOptionsEstimatedMonthlySavingsValue,
+            "RecommendationOptionsInstanceGpuInfo" => ExportableInstanceField::RecommendationOptionsInstanceGpuInfo,
             "RecommendationOptionsInstanceType" => ExportableInstanceField::RecommendationOptionsInstanceType,
             "RecommendationOptionsMemory" => ExportableInstanceField::RecommendationOptionsMemory,
             "RecommendationOptionsMigrationEffort" => ExportableInstanceField::RecommendationOptionsMigrationEffort,
@@ -259,6 +283,12 @@ impl ::std::convert::From<&str> for ExportableInstanceField {
             "RecommendationOptionsPlatformDifferences" => ExportableInstanceField::RecommendationOptionsPlatformDifferences,
             "RecommendationOptionsProjectedUtilizationMetricsCpuMaximum" => {
                 ExportableInstanceField::RecommendationOptionsProjectedUtilizationMetricsCpuMaximum
+            }
+            "RecommendationOptionsProjectedUtilizationMetricsGpuMemoryPercentageMaximum" => {
+                ExportableInstanceField::RecommendationOptionsProjectedUtilizationMetricsGpuMemoryPercentageMaximum
+            }
+            "RecommendationOptionsProjectedUtilizationMetricsGpuPercentageMaximum" => {
+                ExportableInstanceField::RecommendationOptionsProjectedUtilizationMetricsGpuPercentageMaximum
             }
             "RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum" => {
                 ExportableInstanceField::RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum
@@ -284,6 +314,8 @@ impl ::std::convert::From<&str> for ExportableInstanceField {
             "UtilizationMetricsEbsReadOpsPerSecondMaximum" => ExportableInstanceField::UtilizationMetricsEbsReadOpsPerSecondMaximum,
             "UtilizationMetricsEbsWriteBytesPerSecondMaximum" => ExportableInstanceField::UtilizationMetricsEbsWriteBytesPerSecondMaximum,
             "UtilizationMetricsEbsWriteOpsPerSecondMaximum" => ExportableInstanceField::UtilizationMetricsEbsWriteOpsPerSecondMaximum,
+            "UtilizationMetricsGpuMemoryPercentageMaximum" => ExportableInstanceField::UtilizationMetricsGpuMemoryPercentageMaximum,
+            "UtilizationMetricsGpuPercentageMaximum" => ExportableInstanceField::UtilizationMetricsGpuPercentageMaximum,
             "UtilizationMetricsMemoryMaximum" => ExportableInstanceField::UtilizationMetricsMemoryMaximum,
             "UtilizationMetricsNetworkInBytesPerSecondMaximum" => ExportableInstanceField::UtilizationMetricsNetworkInBytesPerSecondMaximum,
             "UtilizationMetricsNetworkOutBytesPerSecondMaximum" => ExportableInstanceField::UtilizationMetricsNetworkOutBytesPerSecondMaximum,
@@ -305,6 +337,7 @@ impl ExportableInstanceField {
     pub fn as_str(&self) -> &str {
         match self {
             ExportableInstanceField::AccountId => "AccountId",
+            ExportableInstanceField::CurrentInstanceGpuInfo => "CurrentInstanceGpuInfo",
             ExportableInstanceField::CurrentInstanceType => "CurrentInstanceType",
             ExportableInstanceField::CurrentMemory => "CurrentMemory",
             ExportableInstanceField::CurrentNetwork => "CurrentNetwork",
@@ -330,6 +363,7 @@ impl ExportableInstanceField {
             ExportableInstanceField::ExternalMetricStatusReason => "ExternalMetricStatusReason",
             ExportableInstanceField::Finding => "Finding",
             ExportableInstanceField::FindingReasonCodes => "FindingReasonCodes",
+            ExportableInstanceField::Idle => "Idle",
             ExportableInstanceField::InferredWorkloadTypes => "InferredWorkloadTypes",
             ExportableInstanceField::InstanceArn => "InstanceArn",
             ExportableInstanceField::InstanceName => "InstanceName",
@@ -338,6 +372,7 @@ impl ExportableInstanceField {
             ExportableInstanceField::LookbackPeriodInDays => "LookbackPeriodInDays",
             ExportableInstanceField::RecommendationOptionsEstimatedMonthlySavingsCurrency => "RecommendationOptionsEstimatedMonthlySavingsCurrency",
             ExportableInstanceField::RecommendationOptionsEstimatedMonthlySavingsValue => "RecommendationOptionsEstimatedMonthlySavingsValue",
+            ExportableInstanceField::RecommendationOptionsInstanceGpuInfo => "RecommendationOptionsInstanceGpuInfo",
             ExportableInstanceField::RecommendationOptionsInstanceType => "RecommendationOptionsInstanceType",
             ExportableInstanceField::RecommendationOptionsMemory => "RecommendationOptionsMemory",
             ExportableInstanceField::RecommendationOptionsMigrationEffort => "RecommendationOptionsMigrationEffort",
@@ -347,6 +382,12 @@ impl ExportableInstanceField {
             ExportableInstanceField::RecommendationOptionsPlatformDifferences => "RecommendationOptionsPlatformDifferences",
             ExportableInstanceField::RecommendationOptionsProjectedUtilizationMetricsCpuMaximum => {
                 "RecommendationOptionsProjectedUtilizationMetricsCpuMaximum"
+            }
+            ExportableInstanceField::RecommendationOptionsProjectedUtilizationMetricsGpuMemoryPercentageMaximum => {
+                "RecommendationOptionsProjectedUtilizationMetricsGpuMemoryPercentageMaximum"
+            }
+            ExportableInstanceField::RecommendationOptionsProjectedUtilizationMetricsGpuPercentageMaximum => {
+                "RecommendationOptionsProjectedUtilizationMetricsGpuPercentageMaximum"
             }
             ExportableInstanceField::RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum => {
                 "RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum"
@@ -372,6 +413,8 @@ impl ExportableInstanceField {
             ExportableInstanceField::UtilizationMetricsEbsReadOpsPerSecondMaximum => "UtilizationMetricsEbsReadOpsPerSecondMaximum",
             ExportableInstanceField::UtilizationMetricsEbsWriteBytesPerSecondMaximum => "UtilizationMetricsEbsWriteBytesPerSecondMaximum",
             ExportableInstanceField::UtilizationMetricsEbsWriteOpsPerSecondMaximum => "UtilizationMetricsEbsWriteOpsPerSecondMaximum",
+            ExportableInstanceField::UtilizationMetricsGpuMemoryPercentageMaximum => "UtilizationMetricsGpuMemoryPercentageMaximum",
+            ExportableInstanceField::UtilizationMetricsGpuPercentageMaximum => "UtilizationMetricsGpuPercentageMaximum",
             ExportableInstanceField::UtilizationMetricsMemoryMaximum => "UtilizationMetricsMemoryMaximum",
             ExportableInstanceField::UtilizationMetricsNetworkInBytesPerSecondMaximum => "UtilizationMetricsNetworkInBytesPerSecondMaximum",
             ExportableInstanceField::UtilizationMetricsNetworkOutBytesPerSecondMaximum => "UtilizationMetricsNetworkOutBytesPerSecondMaximum",
@@ -384,6 +427,7 @@ impl ExportableInstanceField {
     pub const fn values() -> &'static [&'static str] {
         &[
             "AccountId",
+            "CurrentInstanceGpuInfo",
             "CurrentInstanceType",
             "CurrentMemory",
             "CurrentNetwork",
@@ -401,6 +445,7 @@ impl ExportableInstanceField {
             "ExternalMetricStatusReason",
             "Finding",
             "FindingReasonCodes",
+            "Idle",
             "InferredWorkloadTypes",
             "InstanceArn",
             "InstanceName",
@@ -409,6 +454,7 @@ impl ExportableInstanceField {
             "LookbackPeriodInDays",
             "RecommendationOptionsEstimatedMonthlySavingsCurrency",
             "RecommendationOptionsEstimatedMonthlySavingsValue",
+            "RecommendationOptionsInstanceGpuInfo",
             "RecommendationOptionsInstanceType",
             "RecommendationOptionsMemory",
             "RecommendationOptionsMigrationEffort",
@@ -417,6 +463,8 @@ impl ExportableInstanceField {
             "RecommendationOptionsPerformanceRisk",
             "RecommendationOptionsPlatformDifferences",
             "RecommendationOptionsProjectedUtilizationMetricsCpuMaximum",
+            "RecommendationOptionsProjectedUtilizationMetricsGpuMemoryPercentageMaximum",
+            "RecommendationOptionsProjectedUtilizationMetricsGpuPercentageMaximum",
             "RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum",
             "RecommendationOptionsSavingsOpportunityPercentage",
             "RecommendationOptionsStandardOneYearNoUpfrontReservedPrice",
@@ -435,6 +483,8 @@ impl ExportableInstanceField {
             "UtilizationMetricsEbsReadOpsPerSecondMaximum",
             "UtilizationMetricsEbsWriteBytesPerSecondMaximum",
             "UtilizationMetricsEbsWriteOpsPerSecondMaximum",
+            "UtilizationMetricsGpuMemoryPercentageMaximum",
+            "UtilizationMetricsGpuPercentageMaximum",
             "UtilizationMetricsMemoryMaximum",
             "UtilizationMetricsNetworkInBytesPerSecondMaximum",
             "UtilizationMetricsNetworkOutBytesPerSecondMaximum",

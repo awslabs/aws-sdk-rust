@@ -323,6 +323,8 @@ pub(crate) mod shape_private_link_config;
 
 pub(crate) mod shape_qop_configuration;
 
+pub(crate) mod shape_report_result;
+
 pub(crate) mod shape_resource_details;
 
 pub(crate) mod shape_s3_config;
@@ -342,6 +344,8 @@ pub(crate) mod shape_task_execution_result_detail;
 pub(crate) mod shape_task_filter;
 
 pub(crate) mod shape_task_list;
+
+pub(crate) mod shape_task_report_config;
 
 pub(crate) mod shape_task_schedule;
 
@@ -365,6 +369,10 @@ pub(crate) mod shape_pl_security_group_arn_list;
 
 pub(crate) mod shape_pl_subnet_arn_list;
 
+pub(crate) mod shape_report_destination;
+
+pub(crate) mod shape_report_overrides;
+
 pub(crate) mod shape_resource_metrics;
 
 pub(crate) mod shape_storage_system_list_entry;
@@ -382,6 +390,10 @@ pub(crate) mod shape_net_app_ontap_volume;
 pub(crate) mod shape_net_app_ontapsvm;
 
 pub(crate) mod shape_p95_metrics;
+
+pub(crate) mod shape_report_destination_s3;
+
+pub(crate) mod shape_report_override;
 
 pub(crate) mod shape_enabled_protocols;
 

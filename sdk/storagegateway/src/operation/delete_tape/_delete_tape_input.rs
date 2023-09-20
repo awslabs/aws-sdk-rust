@@ -9,7 +9,7 @@ pub struct DeleteTapeInput {
     /// <p>The Amazon Resource Name (ARN) of the virtual tape to delete.</p>
     pub tape_arn: ::std::option::Option<::std::string::String>,
     /// <p>Set to <code>TRUE</code> to delete an archived tape that belongs to a custom pool with tape retention lock. Only archived tapes with tape retention lock set to <code>governance</code> can be deleted. Archived tapes with tape retention lock set to <code>compliance</code> can't be deleted.</p>
-    pub bypass_governance_retention: bool,
+    pub bypass_governance_retention: ::std::option::Option<bool>,
 }
 impl DeleteTapeInput {
     /// <p>The unique Amazon Resource Name (ARN) of the gateway that the virtual tape to delete is associated with. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
@@ -21,7 +21,7 @@ impl DeleteTapeInput {
         self.tape_arn.as_deref()
     }
     /// <p>Set to <code>TRUE</code> to delete an archived tape that belongs to a custom pool with tape retention lock. Only archived tapes with tape retention lock set to <code>governance</code> can be deleted. Archived tapes with tape retention lock set to <code>compliance</code> can't be deleted.</p>
-    pub fn bypass_governance_retention(&self) -> bool {
+    pub fn bypass_governance_retention(&self) -> ::std::option::Option<bool> {
         self.bypass_governance_retention
     }
 }
@@ -88,7 +88,7 @@ impl DeleteTapeInputBuilder {
         ::std::result::Result::Ok(crate::operation::delete_tape::DeleteTapeInput {
             gateway_arn: self.gateway_arn,
             tape_arn: self.tape_arn,
-            bypass_governance_retention: self.bypass_governance_retention.unwrap_or_default(),
+            bypass_governance_retention: self.bypass_governance_retention,
         })
     }
 }

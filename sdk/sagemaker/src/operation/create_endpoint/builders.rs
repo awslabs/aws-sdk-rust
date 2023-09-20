@@ -23,8 +23,7 @@ impl CreateEndpointInputBuilder {
 /// Fluent builder constructing a request to `CreateEndpoint`.
 ///
 /// <p>Creates an endpoint using the endpoint configuration specified in the request. SageMaker uses the endpoint to provision resources and deploy models. You create the endpoint configuration with the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpointConfig.html">CreateEndpointConfig</a> API. </p>
-/// <p> Use this API to deploy models using SageMaker hosting services. </p>
-/// <p>For an example that calls this method when deploying a model to SageMaker hosting services, see the <a href="https://github.com/aws/amazon-sagemaker-examples/blob/master/sagemaker-fundamentals/create-endpoint/create_endpoint.ipynb">Create Endpoint example notebook.</a> </p> <note>
+/// <p> Use this API to deploy models using SageMaker hosting services. </p> <note>
 /// <p> You must not delete an <code>EndpointConfig</code> that is in use by an endpoint that is live or while the <code>UpdateEndpoint</code> or <code>CreateEndpoint</code> operations are being performed on the endpoint. To update an endpoint, you must create a new <code>EndpointConfig</code>.</p>
 /// </note>
 /// <p>The endpoint name must be unique within an Amazon Web Services Region in your Amazon Web Services account. </p>

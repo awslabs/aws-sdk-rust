@@ -199,11 +199,10 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for ImportRestA
                         }
                     }
                 }
-                if _input.fail_on_warnings {
-                    query.push_kv(
-                        "failonwarnings",
-                        ::aws_smithy_types::primitive::Encoder::from(_input.fail_on_warnings).encode(),
-                    );
+                if let ::std::option::Option::Some(inner_2) = &_input.fail_on_warnings {
+                    if *inner_2 {
+                        query.push_kv("failonwarnings", ::aws_smithy_types::primitive::Encoder::from(*inner_2).encode());
+                    }
                 }
                 ::std::result::Result::Ok(())
             }

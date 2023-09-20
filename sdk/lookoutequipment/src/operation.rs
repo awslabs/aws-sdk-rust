@@ -16,6 +16,9 @@ pub mod create_label_group;
 /// Types for the `CreateModel` operation.
 pub mod create_model;
 
+/// Types for the `CreateRetrainingScheduler` operation.
+pub mod create_retraining_scheduler;
+
 /// Types for the `DeleteDataset` operation.
 pub mod delete_dataset;
 
@@ -30,6 +33,12 @@ pub mod delete_label_group;
 
 /// Types for the `DeleteModel` operation.
 pub mod delete_model;
+
+/// Types for the `DeleteResourcePolicy` operation.
+pub mod delete_resource_policy;
+
+/// Types for the `DeleteRetrainingScheduler` operation.
+pub mod delete_retraining_scheduler;
 
 /// Types for the `DescribeDataIngestionJob` operation.
 pub mod describe_data_ingestion_job;
@@ -48,6 +57,21 @@ pub mod describe_label_group;
 
 /// Types for the `DescribeModel` operation.
 pub mod describe_model;
+
+/// Types for the `DescribeModelVersion` operation.
+pub mod describe_model_version;
+
+/// Types for the `DescribeResourcePolicy` operation.
+pub mod describe_resource_policy;
+
+/// Types for the `DescribeRetrainingScheduler` operation.
+pub mod describe_retraining_scheduler;
+
+/// Types for the `ImportDataset` operation.
+pub mod import_dataset;
+
+/// Types for the `ImportModelVersion` operation.
+pub mod import_model_version;
 
 /// Types for the `ListDataIngestionJobs` operation.
 pub mod list_data_ingestion_jobs;
@@ -70,8 +94,14 @@ pub mod list_label_groups;
 /// Types for the `ListLabels` operation.
 pub mod list_labels;
 
+/// Types for the `ListModelVersions` operation.
+pub mod list_model_versions;
+
 /// Types for the `ListModels` operation.
 pub mod list_models;
+
+/// Types for the `ListRetrainingSchedulers` operation.
+pub mod list_retraining_schedulers;
 
 /// Types for the `ListSensorStatistics` operation.
 pub mod list_sensor_statistics;
@@ -79,14 +109,23 @@ pub mod list_sensor_statistics;
 /// Types for the `ListTagsForResource` operation.
 pub mod list_tags_for_resource;
 
+/// Types for the `PutResourcePolicy` operation.
+pub mod put_resource_policy;
+
 /// Types for the `StartDataIngestionJob` operation.
 pub mod start_data_ingestion_job;
 
 /// Types for the `StartInferenceScheduler` operation.
 pub mod start_inference_scheduler;
 
+/// Types for the `StartRetrainingScheduler` operation.
+pub mod start_retraining_scheduler;
+
 /// Types for the `StopInferenceScheduler` operation.
 pub mod stop_inference_scheduler;
+
+/// Types for the `StopRetrainingScheduler` operation.
+pub mod stop_retraining_scheduler;
 
 /// Types for the `TagResource` operation.
 pub mod tag_resource;
@@ -94,8 +133,17 @@ pub mod tag_resource;
 /// Types for the `UntagResource` operation.
 pub mod untag_resource;
 
+/// Types for the `UpdateActiveModelVersion` operation.
+pub mod update_active_model_version;
+
 /// Types for the `UpdateInferenceScheduler` operation.
 pub mod update_inference_scheduler;
 
 /// Types for the `UpdateLabelGroup` operation.
 pub mod update_label_group;
+
+/// Types for the `UpdateModel` operation.
+pub mod update_model;
+
+/// Types for the `UpdateRetrainingScheduler` operation.
+pub mod update_retraining_scheduler;

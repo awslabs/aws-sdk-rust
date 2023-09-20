@@ -7,7 +7,7 @@ impl super::Client {
     ///   - [`label_id(impl Into<String>)`](crate::operation::describe_label::builders::DescribeLabelFluentBuilder::label_id) / [`set_label_id(Option<String>)`](crate::operation::describe_label::builders::DescribeLabelFluentBuilder::set_label_id): <p> Returns the ID of the label. </p>
     /// - On success, responds with [`DescribeLabelOutput`](crate::operation::describe_label::DescribeLabelOutput) with field(s):
     ///   - [`label_group_name(Option<String>)`](crate::operation::describe_label::DescribeLabelOutput::label_group_name): <p> The name of the requested label group. </p>
-    ///   - [`label_group_arn(Option<String>)`](crate::operation::describe_label::DescribeLabelOutput::label_group_arn): <p> The ARN of the requested label group. </p>
+    ///   - [`label_group_arn(Option<String>)`](crate::operation::describe_label::DescribeLabelOutput::label_group_arn): <p> The Amazon Resource Name (ARN) of the requested label group. </p>
     ///   - [`label_id(Option<String>)`](crate::operation::describe_label::DescribeLabelOutput::label_id): <p> The ID of the requested label. </p>
     ///   - [`start_time(Option<DateTime>)`](crate::operation::describe_label::DescribeLabelOutput::start_time): <p> The start time of the requested label. </p>
     ///   - [`end_time(Option<DateTime>)`](crate::operation::describe_label::DescribeLabelOutput::end_time): <p> The end time of the requested label. </p>

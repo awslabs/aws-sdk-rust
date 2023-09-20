@@ -2,7 +2,7 @@
 
 /// <p> The location where Audit Manager saves assessment reports for the given assessment. </p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct AssessmentReportsDestination {
     /// <p> The destination type, such as Amazon S3. </p>
     pub destination_type: ::std::option::Option<crate::types::AssessmentReportDestinationType>,
@@ -19,6 +19,14 @@ impl AssessmentReportsDestination {
         self.destination.as_deref()
     }
 }
+impl ::std::fmt::Debug for AssessmentReportsDestination {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("AssessmentReportsDestination");
+        formatter.field("destination_type", &"*** Sensitive Data Redacted ***");
+        formatter.field("destination", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl AssessmentReportsDestination {
     /// Creates a new builder-style object to manufacture [`AssessmentReportsDestination`](crate::types::AssessmentReportsDestination).
     pub fn builder() -> crate::types::builders::AssessmentReportsDestinationBuilder {
@@ -28,7 +36,7 @@ impl AssessmentReportsDestination {
 
 /// A builder for [`AssessmentReportsDestination`](crate::types::AssessmentReportsDestination).
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct AssessmentReportsDestinationBuilder {
     pub(crate) destination_type: ::std::option::Option<crate::types::AssessmentReportDestinationType>,
     pub(crate) destination: ::std::option::Option<::std::string::String>,
@@ -68,5 +76,13 @@ impl AssessmentReportsDestinationBuilder {
             destination_type: self.destination_type,
             destination: self.destination,
         }
+    }
+}
+impl ::std::fmt::Debug for AssessmentReportsDestinationBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("AssessmentReportsDestinationBuilder");
+        formatter.field("destination_type", &"*** Sensitive Data Redacted ***");
+        formatter.field("destination", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

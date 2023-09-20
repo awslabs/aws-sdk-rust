@@ -3,47 +3,66 @@ pub fn ser_create_user_settings_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_user_settings::CreateUserSettingsInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.client_token {
-        object.key("clientToken").string(var_1.as_str());
-    }
-    if let Some(var_2) = &input.copy_allowed {
-        object.key("copyAllowed").string(var_2.as_str());
-    }
-    if let Some(var_3) = &input.disconnect_timeout_in_minutes {
-        object.key("disconnectTimeoutInMinutes").number(
-            #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_3).into()),
-        );
-    }
-    if let Some(var_4) = &input.download_allowed {
-        object.key("downloadAllowed").string(var_4.as_str());
-    }
-    if let Some(var_5) = &input.idle_disconnect_timeout_in_minutes {
-        object.key("idleDisconnectTimeoutInMinutes").number(
-            #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_5).into()),
-        );
-    }
-    if let Some(var_6) = &input.paste_allowed {
-        object.key("pasteAllowed").string(var_6.as_str());
-    }
-    if let Some(var_7) = &input.print_allowed {
-        object.key("printAllowed").string(var_7.as_str());
-    }
-    if let Some(var_8) = &input.tags {
-        let mut array_9 = object.key("tags").start_array();
-        for item_10 in var_8 {
+    if let Some(var_1) = &input.additional_encryption_context {
+        #[allow(unused_mut)]
+        let mut object_2 = object.key("additionalEncryptionContext").start_object();
+        for (key_3, value_4) in var_1 {
             {
-                #[allow(unused_mut)]
-                let mut object_11 = array_9.value().start_object();
-                crate::protocol_serde::shape_tag::ser_tag(&mut object_11, item_10)?;
-                object_11.finish();
+                object_2.key(key_3.as_str()).string(value_4.as_str());
             }
         }
-        array_9.finish();
+        object_2.finish();
     }
-    if let Some(var_12) = &input.upload_allowed {
-        object.key("uploadAllowed").string(var_12.as_str());
+    if let Some(var_5) = &input.client_token {
+        object.key("clientToken").string(var_5.as_str());
+    }
+    if let Some(var_6) = &input.cookie_synchronization_configuration {
+        #[allow(unused_mut)]
+        let mut object_7 = object.key("cookieSynchronizationConfiguration").start_object();
+        crate::protocol_serde::shape_cookie_synchronization_configuration::ser_cookie_synchronization_configuration(&mut object_7, var_6)?;
+        object_7.finish();
+    }
+    if let Some(var_8) = &input.copy_allowed {
+        object.key("copyAllowed").string(var_8.as_str());
+    }
+    if let Some(var_9) = &input.customer_managed_key {
+        object.key("customerManagedKey").string(var_9.as_str());
+    }
+    if let Some(var_10) = &input.disconnect_timeout_in_minutes {
+        object.key("disconnectTimeoutInMinutes").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_10).into()),
+        );
+    }
+    if let Some(var_11) = &input.download_allowed {
+        object.key("downloadAllowed").string(var_11.as_str());
+    }
+    if let Some(var_12) = &input.idle_disconnect_timeout_in_minutes {
+        object.key("idleDisconnectTimeoutInMinutes").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_12).into()),
+        );
+    }
+    if let Some(var_13) = &input.paste_allowed {
+        object.key("pasteAllowed").string(var_13.as_str());
+    }
+    if let Some(var_14) = &input.print_allowed {
+        object.key("printAllowed").string(var_14.as_str());
+    }
+    if let Some(var_15) = &input.tags {
+        let mut array_16 = object.key("tags").start_array();
+        for item_17 in var_15 {
+            {
+                #[allow(unused_mut)]
+                let mut object_18 = array_16.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_18, item_17)?;
+                object_18.finish();
+            }
+        }
+        array_16.finish();
+    }
+    if let Some(var_19) = &input.upload_allowed {
+        object.key("uploadAllowed").string(var_19.as_str());
     }
     Ok(())
 }

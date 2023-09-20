@@ -11,7 +11,7 @@ pub struct ListInferenceEventsInput {
     pub inference_scheduler_name: ::std::option::Option<::std::string::String>,
     /// <p> Lookout for Equipment will return all the inference events with an end time equal to or greater than the start time given.</p>
     pub interval_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>Returns all the inference events with an end start time equal to or greater than less than the end time given</p>
+    /// <p>Returns all the inference events with an end start time equal to or greater than less than the end time given.</p>
     pub interval_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ListInferenceEventsInput {
@@ -31,7 +31,7 @@ impl ListInferenceEventsInput {
     pub fn interval_start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.interval_start_time.as_ref()
     }
-    /// <p>Returns all the inference events with an end start time equal to or greater than less than the end time given</p>
+    /// <p>Returns all the inference events with an end start time equal to or greater than less than the end time given.</p>
     pub fn interval_end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.interval_end_time.as_ref()
     }
@@ -110,17 +110,17 @@ impl ListInferenceEventsInputBuilder {
     pub fn get_interval_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.interval_start_time
     }
-    /// <p>Returns all the inference events with an end start time equal to or greater than less than the end time given</p>
+    /// <p>Returns all the inference events with an end start time equal to or greater than less than the end time given.</p>
     pub fn interval_end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.interval_end_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Returns all the inference events with an end start time equal to or greater than less than the end time given</p>
+    /// <p>Returns all the inference events with an end start time equal to or greater than less than the end time given.</p>
     pub fn set_interval_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.interval_end_time = input;
         self
     }
-    /// <p>Returns all the inference events with an end start time equal to or greater than less than the end time given</p>
+    /// <p>Returns all the inference events with an end start time equal to or greater than less than the end time given.</p>
     pub fn get_interval_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.interval_end_time
     }

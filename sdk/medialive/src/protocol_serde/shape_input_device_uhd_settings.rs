@@ -75,6 +75,18 @@ where
                                     .transpose()?,
                             );
                         }
+                        "codec" => {
+                            builder = builder.set_codec(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::InputDeviceCodec::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "mediaconnectSettings" => {
+                            builder = builder.set_mediaconnect_settings(
+                                crate::protocol_serde::shape_input_device_media_connect_settings::de_input_device_media_connect_settings(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

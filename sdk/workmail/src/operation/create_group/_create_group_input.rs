@@ -7,6 +7,8 @@ pub struct CreateGroupInput {
     pub organization_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the group.</p>
     pub name: ::std::option::Option<::std::string::String>,
+    /// <p>If this parameter is enabled, the group will be hidden from the address book.</p>
+    pub hidden_from_global_address_list: ::std::option::Option<bool>,
 }
 impl CreateGroupInput {
     /// <p>The organization under which the group is to be created.</p>
@@ -16,6 +18,10 @@ impl CreateGroupInput {
     /// <p>The name of the group.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
+    }
+    /// <p>If this parameter is enabled, the group will be hidden from the address book.</p>
+    pub fn hidden_from_global_address_list(&self) -> ::std::option::Option<bool> {
+        self.hidden_from_global_address_list
     }
 }
 impl CreateGroupInput {
@@ -31,6 +37,7 @@ impl CreateGroupInput {
 pub struct CreateGroupInputBuilder {
     pub(crate) organization_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) hidden_from_global_address_list: ::std::option::Option<bool>,
 }
 impl CreateGroupInputBuilder {
     /// <p>The organization under which the group is to be created.</p>
@@ -61,11 +68,26 @@ impl CreateGroupInputBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
+    /// <p>If this parameter is enabled, the group will be hidden from the address book.</p>
+    pub fn hidden_from_global_address_list(mut self, input: bool) -> Self {
+        self.hidden_from_global_address_list = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>If this parameter is enabled, the group will be hidden from the address book.</p>
+    pub fn set_hidden_from_global_address_list(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.hidden_from_global_address_list = input;
+        self
+    }
+    /// <p>If this parameter is enabled, the group will be hidden from the address book.</p>
+    pub fn get_hidden_from_global_address_list(&self) -> &::std::option::Option<bool> {
+        &self.hidden_from_global_address_list
+    }
     /// Consumes the builder and constructs a [`CreateGroupInput`](crate::operation::create_group::CreateGroupInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_group::CreateGroupInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_group::CreateGroupInput {
             organization_id: self.organization_id,
             name: self.name,
+            hidden_from_global_address_list: self.hidden_from_global_address_list,
         })
     }
 }

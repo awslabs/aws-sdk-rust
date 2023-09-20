@@ -47,6 +47,9 @@ where
                                     .transpose()?,
                             );
                         }
+                        "instanceGpuInfo" => {
+                            builder = builder.set_instance_gpu_info(crate::protocol_serde::shape_gpu_info::de_gpu_info(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

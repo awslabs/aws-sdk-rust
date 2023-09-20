@@ -63,6 +63,10 @@ pub use crate::types::_data_transfer_api::DataTransferApiBuilder;
 
 pub use crate::types::_sapo_data_source_properties::SapoDataSourcePropertiesBuilder;
 
+pub use crate::types::_sapo_data_pagination_config::SapoDataPaginationConfigBuilder;
+
+pub use crate::types::_sapo_data_parallelism_config::SapoDataParallelismConfigBuilder;
+
 pub use crate::types::_zendesk_source_properties::ZendeskSourcePropertiesBuilder;
 
 pub use crate::types::_veeva_source_properties::VeevaSourcePropertiesBuilder;

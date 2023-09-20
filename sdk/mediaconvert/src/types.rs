@@ -399,6 +399,8 @@ pub use crate::types::_av1_framerate_conversion_algorithm::Av1FramerateConversio
 
 pub use crate::types::_av1_framerate_control::Av1FramerateControl;
 
+pub use crate::types::_av1_film_grain_synthesis::Av1FilmGrainSynthesis;
+
 pub use crate::types::_av1_bit_depth::Av1BitDepth;
 
 pub use crate::types::_av1_adaptive_quantization::Av1AdaptiveQuantization;
@@ -466,6 +468,8 @@ pub use crate::types::_m3u8_settings::M3u8Settings;
 pub use crate::types::_timed_metadata::TimedMetadata;
 
 pub use crate::types::_m3u8_scte35_source::M3u8Scte35Source;
+
+pub use crate::types::_ts_pts_offset::TsPtsOffset;
 
 pub use crate::types::_m3u8_pcr_control::M3u8PcrControl;
 
@@ -653,6 +657,8 @@ pub use crate::types::_mp3_rate_control_mode::Mp3RateControlMode;
 
 pub use crate::types::_mp2_settings::Mp2Settings;
 
+pub use crate::types::_flac_settings::FlacSettings;
+
 pub use crate::types::_eac3_settings::Eac3Settings;
 
 pub use crate::types::_eac3_surround_mode::Eac3SurroundMode;
@@ -806,6 +812,8 @@ pub use crate::types::_speke_key_provider::SpekeKeyProvider;
 pub use crate::types::_destination_settings::DestinationSettings;
 
 pub use crate::types::_s3_destination_settings::S3DestinationSettings;
+
+pub use crate::types::_s3_storage_class::S3StorageClass;
 
 pub use crate::types::_s3_encryption_settings::S3EncryptionSettings;
 
@@ -1271,6 +1279,8 @@ mod _av1_adaptive_quantization;
 
 mod _av1_bit_depth;
 
+mod _av1_film_grain_synthesis;
+
 mod _av1_framerate_control;
 
 mod _av1_framerate_conversion_algorithm;
@@ -1618,6 +1628,8 @@ mod _file_source_convert608_to708;
 mod _file_source_settings;
 
 mod _file_source_time_delta_units;
+
+mod _flac_settings;
 
 mod _font_script;
 
@@ -2155,6 +2167,8 @@ mod _s3_object_canned_acl;
 
 mod _s3_server_side_encryption_type;
 
+mod _s3_storage_class;
+
 mod _sample_range_conversion;
 
 mod _scaling_behavior;
@@ -2198,6 +2212,8 @@ mod _timed_metadata_insertion;
 mod _timing;
 
 mod _track_source_settings;
+
+mod _ts_pts_offset;
 
 mod _ttml_destination_settings;
 

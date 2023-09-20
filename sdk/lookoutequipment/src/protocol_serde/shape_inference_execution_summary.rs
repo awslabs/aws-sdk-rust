@@ -87,6 +87,20 @@ where
                                     .transpose()?,
                             );
                         }
+                        "ModelVersion" => {
+                            builder = builder.set_model_version(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i64::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "ModelVersionArn" => {
+                            builder = builder.set_model_version_arn(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

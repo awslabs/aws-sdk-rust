@@ -5,12 +5,21 @@
 pub struct SetSecurityGroupsOutput {
     /// <p>The IDs of the security groups associated with the load balancer.</p>
     pub security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>Indicates whether to evaluate inbound security group rules for traffic sent to a Network Load Balancer through Amazon Web Services PrivateLink.</p>
+    pub enforce_security_group_inbound_rules_on_private_link_traffic:
+        ::std::option::Option<crate::types::EnforceSecurityGroupInboundRulesOnPrivateLinkTrafficEnum>,
     _request_id: Option<String>,
 }
 impl SetSecurityGroupsOutput {
     /// <p>The IDs of the security groups associated with the load balancer.</p>
     pub fn security_group_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.security_group_ids.as_deref()
+    }
+    /// <p>Indicates whether to evaluate inbound security group rules for traffic sent to a Network Load Balancer through Amazon Web Services PrivateLink.</p>
+    pub fn enforce_security_group_inbound_rules_on_private_link_traffic(
+        &self,
+    ) -> ::std::option::Option<&crate::types::EnforceSecurityGroupInboundRulesOnPrivateLinkTrafficEnum> {
+        self.enforce_security_group_inbound_rules_on_private_link_traffic.as_ref()
     }
 }
 impl ::aws_http::request_id::RequestId for SetSecurityGroupsOutput {
@@ -30,6 +39,8 @@ impl SetSecurityGroupsOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SetSecurityGroupsOutputBuilder {
     pub(crate) security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) enforce_security_group_inbound_rules_on_private_link_traffic:
+        ::std::option::Option<crate::types::EnforceSecurityGroupInboundRulesOnPrivateLinkTrafficEnum>,
     _request_id: Option<String>,
 }
 impl SetSecurityGroupsOutputBuilder {
@@ -53,6 +64,28 @@ impl SetSecurityGroupsOutputBuilder {
     pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.security_group_ids
     }
+    /// <p>Indicates whether to evaluate inbound security group rules for traffic sent to a Network Load Balancer through Amazon Web Services PrivateLink.</p>
+    pub fn enforce_security_group_inbound_rules_on_private_link_traffic(
+        mut self,
+        input: crate::types::EnforceSecurityGroupInboundRulesOnPrivateLinkTrafficEnum,
+    ) -> Self {
+        self.enforce_security_group_inbound_rules_on_private_link_traffic = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether to evaluate inbound security group rules for traffic sent to a Network Load Balancer through Amazon Web Services PrivateLink.</p>
+    pub fn set_enforce_security_group_inbound_rules_on_private_link_traffic(
+        mut self,
+        input: ::std::option::Option<crate::types::EnforceSecurityGroupInboundRulesOnPrivateLinkTrafficEnum>,
+    ) -> Self {
+        self.enforce_security_group_inbound_rules_on_private_link_traffic = input;
+        self
+    }
+    /// <p>Indicates whether to evaluate inbound security group rules for traffic sent to a Network Load Balancer through Amazon Web Services PrivateLink.</p>
+    pub fn get_enforce_security_group_inbound_rules_on_private_link_traffic(
+        &self,
+    ) -> &::std::option::Option<crate::types::EnforceSecurityGroupInboundRulesOnPrivateLinkTrafficEnum> {
+        &self.enforce_security_group_inbound_rules_on_private_link_traffic
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -66,6 +99,7 @@ impl SetSecurityGroupsOutputBuilder {
     pub fn build(self) -> crate::operation::set_security_groups::SetSecurityGroupsOutput {
         crate::operation::set_security_groups::SetSecurityGroupsOutput {
             security_group_ids: self.security_group_ids,
+            enforce_security_group_inbound_rules_on_private_link_traffic: self.enforce_security_group_inbound_rules_on_private_link_traffic,
             _request_id: self._request_id,
         }
     }

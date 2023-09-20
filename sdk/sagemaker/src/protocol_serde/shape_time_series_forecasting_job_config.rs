@@ -42,6 +42,18 @@ pub fn ser_time_series_forecasting_job_config(
         crate::protocol_serde::shape_time_series_config::ser_time_series_config(&mut object_12, var_11)?;
         object_12.finish();
     }
+    if let Some(var_13) = &input.holiday_config {
+        let mut array_14 = object.key("HolidayConfig").start_array();
+        for item_15 in var_13 {
+            {
+                #[allow(unused_mut)]
+                let mut object_16 = array_14.value().start_object();
+                crate::protocol_serde::shape_holiday_config_attributes::ser_holiday_config_attributes(&mut object_16, item_15)?;
+                object_16.finish();
+            }
+        }
+        array_14.finish();
+    }
     Ok(())
 }
 
@@ -96,6 +108,9 @@ where
                         }
                         "TimeSeriesConfig" => {
                             builder = builder.set_time_series_config(crate::protocol_serde::shape_time_series_config::de_time_series_config(tokens)?);
+                        }
+                        "HolidayConfig" => {
+                            builder = builder.set_holiday_config(crate::protocol_serde::shape_holiday_config::de_holiday_config(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

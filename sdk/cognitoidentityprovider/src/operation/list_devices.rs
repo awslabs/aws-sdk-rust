@@ -99,17 +99,6 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListDev
         ));
 
         cfg.store_put(::aws_smithy_http::operation::Metadata::new("ListDevices", "cognitoidentityprovider"));
-        let mut signing_options = ::aws_runtime::auth::sigv4::SigningOptions::default();
-        signing_options.double_uri_encode = true;
-        signing_options.content_sha256_header = false;
-        signing_options.normalize_uri_path = true;
-        signing_options.payload_override = None;
-
-        cfg.store_put(::aws_runtime::auth::sigv4::SigV4OperationSigningConfig {
-            region: None,
-            service: None,
-            signing_options,
-        });
 
         ::std::option::Option::Some(cfg.freeze())
     }
@@ -135,7 +124,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListDev
                 .with_auth_scheme_option_resolver(::std::option::Option::Some(
                     ::aws_smithy_runtime_api::client::auth::SharedAuthSchemeOptionResolver::new(
                         ::aws_smithy_runtime_api::client::auth::static_resolver::StaticAuthSchemeOptionResolver::new(vec![
-                            ::aws_runtime::auth::sigv4::SCHEME_ID,
+                            ::aws_smithy_runtime::client::auth::no_auth::NO_AUTH_SCHEME_ID,
                         ]),
                     ),
                 ))

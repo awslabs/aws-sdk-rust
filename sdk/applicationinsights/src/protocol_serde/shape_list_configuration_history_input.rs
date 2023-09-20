@@ -28,5 +28,8 @@ pub fn ser_list_configuration_history_input(
     if let Some(var_6) = &input.next_token {
         object.key("NextToken").string(var_6.as_str());
     }
+    if let Some(var_7) = &input.account_id {
+        object.key("AccountId").string(var_7.as_str());
+    }
     Ok(())
 }

@@ -12,6 +12,7 @@
 /// ```text
 /// # let providertype = unimplemented!();
 /// match providertype {
+///     ProviderType::Bitbucket => { /* ... */ },
 ///     ProviderType::Github => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -41,6 +42,8 @@
 )]
 pub enum ProviderType {
     #[allow(missing_docs)] // documentation missing in model
+    Bitbucket,
+    #[allow(missing_docs)] // documentation missing in model
     Github,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
@@ -48,6 +51,7 @@ pub enum ProviderType {
 impl ::std::convert::From<&str> for ProviderType {
     fn from(s: &str) -> Self {
         match s {
+            "BITBUCKET" => ProviderType::Bitbucket,
             "GITHUB" => ProviderType::Github,
             other => ProviderType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
@@ -64,13 +68,14 @@ impl ProviderType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            ProviderType::Bitbucket => "BITBUCKET",
             ProviderType::Github => "GITHUB",
             ProviderType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["GITHUB"]
+        &["BITBUCKET", "GITHUB"]
     }
 }
 impl ::std::convert::AsRef<str> for ProviderType {

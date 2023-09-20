@@ -26,7 +26,7 @@ pub struct ContainerInstance {
     pub status_reason: ::std::option::Option<::std::string::String>,
     /// <p>This parameter returns <code>true</code> if the agent is connected to Amazon ECS. An instance with an agent that may be unhealthy or stopped return <code>false</code>. Only instances connected to an agent can accept task placement requests.</p>
     pub agent_connected: bool,
-    /// <p>The number of tasks on the container instance that are in the <code>RUNNING</code> status.</p>
+    /// <p>The number of tasks on the container instance that have a desired status (<code>desiredStatus</code>) of <code>RUNNING</code>.</p>
     pub running_tasks_count: i32,
     /// <p>The number of tasks on the container instance that are in the <code>PENDING</code> status.</p>
     pub pending_tasks_count: i32,
@@ -96,7 +96,7 @@ impl ContainerInstance {
     pub fn agent_connected(&self) -> bool {
         self.agent_connected
     }
-    /// <p>The number of tasks on the container instance that are in the <code>RUNNING</code> status.</p>
+    /// <p>The number of tasks on the container instance that have a desired status (<code>desiredStatus</code>) of <code>RUNNING</code>.</p>
     pub fn running_tasks_count(&self) -> i32 {
         self.running_tasks_count
     }
@@ -328,17 +328,17 @@ impl ContainerInstanceBuilder {
     pub fn get_agent_connected(&self) -> &::std::option::Option<bool> {
         &self.agent_connected
     }
-    /// <p>The number of tasks on the container instance that are in the <code>RUNNING</code> status.</p>
+    /// <p>The number of tasks on the container instance that have a desired status (<code>desiredStatus</code>) of <code>RUNNING</code>.</p>
     pub fn running_tasks_count(mut self, input: i32) -> Self {
         self.running_tasks_count = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of tasks on the container instance that are in the <code>RUNNING</code> status.</p>
+    /// <p>The number of tasks on the container instance that have a desired status (<code>desiredStatus</code>) of <code>RUNNING</code>.</p>
     pub fn set_running_tasks_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.running_tasks_count = input;
         self
     }
-    /// <p>The number of tasks on the container instance that are in the <code>RUNNING</code> status.</p>
+    /// <p>The number of tasks on the container instance that have a desired status (<code>desiredStatus</code>) of <code>RUNNING</code>.</p>
     pub fn get_running_tasks_count(&self) -> &::std::option::Option<i32> {
         &self.running_tasks_count
     }

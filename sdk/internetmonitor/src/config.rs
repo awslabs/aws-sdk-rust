@@ -615,6 +615,16 @@ impl Builder {
         self.config.store_or_unset(endpoint_url.map(::aws_types::endpoint_config::EndpointUrl));
         self
     }
+    /// When true, use the dual-stack endpoint. If the configured endpoint does not support dual-stack, dispatching the request MAY return an error.
+    pub fn use_dual_stack(mut self, use_dual_stack: impl Into<bool>) -> Self {
+        self.set_use_dual_stack(Some(use_dual_stack.into()));
+        self
+    }
+    /// When true, use the dual-stack endpoint. If the configured endpoint does not support dual-stack, dispatching the request MAY return an error.
+    pub fn set_use_dual_stack(&mut self, use_dual_stack: Option<bool>) -> &mut Self {
+        self.config.store_or_unset(use_dual_stack.map(::aws_types::endpoint_config::UseDualStack));
+        self
+    }
     /// When true, send this request to the FIPS-compliant regional endpoint. If the configured endpoint does not have a FIPS compliant endpoint, dispatching the request will return an error.
     pub fn use_fips(mut self, use_fips: impl Into<bool>) -> Self {
         self.set_use_fips(Some(use_fips.into()));
@@ -936,6 +946,7 @@ impl From<&::aws_types::sdk_config::SdkConfig> for Builder {
         builder.set_credentials_provider(input.credentials_provider());
         builder = builder.region(input.region().cloned());
         builder.set_use_fips(input.use_fips());
+        builder.set_use_dual_stack(input.use_dual_stack());
         builder.set_endpoint_url(input.endpoint_url().map(|s| s.to_string()));
         // resiliency
         builder.set_retry_config(input.retry_config().cloned());

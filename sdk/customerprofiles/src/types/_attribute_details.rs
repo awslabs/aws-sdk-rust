@@ -2,7 +2,7 @@
 
 /// <p>Mathematical expression and a list of attribute items specified in that expression.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct AttributeDetails {
     /// <p>A list of attribute items specified in the mathematical expression.</p>
     pub attributes: ::std::option::Option<::std::vec::Vec<crate::types::AttributeItem>>,
@@ -19,6 +19,14 @@ impl AttributeDetails {
         self.expression.as_deref()
     }
 }
+impl ::std::fmt::Debug for AttributeDetails {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("AttributeDetails");
+        formatter.field("attributes", &"*** Sensitive Data Redacted ***");
+        formatter.field("expression", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl AttributeDetails {
     /// Creates a new builder-style object to manufacture [`AttributeDetails`](crate::types::AttributeDetails).
     pub fn builder() -> crate::types::builders::AttributeDetailsBuilder {
@@ -28,7 +36,7 @@ impl AttributeDetails {
 
 /// A builder for [`AttributeDetails`](crate::types::AttributeDetails).
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct AttributeDetailsBuilder {
     pub(crate) attributes: ::std::option::Option<::std::vec::Vec<crate::types::AttributeItem>>,
     pub(crate) expression: ::std::option::Option<::std::string::String>,
@@ -74,5 +82,13 @@ impl AttributeDetailsBuilder {
             attributes: self.attributes,
             expression: self.expression,
         }
+    }
+}
+impl ::std::fmt::Debug for AttributeDetailsBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("AttributeDetailsBuilder");
+        formatter.field("attributes", &"*** Sensitive Data Redacted ***");
+        formatter.field("expression", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

@@ -18,6 +18,9 @@ impl super::Client {
     ///   - [`r#type(Option<InputDeviceType>)`](crate::operation::describe_input_device::DescribeInputDeviceOutput::type): The type of the input device.
     ///   - [`uhd_device_settings(Option<InputDeviceUhdSettings>)`](crate::operation::describe_input_device::DescribeInputDeviceOutput::uhd_device_settings): Settings that describe an input device that is type UHD.
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::describe_input_device::DescribeInputDeviceOutput::tags): A collection of key-value pairs.
+    ///   - [`availability_zone(Option<String>)`](crate::operation::describe_input_device::DescribeInputDeviceOutput::availability_zone): The Availability Zone associated with this input device.
+    ///   - [`medialive_input_arns(Option<Vec<String>>)`](crate::operation::describe_input_device::DescribeInputDeviceOutput::medialive_input_arns): An array of the ARNs for the MediaLive inputs attached to the device. Returned only if the outputType is MEDIALIVE_INPUT.
+    ///   - [`output_type(Option<InputDeviceOutputType>)`](crate::operation::describe_input_device::DescribeInputDeviceOutput::output_type): The output attachment type of the input device. Specifies MEDIACONNECT_FLOW if this device is the source for a MediaConnect flow. Specifies MEDIALIVE_INPUT if this device is the source for a MediaLive input.
     /// - On failure, responds with [`SdkError<DescribeInputDeviceError>`](crate::operation::describe_input_device::DescribeInputDeviceError)
     pub fn describe_input_device(&self) -> crate::operation::describe_input_device::builders::DescribeInputDeviceFluentBuilder {
         crate::operation::describe_input_device::builders::DescribeInputDeviceFluentBuilder::new(self.handle.clone())

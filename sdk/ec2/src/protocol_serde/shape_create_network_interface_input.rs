@@ -133,6 +133,11 @@ pub fn ser_create_network_interface_input_input(
     if let Some(var_50) = &input.client_token {
         scope_49.string(var_50);
     }
+    #[allow(unused_mut)]
+    let mut scope_51 = writer.prefix("EnablePrimaryIpv6");
+    if let Some(var_52) = &input.enable_primary_ipv6 {
+        scope_51.boolean(*var_52);
+    }
     writer.finish();
     Ok(::aws_smithy_http::body::SdkBody::from(out))
 }

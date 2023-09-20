@@ -17,7 +17,7 @@ tracing = "0.1"
 thiserror = "1.0"
 tokio-stream = "0.1.8"
 aws-config= { version = "0.56.1", path = "../../../sdk/aws-config" }
-aws-sdk-dynamodb= { version = "0.31.0", path = "../../../sdk/dynamodb" }
+aws-sdk-dynamodb= { version = "0.31.1", path = "../../../sdk/dynamodb" }
 aws-http= { version = "0.56.1", path = "../../../sdk/aws-http" }
 aws-smithy-client= { version = "0.56.1", path = "../../../sdk/aws-smithy-client", features = ["client-hyper", "rustls", "rt-tokio"] }
 aws-smithy-http= { version = "0.56.1", path = "../../../sdk/aws-smithy-http", features = ["rt-tokio"] }

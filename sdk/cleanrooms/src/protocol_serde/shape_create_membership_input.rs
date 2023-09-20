@@ -6,18 +6,27 @@ pub fn ser_create_membership_input(
     if let Some(var_1) = &input.collaboration_identifier {
         object.key("collaborationIdentifier").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.query_log_status {
-        object.key("queryLogStatus").string(var_2.as_str());
-    }
-    if let Some(var_3) = &input.tags {
+    if let Some(var_2) = &input.default_result_configuration {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("tags").start_object();
-        for (key_5, value_6) in var_3 {
+        let mut object_3 = object.key("defaultResultConfiguration").start_object();
+        crate::protocol_serde::shape_membership_protected_query_result_configuration::ser_membership_protected_query_result_configuration(
+            &mut object_3,
+            var_2,
+        )?;
+        object_3.finish();
+    }
+    if let Some(var_4) = &input.query_log_status {
+        object.key("queryLogStatus").string(var_4.as_str());
+    }
+    if let Some(var_5) = &input.tags {
+        #[allow(unused_mut)]
+        let mut object_6 = object.key("tags").start_object();
+        for (key_7, value_8) in var_5 {
             {
-                object_4.key(key_5.as_str()).string(value_6.as_str());
+                object_6.key(key_7.as_str()).string(value_8.as_str());
             }
         }
-        object_4.finish();
+        object_6.finish();
     }
     Ok(())
 }

@@ -25,6 +25,8 @@ pub struct GetRunTaskOutput {
     pub log_stream: ::std::option::Option<::std::string::String>,
     /// <p> The number of Graphics Processing Units (GPU) specified in the task. </p>
     pub gpus: ::std::option::Option<i32>,
+    /// <p> The instance type for a task. </p>
+    pub instance_type: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetRunTaskOutput {
@@ -72,6 +74,10 @@ impl GetRunTaskOutput {
     pub fn gpus(&self) -> ::std::option::Option<i32> {
         self.gpus
     }
+    /// <p> The instance type for a task. </p>
+    pub fn instance_type(&self) -> ::std::option::Option<&str> {
+        self.instance_type.as_deref()
+    }
 }
 impl ::aws_http::request_id::RequestId for GetRunTaskOutput {
     fn request_id(&self) -> Option<&str> {
@@ -100,6 +106,7 @@ pub struct GetRunTaskOutputBuilder {
     pub(crate) status_message: ::std::option::Option<::std::string::String>,
     pub(crate) log_stream: ::std::option::Option<::std::string::String>,
     pub(crate) gpus: ::std::option::Option<i32>,
+    pub(crate) instance_type: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetRunTaskOutputBuilder {
@@ -257,6 +264,20 @@ impl GetRunTaskOutputBuilder {
     pub fn get_gpus(&self) -> &::std::option::Option<i32> {
         &self.gpus
     }
+    /// <p> The instance type for a task. </p>
+    pub fn instance_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.instance_type = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p> The instance type for a task. </p>
+    pub fn set_instance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.instance_type = input;
+        self
+    }
+    /// <p> The instance type for a task. </p>
+    pub fn get_instance_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_type
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -280,6 +301,7 @@ impl GetRunTaskOutputBuilder {
             status_message: self.status_message,
             log_stream: self.log_stream,
             gpus: self.gpus,
+            instance_type: self.instance_type,
             _request_id: self._request_id,
         }
     }

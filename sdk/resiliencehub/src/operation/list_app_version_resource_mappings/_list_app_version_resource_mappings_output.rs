@@ -5,7 +5,7 @@
 pub struct ListAppVersionResourceMappingsOutput {
     /// <p>Mappings used to map logical resources from the template to physical resources. You can use the mapping type <code>CFN_STACK</code> if the application template uses a logical stack name. Or you can map individual resources by using the mapping type <code>RESOURCE</code>. We recommend using the mapping type <code>CFN_STACK</code> if the application is backed by a CloudFormation stack.</p>
     pub resource_mappings: ::std::option::Option<::std::vec::Vec<crate::types::ResourceMapping>>,
-    /// <p>The token for the next set of results, or null if there are no more results.</p>
+    /// <p>Token for the next set of results, or null if there are no more results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -14,7 +14,7 @@ impl ListAppVersionResourceMappingsOutput {
     pub fn resource_mappings(&self) -> ::std::option::Option<&[crate::types::ResourceMapping]> {
         self.resource_mappings.as_deref()
     }
-    /// <p>The token for the next set of results, or null if there are no more results.</p>
+    /// <p>Token for the next set of results, or null if there are no more results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -60,17 +60,17 @@ impl ListAppVersionResourceMappingsOutputBuilder {
     pub fn get_resource_mappings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceMapping>> {
         &self.resource_mappings
     }
-    /// <p>The token for the next set of results, or null if there are no more results.</p>
+    /// <p>Token for the next set of results, or null if there are no more results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The token for the next set of results, or null if there are no more results.</p>
+    /// <p>Token for the next set of results, or null if there are no more results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>The token for the next set of results, or null if there are no more results.</p>
+    /// <p>Token for the next set of results, or null if there are no more results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

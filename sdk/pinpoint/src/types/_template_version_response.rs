@@ -14,7 +14,7 @@ pub struct TemplateVersionResponse {
     pub template_description: ::std::option::Option<::std::string::String>,
     /// <p>The name of the message template.</p>
     pub template_name: ::std::option::Option<::std::string::String>,
-    /// <p>The type of channel that the message template is designed for. Possible values are: EMAIL, PUSH, SMS, and VOICE.</p>
+    /// <p>The type of channel that the message template is designed for. Possible values are: EMAIL, PUSH, SMS, INAPP, and VOICE.</p>
     pub template_type: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the version of the message template. This value is an integer that Amazon Pinpoint automatically increments and assigns to each new version of a template.</p>
     pub version: ::std::option::Option<::std::string::String>,
@@ -40,7 +40,7 @@ impl TemplateVersionResponse {
     pub fn template_name(&self) -> ::std::option::Option<&str> {
         self.template_name.as_deref()
     }
-    /// <p>The type of channel that the message template is designed for. Possible values are: EMAIL, PUSH, SMS, and VOICE.</p>
+    /// <p>The type of channel that the message template is designed for. Possible values are: EMAIL, PUSH, SMS, INAPP, and VOICE.</p>
     pub fn template_type(&self) -> ::std::option::Option<&str> {
         self.template_type.as_deref()
     }
@@ -139,17 +139,17 @@ impl TemplateVersionResponseBuilder {
     pub fn get_template_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.template_name
     }
-    /// <p>The type of channel that the message template is designed for. Possible values are: EMAIL, PUSH, SMS, and VOICE.</p>
+    /// <p>The type of channel that the message template is designed for. Possible values are: EMAIL, PUSH, SMS, INAPP, and VOICE.</p>
     pub fn template_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_type = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The type of channel that the message template is designed for. Possible values are: EMAIL, PUSH, SMS, and VOICE.</p>
+    /// <p>The type of channel that the message template is designed for. Possible values are: EMAIL, PUSH, SMS, INAPP, and VOICE.</p>
     pub fn set_template_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.template_type = input;
         self
     }
-    /// <p>The type of channel that the message template is designed for. Possible values are: EMAIL, PUSH, SMS, and VOICE.</p>
+    /// <p>The type of channel that the message template is designed for. Possible values are: EMAIL, PUSH, SMS, INAPP, and VOICE.</p>
     pub fn get_template_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.template_type
     }

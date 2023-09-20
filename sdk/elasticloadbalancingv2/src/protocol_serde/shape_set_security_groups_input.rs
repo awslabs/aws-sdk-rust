@@ -21,6 +21,11 @@ pub fn ser_set_security_groups_input_input(
         }
         list_6.finish();
     }
+    #[allow(unused_mut)]
+    let mut scope_8 = writer.prefix("EnforceSecurityGroupInboundRulesOnPrivateLinkTraffic");
+    if let Some(var_9) = &input.enforce_security_group_inbound_rules_on_private_link_traffic {
+        scope_8.string(var_9.as_str());
+    }
     writer.finish();
     Ok(::aws_smithy_http::body::SdkBody::from(out))
 }

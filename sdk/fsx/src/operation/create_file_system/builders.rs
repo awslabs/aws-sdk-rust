@@ -326,17 +326,17 @@ impl CreateFileSystemFluentBuilder {
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_kms_key_id()
     }
-    /// <p>The Microsoft Windows configuration for the file system that's being created. </p>
+    /// <p>The Microsoft Windows configuration for the file system that's being created.</p>
     pub fn windows_configuration(mut self, input: crate::types::CreateFileSystemWindowsConfiguration) -> Self {
         self.inner = self.inner.windows_configuration(input);
         self
     }
-    /// <p>The Microsoft Windows configuration for the file system that's being created. </p>
+    /// <p>The Microsoft Windows configuration for the file system that's being created.</p>
     pub fn set_windows_configuration(mut self, input: ::std::option::Option<crate::types::CreateFileSystemWindowsConfiguration>) -> Self {
         self.inner = self.inner.set_windows_configuration(input);
         self
     }
-    /// <p>The Microsoft Windows configuration for the file system that's being created. </p>
+    /// <p>The Microsoft Windows configuration for the file system that's being created.</p>
     pub fn get_windows_configuration(&self) -> &::std::option::Option<crate::types::CreateFileSystemWindowsConfiguration> {
         self.inner.get_windows_configuration()
     }
@@ -392,10 +392,10 @@ impl CreateFileSystemFluentBuilder {
     pub fn get_ontap_configuration(&self) -> &::std::option::Option<crate::types::CreateFileSystemOntapConfiguration> {
         self.inner.get_ontap_configuration()
     }
-    /// <p>(Optional) For FSx for Lustre file systems, sets the Lustre version for the file system that you're creating. Valid values are <code>2.10</code> and <code>2.12</code>:</p>
+    /// <p>(Optional) For FSx for Lustre file systems, sets the Lustre version for the file system that you're creating. Valid values are <code>2.10</code>, <code>2.12</code>, and <code>2.15</code>:</p>
     /// <ul>
     /// <li> <p>2.10 is supported by the Scratch and Persistent_1 Lustre deployment types.</p> </li>
-    /// <li> <p>2.12 is supported by all Lustre deployment types. <code>2.12</code> is required when setting FSx for Lustre <code>DeploymentType</code> to <code>PERSISTENT_2</code>.</p> </li>
+    /// <li> <p>2.12 and 2.15 are supported by all Lustre deployment types. <code>2.12</code> or <code>2.15</code> is required when setting FSx for Lustre <code>DeploymentType</code> to <code>PERSISTENT_2</code>.</p> </li>
     /// </ul>
     /// <p>Default value = <code>2.10</code>, except when <code>DeploymentType</code> is set to <code>PERSISTENT_2</code>, then the default is <code>2.12</code>.</p> <note>
     /// <p>If you set <code>FileSystemTypeVersion</code> to <code>2.10</code> for a <code>PERSISTENT_2</code> Lustre deployment type, the <code>CreateFileSystem</code> operation fails.</p>
@@ -404,10 +404,10 @@ impl CreateFileSystemFluentBuilder {
         self.inner = self.inner.file_system_type_version(input.into());
         self
     }
-    /// <p>(Optional) For FSx for Lustre file systems, sets the Lustre version for the file system that you're creating. Valid values are <code>2.10</code> and <code>2.12</code>:</p>
+    /// <p>(Optional) For FSx for Lustre file systems, sets the Lustre version for the file system that you're creating. Valid values are <code>2.10</code>, <code>2.12</code>, and <code>2.15</code>:</p>
     /// <ul>
     /// <li> <p>2.10 is supported by the Scratch and Persistent_1 Lustre deployment types.</p> </li>
-    /// <li> <p>2.12 is supported by all Lustre deployment types. <code>2.12</code> is required when setting FSx for Lustre <code>DeploymentType</code> to <code>PERSISTENT_2</code>.</p> </li>
+    /// <li> <p>2.12 and 2.15 are supported by all Lustre deployment types. <code>2.12</code> or <code>2.15</code> is required when setting FSx for Lustre <code>DeploymentType</code> to <code>PERSISTENT_2</code>.</p> </li>
     /// </ul>
     /// <p>Default value = <code>2.10</code>, except when <code>DeploymentType</code> is set to <code>PERSISTENT_2</code>, then the default is <code>2.12</code>.</p> <note>
     /// <p>If you set <code>FileSystemTypeVersion</code> to <code>2.10</code> for a <code>PERSISTENT_2</code> Lustre deployment type, the <code>CreateFileSystem</code> operation fails.</p>
@@ -416,10 +416,10 @@ impl CreateFileSystemFluentBuilder {
         self.inner = self.inner.set_file_system_type_version(input);
         self
     }
-    /// <p>(Optional) For FSx for Lustre file systems, sets the Lustre version for the file system that you're creating. Valid values are <code>2.10</code> and <code>2.12</code>:</p>
+    /// <p>(Optional) For FSx for Lustre file systems, sets the Lustre version for the file system that you're creating. Valid values are <code>2.10</code>, <code>2.12</code>, and <code>2.15</code>:</p>
     /// <ul>
     /// <li> <p>2.10 is supported by the Scratch and Persistent_1 Lustre deployment types.</p> </li>
-    /// <li> <p>2.12 is supported by all Lustre deployment types. <code>2.12</code> is required when setting FSx for Lustre <code>DeploymentType</code> to <code>PERSISTENT_2</code>.</p> </li>
+    /// <li> <p>2.12 and 2.15 are supported by all Lustre deployment types. <code>2.12</code> or <code>2.15</code> is required when setting FSx for Lustre <code>DeploymentType</code> to <code>PERSISTENT_2</code>.</p> </li>
     /// </ul>
     /// <p>Default value = <code>2.10</code>, except when <code>DeploymentType</code> is set to <code>PERSISTENT_2</code>, then the default is <code>2.12</code>.</p> <note>
     /// <p>If you set <code>FileSystemTypeVersion</code> to <code>2.10</code> for a <code>PERSISTENT_2</code> Lustre deployment type, the <code>CreateFileSystem</code> operation fails.</p>

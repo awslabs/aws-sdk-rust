@@ -19,7 +19,7 @@ impl PutFileInputBuilder {
 }
 /// Fluent builder constructing a request to `PutFile`.
 ///
-/// <p>Adds or updates a file in a branch in an AWS CodeCommit repository, and generates a commit for the addition in the specified branch.</p>
+/// <p>Adds or updates a file in a branch in an CodeCommit repository, and generates a commit for the addition in the specified branch.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutFileFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

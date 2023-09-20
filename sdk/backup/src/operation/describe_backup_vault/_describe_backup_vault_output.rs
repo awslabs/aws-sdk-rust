@@ -7,6 +7,8 @@ pub struct DescribeBackupVaultOutput {
     pub backup_vault_name: ::std::option::Option<::std::string::String>,
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a backup vault; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
     pub backup_vault_arn: ::std::option::Option<::std::string::String>,
+    /// <p>This is the type of vault described.</p>
+    pub vault_type: ::std::option::Option<crate::types::VaultType>,
     /// <p>The server-side encryption key that is used to protect your backups; for example, <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p>
     pub encryption_key_arn: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that a backup vault is created, in Unix format and Coordinated Universal Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
@@ -37,6 +39,10 @@ impl DescribeBackupVaultOutput {
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a backup vault; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
     pub fn backup_vault_arn(&self) -> ::std::option::Option<&str> {
         self.backup_vault_arn.as_deref()
+    }
+    /// <p>This is the type of vault described.</p>
+    pub fn vault_type(&self) -> ::std::option::Option<&crate::types::VaultType> {
+        self.vault_type.as_ref()
     }
     /// <p>The server-side encryption key that is used to protect your backups; for example, <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p>
     pub fn encryption_key_arn(&self) -> ::std::option::Option<&str> {
@@ -93,6 +99,7 @@ impl DescribeBackupVaultOutput {
 pub struct DescribeBackupVaultOutputBuilder {
     pub(crate) backup_vault_name: ::std::option::Option<::std::string::String>,
     pub(crate) backup_vault_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) vault_type: ::std::option::Option<crate::types::VaultType>,
     pub(crate) encryption_key_arn: ::std::option::Option<::std::string::String>,
     pub(crate) creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) creator_request_id: ::std::option::Option<::std::string::String>,
@@ -131,6 +138,20 @@ impl DescribeBackupVaultOutputBuilder {
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a backup vault; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
     pub fn get_backup_vault_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.backup_vault_arn
+    }
+    /// <p>This is the type of vault described.</p>
+    pub fn vault_type(mut self, input: crate::types::VaultType) -> Self {
+        self.vault_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>This is the type of vault described.</p>
+    pub fn set_vault_type(mut self, input: ::std::option::Option<crate::types::VaultType>) -> Self {
+        self.vault_type = input;
+        self
+    }
+    /// <p>This is the type of vault described.</p>
+    pub fn get_vault_type(&self) -> &::std::option::Option<crate::types::VaultType> {
+        &self.vault_type
     }
     /// <p>The server-side encryption key that is used to protect your backups; for example, <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p>
     pub fn encryption_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -270,6 +291,7 @@ impl DescribeBackupVaultOutputBuilder {
         crate::operation::describe_backup_vault::DescribeBackupVaultOutput {
             backup_vault_name: self.backup_vault_name,
             backup_vault_arn: self.backup_vault_arn,
+            vault_type: self.vault_type,
             encryption_key_arn: self.encryption_key_arn,
             creation_date: self.creation_date,
             creator_request_id: self.creator_request_id,

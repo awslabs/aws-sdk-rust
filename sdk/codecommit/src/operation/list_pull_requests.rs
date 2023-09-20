@@ -258,7 +258,7 @@ pub type ListPullRequestsErrorKind = ListPullRequestsError;
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum ListPullRequestsError {
-    /// <p>The specified Amazon Resource Name (ARN) does not exist in the AWS account.</p>
+    /// <p>The specified Amazon Resource Name (ARN) does not exist in the Amazon Web Services account.</p>
     AuthorDoesNotExistException(crate::types::error::AuthorDoesNotExistException),
     /// <p>An encryption integrity check failed.</p>
     EncryptionIntegrityChecksFailedException(crate::types::error::EncryptionIntegrityChecksFailedException),

@@ -13,9 +13,9 @@ pub struct GetMediaForFragmentListOutput {
     /// </ul>
     /// <p>The following tags will be included if an exception occurs:</p>
     /// <ul>
-    /// <li> <p>AWS_KINESISVIDEO_FRAGMENT_NUMBER - The number of the fragment that threw the exception</p> </li>
-    /// <li> <p>AWS_KINESISVIDEO_EXCEPTION_ERROR_CODE - The integer code of the exception</p> </li>
-    /// <li> <p>AWS_KINESISVIDEO_EXCEPTION_MESSAGE - A text description of the exception</p> </li>
+    /// <li> <p>AWS_KINESISVIDEO_FRAGMENT_NUMBER - The number of the fragment that threw the exception </p> </li>
+    /// <li> <p>AWS_KINESISVIDEO_EXCEPTION_ERROR_CODE - The integer code of the </p> </li>
+    /// <li> <p>AWS_KINESISVIDEO_EXCEPTION_MESSAGE - A text description of the exception </p> </li>
     /// </ul>
     pub payload: ::aws_smithy_http::byte_stream::ByteStream,
     _request_id: Option<String>,
@@ -33,9 +33,9 @@ impl GetMediaForFragmentListOutput {
     /// </ul>
     /// <p>The following tags will be included if an exception occurs:</p>
     /// <ul>
-    /// <li> <p>AWS_KINESISVIDEO_FRAGMENT_NUMBER - The number of the fragment that threw the exception</p> </li>
-    /// <li> <p>AWS_KINESISVIDEO_EXCEPTION_ERROR_CODE - The integer code of the exception</p> </li>
-    /// <li> <p>AWS_KINESISVIDEO_EXCEPTION_MESSAGE - A text description of the exception</p> </li>
+    /// <li> <p>AWS_KINESISVIDEO_FRAGMENT_NUMBER - The number of the fragment that threw the exception </p> </li>
+    /// <li> <p>AWS_KINESISVIDEO_EXCEPTION_ERROR_CODE - The integer code of the </p> </li>
+    /// <li> <p>AWS_KINESISVIDEO_EXCEPTION_MESSAGE - A text description of the exception </p> </li>
     /// </ul>
     pub fn payload(&self) -> &::aws_smithy_http::byte_stream::ByteStream {
         &self.payload
@@ -84,9 +84,9 @@ impl GetMediaForFragmentListOutputBuilder {
     /// </ul>
     /// <p>The following tags will be included if an exception occurs:</p>
     /// <ul>
-    /// <li> <p>AWS_KINESISVIDEO_FRAGMENT_NUMBER - The number of the fragment that threw the exception</p> </li>
-    /// <li> <p>AWS_KINESISVIDEO_EXCEPTION_ERROR_CODE - The integer code of the exception</p> </li>
-    /// <li> <p>AWS_KINESISVIDEO_EXCEPTION_MESSAGE - A text description of the exception</p> </li>
+    /// <li> <p>AWS_KINESISVIDEO_FRAGMENT_NUMBER - The number of the fragment that threw the exception </p> </li>
+    /// <li> <p>AWS_KINESISVIDEO_EXCEPTION_ERROR_CODE - The integer code of the </p> </li>
+    /// <li> <p>AWS_KINESISVIDEO_EXCEPTION_MESSAGE - A text description of the exception </p> </li>
     /// </ul>
     pub fn payload(mut self, input: ::aws_smithy_http::byte_stream::ByteStream) -> Self {
         self.payload = ::std::option::Option::Some(input);
@@ -100,9 +100,9 @@ impl GetMediaForFragmentListOutputBuilder {
     /// </ul>
     /// <p>The following tags will be included if an exception occurs:</p>
     /// <ul>
-    /// <li> <p>AWS_KINESISVIDEO_FRAGMENT_NUMBER - The number of the fragment that threw the exception</p> </li>
-    /// <li> <p>AWS_KINESISVIDEO_EXCEPTION_ERROR_CODE - The integer code of the exception</p> </li>
-    /// <li> <p>AWS_KINESISVIDEO_EXCEPTION_MESSAGE - A text description of the exception</p> </li>
+    /// <li> <p>AWS_KINESISVIDEO_FRAGMENT_NUMBER - The number of the fragment that threw the exception </p> </li>
+    /// <li> <p>AWS_KINESISVIDEO_EXCEPTION_ERROR_CODE - The integer code of the </p> </li>
+    /// <li> <p>AWS_KINESISVIDEO_EXCEPTION_MESSAGE - A text description of the exception </p> </li>
     /// </ul>
     pub fn set_payload(mut self, input: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>) -> Self {
         self.payload = input;
@@ -116,9 +116,9 @@ impl GetMediaForFragmentListOutputBuilder {
     /// </ul>
     /// <p>The following tags will be included if an exception occurs:</p>
     /// <ul>
-    /// <li> <p>AWS_KINESISVIDEO_FRAGMENT_NUMBER - The number of the fragment that threw the exception</p> </li>
-    /// <li> <p>AWS_KINESISVIDEO_EXCEPTION_ERROR_CODE - The integer code of the exception</p> </li>
-    /// <li> <p>AWS_KINESISVIDEO_EXCEPTION_MESSAGE - A text description of the exception</p> </li>
+    /// <li> <p>AWS_KINESISVIDEO_FRAGMENT_NUMBER - The number of the fragment that threw the exception </p> </li>
+    /// <li> <p>AWS_KINESISVIDEO_EXCEPTION_ERROR_CODE - The integer code of the </p> </li>
+    /// <li> <p>AWS_KINESISVIDEO_EXCEPTION_MESSAGE - A text description of the exception </p> </li>
     /// </ul>
     pub fn get_payload(&self) -> &::std::option::Option<::aws_smithy_http::byte_stream::ByteStream> {
         &self.payload

@@ -3,23 +3,23 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAppVersionAppComponentInput {
-    /// <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+    /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
     pub app_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The Resilience Hub application version.</p>
+    /// <p>Resilience Hub application version.</p>
     pub app_version: ::std::option::Option<::std::string::String>,
-    /// <p>The identifier of the Application Component.</p>
+    /// <p>Identifier of the Application Component.</p>
     pub id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeAppVersionAppComponentInput {
-    /// <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+    /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
     pub fn app_arn(&self) -> ::std::option::Option<&str> {
         self.app_arn.as_deref()
     }
-    /// <p>The Resilience Hub application version.</p>
+    /// <p>Resilience Hub application version.</p>
     pub fn app_version(&self) -> ::std::option::Option<&str> {
         self.app_version.as_deref()
     }
-    /// <p>The identifier of the Application Component.</p>
+    /// <p>Identifier of the Application Component.</p>
     pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
@@ -40,45 +40,45 @@ pub struct DescribeAppVersionAppComponentInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeAppVersionAppComponentInputBuilder {
-    /// <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+    /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
     pub fn app_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+    /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
     pub fn set_app_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.app_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+    /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
     pub fn get_app_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.app_arn
     }
-    /// <p>The Resilience Hub application version.</p>
+    /// <p>Resilience Hub application version.</p>
     pub fn app_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_version = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Resilience Hub application version.</p>
+    /// <p>Resilience Hub application version.</p>
     pub fn set_app_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.app_version = input;
         self
     }
-    /// <p>The Resilience Hub application version.</p>
+    /// <p>Resilience Hub application version.</p>
     pub fn get_app_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.app_version
     }
-    /// <p>The identifier of the Application Component.</p>
+    /// <p>Identifier of the Application Component.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of the Application Component.</p>
+    /// <p>Identifier of the Application Component.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
-    /// <p>The identifier of the Application Component.</p>
+    /// <p>Identifier of the Application Component.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }

@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetTemplateOutput {
-    /// <p>The content of the email, composed of a subject line, an HTML part, and a text-only part.</p>
+    /// <p>The content of the email, composed of a subject line and either an HTML part or a text-only part.</p>
     pub template: ::std::option::Option<crate::types::Template>,
     _request_id: Option<String>,
 }
 impl GetTemplateOutput {
-    /// <p>The content of the email, composed of a subject line, an HTML part, and a text-only part.</p>
+    /// <p>The content of the email, composed of a subject line and either an HTML part or a text-only part.</p>
     pub fn template(&self) -> ::std::option::Option<&crate::types::Template> {
         self.template.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct GetTemplateOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetTemplateOutputBuilder {
-    /// <p>The content of the email, composed of a subject line, an HTML part, and a text-only part.</p>
+    /// <p>The content of the email, composed of a subject line and either an HTML part or a text-only part.</p>
     pub fn template(mut self, input: crate::types::Template) -> Self {
         self.template = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The content of the email, composed of a subject line, an HTML part, and a text-only part.</p>
+    /// <p>The content of the email, composed of a subject line and either an HTML part or a text-only part.</p>
     pub fn set_template(mut self, input: ::std::option::Option<crate::types::Template>) -> Self {
         self.template = input;
         self
     }
-    /// <p>The content of the email, composed of a subject line, an HTML part, and a text-only part.</p>
+    /// <p>The content of the email, composed of a subject line and either an HTML part or a text-only part.</p>
     pub fn get_template(&self) -> &::std::option::Option<crate::types::Template> {
         &self.template
     }

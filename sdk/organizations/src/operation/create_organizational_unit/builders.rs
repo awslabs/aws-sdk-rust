@@ -23,7 +23,7 @@ impl CreateOrganizationalUnitInputBuilder {
 /// Fluent builder constructing a request to `CreateOrganizationalUnit`.
 ///
 /// <p>Creates an organizational unit (OU) within a root or parent OU. An OU is a container for accounts that enables you to organize your accounts to apply policies according to your business requirements. The number of levels deep that you can nest OUs is dependent upon the policy types enabled for that root. For service control policies, the limit is five.</p>
-/// <p>For more information about OUs, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_ous.html">Managing Organizational Units</a> in the <i>Organizations User Guide.</i> </p>
+/// <p>For more information about OUs, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_ous.html">Managing organizational units (OUs)</a> in the <i>Organizations User Guide</i>.</p>
 /// <p>If the request includes tags, then the requester must have the <code>organizations:TagResource</code> permission.</p>
 /// <p>This operation can be called only from the organization's management account.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

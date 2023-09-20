@@ -27,5 +27,17 @@ pub fn ser_describe_affected_entities_for_organization_input(
             ::aws_smithy_types::Number::NegInt((*var_7).into()),
         );
     }
+    if let Some(var_8) = &input.organization_entity_account_filters {
+        let mut array_9 = object.key("organizationEntityAccountFilters").start_array();
+        for item_10 in var_8 {
+            {
+                #[allow(unused_mut)]
+                let mut object_11 = array_9.value().start_object();
+                crate::protocol_serde::shape_entity_account_filter::ser_entity_account_filter(&mut object_11, item_10)?;
+                object_11.finish();
+            }
+        }
+        array_9.finish();
+    }
     Ok(())
 }

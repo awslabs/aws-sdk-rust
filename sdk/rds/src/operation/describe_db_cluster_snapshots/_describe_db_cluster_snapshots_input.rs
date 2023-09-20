@@ -44,10 +44,12 @@ pub struct DescribeDbClusterSnapshotsInput {
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>A value that indicates whether to include shared manual DB cluster snapshots from other Amazon Web Services accounts that this Amazon Web Services account has been given permission to copy or restore. By default, these snapshots are not included.</p>
     /// <p>You can give an Amazon Web Services account permission to restore a manual DB cluster snapshot from another Amazon Web Services account by the <code>ModifyDBClusterSnapshotAttribute</code> API action.</p>
-    pub include_shared: bool,
+    pub include_shared: ::std::option::Option<bool>,
     /// <p>A value that indicates whether to include manual DB cluster snapshots that are public and can be copied or restored by any Amazon Web Services account. By default, the public snapshots are not included.</p>
     /// <p>You can share a manual DB cluster snapshot as public by using the <code>ModifyDBClusterSnapshotAttribute</code> API action.</p>
-    pub include_public: bool,
+    pub include_public: ::std::option::Option<bool>,
+    /// <p>A specific DB cluster resource ID to describe.</p>
+    pub db_cluster_resource_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeDbClusterSnapshotsInput {
     /// <p>The ID of the DB cluster to retrieve the list of DB cluster snapshots for. This parameter can't be used in conjunction with the <code>DBClusterSnapshotIdentifier</code> parameter. This parameter isn't case-sensitive.</p>
@@ -102,13 +104,17 @@ impl DescribeDbClusterSnapshotsInput {
     }
     /// <p>A value that indicates whether to include shared manual DB cluster snapshots from other Amazon Web Services accounts that this Amazon Web Services account has been given permission to copy or restore. By default, these snapshots are not included.</p>
     /// <p>You can give an Amazon Web Services account permission to restore a manual DB cluster snapshot from another Amazon Web Services account by the <code>ModifyDBClusterSnapshotAttribute</code> API action.</p>
-    pub fn include_shared(&self) -> bool {
+    pub fn include_shared(&self) -> ::std::option::Option<bool> {
         self.include_shared
     }
     /// <p>A value that indicates whether to include manual DB cluster snapshots that are public and can be copied or restored by any Amazon Web Services account. By default, the public snapshots are not included.</p>
     /// <p>You can share a manual DB cluster snapshot as public by using the <code>ModifyDBClusterSnapshotAttribute</code> API action.</p>
-    pub fn include_public(&self) -> bool {
+    pub fn include_public(&self) -> ::std::option::Option<bool> {
         self.include_public
+    }
+    /// <p>A specific DB cluster resource ID to describe.</p>
+    pub fn db_cluster_resource_id(&self) -> ::std::option::Option<&str> {
+        self.db_cluster_resource_id.as_deref()
     }
 }
 impl DescribeDbClusterSnapshotsInput {
@@ -130,6 +136,7 @@ pub struct DescribeDbClusterSnapshotsInputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     pub(crate) include_shared: ::std::option::Option<bool>,
     pub(crate) include_public: ::std::option::Option<bool>,
+    pub(crate) db_cluster_resource_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeDbClusterSnapshotsInputBuilder {
     /// <p>The ID of the DB cluster to retrieve the list of DB cluster snapshots for. This parameter can't be used in conjunction with the <code>DBClusterSnapshotIdentifier</code> parameter. This parameter isn't case-sensitive.</p>
@@ -334,6 +341,20 @@ impl DescribeDbClusterSnapshotsInputBuilder {
     pub fn get_include_public(&self) -> &::std::option::Option<bool> {
         &self.include_public
     }
+    /// <p>A specific DB cluster resource ID to describe.</p>
+    pub fn db_cluster_resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.db_cluster_resource_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>A specific DB cluster resource ID to describe.</p>
+    pub fn set_db_cluster_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.db_cluster_resource_id = input;
+        self
+    }
+    /// <p>A specific DB cluster resource ID to describe.</p>
+    pub fn get_db_cluster_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.db_cluster_resource_id
+    }
     /// Consumes the builder and constructs a [`DescribeDbClusterSnapshotsInput`](crate::operation::describe_db_cluster_snapshots::DescribeDbClusterSnapshotsInput).
     pub fn build(
         self,
@@ -348,8 +369,9 @@ impl DescribeDbClusterSnapshotsInputBuilder {
             filters: self.filters,
             max_records: self.max_records,
             marker: self.marker,
-            include_shared: self.include_shared.unwrap_or_default(),
-            include_public: self.include_public.unwrap_or_default(),
+            include_shared: self.include_shared,
+            include_public: self.include_public,
+            db_cluster_resource_id: self.db_cluster_resource_id,
         })
     }
 }

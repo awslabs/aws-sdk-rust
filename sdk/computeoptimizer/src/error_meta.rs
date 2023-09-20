@@ -388,6 +388,55 @@ impl From<crate::operation::export_lambda_function_recommendations::ExportLambda
         }
     }
 }
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::export_license_recommendations::ExportLicenseRecommendationsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<crate::operation::export_license_recommendations::ExportLicenseRecommendationsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::export_license_recommendations::ExportLicenseRecommendationsError> for Error {
+    fn from(err: crate::operation::export_license_recommendations::ExportLicenseRecommendationsError) -> Self {
+        match err {
+            crate::operation::export_license_recommendations::ExportLicenseRecommendationsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::export_license_recommendations::ExportLicenseRecommendationsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::export_license_recommendations::ExportLicenseRecommendationsError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::export_license_recommendations::ExportLicenseRecommendationsError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::operation::export_license_recommendations::ExportLicenseRecommendationsError::MissingAuthenticationToken(inner) => {
+                Error::MissingAuthenticationToken(inner)
+            }
+            crate::operation::export_license_recommendations::ExportLicenseRecommendationsError::OptInRequiredException(inner) => {
+                Error::OptInRequiredException(inner)
+            }
+            crate::operation::export_license_recommendations::ExportLicenseRecommendationsError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::export_license_recommendations::ExportLicenseRecommendationsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::export_license_recommendations::ExportLicenseRecommendationsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R>
     From<::aws_smithy_http::result::SdkError<crate::operation::get_auto_scaling_group_recommendations::GetAutoScalingGroupRecommendationsError, R>>
     for Error
@@ -865,6 +914,53 @@ impl From<crate::operation::get_lambda_function_recommendations::GetLambdaFuncti
                 Error::ThrottlingException(inner)
             }
             crate::operation::get_lambda_function_recommendations::GetLambdaFunctionRecommendationsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_license_recommendations::GetLicenseRecommendationsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::get_license_recommendations::GetLicenseRecommendationsError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_license_recommendations::GetLicenseRecommendationsError> for Error {
+    fn from(err: crate::operation::get_license_recommendations::GetLicenseRecommendationsError) -> Self {
+        match err {
+            crate::operation::get_license_recommendations::GetLicenseRecommendationsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_license_recommendations::GetLicenseRecommendationsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_license_recommendations::GetLicenseRecommendationsError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::get_license_recommendations::GetLicenseRecommendationsError::MissingAuthenticationToken(inner) => {
+                Error::MissingAuthenticationToken(inner)
+            }
+            crate::operation::get_license_recommendations::GetLicenseRecommendationsError::OptInRequiredException(inner) => {
+                Error::OptInRequiredException(inner)
+            }
+            crate::operation::get_license_recommendations::GetLicenseRecommendationsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_license_recommendations::GetLicenseRecommendationsError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::get_license_recommendations::GetLicenseRecommendationsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::get_license_recommendations::GetLicenseRecommendationsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

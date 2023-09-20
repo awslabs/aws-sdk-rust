@@ -2,7 +2,7 @@
 
 /// <p> The metadata that's associated with the delegation. </p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct DelegationMetadata {
     /// <p> The unique identifier for the delegation. </p>
     pub id: ::std::option::Option<::std::string::String>,
@@ -49,6 +49,19 @@ impl DelegationMetadata {
         self.control_set_name.as_deref()
     }
 }
+impl ::std::fmt::Debug for DelegationMetadata {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("DelegationMetadata");
+        formatter.field("id", &self.id);
+        formatter.field("assessment_name", &"*** Sensitive Data Redacted ***");
+        formatter.field("assessment_id", &self.assessment_id);
+        formatter.field("status", &self.status);
+        formatter.field("role_arn", &self.role_arn);
+        formatter.field("creation_time", &self.creation_time);
+        formatter.field("control_set_name", &self.control_set_name);
+        formatter.finish()
+    }
+}
 impl DelegationMetadata {
     /// Creates a new builder-style object to manufacture [`DelegationMetadata`](crate::types::DelegationMetadata).
     pub fn builder() -> crate::types::builders::DelegationMetadataBuilder {
@@ -58,7 +71,7 @@ impl DelegationMetadata {
 
 /// A builder for [`DelegationMetadata`](crate::types::DelegationMetadata).
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct DelegationMetadataBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) assessment_name: ::std::option::Option<::std::string::String>,
@@ -178,5 +191,18 @@ impl DelegationMetadataBuilder {
             creation_time: self.creation_time,
             control_set_name: self.control_set_name,
         }
+    }
+}
+impl ::std::fmt::Debug for DelegationMetadataBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("DelegationMetadataBuilder");
+        formatter.field("id", &self.id);
+        formatter.field("assessment_name", &"*** Sensitive Data Redacted ***");
+        formatter.field("assessment_id", &self.assessment_id);
+        formatter.field("status", &self.status);
+        formatter.field("role_arn", &self.role_arn);
+        formatter.field("creation_time", &self.creation_time);
+        formatter.field("control_set_name", &self.control_set_name);
+        formatter.finish()
     }
 }

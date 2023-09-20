@@ -12,6 +12,8 @@ pub struct TemplateConfiguration {
     pub sms_template: ::std::option::Option<crate::types::Template>,
     /// <p>The voice template to use for the message. This object isn't supported for campaigns.</p>
     pub voice_template: ::std::option::Option<crate::types::Template>,
+    /// <p>The InApp template to use for the message. The InApp template object is not supported for SendMessages.</p>
+    pub in_app_template: ::std::option::Option<crate::types::Template>,
 }
 impl TemplateConfiguration {
     /// <p>The email template to use for the message.</p>
@@ -30,6 +32,10 @@ impl TemplateConfiguration {
     pub fn voice_template(&self) -> ::std::option::Option<&crate::types::Template> {
         self.voice_template.as_ref()
     }
+    /// <p>The InApp template to use for the message. The InApp template object is not supported for SendMessages.</p>
+    pub fn in_app_template(&self) -> ::std::option::Option<&crate::types::Template> {
+        self.in_app_template.as_ref()
+    }
 }
 impl TemplateConfiguration {
     /// Creates a new builder-style object to manufacture [`TemplateConfiguration`](crate::types::TemplateConfiguration).
@@ -46,6 +52,7 @@ pub struct TemplateConfigurationBuilder {
     pub(crate) push_template: ::std::option::Option<crate::types::Template>,
     pub(crate) sms_template: ::std::option::Option<crate::types::Template>,
     pub(crate) voice_template: ::std::option::Option<crate::types::Template>,
+    pub(crate) in_app_template: ::std::option::Option<crate::types::Template>,
 }
 impl TemplateConfigurationBuilder {
     /// <p>The email template to use for the message.</p>
@@ -104,6 +111,20 @@ impl TemplateConfigurationBuilder {
     pub fn get_voice_template(&self) -> &::std::option::Option<crate::types::Template> {
         &self.voice_template
     }
+    /// <p>The InApp template to use for the message. The InApp template object is not supported for SendMessages.</p>
+    pub fn in_app_template(mut self, input: crate::types::Template) -> Self {
+        self.in_app_template = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The InApp template to use for the message. The InApp template object is not supported for SendMessages.</p>
+    pub fn set_in_app_template(mut self, input: ::std::option::Option<crate::types::Template>) -> Self {
+        self.in_app_template = input;
+        self
+    }
+    /// <p>The InApp template to use for the message. The InApp template object is not supported for SendMessages.</p>
+    pub fn get_in_app_template(&self) -> &::std::option::Option<crate::types::Template> {
+        &self.in_app_template
+    }
     /// Consumes the builder and constructs a [`TemplateConfiguration`](crate::types::TemplateConfiguration).
     pub fn build(self) -> crate::types::TemplateConfiguration {
         crate::types::TemplateConfiguration {
@@ -111,6 +132,7 @@ impl TemplateConfigurationBuilder {
             push_template: self.push_template,
             sms_template: self.sms_template,
             voice_template: self.voice_template,
+            in_app_template: self.in_app_template,
         }
     }
 }

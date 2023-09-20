@@ -2,7 +2,7 @@
 
 /// <p> A collection of attributes that's used to create a delegation for an assessment in Audit Manager. </p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateDelegationRequest {
     /// <p> A comment that's related to the delegation request. </p>
     pub comment: ::std::option::Option<::std::string::String>,
@@ -39,6 +39,16 @@ impl CreateDelegationRequest {
         self.role_type.as_ref()
     }
 }
+impl ::std::fmt::Debug for CreateDelegationRequest {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateDelegationRequest");
+        formatter.field("comment", &"*** Sensitive Data Redacted ***");
+        formatter.field("control_set_id", &self.control_set_id);
+        formatter.field("role_arn", &self.role_arn);
+        formatter.field("role_type", &self.role_type);
+        formatter.finish()
+    }
+}
 impl CreateDelegationRequest {
     /// Creates a new builder-style object to manufacture [`CreateDelegationRequest`](crate::types::CreateDelegationRequest).
     pub fn builder() -> crate::types::builders::CreateDelegationRequestBuilder {
@@ -48,7 +58,7 @@ impl CreateDelegationRequest {
 
 /// A builder for [`CreateDelegationRequest`](crate::types::CreateDelegationRequest).
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct CreateDelegationRequestBuilder {
     pub(crate) comment: ::std::option::Option<::std::string::String>,
     pub(crate) control_set_id: ::std::option::Option<::std::string::String>,
@@ -132,5 +142,15 @@ impl CreateDelegationRequestBuilder {
             role_arn: self.role_arn,
             role_type: self.role_type,
         }
+    }
+}
+impl ::std::fmt::Debug for CreateDelegationRequestBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateDelegationRequestBuilder");
+        formatter.field("comment", &"*** Sensitive Data Redacted ***");
+        formatter.field("control_set_id", &self.control_set_id);
+        formatter.field("role_arn", &self.role_arn);
+        formatter.field("role_type", &self.role_type);
+        formatter.finish()
     }
 }

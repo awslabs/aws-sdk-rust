@@ -30,14 +30,14 @@ pub fn ser_create_unreferenced_merge_commit_input(
     if let Some(var_9) = &input.commit_message {
         object.key("commitMessage").string(var_9.as_str());
     }
-    if input.keep_empty_folders {
-        object.key("keepEmptyFolders").boolean(input.keep_empty_folders);
+    if let Some(var_10) = &input.keep_empty_folders {
+        object.key("keepEmptyFolders").boolean(*var_10);
     }
-    if let Some(var_10) = &input.conflict_resolution {
+    if let Some(var_11) = &input.conflict_resolution {
         #[allow(unused_mut)]
-        let mut object_11 = object.key("conflictResolution").start_object();
-        crate::protocol_serde::shape_conflict_resolution::ser_conflict_resolution(&mut object_11, var_10)?;
-        object_11.finish();
+        let mut object_12 = object.key("conflictResolution").start_object();
+        crate::protocol_serde::shape_conflict_resolution::ser_conflict_resolution(&mut object_12, var_11)?;
+        object_12.finish();
     }
     Ok(())
 }

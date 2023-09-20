@@ -30,6 +30,18 @@ pub struct Session {
     pub security_configuration: ::std::option::Option<::std::string::String>,
     /// <p>The Glue version determines the versions of Apache Spark and Python that Glue supports. The GlueVersion must be greater than 2.0.</p>
     pub glue_version: ::std::option::Option<::std::string::String>,
+    /// <p>The number of workers of a defined <code>WorkerType</code> to use for the session.</p>
+    pub number_of_workers: ::std::option::Option<i32>,
+    /// <p>The type of predefined worker that is allocated when a session runs. Accepts a value of <code>G.1X</code>, <code>G.2X</code>, <code>G.4X</code>, or <code>G.8X</code> for Spark sessions. Accepts the value <code>Z.2X</code> for Ray sessions.</p>
+    pub worker_type: ::std::option::Option<crate::types::WorkerType>,
+    /// <p>The date and time that this session is completed.</p>
+    pub completed_on: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The total time the session ran for.</p>
+    pub execution_time: ::std::option::Option<f64>,
+    /// <p>The DPUs consumed by the session (formula: ExecutionTime * MaxCapacity).</p>
+    pub dpu_seconds: ::std::option::Option<f64>,
+    /// <p>The number of minutes when idle before the session times out.</p>
+    pub idle_timeout: ::std::option::Option<i32>,
 }
 impl Session {
     /// <p>The ID of the session.</p>
@@ -84,6 +96,30 @@ impl Session {
     pub fn glue_version(&self) -> ::std::option::Option<&str> {
         self.glue_version.as_deref()
     }
+    /// <p>The number of workers of a defined <code>WorkerType</code> to use for the session.</p>
+    pub fn number_of_workers(&self) -> ::std::option::Option<i32> {
+        self.number_of_workers
+    }
+    /// <p>The type of predefined worker that is allocated when a session runs. Accepts a value of <code>G.1X</code>, <code>G.2X</code>, <code>G.4X</code>, or <code>G.8X</code> for Spark sessions. Accepts the value <code>Z.2X</code> for Ray sessions.</p>
+    pub fn worker_type(&self) -> ::std::option::Option<&crate::types::WorkerType> {
+        self.worker_type.as_ref()
+    }
+    /// <p>The date and time that this session is completed.</p>
+    pub fn completed_on(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.completed_on.as_ref()
+    }
+    /// <p>The total time the session ran for.</p>
+    pub fn execution_time(&self) -> ::std::option::Option<f64> {
+        self.execution_time
+    }
+    /// <p>The DPUs consumed by the session (formula: ExecutionTime * MaxCapacity).</p>
+    pub fn dpu_seconds(&self) -> ::std::option::Option<f64> {
+        self.dpu_seconds
+    }
+    /// <p>The number of minutes when idle before the session times out.</p>
+    pub fn idle_timeout(&self) -> ::std::option::Option<i32> {
+        self.idle_timeout
+    }
 }
 impl Session {
     /// Creates a new builder-style object to manufacture [`Session`](crate::types::Session).
@@ -109,6 +145,12 @@ pub struct SessionBuilder {
     pub(crate) max_capacity: ::std::option::Option<f64>,
     pub(crate) security_configuration: ::std::option::Option<::std::string::String>,
     pub(crate) glue_version: ::std::option::Option<::std::string::String>,
+    pub(crate) number_of_workers: ::std::option::Option<i32>,
+    pub(crate) worker_type: ::std::option::Option<crate::types::WorkerType>,
+    pub(crate) completed_on: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) execution_time: ::std::option::Option<f64>,
+    pub(crate) dpu_seconds: ::std::option::Option<f64>,
+    pub(crate) idle_timeout: ::std::option::Option<i32>,
 }
 impl SessionBuilder {
     /// <p>The ID of the session.</p>
@@ -306,6 +348,90 @@ impl SessionBuilder {
     pub fn get_glue_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.glue_version
     }
+    /// <p>The number of workers of a defined <code>WorkerType</code> to use for the session.</p>
+    pub fn number_of_workers(mut self, input: i32) -> Self {
+        self.number_of_workers = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The number of workers of a defined <code>WorkerType</code> to use for the session.</p>
+    pub fn set_number_of_workers(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.number_of_workers = input;
+        self
+    }
+    /// <p>The number of workers of a defined <code>WorkerType</code> to use for the session.</p>
+    pub fn get_number_of_workers(&self) -> &::std::option::Option<i32> {
+        &self.number_of_workers
+    }
+    /// <p>The type of predefined worker that is allocated when a session runs. Accepts a value of <code>G.1X</code>, <code>G.2X</code>, <code>G.4X</code>, or <code>G.8X</code> for Spark sessions. Accepts the value <code>Z.2X</code> for Ray sessions.</p>
+    pub fn worker_type(mut self, input: crate::types::WorkerType) -> Self {
+        self.worker_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The type of predefined worker that is allocated when a session runs. Accepts a value of <code>G.1X</code>, <code>G.2X</code>, <code>G.4X</code>, or <code>G.8X</code> for Spark sessions. Accepts the value <code>Z.2X</code> for Ray sessions.</p>
+    pub fn set_worker_type(mut self, input: ::std::option::Option<crate::types::WorkerType>) -> Self {
+        self.worker_type = input;
+        self
+    }
+    /// <p>The type of predefined worker that is allocated when a session runs. Accepts a value of <code>G.1X</code>, <code>G.2X</code>, <code>G.4X</code>, or <code>G.8X</code> for Spark sessions. Accepts the value <code>Z.2X</code> for Ray sessions.</p>
+    pub fn get_worker_type(&self) -> &::std::option::Option<crate::types::WorkerType> {
+        &self.worker_type
+    }
+    /// <p>The date and time that this session is completed.</p>
+    pub fn completed_on(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.completed_on = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The date and time that this session is completed.</p>
+    pub fn set_completed_on(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.completed_on = input;
+        self
+    }
+    /// <p>The date and time that this session is completed.</p>
+    pub fn get_completed_on(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.completed_on
+    }
+    /// <p>The total time the session ran for.</p>
+    pub fn execution_time(mut self, input: f64) -> Self {
+        self.execution_time = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The total time the session ran for.</p>
+    pub fn set_execution_time(mut self, input: ::std::option::Option<f64>) -> Self {
+        self.execution_time = input;
+        self
+    }
+    /// <p>The total time the session ran for.</p>
+    pub fn get_execution_time(&self) -> &::std::option::Option<f64> {
+        &self.execution_time
+    }
+    /// <p>The DPUs consumed by the session (formula: ExecutionTime * MaxCapacity).</p>
+    pub fn dpu_seconds(mut self, input: f64) -> Self {
+        self.dpu_seconds = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The DPUs consumed by the session (formula: ExecutionTime * MaxCapacity).</p>
+    pub fn set_dpu_seconds(mut self, input: ::std::option::Option<f64>) -> Self {
+        self.dpu_seconds = input;
+        self
+    }
+    /// <p>The DPUs consumed by the session (formula: ExecutionTime * MaxCapacity).</p>
+    pub fn get_dpu_seconds(&self) -> &::std::option::Option<f64> {
+        &self.dpu_seconds
+    }
+    /// <p>The number of minutes when idle before the session times out.</p>
+    pub fn idle_timeout(mut self, input: i32) -> Self {
+        self.idle_timeout = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The number of minutes when idle before the session times out.</p>
+    pub fn set_idle_timeout(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.idle_timeout = input;
+        self
+    }
+    /// <p>The number of minutes when idle before the session times out.</p>
+    pub fn get_idle_timeout(&self) -> &::std::option::Option<i32> {
+        &self.idle_timeout
+    }
     /// Consumes the builder and constructs a [`Session`](crate::types::Session).
     pub fn build(self) -> crate::types::Session {
         crate::types::Session {
@@ -322,6 +448,12 @@ impl SessionBuilder {
             max_capacity: self.max_capacity,
             security_configuration: self.security_configuration,
             glue_version: self.glue_version,
+            number_of_workers: self.number_of_workers,
+            worker_type: self.worker_type,
+            completed_on: self.completed_on,
+            execution_time: self.execution_time,
+            dpu_seconds: self.dpu_seconds,
+            idle_timeout: self.idle_timeout,
         }
     }
 }

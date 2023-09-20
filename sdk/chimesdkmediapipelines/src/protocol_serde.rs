@@ -45,6 +45,10 @@ pub(crate) mod shape_get_media_insights_pipeline_configuration;
 
 pub(crate) mod shape_get_media_pipeline;
 
+pub(crate) mod shape_get_speaker_search_task;
+
+pub(crate) mod shape_get_voice_tone_analysis_task;
+
 pub(crate) mod shape_list_media_capture_pipelines;
 
 pub(crate) mod shape_list_media_insights_pipeline_configurations;
@@ -52,6 +56,14 @@ pub(crate) mod shape_list_media_insights_pipeline_configurations;
 pub(crate) mod shape_list_media_pipelines;
 
 pub(crate) mod shape_list_tags_for_resource;
+
+pub(crate) mod shape_start_speaker_search_task;
+
+pub(crate) mod shape_start_voice_tone_analysis_task;
+
+pub(crate) mod shape_stop_speaker_search_task;
+
+pub(crate) mod shape_stop_voice_tone_analysis_task;
 
 pub(crate) mod shape_tag_resource;
 
@@ -93,6 +105,10 @@ pub(crate) mod shape_service_failure_exception;
 
 pub(crate) mod shape_service_unavailable_exception;
 
+pub(crate) mod shape_start_speaker_search_task_input;
+
+pub(crate) mod shape_start_voice_tone_analysis_task_input;
+
 pub(crate) mod shape_tag_resource_input;
 
 pub(crate) mod shape_throttled_client_exception;
@@ -114,6 +130,8 @@ pub(crate) mod shape_concatenation_source;
 pub(crate) mod shape_kinesis_video_stream_recording_source_runtime_configuration;
 
 pub(crate) mod shape_kinesis_video_stream_source_runtime_configuration;
+
+pub(crate) mod shape_kinesis_video_stream_source_task_configuration;
 
 pub(crate) mod shape_live_connector_sink_configuration;
 
@@ -143,9 +161,13 @@ pub(crate) mod shape_real_time_alert_configuration;
 
 pub(crate) mod shape_s3_recording_sink_runtime_configuration;
 
+pub(crate) mod shape_speaker_search_task;
+
 pub(crate) mod shape_tag;
 
 pub(crate) mod shape_tag_list;
+
+pub(crate) mod shape_voice_tone_analysis_task;
 
 pub(crate) mod shape_amazon_transcribe_call_analytics_processor_configuration;
 
@@ -179,6 +201,8 @@ pub(crate) mod shape_media_insights_pipeline_configuration_elements;
 
 pub(crate) mod shape_media_insights_pipeline_configuration_summary;
 
+pub(crate) mod shape_media_insights_pipeline_element_statuses;
+
 pub(crate) mod shape_media_insights_runtime_metadata;
 
 pub(crate) mod shape_media_pipeline_summary;
@@ -201,6 +225,8 @@ pub(crate) mod shape_stream_configuration;
 
 pub(crate) mod shape_voice_analytics_processor_configuration;
 
+pub(crate) mod shape_voice_enhancement_sink_configuration;
+
 pub(crate) mod shape_audio_artifacts_configuration;
 
 pub(crate) mod shape_chime_sdk_meeting_concatenation_configuration;
@@ -212,6 +238,8 @@ pub(crate) mod shape_content_artifacts_configuration;
 pub(crate) mod shape_issue_detection_configuration;
 
 pub(crate) mod shape_keyword_match_configuration;
+
+pub(crate) mod shape_media_insights_pipeline_element_status;
 
 pub(crate) mod shape_post_call_analytics_settings;
 

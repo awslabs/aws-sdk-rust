@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`rule_set_name(impl Into<String>)`](crate::operation::reorder_receipt_rule_set::builders::ReorderReceiptRuleSetFluentBuilder::rule_set_name) / [`set_rule_set_name(Option<String>)`](crate::operation::reorder_receipt_rule_set::builders::ReorderReceiptRuleSetFluentBuilder::set_rule_set_name): <p>The name of the receipt rule set to reorder.</p>
-    ///   - [`rule_names(impl Into<String>)`](crate::operation::reorder_receipt_rule_set::builders::ReorderReceiptRuleSetFluentBuilder::rule_names) / [`set_rule_names(Option<Vec<String>>)`](crate::operation::reorder_receipt_rule_set::builders::ReorderReceiptRuleSetFluentBuilder::set_rule_names): <p>A list of the specified receipt rule set's receipt rules in the order that you want to put them.</p>
+    ///   - [`rule_names(impl Into<String>)`](crate::operation::reorder_receipt_rule_set::builders::ReorderReceiptRuleSetFluentBuilder::rule_names) / [`set_rule_names(Option<Vec<String>>)`](crate::operation::reorder_receipt_rule_set::builders::ReorderReceiptRuleSetFluentBuilder::set_rule_names): <p>The specified receipt rule set's receipt rules, in order.</p>
     /// - On success, responds with [`ReorderReceiptRuleSetOutput`](crate::operation::reorder_receipt_rule_set::ReorderReceiptRuleSetOutput)
     /// - On failure, responds with [`SdkError<ReorderReceiptRuleSetError>`](crate::operation::reorder_receipt_rule_set::ReorderReceiptRuleSetError)
     pub fn reorder_receipt_rule_set(&self) -> crate::operation::reorder_receipt_rule_set::builders::ReorderReceiptRuleSetFluentBuilder {

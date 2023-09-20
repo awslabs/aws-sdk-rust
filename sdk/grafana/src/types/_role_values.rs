@@ -2,7 +2,7 @@
 
 /// <p>This structure defines which groups defined in the SAML assertion attribute are to be mapped to the Grafana <code>Admin</code> and <code>Editor</code> roles in the workspace. SAML authenticated users not part of <code>Admin</code> or <code>Editor</code> role groups have <code>Viewer</code> permission over the workspace.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RoleValues {
     /// <p>A list of groups from the SAML assertion attribute to grant the Grafana <code>Editor</code> role to.</p>
     pub editor: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -19,6 +19,14 @@ impl RoleValues {
         self.admin.as_deref()
     }
 }
+impl ::std::fmt::Debug for RoleValues {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RoleValues");
+        formatter.field("editor", &"*** Sensitive Data Redacted ***");
+        formatter.field("admin", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl RoleValues {
     /// Creates a new builder-style object to manufacture [`RoleValues`](crate::types::RoleValues).
     pub fn builder() -> crate::types::builders::RoleValuesBuilder {
@@ -28,7 +36,7 @@ impl RoleValues {
 
 /// A builder for [`RoleValues`](crate::types::RoleValues).
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct RoleValuesBuilder {
     pub(crate) editor: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) admin: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -80,5 +88,13 @@ impl RoleValuesBuilder {
             editor: self.editor,
             admin: self.admin,
         }
+    }
+}
+impl ::std::fmt::Debug for RoleValuesBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RoleValuesBuilder");
+        formatter.field("editor", &"*** Sensitive Data Redacted ***");
+        formatter.field("admin", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

@@ -9,5 +9,8 @@ pub fn ser_create_group_input(
     if let Some(var_2) = &input.name {
         object.key("Name").string(var_2.as_str());
     }
+    if let Some(var_3) = &input.hidden_from_global_address_list {
+        object.key("HiddenFromGlobalAddressList").boolean(*var_3);
+    }
     Ok(())
 }

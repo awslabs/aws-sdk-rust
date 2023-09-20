@@ -255,6 +255,8 @@ pub type DeleteDBClusterErrorKind = DeleteDBClusterError;
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum DeleteDBClusterError {
+    /// <p>The quota for retained automated backups was exceeded. This prevents you from retaining any additional automated backups. The retained automated backups quota is the same as your DB cluster quota.</p>
+    DbClusterAutomatedBackupQuotaExceededFault(crate::types::error::DbClusterAutomatedBackupQuotaExceededFault),
     /// <p> <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.</p>
     DbClusterNotFoundFault(crate::types::error::DbClusterNotFoundFault),
     /// <p>The user already has a DB cluster snapshot with the given identifier.</p>
@@ -283,6 +285,7 @@ impl ::aws_smithy_http::result::CreateUnhandledError for DeleteDBClusterError {
 impl ::std::fmt::Display for DeleteDBClusterError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
+            Self::DbClusterAutomatedBackupQuotaExceededFault(_inner) => _inner.fmt(f),
             Self::DbClusterNotFoundFault(_inner) => _inner.fmt(f),
             Self::DbClusterSnapshotAlreadyExistsFault(_inner) => _inner.fmt(f),
             Self::InvalidDbClusterSnapshotStateFault(_inner) => _inner.fmt(f),
@@ -295,6 +298,7 @@ impl ::std::fmt::Display for DeleteDBClusterError {
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for DeleteDBClusterError {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::DbClusterAutomatedBackupQuotaExceededFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::DbClusterNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::DbClusterSnapshotAlreadyExistsFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidDbClusterSnapshotStateFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
@@ -336,6 +340,7 @@ impl DeleteDBClusterError {
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         match self {
+            Self::DbClusterAutomatedBackupQuotaExceededFault(e) => e.meta(),
             Self::DbClusterNotFoundFault(e) => e.meta(),
             Self::DbClusterSnapshotAlreadyExistsFault(e) => e.meta(),
             Self::InvalidDbClusterSnapshotStateFault(e) => e.meta(),
@@ -343,6 +348,10 @@ impl DeleteDBClusterError {
             Self::SnapshotQuotaExceededFault(e) => e.meta(),
             Self::Unhandled(e) => e.meta(),
         }
+    }
+    /// Returns `true` if the error kind is `DeleteDBClusterError::DbClusterAutomatedBackupQuotaExceededFault`.
+    pub fn is_db_cluster_automated_backup_quota_exceeded_fault(&self) -> bool {
+        matches!(self, Self::DbClusterAutomatedBackupQuotaExceededFault(_))
     }
     /// Returns `true` if the error kind is `DeleteDBClusterError::DbClusterNotFoundFault`.
     pub fn is_db_cluster_not_found_fault(&self) -> bool {
@@ -368,6 +377,7 @@ impl DeleteDBClusterError {
 impl ::std::error::Error for DeleteDBClusterError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
+            Self::DbClusterAutomatedBackupQuotaExceededFault(_inner) => ::std::option::Option::Some(_inner),
             Self::DbClusterNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
             Self::DbClusterSnapshotAlreadyExistsFault(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidDbClusterSnapshotStateFault(_inner) => ::std::option::Option::Some(_inner),

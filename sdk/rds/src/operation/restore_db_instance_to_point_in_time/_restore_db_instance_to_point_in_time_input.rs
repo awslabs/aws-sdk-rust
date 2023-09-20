@@ -29,7 +29,7 @@ pub struct RestoreDbInstanceToPointInTimeInput {
     pub restore_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A value that indicates whether the DB instance is restored from the latest backup time. By default, the DB instance isn't restored from the latest backup time.</p>
     /// <p>Constraints: Can't be specified if the <code>RestoreTime</code> parameter is provided.</p>
-    pub use_latest_restorable_time: bool,
+    pub use_latest_restorable_time: ::std::option::Option<bool>,
     /// <p>The compute and memory capacity of the Amazon RDS DB instance, for example db.m4.large. Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines. For the full list of DB instance classes, and availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>Default: The same DBInstanceClass as the original DB instance.</p>
     pub db_instance_class: ::std::option::Option<::std::string::String>,
@@ -252,7 +252,7 @@ impl RestoreDbInstanceToPointInTimeInput {
     }
     /// <p>A value that indicates whether the DB instance is restored from the latest backup time. By default, the DB instance isn't restored from the latest backup time.</p>
     /// <p>Constraints: Can't be specified if the <code>RestoreTime</code> parameter is provided.</p>
-    pub fn use_latest_restorable_time(&self) -> bool {
+    pub fn use_latest_restorable_time(&self) -> ::std::option::Option<bool> {
         self.use_latest_restorable_time
     }
     /// <p>The compute and memory capacity of the Amazon RDS DB instance, for example db.m4.large. Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines. For the full list of DB instance classes, and availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a> in the <i>Amazon RDS User Guide</i>.</p>
@@ -1610,7 +1610,7 @@ impl RestoreDbInstanceToPointInTimeInputBuilder {
                 source_db_instance_identifier: self.source_db_instance_identifier,
                 target_db_instance_identifier: self.target_db_instance_identifier,
                 restore_time: self.restore_time,
-                use_latest_restorable_time: self.use_latest_restorable_time.unwrap_or_default(),
+                use_latest_restorable_time: self.use_latest_restorable_time,
                 db_instance_class: self.db_instance_class,
                 port: self.port,
                 availability_zone: self.availability_zone,

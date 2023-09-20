@@ -12,8 +12,11 @@ pub fn ser_create_phone_number_order_input(
         }
         array_2.finish();
     }
-    if let Some(var_4) = &input.product_type {
-        object.key("ProductType").string(var_4.as_str());
+    if let Some(var_4) = &input.name {
+        object.key("Name").string(var_4.as_str());
+    }
+    if let Some(var_5) = &input.product_type {
+        object.key("ProductType").string(var_5.as_str());
     }
     Ok(())
 }

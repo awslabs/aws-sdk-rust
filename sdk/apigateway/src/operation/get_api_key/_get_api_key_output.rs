@@ -10,7 +10,7 @@ pub struct GetApiKeyOutput {
     pub value: ::std::option::Option<::std::string::String>,
     /// <p>The name of the API Key.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>An AWS Marketplace customer identifier , when integrating with the AWS SaaS Marketplace.</p>
+    /// <p>An Amazon Web Services Marketplace customer identifier, when integrating with the Amazon Web Services SaaS Marketplace.</p>
     pub customer_id: ::std::option::Option<::std::string::String>,
     /// <p>The description of the API Key.</p>
     pub description: ::std::option::Option<::std::string::String>,
@@ -39,7 +39,7 @@ impl GetApiKeyOutput {
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>An AWS Marketplace customer identifier , when integrating with the AWS SaaS Marketplace.</p>
+    /// <p>An Amazon Web Services Marketplace customer identifier, when integrating with the Amazon Web Services SaaS Marketplace.</p>
     pub fn customer_id(&self) -> ::std::option::Option<&str> {
         self.customer_id.as_deref()
     }
@@ -139,17 +139,17 @@ impl GetApiKeyOutputBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>An AWS Marketplace customer identifier , when integrating with the AWS SaaS Marketplace.</p>
+    /// <p>An Amazon Web Services Marketplace customer identifier, when integrating with the Amazon Web Services SaaS Marketplace.</p>
     pub fn customer_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.customer_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>An AWS Marketplace customer identifier , when integrating with the AWS SaaS Marketplace.</p>
+    /// <p>An Amazon Web Services Marketplace customer identifier, when integrating with the Amazon Web Services SaaS Marketplace.</p>
     pub fn set_customer_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.customer_id = input;
         self
     }
-    /// <p>An AWS Marketplace customer identifier , when integrating with the AWS SaaS Marketplace.</p>
+    /// <p>An Amazon Web Services Marketplace customer identifier, when integrating with the Amazon Web Services SaaS Marketplace.</p>
     pub fn get_customer_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.customer_id
     }

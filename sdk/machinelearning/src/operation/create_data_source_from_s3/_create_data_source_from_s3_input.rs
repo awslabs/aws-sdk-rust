@@ -16,7 +16,7 @@ pub struct CreateDataSourceFromS3Input {
     /// </ul>
     pub data_spec: ::std::option::Option<crate::types::S3DataSpec>,
     /// <p>The compute statistics for a <code>DataSource</code>. The statistics are generated from the observation data referenced by a <code>DataSource</code>. Amazon ML uses the statistics internally during <code>MLModel</code> training. This parameter must be set to <code>true</code> if the <code></code>DataSource<code></code> needs to be used for <code>MLModel</code> training.</p>
-    pub compute_statistics: bool,
+    pub compute_statistics: ::std::option::Option<bool>,
 }
 impl CreateDataSourceFromS3Input {
     /// <p>A user-supplied identifier that uniquely identifies the <code>DataSource</code>. </p>
@@ -38,7 +38,7 @@ impl CreateDataSourceFromS3Input {
         self.data_spec.as_ref()
     }
     /// <p>The compute statistics for a <code>DataSource</code>. The statistics are generated from the observation data referenced by a <code>DataSource</code>. Amazon ML uses the statistics internally during <code>MLModel</code> training. This parameter must be set to <code>true</code> if the <code></code>DataSource<code></code> needs to be used for <code>MLModel</code> training.</p>
-    pub fn compute_statistics(&self) -> bool {
+    pub fn compute_statistics(&self) -> ::std::option::Option<bool> {
         self.compute_statistics
     }
 }
@@ -144,7 +144,7 @@ impl CreateDataSourceFromS3InputBuilder {
             data_source_id: self.data_source_id,
             data_source_name: self.data_source_name,
             data_spec: self.data_spec,
-            compute_statistics: self.compute_statistics.unwrap_or_default(),
+            compute_statistics: self.compute_statistics,
         })
     }
 }

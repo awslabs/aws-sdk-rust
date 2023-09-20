@@ -63,9 +63,9 @@ pub struct IdentityProviderType {
     pub attribute_mapping: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A list of IdP identifiers.</p>
     pub idp_identifiers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>The date the IdP was last modified.</p>
+    /// <p>The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format, when the item was modified.</p>
     pub last_modified_date: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The date the IdP was created.</p>
+    /// <p>The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format, when the item was created.</p>
     pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl IdentityProviderType {
@@ -140,11 +140,11 @@ impl IdentityProviderType {
     pub fn idp_identifiers(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.idp_identifiers.as_deref()
     }
-    /// <p>The date the IdP was last modified.</p>
+    /// <p>The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format, when the item was modified.</p>
     pub fn last_modified_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_modified_date.as_ref()
     }
-    /// <p>The date the IdP was created.</p>
+    /// <p>The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format, when the item was created.</p>
     pub fn creation_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
@@ -427,31 +427,31 @@ impl IdentityProviderTypeBuilder {
     pub fn get_idp_identifiers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.idp_identifiers
     }
-    /// <p>The date the IdP was last modified.</p>
+    /// <p>The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format, when the item was modified.</p>
     pub fn last_modified_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_date = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The date the IdP was last modified.</p>
+    /// <p>The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format, when the item was modified.</p>
     pub fn set_last_modified_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_date = input;
         self
     }
-    /// <p>The date the IdP was last modified.</p>
+    /// <p>The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format, when the item was modified.</p>
     pub fn get_last_modified_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modified_date
     }
-    /// <p>The date the IdP was created.</p>
+    /// <p>The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format, when the item was created.</p>
     pub fn creation_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_date = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The date the IdP was created.</p>
+    /// <p>The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format, when the item was created.</p>
     pub fn set_creation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_date = input;
         self
     }
-    /// <p>The date the IdP was created.</p>
+    /// <p>The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format, when the item was created.</p>
     pub fn get_creation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.creation_date
     }

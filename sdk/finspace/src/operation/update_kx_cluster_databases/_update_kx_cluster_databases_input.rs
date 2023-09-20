@@ -11,6 +11,8 @@ pub struct UpdateKxClusterDatabasesInput {
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p> The structure of databases mounted on the cluster.</p>
     pub databases: ::std::option::Option<::std::vec::Vec<crate::types::KxDatabaseConfiguration>>,
+    /// <p> The configuration that allows you to choose how you want to update the databases on a cluster. </p>
+    pub deployment_configuration: ::std::option::Option<crate::types::KxDeploymentConfiguration>,
 }
 impl UpdateKxClusterDatabasesInput {
     /// <p>The unique identifier of a kdb environment.</p>
@@ -29,6 +31,10 @@ impl UpdateKxClusterDatabasesInput {
     pub fn databases(&self) -> ::std::option::Option<&[crate::types::KxDatabaseConfiguration]> {
         self.databases.as_deref()
     }
+    /// <p> The configuration that allows you to choose how you want to update the databases on a cluster. </p>
+    pub fn deployment_configuration(&self) -> ::std::option::Option<&crate::types::KxDeploymentConfiguration> {
+        self.deployment_configuration.as_ref()
+    }
 }
 impl UpdateKxClusterDatabasesInput {
     /// Creates a new builder-style object to manufacture [`UpdateKxClusterDatabasesInput`](crate::operation::update_kx_cluster_databases::UpdateKxClusterDatabasesInput).
@@ -45,6 +51,7 @@ pub struct UpdateKxClusterDatabasesInputBuilder {
     pub(crate) cluster_name: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) databases: ::std::option::Option<::std::vec::Vec<crate::types::KxDatabaseConfiguration>>,
+    pub(crate) deployment_configuration: ::std::option::Option<crate::types::KxDeploymentConfiguration>,
 }
 impl UpdateKxClusterDatabasesInputBuilder {
     /// <p>The unique identifier of a kdb environment.</p>
@@ -109,6 +116,20 @@ impl UpdateKxClusterDatabasesInputBuilder {
     pub fn get_databases(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::KxDatabaseConfiguration>> {
         &self.databases
     }
+    /// <p> The configuration that allows you to choose how you want to update the databases on a cluster. </p>
+    pub fn deployment_configuration(mut self, input: crate::types::KxDeploymentConfiguration) -> Self {
+        self.deployment_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p> The configuration that allows you to choose how you want to update the databases on a cluster. </p>
+    pub fn set_deployment_configuration(mut self, input: ::std::option::Option<crate::types::KxDeploymentConfiguration>) -> Self {
+        self.deployment_configuration = input;
+        self
+    }
+    /// <p> The configuration that allows you to choose how you want to update the databases on a cluster. </p>
+    pub fn get_deployment_configuration(&self) -> &::std::option::Option<crate::types::KxDeploymentConfiguration> {
+        &self.deployment_configuration
+    }
     /// Consumes the builder and constructs a [`UpdateKxClusterDatabasesInput`](crate::operation::update_kx_cluster_databases::UpdateKxClusterDatabasesInput).
     pub fn build(
         self,
@@ -121,6 +142,7 @@ impl UpdateKxClusterDatabasesInputBuilder {
             cluster_name: self.cluster_name,
             client_token: self.client_token,
             databases: self.databases,
+            deployment_configuration: self.deployment_configuration,
         })
     }
 }

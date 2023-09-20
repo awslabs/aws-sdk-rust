@@ -51,5 +51,11 @@ pub fn ser_elasticsearch_destination_update(
         crate::protocol_serde::shape_cloud_watch_logging_options::ser_cloud_watch_logging_options(&mut object_16, var_15)?;
         object_16.finish();
     }
+    if let Some(var_17) = &input.document_id_options {
+        #[allow(unused_mut)]
+        let mut object_18 = object.key("DocumentIdOptions").start_object();
+        crate::protocol_serde::shape_document_id_options::ser_document_id_options(&mut object_18, var_17)?;
+        object_18.finish();
+    }
     Ok(())
 }

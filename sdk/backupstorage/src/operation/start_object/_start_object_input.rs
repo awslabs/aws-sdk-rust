@@ -8,7 +8,7 @@ pub struct StartObjectInput {
     /// Name for the object.
     pub object_name: ::std::option::Option<::std::string::String>,
     /// Throw an exception if Object name is already exist.
-    pub throw_on_duplicate: bool,
+    pub throw_on_duplicate: ::std::option::Option<bool>,
 }
 impl StartObjectInput {
     /// Backup job Id for the in-progress backup
@@ -20,7 +20,7 @@ impl StartObjectInput {
         self.object_name.as_deref()
     }
     /// Throw an exception if Object name is already exist.
-    pub fn throw_on_duplicate(&self) -> bool {
+    pub fn throw_on_duplicate(&self) -> ::std::option::Option<bool> {
         self.throw_on_duplicate
     }
 }
@@ -87,7 +87,7 @@ impl StartObjectInputBuilder {
         ::std::result::Result::Ok(crate::operation::start_object::StartObjectInput {
             backup_job_id: self.backup_job_id,
             object_name: self.object_name,
-            throw_on_duplicate: self.throw_on_duplicate.unwrap_or_default(),
+            throw_on_duplicate: self.throw_on_duplicate,
         })
     }
 }

@@ -22,10 +22,10 @@ pub struct UpdateUserPoolClientInput {
     pub access_token_validity: ::std::option::Option<i32>,
     /// <p>The ID token time limit. After this limit expires, your user can't use their ID token. To specify the time unit for <code>IdTokenValidity</code> as <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code>, set a <code>TokenValidityUnits</code> value in your API request.</p>
     /// <p>For example, when you set <code>IdTokenValidity</code> as <code>10</code> and <code>TokenValidityUnits</code> as <code>hours</code>, your user can authenticate their session with their ID token for 10 hours.</p>
-    /// <p>The default time unit for <code>AccessTokenValidity</code> in an API request is hours. <i>Valid range</i> is displayed below in seconds.</p>
+    /// <p>The default time unit for <code>IdTokenValidity</code> in an API request is hours. <i>Valid range</i> is displayed below in seconds.</p>
     /// <p>If you don't specify otherwise in the configuration of your app client, your ID tokens are valid for one hour.</p>
     pub id_token_validity: ::std::option::Option<i32>,
-    /// <p>The units in which the validity times are represented. The default unit for RefreshToken is days, and the default for ID and access tokens is hours.</p>
+    /// <p>The time units you use when you set the duration of ID, access, and refresh tokens. The default unit for RefreshToken is days, and the default for ID and access tokens is hours.</p>
     pub token_validity_units: ::std::option::Option<crate::types::TokenValidityUnitsType>,
     /// <p>The read-only attributes of the user pool.</p>
     pub read_attributes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -94,7 +94,15 @@ pub struct UpdateUserPoolClientInput {
     pub allowed_o_auth_flows: ::std::option::Option<::std::vec::Vec<crate::types::OAuthFlowType>>,
     /// <p>The allowed OAuth scopes. Possible values provided by OAuth are <code>phone</code>, <code>email</code>, <code>openid</code>, and <code>profile</code>. Possible values provided by Amazon Web Services are <code>aws.cognito.signin.user.admin</code>. Custom scopes created in Resource Servers are also supported.</p>
     pub allowed_o_auth_scopes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>Set to true if the client is allowed to follow the OAuth protocol when interacting with Amazon Cognito user pools.</p>
+    /// <p>Set to <code>true</code> to use OAuth 2.0 features in your user pool app client.</p>
+    /// <p> <code>AllowedOAuthFlowsUserPoolClient</code> must be <code>true</code> before you can configure the following features in your app client.</p>
+    /// <ul>
+    /// <li> <p> <code>CallBackURLs</code>: Callback URLs.</p> </li>
+    /// <li> <p> <code>LogoutURLs</code>: Sign-out redirect URLs.</p> </li>
+    /// <li> <p> <code>AllowedOAuthScopes</code>: OAuth 2.0 scopes.</p> </li>
+    /// <li> <p> <code>AllowedOAuthFlows</code>: Support for authorization code, implicit, and client credentials OAuth 2.0 grants.</p> </li>
+    /// </ul>
+    /// <p>To use OAuth 2.0 features, configure one of these features in the Amazon Cognito console or set <code>AllowedOAuthFlowsUserPoolClient</code> to <code>true</code> in a <code>CreateUserPoolClient</code> or <code>UpdateUserPoolClient</code> API request. If you don't set a value for <code>AllowedOAuthFlowsUserPoolClient</code> in a request with the CLI or SDKs, it defaults to <code>false</code>.</p>
     pub allowed_o_auth_flows_user_pool_client: ::std::option::Option<bool>,
     /// <p>The Amazon Pinpoint analytics configuration necessary to collect metrics for this user pool.</p> <note>
     /// <p>In Amazon Web Services Regions where Amazon Pinpoint isn't available, user pools only support sending events to Amazon Pinpoint projects in us-east-1. In Regions where Amazon Pinpoint is available, user pools support sending events to Amazon Pinpoint projects within that same Region.</p>
@@ -143,12 +151,12 @@ impl UpdateUserPoolClientInput {
     }
     /// <p>The ID token time limit. After this limit expires, your user can't use their ID token. To specify the time unit for <code>IdTokenValidity</code> as <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code>, set a <code>TokenValidityUnits</code> value in your API request.</p>
     /// <p>For example, when you set <code>IdTokenValidity</code> as <code>10</code> and <code>TokenValidityUnits</code> as <code>hours</code>, your user can authenticate their session with their ID token for 10 hours.</p>
-    /// <p>The default time unit for <code>AccessTokenValidity</code> in an API request is hours. <i>Valid range</i> is displayed below in seconds.</p>
+    /// <p>The default time unit for <code>IdTokenValidity</code> in an API request is hours. <i>Valid range</i> is displayed below in seconds.</p>
     /// <p>If you don't specify otherwise in the configuration of your app client, your ID tokens are valid for one hour.</p>
     pub fn id_token_validity(&self) -> ::std::option::Option<i32> {
         self.id_token_validity
     }
-    /// <p>The units in which the validity times are represented. The default unit for RefreshToken is days, and the default for ID and access tokens is hours.</p>
+    /// <p>The time units you use when you set the duration of ID, access, and refresh tokens. The default unit for RefreshToken is days, and the default for ID and access tokens is hours.</p>
     pub fn token_validity_units(&self) -> ::std::option::Option<&crate::types::TokenValidityUnitsType> {
         self.token_validity_units.as_ref()
     }
@@ -237,7 +245,15 @@ impl UpdateUserPoolClientInput {
     pub fn allowed_o_auth_scopes(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.allowed_o_auth_scopes.as_deref()
     }
-    /// <p>Set to true if the client is allowed to follow the OAuth protocol when interacting with Amazon Cognito user pools.</p>
+    /// <p>Set to <code>true</code> to use OAuth 2.0 features in your user pool app client.</p>
+    /// <p> <code>AllowedOAuthFlowsUserPoolClient</code> must be <code>true</code> before you can configure the following features in your app client.</p>
+    /// <ul>
+    /// <li> <p> <code>CallBackURLs</code>: Callback URLs.</p> </li>
+    /// <li> <p> <code>LogoutURLs</code>: Sign-out redirect URLs.</p> </li>
+    /// <li> <p> <code>AllowedOAuthScopes</code>: OAuth 2.0 scopes.</p> </li>
+    /// <li> <p> <code>AllowedOAuthFlows</code>: Support for authorization code, implicit, and client credentials OAuth 2.0 grants.</p> </li>
+    /// </ul>
+    /// <p>To use OAuth 2.0 features, configure one of these features in the Amazon Cognito console or set <code>AllowedOAuthFlowsUserPoolClient</code> to <code>true</code> in a <code>CreateUserPoolClient</code> or <code>UpdateUserPoolClient</code> API request. If you don't set a value for <code>AllowedOAuthFlowsUserPoolClient</code> in a request with the CLI or SDKs, it defaults to <code>false</code>.</p>
     pub fn allowed_o_auth_flows_user_pool_client(&self) -> ::std::option::Option<bool> {
         self.allowed_o_auth_flows_user_pool_client
     }
@@ -425,7 +441,7 @@ impl UpdateUserPoolClientInputBuilder {
     }
     /// <p>The ID token time limit. After this limit expires, your user can't use their ID token. To specify the time unit for <code>IdTokenValidity</code> as <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code>, set a <code>TokenValidityUnits</code> value in your API request.</p>
     /// <p>For example, when you set <code>IdTokenValidity</code> as <code>10</code> and <code>TokenValidityUnits</code> as <code>hours</code>, your user can authenticate their session with their ID token for 10 hours.</p>
-    /// <p>The default time unit for <code>AccessTokenValidity</code> in an API request is hours. <i>Valid range</i> is displayed below in seconds.</p>
+    /// <p>The default time unit for <code>IdTokenValidity</code> in an API request is hours. <i>Valid range</i> is displayed below in seconds.</p>
     /// <p>If you don't specify otherwise in the configuration of your app client, your ID tokens are valid for one hour.</p>
     pub fn id_token_validity(mut self, input: i32) -> Self {
         self.id_token_validity = ::std::option::Option::Some(input);
@@ -433,7 +449,7 @@ impl UpdateUserPoolClientInputBuilder {
     }
     /// <p>The ID token time limit. After this limit expires, your user can't use their ID token. To specify the time unit for <code>IdTokenValidity</code> as <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code>, set a <code>TokenValidityUnits</code> value in your API request.</p>
     /// <p>For example, when you set <code>IdTokenValidity</code> as <code>10</code> and <code>TokenValidityUnits</code> as <code>hours</code>, your user can authenticate their session with their ID token for 10 hours.</p>
-    /// <p>The default time unit for <code>AccessTokenValidity</code> in an API request is hours. <i>Valid range</i> is displayed below in seconds.</p>
+    /// <p>The default time unit for <code>IdTokenValidity</code> in an API request is hours. <i>Valid range</i> is displayed below in seconds.</p>
     /// <p>If you don't specify otherwise in the configuration of your app client, your ID tokens are valid for one hour.</p>
     pub fn set_id_token_validity(mut self, input: ::std::option::Option<i32>) -> Self {
         self.id_token_validity = input;
@@ -441,22 +457,22 @@ impl UpdateUserPoolClientInputBuilder {
     }
     /// <p>The ID token time limit. After this limit expires, your user can't use their ID token. To specify the time unit for <code>IdTokenValidity</code> as <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code>, set a <code>TokenValidityUnits</code> value in your API request.</p>
     /// <p>For example, when you set <code>IdTokenValidity</code> as <code>10</code> and <code>TokenValidityUnits</code> as <code>hours</code>, your user can authenticate their session with their ID token for 10 hours.</p>
-    /// <p>The default time unit for <code>AccessTokenValidity</code> in an API request is hours. <i>Valid range</i> is displayed below in seconds.</p>
+    /// <p>The default time unit for <code>IdTokenValidity</code> in an API request is hours. <i>Valid range</i> is displayed below in seconds.</p>
     /// <p>If you don't specify otherwise in the configuration of your app client, your ID tokens are valid for one hour.</p>
     pub fn get_id_token_validity(&self) -> &::std::option::Option<i32> {
         &self.id_token_validity
     }
-    /// <p>The units in which the validity times are represented. The default unit for RefreshToken is days, and the default for ID and access tokens is hours.</p>
+    /// <p>The time units you use when you set the duration of ID, access, and refresh tokens. The default unit for RefreshToken is days, and the default for ID and access tokens is hours.</p>
     pub fn token_validity_units(mut self, input: crate::types::TokenValidityUnitsType) -> Self {
         self.token_validity_units = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The units in which the validity times are represented. The default unit for RefreshToken is days, and the default for ID and access tokens is hours.</p>
+    /// <p>The time units you use when you set the duration of ID, access, and refresh tokens. The default unit for RefreshToken is days, and the default for ID and access tokens is hours.</p>
     pub fn set_token_validity_units(mut self, input: ::std::option::Option<crate::types::TokenValidityUnitsType>) -> Self {
         self.token_validity_units = input;
         self
     }
-    /// <p>The units in which the validity times are represented. The default unit for RefreshToken is days, and the default for ID and access tokens is hours.</p>
+    /// <p>The time units you use when you set the duration of ID, access, and refresh tokens. The default unit for RefreshToken is days, and the default for ID and access tokens is hours.</p>
     pub fn get_token_validity_units(&self) -> &::std::option::Option<crate::types::TokenValidityUnitsType> {
         &self.token_validity_units
     }
@@ -781,17 +797,41 @@ impl UpdateUserPoolClientInputBuilder {
     pub fn get_allowed_o_auth_scopes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.allowed_o_auth_scopes
     }
-    /// <p>Set to true if the client is allowed to follow the OAuth protocol when interacting with Amazon Cognito user pools.</p>
+    /// <p>Set to <code>true</code> to use OAuth 2.0 features in your user pool app client.</p>
+    /// <p> <code>AllowedOAuthFlowsUserPoolClient</code> must be <code>true</code> before you can configure the following features in your app client.</p>
+    /// <ul>
+    /// <li> <p> <code>CallBackURLs</code>: Callback URLs.</p> </li>
+    /// <li> <p> <code>LogoutURLs</code>: Sign-out redirect URLs.</p> </li>
+    /// <li> <p> <code>AllowedOAuthScopes</code>: OAuth 2.0 scopes.</p> </li>
+    /// <li> <p> <code>AllowedOAuthFlows</code>: Support for authorization code, implicit, and client credentials OAuth 2.0 grants.</p> </li>
+    /// </ul>
+    /// <p>To use OAuth 2.0 features, configure one of these features in the Amazon Cognito console or set <code>AllowedOAuthFlowsUserPoolClient</code> to <code>true</code> in a <code>CreateUserPoolClient</code> or <code>UpdateUserPoolClient</code> API request. If you don't set a value for <code>AllowedOAuthFlowsUserPoolClient</code> in a request with the CLI or SDKs, it defaults to <code>false</code>.</p>
     pub fn allowed_o_auth_flows_user_pool_client(mut self, input: bool) -> Self {
         self.allowed_o_auth_flows_user_pool_client = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Set to true if the client is allowed to follow the OAuth protocol when interacting with Amazon Cognito user pools.</p>
+    /// <p>Set to <code>true</code> to use OAuth 2.0 features in your user pool app client.</p>
+    /// <p> <code>AllowedOAuthFlowsUserPoolClient</code> must be <code>true</code> before you can configure the following features in your app client.</p>
+    /// <ul>
+    /// <li> <p> <code>CallBackURLs</code>: Callback URLs.</p> </li>
+    /// <li> <p> <code>LogoutURLs</code>: Sign-out redirect URLs.</p> </li>
+    /// <li> <p> <code>AllowedOAuthScopes</code>: OAuth 2.0 scopes.</p> </li>
+    /// <li> <p> <code>AllowedOAuthFlows</code>: Support for authorization code, implicit, and client credentials OAuth 2.0 grants.</p> </li>
+    /// </ul>
+    /// <p>To use OAuth 2.0 features, configure one of these features in the Amazon Cognito console or set <code>AllowedOAuthFlowsUserPoolClient</code> to <code>true</code> in a <code>CreateUserPoolClient</code> or <code>UpdateUserPoolClient</code> API request. If you don't set a value for <code>AllowedOAuthFlowsUserPoolClient</code> in a request with the CLI or SDKs, it defaults to <code>false</code>.</p>
     pub fn set_allowed_o_auth_flows_user_pool_client(mut self, input: ::std::option::Option<bool>) -> Self {
         self.allowed_o_auth_flows_user_pool_client = input;
         self
     }
-    /// <p>Set to true if the client is allowed to follow the OAuth protocol when interacting with Amazon Cognito user pools.</p>
+    /// <p>Set to <code>true</code> to use OAuth 2.0 features in your user pool app client.</p>
+    /// <p> <code>AllowedOAuthFlowsUserPoolClient</code> must be <code>true</code> before you can configure the following features in your app client.</p>
+    /// <ul>
+    /// <li> <p> <code>CallBackURLs</code>: Callback URLs.</p> </li>
+    /// <li> <p> <code>LogoutURLs</code>: Sign-out redirect URLs.</p> </li>
+    /// <li> <p> <code>AllowedOAuthScopes</code>: OAuth 2.0 scopes.</p> </li>
+    /// <li> <p> <code>AllowedOAuthFlows</code>: Support for authorization code, implicit, and client credentials OAuth 2.0 grants.</p> </li>
+    /// </ul>
+    /// <p>To use OAuth 2.0 features, configure one of these features in the Amazon Cognito console or set <code>AllowedOAuthFlowsUserPoolClient</code> to <code>true</code> in a <code>CreateUserPoolClient</code> or <code>UpdateUserPoolClient</code> API request. If you don't set a value for <code>AllowedOAuthFlowsUserPoolClient</code> in a request with the CLI or SDKs, it defaults to <code>false</code>.</p>
     pub fn get_allowed_o_auth_flows_user_pool_client(&self) -> &::std::option::Option<bool> {
         &self.allowed_o_auth_flows_user_pool_client
     }

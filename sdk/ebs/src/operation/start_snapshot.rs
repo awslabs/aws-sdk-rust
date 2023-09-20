@@ -367,9 +367,9 @@ pub enum StartSnapshotError {
     ConcurrentLimitExceededException(crate::types::error::ConcurrentLimitExceededException),
     /// <p>The request uses the same client token as a previous, but non-identical request.</p>
     ConflictException(crate::types::error::ConflictException),
-    /// <p>An internal error has occurred.</p>
+    /// <p>An internal error has occurred. For more information see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/error-retries.html">Error retries</a>.</p>
     InternalServerException(crate::types::error::InternalServerException),
-    /// <p>The number of API requests has exceed the maximum allowed API request throttling limit.</p>
+    /// <p>The number of API requests has exceeded the maximum allowed API request throttling limit for the snapshot. For more information see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/error-retries.html">Error retries</a>.</p>
     RequestThrottledException(crate::types::error::RequestThrottledException),
     /// <p>The specified resource does not exist.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),

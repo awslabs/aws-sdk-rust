@@ -22,6 +22,8 @@ pub struct AutoScalingGroupRecommendationOption {
     /// <p>The level of effort required to migrate from the current instance type to the recommended instance type.</p>
     /// <p>For example, the migration effort is <code>Low</code> if Amazon EMR is the inferred workload type and an Amazon Web Services Graviton instance type is recommended. The migration effort is <code>Medium</code> if a workload type couldn't be inferred but an Amazon Web Services Graviton instance type is recommended. The migration effort is <code>VeryLow</code> if both the current and recommended instance types are of the same CPU architecture.</p>
     pub migration_effort: ::std::option::Option<crate::types::MigrationEffort>,
+    /// <p> Describes the GPU accelerator settings for the recommended instance type of the Auto Scaling group. </p>
+    pub instance_gpu_info: ::std::option::Option<crate::types::GpuInfo>,
 }
 impl AutoScalingGroupRecommendationOption {
     /// <p>An array of objects that describe an Auto Scaling group configuration.</p>
@@ -54,6 +56,10 @@ impl AutoScalingGroupRecommendationOption {
     pub fn migration_effort(&self) -> ::std::option::Option<&crate::types::MigrationEffort> {
         self.migration_effort.as_ref()
     }
+    /// <p> Describes the GPU accelerator settings for the recommended instance type of the Auto Scaling group. </p>
+    pub fn instance_gpu_info(&self) -> ::std::option::Option<&crate::types::GpuInfo> {
+        self.instance_gpu_info.as_ref()
+    }
 }
 impl AutoScalingGroupRecommendationOption {
     /// Creates a new builder-style object to manufacture [`AutoScalingGroupRecommendationOption`](crate::types::AutoScalingGroupRecommendationOption).
@@ -72,6 +78,7 @@ pub struct AutoScalingGroupRecommendationOptionBuilder {
     pub(crate) rank: ::std::option::Option<i32>,
     pub(crate) savings_opportunity: ::std::option::Option<crate::types::SavingsOpportunity>,
     pub(crate) migration_effort: ::std::option::Option<crate::types::MigrationEffort>,
+    pub(crate) instance_gpu_info: ::std::option::Option<crate::types::GpuInfo>,
 }
 impl AutoScalingGroupRecommendationOptionBuilder {
     /// <p>An array of objects that describe an Auto Scaling group configuration.</p>
@@ -182,6 +189,20 @@ impl AutoScalingGroupRecommendationOptionBuilder {
     pub fn get_migration_effort(&self) -> &::std::option::Option<crate::types::MigrationEffort> {
         &self.migration_effort
     }
+    /// <p> Describes the GPU accelerator settings for the recommended instance type of the Auto Scaling group. </p>
+    pub fn instance_gpu_info(mut self, input: crate::types::GpuInfo) -> Self {
+        self.instance_gpu_info = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p> Describes the GPU accelerator settings for the recommended instance type of the Auto Scaling group. </p>
+    pub fn set_instance_gpu_info(mut self, input: ::std::option::Option<crate::types::GpuInfo>) -> Self {
+        self.instance_gpu_info = input;
+        self
+    }
+    /// <p> Describes the GPU accelerator settings for the recommended instance type of the Auto Scaling group. </p>
+    pub fn get_instance_gpu_info(&self) -> &::std::option::Option<crate::types::GpuInfo> {
+        &self.instance_gpu_info
+    }
     /// Consumes the builder and constructs a [`AutoScalingGroupRecommendationOption`](crate::types::AutoScalingGroupRecommendationOption).
     pub fn build(self) -> crate::types::AutoScalingGroupRecommendationOption {
         crate::types::AutoScalingGroupRecommendationOption {
@@ -191,6 +212,7 @@ impl AutoScalingGroupRecommendationOptionBuilder {
             rank: self.rank.unwrap_or_default(),
             savings_opportunity: self.savings_opportunity,
             migration_effort: self.migration_effort,
+            instance_gpu_info: self.instance_gpu_info,
         }
     }
 }

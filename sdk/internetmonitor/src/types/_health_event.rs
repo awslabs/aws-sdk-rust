@@ -20,7 +20,7 @@ pub struct HealthEvent {
     pub impacted_locations: ::std::option::Option<::std::vec::Vec<crate::types::ImpactedLocation>>,
     /// <p>Health event list member.</p>
     pub status: ::std::option::Option<crate::types::HealthEventStatus>,
-    /// <p>The impact on global traffic monitored by this monitor for this health event.</p>
+    /// <p>The impact on total traffic that a health event has, in increased latency or reduced availability. This is the percentage of how much latency has increased or availability has decreased during the event, compared to what is typical for traffic from this client location to the Amazon Web Services location using this client network.</p>
     pub percent_of_total_traffic_impacted: ::std::option::Option<f64>,
     /// <p>The type of impairment for a health event.</p>
     pub impact_type: ::std::option::Option<crate::types::HealthEventImpactType>,
@@ -60,7 +60,7 @@ impl HealthEvent {
     pub fn status(&self) -> ::std::option::Option<&crate::types::HealthEventStatus> {
         self.status.as_ref()
     }
-    /// <p>The impact on global traffic monitored by this monitor for this health event.</p>
+    /// <p>The impact on total traffic that a health event has, in increased latency or reduced availability. This is the percentage of how much latency has increased or availability has decreased during the event, compared to what is typical for traffic from this client location to the Amazon Web Services location using this client network.</p>
     pub fn percent_of_total_traffic_impacted(&self) -> ::std::option::Option<f64> {
         self.percent_of_total_traffic_impacted
     }
@@ -215,17 +215,17 @@ impl HealthEventBuilder {
     pub fn get_status(&self) -> &::std::option::Option<crate::types::HealthEventStatus> {
         &self.status
     }
-    /// <p>The impact on global traffic monitored by this monitor for this health event.</p>
+    /// <p>The impact on total traffic that a health event has, in increased latency or reduced availability. This is the percentage of how much latency has increased or availability has decreased during the event, compared to what is typical for traffic from this client location to the Amazon Web Services location using this client network.</p>
     pub fn percent_of_total_traffic_impacted(mut self, input: f64) -> Self {
         self.percent_of_total_traffic_impacted = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The impact on global traffic monitored by this monitor for this health event.</p>
+    /// <p>The impact on total traffic that a health event has, in increased latency or reduced availability. This is the percentage of how much latency has increased or availability has decreased during the event, compared to what is typical for traffic from this client location to the Amazon Web Services location using this client network.</p>
     pub fn set_percent_of_total_traffic_impacted(mut self, input: ::std::option::Option<f64>) -> Self {
         self.percent_of_total_traffic_impacted = input;
         self
     }
-    /// <p>The impact on global traffic monitored by this monitor for this health event.</p>
+    /// <p>The impact on total traffic that a health event has, in increased latency or reduced availability. This is the percentage of how much latency has increased or availability has decreased during the event, compared to what is typical for traffic from this client location to the Amazon Web Services location using this client network.</p>
     pub fn get_percent_of_total_traffic_impacted(&self) -> &::std::option::Option<f64> {
         &self.percent_of_total_traffic_impacted
     }

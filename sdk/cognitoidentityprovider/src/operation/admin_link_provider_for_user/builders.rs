@@ -27,8 +27,14 @@ impl AdminLinkProviderForUserInputBuilder {
 /// <p>The maximum number of federated identities linked to a user is five.</p>
 /// </note> <important>
 /// <p>Because this API allows a user with an external federated identity to sign in as an existing user in the user pool, it is critical that it only be used with external IdPs and provider attributes that have been trusted by the application owner.</p>
-/// </important>
-/// <p>This action is administrative and requires developer credentials.</p>
+/// </important> <note>
+/// <p>Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you must use IAM credentials to authorize requests, and you must grant yourself the corresponding IAM permission in a policy.</p>
+/// <p class="title"> <b>Learn more</b> </p>
+/// <ul>
+/// <li> <p> <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html">Signing Amazon Web Services API Requests</a> </p> </li>
+/// <li> <p> <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using the Amazon Cognito user pools API and user pool endpoints</a> </p> </li>
+/// </ul>
+/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AdminLinkProviderForUserFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -130,7 +136,7 @@ impl AdminLinkProviderForUserFluentBuilder {
     pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_user_pool_id()
     }
-    /// <p>The existing user in the user pool that you want to assign to the external IdP user account. This user can be a native (Username + Password) Amazon Cognito user pools user or a federated user (for example, a SAML or Facebook user). If the user doesn't exist, Amazon Cognito generates an exception. Amazon Cognito returns this user when the new user (with the linked IdP attribute) signs in.</p>
+    /// <p>The existing user in the user pool that you want to assign to the external IdP user account. This user can be a local (Username + Password) Amazon Cognito user pools user or a federated user (for example, a SAML or Facebook user). If the user doesn't exist, Amazon Cognito generates an exception. Amazon Cognito returns this user when the new user (with the linked IdP attribute) signs in.</p>
     /// <p>For a native username + password user, the <code>ProviderAttributeValue</code> for the <code>DestinationUser</code> should be the username in the user pool. For a federated user, it should be the provider-specific <code>user_id</code>.</p>
     /// <p>The <code>ProviderAttributeName</code> of the <code>DestinationUser</code> is ignored.</p>
     /// <p>The <code>ProviderName</code> should be set to <code>Cognito</code> for users in Cognito user pools.</p> <important>
@@ -140,7 +146,7 @@ impl AdminLinkProviderForUserFluentBuilder {
         self.inner = self.inner.destination_user(input);
         self
     }
-    /// <p>The existing user in the user pool that you want to assign to the external IdP user account. This user can be a native (Username + Password) Amazon Cognito user pools user or a federated user (for example, a SAML or Facebook user). If the user doesn't exist, Amazon Cognito generates an exception. Amazon Cognito returns this user when the new user (with the linked IdP attribute) signs in.</p>
+    /// <p>The existing user in the user pool that you want to assign to the external IdP user account. This user can be a local (Username + Password) Amazon Cognito user pools user or a federated user (for example, a SAML or Facebook user). If the user doesn't exist, Amazon Cognito generates an exception. Amazon Cognito returns this user when the new user (with the linked IdP attribute) signs in.</p>
     /// <p>For a native username + password user, the <code>ProviderAttributeValue</code> for the <code>DestinationUser</code> should be the username in the user pool. For a federated user, it should be the provider-specific <code>user_id</code>.</p>
     /// <p>The <code>ProviderAttributeName</code> of the <code>DestinationUser</code> is ignored.</p>
     /// <p>The <code>ProviderName</code> should be set to <code>Cognito</code> for users in Cognito user pools.</p> <important>
@@ -150,7 +156,7 @@ impl AdminLinkProviderForUserFluentBuilder {
         self.inner = self.inner.set_destination_user(input);
         self
     }
-    /// <p>The existing user in the user pool that you want to assign to the external IdP user account. This user can be a native (Username + Password) Amazon Cognito user pools user or a federated user (for example, a SAML or Facebook user). If the user doesn't exist, Amazon Cognito generates an exception. Amazon Cognito returns this user when the new user (with the linked IdP attribute) signs in.</p>
+    /// <p>The existing user in the user pool that you want to assign to the external IdP user account. This user can be a local (Username + Password) Amazon Cognito user pools user or a federated user (for example, a SAML or Facebook user). If the user doesn't exist, Amazon Cognito generates an exception. Amazon Cognito returns this user when the new user (with the linked IdP attribute) signs in.</p>
     /// <p>For a native username + password user, the <code>ProviderAttributeValue</code> for the <code>DestinationUser</code> should be the username in the user pool. For a federated user, it should be the provider-specific <code>user_id</code>.</p>
     /// <p>The <code>ProviderAttributeName</code> of the <code>DestinationUser</code> is ignored.</p>
     /// <p>The <code>ProviderName</code> should be set to <code>Cognito</code> for users in Cognito user pools.</p> <important>
@@ -162,7 +168,9 @@ impl AdminLinkProviderForUserFluentBuilder {
     /// <p>An external IdP account for a user who doesn't exist yet in the user pool. This user must be a federated user (for example, a SAML or Facebook user), not another native user.</p>
     /// <p>If the <code>SourceUser</code> is using a federated social IdP, such as Facebook, Google, or Login with Amazon, you must set the <code>ProviderAttributeName</code> to <code>Cognito_Subject</code>. For social IdPs, the <code>ProviderName</code> will be <code>Facebook</code>, <code>Google</code>, or <code>LoginWithAmazon</code>, and Amazon Cognito will automatically parse the Facebook, Google, and Login with Amazon tokens for <code>id</code>, <code>sub</code>, and <code>user_id</code>, respectively. The <code>ProviderAttributeValue</code> for the user must be the same value as the <code>id</code>, <code>sub</code>, or <code>user_id</code> value found in the social IdP token.</p>
     /// <p></p>
-    /// <p>For SAML, the <code>ProviderAttributeName</code> can be any value that matches a claim in the SAML assertion. If you want to link SAML users based on the subject of the SAML assertion, you should map the subject to a claim through the SAML IdP and submit that claim name as the <code>ProviderAttributeName</code>. If you set <code>ProviderAttributeName</code> to <code>Cognito_Subject</code>, Amazon Cognito will automatically parse the default unique identifier found in the subject from the SAML token.</p>
+    /// <p>For OIDC, the <code>ProviderAttributeName</code> can be any value that matches a claim in the ID token, or that your app retrieves from the <code>userInfo</code> endpoint. You must map the claim to a user pool attribute in your IdP configuration, and set the user pool attribute name as the value of <code>ProviderAttributeName</code> in your <code>AdminLinkProviderForUser</code> request.</p>
+    /// <p>For SAML, the <code>ProviderAttributeName</code> can be any value that matches a claim in the SAML assertion. To link SAML users based on the subject of the SAML assertion, map the subject to a claim through the SAML IdP and set that claim name as the value of <code>ProviderAttributeName</code> in your <code>AdminLinkProviderForUser</code> request.</p>
+    /// <p>For both OIDC and SAML users, when you set <code>ProviderAttributeName</code> to <code>Cognito_Subject</code>, Amazon Cognito will automatically parse the default unique identifier found in the subject from the IdP token.</p>
     pub fn source_user(mut self, input: crate::types::ProviderUserIdentifierType) -> Self {
         self.inner = self.inner.source_user(input);
         self
@@ -170,7 +178,9 @@ impl AdminLinkProviderForUserFluentBuilder {
     /// <p>An external IdP account for a user who doesn't exist yet in the user pool. This user must be a federated user (for example, a SAML or Facebook user), not another native user.</p>
     /// <p>If the <code>SourceUser</code> is using a federated social IdP, such as Facebook, Google, or Login with Amazon, you must set the <code>ProviderAttributeName</code> to <code>Cognito_Subject</code>. For social IdPs, the <code>ProviderName</code> will be <code>Facebook</code>, <code>Google</code>, or <code>LoginWithAmazon</code>, and Amazon Cognito will automatically parse the Facebook, Google, and Login with Amazon tokens for <code>id</code>, <code>sub</code>, and <code>user_id</code>, respectively. The <code>ProviderAttributeValue</code> for the user must be the same value as the <code>id</code>, <code>sub</code>, or <code>user_id</code> value found in the social IdP token.</p>
     /// <p></p>
-    /// <p>For SAML, the <code>ProviderAttributeName</code> can be any value that matches a claim in the SAML assertion. If you want to link SAML users based on the subject of the SAML assertion, you should map the subject to a claim through the SAML IdP and submit that claim name as the <code>ProviderAttributeName</code>. If you set <code>ProviderAttributeName</code> to <code>Cognito_Subject</code>, Amazon Cognito will automatically parse the default unique identifier found in the subject from the SAML token.</p>
+    /// <p>For OIDC, the <code>ProviderAttributeName</code> can be any value that matches a claim in the ID token, or that your app retrieves from the <code>userInfo</code> endpoint. You must map the claim to a user pool attribute in your IdP configuration, and set the user pool attribute name as the value of <code>ProviderAttributeName</code> in your <code>AdminLinkProviderForUser</code> request.</p>
+    /// <p>For SAML, the <code>ProviderAttributeName</code> can be any value that matches a claim in the SAML assertion. To link SAML users based on the subject of the SAML assertion, map the subject to a claim through the SAML IdP and set that claim name as the value of <code>ProviderAttributeName</code> in your <code>AdminLinkProviderForUser</code> request.</p>
+    /// <p>For both OIDC and SAML users, when you set <code>ProviderAttributeName</code> to <code>Cognito_Subject</code>, Amazon Cognito will automatically parse the default unique identifier found in the subject from the IdP token.</p>
     pub fn set_source_user(mut self, input: ::std::option::Option<crate::types::ProviderUserIdentifierType>) -> Self {
         self.inner = self.inner.set_source_user(input);
         self
@@ -178,7 +188,9 @@ impl AdminLinkProviderForUserFluentBuilder {
     /// <p>An external IdP account for a user who doesn't exist yet in the user pool. This user must be a federated user (for example, a SAML or Facebook user), not another native user.</p>
     /// <p>If the <code>SourceUser</code> is using a federated social IdP, such as Facebook, Google, or Login with Amazon, you must set the <code>ProviderAttributeName</code> to <code>Cognito_Subject</code>. For social IdPs, the <code>ProviderName</code> will be <code>Facebook</code>, <code>Google</code>, or <code>LoginWithAmazon</code>, and Amazon Cognito will automatically parse the Facebook, Google, and Login with Amazon tokens for <code>id</code>, <code>sub</code>, and <code>user_id</code>, respectively. The <code>ProviderAttributeValue</code> for the user must be the same value as the <code>id</code>, <code>sub</code>, or <code>user_id</code> value found in the social IdP token.</p>
     /// <p></p>
-    /// <p>For SAML, the <code>ProviderAttributeName</code> can be any value that matches a claim in the SAML assertion. If you want to link SAML users based on the subject of the SAML assertion, you should map the subject to a claim through the SAML IdP and submit that claim name as the <code>ProviderAttributeName</code>. If you set <code>ProviderAttributeName</code> to <code>Cognito_Subject</code>, Amazon Cognito will automatically parse the default unique identifier found in the subject from the SAML token.</p>
+    /// <p>For OIDC, the <code>ProviderAttributeName</code> can be any value that matches a claim in the ID token, or that your app retrieves from the <code>userInfo</code> endpoint. You must map the claim to a user pool attribute in your IdP configuration, and set the user pool attribute name as the value of <code>ProviderAttributeName</code> in your <code>AdminLinkProviderForUser</code> request.</p>
+    /// <p>For SAML, the <code>ProviderAttributeName</code> can be any value that matches a claim in the SAML assertion. To link SAML users based on the subject of the SAML assertion, map the subject to a claim through the SAML IdP and set that claim name as the value of <code>ProviderAttributeName</code> in your <code>AdminLinkProviderForUser</code> request.</p>
+    /// <p>For both OIDC and SAML users, when you set <code>ProviderAttributeName</code> to <code>Cognito_Subject</code>, Amazon Cognito will automatically parse the default unique identifier found in the subject from the IdP token.</p>
     pub fn get_source_user(&self) -> &::std::option::Option<crate::types::ProviderUserIdentifierType> {
         self.inner.get_source_user()
     }

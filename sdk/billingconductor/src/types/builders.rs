@@ -29,6 +29,8 @@ pub use crate::types::_custom_line_item_version_list_element::CustomLineItemVers
 
 pub use crate::types::_list_custom_line_item_charge_details::ListCustomLineItemChargeDetailsBuilder;
 
+pub use crate::types::_line_item_filter::LineItemFilterBuilder;
+
 pub use crate::types::_list_custom_line_item_percentage_charge_details::ListCustomLineItemPercentageChargeDetailsBuilder;
 
 pub use crate::types::_list_custom_line_item_flat_charge_details::ListCustomLineItemFlatChargeDetailsBuilder;

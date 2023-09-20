@@ -139,16 +139,19 @@ impl DescribeAffectedEntitiesForOrganizationFluentBuilder {
     /// To override the contents of this collection use [`set_organization_entity_filters`](Self::set_organization_entity_filters).
     ///
     /// <p>A JSON set of elements including the <code>awsAccountId</code> and the <code>eventArn</code>.</p>
+    #[deprecated(note = "This property is deprecated, use organizationEntityAccountFilters instead.")]
     pub fn organization_entity_filters(mut self, input: crate::types::EventAccountFilter) -> Self {
         self.inner = self.inner.organization_entity_filters(input);
         self
     }
     /// <p>A JSON set of elements including the <code>awsAccountId</code> and the <code>eventArn</code>.</p>
+    #[deprecated(note = "This property is deprecated, use organizationEntityAccountFilters instead.")]
     pub fn set_organization_entity_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EventAccountFilter>>) -> Self {
         self.inner = self.inner.set_organization_entity_filters(input);
         self
     }
     /// <p>A JSON set of elements including the <code>awsAccountId</code> and the <code>eventArn</code>.</p>
+    #[deprecated(note = "This property is deprecated, use organizationEntityAccountFilters instead.")]
     pub fn get_organization_entity_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EventAccountFilter>> {
         self.inner.get_organization_entity_filters()
     }
@@ -193,5 +196,26 @@ impl DescribeAffectedEntitiesForOrganizationFluentBuilder {
     /// <p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
+    }
+    /// Appends an item to `organizationEntityAccountFilters`.
+    ///
+    /// To override the contents of this collection use [`set_organization_entity_account_filters`](Self::set_organization_entity_account_filters).
+    ///
+    /// <p>A JSON set of elements including the <code>awsAccountId</code>, <code>eventArn</code> and a set of <code>statusCodes</code>.</p>
+    pub fn organization_entity_account_filters(mut self, input: crate::types::EntityAccountFilter) -> Self {
+        self.inner = self.inner.organization_entity_account_filters(input);
+        self
+    }
+    /// <p>A JSON set of elements including the <code>awsAccountId</code>, <code>eventArn</code> and a set of <code>statusCodes</code>.</p>
+    pub fn set_organization_entity_account_filters(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::EntityAccountFilter>>,
+    ) -> Self {
+        self.inner = self.inner.set_organization_entity_account_filters(input);
+        self
+    }
+    /// <p>A JSON set of elements including the <code>awsAccountId</code>, <code>eventArn</code> and a set of <code>statusCodes</code>.</p>
+    pub fn get_organization_entity_account_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EntityAccountFilter>> {
+        self.inner.get_organization_entity_account_filters()
     }
 }

@@ -104,6 +104,12 @@ impl GetImagesFluentBuilder {
         self.config_override = config_override;
         self
     }
+    /// Create a paginator for this request
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::get_images::paginator::GetImagesPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(self) -> crate::operation::get_images::paginator::GetImagesPaginator {
+        crate::operation::get_images::paginator::GetImagesPaginator::new(self.handle, self.inner)
+    }
     /// <p>The name of the stream from which to retrieve the images. You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.</p>
     pub fn stream_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.stream_name(input.into());
@@ -160,36 +166,36 @@ impl GetImagesFluentBuilder {
     pub fn get_start_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_start_timestamp()
     }
-    /// <p>The end timestamp for the range of images to be generated.</p>
+    /// <p>The end timestamp for the range of images to be generated. If the time range between <code>StartTimestamp</code> and <code>EndTimestamp</code> is more than 300 seconds above <code>StartTimestamp</code>, you will receive an <code>IllegalArgumentException</code>.</p>
     pub fn end_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.end_timestamp(input);
         self
     }
-    /// <p>The end timestamp for the range of images to be generated.</p>
+    /// <p>The end timestamp for the range of images to be generated. If the time range between <code>StartTimestamp</code> and <code>EndTimestamp</code> is more than 300 seconds above <code>StartTimestamp</code>, you will receive an <code>IllegalArgumentException</code>.</p>
     pub fn set_end_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_end_timestamp(input);
         self
     }
-    /// <p>The end timestamp for the range of images to be generated.</p>
+    /// <p>The end timestamp for the range of images to be generated. If the time range between <code>StartTimestamp</code> and <code>EndTimestamp</code> is more than 300 seconds above <code>StartTimestamp</code>, you will receive an <code>IllegalArgumentException</code>.</p>
     pub fn get_end_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_end_timestamp()
     }
-    /// <p>The time interval in milliseconds (ms) at which the images need to be generated from the stream. The minimum value that can be provided is 3000 ms. If the timestamp range is less than the sampling interval, the Image from the <code>startTimestamp</code> will be returned if available. </p> <note>
-    /// <p>The minimum value of 3000 ms is a soft limit. If needed, a lower sampling frequency can be requested.</p>
+    /// <p>The time interval in milliseconds (ms) at which the images need to be generated from the stream, with a default of 3000 ms. The minimum value that can be provided is 200 ms. If the timestamp range is less than the sampling interval, the Image from the <code>startTimestamp</code> will be returned if available. </p> <note>
+    /// <p>The minimum value of 200 ms is a hard limit.</p>
     /// </note>
     pub fn sampling_interval(mut self, input: i32) -> Self {
         self.inner = self.inner.sampling_interval(input);
         self
     }
-    /// <p>The time interval in milliseconds (ms) at which the images need to be generated from the stream. The minimum value that can be provided is 3000 ms. If the timestamp range is less than the sampling interval, the Image from the <code>startTimestamp</code> will be returned if available. </p> <note>
-    /// <p>The minimum value of 3000 ms is a soft limit. If needed, a lower sampling frequency can be requested.</p>
+    /// <p>The time interval in milliseconds (ms) at which the images need to be generated from the stream, with a default of 3000 ms. The minimum value that can be provided is 200 ms. If the timestamp range is less than the sampling interval, the Image from the <code>startTimestamp</code> will be returned if available. </p> <note>
+    /// <p>The minimum value of 200 ms is a hard limit.</p>
     /// </note>
     pub fn set_sampling_interval(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_sampling_interval(input);
         self
     }
-    /// <p>The time interval in milliseconds (ms) at which the images need to be generated from the stream. The minimum value that can be provided is 3000 ms. If the timestamp range is less than the sampling interval, the Image from the <code>startTimestamp</code> will be returned if available. </p> <note>
-    /// <p>The minimum value of 3000 ms is a soft limit. If needed, a lower sampling frequency can be requested.</p>
+    /// <p>The time interval in milliseconds (ms) at which the images need to be generated from the stream, with a default of 3000 ms. The minimum value that can be provided is 200 ms. If the timestamp range is less than the sampling interval, the Image from the <code>startTimestamp</code> will be returned if available. </p> <note>
+    /// <p>The minimum value of 200 ms is a hard limit.</p>
     /// </note>
     pub fn get_sampling_interval(&self) -> &::std::option::Option<i32> {
         self.inner.get_sampling_interval()
@@ -258,21 +264,21 @@ impl GetImagesFluentBuilder {
         self.inner.get_height_pixels()
     }
     /// <p>The maximum number of images to be returned by the API. </p> <note>
-    /// <p>The default limit is 100 images per API response. The additional results will be paginated. </p>
+    /// <p>The default limit is 25 images per API response. Providing a <code>MaxResults</code> greater than this value will result in a page size of 25. Any additional results will be paginated. </p>
     /// </note>
     pub fn max_results(mut self, input: i64) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
     /// <p>The maximum number of images to be returned by the API. </p> <note>
-    /// <p>The default limit is 100 images per API response. The additional results will be paginated. </p>
+    /// <p>The default limit is 25 images per API response. Providing a <code>MaxResults</code> greater than this value will result in a page size of 25. Any additional results will be paginated. </p>
     /// </note>
     pub fn set_max_results(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
     /// <p>The maximum number of images to be returned by the API. </p> <note>
-    /// <p>The default limit is 100 images per API response. The additional results will be paginated. </p>
+    /// <p>The default limit is 25 images per API response. Providing a <code>MaxResults</code> greater than this value will result in a page size of 25. Any additional results will be paginated. </p>
     /// </note>
     pub fn get_max_results(&self) -> &::std::option::Option<i64> {
         self.inner.get_max_results()

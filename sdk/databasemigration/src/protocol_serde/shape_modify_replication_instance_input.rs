@@ -12,41 +12,41 @@ pub fn ser_modify_replication_instance_input(
             ::aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
-    if input.apply_immediately {
-        object.key("ApplyImmediately").boolean(input.apply_immediately);
+    if let Some(var_3) = &input.apply_immediately {
+        object.key("ApplyImmediately").boolean(*var_3);
     }
-    if let Some(var_3) = &input.replication_instance_class {
-        object.key("ReplicationInstanceClass").string(var_3.as_str());
+    if let Some(var_4) = &input.replication_instance_class {
+        object.key("ReplicationInstanceClass").string(var_4.as_str());
     }
-    if let Some(var_4) = &input.vpc_security_group_ids {
-        let mut array_5 = object.key("VpcSecurityGroupIds").start_array();
-        for item_6 in var_4 {
+    if let Some(var_5) = &input.vpc_security_group_ids {
+        let mut array_6 = object.key("VpcSecurityGroupIds").start_array();
+        for item_7 in var_5 {
             {
-                array_5.value().string(item_6.as_str());
+                array_6.value().string(item_7.as_str());
             }
         }
-        array_5.finish();
+        array_6.finish();
     }
-    if let Some(var_7) = &input.preferred_maintenance_window {
-        object.key("PreferredMaintenanceWindow").string(var_7.as_str());
+    if let Some(var_8) = &input.preferred_maintenance_window {
+        object.key("PreferredMaintenanceWindow").string(var_8.as_str());
     }
-    if let Some(var_8) = &input.multi_az {
-        object.key("MultiAZ").boolean(*var_8);
+    if let Some(var_9) = &input.multi_az {
+        object.key("MultiAZ").boolean(*var_9);
     }
-    if let Some(var_9) = &input.engine_version {
-        object.key("EngineVersion").string(var_9.as_str());
+    if let Some(var_10) = &input.engine_version {
+        object.key("EngineVersion").string(var_10.as_str());
     }
-    if input.allow_major_version_upgrade {
-        object.key("AllowMajorVersionUpgrade").boolean(input.allow_major_version_upgrade);
+    if let Some(var_11) = &input.allow_major_version_upgrade {
+        object.key("AllowMajorVersionUpgrade").boolean(*var_11);
     }
-    if let Some(var_10) = &input.auto_minor_version_upgrade {
-        object.key("AutoMinorVersionUpgrade").boolean(*var_10);
+    if let Some(var_12) = &input.auto_minor_version_upgrade {
+        object.key("AutoMinorVersionUpgrade").boolean(*var_12);
     }
-    if let Some(var_11) = &input.replication_instance_identifier {
-        object.key("ReplicationInstanceIdentifier").string(var_11.as_str());
+    if let Some(var_13) = &input.replication_instance_identifier {
+        object.key("ReplicationInstanceIdentifier").string(var_13.as_str());
     }
-    if let Some(var_12) = &input.network_type {
-        object.key("NetworkType").string(var_12.as_str());
+    if let Some(var_14) = &input.network_type {
+        object.key("NetworkType").string(var_14.as_str());
     }
     Ok(())
 }

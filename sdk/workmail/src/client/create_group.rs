@@ -5,6 +5,7 @@ impl super::Client {
     /// - The fluent builder is configurable:
     ///   - [`organization_id(impl Into<String>)`](crate::operation::create_group::builders::CreateGroupFluentBuilder::organization_id) / [`set_organization_id(Option<String>)`](crate::operation::create_group::builders::CreateGroupFluentBuilder::set_organization_id): <p>The organization under which the group is to be created.</p>
     ///   - [`name(impl Into<String>)`](crate::operation::create_group::builders::CreateGroupFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::create_group::builders::CreateGroupFluentBuilder::set_name): <p>The name of the group.</p>
+    ///   - [`hidden_from_global_address_list(bool)`](crate::operation::create_group::builders::CreateGroupFluentBuilder::hidden_from_global_address_list) / [`set_hidden_from_global_address_list(Option<bool>)`](crate::operation::create_group::builders::CreateGroupFluentBuilder::set_hidden_from_global_address_list): <p>If this parameter is enabled, the group will be hidden from the address book.</p>
     /// - On success, responds with [`CreateGroupOutput`](crate::operation::create_group::CreateGroupOutput) with field(s):
     ///   - [`group_id(Option<String>)`](crate::operation::create_group::CreateGroupOutput::group_id): <p>The identifier of the group.</p>
     /// - On failure, responds with [`SdkError<CreateGroupError>`](crate::operation::create_group::CreateGroupError)

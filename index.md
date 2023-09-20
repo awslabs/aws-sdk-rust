@@ -68,6 +68,7 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | AWS Greengrass | [aws-sdk-greengrass](https://crates.io/crates/aws-sdk-greengrass) ([docs](https://docs.rs/aws-sdk-greengrass)) |
 | AWS Ground Station | [aws-sdk-groundstation](https://crates.io/crates/aws-sdk-groundstation) ([docs](https://docs.rs/aws-sdk-groundstation)) |
 | AWS Health APIs and Notifications | [aws-sdk-health](https://crates.io/crates/aws-sdk-health) ([docs](https://docs.rs/aws-sdk-health)) |
+| AWS Health Imaging | [aws-sdk-medicalimaging](https://crates.io/crates/aws-sdk-medicalimaging) ([docs](https://docs.rs/aws-sdk-medicalimaging)) |
 | AWS Identity and Access Management | [aws-sdk-iam](https://crates.io/crates/aws-sdk-iam) ([docs](https://docs.rs/aws-sdk-iam)) |
 | AWS IoT | [aws-sdk-iot](https://crates.io/crates/aws-sdk-iot) ([docs](https://docs.rs/aws-sdk-iot)) |
 | AWS IoT 1-Click Devices Service | [aws-sdk-iot1clickdevices](https://crates.io/crates/aws-sdk-iot1clickdevices) ([docs](https://docs.rs/aws-sdk-iot1clickdevices)) |
@@ -89,7 +90,7 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | AWS IoT Wireless | [aws-sdk-iotwireless](https://crates.io/crates/aws-sdk-iotwireless) ([docs](https://docs.rs/aws-sdk-iotwireless)) |
 | AWS Key Management Service | [aws-sdk-kms](https://crates.io/crates/aws-sdk-kms) ([docs](https://docs.rs/aws-sdk-kms)) |
 | AWS Lake Formation | [aws-sdk-lakeformation](https://crates.io/crates/aws-sdk-lakeformation) ([docs](https://docs.rs/aws-sdk-lakeformation)) |
-| AWS Lambda | [aws-sdk-lambda](https://crates.io/crates/aws-sdk-lambda) ([docs](https://docs.rs/aws-sdk-lambda)) ([examples](https://github.com/awslabs/aws-sdk-rust/tree/main/examples/lambda)) |
+| AWS Lambda | [aws-sdk-lambda](https://crates.io/crates/aws-sdk-lambda) ([docs](https://docs.rs/aws-sdk-lambda)) |
 | AWS License Manager | [aws-sdk-licensemanager](https://crates.io/crates/aws-sdk-licensemanager) ([docs](https://docs.rs/aws-sdk-licensemanager)) |
 | AWS License Manager Linux Subscriptions | [aws-sdk-licensemanagerlinuxsubscriptions](https://crates.io/crates/aws-sdk-licensemanagerlinuxsubscriptions) ([docs](https://docs.rs/aws-sdk-licensemanagerlinuxsubscriptions)) |
 | AWS License Manager User Subscriptions | [aws-sdk-licensemanagerusersubscriptions](https://crates.io/crates/aws-sdk-licensemanagerusersubscriptions) ([docs](https://docs.rs/aws-sdk-licensemanagerusersubscriptions)) |
@@ -265,6 +266,7 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | Amazon Mechanical Turk | [aws-sdk-mturk](https://crates.io/crates/aws-sdk-mturk) ([docs](https://docs.rs/aws-sdk-mturk)) |
 | Amazon MemoryDB | [aws-sdk-memorydb](https://crates.io/crates/aws-sdk-memorydb) ([docs](https://docs.rs/aws-sdk-memorydb)) |
 | Amazon Neptune | [aws-sdk-neptune](https://crates.io/crates/aws-sdk-neptune) ([docs](https://docs.rs/aws-sdk-neptune)) |
+| Amazon NeptuneData | [aws-sdk-neptunedata](https://crates.io/crates/aws-sdk-neptunedata) ([docs](https://docs.rs/aws-sdk-neptunedata)) |
 | Amazon Omics | [aws-sdk-omics](https://crates.io/crates/aws-sdk-omics) ([docs](https://docs.rs/aws-sdk-omics)) |
 | Amazon OpenSearch Ingestion | [aws-sdk-osis](https://crates.io/crates/aws-sdk-osis) ([docs](https://docs.rs/aws-sdk-osis)) |
 | Amazon OpenSearch Service | [aws-sdk-opensearch](https://crates.io/crates/aws-sdk-opensearch) ([docs](https://docs.rs/aws-sdk-opensearch)) |
@@ -349,6 +351,7 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | OpenSearch Service Serverless | [aws-sdk-opensearchserverless](https://crates.io/crates/aws-sdk-opensearchserverless) ([docs](https://docs.rs/aws-sdk-opensearchserverless)) |
 | Payment Cryptography Control Plane | [aws-sdk-paymentcryptography](https://crates.io/crates/aws-sdk-paymentcryptography) ([docs](https://docs.rs/aws-sdk-paymentcryptography)) |
 | Payment Cryptography Data Plane | [aws-sdk-paymentcryptographydata](https://crates.io/crates/aws-sdk-paymentcryptographydata) ([docs](https://docs.rs/aws-sdk-paymentcryptographydata)) |
+| PcaConnectorAd | [aws-sdk-pcaconnectorad](https://crates.io/crates/aws-sdk-pcaconnectorad) ([docs](https://docs.rs/aws-sdk-pcaconnectorad)) |
 | Redshift Data API Service | [aws-sdk-redshiftdata](https://crates.io/crates/aws-sdk-redshiftdata) ([docs](https://docs.rs/aws-sdk-redshiftdata)) |
 | Redshift Serverless | [aws-sdk-redshiftserverless](https://crates.io/crates/aws-sdk-redshiftserverless) ([docs](https://docs.rs/aws-sdk-redshiftserverless)) |
 | Route53 Recovery Cluster | [aws-sdk-route53recoverycluster](https://crates.io/crates/aws-sdk-route53recoverycluster) ([docs](https://docs.rs/aws-sdk-route53recoverycluster)) |

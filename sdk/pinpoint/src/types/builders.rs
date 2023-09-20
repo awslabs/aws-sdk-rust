@@ -91,6 +91,8 @@ pub use crate::types::_quiet_time::QuietTimeBuilder;
 
 pub use crate::types::_journey_limits::JourneyLimitsBuilder;
 
+pub use crate::types::_journey_timeframe_cap::JourneyTimeframeCapBuilder;
+
 pub use crate::types::_activity::ActivityBuilder;
 
 pub use crate::types::_contact_center_activity::ContactCenterActivityBuilder;
@@ -214,6 +216,8 @@ pub use crate::types::_baidu_channel_response::BaiduChannelResponseBuilder;
 pub use crate::types::_baidu_channel_request::BaiduChannelRequestBuilder;
 
 pub use crate::types::_application_settings_resource::ApplicationSettingsResourceBuilder;
+
+pub use crate::types::_application_settings_journey_limits::ApplicationSettingsJourneyLimitsBuilder;
 
 pub use crate::types::_write_application_settings_request::WriteApplicationSettingsRequestBuilder;
 

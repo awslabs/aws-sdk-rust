@@ -22,7 +22,7 @@ impl ModifyGlobalClusterInputBuilder {
 }
 /// Fluent builder constructing a request to `ModifyGlobalCluster`.
 ///
-/// <p>Modifies a setting for an Amazon Aurora global cluster. You can change one or more database configuration parameters by specifying these parameters and the new values in the request. For more information on Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.</p> <note>
+/// <p>Modifies a setting for an Amazon Aurora global database cluster. You can change one or more database configuration parameters by specifying these parameters and the new values in the request. For more information on Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.</p> <note>
 /// <p>This operation only applies to Aurora global database clusters.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

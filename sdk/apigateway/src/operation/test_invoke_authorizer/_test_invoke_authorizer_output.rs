@@ -8,7 +8,7 @@ pub struct TestInvokeAuthorizerOutput {
     pub client_status: i32,
     /// <p>The API Gateway execution log for the test authorizer request.</p>
     pub log: ::std::option::Option<::std::string::String>,
-    /// <p>The execution latency of the test authorizer request.</p>
+    /// <p>The execution latency, in ms, of the test authorizer request.</p>
     pub latency: i64,
     /// <p>The principal identity returned by the Authorizer</p>
     pub principal_id: ::std::option::Option<::std::string::String>,
@@ -29,7 +29,7 @@ impl TestInvokeAuthorizerOutput {
     pub fn log(&self) -> ::std::option::Option<&str> {
         self.log.as_deref()
     }
-    /// <p>The execution latency of the test authorizer request.</p>
+    /// <p>The execution latency, in ms, of the test authorizer request.</p>
     pub fn latency(&self) -> i64 {
         self.latency
     }
@@ -106,17 +106,17 @@ impl TestInvokeAuthorizerOutputBuilder {
     pub fn get_log(&self) -> &::std::option::Option<::std::string::String> {
         &self.log
     }
-    /// <p>The execution latency of the test authorizer request.</p>
+    /// <p>The execution latency, in ms, of the test authorizer request.</p>
     pub fn latency(mut self, input: i64) -> Self {
         self.latency = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The execution latency of the test authorizer request.</p>
+    /// <p>The execution latency, in ms, of the test authorizer request.</p>
     pub fn set_latency(mut self, input: ::std::option::Option<i64>) -> Self {
         self.latency = input;
         self
     }
-    /// <p>The execution latency of the test authorizer request.</p>
+    /// <p>The execution latency, in ms, of the test authorizer request.</p>
     pub fn get_latency(&self) -> &::std::option::Option<i64> {
         &self.latency
     }

@@ -2,7 +2,7 @@
 
 /// <p><b>(DEPRECATED)</b> Describes the forgot password policy for authenticating into the Amplify app.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateBackendAuthForgotPasswordConfig {
     /// <p><b>(DEPRECATED)</b> Describes which mode to use (either SMS or email) to deliver messages to app users who want to recover their password.</p>
     pub delivery_method: ::std::option::Option<crate::types::DeliveryMethod>,
@@ -25,6 +25,15 @@ impl CreateBackendAuthForgotPasswordConfig {
         self.sms_settings.as_ref()
     }
 }
+impl ::std::fmt::Debug for CreateBackendAuthForgotPasswordConfig {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateBackendAuthForgotPasswordConfig");
+        formatter.field("delivery_method", &self.delivery_method);
+        formatter.field("email_settings", &"*** Sensitive Data Redacted ***");
+        formatter.field("sms_settings", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl CreateBackendAuthForgotPasswordConfig {
     /// Creates a new builder-style object to manufacture [`CreateBackendAuthForgotPasswordConfig`](crate::types::CreateBackendAuthForgotPasswordConfig).
     pub fn builder() -> crate::types::builders::CreateBackendAuthForgotPasswordConfigBuilder {
@@ -34,7 +43,7 @@ impl CreateBackendAuthForgotPasswordConfig {
 
 /// A builder for [`CreateBackendAuthForgotPasswordConfig`](crate::types::CreateBackendAuthForgotPasswordConfig).
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct CreateBackendAuthForgotPasswordConfigBuilder {
     pub(crate) delivery_method: ::std::option::Option<crate::types::DeliveryMethod>,
     pub(crate) email_settings: ::std::option::Option<crate::types::EmailSettings>,
@@ -90,5 +99,14 @@ impl CreateBackendAuthForgotPasswordConfigBuilder {
             email_settings: self.email_settings,
             sms_settings: self.sms_settings,
         }
+    }
+}
+impl ::std::fmt::Debug for CreateBackendAuthForgotPasswordConfigBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateBackendAuthForgotPasswordConfigBuilder");
+        formatter.field("delivery_method", &self.delivery_method);
+        formatter.field("email_settings", &"*** Sensitive Data Redacted ***");
+        formatter.field("sms_settings", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

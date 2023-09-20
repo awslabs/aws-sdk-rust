@@ -6,26 +6,26 @@ pub fn ser_send_project_session_action_input(
     if let Some(var_1) = &input.client_session_id {
         object.key("ClientSessionId").string(var_1.as_str());
     }
-    if input.preview {
-        object.key("Preview").boolean(input.preview);
+    if let Some(var_2) = &input.preview {
+        object.key("Preview").boolean(*var_2);
     }
-    if let Some(var_2) = &input.recipe_step {
+    if let Some(var_3) = &input.recipe_step {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("RecipeStep").start_object();
-        crate::protocol_serde::shape_recipe_step::ser_recipe_step(&mut object_3, var_2)?;
-        object_3.finish();
+        let mut object_4 = object.key("RecipeStep").start_object();
+        crate::protocol_serde::shape_recipe_step::ser_recipe_step(&mut object_4, var_3)?;
+        object_4.finish();
     }
-    if let Some(var_4) = &input.step_index {
+    if let Some(var_5) = &input.step_index {
         object.key("StepIndex").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_4).into()),
+            ::aws_smithy_types::Number::NegInt((*var_5).into()),
         );
     }
-    if let Some(var_5) = &input.view_frame {
+    if let Some(var_6) = &input.view_frame {
         #[allow(unused_mut)]
-        let mut object_6 = object.key("ViewFrame").start_object();
-        crate::protocol_serde::shape_view_frame::ser_view_frame(&mut object_6, var_5)?;
-        object_6.finish();
+        let mut object_7 = object.key("ViewFrame").start_object();
+        crate::protocol_serde::shape_view_frame::ser_view_frame(&mut object_7, var_6)?;
+        object_7.finish();
     }
     Ok(())
 }

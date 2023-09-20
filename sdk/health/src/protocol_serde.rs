@@ -31,6 +31,8 @@ pub(crate) mod shape_describe_affected_entities_for_organization;
 
 pub(crate) mod shape_describe_entity_aggregates;
 
+pub(crate) mod shape_describe_entity_aggregates_for_organization;
+
 pub(crate) mod shape_describe_event_aggregates;
 
 pub(crate) mod shape_describe_event_details;
@@ -65,6 +67,8 @@ pub(crate) mod shape_describe_affected_entities_for_organization_input;
 
 pub(crate) mod shape_describe_affected_entities_input;
 
+pub(crate) mod shape_describe_entity_aggregates_for_organization_input;
+
 pub(crate) mod shape_describe_entity_aggregates_input;
 
 pub(crate) mod shape_describe_event_aggregates_input;
@@ -95,6 +99,8 @@ pub(crate) mod shape_describe_event_details_for_organization_successful_set;
 
 pub(crate) mod shape_describe_event_details_successful_set;
 
+pub(crate) mod shape_entity_account_filter;
+
 pub(crate) mod shape_entity_aggregate_list;
 
 pub(crate) mod shape_entity_filter;
@@ -112,6 +118,8 @@ pub(crate) mod shape_event_list;
 pub(crate) mod shape_event_type_filter;
 
 pub(crate) mod shape_event_type_list;
+
+pub(crate) mod shape_organization_entity_aggregates_list;
 
 pub(crate) mod shape_organization_event_filter;
 
@@ -135,14 +143,22 @@ pub(crate) mod shape_event_type;
 
 pub(crate) mod shape_organization_affected_entities_error_item;
 
+pub(crate) mod shape_organization_entity_aggregate;
+
 pub(crate) mod shape_organization_event;
 
 pub(crate) mod shape_organization_event_details;
 
 pub(crate) mod shape_organization_event_details_error_item;
 
+pub(crate) mod shape_account_entity_aggregates_list;
+
+pub(crate) mod shape_entity_statuses;
+
 pub(crate) mod shape_event_description;
 
 pub(crate) mod shape_event_metadata;
 
 pub(crate) mod shape_tag_set;
+
+pub(crate) mod shape_account_entity_aggregate;

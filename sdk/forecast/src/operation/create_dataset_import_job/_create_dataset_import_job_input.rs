@@ -21,7 +21,7 @@ pub struct CreateDatasetImportJobInput {
     /// <p>Refer to the <a href="http://joda-time.sourceforge.net/timezones.html">Joda-Time API</a> for a complete list of valid time zone names.</p>
     pub time_zone: ::std::option::Option<::std::string::String>,
     /// <p>Automatically derive time zone information from the geolocation attribute. This option is ideal for datasets that contain timestamps in multiple time zones and those timestamps are expressed in local time.</p>
-    pub use_geolocation_for_time_zone: bool,
+    pub use_geolocation_for_time_zone: ::std::option::Option<bool>,
     /// <p>The format of the geolocation attribute. The geolocation attribute can be formatted in one of two ways:</p>
     /// <ul>
     /// <li> <p> <code>LAT_LONG</code> - the latitude and longitude in decimal format (Example: 47.61_-122.33).</p> </li>
@@ -74,7 +74,7 @@ impl CreateDatasetImportJobInput {
         self.time_zone.as_deref()
     }
     /// <p>Automatically derive time zone information from the geolocation attribute. This option is ideal for datasets that contain timestamps in multiple time zones and those timestamps are expressed in local time.</p>
-    pub fn use_geolocation_for_time_zone(&self) -> bool {
+    pub fn use_geolocation_for_time_zone(&self) -> ::std::option::Option<bool> {
         self.use_geolocation_for_time_zone
     }
     /// <p>The format of the geolocation attribute. The geolocation attribute can be formatted in one of two ways:</p>
@@ -353,7 +353,7 @@ impl CreateDatasetImportJobInputBuilder {
             data_source: self.data_source,
             timestamp_format: self.timestamp_format,
             time_zone: self.time_zone,
-            use_geolocation_for_time_zone: self.use_geolocation_for_time_zone.unwrap_or_default(),
+            use_geolocation_for_time_zone: self.use_geolocation_for_time_zone,
             geolocation_format: self.geolocation_format,
             tags: self.tags,
             format: self.format,

@@ -123,6 +123,8 @@ pub use crate::types::_node_exporter::NodeExporter;
 
 pub use crate::types::_jmx_exporter::JmxExporter;
 
+pub use crate::types::_cluster_operation_v2_summary::ClusterOperationV2Summary;
+
 pub use crate::types::_cluster_operation_info::ClusterOperationInfo;
 
 pub use crate::types::_vpc_connection_info::VpcConnectionInfo;
@@ -142,6 +144,14 @@ pub use crate::types::_error_info::ErrorInfo;
 pub use crate::types::_client_vpc_connection::ClientVpcConnection;
 
 pub use crate::types::_compatible_kafka_version::CompatibleKafkaVersion;
+
+pub use crate::types::_cluster_operation_v2::ClusterOperationV2;
+
+pub use crate::types::_cluster_operation_v2_serverless::ClusterOperationV2Serverless;
+
+pub use crate::types::_vpc_connection_info_serverless::VpcConnectionInfoServerless;
+
+pub use crate::types::_cluster_operation_v2_provisioned::ClusterOperationV2Provisioned;
 
 pub use crate::types::_serverless_request::ServerlessRequest;
 
@@ -178,6 +188,14 @@ mod _cluster_operation_info;
 mod _cluster_operation_step;
 
 mod _cluster_operation_step_info;
+
+mod _cluster_operation_v2;
+
+mod _cluster_operation_v2_provisioned;
+
+mod _cluster_operation_v2_serverless;
+
+mod _cluster_operation_v2_summary;
 
 mod _cluster_state;
 
@@ -282,6 +300,8 @@ mod _vpc_config;
 mod _vpc_connection;
 
 mod _vpc_connection_info;
+
+mod _vpc_connection_info_serverless;
 
 mod _vpc_connection_state;
 

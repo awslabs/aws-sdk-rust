@@ -35,7 +35,17 @@
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
-/// <p>The data format of the import job's data source.</p>
+/// <p>The data format of a file, can be one of the following:</p>
+/// <ul>
+/// <li>
+/// <p>
+/// <code>CSV</code> – A comma-separated values file.</p>
+/// </li>
+/// <li>
+/// <p>
+/// <code>JSON</code> – A JSON file.</p>
+/// </li>
+/// </ul>
 #[non_exhaustive]
 #[derive(
     ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,

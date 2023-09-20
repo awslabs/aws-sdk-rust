@@ -10,10 +10,14 @@ pub struct GcmChannelResponse {
     pub creation_date: ::std::option::Option<::std::string::String>,
     /// <p>The Web API Key, also referred to as an <i>API_KEY</i> or <i>server key</i>, that you received from Google to communicate with Google services.</p>
     pub credential: ::std::option::Option<::std::string::String>,
+    /// <p>The default authentication method used for GCM. Values are either "TOKEN" or "KEY". Defaults to "KEY".</p>
+    pub default_authentication_method: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether the GCM channel is enabled for the application.</p>
     pub enabled: ::std::option::Option<bool>,
     /// <p>(Not used) This property is retained only for backward compatibility.</p>
     pub has_credential: ::std::option::Option<bool>,
+    /// <p>Returns true if the JSON file provided by Google during registration process was used in the <b>ServiceJson</b> field of the request.</p>
+    pub has_fcm_service_credentials: ::std::option::Option<bool>,
     /// <p>(Deprecated) An identifier for the GCM channel. This property is retained only for backward compatibility.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether the GCM channel is archived.</p>
@@ -40,6 +44,10 @@ impl GcmChannelResponse {
     pub fn credential(&self) -> ::std::option::Option<&str> {
         self.credential.as_deref()
     }
+    /// <p>The default authentication method used for GCM. Values are either "TOKEN" or "KEY". Defaults to "KEY".</p>
+    pub fn default_authentication_method(&self) -> ::std::option::Option<&str> {
+        self.default_authentication_method.as_deref()
+    }
     /// <p>Specifies whether the GCM channel is enabled for the application.</p>
     pub fn enabled(&self) -> ::std::option::Option<bool> {
         self.enabled
@@ -47,6 +55,10 @@ impl GcmChannelResponse {
     /// <p>(Not used) This property is retained only for backward compatibility.</p>
     pub fn has_credential(&self) -> ::std::option::Option<bool> {
         self.has_credential
+    }
+    /// <p>Returns true if the JSON file provided by Google during registration process was used in the <b>ServiceJson</b> field of the request.</p>
+    pub fn has_fcm_service_credentials(&self) -> ::std::option::Option<bool> {
+        self.has_fcm_service_credentials
     }
     /// <p>(Deprecated) An identifier for the GCM channel. This property is retained only for backward compatibility.</p>
     pub fn id(&self) -> ::std::option::Option<&str> {
@@ -87,8 +99,10 @@ pub struct GcmChannelResponseBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) creation_date: ::std::option::Option<::std::string::String>,
     pub(crate) credential: ::std::option::Option<::std::string::String>,
+    pub(crate) default_authentication_method: ::std::option::Option<::std::string::String>,
     pub(crate) enabled: ::std::option::Option<bool>,
     pub(crate) has_credential: ::std::option::Option<bool>,
+    pub(crate) has_fcm_service_credentials: ::std::option::Option<bool>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) is_archived: ::std::option::Option<bool>,
     pub(crate) last_modified_by: ::std::option::Option<::std::string::String>,
@@ -139,6 +153,20 @@ impl GcmChannelResponseBuilder {
     pub fn get_credential(&self) -> &::std::option::Option<::std::string::String> {
         &self.credential
     }
+    /// <p>The default authentication method used for GCM. Values are either "TOKEN" or "KEY". Defaults to "KEY".</p>
+    pub fn default_authentication_method(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.default_authentication_method = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The default authentication method used for GCM. Values are either "TOKEN" or "KEY". Defaults to "KEY".</p>
+    pub fn set_default_authentication_method(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.default_authentication_method = input;
+        self
+    }
+    /// <p>The default authentication method used for GCM. Values are either "TOKEN" or "KEY". Defaults to "KEY".</p>
+    pub fn get_default_authentication_method(&self) -> &::std::option::Option<::std::string::String> {
+        &self.default_authentication_method
+    }
     /// <p>Specifies whether the GCM channel is enabled for the application.</p>
     pub fn enabled(mut self, input: bool) -> Self {
         self.enabled = ::std::option::Option::Some(input);
@@ -166,6 +194,20 @@ impl GcmChannelResponseBuilder {
     /// <p>(Not used) This property is retained only for backward compatibility.</p>
     pub fn get_has_credential(&self) -> &::std::option::Option<bool> {
         &self.has_credential
+    }
+    /// <p>Returns true if the JSON file provided by Google during registration process was used in the <b>ServiceJson</b> field of the request.</p>
+    pub fn has_fcm_service_credentials(mut self, input: bool) -> Self {
+        self.has_fcm_service_credentials = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Returns true if the JSON file provided by Google during registration process was used in the <b>ServiceJson</b> field of the request.</p>
+    pub fn set_has_fcm_service_credentials(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.has_fcm_service_credentials = input;
+        self
+    }
+    /// <p>Returns true if the JSON file provided by Google during registration process was used in the <b>ServiceJson</b> field of the request.</p>
+    pub fn get_has_fcm_service_credentials(&self) -> &::std::option::Option<bool> {
+        &self.has_fcm_service_credentials
     }
     /// <p>(Deprecated) An identifier for the GCM channel. This property is retained only for backward compatibility.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -257,8 +299,10 @@ impl GcmChannelResponseBuilder {
             application_id: self.application_id,
             creation_date: self.creation_date,
             credential: self.credential,
+            default_authentication_method: self.default_authentication_method,
             enabled: self.enabled,
             has_credential: self.has_credential,
+            has_fcm_service_credentials: self.has_fcm_service_credentials,
             id: self.id,
             is_archived: self.is_archived,
             last_modified_by: self.last_modified_by,

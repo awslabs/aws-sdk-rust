@@ -13,7 +13,7 @@ pub struct CreateStageInput {
     /// <p>The description of the Stage resource.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Whether cache clustering is enabled for the stage.</p>
-    pub cache_cluster_enabled: bool,
+    pub cache_cluster_enabled: ::std::option::Option<bool>,
     /// <p>The stage's cache capacity in GB. For more information about choosing a cache size, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-caching.html">Enabling API caching to enhance responsiveness</a>.</p>
     pub cache_cluster_size: ::std::option::Option<crate::types::CacheClusterSize>,
     /// <p>A map that defines the stage variables for the new Stage resource. Variable names can have alphanumeric and underscore characters, and the values must match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.</p>
@@ -23,7 +23,7 @@ pub struct CreateStageInput {
     /// <p>The canary deployment settings of this stage.</p>
     pub canary_settings: ::std::option::Option<crate::types::CanarySettings>,
     /// <p>Specifies whether active tracing with X-ray is enabled for the Stage.</p>
-    pub tracing_enabled: bool,
+    pub tracing_enabled: ::std::option::Option<bool>,
     /// <p>The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters and must not start with <code>aws:</code>. The tag value can be up to 256 characters.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
@@ -45,7 +45,7 @@ impl CreateStageInput {
         self.description.as_deref()
     }
     /// <p>Whether cache clustering is enabled for the stage.</p>
-    pub fn cache_cluster_enabled(&self) -> bool {
+    pub fn cache_cluster_enabled(&self) -> ::std::option::Option<bool> {
         self.cache_cluster_enabled
     }
     /// <p>The stage's cache capacity in GB. For more information about choosing a cache size, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-caching.html">Enabling API caching to enhance responsiveness</a>.</p>
@@ -65,7 +65,7 @@ impl CreateStageInput {
         self.canary_settings.as_ref()
     }
     /// <p>Specifies whether active tracing with X-ray is enabled for the Stage.</p>
-    pub fn tracing_enabled(&self) -> bool {
+    pub fn tracing_enabled(&self) -> ::std::option::Option<bool> {
         self.tracing_enabled
     }
     /// <p>The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters and must not start with <code>aws:</code>. The tag value can be up to 256 characters.</p>
@@ -270,12 +270,12 @@ impl CreateStageInputBuilder {
             stage_name: self.stage_name,
             deployment_id: self.deployment_id,
             description: self.description,
-            cache_cluster_enabled: self.cache_cluster_enabled.unwrap_or_default(),
+            cache_cluster_enabled: self.cache_cluster_enabled,
             cache_cluster_size: self.cache_cluster_size,
             variables: self.variables,
             documentation_version: self.documentation_version,
             canary_settings: self.canary_settings,
-            tracing_enabled: self.tracing_enabled.unwrap_or_default(),
+            tracing_enabled: self.tracing_enabled,
             tags: self.tags,
         })
     }

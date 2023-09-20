@@ -38,7 +38,7 @@ pub struct RestoreDbClusterToPointInTimeInput {
     /// <p>A value that is set to <code>true</code> to restore the DB cluster to the latest restorable backup time, and <code>false</code> otherwise.</p>
     /// <p>Default: <code>false</code> </p>
     /// <p>Constraints: Cannot be specified if <code>RestoreToTime</code> parameter is provided.</p>
-    pub use_latest_restorable_time: bool,
+    pub use_latest_restorable_time: ::std::option::Option<bool>,
     /// <p>The port number on which the new DB cluster accepts connections.</p>
     /// <p>Constraints: Value must be <code>1150-65535</code> </p>
     /// <p>Default: The same port as the original DB cluster.</p>
@@ -124,7 +124,7 @@ impl RestoreDbClusterToPointInTimeInput {
     /// <p>A value that is set to <code>true</code> to restore the DB cluster to the latest restorable backup time, and <code>false</code> otherwise.</p>
     /// <p>Default: <code>false</code> </p>
     /// <p>Constraints: Cannot be specified if <code>RestoreToTime</code> parameter is provided.</p>
-    pub fn use_latest_restorable_time(&self) -> bool {
+    pub fn use_latest_restorable_time(&self) -> ::std::option::Option<bool> {
         self.use_latest_restorable_time
     }
     /// <p>The port number on which the new DB cluster accepts connections.</p>
@@ -606,7 +606,7 @@ impl RestoreDbClusterToPointInTimeInputBuilder {
                 restore_type: self.restore_type,
                 source_db_cluster_identifier: self.source_db_cluster_identifier,
                 restore_to_time: self.restore_to_time,
-                use_latest_restorable_time: self.use_latest_restorable_time.unwrap_or_default(),
+                use_latest_restorable_time: self.use_latest_restorable_time,
                 port: self.port,
                 db_subnet_group_name: self.db_subnet_group_name,
                 option_group_name: self.option_group_name,

@@ -57,6 +57,10 @@ pub struct CreateCustomDbEngineVersionInput {
     pub manifest: ::std::option::Option<::std::string::String>,
     /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    /// <p>Reserved for future use.</p>
+    pub source_custom_db_engine_version_identifier: ::std::option::Option<::std::string::String>,
+    /// <p>Reserved for future use.</p>
+    pub use_aws_provided_latest_image: ::std::option::Option<bool>,
 }
 impl CreateCustomDbEngineVersionInput {
     /// <p>The database engine to use for your custom engine version (CEV). The only supported value is <code>custom-oracle-ee</code>.</p>
@@ -131,6 +135,14 @@ impl CreateCustomDbEngineVersionInput {
     pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
+    /// <p>Reserved for future use.</p>
+    pub fn source_custom_db_engine_version_identifier(&self) -> ::std::option::Option<&str> {
+        self.source_custom_db_engine_version_identifier.as_deref()
+    }
+    /// <p>Reserved for future use.</p>
+    pub fn use_aws_provided_latest_image(&self) -> ::std::option::Option<bool> {
+        self.use_aws_provided_latest_image
+    }
 }
 impl CreateCustomDbEngineVersionInput {
     /// Creates a new builder-style object to manufacture [`CreateCustomDbEngineVersionInput`](crate::operation::create_custom_db_engine_version::CreateCustomDbEngineVersionInput).
@@ -152,6 +164,8 @@ pub struct CreateCustomDbEngineVersionInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) manifest: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) source_custom_db_engine_version_identifier: ::std::option::Option<::std::string::String>,
+    pub(crate) use_aws_provided_latest_image: ::std::option::Option<bool>,
 }
 impl CreateCustomDbEngineVersionInputBuilder {
     /// <p>The database engine to use for your custom engine version (CEV). The only supported value is <code>custom-oracle-ee</code>.</p>
@@ -394,6 +408,34 @@ impl CreateCustomDbEngineVersionInputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }
+    /// <p>Reserved for future use.</p>
+    pub fn source_custom_db_engine_version_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.source_custom_db_engine_version_identifier = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Reserved for future use.</p>
+    pub fn set_source_custom_db_engine_version_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.source_custom_db_engine_version_identifier = input;
+        self
+    }
+    /// <p>Reserved for future use.</p>
+    pub fn get_source_custom_db_engine_version_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_custom_db_engine_version_identifier
+    }
+    /// <p>Reserved for future use.</p>
+    pub fn use_aws_provided_latest_image(mut self, input: bool) -> Self {
+        self.use_aws_provided_latest_image = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Reserved for future use.</p>
+    pub fn set_use_aws_provided_latest_image(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.use_aws_provided_latest_image = input;
+        self
+    }
+    /// <p>Reserved for future use.</p>
+    pub fn get_use_aws_provided_latest_image(&self) -> &::std::option::Option<bool> {
+        &self.use_aws_provided_latest_image
+    }
     /// Consumes the builder and constructs a [`CreateCustomDbEngineVersionInput`](crate::operation::create_custom_db_engine_version::CreateCustomDbEngineVersionInput).
     pub fn build(
         self,
@@ -411,6 +453,8 @@ impl CreateCustomDbEngineVersionInputBuilder {
             description: self.description,
             manifest: self.manifest,
             tags: self.tags,
+            source_custom_db_engine_version_identifier: self.source_custom_db_engine_version_identifier,
+            use_aws_provided_latest_image: self.use_aws_provided_latest_image,
         })
     }
 }

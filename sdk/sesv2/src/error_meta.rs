@@ -83,6 +83,32 @@ impl From<crate::operation::batch_get_metric_data::BatchGetMetricDataError> for 
         }
     }
 }
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::cancel_export_job::CancelExportJobError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::cancel_export_job::CancelExportJobError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::cancel_export_job::CancelExportJobError> for Error {
+    fn from(err: crate::operation::cancel_export_job::CancelExportJobError) -> Self {
+        match err {
+            crate::operation::cancel_export_job::CancelExportJobError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::cancel_export_job::CancelExportJobError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::cancel_export_job::CancelExportJobError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::cancel_export_job::CancelExportJobError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::create_configuration_set::CreateConfigurationSetError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -462,6 +488,33 @@ impl From<crate::operation::create_email_template::CreateEmailTemplateError> for
                 Error::TooManyRequestsException(inner)
             }
             crate::operation::create_email_template::CreateEmailTemplateError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::create_export_job::CreateExportJobError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::create_export_job::CreateExportJobError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::create_export_job::CreateExportJobError> for Error {
+    fn from(err: crate::operation::create_export_job::CreateExportJobError) -> Self {
+        match err {
+            crate::operation::create_export_job::CreateExportJobError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::create_export_job::CreateExportJobError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::create_export_job::CreateExportJobError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::create_export_job::CreateExportJobError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::create_export_job::CreateExportJobError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1335,6 +1388,32 @@ impl From<crate::operation::get_email_template::GetEmailTemplateError> for Error
         }
     }
 }
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_export_job::GetExportJobError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::get_export_job::GetExportJobError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_export_job::GetExportJobError> for Error {
+    fn from(err: crate::operation::get_export_job::GetExportJobError) -> Self {
+        match err {
+            crate::operation::get_export_job::GetExportJobError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::get_export_job::GetExportJobError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_export_job::GetExportJobError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::get_export_job::GetExportJobError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_import_job::GetImportJobError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1358,6 +1437,34 @@ impl From<crate::operation::get_import_job::GetImportJobError> for Error {
             crate::operation::get_import_job::GetImportJobError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::get_import_job::GetImportJobError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::get_import_job::GetImportJobError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_message_insights::GetMessageInsightsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::get_message_insights::GetMessageInsightsError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_message_insights::GetMessageInsightsError> for Error {
+    fn from(err: crate::operation::get_message_insights::GetMessageInsightsError) -> Self {
+        match err {
+            crate::operation::get_message_insights::GetMessageInsightsError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::get_message_insights::GetMessageInsightsError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_message_insights::GetMessageInsightsError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::get_message_insights::GetMessageInsightsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1657,6 +1764,31 @@ impl From<crate::operation::list_email_templates::ListEmailTemplatesError> for E
                 Error::TooManyRequestsException(inner)
             }
             crate::operation::list_email_templates::ListEmailTemplatesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_export_jobs::ListExportJobsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_export_jobs::ListExportJobsError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_export_jobs::ListExportJobsError> for Error {
+    fn from(err: crate::operation::list_export_jobs::ListExportJobsError) -> Self {
+        match err {
+            crate::operation::list_export_jobs::ListExportJobsError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::list_export_jobs::ListExportJobsError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::list_export_jobs::ListExportJobsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

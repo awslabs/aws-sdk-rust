@@ -100,6 +100,13 @@ pub(crate) fn de_check_domain_transferability(
                 "Transferability" => {
                     builder = builder.set_transferability(crate::protocol_serde::shape_domain_transferability::de_domain_transferability(tokens)?);
                 }
+                "Message" => {
+                    builder = builder.set_message(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

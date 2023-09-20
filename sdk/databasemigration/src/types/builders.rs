@@ -37,6 +37,16 @@ pub use crate::types::_replication_config::ReplicationConfigBuilder;
 
 pub use crate::types::_compute_config::ComputeConfigBuilder;
 
+pub use crate::types::_migration_project::MigrationProjectBuilder;
+
+pub use crate::types::_sc_application_attributes::ScApplicationAttributesBuilder;
+
+pub use crate::types::_data_provider_descriptor::DataProviderDescriptorBuilder;
+
+pub use crate::types::_data_provider_descriptor_definition::DataProviderDescriptorDefinitionBuilder;
+
+pub use crate::types::_instance_profile::InstanceProfileBuilder;
+
 pub use crate::types::_event_subscription::EventSubscriptionBuilder;
 
 pub use crate::types::_endpoint::EndpointBuilder;
@@ -79,9 +89,21 @@ pub use crate::types::_s3_settings::S3SettingsBuilder;
 
 pub use crate::types::_dynamo_db_settings::DynamoDbSettingsBuilder;
 
+pub use crate::types::_data_provider::DataProviderBuilder;
+
+pub use crate::types::_microsoft_sql_server_data_provider_settings::MicrosoftSqlServerDataProviderSettingsBuilder;
+
+pub use crate::types::_oracle_data_provider_settings::OracleDataProviderSettingsBuilder;
+
+pub use crate::types::_my_sql_data_provider_settings::MySqlDataProviderSettingsBuilder;
+
+pub use crate::types::_postgre_sql_data_provider_settings::PostgreSqlDataProviderSettingsBuilder;
+
 pub use crate::types::_tag::TagBuilder;
 
 pub use crate::types::_certificate::CertificateBuilder;
+
+pub use crate::types::_export_metadata_model_assessment_result_entry::ExportMetadataModelAssessmentResultEntryBuilder;
 
 pub use crate::types::_table_statistics::TableStatisticsBuilder;
 
@@ -111,6 +133,12 @@ pub use crate::types::_pending_maintenance_action::PendingMaintenanceActionBuild
 
 pub use crate::types::_orderable_replication_instance::OrderableReplicationInstanceBuilder;
 
+pub use crate::types::_schema_conversion_request::SchemaConversionRequestBuilder;
+
+pub use crate::types::_export_sql_details::ExportSqlDetailsBuilder;
+
+pub use crate::types::_default_error_details::DefaultErrorDetailsBuilder;
+
 pub use crate::types::_schema_response::SchemaResponseBuilder;
 
 pub use crate::types::_schema_short_info_response::SchemaShortInfoResponseBuilder;
@@ -138,6 +166,8 @@ pub use crate::types::_collector_health_check::CollectorHealthCheckBuilder;
 pub use crate::types::_event::EventBuilder;
 
 pub use crate::types::_event_category_group::EventCategoryGroupBuilder;
+
+pub use crate::types::_engine_version::EngineVersionBuilder;
 
 pub use crate::types::_supported_endpoint_type::SupportedEndpointTypeBuilder;
 

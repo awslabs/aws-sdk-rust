@@ -17,11 +17,12 @@ pub struct UserPoolType {
     pub lambda_config: ::std::option::Option<crate::types::LambdaConfigType>,
     /// <p>The status of a user pool.</p>
     pub status: ::std::option::Option<crate::types::StatusType>,
-    /// <p>The date the user pool was last modified.</p>
+    /// <p>The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format, when the item was modified.</p>
     pub last_modified_date: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The date the user pool was created.</p>
+    /// <p>The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format, when the item was created.</p>
     pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>A container with the schema attributes of a user pool.</p>
+    /// <p>A list of the user attributes and their properties in your user pool. The attribute schema contains standard attributes, custom attributes with a <code>custom:</code> prefix, and developer attributes with a <code>dev:</code> prefix. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-attributes.html">User pool attributes</a>.</p>
+    /// <p>Developer-only attributes are a legacy feature of user pools, are read-only to all app clients. You can create and update developer-only attributes only with IAM-authenticated API operations. Use app client read/write permissions instead.</p>
     pub schema_attributes: ::std::option::Option<::std::vec::Vec<crate::types::SchemaAttributeType>>,
     /// <p>The attributes that are auto-verified in a user pool.</p>
     pub auto_verified_attributes: ::std::option::Option<::std::vec::Vec<crate::types::VerifiedAttributeType>>,
@@ -54,7 +55,7 @@ pub struct UserPoolType {
     pub device_configuration: ::std::option::Option<crate::types::DeviceConfigurationType>,
     /// <p>A number estimating the size of the user pool.</p>
     pub estimated_number_of_users: i32,
-    /// <p>The email configuration of your user pool. The email configuration type sets your preferred sending method, Amazon Web Services Region, and sender for messages tfrom your user pool.</p>
+    /// <p>The email configuration of your user pool. The email configuration type sets your preferred sending method, Amazon Web Services Region, and sender for messages from your user pool.</p>
     pub email_configuration: ::std::option::Option<crate::types::EmailConfigurationType>,
     /// <p>The SMS configuration with the settings that your Amazon Cognito user pool must use to send an SMS message from your Amazon Web Services account through Amazon Simple Notification Service. To send SMS messages with Amazon SNS in the Amazon Web Services Region that you want, the Amazon Cognito user pool uses an Identity and Access Management (IAM) role in your Amazon Web Services account.</p>
     pub sms_configuration: ::std::option::Option<crate::types::SmsConfigurationType>,
@@ -73,7 +74,7 @@ pub struct UserPoolType {
     /// SNSSandbox
     /// </dt>
     /// <dd>
-    /// <p>The Amazon Web Services account is in the SNS SMS Sandbox and messages will only reach verified end users. This parameter won’t get populated with SNSSandbox if the IAM user creating the user pool doesn’t have SNS permissions. To learn how to move your Amazon Web Services account out of the sandbox, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox-moving-to-production.html">Moving out of the SMS sandbox</a>.</p>
+    /// <p>The Amazon Web Services account is in the SNS SMS Sandbox and messages will only reach verified end users. This parameter won’t get populated with SNSSandbox if the user creating the user pool doesn’t have SNS permissions. To learn how to move your Amazon Web Services account out of the sandbox, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox-moving-to-production.html">Moving out of the SMS sandbox</a>.</p>
     /// </dd>
     /// </dl>
     pub sms_configuration_failure: ::std::option::Option<::std::string::String>,
@@ -86,7 +87,8 @@ pub struct UserPoolType {
     pub custom_domain: ::std::option::Option<::std::string::String>,
     /// <p>The configuration for <code>AdminCreateUser</code> requests.</p>
     pub admin_create_user_config: ::std::option::Option<crate::types::AdminCreateUserConfigType>,
-    /// <p>The user pool add-ons.</p>
+    /// <p>User pool add-ons. Contains settings for activation of advanced security features. To log user security information but take no action, set to <code>AUDIT</code>. To configure automatic security responses to risky traffic to your user pool, set to <code>ENFORCED</code>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-advanced-security.html">Adding advanced security to a user pool</a>.</p>
     pub user_pool_add_ons: ::std::option::Option<crate::types::UserPoolAddOnsType>,
     /// <p>Case sensitivity of the username input for the selected sign-in option. For example, when case sensitivity is set to <code>False</code>, users can sign in using either "username" or "Username". This configuration is immutable once it has been set. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UsernameConfigurationType.html">UsernameConfigurationType</a>.</p>
     pub username_configuration: ::std::option::Option<crate::types::UsernameConfigurationType>,
@@ -121,15 +123,16 @@ impl UserPoolType {
     pub fn status(&self) -> ::std::option::Option<&crate::types::StatusType> {
         self.status.as_ref()
     }
-    /// <p>The date the user pool was last modified.</p>
+    /// <p>The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format, when the item was modified.</p>
     pub fn last_modified_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_modified_date.as_ref()
     }
-    /// <p>The date the user pool was created.</p>
+    /// <p>The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format, when the item was created.</p>
     pub fn creation_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
-    /// <p>A container with the schema attributes of a user pool.</p>
+    /// <p>A list of the user attributes and their properties in your user pool. The attribute schema contains standard attributes, custom attributes with a <code>custom:</code> prefix, and developer attributes with a <code>dev:</code> prefix. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-attributes.html">User pool attributes</a>.</p>
+    /// <p>Developer-only attributes are a legacy feature of user pools, are read-only to all app clients. You can create and update developer-only attributes only with IAM-authenticated API operations. Use app client read/write permissions instead.</p>
     pub fn schema_attributes(&self) -> ::std::option::Option<&[crate::types::SchemaAttributeType]> {
         self.schema_attributes.as_deref()
     }
@@ -188,7 +191,7 @@ impl UserPoolType {
     pub fn estimated_number_of_users(&self) -> i32 {
         self.estimated_number_of_users
     }
-    /// <p>The email configuration of your user pool. The email configuration type sets your preferred sending method, Amazon Web Services Region, and sender for messages tfrom your user pool.</p>
+    /// <p>The email configuration of your user pool. The email configuration type sets your preferred sending method, Amazon Web Services Region, and sender for messages from your user pool.</p>
     pub fn email_configuration(&self) -> ::std::option::Option<&crate::types::EmailConfigurationType> {
         self.email_configuration.as_ref()
     }
@@ -213,7 +216,7 @@ impl UserPoolType {
     /// SNSSandbox
     /// </dt>
     /// <dd>
-    /// <p>The Amazon Web Services account is in the SNS SMS Sandbox and messages will only reach verified end users. This parameter won’t get populated with SNSSandbox if the IAM user creating the user pool doesn’t have SNS permissions. To learn how to move your Amazon Web Services account out of the sandbox, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox-moving-to-production.html">Moving out of the SMS sandbox</a>.</p>
+    /// <p>The Amazon Web Services account is in the SNS SMS Sandbox and messages will only reach verified end users. This parameter won’t get populated with SNSSandbox if the user creating the user pool doesn’t have SNS permissions. To learn how to move your Amazon Web Services account out of the sandbox, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox-moving-to-production.html">Moving out of the SMS sandbox</a>.</p>
     /// </dd>
     /// </dl>
     pub fn sms_configuration_failure(&self) -> ::std::option::Option<&str> {
@@ -236,7 +239,8 @@ impl UserPoolType {
     pub fn admin_create_user_config(&self) -> ::std::option::Option<&crate::types::AdminCreateUserConfigType> {
         self.admin_create_user_config.as_ref()
     }
-    /// <p>The user pool add-ons.</p>
+    /// <p>User pool add-ons. Contains settings for activation of advanced security features. To log user security information but take no action, set to <code>AUDIT</code>. To configure automatic security responses to risky traffic to your user pool, set to <code>ENFORCED</code>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-advanced-security.html">Adding advanced security to a user pool</a>.</p>
     pub fn user_pool_add_ons(&self) -> ::std::option::Option<&crate::types::UserPoolAddOnsType> {
         self.user_pool_add_ons.as_ref()
     }
@@ -386,31 +390,31 @@ impl UserPoolTypeBuilder {
     pub fn get_status(&self) -> &::std::option::Option<crate::types::StatusType> {
         &self.status
     }
-    /// <p>The date the user pool was last modified.</p>
+    /// <p>The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format, when the item was modified.</p>
     pub fn last_modified_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_date = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The date the user pool was last modified.</p>
+    /// <p>The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format, when the item was modified.</p>
     pub fn set_last_modified_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_date = input;
         self
     }
-    /// <p>The date the user pool was last modified.</p>
+    /// <p>The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format, when the item was modified.</p>
     pub fn get_last_modified_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modified_date
     }
-    /// <p>The date the user pool was created.</p>
+    /// <p>The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format, when the item was created.</p>
     pub fn creation_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_date = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The date the user pool was created.</p>
+    /// <p>The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format, when the item was created.</p>
     pub fn set_creation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_date = input;
         self
     }
-    /// <p>The date the user pool was created.</p>
+    /// <p>The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format, when the item was created.</p>
     pub fn get_creation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.creation_date
     }
@@ -418,19 +422,22 @@ impl UserPoolTypeBuilder {
     ///
     /// To override the contents of this collection use [`set_schema_attributes`](Self::set_schema_attributes).
     ///
-    /// <p>A container with the schema attributes of a user pool.</p>
+    /// <p>A list of the user attributes and their properties in your user pool. The attribute schema contains standard attributes, custom attributes with a <code>custom:</code> prefix, and developer attributes with a <code>dev:</code> prefix. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-attributes.html">User pool attributes</a>.</p>
+    /// <p>Developer-only attributes are a legacy feature of user pools, are read-only to all app clients. You can create and update developer-only attributes only with IAM-authenticated API operations. Use app client read/write permissions instead.</p>
     pub fn schema_attributes(mut self, input: crate::types::SchemaAttributeType) -> Self {
         let mut v = self.schema_attributes.unwrap_or_default();
         v.push(input);
         self.schema_attributes = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A container with the schema attributes of a user pool.</p>
+    /// <p>A list of the user attributes and their properties in your user pool. The attribute schema contains standard attributes, custom attributes with a <code>custom:</code> prefix, and developer attributes with a <code>dev:</code> prefix. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-attributes.html">User pool attributes</a>.</p>
+    /// <p>Developer-only attributes are a legacy feature of user pools, are read-only to all app clients. You can create and update developer-only attributes only with IAM-authenticated API operations. Use app client read/write permissions instead.</p>
     pub fn set_schema_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SchemaAttributeType>>) -> Self {
         self.schema_attributes = input;
         self
     }
-    /// <p>A container with the schema attributes of a user pool.</p>
+    /// <p>A list of the user attributes and their properties in your user pool. The attribute schema contains standard attributes, custom attributes with a <code>custom:</code> prefix, and developer attributes with a <code>dev:</code> prefix. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-attributes.html">User pool attributes</a>.</p>
+    /// <p>Developer-only attributes are a legacy feature of user pools, are read-only to all app clients. You can create and update developer-only attributes only with IAM-authenticated API operations. Use app client read/write permissions instead.</p>
     pub fn get_schema_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SchemaAttributeType>> {
         &self.schema_attributes
     }
@@ -641,17 +648,17 @@ impl UserPoolTypeBuilder {
     pub fn get_estimated_number_of_users(&self) -> &::std::option::Option<i32> {
         &self.estimated_number_of_users
     }
-    /// <p>The email configuration of your user pool. The email configuration type sets your preferred sending method, Amazon Web Services Region, and sender for messages tfrom your user pool.</p>
+    /// <p>The email configuration of your user pool. The email configuration type sets your preferred sending method, Amazon Web Services Region, and sender for messages from your user pool.</p>
     pub fn email_configuration(mut self, input: crate::types::EmailConfigurationType) -> Self {
         self.email_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The email configuration of your user pool. The email configuration type sets your preferred sending method, Amazon Web Services Region, and sender for messages tfrom your user pool.</p>
+    /// <p>The email configuration of your user pool. The email configuration type sets your preferred sending method, Amazon Web Services Region, and sender for messages from your user pool.</p>
     pub fn set_email_configuration(mut self, input: ::std::option::Option<crate::types::EmailConfigurationType>) -> Self {
         self.email_configuration = input;
         self
     }
-    /// <p>The email configuration of your user pool. The email configuration type sets your preferred sending method, Amazon Web Services Region, and sender for messages tfrom your user pool.</p>
+    /// <p>The email configuration of your user pool. The email configuration type sets your preferred sending method, Amazon Web Services Region, and sender for messages from your user pool.</p>
     pub fn get_email_configuration(&self) -> &::std::option::Option<crate::types::EmailConfigurationType> {
         &self.email_configuration
     }
@@ -709,7 +716,7 @@ impl UserPoolTypeBuilder {
     /// SNSSandbox
     /// </dt>
     /// <dd>
-    /// <p>The Amazon Web Services account is in the SNS SMS Sandbox and messages will only reach verified end users. This parameter won’t get populated with SNSSandbox if the IAM user creating the user pool doesn’t have SNS permissions. To learn how to move your Amazon Web Services account out of the sandbox, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox-moving-to-production.html">Moving out of the SMS sandbox</a>.</p>
+    /// <p>The Amazon Web Services account is in the SNS SMS Sandbox and messages will only reach verified end users. This parameter won’t get populated with SNSSandbox if the user creating the user pool doesn’t have SNS permissions. To learn how to move your Amazon Web Services account out of the sandbox, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox-moving-to-production.html">Moving out of the SMS sandbox</a>.</p>
     /// </dd>
     /// </dl>
     pub fn sms_configuration_failure(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -729,7 +736,7 @@ impl UserPoolTypeBuilder {
     /// SNSSandbox
     /// </dt>
     /// <dd>
-    /// <p>The Amazon Web Services account is in the SNS SMS Sandbox and messages will only reach verified end users. This parameter won’t get populated with SNSSandbox if the IAM user creating the user pool doesn’t have SNS permissions. To learn how to move your Amazon Web Services account out of the sandbox, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox-moving-to-production.html">Moving out of the SMS sandbox</a>.</p>
+    /// <p>The Amazon Web Services account is in the SNS SMS Sandbox and messages will only reach verified end users. This parameter won’t get populated with SNSSandbox if the user creating the user pool doesn’t have SNS permissions. To learn how to move your Amazon Web Services account out of the sandbox, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox-moving-to-production.html">Moving out of the SMS sandbox</a>.</p>
     /// </dd>
     /// </dl>
     pub fn set_sms_configuration_failure(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -749,7 +756,7 @@ impl UserPoolTypeBuilder {
     /// SNSSandbox
     /// </dt>
     /// <dd>
-    /// <p>The Amazon Web Services account is in the SNS SMS Sandbox and messages will only reach verified end users. This parameter won’t get populated with SNSSandbox if the IAM user creating the user pool doesn’t have SNS permissions. To learn how to move your Amazon Web Services account out of the sandbox, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox-moving-to-production.html">Moving out of the SMS sandbox</a>.</p>
+    /// <p>The Amazon Web Services account is in the SNS SMS Sandbox and messages will only reach verified end users. This parameter won’t get populated with SNSSandbox if the user creating the user pool doesn’t have SNS permissions. To learn how to move your Amazon Web Services account out of the sandbox, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox-moving-to-production.html">Moving out of the SMS sandbox</a>.</p>
     /// </dd>
     /// </dl>
     pub fn get_sms_configuration_failure(&self) -> &::std::option::Option<::std::string::String> {
@@ -814,17 +821,20 @@ impl UserPoolTypeBuilder {
     pub fn get_admin_create_user_config(&self) -> &::std::option::Option<crate::types::AdminCreateUserConfigType> {
         &self.admin_create_user_config
     }
-    /// <p>The user pool add-ons.</p>
+    /// <p>User pool add-ons. Contains settings for activation of advanced security features. To log user security information but take no action, set to <code>AUDIT</code>. To configure automatic security responses to risky traffic to your user pool, set to <code>ENFORCED</code>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-advanced-security.html">Adding advanced security to a user pool</a>.</p>
     pub fn user_pool_add_ons(mut self, input: crate::types::UserPoolAddOnsType) -> Self {
         self.user_pool_add_ons = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The user pool add-ons.</p>
+    /// <p>User pool add-ons. Contains settings for activation of advanced security features. To log user security information but take no action, set to <code>AUDIT</code>. To configure automatic security responses to risky traffic to your user pool, set to <code>ENFORCED</code>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-advanced-security.html">Adding advanced security to a user pool</a>.</p>
     pub fn set_user_pool_add_ons(mut self, input: ::std::option::Option<crate::types::UserPoolAddOnsType>) -> Self {
         self.user_pool_add_ons = input;
         self
     }
-    /// <p>The user pool add-ons.</p>
+    /// <p>User pool add-ons. Contains settings for activation of advanced security features. To log user security information but take no action, set to <code>AUDIT</code>. To configure automatic security responses to risky traffic to your user pool, set to <code>ENFORCED</code>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-advanced-security.html">Adding advanced security to a user pool</a>.</p>
     pub fn get_user_pool_add_ons(&self) -> &::std::option::Option<crate::types::UserPoolAddOnsType> {
         &self.user_pool_add_ons
     }

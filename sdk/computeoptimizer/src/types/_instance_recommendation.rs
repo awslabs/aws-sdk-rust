@@ -79,6 +79,10 @@ pub struct InstanceRecommendation {
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p> An object that describes Compute Optimizer's integration status with your external metrics provider. </p>
     pub external_metric_status: ::std::option::Option<crate::types::ExternalMetricStatus>,
+    /// <p> Describes the GPU accelerator settings for the current instance type. </p>
+    pub current_instance_gpu_info: ::std::option::Option<crate::types::GpuInfo>,
+    /// <p> Describes if an Amazon EC2 instance is idle. </p>
+    pub idle: ::std::option::Option<crate::types::InstanceIdle>,
 }
 impl InstanceRecommendation {
     /// <p>The Amazon Resource Name (ARN) of the current instance.</p>
@@ -190,6 +194,14 @@ impl InstanceRecommendation {
     pub fn external_metric_status(&self) -> ::std::option::Option<&crate::types::ExternalMetricStatus> {
         self.external_metric_status.as_ref()
     }
+    /// <p> Describes the GPU accelerator settings for the current instance type. </p>
+    pub fn current_instance_gpu_info(&self) -> ::std::option::Option<&crate::types::GpuInfo> {
+        self.current_instance_gpu_info.as_ref()
+    }
+    /// <p> Describes if an Amazon EC2 instance is idle. </p>
+    pub fn idle(&self) -> ::std::option::Option<&crate::types::InstanceIdle> {
+        self.idle.as_ref()
+    }
 }
 impl InstanceRecommendation {
     /// Creates a new builder-style object to manufacture [`InstanceRecommendation`](crate::types::InstanceRecommendation).
@@ -219,6 +231,8 @@ pub struct InstanceRecommendationBuilder {
     pub(crate) instance_state: ::std::option::Option<crate::types::InstanceState>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) external_metric_status: ::std::option::Option<crate::types::ExternalMetricStatus>,
+    pub(crate) current_instance_gpu_info: ::std::option::Option<crate::types::GpuInfo>,
+    pub(crate) idle: ::std::option::Option<crate::types::InstanceIdle>,
 }
 impl InstanceRecommendationBuilder {
     /// <p>The Amazon Resource Name (ARN) of the current instance.</p>
@@ -624,6 +638,34 @@ impl InstanceRecommendationBuilder {
     pub fn get_external_metric_status(&self) -> &::std::option::Option<crate::types::ExternalMetricStatus> {
         &self.external_metric_status
     }
+    /// <p> Describes the GPU accelerator settings for the current instance type. </p>
+    pub fn current_instance_gpu_info(mut self, input: crate::types::GpuInfo) -> Self {
+        self.current_instance_gpu_info = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p> Describes the GPU accelerator settings for the current instance type. </p>
+    pub fn set_current_instance_gpu_info(mut self, input: ::std::option::Option<crate::types::GpuInfo>) -> Self {
+        self.current_instance_gpu_info = input;
+        self
+    }
+    /// <p> Describes the GPU accelerator settings for the current instance type. </p>
+    pub fn get_current_instance_gpu_info(&self) -> &::std::option::Option<crate::types::GpuInfo> {
+        &self.current_instance_gpu_info
+    }
+    /// <p> Describes if an Amazon EC2 instance is idle. </p>
+    pub fn idle(mut self, input: crate::types::InstanceIdle) -> Self {
+        self.idle = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p> Describes if an Amazon EC2 instance is idle. </p>
+    pub fn set_idle(mut self, input: ::std::option::Option<crate::types::InstanceIdle>) -> Self {
+        self.idle = input;
+        self
+    }
+    /// <p> Describes if an Amazon EC2 instance is idle. </p>
+    pub fn get_idle(&self) -> &::std::option::Option<crate::types::InstanceIdle> {
+        &self.idle
+    }
     /// Consumes the builder and constructs a [`InstanceRecommendation`](crate::types::InstanceRecommendation).
     pub fn build(self) -> crate::types::InstanceRecommendation {
         crate::types::InstanceRecommendation {
@@ -644,6 +686,8 @@ impl InstanceRecommendationBuilder {
             instance_state: self.instance_state,
             tags: self.tags,
             external_metric_status: self.external_metric_status,
+            current_instance_gpu_info: self.current_instance_gpu_info,
+            idle: self.idle,
         }
     }
 }

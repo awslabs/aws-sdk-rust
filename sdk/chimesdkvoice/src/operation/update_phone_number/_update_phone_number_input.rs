@@ -9,6 +9,8 @@ pub struct UpdatePhoneNumberInput {
     pub product_type: ::std::option::Option<crate::types::PhoneNumberProductType>,
     /// <p>The outbound calling name associated with the phone number.</p>
     pub calling_name: ::std::option::Option<::std::string::String>,
+    /// <p>Specifies the name assigned to one or more phone numbers.</p>
+    pub name: ::std::option::Option<::std::string::String>,
 }
 impl UpdatePhoneNumberInput {
     /// <p>The phone number ID.</p>
@@ -23,6 +25,10 @@ impl UpdatePhoneNumberInput {
     pub fn calling_name(&self) -> ::std::option::Option<&str> {
         self.calling_name.as_deref()
     }
+    /// <p>Specifies the name assigned to one or more phone numbers.</p>
+    pub fn name(&self) -> ::std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl ::std::fmt::Debug for UpdatePhoneNumberInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -30,6 +36,7 @@ impl ::std::fmt::Debug for UpdatePhoneNumberInput {
         formatter.field("phone_number_id", &"*** Sensitive Data Redacted ***");
         formatter.field("product_type", &self.product_type);
         formatter.field("calling_name", &"*** Sensitive Data Redacted ***");
+        formatter.field("name", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -47,6 +54,7 @@ pub struct UpdatePhoneNumberInputBuilder {
     pub(crate) phone_number_id: ::std::option::Option<::std::string::String>,
     pub(crate) product_type: ::std::option::Option<crate::types::PhoneNumberProductType>,
     pub(crate) calling_name: ::std::option::Option<::std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
 }
 impl UpdatePhoneNumberInputBuilder {
     /// <p>The phone number ID.</p>
@@ -91,6 +99,20 @@ impl UpdatePhoneNumberInputBuilder {
     pub fn get_calling_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.calling_name
     }
+    /// <p>Specifies the name assigned to one or more phone numbers.</p>
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Specifies the name assigned to one or more phone numbers.</p>
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.name = input;
+        self
+    }
+    /// <p>Specifies the name assigned to one or more phone numbers.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`UpdatePhoneNumberInput`](crate::operation::update_phone_number::UpdatePhoneNumberInput).
     pub fn build(
         self,
@@ -99,6 +121,7 @@ impl UpdatePhoneNumberInputBuilder {
             phone_number_id: self.phone_number_id,
             product_type: self.product_type,
             calling_name: self.calling_name,
+            name: self.name,
         })
     }
 }
@@ -108,6 +131,7 @@ impl ::std::fmt::Debug for UpdatePhoneNumberInputBuilder {
         formatter.field("phone_number_id", &"*** Sensitive Data Redacted ***");
         formatter.field("product_type", &self.product_type);
         formatter.field("calling_name", &"*** Sensitive Data Redacted ***");
+        formatter.field("name", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }

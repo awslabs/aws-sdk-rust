@@ -20,6 +20,7 @@
 ///     MediaInsightsPipelineConfigurationElementType::SnsTopicSink => { /* ... */ },
 ///     MediaInsightsPipelineConfigurationElementType::SqsQueueSink => { /* ... */ },
 ///     MediaInsightsPipelineConfigurationElementType::VoiceAnalyticsProcessor => { /* ... */ },
+///     MediaInsightsPipelineConfigurationElementType::VoiceEnhancementSink => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -63,6 +64,8 @@ pub enum MediaInsightsPipelineConfigurationElementType {
     SqsQueueSink,
     #[allow(missing_docs)] // documentation missing in model
     VoiceAnalyticsProcessor,
+    #[allow(missing_docs)] // documentation missing in model
+    VoiceEnhancementSink,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
@@ -77,6 +80,7 @@ impl ::std::convert::From<&str> for MediaInsightsPipelineConfigurationElementTyp
             "SnsTopicSink" => MediaInsightsPipelineConfigurationElementType::SnsTopicSink,
             "SqsQueueSink" => MediaInsightsPipelineConfigurationElementType::SqsQueueSink,
             "VoiceAnalyticsProcessor" => MediaInsightsPipelineConfigurationElementType::VoiceAnalyticsProcessor,
+            "VoiceEnhancementSink" => MediaInsightsPipelineConfigurationElementType::VoiceEnhancementSink,
             other => MediaInsightsPipelineConfigurationElementType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -100,6 +104,7 @@ impl MediaInsightsPipelineConfigurationElementType {
             MediaInsightsPipelineConfigurationElementType::SnsTopicSink => "SnsTopicSink",
             MediaInsightsPipelineConfigurationElementType::SqsQueueSink => "SqsQueueSink",
             MediaInsightsPipelineConfigurationElementType::VoiceAnalyticsProcessor => "VoiceAnalyticsProcessor",
+            MediaInsightsPipelineConfigurationElementType::VoiceEnhancementSink => "VoiceEnhancementSink",
             MediaInsightsPipelineConfigurationElementType::Unknown(value) => value.as_str(),
         }
     }
@@ -114,6 +119,7 @@ impl MediaInsightsPipelineConfigurationElementType {
             "SnsTopicSink",
             "SqsQueueSink",
             "VoiceAnalyticsProcessor",
+            "VoiceEnhancementSink",
         ]
     }
 }

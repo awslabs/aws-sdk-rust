@@ -17,51 +17,51 @@ pub fn ser_modify_db_instance_input_input(
     }
     #[allow(unused_mut)]
     let mut scope_5 = writer.prefix("ApplyImmediately");
-    if input.apply_immediately {
-        scope_5.boolean(input.apply_immediately);
+    if let Some(var_6) = &input.apply_immediately {
+        scope_5.boolean(*var_6);
     }
     #[allow(unused_mut)]
-    let mut scope_6 = writer.prefix("PreferredMaintenanceWindow");
-    if let Some(var_7) = &input.preferred_maintenance_window {
-        scope_6.string(var_7);
+    let mut scope_7 = writer.prefix("PreferredMaintenanceWindow");
+    if let Some(var_8) = &input.preferred_maintenance_window {
+        scope_7.string(var_8);
     }
     #[allow(unused_mut)]
-    let mut scope_8 = writer.prefix("AutoMinorVersionUpgrade");
-    if let Some(var_9) = &input.auto_minor_version_upgrade {
-        scope_8.boolean(*var_9);
+    let mut scope_9 = writer.prefix("AutoMinorVersionUpgrade");
+    if let Some(var_10) = &input.auto_minor_version_upgrade {
+        scope_9.boolean(*var_10);
     }
     #[allow(unused_mut)]
-    let mut scope_10 = writer.prefix("NewDBInstanceIdentifier");
-    if let Some(var_11) = &input.new_db_instance_identifier {
-        scope_10.string(var_11);
+    let mut scope_11 = writer.prefix("NewDBInstanceIdentifier");
+    if let Some(var_12) = &input.new_db_instance_identifier {
+        scope_11.string(var_12);
     }
     #[allow(unused_mut)]
-    let mut scope_12 = writer.prefix("CACertificateIdentifier");
-    if let Some(var_13) = &input.ca_certificate_identifier {
-        scope_12.string(var_13);
+    let mut scope_13 = writer.prefix("CACertificateIdentifier");
+    if let Some(var_14) = &input.ca_certificate_identifier {
+        scope_13.string(var_14);
     }
     #[allow(unused_mut)]
-    let mut scope_14 = writer.prefix("CopyTagsToSnapshot");
-    if let Some(var_15) = &input.copy_tags_to_snapshot {
-        scope_14.boolean(*var_15);
+    let mut scope_15 = writer.prefix("CopyTagsToSnapshot");
+    if let Some(var_16) = &input.copy_tags_to_snapshot {
+        scope_15.boolean(*var_16);
     }
     #[allow(unused_mut)]
-    let mut scope_16 = writer.prefix("PromotionTier");
-    if let Some(var_17) = &input.promotion_tier {
-        scope_16.number(
+    let mut scope_17 = writer.prefix("PromotionTier");
+    if let Some(var_18) = &input.promotion_tier {
+        scope_17.number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_17).into()),
+            ::aws_smithy_types::Number::NegInt((*var_18).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_18 = writer.prefix("EnablePerformanceInsights");
-    if let Some(var_19) = &input.enable_performance_insights {
-        scope_18.boolean(*var_19);
+    let mut scope_19 = writer.prefix("EnablePerformanceInsights");
+    if let Some(var_20) = &input.enable_performance_insights {
+        scope_19.boolean(*var_20);
     }
     #[allow(unused_mut)]
-    let mut scope_20 = writer.prefix("PerformanceInsightsKMSKeyId");
-    if let Some(var_21) = &input.performance_insights_kms_key_id {
-        scope_20.string(var_21);
+    let mut scope_21 = writer.prefix("PerformanceInsightsKMSKeyId");
+    if let Some(var_22) = &input.performance_insights_kms_key_id {
+        scope_21.string(var_22);
     }
     writer.finish();
     Ok(::aws_smithy_http::body::SdkBody::from(out))

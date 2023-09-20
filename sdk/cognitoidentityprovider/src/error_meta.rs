@@ -2583,6 +2583,44 @@ impl From<crate::operation::get_identity_provider_by_identifier::GetIdentityProv
         }
     }
 }
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_log_delivery_configuration::GetLogDeliveryConfigurationError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::get_log_delivery_configuration::GetLogDeliveryConfigurationError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_log_delivery_configuration::GetLogDeliveryConfigurationError> for Error {
+    fn from(err: crate::operation::get_log_delivery_configuration::GetLogDeliveryConfigurationError) -> Self {
+        match err {
+            crate::operation::get_log_delivery_configuration::GetLogDeliveryConfigurationError::InternalErrorException(inner) => {
+                Error::InternalErrorException(inner)
+            }
+            crate::operation::get_log_delivery_configuration::GetLogDeliveryConfigurationError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::get_log_delivery_configuration::GetLogDeliveryConfigurationError::NotAuthorizedException(inner) => {
+                Error::NotAuthorizedException(inner)
+            }
+            crate::operation::get_log_delivery_configuration::GetLogDeliveryConfigurationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_log_delivery_configuration::GetLogDeliveryConfigurationError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::get_log_delivery_configuration::GetLogDeliveryConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_signing_certificate::GetSigningCertificateError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -3336,6 +3374,44 @@ impl From<crate::operation::revoke_token::RevokeTokenError> for Error {
             crate::operation::revoke_token::RevokeTokenError::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
             crate::operation::revoke_token::RevokeTokenError::UnsupportedTokenTypeException(inner) => Error::UnsupportedTokenTypeException(inner),
             crate::operation::revoke_token::RevokeTokenError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::set_log_delivery_configuration::SetLogDeliveryConfigurationError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::set_log_delivery_configuration::SetLogDeliveryConfigurationError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::set_log_delivery_configuration::SetLogDeliveryConfigurationError> for Error {
+    fn from(err: crate::operation::set_log_delivery_configuration::SetLogDeliveryConfigurationError) -> Self {
+        match err {
+            crate::operation::set_log_delivery_configuration::SetLogDeliveryConfigurationError::InternalErrorException(inner) => {
+                Error::InternalErrorException(inner)
+            }
+            crate::operation::set_log_delivery_configuration::SetLogDeliveryConfigurationError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::set_log_delivery_configuration::SetLogDeliveryConfigurationError::NotAuthorizedException(inner) => {
+                Error::NotAuthorizedException(inner)
+            }
+            crate::operation::set_log_delivery_configuration::SetLogDeliveryConfigurationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::set_log_delivery_configuration::SetLogDeliveryConfigurationError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::set_log_delivery_configuration::SetLogDeliveryConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

@@ -16,7 +16,7 @@ pub struct CreateCommitInput {
     /// <p>The commit message you want to include in the commit. Commit messages are limited to 256 KB. If no message is specified, a default message is used.</p>
     pub commit_message: ::std::option::Option<::std::string::String>,
     /// <p>If the commit contains deletions, whether to keep a folder or folder structure if the changes leave the folders empty. If true, a ..gitkeep file is created for empty folders. The default is false.</p>
-    pub keep_empty_folders: bool,
+    pub keep_empty_folders: ::std::option::Option<bool>,
     /// <p>The files to add or update in this commit.</p>
     pub put_files: ::std::option::Option<::std::vec::Vec<crate::types::PutFileEntry>>,
     /// <p>The files to delete in this commit. These files still exist in earlier commits.</p>
@@ -50,7 +50,7 @@ impl CreateCommitInput {
         self.commit_message.as_deref()
     }
     /// <p>If the commit contains deletions, whether to keep a folder or folder structure if the changes leave the folders empty. If true, a ..gitkeep file is created for empty folders. The default is false.</p>
-    pub fn keep_empty_folders(&self) -> bool {
+    pub fn keep_empty_folders(&self) -> ::std::option::Option<bool> {
         self.keep_empty_folders
     }
     /// <p>The files to add or update in this commit.</p>
@@ -256,7 +256,7 @@ impl CreateCommitInputBuilder {
             author_name: self.author_name,
             email: self.email,
             commit_message: self.commit_message,
-            keep_empty_folders: self.keep_empty_folders.unwrap_or_default(),
+            keep_empty_folders: self.keep_empty_folders,
             put_files: self.put_files,
             delete_files: self.delete_files,
             set_file_modes: self.set_file_modes,

@@ -3,11 +3,23 @@ pub fn ser_update_traffic_distribution_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_traffic_distribution::UpdateTrafficDistributionInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.telephony_config {
+    if let Some(var_1) = &input.agent_config {
         #[allow(unused_mut)]
-        let mut object_2 = object.key("TelephonyConfig").start_object();
-        crate::protocol_serde::shape_telephony_config::ser_telephony_config(&mut object_2, var_1)?;
+        let mut object_2 = object.key("AgentConfig").start_object();
+        crate::protocol_serde::shape_agent_config::ser_agent_config(&mut object_2, var_1)?;
         object_2.finish();
+    }
+    if let Some(var_3) = &input.sign_in_config {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("SignInConfig").start_object();
+        crate::protocol_serde::shape_sign_in_config::ser_sign_in_config(&mut object_4, var_3)?;
+        object_4.finish();
+    }
+    if let Some(var_5) = &input.telephony_config {
+        #[allow(unused_mut)]
+        let mut object_6 = object.key("TelephonyConfig").start_object();
+        crate::protocol_serde::shape_telephony_config::ser_telephony_config(&mut object_6, var_5)?;
+        object_6.finish();
     }
     Ok(())
 }

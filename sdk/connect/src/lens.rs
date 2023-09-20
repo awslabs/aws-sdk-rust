@@ -339,6 +339,16 @@ pub(crate) fn reflens_list_task_templates_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_traffic_distribution_group_users_output_next_token(
+    input: &crate::operation::list_traffic_distribution_group_users::ListTrafficDistributionGroupUsersOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_traffic_distribution_groups_output_next_token(
     input: &crate::operation::list_traffic_distribution_groups::ListTrafficDistributionGroupsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -371,6 +381,26 @@ pub(crate) fn reflens_list_user_hierarchy_groups_output_next_token(
 
 pub(crate) fn reflens_list_users_output_next_token(
     input: &crate::operation::list_users::ListUsersOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_view_versions_output_next_token(
+    input: &crate::operation::list_view_versions::ListViewVersionsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_views_output_next_token(
+    input: &crate::operation::list_views::ListViewsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
     let input = match &input.next_token {
         ::std::option::Option::None => return ::std::option::Option::None,
@@ -779,6 +809,16 @@ pub(crate) fn lens_list_task_templates_output_task_templates(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn lens_list_traffic_distribution_group_users_output_traffic_distribution_group_user_summary_list(
+    input: crate::operation::list_traffic_distribution_group_users::ListTrafficDistributionGroupUsersOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::TrafficDistributionGroupUserSummary>> {
+    let input = match input.traffic_distribution_group_user_summary_list {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_list_traffic_distribution_groups_output_traffic_distribution_group_summary_list(
     input: crate::operation::list_traffic_distribution_groups::ListTrafficDistributionGroupsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::TrafficDistributionGroupSummary>> {
@@ -813,6 +853,26 @@ pub(crate) fn lens_list_users_output_user_summary_list(
     input: crate::operation::list_users::ListUsersOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::UserSummary>> {
     let input = match input.user_summary_list {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_view_versions_output_view_version_summary_list(
+    input: crate::operation::list_view_versions::ListViewVersionsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ViewVersionSummary>> {
+    let input = match input.view_version_summary_list {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_views_output_views_summary_list(
+    input: crate::operation::list_views::ListViewsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ViewSummary>> {
+    let input = match input.views_summary_list {
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,
     };

@@ -157,6 +157,8 @@ mod create_label_group;
 
 mod create_model;
 
+mod create_retraining_scheduler;
+
 /// Operation customization and supporting types.
 ///
 /// The underlying HTTP requests made during an operation can be customized
@@ -195,6 +197,10 @@ mod delete_label_group;
 
 mod delete_model;
 
+mod delete_resource_policy;
+
+mod delete_retraining_scheduler;
+
 mod describe_data_ingestion_job;
 
 mod describe_dataset;
@@ -206,6 +212,16 @@ mod describe_label;
 mod describe_label_group;
 
 mod describe_model;
+
+mod describe_model_version;
+
+mod describe_resource_policy;
+
+mod describe_retraining_scheduler;
+
+mod import_dataset;
+
+mod import_model_version;
 
 mod list_data_ingestion_jobs;
 
@@ -221,22 +237,38 @@ mod list_label_groups;
 
 mod list_labels;
 
+mod list_model_versions;
+
 mod list_models;
+
+mod list_retraining_schedulers;
 
 mod list_sensor_statistics;
 
 mod list_tags_for_resource;
 
+mod put_resource_policy;
+
 mod start_data_ingestion_job;
 
 mod start_inference_scheduler;
 
+mod start_retraining_scheduler;
+
 mod stop_inference_scheduler;
+
+mod stop_retraining_scheduler;
 
 mod tag_resource;
 
 mod untag_resource;
 
+mod update_active_model_version;
+
 mod update_inference_scheduler;
 
 mod update_label_group;
+
+mod update_model;
+
+mod update_retraining_scheduler;

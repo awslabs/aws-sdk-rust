@@ -271,11 +271,15 @@ mod reject_input_device_transfer;
 
 mod start_channel;
 
+mod start_input_device;
+
 mod start_input_device_maintenance_window;
 
 mod start_multiplex;
 
 mod stop_channel;
+
+mod stop_input_device;
 
 mod stop_multiplex;
 

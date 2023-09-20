@@ -12,22 +12,22 @@ pub fn ser_set_load_balancer_policies_of_listener_input_input(
     }
     #[allow(unused_mut)]
     let mut scope_3 = writer.prefix("LoadBalancerPort");
-    {
+    if let Some(var_4) = &input.load_balancer_port {
         scope_3.number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.load_balancer_port).into()),
+            ::aws_smithy_types::Number::NegInt((*var_4).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_4 = writer.prefix("PolicyNames");
-    if let Some(var_5) = &input.policy_names {
-        let mut list_7 = scope_4.start_list(false, None);
-        for item_6 in var_5 {
+    let mut scope_5 = writer.prefix("PolicyNames");
+    if let Some(var_6) = &input.policy_names {
+        let mut list_8 = scope_5.start_list(false, None);
+        for item_7 in var_6 {
             #[allow(unused_mut)]
-            let mut entry_8 = list_7.entry();
-            entry_8.string(item_6);
+            let mut entry_9 = list_8.entry();
+            entry_9.string(item_7);
         }
-        list_7.finish();
+        list_8.finish();
     }
     writer.finish();
     Ok(::aws_smithy_http::body::SdkBody::from(out))

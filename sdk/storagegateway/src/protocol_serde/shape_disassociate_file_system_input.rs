@@ -6,8 +6,8 @@ pub fn ser_disassociate_file_system_input(
     if let Some(var_1) = &input.file_system_association_arn {
         object.key("FileSystemAssociationARN").string(var_1.as_str());
     }
-    if input.force_delete {
-        object.key("ForceDelete").boolean(input.force_delete);
+    if let Some(var_2) = &input.force_delete {
+        object.key("ForceDelete").boolean(*var_2);
     }
     Ok(())
 }

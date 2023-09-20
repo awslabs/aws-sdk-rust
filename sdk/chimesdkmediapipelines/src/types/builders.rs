@@ -3,6 +3,8 @@ pub use crate::types::_media_insights_pipeline_configuration::MediaInsightsPipel
 
 pub use crate::types::_media_insights_pipeline_configuration_element::MediaInsightsPipelineConfigurationElementBuilder;
 
+pub use crate::types::_voice_enhancement_sink_configuration::VoiceEnhancementSinkConfigurationBuilder;
+
 pub use crate::types::_sns_topic_sink_configuration::SnsTopicSinkConfigurationBuilder;
 
 pub use crate::types::_sqs_queue_sink_configuration::SqsQueueSinkConfigurationBuilder;
@@ -33,6 +35,12 @@ pub use crate::types::_keyword_match_configuration::KeywordMatchConfigurationBui
 
 pub use crate::types::_tag::TagBuilder;
 
+pub use crate::types::_voice_tone_analysis_task::VoiceToneAnalysisTaskBuilder;
+
+pub use crate::types::_kinesis_video_stream_source_task_configuration::KinesisVideoStreamSourceTaskConfigurationBuilder;
+
+pub use crate::types::_speaker_search_task::SpeakerSearchTaskBuilder;
+
 pub use crate::types::_media_pipeline_summary::MediaPipelineSummaryBuilder;
 
 pub use crate::types::_media_insights_pipeline_configuration_summary::MediaInsightsPipelineConfigurationSummaryBuilder;
@@ -42,6 +50,8 @@ pub use crate::types::_media_capture_pipeline_summary::MediaCapturePipelineSumma
 pub use crate::types::_media_pipeline::MediaPipelineBuilder;
 
 pub use crate::types::_media_insights_pipeline::MediaInsightsPipelineBuilder;
+
+pub use crate::types::_media_insights_pipeline_element_status::MediaInsightsPipelineElementStatusBuilder;
 
 pub use crate::types::_s3_recording_sink_runtime_configuration::S3RecordingSinkRuntimeConfigurationBuilder;
 

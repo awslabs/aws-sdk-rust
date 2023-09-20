@@ -89,6 +89,16 @@ pub(crate) fn reflens_describe_traffic_sources_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_describe_warm_pool_output_next_token(
+    input: &crate::operation::describe_warm_pool::DescribeWarmPoolOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_describe_auto_scaling_groups_output_auto_scaling_groups(
     input: crate::operation::describe_auto_scaling_groups::DescribeAutoScalingGroupsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::AutoScalingGroup>> {
@@ -163,6 +173,16 @@ pub(crate) fn lens_describe_tags_output_tags(
     input: crate::operation::describe_tags::DescribeTagsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::TagDescription>> {
     let input = match input.tags {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_describe_warm_pool_output_instances(
+    input: crate::operation::describe_warm_pool::DescribeWarmPoolOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::Instance>> {
+    let input = match input.instances {
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,
     };

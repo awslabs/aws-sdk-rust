@@ -6,9 +6,9 @@
 pub struct RecommendationTemplate {
     /// <p>The file location of the template.</p>
     pub templates_location: ::std::option::Option<crate::types::S3Location>,
-    /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+    /// <p>Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
     pub assessment_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+    /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
     pub app_arn: ::std::option::Option<::std::string::String>,
     /// <p>Identifiers for the recommendations used in the recommendation template.</p>
     pub recommendation_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -34,7 +34,7 @@ pub struct RecommendationTemplate {
     /// </dd>
     /// </dl>
     pub recommendation_types: ::std::option::Option<::std::vec::Vec<crate::types::RenderRecommendationType>>,
-    /// <p>The format of the recommendation template.</p>
+    /// <p>Format of the recommendation template.</p>
     /// <dl>
     /// <dt>
     /// CfnJson
@@ -50,19 +50,19 @@ pub struct RecommendationTemplate {
     /// </dd>
     /// </dl>
     pub format: ::std::option::Option<crate::types::TemplateFormat>,
-    /// <p>The Amazon Resource Name (ARN) for the recommendation template.</p>
+    /// <p>Amazon Resource Name (ARN) for the recommendation template.</p>
     pub recommendation_template_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The message for the recommendation template.</p>
+    /// <p>Message for the recommendation template.</p>
     pub message: ::std::option::Option<::std::string::String>,
-    /// <p>The status of the action.</p>
+    /// <p>Status of the action.</p>
     pub status: ::std::option::Option<crate::types::RecommendationTemplateStatus>,
-    /// <p>The name for the recommendation template.</p>
+    /// <p>Name for the recommendation template.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The start time for the action.</p>
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The end time for the action.</p>
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key/value pair.</p>
+    /// <p>Tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key/value pair.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Indicates if replacements are needed.</p>
     pub needs_replacements: ::std::option::Option<bool>,
@@ -72,11 +72,11 @@ impl RecommendationTemplate {
     pub fn templates_location(&self) -> ::std::option::Option<&crate::types::S3Location> {
         self.templates_location.as_ref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+    /// <p>Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
     pub fn assessment_arn(&self) -> ::std::option::Option<&str> {
         self.assessment_arn.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+    /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
     pub fn app_arn(&self) -> ::std::option::Option<&str> {
         self.app_arn.as_deref()
     }
@@ -108,7 +108,7 @@ impl RecommendationTemplate {
     pub fn recommendation_types(&self) -> ::std::option::Option<&[crate::types::RenderRecommendationType]> {
         self.recommendation_types.as_deref()
     }
-    /// <p>The format of the recommendation template.</p>
+    /// <p>Format of the recommendation template.</p>
     /// <dl>
     /// <dt>
     /// CfnJson
@@ -126,19 +126,19 @@ impl RecommendationTemplate {
     pub fn format(&self) -> ::std::option::Option<&crate::types::TemplateFormat> {
         self.format.as_ref()
     }
-    /// <p>The Amazon Resource Name (ARN) for the recommendation template.</p>
+    /// <p>Amazon Resource Name (ARN) for the recommendation template.</p>
     pub fn recommendation_template_arn(&self) -> ::std::option::Option<&str> {
         self.recommendation_template_arn.as_deref()
     }
-    /// <p>The message for the recommendation template.</p>
+    /// <p>Message for the recommendation template.</p>
     pub fn message(&self) -> ::std::option::Option<&str> {
         self.message.as_deref()
     }
-    /// <p>The status of the action.</p>
+    /// <p>Status of the action.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::RecommendationTemplateStatus> {
         self.status.as_ref()
     }
-    /// <p>The name for the recommendation template.</p>
+    /// <p>Name for the recommendation template.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -150,7 +150,7 @@ impl RecommendationTemplate {
     pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
-    /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key/value pair.</p>
+    /// <p>Tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key/value pair.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
@@ -220,31 +220,31 @@ impl RecommendationTemplateBuilder {
     pub fn get_templates_location(&self) -> &::std::option::Option<crate::types::S3Location> {
         &self.templates_location
     }
-    /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+    /// <p>Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
     pub fn assessment_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assessment_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+    /// <p>Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
     pub fn set_assessment_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.assessment_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+    /// <p>Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
     pub fn get_assessment_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.assessment_arn
     }
-    /// <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+    /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
     pub fn app_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+    /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
     pub fn set_app_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.app_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+    /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
     pub fn get_app_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.app_arn
     }
@@ -348,7 +348,7 @@ impl RecommendationTemplateBuilder {
     pub fn get_recommendation_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RenderRecommendationType>> {
         &self.recommendation_types
     }
-    /// <p>The format of the recommendation template.</p>
+    /// <p>Format of the recommendation template.</p>
     /// <dl>
     /// <dt>
     /// CfnJson
@@ -367,7 +367,7 @@ impl RecommendationTemplateBuilder {
         self.format = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The format of the recommendation template.</p>
+    /// <p>Format of the recommendation template.</p>
     /// <dl>
     /// <dt>
     /// CfnJson
@@ -386,7 +386,7 @@ impl RecommendationTemplateBuilder {
         self.format = input;
         self
     }
-    /// <p>The format of the recommendation template.</p>
+    /// <p>Format of the recommendation template.</p>
     /// <dl>
     /// <dt>
     /// CfnJson
@@ -404,59 +404,59 @@ impl RecommendationTemplateBuilder {
     pub fn get_format(&self) -> &::std::option::Option<crate::types::TemplateFormat> {
         &self.format
     }
-    /// <p>The Amazon Resource Name (ARN) for the recommendation template.</p>
+    /// <p>Amazon Resource Name (ARN) for the recommendation template.</p>
     pub fn recommendation_template_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.recommendation_template_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) for the recommendation template.</p>
+    /// <p>Amazon Resource Name (ARN) for the recommendation template.</p>
     pub fn set_recommendation_template_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.recommendation_template_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) for the recommendation template.</p>
+    /// <p>Amazon Resource Name (ARN) for the recommendation template.</p>
     pub fn get_recommendation_template_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.recommendation_template_arn
     }
-    /// <p>The message for the recommendation template.</p>
+    /// <p>Message for the recommendation template.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The message for the recommendation template.</p>
+    /// <p>Message for the recommendation template.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
     }
-    /// <p>The message for the recommendation template.</p>
+    /// <p>Message for the recommendation template.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.message
     }
-    /// <p>The status of the action.</p>
+    /// <p>Status of the action.</p>
     pub fn status(mut self, input: crate::types::RecommendationTemplateStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The status of the action.</p>
+    /// <p>Status of the action.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::RecommendationTemplateStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p>The status of the action.</p>
+    /// <p>Status of the action.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::RecommendationTemplateStatus> {
         &self.status
     }
-    /// <p>The name for the recommendation template.</p>
+    /// <p>Name for the recommendation template.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name for the recommendation template.</p>
+    /// <p>Name for the recommendation template.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>The name for the recommendation template.</p>
+    /// <p>Name for the recommendation template.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
@@ -492,19 +492,19 @@ impl RecommendationTemplateBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key/value pair.</p>
+    /// <p>Tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key/value pair.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key/value pair.</p>
+    /// <p>Tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key/value pair.</p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
-    /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key/value pair.</p>
+    /// <p>Tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key/value pair.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }

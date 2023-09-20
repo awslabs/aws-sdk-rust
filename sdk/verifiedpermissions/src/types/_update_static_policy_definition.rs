@@ -2,7 +2,7 @@
 
 /// <p>Contains information about an update to a static policy.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UpdateStaticPolicyDefinition {
     /// <p>Specifies the description to be added to or replaced on the static policy.</p>
     pub description: ::std::option::Option<::std::string::String>,
@@ -45,6 +45,14 @@ impl UpdateStaticPolicyDefinition {
         self.statement.as_deref()
     }
 }
+impl ::std::fmt::Debug for UpdateStaticPolicyDefinition {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateStaticPolicyDefinition");
+        formatter.field("description", &"*** Sensitive Data Redacted ***");
+        formatter.field("statement", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl UpdateStaticPolicyDefinition {
     /// Creates a new builder-style object to manufacture [`UpdateStaticPolicyDefinition`](crate::types::UpdateStaticPolicyDefinition).
     pub fn builder() -> crate::types::builders::UpdateStaticPolicyDefinitionBuilder {
@@ -54,7 +62,7 @@ impl UpdateStaticPolicyDefinition {
 
 /// A builder for [`UpdateStaticPolicyDefinition`](crate::types::UpdateStaticPolicyDefinition).
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct UpdateStaticPolicyDefinitionBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) statement: ::std::option::Option<::std::string::String>,
@@ -133,5 +141,13 @@ impl UpdateStaticPolicyDefinitionBuilder {
             description: self.description,
             statement: self.statement,
         }
+    }
+}
+impl ::std::fmt::Debug for UpdateStaticPolicyDefinitionBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateStaticPolicyDefinitionBuilder");
+        formatter.field("description", &"*** Sensitive Data Redacted ***");
+        formatter.field("statement", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

@@ -39,9 +39,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[deprecated]
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::hash::Hash)]
 pub enum PartyType {
     #[allow(missing_docs)] // documentation missing in model
     Business,
@@ -87,5 +85,10 @@ impl PartyType {
 impl ::std::convert::AsRef<str> for PartyType {
     fn as_ref(&self) -> &str {
         self.as_str()
+    }
+}
+impl ::std::fmt::Debug for PartyType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        ::std::write!(f, "*** Sensitive Data Redacted ***")
     }
 }

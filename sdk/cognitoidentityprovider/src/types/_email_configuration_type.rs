@@ -6,7 +6,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EmailConfigurationType {
-    /// <p>The ARN of a verified email address in Amazon SES. Amazon Cognito uses this email address in one of the following ways, depending on the value that you specify for the <code>EmailSendingAccount</code> parameter:</p>
+    /// <p>The ARN of a verified email address or an address from a verified domain in Amazon SES. You can set a <code>SourceArn</code> email from a verified domain only with an API request. You can set a verified email address, but not an address in a verified domain, in the Amazon Cognito console. Amazon Cognito uses the email address that you provide in one of the following ways, depending on the value that you specify for the <code>EmailSendingAccount</code> parameter:</p>
     /// <ul>
     /// <li> <p>If you specify <code>COGNITO_DEFAULT</code>, Amazon Cognito uses this address as the custom FROM address when it emails your users using its built-in email account.</p> </li>
     /// <li> <p>If you specify <code>DEVELOPER</code>, Amazon Cognito emails your users with this address by calling Amazon SES on your behalf.</p> </li>
@@ -56,7 +56,7 @@ pub struct EmailConfigurationType {
     pub configuration_set: ::std::option::Option<::std::string::String>,
 }
 impl EmailConfigurationType {
-    /// <p>The ARN of a verified email address in Amazon SES. Amazon Cognito uses this email address in one of the following ways, depending on the value that you specify for the <code>EmailSendingAccount</code> parameter:</p>
+    /// <p>The ARN of a verified email address or an address from a verified domain in Amazon SES. You can set a <code>SourceArn</code> email from a verified domain only with an API request. You can set a verified email address, but not an address in a verified domain, in the Amazon Cognito console. Amazon Cognito uses the email address that you provide in one of the following ways, depending on the value that you specify for the <code>EmailSendingAccount</code> parameter:</p>
     /// <ul>
     /// <li> <p>If you specify <code>COGNITO_DEFAULT</code>, Amazon Cognito uses this address as the custom FROM address when it emails your users using its built-in email account.</p> </li>
     /// <li> <p>If you specify <code>DEVELOPER</code>, Amazon Cognito emails your users with this address by calling Amazon SES on your behalf.</p> </li>
@@ -133,7 +133,7 @@ pub struct EmailConfigurationTypeBuilder {
     pub(crate) configuration_set: ::std::option::Option<::std::string::String>,
 }
 impl EmailConfigurationTypeBuilder {
-    /// <p>The ARN of a verified email address in Amazon SES. Amazon Cognito uses this email address in one of the following ways, depending on the value that you specify for the <code>EmailSendingAccount</code> parameter:</p>
+    /// <p>The ARN of a verified email address or an address from a verified domain in Amazon SES. You can set a <code>SourceArn</code> email from a verified domain only with an API request. You can set a verified email address, but not an address in a verified domain, in the Amazon Cognito console. Amazon Cognito uses the email address that you provide in one of the following ways, depending on the value that you specify for the <code>EmailSendingAccount</code> parameter:</p>
     /// <ul>
     /// <li> <p>If you specify <code>COGNITO_DEFAULT</code>, Amazon Cognito uses this address as the custom FROM address when it emails your users using its built-in email account.</p> </li>
     /// <li> <p>If you specify <code>DEVELOPER</code>, Amazon Cognito emails your users with this address by calling Amazon SES on your behalf.</p> </li>
@@ -143,7 +143,7 @@ impl EmailConfigurationTypeBuilder {
         self.source_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of a verified email address in Amazon SES. Amazon Cognito uses this email address in one of the following ways, depending on the value that you specify for the <code>EmailSendingAccount</code> parameter:</p>
+    /// <p>The ARN of a verified email address or an address from a verified domain in Amazon SES. You can set a <code>SourceArn</code> email from a verified domain only with an API request. You can set a verified email address, but not an address in a verified domain, in the Amazon Cognito console. Amazon Cognito uses the email address that you provide in one of the following ways, depending on the value that you specify for the <code>EmailSendingAccount</code> parameter:</p>
     /// <ul>
     /// <li> <p>If you specify <code>COGNITO_DEFAULT</code>, Amazon Cognito uses this address as the custom FROM address when it emails your users using its built-in email account.</p> </li>
     /// <li> <p>If you specify <code>DEVELOPER</code>, Amazon Cognito emails your users with this address by calling Amazon SES on your behalf.</p> </li>
@@ -153,7 +153,7 @@ impl EmailConfigurationTypeBuilder {
         self.source_arn = input;
         self
     }
-    /// <p>The ARN of a verified email address in Amazon SES. Amazon Cognito uses this email address in one of the following ways, depending on the value that you specify for the <code>EmailSendingAccount</code> parameter:</p>
+    /// <p>The ARN of a verified email address or an address from a verified domain in Amazon SES. You can set a <code>SourceArn</code> email from a verified domain only with an API request. You can set a verified email address, but not an address in a verified domain, in the Amazon Cognito console. Amazon Cognito uses the email address that you provide in one of the following ways, depending on the value that you specify for the <code>EmailSendingAccount</code> parameter:</p>
     /// <ul>
     /// <li> <p>If you specify <code>COGNITO_DEFAULT</code>, Amazon Cognito uses this address as the custom FROM address when it emails your users using its built-in email account.</p> </li>
     /// <li> <p>If you specify <code>DEVELOPER</code>, Amazon Cognito emails your users with this address by calling Amazon SES on your behalf.</p> </li>

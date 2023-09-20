@@ -25,7 +25,7 @@ pub struct StartMedicalStreamTranscriptionInput {
     pub r#type: ::std::option::Option<crate::types::Type>,
     /// <p>Enables speaker partitioning (diarization) in your transcription output. Speaker partitioning labels the speech from individual speakers in your media file.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/diarization.html">Partitioning speakers (diarization)</a>.</p>
-    pub show_speaker_label: bool,
+    pub show_speaker_label: ::std::option::Option<bool>,
     /// <p>Specify a name for your transcription session. If you don't include this parameter in your request, Amazon Transcribe Medical generates an ID and returns it in the response.</p>
     /// <p>You can use a session ID to retry a streaming session.</p>
     pub session_id: ::std::option::Option<::std::string::String>,
@@ -36,7 +36,7 @@ pub struct StartMedicalStreamTranscriptionInput {
     /// <p>Channel identification transcribes the audio on each channel independently, then appends the output for each channel into one transcript.</p>
     /// <p>If you have multi-channel audio and do not enable channel identification, your audio is transcribed in a continuous manner and your transcript is not separated by channel.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/channel-id.html">Transcribing multi-channel audio</a>.</p>
-    pub enable_channel_identification: bool,
+    pub enable_channel_identification: ::std::option::Option<bool>,
     /// <p>Specify the number of channels in your audio stream. Up to two channels are supported.</p>
     pub number_of_channels: ::std::option::Option<i32>,
     /// <p>Labels all personal health information (PHI) identified in your transcript.</p>
@@ -79,7 +79,7 @@ impl StartMedicalStreamTranscriptionInput {
     }
     /// <p>Enables speaker partitioning (diarization) in your transcription output. Speaker partitioning labels the speech from individual speakers in your media file.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/diarization.html">Partitioning speakers (diarization)</a>.</p>
-    pub fn show_speaker_label(&self) -> bool {
+    pub fn show_speaker_label(&self) -> ::std::option::Option<bool> {
         self.show_speaker_label
     }
     /// <p>Specify a name for your transcription session. If you don't include this parameter in your request, Amazon Transcribe Medical generates an ID and returns it in the response.</p>
@@ -98,7 +98,7 @@ impl StartMedicalStreamTranscriptionInput {
     /// <p>Channel identification transcribes the audio on each channel independently, then appends the output for each channel into one transcript.</p>
     /// <p>If you have multi-channel audio and do not enable channel identification, your audio is transcribed in a continuous manner and your transcript is not separated by channel.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/channel-id.html">Transcribing multi-channel audio</a>.</p>
-    pub fn enable_channel_identification(&self) -> bool {
+    pub fn enable_channel_identification(&self) -> ::std::option::Option<bool> {
         self.enable_channel_identification
     }
     /// <p>Specify the number of channels in your audio stream. Up to two channels are supported.</p>
@@ -380,7 +380,7 @@ impl StartMedicalStreamTranscriptionInputBuilder {
                 vocabulary_name: self.vocabulary_name,
                 specialty: self.specialty,
                 r#type: self.r#type,
-                show_speaker_label: self.show_speaker_label.unwrap_or_default(),
+                show_speaker_label: self.show_speaker_label,
                 session_id: self.session_id,
                 audio_stream: self.audio_stream.ok_or_else(|| {
                     ::aws_smithy_http::operation::error::BuildError::missing_field(
@@ -388,7 +388,7 @@ impl StartMedicalStreamTranscriptionInputBuilder {
                         "audio_stream was not specified but it is required when building StartMedicalStreamTranscriptionInput",
                     )
                 })?,
-                enable_channel_identification: self.enable_channel_identification.unwrap_or_default(),
+                enable_channel_identification: self.enable_channel_identification,
                 number_of_channels: self.number_of_channels,
                 content_identification_type: self.content_identification_type,
             },

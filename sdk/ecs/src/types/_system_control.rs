@@ -11,7 +11,10 @@
 pub struct SystemControl {
     /// <p>The namespaced kernel parameter to set a <code>value</code> for.</p>
     pub namespace: ::std::option::Option<::std::string::String>,
-    /// <p>The value for the namespaced kernel parameter that's specified in <code>namespace</code>.</p>
+    /// <p>The namespaced kernel parameter to set a <code>value</code> for.</p>
+    /// <p>Valid IPC namespace values: <code>"kernel.msgmax" | "kernel.msgmnb" | "kernel.msgmni" | "kernel.sem" | "kernel.shmall" | "kernel.shmmax" | "kernel.shmmni" | "kernel.shm_rmid_forced"</code>, and <code>Sysctls</code> that start with <code>"fs.mqueue.*"</code> </p>
+    /// <p>Valid network namespace values: <code>Sysctls</code> that start with <code>"net.*"</code> </p>
+    /// <p>All of these values are supported by Fargate.</p>
     pub value: ::std::option::Option<::std::string::String>,
 }
 impl SystemControl {
@@ -19,7 +22,10 @@ impl SystemControl {
     pub fn namespace(&self) -> ::std::option::Option<&str> {
         self.namespace.as_deref()
     }
-    /// <p>The value for the namespaced kernel parameter that's specified in <code>namespace</code>.</p>
+    /// <p>The namespaced kernel parameter to set a <code>value</code> for.</p>
+    /// <p>Valid IPC namespace values: <code>"kernel.msgmax" | "kernel.msgmnb" | "kernel.msgmni" | "kernel.sem" | "kernel.shmall" | "kernel.shmmax" | "kernel.shmmni" | "kernel.shm_rmid_forced"</code>, and <code>Sysctls</code> that start with <code>"fs.mqueue.*"</code> </p>
+    /// <p>Valid network namespace values: <code>Sysctls</code> that start with <code>"net.*"</code> </p>
+    /// <p>All of these values are supported by Fargate.</p>
     pub fn value(&self) -> ::std::option::Option<&str> {
         self.value.as_deref()
     }
@@ -53,17 +59,26 @@ impl SystemControlBuilder {
     pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
         &self.namespace
     }
-    /// <p>The value for the namespaced kernel parameter that's specified in <code>namespace</code>.</p>
+    /// <p>The namespaced kernel parameter to set a <code>value</code> for.</p>
+    /// <p>Valid IPC namespace values: <code>"kernel.msgmax" | "kernel.msgmnb" | "kernel.msgmni" | "kernel.sem" | "kernel.shmall" | "kernel.shmmax" | "kernel.shmmni" | "kernel.shm_rmid_forced"</code>, and <code>Sysctls</code> that start with <code>"fs.mqueue.*"</code> </p>
+    /// <p>Valid network namespace values: <code>Sysctls</code> that start with <code>"net.*"</code> </p>
+    /// <p>All of these values are supported by Fargate.</p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The value for the namespaced kernel parameter that's specified in <code>namespace</code>.</p>
+    /// <p>The namespaced kernel parameter to set a <code>value</code> for.</p>
+    /// <p>Valid IPC namespace values: <code>"kernel.msgmax" | "kernel.msgmnb" | "kernel.msgmni" | "kernel.sem" | "kernel.shmall" | "kernel.shmmax" | "kernel.shmmni" | "kernel.shm_rmid_forced"</code>, and <code>Sysctls</code> that start with <code>"fs.mqueue.*"</code> </p>
+    /// <p>Valid network namespace values: <code>Sysctls</code> that start with <code>"net.*"</code> </p>
+    /// <p>All of these values are supported by Fargate.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
     }
-    /// <p>The value for the namespaced kernel parameter that's specified in <code>namespace</code>.</p>
+    /// <p>The namespaced kernel parameter to set a <code>value</code> for.</p>
+    /// <p>Valid IPC namespace values: <code>"kernel.msgmax" | "kernel.msgmnb" | "kernel.msgmni" | "kernel.sem" | "kernel.shmall" | "kernel.shmmax" | "kernel.shmmni" | "kernel.shm_rmid_forced"</code>, and <code>Sysctls</code> that start with <code>"fs.mqueue.*"</code> </p>
+    /// <p>Valid network namespace values: <code>Sysctls</code> that start with <code>"net.*"</code> </p>
+    /// <p>All of these values are supported by Fargate.</p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
         &self.value
     }

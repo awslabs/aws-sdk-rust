@@ -8,7 +8,7 @@ pub struct GetMlModelInput {
     /// <p>Specifies whether the <code>GetMLModel</code> operation should return <code>Recipe</code>.</p>
     /// <p>If true, <code>Recipe</code> is returned.</p>
     /// <p>If false, <code>Recipe</code> is not returned.</p>
-    pub verbose: bool,
+    pub verbose: ::std::option::Option<bool>,
 }
 impl GetMlModelInput {
     /// <p>The ID assigned to the <code>MLModel</code> at creation.</p>
@@ -18,7 +18,7 @@ impl GetMlModelInput {
     /// <p>Specifies whether the <code>GetMLModel</code> operation should return <code>Recipe</code>.</p>
     /// <p>If true, <code>Recipe</code> is returned.</p>
     /// <p>If false, <code>Recipe</code> is not returned.</p>
-    pub fn verbose(&self) -> bool {
+    pub fn verbose(&self) -> ::std::option::Option<bool> {
         self.verbose
     }
 }
@@ -75,7 +75,7 @@ impl GetMlModelInputBuilder {
     pub fn build(self) -> ::std::result::Result<crate::operation::get_ml_model::GetMlModelInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_ml_model::GetMlModelInput {
             ml_model_id: self.ml_model_id,
-            verbose: self.verbose.unwrap_or_default(),
+            verbose: self.verbose,
         })
     }
 }

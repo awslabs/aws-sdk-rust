@@ -277,7 +277,7 @@ pub enum GetDASHStreamingSessionURLError {
     NoDataRetentionException(crate::types::error::NoDataRetentionException),
     /// <p>Status Code: 403, The caller is not authorized to perform an operation on the given stream, or the token has expired.</p>
     NotAuthorizedException(crate::types::error::NotAuthorizedException),
-    /// <p> <code>GetMedia</code> throws this error when Kinesis Video Streams can't find the stream that you specified.</p>
+    /// <p> <code>GetImages</code> will throw this error when Kinesis Video Streams can't find the stream that you specified.</p>
     /// <p> <code>GetHLSStreamingSessionURL</code> and <code>GetDASHStreamingSessionURL</code> throw this error if a session with a <code>PlaybackMode</code> of <code>ON_DEMAND</code> or <code>LIVE_REPLAY</code>is requested for a stream that has no fragments within the requested time range, or if a session with a <code>PlaybackMode</code> of <code>LIVE</code> is requested for a stream that has no fragments within the last 30 seconds.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>The type of the media (for example, h.264 or h.265 video or ACC or G.711 audio) could not be determined from the codec IDs of the tracks in the first fragment for a playback session. The codec ID for track 1 should be <code>V_MPEG/ISO/AVC</code> and, optionally, the codec ID for track 2 should be <code>A_AAC</code>.</p>

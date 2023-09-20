@@ -16,8 +16,13 @@
 ///     DefaultAggregation::Count => { /* ... */ },
 ///     DefaultAggregation::DistinctCount => { /* ... */ },
 ///     DefaultAggregation::Max => { /* ... */ },
+///     DefaultAggregation::Median => { /* ... */ },
 ///     DefaultAggregation::Min => { /* ... */ },
+///     DefaultAggregation::Stdev => { /* ... */ },
+///     DefaultAggregation::Stdevp => { /* ... */ },
 ///     DefaultAggregation::Sum => { /* ... */ },
+///     DefaultAggregation::Var => { /* ... */ },
+///     DefaultAggregation::Varp => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -54,9 +59,19 @@ pub enum DefaultAggregation {
     #[allow(missing_docs)] // documentation missing in model
     Max,
     #[allow(missing_docs)] // documentation missing in model
+    Median,
+    #[allow(missing_docs)] // documentation missing in model
     Min,
     #[allow(missing_docs)] // documentation missing in model
+    Stdev,
+    #[allow(missing_docs)] // documentation missing in model
+    Stdevp,
+    #[allow(missing_docs)] // documentation missing in model
     Sum,
+    #[allow(missing_docs)] // documentation missing in model
+    Var,
+    #[allow(missing_docs)] // documentation missing in model
+    Varp,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
@@ -67,8 +82,13 @@ impl ::std::convert::From<&str> for DefaultAggregation {
             "COUNT" => DefaultAggregation::Count,
             "DISTINCT_COUNT" => DefaultAggregation::DistinctCount,
             "MAX" => DefaultAggregation::Max,
+            "MEDIAN" => DefaultAggregation::Median,
             "MIN" => DefaultAggregation::Min,
+            "STDEV" => DefaultAggregation::Stdev,
+            "STDEVP" => DefaultAggregation::Stdevp,
             "SUM" => DefaultAggregation::Sum,
+            "VAR" => DefaultAggregation::Var,
+            "VARP" => DefaultAggregation::Varp,
             other => DefaultAggregation::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -88,14 +108,31 @@ impl DefaultAggregation {
             DefaultAggregation::Count => "COUNT",
             DefaultAggregation::DistinctCount => "DISTINCT_COUNT",
             DefaultAggregation::Max => "MAX",
+            DefaultAggregation::Median => "MEDIAN",
             DefaultAggregation::Min => "MIN",
+            DefaultAggregation::Stdev => "STDEV",
+            DefaultAggregation::Stdevp => "STDEVP",
             DefaultAggregation::Sum => "SUM",
+            DefaultAggregation::Var => "VAR",
+            DefaultAggregation::Varp => "VARP",
             DefaultAggregation::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AVERAGE", "COUNT", "DISTINCT_COUNT", "MAX", "MIN", "SUM"]
+        &[
+            "AVERAGE",
+            "COUNT",
+            "DISTINCT_COUNT",
+            "MAX",
+            "MEDIAN",
+            "MIN",
+            "STDEV",
+            "STDEVP",
+            "SUM",
+            "VAR",
+            "VARP",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for DefaultAggregation {

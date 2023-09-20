@@ -2,7 +2,7 @@
 
 /// <p>The settings for using the social identity providers for access to your Amplify app.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct SocialProviderSettings {
     /// <p>Describes third-party social federation configurations for allowing your app users to sign in using OAuth.</p>
     pub facebook: ::std::option::Option<crate::types::BackendAuthSocialProviderConfig>,
@@ -31,6 +31,16 @@ impl SocialProviderSettings {
         self.sign_in_with_apple.as_ref()
     }
 }
+impl ::std::fmt::Debug for SocialProviderSettings {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("SocialProviderSettings");
+        formatter.field("facebook", &"*** Sensitive Data Redacted ***");
+        formatter.field("google", &"*** Sensitive Data Redacted ***");
+        formatter.field("login_with_amazon", &"*** Sensitive Data Redacted ***");
+        formatter.field("sign_in_with_apple", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl SocialProviderSettings {
     /// Creates a new builder-style object to manufacture [`SocialProviderSettings`](crate::types::SocialProviderSettings).
     pub fn builder() -> crate::types::builders::SocialProviderSettingsBuilder {
@@ -40,7 +50,7 @@ impl SocialProviderSettings {
 
 /// A builder for [`SocialProviderSettings`](crate::types::SocialProviderSettings).
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct SocialProviderSettingsBuilder {
     pub(crate) facebook: ::std::option::Option<crate::types::BackendAuthSocialProviderConfig>,
     pub(crate) google: ::std::option::Option<crate::types::BackendAuthSocialProviderConfig>,
@@ -112,5 +122,15 @@ impl SocialProviderSettingsBuilder {
             login_with_amazon: self.login_with_amazon,
             sign_in_with_apple: self.sign_in_with_apple,
         }
+    }
+}
+impl ::std::fmt::Debug for SocialProviderSettingsBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("SocialProviderSettingsBuilder");
+        formatter.field("facebook", &"*** Sensitive Data Redacted ***");
+        formatter.field("google", &"*** Sensitive Data Redacted ***");
+        formatter.field("login_with_amazon", &"*** Sensitive Data Redacted ***");
+        formatter.field("sign_in_with_apple", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

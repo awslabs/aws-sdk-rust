@@ -22,6 +22,10 @@ pub struct InputDeviceUhdSettings {
     pub width: ::std::option::Option<i32>,
     /// The Link device's buffer size (latency) in milliseconds (ms). You can specify this value.
     pub latency_ms: ::std::option::Option<i32>,
+    /// The codec for the video that the device produces.
+    pub codec: ::std::option::Option<crate::types::InputDeviceCodec>,
+    /// Information about the MediaConnect flow attached to the device. Returned only if the outputType is MEDIACONNECT_FLOW.
+    pub mediaconnect_settings: ::std::option::Option<crate::types::InputDeviceMediaConnectSettings>,
 }
 impl InputDeviceUhdSettings {
     /// If you specified Auto as the configured input, specifies which of the sources is currently active (SDI or HDMI).
@@ -60,6 +64,14 @@ impl InputDeviceUhdSettings {
     pub fn latency_ms(&self) -> ::std::option::Option<i32> {
         self.latency_ms
     }
+    /// The codec for the video that the device produces.
+    pub fn codec(&self) -> ::std::option::Option<&crate::types::InputDeviceCodec> {
+        self.codec.as_ref()
+    }
+    /// Information about the MediaConnect flow attached to the device. Returned only if the outputType is MEDIACONNECT_FLOW.
+    pub fn mediaconnect_settings(&self) -> ::std::option::Option<&crate::types::InputDeviceMediaConnectSettings> {
+        self.mediaconnect_settings.as_ref()
+    }
 }
 impl InputDeviceUhdSettings {
     /// Creates a new builder-style object to manufacture [`InputDeviceUhdSettings`](crate::types::InputDeviceUhdSettings).
@@ -81,6 +93,8 @@ pub struct InputDeviceUhdSettingsBuilder {
     pub(crate) scan_type: ::std::option::Option<crate::types::InputDeviceScanType>,
     pub(crate) width: ::std::option::Option<i32>,
     pub(crate) latency_ms: ::std::option::Option<i32>,
+    pub(crate) codec: ::std::option::Option<crate::types::InputDeviceCodec>,
+    pub(crate) mediaconnect_settings: ::std::option::Option<crate::types::InputDeviceMediaConnectSettings>,
 }
 impl InputDeviceUhdSettingsBuilder {
     /// If you specified Auto as the configured input, specifies which of the sources is currently active (SDI or HDMI).
@@ -209,6 +223,34 @@ impl InputDeviceUhdSettingsBuilder {
     pub fn get_latency_ms(&self) -> &::std::option::Option<i32> {
         &self.latency_ms
     }
+    /// The codec for the video that the device produces.
+    pub fn codec(mut self, input: crate::types::InputDeviceCodec) -> Self {
+        self.codec = ::std::option::Option::Some(input);
+        self
+    }
+    /// The codec for the video that the device produces.
+    pub fn set_codec(mut self, input: ::std::option::Option<crate::types::InputDeviceCodec>) -> Self {
+        self.codec = input;
+        self
+    }
+    /// The codec for the video that the device produces.
+    pub fn get_codec(&self) -> &::std::option::Option<crate::types::InputDeviceCodec> {
+        &self.codec
+    }
+    /// Information about the MediaConnect flow attached to the device. Returned only if the outputType is MEDIACONNECT_FLOW.
+    pub fn mediaconnect_settings(mut self, input: crate::types::InputDeviceMediaConnectSettings) -> Self {
+        self.mediaconnect_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// Information about the MediaConnect flow attached to the device. Returned only if the outputType is MEDIACONNECT_FLOW.
+    pub fn set_mediaconnect_settings(mut self, input: ::std::option::Option<crate::types::InputDeviceMediaConnectSettings>) -> Self {
+        self.mediaconnect_settings = input;
+        self
+    }
+    /// Information about the MediaConnect flow attached to the device. Returned only if the outputType is MEDIACONNECT_FLOW.
+    pub fn get_mediaconnect_settings(&self) -> &::std::option::Option<crate::types::InputDeviceMediaConnectSettings> {
+        &self.mediaconnect_settings
+    }
     /// Consumes the builder and constructs a [`InputDeviceUhdSettings`](crate::types::InputDeviceUhdSettings).
     pub fn build(self) -> crate::types::InputDeviceUhdSettings {
         crate::types::InputDeviceUhdSettings {
@@ -221,6 +263,8 @@ impl InputDeviceUhdSettingsBuilder {
             scan_type: self.scan_type,
             width: self.width,
             latency_ms: self.latency_ms,
+            codec: self.codec,
+            mediaconnect_settings: self.mediaconnect_settings,
         }
     }
 }

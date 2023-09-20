@@ -9,7 +9,7 @@ pub struct GetFederationTokenOutput {
     pub sign_in_url: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the user.</p>
     pub user_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The identifier for the user.</p>
+    /// <p>The identifier for the user. This can be the ID or the ARN of the user.</p>
     pub user_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -26,7 +26,7 @@ impl GetFederationTokenOutput {
     pub fn user_arn(&self) -> ::std::option::Option<&str> {
         self.user_arn.as_deref()
     }
-    /// <p>The identifier for the user.</p>
+    /// <p>The identifier for the user. This can be the ID or the ARN of the user.</p>
     pub fn user_id(&self) -> ::std::option::Option<&str> {
         self.user_id.as_deref()
     }
@@ -96,17 +96,17 @@ impl GetFederationTokenOutputBuilder {
     pub fn get_user_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.user_arn
     }
-    /// <p>The identifier for the user.</p>
+    /// <p>The identifier for the user. This can be the ID or the ARN of the user.</p>
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier for the user.</p>
+    /// <p>The identifier for the user. This can be the ID or the ARN of the user.</p>
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_id = input;
         self
     }
-    /// <p>The identifier for the user.</p>
+    /// <p>The identifier for the user. This can be the ID or the ARN of the user.</p>
     pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.user_id
     }

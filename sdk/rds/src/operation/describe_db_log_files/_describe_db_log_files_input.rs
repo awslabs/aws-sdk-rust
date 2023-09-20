@@ -13,9 +13,9 @@ pub struct DescribeDbLogFilesInput {
     /// <p>Filters the available log files for log file names that contain the specified string.</p>
     pub filename_contains: ::std::option::Option<::std::string::String>,
     /// <p>Filters the available log files for files written since the specified date, in POSIX timestamp format with milliseconds.</p>
-    pub file_last_written: i64,
+    pub file_last_written: ::std::option::Option<i64>,
     /// <p>Filters the available log files for files larger than the specified size.</p>
-    pub file_size: i64,
+    pub file_size: ::std::option::Option<i64>,
     /// <p>This parameter isn't currently supported.</p>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     /// <p>The maximum number of records to include in the response. If more records exist than the specified MaxRecords value, a pagination token called a marker is included in the response so you can retrieve the remaining results.</p>
@@ -37,11 +37,11 @@ impl DescribeDbLogFilesInput {
         self.filename_contains.as_deref()
     }
     /// <p>Filters the available log files for files written since the specified date, in POSIX timestamp format with milliseconds.</p>
-    pub fn file_last_written(&self) -> i64 {
+    pub fn file_last_written(&self) -> ::std::option::Option<i64> {
         self.file_last_written
     }
     /// <p>Filters the available log files for files larger than the specified size.</p>
-    pub fn file_size(&self) -> i64 {
+    pub fn file_size(&self) -> ::std::option::Option<i64> {
         self.file_size
     }
     /// <p>This parameter isn't currently supported.</p>
@@ -201,8 +201,8 @@ impl DescribeDbLogFilesInputBuilder {
         ::std::result::Result::Ok(crate::operation::describe_db_log_files::DescribeDbLogFilesInput {
             db_instance_identifier: self.db_instance_identifier,
             filename_contains: self.filename_contains,
-            file_last_written: self.file_last_written.unwrap_or_default(),
-            file_size: self.file_size.unwrap_or_default(),
+            file_last_written: self.file_last_written,
+            file_size: self.file_size,
             filters: self.filters,
             max_records: self.max_records,
             marker: self.marker,

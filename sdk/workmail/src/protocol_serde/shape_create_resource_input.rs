@@ -12,5 +12,11 @@ pub fn ser_create_resource_input(
     if let Some(var_3) = &input.r#type {
         object.key("Type").string(var_3.as_str());
     }
+    if let Some(var_4) = &input.description {
+        object.key("Description").string(var_4.as_str());
+    }
+    if let Some(var_5) = &input.hidden_from_global_address_list {
+        object.key("HiddenFromGlobalAddressList").boolean(*var_5);
+    }
     Ok(())
 }

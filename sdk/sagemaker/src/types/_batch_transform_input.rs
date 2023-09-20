@@ -24,8 +24,10 @@ pub struct BatchTransformInput {
     pub probability_threshold_attribute: ::std::option::Option<f64>,
     /// <p>If specified, monitoring jobs substract this time from the start time. For information about using offsets for scheduling monitoring jobs, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-model-quality-schedule.html">Schedule Model Quality Monitoring Jobs</a>.</p>
     pub start_time_offset: ::std::option::Option<::std::string::String>,
-    /// <p>If specified, monitoring jobs substract this time from the end time. For information about using offsets for scheduling monitoring jobs, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-model-quality-schedule.html">Schedule Model Quality Monitoring Jobs</a>.</p>
+    /// <p>If specified, monitoring jobs subtract this time from the end time. For information about using offsets for scheduling monitoring jobs, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-model-quality-schedule.html">Schedule Model Quality Monitoring Jobs</a>.</p>
     pub end_time_offset: ::std::option::Option<::std::string::String>,
+    /// <p>The attributes of the input data to exclude from the analysis.</p>
+    pub exclude_features_attribute: ::std::option::Option<::std::string::String>,
 }
 impl BatchTransformInput {
     /// <p>The Amazon S3 location being used to capture the data.</p>
@@ -68,9 +70,13 @@ impl BatchTransformInput {
     pub fn start_time_offset(&self) -> ::std::option::Option<&str> {
         self.start_time_offset.as_deref()
     }
-    /// <p>If specified, monitoring jobs substract this time from the end time. For information about using offsets for scheduling monitoring jobs, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-model-quality-schedule.html">Schedule Model Quality Monitoring Jobs</a>.</p>
+    /// <p>If specified, monitoring jobs subtract this time from the end time. For information about using offsets for scheduling monitoring jobs, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-model-quality-schedule.html">Schedule Model Quality Monitoring Jobs</a>.</p>
     pub fn end_time_offset(&self) -> ::std::option::Option<&str> {
         self.end_time_offset.as_deref()
+    }
+    /// <p>The attributes of the input data to exclude from the analysis.</p>
+    pub fn exclude_features_attribute(&self) -> ::std::option::Option<&str> {
+        self.exclude_features_attribute.as_deref()
     }
 }
 impl BatchTransformInput {
@@ -95,6 +101,7 @@ pub struct BatchTransformInputBuilder {
     pub(crate) probability_threshold_attribute: ::std::option::Option<f64>,
     pub(crate) start_time_offset: ::std::option::Option<::std::string::String>,
     pub(crate) end_time_offset: ::std::option::Option<::std::string::String>,
+    pub(crate) exclude_features_attribute: ::std::option::Option<::std::string::String>,
 }
 impl BatchTransformInputBuilder {
     /// <p>The Amazon S3 location being used to capture the data.</p>
@@ -237,19 +244,33 @@ impl BatchTransformInputBuilder {
     pub fn get_start_time_offset(&self) -> &::std::option::Option<::std::string::String> {
         &self.start_time_offset
     }
-    /// <p>If specified, monitoring jobs substract this time from the end time. For information about using offsets for scheduling monitoring jobs, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-model-quality-schedule.html">Schedule Model Quality Monitoring Jobs</a>.</p>
+    /// <p>If specified, monitoring jobs subtract this time from the end time. For information about using offsets for scheduling monitoring jobs, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-model-quality-schedule.html">Schedule Model Quality Monitoring Jobs</a>.</p>
     pub fn end_time_offset(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.end_time_offset = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>If specified, monitoring jobs substract this time from the end time. For information about using offsets for scheduling monitoring jobs, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-model-quality-schedule.html">Schedule Model Quality Monitoring Jobs</a>.</p>
+    /// <p>If specified, monitoring jobs subtract this time from the end time. For information about using offsets for scheduling monitoring jobs, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-model-quality-schedule.html">Schedule Model Quality Monitoring Jobs</a>.</p>
     pub fn set_end_time_offset(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.end_time_offset = input;
         self
     }
-    /// <p>If specified, monitoring jobs substract this time from the end time. For information about using offsets for scheduling monitoring jobs, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-model-quality-schedule.html">Schedule Model Quality Monitoring Jobs</a>.</p>
+    /// <p>If specified, monitoring jobs subtract this time from the end time. For information about using offsets for scheduling monitoring jobs, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-model-quality-schedule.html">Schedule Model Quality Monitoring Jobs</a>.</p>
     pub fn get_end_time_offset(&self) -> &::std::option::Option<::std::string::String> {
         &self.end_time_offset
+    }
+    /// <p>The attributes of the input data to exclude from the analysis.</p>
+    pub fn exclude_features_attribute(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.exclude_features_attribute = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The attributes of the input data to exclude from the analysis.</p>
+    pub fn set_exclude_features_attribute(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.exclude_features_attribute = input;
+        self
+    }
+    /// <p>The attributes of the input data to exclude from the analysis.</p>
+    pub fn get_exclude_features_attribute(&self) -> &::std::option::Option<::std::string::String> {
+        &self.exclude_features_attribute
     }
     /// Consumes the builder and constructs a [`BatchTransformInput`](crate::types::BatchTransformInput).
     pub fn build(self) -> crate::types::BatchTransformInput {
@@ -265,6 +286,7 @@ impl BatchTransformInputBuilder {
             probability_threshold_attribute: self.probability_threshold_attribute,
             start_time_offset: self.start_time_offset,
             end_time_offset: self.end_time_offset,
+            exclude_features_attribute: self.exclude_features_attribute,
         }
     }
 }

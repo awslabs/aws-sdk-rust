@@ -3,7 +3,21 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteKeyPairOutput {
+    /// <p>Is <code>true</code> if the request succeeds, and an error otherwise.</p>
+    pub r#return: ::std::option::Option<bool>,
+    /// <p>The ID of the key pair.</p>
+    pub key_pair_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
+}
+impl DeleteKeyPairOutput {
+    /// <p>Is <code>true</code> if the request succeeds, and an error otherwise.</p>
+    pub fn r#return(&self) -> ::std::option::Option<bool> {
+        self.r#return
+    }
+    /// <p>The ID of the key pair.</p>
+    pub fn key_pair_id(&self) -> ::std::option::Option<&str> {
+        self.key_pair_id.as_deref()
+    }
 }
 impl ::aws_http::request_id::RequestId for DeleteKeyPairOutput {
     fn request_id(&self) -> Option<&str> {
@@ -21,9 +35,39 @@ impl DeleteKeyPairOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteKeyPairOutputBuilder {
+    pub(crate) r#return: ::std::option::Option<bool>,
+    pub(crate) key_pair_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DeleteKeyPairOutputBuilder {
+    /// <p>Is <code>true</code> if the request succeeds, and an error otherwise.</p>
+    pub fn r#return(mut self, input: bool) -> Self {
+        self.r#return = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Is <code>true</code> if the request succeeds, and an error otherwise.</p>
+    pub fn set_return(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.r#return = input;
+        self
+    }
+    /// <p>Is <code>true</code> if the request succeeds, and an error otherwise.</p>
+    pub fn get_return(&self) -> &::std::option::Option<bool> {
+        &self.r#return
+    }
+    /// <p>The ID of the key pair.</p>
+    pub fn key_pair_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.key_pair_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the key pair.</p>
+    pub fn set_key_pair_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.key_pair_id = input;
+        self
+    }
+    /// <p>The ID of the key pair.</p>
+    pub fn get_key_pair_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_pair_id
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -36,6 +80,8 @@ impl DeleteKeyPairOutputBuilder {
     /// Consumes the builder and constructs a [`DeleteKeyPairOutput`](crate::operation::delete_key_pair::DeleteKeyPairOutput).
     pub fn build(self) -> crate::operation::delete_key_pair::DeleteKeyPairOutput {
         crate::operation::delete_key_pair::DeleteKeyPairOutput {
+            r#return: self.r#return,
+            key_pair_id: self.key_pair_id,
             _request_id: self._request_id,
         }
     }

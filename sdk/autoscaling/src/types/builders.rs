@@ -33,6 +33,8 @@ pub use crate::types::_activity::ActivityBuilder;
 
 pub use crate::types::_refresh_preferences::RefreshPreferencesBuilder;
 
+pub use crate::types::_alarm_specification::AlarmSpecificationBuilder;
+
 pub use crate::types::_desired_configuration::DesiredConfigurationBuilder;
 
 pub use crate::types::_instance_reuse_policy::InstanceReusePolicyBuilder;

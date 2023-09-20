@@ -110,6 +110,12 @@ impl ListFolderMembersFluentBuilder {
         self.config_override = config_override;
         self
     }
+    /// Create a paginator for this request
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::list_folder_members::paginator::ListFolderMembersPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(self) -> crate::operation::list_folder_members::paginator::ListFolderMembersPaginator {
+        crate::operation::list_folder_members::paginator::ListFolderMembersPaginator::new(self.handle, self.inner)
+    }
     /// <p>The ID for the Amazon Web Services account that contains the folder.</p>
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.aws_account_id(input.into());

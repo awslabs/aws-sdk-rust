@@ -87,6 +87,9 @@ pub fn ser_topic_column(
         }
         array_24.finish();
     }
+    if let Some(var_27) = &input.non_additive {
+        object.key("NonAdditive").boolean(*var_27);
+    }
     Ok(())
 }
 
@@ -182,6 +185,9 @@ where
                         "CellValueSynonyms" => {
                             builder =
                                 builder.set_cell_value_synonyms(crate::protocol_serde::shape_cell_value_synonyms::de_cell_value_synonyms(tokens)?);
+                        }
+                        "NonAdditive" => {
+                            builder = builder.set_non_additive(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

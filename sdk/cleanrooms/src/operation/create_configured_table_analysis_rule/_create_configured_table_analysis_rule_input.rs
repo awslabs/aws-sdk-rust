@@ -5,7 +5,7 @@
 pub struct CreateConfiguredTableAnalysisRuleInput {
     /// <p>The identifier for the configured table to create the analysis rule for. Currently accepts the configured table ID. </p>
     pub configured_table_identifier: ::std::option::Option<::std::string::String>,
-    /// <p>The type of analysis rule. Valid values are AGGREGATION and LIST.</p>
+    /// <p>The type of analysis rule.</p>
     pub analysis_rule_type: ::std::option::Option<crate::types::ConfiguredTableAnalysisRuleType>,
     /// <p>The entire created configured table analysis rule object.</p>
     pub analysis_rule_policy: ::std::option::Option<crate::types::ConfiguredTableAnalysisRulePolicy>,
@@ -15,7 +15,7 @@ impl CreateConfiguredTableAnalysisRuleInput {
     pub fn configured_table_identifier(&self) -> ::std::option::Option<&str> {
         self.configured_table_identifier.as_deref()
     }
-    /// <p>The type of analysis rule. Valid values are AGGREGATION and LIST.</p>
+    /// <p>The type of analysis rule.</p>
     pub fn analysis_rule_type(&self) -> ::std::option::Option<&crate::types::ConfiguredTableAnalysisRuleType> {
         self.analysis_rule_type.as_ref()
     }
@@ -54,17 +54,17 @@ impl CreateConfiguredTableAnalysisRuleInputBuilder {
     pub fn get_configured_table_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.configured_table_identifier
     }
-    /// <p>The type of analysis rule. Valid values are AGGREGATION and LIST.</p>
+    /// <p>The type of analysis rule.</p>
     pub fn analysis_rule_type(mut self, input: crate::types::ConfiguredTableAnalysisRuleType) -> Self {
         self.analysis_rule_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of analysis rule. Valid values are AGGREGATION and LIST.</p>
+    /// <p>The type of analysis rule.</p>
     pub fn set_analysis_rule_type(mut self, input: ::std::option::Option<crate::types::ConfiguredTableAnalysisRuleType>) -> Self {
         self.analysis_rule_type = input;
         self
     }
-    /// <p>The type of analysis rule. Valid values are AGGREGATION and LIST.</p>
+    /// <p>The type of analysis rule.</p>
     pub fn get_analysis_rule_type(&self) -> &::std::option::Option<crate::types::ConfiguredTableAnalysisRuleType> {
         &self.analysis_rule_type
     }

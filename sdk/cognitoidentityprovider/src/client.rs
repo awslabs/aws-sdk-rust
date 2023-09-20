@@ -295,6 +295,8 @@ mod get_group;
 
 mod get_identity_provider_by_identifier;
 
+mod get_log_delivery_configuration;
+
 mod get_signing_certificate;
 
 mod get_ui_customization;
@@ -334,6 +336,8 @@ mod resend_confirmation_code;
 mod respond_to_auth_challenge;
 
 mod revoke_token;
+
+mod set_log_delivery_configuration;
 
 mod set_risk_configuration;
 

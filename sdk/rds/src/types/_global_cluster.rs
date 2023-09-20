@@ -24,7 +24,7 @@ pub struct GlobalCluster {
     pub deletion_protection: ::std::option::Option<bool>,
     /// <p>The list of primary and secondary clusters within the global database cluster.</p>
     pub global_cluster_members: ::std::option::Option<::std::vec::Vec<crate::types::GlobalClusterMember>>,
-    /// <p>A data object containing all properties for the current state of an in-process or pending failover process for this Aurora global database. This object is empty unless the <code>FailoverGlobalCluster</code> API operation has been called on this Aurora global database (<code>GlobalCluster</code>).</p>
+    /// <p>A data object containing all properties for the current state of an in-process or pending switchover or failover process for this global cluster (Aurora global database). This object is empty unless the <code>SwitchoverGlobalCluster</code> or <code>FailoverGlobalCluster</code> operation was called on this global cluster.</p>
     pub failover_state: ::std::option::Option<crate::types::FailoverState>,
 }
 impl GlobalCluster {
@@ -68,7 +68,7 @@ impl GlobalCluster {
     pub fn global_cluster_members(&self) -> ::std::option::Option<&[crate::types::GlobalClusterMember]> {
         self.global_cluster_members.as_deref()
     }
-    /// <p>A data object containing all properties for the current state of an in-process or pending failover process for this Aurora global database. This object is empty unless the <code>FailoverGlobalCluster</code> API operation has been called on this Aurora global database (<code>GlobalCluster</code>).</p>
+    /// <p>A data object containing all properties for the current state of an in-process or pending switchover or failover process for this global cluster (Aurora global database). This object is empty unless the <code>SwitchoverGlobalCluster</code> or <code>FailoverGlobalCluster</code> operation was called on this global cluster.</p>
     pub fn failover_state(&self) -> ::std::option::Option<&crate::types::FailoverState> {
         self.failover_state.as_ref()
     }
@@ -243,17 +243,17 @@ impl GlobalClusterBuilder {
     pub fn get_global_cluster_members(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GlobalClusterMember>> {
         &self.global_cluster_members
     }
-    /// <p>A data object containing all properties for the current state of an in-process or pending failover process for this Aurora global database. This object is empty unless the <code>FailoverGlobalCluster</code> API operation has been called on this Aurora global database (<code>GlobalCluster</code>).</p>
+    /// <p>A data object containing all properties for the current state of an in-process or pending switchover or failover process for this global cluster (Aurora global database). This object is empty unless the <code>SwitchoverGlobalCluster</code> or <code>FailoverGlobalCluster</code> operation was called on this global cluster.</p>
     pub fn failover_state(mut self, input: crate::types::FailoverState) -> Self {
         self.failover_state = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A data object containing all properties for the current state of an in-process or pending failover process for this Aurora global database. This object is empty unless the <code>FailoverGlobalCluster</code> API operation has been called on this Aurora global database (<code>GlobalCluster</code>).</p>
+    /// <p>A data object containing all properties for the current state of an in-process or pending switchover or failover process for this global cluster (Aurora global database). This object is empty unless the <code>SwitchoverGlobalCluster</code> or <code>FailoverGlobalCluster</code> operation was called on this global cluster.</p>
     pub fn set_failover_state(mut self, input: ::std::option::Option<crate::types::FailoverState>) -> Self {
         self.failover_state = input;
         self
     }
-    /// <p>A data object containing all properties for the current state of an in-process or pending failover process for this Aurora global database. This object is empty unless the <code>FailoverGlobalCluster</code> API operation has been called on this Aurora global database (<code>GlobalCluster</code>).</p>
+    /// <p>A data object containing all properties for the current state of an in-process or pending switchover or failover process for this global cluster (Aurora global database). This object is empty unless the <code>SwitchoverGlobalCluster</code> or <code>FailoverGlobalCluster</code> operation was called on this global cluster.</p>
     pub fn get_failover_state(&self) -> &::std::option::Option<crate::types::FailoverState> {
         &self.failover_state
     }

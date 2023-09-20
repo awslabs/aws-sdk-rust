@@ -14,6 +14,7 @@
 /// match authenticationmethodoption {
 ///     AuthenticationMethodOption::ActiveDirectory => { /* ... */ },
 ///     AuthenticationMethodOption::IamAndQuicksight => { /* ... */ },
+///     AuthenticationMethodOption::IamIdentityCenter => { /* ... */ },
 ///     AuthenticationMethodOption::IamOnly => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -47,6 +48,8 @@ pub enum AuthenticationMethodOption {
     #[allow(missing_docs)] // documentation missing in model
     IamAndQuicksight,
     #[allow(missing_docs)] // documentation missing in model
+    IamIdentityCenter,
+    #[allow(missing_docs)] // documentation missing in model
     IamOnly,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
@@ -56,6 +59,7 @@ impl ::std::convert::From<&str> for AuthenticationMethodOption {
         match s {
             "ACTIVE_DIRECTORY" => AuthenticationMethodOption::ActiveDirectory,
             "IAM_AND_QUICKSIGHT" => AuthenticationMethodOption::IamAndQuicksight,
+            "IAM_IDENTITY_CENTER" => AuthenticationMethodOption::IamIdentityCenter,
             "IAM_ONLY" => AuthenticationMethodOption::IamOnly,
             other => AuthenticationMethodOption::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
@@ -74,13 +78,14 @@ impl AuthenticationMethodOption {
         match self {
             AuthenticationMethodOption::ActiveDirectory => "ACTIVE_DIRECTORY",
             AuthenticationMethodOption::IamAndQuicksight => "IAM_AND_QUICKSIGHT",
+            AuthenticationMethodOption::IamIdentityCenter => "IAM_IDENTITY_CENTER",
             AuthenticationMethodOption::IamOnly => "IAM_ONLY",
             AuthenticationMethodOption::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ACTIVE_DIRECTORY", "IAM_AND_QUICKSIGHT", "IAM_ONLY"]
+        &["ACTIVE_DIRECTORY", "IAM_AND_QUICKSIGHT", "IAM_IDENTITY_CENTER", "IAM_ONLY"]
     }
 }
 impl ::std::convert::AsRef<str> for AuthenticationMethodOption {

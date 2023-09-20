@@ -19,6 +19,14 @@ impl ListApplicationsPaginator {
         }
     }
 
+    /// Create a flattened paginator
+    ///
+    /// This paginator automatically flattens results using `application_summaries`. Queries to the underlying service
+    /// are dispatched lazily.
+    pub fn items(self) -> crate::operation::list_applications::paginator::ListApplicationsPaginatorItems {
+        crate::operation::list_applications::paginator::ListApplicationsPaginatorItems(self)
+    }
+
     /// Stop paginating when the service returns the same pagination token twice in a row.
     ///
     /// Defaults to true.
@@ -88,6 +96,36 @@ impl ListApplicationsPaginator {
                     }
                 }
             })
+        })
+    }
+}
+
+/// Flattened paginator for `ListApplicationsPaginator`
+///
+/// This is created with [`.items()`](ListApplicationsPaginator::items)
+pub struct ListApplicationsPaginatorItems(ListApplicationsPaginator);
+
+impl ListApplicationsPaginatorItems {
+    /// Create the pagination stream
+    ///
+    /// _Note: No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next))._
+    ///
+    /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
+    pub fn send(
+        self,
+    ) -> impl ::tokio_stream::Stream<
+        Item = ::std::result::Result<
+            crate::types::ApplicationSummary,
+            ::aws_smithy_http::result::SdkError<
+                crate::operation::list_applications::ListApplicationsError,
+                ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
+            >,
+        >,
+    > + ::std::marker::Unpin {
+        ::aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_list_applications_output_application_summaries(page)
+                .unwrap_or_default()
+                .into_iter()
         })
     }
 }

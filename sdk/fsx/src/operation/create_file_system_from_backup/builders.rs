@@ -326,19 +326,19 @@ impl CreateFileSystemFromBackupFluentBuilder {
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_kms_key_id()
     }
-    /// <p>Sets the version for the Amazon FSx for Lustre file system that you're creating from a backup. Valid values are <code>2.10</code> and <code>2.12</code>.</p>
+    /// <p>Sets the version for the Amazon FSx for Lustre file system that you're creating from a backup. Valid values are <code>2.10</code>, <code>2.12</code>, and <code>2.15</code>.</p>
     /// <p>You don't need to specify <code>FileSystemTypeVersion</code> because it will be applied using the backup's <code>FileSystemTypeVersion</code> setting. If you choose to specify <code>FileSystemTypeVersion</code> when creating from backup, the value must match the backup's <code>FileSystemTypeVersion</code> setting.</p>
     pub fn file_system_type_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.file_system_type_version(input.into());
         self
     }
-    /// <p>Sets the version for the Amazon FSx for Lustre file system that you're creating from a backup. Valid values are <code>2.10</code> and <code>2.12</code>.</p>
+    /// <p>Sets the version for the Amazon FSx for Lustre file system that you're creating from a backup. Valid values are <code>2.10</code>, <code>2.12</code>, and <code>2.15</code>.</p>
     /// <p>You don't need to specify <code>FileSystemTypeVersion</code> because it will be applied using the backup's <code>FileSystemTypeVersion</code> setting. If you choose to specify <code>FileSystemTypeVersion</code> when creating from backup, the value must match the backup's <code>FileSystemTypeVersion</code> setting.</p>
     pub fn set_file_system_type_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_file_system_type_version(input);
         self
     }
-    /// <p>Sets the version for the Amazon FSx for Lustre file system that you're creating from a backup. Valid values are <code>2.10</code> and <code>2.12</code>.</p>
+    /// <p>Sets the version for the Amazon FSx for Lustre file system that you're creating from a backup. Valid values are <code>2.10</code>, <code>2.12</code>, and <code>2.15</code>.</p>
     /// <p>You don't need to specify <code>FileSystemTypeVersion</code> because it will be applied using the backup's <code>FileSystemTypeVersion</code> setting. If you choose to specify <code>FileSystemTypeVersion</code> when creating from backup, the value must match the backup's <code>FileSystemTypeVersion</code> setting.</p>
     pub fn get_file_system_type_version(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_file_system_type_version()

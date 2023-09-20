@@ -152,4 +152,18 @@ impl DeleteOrganizationFluentBuilder {
     pub fn get_delete_directory(&self) -> &::std::option::Option<bool> {
         self.inner.get_delete_directory()
     }
+    /// <p>Deletes a WorkMail organization even if the organization has enabled users.</p>
+    pub fn force_delete(mut self, input: bool) -> Self {
+        self.inner = self.inner.force_delete(input);
+        self
+    }
+    /// <p>Deletes a WorkMail organization even if the organization has enabled users.</p>
+    pub fn set_force_delete(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_force_delete(input);
+        self
+    }
+    /// <p>Deletes a WorkMail organization even if the organization has enabled users.</p>
+    pub fn get_force_delete(&self) -> &::std::option::Option<bool> {
+        self.inner.get_force_delete()
+    }
 }

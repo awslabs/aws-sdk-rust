@@ -5,7 +5,7 @@ impl super::Client {
     /// - The fluent builder is configurable:
     ///   - [`backup_job_id(impl Into<String>)`](crate::operation::start_object::builders::StartObjectFluentBuilder::backup_job_id) / [`set_backup_job_id(Option<String>)`](crate::operation::start_object::builders::StartObjectFluentBuilder::set_backup_job_id): Backup job Id for the in-progress backup
     ///   - [`object_name(impl Into<String>)`](crate::operation::start_object::builders::StartObjectFluentBuilder::object_name) / [`set_object_name(Option<String>)`](crate::operation::start_object::builders::StartObjectFluentBuilder::set_object_name): Name for the object.
-    ///   - [`throw_on_duplicate(bool)`](crate::operation::start_object::builders::StartObjectFluentBuilder::throw_on_duplicate) / [`set_throw_on_duplicate(bool)`](crate::operation::start_object::builders::StartObjectFluentBuilder::set_throw_on_duplicate): Throw an exception if Object name is already exist.
+    ///   - [`throw_on_duplicate(bool)`](crate::operation::start_object::builders::StartObjectFluentBuilder::throw_on_duplicate) / [`set_throw_on_duplicate(Option<bool>)`](crate::operation::start_object::builders::StartObjectFluentBuilder::set_throw_on_duplicate): Throw an exception if Object name is already exist.
     /// - On success, responds with [`StartObjectOutput`](crate::operation::start_object::StartObjectOutput) with field(s):
     ///   - [`upload_id(Option<String>)`](crate::operation::start_object::StartObjectOutput::upload_id): Upload Id for a given upload.
     /// - On failure, responds with [`SdkError<StartObjectError>`](crate::operation::start_object::StartObjectError)

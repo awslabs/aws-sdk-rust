@@ -375,11 +375,11 @@ pub fn ser_start_call_analytics_stream_transcription_headers(
             builder = builder.header("x-amzn-transcribe-language-model-name", header_value);
         }
     }
-    if input.enable_partial_results_stabilization {
-        let mut encoder = ::aws_smithy_types::primitive::Encoder::from(input.enable_partial_results_stabilization);
-        let formatted_17 = encoder.encode();
-        if !formatted_17.is_empty() {
-            let header_value = formatted_17;
+    if let ::std::option::Option::Some(inner_17) = &input.enable_partial_results_stabilization {
+        let mut encoder = ::aws_smithy_types::primitive::Encoder::from(*inner_17);
+        let formatted_18 = encoder.encode();
+        if !formatted_18.is_empty() {
+            let header_value = formatted_18;
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "enable_partial_results_stabilization",
@@ -389,10 +389,10 @@ pub fn ser_start_call_analytics_stream_transcription_headers(
             builder = builder.header("x-amzn-transcribe-enable-partial-results-stabilization", header_value);
         }
     }
-    if let ::std::option::Option::Some(inner_18) = &input.partial_results_stability {
-        let formatted_19 = inner_18.as_str();
-        if !formatted_19.is_empty() {
-            let header_value = formatted_19;
+    if let ::std::option::Option::Some(inner_19) = &input.partial_results_stability {
+        let formatted_20 = inner_19.as_str();
+        if !formatted_20.is_empty() {
+            let header_value = formatted_20;
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "partial_results_stability",
@@ -402,10 +402,10 @@ pub fn ser_start_call_analytics_stream_transcription_headers(
             builder = builder.header("x-amzn-transcribe-partial-results-stability", header_value);
         }
     }
-    if let ::std::option::Option::Some(inner_20) = &input.content_identification_type {
-        let formatted_21 = inner_20.as_str();
-        if !formatted_21.is_empty() {
-            let header_value = formatted_21;
+    if let ::std::option::Option::Some(inner_21) = &input.content_identification_type {
+        let formatted_22 = inner_21.as_str();
+        if !formatted_22.is_empty() {
+            let header_value = formatted_22;
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "content_identification_type",
@@ -415,10 +415,10 @@ pub fn ser_start_call_analytics_stream_transcription_headers(
             builder = builder.header("x-amzn-transcribe-content-identification-type", header_value);
         }
     }
-    if let ::std::option::Option::Some(inner_22) = &input.content_redaction_type {
-        let formatted_23 = inner_22.as_str();
-        if !formatted_23.is_empty() {
-            let header_value = formatted_23;
+    if let ::std::option::Option::Some(inner_23) = &input.content_redaction_type {
+        let formatted_24 = inner_23.as_str();
+        if !formatted_24.is_empty() {
+            let header_value = formatted_24;
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "content_redaction_type",
@@ -428,10 +428,10 @@ pub fn ser_start_call_analytics_stream_transcription_headers(
             builder = builder.header("x-amzn-transcribe-content-redaction-type", header_value);
         }
     }
-    if let ::std::option::Option::Some(inner_24) = &input.pii_entity_types {
-        let formatted_25 = inner_24.as_str();
-        if !formatted_25.is_empty() {
-            let header_value = formatted_25;
+    if let ::std::option::Option::Some(inner_25) = &input.pii_entity_types {
+        let formatted_26 = inner_25.as_str();
+        if !formatted_26.is_empty() {
+            let header_value = formatted_26;
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "pii_entity_types",

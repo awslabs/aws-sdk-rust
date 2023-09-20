@@ -2,7 +2,7 @@
 
 /// <p>Describes third-party social federation configurations for allowing your app users to sign in using OAuth.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct BackendAuthSocialProviderConfig {
     /// <p>Describes the client_id, which can be obtained from the third-party social federation provider.</p>
     pub client_id: ::std::option::Option<::std::string::String>,
@@ -19,6 +19,14 @@ impl BackendAuthSocialProviderConfig {
         self.client_secret.as_deref()
     }
 }
+impl ::std::fmt::Debug for BackendAuthSocialProviderConfig {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("BackendAuthSocialProviderConfig");
+        formatter.field("client_id", &"*** Sensitive Data Redacted ***");
+        formatter.field("client_secret", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl BackendAuthSocialProviderConfig {
     /// Creates a new builder-style object to manufacture [`BackendAuthSocialProviderConfig`](crate::types::BackendAuthSocialProviderConfig).
     pub fn builder() -> crate::types::builders::BackendAuthSocialProviderConfigBuilder {
@@ -28,7 +36,7 @@ impl BackendAuthSocialProviderConfig {
 
 /// A builder for [`BackendAuthSocialProviderConfig`](crate::types::BackendAuthSocialProviderConfig).
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct BackendAuthSocialProviderConfigBuilder {
     pub(crate) client_id: ::std::option::Option<::std::string::String>,
     pub(crate) client_secret: ::std::option::Option<::std::string::String>,
@@ -68,5 +76,13 @@ impl BackendAuthSocialProviderConfigBuilder {
             client_id: self.client_id,
             client_secret: self.client_secret,
         }
+    }
+}
+impl ::std::fmt::Debug for BackendAuthSocialProviderConfigBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("BackendAuthSocialProviderConfigBuilder");
+        formatter.field("client_id", &"*** Sensitive Data Redacted ***");
+        formatter.field("client_secret", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

@@ -318,4 +318,18 @@ impl DescribeDBClusterSnapshotsFluentBuilder {
     pub fn get_include_public(&self) -> &::std::option::Option<bool> {
         self.inner.get_include_public()
     }
+    /// <p>A specific DB cluster resource ID to describe.</p>
+    pub fn db_cluster_resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.db_cluster_resource_id(input.into());
+        self
+    }
+    /// <p>A specific DB cluster resource ID to describe.</p>
+    pub fn set_db_cluster_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_db_cluster_resource_id(input);
+        self
+    }
+    /// <p>A specific DB cluster resource ID to describe.</p>
+    pub fn get_db_cluster_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_db_cluster_resource_id()
+    }
 }

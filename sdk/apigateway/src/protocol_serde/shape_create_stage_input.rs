@@ -3,52 +3,52 @@ pub fn ser_create_stage_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_stage::CreateStageInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if input.cache_cluster_enabled {
-        object.key("cacheClusterEnabled").boolean(input.cache_cluster_enabled);
+    if let Some(var_1) = &input.cache_cluster_enabled {
+        object.key("cacheClusterEnabled").boolean(*var_1);
     }
-    if let Some(var_1) = &input.cache_cluster_size {
-        object.key("cacheClusterSize").string(var_1.as_str());
+    if let Some(var_2) = &input.cache_cluster_size {
+        object.key("cacheClusterSize").string(var_2.as_str());
     }
-    if let Some(var_2) = &input.canary_settings {
+    if let Some(var_3) = &input.canary_settings {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("canarySettings").start_object();
-        crate::protocol_serde::shape_canary_settings::ser_canary_settings(&mut object_3, var_2)?;
-        object_3.finish();
+        let mut object_4 = object.key("canarySettings").start_object();
+        crate::protocol_serde::shape_canary_settings::ser_canary_settings(&mut object_4, var_3)?;
+        object_4.finish();
     }
-    if let Some(var_4) = &input.deployment_id {
-        object.key("deploymentId").string(var_4.as_str());
+    if let Some(var_5) = &input.deployment_id {
+        object.key("deploymentId").string(var_5.as_str());
     }
-    if let Some(var_5) = &input.description {
-        object.key("description").string(var_5.as_str());
+    if let Some(var_6) = &input.description {
+        object.key("description").string(var_6.as_str());
     }
-    if let Some(var_6) = &input.documentation_version {
-        object.key("documentationVersion").string(var_6.as_str());
+    if let Some(var_7) = &input.documentation_version {
+        object.key("documentationVersion").string(var_7.as_str());
     }
-    if let Some(var_7) = &input.stage_name {
-        object.key("stageName").string(var_7.as_str());
+    if let Some(var_8) = &input.stage_name {
+        object.key("stageName").string(var_8.as_str());
     }
-    if let Some(var_8) = &input.tags {
+    if let Some(var_9) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_9 = object.key("tags").start_object();
-        for (key_10, value_11) in var_8 {
+        let mut object_10 = object.key("tags").start_object();
+        for (key_11, value_12) in var_9 {
             {
-                object_9.key(key_10.as_str()).string(value_11.as_str());
+                object_10.key(key_11.as_str()).string(value_12.as_str());
             }
         }
-        object_9.finish();
+        object_10.finish();
     }
-    if input.tracing_enabled {
-        object.key("tracingEnabled").boolean(input.tracing_enabled);
+    if let Some(var_13) = &input.tracing_enabled {
+        object.key("tracingEnabled").boolean(*var_13);
     }
-    if let Some(var_12) = &input.variables {
+    if let Some(var_14) = &input.variables {
         #[allow(unused_mut)]
-        let mut object_13 = object.key("variables").start_object();
-        for (key_14, value_15) in var_12 {
+        let mut object_15 = object.key("variables").start_object();
+        for (key_16, value_17) in var_14 {
             {
-                object_13.key(key_14.as_str()).string(value_15.as_str());
+                object_15.key(key_16.as_str()).string(value_17.as_str());
             }
         }
-        object_13.finish();
+        object_15.finish();
     }
     Ok(())
 }

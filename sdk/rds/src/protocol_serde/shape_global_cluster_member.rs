@@ -58,6 +58,20 @@ pub fn de_global_cluster_member(
                 builder = builder.set_global_write_forwarding_status(var_4);
             }
             ,
+            s if s.matches("SynchronizationStatus") /* SynchronizationStatus com.amazonaws.rds#GlobalClusterMember$SynchronizationStatus */ =>  {
+                let var_5 =
+                    Some(
+                        Result::<crate::types::GlobalClusterMemberSynchronizationStatus, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::GlobalClusterMemberSynchronizationStatus::from(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_synchronization_status(var_5);
+            }
+            ,
             _ => {}
         }
     }

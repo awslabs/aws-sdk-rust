@@ -9,6 +9,8 @@ Clean Rooms is an Amazon Web Services service that helps multiple parties to joi
 
 To learn more about Clean Rooms concepts, procedures, and best practices, see the [Clean Rooms User Guide](https://docs.aws.amazon.com/clean-rooms/latest/userguide/what-is.html).
 
+To learn more about SQL commands, functions, and conditions supported in Clean Rooms, see the [Clean Rooms SQL Reference](https://docs.aws.amazon.com/clean-rooms/latest/sql-reference/sql-reference.html).
+
 ## Getting Started
 
 > Examples are available for many services and operations, check out the
@@ -21,7 +23,7 @@ your project, add the following to your **Cargo.toml** file:
 ```toml
 [dependencies]
 aws-config = "0.56.1"
-aws-sdk-cleanrooms = "0.8.0"
+aws-sdk-cleanrooms = "0.8.1"
 tokio = { version = "1", features = ["full"] }
 ```
 

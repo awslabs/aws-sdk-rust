@@ -4,19 +4,25 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TrafficPattern {
-    /// <p>Defines the traffic patterns.</p>
+    /// <p>Defines the traffic patterns. Choose either <code>PHASES</code> or <code>STAIRS</code>.</p>
     pub traffic_type: ::std::option::Option<crate::types::TrafficType>,
     /// <p>Defines the phases traffic specification.</p>
     pub phases: ::std::option::Option<::std::vec::Vec<crate::types::Phase>>,
+    /// <p>Defines the stairs traffic pattern.</p>
+    pub stairs: ::std::option::Option<crate::types::Stairs>,
 }
 impl TrafficPattern {
-    /// <p>Defines the traffic patterns.</p>
+    /// <p>Defines the traffic patterns. Choose either <code>PHASES</code> or <code>STAIRS</code>.</p>
     pub fn traffic_type(&self) -> ::std::option::Option<&crate::types::TrafficType> {
         self.traffic_type.as_ref()
     }
     /// <p>Defines the phases traffic specification.</p>
     pub fn phases(&self) -> ::std::option::Option<&[crate::types::Phase]> {
         self.phases.as_deref()
+    }
+    /// <p>Defines the stairs traffic pattern.</p>
+    pub fn stairs(&self) -> ::std::option::Option<&crate::types::Stairs> {
+        self.stairs.as_ref()
     }
 }
 impl TrafficPattern {
@@ -32,19 +38,20 @@ impl TrafficPattern {
 pub struct TrafficPatternBuilder {
     pub(crate) traffic_type: ::std::option::Option<crate::types::TrafficType>,
     pub(crate) phases: ::std::option::Option<::std::vec::Vec<crate::types::Phase>>,
+    pub(crate) stairs: ::std::option::Option<crate::types::Stairs>,
 }
 impl TrafficPatternBuilder {
-    /// <p>Defines the traffic patterns.</p>
+    /// <p>Defines the traffic patterns. Choose either <code>PHASES</code> or <code>STAIRS</code>.</p>
     pub fn traffic_type(mut self, input: crate::types::TrafficType) -> Self {
         self.traffic_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Defines the traffic patterns.</p>
+    /// <p>Defines the traffic patterns. Choose either <code>PHASES</code> or <code>STAIRS</code>.</p>
     pub fn set_traffic_type(mut self, input: ::std::option::Option<crate::types::TrafficType>) -> Self {
         self.traffic_type = input;
         self
     }
-    /// <p>Defines the traffic patterns.</p>
+    /// <p>Defines the traffic patterns. Choose either <code>PHASES</code> or <code>STAIRS</code>.</p>
     pub fn get_traffic_type(&self) -> &::std::option::Option<crate::types::TrafficType> {
         &self.traffic_type
     }
@@ -68,11 +75,26 @@ impl TrafficPatternBuilder {
     pub fn get_phases(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Phase>> {
         &self.phases
     }
+    /// <p>Defines the stairs traffic pattern.</p>
+    pub fn stairs(mut self, input: crate::types::Stairs) -> Self {
+        self.stairs = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Defines the stairs traffic pattern.</p>
+    pub fn set_stairs(mut self, input: ::std::option::Option<crate::types::Stairs>) -> Self {
+        self.stairs = input;
+        self
+    }
+    /// <p>Defines the stairs traffic pattern.</p>
+    pub fn get_stairs(&self) -> &::std::option::Option<crate::types::Stairs> {
+        &self.stairs
+    }
     /// Consumes the builder and constructs a [`TrafficPattern`](crate::types::TrafficPattern).
     pub fn build(self) -> crate::types::TrafficPattern {
         crate::types::TrafficPattern {
             traffic_type: self.traffic_type,
             phases: self.phases,
+            stairs: self.stairs,
         }
     }
 }

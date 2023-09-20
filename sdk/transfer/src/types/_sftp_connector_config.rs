@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SftpConnectorConfig {
-    /// <p>The identifiers for the secrets (in Amazon Web Services Secrets Manager) that contain the SFTP user's private keys or passwords.</p>
+    /// <p>The identifier for the secret (in Amazon Web Services Secrets Manager) that contains the SFTP user's private key, password, or both. The identifier can be either the Amazon Resource Name (ARN) or the name of the secret.</p>
     pub user_secret_id: ::std::option::Option<::std::string::String>,
     /// <p>The public portion of the host key, or keys, that are used to authenticate the user to the external server to which you are connecting. You can use the <code>ssh-keyscan</code> command against the SFTP server to retrieve the necessary key.</p>
     /// <p>The three standard SSH public key format elements are <code>
@@ -18,7 +18,7 @@ pub struct SftpConnectorConfig {
     pub trusted_host_keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl SftpConnectorConfig {
-    /// <p>The identifiers for the secrets (in Amazon Web Services Secrets Manager) that contain the SFTP user's private keys or passwords.</p>
+    /// <p>The identifier for the secret (in Amazon Web Services Secrets Manager) that contains the SFTP user's private key, password, or both. The identifier can be either the Amazon Resource Name (ARN) or the name of the secret.</p>
     pub fn user_secret_id(&self) -> ::std::option::Option<&str> {
         self.user_secret_id.as_deref()
     }
@@ -50,17 +50,17 @@ pub struct SftpConnectorConfigBuilder {
     pub(crate) trusted_host_keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl SftpConnectorConfigBuilder {
-    /// <p>The identifiers for the secrets (in Amazon Web Services Secrets Manager) that contain the SFTP user's private keys or passwords.</p>
+    /// <p>The identifier for the secret (in Amazon Web Services Secrets Manager) that contains the SFTP user's private key, password, or both. The identifier can be either the Amazon Resource Name (ARN) or the name of the secret.</p>
     pub fn user_secret_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_secret_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifiers for the secrets (in Amazon Web Services Secrets Manager) that contain the SFTP user's private keys or passwords.</p>
+    /// <p>The identifier for the secret (in Amazon Web Services Secrets Manager) that contains the SFTP user's private key, password, or both. The identifier can be either the Amazon Resource Name (ARN) or the name of the secret.</p>
     pub fn set_user_secret_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_secret_id = input;
         self
     }
-    /// <p>The identifiers for the secrets (in Amazon Web Services Secrets Manager) that contain the SFTP user's private keys or passwords.</p>
+    /// <p>The identifier for the secret (in Amazon Web Services Secrets Manager) that contains the SFTP user's private key, password, or both. The identifier can be either the Amazon Resource Name (ARN) or the name of the secret.</p>
     pub fn get_user_secret_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.user_secret_id
     }

@@ -17,6 +17,20 @@ pub(crate) fn de_exceeds_limit_exception_json_err(
                             .transpose()?,
                     );
                 }
+                "quotaName" => {
+                    builder = builder.set_quota_name(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                "quotaValue" => {
+                    builder = builder.set_quota_value(
+                        ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                            .map(i32::try_from)
+                            .transpose()?,
+                    );
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

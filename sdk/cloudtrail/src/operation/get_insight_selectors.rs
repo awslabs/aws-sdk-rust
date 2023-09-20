@@ -282,6 +282,8 @@ pub enum GetInsightSelectorsError {
     NoManagementAccountSlrExistsException(crate::types::error::NoManagementAccountSlrExistsException),
     /// <p>This exception is thrown when the requested operation is not permitted.</p>
     OperationNotPermittedException(crate::types::error::OperationNotPermittedException),
+    /// <p> This exception is thrown when the request rate exceeds the limit. </p>
+    ThrottlingException(crate::types::error::ThrottlingException),
     /// <p>This exception is thrown when the trail with the given name is not found.</p>
     TrailNotFoundException(crate::types::error::TrailNotFoundException),
     /// <p>This exception is thrown when the requested operation is not supported.</p>
@@ -309,6 +311,7 @@ impl ::std::fmt::Display for GetInsightSelectorsError {
             Self::InvalidTrailNameException(_inner) => _inner.fmt(f),
             Self::NoManagementAccountSlrExistsException(_inner) => _inner.fmt(f),
             Self::OperationNotPermittedException(_inner) => _inner.fmt(f),
+            Self::ThrottlingException(_inner) => _inner.fmt(f),
             Self::TrailNotFoundException(_inner) => _inner.fmt(f),
             Self::UnsupportedOperationException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => _inner.fmt(f),
@@ -323,6 +326,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for GetInsightSel
             Self::InvalidTrailNameException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::NoManagementAccountSlrExistsException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::OperationNotPermittedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ThrottlingException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::TrailNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::UnsupportedOperationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
@@ -366,6 +370,7 @@ impl GetInsightSelectorsError {
             Self::InvalidTrailNameException(e) => e.meta(),
             Self::NoManagementAccountSlrExistsException(e) => e.meta(),
             Self::OperationNotPermittedException(e) => e.meta(),
+            Self::ThrottlingException(e) => e.meta(),
             Self::TrailNotFoundException(e) => e.meta(),
             Self::UnsupportedOperationException(e) => e.meta(),
             Self::Unhandled(e) => e.meta(),
@@ -391,6 +396,10 @@ impl GetInsightSelectorsError {
     pub fn is_operation_not_permitted_exception(&self) -> bool {
         matches!(self, Self::OperationNotPermittedException(_))
     }
+    /// Returns `true` if the error kind is `GetInsightSelectorsError::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(self, Self::ThrottlingException(_))
+    }
     /// Returns `true` if the error kind is `GetInsightSelectorsError::TrailNotFoundException`.
     pub fn is_trail_not_found_exception(&self) -> bool {
         matches!(self, Self::TrailNotFoundException(_))
@@ -408,6 +417,7 @@ impl ::std::error::Error for GetInsightSelectorsError {
             Self::InvalidTrailNameException(_inner) => ::std::option::Option::Some(_inner),
             Self::NoManagementAccountSlrExistsException(_inner) => ::std::option::Option::Some(_inner),
             Self::OperationNotPermittedException(_inner) => ::std::option::Option::Some(_inner),
+            Self::ThrottlingException(_inner) => ::std::option::Option::Some(_inner),
             Self::TrailNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::UnsupportedOperationException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(_inner),

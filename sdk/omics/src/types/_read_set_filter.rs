@@ -20,6 +20,8 @@ pub struct ReadSetFilter {
     pub subject_id: ::std::option::Option<::std::string::String>,
     /// <p> Where the source originated. </p>
     pub generated_from: ::std::option::Option<::std::string::String>,
+    /// <p> The creation type of the read set. </p>
+    pub creation_type: ::std::option::Option<crate::types::CreationType>,
 }
 impl ReadSetFilter {
     /// <p>A name to filter on.</p>
@@ -54,6 +56,10 @@ impl ReadSetFilter {
     pub fn generated_from(&self) -> ::std::option::Option<&str> {
         self.generated_from.as_deref()
     }
+    /// <p> The creation type of the read set. </p>
+    pub fn creation_type(&self) -> ::std::option::Option<&crate::types::CreationType> {
+        self.creation_type.as_ref()
+    }
 }
 impl ReadSetFilter {
     /// Creates a new builder-style object to manufacture [`ReadSetFilter`](crate::types::ReadSetFilter).
@@ -74,6 +80,7 @@ pub struct ReadSetFilterBuilder {
     pub(crate) sample_id: ::std::option::Option<::std::string::String>,
     pub(crate) subject_id: ::std::option::Option<::std::string::String>,
     pub(crate) generated_from: ::std::option::Option<::std::string::String>,
+    pub(crate) creation_type: ::std::option::Option<crate::types::CreationType>,
 }
 impl ReadSetFilterBuilder {
     /// <p>A name to filter on.</p>
@@ -188,6 +195,20 @@ impl ReadSetFilterBuilder {
     pub fn get_generated_from(&self) -> &::std::option::Option<::std::string::String> {
         &self.generated_from
     }
+    /// <p> The creation type of the read set. </p>
+    pub fn creation_type(mut self, input: crate::types::CreationType) -> Self {
+        self.creation_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p> The creation type of the read set. </p>
+    pub fn set_creation_type(mut self, input: ::std::option::Option<crate::types::CreationType>) -> Self {
+        self.creation_type = input;
+        self
+    }
+    /// <p> The creation type of the read set. </p>
+    pub fn get_creation_type(&self) -> &::std::option::Option<crate::types::CreationType> {
+        &self.creation_type
+    }
     /// Consumes the builder and constructs a [`ReadSetFilter`](crate::types::ReadSetFilter).
     pub fn build(self) -> crate::types::ReadSetFilter {
         crate::types::ReadSetFilter {
@@ -199,6 +220,7 @@ impl ReadSetFilterBuilder {
             sample_id: self.sample_id,
             subject_id: self.subject_id,
             generated_from: self.generated_from,
+            creation_type: self.creation_type,
         }
     }
 }

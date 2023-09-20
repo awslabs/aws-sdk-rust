@@ -4,79 +4,103 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct App {
-    /// <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+    /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
     pub app_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The name for the application.</p>
+    /// <p>Name for the application.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>The optional description for an app.</p>
+    /// <p>Optional description for an application.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+    /// <p>Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
     pub policy_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The timestamp for when the app was created.</p>
+    /// <p>Timestamp for when the app was created.</p>
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The status of the application.</p>
+    /// <p>Status of the application.</p>
     pub status: ::std::option::Option<crate::types::AppStatusType>,
-    /// <p>The current status of compliance for the resiliency policy.</p>
+    /// <p>Current status of compliance for the resiliency policy.</p>
     pub compliance_status: ::std::option::Option<crate::types::AppComplianceStatusType>,
-    /// <p>The timestamp for the most recent compliance evaluation.</p>
+    /// <p>Timestamp for the most recent compliance evaluation.</p>
     pub last_app_compliance_evaluation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The current resiliency score for the application.</p>
+    /// <p>Current resiliency score for the application.</p>
     pub resiliency_score: f64,
-    /// <p>The timestamp for the most recent resiliency score evaluation.</p>
+    /// <p>Timestamp for the most recent resiliency score evaluation.</p>
     pub last_resiliency_score_evaluation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key/value pair.</p>
+    /// <p>Tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key/value pair.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    /// <p> Assessment execution schedule with 'Daily' or 'Disabled' values. </p>
+    /// <p>Assessment execution schedule with 'Daily' or 'Disabled' values. </p>
     pub assessment_schedule: ::std::option::Option<crate::types::AppAssessmentScheduleType>,
+    /// <p>Defines the roles and credentials that Resilience Hub would use while creating the application, importing its resources, and running an assessment.</p>
+    pub permission_model: ::std::option::Option<crate::types::PermissionModel>,
+    /// <p>The list of events you would like to subscribe and get notification for. Currently, Resilience Hub supports notifications only for <b>Drift detected</b> and <b>Scheduled assessment failure</b> events.</p>
+    pub event_subscriptions: ::std::option::Option<::std::vec::Vec<crate::types::EventSubscription>>,
+    /// <p>Indicates if compliance drifts (deviations) were detected while running an assessment for your application.</p>
+    pub drift_status: ::std::option::Option<crate::types::AppDriftStatusType>,
+    /// <p>Indicates the last time that a drift was evaluated.</p>
+    pub last_drift_evaluation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl App {
-    /// <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+    /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
     pub fn app_arn(&self) -> ::std::option::Option<&str> {
         self.app_arn.as_deref()
     }
-    /// <p>The name for the application.</p>
+    /// <p>Name for the application.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The optional description for an app.</p>
+    /// <p>Optional description for an application.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+    /// <p>Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
     pub fn policy_arn(&self) -> ::std::option::Option<&str> {
         self.policy_arn.as_deref()
     }
-    /// <p>The timestamp for when the app was created.</p>
+    /// <p>Timestamp for when the app was created.</p>
     pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
-    /// <p>The status of the application.</p>
+    /// <p>Status of the application.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::AppStatusType> {
         self.status.as_ref()
     }
-    /// <p>The current status of compliance for the resiliency policy.</p>
+    /// <p>Current status of compliance for the resiliency policy.</p>
     pub fn compliance_status(&self) -> ::std::option::Option<&crate::types::AppComplianceStatusType> {
         self.compliance_status.as_ref()
     }
-    /// <p>The timestamp for the most recent compliance evaluation.</p>
+    /// <p>Timestamp for the most recent compliance evaluation.</p>
     pub fn last_app_compliance_evaluation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_app_compliance_evaluation_time.as_ref()
     }
-    /// <p>The current resiliency score for the application.</p>
+    /// <p>Current resiliency score for the application.</p>
     pub fn resiliency_score(&self) -> f64 {
         self.resiliency_score
     }
-    /// <p>The timestamp for the most recent resiliency score evaluation.</p>
+    /// <p>Timestamp for the most recent resiliency score evaluation.</p>
     pub fn last_resiliency_score_evaluation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_resiliency_score_evaluation_time.as_ref()
     }
-    /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key/value pair.</p>
+    /// <p>Tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key/value pair.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
-    /// <p> Assessment execution schedule with 'Daily' or 'Disabled' values. </p>
+    /// <p>Assessment execution schedule with 'Daily' or 'Disabled' values. </p>
     pub fn assessment_schedule(&self) -> ::std::option::Option<&crate::types::AppAssessmentScheduleType> {
         self.assessment_schedule.as_ref()
+    }
+    /// <p>Defines the roles and credentials that Resilience Hub would use while creating the application, importing its resources, and running an assessment.</p>
+    pub fn permission_model(&self) -> ::std::option::Option<&crate::types::PermissionModel> {
+        self.permission_model.as_ref()
+    }
+    /// <p>The list of events you would like to subscribe and get notification for. Currently, Resilience Hub supports notifications only for <b>Drift detected</b> and <b>Scheduled assessment failure</b> events.</p>
+    pub fn event_subscriptions(&self) -> ::std::option::Option<&[crate::types::EventSubscription]> {
+        self.event_subscriptions.as_deref()
+    }
+    /// <p>Indicates if compliance drifts (deviations) were detected while running an assessment for your application.</p>
+    pub fn drift_status(&self) -> ::std::option::Option<&crate::types::AppDriftStatusType> {
+        self.drift_status.as_ref()
+    }
+    /// <p>Indicates the last time that a drift was evaluated.</p>
+    pub fn last_drift_evaluation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.last_drift_evaluation_time.as_ref()
     }
 }
 impl ::std::fmt::Debug for App {
@@ -94,6 +118,10 @@ impl ::std::fmt::Debug for App {
         formatter.field("last_resiliency_score_evaluation_time", &self.last_resiliency_score_evaluation_time);
         formatter.field("tags", &"*** Sensitive Data Redacted ***");
         formatter.field("assessment_schedule", &self.assessment_schedule);
+        formatter.field("permission_model", &self.permission_model);
+        formatter.field("event_subscriptions", &self.event_subscriptions);
+        formatter.field("drift_status", &self.drift_status);
+        formatter.field("last_drift_evaluation_time", &self.last_drift_evaluation_time);
         formatter.finish()
     }
 }
@@ -120,145 +148,149 @@ pub struct AppBuilder {
     pub(crate) last_resiliency_score_evaluation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) assessment_schedule: ::std::option::Option<crate::types::AppAssessmentScheduleType>,
+    pub(crate) permission_model: ::std::option::Option<crate::types::PermissionModel>,
+    pub(crate) event_subscriptions: ::std::option::Option<::std::vec::Vec<crate::types::EventSubscription>>,
+    pub(crate) drift_status: ::std::option::Option<crate::types::AppDriftStatusType>,
+    pub(crate) last_drift_evaluation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl AppBuilder {
-    /// <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+    /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
     pub fn app_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+    /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
     pub fn set_app_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.app_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+    /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
     pub fn get_app_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.app_arn
     }
-    /// <p>The name for the application.</p>
+    /// <p>Name for the application.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name for the application.</p>
+    /// <p>Name for the application.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>The name for the application.</p>
+    /// <p>Name for the application.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>The optional description for an app.</p>
+    /// <p>Optional description for an application.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The optional description for an app.</p>
+    /// <p>Optional description for an application.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
-    /// <p>The optional description for an app.</p>
+    /// <p>Optional description for an application.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
-    /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+    /// <p>Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
     pub fn policy_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+    /// <p>Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
     pub fn set_policy_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+    /// <p>Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
     pub fn get_policy_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.policy_arn
     }
-    /// <p>The timestamp for when the app was created.</p>
+    /// <p>Timestamp for when the app was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The timestamp for when the app was created.</p>
+    /// <p>Timestamp for when the app was created.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
-    /// <p>The timestamp for when the app was created.</p>
+    /// <p>Timestamp for when the app was created.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.creation_time
     }
-    /// <p>The status of the application.</p>
+    /// <p>Status of the application.</p>
     pub fn status(mut self, input: crate::types::AppStatusType) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The status of the application.</p>
+    /// <p>Status of the application.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::AppStatusType>) -> Self {
         self.status = input;
         self
     }
-    /// <p>The status of the application.</p>
+    /// <p>Status of the application.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::AppStatusType> {
         &self.status
     }
-    /// <p>The current status of compliance for the resiliency policy.</p>
+    /// <p>Current status of compliance for the resiliency policy.</p>
     pub fn compliance_status(mut self, input: crate::types::AppComplianceStatusType) -> Self {
         self.compliance_status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The current status of compliance for the resiliency policy.</p>
+    /// <p>Current status of compliance for the resiliency policy.</p>
     pub fn set_compliance_status(mut self, input: ::std::option::Option<crate::types::AppComplianceStatusType>) -> Self {
         self.compliance_status = input;
         self
     }
-    /// <p>The current status of compliance for the resiliency policy.</p>
+    /// <p>Current status of compliance for the resiliency policy.</p>
     pub fn get_compliance_status(&self) -> &::std::option::Option<crate::types::AppComplianceStatusType> {
         &self.compliance_status
     }
-    /// <p>The timestamp for the most recent compliance evaluation.</p>
+    /// <p>Timestamp for the most recent compliance evaluation.</p>
     pub fn last_app_compliance_evaluation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_app_compliance_evaluation_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The timestamp for the most recent compliance evaluation.</p>
+    /// <p>Timestamp for the most recent compliance evaluation.</p>
     pub fn set_last_app_compliance_evaluation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_app_compliance_evaluation_time = input;
         self
     }
-    /// <p>The timestamp for the most recent compliance evaluation.</p>
+    /// <p>Timestamp for the most recent compliance evaluation.</p>
     pub fn get_last_app_compliance_evaluation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_app_compliance_evaluation_time
     }
-    /// <p>The current resiliency score for the application.</p>
+    /// <p>Current resiliency score for the application.</p>
     pub fn resiliency_score(mut self, input: f64) -> Self {
         self.resiliency_score = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The current resiliency score for the application.</p>
+    /// <p>Current resiliency score for the application.</p>
     pub fn set_resiliency_score(mut self, input: ::std::option::Option<f64>) -> Self {
         self.resiliency_score = input;
         self
     }
-    /// <p>The current resiliency score for the application.</p>
+    /// <p>Current resiliency score for the application.</p>
     pub fn get_resiliency_score(&self) -> &::std::option::Option<f64> {
         &self.resiliency_score
     }
-    /// <p>The timestamp for the most recent resiliency score evaluation.</p>
+    /// <p>Timestamp for the most recent resiliency score evaluation.</p>
     pub fn last_resiliency_score_evaluation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_resiliency_score_evaluation_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The timestamp for the most recent resiliency score evaluation.</p>
+    /// <p>Timestamp for the most recent resiliency score evaluation.</p>
     pub fn set_last_resiliency_score_evaluation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_resiliency_score_evaluation_time = input;
         self
     }
-    /// <p>The timestamp for the most recent resiliency score evaluation.</p>
+    /// <p>Timestamp for the most recent resiliency score evaluation.</p>
     pub fn get_last_resiliency_score_evaluation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_resiliency_score_evaluation_time
     }
@@ -266,35 +298,97 @@ impl AppBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key/value pair.</p>
+    /// <p>Tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key/value pair.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key/value pair.</p>
+    /// <p>Tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key/value pair.</p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
-    /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key/value pair.</p>
+    /// <p>Tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key/value pair.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
-    /// <p> Assessment execution schedule with 'Daily' or 'Disabled' values. </p>
+    /// <p>Assessment execution schedule with 'Daily' or 'Disabled' values. </p>
     pub fn assessment_schedule(mut self, input: crate::types::AppAssessmentScheduleType) -> Self {
         self.assessment_schedule = ::std::option::Option::Some(input);
         self
     }
-    /// <p> Assessment execution schedule with 'Daily' or 'Disabled' values. </p>
+    /// <p>Assessment execution schedule with 'Daily' or 'Disabled' values. </p>
     pub fn set_assessment_schedule(mut self, input: ::std::option::Option<crate::types::AppAssessmentScheduleType>) -> Self {
         self.assessment_schedule = input;
         self
     }
-    /// <p> Assessment execution schedule with 'Daily' or 'Disabled' values. </p>
+    /// <p>Assessment execution schedule with 'Daily' or 'Disabled' values. </p>
     pub fn get_assessment_schedule(&self) -> &::std::option::Option<crate::types::AppAssessmentScheduleType> {
         &self.assessment_schedule
+    }
+    /// <p>Defines the roles and credentials that Resilience Hub would use while creating the application, importing its resources, and running an assessment.</p>
+    pub fn permission_model(mut self, input: crate::types::PermissionModel) -> Self {
+        self.permission_model = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Defines the roles and credentials that Resilience Hub would use while creating the application, importing its resources, and running an assessment.</p>
+    pub fn set_permission_model(mut self, input: ::std::option::Option<crate::types::PermissionModel>) -> Self {
+        self.permission_model = input;
+        self
+    }
+    /// <p>Defines the roles and credentials that Resilience Hub would use while creating the application, importing its resources, and running an assessment.</p>
+    pub fn get_permission_model(&self) -> &::std::option::Option<crate::types::PermissionModel> {
+        &self.permission_model
+    }
+    /// Appends an item to `event_subscriptions`.
+    ///
+    /// To override the contents of this collection use [`set_event_subscriptions`](Self::set_event_subscriptions).
+    ///
+    /// <p>The list of events you would like to subscribe and get notification for. Currently, Resilience Hub supports notifications only for <b>Drift detected</b> and <b>Scheduled assessment failure</b> events.</p>
+    pub fn event_subscriptions(mut self, input: crate::types::EventSubscription) -> Self {
+        let mut v = self.event_subscriptions.unwrap_or_default();
+        v.push(input);
+        self.event_subscriptions = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The list of events you would like to subscribe and get notification for. Currently, Resilience Hub supports notifications only for <b>Drift detected</b> and <b>Scheduled assessment failure</b> events.</p>
+    pub fn set_event_subscriptions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EventSubscription>>) -> Self {
+        self.event_subscriptions = input;
+        self
+    }
+    /// <p>The list of events you would like to subscribe and get notification for. Currently, Resilience Hub supports notifications only for <b>Drift detected</b> and <b>Scheduled assessment failure</b> events.</p>
+    pub fn get_event_subscriptions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EventSubscription>> {
+        &self.event_subscriptions
+    }
+    /// <p>Indicates if compliance drifts (deviations) were detected while running an assessment for your application.</p>
+    pub fn drift_status(mut self, input: crate::types::AppDriftStatusType) -> Self {
+        self.drift_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates if compliance drifts (deviations) were detected while running an assessment for your application.</p>
+    pub fn set_drift_status(mut self, input: ::std::option::Option<crate::types::AppDriftStatusType>) -> Self {
+        self.drift_status = input;
+        self
+    }
+    /// <p>Indicates if compliance drifts (deviations) were detected while running an assessment for your application.</p>
+    pub fn get_drift_status(&self) -> &::std::option::Option<crate::types::AppDriftStatusType> {
+        &self.drift_status
+    }
+    /// <p>Indicates the last time that a drift was evaluated.</p>
+    pub fn last_drift_evaluation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_drift_evaluation_time = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates the last time that a drift was evaluated.</p>
+    pub fn set_last_drift_evaluation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.last_drift_evaluation_time = input;
+        self
+    }
+    /// <p>Indicates the last time that a drift was evaluated.</p>
+    pub fn get_last_drift_evaluation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_drift_evaluation_time
     }
     /// Consumes the builder and constructs a [`App`](crate::types::App).
     pub fn build(self) -> crate::types::App {
@@ -311,6 +405,10 @@ impl AppBuilder {
             last_resiliency_score_evaluation_time: self.last_resiliency_score_evaluation_time,
             tags: self.tags,
             assessment_schedule: self.assessment_schedule,
+            permission_model: self.permission_model,
+            event_subscriptions: self.event_subscriptions,
+            drift_status: self.drift_status,
+            last_drift_evaluation_time: self.last_drift_evaluation_time,
         }
     }
 }
@@ -329,6 +427,10 @@ impl ::std::fmt::Debug for AppBuilder {
         formatter.field("last_resiliency_score_evaluation_time", &self.last_resiliency_score_evaluation_time);
         formatter.field("tags", &"*** Sensitive Data Redacted ***");
         formatter.field("assessment_schedule", &self.assessment_schedule);
+        formatter.field("permission_model", &self.permission_model);
+        formatter.field("event_subscriptions", &self.event_subscriptions);
+        formatter.field("drift_status", &self.drift_status);
+        formatter.field("last_drift_evaluation_time", &self.last_drift_evaluation_time);
         formatter.finish()
     }
 }

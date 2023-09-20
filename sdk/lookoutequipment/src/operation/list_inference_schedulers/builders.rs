@@ -158,31 +158,31 @@ impl ListInferenceSchedulersFluentBuilder {
     pub fn get_inference_scheduler_name_begins_with(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_inference_scheduler_name_begins_with()
     }
-    /// <p>The name of the ML model used by the inference scheduler to be listed. </p>
+    /// <p>The name of the machine learning model used by the inference scheduler to be listed. </p>
     pub fn model_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.model_name(input.into());
         self
     }
-    /// <p>The name of the ML model used by the inference scheduler to be listed. </p>
+    /// <p>The name of the machine learning model used by the inference scheduler to be listed. </p>
     pub fn set_model_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_model_name(input);
         self
     }
-    /// <p>The name of the ML model used by the inference scheduler to be listed. </p>
+    /// <p>The name of the machine learning model used by the inference scheduler to be listed. </p>
     pub fn get_model_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_model_name()
     }
-    /// <p>Specifies the current status of the inference schedulers to list.</p>
+    /// <p>Specifies the current status of the inference schedulers.</p>
     pub fn status(mut self, input: crate::types::InferenceSchedulerStatus) -> Self {
         self.inner = self.inner.status(input);
         self
     }
-    /// <p>Specifies the current status of the inference schedulers to list.</p>
+    /// <p>Specifies the current status of the inference schedulers.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::InferenceSchedulerStatus>) -> Self {
         self.inner = self.inner.set_status(input);
         self
     }
-    /// <p>Specifies the current status of the inference schedulers to list.</p>
+    /// <p>Specifies the current status of the inference schedulers.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::InferenceSchedulerStatus> {
         self.inner.get_status()
     }

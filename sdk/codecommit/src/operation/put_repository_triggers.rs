@@ -285,7 +285,7 @@ pub enum PutRepositoryTriggersError {
     InvalidRepositoryTriggerEventsException(crate::types::error::InvalidRepositoryTriggerEventsException),
     /// <p>The name of the trigger is not valid.</p>
     InvalidRepositoryTriggerNameException(crate::types::error::InvalidRepositoryTriggerNameException),
-    /// <p>The AWS Region for the trigger target does not match the AWS Region for the repository. Triggers must be created in the same Region as the target for the trigger.</p>
+    /// <p>The Amazon Web Services Region for the trigger target does not match the Amazon Web Services Region for the repository. Triggers must be created in the same Amazon Web Services Region as the target for the trigger.</p>
     InvalidRepositoryTriggerRegionException(crate::types::error::InvalidRepositoryTriggerRegionException),
     /// <p>The number of branches for the trigger was exceeded.</p>
     MaximumBranchesExceededException(crate::types::error::MaximumBranchesExceededException),

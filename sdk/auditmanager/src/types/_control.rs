@@ -2,7 +2,7 @@
 
 /// <p> A control in Audit Manager. </p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct Control {
     /// <p> The Amazon Resource Name (ARN) of the control. </p>
     pub arn: ::std::option::Option<::std::string::String>,
@@ -97,6 +97,27 @@ impl Control {
         self.tags.as_ref()
     }
 }
+impl ::std::fmt::Debug for Control {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("Control");
+        formatter.field("arn", &self.arn);
+        formatter.field("id", &self.id);
+        formatter.field("r#type", &self.r#type);
+        formatter.field("name", &self.name);
+        formatter.field("description", &self.description);
+        formatter.field("testing_information", &"*** Sensitive Data Redacted ***");
+        formatter.field("action_plan_title", &"*** Sensitive Data Redacted ***");
+        formatter.field("action_plan_instructions", &"*** Sensitive Data Redacted ***");
+        formatter.field("control_sources", &self.control_sources);
+        formatter.field("control_mapping_sources", &self.control_mapping_sources);
+        formatter.field("created_at", &self.created_at);
+        formatter.field("last_updated_at", &self.last_updated_at);
+        formatter.field("created_by", &"*** Sensitive Data Redacted ***");
+        formatter.field("last_updated_by", &"*** Sensitive Data Redacted ***");
+        formatter.field("tags", &self.tags);
+        formatter.finish()
+    }
+}
 impl Control {
     /// Creates a new builder-style object to manufacture [`Control`](crate::types::Control).
     pub fn builder() -> crate::types::builders::ControlBuilder {
@@ -106,7 +127,7 @@ impl Control {
 
 /// A builder for [`Control`](crate::types::Control).
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct ControlBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
@@ -366,5 +387,26 @@ impl ControlBuilder {
             last_updated_by: self.last_updated_by,
             tags: self.tags,
         }
+    }
+}
+impl ::std::fmt::Debug for ControlBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("ControlBuilder");
+        formatter.field("arn", &self.arn);
+        formatter.field("id", &self.id);
+        formatter.field("r#type", &self.r#type);
+        formatter.field("name", &self.name);
+        formatter.field("description", &self.description);
+        formatter.field("testing_information", &"*** Sensitive Data Redacted ***");
+        formatter.field("action_plan_title", &"*** Sensitive Data Redacted ***");
+        formatter.field("action_plan_instructions", &"*** Sensitive Data Redacted ***");
+        formatter.field("control_sources", &self.control_sources);
+        formatter.field("control_mapping_sources", &self.control_mapping_sources);
+        formatter.field("created_at", &self.created_at);
+        formatter.field("last_updated_at", &self.last_updated_at);
+        formatter.field("created_by", &"*** Sensitive Data Redacted ***");
+        formatter.field("last_updated_by", &"*** Sensitive Data Redacted ***");
+        formatter.field("tags", &self.tags);
+        formatter.finish()
     }
 }

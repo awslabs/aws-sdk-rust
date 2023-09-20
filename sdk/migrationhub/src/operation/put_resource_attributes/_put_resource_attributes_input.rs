@@ -17,7 +17,7 @@ pub struct PutResourceAttributesInput {
     /// </important>
     pub resource_attribute_list: ::std::option::Option<::std::vec::Vec<crate::types::ResourceAttribute>>,
     /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
-    pub dry_run: bool,
+    pub dry_run: ::std::option::Option<bool>,
 }
 impl PutResourceAttributesInput {
     /// <p>The name of the ProgressUpdateStream. </p>
@@ -40,7 +40,7 @@ impl PutResourceAttributesInput {
         self.resource_attribute_list.as_deref()
     }
     /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
-    pub fn dry_run(&self) -> bool {
+    pub fn dry_run(&self) -> ::std::option::Option<bool> {
         self.dry_run
     }
 }
@@ -153,7 +153,7 @@ impl PutResourceAttributesInputBuilder {
             progress_update_stream: self.progress_update_stream,
             migration_task_name: self.migration_task_name,
             resource_attribute_list: self.resource_attribute_list,
-            dry_run: self.dry_run.unwrap_or_default(),
+            dry_run: self.dry_run,
         })
     }
 }

@@ -10,6 +10,8 @@ pub struct ParticipatingServer {
     pub recovery_instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The launch status of a participating server.</p>
     pub launch_status: ::std::option::Option<crate::types::LaunchStatus>,
+    /// <p>The post-launch action runs of a participating server.</p>
+    pub launch_actions_status: ::std::option::Option<crate::types::LaunchActionsStatus>,
 }
 impl ParticipatingServer {
     /// <p>The Source Server ID of a participating server.</p>
@@ -23,6 +25,10 @@ impl ParticipatingServer {
     /// <p>The launch status of a participating server.</p>
     pub fn launch_status(&self) -> ::std::option::Option<&crate::types::LaunchStatus> {
         self.launch_status.as_ref()
+    }
+    /// <p>The post-launch action runs of a participating server.</p>
+    pub fn launch_actions_status(&self) -> ::std::option::Option<&crate::types::LaunchActionsStatus> {
+        self.launch_actions_status.as_ref()
     }
 }
 impl ParticipatingServer {
@@ -39,6 +45,7 @@ pub struct ParticipatingServerBuilder {
     pub(crate) source_server_id: ::std::option::Option<::std::string::String>,
     pub(crate) recovery_instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) launch_status: ::std::option::Option<crate::types::LaunchStatus>,
+    pub(crate) launch_actions_status: ::std::option::Option<crate::types::LaunchActionsStatus>,
 }
 impl ParticipatingServerBuilder {
     /// <p>The Source Server ID of a participating server.</p>
@@ -83,12 +90,27 @@ impl ParticipatingServerBuilder {
     pub fn get_launch_status(&self) -> &::std::option::Option<crate::types::LaunchStatus> {
         &self.launch_status
     }
+    /// <p>The post-launch action runs of a participating server.</p>
+    pub fn launch_actions_status(mut self, input: crate::types::LaunchActionsStatus) -> Self {
+        self.launch_actions_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The post-launch action runs of a participating server.</p>
+    pub fn set_launch_actions_status(mut self, input: ::std::option::Option<crate::types::LaunchActionsStatus>) -> Self {
+        self.launch_actions_status = input;
+        self
+    }
+    /// <p>The post-launch action runs of a participating server.</p>
+    pub fn get_launch_actions_status(&self) -> &::std::option::Option<crate::types::LaunchActionsStatus> {
+        &self.launch_actions_status
+    }
     /// Consumes the builder and constructs a [`ParticipatingServer`](crate::types::ParticipatingServer).
     pub fn build(self) -> crate::types::ParticipatingServer {
         crate::types::ParticipatingServer {
             source_server_id: self.source_server_id,
             recovery_instance_id: self.recovery_instance_id,
             launch_status: self.launch_status,
+            launch_actions_status: self.launch_actions_status,
         }
     }
 }

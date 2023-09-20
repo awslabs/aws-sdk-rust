@@ -31,51 +31,54 @@ pub fn ser_gcm_message(
     if let Some(var_10) = &input.image_url {
         object.key("ImageUrl").string(var_10.as_str());
     }
-    if let Some(var_11) = &input.priority {
-        object.key("Priority").string(var_11.as_str());
+    if let Some(var_11) = &input.preferred_authentication_method {
+        object.key("PreferredAuthenticationMethod").string(var_11.as_str());
     }
-    if let Some(var_12) = &input.raw_content {
-        object.key("RawContent").string(var_12.as_str());
+    if let Some(var_12) = &input.priority {
+        object.key("Priority").string(var_12.as_str());
     }
-    if let Some(var_13) = &input.restricted_package_name {
-        object.key("RestrictedPackageName").string(var_13.as_str());
+    if let Some(var_13) = &input.raw_content {
+        object.key("RawContent").string(var_13.as_str());
     }
-    if let Some(var_14) = &input.silent_push {
-        object.key("SilentPush").boolean(*var_14);
+    if let Some(var_14) = &input.restricted_package_name {
+        object.key("RestrictedPackageName").string(var_14.as_str());
     }
-    if let Some(var_15) = &input.small_image_icon_url {
-        object.key("SmallImageIconUrl").string(var_15.as_str());
+    if let Some(var_15) = &input.silent_push {
+        object.key("SilentPush").boolean(*var_15);
     }
-    if let Some(var_16) = &input.sound {
-        object.key("Sound").string(var_16.as_str());
+    if let Some(var_16) = &input.small_image_icon_url {
+        object.key("SmallImageIconUrl").string(var_16.as_str());
     }
-    if let Some(var_17) = &input.substitutions {
+    if let Some(var_17) = &input.sound {
+        object.key("Sound").string(var_17.as_str());
+    }
+    if let Some(var_18) = &input.substitutions {
         #[allow(unused_mut)]
-        let mut object_18 = object.key("Substitutions").start_object();
-        for (key_19, value_20) in var_17 {
+        let mut object_19 = object.key("Substitutions").start_object();
+        for (key_20, value_21) in var_18 {
             {
-                let mut array_21 = object_18.key(key_19.as_str()).start_array();
-                for item_22 in value_20 {
+                let mut array_22 = object_19.key(key_20.as_str()).start_array();
+                for item_23 in value_21 {
                     {
-                        array_21.value().string(item_22.as_str());
+                        array_22.value().string(item_23.as_str());
                     }
                 }
-                array_21.finish();
+                array_22.finish();
             }
         }
-        object_18.finish();
+        object_19.finish();
     }
-    if let Some(var_23) = &input.time_to_live {
+    if let Some(var_24) = &input.time_to_live {
         object.key("TimeToLive").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_23).into()),
+            ::aws_smithy_types::Number::NegInt((*var_24).into()),
         );
     }
-    if let Some(var_24) = &input.title {
-        object.key("Title").string(var_24.as_str());
+    if let Some(var_25) = &input.title {
+        object.key("Title").string(var_25.as_str());
     }
-    if let Some(var_25) = &input.url {
-        object.key("Url").string(var_25.as_str());
+    if let Some(var_26) = &input.url {
+        object.key("Url").string(var_26.as_str());
     }
     Ok(())
 }

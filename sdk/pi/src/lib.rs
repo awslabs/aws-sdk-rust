@@ -36,7 +36,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = "0.56.1"
-//! aws-sdk-pi = "0.31.0"
+//! aws-sdk-pi = "0.31.1"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
@@ -153,13 +153,13 @@ pub use config::Config;
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`DescribeDimensionKeys`](crate::operation::describe_dimension_keys) operation has
-/// a [`Client::describe_dimension_keys`], function which returns a builder for that operation.
+/// For example, the [`CreatePerformanceAnalysisReport`](crate::operation::create_performance_analysis_report) operation has
+/// a [`Client::create_performance_analysis_report`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.describe_dimension_keys()
+/// let result = client.create_performance_analysis_report()
 ///     .service_type("example")
 ///     .send()
 ///     .await;

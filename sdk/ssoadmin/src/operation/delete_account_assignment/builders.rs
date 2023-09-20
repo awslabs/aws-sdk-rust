@@ -22,8 +22,8 @@ impl DeleteAccountAssignmentInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteAccountAssignment`.
 ///
-/// <p>Deletes a principal's access from a specified AWS account using a specified permission set.</p> <note>
-/// <p>After a successful response, call <code>DescribeAccountAssignmentCreationStatus</code> to describe the status of an assignment deletion request.</p>
+/// <p>Deletes a principal's access from a specified Amazon Web Services account using a specified permission set.</p> <note>
+/// <p>After a successful response, call <code>DescribeAccountAssignmentDeletionStatus</code> to describe the status of an assignment deletion request.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteAccountAssignmentFluentBuilder {
@@ -112,31 +112,31 @@ impl DeleteAccountAssignmentFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
+    /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub fn instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.instance_arn(input.into());
         self
     }
-    /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
+    /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub fn set_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_instance_arn(input);
         self
     }
-    /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
+    /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub fn get_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_instance_arn()
     }
-    /// <p>TargetID is an AWS account identifier, typically a 10-12 digit string (For example, 123456789012).</p>
+    /// <p>TargetID is an Amazon Web Services account identifier, (For example, 123456789012).</p>
     pub fn target_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.target_id(input.into());
         self
     }
-    /// <p>TargetID is an AWS account identifier, typically a 10-12 digit string (For example, 123456789012).</p>
+    /// <p>TargetID is an Amazon Web Services account identifier, (For example, 123456789012).</p>
     pub fn set_target_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_target_id(input);
         self
     }
-    /// <p>TargetID is an AWS account identifier, typically a 10-12 digit string (For example, 123456789012).</p>
+    /// <p>TargetID is an Amazon Web Services account identifier, (For example, 123456789012).</p>
     pub fn get_target_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_target_id()
     }

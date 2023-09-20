@@ -125,17 +125,17 @@ impl CreateParticipantConnectionFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_type`](Self::set_type).
     ///
-    /// <p>Type of connection information required. This can be omitted if <code>ConnectParticipant</code> is <code>true</code>.</p>
+    /// <p>Type of connection information required. If you need <code>CONNECTION_CREDENTIALS</code> along with marking participant as connected, pass <code>CONNECTION_CREDENTIALS</code> in <code>Type</code>.</p>
     pub fn r#type(mut self, input: crate::types::ConnectionType) -> Self {
         self.inner = self.inner.r#type(input);
         self
     }
-    /// <p>Type of connection information required. This can be omitted if <code>ConnectParticipant</code> is <code>true</code>.</p>
+    /// <p>Type of connection information required. If you need <code>CONNECTION_CREDENTIALS</code> along with marking participant as connected, pass <code>CONNECTION_CREDENTIALS</code> in <code>Type</code>.</p>
     pub fn set_type(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ConnectionType>>) -> Self {
         self.inner = self.inner.set_type(input);
         self
     }
-    /// <p>Type of connection information required. This can be omitted if <code>ConnectParticipant</code> is <code>true</code>.</p>
+    /// <p>Type of connection information required. If you need <code>CONNECTION_CREDENTIALS</code> along with marking participant as connected, pass <code>CONNECTION_CREDENTIALS</code> in <code>Type</code>.</p>
     pub fn get_type(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ConnectionType>> {
         self.inner.get_type()
     }

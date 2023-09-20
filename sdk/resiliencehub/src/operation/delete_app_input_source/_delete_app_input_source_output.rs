@@ -3,18 +3,18 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteAppInputSourceOutput {
-    /// <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+    /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
     pub app_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The name of the input source from where the application resource is imported from.</p>
+    /// <p>Name of the input source from where the application resource is imported from.</p>
     pub app_input_source: ::std::option::Option<crate::types::AppInputSource>,
     _request_id: Option<String>,
 }
 impl DeleteAppInputSourceOutput {
-    /// <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+    /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
     pub fn app_arn(&self) -> ::std::option::Option<&str> {
         self.app_arn.as_deref()
     }
-    /// <p>The name of the input source from where the application resource is imported from.</p>
+    /// <p>Name of the input source from where the application resource is imported from.</p>
     pub fn app_input_source(&self) -> ::std::option::Option<&crate::types::AppInputSource> {
         self.app_input_source.as_ref()
     }
@@ -40,31 +40,31 @@ pub struct DeleteAppInputSourceOutputBuilder {
     _request_id: Option<String>,
 }
 impl DeleteAppInputSourceOutputBuilder {
-    /// <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+    /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
     pub fn app_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+    /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
     pub fn set_app_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.app_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+    /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
     pub fn get_app_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.app_arn
     }
-    /// <p>The name of the input source from where the application resource is imported from.</p>
+    /// <p>Name of the input source from where the application resource is imported from.</p>
     pub fn app_input_source(mut self, input: crate::types::AppInputSource) -> Self {
         self.app_input_source = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The name of the input source from where the application resource is imported from.</p>
+    /// <p>Name of the input source from where the application resource is imported from.</p>
     pub fn set_app_input_source(mut self, input: ::std::option::Option<crate::types::AppInputSource>) -> Self {
         self.app_input_source = input;
         self
     }
-    /// <p>The name of the input source from where the application resource is imported from.</p>
+    /// <p>Name of the input source from where the application resource is imported from.</p>
     pub fn get_app_input_source(&self) -> &::std::option::Option<crate::types::AppInputSource> {
         &self.app_input_source
     }

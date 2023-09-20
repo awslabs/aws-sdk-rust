@@ -30,6 +30,9 @@ pub fn ser_ac3_settings(
     if let Some(var_7) = &input.metadata_control {
         object.key("metadataControl").string(var_7.as_str());
     }
+    if let Some(var_8) = &input.attenuation_control {
+        object.key("attenuationControl").string(var_8.as_str());
+    }
     Ok(())
 }
 
@@ -91,6 +94,13 @@ where
                             builder = builder.set_metadata_control(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| crate::types::Ac3MetadataControl::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "attenuationControl" => {
+                            builder = builder.set_attenuation_control(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::Ac3AttenuationControl::from(u.as_ref())))
                                     .transpose()?,
                             );
                         }

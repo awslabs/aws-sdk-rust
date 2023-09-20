@@ -3,11 +3,23 @@ pub use crate::types::_custom_dns_server::CustomDnsServer;
 
 pub use crate::types::_transit_gateway_configuration::TransitGatewayConfiguration;
 
+pub use crate::types::_network_acl_entry::NetworkAclEntry;
+
+pub use crate::types::_icmp_type_code::IcmpTypeCode;
+
+pub use crate::types::_port_range::PortRange;
+
+pub use crate::types::_rule_action::RuleAction;
+
 pub use crate::types::_dns_status::DnsStatus;
 
 pub use crate::types::_tgw_status::TgwStatus;
 
 pub use crate::types::_environment_status::EnvironmentStatus;
+
+pub use crate::types::_kx_deployment_configuration::KxDeploymentConfiguration;
+
+pub use crate::types::_kx_deployment_strategy::KxDeploymentStrategy;
 
 pub use crate::types::_kx_database_configuration::KxDatabaseConfiguration;
 
@@ -99,6 +111,8 @@ mod _federation_mode;
 
 mod _federation_parameters;
 
+mod _icmp_type_code;
+
 mod _ip_address_type;
 
 mod _kx_az_mode;
@@ -121,6 +135,10 @@ mod _kx_database_configuration;
 
 mod _kx_database_list_entry;
 
+mod _kx_deployment_configuration;
+
+mod _kx_deployment_strategy;
+
 mod _kx_environment;
 
 mod _kx_node;
@@ -130,6 +148,12 @@ mod _kx_savedown_storage_configuration;
 mod _kx_savedown_storage_type;
 
 mod _kx_user;
+
+mod _network_acl_entry;
+
+mod _port_range;
+
+mod _rule_action;
 
 mod _superuser_parameters;
 

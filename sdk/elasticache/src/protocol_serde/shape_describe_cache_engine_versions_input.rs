@@ -35,8 +35,8 @@ pub fn ser_describe_cache_engine_versions_input_input(
     }
     #[allow(unused_mut)]
     let mut scope_11 = writer.prefix("DefaultOnly");
-    if input.default_only {
-        scope_11.boolean(input.default_only);
+    if let Some(var_12) = &input.default_only {
+        scope_11.boolean(*var_12);
     }
     writer.finish();
     Ok(::aws_smithy_http::body::SdkBody::from(out))

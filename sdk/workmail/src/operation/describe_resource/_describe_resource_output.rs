@@ -19,6 +19,10 @@ pub struct DescribeResourceOutput {
     pub enabled_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time when a resource was disabled from WorkMail, in UNIX epoch time format.</p>
     pub disabled_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>Description of the resource.</p>
+    pub description: ::std::option::Option<::std::string::String>,
+    /// <p>If enabled, the resource is hidden from the global address list.</p>
+    pub hidden_from_global_address_list: bool,
     _request_id: Option<String>,
 }
 impl DescribeResourceOutput {
@@ -54,6 +58,14 @@ impl DescribeResourceOutput {
     pub fn disabled_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.disabled_date.as_ref()
     }
+    /// <p>Description of the resource.</p>
+    pub fn description(&self) -> ::std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>If enabled, the resource is hidden from the global address list.</p>
+    pub fn hidden_from_global_address_list(&self) -> bool {
+        self.hidden_from_global_address_list
+    }
 }
 impl ::aws_http::request_id::RequestId for DescribeResourceOutput {
     fn request_id(&self) -> Option<&str> {
@@ -79,6 +91,8 @@ pub struct DescribeResourceOutputBuilder {
     pub(crate) state: ::std::option::Option<crate::types::EntityState>,
     pub(crate) enabled_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) disabled_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) hidden_from_global_address_list: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }
 impl DescribeResourceOutputBuilder {
@@ -194,6 +208,34 @@ impl DescribeResourceOutputBuilder {
     pub fn get_disabled_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.disabled_date
     }
+    /// <p>Description of the resource.</p>
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Description of the resource.</p>
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.description = input;
+        self
+    }
+    /// <p>Description of the resource.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
+    /// <p>If enabled, the resource is hidden from the global address list.</p>
+    pub fn hidden_from_global_address_list(mut self, input: bool) -> Self {
+        self.hidden_from_global_address_list = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>If enabled, the resource is hidden from the global address list.</p>
+    pub fn set_hidden_from_global_address_list(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.hidden_from_global_address_list = input;
+        self
+    }
+    /// <p>If enabled, the resource is hidden from the global address list.</p>
+    pub fn get_hidden_from_global_address_list(&self) -> &::std::option::Option<bool> {
+        &self.hidden_from_global_address_list
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -214,6 +256,8 @@ impl DescribeResourceOutputBuilder {
             state: self.state,
             enabled_date: self.enabled_date,
             disabled_date: self.disabled_date,
+            description: self.description,
+            hidden_from_global_address_list: self.hidden_from_global_address_list.unwrap_or_default(),
             _request_id: self._request_id,
         }
     }

@@ -46,6 +46,11 @@ pub fn ser_modify_network_interface_attribute_input_input(
     if let Some(var_17) = &input.ena_srd_specification {
         crate::protocol_serde::shape_ena_srd_specification::ser_ena_srd_specification(scope_16, var_17)?;
     }
+    #[allow(unused_mut)]
+    let mut scope_18 = writer.prefix("EnablePrimaryIpv6");
+    if let Some(var_19) = &input.enable_primary_ipv6 {
+        scope_18.boolean(*var_19);
+    }
     writer.finish();
     Ok(::aws_smithy_http::body::SdkBody::from(out))
 }

@@ -135,6 +135,14 @@ pub use crate::types::_codegen_job_render_config::CodegenJobRenderConfig;
 
 pub use crate::types::_react_start_codegen_job_data::ReactStartCodegenJobData;
 
+pub use crate::types::_api_configuration::ApiConfiguration;
+
+pub use crate::types::_no_api_render_config::NoApiRenderConfig;
+
+pub use crate::types::_data_store_render_config::DataStoreRenderConfig;
+
+pub use crate::types::_graph_ql_render_config::GraphQlRenderConfig;
+
 pub use crate::types::_js_script::JsScript;
 
 pub use crate::types::_js_target::JsTarget;
@@ -152,6 +160,8 @@ pub use crate::types::_put_metadata_flag_body::PutMetadataFlagBody;
 pub use crate::types::_exchange_code_for_token_request_body::ExchangeCodeForTokenRequestBody;
 
 mod _action_parameters;
+
+mod _api_configuration;
 
 mod _codegen_feature_flags;
 
@@ -209,6 +219,8 @@ mod _create_form_data;
 
 mod _create_theme_data;
 
+mod _data_store_render_config;
+
 mod _exchange_code_for_token_request_body;
 
 mod _field_config;
@@ -255,6 +267,8 @@ mod _form_summary;
 
 mod _generic_data_relationship_type;
 
+mod _graph_ql_render_config;
+
 mod _js_module;
 
 mod _js_script;
@@ -264,6 +278,8 @@ mod _js_target;
 mod _label_decorator;
 
 mod _mutation_action_set_state_parameter;
+
+mod _no_api_render_config;
 
 mod _predicate;
 

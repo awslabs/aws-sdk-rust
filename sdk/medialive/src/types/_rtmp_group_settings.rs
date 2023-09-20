@@ -18,6 +18,8 @@ pub struct RtmpGroupSettings {
     pub input_loss_action: ::std::option::Option<crate::types::InputLossActionForRtmpOut>,
     /// If a streaming output fails, number of seconds to wait until a restart is initiated. A value of 0 means never restart.
     pub restart_delay: ::std::option::Option<i32>,
+    /// Applies only when the rate control mode (in the codec settings) is CBR (constant bit rate). Controls whether the RTMP output stream is padded (with FILL NAL units) in order to achieve a constant bit rate that is truly constant. When there is no padding, the bandwidth varies (up to the bitrate value in the codec settings). We recommend that you choose Auto.
+    pub include_filler_nal_units: ::std::option::Option<crate::types::IncludeFillerNalUnits>,
 }
 impl RtmpGroupSettings {
     /// Choose the ad marker type for this output group. MediaLive will create a message based on the content of each SCTE-35 message, format it for that marker type, and insert it in the datastream.
@@ -48,6 +50,10 @@ impl RtmpGroupSettings {
     pub fn restart_delay(&self) -> ::std::option::Option<i32> {
         self.restart_delay
     }
+    /// Applies only when the rate control mode (in the codec settings) is CBR (constant bit rate). Controls whether the RTMP output stream is padded (with FILL NAL units) in order to achieve a constant bit rate that is truly constant. When there is no padding, the bandwidth varies (up to the bitrate value in the codec settings). We recommend that you choose Auto.
+    pub fn include_filler_nal_units(&self) -> ::std::option::Option<&crate::types::IncludeFillerNalUnits> {
+        self.include_filler_nal_units.as_ref()
+    }
 }
 impl RtmpGroupSettings {
     /// Creates a new builder-style object to manufacture [`RtmpGroupSettings`](crate::types::RtmpGroupSettings).
@@ -67,6 +73,7 @@ pub struct RtmpGroupSettingsBuilder {
     pub(crate) caption_data: ::std::option::Option<crate::types::RtmpCaptionData>,
     pub(crate) input_loss_action: ::std::option::Option<crate::types::InputLossActionForRtmpOut>,
     pub(crate) restart_delay: ::std::option::Option<i32>,
+    pub(crate) include_filler_nal_units: ::std::option::Option<crate::types::IncludeFillerNalUnits>,
 }
 impl RtmpGroupSettingsBuilder {
     /// Appends an item to `ad_markers`.
@@ -173,6 +180,20 @@ impl RtmpGroupSettingsBuilder {
     pub fn get_restart_delay(&self) -> &::std::option::Option<i32> {
         &self.restart_delay
     }
+    /// Applies only when the rate control mode (in the codec settings) is CBR (constant bit rate). Controls whether the RTMP output stream is padded (with FILL NAL units) in order to achieve a constant bit rate that is truly constant. When there is no padding, the bandwidth varies (up to the bitrate value in the codec settings). We recommend that you choose Auto.
+    pub fn include_filler_nal_units(mut self, input: crate::types::IncludeFillerNalUnits) -> Self {
+        self.include_filler_nal_units = ::std::option::Option::Some(input);
+        self
+    }
+    /// Applies only when the rate control mode (in the codec settings) is CBR (constant bit rate). Controls whether the RTMP output stream is padded (with FILL NAL units) in order to achieve a constant bit rate that is truly constant. When there is no padding, the bandwidth varies (up to the bitrate value in the codec settings). We recommend that you choose Auto.
+    pub fn set_include_filler_nal_units(mut self, input: ::std::option::Option<crate::types::IncludeFillerNalUnits>) -> Self {
+        self.include_filler_nal_units = input;
+        self
+    }
+    /// Applies only when the rate control mode (in the codec settings) is CBR (constant bit rate). Controls whether the RTMP output stream is padded (with FILL NAL units) in order to achieve a constant bit rate that is truly constant. When there is no padding, the bandwidth varies (up to the bitrate value in the codec settings). We recommend that you choose Auto.
+    pub fn get_include_filler_nal_units(&self) -> &::std::option::Option<crate::types::IncludeFillerNalUnits> {
+        &self.include_filler_nal_units
+    }
     /// Consumes the builder and constructs a [`RtmpGroupSettings`](crate::types::RtmpGroupSettings).
     pub fn build(self) -> crate::types::RtmpGroupSettings {
         crate::types::RtmpGroupSettings {
@@ -183,6 +204,7 @@ impl RtmpGroupSettingsBuilder {
             caption_data: self.caption_data,
             input_loss_action: self.input_loss_action,
             restart_delay: self.restart_delay,
+            include_filler_nal_units: self.include_filler_nal_units,
         }
     }
 }

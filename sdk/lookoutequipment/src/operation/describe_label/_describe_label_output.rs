@@ -5,7 +5,7 @@
 pub struct DescribeLabelOutput {
     /// <p> The name of the requested label group. </p>
     pub label_group_name: ::std::option::Option<::std::string::String>,
-    /// <p> The ARN of the requested label group. </p>
+    /// <p> The Amazon Resource Name (ARN) of the requested label group. </p>
     pub label_group_arn: ::std::option::Option<::std::string::String>,
     /// <p> The ID of the requested label. </p>
     pub label_id: ::std::option::Option<::std::string::String>,
@@ -32,7 +32,7 @@ impl DescribeLabelOutput {
     pub fn label_group_name(&self) -> ::std::option::Option<&str> {
         self.label_group_name.as_deref()
     }
-    /// <p> The ARN of the requested label group. </p>
+    /// <p> The Amazon Resource Name (ARN) of the requested label group. </p>
     pub fn label_group_arn(&self) -> ::std::option::Option<&str> {
         self.label_group_arn.as_deref()
     }
@@ -114,17 +114,17 @@ impl DescribeLabelOutputBuilder {
     pub fn get_label_group_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.label_group_name
     }
-    /// <p> The ARN of the requested label group. </p>
+    /// <p> The Amazon Resource Name (ARN) of the requested label group. </p>
     pub fn label_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.label_group_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The ARN of the requested label group. </p>
+    /// <p> The Amazon Resource Name (ARN) of the requested label group. </p>
     pub fn set_label_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.label_group_arn = input;
         self
     }
-    /// <p> The ARN of the requested label group. </p>
+    /// <p> The Amazon Resource Name (ARN) of the requested label group. </p>
     pub fn get_label_group_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.label_group_arn
     }

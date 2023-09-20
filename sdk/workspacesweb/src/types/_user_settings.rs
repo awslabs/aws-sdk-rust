@@ -2,7 +2,7 @@
 
 /// <p>A user settings resource that can be associated with a web portal. Once associated with a web portal, user settings control how users can transfer data between a streaming session and the their local devices. </p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UserSettings {
     /// <p>The ARN of the user settings.</p>
     pub user_settings_arn: ::std::option::Option<::std::string::String>,
@@ -22,6 +22,8 @@ pub struct UserSettings {
     pub disconnect_timeout_in_minutes: ::std::option::Option<i32>,
     /// <p>The amount of time that users can be idle (inactive) before they are disconnected from their streaming session and the disconnect timeout interval begins.</p>
     pub idle_disconnect_timeout_in_minutes: ::std::option::Option<i32>,
+    /// <p>The configuration that specifies which cookies should be synchronized from the end user's local browser to the remote browser.</p>
+    pub cookie_synchronization_configuration: ::std::option::Option<crate::types::CookieSynchronizationConfiguration>,
 }
 impl UserSettings {
     /// <p>The ARN of the user settings.</p>
@@ -60,6 +62,26 @@ impl UserSettings {
     pub fn idle_disconnect_timeout_in_minutes(&self) -> ::std::option::Option<i32> {
         self.idle_disconnect_timeout_in_minutes
     }
+    /// <p>The configuration that specifies which cookies should be synchronized from the end user's local browser to the remote browser.</p>
+    pub fn cookie_synchronization_configuration(&self) -> ::std::option::Option<&crate::types::CookieSynchronizationConfiguration> {
+        self.cookie_synchronization_configuration.as_ref()
+    }
+}
+impl ::std::fmt::Debug for UserSettings {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("UserSettings");
+        formatter.field("user_settings_arn", &self.user_settings_arn);
+        formatter.field("associated_portal_arns", &self.associated_portal_arns);
+        formatter.field("copy_allowed", &self.copy_allowed);
+        formatter.field("paste_allowed", &self.paste_allowed);
+        formatter.field("download_allowed", &self.download_allowed);
+        formatter.field("upload_allowed", &self.upload_allowed);
+        formatter.field("print_allowed", &self.print_allowed);
+        formatter.field("disconnect_timeout_in_minutes", &self.disconnect_timeout_in_minutes);
+        formatter.field("idle_disconnect_timeout_in_minutes", &self.idle_disconnect_timeout_in_minutes);
+        formatter.field("cookie_synchronization_configuration", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
 }
 impl UserSettings {
     /// Creates a new builder-style object to manufacture [`UserSettings`](crate::types::UserSettings).
@@ -70,7 +92,7 @@ impl UserSettings {
 
 /// A builder for [`UserSettings`](crate::types::UserSettings).
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct UserSettingsBuilder {
     pub(crate) user_settings_arn: ::std::option::Option<::std::string::String>,
     pub(crate) associated_portal_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -81,6 +103,7 @@ pub struct UserSettingsBuilder {
     pub(crate) print_allowed: ::std::option::Option<crate::types::EnabledType>,
     pub(crate) disconnect_timeout_in_minutes: ::std::option::Option<i32>,
     pub(crate) idle_disconnect_timeout_in_minutes: ::std::option::Option<i32>,
+    pub(crate) cookie_synchronization_configuration: ::std::option::Option<crate::types::CookieSynchronizationConfiguration>,
 }
 impl UserSettingsBuilder {
     /// <p>The ARN of the user settings.</p>
@@ -215,6 +238,23 @@ impl UserSettingsBuilder {
     pub fn get_idle_disconnect_timeout_in_minutes(&self) -> &::std::option::Option<i32> {
         &self.idle_disconnect_timeout_in_minutes
     }
+    /// <p>The configuration that specifies which cookies should be synchronized from the end user's local browser to the remote browser.</p>
+    pub fn cookie_synchronization_configuration(mut self, input: crate::types::CookieSynchronizationConfiguration) -> Self {
+        self.cookie_synchronization_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration that specifies which cookies should be synchronized from the end user's local browser to the remote browser.</p>
+    pub fn set_cookie_synchronization_configuration(
+        mut self,
+        input: ::std::option::Option<crate::types::CookieSynchronizationConfiguration>,
+    ) -> Self {
+        self.cookie_synchronization_configuration = input;
+        self
+    }
+    /// <p>The configuration that specifies which cookies should be synchronized from the end user's local browser to the remote browser.</p>
+    pub fn get_cookie_synchronization_configuration(&self) -> &::std::option::Option<crate::types::CookieSynchronizationConfiguration> {
+        &self.cookie_synchronization_configuration
+    }
     /// Consumes the builder and constructs a [`UserSettings`](crate::types::UserSettings).
     pub fn build(self) -> crate::types::UserSettings {
         crate::types::UserSettings {
@@ -227,6 +267,23 @@ impl UserSettingsBuilder {
             print_allowed: self.print_allowed,
             disconnect_timeout_in_minutes: self.disconnect_timeout_in_minutes,
             idle_disconnect_timeout_in_minutes: self.idle_disconnect_timeout_in_minutes,
+            cookie_synchronization_configuration: self.cookie_synchronization_configuration,
         }
+    }
+}
+impl ::std::fmt::Debug for UserSettingsBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("UserSettingsBuilder");
+        formatter.field("user_settings_arn", &self.user_settings_arn);
+        formatter.field("associated_portal_arns", &self.associated_portal_arns);
+        formatter.field("copy_allowed", &self.copy_allowed);
+        formatter.field("paste_allowed", &self.paste_allowed);
+        formatter.field("download_allowed", &self.download_allowed);
+        formatter.field("upload_allowed", &self.upload_allowed);
+        formatter.field("print_allowed", &self.print_allowed);
+        formatter.field("disconnect_timeout_in_minutes", &self.disconnect_timeout_in_minutes);
+        formatter.field("idle_disconnect_timeout_in_minutes", &self.idle_disconnect_timeout_in_minutes);
+        formatter.field("cookie_synchronization_configuration", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

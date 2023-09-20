@@ -8,7 +8,7 @@ pub struct ListConnectionsInput {
     /// <p>Filters the list of connections to those associated with a specified host.</p>
     pub host_arn_filter: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
-    pub max_results: i32,
+    pub max_results: ::std::option::Option<i32>,
     /// <p>The token that was returned from the previous <code>ListConnections</code> call, which can be used to return the next set of connections in the list.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
@@ -22,7 +22,7 @@ impl ListConnectionsInput {
         self.host_arn_filter.as_deref()
     }
     /// <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
-    pub fn max_results(&self) -> i32 {
+    pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
     /// <p>The token that was returned from the previous <code>ListConnections</code> call, which can be used to return the next set of connections in the list.</p>
@@ -110,7 +110,7 @@ impl ListConnectionsInputBuilder {
         ::std::result::Result::Ok(crate::operation::list_connections::ListConnectionsInput {
             provider_type_filter: self.provider_type_filter,
             host_arn_filter: self.host_arn_filter,
-            max_results: self.max_results.unwrap_or_default(),
+            max_results: self.max_results,
             next_token: self.next_token,
         })
     }

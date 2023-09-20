@@ -4,9 +4,9 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InferenceExecutionSummary {
-    /// <p>The name of the ML model being used for the inference execution. </p>
+    /// <p>The name of the machine learning model being used for the inference execution. </p>
     pub model_name: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the ML model used for the inference execution. </p>
+    /// <p>The Amazon Resource Name (ARN) of the machine learning model used for the inference execution. </p>
     pub model_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the inference scheduler being used for the inference execution. </p>
     pub inference_scheduler_name: ::std::option::Option<::std::string::String>,
@@ -22,19 +22,23 @@ pub struct InferenceExecutionSummary {
     pub data_input_configuration: ::std::option::Option<crate::types::InferenceInputConfiguration>,
     /// <p> Specifies configuration information for the output results from for the inference execution, including the output Amazon S3 location. </p>
     pub data_output_configuration: ::std::option::Option<crate::types::InferenceOutputConfiguration>,
-    /// <p> </p>
+    /// <p>The S3 object that the inference execution results were uploaded to.</p>
     pub customer_result_object: ::std::option::Option<crate::types::S3Object>,
     /// <p>Indicates the status of the inference execution. </p>
     pub status: ::std::option::Option<crate::types::InferenceExecutionStatus>,
     /// <p> Specifies the reason for failure when an inference execution has failed. </p>
     pub failed_reason: ::std::option::Option<::std::string::String>,
+    /// <p>The model version used for the inference execution.</p>
+    pub model_version: ::std::option::Option<i64>,
+    /// <p>The Amazon Resource Number (ARN) of the model version used for the inference execution.</p>
+    pub model_version_arn: ::std::option::Option<::std::string::String>,
 }
 impl InferenceExecutionSummary {
-    /// <p>The name of the ML model being used for the inference execution. </p>
+    /// <p>The name of the machine learning model being used for the inference execution. </p>
     pub fn model_name(&self) -> ::std::option::Option<&str> {
         self.model_name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the ML model used for the inference execution. </p>
+    /// <p>The Amazon Resource Name (ARN) of the machine learning model used for the inference execution. </p>
     pub fn model_arn(&self) -> ::std::option::Option<&str> {
         self.model_arn.as_deref()
     }
@@ -66,7 +70,7 @@ impl InferenceExecutionSummary {
     pub fn data_output_configuration(&self) -> ::std::option::Option<&crate::types::InferenceOutputConfiguration> {
         self.data_output_configuration.as_ref()
     }
-    /// <p> </p>
+    /// <p>The S3 object that the inference execution results were uploaded to.</p>
     pub fn customer_result_object(&self) -> ::std::option::Option<&crate::types::S3Object> {
         self.customer_result_object.as_ref()
     }
@@ -77,6 +81,14 @@ impl InferenceExecutionSummary {
     /// <p> Specifies the reason for failure when an inference execution has failed. </p>
     pub fn failed_reason(&self) -> ::std::option::Option<&str> {
         self.failed_reason.as_deref()
+    }
+    /// <p>The model version used for the inference execution.</p>
+    pub fn model_version(&self) -> ::std::option::Option<i64> {
+        self.model_version
+    }
+    /// <p>The Amazon Resource Number (ARN) of the model version used for the inference execution.</p>
+    pub fn model_version_arn(&self) -> ::std::option::Option<&str> {
+        self.model_version_arn.as_deref()
     }
 }
 impl InferenceExecutionSummary {
@@ -102,33 +114,35 @@ pub struct InferenceExecutionSummaryBuilder {
     pub(crate) customer_result_object: ::std::option::Option<crate::types::S3Object>,
     pub(crate) status: ::std::option::Option<crate::types::InferenceExecutionStatus>,
     pub(crate) failed_reason: ::std::option::Option<::std::string::String>,
+    pub(crate) model_version: ::std::option::Option<i64>,
+    pub(crate) model_version_arn: ::std::option::Option<::std::string::String>,
 }
 impl InferenceExecutionSummaryBuilder {
-    /// <p>The name of the ML model being used for the inference execution. </p>
+    /// <p>The name of the machine learning model being used for the inference execution. </p>
     pub fn model_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the ML model being used for the inference execution. </p>
+    /// <p>The name of the machine learning model being used for the inference execution. </p>
     pub fn set_model_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_name = input;
         self
     }
-    /// <p>The name of the ML model being used for the inference execution. </p>
+    /// <p>The name of the machine learning model being used for the inference execution. </p>
     pub fn get_model_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.model_name
     }
-    /// <p>The Amazon Resource Name (ARN) of the ML model used for the inference execution. </p>
+    /// <p>The Amazon Resource Name (ARN) of the machine learning model used for the inference execution. </p>
     pub fn model_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the ML model used for the inference execution. </p>
+    /// <p>The Amazon Resource Name (ARN) of the machine learning model used for the inference execution. </p>
     pub fn set_model_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the ML model used for the inference execution. </p>
+    /// <p>The Amazon Resource Name (ARN) of the machine learning model used for the inference execution. </p>
     pub fn get_model_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.model_arn
     }
@@ -230,17 +244,17 @@ impl InferenceExecutionSummaryBuilder {
     pub fn get_data_output_configuration(&self) -> &::std::option::Option<crate::types::InferenceOutputConfiguration> {
         &self.data_output_configuration
     }
-    /// <p> </p>
+    /// <p>The S3 object that the inference execution results were uploaded to.</p>
     pub fn customer_result_object(mut self, input: crate::types::S3Object) -> Self {
         self.customer_result_object = ::std::option::Option::Some(input);
         self
     }
-    /// <p> </p>
+    /// <p>The S3 object that the inference execution results were uploaded to.</p>
     pub fn set_customer_result_object(mut self, input: ::std::option::Option<crate::types::S3Object>) -> Self {
         self.customer_result_object = input;
         self
     }
-    /// <p> </p>
+    /// <p>The S3 object that the inference execution results were uploaded to.</p>
     pub fn get_customer_result_object(&self) -> &::std::option::Option<crate::types::S3Object> {
         &self.customer_result_object
     }
@@ -272,6 +286,34 @@ impl InferenceExecutionSummaryBuilder {
     pub fn get_failed_reason(&self) -> &::std::option::Option<::std::string::String> {
         &self.failed_reason
     }
+    /// <p>The model version used for the inference execution.</p>
+    pub fn model_version(mut self, input: i64) -> Self {
+        self.model_version = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The model version used for the inference execution.</p>
+    pub fn set_model_version(mut self, input: ::std::option::Option<i64>) -> Self {
+        self.model_version = input;
+        self
+    }
+    /// <p>The model version used for the inference execution.</p>
+    pub fn get_model_version(&self) -> &::std::option::Option<i64> {
+        &self.model_version
+    }
+    /// <p>The Amazon Resource Number (ARN) of the model version used for the inference execution.</p>
+    pub fn model_version_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.model_version_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Number (ARN) of the model version used for the inference execution.</p>
+    pub fn set_model_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.model_version_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Number (ARN) of the model version used for the inference execution.</p>
+    pub fn get_model_version_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model_version_arn
+    }
     /// Consumes the builder and constructs a [`InferenceExecutionSummary`](crate::types::InferenceExecutionSummary).
     pub fn build(self) -> crate::types::InferenceExecutionSummary {
         crate::types::InferenceExecutionSummary {
@@ -287,6 +329,8 @@ impl InferenceExecutionSummaryBuilder {
             customer_result_object: self.customer_result_object,
             status: self.status,
             failed_reason: self.failed_reason,
+            model_version: self.model_version,
+            model_version_arn: self.model_version_arn,
         }
     }
 }

@@ -15,5 +15,11 @@ pub fn ser_list_service_quotas_input(
             ::aws_smithy_types::Number::NegInt((*var_3).into()),
         );
     }
+    if let Some(var_4) = &input.quota_code {
+        object.key("QuotaCode").string(var_4.as_str());
+    }
+    if let Some(var_5) = &input.quota_applied_at_level {
+        object.key("QuotaAppliedAtLevel").string(var_5.as_str());
+    }
     Ok(())
 }

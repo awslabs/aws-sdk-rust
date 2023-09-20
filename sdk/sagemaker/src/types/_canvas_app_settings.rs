@@ -10,6 +10,8 @@ pub struct CanvasAppSettings {
     pub model_register_settings: ::std::option::Option<crate::types::ModelRegisterSettings>,
     /// <p>The workspace settings for the SageMaker Canvas application.</p>
     pub workspace_settings: ::std::option::Option<crate::types::WorkspaceSettings>,
+    /// <p>The settings for connecting to an external data source with OAuth.</p>
+    pub identity_provider_o_auth_settings: ::std::option::Option<::std::vec::Vec<crate::types::IdentityProviderOAuthSetting>>,
 }
 impl CanvasAppSettings {
     /// <p>Time series forecast settings for the Canvas application.</p>
@@ -23,6 +25,10 @@ impl CanvasAppSettings {
     /// <p>The workspace settings for the SageMaker Canvas application.</p>
     pub fn workspace_settings(&self) -> ::std::option::Option<&crate::types::WorkspaceSettings> {
         self.workspace_settings.as_ref()
+    }
+    /// <p>The settings for connecting to an external data source with OAuth.</p>
+    pub fn identity_provider_o_auth_settings(&self) -> ::std::option::Option<&[crate::types::IdentityProviderOAuthSetting]> {
+        self.identity_provider_o_auth_settings.as_deref()
     }
 }
 impl CanvasAppSettings {
@@ -39,6 +45,7 @@ pub struct CanvasAppSettingsBuilder {
     pub(crate) time_series_forecasting_settings: ::std::option::Option<crate::types::TimeSeriesForecastingSettings>,
     pub(crate) model_register_settings: ::std::option::Option<crate::types::ModelRegisterSettings>,
     pub(crate) workspace_settings: ::std::option::Option<crate::types::WorkspaceSettings>,
+    pub(crate) identity_provider_o_auth_settings: ::std::option::Option<::std::vec::Vec<crate::types::IdentityProviderOAuthSetting>>,
 }
 impl CanvasAppSettingsBuilder {
     /// <p>Time series forecast settings for the Canvas application.</p>
@@ -83,12 +90,36 @@ impl CanvasAppSettingsBuilder {
     pub fn get_workspace_settings(&self) -> &::std::option::Option<crate::types::WorkspaceSettings> {
         &self.workspace_settings
     }
+    /// Appends an item to `identity_provider_o_auth_settings`.
+    ///
+    /// To override the contents of this collection use [`set_identity_provider_o_auth_settings`](Self::set_identity_provider_o_auth_settings).
+    ///
+    /// <p>The settings for connecting to an external data source with OAuth.</p>
+    pub fn identity_provider_o_auth_settings(mut self, input: crate::types::IdentityProviderOAuthSetting) -> Self {
+        let mut v = self.identity_provider_o_auth_settings.unwrap_or_default();
+        v.push(input);
+        self.identity_provider_o_auth_settings = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The settings for connecting to an external data source with OAuth.</p>
+    pub fn set_identity_provider_o_auth_settings(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::IdentityProviderOAuthSetting>>,
+    ) -> Self {
+        self.identity_provider_o_auth_settings = input;
+        self
+    }
+    /// <p>The settings for connecting to an external data source with OAuth.</p>
+    pub fn get_identity_provider_o_auth_settings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IdentityProviderOAuthSetting>> {
+        &self.identity_provider_o_auth_settings
+    }
     /// Consumes the builder and constructs a [`CanvasAppSettings`](crate::types::CanvasAppSettings).
     pub fn build(self) -> crate::types::CanvasAppSettings {
         crate::types::CanvasAppSettings {
             time_series_forecasting_settings: self.time_series_forecasting_settings,
             model_register_settings: self.model_register_settings,
             workspace_settings: self.workspace_settings,
+            identity_provider_o_auth_settings: self.identity_provider_o_auth_settings,
         }
     }
 }

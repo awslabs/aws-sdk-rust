@@ -108,6 +108,16 @@ where
                             builder = builder
                                 .set_external_metric_status(crate::protocol_serde::shape_external_metric_status::de_external_metric_status(tokens)?);
                         }
+                        "currentInstanceGpuInfo" => {
+                            builder = builder.set_current_instance_gpu_info(crate::protocol_serde::shape_gpu_info::de_gpu_info(tokens)?);
+                        }
+                        "idle" => {
+                            builder = builder.set_idle(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::InstanceIdle::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

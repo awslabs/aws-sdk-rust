@@ -361,6 +361,8 @@ pub(crate) mod shape_get_model_package_group_policy;
 
 pub(crate) mod shape_get_sagemaker_servicecatalog_portfolio_status;
 
+pub(crate) mod shape_get_scaling_configuration_recommendation;
+
 pub(crate) mod shape_get_search_suggestions;
 
 pub(crate) mod shape_import_hub_content;
@@ -971,6 +973,8 @@ pub(crate) mod shape_get_lineage_group_policy_input;
 
 pub(crate) mod shape_get_model_package_group_policy_input;
 
+pub(crate) mod shape_get_scaling_configuration_recommendation_input;
+
 pub(crate) mod shape_get_search_suggestions_input;
 
 pub(crate) mod shape_import_hub_content_input;
@@ -1367,6 +1371,8 @@ pub(crate) mod shape_deployment_stage;
 
 pub(crate) mod shape_deployment_stage_status_summaries;
 
+pub(crate) mod shape_derived_information;
+
 pub(crate) mod shape_desired_weight_and_capacity;
 
 pub(crate) mod shape_device;
@@ -1386,6 +1392,8 @@ pub(crate) mod shape_domain_settings;
 pub(crate) mod shape_domain_settings_for_update;
 
 pub(crate) mod shape_drift_check_baselines;
+
+pub(crate) mod shape_dynamic_scaling_configuration;
 
 pub(crate) mod shape_edge_deployment_model_config;
 
@@ -1734,6 +1742,10 @@ pub(crate) mod shape_retention_policy;
 pub(crate) mod shape_retry_strategy;
 
 pub(crate) mod shape_sage_maker_image_version_aliases;
+
+pub(crate) mod shape_scaling_policy_metric;
+
+pub(crate) mod shape_scaling_policy_objective;
 
 pub(crate) mod shape_search_expression;
 
@@ -2265,6 +2277,8 @@ pub(crate) mod shape_rolling_update_policy;
 
 pub(crate) mod shape_s3_storage_config;
 
+pub(crate) mod shape_scaling_policies;
+
 pub(crate) mod shape_schedule_config;
 
 pub(crate) mod shape_search_record;
@@ -2427,6 +2441,10 @@ pub(crate) mod shape_file_system_data_source;
 
 pub(crate) mod shape_forecast_quantiles;
 
+pub(crate) mod shape_holiday_config;
+
+pub(crate) mod shape_holiday_config_attributes;
+
 pub(crate) mod shape_hyper_parameter_tuning_instance_config;
 
 pub(crate) mod shape_hyper_parameter_tuning_instance_configs;
@@ -2434,6 +2452,10 @@ pub(crate) mod shape_hyper_parameter_tuning_instance_configs;
 pub(crate) mod shape_hyper_parameter_tuning_job_search_entity;
 
 pub(crate) mod shape_hyperband_strategy_config;
+
+pub(crate) mod shape_identity_provider_o_auth_setting;
+
+pub(crate) mod shape_identity_provider_o_auth_settings;
 
 pub(crate) mod shape_inference_metrics;
 
@@ -2517,6 +2539,8 @@ pub(crate) mod shape_recommendation_job_payload_config;
 
 pub(crate) mod shape_recommendation_job_supported_instance_types;
 
+pub(crate) mod shape_recommendation_job_supported_response_mime_types;
+
 pub(crate) mod shape_recommendation_job_vpc_security_group_ids;
 
 pub(crate) mod shape_recommendation_job_vpc_subnets;
@@ -2533,7 +2557,11 @@ pub(crate) mod shape_s3_data_source;
 
 pub(crate) mod shape_s3_model_data_source;
 
+pub(crate) mod shape_scaling_policy;
+
 pub(crate) mod shape_selective_execution_result;
+
+pub(crate) mod shape_stairs;
 
 pub(crate) mod shape_tabular_resolved_attributes;
 
@@ -2655,6 +2683,8 @@ pub(crate) mod shape_recommendation_job_supported_content_types;
 
 pub(crate) mod shape_register_model_step_metadata;
 
+pub(crate) mod shape_target_tracking_scaling_policy_configuration;
+
 pub(crate) mod shape_training_job_step_metadata;
 
 pub(crate) mod shape_transform_job;
@@ -2681,6 +2711,8 @@ pub(crate) mod shape_groups;
 
 pub(crate) mod shape_instance_group_names;
 
+pub(crate) mod shape_metric_specification;
+
 pub(crate) mod shape_model_dashboard_endpoint;
 
 pub(crate) mod shape_model_dashboard_monitoring_schedule;
@@ -2696,5 +2728,9 @@ pub(crate) mod shape_parent;
 pub(crate) mod shape_processing_job;
 
 pub(crate) mod shape_trial_component_simple_summary;
+
+pub(crate) mod shape_customized_metric_specification;
+
+pub(crate) mod shape_predefined_metric_specification;
 
 pub(crate) mod shape_categorical_parameter_range_values;

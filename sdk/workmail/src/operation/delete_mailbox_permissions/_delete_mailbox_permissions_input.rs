@@ -5,9 +5,21 @@
 pub struct DeleteMailboxPermissionsInput {
     /// <p>The identifier of the organization under which the member (user or group) exists.</p>
     pub organization_id: ::std::option::Option<::std::string::String>,
-    /// <p>The identifier of the member (user or group) that owns the mailbox.</p>
+    /// <p>The identifier of the entity that owns the mailbox.</p>
+    /// <p>The identifier can be <i>UserId or Group Id</i>, <i>Username or Groupname</i>, or <i>email</i>.</p>
+    /// <ul>
+    /// <li> <p>Entity ID: 12345678-1234-1234-1234-123456789012, r-0123456789a0123456789b0123456789, or S-1-1-12-1234567890-123456789-123456789-1234</p> </li>
+    /// <li> <p>Email address: entity@domain.tld</p> </li>
+    /// <li> <p>Entity name: entity</p> </li>
+    /// </ul>
     pub entity_id: ::std::option::Option<::std::string::String>,
-    /// <p>The identifier of the member (user or group) for which to delete granted permissions.</p>
+    /// <p>The identifier of the entity for which to delete granted permissions.</p>
+    /// <p>The identifier can be <i>UserId, ResourceID, or Group Id</i>, <i>Username or Groupname</i>, or <i>email</i>.</p>
+    /// <ul>
+    /// <li> <p>Grantee ID: 12345678-1234-1234-1234-123456789012,r-0123456789a0123456789b0123456789, or S-1-1-12-1234567890-123456789-123456789-1234</p> </li>
+    /// <li> <p>Email address: grantee@domain.tld</p> </li>
+    /// <li> <p>Grantee name: grantee</p> </li>
+    /// </ul>
     pub grantee_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteMailboxPermissionsInput {
@@ -15,11 +27,23 @@ impl DeleteMailboxPermissionsInput {
     pub fn organization_id(&self) -> ::std::option::Option<&str> {
         self.organization_id.as_deref()
     }
-    /// <p>The identifier of the member (user or group) that owns the mailbox.</p>
+    /// <p>The identifier of the entity that owns the mailbox.</p>
+    /// <p>The identifier can be <i>UserId or Group Id</i>, <i>Username or Groupname</i>, or <i>email</i>.</p>
+    /// <ul>
+    /// <li> <p>Entity ID: 12345678-1234-1234-1234-123456789012, r-0123456789a0123456789b0123456789, or S-1-1-12-1234567890-123456789-123456789-1234</p> </li>
+    /// <li> <p>Email address: entity@domain.tld</p> </li>
+    /// <li> <p>Entity name: entity</p> </li>
+    /// </ul>
     pub fn entity_id(&self) -> ::std::option::Option<&str> {
         self.entity_id.as_deref()
     }
-    /// <p>The identifier of the member (user or group) for which to delete granted permissions.</p>
+    /// <p>The identifier of the entity for which to delete granted permissions.</p>
+    /// <p>The identifier can be <i>UserId, ResourceID, or Group Id</i>, <i>Username or Groupname</i>, or <i>email</i>.</p>
+    /// <ul>
+    /// <li> <p>Grantee ID: 12345678-1234-1234-1234-123456789012,r-0123456789a0123456789b0123456789, or S-1-1-12-1234567890-123456789-123456789-1234</p> </li>
+    /// <li> <p>Email address: grantee@domain.tld</p> </li>
+    /// <li> <p>Grantee name: grantee</p> </li>
+    /// </ul>
     pub fn grantee_id(&self) -> ::std::option::Option<&str> {
         self.grantee_id.as_deref()
     }
@@ -54,31 +78,67 @@ impl DeleteMailboxPermissionsInputBuilder {
     pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.organization_id
     }
-    /// <p>The identifier of the member (user or group) that owns the mailbox.</p>
+    /// <p>The identifier of the entity that owns the mailbox.</p>
+    /// <p>The identifier can be <i>UserId or Group Id</i>, <i>Username or Groupname</i>, or <i>email</i>.</p>
+    /// <ul>
+    /// <li> <p>Entity ID: 12345678-1234-1234-1234-123456789012, r-0123456789a0123456789b0123456789, or S-1-1-12-1234567890-123456789-123456789-1234</p> </li>
+    /// <li> <p>Email address: entity@domain.tld</p> </li>
+    /// <li> <p>Entity name: entity</p> </li>
+    /// </ul>
     pub fn entity_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.entity_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of the member (user or group) that owns the mailbox.</p>
+    /// <p>The identifier of the entity that owns the mailbox.</p>
+    /// <p>The identifier can be <i>UserId or Group Id</i>, <i>Username or Groupname</i>, or <i>email</i>.</p>
+    /// <ul>
+    /// <li> <p>Entity ID: 12345678-1234-1234-1234-123456789012, r-0123456789a0123456789b0123456789, or S-1-1-12-1234567890-123456789-123456789-1234</p> </li>
+    /// <li> <p>Email address: entity@domain.tld</p> </li>
+    /// <li> <p>Entity name: entity</p> </li>
+    /// </ul>
     pub fn set_entity_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.entity_id = input;
         self
     }
-    /// <p>The identifier of the member (user or group) that owns the mailbox.</p>
+    /// <p>The identifier of the entity that owns the mailbox.</p>
+    /// <p>The identifier can be <i>UserId or Group Id</i>, <i>Username or Groupname</i>, or <i>email</i>.</p>
+    /// <ul>
+    /// <li> <p>Entity ID: 12345678-1234-1234-1234-123456789012, r-0123456789a0123456789b0123456789, or S-1-1-12-1234567890-123456789-123456789-1234</p> </li>
+    /// <li> <p>Email address: entity@domain.tld</p> </li>
+    /// <li> <p>Entity name: entity</p> </li>
+    /// </ul>
     pub fn get_entity_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.entity_id
     }
-    /// <p>The identifier of the member (user or group) for which to delete granted permissions.</p>
+    /// <p>The identifier of the entity for which to delete granted permissions.</p>
+    /// <p>The identifier can be <i>UserId, ResourceID, or Group Id</i>, <i>Username or Groupname</i>, or <i>email</i>.</p>
+    /// <ul>
+    /// <li> <p>Grantee ID: 12345678-1234-1234-1234-123456789012,r-0123456789a0123456789b0123456789, or S-1-1-12-1234567890-123456789-123456789-1234</p> </li>
+    /// <li> <p>Email address: grantee@domain.tld</p> </li>
+    /// <li> <p>Grantee name: grantee</p> </li>
+    /// </ul>
     pub fn grantee_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.grantee_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of the member (user or group) for which to delete granted permissions.</p>
+    /// <p>The identifier of the entity for which to delete granted permissions.</p>
+    /// <p>The identifier can be <i>UserId, ResourceID, or Group Id</i>, <i>Username or Groupname</i>, or <i>email</i>.</p>
+    /// <ul>
+    /// <li> <p>Grantee ID: 12345678-1234-1234-1234-123456789012,r-0123456789a0123456789b0123456789, or S-1-1-12-1234567890-123456789-123456789-1234</p> </li>
+    /// <li> <p>Email address: grantee@domain.tld</p> </li>
+    /// <li> <p>Grantee name: grantee</p> </li>
+    /// </ul>
     pub fn set_grantee_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.grantee_id = input;
         self
     }
-    /// <p>The identifier of the member (user or group) for which to delete granted permissions.</p>
+    /// <p>The identifier of the entity for which to delete granted permissions.</p>
+    /// <p>The identifier can be <i>UserId, ResourceID, or Group Id</i>, <i>Username or Groupname</i>, or <i>email</i>.</p>
+    /// <ul>
+    /// <li> <p>Grantee ID: 12345678-1234-1234-1234-123456789012,r-0123456789a0123456789b0123456789, or S-1-1-12-1234567890-123456789-123456789-1234</p> </li>
+    /// <li> <p>Email address: grantee@domain.tld</p> </li>
+    /// <li> <p>Grantee name: grantee</p> </li>
+    /// </ul>
     pub fn get_grantee_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.grantee_id
     }

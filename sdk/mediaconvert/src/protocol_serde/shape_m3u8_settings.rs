@@ -75,34 +75,43 @@ pub fn ser_m3u8_settings(
             ::aws_smithy_types::Number::NegInt((*var_15).into()),
         );
     }
-    if let Some(var_16) = &input.scte35_pid {
-        object.key("scte35Pid").number(
+    if let Some(var_16) = &input.pts_offset {
+        object.key("ptsOffset").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((*var_16).into()),
         );
     }
-    if let Some(var_17) = &input.scte35_source {
-        object.key("scte35Source").string(var_17.as_str());
+    if let Some(var_17) = &input.pts_offset_mode {
+        object.key("ptsOffsetMode").string(var_17.as_str());
     }
-    if let Some(var_18) = &input.timed_metadata {
-        object.key("timedMetadata").string(var_18.as_str());
+    if let Some(var_18) = &input.scte35_pid {
+        object.key("scte35Pid").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_18).into()),
+        );
     }
-    if let Some(var_19) = &input.timed_metadata_pid {
+    if let Some(var_19) = &input.scte35_source {
+        object.key("scte35Source").string(var_19.as_str());
+    }
+    if let Some(var_20) = &input.timed_metadata {
+        object.key("timedMetadata").string(var_20.as_str());
+    }
+    if let Some(var_21) = &input.timed_metadata_pid {
         object.key("timedMetadataPid").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_19).into()),
+            ::aws_smithy_types::Number::NegInt((*var_21).into()),
         );
     }
-    if let Some(var_20) = &input.transport_stream_id {
+    if let Some(var_22) = &input.transport_stream_id {
         object.key("transportStreamId").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_20).into()),
+            ::aws_smithy_types::Number::NegInt((*var_22).into()),
         );
     }
-    if let Some(var_21) = &input.video_pid {
+    if let Some(var_23) = &input.video_pid {
         object.key("videoPid").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_21).into()),
+            ::aws_smithy_types::Number::NegInt((*var_23).into()),
         );
     }
     Ok(())
@@ -209,6 +218,20 @@ where
                             builder = builder.set_program_number(
                                 ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
                                     .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "ptsOffset" => {
+                            builder = builder.set_pts_offset(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "ptsOffsetMode" => {
+                            builder = builder.set_pts_offset_mode(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::TsPtsOffset::from(u.as_ref())))
                                     .transpose()?,
                             );
                         }

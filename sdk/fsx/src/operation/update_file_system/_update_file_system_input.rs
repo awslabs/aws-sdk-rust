@@ -30,6 +30,8 @@ pub struct UpdateFileSystemInput {
     pub ontap_configuration: ::std::option::Option<crate::types::UpdateFileSystemOntapConfiguration>,
     /// <p>The configuration updates for an FSx for OpenZFS file system.</p>
     pub open_zfs_configuration: ::std::option::Option<crate::types::UpdateFileSystemOpenZfsConfiguration>,
+    /// <p>Specifies the file system's storage type.</p>
+    pub storage_type: ::std::option::Option<crate::types::StorageType>,
 }
 impl UpdateFileSystemInput {
     /// <p>The ID of the file system that you are updating.</p>
@@ -72,6 +74,10 @@ impl UpdateFileSystemInput {
     pub fn open_zfs_configuration(&self) -> ::std::option::Option<&crate::types::UpdateFileSystemOpenZfsConfiguration> {
         self.open_zfs_configuration.as_ref()
     }
+    /// <p>Specifies the file system's storage type.</p>
+    pub fn storage_type(&self) -> ::std::option::Option<&crate::types::StorageType> {
+        self.storage_type.as_ref()
+    }
 }
 impl UpdateFileSystemInput {
     /// Creates a new builder-style object to manufacture [`UpdateFileSystemInput`](crate::operation::update_file_system::UpdateFileSystemInput).
@@ -91,6 +97,7 @@ pub struct UpdateFileSystemInputBuilder {
     pub(crate) lustre_configuration: ::std::option::Option<crate::types::UpdateFileSystemLustreConfiguration>,
     pub(crate) ontap_configuration: ::std::option::Option<crate::types::UpdateFileSystemOntapConfiguration>,
     pub(crate) open_zfs_configuration: ::std::option::Option<crate::types::UpdateFileSystemOpenZfsConfiguration>,
+    pub(crate) storage_type: ::std::option::Option<crate::types::StorageType>,
 }
 impl UpdateFileSystemInputBuilder {
     /// <p>The ID of the file system that you are updating.</p>
@@ -227,6 +234,20 @@ impl UpdateFileSystemInputBuilder {
     pub fn get_open_zfs_configuration(&self) -> &::std::option::Option<crate::types::UpdateFileSystemOpenZfsConfiguration> {
         &self.open_zfs_configuration
     }
+    /// <p>Specifies the file system's storage type.</p>
+    pub fn storage_type(mut self, input: crate::types::StorageType) -> Self {
+        self.storage_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the file system's storage type.</p>
+    pub fn set_storage_type(mut self, input: ::std::option::Option<crate::types::StorageType>) -> Self {
+        self.storage_type = input;
+        self
+    }
+    /// <p>Specifies the file system's storage type.</p>
+    pub fn get_storage_type(&self) -> &::std::option::Option<crate::types::StorageType> {
+        &self.storage_type
+    }
     /// Consumes the builder and constructs a [`UpdateFileSystemInput`](crate::operation::update_file_system::UpdateFileSystemInput).
     pub fn build(
         self,
@@ -239,6 +260,7 @@ impl UpdateFileSystemInputBuilder {
             lustre_configuration: self.lustre_configuration,
             ontap_configuration: self.ontap_configuration,
             open_zfs_configuration: self.open_zfs_configuration,
+            storage_type: self.storage_type,
         })
     }
 }

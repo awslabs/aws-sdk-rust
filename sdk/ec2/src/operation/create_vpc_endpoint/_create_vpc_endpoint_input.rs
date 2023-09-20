@@ -16,9 +16,9 @@ pub struct CreateVpcEndpointInput {
     pub policy_document: ::std::option::Option<::std::string::String>,
     /// <p>(Gateway endpoint) The route table IDs.</p>
     pub route_table_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>(Interface and Gateway Load Balancer endpoints) The IDs of the subnets in which to create an endpoint network interface. For a Gateway Load Balancer endpoint, you can specify only one subnet.</p>
+    /// <p>(Interface and Gateway Load Balancer endpoints) The IDs of the subnets in which to create endpoint network interfaces. For a Gateway Load Balancer endpoint, you can specify only one subnet.</p>
     pub subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>(Interface endpoint) The IDs of the security groups to associate with the endpoint network interface. If this parameter is not specified, we use the default security group for the VPC.</p>
+    /// <p>(Interface endpoint) The IDs of the security groups to associate with the endpoint network interfaces. If this parameter is not specified, we use the default security group for the VPC.</p>
     pub security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The IP address type for the endpoint.</p>
     pub ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
@@ -32,6 +32,8 @@ pub struct CreateVpcEndpointInput {
     pub private_dns_enabled: ::std::option::Option<bool>,
     /// <p>The tags to associate with the endpoint.</p>
     pub tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
+    /// <p>The subnet configurations for the endpoint.</p>
+    pub subnet_configurations: ::std::option::Option<::std::vec::Vec<crate::types::SubnetConfiguration>>,
 }
 impl CreateVpcEndpointInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -59,11 +61,11 @@ impl CreateVpcEndpointInput {
     pub fn route_table_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.route_table_ids.as_deref()
     }
-    /// <p>(Interface and Gateway Load Balancer endpoints) The IDs of the subnets in which to create an endpoint network interface. For a Gateway Load Balancer endpoint, you can specify only one subnet.</p>
+    /// <p>(Interface and Gateway Load Balancer endpoints) The IDs of the subnets in which to create endpoint network interfaces. For a Gateway Load Balancer endpoint, you can specify only one subnet.</p>
     pub fn subnet_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.subnet_ids.as_deref()
     }
-    /// <p>(Interface endpoint) The IDs of the security groups to associate with the endpoint network interface. If this parameter is not specified, we use the default security group for the VPC.</p>
+    /// <p>(Interface endpoint) The IDs of the security groups to associate with the endpoint network interfaces. If this parameter is not specified, we use the default security group for the VPC.</p>
     pub fn security_group_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.security_group_ids.as_deref()
     }
@@ -88,6 +90,10 @@ impl CreateVpcEndpointInput {
     /// <p>The tags to associate with the endpoint.</p>
     pub fn tag_specifications(&self) -> ::std::option::Option<&[crate::types::TagSpecification]> {
         self.tag_specifications.as_deref()
+    }
+    /// <p>The subnet configurations for the endpoint.</p>
+    pub fn subnet_configurations(&self) -> ::std::option::Option<&[crate::types::SubnetConfiguration]> {
+        self.subnet_configurations.as_deref()
     }
 }
 impl CreateVpcEndpointInput {
@@ -114,6 +120,7 @@ pub struct CreateVpcEndpointInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) private_dns_enabled: ::std::option::Option<bool>,
     pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
+    pub(crate) subnet_configurations: ::std::option::Option<::std::vec::Vec<crate::types::SubnetConfiguration>>,
 }
 impl CreateVpcEndpointInputBuilder {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -213,19 +220,19 @@ impl CreateVpcEndpointInputBuilder {
     ///
     /// To override the contents of this collection use [`set_subnet_ids`](Self::set_subnet_ids).
     ///
-    /// <p>(Interface and Gateway Load Balancer endpoints) The IDs of the subnets in which to create an endpoint network interface. For a Gateway Load Balancer endpoint, you can specify only one subnet.</p>
+    /// <p>(Interface and Gateway Load Balancer endpoints) The IDs of the subnets in which to create endpoint network interfaces. For a Gateway Load Balancer endpoint, you can specify only one subnet.</p>
     pub fn subnet_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.subnet_ids.unwrap_or_default();
         v.push(input.into());
         self.subnet_ids = ::std::option::Option::Some(v);
         self
     }
-    /// <p>(Interface and Gateway Load Balancer endpoints) The IDs of the subnets in which to create an endpoint network interface. For a Gateway Load Balancer endpoint, you can specify only one subnet.</p>
+    /// <p>(Interface and Gateway Load Balancer endpoints) The IDs of the subnets in which to create endpoint network interfaces. For a Gateway Load Balancer endpoint, you can specify only one subnet.</p>
     pub fn set_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.subnet_ids = input;
         self
     }
-    /// <p>(Interface and Gateway Load Balancer endpoints) The IDs of the subnets in which to create an endpoint network interface. For a Gateway Load Balancer endpoint, you can specify only one subnet.</p>
+    /// <p>(Interface and Gateway Load Balancer endpoints) The IDs of the subnets in which to create endpoint network interfaces. For a Gateway Load Balancer endpoint, you can specify only one subnet.</p>
     pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.subnet_ids
     }
@@ -233,19 +240,19 @@ impl CreateVpcEndpointInputBuilder {
     ///
     /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
     ///
-    /// <p>(Interface endpoint) The IDs of the security groups to associate with the endpoint network interface. If this parameter is not specified, we use the default security group for the VPC.</p>
+    /// <p>(Interface endpoint) The IDs of the security groups to associate with the endpoint network interfaces. If this parameter is not specified, we use the default security group for the VPC.</p>
     pub fn security_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.security_group_ids.unwrap_or_default();
         v.push(input.into());
         self.security_group_ids = ::std::option::Option::Some(v);
         self
     }
-    /// <p>(Interface endpoint) The IDs of the security groups to associate with the endpoint network interface. If this parameter is not specified, we use the default security group for the VPC.</p>
+    /// <p>(Interface endpoint) The IDs of the security groups to associate with the endpoint network interfaces. If this parameter is not specified, we use the default security group for the VPC.</p>
     pub fn set_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.security_group_ids = input;
         self
     }
-    /// <p>(Interface endpoint) The IDs of the security groups to associate with the endpoint network interface. If this parameter is not specified, we use the default security group for the VPC.</p>
+    /// <p>(Interface endpoint) The IDs of the security groups to associate with the endpoint network interfaces. If this parameter is not specified, we use the default security group for the VPC.</p>
     pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.security_group_ids
     }
@@ -331,6 +338,26 @@ impl CreateVpcEndpointInputBuilder {
     pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
         &self.tag_specifications
     }
+    /// Appends an item to `subnet_configurations`.
+    ///
+    /// To override the contents of this collection use [`set_subnet_configurations`](Self::set_subnet_configurations).
+    ///
+    /// <p>The subnet configurations for the endpoint.</p>
+    pub fn subnet_configurations(mut self, input: crate::types::SubnetConfiguration) -> Self {
+        let mut v = self.subnet_configurations.unwrap_or_default();
+        v.push(input);
+        self.subnet_configurations = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The subnet configurations for the endpoint.</p>
+    pub fn set_subnet_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SubnetConfiguration>>) -> Self {
+        self.subnet_configurations = input;
+        self
+    }
+    /// <p>The subnet configurations for the endpoint.</p>
+    pub fn get_subnet_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SubnetConfiguration>> {
+        &self.subnet_configurations
+    }
     /// Consumes the builder and constructs a [`CreateVpcEndpointInput`](crate::operation::create_vpc_endpoint::CreateVpcEndpointInput).
     pub fn build(
         self,
@@ -349,6 +376,7 @@ impl CreateVpcEndpointInputBuilder {
             client_token: self.client_token,
             private_dns_enabled: self.private_dns_enabled,
             tag_specifications: self.tag_specifications,
+            subnet_configurations: self.subnet_configurations,
         })
     }
 }

@@ -325,6 +325,14 @@ pub use crate::types::_free_trial_status::FreeTrialStatus;
 
 pub use crate::types::_free_trial_type::FreeTrialType;
 
+pub use crate::types::_finding_details_error::FindingDetailsError;
+
+pub use crate::types::_finding_details_error_code::FindingDetailsErrorCode;
+
+pub use crate::types::_finding_detail::FindingDetail;
+
+pub use crate::types::_evidence::Evidence;
+
 pub use crate::types::_code_snippet_error::CodeSnippetError;
 
 pub use crate::types::_code_snippet_error_code::CodeSnippetErrorCode;
@@ -473,6 +481,8 @@ mod _epss_details;
 
 mod _error_code;
 
+mod _evidence;
+
 mod _exploit_available;
 
 mod _exploit_observed;
@@ -492,6 +502,12 @@ mod _filter_action;
 mod _filter_criteria;
 
 mod _finding;
+
+mod _finding_detail;
+
+mod _finding_details_error;
+
+mod _finding_details_error_code;
 
 mod _finding_status;
 

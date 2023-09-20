@@ -26,6 +26,8 @@ pub struct RecommendationJobContainerConfig {
     pub data_input_config: ::std::option::Option<::std::string::String>,
     /// <p>The endpoint type to receive recommendations for. By default this is null, and the results of the inference recommendation job return a combined list of both real-time and serverless benchmarks. By specifying a value for this field, you can receive a longer list of benchmarks for the desired endpoint type.</p>
     pub supported_endpoint_type: ::std::option::Option<crate::types::RecommendationJobSupportedEndpointType>,
+    /// <p>The supported MIME types for the output data.</p>
+    pub supported_response_mime_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl RecommendationJobContainerConfig {
     /// <p>The machine learning domain of the model and its components.</p>
@@ -68,6 +70,10 @@ impl RecommendationJobContainerConfig {
     pub fn supported_endpoint_type(&self) -> ::std::option::Option<&crate::types::RecommendationJobSupportedEndpointType> {
         self.supported_endpoint_type.as_ref()
     }
+    /// <p>The supported MIME types for the output data.</p>
+    pub fn supported_response_mime_types(&self) -> ::std::option::Option<&[::std::string::String]> {
+        self.supported_response_mime_types.as_deref()
+    }
 }
 impl RecommendationJobContainerConfig {
     /// Creates a new builder-style object to manufacture [`RecommendationJobContainerConfig`](crate::types::RecommendationJobContainerConfig).
@@ -89,6 +95,7 @@ pub struct RecommendationJobContainerConfigBuilder {
     pub(crate) supported_instance_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) data_input_config: ::std::option::Option<::std::string::String>,
     pub(crate) supported_endpoint_type: ::std::option::Option<crate::types::RecommendationJobSupportedEndpointType>,
+    pub(crate) supported_response_mime_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl RecommendationJobContainerConfigBuilder {
     /// <p>The machine learning domain of the model and its components.</p>
@@ -235,6 +242,26 @@ impl RecommendationJobContainerConfigBuilder {
     pub fn get_supported_endpoint_type(&self) -> &::std::option::Option<crate::types::RecommendationJobSupportedEndpointType> {
         &self.supported_endpoint_type
     }
+    /// Appends an item to `supported_response_mime_types`.
+    ///
+    /// To override the contents of this collection use [`set_supported_response_mime_types`](Self::set_supported_response_mime_types).
+    ///
+    /// <p>The supported MIME types for the output data.</p>
+    pub fn supported_response_mime_types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.supported_response_mime_types.unwrap_or_default();
+        v.push(input.into());
+        self.supported_response_mime_types = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The supported MIME types for the output data.</p>
+    pub fn set_supported_response_mime_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.supported_response_mime_types = input;
+        self
+    }
+    /// <p>The supported MIME types for the output data.</p>
+    pub fn get_supported_response_mime_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.supported_response_mime_types
+    }
     /// Consumes the builder and constructs a [`RecommendationJobContainerConfig`](crate::types::RecommendationJobContainerConfig).
     pub fn build(self) -> crate::types::RecommendationJobContainerConfig {
         crate::types::RecommendationJobContainerConfig {
@@ -247,6 +274,7 @@ impl RecommendationJobContainerConfigBuilder {
             supported_instance_types: self.supported_instance_types,
             data_input_config: self.data_input_config,
             supported_endpoint_type: self.supported_endpoint_type,
+            supported_response_mime_types: self.supported_response_mime_types,
         }
     }
 }

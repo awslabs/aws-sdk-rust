@@ -16,6 +16,7 @@ impl super::Client {
     ///   - [`state(Option<SnapshotState>)`](crate::operation::restore_snapshot_from_recycle_bin::RestoreSnapshotFromRecycleBinOutput::state): <p>The state of the snapshot.</p>
     ///   - [`volume_id(Option<String>)`](crate::operation::restore_snapshot_from_recycle_bin::RestoreSnapshotFromRecycleBinOutput::volume_id): <p>The ID of the volume that was used to create the snapshot.</p>
     ///   - [`volume_size(Option<i32>)`](crate::operation::restore_snapshot_from_recycle_bin::RestoreSnapshotFromRecycleBinOutput::volume_size): <p>The size of the volume, in GiB.</p>
+    ///   - [`sse_type(Option<SseType>)`](crate::operation::restore_snapshot_from_recycle_bin::RestoreSnapshotFromRecycleBinOutput::sse_type): <p>Reserved for future use.</p>
     /// - On failure, responds with [`SdkError<RestoreSnapshotFromRecycleBinError>`](crate::operation::restore_snapshot_from_recycle_bin::RestoreSnapshotFromRecycleBinError)
     pub fn restore_snapshot_from_recycle_bin(
         &self,

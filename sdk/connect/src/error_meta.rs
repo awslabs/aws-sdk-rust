@@ -7,7 +7,7 @@ pub enum Error {
     AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>The flow has not been published.</p>
     ContactFlowNotPublishedException(crate::types::error::ContactFlowNotPublishedException),
-    /// <p>The contact with the specified ID is not active or does not exist. Applies to Voice calls only, not to Chat, Task, or Voice Callback.</p>
+    /// <p>The contact with the specified ID is not active or does not exist. Applies to Voice calls only, not to Chat or Task contacts.</p>
     ContactNotFoundException(crate::types::error::ContactNotFoundException),
     /// <p>Outbound calls to the destination number are not allowed.</p>
     DestinationNotAllowedException(crate::types::error::DestinationNotAllowedException),
@@ -45,6 +45,8 @@ pub enum Error {
     ServiceQuotaExceededException(crate::types::error::ServiceQuotaExceededException),
     /// <p>The throttling limit has been exceeded.</p>
     ThrottlingException(crate::types::error::ThrottlingException),
+    /// <p>Displayed when rate-related API limits are exceeded.</p>
+    TooManyRequestsException(crate::types::error::TooManyRequestsException),
     /// <p>No user with the specified credentials was found in the Amazon Connect instance.</p>
     UserNotFoundException(crate::types::error::UserNotFoundException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
@@ -74,6 +76,7 @@ impl ::std::fmt::Display for Error {
             Error::ResourceNotReadyException(inner) => inner.fmt(f),
             Error::ServiceQuotaExceededException(inner) => inner.fmt(f),
             Error::ThrottlingException(inner) => inner.fmt(f),
+            Error::TooManyRequestsException(inner) => inner.fmt(f),
             Error::UserNotFoundException(inner) => inner.fmt(f),
             Error::Unhandled(inner) => inner.fmt(f),
         }
@@ -508,6 +511,60 @@ impl From<crate::operation::associate_security_key::AssociateSecurityKeyError> f
             }
             crate::operation::associate_security_key::AssociateSecurityKeyError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::associate_security_key::AssociateSecurityKeyError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::associate_traffic_distribution_group_user::AssociateTrafficDistributionGroupUserError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::associate_traffic_distribution_group_user::AssociateTrafficDistributionGroupUserError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::associate_traffic_distribution_group_user::AssociateTrafficDistributionGroupUserError> for Error {
+    fn from(err: crate::operation::associate_traffic_distribution_group_user::AssociateTrafficDistributionGroupUserError) -> Self {
+        match err {
+            crate::operation::associate_traffic_distribution_group_user::AssociateTrafficDistributionGroupUserError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::associate_traffic_distribution_group_user::AssociateTrafficDistributionGroupUserError::InternalServiceException(
+                inner,
+            ) => Error::InternalServiceException(inner),
+            crate::operation::associate_traffic_distribution_group_user::AssociateTrafficDistributionGroupUserError::InvalidRequestException(
+                inner,
+            ) => Error::InvalidRequestException(inner),
+            crate::operation::associate_traffic_distribution_group_user::AssociateTrafficDistributionGroupUserError::ResourceConflictException(
+                inner,
+            ) => Error::ResourceConflictException(inner),
+            crate::operation::associate_traffic_distribution_group_user::AssociateTrafficDistributionGroupUserError::ResourceNotFoundException(
+                inner,
+            ) => Error::ResourceNotFoundException(inner),
+            crate::operation::associate_traffic_distribution_group_user::AssociateTrafficDistributionGroupUserError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::associate_traffic_distribution_group_user::AssociateTrafficDistributionGroupUserError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
@@ -1251,6 +1308,75 @@ impl From<crate::operation::create_user_hierarchy_group::CreateUserHierarchyGrou
         }
     }
 }
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::create_view::CreateViewError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::create_view::CreateViewError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::create_view::CreateViewError> for Error {
+    fn from(err: crate::operation::create_view::CreateViewError) -> Self {
+        match err {
+            crate::operation::create_view::CreateViewError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_view::CreateViewError::DuplicateResourceException(inner) => Error::DuplicateResourceException(inner),
+            crate::operation::create_view::CreateViewError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::create_view::CreateViewError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::create_view::CreateViewError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::create_view::CreateViewError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
+            crate::operation::create_view::CreateViewError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::create_view::CreateViewError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::create_view::CreateViewError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::create_view::CreateViewError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::create_view_version::CreateViewVersionError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::create_view_version::CreateViewVersionError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::create_view_version::CreateViewVersionError> for Error {
+    fn from(err: crate::operation::create_view_version::CreateViewVersionError) -> Self {
+        match err {
+            crate::operation::create_view_version::CreateViewVersionError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_view_version::CreateViewVersionError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::create_view_version::CreateViewVersionError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::create_view_version::CreateViewVersionError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::create_view_version::CreateViewVersionError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
+            crate::operation::create_view_version::CreateViewVersionError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::create_view_version::CreateViewVersionError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_view_version::CreateViewVersionError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::create_view_version::CreateViewVersionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::create_vocabulary::CreateVocabularyError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1936,6 +2062,70 @@ impl From<crate::operation::delete_user_hierarchy_group::DeleteUserHierarchyGrou
                 Error::ThrottlingException(inner)
             }
             crate::operation::delete_user_hierarchy_group::DeleteUserHierarchyGroupError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::delete_view::DeleteViewError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::delete_view::DeleteViewError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_view::DeleteViewError> for Error {
+    fn from(err: crate::operation::delete_view::DeleteViewError) -> Self {
+        match err {
+            crate::operation::delete_view::DeleteViewError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_view::DeleteViewError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::delete_view::DeleteViewError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::delete_view::DeleteViewError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::delete_view::DeleteViewError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
+            crate::operation::delete_view::DeleteViewError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_view::DeleteViewError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::delete_view::DeleteViewError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::delete_view_version::DeleteViewVersionError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::delete_view_version::DeleteViewVersionError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_view_version::DeleteViewVersionError> for Error {
+    fn from(err: crate::operation::delete_view_version::DeleteViewVersionError) -> Self {
+        match err {
+            crate::operation::delete_view_version::DeleteViewVersionError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_view_version::DeleteViewVersionError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::delete_view_version::DeleteViewVersionError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::delete_view_version::DeleteViewVersionError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::delete_view_version::DeleteViewVersionError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
+            crate::operation::delete_view_version::DeleteViewVersionError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_view_version::DeleteViewVersionError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::delete_view_version::DeleteViewVersionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2698,6 +2888,35 @@ impl From<crate::operation::describe_user_hierarchy_structure::DescribeUserHiera
         }
     }
 }
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::describe_view::DescribeViewError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::describe_view::DescribeViewError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_view::DescribeViewError> for Error {
+    fn from(err: crate::operation::describe_view::DescribeViewError) -> Self {
+        match err {
+            crate::operation::describe_view::DescribeViewError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::describe_view::DescribeViewError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::describe_view::DescribeViewError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::describe_view::DescribeViewError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::describe_view::DescribeViewError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::describe_view::DescribeViewError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::describe_view::DescribeViewError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::describe_vocabulary::DescribeVocabularyError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -3072,6 +3291,46 @@ impl From<crate::operation::disassociate_security_key::DisassociateSecurityKeyEr
                 Error::ThrottlingException(inner)
             }
             crate::operation::disassociate_security_key::DisassociateSecurityKeyError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::disassociate_traffic_distribution_group_user::DisassociateTrafficDistributionGroupUserError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::disassociate_traffic_distribution_group_user::DisassociateTrafficDistributionGroupUserError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::disassociate_traffic_distribution_group_user::DisassociateTrafficDistributionGroupUserError> for Error {
+    fn from(err: crate::operation::disassociate_traffic_distribution_group_user::DisassociateTrafficDistributionGroupUserError) -> Self {
+        match err {
+            crate::operation::disassociate_traffic_distribution_group_user::DisassociateTrafficDistributionGroupUserError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::disassociate_traffic_distribution_group_user::DisassociateTrafficDistributionGroupUserError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::disassociate_traffic_distribution_group_user::DisassociateTrafficDistributionGroupUserError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::disassociate_traffic_distribution_group_user::DisassociateTrafficDistributionGroupUserError::ResourceConflictException(inner) => Error::ResourceConflictException(inner),
+            crate::operation::disassociate_traffic_distribution_group_user::DisassociateTrafficDistributionGroupUserError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::disassociate_traffic_distribution_group_user::DisassociateTrafficDistributionGroupUserError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::disassociate_traffic_distribution_group_user::DisassociateTrafficDistributionGroupUserError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -4463,6 +4722,49 @@ impl From<crate::operation::list_traffic_distribution_groups::ListTrafficDistrib
         }
     }
 }
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_traffic_distribution_group_users::ListTrafficDistributionGroupUsersError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<crate::operation::list_traffic_distribution_group_users::ListTrafficDistributionGroupUsersError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_traffic_distribution_group_users::ListTrafficDistributionGroupUsersError> for Error {
+    fn from(err: crate::operation::list_traffic_distribution_group_users::ListTrafficDistributionGroupUsersError) -> Self {
+        match err {
+            crate::operation::list_traffic_distribution_group_users::ListTrafficDistributionGroupUsersError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_traffic_distribution_group_users::ListTrafficDistributionGroupUsersError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::list_traffic_distribution_group_users::ListTrafficDistributionGroupUsersError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::list_traffic_distribution_group_users::ListTrafficDistributionGroupUsersError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_traffic_distribution_group_users::ListTrafficDistributionGroupUsersError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_traffic_distribution_group_users::ListTrafficDistributionGroupUsersError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
 impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_use_cases::ListUseCasesError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -4553,6 +4855,64 @@ impl From<crate::operation::list_users::ListUsersError> for Error {
             crate::operation::list_users::ListUsersError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::list_users::ListUsersError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_users::ListUsersError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_views::ListViewsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_views::ListViewsError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_views::ListViewsError> for Error {
+    fn from(err: crate::operation::list_views::ListViewsError) -> Self {
+        match err {
+            crate::operation::list_views::ListViewsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_views::ListViewsError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::list_views::ListViewsError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::list_views::ListViewsError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::list_views::ListViewsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_views::ListViewsError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::list_views::ListViewsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_view_versions::ListViewVersionsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_view_versions::ListViewVersionsError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_view_versions::ListViewVersionsError> for Error {
+    fn from(err: crate::operation::list_view_versions::ListViewVersionsError) -> Self {
+        match err {
+            crate::operation::list_view_versions::ListViewVersionsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_view_versions::ListViewVersionsError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::list_view_versions::ListViewVersionsError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::list_view_versions::ListViewVersionsError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::list_view_versions::ListViewVersionsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_view_versions::ListViewVersionsError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::list_view_versions::ListViewVersionsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -6412,6 +6772,45 @@ impl From<crate::operation::update_quick_connect_name::UpdateQuickConnectNameErr
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_routing_profile_agent_availability_timer::UpdateRoutingProfileAgentAvailabilityTimerError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::update_routing_profile_agent_availability_timer::UpdateRoutingProfileAgentAvailabilityTimerError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::update_routing_profile_agent_availability_timer::UpdateRoutingProfileAgentAvailabilityTimerError> for Error {
+    fn from(err: crate::operation::update_routing_profile_agent_availability_timer::UpdateRoutingProfileAgentAvailabilityTimerError) -> Self {
+        match err {
+            crate::operation::update_routing_profile_agent_availability_timer::UpdateRoutingProfileAgentAvailabilityTimerError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::update_routing_profile_agent_availability_timer::UpdateRoutingProfileAgentAvailabilityTimerError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::update_routing_profile_agent_availability_timer::UpdateRoutingProfileAgentAvailabilityTimerError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::update_routing_profile_agent_availability_timer::UpdateRoutingProfileAgentAvailabilityTimerError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_routing_profile_agent_availability_timer::UpdateRoutingProfileAgentAvailabilityTimerError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_routing_profile_agent_availability_timer::UpdateRoutingProfileAgentAvailabilityTimerError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::update_routing_profile_concurrency::UpdateRoutingProfileConcurrencyError, R>>
     for Error
 where
@@ -6986,6 +7385,81 @@ impl From<crate::operation::update_user_security_profiles::UpdateUserSecurityPro
         }
     }
 }
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::update_view_content::UpdateViewContentError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::update_view_content::UpdateViewContentError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::update_view_content::UpdateViewContentError> for Error {
+    fn from(err: crate::operation::update_view_content::UpdateViewContentError) -> Self {
+        match err {
+            crate::operation::update_view_content::UpdateViewContentError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_view_content::UpdateViewContentError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::update_view_content::UpdateViewContentError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::update_view_content::UpdateViewContentError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::update_view_content::UpdateViewContentError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
+            crate::operation::update_view_content::UpdateViewContentError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_view_content::UpdateViewContentError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::update_view_content::UpdateViewContentError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::update_view_metadata::UpdateViewMetadataError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::update_view_metadata::UpdateViewMetadataError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::update_view_metadata::UpdateViewMetadataError> for Error {
+    fn from(err: crate::operation::update_view_metadata::UpdateViewMetadataError) -> Self {
+        match err {
+            crate::operation::update_view_metadata::UpdateViewMetadataError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_view_metadata::UpdateViewMetadataError::DuplicateResourceException(inner) => {
+                Error::DuplicateResourceException(inner)
+            }
+            crate::operation::update_view_metadata::UpdateViewMetadataError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::update_view_metadata::UpdateViewMetadataError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::update_view_metadata::UpdateViewMetadataError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::update_view_metadata::UpdateViewMetadataError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
+            crate::operation::update_view_metadata::UpdateViewMetadataError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_view_metadata::UpdateViewMetadataError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::update_view_metadata::UpdateViewMetadataError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl ::std::error::Error for Error {
     fn source(&self) -> std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
@@ -7010,6 +7484,7 @@ impl ::std::error::Error for Error {
             Error::ResourceNotReadyException(inner) => inner.source(),
             Error::ServiceQuotaExceededException(inner) => inner.source(),
             Error::ThrottlingException(inner) => inner.source(),
+            Error::TooManyRequestsException(inner) => inner.source(),
             Error::UserNotFoundException(inner) => inner.source(),
             Error::Unhandled(inner) => inner.source(),
         }
@@ -7039,6 +7514,7 @@ impl ::aws_http::request_id::RequestId for Error {
             Self::ResourceNotReadyException(e) => e.request_id(),
             Self::ServiceQuotaExceededException(e) => e.request_id(),
             Self::ThrottlingException(e) => e.request_id(),
+            Self::TooManyRequestsException(e) => e.request_id(),
             Self::UserNotFoundException(e) => e.request_id(),
             Self::Unhandled(e) => e.request_id(),
         }

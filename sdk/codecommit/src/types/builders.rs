@@ -29,6 +29,12 @@ pub use crate::types::_replace_content_entry::ReplaceContentEntryBuilder;
 
 pub use crate::types::_repository_name_id_pair::RepositoryNameIdPairBuilder;
 
+pub use crate::types::_file_version::FileVersionBuilder;
+
+pub use crate::types::_commit::CommitBuilder;
+
+pub use crate::types::_user_info::UserInfoBuilder;
+
 pub use crate::types::_repository_metadata::RepositoryMetadataBuilder;
 
 pub use crate::types::_approval::ApprovalBuilder;
@@ -56,10 +62,6 @@ pub use crate::types::_folder::FolderBuilder;
 pub use crate::types::_difference::DifferenceBuilder;
 
 pub use crate::types::_blob_metadata::BlobMetadataBuilder;
-
-pub use crate::types::_commit::CommitBuilder;
-
-pub use crate::types::_user_info::UserInfoBuilder;
 
 pub use crate::types::_comments_for_pull_request::CommentsForPullRequestBuilder;
 

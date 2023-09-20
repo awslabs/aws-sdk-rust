@@ -261,7 +261,7 @@ pub enum GetFileError {
     EncryptionKeyUnavailableException(crate::types::error::EncryptionKeyUnavailableException),
     /// <p>The specified file does not exist. Verify that you have used the correct file name, full path, and extension.</p>
     FileDoesNotExistException(crate::types::error::FileDoesNotExistException),
-    /// <p>The specified file exceeds the file size limit for AWS CodeCommit. For more information about limits in AWS CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS CodeCommit User Guide</a>.</p>
+    /// <p>The specified file exceeds the file size limit for CodeCommit. For more information about limits in CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">Quotas</a> in the <i>CodeCommit User Guide</i>.</p>
     FileTooLargeException(crate::types::error::FileTooLargeException),
     /// <p>The specified commit is not valid.</p>
     InvalidCommitException(crate::types::error::InvalidCommitException),

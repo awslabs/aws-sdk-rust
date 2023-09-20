@@ -6,7 +6,7 @@
 pub struct UniqueAttribute {
     /// <p>A string representation of the path to a given attribute or sub-attribute. Supports JMESPath.</p>
     pub attribute_path: ::std::option::Option<::std::string::String>,
-    /// <p>The value of the attribute. This is a <code>Document</code> type. This type is not supported by Java V1, Go V1, and older versions of the AWS CLI.</p>
+    /// <p>The value of the attribute. This is a <code>Document</code> type. This type is not supported by Java V1, Go V1, and older versions of the CLI.</p>
     pub attribute_value: ::std::option::Option<::aws_smithy_types::Document>,
 }
 impl UniqueAttribute {
@@ -14,7 +14,7 @@ impl UniqueAttribute {
     pub fn attribute_path(&self) -> ::std::option::Option<&str> {
         self.attribute_path.as_deref()
     }
-    /// <p>The value of the attribute. This is a <code>Document</code> type. This type is not supported by Java V1, Go V1, and older versions of the AWS CLI.</p>
+    /// <p>The value of the attribute. This is a <code>Document</code> type. This type is not supported by Java V1, Go V1, and older versions of the CLI.</p>
     pub fn attribute_value(&self) -> ::std::option::Option<&::aws_smithy_types::Document> {
         self.attribute_value.as_ref()
     }
@@ -48,17 +48,17 @@ impl UniqueAttributeBuilder {
     pub fn get_attribute_path(&self) -> &::std::option::Option<::std::string::String> {
         &self.attribute_path
     }
-    /// <p>The value of the attribute. This is a <code>Document</code> type. This type is not supported by Java V1, Go V1, and older versions of the AWS CLI.</p>
+    /// <p>The value of the attribute. This is a <code>Document</code> type. This type is not supported by Java V1, Go V1, and older versions of the CLI.</p>
     pub fn attribute_value(mut self, input: ::aws_smithy_types::Document) -> Self {
         self.attribute_value = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The value of the attribute. This is a <code>Document</code> type. This type is not supported by Java V1, Go V1, and older versions of the AWS CLI.</p>
+    /// <p>The value of the attribute. This is a <code>Document</code> type. This type is not supported by Java V1, Go V1, and older versions of the CLI.</p>
     pub fn set_attribute_value(mut self, input: ::std::option::Option<::aws_smithy_types::Document>) -> Self {
         self.attribute_value = input;
         self
     }
-    /// <p>The value of the attribute. This is a <code>Document</code> type. This type is not supported by Java V1, Go V1, and older versions of the AWS CLI.</p>
+    /// <p>The value of the attribute. This is a <code>Document</code> type. This type is not supported by Java V1, Go V1, and older versions of the CLI.</p>
     pub fn get_attribute_value(&self) -> &::std::option::Option<::aws_smithy_types::Document> {
         &self.attribute_value
     }

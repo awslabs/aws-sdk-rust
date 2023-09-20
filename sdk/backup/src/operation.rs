@@ -19,6 +19,9 @@ pub mod create_framework;
 /// Types for the `CreateLegalHold` operation.
 pub mod create_legal_hold;
 
+/// Types for the `CreateLogicallyAirGappedBackupVault` operation.
+pub mod create_logically_air_gapped_backup_vault;
+
 /// Types for the `CreateReportPlan` operation.
 pub mod create_report_plan;
 
@@ -147,6 +150,9 @@ pub mod list_legal_holds;
 
 /// Types for the `ListProtectedResources` operation.
 pub mod list_protected_resources;
+
+/// Types for the `ListProtectedResourcesByBackupVault` operation.
+pub mod list_protected_resources_by_backup_vault;
 
 /// Types for the `ListRecoveryPointsByBackupVault` operation.
 pub mod list_recovery_points_by_backup_vault;

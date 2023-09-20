@@ -6,8 +6,8 @@ pub fn ser_delete_report_group_input(
     if let Some(var_1) = &input.arn {
         object.key("arn").string(var_1.as_str());
     }
-    if input.delete_reports {
-        object.key("deleteReports").boolean(input.delete_reports);
+    if let Some(var_2) = &input.delete_reports {
+        object.key("deleteReports").boolean(*var_2);
     }
     Ok(())
 }

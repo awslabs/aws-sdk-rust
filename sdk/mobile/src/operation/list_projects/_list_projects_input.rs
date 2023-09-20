@@ -5,13 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListProjectsInput {
     /// <p> Maximum number of records to list in a single response. </p>
-    pub max_results: i32,
+    pub max_results: ::std::option::Option<i32>,
     /// <p> Pagination token. Set to null to start listing projects from start. If non-null pagination token is returned in a result, then pass its value in here in another request to list more projects. </p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListProjectsInput {
     /// <p> Maximum number of records to list in a single response. </p>
-    pub fn max_results(&self) -> i32 {
+    pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
     /// <p> Pagination token. Set to null to start listing projects from start. If non-null pagination token is returned in a result, then pass its value in here in another request to list more projects. </p>
@@ -65,7 +65,7 @@ impl ListProjectsInputBuilder {
     /// Consumes the builder and constructs a [`ListProjectsInput`](crate::operation::list_projects::ListProjectsInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::list_projects::ListProjectsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_projects::ListProjectsInput {
-            max_results: self.max_results.unwrap_or_default(),
+            max_results: self.max_results,
             next_token: self.next_token,
         })
     }

@@ -268,6 +268,8 @@ pub enum UpdateResourceError {
     EntityStateException(crate::types::error::EntityStateException),
     /// <p>The configuration for a resource isn't valid. A resource must either be able to auto-respond to requests or have at least one delegate associated that can do so on its behalf.</p>
     InvalidConfigurationException(crate::types::error::InvalidConfigurationException),
+    /// <p>One or more of the input parameters don't match the service's restrictions.</p>
+    InvalidParameterException(crate::types::error::InvalidParameterException),
     /// <p>The domain specified is not found in your organization.</p>
     MailDomainNotFoundException(crate::types::error::MailDomainNotFoundException),
     /// <p>After a domain has been added to the organization, it must be verified. The domain is not yet verified.</p>
@@ -278,6 +280,8 @@ pub enum UpdateResourceError {
     OrganizationNotFoundException(crate::types::error::OrganizationNotFoundException),
     /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
     OrganizationStateException(crate::types::error::OrganizationStateException),
+    /// <p>You can't perform a write operation against a read-only directory.</p>
+    UnsupportedOperationException(crate::types::error::UnsupportedOperationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(::aws_smithy_types::error::Unhandled),
 }
@@ -301,11 +305,13 @@ impl ::std::fmt::Display for UpdateResourceError {
             Self::EntityNotFoundException(_inner) => _inner.fmt(f),
             Self::EntityStateException(_inner) => _inner.fmt(f),
             Self::InvalidConfigurationException(_inner) => _inner.fmt(f),
+            Self::InvalidParameterException(_inner) => _inner.fmt(f),
             Self::MailDomainNotFoundException(_inner) => _inner.fmt(f),
             Self::MailDomainStateException(_inner) => _inner.fmt(f),
             Self::NameAvailabilityException(_inner) => _inner.fmt(f),
             Self::OrganizationNotFoundException(_inner) => _inner.fmt(f),
             Self::OrganizationStateException(_inner) => _inner.fmt(f),
+            Self::UnsupportedOperationException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -318,11 +324,13 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for UpdateResourc
             Self::EntityNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::EntityStateException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidConfigurationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidParameterException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::MailDomainNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::MailDomainStateException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::NameAvailabilityException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::OrganizationNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::OrganizationStateException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::UnsupportedOperationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
         }
     }
@@ -364,11 +372,13 @@ impl UpdateResourceError {
             Self::EntityNotFoundException(e) => e.meta(),
             Self::EntityStateException(e) => e.meta(),
             Self::InvalidConfigurationException(e) => e.meta(),
+            Self::InvalidParameterException(e) => e.meta(),
             Self::MailDomainNotFoundException(e) => e.meta(),
             Self::MailDomainStateException(e) => e.meta(),
             Self::NameAvailabilityException(e) => e.meta(),
             Self::OrganizationNotFoundException(e) => e.meta(),
             Self::OrganizationStateException(e) => e.meta(),
+            Self::UnsupportedOperationException(e) => e.meta(),
             Self::Unhandled(e) => e.meta(),
         }
     }
@@ -392,6 +402,10 @@ impl UpdateResourceError {
     pub fn is_invalid_configuration_exception(&self) -> bool {
         matches!(self, Self::InvalidConfigurationException(_))
     }
+    /// Returns `true` if the error kind is `UpdateResourceError::InvalidParameterException`.
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(self, Self::InvalidParameterException(_))
+    }
     /// Returns `true` if the error kind is `UpdateResourceError::MailDomainNotFoundException`.
     pub fn is_mail_domain_not_found_exception(&self) -> bool {
         matches!(self, Self::MailDomainNotFoundException(_))
@@ -412,6 +426,10 @@ impl UpdateResourceError {
     pub fn is_organization_state_exception(&self) -> bool {
         matches!(self, Self::OrganizationStateException(_))
     }
+    /// Returns `true` if the error kind is `UpdateResourceError::UnsupportedOperationException`.
+    pub fn is_unsupported_operation_exception(&self) -> bool {
+        matches!(self, Self::UnsupportedOperationException(_))
+    }
 }
 impl ::std::error::Error for UpdateResourceError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
@@ -421,11 +439,13 @@ impl ::std::error::Error for UpdateResourceError {
             Self::EntityNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::EntityStateException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidConfigurationException(_inner) => ::std::option::Option::Some(_inner),
+            Self::InvalidParameterException(_inner) => ::std::option::Option::Some(_inner),
             Self::MailDomainNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::MailDomainStateException(_inner) => ::std::option::Option::Some(_inner),
             Self::NameAvailabilityException(_inner) => ::std::option::Option::Some(_inner),
             Self::OrganizationNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::OrganizationStateException(_inner) => ::std::option::Option::Some(_inner),
+            Self::UnsupportedOperationException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(_inner),
         }
     }

@@ -106,6 +106,26 @@ pub fn de_associate_delegate_to_resource_http_error(
                 tmp
             })
         }
+        "UnsupportedOperationException" => {
+            crate::operation::associate_delegate_to_resource::AssociateDelegateToResourceError::UnsupportedOperationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::UnsupportedOperationExceptionBuilder::default();
+                    output = crate::protocol_serde::shape_unsupported_operation_exception::de_unsupported_operation_exception_json_err(
+                        _response_body,
+                        output,
+                    )
+                    .map_err(crate::operation::associate_delegate_to_resource::AssociateDelegateToResourceError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         _ => crate::operation::associate_delegate_to_resource::AssociateDelegateToResourceError::generic(generic),
     })
 }

@@ -1715,6 +1715,41 @@ impl From<crate::operation::start_channel::StartChannelError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::start_input_device::StartInputDeviceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::start_input_device::StartInputDeviceError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::start_input_device::StartInputDeviceError> for Error {
+    fn from(err: crate::operation::start_input_device::StartInputDeviceError) -> Self {
+        match err {
+            crate::operation::start_input_device::StartInputDeviceError::BadGatewayException(inner) => Error::BadGatewayException(inner),
+            crate::operation::start_input_device::StartInputDeviceError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::start_input_device::StartInputDeviceError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::start_input_device::StartInputDeviceError::GatewayTimeoutException(inner) => Error::GatewayTimeoutException(inner),
+            crate::operation::start_input_device::StartInputDeviceError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::start_input_device::StartInputDeviceError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::start_input_device::StartInputDeviceError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::start_input_device::StartInputDeviceError::UnprocessableEntityException(inner) => {
+                Error::UnprocessableEntityException(inner)
+            }
+            crate::operation::start_input_device::StartInputDeviceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::start_input_device_maintenance_window::StartInputDeviceMaintenanceWindowError, R>>
     for Error
 where
@@ -1826,6 +1861,41 @@ impl From<crate::operation::stop_channel::StopChannelError> for Error {
             crate::operation::stop_channel::StopChannelError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::stop_channel::StopChannelError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::stop_channel::StopChannelError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::stop_input_device::StopInputDeviceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::stop_input_device::StopInputDeviceError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::stop_input_device::StopInputDeviceError> for Error {
+    fn from(err: crate::operation::stop_input_device::StopInputDeviceError) -> Self {
+        match err {
+            crate::operation::stop_input_device::StopInputDeviceError::BadGatewayException(inner) => Error::BadGatewayException(inner),
+            crate::operation::stop_input_device::StopInputDeviceError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::stop_input_device::StopInputDeviceError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::stop_input_device::StopInputDeviceError::GatewayTimeoutException(inner) => Error::GatewayTimeoutException(inner),
+            crate::operation::stop_input_device::StopInputDeviceError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::stop_input_device::StopInputDeviceError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::stop_input_device::StopInputDeviceError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::stop_input_device::StopInputDeviceError::UnprocessableEntityException(inner) => {
+                Error::UnprocessableEntityException(inner)
+            }
+            crate::operation::stop_input_device::StopInputDeviceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

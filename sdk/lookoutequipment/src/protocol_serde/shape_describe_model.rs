@@ -268,6 +268,131 @@ pub(crate) fn de_describe_model(
                             .transpose()?,
                     );
                 }
+                "SourceModelVersionArn" => {
+                    builder = builder.set_source_model_version_arn(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                "ImportJobStartTime" => {
+                    builder = builder.set_import_job_start_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                        tokens.next(),
+                        ::aws_smithy_types::date_time::Format::EpochSeconds,
+                    )?);
+                }
+                "ImportJobEndTime" => {
+                    builder = builder.set_import_job_end_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                        tokens.next(),
+                        ::aws_smithy_types::date_time::Format::EpochSeconds,
+                    )?);
+                }
+                "ActiveModelVersion" => {
+                    builder = builder.set_active_model_version(
+                        ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                            .map(i64::try_from)
+                            .transpose()?,
+                    );
+                }
+                "ActiveModelVersionArn" => {
+                    builder = builder.set_active_model_version_arn(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                "ModelVersionActivatedAt" => {
+                    builder = builder.set_model_version_activated_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                        tokens.next(),
+                        ::aws_smithy_types::date_time::Format::EpochSeconds,
+                    )?);
+                }
+                "PreviousActiveModelVersion" => {
+                    builder = builder.set_previous_active_model_version(
+                        ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                            .map(i64::try_from)
+                            .transpose()?,
+                    );
+                }
+                "PreviousActiveModelVersionArn" => {
+                    builder = builder.set_previous_active_model_version_arn(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                "PreviousModelVersionActivatedAt" => {
+                    builder = builder.set_previous_model_version_activated_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                        tokens.next(),
+                        ::aws_smithy_types::date_time::Format::EpochSeconds,
+                    )?);
+                }
+                "PriorModelMetrics" => {
+                    builder = builder.set_prior_model_metrics(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                "LatestScheduledRetrainingFailedReason" => {
+                    builder = builder.set_latest_scheduled_retraining_failed_reason(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                "LatestScheduledRetrainingStatus" => {
+                    builder = builder.set_latest_scheduled_retraining_status(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::ModelVersionStatus::from(u.as_ref())))
+                            .transpose()?,
+                    );
+                }
+                "LatestScheduledRetrainingModelVersion" => {
+                    builder = builder.set_latest_scheduled_retraining_model_version(
+                        ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                            .map(i64::try_from)
+                            .transpose()?,
+                    );
+                }
+                "LatestScheduledRetrainingStartTime" => {
+                    builder = builder.set_latest_scheduled_retraining_start_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                        tokens.next(),
+                        ::aws_smithy_types::date_time::Format::EpochSeconds,
+                    )?);
+                }
+                "LatestScheduledRetrainingAvailableDataInDays" => {
+                    builder = builder.set_latest_scheduled_retraining_available_data_in_days(
+                        ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                            .map(i32::try_from)
+                            .transpose()?,
+                    );
+                }
+                "NextScheduledRetrainingStartDate" => {
+                    builder = builder.set_next_scheduled_retraining_start_date(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                        tokens.next(),
+                        ::aws_smithy_types::date_time::Format::EpochSeconds,
+                    )?);
+                }
+                "AccumulatedInferenceDataStartTime" => {
+                    builder = builder.set_accumulated_inference_data_start_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                        tokens.next(),
+                        ::aws_smithy_types::date_time::Format::EpochSeconds,
+                    )?);
+                }
+                "AccumulatedInferenceDataEndTime" => {
+                    builder = builder.set_accumulated_inference_data_end_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                        tokens.next(),
+                        ::aws_smithy_types::date_time::Format::EpochSeconds,
+                    )?);
+                }
+                "RetrainingSchedulerStatus" => {
+                    builder = builder.set_retraining_scheduler_status(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::RetrainingSchedulerStatus::from(u.as_ref())))
+                            .transpose()?,
+                    );
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

@@ -9,6 +9,8 @@ pub struct StartAnnotationImportJobInput {
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Items to import.</p>
     pub items: ::std::option::Option<::std::vec::Vec<crate::types::AnnotationImportItemSource>>,
+    /// <p> The name of the annotation store version. </p>
+    pub version_name: ::std::option::Option<::std::string::String>,
     /// <p>Formatting options for the annotation file.</p>
     pub format_options: ::std::option::Option<crate::types::FormatOptions>,
     /// <p>The job's left normalization setting.</p>
@@ -28,6 +30,10 @@ impl StartAnnotationImportJobInput {
     /// <p>Items to import.</p>
     pub fn items(&self) -> ::std::option::Option<&[crate::types::AnnotationImportItemSource]> {
         self.items.as_deref()
+    }
+    /// <p> The name of the annotation store version. </p>
+    pub fn version_name(&self) -> ::std::option::Option<&str> {
+        self.version_name.as_deref()
     }
     /// <p>Formatting options for the annotation file.</p>
     pub fn format_options(&self) -> ::std::option::Option<&crate::types::FormatOptions> {
@@ -56,6 +62,7 @@ pub struct StartAnnotationImportJobInputBuilder {
     pub(crate) destination_name: ::std::option::Option<::std::string::String>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::AnnotationImportItemSource>>,
+    pub(crate) version_name: ::std::option::Option<::std::string::String>,
     pub(crate) format_options: ::std::option::Option<crate::types::FormatOptions>,
     pub(crate) run_left_normalization: ::std::option::Option<bool>,
     pub(crate) annotation_fields: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -108,6 +115,20 @@ impl StartAnnotationImportJobInputBuilder {
     /// <p>Items to import.</p>
     pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AnnotationImportItemSource>> {
         &self.items
+    }
+    /// <p> The name of the annotation store version. </p>
+    pub fn version_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.version_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p> The name of the annotation store version. </p>
+    pub fn set_version_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.version_name = input;
+        self
+    }
+    /// <p> The name of the annotation store version. </p>
+    pub fn get_version_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version_name
     }
     /// <p>Formatting options for the annotation file.</p>
     pub fn format_options(mut self, input: crate::types::FormatOptions) -> Self {
@@ -175,6 +196,7 @@ impl StartAnnotationImportJobInputBuilder {
             destination_name: self.destination_name,
             role_arn: self.role_arn,
             items: self.items,
+            version_name: self.version_name,
             format_options: self.format_options,
             run_left_normalization: self.run_left_normalization,
             annotation_fields: self.annotation_fields,

@@ -10,7 +10,7 @@ pub struct CodegenJob {
     pub app_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the backend environment associated with the code generation job.</p>
     pub environment_name: ::std::option::Option<::std::string::String>,
-    /// <p>Describes the configuration information for rendering the UI component associated the code generation job.</p>
+    /// <p>Describes the configuration information for rendering the UI component associated with the code generation job.</p>
     pub render_config: ::std::option::Option<crate::types::CodegenJobRenderConfig>,
     /// <p>Describes the data schema for a code generation job.</p>
     pub generic_data_schema: ::std::option::Option<crate::types::CodegenJobGenericDataSchema>,
@@ -44,7 +44,7 @@ impl CodegenJob {
     pub fn environment_name(&self) -> ::std::option::Option<&str> {
         self.environment_name.as_deref()
     }
-    /// <p>Describes the configuration information for rendering the UI component associated the code generation job.</p>
+    /// <p>Describes the configuration information for rendering the UI component associated with the code generation job.</p>
     pub fn render_config(&self) -> ::std::option::Option<&crate::types::CodegenJobRenderConfig> {
         self.render_config.as_ref()
     }
@@ -153,17 +153,17 @@ impl CodegenJobBuilder {
     pub fn get_environment_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.environment_name
     }
-    /// <p>Describes the configuration information for rendering the UI component associated the code generation job.</p>
+    /// <p>Describes the configuration information for rendering the UI component associated with the code generation job.</p>
     pub fn render_config(mut self, input: crate::types::CodegenJobRenderConfig) -> Self {
         self.render_config = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Describes the configuration information for rendering the UI component associated the code generation job.</p>
+    /// <p>Describes the configuration information for rendering the UI component associated with the code generation job.</p>
     pub fn set_render_config(mut self, input: ::std::option::Option<crate::types::CodegenJobRenderConfig>) -> Self {
         self.render_config = input;
         self
     }
-    /// <p>Describes the configuration information for rendering the UI component associated the code generation job.</p>
+    /// <p>Describes the configuration information for rendering the UI component associated with the code generation job.</p>
     pub fn get_render_config(&self) -> &::std::option::Option<crate::types::CodegenJobRenderConfig> {
         &self.render_config
     }

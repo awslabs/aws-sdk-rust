@@ -19,13 +19,13 @@ pub struct CreateDeploymentInput {
     /// <p> If false or not specified, then if a lifecycle event fails during a deployment to an instance, that deployment fails. If deployment to that instance is part of an overall deployment and the number of healthy hosts is not less than the minimum number of healthy hosts, then a deployment to the next instance is attempted. </p>
     /// <p> During a deployment, the CodeDeploy agent runs the scripts specified for <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>, and <code>AfterBlockTraffic</code> in the AppSpec file from the previous successful deployment. (All other scripts are run from the AppSpec file in the current deployment.) If one of these scripts contains an error and does not run successfully, the deployment can fail. </p>
     /// <p> If the cause of the failure is a script from the last successful deployment that will never run successfully, create a new deployment and use <code>ignoreApplicationStopFailures</code> to specify that the <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>, and <code>AfterBlockTraffic</code> failures should be ignored. </p>
-    pub ignore_application_stop_failures: bool,
+    pub ignore_application_stop_failures: ::std::option::Option<bool>,
     /// <p> Information about the instances that belong to the replacement environment in a blue/green deployment. </p>
     pub target_instances: ::std::option::Option<crate::types::TargetInstances>,
     /// <p>Configuration information for an automatic rollback that is added when a deployment is created.</p>
     pub auto_rollback_configuration: ::std::option::Option<crate::types::AutoRollbackConfiguration>,
     /// <p> Indicates whether to deploy to all instances or only to instances that are not running the latest application revision. </p>
-    pub update_outdated_instances_only: bool,
+    pub update_outdated_instances_only: ::std::option::Option<bool>,
     /// <p>Information about how CodeDeploy handles files that already exist in a deployment target location but weren't part of the previous successful deployment.</p>
     /// <p>The <code>fileExistsBehavior</code> parameter takes any of the following values:</p>
     /// <ul>
@@ -65,7 +65,7 @@ impl CreateDeploymentInput {
     /// <p> If false or not specified, then if a lifecycle event fails during a deployment to an instance, that deployment fails. If deployment to that instance is part of an overall deployment and the number of healthy hosts is not less than the minimum number of healthy hosts, then a deployment to the next instance is attempted. </p>
     /// <p> During a deployment, the CodeDeploy agent runs the scripts specified for <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>, and <code>AfterBlockTraffic</code> in the AppSpec file from the previous successful deployment. (All other scripts are run from the AppSpec file in the current deployment.) If one of these scripts contains an error and does not run successfully, the deployment can fail. </p>
     /// <p> If the cause of the failure is a script from the last successful deployment that will never run successfully, create a new deployment and use <code>ignoreApplicationStopFailures</code> to specify that the <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>, and <code>AfterBlockTraffic</code> failures should be ignored. </p>
-    pub fn ignore_application_stop_failures(&self) -> bool {
+    pub fn ignore_application_stop_failures(&self) -> ::std::option::Option<bool> {
         self.ignore_application_stop_failures
     }
     /// <p> Information about the instances that belong to the replacement environment in a blue/green deployment. </p>
@@ -77,7 +77,7 @@ impl CreateDeploymentInput {
         self.auto_rollback_configuration.as_ref()
     }
     /// <p> Indicates whether to deploy to all instances or only to instances that are not running the latest application revision. </p>
-    pub fn update_outdated_instances_only(&self) -> bool {
+    pub fn update_outdated_instances_only(&self) -> ::std::option::Option<bool> {
         self.update_outdated_instances_only
     }
     /// <p>Information about how CodeDeploy handles files that already exist in a deployment target location but weren't part of the previous successful deployment.</p>
@@ -321,10 +321,10 @@ impl CreateDeploymentInputBuilder {
             revision: self.revision,
             deployment_config_name: self.deployment_config_name,
             description: self.description,
-            ignore_application_stop_failures: self.ignore_application_stop_failures.unwrap_or_default(),
+            ignore_application_stop_failures: self.ignore_application_stop_failures,
             target_instances: self.target_instances,
             auto_rollback_configuration: self.auto_rollback_configuration,
-            update_outdated_instances_only: self.update_outdated_instances_only.unwrap_or_default(),
+            update_outdated_instances_only: self.update_outdated_instances_only,
             file_exists_behavior: self.file_exists_behavior,
             override_alarm_configuration: self.override_alarm_configuration,
         })

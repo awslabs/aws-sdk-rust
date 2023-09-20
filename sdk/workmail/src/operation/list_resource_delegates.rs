@@ -271,6 +271,8 @@ pub enum ListResourceDelegatesError {
     OrganizationNotFoundException(crate::types::error::OrganizationNotFoundException),
     /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
     OrganizationStateException(crate::types::error::OrganizationStateException),
+    /// <p>You can't perform a write operation against a read-only directory.</p>
+    UnsupportedOperationException(crate::types::error::UnsupportedOperationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(::aws_smithy_types::error::Unhandled),
 }
@@ -294,6 +296,7 @@ impl ::std::fmt::Display for ListResourceDelegatesError {
             Self::InvalidParameterException(_inner) => _inner.fmt(f),
             Self::OrganizationNotFoundException(_inner) => _inner.fmt(f),
             Self::OrganizationStateException(_inner) => _inner.fmt(f),
+            Self::UnsupportedOperationException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -306,6 +309,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for ListResourceD
             Self::InvalidParameterException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::OrganizationNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::OrganizationStateException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::UnsupportedOperationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
         }
     }
@@ -347,6 +351,7 @@ impl ListResourceDelegatesError {
             Self::InvalidParameterException(e) => e.meta(),
             Self::OrganizationNotFoundException(e) => e.meta(),
             Self::OrganizationStateException(e) => e.meta(),
+            Self::UnsupportedOperationException(e) => e.meta(),
             Self::Unhandled(e) => e.meta(),
         }
     }
@@ -370,6 +375,10 @@ impl ListResourceDelegatesError {
     pub fn is_organization_state_exception(&self) -> bool {
         matches!(self, Self::OrganizationStateException(_))
     }
+    /// Returns `true` if the error kind is `ListResourceDelegatesError::UnsupportedOperationException`.
+    pub fn is_unsupported_operation_exception(&self) -> bool {
+        matches!(self, Self::UnsupportedOperationException(_))
+    }
 }
 impl ::std::error::Error for ListResourceDelegatesError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
@@ -379,6 +388,7 @@ impl ::std::error::Error for ListResourceDelegatesError {
             Self::InvalidParameterException(_inner) => ::std::option::Option::Some(_inner),
             Self::OrganizationNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::OrganizationStateException(_inner) => ::std::option::Option::Some(_inner),
+            Self::UnsupportedOperationException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(_inner),
         }
     }

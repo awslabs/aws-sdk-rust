@@ -10,7 +10,7 @@ pub struct UserType {
     pub attributes: ::std::option::Option<::std::vec::Vec<crate::types::AttributeType>>,
     /// <p>The creation date of the user.</p>
     pub user_create_date: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The last modified date of the user.</p>
+    /// <p>The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format, when the item was modified.</p>
     pub user_last_modified_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Specifies whether the user is enabled.</p>
     pub enabled: bool,
@@ -19,7 +19,6 @@ pub struct UserType {
     /// <li> <p>UNCONFIRMED - User has been created but not confirmed.</p> </li>
     /// <li> <p>CONFIRMED - User has been confirmed.</p> </li>
     /// <li> <p>EXTERNAL_PROVIDER - User signed in with a third-party IdP.</p> </li>
-    /// <li> <p>ARCHIVED - User is no longer active.</p> </li>
     /// <li> <p>UNKNOWN - User status isn't known.</p> </li>
     /// <li> <p>RESET_REQUIRED - User is confirmed, but the user must request a code and reset their password before they can sign in.</p> </li>
     /// <li> <p>FORCE_CHANGE_PASSWORD - The user is confirmed and the user can sign in using a temporary password, but on first sign-in, the user must change their password to a new value before doing anything else. </p> </li>
@@ -41,7 +40,7 @@ impl UserType {
     pub fn user_create_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.user_create_date.as_ref()
     }
-    /// <p>The last modified date of the user.</p>
+    /// <p>The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format, when the item was modified.</p>
     pub fn user_last_modified_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.user_last_modified_date.as_ref()
     }
@@ -54,7 +53,6 @@ impl UserType {
     /// <li> <p>UNCONFIRMED - User has been created but not confirmed.</p> </li>
     /// <li> <p>CONFIRMED - User has been confirmed.</p> </li>
     /// <li> <p>EXTERNAL_PROVIDER - User signed in with a third-party IdP.</p> </li>
-    /// <li> <p>ARCHIVED - User is no longer active.</p> </li>
     /// <li> <p>UNKNOWN - User status isn't known.</p> </li>
     /// <li> <p>RESET_REQUIRED - User is confirmed, but the user must request a code and reset their password before they can sign in.</p> </li>
     /// <li> <p>FORCE_CHANGE_PASSWORD - The user is confirmed and the user can sign in using a temporary password, but on first sign-in, the user must change their password to a new value before doing anything else. </p> </li>
@@ -148,17 +146,17 @@ impl UserTypeBuilder {
     pub fn get_user_create_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.user_create_date
     }
-    /// <p>The last modified date of the user.</p>
+    /// <p>The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format, when the item was modified.</p>
     pub fn user_last_modified_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.user_last_modified_date = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The last modified date of the user.</p>
+    /// <p>The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format, when the item was modified.</p>
     pub fn set_user_last_modified_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.user_last_modified_date = input;
         self
     }
-    /// <p>The last modified date of the user.</p>
+    /// <p>The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format, when the item was modified.</p>
     pub fn get_user_last_modified_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.user_last_modified_date
     }
@@ -181,7 +179,6 @@ impl UserTypeBuilder {
     /// <li> <p>UNCONFIRMED - User has been created but not confirmed.</p> </li>
     /// <li> <p>CONFIRMED - User has been confirmed.</p> </li>
     /// <li> <p>EXTERNAL_PROVIDER - User signed in with a third-party IdP.</p> </li>
-    /// <li> <p>ARCHIVED - User is no longer active.</p> </li>
     /// <li> <p>UNKNOWN - User status isn't known.</p> </li>
     /// <li> <p>RESET_REQUIRED - User is confirmed, but the user must request a code and reset their password before they can sign in.</p> </li>
     /// <li> <p>FORCE_CHANGE_PASSWORD - The user is confirmed and the user can sign in using a temporary password, but on first sign-in, the user must change their password to a new value before doing anything else. </p> </li>
@@ -195,7 +192,6 @@ impl UserTypeBuilder {
     /// <li> <p>UNCONFIRMED - User has been created but not confirmed.</p> </li>
     /// <li> <p>CONFIRMED - User has been confirmed.</p> </li>
     /// <li> <p>EXTERNAL_PROVIDER - User signed in with a third-party IdP.</p> </li>
-    /// <li> <p>ARCHIVED - User is no longer active.</p> </li>
     /// <li> <p>UNKNOWN - User status isn't known.</p> </li>
     /// <li> <p>RESET_REQUIRED - User is confirmed, but the user must request a code and reset their password before they can sign in.</p> </li>
     /// <li> <p>FORCE_CHANGE_PASSWORD - The user is confirmed and the user can sign in using a temporary password, but on first sign-in, the user must change their password to a new value before doing anything else. </p> </li>
@@ -209,7 +205,6 @@ impl UserTypeBuilder {
     /// <li> <p>UNCONFIRMED - User has been created but not confirmed.</p> </li>
     /// <li> <p>CONFIRMED - User has been confirmed.</p> </li>
     /// <li> <p>EXTERNAL_PROVIDER - User signed in with a third-party IdP.</p> </li>
-    /// <li> <p>ARCHIVED - User is no longer active.</p> </li>
     /// <li> <p>UNKNOWN - User status isn't known.</p> </li>
     /// <li> <p>RESET_REQUIRED - User is confirmed, but the user must request a code and reset their password before they can sign in.</p> </li>
     /// <li> <p>FORCE_CHANGE_PASSWORD - The user is confirmed and the user can sign in using a temporary password, but on first sign-in, the user must change their password to a new value before doing anything else. </p> </li>

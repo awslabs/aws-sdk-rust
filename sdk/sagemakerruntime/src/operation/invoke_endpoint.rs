@@ -268,16 +268,16 @@ pub type InvokeEndpointErrorKind = InvokeEndpointError;
 pub enum InvokeEndpointError {
     /// <p>Your request caused an exception with an internal dependency. Contact customer support. </p>
     InternalDependencyException(crate::types::error::InternalDependencyException),
-    /// <p> An internal failure occurred. </p>
-    InternalFailure(crate::types::error::InternalFailure),
-    /// <p> Model (owned by the customer in the container) returned 4xx or 5xx error code. </p>
-    ModelError(crate::types::error::ModelError),
     /// <p>Either a serverless endpoint variant's resources are still being provisioned, or a multi-model endpoint is still downloading or loading the target model. Wait and try your request again.</p>
     ModelNotReadyException(crate::types::error::ModelNotReadyException),
-    /// <p> The service is unavailable. Try your call again. </p>
-    ServiceUnavailable(crate::types::error::ServiceUnavailable),
+    /// <p> An internal failure occurred. </p>
+    InternalFailure(crate::types::error::InternalFailure),
     /// <p> Inspect your request and try again. </p>
     ValidationError(crate::types::error::ValidationError),
+    /// <p> Model (owned by the customer in the container) returned 4xx or 5xx error code. </p>
+    ModelError(crate::types::error::ModelError),
+    /// <p> The service is unavailable. Try your call again. </p>
+    ServiceUnavailable(crate::types::error::ServiceUnavailable),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(::aws_smithy_types::error::Unhandled),
 }
@@ -297,11 +297,11 @@ impl ::std::fmt::Display for InvokeEndpointError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
             Self::InternalDependencyException(_inner) => _inner.fmt(f),
-            Self::InternalFailure(_inner) => _inner.fmt(f),
-            Self::ModelError(_inner) => _inner.fmt(f),
             Self::ModelNotReadyException(_inner) => _inner.fmt(f),
-            Self::ServiceUnavailable(_inner) => _inner.fmt(f),
+            Self::InternalFailure(_inner) => _inner.fmt(f),
             Self::ValidationError(_inner) => _inner.fmt(f),
+            Self::ModelError(_inner) => _inner.fmt(f),
+            Self::ServiceUnavailable(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -310,11 +310,11 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for InvokeEndpoin
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::InternalDependencyException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::InternalFailure(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::ModelError(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ModelNotReadyException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::ServiceUnavailable(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InternalFailure(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ValidationError(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ModelError(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ServiceUnavailable(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
         }
     }
@@ -352,11 +352,11 @@ impl InvokeEndpointError {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         match self {
             Self::InternalDependencyException(e) => e.meta(),
-            Self::InternalFailure(e) => e.meta(),
-            Self::ModelError(e) => e.meta(),
             Self::ModelNotReadyException(e) => e.meta(),
-            Self::ServiceUnavailable(e) => e.meta(),
+            Self::InternalFailure(e) => e.meta(),
             Self::ValidationError(e) => e.meta(),
+            Self::ModelError(e) => e.meta(),
+            Self::ServiceUnavailable(e) => e.meta(),
             Self::Unhandled(e) => e.meta(),
         }
     }
@@ -364,36 +364,36 @@ impl InvokeEndpointError {
     pub fn is_internal_dependency_exception(&self) -> bool {
         matches!(self, Self::InternalDependencyException(_))
     }
+    /// Returns `true` if the error kind is `InvokeEndpointError::ModelNotReadyException`.
+    pub fn is_model_not_ready_exception(&self) -> bool {
+        matches!(self, Self::ModelNotReadyException(_))
+    }
     /// Returns `true` if the error kind is `InvokeEndpointError::InternalFailure`.
     pub fn is_internal_failure(&self) -> bool {
         matches!(self, Self::InternalFailure(_))
+    }
+    /// Returns `true` if the error kind is `InvokeEndpointError::ValidationError`.
+    pub fn is_validation_error(&self) -> bool {
+        matches!(self, Self::ValidationError(_))
     }
     /// Returns `true` if the error kind is `InvokeEndpointError::ModelError`.
     pub fn is_model_error(&self) -> bool {
         matches!(self, Self::ModelError(_))
     }
-    /// Returns `true` if the error kind is `InvokeEndpointError::ModelNotReadyException`.
-    pub fn is_model_not_ready_exception(&self) -> bool {
-        matches!(self, Self::ModelNotReadyException(_))
-    }
     /// Returns `true` if the error kind is `InvokeEndpointError::ServiceUnavailable`.
     pub fn is_service_unavailable(&self) -> bool {
         matches!(self, Self::ServiceUnavailable(_))
-    }
-    /// Returns `true` if the error kind is `InvokeEndpointError::ValidationError`.
-    pub fn is_validation_error(&self) -> bool {
-        matches!(self, Self::ValidationError(_))
     }
 }
 impl ::std::error::Error for InvokeEndpointError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
             Self::InternalDependencyException(_inner) => ::std::option::Option::Some(_inner),
-            Self::InternalFailure(_inner) => ::std::option::Option::Some(_inner),
-            Self::ModelError(_inner) => ::std::option::Option::Some(_inner),
             Self::ModelNotReadyException(_inner) => ::std::option::Option::Some(_inner),
-            Self::ServiceUnavailable(_inner) => ::std::option::Option::Some(_inner),
+            Self::InternalFailure(_inner) => ::std::option::Option::Some(_inner),
             Self::ValidationError(_inner) => ::std::option::Option::Some(_inner),
+            Self::ModelError(_inner) => ::std::option::Option::Some(_inner),
+            Self::ServiceUnavailable(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(_inner),
         }
     }

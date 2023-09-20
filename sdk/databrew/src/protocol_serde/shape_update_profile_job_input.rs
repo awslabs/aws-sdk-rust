@@ -24,44 +24,44 @@ pub fn ser_update_profile_job_input(
     if let Some(var_7) = &input.log_subscription {
         object.key("LogSubscription").string(var_7.as_str());
     }
-    if input.max_capacity != 0 {
+    if let Some(var_8) = &input.max_capacity {
         object.key("MaxCapacity").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.max_capacity).into()),
+            ::aws_smithy_types::Number::NegInt((*var_8).into()),
         );
     }
-    if input.max_retries != 0 {
+    if let Some(var_9) = &input.max_retries {
         object.key("MaxRetries").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.max_retries).into()),
+            ::aws_smithy_types::Number::NegInt((*var_9).into()),
         );
     }
-    if let Some(var_8) = &input.output_location {
+    if let Some(var_10) = &input.output_location {
         #[allow(unused_mut)]
-        let mut object_9 = object.key("OutputLocation").start_object();
-        crate::protocol_serde::shape_s3_location::ser_s3_location(&mut object_9, var_8)?;
-        object_9.finish();
+        let mut object_11 = object.key("OutputLocation").start_object();
+        crate::protocol_serde::shape_s3_location::ser_s3_location(&mut object_11, var_10)?;
+        object_11.finish();
     }
-    if let Some(var_10) = &input.role_arn {
-        object.key("RoleArn").string(var_10.as_str());
+    if let Some(var_12) = &input.role_arn {
+        object.key("RoleArn").string(var_12.as_str());
     }
-    if input.timeout != 0 {
+    if let Some(var_13) = &input.timeout {
         object.key("Timeout").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.timeout).into()),
+            ::aws_smithy_types::Number::NegInt((*var_13).into()),
         );
     }
-    if let Some(var_11) = &input.validation_configurations {
-        let mut array_12 = object.key("ValidationConfigurations").start_array();
-        for item_13 in var_11 {
+    if let Some(var_14) = &input.validation_configurations {
+        let mut array_15 = object.key("ValidationConfigurations").start_array();
+        for item_16 in var_14 {
             {
                 #[allow(unused_mut)]
-                let mut object_14 = array_12.value().start_object();
-                crate::protocol_serde::shape_validation_configuration::ser_validation_configuration(&mut object_14, item_13)?;
-                object_14.finish();
+                let mut object_17 = array_15.value().start_object();
+                crate::protocol_serde::shape_validation_configuration::ser_validation_configuration(&mut object_17, item_16)?;
+                object_17.finish();
             }
         }
-        array_12.finish();
+        array_15.finish();
     }
     Ok(())
 }

@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`organization_id(impl Into<String>)`](crate::operation::describe_group::builders::DescribeGroupFluentBuilder::organization_id) / [`set_organization_id(Option<String>)`](crate::operation::describe_group::builders::DescribeGroupFluentBuilder::set_organization_id): <p>The identifier for the organization under which the group exists.</p>
-    ///   - [`group_id(impl Into<String>)`](crate::operation::describe_group::builders::DescribeGroupFluentBuilder::group_id) / [`set_group_id(Option<String>)`](crate::operation::describe_group::builders::DescribeGroupFluentBuilder::set_group_id): <p>The identifier for the group to be described.</p>
+    ///   - [`group_id(impl Into<String>)`](crate::operation::describe_group::builders::DescribeGroupFluentBuilder::group_id) / [`set_group_id(Option<String>)`](crate::operation::describe_group::builders::DescribeGroupFluentBuilder::set_group_id): <p>The identifier for the group to be described.</p>  <p>The identifier can accept <i>GroupId</i>, <i>Groupname</i>, or <i>email</i>. The following identity formats are available:</p>  <ul>   <li> <p>Group ID: 12345678-1234-1234-1234-123456789012 or S-1-1-12-1234567890-123456789-123456789-1234</p> </li>   <li> <p>Email address: group@domain.tld</p> </li>   <li> <p>Group name: group</p> </li>  </ul>
     /// - On success, responds with [`DescribeGroupOutput`](crate::operation::describe_group::DescribeGroupOutput) with field(s):
     ///   - [`group_id(Option<String>)`](crate::operation::describe_group::DescribeGroupOutput::group_id): <p>The identifier of the described group.</p>
     ///   - [`name(Option<String>)`](crate::operation::describe_group::DescribeGroupOutput::name): <p>The name of the described group.</p>
@@ -12,6 +12,7 @@ impl super::Client {
     ///   - [`state(Option<EntityState>)`](crate::operation::describe_group::DescribeGroupOutput::state): <p>The state of the user: enabled (registered to WorkMail) or disabled (deregistered or never registered to WorkMail).</p>
     ///   - [`enabled_date(Option<DateTime>)`](crate::operation::describe_group::DescribeGroupOutput::enabled_date): <p>The date and time when a user was registered to WorkMail, in UNIX epoch time format.</p>
     ///   - [`disabled_date(Option<DateTime>)`](crate::operation::describe_group::DescribeGroupOutput::disabled_date): <p>The date and time when a user was deregistered from WorkMail, in UNIX epoch time format.</p>
+    ///   - [`hidden_from_global_address_list(bool)`](crate::operation::describe_group::DescribeGroupOutput::hidden_from_global_address_list): <p>If the value is set to <i>true</i>, the group is hidden from the address book.</p>
     /// - On failure, responds with [`SdkError<DescribeGroupError>`](crate::operation::describe_group::DescribeGroupError)
     pub fn describe_group(&self) -> crate::operation::describe_group::builders::DescribeGroupFluentBuilder {
         crate::operation::describe_group::builders::DescribeGroupFluentBuilder::new(self.handle.clone())

@@ -112,17 +112,17 @@ impl GetFileFluentBuilder {
     pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_repository_name()
     }
-    /// <p>The fully quaified reference that identifies the commit that contains the file. For example, you can specify a full commit ID, a tag, a branch name, or a reference such as refs/heads/master. If none is provided, the head commit is used.</p>
+    /// <p>The fully quaified reference that identifies the commit that contains the file. For example, you can specify a full commit ID, a tag, a branch name, or a reference such as refs/heads/main. If none is provided, the head commit is used.</p>
     pub fn commit_specifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.commit_specifier(input.into());
         self
     }
-    /// <p>The fully quaified reference that identifies the commit that contains the file. For example, you can specify a full commit ID, a tag, a branch name, or a reference such as refs/heads/master. If none is provided, the head commit is used.</p>
+    /// <p>The fully quaified reference that identifies the commit that contains the file. For example, you can specify a full commit ID, a tag, a branch name, or a reference such as refs/heads/main. If none is provided, the head commit is used.</p>
     pub fn set_commit_specifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_commit_specifier(input);
         self
     }
-    /// <p>The fully quaified reference that identifies the commit that contains the file. For example, you can specify a full commit ID, a tag, a branch name, or a reference such as refs/heads/master. If none is provided, the head commit is used.</p>
+    /// <p>The fully quaified reference that identifies the commit that contains the file. For example, you can specify a full commit ID, a tag, a branch name, or a reference such as refs/heads/main. If none is provided, the head commit is used.</p>
     pub fn get_commit_specifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_commit_specifier()
     }

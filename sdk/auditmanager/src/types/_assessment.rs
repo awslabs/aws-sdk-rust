@@ -2,7 +2,7 @@
 
 /// <p> An entity that defines the scope of audit evidence collected by Audit Manager. An Audit Manager assessment is an implementation of an Audit Manager framework. </p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct Assessment {
     /// <p> The Amazon Resource Name (ARN) of the assessment. </p>
     pub arn: ::std::option::Option<::std::string::String>,
@@ -37,6 +37,17 @@ impl Assessment {
         self.tags.as_ref()
     }
 }
+impl ::std::fmt::Debug for Assessment {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("Assessment");
+        formatter.field("arn", &self.arn);
+        formatter.field("aws_account", &self.aws_account);
+        formatter.field("metadata", &self.metadata);
+        formatter.field("framework", &"*** Sensitive Data Redacted ***");
+        formatter.field("tags", &self.tags);
+        formatter.finish()
+    }
+}
 impl Assessment {
     /// Creates a new builder-style object to manufacture [`Assessment`](crate::types::Assessment).
     pub fn builder() -> crate::types::builders::AssessmentBuilder {
@@ -46,7 +57,7 @@ impl Assessment {
 
 /// A builder for [`Assessment`](crate::types::Assessment).
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct AssessmentBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) aws_account: ::std::option::Option<crate::types::AwsAccount>,
@@ -140,5 +151,16 @@ impl AssessmentBuilder {
             framework: self.framework,
             tags: self.tags,
         }
+    }
+}
+impl ::std::fmt::Debug for AssessmentBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("AssessmentBuilder");
+        formatter.field("arn", &self.arn);
+        formatter.field("aws_account", &self.aws_account);
+        formatter.field("metadata", &self.metadata);
+        formatter.field("framework", &"*** Sensitive Data Redacted ***");
+        formatter.field("tags", &self.tags);
+        formatter.finish()
     }
 }

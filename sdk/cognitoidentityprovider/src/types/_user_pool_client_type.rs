@@ -12,9 +12,9 @@ pub struct UserPoolClientType {
     pub client_id: ::std::option::Option<::std::string::String>,
     /// <p>The client secret from the user pool request of the client type.</p>
     pub client_secret: ::std::option::Option<::std::string::String>,
-    /// <p>The date the user pool client was last modified.</p>
+    /// <p>The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format, when the item was modified.</p>
     pub last_modified_date: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The date the user pool client was created.</p>
+    /// <p>The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format, when the item was created.</p>
     pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The refresh token time limit. After this limit expires, your user can't use their refresh token. To specify the time unit for <code>RefreshTokenValidity</code> as <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code>, set a <code>TokenValidityUnits</code> value in your API request.</p>
     /// <p>For example, when you set <code>RefreshTokenValidity</code> as <code>10</code> and <code>TokenValidityUnits</code> as <code>days</code>, your user can refresh their session and retrieve new access and ID tokens for 10 days.</p>
@@ -28,7 +28,7 @@ pub struct UserPoolClientType {
     pub access_token_validity: ::std::option::Option<i32>,
     /// <p>The ID token time limit. After this limit expires, your user can't use their ID token. To specify the time unit for <code>IdTokenValidity</code> as <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code>, set a <code>TokenValidityUnits</code> value in your API request.</p>
     /// <p>For example, when you set <code>IdTokenValidity</code> as <code>10</code> and <code>TokenValidityUnits</code> as <code>hours</code>, your user can authenticate their session with their ID token for 10 hours.</p>
-    /// <p>The default time unit for <code>AccessTokenValidity</code> in an API request is hours. <i>Valid range</i> is displayed below in seconds.</p>
+    /// <p>The default time unit for <code>IdTokenValidity</code> in an API request is hours. <i>Valid range</i> is displayed below in seconds.</p>
     /// <p>If you don't specify otherwise in the configuration of your app client, your ID tokens are valid for one hour.</p>
     pub id_token_validity: ::std::option::Option<i32>,
     /// <p>The time units used to specify the token validity times of each token type: ID, access, and refresh.</p>
@@ -100,7 +100,15 @@ pub struct UserPoolClientType {
     pub allowed_o_auth_flows: ::std::option::Option<::std::vec::Vec<crate::types::OAuthFlowType>>,
     /// <p>The OAuth scopes that your app client supports. Possible values that OAuth provides are <code>phone</code>, <code>email</code>, <code>openid</code>, and <code>profile</code>. Possible values that Amazon Web Services provides are <code>aws.cognito.signin.user.admin</code>. Amazon Cognito also supports custom scopes that you create in Resource Servers.</p>
     pub allowed_o_auth_scopes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>Set to true if the client is allowed to follow the OAuth protocol when interacting with Amazon Cognito user pools.</p>
+    /// <p>Set to <code>true</code> to use OAuth 2.0 features in your user pool app client.</p>
+    /// <p> <code>AllowedOAuthFlowsUserPoolClient</code> must be <code>true</code> before you can configure the following features in your app client.</p>
+    /// <ul>
+    /// <li> <p> <code>CallBackURLs</code>: Callback URLs.</p> </li>
+    /// <li> <p> <code>LogoutURLs</code>: Sign-out redirect URLs.</p> </li>
+    /// <li> <p> <code>AllowedOAuthScopes</code>: OAuth 2.0 scopes.</p> </li>
+    /// <li> <p> <code>AllowedOAuthFlows</code>: Support for authorization code, implicit, and client credentials OAuth 2.0 grants.</p> </li>
+    /// </ul>
+    /// <p>To use OAuth 2.0 features, configure one of these features in the Amazon Cognito console or set <code>AllowedOAuthFlowsUserPoolClient</code> to <code>true</code> in a <code>CreateUserPoolClient</code> or <code>UpdateUserPoolClient</code> API request. If you don't set a value for <code>AllowedOAuthFlowsUserPoolClient</code> in a request with the CLI or SDKs, it defaults to <code>false</code>.</p>
     pub allowed_o_auth_flows_user_pool_client: ::std::option::Option<bool>,
     /// <p>The Amazon Pinpoint analytics configuration for the user pool client.</p> <note>
     /// <p>Amazon Cognito user pools only support sending events to Amazon Pinpoint projects in the US East (N. Virginia) us-east-1 Region, regardless of the Region where the user pool resides.</p>
@@ -139,11 +147,11 @@ impl UserPoolClientType {
     pub fn client_secret(&self) -> ::std::option::Option<&str> {
         self.client_secret.as_deref()
     }
-    /// <p>The date the user pool client was last modified.</p>
+    /// <p>The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format, when the item was modified.</p>
     pub fn last_modified_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_modified_date.as_ref()
     }
-    /// <p>The date the user pool client was created.</p>
+    /// <p>The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format, when the item was created.</p>
     pub fn creation_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
@@ -163,7 +171,7 @@ impl UserPoolClientType {
     }
     /// <p>The ID token time limit. After this limit expires, your user can't use their ID token. To specify the time unit for <code>IdTokenValidity</code> as <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code>, set a <code>TokenValidityUnits</code> value in your API request.</p>
     /// <p>For example, when you set <code>IdTokenValidity</code> as <code>10</code> and <code>TokenValidityUnits</code> as <code>hours</code>, your user can authenticate their session with their ID token for 10 hours.</p>
-    /// <p>The default time unit for <code>AccessTokenValidity</code> in an API request is hours. <i>Valid range</i> is displayed below in seconds.</p>
+    /// <p>The default time unit for <code>IdTokenValidity</code> in an API request is hours. <i>Valid range</i> is displayed below in seconds.</p>
     /// <p>If you don't specify otherwise in the configuration of your app client, your ID tokens are valid for one hour.</p>
     pub fn id_token_validity(&self) -> ::std::option::Option<i32> {
         self.id_token_validity
@@ -257,7 +265,15 @@ impl UserPoolClientType {
     pub fn allowed_o_auth_scopes(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.allowed_o_auth_scopes.as_deref()
     }
-    /// <p>Set to true if the client is allowed to follow the OAuth protocol when interacting with Amazon Cognito user pools.</p>
+    /// <p>Set to <code>true</code> to use OAuth 2.0 features in your user pool app client.</p>
+    /// <p> <code>AllowedOAuthFlowsUserPoolClient</code> must be <code>true</code> before you can configure the following features in your app client.</p>
+    /// <ul>
+    /// <li> <p> <code>CallBackURLs</code>: Callback URLs.</p> </li>
+    /// <li> <p> <code>LogoutURLs</code>: Sign-out redirect URLs.</p> </li>
+    /// <li> <p> <code>AllowedOAuthScopes</code>: OAuth 2.0 scopes.</p> </li>
+    /// <li> <p> <code>AllowedOAuthFlows</code>: Support for authorization code, implicit, and client credentials OAuth 2.0 grants.</p> </li>
+    /// </ul>
+    /// <p>To use OAuth 2.0 features, configure one of these features in the Amazon Cognito console or set <code>AllowedOAuthFlowsUserPoolClient</code> to <code>true</code> in a <code>CreateUserPoolClient</code> or <code>UpdateUserPoolClient</code> API request. If you don't set a value for <code>AllowedOAuthFlowsUserPoolClient</code> in a request with the CLI or SDKs, it defaults to <code>false</code>.</p>
     pub fn allowed_o_auth_flows_user_pool_client(&self) -> ::std::option::Option<bool> {
         self.allowed_o_auth_flows_user_pool_client
     }
@@ -419,31 +435,31 @@ impl UserPoolClientTypeBuilder {
     pub fn get_client_secret(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_secret
     }
-    /// <p>The date the user pool client was last modified.</p>
+    /// <p>The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format, when the item was modified.</p>
     pub fn last_modified_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_date = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The date the user pool client was last modified.</p>
+    /// <p>The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format, when the item was modified.</p>
     pub fn set_last_modified_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_date = input;
         self
     }
-    /// <p>The date the user pool client was last modified.</p>
+    /// <p>The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format, when the item was modified.</p>
     pub fn get_last_modified_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modified_date
     }
-    /// <p>The date the user pool client was created.</p>
+    /// <p>The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format, when the item was created.</p>
     pub fn creation_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_date = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The date the user pool client was created.</p>
+    /// <p>The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format, when the item was created.</p>
     pub fn set_creation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_date = input;
         self
     }
-    /// <p>The date the user pool client was created.</p>
+    /// <p>The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format, when the item was created.</p>
     pub fn get_creation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.creation_date
     }
@@ -495,7 +511,7 @@ impl UserPoolClientTypeBuilder {
     }
     /// <p>The ID token time limit. After this limit expires, your user can't use their ID token. To specify the time unit for <code>IdTokenValidity</code> as <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code>, set a <code>TokenValidityUnits</code> value in your API request.</p>
     /// <p>For example, when you set <code>IdTokenValidity</code> as <code>10</code> and <code>TokenValidityUnits</code> as <code>hours</code>, your user can authenticate their session with their ID token for 10 hours.</p>
-    /// <p>The default time unit for <code>AccessTokenValidity</code> in an API request is hours. <i>Valid range</i> is displayed below in seconds.</p>
+    /// <p>The default time unit for <code>IdTokenValidity</code> in an API request is hours. <i>Valid range</i> is displayed below in seconds.</p>
     /// <p>If you don't specify otherwise in the configuration of your app client, your ID tokens are valid for one hour.</p>
     pub fn id_token_validity(mut self, input: i32) -> Self {
         self.id_token_validity = ::std::option::Option::Some(input);
@@ -503,7 +519,7 @@ impl UserPoolClientTypeBuilder {
     }
     /// <p>The ID token time limit. After this limit expires, your user can't use their ID token. To specify the time unit for <code>IdTokenValidity</code> as <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code>, set a <code>TokenValidityUnits</code> value in your API request.</p>
     /// <p>For example, when you set <code>IdTokenValidity</code> as <code>10</code> and <code>TokenValidityUnits</code> as <code>hours</code>, your user can authenticate their session with their ID token for 10 hours.</p>
-    /// <p>The default time unit for <code>AccessTokenValidity</code> in an API request is hours. <i>Valid range</i> is displayed below in seconds.</p>
+    /// <p>The default time unit for <code>IdTokenValidity</code> in an API request is hours. <i>Valid range</i> is displayed below in seconds.</p>
     /// <p>If you don't specify otherwise in the configuration of your app client, your ID tokens are valid for one hour.</p>
     pub fn set_id_token_validity(mut self, input: ::std::option::Option<i32>) -> Self {
         self.id_token_validity = input;
@@ -511,7 +527,7 @@ impl UserPoolClientTypeBuilder {
     }
     /// <p>The ID token time limit. After this limit expires, your user can't use their ID token. To specify the time unit for <code>IdTokenValidity</code> as <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code>, set a <code>TokenValidityUnits</code> value in your API request.</p>
     /// <p>For example, when you set <code>IdTokenValidity</code> as <code>10</code> and <code>TokenValidityUnits</code> as <code>hours</code>, your user can authenticate their session with their ID token for 10 hours.</p>
-    /// <p>The default time unit for <code>AccessTokenValidity</code> in an API request is hours. <i>Valid range</i> is displayed below in seconds.</p>
+    /// <p>The default time unit for <code>IdTokenValidity</code> in an API request is hours. <i>Valid range</i> is displayed below in seconds.</p>
     /// <p>If you don't specify otherwise in the configuration of your app client, your ID tokens are valid for one hour.</p>
     pub fn get_id_token_validity(&self) -> &::std::option::Option<i32> {
         &self.id_token_validity
@@ -851,17 +867,41 @@ impl UserPoolClientTypeBuilder {
     pub fn get_allowed_o_auth_scopes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.allowed_o_auth_scopes
     }
-    /// <p>Set to true if the client is allowed to follow the OAuth protocol when interacting with Amazon Cognito user pools.</p>
+    /// <p>Set to <code>true</code> to use OAuth 2.0 features in your user pool app client.</p>
+    /// <p> <code>AllowedOAuthFlowsUserPoolClient</code> must be <code>true</code> before you can configure the following features in your app client.</p>
+    /// <ul>
+    /// <li> <p> <code>CallBackURLs</code>: Callback URLs.</p> </li>
+    /// <li> <p> <code>LogoutURLs</code>: Sign-out redirect URLs.</p> </li>
+    /// <li> <p> <code>AllowedOAuthScopes</code>: OAuth 2.0 scopes.</p> </li>
+    /// <li> <p> <code>AllowedOAuthFlows</code>: Support for authorization code, implicit, and client credentials OAuth 2.0 grants.</p> </li>
+    /// </ul>
+    /// <p>To use OAuth 2.0 features, configure one of these features in the Amazon Cognito console or set <code>AllowedOAuthFlowsUserPoolClient</code> to <code>true</code> in a <code>CreateUserPoolClient</code> or <code>UpdateUserPoolClient</code> API request. If you don't set a value for <code>AllowedOAuthFlowsUserPoolClient</code> in a request with the CLI or SDKs, it defaults to <code>false</code>.</p>
     pub fn allowed_o_auth_flows_user_pool_client(mut self, input: bool) -> Self {
         self.allowed_o_auth_flows_user_pool_client = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Set to true if the client is allowed to follow the OAuth protocol when interacting with Amazon Cognito user pools.</p>
+    /// <p>Set to <code>true</code> to use OAuth 2.0 features in your user pool app client.</p>
+    /// <p> <code>AllowedOAuthFlowsUserPoolClient</code> must be <code>true</code> before you can configure the following features in your app client.</p>
+    /// <ul>
+    /// <li> <p> <code>CallBackURLs</code>: Callback URLs.</p> </li>
+    /// <li> <p> <code>LogoutURLs</code>: Sign-out redirect URLs.</p> </li>
+    /// <li> <p> <code>AllowedOAuthScopes</code>: OAuth 2.0 scopes.</p> </li>
+    /// <li> <p> <code>AllowedOAuthFlows</code>: Support for authorization code, implicit, and client credentials OAuth 2.0 grants.</p> </li>
+    /// </ul>
+    /// <p>To use OAuth 2.0 features, configure one of these features in the Amazon Cognito console or set <code>AllowedOAuthFlowsUserPoolClient</code> to <code>true</code> in a <code>CreateUserPoolClient</code> or <code>UpdateUserPoolClient</code> API request. If you don't set a value for <code>AllowedOAuthFlowsUserPoolClient</code> in a request with the CLI or SDKs, it defaults to <code>false</code>.</p>
     pub fn set_allowed_o_auth_flows_user_pool_client(mut self, input: ::std::option::Option<bool>) -> Self {
         self.allowed_o_auth_flows_user_pool_client = input;
         self
     }
-    /// <p>Set to true if the client is allowed to follow the OAuth protocol when interacting with Amazon Cognito user pools.</p>
+    /// <p>Set to <code>true</code> to use OAuth 2.0 features in your user pool app client.</p>
+    /// <p> <code>AllowedOAuthFlowsUserPoolClient</code> must be <code>true</code> before you can configure the following features in your app client.</p>
+    /// <ul>
+    /// <li> <p> <code>CallBackURLs</code>: Callback URLs.</p> </li>
+    /// <li> <p> <code>LogoutURLs</code>: Sign-out redirect URLs.</p> </li>
+    /// <li> <p> <code>AllowedOAuthScopes</code>: OAuth 2.0 scopes.</p> </li>
+    /// <li> <p> <code>AllowedOAuthFlows</code>: Support for authorization code, implicit, and client credentials OAuth 2.0 grants.</p> </li>
+    /// </ul>
+    /// <p>To use OAuth 2.0 features, configure one of these features in the Amazon Cognito console or set <code>AllowedOAuthFlowsUserPoolClient</code> to <code>true</code> in a <code>CreateUserPoolClient</code> or <code>UpdateUserPoolClient</code> API request. If you don't set a value for <code>AllowedOAuthFlowsUserPoolClient</code> in a request with the CLI or SDKs, it defaults to <code>false</code>.</p>
     pub fn get_allowed_o_auth_flows_user_pool_client(&self) -> &::std::option::Option<bool> {
         &self.allowed_o_auth_flows_user_pool_client
     }

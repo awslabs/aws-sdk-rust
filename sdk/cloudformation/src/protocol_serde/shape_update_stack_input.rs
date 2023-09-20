@@ -120,6 +120,11 @@ pub fn ser_update_stack_input_input(
     if let Some(var_49) = &input.client_request_token {
         scope_48.string(var_49);
     }
+    #[allow(unused_mut)]
+    let mut scope_50 = writer.prefix("RetainExceptOnCreate");
+    if let Some(var_51) = &input.retain_except_on_create {
+        scope_50.boolean(*var_51);
+    }
     writer.finish();
     Ok(::aws_smithy_http::body::SdkBody::from(out))
 }

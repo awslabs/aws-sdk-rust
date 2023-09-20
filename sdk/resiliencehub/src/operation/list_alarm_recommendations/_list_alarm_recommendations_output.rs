@@ -5,7 +5,7 @@
 pub struct ListAlarmRecommendationsOutput {
     /// <p>The alarm recommendations for an Resilience Hub application, returned as an object. This object includes Application Component names, descriptions, information about whether a recommendation has already been implemented or not, prerequisites, and more.</p>
     pub alarm_recommendations: ::std::option::Option<::std::vec::Vec<crate::types::AlarmRecommendation>>,
-    /// <p>The token for the next set of results, or null if there are no more results.</p>
+    /// <p>Token for the next set of results, or null if there are no more results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -14,7 +14,7 @@ impl ListAlarmRecommendationsOutput {
     pub fn alarm_recommendations(&self) -> ::std::option::Option<&[crate::types::AlarmRecommendation]> {
         self.alarm_recommendations.as_deref()
     }
-    /// <p>The token for the next set of results, or null if there are no more results.</p>
+    /// <p>Token for the next set of results, or null if there are no more results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -60,17 +60,17 @@ impl ListAlarmRecommendationsOutputBuilder {
     pub fn get_alarm_recommendations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AlarmRecommendation>> {
         &self.alarm_recommendations
     }
-    /// <p>The token for the next set of results, or null if there are no more results.</p>
+    /// <p>Token for the next set of results, or null if there are no more results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The token for the next set of results, or null if there are no more results.</p>
+    /// <p>Token for the next set of results, or null if there are no more results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>The token for the next set of results, or null if there are no more results.</p>
+    /// <p>Token for the next set of results, or null if there are no more results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

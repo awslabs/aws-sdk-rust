@@ -12,8 +12,8 @@ mod test {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::config::endpoint::Params::builder()
             .region("ap-northeast-1".to_string())
-            .use_dual_stack(false)
             .use_fips(false)
+            .use_dual_stack(false)
             .build()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
@@ -33,8 +33,8 @@ mod test {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::config::endpoint::Params::builder()
             .region("ap-northeast-2".to_string())
-            .use_dual_stack(false)
             .use_fips(false)
+            .use_dual_stack(false)
             .build()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
@@ -54,8 +54,8 @@ mod test {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::config::endpoint::Params::builder()
             .region("ap-south-1".to_string())
-            .use_dual_stack(false)
             .use_fips(false)
+            .use_dual_stack(false)
             .build()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
@@ -75,8 +75,8 @@ mod test {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::config::endpoint::Params::builder()
             .region("ap-southeast-1".to_string())
-            .use_dual_stack(false)
             .use_fips(false)
+            .use_dual_stack(false)
             .build()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
@@ -96,8 +96,8 @@ mod test {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::config::endpoint::Params::builder()
             .region("ap-southeast-2".to_string())
-            .use_dual_stack(false)
             .use_fips(false)
+            .use_dual_stack(false)
             .build()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
@@ -117,8 +117,8 @@ mod test {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::config::endpoint::Params::builder()
             .region("ca-central-1".to_string())
-            .use_dual_stack(false)
             .use_fips(false)
+            .use_dual_stack(false)
             .build()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
@@ -138,8 +138,8 @@ mod test {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::config::endpoint::Params::builder()
             .region("eu-central-1".to_string())
-            .use_dual_stack(false)
             .use_fips(false)
+            .use_dual_stack(false)
             .build()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
@@ -159,8 +159,8 @@ mod test {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::config::endpoint::Params::builder()
             .region("eu-west-1".to_string())
-            .use_dual_stack(false)
             .use_fips(false)
+            .use_dual_stack(false)
             .build()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
@@ -180,8 +180,8 @@ mod test {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::config::endpoint::Params::builder()
             .region("eu-west-2".to_string())
-            .use_dual_stack(false)
             .use_fips(false)
+            .use_dual_stack(false)
             .build()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
@@ -201,8 +201,8 @@ mod test {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
-            .use_dual_stack(false)
             .use_fips(false)
+            .use_dual_stack(false)
             .build()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
@@ -222,8 +222,8 @@ mod test {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-2".to_string())
-            .use_dual_stack(false)
             .use_fips(false)
+            .use_dual_stack(false)
             .build()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
@@ -243,8 +243,8 @@ mod test {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::config::endpoint::Params::builder()
             .region("us-west-2".to_string())
-            .use_dual_stack(false)
             .use_fips(false)
+            .use_dual_stack(false)
             .build()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
@@ -264,8 +264,8 @@ mod test {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
-            .use_dual_stack(true)
             .use_fips(true)
+            .use_dual_stack(true)
             .build()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
@@ -285,8 +285,8 @@ mod test {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
-            .use_dual_stack(false)
             .use_fips(true)
+            .use_dual_stack(false)
             .build()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
@@ -306,8 +306,8 @@ mod test {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
-            .use_dual_stack(true)
             .use_fips(false)
+            .use_dual_stack(true)
             .build()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
@@ -327,8 +327,8 @@ mod test {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::config::endpoint::Params::builder()
             .region("cn-north-1".to_string())
-            .use_dual_stack(false)
             .use_fips(false)
+            .use_dual_stack(false)
             .build()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
@@ -348,8 +348,8 @@ mod test {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::config::endpoint::Params::builder()
             .region("cn-north-1".to_string())
-            .use_dual_stack(true)
             .use_fips(true)
+            .use_dual_stack(true)
             .build()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
@@ -369,8 +369,8 @@ mod test {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::config::endpoint::Params::builder()
             .region("cn-north-1".to_string())
-            .use_dual_stack(false)
             .use_fips(true)
+            .use_dual_stack(false)
             .build()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
@@ -390,8 +390,8 @@ mod test {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::config::endpoint::Params::builder()
             .region("cn-north-1".to_string())
-            .use_dual_stack(true)
             .use_fips(false)
+            .use_dual_stack(true)
             .build()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
@@ -411,8 +411,8 @@ mod test {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::config::endpoint::Params::builder()
             .region("dataplane-us-gov-east-1".to_string())
-            .use_dual_stack(false)
             .use_fips(false)
+            .use_dual_stack(false)
             .build()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
@@ -442,8 +442,8 @@ mod test {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::config::endpoint::Params::builder()
             .region("dataplane-us-gov-west-1".to_string())
-            .use_dual_stack(false)
             .use_fips(false)
+            .use_dual_stack(false)
             .build()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
@@ -473,8 +473,8 @@ mod test {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::config::endpoint::Params::builder()
             .region("us-gov-east-1".to_string())
-            .use_dual_stack(false)
             .use_fips(false)
+            .use_dual_stack(false)
             .build()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
@@ -494,8 +494,8 @@ mod test {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::config::endpoint::Params::builder()
             .region("us-gov-east-1".to_string())
-            .use_dual_stack(false)
             .use_fips(true)
+            .use_dual_stack(false)
             .build()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
@@ -515,8 +515,8 @@ mod test {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::config::endpoint::Params::builder()
             .region("us-gov-west-1".to_string())
-            .use_dual_stack(false)
             .use_fips(false)
+            .use_dual_stack(false)
             .build()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
@@ -536,8 +536,8 @@ mod test {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::config::endpoint::Params::builder()
             .region("us-gov-west-1".to_string())
-            .use_dual_stack(false)
             .use_fips(true)
+            .use_dual_stack(false)
             .build()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
@@ -557,8 +557,8 @@ mod test {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::config::endpoint::Params::builder()
             .region("us-gov-east-1".to_string())
-            .use_dual_stack(true)
             .use_fips(true)
+            .use_dual_stack(true)
             .build()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
@@ -578,8 +578,8 @@ mod test {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::config::endpoint::Params::builder()
             .region("us-gov-east-1".to_string())
-            .use_dual_stack(true)
             .use_fips(false)
+            .use_dual_stack(true)
             .build()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
@@ -599,8 +599,8 @@ mod test {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::config::endpoint::Params::builder()
             .region("us-iso-east-1".to_string())
-            .use_dual_stack(true)
             .use_fips(true)
+            .use_dual_stack(true)
             .build()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
@@ -618,8 +618,8 @@ mod test {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::config::endpoint::Params::builder()
             .region("us-iso-east-1".to_string())
-            .use_dual_stack(false)
             .use_fips(true)
+            .use_dual_stack(false)
             .build()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
@@ -639,8 +639,8 @@ mod test {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::config::endpoint::Params::builder()
             .region("us-iso-east-1".to_string())
-            .use_dual_stack(true)
             .use_fips(false)
+            .use_dual_stack(true)
             .build()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
@@ -655,8 +655,8 @@ mod test {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::config::endpoint::Params::builder()
             .region("us-iso-east-1".to_string())
-            .use_dual_stack(false)
             .use_fips(false)
+            .use_dual_stack(false)
             .build()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
@@ -676,8 +676,8 @@ mod test {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::config::endpoint::Params::builder()
             .region("us-isob-east-1".to_string())
-            .use_dual_stack(true)
             .use_fips(true)
+            .use_dual_stack(true)
             .build()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
@@ -695,8 +695,8 @@ mod test {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::config::endpoint::Params::builder()
             .region("us-isob-east-1".to_string())
-            .use_dual_stack(false)
             .use_fips(true)
+            .use_dual_stack(false)
             .build()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
@@ -716,8 +716,8 @@ mod test {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::config::endpoint::Params::builder()
             .region("us-isob-east-1".to_string())
-            .use_dual_stack(true)
             .use_fips(false)
+            .use_dual_stack(true)
             .build()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
@@ -732,8 +732,8 @@ mod test {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::config::endpoint::Params::builder()
             .region("us-isob-east-1".to_string())
-            .use_dual_stack(false)
             .use_fips(false)
+            .use_dual_stack(false)
             .build()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
@@ -753,8 +753,8 @@ mod test {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
-            .use_dual_stack(false)
             .use_fips(false)
+            .use_dual_stack(false)
             .endpoint("https://example.com".to_string())
             .build()
             .expect("invalid params");
@@ -772,8 +772,8 @@ mod test {
     fn test_37() {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::config::endpoint::Params::builder()
-            .use_dual_stack(false)
             .use_fips(false)
+            .use_dual_stack(false)
             .endpoint("https://example.com".to_string())
             .build()
             .expect("invalid params");
@@ -792,8 +792,8 @@ mod test {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
-            .use_dual_stack(false)
             .use_fips(true)
+            .use_dual_stack(false)
             .endpoint("https://example.com".to_string())
             .build()
             .expect("invalid params");
@@ -809,8 +809,8 @@ mod test {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
-            .use_dual_stack(true)
             .use_fips(false)
+            .use_dual_stack(true)
             .endpoint("https://example.com".to_string())
             .build()
             .expect("invalid params");

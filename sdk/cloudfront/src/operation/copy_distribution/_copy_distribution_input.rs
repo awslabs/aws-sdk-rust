@@ -11,6 +11,9 @@ pub struct CopyDistributionInput {
     pub if_match: ::std::option::Option<::std::string::String>,
     /// <p>A value that uniquely identifies a request to create a resource. This helps to prevent CloudFront from creating a duplicate resource if you accidentally resubmit an identical request.</p>
     pub caller_reference: ::std::option::Option<::std::string::String>,
+    /// <p>A Boolean flag to specify the state of the staging distribution when it's created. When you set this value to <code>True</code>, the staging distribution is enabled. When you set this value to <code>False</code>, the staging distribution is disabled.</p>
+    /// <p>If you omit this field, the default value is <code>True</code>.</p>
+    pub enabled: ::std::option::Option<bool>,
 }
 impl CopyDistributionInput {
     /// <p>The identifier of the primary distribution whose configuration you are copying. To get a distribution ID, use <code>ListDistributions</code>.</p>
@@ -29,6 +32,11 @@ impl CopyDistributionInput {
     pub fn caller_reference(&self) -> ::std::option::Option<&str> {
         self.caller_reference.as_deref()
     }
+    /// <p>A Boolean flag to specify the state of the staging distribution when it's created. When you set this value to <code>True</code>, the staging distribution is enabled. When you set this value to <code>False</code>, the staging distribution is disabled.</p>
+    /// <p>If you omit this field, the default value is <code>True</code>.</p>
+    pub fn enabled(&self) -> ::std::option::Option<bool> {
+        self.enabled
+    }
 }
 impl CopyDistributionInput {
     /// Creates a new builder-style object to manufacture [`CopyDistributionInput`](crate::operation::copy_distribution::CopyDistributionInput).
@@ -45,6 +53,7 @@ pub struct CopyDistributionInputBuilder {
     pub(crate) staging: ::std::option::Option<bool>,
     pub(crate) if_match: ::std::option::Option<::std::string::String>,
     pub(crate) caller_reference: ::std::option::Option<::std::string::String>,
+    pub(crate) enabled: ::std::option::Option<bool>,
 }
 impl CopyDistributionInputBuilder {
     /// <p>The identifier of the primary distribution whose configuration you are copying. To get a distribution ID, use <code>ListDistributions</code>.</p>
@@ -103,6 +112,23 @@ impl CopyDistributionInputBuilder {
     pub fn get_caller_reference(&self) -> &::std::option::Option<::std::string::String> {
         &self.caller_reference
     }
+    /// <p>A Boolean flag to specify the state of the staging distribution when it's created. When you set this value to <code>True</code>, the staging distribution is enabled. When you set this value to <code>False</code>, the staging distribution is disabled.</p>
+    /// <p>If you omit this field, the default value is <code>True</code>.</p>
+    pub fn enabled(mut self, input: bool) -> Self {
+        self.enabled = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A Boolean flag to specify the state of the staging distribution when it's created. When you set this value to <code>True</code>, the staging distribution is enabled. When you set this value to <code>False</code>, the staging distribution is disabled.</p>
+    /// <p>If you omit this field, the default value is <code>True</code>.</p>
+    pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.enabled = input;
+        self
+    }
+    /// <p>A Boolean flag to specify the state of the staging distribution when it's created. When you set this value to <code>True</code>, the staging distribution is enabled. When you set this value to <code>False</code>, the staging distribution is disabled.</p>
+    /// <p>If you omit this field, the default value is <code>True</code>.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
+    }
     /// Consumes the builder and constructs a [`CopyDistributionInput`](crate::operation::copy_distribution::CopyDistributionInput).
     pub fn build(
         self,
@@ -112,6 +138,7 @@ impl CopyDistributionInputBuilder {
             staging: self.staging,
             if_match: self.if_match,
             caller_reference: self.caller_reference,
+            enabled: self.enabled,
         })
     }
 }

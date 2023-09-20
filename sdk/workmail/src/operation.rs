@@ -85,6 +85,9 @@ pub mod deregister_mail_domain;
 /// Types for the `DescribeEmailMonitoringConfiguration` operation.
 pub mod describe_email_monitoring_configuration;
 
+/// Types for the `DescribeEntity` operation.
+pub mod describe_entity;
+
 /// Types for the `DescribeGroup` operation.
 pub mod describe_group;
 
@@ -147,6 +150,9 @@ pub mod list_group_members;
 
 /// Types for the `ListGroups` operation.
 pub mod list_groups;
+
+/// Types for the `ListGroupsForEntity` operation.
+pub mod list_groups_for_entity;
 
 /// Types for the `ListImpersonationRoles` operation.
 pub mod list_impersonation_roles;
@@ -226,6 +232,9 @@ pub mod update_availability_configuration;
 /// Types for the `UpdateDefaultMailDomain` operation.
 pub mod update_default_mail_domain;
 
+/// Types for the `UpdateGroup` operation.
+pub mod update_group;
+
 /// Types for the `UpdateImpersonationRole` operation.
 pub mod update_impersonation_role;
 
@@ -240,3 +249,6 @@ pub mod update_primary_email_address;
 
 /// Types for the `UpdateResource` operation.
 pub mod update_resource;
+
+/// Types for the `UpdateUser` operation.
+pub mod update_user;

@@ -10,6 +10,8 @@ pub struct EntityAggregate {
     pub event_arn: ::std::option::Option<::std::string::String>,
     /// <p>The number of entities that match the criteria for the specified events.</p>
     pub count: i32,
+    /// <p>The number of affected entities aggregated by the entity status codes.</p>
+    pub statuses: ::std::option::Option<::std::collections::HashMap<crate::types::EntityStatusCode, i32>>,
 }
 impl EntityAggregate {
     /// <p>The unique identifier for the event. The event ARN has the <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code> format.</p>
@@ -21,6 +23,10 @@ impl EntityAggregate {
     /// <p>The number of entities that match the criteria for the specified events.</p>
     pub fn count(&self) -> i32 {
         self.count
+    }
+    /// <p>The number of affected entities aggregated by the entity status codes.</p>
+    pub fn statuses(&self) -> ::std::option::Option<&::std::collections::HashMap<crate::types::EntityStatusCode, i32>> {
+        self.statuses.as_ref()
     }
 }
 impl EntityAggregate {
@@ -36,6 +42,7 @@ impl EntityAggregate {
 pub struct EntityAggregateBuilder {
     pub(crate) event_arn: ::std::option::Option<::std::string::String>,
     pub(crate) count: ::std::option::Option<i32>,
+    pub(crate) statuses: ::std::option::Option<::std::collections::HashMap<crate::types::EntityStatusCode, i32>>,
 }
 impl EntityAggregateBuilder {
     /// <p>The unique identifier for the event. The event ARN has the <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code> format.</p>
@@ -72,11 +79,32 @@ impl EntityAggregateBuilder {
     pub fn get_count(&self) -> &::std::option::Option<i32> {
         &self.count
     }
+    /// Adds a key-value pair to `statuses`.
+    ///
+    /// To override the contents of this collection use [`set_statuses`](Self::set_statuses).
+    ///
+    /// <p>The number of affected entities aggregated by the entity status codes.</p>
+    pub fn statuses(mut self, k: crate::types::EntityStatusCode, v: i32) -> Self {
+        let mut hash_map = self.statuses.unwrap_or_default();
+        hash_map.insert(k, v);
+        self.statuses = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>The number of affected entities aggregated by the entity status codes.</p>
+    pub fn set_statuses(mut self, input: ::std::option::Option<::std::collections::HashMap<crate::types::EntityStatusCode, i32>>) -> Self {
+        self.statuses = input;
+        self
+    }
+    /// <p>The number of affected entities aggregated by the entity status codes.</p>
+    pub fn get_statuses(&self) -> &::std::option::Option<::std::collections::HashMap<crate::types::EntityStatusCode, i32>> {
+        &self.statuses
+    }
     /// Consumes the builder and constructs a [`EntityAggregate`](crate::types::EntityAggregate).
     pub fn build(self) -> crate::types::EntityAggregate {
         crate::types::EntityAggregate {
             event_arn: self.event_arn,
             count: self.count.unwrap_or_default(),
+            statuses: self.statuses,
         }
     }
 }

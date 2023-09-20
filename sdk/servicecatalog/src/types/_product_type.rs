@@ -14,6 +14,7 @@
 /// match producttype {
 ///     ProductType::CloudFormationTemplate => { /* ... */ },
 ///     ProductType::Marketplace => { /* ... */ },
+///     ProductType::TerraformCloud => { /* ... */ },
 ///     ProductType::TerraformOpenSource => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -47,6 +48,8 @@ pub enum ProductType {
     #[allow(missing_docs)] // documentation missing in model
     Marketplace,
     #[allow(missing_docs)] // documentation missing in model
+    TerraformCloud,
+    #[allow(missing_docs)] // documentation missing in model
     TerraformOpenSource,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
@@ -56,6 +59,7 @@ impl ::std::convert::From<&str> for ProductType {
         match s {
             "CLOUD_FORMATION_TEMPLATE" => ProductType::CloudFormationTemplate,
             "MARKETPLACE" => ProductType::Marketplace,
+            "TERRAFORM_CLOUD" => ProductType::TerraformCloud,
             "TERRAFORM_OPEN_SOURCE" => ProductType::TerraformOpenSource,
             other => ProductType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
@@ -74,13 +78,14 @@ impl ProductType {
         match self {
             ProductType::CloudFormationTemplate => "CLOUD_FORMATION_TEMPLATE",
             ProductType::Marketplace => "MARKETPLACE",
+            ProductType::TerraformCloud => "TERRAFORM_CLOUD",
             ProductType::TerraformOpenSource => "TERRAFORM_OPEN_SOURCE",
             ProductType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CLOUD_FORMATION_TEMPLATE", "MARKETPLACE", "TERRAFORM_OPEN_SOURCE"]
+        &["CLOUD_FORMATION_TEMPLATE", "MARKETPLACE", "TERRAFORM_CLOUD", "TERRAFORM_OPEN_SOURCE"]
     }
 }
 impl ::std::convert::AsRef<str> for ProductType {

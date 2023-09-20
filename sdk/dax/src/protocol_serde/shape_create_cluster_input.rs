@@ -12,65 +12,65 @@ pub fn ser_create_cluster_input(
     if let Some(var_3) = &input.description {
         object.key("Description").string(var_3.as_str());
     }
-    {
+    if let Some(var_4) = &input.replication_factor {
         object.key("ReplicationFactor").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.replication_factor).into()),
+            ::aws_smithy_types::Number::NegInt((*var_4).into()),
         );
     }
-    if let Some(var_4) = &input.availability_zones {
-        let mut array_5 = object.key("AvailabilityZones").start_array();
-        for item_6 in var_4 {
+    if let Some(var_5) = &input.availability_zones {
+        let mut array_6 = object.key("AvailabilityZones").start_array();
+        for item_7 in var_5 {
             {
-                array_5.value().string(item_6.as_str());
+                array_6.value().string(item_7.as_str());
             }
         }
-        array_5.finish();
+        array_6.finish();
     }
-    if let Some(var_7) = &input.subnet_group_name {
-        object.key("SubnetGroupName").string(var_7.as_str());
+    if let Some(var_8) = &input.subnet_group_name {
+        object.key("SubnetGroupName").string(var_8.as_str());
     }
-    if let Some(var_8) = &input.security_group_ids {
-        let mut array_9 = object.key("SecurityGroupIds").start_array();
-        for item_10 in var_8 {
+    if let Some(var_9) = &input.security_group_ids {
+        let mut array_10 = object.key("SecurityGroupIds").start_array();
+        for item_11 in var_9 {
             {
-                array_9.value().string(item_10.as_str());
+                array_10.value().string(item_11.as_str());
             }
         }
-        array_9.finish();
+        array_10.finish();
     }
-    if let Some(var_11) = &input.preferred_maintenance_window {
-        object.key("PreferredMaintenanceWindow").string(var_11.as_str());
+    if let Some(var_12) = &input.preferred_maintenance_window {
+        object.key("PreferredMaintenanceWindow").string(var_12.as_str());
     }
-    if let Some(var_12) = &input.notification_topic_arn {
-        object.key("NotificationTopicArn").string(var_12.as_str());
+    if let Some(var_13) = &input.notification_topic_arn {
+        object.key("NotificationTopicArn").string(var_13.as_str());
     }
-    if let Some(var_13) = &input.iam_role_arn {
-        object.key("IamRoleArn").string(var_13.as_str());
+    if let Some(var_14) = &input.iam_role_arn {
+        object.key("IamRoleArn").string(var_14.as_str());
     }
-    if let Some(var_14) = &input.parameter_group_name {
-        object.key("ParameterGroupName").string(var_14.as_str());
+    if let Some(var_15) = &input.parameter_group_name {
+        object.key("ParameterGroupName").string(var_15.as_str());
     }
-    if let Some(var_15) = &input.tags {
-        let mut array_16 = object.key("Tags").start_array();
-        for item_17 in var_15 {
+    if let Some(var_16) = &input.tags {
+        let mut array_17 = object.key("Tags").start_array();
+        for item_18 in var_16 {
             {
                 #[allow(unused_mut)]
-                let mut object_18 = array_16.value().start_object();
-                crate::protocol_serde::shape_tag::ser_tag(&mut object_18, item_17)?;
-                object_18.finish();
+                let mut object_19 = array_17.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_19, item_18)?;
+                object_19.finish();
             }
         }
-        array_16.finish();
+        array_17.finish();
     }
-    if let Some(var_19) = &input.sse_specification {
+    if let Some(var_20) = &input.sse_specification {
         #[allow(unused_mut)]
-        let mut object_20 = object.key("SSESpecification").start_object();
-        crate::protocol_serde::shape_sse_specification::ser_sse_specification(&mut object_20, var_19)?;
-        object_20.finish();
+        let mut object_21 = object.key("SSESpecification").start_object();
+        crate::protocol_serde::shape_sse_specification::ser_sse_specification(&mut object_21, var_20)?;
+        object_21.finish();
     }
-    if let Some(var_21) = &input.cluster_endpoint_encryption_type {
-        object.key("ClusterEndpointEncryptionType").string(var_21.as_str());
+    if let Some(var_22) = &input.cluster_endpoint_encryption_type {
+        object.key("ClusterEndpointEncryptionType").string(var_22.as_str());
     }
     Ok(())
 }

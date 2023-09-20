@@ -24,6 +24,8 @@ pub struct EndpointInput {
     pub start_time_offset: ::std::option::Option<::std::string::String>,
     /// <p>If specified, monitoring jobs substract this time from the end time. For information about using offsets for scheduling monitoring jobs, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-model-quality-schedule.html">Schedule Model Quality Monitoring Jobs</a>.</p>
     pub end_time_offset: ::std::option::Option<::std::string::String>,
+    /// <p>The attributes of the input data to exclude from the analysis.</p>
+    pub exclude_features_attribute: ::std::option::Option<::std::string::String>,
 }
 impl EndpointInput {
     /// <p>An endpoint in customer's account which has enabled <code>DataCaptureConfig</code> enabled.</p>
@@ -66,6 +68,10 @@ impl EndpointInput {
     pub fn end_time_offset(&self) -> ::std::option::Option<&str> {
         self.end_time_offset.as_deref()
     }
+    /// <p>The attributes of the input data to exclude from the analysis.</p>
+    pub fn exclude_features_attribute(&self) -> ::std::option::Option<&str> {
+        self.exclude_features_attribute.as_deref()
+    }
 }
 impl EndpointInput {
     /// Creates a new builder-style object to manufacture [`EndpointInput`](crate::types::EndpointInput).
@@ -88,6 +94,7 @@ pub struct EndpointInputBuilder {
     pub(crate) probability_threshold_attribute: ::std::option::Option<f64>,
     pub(crate) start_time_offset: ::std::option::Option<::std::string::String>,
     pub(crate) end_time_offset: ::std::option::Option<::std::string::String>,
+    pub(crate) exclude_features_attribute: ::std::option::Option<::std::string::String>,
 }
 impl EndpointInputBuilder {
     /// <p>An endpoint in customer's account which has enabled <code>DataCaptureConfig</code> enabled.</p>
@@ -230,6 +237,20 @@ impl EndpointInputBuilder {
     pub fn get_end_time_offset(&self) -> &::std::option::Option<::std::string::String> {
         &self.end_time_offset
     }
+    /// <p>The attributes of the input data to exclude from the analysis.</p>
+    pub fn exclude_features_attribute(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.exclude_features_attribute = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The attributes of the input data to exclude from the analysis.</p>
+    pub fn set_exclude_features_attribute(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.exclude_features_attribute = input;
+        self
+    }
+    /// <p>The attributes of the input data to exclude from the analysis.</p>
+    pub fn get_exclude_features_attribute(&self) -> &::std::option::Option<::std::string::String> {
+        &self.exclude_features_attribute
+    }
     /// Consumes the builder and constructs a [`EndpointInput`](crate::types::EndpointInput).
     pub fn build(self) -> crate::types::EndpointInput {
         crate::types::EndpointInput {
@@ -243,6 +264,7 @@ impl EndpointInputBuilder {
             probability_threshold_attribute: self.probability_threshold_attribute,
             start_time_offset: self.start_time_offset,
             end_time_offset: self.end_time_offset,
+            exclude_features_attribute: self.exclude_features_attribute,
         }
     }
 }

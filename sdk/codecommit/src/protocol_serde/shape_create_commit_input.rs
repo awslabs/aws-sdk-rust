@@ -21,44 +21,44 @@ pub fn ser_create_commit_input(
     if let Some(var_6) = &input.commit_message {
         object.key("commitMessage").string(var_6.as_str());
     }
-    if input.keep_empty_folders {
-        object.key("keepEmptyFolders").boolean(input.keep_empty_folders);
+    if let Some(var_7) = &input.keep_empty_folders {
+        object.key("keepEmptyFolders").boolean(*var_7);
     }
-    if let Some(var_7) = &input.put_files {
-        let mut array_8 = object.key("putFiles").start_array();
-        for item_9 in var_7 {
+    if let Some(var_8) = &input.put_files {
+        let mut array_9 = object.key("putFiles").start_array();
+        for item_10 in var_8 {
             {
                 #[allow(unused_mut)]
-                let mut object_10 = array_8.value().start_object();
-                crate::protocol_serde::shape_put_file_entry::ser_put_file_entry(&mut object_10, item_9)?;
-                object_10.finish();
+                let mut object_11 = array_9.value().start_object();
+                crate::protocol_serde::shape_put_file_entry::ser_put_file_entry(&mut object_11, item_10)?;
+                object_11.finish();
             }
         }
-        array_8.finish();
+        array_9.finish();
     }
-    if let Some(var_11) = &input.delete_files {
-        let mut array_12 = object.key("deleteFiles").start_array();
-        for item_13 in var_11 {
+    if let Some(var_12) = &input.delete_files {
+        let mut array_13 = object.key("deleteFiles").start_array();
+        for item_14 in var_12 {
             {
                 #[allow(unused_mut)]
-                let mut object_14 = array_12.value().start_object();
-                crate::protocol_serde::shape_delete_file_entry::ser_delete_file_entry(&mut object_14, item_13)?;
-                object_14.finish();
+                let mut object_15 = array_13.value().start_object();
+                crate::protocol_serde::shape_delete_file_entry::ser_delete_file_entry(&mut object_15, item_14)?;
+                object_15.finish();
             }
         }
-        array_12.finish();
+        array_13.finish();
     }
-    if let Some(var_15) = &input.set_file_modes {
-        let mut array_16 = object.key("setFileModes").start_array();
-        for item_17 in var_15 {
+    if let Some(var_16) = &input.set_file_modes {
+        let mut array_17 = object.key("setFileModes").start_array();
+        for item_18 in var_16 {
             {
                 #[allow(unused_mut)]
-                let mut object_18 = array_16.value().start_object();
-                crate::protocol_serde::shape_set_file_mode_entry::ser_set_file_mode_entry(&mut object_18, item_17)?;
-                object_18.finish();
+                let mut object_19 = array_17.value().start_object();
+                crate::protocol_serde::shape_set_file_mode_entry::ser_set_file_mode_entry(&mut object_19, item_18)?;
+                object_19.finish();
             }
         }
-        array_16.finish();
+        array_17.finish();
     }
     Ok(())
 }

@@ -8,7 +8,7 @@ pub struct ListChunksInput {
     /// Object token
     pub object_token: ::std::option::Option<::std::string::String>,
     /// Maximum number of chunks
-    pub max_results: i32,
+    pub max_results: ::std::option::Option<i32>,
     /// Pagination token
     pub next_token: ::std::option::Option<::std::string::String>,
 }
@@ -22,7 +22,7 @@ impl ListChunksInput {
         self.object_token.as_deref()
     }
     /// Maximum number of chunks
-    pub fn max_results(&self) -> i32 {
+    pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
     /// Pagination token
@@ -108,7 +108,7 @@ impl ListChunksInputBuilder {
         ::std::result::Result::Ok(crate::operation::list_chunks::ListChunksInput {
             storage_job_id: self.storage_job_id,
             object_token: self.object_token,
-            max_results: self.max_results.unwrap_or_default(),
+            max_results: self.max_results,
             next_token: self.next_token,
         })
     }

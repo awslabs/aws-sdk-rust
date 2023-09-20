@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct SendProjectSessionActionInput {
     /// <p>If true, the result of the recipe step will be returned, but not applied.</p>
-    pub preview: bool,
+    pub preview: ::std::option::Option<bool>,
     /// <p>The name of the project to apply the action to.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Represents a single step from a DataBrew recipe to be performed.</p>
@@ -18,7 +18,7 @@ pub struct SendProjectSessionActionInput {
 }
 impl SendProjectSessionActionInput {
     /// <p>If true, the result of the recipe step will be returned, but not applied.</p>
-    pub fn preview(&self) -> bool {
+    pub fn preview(&self) -> ::std::option::Option<bool> {
         self.preview
     }
     /// <p>The name of the project to apply the action to.</p>
@@ -165,7 +165,7 @@ impl SendProjectSessionActionInputBuilder {
         ::aws_smithy_http::operation::error::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::send_project_session_action::SendProjectSessionActionInput {
-            preview: self.preview.unwrap_or_default(),
+            preview: self.preview,
             name: self.name,
             recipe_step: self.recipe_step,
             step_index: self.step_index,

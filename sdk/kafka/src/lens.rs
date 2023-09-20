@@ -19,6 +19,16 @@ pub(crate) fn reflens_list_cluster_operations_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_cluster_operations_v2_output_next_token(
+    input: &crate::operation::list_cluster_operations_v2::ListClusterOperationsV2Output,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_clusters_output_next_token(
     input: &crate::operation::list_clusters::ListClustersOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -112,6 +122,16 @@ pub(crate) fn lens_list_client_vpc_connections_output_client_vpc_connections(
 pub(crate) fn lens_list_cluster_operations_output_cluster_operation_info_list(
     input: crate::operation::list_cluster_operations::ListClusterOperationsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ClusterOperationInfo>> {
+    let input = match input.cluster_operation_info_list {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_cluster_operations_v2_output_cluster_operation_info_list(
+    input: crate::operation::list_cluster_operations_v2::ListClusterOperationsV2Output,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ClusterOperationV2Summary>> {
     let input = match input.cluster_operation_info_list {
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,

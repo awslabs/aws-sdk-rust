@@ -244,16 +244,19 @@ impl CreateModelPackageFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>A list of key value pairs associated with the model. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
+    /// <p>If you supply <code>ModelPackageGroupName</code>, your model package belongs to the model group you specify and uses the tags associated with the model group. In this case, you cannot supply a <code>tag</code> argument. </p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         self.inner = self.inner.tags(input);
         self
     }
     /// <p>A list of key value pairs associated with the model. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
+    /// <p>If you supply <code>ModelPackageGroupName</code>, your model package belongs to the model group you specify and uses the tags associated with the model group. In this case, you cannot supply a <code>tag</code> argument. </p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>A list of key value pairs associated with the model. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
+    /// <p>If you supply <code>ModelPackageGroupName</code>, your model package belongs to the model group you specify and uses the tags associated with the model group. In this case, you cannot supply a <code>tag</code> argument. </p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         self.inner.get_tags()
     }
@@ -427,5 +430,19 @@ impl CreateModelPackageFluentBuilder {
         &self,
     ) -> &::std::option::Option<::std::vec::Vec<crate::types::AdditionalInferenceSpecificationDefinition>> {
         self.inner.get_additional_inference_specifications()
+    }
+    /// <p>Indicates if you want to skip model validation.</p>
+    pub fn skip_model_validation(mut self, input: crate::types::SkipModelValidation) -> Self {
+        self.inner = self.inner.skip_model_validation(input);
+        self
+    }
+    /// <p>Indicates if you want to skip model validation.</p>
+    pub fn set_skip_model_validation(mut self, input: ::std::option::Option<crate::types::SkipModelValidation>) -> Self {
+        self.inner = self.inner.set_skip_model_validation(input);
+        self
+    }
+    /// <p>Indicates if you want to skip model validation.</p>
+    pub fn get_skip_model_validation(&self) -> &::std::option::Option<crate::types::SkipModelValidation> {
+        self.inner.get_skip_model_validation()
     }
 }

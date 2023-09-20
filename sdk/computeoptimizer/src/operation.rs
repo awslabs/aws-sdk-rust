@@ -22,6 +22,9 @@ pub mod export_ecs_service_recommendations;
 /// Types for the `ExportLambdaFunctionRecommendations` operation.
 pub mod export_lambda_function_recommendations;
 
+/// Types for the `ExportLicenseRecommendations` operation.
+pub mod export_license_recommendations;
+
 /// Types for the `GetAutoScalingGroupRecommendations` operation.
 pub mod get_auto_scaling_group_recommendations;
 
@@ -51,6 +54,9 @@ pub mod get_enrollment_statuses_for_organization;
 
 /// Types for the `GetLambdaFunctionRecommendations` operation.
 pub mod get_lambda_function_recommendations;
+
+/// Types for the `GetLicenseRecommendations` operation.
+pub mod get_license_recommendations;
 
 /// Types for the `GetRecommendationPreferences` operation.
 pub mod get_recommendation_preferences;

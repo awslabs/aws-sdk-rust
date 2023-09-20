@@ -129,9 +129,15 @@ impl From<crate::operation::batch_update_attendee_capabilities_except::BatchUpda
             crate::operation::batch_update_attendee_capabilities_except::BatchUpdateAttendeeCapabilitiesExceptError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
+            crate::operation::batch_update_attendee_capabilities_except::BatchUpdateAttendeeCapabilitiesExceptError::ServiceFailureException(
+                inner,
+            ) => Error::ServiceFailureException(inner),
             crate::operation::batch_update_attendee_capabilities_except::BatchUpdateAttendeeCapabilitiesExceptError::ServiceUnavailableException(
                 inner,
             ) => Error::ServiceUnavailableException(inner),
+            crate::operation::batch_update_attendee_capabilities_except::BatchUpdateAttendeeCapabilitiesExceptError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
             crate::operation::batch_update_attendee_capabilities_except::BatchUpdateAttendeeCapabilitiesExceptError::UnauthorizedException(inner) => {
                 Error::UnauthorizedException(inner)
             }
@@ -193,6 +199,7 @@ impl From<crate::operation::create_meeting::CreateMeetingError> for Error {
     fn from(err: crate::operation::create_meeting::CreateMeetingError) -> Self {
         match err {
             crate::operation::create_meeting::CreateMeetingError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::create_meeting::CreateMeetingError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::create_meeting::CreateMeetingError::ForbiddenException(inner) => Error::ForbiddenException(inner),
             crate::operation::create_meeting::CreateMeetingError::LimitExceededException(inner) => Error::LimitExceededException(inner),
             crate::operation::create_meeting::CreateMeetingError::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
@@ -224,6 +231,9 @@ impl From<crate::operation::create_meeting_with_attendees::CreateMeetingWithAtte
         match err {
             crate::operation::create_meeting_with_attendees::CreateMeetingWithAttendeesError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
+            }
+            crate::operation::create_meeting_with_attendees::CreateMeetingWithAttendeesError::ConflictException(inner) => {
+                Error::ConflictException(inner)
             }
             crate::operation::create_meeting_with_attendees::CreateMeetingWithAttendeesError::ForbiddenException(inner) => {
                 Error::ForbiddenException(inner)
@@ -416,9 +426,20 @@ where
 impl From<crate::operation::list_tags_for_resource::ListTagsForResourceError> for Error {
     fn from(err: crate::operation::list_tags_for_resource::ListTagsForResourceError) -> Self {
         match err {
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::LimitExceededException(inner) => Error::LimitExceededException(inner),
             crate::operation::list_tags_for_resource::ListTagsForResourceError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::ServiceFailureException(inner) => {
+                Error::ServiceFailureException(inner)
+            }
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
             crate::operation::list_tags_for_resource::ListTagsForResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -538,8 +559,14 @@ impl From<crate::operation::tag_resource::TagResourceError> for Error {
     fn from(err: crate::operation::tag_resource::TagResourceError) -> Self {
         match err {
             crate::operation::tag_resource::TagResourceError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::tag_resource::TagResourceError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::tag_resource::TagResourceError::LimitExceededException(inner) => Error::LimitExceededException(inner),
             crate::operation::tag_resource::TagResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::tag_resource::TagResourceError::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::operation::tag_resource::TagResourceError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::tag_resource::TagResourceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::tag_resource::TagResourceError::TooManyTagsException(inner) => Error::TooManyTagsException(inner),
+            crate::operation::tag_resource::TagResourceError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
             crate::operation::tag_resource::TagResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -564,7 +591,13 @@ impl From<crate::operation::untag_resource::UntagResourceError> for Error {
     fn from(err: crate::operation::untag_resource::UntagResourceError) -> Self {
         match err {
             crate::operation::untag_resource::UntagResourceError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::untag_resource::UntagResourceError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::untag_resource::UntagResourceError::LimitExceededException(inner) => Error::LimitExceededException(inner),
             crate::operation::untag_resource::UntagResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::untag_resource::UntagResourceError::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::operation::untag_resource::UntagResourceError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::untag_resource::UntagResourceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::untag_resource::UntagResourceError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
             crate::operation::untag_resource::UntagResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -600,8 +633,14 @@ impl From<crate::operation::update_attendee_capabilities::UpdateAttendeeCapabili
             crate::operation::update_attendee_capabilities::UpdateAttendeeCapabilitiesError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
+            crate::operation::update_attendee_capabilities::UpdateAttendeeCapabilitiesError::ServiceFailureException(inner) => {
+                Error::ServiceFailureException(inner)
+            }
             crate::operation::update_attendee_capabilities::UpdateAttendeeCapabilitiesError::ServiceUnavailableException(inner) => {
                 Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::update_attendee_capabilities::UpdateAttendeeCapabilitiesError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
             }
             crate::operation::update_attendee_capabilities::UpdateAttendeeCapabilitiesError::UnauthorizedException(inner) => {
                 Error::UnauthorizedException(inner)

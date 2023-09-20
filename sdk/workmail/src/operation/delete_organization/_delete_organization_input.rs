@@ -8,7 +8,9 @@ pub struct DeleteOrganizationInput {
     /// <p>The organization ID.</p>
     pub organization_id: ::std::option::Option<::std::string::String>,
     /// <p>If true, deletes the AWS Directory Service directory associated with the organization.</p>
-    pub delete_directory: bool,
+    pub delete_directory: ::std::option::Option<bool>,
+    /// <p>Deletes a WorkMail organization even if the organization has enabled users.</p>
+    pub force_delete: ::std::option::Option<bool>,
 }
 impl DeleteOrganizationInput {
     /// <p>The idempotency token associated with the request.</p>
@@ -20,8 +22,12 @@ impl DeleteOrganizationInput {
         self.organization_id.as_deref()
     }
     /// <p>If true, deletes the AWS Directory Service directory associated with the organization.</p>
-    pub fn delete_directory(&self) -> bool {
+    pub fn delete_directory(&self) -> ::std::option::Option<bool> {
         self.delete_directory
+    }
+    /// <p>Deletes a WorkMail organization even if the organization has enabled users.</p>
+    pub fn force_delete(&self) -> ::std::option::Option<bool> {
+        self.force_delete
     }
 }
 impl DeleteOrganizationInput {
@@ -38,6 +44,7 @@ pub struct DeleteOrganizationInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) organization_id: ::std::option::Option<::std::string::String>,
     pub(crate) delete_directory: ::std::option::Option<bool>,
+    pub(crate) force_delete: ::std::option::Option<bool>,
 }
 impl DeleteOrganizationInputBuilder {
     /// <p>The idempotency token associated with the request.</p>
@@ -82,6 +89,20 @@ impl DeleteOrganizationInputBuilder {
     pub fn get_delete_directory(&self) -> &::std::option::Option<bool> {
         &self.delete_directory
     }
+    /// <p>Deletes a WorkMail organization even if the organization has enabled users.</p>
+    pub fn force_delete(mut self, input: bool) -> Self {
+        self.force_delete = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Deletes a WorkMail organization even if the organization has enabled users.</p>
+    pub fn set_force_delete(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.force_delete = input;
+        self
+    }
+    /// <p>Deletes a WorkMail organization even if the organization has enabled users.</p>
+    pub fn get_force_delete(&self) -> &::std::option::Option<bool> {
+        &self.force_delete
+    }
     /// Consumes the builder and constructs a [`DeleteOrganizationInput`](crate::operation::delete_organization::DeleteOrganizationInput).
     pub fn build(
         self,
@@ -89,7 +110,8 @@ impl DeleteOrganizationInputBuilder {
         ::std::result::Result::Ok(crate::operation::delete_organization::DeleteOrganizationInput {
             client_token: self.client_token,
             organization_id: self.organization_id,
-            delete_directory: self.delete_directory.unwrap_or_default(),
+            delete_directory: self.delete_directory,
+            force_delete: self.force_delete,
         })
     }
 }

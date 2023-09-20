@@ -119,6 +119,8 @@ pub use crate::types::_quiet_time::QuietTime;
 
 pub use crate::types::_journey_limits::JourneyLimits;
 
+pub use crate::types::_journey_timeframe_cap::JourneyTimeframeCap;
+
 pub use crate::types::_activity::Activity;
 
 pub use crate::types::_contact_center_activity::ContactCenterActivity;
@@ -262,6 +264,8 @@ pub use crate::types::_baidu_channel_response::BaiduChannelResponse;
 pub use crate::types::_baidu_channel_request::BaiduChannelRequest;
 
 pub use crate::types::_application_settings_resource::ApplicationSettingsResource;
+
+pub use crate::types::_application_settings_journey_limits::ApplicationSettingsJourneyLimits;
 
 pub use crate::types::_write_application_settings_request::WriteApplicationSettingsRequest;
 
@@ -515,6 +519,8 @@ mod _application_date_range_kpi_response;
 
 mod _application_response;
 
+mod _application_settings_journey_limits;
+
 mod _application_settings_resource;
 
 mod _applications_response;
@@ -750,6 +756,8 @@ mod _journey_schedule;
 mod _journey_sms_message;
 
 mod _journey_state_request;
+
+mod _journey_timeframe_cap;
 
 mod _journeys_response;
 

@@ -154,4 +154,18 @@ impl UpdatePhoneNumberFluentBuilder {
     pub fn get_calling_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_calling_name()
     }
+    /// <p>Specifies the name assigned to one or more phone numbers.</p>
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.name(input.into());
+        self
+    }
+    /// <p>Specifies the name assigned to one or more phone numbers.</p>
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_name(input);
+        self
+    }
+    /// <p>Specifies the name assigned to one or more phone numbers.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
 }

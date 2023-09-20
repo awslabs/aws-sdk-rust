@@ -18,7 +18,7 @@ pub struct CreateClusterInput {
     /// <p>The number of nodes in the DAX cluster. A replication factor of 1 will create a single-node cluster, without any read replicas. For additional fault tolerance, you can create a multiple node cluster with one or more read replicas. To do this, set <code>ReplicationFactor</code> to a number between 3 (one primary and two read replicas) and 10 (one primary and nine read replicas). <code>If the AvailabilityZones</code> parameter is provided, its length must equal the <code>ReplicationFactor</code>.</p> <note>
     /// <p>AWS recommends that you have at least two read replicas per cluster.</p>
     /// </note>
-    pub replication_factor: i32,
+    pub replication_factor: ::std::option::Option<i32>,
     /// <p>The Availability Zones (AZs) in which the cluster nodes will reside after the cluster has been created or updated. If provided, the length of this list must equal the <code>ReplicationFactor</code> parameter. If you omit this parameter, DAX will spread the nodes across Availability Zones for the highest availability.</p>
     pub availability_zones: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The name of the subnet group to be used for the replication group.</p> <important>
@@ -83,7 +83,7 @@ impl CreateClusterInput {
     /// <p>The number of nodes in the DAX cluster. A replication factor of 1 will create a single-node cluster, without any read replicas. For additional fault tolerance, you can create a multiple node cluster with one or more read replicas. To do this, set <code>ReplicationFactor</code> to a number between 3 (one primary and two read replicas) and 10 (one primary and nine read replicas). <code>If the AvailabilityZones</code> parameter is provided, its length must equal the <code>ReplicationFactor</code>.</p> <note>
     /// <p>AWS recommends that you have at least two read replicas per cluster.</p>
     /// </note>
-    pub fn replication_factor(&self) -> i32 {
+    pub fn replication_factor(&self) -> ::std::option::Option<i32> {
         self.replication_factor
     }
     /// <p>The Availability Zones (AZs) in which the cluster nodes will reside after the cluster has been created or updated. If provided, the length of this list must equal the <code>ReplicationFactor</code> parameter. If you omit this parameter, DAX will spread the nodes across Availability Zones for the highest availability.</p>
@@ -484,7 +484,7 @@ impl CreateClusterInputBuilder {
             cluster_name: self.cluster_name,
             node_type: self.node_type,
             description: self.description,
-            replication_factor: self.replication_factor.unwrap_or_default(),
+            replication_factor: self.replication_factor,
             availability_zones: self.availability_zones,
             subnet_group_name: self.subnet_group_name,
             security_group_ids: self.security_group_ids,

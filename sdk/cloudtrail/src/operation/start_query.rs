@@ -272,7 +272,7 @@ pub enum StartQueryError {
     InvalidS3BucketNameException(crate::types::error::InvalidS3BucketNameException),
     /// <p>This exception is thrown when the provided S3 prefix is not valid.</p>
     InvalidS3PrefixException(crate::types::error::InvalidS3PrefixException),
-    /// <p>You are already running the maximum number of concurrent queries. Wait a minute for some queries to finish, and then run the query again.</p>
+    /// <p>You are already running the maximum number of concurrent queries. The maximum number of concurrent queries is 10. Wait a minute for some queries to finish, and then run the query again.</p>
     MaxConcurrentQueriesException(crate::types::error::MaxConcurrentQueriesException),
     /// <p> This exception is thrown when the management account does not have a service-linked role. </p>
     NoManagementAccountSlrExistsException(crate::types::error::NoManagementAccountSlrExistsException),

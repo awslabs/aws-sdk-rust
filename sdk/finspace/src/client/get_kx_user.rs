@@ -7,7 +7,7 @@ impl super::Client {
     ///   - [`environment_id(impl Into<String>)`](crate::operation::get_kx_user::builders::GetKxUserFluentBuilder::environment_id) / [`set_environment_id(Option<String>)`](crate::operation::get_kx_user::builders::GetKxUserFluentBuilder::set_environment_id): <p>A unique identifier for the kdb environment.</p>
     /// - On success, responds with [`GetKxUserOutput`](crate::operation::get_kx_user::GetKxUserOutput) with field(s):
     ///   - [`user_name(Option<String>)`](crate::operation::get_kx_user::GetKxUserOutput::user_name): <p>A unique identifier for the user.</p>
-    ///   - [`user_arn(Option<String>)`](crate::operation::get_kx_user::GetKxUserOutput::user_arn): <p> The Amazon Resource Name (ARN) that identifies the user. For more information about ARNs and how to use ARNs in policies, see <a href="IAM/latest/UserGuide/reference_identifiers.html">IAM Identifiers</a> in the <i>IAM User Guide</i>. </p>
+    ///   - [`user_arn(Option<String>)`](crate::operation::get_kx_user::GetKxUserOutput::user_arn): <p> The Amazon Resource Name (ARN) that identifies the user. For more information about ARNs and how to use ARNs in policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM Identifiers</a> in the <i>IAM User Guide</i>. </p>
     ///   - [`environment_id(Option<String>)`](crate::operation::get_kx_user::GetKxUserOutput::environment_id): <p>A unique identifier for the kdb environment.</p>
     ///   - [`iam_role(Option<String>)`](crate::operation::get_kx_user::GetKxUserOutput::iam_role): <p>The IAM role ARN that is associated with the user.</p>
     /// - On failure, responds with [`SdkError<GetKxUserError>`](crate::operation::get_kx_user::GetKxUserError)

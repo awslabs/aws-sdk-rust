@@ -14,7 +14,7 @@ pub struct GetSampledRequestsInput {
     /// <p>The start date and time and the end date and time of the range for which you want <code>GetSampledRequests</code> to return a sample of requests. You must specify the times in Coordinated Universal Time (UTC) format. UTC format includes the special designator, <code>Z</code>. For example, <code>"2016-09-27T14:50Z"</code>. You can specify any time range in the previous three hours.</p>
     pub time_window: ::std::option::Option<crate::types::TimeWindow>,
     /// <p>The number of requests that you want AWS WAF to return from among the first 5,000 requests that your AWS resource received during the time range. If your resource received fewer requests than the value of <code>MaxItems</code>, <code>GetSampledRequests</code> returns information about all of them. </p>
-    pub max_items: i64,
+    pub max_items: ::std::option::Option<i64>,
 }
 impl GetSampledRequestsInput {
     /// <p>The <code>WebACLId</code> of the <code>WebACL</code> for which you want <code>GetSampledRequests</code> to return a sample of requests.</p>
@@ -34,7 +34,7 @@ impl GetSampledRequestsInput {
         self.time_window.as_ref()
     }
     /// <p>The number of requests that you want AWS WAF to return from among the first 5,000 requests that your AWS resource received during the time range. If your resource received fewer requests than the value of <code>MaxItems</code>, <code>GetSampledRequests</code> returns information about all of them. </p>
-    pub fn max_items(&self) -> i64 {
+    pub fn max_items(&self) -> ::std::option::Option<i64> {
         self.max_items
     }
 }
@@ -131,7 +131,7 @@ impl GetSampledRequestsInputBuilder {
             web_acl_id: self.web_acl_id,
             rule_id: self.rule_id,
             time_window: self.time_window,
-            max_items: self.max_items.unwrap_or_default(),
+            max_items: self.max_items,
         })
     }
 }

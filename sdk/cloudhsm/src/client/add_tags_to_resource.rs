@@ -8,6 +8,7 @@ impl super::Client {
     /// - On success, responds with [`AddTagsToResourceOutput`](crate::operation::add_tags_to_resource::AddTagsToResourceOutput) with field(s):
     ///   - [`status(Option<String>)`](crate::operation::add_tags_to_resource::AddTagsToResourceOutput::status): <p>The status of the operation.</p>
     /// - On failure, responds with [`SdkError<AddTagsToResourceError>`](crate::operation::add_tags_to_resource::AddTagsToResourceError)
+    #[deprecated(note = "This API is deprecated.")]
     pub fn add_tags_to_resource(&self) -> crate::operation::add_tags_to_resource::builders::AddTagsToResourceFluentBuilder {
         crate::operation::add_tags_to_resource::builders::AddTagsToResourceFluentBuilder::new(self.handle.clone())
     }

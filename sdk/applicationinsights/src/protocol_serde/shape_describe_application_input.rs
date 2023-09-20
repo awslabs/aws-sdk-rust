@@ -6,5 +6,8 @@ pub fn ser_describe_application_input(
     if let Some(var_1) = &input.resource_group_name {
         object.key("ResourceGroupName").string(var_1.as_str());
     }
+    if let Some(var_2) = &input.account_id {
+        object.key("AccountId").string(var_2.as_str());
+    }
     Ok(())
 }

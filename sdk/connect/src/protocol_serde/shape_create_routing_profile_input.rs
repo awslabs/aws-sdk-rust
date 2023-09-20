@@ -3,48 +3,51 @@ pub fn ser_create_routing_profile_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_routing_profile::CreateRoutingProfileInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.default_outbound_queue_id {
-        object.key("DefaultOutboundQueueId").string(var_1.as_str());
+    if let Some(var_1) = &input.agent_availability_timer {
+        object.key("AgentAvailabilityTimer").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.description {
-        object.key("Description").string(var_2.as_str());
+    if let Some(var_2) = &input.default_outbound_queue_id {
+        object.key("DefaultOutboundQueueId").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.media_concurrencies {
-        let mut array_4 = object.key("MediaConcurrencies").start_array();
-        for item_5 in var_3 {
+    if let Some(var_3) = &input.description {
+        object.key("Description").string(var_3.as_str());
+    }
+    if let Some(var_4) = &input.media_concurrencies {
+        let mut array_5 = object.key("MediaConcurrencies").start_array();
+        for item_6 in var_4 {
             {
                 #[allow(unused_mut)]
-                let mut object_6 = array_4.value().start_object();
-                crate::protocol_serde::shape_media_concurrency::ser_media_concurrency(&mut object_6, item_5)?;
-                object_6.finish();
+                let mut object_7 = array_5.value().start_object();
+                crate::protocol_serde::shape_media_concurrency::ser_media_concurrency(&mut object_7, item_6)?;
+                object_7.finish();
             }
         }
-        array_4.finish();
+        array_5.finish();
     }
-    if let Some(var_7) = &input.name {
-        object.key("Name").string(var_7.as_str());
+    if let Some(var_8) = &input.name {
+        object.key("Name").string(var_8.as_str());
     }
-    if let Some(var_8) = &input.queue_configs {
-        let mut array_9 = object.key("QueueConfigs").start_array();
-        for item_10 in var_8 {
+    if let Some(var_9) = &input.queue_configs {
+        let mut array_10 = object.key("QueueConfigs").start_array();
+        for item_11 in var_9 {
             {
                 #[allow(unused_mut)]
-                let mut object_11 = array_9.value().start_object();
-                crate::protocol_serde::shape_routing_profile_queue_config::ser_routing_profile_queue_config(&mut object_11, item_10)?;
-                object_11.finish();
+                let mut object_12 = array_10.value().start_object();
+                crate::protocol_serde::shape_routing_profile_queue_config::ser_routing_profile_queue_config(&mut object_12, item_11)?;
+                object_12.finish();
             }
         }
-        array_9.finish();
+        array_10.finish();
     }
-    if let Some(var_12) = &input.tags {
+    if let Some(var_13) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_13 = object.key("Tags").start_object();
-        for (key_14, value_15) in var_12 {
+        let mut object_14 = object.key("Tags").start_object();
+        for (key_15, value_16) in var_13 {
             {
-                object_13.key(key_14.as_str()).string(value_15.as_str());
+                object_14.key(key_15.as_str()).string(value_16.as_str());
             }
         }
-        object_13.finish();
+        object_14.finish();
     }
     Ok(())
 }

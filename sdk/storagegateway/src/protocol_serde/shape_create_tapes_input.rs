@@ -33,20 +33,20 @@ pub fn ser_create_tapes_input(
     if let Some(var_8) = &input.pool_id {
         object.key("PoolId").string(var_8.as_str());
     }
-    if input.worm {
-        object.key("Worm").boolean(input.worm);
+    if let Some(var_9) = &input.worm {
+        object.key("Worm").boolean(*var_9);
     }
-    if let Some(var_9) = &input.tags {
-        let mut array_10 = object.key("Tags").start_array();
-        for item_11 in var_9 {
+    if let Some(var_10) = &input.tags {
+        let mut array_11 = object.key("Tags").start_array();
+        for item_12 in var_10 {
             {
                 #[allow(unused_mut)]
-                let mut object_12 = array_10.value().start_object();
-                crate::protocol_serde::shape_tag::ser_tag(&mut object_12, item_11)?;
-                object_12.finish();
+                let mut object_13 = array_11.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_13, item_12)?;
+                object_13.finish();
             }
         }
-        array_10.finish();
+        array_11.finish();
     }
     Ok(())
 }

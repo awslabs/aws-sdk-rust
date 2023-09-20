@@ -12,8 +12,8 @@ pub fn ser_complete_migration_input_input(
     }
     #[allow(unused_mut)]
     let mut scope_3 = writer.prefix("Force");
-    if input.force {
-        scope_3.boolean(input.force);
+    if let Some(var_4) = &input.force {
+        scope_3.boolean(*var_4);
     }
     writer.finish();
     Ok(::aws_smithy_http::body::SdkBody::from(out))

@@ -29,8 +29,10 @@ pub struct ElasticsearchDestinationDescription {
     pub processing_configuration: ::std::option::Option<crate::types::ProcessingConfiguration>,
     /// <p>The Amazon CloudWatch logging options.</p>
     pub cloud_watch_logging_options: ::std::option::Option<crate::types::CloudWatchLoggingOptions>,
-    /// <p>The details of the VPC of the Amazon ES destination.</p>
+    /// <p>The details of the VPC of the Amazon OpenSearch or the Amazon OpenSearch Serverless destination.</p>
     pub vpc_configuration_description: ::std::option::Option<crate::types::VpcConfigurationDescription>,
+    /// <p>Indicates the method for setting up document ID. The supported methods are Kinesis Data Firehose generated document ID and OpenSearch Service generated document ID.</p>
+    pub document_id_options: ::std::option::Option<crate::types::DocumentIdOptions>,
 }
 impl ElasticsearchDestinationDescription {
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services credentials. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
@@ -82,9 +84,13 @@ impl ElasticsearchDestinationDescription {
     pub fn cloud_watch_logging_options(&self) -> ::std::option::Option<&crate::types::CloudWatchLoggingOptions> {
         self.cloud_watch_logging_options.as_ref()
     }
-    /// <p>The details of the VPC of the Amazon ES destination.</p>
+    /// <p>The details of the VPC of the Amazon OpenSearch or the Amazon OpenSearch Serverless destination.</p>
     pub fn vpc_configuration_description(&self) -> ::std::option::Option<&crate::types::VpcConfigurationDescription> {
         self.vpc_configuration_description.as_ref()
+    }
+    /// <p>Indicates the method for setting up document ID. The supported methods are Kinesis Data Firehose generated document ID and OpenSearch Service generated document ID.</p>
+    pub fn document_id_options(&self) -> ::std::option::Option<&crate::types::DocumentIdOptions> {
+        self.document_id_options.as_ref()
     }
 }
 impl ElasticsearchDestinationDescription {
@@ -111,6 +117,7 @@ pub struct ElasticsearchDestinationDescriptionBuilder {
     pub(crate) processing_configuration: ::std::option::Option<crate::types::ProcessingConfiguration>,
     pub(crate) cloud_watch_logging_options: ::std::option::Option<crate::types::CloudWatchLoggingOptions>,
     pub(crate) vpc_configuration_description: ::std::option::Option<crate::types::VpcConfigurationDescription>,
+    pub(crate) document_id_options: ::std::option::Option<crate::types::DocumentIdOptions>,
 }
 impl ElasticsearchDestinationDescriptionBuilder {
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services credentials. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
@@ -284,19 +291,33 @@ impl ElasticsearchDestinationDescriptionBuilder {
     pub fn get_cloud_watch_logging_options(&self) -> &::std::option::Option<crate::types::CloudWatchLoggingOptions> {
         &self.cloud_watch_logging_options
     }
-    /// <p>The details of the VPC of the Amazon ES destination.</p>
+    /// <p>The details of the VPC of the Amazon OpenSearch or the Amazon OpenSearch Serverless destination.</p>
     pub fn vpc_configuration_description(mut self, input: crate::types::VpcConfigurationDescription) -> Self {
         self.vpc_configuration_description = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The details of the VPC of the Amazon ES destination.</p>
+    /// <p>The details of the VPC of the Amazon OpenSearch or the Amazon OpenSearch Serverless destination.</p>
     pub fn set_vpc_configuration_description(mut self, input: ::std::option::Option<crate::types::VpcConfigurationDescription>) -> Self {
         self.vpc_configuration_description = input;
         self
     }
-    /// <p>The details of the VPC of the Amazon ES destination.</p>
+    /// <p>The details of the VPC of the Amazon OpenSearch or the Amazon OpenSearch Serverless destination.</p>
     pub fn get_vpc_configuration_description(&self) -> &::std::option::Option<crate::types::VpcConfigurationDescription> {
         &self.vpc_configuration_description
+    }
+    /// <p>Indicates the method for setting up document ID. The supported methods are Kinesis Data Firehose generated document ID and OpenSearch Service generated document ID.</p>
+    pub fn document_id_options(mut self, input: crate::types::DocumentIdOptions) -> Self {
+        self.document_id_options = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates the method for setting up document ID. The supported methods are Kinesis Data Firehose generated document ID and OpenSearch Service generated document ID.</p>
+    pub fn set_document_id_options(mut self, input: ::std::option::Option<crate::types::DocumentIdOptions>) -> Self {
+        self.document_id_options = input;
+        self
+    }
+    /// <p>Indicates the method for setting up document ID. The supported methods are Kinesis Data Firehose generated document ID and OpenSearch Service generated document ID.</p>
+    pub fn get_document_id_options(&self) -> &::std::option::Option<crate::types::DocumentIdOptions> {
+        &self.document_id_options
     }
     /// Consumes the builder and constructs a [`ElasticsearchDestinationDescription`](crate::types::ElasticsearchDestinationDescription).
     pub fn build(self) -> crate::types::ElasticsearchDestinationDescription {
@@ -314,6 +335,7 @@ impl ElasticsearchDestinationDescriptionBuilder {
             processing_configuration: self.processing_configuration,
             cloud_watch_logging_options: self.cloud_watch_logging_options,
             vpc_configuration_description: self.vpc_configuration_description,
+            document_id_options: self.document_id_options,
         }
     }
 }

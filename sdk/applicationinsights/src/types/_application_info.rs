@@ -4,6 +4,8 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ApplicationInfo {
+    /// <p>The AWS account ID for the owner of the application.</p>
+    pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the resource group used for the application.</p>
     pub resource_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The lifecycle of the application. </p>
@@ -26,6 +28,10 @@ pub struct ApplicationInfo {
     pub discovery_type: ::std::option::Option<crate::types::DiscoveryType>,
 }
 impl ApplicationInfo {
+    /// <p>The AWS account ID for the owner of the application.</p>
+    pub fn account_id(&self) -> ::std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
     /// <p>The name of the resource group used for the application.</p>
     pub fn resource_group_name(&self) -> ::std::option::Option<&str> {
         self.resource_group_name.as_deref()
@@ -74,6 +80,7 @@ impl ApplicationInfo {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ApplicationInfoBuilder {
+    pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) resource_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) life_cycle: ::std::option::Option<::std::string::String>,
     pub(crate) ops_item_sns_topic_arn: ::std::option::Option<::std::string::String>,
@@ -84,6 +91,20 @@ pub struct ApplicationInfoBuilder {
     pub(crate) discovery_type: ::std::option::Option<crate::types::DiscoveryType>,
 }
 impl ApplicationInfoBuilder {
+    /// <p>The AWS account ID for the owner of the application.</p>
+    pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.account_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The AWS account ID for the owner of the application.</p>
+    pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.account_id = input;
+        self
+    }
+    /// <p>The AWS account ID for the owner of the application.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
+    }
     /// <p>The name of the resource group used for the application.</p>
     pub fn resource_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_group_name = ::std::option::Option::Some(input.into());
@@ -211,6 +232,7 @@ impl ApplicationInfoBuilder {
     /// Consumes the builder and constructs a [`ApplicationInfo`](crate::types::ApplicationInfo).
     pub fn build(self) -> crate::types::ApplicationInfo {
         crate::types::ApplicationInfo {
+            account_id: self.account_id,
             resource_group_name: self.resource_group_name,
             life_cycle: self.life_cycle,
             ops_item_sns_topic_arn: self.ops_item_sns_topic_arn,

@@ -261,7 +261,7 @@ pub type BatchAssociateApprovalRuleTemplateWithRepositoriesErrorKind = BatchAsso
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum BatchAssociateApprovalRuleTemplateWithRepositoriesError {
-    /// <p>The specified approval rule template does not exist. Verify that the name is correct and that you are signed in to the AWS Region where the template was created, and then try again.</p>
+    /// <p>The specified approval rule template does not exist. Verify that the name is correct and that you are signed in to the Amazon Web Services Region where the template was created, and then try again.</p>
     ApprovalRuleTemplateDoesNotExistException(crate::types::error::ApprovalRuleTemplateDoesNotExistException),
     /// <p>An approval rule template name is required, but was not specified.</p>
     ApprovalRuleTemplateNameRequiredException(crate::types::error::ApprovalRuleTemplateNameRequiredException),
@@ -275,7 +275,7 @@ pub enum BatchAssociateApprovalRuleTemplateWithRepositoriesError {
     EncryptionKeyNotFoundException(crate::types::error::EncryptionKeyNotFoundException),
     /// <p>The encryption key is not available.</p>
     EncryptionKeyUnavailableException(crate::types::error::EncryptionKeyUnavailableException),
-    /// <p>The name of the approval rule template is not valid. Template names must be between 1 and 100 valid characters in length. For more information about limits in AWS CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS CodeCommit User Guide</a>.</p>
+    /// <p>The name of the approval rule template is not valid. Template names must be between 1 and 100 valid characters in length. For more information about limits in CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">Quotas</a> in the <i>CodeCommit User Guide</i>.</p>
     InvalidApprovalRuleTemplateNameException(crate::types::error::InvalidApprovalRuleTemplateNameException),
     /// <p>The maximum number of allowed repository names was exceeded. Currently, this number is 100.</p>
     MaximumRepositoryNamesExceededException(crate::types::error::MaximumRepositoryNamesExceededException),

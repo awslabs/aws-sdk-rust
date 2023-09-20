@@ -6,8 +6,8 @@ pub fn ser_delete_progress_update_stream_input(
     if let Some(var_1) = &input.progress_update_stream_name {
         object.key("ProgressUpdateStreamName").string(var_1.as_str());
     }
-    if input.dry_run {
-        object.key("DryRun").boolean(input.dry_run);
+    if let Some(var_2) = &input.dry_run {
+        object.key("DryRun").boolean(*var_2);
     }
     Ok(())
 }

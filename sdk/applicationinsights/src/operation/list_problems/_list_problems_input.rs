@@ -3,6 +3,8 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListProblemsInput {
+    /// <p>The AWS account ID for the resource group owner.</p>
+    pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the resource group.</p>
     pub resource_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The time when the problem was detected, in epoch seconds. If you don't specify a time frame for the request, problems within the past seven days are returned.</p>
@@ -15,8 +17,14 @@ pub struct ListProblemsInput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p> The name of the component. </p>
     pub component_name: ::std::option::Option<::std::string::String>,
+    /// <p>Specifies whether or not you can view the problem. If not specified, visible and ignored problems are returned.</p>
+    pub visibility: ::std::option::Option<crate::types::Visibility>,
 }
 impl ListProblemsInput {
+    /// <p>The AWS account ID for the resource group owner.</p>
+    pub fn account_id(&self) -> ::std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
     /// <p>The name of the resource group.</p>
     pub fn resource_group_name(&self) -> ::std::option::Option<&str> {
         self.resource_group_name.as_deref()
@@ -41,6 +49,10 @@ impl ListProblemsInput {
     pub fn component_name(&self) -> ::std::option::Option<&str> {
         self.component_name.as_deref()
     }
+    /// <p>Specifies whether or not you can view the problem. If not specified, visible and ignored problems are returned.</p>
+    pub fn visibility(&self) -> ::std::option::Option<&crate::types::Visibility> {
+        self.visibility.as_ref()
+    }
 }
 impl ListProblemsInput {
     /// Creates a new builder-style object to manufacture [`ListProblemsInput`](crate::operation::list_problems::ListProblemsInput).
@@ -53,14 +65,30 @@ impl ListProblemsInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListProblemsInputBuilder {
+    pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) resource_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) component_name: ::std::option::Option<::std::string::String>,
+    pub(crate) visibility: ::std::option::Option<crate::types::Visibility>,
 }
 impl ListProblemsInputBuilder {
+    /// <p>The AWS account ID for the resource group owner.</p>
+    pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.account_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The AWS account ID for the resource group owner.</p>
+    pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.account_id = input;
+        self
+    }
+    /// <p>The AWS account ID for the resource group owner.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
+    }
     /// <p>The name of the resource group.</p>
     pub fn resource_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_group_name = ::std::option::Option::Some(input.into());
@@ -145,15 +173,31 @@ impl ListProblemsInputBuilder {
     pub fn get_component_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.component_name
     }
+    /// <p>Specifies whether or not you can view the problem. If not specified, visible and ignored problems are returned.</p>
+    pub fn visibility(mut self, input: crate::types::Visibility) -> Self {
+        self.visibility = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether or not you can view the problem. If not specified, visible and ignored problems are returned.</p>
+    pub fn set_visibility(mut self, input: ::std::option::Option<crate::types::Visibility>) -> Self {
+        self.visibility = input;
+        self
+    }
+    /// <p>Specifies whether or not you can view the problem. If not specified, visible and ignored problems are returned.</p>
+    pub fn get_visibility(&self) -> &::std::option::Option<crate::types::Visibility> {
+        &self.visibility
+    }
     /// Consumes the builder and constructs a [`ListProblemsInput`](crate::operation::list_problems::ListProblemsInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::list_problems::ListProblemsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_problems::ListProblemsInput {
+            account_id: self.account_id,
             resource_group_name: self.resource_group_name,
             start_time: self.start_time,
             end_time: self.end_time,
             max_results: self.max_results,
             next_token: self.next_token,
             component_name: self.component_name,
+            visibility: self.visibility,
         })
     }
 }

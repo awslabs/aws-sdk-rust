@@ -13,6 +13,7 @@
 /// # let analysisruletype = unimplemented!();
 /// match analysisruletype {
 ///     AnalysisRuleType::Aggregation => { /* ... */ },
+///     AnalysisRuleType::Custom => { /* ... */ },
 ///     AnalysisRuleType::List => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -44,6 +45,8 @@ pub enum AnalysisRuleType {
     #[allow(missing_docs)] // documentation missing in model
     Aggregation,
     #[allow(missing_docs)] // documentation missing in model
+    Custom,
+    #[allow(missing_docs)] // documentation missing in model
     List,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
@@ -52,6 +55,7 @@ impl ::std::convert::From<&str> for AnalysisRuleType {
     fn from(s: &str) -> Self {
         match s {
             "AGGREGATION" => AnalysisRuleType::Aggregation,
+            "CUSTOM" => AnalysisRuleType::Custom,
             "LIST" => AnalysisRuleType::List,
             other => AnalysisRuleType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
@@ -69,13 +73,14 @@ impl AnalysisRuleType {
     pub fn as_str(&self) -> &str {
         match self {
             AnalysisRuleType::Aggregation => "AGGREGATION",
+            AnalysisRuleType::Custom => "CUSTOM",
             AnalysisRuleType::List => "LIST",
             AnalysisRuleType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AGGREGATION", "LIST"]
+        &["AGGREGATION", "CUSTOM", "LIST"]
     }
 }
 impl ::std::convert::AsRef<str> for AnalysisRuleType {

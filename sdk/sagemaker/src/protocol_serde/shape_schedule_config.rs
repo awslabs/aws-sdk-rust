@@ -6,6 +6,12 @@ pub fn ser_schedule_config(
     if let Some(var_1) = &input.schedule_expression {
         object.key("ScheduleExpression").string(var_1.as_str());
     }
+    if let Some(var_2) = &input.data_analysis_start_time {
+        object.key("DataAnalysisStartTime").string(var_2.as_str());
+    }
+    if let Some(var_3) = &input.data_analysis_end_time {
+        object.key("DataAnalysisEndTime").string(var_3.as_str());
+    }
     Ok(())
 }
 
@@ -26,6 +32,20 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "ScheduleExpression" => {
                             builder = builder.set_schedule_expression(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "DataAnalysisStartTime" => {
+                            builder = builder.set_data_analysis_start_time(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "DataAnalysisEndTime" => {
+                            builder = builder.set_data_analysis_end_time(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,

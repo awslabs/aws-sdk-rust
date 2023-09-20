@@ -23,6 +23,8 @@ pub struct RestoreSnapshotFromRecycleBinOutput {
     pub volume_id: ::std::option::Option<::std::string::String>,
     /// <p>The size of the volume, in GiB.</p>
     pub volume_size: ::std::option::Option<i32>,
+    /// <p>Reserved for future use.</p>
+    pub sse_type: ::std::option::Option<crate::types::SseType>,
     _request_id: Option<String>,
 }
 impl RestoreSnapshotFromRecycleBinOutput {
@@ -66,6 +68,10 @@ impl RestoreSnapshotFromRecycleBinOutput {
     pub fn volume_size(&self) -> ::std::option::Option<i32> {
         self.volume_size
     }
+    /// <p>Reserved for future use.</p>
+    pub fn sse_type(&self) -> ::std::option::Option<&crate::types::SseType> {
+        self.sse_type.as_ref()
+    }
 }
 impl ::aws_http::request_id::RequestId for RestoreSnapshotFromRecycleBinOutput {
     fn request_id(&self) -> Option<&str> {
@@ -93,6 +99,7 @@ pub struct RestoreSnapshotFromRecycleBinOutputBuilder {
     pub(crate) state: ::std::option::Option<crate::types::SnapshotState>,
     pub(crate) volume_id: ::std::option::Option<::std::string::String>,
     pub(crate) volume_size: ::std::option::Option<i32>,
+    pub(crate) sse_type: ::std::option::Option<crate::types::SseType>,
     _request_id: Option<String>,
 }
 impl RestoreSnapshotFromRecycleBinOutputBuilder {
@@ -236,6 +243,20 @@ impl RestoreSnapshotFromRecycleBinOutputBuilder {
     pub fn get_volume_size(&self) -> &::std::option::Option<i32> {
         &self.volume_size
     }
+    /// <p>Reserved for future use.</p>
+    pub fn sse_type(mut self, input: crate::types::SseType) -> Self {
+        self.sse_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Reserved for future use.</p>
+    pub fn set_sse_type(mut self, input: ::std::option::Option<crate::types::SseType>) -> Self {
+        self.sse_type = input;
+        self
+    }
+    /// <p>Reserved for future use.</p>
+    pub fn get_sse_type(&self) -> &::std::option::Option<crate::types::SseType> {
+        &self.sse_type
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -258,6 +279,7 @@ impl RestoreSnapshotFromRecycleBinOutputBuilder {
             state: self.state,
             volume_id: self.volume_id,
             volume_size: self.volume_size,
+            sse_type: self.sse_type,
             _request_id: self._request_id,
         }
     }

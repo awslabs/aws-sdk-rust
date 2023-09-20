@@ -32,7 +32,7 @@ pub struct CreateGameSessionInput {
     pub idempotency_token: ::std::option::Option<::std::string::String>,
     /// <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>).</p>
     pub game_session_data: ::std::option::Option<::std::string::String>,
-    /// <p>A fleet's remote location to place the new game session in. If this parameter is not set, the new game session is placed in the fleet's home Region. Specify a remote location with an Amazon Web Services Region code such as <code>us-west-2</code>. </p>
+    /// <p>A fleet's remote location to place the new game session in. If this parameter is not set, the new game session is placed in the fleet's home Region. Specify a remote location with an Amazon Web Services Region code such as <code>us-west-2</code>. When using an Anywhere fleet, this parameter is required and must be set to the Anywhere fleet's custom location.</p>
     pub location: ::std::option::Option<::std::string::String>,
 }
 impl CreateGameSessionInput {
@@ -83,7 +83,7 @@ impl CreateGameSessionInput {
     pub fn game_session_data(&self) -> ::std::option::Option<&str> {
         self.game_session_data.as_deref()
     }
-    /// <p>A fleet's remote location to place the new game session in. If this parameter is not set, the new game session is placed in the fleet's home Region. Specify a remote location with an Amazon Web Services Region code such as <code>us-west-2</code>. </p>
+    /// <p>A fleet's remote location to place the new game session in. If this parameter is not set, the new game session is placed in the fleet's home Region. Specify a remote location with an Amazon Web Services Region code such as <code>us-west-2</code>. When using an Anywhere fleet, this parameter is required and must be set to the Anywhere fleet's custom location.</p>
     pub fn location(&self) -> ::std::option::Option<&str> {
         self.location.as_deref()
     }
@@ -276,17 +276,17 @@ impl CreateGameSessionInputBuilder {
     pub fn get_game_session_data(&self) -> &::std::option::Option<::std::string::String> {
         &self.game_session_data
     }
-    /// <p>A fleet's remote location to place the new game session in. If this parameter is not set, the new game session is placed in the fleet's home Region. Specify a remote location with an Amazon Web Services Region code such as <code>us-west-2</code>. </p>
+    /// <p>A fleet's remote location to place the new game session in. If this parameter is not set, the new game session is placed in the fleet's home Region. Specify a remote location with an Amazon Web Services Region code such as <code>us-west-2</code>. When using an Anywhere fleet, this parameter is required and must be set to the Anywhere fleet's custom location.</p>
     pub fn location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.location = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A fleet's remote location to place the new game session in. If this parameter is not set, the new game session is placed in the fleet's home Region. Specify a remote location with an Amazon Web Services Region code such as <code>us-west-2</code>. </p>
+    /// <p>A fleet's remote location to place the new game session in. If this parameter is not set, the new game session is placed in the fleet's home Region. Specify a remote location with an Amazon Web Services Region code such as <code>us-west-2</code>. When using an Anywhere fleet, this parameter is required and must be set to the Anywhere fleet's custom location.</p>
     pub fn set_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.location = input;
         self
     }
-    /// <p>A fleet's remote location to place the new game session in. If this parameter is not set, the new game session is placed in the fleet's home Region. Specify a remote location with an Amazon Web Services Region code such as <code>us-west-2</code>. </p>
+    /// <p>A fleet's remote location to place the new game session in. If this parameter is not set, the new game session is placed in the fleet's home Region. Specify a remote location with an Amazon Web Services Region code such as <code>us-west-2</code>. When using an Anywhere fleet, this parameter is required and must be set to the Anywhere fleet's custom location.</p>
     pub fn get_location(&self) -> &::std::option::Option<::std::string::String> {
         &self.location
     }

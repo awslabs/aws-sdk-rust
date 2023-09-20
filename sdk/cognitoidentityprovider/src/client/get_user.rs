@@ -5,7 +5,7 @@ impl super::Client {
     /// - The fluent builder is configurable:
     ///   - [`access_token(impl Into<String>)`](crate::operation::get_user::builders::GetUserFluentBuilder::access_token) / [`set_access_token(Option<String>)`](crate::operation::get_user::builders::GetUserFluentBuilder::set_access_token): <p>A non-expired access token for the user whose information you want to query.</p>
     /// - On success, responds with [`GetUserOutput`](crate::operation::get_user::GetUserOutput) with field(s):
-    ///   - [`username(Option<String>)`](crate::operation::get_user::GetUserOutput::username): <p>The user name of the user you want to retrieve from the get user request.</p>
+    ///   - [`username(Option<String>)`](crate::operation::get_user::GetUserOutput::username): <p>The username of the user that you requested.</p>
     ///   - [`user_attributes(Option<Vec<AttributeType>>)`](crate::operation::get_user::GetUserOutput::user_attributes): <p>An array of name-value pairs representing user attributes.</p>  <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.</p>
     ///   - [`mfa_options(Option<Vec<MfaOptionType>>)`](crate::operation::get_user::GetUserOutput::mfa_options): <p> <i>This response parameter is no longer supported.</i> It provides information only about SMS MFA configurations. It doesn't provide information about time-based one-time password (TOTP) software token MFA configurations. To look up information about either type of MFA configuration, use UserMFASettingList instead.</p>
     ///   - [`preferred_mfa_setting(Option<String>)`](crate::operation::get_user::GetUserOutput::preferred_mfa_setting): <p>The user's preferred MFA setting.</p>

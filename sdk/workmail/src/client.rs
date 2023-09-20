@@ -231,6 +231,8 @@ mod deregister_mail_domain;
 
 mod describe_email_monitoring_configuration;
 
+mod describe_entity;
+
 mod describe_group;
 
 mod describe_inbound_dmarc_settings;
@@ -272,6 +274,8 @@ mod list_availability_configurations;
 mod list_group_members;
 
 mod list_groups;
+
+mod list_groups_for_entity;
 
 mod list_impersonation_roles;
 
@@ -325,6 +329,8 @@ mod update_availability_configuration;
 
 mod update_default_mail_domain;
 
+mod update_group;
+
 mod update_impersonation_role;
 
 mod update_mailbox_quota;
@@ -334,3 +340,5 @@ mod update_mobile_device_access_rule;
 mod update_primary_email_address;
 
 mod update_resource;
+
+mod update_user;

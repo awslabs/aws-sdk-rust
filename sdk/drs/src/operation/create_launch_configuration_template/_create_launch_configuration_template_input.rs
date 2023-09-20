@@ -17,6 +17,8 @@ pub struct CreateLaunchConfigurationTemplateInput {
     pub licensing: ::std::option::Option<crate::types::Licensing>,
     /// <p>S3 bucket ARN to export Source Network templates.</p>
     pub export_bucket_arn: ::std::option::Option<::std::string::String>,
+    /// <p>Whether we want to activate post-launch actions.</p>
+    pub post_launch_enabled: ::std::option::Option<bool>,
 }
 impl CreateLaunchConfigurationTemplateInput {
     /// <p>Request to associate tags during creation of a Launch Configuration Template.</p>
@@ -47,6 +49,10 @@ impl CreateLaunchConfigurationTemplateInput {
     pub fn export_bucket_arn(&self) -> ::std::option::Option<&str> {
         self.export_bucket_arn.as_deref()
     }
+    /// <p>Whether we want to activate post-launch actions.</p>
+    pub fn post_launch_enabled(&self) -> ::std::option::Option<bool> {
+        self.post_launch_enabled
+    }
 }
 impl ::std::fmt::Debug for CreateLaunchConfigurationTemplateInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -58,6 +64,7 @@ impl ::std::fmt::Debug for CreateLaunchConfigurationTemplateInput {
         formatter.field("copy_tags", &self.copy_tags);
         formatter.field("licensing", &self.licensing);
         formatter.field("export_bucket_arn", &self.export_bucket_arn);
+        formatter.field("post_launch_enabled", &self.post_launch_enabled);
         formatter.finish()
     }
 }
@@ -79,6 +86,7 @@ pub struct CreateLaunchConfigurationTemplateInputBuilder {
     pub(crate) copy_tags: ::std::option::Option<bool>,
     pub(crate) licensing: ::std::option::Option<crate::types::Licensing>,
     pub(crate) export_bucket_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) post_launch_enabled: ::std::option::Option<bool>,
 }
 impl CreateLaunchConfigurationTemplateInputBuilder {
     /// Adds a key-value pair to `tags`.
@@ -188,6 +196,20 @@ impl CreateLaunchConfigurationTemplateInputBuilder {
     pub fn get_export_bucket_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.export_bucket_arn
     }
+    /// <p>Whether we want to activate post-launch actions.</p>
+    pub fn post_launch_enabled(mut self, input: bool) -> Self {
+        self.post_launch_enabled = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Whether we want to activate post-launch actions.</p>
+    pub fn set_post_launch_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.post_launch_enabled = input;
+        self
+    }
+    /// <p>Whether we want to activate post-launch actions.</p>
+    pub fn get_post_launch_enabled(&self) -> &::std::option::Option<bool> {
+        &self.post_launch_enabled
+    }
     /// Consumes the builder and constructs a [`CreateLaunchConfigurationTemplateInput`](crate::operation::create_launch_configuration_template::CreateLaunchConfigurationTemplateInput).
     pub fn build(
         self,
@@ -204,6 +226,7 @@ impl CreateLaunchConfigurationTemplateInputBuilder {
                 copy_tags: self.copy_tags,
                 licensing: self.licensing,
                 export_bucket_arn: self.export_bucket_arn,
+                post_launch_enabled: self.post_launch_enabled,
             },
         )
     }
@@ -218,6 +241,7 @@ impl ::std::fmt::Debug for CreateLaunchConfigurationTemplateInputBuilder {
         formatter.field("copy_tags", &self.copy_tags);
         formatter.field("licensing", &self.licensing);
         formatter.field("export_bucket_arn", &self.export_bucket_arn);
+        formatter.field("post_launch_enabled", &self.post_launch_enabled);
         formatter.finish()
     }
 }

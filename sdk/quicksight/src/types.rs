@@ -225,6 +225,8 @@ pub use crate::types::_widget_status::WidgetStatus;
 
 pub use crate::types::_filter_scope_configuration::FilterScopeConfiguration;
 
+pub use crate::types::_all_sheets_filter_scope_configuration::AllSheetsFilterScopeConfiguration;
+
 pub use crate::types::_selected_sheets_filter_scope_configuration::SelectedSheetsFilterScopeConfiguration;
 
 pub use crate::types::_sheet_visual_scoping_configuration::SheetVisualScopingConfiguration;
@@ -1005,6 +1007,10 @@ pub use crate::types::_kpi_conditional_formatting::KpiConditionalFormatting;
 
 pub use crate::types::_kpi_conditional_formatting_option::KpiConditionalFormattingOption;
 
+pub use crate::types::_kpi_comparison_value_conditional_formatting::KpiComparisonValueConditionalFormatting;
+
+pub use crate::types::_kpi_actual_value_conditional_formatting::KpiActualValueConditionalFormatting;
+
 pub use crate::types::_kpi_progress_bar_conditional_formatting::KpiProgressBarConditionalFormatting;
 
 pub use crate::types::_kpi_primary_value_conditional_formatting::KpiPrimaryValueConditionalFormatting;
@@ -1012,6 +1018,16 @@ pub use crate::types::_kpi_primary_value_conditional_formatting::KpiPrimaryValue
 pub use crate::types::_kpi_configuration::KpiConfiguration;
 
 pub use crate::types::_kpi_options::KpiOptions;
+
+pub use crate::types::_kpi_visual_layout_options::KpiVisualLayoutOptions;
+
+pub use crate::types::_kpi_visual_standard_layout::KpiVisualStandardLayout;
+
+pub use crate::types::_kpi_visual_standard_layout_type::KpiVisualStandardLayoutType;
+
+pub use crate::types::_kpi_sparkline_options::KpiSparklineOptions;
+
+pub use crate::types::_kpi_sparkline_type::KpiSparklineType;
 
 pub use crate::types::_secondary_value_options::SecondaryValueOptions;
 
@@ -1089,11 +1105,19 @@ pub use crate::types::_table_totals_placement::TableTotalsPlacement;
 
 pub use crate::types::_subtotal_options::SubtotalOptions;
 
+pub use crate::types::_table_style_target::TableStyleTarget;
+
+pub use crate::types::_styled_cell_type::StyledCellType;
+
 pub use crate::types::_pivot_table_field_subtotal_options::PivotTableFieldSubtotalOptions;
 
 pub use crate::types::_pivot_table_subtotal_level::PivotTableSubtotalLevel;
 
 pub use crate::types::_pivot_table_options::PivotTableOptions;
+
+pub use crate::types::_pivot_table_rows_label_options::PivotTableRowsLabelOptions;
+
+pub use crate::types::_pivot_table_rows_layout::PivotTableRowsLayout;
 
 pub use crate::types::_row_alternate_color_options::RowAlternateColorOptions;
 
@@ -1130,6 +1154,8 @@ pub use crate::types::_data_bars_options::DataBarsOptions;
 pub use crate::types::_table_paginated_report_options::TablePaginatedReportOptions;
 
 pub use crate::types::_table_field_options::TableFieldOptions;
+
+pub use crate::types::_table_pinned_field_options::TablePinnedFieldOptions;
 
 pub use crate::types::_table_field_option::TableFieldOption;
 
@@ -1583,6 +1609,8 @@ pub use crate::types::_group_filter_operator::GroupFilterOperator;
 
 pub use crate::types::_folder_summary::FolderSummary;
 
+pub use crate::types::_sharing_model::SharingModel;
+
 pub use crate::types::_folder_type::FolderType;
 
 pub use crate::types::_folder_search_filter::FolderSearchFilter;
@@ -1826,6 +1854,8 @@ mod _ad_hoc_filtering_option;
 mod _aggregation_function;
 
 mod _aggregation_sort_configuration;
+
+mod _all_sheets_filter_scope_configuration;
 
 mod _amazon_elasticsearch_parameters;
 
@@ -2703,6 +2733,10 @@ mod _join_key_properties;
 
 mod _join_type;
 
+mod _kpi_actual_value_conditional_formatting;
+
+mod _kpi_comparison_value_conditional_formatting;
+
 mod _kpi_conditional_formatting;
 
 mod _kpi_conditional_formatting_option;
@@ -2719,7 +2753,17 @@ mod _kpi_progress_bar_conditional_formatting;
 
 mod _kpi_sort_configuration;
 
+mod _kpi_sparkline_options;
+
+mod _kpi_sparkline_type;
+
 mod _kpi_visual;
+
+mod _kpi_visual_layout_options;
+
+mod _kpi_visual_standard_layout;
+
+mod _kpi_visual_standard_layout_type;
 
 mod _label_options;
 
@@ -2981,6 +3025,10 @@ mod _pivot_table_options;
 
 mod _pivot_table_paginated_report_options;
 
+mod _pivot_table_rows_label_options;
+
+mod _pivot_table_rows_layout;
+
 mod _pivot_table_sort_by;
 
 mod _pivot_table_sort_configuration;
@@ -3189,6 +3237,8 @@ mod _set_parameter_value_configuration;
 
 mod _shape_conditional_format;
 
+mod _sharing_model;
+
 mod _sheet;
 
 mod _sheet_content_type;
@@ -3309,6 +3359,8 @@ mod _string_parameter_declaration;
 
 mod _string_value_when_unset_configuration;
 
+mod _styled_cell_type;
+
 mod _subtotal_options;
 
 mod _table_aggregated_field_wells;
@@ -3359,11 +3411,15 @@ mod _table_orientation;
 
 mod _table_paginated_report_options;
 
+mod _table_pinned_field_options;
+
 mod _table_row_conditional_formatting;
 
 mod _table_side_border_options;
 
 mod _table_sort_configuration;
+
+mod _table_style_target;
 
 mod _table_totals_placement;
 

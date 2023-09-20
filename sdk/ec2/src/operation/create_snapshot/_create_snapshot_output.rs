@@ -38,6 +38,8 @@ pub struct CreateSnapshotOutput {
     pub storage_tier: ::std::option::Option<crate::types::StorageTier>,
     /// <p>Only for archived snapshots that are temporarily restored. Indicates the date and time when a temporarily restored snapshot will be automatically re-archived.</p>
     pub restore_expiry_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>Reserved for future use.</p>
+    pub sse_type: ::std::option::Option<crate::types::SseType>,
     _request_id: Option<String>,
 }
 impl CreateSnapshotOutput {
@@ -109,6 +111,10 @@ impl CreateSnapshotOutput {
     pub fn restore_expiry_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.restore_expiry_time.as_ref()
     }
+    /// <p>Reserved for future use.</p>
+    pub fn sse_type(&self) -> ::std::option::Option<&crate::types::SseType> {
+        self.sse_type.as_ref()
+    }
 }
 impl ::aws_http::request_id::RequestId for CreateSnapshotOutput {
     fn request_id(&self) -> Option<&str> {
@@ -143,6 +149,7 @@ pub struct CreateSnapshotOutputBuilder {
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) storage_tier: ::std::option::Option<crate::types::StorageTier>,
     pub(crate) restore_expiry_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) sse_type: ::std::option::Option<crate::types::SseType>,
     _request_id: Option<String>,
 }
 impl CreateSnapshotOutputBuilder {
@@ -390,6 +397,20 @@ impl CreateSnapshotOutputBuilder {
     pub fn get_restore_expiry_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.restore_expiry_time
     }
+    /// <p>Reserved for future use.</p>
+    pub fn sse_type(mut self, input: crate::types::SseType) -> Self {
+        self.sse_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Reserved for future use.</p>
+    pub fn set_sse_type(mut self, input: ::std::option::Option<crate::types::SseType>) -> Self {
+        self.sse_type = input;
+        self
+    }
+    /// <p>Reserved for future use.</p>
+    pub fn get_sse_type(&self) -> &::std::option::Option<crate::types::SseType> {
+        &self.sse_type
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -419,6 +440,7 @@ impl CreateSnapshotOutputBuilder {
             tags: self.tags,
             storage_tier: self.storage_tier,
             restore_expiry_time: self.restore_expiry_time,
+            sse_type: self.sse_type,
             _request_id: self._request_id,
         }
     }

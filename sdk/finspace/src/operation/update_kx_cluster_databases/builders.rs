@@ -171,4 +171,18 @@ impl UpdateKxClusterDatabasesFluentBuilder {
     pub fn get_databases(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::KxDatabaseConfiguration>> {
         self.inner.get_databases()
     }
+    /// <p> The configuration that allows you to choose how you want to update the databases on a cluster. </p>
+    pub fn deployment_configuration(mut self, input: crate::types::KxDeploymentConfiguration) -> Self {
+        self.inner = self.inner.deployment_configuration(input);
+        self
+    }
+    /// <p> The configuration that allows you to choose how you want to update the databases on a cluster. </p>
+    pub fn set_deployment_configuration(mut self, input: ::std::option::Option<crate::types::KxDeploymentConfiguration>) -> Self {
+        self.inner = self.inner.set_deployment_configuration(input);
+        self
+    }
+    /// <p> The configuration that allows you to choose how you want to update the databases on a cluster. </p>
+    pub fn get_deployment_configuration(&self) -> &::std::option::Option<crate::types::KxDeploymentConfiguration> {
+        self.inner.get_deployment_configuration()
+    }
 }

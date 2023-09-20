@@ -20,7 +20,7 @@ pub struct BackupJob {
     pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time a job to create a backup job is completed, in Unix format and Coordinated Universal Time (UTC). The value of <code>CompletionDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
     pub completion_date: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The current state of a resource recovery point.</p>
+    /// <p>The current state of a backup job.</p>
     pub state: ::std::option::Option<crate::types::BackupJobState>,
     /// <p>A detailed message explaining the status of the job to back up a resource.</p>
     pub status_message: ::std::option::Option<::std::string::String>,
@@ -85,7 +85,7 @@ impl BackupJob {
     pub fn completion_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.completion_date.as_ref()
     }
-    /// <p>The current state of a resource recovery point.</p>
+    /// <p>The current state of a backup job.</p>
     pub fn state(&self) -> ::std::option::Option<&crate::types::BackupJobState> {
         self.state.as_ref()
     }
@@ -295,17 +295,17 @@ impl BackupJobBuilder {
     pub fn get_completion_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.completion_date
     }
-    /// <p>The current state of a resource recovery point.</p>
+    /// <p>The current state of a backup job.</p>
     pub fn state(mut self, input: crate::types::BackupJobState) -> Self {
         self.state = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The current state of a resource recovery point.</p>
+    /// <p>The current state of a backup job.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::BackupJobState>) -> Self {
         self.state = input;
         self
     }
-    /// <p>The current state of a resource recovery point.</p>
+    /// <p>The current state of a backup job.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::BackupJobState> {
         &self.state
     }

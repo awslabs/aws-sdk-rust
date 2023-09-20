@@ -5,12 +5,18 @@
 pub struct GetEbsEncryptionByDefaultOutput {
     /// <p>Indicates whether encryption by default is enabled.</p>
     pub ebs_encryption_by_default: ::std::option::Option<bool>,
+    /// <p>Reserved for future use.</p>
+    pub sse_type: ::std::option::Option<crate::types::SseType>,
     _request_id: Option<String>,
 }
 impl GetEbsEncryptionByDefaultOutput {
     /// <p>Indicates whether encryption by default is enabled.</p>
     pub fn ebs_encryption_by_default(&self) -> ::std::option::Option<bool> {
         self.ebs_encryption_by_default
+    }
+    /// <p>Reserved for future use.</p>
+    pub fn sse_type(&self) -> ::std::option::Option<&crate::types::SseType> {
+        self.sse_type.as_ref()
     }
 }
 impl ::aws_http::request_id::RequestId for GetEbsEncryptionByDefaultOutput {
@@ -30,6 +36,7 @@ impl GetEbsEncryptionByDefaultOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetEbsEncryptionByDefaultOutputBuilder {
     pub(crate) ebs_encryption_by_default: ::std::option::Option<bool>,
+    pub(crate) sse_type: ::std::option::Option<crate::types::SseType>,
     _request_id: Option<String>,
 }
 impl GetEbsEncryptionByDefaultOutputBuilder {
@@ -47,6 +54,20 @@ impl GetEbsEncryptionByDefaultOutputBuilder {
     pub fn get_ebs_encryption_by_default(&self) -> &::std::option::Option<bool> {
         &self.ebs_encryption_by_default
     }
+    /// <p>Reserved for future use.</p>
+    pub fn sse_type(mut self, input: crate::types::SseType) -> Self {
+        self.sse_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Reserved for future use.</p>
+    pub fn set_sse_type(mut self, input: ::std::option::Option<crate::types::SseType>) -> Self {
+        self.sse_type = input;
+        self
+    }
+    /// <p>Reserved for future use.</p>
+    pub fn get_sse_type(&self) -> &::std::option::Option<crate::types::SseType> {
+        &self.sse_type
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -60,6 +81,7 @@ impl GetEbsEncryptionByDefaultOutputBuilder {
     pub fn build(self) -> crate::operation::get_ebs_encryption_by_default::GetEbsEncryptionByDefaultOutput {
         crate::operation::get_ebs_encryption_by_default::GetEbsEncryptionByDefaultOutput {
             ebs_encryption_by_default: self.ebs_encryption_by_default,
+            sse_type: self.sse_type,
             _request_id: self._request_id,
         }
     }

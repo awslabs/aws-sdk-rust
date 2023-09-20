@@ -188,14 +188,24 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for ListBackupV
                 mut output: &mut ::std::string::String,
             ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError> {
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
-                if let ::std::option::Option::Some(inner_1) = &_input.next_token {
+                if let ::std::option::Option::Some(inner_1) = &_input.by_vault_type {
                     {
-                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(&inner_1));
+                        query.push_kv("vaultType", &::aws_smithy_http::query::fmt_string(&inner_1));
                     }
                 }
-                if let ::std::option::Option::Some(inner_2) = &_input.max_results {
-                    if *inner_2 != 0 {
-                        query.push_kv("maxResults", ::aws_smithy_types::primitive::Encoder::from(*inner_2).encode());
+                if let ::std::option::Option::Some(inner_2) = &_input.by_shared {
+                    if *inner_2 {
+                        query.push_kv("shared", ::aws_smithy_types::primitive::Encoder::from(*inner_2).encode());
+                    }
+                }
+                if let ::std::option::Option::Some(inner_3) = &_input.next_token {
+                    {
+                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(&inner_3));
+                    }
+                }
+                if let ::std::option::Option::Some(inner_4) = &_input.max_results {
+                    if *inner_4 != 0 {
+                        query.push_kv("maxResults", ::aws_smithy_types::primitive::Encoder::from(*inner_4).encode());
                     }
                 }
                 ::std::result::Result::Ok(())

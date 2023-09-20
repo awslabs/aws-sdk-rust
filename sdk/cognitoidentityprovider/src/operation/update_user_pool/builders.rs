@@ -22,9 +22,19 @@ impl UpdateUserPoolInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateUserPool`.
 ///
-/// <p>Updates the specified user pool with the specified attributes. You can get a list of the current user pool settings using <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeUserPool.html">DescribeUserPool</a>. If you don't provide a value for an attribute, it will be set to the default value. </p> <note>
+/// <note>
 /// <p>This action might generate an SMS text message. Starting June 1, 2021, US telecom carriers require you to register an origination phone number before you can send SMS messages to US phone numbers. If you use SMS text messages in Amazon Cognito, you must register a phone number with <a href="https://console.aws.amazon.com/pinpoint/home/">Amazon Pinpoint</a>. Amazon Cognito uses the registered number automatically. Otherwise, Amazon Cognito users who must receive SMS messages might not be able to sign up, activate their accounts, or sign in.</p>
-/// <p>If you have never used SMS text messages with Amazon Cognito or any other Amazon Web Service, Amazon Simple Notification Service might place your account in the SMS sandbox. In <i> <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox mode</a> </i>, you can send messages only to verified phone numbers. After you test your app while in the sandbox environment, you can move out of the sandbox and into production. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-sms-userpool-settings.html"> SMS message settings for Amazon Cognito user pools</a> in the <i>Amazon Cognito Developer Guide</i>.</p>
+/// <p>If you have never used SMS text messages with Amazon Cognito or any other Amazon Web Service, Amazon Simple Notification Service might place your account in the SMS sandbox. In <i> <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox mode</a> </i>, you can send messages only to verified phone numbers. After you test your app while in the sandbox environment, you can move out of the sandbox and into production. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-sms-settings.html"> SMS message settings for Amazon Cognito user pools</a> in the <i>Amazon Cognito Developer Guide</i>.</p>
+/// </note>
+/// <p>Updates the specified user pool with the specified attributes. You can get a list of the current user pool settings using <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeUserPool.html">DescribeUserPool</a>.</p> <important>
+/// <p>If you don't provide a value for an attribute, Amazon Cognito sets it to its default value.</p>
+/// </important> <note>
+/// <p>Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you must use IAM credentials to authorize requests, and you must grant yourself the corresponding IAM permission in a policy.</p>
+/// <p class="title"> <b>Learn more</b> </p>
+/// <ul>
+/// <li> <p> <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html">Signing Amazon Web Services API Requests</a> </p> </li>
+/// <li> <p> <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using the Amazon Cognito user pools API and user pool endpoints</a> </p> </li>
+/// </ul>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateUserPoolFluentBuilder {
@@ -390,17 +400,20 @@ impl UpdateUserPoolFluentBuilder {
     pub fn get_admin_create_user_config(&self) -> &::std::option::Option<crate::types::AdminCreateUserConfigType> {
         self.inner.get_admin_create_user_config()
     }
-    /// <p>Enables advanced security risk detection. Set the key <code>AdvancedSecurityMode</code> to the value "AUDIT".</p>
+    /// <p>User pool add-ons. Contains settings for activation of advanced security features. To log user security information but take no action, set to <code>AUDIT</code>. To configure automatic security responses to risky traffic to your user pool, set to <code>ENFORCED</code>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-advanced-security.html">Adding advanced security to a user pool</a>.</p>
     pub fn user_pool_add_ons(mut self, input: crate::types::UserPoolAddOnsType) -> Self {
         self.inner = self.inner.user_pool_add_ons(input);
         self
     }
-    /// <p>Enables advanced security risk detection. Set the key <code>AdvancedSecurityMode</code> to the value "AUDIT".</p>
+    /// <p>User pool add-ons. Contains settings for activation of advanced security features. To log user security information but take no action, set to <code>AUDIT</code>. To configure automatic security responses to risky traffic to your user pool, set to <code>ENFORCED</code>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-advanced-security.html">Adding advanced security to a user pool</a>.</p>
     pub fn set_user_pool_add_ons(mut self, input: ::std::option::Option<crate::types::UserPoolAddOnsType>) -> Self {
         self.inner = self.inner.set_user_pool_add_ons(input);
         self
     }
-    /// <p>Enables advanced security risk detection. Set the key <code>AdvancedSecurityMode</code> to the value "AUDIT".</p>
+    /// <p>User pool add-ons. Contains settings for activation of advanced security features. To log user security information but take no action, set to <code>AUDIT</code>. To configure automatic security responses to risky traffic to your user pool, set to <code>ENFORCED</code>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-advanced-security.html">Adding advanced security to a user pool</a>.</p>
     pub fn get_user_pool_add_ons(&self) -> &::std::option::Option<crate::types::UserPoolAddOnsType> {
         self.inner.get_user_pool_add_ons()
     }

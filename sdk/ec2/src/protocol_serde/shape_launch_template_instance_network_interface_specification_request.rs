@@ -147,5 +147,10 @@ pub fn ser_launch_template_instance_network_interface_specification_request(
             ::aws_smithy_types::Number::NegInt((*var_53).into()),
         );
     }
+    #[allow(unused_mut)]
+    let mut scope_54 = writer.prefix("PrimaryIpv6");
+    if let Some(var_55) = &input.primary_ipv6 {
+        scope_54.boolean(*var_55);
+    }
     Ok(())
 }

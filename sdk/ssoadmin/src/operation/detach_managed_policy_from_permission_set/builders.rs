@@ -22,7 +22,7 @@ impl DetachManagedPolicyFromPermissionSetInputBuilder {
 }
 /// Fluent builder constructing a request to `DetachManagedPolicyFromPermissionSet`.
 ///
-/// <p>Detaches the attached AWS managed policy ARN from the specified permission set.</p>
+/// <p>Detaches the attached Amazon Web Services managed policy ARN from the specified permission set.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DetachManagedPolicyFromPermissionSetFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -113,17 +113,17 @@ impl DetachManagedPolicyFromPermissionSetFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
+    /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub fn instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.instance_arn(input.into());
         self
     }
-    /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
+    /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub fn set_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_instance_arn(input);
         self
     }
-    /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
+    /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub fn get_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_instance_arn()
     }
@@ -141,17 +141,17 @@ impl DetachManagedPolicyFromPermissionSetFluentBuilder {
     pub fn get_permission_set_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_permission_set_arn()
     }
-    /// <p>The AWS managed policy ARN to be detached from a permission set.</p>
+    /// <p>The Amazon Web Services managed policy ARN to be detached from a permission set.</p>
     pub fn managed_policy_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.managed_policy_arn(input.into());
         self
     }
-    /// <p>The AWS managed policy ARN to be detached from a permission set.</p>
+    /// <p>The Amazon Web Services managed policy ARN to be detached from a permission set.</p>
     pub fn set_managed_policy_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_managed_policy_arn(input);
         self
     }
-    /// <p>The AWS managed policy ARN to be detached from a permission set.</p>
+    /// <p>The Amazon Web Services managed policy ARN to be detached from a permission set.</p>
     pub fn get_managed_policy_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_managed_policy_arn()
     }

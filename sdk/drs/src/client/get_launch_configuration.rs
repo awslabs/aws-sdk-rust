@@ -13,6 +13,7 @@ impl super::Client {
     ///   - [`copy_private_ip(Option<bool>)`](crate::operation::get_launch_configuration::GetLaunchConfigurationOutput::copy_private_ip): <p>Whether we should copy the Private IP of the Source Server to the Recovery Instance.</p>
     ///   - [`copy_tags(Option<bool>)`](crate::operation::get_launch_configuration::GetLaunchConfigurationOutput::copy_tags): <p>Whether we want to copy the tags of the Source Server to the EC2 machine of the Recovery Instance.</p>
     ///   - [`licensing(Option<Licensing>)`](crate::operation::get_launch_configuration::GetLaunchConfigurationOutput::licensing): <p>The licensing configuration to be used for this launch configuration.</p>
+    ///   - [`post_launch_enabled(Option<bool>)`](crate::operation::get_launch_configuration::GetLaunchConfigurationOutput::post_launch_enabled): <p>Whether we want to activate post-launch actions for the Source Server.</p>
     /// - On failure, responds with [`SdkError<GetLaunchConfigurationError>`](crate::operation::get_launch_configuration::GetLaunchConfigurationError)
     pub fn get_launch_configuration(&self) -> crate::operation::get_launch_configuration::builders::GetLaunchConfigurationFluentBuilder {
         crate::operation::get_launch_configuration::builders::GetLaunchConfigurationFluentBuilder::new(self.handle.clone())

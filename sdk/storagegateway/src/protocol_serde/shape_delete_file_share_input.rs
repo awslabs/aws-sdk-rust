@@ -6,8 +6,8 @@ pub fn ser_delete_file_share_input(
     if let Some(var_1) = &input.file_share_arn {
         object.key("FileShareARN").string(var_1.as_str());
     }
-    if input.force_delete {
-        object.key("ForceDelete").boolean(input.force_delete);
+    if let Some(var_2) = &input.force_delete {
+        object.key("ForceDelete").boolean(*var_2);
     }
     Ok(())
 }

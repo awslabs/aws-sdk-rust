@@ -22,7 +22,7 @@ impl DisableOrganizationAdminAccountInputBuilder {
 }
 /// Fluent builder constructing a request to `DisableOrganizationAdminAccount`.
 ///
-/// <p>Disables an Amazon Web Services account within the Organization as the GuardDuty delegated administrator.</p>
+/// <p>Removes the existing GuardDuty delegated administrator of the organization. Only the organization's management account can run this API operation.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisableOrganizationAdminAccountFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

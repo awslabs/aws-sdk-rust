@@ -17,8 +17,8 @@ pub fn ser_set_identity_headers_in_notifications_enabled_input_input(
     }
     #[allow(unused_mut)]
     let mut scope_5 = writer.prefix("Enabled");
-    {
-        scope_5.boolean(input.enabled);
+    if let Some(var_6) = &input.enabled {
+        scope_5.boolean(*var_6);
     }
     writer.finish();
     Ok(::aws_smithy_http::body::SdkBody::from(out))

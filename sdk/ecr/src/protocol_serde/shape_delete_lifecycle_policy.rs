@@ -86,6 +86,21 @@ pub fn de_delete_lifecycle_policy_http_error(
             }
             tmp
         }),
+        "ValidationException" => crate::operation::delete_lifecycle_policy::DeleteLifecyclePolicyError::ValidationException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
+                output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::delete_lifecycle_policy::DeleteLifecyclePolicyError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::operation::delete_lifecycle_policy::DeleteLifecyclePolicyError::generic(generic),
     })
 }

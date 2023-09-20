@@ -23,7 +23,7 @@ pub struct CreateFileSystemOntapConfiguration {
     pub disk_iops_configuration: ::std::option::Option<crate::types::DiskIopsConfiguration>,
     /// <p>Required when <code>DeploymentType</code> is set to <code>MULTI_AZ_1</code>. This specifies the subnet in which you want the preferred file server to be located.</p>
     pub preferred_subnet_id: ::std::option::Option<::std::string::String>,
-    /// <p>(Multi-AZ only) Specifies the virtual private cloud (VPC) route tables in which your file system's endpoints will be created. You should specify all VPC route tables associated with the subnets in which your clients are located. By default, Amazon FSx selects your VPC's default route table.</p>
+    /// <p>(Multi-AZ only) Specifies the route tables in which Amazon FSx creates the rules for routing traffic to the correct file server. You should specify all virtual private cloud (VPC) route tables associated with the subnets in which your clients are located. By default, Amazon FSx selects your VPC's default route table.</p>
     pub route_table_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Sets the throughput capacity for the file system that you're creating. Valid values are 128, 256, 512, 1024, 2048, and 4096 MBps.</p>
     pub throughput_capacity: ::std::option::Option<i32>,
@@ -67,7 +67,7 @@ impl CreateFileSystemOntapConfiguration {
     pub fn preferred_subnet_id(&self) -> ::std::option::Option<&str> {
         self.preferred_subnet_id.as_deref()
     }
-    /// <p>(Multi-AZ only) Specifies the virtual private cloud (VPC) route tables in which your file system's endpoints will be created. You should specify all VPC route tables associated with the subnets in which your clients are located. By default, Amazon FSx selects your VPC's default route table.</p>
+    /// <p>(Multi-AZ only) Specifies the route tables in which Amazon FSx creates the rules for routing traffic to the correct file server. You should specify all virtual private cloud (VPC) route tables associated with the subnets in which your clients are located. By default, Amazon FSx selects your VPC's default route table.</p>
     pub fn route_table_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.route_table_ids.as_deref()
     }
@@ -239,19 +239,19 @@ impl CreateFileSystemOntapConfigurationBuilder {
     ///
     /// To override the contents of this collection use [`set_route_table_ids`](Self::set_route_table_ids).
     ///
-    /// <p>(Multi-AZ only) Specifies the virtual private cloud (VPC) route tables in which your file system's endpoints will be created. You should specify all VPC route tables associated with the subnets in which your clients are located. By default, Amazon FSx selects your VPC's default route table.</p>
+    /// <p>(Multi-AZ only) Specifies the route tables in which Amazon FSx creates the rules for routing traffic to the correct file server. You should specify all virtual private cloud (VPC) route tables associated with the subnets in which your clients are located. By default, Amazon FSx selects your VPC's default route table.</p>
     pub fn route_table_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.route_table_ids.unwrap_or_default();
         v.push(input.into());
         self.route_table_ids = ::std::option::Option::Some(v);
         self
     }
-    /// <p>(Multi-AZ only) Specifies the virtual private cloud (VPC) route tables in which your file system's endpoints will be created. You should specify all VPC route tables associated with the subnets in which your clients are located. By default, Amazon FSx selects your VPC's default route table.</p>
+    /// <p>(Multi-AZ only) Specifies the route tables in which Amazon FSx creates the rules for routing traffic to the correct file server. You should specify all virtual private cloud (VPC) route tables associated with the subnets in which your clients are located. By default, Amazon FSx selects your VPC's default route table.</p>
     pub fn set_route_table_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.route_table_ids = input;
         self
     }
-    /// <p>(Multi-AZ only) Specifies the virtual private cloud (VPC) route tables in which your file system's endpoints will be created. You should specify all VPC route tables associated with the subnets in which your clients are located. By default, Amazon FSx selects your VPC's default route table.</p>
+    /// <p>(Multi-AZ only) Specifies the route tables in which Amazon FSx creates the rules for routing traffic to the correct file server. You should specify all virtual private cloud (VPC) route tables associated with the subnets in which your clients are located. By default, Amazon FSx selects your VPC's default route table.</p>
     pub fn get_route_table_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.route_table_ids
     }

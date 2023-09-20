@@ -10,7 +10,7 @@ pub struct RemoveTargetsInput {
     /// <p>The IDs of the targets to remove from the rule.</p>
     pub ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>If this is a managed rule, created by an Amazon Web Services service on your behalf, you must specify <code>Force</code> as <code>True</code> to remove targets. This parameter is ignored for rules that are not managed rules. You can check whether a rule is a managed rule by using <code>DescribeRule</code> or <code>ListRules</code> and checking the <code>ManagedBy</code> field of the response.</p>
-    pub force: bool,
+    pub force: ::std::option::Option<bool>,
 }
 impl RemoveTargetsInput {
     /// <p>The name of the rule.</p>
@@ -26,7 +26,7 @@ impl RemoveTargetsInput {
         self.ids.as_deref()
     }
     /// <p>If this is a managed rule, created by an Amazon Web Services service on your behalf, you must specify <code>Force</code> as <code>True</code> to remove targets. This parameter is ignored for rules that are not managed rules. You can check whether a rule is a managed rule by using <code>DescribeRule</code> or <code>ListRules</code> and checking the <code>ManagedBy</code> field of the response.</p>
-    pub fn force(&self) -> bool {
+    pub fn force(&self) -> ::std::option::Option<bool> {
         self.force
     }
 }
@@ -117,7 +117,7 @@ impl RemoveTargetsInputBuilder {
             rule: self.rule,
             event_bus_name: self.event_bus_name,
             ids: self.ids,
-            force: self.force.unwrap_or_default(),
+            force: self.force,
         })
     }
 }

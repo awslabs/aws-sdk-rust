@@ -215,6 +215,13 @@ pub(crate) fn de_create_annotation_store(
                 "storeOptions" => {
                     builder = builder.set_store_options(crate::protocol_serde::shape_store_options::de_store_options(tokens)?);
                 }
+                "versionName" => {
+                    builder = builder.set_version_name(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

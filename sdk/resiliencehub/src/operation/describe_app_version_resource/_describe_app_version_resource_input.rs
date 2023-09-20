@@ -3,47 +3,47 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAppVersionResourceInput {
-    /// <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+    /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
     pub app_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The Resilience Hub application version.</p>
+    /// <p>Resilience Hub application version.</p>
     pub app_version: ::std::option::Option<::std::string::String>,
-    /// <p>The name of the resource.</p>
+    /// <p>Name of the resource.</p>
     pub resource_name: ::std::option::Option<::std::string::String>,
-    /// <p>The logical identifier of the resource.</p>
+    /// <p>Logical identifier of the resource.</p>
     pub logical_resource_id: ::std::option::Option<crate::types::LogicalResourceId>,
-    /// <p>The physical identifier of the resource.</p>
+    /// <p>Physical identifier of the resource.</p>
     pub physical_resource_id: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Web Services region that owns the physical resource.</p>
+    /// <p>Amazon Web Services region that owns the physical resource.</p>
     pub aws_region: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Web Services account that owns the physical resource.</p>
+    /// <p>Amazon Web Services account that owns the physical resource.</p>
     pub aws_account_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeAppVersionResourceInput {
-    /// <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+    /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
     pub fn app_arn(&self) -> ::std::option::Option<&str> {
         self.app_arn.as_deref()
     }
-    /// <p>The Resilience Hub application version.</p>
+    /// <p>Resilience Hub application version.</p>
     pub fn app_version(&self) -> ::std::option::Option<&str> {
         self.app_version.as_deref()
     }
-    /// <p>The name of the resource.</p>
+    /// <p>Name of the resource.</p>
     pub fn resource_name(&self) -> ::std::option::Option<&str> {
         self.resource_name.as_deref()
     }
-    /// <p>The logical identifier of the resource.</p>
+    /// <p>Logical identifier of the resource.</p>
     pub fn logical_resource_id(&self) -> ::std::option::Option<&crate::types::LogicalResourceId> {
         self.logical_resource_id.as_ref()
     }
-    /// <p>The physical identifier of the resource.</p>
+    /// <p>Physical identifier of the resource.</p>
     pub fn physical_resource_id(&self) -> ::std::option::Option<&str> {
         self.physical_resource_id.as_deref()
     }
-    /// <p>The Amazon Web Services region that owns the physical resource.</p>
+    /// <p>Amazon Web Services region that owns the physical resource.</p>
     pub fn aws_region(&self) -> ::std::option::Option<&str> {
         self.aws_region.as_deref()
     }
-    /// <p>The Amazon Web Services account that owns the physical resource.</p>
+    /// <p>Amazon Web Services account that owns the physical resource.</p>
     pub fn aws_account_id(&self) -> ::std::option::Option<&str> {
         self.aws_account_id.as_deref()
     }
@@ -68,101 +68,101 @@ pub struct DescribeAppVersionResourceInputBuilder {
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeAppVersionResourceInputBuilder {
-    /// <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+    /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
     pub fn app_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+    /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
     pub fn set_app_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.app_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+    /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
     pub fn get_app_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.app_arn
     }
-    /// <p>The Resilience Hub application version.</p>
+    /// <p>Resilience Hub application version.</p>
     pub fn app_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_version = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Resilience Hub application version.</p>
+    /// <p>Resilience Hub application version.</p>
     pub fn set_app_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.app_version = input;
         self
     }
-    /// <p>The Resilience Hub application version.</p>
+    /// <p>Resilience Hub application version.</p>
     pub fn get_app_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.app_version
     }
-    /// <p>The name of the resource.</p>
+    /// <p>Name of the resource.</p>
     pub fn resource_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the resource.</p>
+    /// <p>Name of the resource.</p>
     pub fn set_resource_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_name = input;
         self
     }
-    /// <p>The name of the resource.</p>
+    /// <p>Name of the resource.</p>
     pub fn get_resource_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_name
     }
-    /// <p>The logical identifier of the resource.</p>
+    /// <p>Logical identifier of the resource.</p>
     pub fn logical_resource_id(mut self, input: crate::types::LogicalResourceId) -> Self {
         self.logical_resource_id = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The logical identifier of the resource.</p>
+    /// <p>Logical identifier of the resource.</p>
     pub fn set_logical_resource_id(mut self, input: ::std::option::Option<crate::types::LogicalResourceId>) -> Self {
         self.logical_resource_id = input;
         self
     }
-    /// <p>The logical identifier of the resource.</p>
+    /// <p>Logical identifier of the resource.</p>
     pub fn get_logical_resource_id(&self) -> &::std::option::Option<crate::types::LogicalResourceId> {
         &self.logical_resource_id
     }
-    /// <p>The physical identifier of the resource.</p>
+    /// <p>Physical identifier of the resource.</p>
     pub fn physical_resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.physical_resource_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The physical identifier of the resource.</p>
+    /// <p>Physical identifier of the resource.</p>
     pub fn set_physical_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.physical_resource_id = input;
         self
     }
-    /// <p>The physical identifier of the resource.</p>
+    /// <p>Physical identifier of the resource.</p>
     pub fn get_physical_resource_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.physical_resource_id
     }
-    /// <p>The Amazon Web Services region that owns the physical resource.</p>
+    /// <p>Amazon Web Services region that owns the physical resource.</p>
     pub fn aws_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_region = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Web Services region that owns the physical resource.</p>
+    /// <p>Amazon Web Services region that owns the physical resource.</p>
     pub fn set_aws_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_region = input;
         self
     }
-    /// <p>The Amazon Web Services region that owns the physical resource.</p>
+    /// <p>Amazon Web Services region that owns the physical resource.</p>
     pub fn get_aws_region(&self) -> &::std::option::Option<::std::string::String> {
         &self.aws_region
     }
-    /// <p>The Amazon Web Services account that owns the physical resource.</p>
+    /// <p>Amazon Web Services account that owns the physical resource.</p>
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Web Services account that owns the physical resource.</p>
+    /// <p>Amazon Web Services account that owns the physical resource.</p>
     pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_account_id = input;
         self
     }
-    /// <p>The Amazon Web Services account that owns the physical resource.</p>
+    /// <p>Amazon Web Services account that owns the physical resource.</p>
     pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.aws_account_id
     }

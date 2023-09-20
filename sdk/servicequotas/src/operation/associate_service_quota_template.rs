@@ -273,13 +273,13 @@ pub enum AssociateServiceQuotaTemplateError {
     AwsServiceAccessNotEnabledException(crate::types::error::AwsServiceAccessNotEnabledException),
     /// <p>You can't perform this action because a dependency does not have access.</p>
     DependencyAccessDeniedException(crate::types::error::DependencyAccessDeniedException),
-    /// <p>The account making this call is not a member of an organization.</p>
+    /// <p>The Amazon Web Services account making this call is not a member of an organization.</p>
     NoAvailableOrganizationException(crate::types::error::NoAvailableOrganizationException),
-    /// <p>The organization that your account belongs to is not in All Features mode.</p>
+    /// <p>The organization that your Amazon Web Services account belongs to is not in All Features mode.</p>
     OrganizationNotInAllFeaturesModeException(crate::types::error::OrganizationNotInAllFeaturesModeException),
     /// <p>Something went wrong.</p>
     ServiceException(crate::types::error::ServiceException),
-    /// <p>The Service Quotas template is not available in this AWS Region.</p>
+    /// <p>The Service Quotas template is not available in this Amazon Web Services Region.</p>
     TemplatesNotAvailableInRegionException(crate::types::error::TemplatesNotAvailableInRegionException),
     /// <p>Due to throttling, the request was denied. Slow down the rate of request calls, or request an increase for this quota.</p>
     TooManyRequestsException(crate::types::error::TooManyRequestsException),

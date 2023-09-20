@@ -5,7 +5,7 @@
 pub struct CreateLabelGroupOutput {
     /// <p> The name of the label group that you have created. Data in this field will be retained for service usage. Follow best practices for the security of your data. </p>
     pub label_group_name: ::std::option::Option<::std::string::String>,
-    /// <p> The ARN of the label group that you have created. </p>
+    /// <p> The Amazon Resource Name (ARN) of the label group that you have created. </p>
     pub label_group_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -14,7 +14,7 @@ impl CreateLabelGroupOutput {
     pub fn label_group_name(&self) -> ::std::option::Option<&str> {
         self.label_group_name.as_deref()
     }
-    /// <p> The ARN of the label group that you have created. </p>
+    /// <p> The Amazon Resource Name (ARN) of the label group that you have created. </p>
     pub fn label_group_arn(&self) -> ::std::option::Option<&str> {
         self.label_group_arn.as_deref()
     }
@@ -54,17 +54,17 @@ impl CreateLabelGroupOutputBuilder {
     pub fn get_label_group_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.label_group_name
     }
-    /// <p> The ARN of the label group that you have created. </p>
+    /// <p> The Amazon Resource Name (ARN) of the label group that you have created. </p>
     pub fn label_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.label_group_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The ARN of the label group that you have created. </p>
+    /// <p> The Amazon Resource Name (ARN) of the label group that you have created. </p>
     pub fn set_label_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.label_group_arn = input;
         self
     }
-    /// <p> The ARN of the label group that you have created. </p>
+    /// <p> The Amazon Resource Name (ARN) of the label group that you have created. </p>
     pub fn get_label_group_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.label_group_arn
     }

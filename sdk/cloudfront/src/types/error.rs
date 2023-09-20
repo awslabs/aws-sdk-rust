@@ -115,6 +115,8 @@ pub use crate::types::error::_too_many_distributions_associated_to_response_head
 
 pub use crate::types::error::_too_many_distributions_associated_to_origin_request_policy::TooManyDistributionsAssociatedToOriginRequestPolicy;
 
+pub use crate::types::error::_too_many_distributions_associated_to_origin_access_control::TooManyDistributionsAssociatedToOriginAccessControl;
+
 pub use crate::types::error::_too_many_distributions_associated_to_key_group::TooManyDistributionsAssociatedToKeyGroup;
 
 pub use crate::types::error::_too_many_distributions_associated_to_field_level_encryption_config::TooManyDistributionsAssociatedToFieldLevelEncryptionConfig;
@@ -274,8 +276,6 @@ pub use crate::types::error::_too_many_distributions::TooManyDistributions;
 pub use crate::types::error::_invalid_protocol_settings::InvalidProtocolSettings;
 
 pub use crate::types::error::_distribution_already_exists::DistributionAlreadyExists;
-
-pub use crate::types::error::_too_many_distributions_associated_to_origin_access_control::TooManyDistributionsAssociatedToOriginAccessControl;
 
 pub use crate::types::error::_too_many_continuous_deployment_policies::TooManyContinuousDeploymentPolicies;
 

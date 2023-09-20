@@ -348,4 +348,32 @@ impl CreateCustomDBEngineVersionFluentBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         self.inner.get_tags()
     }
+    /// <p>Reserved for future use.</p>
+    pub fn source_custom_db_engine_version_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.source_custom_db_engine_version_identifier(input.into());
+        self
+    }
+    /// <p>Reserved for future use.</p>
+    pub fn set_source_custom_db_engine_version_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_source_custom_db_engine_version_identifier(input);
+        self
+    }
+    /// <p>Reserved for future use.</p>
+    pub fn get_source_custom_db_engine_version_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_source_custom_db_engine_version_identifier()
+    }
+    /// <p>Reserved for future use.</p>
+    pub fn use_aws_provided_latest_image(mut self, input: bool) -> Self {
+        self.inner = self.inner.use_aws_provided_latest_image(input);
+        self
+    }
+    /// <p>Reserved for future use.</p>
+    pub fn set_use_aws_provided_latest_image(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_use_aws_provided_latest_image(input);
+        self
+    }
+    /// <p>Reserved for future use.</p>
+    pub fn get_use_aws_provided_latest_image(&self) -> &::std::option::Option<bool> {
+        self.inner.get_use_aws_provided_latest_image()
+    }
 }

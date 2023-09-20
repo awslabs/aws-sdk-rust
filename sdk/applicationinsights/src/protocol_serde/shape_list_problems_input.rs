@@ -3,30 +3,36 @@ pub fn ser_list_problems_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_problems::ListProblemsInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.resource_group_name {
-        object.key("ResourceGroupName").string(var_1.as_str());
+    if let Some(var_1) = &input.account_id {
+        object.key("AccountId").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.start_time {
+    if let Some(var_2) = &input.resource_group_name {
+        object.key("ResourceGroupName").string(var_2.as_str());
+    }
+    if let Some(var_3) = &input.start_time {
         object
             .key("StartTime")
-            .date_time(var_2, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
-    }
-    if let Some(var_3) = &input.end_time {
-        object
-            .key("EndTime")
             .date_time(var_3, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
-    if let Some(var_4) = &input.max_results {
+    if let Some(var_4) = &input.end_time {
+        object
+            .key("EndTime")
+            .date_time(var_4, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
+    }
+    if let Some(var_5) = &input.max_results {
         object.key("MaxResults").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_4).into()),
+            ::aws_smithy_types::Number::NegInt((*var_5).into()),
         );
     }
-    if let Some(var_5) = &input.next_token {
-        object.key("NextToken").string(var_5.as_str());
+    if let Some(var_6) = &input.next_token {
+        object.key("NextToken").string(var_6.as_str());
     }
-    if let Some(var_6) = &input.component_name {
-        object.key("ComponentName").string(var_6.as_str());
+    if let Some(var_7) = &input.component_name {
+        object.key("ComponentName").string(var_7.as_str());
+    }
+    if let Some(var_8) = &input.visibility {
+        object.key("Visibility").string(var_8.as_str());
     }
     Ok(())
 }

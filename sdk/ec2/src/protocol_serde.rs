@@ -1515,6 +1515,10 @@ pub(crate) mod shape_disable_fast_snapshot_restores;
 
 pub(crate) mod shape_disable_fast_snapshot_restores_input;
 
+pub(crate) mod shape_disable_image_block_public_access;
+
+pub(crate) mod shape_disable_image_block_public_access_input;
+
 pub(crate) mod shape_disable_image_deprecation;
 
 pub(crate) mod shape_disable_image_deprecation_input;
@@ -1619,6 +1623,10 @@ pub(crate) mod shape_enable_fast_snapshot_restores;
 
 pub(crate) mod shape_enable_fast_snapshot_restores_input;
 
+pub(crate) mod shape_enable_image_block_public_access;
+
+pub(crate) mod shape_enable_image_block_public_access_input;
+
 pub(crate) mod shape_enable_image_deprecation;
 
 pub(crate) mod shape_enable_image_deprecation_input;
@@ -1722,6 +1730,10 @@ pub(crate) mod shape_get_groups_for_capacity_reservation_input;
 pub(crate) mod shape_get_host_reservation_purchase_preview;
 
 pub(crate) mod shape_get_host_reservation_purchase_preview_input;
+
+pub(crate) mod shape_get_image_block_public_access_state;
+
+pub(crate) mod shape_get_image_block_public_access_state_input;
 
 pub(crate) mod shape_get_instance_types_from_instance_requirements;
 
@@ -2618,6 +2630,8 @@ pub(crate) mod shape_spot_options_request;
 pub(crate) mod shape_storage;
 
 pub(crate) mod shape_storage_location;
+
+pub(crate) mod shape_subnet_configuration;
 
 pub(crate) mod shape_tag;
 

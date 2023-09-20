@@ -7,11 +7,11 @@ pub struct ListIdentitiesInput {
     /// <p>An identity pool ID in the format REGION:GUID.</p>
     pub identity_pool_id: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of identities to return.</p>
-    pub max_results: i32,
+    pub max_results: ::std::option::Option<i32>,
     /// <p>A pagination token.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>An optional boolean parameter that allows you to hide disabled identities. If omitted, the ListIdentities API will include disabled identities in the response.</p>
-    pub hide_disabled: bool,
+    pub hide_disabled: ::std::option::Option<bool>,
 }
 impl ListIdentitiesInput {
     /// <p>An identity pool ID in the format REGION:GUID.</p>
@@ -19,7 +19,7 @@ impl ListIdentitiesInput {
         self.identity_pool_id.as_deref()
     }
     /// <p>The maximum number of identities to return.</p>
-    pub fn max_results(&self) -> i32 {
+    pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
     /// <p>A pagination token.</p>
@@ -27,7 +27,7 @@ impl ListIdentitiesInput {
         self.next_token.as_deref()
     }
     /// <p>An optional boolean parameter that allows you to hide disabled identities. If omitted, the ListIdentities API will include disabled identities in the response.</p>
-    pub fn hide_disabled(&self) -> bool {
+    pub fn hide_disabled(&self) -> ::std::option::Option<bool> {
         self.hide_disabled
     }
 }
@@ -110,9 +110,9 @@ impl ListIdentitiesInputBuilder {
     ) -> ::std::result::Result<crate::operation::list_identities::ListIdentitiesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_identities::ListIdentitiesInput {
             identity_pool_id: self.identity_pool_id,
-            max_results: self.max_results.unwrap_or_default(),
+            max_results: self.max_results,
             next_token: self.next_token,
-            hide_disabled: self.hide_disabled.unwrap_or_default(),
+            hide_disabled: self.hide_disabled,
         })
     }
 }

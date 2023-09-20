@@ -307,11 +307,11 @@ pub fn ser_start_medical_stream_transcription_headers(
             builder = builder.header("x-amzn-transcribe-type", header_value);
         }
     }
-    if input.show_speaker_label {
-        let mut encoder = ::aws_smithy_types::primitive::Encoder::from(input.show_speaker_label);
-        let formatted_13 = encoder.encode();
-        if !formatted_13.is_empty() {
-            let header_value = formatted_13;
+    if let ::std::option::Option::Some(inner_13) = &input.show_speaker_label {
+        let mut encoder = ::aws_smithy_types::primitive::Encoder::from(*inner_13);
+        let formatted_14 = encoder.encode();
+        if !formatted_14.is_empty() {
+            let header_value = formatted_14;
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "show_speaker_label",
@@ -321,10 +321,10 @@ pub fn ser_start_medical_stream_transcription_headers(
             builder = builder.header("x-amzn-transcribe-show-speaker-label", header_value);
         }
     }
-    if let ::std::option::Option::Some(inner_14) = &input.session_id {
-        let formatted_15 = inner_14.as_str();
-        if !formatted_15.is_empty() {
-            let header_value = formatted_15;
+    if let ::std::option::Option::Some(inner_15) = &input.session_id {
+        let formatted_16 = inner_15.as_str();
+        if !formatted_16.is_empty() {
+            let header_value = formatted_16;
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "session_id",
@@ -334,11 +334,11 @@ pub fn ser_start_medical_stream_transcription_headers(
             builder = builder.header("x-amzn-transcribe-session-id", header_value);
         }
     }
-    if input.enable_channel_identification {
-        let mut encoder = ::aws_smithy_types::primitive::Encoder::from(input.enable_channel_identification);
-        let formatted_16 = encoder.encode();
-        if !formatted_16.is_empty() {
-            let header_value = formatted_16;
+    if let ::std::option::Option::Some(inner_17) = &input.enable_channel_identification {
+        let mut encoder = ::aws_smithy_types::primitive::Encoder::from(*inner_17);
+        let formatted_18 = encoder.encode();
+        if !formatted_18.is_empty() {
+            let header_value = formatted_18;
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "enable_channel_identification",
@@ -348,11 +348,11 @@ pub fn ser_start_medical_stream_transcription_headers(
             builder = builder.header("x-amzn-transcribe-enable-channel-identification", header_value);
         }
     }
-    if let ::std::option::Option::Some(inner_17) = &input.number_of_channels {
-        let mut encoder = ::aws_smithy_types::primitive::Encoder::from(*inner_17);
-        let formatted_18 = encoder.encode();
-        if !formatted_18.is_empty() {
-            let header_value = formatted_18;
+    if let ::std::option::Option::Some(inner_19) = &input.number_of_channels {
+        let mut encoder = ::aws_smithy_types::primitive::Encoder::from(*inner_19);
+        let formatted_20 = encoder.encode();
+        if !formatted_20.is_empty() {
+            let header_value = formatted_20;
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "number_of_channels",
@@ -362,10 +362,10 @@ pub fn ser_start_medical_stream_transcription_headers(
             builder = builder.header("x-amzn-transcribe-number-of-channels", header_value);
         }
     }
-    if let ::std::option::Option::Some(inner_19) = &input.content_identification_type {
-        let formatted_20 = inner_19.as_str();
-        if !formatted_20.is_empty() {
-            let header_value = formatted_20;
+    if let ::std::option::Option::Some(inner_21) = &input.content_identification_type {
+        let formatted_22 = inner_21.as_str();
+        if !formatted_22.is_empty() {
+            let header_value = formatted_22;
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "content_identification_type",

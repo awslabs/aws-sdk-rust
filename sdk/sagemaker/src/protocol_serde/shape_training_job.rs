@@ -187,6 +187,9 @@ where
                                 crate::protocol_serde::shape_debug_rule_evaluation_statuses::de_debug_rule_evaluation_statuses(tokens)?,
                             );
                         }
+                        "ProfilerConfig" => {
+                            builder = builder.set_profiler_config(crate::protocol_serde::shape_profiler_config::de_profiler_config(tokens)?);
+                        }
                         "Environment" => {
                             builder = builder.set_environment(crate::protocol_serde::shape_training_environment_map::de_training_environment_map(
                                 tokens,

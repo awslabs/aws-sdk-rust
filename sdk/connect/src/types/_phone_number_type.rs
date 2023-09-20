@@ -13,7 +13,11 @@
 /// # let phonenumbertype = unimplemented!();
 /// match phonenumbertype {
 ///     PhoneNumberType::Did => { /* ... */ },
+///     PhoneNumberType::Shared => { /* ... */ },
+///     PhoneNumberType::ThirdPartyDid => { /* ... */ },
+///     PhoneNumberType::ThirdPartyTf => { /* ... */ },
 ///     PhoneNumberType::TollFree => { /* ... */ },
+///     PhoneNumberType::Uifn => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -44,7 +48,15 @@ pub enum PhoneNumberType {
     #[allow(missing_docs)] // documentation missing in model
     Did,
     #[allow(missing_docs)] // documentation missing in model
+    Shared,
+    #[allow(missing_docs)] // documentation missing in model
+    ThirdPartyDid,
+    #[allow(missing_docs)] // documentation missing in model
+    ThirdPartyTf,
+    #[allow(missing_docs)] // documentation missing in model
     TollFree,
+    #[allow(missing_docs)] // documentation missing in model
+    Uifn,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
@@ -52,7 +64,11 @@ impl ::std::convert::From<&str> for PhoneNumberType {
     fn from(s: &str) -> Self {
         match s {
             "DID" => PhoneNumberType::Did,
+            "SHARED" => PhoneNumberType::Shared,
+            "THIRD_PARTY_DID" => PhoneNumberType::ThirdPartyDid,
+            "THIRD_PARTY_TF" => PhoneNumberType::ThirdPartyTf,
             "TOLL_FREE" => PhoneNumberType::TollFree,
+            "UIFN" => PhoneNumberType::Uifn,
             other => PhoneNumberType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -69,13 +85,17 @@ impl PhoneNumberType {
     pub fn as_str(&self) -> &str {
         match self {
             PhoneNumberType::Did => "DID",
+            PhoneNumberType::Shared => "SHARED",
+            PhoneNumberType::ThirdPartyDid => "THIRD_PARTY_DID",
+            PhoneNumberType::ThirdPartyTf => "THIRD_PARTY_TF",
             PhoneNumberType::TollFree => "TOLL_FREE",
+            PhoneNumberType::Uifn => "UIFN",
             PhoneNumberType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DID", "TOLL_FREE"]
+        &["DID", "SHARED", "THIRD_PARTY_DID", "THIRD_PARTY_TF", "TOLL_FREE", "UIFN"]
     }
 }
 impl ::std::convert::AsRef<str> for PhoneNumberType {

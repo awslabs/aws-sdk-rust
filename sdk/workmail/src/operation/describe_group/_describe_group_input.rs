@@ -6,6 +6,12 @@ pub struct DescribeGroupInput {
     /// <p>The identifier for the organization under which the group exists.</p>
     pub organization_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier for the group to be described.</p>
+    /// <p>The identifier can accept <i>GroupId</i>, <i>Groupname</i>, or <i>email</i>. The following identity formats are available:</p>
+    /// <ul>
+    /// <li> <p>Group ID: 12345678-1234-1234-1234-123456789012 or S-1-1-12-1234567890-123456789-123456789-1234</p> </li>
+    /// <li> <p>Email address: group@domain.tld</p> </li>
+    /// <li> <p>Group name: group</p> </li>
+    /// </ul>
     pub group_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeGroupInput {
@@ -14,6 +20,12 @@ impl DescribeGroupInput {
         self.organization_id.as_deref()
     }
     /// <p>The identifier for the group to be described.</p>
+    /// <p>The identifier can accept <i>GroupId</i>, <i>Groupname</i>, or <i>email</i>. The following identity formats are available:</p>
+    /// <ul>
+    /// <li> <p>Group ID: 12345678-1234-1234-1234-123456789012 or S-1-1-12-1234567890-123456789-123456789-1234</p> </li>
+    /// <li> <p>Email address: group@domain.tld</p> </li>
+    /// <li> <p>Group name: group</p> </li>
+    /// </ul>
     pub fn group_id(&self) -> ::std::option::Option<&str> {
         self.group_id.as_deref()
     }
@@ -48,16 +60,34 @@ impl DescribeGroupInputBuilder {
         &self.organization_id
     }
     /// <p>The identifier for the group to be described.</p>
+    /// <p>The identifier can accept <i>GroupId</i>, <i>Groupname</i>, or <i>email</i>. The following identity formats are available:</p>
+    /// <ul>
+    /// <li> <p>Group ID: 12345678-1234-1234-1234-123456789012 or S-1-1-12-1234567890-123456789-123456789-1234</p> </li>
+    /// <li> <p>Email address: group@domain.tld</p> </li>
+    /// <li> <p>Group name: group</p> </li>
+    /// </ul>
     pub fn group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier for the group to be described.</p>
+    /// <p>The identifier can accept <i>GroupId</i>, <i>Groupname</i>, or <i>email</i>. The following identity formats are available:</p>
+    /// <ul>
+    /// <li> <p>Group ID: 12345678-1234-1234-1234-123456789012 or S-1-1-12-1234567890-123456789-123456789-1234</p> </li>
+    /// <li> <p>Email address: group@domain.tld</p> </li>
+    /// <li> <p>Group name: group</p> </li>
+    /// </ul>
     pub fn set_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.group_id = input;
         self
     }
     /// <p>The identifier for the group to be described.</p>
+    /// <p>The identifier can accept <i>GroupId</i>, <i>Groupname</i>, or <i>email</i>. The following identity formats are available:</p>
+    /// <ul>
+    /// <li> <p>Group ID: 12345678-1234-1234-1234-123456789012 or S-1-1-12-1234567890-123456789-123456789-1234</p> </li>
+    /// <li> <p>Email address: group@domain.tld</p> </li>
+    /// <li> <p>Group name: group</p> </li>
+    /// </ul>
     pub fn get_group_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.group_id
     }

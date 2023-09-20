@@ -10,7 +10,7 @@ pub struct ListObjectsInput {
     /// Optional, specifies the starting Object prefix to list from. Ignored if NextToken is not NULL
     pub starting_object_prefix: ::std::option::Option<::std::string::String>,
     /// Maximum objects count
-    pub max_results: i32,
+    pub max_results: ::std::option::Option<i32>,
     /// Pagination token
     pub next_token: ::std::option::Option<::std::string::String>,
     /// (Optional) Created before filter
@@ -32,7 +32,7 @@ impl ListObjectsInput {
         self.starting_object_prefix.as_deref()
     }
     /// Maximum objects count
-    pub fn max_results(&self) -> i32 {
+    pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
     /// Pagination token
@@ -172,7 +172,7 @@ impl ListObjectsInputBuilder {
             storage_job_id: self.storage_job_id,
             starting_object_name: self.starting_object_name,
             starting_object_prefix: self.starting_object_prefix,
-            max_results: self.max_results.unwrap_or_default(),
+            max_results: self.max_results,
             next_token: self.next_token,
             created_before: self.created_before,
             created_after: self.created_after,

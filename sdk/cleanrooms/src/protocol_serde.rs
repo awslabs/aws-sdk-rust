@@ -23,7 +23,11 @@ pub fn parse_http_error_metadata(
     crate::json_errors::parse_error_metadata(response_body, response_headers)
 }
 
+pub(crate) mod shape_batch_get_collaboration_analysis_template;
+
 pub(crate) mod shape_batch_get_schema;
+
+pub(crate) mod shape_create_analysis_template;
 
 pub(crate) mod shape_create_collaboration;
 
@@ -34,6 +38,8 @@ pub(crate) mod shape_create_configured_table_analysis_rule;
 pub(crate) mod shape_create_configured_table_association;
 
 pub(crate) mod shape_create_membership;
+
+pub(crate) mod shape_delete_analysis_template;
 
 pub(crate) mod shape_delete_collaboration;
 
@@ -47,7 +53,11 @@ pub(crate) mod shape_delete_member;
 
 pub(crate) mod shape_delete_membership;
 
+pub(crate) mod shape_get_analysis_template;
+
 pub(crate) mod shape_get_collaboration;
+
+pub(crate) mod shape_get_collaboration_analysis_template;
 
 pub(crate) mod shape_get_configured_table;
 
@@ -62,6 +72,10 @@ pub(crate) mod shape_get_protected_query;
 pub(crate) mod shape_get_schema;
 
 pub(crate) mod shape_get_schema_analysis_rule;
+
+pub(crate) mod shape_list_analysis_templates;
+
+pub(crate) mod shape_list_collaboration_analysis_templates;
 
 pub(crate) mod shape_list_collaborations;
 
@@ -85,6 +99,8 @@ pub(crate) mod shape_tag_resource;
 
 pub(crate) mod shape_untag_resource;
 
+pub(crate) mod shape_update_analysis_template;
+
 pub(crate) mod shape_update_collaboration;
 
 pub(crate) mod shape_update_configured_table;
@@ -107,9 +123,13 @@ pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
 
 pub(crate) mod shape_access_denied_exception;
 
+pub(crate) mod shape_batch_get_collaboration_analysis_template_input;
+
 pub(crate) mod shape_batch_get_schema_input;
 
 pub(crate) mod shape_conflict_exception;
+
+pub(crate) mod shape_create_analysis_template_input;
 
 pub(crate) mod shape_create_collaboration_input;
 
@@ -133,6 +153,8 @@ pub(crate) mod shape_tag_resource_input;
 
 pub(crate) mod shape_throttling_exception;
 
+pub(crate) mod shape_update_analysis_template_input;
+
 pub(crate) mod shape_update_collaboration_input;
 
 pub(crate) mod shape_update_configured_table_analysis_rule_input;
@@ -147,11 +169,27 @@ pub(crate) mod shape_update_protected_query_input;
 
 pub(crate) mod shape_validation_exception;
 
+pub(crate) mod shape_analysis_parameter;
+
 pub(crate) mod shape_analysis_rule;
+
+pub(crate) mod shape_analysis_source;
+
+pub(crate) mod shape_analysis_template;
+
+pub(crate) mod shape_analysis_template_summary_list;
+
+pub(crate) mod shape_batch_get_collaboration_analysis_template_error_list;
 
 pub(crate) mod shape_batch_get_schema_error_list;
 
 pub(crate) mod shape_collaboration;
+
+pub(crate) mod shape_collaboration_analysis_template;
+
+pub(crate) mod shape_collaboration_analysis_template_list;
+
+pub(crate) mod shape_collaboration_analysis_template_summary_list;
 
 pub(crate) mod shape_collaboration_summary_list;
 
@@ -174,6 +212,8 @@ pub(crate) mod shape_member_specification;
 pub(crate) mod shape_member_summary_list;
 
 pub(crate) mod shape_membership;
+
+pub(crate) mod shape_membership_protected_query_result_configuration;
 
 pub(crate) mod shape_membership_summary_list;
 
@@ -199,11 +239,21 @@ pub(crate) mod shape_validation_exception_field_list;
 
 pub(crate) mod shape_allowed_column_list;
 
+pub(crate) mod shape_analysis_parameter_list;
+
 pub(crate) mod shape_analysis_rule_policy;
 
 pub(crate) mod shape_analysis_rule_type_list;
 
+pub(crate) mod shape_analysis_schema;
+
+pub(crate) mod shape_analysis_template_summary;
+
+pub(crate) mod shape_batch_get_collaboration_analysis_template_error;
+
 pub(crate) mod shape_batch_get_schema_error;
+
+pub(crate) mod shape_collaboration_analysis_template_summary;
 
 pub(crate) mod shape_collaboration_summary;
 
@@ -223,6 +273,8 @@ pub(crate) mod shape_member_abilities;
 
 pub(crate) mod shape_member_summary;
 
+pub(crate) mod shape_membership_protected_query_output_configuration;
+
 pub(crate) mod shape_membership_summary;
 
 pub(crate) mod shape_protected_query_error;
@@ -241,19 +293,27 @@ pub(crate) mod shape_validation_exception_field;
 
 pub(crate) mod shape_analysis_rule_aggregation;
 
+pub(crate) mod shape_analysis_rule_custom;
+
 pub(crate) mod shape_analysis_rule_list;
 
 pub(crate) mod shape_analysis_rule_policy_v1;
 
 pub(crate) mod shape_column;
 
+pub(crate) mod shape_parameter_map;
+
 pub(crate) mod shape_protected_query_output;
 
 pub(crate) mod shape_protected_query_s3_output_configuration;
 
+pub(crate) mod shape_query_tables;
+
 pub(crate) mod shape_aggregate_column;
 
 pub(crate) mod shape_aggregation_constraint;
+
+pub(crate) mod shape_protected_query_member_output_list;
 
 pub(crate) mod shape_protected_query_s3_output;
 
@@ -261,9 +321,15 @@ pub(crate) mod shape_aggregate_column_list;
 
 pub(crate) mod shape_aggregation_constraints;
 
+pub(crate) mod shape_allowed_analyses_list;
+
+pub(crate) mod shape_allowed_analysis_provider_list;
+
 pub(crate) mod shape_analysis_rule_column_list;
 
 pub(crate) mod shape_join_operators_list;
+
+pub(crate) mod shape_protected_query_single_member_output;
 
 pub(crate) mod shape_scalar_functions_list;
 

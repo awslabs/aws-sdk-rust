@@ -1191,6 +1191,8 @@ pub(crate) mod shape_upload_settings;
 
 pub(crate) mod shape_visual;
 
+pub(crate) mod shape_all_sheets_filter_scope_configuration;
+
 pub(crate) mod shape_asset_bundle_export_job_analysis_property_to_override_list;
 
 pub(crate) mod shape_asset_bundle_export_job_dashboard_property_to_override_list;
@@ -1939,9 +1941,17 @@ pub(crate) mod shape_histogram_aggregated_field_wells;
 
 pub(crate) mod shape_items_limit_configuration;
 
+pub(crate) mod shape_kpi_actual_value_conditional_formatting;
+
+pub(crate) mod shape_kpi_comparison_value_conditional_formatting;
+
 pub(crate) mod shape_kpi_primary_value_conditional_formatting;
 
 pub(crate) mod shape_kpi_progress_bar_conditional_formatting;
+
+pub(crate) mod shape_kpi_sparkline_options;
+
+pub(crate) mod shape_kpi_visual_layout_options;
 
 pub(crate) mod shape_line_chart_aggregated_field_wells;
 
@@ -1986,6 +1996,8 @@ pub(crate) mod shape_pivot_table_data_path_option;
 pub(crate) mod shape_pivot_table_field_collapse_state_option;
 
 pub(crate) mod shape_pivot_table_field_option;
+
+pub(crate) mod shape_pivot_table_rows_label_options;
 
 pub(crate) mod shape_pivot_total_options;
 
@@ -2038,6 +2050,8 @@ pub(crate) mod shape_table_cell_conditional_formatting;
 pub(crate) mod shape_table_cell_style;
 
 pub(crate) mod shape_table_field_option;
+
+pub(crate) mod shape_table_pinned_field_options;
 
 pub(crate) mod shape_table_row_conditional_formatting;
 
@@ -2139,6 +2153,8 @@ pub(crate) mod shape_header_footer_section_configuration_list;
 
 pub(crate) mod shape_kpi_conditional_formatting_option_list;
 
+pub(crate) mod shape_kpi_visual_standard_layout;
+
 pub(crate) mod shape_line_chart_series_settings;
 
 pub(crate) mod shape_local_navigation_configuration;
@@ -2202,6 +2218,8 @@ pub(crate) mod shape_table_conditional_formatting_option_list;
 pub(crate) mod shape_table_field_url_configuration;
 
 pub(crate) mod shape_table_inline_visualization_list;
+
+pub(crate) mod shape_table_style_target;
 
 pub(crate) mod shape_text_conditional_format;
 
@@ -2356,6 +2374,10 @@ pub(crate) mod shape_small_multiples_dimension_field_list;
 pub(crate) mod shape_table_cell_image_sizing_configuration;
 
 pub(crate) mod shape_table_field_link_content_configuration;
+
+pub(crate) mod shape_table_field_order_list;
+
+pub(crate) mod shape_table_style_target_list;
 
 pub(crate) mod shape_tooltip_item_list;
 

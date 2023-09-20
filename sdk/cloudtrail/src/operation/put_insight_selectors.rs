@@ -294,6 +294,8 @@ pub enum PutInsightSelectorsError {
     OperationNotPermittedException(crate::types::error::OperationNotPermittedException),
     /// <p>This exception is thrown when the specified S3 bucket does not exist.</p>
     S3BucketDoesNotExistException(crate::types::error::S3BucketDoesNotExistException),
+    /// <p> This exception is thrown when the request rate exceeds the limit. </p>
+    ThrottlingException(crate::types::error::ThrottlingException),
     /// <p>This exception is thrown when the trail with the given name is not found.</p>
     TrailNotFoundException(crate::types::error::TrailNotFoundException),
     /// <p>This exception is thrown when the requested operation is not supported.</p>
@@ -327,6 +329,7 @@ impl ::std::fmt::Display for PutInsightSelectorsError {
             Self::NotOrganizationMasterAccountException(_inner) => _inner.fmt(f),
             Self::OperationNotPermittedException(_inner) => _inner.fmt(f),
             Self::S3BucketDoesNotExistException(_inner) => _inner.fmt(f),
+            Self::ThrottlingException(_inner) => _inner.fmt(f),
             Self::TrailNotFoundException(_inner) => _inner.fmt(f),
             Self::UnsupportedOperationException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => _inner.fmt(f),
@@ -347,6 +350,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for PutInsightSel
             Self::NotOrganizationMasterAccountException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::OperationNotPermittedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::S3BucketDoesNotExistException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ThrottlingException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::TrailNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::UnsupportedOperationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
@@ -396,6 +400,7 @@ impl PutInsightSelectorsError {
             Self::NotOrganizationMasterAccountException(e) => e.meta(),
             Self::OperationNotPermittedException(e) => e.meta(),
             Self::S3BucketDoesNotExistException(e) => e.meta(),
+            Self::ThrottlingException(e) => e.meta(),
             Self::TrailNotFoundException(e) => e.meta(),
             Self::UnsupportedOperationException(e) => e.meta(),
             Self::Unhandled(e) => e.meta(),
@@ -445,6 +450,10 @@ impl PutInsightSelectorsError {
     pub fn is_s3_bucket_does_not_exist_exception(&self) -> bool {
         matches!(self, Self::S3BucketDoesNotExistException(_))
     }
+    /// Returns `true` if the error kind is `PutInsightSelectorsError::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(self, Self::ThrottlingException(_))
+    }
     /// Returns `true` if the error kind is `PutInsightSelectorsError::TrailNotFoundException`.
     pub fn is_trail_not_found_exception(&self) -> bool {
         matches!(self, Self::TrailNotFoundException(_))
@@ -468,6 +477,7 @@ impl ::std::error::Error for PutInsightSelectorsError {
             Self::NotOrganizationMasterAccountException(_inner) => ::std::option::Option::Some(_inner),
             Self::OperationNotPermittedException(_inner) => ::std::option::Option::Some(_inner),
             Self::S3BucketDoesNotExistException(_inner) => ::std::option::Option::Some(_inner),
+            Self::ThrottlingException(_inner) => ::std::option::Option::Some(_inner),
             Self::TrailNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::UnsupportedOperationException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(_inner),

@@ -13,9 +13,9 @@ pub use crate::types::error::_connector_authentication_exception::ConnectorAuthe
 
 pub use crate::types::error::_conflict_exception::ConflictException;
 
-pub use crate::types::error::_throttling_exception::ThrottlingException;
-
 pub use crate::types::error::_access_denied_exception::AccessDeniedException;
+
+pub use crate::types::error::_throttling_exception::ThrottlingException;
 
 pub use crate::types::error::_unsupported_operation_exception::UnsupportedOperationException;
 

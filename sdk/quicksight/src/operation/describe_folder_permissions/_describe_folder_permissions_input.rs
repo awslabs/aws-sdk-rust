@@ -7,6 +7,12 @@ pub struct DescribeFolderPermissionsInput {
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the folder.</p>
     pub folder_id: ::std::option::Option<::std::string::String>,
+    /// <p>The namespace of the folder whose permissions you want described.</p>
+    pub namespace: ::std::option::Option<::std::string::String>,
+    /// <p>The maximum number of results to be returned per request.</p>
+    pub max_results: ::std::option::Option<i32>,
+    /// <p>A pagination token for the next set of results.</p>
+    pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribeFolderPermissionsInput {
     /// <p>The ID for the Amazon Web Services account that contains the folder.</p>
@@ -16,6 +22,18 @@ impl DescribeFolderPermissionsInput {
     /// <p>The ID of the folder.</p>
     pub fn folder_id(&self) -> ::std::option::Option<&str> {
         self.folder_id.as_deref()
+    }
+    /// <p>The namespace of the folder whose permissions you want described.</p>
+    pub fn namespace(&self) -> ::std::option::Option<&str> {
+        self.namespace.as_deref()
+    }
+    /// <p>The maximum number of results to be returned per request.</p>
+    pub fn max_results(&self) -> ::std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>A pagination token for the next set of results.</p>
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
+        self.next_token.as_deref()
     }
 }
 impl DescribeFolderPermissionsInput {
@@ -31,6 +49,9 @@ impl DescribeFolderPermissionsInput {
 pub struct DescribeFolderPermissionsInputBuilder {
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) folder_id: ::std::option::Option<::std::string::String>,
+    pub(crate) namespace: ::std::option::Option<::std::string::String>,
+    pub(crate) max_results: ::std::option::Option<i32>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribeFolderPermissionsInputBuilder {
     /// <p>The ID for the Amazon Web Services account that contains the folder.</p>
@@ -61,6 +82,48 @@ impl DescribeFolderPermissionsInputBuilder {
     pub fn get_folder_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.folder_id
     }
+    /// <p>The namespace of the folder whose permissions you want described.</p>
+    pub fn namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.namespace = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The namespace of the folder whose permissions you want described.</p>
+    pub fn set_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.namespace = input;
+        self
+    }
+    /// <p>The namespace of the folder whose permissions you want described.</p>
+    pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
+        &self.namespace
+    }
+    /// <p>The maximum number of results to be returned per request.</p>
+    pub fn max_results(mut self, input: i32) -> Self {
+        self.max_results = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The maximum number of results to be returned per request.</p>
+    pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.max_results = input;
+        self
+    }
+    /// <p>The maximum number of results to be returned per request.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
+    /// <p>A pagination token for the next set of results.</p>
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>A pagination token for the next set of results.</p>
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.next_token = input;
+        self
+    }
+    /// <p>A pagination token for the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Consumes the builder and constructs a [`DescribeFolderPermissionsInput`](crate::operation::describe_folder_permissions::DescribeFolderPermissionsInput).
     pub fn build(
         self,
@@ -71,6 +134,9 @@ impl DescribeFolderPermissionsInputBuilder {
         ::std::result::Result::Ok(crate::operation::describe_folder_permissions::DescribeFolderPermissionsInput {
             aws_account_id: self.aws_account_id,
             folder_id: self.folder_id,
+            namespace: self.namespace,
+            max_results: self.max_results,
+            next_token: self.next_token,
         })
     }
 }

@@ -6,20 +6,20 @@ pub fn ser_update_nodegroup_version_input(
     if let Some(var_1) = &input.client_request_token {
         object.key("clientRequestToken").string(var_1.as_str());
     }
-    if input.force {
-        object.key("force").boolean(input.force);
+    if let Some(var_2) = &input.force {
+        object.key("force").boolean(*var_2);
     }
-    if let Some(var_2) = &input.launch_template {
+    if let Some(var_3) = &input.launch_template {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("launchTemplate").start_object();
-        crate::protocol_serde::shape_launch_template_specification::ser_launch_template_specification(&mut object_3, var_2)?;
-        object_3.finish();
+        let mut object_4 = object.key("launchTemplate").start_object();
+        crate::protocol_serde::shape_launch_template_specification::ser_launch_template_specification(&mut object_4, var_3)?;
+        object_4.finish();
     }
-    if let Some(var_4) = &input.release_version {
-        object.key("releaseVersion").string(var_4.as_str());
+    if let Some(var_5) = &input.release_version {
+        object.key("releaseVersion").string(var_5.as_str());
     }
-    if let Some(var_5) = &input.version {
-        object.key("version").string(var_5.as_str());
+    if let Some(var_6) = &input.version {
+        object.key("version").string(var_6.as_str());
     }
     Ok(())
 }

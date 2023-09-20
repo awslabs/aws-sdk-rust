@@ -99,6 +99,16 @@ pub(crate) fn reflens_list_protected_resources_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_protected_resources_by_backup_vault_output_next_token(
+    input: &crate::operation::list_protected_resources_by_backup_vault::ListProtectedResourcesByBackupVaultOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_recovery_points_by_backup_vault_output_next_token(
     input: &crate::operation::list_recovery_points_by_backup_vault::ListRecoveryPointsByBackupVaultOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -251,6 +261,16 @@ pub(crate) fn lens_list_legal_holds_output_legal_holds(
 
 pub(crate) fn lens_list_protected_resources_output_results(
     input: crate::operation::list_protected_resources::ListProtectedResourcesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ProtectedResource>> {
+    let input = match input.results {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_protected_resources_by_backup_vault_output_results(
+    input: crate::operation::list_protected_resources_by_backup_vault::ListProtectedResourcesByBackupVaultOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ProtectedResource>> {
     let input = match input.results {
         ::std::option::Option::None => return ::std::option::Option::None,

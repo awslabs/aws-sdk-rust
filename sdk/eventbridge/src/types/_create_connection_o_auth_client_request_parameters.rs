@@ -2,7 +2,7 @@
 
 /// <p>Contains the Basic authorization parameters to use for the connection.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateConnectionOAuthClientRequestParameters {
     /// <p>The client ID to use for OAuth authorization for the connection.</p>
     pub client_id: ::std::option::Option<::std::string::String>,
@@ -19,6 +19,14 @@ impl CreateConnectionOAuthClientRequestParameters {
         self.client_secret.as_deref()
     }
 }
+impl ::std::fmt::Debug for CreateConnectionOAuthClientRequestParameters {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateConnectionOAuthClientRequestParameters");
+        formatter.field("client_id", &self.client_id);
+        formatter.field("client_secret", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl CreateConnectionOAuthClientRequestParameters {
     /// Creates a new builder-style object to manufacture [`CreateConnectionOAuthClientRequestParameters`](crate::types::CreateConnectionOAuthClientRequestParameters).
     pub fn builder() -> crate::types::builders::CreateConnectionOAuthClientRequestParametersBuilder {
@@ -28,7 +36,7 @@ impl CreateConnectionOAuthClientRequestParameters {
 
 /// A builder for [`CreateConnectionOAuthClientRequestParameters`](crate::types::CreateConnectionOAuthClientRequestParameters).
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct CreateConnectionOAuthClientRequestParametersBuilder {
     pub(crate) client_id: ::std::option::Option<::std::string::String>,
     pub(crate) client_secret: ::std::option::Option<::std::string::String>,
@@ -68,5 +76,13 @@ impl CreateConnectionOAuthClientRequestParametersBuilder {
             client_id: self.client_id,
             client_secret: self.client_secret,
         }
+    }
+}
+impl ::std::fmt::Debug for CreateConnectionOAuthClientRequestParametersBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateConnectionOAuthClientRequestParametersBuilder");
+        formatter.field("client_id", &self.client_id);
+        formatter.field("client_secret", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

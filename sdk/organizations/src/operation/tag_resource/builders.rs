@@ -30,7 +30,7 @@ impl TagResourceInputBuilder {
 /// <li> <p>Organizational unit (OU)</p> </li>
 /// <li> <p>Policy (any type)</p> </li>
 /// </ul>
-/// <p>This operation can be called only from the organization's management account.</p>
+/// <p>This operation can be called only from the organization's management account or by a member account that is a delegated administrator for an Amazon Web Services service.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct TagResourceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AmazonOpenSearchServerlessDestinationDescription {
-    /// <p>The Amazon Resource Name (ARN) of the AWS credentials.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services credentials.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The endpoint to use when communicating with the collection in the Serverless offering for Amazon OpenSearch Service.</p>
     pub collection_endpoint: ::std::option::Option<::std::string::String>,
@@ -26,7 +26,7 @@ pub struct AmazonOpenSearchServerlessDestinationDescription {
     pub vpc_configuration_description: ::std::option::Option<crate::types::VpcConfigurationDescription>,
 }
 impl AmazonOpenSearchServerlessDestinationDescription {
-    /// <p>The Amazon Resource Name (ARN) of the AWS credentials.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services credentials.</p>
     pub fn role_arn(&self) -> ::std::option::Option<&str> {
         self.role_arn.as_deref()
     }
@@ -90,17 +90,17 @@ pub struct AmazonOpenSearchServerlessDestinationDescriptionBuilder {
     pub(crate) vpc_configuration_description: ::std::option::Option<crate::types::VpcConfigurationDescription>,
 }
 impl AmazonOpenSearchServerlessDestinationDescriptionBuilder {
-    /// <p>The Amazon Resource Name (ARN) of the AWS credentials.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services credentials.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the AWS credentials.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services credentials.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the AWS credentials.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services credentials.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.role_arn
     }

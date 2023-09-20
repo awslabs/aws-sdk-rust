@@ -198,6 +198,7 @@ where
 impl From<crate::operation::list_connections::ListConnectionsError> for Error {
     fn from(err: crate::operation::list_connections::ListConnectionsError) -> Self {
         match err {
+            crate::operation::list_connections::ListConnectionsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::list_connections::ListConnectionsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }

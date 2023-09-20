@@ -37,6 +37,33 @@ impl ::std::fmt::Display for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::add_workload::AddWorkloadError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::add_workload::AddWorkloadError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::add_workload::AddWorkloadError> for Error {
+    fn from(err: crate::operation::add_workload::AddWorkloadError) -> Self {
+        match err {
+            crate::operation::add_workload::AddWorkloadError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::add_workload::AddWorkloadError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
+            crate::operation::add_workload::AddWorkloadError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::add_workload::AddWorkloadError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::add_workload::AddWorkloadError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::create_application::CreateApplicationError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -440,6 +467,32 @@ impl From<crate::operation::describe_problem_observations::DescribeProblemObserv
         }
     }
 }
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::describe_workload::DescribeWorkloadError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::describe_workload::DescribeWorkloadError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_workload::DescribeWorkloadError> for Error {
+    fn from(err: crate::operation::describe_workload::DescribeWorkloadError) -> Self {
+        match err {
+            crate::operation::describe_workload::DescribeWorkloadError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::describe_workload::DescribeWorkloadError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::describe_workload::DescribeWorkloadError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::describe_workload::DescribeWorkloadError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_applications::ListApplicationsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -630,6 +683,58 @@ impl From<crate::operation::list_tags_for_resource::ListTagsForResourceError> fo
         }
     }
 }
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_workloads::ListWorkloadsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_workloads::ListWorkloadsError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_workloads::ListWorkloadsError> for Error {
+    fn from(err: crate::operation::list_workloads::ListWorkloadsError) -> Self {
+        match err {
+            crate::operation::list_workloads::ListWorkloadsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_workloads::ListWorkloadsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_workloads::ListWorkloadsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_workloads::ListWorkloadsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::remove_workload::RemoveWorkloadError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::remove_workload::RemoveWorkloadError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::remove_workload::RemoveWorkloadError> for Error {
+    fn from(err: crate::operation::remove_workload::RemoveWorkloadError) -> Self {
+        match err {
+            crate::operation::remove_workload::RemoveWorkloadError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::remove_workload::RemoveWorkloadError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::remove_workload::RemoveWorkloadError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::remove_workload::RemoveWorkloadError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::tag_resource::TagResourceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -792,6 +897,58 @@ impl From<crate::operation::update_log_pattern::UpdateLogPatternError> for Error
             crate::operation::update_log_pattern::UpdateLogPatternError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::update_log_pattern::UpdateLogPatternError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::update_log_pattern::UpdateLogPatternError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::update_problem::UpdateProblemError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::update_problem::UpdateProblemError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::update_problem::UpdateProblemError> for Error {
+    fn from(err: crate::operation::update_problem::UpdateProblemError) -> Self {
+        match err {
+            crate::operation::update_problem::UpdateProblemError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::update_problem::UpdateProblemError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_problem::UpdateProblemError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_problem::UpdateProblemError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::update_workload::UpdateWorkloadError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::update_workload::UpdateWorkloadError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::update_workload::UpdateWorkloadError> for Error {
+    fn from(err: crate::operation::update_workload::UpdateWorkloadError) -> Self {
+        match err {
+            crate::operation::update_workload::UpdateWorkloadError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::update_workload::UpdateWorkloadError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_workload::UpdateWorkloadError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_workload::UpdateWorkloadError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

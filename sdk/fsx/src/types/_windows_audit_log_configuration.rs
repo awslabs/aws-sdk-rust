@@ -21,7 +21,7 @@ pub struct WindowsAuditLogConfiguration {
     /// </ul>
     pub file_share_access_audit_log_level: ::std::option::Option<crate::types::WindowsAccessAuditLogLevel>,
     /// <p>The Amazon Resource Name (ARN) for the destination of the audit logs. The destination can be any Amazon CloudWatch Logs log group ARN or Amazon Kinesis Data Firehose delivery stream ARN.</p>
-    /// <p>The name of the Amazon CloudWatch Logs log group must begin with the <code>/aws/fsx</code> prefix. The name of the Amazon Kinesis Data Firehouse delivery stream must begin with the <code>aws-fsx</code> prefix.</p>
+    /// <p>The name of the Amazon CloudWatch Logs log group must begin with the <code>/aws/fsx</code> prefix. The name of the Amazon Kinesis Data Firehose delivery stream must begin with the <code>aws-fsx</code> prefix.</p>
     /// <p>The destination ARN (either CloudWatch Logs log group or Kinesis Data Firehose delivery stream) must be in the same Amazon Web Services partition, Amazon Web Services Region, and Amazon Web Services account as your Amazon FSx file system.</p>
     pub audit_log_destination: ::std::option::Option<::std::string::String>,
 }
@@ -47,7 +47,7 @@ impl WindowsAuditLogConfiguration {
         self.file_share_access_audit_log_level.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) for the destination of the audit logs. The destination can be any Amazon CloudWatch Logs log group ARN or Amazon Kinesis Data Firehose delivery stream ARN.</p>
-    /// <p>The name of the Amazon CloudWatch Logs log group must begin with the <code>/aws/fsx</code> prefix. The name of the Amazon Kinesis Data Firehouse delivery stream must begin with the <code>aws-fsx</code> prefix.</p>
+    /// <p>The name of the Amazon CloudWatch Logs log group must begin with the <code>/aws/fsx</code> prefix. The name of the Amazon Kinesis Data Firehose delivery stream must begin with the <code>aws-fsx</code> prefix.</p>
     /// <p>The destination ARN (either CloudWatch Logs log group or Kinesis Data Firehose delivery stream) must be in the same Amazon Web Services partition, Amazon Web Services Region, and Amazon Web Services account as your Amazon FSx file system.</p>
     pub fn audit_log_destination(&self) -> ::std::option::Option<&str> {
         self.audit_log_destination.as_deref()
@@ -134,21 +134,21 @@ impl WindowsAuditLogConfigurationBuilder {
         &self.file_share_access_audit_log_level
     }
     /// <p>The Amazon Resource Name (ARN) for the destination of the audit logs. The destination can be any Amazon CloudWatch Logs log group ARN or Amazon Kinesis Data Firehose delivery stream ARN.</p>
-    /// <p>The name of the Amazon CloudWatch Logs log group must begin with the <code>/aws/fsx</code> prefix. The name of the Amazon Kinesis Data Firehouse delivery stream must begin with the <code>aws-fsx</code> prefix.</p>
+    /// <p>The name of the Amazon CloudWatch Logs log group must begin with the <code>/aws/fsx</code> prefix. The name of the Amazon Kinesis Data Firehose delivery stream must begin with the <code>aws-fsx</code> prefix.</p>
     /// <p>The destination ARN (either CloudWatch Logs log group or Kinesis Data Firehose delivery stream) must be in the same Amazon Web Services partition, Amazon Web Services Region, and Amazon Web Services account as your Amazon FSx file system.</p>
     pub fn audit_log_destination(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.audit_log_destination = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) for the destination of the audit logs. The destination can be any Amazon CloudWatch Logs log group ARN or Amazon Kinesis Data Firehose delivery stream ARN.</p>
-    /// <p>The name of the Amazon CloudWatch Logs log group must begin with the <code>/aws/fsx</code> prefix. The name of the Amazon Kinesis Data Firehouse delivery stream must begin with the <code>aws-fsx</code> prefix.</p>
+    /// <p>The name of the Amazon CloudWatch Logs log group must begin with the <code>/aws/fsx</code> prefix. The name of the Amazon Kinesis Data Firehose delivery stream must begin with the <code>aws-fsx</code> prefix.</p>
     /// <p>The destination ARN (either CloudWatch Logs log group or Kinesis Data Firehose delivery stream) must be in the same Amazon Web Services partition, Amazon Web Services Region, and Amazon Web Services account as your Amazon FSx file system.</p>
     pub fn set_audit_log_destination(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.audit_log_destination = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) for the destination of the audit logs. The destination can be any Amazon CloudWatch Logs log group ARN or Amazon Kinesis Data Firehose delivery stream ARN.</p>
-    /// <p>The name of the Amazon CloudWatch Logs log group must begin with the <code>/aws/fsx</code> prefix. The name of the Amazon Kinesis Data Firehouse delivery stream must begin with the <code>aws-fsx</code> prefix.</p>
+    /// <p>The name of the Amazon CloudWatch Logs log group must begin with the <code>/aws/fsx</code> prefix. The name of the Amazon Kinesis Data Firehose delivery stream must begin with the <code>aws-fsx</code> prefix.</p>
     /// <p>The destination ARN (either CloudWatch Logs log group or Kinesis Data Firehose delivery stream) must be in the same Amazon Web Services partition, Amazon Web Services Region, and Amazon Web Services account as your Amazon FSx file system.</p>
     pub fn get_audit_log_destination(&self) -> &::std::option::Option<::std::string::String> {
         &self.audit_log_destination

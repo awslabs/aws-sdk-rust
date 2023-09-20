@@ -21,18 +21,21 @@ pub fn ser_create_launch_configuration_template_input(
         crate::protocol_serde::shape_licensing::ser_licensing(&mut object_6, var_5)?;
         object_6.finish();
     }
-    if let Some(var_7) = &input.tags {
+    if let Some(var_7) = &input.post_launch_enabled {
+        object.key("postLaunchEnabled").boolean(*var_7);
+    }
+    if let Some(var_8) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_8 = object.key("tags").start_object();
-        for (key_9, value_10) in var_7 {
+        let mut object_9 = object.key("tags").start_object();
+        for (key_10, value_11) in var_8 {
             {
-                object_8.key(key_9.as_str()).string(value_10.as_str());
+                object_9.key(key_10.as_str()).string(value_11.as_str());
             }
         }
-        object_8.finish();
+        object_9.finish();
     }
-    if let Some(var_11) = &input.target_instance_type_right_sizing_method {
-        object.key("targetInstanceTypeRightSizingMethod").string(var_11.as_str());
+    if let Some(var_12) = &input.target_instance_type_right_sizing_method {
+        object.key("targetInstanceTypeRightSizingMethod").string(var_12.as_str());
     }
     Ok(())
 }

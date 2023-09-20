@@ -22,8 +22,8 @@ impl GetHealthEventInputBuilder {
 }
 /// Fluent builder constructing a request to `GetHealthEvent`.
 ///
-/// <p>Gets information the Amazon CloudWatch Internet Monitor has created and stored about a health event for a specified monitor. This information includes the impacted locations, and all of the information related to the event by location.</p>
-/// <p>The information returned includes the performance, availability, and round-trip time impact, information about the network providers, the event type, and so on.</p>
+/// <p>Gets information the Amazon CloudWatch Internet Monitor has created and stored about a health event for a specified monitor. This information includes the impacted locations, and all the information related to the event, by location.</p>
+/// <p>The information returned includes the impact on performance, availability, and round-trip time, information about the network providers (ASNs), the event type, and so on.</p>
 /// <p>Information rolled up at the global traffic level is also returned, including the impact type and total traffic impact.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetHealthEventFluentBuilder {

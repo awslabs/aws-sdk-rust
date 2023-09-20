@@ -10,7 +10,7 @@ pub struct UpdateWebhookInput {
     /// </note>
     pub branch_filter: ::std::option::Option<::std::string::String>,
     /// <p> A boolean value that specifies whether the associated GitHub repository's secret token should be updated. If you use Bitbucket for your repository, <code>rotateSecret</code> is ignored. </p>
-    pub rotate_secret: bool,
+    pub rotate_secret: ::std::option::Option<bool>,
     /// <p> An array of arrays of <code>WebhookFilter</code> objects used to determine if a webhook event can trigger a build. A filter group must contain at least one <code>EVENT</code> <code>WebhookFilter</code>. </p>
     pub filter_groups: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<crate::types::WebhookFilter>>>,
     /// <p>Specifies the type of build this webhook will trigger.</p>
@@ -28,7 +28,7 @@ impl UpdateWebhookInput {
         self.branch_filter.as_deref()
     }
     /// <p> A boolean value that specifies whether the associated GitHub repository's secret token should be updated. If you use Bitbucket for your repository, <code>rotateSecret</code> is ignored. </p>
-    pub fn rotate_secret(&self) -> bool {
+    pub fn rotate_secret(&self) -> ::std::option::Option<bool> {
         self.rotate_secret
     }
     /// <p> An array of arrays of <code>WebhookFilter</code> objects used to determine if a webhook event can trigger a build. A filter group must contain at least one <code>EVENT</code> <code>WebhookFilter</code>. </p>
@@ -147,7 +147,7 @@ impl UpdateWebhookInputBuilder {
         ::std::result::Result::Ok(crate::operation::update_webhook::UpdateWebhookInput {
             project_name: self.project_name,
             branch_filter: self.branch_filter,
-            rotate_secret: self.rotate_secret.unwrap_or_default(),
+            rotate_secret: self.rotate_secret,
             filter_groups: self.filter_groups,
             build_type: self.build_type,
         })

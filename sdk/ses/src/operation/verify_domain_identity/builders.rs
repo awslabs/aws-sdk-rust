@@ -22,7 +22,7 @@ impl VerifyDomainIdentityInputBuilder {
 }
 /// Fluent builder constructing a request to `VerifyDomainIdentity`.
 ///
-/// <p>Adds a domain to the list of identities for your Amazon SES account in the current AWS Region and attempts to verify it. For more information about verifying domains, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Verifying Email Addresses and Domains</a> in the <i>Amazon SES Developer Guide.</i> </p>
+/// <p>Adds a domain to the list of identities for your Amazon SES account in the current Amazon Web Services Region and attempts to verify it. For more information about verifying domains, see <a href="https://docs.aws.amazon.com/ses/latest/dg/verify-addresses-and-domains.html">Verifying Email Addresses and Domains</a> in the <i>Amazon SES Developer Guide.</i> </p>
 /// <p>You can execute this operation no more than once per second.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct VerifyDomainIdentityFluentBuilder {

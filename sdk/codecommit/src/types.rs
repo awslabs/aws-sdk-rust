@@ -53,6 +53,12 @@ pub use crate::types::_order_enum::OrderEnum;
 
 pub use crate::types::_sort_by_enum::SortByEnum;
 
+pub use crate::types::_file_version::FileVersion;
+
+pub use crate::types::_commit::Commit;
+
+pub use crate::types::_user_info::UserInfo;
+
 pub use crate::types::_repository_metadata::RepositoryMetadata;
 
 pub use crate::types::_approval::Approval;
@@ -84,10 +90,6 @@ pub use crate::types::_folder::Folder;
 pub use crate::types::_difference::Difference;
 
 pub use crate::types::_blob_metadata::BlobMetadata;
-
-pub use crate::types::_commit::Commit;
-
-pub use crate::types::_user_info::UserInfo;
 
 pub use crate::types::_comments_for_pull_request::CommentsForPullRequest;
 
@@ -202,6 +204,8 @@ mod _file_mode_type_enum;
 mod _file_modes;
 
 mod _file_sizes;
+
+mod _file_version;
 
 mod _folder;
 

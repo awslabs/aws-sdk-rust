@@ -14,9 +14,9 @@ pub struct ModifySnapshotCopyRetentionPeriodInput {
     /// <p>If you specify the <code>manual</code> option, only newly copied manual snapshots will have the new retention period. </p>
     /// <p>If you specify the value of -1 newly copied manual snapshots are retained indefinitely.</p>
     /// <p>Constraints: The number of days must be either -1 or an integer between 1 and 3,653 for manual snapshots.</p>
-    pub retention_period: i32,
+    pub retention_period: ::std::option::Option<i32>,
     /// <p>Indicates whether to apply the snapshot retention period to newly copied manual snapshots instead of automated snapshots.</p>
-    pub manual: bool,
+    pub manual: ::std::option::Option<bool>,
 }
 impl ModifySnapshotCopyRetentionPeriodInput {
     /// <p>The unique identifier of the cluster for which you want to change the retention period for either automated or manual snapshots that are copied to a destination Amazon Web Services Region.</p>
@@ -31,11 +31,11 @@ impl ModifySnapshotCopyRetentionPeriodInput {
     /// <p>If you specify the <code>manual</code> option, only newly copied manual snapshots will have the new retention period. </p>
     /// <p>If you specify the value of -1 newly copied manual snapshots are retained indefinitely.</p>
     /// <p>Constraints: The number of days must be either -1 or an integer between 1 and 3,653 for manual snapshots.</p>
-    pub fn retention_period(&self) -> i32 {
+    pub fn retention_period(&self) -> ::std::option::Option<i32> {
         self.retention_period
     }
     /// <p>Indicates whether to apply the snapshot retention period to newly copied manual snapshots instead of automated snapshots.</p>
-    pub fn manual(&self) -> bool {
+    pub fn manual(&self) -> ::std::option::Option<bool> {
         self.manual
     }
 }
@@ -128,8 +128,8 @@ impl ModifySnapshotCopyRetentionPeriodInputBuilder {
         ::std::result::Result::Ok(
             crate::operation::modify_snapshot_copy_retention_period::ModifySnapshotCopyRetentionPeriodInput {
                 cluster_identifier: self.cluster_identifier,
-                retention_period: self.retention_period.unwrap_or_default(),
-                manual: self.manual.unwrap_or_default(),
+                retention_period: self.retention_period,
+                manual: self.manual,
             },
         )
     }

@@ -169,6 +169,8 @@ mod associate_routing_profile_queues;
 
 mod associate_security_key;
 
+mod associate_traffic_distribution_group_user;
+
 mod claim_phone_number;
 
 mod create_agent_status;
@@ -208,6 +210,10 @@ mod create_use_case;
 mod create_user;
 
 mod create_user_hierarchy_group;
+
+mod create_view;
+
+mod create_view_version;
 
 mod create_vocabulary;
 
@@ -277,6 +283,10 @@ mod delete_user;
 
 mod delete_user_hierarchy_group;
 
+mod delete_view;
+
+mod delete_view_version;
+
 mod delete_vocabulary;
 
 mod describe_agent_status;
@@ -321,6 +331,8 @@ mod describe_user_hierarchy_group;
 
 mod describe_user_hierarchy_structure;
 
+mod describe_view;
+
 mod describe_vocabulary;
 
 mod disassociate_approved_origin;
@@ -340,6 +352,8 @@ mod disassociate_queue_quick_connects;
 mod disassociate_routing_profile_queues;
 
 mod disassociate_security_key;
+
+mod disassociate_traffic_distribution_group_user;
 
 mod dismiss_user_contact;
 
@@ -423,6 +437,8 @@ mod list_tags_for_resource;
 
 mod list_task_templates;
 
+mod list_traffic_distribution_group_users;
+
 mod list_traffic_distribution_groups;
 
 mod list_use_cases;
@@ -430,6 +446,10 @@ mod list_use_cases;
 mod list_user_hierarchy_groups;
 
 mod list_users;
+
+mod list_view_versions;
+
+mod list_views;
 
 mod monitor_contact;
 
@@ -537,6 +557,8 @@ mod update_quick_connect_config;
 
 mod update_quick_connect_name;
 
+mod update_routing_profile_agent_availability_timer;
+
 mod update_routing_profile_concurrency;
 
 mod update_routing_profile_default_outbound_queue;
@@ -566,3 +588,7 @@ mod update_user_phone_config;
 mod update_user_routing_profile;
 
 mod update_user_security_profiles;
+
+mod update_view_content;
+
+mod update_view_metadata;

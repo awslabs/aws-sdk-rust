@@ -92,6 +92,36 @@ impl From<crate::operation::abort_multipart_read_set_upload::AbortMultipartReadS
         }
     }
 }
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::accept_share::AcceptShareError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::accept_share::AcceptShareError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::accept_share::AcceptShareError> for Error {
+    fn from(err: crate::operation::accept_share::AcceptShareError) -> Self {
+        match err {
+            crate::operation::accept_share::AcceptShareError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::accept_share::AcceptShareError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::accept_share::AcceptShareError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::accept_share::AcceptShareError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::accept_share::AcceptShareError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::accept_share::AcceptShareError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::accept_share::AcceptShareError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::accept_share::AcceptShareError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::batch_delete_read_set::BatchDeleteReadSetError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -314,6 +344,52 @@ impl From<crate::operation::create_annotation_store::CreateAnnotationStoreError>
         }
     }
 }
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::create_annotation_store_version::CreateAnnotationStoreVersionError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<crate::operation::create_annotation_store_version::CreateAnnotationStoreVersionError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::create_annotation_store_version::CreateAnnotationStoreVersionError> for Error {
+    fn from(err: crate::operation::create_annotation_store_version::CreateAnnotationStoreVersionError) -> Self {
+        match err {
+            crate::operation::create_annotation_store_version::CreateAnnotationStoreVersionError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::create_annotation_store_version::CreateAnnotationStoreVersionError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::create_annotation_store_version::CreateAnnotationStoreVersionError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::create_annotation_store_version::CreateAnnotationStoreVersionError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::create_annotation_store_version::CreateAnnotationStoreVersionError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_annotation_store_version::CreateAnnotationStoreVersionError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::create_annotation_store_version::CreateAnnotationStoreVersionError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::create_annotation_store_version::CreateAnnotationStoreVersionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::create_multipart_read_set_upload::CreateMultipartReadSetUploadError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -466,6 +542,36 @@ impl From<crate::operation::create_sequence_store::CreateSequenceStoreError> for
         }
     }
 }
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::create_share::CreateShareError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::create_share::CreateShareError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::create_share::CreateShareError> for Error {
+    fn from(err: crate::operation::create_share::CreateShareError) -> Self {
+        match err {
+            crate::operation::create_share::CreateShareError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_share::CreateShareError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_share::CreateShareError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::create_share::CreateShareError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::create_share::CreateShareError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::create_share::CreateShareError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_share::CreateShareError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_share::CreateShareError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::create_variant_store::CreateVariantStoreError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -565,6 +671,49 @@ impl From<crate::operation::delete_annotation_store::DeleteAnnotationStoreError>
             crate::operation::delete_annotation_store::DeleteAnnotationStoreError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::delete_annotation_store::DeleteAnnotationStoreError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::delete_annotation_store::DeleteAnnotationStoreError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::delete_annotation_store_versions::DeleteAnnotationStoreVersionsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<crate::operation::delete_annotation_store_versions::DeleteAnnotationStoreVersionsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_annotation_store_versions::DeleteAnnotationStoreVersionsError> for Error {
+    fn from(err: crate::operation::delete_annotation_store_versions::DeleteAnnotationStoreVersionsError) -> Self {
+        match err {
+            crate::operation::delete_annotation_store_versions::DeleteAnnotationStoreVersionsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::delete_annotation_store_versions::DeleteAnnotationStoreVersionsError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::delete_annotation_store_versions::DeleteAnnotationStoreVersionsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::delete_annotation_store_versions::DeleteAnnotationStoreVersionsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_annotation_store_versions::DeleteAnnotationStoreVersionsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::delete_annotation_store_versions::DeleteAnnotationStoreVersionsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::delete_annotation_store_versions::DeleteAnnotationStoreVersionsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -734,6 +883,36 @@ impl From<crate::operation::delete_sequence_store::DeleteSequenceStoreError> for
         }
     }
 }
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::delete_share::DeleteShareError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::delete_share::DeleteShareError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_share::DeleteShareError> for Error {
+    fn from(err: crate::operation::delete_share::DeleteShareError) -> Self {
+        match err {
+            crate::operation::delete_share::DeleteShareError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_share::DeleteShareError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_share::DeleteShareError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::delete_share::DeleteShareError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_share::DeleteShareError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::delete_share::DeleteShareError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_share::DeleteShareError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_share::DeleteShareError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::delete_variant_store::DeleteVariantStoreError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -859,6 +1038,44 @@ impl From<crate::operation::get_annotation_store::GetAnnotationStoreError> for E
             crate::operation::get_annotation_store::GetAnnotationStoreError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::get_annotation_store::GetAnnotationStoreError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_annotation_store::GetAnnotationStoreError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_annotation_store_version::GetAnnotationStoreVersionError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::get_annotation_store_version::GetAnnotationStoreVersionError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_annotation_store_version::GetAnnotationStoreVersionError> for Error {
+    fn from(err: crate::operation::get_annotation_store_version::GetAnnotationStoreVersionError) -> Self {
+        match err {
+            crate::operation::get_annotation_store_version::GetAnnotationStoreVersionError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_annotation_store_version::GetAnnotationStoreVersionError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_annotation_store_version::GetAnnotationStoreVersionError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_annotation_store_version::GetAnnotationStoreVersionError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::get_annotation_store_version::GetAnnotationStoreVersionError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::get_annotation_store_version::GetAnnotationStoreVersionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1290,6 +1507,36 @@ impl From<crate::operation::get_sequence_store::GetSequenceStoreError> for Error
         }
     }
 }
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_share::GetShareError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::get_share::GetShareError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_share::GetShareError> for Error {
+    fn from(err: crate::operation::get_share::GetShareError) -> Self {
+        match err {
+            crate::operation::get_share::GetShareError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_share::GetShareError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::get_share::GetShareError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_share::GetShareError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_share::GetShareError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::get_share::GetShareError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_share::GetShareError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_share::GetShareError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_variant_import_job::GetVariantImportJobError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1448,6 +1695,44 @@ impl From<crate::operation::list_annotation_stores::ListAnnotationStoresError> f
             crate::operation::list_annotation_stores::ListAnnotationStoresError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_annotation_stores::ListAnnotationStoresError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_annotation_stores::ListAnnotationStoresError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_annotation_store_versions::ListAnnotationStoreVersionsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_annotation_store_versions::ListAnnotationStoreVersionsError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_annotation_store_versions::ListAnnotationStoreVersionsError> for Error {
+    fn from(err: crate::operation::list_annotation_store_versions::ListAnnotationStoreVersionsError) -> Self {
+        match err {
+            crate::operation::list_annotation_store_versions::ListAnnotationStoreVersionsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_annotation_store_versions::ListAnnotationStoreVersionsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_annotation_store_versions::ListAnnotationStoreVersionsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_annotation_store_versions::ListAnnotationStoreVersionsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_annotation_store_versions::ListAnnotationStoreVersionsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_annotation_store_versions::ListAnnotationStoreVersionsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1913,6 +2198,36 @@ impl From<crate::operation::list_sequence_stores::ListSequenceStoresError> for E
             crate::operation::list_sequence_stores::ListSequenceStoresError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_sequence_stores::ListSequenceStoresError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_sequence_stores::ListSequenceStoresError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_shares::ListSharesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_shares::ListSharesError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_shares::ListSharesError> for Error {
+    fn from(err: crate::operation::list_shares::ListSharesError) -> Self {
+        match err {
+            crate::operation::list_shares::ListSharesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_shares::ListSharesError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::list_shares::ListSharesError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_shares::ListSharesError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_shares::ListSharesError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::list_shares::ListSharesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_shares::ListSharesError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_shares::ListSharesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2420,6 +2735,46 @@ impl From<crate::operation::update_annotation_store::UpdateAnnotationStoreError>
             crate::operation::update_annotation_store::UpdateAnnotationStoreError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::update_annotation_store::UpdateAnnotationStoreError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::update_annotation_store::UpdateAnnotationStoreError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::update_annotation_store_version::UpdateAnnotationStoreVersionError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<crate::operation::update_annotation_store_version::UpdateAnnotationStoreVersionError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::update_annotation_store_version::UpdateAnnotationStoreVersionError> for Error {
+    fn from(err: crate::operation::update_annotation_store_version::UpdateAnnotationStoreVersionError) -> Self {
+        match err {
+            crate::operation::update_annotation_store_version::UpdateAnnotationStoreVersionError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::update_annotation_store_version::UpdateAnnotationStoreVersionError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::update_annotation_store_version::UpdateAnnotationStoreVersionError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_annotation_store_version::UpdateAnnotationStoreVersionError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::update_annotation_store_version::UpdateAnnotationStoreVersionError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::update_annotation_store_version::UpdateAnnotationStoreVersionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

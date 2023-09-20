@@ -103,6 +103,8 @@ pub use crate::types::_node_exporter::NodeExporterBuilder;
 
 pub use crate::types::_jmx_exporter::JmxExporterBuilder;
 
+pub use crate::types::_cluster_operation_v2_summary::ClusterOperationV2SummaryBuilder;
+
 pub use crate::types::_cluster_operation_info::ClusterOperationInfoBuilder;
 
 pub use crate::types::_vpc_connection_info::VpcConnectionInfoBuilder;
@@ -120,6 +122,14 @@ pub use crate::types::_error_info::ErrorInfoBuilder;
 pub use crate::types::_client_vpc_connection::ClientVpcConnectionBuilder;
 
 pub use crate::types::_compatible_kafka_version::CompatibleKafkaVersionBuilder;
+
+pub use crate::types::_cluster_operation_v2::ClusterOperationV2Builder;
+
+pub use crate::types::_cluster_operation_v2_serverless::ClusterOperationV2ServerlessBuilder;
+
+pub use crate::types::_vpc_connection_info_serverless::VpcConnectionInfoServerlessBuilder;
+
+pub use crate::types::_cluster_operation_v2_provisioned::ClusterOperationV2ProvisionedBuilder;
 
 pub use crate::types::_serverless_request::ServerlessRequestBuilder;
 

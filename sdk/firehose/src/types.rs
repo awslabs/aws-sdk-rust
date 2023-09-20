@@ -55,6 +55,10 @@ pub use crate::types::_hec_endpoint_type::HecEndpointType;
 
 pub use crate::types::_amazonopensearchservice_destination_update::AmazonopensearchserviceDestinationUpdate;
 
+pub use crate::types::_document_id_options::DocumentIdOptions;
+
+pub use crate::types::_default_document_id_format::DefaultDocumentIdFormat;
+
 pub use crate::types::_amazonopensearchservice_retry_options::AmazonopensearchserviceRetryOptions;
 
 pub use crate::types::_amazonopensearchservice_buffering_hints::AmazonopensearchserviceBufferingHints;
@@ -227,6 +231,8 @@ mod _copy_command;
 
 mod _data_format_conversion_configuration;
 
+mod _default_document_id_format;
+
 mod _delivery_stream_description;
 
 mod _delivery_stream_encryption_configuration;
@@ -244,6 +250,8 @@ mod _delivery_stream_type;
 mod _deserializer;
 
 mod _destination_description;
+
+mod _document_id_options;
 
 mod _dynamic_partitioning_configuration;
 

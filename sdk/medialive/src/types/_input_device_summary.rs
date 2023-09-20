@@ -30,6 +30,12 @@ pub struct InputDeviceSummary {
     pub uhd_device_settings: ::std::option::Option<crate::types::InputDeviceUhdSettings>,
     /// A collection of key-value pairs.
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// The Availability Zone associated with this input device.
+    pub availability_zone: ::std::option::Option<::std::string::String>,
+    /// An array of the ARNs for the MediaLive inputs attached to the device. Returned only if the outputType is MEDIALIVE_INPUT.
+    pub medialive_input_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// The output attachment type of the input device. Specifies MEDIACONNECT_FLOW if this device is the source for a MediaConnect flow. Specifies MEDIALIVE_INPUT if this device is the source for a MediaLive input.
+    pub output_type: ::std::option::Option<crate::types::InputDeviceOutputType>,
 }
 impl InputDeviceSummary {
     /// The unique ARN of the input device.
@@ -84,6 +90,18 @@ impl InputDeviceSummary {
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
+    /// The Availability Zone associated with this input device.
+    pub fn availability_zone(&self) -> ::std::option::Option<&str> {
+        self.availability_zone.as_deref()
+    }
+    /// An array of the ARNs for the MediaLive inputs attached to the device. Returned only if the outputType is MEDIALIVE_INPUT.
+    pub fn medialive_input_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
+        self.medialive_input_arns.as_deref()
+    }
+    /// The output attachment type of the input device. Specifies MEDIACONNECT_FLOW if this device is the source for a MediaConnect flow. Specifies MEDIALIVE_INPUT if this device is the source for a MediaLive input.
+    pub fn output_type(&self) -> ::std::option::Option<&crate::types::InputDeviceOutputType> {
+        self.output_type.as_ref()
+    }
 }
 impl InputDeviceSummary {
     /// Creates a new builder-style object to manufacture [`InputDeviceSummary`](crate::types::InputDeviceSummary).
@@ -109,6 +127,9 @@ pub struct InputDeviceSummaryBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::InputDeviceType>,
     pub(crate) uhd_device_settings: ::std::option::Option<crate::types::InputDeviceUhdSettings>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) availability_zone: ::std::option::Option<::std::string::String>,
+    pub(crate) medialive_input_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) output_type: ::std::option::Option<crate::types::InputDeviceOutputType>,
 }
 impl InputDeviceSummaryBuilder {
     /// The unique ARN of the input device.
@@ -299,6 +320,54 @@ impl InputDeviceSummaryBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
+    /// The Availability Zone associated with this input device.
+    pub fn availability_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.availability_zone = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// The Availability Zone associated with this input device.
+    pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.availability_zone = input;
+        self
+    }
+    /// The Availability Zone associated with this input device.
+    pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
+        &self.availability_zone
+    }
+    /// Appends an item to `medialive_input_arns`.
+    ///
+    /// To override the contents of this collection use [`set_medialive_input_arns`](Self::set_medialive_input_arns).
+    ///
+    /// An array of the ARNs for the MediaLive inputs attached to the device. Returned only if the outputType is MEDIALIVE_INPUT.
+    pub fn medialive_input_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.medialive_input_arns.unwrap_or_default();
+        v.push(input.into());
+        self.medialive_input_arns = ::std::option::Option::Some(v);
+        self
+    }
+    /// An array of the ARNs for the MediaLive inputs attached to the device. Returned only if the outputType is MEDIALIVE_INPUT.
+    pub fn set_medialive_input_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.medialive_input_arns = input;
+        self
+    }
+    /// An array of the ARNs for the MediaLive inputs attached to the device. Returned only if the outputType is MEDIALIVE_INPUT.
+    pub fn get_medialive_input_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.medialive_input_arns
+    }
+    /// The output attachment type of the input device. Specifies MEDIACONNECT_FLOW if this device is the source for a MediaConnect flow. Specifies MEDIALIVE_INPUT if this device is the source for a MediaLive input.
+    pub fn output_type(mut self, input: crate::types::InputDeviceOutputType) -> Self {
+        self.output_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// The output attachment type of the input device. Specifies MEDIACONNECT_FLOW if this device is the source for a MediaConnect flow. Specifies MEDIALIVE_INPUT if this device is the source for a MediaLive input.
+    pub fn set_output_type(mut self, input: ::std::option::Option<crate::types::InputDeviceOutputType>) -> Self {
+        self.output_type = input;
+        self
+    }
+    /// The output attachment type of the input device. Specifies MEDIACONNECT_FLOW if this device is the source for a MediaConnect flow. Specifies MEDIALIVE_INPUT if this device is the source for a MediaLive input.
+    pub fn get_output_type(&self) -> &::std::option::Option<crate::types::InputDeviceOutputType> {
+        &self.output_type
+    }
     /// Consumes the builder and constructs a [`InputDeviceSummary`](crate::types::InputDeviceSummary).
     pub fn build(self) -> crate::types::InputDeviceSummary {
         crate::types::InputDeviceSummary {
@@ -315,6 +384,9 @@ impl InputDeviceSummaryBuilder {
             r#type: self.r#type,
             uhd_device_settings: self.uhd_device_settings,
             tags: self.tags,
+            availability_zone: self.availability_zone,
+            medialive_input_arns: self.medialive_input_arns,
+            output_type: self.output_type,
         }
     }
 }

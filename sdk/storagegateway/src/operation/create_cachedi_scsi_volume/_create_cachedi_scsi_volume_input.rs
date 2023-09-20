@@ -6,7 +6,7 @@ pub struct CreateCachediScsiVolumeInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub gateway_arn: ::std::option::Option<::std::string::String>,
     /// <p>The size of the volume in bytes.</p>
-    pub volume_size_in_bytes: i64,
+    pub volume_size_in_bytes: ::std::option::Option<i64>,
     /// <p>The snapshot ID (e.g. "snap-1122aabb") of the snapshot to restore as the new cached volume. Specify this field if you want to create the iSCSI storage volume from a snapshot; otherwise, do not include this field. To list snapshots for your account use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html">DescribeSnapshots</a> in the <i>Amazon Elastic Compute Cloud API Reference</i>.</p>
     pub snapshot_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the iSCSI target used by an initiator to connect to a volume and used as a suffix for the target ARN. For example, specifying <code>TargetName</code> as <i>myvolume</i> results in the target ARN of <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume</code>. The target name must be unique across all volumes on a gateway.</p>
@@ -35,7 +35,7 @@ impl CreateCachediScsiVolumeInput {
         self.gateway_arn.as_deref()
     }
     /// <p>The size of the volume in bytes.</p>
-    pub fn volume_size_in_bytes(&self) -> i64 {
+    pub fn volume_size_in_bytes(&self) -> ::std::option::Option<i64> {
         self.volume_size_in_bytes
     }
     /// <p>The snapshot ID (e.g. "snap-1122aabb") of the snapshot to restore as the new cached volume. Specify this field if you want to create the iSCSI storage volume from a snapshot; otherwise, do not include this field. To list snapshots for your account use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html">DescribeSnapshots</a> in the <i>Amazon Elastic Compute Cloud API Reference</i>.</p>
@@ -269,7 +269,7 @@ impl CreateCachediScsiVolumeInputBuilder {
     > {
         ::std::result::Result::Ok(crate::operation::create_cachedi_scsi_volume::CreateCachediScsiVolumeInput {
             gateway_arn: self.gateway_arn,
-            volume_size_in_bytes: self.volume_size_in_bytes.unwrap_or_default(),
+            volume_size_in_bytes: self.volume_size_in_bytes,
             snapshot_id: self.snapshot_id,
             target_name: self.target_name,
             source_volume_arn: self.source_volume_arn,

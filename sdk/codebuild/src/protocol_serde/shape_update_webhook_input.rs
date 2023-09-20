@@ -9,29 +9,29 @@ pub fn ser_update_webhook_input(
     if let Some(var_2) = &input.branch_filter {
         object.key("branchFilter").string(var_2.as_str());
     }
-    if input.rotate_secret {
-        object.key("rotateSecret").boolean(input.rotate_secret);
+    if let Some(var_3) = &input.rotate_secret {
+        object.key("rotateSecret").boolean(*var_3);
     }
-    if let Some(var_3) = &input.filter_groups {
-        let mut array_4 = object.key("filterGroups").start_array();
-        for item_5 in var_3 {
+    if let Some(var_4) = &input.filter_groups {
+        let mut array_5 = object.key("filterGroups").start_array();
+        for item_6 in var_4 {
             {
-                let mut array_6 = array_4.value().start_array();
-                for item_7 in item_5 {
+                let mut array_7 = array_5.value().start_array();
+                for item_8 in item_6 {
                     {
                         #[allow(unused_mut)]
-                        let mut object_8 = array_6.value().start_object();
-                        crate::protocol_serde::shape_webhook_filter::ser_webhook_filter(&mut object_8, item_7)?;
-                        object_8.finish();
+                        let mut object_9 = array_7.value().start_object();
+                        crate::protocol_serde::shape_webhook_filter::ser_webhook_filter(&mut object_9, item_8)?;
+                        object_9.finish();
                     }
                 }
-                array_6.finish();
+                array_7.finish();
             }
         }
-        array_4.finish();
+        array_5.finish();
     }
-    if let Some(var_9) = &input.build_type {
-        object.key("buildType").string(var_9.as_str());
+    if let Some(var_10) = &input.build_type {
+        object.key("buildType").string(var_10.as_str());
     }
     Ok(())
 }

@@ -39,59 +39,59 @@ pub fn ser_create_recipe_job_input(
     if let Some(var_12) = &input.log_subscription {
         object.key("LogSubscription").string(var_12.as_str());
     }
-    if input.max_capacity != 0 {
+    if let Some(var_13) = &input.max_capacity {
         object.key("MaxCapacity").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.max_capacity).into()),
+            ::aws_smithy_types::Number::NegInt((*var_13).into()),
         );
     }
-    if input.max_retries != 0 {
+    if let Some(var_14) = &input.max_retries {
         object.key("MaxRetries").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.max_retries).into()),
+            ::aws_smithy_types::Number::NegInt((*var_14).into()),
         );
     }
-    if let Some(var_13) = &input.name {
-        object.key("Name").string(var_13.as_str());
+    if let Some(var_15) = &input.name {
+        object.key("Name").string(var_15.as_str());
     }
-    if let Some(var_14) = &input.outputs {
-        let mut array_15 = object.key("Outputs").start_array();
-        for item_16 in var_14 {
+    if let Some(var_16) = &input.outputs {
+        let mut array_17 = object.key("Outputs").start_array();
+        for item_18 in var_16 {
             {
                 #[allow(unused_mut)]
-                let mut object_17 = array_15.value().start_object();
-                crate::protocol_serde::shape_output::ser_output(&mut object_17, item_16)?;
-                object_17.finish();
+                let mut object_19 = array_17.value().start_object();
+                crate::protocol_serde::shape_output::ser_output(&mut object_19, item_18)?;
+                object_19.finish();
             }
         }
-        array_15.finish();
+        array_17.finish();
     }
-    if let Some(var_18) = &input.project_name {
-        object.key("ProjectName").string(var_18.as_str());
+    if let Some(var_20) = &input.project_name {
+        object.key("ProjectName").string(var_20.as_str());
     }
-    if let Some(var_19) = &input.recipe_reference {
+    if let Some(var_21) = &input.recipe_reference {
         #[allow(unused_mut)]
-        let mut object_20 = object.key("RecipeReference").start_object();
-        crate::protocol_serde::shape_recipe_reference::ser_recipe_reference(&mut object_20, var_19)?;
-        object_20.finish();
+        let mut object_22 = object.key("RecipeReference").start_object();
+        crate::protocol_serde::shape_recipe_reference::ser_recipe_reference(&mut object_22, var_21)?;
+        object_22.finish();
     }
-    if let Some(var_21) = &input.role_arn {
-        object.key("RoleArn").string(var_21.as_str());
+    if let Some(var_23) = &input.role_arn {
+        object.key("RoleArn").string(var_23.as_str());
     }
-    if let Some(var_22) = &input.tags {
+    if let Some(var_24) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_23 = object.key("Tags").start_object();
-        for (key_24, value_25) in var_22 {
+        let mut object_25 = object.key("Tags").start_object();
+        for (key_26, value_27) in var_24 {
             {
-                object_23.key(key_24.as_str()).string(value_25.as_str());
+                object_25.key(key_26.as_str()).string(value_27.as_str());
             }
         }
-        object_23.finish();
+        object_25.finish();
     }
-    if input.timeout != 0 {
+    if let Some(var_28) = &input.timeout {
         object.key("Timeout").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.timeout).into()),
+            ::aws_smithy_types::Number::NegInt((*var_28).into()),
         );
     }
     Ok(())

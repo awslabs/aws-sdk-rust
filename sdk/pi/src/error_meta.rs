@@ -22,6 +22,76 @@ impl ::std::fmt::Display for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::create_performance_analysis_report::CreatePerformanceAnalysisReportError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<crate::operation::create_performance_analysis_report::CreatePerformanceAnalysisReportError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::create_performance_analysis_report::CreatePerformanceAnalysisReportError> for Error {
+    fn from(err: crate::operation::create_performance_analysis_report::CreatePerformanceAnalysisReportError) -> Self {
+        match err {
+            crate::operation::create_performance_analysis_report::CreatePerformanceAnalysisReportError::InternalServiceError(inner) => {
+                Error::InternalServiceError(inner)
+            }
+            crate::operation::create_performance_analysis_report::CreatePerformanceAnalysisReportError::InvalidArgumentException(inner) => {
+                Error::InvalidArgumentException(inner)
+            }
+            crate::operation::create_performance_analysis_report::CreatePerformanceAnalysisReportError::NotAuthorizedException(inner) => {
+                Error::NotAuthorizedException(inner)
+            }
+            crate::operation::create_performance_analysis_report::CreatePerformanceAnalysisReportError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::delete_performance_analysis_report::DeletePerformanceAnalysisReportError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<crate::operation::delete_performance_analysis_report::DeletePerformanceAnalysisReportError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_performance_analysis_report::DeletePerformanceAnalysisReportError> for Error {
+    fn from(err: crate::operation::delete_performance_analysis_report::DeletePerformanceAnalysisReportError) -> Self {
+        match err {
+            crate::operation::delete_performance_analysis_report::DeletePerformanceAnalysisReportError::InternalServiceError(inner) => {
+                Error::InternalServiceError(inner)
+            }
+            crate::operation::delete_performance_analysis_report::DeletePerformanceAnalysisReportError::InvalidArgumentException(inner) => {
+                Error::InvalidArgumentException(inner)
+            }
+            crate::operation::delete_performance_analysis_report::DeletePerformanceAnalysisReportError::NotAuthorizedException(inner) => {
+                Error::NotAuthorizedException(inner)
+            }
+            crate::operation::delete_performance_analysis_report::DeletePerformanceAnalysisReportError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::describe_dimension_keys::DescribeDimensionKeysError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -81,6 +151,40 @@ impl From<crate::operation::get_dimension_key_details::GetDimensionKeyDetailsErr
                 Error::NotAuthorizedException(inner)
             }
             crate::operation::get_dimension_key_details::GetDimensionKeyDetailsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_performance_analysis_report::GetPerformanceAnalysisReportError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<crate::operation::get_performance_analysis_report::GetPerformanceAnalysisReportError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_performance_analysis_report::GetPerformanceAnalysisReportError> for Error {
+    fn from(err: crate::operation::get_performance_analysis_report::GetPerformanceAnalysisReportError) -> Self {
+        match err {
+            crate::operation::get_performance_analysis_report::GetPerformanceAnalysisReportError::InternalServiceError(inner) => {
+                Error::InternalServiceError(inner)
+            }
+            crate::operation::get_performance_analysis_report::GetPerformanceAnalysisReportError::InvalidArgumentException(inner) => {
+                Error::InvalidArgumentException(inner)
+            }
+            crate::operation::get_performance_analysis_report::GetPerformanceAnalysisReportError::NotAuthorizedException(inner) => {
+                Error::NotAuthorizedException(inner)
+            }
+            crate::operation::get_performance_analysis_report::GetPerformanceAnalysisReportError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -206,6 +310,121 @@ impl From<crate::operation::list_available_resource_metrics::ListAvailableResour
                 Error::NotAuthorizedException(inner)
             }
             crate::operation::list_available_resource_metrics::ListAvailableResourceMetricsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_performance_analysis_reports::ListPerformanceAnalysisReportsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<crate::operation::list_performance_analysis_reports::ListPerformanceAnalysisReportsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_performance_analysis_reports::ListPerformanceAnalysisReportsError> for Error {
+    fn from(err: crate::operation::list_performance_analysis_reports::ListPerformanceAnalysisReportsError) -> Self {
+        match err {
+            crate::operation::list_performance_analysis_reports::ListPerformanceAnalysisReportsError::InternalServiceError(inner) => {
+                Error::InternalServiceError(inner)
+            }
+            crate::operation::list_performance_analysis_reports::ListPerformanceAnalysisReportsError::InvalidArgumentException(inner) => {
+                Error::InvalidArgumentException(inner)
+            }
+            crate::operation::list_performance_analysis_reports::ListPerformanceAnalysisReportsError::NotAuthorizedException(inner) => {
+                Error::NotAuthorizedException(inner)
+            }
+            crate::operation::list_performance_analysis_reports::ListPerformanceAnalysisReportsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_tags_for_resource::ListTagsForResourceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_tags_for_resource::ListTagsForResourceError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_tags_for_resource::ListTagsForResourceError> for Error {
+    fn from(err: crate::operation::list_tags_for_resource::ListTagsForResourceError) -> Self {
+        match err {
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::InternalServiceError(inner) => Error::InternalServiceError(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::InvalidArgumentException(inner) => {
+                Error::InvalidArgumentException(inner)
+            }
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::tag_resource::TagResourceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::tag_resource::TagResourceError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::tag_resource::TagResourceError> for Error {
+    fn from(err: crate::operation::tag_resource::TagResourceError) -> Self {
+        match err {
+            crate::operation::tag_resource::TagResourceError::InternalServiceError(inner) => Error::InternalServiceError(inner),
+            crate::operation::tag_resource::TagResourceError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
+            crate::operation::tag_resource::TagResourceError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::tag_resource::TagResourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::untag_resource::UntagResourceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::untag_resource::UntagResourceError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::untag_resource::UntagResourceError> for Error {
+    fn from(err: crate::operation::untag_resource::UntagResourceError) -> Self {
+        match err {
+            crate::operation::untag_resource::UntagResourceError::InternalServiceError(inner) => Error::InternalServiceError(inner),
+            crate::operation::untag_resource::UntagResourceError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
+            crate::operation::untag_resource::UntagResourceError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::untag_resource::UntagResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

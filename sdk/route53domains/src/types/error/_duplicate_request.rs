@@ -4,9 +4,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DuplicateRequest {
+    /// <p>ID of the request operation.</p>
+    pub request_id: ::std::option::Option<::std::string::String>,
     /// <p>The request is already in progress for the domain.</p>
     pub message: ::std::option::Option<::std::string::String>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
+}
+impl DuplicateRequest {
+    /// <p>ID of the request operation.</p>
+    pub fn request_id(&self) -> ::std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
 }
 impl DuplicateRequest {
     /// Returns the error message.
@@ -48,10 +56,25 @@ impl DuplicateRequest {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DuplicateRequestBuilder {
+    pub(crate) request_id: ::std::option::Option<::std::string::String>,
     pub(crate) message: ::std::option::Option<::std::string::String>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
 }
 impl DuplicateRequestBuilder {
+    /// <p>ID of the request operation.</p>
+    pub fn request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.request_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>ID of the request operation.</p>
+    pub fn set_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.request_id = input;
+        self
+    }
+    /// <p>ID of the request operation.</p>
+    pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.request_id
+    }
     /// <p>The request is already in progress for the domain.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
@@ -80,6 +103,7 @@ impl DuplicateRequestBuilder {
     /// Consumes the builder and constructs a [`DuplicateRequest`](crate::types::error::DuplicateRequest).
     pub fn build(self) -> crate::types::error::DuplicateRequest {
         crate::types::error::DuplicateRequest {
+            request_id: self.request_id,
             message: self.message,
             meta: self.meta.unwrap_or_default(),
         }

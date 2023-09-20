@@ -19,13 +19,14 @@ pub struct RefreshPreferences {
     /// <p>(Optional) Indicates whether skip matching is enabled. If enabled (<code>true</code>), then Amazon EC2 Auto Scaling skips replacing instances that match the desired configuration. If no desired configuration is specified, then it skips replacing instances that have the same launch template and instance types that the Auto Scaling group was using before the start of the instance refresh. The default is <code>false</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-refresh-skip-matching.html">Use an instance refresh with skip matching</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     pub skip_matching: ::std::option::Option<bool>,
-    /// <p>(Optional) Indicates whether to roll back the Auto Scaling group to its previous configuration if the instance refresh fails. The default is <code>false</code>.</p>
+    /// <p>(Optional) Indicates whether to roll back the Auto Scaling group to its previous configuration if the instance refresh fails or a CloudWatch alarm threshold is met. The default is <code>false</code>.</p>
     /// <p>A rollback is not supported in the following situations: </p>
     /// <ul>
     /// <li> <p>There is no desired configuration specified for the instance refresh.</p> </li>
     /// <li> <p>The Auto Scaling group has a launch template that uses an Amazon Web Services Systems Manager parameter instead of an AMI ID for the <code>ImageId</code> property.</p> </li>
     /// <li> <p>The Auto Scaling group uses the launch template's <code>$Latest</code> or <code>$Default</code> version.</p> </li>
     /// </ul>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/instance-refresh-rollback.html">Undo changes with a rollback</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     pub auto_rollback: ::std::option::Option<bool>,
     /// <p>Choose the behavior that you want Amazon EC2 Auto Scaling to use if instances protected from scale in are found. </p>
     /// <p>The following lists the valid values:</p>
@@ -73,6 +74,8 @@ pub struct RefreshPreferences {
     /// </dd>
     /// </dl>
     pub standby_instances: ::std::option::Option<crate::types::StandbyInstances>,
+    /// <p>(Optional) The CloudWatch alarm specification. CloudWatch alarms can be used to identify any issues and fail the operation if an alarm threshold is met.</p>
+    pub alarm_specification: ::std::option::Option<crate::types::AlarmSpecification>,
 }
 impl RefreshPreferences {
     /// <p>The amount of capacity in the Auto Scaling group that must pass your group's health checks to allow the operation to continue. The value is expressed as a percentage of the desired capacity of the Auto Scaling group (rounded up to the nearest integer). The default is <code>90</code>.</p>
@@ -100,13 +103,14 @@ impl RefreshPreferences {
     pub fn skip_matching(&self) -> ::std::option::Option<bool> {
         self.skip_matching
     }
-    /// <p>(Optional) Indicates whether to roll back the Auto Scaling group to its previous configuration if the instance refresh fails. The default is <code>false</code>.</p>
+    /// <p>(Optional) Indicates whether to roll back the Auto Scaling group to its previous configuration if the instance refresh fails or a CloudWatch alarm threshold is met. The default is <code>false</code>.</p>
     /// <p>A rollback is not supported in the following situations: </p>
     /// <ul>
     /// <li> <p>There is no desired configuration specified for the instance refresh.</p> </li>
     /// <li> <p>The Auto Scaling group has a launch template that uses an Amazon Web Services Systems Manager parameter instead of an AMI ID for the <code>ImageId</code> property.</p> </li>
     /// <li> <p>The Auto Scaling group uses the launch template's <code>$Latest</code> or <code>$Default</code> version.</p> </li>
     /// </ul>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/instance-refresh-rollback.html">Undo changes with a rollback</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     pub fn auto_rollback(&self) -> ::std::option::Option<bool> {
         self.auto_rollback
     }
@@ -160,6 +164,10 @@ impl RefreshPreferences {
     pub fn standby_instances(&self) -> ::std::option::Option<&crate::types::StandbyInstances> {
         self.standby_instances.as_ref()
     }
+    /// <p>(Optional) The CloudWatch alarm specification. CloudWatch alarms can be used to identify any issues and fail the operation if an alarm threshold is met.</p>
+    pub fn alarm_specification(&self) -> ::std::option::Option<&crate::types::AlarmSpecification> {
+        self.alarm_specification.as_ref()
+    }
 }
 impl RefreshPreferences {
     /// Creates a new builder-style object to manufacture [`RefreshPreferences`](crate::types::RefreshPreferences).
@@ -180,6 +188,7 @@ pub struct RefreshPreferencesBuilder {
     pub(crate) auto_rollback: ::std::option::Option<bool>,
     pub(crate) scale_in_protected_instances: ::std::option::Option<crate::types::ScaleInProtectedInstances>,
     pub(crate) standby_instances: ::std::option::Option<crate::types::StandbyInstances>,
+    pub(crate) alarm_specification: ::std::option::Option<crate::types::AlarmSpecification>,
 }
 impl RefreshPreferencesBuilder {
     /// <p>The amount of capacity in the Auto Scaling group that must pass your group's health checks to allow the operation to continue. The value is expressed as a percentage of the desired capacity of the Auto Scaling group (rounded up to the nearest integer). The default is <code>90</code>.</p>
@@ -273,35 +282,38 @@ impl RefreshPreferencesBuilder {
     pub fn get_skip_matching(&self) -> &::std::option::Option<bool> {
         &self.skip_matching
     }
-    /// <p>(Optional) Indicates whether to roll back the Auto Scaling group to its previous configuration if the instance refresh fails. The default is <code>false</code>.</p>
+    /// <p>(Optional) Indicates whether to roll back the Auto Scaling group to its previous configuration if the instance refresh fails or a CloudWatch alarm threshold is met. The default is <code>false</code>.</p>
     /// <p>A rollback is not supported in the following situations: </p>
     /// <ul>
     /// <li> <p>There is no desired configuration specified for the instance refresh.</p> </li>
     /// <li> <p>The Auto Scaling group has a launch template that uses an Amazon Web Services Systems Manager parameter instead of an AMI ID for the <code>ImageId</code> property.</p> </li>
     /// <li> <p>The Auto Scaling group uses the launch template's <code>$Latest</code> or <code>$Default</code> version.</p> </li>
     /// </ul>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/instance-refresh-rollback.html">Undo changes with a rollback</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     pub fn auto_rollback(mut self, input: bool) -> Self {
         self.auto_rollback = ::std::option::Option::Some(input);
         self
     }
-    /// <p>(Optional) Indicates whether to roll back the Auto Scaling group to its previous configuration if the instance refresh fails. The default is <code>false</code>.</p>
+    /// <p>(Optional) Indicates whether to roll back the Auto Scaling group to its previous configuration if the instance refresh fails or a CloudWatch alarm threshold is met. The default is <code>false</code>.</p>
     /// <p>A rollback is not supported in the following situations: </p>
     /// <ul>
     /// <li> <p>There is no desired configuration specified for the instance refresh.</p> </li>
     /// <li> <p>The Auto Scaling group has a launch template that uses an Amazon Web Services Systems Manager parameter instead of an AMI ID for the <code>ImageId</code> property.</p> </li>
     /// <li> <p>The Auto Scaling group uses the launch template's <code>$Latest</code> or <code>$Default</code> version.</p> </li>
     /// </ul>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/instance-refresh-rollback.html">Undo changes with a rollback</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     pub fn set_auto_rollback(mut self, input: ::std::option::Option<bool>) -> Self {
         self.auto_rollback = input;
         self
     }
-    /// <p>(Optional) Indicates whether to roll back the Auto Scaling group to its previous configuration if the instance refresh fails. The default is <code>false</code>.</p>
+    /// <p>(Optional) Indicates whether to roll back the Auto Scaling group to its previous configuration if the instance refresh fails or a CloudWatch alarm threshold is met. The default is <code>false</code>.</p>
     /// <p>A rollback is not supported in the following situations: </p>
     /// <ul>
     /// <li> <p>There is no desired configuration specified for the instance refresh.</p> </li>
     /// <li> <p>The Auto Scaling group has a launch template that uses an Amazon Web Services Systems Manager parameter instead of an AMI ID for the <code>ImageId</code> property.</p> </li>
     /// <li> <p>The Auto Scaling group uses the launch template's <code>$Latest</code> or <code>$Default</code> version.</p> </li>
     /// </ul>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/instance-refresh-rollback.html">Undo changes with a rollback</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     pub fn get_auto_rollback(&self) -> &::std::option::Option<bool> {
         &self.auto_rollback
     }
@@ -459,6 +471,20 @@ impl RefreshPreferencesBuilder {
     pub fn get_standby_instances(&self) -> &::std::option::Option<crate::types::StandbyInstances> {
         &self.standby_instances
     }
+    /// <p>(Optional) The CloudWatch alarm specification. CloudWatch alarms can be used to identify any issues and fail the operation if an alarm threshold is met.</p>
+    pub fn alarm_specification(mut self, input: crate::types::AlarmSpecification) -> Self {
+        self.alarm_specification = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>(Optional) The CloudWatch alarm specification. CloudWatch alarms can be used to identify any issues and fail the operation if an alarm threshold is met.</p>
+    pub fn set_alarm_specification(mut self, input: ::std::option::Option<crate::types::AlarmSpecification>) -> Self {
+        self.alarm_specification = input;
+        self
+    }
+    /// <p>(Optional) The CloudWatch alarm specification. CloudWatch alarms can be used to identify any issues and fail the operation if an alarm threshold is met.</p>
+    pub fn get_alarm_specification(&self) -> &::std::option::Option<crate::types::AlarmSpecification> {
+        &self.alarm_specification
+    }
     /// Consumes the builder and constructs a [`RefreshPreferences`](crate::types::RefreshPreferences).
     pub fn build(self) -> crate::types::RefreshPreferences {
         crate::types::RefreshPreferences {
@@ -470,6 +496,7 @@ impl RefreshPreferencesBuilder {
             auto_rollback: self.auto_rollback,
             scale_in_protected_instances: self.scale_in_protected_instances,
             standby_instances: self.standby_instances,
+            alarm_specification: self.alarm_specification,
         }
     }
 }

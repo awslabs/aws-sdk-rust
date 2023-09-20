@@ -46,23 +46,23 @@ pub fn ser_describe_db_engine_versions_input_input(
     }
     #[allow(unused_mut)]
     let mut scope_16 = writer.prefix("DefaultOnly");
-    if input.default_only {
-        scope_16.boolean(input.default_only);
+    if let Some(var_17) = &input.default_only {
+        scope_16.boolean(*var_17);
     }
     #[allow(unused_mut)]
-    let mut scope_17 = writer.prefix("ListSupportedCharacterSets");
-    if let Some(var_18) = &input.list_supported_character_sets {
-        scope_17.boolean(*var_18);
+    let mut scope_18 = writer.prefix("ListSupportedCharacterSets");
+    if let Some(var_19) = &input.list_supported_character_sets {
+        scope_18.boolean(*var_19);
     }
     #[allow(unused_mut)]
-    let mut scope_19 = writer.prefix("ListSupportedTimezones");
-    if let Some(var_20) = &input.list_supported_timezones {
-        scope_19.boolean(*var_20);
+    let mut scope_20 = writer.prefix("ListSupportedTimezones");
+    if let Some(var_21) = &input.list_supported_timezones {
+        scope_20.boolean(*var_21);
     }
     #[allow(unused_mut)]
-    let mut scope_21 = writer.prefix("IncludeAll");
-    if let Some(var_22) = &input.include_all {
-        scope_21.boolean(*var_22);
+    let mut scope_22 = writer.prefix("IncludeAll");
+    if let Some(var_23) = &input.include_all {
+        scope_22.boolean(*var_23);
     }
     writer.finish();
     Ok(::aws_smithy_http::body::SdkBody::from(out))

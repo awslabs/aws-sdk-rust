@@ -15,5 +15,11 @@ pub fn ser_list_users_input(
             ::aws_smithy_types::Number::NegInt((*var_3).into()),
         );
     }
+    if let Some(var_4) = &input.filters {
+        #[allow(unused_mut)]
+        let mut object_5 = object.key("Filters").start_object();
+        crate::protocol_serde::shape_list_users_filters::ser_list_users_filters(&mut object_5, var_4)?;
+        object_5.finish();
+    }
     Ok(())
 }

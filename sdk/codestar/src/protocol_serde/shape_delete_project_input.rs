@@ -9,8 +9,8 @@ pub fn ser_delete_project_input(
     if let Some(var_2) = &input.client_request_token {
         object.key("clientRequestToken").string(var_2.as_str());
     }
-    if input.delete_stack {
-        object.key("deleteStack").boolean(input.delete_stack);
+    if let Some(var_3) = &input.delete_stack {
+        object.key("deleteStack").boolean(*var_3);
     }
     Ok(())
 }

@@ -60,7 +60,7 @@ pub struct PostgreSqlSettings {
     pub map_jsonb_as_clob: ::std::option::Option<bool>,
     /// <p>When true, DMS migrates LONG values as VARCHAR.</p>
     pub map_long_varchar_as: ::std::option::Option<crate::types::LongVarcharMappingType>,
-    /// <p>Specifies whether to use default or custom replication behavior for PostgreSQL-compatible endpoints. You can use this setting to specify replication behavior for endpoints that require additional configuration, such as Babelfish endpoints.</p>
+    /// <p>Specifies the default behavior of the replication's handling of PostgreSQL- compatible endpoints that require some additional configuration, such as Babelfish endpoints.</p>
     pub database_mode: ::std::option::Option<crate::types::DatabaseMode>,
     /// <p>The Babelfish for Aurora PostgreSQL database name for the endpoint.</p>
     pub babelfish_database_name: ::std::option::Option<::std::string::String>,
@@ -166,7 +166,7 @@ impl PostgreSqlSettings {
     pub fn map_long_varchar_as(&self) -> ::std::option::Option<&crate::types::LongVarcharMappingType> {
         self.map_long_varchar_as.as_ref()
     }
-    /// <p>Specifies whether to use default or custom replication behavior for PostgreSQL-compatible endpoints. You can use this setting to specify replication behavior for endpoints that require additional configuration, such as Babelfish endpoints.</p>
+    /// <p>Specifies the default behavior of the replication's handling of PostgreSQL- compatible endpoints that require some additional configuration, such as Babelfish endpoints.</p>
     pub fn database_mode(&self) -> ::std::option::Option<&crate::types::DatabaseMode> {
         self.database_mode.as_ref()
     }
@@ -586,17 +586,17 @@ impl PostgreSqlSettingsBuilder {
     pub fn get_map_long_varchar_as(&self) -> &::std::option::Option<crate::types::LongVarcharMappingType> {
         &self.map_long_varchar_as
     }
-    /// <p>Specifies whether to use default or custom replication behavior for PostgreSQL-compatible endpoints. You can use this setting to specify replication behavior for endpoints that require additional configuration, such as Babelfish endpoints.</p>
+    /// <p>Specifies the default behavior of the replication's handling of PostgreSQL- compatible endpoints that require some additional configuration, such as Babelfish endpoints.</p>
     pub fn database_mode(mut self, input: crate::types::DatabaseMode) -> Self {
         self.database_mode = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies whether to use default or custom replication behavior for PostgreSQL-compatible endpoints. You can use this setting to specify replication behavior for endpoints that require additional configuration, such as Babelfish endpoints.</p>
+    /// <p>Specifies the default behavior of the replication's handling of PostgreSQL- compatible endpoints that require some additional configuration, such as Babelfish endpoints.</p>
     pub fn set_database_mode(mut self, input: ::std::option::Option<crate::types::DatabaseMode>) -> Self {
         self.database_mode = input;
         self
     }
-    /// <p>Specifies whether to use default or custom replication behavior for PostgreSQL-compatible endpoints. You can use this setting to specify replication behavior for endpoints that require additional configuration, such as Babelfish endpoints.</p>
+    /// <p>Specifies the default behavior of the replication's handling of PostgreSQL- compatible endpoints that require some additional configuration, such as Babelfish endpoints.</p>
     pub fn get_database_mode(&self) -> &::std::option::Option<crate::types::DatabaseMode> {
         &self.database_mode
     }

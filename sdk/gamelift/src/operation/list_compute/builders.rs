@@ -22,7 +22,9 @@ impl ListComputeInputBuilder {
 }
 /// Fluent builder constructing a request to `ListCompute`.
 ///
-/// <p>Retrieves all compute resources registered to a fleet in your Amazon Web Services account. You can filter the result set by location.</p>
+/// <p>Retrieves the compute resources in an Amazon GameLift fleet. You can request information for either managed EC2 fleets or Anywhere fleets. </p>
+/// <p>To request a list of computes, specify the fleet ID. You can filter the result set by location. Use the pagination parameters to retrieve results in a set of sequential pages.</p>
+/// <p>If successful, this operation returns the compute resource for the requested fleet. For managed EC2 fleets, it returns a list of EC2 instances. For Anywhere fleets, it returns a list of registered compute names.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListComputeFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -116,31 +118,31 @@ impl ListComputeFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_compute::paginator::ListComputePaginator {
         crate::operation::list_compute::paginator::ListComputePaginator::new(self.handle, self.inner)
     }
-    /// <p>A unique identifier for the fleet the compute resources are registered to.</p>
+    /// <p>A unique identifier for the fleet to retrieve compute resources for.</p>
     pub fn fleet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.fleet_id(input.into());
         self
     }
-    /// <p>A unique identifier for the fleet the compute resources are registered to.</p>
+    /// <p>A unique identifier for the fleet to retrieve compute resources for.</p>
     pub fn set_fleet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_fleet_id(input);
         self
     }
-    /// <p>A unique identifier for the fleet the compute resources are registered to.</p>
+    /// <p>A unique identifier for the fleet to retrieve compute resources for.</p>
     pub fn get_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_fleet_id()
     }
-    /// <p>The name of the custom location that the compute resources are assigned to.</p>
+    /// <p>The name of a location to retrieve compute resources for.</p>
     pub fn location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.location(input.into());
         self
     }
-    /// <p>The name of the custom location that the compute resources are assigned to.</p>
+    /// <p>The name of a location to retrieve compute resources for.</p>
     pub fn set_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_location(input);
         self
     }
-    /// <p>The name of the custom location that the compute resources are assigned to.</p>
+    /// <p>The name of a location to retrieve compute resources for.</p>
     pub fn get_location(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_location()
     }

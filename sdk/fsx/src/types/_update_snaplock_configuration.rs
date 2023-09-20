@@ -10,7 +10,7 @@ pub struct UpdateSnaplockConfiguration {
     /// <p>The configuration object for setting the autocommit period of files in an FSx for ONTAP SnapLock volume. </p>
     pub autocommit_period: ::std::option::Option<crate::types::AutocommitPeriod>,
     /// <p>Enables, disables, or permanently disables privileged delete on an FSx for ONTAP SnapLock Enterprise volume. Enabling privileged delete allows SnapLock administrators to delete write once, read many (WORM) files even if they have active retention periods. <code>PERMANENTLY_DISABLED</code> is a terminal state. If privileged delete is permanently disabled on a SnapLock volume, you can't re-enable it. The default value is <code>DISABLED</code>. </p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/how-snaplock-works.html#privileged-delete">Privileged delete</a>. </p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snaplock-enterprise.html#privileged-delete">Privileged delete</a>. </p>
     pub privileged_delete: ::std::option::Option<crate::types::PrivilegedDelete>,
     /// <p>Specifies the retention period of an FSx for ONTAP SnapLock volume. </p>
     pub retention_period: ::std::option::Option<crate::types::SnaplockRetentionPeriod>,
@@ -29,7 +29,7 @@ impl UpdateSnaplockConfiguration {
         self.autocommit_period.as_ref()
     }
     /// <p>Enables, disables, or permanently disables privileged delete on an FSx for ONTAP SnapLock Enterprise volume. Enabling privileged delete allows SnapLock administrators to delete write once, read many (WORM) files even if they have active retention periods. <code>PERMANENTLY_DISABLED</code> is a terminal state. If privileged delete is permanently disabled on a SnapLock volume, you can't re-enable it. The default value is <code>DISABLED</code>. </p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/how-snaplock-works.html#privileged-delete">Privileged delete</a>. </p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snaplock-enterprise.html#privileged-delete">Privileged delete</a>. </p>
     pub fn privileged_delete(&self) -> ::std::option::Option<&crate::types::PrivilegedDelete> {
         self.privileged_delete.as_ref()
     }
@@ -93,19 +93,19 @@ impl UpdateSnaplockConfigurationBuilder {
         &self.autocommit_period
     }
     /// <p>Enables, disables, or permanently disables privileged delete on an FSx for ONTAP SnapLock Enterprise volume. Enabling privileged delete allows SnapLock administrators to delete write once, read many (WORM) files even if they have active retention periods. <code>PERMANENTLY_DISABLED</code> is a terminal state. If privileged delete is permanently disabled on a SnapLock volume, you can't re-enable it. The default value is <code>DISABLED</code>. </p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/how-snaplock-works.html#privileged-delete">Privileged delete</a>. </p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snaplock-enterprise.html#privileged-delete">Privileged delete</a>. </p>
     pub fn privileged_delete(mut self, input: crate::types::PrivilegedDelete) -> Self {
         self.privileged_delete = ::std::option::Option::Some(input);
         self
     }
     /// <p>Enables, disables, or permanently disables privileged delete on an FSx for ONTAP SnapLock Enterprise volume. Enabling privileged delete allows SnapLock administrators to delete write once, read many (WORM) files even if they have active retention periods. <code>PERMANENTLY_DISABLED</code> is a terminal state. If privileged delete is permanently disabled on a SnapLock volume, you can't re-enable it. The default value is <code>DISABLED</code>. </p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/how-snaplock-works.html#privileged-delete">Privileged delete</a>. </p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snaplock-enterprise.html#privileged-delete">Privileged delete</a>. </p>
     pub fn set_privileged_delete(mut self, input: ::std::option::Option<crate::types::PrivilegedDelete>) -> Self {
         self.privileged_delete = input;
         self
     }
     /// <p>Enables, disables, or permanently disables privileged delete on an FSx for ONTAP SnapLock Enterprise volume. Enabling privileged delete allows SnapLock administrators to delete write once, read many (WORM) files even if they have active retention periods. <code>PERMANENTLY_DISABLED</code> is a terminal state. If privileged delete is permanently disabled on a SnapLock volume, you can't re-enable it. The default value is <code>DISABLED</code>. </p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/how-snaplock-works.html#privileged-delete">Privileged delete</a>. </p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snaplock-enterprise.html#privileged-delete">Privileged delete</a>. </p>
     pub fn get_privileged_delete(&self) -> &::std::option::Option<crate::types::PrivilegedDelete> {
         &self.privileged_delete
     }

@@ -497,6 +497,10 @@ pub(crate) mod shape_s3_output_format_config;
 
 pub(crate) mod shape_salesforce_data_transfer_api_list;
 
+pub(crate) mod shape_sapo_data_pagination_config;
+
+pub(crate) mod shape_sapo_data_parallelism_config;
+
 pub(crate) mod shape_success_response_handling_config;
 
 pub(crate) mod shape_token_url_list;

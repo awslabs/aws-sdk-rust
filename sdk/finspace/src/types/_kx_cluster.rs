@@ -35,7 +35,7 @@ pub struct KxCluster {
     pub initialization_script: ::std::option::Option<::std::string::String>,
     /// <p> An IAM role that defines a set of permissions associated with a cluster. These permissions are assumed when a cluster attempts to access another cluster. </p>
     pub execution_role: ::std::option::Option<::std::string::String>,
-    /// <p>The number of availability zones assigned per cluster. This can be one of the following </p>
+    /// <p>The number of availability zones assigned per cluster. This can be one of the following:</p>
     /// <ul>
     /// <li> <p> <code>SINGLE</code> – Assigns one availability zone per cluster.</p> </li>
     /// <li> <p> <code>MULTI</code> – Assigns all the availability zones per cluster.</p> </li>
@@ -96,7 +96,7 @@ impl KxCluster {
     pub fn execution_role(&self) -> ::std::option::Option<&str> {
         self.execution_role.as_deref()
     }
-    /// <p>The number of availability zones assigned per cluster. This can be one of the following </p>
+    /// <p>The number of availability zones assigned per cluster. This can be one of the following:</p>
     /// <ul>
     /// <li> <p> <code>SINGLE</code> – Assigns one availability zone per cluster.</p> </li>
     /// <li> <p> <code>MULTI</code> – Assigns all the availability zones per cluster.</p> </li>
@@ -299,7 +299,7 @@ impl KxClusterBuilder {
     pub fn get_execution_role(&self) -> &::std::option::Option<::std::string::String> {
         &self.execution_role
     }
-    /// <p>The number of availability zones assigned per cluster. This can be one of the following </p>
+    /// <p>The number of availability zones assigned per cluster. This can be one of the following:</p>
     /// <ul>
     /// <li> <p> <code>SINGLE</code> – Assigns one availability zone per cluster.</p> </li>
     /// <li> <p> <code>MULTI</code> – Assigns all the availability zones per cluster.</p> </li>
@@ -308,7 +308,7 @@ impl KxClusterBuilder {
         self.az_mode = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of availability zones assigned per cluster. This can be one of the following </p>
+    /// <p>The number of availability zones assigned per cluster. This can be one of the following:</p>
     /// <ul>
     /// <li> <p> <code>SINGLE</code> – Assigns one availability zone per cluster.</p> </li>
     /// <li> <p> <code>MULTI</code> – Assigns all the availability zones per cluster.</p> </li>
@@ -317,7 +317,7 @@ impl KxClusterBuilder {
         self.az_mode = input;
         self
     }
-    /// <p>The number of availability zones assigned per cluster. This can be one of the following </p>
+    /// <p>The number of availability zones assigned per cluster. This can be one of the following:</p>
     /// <ul>
     /// <li> <p> <code>SINGLE</code> – Assigns one availability zone per cluster.</p> </li>
     /// <li> <p> <code>MULTI</code> – Assigns all the availability zones per cluster.</p> </li>

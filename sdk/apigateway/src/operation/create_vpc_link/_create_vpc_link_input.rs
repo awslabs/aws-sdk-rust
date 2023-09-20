@@ -8,7 +8,7 @@ pub struct CreateVpcLinkInput {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the VPC link.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>The ARN of the network load balancer of the VPC targeted by the VPC link. The network load balancer must be owned by the same AWS account of the API owner.</p>
+    /// <p>The ARN of the network load balancer of the VPC targeted by the VPC link. The network load balancer must be owned by the same Amazon Web Services account of the API owner.</p>
     pub target_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters and must not start with <code>aws:</code>. The tag value can be up to 256 characters.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -22,7 +22,7 @@ impl CreateVpcLinkInput {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The ARN of the network load balancer of the VPC targeted by the VPC link. The network load balancer must be owned by the same AWS account of the API owner.</p>
+    /// <p>The ARN of the network load balancer of the VPC targeted by the VPC link. The network load balancer must be owned by the same Amazon Web Services account of the API owner.</p>
     pub fn target_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.target_arns.as_deref()
     }
@@ -80,19 +80,19 @@ impl CreateVpcLinkInputBuilder {
     ///
     /// To override the contents of this collection use [`set_target_arns`](Self::set_target_arns).
     ///
-    /// <p>The ARN of the network load balancer of the VPC targeted by the VPC link. The network load balancer must be owned by the same AWS account of the API owner.</p>
+    /// <p>The ARN of the network load balancer of the VPC targeted by the VPC link. The network load balancer must be owned by the same Amazon Web Services account of the API owner.</p>
     pub fn target_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.target_arns.unwrap_or_default();
         v.push(input.into());
         self.target_arns = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The ARN of the network load balancer of the VPC targeted by the VPC link. The network load balancer must be owned by the same AWS account of the API owner.</p>
+    /// <p>The ARN of the network load balancer of the VPC targeted by the VPC link. The network load balancer must be owned by the same Amazon Web Services account of the API owner.</p>
     pub fn set_target_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.target_arns = input;
         self
     }
-    /// <p>The ARN of the network load balancer of the VPC targeted by the VPC link. The network load balancer must be owned by the same AWS account of the API owner.</p>
+    /// <p>The ARN of the network load balancer of the VPC targeted by the VPC link. The network load balancer must be owned by the same Amazon Web Services account of the API owner.</p>
     pub fn get_target_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.target_arns
     }

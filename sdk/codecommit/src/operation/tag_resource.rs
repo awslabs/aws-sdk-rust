@@ -260,7 +260,7 @@ pub enum TagResourceError {
     /// <p>This exception occurs only when a specified repository name is not valid. Other exceptions occur when a required repository parameter is missing, or when a specified repository does not exist.</p>
     /// </note>
     InvalidRepositoryNameException(crate::types::error::InvalidRepositoryNameException),
-    /// <p>The value for the resource ARN is not valid. For more information about resources in AWS CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats">CodeCommit Resources and Operations</a> in the AWS CodeCommit User Guide.</p>
+    /// <p>The value for the resource ARN is not valid. For more information about resources in CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats">CodeCommit Resources and Operations</a> in the CodeCommit User Guide.</p>
     InvalidResourceArnException(crate::types::error::InvalidResourceArnException),
     /// <p>The specified tag is not valid. Key names cannot be prefixed with aws:.</p>
     InvalidSystemTagUsageException(crate::types::error::InvalidSystemTagUsageException),
@@ -268,13 +268,13 @@ pub enum TagResourceError {
     InvalidTagsMapException(crate::types::error::InvalidTagsMapException),
     /// <p>The specified repository does not exist.</p>
     RepositoryDoesNotExistException(crate::types::error::RepositoryDoesNotExistException),
-    /// <p>A valid Amazon Resource Name (ARN) for an AWS CodeCommit resource is required. For a list of valid resources in AWS CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats">CodeCommit Resources and Operations</a> in the AWS CodeCommit User Guide.</p>
+    /// <p>A valid Amazon Resource Name (ARN) for an CodeCommit resource is required. For a list of valid resources in CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats">CodeCommit Resources and Operations</a> in the CodeCommit User Guide.</p>
     ResourceArnRequiredException(crate::types::error::ResourceArnRequiredException),
     /// <p>The tag policy is not valid.</p>
     TagPolicyException(crate::types::error::TagPolicyException),
     /// <p>A map of tags is required.</p>
     TagsMapRequiredException(crate::types::error::TagsMapRequiredException),
-    /// <p>The maximum number of tags for an AWS CodeCommit resource has been exceeded.</p>
+    /// <p>The maximum number of tags for an CodeCommit resource has been exceeded.</p>
     TooManyTagsException(crate::types::error::TooManyTagsException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(::aws_smithy_types::error::Unhandled),

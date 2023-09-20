@@ -14,7 +14,7 @@ pub struct TopicColumn {
     pub column_synonyms: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The role of the column in the data. Valid values are <code>DIMENSION</code> and <code>MEASURE</code>.</p>
     pub column_data_role: ::std::option::Option<crate::types::ColumnDataRole>,
-    /// <p>The type of aggregation that is performed on the column data when it's queried. Valid values for this structure are <code>SUM</code>, <code>MAX</code>, <code>MIN</code>, <code>COUNT</code>, <code>DISTINCT_COUNT</code>, and <code>AVERAGE</code>.</p>
+    /// <p>The type of aggregation that is performed on the column data when it's queried.</p>
     pub aggregation: ::std::option::Option<crate::types::DefaultAggregation>,
     /// <p>A Boolean value that indicates whether the column is included in the query results.</p>
     pub is_included_in_topic: bool,
@@ -36,6 +36,8 @@ pub struct TopicColumn {
     pub never_aggregate_in_filter: bool,
     /// <p>The other names or aliases for the column cell value.</p>
     pub cell_value_synonyms: ::std::option::Option<::std::vec::Vec<crate::types::CellValueSynonym>>,
+    /// <p>The non additive value for the column.</p>
+    pub non_additive: ::std::option::Option<bool>,
 }
 impl TopicColumn {
     /// <p>The name of the column.</p>
@@ -58,7 +60,7 @@ impl TopicColumn {
     pub fn column_data_role(&self) -> ::std::option::Option<&crate::types::ColumnDataRole> {
         self.column_data_role.as_ref()
     }
-    /// <p>The type of aggregation that is performed on the column data when it's queried. Valid values for this structure are <code>SUM</code>, <code>MAX</code>, <code>MIN</code>, <code>COUNT</code>, <code>DISTINCT_COUNT</code>, and <code>AVERAGE</code>.</p>
+    /// <p>The type of aggregation that is performed on the column data when it's queried.</p>
     pub fn aggregation(&self) -> ::std::option::Option<&crate::types::DefaultAggregation> {
         self.aggregation.as_ref()
     }
@@ -102,6 +104,10 @@ impl TopicColumn {
     pub fn cell_value_synonyms(&self) -> ::std::option::Option<&[crate::types::CellValueSynonym]> {
         self.cell_value_synonyms.as_deref()
     }
+    /// <p>The non additive value for the column.</p>
+    pub fn non_additive(&self) -> ::std::option::Option<bool> {
+        self.non_additive
+    }
 }
 impl TopicColumn {
     /// Creates a new builder-style object to manufacture [`TopicColumn`](crate::types::TopicColumn).
@@ -130,6 +136,7 @@ pub struct TopicColumnBuilder {
     pub(crate) default_formatting: ::std::option::Option<crate::types::DefaultFormatting>,
     pub(crate) never_aggregate_in_filter: ::std::option::Option<bool>,
     pub(crate) cell_value_synonyms: ::std::option::Option<::std::vec::Vec<crate::types::CellValueSynonym>>,
+    pub(crate) non_additive: ::std::option::Option<bool>,
 }
 impl TopicColumnBuilder {
     /// <p>The name of the column.</p>
@@ -208,17 +215,17 @@ impl TopicColumnBuilder {
     pub fn get_column_data_role(&self) -> &::std::option::Option<crate::types::ColumnDataRole> {
         &self.column_data_role
     }
-    /// <p>The type of aggregation that is performed on the column data when it's queried. Valid values for this structure are <code>SUM</code>, <code>MAX</code>, <code>MIN</code>, <code>COUNT</code>, <code>DISTINCT_COUNT</code>, and <code>AVERAGE</code>.</p>
+    /// <p>The type of aggregation that is performed on the column data when it's queried.</p>
     pub fn aggregation(mut self, input: crate::types::DefaultAggregation) -> Self {
         self.aggregation = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of aggregation that is performed on the column data when it's queried. Valid values for this structure are <code>SUM</code>, <code>MAX</code>, <code>MIN</code>, <code>COUNT</code>, <code>DISTINCT_COUNT</code>, and <code>AVERAGE</code>.</p>
+    /// <p>The type of aggregation that is performed on the column data when it's queried.</p>
     pub fn set_aggregation(mut self, input: ::std::option::Option<crate::types::DefaultAggregation>) -> Self {
         self.aggregation = input;
         self
     }
-    /// <p>The type of aggregation that is performed on the column data when it's queried. Valid values for this structure are <code>SUM</code>, <code>MAX</code>, <code>MIN</code>, <code>COUNT</code>, <code>DISTINCT_COUNT</code>, and <code>AVERAGE</code>.</p>
+    /// <p>The type of aggregation that is performed on the column data when it's queried.</p>
     pub fn get_aggregation(&self) -> &::std::option::Option<crate::types::DefaultAggregation> {
         &self.aggregation
     }
@@ -380,6 +387,20 @@ impl TopicColumnBuilder {
     pub fn get_cell_value_synonyms(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CellValueSynonym>> {
         &self.cell_value_synonyms
     }
+    /// <p>The non additive value for the column.</p>
+    pub fn non_additive(mut self, input: bool) -> Self {
+        self.non_additive = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The non additive value for the column.</p>
+    pub fn set_non_additive(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.non_additive = input;
+        self
+    }
+    /// <p>The non additive value for the column.</p>
+    pub fn get_non_additive(&self) -> &::std::option::Option<bool> {
+        &self.non_additive
+    }
     /// Consumes the builder and constructs a [`TopicColumn`](crate::types::TopicColumn).
     pub fn build(self) -> crate::types::TopicColumn {
         crate::types::TopicColumn {
@@ -399,6 +420,7 @@ impl TopicColumnBuilder {
             default_formatting: self.default_formatting,
             never_aggregate_in_filter: self.never_aggregate_in_filter.unwrap_or_default(),
             cell_value_synonyms: self.cell_value_synonyms,
+            non_additive: self.non_additive,
         }
     }
 }

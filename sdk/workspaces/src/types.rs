@@ -91,6 +91,10 @@ pub use crate::types::_modification_resource_enum::ModificationResourceEnum;
 
 pub use crate::types::_workspace_image::WorkspaceImage;
 
+pub use crate::types::_error_details::ErrorDetails;
+
+pub use crate::types::_workspace_image_error_detail_code::WorkspaceImageErrorDetailCode;
+
 pub use crate::types::_update_result::UpdateResult;
 
 pub use crate::types::_workspace_image_required_tenancy::WorkspaceImageRequiredTenancy;
@@ -209,6 +213,8 @@ mod _deletable_certificate_based_auth_property;
 
 mod _deletable_saml_property;
 
+mod _error_details;
+
 mod _failed_create_standby_workspaces_request;
 
 mod _failed_create_workspace_request;
@@ -300,6 +306,8 @@ mod _workspace_directory_state;
 mod _workspace_directory_type;
 
 mod _workspace_image;
+
+mod _workspace_image_error_detail_code;
 
 mod _workspace_image_ingestion_process;
 

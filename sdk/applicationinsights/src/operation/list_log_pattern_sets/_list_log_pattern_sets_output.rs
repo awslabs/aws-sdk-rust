@@ -5,6 +5,8 @@
 pub struct ListLogPatternSetsOutput {
     /// <p>The name of the resource group.</p>
     pub resource_group_name: ::std::option::Option<::std::string::String>,
+    /// <p>The AWS account ID for the resource group owner.</p>
+    pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The list of log pattern sets.</p>
     pub log_pattern_sets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The token used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return. </p>
@@ -15,6 +17,10 @@ impl ListLogPatternSetsOutput {
     /// <p>The name of the resource group.</p>
     pub fn resource_group_name(&self) -> ::std::option::Option<&str> {
         self.resource_group_name.as_deref()
+    }
+    /// <p>The AWS account ID for the resource group owner.</p>
+    pub fn account_id(&self) -> ::std::option::Option<&str> {
+        self.account_id.as_deref()
     }
     /// <p>The list of log pattern sets.</p>
     pub fn log_pattern_sets(&self) -> ::std::option::Option<&[::std::string::String]> {
@@ -42,6 +48,7 @@ impl ListLogPatternSetsOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListLogPatternSetsOutputBuilder {
     pub(crate) resource_group_name: ::std::option::Option<::std::string::String>,
+    pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) log_pattern_sets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -60,6 +67,20 @@ impl ListLogPatternSetsOutputBuilder {
     /// <p>The name of the resource group.</p>
     pub fn get_resource_group_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_group_name
+    }
+    /// <p>The AWS account ID for the resource group owner.</p>
+    pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.account_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The AWS account ID for the resource group owner.</p>
+    pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.account_id = input;
+        self
+    }
+    /// <p>The AWS account ID for the resource group owner.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
     }
     /// Appends an item to `log_pattern_sets`.
     ///
@@ -108,6 +129,7 @@ impl ListLogPatternSetsOutputBuilder {
     pub fn build(self) -> crate::operation::list_log_pattern_sets::ListLogPatternSetsOutput {
         crate::operation::list_log_pattern_sets::ListLogPatternSetsOutput {
             resource_group_name: self.resource_group_name,
+            account_id: self.account_id,
             log_pattern_sets: self.log_pattern_sets,
             next_token: self.next_token,
             _request_id: self._request_id,

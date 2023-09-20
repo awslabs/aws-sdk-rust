@@ -22,7 +22,7 @@ impl DescribeLocationNfsInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeLocationNfs`.
 ///
-/// <p>Returns metadata, such as the path information, about an NFS location.</p>
+/// <p>Provides details about how an DataSync transfer location for a Network File System (NFS) file server is configured.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeLocationNfsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -110,17 +110,17 @@ impl DescribeLocationNfsFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the NFS location to describe.</p>
+    /// <p>Specifies the Amazon Resource Name (ARN) of the NFS location that you want information about.</p>
     pub fn location_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.location_arn(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the NFS location to describe.</p>
+    /// <p>Specifies the Amazon Resource Name (ARN) of the NFS location that you want information about.</p>
     pub fn set_location_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_location_arn(input);
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the NFS location to describe.</p>
+    /// <p>Specifies the Amazon Resource Name (ARN) of the NFS location that you want information about.</p>
     pub fn get_location_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_location_arn()
     }

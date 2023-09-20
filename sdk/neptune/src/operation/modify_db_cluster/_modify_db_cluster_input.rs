@@ -21,7 +21,7 @@ pub struct ModifyDbClusterInput {
     /// <p>A value that specifies whether the modifications in this request and any pending modifications are asynchronously applied as soon as possible, regardless of the <code>PreferredMaintenanceWindow</code> setting for the DB cluster. If this parameter is set to <code>false</code>, changes to the DB cluster are applied during the next maintenance window.</p>
     /// <p>The <code>ApplyImmediately</code> parameter only affects <code>NewDBClusterIdentifier</code> values. If you set the <code>ApplyImmediately</code> parameter value to false, then changes to <code>NewDBClusterIdentifier</code> values are applied during the next maintenance window. All other changes are applied immediately, regardless of the value of the <code>ApplyImmediately</code> parameter.</p>
     /// <p>Default: <code>false</code> </p>
-    pub apply_immediately: bool,
+    pub apply_immediately: ::std::option::Option<bool>,
     /// <p>The number of days for which automated backups are retained. You must specify a minimum value of 1.</p>
     /// <p>Default: 1</p>
     /// <p>Constraints:</p>
@@ -67,7 +67,7 @@ pub struct ModifyDbClusterInput {
     pub engine_version: ::std::option::Option<::std::string::String>,
     /// <p>A value that indicates whether upgrades between different major versions are allowed.</p>
     /// <p>Constraints: You must set the allow-major-version-upgrade flag when providing an <code>EngineVersion</code> parameter that uses a different major version than the DB cluster's current version.</p>
-    pub allow_major_version_upgrade: bool,
+    pub allow_major_version_upgrade: ::std::option::Option<bool>,
     /// <p>The name of the DB parameter group to apply to all instances of the DB cluster. </p> <note>
     /// <p>When you apply a parameter group using <code>DBInstanceParameterGroupName</code>, parameter changes aren't applied during the next maintenance window but instead are applied immediately.</p>
     /// </note>
@@ -109,7 +109,7 @@ impl ModifyDbClusterInput {
     /// <p>A value that specifies whether the modifications in this request and any pending modifications are asynchronously applied as soon as possible, regardless of the <code>PreferredMaintenanceWindow</code> setting for the DB cluster. If this parameter is set to <code>false</code>, changes to the DB cluster are applied during the next maintenance window.</p>
     /// <p>The <code>ApplyImmediately</code> parameter only affects <code>NewDBClusterIdentifier</code> values. If you set the <code>ApplyImmediately</code> parameter value to false, then changes to <code>NewDBClusterIdentifier</code> values are applied during the next maintenance window. All other changes are applied immediately, regardless of the value of the <code>ApplyImmediately</code> parameter.</p>
     /// <p>Default: <code>false</code> </p>
-    pub fn apply_immediately(&self) -> bool {
+    pub fn apply_immediately(&self) -> ::std::option::Option<bool> {
         self.apply_immediately
     }
     /// <p>The number of days for which automated backups are retained. You must specify a minimum value of 1.</p>
@@ -179,7 +179,7 @@ impl ModifyDbClusterInput {
     }
     /// <p>A value that indicates whether upgrades between different major versions are allowed.</p>
     /// <p>Constraints: You must set the allow-major-version-upgrade flag when providing an <code>EngineVersion</code> parameter that uses a different major version than the DB cluster's current version.</p>
-    pub fn allow_major_version_upgrade(&self) -> bool {
+    pub fn allow_major_version_upgrade(&self) -> ::std::option::Option<bool> {
         self.allow_major_version_upgrade
     }
     /// <p>The name of the DB parameter group to apply to all instances of the DB cluster. </p> <note>
@@ -651,7 +651,7 @@ impl ModifyDbClusterInputBuilder {
         ::std::result::Result::Ok(crate::operation::modify_db_cluster::ModifyDbClusterInput {
             db_cluster_identifier: self.db_cluster_identifier,
             new_db_cluster_identifier: self.new_db_cluster_identifier,
-            apply_immediately: self.apply_immediately.unwrap_or_default(),
+            apply_immediately: self.apply_immediately,
             backup_retention_period: self.backup_retention_period,
             db_cluster_parameter_group_name: self.db_cluster_parameter_group_name,
             vpc_security_group_ids: self.vpc_security_group_ids,
@@ -663,7 +663,7 @@ impl ModifyDbClusterInputBuilder {
             enable_iam_database_authentication: self.enable_iam_database_authentication,
             cloudwatch_logs_export_configuration: self.cloudwatch_logs_export_configuration,
             engine_version: self.engine_version,
-            allow_major_version_upgrade: self.allow_major_version_upgrade.unwrap_or_default(),
+            allow_major_version_upgrade: self.allow_major_version_upgrade,
             db_instance_parameter_group_name: self.db_instance_parameter_group_name,
             deletion_protection: self.deletion_protection,
             copy_tags_to_snapshot: self.copy_tags_to_snapshot,

@@ -22,7 +22,9 @@ impl UpdateAuthEventFeedbackInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateAuthEventFeedback`.
 ///
-/// <p>Provides the feedback for an authentication event, whether it was from a valid user or not. This feedback is used for improving the risk evaluation decision for the user pool as part of Amazon Cognito advanced security.</p>
+/// <p>Provides the feedback for an authentication event, whether it was from a valid user or not. This feedback is used for improving the risk evaluation decision for the user pool as part of Amazon Cognito advanced security.</p> <note>
+/// <p>Amazon Cognito doesn't evaluate Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you can't use IAM credentials to authorize requests, and you can't grant IAM permissions in policies. For more information about authorization models in Amazon Cognito, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using the Amazon Cognito native and OIDC APIs</a>.</p>
+/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateAuthEventFeedbackFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -166,17 +168,17 @@ impl UpdateAuthEventFeedbackFluentBuilder {
     pub fn get_feedback_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_feedback_token()
     }
-    /// <p>The authentication event feedback value.</p>
+    /// <p>The authentication event feedback value. When you provide a <code>FeedbackValue</code> value of <code>valid</code>, you tell Amazon Cognito that you trust a user session where Amazon Cognito has evaluated some level of risk. When you provide a <code>FeedbackValue</code> value of <code>invalid</code>, you tell Amazon Cognito that you don't trust a user session, or you don't believe that Amazon Cognito evaluated a high-enough risk level.</p>
     pub fn feedback_value(mut self, input: crate::types::FeedbackValueType) -> Self {
         self.inner = self.inner.feedback_value(input);
         self
     }
-    /// <p>The authentication event feedback value.</p>
+    /// <p>The authentication event feedback value. When you provide a <code>FeedbackValue</code> value of <code>valid</code>, you tell Amazon Cognito that you trust a user session where Amazon Cognito has evaluated some level of risk. When you provide a <code>FeedbackValue</code> value of <code>invalid</code>, you tell Amazon Cognito that you don't trust a user session, or you don't believe that Amazon Cognito evaluated a high-enough risk level.</p>
     pub fn set_feedback_value(mut self, input: ::std::option::Option<crate::types::FeedbackValueType>) -> Self {
         self.inner = self.inner.set_feedback_value(input);
         self
     }
-    /// <p>The authentication event feedback value.</p>
+    /// <p>The authentication event feedback value. When you provide a <code>FeedbackValue</code> value of <code>valid</code>, you tell Amazon Cognito that you trust a user session where Amazon Cognito has evaluated some level of risk. When you provide a <code>FeedbackValue</code> value of <code>invalid</code>, you tell Amazon Cognito that you don't trust a user session, or you don't believe that Amazon Cognito evaluated a high-enough risk level.</p>
     pub fn get_feedback_value(&self) -> &::std::option::Option<crate::types::FeedbackValueType> {
         self.inner.get_feedback_value()
     }

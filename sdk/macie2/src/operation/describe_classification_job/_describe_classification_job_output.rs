@@ -44,14 +44,14 @@ pub struct DescribeClassificationJobOutput {
     pub managed_data_identifier_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The selection type that determines which managed data identifiers the job uses when it analyzes data. Possible values are:</p>
     /// <ul>
-    /// <li><p>ALL (default) - Use all managed data identifiers.</p></li>
+    /// <li><p>ALL - Use all managed data identifiers.</p></li>
     /// <li><p>EXCLUDE - Use all managed data identifiers except the ones specified by the managedDataIdentifierIds property.</p></li>
     /// <li><p>INCLUDE - Use only the managed data identifiers specified by the managedDataIdentifierIds property.</p></li>
     /// <li><p>NONE - Don't use any managed data identifiers. Use only custom data identifiers (customDataIdentifierIds).</p></li>
-    /// <li><p>RECOMMENDED - Use only the set of managed data identifiers that Amazon Web Services recommends for jobs.</p></li>
+    /// <li><p>RECOMMENDED (default) - Use the recommended set of managed data identifiers.</p></li>
     /// </ul>
-    /// <p>If this value is null, the job uses all managed data identifiers.</p>
-    /// <p>If the job is a recurring job and this value is null, ALL, or EXCLUDE, each job run automatically uses new managed data identifiers that are released after the job was created or the preceding run ended. If this value is RECOMMENDED for a recurring job, each job run uses all the managed data identifiers that are in the recommended set when the run starts.</p>
+    /// <p>If this value is null, the job uses the recommended set of managed data identifiers.</p>
+    /// <p>If the job is a recurring job and this value is ALL or EXCLUDE, each job run automatically uses new managed data identifiers that are released. If this value is null or RECOMMENDED for a recurring job, each job run uses all the managed data identifiers that are in the recommended set when the run starts.</p>
     /// <p>For information about individual managed data identifiers or to determine which ones are in the recommended set, see <a href="https://docs.aws.amazon.com/macie/latest/user/managed-data-identifiers.html">Using managed data identifiers</a> and <a href="https://docs.aws.amazon.com/macie/latest/user/discovery-jobs-mdis-recommended.html">Recommended managed data identifiers</a> in the <i>Amazon Macie User Guide</i>.</p>
     pub managed_data_identifier_selector: ::std::option::Option<crate::types::ManagedDataIdentifierSelector>,
     /// <p>The custom name of the job.</p>
@@ -138,14 +138,14 @@ impl DescribeClassificationJobOutput {
     }
     /// <p>The selection type that determines which managed data identifiers the job uses when it analyzes data. Possible values are:</p>
     /// <ul>
-    /// <li><p>ALL (default) - Use all managed data identifiers.</p></li>
+    /// <li><p>ALL - Use all managed data identifiers.</p></li>
     /// <li><p>EXCLUDE - Use all managed data identifiers except the ones specified by the managedDataIdentifierIds property.</p></li>
     /// <li><p>INCLUDE - Use only the managed data identifiers specified by the managedDataIdentifierIds property.</p></li>
     /// <li><p>NONE - Don't use any managed data identifiers. Use only custom data identifiers (customDataIdentifierIds).</p></li>
-    /// <li><p>RECOMMENDED - Use only the set of managed data identifiers that Amazon Web Services recommends for jobs.</p></li>
+    /// <li><p>RECOMMENDED (default) - Use the recommended set of managed data identifiers.</p></li>
     /// </ul>
-    /// <p>If this value is null, the job uses all managed data identifiers.</p>
-    /// <p>If the job is a recurring job and this value is null, ALL, or EXCLUDE, each job run automatically uses new managed data identifiers that are released after the job was created or the preceding run ended. If this value is RECOMMENDED for a recurring job, each job run uses all the managed data identifiers that are in the recommended set when the run starts.</p>
+    /// <p>If this value is null, the job uses the recommended set of managed data identifiers.</p>
+    /// <p>If the job is a recurring job and this value is ALL or EXCLUDE, each job run automatically uses new managed data identifiers that are released. If this value is null or RECOMMENDED for a recurring job, each job run uses all the managed data identifiers that are in the recommended set when the run starts.</p>
     /// <p>For information about individual managed data identifiers or to determine which ones are in the recommended set, see <a href="https://docs.aws.amazon.com/macie/latest/user/managed-data-identifiers.html">Using managed data identifiers</a> and <a href="https://docs.aws.amazon.com/macie/latest/user/discovery-jobs-mdis-recommended.html">Recommended managed data identifiers</a> in the <i>Amazon Macie User Guide</i>.</p>
     pub fn managed_data_identifier_selector(&self) -> ::std::option::Option<&crate::types::ManagedDataIdentifierSelector> {
         self.managed_data_identifier_selector.as_ref()
@@ -460,14 +460,14 @@ impl DescribeClassificationJobOutputBuilder {
     }
     /// <p>The selection type that determines which managed data identifiers the job uses when it analyzes data. Possible values are:</p>
     /// <ul>
-    /// <li><p>ALL (default) - Use all managed data identifiers.</p></li>
+    /// <li><p>ALL - Use all managed data identifiers.</p></li>
     /// <li><p>EXCLUDE - Use all managed data identifiers except the ones specified by the managedDataIdentifierIds property.</p></li>
     /// <li><p>INCLUDE - Use only the managed data identifiers specified by the managedDataIdentifierIds property.</p></li>
     /// <li><p>NONE - Don't use any managed data identifiers. Use only custom data identifiers (customDataIdentifierIds).</p></li>
-    /// <li><p>RECOMMENDED - Use only the set of managed data identifiers that Amazon Web Services recommends for jobs.</p></li>
+    /// <li><p>RECOMMENDED (default) - Use the recommended set of managed data identifiers.</p></li>
     /// </ul>
-    /// <p>If this value is null, the job uses all managed data identifiers.</p>
-    /// <p>If the job is a recurring job and this value is null, ALL, or EXCLUDE, each job run automatically uses new managed data identifiers that are released after the job was created or the preceding run ended. If this value is RECOMMENDED for a recurring job, each job run uses all the managed data identifiers that are in the recommended set when the run starts.</p>
+    /// <p>If this value is null, the job uses the recommended set of managed data identifiers.</p>
+    /// <p>If the job is a recurring job and this value is ALL or EXCLUDE, each job run automatically uses new managed data identifiers that are released. If this value is null or RECOMMENDED for a recurring job, each job run uses all the managed data identifiers that are in the recommended set when the run starts.</p>
     /// <p>For information about individual managed data identifiers or to determine which ones are in the recommended set, see <a href="https://docs.aws.amazon.com/macie/latest/user/managed-data-identifiers.html">Using managed data identifiers</a> and <a href="https://docs.aws.amazon.com/macie/latest/user/discovery-jobs-mdis-recommended.html">Recommended managed data identifiers</a> in the <i>Amazon Macie User Guide</i>.</p>
     pub fn managed_data_identifier_selector(mut self, input: crate::types::ManagedDataIdentifierSelector) -> Self {
         self.managed_data_identifier_selector = ::std::option::Option::Some(input);
@@ -475,14 +475,14 @@ impl DescribeClassificationJobOutputBuilder {
     }
     /// <p>The selection type that determines which managed data identifiers the job uses when it analyzes data. Possible values are:</p>
     /// <ul>
-    /// <li><p>ALL (default) - Use all managed data identifiers.</p></li>
+    /// <li><p>ALL - Use all managed data identifiers.</p></li>
     /// <li><p>EXCLUDE - Use all managed data identifiers except the ones specified by the managedDataIdentifierIds property.</p></li>
     /// <li><p>INCLUDE - Use only the managed data identifiers specified by the managedDataIdentifierIds property.</p></li>
     /// <li><p>NONE - Don't use any managed data identifiers. Use only custom data identifiers (customDataIdentifierIds).</p></li>
-    /// <li><p>RECOMMENDED - Use only the set of managed data identifiers that Amazon Web Services recommends for jobs.</p></li>
+    /// <li><p>RECOMMENDED (default) - Use the recommended set of managed data identifiers.</p></li>
     /// </ul>
-    /// <p>If this value is null, the job uses all managed data identifiers.</p>
-    /// <p>If the job is a recurring job and this value is null, ALL, or EXCLUDE, each job run automatically uses new managed data identifiers that are released after the job was created or the preceding run ended. If this value is RECOMMENDED for a recurring job, each job run uses all the managed data identifiers that are in the recommended set when the run starts.</p>
+    /// <p>If this value is null, the job uses the recommended set of managed data identifiers.</p>
+    /// <p>If the job is a recurring job and this value is ALL or EXCLUDE, each job run automatically uses new managed data identifiers that are released. If this value is null or RECOMMENDED for a recurring job, each job run uses all the managed data identifiers that are in the recommended set when the run starts.</p>
     /// <p>For information about individual managed data identifiers or to determine which ones are in the recommended set, see <a href="https://docs.aws.amazon.com/macie/latest/user/managed-data-identifiers.html">Using managed data identifiers</a> and <a href="https://docs.aws.amazon.com/macie/latest/user/discovery-jobs-mdis-recommended.html">Recommended managed data identifiers</a> in the <i>Amazon Macie User Guide</i>.</p>
     pub fn set_managed_data_identifier_selector(mut self, input: ::std::option::Option<crate::types::ManagedDataIdentifierSelector>) -> Self {
         self.managed_data_identifier_selector = input;
@@ -490,14 +490,14 @@ impl DescribeClassificationJobOutputBuilder {
     }
     /// <p>The selection type that determines which managed data identifiers the job uses when it analyzes data. Possible values are:</p>
     /// <ul>
-    /// <li><p>ALL (default) - Use all managed data identifiers.</p></li>
+    /// <li><p>ALL - Use all managed data identifiers.</p></li>
     /// <li><p>EXCLUDE - Use all managed data identifiers except the ones specified by the managedDataIdentifierIds property.</p></li>
     /// <li><p>INCLUDE - Use only the managed data identifiers specified by the managedDataIdentifierIds property.</p></li>
     /// <li><p>NONE - Don't use any managed data identifiers. Use only custom data identifiers (customDataIdentifierIds).</p></li>
-    /// <li><p>RECOMMENDED - Use only the set of managed data identifiers that Amazon Web Services recommends for jobs.</p></li>
+    /// <li><p>RECOMMENDED (default) - Use the recommended set of managed data identifiers.</p></li>
     /// </ul>
-    /// <p>If this value is null, the job uses all managed data identifiers.</p>
-    /// <p>If the job is a recurring job and this value is null, ALL, or EXCLUDE, each job run automatically uses new managed data identifiers that are released after the job was created or the preceding run ended. If this value is RECOMMENDED for a recurring job, each job run uses all the managed data identifiers that are in the recommended set when the run starts.</p>
+    /// <p>If this value is null, the job uses the recommended set of managed data identifiers.</p>
+    /// <p>If the job is a recurring job and this value is ALL or EXCLUDE, each job run automatically uses new managed data identifiers that are released. If this value is null or RECOMMENDED for a recurring job, each job run uses all the managed data identifiers that are in the recommended set when the run starts.</p>
     /// <p>For information about individual managed data identifiers or to determine which ones are in the recommended set, see <a href="https://docs.aws.amazon.com/macie/latest/user/managed-data-identifiers.html">Using managed data identifiers</a> and <a href="https://docs.aws.amazon.com/macie/latest/user/discovery-jobs-mdis-recommended.html">Recommended managed data identifiers</a> in the <i>Amazon Macie User Guide</i>.</p>
     pub fn get_managed_data_identifier_selector(&self) -> &::std::option::Option<crate::types::ManagedDataIdentifierSelector> {
         &self.managed_data_identifier_selector

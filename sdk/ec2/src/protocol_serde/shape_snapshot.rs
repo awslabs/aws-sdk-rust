@@ -232,6 +232,20 @@ pub fn de_snapshot(
                 builder = builder.set_restore_expiry_time(var_17);
             }
             ,
+            s if s.matches("sseType") /* SseType com.amazonaws.ec2#Snapshot$SseType */ =>  {
+                let var_18 =
+                    Some(
+                        Result::<crate::types::SseType, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::SseType::from(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_sse_type(var_18);
+            }
+            ,
             _ => {}
         }
     }

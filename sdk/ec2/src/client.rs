@@ -921,6 +921,8 @@ mod disable_fast_launch;
 
 mod disable_fast_snapshot_restores;
 
+mod disable_image_block_public_access;
+
 mod disable_image_deprecation;
 
 mod disable_ipam_organization_admin_account;
@@ -973,6 +975,8 @@ mod enable_fast_launch;
 
 mod enable_fast_snapshot_restores;
 
+mod enable_image_block_public_access;
+
 mod enable_image_deprecation;
 
 mod enable_ipam_organization_admin_account;
@@ -1024,6 +1028,8 @@ mod get_flow_logs_integration_template;
 mod get_groups_for_capacity_reservation;
 
 mod get_host_reservation_purchase_preview;
+
+mod get_image_block_public_access_state;
 
 mod get_instance_types_from_instance_requirements;
 

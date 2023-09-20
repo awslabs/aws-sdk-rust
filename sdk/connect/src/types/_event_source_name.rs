@@ -13,6 +13,7 @@
 /// # let eventsourcename = unimplemented!();
 /// match eventsourcename {
 ///     EventSourceName::OnContactEvaluationSubmit => { /* ... */ },
+///     EventSourceName::OnMetricDataUpdate => { /* ... */ },
 ///     EventSourceName::OnPostCallAnalysisAvailable => { /* ... */ },
 ///     EventSourceName::OnPostChatAnalysisAvailable => { /* ... */ },
 ///     EventSourceName::OnRealTimeCallAnalysisAvailable => { /* ... */ },
@@ -49,6 +50,8 @@ pub enum EventSourceName {
     #[allow(missing_docs)] // documentation missing in model
     OnContactEvaluationSubmit,
     #[allow(missing_docs)] // documentation missing in model
+    OnMetricDataUpdate,
+    #[allow(missing_docs)] // documentation missing in model
     OnPostCallAnalysisAvailable,
     #[allow(missing_docs)] // documentation missing in model
     OnPostChatAnalysisAvailable,
@@ -67,6 +70,7 @@ impl ::std::convert::From<&str> for EventSourceName {
     fn from(s: &str) -> Self {
         match s {
             "OnContactEvaluationSubmit" => EventSourceName::OnContactEvaluationSubmit,
+            "OnMetricDataUpdate" => EventSourceName::OnMetricDataUpdate,
             "OnPostCallAnalysisAvailable" => EventSourceName::OnPostCallAnalysisAvailable,
             "OnPostChatAnalysisAvailable" => EventSourceName::OnPostChatAnalysisAvailable,
             "OnRealTimeCallAnalysisAvailable" => EventSourceName::OnRealTimeCallAnalysisAvailable,
@@ -89,6 +93,7 @@ impl EventSourceName {
     pub fn as_str(&self) -> &str {
         match self {
             EventSourceName::OnContactEvaluationSubmit => "OnContactEvaluationSubmit",
+            EventSourceName::OnMetricDataUpdate => "OnMetricDataUpdate",
             EventSourceName::OnPostCallAnalysisAvailable => "OnPostCallAnalysisAvailable",
             EventSourceName::OnPostChatAnalysisAvailable => "OnPostChatAnalysisAvailable",
             EventSourceName::OnRealTimeCallAnalysisAvailable => "OnRealTimeCallAnalysisAvailable",
@@ -102,6 +107,7 @@ impl EventSourceName {
     pub const fn values() -> &'static [&'static str] {
         &[
             "OnContactEvaluationSubmit",
+            "OnMetricDataUpdate",
             "OnPostCallAnalysisAvailable",
             "OnPostChatAnalysisAvailable",
             "OnRealTimeCallAnalysisAvailable",

@@ -264,7 +264,7 @@ pub type DescribeOrganizationErrorKind = DescribeOrganizationError;
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum DescribeOrganizationError {
-    /// <p>You don't have permissions to perform the requested operation. The user or role that is making the request must have at least one IAM permissions policy attached that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access Management</a> in the <i>IAM User Guide.</i> </p>
+    /// <p>You don't have permissions to perform the requested operation. The user or role that is making the request must have at least one IAM permissions policy attached that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access Management</a> in the <i>IAM User Guide</i>.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>Your account isn't a member of an organization. To make this request, you must use the credentials of an account that belongs to an organization.</p>
     AwsOrganizationsNotInUseException(crate::types::error::AwsOrganizationsNotInUseException),
@@ -273,7 +273,7 @@ pub enum DescribeOrganizationError {
     /// <p>Organizations can't complete your request because of an internal service error. Try again later.</p>
     ServiceException(crate::types::error::ServiceException),
     /// <p>You have sent too many requests in too short a period of time. The quota helps protect against denial-of-service attacks. Try again later.</p>
-    /// <p>For information about quotas that affect Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas for Organizations</a>in the <i>Organizations User Guide.</i> </p>
+    /// <p>For information about quotas that affect Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas for Organizations</a> in the <i>Organizations User Guide</i>.</p>
     TooManyRequestsException(crate::types::error::TooManyRequestsException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(::aws_smithy_types::error::Unhandled),

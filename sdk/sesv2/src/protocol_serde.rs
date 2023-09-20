@@ -25,6 +25,8 @@ pub fn parse_http_error_metadata(
 
 pub(crate) mod shape_batch_get_metric_data;
 
+pub(crate) mod shape_cancel_export_job;
+
 pub(crate) mod shape_create_configuration_set;
 
 pub(crate) mod shape_create_configuration_set_event_destination;
@@ -44,6 +46,8 @@ pub(crate) mod shape_create_email_identity;
 pub(crate) mod shape_create_email_identity_policy;
 
 pub(crate) mod shape_create_email_template;
+
+pub(crate) mod shape_create_export_job;
 
 pub(crate) mod shape_create_import_job;
 
@@ -101,7 +105,11 @@ pub(crate) mod shape_get_email_identity_policies;
 
 pub(crate) mod shape_get_email_template;
 
+pub(crate) mod shape_get_export_job;
+
 pub(crate) mod shape_get_import_job;
+
+pub(crate) mod shape_get_message_insights;
 
 pub(crate) mod shape_get_suppressed_destination;
 
@@ -122,6 +130,8 @@ pub(crate) mod shape_list_domain_deliverability_campaigns;
 pub(crate) mod shape_list_email_identities;
 
 pub(crate) mod shape_list_email_templates;
+
+pub(crate) mod shape_list_export_jobs;
 
 pub(crate) mod shape_list_import_jobs;
 
@@ -237,6 +247,8 @@ pub(crate) mod shape_create_email_identity_policy_input;
 
 pub(crate) mod shape_create_email_template_input;
 
+pub(crate) mod shape_create_export_job_input;
+
 pub(crate) mod shape_create_import_job_input;
 
 pub(crate) mod shape_internal_service_error_exception;
@@ -246,6 +258,8 @@ pub(crate) mod shape_invalid_next_token_exception;
 pub(crate) mod shape_limit_exceeded_exception;
 
 pub(crate) mod shape_list_contacts_input;
+
+pub(crate) mod shape_list_export_jobs_input;
 
 pub(crate) mod shape_list_import_jobs_input;
 
@@ -373,6 +387,8 @@ pub(crate) mod shape_domain_deliverability_tracking_options;
 
 pub(crate) mod shape_email_content;
 
+pub(crate) mod shape_email_insights_list;
+
 pub(crate) mod shape_email_template_content;
 
 pub(crate) mod shape_email_template_metadata_list;
@@ -380,6 +396,14 @@ pub(crate) mod shape_email_template_metadata_list;
 pub(crate) mod shape_event_destination_definition;
 
 pub(crate) mod shape_event_destinations;
+
+pub(crate) mod shape_export_data_source;
+
+pub(crate) mod shape_export_destination;
+
+pub(crate) mod shape_export_job_summary_list;
+
+pub(crate) mod shape_export_statistics;
 
 pub(crate) mod shape_failure_info;
 
@@ -406,6 +430,8 @@ pub(crate) mod shape_list_of_dedicated_ip_pools;
 pub(crate) mod shape_mail_from_attributes;
 
 pub(crate) mod shape_message_tag;
+
+pub(crate) mod shape_message_tag_list;
 
 pub(crate) mod shape_metric_data_error_list;
 
@@ -475,11 +501,15 @@ pub(crate) mod shape_dashboard_options;
 
 pub(crate) mod shape_domain_isp_placements;
 
+pub(crate) mod shape_email_insights;
+
 pub(crate) mod shape_email_template_metadata;
 
 pub(crate) mod shape_esps;
 
 pub(crate) mod shape_event_destination;
+
+pub(crate) mod shape_export_job_summary;
 
 pub(crate) mod shape_guardian_attributes;
 
@@ -499,9 +529,13 @@ pub(crate) mod shape_kinesis_firehose_destination;
 
 pub(crate) mod shape_message;
 
+pub(crate) mod shape_message_insights_data_source;
+
 pub(crate) mod shape_metric_data_error;
 
 pub(crate) mod shape_metric_data_result;
+
+pub(crate) mod shape_metrics_data_source;
 
 pub(crate) mod shape_pinpoint_destination;
 
@@ -541,6 +575,16 @@ pub(crate) mod shape_domain_isp_placement;
 
 pub(crate) mod shape_event_types;
 
+pub(crate) mod shape_export_dimensions;
+
+pub(crate) mod shape_export_metric;
+
+pub(crate) mod shape_export_metrics;
+
+pub(crate) mod shape_insights_events;
+
+pub(crate) mod shape_message_insights_filters;
+
 pub(crate) mod shape_metric_value_list;
 
 pub(crate) mod shape_replacement_template;
@@ -549,4 +593,24 @@ pub(crate) mod shape_timestamp_list;
 
 pub(crate) mod shape_cloud_watch_dimension_configurations;
 
+pub(crate) mod shape_email_address_filter_list;
+
+pub(crate) mod shape_email_subject_filter_list;
+
+pub(crate) mod shape_export_dimension_value;
+
+pub(crate) mod shape_insights_event;
+
+pub(crate) mod shape_isp_filter_list;
+
 pub(crate) mod shape_isp_name_list;
+
+pub(crate) mod shape_last_delivery_event_list;
+
+pub(crate) mod shape_last_engagement_event_list;
+
+pub(crate) mod shape_event_details;
+
+pub(crate) mod shape_bounce;
+
+pub(crate) mod shape_complaint;

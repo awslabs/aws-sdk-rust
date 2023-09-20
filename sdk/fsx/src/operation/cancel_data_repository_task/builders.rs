@@ -22,12 +22,13 @@ impl CancelDataRepositoryTaskInputBuilder {
 }
 /// Fluent builder constructing a request to `CancelDataRepositoryTask`.
 ///
-/// <p>Cancels an existing Amazon FSx for Lustre data repository task if that task is in either the <code>PENDING</code> or <code>EXECUTING</code> state. When you cancel a task, Amazon FSx does the following.</p>
+/// <p>Cancels an existing Amazon FSx for Lustre data repository task if that task is in either the <code>PENDING</code> or <code>EXECUTING</code> state. When you cancel am export task, Amazon FSx does the following.</p>
 /// <ul>
 /// <li> <p>Any files that FSx has already exported are not reverted.</p> </li>
-/// <li> <p>FSx continues to export any files that are "in-flight" when the cancel operation is received.</p> </li>
+/// <li> <p>FSx continues to export any files that are in-flight when the cancel operation is received.</p> </li>
 /// <li> <p>FSx does not export any files that have not yet been exported.</p> </li>
 /// </ul>
+/// <p>For a release task, Amazon FSx will stop releasing files upon cancellation. Any files that have already been released will remain in the released state.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CancelDataRepositoryTaskFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

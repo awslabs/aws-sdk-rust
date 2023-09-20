@@ -24,6 +24,8 @@ pub struct RoutingProfile {
     pub number_of_associated_queues: ::std::option::Option<i64>,
     /// <p>The number of associated users in routing profile.</p>
     pub number_of_associated_users: ::std::option::Option<i64>,
+    /// <p>Whether agents with this routing profile will have their routing order calculated based on <i>time since their last inbound contact</i> or <i>longest idle time</i>. </p>
+    pub agent_availability_timer: ::std::option::Option<crate::types::AgentAvailabilityTimer>,
 }
 impl RoutingProfile {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
@@ -66,6 +68,10 @@ impl RoutingProfile {
     pub fn number_of_associated_users(&self) -> ::std::option::Option<i64> {
         self.number_of_associated_users
     }
+    /// <p>Whether agents with this routing profile will have their routing order calculated based on <i>time since their last inbound contact</i> or <i>longest idle time</i>. </p>
+    pub fn agent_availability_timer(&self) -> ::std::option::Option<&crate::types::AgentAvailabilityTimer> {
+        self.agent_availability_timer.as_ref()
+    }
 }
 impl RoutingProfile {
     /// Creates a new builder-style object to manufacture [`RoutingProfile`](crate::types::RoutingProfile).
@@ -88,6 +94,7 @@ pub struct RoutingProfileBuilder {
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) number_of_associated_queues: ::std::option::Option<i64>,
     pub(crate) number_of_associated_users: ::std::option::Option<i64>,
+    pub(crate) agent_availability_timer: ::std::option::Option<crate::types::AgentAvailabilityTimer>,
 }
 impl RoutingProfileBuilder {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
@@ -242,6 +249,20 @@ impl RoutingProfileBuilder {
     pub fn get_number_of_associated_users(&self) -> &::std::option::Option<i64> {
         &self.number_of_associated_users
     }
+    /// <p>Whether agents with this routing profile will have their routing order calculated based on <i>time since their last inbound contact</i> or <i>longest idle time</i>. </p>
+    pub fn agent_availability_timer(mut self, input: crate::types::AgentAvailabilityTimer) -> Self {
+        self.agent_availability_timer = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Whether agents with this routing profile will have their routing order calculated based on <i>time since their last inbound contact</i> or <i>longest idle time</i>. </p>
+    pub fn set_agent_availability_timer(mut self, input: ::std::option::Option<crate::types::AgentAvailabilityTimer>) -> Self {
+        self.agent_availability_timer = input;
+        self
+    }
+    /// <p>Whether agents with this routing profile will have their routing order calculated based on <i>time since their last inbound contact</i> or <i>longest idle time</i>. </p>
+    pub fn get_agent_availability_timer(&self) -> &::std::option::Option<crate::types::AgentAvailabilityTimer> {
+        &self.agent_availability_timer
+    }
     /// Consumes the builder and constructs a [`RoutingProfile`](crate::types::RoutingProfile).
     pub fn build(self) -> crate::types::RoutingProfile {
         crate::types::RoutingProfile {
@@ -255,6 +276,7 @@ impl RoutingProfileBuilder {
             tags: self.tags,
             number_of_associated_queues: self.number_of_associated_queues,
             number_of_associated_users: self.number_of_associated_users,
+            agent_availability_timer: self.agent_availability_timer,
         }
     }
 }

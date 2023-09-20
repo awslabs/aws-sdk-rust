@@ -6,7 +6,7 @@
 pub struct RecommendationJobInputConfig {
     /// <p>The Amazon Resource Name (ARN) of a versioned model package.</p>
     pub model_package_version_arn: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies the maximum duration of the job, in seconds.&gt;</p>
+    /// <p>Specifies the maximum duration of the job, in seconds. The maximum value is 18,000 seconds.</p>
     pub job_duration_in_seconds: ::std::option::Option<i32>,
     /// <p>Specifies the traffic pattern of the job.</p>
     pub traffic_pattern: ::std::option::Option<crate::types::TrafficPattern>,
@@ -57,7 +57,7 @@ impl RecommendationJobInputConfig {
     pub fn model_package_version_arn(&self) -> ::std::option::Option<&str> {
         self.model_package_version_arn.as_deref()
     }
-    /// <p>Specifies the maximum duration of the job, in seconds.&gt;</p>
+    /// <p>Specifies the maximum duration of the job, in seconds. The maximum value is 18,000 seconds.</p>
     pub fn job_duration_in_seconds(&self) -> ::std::option::Option<i32> {
         self.job_duration_in_seconds
     }
@@ -158,17 +158,17 @@ impl RecommendationJobInputConfigBuilder {
     pub fn get_model_package_version_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.model_package_version_arn
     }
-    /// <p>Specifies the maximum duration of the job, in seconds.&gt;</p>
+    /// <p>Specifies the maximum duration of the job, in seconds. The maximum value is 18,000 seconds.</p>
     pub fn job_duration_in_seconds(mut self, input: i32) -> Self {
         self.job_duration_in_seconds = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies the maximum duration of the job, in seconds.&gt;</p>
+    /// <p>Specifies the maximum duration of the job, in seconds. The maximum value is 18,000 seconds.</p>
     pub fn set_job_duration_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.job_duration_in_seconds = input;
         self
     }
-    /// <p>Specifies the maximum duration of the job, in seconds.&gt;</p>
+    /// <p>Specifies the maximum duration of the job, in seconds. The maximum value is 18,000 seconds.</p>
     pub fn get_job_duration_in_seconds(&self) -> &::std::option::Option<i32> {
         &self.job_duration_in_seconds
     }

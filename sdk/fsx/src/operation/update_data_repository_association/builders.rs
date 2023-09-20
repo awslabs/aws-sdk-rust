@@ -22,7 +22,7 @@ impl UpdateDataRepositoryAssociationInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateDataRepositoryAssociation`.
 ///
-/// <p>Updates the configuration of an existing data repository association on an Amazon FSx for Lustre file system. Data repository associations are supported on all FSx for Lustre 2.12 and newer file systems, excluding <code>scratch_1</code> deployment type.</p>
+/// <p>Updates the configuration of an existing data repository association on an Amazon FSx for Lustre file system. Data repository associations are supported on all FSx for Lustre 2.12 and 2.15 file systems, excluding <code>scratch_1</code> deployment type.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateDataRepositoryAssociationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -12,16 +12,16 @@ pub fn ser_set_load_balancer_listener_ssl_certificate_input_input(
     }
     #[allow(unused_mut)]
     let mut scope_3 = writer.prefix("LoadBalancerPort");
-    {
+    if let Some(var_4) = &input.load_balancer_port {
         scope_3.number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.load_balancer_port).into()),
+            ::aws_smithy_types::Number::NegInt((*var_4).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_4 = writer.prefix("SSLCertificateId");
-    if let Some(var_5) = &input.ssl_certificate_id {
-        scope_4.string(var_5);
+    let mut scope_5 = writer.prefix("SSLCertificateId");
+    if let Some(var_6) = &input.ssl_certificate_id {
+        scope_5.string(var_6);
     }
     writer.finish();
     Ok(::aws_smithy_http::body::SdkBody::from(out))

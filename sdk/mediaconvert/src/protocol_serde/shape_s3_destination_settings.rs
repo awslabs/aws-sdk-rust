@@ -15,6 +15,9 @@ pub fn ser_s3_destination_settings(
         crate::protocol_serde::shape_s3_encryption_settings::ser_s3_encryption_settings(&mut object_4, var_3)?;
         object_4.finish();
     }
+    if let Some(var_5) = &input.storage_class {
+        object.key("storageClass").string(var_5.as_str());
+    }
     Ok(())
 }
 
@@ -40,6 +43,13 @@ where
                         }
                         "encryption" => {
                             builder = builder.set_encryption(crate::protocol_serde::shape_s3_encryption_settings::de_s3_encryption_settings(tokens)?);
+                        }
+                        "storageClass" => {
+                            builder = builder.set_storage_class(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::S3StorageClass::from(u.as_ref())))
+                                    .transpose()?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -121,6 +121,10 @@ pub use crate::types::_data_transfer_api_type::DataTransferApiType;
 
 pub use crate::types::_sapo_data_source_properties::SapoDataSourceProperties;
 
+pub use crate::types::_sapo_data_pagination_config::SapoDataPaginationConfig;
+
+pub use crate::types::_sapo_data_parallelism_config::SapoDataParallelismConfig;
+
 pub use crate::types::_zendesk_source_properties::ZendeskSourceProperties;
 
 pub use crate::types::_veeva_source_properties::VeevaSourceProperties;
@@ -660,6 +664,10 @@ mod _sapo_data_connector_profile_properties;
 mod _sapo_data_destination_properties;
 
 mod _sapo_data_metadata;
+
+mod _sapo_data_pagination_config;
+
+mod _sapo_data_parallelism_config;
 
 mod _sapo_data_source_properties;
 

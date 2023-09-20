@@ -3,8 +3,8 @@ pub fn ser_put_email_identity_dkim_attributes_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::put_email_identity_dkim_attributes::PutEmailIdentityDkimAttributesInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if input.signing_enabled {
-        object.key("SigningEnabled").boolean(input.signing_enabled);
+    if let Some(var_1) = &input.signing_enabled {
+        object.key("SigningEnabled").boolean(*var_1);
     }
     Ok(())
 }

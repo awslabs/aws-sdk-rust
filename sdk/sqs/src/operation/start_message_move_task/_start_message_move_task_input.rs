@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartMessageMoveTaskInput {
-    /// <p>The ARN of the queue that contains the messages to be moved to another queue. Currently, only dead-letter queue (DLQ) ARNs are accepted.</p>
+    /// <p>The ARN of the queue that contains the messages to be moved to another queue. Currently, only ARNs of dead-letter queues (DLQs) whose sources are other Amazon SQS queues are accepted. DLQs whose sources are non-SQS queues, such as Lambda or Amazon SNS topics, are not currently supported.</p>
     pub source_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the queue that receives the moved messages. You can use this field to specify the destination queue where you would like to redrive messages. If this field is left blank, the messages will be redriven back to their respective original source queues.</p>
     pub destination_arn: ::std::option::Option<::std::string::String>,
@@ -11,7 +11,7 @@ pub struct StartMessageMoveTaskInput {
     pub max_number_of_messages_per_second: ::std::option::Option<i32>,
 }
 impl StartMessageMoveTaskInput {
-    /// <p>The ARN of the queue that contains the messages to be moved to another queue. Currently, only dead-letter queue (DLQ) ARNs are accepted.</p>
+    /// <p>The ARN of the queue that contains the messages to be moved to another queue. Currently, only ARNs of dead-letter queues (DLQs) whose sources are other Amazon SQS queues are accepted. DLQs whose sources are non-SQS queues, such as Lambda or Amazon SNS topics, are not currently supported.</p>
     pub fn source_arn(&self) -> ::std::option::Option<&str> {
         self.source_arn.as_deref()
     }
@@ -40,17 +40,17 @@ pub struct StartMessageMoveTaskInputBuilder {
     pub(crate) max_number_of_messages_per_second: ::std::option::Option<i32>,
 }
 impl StartMessageMoveTaskInputBuilder {
-    /// <p>The ARN of the queue that contains the messages to be moved to another queue. Currently, only dead-letter queue (DLQ) ARNs are accepted.</p>
+    /// <p>The ARN of the queue that contains the messages to be moved to another queue. Currently, only ARNs of dead-letter queues (DLQs) whose sources are other Amazon SQS queues are accepted. DLQs whose sources are non-SQS queues, such as Lambda or Amazon SNS topics, are not currently supported.</p>
     pub fn source_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the queue that contains the messages to be moved to another queue. Currently, only dead-letter queue (DLQ) ARNs are accepted.</p>
+    /// <p>The ARN of the queue that contains the messages to be moved to another queue. Currently, only ARNs of dead-letter queues (DLQs) whose sources are other Amazon SQS queues are accepted. DLQs whose sources are non-SQS queues, such as Lambda or Amazon SNS topics, are not currently supported.</p>
     pub fn set_source_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_arn = input;
         self
     }
-    /// <p>The ARN of the queue that contains the messages to be moved to another queue. Currently, only dead-letter queue (DLQ) ARNs are accepted.</p>
+    /// <p>The ARN of the queue that contains the messages to be moved to another queue. Currently, only ARNs of dead-letter queues (DLQs) whose sources are other Amazon SQS queues are accepted. DLQs whose sources are non-SQS queues, such as Lambda or Amazon SNS topics, are not currently supported.</p>
     pub fn get_source_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.source_arn
     }

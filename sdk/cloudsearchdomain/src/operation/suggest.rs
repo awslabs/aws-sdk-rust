@@ -201,8 +201,10 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for SuggestRequ
                     ));
                 }
                 query.push_kv("suggester", &::aws_smithy_http::query::fmt_string(&inner_2));
-                if _input.size != 0 {
-                    query.push_kv("size", ::aws_smithy_types::primitive::Encoder::from(_input.size).encode());
+                if let ::std::option::Option::Some(inner_3) = &_input.size {
+                    if *inner_3 != 0 {
+                        query.push_kv("size", ::aws_smithy_types::primitive::Encoder::from(*inner_3).encode());
+                    }
                 }
                 ::std::result::Result::Ok(())
             }

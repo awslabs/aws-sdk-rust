@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`ml_model_id(impl Into<String>)`](crate::operation::get_ml_model::builders::GetMLModelFluentBuilder::ml_model_id) / [`set_ml_model_id(Option<String>)`](crate::operation::get_ml_model::builders::GetMLModelFluentBuilder::set_ml_model_id): <p>The ID assigned to the <code>MLModel</code> at creation.</p>
-    ///   - [`verbose(bool)`](crate::operation::get_ml_model::builders::GetMLModelFluentBuilder::verbose) / [`set_verbose(bool)`](crate::operation::get_ml_model::builders::GetMLModelFluentBuilder::set_verbose): <p>Specifies whether the <code>GetMLModel</code> operation should return <code>Recipe</code>.</p>  <p>If true, <code>Recipe</code> is returned.</p>  <p>If false, <code>Recipe</code> is not returned.</p>
+    ///   - [`verbose(bool)`](crate::operation::get_ml_model::builders::GetMLModelFluentBuilder::verbose) / [`set_verbose(Option<bool>)`](crate::operation::get_ml_model::builders::GetMLModelFluentBuilder::set_verbose): <p>Specifies whether the <code>GetMLModel</code> operation should return <code>Recipe</code>.</p>  <p>If true, <code>Recipe</code> is returned.</p>  <p>If false, <code>Recipe</code> is not returned.</p>
     /// - On success, responds with [`GetMlModelOutput`](crate::operation::get_ml_model::GetMlModelOutput) with field(s):
     ///   - [`ml_model_id(Option<String>)`](crate::operation::get_ml_model::GetMlModelOutput::ml_model_id): <p>The MLModel ID, which is same as the <code>MLModelId</code> in the request.</p>
     ///   - [`training_data_source_id(Option<String>)`](crate::operation::get_ml_model::GetMlModelOutput::training_data_source_id): <p>The ID of the training <code>DataSource</code>.</p>

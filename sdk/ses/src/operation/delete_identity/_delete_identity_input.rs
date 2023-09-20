@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteIdentityInput {
-    /// <p>The identity to be removed from the list of identities for the AWS Account.</p>
+    /// <p>The identity to be removed from the list of identities for the Amazon Web Services account.</p>
     pub identity: ::std::option::Option<::std::string::String>,
 }
 impl DeleteIdentityInput {
-    /// <p>The identity to be removed from the list of identities for the AWS Account.</p>
+    /// <p>The identity to be removed from the list of identities for the Amazon Web Services account.</p>
     pub fn identity(&self) -> ::std::option::Option<&str> {
         self.identity.as_deref()
     }
@@ -27,17 +27,17 @@ pub struct DeleteIdentityInputBuilder {
     pub(crate) identity: ::std::option::Option<::std::string::String>,
 }
 impl DeleteIdentityInputBuilder {
-    /// <p>The identity to be removed from the list of identities for the AWS Account.</p>
+    /// <p>The identity to be removed from the list of identities for the Amazon Web Services account.</p>
     pub fn identity(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identity to be removed from the list of identities for the AWS Account.</p>
+    /// <p>The identity to be removed from the list of identities for the Amazon Web Services account.</p>
     pub fn set_identity(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.identity = input;
         self
     }
-    /// <p>The identity to be removed from the list of identities for the AWS Account.</p>
+    /// <p>The identity to be removed from the list of identities for the Amazon Web Services account.</p>
     pub fn get_identity(&self) -> &::std::option::Option<::std::string::String> {
         &self.identity
     }

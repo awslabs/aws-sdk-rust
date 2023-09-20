@@ -4,21 +4,25 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RecommendationItem {
-    /// <p>The resource identifier.</p>
+    /// <p>Identifier of the resource.</p>
     pub resource_id: ::std::option::Option<::std::string::String>,
-    /// <p>The target account identifier.</p>
+    /// <p>Identifier of the target account.</p>
     pub target_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The target region.</p>
     pub target_region: ::std::option::Option<::std::string::String>,
     /// <p>Specifies if the recommendation has already been implemented.</p>
     pub already_implemented: ::std::option::Option<bool>,
+    /// <p>Indicates if an operational recommendation item is excluded.</p>
+    pub excluded: ::std::option::Option<bool>,
+    /// <p>Indicates the reason for excluding an operational recommendation.</p>
+    pub exclude_reason: ::std::option::Option<crate::types::ExcludeRecommendationReason>,
 }
 impl RecommendationItem {
-    /// <p>The resource identifier.</p>
+    /// <p>Identifier of the resource.</p>
     pub fn resource_id(&self) -> ::std::option::Option<&str> {
         self.resource_id.as_deref()
     }
-    /// <p>The target account identifier.</p>
+    /// <p>Identifier of the target account.</p>
     pub fn target_account_id(&self) -> ::std::option::Option<&str> {
         self.target_account_id.as_deref()
     }
@@ -29,6 +33,14 @@ impl RecommendationItem {
     /// <p>Specifies if the recommendation has already been implemented.</p>
     pub fn already_implemented(&self) -> ::std::option::Option<bool> {
         self.already_implemented
+    }
+    /// <p>Indicates if an operational recommendation item is excluded.</p>
+    pub fn excluded(&self) -> ::std::option::Option<bool> {
+        self.excluded
+    }
+    /// <p>Indicates the reason for excluding an operational recommendation.</p>
+    pub fn exclude_reason(&self) -> ::std::option::Option<&crate::types::ExcludeRecommendationReason> {
+        self.exclude_reason.as_ref()
     }
 }
 impl RecommendationItem {
@@ -46,33 +58,35 @@ pub struct RecommendationItemBuilder {
     pub(crate) target_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) target_region: ::std::option::Option<::std::string::String>,
     pub(crate) already_implemented: ::std::option::Option<bool>,
+    pub(crate) excluded: ::std::option::Option<bool>,
+    pub(crate) exclude_reason: ::std::option::Option<crate::types::ExcludeRecommendationReason>,
 }
 impl RecommendationItemBuilder {
-    /// <p>The resource identifier.</p>
+    /// <p>Identifier of the resource.</p>
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The resource identifier.</p>
+    /// <p>Identifier of the resource.</p>
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_id = input;
         self
     }
-    /// <p>The resource identifier.</p>
+    /// <p>Identifier of the resource.</p>
     pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_id
     }
-    /// <p>The target account identifier.</p>
+    /// <p>Identifier of the target account.</p>
     pub fn target_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_account_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The target account identifier.</p>
+    /// <p>Identifier of the target account.</p>
     pub fn set_target_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_account_id = input;
         self
     }
-    /// <p>The target account identifier.</p>
+    /// <p>Identifier of the target account.</p>
     pub fn get_target_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.target_account_id
     }
@@ -104,6 +118,34 @@ impl RecommendationItemBuilder {
     pub fn get_already_implemented(&self) -> &::std::option::Option<bool> {
         &self.already_implemented
     }
+    /// <p>Indicates if an operational recommendation item is excluded.</p>
+    pub fn excluded(mut self, input: bool) -> Self {
+        self.excluded = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates if an operational recommendation item is excluded.</p>
+    pub fn set_excluded(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.excluded = input;
+        self
+    }
+    /// <p>Indicates if an operational recommendation item is excluded.</p>
+    pub fn get_excluded(&self) -> &::std::option::Option<bool> {
+        &self.excluded
+    }
+    /// <p>Indicates the reason for excluding an operational recommendation.</p>
+    pub fn exclude_reason(mut self, input: crate::types::ExcludeRecommendationReason) -> Self {
+        self.exclude_reason = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates the reason for excluding an operational recommendation.</p>
+    pub fn set_exclude_reason(mut self, input: ::std::option::Option<crate::types::ExcludeRecommendationReason>) -> Self {
+        self.exclude_reason = input;
+        self
+    }
+    /// <p>Indicates the reason for excluding an operational recommendation.</p>
+    pub fn get_exclude_reason(&self) -> &::std::option::Option<crate::types::ExcludeRecommendationReason> {
+        &self.exclude_reason
+    }
     /// Consumes the builder and constructs a [`RecommendationItem`](crate::types::RecommendationItem).
     pub fn build(self) -> crate::types::RecommendationItem {
         crate::types::RecommendationItem {
@@ -111,6 +153,8 @@ impl RecommendationItemBuilder {
             target_account_id: self.target_account_id,
             target_region: self.target_region,
             already_implemented: self.already_implemented,
+            excluded: self.excluded,
+            exclude_reason: self.exclude_reason,
         }
     }
 }

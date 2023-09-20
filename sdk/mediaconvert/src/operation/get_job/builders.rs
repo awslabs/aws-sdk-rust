@@ -19,7 +19,7 @@ impl GetJobInputBuilder {
 }
 /// Fluent builder constructing a request to `GetJob`.
 ///
-/// Retrieve the JSON for a specific completed transcoding job.
+/// Retrieve the JSON for a specific transcoding job.
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -23,9 +23,16 @@ impl UpdateUserPoolClientInputBuilder {
 /// Fluent builder constructing a request to `UpdateUserPoolClient`.
 ///
 /// <p>Updates the specified user pool app client with the specified attributes. You can get a list of the current user pool app client settings using <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeUserPoolClient.html">DescribeUserPoolClient</a>.</p> <important>
-/// <p>If you don't provide a value for an attribute, it will be set to the default value.</p>
+/// <p>If you don't provide a value for an attribute, Amazon Cognito sets it to its default value.</p>
 /// </important>
-/// <p>You can also use this operation to enable token revocation for user pool clients. For more information about revoking tokens, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_RevokeToken.html">RevokeToken</a>.</p>
+/// <p>You can also use this operation to enable token revocation for user pool clients. For more information about revoking tokens, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_RevokeToken.html">RevokeToken</a>.</p> <note>
+/// <p>Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you must use IAM credentials to authorize requests, and you must grant yourself the corresponding IAM permission in a policy.</p>
+/// <p class="title"> <b>Learn more</b> </p>
+/// <ul>
+/// <li> <p> <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html">Signing Amazon Web Services API Requests</a> </p> </li>
+/// <li> <p> <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using the Amazon Cognito user pools API and user pool endpoints</a> </p> </li>
+/// </ul>
+/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateUserPoolClientFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -203,7 +210,7 @@ impl UpdateUserPoolClientFluentBuilder {
     }
     /// <p>The ID token time limit. After this limit expires, your user can't use their ID token. To specify the time unit for <code>IdTokenValidity</code> as <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code>, set a <code>TokenValidityUnits</code> value in your API request.</p>
     /// <p>For example, when you set <code>IdTokenValidity</code> as <code>10</code> and <code>TokenValidityUnits</code> as <code>hours</code>, your user can authenticate their session with their ID token for 10 hours.</p>
-    /// <p>The default time unit for <code>AccessTokenValidity</code> in an API request is hours. <i>Valid range</i> is displayed below in seconds.</p>
+    /// <p>The default time unit for <code>IdTokenValidity</code> in an API request is hours. <i>Valid range</i> is displayed below in seconds.</p>
     /// <p>If you don't specify otherwise in the configuration of your app client, your ID tokens are valid for one hour.</p>
     pub fn id_token_validity(mut self, input: i32) -> Self {
         self.inner = self.inner.id_token_validity(input);
@@ -211,7 +218,7 @@ impl UpdateUserPoolClientFluentBuilder {
     }
     /// <p>The ID token time limit. After this limit expires, your user can't use their ID token. To specify the time unit for <code>IdTokenValidity</code> as <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code>, set a <code>TokenValidityUnits</code> value in your API request.</p>
     /// <p>For example, when you set <code>IdTokenValidity</code> as <code>10</code> and <code>TokenValidityUnits</code> as <code>hours</code>, your user can authenticate their session with their ID token for 10 hours.</p>
-    /// <p>The default time unit for <code>AccessTokenValidity</code> in an API request is hours. <i>Valid range</i> is displayed below in seconds.</p>
+    /// <p>The default time unit for <code>IdTokenValidity</code> in an API request is hours. <i>Valid range</i> is displayed below in seconds.</p>
     /// <p>If you don't specify otherwise in the configuration of your app client, your ID tokens are valid for one hour.</p>
     pub fn set_id_token_validity(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_id_token_validity(input);
@@ -219,22 +226,22 @@ impl UpdateUserPoolClientFluentBuilder {
     }
     /// <p>The ID token time limit. After this limit expires, your user can't use their ID token. To specify the time unit for <code>IdTokenValidity</code> as <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code>, set a <code>TokenValidityUnits</code> value in your API request.</p>
     /// <p>For example, when you set <code>IdTokenValidity</code> as <code>10</code> and <code>TokenValidityUnits</code> as <code>hours</code>, your user can authenticate their session with their ID token for 10 hours.</p>
-    /// <p>The default time unit for <code>AccessTokenValidity</code> in an API request is hours. <i>Valid range</i> is displayed below in seconds.</p>
+    /// <p>The default time unit for <code>IdTokenValidity</code> in an API request is hours. <i>Valid range</i> is displayed below in seconds.</p>
     /// <p>If you don't specify otherwise in the configuration of your app client, your ID tokens are valid for one hour.</p>
     pub fn get_id_token_validity(&self) -> &::std::option::Option<i32> {
         self.inner.get_id_token_validity()
     }
-    /// <p>The units in which the validity times are represented. The default unit for RefreshToken is days, and the default for ID and access tokens is hours.</p>
+    /// <p>The time units you use when you set the duration of ID, access, and refresh tokens. The default unit for RefreshToken is days, and the default for ID and access tokens is hours.</p>
     pub fn token_validity_units(mut self, input: crate::types::TokenValidityUnitsType) -> Self {
         self.inner = self.inner.token_validity_units(input);
         self
     }
-    /// <p>The units in which the validity times are represented. The default unit for RefreshToken is days, and the default for ID and access tokens is hours.</p>
+    /// <p>The time units you use when you set the duration of ID, access, and refresh tokens. The default unit for RefreshToken is days, and the default for ID and access tokens is hours.</p>
     pub fn set_token_validity_units(mut self, input: ::std::option::Option<crate::types::TokenValidityUnitsType>) -> Self {
         self.inner = self.inner.set_token_validity_units(input);
         self
     }
-    /// <p>The units in which the validity times are represented. The default unit for RefreshToken is days, and the default for ID and access tokens is hours.</p>
+    /// <p>The time units you use when you set the duration of ID, access, and refresh tokens. The default unit for RefreshToken is days, and the default for ID and access tokens is hours.</p>
     pub fn get_token_validity_units(&self) -> &::std::option::Option<crate::types::TokenValidityUnitsType> {
         self.inner.get_token_validity_units()
     }
@@ -543,17 +550,41 @@ impl UpdateUserPoolClientFluentBuilder {
     pub fn get_allowed_o_auth_scopes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_allowed_o_auth_scopes()
     }
-    /// <p>Set to true if the client is allowed to follow the OAuth protocol when interacting with Amazon Cognito user pools.</p>
+    /// <p>Set to <code>true</code> to use OAuth 2.0 features in your user pool app client.</p>
+    /// <p> <code>AllowedOAuthFlowsUserPoolClient</code> must be <code>true</code> before you can configure the following features in your app client.</p>
+    /// <ul>
+    /// <li> <p> <code>CallBackURLs</code>: Callback URLs.</p> </li>
+    /// <li> <p> <code>LogoutURLs</code>: Sign-out redirect URLs.</p> </li>
+    /// <li> <p> <code>AllowedOAuthScopes</code>: OAuth 2.0 scopes.</p> </li>
+    /// <li> <p> <code>AllowedOAuthFlows</code>: Support for authorization code, implicit, and client credentials OAuth 2.0 grants.</p> </li>
+    /// </ul>
+    /// <p>To use OAuth 2.0 features, configure one of these features in the Amazon Cognito console or set <code>AllowedOAuthFlowsUserPoolClient</code> to <code>true</code> in a <code>CreateUserPoolClient</code> or <code>UpdateUserPoolClient</code> API request. If you don't set a value for <code>AllowedOAuthFlowsUserPoolClient</code> in a request with the CLI or SDKs, it defaults to <code>false</code>.</p>
     pub fn allowed_o_auth_flows_user_pool_client(mut self, input: bool) -> Self {
         self.inner = self.inner.allowed_o_auth_flows_user_pool_client(input);
         self
     }
-    /// <p>Set to true if the client is allowed to follow the OAuth protocol when interacting with Amazon Cognito user pools.</p>
+    /// <p>Set to <code>true</code> to use OAuth 2.0 features in your user pool app client.</p>
+    /// <p> <code>AllowedOAuthFlowsUserPoolClient</code> must be <code>true</code> before you can configure the following features in your app client.</p>
+    /// <ul>
+    /// <li> <p> <code>CallBackURLs</code>: Callback URLs.</p> </li>
+    /// <li> <p> <code>LogoutURLs</code>: Sign-out redirect URLs.</p> </li>
+    /// <li> <p> <code>AllowedOAuthScopes</code>: OAuth 2.0 scopes.</p> </li>
+    /// <li> <p> <code>AllowedOAuthFlows</code>: Support for authorization code, implicit, and client credentials OAuth 2.0 grants.</p> </li>
+    /// </ul>
+    /// <p>To use OAuth 2.0 features, configure one of these features in the Amazon Cognito console or set <code>AllowedOAuthFlowsUserPoolClient</code> to <code>true</code> in a <code>CreateUserPoolClient</code> or <code>UpdateUserPoolClient</code> API request. If you don't set a value for <code>AllowedOAuthFlowsUserPoolClient</code> in a request with the CLI or SDKs, it defaults to <code>false</code>.</p>
     pub fn set_allowed_o_auth_flows_user_pool_client(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_allowed_o_auth_flows_user_pool_client(input);
         self
     }
-    /// <p>Set to true if the client is allowed to follow the OAuth protocol when interacting with Amazon Cognito user pools.</p>
+    /// <p>Set to <code>true</code> to use OAuth 2.0 features in your user pool app client.</p>
+    /// <p> <code>AllowedOAuthFlowsUserPoolClient</code> must be <code>true</code> before you can configure the following features in your app client.</p>
+    /// <ul>
+    /// <li> <p> <code>CallBackURLs</code>: Callback URLs.</p> </li>
+    /// <li> <p> <code>LogoutURLs</code>: Sign-out redirect URLs.</p> </li>
+    /// <li> <p> <code>AllowedOAuthScopes</code>: OAuth 2.0 scopes.</p> </li>
+    /// <li> <p> <code>AllowedOAuthFlows</code>: Support for authorization code, implicit, and client credentials OAuth 2.0 grants.</p> </li>
+    /// </ul>
+    /// <p>To use OAuth 2.0 features, configure one of these features in the Amazon Cognito console or set <code>AllowedOAuthFlowsUserPoolClient</code> to <code>true</code> in a <code>CreateUserPoolClient</code> or <code>UpdateUserPoolClient</code> API request. If you don't set a value for <code>AllowedOAuthFlowsUserPoolClient</code> in a request with the CLI or SDKs, it defaults to <code>false</code>.</p>
     pub fn get_allowed_o_auth_flows_user_pool_client(&self) -> &::std::option::Option<bool> {
         self.inner.get_allowed_o_auth_flows_user_pool_client()
     }

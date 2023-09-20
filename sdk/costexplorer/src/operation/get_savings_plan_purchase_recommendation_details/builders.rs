@@ -22,7 +22,7 @@ impl GetSavingsPlanPurchaseRecommendationDetailsInputBuilder {
 }
 /// Fluent builder constructing a request to `GetSavingsPlanPurchaseRecommendationDetails`.
 ///
-/// <p>Retrieves the details for a Savings Plan recommendation. These details include the hourly data-points that construct the new cost, coverage, and utilization charts.</p>
+/// <p>Retrieves the details for a Savings Plan recommendation. These details include the hourly data-points that construct the cost, coverage, and utilization charts.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetSavingsPlanPurchaseRecommendationDetailsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

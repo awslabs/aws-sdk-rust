@@ -4,13 +4,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Message {
-    /// <p>The subject of the message: A short summary of the content, which will appear in the recipient's inbox.</p>
+    /// <p>The subject of the message: A short summary of the content, which appears in the recipient's inbox.</p>
     pub subject: ::std::option::Option<crate::types::Content>,
     /// <p>The message body.</p>
     pub body: ::std::option::Option<crate::types::Body>,
 }
 impl Message {
-    /// <p>The subject of the message: A short summary of the content, which will appear in the recipient's inbox.</p>
+    /// <p>The subject of the message: A short summary of the content, which appears in the recipient's inbox.</p>
     pub fn subject(&self) -> ::std::option::Option<&crate::types::Content> {
         self.subject.as_ref()
     }
@@ -34,17 +34,17 @@ pub struct MessageBuilder {
     pub(crate) body: ::std::option::Option<crate::types::Body>,
 }
 impl MessageBuilder {
-    /// <p>The subject of the message: A short summary of the content, which will appear in the recipient's inbox.</p>
+    /// <p>The subject of the message: A short summary of the content, which appears in the recipient's inbox.</p>
     pub fn subject(mut self, input: crate::types::Content) -> Self {
         self.subject = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The subject of the message: A short summary of the content, which will appear in the recipient's inbox.</p>
+    /// <p>The subject of the message: A short summary of the content, which appears in the recipient's inbox.</p>
     pub fn set_subject(mut self, input: ::std::option::Option<crate::types::Content>) -> Self {
         self.subject = input;
         self
     }
-    /// <p>The subject of the message: A short summary of the content, which will appear in the recipient's inbox.</p>
+    /// <p>The subject of the message: A short summary of the content, which appears in the recipient's inbox.</p>
     pub fn get_subject(&self) -> &::std::option::Option<crate::types::Content> {
         &self.subject
     }

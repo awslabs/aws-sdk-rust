@@ -12,7 +12,7 @@ pub struct ModifyOptionGroupInput {
     /// <p>Options in this list are removed from the option group.</p>
     pub options_to_remove: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A value that indicates whether to apply the change immediately or during the next maintenance window for each instance associated with the option group.</p>
-    pub apply_immediately: bool,
+    pub apply_immediately: ::std::option::Option<bool>,
 }
 impl ModifyOptionGroupInput {
     /// <p>The name of the option group to be modified.</p>
@@ -29,7 +29,7 @@ impl ModifyOptionGroupInput {
         self.options_to_remove.as_deref()
     }
     /// <p>A value that indicates whether to apply the change immediately or during the next maintenance window for each instance associated with the option group.</p>
-    pub fn apply_immediately(&self) -> bool {
+    pub fn apply_immediately(&self) -> ::std::option::Option<bool> {
         self.apply_immediately
     }
 }
@@ -129,7 +129,7 @@ impl ModifyOptionGroupInputBuilder {
             option_group_name: self.option_group_name,
             options_to_include: self.options_to_include,
             options_to_remove: self.options_to_remove,
-            apply_immediately: self.apply_immediately.unwrap_or_default(),
+            apply_immediately: self.apply_immediately,
         })
     }
 }

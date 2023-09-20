@@ -198,17 +198,17 @@ impl CreateRestApiFluentBuilder {
     pub fn get_minimum_compression_size(&self) -> &::std::option::Option<i32> {
         self.inner.get_minimum_compression_size()
     }
-    /// <p>The source of the API key for metering requests according to a usage plan. Valid values are: &gt;<code>HEADER</code> to read the API key from the <code>X-API-Key</code> header of a request. <code>AUTHORIZER</code> to read the API key from the <code>UsageIdentifierKey</code> from a custom authorizer.</p>
+    /// <p>The source of the API key for metering requests according to a usage plan. Valid values are: <code>HEADER</code> to read the API key from the <code>X-API-Key</code> header of a request. <code>AUTHORIZER</code> to read the API key from the <code>UsageIdentifierKey</code> from a custom authorizer.</p>
     pub fn api_key_source(mut self, input: crate::types::ApiKeySourceType) -> Self {
         self.inner = self.inner.api_key_source(input);
         self
     }
-    /// <p>The source of the API key for metering requests according to a usage plan. Valid values are: &gt;<code>HEADER</code> to read the API key from the <code>X-API-Key</code> header of a request. <code>AUTHORIZER</code> to read the API key from the <code>UsageIdentifierKey</code> from a custom authorizer.</p>
+    /// <p>The source of the API key for metering requests according to a usage plan. Valid values are: <code>HEADER</code> to read the API key from the <code>X-API-Key</code> header of a request. <code>AUTHORIZER</code> to read the API key from the <code>UsageIdentifierKey</code> from a custom authorizer.</p>
     pub fn set_api_key_source(mut self, input: ::std::option::Option<crate::types::ApiKeySourceType>) -> Self {
         self.inner = self.inner.set_api_key_source(input);
         self
     }
-    /// <p>The source of the API key for metering requests according to a usage plan. Valid values are: &gt;<code>HEADER</code> to read the API key from the <code>X-API-Key</code> header of a request. <code>AUTHORIZER</code> to read the API key from the <code>UsageIdentifierKey</code> from a custom authorizer.</p>
+    /// <p>The source of the API key for metering requests according to a usage plan. Valid values are: <code>HEADER</code> to read the API key from the <code>X-API-Key</code> header of a request. <code>AUTHORIZER</code> to read the API key from the <code>UsageIdentifierKey</code> from a custom authorizer.</p>
     pub fn get_api_key_source(&self) -> &::std::option::Option<crate::types::ApiKeySourceType> {
         self.inner.get_api_key_source()
     }

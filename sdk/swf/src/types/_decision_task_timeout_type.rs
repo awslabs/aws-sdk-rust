@@ -12,6 +12,7 @@
 /// ```text
 /// # let decisiontasktimeouttype = unimplemented!();
 /// match decisiontasktimeouttype {
+///     DecisionTaskTimeoutType::ScheduleToStart => { /* ... */ },
 ///     DecisionTaskTimeoutType::StartToClose => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -41,6 +42,8 @@
 )]
 pub enum DecisionTaskTimeoutType {
     #[allow(missing_docs)] // documentation missing in model
+    ScheduleToStart,
+    #[allow(missing_docs)] // documentation missing in model
     StartToClose,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
@@ -48,6 +51,7 @@ pub enum DecisionTaskTimeoutType {
 impl ::std::convert::From<&str> for DecisionTaskTimeoutType {
     fn from(s: &str) -> Self {
         match s {
+            "SCHEDULE_TO_START" => DecisionTaskTimeoutType::ScheduleToStart,
             "START_TO_CLOSE" => DecisionTaskTimeoutType::StartToClose,
             other => DecisionTaskTimeoutType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
@@ -64,13 +68,14 @@ impl DecisionTaskTimeoutType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            DecisionTaskTimeoutType::ScheduleToStart => "SCHEDULE_TO_START",
             DecisionTaskTimeoutType::StartToClose => "START_TO_CLOSE",
             DecisionTaskTimeoutType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["START_TO_CLOSE"]
+        &["SCHEDULE_TO_START", "START_TO_CLOSE"]
     }
 }
 impl ::std::convert::AsRef<str> for DecisionTaskTimeoutType {

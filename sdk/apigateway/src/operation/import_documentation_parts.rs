@@ -211,11 +211,10 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for ImportDocum
                         query.push_kv("mode", &::aws_smithy_http::query::fmt_string(&inner_2));
                     }
                 }
-                if _input.fail_on_warnings {
-                    query.push_kv(
-                        "failonwarnings",
-                        ::aws_smithy_types::primitive::Encoder::from(_input.fail_on_warnings).encode(),
-                    );
+                if let ::std::option::Option::Some(inner_3) = &_input.fail_on_warnings {
+                    if *inner_3 {
+                        query.push_kv("failonwarnings", ::aws_smithy_types::primitive::Encoder::from(*inner_3).encode());
+                    }
                 }
                 ::std::result::Result::Ok(())
             }

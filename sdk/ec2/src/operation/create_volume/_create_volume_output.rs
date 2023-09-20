@@ -36,6 +36,8 @@ pub struct CreateVolumeOutput {
     pub multi_attach_enabled: ::std::option::Option<bool>,
     /// <p>The throughput that the volume supports, in MiB/s.</p>
     pub throughput: ::std::option::Option<i32>,
+    /// <p>Reserved for future use.</p>
+    pub sse_type: ::std::option::Option<crate::types::SseType>,
     _request_id: Option<String>,
 }
 impl CreateVolumeOutput {
@@ -103,6 +105,10 @@ impl CreateVolumeOutput {
     pub fn throughput(&self) -> ::std::option::Option<i32> {
         self.throughput
     }
+    /// <p>Reserved for future use.</p>
+    pub fn sse_type(&self) -> ::std::option::Option<&crate::types::SseType> {
+        self.sse_type.as_ref()
+    }
 }
 impl ::aws_http::request_id::RequestId for CreateVolumeOutput {
     fn request_id(&self) -> Option<&str> {
@@ -136,6 +142,7 @@ pub struct CreateVolumeOutputBuilder {
     pub(crate) fast_restored: ::std::option::Option<bool>,
     pub(crate) multi_attach_enabled: ::std::option::Option<bool>,
     pub(crate) throughput: ::std::option::Option<i32>,
+    pub(crate) sse_type: ::std::option::Option<crate::types::SseType>,
     _request_id: Option<String>,
 }
 impl CreateVolumeOutputBuilder {
@@ -375,6 +382,20 @@ impl CreateVolumeOutputBuilder {
     pub fn get_throughput(&self) -> &::std::option::Option<i32> {
         &self.throughput
     }
+    /// <p>Reserved for future use.</p>
+    pub fn sse_type(mut self, input: crate::types::SseType) -> Self {
+        self.sse_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Reserved for future use.</p>
+    pub fn set_sse_type(mut self, input: ::std::option::Option<crate::types::SseType>) -> Self {
+        self.sse_type = input;
+        self
+    }
+    /// <p>Reserved for future use.</p>
+    pub fn get_sse_type(&self) -> &::std::option::Option<crate::types::SseType> {
+        &self.sse_type
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -403,6 +424,7 @@ impl CreateVolumeOutputBuilder {
             fast_restored: self.fast_restored,
             multi_attach_enabled: self.multi_attach_enabled,
             throughput: self.throughput,
+            sse_type: self.sse_type,
             _request_id: self._request_id,
         }
     }

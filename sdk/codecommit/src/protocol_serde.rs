@@ -113,6 +113,8 @@ pub(crate) mod shape_list_associated_approval_rule_templates_for_repository;
 
 pub(crate) mod shape_list_branches;
 
+pub(crate) mod shape_list_file_commit_history;
+
 pub(crate) mod shape_list_pull_requests;
 
 pub(crate) mod shape_list_repositories;
@@ -511,6 +513,8 @@ pub(crate) mod shape_list_associated_approval_rule_templates_for_repository_inpu
 
 pub(crate) mod shape_list_branches_input;
 
+pub(crate) mod shape_list_file_commit_history_input;
+
 pub(crate) mod shape_list_pull_requests_input;
 
 pub(crate) mod shape_list_repositories_for_approval_rule_template_input;
@@ -793,6 +797,8 @@ pub(crate) mod shape_repository_trigger_name_list;
 
 pub(crate) mod shape_repository_triggers_list;
 
+pub(crate) mod shape_revision_dag;
+
 pub(crate) mod shape_set_file_mode_entry;
 
 pub(crate) mod shape_sub_module_list;
@@ -836,6 +842,8 @@ pub(crate) mod shape_file_metadata;
 pub(crate) mod shape_file_modes;
 
 pub(crate) mod shape_file_sizes;
+
+pub(crate) mod shape_file_version;
 
 pub(crate) mod shape_folder;
 
@@ -900,5 +908,7 @@ pub(crate) mod shape_reaction_users_list;
 pub(crate) mod shape_reaction_value_formats;
 
 pub(crate) mod shape_repository_trigger_event_list;
+
+pub(crate) mod shape_revision_children;
 
 pub(crate) mod shape_merge_metadata;

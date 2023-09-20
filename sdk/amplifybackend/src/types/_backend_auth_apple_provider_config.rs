@@ -2,7 +2,7 @@
 
 /// <p>Describes Apple social federation configurations for allowing your app users to sign in using OAuth.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct BackendAuthAppleProviderConfig {
     /// <p>Describes the client_id (also called Services ID) that comes from Apple.</p>
     pub client_id: ::std::option::Option<::std::string::String>,
@@ -31,6 +31,16 @@ impl BackendAuthAppleProviderConfig {
         self.team_id.as_deref()
     }
 }
+impl ::std::fmt::Debug for BackendAuthAppleProviderConfig {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("BackendAuthAppleProviderConfig");
+        formatter.field("client_id", &"*** Sensitive Data Redacted ***");
+        formatter.field("key_id", &"*** Sensitive Data Redacted ***");
+        formatter.field("private_key", &"*** Sensitive Data Redacted ***");
+        formatter.field("team_id", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl BackendAuthAppleProviderConfig {
     /// Creates a new builder-style object to manufacture [`BackendAuthAppleProviderConfig`](crate::types::BackendAuthAppleProviderConfig).
     pub fn builder() -> crate::types::builders::BackendAuthAppleProviderConfigBuilder {
@@ -40,7 +50,7 @@ impl BackendAuthAppleProviderConfig {
 
 /// A builder for [`BackendAuthAppleProviderConfig`](crate::types::BackendAuthAppleProviderConfig).
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct BackendAuthAppleProviderConfigBuilder {
     pub(crate) client_id: ::std::option::Option<::std::string::String>,
     pub(crate) key_id: ::std::option::Option<::std::string::String>,
@@ -112,5 +122,15 @@ impl BackendAuthAppleProviderConfigBuilder {
             private_key: self.private_key,
             team_id: self.team_id,
         }
+    }
+}
+impl ::std::fmt::Debug for BackendAuthAppleProviderConfigBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("BackendAuthAppleProviderConfigBuilder");
+        formatter.field("client_id", &"*** Sensitive Data Redacted ***");
+        formatter.field("key_id", &"*** Sensitive Data Redacted ***");
+        formatter.field("private_key", &"*** Sensitive Data Redacted ***");
+        formatter.field("team_id", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

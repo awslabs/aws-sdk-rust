@@ -47,6 +47,8 @@ pub struct InstanceNetworkInterfaceSpecification {
     pub ipv6_prefixes: ::std::option::Option<::std::vec::Vec<crate::types::Ipv6PrefixSpecificationRequest>>,
     /// <p>The number of IPv6 delegated prefixes to be automatically assigned to the network interface. You cannot use this option if you use the <code>Ipv6Prefix</code> option.</p>
     pub ipv6_prefix_count: ::std::option::Option<i32>,
+    /// <p>The primary IPv6 address of the network interface. When you enable an IPv6 GUA address to be a primary IPv6, the first IPv6 GUA will be made the primary IPv6 address until the instance is terminated or the network interface is detached. For more information about primary IPv6 addresses, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>.</p>
+    pub primary_ipv6: ::std::option::Option<bool>,
 }
 impl InstanceNetworkInterfaceSpecification {
     /// <p>Indicates whether to assign a public IPv4 address to an instance you launch in a VPC. The public IP address can only be assigned to a network interface for eth0, and can only be assigned to a new network interface, not an existing one. You cannot specify more than one network interface in the request. If launching into a default subnet, the default value is <code>true</code>.</p>
@@ -130,6 +132,10 @@ impl InstanceNetworkInterfaceSpecification {
     pub fn ipv6_prefix_count(&self) -> ::std::option::Option<i32> {
         self.ipv6_prefix_count
     }
+    /// <p>The primary IPv6 address of the network interface. When you enable an IPv6 GUA address to be a primary IPv6, the first IPv6 GUA will be made the primary IPv6 address until the instance is terminated or the network interface is detached. For more information about primary IPv6 addresses, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>.</p>
+    pub fn primary_ipv6(&self) -> ::std::option::Option<bool> {
+        self.primary_ipv6
+    }
 }
 impl InstanceNetworkInterfaceSpecification {
     /// Creates a new builder-style object to manufacture [`InstanceNetworkInterfaceSpecification`](crate::types::InstanceNetworkInterfaceSpecification).
@@ -161,6 +167,7 @@ pub struct InstanceNetworkInterfaceSpecificationBuilder {
     pub(crate) ipv4_prefix_count: ::std::option::Option<i32>,
     pub(crate) ipv6_prefixes: ::std::option::Option<::std::vec::Vec<crate::types::Ipv6PrefixSpecificationRequest>>,
     pub(crate) ipv6_prefix_count: ::std::option::Option<i32>,
+    pub(crate) primary_ipv6: ::std::option::Option<bool>,
 }
 impl InstanceNetworkInterfaceSpecificationBuilder {
     /// <p>Indicates whether to assign a public IPv4 address to an instance you launch in a VPC. The public IP address can only be assigned to a network interface for eth0, and can only be assigned to a new network interface, not an existing one. You cannot specify more than one network interface in the request. If launching into a default subnet, the default value is <code>true</code>.</p>
@@ -474,6 +481,20 @@ impl InstanceNetworkInterfaceSpecificationBuilder {
     pub fn get_ipv6_prefix_count(&self) -> &::std::option::Option<i32> {
         &self.ipv6_prefix_count
     }
+    /// <p>The primary IPv6 address of the network interface. When you enable an IPv6 GUA address to be a primary IPv6, the first IPv6 GUA will be made the primary IPv6 address until the instance is terminated or the network interface is detached. For more information about primary IPv6 addresses, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>.</p>
+    pub fn primary_ipv6(mut self, input: bool) -> Self {
+        self.primary_ipv6 = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The primary IPv6 address of the network interface. When you enable an IPv6 GUA address to be a primary IPv6, the first IPv6 GUA will be made the primary IPv6 address until the instance is terminated or the network interface is detached. For more information about primary IPv6 addresses, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>.</p>
+    pub fn set_primary_ipv6(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.primary_ipv6 = input;
+        self
+    }
+    /// <p>The primary IPv6 address of the network interface. When you enable an IPv6 GUA address to be a primary IPv6, the first IPv6 GUA will be made the primary IPv6 address until the instance is terminated or the network interface is detached. For more information about primary IPv6 addresses, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>.</p>
+    pub fn get_primary_ipv6(&self) -> &::std::option::Option<bool> {
+        &self.primary_ipv6
+    }
     /// Consumes the builder and constructs a [`InstanceNetworkInterfaceSpecification`](crate::types::InstanceNetworkInterfaceSpecification).
     pub fn build(self) -> crate::types::InstanceNetworkInterfaceSpecification {
         crate::types::InstanceNetworkInterfaceSpecification {
@@ -496,6 +517,7 @@ impl InstanceNetworkInterfaceSpecificationBuilder {
             ipv4_prefix_count: self.ipv4_prefix_count,
             ipv6_prefixes: self.ipv6_prefixes,
             ipv6_prefix_count: self.ipv6_prefix_count,
+            primary_ipv6: self.primary_ipv6,
         }
     }
 }

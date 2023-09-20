@@ -13,6 +13,7 @@
 /// # let identitytype = unimplemented!();
 /// match identitytype {
 ///     IdentityType::Iam => { /* ... */ },
+///     IdentityType::IamIdentityCenter => { /* ... */ },
 ///     IdentityType::Quicksight => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -44,6 +45,8 @@ pub enum IdentityType {
     #[allow(missing_docs)] // documentation missing in model
     Iam,
     #[allow(missing_docs)] // documentation missing in model
+    IamIdentityCenter,
+    #[allow(missing_docs)] // documentation missing in model
     Quicksight,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
@@ -52,6 +55,7 @@ impl ::std::convert::From<&str> for IdentityType {
     fn from(s: &str) -> Self {
         match s {
             "IAM" => IdentityType::Iam,
+            "IAM_IDENTITY_CENTER" => IdentityType::IamIdentityCenter,
             "QUICKSIGHT" => IdentityType::Quicksight,
             other => IdentityType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
@@ -69,13 +73,14 @@ impl IdentityType {
     pub fn as_str(&self) -> &str {
         match self {
             IdentityType::Iam => "IAM",
+            IdentityType::IamIdentityCenter => "IAM_IDENTITY_CENTER",
             IdentityType::Quicksight => "QUICKSIGHT",
             IdentityType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["IAM", "QUICKSIGHT"]
+        &["IAM", "IAM_IDENTITY_CENTER", "QUICKSIGHT"]
     }
 }
 impl ::std::convert::AsRef<str> for IdentityType {

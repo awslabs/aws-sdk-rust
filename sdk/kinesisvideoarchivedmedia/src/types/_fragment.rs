@@ -10,7 +10,7 @@ pub struct Fragment {
     pub fragment_size_in_bytes: i64,
     /// <p>The timestamp from the producer corresponding to the fragment.</p>
     pub producer_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The timestamp from the AWS server corresponding to the fragment.</p>
+    /// <p>The timestamp from the Amazon Web Services server corresponding to the fragment.</p>
     pub server_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The playback duration or other time value associated with the fragment.</p>
     pub fragment_length_in_milliseconds: i64,
@@ -28,7 +28,7 @@ impl Fragment {
     pub fn producer_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.producer_timestamp.as_ref()
     }
-    /// <p>The timestamp from the AWS server corresponding to the fragment.</p>
+    /// <p>The timestamp from the Amazon Web Services server corresponding to the fragment.</p>
     pub fn server_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.server_timestamp.as_ref()
     }
@@ -97,17 +97,17 @@ impl FragmentBuilder {
     pub fn get_producer_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.producer_timestamp
     }
-    /// <p>The timestamp from the AWS server corresponding to the fragment.</p>
+    /// <p>The timestamp from the Amazon Web Services server corresponding to the fragment.</p>
     pub fn server_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.server_timestamp = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The timestamp from the AWS server corresponding to the fragment.</p>
+    /// <p>The timestamp from the Amazon Web Services server corresponding to the fragment.</p>
     pub fn set_server_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.server_timestamp = input;
         self
     }
-    /// <p>The timestamp from the AWS server corresponding to the fragment.</p>
+    /// <p>The timestamp from the Amazon Web Services server corresponding to the fragment.</p>
     pub fn get_server_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.server_timestamp
     }

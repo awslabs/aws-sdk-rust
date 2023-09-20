@@ -58,14 +58,14 @@ pub(crate) struct Handle {
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`CreateConfigurationSet`](crate::operation::create_configuration_set) operation has
-/// a [`Client::create_configuration_set`], function which returns a builder for that operation.
+/// For example, the [`CancelExportJob`](crate::operation::cancel_export_job) operation has
+/// a [`Client::cancel_export_job`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.create_configuration_set()
-///     .configuration_set_name("example")
+/// let result = client.cancel_export_job()
+///     .job_id("example")
 ///     .send()
 ///     .await;
 /// ```
@@ -149,6 +149,8 @@ impl Client {
 
 mod batch_get_metric_data;
 
+mod cancel_export_job;
+
 mod create_configuration_set;
 
 mod create_configuration_set_event_destination;
@@ -168,6 +170,8 @@ mod create_email_identity;
 mod create_email_identity_policy;
 
 mod create_email_template;
+
+mod create_export_job;
 
 mod create_import_job;
 
@@ -253,7 +257,11 @@ mod get_email_identity_policies;
 
 mod get_email_template;
 
+mod get_export_job;
+
 mod get_import_job;
+
+mod get_message_insights;
 
 mod get_suppressed_destination;
 
@@ -274,6 +282,8 @@ mod list_domain_deliverability_campaigns;
 mod list_email_identities;
 
 mod list_email_templates;
+
+mod list_export_jobs;
 
 mod list_import_jobs;
 

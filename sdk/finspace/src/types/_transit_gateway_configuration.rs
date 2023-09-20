@@ -8,6 +8,8 @@ pub struct TransitGatewayConfiguration {
     pub transit_gateway_id: ::std::option::Option<::std::string::String>,
     /// <p>The routing CIDR on behalf of kdb environment. It could be any "/26 range in the 100.64.0.0 CIDR space. After providing, it will be added to the customer's transit gateway routing table so that the traffics could be routed to kdb network.</p>
     pub routable_cidr_space: ::std::option::Option<::std::string::String>,
+    /// <p> The rules that define how you manage the outbound traffic from kdb network to your internal network. </p>
+    pub attachment_network_acl_configuration: ::std::option::Option<::std::vec::Vec<crate::types::NetworkAclEntry>>,
 }
 impl TransitGatewayConfiguration {
     /// <p>The identifier of the transit gateway created by the customer to connect outbound traffics from kdb network to your internal network.</p>
@@ -17,6 +19,10 @@ impl TransitGatewayConfiguration {
     /// <p>The routing CIDR on behalf of kdb environment. It could be any "/26 range in the 100.64.0.0 CIDR space. After providing, it will be added to the customer's transit gateway routing table so that the traffics could be routed to kdb network.</p>
     pub fn routable_cidr_space(&self) -> ::std::option::Option<&str> {
         self.routable_cidr_space.as_deref()
+    }
+    /// <p> The rules that define how you manage the outbound traffic from kdb network to your internal network. </p>
+    pub fn attachment_network_acl_configuration(&self) -> ::std::option::Option<&[crate::types::NetworkAclEntry]> {
+        self.attachment_network_acl_configuration.as_deref()
     }
 }
 impl TransitGatewayConfiguration {
@@ -32,6 +38,7 @@ impl TransitGatewayConfiguration {
 pub struct TransitGatewayConfigurationBuilder {
     pub(crate) transit_gateway_id: ::std::option::Option<::std::string::String>,
     pub(crate) routable_cidr_space: ::std::option::Option<::std::string::String>,
+    pub(crate) attachment_network_acl_configuration: ::std::option::Option<::std::vec::Vec<crate::types::NetworkAclEntry>>,
 }
 impl TransitGatewayConfigurationBuilder {
     /// <p>The identifier of the transit gateway created by the customer to connect outbound traffics from kdb network to your internal network.</p>
@@ -62,11 +69,32 @@ impl TransitGatewayConfigurationBuilder {
     pub fn get_routable_cidr_space(&self) -> &::std::option::Option<::std::string::String> {
         &self.routable_cidr_space
     }
+    /// Appends an item to `attachment_network_acl_configuration`.
+    ///
+    /// To override the contents of this collection use [`set_attachment_network_acl_configuration`](Self::set_attachment_network_acl_configuration).
+    ///
+    /// <p> The rules that define how you manage the outbound traffic from kdb network to your internal network. </p>
+    pub fn attachment_network_acl_configuration(mut self, input: crate::types::NetworkAclEntry) -> Self {
+        let mut v = self.attachment_network_acl_configuration.unwrap_or_default();
+        v.push(input);
+        self.attachment_network_acl_configuration = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p> The rules that define how you manage the outbound traffic from kdb network to your internal network. </p>
+    pub fn set_attachment_network_acl_configuration(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NetworkAclEntry>>) -> Self {
+        self.attachment_network_acl_configuration = input;
+        self
+    }
+    /// <p> The rules that define how you manage the outbound traffic from kdb network to your internal network. </p>
+    pub fn get_attachment_network_acl_configuration(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NetworkAclEntry>> {
+        &self.attachment_network_acl_configuration
+    }
     /// Consumes the builder and constructs a [`TransitGatewayConfiguration`](crate::types::TransitGatewayConfiguration).
     pub fn build(self) -> crate::types::TransitGatewayConfiguration {
         crate::types::TransitGatewayConfiguration {
             transit_gateway_id: self.transit_gateway_id,
             routable_cidr_space: self.routable_cidr_space,
+            attachment_network_acl_configuration: self.attachment_network_acl_configuration,
         }
     }
 }

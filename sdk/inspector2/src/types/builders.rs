@@ -197,6 +197,12 @@ pub use crate::types::_free_trial_account_info::FreeTrialAccountInfoBuilder;
 
 pub use crate::types::_free_trial_info::FreeTrialInfoBuilder;
 
+pub use crate::types::_finding_details_error::FindingDetailsErrorBuilder;
+
+pub use crate::types::_finding_detail::FindingDetailBuilder;
+
+pub use crate::types::_evidence::EvidenceBuilder;
+
 pub use crate::types::_code_snippet_error::CodeSnippetErrorBuilder;
 
 pub use crate::types::_code_snippet_result::CodeSnippetResultBuilder;

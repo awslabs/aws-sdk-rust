@@ -189,6 +189,8 @@ mod export_ecs_service_recommendations;
 
 mod export_lambda_function_recommendations;
 
+mod export_license_recommendations;
+
 mod get_auto_scaling_group_recommendations;
 
 mod get_ebs_volume_recommendations;
@@ -208,6 +210,8 @@ mod get_enrollment_status;
 mod get_enrollment_statuses_for_organization;
 
 mod get_lambda_function_recommendations;
+
+mod get_license_recommendations;
 
 mod get_recommendation_preferences;
 

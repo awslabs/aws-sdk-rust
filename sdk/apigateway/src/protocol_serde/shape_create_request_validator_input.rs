@@ -6,11 +6,11 @@ pub fn ser_create_request_validator_input(
     if let Some(var_1) = &input.name {
         object.key("name").string(var_1.as_str());
     }
-    if input.validate_request_body {
-        object.key("validateRequestBody").boolean(input.validate_request_body);
+    if let Some(var_2) = &input.validate_request_body {
+        object.key("validateRequestBody").boolean(*var_2);
     }
-    if input.validate_request_parameters {
-        object.key("validateRequestParameters").boolean(input.validate_request_parameters);
+    if let Some(var_3) = &input.validate_request_parameters {
+        object.key("validateRequestParameters").boolean(*var_3);
     }
     Ok(())
 }

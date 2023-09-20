@@ -27,6 +27,11 @@ where
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'aggregation' cannot be null")
                             })?,
                         )),
+                        "custom" => Some(crate::types::AnalysisRulePolicyV1::Custom(
+                            crate::protocol_serde::shape_analysis_rule_custom::de_analysis_rule_custom(tokens)?.ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'custom' cannot be null")
+                            })?,
+                        )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
                             Some(crate::types::AnalysisRulePolicyV1::Unknown)

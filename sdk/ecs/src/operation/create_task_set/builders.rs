@@ -152,17 +152,17 @@ impl CreateTaskSetFluentBuilder {
     pub fn get_external_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_external_id()
     }
-    /// <p>The task definition for the tasks in the task set to use.</p>
+    /// <p>The task definition for the tasks in the task set to use. If a revision isn't specified, the latest <code>ACTIVE</code> revision is used.</p>
     pub fn task_definition(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.task_definition(input.into());
         self
     }
-    /// <p>The task definition for the tasks in the task set to use.</p>
+    /// <p>The task definition for the tasks in the task set to use. If a revision isn't specified, the latest <code>ACTIVE</code> revision is used.</p>
     pub fn set_task_definition(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_task_definition(input);
         self
     }
-    /// <p>The task definition for the tasks in the task set to use.</p>
+    /// <p>The task definition for the tasks in the task set to use. If a revision isn't specified, the latest <code>ACTIVE</code> revision is used.</p>
     pub fn get_task_definition(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_task_definition()
     }

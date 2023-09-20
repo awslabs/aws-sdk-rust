@@ -14,7 +14,7 @@ pub struct CreateOrganizationInput {
     /// <p>The Amazon Resource Name (ARN) of a customer managed key from AWS KMS.</p>
     pub kms_key_arn: ::std::option::Option<::std::string::String>,
     /// <p>When <code>true</code>, allows organization interoperability between WorkMail and Microsoft Exchange. If <code>true</code>, you must include a AD Connector directory ID in the request.</p>
-    pub enable_interoperability: bool,
+    pub enable_interoperability: ::std::option::Option<bool>,
 }
 impl CreateOrganizationInput {
     /// <p>The AWS Directory Service directory ID.</p>
@@ -38,7 +38,7 @@ impl CreateOrganizationInput {
         self.kms_key_arn.as_deref()
     }
     /// <p>When <code>true</code>, allows organization interoperability between WorkMail and Microsoft Exchange. If <code>true</code>, you must include a AD Connector directory ID in the request.</p>
-    pub fn enable_interoperability(&self) -> bool {
+    pub fn enable_interoperability(&self) -> ::std::option::Option<bool> {
         self.enable_interoperability
     }
 }
@@ -161,7 +161,7 @@ impl CreateOrganizationInputBuilder {
             client_token: self.client_token,
             domains: self.domains,
             kms_key_arn: self.kms_key_arn,
-            enable_interoperability: self.enable_interoperability.unwrap_or_default(),
+            enable_interoperability: self.enable_interoperability,
         })
     }
 }

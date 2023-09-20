@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetRequestedServiceQuotaChangeInput {
-    /// <p>The ID of the quota increase request.</p>
+    /// <p>Specifies the ID of the quota increase request.</p>
     pub request_id: ::std::option::Option<::std::string::String>,
 }
 impl GetRequestedServiceQuotaChangeInput {
-    /// <p>The ID of the quota increase request.</p>
+    /// <p>Specifies the ID of the quota increase request.</p>
     pub fn request_id(&self) -> ::std::option::Option<&str> {
         self.request_id.as_deref()
     }
@@ -26,17 +26,17 @@ pub struct GetRequestedServiceQuotaChangeInputBuilder {
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
 }
 impl GetRequestedServiceQuotaChangeInputBuilder {
-    /// <p>The ID of the quota increase request.</p>
+    /// <p>Specifies the ID of the quota increase request.</p>
     pub fn request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.request_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the quota increase request.</p>
+    /// <p>Specifies the ID of the quota increase request.</p>
     pub fn set_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.request_id = input;
         self
     }
-    /// <p>The ID of the quota increase request.</p>
+    /// <p>Specifies the ID of the quota increase request.</p>
     pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.request_id
     }

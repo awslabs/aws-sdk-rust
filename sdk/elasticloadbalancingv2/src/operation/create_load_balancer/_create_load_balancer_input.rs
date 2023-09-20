@@ -20,7 +20,7 @@ pub struct CreateLoadBalancerInput {
     /// <p>[Network Load Balancers] You can specify subnets from one or more Availability Zones. You can specify one Elastic IP address per subnet if you need static IP addresses for your internet-facing load balancer. For internal load balancers, you can specify one private IP address per subnet from the IPv4 range of the subnet. For internet-facing load balancer, you can specify one IPv6 address per subnet.</p>
     /// <p>[Gateway Load Balancers] You can specify subnets from one or more Availability Zones. You cannot specify Elastic IP addresses for your subnets.</p>
     pub subnet_mappings: ::std::option::Option<::std::vec::Vec<crate::types::SubnetMapping>>,
-    /// <p>[Application Load Balancers] The IDs of the security groups for the load balancer.</p>
+    /// <p>[Application Load Balancers and Network Load Balancers] The IDs of the security groups for the load balancer.</p>
     pub security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The nodes of an Internet-facing load balancer have public IP addresses. The DNS name of an Internet-facing load balancer is publicly resolvable to the public IP addresses of the nodes. Therefore, Internet-facing load balancers can route requests from clients over the internet.</p>
     /// <p>The nodes of an internal load balancer have only private IP addresses. The DNS name of an internal load balancer is publicly resolvable to the private IP addresses of the nodes. Therefore, internal load balancers can route requests only from clients with access to the VPC for the load balancer.</p>
@@ -60,7 +60,7 @@ impl CreateLoadBalancerInput {
     pub fn subnet_mappings(&self) -> ::std::option::Option<&[crate::types::SubnetMapping]> {
         self.subnet_mappings.as_deref()
     }
-    /// <p>[Application Load Balancers] The IDs of the security groups for the load balancer.</p>
+    /// <p>[Application Load Balancers and Network Load Balancers] The IDs of the security groups for the load balancer.</p>
     pub fn security_groups(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.security_groups.as_deref()
     }
@@ -201,19 +201,19 @@ impl CreateLoadBalancerInputBuilder {
     ///
     /// To override the contents of this collection use [`set_security_groups`](Self::set_security_groups).
     ///
-    /// <p>[Application Load Balancers] The IDs of the security groups for the load balancer.</p>
+    /// <p>[Application Load Balancers and Network Load Balancers] The IDs of the security groups for the load balancer.</p>
     pub fn security_groups(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.security_groups.unwrap_or_default();
         v.push(input.into());
         self.security_groups = ::std::option::Option::Some(v);
         self
     }
-    /// <p>[Application Load Balancers] The IDs of the security groups for the load balancer.</p>
+    /// <p>[Application Load Balancers and Network Load Balancers] The IDs of the security groups for the load balancer.</p>
     pub fn set_security_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.security_groups = input;
         self
     }
-    /// <p>[Application Load Balancers] The IDs of the security groups for the load balancer.</p>
+    /// <p>[Application Load Balancers and Network Load Balancers] The IDs of the security groups for the load balancer.</p>
     pub fn get_security_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.security_groups
     }

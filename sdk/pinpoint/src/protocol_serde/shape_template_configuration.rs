@@ -27,6 +27,12 @@ pub fn ser_template_configuration(
         crate::protocol_serde::shape_template::ser_template(&mut object_8, var_7)?;
         object_8.finish();
     }
+    if let Some(var_9) = &input.in_app_template {
+        #[allow(unused_mut)]
+        let mut object_10 = object.key("InAppTemplate").start_object();
+        crate::protocol_serde::shape_template::ser_template(&mut object_10, var_9)?;
+        object_10.finish();
+    }
     Ok(())
 }
 
@@ -56,6 +62,9 @@ where
                         }
                         "VoiceTemplate" => {
                             builder = builder.set_voice_template(crate::protocol_serde::shape_template::de_template(tokens)?);
+                        }
+                        "InAppTemplate" => {
+                            builder = builder.set_in_app_template(crate::protocol_serde::shape_template::de_template(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

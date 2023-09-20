@@ -55,6 +55,9 @@ pub struct Stack {
     pub root_id: ::std::option::Option<::std::string::String>,
     /// <p>Information about whether a stack's actual configuration differs, or has <i>drifted</i>, from its expected configuration, as defined in the stack template and any values specified as template parameters. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting Unregulated Configuration Changes to Stacks and Resources</a>.</p>
     pub drift_information: ::std::option::Option<crate::types::StackDriftInformation>,
+    /// <p>When set to <code>true</code>, newly created resources are deleted when the operation rolls back. This includes newly created resources marked with a deletion policy of <code>Retain</code>.</p>
+    /// <p>Default: <code>false</code> </p>
+    pub retain_except_on_create: ::std::option::Option<bool>,
 }
 impl Stack {
     /// <p>Unique identifier of the stack.</p>
@@ -152,6 +155,11 @@ impl Stack {
     pub fn drift_information(&self) -> ::std::option::Option<&crate::types::StackDriftInformation> {
         self.drift_information.as_ref()
     }
+    /// <p>When set to <code>true</code>, newly created resources are deleted when the operation rolls back. This includes newly created resources marked with a deletion policy of <code>Retain</code>.</p>
+    /// <p>Default: <code>false</code> </p>
+    pub fn retain_except_on_create(&self) -> ::std::option::Option<bool> {
+        self.retain_except_on_create
+    }
 }
 impl Stack {
     /// Creates a new builder-style object to manufacture [`Stack`](crate::types::Stack).
@@ -186,6 +194,7 @@ pub struct StackBuilder {
     pub(crate) parent_id: ::std::option::Option<::std::string::String>,
     pub(crate) root_id: ::std::option::Option<::std::string::String>,
     pub(crate) drift_information: ::std::option::Option<crate::types::StackDriftInformation>,
+    pub(crate) retain_except_on_create: ::std::option::Option<bool>,
 }
 impl StackBuilder {
     /// <p>Unique identifier of the stack.</p>
@@ -547,6 +556,23 @@ impl StackBuilder {
     pub fn get_drift_information(&self) -> &::std::option::Option<crate::types::StackDriftInformation> {
         &self.drift_information
     }
+    /// <p>When set to <code>true</code>, newly created resources are deleted when the operation rolls back. This includes newly created resources marked with a deletion policy of <code>Retain</code>.</p>
+    /// <p>Default: <code>false</code> </p>
+    pub fn retain_except_on_create(mut self, input: bool) -> Self {
+        self.retain_except_on_create = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>When set to <code>true</code>, newly created resources are deleted when the operation rolls back. This includes newly created resources marked with a deletion policy of <code>Retain</code>.</p>
+    /// <p>Default: <code>false</code> </p>
+    pub fn set_retain_except_on_create(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.retain_except_on_create = input;
+        self
+    }
+    /// <p>When set to <code>true</code>, newly created resources are deleted when the operation rolls back. This includes newly created resources marked with a deletion policy of <code>Retain</code>.</p>
+    /// <p>Default: <code>false</code> </p>
+    pub fn get_retain_except_on_create(&self) -> &::std::option::Option<bool> {
+        &self.retain_except_on_create
+    }
     /// Consumes the builder and constructs a [`Stack`](crate::types::Stack).
     pub fn build(self) -> crate::types::Stack {
         crate::types::Stack {
@@ -572,6 +598,7 @@ impl StackBuilder {
             parent_id: self.parent_id,
             root_id: self.root_id,
             drift_information: self.drift_information,
+            retain_except_on_create: self.retain_except_on_create,
         }
     }
 }

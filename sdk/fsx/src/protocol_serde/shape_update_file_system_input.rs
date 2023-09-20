@@ -42,5 +42,8 @@ pub fn ser_update_file_system_input(
         )?;
         object_11.finish();
     }
+    if let Some(var_12) = &input.storage_type {
+        object.key("StorageType").string(var_12.as_str());
+    }
     Ok(())
 }

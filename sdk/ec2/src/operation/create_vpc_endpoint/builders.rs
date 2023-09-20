@@ -205,17 +205,17 @@ impl CreateVpcEndpointFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_subnet_ids`](Self::set_subnet_ids).
     ///
-    /// <p>(Interface and Gateway Load Balancer endpoints) The IDs of the subnets in which to create an endpoint network interface. For a Gateway Load Balancer endpoint, you can specify only one subnet.</p>
+    /// <p>(Interface and Gateway Load Balancer endpoints) The IDs of the subnets in which to create endpoint network interfaces. For a Gateway Load Balancer endpoint, you can specify only one subnet.</p>
     pub fn subnet_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.subnet_ids(input.into());
         self
     }
-    /// <p>(Interface and Gateway Load Balancer endpoints) The IDs of the subnets in which to create an endpoint network interface. For a Gateway Load Balancer endpoint, you can specify only one subnet.</p>
+    /// <p>(Interface and Gateway Load Balancer endpoints) The IDs of the subnets in which to create endpoint network interfaces. For a Gateway Load Balancer endpoint, you can specify only one subnet.</p>
     pub fn set_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_subnet_ids(input);
         self
     }
-    /// <p>(Interface and Gateway Load Balancer endpoints) The IDs of the subnets in which to create an endpoint network interface. For a Gateway Load Balancer endpoint, you can specify only one subnet.</p>
+    /// <p>(Interface and Gateway Load Balancer endpoints) The IDs of the subnets in which to create endpoint network interfaces. For a Gateway Load Balancer endpoint, you can specify only one subnet.</p>
     pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_subnet_ids()
     }
@@ -223,17 +223,17 @@ impl CreateVpcEndpointFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
     ///
-    /// <p>(Interface endpoint) The IDs of the security groups to associate with the endpoint network interface. If this parameter is not specified, we use the default security group for the VPC.</p>
+    /// <p>(Interface endpoint) The IDs of the security groups to associate with the endpoint network interfaces. If this parameter is not specified, we use the default security group for the VPC.</p>
     pub fn security_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.security_group_ids(input.into());
         self
     }
-    /// <p>(Interface endpoint) The IDs of the security groups to associate with the endpoint network interface. If this parameter is not specified, we use the default security group for the VPC.</p>
+    /// <p>(Interface endpoint) The IDs of the security groups to associate with the endpoint network interfaces. If this parameter is not specified, we use the default security group for the VPC.</p>
     pub fn set_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_security_group_ids(input);
         self
     }
-    /// <p>(Interface endpoint) The IDs of the security groups to associate with the endpoint network interface. If this parameter is not specified, we use the default security group for the VPC.</p>
+    /// <p>(Interface endpoint) The IDs of the security groups to associate with the endpoint network interfaces. If this parameter is not specified, we use the default security group for the VPC.</p>
     pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_security_group_ids()
     }
@@ -316,5 +316,23 @@ impl CreateVpcEndpointFluentBuilder {
     /// <p>The tags to associate with the endpoint.</p>
     pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
         self.inner.get_tag_specifications()
+    }
+    /// Appends an item to `SubnetConfigurations`.
+    ///
+    /// To override the contents of this collection use [`set_subnet_configurations`](Self::set_subnet_configurations).
+    ///
+    /// <p>The subnet configurations for the endpoint.</p>
+    pub fn subnet_configurations(mut self, input: crate::types::SubnetConfiguration) -> Self {
+        self.inner = self.inner.subnet_configurations(input);
+        self
+    }
+    /// <p>The subnet configurations for the endpoint.</p>
+    pub fn set_subnet_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SubnetConfiguration>>) -> Self {
+        self.inner = self.inner.set_subnet_configurations(input);
+        self
+    }
+    /// <p>The subnet configurations for the endpoint.</p>
+    pub fn get_subnet_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SubnetConfiguration>> {
+        self.inner.get_subnet_configurations()
     }
 }

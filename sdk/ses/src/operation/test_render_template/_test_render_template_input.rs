@@ -3,13 +3,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TestRenderTemplateInput {
-    /// <p>The name of the template that you want to render.</p>
+    /// <p>The name of the template to render.</p>
     pub template_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of replacement values to apply to the template. This parameter is a JSON object, typically consisting of key-value pairs in which the keys correspond to replacement tags in the email template.</p>
     pub template_data: ::std::option::Option<::std::string::String>,
 }
 impl TestRenderTemplateInput {
-    /// <p>The name of the template that you want to render.</p>
+    /// <p>The name of the template to render.</p>
     pub fn template_name(&self) -> ::std::option::Option<&str> {
         self.template_name.as_deref()
     }
@@ -33,17 +33,17 @@ pub struct TestRenderTemplateInputBuilder {
     pub(crate) template_data: ::std::option::Option<::std::string::String>,
 }
 impl TestRenderTemplateInputBuilder {
-    /// <p>The name of the template that you want to render.</p>
+    /// <p>The name of the template to render.</p>
     pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the template that you want to render.</p>
+    /// <p>The name of the template to render.</p>
     pub fn set_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.template_name = input;
         self
     }
-    /// <p>The name of the template that you want to render.</p>
+    /// <p>The name of the template to render.</p>
     pub fn get_template_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.template_name
     }

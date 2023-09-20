@@ -16,6 +16,12 @@ pub fn ser_dialer_config(
             crate::protocol_serde::shape_predictive_dialer_config::ser_predictive_dialer_config(&mut object_2, inner)?;
             object_2.finish();
         }
+        crate::types::DialerConfig::AgentlessDialerConfig(inner) => {
+            #[allow(unused_mut)]
+            let mut object_3 = object_3.key("agentlessDialerConfig").start_object();
+            crate::protocol_serde::shape_agentless_dialer_config::ser_agentless_dialer_config(&mut object_3, inner)?;
+            object_3.finish();
+        }
         crate::types::DialerConfig::Unknown => return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant("DialerConfig")),
     }
     Ok(())
@@ -48,6 +54,11 @@ where
                         "predictiveDialerConfig" => Some(crate::types::DialerConfig::PredictiveDialerConfig(
                             crate::protocol_serde::shape_predictive_dialer_config::de_predictive_dialer_config(tokens)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'predictiveDialerConfig' cannot be null")
+                            })?,
+                        )),
+                        "agentlessDialerConfig" => Some(crate::types::DialerConfig::AgentlessDialerConfig(
+                            crate::protocol_serde::shape_agentless_dialer_config::de_agentless_dialer_config(tokens)?.ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'agentlessDialerConfig' cannot be null")
                             })?,
                         )),
                         _ => {

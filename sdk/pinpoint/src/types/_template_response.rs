@@ -18,7 +18,7 @@ pub struct TemplateResponse {
     pub template_description: ::std::option::Option<::std::string::String>,
     /// <p>The name of the message template.</p>
     pub template_name: ::std::option::Option<::std::string::String>,
-    /// <p>The type of channel that the message template is designed for. Possible values are: EMAIL, PUSH, SMS, and VOICE.</p>
+    /// <p>The type of channel that the message template is designed for. Possible values are: EMAIL, PUSH, SMS, INAPP, and VOICE.</p>
     pub template_type: ::std::option::Option<crate::types::TemplateType>,
     /// <p>The unique identifier, as an integer, for the active version of the message template.</p>
     pub version: ::std::option::Option<::std::string::String>,
@@ -52,7 +52,7 @@ impl TemplateResponse {
     pub fn template_name(&self) -> ::std::option::Option<&str> {
         self.template_name.as_deref()
     }
-    /// <p>The type of channel that the message template is designed for. Possible values are: EMAIL, PUSH, SMS, and VOICE.</p>
+    /// <p>The type of channel that the message template is designed for. Possible values are: EMAIL, PUSH, SMS, INAPP, and VOICE.</p>
     pub fn template_type(&self) -> ::std::option::Option<&crate::types::TemplateType> {
         self.template_type.as_ref()
     }
@@ -187,17 +187,17 @@ impl TemplateResponseBuilder {
     pub fn get_template_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.template_name
     }
-    /// <p>The type of channel that the message template is designed for. Possible values are: EMAIL, PUSH, SMS, and VOICE.</p>
+    /// <p>The type of channel that the message template is designed for. Possible values are: EMAIL, PUSH, SMS, INAPP, and VOICE.</p>
     pub fn template_type(mut self, input: crate::types::TemplateType) -> Self {
         self.template_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of channel that the message template is designed for. Possible values are: EMAIL, PUSH, SMS, and VOICE.</p>
+    /// <p>The type of channel that the message template is designed for. Possible values are: EMAIL, PUSH, SMS, INAPP, and VOICE.</p>
     pub fn set_template_type(mut self, input: ::std::option::Option<crate::types::TemplateType>) -> Self {
         self.template_type = input;
         self
     }
-    /// <p>The type of channel that the message template is designed for. Possible values are: EMAIL, PUSH, SMS, and VOICE.</p>
+    /// <p>The type of channel that the message template is designed for. Possible values are: EMAIL, PUSH, SMS, INAPP, and VOICE.</p>
     pub fn get_template_type(&self) -> &::std::option::Option<crate::types::TemplateType> {
         &self.template_type
     }

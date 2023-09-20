@@ -7,7 +7,7 @@ pub struct ListXssMatchSetsInput {
     /// <p>If you specify a value for <code>Limit</code> and you have more <code>XssMatchSet</code> objects than the value of <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>XssMatchSets</code>. For the second and subsequent <code>ListXssMatchSets</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of <code>XssMatchSets</code>.</p>
     pub next_marker: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the number of <code>XssMatchSet</code> objects that you want AWS WAF to return for this request. If you have more <code>XssMatchSet</code> objects than the number you specify for <code>Limit</code>, the response includes a <code>NextMarker</code> value that you can use to get another batch of <code>Rules</code>.</p>
-    pub limit: i32,
+    pub limit: ::std::option::Option<i32>,
 }
 impl ListXssMatchSetsInput {
     /// <p>If you specify a value for <code>Limit</code> and you have more <code>XssMatchSet</code> objects than the value of <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>XssMatchSets</code>. For the second and subsequent <code>ListXssMatchSets</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of <code>XssMatchSets</code>.</p>
@@ -15,7 +15,7 @@ impl ListXssMatchSetsInput {
         self.next_marker.as_deref()
     }
     /// <p>Specifies the number of <code>XssMatchSet</code> objects that you want AWS WAF to return for this request. If you have more <code>XssMatchSet</code> objects than the number you specify for <code>Limit</code>, the response includes a <code>NextMarker</code> value that you can use to get another batch of <code>Rules</code>.</p>
-    pub fn limit(&self) -> i32 {
+    pub fn limit(&self) -> ::std::option::Option<i32> {
         self.limit
     }
 }
@@ -68,7 +68,7 @@ impl ListXssMatchSetsInputBuilder {
     ) -> ::std::result::Result<crate::operation::list_xss_match_sets::ListXssMatchSetsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_xss_match_sets::ListXssMatchSetsInput {
             next_marker: self.next_marker,
-            limit: self.limit.unwrap_or_default(),
+            limit: self.limit,
         })
     }
 }

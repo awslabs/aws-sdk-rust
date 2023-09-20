@@ -13,6 +13,9 @@ pub mod batch_start_recommendations;
 /// Types for the `CancelReplicationTaskAssessmentRun` operation.
 pub mod cancel_replication_task_assessment_run;
 
+/// Types for the `CreateDataProvider` operation.
+pub mod create_data_provider;
+
 /// Types for the `CreateEndpoint` operation.
 pub mod create_endpoint;
 
@@ -21,6 +24,12 @@ pub mod create_event_subscription;
 
 /// Types for the `CreateFleetAdvisorCollector` operation.
 pub mod create_fleet_advisor_collector;
+
+/// Types for the `CreateInstanceProfile` operation.
+pub mod create_instance_profile;
+
+/// Types for the `CreateMigrationProject` operation.
+pub mod create_migration_project;
 
 /// Types for the `CreateReplicationConfig` operation.
 pub mod create_replication_config;
@@ -40,6 +49,9 @@ pub mod delete_certificate;
 /// Types for the `DeleteConnection` operation.
 pub mod delete_connection;
 
+/// Types for the `DeleteDataProvider` operation.
+pub mod delete_data_provider;
+
 /// Types for the `DeleteEndpoint` operation.
 pub mod delete_endpoint;
 
@@ -51,6 +63,12 @@ pub mod delete_fleet_advisor_collector;
 
 /// Types for the `DeleteFleetAdvisorDatabases` operation.
 pub mod delete_fleet_advisor_databases;
+
+/// Types for the `DeleteInstanceProfile` operation.
+pub mod delete_instance_profile;
+
+/// Types for the `DeleteMigrationProject` operation.
+pub mod delete_migration_project;
 
 /// Types for the `DeleteReplicationConfig` operation.
 pub mod delete_replication_config;
@@ -79,6 +97,12 @@ pub mod describe_certificates;
 /// Types for the `DescribeConnections` operation.
 pub mod describe_connections;
 
+/// Types for the `DescribeConversionConfiguration` operation.
+pub mod describe_conversion_configuration;
+
+/// Types for the `DescribeDataProviders` operation.
+pub mod describe_data_providers;
+
 /// Types for the `DescribeEndpointSettings` operation.
 pub mod describe_endpoint_settings;
 
@@ -88,6 +112,9 @@ pub mod describe_endpoint_types;
 /// Types for the `DescribeEndpoints` operation.
 pub mod describe_endpoints;
 
+/// Types for the `DescribeEngineVersions` operation.
+pub mod describe_engine_versions;
+
 /// Types for the `DescribeEventCategories` operation.
 pub mod describe_event_categories;
 
@@ -96,6 +123,9 @@ pub mod describe_event_subscriptions;
 
 /// Types for the `DescribeEvents` operation.
 pub mod describe_events;
+
+/// Types for the `DescribeExtensionPackAssociations` operation.
+pub mod describe_extension_pack_associations;
 
 /// Types for the `DescribeFleetAdvisorCollectors` operation.
 pub mod describe_fleet_advisor_collectors;
@@ -111,6 +141,27 @@ pub mod describe_fleet_advisor_schema_object_summary;
 
 /// Types for the `DescribeFleetAdvisorSchemas` operation.
 pub mod describe_fleet_advisor_schemas;
+
+/// Types for the `DescribeInstanceProfiles` operation.
+pub mod describe_instance_profiles;
+
+/// Types for the `DescribeMetadataModelAssessments` operation.
+pub mod describe_metadata_model_assessments;
+
+/// Types for the `DescribeMetadataModelConversions` operation.
+pub mod describe_metadata_model_conversions;
+
+/// Types for the `DescribeMetadataModelExportsAsScript` operation.
+pub mod describe_metadata_model_exports_as_script;
+
+/// Types for the `DescribeMetadataModelExportsToTarget` operation.
+pub mod describe_metadata_model_exports_to_target;
+
+/// Types for the `DescribeMetadataModelImports` operation.
+pub mod describe_metadata_model_imports;
+
+/// Types for the `DescribeMigrationProjects` operation.
+pub mod describe_migration_projects;
 
 /// Types for the `DescribeOrderableReplicationInstances` operation.
 pub mod describe_orderable_replication_instances;
@@ -163,17 +214,32 @@ pub mod describe_schemas;
 /// Types for the `DescribeTableStatistics` operation.
 pub mod describe_table_statistics;
 
+/// Types for the `ExportMetadataModelAssessment` operation.
+pub mod export_metadata_model_assessment;
+
 /// Types for the `ImportCertificate` operation.
 pub mod import_certificate;
 
 /// Types for the `ListTagsForResource` operation.
 pub mod list_tags_for_resource;
 
+/// Types for the `ModifyConversionConfiguration` operation.
+pub mod modify_conversion_configuration;
+
+/// Types for the `ModifyDataProvider` operation.
+pub mod modify_data_provider;
+
 /// Types for the `ModifyEndpoint` operation.
 pub mod modify_endpoint;
 
 /// Types for the `ModifyEventSubscription` operation.
 pub mod modify_event_subscription;
+
+/// Types for the `ModifyInstanceProfile` operation.
+pub mod modify_instance_profile;
+
+/// Types for the `ModifyMigrationProject` operation.
+pub mod modify_migration_project;
 
 /// Types for the `ModifyReplicationConfig` operation.
 pub mod modify_replication_config;
@@ -207,6 +273,24 @@ pub mod remove_tags_from_resource;
 
 /// Types for the `RunFleetAdvisorLsaAnalysis` operation.
 pub mod run_fleet_advisor_lsa_analysis;
+
+/// Types for the `StartExtensionPackAssociation` operation.
+pub mod start_extension_pack_association;
+
+/// Types for the `StartMetadataModelAssessment` operation.
+pub mod start_metadata_model_assessment;
+
+/// Types for the `StartMetadataModelConversion` operation.
+pub mod start_metadata_model_conversion;
+
+/// Types for the `StartMetadataModelExportAsScript` operation.
+pub mod start_metadata_model_export_as_script;
+
+/// Types for the `StartMetadataModelExportToTarget` operation.
+pub mod start_metadata_model_export_to_target;
+
+/// Types for the `StartMetadataModelImport` operation.
+pub mod start_metadata_model_import;
 
 /// Types for the `StartRecommendations` operation.
 pub mod start_recommendations;

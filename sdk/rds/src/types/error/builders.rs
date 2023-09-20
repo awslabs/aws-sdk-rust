@@ -3,17 +3,21 @@ pub use crate::types::error::_invalid_db_instance_state_fault::InvalidDbInstance
 
 pub use crate::types::error::_db_instance_not_found_fault::DbInstanceNotFoundFaultBuilder;
 
+pub use crate::types::error::_invalid_global_cluster_state_fault::InvalidGlobalClusterStateFaultBuilder;
+
+pub use crate::types::error::_invalid_db_cluster_state_fault::InvalidDbClusterStateFaultBuilder;
+
+pub use crate::types::error::_global_cluster_not_found_fault::GlobalClusterNotFoundFaultBuilder;
+
+pub use crate::types::error::_db_cluster_not_found_fault::DbClusterNotFoundFaultBuilder;
+
 pub use crate::types::error::_invalid_blue_green_deployment_state_fault::InvalidBlueGreenDeploymentStateFaultBuilder;
 
 pub use crate::types::error::_blue_green_deployment_not_found_fault::BlueGreenDeploymentNotFoundFaultBuilder;
 
 pub use crate::types::error::_snapshot_quota_exceeded_fault::SnapshotQuotaExceededFaultBuilder;
 
-pub use crate::types::error::_invalid_db_cluster_state_fault::InvalidDbClusterStateFaultBuilder;
-
 pub use crate::types::error::_db_snapshot_already_exists_fault::DbSnapshotAlreadyExistsFaultBuilder;
-
-pub use crate::types::error::_db_cluster_not_found_fault::DbClusterNotFoundFaultBuilder;
 
 pub use crate::types::error::_resource_not_found_fault::ResourceNotFoundFaultBuilder;
 
@@ -91,6 +95,8 @@ pub use crate::types::error::_db_cluster_quota_exceeded_fault::DbClusterQuotaExc
 
 pub use crate::types::error::_db_cluster_parameter_group_not_found_fault::DbClusterParameterGroupNotFoundFaultBuilder;
 
+pub use crate::types::error::_db_cluster_automated_backup_not_found_fault::DbClusterAutomatedBackupNotFoundFaultBuilder;
+
 pub use crate::types::error::_db_cluster_already_exists_fault::DbClusterAlreadyExistsFaultBuilder;
 
 pub use crate::types::error::_invalid_db_subnet_group_state_fault::InvalidDbSubnetGroupStateFaultBuilder;
@@ -108,10 +114,6 @@ pub use crate::types::error::_source_not_found_fault::SourceNotFoundFaultBuilder
 pub use crate::types::error::_db_instance_role_not_found_fault::DbInstanceRoleNotFoundFaultBuilder;
 
 pub use crate::types::error::_db_cluster_role_not_found_fault::DbClusterRoleNotFoundFaultBuilder;
-
-pub use crate::types::error::_invalid_global_cluster_state_fault::InvalidGlobalClusterStateFaultBuilder;
-
-pub use crate::types::error::_global_cluster_not_found_fault::GlobalClusterNotFoundFaultBuilder;
 
 pub use crate::types::error::_invalid_db_proxy_state_fault::InvalidDbProxyStateFaultBuilder;
 
@@ -183,7 +185,11 @@ pub use crate::types::error::_invalid_db_subnet_state_fault::InvalidDbSubnetStat
 
 pub use crate::types::error::_invalid_db_instance_automated_backup_state_fault::InvalidDbInstanceAutomatedBackupStateFaultBuilder;
 
+pub use crate::types::error::_invalid_db_cluster_automated_backup_state_fault::InvalidDbClusterAutomatedBackupStateFaultBuilder;
+
 pub use crate::types::error::_db_cluster_snapshot_already_exists_fault::DbClusterSnapshotAlreadyExistsFaultBuilder;
+
+pub use crate::types::error::_db_cluster_automated_backup_quota_exceeded_fault::DbClusterAutomatedBackupQuotaExceededFaultBuilder;
 
 pub use crate::types::error::_option_group_quota_exceeded_fault::OptionGroupQuotaExceededFaultBuilder;
 

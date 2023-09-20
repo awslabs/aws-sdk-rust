@@ -50,11 +50,22 @@ where
                                     .transpose()?,
                             );
                         }
+                        "DefaultAuthenticationMethod" => {
+                            builder = builder.set_default_authentication_method(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "Enabled" => {
                             builder = builder.set_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "HasCredential" => {
                             builder = builder.set_has_credential(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
+                        "HasFcmServiceCredentials" => {
+                            builder =
+                                builder.set_has_fcm_service_credentials(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "Id" => {
                             builder = builder.set_id(

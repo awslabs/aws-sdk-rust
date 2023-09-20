@@ -11,7 +11,7 @@ pub struct DeleteLaunchTemplateVersionsInput {
     /// <p>The name of the launch template.</p>
     /// <p>You must specify either the <code>LaunchTemplateName</code> or the <code>LaunchTemplateId</code>, but not both.</p>
     pub launch_template_name: ::std::option::Option<::std::string::String>,
-    /// <p>The version numbers of one or more launch template versions to delete.</p>
+    /// <p>The version numbers of one or more launch template versions to delete. You can specify up to 200 launch template version numbers.</p>
     pub versions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DeleteLaunchTemplateVersionsInput {
@@ -29,7 +29,7 @@ impl DeleteLaunchTemplateVersionsInput {
     pub fn launch_template_name(&self) -> ::std::option::Option<&str> {
         self.launch_template_name.as_deref()
     }
-    /// <p>The version numbers of one or more launch template versions to delete.</p>
+    /// <p>The version numbers of one or more launch template versions to delete. You can specify up to 200 launch template version numbers.</p>
     pub fn versions(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.versions.as_deref()
     }
@@ -103,19 +103,19 @@ impl DeleteLaunchTemplateVersionsInputBuilder {
     ///
     /// To override the contents of this collection use [`set_versions`](Self::set_versions).
     ///
-    /// <p>The version numbers of one or more launch template versions to delete.</p>
+    /// <p>The version numbers of one or more launch template versions to delete. You can specify up to 200 launch template version numbers.</p>
     pub fn versions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.versions.unwrap_or_default();
         v.push(input.into());
         self.versions = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The version numbers of one or more launch template versions to delete.</p>
+    /// <p>The version numbers of one or more launch template versions to delete. You can specify up to 200 launch template version numbers.</p>
     pub fn set_versions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.versions = input;
         self
     }
-    /// <p>The version numbers of one or more launch template versions to delete.</p>
+    /// <p>The version numbers of one or more launch template versions to delete. You can specify up to 200 launch template version numbers.</p>
     pub fn get_versions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.versions
     }

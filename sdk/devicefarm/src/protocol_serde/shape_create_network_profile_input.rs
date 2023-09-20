@@ -51,16 +51,16 @@ pub fn ser_create_network_profile_input(
             ::aws_smithy_types::Number::NegInt((*var_10).into()),
         );
     }
-    if input.uplink_loss_percent != 0 {
+    if let Some(var_11) = &input.uplink_loss_percent {
         object.key("uplinkLossPercent").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.uplink_loss_percent).into()),
+            ::aws_smithy_types::Number::NegInt((*var_11).into()),
         );
     }
-    if input.downlink_loss_percent != 0 {
+    if let Some(var_12) = &input.downlink_loss_percent {
         object.key("downlinkLossPercent").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.downlink_loss_percent).into()),
+            ::aws_smithy_types::Number::NegInt((*var_12).into()),
         );
     }
     Ok(())

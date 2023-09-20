@@ -16,7 +16,7 @@ pub struct DeleteDbInstanceInput {
     /// <p>When a DB instance is in a failure state and has a status of <code>failed</code>, <code>incompatible-restore</code>, or <code>incompatible-network</code>, RDS can delete the instance only if you enable this parameter.</p>
     /// <p>If you delete a read replica or an RDS Custom instance, you must enable this setting.</p>
     /// <p>This setting is required for RDS Custom.</p>
-    pub skip_final_snapshot: bool,
+    pub skip_final_snapshot: ::std::option::Option<bool>,
     /// <p>The <code>DBSnapshotIdentifier</code> of the new <code>DBSnapshot</code> created when the <code>SkipFinalSnapshot</code> parameter is disabled.</p> <note>
     /// <p>If you enable this parameter and also enable SkipFinalShapshot, the command results in an error.</p>
     /// </note>
@@ -47,7 +47,7 @@ impl DeleteDbInstanceInput {
     /// <p>When a DB instance is in a failure state and has a status of <code>failed</code>, <code>incompatible-restore</code>, or <code>incompatible-network</code>, RDS can delete the instance only if you enable this parameter.</p>
     /// <p>If you delete a read replica or an RDS Custom instance, you must enable this setting.</p>
     /// <p>This setting is required for RDS Custom.</p>
-    pub fn skip_final_snapshot(&self) -> bool {
+    pub fn skip_final_snapshot(&self) -> ::std::option::Option<bool> {
         self.skip_final_snapshot
     }
     /// <p>The <code>DBSnapshotIdentifier</code> of the new <code>DBSnapshot</code> created when the <code>SkipFinalSnapshot</code> parameter is disabled.</p> <note>
@@ -205,7 +205,7 @@ impl DeleteDbInstanceInputBuilder {
     ) -> ::std::result::Result<crate::operation::delete_db_instance::DeleteDbInstanceInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_db_instance::DeleteDbInstanceInput {
             db_instance_identifier: self.db_instance_identifier,
-            skip_final_snapshot: self.skip_final_snapshot.unwrap_or_default(),
+            skip_final_snapshot: self.skip_final_snapshot,
             final_db_snapshot_identifier: self.final_db_snapshot_identifier,
             delete_automated_backups: self.delete_automated_backups,
         })

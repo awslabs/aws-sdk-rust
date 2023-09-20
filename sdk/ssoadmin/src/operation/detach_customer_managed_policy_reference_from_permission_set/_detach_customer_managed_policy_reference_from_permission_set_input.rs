@@ -7,7 +7,7 @@ pub struct DetachCustomerManagedPolicyReferenceFromPermissionSetInput {
     pub instance_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the <code>PermissionSet</code>.</p>
     pub permission_set_arn: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies the name and path of a customer managed policy. You must have an IAM policy that matches the name and path in each AWS account where you want to deploy your permission set.</p>
+    /// <p>Specifies the name and path of a customer managed policy. You must have an IAM policy that matches the name and path in each Amazon Web Services account where you want to deploy your permission set.</p>
     pub customer_managed_policy_reference: ::std::option::Option<crate::types::CustomerManagedPolicyReference>,
 }
 impl DetachCustomerManagedPolicyReferenceFromPermissionSetInput {
@@ -19,7 +19,7 @@ impl DetachCustomerManagedPolicyReferenceFromPermissionSetInput {
     pub fn permission_set_arn(&self) -> ::std::option::Option<&str> {
         self.permission_set_arn.as_deref()
     }
-    /// <p>Specifies the name and path of a customer managed policy. You must have an IAM policy that matches the name and path in each AWS account where you want to deploy your permission set.</p>
+    /// <p>Specifies the name and path of a customer managed policy. You must have an IAM policy that matches the name and path in each Amazon Web Services account where you want to deploy your permission set.</p>
     pub fn customer_managed_policy_reference(&self) -> ::std::option::Option<&crate::types::CustomerManagedPolicyReference> {
         self.customer_managed_policy_reference.as_ref()
     }
@@ -68,17 +68,17 @@ impl DetachCustomerManagedPolicyReferenceFromPermissionSetInputBuilder {
     pub fn get_permission_set_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.permission_set_arn
     }
-    /// <p>Specifies the name and path of a customer managed policy. You must have an IAM policy that matches the name and path in each AWS account where you want to deploy your permission set.</p>
+    /// <p>Specifies the name and path of a customer managed policy. You must have an IAM policy that matches the name and path in each Amazon Web Services account where you want to deploy your permission set.</p>
     pub fn customer_managed_policy_reference(mut self, input: crate::types::CustomerManagedPolicyReference) -> Self {
         self.customer_managed_policy_reference = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies the name and path of a customer managed policy. You must have an IAM policy that matches the name and path in each AWS account where you want to deploy your permission set.</p>
+    /// <p>Specifies the name and path of a customer managed policy. You must have an IAM policy that matches the name and path in each Amazon Web Services account where you want to deploy your permission set.</p>
     pub fn set_customer_managed_policy_reference(mut self, input: ::std::option::Option<crate::types::CustomerManagedPolicyReference>) -> Self {
         self.customer_managed_policy_reference = input;
         self
     }
-    /// <p>Specifies the name and path of a customer managed policy. You must have an IAM policy that matches the name and path in each AWS account where you want to deploy your permission set.</p>
+    /// <p>Specifies the name and path of a customer managed policy. You must have an IAM policy that matches the name and path in each Amazon Web Services account where you want to deploy your permission set.</p>
     pub fn get_customer_managed_policy_reference(&self) -> &::std::option::Option<crate::types::CustomerManagedPolicyReference> {
         &self.customer_managed_policy_reference
     }

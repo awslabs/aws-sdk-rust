@@ -166,4 +166,63 @@ impl CreateUserFluentBuilder {
     pub fn get_password(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_password()
     }
+    /// <p>The role of the new user.</p>
+    /// <p>You cannot pass <i>SYSTEM_USER</i> or <i>RESOURCE</i> role in a single request. When a user role is not selected, the default role of <i>USER</i> is selected.</p>
+    pub fn role(mut self, input: crate::types::UserRole) -> Self {
+        self.inner = self.inner.role(input);
+        self
+    }
+    /// <p>The role of the new user.</p>
+    /// <p>You cannot pass <i>SYSTEM_USER</i> or <i>RESOURCE</i> role in a single request. When a user role is not selected, the default role of <i>USER</i> is selected.</p>
+    pub fn set_role(mut self, input: ::std::option::Option<crate::types::UserRole>) -> Self {
+        self.inner = self.inner.set_role(input);
+        self
+    }
+    /// <p>The role of the new user.</p>
+    /// <p>You cannot pass <i>SYSTEM_USER</i> or <i>RESOURCE</i> role in a single request. When a user role is not selected, the default role of <i>USER</i> is selected.</p>
+    pub fn get_role(&self) -> &::std::option::Option<crate::types::UserRole> {
+        self.inner.get_role()
+    }
+    /// <p>The first name of the new user.</p>
+    pub fn first_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.first_name(input.into());
+        self
+    }
+    /// <p>The first name of the new user.</p>
+    pub fn set_first_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_first_name(input);
+        self
+    }
+    /// <p>The first name of the new user.</p>
+    pub fn get_first_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_first_name()
+    }
+    /// <p>The last name of the new user. </p>
+    pub fn last_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.last_name(input.into());
+        self
+    }
+    /// <p>The last name of the new user. </p>
+    pub fn set_last_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_last_name(input);
+        self
+    }
+    /// <p>The last name of the new user. </p>
+    pub fn get_last_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_last_name()
+    }
+    /// <p>If this parameter is enabled, the user will be hidden from the address book.</p>
+    pub fn hidden_from_global_address_list(mut self, input: bool) -> Self {
+        self.inner = self.inner.hidden_from_global_address_list(input);
+        self
+    }
+    /// <p>If this parameter is enabled, the user will be hidden from the address book.</p>
+    pub fn set_hidden_from_global_address_list(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_hidden_from_global_address_list(input);
+        self
+    }
+    /// <p>If this parameter is enabled, the user will be hidden from the address book.</p>
+    pub fn get_hidden_from_global_address_list(&self) -> &::std::option::Option<bool> {
+        self.inner.get_hidden_from_global_address_list()
+    }
 }

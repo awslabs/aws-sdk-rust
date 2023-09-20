@@ -14,6 +14,7 @@
 /// match locationtype {
 ///     LocationType::AvailabilityZone => { /* ... */ },
 ///     LocationType::AvailabilityZoneId => { /* ... */ },
+///     LocationType::Outpost => { /* ... */ },
 ///     LocationType::Region => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -47,6 +48,8 @@ pub enum LocationType {
     #[allow(missing_docs)] // documentation missing in model
     AvailabilityZoneId,
     #[allow(missing_docs)] // documentation missing in model
+    Outpost,
+    #[allow(missing_docs)] // documentation missing in model
     Region,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
@@ -56,6 +59,7 @@ impl ::std::convert::From<&str> for LocationType {
         match s {
             "availability-zone" => LocationType::AvailabilityZone,
             "availability-zone-id" => LocationType::AvailabilityZoneId,
+            "outpost" => LocationType::Outpost,
             "region" => LocationType::Region,
             other => LocationType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
@@ -74,13 +78,14 @@ impl LocationType {
         match self {
             LocationType::AvailabilityZone => "availability-zone",
             LocationType::AvailabilityZoneId => "availability-zone-id",
+            LocationType::Outpost => "outpost",
             LocationType::Region => "region",
             LocationType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["availability-zone", "availability-zone-id", "region"]
+        &["availability-zone", "availability-zone-id", "outpost", "region"]
     }
 }
 impl ::std::convert::AsRef<str> for LocationType {

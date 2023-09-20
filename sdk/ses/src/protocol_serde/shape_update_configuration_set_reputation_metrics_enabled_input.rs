@@ -12,8 +12,8 @@ pub fn ser_update_configuration_set_reputation_metrics_enabled_input_input(
     }
     #[allow(unused_mut)]
     let mut scope_3 = writer.prefix("Enabled");
-    {
-        scope_3.boolean(input.enabled);
+    if let Some(var_4) = &input.enabled {
+        scope_3.boolean(*var_4);
     }
     writer.finish();
     Ok(::aws_smithy_http::body::SdkBody::from(out))

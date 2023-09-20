@@ -3,49 +3,49 @@ pub fn ser_put_method_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::put_method::PutMethodInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if input.api_key_required {
-        object.key("apiKeyRequired").boolean(input.api_key_required);
+    if let Some(var_1) = &input.api_key_required {
+        object.key("apiKeyRequired").boolean(*var_1);
     }
-    if let Some(var_1) = &input.authorization_scopes {
-        let mut array_2 = object.key("authorizationScopes").start_array();
-        for item_3 in var_1 {
+    if let Some(var_2) = &input.authorization_scopes {
+        let mut array_3 = object.key("authorizationScopes").start_array();
+        for item_4 in var_2 {
             {
-                array_2.value().string(item_3.as_str());
+                array_3.value().string(item_4.as_str());
             }
         }
-        array_2.finish();
+        array_3.finish();
     }
-    if let Some(var_4) = &input.authorization_type {
-        object.key("authorizationType").string(var_4.as_str());
+    if let Some(var_5) = &input.authorization_type {
+        object.key("authorizationType").string(var_5.as_str());
     }
-    if let Some(var_5) = &input.authorizer_id {
-        object.key("authorizerId").string(var_5.as_str());
+    if let Some(var_6) = &input.authorizer_id {
+        object.key("authorizerId").string(var_6.as_str());
     }
-    if let Some(var_6) = &input.operation_name {
-        object.key("operationName").string(var_6.as_str());
+    if let Some(var_7) = &input.operation_name {
+        object.key("operationName").string(var_7.as_str());
     }
-    if let Some(var_7) = &input.request_models {
+    if let Some(var_8) = &input.request_models {
         #[allow(unused_mut)]
-        let mut object_8 = object.key("requestModels").start_object();
-        for (key_9, value_10) in var_7 {
+        let mut object_9 = object.key("requestModels").start_object();
+        for (key_10, value_11) in var_8 {
             {
-                object_8.key(key_9.as_str()).string(value_10.as_str());
+                object_9.key(key_10.as_str()).string(value_11.as_str());
             }
         }
-        object_8.finish();
+        object_9.finish();
     }
-    if let Some(var_11) = &input.request_parameters {
+    if let Some(var_12) = &input.request_parameters {
         #[allow(unused_mut)]
-        let mut object_12 = object.key("requestParameters").start_object();
-        for (key_13, value_14) in var_11 {
+        let mut object_13 = object.key("requestParameters").start_object();
+        for (key_14, value_15) in var_12 {
             {
-                object_12.key(key_13.as_str()).boolean(*value_14);
+                object_13.key(key_14.as_str()).boolean(*value_15);
             }
         }
-        object_12.finish();
+        object_13.finish();
     }
-    if let Some(var_15) = &input.request_validator_id {
-        object.key("requestValidatorId").string(var_15.as_str());
+    if let Some(var_16) = &input.request_validator_id {
+        object.key("requestValidatorId").string(var_16.as_str());
     }
     Ok(())
 }

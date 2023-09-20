@@ -19,6 +19,7 @@
 ///     ExportableAutoScalingGroupField::CurrentConfigurationInstanceType => { /* ... */ },
 ///     ExportableAutoScalingGroupField::CurrentConfigurationMaxSize => { /* ... */ },
 ///     ExportableAutoScalingGroupField::CurrentConfigurationMinSize => { /* ... */ },
+///     ExportableAutoScalingGroupField::CurrentInstanceGpuInfo => { /* ... */ },
 ///     ExportableAutoScalingGroupField::CurrentMemory => { /* ... */ },
 ///     ExportableAutoScalingGroupField::CurrentNetwork => { /* ... */ },
 ///     ExportableAutoScalingGroupField::CurrentOnDemandPrice => { /* ... */ },
@@ -40,12 +41,15 @@
 ///     ExportableAutoScalingGroupField::RecommendationOptionsConfigurationMinSize => { /* ... */ },
 ///     ExportableAutoScalingGroupField::RecommendationOptionsEstimatedMonthlySavingsCurrency => { /* ... */ },
 ///     ExportableAutoScalingGroupField::RecommendationOptionsEstimatedMonthlySavingsValue => { /* ... */ },
+///     ExportableAutoScalingGroupField::RecommendationOptionsInstanceGpuInfo => { /* ... */ },
 ///     ExportableAutoScalingGroupField::RecommendationOptionsMemory => { /* ... */ },
 ///     ExportableAutoScalingGroupField::RecommendationOptionsMigrationEffort => { /* ... */ },
 ///     ExportableAutoScalingGroupField::RecommendationOptionsNetwork => { /* ... */ },
 ///     ExportableAutoScalingGroupField::RecommendationOptionsOnDemandPrice => { /* ... */ },
 ///     ExportableAutoScalingGroupField::RecommendationOptionsPerformanceRisk => { /* ... */ },
 ///     ExportableAutoScalingGroupField::RecommendationOptionsProjectedUtilizationMetricsCpuMaximum => { /* ... */ },
+///     ExportableAutoScalingGroupField::RecommendationOptionsProjectedUtilizationMetricsGpuMemoryMaximum => { /* ... */ },
+///     ExportableAutoScalingGroupField::RecommendationOptionsProjectedUtilizationMetricsGpuMaximum => { /* ... */ },
 ///     ExportableAutoScalingGroupField::RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum => { /* ... */ },
 ///     ExportableAutoScalingGroupField::RecommendationOptionsSavingsOpportunityPercentage => { /* ... */ },
 ///     ExportableAutoScalingGroupField::RecommendationOptionsStandardOneYearNoUpfrontReservedPrice => { /* ... */ },
@@ -61,6 +65,8 @@
 ///     ExportableAutoScalingGroupField::UtilizationMetricsEbsReadOpsPerSecondMaximum => { /* ... */ },
 ///     ExportableAutoScalingGroupField::UtilizationMetricsEbsWriteBytesPerSecondMaximum => { /* ... */ },
 ///     ExportableAutoScalingGroupField::UtilizationMetricsEbsWriteOpsPerSecondMaximum => { /* ... */ },
+///     ExportableAutoScalingGroupField::UtilizationMetricsGpuMemoryPercentageMaximum => { /* ... */ },
+///     ExportableAutoScalingGroupField::UtilizationMetricsGpuPercentageMaximum => { /* ... */ },
 ///     ExportableAutoScalingGroupField::UtilizationMetricsMemoryMaximum => { /* ... */ },
 ///     ExportableAutoScalingGroupField::UtilizationMetricsNetworkInBytesPerSecondMaximum => { /* ... */ },
 ///     ExportableAutoScalingGroupField::UtilizationMetricsNetworkOutBytesPerSecondMaximum => { /* ... */ },
@@ -108,6 +114,8 @@ pub enum ExportableAutoScalingGroupField {
     #[allow(missing_docs)] // documentation missing in model
     CurrentConfigurationMinSize,
     #[allow(missing_docs)] // documentation missing in model
+    CurrentInstanceGpuInfo,
+    #[allow(missing_docs)] // documentation missing in model
     CurrentMemory,
     #[allow(missing_docs)] // documentation missing in model
     CurrentNetwork,
@@ -150,6 +158,8 @@ pub enum ExportableAutoScalingGroupField {
     #[allow(missing_docs)] // documentation missing in model
     RecommendationOptionsEstimatedMonthlySavingsValue,
     #[allow(missing_docs)] // documentation missing in model
+    RecommendationOptionsInstanceGpuInfo,
+    #[allow(missing_docs)] // documentation missing in model
     RecommendationOptionsMemory,
     #[allow(missing_docs)] // documentation missing in model
     RecommendationOptionsMigrationEffort,
@@ -161,6 +171,10 @@ pub enum ExportableAutoScalingGroupField {
     RecommendationOptionsPerformanceRisk,
     #[allow(missing_docs)] // documentation missing in model
     RecommendationOptionsProjectedUtilizationMetricsCpuMaximum,
+    #[allow(missing_docs)] // documentation missing in model
+    RecommendationOptionsProjectedUtilizationMetricsGpuMemoryMaximum,
+    #[allow(missing_docs)] // documentation missing in model
+    RecommendationOptionsProjectedUtilizationMetricsGpuMaximum,
     #[allow(missing_docs)] // documentation missing in model
     RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum,
     #[allow(missing_docs)] // documentation missing in model
@@ -192,6 +206,10 @@ pub enum ExportableAutoScalingGroupField {
     #[allow(missing_docs)] // documentation missing in model
     UtilizationMetricsEbsWriteOpsPerSecondMaximum,
     #[allow(missing_docs)] // documentation missing in model
+    UtilizationMetricsGpuMemoryPercentageMaximum,
+    #[allow(missing_docs)] // documentation missing in model
+    UtilizationMetricsGpuPercentageMaximum,
+    #[allow(missing_docs)] // documentation missing in model
     UtilizationMetricsMemoryMaximum,
     #[allow(missing_docs)] // documentation missing in model
     UtilizationMetricsNetworkInBytesPerSecondMaximum,
@@ -214,6 +232,7 @@ impl ::std::convert::From<&str> for ExportableAutoScalingGroupField {
             "CurrentConfigurationInstanceType" => ExportableAutoScalingGroupField::CurrentConfigurationInstanceType,
             "CurrentConfigurationMaxSize" => ExportableAutoScalingGroupField::CurrentConfigurationMaxSize,
             "CurrentConfigurationMinSize" => ExportableAutoScalingGroupField::CurrentConfigurationMinSize,
+            "CurrentInstanceGpuInfo" => ExportableAutoScalingGroupField::CurrentInstanceGpuInfo,
             "CurrentMemory" => ExportableAutoScalingGroupField::CurrentMemory,
             "CurrentNetwork" => ExportableAutoScalingGroupField::CurrentNetwork,
             "CurrentOnDemandPrice" => ExportableAutoScalingGroupField::CurrentOnDemandPrice,
@@ -243,6 +262,7 @@ impl ::std::convert::From<&str> for ExportableAutoScalingGroupField {
                 ExportableAutoScalingGroupField::RecommendationOptionsEstimatedMonthlySavingsCurrency
             }
             "RecommendationOptionsEstimatedMonthlySavingsValue" => ExportableAutoScalingGroupField::RecommendationOptionsEstimatedMonthlySavingsValue,
+            "RecommendationOptionsInstanceGpuInfo" => ExportableAutoScalingGroupField::RecommendationOptionsInstanceGpuInfo,
             "RecommendationOptionsMemory" => ExportableAutoScalingGroupField::RecommendationOptionsMemory,
             "RecommendationOptionsMigrationEffort" => ExportableAutoScalingGroupField::RecommendationOptionsMigrationEffort,
             "RecommendationOptionsNetwork" => ExportableAutoScalingGroupField::RecommendationOptionsNetwork,
@@ -250,6 +270,12 @@ impl ::std::convert::From<&str> for ExportableAutoScalingGroupField {
             "RecommendationOptionsPerformanceRisk" => ExportableAutoScalingGroupField::RecommendationOptionsPerformanceRisk,
             "RecommendationOptionsProjectedUtilizationMetricsCpuMaximum" => {
                 ExportableAutoScalingGroupField::RecommendationOptionsProjectedUtilizationMetricsCpuMaximum
+            }
+            "RecommendationOptionsProjectedUtilizationMetricsGpuMemoryPercentageMaximum" => {
+                ExportableAutoScalingGroupField::RecommendationOptionsProjectedUtilizationMetricsGpuMemoryMaximum
+            }
+            "RecommendationOptionsProjectedUtilizationMetricsGpuPercentageMaximum" => {
+                ExportableAutoScalingGroupField::RecommendationOptionsProjectedUtilizationMetricsGpuMaximum
             }
             "RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum" => {
                 ExportableAutoScalingGroupField::RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum
@@ -272,6 +298,8 @@ impl ::std::convert::From<&str> for ExportableAutoScalingGroupField {
             "UtilizationMetricsEbsReadOpsPerSecondMaximum" => ExportableAutoScalingGroupField::UtilizationMetricsEbsReadOpsPerSecondMaximum,
             "UtilizationMetricsEbsWriteBytesPerSecondMaximum" => ExportableAutoScalingGroupField::UtilizationMetricsEbsWriteBytesPerSecondMaximum,
             "UtilizationMetricsEbsWriteOpsPerSecondMaximum" => ExportableAutoScalingGroupField::UtilizationMetricsEbsWriteOpsPerSecondMaximum,
+            "UtilizationMetricsGpuMemoryPercentageMaximum" => ExportableAutoScalingGroupField::UtilizationMetricsGpuMemoryPercentageMaximum,
+            "UtilizationMetricsGpuPercentageMaximum" => ExportableAutoScalingGroupField::UtilizationMetricsGpuPercentageMaximum,
             "UtilizationMetricsMemoryMaximum" => ExportableAutoScalingGroupField::UtilizationMetricsMemoryMaximum,
             "UtilizationMetricsNetworkInBytesPerSecondMaximum" => ExportableAutoScalingGroupField::UtilizationMetricsNetworkInBytesPerSecondMaximum,
             "UtilizationMetricsNetworkOutBytesPerSecondMaximum" => ExportableAutoScalingGroupField::UtilizationMetricsNetworkOutBytesPerSecondMaximum,
@@ -303,6 +331,7 @@ impl ExportableAutoScalingGroupField {
             ExportableAutoScalingGroupField::CurrentConfigurationInstanceType => "CurrentConfigurationInstanceType",
             ExportableAutoScalingGroupField::CurrentConfigurationMaxSize => "CurrentConfigurationMaxSize",
             ExportableAutoScalingGroupField::CurrentConfigurationMinSize => "CurrentConfigurationMinSize",
+            ExportableAutoScalingGroupField::CurrentInstanceGpuInfo => "CurrentInstanceGpuInfo",
             ExportableAutoScalingGroupField::CurrentMemory => "CurrentMemory",
             ExportableAutoScalingGroupField::CurrentNetwork => "CurrentNetwork",
             ExportableAutoScalingGroupField::CurrentOnDemandPrice => "CurrentOnDemandPrice",
@@ -332,6 +361,7 @@ impl ExportableAutoScalingGroupField {
                 "RecommendationOptionsEstimatedMonthlySavingsCurrency"
             }
             ExportableAutoScalingGroupField::RecommendationOptionsEstimatedMonthlySavingsValue => "RecommendationOptionsEstimatedMonthlySavingsValue",
+            ExportableAutoScalingGroupField::RecommendationOptionsInstanceGpuInfo => "RecommendationOptionsInstanceGpuInfo",
             ExportableAutoScalingGroupField::RecommendationOptionsMemory => "RecommendationOptionsMemory",
             ExportableAutoScalingGroupField::RecommendationOptionsMigrationEffort => "RecommendationOptionsMigrationEffort",
             ExportableAutoScalingGroupField::RecommendationOptionsNetwork => "RecommendationOptionsNetwork",
@@ -339,6 +369,12 @@ impl ExportableAutoScalingGroupField {
             ExportableAutoScalingGroupField::RecommendationOptionsPerformanceRisk => "RecommendationOptionsPerformanceRisk",
             ExportableAutoScalingGroupField::RecommendationOptionsProjectedUtilizationMetricsCpuMaximum => {
                 "RecommendationOptionsProjectedUtilizationMetricsCpuMaximum"
+            }
+            ExportableAutoScalingGroupField::RecommendationOptionsProjectedUtilizationMetricsGpuMemoryMaximum => {
+                "RecommendationOptionsProjectedUtilizationMetricsGpuMemoryPercentageMaximum"
+            }
+            ExportableAutoScalingGroupField::RecommendationOptionsProjectedUtilizationMetricsGpuMaximum => {
+                "RecommendationOptionsProjectedUtilizationMetricsGpuPercentageMaximum"
             }
             ExportableAutoScalingGroupField::RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum => {
                 "RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum"
@@ -361,6 +397,8 @@ impl ExportableAutoScalingGroupField {
             ExportableAutoScalingGroupField::UtilizationMetricsEbsReadOpsPerSecondMaximum => "UtilizationMetricsEbsReadOpsPerSecondMaximum",
             ExportableAutoScalingGroupField::UtilizationMetricsEbsWriteBytesPerSecondMaximum => "UtilizationMetricsEbsWriteBytesPerSecondMaximum",
             ExportableAutoScalingGroupField::UtilizationMetricsEbsWriteOpsPerSecondMaximum => "UtilizationMetricsEbsWriteOpsPerSecondMaximum",
+            ExportableAutoScalingGroupField::UtilizationMetricsGpuMemoryPercentageMaximum => "UtilizationMetricsGpuMemoryPercentageMaximum",
+            ExportableAutoScalingGroupField::UtilizationMetricsGpuPercentageMaximum => "UtilizationMetricsGpuPercentageMaximum",
             ExportableAutoScalingGroupField::UtilizationMetricsMemoryMaximum => "UtilizationMetricsMemoryMaximum",
             ExportableAutoScalingGroupField::UtilizationMetricsNetworkInBytesPerSecondMaximum => "UtilizationMetricsNetworkInBytesPerSecondMaximum",
             ExportableAutoScalingGroupField::UtilizationMetricsNetworkOutBytesPerSecondMaximum => "UtilizationMetricsNetworkOutBytesPerSecondMaximum",
@@ -383,6 +421,7 @@ impl ExportableAutoScalingGroupField {
             "CurrentConfigurationInstanceType",
             "CurrentConfigurationMaxSize",
             "CurrentConfigurationMinSize",
+            "CurrentInstanceGpuInfo",
             "CurrentMemory",
             "CurrentNetwork",
             "CurrentOnDemandPrice",
@@ -404,12 +443,15 @@ impl ExportableAutoScalingGroupField {
             "RecommendationOptionsConfigurationMinSize",
             "RecommendationOptionsEstimatedMonthlySavingsCurrency",
             "RecommendationOptionsEstimatedMonthlySavingsValue",
+            "RecommendationOptionsInstanceGpuInfo",
             "RecommendationOptionsMemory",
             "RecommendationOptionsMigrationEffort",
             "RecommendationOptionsNetwork",
             "RecommendationOptionsOnDemandPrice",
             "RecommendationOptionsPerformanceRisk",
             "RecommendationOptionsProjectedUtilizationMetricsCpuMaximum",
+            "RecommendationOptionsProjectedUtilizationMetricsGpuMemoryPercentageMaximum",
+            "RecommendationOptionsProjectedUtilizationMetricsGpuPercentageMaximum",
             "RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum",
             "RecommendationOptionsSavingsOpportunityPercentage",
             "RecommendationOptionsStandardOneYearNoUpfrontReservedPrice",
@@ -425,6 +467,8 @@ impl ExportableAutoScalingGroupField {
             "UtilizationMetricsEbsReadOpsPerSecondMaximum",
             "UtilizationMetricsEbsWriteBytesPerSecondMaximum",
             "UtilizationMetricsEbsWriteOpsPerSecondMaximum",
+            "UtilizationMetricsGpuMemoryPercentageMaximum",
+            "UtilizationMetricsGpuPercentageMaximum",
             "UtilizationMetricsMemoryMaximum",
             "UtilizationMetricsNetworkInBytesPerSecondMaximum",
             "UtilizationMetricsNetworkOutBytesPerSecondMaximum",

@@ -24,8 +24,8 @@ impl DescribeEffectivePolicyInputBuilder {
 ///
 /// <p>Returns the contents of the effective policy for specified policy type and account. The effective policy is the aggregation of any policies of the specified type that the account inherits, plus any policy of that type that is directly attached to the account.</p>
 /// <p>This operation applies only to policy types <i>other</i> than service control policies (SCPs).</p>
-/// <p>For more information about policy inheritance, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies-inheritance.html">How Policy Inheritance Works</a> in the <i>Organizations User Guide</i>.</p>
-/// <p>This operation can be called only from the organization's management account or by a member account that is a delegated administrator for an Amazon Web Services service.</p>
+/// <p>For more information about policy inheritance, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_inheritance_mgmt.html">Understanding management policy inheritance</a> in the <i>Organizations User Guide</i>.</p>
+/// <p>This operation can be called from any account in the organization.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeEffectivePolicyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

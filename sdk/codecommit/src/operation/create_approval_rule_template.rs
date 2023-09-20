@@ -269,17 +269,17 @@ pub type CreateApprovalRuleTemplateErrorKind = CreateApprovalRuleTemplateError;
 pub enum CreateApprovalRuleTemplateError {
     /// <p>The content for the approval rule template is empty. You must provide some content for an approval rule template. The content cannot be null.</p>
     ApprovalRuleTemplateContentRequiredException(crate::types::error::ApprovalRuleTemplateContentRequiredException),
-    /// <p>You cannot create an approval rule template with that name because a template with that name already exists in this AWS Region for your AWS account. Approval rule template names must be unique.</p>
+    /// <p>You cannot create an approval rule template with that name because a template with that name already exists in this Amazon Web Services Region for your Amazon Web Services account. Approval rule template names must be unique.</p>
     ApprovalRuleTemplateNameAlreadyExistsException(crate::types::error::ApprovalRuleTemplateNameAlreadyExistsException),
     /// <p>An approval rule template name is required, but was not specified.</p>
     ApprovalRuleTemplateNameRequiredException(crate::types::error::ApprovalRuleTemplateNameRequiredException),
     /// <p>The content of the approval rule template is not valid.</p>
     InvalidApprovalRuleTemplateContentException(crate::types::error::InvalidApprovalRuleTemplateContentException),
-    /// <p>The description for the approval rule template is not valid because it exceeds the maximum characters allowed for a description. For more information about limits in AWS CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS CodeCommit User Guide</a>.</p>
+    /// <p>The description for the approval rule template is not valid because it exceeds the maximum characters allowed for a description. For more information about limits in CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">Quotas</a> in the <i>CodeCommit User Guide</i>.</p>
     InvalidApprovalRuleTemplateDescriptionException(crate::types::error::InvalidApprovalRuleTemplateDescriptionException),
-    /// <p>The name of the approval rule template is not valid. Template names must be between 1 and 100 valid characters in length. For more information about limits in AWS CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS CodeCommit User Guide</a>.</p>
+    /// <p>The name of the approval rule template is not valid. Template names must be between 1 and 100 valid characters in length. For more information about limits in CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">Quotas</a> in the <i>CodeCommit User Guide</i>.</p>
     InvalidApprovalRuleTemplateNameException(crate::types::error::InvalidApprovalRuleTemplateNameException),
-    /// <p>The maximum number of approval rule templates has been exceeded for this AWS Region. </p>
+    /// <p>The maximum number of approval rule templates has been exceeded for this Amazon Web Services Region. </p>
     NumberOfRuleTemplatesExceededException(crate::types::error::NumberOfRuleTemplatesExceededException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(::aws_smithy_types::error::Unhandled),

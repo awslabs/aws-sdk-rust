@@ -6,7 +6,7 @@ pub struct IncreaseReplicationFactorInput {
     /// <p>The name of the DAX cluster that will receive additional nodes.</p>
     pub cluster_name: ::std::option::Option<::std::string::String>,
     /// <p>The new number of nodes for the DAX cluster.</p>
-    pub new_replication_factor: i32,
+    pub new_replication_factor: ::std::option::Option<i32>,
     /// <p>The Availability Zones (AZs) in which the cluster nodes will be created. All nodes belonging to the cluster are placed in these Availability Zones. Use this parameter if you want to distribute the nodes across multiple AZs.</p>
     pub availability_zones: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -16,7 +16,7 @@ impl IncreaseReplicationFactorInput {
         self.cluster_name.as_deref()
     }
     /// <p>The new number of nodes for the DAX cluster.</p>
-    pub fn new_replication_factor(&self) -> i32 {
+    pub fn new_replication_factor(&self) -> ::std::option::Option<i32> {
         self.new_replication_factor
     }
     /// <p>The Availability Zones (AZs) in which the cluster nodes will be created. All nodes belonging to the cluster are placed in these Availability Zones. Use this parameter if you want to distribute the nodes across multiple AZs.</p>
@@ -97,7 +97,7 @@ impl IncreaseReplicationFactorInputBuilder {
     > {
         ::std::result::Result::Ok(crate::operation::increase_replication_factor::IncreaseReplicationFactorInput {
             cluster_name: self.cluster_name,
-            new_replication_factor: self.new_replication_factor.unwrap_or_default(),
+            new_replication_factor: self.new_replication_factor,
             availability_zones: self.availability_zones,
         })
     }

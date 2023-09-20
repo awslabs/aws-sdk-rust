@@ -20,6 +20,26 @@ pub fn de_create_tls_inspection_configuration_http_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "InsufficientCapacityException" => {
+            crate::operation::create_tls_inspection_configuration::CreateTLSInspectionConfigurationError::InsufficientCapacityException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InsufficientCapacityExceptionBuilder::default();
+                    output = crate::protocol_serde::shape_insufficient_capacity_exception::de_insufficient_capacity_exception_json_err(
+                        _response_body,
+                        output,
+                    )
+                    .map_err(crate::operation::create_tls_inspection_configuration::CreateTLSInspectionConfigurationError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         "InternalServerError" => crate::operation::create_tls_inspection_configuration::CreateTLSInspectionConfigurationError::InternalServerError({
             #[allow(unused_mut)]
             let mut tmp = {
@@ -42,6 +62,23 @@ pub fn de_create_tls_inspection_configuration_http_error(
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidRequestExceptionBuilder::default();
                     output = crate::protocol_serde::shape_invalid_request_exception::de_invalid_request_exception_json_err(_response_body, output)
+                        .map_err(crate::operation::create_tls_inspection_configuration::CreateTLSInspectionConfigurationError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "LimitExceededException" => {
+            crate::operation::create_tls_inspection_configuration::CreateTLSInspectionConfigurationError::LimitExceededException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::LimitExceededExceptionBuilder::default();
+                    output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_json_err(_response_body, output)
                         .map_err(crate::operation::create_tls_inspection_configuration::CreateTLSInspectionConfigurationError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()

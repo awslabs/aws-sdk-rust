@@ -281,6 +281,8 @@ pub(crate) mod shape_theme_value;
 
 pub(crate) mod shape_theme_values_list;
 
+pub(crate) mod shape_api_configuration;
+
 pub(crate) mod shape_codegen_generic_data_enums;
 
 pub(crate) mod shape_codegen_generic_data_field;
@@ -303,11 +305,17 @@ pub(crate) mod shape_component_property_list;
 
 pub(crate) mod shape_component_variant_values;
 
+pub(crate) mod shape_data_store_render_config;
+
 pub(crate) mod shape_form_bindings;
 
 pub(crate) mod shape_form_input_binding_properties_value;
 
+pub(crate) mod shape_graph_ql_render_config;
+
 pub(crate) mod shape_identifier_list;
+
+pub(crate) mod shape_no_api_render_config;
 
 pub(crate) mod shape_sort_property_list;
 

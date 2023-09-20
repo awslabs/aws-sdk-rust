@@ -124,17 +124,17 @@ impl CreateConfiguredTableAnalysisRuleFluentBuilder {
     pub fn get_configured_table_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_configured_table_identifier()
     }
-    /// <p>The type of analysis rule. Valid values are AGGREGATION and LIST.</p>
+    /// <p>The type of analysis rule.</p>
     pub fn analysis_rule_type(mut self, input: crate::types::ConfiguredTableAnalysisRuleType) -> Self {
         self.inner = self.inner.analysis_rule_type(input);
         self
     }
-    /// <p>The type of analysis rule. Valid values are AGGREGATION and LIST.</p>
+    /// <p>The type of analysis rule.</p>
     pub fn set_analysis_rule_type(mut self, input: ::std::option::Option<crate::types::ConfiguredTableAnalysisRuleType>) -> Self {
         self.inner = self.inner.set_analysis_rule_type(input);
         self
     }
-    /// <p>The type of analysis rule. Valid values are AGGREGATION and LIST.</p>
+    /// <p>The type of analysis rule.</p>
     pub fn get_analysis_rule_type(&self) -> &::std::option::Option<crate::types::ConfiguredTableAnalysisRuleType> {
         self.inner.get_analysis_rule_type()
     }

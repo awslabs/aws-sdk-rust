@@ -110,17 +110,17 @@ impl UpdateDocumentationVersionFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The string identifier of the associated RestApi..</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub fn rest_api_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.rest_api_id(input.into());
         self
     }
-    /// <p>The string identifier of the associated RestApi..</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub fn set_rest_api_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_rest_api_id(input);
         self
     }
-    /// <p>The string identifier of the associated RestApi..</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub fn get_rest_api_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_rest_api_id()
     }

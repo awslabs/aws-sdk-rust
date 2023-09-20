@@ -13,6 +13,7 @@
 /// # let configuredtableanalysisruletype = unimplemented!();
 /// match configuredtableanalysisruletype {
 ///     ConfiguredTableAnalysisRuleType::Aggregation => { /* ... */ },
+///     ConfiguredTableAnalysisRuleType::Custom => { /* ... */ },
 ///     ConfiguredTableAnalysisRuleType::List => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -44,6 +45,8 @@ pub enum ConfiguredTableAnalysisRuleType {
     #[allow(missing_docs)] // documentation missing in model
     Aggregation,
     #[allow(missing_docs)] // documentation missing in model
+    Custom,
+    #[allow(missing_docs)] // documentation missing in model
     List,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
@@ -52,6 +55,7 @@ impl ::std::convert::From<&str> for ConfiguredTableAnalysisRuleType {
     fn from(s: &str) -> Self {
         match s {
             "AGGREGATION" => ConfiguredTableAnalysisRuleType::Aggregation,
+            "CUSTOM" => ConfiguredTableAnalysisRuleType::Custom,
             "LIST" => ConfiguredTableAnalysisRuleType::List,
             other => ConfiguredTableAnalysisRuleType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
@@ -69,13 +73,14 @@ impl ConfiguredTableAnalysisRuleType {
     pub fn as_str(&self) -> &str {
         match self {
             ConfiguredTableAnalysisRuleType::Aggregation => "AGGREGATION",
+            ConfiguredTableAnalysisRuleType::Custom => "CUSTOM",
             ConfiguredTableAnalysisRuleType::List => "LIST",
             ConfiguredTableAnalysisRuleType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AGGREGATION", "LIST"]
+        &["AGGREGATION", "CUSTOM", "LIST"]
     }
 }
 impl ::std::convert::AsRef<str> for ConfiguredTableAnalysisRuleType {

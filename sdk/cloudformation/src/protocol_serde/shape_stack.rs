@@ -279,6 +279,21 @@ pub fn de_stack(decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder) -> Result
                 builder = builder.set_drift_information(var_22);
             }
             ,
+            s if s.matches("RetainExceptOnCreate") /* RetainExceptOnCreate com.amazonaws.cloudformation#Stack$RetainExceptOnCreate */ =>  {
+                let var_23 =
+                    Some(
+                         {
+                            <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.cloudformation#RetainExceptOnCreate`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_retain_except_on_create(var_23);
+            }
+            ,
             _ => {}
         }
     }

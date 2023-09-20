@@ -26,6 +26,7 @@ impl super::Client {
     ///   - [`tags(Option<Vec<Tag>>)`](crate::operation::create_snapshot::CreateSnapshotOutput::tags): <p>Any tags assigned to the snapshot.</p>
     ///   - [`storage_tier(Option<StorageTier>)`](crate::operation::create_snapshot::CreateSnapshotOutput::storage_tier): <p>The storage tier in which the snapshot is stored. <code>standard</code> indicates that the snapshot is stored in the standard snapshot storage tier and that it is ready for use. <code>archive</code> indicates that the snapshot is currently archived and that it must be restored before it can be used.</p>
     ///   - [`restore_expiry_time(Option<DateTime>)`](crate::operation::create_snapshot::CreateSnapshotOutput::restore_expiry_time): <p>Only for archived snapshots that are temporarily restored. Indicates the date and time when a temporarily restored snapshot will be automatically re-archived.</p>
+    ///   - [`sse_type(Option<SseType>)`](crate::operation::create_snapshot::CreateSnapshotOutput::sse_type): <p>Reserved for future use.</p>
     /// - On failure, responds with [`SdkError<CreateSnapshotError>`](crate::operation::create_snapshot::CreateSnapshotError)
     pub fn create_snapshot(&self) -> crate::operation::create_snapshot::builders::CreateSnapshotFluentBuilder {
         crate::operation::create_snapshot::builders::CreateSnapshotFluentBuilder::new(self.handle.clone())

@@ -187,6 +187,8 @@ pub mod customize;
 
 mod delete_job;
 
+mod delete_launch_action;
+
 mod delete_launch_configuration_template;
 
 mod delete_recovery_instance;
@@ -229,9 +231,13 @@ mod initialize_service;
 
 mod list_extensible_source_servers;
 
+mod list_launch_actions;
+
 mod list_staging_accounts;
 
 mod list_tags_for_resource;
+
+mod put_launch_action;
 
 mod retry_data_replication;
 

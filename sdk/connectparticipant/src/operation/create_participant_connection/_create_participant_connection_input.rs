@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateParticipantConnectionInput {
-    /// <p>Type of connection information required. This can be omitted if <code>ConnectParticipant</code> is <code>true</code>.</p>
+    /// <p>Type of connection information required. If you need <code>CONNECTION_CREDENTIALS</code> along with marking participant as connected, pass <code>CONNECTION_CREDENTIALS</code> in <code>Type</code>.</p>
     pub r#type: ::std::option::Option<::std::vec::Vec<crate::types::ConnectionType>>,
     /// <p>This is a header parameter.</p>
     /// <p>The ParticipantToken as obtained from <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StartChatContact.html">StartChatContact</a> API response.</p>
@@ -12,7 +12,7 @@ pub struct CreateParticipantConnectionInput {
     pub connect_participant: ::std::option::Option<bool>,
 }
 impl CreateParticipantConnectionInput {
-    /// <p>Type of connection information required. This can be omitted if <code>ConnectParticipant</code> is <code>true</code>.</p>
+    /// <p>Type of connection information required. If you need <code>CONNECTION_CREDENTIALS</code> along with marking participant as connected, pass <code>CONNECTION_CREDENTIALS</code> in <code>Type</code>.</p>
     pub fn r#type(&self) -> ::std::option::Option<&[crate::types::ConnectionType]> {
         self.r#type.as_deref()
     }
@@ -46,19 +46,19 @@ impl CreateParticipantConnectionInputBuilder {
     ///
     /// To override the contents of this collection use [`set_type`](Self::set_type).
     ///
-    /// <p>Type of connection information required. This can be omitted if <code>ConnectParticipant</code> is <code>true</code>.</p>
+    /// <p>Type of connection information required. If you need <code>CONNECTION_CREDENTIALS</code> along with marking participant as connected, pass <code>CONNECTION_CREDENTIALS</code> in <code>Type</code>.</p>
     pub fn r#type(mut self, input: crate::types::ConnectionType) -> Self {
         let mut v = self.r#type.unwrap_or_default();
         v.push(input);
         self.r#type = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Type of connection information required. This can be omitted if <code>ConnectParticipant</code> is <code>true</code>.</p>
+    /// <p>Type of connection information required. If you need <code>CONNECTION_CREDENTIALS</code> along with marking participant as connected, pass <code>CONNECTION_CREDENTIALS</code> in <code>Type</code>.</p>
     pub fn set_type(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ConnectionType>>) -> Self {
         self.r#type = input;
         self
     }
-    /// <p>Type of connection information required. This can be omitted if <code>ConnectParticipant</code> is <code>true</code>.</p>
+    /// <p>Type of connection information required. If you need <code>CONNECTION_CREDENTIALS</code> along with marking participant as connected, pass <code>CONNECTION_CREDENTIALS</code> in <code>Type</code>.</p>
     pub fn get_type(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ConnectionType>> {
         &self.r#type
     }

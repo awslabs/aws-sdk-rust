@@ -8,6 +8,7 @@ impl super::Client {
     /// - On success, responds with [`ModifyLunaClientOutput`](crate::operation::modify_luna_client::ModifyLunaClientOutput) with field(s):
     ///   - [`client_arn(Option<String>)`](crate::operation::modify_luna_client::ModifyLunaClientOutput::client_arn): <p>The ARN of the client.</p>
     /// - On failure, responds with [`SdkError<ModifyLunaClientError>`](crate::operation::modify_luna_client::ModifyLunaClientError)
+    #[deprecated(note = "This API is deprecated.")]
     pub fn modify_luna_client(&self) -> crate::operation::modify_luna_client::builders::ModifyLunaClientFluentBuilder {
         crate::operation::modify_luna_client::builders::ModifyLunaClientFluentBuilder::new(self.handle.clone())
     }

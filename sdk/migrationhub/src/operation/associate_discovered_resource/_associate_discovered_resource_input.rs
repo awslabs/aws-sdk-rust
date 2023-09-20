@@ -10,7 +10,7 @@ pub struct AssociateDiscoveredResourceInput {
     /// <p>Object representing a Resource.</p>
     pub discovered_resource: ::std::option::Option<crate::types::DiscoveredResource>,
     /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
-    pub dry_run: bool,
+    pub dry_run: ::std::option::Option<bool>,
 }
 impl AssociateDiscoveredResourceInput {
     /// <p>The name of the ProgressUpdateStream.</p>
@@ -26,7 +26,7 @@ impl AssociateDiscoveredResourceInput {
         self.discovered_resource.as_ref()
     }
     /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
-    pub fn dry_run(&self) -> bool {
+    pub fn dry_run(&self) -> ::std::option::Option<bool> {
         self.dry_run
     }
 }
@@ -114,7 +114,7 @@ impl AssociateDiscoveredResourceInputBuilder {
             progress_update_stream: self.progress_update_stream,
             migration_task_name: self.migration_task_name,
             discovered_resource: self.discovered_resource,
-            dry_run: self.dry_run.unwrap_or_default(),
+            dry_run: self.dry_run,
         })
     }
 }

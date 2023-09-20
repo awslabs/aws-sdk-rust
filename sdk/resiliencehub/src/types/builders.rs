@@ -13,6 +13,10 @@ pub use crate::types::_logical_resource_id::LogicalResourceIdBuilder;
 
 pub use crate::types::_app::AppBuilder;
 
+pub use crate::types::_event_subscription::EventSubscriptionBuilder;
+
+pub use crate::types::_permission_model::PermissionModelBuilder;
+
 pub use crate::types::_app_assessment::AppAssessmentBuilder;
 
 pub use crate::types::_resource_errors_details::ResourceErrorsDetailsBuilder;
@@ -59,6 +63,16 @@ pub use crate::types::_app_component_compliance::AppComponentComplianceBuilder;
 
 pub use crate::types::_app_assessment_summary::AppAssessmentSummaryBuilder;
 
+pub use crate::types::_compliance_drift::ComplianceDriftBuilder;
+
 pub use crate::types::_alarm_recommendation::AlarmRecommendationBuilder;
 
 pub use crate::types::_eks_source::EksSourceBuilder;
+
+pub use crate::types::_batch_update_recommendation_status_failed_entry::BatchUpdateRecommendationStatusFailedEntryBuilder;
+
+pub use crate::types::_batch_update_recommendation_status_successful_entry::BatchUpdateRecommendationStatusSuccessfulEntryBuilder;
+
+pub use crate::types::_update_recommendation_status_item::UpdateRecommendationStatusItemBuilder;
+
+pub use crate::types::_update_recommendation_status_request_entry::UpdateRecommendationStatusRequestEntryBuilder;

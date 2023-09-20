@@ -22,7 +22,7 @@ impl StartProtectedQueryInputBuilder {
 }
 /// Fluent builder constructing a request to `StartProtectedQuery`.
 ///
-/// <p>Creates a protected query that is started by Clean Rooms .</p>
+/// <p>Creates a protected query that is started by Clean Rooms.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartProtectedQueryFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

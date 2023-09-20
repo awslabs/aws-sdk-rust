@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BudgetPerformanceHistory {
-    /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
+    /// <p> A string that represents the budget name. The ":" and "\" characters, and the "/action/" substring, aren't allowed.</p>
     pub budget_name: ::std::option::Option<::std::string::String>,
     /// <p> The type of a budget. It must be one of the following types: </p>
     /// <p> <code>COST</code>, <code>USAGE</code>, <code>RI_UTILIZATION</code>, <code>RI_COVERAGE</code>, <code>SAVINGS_PLANS_UTILIZATION</code>, or <code>SAVINGS_PLANS_COVERAGE</code>.</p>
@@ -19,7 +19,7 @@ pub struct BudgetPerformanceHistory {
     pub budgeted_and_actual_amounts_list: ::std::option::Option<::std::vec::Vec<crate::types::BudgetedAndActualAmounts>>,
 }
 impl BudgetPerformanceHistory {
-    /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
+    /// <p> A string that represents the budget name. The ":" and "\" characters, and the "/action/" substring, aren't allowed.</p>
     pub fn budget_name(&self) -> ::std::option::Option<&str> {
         self.budget_name.as_deref()
     }
@@ -64,17 +64,17 @@ pub struct BudgetPerformanceHistoryBuilder {
     pub(crate) budgeted_and_actual_amounts_list: ::std::option::Option<::std::vec::Vec<crate::types::BudgetedAndActualAmounts>>,
 }
 impl BudgetPerformanceHistoryBuilder {
-    /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
+    /// <p> A string that represents the budget name. The ":" and "\" characters, and the "/action/" substring, aren't allowed.</p>
     pub fn budget_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.budget_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
+    /// <p> A string that represents the budget name. The ":" and "\" characters, and the "/action/" substring, aren't allowed.</p>
     pub fn set_budget_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.budget_name = input;
         self
     }
-    /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
+    /// <p> A string that represents the budget name. The ":" and "\" characters, and the "/action/" substring, aren't allowed.</p>
     pub fn get_budget_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.budget_name
     }

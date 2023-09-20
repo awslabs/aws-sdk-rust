@@ -8,7 +8,7 @@ pub struct ListRealtimeContactAnalysisSegmentsInput {
     /// <p>The identifier of the contact.</p>
     pub contact_id: ::std::option::Option<::std::string::String>,
     /// <p>The maximimum number of results to return per page.</p>
-    pub max_results: i32,
+    pub max_results: ::std::option::Option<i32>,
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
@@ -22,7 +22,7 @@ impl ListRealtimeContactAnalysisSegmentsInput {
         self.contact_id.as_deref()
     }
     /// <p>The maximimum number of results to return per page.</p>
-    pub fn max_results(&self) -> i32 {
+    pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
@@ -114,7 +114,7 @@ impl ListRealtimeContactAnalysisSegmentsInputBuilder {
             crate::operation::list_realtime_contact_analysis_segments::ListRealtimeContactAnalysisSegmentsInput {
                 instance_id: self.instance_id,
                 contact_id: self.contact_id,
-                max_results: self.max_results.unwrap_or_default(),
+                max_results: self.max_results,
                 next_token: self.next_token,
             },
         )

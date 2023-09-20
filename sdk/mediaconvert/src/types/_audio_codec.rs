@@ -17,6 +17,7 @@
 ///     AudioCodec::Aiff => { /* ... */ },
 ///     AudioCodec::Eac3 => { /* ... */ },
 ///     AudioCodec::Eac3Atmos => { /* ... */ },
+///     AudioCodec::Flac => { /* ... */ },
 ///     AudioCodec::Mp2 => { /* ... */ },
 ///     AudioCodec::Mp3 => { /* ... */ },
 ///     AudioCodec::Opus => { /* ... */ },
@@ -61,6 +62,8 @@ pub enum AudioCodec {
     #[allow(missing_docs)] // documentation missing in model
     Eac3Atmos,
     #[allow(missing_docs)] // documentation missing in model
+    Flac,
+    #[allow(missing_docs)] // documentation missing in model
     Mp2,
     #[allow(missing_docs)] // documentation missing in model
     Mp3,
@@ -83,6 +86,7 @@ impl ::std::convert::From<&str> for AudioCodec {
             "AIFF" => AudioCodec::Aiff,
             "EAC3" => AudioCodec::Eac3,
             "EAC3_ATMOS" => AudioCodec::Eac3Atmos,
+            "FLAC" => AudioCodec::Flac,
             "MP2" => AudioCodec::Mp2,
             "MP3" => AudioCodec::Mp3,
             "OPUS" => AudioCodec::Opus,
@@ -109,6 +113,7 @@ impl AudioCodec {
             AudioCodec::Aiff => "AIFF",
             AudioCodec::Eac3 => "EAC3",
             AudioCodec::Eac3Atmos => "EAC3_ATMOS",
+            AudioCodec::Flac => "FLAC",
             AudioCodec::Mp2 => "MP2",
             AudioCodec::Mp3 => "MP3",
             AudioCodec::Opus => "OPUS",
@@ -126,6 +131,7 @@ impl AudioCodec {
             "AIFF",
             "EAC3",
             "EAC3_ATMOS",
+            "FLAC",
             "MP2",
             "MP3",
             "OPUS",

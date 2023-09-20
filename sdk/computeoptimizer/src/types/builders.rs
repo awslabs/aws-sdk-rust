@@ -19,9 +19,21 @@ pub use crate::types::_reason_code_summary::ReasonCodeSummaryBuilder;
 
 pub use crate::types::_recommendation_preferences_detail::RecommendationPreferencesDetailBuilder;
 
-pub use crate::types::_lambda_function_recommendation::LambdaFunctionRecommendationBuilder;
+pub use crate::types::_get_recommendation_error::GetRecommendationErrorBuilder;
+
+pub use crate::types::_license_recommendation::LicenseRecommendationBuilder;
 
 pub use crate::types::_tag::TagBuilder;
+
+pub use crate::types::_license_recommendation_option::LicenseRecommendationOptionBuilder;
+
+pub use crate::types::_license_configuration::LicenseConfigurationBuilder;
+
+pub use crate::types::_metric_source::MetricSourceBuilder;
+
+pub use crate::types::_license_recommendation_filter::LicenseRecommendationFilterBuilder;
+
+pub use crate::types::_lambda_function_recommendation::LambdaFunctionRecommendationBuilder;
 
 pub use crate::types::_lambda_function_memory_recommendation_option::LambdaFunctionMemoryRecommendationOptionBuilder;
 
@@ -34,8 +46,6 @@ pub use crate::types::_lambda_function_recommendation_filter::LambdaFunctionReco
 pub use crate::types::_account_enrollment_status::AccountEnrollmentStatusBuilder;
 
 pub use crate::types::_enrollment_filter::EnrollmentFilterBuilder;
-
-pub use crate::types::_get_recommendation_error::GetRecommendationErrorBuilder;
 
 pub use crate::types::_ecs_service_recommendation::EcsServiceRecommendationBuilder;
 
@@ -66,6 +76,10 @@ pub use crate::types::_projected_metric::ProjectedMetricBuilder;
 pub use crate::types::_recommendation_preferences::RecommendationPreferencesBuilder;
 
 pub use crate::types::_instance_recommendation::InstanceRecommendationBuilder;
+
+pub use crate::types::_gpu_info::GpuInfoBuilder;
+
+pub use crate::types::_gpu::GpuBuilder;
 
 pub use crate::types::_external_metric_status::ExternalMetricStatusBuilder;
 

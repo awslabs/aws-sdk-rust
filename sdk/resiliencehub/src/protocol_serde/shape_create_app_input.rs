@@ -12,21 +12,39 @@ pub fn ser_create_app_input(
     if let Some(var_3) = &input.description {
         object.key("description").string(var_3.as_str());
     }
-    if let Some(var_4) = &input.name {
-        object.key("name").string(var_4.as_str());
-    }
-    if let Some(var_5) = &input.policy_arn {
-        object.key("policyArn").string(var_5.as_str());
-    }
-    if let Some(var_6) = &input.tags {
-        #[allow(unused_mut)]
-        let mut object_7 = object.key("tags").start_object();
-        for (key_8, value_9) in var_6 {
+    if let Some(var_4) = &input.event_subscriptions {
+        let mut array_5 = object.key("eventSubscriptions").start_array();
+        for item_6 in var_4 {
             {
-                object_7.key(key_8.as_str()).string(value_9.as_str());
+                #[allow(unused_mut)]
+                let mut object_7 = array_5.value().start_object();
+                crate::protocol_serde::shape_event_subscription::ser_event_subscription(&mut object_7, item_6)?;
+                object_7.finish();
             }
         }
-        object_7.finish();
+        array_5.finish();
+    }
+    if let Some(var_8) = &input.name {
+        object.key("name").string(var_8.as_str());
+    }
+    if let Some(var_9) = &input.permission_model {
+        #[allow(unused_mut)]
+        let mut object_10 = object.key("permissionModel").start_object();
+        crate::protocol_serde::shape_permission_model::ser_permission_model(&mut object_10, var_9)?;
+        object_10.finish();
+    }
+    if let Some(var_11) = &input.policy_arn {
+        object.key("policyArn").string(var_11.as_str());
+    }
+    if let Some(var_12) = &input.tags {
+        #[allow(unused_mut)]
+        let mut object_13 = object.key("tags").start_object();
+        for (key_14, value_15) in var_12 {
+            {
+                object_13.key(key_14.as_str()).string(value_15.as_str());
+            }
+        }
+        object_13.finish();
     }
     Ok(())
 }

@@ -6,16 +6,16 @@
 pub struct DescribeDbInstanceAutomatedBackupsInput {
     /// <p>The resource ID of the DB instance that is the source of the automated backup. This parameter isn't case-sensitive.</p>
     pub dbi_resource_id: ::std::option::Option<::std::string::String>,
-    /// <p>(Optional) The user-supplied instance identifier. If this parameter is specified, it must match the identifier of an existing DB instance. It returns information from the specific DB instance' automated backup. This parameter isn't case-sensitive.</p>
+    /// <p>(Optional) The user-supplied instance identifier. If this parameter is specified, it must match the identifier of an existing DB instance. It returns information from the specific DB instance's automated backup. This parameter isn't case-sensitive.</p>
     pub db_instance_identifier: ::std::option::Option<::std::string::String>,
     /// <p>A filter that specifies which resources to return based on status.</p>
     /// <p>Supported filters are the following:</p>
     /// <ul>
     /// <li> <p> <code>status</code> </p>
     /// <ul>
-    /// <li> <p> <code>active</code> - automated backups for current instances</p> </li>
-    /// <li> <p> <code>retained</code> - automated backups for deleted instances and after backup replication is stopped</p> </li>
-    /// <li> <p> <code>creating</code> - automated backups that are waiting for the first automated snapshot to be available</p> </li>
+    /// <li> <p> <code>active</code> - Automated backups for current instances.</p> </li>
+    /// <li> <p> <code>creating</code> - Automated backups that are waiting for the first automated snapshot to be available.</p> </li>
+    /// <li> <p> <code>retained</code> - Automated backups for deleted instances and after backup replication is stopped.</p> </li>
     /// </ul> </li>
     /// <li> <p> <code>db-instance-id</code> - Accepts DB instance identifiers and Amazon Resource Names (ARNs). The results list includes only information about the DB instance automated backups identified by these ARNs.</p> </li>
     /// <li> <p> <code>dbi-resource-id</code> - Accepts DB resource identifiers and Amazon Resource Names (ARNs). The results list includes only information about the DB instance resources identified by these ARNs.</p> </li>
@@ -35,7 +35,7 @@ impl DescribeDbInstanceAutomatedBackupsInput {
     pub fn dbi_resource_id(&self) -> ::std::option::Option<&str> {
         self.dbi_resource_id.as_deref()
     }
-    /// <p>(Optional) The user-supplied instance identifier. If this parameter is specified, it must match the identifier of an existing DB instance. It returns information from the specific DB instance' automated backup. This parameter isn't case-sensitive.</p>
+    /// <p>(Optional) The user-supplied instance identifier. If this parameter is specified, it must match the identifier of an existing DB instance. It returns information from the specific DB instance's automated backup. This parameter isn't case-sensitive.</p>
     pub fn db_instance_identifier(&self) -> ::std::option::Option<&str> {
         self.db_instance_identifier.as_deref()
     }
@@ -44,9 +44,9 @@ impl DescribeDbInstanceAutomatedBackupsInput {
     /// <ul>
     /// <li> <p> <code>status</code> </p>
     /// <ul>
-    /// <li> <p> <code>active</code> - automated backups for current instances</p> </li>
-    /// <li> <p> <code>retained</code> - automated backups for deleted instances and after backup replication is stopped</p> </li>
-    /// <li> <p> <code>creating</code> - automated backups that are waiting for the first automated snapshot to be available</p> </li>
+    /// <li> <p> <code>active</code> - Automated backups for current instances.</p> </li>
+    /// <li> <p> <code>creating</code> - Automated backups that are waiting for the first automated snapshot to be available.</p> </li>
+    /// <li> <p> <code>retained</code> - Automated backups for deleted instances and after backup replication is stopped.</p> </li>
     /// </ul> </li>
     /// <li> <p> <code>db-instance-id</code> - Accepts DB instance identifiers and Amazon Resource Names (ARNs). The results list includes only information about the DB instance automated backups identified by these ARNs.</p> </li>
     /// <li> <p> <code>dbi-resource-id</code> - Accepts DB resource identifiers and Amazon Resource Names (ARNs). The results list includes only information about the DB instance resources identified by these ARNs.</p> </li>
@@ -102,17 +102,17 @@ impl DescribeDbInstanceAutomatedBackupsInputBuilder {
     pub fn get_dbi_resource_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.dbi_resource_id
     }
-    /// <p>(Optional) The user-supplied instance identifier. If this parameter is specified, it must match the identifier of an existing DB instance. It returns information from the specific DB instance' automated backup. This parameter isn't case-sensitive.</p>
+    /// <p>(Optional) The user-supplied instance identifier. If this parameter is specified, it must match the identifier of an existing DB instance. It returns information from the specific DB instance's automated backup. This parameter isn't case-sensitive.</p>
     pub fn db_instance_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_instance_identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>(Optional) The user-supplied instance identifier. If this parameter is specified, it must match the identifier of an existing DB instance. It returns information from the specific DB instance' automated backup. This parameter isn't case-sensitive.</p>
+    /// <p>(Optional) The user-supplied instance identifier. If this parameter is specified, it must match the identifier of an existing DB instance. It returns information from the specific DB instance's automated backup. This parameter isn't case-sensitive.</p>
     pub fn set_db_instance_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_instance_identifier = input;
         self
     }
-    /// <p>(Optional) The user-supplied instance identifier. If this parameter is specified, it must match the identifier of an existing DB instance. It returns information from the specific DB instance' automated backup. This parameter isn't case-sensitive.</p>
+    /// <p>(Optional) The user-supplied instance identifier. If this parameter is specified, it must match the identifier of an existing DB instance. It returns information from the specific DB instance's automated backup. This parameter isn't case-sensitive.</p>
     pub fn get_db_instance_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.db_instance_identifier
     }
@@ -125,9 +125,9 @@ impl DescribeDbInstanceAutomatedBackupsInputBuilder {
     /// <ul>
     /// <li> <p> <code>status</code> </p>
     /// <ul>
-    /// <li> <p> <code>active</code> - automated backups for current instances</p> </li>
-    /// <li> <p> <code>retained</code> - automated backups for deleted instances and after backup replication is stopped</p> </li>
-    /// <li> <p> <code>creating</code> - automated backups that are waiting for the first automated snapshot to be available</p> </li>
+    /// <li> <p> <code>active</code> - Automated backups for current instances.</p> </li>
+    /// <li> <p> <code>creating</code> - Automated backups that are waiting for the first automated snapshot to be available.</p> </li>
+    /// <li> <p> <code>retained</code> - Automated backups for deleted instances and after backup replication is stopped.</p> </li>
     /// </ul> </li>
     /// <li> <p> <code>db-instance-id</code> - Accepts DB instance identifiers and Amazon Resource Names (ARNs). The results list includes only information about the DB instance automated backups identified by these ARNs.</p> </li>
     /// <li> <p> <code>dbi-resource-id</code> - Accepts DB resource identifiers and Amazon Resource Names (ARNs). The results list includes only information about the DB instance resources identified by these ARNs.</p> </li>
@@ -144,9 +144,9 @@ impl DescribeDbInstanceAutomatedBackupsInputBuilder {
     /// <ul>
     /// <li> <p> <code>status</code> </p>
     /// <ul>
-    /// <li> <p> <code>active</code> - automated backups for current instances</p> </li>
-    /// <li> <p> <code>retained</code> - automated backups for deleted instances and after backup replication is stopped</p> </li>
-    /// <li> <p> <code>creating</code> - automated backups that are waiting for the first automated snapshot to be available</p> </li>
+    /// <li> <p> <code>active</code> - Automated backups for current instances.</p> </li>
+    /// <li> <p> <code>creating</code> - Automated backups that are waiting for the first automated snapshot to be available.</p> </li>
+    /// <li> <p> <code>retained</code> - Automated backups for deleted instances and after backup replication is stopped.</p> </li>
     /// </ul> </li>
     /// <li> <p> <code>db-instance-id</code> - Accepts DB instance identifiers and Amazon Resource Names (ARNs). The results list includes only information about the DB instance automated backups identified by these ARNs.</p> </li>
     /// <li> <p> <code>dbi-resource-id</code> - Accepts DB resource identifiers and Amazon Resource Names (ARNs). The results list includes only information about the DB instance resources identified by these ARNs.</p> </li>
@@ -161,9 +161,9 @@ impl DescribeDbInstanceAutomatedBackupsInputBuilder {
     /// <ul>
     /// <li> <p> <code>status</code> </p>
     /// <ul>
-    /// <li> <p> <code>active</code> - automated backups for current instances</p> </li>
-    /// <li> <p> <code>retained</code> - automated backups for deleted instances and after backup replication is stopped</p> </li>
-    /// <li> <p> <code>creating</code> - automated backups that are waiting for the first automated snapshot to be available</p> </li>
+    /// <li> <p> <code>active</code> - Automated backups for current instances.</p> </li>
+    /// <li> <p> <code>creating</code> - Automated backups that are waiting for the first automated snapshot to be available.</p> </li>
+    /// <li> <p> <code>retained</code> - Automated backups for deleted instances and after backup replication is stopped.</p> </li>
     /// </ul> </li>
     /// <li> <p> <code>db-instance-id</code> - Accepts DB instance identifiers and Amazon Resource Names (ARNs). The results list includes only information about the DB instance automated backups identified by these ARNs.</p> </li>
     /// <li> <p> <code>dbi-resource-id</code> - Accepts DB resource identifiers and Amazon Resource Names (ARNs). The results list includes only information about the DB instance resources identified by these ARNs.</p> </li>

@@ -2,7 +2,7 @@
 
 /// <p> The file that's used to structure and automate Audit Manager assessments for a given compliance standard. </p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct Framework {
     /// <p> The Amazon Resource Name (ARN) of the framework. </p>
     pub arn: ::std::option::Option<::std::string::String>,
@@ -91,6 +91,26 @@ impl Framework {
         self.tags.as_ref()
     }
 }
+impl ::std::fmt::Debug for Framework {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("Framework");
+        formatter.field("arn", &self.arn);
+        formatter.field("id", &self.id);
+        formatter.field("name", &self.name);
+        formatter.field("r#type", &self.r#type);
+        formatter.field("compliance_type", &"*** Sensitive Data Redacted ***");
+        formatter.field("description", &self.description);
+        formatter.field("logo", &self.logo);
+        formatter.field("control_sources", &self.control_sources);
+        formatter.field("control_sets", &"*** Sensitive Data Redacted ***");
+        formatter.field("created_at", &self.created_at);
+        formatter.field("last_updated_at", &self.last_updated_at);
+        formatter.field("created_by", &"*** Sensitive Data Redacted ***");
+        formatter.field("last_updated_by", &"*** Sensitive Data Redacted ***");
+        formatter.field("tags", &self.tags);
+        formatter.finish()
+    }
+}
 impl Framework {
     /// Creates a new builder-style object to manufacture [`Framework`](crate::types::Framework).
     pub fn builder() -> crate::types::builders::FrameworkBuilder {
@@ -100,7 +120,7 @@ impl Framework {
 
 /// A builder for [`Framework`](crate::types::Framework).
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct FrameworkBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
@@ -344,5 +364,25 @@ impl FrameworkBuilder {
             last_updated_by: self.last_updated_by,
             tags: self.tags,
         }
+    }
+}
+impl ::std::fmt::Debug for FrameworkBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("FrameworkBuilder");
+        formatter.field("arn", &self.arn);
+        formatter.field("id", &self.id);
+        formatter.field("name", &self.name);
+        formatter.field("r#type", &self.r#type);
+        formatter.field("compliance_type", &"*** Sensitive Data Redacted ***");
+        formatter.field("description", &self.description);
+        formatter.field("logo", &self.logo);
+        formatter.field("control_sources", &self.control_sources);
+        formatter.field("control_sets", &"*** Sensitive Data Redacted ***");
+        formatter.field("created_at", &self.created_at);
+        formatter.field("last_updated_at", &self.last_updated_at);
+        formatter.field("created_by", &"*** Sensitive Data Redacted ***");
+        formatter.field("last_updated_by", &"*** Sensitive Data Redacted ***");
+        formatter.field("tags", &self.tags);
+        formatter.finish()
     }
 }

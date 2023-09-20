@@ -265,6 +265,8 @@ pub type ListConnectionsErrorKind = ListConnectionsError;
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum ListConnectionsError {
+    /// <p>Resource not found. Verify the connection resource ARN and try again.</p>
+    ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(::aws_smithy_types::error::Unhandled),
 }
@@ -283,6 +285,7 @@ impl ::aws_smithy_http::result::CreateUnhandledError for ListConnectionsError {
 impl ::std::fmt::Display for ListConnectionsError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
+            Self::ResourceNotFoundException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -290,6 +293,7 @@ impl ::std::fmt::Display for ListConnectionsError {
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for ListConnectionsError {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::ResourceNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
         }
     }
@@ -326,13 +330,19 @@ impl ListConnectionsError {
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         match self {
+            Self::ResourceNotFoundException(e) => e.meta(),
             Self::Unhandled(e) => e.meta(),
         }
+    }
+    /// Returns `true` if the error kind is `ListConnectionsError::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(self, Self::ResourceNotFoundException(_))
     }
 }
 impl ::std::error::Error for ListConnectionsError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
+            Self::ResourceNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(_inner),
         }
     }

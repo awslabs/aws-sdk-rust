@@ -442,6 +442,50 @@ impl From<crate::operation::describe_cluster_operation::DescribeClusterOperation
         }
     }
 }
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::describe_cluster_operation_v2::DescribeClusterOperationV2Error, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::describe_cluster_operation_v2::DescribeClusterOperationV2Error, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_cluster_operation_v2::DescribeClusterOperationV2Error> for Error {
+    fn from(err: crate::operation::describe_cluster_operation_v2::DescribeClusterOperationV2Error) -> Self {
+        match err {
+            crate::operation::describe_cluster_operation_v2::DescribeClusterOperationV2Error::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::describe_cluster_operation_v2::DescribeClusterOperationV2Error::ForbiddenException(inner) => {
+                Error::ForbiddenException(inner)
+            }
+            crate::operation::describe_cluster_operation_v2::DescribeClusterOperationV2Error::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::describe_cluster_operation_v2::DescribeClusterOperationV2Error::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::describe_cluster_operation_v2::DescribeClusterOperationV2Error::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::describe_cluster_operation_v2::DescribeClusterOperationV2Error::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::describe_cluster_operation_v2::DescribeClusterOperationV2Error::UnauthorizedException(inner) => {
+                Error::UnauthorizedException(inner)
+            }
+            crate::operation::describe_cluster_operation_v2::DescribeClusterOperationV2Error::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::describe_cluster_v2::DescribeClusterV2Error, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -752,6 +796,46 @@ impl From<crate::operation::list_cluster_operations::ListClusterOperationsError>
                 Error::UnauthorizedException(inner)
             }
             crate::operation::list_cluster_operations::ListClusterOperationsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_cluster_operations_v2::ListClusterOperationsV2Error, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_cluster_operations_v2::ListClusterOperationsV2Error, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_cluster_operations_v2::ListClusterOperationsV2Error> for Error {
+    fn from(err: crate::operation::list_cluster_operations_v2::ListClusterOperationsV2Error) -> Self {
+        match err {
+            crate::operation::list_cluster_operations_v2::ListClusterOperationsV2Error::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::list_cluster_operations_v2::ListClusterOperationsV2Error::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::list_cluster_operations_v2::ListClusterOperationsV2Error::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::list_cluster_operations_v2::ListClusterOperationsV2Error::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::list_cluster_operations_v2::ListClusterOperationsV2Error::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::list_cluster_operations_v2::ListClusterOperationsV2Error::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::list_cluster_operations_v2::ListClusterOperationsV2Error::UnauthorizedException(inner) => {
+                Error::UnauthorizedException(inner)
+            }
+            crate::operation::list_cluster_operations_v2::ListClusterOperationsV2Error::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

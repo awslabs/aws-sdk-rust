@@ -6,17 +6,17 @@ pub fn ser_list_identities_input(
     if let Some(var_1) = &input.identity_pool_id {
         object.key("IdentityPoolId").string(var_1.as_str());
     }
-    {
+    if let Some(var_2) = &input.max_results {
         object.key("MaxResults").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.max_results).into()),
+            ::aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
-    if let Some(var_2) = &input.next_token {
-        object.key("NextToken").string(var_2.as_str());
+    if let Some(var_3) = &input.next_token {
+        object.key("NextToken").string(var_3.as_str());
     }
-    if input.hide_disabled {
-        object.key("HideDisabled").boolean(input.hide_disabled);
+    if let Some(var_4) = &input.hide_disabled {
+        object.key("HideDisabled").boolean(*var_4);
     }
     Ok(())
 }

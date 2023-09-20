@@ -12,8 +12,8 @@ pub fn ser_set_identity_feedback_forwarding_enabled_input_input(
     }
     #[allow(unused_mut)]
     let mut scope_3 = writer.prefix("ForwardingEnabled");
-    {
-        scope_3.boolean(input.forwarding_enabled);
+    if let Some(var_4) = &input.forwarding_enabled {
+        scope_3.boolean(*var_4);
     }
     writer.finish();
     Ok(::aws_smithy_http::body::SdkBody::from(out))

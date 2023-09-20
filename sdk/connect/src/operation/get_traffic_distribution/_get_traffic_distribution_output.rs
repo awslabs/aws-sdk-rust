@@ -9,6 +9,10 @@ pub struct GetTrafficDistributionOutput {
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the traffic distribution group.</p>
     pub arn: ::std::option::Option<::std::string::String>,
+    /// <p>The distribution of allowing signing in to the instance and its replica(s).</p>
+    pub sign_in_config: ::std::option::Option<crate::types::SignInConfig>,
+    /// <p>The distribution of agents between the instance and its replica(s).</p>
+    pub agent_config: ::std::option::Option<crate::types::AgentConfig>,
     _request_id: Option<String>,
 }
 impl GetTrafficDistributionOutput {
@@ -23,6 +27,14 @@ impl GetTrafficDistributionOutput {
     /// <p>The Amazon Resource Name (ARN) of the traffic distribution group.</p>
     pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
+    }
+    /// <p>The distribution of allowing signing in to the instance and its replica(s).</p>
+    pub fn sign_in_config(&self) -> ::std::option::Option<&crate::types::SignInConfig> {
+        self.sign_in_config.as_ref()
+    }
+    /// <p>The distribution of agents between the instance and its replica(s).</p>
+    pub fn agent_config(&self) -> ::std::option::Option<&crate::types::AgentConfig> {
+        self.agent_config.as_ref()
     }
 }
 impl ::aws_http::request_id::RequestId for GetTrafficDistributionOutput {
@@ -44,6 +56,8 @@ pub struct GetTrafficDistributionOutputBuilder {
     pub(crate) telephony_config: ::std::option::Option<crate::types::TelephonyConfig>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
+    pub(crate) sign_in_config: ::std::option::Option<crate::types::SignInConfig>,
+    pub(crate) agent_config: ::std::option::Option<crate::types::AgentConfig>,
     _request_id: Option<String>,
 }
 impl GetTrafficDistributionOutputBuilder {
@@ -89,6 +103,34 @@ impl GetTrafficDistributionOutputBuilder {
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
+    /// <p>The distribution of allowing signing in to the instance and its replica(s).</p>
+    pub fn sign_in_config(mut self, input: crate::types::SignInConfig) -> Self {
+        self.sign_in_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The distribution of allowing signing in to the instance and its replica(s).</p>
+    pub fn set_sign_in_config(mut self, input: ::std::option::Option<crate::types::SignInConfig>) -> Self {
+        self.sign_in_config = input;
+        self
+    }
+    /// <p>The distribution of allowing signing in to the instance and its replica(s).</p>
+    pub fn get_sign_in_config(&self) -> &::std::option::Option<crate::types::SignInConfig> {
+        &self.sign_in_config
+    }
+    /// <p>The distribution of agents between the instance and its replica(s).</p>
+    pub fn agent_config(mut self, input: crate::types::AgentConfig) -> Self {
+        self.agent_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The distribution of agents between the instance and its replica(s).</p>
+    pub fn set_agent_config(mut self, input: ::std::option::Option<crate::types::AgentConfig>) -> Self {
+        self.agent_config = input;
+        self
+    }
+    /// <p>The distribution of agents between the instance and its replica(s).</p>
+    pub fn get_agent_config(&self) -> &::std::option::Option<crate::types::AgentConfig> {
+        &self.agent_config
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -104,6 +146,8 @@ impl GetTrafficDistributionOutputBuilder {
             telephony_config: self.telephony_config,
             id: self.id,
             arn: self.arn,
+            sign_in_config: self.sign_in_config,
+            agent_config: self.agent_config,
             _request_id: self._request_id,
         }
     }

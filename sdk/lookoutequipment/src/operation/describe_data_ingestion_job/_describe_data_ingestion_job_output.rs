@@ -29,6 +29,8 @@ pub struct DescribeDataIngestionJobOutput {
     pub data_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> Indicates the latest timestamp corresponding to data that was successfully ingested during this specific ingestion job. </p>
     pub data_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The Amazon Resource Name (ARN) of the source dataset from which the data used for the data ingestion job was imported from.</p>
+    pub source_dataset_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeDataIngestionJobOutput {
@@ -84,6 +86,10 @@ impl DescribeDataIngestionJobOutput {
     pub fn data_end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.data_end_time.as_ref()
     }
+    /// <p>The Amazon Resource Name (ARN) of the source dataset from which the data used for the data ingestion job was imported from.</p>
+    pub fn source_dataset_arn(&self) -> ::std::option::Option<&str> {
+        self.source_dataset_arn.as_deref()
+    }
 }
 impl ::aws_http::request_id::RequestId for DescribeDataIngestionJobOutput {
     fn request_id(&self) -> Option<&str> {
@@ -114,6 +120,7 @@ pub struct DescribeDataIngestionJobOutputBuilder {
     pub(crate) ingested_data_size: ::std::option::Option<i64>,
     pub(crate) data_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) data_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) source_dataset_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeDataIngestionJobOutputBuilder {
@@ -299,6 +306,20 @@ impl DescribeDataIngestionJobOutputBuilder {
     pub fn get_data_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.data_end_time
     }
+    /// <p>The Amazon Resource Name (ARN) of the source dataset from which the data used for the data ingestion job was imported from.</p>
+    pub fn source_dataset_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.source_dataset_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the source dataset from which the data used for the data ingestion job was imported from.</p>
+    pub fn set_source_dataset_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.source_dataset_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the source dataset from which the data used for the data ingestion job was imported from.</p>
+    pub fn get_source_dataset_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_dataset_arn
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -324,6 +345,7 @@ impl DescribeDataIngestionJobOutputBuilder {
             ingested_data_size: self.ingested_data_size,
             data_start_time: self.data_start_time,
             data_end_time: self.data_end_time,
+            source_dataset_arn: self.source_dataset_arn,
             _request_id: self._request_id,
         }
     }

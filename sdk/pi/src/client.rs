@@ -58,13 +58,13 @@ pub(crate) struct Handle {
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`DescribeDimensionKeys`](crate::operation::describe_dimension_keys) operation has
-/// a [`Client::describe_dimension_keys`], function which returns a builder for that operation.
+/// For example, the [`CreatePerformanceAnalysisReport`](crate::operation::create_performance_analysis_report) operation has
+/// a [`Client::create_performance_analysis_report`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.describe_dimension_keys()
+/// let result = client.create_performance_analysis_report()
 ///     .service_type("example")
 ///     .send()
 ///     .await;
@@ -147,6 +147,8 @@ impl Client {
     }
 }
 
+mod create_performance_analysis_report;
+
 /// Operation customization and supporting types.
 ///
 /// The underlying HTTP requests made during an operation can be customized
@@ -158,7 +160,7 @@ impl Client {
 /// # let client: aws_sdk_pi::Client = unimplemented!();
 /// use ::http::header::{HeaderName, HeaderValue};
 ///
-/// let result = client.describe_dimension_keys()
+/// let result = client.create_performance_analysis_report()
 ///     .customize()
 ///     .await?
 ///     .mutate_request(|req| {
@@ -175,9 +177,13 @@ impl Client {
 /// ```
 pub mod customize;
 
+mod delete_performance_analysis_report;
+
 mod describe_dimension_keys;
 
 mod get_dimension_key_details;
+
+mod get_performance_analysis_report;
 
 mod get_resource_metadata;
 
@@ -186,3 +192,11 @@ mod get_resource_metrics;
 mod list_available_resource_dimensions;
 
 mod list_available_resource_metrics;
+
+mod list_performance_analysis_reports;
+
+mod list_tags_for_resource;
+
+mod tag_resource;
+
+mod untag_resource;

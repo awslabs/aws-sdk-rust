@@ -26,6 +26,8 @@ pub struct SnapshotInfo {
     pub snapshot_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the Outpost on which the snapshot is stored. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html">Amazon EBS local snapshots on Outposts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     pub outpost_arn: ::std::option::Option<::std::string::String>,
+    /// <p>Reserved for future use.</p>
+    pub sse_type: ::std::option::Option<crate::types::SseType>,
 }
 impl SnapshotInfo {
     /// <p>Description specified by the CreateSnapshotRequest that has been applied to all snapshots.</p>
@@ -72,6 +74,10 @@ impl SnapshotInfo {
     pub fn outpost_arn(&self) -> ::std::option::Option<&str> {
         self.outpost_arn.as_deref()
     }
+    /// <p>Reserved for future use.</p>
+    pub fn sse_type(&self) -> ::std::option::Option<&crate::types::SseType> {
+        self.sse_type.as_ref()
+    }
 }
 impl SnapshotInfo {
     /// Creates a new builder-style object to manufacture [`SnapshotInfo`](crate::types::SnapshotInfo).
@@ -95,6 +101,7 @@ pub struct SnapshotInfoBuilder {
     pub(crate) owner_id: ::std::option::Option<::std::string::String>,
     pub(crate) snapshot_id: ::std::option::Option<::std::string::String>,
     pub(crate) outpost_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) sse_type: ::std::option::Option<crate::types::SseType>,
 }
 impl SnapshotInfoBuilder {
     /// <p>Description specified by the CreateSnapshotRequest that has been applied to all snapshots.</p>
@@ -257,6 +264,20 @@ impl SnapshotInfoBuilder {
     pub fn get_outpost_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.outpost_arn
     }
+    /// <p>Reserved for future use.</p>
+    pub fn sse_type(mut self, input: crate::types::SseType) -> Self {
+        self.sse_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Reserved for future use.</p>
+    pub fn set_sse_type(mut self, input: ::std::option::Option<crate::types::SseType>) -> Self {
+        self.sse_type = input;
+        self
+    }
+    /// <p>Reserved for future use.</p>
+    pub fn get_sse_type(&self) -> &::std::option::Option<crate::types::SseType> {
+        &self.sse_type
+    }
     /// Consumes the builder and constructs a [`SnapshotInfo`](crate::types::SnapshotInfo).
     pub fn build(self) -> crate::types::SnapshotInfo {
         crate::types::SnapshotInfo {
@@ -271,6 +292,7 @@ impl SnapshotInfoBuilder {
             owner_id: self.owner_id,
             snapshot_id: self.snapshot_id,
             outpost_arn: self.outpost_arn,
+            sse_type: self.sse_type,
         }
     }
 }

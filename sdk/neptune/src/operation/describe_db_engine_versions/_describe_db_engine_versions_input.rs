@@ -23,7 +23,7 @@ pub struct DescribeDbEngineVersionsInput {
     /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>Indicates that only the default version of the specified engine or engine and major version combination is returned.</p>
-    pub default_only: bool,
+    pub default_only: ::std::option::Option<bool>,
     /// <p>If this parameter is specified and the requested engine supports the <code>CharacterSetName</code> parameter for <code>CreateDBInstance</code>, the response includes a list of supported character sets for each engine version.</p>
     pub list_supported_character_sets: ::std::option::Option<bool>,
     /// <p>If this parameter is specified and the requested engine supports the <code>TimeZone</code> parameter for <code>CreateDBInstance</code>, the response includes a list of supported time zones for each engine version.</p>
@@ -62,7 +62,7 @@ impl DescribeDbEngineVersionsInput {
         self.marker.as_deref()
     }
     /// <p>Indicates that only the default version of the specified engine or engine and major version combination is returned.</p>
-    pub fn default_only(&self) -> bool {
+    pub fn default_only(&self) -> ::std::option::Option<bool> {
         self.default_only
     }
     /// <p>If this parameter is specified and the requested engine supports the <code>CharacterSetName</code> parameter for <code>CreateDBInstance</code>, the response includes a list of supported character sets for each engine version.</p>
@@ -263,7 +263,7 @@ impl DescribeDbEngineVersionsInputBuilder {
             filters: self.filters,
             max_records: self.max_records,
             marker: self.marker,
-            default_only: self.default_only.unwrap_or_default(),
+            default_only: self.default_only,
             list_supported_character_sets: self.list_supported_character_sets,
             list_supported_timezones: self.list_supported_timezones,
         })

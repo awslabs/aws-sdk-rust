@@ -36,6 +36,8 @@ pub struct Volume {
     pub multi_attach_enabled: ::std::option::Option<bool>,
     /// <p>The throughput that the volume supports, in MiB/s.</p>
     pub throughput: ::std::option::Option<i32>,
+    /// <p>Reserved for future use.</p>
+    pub sse_type: ::std::option::Option<crate::types::SseType>,
 }
 impl Volume {
     /// <p>Information about the volume attachments.</p>
@@ -102,6 +104,10 @@ impl Volume {
     pub fn throughput(&self) -> ::std::option::Option<i32> {
         self.throughput
     }
+    /// <p>Reserved for future use.</p>
+    pub fn sse_type(&self) -> ::std::option::Option<&crate::types::SseType> {
+        self.sse_type.as_ref()
+    }
 }
 impl Volume {
     /// Creates a new builder-style object to manufacture [`Volume`](crate::types::Volume).
@@ -130,6 +136,7 @@ pub struct VolumeBuilder {
     pub(crate) fast_restored: ::std::option::Option<bool>,
     pub(crate) multi_attach_enabled: ::std::option::Option<bool>,
     pub(crate) throughput: ::std::option::Option<i32>,
+    pub(crate) sse_type: ::std::option::Option<crate::types::SseType>,
 }
 impl VolumeBuilder {
     /// Appends an item to `attachments`.
@@ -368,6 +375,20 @@ impl VolumeBuilder {
     pub fn get_throughput(&self) -> &::std::option::Option<i32> {
         &self.throughput
     }
+    /// <p>Reserved for future use.</p>
+    pub fn sse_type(mut self, input: crate::types::SseType) -> Self {
+        self.sse_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Reserved for future use.</p>
+    pub fn set_sse_type(mut self, input: ::std::option::Option<crate::types::SseType>) -> Self {
+        self.sse_type = input;
+        self
+    }
+    /// <p>Reserved for future use.</p>
+    pub fn get_sse_type(&self) -> &::std::option::Option<crate::types::SseType> {
+        &self.sse_type
+    }
     /// Consumes the builder and constructs a [`Volume`](crate::types::Volume).
     pub fn build(self) -> crate::types::Volume {
         crate::types::Volume {
@@ -387,6 +408,7 @@ impl VolumeBuilder {
             fast_restored: self.fast_restored,
             multi_attach_enabled: self.multi_attach_enabled,
             throughput: self.throughput,
+            sse_type: self.sse_type,
         }
     }
 }

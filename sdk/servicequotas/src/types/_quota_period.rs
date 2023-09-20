@@ -4,13 +4,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct QuotaPeriod {
-    /// <p>The value.</p>
+    /// <p>The value associated with the reported <code>PeriodUnit</code>.</p>
     pub period_value: ::std::option::Option<i32>,
     /// <p>The time unit.</p>
     pub period_unit: ::std::option::Option<crate::types::PeriodUnit>,
 }
 impl QuotaPeriod {
-    /// <p>The value.</p>
+    /// <p>The value associated with the reported <code>PeriodUnit</code>.</p>
     pub fn period_value(&self) -> ::std::option::Option<i32> {
         self.period_value
     }
@@ -34,17 +34,17 @@ pub struct QuotaPeriodBuilder {
     pub(crate) period_unit: ::std::option::Option<crate::types::PeriodUnit>,
 }
 impl QuotaPeriodBuilder {
-    /// <p>The value.</p>
+    /// <p>The value associated with the reported <code>PeriodUnit</code>.</p>
     pub fn period_value(mut self, input: i32) -> Self {
         self.period_value = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The value.</p>
+    /// <p>The value associated with the reported <code>PeriodUnit</code>.</p>
     pub fn set_period_value(mut self, input: ::std::option::Option<i32>) -> Self {
         self.period_value = input;
         self
     }
-    /// <p>The value.</p>
+    /// <p>The value associated with the reported <code>PeriodUnit</code>.</p>
     pub fn get_period_value(&self) -> &::std::option::Option<i32> {
         &self.period_value
     }

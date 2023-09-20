@@ -382,6 +382,7 @@ impl From<crate::operation::delete_lifecycle_policy::DeleteLifecyclePolicyError>
                 Error::RepositoryNotFoundException(inner)
             }
             crate::operation::delete_lifecycle_policy::DeleteLifecyclePolicyError::ServerException(inner) => Error::ServerException(inner),
+            crate::operation::delete_lifecycle_policy::DeleteLifecyclePolicyError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::delete_lifecycle_policy::DeleteLifecyclePolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -810,6 +811,7 @@ impl From<crate::operation::get_lifecycle_policy::GetLifecyclePolicyError> for E
                 Error::RepositoryNotFoundException(inner)
             }
             crate::operation::get_lifecycle_policy::GetLifecyclePolicyError::ServerException(inner) => Error::ServerException(inner),
+            crate::operation::get_lifecycle_policy::GetLifecyclePolicyError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_lifecycle_policy::GetLifecyclePolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -843,6 +845,9 @@ impl From<crate::operation::get_lifecycle_policy_preview::GetLifecyclePolicyPrev
                 Error::RepositoryNotFoundException(inner)
             }
             crate::operation::get_lifecycle_policy_preview::GetLifecyclePolicyPreviewError::ServerException(inner) => Error::ServerException(inner),
+            crate::operation::get_lifecycle_policy_preview::GetLifecyclePolicyPreviewError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
             crate::operation::get_lifecycle_policy_preview::GetLifecyclePolicyPreviewError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -1159,6 +1164,7 @@ impl From<crate::operation::put_lifecycle_policy::PutLifecyclePolicyError> for E
                 Error::RepositoryNotFoundException(inner)
             }
             crate::operation::put_lifecycle_policy::PutLifecyclePolicyError::ServerException(inner) => Error::ServerException(inner),
+            crate::operation::put_lifecycle_policy::PutLifecyclePolicyError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::put_lifecycle_policy::PutLifecyclePolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -1353,6 +1359,9 @@ impl From<crate::operation::start_lifecycle_policy_preview::StartLifecyclePolicy
             }
             crate::operation::start_lifecycle_policy_preview::StartLifecyclePolicyPreviewError::ServerException(inner) => {
                 Error::ServerException(inner)
+            }
+            crate::operation::start_lifecycle_policy_preview::StartLifecyclePolicyPreviewError::ValidationException(inner) => {
+                Error::ValidationException(inner)
             }
             crate::operation::start_lifecycle_policy_preview::StartLifecyclePolicyPreviewError::Unhandled(inner) => Error::Unhandled(inner),
         }

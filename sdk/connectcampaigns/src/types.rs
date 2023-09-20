@@ -3,6 +3,8 @@ pub use crate::types::_answer_machine_detection_config::AnswerMachineDetectionCo
 
 pub use crate::types::_dialer_config::DialerConfig;
 
+pub use crate::types::_agentless_dialer_config::AgentlessDialerConfig;
+
 pub use crate::types::_predictive_dialer_config::PredictiveDialerConfig;
 
 pub use crate::types::_progressive_dialer_config::ProgressiveDialerConfig;
@@ -46,6 +48,8 @@ pub use crate::types::_successful_campaign_state_response::SuccessfulCampaignSta
 pub use crate::types::_campaign::Campaign;
 
 pub use crate::types::_outbound_call_config::OutboundCallConfig;
+
+mod _agentless_dialer_config;
 
 mod _answer_machine_detection_config;
 

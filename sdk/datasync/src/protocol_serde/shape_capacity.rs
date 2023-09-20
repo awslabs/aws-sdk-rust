@@ -35,6 +35,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "ClusterCloudStorageUsed" => {
+                            builder = builder.set_cluster_cloud_storage_used(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i64::try_from)
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

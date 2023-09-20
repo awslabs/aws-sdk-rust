@@ -31,8 +31,8 @@ pub fn ser_increase_replica_count_input_input(
     }
     #[allow(unused_mut)]
     let mut scope_10 = writer.prefix("ApplyImmediately");
-    {
-        scope_10.boolean(input.apply_immediately);
+    if let Some(var_11) = &input.apply_immediately {
+        scope_10.boolean(*var_11);
     }
     writer.finish();
     Ok(::aws_smithy_http::body::SdkBody::from(out))

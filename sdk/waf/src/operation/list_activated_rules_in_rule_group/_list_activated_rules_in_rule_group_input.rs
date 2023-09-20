@@ -8,7 +8,7 @@ pub struct ListActivatedRulesInRuleGroupInput {
     /// <p>If you specify a value for <code>Limit</code> and you have more <code>ActivatedRules</code> than the value of <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>ActivatedRules</code>. For the second and subsequent <code>ListActivatedRulesInRuleGroup</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of <code>ActivatedRules</code>.</p>
     pub next_marker: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the number of <code>ActivatedRules</code> that you want AWS WAF to return for this request. If you have more <code>ActivatedRules</code> than the number that you specify for <code>Limit</code>, the response includes a <code>NextMarker</code> value that you can use to get another batch of <code>ActivatedRules</code>.</p>
-    pub limit: i32,
+    pub limit: ::std::option::Option<i32>,
 }
 impl ListActivatedRulesInRuleGroupInput {
     /// <p>The <code>RuleGroupId</code> of the <code>RuleGroup</code> for which you want to get a list of <code>ActivatedRule</code> objects.</p>
@@ -20,7 +20,7 @@ impl ListActivatedRulesInRuleGroupInput {
         self.next_marker.as_deref()
     }
     /// <p>Specifies the number of <code>ActivatedRules</code> that you want AWS WAF to return for this request. If you have more <code>ActivatedRules</code> than the number that you specify for <code>Limit</code>, the response includes a <code>NextMarker</code> value that you can use to get another batch of <code>ActivatedRules</code>.</p>
-    pub fn limit(&self) -> i32 {
+    pub fn limit(&self) -> ::std::option::Option<i32> {
         self.limit
     }
 }
@@ -92,7 +92,7 @@ impl ListActivatedRulesInRuleGroupInputBuilder {
         ::std::result::Result::Ok(crate::operation::list_activated_rules_in_rule_group::ListActivatedRulesInRuleGroupInput {
             rule_group_id: self.rule_group_id,
             next_marker: self.next_marker,
-            limit: self.limit.unwrap_or_default(),
+            limit: self.limit,
         })
     }
 }

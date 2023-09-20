@@ -6,8 +6,8 @@
 pub struct StartTaskExecutionInput {
     /// <p>Specifies the Amazon Resource Name (ARN) of the task that you want to start.</p>
     pub task_arn: ::std::option::Option<::std::string::String>,
-    /// <p>Configures your DataSync task settings. These options include how DataSync handles files, objects, and their associated metadata. You also can specify how DataSync verifies data integrity, set bandwidth limits for your task, among other options.</p>
-    /// <p>Each task setting has a default value. Unless you need to, you don't have to configure any of these <code>Options</code> before starting your task.</p>
+    /// <p>Indicates how your transfer task is configured. These options include how DataSync handles files, objects, and their associated metadata during your transfer. You also can specify how to verify data integrity, set bandwidth limits for your task, among other options.</p>
+    /// <p>Each option has a default value. Unless you need to, you don't have to configure any of these options before starting your task.</p>
     pub override_options: ::std::option::Option<crate::types::Options>,
     /// <p>Specifies a list of filter rules that determines which files to include when running a task. The pattern should contain a single filter string that consists of the patterns to include. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>. </p>
     pub includes: ::std::option::Option<::std::vec::Vec<crate::types::FilterRule>>,
@@ -16,14 +16,16 @@ pub struct StartTaskExecutionInput {
     /// <p>Specifies the tags that you want to apply to the Amazon Resource Name (ARN) representing the task execution.</p>
     /// <p> <i>Tags</i> are key-value pairs that help you manage, filter, and search for your DataSync resources.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::TagListEntry>>,
+    /// <p>Specifies how you want to configure a task report, which provides detailed information about for your DataSync transfer.</p>
+    pub task_report_config: ::std::option::Option<crate::types::TaskReportConfig>,
 }
 impl StartTaskExecutionInput {
     /// <p>Specifies the Amazon Resource Name (ARN) of the task that you want to start.</p>
     pub fn task_arn(&self) -> ::std::option::Option<&str> {
         self.task_arn.as_deref()
     }
-    /// <p>Configures your DataSync task settings. These options include how DataSync handles files, objects, and their associated metadata. You also can specify how DataSync verifies data integrity, set bandwidth limits for your task, among other options.</p>
-    /// <p>Each task setting has a default value. Unless you need to, you don't have to configure any of these <code>Options</code> before starting your task.</p>
+    /// <p>Indicates how your transfer task is configured. These options include how DataSync handles files, objects, and their associated metadata during your transfer. You also can specify how to verify data integrity, set bandwidth limits for your task, among other options.</p>
+    /// <p>Each option has a default value. Unless you need to, you don't have to configure any of these options before starting your task.</p>
     pub fn override_options(&self) -> ::std::option::Option<&crate::types::Options> {
         self.override_options.as_ref()
     }
@@ -39,6 +41,10 @@ impl StartTaskExecutionInput {
     /// <p> <i>Tags</i> are key-value pairs that help you manage, filter, and search for your DataSync resources.</p>
     pub fn tags(&self) -> ::std::option::Option<&[crate::types::TagListEntry]> {
         self.tags.as_deref()
+    }
+    /// <p>Specifies how you want to configure a task report, which provides detailed information about for your DataSync transfer.</p>
+    pub fn task_report_config(&self) -> ::std::option::Option<&crate::types::TaskReportConfig> {
+        self.task_report_config.as_ref()
     }
 }
 impl StartTaskExecutionInput {
@@ -57,6 +63,7 @@ pub struct StartTaskExecutionInputBuilder {
     pub(crate) includes: ::std::option::Option<::std::vec::Vec<crate::types::FilterRule>>,
     pub(crate) excludes: ::std::option::Option<::std::vec::Vec<crate::types::FilterRule>>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::TagListEntry>>,
+    pub(crate) task_report_config: ::std::option::Option<crate::types::TaskReportConfig>,
 }
 impl StartTaskExecutionInputBuilder {
     /// <p>Specifies the Amazon Resource Name (ARN) of the task that you want to start.</p>
@@ -73,20 +80,20 @@ impl StartTaskExecutionInputBuilder {
     pub fn get_task_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.task_arn
     }
-    /// <p>Configures your DataSync task settings. These options include how DataSync handles files, objects, and their associated metadata. You also can specify how DataSync verifies data integrity, set bandwidth limits for your task, among other options.</p>
-    /// <p>Each task setting has a default value. Unless you need to, you don't have to configure any of these <code>Options</code> before starting your task.</p>
+    /// <p>Indicates how your transfer task is configured. These options include how DataSync handles files, objects, and their associated metadata during your transfer. You also can specify how to verify data integrity, set bandwidth limits for your task, among other options.</p>
+    /// <p>Each option has a default value. Unless you need to, you don't have to configure any of these options before starting your task.</p>
     pub fn override_options(mut self, input: crate::types::Options) -> Self {
         self.override_options = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Configures your DataSync task settings. These options include how DataSync handles files, objects, and their associated metadata. You also can specify how DataSync verifies data integrity, set bandwidth limits for your task, among other options.</p>
-    /// <p>Each task setting has a default value. Unless you need to, you don't have to configure any of these <code>Options</code> before starting your task.</p>
+    /// <p>Indicates how your transfer task is configured. These options include how DataSync handles files, objects, and their associated metadata during your transfer. You also can specify how to verify data integrity, set bandwidth limits for your task, among other options.</p>
+    /// <p>Each option has a default value. Unless you need to, you don't have to configure any of these options before starting your task.</p>
     pub fn set_override_options(mut self, input: ::std::option::Option<crate::types::Options>) -> Self {
         self.override_options = input;
         self
     }
-    /// <p>Configures your DataSync task settings. These options include how DataSync handles files, objects, and their associated metadata. You also can specify how DataSync verifies data integrity, set bandwidth limits for your task, among other options.</p>
-    /// <p>Each task setting has a default value. Unless you need to, you don't have to configure any of these <code>Options</code> before starting your task.</p>
+    /// <p>Indicates how your transfer task is configured. These options include how DataSync handles files, objects, and their associated metadata during your transfer. You also can specify how to verify data integrity, set bandwidth limits for your task, among other options.</p>
+    /// <p>Each option has a default value. Unless you need to, you don't have to configure any of these options before starting your task.</p>
     pub fn get_override_options(&self) -> &::std::option::Option<crate::types::Options> {
         &self.override_options
     }
@@ -153,6 +160,20 @@ impl StartTaskExecutionInputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagListEntry>> {
         &self.tags
     }
+    /// <p>Specifies how you want to configure a task report, which provides detailed information about for your DataSync transfer.</p>
+    pub fn task_report_config(mut self, input: crate::types::TaskReportConfig) -> Self {
+        self.task_report_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies how you want to configure a task report, which provides detailed information about for your DataSync transfer.</p>
+    pub fn set_task_report_config(mut self, input: ::std::option::Option<crate::types::TaskReportConfig>) -> Self {
+        self.task_report_config = input;
+        self
+    }
+    /// <p>Specifies how you want to configure a task report, which provides detailed information about for your DataSync transfer.</p>
+    pub fn get_task_report_config(&self) -> &::std::option::Option<crate::types::TaskReportConfig> {
+        &self.task_report_config
+    }
     /// Consumes the builder and constructs a [`StartTaskExecutionInput`](crate::operation::start_task_execution::StartTaskExecutionInput).
     pub fn build(
         self,
@@ -163,6 +184,7 @@ impl StartTaskExecutionInputBuilder {
             includes: self.includes,
             excludes: self.excludes,
             tags: self.tags,
+            task_report_config: self.task_report_config,
         })
     }
 }

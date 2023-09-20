@@ -17,6 +17,22 @@ pub fn de_delete_db_cluster_http_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "DBClusterAutomatedBackupQuotaExceededFault" => {
+            crate::operation::delete_db_cluster::DeleteDBClusterError::DbClusterAutomatedBackupQuotaExceededFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::DbClusterAutomatedBackupQuotaExceededFaultBuilder::default();
+                    output = crate::protocol_serde::shape_db_cluster_automated_backup_quota_exceeded_fault::de_db_cluster_automated_backup_quota_exceeded_fault_xml_err(_response_body, output).map_err(crate::operation::delete_db_cluster::DeleteDBClusterError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         "DBClusterNotFoundFault" => crate::operation::delete_db_cluster::DeleteDBClusterError::DbClusterNotFoundFault({
             #[allow(unused_mut)]
             let mut tmp = {

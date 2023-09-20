@@ -23,6 +23,7 @@ impl DeleteDataSourceInputBuilder {
 /// Fluent builder constructing a request to `DeleteDataSource`.
 ///
 /// <p>Deletes an Amazon Kendra data source connector. An exception is not thrown if the data source is already being deleted. While the data source is being deleted, the <code>Status</code> field returned by a call to the <code>DescribeDataSource</code> API is set to <code>DELETING</code>. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/delete-data-source.html">Deleting Data Sources</a>.</p>
+/// <p>Deleting an entire data source or re-syncing your index after deleting specific documents from a data source could take up to an hour or more, depending on the number of documents you want to delete.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteDataSourceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

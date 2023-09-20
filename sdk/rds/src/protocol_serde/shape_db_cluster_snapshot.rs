@@ -324,6 +324,19 @@ pub fn de_db_cluster_snapshot(
                 builder = builder.set_storage_type(var_24);
             }
             ,
+            s if s.matches("DbClusterResourceId") /* DbClusterResourceId com.amazonaws.rds#DBClusterSnapshot$DbClusterResourceId */ =>  {
+                let var_25 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_db_cluster_resource_id(var_25);
+            }
+            ,
             _ => {}
         }
     }

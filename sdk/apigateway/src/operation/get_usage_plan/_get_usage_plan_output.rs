@@ -16,7 +16,7 @@ pub struct GetUsagePlanOutput {
     pub throttle: ::std::option::Option<crate::types::ThrottleSettings>,
     /// <p>The target maximum number of permitted requests per a given unit time interval.</p>
     pub quota: ::std::option::Option<crate::types::QuotaSettings>,
-    /// <p>The AWS Markeplace product identifier to associate with the usage plan as a SaaS product on AWS Marketplace.</p>
+    /// <p>The Amazon Web Services Marketplace product identifier to associate with the usage plan as a SaaS product on the Amazon Web Services Marketplace.</p>
     pub product_code: ::std::option::Option<::std::string::String>,
     /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -47,7 +47,7 @@ impl GetUsagePlanOutput {
     pub fn quota(&self) -> ::std::option::Option<&crate::types::QuotaSettings> {
         self.quota.as_ref()
     }
-    /// <p>The AWS Markeplace product identifier to associate with the usage plan as a SaaS product on AWS Marketplace.</p>
+    /// <p>The Amazon Web Services Marketplace product identifier to associate with the usage plan as a SaaS product on the Amazon Web Services Marketplace.</p>
     pub fn product_code(&self) -> ::std::option::Option<&str> {
         self.product_code.as_deref()
     }
@@ -173,17 +173,17 @@ impl GetUsagePlanOutputBuilder {
     pub fn get_quota(&self) -> &::std::option::Option<crate::types::QuotaSettings> {
         &self.quota
     }
-    /// <p>The AWS Markeplace product identifier to associate with the usage plan as a SaaS product on AWS Marketplace.</p>
+    /// <p>The Amazon Web Services Marketplace product identifier to associate with the usage plan as a SaaS product on the Amazon Web Services Marketplace.</p>
     pub fn product_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.product_code = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The AWS Markeplace product identifier to associate with the usage plan as a SaaS product on AWS Marketplace.</p>
+    /// <p>The Amazon Web Services Marketplace product identifier to associate with the usage plan as a SaaS product on the Amazon Web Services Marketplace.</p>
     pub fn set_product_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.product_code = input;
         self
     }
-    /// <p>The AWS Markeplace product identifier to associate with the usage plan as a SaaS product on AWS Marketplace.</p>
+    /// <p>The Amazon Web Services Marketplace product identifier to associate with the usage plan as a SaaS product on the Amazon Web Services Marketplace.</p>
     pub fn get_product_code(&self) -> &::std::option::Option<::std::string::String> {
         &self.product_code
     }

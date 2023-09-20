@@ -2,7 +2,7 @@
 
 /// <p> Represents a set of controls in an Audit Manager assessment. </p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct AssessmentControlSet {
     /// <p> The identifier of the control set in the assessment. This is the control set name in a plain string format. </p>
     pub id: ::std::option::Option<::std::string::String>,
@@ -55,6 +55,20 @@ impl AssessmentControlSet {
         self.manual_evidence_count
     }
 }
+impl ::std::fmt::Debug for AssessmentControlSet {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("AssessmentControlSet");
+        formatter.field("id", &self.id);
+        formatter.field("description", &self.description);
+        formatter.field("status", &self.status);
+        formatter.field("roles", &"*** Sensitive Data Redacted ***");
+        formatter.field("controls", &self.controls);
+        formatter.field("delegations", &self.delegations);
+        formatter.field("system_evidence_count", &self.system_evidence_count);
+        formatter.field("manual_evidence_count", &self.manual_evidence_count);
+        formatter.finish()
+    }
+}
 impl AssessmentControlSet {
     /// Creates a new builder-style object to manufacture [`AssessmentControlSet`](crate::types::AssessmentControlSet).
     pub fn builder() -> crate::types::builders::AssessmentControlSetBuilder {
@@ -64,7 +78,7 @@ impl AssessmentControlSet {
 
 /// A builder for [`AssessmentControlSet`](crate::types::AssessmentControlSet).
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct AssessmentControlSetBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -218,5 +232,19 @@ impl AssessmentControlSetBuilder {
             system_evidence_count: self.system_evidence_count.unwrap_or_default(),
             manual_evidence_count: self.manual_evidence_count.unwrap_or_default(),
         }
+    }
+}
+impl ::std::fmt::Debug for AssessmentControlSetBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("AssessmentControlSetBuilder");
+        formatter.field("id", &self.id);
+        formatter.field("description", &self.description);
+        formatter.field("status", &self.status);
+        formatter.field("roles", &"*** Sensitive Data Redacted ***");
+        formatter.field("controls", &self.controls);
+        formatter.field("delegations", &self.delegations);
+        formatter.field("system_evidence_count", &self.system_evidence_count);
+        formatter.field("manual_evidence_count", &self.manual_evidence_count);
+        formatter.finish()
     }
 }

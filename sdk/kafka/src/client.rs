@@ -199,6 +199,8 @@ mod describe_cluster;
 
 mod describe_cluster_operation;
 
+mod describe_cluster_operation_v2;
+
 mod describe_cluster_v2;
 
 mod describe_configuration;
@@ -216,6 +218,8 @@ mod get_compatible_kafka_versions;
 mod list_client_vpc_connections;
 
 mod list_cluster_operations;
+
+mod list_cluster_operations_v2;
 
 mod list_clusters;
 

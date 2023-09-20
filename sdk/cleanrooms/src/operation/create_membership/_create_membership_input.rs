@@ -9,6 +9,8 @@ pub struct CreateMembershipInput {
     pub query_log_status: ::std::option::Option<crate::types::MembershipQueryLogStatus>,
     /// <p>An optional label that you can assign to a resource when you create it. Each tag consists of a key and an optional value, both of which you define. When you use tagging, you can also use tag-based access control in IAM policies to control access to this resource.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>The default protected query result configuration as specified by the member who can receive results.</p>
+    pub default_result_configuration: ::std::option::Option<crate::types::MembershipProtectedQueryResultConfiguration>,
 }
 impl CreateMembershipInput {
     /// <p>The unique ID for the associated collaboration.</p>
@@ -22,6 +24,10 @@ impl CreateMembershipInput {
     /// <p>An optional label that you can assign to a resource when you create it. Each tag consists of a key and an optional value, both of which you define. When you use tagging, you can also use tag-based access control in IAM policies to control access to this resource.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
+    }
+    /// <p>The default protected query result configuration as specified by the member who can receive results.</p>
+    pub fn default_result_configuration(&self) -> ::std::option::Option<&crate::types::MembershipProtectedQueryResultConfiguration> {
+        self.default_result_configuration.as_ref()
     }
 }
 impl CreateMembershipInput {
@@ -38,6 +44,7 @@ pub struct CreateMembershipInputBuilder {
     pub(crate) collaboration_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) query_log_status: ::std::option::Option<crate::types::MembershipQueryLogStatus>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) default_result_configuration: ::std::option::Option<crate::types::MembershipProtectedQueryResultConfiguration>,
 }
 impl CreateMembershipInputBuilder {
     /// <p>The unique ID for the associated collaboration.</p>
@@ -88,6 +95,23 @@ impl CreateMembershipInputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
+    /// <p>The default protected query result configuration as specified by the member who can receive results.</p>
+    pub fn default_result_configuration(mut self, input: crate::types::MembershipProtectedQueryResultConfiguration) -> Self {
+        self.default_result_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The default protected query result configuration as specified by the member who can receive results.</p>
+    pub fn set_default_result_configuration(
+        mut self,
+        input: ::std::option::Option<crate::types::MembershipProtectedQueryResultConfiguration>,
+    ) -> Self {
+        self.default_result_configuration = input;
+        self
+    }
+    /// <p>The default protected query result configuration as specified by the member who can receive results.</p>
+    pub fn get_default_result_configuration(&self) -> &::std::option::Option<crate::types::MembershipProtectedQueryResultConfiguration> {
+        &self.default_result_configuration
+    }
     /// Consumes the builder and constructs a [`CreateMembershipInput`](crate::operation::create_membership::CreateMembershipInput).
     pub fn build(
         self,
@@ -96,6 +120,7 @@ impl CreateMembershipInputBuilder {
             collaboration_identifier: self.collaboration_identifier,
             query_log_status: self.query_log_status,
             tags: self.tags,
+            default_result_configuration: self.default_result_configuration,
         })
     }
 }

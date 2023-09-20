@@ -3,17 +3,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeregisterComputeInput {
-    /// <p>&gt;A unique identifier for the fleet the compute resource is registered to.</p>
+    /// <p>A unique identifier for the fleet the compute resource is currently registered to.</p>
     pub fleet_id: ::std::option::Option<::std::string::String>,
-    /// <p>The name of the compute resource you want to delete.</p>
+    /// <p>The name of the compute resource to remove from the specified Anywhere fleet.</p>
     pub compute_name: ::std::option::Option<::std::string::String>,
 }
 impl DeregisterComputeInput {
-    /// <p>&gt;A unique identifier for the fleet the compute resource is registered to.</p>
+    /// <p>A unique identifier for the fleet the compute resource is currently registered to.</p>
     pub fn fleet_id(&self) -> ::std::option::Option<&str> {
         self.fleet_id.as_deref()
     }
-    /// <p>The name of the compute resource you want to delete.</p>
+    /// <p>The name of the compute resource to remove from the specified Anywhere fleet.</p>
     pub fn compute_name(&self) -> ::std::option::Option<&str> {
         self.compute_name.as_deref()
     }
@@ -33,31 +33,31 @@ pub struct DeregisterComputeInputBuilder {
     pub(crate) compute_name: ::std::option::Option<::std::string::String>,
 }
 impl DeregisterComputeInputBuilder {
-    /// <p>&gt;A unique identifier for the fleet the compute resource is registered to.</p>
+    /// <p>A unique identifier for the fleet the compute resource is currently registered to.</p>
     pub fn fleet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fleet_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>&gt;A unique identifier for the fleet the compute resource is registered to.</p>
+    /// <p>A unique identifier for the fleet the compute resource is currently registered to.</p>
     pub fn set_fleet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.fleet_id = input;
         self
     }
-    /// <p>&gt;A unique identifier for the fleet the compute resource is registered to.</p>
+    /// <p>A unique identifier for the fleet the compute resource is currently registered to.</p>
     pub fn get_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.fleet_id
     }
-    /// <p>The name of the compute resource you want to delete.</p>
+    /// <p>The name of the compute resource to remove from the specified Anywhere fleet.</p>
     pub fn compute_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.compute_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the compute resource you want to delete.</p>
+    /// <p>The name of the compute resource to remove from the specified Anywhere fleet.</p>
     pub fn set_compute_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.compute_name = input;
         self
     }
-    /// <p>The name of the compute resource you want to delete.</p>
+    /// <p>The name of the compute resource to remove from the specified Anywhere fleet.</p>
     pub fn get_compute_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.compute_name
     }

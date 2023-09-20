@@ -15,6 +15,18 @@ pub fn ser_health_events_config(
             ::aws_smithy_types::Number::Float((input.performance_score_threshold).into()),
         );
     }
+    if let Some(var_1) = &input.availability_local_health_events_config {
+        #[allow(unused_mut)]
+        let mut object_2 = object.key("AvailabilityLocalHealthEventsConfig").start_object();
+        crate::protocol_serde::shape_local_health_events_config::ser_local_health_events_config(&mut object_2, var_1)?;
+        object_2.finish();
+    }
+    if let Some(var_3) = &input.performance_local_health_events_config {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("PerformanceLocalHealthEventsConfig").start_object();
+        crate::protocol_serde::shape_local_health_events_config::ser_local_health_events_config(&mut object_4, var_3)?;
+        object_4.finish();
+    }
     Ok(())
 }
 
@@ -41,6 +53,16 @@ where
                         "PerformanceScoreThreshold" => {
                             builder = builder.set_performance_score_threshold(
                                 ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?.map(|v| v.to_f64_lossy()),
+                            );
+                        }
+                        "AvailabilityLocalHealthEventsConfig" => {
+                            builder = builder.set_availability_local_health_events_config(
+                                crate::protocol_serde::shape_local_health_events_config::de_local_health_events_config(tokens)?,
+                            );
+                        }
+                        "PerformanceLocalHealthEventsConfig" => {
+                            builder = builder.set_performance_local_health_events_config(
+                                crate::protocol_serde::shape_local_health_events_config::de_local_health_events_config(tokens)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

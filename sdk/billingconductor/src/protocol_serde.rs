@@ -247,6 +247,10 @@ pub(crate) mod shape_custom_line_item_version_list_element;
 
 pub(crate) mod shape_disassociate_resource_response_element;
 
+pub(crate) mod shape_line_item_filter;
+
+pub(crate) mod shape_line_item_filters_list;
+
 pub(crate) mod shape_list_custom_line_item_flat_charge_details;
 
 pub(crate) mod shape_list_custom_line_item_percentage_charge_details;
@@ -274,3 +278,5 @@ pub(crate) mod shape_list_billing_group_account_grouping;
 pub(crate) mod shape_tiering;
 
 pub(crate) mod shape_free_tier_config;
+
+pub(crate) mod shape_line_item_filter_values_list;

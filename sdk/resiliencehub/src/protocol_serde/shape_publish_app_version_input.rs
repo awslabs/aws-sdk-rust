@@ -6,5 +6,8 @@ pub fn ser_publish_app_version_input(
     if let Some(var_1) = &input.app_arn {
         object.key("appArn").string(var_1.as_str());
     }
+    if let Some(var_2) = &input.version_name {
+        object.key("versionName").string(var_2.as_str());
+    }
     Ok(())
 }

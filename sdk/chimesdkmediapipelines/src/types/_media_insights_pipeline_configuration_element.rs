@@ -23,6 +23,8 @@ pub struct MediaInsightsPipelineConfigurationElement {
     pub sqs_queue_sink_configuration: ::std::option::Option<crate::types::SqsQueueSinkConfiguration>,
     /// <p>The configuration settings for an SNS topic sink in a media insights pipeline configuration element.</p>
     pub sns_topic_sink_configuration: ::std::option::Option<crate::types::SnsTopicSinkConfiguration>,
+    /// <p>The configuration settings for voice enhancement sink in a media insights pipeline configuration element.</p>
+    pub voice_enhancement_sink_configuration: ::std::option::Option<crate::types::VoiceEnhancementSinkConfiguration>,
 }
 impl MediaInsightsPipelineConfigurationElement {
     /// <p>The element type.</p>
@@ -63,6 +65,10 @@ impl MediaInsightsPipelineConfigurationElement {
     pub fn sns_topic_sink_configuration(&self) -> ::std::option::Option<&crate::types::SnsTopicSinkConfiguration> {
         self.sns_topic_sink_configuration.as_ref()
     }
+    /// <p>The configuration settings for voice enhancement sink in a media insights pipeline configuration element.</p>
+    pub fn voice_enhancement_sink_configuration(&self) -> ::std::option::Option<&crate::types::VoiceEnhancementSinkConfiguration> {
+        self.voice_enhancement_sink_configuration.as_ref()
+    }
 }
 impl MediaInsightsPipelineConfigurationElement {
     /// Creates a new builder-style object to manufacture [`MediaInsightsPipelineConfigurationElement`](crate::types::MediaInsightsPipelineConfigurationElement).
@@ -85,6 +91,7 @@ pub struct MediaInsightsPipelineConfigurationElementBuilder {
     pub(crate) lambda_function_sink_configuration: ::std::option::Option<crate::types::LambdaFunctionSinkConfiguration>,
     pub(crate) sqs_queue_sink_configuration: ::std::option::Option<crate::types::SqsQueueSinkConfiguration>,
     pub(crate) sns_topic_sink_configuration: ::std::option::Option<crate::types::SnsTopicSinkConfiguration>,
+    pub(crate) voice_enhancement_sink_configuration: ::std::option::Option<crate::types::VoiceEnhancementSinkConfiguration>,
 }
 impl MediaInsightsPipelineConfigurationElementBuilder {
     /// <p>The element type.</p>
@@ -230,6 +237,20 @@ impl MediaInsightsPipelineConfigurationElementBuilder {
     pub fn get_sns_topic_sink_configuration(&self) -> &::std::option::Option<crate::types::SnsTopicSinkConfiguration> {
         &self.sns_topic_sink_configuration
     }
+    /// <p>The configuration settings for voice enhancement sink in a media insights pipeline configuration element.</p>
+    pub fn voice_enhancement_sink_configuration(mut self, input: crate::types::VoiceEnhancementSinkConfiguration) -> Self {
+        self.voice_enhancement_sink_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration settings for voice enhancement sink in a media insights pipeline configuration element.</p>
+    pub fn set_voice_enhancement_sink_configuration(mut self, input: ::std::option::Option<crate::types::VoiceEnhancementSinkConfiguration>) -> Self {
+        self.voice_enhancement_sink_configuration = input;
+        self
+    }
+    /// <p>The configuration settings for voice enhancement sink in a media insights pipeline configuration element.</p>
+    pub fn get_voice_enhancement_sink_configuration(&self) -> &::std::option::Option<crate::types::VoiceEnhancementSinkConfiguration> {
+        &self.voice_enhancement_sink_configuration
+    }
     /// Consumes the builder and constructs a [`MediaInsightsPipelineConfigurationElement`](crate::types::MediaInsightsPipelineConfigurationElement).
     pub fn build(self) -> crate::types::MediaInsightsPipelineConfigurationElement {
         crate::types::MediaInsightsPipelineConfigurationElement {
@@ -242,6 +263,7 @@ impl MediaInsightsPipelineConfigurationElementBuilder {
             lambda_function_sink_configuration: self.lambda_function_sink_configuration,
             sqs_queue_sink_configuration: self.sqs_queue_sink_configuration,
             sns_topic_sink_configuration: self.sns_topic_sink_configuration,
+            voice_enhancement_sink_configuration: self.voice_enhancement_sink_configuration,
         }
     }
 }

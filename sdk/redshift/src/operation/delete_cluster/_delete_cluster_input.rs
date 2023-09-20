@@ -17,7 +17,7 @@ pub struct DeleteClusterInput {
     /// <p>The <i>FinalClusterSnapshotIdentifier</i> parameter must be specified if <i>SkipFinalClusterSnapshot</i> is <code>false</code>.</p>
     /// </note>
     /// <p>Default: <code>false</code> </p>
-    pub skip_final_cluster_snapshot: bool,
+    pub skip_final_cluster_snapshot: ::std::option::Option<bool>,
     /// <p>The identifier of the final snapshot that is to be created immediately before deleting the cluster. If this parameter is provided, <i>SkipFinalClusterSnapshot</i> must be <code>false</code>. </p>
     /// <p>Constraints:</p>
     /// <ul>
@@ -47,7 +47,7 @@ impl DeleteClusterInput {
     /// <p>The <i>FinalClusterSnapshotIdentifier</i> parameter must be specified if <i>SkipFinalClusterSnapshot</i> is <code>false</code>.</p>
     /// </note>
     /// <p>Default: <code>false</code> </p>
-    pub fn skip_final_cluster_snapshot(&self) -> bool {
+    pub fn skip_final_cluster_snapshot(&self) -> ::std::option::Option<bool> {
         self.skip_final_cluster_snapshot
     }
     /// <p>The identifier of the final snapshot that is to be created immediately before deleting the cluster. If this parameter is provided, <i>SkipFinalClusterSnapshot</i> must be <code>false</code>. </p>
@@ -200,7 +200,7 @@ impl DeleteClusterInputBuilder {
     ) -> ::std::result::Result<crate::operation::delete_cluster::DeleteClusterInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_cluster::DeleteClusterInput {
             cluster_identifier: self.cluster_identifier,
-            skip_final_cluster_snapshot: self.skip_final_cluster_snapshot.unwrap_or_default(),
+            skip_final_cluster_snapshot: self.skip_final_cluster_snapshot,
             final_cluster_snapshot_identifier: self.final_cluster_snapshot_identifier,
             final_cluster_snapshot_retention_period: self.final_cluster_snapshot_retention_period,
         })

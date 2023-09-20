@@ -51,6 +51,8 @@ pub struct GetRunOutput {
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p> The computational accelerator used to run the workflow. </p>
     pub accelerators: ::std::option::Option<crate::types::Accelerators>,
+    /// <p>The run's retention mode.</p>
+    pub retention_mode: ::std::option::Option<crate::types::RunRetentionMode>,
     _request_id: Option<String>,
 }
 impl GetRunOutput {
@@ -150,6 +152,10 @@ impl GetRunOutput {
     pub fn accelerators(&self) -> ::std::option::Option<&crate::types::Accelerators> {
         self.accelerators.as_ref()
     }
+    /// <p>The run's retention mode.</p>
+    pub fn retention_mode(&self) -> ::std::option::Option<&crate::types::RunRetentionMode> {
+        self.retention_mode.as_ref()
+    }
 }
 impl ::aws_http::request_id::RequestId for GetRunOutput {
     fn request_id(&self) -> Option<&str> {
@@ -191,6 +197,7 @@ pub struct GetRunOutputBuilder {
     pub(crate) status_message: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) accelerators: ::std::option::Option<crate::types::Accelerators>,
+    pub(crate) retention_mode: ::std::option::Option<crate::types::RunRetentionMode>,
     _request_id: Option<String>,
 }
 impl GetRunOutputBuilder {
@@ -549,6 +556,20 @@ impl GetRunOutputBuilder {
     pub fn get_accelerators(&self) -> &::std::option::Option<crate::types::Accelerators> {
         &self.accelerators
     }
+    /// <p>The run's retention mode.</p>
+    pub fn retention_mode(mut self, input: crate::types::RunRetentionMode) -> Self {
+        self.retention_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The run's retention mode.</p>
+    pub fn set_retention_mode(mut self, input: ::std::option::Option<crate::types::RunRetentionMode>) -> Self {
+        self.retention_mode = input;
+        self
+    }
+    /// <p>The run's retention mode.</p>
+    pub fn get_retention_mode(&self) -> &::std::option::Option<crate::types::RunRetentionMode> {
+        &self.retention_mode
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -585,6 +606,7 @@ impl GetRunOutputBuilder {
             status_message: self.status_message,
             tags: self.tags,
             accelerators: self.accelerators,
+            retention_mode: self.retention_mode,
             _request_id: self._request_id,
         }
     }

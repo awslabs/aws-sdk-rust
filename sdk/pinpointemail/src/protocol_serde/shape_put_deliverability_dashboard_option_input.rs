@@ -3,20 +3,20 @@ pub fn ser_put_deliverability_dashboard_option_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::put_deliverability_dashboard_option::PutDeliverabilityDashboardOptionInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    {
-        object.key("DashboardEnabled").boolean(input.dashboard_enabled);
+    if let Some(var_1) = &input.dashboard_enabled {
+        object.key("DashboardEnabled").boolean(*var_1);
     }
-    if let Some(var_1) = &input.subscribed_domains {
-        let mut array_2 = object.key("SubscribedDomains").start_array();
-        for item_3 in var_1 {
+    if let Some(var_2) = &input.subscribed_domains {
+        let mut array_3 = object.key("SubscribedDomains").start_array();
+        for item_4 in var_2 {
             {
                 #[allow(unused_mut)]
-                let mut object_4 = array_2.value().start_object();
-                crate::protocol_serde::shape_domain_deliverability_tracking_option::ser_domain_deliverability_tracking_option(&mut object_4, item_3)?;
-                object_4.finish();
+                let mut object_5 = array_3.value().start_object();
+                crate::protocol_serde::shape_domain_deliverability_tracking_option::ser_domain_deliverability_tracking_option(&mut object_5, item_4)?;
+                object_5.finish();
             }
         }
-        array_2.finish();
+        array_3.finish();
     }
     Ok(())
 }

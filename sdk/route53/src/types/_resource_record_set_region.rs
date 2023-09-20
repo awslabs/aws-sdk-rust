@@ -34,6 +34,7 @@
 ///     ResourceRecordSetRegion::EuWest1 => { /* ... */ },
 ///     ResourceRecordSetRegion::EuWest2 => { /* ... */ },
 ///     ResourceRecordSetRegion::EuWest3 => { /* ... */ },
+///     ResourceRecordSetRegion::IlCentral1 => { /* ... */ },
 ///     ResourceRecordSetRegion::MeCentral1 => { /* ... */ },
 ///     ResourceRecordSetRegion::MeSouth1 => { /* ... */ },
 ///     ResourceRecordSetRegion::SaEast1 => { /* ... */ },
@@ -113,6 +114,8 @@ pub enum ResourceRecordSetRegion {
     #[allow(missing_docs)] // documentation missing in model
     EuWest3,
     #[allow(missing_docs)] // documentation missing in model
+    IlCentral1,
+    #[allow(missing_docs)] // documentation missing in model
     MeCentral1,
     #[allow(missing_docs)] // documentation missing in model
     MeSouth1,
@@ -154,6 +157,7 @@ impl ::std::convert::From<&str> for ResourceRecordSetRegion {
             "eu-west-1" => ResourceRecordSetRegion::EuWest1,
             "eu-west-2" => ResourceRecordSetRegion::EuWest2,
             "eu-west-3" => ResourceRecordSetRegion::EuWest3,
+            "il-central-1" => ResourceRecordSetRegion::IlCentral1,
             "me-central-1" => ResourceRecordSetRegion::MeCentral1,
             "me-south-1" => ResourceRecordSetRegion::MeSouth1,
             "sa-east-1" => ResourceRecordSetRegion::SaEast1,
@@ -198,6 +202,7 @@ impl ResourceRecordSetRegion {
             ResourceRecordSetRegion::EuWest1 => "eu-west-1",
             ResourceRecordSetRegion::EuWest2 => "eu-west-2",
             ResourceRecordSetRegion::EuWest3 => "eu-west-3",
+            ResourceRecordSetRegion::IlCentral1 => "il-central-1",
             ResourceRecordSetRegion::MeCentral1 => "me-central-1",
             ResourceRecordSetRegion::MeSouth1 => "me-south-1",
             ResourceRecordSetRegion::SaEast1 => "sa-east-1",
@@ -233,6 +238,7 @@ impl ResourceRecordSetRegion {
             "eu-west-1",
             "eu-west-2",
             "eu-west-3",
+            "il-central-1",
             "me-central-1",
             "me-south-1",
             "sa-east-1",

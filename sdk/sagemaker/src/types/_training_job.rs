@@ -143,6 +143,8 @@ pub struct TrainingJob {
     pub tensor_board_output_config: ::std::option::Option<crate::types::TensorBoardOutputConfig>,
     /// <p>Information about the evaluation status of the rules for the training job.</p>
     pub debug_rule_evaluation_statuses: ::std::option::Option<::std::vec::Vec<crate::types::DebugRuleEvaluationStatus>>,
+    /// <p>Configuration information for Amazon SageMaker Debugger system monitoring, framework profiling, and storage paths.</p>
+    pub profiler_config: ::std::option::Option<crate::types::ProfilerConfig>,
     /// <p>The environment variables to set in the Docker container.</p>
     pub environment: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The number of times to retry the job when the job fails due to an <code>InternalServerError</code>.</p>
@@ -358,6 +360,10 @@ impl TrainingJob {
     pub fn debug_rule_evaluation_statuses(&self) -> ::std::option::Option<&[crate::types::DebugRuleEvaluationStatus]> {
         self.debug_rule_evaluation_statuses.as_deref()
     }
+    /// <p>Configuration information for Amazon SageMaker Debugger system monitoring, framework profiling, and storage paths.</p>
+    pub fn profiler_config(&self) -> ::std::option::Option<&crate::types::ProfilerConfig> {
+        self.profiler_config.as_ref()
+    }
     /// <p>The environment variables to set in the Docker container.</p>
     pub fn environment(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.environment.as_ref()
@@ -416,6 +422,7 @@ pub struct TrainingJobBuilder {
     pub(crate) debug_rule_configurations: ::std::option::Option<::std::vec::Vec<crate::types::DebugRuleConfiguration>>,
     pub(crate) tensor_board_output_config: ::std::option::Option<crate::types::TensorBoardOutputConfig>,
     pub(crate) debug_rule_evaluation_statuses: ::std::option::Option<::std::vec::Vec<crate::types::DebugRuleEvaluationStatus>>,
+    pub(crate) profiler_config: ::std::option::Option<crate::types::ProfilerConfig>,
     pub(crate) environment: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) retry_strategy: ::std::option::Option<crate::types::RetryStrategy>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -1159,6 +1166,20 @@ impl TrainingJobBuilder {
     pub fn get_debug_rule_evaluation_statuses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DebugRuleEvaluationStatus>> {
         &self.debug_rule_evaluation_statuses
     }
+    /// <p>Configuration information for Amazon SageMaker Debugger system monitoring, framework profiling, and storage paths.</p>
+    pub fn profiler_config(mut self, input: crate::types::ProfilerConfig) -> Self {
+        self.profiler_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Configuration information for Amazon SageMaker Debugger system monitoring, framework profiling, and storage paths.</p>
+    pub fn set_profiler_config(mut self, input: ::std::option::Option<crate::types::ProfilerConfig>) -> Self {
+        self.profiler_config = input;
+        self
+    }
+    /// <p>Configuration information for Amazon SageMaker Debugger system monitoring, framework profiling, and storage paths.</p>
+    pub fn get_profiler_config(&self) -> &::std::option::Option<crate::types::ProfilerConfig> {
+        &self.profiler_config
+    }
     /// Adds a key-value pair to `environment`.
     ///
     /// To override the contents of this collection use [`set_environment`](Self::set_environment).
@@ -1253,6 +1274,7 @@ impl TrainingJobBuilder {
             debug_rule_configurations: self.debug_rule_configurations,
             tensor_board_output_config: self.tensor_board_output_config,
             debug_rule_evaluation_statuses: self.debug_rule_evaluation_statuses,
+            profiler_config: self.profiler_config,
             environment: self.environment,
             retry_strategy: self.retry_strategy,
             tags: self.tags,

@@ -21,8 +21,8 @@ pub fn ser_put_resource_attributes_input(
         }
         array_4.finish();
     }
-    if input.dry_run {
-        object.key("DryRun").boolean(input.dry_run);
+    if let Some(var_7) = &input.dry_run {
+        object.key("DryRun").boolean(*var_7);
     }
     Ok(())
 }

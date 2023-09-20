@@ -2,7 +2,7 @@
 
 /// <p>Contains a list of principal types, resource types, and actions that can be specified in policies stored in the same policy store. If the validation mode for the policy store is set to <code>STRICT</code>, then policies that can't be validated by this schema are rejected by Verified Permissions and can't be stored in the policy store.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub enum SchemaDefinition {
     /// <p>A JSON string representation of the schema supported by applications that use this policy store. For more information, see <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/userguide/schema.html">Policy store schema</a> in the <i>Amazon Verified Permissions User Guide</i>.</p>
     CedarJson(::std::string::String),
@@ -34,5 +34,13 @@ impl SchemaDefinition {
     /// Returns true if the enum instance is the `Unknown` variant.
     pub fn is_unknown(&self) -> bool {
         matches!(self, Self::Unknown)
+    }
+}
+impl ::std::fmt::Debug for SchemaDefinition {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        match self {
+            SchemaDefinition::CedarJson(_) => f.debug_tuple("*** Sensitive Data Redacted ***").finish(),
+            SchemaDefinition::Unknown => f.debug_tuple("Unknown").finish(),
+        }
     }
 }

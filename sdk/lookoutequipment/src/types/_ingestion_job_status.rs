@@ -13,6 +13,7 @@
 /// # let ingestionjobstatus = unimplemented!();
 /// match ingestionjobstatus {
 ///     IngestionJobStatus::Failed => { /* ... */ },
+///     IngestionJobStatus::ImportInProgress => { /* ... */ },
 ///     IngestionJobStatus::InProgress => { /* ... */ },
 ///     IngestionJobStatus::Success => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -45,6 +46,8 @@ pub enum IngestionJobStatus {
     #[allow(missing_docs)] // documentation missing in model
     Failed,
     #[allow(missing_docs)] // documentation missing in model
+    ImportInProgress,
+    #[allow(missing_docs)] // documentation missing in model
     InProgress,
     #[allow(missing_docs)] // documentation missing in model
     Success,
@@ -55,6 +58,7 @@ impl ::std::convert::From<&str> for IngestionJobStatus {
     fn from(s: &str) -> Self {
         match s {
             "FAILED" => IngestionJobStatus::Failed,
+            "IMPORT_IN_PROGRESS" => IngestionJobStatus::ImportInProgress,
             "IN_PROGRESS" => IngestionJobStatus::InProgress,
             "SUCCESS" => IngestionJobStatus::Success,
             other => IngestionJobStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
@@ -73,6 +77,7 @@ impl IngestionJobStatus {
     pub fn as_str(&self) -> &str {
         match self {
             IngestionJobStatus::Failed => "FAILED",
+            IngestionJobStatus::ImportInProgress => "IMPORT_IN_PROGRESS",
             IngestionJobStatus::InProgress => "IN_PROGRESS",
             IngestionJobStatus::Success => "SUCCESS",
             IngestionJobStatus::Unknown(value) => value.as_str(),
@@ -80,7 +85,7 @@ impl IngestionJobStatus {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["FAILED", "IN_PROGRESS", "SUCCESS"]
+        &["FAILED", "IMPORT_IN_PROGRESS", "IN_PROGRESS", "SUCCESS"]
     }
 }
 impl ::std::convert::AsRef<str> for IngestionJobStatus {

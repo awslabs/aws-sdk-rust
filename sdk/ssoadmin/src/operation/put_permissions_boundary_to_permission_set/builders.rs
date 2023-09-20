@@ -22,7 +22,7 @@ impl PutPermissionsBoundaryToPermissionSetInputBuilder {
 }
 /// Fluent builder constructing a request to `PutPermissionsBoundaryToPermissionSet`.
 ///
-/// <p>Attaches an AWS managed or customer managed policy to the specified <code>PermissionSet</code> as a permissions boundary.</p>
+/// <p>Attaches an Amazon Web Services managed or customer managed policy to the specified <code>PermissionSet</code> as a permissions boundary.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutPermissionsBoundaryToPermissionSetFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

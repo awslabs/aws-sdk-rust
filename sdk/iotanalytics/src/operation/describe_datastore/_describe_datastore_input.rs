@@ -6,7 +6,7 @@ pub struct DescribeDatastoreInput {
     /// <p>The name of the data store</p>
     pub datastore_name: ::std::option::Option<::std::string::String>,
     /// <p>If true, additional statistical information about the data store is included in the response. This feature can't be used with a data store whose S3 storage is customer-managed.</p>
-    pub include_statistics: bool,
+    pub include_statistics: ::std::option::Option<bool>,
 }
 impl DescribeDatastoreInput {
     /// <p>The name of the data store</p>
@@ -14,7 +14,7 @@ impl DescribeDatastoreInput {
         self.datastore_name.as_deref()
     }
     /// <p>If true, additional statistical information about the data store is included in the response. This feature can't be used with a data store whose S3 storage is customer-managed.</p>
-    pub fn include_statistics(&self) -> bool {
+    pub fn include_statistics(&self) -> ::std::option::Option<bool> {
         self.include_statistics
     }
 }
@@ -67,7 +67,7 @@ impl DescribeDatastoreInputBuilder {
     ) -> ::std::result::Result<crate::operation::describe_datastore::DescribeDatastoreInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_datastore::DescribeDatastoreInput {
             datastore_name: self.datastore_name,
-            include_statistics: self.include_statistics.unwrap_or_default(),
+            include_statistics: self.include_statistics,
         })
     }
 }

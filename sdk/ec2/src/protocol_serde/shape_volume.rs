@@ -221,6 +221,20 @@ pub fn de_volume(decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder) -> Resul
                 builder = builder.set_throughput(var_16);
             }
             ,
+            s if s.matches("sseType") /* SseType com.amazonaws.ec2#Volume$SseType */ =>  {
+                let var_17 =
+                    Some(
+                        Result::<crate::types::SseType, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::SseType::from(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_sse_type(var_17);
+            }
+            ,
             _ => {}
         }
     }

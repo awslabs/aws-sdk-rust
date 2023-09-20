@@ -7,7 +7,7 @@ pub struct GetMonitorOutput {
     pub monitor_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the monitor.</p>
     pub monitor_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The resources that have been added for the monitor. Resources are listed by their Amazon Resource Names (ARNs).</p>
+    /// <p>The resources monitored by the monitor. Resources are listed by their Amazon Resource Names (ARNs).</p>
     pub resources: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The status of the monitor.</p>
     pub status: ::std::option::Option<crate::types::MonitorConfigState>,
@@ -21,14 +21,16 @@ pub struct GetMonitorOutput {
     pub processing_status_info: ::std::option::Option<::std::string::String>,
     /// <p>The tags that have been added to monitor.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    /// <p>The maximum number of city-networks to monitor for your resources. A city-network is the location (city) where clients access your application resources from and the network or ASN, such as an internet service provider (ISP), that clients access the resources through. This limit helps control billing costs.</p>
+    /// <p>The maximum number of city-networks to monitor for your resources. A city-network is the location (city) where clients access your application resources from and the ASN or network provider, such as an internet service provider (ISP), that clients access the resources through. This limit can help control billing costs.</p>
     /// <p>To learn more, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/IMCityNetworksMaximum.html">Choosing a city-network maximum value </a> in the Amazon CloudWatch Internet Monitor section of the <i>CloudWatch User Guide</i>.</p>
     pub max_city_networks_to_monitor: i32,
     /// <p>Publish internet measurements for Internet Monitor to another location, such as an Amazon S3 bucket. The measurements are also published to Amazon CloudWatch Logs.</p>
     pub internet_measurements_log_delivery: ::std::option::Option<crate::types::InternetMeasurementsLogDelivery>,
-    /// <p>The percentage of the internet-facing traffic for your application that you want to monitor with this monitor.</p>
+    /// <p>The percentage of the internet-facing traffic for your application to monitor with this monitor. If you set a city-networks maximum, that limit overrides the traffic percentage that you set.</p>
+    /// <p>To learn more, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/IMTrafficPercentage.html">Choosing an application traffic percentage to monitor </a> in the Amazon CloudWatch Internet Monitor section of the <i>CloudWatch User Guide</i>.</p>
     pub traffic_percentage_to_monitor: i32,
-    /// <p>The list of health event thresholds. A health event threshold percentage, for performance and availability, determines the level of impact at which Amazon CloudWatch Internet Monitor creates a health event when there's an internet issue that affects your application end users.</p>
+    /// <p>The list of health event threshold configurations. The threshold percentage for a health score determines, along with other configuration information, when Internet Monitor creates a health event when there's an internet issue that affects your application end users.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-overview.html#IMUpdateThresholdFromOverview"> Change health event thresholds</a> in the Internet Monitor section of the <i>CloudWatch User Guide</i>.</p>
     pub health_events_config: ::std::option::Option<crate::types::HealthEventsConfig>,
     _request_id: Option<String>,
 }
@@ -41,7 +43,7 @@ impl GetMonitorOutput {
     pub fn monitor_arn(&self) -> ::std::option::Option<&str> {
         self.monitor_arn.as_deref()
     }
-    /// <p>The resources that have been added for the monitor. Resources are listed by their Amazon Resource Names (ARNs).</p>
+    /// <p>The resources monitored by the monitor. Resources are listed by their Amazon Resource Names (ARNs).</p>
     pub fn resources(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.resources.as_deref()
     }
@@ -69,7 +71,7 @@ impl GetMonitorOutput {
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
-    /// <p>The maximum number of city-networks to monitor for your resources. A city-network is the location (city) where clients access your application resources from and the network or ASN, such as an internet service provider (ISP), that clients access the resources through. This limit helps control billing costs.</p>
+    /// <p>The maximum number of city-networks to monitor for your resources. A city-network is the location (city) where clients access your application resources from and the ASN or network provider, such as an internet service provider (ISP), that clients access the resources through. This limit can help control billing costs.</p>
     /// <p>To learn more, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/IMCityNetworksMaximum.html">Choosing a city-network maximum value </a> in the Amazon CloudWatch Internet Monitor section of the <i>CloudWatch User Guide</i>.</p>
     pub fn max_city_networks_to_monitor(&self) -> i32 {
         self.max_city_networks_to_monitor
@@ -78,11 +80,13 @@ impl GetMonitorOutput {
     pub fn internet_measurements_log_delivery(&self) -> ::std::option::Option<&crate::types::InternetMeasurementsLogDelivery> {
         self.internet_measurements_log_delivery.as_ref()
     }
-    /// <p>The percentage of the internet-facing traffic for your application that you want to monitor with this monitor.</p>
+    /// <p>The percentage of the internet-facing traffic for your application to monitor with this monitor. If you set a city-networks maximum, that limit overrides the traffic percentage that you set.</p>
+    /// <p>To learn more, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/IMTrafficPercentage.html">Choosing an application traffic percentage to monitor </a> in the Amazon CloudWatch Internet Monitor section of the <i>CloudWatch User Guide</i>.</p>
     pub fn traffic_percentage_to_monitor(&self) -> i32 {
         self.traffic_percentage_to_monitor
     }
-    /// <p>The list of health event thresholds. A health event threshold percentage, for performance and availability, determines the level of impact at which Amazon CloudWatch Internet Monitor creates a health event when there's an internet issue that affects your application end users.</p>
+    /// <p>The list of health event threshold configurations. The threshold percentage for a health score determines, along with other configuration information, when Internet Monitor creates a health event when there's an internet issue that affects your application end users.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-overview.html#IMUpdateThresholdFromOverview"> Change health event thresholds</a> in the Internet Monitor section of the <i>CloudWatch User Guide</i>.</p>
     pub fn health_events_config(&self) -> ::std::option::Option<&crate::types::HealthEventsConfig> {
         self.health_events_config.as_ref()
     }
@@ -151,19 +155,19 @@ impl GetMonitorOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_resources`](Self::set_resources).
     ///
-    /// <p>The resources that have been added for the monitor. Resources are listed by their Amazon Resource Names (ARNs).</p>
+    /// <p>The resources monitored by the monitor. Resources are listed by their Amazon Resource Names (ARNs).</p>
     pub fn resources(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.resources.unwrap_or_default();
         v.push(input.into());
         self.resources = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The resources that have been added for the monitor. Resources are listed by their Amazon Resource Names (ARNs).</p>
+    /// <p>The resources monitored by the monitor. Resources are listed by their Amazon Resource Names (ARNs).</p>
     pub fn set_resources(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.resources = input;
         self
     }
-    /// <p>The resources that have been added for the monitor. Resources are listed by their Amazon Resource Names (ARNs).</p>
+    /// <p>The resources monitored by the monitor. Resources are listed by their Amazon Resource Names (ARNs).</p>
     pub fn get_resources(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.resources
     }
@@ -257,19 +261,19 @@ impl GetMonitorOutputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
-    /// <p>The maximum number of city-networks to monitor for your resources. A city-network is the location (city) where clients access your application resources from and the network or ASN, such as an internet service provider (ISP), that clients access the resources through. This limit helps control billing costs.</p>
+    /// <p>The maximum number of city-networks to monitor for your resources. A city-network is the location (city) where clients access your application resources from and the ASN or network provider, such as an internet service provider (ISP), that clients access the resources through. This limit can help control billing costs.</p>
     /// <p>To learn more, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/IMCityNetworksMaximum.html">Choosing a city-network maximum value </a> in the Amazon CloudWatch Internet Monitor section of the <i>CloudWatch User Guide</i>.</p>
     pub fn max_city_networks_to_monitor(mut self, input: i32) -> Self {
         self.max_city_networks_to_monitor = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The maximum number of city-networks to monitor for your resources. A city-network is the location (city) where clients access your application resources from and the network or ASN, such as an internet service provider (ISP), that clients access the resources through. This limit helps control billing costs.</p>
+    /// <p>The maximum number of city-networks to monitor for your resources. A city-network is the location (city) where clients access your application resources from and the ASN or network provider, such as an internet service provider (ISP), that clients access the resources through. This limit can help control billing costs.</p>
     /// <p>To learn more, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/IMCityNetworksMaximum.html">Choosing a city-network maximum value </a> in the Amazon CloudWatch Internet Monitor section of the <i>CloudWatch User Guide</i>.</p>
     pub fn set_max_city_networks_to_monitor(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_city_networks_to_monitor = input;
         self
     }
-    /// <p>The maximum number of city-networks to monitor for your resources. A city-network is the location (city) where clients access your application resources from and the network or ASN, such as an internet service provider (ISP), that clients access the resources through. This limit helps control billing costs.</p>
+    /// <p>The maximum number of city-networks to monitor for your resources. A city-network is the location (city) where clients access your application resources from and the ASN or network provider, such as an internet service provider (ISP), that clients access the resources through. This limit can help control billing costs.</p>
     /// <p>To learn more, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/IMCityNetworksMaximum.html">Choosing a city-network maximum value </a> in the Amazon CloudWatch Internet Monitor section of the <i>CloudWatch User Guide</i>.</p>
     pub fn get_max_city_networks_to_monitor(&self) -> &::std::option::Option<i32> {
         &self.max_city_networks_to_monitor
@@ -288,31 +292,37 @@ impl GetMonitorOutputBuilder {
     pub fn get_internet_measurements_log_delivery(&self) -> &::std::option::Option<crate::types::InternetMeasurementsLogDelivery> {
         &self.internet_measurements_log_delivery
     }
-    /// <p>The percentage of the internet-facing traffic for your application that you want to monitor with this monitor.</p>
+    /// <p>The percentage of the internet-facing traffic for your application to monitor with this monitor. If you set a city-networks maximum, that limit overrides the traffic percentage that you set.</p>
+    /// <p>To learn more, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/IMTrafficPercentage.html">Choosing an application traffic percentage to monitor </a> in the Amazon CloudWatch Internet Monitor section of the <i>CloudWatch User Guide</i>.</p>
     pub fn traffic_percentage_to_monitor(mut self, input: i32) -> Self {
         self.traffic_percentage_to_monitor = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The percentage of the internet-facing traffic for your application that you want to monitor with this monitor.</p>
+    /// <p>The percentage of the internet-facing traffic for your application to monitor with this monitor. If you set a city-networks maximum, that limit overrides the traffic percentage that you set.</p>
+    /// <p>To learn more, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/IMTrafficPercentage.html">Choosing an application traffic percentage to monitor </a> in the Amazon CloudWatch Internet Monitor section of the <i>CloudWatch User Guide</i>.</p>
     pub fn set_traffic_percentage_to_monitor(mut self, input: ::std::option::Option<i32>) -> Self {
         self.traffic_percentage_to_monitor = input;
         self
     }
-    /// <p>The percentage of the internet-facing traffic for your application that you want to monitor with this monitor.</p>
+    /// <p>The percentage of the internet-facing traffic for your application to monitor with this monitor. If you set a city-networks maximum, that limit overrides the traffic percentage that you set.</p>
+    /// <p>To learn more, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/IMTrafficPercentage.html">Choosing an application traffic percentage to monitor </a> in the Amazon CloudWatch Internet Monitor section of the <i>CloudWatch User Guide</i>.</p>
     pub fn get_traffic_percentage_to_monitor(&self) -> &::std::option::Option<i32> {
         &self.traffic_percentage_to_monitor
     }
-    /// <p>The list of health event thresholds. A health event threshold percentage, for performance and availability, determines the level of impact at which Amazon CloudWatch Internet Monitor creates a health event when there's an internet issue that affects your application end users.</p>
+    /// <p>The list of health event threshold configurations. The threshold percentage for a health score determines, along with other configuration information, when Internet Monitor creates a health event when there's an internet issue that affects your application end users.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-overview.html#IMUpdateThresholdFromOverview"> Change health event thresholds</a> in the Internet Monitor section of the <i>CloudWatch User Guide</i>.</p>
     pub fn health_events_config(mut self, input: crate::types::HealthEventsConfig) -> Self {
         self.health_events_config = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The list of health event thresholds. A health event threshold percentage, for performance and availability, determines the level of impact at which Amazon CloudWatch Internet Monitor creates a health event when there's an internet issue that affects your application end users.</p>
+    /// <p>The list of health event threshold configurations. The threshold percentage for a health score determines, along with other configuration information, when Internet Monitor creates a health event when there's an internet issue that affects your application end users.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-overview.html#IMUpdateThresholdFromOverview"> Change health event thresholds</a> in the Internet Monitor section of the <i>CloudWatch User Guide</i>.</p>
     pub fn set_health_events_config(mut self, input: ::std::option::Option<crate::types::HealthEventsConfig>) -> Self {
         self.health_events_config = input;
         self
     }
-    /// <p>The list of health event thresholds. A health event threshold percentage, for performance and availability, determines the level of impact at which Amazon CloudWatch Internet Monitor creates a health event when there's an internet issue that affects your application end users.</p>
+    /// <p>The list of health event threshold configurations. The threshold percentage for a health score determines, along with other configuration information, when Internet Monitor creates a health event when there's an internet issue that affects your application end users.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-overview.html#IMUpdateThresholdFromOverview"> Change health event thresholds</a> in the Internet Monitor section of the <i>CloudWatch User Guide</i>.</p>
     pub fn get_health_events_config(&self) -> &::std::option::Option<crate::types::HealthEventsConfig> {
         &self.health_events_config
     }

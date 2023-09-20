@@ -20,6 +20,7 @@ impl super::Client {
     ///   - [`reference_arn(Option<String>)`](crate::operation::get_read_set_metadata::GetReadSetMetadataOutput::reference_arn): <p>The read set's genome reference ARN.</p>
     ///   - [`files(Option<ReadSetFiles>)`](crate::operation::get_read_set_metadata::GetReadSetMetadataOutput::files): <p>The read set's files.</p>
     ///   - [`status_message(Option<String>)`](crate::operation::get_read_set_metadata::GetReadSetMetadataOutput::status_message): <p> The status message for a read set. It provides more detail as to why the read set has a status. </p>
+    ///   - [`creation_type(Option<CreationType>)`](crate::operation::get_read_set_metadata::GetReadSetMetadataOutput::creation_type): <p> The creation type of the read set. </p>
     /// - On failure, responds with [`SdkError<GetReadSetMetadataError>`](crate::operation::get_read_set_metadata::GetReadSetMetadataError)
     pub fn get_read_set_metadata(&self) -> crate::operation::get_read_set_metadata::builders::GetReadSetMetadataFluentBuilder {
         crate::operation::get_read_set_metadata::builders::GetReadSetMetadataFluentBuilder::new(self.handle.clone())

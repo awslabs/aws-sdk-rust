@@ -101,6 +101,10 @@ where
                                 crate::protocol_serde::shape_vpc_configuration_description::de_vpc_configuration_description(tokens)?,
                             );
                         }
+                        "DocumentIdOptions" => {
+                            builder =
+                                builder.set_document_id_options(crate::protocol_serde::shape_document_id_options::de_document_id_options(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

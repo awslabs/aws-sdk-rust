@@ -9,6 +9,11 @@ pub fn ser_instance_ipv6_address(
     if let Some(var_2) = &input.ipv6_address {
         scope_1.string(var_2);
     }
+    #[allow(unused_mut)]
+    let mut scope_3 = writer.prefix("IsPrimaryIpv6");
+    if let Some(var_4) = &input.is_primary_ipv6 {
+        scope_3.boolean(*var_4);
+    }
     Ok(())
 }
 
@@ -20,7 +25,7 @@ pub fn de_instance_ipv6_address(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("ipv6Address") /* Ipv6Address com.amazonaws.ec2#InstanceIpv6Address$Ipv6Address */ =>  {
-                let var_3 =
+                let var_5 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -29,7 +34,22 @@ pub fn de_instance_ipv6_address(
                         ?
                     )
                 ;
-                builder = builder.set_ipv6_address(var_3);
+                builder = builder.set_ipv6_address(var_5);
+            }
+            ,
+            s if s.matches("isPrimaryIpv6") /* IsPrimaryIpv6 com.amazonaws.ec2#InstanceIpv6Address$IsPrimaryIpv6 */ =>  {
+                let var_6 =
+                    Some(
+                         {
+                            <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_is_primary_ipv6(var_6);
             }
             ,
             _ => {}

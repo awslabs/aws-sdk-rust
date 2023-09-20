@@ -109,6 +109,21 @@ pub fn de_start_lifecycle_policy_preview_http_error(
             }
             tmp
         }),
+        "ValidationException" => crate::operation::start_lifecycle_policy_preview::StartLifecyclePolicyPreviewError::ValidationException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
+                output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::start_lifecycle_policy_preview::StartLifecyclePolicyPreviewError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::operation::start_lifecycle_policy_preview::StartLifecyclePolicyPreviewError::generic(generic),
     })
 }

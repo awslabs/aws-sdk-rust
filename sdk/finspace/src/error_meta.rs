@@ -914,6 +914,7 @@ impl From<crate::operation::update_kx_cluster_databases::UpdateKxClusterDatabase
             crate::operation::update_kx_cluster_databases::UpdateKxClusterDatabasesError::AccessDeniedException(inner) => {
                 Error::AccessDeniedException(inner)
             }
+            crate::operation::update_kx_cluster_databases::UpdateKxClusterDatabasesError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::update_kx_cluster_databases::UpdateKxClusterDatabasesError::InternalServerException(inner) => {
                 Error::InternalServerException(inner)
             }

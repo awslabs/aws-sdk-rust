@@ -9,6 +9,9 @@ pub struct RollbackStackInput {
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for this <code>RollbackStack</code> request.</p>
     pub client_request_token: ::std::option::Option<::std::string::String>,
+    /// <p>When set to <code>true</code>, newly created resources are deleted when the operation rolls back. This includes newly created resources marked with a deletion policy of <code>Retain</code>.</p>
+    /// <p>Default: <code>false</code> </p>
+    pub retain_except_on_create: ::std::option::Option<bool>,
 }
 impl RollbackStackInput {
     /// <p>The name that's associated with the stack.</p>
@@ -22,6 +25,11 @@ impl RollbackStackInput {
     /// <p>A unique identifier for this <code>RollbackStack</code> request.</p>
     pub fn client_request_token(&self) -> ::std::option::Option<&str> {
         self.client_request_token.as_deref()
+    }
+    /// <p>When set to <code>true</code>, newly created resources are deleted when the operation rolls back. This includes newly created resources marked with a deletion policy of <code>Retain</code>.</p>
+    /// <p>Default: <code>false</code> </p>
+    pub fn retain_except_on_create(&self) -> ::std::option::Option<bool> {
+        self.retain_except_on_create
     }
 }
 impl RollbackStackInput {
@@ -38,6 +46,7 @@ pub struct RollbackStackInputBuilder {
     pub(crate) stack_name: ::std::option::Option<::std::string::String>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,
+    pub(crate) retain_except_on_create: ::std::option::Option<bool>,
 }
 impl RollbackStackInputBuilder {
     /// <p>The name that's associated with the stack.</p>
@@ -82,6 +91,23 @@ impl RollbackStackInputBuilder {
     pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_request_token
     }
+    /// <p>When set to <code>true</code>, newly created resources are deleted when the operation rolls back. This includes newly created resources marked with a deletion policy of <code>Retain</code>.</p>
+    /// <p>Default: <code>false</code> </p>
+    pub fn retain_except_on_create(mut self, input: bool) -> Self {
+        self.retain_except_on_create = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>When set to <code>true</code>, newly created resources are deleted when the operation rolls back. This includes newly created resources marked with a deletion policy of <code>Retain</code>.</p>
+    /// <p>Default: <code>false</code> </p>
+    pub fn set_retain_except_on_create(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.retain_except_on_create = input;
+        self
+    }
+    /// <p>When set to <code>true</code>, newly created resources are deleted when the operation rolls back. This includes newly created resources marked with a deletion policy of <code>Retain</code>.</p>
+    /// <p>Default: <code>false</code> </p>
+    pub fn get_retain_except_on_create(&self) -> &::std::option::Option<bool> {
+        &self.retain_except_on_create
+    }
     /// Consumes the builder and constructs a [`RollbackStackInput`](crate::operation::rollback_stack::RollbackStackInput).
     pub fn build(
         self,
@@ -90,6 +116,7 @@ impl RollbackStackInputBuilder {
             stack_name: self.stack_name,
             role_arn: self.role_arn,
             client_request_token: self.client_request_token,
+            retain_except_on_create: self.retain_except_on_create,
         })
     }
 }

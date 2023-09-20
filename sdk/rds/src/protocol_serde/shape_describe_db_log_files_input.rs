@@ -17,43 +17,43 @@ pub fn ser_describe_db_log_files_input_input(
     }
     #[allow(unused_mut)]
     let mut scope_5 = writer.prefix("FileLastWritten");
-    if input.file_last_written != 0 {
+    if let Some(var_6) = &input.file_last_written {
         scope_5.number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.file_last_written).into()),
+            ::aws_smithy_types::Number::NegInt((*var_6).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_6 = writer.prefix("FileSize");
-    if input.file_size != 0 {
-        scope_6.number(
+    let mut scope_7 = writer.prefix("FileSize");
+    if let Some(var_8) = &input.file_size {
+        scope_7.number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.file_size).into()),
+            ::aws_smithy_types::Number::NegInt((*var_8).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_7 = writer.prefix("Filters");
-    if let Some(var_8) = &input.filters {
-        let mut list_10 = scope_7.start_list(false, Some("Filter"));
-        for item_9 in var_8 {
+    let mut scope_9 = writer.prefix("Filters");
+    if let Some(var_10) = &input.filters {
+        let mut list_12 = scope_9.start_list(false, Some("Filter"));
+        for item_11 in var_10 {
             #[allow(unused_mut)]
-            let mut entry_11 = list_10.entry();
-            crate::protocol_serde::shape_filter::ser_filter(entry_11, item_9)?;
+            let mut entry_13 = list_12.entry();
+            crate::protocol_serde::shape_filter::ser_filter(entry_13, item_11)?;
         }
-        list_10.finish();
+        list_12.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_12 = writer.prefix("MaxRecords");
-    if let Some(var_13) = &input.max_records {
-        scope_12.number(
+    let mut scope_14 = writer.prefix("MaxRecords");
+    if let Some(var_15) = &input.max_records {
+        scope_14.number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_13).into()),
+            ::aws_smithy_types::Number::NegInt((*var_15).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_14 = writer.prefix("Marker");
-    if let Some(var_15) = &input.marker {
-        scope_14.string(var_15);
+    let mut scope_16 = writer.prefix("Marker");
+    if let Some(var_17) = &input.marker {
+        scope_16.string(var_17);
     }
     writer.finish();
     Ok(::aws_smithy_http::body::SdkBody::from(out))

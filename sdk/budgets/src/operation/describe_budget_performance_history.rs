@@ -281,7 +281,7 @@ pub enum DescribeBudgetPerformanceHistoryError {
     InvalidParameterException(crate::types::error::InvalidParameterException),
     /// <p>We can’t locate the resource that you specified.</p>
     NotFoundException(crate::types::error::NotFoundException),
-    /// <p> The number of API requests has exceeded the maximum allowed API request throttling limit for the account. </p>
+    /// <p>The number of API requests has exceeded the maximum allowed API request throttling limit for the account.</p>
     ThrottlingException(crate::types::error::ThrottlingException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(::aws_smithy_types::error::Unhandled),

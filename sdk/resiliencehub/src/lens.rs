@@ -9,6 +9,16 @@ pub(crate) fn reflens_list_alarm_recommendations_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_app_assessment_compliance_drifts_output_next_token(
+    input: &crate::operation::list_app_assessment_compliance_drifts::ListAppAssessmentComplianceDriftsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_app_assessments_output_next_token(
     input: &crate::operation::list_app_assessments::ListAppAssessmentsOutput,
 ) -> ::std::option::Option<&::std::string::String> {

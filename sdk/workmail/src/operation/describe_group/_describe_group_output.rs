@@ -15,6 +15,8 @@ pub struct DescribeGroupOutput {
     pub enabled_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time when a user was deregistered from WorkMail, in UNIX epoch time format.</p>
     pub disabled_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>If the value is set to <i>true</i>, the group is hidden from the address book.</p>
+    pub hidden_from_global_address_list: bool,
     _request_id: Option<String>,
 }
 impl DescribeGroupOutput {
@@ -42,6 +44,10 @@ impl DescribeGroupOutput {
     pub fn disabled_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.disabled_date.as_ref()
     }
+    /// <p>If the value is set to <i>true</i>, the group is hidden from the address book.</p>
+    pub fn hidden_from_global_address_list(&self) -> bool {
+        self.hidden_from_global_address_list
+    }
 }
 impl ::aws_http::request_id::RequestId for DescribeGroupOutput {
     fn request_id(&self) -> Option<&str> {
@@ -65,6 +71,7 @@ pub struct DescribeGroupOutputBuilder {
     pub(crate) state: ::std::option::Option<crate::types::EntityState>,
     pub(crate) enabled_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) disabled_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) hidden_from_global_address_list: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }
 impl DescribeGroupOutputBuilder {
@@ -152,6 +159,20 @@ impl DescribeGroupOutputBuilder {
     pub fn get_disabled_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.disabled_date
     }
+    /// <p>If the value is set to <i>true</i>, the group is hidden from the address book.</p>
+    pub fn hidden_from_global_address_list(mut self, input: bool) -> Self {
+        self.hidden_from_global_address_list = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>If the value is set to <i>true</i>, the group is hidden from the address book.</p>
+    pub fn set_hidden_from_global_address_list(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.hidden_from_global_address_list = input;
+        self
+    }
+    /// <p>If the value is set to <i>true</i>, the group is hidden from the address book.</p>
+    pub fn get_hidden_from_global_address_list(&self) -> &::std::option::Option<bool> {
+        &self.hidden_from_global_address_list
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -170,6 +191,7 @@ impl DescribeGroupOutputBuilder {
             state: self.state,
             enabled_date: self.enabled_date,
             disabled_date: self.disabled_date,
+            hidden_from_global_address_list: self.hidden_from_global_address_list.unwrap_or_default(),
             _request_id: self._request_id,
         }
     }

@@ -295,6 +295,11 @@ pub fn ser_create_db_cluster_input_input(
     if let Some(var_110) = &input.master_user_secret_kms_key_id {
         scope_109.string(var_110);
     }
+    #[allow(unused_mut)]
+    let mut scope_111 = writer.prefix("EnableLocalWriteForwarding");
+    if let Some(var_112) = &input.enable_local_write_forwarding {
+        scope_111.boolean(*var_112);
+    }
     writer.finish();
     Ok(::aws_smithy_http::body::SdkBody::from(out))
 }

@@ -3,25 +3,39 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutAccountSettingInput {
-    /// <p>The Amazon ECS resource name for which to modify the account setting. If <code>serviceLongArnFormat</code> is specified, the ARN for your Amazon ECS services is affected. If <code>taskLongArnFormat</code> is specified, the ARN and resource ID for your Amazon ECS tasks is affected. If <code>containerInstanceLongArnFormat</code> is specified, the ARN and resource ID for your Amazon ECS container instances is affected. If <code>awsvpcTrunking</code> is specified, the elastic network interface (ENI) limit for your Amazon ECS container instances is affected. If <code>containerInsights</code> is specified, the default setting for Amazon Web Services CloudWatch Container Insights for your clusters is affected. If <code>fargateFIPSMode</code> is specified, Fargate FIPS 140 compliance is affected. If <code>tagResourceAuthorization</code> is specified, the opt-in option for tagging resources on creation is affected. For information about the opt-in timeline, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#tag-resources">Tagging authorization timeline</a> in the <i>Amazon ECS Developer Guide</i>.</p>
+    /// <p>The Amazon ECS resource name for which to modify the account setting. If you specify <code>serviceLongArnFormat</code>, the ARN for your Amazon ECS services is affected. If you specify <code>taskLongArnFormat</code>, the ARN and resource ID for your Amazon ECS tasks is affected. If you specify <code>containerInstanceLongArnFormat</code>, the ARN and resource ID for your Amazon ECS container instances is affected. If you specify <code>awsvpcTrunking</code>, the elastic network interface (ENI) limit for your Amazon ECS container instances is affected. If you specify <code>containerInsights</code>, the default setting for Amazon Web Services CloudWatch Container Insights for your clusters is affected. If you specify <code>fargateFIPSMode</code>, Fargate FIPS 140 compliance is affected. If you specify <code>tagResourceAuthorization</code>, the opt-in option for tagging resources on creation is affected. For information about the opt-in timeline, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#tag-resources">Tagging authorization timeline</a> in the <i>Amazon ECS Developer Guide</i>. If you specify <code>fargateTaskRetirementWaitPeriod</code>, the wait time to retire a Fargate task is affected.</p>
     pub name: ::std::option::Option<crate::types::SettingName>,
     /// <p>The account setting value for the specified principal ARN. Accepted values are <code>enabled</code>, <code>disabled</code>, <code>on</code>, and <code>off</code>.</p>
+    /// <p>When you specify <code>fargateTaskRetirementWaitPeriod</code> for the <code>name</code>, the following are the valid values:</p>
+    /// <ul>
+    /// <li> <p> <code>0</code> - Amazon Web Services sends the notification, and immediately retires the affected tasks.</p> </li>
+    /// <li> <p> <code>7</code> - Amazon Web Services sends the notification, and waits 7 calendar days to retire the tasks.</p> </li>
+    /// <li> <p> <code>14</code> - Amazon Web Services sends the notification, and waits 14 calendar days to retire the tasks.</p> </li>
+    /// </ul>
     pub value: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the principal, which can be a user, role, or the root user. If you specify the root user, it modifies the account setting for all users, roles, and the root user of the account unless a user or role explicitly overrides these settings. If this field is omitted, the setting is changed only for the authenticated user.</p> <note>
+    /// <p>You must use the root user when you set the Fargate wait time (<code>fargateTaskRetirementWaitPeriod</code>). </p>
     /// <p>Federated users assume the account setting of the root user and can't have explicit account settings set for them.</p>
     /// </note>
     pub principal_arn: ::std::option::Option<::std::string::String>,
 }
 impl PutAccountSettingInput {
-    /// <p>The Amazon ECS resource name for which to modify the account setting. If <code>serviceLongArnFormat</code> is specified, the ARN for your Amazon ECS services is affected. If <code>taskLongArnFormat</code> is specified, the ARN and resource ID for your Amazon ECS tasks is affected. If <code>containerInstanceLongArnFormat</code> is specified, the ARN and resource ID for your Amazon ECS container instances is affected. If <code>awsvpcTrunking</code> is specified, the elastic network interface (ENI) limit for your Amazon ECS container instances is affected. If <code>containerInsights</code> is specified, the default setting for Amazon Web Services CloudWatch Container Insights for your clusters is affected. If <code>fargateFIPSMode</code> is specified, Fargate FIPS 140 compliance is affected. If <code>tagResourceAuthorization</code> is specified, the opt-in option for tagging resources on creation is affected. For information about the opt-in timeline, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#tag-resources">Tagging authorization timeline</a> in the <i>Amazon ECS Developer Guide</i>.</p>
+    /// <p>The Amazon ECS resource name for which to modify the account setting. If you specify <code>serviceLongArnFormat</code>, the ARN for your Amazon ECS services is affected. If you specify <code>taskLongArnFormat</code>, the ARN and resource ID for your Amazon ECS tasks is affected. If you specify <code>containerInstanceLongArnFormat</code>, the ARN and resource ID for your Amazon ECS container instances is affected. If you specify <code>awsvpcTrunking</code>, the elastic network interface (ENI) limit for your Amazon ECS container instances is affected. If you specify <code>containerInsights</code>, the default setting for Amazon Web Services CloudWatch Container Insights for your clusters is affected. If you specify <code>fargateFIPSMode</code>, Fargate FIPS 140 compliance is affected. If you specify <code>tagResourceAuthorization</code>, the opt-in option for tagging resources on creation is affected. For information about the opt-in timeline, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#tag-resources">Tagging authorization timeline</a> in the <i>Amazon ECS Developer Guide</i>. If you specify <code>fargateTaskRetirementWaitPeriod</code>, the wait time to retire a Fargate task is affected.</p>
     pub fn name(&self) -> ::std::option::Option<&crate::types::SettingName> {
         self.name.as_ref()
     }
     /// <p>The account setting value for the specified principal ARN. Accepted values are <code>enabled</code>, <code>disabled</code>, <code>on</code>, and <code>off</code>.</p>
+    /// <p>When you specify <code>fargateTaskRetirementWaitPeriod</code> for the <code>name</code>, the following are the valid values:</p>
+    /// <ul>
+    /// <li> <p> <code>0</code> - Amazon Web Services sends the notification, and immediately retires the affected tasks.</p> </li>
+    /// <li> <p> <code>7</code> - Amazon Web Services sends the notification, and waits 7 calendar days to retire the tasks.</p> </li>
+    /// <li> <p> <code>14</code> - Amazon Web Services sends the notification, and waits 14 calendar days to retire the tasks.</p> </li>
+    /// </ul>
     pub fn value(&self) -> ::std::option::Option<&str> {
         self.value.as_deref()
     }
     /// <p>The ARN of the principal, which can be a user, role, or the root user. If you specify the root user, it modifies the account setting for all users, roles, and the root user of the account unless a user or role explicitly overrides these settings. If this field is omitted, the setting is changed only for the authenticated user.</p> <note>
+    /// <p>You must use the root user when you set the Fargate wait time (<code>fargateTaskRetirementWaitPeriod</code>). </p>
     /// <p>Federated users assume the account setting of the root user and can't have explicit account settings set for them.</p>
     /// </note>
     pub fn principal_arn(&self) -> ::std::option::Option<&str> {
@@ -44,35 +58,54 @@ pub struct PutAccountSettingInputBuilder {
     pub(crate) principal_arn: ::std::option::Option<::std::string::String>,
 }
 impl PutAccountSettingInputBuilder {
-    /// <p>The Amazon ECS resource name for which to modify the account setting. If <code>serviceLongArnFormat</code> is specified, the ARN for your Amazon ECS services is affected. If <code>taskLongArnFormat</code> is specified, the ARN and resource ID for your Amazon ECS tasks is affected. If <code>containerInstanceLongArnFormat</code> is specified, the ARN and resource ID for your Amazon ECS container instances is affected. If <code>awsvpcTrunking</code> is specified, the elastic network interface (ENI) limit for your Amazon ECS container instances is affected. If <code>containerInsights</code> is specified, the default setting for Amazon Web Services CloudWatch Container Insights for your clusters is affected. If <code>fargateFIPSMode</code> is specified, Fargate FIPS 140 compliance is affected. If <code>tagResourceAuthorization</code> is specified, the opt-in option for tagging resources on creation is affected. For information about the opt-in timeline, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#tag-resources">Tagging authorization timeline</a> in the <i>Amazon ECS Developer Guide</i>.</p>
+    /// <p>The Amazon ECS resource name for which to modify the account setting. If you specify <code>serviceLongArnFormat</code>, the ARN for your Amazon ECS services is affected. If you specify <code>taskLongArnFormat</code>, the ARN and resource ID for your Amazon ECS tasks is affected. If you specify <code>containerInstanceLongArnFormat</code>, the ARN and resource ID for your Amazon ECS container instances is affected. If you specify <code>awsvpcTrunking</code>, the elastic network interface (ENI) limit for your Amazon ECS container instances is affected. If you specify <code>containerInsights</code>, the default setting for Amazon Web Services CloudWatch Container Insights for your clusters is affected. If you specify <code>fargateFIPSMode</code>, Fargate FIPS 140 compliance is affected. If you specify <code>tagResourceAuthorization</code>, the opt-in option for tagging resources on creation is affected. For information about the opt-in timeline, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#tag-resources">Tagging authorization timeline</a> in the <i>Amazon ECS Developer Guide</i>. If you specify <code>fargateTaskRetirementWaitPeriod</code>, the wait time to retire a Fargate task is affected.</p>
     pub fn name(mut self, input: crate::types::SettingName) -> Self {
         self.name = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The Amazon ECS resource name for which to modify the account setting. If <code>serviceLongArnFormat</code> is specified, the ARN for your Amazon ECS services is affected. If <code>taskLongArnFormat</code> is specified, the ARN and resource ID for your Amazon ECS tasks is affected. If <code>containerInstanceLongArnFormat</code> is specified, the ARN and resource ID for your Amazon ECS container instances is affected. If <code>awsvpcTrunking</code> is specified, the elastic network interface (ENI) limit for your Amazon ECS container instances is affected. If <code>containerInsights</code> is specified, the default setting for Amazon Web Services CloudWatch Container Insights for your clusters is affected. If <code>fargateFIPSMode</code> is specified, Fargate FIPS 140 compliance is affected. If <code>tagResourceAuthorization</code> is specified, the opt-in option for tagging resources on creation is affected. For information about the opt-in timeline, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#tag-resources">Tagging authorization timeline</a> in the <i>Amazon ECS Developer Guide</i>.</p>
+    /// <p>The Amazon ECS resource name for which to modify the account setting. If you specify <code>serviceLongArnFormat</code>, the ARN for your Amazon ECS services is affected. If you specify <code>taskLongArnFormat</code>, the ARN and resource ID for your Amazon ECS tasks is affected. If you specify <code>containerInstanceLongArnFormat</code>, the ARN and resource ID for your Amazon ECS container instances is affected. If you specify <code>awsvpcTrunking</code>, the elastic network interface (ENI) limit for your Amazon ECS container instances is affected. If you specify <code>containerInsights</code>, the default setting for Amazon Web Services CloudWatch Container Insights for your clusters is affected. If you specify <code>fargateFIPSMode</code>, Fargate FIPS 140 compliance is affected. If you specify <code>tagResourceAuthorization</code>, the opt-in option for tagging resources on creation is affected. For information about the opt-in timeline, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#tag-resources">Tagging authorization timeline</a> in the <i>Amazon ECS Developer Guide</i>. If you specify <code>fargateTaskRetirementWaitPeriod</code>, the wait time to retire a Fargate task is affected.</p>
     pub fn set_name(mut self, input: ::std::option::Option<crate::types::SettingName>) -> Self {
         self.name = input;
         self
     }
-    /// <p>The Amazon ECS resource name for which to modify the account setting. If <code>serviceLongArnFormat</code> is specified, the ARN for your Amazon ECS services is affected. If <code>taskLongArnFormat</code> is specified, the ARN and resource ID for your Amazon ECS tasks is affected. If <code>containerInstanceLongArnFormat</code> is specified, the ARN and resource ID for your Amazon ECS container instances is affected. If <code>awsvpcTrunking</code> is specified, the elastic network interface (ENI) limit for your Amazon ECS container instances is affected. If <code>containerInsights</code> is specified, the default setting for Amazon Web Services CloudWatch Container Insights for your clusters is affected. If <code>fargateFIPSMode</code> is specified, Fargate FIPS 140 compliance is affected. If <code>tagResourceAuthorization</code> is specified, the opt-in option for tagging resources on creation is affected. For information about the opt-in timeline, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#tag-resources">Tagging authorization timeline</a> in the <i>Amazon ECS Developer Guide</i>.</p>
+    /// <p>The Amazon ECS resource name for which to modify the account setting. If you specify <code>serviceLongArnFormat</code>, the ARN for your Amazon ECS services is affected. If you specify <code>taskLongArnFormat</code>, the ARN and resource ID for your Amazon ECS tasks is affected. If you specify <code>containerInstanceLongArnFormat</code>, the ARN and resource ID for your Amazon ECS container instances is affected. If you specify <code>awsvpcTrunking</code>, the elastic network interface (ENI) limit for your Amazon ECS container instances is affected. If you specify <code>containerInsights</code>, the default setting for Amazon Web Services CloudWatch Container Insights for your clusters is affected. If you specify <code>fargateFIPSMode</code>, Fargate FIPS 140 compliance is affected. If you specify <code>tagResourceAuthorization</code>, the opt-in option for tagging resources on creation is affected. For information about the opt-in timeline, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#tag-resources">Tagging authorization timeline</a> in the <i>Amazon ECS Developer Guide</i>. If you specify <code>fargateTaskRetirementWaitPeriod</code>, the wait time to retire a Fargate task is affected.</p>
     pub fn get_name(&self) -> &::std::option::Option<crate::types::SettingName> {
         &self.name
     }
     /// <p>The account setting value for the specified principal ARN. Accepted values are <code>enabled</code>, <code>disabled</code>, <code>on</code>, and <code>off</code>.</p>
+    /// <p>When you specify <code>fargateTaskRetirementWaitPeriod</code> for the <code>name</code>, the following are the valid values:</p>
+    /// <ul>
+    /// <li> <p> <code>0</code> - Amazon Web Services sends the notification, and immediately retires the affected tasks.</p> </li>
+    /// <li> <p> <code>7</code> - Amazon Web Services sends the notification, and waits 7 calendar days to retire the tasks.</p> </li>
+    /// <li> <p> <code>14</code> - Amazon Web Services sends the notification, and waits 14 calendar days to retire the tasks.</p> </li>
+    /// </ul>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The account setting value for the specified principal ARN. Accepted values are <code>enabled</code>, <code>disabled</code>, <code>on</code>, and <code>off</code>.</p>
+    /// <p>When you specify <code>fargateTaskRetirementWaitPeriod</code> for the <code>name</code>, the following are the valid values:</p>
+    /// <ul>
+    /// <li> <p> <code>0</code> - Amazon Web Services sends the notification, and immediately retires the affected tasks.</p> </li>
+    /// <li> <p> <code>7</code> - Amazon Web Services sends the notification, and waits 7 calendar days to retire the tasks.</p> </li>
+    /// <li> <p> <code>14</code> - Amazon Web Services sends the notification, and waits 14 calendar days to retire the tasks.</p> </li>
+    /// </ul>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
     }
     /// <p>The account setting value for the specified principal ARN. Accepted values are <code>enabled</code>, <code>disabled</code>, <code>on</code>, and <code>off</code>.</p>
+    /// <p>When you specify <code>fargateTaskRetirementWaitPeriod</code> for the <code>name</code>, the following are the valid values:</p>
+    /// <ul>
+    /// <li> <p> <code>0</code> - Amazon Web Services sends the notification, and immediately retires the affected tasks.</p> </li>
+    /// <li> <p> <code>7</code> - Amazon Web Services sends the notification, and waits 7 calendar days to retire the tasks.</p> </li>
+    /// <li> <p> <code>14</code> - Amazon Web Services sends the notification, and waits 14 calendar days to retire the tasks.</p> </li>
+    /// </ul>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
         &self.value
     }
     /// <p>The ARN of the principal, which can be a user, role, or the root user. If you specify the root user, it modifies the account setting for all users, roles, and the root user of the account unless a user or role explicitly overrides these settings. If this field is omitted, the setting is changed only for the authenticated user.</p> <note>
+    /// <p>You must use the root user when you set the Fargate wait time (<code>fargateTaskRetirementWaitPeriod</code>). </p>
     /// <p>Federated users assume the account setting of the root user and can't have explicit account settings set for them.</p>
     /// </note>
     pub fn principal_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -80,6 +113,7 @@ impl PutAccountSettingInputBuilder {
         self
     }
     /// <p>The ARN of the principal, which can be a user, role, or the root user. If you specify the root user, it modifies the account setting for all users, roles, and the root user of the account unless a user or role explicitly overrides these settings. If this field is omitted, the setting is changed only for the authenticated user.</p> <note>
+    /// <p>You must use the root user when you set the Fargate wait time (<code>fargateTaskRetirementWaitPeriod</code>). </p>
     /// <p>Federated users assume the account setting of the root user and can't have explicit account settings set for them.</p>
     /// </note>
     pub fn set_principal_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -87,6 +121,7 @@ impl PutAccountSettingInputBuilder {
         self
     }
     /// <p>The ARN of the principal, which can be a user, role, or the root user. If you specify the root user, it modifies the account setting for all users, roles, and the root user of the account unless a user or role explicitly overrides these settings. If this field is omitted, the setting is changed only for the authenticated user.</p> <note>
+    /// <p>You must use the root user when you set the Fargate wait time (<code>fargateTaskRetirementWaitPeriod</code>). </p>
     /// <p>Federated users assume the account setting of the root user and can't have explicit account settings set for them.</p>
     /// </note>
     pub fn get_principal_arn(&self) -> &::std::option::Option<::std::string::String> {

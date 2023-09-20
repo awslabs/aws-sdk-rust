@@ -29,7 +29,7 @@ pub struct Order {
     pub order_fulfilled_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The payment term.</p>
     pub payment_term: ::std::option::Option<crate::types::PaymentTerm>,
-    /// <p>Type of order.</p>
+    /// <p>The type of order.</p>
     pub order_type: ::std::option::Option<crate::types::OrderType>,
 }
 impl Order {
@@ -74,7 +74,7 @@ impl Order {
     pub fn payment_term(&self) -> ::std::option::Option<&crate::types::PaymentTerm> {
         self.payment_term.as_ref()
     }
-    /// <p>Type of order.</p>
+    /// <p>The type of order.</p>
     pub fn order_type(&self) -> ::std::option::Option<&crate::types::OrderType> {
         self.order_type.as_ref()
     }
@@ -246,17 +246,17 @@ impl OrderBuilder {
     pub fn get_payment_term(&self) -> &::std::option::Option<crate::types::PaymentTerm> {
         &self.payment_term
     }
-    /// <p>Type of order.</p>
+    /// <p>The type of order.</p>
     pub fn order_type(mut self, input: crate::types::OrderType) -> Self {
         self.order_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Type of order.</p>
+    /// <p>The type of order.</p>
     pub fn set_order_type(mut self, input: ::std::option::Option<crate::types::OrderType>) -> Self {
         self.order_type = input;
         self
     }
-    /// <p>Type of order.</p>
+    /// <p>The type of order.</p>
     pub fn get_order_type(&self) -> &::std::option::Option<crate::types::OrderType> {
         &self.order_type
     }

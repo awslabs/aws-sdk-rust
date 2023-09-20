@@ -15,9 +15,9 @@
 //! **Please Note: The SDK is currently in Developer Preview and is intended strictly for
 //! feedback purposes only. Do not use this SDK for production workloads.**
 //!
-//! The Identity Store service used by AWS IAM Identity Center (successor to AWS Single Sign-On) provides a single place to retrieve all of your identities (users and groups). For more information, see the [IAM Identity Center User Guide](https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html).
+//! The Identity Store service used by IAM Identity Center provides a single place to retrieve all of your identities (users and groups). For more information, see the [IAM Identity Center User Guide](https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html).
 //!
-//! This reference guide describes the identity store operations that you can call programatically and includes detailed information about data types and errors.
+//! This reference guide describes the identity store operations that you can call programmatically and includes detailed information about data types and errors.
 //!
 //! ## Getting Started
 //!
@@ -31,7 +31,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = "0.56.1"
-//! aws-sdk-identitystore = "0.31.0"
+//! aws-sdk-identitystore = "0.31.1"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

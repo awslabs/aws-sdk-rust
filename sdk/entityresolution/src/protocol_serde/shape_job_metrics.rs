@@ -28,15 +28,15 @@ where
                                     .transpose()?,
                             );
                         }
-                        "matchIDs" => {
-                            builder = builder.set_match_i_ds(
+                        "recordsNotProcessed" => {
+                            builder = builder.set_records_not_processed(
                                 ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
                                     .map(i32::try_from)
                                     .transpose()?,
                             );
                         }
-                        "recordsNotProcessed" => {
-                            builder = builder.set_records_not_processed(
+                        "matchIDs" => {
+                            builder = builder.set_match_i_ds(
                                 ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
                                     .map(i32::try_from)
                                     .transpose()?,

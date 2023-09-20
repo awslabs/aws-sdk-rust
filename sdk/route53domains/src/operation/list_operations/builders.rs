@@ -212,17 +212,17 @@ impl ListOperationsFluentBuilder {
     pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::ListOperationsSortAttributeName> {
         self.inner.get_sort_by()
     }
-    /// <p> The sort order ofr returned values, either ascending or descending. </p>
+    /// <p> The sort order for returned values, either ascending or descending. </p>
     pub fn sort_order(mut self, input: crate::types::SortOrder) -> Self {
         self.inner = self.inner.sort_order(input);
         self
     }
-    /// <p> The sort order ofr returned values, either ascending or descending. </p>
+    /// <p> The sort order for returned values, either ascending or descending. </p>
     pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrder>) -> Self {
         self.inner = self.inner.set_sort_order(input);
         self
     }
-    /// <p> The sort order ofr returned values, either ascending or descending. </p>
+    /// <p> The sort order for returned values, either ascending or descending. </p>
     pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrder> {
         self.inner.get_sort_order()
     }

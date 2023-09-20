@@ -2,22 +2,22 @@
 
 /// <p>Receipt rules enable you to specify which actions Amazon SES should take when it receives mail on behalf of one or more email addresses or domains that you own.</p>
 /// <p>Each receipt rule defines a set of email addresses or domains that it applies to. If the email addresses or domains match at least one recipient address of the message, Amazon SES executes all of the receipt rule's actions on the message.</p>
-/// <p>For information about setting up receipt rules, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rules.html">Amazon SES Developer Guide</a>.</p>
+/// <p>For information about setting up receipt rules, see the <a href="https://docs.aws.amazon.com/ses/latest/dg/receiving-email-receipt-rules-console-walkthrough.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReceiptRule {
-    /// <p>The name of the receipt rule. The name must:</p>
+    /// <p>The name of the receipt rule. The name must meet the following requirements:</p>
     /// <ul>
-    /// <li> <p>This value can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li>
+    /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), dashes (-), or periods (.). </p> </li>
     /// <li> <p>Start and end with a letter or number.</p> </li>
-    /// <li> <p>Contain less than 64 characters.</p> </li>
+    /// <li> <p>Contain 64 characters or fewer.</p> </li>
     /// </ul>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>If <code>true</code>, the receipt rule is active. The default value is <code>false</code>.</p>
     pub enabled: bool,
-    /// <p>Specifies whether Amazon SES should require that incoming email is delivered over a connection encrypted with Transport Layer Security (TLS). If this parameter is set to <code>Require</code>, Amazon SES will bounce emails that are not received over TLS. The default is <code>Optional</code>.</p>
+    /// <p>Specifies whether Amazon SES should require that incoming email is delivered over a connection encrypted with Transport Layer Security (TLS). If this parameter is set to <code>Require</code>, Amazon SES bounces emails that are not received over TLS. The default is <code>Optional</code>.</p>
     pub tls_policy: ::std::option::Option<crate::types::TlsPolicy>,
-    /// <p>The recipient domains and email addresses that the receipt rule applies to. If this field is not specified, this rule will match all recipients under all verified domains.</p>
+    /// <p>The recipient domains and email addresses that the receipt rule applies to. If this field is not specified, this rule matches all recipients on all verified domains.</p>
     pub recipients: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>An ordered list of actions to perform on messages that match at least one of the recipient email addresses or domains specified in the receipt rule.</p>
     pub actions: ::std::option::Option<::std::vec::Vec<crate::types::ReceiptAction>>,
@@ -25,11 +25,11 @@ pub struct ReceiptRule {
     pub scan_enabled: bool,
 }
 impl ReceiptRule {
-    /// <p>The name of the receipt rule. The name must:</p>
+    /// <p>The name of the receipt rule. The name must meet the following requirements:</p>
     /// <ul>
-    /// <li> <p>This value can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li>
+    /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), dashes (-), or periods (.). </p> </li>
     /// <li> <p>Start and end with a letter or number.</p> </li>
-    /// <li> <p>Contain less than 64 characters.</p> </li>
+    /// <li> <p>Contain 64 characters or fewer.</p> </li>
     /// </ul>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
@@ -38,11 +38,11 @@ impl ReceiptRule {
     pub fn enabled(&self) -> bool {
         self.enabled
     }
-    /// <p>Specifies whether Amazon SES should require that incoming email is delivered over a connection encrypted with Transport Layer Security (TLS). If this parameter is set to <code>Require</code>, Amazon SES will bounce emails that are not received over TLS. The default is <code>Optional</code>.</p>
+    /// <p>Specifies whether Amazon SES should require that incoming email is delivered over a connection encrypted with Transport Layer Security (TLS). If this parameter is set to <code>Require</code>, Amazon SES bounces emails that are not received over TLS. The default is <code>Optional</code>.</p>
     pub fn tls_policy(&self) -> ::std::option::Option<&crate::types::TlsPolicy> {
         self.tls_policy.as_ref()
     }
-    /// <p>The recipient domains and email addresses that the receipt rule applies to. If this field is not specified, this rule will match all recipients under all verified domains.</p>
+    /// <p>The recipient domains and email addresses that the receipt rule applies to. If this field is not specified, this rule matches all recipients on all verified domains.</p>
     pub fn recipients(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.recipients.as_deref()
     }
@@ -74,31 +74,31 @@ pub struct ReceiptRuleBuilder {
     pub(crate) scan_enabled: ::std::option::Option<bool>,
 }
 impl ReceiptRuleBuilder {
-    /// <p>The name of the receipt rule. The name must:</p>
+    /// <p>The name of the receipt rule. The name must meet the following requirements:</p>
     /// <ul>
-    /// <li> <p>This value can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li>
+    /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), dashes (-), or periods (.). </p> </li>
     /// <li> <p>Start and end with a letter or number.</p> </li>
-    /// <li> <p>Contain less than 64 characters.</p> </li>
+    /// <li> <p>Contain 64 characters or fewer.</p> </li>
     /// </ul>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the receipt rule. The name must:</p>
+    /// <p>The name of the receipt rule. The name must meet the following requirements:</p>
     /// <ul>
-    /// <li> <p>This value can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li>
+    /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), dashes (-), or periods (.). </p> </li>
     /// <li> <p>Start and end with a letter or number.</p> </li>
-    /// <li> <p>Contain less than 64 characters.</p> </li>
+    /// <li> <p>Contain 64 characters or fewer.</p> </li>
     /// </ul>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>The name of the receipt rule. The name must:</p>
+    /// <p>The name of the receipt rule. The name must meet the following requirements:</p>
     /// <ul>
-    /// <li> <p>This value can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li>
+    /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), dashes (-), or periods (.). </p> </li>
     /// <li> <p>Start and end with a letter or number.</p> </li>
-    /// <li> <p>Contain less than 64 characters.</p> </li>
+    /// <li> <p>Contain 64 characters or fewer.</p> </li>
     /// </ul>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
@@ -117,17 +117,17 @@ impl ReceiptRuleBuilder {
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
         &self.enabled
     }
-    /// <p>Specifies whether Amazon SES should require that incoming email is delivered over a connection encrypted with Transport Layer Security (TLS). If this parameter is set to <code>Require</code>, Amazon SES will bounce emails that are not received over TLS. The default is <code>Optional</code>.</p>
+    /// <p>Specifies whether Amazon SES should require that incoming email is delivered over a connection encrypted with Transport Layer Security (TLS). If this parameter is set to <code>Require</code>, Amazon SES bounces emails that are not received over TLS. The default is <code>Optional</code>.</p>
     pub fn tls_policy(mut self, input: crate::types::TlsPolicy) -> Self {
         self.tls_policy = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies whether Amazon SES should require that incoming email is delivered over a connection encrypted with Transport Layer Security (TLS). If this parameter is set to <code>Require</code>, Amazon SES will bounce emails that are not received over TLS. The default is <code>Optional</code>.</p>
+    /// <p>Specifies whether Amazon SES should require that incoming email is delivered over a connection encrypted with Transport Layer Security (TLS). If this parameter is set to <code>Require</code>, Amazon SES bounces emails that are not received over TLS. The default is <code>Optional</code>.</p>
     pub fn set_tls_policy(mut self, input: ::std::option::Option<crate::types::TlsPolicy>) -> Self {
         self.tls_policy = input;
         self
     }
-    /// <p>Specifies whether Amazon SES should require that incoming email is delivered over a connection encrypted with Transport Layer Security (TLS). If this parameter is set to <code>Require</code>, Amazon SES will bounce emails that are not received over TLS. The default is <code>Optional</code>.</p>
+    /// <p>Specifies whether Amazon SES should require that incoming email is delivered over a connection encrypted with Transport Layer Security (TLS). If this parameter is set to <code>Require</code>, Amazon SES bounces emails that are not received over TLS. The default is <code>Optional</code>.</p>
     pub fn get_tls_policy(&self) -> &::std::option::Option<crate::types::TlsPolicy> {
         &self.tls_policy
     }
@@ -135,19 +135,19 @@ impl ReceiptRuleBuilder {
     ///
     /// To override the contents of this collection use [`set_recipients`](Self::set_recipients).
     ///
-    /// <p>The recipient domains and email addresses that the receipt rule applies to. If this field is not specified, this rule will match all recipients under all verified domains.</p>
+    /// <p>The recipient domains and email addresses that the receipt rule applies to. If this field is not specified, this rule matches all recipients on all verified domains.</p>
     pub fn recipients(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.recipients.unwrap_or_default();
         v.push(input.into());
         self.recipients = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The recipient domains and email addresses that the receipt rule applies to. If this field is not specified, this rule will match all recipients under all verified domains.</p>
+    /// <p>The recipient domains and email addresses that the receipt rule applies to. If this field is not specified, this rule matches all recipients on all verified domains.</p>
     pub fn set_recipients(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.recipients = input;
         self
     }
-    /// <p>The recipient domains and email addresses that the receipt rule applies to. If this field is not specified, this rule will match all recipients under all verified domains.</p>
+    /// <p>The recipient domains and email addresses that the receipt rule applies to. If this field is not specified, this rule matches all recipients on all verified domains.</p>
     pub fn get_recipients(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.recipients
     }

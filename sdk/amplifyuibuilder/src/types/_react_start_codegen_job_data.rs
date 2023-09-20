@@ -14,6 +14,8 @@ pub struct ReactStartCodegenJobData {
     pub render_type_declarations: bool,
     /// <p>Specifies whether the code generation job should render inline source maps.</p>
     pub inline_source_map: bool,
+    /// <p>The API configuration for the code generation job.</p>
+    pub api_configuration: ::std::option::Option<crate::types::ApiConfiguration>,
 }
 impl ReactStartCodegenJobData {
     /// <p>The JavaScript module type.</p>
@@ -36,6 +38,10 @@ impl ReactStartCodegenJobData {
     pub fn inline_source_map(&self) -> bool {
         self.inline_source_map
     }
+    /// <p>The API configuration for the code generation job.</p>
+    pub fn api_configuration(&self) -> ::std::option::Option<&crate::types::ApiConfiguration> {
+        self.api_configuration.as_ref()
+    }
 }
 impl ReactStartCodegenJobData {
     /// Creates a new builder-style object to manufacture [`ReactStartCodegenJobData`](crate::types::ReactStartCodegenJobData).
@@ -53,6 +59,7 @@ pub struct ReactStartCodegenJobDataBuilder {
     pub(crate) script: ::std::option::Option<crate::types::JsScript>,
     pub(crate) render_type_declarations: ::std::option::Option<bool>,
     pub(crate) inline_source_map: ::std::option::Option<bool>,
+    pub(crate) api_configuration: ::std::option::Option<crate::types::ApiConfiguration>,
 }
 impl ReactStartCodegenJobDataBuilder {
     /// <p>The JavaScript module type.</p>
@@ -125,6 +132,20 @@ impl ReactStartCodegenJobDataBuilder {
     pub fn get_inline_source_map(&self) -> &::std::option::Option<bool> {
         &self.inline_source_map
     }
+    /// <p>The API configuration for the code generation job.</p>
+    pub fn api_configuration(mut self, input: crate::types::ApiConfiguration) -> Self {
+        self.api_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The API configuration for the code generation job.</p>
+    pub fn set_api_configuration(mut self, input: ::std::option::Option<crate::types::ApiConfiguration>) -> Self {
+        self.api_configuration = input;
+        self
+    }
+    /// <p>The API configuration for the code generation job.</p>
+    pub fn get_api_configuration(&self) -> &::std::option::Option<crate::types::ApiConfiguration> {
+        &self.api_configuration
+    }
     /// Consumes the builder and constructs a [`ReactStartCodegenJobData`](crate::types::ReactStartCodegenJobData).
     pub fn build(self) -> crate::types::ReactStartCodegenJobData {
         crate::types::ReactStartCodegenJobData {
@@ -133,6 +154,7 @@ impl ReactStartCodegenJobDataBuilder {
             script: self.script,
             render_type_declarations: self.render_type_declarations.unwrap_or_default(),
             inline_source_map: self.inline_source_map.unwrap_or_default(),
+            api_configuration: self.api_configuration,
         }
     }
 }

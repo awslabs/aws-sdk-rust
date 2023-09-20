@@ -22,8 +22,10 @@ impl ListIdentitiesInputBuilder {
 }
 /// Fluent builder constructing a request to `ListIdentities`.
 ///
-/// <p>Returns a list containing all of the identities (email addresses and domains) for your AWS account in the current AWS Region, regardless of verification status.</p>
-/// <p>You can execute this operation no more than once per second.</p>
+/// <p>Returns a list containing all of the identities (email addresses and domains) for your Amazon Web Services account in the current Amazon Web Services Region, regardless of verification status.</p>
+/// <p>You can execute this operation no more than once per second.</p> <note>
+/// <p>It's recommended that for successive pagination calls of this API, you continue to the use the same parameter/value pairs as used in the original call, e.g., if you used <code>IdentityType=Domain</code> in the the original call and received a <code>NextToken</code> in the response, you should continue providing the <code>IdentityType=Domain</code> parameter for further <code>NextToken</code> calls; however, if you didn't provide the <code>IdentityType</code> parameter in the original call, then continue to not provide it for successive pagination calls. Using this protocol will ensure consistent results.</p>
+/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListIdentitiesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -117,17 +119,17 @@ impl ListIdentitiesFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_identities::paginator::ListIdentitiesPaginator {
         crate::operation::list_identities::paginator::ListIdentitiesPaginator::new(self.handle, self.inner)
     }
-    /// <p>The type of the identities to list. Possible values are "EmailAddress" and "Domain". If this parameter is omitted, then all identities will be listed.</p>
+    /// <p>The type of the identities to list. Possible values are "EmailAddress" and "Domain". If this parameter is omitted, then all identities are listed.</p>
     pub fn identity_type(mut self, input: crate::types::IdentityType) -> Self {
         self.inner = self.inner.identity_type(input);
         self
     }
-    /// <p>The type of the identities to list. Possible values are "EmailAddress" and "Domain". If this parameter is omitted, then all identities will be listed.</p>
+    /// <p>The type of the identities to list. Possible values are "EmailAddress" and "Domain". If this parameter is omitted, then all identities are listed.</p>
     pub fn set_identity_type(mut self, input: ::std::option::Option<crate::types::IdentityType>) -> Self {
         self.inner = self.inner.set_identity_type(input);
         self
     }
-    /// <p>The type of the identities to list. Possible values are "EmailAddress" and "Domain". If this parameter is omitted, then all identities will be listed.</p>
+    /// <p>The type of the identities to list. Possible values are "EmailAddress" and "Domain". If this parameter is omitted, then all identities are listed.</p>
     pub fn get_identity_type(&self) -> &::std::option::Option<crate::types::IdentityType> {
         self.inner.get_identity_type()
     }

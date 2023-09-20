@@ -6,10 +6,10 @@
 pub struct ImportDocumentationPartsInput {
     /// <p>The string identifier of the associated RestApi.</p>
     pub rest_api_id: ::std::option::Option<::std::string::String>,
-    /// <p>A query parameter to indicate whether to overwrite (<code>OVERWRITE</code>) any existing DocumentationParts definition or to merge (<code>MERGE</code>) the new definition into the existing one. The default value is <code>MERGE</code>.</p>
+    /// <p>A query parameter to indicate whether to overwrite (<code>overwrite</code>) any existing DocumentationParts definition or to merge (<code>merge</code>) the new definition into the existing one. The default value is <code>merge</code>.</p>
     pub mode: ::std::option::Option<crate::types::PutMode>,
     /// <p>A query parameter to specify whether to rollback the documentation importation (<code>true</code>) or not (<code>false</code>) when a warning is encountered. The default value is <code>false</code>.</p>
-    pub fail_on_warnings: bool,
+    pub fail_on_warnings: ::std::option::Option<bool>,
     /// <p>Raw byte array representing the to-be-imported documentation parts. To import from an OpenAPI file, this is a JSON object.</p>
     pub body: ::std::option::Option<::aws_smithy_types::Blob>,
 }
@@ -18,12 +18,12 @@ impl ImportDocumentationPartsInput {
     pub fn rest_api_id(&self) -> ::std::option::Option<&str> {
         self.rest_api_id.as_deref()
     }
-    /// <p>A query parameter to indicate whether to overwrite (<code>OVERWRITE</code>) any existing DocumentationParts definition or to merge (<code>MERGE</code>) the new definition into the existing one. The default value is <code>MERGE</code>.</p>
+    /// <p>A query parameter to indicate whether to overwrite (<code>overwrite</code>) any existing DocumentationParts definition or to merge (<code>merge</code>) the new definition into the existing one. The default value is <code>merge</code>.</p>
     pub fn mode(&self) -> ::std::option::Option<&crate::types::PutMode> {
         self.mode.as_ref()
     }
     /// <p>A query parameter to specify whether to rollback the documentation importation (<code>true</code>) or not (<code>false</code>) when a warning is encountered. The default value is <code>false</code>.</p>
-    pub fn fail_on_warnings(&self) -> bool {
+    pub fn fail_on_warnings(&self) -> ::std::option::Option<bool> {
         self.fail_on_warnings
     }
     /// <p>Raw byte array representing the to-be-imported documentation parts. To import from an OpenAPI file, this is a JSON object.</p>
@@ -62,17 +62,17 @@ impl ImportDocumentationPartsInputBuilder {
     pub fn get_rest_api_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.rest_api_id
     }
-    /// <p>A query parameter to indicate whether to overwrite (<code>OVERWRITE</code>) any existing DocumentationParts definition or to merge (<code>MERGE</code>) the new definition into the existing one. The default value is <code>MERGE</code>.</p>
+    /// <p>A query parameter to indicate whether to overwrite (<code>overwrite</code>) any existing DocumentationParts definition or to merge (<code>merge</code>) the new definition into the existing one. The default value is <code>merge</code>.</p>
     pub fn mode(mut self, input: crate::types::PutMode) -> Self {
         self.mode = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A query parameter to indicate whether to overwrite (<code>OVERWRITE</code>) any existing DocumentationParts definition or to merge (<code>MERGE</code>) the new definition into the existing one. The default value is <code>MERGE</code>.</p>
+    /// <p>A query parameter to indicate whether to overwrite (<code>overwrite</code>) any existing DocumentationParts definition or to merge (<code>merge</code>) the new definition into the existing one. The default value is <code>merge</code>.</p>
     pub fn set_mode(mut self, input: ::std::option::Option<crate::types::PutMode>) -> Self {
         self.mode = input;
         self
     }
-    /// <p>A query parameter to indicate whether to overwrite (<code>OVERWRITE</code>) any existing DocumentationParts definition or to merge (<code>MERGE</code>) the new definition into the existing one. The default value is <code>MERGE</code>.</p>
+    /// <p>A query parameter to indicate whether to overwrite (<code>overwrite</code>) any existing DocumentationParts definition or to merge (<code>merge</code>) the new definition into the existing one. The default value is <code>merge</code>.</p>
     pub fn get_mode(&self) -> &::std::option::Option<crate::types::PutMode> {
         &self.mode
     }
@@ -114,7 +114,7 @@ impl ImportDocumentationPartsInputBuilder {
         ::std::result::Result::Ok(crate::operation::import_documentation_parts::ImportDocumentationPartsInput {
             rest_api_id: self.rest_api_id,
             mode: self.mode,
-            fail_on_warnings: self.fail_on_warnings.unwrap_or_default(),
+            fail_on_warnings: self.fail_on_warnings,
             body: self.body,
         })
     }

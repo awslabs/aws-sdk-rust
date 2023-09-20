@@ -1120,6 +1120,9 @@ pub mod disable_fast_launch;
 /// Types for the `DisableFastSnapshotRestores` operation.
 pub mod disable_fast_snapshot_restores;
 
+/// Types for the `DisableImageBlockPublicAccess` operation.
+pub mod disable_image_block_public_access;
+
 /// Types for the `DisableImageDeprecation` operation.
 pub mod disable_image_deprecation;
 
@@ -1198,6 +1201,9 @@ pub mod enable_fast_launch;
 /// Types for the `EnableFastSnapshotRestores` operation.
 pub mod enable_fast_snapshot_restores;
 
+/// Types for the `EnableImageBlockPublicAccess` operation.
+pub mod enable_image_block_public_access;
+
 /// Types for the `EnableImageDeprecation` operation.
 pub mod enable_image_deprecation;
 
@@ -1275,6 +1281,9 @@ pub mod get_groups_for_capacity_reservation;
 
 /// Types for the `GetHostReservationPurchasePreview` operation.
 pub mod get_host_reservation_purchase_preview;
+
+/// Types for the `GetImageBlockPublicAccessState` operation.
+pub mod get_image_block_public_access_state;
 
 /// Types for the `GetInstanceTypesFromInstanceRequirements` operation.
 pub mod get_instance_types_from_instance_requirements;

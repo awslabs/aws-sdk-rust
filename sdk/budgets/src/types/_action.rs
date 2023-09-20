@@ -6,7 +6,7 @@
 pub struct Action {
     /// <p>A system-generated universally unique identifier (UUID) for the action. </p>
     pub action_id: ::std::option::Option<::std::string::String>,
-    /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
+    /// <p> A string that represents the budget name. The ":" and "\" characters, and the "/action/" substring, aren't allowed.</p>
     pub budget_name: ::std::option::Option<::std::string::String>,
     /// <p> The type of a notification. It must be ACTUAL or FORECASTED.</p>
     pub notification_type: ::std::option::Option<crate::types::NotificationType>,
@@ -30,7 +30,7 @@ impl Action {
     pub fn action_id(&self) -> ::std::option::Option<&str> {
         self.action_id.as_deref()
     }
-    /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
+    /// <p> A string that represents the budget name. The ":" and "\" characters, and the "/action/" substring, aren't allowed.</p>
     pub fn budget_name(&self) -> ::std::option::Option<&str> {
         self.budget_name.as_deref()
     }
@@ -104,17 +104,17 @@ impl ActionBuilder {
     pub fn get_action_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.action_id
     }
-    /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
+    /// <p> A string that represents the budget name. The ":" and "\" characters, and the "/action/" substring, aren't allowed.</p>
     pub fn budget_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.budget_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
+    /// <p> A string that represents the budget name. The ":" and "\" characters, and the "/action/" substring, aren't allowed.</p>
     pub fn set_budget_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.budget_name = input;
         self
     }
-    /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
+    /// <p> A string that represents the budget name. The ":" and "\" characters, and the "/action/" substring, aren't allowed.</p>
     pub fn get_budget_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.budget_name
     }

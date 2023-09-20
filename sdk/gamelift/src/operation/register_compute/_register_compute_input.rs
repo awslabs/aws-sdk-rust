@@ -5,15 +5,15 @@
 pub struct RegisterComputeInput {
     /// <p>A unique identifier for the fleet to register the compute to. You can use either the fleet ID or ARN value.</p>
     pub fleet_id: ::std::option::Option<::std::string::String>,
-    /// <p>A descriptive label that is associated with the compute resource registered to your fleet.</p>
+    /// <p>A descriptive label for the compute resource.</p>
     pub compute_name: ::std::option::Option<::std::string::String>,
-    /// <p>The path to the TLS certificate on your compute resource. The path and certificate are not validated by Amazon GameLift.</p>
+    /// <p>The path to a TLS certificate on your compute resource. Amazon GameLift doesn't validate the path and certificate.</p>
     pub certificate_path: ::std::option::Option<::std::string::String>,
-    /// <p>The DNS name of the compute resource. Amazon GameLift requires the DNS name or IP address to manage your compute resource.</p>
+    /// <p>The DNS name of the compute resource. Amazon GameLift requires either a DNS name or IP address.</p>
     pub dns_name: ::std::option::Option<::std::string::String>,
-    /// <p>The IP address of the compute resource. Amazon GameLift requires the DNS name or IP address to manage your compute resource.</p>
+    /// <p>The IP address of the compute resource. Amazon GameLift requires either a DNS name or IP address.</p>
     pub ip_address: ::std::option::Option<::std::string::String>,
-    /// <p>The name of the custom location you added to the fleet you are registering this compute resource to.</p>
+    /// <p>The name of a custom location to associate with the compute resource being registered. </p>
     pub location: ::std::option::Option<::std::string::String>,
 }
 impl RegisterComputeInput {
@@ -21,23 +21,23 @@ impl RegisterComputeInput {
     pub fn fleet_id(&self) -> ::std::option::Option<&str> {
         self.fleet_id.as_deref()
     }
-    /// <p>A descriptive label that is associated with the compute resource registered to your fleet.</p>
+    /// <p>A descriptive label for the compute resource.</p>
     pub fn compute_name(&self) -> ::std::option::Option<&str> {
         self.compute_name.as_deref()
     }
-    /// <p>The path to the TLS certificate on your compute resource. The path and certificate are not validated by Amazon GameLift.</p>
+    /// <p>The path to a TLS certificate on your compute resource. Amazon GameLift doesn't validate the path and certificate.</p>
     pub fn certificate_path(&self) -> ::std::option::Option<&str> {
         self.certificate_path.as_deref()
     }
-    /// <p>The DNS name of the compute resource. Amazon GameLift requires the DNS name or IP address to manage your compute resource.</p>
+    /// <p>The DNS name of the compute resource. Amazon GameLift requires either a DNS name or IP address.</p>
     pub fn dns_name(&self) -> ::std::option::Option<&str> {
         self.dns_name.as_deref()
     }
-    /// <p>The IP address of the compute resource. Amazon GameLift requires the DNS name or IP address to manage your compute resource.</p>
+    /// <p>The IP address of the compute resource. Amazon GameLift requires either a DNS name or IP address.</p>
     pub fn ip_address(&self) -> ::std::option::Option<&str> {
         self.ip_address.as_deref()
     }
-    /// <p>The name of the custom location you added to the fleet you are registering this compute resource to.</p>
+    /// <p>The name of a custom location to associate with the compute resource being registered. </p>
     pub fn location(&self) -> ::std::option::Option<&str> {
         self.location.as_deref()
     }
@@ -75,73 +75,73 @@ impl RegisterComputeInputBuilder {
     pub fn get_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.fleet_id
     }
-    /// <p>A descriptive label that is associated with the compute resource registered to your fleet.</p>
+    /// <p>A descriptive label for the compute resource.</p>
     pub fn compute_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.compute_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A descriptive label that is associated with the compute resource registered to your fleet.</p>
+    /// <p>A descriptive label for the compute resource.</p>
     pub fn set_compute_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.compute_name = input;
         self
     }
-    /// <p>A descriptive label that is associated with the compute resource registered to your fleet.</p>
+    /// <p>A descriptive label for the compute resource.</p>
     pub fn get_compute_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.compute_name
     }
-    /// <p>The path to the TLS certificate on your compute resource. The path and certificate are not validated by Amazon GameLift.</p>
+    /// <p>The path to a TLS certificate on your compute resource. Amazon GameLift doesn't validate the path and certificate.</p>
     pub fn certificate_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_path = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The path to the TLS certificate on your compute resource. The path and certificate are not validated by Amazon GameLift.</p>
+    /// <p>The path to a TLS certificate on your compute resource. Amazon GameLift doesn't validate the path and certificate.</p>
     pub fn set_certificate_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.certificate_path = input;
         self
     }
-    /// <p>The path to the TLS certificate on your compute resource. The path and certificate are not validated by Amazon GameLift.</p>
+    /// <p>The path to a TLS certificate on your compute resource. Amazon GameLift doesn't validate the path and certificate.</p>
     pub fn get_certificate_path(&self) -> &::std::option::Option<::std::string::String> {
         &self.certificate_path
     }
-    /// <p>The DNS name of the compute resource. Amazon GameLift requires the DNS name or IP address to manage your compute resource.</p>
+    /// <p>The DNS name of the compute resource. Amazon GameLift requires either a DNS name or IP address.</p>
     pub fn dns_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dns_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The DNS name of the compute resource. Amazon GameLift requires the DNS name or IP address to manage your compute resource.</p>
+    /// <p>The DNS name of the compute resource. Amazon GameLift requires either a DNS name or IP address.</p>
     pub fn set_dns_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dns_name = input;
         self
     }
-    /// <p>The DNS name of the compute resource. Amazon GameLift requires the DNS name or IP address to manage your compute resource.</p>
+    /// <p>The DNS name of the compute resource. Amazon GameLift requires either a DNS name or IP address.</p>
     pub fn get_dns_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.dns_name
     }
-    /// <p>The IP address of the compute resource. Amazon GameLift requires the DNS name or IP address to manage your compute resource.</p>
+    /// <p>The IP address of the compute resource. Amazon GameLift requires either a DNS name or IP address.</p>
     pub fn ip_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ip_address = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The IP address of the compute resource. Amazon GameLift requires the DNS name or IP address to manage your compute resource.</p>
+    /// <p>The IP address of the compute resource. Amazon GameLift requires either a DNS name or IP address.</p>
     pub fn set_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ip_address = input;
         self
     }
-    /// <p>The IP address of the compute resource. Amazon GameLift requires the DNS name or IP address to manage your compute resource.</p>
+    /// <p>The IP address of the compute resource. Amazon GameLift requires either a DNS name or IP address.</p>
     pub fn get_ip_address(&self) -> &::std::option::Option<::std::string::String> {
         &self.ip_address
     }
-    /// <p>The name of the custom location you added to the fleet you are registering this compute resource to.</p>
+    /// <p>The name of a custom location to associate with the compute resource being registered. </p>
     pub fn location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.location = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the custom location you added to the fleet you are registering this compute resource to.</p>
+    /// <p>The name of a custom location to associate with the compute resource being registered. </p>
     pub fn set_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.location = input;
         self
     }
-    /// <p>The name of the custom location you added to the fleet you are registering this compute resource to.</p>
+    /// <p>The name of a custom location to associate with the compute resource being registered. </p>
     pub fn get_location(&self) -> &::std::option::Option<::std::string::String> {
         &self.location
     }

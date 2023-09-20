@@ -63,5 +63,11 @@ pub fn ser_create_task_input(
         }
         array_18.finish();
     }
+    if let Some(var_21) = &input.task_report_config {
+        #[allow(unused_mut)]
+        let mut object_22 = object.key("TaskReportConfig").start_object();
+        crate::protocol_serde::shape_task_report_config::ser_task_report_config(&mut object_22, var_21)?;
+        object_22.finish();
+    }
     Ok(())
 }

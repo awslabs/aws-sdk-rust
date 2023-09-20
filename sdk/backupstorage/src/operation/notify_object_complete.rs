@@ -244,20 +244,19 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for NotifyObjec
                         query.push_kv("metadata-string", &::aws_smithy_http::query::fmt_string(&inner_5));
                     }
                 }
-                if _input.metadata_blob_length != 0 {
-                    query.push_kv(
-                        "metadata-blob-length",
-                        ::aws_smithy_types::primitive::Encoder::from(_input.metadata_blob_length).encode(),
-                    );
-                }
-                if let ::std::option::Option::Some(inner_6) = &_input.metadata_blob_checksum {
-                    {
-                        query.push_kv("metadata-checksum", &::aws_smithy_http::query::fmt_string(&inner_6));
+                if let ::std::option::Option::Some(inner_6) = &_input.metadata_blob_length {
+                    if *inner_6 != 0 {
+                        query.push_kv("metadata-blob-length", ::aws_smithy_types::primitive::Encoder::from(*inner_6).encode());
                     }
                 }
-                if let ::std::option::Option::Some(inner_7) = &_input.metadata_blob_checksum_algorithm {
+                if let ::std::option::Option::Some(inner_7) = &_input.metadata_blob_checksum {
                     {
-                        query.push_kv("metadata-checksum-algorithm", &::aws_smithy_http::query::fmt_string(&inner_7));
+                        query.push_kv("metadata-checksum", &::aws_smithy_http::query::fmt_string(&inner_7));
+                    }
+                }
+                if let ::std::option::Option::Some(inner_8) = &_input.metadata_blob_checksum_algorithm {
+                    {
+                        query.push_kv("metadata-checksum-algorithm", &::aws_smithy_http::query::fmt_string(&inner_8));
                     }
                 }
                 ::std::result::Result::Ok(())

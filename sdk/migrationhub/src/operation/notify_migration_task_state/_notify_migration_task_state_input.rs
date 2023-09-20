@@ -12,9 +12,9 @@ pub struct NotifyMigrationTaskStateInput {
     /// <p>The timestamp when the task was gathered.</p>
     pub update_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Number of seconds after the UpdateDateTime within which the Migration Hub can expect an update. If Migration Hub does not receive an update within the specified interval, then the migration task will be considered stale.</p>
-    pub next_update_seconds: i32,
+    pub next_update_seconds: ::std::option::Option<i32>,
     /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
-    pub dry_run: bool,
+    pub dry_run: ::std::option::Option<bool>,
 }
 impl NotifyMigrationTaskStateInput {
     /// <p>The name of the ProgressUpdateStream. </p>
@@ -34,11 +34,11 @@ impl NotifyMigrationTaskStateInput {
         self.update_date_time.as_ref()
     }
     /// <p>Number of seconds after the UpdateDateTime within which the Migration Hub can expect an update. If Migration Hub does not receive an update within the specified interval, then the migration task will be considered stale.</p>
-    pub fn next_update_seconds(&self) -> i32 {
+    pub fn next_update_seconds(&self) -> ::std::option::Option<i32> {
         self.next_update_seconds
     }
     /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
-    pub fn dry_run(&self) -> bool {
+    pub fn dry_run(&self) -> ::std::option::Option<bool> {
         self.dry_run
     }
 }
@@ -157,8 +157,8 @@ impl NotifyMigrationTaskStateInputBuilder {
             migration_task_name: self.migration_task_name,
             task: self.task,
             update_date_time: self.update_date_time,
-            next_update_seconds: self.next_update_seconds.unwrap_or_default(),
-            dry_run: self.dry_run.unwrap_or_default(),
+            next_update_seconds: self.next_update_seconds,
+            dry_run: self.dry_run,
         })
     }
 }

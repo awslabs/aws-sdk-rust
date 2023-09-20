@@ -21,10 +21,10 @@ pub fn ser_update_rate_based_rule_input(
         }
         array_4.finish();
     }
-    {
+    if let Some(var_7) = &input.rate_limit {
         object.key("RateLimit").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.rate_limit).into()),
+            ::aws_smithy_types::Number::NegInt((*var_7).into()),
         );
     }
     Ok(())

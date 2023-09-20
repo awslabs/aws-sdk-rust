@@ -46,6 +46,21 @@ pub fn de_failover_state(
                 builder = builder.set_to_db_cluster_arn(var_3);
             }
             ,
+            s if s.matches("IsDataLossAllowed") /* IsDataLossAllowed com.amazonaws.rds#FailoverState$IsDataLossAllowed */ =>  {
+                let var_4 =
+                    Some(
+                         {
+                            <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_is_data_loss_allowed(var_4);
+            }
+            ,
             _ => {}
         }
     }

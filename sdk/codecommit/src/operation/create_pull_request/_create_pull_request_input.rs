@@ -10,7 +10,7 @@ pub struct CreatePullRequestInput {
     /// <p>The targets for the pull request, including the source of the code to be reviewed (the source branch) and the destination where the creator of the pull request intends the code to be merged after the pull request is closed (the destination branch).</p>
     pub targets: ::std::option::Option<::std::vec::Vec<crate::types::Target>>,
     /// <p>A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request is received with the same parameters and a token is included, the request returns information about the initial request that used that token.</p> <note>
-    /// <p>The AWS SDKs prepopulate client request tokens. If you are using an AWS SDK, an idempotency token is created for you.</p>
+    /// <p>The Amazon Web ServicesSDKs prepopulate client request tokens. If you are using an Amazon Web ServicesSDK, an idempotency token is created for you.</p>
     /// </note>
     pub client_request_token: ::std::option::Option<::std::string::String>,
 }
@@ -28,7 +28,7 @@ impl CreatePullRequestInput {
         self.targets.as_deref()
     }
     /// <p>A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request is received with the same parameters and a token is included, the request returns information about the initial request that used that token.</p> <note>
-    /// <p>The AWS SDKs prepopulate client request tokens. If you are using an AWS SDK, an idempotency token is created for you.</p>
+    /// <p>The Amazon Web ServicesSDKs prepopulate client request tokens. If you are using an Amazon Web ServicesSDK, an idempotency token is created for you.</p>
     /// </note>
     pub fn client_request_token(&self) -> ::std::option::Option<&str> {
         self.client_request_token.as_deref()
@@ -100,21 +100,21 @@ impl CreatePullRequestInputBuilder {
         &self.targets
     }
     /// <p>A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request is received with the same parameters and a token is included, the request returns information about the initial request that used that token.</p> <note>
-    /// <p>The AWS SDKs prepopulate client request tokens. If you are using an AWS SDK, an idempotency token is created for you.</p>
+    /// <p>The Amazon Web ServicesSDKs prepopulate client request tokens. If you are using an Amazon Web ServicesSDK, an idempotency token is created for you.</p>
     /// </note>
     pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request is received with the same parameters and a token is included, the request returns information about the initial request that used that token.</p> <note>
-    /// <p>The AWS SDKs prepopulate client request tokens. If you are using an AWS SDK, an idempotency token is created for you.</p>
+    /// <p>The Amazon Web ServicesSDKs prepopulate client request tokens. If you are using an Amazon Web ServicesSDK, an idempotency token is created for you.</p>
     /// </note>
     pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_request_token = input;
         self
     }
     /// <p>A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request is received with the same parameters and a token is included, the request returns information about the initial request that used that token.</p> <note>
-    /// <p>The AWS SDKs prepopulate client request tokens. If you are using an AWS SDK, an idempotency token is created for you.</p>
+    /// <p>The Amazon Web ServicesSDKs prepopulate client request tokens. If you are using an Amazon Web ServicesSDK, an idempotency token is created for you.</p>
     /// </note>
     pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_request_token

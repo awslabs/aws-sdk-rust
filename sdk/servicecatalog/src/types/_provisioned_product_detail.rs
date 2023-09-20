@@ -31,7 +31,7 @@ pub struct ProvisionedProductDetail {
     pub last_record_id: ::std::option::Option<::std::string::String>,
     /// <p>The record identifier of the last request performed on this provisioned product of the following types:</p>
     /// <ul>
-    /// <li> <p> ProvisionedProduct </p> </li>
+    /// <li> <p> ProvisionProduct </p> </li>
     /// <li> <p> UpdateProvisionedProduct </p> </li>
     /// <li> <p> ExecuteProvisionedProductPlan </p> </li>
     /// <li> <p> TerminateProvisionedProduct </p> </li>
@@ -39,7 +39,7 @@ pub struct ProvisionedProductDetail {
     pub last_provisioning_record_id: ::std::option::Option<::std::string::String>,
     /// <p>The record identifier of the last successful request performed on this provisioned product of the following types:</p>
     /// <ul>
-    /// <li> <p> ProvisionedProduct </p> </li>
+    /// <li> <p> ProvisionProduct </p> </li>
     /// <li> <p> UpdateProvisionedProduct </p> </li>
     /// <li> <p> ExecuteProvisionedProductPlan </p> </li>
     /// <li> <p> TerminateProvisionedProduct </p> </li>
@@ -98,7 +98,7 @@ impl ProvisionedProductDetail {
     }
     /// <p>The record identifier of the last request performed on this provisioned product of the following types:</p>
     /// <ul>
-    /// <li> <p> ProvisionedProduct </p> </li>
+    /// <li> <p> ProvisionProduct </p> </li>
     /// <li> <p> UpdateProvisionedProduct </p> </li>
     /// <li> <p> ExecuteProvisionedProductPlan </p> </li>
     /// <li> <p> TerminateProvisionedProduct </p> </li>
@@ -108,7 +108,7 @@ impl ProvisionedProductDetail {
     }
     /// <p>The record identifier of the last successful request performed on this provisioned product of the following types:</p>
     /// <ul>
-    /// <li> <p> ProvisionedProduct </p> </li>
+    /// <li> <p> ProvisionProduct </p> </li>
     /// <li> <p> UpdateProvisionedProduct </p> </li>
     /// <li> <p> ExecuteProvisionedProductPlan </p> </li>
     /// <li> <p> TerminateProvisionedProduct </p> </li>
@@ -305,7 +305,7 @@ impl ProvisionedProductDetailBuilder {
     }
     /// <p>The record identifier of the last request performed on this provisioned product of the following types:</p>
     /// <ul>
-    /// <li> <p> ProvisionedProduct </p> </li>
+    /// <li> <p> ProvisionProduct </p> </li>
     /// <li> <p> UpdateProvisionedProduct </p> </li>
     /// <li> <p> ExecuteProvisionedProductPlan </p> </li>
     /// <li> <p> TerminateProvisionedProduct </p> </li>
@@ -316,7 +316,7 @@ impl ProvisionedProductDetailBuilder {
     }
     /// <p>The record identifier of the last request performed on this provisioned product of the following types:</p>
     /// <ul>
-    /// <li> <p> ProvisionedProduct </p> </li>
+    /// <li> <p> ProvisionProduct </p> </li>
     /// <li> <p> UpdateProvisionedProduct </p> </li>
     /// <li> <p> ExecuteProvisionedProductPlan </p> </li>
     /// <li> <p> TerminateProvisionedProduct </p> </li>
@@ -327,7 +327,7 @@ impl ProvisionedProductDetailBuilder {
     }
     /// <p>The record identifier of the last request performed on this provisioned product of the following types:</p>
     /// <ul>
-    /// <li> <p> ProvisionedProduct </p> </li>
+    /// <li> <p> ProvisionProduct </p> </li>
     /// <li> <p> UpdateProvisionedProduct </p> </li>
     /// <li> <p> ExecuteProvisionedProductPlan </p> </li>
     /// <li> <p> TerminateProvisionedProduct </p> </li>
@@ -337,7 +337,7 @@ impl ProvisionedProductDetailBuilder {
     }
     /// <p>The record identifier of the last successful request performed on this provisioned product of the following types:</p>
     /// <ul>
-    /// <li> <p> ProvisionedProduct </p> </li>
+    /// <li> <p> ProvisionProduct </p> </li>
     /// <li> <p> UpdateProvisionedProduct </p> </li>
     /// <li> <p> ExecuteProvisionedProductPlan </p> </li>
     /// <li> <p> TerminateProvisionedProduct </p> </li>
@@ -348,7 +348,7 @@ impl ProvisionedProductDetailBuilder {
     }
     /// <p>The record identifier of the last successful request performed on this provisioned product of the following types:</p>
     /// <ul>
-    /// <li> <p> ProvisionedProduct </p> </li>
+    /// <li> <p> ProvisionProduct </p> </li>
     /// <li> <p> UpdateProvisionedProduct </p> </li>
     /// <li> <p> ExecuteProvisionedProductPlan </p> </li>
     /// <li> <p> TerminateProvisionedProduct </p> </li>
@@ -359,7 +359,7 @@ impl ProvisionedProductDetailBuilder {
     }
     /// <p>The record identifier of the last successful request performed on this provisioned product of the following types:</p>
     /// <ul>
-    /// <li> <p> ProvisionedProduct </p> </li>
+    /// <li> <p> ProvisionProduct </p> </li>
     /// <li> <p> UpdateProvisionedProduct </p> </li>
     /// <li> <p> ExecuteProvisionedProductPlan </p> </li>
     /// <li> <p> TerminateProvisionedProduct </p> </li>

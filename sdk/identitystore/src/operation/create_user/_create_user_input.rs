@@ -5,7 +5,7 @@
 pub struct CreateUserInput {
     /// <p>The globally unique identifier for the identity store.</p>
     pub identity_store_id: ::std::option::Option<::std::string::String>,
-    /// <p>A unique string used to identify the user. The length limit is 128 characters. This value can consist of letters, accented characters, symbols, numbers, and punctuation. This value is specified at the time the user is created and stored as an attribute of the user object in the identity store. "Administrator" and "AWSAdministrators" are reserved names and can't be used for users or groups.</p>
+    /// <p>A unique string used to identify the user. The length limit is 128 characters. This value can consist of letters, accented characters, symbols, numbers, and punctuation. This value is specified at the time the user is created and stored as an attribute of the user object in the identity store. <code>Administrator</code> and <code>AWSAdministrators</code> are reserved names and can't be used for users or groups.</p>
     pub user_name: ::std::option::Option<::std::string::String>,
     /// <p>An object containing the name of the user.</p>
     pub name: ::std::option::Option<crate::types::Name>,
@@ -37,7 +37,7 @@ impl CreateUserInput {
     pub fn identity_store_id(&self) -> ::std::option::Option<&str> {
         self.identity_store_id.as_deref()
     }
-    /// <p>A unique string used to identify the user. The length limit is 128 characters. This value can consist of letters, accented characters, symbols, numbers, and punctuation. This value is specified at the time the user is created and stored as an attribute of the user object in the identity store. "Administrator" and "AWSAdministrators" are reserved names and can't be used for users or groups.</p>
+    /// <p>A unique string used to identify the user. The length limit is 128 characters. This value can consist of letters, accented characters, symbols, numbers, and punctuation. This value is specified at the time the user is created and stored as an attribute of the user object in the identity store. <code>Administrator</code> and <code>AWSAdministrators</code> are reserved names and can't be used for users or groups.</p>
     pub fn user_name(&self) -> ::std::option::Option<&str> {
         self.user_name.as_deref()
     }
@@ -151,17 +151,17 @@ impl CreateUserInputBuilder {
     pub fn get_identity_store_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.identity_store_id
     }
-    /// <p>A unique string used to identify the user. The length limit is 128 characters. This value can consist of letters, accented characters, symbols, numbers, and punctuation. This value is specified at the time the user is created and stored as an attribute of the user object in the identity store. "Administrator" and "AWSAdministrators" are reserved names and can't be used for users or groups.</p>
+    /// <p>A unique string used to identify the user. The length limit is 128 characters. This value can consist of letters, accented characters, symbols, numbers, and punctuation. This value is specified at the time the user is created and stored as an attribute of the user object in the identity store. <code>Administrator</code> and <code>AWSAdministrators</code> are reserved names and can't be used for users or groups.</p>
     pub fn user_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A unique string used to identify the user. The length limit is 128 characters. This value can consist of letters, accented characters, symbols, numbers, and punctuation. This value is specified at the time the user is created and stored as an attribute of the user object in the identity store. "Administrator" and "AWSAdministrators" are reserved names and can't be used for users or groups.</p>
+    /// <p>A unique string used to identify the user. The length limit is 128 characters. This value can consist of letters, accented characters, symbols, numbers, and punctuation. This value is specified at the time the user is created and stored as an attribute of the user object in the identity store. <code>Administrator</code> and <code>AWSAdministrators</code> are reserved names and can't be used for users or groups.</p>
     pub fn set_user_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_name = input;
         self
     }
-    /// <p>A unique string used to identify the user. The length limit is 128 characters. This value can consist of letters, accented characters, symbols, numbers, and punctuation. This value is specified at the time the user is created and stored as an attribute of the user object in the identity store. "Administrator" and "AWSAdministrators" are reserved names and can't be used for users or groups.</p>
+    /// <p>A unique string used to identify the user. The length limit is 128 characters. This value can consist of letters, accented characters, symbols, numbers, and punctuation. This value is specified at the time the user is created and stored as an attribute of the user object in the identity store. <code>Administrator</code> and <code>AWSAdministrators</code> are reserved names and can't be used for users or groups.</p>
     pub fn get_user_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.user_name
     }

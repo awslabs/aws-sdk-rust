@@ -32,6 +32,8 @@ pub struct PhoneNumber {
     pub deletion_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The phone number's order ID.</p>
     pub order_id: ::std::option::Option<::std::string::String>,
+    /// <p>The name of the phone number.</p>
+    pub name: ::std::option::Option<::std::string::String>,
 }
 impl PhoneNumber {
     /// <p>The phone number's ID.</p>
@@ -90,6 +92,10 @@ impl PhoneNumber {
     pub fn order_id(&self) -> ::std::option::Option<&str> {
         self.order_id.as_deref()
     }
+    /// <p>The name of the phone number.</p>
+    pub fn name(&self) -> ::std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl ::std::fmt::Debug for PhoneNumber {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -108,6 +114,7 @@ impl ::std::fmt::Debug for PhoneNumber {
         formatter.field("updated_timestamp", &self.updated_timestamp);
         formatter.field("deletion_timestamp", &self.deletion_timestamp);
         formatter.field("order_id", &self.order_id);
+        formatter.field("name", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -136,6 +143,7 @@ pub struct PhoneNumberBuilder {
     pub(crate) updated_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) deletion_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) order_id: ::std::option::Option<::std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
 }
 impl PhoneNumberBuilder {
     /// <p>The phone number's ID.</p>
@@ -340,6 +348,20 @@ impl PhoneNumberBuilder {
     pub fn get_order_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.order_id
     }
+    /// <p>The name of the phone number.</p>
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the phone number.</p>
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.name = input;
+        self
+    }
+    /// <p>The name of the phone number.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`PhoneNumber`](crate::types::PhoneNumber).
     pub fn build(self) -> crate::types::PhoneNumber {
         crate::types::PhoneNumber {
@@ -357,6 +379,7 @@ impl PhoneNumberBuilder {
             updated_timestamp: self.updated_timestamp,
             deletion_timestamp: self.deletion_timestamp,
             order_id: self.order_id,
+            name: self.name,
         }
     }
 }
@@ -377,6 +400,7 @@ impl ::std::fmt::Debug for PhoneNumberBuilder {
         formatter.field("updated_timestamp", &self.updated_timestamp);
         formatter.field("deletion_timestamp", &self.deletion_timestamp);
         formatter.field("order_id", &self.order_id);
+        formatter.field("name", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }

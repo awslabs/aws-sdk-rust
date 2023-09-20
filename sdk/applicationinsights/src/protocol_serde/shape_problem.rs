@@ -68,6 +68,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "AccountId" => {
+                            builder = builder.set_account_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "ResourceGroupName" => {
                             builder = builder.set_resource_group_name(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -90,6 +97,20 @@ where
                                 tokens.next(),
                                 ::aws_smithy_types::date_time::Format::EpochSeconds,
                             )?);
+                        }
+                        "Visibility" => {
+                            builder = builder.set_visibility(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::Visibility::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "ResolutionMethod" => {
+                            builder = builder.set_resolution_method(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::ResolutionMethod::from(u.as_ref())))
+                                    .transpose()?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

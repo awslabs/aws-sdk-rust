@@ -42,6 +42,8 @@ pub struct WindowsFileSystemConfiguration {
     pub aliases: ::std::option::Option<::std::vec::Vec<crate::types::Alias>>,
     /// <p>The configuration that Amazon FSx for Windows File Server uses to audit and log user accesses of files, folders, and file shares on the Amazon FSx for Windows File Server file system.</p>
     pub audit_log_configuration: ::std::option::Option<crate::types::WindowsAuditLogConfiguration>,
+    /// <p>The SSD IOPS (input/output operations per second) configuration for an Amazon FSx for Windows file system. By default, Amazon FSx automatically provisions 3 IOPS per GiB of storage capacity. You can provision additional IOPS per GiB of storage, up to the maximum limit associated with your chosen throughput capacity.</p>
+    pub disk_iops_configuration: ::std::option::Option<crate::types::DiskIopsConfiguration>,
 }
 impl WindowsFileSystemConfiguration {
     /// <p>The ID for an existing Amazon Web Services Managed Microsoft Active Directory instance that the file system is joined to.</p>
@@ -110,6 +112,10 @@ impl WindowsFileSystemConfiguration {
     pub fn audit_log_configuration(&self) -> ::std::option::Option<&crate::types::WindowsAuditLogConfiguration> {
         self.audit_log_configuration.as_ref()
     }
+    /// <p>The SSD IOPS (input/output operations per second) configuration for an Amazon FSx for Windows file system. By default, Amazon FSx automatically provisions 3 IOPS per GiB of storage capacity. You can provision additional IOPS per GiB of storage, up to the maximum limit associated with your chosen throughput capacity.</p>
+    pub fn disk_iops_configuration(&self) -> ::std::option::Option<&crate::types::DiskIopsConfiguration> {
+        self.disk_iops_configuration.as_ref()
+    }
 }
 impl WindowsFileSystemConfiguration {
     /// Creates a new builder-style object to manufacture [`WindowsFileSystemConfiguration`](crate::types::WindowsFileSystemConfiguration).
@@ -136,6 +142,7 @@ pub struct WindowsFileSystemConfigurationBuilder {
     pub(crate) copy_tags_to_backups: ::std::option::Option<bool>,
     pub(crate) aliases: ::std::option::Option<::std::vec::Vec<crate::types::Alias>>,
     pub(crate) audit_log_configuration: ::std::option::Option<crate::types::WindowsAuditLogConfiguration>,
+    pub(crate) disk_iops_configuration: ::std::option::Option<crate::types::DiskIopsConfiguration>,
 }
 impl WindowsFileSystemConfigurationBuilder {
     /// <p>The ID for an existing Amazon Web Services Managed Microsoft Active Directory instance that the file system is joined to.</p>
@@ -382,6 +389,20 @@ impl WindowsFileSystemConfigurationBuilder {
     pub fn get_audit_log_configuration(&self) -> &::std::option::Option<crate::types::WindowsAuditLogConfiguration> {
         &self.audit_log_configuration
     }
+    /// <p>The SSD IOPS (input/output operations per second) configuration for an Amazon FSx for Windows file system. By default, Amazon FSx automatically provisions 3 IOPS per GiB of storage capacity. You can provision additional IOPS per GiB of storage, up to the maximum limit associated with your chosen throughput capacity.</p>
+    pub fn disk_iops_configuration(mut self, input: crate::types::DiskIopsConfiguration) -> Self {
+        self.disk_iops_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The SSD IOPS (input/output operations per second) configuration for an Amazon FSx for Windows file system. By default, Amazon FSx automatically provisions 3 IOPS per GiB of storage capacity. You can provision additional IOPS per GiB of storage, up to the maximum limit associated with your chosen throughput capacity.</p>
+    pub fn set_disk_iops_configuration(mut self, input: ::std::option::Option<crate::types::DiskIopsConfiguration>) -> Self {
+        self.disk_iops_configuration = input;
+        self
+    }
+    /// <p>The SSD IOPS (input/output operations per second) configuration for an Amazon FSx for Windows file system. By default, Amazon FSx automatically provisions 3 IOPS per GiB of storage capacity. You can provision additional IOPS per GiB of storage, up to the maximum limit associated with your chosen throughput capacity.</p>
+    pub fn get_disk_iops_configuration(&self) -> &::std::option::Option<crate::types::DiskIopsConfiguration> {
+        &self.disk_iops_configuration
+    }
     /// Consumes the builder and constructs a [`WindowsFileSystemConfiguration`](crate::types::WindowsFileSystemConfiguration).
     pub fn build(self) -> crate::types::WindowsFileSystemConfiguration {
         crate::types::WindowsFileSystemConfiguration {
@@ -399,6 +420,7 @@ impl WindowsFileSystemConfigurationBuilder {
             copy_tags_to_backups: self.copy_tags_to_backups,
             aliases: self.aliases,
             audit_log_configuration: self.audit_log_configuration,
+            disk_iops_configuration: self.disk_iops_configuration,
         }
     }
 }

@@ -6,6 +6,8 @@
 pub enum ConfiguredTableAnalysisRulePolicyV1 {
     /// <p>Analysis rule type that enables only aggregation queries on a configured table.</p>
     Aggregation(crate::types::AnalysisRuleAggregation),
+    /// <p>A type of analysis rule that enables the table owner to approve custom SQL queries on their configured tables.</p>
+    Custom(crate::types::AnalysisRuleCustom),
     /// <p>Analysis rule type that enables only list queries on a configured table.</p>
     List(crate::types::AnalysisRuleList),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
@@ -31,6 +33,19 @@ impl ConfiguredTableAnalysisRulePolicyV1 {
     /// Returns true if this is a [`Aggregation`](crate::types::ConfiguredTableAnalysisRulePolicyV1::Aggregation).
     pub fn is_aggregation(&self) -> bool {
         self.as_aggregation().is_ok()
+    }
+    /// Tries to convert the enum instance into [`Custom`](crate::types::ConfiguredTableAnalysisRulePolicyV1::Custom), extracting the inner [`AnalysisRuleCustom`](crate::types::AnalysisRuleCustom).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_custom(&self) -> ::std::result::Result<&crate::types::AnalysisRuleCustom, &Self> {
+        if let ConfiguredTableAnalysisRulePolicyV1::Custom(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`Custom`](crate::types::ConfiguredTableAnalysisRulePolicyV1::Custom).
+    pub fn is_custom(&self) -> bool {
+        self.as_custom().is_ok()
     }
     /// Tries to convert the enum instance into [`List`](crate::types::ConfiguredTableAnalysisRulePolicyV1::List), extracting the inner [`AnalysisRuleList`](crate::types::AnalysisRuleList).
     /// Returns `Err(&Self)` if it can't be converted.

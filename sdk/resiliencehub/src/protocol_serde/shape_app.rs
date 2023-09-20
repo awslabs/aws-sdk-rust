@@ -91,6 +91,26 @@ where
                                     .transpose()?,
                             );
                         }
+                        "permissionModel" => {
+                            builder = builder.set_permission_model(crate::protocol_serde::shape_permission_model::de_permission_model(tokens)?);
+                        }
+                        "eventSubscriptions" => {
+                            builder = builder
+                                .set_event_subscriptions(crate::protocol_serde::shape_event_subscription_list::de_event_subscription_list(tokens)?);
+                        }
+                        "driftStatus" => {
+                            builder = builder.set_drift_status(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::AppDriftStatusType::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "lastDriftEvaluationTime" => {
+                            builder = builder.set_last_drift_evaluation_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                                tokens.next(),
+                                ::aws_smithy_types::date_time::Format::EpochSeconds,
+                            )?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

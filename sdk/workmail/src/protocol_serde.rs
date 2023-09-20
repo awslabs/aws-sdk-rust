@@ -79,6 +79,8 @@ pub(crate) mod shape_deregister_mail_domain;
 
 pub(crate) mod shape_describe_email_monitoring_configuration;
 
+pub(crate) mod shape_describe_entity;
+
 pub(crate) mod shape_describe_group;
 
 pub(crate) mod shape_describe_inbound_dmarc_settings;
@@ -120,6 +122,8 @@ pub(crate) mod shape_list_availability_configurations;
 pub(crate) mod shape_list_group_members;
 
 pub(crate) mod shape_list_groups;
+
+pub(crate) mod shape_list_groups_for_entity;
 
 pub(crate) mod shape_list_impersonation_roles;
 
@@ -173,6 +177,8 @@ pub(crate) mod shape_update_availability_configuration;
 
 pub(crate) mod shape_update_default_mail_domain;
 
+pub(crate) mod shape_update_group;
+
 pub(crate) mod shape_update_impersonation_role;
 
 pub(crate) mod shape_update_mailbox_quota;
@@ -182,6 +188,8 @@ pub(crate) mod shape_update_mobile_device_access_rule;
 pub(crate) mod shape_update_primary_email_address;
 
 pub(crate) mod shape_update_resource;
+
+pub(crate) mod shape_update_user;
 
 pub(crate) mod shape_associate_delegate_to_resource_input;
 
@@ -247,6 +255,8 @@ pub(crate) mod shape_deregister_mail_domain_input;
 
 pub(crate) mod shape_describe_email_monitoring_configuration_input;
 
+pub(crate) mod shape_describe_entity_input;
+
 pub(crate) mod shape_describe_group_input;
 
 pub(crate) mod shape_describe_inbound_dmarc_settings_input;
@@ -310,6 +320,8 @@ pub(crate) mod shape_list_aliases_input;
 pub(crate) mod shape_list_availability_configurations_input;
 
 pub(crate) mod shape_list_group_members_input;
+
+pub(crate) mod shape_list_groups_for_entity_input;
 
 pub(crate) mod shape_list_groups_input;
 
@@ -385,6 +397,8 @@ pub(crate) mod shape_update_availability_configuration_input;
 
 pub(crate) mod shape_update_default_mail_domain_input;
 
+pub(crate) mod shape_update_group_input;
+
 pub(crate) mod shape_update_impersonation_role_input;
 
 pub(crate) mod shape_update_mailbox_quota_input;
@@ -394,6 +408,8 @@ pub(crate) mod shape_update_mobile_device_access_rule_input;
 pub(crate) mod shape_update_primary_email_address_input;
 
 pub(crate) mod shape_update_resource_input;
+
+pub(crate) mod shape_update_user_input;
 
 pub(crate) mod shape_access_control_rule_name_list;
 
@@ -415,6 +431,8 @@ pub(crate) mod shape_folder_configuration;
 
 pub(crate) mod shape_folder_configurations;
 
+pub(crate) mod shape_group_identifiers;
+
 pub(crate) mod shape_groups;
 
 pub(crate) mod shape_impersonation_matched_rule_list;
@@ -428,6 +446,14 @@ pub(crate) mod shape_impersonation_rule_list;
 pub(crate) mod shape_jobs;
 
 pub(crate) mod shape_lambda_availability_provider;
+
+pub(crate) mod shape_list_groups_filters;
+
+pub(crate) mod shape_list_groups_for_entity_filters;
+
+pub(crate) mod shape_list_resources_filters;
+
+pub(crate) mod shape_list_users_filters;
 
 pub(crate) mod shape_mail_domains;
 
@@ -462,6 +488,8 @@ pub(crate) mod shape_delegate;
 pub(crate) mod shape_dns_record;
 
 pub(crate) mod shape_group;
+
+pub(crate) mod shape_group_identifier;
 
 pub(crate) mod shape_impersonation_matched_rule;
 

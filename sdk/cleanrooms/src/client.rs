@@ -147,7 +147,11 @@ impl Client {
     }
 }
 
+mod batch_get_collaboration_analysis_template;
+
 mod batch_get_schema;
+
+mod create_analysis_template;
 
 mod create_collaboration;
 
@@ -187,6 +191,8 @@ mod create_membership;
 /// ```
 pub mod customize;
 
+mod delete_analysis_template;
+
 mod delete_collaboration;
 
 mod delete_configured_table;
@@ -199,7 +205,11 @@ mod delete_member;
 
 mod delete_membership;
 
+mod get_analysis_template;
+
 mod get_collaboration;
+
+mod get_collaboration_analysis_template;
 
 mod get_configured_table;
 
@@ -214,6 +224,10 @@ mod get_protected_query;
 mod get_schema;
 
 mod get_schema_analysis_rule;
+
+mod list_analysis_templates;
+
+mod list_collaboration_analysis_templates;
 
 mod list_collaborations;
 
@@ -236,6 +250,8 @@ mod start_protected_query;
 mod tag_resource;
 
 mod untag_resource;
+
+mod update_analysis_template;
 
 mod update_collaboration;
 

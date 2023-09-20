@@ -111,17 +111,17 @@ impl GetTemplateFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name of the template you want to retrieve.</p>
+    /// <p>The name of the template to retrieve.</p>
     pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.template_name(input.into());
         self
     }
-    /// <p>The name of the template you want to retrieve.</p>
+    /// <p>The name of the template to retrieve.</p>
     pub fn set_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_template_name(input);
         self
     }
-    /// <p>The name of the template you want to retrieve.</p>
+    /// <p>The name of the template to retrieve.</p>
     pub fn get_template_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_template_name()
     }

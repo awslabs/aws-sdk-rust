@@ -18,5 +18,17 @@ pub fn ser_input_device_configurable_settings(
             ::aws_smithy_types::Number::NegInt((*var_3).into()),
         );
     }
+    if let Some(var_4) = &input.codec {
+        object.key("codec").string(var_4.as_str());
+    }
+    if let Some(var_5) = &input.mediaconnect_settings {
+        #[allow(unused_mut)]
+        let mut object_6 = object.key("mediaconnectSettings").start_object();
+        crate::protocol_serde::shape_input_device_media_connect_configurable_settings::ser_input_device_media_connect_configurable_settings(
+            &mut object_6,
+            var_5,
+        )?;
+        object_6.finish();
+    }
     Ok(())
 }

@@ -12,7 +12,7 @@ pub struct UpdateLogPatternInput {
     /// <p>The log pattern. The pattern must be DFA compatible. Patterns that utilize forward lookahead or backreference constructions are not supported.</p>
     pub pattern: ::std::option::Option<::std::string::String>,
     /// <p>Rank of the log pattern. Must be a value between <code>1</code> and <code>1,000,000</code>. The patterns are sorted by rank, so we recommend that you set your highest priority patterns with the lowest rank. A pattern of rank <code>1</code> will be the first to get matched to a log line. A pattern of rank <code>1,000,000</code> will be last to get matched. When you configure custom log patterns from the console, a <code>Low</code> severity pattern translates to a <code>750,000</code> rank. A <code>Medium</code> severity pattern translates to a <code>500,000</code> rank. And a <code>High</code> severity pattern translates to a <code>250,000</code> rank. Rank values less than <code>1</code> or greater than <code>1,000,000</code> are reserved for AWS-provided patterns. </p>
-    pub rank: i32,
+    pub rank: ::std::option::Option<i32>,
 }
 impl UpdateLogPatternInput {
     /// <p>The name of the resource group.</p>
@@ -32,7 +32,7 @@ impl UpdateLogPatternInput {
         self.pattern.as_deref()
     }
     /// <p>Rank of the log pattern. Must be a value between <code>1</code> and <code>1,000,000</code>. The patterns are sorted by rank, so we recommend that you set your highest priority patterns with the lowest rank. A pattern of rank <code>1</code> will be the first to get matched to a log line. A pattern of rank <code>1,000,000</code> will be last to get matched. When you configure custom log patterns from the console, a <code>Low</code> severity pattern translates to a <code>750,000</code> rank. A <code>Medium</code> severity pattern translates to a <code>500,000</code> rank. And a <code>High</code> severity pattern translates to a <code>250,000</code> rank. Rank values less than <code>1</code> or greater than <code>1,000,000</code> are reserved for AWS-provided patterns. </p>
-    pub fn rank(&self) -> i32 {
+    pub fn rank(&self) -> ::std::option::Option<i32> {
         self.rank
     }
 }
@@ -133,7 +133,7 @@ impl UpdateLogPatternInputBuilder {
             pattern_set_name: self.pattern_set_name,
             pattern_name: self.pattern_name,
             pattern: self.pattern,
-            rank: self.rank.unwrap_or_default(),
+            rank: self.rank,
         })
     }
 }

@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateHostInput {
-    /// <p>The name of the host to be created. The name must be unique in the calling AWS account.</p>
+    /// <p>The name of the host to be created.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the installed provider to be associated with your connection. The host resource represents the infrastructure where your provider type is installed. The valid provider type is GitHub Enterprise Server.</p>
     pub provider_type: ::std::option::Option<crate::types::ProviderType>,
@@ -15,7 +15,7 @@ pub struct CreateHostInput {
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateHostInput {
-    /// <p>The name of the host to be created. The name must be unique in the calling AWS account.</p>
+    /// <p>The name of the host to be created.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -54,17 +54,17 @@ pub struct CreateHostInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateHostInputBuilder {
-    /// <p>The name of the host to be created. The name must be unique in the calling AWS account.</p>
+    /// <p>The name of the host to be created.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the host to be created. The name must be unique in the calling AWS account.</p>
+    /// <p>The name of the host to be created.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>The name of the host to be created. The name must be unique in the calling AWS account.</p>
+    /// <p>The name of the host to be created.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }

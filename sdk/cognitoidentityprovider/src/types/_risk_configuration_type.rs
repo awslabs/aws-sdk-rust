@@ -14,7 +14,7 @@ pub struct RiskConfigurationType {
     pub account_takeover_risk_configuration: ::std::option::Option<crate::types::AccountTakeoverRiskConfigurationType>,
     /// <p>The configuration to override the risk decision.</p>
     pub risk_exception_configuration: ::std::option::Option<crate::types::RiskExceptionConfigurationType>,
-    /// <p>The last modified date.</p>
+    /// <p>The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format, when the item was modified.</p>
     pub last_modified_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl RiskConfigurationType {
@@ -38,7 +38,7 @@ impl RiskConfigurationType {
     pub fn risk_exception_configuration(&self) -> ::std::option::Option<&crate::types::RiskExceptionConfigurationType> {
         self.risk_exception_configuration.as_ref()
     }
-    /// <p>The last modified date.</p>
+    /// <p>The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format, when the item was modified.</p>
     pub fn last_modified_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_modified_date.as_ref()
     }
@@ -155,17 +155,17 @@ impl RiskConfigurationTypeBuilder {
     pub fn get_risk_exception_configuration(&self) -> &::std::option::Option<crate::types::RiskExceptionConfigurationType> {
         &self.risk_exception_configuration
     }
-    /// <p>The last modified date.</p>
+    /// <p>The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format, when the item was modified.</p>
     pub fn last_modified_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_date = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The last modified date.</p>
+    /// <p>The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format, when the item was modified.</p>
     pub fn set_last_modified_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_date = input;
         self
     }
-    /// <p>The last modified date.</p>
+    /// <p>The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format, when the item was modified.</p>
     pub fn get_last_modified_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modified_date
     }

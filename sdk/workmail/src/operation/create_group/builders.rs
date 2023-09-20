@@ -138,4 +138,18 @@ impl CreateGroupFluentBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
+    /// <p>If this parameter is enabled, the group will be hidden from the address book.</p>
+    pub fn hidden_from_global_address_list(mut self, input: bool) -> Self {
+        self.inner = self.inner.hidden_from_global_address_list(input);
+        self
+    }
+    /// <p>If this parameter is enabled, the group will be hidden from the address book.</p>
+    pub fn set_hidden_from_global_address_list(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_hidden_from_global_address_list(input);
+        self
+    }
+    /// <p>If this parameter is enabled, the group will be hidden from the address book.</p>
+    pub fn get_hidden_from_global_address_list(&self) -> &::std::option::Option<bool> {
+        self.inner.get_hidden_from_global_address_list()
+    }
 }

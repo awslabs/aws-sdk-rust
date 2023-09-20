@@ -69,8 +69,28 @@ pub(crate) fn reflens_list_labels_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_model_versions_output_next_token(
+    input: &crate::operation::list_model_versions::ListModelVersionsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_models_output_next_token(
     input: &crate::operation::list_models::ListModelsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_retraining_schedulers_output_next_token(
+    input: &crate::operation::list_retraining_schedulers::ListRetrainingSchedulersOutput,
 ) -> ::std::option::Option<&::std::string::String> {
     let input = match &input.next_token {
         ::std::option::Option::None => return ::std::option::Option::None,

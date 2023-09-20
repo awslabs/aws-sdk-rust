@@ -4,55 +4,67 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AlarmRecommendation {
-    /// <p>The identifier of the alarm recommendation.</p>
+    /// <p>Identifier of the alarm recommendation.</p>
     pub recommendation_id: ::std::option::Option<::std::string::String>,
-    /// <p>The reference identifier of the alarm recommendation.</p>
+    /// <p>Reference identifier of the alarm recommendation.</p>
     pub reference_id: ::std::option::Option<::std::string::String>,
-    /// <p>The name of the alarm recommendation.</p>
+    /// <p>Name of the alarm recommendation.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>The description of the recommendation.</p>
+    /// <p>Description of the alarm recommendation.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>The type of alarm recommendation.</p>
+    /// <p>Type of alarm recommendation.</p>
     pub r#type: ::std::option::Option<crate::types::AlarmType>,
-    /// <p>The Application Component for the CloudWatch alarm recommendation.</p>
+    /// <p>Application Component name for the CloudWatch alarm recommendation. This name is saved as the first item in the <code>appComponentNames</code> list.</p>
+    #[deprecated(
+        note = "An alarm recommendation can be attached to multiple Application Components, hence this property will be replaced by the new property 'appComponentNames'."
+    )]
     pub app_component_name: ::std::option::Option<::std::string::String>,
-    /// <p>The list of CloudWatch alarm recommendations.</p>
+    /// <p>List of CloudWatch alarm recommendations.</p>
     pub items: ::std::option::Option<::std::vec::Vec<crate::types::RecommendationItem>>,
     /// <p>The prerequisite for the alarm recommendation.</p>
     pub prerequisite: ::std::option::Option<::std::string::String>,
+    /// <p>List of Application Component names for the CloudWatch alarm recommendation.</p>
+    pub app_component_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl AlarmRecommendation {
-    /// <p>The identifier of the alarm recommendation.</p>
+    /// <p>Identifier of the alarm recommendation.</p>
     pub fn recommendation_id(&self) -> ::std::option::Option<&str> {
         self.recommendation_id.as_deref()
     }
-    /// <p>The reference identifier of the alarm recommendation.</p>
+    /// <p>Reference identifier of the alarm recommendation.</p>
     pub fn reference_id(&self) -> ::std::option::Option<&str> {
         self.reference_id.as_deref()
     }
-    /// <p>The name of the alarm recommendation.</p>
+    /// <p>Name of the alarm recommendation.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The description of the recommendation.</p>
+    /// <p>Description of the alarm recommendation.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The type of alarm recommendation.</p>
+    /// <p>Type of alarm recommendation.</p>
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::AlarmType> {
         self.r#type.as_ref()
     }
-    /// <p>The Application Component for the CloudWatch alarm recommendation.</p>
+    /// <p>Application Component name for the CloudWatch alarm recommendation. This name is saved as the first item in the <code>appComponentNames</code> list.</p>
+    #[deprecated(
+        note = "An alarm recommendation can be attached to multiple Application Components, hence this property will be replaced by the new property 'appComponentNames'."
+    )]
     pub fn app_component_name(&self) -> ::std::option::Option<&str> {
         self.app_component_name.as_deref()
     }
-    /// <p>The list of CloudWatch alarm recommendations.</p>
+    /// <p>List of CloudWatch alarm recommendations.</p>
     pub fn items(&self) -> ::std::option::Option<&[crate::types::RecommendationItem]> {
         self.items.as_deref()
     }
     /// <p>The prerequisite for the alarm recommendation.</p>
     pub fn prerequisite(&self) -> ::std::option::Option<&str> {
         self.prerequisite.as_deref()
+    }
+    /// <p>List of Application Component names for the CloudWatch alarm recommendation.</p>
+    pub fn app_component_names(&self) -> ::std::option::Option<&[::std::string::String]> {
+        self.app_component_names.as_deref()
     }
 }
 impl AlarmRecommendation {
@@ -74,89 +86,99 @@ pub struct AlarmRecommendationBuilder {
     pub(crate) app_component_name: ::std::option::Option<::std::string::String>,
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::RecommendationItem>>,
     pub(crate) prerequisite: ::std::option::Option<::std::string::String>,
+    pub(crate) app_component_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl AlarmRecommendationBuilder {
-    /// <p>The identifier of the alarm recommendation.</p>
+    /// <p>Identifier of the alarm recommendation.</p>
     pub fn recommendation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.recommendation_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of the alarm recommendation.</p>
+    /// <p>Identifier of the alarm recommendation.</p>
     pub fn set_recommendation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.recommendation_id = input;
         self
     }
-    /// <p>The identifier of the alarm recommendation.</p>
+    /// <p>Identifier of the alarm recommendation.</p>
     pub fn get_recommendation_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.recommendation_id
     }
-    /// <p>The reference identifier of the alarm recommendation.</p>
+    /// <p>Reference identifier of the alarm recommendation.</p>
     pub fn reference_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reference_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The reference identifier of the alarm recommendation.</p>
+    /// <p>Reference identifier of the alarm recommendation.</p>
     pub fn set_reference_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reference_id = input;
         self
     }
-    /// <p>The reference identifier of the alarm recommendation.</p>
+    /// <p>Reference identifier of the alarm recommendation.</p>
     pub fn get_reference_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.reference_id
     }
-    /// <p>The name of the alarm recommendation.</p>
+    /// <p>Name of the alarm recommendation.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the alarm recommendation.</p>
+    /// <p>Name of the alarm recommendation.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>The name of the alarm recommendation.</p>
+    /// <p>Name of the alarm recommendation.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>The description of the recommendation.</p>
+    /// <p>Description of the alarm recommendation.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The description of the recommendation.</p>
+    /// <p>Description of the alarm recommendation.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
-    /// <p>The description of the recommendation.</p>
+    /// <p>Description of the alarm recommendation.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
-    /// <p>The type of alarm recommendation.</p>
+    /// <p>Type of alarm recommendation.</p>
     pub fn r#type(mut self, input: crate::types::AlarmType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of alarm recommendation.</p>
+    /// <p>Type of alarm recommendation.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::AlarmType>) -> Self {
         self.r#type = input;
         self
     }
-    /// <p>The type of alarm recommendation.</p>
+    /// <p>Type of alarm recommendation.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::AlarmType> {
         &self.r#type
     }
-    /// <p>The Application Component for the CloudWatch alarm recommendation.</p>
+    /// <p>Application Component name for the CloudWatch alarm recommendation. This name is saved as the first item in the <code>appComponentNames</code> list.</p>
+    #[deprecated(
+        note = "An alarm recommendation can be attached to multiple Application Components, hence this property will be replaced by the new property 'appComponentNames'."
+    )]
     pub fn app_component_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_component_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Application Component for the CloudWatch alarm recommendation.</p>
+    /// <p>Application Component name for the CloudWatch alarm recommendation. This name is saved as the first item in the <code>appComponentNames</code> list.</p>
+    #[deprecated(
+        note = "An alarm recommendation can be attached to multiple Application Components, hence this property will be replaced by the new property 'appComponentNames'."
+    )]
     pub fn set_app_component_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.app_component_name = input;
         self
     }
-    /// <p>The Application Component for the CloudWatch alarm recommendation.</p>
+    /// <p>Application Component name for the CloudWatch alarm recommendation. This name is saved as the first item in the <code>appComponentNames</code> list.</p>
+    #[deprecated(
+        note = "An alarm recommendation can be attached to multiple Application Components, hence this property will be replaced by the new property 'appComponentNames'."
+    )]
     pub fn get_app_component_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.app_component_name
     }
@@ -164,19 +186,19 @@ impl AlarmRecommendationBuilder {
     ///
     /// To override the contents of this collection use [`set_items`](Self::set_items).
     ///
-    /// <p>The list of CloudWatch alarm recommendations.</p>
+    /// <p>List of CloudWatch alarm recommendations.</p>
     pub fn items(mut self, input: crate::types::RecommendationItem) -> Self {
         let mut v = self.items.unwrap_or_default();
         v.push(input);
         self.items = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The list of CloudWatch alarm recommendations.</p>
+    /// <p>List of CloudWatch alarm recommendations.</p>
     pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RecommendationItem>>) -> Self {
         self.items = input;
         self
     }
-    /// <p>The list of CloudWatch alarm recommendations.</p>
+    /// <p>List of CloudWatch alarm recommendations.</p>
     pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RecommendationItem>> {
         &self.items
     }
@@ -194,6 +216,26 @@ impl AlarmRecommendationBuilder {
     pub fn get_prerequisite(&self) -> &::std::option::Option<::std::string::String> {
         &self.prerequisite
     }
+    /// Appends an item to `app_component_names`.
+    ///
+    /// To override the contents of this collection use [`set_app_component_names`](Self::set_app_component_names).
+    ///
+    /// <p>List of Application Component names for the CloudWatch alarm recommendation.</p>
+    pub fn app_component_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.app_component_names.unwrap_or_default();
+        v.push(input.into());
+        self.app_component_names = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>List of Application Component names for the CloudWatch alarm recommendation.</p>
+    pub fn set_app_component_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.app_component_names = input;
+        self
+    }
+    /// <p>List of Application Component names for the CloudWatch alarm recommendation.</p>
+    pub fn get_app_component_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.app_component_names
+    }
     /// Consumes the builder and constructs a [`AlarmRecommendation`](crate::types::AlarmRecommendation).
     pub fn build(self) -> crate::types::AlarmRecommendation {
         crate::types::AlarmRecommendation {
@@ -205,6 +247,7 @@ impl AlarmRecommendationBuilder {
             app_component_name: self.app_component_name,
             items: self.items,
             prerequisite: self.prerequisite,
+            app_component_names: self.app_component_names,
         }
     }
 }

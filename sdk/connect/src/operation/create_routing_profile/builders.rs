@@ -223,4 +223,18 @@ impl CreateRoutingProfileFluentBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
+    /// <p>Whether agents with this routing profile will have their routing order calculated based on <i>longest idle time</i> or <i>time since their last inbound contact</i>. </p>
+    pub fn agent_availability_timer(mut self, input: crate::types::AgentAvailabilityTimer) -> Self {
+        self.inner = self.inner.agent_availability_timer(input);
+        self
+    }
+    /// <p>Whether agents with this routing profile will have their routing order calculated based on <i>longest idle time</i> or <i>time since their last inbound contact</i>. </p>
+    pub fn set_agent_availability_timer(mut self, input: ::std::option::Option<crate::types::AgentAvailabilityTimer>) -> Self {
+        self.inner = self.inner.set_agent_availability_timer(input);
+        self
+    }
+    /// <p>Whether agents with this routing profile will have their routing order calculated based on <i>longest idle time</i> or <i>time since their last inbound contact</i>. </p>
+    pub fn get_agent_availability_timer(&self) -> &::std::option::Option<crate::types::AgentAvailabilityTimer> {
+        self.inner.get_agent_availability_timer()
+    }
 }

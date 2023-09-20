@@ -152,4 +152,18 @@ impl ListUsersFluentBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }
+    /// <p>Limit the user search results based on the filter criteria. You can only use one filter per request.</p>
+    pub fn filters(mut self, input: crate::types::ListUsersFilters) -> Self {
+        self.inner = self.inner.filters(input);
+        self
+    }
+    /// <p>Limit the user search results based on the filter criteria. You can only use one filter per request.</p>
+    pub fn set_filters(mut self, input: ::std::option::Option<crate::types::ListUsersFilters>) -> Self {
+        self.inner = self.inner.set_filters(input);
+        self
+    }
+    /// <p>Limit the user search results based on the filter criteria. You can only use one filter per request.</p>
+    pub fn get_filters(&self) -> &::std::option::Option<crate::types::ListUsersFilters> {
+        self.inner.get_filters()
+    }
 }

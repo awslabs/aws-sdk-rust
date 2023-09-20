@@ -7,7 +7,7 @@ pub struct SetLoadBalancerPoliciesOfListenerInput {
     /// <p>The name of the load balancer.</p>
     pub load_balancer_name: ::std::option::Option<::std::string::String>,
     /// <p>The external port of the load balancer.</p>
-    pub load_balancer_port: i32,
+    pub load_balancer_port: ::std::option::Option<i32>,
     /// <p>The names of the policies. This list must include all policies to be enabled. If you omit a policy that is currently enabled, it is disabled. If the list is empty, all current policies are disabled.</p>
     pub policy_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -17,7 +17,7 @@ impl SetLoadBalancerPoliciesOfListenerInput {
         self.load_balancer_name.as_deref()
     }
     /// <p>The external port of the load balancer.</p>
-    pub fn load_balancer_port(&self) -> i32 {
+    pub fn load_balancer_port(&self) -> ::std::option::Option<i32> {
         self.load_balancer_port
     }
     /// <p>The names of the policies. This list must include all policies to be enabled. If you omit a policy that is currently enabled, it is disabled. If the list is empty, all current policies are disabled.</p>
@@ -99,7 +99,7 @@ impl SetLoadBalancerPoliciesOfListenerInputBuilder {
         ::std::result::Result::Ok(
             crate::operation::set_load_balancer_policies_of_listener::SetLoadBalancerPoliciesOfListenerInput {
                 load_balancer_name: self.load_balancer_name,
-                load_balancer_port: self.load_balancer_port.unwrap_or_default(),
+                load_balancer_port: self.load_balancer_port,
                 policy_names: self.policy_names,
             },
         )

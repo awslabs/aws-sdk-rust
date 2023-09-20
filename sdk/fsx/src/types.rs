@@ -213,6 +213,12 @@ pub use crate::types::_snapshot_filter_name::SnapshotFilterName;
 
 pub use crate::types::_data_repository_task::DataRepositoryTask;
 
+pub use crate::types::_release_configuration::ReleaseConfiguration;
+
+pub use crate::types::_duration_since_last_access::DurationSinceLastAccess;
+
+pub use crate::types::_unit::Unit;
+
 pub use crate::types::_completion_report::CompletionReport;
 
 pub use crate::types::_report_scope::ReportScope;
@@ -409,6 +415,8 @@ mod _disk_iops_configuration_mode;
 
 mod _drive_cache_type;
 
+mod _duration_since_last_access;
+
 mod _event_type;
 
 mod _file_cache;
@@ -503,6 +511,8 @@ mod _open_zfs_volume_configuration;
 
 mod _privileged_delete;
 
+mod _release_configuration;
+
 mod _report_format;
 
 mod _report_scope;
@@ -568,6 +578,8 @@ mod _tag;
 mod _tiering_policy;
 
 mod _tiering_policy_name;
+
+mod _unit;
 
 mod _update_file_cache_lustre_configuration;
 

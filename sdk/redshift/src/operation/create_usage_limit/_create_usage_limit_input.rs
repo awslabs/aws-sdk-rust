@@ -10,7 +10,7 @@ pub struct CreateUsageLimitInput {
     /// <p>The type of limit. Depending on the feature type, this can be based on a time duration or data size. If <code>FeatureType</code> is <code>spectrum</code>, then <code>LimitType</code> must be <code>data-scanned</code>. If <code>FeatureType</code> is <code>concurrency-scaling</code>, then <code>LimitType</code> must be <code>time</code>. If <code>FeatureType</code> is <code>cross-region-datasharing</code>, then <code>LimitType</code> must be <code>data-scanned</code>. </p>
     pub limit_type: ::std::option::Option<crate::types::UsageLimitLimitType>,
     /// <p>The limit amount. If time-based, this amount is in minutes. If data-based, this amount is in terabytes (TB). The value must be a positive number. </p>
-    pub amount: i64,
+    pub amount: ::std::option::Option<i64>,
     /// <p>The time period that the amount applies to. A <code>weekly</code> period begins on Sunday. The default is <code>monthly</code>. </p>
     pub period: ::std::option::Option<crate::types::UsageLimitPeriod>,
     /// <p>The action that Amazon Redshift takes when the limit is reached. The default is log. For more information about this parameter, see <code>UsageLimit</code>.</p>
@@ -32,7 +32,7 @@ impl CreateUsageLimitInput {
         self.limit_type.as_ref()
     }
     /// <p>The limit amount. If time-based, this amount is in minutes. If data-based, this amount is in terabytes (TB). The value must be a positive number. </p>
-    pub fn amount(&self) -> i64 {
+    pub fn amount(&self) -> ::std::option::Option<i64> {
         self.amount
     }
     /// <p>The time period that the amount applies to. A <code>weekly</code> period begins on Sunday. The default is <code>monthly</code>. </p>
@@ -180,7 +180,7 @@ impl CreateUsageLimitInputBuilder {
             cluster_identifier: self.cluster_identifier,
             feature_type: self.feature_type,
             limit_type: self.limit_type,
-            amount: self.amount.unwrap_or_default(),
+            amount: self.amount,
             period: self.period,
             breach_action: self.breach_action,
             tags: self.tags,

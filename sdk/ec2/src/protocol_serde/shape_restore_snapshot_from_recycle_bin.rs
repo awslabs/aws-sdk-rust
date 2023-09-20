@@ -193,6 +193,20 @@ pub fn de_restore_snapshot_from_recycle_bin(
                 builder = builder.set_volume_size(var_10);
             }
             ,
+            s if s.matches("sseType") /* SseType com.amazonaws.ec2.synthetic#RestoreSnapshotFromRecycleBinOutput$SseType */ =>  {
+                let var_11 =
+                    Some(
+                        Result::<crate::types::SseType, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::SseType::from(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_sse_type(var_11);
+            }
+            ,
             _ => {}
         }
     }

@@ -21,10 +21,10 @@ pub fn ser_update_alert_input(
         crate::protocol_serde::shape_alert_filters::ser_alert_filters(&mut object_6, var_5)?;
         object_6.finish();
     }
-    if input.alert_sensitivity_threshold != 0 {
+    if let Some(var_7) = &input.alert_sensitivity_threshold {
         object.key("AlertSensitivityThreshold").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.alert_sensitivity_threshold).into()),
+            ::aws_smithy_types::Number::NegInt((*var_7).into()),
         );
     }
     Ok(())

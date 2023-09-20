@@ -10,6 +10,10 @@ pub struct DecisionTaskCompletedEventAttributes {
     pub scheduled_event_id: i64,
     /// <p>The ID of the <code>DecisionTaskStarted</code> event recorded when this decision task was started. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
     pub started_event_id: i64,
+    /// <p>Represents a task list.</p>
+    pub task_list: ::std::option::Option<crate::types::TaskList>,
+    /// <p>The maximum amount of time the decision task can wait to be assigned to a worker.</p>
+    pub task_list_schedule_to_start_timeout: ::std::option::Option<::std::string::String>,
 }
 impl DecisionTaskCompletedEventAttributes {
     /// <p>User defined context for the workflow execution.</p>
@@ -23,6 +27,14 @@ impl DecisionTaskCompletedEventAttributes {
     /// <p>The ID of the <code>DecisionTaskStarted</code> event recorded when this decision task was started. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
     pub fn started_event_id(&self) -> i64 {
         self.started_event_id
+    }
+    /// <p>Represents a task list.</p>
+    pub fn task_list(&self) -> ::std::option::Option<&crate::types::TaskList> {
+        self.task_list.as_ref()
+    }
+    /// <p>The maximum amount of time the decision task can wait to be assigned to a worker.</p>
+    pub fn task_list_schedule_to_start_timeout(&self) -> ::std::option::Option<&str> {
+        self.task_list_schedule_to_start_timeout.as_deref()
     }
 }
 impl DecisionTaskCompletedEventAttributes {
@@ -39,6 +51,8 @@ pub struct DecisionTaskCompletedEventAttributesBuilder {
     pub(crate) execution_context: ::std::option::Option<::std::string::String>,
     pub(crate) scheduled_event_id: ::std::option::Option<i64>,
     pub(crate) started_event_id: ::std::option::Option<i64>,
+    pub(crate) task_list: ::std::option::Option<crate::types::TaskList>,
+    pub(crate) task_list_schedule_to_start_timeout: ::std::option::Option<::std::string::String>,
 }
 impl DecisionTaskCompletedEventAttributesBuilder {
     /// <p>User defined context for the workflow execution.</p>
@@ -83,12 +97,42 @@ impl DecisionTaskCompletedEventAttributesBuilder {
     pub fn get_started_event_id(&self) -> &::std::option::Option<i64> {
         &self.started_event_id
     }
+    /// <p>Represents a task list.</p>
+    pub fn task_list(mut self, input: crate::types::TaskList) -> Self {
+        self.task_list = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Represents a task list.</p>
+    pub fn set_task_list(mut self, input: ::std::option::Option<crate::types::TaskList>) -> Self {
+        self.task_list = input;
+        self
+    }
+    /// <p>Represents a task list.</p>
+    pub fn get_task_list(&self) -> &::std::option::Option<crate::types::TaskList> {
+        &self.task_list
+    }
+    /// <p>The maximum amount of time the decision task can wait to be assigned to a worker.</p>
+    pub fn task_list_schedule_to_start_timeout(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.task_list_schedule_to_start_timeout = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The maximum amount of time the decision task can wait to be assigned to a worker.</p>
+    pub fn set_task_list_schedule_to_start_timeout(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.task_list_schedule_to_start_timeout = input;
+        self
+    }
+    /// <p>The maximum amount of time the decision task can wait to be assigned to a worker.</p>
+    pub fn get_task_list_schedule_to_start_timeout(&self) -> &::std::option::Option<::std::string::String> {
+        &self.task_list_schedule_to_start_timeout
+    }
     /// Consumes the builder and constructs a [`DecisionTaskCompletedEventAttributes`](crate::types::DecisionTaskCompletedEventAttributes).
     pub fn build(self) -> crate::types::DecisionTaskCompletedEventAttributes {
         crate::types::DecisionTaskCompletedEventAttributes {
             execution_context: self.execution_context,
             scheduled_event_id: self.scheduled_event_id.unwrap_or_default(),
             started_event_id: self.started_event_id.unwrap_or_default(),
+            task_list: self.task_list,
+            task_list_schedule_to_start_timeout: self.task_list_schedule_to_start_timeout,
         }
     }
 }

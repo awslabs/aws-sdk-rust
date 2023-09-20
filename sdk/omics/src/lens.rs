@@ -9,6 +9,16 @@ pub(crate) fn reflens_list_annotation_import_jobs_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_annotation_store_versions_output_next_token(
+    input: &crate::operation::list_annotation_store_versions::ListAnnotationStoreVersionsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_annotation_stores_output_next_token(
     input: &crate::operation::list_annotation_stores::ListAnnotationStoresOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -149,6 +159,16 @@ pub(crate) fn reflens_list_sequence_stores_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_shares_output_next_token(
+    input: &crate::operation::list_shares::ListSharesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_variant_import_jobs_output_next_token(
     input: &crate::operation::list_variant_import_jobs::ListVariantImportJobsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -183,6 +203,16 @@ pub(crate) fn lens_list_annotation_import_jobs_output_annotation_import_jobs(
     input: crate::operation::list_annotation_import_jobs::ListAnnotationImportJobsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::AnnotationImportJobItem>> {
     let input = match input.annotation_import_jobs {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_annotation_store_versions_output_annotation_store_versions(
+    input: crate::operation::list_annotation_store_versions::ListAnnotationStoreVersionsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::AnnotationStoreVersionItem>> {
+    let input = match input.annotation_store_versions {
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,
     };
@@ -323,6 +353,16 @@ pub(crate) fn lens_list_sequence_stores_output_sequence_stores(
     input: crate::operation::list_sequence_stores::ListSequenceStoresOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::SequenceStoreDetail>> {
     let input = match input.sequence_stores {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_shares_output_shares(
+    input: crate::operation::list_shares::ListSharesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ShareDetails>> {
+    let input = match input.shares {
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,
     };

@@ -27,6 +27,8 @@ pub(crate) mod shape_complete_attachment_upload;
 
 pub(crate) mod shape_create_participant_connection;
 
+pub(crate) mod shape_describe_view;
+
 pub(crate) mod shape_disconnect_participant;
 
 pub(crate) mod shape_get_attachment;
@@ -63,6 +65,8 @@ pub(crate) mod shape_get_transcript_input;
 
 pub(crate) mod shape_internal_server_exception;
 
+pub(crate) mod shape_resource_not_found_exception;
+
 pub(crate) mod shape_send_event_input;
 
 pub(crate) mod shape_send_message_input;
@@ -83,15 +87,21 @@ pub(crate) mod shape_transcript;
 
 pub(crate) mod shape_upload_metadata;
 
+pub(crate) mod shape_view;
+
 pub(crate) mod shape_websocket;
 
 pub(crate) mod shape_item;
 
 pub(crate) mod shape_upload_metadata_signed_headers;
 
+pub(crate) mod shape_view_content;
+
 pub(crate) mod shape_attachments;
 
 pub(crate) mod shape_message_metadata;
+
+pub(crate) mod shape_view_actions;
 
 pub(crate) mod shape_attachment_item;
 

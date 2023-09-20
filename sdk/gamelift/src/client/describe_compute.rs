@@ -3,10 +3,10 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeCompute`](crate::operation::describe_compute::builders::DescribeComputeFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`fleet_id(impl Into<String>)`](crate::operation::describe_compute::builders::DescribeComputeFluentBuilder::fleet_id) / [`set_fleet_id(Option<String>)`](crate::operation::describe_compute::builders::DescribeComputeFluentBuilder::set_fleet_id): <p>A unique identifier for the fleet the compute is registered to.</p>
-    ///   - [`compute_name(impl Into<String>)`](crate::operation::describe_compute::builders::DescribeComputeFluentBuilder::compute_name) / [`set_compute_name(Option<String>)`](crate::operation::describe_compute::builders::DescribeComputeFluentBuilder::set_compute_name): <p>A descriptive label that is associated with the compute resource registered to your fleet.</p>
+    ///   - [`fleet_id(impl Into<String>)`](crate::operation::describe_compute::builders::DescribeComputeFluentBuilder::fleet_id) / [`set_fleet_id(Option<String>)`](crate::operation::describe_compute::builders::DescribeComputeFluentBuilder::set_fleet_id): <p>A unique identifier for the fleet that the compute is registered to. You can use either the fleet ID or ARN value.</p>
+    ///   - [`compute_name(impl Into<String>)`](crate::operation::describe_compute::builders::DescribeComputeFluentBuilder::compute_name) / [`set_compute_name(Option<String>)`](crate::operation::describe_compute::builders::DescribeComputeFluentBuilder::set_compute_name): <p>The unique identifier of the compute resource to retrieve properties for. For an Anywhere fleet compute, use the registered compute name. For a managed EC2 fleet instance, use the instance ID.</p>
     /// - On success, responds with [`DescribeComputeOutput`](crate::operation::describe_compute::DescribeComputeOutput) with field(s):
-    ///   - [`compute(Option<Compute>)`](crate::operation::describe_compute::DescribeComputeOutput::compute): <p>The details of the compute resource you registered to the specified fleet.</p>
+    ///   - [`compute(Option<Compute>)`](crate::operation::describe_compute::DescribeComputeOutput::compute): <p>The set of properties for the requested compute resource.</p>
     /// - On failure, responds with [`SdkError<DescribeComputeError>`](crate::operation::describe_compute::DescribeComputeError)
     pub fn describe_compute(&self) -> crate::operation::describe_compute::builders::DescribeComputeFluentBuilder {
         crate::operation::describe_compute::builders::DescribeComputeFluentBuilder::new(self.handle.clone())

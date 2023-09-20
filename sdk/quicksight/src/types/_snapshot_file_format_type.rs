@@ -13,6 +13,7 @@
 /// # let snapshotfileformattype = unimplemented!();
 /// match snapshotfileformattype {
 ///     SnapshotFileFormatType::Csv => { /* ... */ },
+///     SnapshotFileFormatType::Excel => { /* ... */ },
 ///     SnapshotFileFormatType::Pdf => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -44,6 +45,8 @@ pub enum SnapshotFileFormatType {
     #[allow(missing_docs)] // documentation missing in model
     Csv,
     #[allow(missing_docs)] // documentation missing in model
+    Excel,
+    #[allow(missing_docs)] // documentation missing in model
     Pdf,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
@@ -52,6 +55,7 @@ impl ::std::convert::From<&str> for SnapshotFileFormatType {
     fn from(s: &str) -> Self {
         match s {
             "CSV" => SnapshotFileFormatType::Csv,
+            "EXCEL" => SnapshotFileFormatType::Excel,
             "PDF" => SnapshotFileFormatType::Pdf,
             other => SnapshotFileFormatType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
@@ -69,13 +73,14 @@ impl SnapshotFileFormatType {
     pub fn as_str(&self) -> &str {
         match self {
             SnapshotFileFormatType::Csv => "CSV",
+            SnapshotFileFormatType::Excel => "EXCEL",
             SnapshotFileFormatType::Pdf => "PDF",
             SnapshotFileFormatType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CSV", "PDF"]
+        &["CSV", "EXCEL", "PDF"]
     }
 }
 impl ::std::convert::AsRef<str> for SnapshotFileFormatType {

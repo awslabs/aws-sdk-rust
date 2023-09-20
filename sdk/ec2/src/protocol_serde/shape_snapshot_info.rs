@@ -152,6 +152,20 @@ pub fn de_snapshot_info(
                 builder = builder.set_outpost_arn(var_11);
             }
             ,
+            s if s.matches("sseType") /* SseType com.amazonaws.ec2#SnapshotInfo$SseType */ =>  {
+                let var_12 =
+                    Some(
+                        Result::<crate::types::SseType, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::SseType::from(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_sse_type(var_12);
+            }
+            ,
             _ => {}
         }
     }

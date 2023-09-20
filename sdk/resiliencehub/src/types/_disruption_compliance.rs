@@ -8,13 +8,13 @@ pub struct DisruptionCompliance {
     pub achievable_rto_in_secs: i32,
     /// <p>The current RTO, in seconds.</p>
     pub current_rto_in_secs: i32,
-    /// <p>The RTO reference identifier.</p>
+    /// <p>Reference identifier of the RTO.</p>
     pub rto_reference_id: ::std::option::Option<::std::string::String>,
     /// <p>The RTO description.</p>
     pub rto_description: ::std::option::Option<::std::string::String>,
     /// <p>The current RPO, in seconds.</p>
     pub current_rpo_in_secs: i32,
-    /// <p>The RPO reference identifier.</p>
+    /// <p>Reference identifier of the RPO .</p>
     pub rpo_reference_id: ::std::option::Option<::std::string::String>,
     /// <p>The RPO description.</p>
     pub rpo_description: ::std::option::Option<::std::string::String>,
@@ -34,7 +34,7 @@ impl DisruptionCompliance {
     pub fn current_rto_in_secs(&self) -> i32 {
         self.current_rto_in_secs
     }
-    /// <p>The RTO reference identifier.</p>
+    /// <p>Reference identifier of the RTO.</p>
     pub fn rto_reference_id(&self) -> ::std::option::Option<&str> {
         self.rto_reference_id.as_deref()
     }
@@ -46,7 +46,7 @@ impl DisruptionCompliance {
     pub fn current_rpo_in_secs(&self) -> i32 {
         self.current_rpo_in_secs
     }
-    /// <p>The RPO reference identifier.</p>
+    /// <p>Reference identifier of the RPO .</p>
     pub fn rpo_reference_id(&self) -> ::std::option::Option<&str> {
         self.rpo_reference_id.as_deref()
     }
@@ -118,17 +118,17 @@ impl DisruptionComplianceBuilder {
     pub fn get_current_rto_in_secs(&self) -> &::std::option::Option<i32> {
         &self.current_rto_in_secs
     }
-    /// <p>The RTO reference identifier.</p>
+    /// <p>Reference identifier of the RTO.</p>
     pub fn rto_reference_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rto_reference_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The RTO reference identifier.</p>
+    /// <p>Reference identifier of the RTO.</p>
     pub fn set_rto_reference_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.rto_reference_id = input;
         self
     }
-    /// <p>The RTO reference identifier.</p>
+    /// <p>Reference identifier of the RTO.</p>
     pub fn get_rto_reference_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.rto_reference_id
     }
@@ -160,17 +160,17 @@ impl DisruptionComplianceBuilder {
     pub fn get_current_rpo_in_secs(&self) -> &::std::option::Option<i32> {
         &self.current_rpo_in_secs
     }
-    /// <p>The RPO reference identifier.</p>
+    /// <p>Reference identifier of the RPO .</p>
     pub fn rpo_reference_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rpo_reference_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The RPO reference identifier.</p>
+    /// <p>Reference identifier of the RPO .</p>
     pub fn set_rpo_reference_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.rpo_reference_id = input;
         self
     }
-    /// <p>The RPO reference identifier.</p>
+    /// <p>Reference identifier of the RPO .</p>
     pub fn get_rpo_reference_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.rpo_reference_id
     }

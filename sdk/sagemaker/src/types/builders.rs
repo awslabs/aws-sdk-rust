@@ -27,6 +27,8 @@ pub use crate::types::_user_settings::UserSettingsBuilder;
 
 pub use crate::types::_canvas_app_settings::CanvasAppSettingsBuilder;
 
+pub use crate::types::_identity_provider_o_auth_setting::IdentityProviderOAuthSettingBuilder;
+
 pub use crate::types::_workspace_settings::WorkspaceSettingsBuilder;
 
 pub use crate::types::_model_register_settings::ModelRegisterSettingsBuilder;
@@ -222,6 +224,8 @@ pub use crate::types::_monitoring_alert_actions::MonitoringAlertActionsBuilder;
 pub use crate::types::_model_dashboard_indicator_action::ModelDashboardIndicatorActionBuilder;
 
 pub use crate::types::_transform_job::TransformJobBuilder;
+
+pub use crate::types::_batch_data_capture_config::BatchDataCaptureConfigBuilder;
 
 pub use crate::types::_experiment_config::ExperimentConfigBuilder;
 
@@ -462,6 +466,8 @@ pub use crate::types::_athena_dataset_definition::AthenaDatasetDefinitionBuilder
 pub use crate::types::_processing_s3_input::ProcessingS3InputBuilder;
 
 pub use crate::types::_training_job::TrainingJobBuilder;
+
+pub use crate::types::_profiler_config::ProfilerConfigBuilder;
 
 pub use crate::types::_debug_rule_evaluation_status::DebugRuleEvaluationStatusBuilder;
 
@@ -737,17 +743,25 @@ pub use crate::types::_suggestion_query::SuggestionQueryBuilder;
 
 pub use crate::types::_property_name_query::PropertyNameQueryBuilder;
 
+pub use crate::types::_dynamic_scaling_configuration::DynamicScalingConfigurationBuilder;
+
+pub use crate::types::_target_tracking_scaling_policy_configuration::TargetTrackingScalingPolicyConfigurationBuilder;
+
+pub use crate::types::_customized_metric_specification::CustomizedMetricSpecificationBuilder;
+
+pub use crate::types::_predefined_metric_specification::PredefinedMetricSpecificationBuilder;
+
+pub use crate::types::_scaling_policy_metric::ScalingPolicyMetricBuilder;
+
+pub use crate::types::_scaling_policy_objective::ScalingPolicyObjectiveBuilder;
+
 pub use crate::types::_edge_model_stat::EdgeModelStatBuilder;
 
 pub use crate::types::_agent_version::AgentVersionBuilder;
 
 pub use crate::types::_device_stats::DeviceStatsBuilder;
 
-pub use crate::types::_batch_data_capture_config::BatchDataCaptureConfigBuilder;
-
 pub use crate::types::_profiler_rule_evaluation_status::ProfilerRuleEvaluationStatusBuilder;
-
-pub use crate::types::_profiler_config::ProfilerConfigBuilder;
 
 pub use crate::types::_monitoring_network_config::MonitoringNetworkConfigBuilder;
 
@@ -820,6 +834,8 @@ pub use crate::types::_categorical_parameter::CategoricalParameterBuilder;
 pub use crate::types::_recommendation_job_resource_limit::RecommendationJobResourceLimitBuilder;
 
 pub use crate::types::_traffic_pattern::TrafficPatternBuilder;
+
+pub use crate::types::_stairs::StairsBuilder;
 
 pub use crate::types::_phase::PhaseBuilder;
 
@@ -901,6 +917,8 @@ pub use crate::types::_data_quality_app_specification::DataQualityAppSpecificati
 
 pub use crate::types::_data_quality_baseline_config::DataQualityBaselineConfigBuilder;
 
+pub use crate::types::_derived_information::DerivedInformationBuilder;
+
 pub use crate::types::_neo_vpc_config::NeoVpcConfigBuilder;
 
 pub use crate::types::_output_config::OutputConfigBuilder;
@@ -930,6 +948,8 @@ pub use crate::types::_model_deploy_result::ModelDeployResultBuilder;
 pub use crate::types::_model_deploy_config::ModelDeployConfigBuilder;
 
 pub use crate::types::_time_series_forecasting_job_config::TimeSeriesForecastingJobConfigBuilder;
+
+pub use crate::types::_holiday_config_attributes::HolidayConfigAttributesBuilder;
 
 pub use crate::types::_time_series_config::TimeSeriesConfigBuilder;
 

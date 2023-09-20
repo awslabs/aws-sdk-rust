@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAssociationForServiceQuotaTemplateOutput {
-    /// <p>The association status. If the status is <code>ASSOCIATED</code>, the quota increase requests in the template are automatically applied to new accounts in your organization.</p>
+    /// <p>The association status. If the status is <code>ASSOCIATED</code>, the quota increase requests in the template are automatically applied to new Amazon Web Services accounts in your organization.</p>
     pub service_quota_template_association_status: ::std::option::Option<crate::types::ServiceQuotaTemplateAssociationStatus>,
     _request_id: Option<String>,
 }
 impl GetAssociationForServiceQuotaTemplateOutput {
-    /// <p>The association status. If the status is <code>ASSOCIATED</code>, the quota increase requests in the template are automatically applied to new accounts in your organization.</p>
+    /// <p>The association status. If the status is <code>ASSOCIATED</code>, the quota increase requests in the template are automatically applied to new Amazon Web Services accounts in your organization.</p>
     pub fn service_quota_template_association_status(&self) -> ::std::option::Option<&crate::types::ServiceQuotaTemplateAssociationStatus> {
         self.service_quota_template_association_status.as_ref()
     }
@@ -33,12 +33,12 @@ pub struct GetAssociationForServiceQuotaTemplateOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetAssociationForServiceQuotaTemplateOutputBuilder {
-    /// <p>The association status. If the status is <code>ASSOCIATED</code>, the quota increase requests in the template are automatically applied to new accounts in your organization.</p>
+    /// <p>The association status. If the status is <code>ASSOCIATED</code>, the quota increase requests in the template are automatically applied to new Amazon Web Services accounts in your organization.</p>
     pub fn service_quota_template_association_status(mut self, input: crate::types::ServiceQuotaTemplateAssociationStatus) -> Self {
         self.service_quota_template_association_status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The association status. If the status is <code>ASSOCIATED</code>, the quota increase requests in the template are automatically applied to new accounts in your organization.</p>
+    /// <p>The association status. If the status is <code>ASSOCIATED</code>, the quota increase requests in the template are automatically applied to new Amazon Web Services accounts in your organization.</p>
     pub fn set_service_quota_template_association_status(
         mut self,
         input: ::std::option::Option<crate::types::ServiceQuotaTemplateAssociationStatus>,
@@ -46,7 +46,7 @@ impl GetAssociationForServiceQuotaTemplateOutputBuilder {
         self.service_quota_template_association_status = input;
         self
     }
-    /// <p>The association status. If the status is <code>ASSOCIATED</code>, the quota increase requests in the template are automatically applied to new accounts in your organization.</p>
+    /// <p>The association status. If the status is <code>ASSOCIATED</code>, the quota increase requests in the template are automatically applied to new Amazon Web Services accounts in your organization.</p>
     pub fn get_service_quota_template_association_status(&self) -> &::std::option::Option<crate::types::ServiceQuotaTemplateAssociationStatus> {
         &self.service_quota_template_association_status
     }

@@ -39,6 +39,12 @@ pub use crate::types::_vpc_security_group_membership::VpcSecurityGroupMembership
 
 pub use crate::types::_db_security_group_membership::DbSecurityGroupMembershipBuilder;
 
+pub use crate::types::_global_cluster::GlobalClusterBuilder;
+
+pub use crate::types::_failover_state::FailoverStateBuilder;
+
+pub use crate::types::_global_cluster_member::GlobalClusterMemberBuilder;
+
 pub use crate::types::_blue_green_deployment::BlueGreenDeploymentBuilder;
 
 pub use crate::types::_blue_green_deployment_task::BlueGreenDeploymentTaskBuilder;
@@ -76,12 +82,6 @@ pub use crate::types::_scaling_configuration::ScalingConfigurationBuilder;
 pub use crate::types::_parameter::ParameterBuilder;
 
 pub use crate::types::_event_subscription::EventSubscriptionBuilder;
-
-pub use crate::types::_global_cluster::GlobalClusterBuilder;
-
-pub use crate::types::_failover_state::FailoverStateBuilder;
-
-pub use crate::types::_global_cluster_member::GlobalClusterMemberBuilder;
 
 pub use crate::types::_db_proxy_target::DbProxyTargetBuilder;
 
@@ -186,5 +186,7 @@ pub use crate::types::_db_cluster_parameter_group::DbClusterParameterGroupBuilde
 pub use crate::types::_db_cluster_endpoint::DbClusterEndpointBuilder;
 
 pub use crate::types::_db_cluster_backtrack::DbClusterBacktrackBuilder;
+
+pub use crate::types::_db_cluster_automated_backup::DbClusterAutomatedBackupBuilder;
 
 pub use crate::types::_account_quota::AccountQuotaBuilder;

@@ -48,6 +48,18 @@ pub fn ser_pivot_table_options(
     if let Some(var_15) = &input.collapsed_row_dimensions_visibility {
         object.key("CollapsedRowDimensionsVisibility").string(var_15.as_str());
     }
+    if let Some(var_16) = &input.rows_layout {
+        object.key("RowsLayout").string(var_16.as_str());
+    }
+    if let Some(var_17) = &input.rows_label_options {
+        #[allow(unused_mut)]
+        let mut object_18 = object.key("RowsLabelOptions").start_object();
+        crate::protocol_serde::shape_pivot_table_rows_label_options::ser_pivot_table_rows_label_options(&mut object_18, var_17)?;
+        object_18.finish();
+    }
+    if let Some(var_19) = &input.default_cell_width {
+        object.key("DefaultCellWidth").string(var_19.as_str());
+    }
     Ok(())
 }
 
@@ -115,6 +127,25 @@ where
                             builder = builder.set_collapsed_row_dimensions_visibility(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| crate::types::Visibility::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "RowsLayout" => {
+                            builder = builder.set_rows_layout(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::PivotTableRowsLayout::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "RowsLabelOptions" => {
+                            builder = builder.set_rows_label_options(
+                                crate::protocol_serde::shape_pivot_table_rows_label_options::de_pivot_table_rows_label_options(tokens)?,
+                            );
+                        }
+                        "DefaultCellWidth" => {
+                            builder = builder.set_default_cell_width(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
                             );
                         }

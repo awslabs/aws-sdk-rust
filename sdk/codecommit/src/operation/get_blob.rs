@@ -261,7 +261,7 @@ pub enum GetBlobError {
     EncryptionKeyNotFoundException(crate::types::error::EncryptionKeyNotFoundException),
     /// <p>The encryption key is not available.</p>
     EncryptionKeyUnavailableException(crate::types::error::EncryptionKeyUnavailableException),
-    /// <p>The specified file exceeds the file size limit for AWS CodeCommit. For more information about limits in AWS CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS CodeCommit User Guide</a>.</p>
+    /// <p>The specified file exceeds the file size limit for CodeCommit. For more information about limits in CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">Quotas</a> in the <i>CodeCommit User Guide</i>.</p>
     FileTooLargeException(crate::types::error::FileTooLargeException),
     /// <p>The specified blob is not valid.</p>
     InvalidBlobIdException(crate::types::error::InvalidBlobIdException),

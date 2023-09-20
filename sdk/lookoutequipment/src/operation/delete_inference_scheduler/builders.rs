@@ -22,7 +22,7 @@ impl DeleteInferenceSchedulerInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteInferenceScheduler`.
 ///
-/// <p>Deletes an inference scheduler that has been set up. Already processed output results are not affected. </p>
+/// <p>Deletes an inference scheduler that has been set up. Prior inference results will not be deleted.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteInferenceSchedulerFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TrustedSigners {
-    /// <p>This field is <code>true</code> if any of the Amazon Web Services accounts have public keys that CloudFront can use to verify the signatures of signed URLs and signed cookies. If not, this field is <code>false</code>.</p>
+    /// <p>This field is <code>true</code> if any of the Amazon Web Services accounts in the list are configured as trusted signers. If not, this field is <code>false</code>.</p>
     pub enabled: ::std::option::Option<bool>,
     /// <p>The number of Amazon Web Services accounts in the list.</p>
     pub quantity: ::std::option::Option<i32>,
@@ -12,7 +12,7 @@ pub struct TrustedSigners {
     pub items: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl TrustedSigners {
-    /// <p>This field is <code>true</code> if any of the Amazon Web Services accounts have public keys that CloudFront can use to verify the signatures of signed URLs and signed cookies. If not, this field is <code>false</code>.</p>
+    /// <p>This field is <code>true</code> if any of the Amazon Web Services accounts in the list are configured as trusted signers. If not, this field is <code>false</code>.</p>
     pub fn enabled(&self) -> ::std::option::Option<bool> {
         self.enabled
     }
@@ -41,17 +41,17 @@ pub struct TrustedSignersBuilder {
     pub(crate) items: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl TrustedSignersBuilder {
-    /// <p>This field is <code>true</code> if any of the Amazon Web Services accounts have public keys that CloudFront can use to verify the signatures of signed URLs and signed cookies. If not, this field is <code>false</code>.</p>
+    /// <p>This field is <code>true</code> if any of the Amazon Web Services accounts in the list are configured as trusted signers. If not, this field is <code>false</code>.</p>
     pub fn enabled(mut self, input: bool) -> Self {
         self.enabled = ::std::option::Option::Some(input);
         self
     }
-    /// <p>This field is <code>true</code> if any of the Amazon Web Services accounts have public keys that CloudFront can use to verify the signatures of signed URLs and signed cookies. If not, this field is <code>false</code>.</p>
+    /// <p>This field is <code>true</code> if any of the Amazon Web Services accounts in the list are configured as trusted signers. If not, this field is <code>false</code>.</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enabled = input;
         self
     }
-    /// <p>This field is <code>true</code> if any of the Amazon Web Services accounts have public keys that CloudFront can use to verify the signatures of signed URLs and signed cookies. If not, this field is <code>false</code>.</p>
+    /// <p>This field is <code>true</code> if any of the Amazon Web Services accounts in the list are configured as trusted signers. If not, this field is <code>false</code>.</p>
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
         &self.enabled
     }

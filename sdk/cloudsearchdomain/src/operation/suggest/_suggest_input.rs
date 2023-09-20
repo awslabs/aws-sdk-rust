@@ -9,7 +9,7 @@ pub struct SuggestInput {
     /// <p>Specifies the name of the suggester to use to find suggested matches.</p>
     pub suggester: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the maximum number of suggestions to return. </p>
-    pub size: i64,
+    pub size: ::std::option::Option<i64>,
 }
 impl SuggestInput {
     /// <p>Specifies the string for which you want to get suggestions.</p>
@@ -21,7 +21,7 @@ impl SuggestInput {
         self.suggester.as_deref()
     }
     /// <p>Specifies the maximum number of suggestions to return. </p>
-    pub fn size(&self) -> i64 {
+    pub fn size(&self) -> ::std::option::Option<i64> {
         self.size
     }
 }
@@ -88,7 +88,7 @@ impl SuggestInputBuilder {
         ::std::result::Result::Ok(crate::operation::suggest::SuggestInput {
             query: self.query,
             suggester: self.suggester,
-            size: self.size.unwrap_or_default(),
+            size: self.size,
         })
     }
 }

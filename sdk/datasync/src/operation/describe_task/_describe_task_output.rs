@@ -39,6 +39,8 @@ pub struct DescribeTaskOutput {
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A list of filter rules that include specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
     pub includes: ::std::option::Option<::std::vec::Vec<crate::types::FilterRule>>,
+    /// <p>The configuration of your task report. For more information, see <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/datasync/latest/userguide/creating-task-reports.html">Creating a task report</a>.</p>
+    pub task_report_config: ::std::option::Option<crate::types::TaskReportConfig>,
     _request_id: Option<String>,
 }
 impl DescribeTaskOutput {
@@ -109,6 +111,10 @@ impl DescribeTaskOutput {
     pub fn includes(&self) -> ::std::option::Option<&[crate::types::FilterRule]> {
         self.includes.as_deref()
     }
+    /// <p>The configuration of your task report. For more information, see <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/datasync/latest/userguide/creating-task-reports.html">Creating a task report</a>.</p>
+    pub fn task_report_config(&self) -> ::std::option::Option<&crate::types::TaskReportConfig> {
+        self.task_report_config.as_ref()
+    }
 }
 impl ::aws_http::request_id::RequestId for DescribeTaskOutput {
     fn request_id(&self) -> Option<&str> {
@@ -142,6 +148,7 @@ pub struct DescribeTaskOutputBuilder {
     pub(crate) error_detail: ::std::option::Option<::std::string::String>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) includes: ::std::option::Option<::std::vec::Vec<crate::types::FilterRule>>,
+    pub(crate) task_report_config: ::std::option::Option<crate::types::TaskReportConfig>,
     _request_id: Option<String>,
 }
 impl DescribeTaskOutputBuilder {
@@ -402,6 +409,20 @@ impl DescribeTaskOutputBuilder {
     pub fn get_includes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FilterRule>> {
         &self.includes
     }
+    /// <p>The configuration of your task report. For more information, see <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/datasync/latest/userguide/creating-task-reports.html">Creating a task report</a>.</p>
+    pub fn task_report_config(mut self, input: crate::types::TaskReportConfig) -> Self {
+        self.task_report_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration of your task report. For more information, see <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/datasync/latest/userguide/creating-task-reports.html">Creating a task report</a>.</p>
+    pub fn set_task_report_config(mut self, input: ::std::option::Option<crate::types::TaskReportConfig>) -> Self {
+        self.task_report_config = input;
+        self
+    }
+    /// <p>The configuration of your task report. For more information, see <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/datasync/latest/userguide/creating-task-reports.html">Creating a task report</a>.</p>
+    pub fn get_task_report_config(&self) -> &::std::option::Option<crate::types::TaskReportConfig> {
+        &self.task_report_config
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -430,6 +451,7 @@ impl DescribeTaskOutputBuilder {
             error_detail: self.error_detail,
             creation_time: self.creation_time,
             includes: self.includes,
+            task_report_config: self.task_report_config,
             _request_id: self._request_id,
         }
     }

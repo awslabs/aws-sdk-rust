@@ -6,7 +6,7 @@ pub struct DeleteGlobalReplicationGroupInput {
     /// <p>The name of the Global datastore</p>
     pub global_replication_group_id: ::std::option::Option<::std::string::String>,
     /// <p>The primary replication group is retained as a standalone replication group. </p>
-    pub retain_primary_replication_group: bool,
+    pub retain_primary_replication_group: ::std::option::Option<bool>,
 }
 impl DeleteGlobalReplicationGroupInput {
     /// <p>The name of the Global datastore</p>
@@ -14,7 +14,7 @@ impl DeleteGlobalReplicationGroupInput {
         self.global_replication_group_id.as_deref()
     }
     /// <p>The primary replication group is retained as a standalone replication group. </p>
-    pub fn retain_primary_replication_group(&self) -> bool {
+    pub fn retain_primary_replication_group(&self) -> ::std::option::Option<bool> {
         self.retain_primary_replication_group
     }
 }
@@ -70,7 +70,7 @@ impl DeleteGlobalReplicationGroupInputBuilder {
     > {
         ::std::result::Result::Ok(crate::operation::delete_global_replication_group::DeleteGlobalReplicationGroupInput {
             global_replication_group_id: self.global_replication_group_id,
-            retain_primary_replication_group: self.retain_primary_replication_group.unwrap_or_default(),
+            retain_primary_replication_group: self.retain_primary_replication_group,
         })
     }
 }

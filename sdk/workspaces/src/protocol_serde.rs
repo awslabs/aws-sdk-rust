@@ -453,6 +453,8 @@ pub(crate) mod shape_default_workspace_creation_properties;
 
 pub(crate) mod shape_dns_ip_addresses;
 
+pub(crate) mod shape_error_details_list;
+
 pub(crate) mod shape_ip_group_id_list;
 
 pub(crate) mod shape_ip_rule_list;
@@ -466,6 +468,8 @@ pub(crate) mod shape_subnet_ids;
 pub(crate) mod shape_update_result;
 
 pub(crate) mod shape_connection_alias_association;
+
+pub(crate) mod shape_error_details;
 
 pub(crate) mod shape_modification_state;
 

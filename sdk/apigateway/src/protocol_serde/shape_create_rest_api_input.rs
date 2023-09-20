@@ -21,39 +21,39 @@ pub fn ser_create_rest_api_input(
     if let Some(var_6) = &input.description {
         object.key("description").string(var_6.as_str());
     }
-    if input.disable_execute_api_endpoint {
-        object.key("disableExecuteApiEndpoint").boolean(input.disable_execute_api_endpoint);
+    if let Some(var_7) = &input.disable_execute_api_endpoint {
+        object.key("disableExecuteApiEndpoint").boolean(*var_7);
     }
-    if let Some(var_7) = &input.endpoint_configuration {
+    if let Some(var_8) = &input.endpoint_configuration {
         #[allow(unused_mut)]
-        let mut object_8 = object.key("endpointConfiguration").start_object();
-        crate::protocol_serde::shape_endpoint_configuration::ser_endpoint_configuration(&mut object_8, var_7)?;
-        object_8.finish();
+        let mut object_9 = object.key("endpointConfiguration").start_object();
+        crate::protocol_serde::shape_endpoint_configuration::ser_endpoint_configuration(&mut object_9, var_8)?;
+        object_9.finish();
     }
-    if let Some(var_9) = &input.minimum_compression_size {
+    if let Some(var_10) = &input.minimum_compression_size {
         object.key("minimumCompressionSize").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_9).into()),
+            ::aws_smithy_types::Number::NegInt((*var_10).into()),
         );
     }
-    if let Some(var_10) = &input.name {
-        object.key("name").string(var_10.as_str());
+    if let Some(var_11) = &input.name {
+        object.key("name").string(var_11.as_str());
     }
-    if let Some(var_11) = &input.policy {
-        object.key("policy").string(var_11.as_str());
+    if let Some(var_12) = &input.policy {
+        object.key("policy").string(var_12.as_str());
     }
-    if let Some(var_12) = &input.tags {
+    if let Some(var_13) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_13 = object.key("tags").start_object();
-        for (key_14, value_15) in var_12 {
+        let mut object_14 = object.key("tags").start_object();
+        for (key_15, value_16) in var_13 {
             {
-                object_13.key(key_14.as_str()).string(value_15.as_str());
+                object_14.key(key_15.as_str()).string(value_16.as_str());
             }
         }
-        object_13.finish();
+        object_14.finish();
     }
-    if let Some(var_16) = &input.version {
-        object.key("version").string(var_16.as_str());
+    if let Some(var_17) = &input.version {
+        object.key("version").string(var_17.as_str());
     }
     Ok(())
 }

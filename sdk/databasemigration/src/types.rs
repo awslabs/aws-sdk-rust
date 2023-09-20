@@ -21,6 +21,8 @@ pub use crate::types::_start_replication_task_type_value::StartReplicationTaskTy
 
 pub use crate::types::_recommendation_settings::RecommendationSettings;
 
+pub use crate::types::_origin_type_value::OriginTypeValue;
+
 pub use crate::types::_reload_option_value::ReloadOptionValue;
 
 pub use crate::types::_table_to_reload::TableToReload;
@@ -44,6 +46,16 @@ pub use crate::types::_vpc_security_group_membership::VpcSecurityGroupMembership
 pub use crate::types::_replication_config::ReplicationConfig;
 
 pub use crate::types::_compute_config::ComputeConfig;
+
+pub use crate::types::_migration_project::MigrationProject;
+
+pub use crate::types::_sc_application_attributes::ScApplicationAttributes;
+
+pub use crate::types::_data_provider_descriptor::DataProviderDescriptor;
+
+pub use crate::types::_data_provider_descriptor_definition::DataProviderDescriptorDefinition;
+
+pub use crate::types::_instance_profile::InstanceProfile;
 
 pub use crate::types::_event_subscription::EventSubscription;
 
@@ -139,9 +151,25 @@ pub use crate::types::_dms_ssl_mode_value::DmsSslModeValue;
 
 pub use crate::types::_replication_endpoint_type_value::ReplicationEndpointTypeValue;
 
+pub use crate::types::_data_provider::DataProvider;
+
+pub use crate::types::_data_provider_settings::DataProviderSettings;
+
+pub use crate::types::_microsoft_sql_server_data_provider_settings::MicrosoftSqlServerDataProviderSettings;
+
+pub use crate::types::_oracle_data_provider_settings::OracleDataProviderSettings;
+
+pub use crate::types::_my_sql_data_provider_settings::MySqlDataProviderSettings;
+
+pub use crate::types::_postgre_sql_data_provider_settings::PostgreSqlDataProviderSettings;
+
 pub use crate::types::_tag::Tag;
 
 pub use crate::types::_certificate::Certificate;
+
+pub use crate::types::_export_metadata_model_assessment_result_entry::ExportMetadataModelAssessmentResultEntry;
+
+pub use crate::types::_assessment_report_type::AssessmentReportType;
 
 pub use crate::types::_table_statistics::TableStatistics;
 
@@ -172,6 +200,14 @@ pub use crate::types::_pending_maintenance_action::PendingMaintenanceAction;
 pub use crate::types::_orderable_replication_instance::OrderableReplicationInstance;
 
 pub use crate::types::_release_status_values::ReleaseStatusValues;
+
+pub use crate::types::_schema_conversion_request::SchemaConversionRequest;
+
+pub use crate::types::_export_sql_details::ExportSqlDetails;
+
+pub use crate::types::_error_details::ErrorDetails;
+
+pub use crate::types::_default_error_details::DefaultErrorDetails;
 
 pub use crate::types::_schema_response::SchemaResponse;
 
@@ -207,6 +243,8 @@ pub use crate::types::_source_type::SourceType;
 
 pub use crate::types::_event_category_group::EventCategoryGroup;
 
+pub use crate::types::_engine_version::EngineVersion;
+
 pub use crate::types::_supported_endpoint_type::SupportedEndpointType;
 
 pub use crate::types::_endpoint_setting::EndpointSetting;
@@ -220,6 +258,8 @@ pub use crate::types::_batch_start_recommendations_error_entry::BatchStartRecomm
 pub use crate::types::_start_recommendations_request_entry::StartRecommendationsRequestEntry;
 
 mod _account_quota;
+
+mod _assessment_report_type;
 
 mod _auth_mechanism_value;
 
@@ -251,6 +291,14 @@ mod _connection;
 
 mod _data_format_value;
 
+mod _data_provider;
+
+mod _data_provider_descriptor;
+
+mod _data_provider_descriptor_definition;
+
+mod _data_provider_settings;
+
 mod _database_instance_software_details_response;
 
 mod _database_mode;
@@ -262,6 +310,8 @@ mod _database_short_info_response;
 mod _date_partition_delimiter_value;
 
 mod _date_partition_sequence_value;
+
+mod _default_error_details;
 
 mod _dms_ssl_mode_value;
 
@@ -283,11 +333,19 @@ mod _endpoint_setting;
 
 mod _endpoint_setting_type_value;
 
+mod _engine_version;
+
+mod _error_details;
+
 mod _event;
 
 mod _event_category_group;
 
 mod _event_subscription;
+
+mod _export_metadata_model_assessment_result_entry;
+
+mod _export_sql_details;
 
 mod _filter;
 
@@ -298,6 +356,8 @@ mod _fleet_advisor_schema_object_response;
 mod _gcp_my_sql_settings;
 
 mod _ibm_db2_settings;
+
+mod _instance_profile;
 
 mod _inventory_data;
 
@@ -317,11 +377,17 @@ mod _long_varchar_mapping_type;
 
 mod _message_format_value;
 
+mod _microsoft_sql_server_data_provider_settings;
+
 mod _microsoft_sql_server_settings;
+
+mod _migration_project;
 
 mod _migration_type_value;
 
 mod _mongo_db_settings;
+
+mod _my_sql_data_provider_settings;
 
 mod _my_sql_settings;
 
@@ -329,15 +395,21 @@ mod _neptune_settings;
 
 mod _nesting_level_value;
 
+mod _oracle_data_provider_settings;
+
 mod _oracle_settings;
 
 mod _orderable_replication_instance;
+
+mod _origin_type_value;
 
 mod _parquet_version_value;
 
 mod _pending_maintenance_action;
 
 mod _plugin_name_value;
+
+mod _postgre_sql_data_provider_settings;
 
 mod _postgre_sql_settings;
 
@@ -402,6 +474,10 @@ mod _resource_pending_maintenance_actions;
 mod _s3_settings;
 
 mod _safeguard_policy;
+
+mod _sc_application_attributes;
+
+mod _schema_conversion_request;
 
 mod _schema_response;
 

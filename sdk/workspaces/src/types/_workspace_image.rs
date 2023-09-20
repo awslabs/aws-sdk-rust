@@ -26,6 +26,8 @@ pub struct WorkspaceImage {
     pub owner_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The updates (if any) that are available for the specified image.</p>
     pub updates: ::std::option::Option<crate::types::UpdateResult>,
+    /// <p>The details of the error returned for the image.</p>
+    pub error_details: ::std::option::Option<::std::vec::Vec<crate::types::ErrorDetails>>,
 }
 impl WorkspaceImage {
     /// <p>The identifier of the image.</p>
@@ -72,6 +74,10 @@ impl WorkspaceImage {
     pub fn updates(&self) -> ::std::option::Option<&crate::types::UpdateResult> {
         self.updates.as_ref()
     }
+    /// <p>The details of the error returned for the image.</p>
+    pub fn error_details(&self) -> ::std::option::Option<&[crate::types::ErrorDetails]> {
+        self.error_details.as_deref()
+    }
 }
 impl WorkspaceImage {
     /// Creates a new builder-style object to manufacture [`WorkspaceImage`](crate::types::WorkspaceImage).
@@ -95,6 +101,7 @@ pub struct WorkspaceImageBuilder {
     pub(crate) created: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) owner_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) updates: ::std::option::Option<crate::types::UpdateResult>,
+    pub(crate) error_details: ::std::option::Option<::std::vec::Vec<crate::types::ErrorDetails>>,
 }
 impl WorkspaceImageBuilder {
     /// <p>The identifier of the image.</p>
@@ -251,6 +258,26 @@ impl WorkspaceImageBuilder {
     pub fn get_updates(&self) -> &::std::option::Option<crate::types::UpdateResult> {
         &self.updates
     }
+    /// Appends an item to `error_details`.
+    ///
+    /// To override the contents of this collection use [`set_error_details`](Self::set_error_details).
+    ///
+    /// <p>The details of the error returned for the image.</p>
+    pub fn error_details(mut self, input: crate::types::ErrorDetails) -> Self {
+        let mut v = self.error_details.unwrap_or_default();
+        v.push(input);
+        self.error_details = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The details of the error returned for the image.</p>
+    pub fn set_error_details(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ErrorDetails>>) -> Self {
+        self.error_details = input;
+        self
+    }
+    /// <p>The details of the error returned for the image.</p>
+    pub fn get_error_details(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ErrorDetails>> {
+        &self.error_details
+    }
     /// Consumes the builder and constructs a [`WorkspaceImage`](crate::types::WorkspaceImage).
     pub fn build(self) -> crate::types::WorkspaceImage {
         crate::types::WorkspaceImage {
@@ -265,6 +292,7 @@ impl WorkspaceImageBuilder {
             created: self.created,
             owner_account_id: self.owner_account_id,
             updates: self.updates,
+            error_details: self.error_details,
         }
     }
 }

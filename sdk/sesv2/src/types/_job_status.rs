@@ -12,6 +12,7 @@
 /// ```text
 /// # let jobstatus = unimplemented!();
 /// match jobstatus {
+///     JobStatus::Cancelled => { /* ... */ },
 ///     JobStatus::Completed => { /* ... */ },
 ///     JobStatus::Created => { /* ... */ },
 ///     JobStatus::Failed => { /* ... */ },
@@ -37,12 +38,32 @@
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
-/// <p>The status of the import job.</p>
+/// <p>The status of a job.</p>
+/// <ul>
+/// <li>
+/// <p>
+/// <code>CREATED</code> – Job has just been created.</p>
+/// </li>
+/// <li>
+/// <p>
+/// <code>PROCESSING</code> – Job is processing.</p>
+/// </li>
+/// <li>
+/// <p>
+/// <code>ERROR</code> – An error occurred during processing.</p>
+/// </li>
+/// <li>
+/// <p>
+/// <code>COMPLETED</code> – Job has completed processing successfully.</p>
+/// </li>
+/// </ul>
 #[non_exhaustive]
 #[derive(
     ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum JobStatus {
+    #[allow(missing_docs)] // documentation missing in model
+    Cancelled,
     #[allow(missing_docs)] // documentation missing in model
     Completed,
     #[allow(missing_docs)] // documentation missing in model
@@ -57,6 +78,7 @@ pub enum JobStatus {
 impl ::std::convert::From<&str> for JobStatus {
     fn from(s: &str) -> Self {
         match s {
+            "CANCELLED" => JobStatus::Cancelled,
             "COMPLETED" => JobStatus::Completed,
             "CREATED" => JobStatus::Created,
             "FAILED" => JobStatus::Failed,
@@ -76,6 +98,7 @@ impl JobStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            JobStatus::Cancelled => "CANCELLED",
             JobStatus::Completed => "COMPLETED",
             JobStatus::Created => "CREATED",
             JobStatus::Failed => "FAILED",
@@ -85,7 +108,7 @@ impl JobStatus {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["COMPLETED", "CREATED", "FAILED", "PROCESSING"]
+        &["CANCELLED", "COMPLETED", "CREATED", "FAILED", "PROCESSING"]
     }
 }
 impl ::std::convert::AsRef<str> for JobStatus {

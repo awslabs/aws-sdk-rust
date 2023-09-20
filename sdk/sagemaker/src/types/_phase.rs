@@ -4,15 +4,15 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Phase {
-    /// <p>Specifies how many concurrent users to start with.</p>
+    /// <p>Specifies how many concurrent users to start with. The value should be between 1 and 3.</p>
     pub initial_number_of_users: ::std::option::Option<i32>,
     /// <p>Specified how many new users to spawn in a minute.</p>
     pub spawn_rate: ::std::option::Option<i32>,
-    /// <p>Specifies how long traffic phase should be.</p>
+    /// <p>Specifies how long a traffic phase should be. For custom load tests, the value should be between 120 and 3600. This value should not exceed <code>JobDurationInSeconds</code>.</p>
     pub duration_in_seconds: ::std::option::Option<i32>,
 }
 impl Phase {
-    /// <p>Specifies how many concurrent users to start with.</p>
+    /// <p>Specifies how many concurrent users to start with. The value should be between 1 and 3.</p>
     pub fn initial_number_of_users(&self) -> ::std::option::Option<i32> {
         self.initial_number_of_users
     }
@@ -20,7 +20,7 @@ impl Phase {
     pub fn spawn_rate(&self) -> ::std::option::Option<i32> {
         self.spawn_rate
     }
-    /// <p>Specifies how long traffic phase should be.</p>
+    /// <p>Specifies how long a traffic phase should be. For custom load tests, the value should be between 120 and 3600. This value should not exceed <code>JobDurationInSeconds</code>.</p>
     pub fn duration_in_seconds(&self) -> ::std::option::Option<i32> {
         self.duration_in_seconds
     }
@@ -41,17 +41,17 @@ pub struct PhaseBuilder {
     pub(crate) duration_in_seconds: ::std::option::Option<i32>,
 }
 impl PhaseBuilder {
-    /// <p>Specifies how many concurrent users to start with.</p>
+    /// <p>Specifies how many concurrent users to start with. The value should be between 1 and 3.</p>
     pub fn initial_number_of_users(mut self, input: i32) -> Self {
         self.initial_number_of_users = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies how many concurrent users to start with.</p>
+    /// <p>Specifies how many concurrent users to start with. The value should be between 1 and 3.</p>
     pub fn set_initial_number_of_users(mut self, input: ::std::option::Option<i32>) -> Self {
         self.initial_number_of_users = input;
         self
     }
-    /// <p>Specifies how many concurrent users to start with.</p>
+    /// <p>Specifies how many concurrent users to start with. The value should be between 1 and 3.</p>
     pub fn get_initial_number_of_users(&self) -> &::std::option::Option<i32> {
         &self.initial_number_of_users
     }
@@ -69,17 +69,17 @@ impl PhaseBuilder {
     pub fn get_spawn_rate(&self) -> &::std::option::Option<i32> {
         &self.spawn_rate
     }
-    /// <p>Specifies how long traffic phase should be.</p>
+    /// <p>Specifies how long a traffic phase should be. For custom load tests, the value should be between 120 and 3600. This value should not exceed <code>JobDurationInSeconds</code>.</p>
     pub fn duration_in_seconds(mut self, input: i32) -> Self {
         self.duration_in_seconds = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies how long traffic phase should be.</p>
+    /// <p>Specifies how long a traffic phase should be. For custom load tests, the value should be between 120 and 3600. This value should not exceed <code>JobDurationInSeconds</code>.</p>
     pub fn set_duration_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.duration_in_seconds = input;
         self
     }
-    /// <p>Specifies how long traffic phase should be.</p>
+    /// <p>Specifies how long a traffic phase should be. For custom load tests, the value should be between 120 and 3600. This value should not exceed <code>JobDurationInSeconds</code>.</p>
     pub fn get_duration_in_seconds(&self) -> &::std::option::Option<i32> {
         &self.duration_in_seconds
     }

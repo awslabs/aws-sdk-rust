@@ -138,31 +138,31 @@ impl CreateFolderMembershipFluentBuilder {
     pub fn get_folder_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_folder_id()
     }
-    /// <p>The ID of the asset (the dashboard, analysis, or dataset).</p>
+    /// <p>The ID of the asset that you want to add to the folder.</p>
     pub fn member_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.member_id(input.into());
         self
     }
-    /// <p>The ID of the asset (the dashboard, analysis, or dataset).</p>
+    /// <p>The ID of the asset that you want to add to the folder.</p>
     pub fn set_member_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_member_id(input);
         self
     }
-    /// <p>The ID of the asset (the dashboard, analysis, or dataset).</p>
+    /// <p>The ID of the asset that you want to add to the folder.</p>
     pub fn get_member_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_member_id()
     }
-    /// <p>The type of the member, including <code>DASHBOARD</code>, <code>ANALYSIS</code>, and <code>DATASET</code>.</p>
+    /// <p>The member type of the asset that you want to add to a folder.</p>
     pub fn member_type(mut self, input: crate::types::MemberType) -> Self {
         self.inner = self.inner.member_type(input);
         self
     }
-    /// <p>The type of the member, including <code>DASHBOARD</code>, <code>ANALYSIS</code>, and <code>DATASET</code>.</p>
+    /// <p>The member type of the asset that you want to add to a folder.</p>
     pub fn set_member_type(mut self, input: ::std::option::Option<crate::types::MemberType>) -> Self {
         self.inner = self.inner.set_member_type(input);
         self
     }
-    /// <p>The type of the member, including <code>DASHBOARD</code>, <code>ANALYSIS</code>, and <code>DATASET</code>.</p>
+    /// <p>The member type of the asset that you want to add to a folder.</p>
     pub fn get_member_type(&self) -> &::std::option::Option<crate::types::MemberType> {
         self.inner.get_member_type()
     }

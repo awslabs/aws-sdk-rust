@@ -133,17 +133,17 @@ impl IncreaseNodeGroupsInGlobalReplicationGroupFluentBuilder {
     pub fn get_global_replication_group_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_global_replication_group_id()
     }
-    /// <p>The number of node groups you wish to add</p>
+    /// <p>Total number of node groups you want</p>
     pub fn node_group_count(mut self, input: i32) -> Self {
         self.inner = self.inner.node_group_count(input);
         self
     }
-    /// <p>The number of node groups you wish to add</p>
+    /// <p>Total number of node groups you want</p>
     pub fn set_node_group_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_node_group_count(input);
         self
     }
-    /// <p>The number of node groups you wish to add</p>
+    /// <p>Total number of node groups you want</p>
     pub fn get_node_group_count(&self) -> &::std::option::Option<i32> {
         self.inner.get_node_group_count()
     }

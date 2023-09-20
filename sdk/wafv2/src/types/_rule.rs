@@ -4,7 +4,8 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Rule {
-    /// <p>The name of the rule. You can't change the name of a <code>Rule</code> after you create it. </p>
+    /// <p>The name of the rule. </p>
+    /// <p>If you change the name of a <code>Rule</code> after you create it and you want the rule's metric name to reflect the change, update the metric name in the rule's <code>VisibilityConfig</code> settings. WAF doesn't automatically update the metric name when you update the rule name. </p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>If you define more than one <code>Rule</code> in a <code>WebACL</code>, WAF evaluates each request against the <code>Rules</code> in order based on the value of <code>Priority</code>. WAF processes rules with lower priority first. The priorities don't need to be consecutive, but they must all be different.</p>
     pub priority: i32,
@@ -35,6 +36,7 @@ pub struct Rule {
     /// <p>For example, <code>myLabelName</code> or <code>nameSpace1:nameSpace2:myLabelName</code>. </p>
     pub rule_labels: ::std::option::Option<::std::vec::Vec<crate::types::Label>>,
     /// <p>Defines and enables Amazon CloudWatch metrics and web request sample collection. </p>
+    /// <p>If you change the name of a <code>Rule</code> after you create it and you want the rule's metric name to reflect the change, update the metric name as well. WAF doesn't automatically update the metric name. </p>
     pub visibility_config: ::std::option::Option<crate::types::VisibilityConfig>,
     /// <p>Specifies how WAF should handle <code>CAPTCHA</code> evaluations. If you don't specify this, WAF uses the <code>CAPTCHA</code> configuration that's defined for the web ACL. </p>
     pub captcha_config: ::std::option::Option<crate::types::CaptchaConfig>,
@@ -42,7 +44,8 @@ pub struct Rule {
     pub challenge_config: ::std::option::Option<crate::types::ChallengeConfig>,
 }
 impl Rule {
-    /// <p>The name of the rule. You can't change the name of a <code>Rule</code> after you create it. </p>
+    /// <p>The name of the rule. </p>
+    /// <p>If you change the name of a <code>Rule</code> after you create it and you want the rule's metric name to reflect the change, update the metric name in the rule's <code>VisibilityConfig</code> settings. WAF doesn't automatically update the metric name when you update the rule name. </p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -85,6 +88,7 @@ impl Rule {
         self.rule_labels.as_deref()
     }
     /// <p>Defines and enables Amazon CloudWatch metrics and web request sample collection. </p>
+    /// <p>If you change the name of a <code>Rule</code> after you create it and you want the rule's metric name to reflect the change, update the metric name as well. WAF doesn't automatically update the metric name. </p>
     pub fn visibility_config(&self) -> ::std::option::Option<&crate::types::VisibilityConfig> {
         self.visibility_config.as_ref()
     }
@@ -119,17 +123,20 @@ pub struct RuleBuilder {
     pub(crate) challenge_config: ::std::option::Option<crate::types::ChallengeConfig>,
 }
 impl RuleBuilder {
-    /// <p>The name of the rule. You can't change the name of a <code>Rule</code> after you create it. </p>
+    /// <p>The name of the rule. </p>
+    /// <p>If you change the name of a <code>Rule</code> after you create it and you want the rule's metric name to reflect the change, update the metric name in the rule's <code>VisibilityConfig</code> settings. WAF doesn't automatically update the metric name when you update the rule name. </p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the rule. You can't change the name of a <code>Rule</code> after you create it. </p>
+    /// <p>The name of the rule. </p>
+    /// <p>If you change the name of a <code>Rule</code> after you create it and you want the rule's metric name to reflect the change, update the metric name in the rule's <code>VisibilityConfig</code> settings. WAF doesn't automatically update the metric name when you update the rule name. </p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>The name of the rule. You can't change the name of a <code>Rule</code> after you create it. </p>
+    /// <p>The name of the rule. </p>
+    /// <p>If you change the name of a <code>Rule</code> after you create it and you want the rule's metric name to reflect the change, update the metric name in the rule's <code>VisibilityConfig</code> settings. WAF doesn't automatically update the metric name when you update the rule name. </p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
@@ -264,16 +271,19 @@ impl RuleBuilder {
         &self.rule_labels
     }
     /// <p>Defines and enables Amazon CloudWatch metrics and web request sample collection. </p>
+    /// <p>If you change the name of a <code>Rule</code> after you create it and you want the rule's metric name to reflect the change, update the metric name as well. WAF doesn't automatically update the metric name. </p>
     pub fn visibility_config(mut self, input: crate::types::VisibilityConfig) -> Self {
         self.visibility_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>Defines and enables Amazon CloudWatch metrics and web request sample collection. </p>
+    /// <p>If you change the name of a <code>Rule</code> after you create it and you want the rule's metric name to reflect the change, update the metric name as well. WAF doesn't automatically update the metric name. </p>
     pub fn set_visibility_config(mut self, input: ::std::option::Option<crate::types::VisibilityConfig>) -> Self {
         self.visibility_config = input;
         self
     }
     /// <p>Defines and enables Amazon CloudWatch metrics and web request sample collection. </p>
+    /// <p>If you change the name of a <code>Rule</code> after you create it and you want the rule's metric name to reflect the change, update the metric name as well. WAF doesn't automatically update the metric name. </p>
     pub fn get_visibility_config(&self) -> &::std::option::Option<crate::types::VisibilityConfig> {
         &self.visibility_config
     }

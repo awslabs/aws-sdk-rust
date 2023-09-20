@@ -16,6 +16,8 @@
 ///     RequestStatus::CaseClosed => { /* ... */ },
 ///     RequestStatus::CaseOpened => { /* ... */ },
 ///     RequestStatus::Denied => { /* ... */ },
+///     RequestStatus::InvalidRequest => { /* ... */ },
+///     RequestStatus::NotApproved => { /* ... */ },
 ///     RequestStatus::Pending => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -53,6 +55,10 @@ pub enum RequestStatus {
     #[allow(missing_docs)] // documentation missing in model
     Denied,
     #[allow(missing_docs)] // documentation missing in model
+    InvalidRequest,
+    #[allow(missing_docs)] // documentation missing in model
+    NotApproved,
+    #[allow(missing_docs)] // documentation missing in model
     Pending,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
@@ -64,6 +70,8 @@ impl ::std::convert::From<&str> for RequestStatus {
             "CASE_CLOSED" => RequestStatus::CaseClosed,
             "CASE_OPENED" => RequestStatus::CaseOpened,
             "DENIED" => RequestStatus::Denied,
+            "INVALID_REQUEST" => RequestStatus::InvalidRequest,
+            "NOT_APPROVED" => RequestStatus::NotApproved,
             "PENDING" => RequestStatus::Pending,
             other => RequestStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
@@ -84,13 +92,23 @@ impl RequestStatus {
             RequestStatus::CaseClosed => "CASE_CLOSED",
             RequestStatus::CaseOpened => "CASE_OPENED",
             RequestStatus::Denied => "DENIED",
+            RequestStatus::InvalidRequest => "INVALID_REQUEST",
+            RequestStatus::NotApproved => "NOT_APPROVED",
             RequestStatus::Pending => "PENDING",
             RequestStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["APPROVED", "CASE_CLOSED", "CASE_OPENED", "DENIED", "PENDING"]
+        &[
+            "APPROVED",
+            "CASE_CLOSED",
+            "CASE_OPENED",
+            "DENIED",
+            "INVALID_REQUEST",
+            "NOT_APPROVED",
+            "PENDING",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for RequestStatus {

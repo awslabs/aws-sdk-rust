@@ -30,6 +30,8 @@ pub struct RestApi {
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Specifies whether clients can invoke your API by using the default <code>execute-api</code> endpoint. By default, clients can invoke your API with the default <code>https://{api_id}.execute-api.{region}.amazonaws.com</code> endpoint. To require that clients use a custom domain name to invoke your API, disable the default endpoint.</p>
     pub disable_execute_api_endpoint: bool,
+    /// <p>The API's root resource ID.</p>
+    pub root_resource_id: ::std::option::Option<::std::string::String>,
 }
 impl RestApi {
     /// <p>The API's identifier. This identifier is unique across all of your APIs in API Gateway.</p>
@@ -84,6 +86,10 @@ impl RestApi {
     pub fn disable_execute_api_endpoint(&self) -> bool {
         self.disable_execute_api_endpoint
     }
+    /// <p>The API's root resource ID.</p>
+    pub fn root_resource_id(&self) -> ::std::option::Option<&str> {
+        self.root_resource_id.as_deref()
+    }
 }
 impl RestApi {
     /// Creates a new builder-style object to manufacture [`RestApi`](crate::types::RestApi).
@@ -109,6 +115,7 @@ pub struct RestApiBuilder {
     pub(crate) policy: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) disable_execute_api_endpoint: ::std::option::Option<bool>,
+    pub(crate) root_resource_id: ::std::option::Option<::std::string::String>,
 }
 impl RestApiBuilder {
     /// <p>The API's identifier. This identifier is unique across all of your APIs in API Gateway.</p>
@@ -311,6 +318,20 @@ impl RestApiBuilder {
     pub fn get_disable_execute_api_endpoint(&self) -> &::std::option::Option<bool> {
         &self.disable_execute_api_endpoint
     }
+    /// <p>The API's root resource ID.</p>
+    pub fn root_resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.root_resource_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The API's root resource ID.</p>
+    pub fn set_root_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.root_resource_id = input;
+        self
+    }
+    /// <p>The API's root resource ID.</p>
+    pub fn get_root_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.root_resource_id
+    }
     /// Consumes the builder and constructs a [`RestApi`](crate::types::RestApi).
     pub fn build(self) -> crate::types::RestApi {
         crate::types::RestApi {
@@ -327,6 +348,7 @@ impl RestApiBuilder {
             policy: self.policy,
             tags: self.tags,
             disable_execute_api_endpoint: self.disable_execute_api_endpoint.unwrap_or_default(),
+            root_resource_id: self.root_resource_id,
         }
     }
 }

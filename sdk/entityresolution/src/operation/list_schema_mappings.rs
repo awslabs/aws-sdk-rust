@@ -276,11 +276,11 @@ pub type ListSchemaMappingsErrorKind = ListSchemaMappingsError;
 pub enum ListSchemaMappingsError {
     /// <p>You do not have sufficient access to perform this action. <code>HTTP Status Code: 403</code> </p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
-    /// <p>This exception occurs when there is an internal failure in the AWS Entity Resolution service. <code>HTTP Status Code: 500</code> </p>
+    /// <p>This exception occurs when there is an internal failure in the Entity Resolution service. <code>HTTP Status Code: 500</code> </p>
     InternalServerException(crate::types::error::InternalServerException),
     /// <p>The request was denied due to request throttling. <code>HTTP Status Code: 429</code> </p>
     ThrottlingException(crate::types::error::ThrottlingException),
-    /// <p>The input fails to satisfy the constraints specified by AWS Entity Resolution. <code>HTTP Status Code: 400</code> </p>
+    /// <p>The input fails to satisfy the constraints specified by Entity Resolution. <code>HTTP Status Code: 400</code> </p>
     ValidationException(crate::types::error::ValidationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(::aws_smithy_types::error::Unhandled),

@@ -18,5 +18,14 @@ pub fn ser_update_resource_input(
         crate::protocol_serde::shape_booking_options::ser_booking_options(&mut object_5, var_4)?;
         object_5.finish();
     }
+    if let Some(var_6) = &input.description {
+        object.key("Description").string(var_6.as_str());
+    }
+    if let Some(var_7) = &input.r#type {
+        object.key("Type").string(var_7.as_str());
+    }
+    if let Some(var_8) = &input.hidden_from_global_address_list {
+        object.key("HiddenFromGlobalAddressList").boolean(*var_8);
+    }
     Ok(())
 }

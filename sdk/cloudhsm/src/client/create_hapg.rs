@@ -7,6 +7,7 @@ impl super::Client {
     /// - On success, responds with [`CreateHapgOutput`](crate::operation::create_hapg::CreateHapgOutput) with field(s):
     ///   - [`hapg_arn(Option<String>)`](crate::operation::create_hapg::CreateHapgOutput::hapg_arn): <p>The ARN of the high-availability partition group.</p>
     /// - On failure, responds with [`SdkError<CreateHapgError>`](crate::operation::create_hapg::CreateHapgError)
+    #[deprecated(note = "This API is deprecated.")]
     pub fn create_hapg(&self) -> crate::operation::create_hapg::builders::CreateHapgFluentBuilder {
         crate::operation::create_hapg::builders::CreateHapgFluentBuilder::new(self.handle.clone())
     }

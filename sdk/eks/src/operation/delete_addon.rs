@@ -214,8 +214,10 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for DeleteAddon
                 mut output: &mut ::std::string::String,
             ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError> {
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
-                if _input.preserve {
-                    query.push_kv("preserve", ::aws_smithy_types::primitive::Encoder::from(_input.preserve).encode());
+                if let ::std::option::Option::Some(inner_3) = &_input.preserve {
+                    if *inner_3 {
+                        query.push_kv("preserve", ::aws_smithy_types::primitive::Encoder::from(*inner_3).encode());
+                    }
                 }
                 ::std::result::Result::Ok(())
             }

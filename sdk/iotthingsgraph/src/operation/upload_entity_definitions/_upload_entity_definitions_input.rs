@@ -6,9 +6,9 @@ pub struct UploadEntityDefinitionsInput {
     /// <p>The <code>DefinitionDocument</code> that defines the updated entities.</p>
     pub document: ::std::option::Option<crate::types::DefinitionDocument>,
     /// <p>A Boolean that specifies whether to synchronize with the latest version of the public namespace. If set to <code>true</code>, the upload will create a new namespace version.</p>
-    pub sync_with_public_namespace: bool,
+    pub sync_with_public_namespace: ::std::option::Option<bool>,
     /// <p>A Boolean that specifies whether to deprecate all entities in the latest version before uploading the new <code>DefinitionDocument</code>. If set to <code>true</code>, the upload will create a new namespace version.</p>
-    pub deprecate_existing_entities: bool,
+    pub deprecate_existing_entities: ::std::option::Option<bool>,
 }
 impl UploadEntityDefinitionsInput {
     /// <p>The <code>DefinitionDocument</code> that defines the updated entities.</p>
@@ -16,11 +16,11 @@ impl UploadEntityDefinitionsInput {
         self.document.as_ref()
     }
     /// <p>A Boolean that specifies whether to synchronize with the latest version of the public namespace. If set to <code>true</code>, the upload will create a new namespace version.</p>
-    pub fn sync_with_public_namespace(&self) -> bool {
+    pub fn sync_with_public_namespace(&self) -> ::std::option::Option<bool> {
         self.sync_with_public_namespace
     }
     /// <p>A Boolean that specifies whether to deprecate all entities in the latest version before uploading the new <code>DefinitionDocument</code>. If set to <code>true</code>, the upload will create a new namespace version.</p>
-    pub fn deprecate_existing_entities(&self) -> bool {
+    pub fn deprecate_existing_entities(&self) -> ::std::option::Option<bool> {
         self.deprecate_existing_entities
     }
 }
@@ -91,8 +91,8 @@ impl UploadEntityDefinitionsInputBuilder {
     > {
         ::std::result::Result::Ok(crate::operation::upload_entity_definitions::UploadEntityDefinitionsInput {
             document: self.document,
-            sync_with_public_namespace: self.sync_with_public_namespace.unwrap_or_default(),
-            deprecate_existing_entities: self.deprecate_existing_entities.unwrap_or_default(),
+            sync_with_public_namespace: self.sync_with_public_namespace,
+            deprecate_existing_entities: self.deprecate_existing_entities,
         })
     }
 }

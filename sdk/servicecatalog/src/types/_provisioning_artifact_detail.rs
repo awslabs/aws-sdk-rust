@@ -11,11 +11,7 @@ pub struct ProvisioningArtifactDetail {
     /// <p>The description of the provisioning artifact.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The type of provisioning artifact.</p>
-    /// <ul>
-    /// <li> <p> <code>CLOUD_FORMATION_TEMPLATE</code> - CloudFormation template</p> </li>
-    /// <li> <p> <code>MARKETPLACE_AMI</code> - Amazon Web Services Marketplace AMI</p> </li>
-    /// <li> <p> <code>MARKETPLACE_CAR</code> - Amazon Web Services Marketplace Clusters and Amazon Web Services Resources</p> </li>
-    /// </ul>
+    /// <p> <code>CLOUD_FORMATION_TEMPLATE</code> - CloudFormation template</p>
     pub r#type: ::std::option::Option<crate::types::ProvisioningArtifactType>,
     /// <p>The UTC time stamp of the creation time.</p>
     pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -41,11 +37,7 @@ impl ProvisioningArtifactDetail {
         self.description.as_deref()
     }
     /// <p>The type of provisioning artifact.</p>
-    /// <ul>
-    /// <li> <p> <code>CLOUD_FORMATION_TEMPLATE</code> - CloudFormation template</p> </li>
-    /// <li> <p> <code>MARKETPLACE_AMI</code> - Amazon Web Services Marketplace AMI</p> </li>
-    /// <li> <p> <code>MARKETPLACE_CAR</code> - Amazon Web Services Marketplace Clusters and Amazon Web Services Resources</p> </li>
-    /// </ul>
+    /// <p> <code>CLOUD_FORMATION_TEMPLATE</code> - CloudFormation template</p>
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::ProvisioningArtifactType> {
         self.r#type.as_ref()
     }
@@ -131,31 +123,19 @@ impl ProvisioningArtifactDetailBuilder {
         &self.description
     }
     /// <p>The type of provisioning artifact.</p>
-    /// <ul>
-    /// <li> <p> <code>CLOUD_FORMATION_TEMPLATE</code> - CloudFormation template</p> </li>
-    /// <li> <p> <code>MARKETPLACE_AMI</code> - Amazon Web Services Marketplace AMI</p> </li>
-    /// <li> <p> <code>MARKETPLACE_CAR</code> - Amazon Web Services Marketplace Clusters and Amazon Web Services Resources</p> </li>
-    /// </ul>
+    /// <p> <code>CLOUD_FORMATION_TEMPLATE</code> - CloudFormation template</p>
     pub fn r#type(mut self, input: crate::types::ProvisioningArtifactType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of provisioning artifact.</p>
-    /// <ul>
-    /// <li> <p> <code>CLOUD_FORMATION_TEMPLATE</code> - CloudFormation template</p> </li>
-    /// <li> <p> <code>MARKETPLACE_AMI</code> - Amazon Web Services Marketplace AMI</p> </li>
-    /// <li> <p> <code>MARKETPLACE_CAR</code> - Amazon Web Services Marketplace Clusters and Amazon Web Services Resources</p> </li>
-    /// </ul>
+    /// <p> <code>CLOUD_FORMATION_TEMPLATE</code> - CloudFormation template</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ProvisioningArtifactType>) -> Self {
         self.r#type = input;
         self
     }
     /// <p>The type of provisioning artifact.</p>
-    /// <ul>
-    /// <li> <p> <code>CLOUD_FORMATION_TEMPLATE</code> - CloudFormation template</p> </li>
-    /// <li> <p> <code>MARKETPLACE_AMI</code> - Amazon Web Services Marketplace AMI</p> </li>
-    /// <li> <p> <code>MARKETPLACE_CAR</code> - Amazon Web Services Marketplace Clusters and Amazon Web Services Resources</p> </li>
-    /// </ul>
+    /// <p> <code>CLOUD_FORMATION_TEMPLATE</code> - CloudFormation template</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::ProvisioningArtifactType> {
         &self.r#type
     }

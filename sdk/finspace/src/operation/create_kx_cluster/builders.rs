@@ -248,17 +248,17 @@ impl CreateKxClusterFluentBuilder {
     pub fn get_cluster_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_cluster_description()
     }
-    /// <p>A structure for the metadata of a cluster. It includes information about like the CPUs needed, memory of instances, number of instances, and the port used while establishing a connection.</p>
+    /// <p>A structure for the metadata of a cluster. It includes information like the CPUs needed, memory of instances, and number of instances.</p>
     pub fn capacity_configuration(mut self, input: crate::types::CapacityConfiguration) -> Self {
         self.inner = self.inner.capacity_configuration(input);
         self
     }
-    /// <p>A structure for the metadata of a cluster. It includes information about like the CPUs needed, memory of instances, number of instances, and the port used while establishing a connection.</p>
+    /// <p>A structure for the metadata of a cluster. It includes information like the CPUs needed, memory of instances, and number of instances.</p>
     pub fn set_capacity_configuration(mut self, input: ::std::option::Option<crate::types::CapacityConfiguration>) -> Self {
         self.inner = self.inner.set_capacity_configuration(input);
         self
     }
-    /// <p>A structure for the metadata of a cluster. It includes information about like the CPUs needed, memory of instances, number of instances, and the port used while establishing a connection.</p>
+    /// <p>A structure for the metadata of a cluster. It includes information like the CPUs needed, memory of instances, and number of instances.</p>
     pub fn get_capacity_configuration(&self) -> &::std::option::Option<crate::types::CapacityConfiguration> {
         self.inner.get_capacity_configuration()
     }

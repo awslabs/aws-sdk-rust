@@ -22,7 +22,7 @@ impl UpdateTaskInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateTask`.
 ///
-/// <p>Updates the metadata associated with a task.</p>
+/// <p>Updates the configuration of a DataSync transfer task.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateTaskFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -124,20 +124,20 @@ impl UpdateTaskFluentBuilder {
     pub fn get_task_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_task_arn()
     }
-    /// <p>Configures your DataSync task settings. These options include how DataSync handles files, objects, and their associated metadata. You also can specify how DataSync verifies data integrity, set bandwidth limits for your task, among other options.</p>
-    /// <p>Each task setting has a default value. Unless you need to, you don't have to configure any of these <code>Options</code> before starting your task.</p>
+    /// <p>Indicates how your transfer task is configured. These options include how DataSync handles files, objects, and their associated metadata during your transfer. You also can specify how to verify data integrity, set bandwidth limits for your task, among other options.</p>
+    /// <p>Each option has a default value. Unless you need to, you don't have to configure any of these options before starting your task.</p>
     pub fn options(mut self, input: crate::types::Options) -> Self {
         self.inner = self.inner.options(input);
         self
     }
-    /// <p>Configures your DataSync task settings. These options include how DataSync handles files, objects, and their associated metadata. You also can specify how DataSync verifies data integrity, set bandwidth limits for your task, among other options.</p>
-    /// <p>Each task setting has a default value. Unless you need to, you don't have to configure any of these <code>Options</code> before starting your task.</p>
+    /// <p>Indicates how your transfer task is configured. These options include how DataSync handles files, objects, and their associated metadata during your transfer. You also can specify how to verify data integrity, set bandwidth limits for your task, among other options.</p>
+    /// <p>Each option has a default value. Unless you need to, you don't have to configure any of these options before starting your task.</p>
     pub fn set_options(mut self, input: ::std::option::Option<crate::types::Options>) -> Self {
         self.inner = self.inner.set_options(input);
         self
     }
-    /// <p>Configures your DataSync task settings. These options include how DataSync handles files, objects, and their associated metadata. You also can specify how DataSync verifies data integrity, set bandwidth limits for your task, among other options.</p>
-    /// <p>Each task setting has a default value. Unless you need to, you don't have to configure any of these <code>Options</code> before starting your task.</p>
+    /// <p>Indicates how your transfer task is configured. These options include how DataSync handles files, objects, and their associated metadata during your transfer. You also can specify how to verify data integrity, set bandwidth limits for your task, among other options.</p>
+    /// <p>Each option has a default value. Unless you need to, you don't have to configure any of these options before starting your task.</p>
     pub fn get_options(&self) -> &::std::option::Option<crate::types::Options> {
         self.inner.get_options()
     }
@@ -218,5 +218,19 @@ impl UpdateTaskFluentBuilder {
     /// <p>Specifies a list of filter rules that include specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
     pub fn get_includes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FilterRule>> {
         self.inner.get_includes()
+    }
+    /// <p>Specifies how you want to configure a task report, which provides detailed information about for your DataSync transfer.</p>
+    pub fn task_report_config(mut self, input: crate::types::TaskReportConfig) -> Self {
+        self.inner = self.inner.task_report_config(input);
+        self
+    }
+    /// <p>Specifies how you want to configure a task report, which provides detailed information about for your DataSync transfer.</p>
+    pub fn set_task_report_config(mut self, input: ::std::option::Option<crate::types::TaskReportConfig>) -> Self {
+        self.inner = self.inner.set_task_report_config(input);
+        self
+    }
+    /// <p>Specifies how you want to configure a task report, which provides detailed information about for your DataSync transfer.</p>
+    pub fn get_task_report_config(&self) -> &::std::option::Option<crate::types::TaskReportConfig> {
+        self.inner.get_task_report_config()
     }
 }

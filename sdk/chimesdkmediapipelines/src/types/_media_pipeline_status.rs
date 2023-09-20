@@ -15,6 +15,7 @@
 ///     MediaPipelineStatus::Failed => { /* ... */ },
 ///     MediaPipelineStatus::InProgress => { /* ... */ },
 ///     MediaPipelineStatus::Initializing => { /* ... */ },
+///     MediaPipelineStatus::NotStarted => { /* ... */ },
 ///     MediaPipelineStatus::Paused => { /* ... */ },
 ///     MediaPipelineStatus::Stopped => { /* ... */ },
 ///     MediaPipelineStatus::Stopping => { /* ... */ },
@@ -52,6 +53,8 @@ pub enum MediaPipelineStatus {
     #[allow(missing_docs)] // documentation missing in model
     Initializing,
     #[allow(missing_docs)] // documentation missing in model
+    NotStarted,
+    #[allow(missing_docs)] // documentation missing in model
     Paused,
     #[allow(missing_docs)] // documentation missing in model
     Stopped,
@@ -66,6 +69,7 @@ impl ::std::convert::From<&str> for MediaPipelineStatus {
             "Failed" => MediaPipelineStatus::Failed,
             "InProgress" => MediaPipelineStatus::InProgress,
             "Initializing" => MediaPipelineStatus::Initializing,
+            "NotStarted" => MediaPipelineStatus::NotStarted,
             "Paused" => MediaPipelineStatus::Paused,
             "Stopped" => MediaPipelineStatus::Stopped,
             "Stopping" => MediaPipelineStatus::Stopping,
@@ -87,6 +91,7 @@ impl MediaPipelineStatus {
             MediaPipelineStatus::Failed => "Failed",
             MediaPipelineStatus::InProgress => "InProgress",
             MediaPipelineStatus::Initializing => "Initializing",
+            MediaPipelineStatus::NotStarted => "NotStarted",
             MediaPipelineStatus::Paused => "Paused",
             MediaPipelineStatus::Stopped => "Stopped",
             MediaPipelineStatus::Stopping => "Stopping",
@@ -95,7 +100,7 @@ impl MediaPipelineStatus {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Failed", "InProgress", "Initializing", "Paused", "Stopped", "Stopping"]
+        &["Failed", "InProgress", "Initializing", "NotStarted", "Paused", "Stopped", "Stopping"]
     }
 }
 impl ::std::convert::AsRef<str> for MediaPipelineStatus {

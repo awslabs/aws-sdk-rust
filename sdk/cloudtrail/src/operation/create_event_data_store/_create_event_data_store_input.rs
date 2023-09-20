@@ -14,7 +14,9 @@ pub struct CreateEventDataStoreInput {
     pub multi_region_enabled: ::std::option::Option<bool>,
     /// <p>Specifies whether an event data store collects events logged for an organization in Organizations.</p>
     pub organization_enabled: ::std::option::Option<bool>,
-    /// <p>The retention period of the event data store, in days. You can set a retention period of up to 2557 days, the equivalent of seven years.</p>
+    /// <p>The retention period of the event data store, in days. You can set a retention period of up to 2557 days, the equivalent of seven years. CloudTrail Lake determines whether to retain an event by checking if the <code>eventTime</code> of the event is within the specified retention period. For example, if you set a retention period of 90 days, CloudTrail will remove events when the <code>eventTime</code> is older than 90 days.</p> <note>
+    /// <p>If you plan to copy trail events to this event data store, we recommend that you consider both the age of the events that you want to copy as well as how long you want to keep the copied events in your event data store. For example, if you copy trail events that are 5 years old and specify a retention period of 7 years, the event data store will retain those events for two years.</p>
+    /// </note>
     pub retention_period: ::std::option::Option<i32>,
     /// <p>Specifies whether termination protection is enabled for the event data store. If termination protection is enabled, you cannot delete the event data store until termination protection is disabled.</p>
     pub termination_protection_enabled: ::std::option::Option<bool>,
@@ -55,7 +57,9 @@ impl CreateEventDataStoreInput {
     pub fn organization_enabled(&self) -> ::std::option::Option<bool> {
         self.organization_enabled
     }
-    /// <p>The retention period of the event data store, in days. You can set a retention period of up to 2557 days, the equivalent of seven years.</p>
+    /// <p>The retention period of the event data store, in days. You can set a retention period of up to 2557 days, the equivalent of seven years. CloudTrail Lake determines whether to retain an event by checking if the <code>eventTime</code> of the event is within the specified retention period. For example, if you set a retention period of 90 days, CloudTrail will remove events when the <code>eventTime</code> is older than 90 days.</p> <note>
+    /// <p>If you plan to copy trail events to this event data store, we recommend that you consider both the age of the events that you want to copy as well as how long you want to keep the copied events in your event data store. For example, if you copy trail events that are 5 years old and specify a retention period of 7 years, the event data store will retain those events for two years.</p>
+    /// </note>
     pub fn retention_period(&self) -> ::std::option::Option<i32> {
         self.retention_period
     }
@@ -179,17 +183,23 @@ impl CreateEventDataStoreInputBuilder {
     pub fn get_organization_enabled(&self) -> &::std::option::Option<bool> {
         &self.organization_enabled
     }
-    /// <p>The retention period of the event data store, in days. You can set a retention period of up to 2557 days, the equivalent of seven years.</p>
+    /// <p>The retention period of the event data store, in days. You can set a retention period of up to 2557 days, the equivalent of seven years. CloudTrail Lake determines whether to retain an event by checking if the <code>eventTime</code> of the event is within the specified retention period. For example, if you set a retention period of 90 days, CloudTrail will remove events when the <code>eventTime</code> is older than 90 days.</p> <note>
+    /// <p>If you plan to copy trail events to this event data store, we recommend that you consider both the age of the events that you want to copy as well as how long you want to keep the copied events in your event data store. For example, if you copy trail events that are 5 years old and specify a retention period of 7 years, the event data store will retain those events for two years.</p>
+    /// </note>
     pub fn retention_period(mut self, input: i32) -> Self {
         self.retention_period = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The retention period of the event data store, in days. You can set a retention period of up to 2557 days, the equivalent of seven years.</p>
+    /// <p>The retention period of the event data store, in days. You can set a retention period of up to 2557 days, the equivalent of seven years. CloudTrail Lake determines whether to retain an event by checking if the <code>eventTime</code> of the event is within the specified retention period. For example, if you set a retention period of 90 days, CloudTrail will remove events when the <code>eventTime</code> is older than 90 days.</p> <note>
+    /// <p>If you plan to copy trail events to this event data store, we recommend that you consider both the age of the events that you want to copy as well as how long you want to keep the copied events in your event data store. For example, if you copy trail events that are 5 years old and specify a retention period of 7 years, the event data store will retain those events for two years.</p>
+    /// </note>
     pub fn set_retention_period(mut self, input: ::std::option::Option<i32>) -> Self {
         self.retention_period = input;
         self
     }
-    /// <p>The retention period of the event data store, in days. You can set a retention period of up to 2557 days, the equivalent of seven years.</p>
+    /// <p>The retention period of the event data store, in days. You can set a retention period of up to 2557 days, the equivalent of seven years. CloudTrail Lake determines whether to retain an event by checking if the <code>eventTime</code> of the event is within the specified retention period. For example, if you set a retention period of 90 days, CloudTrail will remove events when the <code>eventTime</code> is older than 90 days.</p> <note>
+    /// <p>If you plan to copy trail events to this event data store, we recommend that you consider both the age of the events that you want to copy as well as how long you want to keep the copied events in your event data store. For example, if you copy trail events that are 5 years old and specify a retention period of 7 years, the event data store will retain those events for two years.</p>
+    /// </note>
     pub fn get_retention_period(&self) -> &::std::option::Option<i32> {
         &self.retention_period
     }

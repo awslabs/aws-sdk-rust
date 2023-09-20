@@ -9,5 +9,8 @@ pub fn ser_get_service_quota_input(
     if let Some(var_2) = &input.quota_code {
         object.key("QuotaCode").string(var_2.as_str());
     }
+    if let Some(var_3) = &input.context_id {
+        object.key("ContextId").string(var_3.as_str());
+    }
     Ok(())
 }

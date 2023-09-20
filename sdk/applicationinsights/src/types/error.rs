@@ -3,9 +3,9 @@ pub use crate::types::error::_validation_exception::ValidationException;
 
 pub use crate::types::error::_resource_not_found_exception::ResourceNotFoundException;
 
-pub use crate::types::error::_resource_in_use_exception::ResourceInUseException;
-
 pub use crate::types::error::_internal_server_exception::InternalServerException;
+
+pub use crate::types::error::_resource_in_use_exception::ResourceInUseException;
 
 pub use crate::types::error::_too_many_tags_exception::TooManyTagsException;
 

@@ -13,6 +13,7 @@
 /// # let targetinstancetyperightsizingmethod = unimplemented!();
 /// match targetinstancetyperightsizingmethod {
 ///     TargetInstanceTypeRightSizingMethod::Basic => { /* ... */ },
+///     TargetInstanceTypeRightSizingMethod::InAws => { /* ... */ },
 ///     TargetInstanceTypeRightSizingMethod::None => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -44,6 +45,8 @@ pub enum TargetInstanceTypeRightSizingMethod {
     #[allow(missing_docs)] // documentation missing in model
     Basic,
     #[allow(missing_docs)] // documentation missing in model
+    InAws,
+    #[allow(missing_docs)] // documentation missing in model
     None,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
@@ -52,6 +55,7 @@ impl ::std::convert::From<&str> for TargetInstanceTypeRightSizingMethod {
     fn from(s: &str) -> Self {
         match s {
             "BASIC" => TargetInstanceTypeRightSizingMethod::Basic,
+            "IN_AWS" => TargetInstanceTypeRightSizingMethod::InAws,
             "NONE" => TargetInstanceTypeRightSizingMethod::None,
             other => TargetInstanceTypeRightSizingMethod::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
@@ -69,13 +73,14 @@ impl TargetInstanceTypeRightSizingMethod {
     pub fn as_str(&self) -> &str {
         match self {
             TargetInstanceTypeRightSizingMethod::Basic => "BASIC",
+            TargetInstanceTypeRightSizingMethod::InAws => "IN_AWS",
             TargetInstanceTypeRightSizingMethod::None => "NONE",
             TargetInstanceTypeRightSizingMethod::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["BASIC", "NONE"]
+        &["BASIC", "IN_AWS", "NONE"]
     }
 }
 impl ::std::convert::AsRef<str> for TargetInstanceTypeRightSizingMethod {

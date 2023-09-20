@@ -6,7 +6,7 @@ pub struct CreateAlertInput {
     /// <p>The name of the alert.</p>
     pub alert_name: ::std::option::Option<::std::string::String>,
     /// <p>An integer from 0 to 100 specifying the alert sensitivity threshold.</p>
-    pub alert_sensitivity_threshold: i32,
+    pub alert_sensitivity_threshold: ::std::option::Option<i32>,
     /// <p>A description of the alert.</p>
     pub alert_description: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the detector to which the alert is attached.</p>
@@ -24,7 +24,7 @@ impl CreateAlertInput {
         self.alert_name.as_deref()
     }
     /// <p>An integer from 0 to 100 specifying the alert sensitivity threshold.</p>
-    pub fn alert_sensitivity_threshold(&self) -> i32 {
+    pub fn alert_sensitivity_threshold(&self) -> ::std::option::Option<i32> {
         self.alert_sensitivity_threshold
     }
     /// <p>A description of the alert.</p>
@@ -176,7 +176,7 @@ impl CreateAlertInputBuilder {
     pub fn build(self) -> ::std::result::Result<crate::operation::create_alert::CreateAlertInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_alert::CreateAlertInput {
             alert_name: self.alert_name,
-            alert_sensitivity_threshold: self.alert_sensitivity_threshold.unwrap_or_default(),
+            alert_sensitivity_threshold: self.alert_sensitivity_threshold,
             alert_description: self.alert_description,
             anomaly_detector_arn: self.anomaly_detector_arn,
             action: self.action,

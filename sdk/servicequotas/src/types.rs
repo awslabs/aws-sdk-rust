@@ -3,6 +3,12 @@ pub use crate::types::_tag::Tag;
 
 pub use crate::types::_requested_service_quota_change::RequestedServiceQuotaChange;
 
+pub use crate::types::_quota_context_info::QuotaContextInfo;
+
+pub use crate::types::_quota_context_scope::QuotaContextScope;
+
+pub use crate::types::_applied_level_enum::AppliedLevelEnum;
+
 pub use crate::types::_request_status::RequestStatus;
 
 pub use crate::types::_service_quota_increase_request_in_template::ServiceQuotaIncreaseRequestInTemplate;
@@ -23,6 +29,8 @@ pub use crate::types::_metric_info::MetricInfo;
 
 pub use crate::types::_service_quota_template_association_status::ServiceQuotaTemplateAssociationStatus;
 
+mod _applied_level_enum;
+
 mod _error_code;
 
 mod _error_reason;
@@ -30,6 +38,10 @@ mod _error_reason;
 mod _metric_info;
 
 mod _period_unit;
+
+mod _quota_context_info;
+
+mod _quota_context_scope;
 
 mod _quota_period;
 

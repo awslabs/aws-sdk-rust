@@ -13,6 +13,8 @@
 /// # let entitystatuscode = unimplemented!();
 /// match entitystatuscode {
 ///     EntityStatusCode::Impaired => { /* ... */ },
+///     EntityStatusCode::Pending => { /* ... */ },
+///     EntityStatusCode::Resolved => { /* ... */ },
 ///     EntityStatusCode::Unimpaired => { /* ... */ },
 ///     EntityStatusCode::UnknownValue => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -45,6 +47,10 @@ pub enum EntityStatusCode {
     #[allow(missing_docs)] // documentation missing in model
     Impaired,
     #[allow(missing_docs)] // documentation missing in model
+    Pending,
+    #[allow(missing_docs)] // documentation missing in model
+    Resolved,
+    #[allow(missing_docs)] // documentation missing in model
     Unimpaired,
     /// _Note: `::Unknown` has been renamed to `::UnknownValue`._
     UnknownValue,
@@ -55,6 +61,8 @@ impl ::std::convert::From<&str> for EntityStatusCode {
     fn from(s: &str) -> Self {
         match s {
             "IMPAIRED" => EntityStatusCode::Impaired,
+            "PENDING" => EntityStatusCode::Pending,
+            "RESOLVED" => EntityStatusCode::Resolved,
             "UNIMPAIRED" => EntityStatusCode::Unimpaired,
             "UNKNOWN" => EntityStatusCode::UnknownValue,
             other => EntityStatusCode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
@@ -73,6 +81,8 @@ impl EntityStatusCode {
     pub fn as_str(&self) -> &str {
         match self {
             EntityStatusCode::Impaired => "IMPAIRED",
+            EntityStatusCode::Pending => "PENDING",
+            EntityStatusCode::Resolved => "RESOLVED",
             EntityStatusCode::Unimpaired => "UNIMPAIRED",
             EntityStatusCode::UnknownValue => "UNKNOWN",
             EntityStatusCode::Unknown(value) => value.as_str(),
@@ -80,7 +90,7 @@ impl EntityStatusCode {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["IMPAIRED", "UNIMPAIRED", "UNKNOWN"]
+        &["IMPAIRED", "PENDING", "RESOLVED", "UNIMPAIRED", "UNKNOWN"]
     }
 }
 impl ::std::convert::AsRef<str> for EntityStatusCode {

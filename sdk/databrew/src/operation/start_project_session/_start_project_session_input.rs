@@ -6,7 +6,7 @@ pub struct StartProjectSessionInput {
     /// <p>The name of the project to act upon.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A value that, if true, enables you to take control of a session, even if a different client is currently accessing the project.</p>
-    pub assume_control: bool,
+    pub assume_control: ::std::option::Option<bool>,
 }
 impl StartProjectSessionInput {
     /// <p>The name of the project to act upon.</p>
@@ -14,7 +14,7 @@ impl StartProjectSessionInput {
         self.name.as_deref()
     }
     /// <p>A value that, if true, enables you to take control of a session, even if a different client is currently accessing the project.</p>
-    pub fn assume_control(&self) -> bool {
+    pub fn assume_control(&self) -> ::std::option::Option<bool> {
         self.assume_control
     }
 }
@@ -68,7 +68,7 @@ impl StartProjectSessionInputBuilder {
     {
         ::std::result::Result::Ok(crate::operation::start_project_session::StartProjectSessionInput {
             name: self.name,
-            assume_control: self.assume_control.unwrap_or_default(),
+            assume_control: self.assume_control,
         })
     }
 }

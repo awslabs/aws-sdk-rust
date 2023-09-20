@@ -179,6 +179,8 @@ mod create_participant_connection;
 /// ```
 pub mod customize;
 
+mod describe_view;
+
 mod disconnect_participant;
 
 mod get_attachment;

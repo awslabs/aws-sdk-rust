@@ -27,6 +27,12 @@ pub fn ser_global_configuration(
     if let Some(var_7) = &input.support_low_framerate_inputs {
         object.key("supportLowFramerateInputs").string(var_7.as_str());
     }
+    if let Some(var_8) = &input.output_locking_settings {
+        #[allow(unused_mut)]
+        let mut object_9 = object.key("outputLockingSettings").start_object();
+        crate::protocol_serde::shape_output_locking_settings::ser_output_locking_settings(&mut object_9, var_8)?;
+        object_9.finish();
+    }
     Ok(())
 }
 
@@ -94,6 +100,11 @@ where
                                             .map(|u| crate::types::GlobalConfigurationLowFramerateInputs::from(u.as_ref()))
                                     })
                                     .transpose()?,
+                            );
+                        }
+                        "outputLockingSettings" => {
+                            builder = builder.set_output_locking_settings(
+                                crate::protocol_serde::shape_output_locking_settings::de_output_locking_settings(tokens)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

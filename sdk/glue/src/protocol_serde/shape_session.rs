@@ -89,6 +89,43 @@ where
                                     .transpose()?,
                             );
                         }
+                        "NumberOfWorkers" => {
+                            builder = builder.set_number_of_workers(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "WorkerType" => {
+                            builder = builder.set_worker_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::WorkerType::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "CompletedOn" => {
+                            builder = builder.set_completed_on(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                                tokens.next(),
+                                ::aws_smithy_types::date_time::Format::EpochSeconds,
+                            )?);
+                        }
+                        "ExecutionTime" => {
+                            builder = builder.set_execution_time(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?.map(|v| v.to_f64_lossy()),
+                            );
+                        }
+                        "DPUSeconds" => {
+                            builder = builder.set_dpu_seconds(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?.map(|v| v.to_f64_lossy()),
+                            );
+                        }
+                        "IdleTimeout" => {
+                            builder = builder.set_idle_timeout(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

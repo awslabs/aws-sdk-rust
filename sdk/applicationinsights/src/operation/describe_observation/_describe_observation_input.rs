@@ -5,11 +5,17 @@
 pub struct DescribeObservationInput {
     /// <p>The ID of the observation.</p>
     pub observation_id: ::std::option::Option<::std::string::String>,
+    /// <p>The AWS account ID for the resource group owner.</p>
+    pub account_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeObservationInput {
     /// <p>The ID of the observation.</p>
     pub fn observation_id(&self) -> ::std::option::Option<&str> {
         self.observation_id.as_deref()
+    }
+    /// <p>The AWS account ID for the resource group owner.</p>
+    pub fn account_id(&self) -> ::std::option::Option<&str> {
+        self.account_id.as_deref()
     }
 }
 impl DescribeObservationInput {
@@ -24,6 +30,7 @@ impl DescribeObservationInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeObservationInputBuilder {
     pub(crate) observation_id: ::std::option::Option<::std::string::String>,
+    pub(crate) account_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeObservationInputBuilder {
     /// <p>The ID of the observation.</p>
@@ -40,6 +47,20 @@ impl DescribeObservationInputBuilder {
     pub fn get_observation_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.observation_id
     }
+    /// <p>The AWS account ID for the resource group owner.</p>
+    pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.account_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The AWS account ID for the resource group owner.</p>
+    pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.account_id = input;
+        self
+    }
+    /// <p>The AWS account ID for the resource group owner.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
+    }
     /// Consumes the builder and constructs a [`DescribeObservationInput`](crate::operation::describe_observation::DescribeObservationInput).
     pub fn build(
         self,
@@ -47,6 +68,7 @@ impl DescribeObservationInputBuilder {
     {
         ::std::result::Result::Ok(crate::operation::describe_observation::DescribeObservationInput {
             observation_id: self.observation_id,
+            account_id: self.account_id,
         })
     }
 }

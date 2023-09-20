@@ -100,6 +100,22 @@ pub fn de_create_distribution_with_tags_http_error(
                                                     }
             tmp
         }),
+        "IllegalOriginAccessConfiguration" => crate::operation::create_distribution_with_tags::CreateDistributionWithTagsError::IllegalOriginAccessConfiguration({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::IllegalOriginAccessConfigurationBuilder::default();
+                    output = crate::protocol_serde::shape_illegal_origin_access_configuration::de_illegal_origin_access_configuration_xml_err(_response_body, output).map_err(crate::operation::create_distribution_with_tags::CreateDistributionWithTagsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
         "InconsistentQuantities" => crate::operation::create_distribution_with_tags::CreateDistributionWithTagsError::InconsistentQuantities({
             #[allow(unused_mut)]
             let mut tmp =
@@ -779,6 +795,22 @@ pub fn de_create_distribution_with_tags_http_error(
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::TooManyDistributionsAssociatedToKeyGroupBuilder::default();
                     output = crate::protocol_serde::shape_too_many_distributions_associated_to_key_group::de_too_many_distributions_associated_to_key_group_xml_err(_response_body, output).map_err(crate::operation::create_distribution_with_tags::CreateDistributionWithTagsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "TooManyDistributionsAssociatedToOriginAccessControl" => crate::operation::create_distribution_with_tags::CreateDistributionWithTagsError::TooManyDistributionsAssociatedToOriginAccessControl({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::TooManyDistributionsAssociatedToOriginAccessControlBuilder::default();
+                    output = crate::protocol_serde::shape_too_many_distributions_associated_to_origin_access_control::de_too_many_distributions_associated_to_origin_access_control_xml_err(_response_body, output).map_err(crate::operation::create_distribution_with_tags::CreateDistributionWithTagsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }

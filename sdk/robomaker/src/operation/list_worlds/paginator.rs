@@ -27,6 +27,14 @@ impl ListWorldsPaginator {
         self
     }
 
+    /// Create a flattened paginator
+    ///
+    /// This paginator automatically flattens results using `world_summaries`. Queries to the underlying service
+    /// are dispatched lazily.
+    pub fn items(self) -> crate::operation::list_worlds::paginator::ListWorldsPaginatorItems {
+        crate::operation::list_worlds::paginator::ListWorldsPaginatorItems(self)
+    }
+
     /// Stop paginating when the service returns the same pagination token twice in a row.
     ///
     /// Defaults to true.
@@ -97,5 +105,32 @@ impl ListWorldsPaginator {
                 }
             })
         })
+    }
+}
+
+/// Flattened paginator for `ListWorldsPaginator`
+///
+/// This is created with [`.items()`](ListWorldsPaginator::items)
+pub struct ListWorldsPaginatorItems(ListWorldsPaginator);
+
+impl ListWorldsPaginatorItems {
+    /// Create the pagination stream
+    ///
+    /// _Note: No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next))._
+    ///
+    /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
+    pub fn send(
+        self,
+    ) -> impl ::tokio_stream::Stream<
+        Item = ::std::result::Result<
+            crate::types::WorldSummary,
+            ::aws_smithy_http::result::SdkError<
+                crate::operation::list_worlds::ListWorldsError,
+                ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
+            >,
+        >,
+    > + ::std::marker::Unpin {
+        ::aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send())
+            .flat_map(|page| crate::lens::lens_list_worlds_output_world_summaries(page).unwrap_or_default().into_iter())
     }
 }

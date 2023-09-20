@@ -6,7 +6,7 @@ pub struct ListTagsForResourceInput {
     /// <p></p>
     pub next_marker: ::std::option::Option<::std::string::String>,
     /// <p></p>
-    pub limit: i32,
+    pub limit: ::std::option::Option<i32>,
     /// <p></p>
     pub resource_arn: ::std::option::Option<::std::string::String>,
 }
@@ -16,7 +16,7 @@ impl ListTagsForResourceInput {
         self.next_marker.as_deref()
     }
     /// <p></p>
-    pub fn limit(&self) -> i32 {
+    pub fn limit(&self) -> ::std::option::Option<i32> {
         self.limit
     }
     /// <p></p>
@@ -89,7 +89,7 @@ impl ListTagsForResourceInputBuilder {
     {
         ::std::result::Result::Ok(crate::operation::list_tags_for_resource::ListTagsForResourceInput {
             next_marker: self.next_marker,
-            limit: self.limit.unwrap_or_default(),
+            limit: self.limit,
             resource_arn: self.resource_arn,
         })
     }

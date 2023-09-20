@@ -110,17 +110,17 @@ impl GetRequestedServiceQuotaChangeFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The ID of the quota increase request.</p>
+    /// <p>Specifies the ID of the quota increase request.</p>
     pub fn request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.request_id(input.into());
         self
     }
-    /// <p>The ID of the quota increase request.</p>
+    /// <p>Specifies the ID of the quota increase request.</p>
     pub fn set_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_request_id(input);
         self
     }
-    /// <p>The ID of the quota increase request.</p>
+    /// <p>Specifies the ID of the quota increase request.</p>
     pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_request_id()
     }

@@ -5,11 +5,17 @@
 pub struct DescribeProblemInput {
     /// <p>The ID of the problem.</p>
     pub problem_id: ::std::option::Option<::std::string::String>,
+    /// <p>The AWS account ID for the owner of the resource group affected by the problem.</p>
+    pub account_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeProblemInput {
     /// <p>The ID of the problem.</p>
     pub fn problem_id(&self) -> ::std::option::Option<&str> {
         self.problem_id.as_deref()
+    }
+    /// <p>The AWS account ID for the owner of the resource group affected by the problem.</p>
+    pub fn account_id(&self) -> ::std::option::Option<&str> {
+        self.account_id.as_deref()
     }
 }
 impl DescribeProblemInput {
@@ -24,6 +30,7 @@ impl DescribeProblemInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeProblemInputBuilder {
     pub(crate) problem_id: ::std::option::Option<::std::string::String>,
+    pub(crate) account_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeProblemInputBuilder {
     /// <p>The ID of the problem.</p>
@@ -40,10 +47,27 @@ impl DescribeProblemInputBuilder {
     pub fn get_problem_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.problem_id
     }
+    /// <p>The AWS account ID for the owner of the resource group affected by the problem.</p>
+    pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.account_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The AWS account ID for the owner of the resource group affected by the problem.</p>
+    pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.account_id = input;
+        self
+    }
+    /// <p>The AWS account ID for the owner of the resource group affected by the problem.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
+    }
     /// Consumes the builder and constructs a [`DescribeProblemInput`](crate::operation::describe_problem::DescribeProblemInput).
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::describe_problem::DescribeProblemInput, ::aws_smithy_http::operation::error::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_problem::DescribeProblemInput { problem_id: self.problem_id })
+        ::std::result::Result::Ok(crate::operation::describe_problem::DescribeProblemInput {
+            problem_id: self.problem_id,
+            account_id: self.account_id,
+        })
     }
 }

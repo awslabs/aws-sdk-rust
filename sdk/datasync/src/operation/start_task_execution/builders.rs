@@ -22,7 +22,7 @@ impl StartTaskExecutionInputBuilder {
 }
 /// Fluent builder constructing a request to `StartTaskExecution`.
 ///
-/// <p>Starts an DataSync task. For each task, you can only run one task execution at a time.</p>
+/// <p>Starts an DataSync transfer task. For each task, you can only run one task execution at a time.</p>
 /// <p>There are several phases to a task execution. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/working-with-task-executions.html#understand-task-execution-statuses">Task execution statuses</a>.</p> <important>
 /// <p>If you're planning to transfer data to or from an Amazon S3 location, review <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#create-s3-location-s3-requests">how DataSync can affect your S3 request charges</a> and the <a href="http://aws.amazon.com/datasync/pricing/">DataSync pricing page</a> before you begin.</p>
 /// </important>
@@ -127,20 +127,20 @@ impl StartTaskExecutionFluentBuilder {
     pub fn get_task_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_task_arn()
     }
-    /// <p>Configures your DataSync task settings. These options include how DataSync handles files, objects, and their associated metadata. You also can specify how DataSync verifies data integrity, set bandwidth limits for your task, among other options.</p>
-    /// <p>Each task setting has a default value. Unless you need to, you don't have to configure any of these <code>Options</code> before starting your task.</p>
+    /// <p>Indicates how your transfer task is configured. These options include how DataSync handles files, objects, and their associated metadata during your transfer. You also can specify how to verify data integrity, set bandwidth limits for your task, among other options.</p>
+    /// <p>Each option has a default value. Unless you need to, you don't have to configure any of these options before starting your task.</p>
     pub fn override_options(mut self, input: crate::types::Options) -> Self {
         self.inner = self.inner.override_options(input);
         self
     }
-    /// <p>Configures your DataSync task settings. These options include how DataSync handles files, objects, and their associated metadata. You also can specify how DataSync verifies data integrity, set bandwidth limits for your task, among other options.</p>
-    /// <p>Each task setting has a default value. Unless you need to, you don't have to configure any of these <code>Options</code> before starting your task.</p>
+    /// <p>Indicates how your transfer task is configured. These options include how DataSync handles files, objects, and their associated metadata during your transfer. You also can specify how to verify data integrity, set bandwidth limits for your task, among other options.</p>
+    /// <p>Each option has a default value. Unless you need to, you don't have to configure any of these options before starting your task.</p>
     pub fn set_override_options(mut self, input: ::std::option::Option<crate::types::Options>) -> Self {
         self.inner = self.inner.set_override_options(input);
         self
     }
-    /// <p>Configures your DataSync task settings. These options include how DataSync handles files, objects, and their associated metadata. You also can specify how DataSync verifies data integrity, set bandwidth limits for your task, among other options.</p>
-    /// <p>Each task setting has a default value. Unless you need to, you don't have to configure any of these <code>Options</code> before starting your task.</p>
+    /// <p>Indicates how your transfer task is configured. These options include how DataSync handles files, objects, and their associated metadata during your transfer. You also can specify how to verify data integrity, set bandwidth limits for your task, among other options.</p>
+    /// <p>Each option has a default value. Unless you need to, you don't have to configure any of these options before starting your task.</p>
     pub fn get_override_options(&self) -> &::std::option::Option<crate::types::Options> {
         self.inner.get_override_options()
     }
@@ -200,5 +200,19 @@ impl StartTaskExecutionFluentBuilder {
     /// <p> <i>Tags</i> are key-value pairs that help you manage, filter, and search for your DataSync resources.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagListEntry>> {
         self.inner.get_tags()
+    }
+    /// <p>Specifies how you want to configure a task report, which provides detailed information about for your DataSync transfer.</p>
+    pub fn task_report_config(mut self, input: crate::types::TaskReportConfig) -> Self {
+        self.inner = self.inner.task_report_config(input);
+        self
+    }
+    /// <p>Specifies how you want to configure a task report, which provides detailed information about for your DataSync transfer.</p>
+    pub fn set_task_report_config(mut self, input: ::std::option::Option<crate::types::TaskReportConfig>) -> Self {
+        self.inner = self.inner.set_task_report_config(input);
+        self
+    }
+    /// <p>Specifies how you want to configure a task report, which provides detailed information about for your DataSync transfer.</p>
+    pub fn get_task_report_config(&self) -> &::std::option::Option<crate::types::TaskReportConfig> {
+        self.inner.get_task_report_config()
     }
 }

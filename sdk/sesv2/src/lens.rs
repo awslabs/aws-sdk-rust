@@ -99,6 +99,16 @@ pub(crate) fn reflens_list_email_templates_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_export_jobs_output_next_token(
+    input: &crate::operation::list_export_jobs::ListExportJobsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_import_jobs_output_next_token(
     input: &crate::operation::list_import_jobs::ListImportJobsOutput,
 ) -> ::std::option::Option<&::std::string::String> {

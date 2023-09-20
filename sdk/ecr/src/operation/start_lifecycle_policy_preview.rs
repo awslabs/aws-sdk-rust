@@ -271,6 +271,8 @@ pub enum StartLifecyclePolicyPreviewError {
     RepositoryNotFoundException(crate::types::error::RepositoryNotFoundException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::types::error::ServerException),
+    /// <p>There was an exception validating this request.</p>
+    ValidationException(crate::types::error::ValidationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(::aws_smithy_types::error::Unhandled),
 }
@@ -294,6 +296,7 @@ impl ::std::fmt::Display for StartLifecyclePolicyPreviewError {
             Self::LifecyclePolicyPreviewInProgressException(_inner) => _inner.fmt(f),
             Self::RepositoryNotFoundException(_inner) => _inner.fmt(f),
             Self::ServerException(_inner) => _inner.fmt(f),
+            Self::ValidationException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -306,6 +309,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for StartLifecycl
             Self::LifecyclePolicyPreviewInProgressException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::RepositoryNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ServerException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ValidationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
         }
     }
@@ -347,6 +351,7 @@ impl StartLifecyclePolicyPreviewError {
             Self::LifecyclePolicyPreviewInProgressException(e) => e.meta(),
             Self::RepositoryNotFoundException(e) => e.meta(),
             Self::ServerException(e) => e.meta(),
+            Self::ValidationException(e) => e.meta(),
             Self::Unhandled(e) => e.meta(),
         }
     }
@@ -370,6 +375,10 @@ impl StartLifecyclePolicyPreviewError {
     pub fn is_server_exception(&self) -> bool {
         matches!(self, Self::ServerException(_))
     }
+    /// Returns `true` if the error kind is `StartLifecyclePolicyPreviewError::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(self, Self::ValidationException(_))
+    }
 }
 impl ::std::error::Error for StartLifecyclePolicyPreviewError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
@@ -379,6 +388,7 @@ impl ::std::error::Error for StartLifecyclePolicyPreviewError {
             Self::LifecyclePolicyPreviewInProgressException(_inner) => ::std::option::Option::Some(_inner),
             Self::RepositoryNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::ServerException(_inner) => ::std::option::Option::Some(_inner),
+            Self::ValidationException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(_inner),
         }
     }

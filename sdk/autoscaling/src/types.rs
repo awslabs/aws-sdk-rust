@@ -53,6 +53,8 @@ pub use crate::types::_scaling_activity_status_code::ScalingActivityStatusCode;
 
 pub use crate::types::_refresh_preferences::RefreshPreferences;
 
+pub use crate::types::_alarm_specification::AlarmSpecification;
+
 pub use crate::types::_standby_instances::StandbyInstances;
 
 pub use crate::types::_scale_in_protected_instances::ScaleInProtectedInstances;
@@ -214,6 +216,8 @@ mod _activity;
 mod _adjustment_type;
 
 mod _alarm;
+
+mod _alarm_specification;
 
 mod _auto_scaling_group;
 

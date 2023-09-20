@@ -9,7 +9,7 @@ pub struct CreateDataViewInput {
     /// <p>The unique Dataset identifier that is used to create a Dataview.</p>
     pub dataset_id: ::std::option::Option<::std::string::String>,
     /// <p>Flag to indicate Dataview should be updated automatically.</p>
-    pub auto_update: bool,
+    pub auto_update: ::std::option::Option<bool>,
     /// <p>Columns to be used for sorting the data.</p>
     pub sort_columns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Ordered set of column names used to partition data.</p>
@@ -29,7 +29,7 @@ impl CreateDataViewInput {
         self.dataset_id.as_deref()
     }
     /// <p>Flag to indicate Dataview should be updated automatically.</p>
-    pub fn auto_update(&self) -> bool {
+    pub fn auto_update(&self) -> ::std::option::Option<bool> {
         self.auto_update
     }
     /// <p>Columns to be used for sorting the data.</p>
@@ -186,7 +186,7 @@ impl CreateDataViewInputBuilder {
         ::std::result::Result::Ok(crate::operation::create_data_view::CreateDataViewInput {
             client_token: self.client_token,
             dataset_id: self.dataset_id,
-            auto_update: self.auto_update.unwrap_or_default(),
+            auto_update: self.auto_update,
             sort_columns: self.sort_columns,
             partition_columns: self.partition_columns,
             as_of_timestamp: self.as_of_timestamp,

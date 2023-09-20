@@ -3,7 +3,7 @@
 /// <p>A structure that defines characteristics of an identity source that you can use to filter.</p>
 /// <p>This data type is used as a request parameter for the <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_ListIdentityStores.html">ListIdentityStores</a> operation.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct IdentitySourceFilter {
     /// <p>The Cedar entity type of the principals returned by the identity provider (IdP) associated with this identity source.</p>
     pub principal_entity_type: ::std::option::Option<::std::string::String>,
@@ -12,6 +12,13 @@ impl IdentitySourceFilter {
     /// <p>The Cedar entity type of the principals returned by the identity provider (IdP) associated with this identity source.</p>
     pub fn principal_entity_type(&self) -> ::std::option::Option<&str> {
         self.principal_entity_type.as_deref()
+    }
+}
+impl ::std::fmt::Debug for IdentitySourceFilter {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("IdentitySourceFilter");
+        formatter.field("principal_entity_type", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }
 impl IdentitySourceFilter {
@@ -23,7 +30,7 @@ impl IdentitySourceFilter {
 
 /// A builder for [`IdentitySourceFilter`](crate::types::IdentitySourceFilter).
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct IdentitySourceFilterBuilder {
     pub(crate) principal_entity_type: ::std::option::Option<::std::string::String>,
 }
@@ -47,5 +54,12 @@ impl IdentitySourceFilterBuilder {
         crate::types::IdentitySourceFilter {
             principal_entity_type: self.principal_entity_type,
         }
+    }
+}
+impl ::std::fmt::Debug for IdentitySourceFilterBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("IdentitySourceFilterBuilder");
+        formatter.field("principal_entity_type", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

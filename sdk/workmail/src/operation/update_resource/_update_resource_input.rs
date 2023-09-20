@@ -6,11 +6,23 @@ pub struct UpdateResourceInput {
     /// <p>The identifier associated with the organization for which the resource is updated.</p>
     pub organization_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the resource to be updated.</p>
+    /// <p>The identifier can accept <i>ResourceId</i>, <i>Resourcename</i>, or <i>email</i>. The following identity formats are available:</p>
+    /// <ul>
+    /// <li> <p>Resource ID: r-0123456789a0123456789b0123456789</p> </li>
+    /// <li> <p>Email address: resource@domain.tld</p> </li>
+    /// <li> <p>Resource name: resource</p> </li>
+    /// </ul>
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the resource to be updated.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The resource's booking options to be updated.</p>
     pub booking_options: ::std::option::Option<crate::types::BookingOptions>,
+    /// <p>Updates the resource description.</p>
+    pub description: ::std::option::Option<::std::string::String>,
+    /// <p>Updates the resource type.</p>
+    pub r#type: ::std::option::Option<crate::types::ResourceType>,
+    /// <p>If enabled, the resource is hidden from the global address list.</p>
+    pub hidden_from_global_address_list: ::std::option::Option<bool>,
 }
 impl UpdateResourceInput {
     /// <p>The identifier associated with the organization for which the resource is updated.</p>
@@ -18,6 +30,12 @@ impl UpdateResourceInput {
         self.organization_id.as_deref()
     }
     /// <p>The identifier of the resource to be updated.</p>
+    /// <p>The identifier can accept <i>ResourceId</i>, <i>Resourcename</i>, or <i>email</i>. The following identity formats are available:</p>
+    /// <ul>
+    /// <li> <p>Resource ID: r-0123456789a0123456789b0123456789</p> </li>
+    /// <li> <p>Email address: resource@domain.tld</p> </li>
+    /// <li> <p>Resource name: resource</p> </li>
+    /// </ul>
     pub fn resource_id(&self) -> ::std::option::Option<&str> {
         self.resource_id.as_deref()
     }
@@ -28,6 +46,18 @@ impl UpdateResourceInput {
     /// <p>The resource's booking options to be updated.</p>
     pub fn booking_options(&self) -> ::std::option::Option<&crate::types::BookingOptions> {
         self.booking_options.as_ref()
+    }
+    /// <p>Updates the resource description.</p>
+    pub fn description(&self) -> ::std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Updates the resource type.</p>
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::ResourceType> {
+        self.r#type.as_ref()
+    }
+    /// <p>If enabled, the resource is hidden from the global address list.</p>
+    pub fn hidden_from_global_address_list(&self) -> ::std::option::Option<bool> {
+        self.hidden_from_global_address_list
     }
 }
 impl UpdateResourceInput {
@@ -45,6 +75,9 @@ pub struct UpdateResourceInputBuilder {
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) booking_options: ::std::option::Option<crate::types::BookingOptions>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) r#type: ::std::option::Option<crate::types::ResourceType>,
+    pub(crate) hidden_from_global_address_list: ::std::option::Option<bool>,
 }
 impl UpdateResourceInputBuilder {
     /// <p>The identifier associated with the organization for which the resource is updated.</p>
@@ -62,16 +95,34 @@ impl UpdateResourceInputBuilder {
         &self.organization_id
     }
     /// <p>The identifier of the resource to be updated.</p>
+    /// <p>The identifier can accept <i>ResourceId</i>, <i>Resourcename</i>, or <i>email</i>. The following identity formats are available:</p>
+    /// <ul>
+    /// <li> <p>Resource ID: r-0123456789a0123456789b0123456789</p> </li>
+    /// <li> <p>Email address: resource@domain.tld</p> </li>
+    /// <li> <p>Resource name: resource</p> </li>
+    /// </ul>
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the resource to be updated.</p>
+    /// <p>The identifier can accept <i>ResourceId</i>, <i>Resourcename</i>, or <i>email</i>. The following identity formats are available:</p>
+    /// <ul>
+    /// <li> <p>Resource ID: r-0123456789a0123456789b0123456789</p> </li>
+    /// <li> <p>Email address: resource@domain.tld</p> </li>
+    /// <li> <p>Resource name: resource</p> </li>
+    /// </ul>
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_id = input;
         self
     }
     /// <p>The identifier of the resource to be updated.</p>
+    /// <p>The identifier can accept <i>ResourceId</i>, <i>Resourcename</i>, or <i>email</i>. The following identity formats are available:</p>
+    /// <ul>
+    /// <li> <p>Resource ID: r-0123456789a0123456789b0123456789</p> </li>
+    /// <li> <p>Email address: resource@domain.tld</p> </li>
+    /// <li> <p>Resource name: resource</p> </li>
+    /// </ul>
     pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_id
     }
@@ -103,6 +154,48 @@ impl UpdateResourceInputBuilder {
     pub fn get_booking_options(&self) -> &::std::option::Option<crate::types::BookingOptions> {
         &self.booking_options
     }
+    /// <p>Updates the resource description.</p>
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Updates the resource description.</p>
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.description = input;
+        self
+    }
+    /// <p>Updates the resource description.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
+    /// <p>Updates the resource type.</p>
+    pub fn r#type(mut self, input: crate::types::ResourceType) -> Self {
+        self.r#type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Updates the resource type.</p>
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
+        self.r#type = input;
+        self
+    }
+    /// <p>Updates the resource type.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
+        &self.r#type
+    }
+    /// <p>If enabled, the resource is hidden from the global address list.</p>
+    pub fn hidden_from_global_address_list(mut self, input: bool) -> Self {
+        self.hidden_from_global_address_list = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>If enabled, the resource is hidden from the global address list.</p>
+    pub fn set_hidden_from_global_address_list(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.hidden_from_global_address_list = input;
+        self
+    }
+    /// <p>If enabled, the resource is hidden from the global address list.</p>
+    pub fn get_hidden_from_global_address_list(&self) -> &::std::option::Option<bool> {
+        &self.hidden_from_global_address_list
+    }
     /// Consumes the builder and constructs a [`UpdateResourceInput`](crate::operation::update_resource::UpdateResourceInput).
     pub fn build(
         self,
@@ -112,6 +205,9 @@ impl UpdateResourceInputBuilder {
             resource_id: self.resource_id,
             name: self.name,
             booking_options: self.booking_options,
+            description: self.description,
+            r#type: self.r#type,
+            hidden_from_global_address_list: self.hidden_from_global_address_list,
         })
     }
 }

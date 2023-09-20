@@ -89,6 +89,16 @@ pub(crate) fn reflens_list_extensible_source_servers_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_launch_actions_output_next_token(
+    input: &crate::operation::list_launch_actions::ListLaunchActionsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_staging_accounts_output_next_token(
     input: &crate::operation::list_staging_accounts::ListStagingAccountsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -182,6 +192,16 @@ pub(crate) fn lens_describe_source_servers_output_items(
 pub(crate) fn lens_list_extensible_source_servers_output_items(
     input: crate::operation::list_extensible_source_servers::ListExtensibleSourceServersOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::StagingSourceServer>> {
+    let input = match input.items {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_launch_actions_output_items(
+    input: crate::operation::list_launch_actions::ListLaunchActionsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::LaunchAction>> {
     let input = match input.items {
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,

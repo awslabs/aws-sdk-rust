@@ -159,6 +159,8 @@ mod create_framework;
 
 mod create_legal_hold;
 
+mod create_logically_air_gapped_backup_vault;
+
 mod create_report_plan;
 
 /// Operation customization and supporting types.
@@ -272,6 +274,8 @@ mod list_frameworks;
 mod list_legal_holds;
 
 mod list_protected_resources;
+
+mod list_protected_resources_by_backup_vault;
 
 mod list_recovery_points_by_backup_vault;
 

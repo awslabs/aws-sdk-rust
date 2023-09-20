@@ -333,6 +333,8 @@ pub(crate) mod shape_file_systems;
 
 pub(crate) mod shape_filter;
 
+pub(crate) mod shape_release_configuration;
+
 pub(crate) mod shape_s3_data_repository_configuration;
 
 pub(crate) mod shape_snapshot;
@@ -400,6 +402,8 @@ pub(crate) mod shape_data_repository_task_paths;
 pub(crate) mod shape_data_repository_task_status;
 
 pub(crate) mod shape_disk_iops_configuration;
+
+pub(crate) mod shape_duration_since_last_access;
 
 pub(crate) mod shape_file_cache_failure_details;
 

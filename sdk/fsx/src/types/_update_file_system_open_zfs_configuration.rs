@@ -14,8 +14,8 @@ pub struct UpdateFileSystemOpenZfsConfiguration {
     pub daily_automatic_backup_start_time: ::std::option::Option<::std::string::String>,
     /// <p>The throughput of an Amazon FSx for OpenZFS file system, measured in megabytes per second  (MB/s). Valid values depend on the DeploymentType you choose, as follows:</p>
     /// <ul>
+    /// <li> <p>For <code>MULTI_AZ_1</code> and <code>SINGLE_AZ_2</code>, valid values are 160, 320, 640, 1280, 2560, 3840, 5120, 7680, or 10240 MBps.</p> </li>
     /// <li> <p>For <code>SINGLE_AZ_1</code>, valid values are 64, 128, 256, 512, 1024, 2048, 3072, or 4096 MB/s.</p> </li>
-    /// <li> <p>For <code>SINGLE_AZ_2</code>, valid values are 160, 320, 640, 1280, 2560, 3840, 5120, 7680, or 10240 MB/s.</p> </li>
     /// </ul>
     pub throughput_capacity: ::std::option::Option<i32>,
     /// <p>A recurring weekly time, in the format <code>D:HH:MM</code>. </p>
@@ -23,8 +23,12 @@ pub struct UpdateFileSystemOpenZfsConfiguration {
     /// <p> <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour. </p>
     /// <p>For example, <code>1:05:00</code> specifies maintenance at 5 AM Monday.</p>
     pub weekly_maintenance_start_time: ::std::option::Option<::std::string::String>,
-    /// <p>The SSD IOPS (input/output operations per second) configuration for an Amazon FSx for NetApp ONTAP or FSx for OpenZFS file system. By default, Amazon FSx automatically provisions 3 IOPS per GB of storage capacity. You can provision additional IOPS per GB of storage. The configuration consists of the total number of provisioned SSD IOPS and how it is was provisioned, or the mode (by the customer or by Amazon FSx).</p>
+    /// <p>The SSD IOPS (input/output operations per second) configuration for an Amazon FSx for NetApp ONTAP, Amazon FSx for Windows File Server, or FSx for OpenZFS file system. By default, Amazon FSx automatically provisions 3 IOPS per GB of storage capacity. You can provision additional IOPS per GB of storage. The configuration consists of the total number of provisioned SSD IOPS and how it is was provisioned, or the mode (by the customer or by Amazon FSx).</p>
     pub disk_iops_configuration: ::std::option::Option<crate::types::DiskIopsConfiguration>,
+    /// <p>(Multi-AZ only) A list of IDs of new virtual private cloud (VPC) route tables to associate (add) with your Amazon FSx for OpenZFS file system.</p>
+    pub add_route_table_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>(Multi-AZ only) A list of IDs of existing virtual private cloud (VPC) route tables to disassociate (remove) from your Amazon FSx for OpenZFS file system. You can use the API operation to retrieve the list of VPC route table IDs for a file system.</p>
+    pub remove_route_table_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl UpdateFileSystemOpenZfsConfiguration {
     /// <p>The number of days to retain automatic backups. Setting this property to <code>0</code> disables automatic backups. You can retain automatic backups for a maximum of 90 days. The default is <code>30</code>.</p>
@@ -45,8 +49,8 @@ impl UpdateFileSystemOpenZfsConfiguration {
     }
     /// <p>The throughput of an Amazon FSx for OpenZFS file system, measured in megabytes per second  (MB/s). Valid values depend on the DeploymentType you choose, as follows:</p>
     /// <ul>
+    /// <li> <p>For <code>MULTI_AZ_1</code> and <code>SINGLE_AZ_2</code>, valid values are 160, 320, 640, 1280, 2560, 3840, 5120, 7680, or 10240 MBps.</p> </li>
     /// <li> <p>For <code>SINGLE_AZ_1</code>, valid values are 64, 128, 256, 512, 1024, 2048, 3072, or 4096 MB/s.</p> </li>
-    /// <li> <p>For <code>SINGLE_AZ_2</code>, valid values are 160, 320, 640, 1280, 2560, 3840, 5120, 7680, or 10240 MB/s.</p> </li>
     /// </ul>
     pub fn throughput_capacity(&self) -> ::std::option::Option<i32> {
         self.throughput_capacity
@@ -58,9 +62,17 @@ impl UpdateFileSystemOpenZfsConfiguration {
     pub fn weekly_maintenance_start_time(&self) -> ::std::option::Option<&str> {
         self.weekly_maintenance_start_time.as_deref()
     }
-    /// <p>The SSD IOPS (input/output operations per second) configuration for an Amazon FSx for NetApp ONTAP or FSx for OpenZFS file system. By default, Amazon FSx automatically provisions 3 IOPS per GB of storage capacity. You can provision additional IOPS per GB of storage. The configuration consists of the total number of provisioned SSD IOPS and how it is was provisioned, or the mode (by the customer or by Amazon FSx).</p>
+    /// <p>The SSD IOPS (input/output operations per second) configuration for an Amazon FSx for NetApp ONTAP, Amazon FSx for Windows File Server, or FSx for OpenZFS file system. By default, Amazon FSx automatically provisions 3 IOPS per GB of storage capacity. You can provision additional IOPS per GB of storage. The configuration consists of the total number of provisioned SSD IOPS and how it is was provisioned, or the mode (by the customer or by Amazon FSx).</p>
     pub fn disk_iops_configuration(&self) -> ::std::option::Option<&crate::types::DiskIopsConfiguration> {
         self.disk_iops_configuration.as_ref()
+    }
+    /// <p>(Multi-AZ only) A list of IDs of new virtual private cloud (VPC) route tables to associate (add) with your Amazon FSx for OpenZFS file system.</p>
+    pub fn add_route_table_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
+        self.add_route_table_ids.as_deref()
+    }
+    /// <p>(Multi-AZ only) A list of IDs of existing virtual private cloud (VPC) route tables to disassociate (remove) from your Amazon FSx for OpenZFS file system. You can use the API operation to retrieve the list of VPC route table IDs for a file system.</p>
+    pub fn remove_route_table_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
+        self.remove_route_table_ids.as_deref()
     }
 }
 impl UpdateFileSystemOpenZfsConfiguration {
@@ -81,6 +93,8 @@ pub struct UpdateFileSystemOpenZfsConfigurationBuilder {
     pub(crate) throughput_capacity: ::std::option::Option<i32>,
     pub(crate) weekly_maintenance_start_time: ::std::option::Option<::std::string::String>,
     pub(crate) disk_iops_configuration: ::std::option::Option<crate::types::DiskIopsConfiguration>,
+    pub(crate) add_route_table_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) remove_route_table_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl UpdateFileSystemOpenZfsConfigurationBuilder {
     /// <p>The number of days to retain automatic backups. Setting this property to <code>0</code> disables automatic backups. You can retain automatic backups for a maximum of 90 days. The default is <code>30</code>.</p>
@@ -141,8 +155,8 @@ impl UpdateFileSystemOpenZfsConfigurationBuilder {
     }
     /// <p>The throughput of an Amazon FSx for OpenZFS file system, measured in megabytes per second  (MB/s). Valid values depend on the DeploymentType you choose, as follows:</p>
     /// <ul>
+    /// <li> <p>For <code>MULTI_AZ_1</code> and <code>SINGLE_AZ_2</code>, valid values are 160, 320, 640, 1280, 2560, 3840, 5120, 7680, or 10240 MBps.</p> </li>
     /// <li> <p>For <code>SINGLE_AZ_1</code>, valid values are 64, 128, 256, 512, 1024, 2048, 3072, or 4096 MB/s.</p> </li>
-    /// <li> <p>For <code>SINGLE_AZ_2</code>, valid values are 160, 320, 640, 1280, 2560, 3840, 5120, 7680, or 10240 MB/s.</p> </li>
     /// </ul>
     pub fn throughput_capacity(mut self, input: i32) -> Self {
         self.throughput_capacity = ::std::option::Option::Some(input);
@@ -150,8 +164,8 @@ impl UpdateFileSystemOpenZfsConfigurationBuilder {
     }
     /// <p>The throughput of an Amazon FSx for OpenZFS file system, measured in megabytes per second  (MB/s). Valid values depend on the DeploymentType you choose, as follows:</p>
     /// <ul>
+    /// <li> <p>For <code>MULTI_AZ_1</code> and <code>SINGLE_AZ_2</code>, valid values are 160, 320, 640, 1280, 2560, 3840, 5120, 7680, or 10240 MBps.</p> </li>
     /// <li> <p>For <code>SINGLE_AZ_1</code>, valid values are 64, 128, 256, 512, 1024, 2048, 3072, or 4096 MB/s.</p> </li>
-    /// <li> <p>For <code>SINGLE_AZ_2</code>, valid values are 160, 320, 640, 1280, 2560, 3840, 5120, 7680, or 10240 MB/s.</p> </li>
     /// </ul>
     pub fn set_throughput_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
         self.throughput_capacity = input;
@@ -159,8 +173,8 @@ impl UpdateFileSystemOpenZfsConfigurationBuilder {
     }
     /// <p>The throughput of an Amazon FSx for OpenZFS file system, measured in megabytes per second  (MB/s). Valid values depend on the DeploymentType you choose, as follows:</p>
     /// <ul>
+    /// <li> <p>For <code>MULTI_AZ_1</code> and <code>SINGLE_AZ_2</code>, valid values are 160, 320, 640, 1280, 2560, 3840, 5120, 7680, or 10240 MBps.</p> </li>
     /// <li> <p>For <code>SINGLE_AZ_1</code>, valid values are 64, 128, 256, 512, 1024, 2048, 3072, or 4096 MB/s.</p> </li>
-    /// <li> <p>For <code>SINGLE_AZ_2</code>, valid values are 160, 320, 640, 1280, 2560, 3840, 5120, 7680, or 10240 MB/s.</p> </li>
     /// </ul>
     pub fn get_throughput_capacity(&self) -> &::std::option::Option<i32> {
         &self.throughput_capacity
@@ -188,19 +202,59 @@ impl UpdateFileSystemOpenZfsConfigurationBuilder {
     pub fn get_weekly_maintenance_start_time(&self) -> &::std::option::Option<::std::string::String> {
         &self.weekly_maintenance_start_time
     }
-    /// <p>The SSD IOPS (input/output operations per second) configuration for an Amazon FSx for NetApp ONTAP or FSx for OpenZFS file system. By default, Amazon FSx automatically provisions 3 IOPS per GB of storage capacity. You can provision additional IOPS per GB of storage. The configuration consists of the total number of provisioned SSD IOPS and how it is was provisioned, or the mode (by the customer or by Amazon FSx).</p>
+    /// <p>The SSD IOPS (input/output operations per second) configuration for an Amazon FSx for NetApp ONTAP, Amazon FSx for Windows File Server, or FSx for OpenZFS file system. By default, Amazon FSx automatically provisions 3 IOPS per GB of storage capacity. You can provision additional IOPS per GB of storage. The configuration consists of the total number of provisioned SSD IOPS and how it is was provisioned, or the mode (by the customer or by Amazon FSx).</p>
     pub fn disk_iops_configuration(mut self, input: crate::types::DiskIopsConfiguration) -> Self {
         self.disk_iops_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The SSD IOPS (input/output operations per second) configuration for an Amazon FSx for NetApp ONTAP or FSx for OpenZFS file system. By default, Amazon FSx automatically provisions 3 IOPS per GB of storage capacity. You can provision additional IOPS per GB of storage. The configuration consists of the total number of provisioned SSD IOPS and how it is was provisioned, or the mode (by the customer or by Amazon FSx).</p>
+    /// <p>The SSD IOPS (input/output operations per second) configuration for an Amazon FSx for NetApp ONTAP, Amazon FSx for Windows File Server, or FSx for OpenZFS file system. By default, Amazon FSx automatically provisions 3 IOPS per GB of storage capacity. You can provision additional IOPS per GB of storage. The configuration consists of the total number of provisioned SSD IOPS and how it is was provisioned, or the mode (by the customer or by Amazon FSx).</p>
     pub fn set_disk_iops_configuration(mut self, input: ::std::option::Option<crate::types::DiskIopsConfiguration>) -> Self {
         self.disk_iops_configuration = input;
         self
     }
-    /// <p>The SSD IOPS (input/output operations per second) configuration for an Amazon FSx for NetApp ONTAP or FSx for OpenZFS file system. By default, Amazon FSx automatically provisions 3 IOPS per GB of storage capacity. You can provision additional IOPS per GB of storage. The configuration consists of the total number of provisioned SSD IOPS and how it is was provisioned, or the mode (by the customer or by Amazon FSx).</p>
+    /// <p>The SSD IOPS (input/output operations per second) configuration for an Amazon FSx for NetApp ONTAP, Amazon FSx for Windows File Server, or FSx for OpenZFS file system. By default, Amazon FSx automatically provisions 3 IOPS per GB of storage capacity. You can provision additional IOPS per GB of storage. The configuration consists of the total number of provisioned SSD IOPS and how it is was provisioned, or the mode (by the customer or by Amazon FSx).</p>
     pub fn get_disk_iops_configuration(&self) -> &::std::option::Option<crate::types::DiskIopsConfiguration> {
         &self.disk_iops_configuration
+    }
+    /// Appends an item to `add_route_table_ids`.
+    ///
+    /// To override the contents of this collection use [`set_add_route_table_ids`](Self::set_add_route_table_ids).
+    ///
+    /// <p>(Multi-AZ only) A list of IDs of new virtual private cloud (VPC) route tables to associate (add) with your Amazon FSx for OpenZFS file system.</p>
+    pub fn add_route_table_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.add_route_table_ids.unwrap_or_default();
+        v.push(input.into());
+        self.add_route_table_ids = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>(Multi-AZ only) A list of IDs of new virtual private cloud (VPC) route tables to associate (add) with your Amazon FSx for OpenZFS file system.</p>
+    pub fn set_add_route_table_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.add_route_table_ids = input;
+        self
+    }
+    /// <p>(Multi-AZ only) A list of IDs of new virtual private cloud (VPC) route tables to associate (add) with your Amazon FSx for OpenZFS file system.</p>
+    pub fn get_add_route_table_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.add_route_table_ids
+    }
+    /// Appends an item to `remove_route_table_ids`.
+    ///
+    /// To override the contents of this collection use [`set_remove_route_table_ids`](Self::set_remove_route_table_ids).
+    ///
+    /// <p>(Multi-AZ only) A list of IDs of existing virtual private cloud (VPC) route tables to disassociate (remove) from your Amazon FSx for OpenZFS file system. You can use the API operation to retrieve the list of VPC route table IDs for a file system.</p>
+    pub fn remove_route_table_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.remove_route_table_ids.unwrap_or_default();
+        v.push(input.into());
+        self.remove_route_table_ids = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>(Multi-AZ only) A list of IDs of existing virtual private cloud (VPC) route tables to disassociate (remove) from your Amazon FSx for OpenZFS file system. You can use the API operation to retrieve the list of VPC route table IDs for a file system.</p>
+    pub fn set_remove_route_table_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.remove_route_table_ids = input;
+        self
+    }
+    /// <p>(Multi-AZ only) A list of IDs of existing virtual private cloud (VPC) route tables to disassociate (remove) from your Amazon FSx for OpenZFS file system. You can use the API operation to retrieve the list of VPC route table IDs for a file system.</p>
+    pub fn get_remove_route_table_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.remove_route_table_ids
     }
     /// Consumes the builder and constructs a [`UpdateFileSystemOpenZfsConfiguration`](crate::types::UpdateFileSystemOpenZfsConfiguration).
     pub fn build(self) -> crate::types::UpdateFileSystemOpenZfsConfiguration {
@@ -212,6 +266,8 @@ impl UpdateFileSystemOpenZfsConfigurationBuilder {
             throughput_capacity: self.throughput_capacity,
             weekly_maintenance_start_time: self.weekly_maintenance_start_time,
             disk_iops_configuration: self.disk_iops_configuration,
+            add_route_table_ids: self.add_route_table_ids,
+            remove_route_table_ids: self.remove_route_table_ids,
         }
     }
 }

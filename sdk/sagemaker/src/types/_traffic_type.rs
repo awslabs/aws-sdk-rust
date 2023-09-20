@@ -13,6 +13,7 @@
 /// # let traffictype = unimplemented!();
 /// match traffictype {
 ///     TrafficType::Phases => { /* ... */ },
+///     TrafficType::Stairs => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -42,6 +43,8 @@
 pub enum TrafficType {
     #[allow(missing_docs)] // documentation missing in model
     Phases,
+    #[allow(missing_docs)] // documentation missing in model
+    Stairs,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
@@ -49,6 +52,7 @@ impl ::std::convert::From<&str> for TrafficType {
     fn from(s: &str) -> Self {
         match s {
             "PHASES" => TrafficType::Phases,
+            "STAIRS" => TrafficType::Stairs,
             other => TrafficType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -65,12 +69,13 @@ impl TrafficType {
     pub fn as_str(&self) -> &str {
         match self {
             TrafficType::Phases => "PHASES",
+            TrafficType::Stairs => "STAIRS",
             TrafficType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["PHASES"]
+        &["PHASES", "STAIRS"]
     }
 }
 impl ::std::convert::AsRef<str> for TrafficType {

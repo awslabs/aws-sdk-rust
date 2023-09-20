@@ -161,6 +161,8 @@ pub(crate) mod shape_delivery_stream_encryption_configuration;
 
 pub(crate) mod shape_destination_description_list;
 
+pub(crate) mod shape_document_id_options;
+
 pub(crate) mod shape_dynamic_partitioning_configuration;
 
 pub(crate) mod shape_elasticsearch_buffering_hints;

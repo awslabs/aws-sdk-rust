@@ -22,7 +22,7 @@ impl CreateConnectionInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateConnection`.
 ///
-/// <p>Creates a connection that can then be given to other AWS services like CodePipeline so that it can access third-party code repositories. The connection is in pending status until the third-party connection handshake is completed from the console.</p>
+/// <p>Creates a connection that can then be given to other Amazon Web Services services like CodePipeline so that it can access third-party code repositories. The connection is in pending status until the third-party connection handshake is completed from the console.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateConnectionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -124,17 +124,17 @@ impl CreateConnectionFluentBuilder {
     pub fn get_provider_type(&self) -> &::std::option::Option<crate::types::ProviderType> {
         self.inner.get_provider_type()
     }
-    /// <p>The name of the connection to be created. The name must be unique in the calling AWS account.</p>
+    /// <p>The name of the connection to be created.</p>
     pub fn connection_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.connection_name(input.into());
         self
     }
-    /// <p>The name of the connection to be created. The name must be unique in the calling AWS account.</p>
+    /// <p>The name of the connection to be created.</p>
     pub fn set_connection_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_connection_name(input);
         self
     }
-    /// <p>The name of the connection to be created. The name must be unique in the calling AWS account.</p>
+    /// <p>The name of the connection to be created.</p>
     pub fn get_connection_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_connection_name()
     }

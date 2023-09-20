@@ -19,6 +19,8 @@ pub struct UpdateLaunchConfigurationOutput {
     pub copy_tags: ::std::option::Option<bool>,
     /// <p>The licensing configuration to be used for this launch configuration.</p>
     pub licensing: ::std::option::Option<crate::types::Licensing>,
+    /// <p>Whether we want to activate post-launch actions for the Source Server.</p>
+    pub post_launch_enabled: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }
 impl UpdateLaunchConfigurationOutput {
@@ -54,6 +56,10 @@ impl UpdateLaunchConfigurationOutput {
     pub fn licensing(&self) -> ::std::option::Option<&crate::types::Licensing> {
         self.licensing.as_ref()
     }
+    /// <p>Whether we want to activate post-launch actions for the Source Server.</p>
+    pub fn post_launch_enabled(&self) -> ::std::option::Option<bool> {
+        self.post_launch_enabled
+    }
 }
 impl ::aws_http::request_id::RequestId for UpdateLaunchConfigurationOutput {
     fn request_id(&self) -> Option<&str> {
@@ -79,6 +85,7 @@ pub struct UpdateLaunchConfigurationOutputBuilder {
     pub(crate) copy_private_ip: ::std::option::Option<bool>,
     pub(crate) copy_tags: ::std::option::Option<bool>,
     pub(crate) licensing: ::std::option::Option<crate::types::Licensing>,
+    pub(crate) post_launch_enabled: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }
 impl UpdateLaunchConfigurationOutputBuilder {
@@ -197,6 +204,20 @@ impl UpdateLaunchConfigurationOutputBuilder {
     pub fn get_licensing(&self) -> &::std::option::Option<crate::types::Licensing> {
         &self.licensing
     }
+    /// <p>Whether we want to activate post-launch actions for the Source Server.</p>
+    pub fn post_launch_enabled(mut self, input: bool) -> Self {
+        self.post_launch_enabled = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Whether we want to activate post-launch actions for the Source Server.</p>
+    pub fn set_post_launch_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.post_launch_enabled = input;
+        self
+    }
+    /// <p>Whether we want to activate post-launch actions for the Source Server.</p>
+    pub fn get_post_launch_enabled(&self) -> &::std::option::Option<bool> {
+        &self.post_launch_enabled
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -217,6 +238,7 @@ impl UpdateLaunchConfigurationOutputBuilder {
             copy_private_ip: self.copy_private_ip,
             copy_tags: self.copy_tags,
             licensing: self.licensing,
+            post_launch_enabled: self.post_launch_enabled,
             _request_id: self._request_id,
         }
     }

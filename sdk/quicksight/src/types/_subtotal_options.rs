@@ -18,6 +18,8 @@ pub struct SubtotalOptions {
     pub value_cell_style: ::std::option::Option<crate::types::TableCellStyle>,
     /// <p>The cell styling options for the subtotals of header cells.</p>
     pub metric_header_cell_style: ::std::option::Option<crate::types::TableCellStyle>,
+    /// <p>The style targets options for subtotals.</p>
+    pub style_targets: ::std::option::Option<::std::vec::Vec<crate::types::TableStyleTarget>>,
 }
 impl SubtotalOptions {
     /// <p>The visibility configuration for the subtotal cells.</p>
@@ -48,6 +50,10 @@ impl SubtotalOptions {
     pub fn metric_header_cell_style(&self) -> ::std::option::Option<&crate::types::TableCellStyle> {
         self.metric_header_cell_style.as_ref()
     }
+    /// <p>The style targets options for subtotals.</p>
+    pub fn style_targets(&self) -> ::std::option::Option<&[crate::types::TableStyleTarget]> {
+        self.style_targets.as_deref()
+    }
 }
 impl SubtotalOptions {
     /// Creates a new builder-style object to manufacture [`SubtotalOptions`](crate::types::SubtotalOptions).
@@ -67,6 +73,7 @@ pub struct SubtotalOptionsBuilder {
     pub(crate) total_cell_style: ::std::option::Option<crate::types::TableCellStyle>,
     pub(crate) value_cell_style: ::std::option::Option<crate::types::TableCellStyle>,
     pub(crate) metric_header_cell_style: ::std::option::Option<crate::types::TableCellStyle>,
+    pub(crate) style_targets: ::std::option::Option<::std::vec::Vec<crate::types::TableStyleTarget>>,
 }
 impl SubtotalOptionsBuilder {
     /// <p>The visibility configuration for the subtotal cells.</p>
@@ -173,6 +180,26 @@ impl SubtotalOptionsBuilder {
     pub fn get_metric_header_cell_style(&self) -> &::std::option::Option<crate::types::TableCellStyle> {
         &self.metric_header_cell_style
     }
+    /// Appends an item to `style_targets`.
+    ///
+    /// To override the contents of this collection use [`set_style_targets`](Self::set_style_targets).
+    ///
+    /// <p>The style targets options for subtotals.</p>
+    pub fn style_targets(mut self, input: crate::types::TableStyleTarget) -> Self {
+        let mut v = self.style_targets.unwrap_or_default();
+        v.push(input);
+        self.style_targets = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The style targets options for subtotals.</p>
+    pub fn set_style_targets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TableStyleTarget>>) -> Self {
+        self.style_targets = input;
+        self
+    }
+    /// <p>The style targets options for subtotals.</p>
+    pub fn get_style_targets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TableStyleTarget>> {
+        &self.style_targets
+    }
     /// Consumes the builder and constructs a [`SubtotalOptions`](crate::types::SubtotalOptions).
     pub fn build(self) -> crate::types::SubtotalOptions {
         crate::types::SubtotalOptions {
@@ -183,6 +210,7 @@ impl SubtotalOptionsBuilder {
             total_cell_style: self.total_cell_style,
             value_cell_style: self.value_cell_style,
             metric_header_cell_style: self.metric_header_cell_style,
+            style_targets: self.style_targets,
         }
     }
 }

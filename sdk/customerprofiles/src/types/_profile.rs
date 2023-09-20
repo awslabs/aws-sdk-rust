@@ -2,7 +2,7 @@
 
 /// <p>The standard profile of a customer.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct Profile {
     /// <p>The unique identifier of a customer profile.</p>
     pub profile_id: ::std::option::Option<::std::string::String>,
@@ -169,6 +169,37 @@ impl Profile {
         self.gender_string.as_deref()
     }
 }
+impl ::std::fmt::Debug for Profile {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("Profile");
+        formatter.field("profile_id", &self.profile_id);
+        formatter.field("account_number", &"*** Sensitive Data Redacted ***");
+        formatter.field("additional_information", &"*** Sensitive Data Redacted ***");
+        formatter.field("party_type", &"*** Sensitive Data Redacted ***");
+        formatter.field("business_name", &"*** Sensitive Data Redacted ***");
+        formatter.field("first_name", &"*** Sensitive Data Redacted ***");
+        formatter.field("middle_name", &"*** Sensitive Data Redacted ***");
+        formatter.field("last_name", &"*** Sensitive Data Redacted ***");
+        formatter.field("birth_date", &"*** Sensitive Data Redacted ***");
+        formatter.field("gender", &"*** Sensitive Data Redacted ***");
+        formatter.field("phone_number", &"*** Sensitive Data Redacted ***");
+        formatter.field("mobile_phone_number", &"*** Sensitive Data Redacted ***");
+        formatter.field("home_phone_number", &"*** Sensitive Data Redacted ***");
+        formatter.field("business_phone_number", &"*** Sensitive Data Redacted ***");
+        formatter.field("email_address", &"*** Sensitive Data Redacted ***");
+        formatter.field("personal_email_address", &"*** Sensitive Data Redacted ***");
+        formatter.field("business_email_address", &"*** Sensitive Data Redacted ***");
+        formatter.field("address", &"*** Sensitive Data Redacted ***");
+        formatter.field("shipping_address", &"*** Sensitive Data Redacted ***");
+        formatter.field("mailing_address", &"*** Sensitive Data Redacted ***");
+        formatter.field("billing_address", &"*** Sensitive Data Redacted ***");
+        formatter.field("attributes", &"*** Sensitive Data Redacted ***");
+        formatter.field("found_by_items", &self.found_by_items);
+        formatter.field("party_type_string", &"*** Sensitive Data Redacted ***");
+        formatter.field("gender_string", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl Profile {
     /// Creates a new builder-style object to manufacture [`Profile`](crate::types::Profile).
     pub fn builder() -> crate::types::builders::ProfileBuilder {
@@ -178,7 +209,7 @@ impl Profile {
 
 /// A builder for [`Profile`](crate::types::Profile).
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct ProfileBuilder {
     pub(crate) profile_id: ::std::option::Option<::std::string::String>,
     pub(crate) account_number: ::std::option::Option<::std::string::String>,
@@ -616,5 +647,36 @@ impl ProfileBuilder {
             party_type_string: self.party_type_string,
             gender_string: self.gender_string,
         }
+    }
+}
+impl ::std::fmt::Debug for ProfileBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("ProfileBuilder");
+        formatter.field("profile_id", &self.profile_id);
+        formatter.field("account_number", &"*** Sensitive Data Redacted ***");
+        formatter.field("additional_information", &"*** Sensitive Data Redacted ***");
+        formatter.field("party_type", &"*** Sensitive Data Redacted ***");
+        formatter.field("business_name", &"*** Sensitive Data Redacted ***");
+        formatter.field("first_name", &"*** Sensitive Data Redacted ***");
+        formatter.field("middle_name", &"*** Sensitive Data Redacted ***");
+        formatter.field("last_name", &"*** Sensitive Data Redacted ***");
+        formatter.field("birth_date", &"*** Sensitive Data Redacted ***");
+        formatter.field("gender", &"*** Sensitive Data Redacted ***");
+        formatter.field("phone_number", &"*** Sensitive Data Redacted ***");
+        formatter.field("mobile_phone_number", &"*** Sensitive Data Redacted ***");
+        formatter.field("home_phone_number", &"*** Sensitive Data Redacted ***");
+        formatter.field("business_phone_number", &"*** Sensitive Data Redacted ***");
+        formatter.field("email_address", &"*** Sensitive Data Redacted ***");
+        formatter.field("personal_email_address", &"*** Sensitive Data Redacted ***");
+        formatter.field("business_email_address", &"*** Sensitive Data Redacted ***");
+        formatter.field("address", &"*** Sensitive Data Redacted ***");
+        formatter.field("shipping_address", &"*** Sensitive Data Redacted ***");
+        formatter.field("mailing_address", &"*** Sensitive Data Redacted ***");
+        formatter.field("billing_address", &"*** Sensitive Data Redacted ***");
+        formatter.field("attributes", &"*** Sensitive Data Redacted ***");
+        formatter.field("found_by_items", &self.found_by_items);
+        formatter.field("party_type_string", &"*** Sensitive Data Redacted ***");
+        formatter.field("gender_string", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

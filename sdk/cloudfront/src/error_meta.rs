@@ -574,6 +574,9 @@ impl From<crate::operation::copy_distribution::CopyDistributionError> for Error 
             crate::operation::copy_distribution::CopyDistributionError::TooManyDistributionsAssociatedToKeyGroup(inner) => {
                 Error::TooManyDistributionsAssociatedToKeyGroup(inner)
             }
+            crate::operation::copy_distribution::CopyDistributionError::TooManyDistributionsAssociatedToOriginAccessControl(inner) => {
+                Error::TooManyDistributionsAssociatedToOriginAccessControl(inner)
+            }
             crate::operation::copy_distribution::CopyDistributionError::TooManyDistributionsAssociatedToOriginRequestPolicy(inner) => {
                 Error::TooManyDistributionsAssociatedToOriginRequestPolicy(inner)
             }
@@ -928,6 +931,7 @@ impl From<crate::operation::create_distribution_with_tags::CreateDistributionWit
             crate::operation::create_distribution_with_tags::CreateDistributionWithTagsError::ContinuousDeploymentPolicyInUse(inner) => Error::ContinuousDeploymentPolicyInUse(inner),
             crate::operation::create_distribution_with_tags::CreateDistributionWithTagsError::DistributionAlreadyExists(inner) => Error::DistributionAlreadyExists(inner),
             crate::operation::create_distribution_with_tags::CreateDistributionWithTagsError::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior(inner) => Error::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior(inner),
+            crate::operation::create_distribution_with_tags::CreateDistributionWithTagsError::IllegalOriginAccessConfiguration(inner) => Error::IllegalOriginAccessConfiguration(inner),
             crate::operation::create_distribution_with_tags::CreateDistributionWithTagsError::InconsistentQuantities(inner) => Error::InconsistentQuantities(inner),
             crate::operation::create_distribution_with_tags::CreateDistributionWithTagsError::InvalidArgument(inner) => Error::InvalidArgument(inner),
             crate::operation::create_distribution_with_tags::CreateDistributionWithTagsError::InvalidDefaultRootObject(inner) => Error::InvalidDefaultRootObject(inner),
@@ -971,6 +975,7 @@ impl From<crate::operation::create_distribution_with_tags::CreateDistributionWit
             crate::operation::create_distribution_with_tags::CreateDistributionWithTagsError::TooManyDistributionsAssociatedToCachePolicy(inner) => Error::TooManyDistributionsAssociatedToCachePolicy(inner),
             crate::operation::create_distribution_with_tags::CreateDistributionWithTagsError::TooManyDistributionsAssociatedToFieldLevelEncryptionConfig(inner) => Error::TooManyDistributionsAssociatedToFieldLevelEncryptionConfig(inner),
             crate::operation::create_distribution_with_tags::CreateDistributionWithTagsError::TooManyDistributionsAssociatedToKeyGroup(inner) => Error::TooManyDistributionsAssociatedToKeyGroup(inner),
+            crate::operation::create_distribution_with_tags::CreateDistributionWithTagsError::TooManyDistributionsAssociatedToOriginAccessControl(inner) => Error::TooManyDistributionsAssociatedToOriginAccessControl(inner),
             crate::operation::create_distribution_with_tags::CreateDistributionWithTagsError::TooManyDistributionsAssociatedToOriginRequestPolicy(inner) => Error::TooManyDistributionsAssociatedToOriginRequestPolicy(inner),
             crate::operation::create_distribution_with_tags::CreateDistributionWithTagsError::TooManyDistributionsAssociatedToResponseHeadersPolicy(inner) => Error::TooManyDistributionsAssociatedToResponseHeadersPolicy(inner),
             crate::operation::create_distribution_with_tags::CreateDistributionWithTagsError::TooManyDistributionsWithFunctionAssociations(inner) => Error::TooManyDistributionsWithFunctionAssociations(inner),
@@ -3834,6 +3839,9 @@ impl From<crate::operation::update_distribution::UpdateDistributionError> for Er
             crate::operation::update_distribution::UpdateDistributionError::TooManyDistributionsAssociatedToKeyGroup(inner) => {
                 Error::TooManyDistributionsAssociatedToKeyGroup(inner)
             }
+            crate::operation::update_distribution::UpdateDistributionError::TooManyDistributionsAssociatedToOriginAccessControl(inner) => {
+                Error::TooManyDistributionsAssociatedToOriginAccessControl(inner)
+            }
             crate::operation::update_distribution::UpdateDistributionError::TooManyDistributionsAssociatedToOriginRequestPolicy(inner) => {
                 Error::TooManyDistributionsAssociatedToOriginRequestPolicy(inner)
             }
@@ -3952,6 +3960,7 @@ impl From<crate::operation::update_distribution_with_staging_config::UpdateDistr
             crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigError::TooManyDistributionsAssociatedToCachePolicy(inner) => Error::TooManyDistributionsAssociatedToCachePolicy(inner),
             crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigError::TooManyDistributionsAssociatedToFieldLevelEncryptionConfig(inner) => Error::TooManyDistributionsAssociatedToFieldLevelEncryptionConfig(inner),
             crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigError::TooManyDistributionsAssociatedToKeyGroup(inner) => Error::TooManyDistributionsAssociatedToKeyGroup(inner),
+            crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigError::TooManyDistributionsAssociatedToOriginAccessControl(inner) => Error::TooManyDistributionsAssociatedToOriginAccessControl(inner),
             crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigError::TooManyDistributionsAssociatedToOriginRequestPolicy(inner) => Error::TooManyDistributionsAssociatedToOriginRequestPolicy(inner),
             crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigError::TooManyDistributionsAssociatedToResponseHeadersPolicy(inner) => Error::TooManyDistributionsAssociatedToResponseHeadersPolicy(inner),
             crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigError::TooManyDistributionsWithFunctionAssociations(inner) => Error::TooManyDistributionsWithFunctionAssociations(inner),

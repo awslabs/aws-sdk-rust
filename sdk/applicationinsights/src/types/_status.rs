@@ -14,6 +14,7 @@
 /// match status {
 ///     Status::Ignore => { /* ... */ },
 ///     Status::Pending => { /* ... */ },
+///     Status::Recovering => { /* ... */ },
 ///     Status::Recurring => { /* ... */ },
 ///     Status::Resolved => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -48,6 +49,8 @@ pub enum Status {
     #[allow(missing_docs)] // documentation missing in model
     Pending,
     #[allow(missing_docs)] // documentation missing in model
+    Recovering,
+    #[allow(missing_docs)] // documentation missing in model
     Recurring,
     #[allow(missing_docs)] // documentation missing in model
     Resolved,
@@ -59,6 +62,7 @@ impl ::std::convert::From<&str> for Status {
         match s {
             "IGNORE" => Status::Ignore,
             "PENDING" => Status::Pending,
+            "RECOVERING" => Status::Recovering,
             "RECURRING" => Status::Recurring,
             "RESOLVED" => Status::Resolved,
             other => Status::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
@@ -78,6 +82,7 @@ impl Status {
         match self {
             Status::Ignore => "IGNORE",
             Status::Pending => "PENDING",
+            Status::Recovering => "RECOVERING",
             Status::Recurring => "RECURRING",
             Status::Resolved => "RESOLVED",
             Status::Unknown(value) => value.as_str(),
@@ -85,7 +90,7 @@ impl Status {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["IGNORE", "PENDING", "RECURRING", "RESOLVED"]
+        &["IGNORE", "PENDING", "RECOVERING", "RECURRING", "RESOLVED"]
     }
 }
 impl ::std::convert::AsRef<str> for Status {

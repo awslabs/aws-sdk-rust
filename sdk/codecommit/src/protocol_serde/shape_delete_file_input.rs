@@ -15,17 +15,17 @@ pub fn ser_delete_file_input(
     if let Some(var_4) = &input.parent_commit_id {
         object.key("parentCommitId").string(var_4.as_str());
     }
-    if input.keep_empty_folders {
-        object.key("keepEmptyFolders").boolean(input.keep_empty_folders);
+    if let Some(var_5) = &input.keep_empty_folders {
+        object.key("keepEmptyFolders").boolean(*var_5);
     }
-    if let Some(var_5) = &input.commit_message {
-        object.key("commitMessage").string(var_5.as_str());
+    if let Some(var_6) = &input.commit_message {
+        object.key("commitMessage").string(var_6.as_str());
     }
-    if let Some(var_6) = &input.name {
-        object.key("name").string(var_6.as_str());
+    if let Some(var_7) = &input.name {
+        object.key("name").string(var_7.as_str());
     }
-    if let Some(var_7) = &input.email {
-        object.key("email").string(var_7.as_str());
+    if let Some(var_8) = &input.email {
+        object.key("email").string(var_8.as_str());
     }
     Ok(())
 }

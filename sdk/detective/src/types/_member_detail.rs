@@ -2,7 +2,7 @@
 
 /// <p>Details about a member account in a behavior graph.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct MemberDetail {
     /// <p>The Amazon Web Services account identifier for the member account.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
@@ -153,6 +153,31 @@ impl MemberDetail {
         self.datasource_package_ingest_states.as_ref()
     }
 }
+impl ::std::fmt::Debug for MemberDetail {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("MemberDetail");
+        formatter.field("account_id", &self.account_id);
+        formatter.field("email_address", &"*** Sensitive Data Redacted ***");
+        formatter.field("graph_arn", &self.graph_arn);
+        formatter.field("master_id", &self.master_id);
+        formatter.field("administrator_id", &self.administrator_id);
+        formatter.field("status", &self.status);
+        formatter.field("disabled_reason", &self.disabled_reason);
+        formatter.field("invited_time", &self.invited_time);
+        formatter.field("updated_time", &self.updated_time);
+        formatter.field("volume_usage_in_bytes", &self.volume_usage_in_bytes);
+        formatter.field("volume_usage_updated_time", &self.volume_usage_updated_time);
+        formatter.field("percent_of_graph_utilization", &self.percent_of_graph_utilization);
+        formatter.field(
+            "percent_of_graph_utilization_updated_time",
+            &self.percent_of_graph_utilization_updated_time,
+        );
+        formatter.field("invitation_type", &self.invitation_type);
+        formatter.field("volume_usage_by_datasource_package", &self.volume_usage_by_datasource_package);
+        formatter.field("datasource_package_ingest_states", &self.datasource_package_ingest_states);
+        formatter.finish()
+    }
+}
 impl MemberDetail {
     /// Creates a new builder-style object to manufacture [`MemberDetail`](crate::types::MemberDetail).
     pub fn builder() -> crate::types::builders::MemberDetailBuilder {
@@ -162,7 +187,7 @@ impl MemberDetail {
 
 /// A builder for [`MemberDetail`](crate::types::MemberDetail).
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct MemberDetailBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) email_address: ::std::option::Option<::std::string::String>,
@@ -516,5 +541,30 @@ impl MemberDetailBuilder {
             volume_usage_by_datasource_package: self.volume_usage_by_datasource_package,
             datasource_package_ingest_states: self.datasource_package_ingest_states,
         }
+    }
+}
+impl ::std::fmt::Debug for MemberDetailBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("MemberDetailBuilder");
+        formatter.field("account_id", &self.account_id);
+        formatter.field("email_address", &"*** Sensitive Data Redacted ***");
+        formatter.field("graph_arn", &self.graph_arn);
+        formatter.field("master_id", &self.master_id);
+        formatter.field("administrator_id", &self.administrator_id);
+        formatter.field("status", &self.status);
+        formatter.field("disabled_reason", &self.disabled_reason);
+        formatter.field("invited_time", &self.invited_time);
+        formatter.field("updated_time", &self.updated_time);
+        formatter.field("volume_usage_in_bytes", &self.volume_usage_in_bytes);
+        formatter.field("volume_usage_updated_time", &self.volume_usage_updated_time);
+        formatter.field("percent_of_graph_utilization", &self.percent_of_graph_utilization);
+        formatter.field(
+            "percent_of_graph_utilization_updated_time",
+            &self.percent_of_graph_utilization_updated_time,
+        );
+        formatter.field("invitation_type", &self.invitation_type);
+        formatter.field("volume_usage_by_datasource_package", &self.volume_usage_by_datasource_package);
+        formatter.field("datasource_package_ingest_states", &self.datasource_package_ingest_states);
+        formatter.finish()
     }
 }

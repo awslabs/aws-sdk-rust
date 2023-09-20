@@ -1,9 +1,9 @@
 [workspace]
 exclude = [
-    "examples/webassembly",
     "examples/test-utils",
-    "examples/examples",
+    "examples/webassembly",
     "examples/cross_service",
+    "examples/examples",
     "tests/webassembly",
     "tests/no-default-features"
 ]
@@ -252,6 +252,7 @@ members = [
     "sdk/mediastore",
     "sdk/mediastoredata",
     "sdk/mediatailor",
+    "sdk/medicalimaging",
     "sdk/memorydb",
     "sdk/mgn",
     "sdk/migrationhub",
@@ -264,6 +265,7 @@ members = [
     "sdk/mturk",
     "sdk/mwaa",
     "sdk/neptune",
+    "sdk/neptunedata",
     "sdk/networkfirewall",
     "sdk/networkmanager",
     "sdk/nimble",
@@ -279,6 +281,7 @@ members = [
     "sdk/panorama",
     "sdk/paymentcryptography",
     "sdk/paymentcryptographydata",
+    "sdk/pcaconnectorad",
     "sdk/personalize",
     "sdk/personalizeevents",
     "sdk/personalizeruntime",

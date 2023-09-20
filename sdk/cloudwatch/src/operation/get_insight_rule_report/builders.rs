@@ -235,17 +235,17 @@ impl GetInsightRuleReportFluentBuilder {
     pub fn get_metrics(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_metrics()
     }
-    /// <p>Determines what statistic to use to rank the contributors. Valid values are SUM and MAXIMUM.</p>
+    /// <p>Determines what statistic to use to rank the contributors. Valid values are <code>Sum</code> and <code>Maximum</code>.</p>
     pub fn order_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.order_by(input.into());
         self
     }
-    /// <p>Determines what statistic to use to rank the contributors. Valid values are SUM and MAXIMUM.</p>
+    /// <p>Determines what statistic to use to rank the contributors. Valid values are <code>Sum</code> and <code>Maximum</code>.</p>
     pub fn set_order_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_order_by(input);
         self
     }
-    /// <p>Determines what statistic to use to rank the contributors. Valid values are SUM and MAXIMUM.</p>
+    /// <p>Determines what statistic to use to rank the contributors. Valid values are <code>Sum</code> and <code>Maximum</code>.</p>
     pub fn get_order_by(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_order_by()
     }

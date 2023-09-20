@@ -52,6 +52,13 @@ where
                         "healthCheck" => {
                             builder = builder.set_health_check(crate::protocol_serde::shape_health_check_config::de_health_check_config(tokens)?);
                         }
+                        "lambdaEventStructureVersion" => {
+                            builder = builder.set_lambda_event_structure_version(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::LambdaEventStructureVersion::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
@@ -97,6 +104,9 @@ pub fn ser_target_group_config(
         let mut object_7 = object.key("healthCheck").start_object();
         crate::protocol_serde::shape_health_check_config::ser_health_check_config(&mut object_7, var_6)?;
         object_7.finish();
+    }
+    if let Some(var_8) = &input.lambda_event_structure_version {
+        object.key("lambdaEventStructureVersion").string(var_8.as_str());
     }
     Ok(())
 }

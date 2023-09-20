@@ -12,7 +12,7 @@ pub struct PutObjectInput {
     /// Inline chunk data to be uploaded.
     pub inline_chunk: ::aws_smithy_http::byte_stream::ByteStream,
     /// Length of the inline chunk data.
-    pub inline_chunk_length: i64,
+    pub inline_chunk_length: ::std::option::Option<i64>,
     /// Inline chunk checksum
     pub inline_chunk_checksum: ::std::option::Option<::std::string::String>,
     /// Inline chunk checksum algorithm
@@ -22,7 +22,7 @@ pub struct PutObjectInput {
     /// object checksum algorithm
     pub object_checksum_algorithm: ::std::option::Option<crate::types::SummaryChecksumAlgorithm>,
     /// Throw an exception if Object name is already exist.
-    pub throw_on_duplicate: bool,
+    pub throw_on_duplicate: ::std::option::Option<bool>,
 }
 impl PutObjectInput {
     /// Backup job Id for the in-progress backup.
@@ -42,7 +42,7 @@ impl PutObjectInput {
         &self.inline_chunk
     }
     /// Length of the inline chunk data.
-    pub fn inline_chunk_length(&self) -> i64 {
+    pub fn inline_chunk_length(&self) -> ::std::option::Option<i64> {
         self.inline_chunk_length
     }
     /// Inline chunk checksum
@@ -62,7 +62,7 @@ impl PutObjectInput {
         self.object_checksum_algorithm.as_ref()
     }
     /// Throw an exception if Object name is already exist.
-    pub fn throw_on_duplicate(&self) -> bool {
+    pub fn throw_on_duplicate(&self) -> ::std::option::Option<bool> {
         self.throw_on_duplicate
     }
 }
@@ -236,12 +236,12 @@ impl PutObjectInputBuilder {
             object_name: self.object_name,
             metadata_string: self.metadata_string,
             inline_chunk: self.inline_chunk.unwrap_or_default(),
-            inline_chunk_length: self.inline_chunk_length.unwrap_or_default(),
+            inline_chunk_length: self.inline_chunk_length,
             inline_chunk_checksum: self.inline_chunk_checksum,
             inline_chunk_checksum_algorithm: self.inline_chunk_checksum_algorithm,
             object_checksum: self.object_checksum,
             object_checksum_algorithm: self.object_checksum_algorithm,
-            throw_on_duplicate: self.throw_on_duplicate.unwrap_or_default(),
+            throw_on_duplicate: self.throw_on_duplicate,
         })
     }
 }

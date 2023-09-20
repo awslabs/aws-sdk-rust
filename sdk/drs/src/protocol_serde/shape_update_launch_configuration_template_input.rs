@@ -24,8 +24,11 @@ pub fn ser_update_launch_configuration_template_input(
         crate::protocol_serde::shape_licensing::ser_licensing(&mut object_7, var_6)?;
         object_7.finish();
     }
-    if let Some(var_8) = &input.target_instance_type_right_sizing_method {
-        object.key("targetInstanceTypeRightSizingMethod").string(var_8.as_str());
+    if let Some(var_8) = &input.post_launch_enabled {
+        object.key("postLaunchEnabled").boolean(*var_8);
+    }
+    if let Some(var_9) = &input.target_instance_type_right_sizing_method {
+        object.key("targetInstanceTypeRightSizingMethod").string(var_9.as_str());
     }
     Ok(())
 }

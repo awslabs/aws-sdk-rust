@@ -843,4 +843,18 @@ impl RestoreDBClusterToPointInTimeFluentBuilder {
     pub fn get_network_type(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_network_type()
     }
+    /// <p>The resource ID of the source DB cluster from which to restore.</p>
+    pub fn source_db_cluster_resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.source_db_cluster_resource_id(input.into());
+        self
+    }
+    /// <p>The resource ID of the source DB cluster from which to restore.</p>
+    pub fn set_source_db_cluster_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_source_db_cluster_resource_id(input);
+        self
+    }
+    /// <p>The resource ID of the source DB cluster from which to restore.</p>
+    pub fn get_source_db_cluster_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_source_db_cluster_resource_id()
+    }
 }

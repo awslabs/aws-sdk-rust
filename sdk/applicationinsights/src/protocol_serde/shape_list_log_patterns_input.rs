@@ -18,5 +18,8 @@ pub fn ser_list_log_patterns_input(
     if let Some(var_4) = &input.next_token {
         object.key("NextToken").string(var_4.as_str());
     }
+    if let Some(var_5) = &input.account_id {
+        object.key("AccountId").string(var_5.as_str());
+    }
     Ok(())
 }

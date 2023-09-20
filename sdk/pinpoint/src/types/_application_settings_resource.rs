@@ -20,6 +20,8 @@ pub struct ApplicationSettingsResource {
     /// </ul>
     /// <p>If any of the preceding conditions isn't met, the endpoint will receive messages from a campaign or journey, even if quiet time is enabled.</p>
     pub quiet_time: ::std::option::Option<crate::types::QuietTime>,
+    /// <p>The default sending limits for journeys in the application. These limits apply to each journey for the application but can be overridden, on a per journey basis, with the JourneyLimits resource.</p>
+    pub journey_limits: ::std::option::Option<crate::types::ApplicationSettingsJourneyLimits>,
 }
 impl ApplicationSettingsResource {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -48,6 +50,10 @@ impl ApplicationSettingsResource {
     pub fn quiet_time(&self) -> ::std::option::Option<&crate::types::QuietTime> {
         self.quiet_time.as_ref()
     }
+    /// <p>The default sending limits for journeys in the application. These limits apply to each journey for the application but can be overridden, on a per journey basis, with the JourneyLimits resource.</p>
+    pub fn journey_limits(&self) -> ::std::option::Option<&crate::types::ApplicationSettingsJourneyLimits> {
+        self.journey_limits.as_ref()
+    }
 }
 impl ApplicationSettingsResource {
     /// Creates a new builder-style object to manufacture [`ApplicationSettingsResource`](crate::types::ApplicationSettingsResource).
@@ -65,6 +71,7 @@ pub struct ApplicationSettingsResourceBuilder {
     pub(crate) last_modified_date: ::std::option::Option<::std::string::String>,
     pub(crate) limits: ::std::option::Option<crate::types::CampaignLimits>,
     pub(crate) quiet_time: ::std::option::Option<crate::types::QuietTime>,
+    pub(crate) journey_limits: ::std::option::Option<crate::types::ApplicationSettingsJourneyLimits>,
 }
 impl ApplicationSettingsResourceBuilder {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -155,6 +162,20 @@ impl ApplicationSettingsResourceBuilder {
     pub fn get_quiet_time(&self) -> &::std::option::Option<crate::types::QuietTime> {
         &self.quiet_time
     }
+    /// <p>The default sending limits for journeys in the application. These limits apply to each journey for the application but can be overridden, on a per journey basis, with the JourneyLimits resource.</p>
+    pub fn journey_limits(mut self, input: crate::types::ApplicationSettingsJourneyLimits) -> Self {
+        self.journey_limits = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The default sending limits for journeys in the application. These limits apply to each journey for the application but can be overridden, on a per journey basis, with the JourneyLimits resource.</p>
+    pub fn set_journey_limits(mut self, input: ::std::option::Option<crate::types::ApplicationSettingsJourneyLimits>) -> Self {
+        self.journey_limits = input;
+        self
+    }
+    /// <p>The default sending limits for journeys in the application. These limits apply to each journey for the application but can be overridden, on a per journey basis, with the JourneyLimits resource.</p>
+    pub fn get_journey_limits(&self) -> &::std::option::Option<crate::types::ApplicationSettingsJourneyLimits> {
+        &self.journey_limits
+    }
     /// Consumes the builder and constructs a [`ApplicationSettingsResource`](crate::types::ApplicationSettingsResource).
     pub fn build(self) -> crate::types::ApplicationSettingsResource {
         crate::types::ApplicationSettingsResource {
@@ -163,6 +184,7 @@ impl ApplicationSettingsResourceBuilder {
             last_modified_date: self.last_modified_date,
             limits: self.limits,
             quiet_time: self.quiet_time,
+            journey_limits: self.journey_limits,
         }
     }
 }

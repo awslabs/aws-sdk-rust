@@ -22,7 +22,14 @@ impl ListUsersInputBuilder {
 }
 /// Fluent builder constructing a request to `ListUsers`.
 ///
-/// <p>Lists the users in the Amazon Cognito user pool.</p>
+/// <p>Lists users and their basic details in a user pool.</p> <note>
+/// <p>Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you must use IAM credentials to authorize requests, and you must grant yourself the corresponding IAM permission in a policy.</p>
+/// <p class="title"> <b>Learn more</b> </p>
+/// <ul>
+/// <li> <p> <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html">Signing Amazon Web Services API Requests</a> </p> </li>
+/// <li> <p> <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using the Amazon Cognito user pools API and user pool endpoints</a> </p> </li>
+/// </ul>
+/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListUsersFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -128,17 +135,17 @@ impl ListUsersFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_attributes_to_get`](Self::set_attributes_to_get).
     ///
-    /// <p>An array of strings, where each string is the name of a user attribute to be returned for each user in the search results. If the array is null, all attributes are returned.</p>
+    /// <p>A JSON array of user attribute names, for example <code>given_name</code>, that you want Amazon Cognito to include in the response for each user. When you don't provide an <code>AttributesToGet</code> parameter, Amazon Cognito returns all attributes for each user.</p>
     pub fn attributes_to_get(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.attributes_to_get(input.into());
         self
     }
-    /// <p>An array of strings, where each string is the name of a user attribute to be returned for each user in the search results. If the array is null, all attributes are returned.</p>
+    /// <p>A JSON array of user attribute names, for example <code>given_name</code>, that you want Amazon Cognito to include in the response for each user. When you don't provide an <code>AttributesToGet</code> parameter, Amazon Cognito returns all attributes for each user.</p>
     pub fn set_attributes_to_get(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_attributes_to_get(input);
         self
     }
-    /// <p>An array of strings, where each string is the name of a user attribute to be returned for each user in the search results. If the array is null, all attributes are returned.</p>
+    /// <p>A JSON array of user attribute names, for example <code>given_name</code>, that you want Amazon Cognito to include in the response for each user. When you don't provide an <code>AttributesToGet</code> parameter, Amazon Cognito returns all attributes for each user.</p>
     pub fn get_attributes_to_get(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_attributes_to_get()
     }

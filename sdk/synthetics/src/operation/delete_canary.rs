@@ -197,11 +197,10 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for DeleteCanar
                 mut output: &mut ::std::string::String,
             ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError> {
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
-                if _input.delete_lambda {
-                    query.push_kv(
-                        "deleteLambda",
-                        ::aws_smithy_types::primitive::Encoder::from(_input.delete_lambda).encode(),
-                    );
+                if let ::std::option::Option::Some(inner_2) = &_input.delete_lambda {
+                    if *inner_2 {
+                        query.push_kv("deleteLambda", ::aws_smithy_types::primitive::Encoder::from(*inner_2).encode());
+                    }
                 }
                 ::std::result::Result::Ok(())
             }

@@ -11,7 +11,7 @@ pub struct GetFaceLivenessSessionResultsOutput {
     pub confidence: ::std::option::Option<f32>,
     /// <p>A high-quality image from the Face Liveness video that can be used for face comparison or search. It includes a bounding box of the face and the Base64-encoded bytes that return an image. If the CreateFaceLivenessSession request included an OutputConfig argument, the image will be uploaded to an S3Object specified in the output configuration. In case the reference image is not returned, it's recommended to retry the Liveness check.</p>
     pub reference_image: ::std::option::Option<crate::types::AuditImage>,
-    /// <p>A set of images from the Face Liveness video that can be used for audit purposes. It includes a bounding box of the face and the Base64-encoded bytes that return an image. If the CreateFaceLivenessSession request included an OutputConfig argument, the image will be uploaded to an S3Object specified in the output configuration.</p>
+    /// <p>A set of images from the Face Liveness video that can be used for audit purposes. It includes a bounding box of the face and the Base64-encoded bytes that return an image. If the CreateFaceLivenessSession request included an OutputConfig argument, the image will be uploaded to an S3Object specified in the output configuration. If no Amazon S3 bucket is defined, raw bytes are sent instead.</p>
     pub audit_images: ::std::option::Option<::std::vec::Vec<crate::types::AuditImage>>,
     _request_id: Option<String>,
 }
@@ -32,7 +32,7 @@ impl GetFaceLivenessSessionResultsOutput {
     pub fn reference_image(&self) -> ::std::option::Option<&crate::types::AuditImage> {
         self.reference_image.as_ref()
     }
-    /// <p>A set of images from the Face Liveness video that can be used for audit purposes. It includes a bounding box of the face and the Base64-encoded bytes that return an image. If the CreateFaceLivenessSession request included an OutputConfig argument, the image will be uploaded to an S3Object specified in the output configuration.</p>
+    /// <p>A set of images from the Face Liveness video that can be used for audit purposes. It includes a bounding box of the face and the Base64-encoded bytes that return an image. If the CreateFaceLivenessSession request included an OutputConfig argument, the image will be uploaded to an S3Object specified in the output configuration. If no Amazon S3 bucket is defined, raw bytes are sent instead.</p>
     pub fn audit_images(&self) -> ::std::option::Option<&[crate::types::AuditImage]> {
         self.audit_images.as_deref()
     }
@@ -121,19 +121,19 @@ impl GetFaceLivenessSessionResultsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_audit_images`](Self::set_audit_images).
     ///
-    /// <p>A set of images from the Face Liveness video that can be used for audit purposes. It includes a bounding box of the face and the Base64-encoded bytes that return an image. If the CreateFaceLivenessSession request included an OutputConfig argument, the image will be uploaded to an S3Object specified in the output configuration.</p>
+    /// <p>A set of images from the Face Liveness video that can be used for audit purposes. It includes a bounding box of the face and the Base64-encoded bytes that return an image. If the CreateFaceLivenessSession request included an OutputConfig argument, the image will be uploaded to an S3Object specified in the output configuration. If no Amazon S3 bucket is defined, raw bytes are sent instead.</p>
     pub fn audit_images(mut self, input: crate::types::AuditImage) -> Self {
         let mut v = self.audit_images.unwrap_or_default();
         v.push(input);
         self.audit_images = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A set of images from the Face Liveness video that can be used for audit purposes. It includes a bounding box of the face and the Base64-encoded bytes that return an image. If the CreateFaceLivenessSession request included an OutputConfig argument, the image will be uploaded to an S3Object specified in the output configuration.</p>
+    /// <p>A set of images from the Face Liveness video that can be used for audit purposes. It includes a bounding box of the face and the Base64-encoded bytes that return an image. If the CreateFaceLivenessSession request included an OutputConfig argument, the image will be uploaded to an S3Object specified in the output configuration. If no Amazon S3 bucket is defined, raw bytes are sent instead.</p>
     pub fn set_audit_images(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AuditImage>>) -> Self {
         self.audit_images = input;
         self
     }
-    /// <p>A set of images from the Face Liveness video that can be used for audit purposes. It includes a bounding box of the face and the Base64-encoded bytes that return an image. If the CreateFaceLivenessSession request included an OutputConfig argument, the image will be uploaded to an S3Object specified in the output configuration.</p>
+    /// <p>A set of images from the Face Liveness video that can be used for audit purposes. It includes a bounding box of the face and the Base64-encoded bytes that return an image. If the CreateFaceLivenessSession request included an OutputConfig argument, the image will be uploaded to an S3Object specified in the output configuration. If no Amazon S3 bucket is defined, raw bytes are sent instead.</p>
     pub fn get_audit_images(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AuditImage>> {
         &self.audit_images
     }

@@ -4,17 +4,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RuleBasedProperties {
-    /// <p>A list of Rule objects, each of which have fields <code>RuleName</code> and <code>MatchingKeys</code>.</p>
+    /// <p>A list of <code>Rule</code> objects, each of which have fields <code>RuleName</code> and <code>MatchingKeys</code>.</p>
     pub rules: ::std::option::Option<::std::vec::Vec<crate::types::Rule>>,
-    /// <p>You can either choose <code>ONE_TO_ONE</code> or <code>MANY_TO_MANY</code> as the AttributeMatchingModel. When choosing <code>MANY_TO_MANY</code>, the system can match attribute across the sub-types of an attribute type. For example, if the value of the Email field of Profile A and the value of BusinessEmail field of Profile B matches, the two profiles are matched on the Email type. When choosing <code>ONE_TO_ONE</code> the system can only match if the sub-types are exact matches. For example, only when the value of the Email field of Profile A and the value of the Email field of Profile B matches, the two profiles are matched on the Email type.</p>
+    /// <p>The comparison type. You can either choose <code>ONE_TO_ONE</code> or <code>MANY_TO_MANY</code> as the AttributeMatchingModel. When choosing <code>MANY_TO_MANY</code>, the system can match attributes across the sub-types of an attribute type. For example, if the value of the <code>Email</code> field of Profile A and the value of <code>BusinessEmail</code> field of Profile B matches, the two profiles are matched on the <code>Email</code> type. When choosing <code>ONE_TO_ONE</code> ,the system can only match if the sub-types are exact matches. For example, only when the value of the <code>Email</code> field of Profile A and the value of the <code>Email</code> field of Profile B matches, the two profiles are matched on the <code>Email</code> type.</p>
     pub attribute_matching_model: ::std::option::Option<crate::types::AttributeMatchingModel>,
 }
 impl RuleBasedProperties {
-    /// <p>A list of Rule objects, each of which have fields <code>RuleName</code> and <code>MatchingKeys</code>.</p>
+    /// <p>A list of <code>Rule</code> objects, each of which have fields <code>RuleName</code> and <code>MatchingKeys</code>.</p>
     pub fn rules(&self) -> ::std::option::Option<&[crate::types::Rule]> {
         self.rules.as_deref()
     }
-    /// <p>You can either choose <code>ONE_TO_ONE</code> or <code>MANY_TO_MANY</code> as the AttributeMatchingModel. When choosing <code>MANY_TO_MANY</code>, the system can match attribute across the sub-types of an attribute type. For example, if the value of the Email field of Profile A and the value of BusinessEmail field of Profile B matches, the two profiles are matched on the Email type. When choosing <code>ONE_TO_ONE</code> the system can only match if the sub-types are exact matches. For example, only when the value of the Email field of Profile A and the value of the Email field of Profile B matches, the two profiles are matched on the Email type.</p>
+    /// <p>The comparison type. You can either choose <code>ONE_TO_ONE</code> or <code>MANY_TO_MANY</code> as the AttributeMatchingModel. When choosing <code>MANY_TO_MANY</code>, the system can match attributes across the sub-types of an attribute type. For example, if the value of the <code>Email</code> field of Profile A and the value of <code>BusinessEmail</code> field of Profile B matches, the two profiles are matched on the <code>Email</code> type. When choosing <code>ONE_TO_ONE</code> ,the system can only match if the sub-types are exact matches. For example, only when the value of the <code>Email</code> field of Profile A and the value of the <code>Email</code> field of Profile B matches, the two profiles are matched on the <code>Email</code> type.</p>
     pub fn attribute_matching_model(&self) -> ::std::option::Option<&crate::types::AttributeMatchingModel> {
         self.attribute_matching_model.as_ref()
     }
@@ -38,33 +38,33 @@ impl RuleBasedPropertiesBuilder {
     ///
     /// To override the contents of this collection use [`set_rules`](Self::set_rules).
     ///
-    /// <p>A list of Rule objects, each of which have fields <code>RuleName</code> and <code>MatchingKeys</code>.</p>
+    /// <p>A list of <code>Rule</code> objects, each of which have fields <code>RuleName</code> and <code>MatchingKeys</code>.</p>
     pub fn rules(mut self, input: crate::types::Rule) -> Self {
         let mut v = self.rules.unwrap_or_default();
         v.push(input);
         self.rules = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of Rule objects, each of which have fields <code>RuleName</code> and <code>MatchingKeys</code>.</p>
+    /// <p>A list of <code>Rule</code> objects, each of which have fields <code>RuleName</code> and <code>MatchingKeys</code>.</p>
     pub fn set_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Rule>>) -> Self {
         self.rules = input;
         self
     }
-    /// <p>A list of Rule objects, each of which have fields <code>RuleName</code> and <code>MatchingKeys</code>.</p>
+    /// <p>A list of <code>Rule</code> objects, each of which have fields <code>RuleName</code> and <code>MatchingKeys</code>.</p>
     pub fn get_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Rule>> {
         &self.rules
     }
-    /// <p>You can either choose <code>ONE_TO_ONE</code> or <code>MANY_TO_MANY</code> as the AttributeMatchingModel. When choosing <code>MANY_TO_MANY</code>, the system can match attribute across the sub-types of an attribute type. For example, if the value of the Email field of Profile A and the value of BusinessEmail field of Profile B matches, the two profiles are matched on the Email type. When choosing <code>ONE_TO_ONE</code> the system can only match if the sub-types are exact matches. For example, only when the value of the Email field of Profile A and the value of the Email field of Profile B matches, the two profiles are matched on the Email type.</p>
+    /// <p>The comparison type. You can either choose <code>ONE_TO_ONE</code> or <code>MANY_TO_MANY</code> as the AttributeMatchingModel. When choosing <code>MANY_TO_MANY</code>, the system can match attributes across the sub-types of an attribute type. For example, if the value of the <code>Email</code> field of Profile A and the value of <code>BusinessEmail</code> field of Profile B matches, the two profiles are matched on the <code>Email</code> type. When choosing <code>ONE_TO_ONE</code> ,the system can only match if the sub-types are exact matches. For example, only when the value of the <code>Email</code> field of Profile A and the value of the <code>Email</code> field of Profile B matches, the two profiles are matched on the <code>Email</code> type.</p>
     pub fn attribute_matching_model(mut self, input: crate::types::AttributeMatchingModel) -> Self {
         self.attribute_matching_model = ::std::option::Option::Some(input);
         self
     }
-    /// <p>You can either choose <code>ONE_TO_ONE</code> or <code>MANY_TO_MANY</code> as the AttributeMatchingModel. When choosing <code>MANY_TO_MANY</code>, the system can match attribute across the sub-types of an attribute type. For example, if the value of the Email field of Profile A and the value of BusinessEmail field of Profile B matches, the two profiles are matched on the Email type. When choosing <code>ONE_TO_ONE</code> the system can only match if the sub-types are exact matches. For example, only when the value of the Email field of Profile A and the value of the Email field of Profile B matches, the two profiles are matched on the Email type.</p>
+    /// <p>The comparison type. You can either choose <code>ONE_TO_ONE</code> or <code>MANY_TO_MANY</code> as the AttributeMatchingModel. When choosing <code>MANY_TO_MANY</code>, the system can match attributes across the sub-types of an attribute type. For example, if the value of the <code>Email</code> field of Profile A and the value of <code>BusinessEmail</code> field of Profile B matches, the two profiles are matched on the <code>Email</code> type. When choosing <code>ONE_TO_ONE</code> ,the system can only match if the sub-types are exact matches. For example, only when the value of the <code>Email</code> field of Profile A and the value of the <code>Email</code> field of Profile B matches, the two profiles are matched on the <code>Email</code> type.</p>
     pub fn set_attribute_matching_model(mut self, input: ::std::option::Option<crate::types::AttributeMatchingModel>) -> Self {
         self.attribute_matching_model = input;
         self
     }
-    /// <p>You can either choose <code>ONE_TO_ONE</code> or <code>MANY_TO_MANY</code> as the AttributeMatchingModel. When choosing <code>MANY_TO_MANY</code>, the system can match attribute across the sub-types of an attribute type. For example, if the value of the Email field of Profile A and the value of BusinessEmail field of Profile B matches, the two profiles are matched on the Email type. When choosing <code>ONE_TO_ONE</code> the system can only match if the sub-types are exact matches. For example, only when the value of the Email field of Profile A and the value of the Email field of Profile B matches, the two profiles are matched on the Email type.</p>
+    /// <p>The comparison type. You can either choose <code>ONE_TO_ONE</code> or <code>MANY_TO_MANY</code> as the AttributeMatchingModel. When choosing <code>MANY_TO_MANY</code>, the system can match attributes across the sub-types of an attribute type. For example, if the value of the <code>Email</code> field of Profile A and the value of <code>BusinessEmail</code> field of Profile B matches, the two profiles are matched on the <code>Email</code> type. When choosing <code>ONE_TO_ONE</code> ,the system can only match if the sub-types are exact matches. For example, only when the value of the <code>Email</code> field of Profile A and the value of the <code>Email</code> field of Profile B matches, the two profiles are matched on the <code>Email</code> type.</p>
     pub fn get_attribute_matching_model(&self) -> &::std::option::Option<crate::types::AttributeMatchingModel> {
         &self.attribute_matching_model
     }

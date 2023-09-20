@@ -10,7 +10,7 @@ pub struct NotifyApplicationStateInput {
     /// <p>The timestamp when the application state changed.</p>
     pub update_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
-    pub dry_run: bool,
+    pub dry_run: ::std::option::Option<bool>,
 }
 impl NotifyApplicationStateInput {
     /// <p>The configurationId in Application Discovery Service that uniquely identifies the grouped application.</p>
@@ -26,7 +26,7 @@ impl NotifyApplicationStateInput {
         self.update_date_time.as_ref()
     }
     /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
-    pub fn dry_run(&self) -> bool {
+    pub fn dry_run(&self) -> ::std::option::Option<bool> {
         self.dry_run
     }
 }
@@ -112,7 +112,7 @@ impl NotifyApplicationStateInputBuilder {
             application_id: self.application_id,
             status: self.status,
             update_date_time: self.update_date_time,
-            dry_run: self.dry_run.unwrap_or_default(),
+            dry_run: self.dry_run,
         })
     }
 }

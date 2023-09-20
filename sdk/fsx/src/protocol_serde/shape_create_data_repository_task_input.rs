@@ -45,5 +45,11 @@ pub fn ser_create_data_repository_task_input(
             ::aws_smithy_types::Number::NegInt((*var_13).into()),
         );
     }
+    if let Some(var_14) = &input.release_configuration {
+        #[allow(unused_mut)]
+        let mut object_15 = object.key("ReleaseConfiguration").start_object();
+        crate::protocol_serde::shape_release_configuration::ser_release_configuration(&mut object_15, var_14)?;
+        object_15.finish();
+    }
     Ok(())
 }

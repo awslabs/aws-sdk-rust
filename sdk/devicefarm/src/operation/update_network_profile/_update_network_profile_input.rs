@@ -24,9 +24,9 @@ pub struct UpdateNetworkProfileInput {
     /// <p>Time variation in the delay of received packets in milliseconds as an integer from 0 to 2000.</p>
     pub downlink_jitter_ms: ::std::option::Option<i64>,
     /// <p>Proportion of transmitted packets that fail to arrive from 0 to 100 percent.</p>
-    pub uplink_loss_percent: i32,
+    pub uplink_loss_percent: ::std::option::Option<i32>,
     /// <p>Proportion of received packets that fail to arrive from 0 to 100 percent.</p>
-    pub downlink_loss_percent: i32,
+    pub downlink_loss_percent: ::std::option::Option<i32>,
 }
 impl UpdateNetworkProfileInput {
     /// <p>The Amazon Resource Name (ARN) of the project for which you want to update network profile settings.</p>
@@ -70,11 +70,11 @@ impl UpdateNetworkProfileInput {
         self.downlink_jitter_ms
     }
     /// <p>Proportion of transmitted packets that fail to arrive from 0 to 100 percent.</p>
-    pub fn uplink_loss_percent(&self) -> i32 {
+    pub fn uplink_loss_percent(&self) -> ::std::option::Option<i32> {
         self.uplink_loss_percent
     }
     /// <p>Proportion of received packets that fail to arrive from 0 to 100 percent.</p>
-    pub fn downlink_loss_percent(&self) -> i32 {
+    pub fn downlink_loss_percent(&self) -> ::std::option::Option<i32> {
         self.downlink_loss_percent
     }
 }
@@ -287,8 +287,8 @@ impl UpdateNetworkProfileInputBuilder {
             downlink_delay_ms: self.downlink_delay_ms,
             uplink_jitter_ms: self.uplink_jitter_ms,
             downlink_jitter_ms: self.downlink_jitter_ms,
-            uplink_loss_percent: self.uplink_loss_percent.unwrap_or_default(),
-            downlink_loss_percent: self.downlink_loss_percent.unwrap_or_default(),
+            uplink_loss_percent: self.uplink_loss_percent,
+            downlink_loss_percent: self.downlink_loss_percent,
         })
     }
 }

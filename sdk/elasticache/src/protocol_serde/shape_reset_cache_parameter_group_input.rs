@@ -12,19 +12,19 @@ pub fn ser_reset_cache_parameter_group_input_input(
     }
     #[allow(unused_mut)]
     let mut scope_3 = writer.prefix("ResetAllParameters");
-    if input.reset_all_parameters {
-        scope_3.boolean(input.reset_all_parameters);
+    if let Some(var_4) = &input.reset_all_parameters {
+        scope_3.boolean(*var_4);
     }
     #[allow(unused_mut)]
-    let mut scope_4 = writer.prefix("ParameterNameValues");
-    if let Some(var_5) = &input.parameter_name_values {
-        let mut list_7 = scope_4.start_list(false, Some("ParameterNameValue"));
-        for item_6 in var_5 {
+    let mut scope_5 = writer.prefix("ParameterNameValues");
+    if let Some(var_6) = &input.parameter_name_values {
+        let mut list_8 = scope_5.start_list(false, Some("ParameterNameValue"));
+        for item_7 in var_6 {
             #[allow(unused_mut)]
-            let mut entry_8 = list_7.entry();
-            crate::protocol_serde::shape_parameter_name_value::ser_parameter_name_value(entry_8, item_6)?;
+            let mut entry_9 = list_8.entry();
+            crate::protocol_serde::shape_parameter_name_value::ser_parameter_name_value(entry_9, item_7)?;
         }
-        list_7.finish();
+        list_8.finish();
     }
     writer.finish();
     Ok(::aws_smithy_http::body::SdkBody::from(out))

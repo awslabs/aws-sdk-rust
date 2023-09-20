@@ -36,6 +36,8 @@ pub struct TopicCalculatedField {
     pub never_aggregate_in_filter: bool,
     /// <p>The other names or aliases for the calculated field cell value.</p>
     pub cell_value_synonyms: ::std::option::Option<::std::vec::Vec<crate::types::CellValueSynonym>>,
+    /// <p>The non additive for the table style target.</p>
+    pub non_additive: ::std::option::Option<bool>,
 }
 impl TopicCalculatedField {
     /// <p>The calculated field name.</p>
@@ -102,6 +104,10 @@ impl TopicCalculatedField {
     pub fn cell_value_synonyms(&self) -> ::std::option::Option<&[crate::types::CellValueSynonym]> {
         self.cell_value_synonyms.as_deref()
     }
+    /// <p>The non additive for the table style target.</p>
+    pub fn non_additive(&self) -> ::std::option::Option<bool> {
+        self.non_additive
+    }
 }
 impl ::std::fmt::Debug for TopicCalculatedField {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -122,6 +128,7 @@ impl ::std::fmt::Debug for TopicCalculatedField {
         formatter.field("not_allowed_aggregations", &self.not_allowed_aggregations);
         formatter.field("never_aggregate_in_filter", &self.never_aggregate_in_filter);
         formatter.field("cell_value_synonyms", &self.cell_value_synonyms);
+        formatter.field("non_additive", &self.non_additive);
         formatter.finish()
     }
 }
@@ -152,6 +159,7 @@ pub struct TopicCalculatedFieldBuilder {
     pub(crate) not_allowed_aggregations: ::std::option::Option<::std::vec::Vec<crate::types::AuthorSpecifiedAggregation>>,
     pub(crate) never_aggregate_in_filter: ::std::option::Option<bool>,
     pub(crate) cell_value_synonyms: ::std::option::Option<::std::vec::Vec<crate::types::CellValueSynonym>>,
+    pub(crate) non_additive: ::std::option::Option<bool>,
 }
 impl TopicCalculatedFieldBuilder {
     /// <p>The calculated field name.</p>
@@ -402,6 +410,20 @@ impl TopicCalculatedFieldBuilder {
     pub fn get_cell_value_synonyms(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CellValueSynonym>> {
         &self.cell_value_synonyms
     }
+    /// <p>The non additive for the table style target.</p>
+    pub fn non_additive(mut self, input: bool) -> Self {
+        self.non_additive = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The non additive for the table style target.</p>
+    pub fn set_non_additive(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.non_additive = input;
+        self
+    }
+    /// <p>The non additive for the table style target.</p>
+    pub fn get_non_additive(&self) -> &::std::option::Option<bool> {
+        &self.non_additive
+    }
     /// Consumes the builder and constructs a [`TopicCalculatedField`](crate::types::TopicCalculatedField).
     pub fn build(self) -> crate::types::TopicCalculatedField {
         crate::types::TopicCalculatedField {
@@ -421,6 +443,7 @@ impl TopicCalculatedFieldBuilder {
             not_allowed_aggregations: self.not_allowed_aggregations,
             never_aggregate_in_filter: self.never_aggregate_in_filter.unwrap_or_default(),
             cell_value_synonyms: self.cell_value_synonyms,
+            non_additive: self.non_additive,
         }
     }
 }
@@ -443,6 +466,7 @@ impl ::std::fmt::Debug for TopicCalculatedFieldBuilder {
         formatter.field("not_allowed_aggregations", &self.not_allowed_aggregations);
         formatter.field("never_aggregate_in_filter", &self.never_aggregate_in_filter);
         formatter.field("cell_value_synonyms", &self.cell_value_synonyms);
+        formatter.field("non_additive", &self.non_additive);
         formatter.finish()
     }
 }

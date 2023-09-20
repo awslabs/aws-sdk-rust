@@ -222,4 +222,18 @@ impl CreateFolderFluentBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         self.inner.get_tags()
     }
+    /// <p>An optional parameter that determines the sharing scope of the folder. The default value for this parameter is <code>ACCOUNT</code>.</p>
+    pub fn sharing_model(mut self, input: crate::types::SharingModel) -> Self {
+        self.inner = self.inner.sharing_model(input);
+        self
+    }
+    /// <p>An optional parameter that determines the sharing scope of the folder. The default value for this parameter is <code>ACCOUNT</code>.</p>
+    pub fn set_sharing_model(mut self, input: ::std::option::Option<crate::types::SharingModel>) -> Self {
+        self.inner = self.inner.set_sharing_model(input);
+        self
+    }
+    /// <p>An optional parameter that determines the sharing scope of the folder. The default value for this parameter is <code>ACCOUNT</code>.</p>
+    pub fn get_sharing_model(&self) -> &::std::option::Option<crate::types::SharingModel> {
+        self.inner.get_sharing_model()
+    }
 }

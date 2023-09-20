@@ -27,7 +27,7 @@ impl SetIdentityDkimEnabledInputBuilder {
 /// </note>
 /// <p>You can enable DKIM signing for an identity at any time after you start the verification process for the identity, even if the verification process isn't complete. </p>
 /// <p>You can execute this operation no more than once per second.</p>
-/// <p>For more information about Easy DKIM signing, go to the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Amazon SES Developer Guide</a>.</p>
+/// <p>For more information about Easy DKIM signing, go to the <a href="https://docs.aws.amazon.com/ses/latest/dg/send-email-authentication-dkim-easy.html">Amazon SES Developer Guide</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SetIdentityDkimEnabledFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

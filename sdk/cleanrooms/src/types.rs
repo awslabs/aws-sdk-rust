@@ -17,6 +17,8 @@ pub use crate::types::_protected_query_result::ProtectedQueryResult;
 
 pub use crate::types::_protected_query_output::ProtectedQueryOutput;
 
+pub use crate::types::_protected_query_single_member_output::ProtectedQuerySingleMemberOutput;
+
 pub use crate::types::_protected_query_s3_output::ProtectedQueryS3Output;
 
 pub use crate::types::_protected_query_statistics::ProtectedQueryStatistics;
@@ -47,6 +49,10 @@ pub use crate::types::_membership_status::MembershipStatus;
 
 pub use crate::types::_membership::Membership;
 
+pub use crate::types::_membership_protected_query_result_configuration::MembershipProtectedQueryResultConfiguration;
+
+pub use crate::types::_membership_protected_query_output_configuration::MembershipProtectedQueryOutputConfiguration;
+
 pub use crate::types::_membership_query_log_status::MembershipQueryLogStatus;
 
 pub use crate::types::_configured_table_analysis_rule::ConfiguredTableAnalysisRule;
@@ -56,6 +62,8 @@ pub use crate::types::_configured_table_analysis_rule_type::ConfiguredTableAnaly
 pub use crate::types::_configured_table_analysis_rule_policy::ConfiguredTableAnalysisRulePolicy;
 
 pub use crate::types::_configured_table_analysis_rule_policy_v1::ConfiguredTableAnalysisRulePolicyV1;
+
+pub use crate::types::_analysis_rule_custom::AnalysisRuleCustom;
 
 pub use crate::types::_analysis_rule_aggregation::AnalysisRuleAggregation;
 
@@ -99,6 +107,8 @@ pub use crate::types::_member_summary::MemberSummary;
 
 pub use crate::types::_member_status::MemberStatus;
 
+pub use crate::types::_collaboration_analysis_template_summary::CollaborationAnalysisTemplateSummary;
+
 pub use crate::types::_analysis_rule::AnalysisRule;
 
 pub use crate::types::_analysis_rule_policy::AnalysisRulePolicy;
@@ -109,7 +119,21 @@ pub use crate::types::_schema::Schema;
 
 pub use crate::types::_column::Column;
 
+pub use crate::types::_collaboration_analysis_template::CollaborationAnalysisTemplate;
+
+pub use crate::types::_analysis_parameter::AnalysisParameter;
+
+pub use crate::types::_parameter_type::ParameterType;
+
+pub use crate::types::_analysis_source::AnalysisSource;
+
+pub use crate::types::_analysis_format::AnalysisFormat;
+
+pub use crate::types::_analysis_schema::AnalysisSchema;
+
 pub use crate::types::_batch_get_schema_error::BatchGetSchemaError;
+
+pub use crate::types::_batch_get_collaboration_analysis_template_error::BatchGetCollaborationAnalysisTemplateError;
 
 pub use crate::types::_collaboration_summary::CollaborationSummary;
 
@@ -123,6 +147,10 @@ pub use crate::types::_data_encryption_metadata::DataEncryptionMetadata;
 
 pub use crate::types::_member_specification::MemberSpecification;
 
+pub use crate::types::_analysis_template_summary::AnalysisTemplateSummary;
+
+pub use crate::types::_analysis_template::AnalysisTemplate;
+
 mod _access_denied_exception_reason;
 
 mod _aggregate_column;
@@ -133,11 +161,17 @@ mod _aggregation_constraint;
 
 mod _aggregation_type;
 
+mod _analysis_format;
+
 mod _analysis_method;
+
+mod _analysis_parameter;
 
 mod _analysis_rule;
 
 mod _analysis_rule_aggregation;
+
+mod _analysis_rule_custom;
 
 mod _analysis_rule_list;
 
@@ -147,9 +181,23 @@ mod _analysis_rule_policy_v1;
 
 mod _analysis_rule_type;
 
+mod _analysis_schema;
+
+mod _analysis_source;
+
+mod _analysis_template;
+
+mod _analysis_template_summary;
+
+mod _batch_get_collaboration_analysis_template_error;
+
 mod _batch_get_schema_error;
 
 mod _collaboration;
+
+mod _collaboration_analysis_template;
+
+mod _collaboration_analysis_template_summary;
 
 mod _collaboration_query_log_status;
 
@@ -195,11 +243,17 @@ mod _member_summary;
 
 mod _membership;
 
+mod _membership_protected_query_output_configuration;
+
+mod _membership_protected_query_result_configuration;
+
 mod _membership_query_log_status;
 
 mod _membership_status;
 
 mod _membership_summary;
+
+mod _parameter_type;
 
 mod _protected_query;
 
@@ -216,6 +270,8 @@ mod _protected_query_result_configuration;
 mod _protected_query_s3_output;
 
 mod _protected_query_s3_output_configuration;
+
+mod _protected_query_single_member_output;
 
 mod _protected_query_sql_parameters;
 

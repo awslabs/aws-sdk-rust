@@ -130,6 +130,21 @@ pub fn de_upgrade_target(
                 builder = builder.set_supports_babelfish(var_9);
             }
             ,
+            s if s.matches("SupportsLocalWriteForwarding") /* SupportsLocalWriteForwarding com.amazonaws.rds#UpgradeTarget$SupportsLocalWriteForwarding */ =>  {
+                let var_10 =
+                    Some(
+                         {
+                            <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.rds#BooleanOptional`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_supports_local_write_forwarding(var_10);
+            }
+            ,
             _ => {}
         }
     }

@@ -6,7 +6,7 @@ pub struct ListSizeConstraintSetsInput {
     /// <p>If you specify a value for <code>Limit</code> and you have more <code>SizeConstraintSets</code> than the value of <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>SizeConstraintSets</code>. For the second and subsequent <code>ListSizeConstraintSets</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of <code>SizeConstraintSets</code>.</p>
     pub next_marker: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the number of <code>SizeConstraintSet</code> objects that you want AWS WAF to return for this request. If you have more <code>SizeConstraintSets</code> objects than the number you specify for <code>Limit</code>, the response includes a <code>NextMarker</code> value that you can use to get another batch of <code>SizeConstraintSet</code> objects.</p>
-    pub limit: i32,
+    pub limit: ::std::option::Option<i32>,
 }
 impl ListSizeConstraintSetsInput {
     /// <p>If you specify a value for <code>Limit</code> and you have more <code>SizeConstraintSets</code> than the value of <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>SizeConstraintSets</code>. For the second and subsequent <code>ListSizeConstraintSets</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of <code>SizeConstraintSets</code>.</p>
@@ -14,7 +14,7 @@ impl ListSizeConstraintSetsInput {
         self.next_marker.as_deref()
     }
     /// <p>Specifies the number of <code>SizeConstraintSet</code> objects that you want AWS WAF to return for this request. If you have more <code>SizeConstraintSets</code> objects than the number you specify for <code>Limit</code>, the response includes a <code>NextMarker</code> value that you can use to get another batch of <code>SizeConstraintSet</code> objects.</p>
-    pub fn limit(&self) -> i32 {
+    pub fn limit(&self) -> ::std::option::Option<i32> {
         self.limit
     }
 }
@@ -70,7 +70,7 @@ impl ListSizeConstraintSetsInputBuilder {
     > {
         ::std::result::Result::Ok(crate::operation::list_size_constraint_sets::ListSizeConstraintSetsInput {
             next_marker: self.next_marker,
-            limit: self.limit.unwrap_or_default(),
+            limit: self.limit,
         })
     }
 }

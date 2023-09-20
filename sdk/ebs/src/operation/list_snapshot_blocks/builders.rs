@@ -22,7 +22,9 @@ impl ListSnapshotBlocksInputBuilder {
 }
 /// Fluent builder constructing a request to `ListSnapshotBlocks`.
 ///
-/// <p>Returns information about the blocks in an Amazon Elastic Block Store snapshot.</p>
+/// <p>Returns information about the blocks in an Amazon Elastic Block Store snapshot.</p> <note>
+/// <p>You should always retry requests that receive server (<code>5xx</code>) error responses, and <code>ThrottlingException</code> and <code>RequestThrottledException</code> client error responses. For more information see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/error-retries.html">Error retries</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListSnapshotBlocksFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -3,9 +3,9 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StopInferenceSchedulerOutput {
-    /// <p>The Amazon Resource Name (ARN) of the ML model used by the inference scheduler being stopped. </p>
+    /// <p>The Amazon Resource Name (ARN) of the machine learning model used by the inference scheduler being stopped. </p>
     pub model_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The name of the ML model used by the inference scheduler being stopped. </p>
+    /// <p>The name of the machine learning model used by the inference scheduler being stopped. </p>
     pub model_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the inference scheduler being stopped. </p>
     pub inference_scheduler_name: ::std::option::Option<::std::string::String>,
@@ -16,11 +16,11 @@ pub struct StopInferenceSchedulerOutput {
     _request_id: Option<String>,
 }
 impl StopInferenceSchedulerOutput {
-    /// <p>The Amazon Resource Name (ARN) of the ML model used by the inference scheduler being stopped. </p>
+    /// <p>The Amazon Resource Name (ARN) of the machine learning model used by the inference scheduler being stopped. </p>
     pub fn model_arn(&self) -> ::std::option::Option<&str> {
         self.model_arn.as_deref()
     }
-    /// <p>The name of the ML model used by the inference scheduler being stopped. </p>
+    /// <p>The name of the machine learning model used by the inference scheduler being stopped. </p>
     pub fn model_name(&self) -> ::std::option::Option<&str> {
         self.model_name.as_deref()
     }
@@ -61,31 +61,31 @@ pub struct StopInferenceSchedulerOutputBuilder {
     _request_id: Option<String>,
 }
 impl StopInferenceSchedulerOutputBuilder {
-    /// <p>The Amazon Resource Name (ARN) of the ML model used by the inference scheduler being stopped. </p>
+    /// <p>The Amazon Resource Name (ARN) of the machine learning model used by the inference scheduler being stopped. </p>
     pub fn model_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the ML model used by the inference scheduler being stopped. </p>
+    /// <p>The Amazon Resource Name (ARN) of the machine learning model used by the inference scheduler being stopped. </p>
     pub fn set_model_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the ML model used by the inference scheduler being stopped. </p>
+    /// <p>The Amazon Resource Name (ARN) of the machine learning model used by the inference scheduler being stopped. </p>
     pub fn get_model_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.model_arn
     }
-    /// <p>The name of the ML model used by the inference scheduler being stopped. </p>
+    /// <p>The name of the machine learning model used by the inference scheduler being stopped. </p>
     pub fn model_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the ML model used by the inference scheduler being stopped. </p>
+    /// <p>The name of the machine learning model used by the inference scheduler being stopped. </p>
     pub fn set_model_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_name = input;
         self
     }
-    /// <p>The name of the ML model used by the inference scheduler being stopped. </p>
+    /// <p>The name of the machine learning model used by the inference scheduler being stopped. </p>
     pub fn get_model_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.model_name
     }

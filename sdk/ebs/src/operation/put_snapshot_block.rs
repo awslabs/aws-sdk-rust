@@ -386,9 +386,9 @@ pub type PutSnapshotBlockErrorKind = PutSnapshotBlockError;
 pub enum PutSnapshotBlockError {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
-    /// <p>An internal error has occurred.</p>
+    /// <p>An internal error has occurred. For more information see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/error-retries.html">Error retries</a>.</p>
     InternalServerException(crate::types::error::InternalServerException),
-    /// <p>The number of API requests has exceed the maximum allowed API request throttling limit.</p>
+    /// <p>The number of API requests has exceeded the maximum allowed API request throttling limit for the snapshot. For more information see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/error-retries.html">Error retries</a>.</p>
     RequestThrottledException(crate::types::error::RequestThrottledException),
     /// <p>The specified resource does not exist.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),

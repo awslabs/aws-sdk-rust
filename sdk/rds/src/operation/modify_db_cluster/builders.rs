@@ -1236,4 +1236,35 @@ impl ModifyDBClusterFluentBuilder {
     pub fn get_allow_engine_mode_change(&self) -> &::std::option::Option<bool> {
         self.inner.get_allow_engine_mode_change()
     }
+    /// <p>Specifies whether read replicas can forward write operations to the writer DB instance in the DB cluster. By default, write operations aren't allowed on reader DB instances.</p>
+    /// <p>Valid for: Aurora DB clusters only</p>
+    pub fn enable_local_write_forwarding(mut self, input: bool) -> Self {
+        self.inner = self.inner.enable_local_write_forwarding(input);
+        self
+    }
+    /// <p>Specifies whether read replicas can forward write operations to the writer DB instance in the DB cluster. By default, write operations aren't allowed on reader DB instances.</p>
+    /// <p>Valid for: Aurora DB clusters only</p>
+    pub fn set_enable_local_write_forwarding(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_enable_local_write_forwarding(input);
+        self
+    }
+    /// <p>Specifies whether read replicas can forward write operations to the writer DB instance in the DB cluster. By default, write operations aren't allowed on reader DB instances.</p>
+    /// <p>Valid for: Aurora DB clusters only</p>
+    pub fn get_enable_local_write_forwarding(&self) -> &::std::option::Option<bool> {
+        self.inner.get_enable_local_write_forwarding()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the recovery point in Amazon Web Services Backup.</p>
+    pub fn aws_backup_recovery_point_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.aws_backup_recovery_point_arn(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the recovery point in Amazon Web Services Backup.</p>
+    pub fn set_aws_backup_recovery_point_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_aws_backup_recovery_point_arn(input);
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the recovery point in Amazon Web Services Backup.</p>
+    pub fn get_aws_backup_recovery_point_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_aws_backup_recovery_point_arn()
+    }
 }

@@ -19,6 +19,21 @@ pub fn de_network_interface_ipv6_address(
                 builder = builder.set_ipv6_address(var_1);
             }
             ,
+            s if s.matches("isPrimaryIpv6") /* IsPrimaryIpv6 com.amazonaws.ec2#NetworkInterfaceIpv6Address$IsPrimaryIpv6 */ =>  {
+                let var_2 =
+                    Some(
+                         {
+                            <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_is_primary_ipv6(var_2);
+            }
+            ,
             _ => {}
         }
     }

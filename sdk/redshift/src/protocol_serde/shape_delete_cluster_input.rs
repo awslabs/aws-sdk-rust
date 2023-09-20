@@ -12,20 +12,20 @@ pub fn ser_delete_cluster_input_input(
     }
     #[allow(unused_mut)]
     let mut scope_3 = writer.prefix("SkipFinalClusterSnapshot");
-    if input.skip_final_cluster_snapshot {
-        scope_3.boolean(input.skip_final_cluster_snapshot);
+    if let Some(var_4) = &input.skip_final_cluster_snapshot {
+        scope_3.boolean(*var_4);
     }
     #[allow(unused_mut)]
-    let mut scope_4 = writer.prefix("FinalClusterSnapshotIdentifier");
-    if let Some(var_5) = &input.final_cluster_snapshot_identifier {
-        scope_4.string(var_5);
+    let mut scope_5 = writer.prefix("FinalClusterSnapshotIdentifier");
+    if let Some(var_6) = &input.final_cluster_snapshot_identifier {
+        scope_5.string(var_6);
     }
     #[allow(unused_mut)]
-    let mut scope_6 = writer.prefix("FinalClusterSnapshotRetentionPeriod");
-    if let Some(var_7) = &input.final_cluster_snapshot_retention_period {
-        scope_6.number(
+    let mut scope_7 = writer.prefix("FinalClusterSnapshotRetentionPeriod");
+    if let Some(var_8) = &input.final_cluster_snapshot_retention_period {
+        scope_7.number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_7).into()),
+            ::aws_smithy_types::Number::NegInt((*var_8).into()),
         );
     }
     writer.finish();

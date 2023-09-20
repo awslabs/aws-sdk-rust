@@ -7,7 +7,7 @@ pub struct DeleteCanaryInput {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether to also delete the Lambda functions and layers used by this canary. The default is false.</p>
     /// <p>Type: Boolean</p>
-    pub delete_lambda: bool,
+    pub delete_lambda: ::std::option::Option<bool>,
 }
 impl DeleteCanaryInput {
     /// <p>The name of the canary that you want to delete. To find the names of your canaries, use <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DescribeCanaries.html">DescribeCanaries</a>.</p>
@@ -16,7 +16,7 @@ impl DeleteCanaryInput {
     }
     /// <p>Specifies whether to also delete the Lambda functions and layers used by this canary. The default is false.</p>
     /// <p>Type: Boolean</p>
-    pub fn delete_lambda(&self) -> bool {
+    pub fn delete_lambda(&self) -> ::std::option::Option<bool> {
         self.delete_lambda
     }
 }
@@ -70,7 +70,7 @@ impl DeleteCanaryInputBuilder {
     pub fn build(self) -> ::std::result::Result<crate::operation::delete_canary::DeleteCanaryInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_canary::DeleteCanaryInput {
             name: self.name,
-            delete_lambda: self.delete_lambda.unwrap_or_default(),
+            delete_lambda: self.delete_lambda,
         })
     }
 }

@@ -2,7 +2,7 @@
 
 /// <p> The metadata that's associated with a standard framework or a custom framework. </p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct AssessmentFrameworkMetadata {
     /// <p> The Amazon Resource Name (ARN) of the framework. </p>
     pub arn: ::std::option::Option<::std::string::String>,
@@ -73,6 +73,23 @@ impl AssessmentFrameworkMetadata {
         self.last_updated_at.as_ref()
     }
 }
+impl ::std::fmt::Debug for AssessmentFrameworkMetadata {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("AssessmentFrameworkMetadata");
+        formatter.field("arn", &self.arn);
+        formatter.field("id", &self.id);
+        formatter.field("r#type", &self.r#type);
+        formatter.field("name", &self.name);
+        formatter.field("description", &self.description);
+        formatter.field("logo", &self.logo);
+        formatter.field("compliance_type", &"*** Sensitive Data Redacted ***");
+        formatter.field("controls_count", &self.controls_count);
+        formatter.field("control_sets_count", &self.control_sets_count);
+        formatter.field("created_at", &self.created_at);
+        formatter.field("last_updated_at", &self.last_updated_at);
+        formatter.finish()
+    }
+}
 impl AssessmentFrameworkMetadata {
     /// Creates a new builder-style object to manufacture [`AssessmentFrameworkMetadata`](crate::types::AssessmentFrameworkMetadata).
     pub fn builder() -> crate::types::builders::AssessmentFrameworkMetadataBuilder {
@@ -82,7 +99,7 @@ impl AssessmentFrameworkMetadata {
 
 /// A builder for [`AssessmentFrameworkMetadata`](crate::types::AssessmentFrameworkMetadata).
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct AssessmentFrameworkMetadataBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
@@ -266,5 +283,22 @@ impl AssessmentFrameworkMetadataBuilder {
             created_at: self.created_at,
             last_updated_at: self.last_updated_at,
         }
+    }
+}
+impl ::std::fmt::Debug for AssessmentFrameworkMetadataBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("AssessmentFrameworkMetadataBuilder");
+        formatter.field("arn", &self.arn);
+        formatter.field("id", &self.id);
+        formatter.field("r#type", &self.r#type);
+        formatter.field("name", &self.name);
+        formatter.field("description", &self.description);
+        formatter.field("logo", &self.logo);
+        formatter.field("compliance_type", &"*** Sensitive Data Redacted ***");
+        formatter.field("controls_count", &self.controls_count);
+        formatter.field("control_sets_count", &self.control_sets_count);
+        formatter.field("created_at", &self.created_at);
+        formatter.field("last_updated_at", &self.last_updated_at);
+        formatter.finish()
     }
 }

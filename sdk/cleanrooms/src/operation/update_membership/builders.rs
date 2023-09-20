@@ -138,4 +138,21 @@ impl UpdateMembershipFluentBuilder {
     pub fn get_query_log_status(&self) -> &::std::option::Option<crate::types::MembershipQueryLogStatus> {
         self.inner.get_query_log_status()
     }
+    /// <p>The default protected query result configuration as specified by the member who can receive results.</p>
+    pub fn default_result_configuration(mut self, input: crate::types::MembershipProtectedQueryResultConfiguration) -> Self {
+        self.inner = self.inner.default_result_configuration(input);
+        self
+    }
+    /// <p>The default protected query result configuration as specified by the member who can receive results.</p>
+    pub fn set_default_result_configuration(
+        mut self,
+        input: ::std::option::Option<crate::types::MembershipProtectedQueryResultConfiguration>,
+    ) -> Self {
+        self.inner = self.inner.set_default_result_configuration(input);
+        self
+    }
+    /// <p>The default protected query result configuration as specified by the member who can receive results.</p>
+    pub fn get_default_result_configuration(&self) -> &::std::option::Option<crate::types::MembershipProtectedQueryResultConfiguration> {
+        self.inner.get_default_result_configuration()
+    }
 }

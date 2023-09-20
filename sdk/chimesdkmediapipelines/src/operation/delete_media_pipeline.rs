@@ -273,6 +273,8 @@ pub type DeleteMediaPipelineErrorKind = DeleteMediaPipelineError;
 pub enum DeleteMediaPipelineError {
     /// <p>The input parameters don't match the service's restrictions.</p>
     BadRequestException(crate::types::error::BadRequestException),
+    /// <p>The request could not be processed because of conflict in the current state of the resource.</p>
+    ConflictException(crate::types::error::ConflictException),
     /// <p>The client is permanently forbidden from making the request.</p>
     ForbiddenException(crate::types::error::ForbiddenException),
     /// <p>One or more of the resources in the request does not exist in the system.</p>
@@ -304,6 +306,7 @@ impl ::std::fmt::Display for DeleteMediaPipelineError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
             Self::BadRequestException(_inner) => _inner.fmt(f),
+            Self::ConflictException(_inner) => _inner.fmt(f),
             Self::ForbiddenException(_inner) => _inner.fmt(f),
             Self::NotFoundException(_inner) => _inner.fmt(f),
             Self::ServiceFailureException(_inner) => _inner.fmt(f),
@@ -318,6 +321,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for DeleteMediaPi
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::BadRequestException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ConflictException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ForbiddenException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::NotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ServiceFailureException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
@@ -361,6 +365,7 @@ impl DeleteMediaPipelineError {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         match self {
             Self::BadRequestException(e) => e.meta(),
+            Self::ConflictException(e) => e.meta(),
             Self::ForbiddenException(e) => e.meta(),
             Self::NotFoundException(e) => e.meta(),
             Self::ServiceFailureException(e) => e.meta(),
@@ -373,6 +378,10 @@ impl DeleteMediaPipelineError {
     /// Returns `true` if the error kind is `DeleteMediaPipelineError::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(self, Self::BadRequestException(_))
+    }
+    /// Returns `true` if the error kind is `DeleteMediaPipelineError::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(self, Self::ConflictException(_))
     }
     /// Returns `true` if the error kind is `DeleteMediaPipelineError::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
@@ -403,6 +412,7 @@ impl ::std::error::Error for DeleteMediaPipelineError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
             Self::BadRequestException(_inner) => ::std::option::Option::Some(_inner),
+            Self::ConflictException(_inner) => ::std::option::Option::Some(_inner),
             Self::ForbiddenException(_inner) => ::std::option::Option::Some(_inner),
             Self::NotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::ServiceFailureException(_inner) => ::std::option::Option::Some(_inner),

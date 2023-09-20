@@ -10,7 +10,7 @@ pub struct ConfiguredTableAnalysisRule {
     pub configured_table_arn: ::std::option::Option<::std::string::String>,
     /// <p>The policy that controls SQL query rules.</p>
     pub policy: ::std::option::Option<crate::types::ConfiguredTableAnalysisRulePolicy>,
-    /// <p>The type of configured table analysis rule. Valid values are `AGGREGATION` and `LIST`.</p>
+    /// <p>The type of configured table analysis rule.</p>
     pub r#type: ::std::option::Option<crate::types::ConfiguredTableAnalysisRuleType>,
     /// <p>The time the configured table analysis rule was created.</p>
     pub create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -30,7 +30,7 @@ impl ConfiguredTableAnalysisRule {
     pub fn policy(&self) -> ::std::option::Option<&crate::types::ConfiguredTableAnalysisRulePolicy> {
         self.policy.as_ref()
     }
-    /// <p>The type of configured table analysis rule. Valid values are `AGGREGATION` and `LIST`.</p>
+    /// <p>The type of configured table analysis rule.</p>
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::ConfiguredTableAnalysisRuleType> {
         self.r#type.as_ref()
     }
@@ -104,17 +104,17 @@ impl ConfiguredTableAnalysisRuleBuilder {
     pub fn get_policy(&self) -> &::std::option::Option<crate::types::ConfiguredTableAnalysisRulePolicy> {
         &self.policy
     }
-    /// <p>The type of configured table analysis rule. Valid values are `AGGREGATION` and `LIST`.</p>
+    /// <p>The type of configured table analysis rule.</p>
     pub fn r#type(mut self, input: crate::types::ConfiguredTableAnalysisRuleType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of configured table analysis rule. Valid values are `AGGREGATION` and `LIST`.</p>
+    /// <p>The type of configured table analysis rule.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ConfiguredTableAnalysisRuleType>) -> Self {
         self.r#type = input;
         self
     }
-    /// <p>The type of configured table analysis rule. Valid values are `AGGREGATION` and `LIST`.</p>
+    /// <p>The type of configured table analysis rule.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::ConfiguredTableAnalysisRuleType> {
         &self.r#type
     }

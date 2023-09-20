@@ -12,6 +12,7 @@
 /// ```text
 /// # let orgfeaturestatus = unimplemented!();
 /// match orgfeaturestatus {
+///     OrgFeatureStatus::All => { /* ... */ },
 ///     OrgFeatureStatus::New => { /* ... */ },
 ///     OrgFeatureStatus::None => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -42,6 +43,8 @@
 )]
 pub enum OrgFeatureStatus {
     #[allow(missing_docs)] // documentation missing in model
+    All,
+    #[allow(missing_docs)] // documentation missing in model
     New,
     #[allow(missing_docs)] // documentation missing in model
     None,
@@ -51,6 +54,7 @@ pub enum OrgFeatureStatus {
 impl ::std::convert::From<&str> for OrgFeatureStatus {
     fn from(s: &str) -> Self {
         match s {
+            "ALL" => OrgFeatureStatus::All,
             "NEW" => OrgFeatureStatus::New,
             "NONE" => OrgFeatureStatus::None,
             other => OrgFeatureStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
@@ -68,6 +72,7 @@ impl OrgFeatureStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            OrgFeatureStatus::All => "ALL",
             OrgFeatureStatus::New => "NEW",
             OrgFeatureStatus::None => "NONE",
             OrgFeatureStatus::Unknown(value) => value.as_str(),
@@ -75,7 +80,7 @@ impl OrgFeatureStatus {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["NEW", "NONE"]
+        &["ALL", "NEW", "NONE"]
     }
 }
 impl ::std::convert::AsRef<str> for OrgFeatureStatus {

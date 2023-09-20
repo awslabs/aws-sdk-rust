@@ -14,15 +14,28 @@
 /// match audiochanneltag {
 ///     AudioChannelTag::C => { /* ... */ },
 ///     AudioChannelTag::Cs => { /* ... */ },
+///     AudioChannelTag::Hi => { /* ... */ },
 ///     AudioChannelTag::L => { /* ... */ },
 ///     AudioChannelTag::Lc => { /* ... */ },
 ///     AudioChannelTag::Lfe => { /* ... */ },
+///     AudioChannelTag::Lfe2 => { /* ... */ },
 ///     AudioChannelTag::Ls => { /* ... */ },
 ///     AudioChannelTag::Lsd => { /* ... */ },
+///     AudioChannelTag::Lt => { /* ... */ },
+///     AudioChannelTag::Lw => { /* ... */ },
+///     AudioChannelTag::M => { /* ... */ },
+///     AudioChannelTag::Nar => { /* ... */ },
 ///     AudioChannelTag::R => { /* ... */ },
 ///     AudioChannelTag::Rc => { /* ... */ },
 ///     AudioChannelTag::Rs => { /* ... */ },
 ///     AudioChannelTag::Rsd => { /* ... */ },
+///     AudioChannelTag::Rsl => { /* ... */ },
+///     AudioChannelTag::Rsr => { /* ... */ },
+///     AudioChannelTag::Rt => { /* ... */ },
+///     AudioChannelTag::Rw => { /* ... */ },
+///     AudioChannelTag::Tbc => { /* ... */ },
+///     AudioChannelTag::Tbl => { /* ... */ },
+///     AudioChannelTag::Tbr => { /* ... */ },
 ///     AudioChannelTag::Tcs => { /* ... */ },
 ///     AudioChannelTag::Vhc => { /* ... */ },
 ///     AudioChannelTag::Vhl => { /* ... */ },
@@ -59,15 +72,27 @@ pub enum AudioChannelTag {
     #[allow(missing_docs)] // documentation missing in model
     Cs,
     #[allow(missing_docs)] // documentation missing in model
+    Hi,
+    #[allow(missing_docs)] // documentation missing in model
     L,
     #[allow(missing_docs)] // documentation missing in model
     Lc,
     #[allow(missing_docs)] // documentation missing in model
     Lfe,
     #[allow(missing_docs)] // documentation missing in model
+    Lfe2,
+    #[allow(missing_docs)] // documentation missing in model
     Ls,
     #[allow(missing_docs)] // documentation missing in model
     Lsd,
+    #[allow(missing_docs)] // documentation missing in model
+    Lt,
+    #[allow(missing_docs)] // documentation missing in model
+    Lw,
+    #[allow(missing_docs)] // documentation missing in model
+    M,
+    #[allow(missing_docs)] // documentation missing in model
+    Nar,
     #[allow(missing_docs)] // documentation missing in model
     R,
     #[allow(missing_docs)] // documentation missing in model
@@ -76,6 +101,20 @@ pub enum AudioChannelTag {
     Rs,
     #[allow(missing_docs)] // documentation missing in model
     Rsd,
+    #[allow(missing_docs)] // documentation missing in model
+    Rsl,
+    #[allow(missing_docs)] // documentation missing in model
+    Rsr,
+    #[allow(missing_docs)] // documentation missing in model
+    Rt,
+    #[allow(missing_docs)] // documentation missing in model
+    Rw,
+    #[allow(missing_docs)] // documentation missing in model
+    Tbc,
+    #[allow(missing_docs)] // documentation missing in model
+    Tbl,
+    #[allow(missing_docs)] // documentation missing in model
+    Tbr,
     #[allow(missing_docs)] // documentation missing in model
     Tcs,
     #[allow(missing_docs)] // documentation missing in model
@@ -92,15 +131,28 @@ impl ::std::convert::From<&str> for AudioChannelTag {
         match s {
             "C" => AudioChannelTag::C,
             "CS" => AudioChannelTag::Cs,
+            "HI" => AudioChannelTag::Hi,
             "L" => AudioChannelTag::L,
             "LC" => AudioChannelTag::Lc,
             "LFE" => AudioChannelTag::Lfe,
+            "LFE2" => AudioChannelTag::Lfe2,
             "LS" => AudioChannelTag::Ls,
             "LSD" => AudioChannelTag::Lsd,
+            "LT" => AudioChannelTag::Lt,
+            "LW" => AudioChannelTag::Lw,
+            "M" => AudioChannelTag::M,
+            "NAR" => AudioChannelTag::Nar,
             "R" => AudioChannelTag::R,
             "RC" => AudioChannelTag::Rc,
             "RS" => AudioChannelTag::Rs,
             "RSD" => AudioChannelTag::Rsd,
+            "RSL" => AudioChannelTag::Rsl,
+            "RSR" => AudioChannelTag::Rsr,
+            "RT" => AudioChannelTag::Rt,
+            "RW" => AudioChannelTag::Rw,
+            "TBC" => AudioChannelTag::Tbc,
+            "TBL" => AudioChannelTag::Tbl,
+            "TBR" => AudioChannelTag::Tbr,
             "TCS" => AudioChannelTag::Tcs,
             "VHC" => AudioChannelTag::Vhc,
             "VHL" => AudioChannelTag::Vhl,
@@ -122,15 +174,28 @@ impl AudioChannelTag {
         match self {
             AudioChannelTag::C => "C",
             AudioChannelTag::Cs => "CS",
+            AudioChannelTag::Hi => "HI",
             AudioChannelTag::L => "L",
             AudioChannelTag::Lc => "LC",
             AudioChannelTag::Lfe => "LFE",
+            AudioChannelTag::Lfe2 => "LFE2",
             AudioChannelTag::Ls => "LS",
             AudioChannelTag::Lsd => "LSD",
+            AudioChannelTag::Lt => "LT",
+            AudioChannelTag::Lw => "LW",
+            AudioChannelTag::M => "M",
+            AudioChannelTag::Nar => "NAR",
             AudioChannelTag::R => "R",
             AudioChannelTag::Rc => "RC",
             AudioChannelTag::Rs => "RS",
             AudioChannelTag::Rsd => "RSD",
+            AudioChannelTag::Rsl => "RSL",
+            AudioChannelTag::Rsr => "RSR",
+            AudioChannelTag::Rt => "RT",
+            AudioChannelTag::Rw => "RW",
+            AudioChannelTag::Tbc => "TBC",
+            AudioChannelTag::Tbl => "TBL",
+            AudioChannelTag::Tbr => "TBR",
             AudioChannelTag::Tcs => "TCS",
             AudioChannelTag::Vhc => "VHC",
             AudioChannelTag::Vhl => "VHL",
@@ -141,7 +206,8 @@ impl AudioChannelTag {
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "C", "CS", "L", "LC", "LFE", "LS", "LSD", "R", "RC", "RS", "RSD", "TCS", "VHC", "VHL", "VHR",
+            "C", "CS", "HI", "L", "LC", "LFE", "LFE2", "LS", "LSD", "LT", "LW", "M", "NAR", "R", "RC", "RS", "RSD", "RSL", "RSR", "RT", "RW", "TBC",
+            "TBL", "TBR", "TCS", "VHC", "VHL", "VHR",
         ]
     }
 }

@@ -155,11 +155,17 @@ mod batch_start_recommendations;
 
 mod cancel_replication_task_assessment_run;
 
+mod create_data_provider;
+
 mod create_endpoint;
 
 mod create_event_subscription;
 
 mod create_fleet_advisor_collector;
+
+mod create_instance_profile;
+
+mod create_migration_project;
 
 mod create_replication_config;
 
@@ -201,6 +207,8 @@ mod delete_certificate;
 
 mod delete_connection;
 
+mod delete_data_provider;
+
 mod delete_endpoint;
 
 mod delete_event_subscription;
@@ -208,6 +216,10 @@ mod delete_event_subscription;
 mod delete_fleet_advisor_collector;
 
 mod delete_fleet_advisor_databases;
+
+mod delete_instance_profile;
+
+mod delete_migration_project;
 
 mod delete_replication_config;
 
@@ -227,17 +239,25 @@ mod describe_certificates;
 
 mod describe_connections;
 
+mod describe_conversion_configuration;
+
+mod describe_data_providers;
+
 mod describe_endpoint_settings;
 
 mod describe_endpoint_types;
 
 mod describe_endpoints;
 
+mod describe_engine_versions;
+
 mod describe_event_categories;
 
 mod describe_event_subscriptions;
 
 mod describe_events;
+
+mod describe_extension_pack_associations;
 
 mod describe_fleet_advisor_collectors;
 
@@ -248,6 +268,20 @@ mod describe_fleet_advisor_lsa_analysis;
 mod describe_fleet_advisor_schema_object_summary;
 
 mod describe_fleet_advisor_schemas;
+
+mod describe_instance_profiles;
+
+mod describe_metadata_model_assessments;
+
+mod describe_metadata_model_conversions;
+
+mod describe_metadata_model_exports_as_script;
+
+mod describe_metadata_model_exports_to_target;
+
+mod describe_metadata_model_imports;
+
+mod describe_migration_projects;
 
 mod describe_orderable_replication_instances;
 
@@ -283,13 +317,23 @@ mod describe_schemas;
 
 mod describe_table_statistics;
 
+mod export_metadata_model_assessment;
+
 mod import_certificate;
 
 mod list_tags_for_resource;
 
+mod modify_conversion_configuration;
+
+mod modify_data_provider;
+
 mod modify_endpoint;
 
 mod modify_event_subscription;
+
+mod modify_instance_profile;
+
+mod modify_migration_project;
 
 mod modify_replication_config;
 
@@ -312,6 +356,18 @@ mod reload_tables;
 mod remove_tags_from_resource;
 
 mod run_fleet_advisor_lsa_analysis;
+
+mod start_extension_pack_association;
+
+mod start_metadata_model_assessment;
+
+mod start_metadata_model_conversion;
+
+mod start_metadata_model_export_as_script;
+
+mod start_metadata_model_export_to_target;
+
+mod start_metadata_model_import;
 
 mod start_recommendations;
 

@@ -8,7 +8,7 @@ pub struct CreateHomeRegionControlInput {
     /// <p>The account for which this command sets up a home region control. The <code>Target</code> is always of type <code>ACCOUNT</code>.</p>
     pub target: ::std::option::Option<crate::types::Target>,
     /// <p>Optional Boolean flag to indicate whether any effect should take place. It tests whether the caller has permission to make the call.</p>
-    pub dry_run: bool,
+    pub dry_run: ::std::option::Option<bool>,
 }
 impl CreateHomeRegionControlInput {
     /// <p>The name of the home region of the calling account.</p>
@@ -20,7 +20,7 @@ impl CreateHomeRegionControlInput {
         self.target.as_ref()
     }
     /// <p>Optional Boolean flag to indicate whether any effect should take place. It tests whether the caller has permission to make the call.</p>
-    pub fn dry_run(&self) -> bool {
+    pub fn dry_run(&self) -> ::std::option::Option<bool> {
         self.dry_run
     }
 }
@@ -92,7 +92,7 @@ impl CreateHomeRegionControlInputBuilder {
         ::std::result::Result::Ok(crate::operation::create_home_region_control::CreateHomeRegionControlInput {
             home_region: self.home_region,
             target: self.target,
-            dry_run: self.dry_run.unwrap_or_default(),
+            dry_run: self.dry_run,
         })
     }
 }

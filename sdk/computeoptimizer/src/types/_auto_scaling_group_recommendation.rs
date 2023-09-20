@@ -45,6 +45,8 @@ pub struct AutoScalingGroupRecommendation {
     /// <li> <p> <code>SQLServer</code> - Infers that SQLServer might be running on the instance.</p> </li>
     /// </ul>
     pub inferred_workload_types: ::std::option::Option<::std::vec::Vec<crate::types::InferredWorkloadType>>,
+    /// <p> Describes the GPU accelerator settings for the current instance type of the Auto Scaling group. </p>
+    pub current_instance_gpu_info: ::std::option::Option<crate::types::GpuInfo>,
 }
 impl AutoScalingGroupRecommendation {
     /// <p>The Amazon Web Services account ID of the Auto Scaling group.</p>
@@ -112,6 +114,10 @@ impl AutoScalingGroupRecommendation {
     pub fn inferred_workload_types(&self) -> ::std::option::Option<&[crate::types::InferredWorkloadType]> {
         self.inferred_workload_types.as_deref()
     }
+    /// <p> Describes the GPU accelerator settings for the current instance type of the Auto Scaling group. </p>
+    pub fn current_instance_gpu_info(&self) -> ::std::option::Option<&crate::types::GpuInfo> {
+        self.current_instance_gpu_info.as_ref()
+    }
 }
 impl AutoScalingGroupRecommendation {
     /// Creates a new builder-style object to manufacture [`AutoScalingGroupRecommendation`](crate::types::AutoScalingGroupRecommendation).
@@ -136,6 +142,7 @@ pub struct AutoScalingGroupRecommendationBuilder {
     pub(crate) current_performance_risk: ::std::option::Option<crate::types::CurrentPerformanceRisk>,
     pub(crate) effective_recommendation_preferences: ::std::option::Option<crate::types::EffectiveRecommendationPreferences>,
     pub(crate) inferred_workload_types: ::std::option::Option<::std::vec::Vec<crate::types::InferredWorkloadType>>,
+    pub(crate) current_instance_gpu_info: ::std::option::Option<crate::types::GpuInfo>,
 }
 impl AutoScalingGroupRecommendationBuilder {
     /// <p>The Amazon Web Services account ID of the Auto Scaling group.</p>
@@ -381,6 +388,20 @@ impl AutoScalingGroupRecommendationBuilder {
     pub fn get_inferred_workload_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InferredWorkloadType>> {
         &self.inferred_workload_types
     }
+    /// <p> Describes the GPU accelerator settings for the current instance type of the Auto Scaling group. </p>
+    pub fn current_instance_gpu_info(mut self, input: crate::types::GpuInfo) -> Self {
+        self.current_instance_gpu_info = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p> Describes the GPU accelerator settings for the current instance type of the Auto Scaling group. </p>
+    pub fn set_current_instance_gpu_info(mut self, input: ::std::option::Option<crate::types::GpuInfo>) -> Self {
+        self.current_instance_gpu_info = input;
+        self
+    }
+    /// <p> Describes the GPU accelerator settings for the current instance type of the Auto Scaling group. </p>
+    pub fn get_current_instance_gpu_info(&self) -> &::std::option::Option<crate::types::GpuInfo> {
+        &self.current_instance_gpu_info
+    }
     /// Consumes the builder and constructs a [`AutoScalingGroupRecommendation`](crate::types::AutoScalingGroupRecommendation).
     pub fn build(self) -> crate::types::AutoScalingGroupRecommendation {
         crate::types::AutoScalingGroupRecommendation {
@@ -396,6 +417,7 @@ impl AutoScalingGroupRecommendationBuilder {
             current_performance_risk: self.current_performance_risk,
             effective_recommendation_preferences: self.effective_recommendation_preferences,
             inferred_workload_types: self.inferred_workload_types,
+            current_instance_gpu_info: self.current_instance_gpu_info,
         }
     }
 }

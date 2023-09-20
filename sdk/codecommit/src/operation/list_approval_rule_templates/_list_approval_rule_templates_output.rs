@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListApprovalRuleTemplatesOutput {
-    /// <p>The names of all the approval rule templates found in the AWS Region for your AWS account.</p>
+    /// <p>The names of all the approval rule templates found in the Amazon Web Services Region for your Amazon Web Services account.</p>
     pub approval_rule_template_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>An enumeration token that allows the operation to batch the next results of the operation.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListApprovalRuleTemplatesOutput {
-    /// <p>The names of all the approval rule templates found in the AWS Region for your AWS account.</p>
+    /// <p>The names of all the approval rule templates found in the Amazon Web Services Region for your Amazon Web Services account.</p>
     pub fn approval_rule_template_names(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.approval_rule_template_names.as_deref()
     }
@@ -44,19 +44,19 @@ impl ListApprovalRuleTemplatesOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_approval_rule_template_names`](Self::set_approval_rule_template_names).
     ///
-    /// <p>The names of all the approval rule templates found in the AWS Region for your AWS account.</p>
+    /// <p>The names of all the approval rule templates found in the Amazon Web Services Region for your Amazon Web Services account.</p>
     pub fn approval_rule_template_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.approval_rule_template_names.unwrap_or_default();
         v.push(input.into());
         self.approval_rule_template_names = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The names of all the approval rule templates found in the AWS Region for your AWS account.</p>
+    /// <p>The names of all the approval rule templates found in the Amazon Web Services Region for your Amazon Web Services account.</p>
     pub fn set_approval_rule_template_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.approval_rule_template_names = input;
         self
     }
-    /// <p>The names of all the approval rule templates found in the AWS Region for your AWS account.</p>
+    /// <p>The names of all the approval rule templates found in the Amazon Web Services Region for your Amazon Web Services account.</p>
     pub fn get_approval_rule_template_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.approval_rule_template_names
     }

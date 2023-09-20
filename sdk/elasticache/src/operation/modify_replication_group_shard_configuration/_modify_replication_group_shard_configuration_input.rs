@@ -7,10 +7,10 @@ pub struct ModifyReplicationGroupShardConfigurationInput {
     /// <p>The name of the Redis (cluster mode enabled) cluster (replication group) on which the shards are to be configured.</p>
     pub replication_group_id: ::std::option::Option<::std::string::String>,
     /// <p>The number of node groups (shards) that results from the modification of the shard configuration.</p>
-    pub node_group_count: i32,
+    pub node_group_count: ::std::option::Option<i32>,
     /// <p>Indicates that the shard reconfiguration process begins immediately. At present, the only permitted value for this parameter is <code>true</code>.</p>
     /// <p>Value: true</p>
-    pub apply_immediately: bool,
+    pub apply_immediately: ::std::option::Option<bool>,
     /// <p>Specifies the preferred availability zones for each node group in the cluster. If the value of <code>NodeGroupCount</code> is greater than the current number of node groups (shards), you can use this parameter to specify the preferred availability zones of the cluster's shards. If you omit this parameter ElastiCache selects availability zones for you.</p>
     /// <p>You can specify this parameter only if the value of <code>NodeGroupCount</code> is greater than the current number of node groups (shards).</p>
     pub resharding_configuration: ::std::option::Option<::std::vec::Vec<crate::types::ReshardingConfiguration>>,
@@ -27,12 +27,12 @@ impl ModifyReplicationGroupShardConfigurationInput {
         self.replication_group_id.as_deref()
     }
     /// <p>The number of node groups (shards) that results from the modification of the shard configuration.</p>
-    pub fn node_group_count(&self) -> i32 {
+    pub fn node_group_count(&self) -> ::std::option::Option<i32> {
         self.node_group_count
     }
     /// <p>Indicates that the shard reconfiguration process begins immediately. At present, the only permitted value for this parameter is <code>true</code>.</p>
     /// <p>Value: true</p>
-    pub fn apply_immediately(&self) -> bool {
+    pub fn apply_immediately(&self) -> ::std::option::Option<bool> {
         self.apply_immediately
     }
     /// <p>Specifies the preferred availability zones for each node group in the cluster. If the value of <code>NodeGroupCount</code> is greater than the current number of node groups (shards), you can use this parameter to specify the preferred availability zones of the cluster's shards. If you omit this parameter ElastiCache selects availability zones for you.</p>
@@ -195,8 +195,8 @@ impl ModifyReplicationGroupShardConfigurationInputBuilder {
         ::std::result::Result::Ok(
             crate::operation::modify_replication_group_shard_configuration::ModifyReplicationGroupShardConfigurationInput {
                 replication_group_id: self.replication_group_id,
-                node_group_count: self.node_group_count.unwrap_or_default(),
-                apply_immediately: self.apply_immediately.unwrap_or_default(),
+                node_group_count: self.node_group_count,
+                apply_immediately: self.apply_immediately,
                 resharding_configuration: self.resharding_configuration,
                 node_groups_to_remove: self.node_groups_to_remove,
                 node_groups_to_retain: self.node_groups_to_retain,

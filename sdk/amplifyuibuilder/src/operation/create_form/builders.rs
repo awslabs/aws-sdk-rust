@@ -22,7 +22,7 @@ impl CreateFormInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateForm`.
 ///
-/// <p>Creates a new form for an Amplify.</p>
+/// <p>Creates a new form for an Amplify app.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateFormFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

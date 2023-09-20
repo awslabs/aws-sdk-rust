@@ -7,6 +7,8 @@ pub use crate::types::_media_insights_pipeline_configuration::MediaInsightsPipel
 
 pub use crate::types::_media_insights_pipeline_configuration_element::MediaInsightsPipelineConfigurationElement;
 
+pub use crate::types::_voice_enhancement_sink_configuration::VoiceEnhancementSinkConfiguration;
+
 pub use crate::types::_sns_topic_sink_configuration::SnsTopicSinkConfiguration;
 
 pub use crate::types::_sqs_queue_sink_configuration::SqsQueueSinkConfiguration;
@@ -57,6 +59,16 @@ pub use crate::types::_real_time_alert_rule_type::RealTimeAlertRuleType;
 
 pub use crate::types::_tag::Tag;
 
+pub use crate::types::_voice_tone_analysis_task::VoiceToneAnalysisTask;
+
+pub use crate::types::_media_pipeline_task_status::MediaPipelineTaskStatus;
+
+pub use crate::types::_kinesis_video_stream_source_task_configuration::KinesisVideoStreamSourceTaskConfiguration;
+
+pub use crate::types::_voice_analytics_language_code::VoiceAnalyticsLanguageCode;
+
+pub use crate::types::_speaker_search_task::SpeakerSearchTask;
+
 pub use crate::types::_media_pipeline_summary::MediaPipelineSummary;
 
 pub use crate::types::_media_insights_pipeline_configuration_summary::MediaInsightsPipelineConfigurationSummary;
@@ -66,6 +78,10 @@ pub use crate::types::_media_capture_pipeline_summary::MediaCapturePipelineSumma
 pub use crate::types::_media_pipeline::MediaPipeline;
 
 pub use crate::types::_media_insights_pipeline::MediaInsightsPipeline;
+
+pub use crate::types::_media_insights_pipeline_element_status::MediaInsightsPipelineElementStatus;
+
+pub use crate::types::_media_pipeline_element_status::MediaPipelineElementStatus;
 
 pub use crate::types::_s3_recording_sink_runtime_configuration::S3RecordingSinkRuntimeConfiguration;
 
@@ -301,6 +317,8 @@ mod _kinesis_video_stream_recording_source_runtime_configuration;
 
 mod _kinesis_video_stream_source_runtime_configuration;
 
+mod _kinesis_video_stream_source_task_configuration;
+
 mod _lambda_function_sink_configuration;
 
 mod _layout_option;
@@ -337,9 +355,13 @@ mod _media_insights_pipeline_configuration_element_type;
 
 mod _media_insights_pipeline_configuration_summary;
 
+mod _media_insights_pipeline_element_status;
+
 mod _media_live_connector_pipeline;
 
 mod _media_pipeline;
+
+mod _media_pipeline_element_status;
 
 mod _media_pipeline_sink_type;
 
@@ -350,6 +372,8 @@ mod _media_pipeline_status;
 mod _media_pipeline_status_update;
 
 mod _media_pipeline_summary;
+
+mod _media_pipeline_task_status;
 
 mod _meeting_events_concatenation_configuration;
 
@@ -391,6 +415,8 @@ mod _sns_topic_sink_configuration;
 
 mod _source_configuration;
 
+mod _speaker_search_task;
+
 mod _sqs_queue_sink_configuration;
 
 mod _stream_channel_definition;
@@ -421,7 +447,13 @@ mod _vocabulary_filter_method;
 
 mod _voice_analytics_configuration_status;
 
+mod _voice_analytics_language_code;
+
 mod _voice_analytics_processor_configuration;
+
+mod _voice_enhancement_sink_configuration;
+
+mod _voice_tone_analysis_task;
 
 /// Builders
 pub mod builders;

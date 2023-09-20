@@ -4,31 +4,31 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SnapshotFileSheetSelection {
-    /// <p>The sheet ID of the dashboard to generate the snapshot artifact from. This value is required for CSV or PDF format types.</p>
+    /// <p>The sheet ID of the dashboard to generate the snapshot artifact from. This value is required for CSV, Excel, and PDF format types.</p>
     pub sheet_id: ::std::option::Option<::std::string::String>,
     /// <p>The selection scope of the visuals on a sheet of a dashboard that you are generating a snapthot of. You can choose one of the following options.</p>
     /// <ul>
     /// <li> <p> <code>ALL_VISUALS</code> - Selects all visuals that are on the sheet. This value is required if the snapshot is a PDF.</p> </li>
-    /// <li> <p> <code>SELECTED_VISUALS</code> - Select the visual that you want to add to the snapshot. This value is required if the snapshot is a CSV.</p> </li>
+    /// <li> <p> <code>SELECTED_VISUALS</code> - Select the visual that you want to add to the snapshot. This value is required if the snapshot is a CSV or Excel workbook.</p> </li>
     /// </ul>
     pub selection_scope: ::std::option::Option<crate::types::SnapshotFileSheetSelectionScope>,
-    /// <p> A structure that lists the IDs of the visuals in the selected sheet. Supported visual types are table, pivot table visuals. This value is required if you are generating a CSV. This value supports a maximum of 1 visual ID. </p>
+    /// <p> A structure that lists the IDs of the visuals in the selected sheet. Supported visual types are table, pivot table visuals. This value is required if you are generating a CSV or Excel workbook. This value supports a maximum of 1 visual ID for CSV and 5 visual IDs across up to 5 sheet selections for Excel. If you are generating an Excel workbook, the order of the visual IDs provided in this structure determines the order of the worksheets in the Excel file. </p>
     pub visual_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl SnapshotFileSheetSelection {
-    /// <p>The sheet ID of the dashboard to generate the snapshot artifact from. This value is required for CSV or PDF format types.</p>
+    /// <p>The sheet ID of the dashboard to generate the snapshot artifact from. This value is required for CSV, Excel, and PDF format types.</p>
     pub fn sheet_id(&self) -> ::std::option::Option<&str> {
         self.sheet_id.as_deref()
     }
     /// <p>The selection scope of the visuals on a sheet of a dashboard that you are generating a snapthot of. You can choose one of the following options.</p>
     /// <ul>
     /// <li> <p> <code>ALL_VISUALS</code> - Selects all visuals that are on the sheet. This value is required if the snapshot is a PDF.</p> </li>
-    /// <li> <p> <code>SELECTED_VISUALS</code> - Select the visual that you want to add to the snapshot. This value is required if the snapshot is a CSV.</p> </li>
+    /// <li> <p> <code>SELECTED_VISUALS</code> - Select the visual that you want to add to the snapshot. This value is required if the snapshot is a CSV or Excel workbook.</p> </li>
     /// </ul>
     pub fn selection_scope(&self) -> ::std::option::Option<&crate::types::SnapshotFileSheetSelectionScope> {
         self.selection_scope.as_ref()
     }
-    /// <p> A structure that lists the IDs of the visuals in the selected sheet. Supported visual types are table, pivot table visuals. This value is required if you are generating a CSV. This value supports a maximum of 1 visual ID. </p>
+    /// <p> A structure that lists the IDs of the visuals in the selected sheet. Supported visual types are table, pivot table visuals. This value is required if you are generating a CSV or Excel workbook. This value supports a maximum of 1 visual ID for CSV and 5 visual IDs across up to 5 sheet selections for Excel. If you are generating an Excel workbook, the order of the visual IDs provided in this structure determines the order of the worksheets in the Excel file. </p>
     pub fn visual_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.visual_ids.as_deref()
     }
@@ -49,24 +49,24 @@ pub struct SnapshotFileSheetSelectionBuilder {
     pub(crate) visual_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl SnapshotFileSheetSelectionBuilder {
-    /// <p>The sheet ID of the dashboard to generate the snapshot artifact from. This value is required for CSV or PDF format types.</p>
+    /// <p>The sheet ID of the dashboard to generate the snapshot artifact from. This value is required for CSV, Excel, and PDF format types.</p>
     pub fn sheet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sheet_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The sheet ID of the dashboard to generate the snapshot artifact from. This value is required for CSV or PDF format types.</p>
+    /// <p>The sheet ID of the dashboard to generate the snapshot artifact from. This value is required for CSV, Excel, and PDF format types.</p>
     pub fn set_sheet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sheet_id = input;
         self
     }
-    /// <p>The sheet ID of the dashboard to generate the snapshot artifact from. This value is required for CSV or PDF format types.</p>
+    /// <p>The sheet ID of the dashboard to generate the snapshot artifact from. This value is required for CSV, Excel, and PDF format types.</p>
     pub fn get_sheet_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.sheet_id
     }
     /// <p>The selection scope of the visuals on a sheet of a dashboard that you are generating a snapthot of. You can choose one of the following options.</p>
     /// <ul>
     /// <li> <p> <code>ALL_VISUALS</code> - Selects all visuals that are on the sheet. This value is required if the snapshot is a PDF.</p> </li>
-    /// <li> <p> <code>SELECTED_VISUALS</code> - Select the visual that you want to add to the snapshot. This value is required if the snapshot is a CSV.</p> </li>
+    /// <li> <p> <code>SELECTED_VISUALS</code> - Select the visual that you want to add to the snapshot. This value is required if the snapshot is a CSV or Excel workbook.</p> </li>
     /// </ul>
     pub fn selection_scope(mut self, input: crate::types::SnapshotFileSheetSelectionScope) -> Self {
         self.selection_scope = ::std::option::Option::Some(input);
@@ -75,7 +75,7 @@ impl SnapshotFileSheetSelectionBuilder {
     /// <p>The selection scope of the visuals on a sheet of a dashboard that you are generating a snapthot of. You can choose one of the following options.</p>
     /// <ul>
     /// <li> <p> <code>ALL_VISUALS</code> - Selects all visuals that are on the sheet. This value is required if the snapshot is a PDF.</p> </li>
-    /// <li> <p> <code>SELECTED_VISUALS</code> - Select the visual that you want to add to the snapshot. This value is required if the snapshot is a CSV.</p> </li>
+    /// <li> <p> <code>SELECTED_VISUALS</code> - Select the visual that you want to add to the snapshot. This value is required if the snapshot is a CSV or Excel workbook.</p> </li>
     /// </ul>
     pub fn set_selection_scope(mut self, input: ::std::option::Option<crate::types::SnapshotFileSheetSelectionScope>) -> Self {
         self.selection_scope = input;
@@ -84,7 +84,7 @@ impl SnapshotFileSheetSelectionBuilder {
     /// <p>The selection scope of the visuals on a sheet of a dashboard that you are generating a snapthot of. You can choose one of the following options.</p>
     /// <ul>
     /// <li> <p> <code>ALL_VISUALS</code> - Selects all visuals that are on the sheet. This value is required if the snapshot is a PDF.</p> </li>
-    /// <li> <p> <code>SELECTED_VISUALS</code> - Select the visual that you want to add to the snapshot. This value is required if the snapshot is a CSV.</p> </li>
+    /// <li> <p> <code>SELECTED_VISUALS</code> - Select the visual that you want to add to the snapshot. This value is required if the snapshot is a CSV or Excel workbook.</p> </li>
     /// </ul>
     pub fn get_selection_scope(&self) -> &::std::option::Option<crate::types::SnapshotFileSheetSelectionScope> {
         &self.selection_scope
@@ -93,19 +93,19 @@ impl SnapshotFileSheetSelectionBuilder {
     ///
     /// To override the contents of this collection use [`set_visual_ids`](Self::set_visual_ids).
     ///
-    /// <p> A structure that lists the IDs of the visuals in the selected sheet. Supported visual types are table, pivot table visuals. This value is required if you are generating a CSV. This value supports a maximum of 1 visual ID. </p>
+    /// <p> A structure that lists the IDs of the visuals in the selected sheet. Supported visual types are table, pivot table visuals. This value is required if you are generating a CSV or Excel workbook. This value supports a maximum of 1 visual ID for CSV and 5 visual IDs across up to 5 sheet selections for Excel. If you are generating an Excel workbook, the order of the visual IDs provided in this structure determines the order of the worksheets in the Excel file. </p>
     pub fn visual_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.visual_ids.unwrap_or_default();
         v.push(input.into());
         self.visual_ids = ::std::option::Option::Some(v);
         self
     }
-    /// <p> A structure that lists the IDs of the visuals in the selected sheet. Supported visual types are table, pivot table visuals. This value is required if you are generating a CSV. This value supports a maximum of 1 visual ID. </p>
+    /// <p> A structure that lists the IDs of the visuals in the selected sheet. Supported visual types are table, pivot table visuals. This value is required if you are generating a CSV or Excel workbook. This value supports a maximum of 1 visual ID for CSV and 5 visual IDs across up to 5 sheet selections for Excel. If you are generating an Excel workbook, the order of the visual IDs provided in this structure determines the order of the worksheets in the Excel file. </p>
     pub fn set_visual_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.visual_ids = input;
         self
     }
-    /// <p> A structure that lists the IDs of the visuals in the selected sheet. Supported visual types are table, pivot table visuals. This value is required if you are generating a CSV. This value supports a maximum of 1 visual ID. </p>
+    /// <p> A structure that lists the IDs of the visuals in the selected sheet. Supported visual types are table, pivot table visuals. This value is required if you are generating a CSV or Excel workbook. This value supports a maximum of 1 visual ID for CSV and 5 visual IDs across up to 5 sheet selections for Excel. If you are generating an Excel workbook, the order of the visual IDs provided in this structure determines the order of the worksheets in the Excel file. </p>
     pub fn get_visual_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.visual_ids
     }

@@ -28,6 +28,9 @@ where
                                     .transpose()?,
                             );
                         }
+                        "InstanceFamilies" => {
+                            builder = builder.set_instance_families(crate::protocol_serde::shape_instance_families::de_instance_families(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

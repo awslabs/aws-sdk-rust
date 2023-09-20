@@ -7,6 +7,10 @@ pub struct UpdateTrafficDistributionInput {
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The distribution of traffic between the instance and its replica(s).</p>
     pub telephony_config: ::std::option::Option<crate::types::TelephonyConfig>,
+    /// <p>The distribution of allowing signing in to the instance and its replica(s).</p>
+    pub sign_in_config: ::std::option::Option<crate::types::SignInConfig>,
+    /// <p>The distribution of agents between the instance and its replica(s).</p>
+    pub agent_config: ::std::option::Option<crate::types::AgentConfig>,
 }
 impl UpdateTrafficDistributionInput {
     /// <p>The identifier of the traffic distribution group. This can be the ID or the ARN if the API is being called in the Region where the traffic distribution group was created. The ARN must be provided if the call is from the replicated Region.</p>
@@ -16,6 +20,14 @@ impl UpdateTrafficDistributionInput {
     /// <p>The distribution of traffic between the instance and its replica(s).</p>
     pub fn telephony_config(&self) -> ::std::option::Option<&crate::types::TelephonyConfig> {
         self.telephony_config.as_ref()
+    }
+    /// <p>The distribution of allowing signing in to the instance and its replica(s).</p>
+    pub fn sign_in_config(&self) -> ::std::option::Option<&crate::types::SignInConfig> {
+        self.sign_in_config.as_ref()
+    }
+    /// <p>The distribution of agents between the instance and its replica(s).</p>
+    pub fn agent_config(&self) -> ::std::option::Option<&crate::types::AgentConfig> {
+        self.agent_config.as_ref()
     }
 }
 impl UpdateTrafficDistributionInput {
@@ -31,6 +43,8 @@ impl UpdateTrafficDistributionInput {
 pub struct UpdateTrafficDistributionInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) telephony_config: ::std::option::Option<crate::types::TelephonyConfig>,
+    pub(crate) sign_in_config: ::std::option::Option<crate::types::SignInConfig>,
+    pub(crate) agent_config: ::std::option::Option<crate::types::AgentConfig>,
 }
 impl UpdateTrafficDistributionInputBuilder {
     /// <p>The identifier of the traffic distribution group. This can be the ID or the ARN if the API is being called in the Region where the traffic distribution group was created. The ARN must be provided if the call is from the replicated Region.</p>
@@ -61,6 +75,34 @@ impl UpdateTrafficDistributionInputBuilder {
     pub fn get_telephony_config(&self) -> &::std::option::Option<crate::types::TelephonyConfig> {
         &self.telephony_config
     }
+    /// <p>The distribution of allowing signing in to the instance and its replica(s).</p>
+    pub fn sign_in_config(mut self, input: crate::types::SignInConfig) -> Self {
+        self.sign_in_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The distribution of allowing signing in to the instance and its replica(s).</p>
+    pub fn set_sign_in_config(mut self, input: ::std::option::Option<crate::types::SignInConfig>) -> Self {
+        self.sign_in_config = input;
+        self
+    }
+    /// <p>The distribution of allowing signing in to the instance and its replica(s).</p>
+    pub fn get_sign_in_config(&self) -> &::std::option::Option<crate::types::SignInConfig> {
+        &self.sign_in_config
+    }
+    /// <p>The distribution of agents between the instance and its replica(s).</p>
+    pub fn agent_config(mut self, input: crate::types::AgentConfig) -> Self {
+        self.agent_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The distribution of agents between the instance and its replica(s).</p>
+    pub fn set_agent_config(mut self, input: ::std::option::Option<crate::types::AgentConfig>) -> Self {
+        self.agent_config = input;
+        self
+    }
+    /// <p>The distribution of agents between the instance and its replica(s).</p>
+    pub fn get_agent_config(&self) -> &::std::option::Option<crate::types::AgentConfig> {
+        &self.agent_config
+    }
     /// Consumes the builder and constructs a [`UpdateTrafficDistributionInput`](crate::operation::update_traffic_distribution::UpdateTrafficDistributionInput).
     pub fn build(
         self,
@@ -71,6 +113,8 @@ impl UpdateTrafficDistributionInputBuilder {
         ::std::result::Result::Ok(crate::operation::update_traffic_distribution::UpdateTrafficDistributionInput {
             id: self.id,
             telephony_config: self.telephony_config,
+            sign_in_config: self.sign_in_config,
+            agent_config: self.agent_config,
         })
     }
 }

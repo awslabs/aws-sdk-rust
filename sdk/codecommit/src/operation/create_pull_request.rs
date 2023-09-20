@@ -284,7 +284,7 @@ pub enum CreatePullRequestError {
     InvalidClientRequestTokenException(crate::types::error::InvalidClientRequestTokenException),
     /// <p>The pull request description is not valid. Descriptions cannot be more than 1,000 characters.</p>
     InvalidDescriptionException(crate::types::error::InvalidDescriptionException),
-    /// <p>The specified reference name format is not valid. Reference names must conform to the Git references format (for example, refs/heads/master). For more information, see <a href="https://git-scm.com/book/en/v2/Git-Internals-Git-References">Git Internals - Git References</a> or consult your Git documentation.</p>
+    /// <p>The specified reference name format is not valid. Reference names must conform to the Git references format (for example, refs/heads/main). For more information, see <a href="https://git-scm.com/book/en/v2/Git-Internals-Git-References">Git Internals - Git References</a> or consult your Git documentation.</p>
     InvalidReferenceNameException(crate::types::error::InvalidReferenceNameException),
     /// <p>A specified repository name is not valid.</p> <note>
     /// <p>This exception occurs only when a specified repository name is not valid. Other exceptions occur when a required repository parameter is missing, or when a specified repository does not exist.</p>

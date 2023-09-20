@@ -18,6 +18,7 @@ impl super::Client {
     ///   - [`role_arn(Option<String>)`](crate::operation::describe_dataset::DescribeDatasetOutput::role_arn): <p> The Amazon Resource Name (ARN) of the IAM role that you are using for this the data ingestion job. </p>
     ///   - [`data_start_time(Option<DateTime>)`](crate::operation::describe_dataset::DescribeDatasetOutput::data_start_time): <p> Indicates the earliest timestamp corresponding to data that was successfully ingested during the most recent ingestion of this particular dataset. </p>
     ///   - [`data_end_time(Option<DateTime>)`](crate::operation::describe_dataset::DescribeDatasetOutput::data_end_time): <p> Indicates the latest timestamp corresponding to data that was successfully ingested during the most recent ingestion of this particular dataset. </p>
+    ///   - [`source_dataset_arn(Option<String>)`](crate::operation::describe_dataset::DescribeDatasetOutput::source_dataset_arn): <p>The Amazon Resource Name (ARN) of the source dataset from which the current data being described was imported from.</p>
     /// - On failure, responds with [`SdkError<DescribeDatasetError>`](crate::operation::describe_dataset::DescribeDatasetError)
     pub fn describe_dataset(&self) -> crate::operation::describe_dataset::builders::DescribeDatasetFluentBuilder {
         crate::operation::describe_dataset::builders::DescribeDatasetFluentBuilder::new(self.handle.clone())

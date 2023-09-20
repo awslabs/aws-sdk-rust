@@ -12,7 +12,7 @@ pub struct OpenZfsFileSystemConfiguration {
     pub copy_tags_to_volumes: ::std::option::Option<bool>,
     /// <p>A recurring daily time, in the format <code>HH:MM</code>. <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour. For example, <code>05:00</code> specifies 5 AM daily. </p>
     pub daily_automatic_backup_start_time: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies the file-system deployment type. Amazon FSx for OpenZFS supports  <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code>.</p>
+    /// <p>Specifies the file-system deployment type. Amazon FSx for OpenZFS supports  <code>MULTI_AZ_1</code>, <code>SINGLE_AZ_1</code>, and <code>SINGLE_AZ_2</code>.</p>
     pub deployment_type: ::std::option::Option<crate::types::OpenZfsDeploymentType>,
     /// <p>The throughput of an Amazon FSx file system, measured in megabytes per second (MBps).</p>
     pub throughput_capacity: ::std::option::Option<i32>,
@@ -21,10 +21,18 @@ pub struct OpenZfsFileSystemConfiguration {
     /// <p> <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour. </p>
     /// <p>For example, <code>1:05:00</code> specifies maintenance at 5 AM Monday.</p>
     pub weekly_maintenance_start_time: ::std::option::Option<::std::string::String>,
-    /// <p>The SSD IOPS (input/output operations per second) configuration for an Amazon FSx for NetApp ONTAP or FSx for OpenZFS file system. By default, Amazon FSx automatically provisions 3 IOPS per GB of storage capacity. You can provision additional IOPS per GB of storage. The configuration consists of the total number of provisioned SSD IOPS and how it is was provisioned, or the mode (by the customer or by Amazon FSx).</p>
+    /// <p>The SSD IOPS (input/output operations per second) configuration for an Amazon FSx for NetApp ONTAP, Amazon FSx for Windows File Server, or FSx for OpenZFS file system. By default, Amazon FSx automatically provisions 3 IOPS per GB of storage capacity. You can provision additional IOPS per GB of storage. The configuration consists of the total number of provisioned SSD IOPS and how it is was provisioned, or the mode (by the customer or by Amazon FSx).</p>
     pub disk_iops_configuration: ::std::option::Option<crate::types::DiskIopsConfiguration>,
     /// <p>The ID of the root volume of the OpenZFS file system. </p>
     pub root_volume_id: ::std::option::Option<::std::string::String>,
+    /// <p>Required when <code>DeploymentType</code> is set to <code>MULTI_AZ_1</code>. This specifies the subnet in which you want the preferred file server to be located.</p>
+    pub preferred_subnet_id: ::std::option::Option<::std::string::String>,
+    /// <p>(Multi-AZ only) Specifies the IP address range in which the endpoints to access your file system will be created. By default in the Amazon FSx API and Amazon FSx console, Amazon FSx selects an available /28 IP address range for you from one of the VPC's CIDR ranges. You can have overlapping endpoint IP addresses for file systems deployed in the same VPC/route tables.</p>
+    pub endpoint_ip_address_range: ::std::option::Option<::std::string::String>,
+    /// <p>(Multi-AZ only) The VPC route tables in which your file system's endpoints are created.</p>
+    pub route_table_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The IP address of the endpoint that is used to access data or to manage the file system.</p>
+    pub endpoint_ip_address: ::std::option::Option<::std::string::String>,
 }
 impl OpenZfsFileSystemConfiguration {
     /// <p>The number of days to retain automatic backups. Setting this property to <code>0</code> disables automatic backups. You can retain automatic backups for a maximum of 90 days. The default is <code>30</code>.</p>
@@ -43,7 +51,7 @@ impl OpenZfsFileSystemConfiguration {
     pub fn daily_automatic_backup_start_time(&self) -> ::std::option::Option<&str> {
         self.daily_automatic_backup_start_time.as_deref()
     }
-    /// <p>Specifies the file-system deployment type. Amazon FSx for OpenZFS supports  <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code>.</p>
+    /// <p>Specifies the file-system deployment type. Amazon FSx for OpenZFS supports  <code>MULTI_AZ_1</code>, <code>SINGLE_AZ_1</code>, and <code>SINGLE_AZ_2</code>.</p>
     pub fn deployment_type(&self) -> ::std::option::Option<&crate::types::OpenZfsDeploymentType> {
         self.deployment_type.as_ref()
     }
@@ -58,13 +66,29 @@ impl OpenZfsFileSystemConfiguration {
     pub fn weekly_maintenance_start_time(&self) -> ::std::option::Option<&str> {
         self.weekly_maintenance_start_time.as_deref()
     }
-    /// <p>The SSD IOPS (input/output operations per second) configuration for an Amazon FSx for NetApp ONTAP or FSx for OpenZFS file system. By default, Amazon FSx automatically provisions 3 IOPS per GB of storage capacity. You can provision additional IOPS per GB of storage. The configuration consists of the total number of provisioned SSD IOPS and how it is was provisioned, or the mode (by the customer or by Amazon FSx).</p>
+    /// <p>The SSD IOPS (input/output operations per second) configuration for an Amazon FSx for NetApp ONTAP, Amazon FSx for Windows File Server, or FSx for OpenZFS file system. By default, Amazon FSx automatically provisions 3 IOPS per GB of storage capacity. You can provision additional IOPS per GB of storage. The configuration consists of the total number of provisioned SSD IOPS and how it is was provisioned, or the mode (by the customer or by Amazon FSx).</p>
     pub fn disk_iops_configuration(&self) -> ::std::option::Option<&crate::types::DiskIopsConfiguration> {
         self.disk_iops_configuration.as_ref()
     }
     /// <p>The ID of the root volume of the OpenZFS file system. </p>
     pub fn root_volume_id(&self) -> ::std::option::Option<&str> {
         self.root_volume_id.as_deref()
+    }
+    /// <p>Required when <code>DeploymentType</code> is set to <code>MULTI_AZ_1</code>. This specifies the subnet in which you want the preferred file server to be located.</p>
+    pub fn preferred_subnet_id(&self) -> ::std::option::Option<&str> {
+        self.preferred_subnet_id.as_deref()
+    }
+    /// <p>(Multi-AZ only) Specifies the IP address range in which the endpoints to access your file system will be created. By default in the Amazon FSx API and Amazon FSx console, Amazon FSx selects an available /28 IP address range for you from one of the VPC's CIDR ranges. You can have overlapping endpoint IP addresses for file systems deployed in the same VPC/route tables.</p>
+    pub fn endpoint_ip_address_range(&self) -> ::std::option::Option<&str> {
+        self.endpoint_ip_address_range.as_deref()
+    }
+    /// <p>(Multi-AZ only) The VPC route tables in which your file system's endpoints are created.</p>
+    pub fn route_table_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
+        self.route_table_ids.as_deref()
+    }
+    /// <p>The IP address of the endpoint that is used to access data or to manage the file system.</p>
+    pub fn endpoint_ip_address(&self) -> ::std::option::Option<&str> {
+        self.endpoint_ip_address.as_deref()
     }
 }
 impl OpenZfsFileSystemConfiguration {
@@ -87,6 +111,10 @@ pub struct OpenZfsFileSystemConfigurationBuilder {
     pub(crate) weekly_maintenance_start_time: ::std::option::Option<::std::string::String>,
     pub(crate) disk_iops_configuration: ::std::option::Option<crate::types::DiskIopsConfiguration>,
     pub(crate) root_volume_id: ::std::option::Option<::std::string::String>,
+    pub(crate) preferred_subnet_id: ::std::option::Option<::std::string::String>,
+    pub(crate) endpoint_ip_address_range: ::std::option::Option<::std::string::String>,
+    pub(crate) route_table_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) endpoint_ip_address: ::std::option::Option<::std::string::String>,
 }
 impl OpenZfsFileSystemConfigurationBuilder {
     /// <p>The number of days to retain automatic backups. Setting this property to <code>0</code> disables automatic backups. You can retain automatic backups for a maximum of 90 days. The default is <code>30</code>.</p>
@@ -145,17 +173,17 @@ impl OpenZfsFileSystemConfigurationBuilder {
     pub fn get_daily_automatic_backup_start_time(&self) -> &::std::option::Option<::std::string::String> {
         &self.daily_automatic_backup_start_time
     }
-    /// <p>Specifies the file-system deployment type. Amazon FSx for OpenZFS supports  <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code>.</p>
+    /// <p>Specifies the file-system deployment type. Amazon FSx for OpenZFS supports  <code>MULTI_AZ_1</code>, <code>SINGLE_AZ_1</code>, and <code>SINGLE_AZ_2</code>.</p>
     pub fn deployment_type(mut self, input: crate::types::OpenZfsDeploymentType) -> Self {
         self.deployment_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies the file-system deployment type. Amazon FSx for OpenZFS supports  <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code>.</p>
+    /// <p>Specifies the file-system deployment type. Amazon FSx for OpenZFS supports  <code>MULTI_AZ_1</code>, <code>SINGLE_AZ_1</code>, and <code>SINGLE_AZ_2</code>.</p>
     pub fn set_deployment_type(mut self, input: ::std::option::Option<crate::types::OpenZfsDeploymentType>) -> Self {
         self.deployment_type = input;
         self
     }
-    /// <p>Specifies the file-system deployment type. Amazon FSx for OpenZFS supports  <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code>.</p>
+    /// <p>Specifies the file-system deployment type. Amazon FSx for OpenZFS supports  <code>MULTI_AZ_1</code>, <code>SINGLE_AZ_1</code>, and <code>SINGLE_AZ_2</code>.</p>
     pub fn get_deployment_type(&self) -> &::std::option::Option<crate::types::OpenZfsDeploymentType> {
         &self.deployment_type
     }
@@ -196,17 +224,17 @@ impl OpenZfsFileSystemConfigurationBuilder {
     pub fn get_weekly_maintenance_start_time(&self) -> &::std::option::Option<::std::string::String> {
         &self.weekly_maintenance_start_time
     }
-    /// <p>The SSD IOPS (input/output operations per second) configuration for an Amazon FSx for NetApp ONTAP or FSx for OpenZFS file system. By default, Amazon FSx automatically provisions 3 IOPS per GB of storage capacity. You can provision additional IOPS per GB of storage. The configuration consists of the total number of provisioned SSD IOPS and how it is was provisioned, or the mode (by the customer or by Amazon FSx).</p>
+    /// <p>The SSD IOPS (input/output operations per second) configuration for an Amazon FSx for NetApp ONTAP, Amazon FSx for Windows File Server, or FSx for OpenZFS file system. By default, Amazon FSx automatically provisions 3 IOPS per GB of storage capacity. You can provision additional IOPS per GB of storage. The configuration consists of the total number of provisioned SSD IOPS and how it is was provisioned, or the mode (by the customer or by Amazon FSx).</p>
     pub fn disk_iops_configuration(mut self, input: crate::types::DiskIopsConfiguration) -> Self {
         self.disk_iops_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The SSD IOPS (input/output operations per second) configuration for an Amazon FSx for NetApp ONTAP or FSx for OpenZFS file system. By default, Amazon FSx automatically provisions 3 IOPS per GB of storage capacity. You can provision additional IOPS per GB of storage. The configuration consists of the total number of provisioned SSD IOPS and how it is was provisioned, or the mode (by the customer or by Amazon FSx).</p>
+    /// <p>The SSD IOPS (input/output operations per second) configuration for an Amazon FSx for NetApp ONTAP, Amazon FSx for Windows File Server, or FSx for OpenZFS file system. By default, Amazon FSx automatically provisions 3 IOPS per GB of storage capacity. You can provision additional IOPS per GB of storage. The configuration consists of the total number of provisioned SSD IOPS and how it is was provisioned, or the mode (by the customer or by Amazon FSx).</p>
     pub fn set_disk_iops_configuration(mut self, input: ::std::option::Option<crate::types::DiskIopsConfiguration>) -> Self {
         self.disk_iops_configuration = input;
         self
     }
-    /// <p>The SSD IOPS (input/output operations per second) configuration for an Amazon FSx for NetApp ONTAP or FSx for OpenZFS file system. By default, Amazon FSx automatically provisions 3 IOPS per GB of storage capacity. You can provision additional IOPS per GB of storage. The configuration consists of the total number of provisioned SSD IOPS and how it is was provisioned, or the mode (by the customer or by Amazon FSx).</p>
+    /// <p>The SSD IOPS (input/output operations per second) configuration for an Amazon FSx for NetApp ONTAP, Amazon FSx for Windows File Server, or FSx for OpenZFS file system. By default, Amazon FSx automatically provisions 3 IOPS per GB of storage capacity. You can provision additional IOPS per GB of storage. The configuration consists of the total number of provisioned SSD IOPS and how it is was provisioned, or the mode (by the customer or by Amazon FSx).</p>
     pub fn get_disk_iops_configuration(&self) -> &::std::option::Option<crate::types::DiskIopsConfiguration> {
         &self.disk_iops_configuration
     }
@@ -224,6 +252,68 @@ impl OpenZfsFileSystemConfigurationBuilder {
     pub fn get_root_volume_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.root_volume_id
     }
+    /// <p>Required when <code>DeploymentType</code> is set to <code>MULTI_AZ_1</code>. This specifies the subnet in which you want the preferred file server to be located.</p>
+    pub fn preferred_subnet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.preferred_subnet_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Required when <code>DeploymentType</code> is set to <code>MULTI_AZ_1</code>. This specifies the subnet in which you want the preferred file server to be located.</p>
+    pub fn set_preferred_subnet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.preferred_subnet_id = input;
+        self
+    }
+    /// <p>Required when <code>DeploymentType</code> is set to <code>MULTI_AZ_1</code>. This specifies the subnet in which you want the preferred file server to be located.</p>
+    pub fn get_preferred_subnet_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.preferred_subnet_id
+    }
+    /// <p>(Multi-AZ only) Specifies the IP address range in which the endpoints to access your file system will be created. By default in the Amazon FSx API and Amazon FSx console, Amazon FSx selects an available /28 IP address range for you from one of the VPC's CIDR ranges. You can have overlapping endpoint IP addresses for file systems deployed in the same VPC/route tables.</p>
+    pub fn endpoint_ip_address_range(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.endpoint_ip_address_range = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>(Multi-AZ only) Specifies the IP address range in which the endpoints to access your file system will be created. By default in the Amazon FSx API and Amazon FSx console, Amazon FSx selects an available /28 IP address range for you from one of the VPC's CIDR ranges. You can have overlapping endpoint IP addresses for file systems deployed in the same VPC/route tables.</p>
+    pub fn set_endpoint_ip_address_range(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.endpoint_ip_address_range = input;
+        self
+    }
+    /// <p>(Multi-AZ only) Specifies the IP address range in which the endpoints to access your file system will be created. By default in the Amazon FSx API and Amazon FSx console, Amazon FSx selects an available /28 IP address range for you from one of the VPC's CIDR ranges. You can have overlapping endpoint IP addresses for file systems deployed in the same VPC/route tables.</p>
+    pub fn get_endpoint_ip_address_range(&self) -> &::std::option::Option<::std::string::String> {
+        &self.endpoint_ip_address_range
+    }
+    /// Appends an item to `route_table_ids`.
+    ///
+    /// To override the contents of this collection use [`set_route_table_ids`](Self::set_route_table_ids).
+    ///
+    /// <p>(Multi-AZ only) The VPC route tables in which your file system's endpoints are created.</p>
+    pub fn route_table_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.route_table_ids.unwrap_or_default();
+        v.push(input.into());
+        self.route_table_ids = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>(Multi-AZ only) The VPC route tables in which your file system's endpoints are created.</p>
+    pub fn set_route_table_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.route_table_ids = input;
+        self
+    }
+    /// <p>(Multi-AZ only) The VPC route tables in which your file system's endpoints are created.</p>
+    pub fn get_route_table_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.route_table_ids
+    }
+    /// <p>The IP address of the endpoint that is used to access data or to manage the file system.</p>
+    pub fn endpoint_ip_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.endpoint_ip_address = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The IP address of the endpoint that is used to access data or to manage the file system.</p>
+    pub fn set_endpoint_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.endpoint_ip_address = input;
+        self
+    }
+    /// <p>The IP address of the endpoint that is used to access data or to manage the file system.</p>
+    pub fn get_endpoint_ip_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.endpoint_ip_address
+    }
     /// Consumes the builder and constructs a [`OpenZfsFileSystemConfiguration`](crate::types::OpenZfsFileSystemConfiguration).
     pub fn build(self) -> crate::types::OpenZfsFileSystemConfiguration {
         crate::types::OpenZfsFileSystemConfiguration {
@@ -236,6 +326,10 @@ impl OpenZfsFileSystemConfigurationBuilder {
             weekly_maintenance_start_time: self.weekly_maintenance_start_time,
             disk_iops_configuration: self.disk_iops_configuration,
             root_volume_id: self.root_volume_id,
+            preferred_subnet_id: self.preferred_subnet_id,
+            endpoint_ip_address_range: self.endpoint_ip_address_range,
+            route_table_ids: self.route_table_ids,
+            endpoint_ip_address: self.endpoint_ip_address,
         }
     }
 }

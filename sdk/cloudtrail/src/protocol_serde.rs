@@ -359,6 +359,8 @@ pub(crate) mod shape_stop_logging_input;
 
 pub(crate) mod shape_tags_limit_exceeded_exception;
 
+pub(crate) mod shape_throttling_exception;
+
 pub(crate) mod shape_trail_already_exists_exception;
 
 pub(crate) mod shape_trail_not_found_exception;

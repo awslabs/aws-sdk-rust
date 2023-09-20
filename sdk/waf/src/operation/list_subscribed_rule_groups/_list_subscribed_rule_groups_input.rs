@@ -6,7 +6,7 @@ pub struct ListSubscribedRuleGroupsInput {
     /// <p>If you specify a value for <code>Limit</code> and you have more <code>ByteMatchSets</code>subscribed rule groups than the value of <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of subscribed rule groups. For the second and subsequent <code>ListSubscribedRuleGroupsRequest</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of subscribed rule groups.</p>
     pub next_marker: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the number of subscribed rule groups that you want AWS WAF to return for this request. If you have more objects than the number you specify for <code>Limit</code>, the response includes a <code>NextMarker</code> value that you can use to get another batch of objects.</p>
-    pub limit: i32,
+    pub limit: ::std::option::Option<i32>,
 }
 impl ListSubscribedRuleGroupsInput {
     /// <p>If you specify a value for <code>Limit</code> and you have more <code>ByteMatchSets</code>subscribed rule groups than the value of <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of subscribed rule groups. For the second and subsequent <code>ListSubscribedRuleGroupsRequest</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of subscribed rule groups.</p>
@@ -14,7 +14,7 @@ impl ListSubscribedRuleGroupsInput {
         self.next_marker.as_deref()
     }
     /// <p>Specifies the number of subscribed rule groups that you want AWS WAF to return for this request. If you have more objects than the number you specify for <code>Limit</code>, the response includes a <code>NextMarker</code> value that you can use to get another batch of objects.</p>
-    pub fn limit(&self) -> i32 {
+    pub fn limit(&self) -> ::std::option::Option<i32> {
         self.limit
     }
 }
@@ -70,7 +70,7 @@ impl ListSubscribedRuleGroupsInputBuilder {
     > {
         ::std::result::Result::Ok(crate::operation::list_subscribed_rule_groups::ListSubscribedRuleGroupsInput {
             next_marker: self.next_marker,
-            limit: self.limit.unwrap_or_default(),
+            limit: self.limit,
         })
     }
 }

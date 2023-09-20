@@ -359,6 +359,8 @@ pub(crate) mod shape_embedded_destination_settings;
 
 pub(crate) mod shape_file_group_settings;
 
+pub(crate) mod shape_flac_settings;
+
 pub(crate) mod shape_frame_capture_settings;
 
 pub(crate) mod shape_h264_settings;

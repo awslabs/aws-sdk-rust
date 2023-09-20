@@ -949,6 +949,33 @@ pub fn de_db_cluster(
                 builder = builder.set_io_optimized_next_allowed_modification_time(var_72);
             }
             ,
+            s if s.matches("LocalWriteForwardingStatus") /* LocalWriteForwardingStatus com.amazonaws.rds#DBCluster$LocalWriteForwardingStatus */ =>  {
+                let var_73 =
+                    Some(
+                        Result::<crate::types::LocalWriteForwardingStatus, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::LocalWriteForwardingStatus::from(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_local_write_forwarding_status(var_73);
+            }
+            ,
+            s if s.matches("AwsBackupRecoveryPointArn") /* AwsBackupRecoveryPointArn com.amazonaws.rds#DBCluster$AwsBackupRecoveryPointArn */ =>  {
+                let var_74 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_aws_backup_recovery_point_arn(var_74);
+            }
+            ,
             _ => {}
         }
     }

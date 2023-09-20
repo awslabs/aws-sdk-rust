@@ -25,7 +25,7 @@ pub struct DescribeCacheEngineVersionsInput {
     /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>If <code>true</code>, specifies that only the default version of the specified engine or engine and major version combination is to be returned.</p>
-    pub default_only: bool,
+    pub default_only: ::std::option::Option<bool>,
 }
 impl DescribeCacheEngineVersionsInput {
     /// <p>The cache engine to return. Valid values: <code>memcached</code> | <code>redis</code> </p>
@@ -59,7 +59,7 @@ impl DescribeCacheEngineVersionsInput {
         self.marker.as_deref()
     }
     /// <p>If <code>true</code>, specifies that only the default version of the specified engine or engine and major version combination is to be returned.</p>
-    pub fn default_only(&self) -> bool {
+    pub fn default_only(&self) -> ::std::option::Option<bool> {
         self.default_only
     }
 }
@@ -209,7 +209,7 @@ impl DescribeCacheEngineVersionsInputBuilder {
             cache_parameter_group_family: self.cache_parameter_group_family,
             max_records: self.max_records,
             marker: self.marker,
-            default_only: self.default_only.unwrap_or_default(),
+            default_only: self.default_only,
         })
     }
 }

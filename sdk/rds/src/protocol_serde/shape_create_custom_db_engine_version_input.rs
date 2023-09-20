@@ -56,6 +56,16 @@ pub fn ser_create_custom_db_engine_version_input_input(
         }
         list_20.finish();
     }
+    #[allow(unused_mut)]
+    let mut scope_22 = writer.prefix("SourceCustomDbEngineVersionIdentifier");
+    if let Some(var_23) = &input.source_custom_db_engine_version_identifier {
+        scope_22.string(var_23);
+    }
+    #[allow(unused_mut)]
+    let mut scope_24 = writer.prefix("UseAwsProvidedLatestImage");
+    if let Some(var_25) = &input.use_aws_provided_latest_image {
+        scope_24.boolean(*var_25);
+    }
     writer.finish();
     Ok(::aws_smithy_http::body::SdkBody::from(out))
 }

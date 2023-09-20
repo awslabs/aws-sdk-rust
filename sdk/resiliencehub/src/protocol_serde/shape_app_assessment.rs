@@ -102,6 +102,20 @@ where
                                 crate::protocol_serde::shape_resource_errors_details::de_resource_errors_details(tokens)?,
                             );
                         }
+                        "versionName" => {
+                            builder = builder.set_version_name(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "driftStatus" => {
+                            builder = builder.set_drift_status(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::DriftStatus::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

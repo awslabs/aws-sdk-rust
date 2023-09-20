@@ -21,6 +21,9 @@ pub fn ser_recommendation_job_stopping_conditions(
         }
         array_2.finish();
     }
+    if let Some(var_5) = &input.flat_invocations {
+        object.key("FlatInvocations").string(var_5.as_str());
+    }
     Ok(())
 }
 
@@ -49,6 +52,13 @@ where
                         "ModelLatencyThresholds" => {
                             builder = builder.set_model_latency_thresholds(
                                 crate::protocol_serde::shape_model_latency_thresholds::de_model_latency_thresholds(tokens)?,
+                            );
+                        }
+                        "FlatInvocations" => {
+                            builder = builder.set_flat_invocations(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::FlatInvocations::from(u.as_ref())))
+                                    .transpose()?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

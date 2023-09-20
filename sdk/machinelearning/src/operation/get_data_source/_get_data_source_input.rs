@@ -8,7 +8,7 @@ pub struct GetDataSourceInput {
     /// <p>Specifies whether the <code>GetDataSource</code> operation should return <code>DataSourceSchema</code>.</p>
     /// <p>If true, <code>DataSourceSchema</code> is returned.</p>
     /// <p>If false, <code>DataSourceSchema</code> is not returned.</p>
-    pub verbose: bool,
+    pub verbose: ::std::option::Option<bool>,
 }
 impl GetDataSourceInput {
     /// <p>The ID assigned to the <code>DataSource</code> at creation.</p>
@@ -18,7 +18,7 @@ impl GetDataSourceInput {
     /// <p>Specifies whether the <code>GetDataSource</code> operation should return <code>DataSourceSchema</code>.</p>
     /// <p>If true, <code>DataSourceSchema</code> is returned.</p>
     /// <p>If false, <code>DataSourceSchema</code> is not returned.</p>
-    pub fn verbose(&self) -> bool {
+    pub fn verbose(&self) -> ::std::option::Option<bool> {
         self.verbose
     }
 }
@@ -77,7 +77,7 @@ impl GetDataSourceInputBuilder {
     ) -> ::std::result::Result<crate::operation::get_data_source::GetDataSourceInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_data_source::GetDataSourceInput {
             data_source_id: self.data_source_id,
-            verbose: self.verbose.unwrap_or_default(),
+            verbose: self.verbose,
         })
     }
 }

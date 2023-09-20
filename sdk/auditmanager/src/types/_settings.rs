@@ -2,7 +2,7 @@
 
 /// <p> The settings object that holds all supported Audit Manager settings. </p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct Settings {
     /// <p> Specifies whether Organizations is enabled. </p>
     pub is_aws_org_enabled: ::std::option::Option<bool>,
@@ -55,6 +55,20 @@ impl Settings {
         self.default_export_destination.as_ref()
     }
 }
+impl ::std::fmt::Debug for Settings {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("Settings");
+        formatter.field("is_aws_org_enabled", &self.is_aws_org_enabled);
+        formatter.field("sns_topic", &"*** Sensitive Data Redacted ***");
+        formatter.field("default_assessment_reports_destination", &"*** Sensitive Data Redacted ***");
+        formatter.field("default_process_owners", &"*** Sensitive Data Redacted ***");
+        formatter.field("kms_key", &self.kms_key);
+        formatter.field("evidence_finder_enablement", &self.evidence_finder_enablement);
+        formatter.field("deregistration_policy", &self.deregistration_policy);
+        formatter.field("default_export_destination", &self.default_export_destination);
+        formatter.finish()
+    }
+}
 impl Settings {
     /// Creates a new builder-style object to manufacture [`Settings`](crate::types::Settings).
     pub fn builder() -> crate::types::builders::SettingsBuilder {
@@ -64,7 +78,7 @@ impl Settings {
 
 /// A builder for [`Settings`](crate::types::Settings).
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct SettingsBuilder {
     pub(crate) is_aws_org_enabled: ::std::option::Option<bool>,
     pub(crate) sns_topic: ::std::option::Option<::std::string::String>,
@@ -206,5 +220,19 @@ impl SettingsBuilder {
             deregistration_policy: self.deregistration_policy,
             default_export_destination: self.default_export_destination,
         }
+    }
+}
+impl ::std::fmt::Debug for SettingsBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("SettingsBuilder");
+        formatter.field("is_aws_org_enabled", &self.is_aws_org_enabled);
+        formatter.field("sns_topic", &"*** Sensitive Data Redacted ***");
+        formatter.field("default_assessment_reports_destination", &"*** Sensitive Data Redacted ***");
+        formatter.field("default_process_owners", &"*** Sensitive Data Redacted ***");
+        formatter.field("kms_key", &self.kms_key);
+        formatter.field("evidence_finder_enablement", &self.evidence_finder_enablement);
+        formatter.field("deregistration_policy", &self.deregistration_policy);
+        formatter.field("default_export_destination", &self.default_export_destination);
+        formatter.finish()
     }
 }

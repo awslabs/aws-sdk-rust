@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteConfigurationSetTrackingOptionsInput {
-    /// <p>The name of the configuration set from which you want to delete the tracking options.</p>
+    /// <p>The name of the configuration set.</p>
     pub configuration_set_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteConfigurationSetTrackingOptionsInput {
-    /// <p>The name of the configuration set from which you want to delete the tracking options.</p>
+    /// <p>The name of the configuration set.</p>
     pub fn configuration_set_name(&self) -> ::std::option::Option<&str> {
         self.configuration_set_name.as_deref()
     }
@@ -27,17 +27,17 @@ pub struct DeleteConfigurationSetTrackingOptionsInputBuilder {
     pub(crate) configuration_set_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteConfigurationSetTrackingOptionsInputBuilder {
-    /// <p>The name of the configuration set from which you want to delete the tracking options.</p>
+    /// <p>The name of the configuration set.</p>
     pub fn configuration_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration_set_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the configuration set from which you want to delete the tracking options.</p>
+    /// <p>The name of the configuration set.</p>
     pub fn set_configuration_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.configuration_set_name = input;
         self
     }
-    /// <p>The name of the configuration set from which you want to delete the tracking options.</p>
+    /// <p>The name of the configuration set.</p>
     pub fn get_configuration_set_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.configuration_set_name
     }

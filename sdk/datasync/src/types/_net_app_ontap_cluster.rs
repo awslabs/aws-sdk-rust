@@ -27,6 +27,8 @@ pub struct NetAppOntapCluster {
     pub recommendation_status: ::std::option::Option<crate::types::RecommendationStatus>,
     /// <p>The number of LUNs (logical unit numbers) in the cluster.</p>
     pub lun_count: ::std::option::Option<i64>,
+    /// <p>The amount of space in the cluster that's in cloud storage (for example, if you're using data tiering).</p>
+    pub cluster_cloud_storage_used: ::std::option::Option<i64>,
 }
 impl NetAppOntapCluster {
     /// <p>The number of CIFS shares in the cluster.</p>
@@ -74,6 +76,10 @@ impl NetAppOntapCluster {
     pub fn lun_count(&self) -> ::std::option::Option<i64> {
         self.lun_count
     }
+    /// <p>The amount of space in the cluster that's in cloud storage (for example, if you're using data tiering).</p>
+    pub fn cluster_cloud_storage_used(&self) -> ::std::option::Option<i64> {
+        self.cluster_cloud_storage_used
+    }
 }
 impl NetAppOntapCluster {
     /// Creates a new builder-style object to manufacture [`NetAppOntapCluster`](crate::types::NetAppOntapCluster).
@@ -97,6 +103,7 @@ pub struct NetAppOntapClusterBuilder {
     pub(crate) recommendations: ::std::option::Option<::std::vec::Vec<crate::types::Recommendation>>,
     pub(crate) recommendation_status: ::std::option::Option<crate::types::RecommendationStatus>,
     pub(crate) lun_count: ::std::option::Option<i64>,
+    pub(crate) cluster_cloud_storage_used: ::std::option::Option<i64>,
 }
 impl NetAppOntapClusterBuilder {
     /// <p>The number of CIFS shares in the cluster.</p>
@@ -262,6 +269,20 @@ impl NetAppOntapClusterBuilder {
     pub fn get_lun_count(&self) -> &::std::option::Option<i64> {
         &self.lun_count
     }
+    /// <p>The amount of space in the cluster that's in cloud storage (for example, if you're using data tiering).</p>
+    pub fn cluster_cloud_storage_used(mut self, input: i64) -> Self {
+        self.cluster_cloud_storage_used = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The amount of space in the cluster that's in cloud storage (for example, if you're using data tiering).</p>
+    pub fn set_cluster_cloud_storage_used(mut self, input: ::std::option::Option<i64>) -> Self {
+        self.cluster_cloud_storage_used = input;
+        self
+    }
+    /// <p>The amount of space in the cluster that's in cloud storage (for example, if you're using data tiering).</p>
+    pub fn get_cluster_cloud_storage_used(&self) -> &::std::option::Option<i64> {
+        &self.cluster_cloud_storage_used
+    }
     /// Consumes the builder and constructs a [`NetAppOntapCluster`](crate::types::NetAppOntapCluster).
     pub fn build(self) -> crate::types::NetAppOntapCluster {
         crate::types::NetAppOntapCluster {
@@ -276,6 +297,7 @@ impl NetAppOntapClusterBuilder {
             recommendations: self.recommendations,
             recommendation_status: self.recommendation_status,
             lun_count: self.lun_count,
+            cluster_cloud_storage_used: self.cluster_cloud_storage_used,
         }
     }
 }

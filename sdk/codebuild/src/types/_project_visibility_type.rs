@@ -36,7 +36,6 @@
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// <p>Specifies the visibility of the project's builds. Possible values are:</p>
-///
 /// <dl>
 /// <dt>PUBLIC_READ</dt>
 /// <dd>

@@ -283,6 +283,10 @@ pub(crate) mod shape_test_failover;
 
 pub(crate) mod shape_test_failover_input;
 
+pub(crate) mod shape_test_migration;
+
+pub(crate) mod shape_test_migration_input;
+
 pub(crate) mod shape_api_call_rate_for_customer_exceeded_fault;
 
 pub(crate) mod shape_authentication_mode;

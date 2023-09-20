@@ -7,7 +7,7 @@ pub struct InvokeEndpointOutput {
     /// <p>For information about the format of the response body, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/cdf-inference.html">Common Data Formats-Inference</a>.</p>
     /// <p>If the explainer is activated, the body includes the explanations provided by the model. For more information, see the <b>Response section</b> under <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-online-explainability-invoke-endpoint.html#clarify-online-explainability-response">Invoke the Endpoint</a> in the Developer Guide.</p>
     pub body: ::std::option::Option<::aws_smithy_types::Blob>,
-    /// <p>The MIME type of the inference returned in the response body.</p>
+    /// <p>The MIME type of the inference returned from the model container.</p>
     pub content_type: ::std::option::Option<::std::string::String>,
     /// <p>Identifies the production variant that was invoked.</p>
     pub invoked_production_variant: ::std::option::Option<::std::string::String>,
@@ -24,7 +24,7 @@ impl InvokeEndpointOutput {
     pub fn body(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
         self.body.as_ref()
     }
-    /// <p>The MIME type of the inference returned in the response body.</p>
+    /// <p>The MIME type of the inference returned from the model container.</p>
     pub fn content_type(&self) -> ::std::option::Option<&str> {
         self.content_type.as_deref()
     }
@@ -93,17 +93,17 @@ impl InvokeEndpointOutputBuilder {
     pub fn get_body(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
         &self.body
     }
-    /// <p>The MIME type of the inference returned in the response body.</p>
+    /// <p>The MIME type of the inference returned from the model container.</p>
     pub fn content_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content_type = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The MIME type of the inference returned in the response body.</p>
+    /// <p>The MIME type of the inference returned from the model container.</p>
     pub fn set_content_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content_type = input;
         self
     }
-    /// <p>The MIME type of the inference returned in the response body.</p>
+    /// <p>The MIME type of the inference returned from the model container.</p>
     pub fn get_content_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.content_type
     }

@@ -149,6 +149,8 @@ impl Client {
 
 mod add_draft_app_version_resource_mappings;
 
+mod batch_update_recommendation_status;
+
 mod create_app;
 
 mod create_app_version_app_component;
@@ -222,6 +224,8 @@ mod describe_resiliency_policy;
 mod import_resources_to_draft_app_version;
 
 mod list_alarm_recommendations;
+
+mod list_app_assessment_compliance_drifts;
 
 mod list_app_assessments;
 

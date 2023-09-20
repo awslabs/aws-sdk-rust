@@ -13,6 +13,8 @@
 /// # let eventerrorcode = unimplemented!();
 /// match eventerrorcode {
 ///     EventErrorCode::InsufficientCapabilities => { /* ... */ },
+///     EventErrorCode::PublisherNotFound => { /* ... */ },
+///     EventErrorCode::QuotaExceeded => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -42,6 +44,10 @@
 pub enum EventErrorCode {
     #[allow(missing_docs)] // documentation missing in model
     InsufficientCapabilities,
+    #[allow(missing_docs)] // documentation missing in model
+    PublisherNotFound,
+    #[allow(missing_docs)] // documentation missing in model
+    QuotaExceeded,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
@@ -49,6 +55,8 @@ impl ::std::convert::From<&str> for EventErrorCode {
     fn from(s: &str) -> Self {
         match s {
             "INSUFFICIENT_CAPABILITIES" => EventErrorCode::InsufficientCapabilities,
+            "PUBLISHER_NOT_FOUND" => EventErrorCode::PublisherNotFound,
+            "QUOTA_EXCEEDED" => EventErrorCode::QuotaExceeded,
             other => EventErrorCode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -65,12 +73,14 @@ impl EventErrorCode {
     pub fn as_str(&self) -> &str {
         match self {
             EventErrorCode::InsufficientCapabilities => "INSUFFICIENT_CAPABILITIES",
+            EventErrorCode::PublisherNotFound => "PUBLISHER_NOT_FOUND",
+            EventErrorCode::QuotaExceeded => "QUOTA_EXCEEDED",
             EventErrorCode::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["INSUFFICIENT_CAPABILITIES"]
+        &["INSUFFICIENT_CAPABILITIES", "PUBLISHER_NOT_FOUND", "QUOTA_EXCEEDED"]
     }
 }
 impl ::std::convert::AsRef<str> for EventErrorCode {

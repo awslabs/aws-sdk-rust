@@ -24,6 +24,8 @@ impl CreatePolicyStoreInputBuilder {
 ///
 /// <p>Creates a policy store. A policy store is a container for policy resources.</p> <note>
 /// <p>Although <a href="https://docs.cedarpolicy.com/schema.html#namespace">Cedar supports multiple namespaces</a>, Verified Permissions currently supports only one namespace per policy store.</p>
+/// </note> <note>
+/// <p>Verified Permissions is <i> <a href="https://wikipedia.org/wiki/Eventual_consistency">eventually consistent</a> </i>. It can take a few seconds for a new or changed element to be propagate through the service and be visible in the results of other Verified Permissions operations.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreatePolicyStoreFluentBuilder {

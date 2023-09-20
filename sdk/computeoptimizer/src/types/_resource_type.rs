@@ -17,6 +17,7 @@
 ///     ResourceType::Ec2Instance => { /* ... */ },
 ///     ResourceType::EcsService => { /* ... */ },
 ///     ResourceType::LambdaFunction => { /* ... */ },
+///     ResourceType::License => { /* ... */ },
 ///     ResourceType::NotApplicable => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -56,6 +57,8 @@ pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     LambdaFunction,
     #[allow(missing_docs)] // documentation missing in model
+    License,
+    #[allow(missing_docs)] // documentation missing in model
     NotApplicable,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
@@ -68,6 +71,7 @@ impl ::std::convert::From<&str> for ResourceType {
             "Ec2Instance" => ResourceType::Ec2Instance,
             "EcsService" => ResourceType::EcsService,
             "LambdaFunction" => ResourceType::LambdaFunction,
+            "License" => ResourceType::License,
             "NotApplicable" => ResourceType::NotApplicable,
             other => ResourceType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
@@ -89,6 +93,7 @@ impl ResourceType {
             ResourceType::Ec2Instance => "Ec2Instance",
             ResourceType::EcsService => "EcsService",
             ResourceType::LambdaFunction => "LambdaFunction",
+            ResourceType::License => "License",
             ResourceType::NotApplicable => "NotApplicable",
             ResourceType::Unknown(value) => value.as_str(),
         }
@@ -101,6 +106,7 @@ impl ResourceType {
             "Ec2Instance",
             "EcsService",
             "LambdaFunction",
+            "License",
             "NotApplicable",
         ]
     }

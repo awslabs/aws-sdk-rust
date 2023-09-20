@@ -156,6 +156,20 @@ impl StartAnnotationImportJobFluentBuilder {
     pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AnnotationImportItemSource>> {
         self.inner.get_items()
     }
+    /// <p> The name of the annotation store version. </p>
+    pub fn version_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.version_name(input.into());
+        self
+    }
+    /// <p> The name of the annotation store version. </p>
+    pub fn set_version_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_version_name(input);
+        self
+    }
+    /// <p> The name of the annotation store version. </p>
+    pub fn get_version_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_version_name()
+    }
     /// <p>Formatting options for the annotation file.</p>
     pub fn format_options(mut self, input: crate::types::FormatOptions) -> Self {
         self.inner = self.inner.format_options(input);

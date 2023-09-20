@@ -2,7 +2,7 @@
 
 /// <p> The file used to structure and automate Audit Manager assessments for a given compliance standard. </p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct AssessmentFramework {
     /// <p> The unique identifier for the framework. </p>
     pub id: ::std::option::Option<::std::string::String>,
@@ -31,6 +31,16 @@ impl AssessmentFramework {
         self.control_sets.as_deref()
     }
 }
+impl ::std::fmt::Debug for AssessmentFramework {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("AssessmentFramework");
+        formatter.field("id", &"*** Sensitive Data Redacted ***");
+        formatter.field("arn", &"*** Sensitive Data Redacted ***");
+        formatter.field("metadata", &"*** Sensitive Data Redacted ***");
+        formatter.field("control_sets", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl AssessmentFramework {
     /// Creates a new builder-style object to manufacture [`AssessmentFramework`](crate::types::AssessmentFramework).
     pub fn builder() -> crate::types::builders::AssessmentFrameworkBuilder {
@@ -40,7 +50,7 @@ impl AssessmentFramework {
 
 /// A builder for [`AssessmentFramework`](crate::types::AssessmentFramework).
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct AssessmentFrameworkBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
@@ -118,5 +128,15 @@ impl AssessmentFrameworkBuilder {
             metadata: self.metadata,
             control_sets: self.control_sets,
         }
+    }
+}
+impl ::std::fmt::Debug for AssessmentFrameworkBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("AssessmentFrameworkBuilder");
+        formatter.field("id", &"*** Sensitive Data Redacted ***");
+        formatter.field("arn", &"*** Sensitive Data Redacted ***");
+        formatter.field("metadata", &"*** Sensitive Data Redacted ***");
+        formatter.field("control_sets", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

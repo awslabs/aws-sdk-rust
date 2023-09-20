@@ -5,7 +5,7 @@
 pub struct PutAuthPolicyInput {
     /// <p>The ID or Amazon Resource Name (ARN) of the service network or service for which the policy is created.</p>
     pub resource_identifier: ::std::option::Option<::std::string::String>,
-    /// <p>The auth policy. The policy string in JSON must not contain newlines or blank lines.</p>
+    /// <p>The auth policy.</p>
     pub policy: ::std::option::Option<::std::string::String>,
 }
 impl PutAuthPolicyInput {
@@ -13,7 +13,7 @@ impl PutAuthPolicyInput {
     pub fn resource_identifier(&self) -> ::std::option::Option<&str> {
         self.resource_identifier.as_deref()
     }
-    /// <p>The auth policy. The policy string in JSON must not contain newlines or blank lines.</p>
+    /// <p>The auth policy.</p>
     pub fn policy(&self) -> ::std::option::Option<&str> {
         self.policy.as_deref()
     }
@@ -47,17 +47,17 @@ impl PutAuthPolicyInputBuilder {
     pub fn get_resource_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_identifier
     }
-    /// <p>The auth policy. The policy string in JSON must not contain newlines or blank lines.</p>
+    /// <p>The auth policy.</p>
     pub fn policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The auth policy. The policy string in JSON must not contain newlines or blank lines.</p>
+    /// <p>The auth policy.</p>
     pub fn set_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy = input;
         self
     }
-    /// <p>The auth policy. The policy string in JSON must not contain newlines or blank lines.</p>
+    /// <p>The auth policy.</p>
     pub fn get_policy(&self) -> &::std::option::Option<::std::string::String> {
         &self.policy
     }

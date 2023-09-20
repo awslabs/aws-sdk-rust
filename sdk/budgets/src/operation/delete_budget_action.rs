@@ -268,7 +268,7 @@ pub enum DeleteBudgetActionError {
     NotFoundException(crate::types::error::NotFoundException),
     /// <p> The request was received and recognized by the server, but the server rejected that particular method for the requested resource. </p>
     ResourceLockedException(crate::types::error::ResourceLockedException),
-    /// <p> The number of API requests has exceeded the maximum allowed API request throttling limit for the account. </p>
+    /// <p>The number of API requests has exceeded the maximum allowed API request throttling limit for the account.</p>
     ThrottlingException(crate::types::error::ThrottlingException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(::aws_smithy_types::error::Unhandled),

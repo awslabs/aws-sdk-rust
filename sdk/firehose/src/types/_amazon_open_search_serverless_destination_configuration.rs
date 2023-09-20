@@ -22,7 +22,7 @@ pub struct AmazonOpenSearchServerlessDestinationConfiguration {
     pub processing_configuration: ::std::option::Option<crate::types::ProcessingConfiguration>,
     /// <p>Describes the Amazon CloudWatch logging options for your delivery stream.</p>
     pub cloud_watch_logging_options: ::std::option::Option<crate::types::CloudWatchLoggingOptions>,
-    /// <p>The details of the VPC of the Amazon ES destination.</p>
+    /// <p>The details of the VPC of the Amazon OpenSearch or Amazon OpenSearch Serverless destination.</p>
     pub vpc_configuration: ::std::option::Option<crate::types::VpcConfiguration>,
 }
 impl AmazonOpenSearchServerlessDestinationConfiguration {
@@ -62,7 +62,7 @@ impl AmazonOpenSearchServerlessDestinationConfiguration {
     pub fn cloud_watch_logging_options(&self) -> ::std::option::Option<&crate::types::CloudWatchLoggingOptions> {
         self.cloud_watch_logging_options.as_ref()
     }
-    /// <p>The details of the VPC of the Amazon ES destination.</p>
+    /// <p>The details of the VPC of the Amazon OpenSearch or Amazon OpenSearch Serverless destination.</p>
     pub fn vpc_configuration(&self) -> ::std::option::Option<&crate::types::VpcConfiguration> {
         self.vpc_configuration.as_ref()
     }
@@ -216,17 +216,17 @@ impl AmazonOpenSearchServerlessDestinationConfigurationBuilder {
     pub fn get_cloud_watch_logging_options(&self) -> &::std::option::Option<crate::types::CloudWatchLoggingOptions> {
         &self.cloud_watch_logging_options
     }
-    /// <p>The details of the VPC of the Amazon ES destination.</p>
+    /// <p>The details of the VPC of the Amazon OpenSearch or Amazon OpenSearch Serverless destination.</p>
     pub fn vpc_configuration(mut self, input: crate::types::VpcConfiguration) -> Self {
         self.vpc_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The details of the VPC of the Amazon ES destination.</p>
+    /// <p>The details of the VPC of the Amazon OpenSearch or Amazon OpenSearch Serverless destination.</p>
     pub fn set_vpc_configuration(mut self, input: ::std::option::Option<crate::types::VpcConfiguration>) -> Self {
         self.vpc_configuration = input;
         self
     }
-    /// <p>The details of the VPC of the Amazon ES destination.</p>
+    /// <p>The details of the VPC of the Amazon OpenSearch or Amazon OpenSearch Serverless destination.</p>
     pub fn get_vpc_configuration(&self) -> &::std::option::Option<crate::types::VpcConfiguration> {
         &self.vpc_configuration
     }

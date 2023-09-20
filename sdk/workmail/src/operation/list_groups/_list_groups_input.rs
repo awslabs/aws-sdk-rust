@@ -9,6 +9,8 @@ pub struct ListGroupsInput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return in a single call.</p>
     pub max_results: ::std::option::Option<i32>,
+    /// <p>Limit the search results based on the filter criteria. Only one filter per request is supported.</p>
+    pub filters: ::std::option::Option<crate::types::ListGroupsFilters>,
 }
 impl ListGroupsInput {
     /// <p>The identifier for the organization under which the groups exist.</p>
@@ -22,6 +24,10 @@ impl ListGroupsInput {
     /// <p>The maximum number of results to return in a single call.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
+    }
+    /// <p>Limit the search results based on the filter criteria. Only one filter per request is supported.</p>
+    pub fn filters(&self) -> ::std::option::Option<&crate::types::ListGroupsFilters> {
+        self.filters.as_ref()
     }
 }
 impl ListGroupsInput {
@@ -38,6 +44,7 @@ pub struct ListGroupsInputBuilder {
     pub(crate) organization_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
+    pub(crate) filters: ::std::option::Option<crate::types::ListGroupsFilters>,
 }
 impl ListGroupsInputBuilder {
     /// <p>The identifier for the organization under which the groups exist.</p>
@@ -82,12 +89,27 @@ impl ListGroupsInputBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
+    /// <p>Limit the search results based on the filter criteria. Only one filter per request is supported.</p>
+    pub fn filters(mut self, input: crate::types::ListGroupsFilters) -> Self {
+        self.filters = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Limit the search results based on the filter criteria. Only one filter per request is supported.</p>
+    pub fn set_filters(mut self, input: ::std::option::Option<crate::types::ListGroupsFilters>) -> Self {
+        self.filters = input;
+        self
+    }
+    /// <p>Limit the search results based on the filter criteria. Only one filter per request is supported.</p>
+    pub fn get_filters(&self) -> &::std::option::Option<crate::types::ListGroupsFilters> {
+        &self.filters
+    }
     /// Consumes the builder and constructs a [`ListGroupsInput`](crate::operation::list_groups::ListGroupsInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::list_groups::ListGroupsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_groups::ListGroupsInput {
             organization_id: self.organization_id,
             next_token: self.next_token,
             max_results: self.max_results,
+            filters: self.filters,
         })
     }
 }

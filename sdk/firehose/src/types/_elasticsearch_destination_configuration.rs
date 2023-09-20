@@ -31,8 +31,10 @@ pub struct ElasticsearchDestinationConfiguration {
     pub processing_configuration: ::std::option::Option<crate::types::ProcessingConfiguration>,
     /// <p>The Amazon CloudWatch logging options for your delivery stream.</p>
     pub cloud_watch_logging_options: ::std::option::Option<crate::types::CloudWatchLoggingOptions>,
-    /// <p>The details of the VPC of the Amazon ES destination.</p>
+    /// <p>The details of the VPC of the Amazon destination.</p>
     pub vpc_configuration: ::std::option::Option<crate::types::VpcConfiguration>,
+    /// <p>Indicates the method for setting up document ID. The supported methods are Kinesis Data Firehose generated document ID and OpenSearch Service generated document ID.</p>
+    pub document_id_options: ::std::option::Option<crate::types::DocumentIdOptions>,
 }
 impl ElasticsearchDestinationConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the IAM role to be assumed by Kinesis Data Firehose for calling the Amazon ES Configuration API and for indexing documents. For more information, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Grant Kinesis Data Firehose Access to an Amazon S3 Destination</a> and <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
@@ -86,9 +88,13 @@ impl ElasticsearchDestinationConfiguration {
     pub fn cloud_watch_logging_options(&self) -> ::std::option::Option<&crate::types::CloudWatchLoggingOptions> {
         self.cloud_watch_logging_options.as_ref()
     }
-    /// <p>The details of the VPC of the Amazon ES destination.</p>
+    /// <p>The details of the VPC of the Amazon destination.</p>
     pub fn vpc_configuration(&self) -> ::std::option::Option<&crate::types::VpcConfiguration> {
         self.vpc_configuration.as_ref()
+    }
+    /// <p>Indicates the method for setting up document ID. The supported methods are Kinesis Data Firehose generated document ID and OpenSearch Service generated document ID.</p>
+    pub fn document_id_options(&self) -> ::std::option::Option<&crate::types::DocumentIdOptions> {
+        self.document_id_options.as_ref()
     }
 }
 impl ElasticsearchDestinationConfiguration {
@@ -115,6 +121,7 @@ pub struct ElasticsearchDestinationConfigurationBuilder {
     pub(crate) processing_configuration: ::std::option::Option<crate::types::ProcessingConfiguration>,
     pub(crate) cloud_watch_logging_options: ::std::option::Option<crate::types::CloudWatchLoggingOptions>,
     pub(crate) vpc_configuration: ::std::option::Option<crate::types::VpcConfiguration>,
+    pub(crate) document_id_options: ::std::option::Option<crate::types::DocumentIdOptions>,
 }
 impl ElasticsearchDestinationConfigurationBuilder {
     /// <p>The Amazon Resource Name (ARN) of the IAM role to be assumed by Kinesis Data Firehose for calling the Amazon ES Configuration API and for indexing documents. For more information, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Grant Kinesis Data Firehose Access to an Amazon S3 Destination</a> and <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
@@ -294,19 +301,33 @@ impl ElasticsearchDestinationConfigurationBuilder {
     pub fn get_cloud_watch_logging_options(&self) -> &::std::option::Option<crate::types::CloudWatchLoggingOptions> {
         &self.cloud_watch_logging_options
     }
-    /// <p>The details of the VPC of the Amazon ES destination.</p>
+    /// <p>The details of the VPC of the Amazon destination.</p>
     pub fn vpc_configuration(mut self, input: crate::types::VpcConfiguration) -> Self {
         self.vpc_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The details of the VPC of the Amazon ES destination.</p>
+    /// <p>The details of the VPC of the Amazon destination.</p>
     pub fn set_vpc_configuration(mut self, input: ::std::option::Option<crate::types::VpcConfiguration>) -> Self {
         self.vpc_configuration = input;
         self
     }
-    /// <p>The details of the VPC of the Amazon ES destination.</p>
+    /// <p>The details of the VPC of the Amazon destination.</p>
     pub fn get_vpc_configuration(&self) -> &::std::option::Option<crate::types::VpcConfiguration> {
         &self.vpc_configuration
+    }
+    /// <p>Indicates the method for setting up document ID. The supported methods are Kinesis Data Firehose generated document ID and OpenSearch Service generated document ID.</p>
+    pub fn document_id_options(mut self, input: crate::types::DocumentIdOptions) -> Self {
+        self.document_id_options = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates the method for setting up document ID. The supported methods are Kinesis Data Firehose generated document ID and OpenSearch Service generated document ID.</p>
+    pub fn set_document_id_options(mut self, input: ::std::option::Option<crate::types::DocumentIdOptions>) -> Self {
+        self.document_id_options = input;
+        self
+    }
+    /// <p>Indicates the method for setting up document ID. The supported methods are Kinesis Data Firehose generated document ID and OpenSearch Service generated document ID.</p>
+    pub fn get_document_id_options(&self) -> &::std::option::Option<crate::types::DocumentIdOptions> {
+        &self.document_id_options
     }
     /// Consumes the builder and constructs a [`ElasticsearchDestinationConfiguration`](crate::types::ElasticsearchDestinationConfiguration).
     pub fn build(self) -> crate::types::ElasticsearchDestinationConfiguration {
@@ -324,6 +345,7 @@ impl ElasticsearchDestinationConfigurationBuilder {
             processing_configuration: self.processing_configuration,
             cloud_watch_logging_options: self.cloud_watch_logging_options,
             vpc_configuration: self.vpc_configuration,
+            document_id_options: self.document_id_options,
         }
     }
 }

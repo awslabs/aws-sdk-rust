@@ -188,6 +188,10 @@ pub struct DbCluster {
     /// <p>The next time you can modify the DB cluster to use the <code>aurora-iopt1</code> storage type.</p>
     /// <p>This setting is only for Aurora DB clusters.</p>
     pub io_optimized_next_allowed_modification_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>Specifies whether an Aurora DB cluster has in-cluster write forwarding enabled, not enabled, requested, or is in the process of enabling it.</p>
+    pub local_write_forwarding_status: ::std::option::Option<crate::types::LocalWriteForwardingStatus>,
+    /// <p>The Amazon Resource Name (ARN) of the recovery point in Amazon Web Services Backup.</p>
+    pub aws_backup_recovery_point_arn: ::std::option::Option<::std::string::String>,
 }
 impl DbCluster {
     /// <p>For all database engines except Amazon Aurora, <code>AllocatedStorage</code> specifies the allocated storage size in gibibytes (GiB). For Aurora, <code>AllocatedStorage</code> always returns 1, because Aurora DB cluster storage size isn't fixed, but instead automatically adjusts as needed.</p>
@@ -514,6 +518,14 @@ impl DbCluster {
     pub fn io_optimized_next_allowed_modification_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.io_optimized_next_allowed_modification_time.as_ref()
     }
+    /// <p>Specifies whether an Aurora DB cluster has in-cluster write forwarding enabled, not enabled, requested, or is in the process of enabling it.</p>
+    pub fn local_write_forwarding_status(&self) -> ::std::option::Option<&crate::types::LocalWriteForwardingStatus> {
+        self.local_write_forwarding_status.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the recovery point in Amazon Web Services Backup.</p>
+    pub fn aws_backup_recovery_point_arn(&self) -> ::std::option::Option<&str> {
+        self.aws_backup_recovery_point_arn.as_deref()
+    }
 }
 impl DbCluster {
     /// Creates a new builder-style object to manufacture [`DbCluster`](crate::types::DbCluster).
@@ -598,6 +610,8 @@ pub struct DbClusterBuilder {
     pub(crate) db_system_id: ::std::option::Option<::std::string::String>,
     pub(crate) master_user_secret: ::std::option::Option<crate::types::MasterUserSecret>,
     pub(crate) io_optimized_next_allowed_modification_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) local_write_forwarding_status: ::std::option::Option<crate::types::LocalWriteForwardingStatus>,
+    pub(crate) aws_backup_recovery_point_arn: ::std::option::Option<::std::string::String>,
 }
 impl DbClusterBuilder {
     /// <p>For all database engines except Amazon Aurora, <code>AllocatedStorage</code> specifies the allocated storage size in gibibytes (GiB). For Aurora, <code>AllocatedStorage</code> always returns 1, because Aurora DB cluster storage size isn't fixed, but instead automatically adjusts as needed.</p>
@@ -1782,6 +1796,34 @@ impl DbClusterBuilder {
     pub fn get_io_optimized_next_allowed_modification_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.io_optimized_next_allowed_modification_time
     }
+    /// <p>Specifies whether an Aurora DB cluster has in-cluster write forwarding enabled, not enabled, requested, or is in the process of enabling it.</p>
+    pub fn local_write_forwarding_status(mut self, input: crate::types::LocalWriteForwardingStatus) -> Self {
+        self.local_write_forwarding_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether an Aurora DB cluster has in-cluster write forwarding enabled, not enabled, requested, or is in the process of enabling it.</p>
+    pub fn set_local_write_forwarding_status(mut self, input: ::std::option::Option<crate::types::LocalWriteForwardingStatus>) -> Self {
+        self.local_write_forwarding_status = input;
+        self
+    }
+    /// <p>Specifies whether an Aurora DB cluster has in-cluster write forwarding enabled, not enabled, requested, or is in the process of enabling it.</p>
+    pub fn get_local_write_forwarding_status(&self) -> &::std::option::Option<crate::types::LocalWriteForwardingStatus> {
+        &self.local_write_forwarding_status
+    }
+    /// <p>The Amazon Resource Name (ARN) of the recovery point in Amazon Web Services Backup.</p>
+    pub fn aws_backup_recovery_point_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.aws_backup_recovery_point_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the recovery point in Amazon Web Services Backup.</p>
+    pub fn set_aws_backup_recovery_point_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.aws_backup_recovery_point_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the recovery point in Amazon Web Services Backup.</p>
+    pub fn get_aws_backup_recovery_point_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_backup_recovery_point_arn
+    }
     /// Consumes the builder and constructs a [`DbCluster`](crate::types::DbCluster).
     pub fn build(self) -> crate::types::DbCluster {
         crate::types::DbCluster {
@@ -1857,6 +1899,8 @@ impl DbClusterBuilder {
             db_system_id: self.db_system_id,
             master_user_secret: self.master_user_secret,
             io_optimized_next_allowed_modification_time: self.io_optimized_next_allowed_modification_time,
+            local_write_forwarding_status: self.local_write_forwarding_status,
+            aws_backup_recovery_point_arn: self.aws_backup_recovery_point_arn,
         }
     }
 }

@@ -36,57 +36,57 @@ pub fn ser_create_simulation_job_input(
         crate::protocol_serde::shape_logging_config::ser_logging_config(&mut object_11, var_10)?;
         object_11.finish();
     }
-    {
+    if let Some(var_12) = &input.max_job_duration_in_seconds {
         object.key("maxJobDurationInSeconds").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.max_job_duration_in_seconds).into()),
+            ::aws_smithy_types::Number::NegInt((*var_12).into()),
         );
     }
-    if let Some(var_12) = &input.output_location {
+    if let Some(var_13) = &input.output_location {
         #[allow(unused_mut)]
-        let mut object_13 = object.key("outputLocation").start_object();
-        crate::protocol_serde::shape_output_location::ser_output_location(&mut object_13, var_12)?;
-        object_13.finish();
+        let mut object_14 = object.key("outputLocation").start_object();
+        crate::protocol_serde::shape_output_location::ser_output_location(&mut object_14, var_13)?;
+        object_14.finish();
     }
-    if let Some(var_14) = &input.robot_applications {
-        let mut array_15 = object.key("robotApplications").start_array();
-        for item_16 in var_14 {
+    if let Some(var_15) = &input.robot_applications {
+        let mut array_16 = object.key("robotApplications").start_array();
+        for item_17 in var_15 {
             {
                 #[allow(unused_mut)]
-                let mut object_17 = array_15.value().start_object();
-                crate::protocol_serde::shape_robot_application_config::ser_robot_application_config(&mut object_17, item_16)?;
-                object_17.finish();
+                let mut object_18 = array_16.value().start_object();
+                crate::protocol_serde::shape_robot_application_config::ser_robot_application_config(&mut object_18, item_17)?;
+                object_18.finish();
             }
         }
-        array_15.finish();
+        array_16.finish();
     }
-    if let Some(var_18) = &input.simulation_applications {
-        let mut array_19 = object.key("simulationApplications").start_array();
-        for item_20 in var_18 {
+    if let Some(var_19) = &input.simulation_applications {
+        let mut array_20 = object.key("simulationApplications").start_array();
+        for item_21 in var_19 {
             {
                 #[allow(unused_mut)]
-                let mut object_21 = array_19.value().start_object();
-                crate::protocol_serde::shape_simulation_application_config::ser_simulation_application_config(&mut object_21, item_20)?;
-                object_21.finish();
+                let mut object_22 = array_20.value().start_object();
+                crate::protocol_serde::shape_simulation_application_config::ser_simulation_application_config(&mut object_22, item_21)?;
+                object_22.finish();
             }
         }
-        array_19.finish();
+        array_20.finish();
     }
-    if let Some(var_22) = &input.tags {
+    if let Some(var_23) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_23 = object.key("tags").start_object();
-        for (key_24, value_25) in var_22 {
+        let mut object_24 = object.key("tags").start_object();
+        for (key_25, value_26) in var_23 {
             {
-                object_23.key(key_24.as_str()).string(value_25.as_str());
+                object_24.key(key_25.as_str()).string(value_26.as_str());
             }
         }
-        object_23.finish();
+        object_24.finish();
     }
-    if let Some(var_26) = &input.vpc_config {
+    if let Some(var_27) = &input.vpc_config {
         #[allow(unused_mut)]
-        let mut object_27 = object.key("vpcConfig").start_object();
-        crate::protocol_serde::shape_vpc_config::ser_vpc_config(&mut object_27, var_26)?;
-        object_27.finish();
+        let mut object_28 = object.key("vpcConfig").start_object();
+        crate::protocol_serde::shape_vpc_config::ser_vpc_config(&mut object_28, var_27)?;
+        object_28.finish();
     }
     Ok(())
 }

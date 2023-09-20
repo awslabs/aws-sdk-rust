@@ -32,6 +32,7 @@
 ///     LanguageCode::EsMx => { /* ... */ },
 ///     LanguageCode::EsUs => { /* ... */ },
 ///     LanguageCode::FiFi => { /* ... */ },
+///     LanguageCode::FrBe => { /* ... */ },
 ///     LanguageCode::FrCa => { /* ... */ },
 ///     LanguageCode::FrFr => { /* ... */ },
 ///     LanguageCode::HiIn => { /* ... */ },
@@ -118,6 +119,8 @@ pub enum LanguageCode {
     #[allow(missing_docs)] // documentation missing in model
     FiFi,
     #[allow(missing_docs)] // documentation missing in model
+    FrBe,
+    #[allow(missing_docs)] // documentation missing in model
     FrCa,
     #[allow(missing_docs)] // documentation missing in model
     FrFr,
@@ -179,6 +182,7 @@ impl ::std::convert::From<&str> for LanguageCode {
             "es-MX" => LanguageCode::EsMx,
             "es-US" => LanguageCode::EsUs,
             "fi-FI" => LanguageCode::FiFi,
+            "fr-BE" => LanguageCode::FrBe,
             "fr-CA" => LanguageCode::FrCa,
             "fr-FR" => LanguageCode::FrFr,
             "hi-IN" => LanguageCode::HiIn,
@@ -232,6 +236,7 @@ impl LanguageCode {
             LanguageCode::EsMx => "es-MX",
             LanguageCode::EsUs => "es-US",
             LanguageCode::FiFi => "fi-FI",
+            LanguageCode::FrBe => "fr-BE",
             LanguageCode::FrCa => "fr-CA",
             LanguageCode::FrFr => "fr-FR",
             LanguageCode::HiIn => "hi-IN",
@@ -276,6 +281,7 @@ impl LanguageCode {
             "es-MX",
             "es-US",
             "fi-FI",
+            "fr-BE",
             "fr-CA",
             "fr-FR",
             "hi-IN",

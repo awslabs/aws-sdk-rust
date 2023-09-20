@@ -6,14 +6,14 @@ pub fn ser_send_serial_console_ssh_public_key_input(
     if let Some(var_1) = &input.instance_id {
         object.key("InstanceId").string(var_1.as_str());
     }
-    if input.serial_port != 0 {
+    if let Some(var_2) = &input.serial_port {
         object.key("SerialPort").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.serial_port).into()),
+            ::aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
-    if let Some(var_2) = &input.ssh_public_key {
-        object.key("SSHPublicKey").string(var_2.as_str());
+    if let Some(var_3) = &input.ssh_public_key {
+        object.key("SSHPublicKey").string(var_3.as_str());
     }
     Ok(())
 }

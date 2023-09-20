@@ -266,6 +266,8 @@ pub enum RestoreDBClusterFromSnapshotError {
     DbClusterSnapshotNotFoundFault(crate::types::error::DbClusterSnapshotNotFoundFault),
     /// <p> <code>DBSnapshotIdentifier</code> doesn't refer to an existing DB snapshot.</p>
     DbSnapshotNotFoundFault(crate::types::error::DbSnapshotNotFoundFault),
+    /// <p>Subnets in the DB subnet group should cover at least two Availability Zones unless there is only one Availability Zone.</p>
+    DbSubnetGroupDoesNotCoverEnoughAZs(crate::types::error::DbSubnetGroupDoesNotCoverEnoughAZs),
     /// <p> <code>DBSubnetGroupName</code> doesn't refer to an existing DB subnet group.</p>
     DbSubnetGroupNotFoundFault(crate::types::error::DbSubnetGroupNotFoundFault),
     /// <p> <code>Domain</code> doesn't refer to an existing Active Directory domain.</p>
@@ -315,6 +317,7 @@ impl ::std::fmt::Display for RestoreDBClusterFromSnapshotError {
             Self::DbClusterQuotaExceededFault(_inner) => _inner.fmt(f),
             Self::DbClusterSnapshotNotFoundFault(_inner) => _inner.fmt(f),
             Self::DbSnapshotNotFoundFault(_inner) => _inner.fmt(f),
+            Self::DbSubnetGroupDoesNotCoverEnoughAZs(_inner) => _inner.fmt(f),
             Self::DbSubnetGroupNotFoundFault(_inner) => _inner.fmt(f),
             Self::DomainNotFoundFault(_inner) => _inner.fmt(f),
             Self::InsufficientDbClusterCapacityFault(_inner) => _inner.fmt(f),
@@ -340,6 +343,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for RestoreDBClus
             Self::DbClusterQuotaExceededFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::DbClusterSnapshotNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::DbSnapshotNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::DbSubnetGroupDoesNotCoverEnoughAZs(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::DbSubnetGroupNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::DomainNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InsufficientDbClusterCapacityFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
@@ -394,6 +398,7 @@ impl RestoreDBClusterFromSnapshotError {
             Self::DbClusterQuotaExceededFault(e) => e.meta(),
             Self::DbClusterSnapshotNotFoundFault(e) => e.meta(),
             Self::DbSnapshotNotFoundFault(e) => e.meta(),
+            Self::DbSubnetGroupDoesNotCoverEnoughAZs(e) => e.meta(),
             Self::DbSubnetGroupNotFoundFault(e) => e.meta(),
             Self::DomainNotFoundFault(e) => e.meta(),
             Self::InsufficientDbClusterCapacityFault(e) => e.meta(),
@@ -429,6 +434,10 @@ impl RestoreDBClusterFromSnapshotError {
     /// Returns `true` if the error kind is `RestoreDBClusterFromSnapshotError::DbSnapshotNotFoundFault`.
     pub fn is_db_snapshot_not_found_fault(&self) -> bool {
         matches!(self, Self::DbSnapshotNotFoundFault(_))
+    }
+    /// Returns `true` if the error kind is `RestoreDBClusterFromSnapshotError::DbSubnetGroupDoesNotCoverEnoughAZs`.
+    pub fn is_db_subnet_group_does_not_cover_enough_a_zs(&self) -> bool {
+        matches!(self, Self::DbSubnetGroupDoesNotCoverEnoughAZs(_))
     }
     /// Returns `true` if the error kind is `RestoreDBClusterFromSnapshotError::DbSubnetGroupNotFoundFault`.
     pub fn is_db_subnet_group_not_found_fault(&self) -> bool {
@@ -491,6 +500,7 @@ impl ::std::error::Error for RestoreDBClusterFromSnapshotError {
             Self::DbClusterQuotaExceededFault(_inner) => ::std::option::Option::Some(_inner),
             Self::DbClusterSnapshotNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
             Self::DbSnapshotNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
+            Self::DbSubnetGroupDoesNotCoverEnoughAZs(_inner) => ::std::option::Option::Some(_inner),
             Self::DbSubnetGroupNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
             Self::DomainNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
             Self::InsufficientDbClusterCapacityFault(_inner) => ::std::option::Option::Some(_inner),

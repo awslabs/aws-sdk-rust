@@ -271,11 +271,11 @@ pub enum DeleteSchemaMappingError {
     AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>The request could not be processed because of conflict in the current state of the resource. Example: Workflow already exists, Schema already exists, Workflow is currently running, etc. <code>HTTP Status Code: 400</code> </p>
     ConflictException(crate::types::error::ConflictException),
-    /// <p>This exception occurs when there is an internal failure in the AWS Entity Resolution service. <code>HTTP Status Code: 500</code> </p>
+    /// <p>This exception occurs when there is an internal failure in the Entity Resolution service. <code>HTTP Status Code: 500</code> </p>
     InternalServerException(crate::types::error::InternalServerException),
     /// <p>The request was denied due to request throttling. <code>HTTP Status Code: 429</code> </p>
     ThrottlingException(crate::types::error::ThrottlingException),
-    /// <p>The input fails to satisfy the constraints specified by AWS Entity Resolution. <code>HTTP Status Code: 400</code> </p>
+    /// <p>The input fails to satisfy the constraints specified by Entity Resolution. <code>HTTP Status Code: 400</code> </p>
     ValidationException(crate::types::error::ValidationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(::aws_smithy_types::error::Unhandled),

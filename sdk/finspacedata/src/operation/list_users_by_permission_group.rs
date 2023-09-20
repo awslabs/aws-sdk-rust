@@ -217,6 +217,9 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for ListUsersBy
                     }
                 }
                 let inner_3 = &_input.max_results;
+                let inner_3 = inner_3
+                    .as_ref()
+                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("max_results", "cannot be empty or unset"))?;
                 query.push_kv("maxResults", ::aws_smithy_types::primitive::Encoder::from(*inner_3).encode());
                 ::std::result::Result::Ok(())
             }

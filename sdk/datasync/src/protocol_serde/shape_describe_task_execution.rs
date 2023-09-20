@@ -171,6 +171,40 @@ pub(crate) fn de_describe_task_execution(
                             .transpose()?,
                     );
                 }
+                "TaskReportConfig" => {
+                    builder = builder.set_task_report_config(crate::protocol_serde::shape_task_report_config::de_task_report_config(tokens)?);
+                }
+                "FilesDeleted" => {
+                    builder = builder.set_files_deleted(
+                        ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                            .map(i64::try_from)
+                            .transpose()?,
+                    );
+                }
+                "FilesSkipped" => {
+                    builder = builder.set_files_skipped(
+                        ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                            .map(i64::try_from)
+                            .transpose()?,
+                    );
+                }
+                "FilesVerified" => {
+                    builder = builder.set_files_verified(
+                        ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                            .map(i64::try_from)
+                            .transpose()?,
+                    );
+                }
+                "ReportResult" => {
+                    builder = builder.set_report_result(crate::protocol_serde::shape_report_result::de_report_result(tokens)?);
+                }
+                "EstimatedFilesToDelete" => {
+                    builder = builder.set_estimated_files_to_delete(
+                        ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                            .map(i64::try_from)
+                            .transpose()?,
+                    );
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

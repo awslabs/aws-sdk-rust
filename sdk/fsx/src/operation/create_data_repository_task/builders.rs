@@ -22,7 +22,10 @@ impl CreateDataRepositoryTaskInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateDataRepositoryTask`.
 ///
-/// <p>Creates an Amazon FSx for Lustre data repository task. You use data repository tasks to perform bulk operations between your Amazon FSx file system and its linked data repositories. An example of a data repository task is exporting any data and metadata changes, including POSIX metadata, to files, directories, and symbolic links (symlinks) from your FSx file system to a linked data repository. A <code>CreateDataRepositoryTask</code> operation will fail if a data repository is not linked to the FSx file system. To learn more about data repository tasks, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/data-repository-tasks.html">Data Repository Tasks</a>. To learn more about linking a data repository to your file system, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/create-dra-linked-data-repo.html">Linking your file system to an S3 bucket</a>.</p>
+/// <p>Creates an Amazon FSx for Lustre data repository task. A <code>CreateDataRepositoryTask</code> operation will fail if a data repository is not linked to the FSx file system.</p>
+/// <p>You use import and export data repository tasks to perform bulk operations between your FSx for Lustre file system and its linked data repositories. An example of a data repository task is exporting any data and metadata changes, including POSIX metadata, to files, directories, and symbolic links (symlinks) from your FSx file system to a linked data repository.</p>
+/// <p>You use release data repository tasks to release data from your file system for files that are exported to S3. The metadata of released files remains on the file system so users or applications can still access released files by reading the files again, which will restore data from Amazon S3 to the FSx for Lustre file system.</p>
+/// <p>To learn more about data repository tasks, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/data-repository-tasks.html">Data Repository Tasks</a>. To learn more about linking a data repository to your file system, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/create-dra-linked-data-repo.html">Linking your file system to an S3 bucket</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateDataRepositoryTaskFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -111,16 +114,34 @@ impl CreateDataRepositoryTaskFluentBuilder {
         self
     }
     /// <p>Specifies the type of data repository task to create.</p>
+    /// <ul>
+    /// <li> <p> <code>EXPORT_TO_REPOSITORY</code> tasks export from your Amazon FSx for Lustre file system to a linked data repository.</p> </li>
+    /// <li> <p> <code>IMPORT_METADATA_FROM_REPOSITORY</code> tasks import metadata changes from a linked S3 bucket to your Amazon FSx for Lustre file system.</p> </li>
+    /// <li> <p> <code>RELEASE_DATA_FROM_FILESYSTEM</code> tasks release files in your Amazon FSx for Lustre file system that have been exported to a linked S3 bucket and that meet your specified release criteria.</p> </li>
+    /// <li> <p> <code>AUTO_RELEASE_DATA</code> tasks automatically release files from an Amazon File Cache resource.</p> </li>
+    /// </ul>
     pub fn r#type(mut self, input: crate::types::DataRepositoryTaskType) -> Self {
         self.inner = self.inner.r#type(input);
         self
     }
     /// <p>Specifies the type of data repository task to create.</p>
+    /// <ul>
+    /// <li> <p> <code>EXPORT_TO_REPOSITORY</code> tasks export from your Amazon FSx for Lustre file system to a linked data repository.</p> </li>
+    /// <li> <p> <code>IMPORT_METADATA_FROM_REPOSITORY</code> tasks import metadata changes from a linked S3 bucket to your Amazon FSx for Lustre file system.</p> </li>
+    /// <li> <p> <code>RELEASE_DATA_FROM_FILESYSTEM</code> tasks release files in your Amazon FSx for Lustre file system that have been exported to a linked S3 bucket and that meet your specified release criteria.</p> </li>
+    /// <li> <p> <code>AUTO_RELEASE_DATA</code> tasks automatically release files from an Amazon File Cache resource.</p> </li>
+    /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::DataRepositoryTaskType>) -> Self {
         self.inner = self.inner.set_type(input);
         self
     }
     /// <p>Specifies the type of data repository task to create.</p>
+    /// <ul>
+    /// <li> <p> <code>EXPORT_TO_REPOSITORY</code> tasks export from your Amazon FSx for Lustre file system to a linked data repository.</p> </li>
+    /// <li> <p> <code>IMPORT_METADATA_FROM_REPOSITORY</code> tasks import metadata changes from a linked S3 bucket to your Amazon FSx for Lustre file system.</p> </li>
+    /// <li> <p> <code>RELEASE_DATA_FROM_FILESYSTEM</code> tasks release files in your Amazon FSx for Lustre file system that have been exported to a linked S3 bucket and that meet your specified release criteria.</p> </li>
+    /// <li> <p> <code>AUTO_RELEASE_DATA</code> tasks automatically release files from an Amazon File Cache resource.</p> </li>
+    /// </ul>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::DataRepositoryTaskType> {
         self.inner.get_type()
     }
@@ -128,28 +149,37 @@ impl CreateDataRepositoryTaskFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_paths`](Self::set_paths).
     ///
-    /// <p>A list of paths for the data repository task to use when the task is processed. If a path that you provide isn't valid, the task fails.</p>
+    /// <p>A list of paths for the data repository task to use when the task is processed. If a path that you provide isn't valid, the task fails. If you don't provide paths, the default behavior is to export all files to S3 (for export tasks), import all files from S3 (for import tasks), or release all exported files that meet the last accessed time criteria (for release tasks).</p>
     /// <ul>
-    /// <li> <p>For export tasks, the list contains paths on the Amazon FSx file system from which the files are exported to the Amazon S3 bucket. The default path is the file system root directory. The paths you provide need to be relative to the mount point of the file system. If the mount point is <code>/mnt/fsx</code> and <code>/mnt/fsx/path1</code> is a directory or file on the file system you want to export, then the path to provide is <code>path1</code>.</p> </li>
-    /// <li> <p>For import tasks, the list contains paths in the Amazon S3 bucket from which POSIX metadata changes are imported to the Amazon FSx file system. The path can be an S3 bucket or prefix in the format <code>s3://myBucket/myPrefix</code> (where <code>myPrefix</code> is optional).</p> </li>
+    /// <li> <p>For export tasks, the list contains paths on the FSx for Lustre file system from which the files are exported to the Amazon S3 bucket. The default path is the file system root directory. The paths you provide need to be relative to the mount point of the file system. If the mount point is <code>/mnt/fsx</code> and <code>/mnt/fsx/path1</code> is a directory or file on the file system you want to export, then the path to provide is <code>path1</code>.</p> </li>
+    /// <li> <p>For import tasks, the list contains paths in the Amazon S3 bucket from which POSIX metadata changes are imported to the FSx for Lustre file system. The path can be an S3 bucket or prefix in the format <code>s3://myBucket/myPrefix</code> (where <code>myPrefix</code> is optional). </p> </li>
+    /// <li> <p>For release tasks, the list contains directory or file paths on the FSx for Lustre file system from which to release exported files. If a directory is specified, files within the directory are released. If a file path is specified, only that file is released. To release all exported files in the file system, specify a forward slash (/) as the path.</p> <note>
+    /// <p>A file must also meet the last accessed time criteria specified in for the file to be released.</p>
+    /// </note> </li>
     /// </ul>
     pub fn paths(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.paths(input.into());
         self
     }
-    /// <p>A list of paths for the data repository task to use when the task is processed. If a path that you provide isn't valid, the task fails.</p>
+    /// <p>A list of paths for the data repository task to use when the task is processed. If a path that you provide isn't valid, the task fails. If you don't provide paths, the default behavior is to export all files to S3 (for export tasks), import all files from S3 (for import tasks), or release all exported files that meet the last accessed time criteria (for release tasks).</p>
     /// <ul>
-    /// <li> <p>For export tasks, the list contains paths on the Amazon FSx file system from which the files are exported to the Amazon S3 bucket. The default path is the file system root directory. The paths you provide need to be relative to the mount point of the file system. If the mount point is <code>/mnt/fsx</code> and <code>/mnt/fsx/path1</code> is a directory or file on the file system you want to export, then the path to provide is <code>path1</code>.</p> </li>
-    /// <li> <p>For import tasks, the list contains paths in the Amazon S3 bucket from which POSIX metadata changes are imported to the Amazon FSx file system. The path can be an S3 bucket or prefix in the format <code>s3://myBucket/myPrefix</code> (where <code>myPrefix</code> is optional).</p> </li>
+    /// <li> <p>For export tasks, the list contains paths on the FSx for Lustre file system from which the files are exported to the Amazon S3 bucket. The default path is the file system root directory. The paths you provide need to be relative to the mount point of the file system. If the mount point is <code>/mnt/fsx</code> and <code>/mnt/fsx/path1</code> is a directory or file on the file system you want to export, then the path to provide is <code>path1</code>.</p> </li>
+    /// <li> <p>For import tasks, the list contains paths in the Amazon S3 bucket from which POSIX metadata changes are imported to the FSx for Lustre file system. The path can be an S3 bucket or prefix in the format <code>s3://myBucket/myPrefix</code> (where <code>myPrefix</code> is optional). </p> </li>
+    /// <li> <p>For release tasks, the list contains directory or file paths on the FSx for Lustre file system from which to release exported files. If a directory is specified, files within the directory are released. If a file path is specified, only that file is released. To release all exported files in the file system, specify a forward slash (/) as the path.</p> <note>
+    /// <p>A file must also meet the last accessed time criteria specified in for the file to be released.</p>
+    /// </note> </li>
     /// </ul>
     pub fn set_paths(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_paths(input);
         self
     }
-    /// <p>A list of paths for the data repository task to use when the task is processed. If a path that you provide isn't valid, the task fails.</p>
+    /// <p>A list of paths for the data repository task to use when the task is processed. If a path that you provide isn't valid, the task fails. If you don't provide paths, the default behavior is to export all files to S3 (for export tasks), import all files from S3 (for import tasks), or release all exported files that meet the last accessed time criteria (for release tasks).</p>
     /// <ul>
-    /// <li> <p>For export tasks, the list contains paths on the Amazon FSx file system from which the files are exported to the Amazon S3 bucket. The default path is the file system root directory. The paths you provide need to be relative to the mount point of the file system. If the mount point is <code>/mnt/fsx</code> and <code>/mnt/fsx/path1</code> is a directory or file on the file system you want to export, then the path to provide is <code>path1</code>.</p> </li>
-    /// <li> <p>For import tasks, the list contains paths in the Amazon S3 bucket from which POSIX metadata changes are imported to the Amazon FSx file system. The path can be an S3 bucket or prefix in the format <code>s3://myBucket/myPrefix</code> (where <code>myPrefix</code> is optional).</p> </li>
+    /// <li> <p>For export tasks, the list contains paths on the FSx for Lustre file system from which the files are exported to the Amazon S3 bucket. The default path is the file system root directory. The paths you provide need to be relative to the mount point of the file system. If the mount point is <code>/mnt/fsx</code> and <code>/mnt/fsx/path1</code> is a directory or file on the file system you want to export, then the path to provide is <code>path1</code>.</p> </li>
+    /// <li> <p>For import tasks, the list contains paths in the Amazon S3 bucket from which POSIX metadata changes are imported to the FSx for Lustre file system. The path can be an S3 bucket or prefix in the format <code>s3://myBucket/myPrefix</code> (where <code>myPrefix</code> is optional). </p> </li>
+    /// <li> <p>For release tasks, the list contains directory or file paths on the FSx for Lustre file system from which to release exported files. If a directory is specified, files within the directory are released. If a file path is specified, only that file is released. To release all exported files in the file system, specify a forward slash (/) as the path.</p> <note>
+    /// <p>A file must also meet the last accessed time criteria specified in for the file to be released.</p>
+    /// </note> </li>
     /// </ul>
     pub fn get_paths(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_paths()
@@ -227,5 +257,19 @@ impl CreateDataRepositoryTaskFluentBuilder {
     /// <p>Specifies the amount of data to release, in GiB, by an Amazon File Cache <code>AUTO_RELEASE_DATA</code> task that automatically releases files from the cache.</p>
     pub fn get_capacity_to_release(&self) -> &::std::option::Option<i64> {
         self.inner.get_capacity_to_release()
+    }
+    /// <p>The configuration that specifies the last accessed time criteria for files that will be released from an Amazon FSx for Lustre file system.</p>
+    pub fn release_configuration(mut self, input: crate::types::ReleaseConfiguration) -> Self {
+        self.inner = self.inner.release_configuration(input);
+        self
+    }
+    /// <p>The configuration that specifies the last accessed time criteria for files that will be released from an Amazon FSx for Lustre file system.</p>
+    pub fn set_release_configuration(mut self, input: ::std::option::Option<crate::types::ReleaseConfiguration>) -> Self {
+        self.inner = self.inner.set_release_configuration(input);
+        self
+    }
+    /// <p>The configuration that specifies the last accessed time criteria for files that will be released from an Amazon FSx for Lustre file system.</p>
+    pub fn get_release_configuration(&self) -> &::std::option::Option<crate::types::ReleaseConfiguration> {
+        self.inner.get_release_configuration()
     }
 }

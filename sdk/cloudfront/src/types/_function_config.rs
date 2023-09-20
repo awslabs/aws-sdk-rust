@@ -6,7 +6,7 @@
 pub struct FunctionConfig {
     /// <p>A comment to describe the function.</p>
     pub comment: ::std::option::Option<::std::string::String>,
-    /// <p>The function's runtime environment. The only valid value is <code>cloudfront-js-1.0</code>.</p>
+    /// <p>The function's runtime environment verion.</p>
     pub runtime: ::std::option::Option<crate::types::FunctionRuntime>,
 }
 impl FunctionConfig {
@@ -14,7 +14,7 @@ impl FunctionConfig {
     pub fn comment(&self) -> ::std::option::Option<&str> {
         self.comment.as_deref()
     }
-    /// <p>The function's runtime environment. The only valid value is <code>cloudfront-js-1.0</code>.</p>
+    /// <p>The function's runtime environment verion.</p>
     pub fn runtime(&self) -> ::std::option::Option<&crate::types::FunctionRuntime> {
         self.runtime.as_ref()
     }
@@ -48,17 +48,17 @@ impl FunctionConfigBuilder {
     pub fn get_comment(&self) -> &::std::option::Option<::std::string::String> {
         &self.comment
     }
-    /// <p>The function's runtime environment. The only valid value is <code>cloudfront-js-1.0</code>.</p>
+    /// <p>The function's runtime environment verion.</p>
     pub fn runtime(mut self, input: crate::types::FunctionRuntime) -> Self {
         self.runtime = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The function's runtime environment. The only valid value is <code>cloudfront-js-1.0</code>.</p>
+    /// <p>The function's runtime environment verion.</p>
     pub fn set_runtime(mut self, input: ::std::option::Option<crate::types::FunctionRuntime>) -> Self {
         self.runtime = input;
         self
     }
-    /// <p>The function's runtime environment. The only valid value is <code>cloudfront-js-1.0</code>.</p>
+    /// <p>The function's runtime environment verion.</p>
     pub fn get_runtime(&self) -> &::std::option::Option<crate::types::FunctionRuntime> {
         &self.runtime
     }

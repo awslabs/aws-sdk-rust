@@ -241,6 +241,8 @@ mod delete_custom_db_engine_version;
 
 mod delete_db_cluster;
 
+mod delete_db_cluster_automated_backup;
+
 mod delete_db_cluster_endpoint;
 
 mod delete_db_cluster_parameter_group;
@@ -276,6 +278,8 @@ mod describe_account_attributes;
 mod describe_blue_green_deployments;
 
 mod describe_certificates;
+
+mod describe_db_cluster_automated_backups;
 
 mod describe_db_cluster_backtracks;
 
@@ -454,5 +458,7 @@ mod stop_db_instance;
 mod stop_db_instance_automated_backups_replication;
 
 mod switchover_blue_green_deployment;
+
+mod switchover_global_cluster;
 
 mod switchover_read_replica;

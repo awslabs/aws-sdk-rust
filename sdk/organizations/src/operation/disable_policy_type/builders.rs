@@ -24,7 +24,7 @@ impl DisablePolicyTypeInputBuilder {
 ///
 /// <p>Disables an organizational policy type in a root. A policy of a certain type can be attached to entities in a root only if that type is enabled in the root. After you perform this operation, you no longer can attach policies of the specified type to that root or to any organizational unit (OU) or account in that root. You can undo this by using the <code>EnablePolicyType</code> operation.</p>
 /// <p>This is an asynchronous request that Amazon Web Services performs in the background. If you disable a policy type for a root, it still appears enabled for the organization if <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">all features</a> are enabled for the organization. Amazon Web Services recommends that you first use <code>ListRoots</code> to see the status of policy types for a specified root, and then use this operation.</p>
-/// <p>This operation can be called only from the organization's management account.</p>
+/// <p>This operation can be called only from the organization's management account or by a member account that is a delegated administrator for an Amazon Web Services service.</p>
 /// <p> To view the status of available policy types in the organization, use <code>DescribeOrganization</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisablePolicyTypeFluentBuilder {

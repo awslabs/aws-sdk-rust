@@ -242,17 +242,17 @@ impl ModifyVpcEndpointFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_add_security_group_ids`](Self::set_add_security_group_ids).
     ///
-    /// <p>(Interface endpoint) The IDs of the security groups to associate with the network interface.</p>
+    /// <p>(Interface endpoint) The IDs of the security groups to associate with the endpoint network interfaces.</p>
     pub fn add_security_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.add_security_group_ids(input.into());
         self
     }
-    /// <p>(Interface endpoint) The IDs of the security groups to associate with the network interface.</p>
+    /// <p>(Interface endpoint) The IDs of the security groups to associate with the endpoint network interfaces.</p>
     pub fn set_add_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_add_security_group_ids(input);
         self
     }
-    /// <p>(Interface endpoint) The IDs of the security groups to associate with the network interface.</p>
+    /// <p>(Interface endpoint) The IDs of the security groups to associate with the endpoint network interfaces.</p>
     pub fn get_add_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_add_security_group_ids()
     }
@@ -260,17 +260,17 @@ impl ModifyVpcEndpointFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_remove_security_group_ids`](Self::set_remove_security_group_ids).
     ///
-    /// <p>(Interface endpoint) The IDs of the security groups to disassociate from the network interface.</p>
+    /// <p>(Interface endpoint) The IDs of the security groups to disassociate from the endpoint network interfaces.</p>
     pub fn remove_security_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.remove_security_group_ids(input.into());
         self
     }
-    /// <p>(Interface endpoint) The IDs of the security groups to disassociate from the network interface.</p>
+    /// <p>(Interface endpoint) The IDs of the security groups to disassociate from the endpoint network interfaces.</p>
     pub fn set_remove_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_remove_security_group_ids(input);
         self
     }
-    /// <p>(Interface endpoint) The IDs of the security groups to disassociate from the network interface.</p>
+    /// <p>(Interface endpoint) The IDs of the security groups to disassociate from the endpoint network interfaces.</p>
     pub fn get_remove_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_remove_security_group_ids()
     }
@@ -315,5 +315,23 @@ impl ModifyVpcEndpointFluentBuilder {
     /// <p>(Interface endpoint) Indicates whether a private hosted zone is associated with the VPC.</p>
     pub fn get_private_dns_enabled(&self) -> &::std::option::Option<bool> {
         self.inner.get_private_dns_enabled()
+    }
+    /// Appends an item to `SubnetConfigurations`.
+    ///
+    /// To override the contents of this collection use [`set_subnet_configurations`](Self::set_subnet_configurations).
+    ///
+    /// <p>The subnet configurations for the endpoint.</p>
+    pub fn subnet_configurations(mut self, input: crate::types::SubnetConfiguration) -> Self {
+        self.inner = self.inner.subnet_configurations(input);
+        self
+    }
+    /// <p>The subnet configurations for the endpoint.</p>
+    pub fn set_subnet_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SubnetConfiguration>>) -> Self {
+        self.inner = self.inner.set_subnet_configurations(input);
+        self
+    }
+    /// <p>The subnet configurations for the endpoint.</p>
+    pub fn get_subnet_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SubnetConfiguration>> {
+        self.inner.get_subnet_configurations()
     }
 }

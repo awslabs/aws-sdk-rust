@@ -23,7 +23,7 @@ impl DeleteReceiptRuleInputBuilder {
 /// Fluent builder constructing a request to `DeleteReceiptRule`.
 ///
 /// <p>Deletes the specified receipt rule.</p>
-/// <p>For information about managing receipt rules, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rules.html">Amazon SES Developer Guide</a>.</p>
+/// <p>For information about managing receipt rules, see the <a href="https://docs.aws.amazon.com/ses/latest/dg/receiving-email-receipt-rules-console-walkthrough.html">Amazon SES Developer Guide</a>.</p>
 /// <p>You can execute this operation no more than once per second.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteReceiptRuleFluentBuilder {

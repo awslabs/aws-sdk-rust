@@ -373,6 +373,8 @@ pub use crate::types::_peering_connection_options_request::PeeringConnectionOpti
 
 pub use crate::types::_added_principal::AddedPrincipalBuilder;
 
+pub use crate::types::_subnet_configuration::SubnetConfigurationBuilder;
+
 pub use crate::types::_dns_options_specification::DnsOptionsSpecificationBuilder;
 
 pub use crate::types::_attribute_boolean_value::AttributeBooleanValueBuilder;

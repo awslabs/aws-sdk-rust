@@ -152,4 +152,32 @@ impl CreateResourceFluentBuilder {
     pub fn get_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
         self.inner.get_type()
     }
+    /// <p>Resource description.</p>
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.description(input.into());
+        self
+    }
+    /// <p>Resource description.</p>
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_description(input);
+        self
+    }
+    /// <p>Resource description.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
+    }
+    /// <p>If this parameter is enabled, the resource will be hidden from the address book.</p>
+    pub fn hidden_from_global_address_list(mut self, input: bool) -> Self {
+        self.inner = self.inner.hidden_from_global_address_list(input);
+        self
+    }
+    /// <p>If this parameter is enabled, the resource will be hidden from the address book.</p>
+    pub fn set_hidden_from_global_address_list(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_hidden_from_global_address_list(input);
+        self
+    }
+    /// <p>If this parameter is enabled, the resource will be hidden from the address book.</p>
+    pub fn get_hidden_from_global_address_list(&self) -> &::std::option::Option<bool> {
+        self.inner.get_hidden_from_global_address_list()
+    }
 }

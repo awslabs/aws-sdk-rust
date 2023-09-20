@@ -24,36 +24,39 @@ pub fn ser_start_run_input(
     if let Some(var_6) = &input.request_id {
         object.key("requestId").string(var_6.as_str());
     }
-    if let Some(var_7) = &input.role_arn {
-        object.key("roleArn").string(var_7.as_str());
+    if let Some(var_7) = &input.retention_mode {
+        object.key("retentionMode").string(var_7.as_str());
     }
-    if let Some(var_8) = &input.run_group_id {
-        object.key("runGroupId").string(var_8.as_str());
+    if let Some(var_8) = &input.role_arn {
+        object.key("roleArn").string(var_8.as_str());
     }
-    if let Some(var_9) = &input.run_id {
-        object.key("runId").string(var_9.as_str());
+    if let Some(var_9) = &input.run_group_id {
+        object.key("runGroupId").string(var_9.as_str());
     }
-    if let Some(var_10) = &input.storage_capacity {
+    if let Some(var_10) = &input.run_id {
+        object.key("runId").string(var_10.as_str());
+    }
+    if let Some(var_11) = &input.storage_capacity {
         object.key("storageCapacity").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_10).into()),
+            ::aws_smithy_types::Number::NegInt((*var_11).into()),
         );
     }
-    if let Some(var_11) = &input.tags {
+    if let Some(var_12) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_12 = object.key("tags").start_object();
-        for (key_13, value_14) in var_11 {
+        let mut object_13 = object.key("tags").start_object();
+        for (key_14, value_15) in var_12 {
             {
-                object_12.key(key_13.as_str()).string(value_14.as_str());
+                object_13.key(key_14.as_str()).string(value_15.as_str());
             }
         }
-        object_12.finish();
+        object_13.finish();
     }
-    if let Some(var_15) = &input.workflow_id {
-        object.key("workflowId").string(var_15.as_str());
+    if let Some(var_16) = &input.workflow_id {
+        object.key("workflowId").string(var_16.as_str());
     }
-    if let Some(var_16) = &input.workflow_type {
-        object.key("workflowType").string(var_16.as_str());
+    if let Some(var_17) = &input.workflow_type {
+        object.key("workflowType").string(var_17.as_str());
     }
     Ok(())
 }

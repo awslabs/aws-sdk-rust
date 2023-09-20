@@ -24,7 +24,7 @@ pub struct AdminCreateUserInput {
     /// <p>The user's temporary password. This password must conform to the password policy that you specified when you created the user pool.</p>
     /// <p>The temporary password is valid only once. To complete the Admin Create User flow, the user must enter the temporary password in the sign-in page, along with a new password to be used in all future sign-ins.</p>
     /// <p>This parameter isn't required. If you don't specify a value, Amazon Cognito generates one for you.</p>
-    /// <p>The temporary password can only be used until the user account expiration limit that you specified when you created the user pool. To reset the account after that time limit, you must call <code>AdminCreateUser</code> again, specifying <code>"RESEND"</code> for the <code>MessageAction</code> parameter.</p>
+    /// <p>The temporary password can only be used until the user account expiration limit that you set for your user pool. To reset the account after that time limit, you must call <code>AdminCreateUser</code> again and specify <code>RESEND</code> for the <code>MessageAction</code> parameter.</p>
     pub temporary_password: ::std::option::Option<::std::string::String>,
     /// <p>This parameter is used only if the <code>phone_number_verified</code> or <code>email_verified</code> attribute is set to <code>True</code>. Otherwise, it is ignored.</p>
     /// <p>If this parameter is set to <code>True</code> and the phone number or email address specified in the UserAttributes parameter already exists as an alias with a different user, the API call will migrate the alias from the previous user to the newly created user. The previous user will no longer be able to log in using that alias.</p>
@@ -75,7 +75,7 @@ impl AdminCreateUserInput {
     /// <p>The user's temporary password. This password must conform to the password policy that you specified when you created the user pool.</p>
     /// <p>The temporary password is valid only once. To complete the Admin Create User flow, the user must enter the temporary password in the sign-in page, along with a new password to be used in all future sign-ins.</p>
     /// <p>This parameter isn't required. If you don't specify a value, Amazon Cognito generates one for you.</p>
-    /// <p>The temporary password can only be used until the user account expiration limit that you specified when you created the user pool. To reset the account after that time limit, you must call <code>AdminCreateUser</code> again, specifying <code>"RESEND"</code> for the <code>MessageAction</code> parameter.</p>
+    /// <p>The temporary password can only be used until the user account expiration limit that you set for your user pool. To reset the account after that time limit, you must call <code>AdminCreateUser</code> again and specify <code>RESEND</code> for the <code>MessageAction</code> parameter.</p>
     pub fn temporary_password(&self) -> ::std::option::Option<&str> {
         self.temporary_password.as_deref()
     }
@@ -242,7 +242,7 @@ impl AdminCreateUserInputBuilder {
     /// <p>The user's temporary password. This password must conform to the password policy that you specified when you created the user pool.</p>
     /// <p>The temporary password is valid only once. To complete the Admin Create User flow, the user must enter the temporary password in the sign-in page, along with a new password to be used in all future sign-ins.</p>
     /// <p>This parameter isn't required. If you don't specify a value, Amazon Cognito generates one for you.</p>
-    /// <p>The temporary password can only be used until the user account expiration limit that you specified when you created the user pool. To reset the account after that time limit, you must call <code>AdminCreateUser</code> again, specifying <code>"RESEND"</code> for the <code>MessageAction</code> parameter.</p>
+    /// <p>The temporary password can only be used until the user account expiration limit that you set for your user pool. To reset the account after that time limit, you must call <code>AdminCreateUser</code> again and specify <code>RESEND</code> for the <code>MessageAction</code> parameter.</p>
     pub fn temporary_password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.temporary_password = ::std::option::Option::Some(input.into());
         self
@@ -250,7 +250,7 @@ impl AdminCreateUserInputBuilder {
     /// <p>The user's temporary password. This password must conform to the password policy that you specified when you created the user pool.</p>
     /// <p>The temporary password is valid only once. To complete the Admin Create User flow, the user must enter the temporary password in the sign-in page, along with a new password to be used in all future sign-ins.</p>
     /// <p>This parameter isn't required. If you don't specify a value, Amazon Cognito generates one for you.</p>
-    /// <p>The temporary password can only be used until the user account expiration limit that you specified when you created the user pool. To reset the account after that time limit, you must call <code>AdminCreateUser</code> again, specifying <code>"RESEND"</code> for the <code>MessageAction</code> parameter.</p>
+    /// <p>The temporary password can only be used until the user account expiration limit that you set for your user pool. To reset the account after that time limit, you must call <code>AdminCreateUser</code> again and specify <code>RESEND</code> for the <code>MessageAction</code> parameter.</p>
     pub fn set_temporary_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.temporary_password = input;
         self
@@ -258,7 +258,7 @@ impl AdminCreateUserInputBuilder {
     /// <p>The user's temporary password. This password must conform to the password policy that you specified when you created the user pool.</p>
     /// <p>The temporary password is valid only once. To complete the Admin Create User flow, the user must enter the temporary password in the sign-in page, along with a new password to be used in all future sign-ins.</p>
     /// <p>This parameter isn't required. If you don't specify a value, Amazon Cognito generates one for you.</p>
-    /// <p>The temporary password can only be used until the user account expiration limit that you specified when you created the user pool. To reset the account after that time limit, you must call <code>AdminCreateUser</code> again, specifying <code>"RESEND"</code> for the <code>MessageAction</code> parameter.</p>
+    /// <p>The temporary password can only be used until the user account expiration limit that you set for your user pool. To reset the account after that time limit, you must call <code>AdminCreateUser</code> again and specify <code>RESEND</code> for the <code>MessageAction</code> parameter.</p>
     pub fn get_temporary_password(&self) -> &::std::option::Option<::std::string::String> {
         &self.temporary_password
     }

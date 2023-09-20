@@ -38,3 +38,43 @@ pub(crate) fn reflens_query_table_rows_output_next_token(
     };
     ::std::option::Option::Some(input)
 }
+
+pub(crate) fn lens_list_table_columns_output_table_columns(
+    input: crate::operation::list_table_columns::ListTableColumnsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::TableColumn>> {
+    let input = match input.table_columns {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_table_rows_output_rows(
+    input: crate::operation::list_table_rows::ListTableRowsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::TableRow>> {
+    let input = match input.rows {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_tables_output_tables(
+    input: crate::operation::list_tables::ListTablesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::Table>> {
+    let input = match input.tables {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_query_table_rows_output_rows(
+    input: crate::operation::query_table_rows::QueryTableRowsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::TableRow>> {
+    let input = match input.rows {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}

@@ -2,7 +2,7 @@
 
 /// <p> A comment that's posted by a user on a control. This includes the author's name, the comment text, and a timestamp. </p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ControlComment {
     /// <p> The name of the user who authored the comment. </p>
     pub author_name: ::std::option::Option<::std::string::String>,
@@ -25,6 +25,15 @@ impl ControlComment {
         self.posted_date.as_ref()
     }
 }
+impl ::std::fmt::Debug for ControlComment {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("ControlComment");
+        formatter.field("author_name", &"*** Sensitive Data Redacted ***");
+        formatter.field("comment_body", &"*** Sensitive Data Redacted ***");
+        formatter.field("posted_date", &self.posted_date);
+        formatter.finish()
+    }
+}
 impl ControlComment {
     /// Creates a new builder-style object to manufacture [`ControlComment`](crate::types::ControlComment).
     pub fn builder() -> crate::types::builders::ControlCommentBuilder {
@@ -34,7 +43,7 @@ impl ControlComment {
 
 /// A builder for [`ControlComment`](crate::types::ControlComment).
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct ControlCommentBuilder {
     pub(crate) author_name: ::std::option::Option<::std::string::String>,
     pub(crate) comment_body: ::std::option::Option<::std::string::String>,
@@ -90,5 +99,14 @@ impl ControlCommentBuilder {
             comment_body: self.comment_body,
             posted_date: self.posted_date,
         }
+    }
+}
+impl ::std::fmt::Debug for ControlCommentBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("ControlCommentBuilder");
+        formatter.field("author_name", &"*** Sensitive Data Redacted ***");
+        formatter.field("comment_body", &"*** Sensitive Data Redacted ***");
+        formatter.field("posted_date", &self.posted_date);
+        formatter.finish()
     }
 }

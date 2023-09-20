@@ -5,7 +5,7 @@
 pub struct CreateConnectionInput {
     /// <p>The name of the external provider where your third-party code repository is configured.</p>
     pub provider_type: ::std::option::Option<crate::types::ProviderType>,
-    /// <p>The name of the connection to be created. The name must be unique in the calling AWS account.</p>
+    /// <p>The name of the connection to be created.</p>
     pub connection_name: ::std::option::Option<::std::string::String>,
     /// <p>The key-value pair to use when tagging the resource.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -17,7 +17,7 @@ impl CreateConnectionInput {
     pub fn provider_type(&self) -> ::std::option::Option<&crate::types::ProviderType> {
         self.provider_type.as_ref()
     }
-    /// <p>The name of the connection to be created. The name must be unique in the calling AWS account.</p>
+    /// <p>The name of the connection to be created.</p>
     pub fn connection_name(&self) -> ::std::option::Option<&str> {
         self.connection_name.as_deref()
     }
@@ -61,17 +61,17 @@ impl CreateConnectionInputBuilder {
     pub fn get_provider_type(&self) -> &::std::option::Option<crate::types::ProviderType> {
         &self.provider_type
     }
-    /// <p>The name of the connection to be created. The name must be unique in the calling AWS account.</p>
+    /// <p>The name of the connection to be created.</p>
     pub fn connection_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connection_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the connection to be created. The name must be unique in the calling AWS account.</p>
+    /// <p>The name of the connection to be created.</p>
     pub fn set_connection_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.connection_name = input;
         self
     }
-    /// <p>The name of the connection to be created. The name must be unique in the calling AWS account.</p>
+    /// <p>The name of the connection to be created.</p>
     pub fn get_connection_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.connection_name
     }

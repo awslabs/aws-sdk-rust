@@ -4,45 +4,35 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateLocationNfsInput {
-    /// <p>Specifies the subdirectory in the NFS file server that DataSync transfers to or from. The NFS path should be a path that's exported by the NFS server, or a subdirectory of that path. The path should be such that it can be mounted by other NFS clients in your network. </p>
-    /// <p>To see all the paths exported by your NFS server, run "<code>showmount -e nfs-server-name</code>" from an NFS client that has access to your server. You can specify any directory that appears in the results, and any subdirectory of that directory. Ensure that the NFS export is accessible without Kerberos authentication. </p>
-    /// <p>To transfer all the data in the folder you specified, DataSync needs to have permissions to read all the data. To ensure this, either configure the NFS export with <code>no_root_squash,</code> or ensure that the permissions for all of the files that you want DataSync allow read access for all users. Doing either enables the agent to read the files. For the agent to access directories, you must additionally enable all execute access.</p>
-    /// <p>If you are copying data to or from your Snowcone device, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS Server on Snowcone</a> for more information.</p>
+    /// <p>Specifies the export path in your NFS file server that you want DataSync to mount.</p>
+    /// <p>This path (or a subdirectory of the path) is where DataSync transfers data to or from. For information on configuring an export for DataSync, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#accessing-nfs">Accessing NFS file servers</a>.</p>
     pub subdirectory: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies the IP address or domain name of your NFS file server. An agent that is installed on-premises uses this hostname to mount the NFS server in a network. </p>
-    /// <p>If you are copying data to or from your Snowcone device, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS Server on Snowcone</a> for more information.</p> <note>
-    /// <p>You must specify be an IP version 4 address or Domain Name System (DNS)-compliant name.</p>
-    /// </note>
+    /// <p>Specifies the Domain Name System (DNS) name or IP version 4 address of the NFS file server that your DataSync agent connects to.</p>
     pub server_hostname: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies the Amazon Resource Names (ARNs) of agents that DataSync uses to connect to your NFS file server. </p>
-    /// <p>If you are copying data to or from your Snowcone device, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS Server on Snowcone</a> for more information.</p>
+    /// <p>Specifies the Amazon Resource Name (ARN) of the DataSync agent that want to connect to your NFS file server.</p>
+    /// <p>You can specify more than one agent. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/multiple-agents.html">Using multiple agents for transfers</a>.</p>
     pub on_prem_config: ::std::option::Option<crate::types::OnPremConfig>,
-    /// <p>Specifies the mount options that DataSync can use to mount your NFS share.</p>
+    /// <p>Specifies the options that DataSync can use to mount your NFS file server.</p>
     pub mount_options: ::std::option::Option<crate::types::NfsMountOptions>,
     /// <p>Specifies labels that help you categorize, filter, and search for your Amazon Web Services resources. We recommend creating at least a name tag for your location.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::TagListEntry>>,
 }
 impl CreateLocationNfsInput {
-    /// <p>Specifies the subdirectory in the NFS file server that DataSync transfers to or from. The NFS path should be a path that's exported by the NFS server, or a subdirectory of that path. The path should be such that it can be mounted by other NFS clients in your network. </p>
-    /// <p>To see all the paths exported by your NFS server, run "<code>showmount -e nfs-server-name</code>" from an NFS client that has access to your server. You can specify any directory that appears in the results, and any subdirectory of that directory. Ensure that the NFS export is accessible without Kerberos authentication. </p>
-    /// <p>To transfer all the data in the folder you specified, DataSync needs to have permissions to read all the data. To ensure this, either configure the NFS export with <code>no_root_squash,</code> or ensure that the permissions for all of the files that you want DataSync allow read access for all users. Doing either enables the agent to read the files. For the agent to access directories, you must additionally enable all execute access.</p>
-    /// <p>If you are copying data to or from your Snowcone device, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS Server on Snowcone</a> for more information.</p>
+    /// <p>Specifies the export path in your NFS file server that you want DataSync to mount.</p>
+    /// <p>This path (or a subdirectory of the path) is where DataSync transfers data to or from. For information on configuring an export for DataSync, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#accessing-nfs">Accessing NFS file servers</a>.</p>
     pub fn subdirectory(&self) -> ::std::option::Option<&str> {
         self.subdirectory.as_deref()
     }
-    /// <p>Specifies the IP address or domain name of your NFS file server. An agent that is installed on-premises uses this hostname to mount the NFS server in a network. </p>
-    /// <p>If you are copying data to or from your Snowcone device, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS Server on Snowcone</a> for more information.</p> <note>
-    /// <p>You must specify be an IP version 4 address or Domain Name System (DNS)-compliant name.</p>
-    /// </note>
+    /// <p>Specifies the Domain Name System (DNS) name or IP version 4 address of the NFS file server that your DataSync agent connects to.</p>
     pub fn server_hostname(&self) -> ::std::option::Option<&str> {
         self.server_hostname.as_deref()
     }
-    /// <p>Specifies the Amazon Resource Names (ARNs) of agents that DataSync uses to connect to your NFS file server. </p>
-    /// <p>If you are copying data to or from your Snowcone device, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS Server on Snowcone</a> for more information.</p>
+    /// <p>Specifies the Amazon Resource Name (ARN) of the DataSync agent that want to connect to your NFS file server.</p>
+    /// <p>You can specify more than one agent. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/multiple-agents.html">Using multiple agents for transfers</a>.</p>
     pub fn on_prem_config(&self) -> ::std::option::Option<&crate::types::OnPremConfig> {
         self.on_prem_config.as_ref()
     }
-    /// <p>Specifies the mount options that DataSync can use to mount your NFS share.</p>
+    /// <p>Specifies the options that DataSync can use to mount your NFS file server.</p>
     pub fn mount_options(&self) -> ::std::option::Option<&crate::types::NfsMountOptions> {
         self.mount_options.as_ref()
     }
@@ -69,80 +59,65 @@ pub struct CreateLocationNfsInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::TagListEntry>>,
 }
 impl CreateLocationNfsInputBuilder {
-    /// <p>Specifies the subdirectory in the NFS file server that DataSync transfers to or from. The NFS path should be a path that's exported by the NFS server, or a subdirectory of that path. The path should be such that it can be mounted by other NFS clients in your network. </p>
-    /// <p>To see all the paths exported by your NFS server, run "<code>showmount -e nfs-server-name</code>" from an NFS client that has access to your server. You can specify any directory that appears in the results, and any subdirectory of that directory. Ensure that the NFS export is accessible without Kerberos authentication. </p>
-    /// <p>To transfer all the data in the folder you specified, DataSync needs to have permissions to read all the data. To ensure this, either configure the NFS export with <code>no_root_squash,</code> or ensure that the permissions for all of the files that you want DataSync allow read access for all users. Doing either enables the agent to read the files. For the agent to access directories, you must additionally enable all execute access.</p>
-    /// <p>If you are copying data to or from your Snowcone device, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS Server on Snowcone</a> for more information.</p>
+    /// <p>Specifies the export path in your NFS file server that you want DataSync to mount.</p>
+    /// <p>This path (or a subdirectory of the path) is where DataSync transfers data to or from. For information on configuring an export for DataSync, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#accessing-nfs">Accessing NFS file servers</a>.</p>
     pub fn subdirectory(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subdirectory = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Specifies the subdirectory in the NFS file server that DataSync transfers to or from. The NFS path should be a path that's exported by the NFS server, or a subdirectory of that path. The path should be such that it can be mounted by other NFS clients in your network. </p>
-    /// <p>To see all the paths exported by your NFS server, run "<code>showmount -e nfs-server-name</code>" from an NFS client that has access to your server. You can specify any directory that appears in the results, and any subdirectory of that directory. Ensure that the NFS export is accessible without Kerberos authentication. </p>
-    /// <p>To transfer all the data in the folder you specified, DataSync needs to have permissions to read all the data. To ensure this, either configure the NFS export with <code>no_root_squash,</code> or ensure that the permissions for all of the files that you want DataSync allow read access for all users. Doing either enables the agent to read the files. For the agent to access directories, you must additionally enable all execute access.</p>
-    /// <p>If you are copying data to or from your Snowcone device, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS Server on Snowcone</a> for more information.</p>
+    /// <p>Specifies the export path in your NFS file server that you want DataSync to mount.</p>
+    /// <p>This path (or a subdirectory of the path) is where DataSync transfers data to or from. For information on configuring an export for DataSync, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#accessing-nfs">Accessing NFS file servers</a>.</p>
     pub fn set_subdirectory(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.subdirectory = input;
         self
     }
-    /// <p>Specifies the subdirectory in the NFS file server that DataSync transfers to or from. The NFS path should be a path that's exported by the NFS server, or a subdirectory of that path. The path should be such that it can be mounted by other NFS clients in your network. </p>
-    /// <p>To see all the paths exported by your NFS server, run "<code>showmount -e nfs-server-name</code>" from an NFS client that has access to your server. You can specify any directory that appears in the results, and any subdirectory of that directory. Ensure that the NFS export is accessible without Kerberos authentication. </p>
-    /// <p>To transfer all the data in the folder you specified, DataSync needs to have permissions to read all the data. To ensure this, either configure the NFS export with <code>no_root_squash,</code> or ensure that the permissions for all of the files that you want DataSync allow read access for all users. Doing either enables the agent to read the files. For the agent to access directories, you must additionally enable all execute access.</p>
-    /// <p>If you are copying data to or from your Snowcone device, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS Server on Snowcone</a> for more information.</p>
+    /// <p>Specifies the export path in your NFS file server that you want DataSync to mount.</p>
+    /// <p>This path (or a subdirectory of the path) is where DataSync transfers data to or from. For information on configuring an export for DataSync, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#accessing-nfs">Accessing NFS file servers</a>.</p>
     pub fn get_subdirectory(&self) -> &::std::option::Option<::std::string::String> {
         &self.subdirectory
     }
-    /// <p>Specifies the IP address or domain name of your NFS file server. An agent that is installed on-premises uses this hostname to mount the NFS server in a network. </p>
-    /// <p>If you are copying data to or from your Snowcone device, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS Server on Snowcone</a> for more information.</p> <note>
-    /// <p>You must specify be an IP version 4 address or Domain Name System (DNS)-compliant name.</p>
-    /// </note>
+    /// <p>Specifies the Domain Name System (DNS) name or IP version 4 address of the NFS file server that your DataSync agent connects to.</p>
     pub fn server_hostname(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.server_hostname = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Specifies the IP address or domain name of your NFS file server. An agent that is installed on-premises uses this hostname to mount the NFS server in a network. </p>
-    /// <p>If you are copying data to or from your Snowcone device, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS Server on Snowcone</a> for more information.</p> <note>
-    /// <p>You must specify be an IP version 4 address or Domain Name System (DNS)-compliant name.</p>
-    /// </note>
+    /// <p>Specifies the Domain Name System (DNS) name or IP version 4 address of the NFS file server that your DataSync agent connects to.</p>
     pub fn set_server_hostname(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.server_hostname = input;
         self
     }
-    /// <p>Specifies the IP address or domain name of your NFS file server. An agent that is installed on-premises uses this hostname to mount the NFS server in a network. </p>
-    /// <p>If you are copying data to or from your Snowcone device, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS Server on Snowcone</a> for more information.</p> <note>
-    /// <p>You must specify be an IP version 4 address or Domain Name System (DNS)-compliant name.</p>
-    /// </note>
+    /// <p>Specifies the Domain Name System (DNS) name or IP version 4 address of the NFS file server that your DataSync agent connects to.</p>
     pub fn get_server_hostname(&self) -> &::std::option::Option<::std::string::String> {
         &self.server_hostname
     }
-    /// <p>Specifies the Amazon Resource Names (ARNs) of agents that DataSync uses to connect to your NFS file server. </p>
-    /// <p>If you are copying data to or from your Snowcone device, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS Server on Snowcone</a> for more information.</p>
+    /// <p>Specifies the Amazon Resource Name (ARN) of the DataSync agent that want to connect to your NFS file server.</p>
+    /// <p>You can specify more than one agent. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/multiple-agents.html">Using multiple agents for transfers</a>.</p>
     pub fn on_prem_config(mut self, input: crate::types::OnPremConfig) -> Self {
         self.on_prem_config = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies the Amazon Resource Names (ARNs) of agents that DataSync uses to connect to your NFS file server. </p>
-    /// <p>If you are copying data to or from your Snowcone device, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS Server on Snowcone</a> for more information.</p>
+    /// <p>Specifies the Amazon Resource Name (ARN) of the DataSync agent that want to connect to your NFS file server.</p>
+    /// <p>You can specify more than one agent. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/multiple-agents.html">Using multiple agents for transfers</a>.</p>
     pub fn set_on_prem_config(mut self, input: ::std::option::Option<crate::types::OnPremConfig>) -> Self {
         self.on_prem_config = input;
         self
     }
-    /// <p>Specifies the Amazon Resource Names (ARNs) of agents that DataSync uses to connect to your NFS file server. </p>
-    /// <p>If you are copying data to or from your Snowcone device, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS Server on Snowcone</a> for more information.</p>
+    /// <p>Specifies the Amazon Resource Name (ARN) of the DataSync agent that want to connect to your NFS file server.</p>
+    /// <p>You can specify more than one agent. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/multiple-agents.html">Using multiple agents for transfers</a>.</p>
     pub fn get_on_prem_config(&self) -> &::std::option::Option<crate::types::OnPremConfig> {
         &self.on_prem_config
     }
-    /// <p>Specifies the mount options that DataSync can use to mount your NFS share.</p>
+    /// <p>Specifies the options that DataSync can use to mount your NFS file server.</p>
     pub fn mount_options(mut self, input: crate::types::NfsMountOptions) -> Self {
         self.mount_options = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies the mount options that DataSync can use to mount your NFS share.</p>
+    /// <p>Specifies the options that DataSync can use to mount your NFS file server.</p>
     pub fn set_mount_options(mut self, input: ::std::option::Option<crate::types::NfsMountOptions>) -> Self {
         self.mount_options = input;
         self
     }
-    /// <p>Specifies the mount options that DataSync can use to mount your NFS share.</p>
+    /// <p>Specifies the options that DataSync can use to mount your NFS file server.</p>
     pub fn get_mount_options(&self) -> &::std::option::Option<crate::types::NfsMountOptions> {
         &self.mount_options
     }

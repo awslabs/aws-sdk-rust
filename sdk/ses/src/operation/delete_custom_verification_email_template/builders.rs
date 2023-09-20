@@ -23,7 +23,7 @@ impl DeleteCustomVerificationEmailTemplateInputBuilder {
 /// Fluent builder constructing a request to `DeleteCustomVerificationEmailTemplate`.
 ///
 /// <p>Deletes an existing custom verification email template. </p>
-/// <p>For more information about custom verification email templates, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html">Using Custom Verification Email Templates</a> in the <i>Amazon SES Developer Guide</i>.</p>
+/// <p>For more information about custom verification email templates, see <a href="https://docs.aws.amazon.com/ses/latest/dg/creating-identities.html#send-email-verify-address-custom">Using Custom Verification Email Templates</a> in the <i>Amazon SES Developer Guide</i>.</p>
 /// <p>You can execute this operation no more than once per second.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteCustomVerificationEmailTemplateFluentBuilder {
@@ -115,17 +115,17 @@ impl DeleteCustomVerificationEmailTemplateFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name of the custom verification email template that you want to delete.</p>
+    /// <p>The name of the custom verification email template to delete.</p>
     pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.template_name(input.into());
         self
     }
-    /// <p>The name of the custom verification email template that you want to delete.</p>
+    /// <p>The name of the custom verification email template to delete.</p>
     pub fn set_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_template_name(input);
         self
     }
-    /// <p>The name of the custom verification email template that you want to delete.</p>
+    /// <p>The name of the custom verification email template to delete.</p>
     pub fn get_template_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_template_name()
     }

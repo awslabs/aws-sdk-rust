@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListComputeOutput {
-    /// <p>A list of compute resources registered to the fleet you specified.</p>
+    /// <p>A list of compute resources in the specified fleet.</p>
     pub compute_list: ::std::option::Option<::std::vec::Vec<crate::types::Compute>>,
     /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListComputeOutput {
-    /// <p>A list of compute resources registered to the fleet you specified.</p>
+    /// <p>A list of compute resources in the specified fleet.</p>
     pub fn compute_list(&self) -> ::std::option::Option<&[crate::types::Compute]> {
         self.compute_list.as_deref()
     }
@@ -44,19 +44,19 @@ impl ListComputeOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_compute_list`](Self::set_compute_list).
     ///
-    /// <p>A list of compute resources registered to the fleet you specified.</p>
+    /// <p>A list of compute resources in the specified fleet.</p>
     pub fn compute_list(mut self, input: crate::types::Compute) -> Self {
         let mut v = self.compute_list.unwrap_or_default();
         v.push(input);
         self.compute_list = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of compute resources registered to the fleet you specified.</p>
+    /// <p>A list of compute resources in the specified fleet.</p>
     pub fn set_compute_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Compute>>) -> Self {
         self.compute_list = input;
         self
     }
-    /// <p>A list of compute resources registered to the fleet you specified.</p>
+    /// <p>A list of compute resources in the specified fleet.</p>
     pub fn get_compute_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Compute>> {
         &self.compute_list
     }

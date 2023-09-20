@@ -22,7 +22,7 @@ impl UpdateMonitorInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateMonitor`.
 ///
-/// <p>Updates a monitor. You can update a monitor to change the maximum number of city-networks (locations and ASNs or internet service providers), to add or remove resources, or to change the status of the monitor. Note that you can't change the name of a monitor.</p>
+/// <p>Updates a monitor. You can update a monitor to change the percentage of traffic to monitor or the maximum number of city-networks (locations and ASNs), to add or remove resources, or to change the status of the monitor. Note that you can't change the name of a monitor.</p>
 /// <p>The city-network maximum that you choose is the limit, but you only pay for the number of city-networks that are actually monitored. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/IMCityNetworksMaximum.html">Choosing a city-network maximum value</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateMonitorFluentBuilder {
@@ -129,25 +129,25 @@ impl UpdateMonitorFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_resources_to_add`](Self::set_resources_to_add).
     ///
-    /// <p>The resources to include in a monitor, which you provide as a set of Amazon Resource Names (ARNs).</p>
-    /// <p>You can add a combination of Amazon Virtual Private Clouds (VPCs) and Amazon CloudFront distributions, or you can add Amazon WorkSpaces directories. You can't add all three types of resources.</p> <note>
-    /// <p>If you add only VPC resources, at least one VPC must have an Internet Gateway attached to it, to make sure that it has internet connectivity.</p>
+    /// <p>The resources to include in a monitor, which you provide as a set of Amazon Resource Names (ARNs). Resources can be VPCs, NLBs, Amazon CloudFront distributions, or Amazon WorkSpaces directories.</p>
+    /// <p>You can add a combination of VPCs and CloudFront distributions, or you can add WorkSpaces directories, or you can add NLBs. You can't add NLBs or WorkSpaces directories together with any other resources.</p> <note>
+    /// <p>If you add only Amazon Virtual Private Clouds resources, at least one VPC must have an Internet Gateway attached to it, to make sure that it has internet connectivity.</p>
     /// </note>
     pub fn resources_to_add(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resources_to_add(input.into());
         self
     }
-    /// <p>The resources to include in a monitor, which you provide as a set of Amazon Resource Names (ARNs).</p>
-    /// <p>You can add a combination of Amazon Virtual Private Clouds (VPCs) and Amazon CloudFront distributions, or you can add Amazon WorkSpaces directories. You can't add all three types of resources.</p> <note>
-    /// <p>If you add only VPC resources, at least one VPC must have an Internet Gateway attached to it, to make sure that it has internet connectivity.</p>
+    /// <p>The resources to include in a monitor, which you provide as a set of Amazon Resource Names (ARNs). Resources can be VPCs, NLBs, Amazon CloudFront distributions, or Amazon WorkSpaces directories.</p>
+    /// <p>You can add a combination of VPCs and CloudFront distributions, or you can add WorkSpaces directories, or you can add NLBs. You can't add NLBs or WorkSpaces directories together with any other resources.</p> <note>
+    /// <p>If you add only Amazon Virtual Private Clouds resources, at least one VPC must have an Internet Gateway attached to it, to make sure that it has internet connectivity.</p>
     /// </note>
     pub fn set_resources_to_add(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_resources_to_add(input);
         self
     }
-    /// <p>The resources to include in a monitor, which you provide as a set of Amazon Resource Names (ARNs).</p>
-    /// <p>You can add a combination of Amazon Virtual Private Clouds (VPCs) and Amazon CloudFront distributions, or you can add Amazon WorkSpaces directories. You can't add all three types of resources.</p> <note>
-    /// <p>If you add only VPC resources, at least one VPC must have an Internet Gateway attached to it, to make sure that it has internet connectivity.</p>
+    /// <p>The resources to include in a monitor, which you provide as a set of Amazon Resource Names (ARNs). Resources can be VPCs, NLBs, Amazon CloudFront distributions, or Amazon WorkSpaces directories.</p>
+    /// <p>You can add a combination of VPCs and CloudFront distributions, or you can add WorkSpaces directories, or you can add NLBs. You can't add NLBs or WorkSpaces directories together with any other resources.</p> <note>
+    /// <p>If you add only Amazon Virtual Private Clouds resources, at least one VPC must have an Internet Gateway attached to it, to make sure that it has internet connectivity.</p>
     /// </note>
     pub fn get_resources_to_add(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_resources_to_add()
@@ -198,17 +198,17 @@ impl UpdateMonitorFluentBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }
-    /// <p>The maximum number of city-networks to monitor for your resources. A city-network is the location (city) where clients access your application resources from and the network or ASN, such as an internet service provider, that clients access the resources through.</p>
+    /// <p>The maximum number of city-networks to monitor for your application. A city-network is the location (city) where clients access your application resources from and the ASN or network provider, such as an internet service provider (ISP), that clients access the resources through. Setting this limit can help control billing costs.</p>
     pub fn max_city_networks_to_monitor(mut self, input: i32) -> Self {
         self.inner = self.inner.max_city_networks_to_monitor(input);
         self
     }
-    /// <p>The maximum number of city-networks to monitor for your resources. A city-network is the location (city) where clients access your application resources from and the network or ASN, such as an internet service provider, that clients access the resources through.</p>
+    /// <p>The maximum number of city-networks to monitor for your application. A city-network is the location (city) where clients access your application resources from and the ASN or network provider, such as an internet service provider (ISP), that clients access the resources through. Setting this limit can help control billing costs.</p>
     pub fn set_max_city_networks_to_monitor(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_city_networks_to_monitor(input);
         self
     }
-    /// <p>The maximum number of city-networks to monitor for your resources. A city-network is the location (city) where clients access your application resources from and the network or ASN, such as an internet service provider, that clients access the resources through.</p>
+    /// <p>The maximum number of city-networks to monitor for your application. A city-network is the location (city) where clients access your application resources from and the ASN or network provider, such as an internet service provider (ISP), that clients access the resources through. Setting this limit can help control billing costs.</p>
     pub fn get_max_city_networks_to_monitor(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_city_networks_to_monitor()
     }
@@ -226,31 +226,37 @@ impl UpdateMonitorFluentBuilder {
     pub fn get_internet_measurements_log_delivery(&self) -> &::std::option::Option<crate::types::InternetMeasurementsLogDelivery> {
         self.inner.get_internet_measurements_log_delivery()
     }
-    /// <p>The percentage of the internet-facing traffic for your application that you want to monitor with this monitor.</p>
+    /// <p>The percentage of the internet-facing traffic for your application that you want to monitor with this monitor. If you set a city-networks maximum, that limit overrides the traffic percentage that you set.</p>
+    /// <p>To learn more, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/IMTrafficPercentage.html">Choosing an application traffic percentage to monitor </a> in the Amazon CloudWatch Internet Monitor section of the <i>CloudWatch User Guide</i>.</p>
     pub fn traffic_percentage_to_monitor(mut self, input: i32) -> Self {
         self.inner = self.inner.traffic_percentage_to_monitor(input);
         self
     }
-    /// <p>The percentage of the internet-facing traffic for your application that you want to monitor with this monitor.</p>
+    /// <p>The percentage of the internet-facing traffic for your application that you want to monitor with this monitor. If you set a city-networks maximum, that limit overrides the traffic percentage that you set.</p>
+    /// <p>To learn more, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/IMTrafficPercentage.html">Choosing an application traffic percentage to monitor </a> in the Amazon CloudWatch Internet Monitor section of the <i>CloudWatch User Guide</i>.</p>
     pub fn set_traffic_percentage_to_monitor(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_traffic_percentage_to_monitor(input);
         self
     }
-    /// <p>The percentage of the internet-facing traffic for your application that you want to monitor with this monitor.</p>
+    /// <p>The percentage of the internet-facing traffic for your application that you want to monitor with this monitor. If you set a city-networks maximum, that limit overrides the traffic percentage that you set.</p>
+    /// <p>To learn more, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/IMTrafficPercentage.html">Choosing an application traffic percentage to monitor </a> in the Amazon CloudWatch Internet Monitor section of the <i>CloudWatch User Guide</i>.</p>
     pub fn get_traffic_percentage_to_monitor(&self) -> &::std::option::Option<i32> {
         self.inner.get_traffic_percentage_to_monitor()
     }
-    /// <p>The list of health event thresholds. A health event threshold percentage, for performance and availability, determines when Internet Monitor creates a health event when there's an internet issue that affects your application end users.</p>
+    /// <p>The list of health score thresholds. A threshold percentage for health scores, along with other configuration information, determines when Internet Monitor creates a health event when there's an internet issue that affects your application end users.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-overview.html#IMUpdateThresholdFromOverview"> Change health event thresholds</a> in the Internet Monitor section of the <i>CloudWatch User Guide</i>.</p>
     pub fn health_events_config(mut self, input: crate::types::HealthEventsConfig) -> Self {
         self.inner = self.inner.health_events_config(input);
         self
     }
-    /// <p>The list of health event thresholds. A health event threshold percentage, for performance and availability, determines when Internet Monitor creates a health event when there's an internet issue that affects your application end users.</p>
+    /// <p>The list of health score thresholds. A threshold percentage for health scores, along with other configuration information, determines when Internet Monitor creates a health event when there's an internet issue that affects your application end users.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-overview.html#IMUpdateThresholdFromOverview"> Change health event thresholds</a> in the Internet Monitor section of the <i>CloudWatch User Guide</i>.</p>
     pub fn set_health_events_config(mut self, input: ::std::option::Option<crate::types::HealthEventsConfig>) -> Self {
         self.inner = self.inner.set_health_events_config(input);
         self
     }
-    /// <p>The list of health event thresholds. A health event threshold percentage, for performance and availability, determines when Internet Monitor creates a health event when there's an internet issue that affects your application end users.</p>
+    /// <p>The list of health score thresholds. A threshold percentage for health scores, along with other configuration information, determines when Internet Monitor creates a health event when there's an internet issue that affects your application end users.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-overview.html#IMUpdateThresholdFromOverview"> Change health event thresholds</a> in the Internet Monitor section of the <i>CloudWatch User Guide</i>.</p>
     pub fn get_health_events_config(&self) -> &::std::option::Option<crate::types::HealthEventsConfig> {
         self.inner.get_health_events_config()
     }

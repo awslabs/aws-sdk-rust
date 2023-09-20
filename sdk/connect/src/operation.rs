@@ -34,6 +34,9 @@ pub mod associate_routing_profile_queues;
 /// Types for the `AssociateSecurityKey` operation.
 pub mod associate_security_key;
 
+/// Types for the `AssociateTrafficDistributionGroupUser` operation.
+pub mod associate_traffic_distribution_group_user;
+
 /// Types for the `ClaimPhoneNumber` operation.
 pub mod claim_phone_number;
 
@@ -94,6 +97,12 @@ pub mod create_user;
 /// Types for the `CreateUserHierarchyGroup` operation.
 pub mod create_user_hierarchy_group;
 
+/// Types for the `CreateView` operation.
+pub mod create_view;
+
+/// Types for the `CreateViewVersion` operation.
+pub mod create_view_version;
+
 /// Types for the `CreateVocabulary` operation.
 pub mod create_vocabulary;
 
@@ -153,6 +162,12 @@ pub mod delete_user;
 
 /// Types for the `DeleteUserHierarchyGroup` operation.
 pub mod delete_user_hierarchy_group;
+
+/// Types for the `DeleteView` operation.
+pub mod delete_view;
+
+/// Types for the `DeleteViewVersion` operation.
+pub mod delete_view_version;
 
 /// Types for the `DeleteVocabulary` operation.
 pub mod delete_vocabulary;
@@ -220,6 +235,9 @@ pub mod describe_user_hierarchy_group;
 /// Types for the `DescribeUserHierarchyStructure` operation.
 pub mod describe_user_hierarchy_structure;
 
+/// Types for the `DescribeView` operation.
+pub mod describe_view;
+
 /// Types for the `DescribeVocabulary` operation.
 pub mod describe_vocabulary;
 
@@ -249,6 +267,9 @@ pub mod disassociate_routing_profile_queues;
 
 /// Types for the `DisassociateSecurityKey` operation.
 pub mod disassociate_security_key;
+
+/// Types for the `DisassociateTrafficDistributionGroupUser` operation.
+pub mod disassociate_traffic_distribution_group_user;
 
 /// Types for the `DismissUserContact` operation.
 pub mod dismiss_user_contact;
@@ -373,6 +394,9 @@ pub mod list_tags_for_resource;
 /// Types for the `ListTaskTemplates` operation.
 pub mod list_task_templates;
 
+/// Types for the `ListTrafficDistributionGroupUsers` operation.
+pub mod list_traffic_distribution_group_users;
+
 /// Types for the `ListTrafficDistributionGroups` operation.
 pub mod list_traffic_distribution_groups;
 
@@ -384,6 +408,12 @@ pub mod list_user_hierarchy_groups;
 
 /// Types for the `ListUsers` operation.
 pub mod list_users;
+
+/// Types for the `ListViewVersions` operation.
+pub mod list_view_versions;
+
+/// Types for the `ListViews` operation.
+pub mod list_views;
 
 /// Types for the `MonitorContact` operation.
 pub mod monitor_contact;
@@ -544,6 +574,9 @@ pub mod update_quick_connect_config;
 /// Types for the `UpdateQuickConnectName` operation.
 pub mod update_quick_connect_name;
 
+/// Types for the `UpdateRoutingProfileAgentAvailabilityTimer` operation.
+pub mod update_routing_profile_agent_availability_timer;
+
 /// Types for the `UpdateRoutingProfileConcurrency` operation.
 pub mod update_routing_profile_concurrency;
 
@@ -588,3 +621,9 @@ pub mod update_user_routing_profile;
 
 /// Types for the `UpdateUserSecurityProfiles` operation.
 pub mod update_user_security_profiles;
+
+/// Types for the `UpdateViewContent` operation.
+pub mod update_view_content;
+
+/// Types for the `UpdateViewMetadata` operation.
+pub mod update_view_metadata;

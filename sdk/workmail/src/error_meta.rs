@@ -113,6 +113,9 @@ impl From<crate::operation::associate_delegate_to_resource::AssociateDelegateToR
             crate::operation::associate_delegate_to_resource::AssociateDelegateToResourceError::OrganizationStateException(inner) => {
                 Error::OrganizationStateException(inner)
             }
+            crate::operation::associate_delegate_to_resource::AssociateDelegateToResourceError::UnsupportedOperationException(inner) => {
+                Error::UnsupportedOperationException(inner)
+            }
             crate::operation::associate_delegate_to_resource::AssociateDelegateToResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -484,6 +487,9 @@ impl From<crate::operation::create_resource::CreateResourceError> for Error {
             }
             crate::operation::create_resource::CreateResourceError::OrganizationStateException(inner) => Error::OrganizationStateException(inner),
             crate::operation::create_resource::CreateResourceError::ReservedNameException(inner) => Error::ReservedNameException(inner),
+            crate::operation::create_resource::CreateResourceError::UnsupportedOperationException(inner) => {
+                Error::UnsupportedOperationException(inner)
+            }
             crate::operation::create_resource::CreateResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -881,6 +887,9 @@ impl From<crate::operation::delete_resource::DeleteResourceError> for Error {
                 Error::OrganizationNotFoundException(inner)
             }
             crate::operation::delete_resource::DeleteResourceError::OrganizationStateException(inner) => Error::OrganizationStateException(inner),
+            crate::operation::delete_resource::DeleteResourceError::UnsupportedOperationException(inner) => {
+                Error::UnsupportedOperationException(inner)
+            }
             crate::operation::delete_resource::DeleteResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -1069,6 +1078,35 @@ impl From<crate::operation::describe_email_monitoring_configuration::DescribeEma
         }
     }
 }
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::describe_entity::DescribeEntityError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::describe_entity::DescribeEntityError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_entity::DescribeEntityError> for Error {
+    fn from(err: crate::operation::describe_entity::DescribeEntityError) -> Self {
+        match err {
+            crate::operation::describe_entity::DescribeEntityError::EntityNotFoundException(inner) => Error::EntityNotFoundException(inner),
+            crate::operation::describe_entity::DescribeEntityError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::describe_entity::DescribeEntityError::OrganizationNotFoundException(inner) => {
+                Error::OrganizationNotFoundException(inner)
+            }
+            crate::operation::describe_entity::DescribeEntityError::OrganizationStateException(inner) => Error::OrganizationStateException(inner),
+            crate::operation::describe_entity::DescribeEntityError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::describe_group::DescribeGroupError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1216,6 +1254,9 @@ impl From<crate::operation::describe_resource::DescribeResourceError> for Error 
                 Error::OrganizationNotFoundException(inner)
             }
             crate::operation::describe_resource::DescribeResourceError::OrganizationStateException(inner) => Error::OrganizationStateException(inner),
+            crate::operation::describe_resource::DescribeResourceError::UnsupportedOperationException(inner) => {
+                Error::UnsupportedOperationException(inner)
+            }
             crate::operation::describe_resource::DescribeResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -1283,6 +1324,9 @@ impl From<crate::operation::disassociate_delegate_from_resource::DisassociateDel
             }
             crate::operation::disassociate_delegate_from_resource::DisassociateDelegateFromResourceError::OrganizationStateException(inner) => {
                 Error::OrganizationStateException(inner)
+            }
+            crate::operation::disassociate_delegate_from_resource::DisassociateDelegateFromResourceError::UnsupportedOperationException(inner) => {
+                Error::UnsupportedOperationException(inner)
             }
             crate::operation::disassociate_delegate_from_resource::DisassociateDelegateFromResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -1504,6 +1548,9 @@ impl From<crate::operation::get_mailbox_details::GetMailboxDetailsError> for Err
     fn from(err: crate::operation::get_mailbox_details::GetMailboxDetailsError) -> Self {
         match err {
             crate::operation::get_mailbox_details::GetMailboxDetailsError::EntityNotFoundException(inner) => Error::EntityNotFoundException(inner),
+            crate::operation::get_mailbox_details::GetMailboxDetailsError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
             crate::operation::get_mailbox_details::GetMailboxDetailsError::OrganizationNotFoundException(inner) => {
                 Error::OrganizationNotFoundException(inner)
             }
@@ -1766,6 +1813,42 @@ impl From<crate::operation::list_groups::ListGroupsError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_groups_for_entity::ListGroupsForEntityError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_groups_for_entity::ListGroupsForEntityError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_groups_for_entity::ListGroupsForEntityError> for Error {
+    fn from(err: crate::operation::list_groups_for_entity::ListGroupsForEntityError) -> Self {
+        match err {
+            crate::operation::list_groups_for_entity::ListGroupsForEntityError::EntityNotFoundException(inner) => {
+                Error::EntityNotFoundException(inner)
+            }
+            crate::operation::list_groups_for_entity::ListGroupsForEntityError::EntityStateException(inner) => Error::EntityStateException(inner),
+            crate::operation::list_groups_for_entity::ListGroupsForEntityError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::list_groups_for_entity::ListGroupsForEntityError::OrganizationNotFoundException(inner) => {
+                Error::OrganizationNotFoundException(inner)
+            }
+            crate::operation::list_groups_for_entity::ListGroupsForEntityError::OrganizationStateException(inner) => {
+                Error::OrganizationStateException(inner)
+            }
+            crate::operation::list_groups_for_entity::ListGroupsForEntityError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_impersonation_roles::ListImpersonationRolesError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -2021,6 +2104,9 @@ impl From<crate::operation::list_resource_delegates::ListResourceDelegatesError>
             crate::operation::list_resource_delegates::ListResourceDelegatesError::OrganizationStateException(inner) => {
                 Error::OrganizationStateException(inner)
             }
+            crate::operation::list_resource_delegates::ListResourceDelegatesError::UnsupportedOperationException(inner) => {
+                Error::UnsupportedOperationException(inner)
+            }
             crate::operation::list_resource_delegates::ListResourceDelegatesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -2047,6 +2133,7 @@ impl From<crate::operation::list_resources::ListResourcesError> for Error {
             crate::operation::list_resources::ListResourcesError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
             crate::operation::list_resources::ListResourcesError::OrganizationNotFoundException(inner) => Error::OrganizationNotFoundException(inner),
             crate::operation::list_resources::ListResourcesError::OrganizationStateException(inner) => Error::OrganizationStateException(inner),
+            crate::operation::list_resources::ListResourcesError::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
             crate::operation::list_resources::ListResourcesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -2500,6 +2587,7 @@ where
 impl From<crate::operation::tag_resource::TagResourceError> for Error {
     fn from(err: crate::operation::tag_resource::TagResourceError) -> Self {
         match err {
+            crate::operation::tag_resource::TagResourceError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
             crate::operation::tag_resource::TagResourceError::OrganizationStateException(inner) => Error::OrganizationStateException(inner),
             crate::operation::tag_resource::TagResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::tag_resource::TagResourceError::TooManyTagsException(inner) => Error::TooManyTagsException(inner),
@@ -2641,6 +2729,35 @@ impl From<crate::operation::update_default_mail_domain::UpdateDefaultMailDomainE
                 Error::OrganizationStateException(inner)
             }
             crate::operation::update_default_mail_domain::UpdateDefaultMailDomainError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::update_group::UpdateGroupError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::update_group::UpdateGroupError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::update_group::UpdateGroupError> for Error {
+    fn from(err: crate::operation::update_group::UpdateGroupError) -> Self {
+        match err {
+            crate::operation::update_group::UpdateGroupError::EntityNotFoundException(inner) => Error::EntityNotFoundException(inner),
+            crate::operation::update_group::UpdateGroupError::EntityStateException(inner) => Error::EntityStateException(inner),
+            crate::operation::update_group::UpdateGroupError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::update_group::UpdateGroupError::OrganizationNotFoundException(inner) => Error::OrganizationNotFoundException(inner),
+            crate::operation::update_group::UpdateGroupError::OrganizationStateException(inner) => Error::OrganizationStateException(inner),
+            crate::operation::update_group::UpdateGroupError::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
+            crate::operation::update_group::UpdateGroupError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2843,6 +2960,7 @@ impl From<crate::operation::update_resource::UpdateResourceError> for Error {
             crate::operation::update_resource::UpdateResourceError::InvalidConfigurationException(inner) => {
                 Error::InvalidConfigurationException(inner)
             }
+            crate::operation::update_resource::UpdateResourceError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
             crate::operation::update_resource::UpdateResourceError::MailDomainNotFoundException(inner) => Error::MailDomainNotFoundException(inner),
             crate::operation::update_resource::UpdateResourceError::MailDomainStateException(inner) => Error::MailDomainStateException(inner),
             crate::operation::update_resource::UpdateResourceError::NameAvailabilityException(inner) => Error::NameAvailabilityException(inner),
@@ -2850,7 +2968,43 @@ impl From<crate::operation::update_resource::UpdateResourceError> for Error {
                 Error::OrganizationNotFoundException(inner)
             }
             crate::operation::update_resource::UpdateResourceError::OrganizationStateException(inner) => Error::OrganizationStateException(inner),
+            crate::operation::update_resource::UpdateResourceError::UnsupportedOperationException(inner) => {
+                Error::UnsupportedOperationException(inner)
+            }
             crate::operation::update_resource::UpdateResourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::update_user::UpdateUserError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::update_user::UpdateUserError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::update_user::UpdateUserError> for Error {
+    fn from(err: crate::operation::update_user::UpdateUserError) -> Self {
+        match err {
+            crate::operation::update_user::UpdateUserError::DirectoryServiceAuthenticationFailedException(inner) => {
+                Error::DirectoryServiceAuthenticationFailedException(inner)
+            }
+            crate::operation::update_user::UpdateUserError::DirectoryUnavailableException(inner) => Error::DirectoryUnavailableException(inner),
+            crate::operation::update_user::UpdateUserError::EntityNotFoundException(inner) => Error::EntityNotFoundException(inner),
+            crate::operation::update_user::UpdateUserError::EntityStateException(inner) => Error::EntityStateException(inner),
+            crate::operation::update_user::UpdateUserError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::update_user::UpdateUserError::OrganizationNotFoundException(inner) => Error::OrganizationNotFoundException(inner),
+            crate::operation::update_user::UpdateUserError::OrganizationStateException(inner) => Error::OrganizationStateException(inner),
+            crate::operation::update_user::UpdateUserError::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
+            crate::operation::update_user::UpdateUserError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

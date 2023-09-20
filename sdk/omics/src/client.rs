@@ -131,6 +131,8 @@ impl Client {
 
 mod abort_multipart_read_set_upload;
 
+mod accept_share;
+
 mod batch_delete_read_set;
 
 mod cancel_annotation_import_job;
@@ -143,6 +145,8 @@ mod complete_multipart_read_set_upload;
 
 mod create_annotation_store;
 
+mod create_annotation_store_version;
+
 mod create_multipart_read_set_upload;
 
 mod create_reference_store;
@@ -150,6 +154,8 @@ mod create_reference_store;
 mod create_run_group;
 
 mod create_sequence_store;
+
+mod create_share;
 
 mod create_variant_store;
 
@@ -161,6 +167,8 @@ pub mod customize;
 
 mod delete_annotation_store;
 
+mod delete_annotation_store_versions;
+
 mod delete_reference;
 
 mod delete_reference_store;
@@ -171,6 +179,8 @@ mod delete_run_group;
 
 mod delete_sequence_store;
 
+mod delete_share;
+
 mod delete_variant_store;
 
 mod delete_workflow;
@@ -178,6 +188,8 @@ mod delete_workflow;
 mod get_annotation_import_job;
 
 mod get_annotation_store;
+
+mod get_annotation_store_version;
 
 mod get_read_set;
 
@@ -205,6 +217,8 @@ mod get_run_task;
 
 mod get_sequence_store;
 
+mod get_share;
+
 mod get_variant_import_job;
 
 mod get_variant_store;
@@ -212,6 +226,8 @@ mod get_variant_store;
 mod get_workflow;
 
 mod list_annotation_import_jobs;
+
+mod list_annotation_store_versions;
 
 mod list_annotation_stores;
 
@@ -241,6 +257,8 @@ mod list_runs;
 
 mod list_sequence_stores;
 
+mod list_shares;
+
 mod list_tags_for_resource;
 
 mod list_variant_import_jobs;
@@ -268,6 +286,8 @@ mod tag_resource;
 mod untag_resource;
 
 mod update_annotation_store;
+
+mod update_annotation_store_version;
 
 mod update_run_group;
 

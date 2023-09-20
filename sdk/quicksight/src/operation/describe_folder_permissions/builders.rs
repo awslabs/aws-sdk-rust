@@ -110,6 +110,12 @@ impl DescribeFolderPermissionsFluentBuilder {
         self.config_override = config_override;
         self
     }
+    /// Create a paginator for this request
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::describe_folder_permissions::paginator::DescribeFolderPermissionsPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(self) -> crate::operation::describe_folder_permissions::paginator::DescribeFolderPermissionsPaginator {
+        crate::operation::describe_folder_permissions::paginator::DescribeFolderPermissionsPaginator::new(self.handle, self.inner)
+    }
     /// <p>The ID for the Amazon Web Services account that contains the folder.</p>
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.aws_account_id(input.into());
@@ -137,5 +143,47 @@ impl DescribeFolderPermissionsFluentBuilder {
     /// <p>The ID of the folder.</p>
     pub fn get_folder_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_folder_id()
+    }
+    /// <p>The namespace of the folder whose permissions you want described.</p>
+    pub fn namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.namespace(input.into());
+        self
+    }
+    /// <p>The namespace of the folder whose permissions you want described.</p>
+    pub fn set_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_namespace(input);
+        self
+    }
+    /// <p>The namespace of the folder whose permissions you want described.</p>
+    pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_namespace()
+    }
+    /// <p>The maximum number of results to be returned per request.</p>
+    pub fn max_results(mut self, input: i32) -> Self {
+        self.inner = self.inner.max_results(input);
+        self
+    }
+    /// <p>The maximum number of results to be returned per request.</p>
+    pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.inner = self.inner.set_max_results(input);
+        self
+    }
+    /// <p>The maximum number of results to be returned per request.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
+    /// <p>A pagination token for the next set of results.</p>
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.next_token(input.into());
+        self
+    }
+    /// <p>A pagination token for the next set of results.</p>
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_next_token(input);
+        self
+    }
+    /// <p>A pagination token for the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

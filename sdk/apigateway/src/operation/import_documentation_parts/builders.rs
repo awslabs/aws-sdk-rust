@@ -124,17 +124,17 @@ impl ImportDocumentationPartsFluentBuilder {
     pub fn get_rest_api_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_rest_api_id()
     }
-    /// <p>A query parameter to indicate whether to overwrite (<code>OVERWRITE</code>) any existing DocumentationParts definition or to merge (<code>MERGE</code>) the new definition into the existing one. The default value is <code>MERGE</code>.</p>
+    /// <p>A query parameter to indicate whether to overwrite (<code>overwrite</code>) any existing DocumentationParts definition or to merge (<code>merge</code>) the new definition into the existing one. The default value is <code>merge</code>.</p>
     pub fn mode(mut self, input: crate::types::PutMode) -> Self {
         self.inner = self.inner.mode(input);
         self
     }
-    /// <p>A query parameter to indicate whether to overwrite (<code>OVERWRITE</code>) any existing DocumentationParts definition or to merge (<code>MERGE</code>) the new definition into the existing one. The default value is <code>MERGE</code>.</p>
+    /// <p>A query parameter to indicate whether to overwrite (<code>overwrite</code>) any existing DocumentationParts definition or to merge (<code>merge</code>) the new definition into the existing one. The default value is <code>merge</code>.</p>
     pub fn set_mode(mut self, input: ::std::option::Option<crate::types::PutMode>) -> Self {
         self.inner = self.inner.set_mode(input);
         self
     }
-    /// <p>A query parameter to indicate whether to overwrite (<code>OVERWRITE</code>) any existing DocumentationParts definition or to merge (<code>MERGE</code>) the new definition into the existing one. The default value is <code>MERGE</code>.</p>
+    /// <p>A query parameter to indicate whether to overwrite (<code>overwrite</code>) any existing DocumentationParts definition or to merge (<code>merge</code>) the new definition into the existing one. The default value is <code>merge</code>.</p>
     pub fn get_mode(&self) -> &::std::option::Option<crate::types::PutMode> {
         self.inner.get_mode()
     }

@@ -156,17 +156,23 @@ impl DescribeAlarmsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_alarm_types`](Self::set_alarm_types).
     ///
-    /// <p>Use this parameter to specify whether you want the operation to return metric alarms or composite alarms. If you omit this parameter, only metric alarms are returned.</p>
+    /// <p>Use this parameter to specify whether you want the operation to return metric alarms or composite alarms. If you omit this parameter, only metric alarms are returned, even if composite alarms exist in the account.</p>
+    /// <p>For example, if you omit this parameter or specify <code>MetricAlarms</code>, the operation returns only a list of metric alarms. It does not return any composite alarms, even if composite alarms exist in the account.</p>
+    /// <p>If you specify <code>CompositeAlarms</code>, the operation returns only a list of composite alarms, and does not return any metric alarms.</p>
     pub fn alarm_types(mut self, input: crate::types::AlarmType) -> Self {
         self.inner = self.inner.alarm_types(input);
         self
     }
-    /// <p>Use this parameter to specify whether you want the operation to return metric alarms or composite alarms. If you omit this parameter, only metric alarms are returned.</p>
+    /// <p>Use this parameter to specify whether you want the operation to return metric alarms or composite alarms. If you omit this parameter, only metric alarms are returned, even if composite alarms exist in the account.</p>
+    /// <p>For example, if you omit this parameter or specify <code>MetricAlarms</code>, the operation returns only a list of metric alarms. It does not return any composite alarms, even if composite alarms exist in the account.</p>
+    /// <p>If you specify <code>CompositeAlarms</code>, the operation returns only a list of composite alarms, and does not return any metric alarms.</p>
     pub fn set_alarm_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AlarmType>>) -> Self {
         self.inner = self.inner.set_alarm_types(input);
         self
     }
-    /// <p>Use this parameter to specify whether you want the operation to return metric alarms or composite alarms. If you omit this parameter, only metric alarms are returned.</p>
+    /// <p>Use this parameter to specify whether you want the operation to return metric alarms or composite alarms. If you omit this parameter, only metric alarms are returned, even if composite alarms exist in the account.</p>
+    /// <p>For example, if you omit this parameter or specify <code>MetricAlarms</code>, the operation returns only a list of metric alarms. It does not return any composite alarms, even if composite alarms exist in the account.</p>
+    /// <p>If you specify <code>CompositeAlarms</code>, the operation returns only a list of composite alarms, and does not return any metric alarms.</p>
     pub fn get_alarm_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AlarmType>> {
         self.inner.get_alarm_types()
     }

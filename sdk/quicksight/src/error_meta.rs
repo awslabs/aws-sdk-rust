@@ -2526,6 +2526,9 @@ impl From<crate::operation::describe_folder_permissions::DescribeFolderPermissio
             crate::operation::describe_folder_permissions::DescribeFolderPermissionsError::InternalFailureException(inner) => {
                 Error::InternalFailureException(inner)
             }
+            crate::operation::describe_folder_permissions::DescribeFolderPermissionsError::InvalidNextTokenException(inner) => {
+                Error::InvalidNextTokenException(inner)
+            }
             crate::operation::describe_folder_permissions::DescribeFolderPermissionsError::InvalidParameterValueException(inner) => {
                 Error::InvalidParameterValueException(inner)
             }
@@ -2569,6 +2572,9 @@ impl From<crate::operation::describe_folder_resolved_permissions::DescribeFolder
             }
             crate::operation::describe_folder_resolved_permissions::DescribeFolderResolvedPermissionsError::InternalFailureException(inner) => {
                 Error::InternalFailureException(inner)
+            }
+            crate::operation::describe_folder_resolved_permissions::DescribeFolderResolvedPermissionsError::InvalidNextTokenException(inner) => {
+                Error::InvalidNextTokenException(inner)
             }
             crate::operation::describe_folder_resolved_permissions::DescribeFolderResolvedPermissionsError::InvalidParameterValueException(inner) => {
                 Error::InvalidParameterValueException(inner)

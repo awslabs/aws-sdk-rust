@@ -117,6 +117,13 @@ pub(crate) fn de_describe_log_pattern(
                             .transpose()?,
                     );
                 }
+                "AccountId" => {
+                    builder = builder.set_account_id(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 "LogPattern" => {
                     builder = builder.set_log_pattern(crate::protocol_serde::shape_log_pattern::de_log_pattern(tokens)?);
                 }

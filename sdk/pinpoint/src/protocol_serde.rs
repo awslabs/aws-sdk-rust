@@ -817,6 +817,8 @@ pub(crate) mod shape_android_push_notification_template;
 
 pub(crate) mod shape_apns_push_notification_template;
 
+pub(crate) mod shape_application_settings_journey_limits;
+
 pub(crate) mod shape_campaign_hook;
 
 pub(crate) mod shape_campaign_limits;
@@ -922,6 +924,8 @@ pub(crate) mod shape_in_app_message_body_config;
 pub(crate) mod shape_in_app_message_button;
 
 pub(crate) mod shape_in_app_message_header_config;
+
+pub(crate) mod shape_journey_timeframe_cap;
 
 #[allow(non_snake_case)]
 pub(crate) mod shape_list_of__string;

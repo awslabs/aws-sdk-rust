@@ -12,8 +12,8 @@ pub fn ser_disassociate_discovered_resource_input(
     if let Some(var_3) = &input.configuration_id {
         object.key("ConfigurationId").string(var_3.as_str());
     }
-    if input.dry_run {
-        object.key("DryRun").boolean(input.dry_run);
+    if let Some(var_4) = &input.dry_run {
+        object.key("DryRun").boolean(*var_4);
     }
     Ok(())
 }

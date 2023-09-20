@@ -15,5 +15,8 @@ pub fn ser_request_service_quota_increase_input(
             ::aws_smithy_types::Number::Float((*var_3).into()),
         );
     }
+    if let Some(var_4) = &input.context_id {
+        object.key("ContextId").string(var_4.as_str());
+    }
     Ok(())
 }

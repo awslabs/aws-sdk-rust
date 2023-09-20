@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeFleetCapacityOutput {
-    /// <p>A collection of objects that contains capacity information for each requested fleet ID. Capacity objects are returned only for fleets that currently exist.</p>
+    /// <p>A collection of objects that contains capacity information for each requested fleet ID. Capacity objects are returned only for fleets that currently exist. Changes in desired instance value can take up to 1 minute to be reflected.</p>
     pub fleet_capacity: ::std::option::Option<::std::vec::Vec<crate::types::FleetCapacity>>,
     /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeFleetCapacityOutput {
-    /// <p>A collection of objects that contains capacity information for each requested fleet ID. Capacity objects are returned only for fleets that currently exist.</p>
+    /// <p>A collection of objects that contains capacity information for each requested fleet ID. Capacity objects are returned only for fleets that currently exist. Changes in desired instance value can take up to 1 minute to be reflected.</p>
     pub fn fleet_capacity(&self) -> ::std::option::Option<&[crate::types::FleetCapacity]> {
         self.fleet_capacity.as_deref()
     }
@@ -44,19 +44,19 @@ impl DescribeFleetCapacityOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_fleet_capacity`](Self::set_fleet_capacity).
     ///
-    /// <p>A collection of objects that contains capacity information for each requested fleet ID. Capacity objects are returned only for fleets that currently exist.</p>
+    /// <p>A collection of objects that contains capacity information for each requested fleet ID. Capacity objects are returned only for fleets that currently exist. Changes in desired instance value can take up to 1 minute to be reflected.</p>
     pub fn fleet_capacity(mut self, input: crate::types::FleetCapacity) -> Self {
         let mut v = self.fleet_capacity.unwrap_or_default();
         v.push(input);
         self.fleet_capacity = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A collection of objects that contains capacity information for each requested fleet ID. Capacity objects are returned only for fleets that currently exist.</p>
+    /// <p>A collection of objects that contains capacity information for each requested fleet ID. Capacity objects are returned only for fleets that currently exist. Changes in desired instance value can take up to 1 minute to be reflected.</p>
     pub fn set_fleet_capacity(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FleetCapacity>>) -> Self {
         self.fleet_capacity = input;
         self
     }
-    /// <p>A collection of objects that contains capacity information for each requested fleet ID. Capacity objects are returned only for fleets that currently exist.</p>
+    /// <p>A collection of objects that contains capacity information for each requested fleet ID. Capacity objects are returned only for fleets that currently exist. Changes in desired instance value can take up to 1 minute to be reflected.</p>
     pub fn get_fleet_capacity(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FleetCapacity>> {
         &self.fleet_capacity
     }

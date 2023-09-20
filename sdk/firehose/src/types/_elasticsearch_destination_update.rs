@@ -28,6 +28,8 @@ pub struct ElasticsearchDestinationUpdate {
     pub processing_configuration: ::std::option::Option<crate::types::ProcessingConfiguration>,
     /// <p>The CloudWatch logging options for your delivery stream.</p>
     pub cloud_watch_logging_options: ::std::option::Option<crate::types::CloudWatchLoggingOptions>,
+    /// <p>Indicates the method for setting up document ID. The supported methods are Kinesis Data Firehose generated document ID and OpenSearch Service generated document ID.</p>
+    pub document_id_options: ::std::option::Option<crate::types::DocumentIdOptions>,
 }
 impl ElasticsearchDestinationUpdate {
     /// <p>The Amazon Resource Name (ARN) of the IAM role to be assumed by Kinesis Data Firehose for calling the Amazon ES Configuration API and for indexing documents. For more information, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Grant Kinesis Data Firehose Access to an Amazon S3 Destination</a> and <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
@@ -76,6 +78,10 @@ impl ElasticsearchDestinationUpdate {
     pub fn cloud_watch_logging_options(&self) -> ::std::option::Option<&crate::types::CloudWatchLoggingOptions> {
         self.cloud_watch_logging_options.as_ref()
     }
+    /// <p>Indicates the method for setting up document ID. The supported methods are Kinesis Data Firehose generated document ID and OpenSearch Service generated document ID.</p>
+    pub fn document_id_options(&self) -> ::std::option::Option<&crate::types::DocumentIdOptions> {
+        self.document_id_options.as_ref()
+    }
 }
 impl ElasticsearchDestinationUpdate {
     /// Creates a new builder-style object to manufacture [`ElasticsearchDestinationUpdate`](crate::types::ElasticsearchDestinationUpdate).
@@ -99,6 +105,7 @@ pub struct ElasticsearchDestinationUpdateBuilder {
     pub(crate) s3_update: ::std::option::Option<crate::types::S3DestinationUpdate>,
     pub(crate) processing_configuration: ::std::option::Option<crate::types::ProcessingConfiguration>,
     pub(crate) cloud_watch_logging_options: ::std::option::Option<crate::types::CloudWatchLoggingOptions>,
+    pub(crate) document_id_options: ::std::option::Option<crate::types::DocumentIdOptions>,
 }
 impl ElasticsearchDestinationUpdateBuilder {
     /// <p>The Amazon Resource Name (ARN) of the IAM role to be assumed by Kinesis Data Firehose for calling the Amazon ES Configuration API and for indexing documents. For more information, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Grant Kinesis Data Firehose Access to an Amazon S3 Destination</a> and <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
@@ -261,6 +268,20 @@ impl ElasticsearchDestinationUpdateBuilder {
     pub fn get_cloud_watch_logging_options(&self) -> &::std::option::Option<crate::types::CloudWatchLoggingOptions> {
         &self.cloud_watch_logging_options
     }
+    /// <p>Indicates the method for setting up document ID. The supported methods are Kinesis Data Firehose generated document ID and OpenSearch Service generated document ID.</p>
+    pub fn document_id_options(mut self, input: crate::types::DocumentIdOptions) -> Self {
+        self.document_id_options = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates the method for setting up document ID. The supported methods are Kinesis Data Firehose generated document ID and OpenSearch Service generated document ID.</p>
+    pub fn set_document_id_options(mut self, input: ::std::option::Option<crate::types::DocumentIdOptions>) -> Self {
+        self.document_id_options = input;
+        self
+    }
+    /// <p>Indicates the method for setting up document ID. The supported methods are Kinesis Data Firehose generated document ID and OpenSearch Service generated document ID.</p>
+    pub fn get_document_id_options(&self) -> &::std::option::Option<crate::types::DocumentIdOptions> {
+        &self.document_id_options
+    }
     /// Consumes the builder and constructs a [`ElasticsearchDestinationUpdate`](crate::types::ElasticsearchDestinationUpdate).
     pub fn build(self) -> crate::types::ElasticsearchDestinationUpdate {
         crate::types::ElasticsearchDestinationUpdate {
@@ -275,6 +296,7 @@ impl ElasticsearchDestinationUpdateBuilder {
             s3_update: self.s3_update,
             processing_configuration: self.processing_configuration,
             cloud_watch_logging_options: self.cloud_watch_logging_options,
+            document_id_options: self.document_id_options,
         }
     }
 }

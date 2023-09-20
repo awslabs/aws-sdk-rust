@@ -4,13 +4,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RegistryScanningRule {
-    /// <p>The frequency that scans are performed at for a private registry. When the <code>ENHANCED</code> scan type is specified, the supported scan frequencies are <code>CONTINUOUS_SCAN</code> and <code>SCAN_ON_PUSH</code>. When the <code>BASIC</code> scan type is specified, the <code>SCAN_ON_PUSH</code> and <code>MANUAL</code> scan frequencies are supported.</p>
+    /// <p>The frequency that scans are performed at for a private registry. When the <code>ENHANCED</code> scan type is specified, the supported scan frequencies are <code>CONTINUOUS_SCAN</code> and <code>SCAN_ON_PUSH</code>. When the <code>BASIC</code> scan type is specified, the <code>SCAN_ON_PUSH</code> scan frequency is supported. If scan on push is not specified, then the <code>MANUAL</code> scan frequency is set by default.</p>
     pub scan_frequency: ::std::option::Option<crate::types::ScanFrequency>,
     /// <p>The repository filters associated with the scanning configuration for a private registry.</p>
     pub repository_filters: ::std::option::Option<::std::vec::Vec<crate::types::ScanningRepositoryFilter>>,
 }
 impl RegistryScanningRule {
-    /// <p>The frequency that scans are performed at for a private registry. When the <code>ENHANCED</code> scan type is specified, the supported scan frequencies are <code>CONTINUOUS_SCAN</code> and <code>SCAN_ON_PUSH</code>. When the <code>BASIC</code> scan type is specified, the <code>SCAN_ON_PUSH</code> and <code>MANUAL</code> scan frequencies are supported.</p>
+    /// <p>The frequency that scans are performed at for a private registry. When the <code>ENHANCED</code> scan type is specified, the supported scan frequencies are <code>CONTINUOUS_SCAN</code> and <code>SCAN_ON_PUSH</code>. When the <code>BASIC</code> scan type is specified, the <code>SCAN_ON_PUSH</code> scan frequency is supported. If scan on push is not specified, then the <code>MANUAL</code> scan frequency is set by default.</p>
     pub fn scan_frequency(&self) -> ::std::option::Option<&crate::types::ScanFrequency> {
         self.scan_frequency.as_ref()
     }
@@ -34,17 +34,17 @@ pub struct RegistryScanningRuleBuilder {
     pub(crate) repository_filters: ::std::option::Option<::std::vec::Vec<crate::types::ScanningRepositoryFilter>>,
 }
 impl RegistryScanningRuleBuilder {
-    /// <p>The frequency that scans are performed at for a private registry. When the <code>ENHANCED</code> scan type is specified, the supported scan frequencies are <code>CONTINUOUS_SCAN</code> and <code>SCAN_ON_PUSH</code>. When the <code>BASIC</code> scan type is specified, the <code>SCAN_ON_PUSH</code> and <code>MANUAL</code> scan frequencies are supported.</p>
+    /// <p>The frequency that scans are performed at for a private registry. When the <code>ENHANCED</code> scan type is specified, the supported scan frequencies are <code>CONTINUOUS_SCAN</code> and <code>SCAN_ON_PUSH</code>. When the <code>BASIC</code> scan type is specified, the <code>SCAN_ON_PUSH</code> scan frequency is supported. If scan on push is not specified, then the <code>MANUAL</code> scan frequency is set by default.</p>
     pub fn scan_frequency(mut self, input: crate::types::ScanFrequency) -> Self {
         self.scan_frequency = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The frequency that scans are performed at for a private registry. When the <code>ENHANCED</code> scan type is specified, the supported scan frequencies are <code>CONTINUOUS_SCAN</code> and <code>SCAN_ON_PUSH</code>. When the <code>BASIC</code> scan type is specified, the <code>SCAN_ON_PUSH</code> and <code>MANUAL</code> scan frequencies are supported.</p>
+    /// <p>The frequency that scans are performed at for a private registry. When the <code>ENHANCED</code> scan type is specified, the supported scan frequencies are <code>CONTINUOUS_SCAN</code> and <code>SCAN_ON_PUSH</code>. When the <code>BASIC</code> scan type is specified, the <code>SCAN_ON_PUSH</code> scan frequency is supported. If scan on push is not specified, then the <code>MANUAL</code> scan frequency is set by default.</p>
     pub fn set_scan_frequency(mut self, input: ::std::option::Option<crate::types::ScanFrequency>) -> Self {
         self.scan_frequency = input;
         self
     }
-    /// <p>The frequency that scans are performed at for a private registry. When the <code>ENHANCED</code> scan type is specified, the supported scan frequencies are <code>CONTINUOUS_SCAN</code> and <code>SCAN_ON_PUSH</code>. When the <code>BASIC</code> scan type is specified, the <code>SCAN_ON_PUSH</code> and <code>MANUAL</code> scan frequencies are supported.</p>
+    /// <p>The frequency that scans are performed at for a private registry. When the <code>ENHANCED</code> scan type is specified, the supported scan frequencies are <code>CONTINUOUS_SCAN</code> and <code>SCAN_ON_PUSH</code>. When the <code>BASIC</code> scan type is specified, the <code>SCAN_ON_PUSH</code> scan frequency is supported. If scan on push is not specified, then the <code>MANUAL</code> scan frequency is set by default.</p>
     pub fn get_scan_frequency(&self) -> &::std::option::Option<crate::types::ScanFrequency> {
         &self.scan_frequency
     }

@@ -77,6 +77,9 @@ pub struct ModifyCustomDbEngineVersionOutput {
     /// <p>A list of the supported CA certificate identifiers.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
     pub supported_ca_certificate_identifiers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>A value that indicates whether the DB engine version supports forwarding write operations from reader DB instances to the writer DB instance in the DB cluster. By default, write operations aren't allowed on reader DB instances.</p>
+    /// <p>Valid for: Aurora DB clusters only</p>
+    pub supports_local_write_forwarding: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }
 impl ModifyCustomDbEngineVersionOutput {
@@ -215,6 +218,11 @@ impl ModifyCustomDbEngineVersionOutput {
     pub fn supported_ca_certificate_identifiers(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.supported_ca_certificate_identifiers.as_deref()
     }
+    /// <p>A value that indicates whether the DB engine version supports forwarding write operations from reader DB instances to the writer DB instance in the DB cluster. By default, write operations aren't allowed on reader DB instances.</p>
+    /// <p>Valid for: Aurora DB clusters only</p>
+    pub fn supports_local_write_forwarding(&self) -> ::std::option::Option<bool> {
+        self.supports_local_write_forwarding
+    }
 }
 impl ::aws_http::request_id::RequestId for ModifyCustomDbEngineVersionOutput {
     fn request_id(&self) -> Option<&str> {
@@ -263,6 +271,7 @@ pub struct ModifyCustomDbEngineVersionOutputBuilder {
     pub(crate) custom_db_engine_version_manifest: ::std::option::Option<::std::string::String>,
     pub(crate) supports_certificate_rotation_without_restart: ::std::option::Option<bool>,
     pub(crate) supported_ca_certificate_identifiers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) supports_local_write_forwarding: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }
 impl ModifyCustomDbEngineVersionOutputBuilder {
@@ -787,6 +796,23 @@ impl ModifyCustomDbEngineVersionOutputBuilder {
     pub fn get_supported_ca_certificate_identifiers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.supported_ca_certificate_identifiers
     }
+    /// <p>A value that indicates whether the DB engine version supports forwarding write operations from reader DB instances to the writer DB instance in the DB cluster. By default, write operations aren't allowed on reader DB instances.</p>
+    /// <p>Valid for: Aurora DB clusters only</p>
+    pub fn supports_local_write_forwarding(mut self, input: bool) -> Self {
+        self.supports_local_write_forwarding = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A value that indicates whether the DB engine version supports forwarding write operations from reader DB instances to the writer DB instance in the DB cluster. By default, write operations aren't allowed on reader DB instances.</p>
+    /// <p>Valid for: Aurora DB clusters only</p>
+    pub fn set_supports_local_write_forwarding(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.supports_local_write_forwarding = input;
+        self
+    }
+    /// <p>A value that indicates whether the DB engine version supports forwarding write operations from reader DB instances to the writer DB instance in the DB cluster. By default, write operations aren't allowed on reader DB instances.</p>
+    /// <p>Valid for: Aurora DB clusters only</p>
+    pub fn get_supports_local_write_forwarding(&self) -> &::std::option::Option<bool> {
+        &self.supports_local_write_forwarding
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -830,6 +856,7 @@ impl ModifyCustomDbEngineVersionOutputBuilder {
             custom_db_engine_version_manifest: self.custom_db_engine_version_manifest,
             supports_certificate_rotation_without_restart: self.supports_certificate_rotation_without_restart,
             supported_ca_certificate_identifiers: self.supported_ca_certificate_identifiers,
+            supports_local_write_forwarding: self.supports_local_write_forwarding,
             _request_id: self._request_id,
         }
     }

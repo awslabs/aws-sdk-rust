@@ -25,7 +25,7 @@ pub struct ModifyDbClusterInput {
     /// <p>Most modifications can be applied immediately or during the next scheduled maintenance window. Some modifications, such as turning on deletion protection and changing the master password, are applied immediately—regardless of when you choose to apply them.</p>
     /// <p>By default, this parameter is disabled.</p>
     /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
-    pub apply_immediately: bool,
+    pub apply_immediately: ::std::option::Option<bool>,
     /// <p>The number of days for which automated backups are retained. Specify a minimum value of <code>1</code>.</p>
     /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
     /// <p>Default: <code>1</code> </p>
@@ -121,7 +121,7 @@ pub struct ModifyDbClusterInput {
     /// <ul>
     /// <li> <p>You must allow major version upgrades when specifying a value for the <code>EngineVersion</code> parameter that is a different major version than the DB cluster's current version.</p> </li>
     /// </ul>
-    pub allow_major_version_upgrade: bool,
+    pub allow_major_version_upgrade: ::std::option::Option<bool>,
     /// <p>The name of the DB parameter group to apply to all instances of the DB cluster.</p> <note>
     /// <p>When you apply a parameter group using the <code>DBInstanceParameterGroupName</code> parameter, the DB cluster isn't rebooted automatically. Also, parameter changes are applied immediately rather than during the next maintenance window.</p>
     /// </note>
@@ -267,7 +267,12 @@ pub struct ModifyDbClusterInput {
     /// <ul>
     /// <li> <p>You must allow engine mode changes when specifying a different value for the <code>EngineMode</code> parameter from the DB cluster's current engine mode.</p> </li>
     /// </ul>
-    pub allow_engine_mode_change: bool,
+    pub allow_engine_mode_change: ::std::option::Option<bool>,
+    /// <p>Specifies whether read replicas can forward write operations to the writer DB instance in the DB cluster. By default, write operations aren't allowed on reader DB instances.</p>
+    /// <p>Valid for: Aurora DB clusters only</p>
+    pub enable_local_write_forwarding: ::std::option::Option<bool>,
+    /// <p>The Amazon Resource Name (ARN) of the recovery point in Amazon Web Services Backup.</p>
+    pub aws_backup_recovery_point_arn: ::std::option::Option<::std::string::String>,
 }
 impl ModifyDbClusterInput {
     /// <p>The DB cluster identifier for the cluster being modified. This parameter isn't case-sensitive.</p>
@@ -295,7 +300,7 @@ impl ModifyDbClusterInput {
     /// <p>Most modifications can be applied immediately or during the next scheduled maintenance window. Some modifications, such as turning on deletion protection and changing the master password, are applied immediately—regardless of when you choose to apply them.</p>
     /// <p>By default, this parameter is disabled.</p>
     /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
-    pub fn apply_immediately(&self) -> bool {
+    pub fn apply_immediately(&self) -> ::std::option::Option<bool> {
         self.apply_immediately
     }
     /// <p>The number of days for which automated backups are retained. Specify a minimum value of <code>1</code>.</p>
@@ -417,7 +422,7 @@ impl ModifyDbClusterInput {
     /// <ul>
     /// <li> <p>You must allow major version upgrades when specifying a value for the <code>EngineVersion</code> parameter that is a different major version than the DB cluster's current version.</p> </li>
     /// </ul>
-    pub fn allow_major_version_upgrade(&self) -> bool {
+    pub fn allow_major_version_upgrade(&self) -> ::std::option::Option<bool> {
         self.allow_major_version_upgrade
     }
     /// <p>The name of the DB parameter group to apply to all instances of the DB cluster.</p> <note>
@@ -613,8 +618,17 @@ impl ModifyDbClusterInput {
     /// <ul>
     /// <li> <p>You must allow engine mode changes when specifying a different value for the <code>EngineMode</code> parameter from the DB cluster's current engine mode.</p> </li>
     /// </ul>
-    pub fn allow_engine_mode_change(&self) -> bool {
+    pub fn allow_engine_mode_change(&self) -> ::std::option::Option<bool> {
         self.allow_engine_mode_change
+    }
+    /// <p>Specifies whether read replicas can forward write operations to the writer DB instance in the DB cluster. By default, write operations aren't allowed on reader DB instances.</p>
+    /// <p>Valid for: Aurora DB clusters only</p>
+    pub fn enable_local_write_forwarding(&self) -> ::std::option::Option<bool> {
+        self.enable_local_write_forwarding
+    }
+    /// <p>The Amazon Resource Name (ARN) of the recovery point in Amazon Web Services Backup.</p>
+    pub fn aws_backup_recovery_point_arn(&self) -> ::std::option::Option<&str> {
+        self.aws_backup_recovery_point_arn.as_deref()
     }
 }
 impl ModifyDbClusterInput {
@@ -669,6 +683,8 @@ pub struct ModifyDbClusterInputBuilder {
     pub(crate) master_user_secret_kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) engine_mode: ::std::option::Option<::std::string::String>,
     pub(crate) allow_engine_mode_change: ::std::option::Option<bool>,
+    pub(crate) enable_local_write_forwarding: ::std::option::Option<bool>,
+    pub(crate) aws_backup_recovery_point_arn: ::std::option::Option<::std::string::String>,
 }
 impl ModifyDbClusterInputBuilder {
     /// <p>The DB cluster identifier for the cluster being modified. This parameter isn't case-sensitive.</p>
@@ -1797,6 +1813,37 @@ impl ModifyDbClusterInputBuilder {
     pub fn get_allow_engine_mode_change(&self) -> &::std::option::Option<bool> {
         &self.allow_engine_mode_change
     }
+    /// <p>Specifies whether read replicas can forward write operations to the writer DB instance in the DB cluster. By default, write operations aren't allowed on reader DB instances.</p>
+    /// <p>Valid for: Aurora DB clusters only</p>
+    pub fn enable_local_write_forwarding(mut self, input: bool) -> Self {
+        self.enable_local_write_forwarding = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether read replicas can forward write operations to the writer DB instance in the DB cluster. By default, write operations aren't allowed on reader DB instances.</p>
+    /// <p>Valid for: Aurora DB clusters only</p>
+    pub fn set_enable_local_write_forwarding(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.enable_local_write_forwarding = input;
+        self
+    }
+    /// <p>Specifies whether read replicas can forward write operations to the writer DB instance in the DB cluster. By default, write operations aren't allowed on reader DB instances.</p>
+    /// <p>Valid for: Aurora DB clusters only</p>
+    pub fn get_enable_local_write_forwarding(&self) -> &::std::option::Option<bool> {
+        &self.enable_local_write_forwarding
+    }
+    /// <p>The Amazon Resource Name (ARN) of the recovery point in Amazon Web Services Backup.</p>
+    pub fn aws_backup_recovery_point_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.aws_backup_recovery_point_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the recovery point in Amazon Web Services Backup.</p>
+    pub fn set_aws_backup_recovery_point_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.aws_backup_recovery_point_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the recovery point in Amazon Web Services Backup.</p>
+    pub fn get_aws_backup_recovery_point_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_backup_recovery_point_arn
+    }
     /// Consumes the builder and constructs a [`ModifyDbClusterInput`](crate::operation::modify_db_cluster::ModifyDbClusterInput).
     pub fn build(
         self,
@@ -1804,7 +1851,7 @@ impl ModifyDbClusterInputBuilder {
         ::std::result::Result::Ok(crate::operation::modify_db_cluster::ModifyDbClusterInput {
             db_cluster_identifier: self.db_cluster_identifier,
             new_db_cluster_identifier: self.new_db_cluster_identifier,
-            apply_immediately: self.apply_immediately.unwrap_or_default(),
+            apply_immediately: self.apply_immediately,
             backup_retention_period: self.backup_retention_period,
             db_cluster_parameter_group_name: self.db_cluster_parameter_group_name,
             vpc_security_group_ids: self.vpc_security_group_ids,
@@ -1817,7 +1864,7 @@ impl ModifyDbClusterInputBuilder {
             backtrack_window: self.backtrack_window,
             cloudwatch_logs_export_configuration: self.cloudwatch_logs_export_configuration,
             engine_version: self.engine_version,
-            allow_major_version_upgrade: self.allow_major_version_upgrade.unwrap_or_default(),
+            allow_major_version_upgrade: self.allow_major_version_upgrade,
             db_instance_parameter_group_name: self.db_instance_parameter_group_name,
             domain: self.domain,
             domain_iam_role_name: self.domain_iam_role_name,
@@ -1842,7 +1889,9 @@ impl ModifyDbClusterInputBuilder {
             rotate_master_user_password: self.rotate_master_user_password,
             master_user_secret_kms_key_id: self.master_user_secret_kms_key_id,
             engine_mode: self.engine_mode,
-            allow_engine_mode_change: self.allow_engine_mode_change.unwrap_or_default(),
+            allow_engine_mode_change: self.allow_engine_mode_change,
+            enable_local_write_forwarding: self.enable_local_write_forwarding,
+            aws_backup_recovery_point_arn: self.aws_backup_recovery_point_arn,
         })
     }
 }

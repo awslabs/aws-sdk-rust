@@ -275,8 +275,22 @@ pub type ListTagsForResourceErrorKind = ListTagsForResourceError;
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum ListTagsForResourceError {
+    /// <p>The input parameters don't match the service's restrictions.</p>
+    BadRequestException(crate::types::error::BadRequestException),
+    /// <p>The client is permanently forbidden from making the request.</p>
+    ForbiddenException(crate::types::error::ForbiddenException),
+    /// <p>The request exceeds the resource limit.</p>
+    LimitExceededException(crate::types::error::LimitExceededException),
     /// <p>The resource that you want to tag couldn't be found.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
+    /// <p>The service encountered an unexpected error.</p>
+    ServiceFailureException(crate::types::error::ServiceFailureException),
+    /// <p>The service is currently unavailable.</p>
+    ServiceUnavailableException(crate::types::error::ServiceUnavailableException),
+    /// <p>The number of customer requests exceeds the request rate limit.</p>
+    ThrottlingException(crate::types::error::ThrottlingException),
+    /// <p>The user isn't authorized to request a resource.</p>
+    UnauthorizedException(crate::types::error::UnauthorizedException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(::aws_smithy_types::error::Unhandled),
 }
@@ -295,7 +309,14 @@ impl ::aws_smithy_http::result::CreateUnhandledError for ListTagsForResourceErro
 impl ::std::fmt::Display for ListTagsForResourceError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
+            Self::BadRequestException(_inner) => _inner.fmt(f),
+            Self::ForbiddenException(_inner) => _inner.fmt(f),
+            Self::LimitExceededException(_inner) => _inner.fmt(f),
             Self::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            Self::ServiceFailureException(_inner) => _inner.fmt(f),
+            Self::ServiceUnavailableException(_inner) => _inner.fmt(f),
+            Self::ThrottlingException(_inner) => _inner.fmt(f),
+            Self::UnauthorizedException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -303,7 +324,14 @@ impl ::std::fmt::Display for ListTagsForResourceError {
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for ListTagsForResourceError {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::BadRequestException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ForbiddenException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::LimitExceededException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ResourceNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ServiceFailureException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ServiceUnavailableException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ThrottlingException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::UnauthorizedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
         }
     }
@@ -340,19 +368,61 @@ impl ListTagsForResourceError {
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         match self {
+            Self::BadRequestException(e) => e.meta(),
+            Self::ForbiddenException(e) => e.meta(),
+            Self::LimitExceededException(e) => e.meta(),
             Self::ResourceNotFoundException(e) => e.meta(),
+            Self::ServiceFailureException(e) => e.meta(),
+            Self::ServiceUnavailableException(e) => e.meta(),
+            Self::ThrottlingException(e) => e.meta(),
+            Self::UnauthorizedException(e) => e.meta(),
             Self::Unhandled(e) => e.meta(),
         }
+    }
+    /// Returns `true` if the error kind is `ListTagsForResourceError::BadRequestException`.
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(self, Self::BadRequestException(_))
+    }
+    /// Returns `true` if the error kind is `ListTagsForResourceError::ForbiddenException`.
+    pub fn is_forbidden_exception(&self) -> bool {
+        matches!(self, Self::ForbiddenException(_))
+    }
+    /// Returns `true` if the error kind is `ListTagsForResourceError::LimitExceededException`.
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(self, Self::LimitExceededException(_))
     }
     /// Returns `true` if the error kind is `ListTagsForResourceError::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(self, Self::ResourceNotFoundException(_))
     }
+    /// Returns `true` if the error kind is `ListTagsForResourceError::ServiceFailureException`.
+    pub fn is_service_failure_exception(&self) -> bool {
+        matches!(self, Self::ServiceFailureException(_))
+    }
+    /// Returns `true` if the error kind is `ListTagsForResourceError::ServiceUnavailableException`.
+    pub fn is_service_unavailable_exception(&self) -> bool {
+        matches!(self, Self::ServiceUnavailableException(_))
+    }
+    /// Returns `true` if the error kind is `ListTagsForResourceError::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(self, Self::ThrottlingException(_))
+    }
+    /// Returns `true` if the error kind is `ListTagsForResourceError::UnauthorizedException`.
+    pub fn is_unauthorized_exception(&self) -> bool {
+        matches!(self, Self::UnauthorizedException(_))
+    }
 }
 impl ::std::error::Error for ListTagsForResourceError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
+            Self::BadRequestException(_inner) => ::std::option::Option::Some(_inner),
+            Self::ForbiddenException(_inner) => ::std::option::Option::Some(_inner),
+            Self::LimitExceededException(_inner) => ::std::option::Option::Some(_inner),
             Self::ResourceNotFoundException(_inner) => ::std::option::Option::Some(_inner),
+            Self::ServiceFailureException(_inner) => ::std::option::Option::Some(_inner),
+            Self::ServiceUnavailableException(_inner) => ::std::option::Option::Some(_inner),
+            Self::ThrottlingException(_inner) => ::std::option::Option::Some(_inner),
+            Self::UnauthorizedException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(_inner),
         }
     }

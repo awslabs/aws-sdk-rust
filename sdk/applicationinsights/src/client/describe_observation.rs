@@ -4,6 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`observation_id(impl Into<String>)`](crate::operation::describe_observation::builders::DescribeObservationFluentBuilder::observation_id) / [`set_observation_id(Option<String>)`](crate::operation::describe_observation::builders::DescribeObservationFluentBuilder::set_observation_id): <p>The ID of the observation.</p>
+    ///   - [`account_id(impl Into<String>)`](crate::operation::describe_observation::builders::DescribeObservationFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::describe_observation::builders::DescribeObservationFluentBuilder::set_account_id): <p>The AWS account ID for the resource group owner.</p>
     /// - On success, responds with [`DescribeObservationOutput`](crate::operation::describe_observation::DescribeObservationOutput) with field(s):
     ///   - [`observation(Option<Observation>)`](crate::operation::describe_observation::DescribeObservationOutput::observation): <p>Information about the observation.</p>
     /// - On failure, responds with [`SdkError<DescribeObservationError>`](crate::operation::describe_observation::DescribeObservationError)

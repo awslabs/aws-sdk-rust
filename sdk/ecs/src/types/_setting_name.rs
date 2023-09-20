@@ -16,6 +16,7 @@
 ///     SettingName::ContainerInsights => { /* ... */ },
 ///     SettingName::ContainerInstanceLongArnFormat => { /* ... */ },
 ///     SettingName::FargateFipsMode => { /* ... */ },
+///     SettingName::FargateTaskRetirementWaitPeriod => { /* ... */ },
 ///     SettingName::ServiceLongArnFormat => { /* ... */ },
 ///     SettingName::TagResourceAuthorization => { /* ... */ },
 ///     SettingName::TaskLongArnFormat => { /* ... */ },
@@ -55,6 +56,8 @@ pub enum SettingName {
     #[allow(missing_docs)] // documentation missing in model
     FargateFipsMode,
     #[allow(missing_docs)] // documentation missing in model
+    FargateTaskRetirementWaitPeriod,
+    #[allow(missing_docs)] // documentation missing in model
     ServiceLongArnFormat,
     #[allow(missing_docs)] // documentation missing in model
     TagResourceAuthorization,
@@ -70,6 +73,7 @@ impl ::std::convert::From<&str> for SettingName {
             "containerInsights" => SettingName::ContainerInsights,
             "containerInstanceLongArnFormat" => SettingName::ContainerInstanceLongArnFormat,
             "fargateFIPSMode" => SettingName::FargateFipsMode,
+            "fargateTaskRetirementWaitPeriod" => SettingName::FargateTaskRetirementWaitPeriod,
             "serviceLongArnFormat" => SettingName::ServiceLongArnFormat,
             "tagResourceAuthorization" => SettingName::TagResourceAuthorization,
             "taskLongArnFormat" => SettingName::TaskLongArnFormat,
@@ -92,6 +96,7 @@ impl SettingName {
             SettingName::ContainerInsights => "containerInsights",
             SettingName::ContainerInstanceLongArnFormat => "containerInstanceLongArnFormat",
             SettingName::FargateFipsMode => "fargateFIPSMode",
+            SettingName::FargateTaskRetirementWaitPeriod => "fargateTaskRetirementWaitPeriod",
             SettingName::ServiceLongArnFormat => "serviceLongArnFormat",
             SettingName::TagResourceAuthorization => "tagResourceAuthorization",
             SettingName::TaskLongArnFormat => "taskLongArnFormat",
@@ -105,6 +110,7 @@ impl SettingName {
             "containerInsights",
             "containerInstanceLongArnFormat",
             "fargateFIPSMode",
+            "fargateTaskRetirementWaitPeriod",
             "serviceLongArnFormat",
             "tagResourceAuthorization",
             "taskLongArnFormat",

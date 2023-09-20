@@ -6,23 +6,23 @@
 pub struct TestRecommendation {
     /// <p>Identifier for the test recommendation.</p>
     pub recommendation_id: ::std::option::Option<::std::string::String>,
-    /// <p>The reference identifier for the test recommendation.</p>
+    /// <p>Reference identifier for the test recommendation.</p>
     pub reference_id: ::std::option::Option<::std::string::String>,
-    /// <p>The name of the Application Component.</p>
+    /// <p>Name of the Application Component.</p>
     pub app_component_name: ::std::option::Option<::std::string::String>,
-    /// <p>The name of the test recommendation.</p>
+    /// <p>Name of the test recommendation.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>The intent of the test recommendation.</p>
+    /// <p>Intent of the test recommendation.</p>
     pub intent: ::std::option::Option<::std::string::String>,
-    /// <p>The level of risk for this test recommendation.</p>
+    /// <p>Level of risk for this test recommendation.</p>
     pub risk: ::std::option::Option<crate::types::TestRisk>,
-    /// <p>The type of test recommendation.</p>
+    /// <p>Type of test recommendation.</p>
     pub r#type: ::std::option::Option<crate::types::TestType>,
-    /// <p>The description for the test recommendation.</p>
+    /// <p>Description for the test recommendation.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The test recommendation items.</p>
     pub items: ::std::option::Option<::std::vec::Vec<crate::types::RecommendationItem>>,
-    /// <p>The prerequisite of the test recommendation.</p>
+    /// <p>Prerequisite of the test recommendation.</p>
     pub prerequisite: ::std::option::Option<::std::string::String>,
     /// <p> A list of recommended alarms that are used in the test and must be exported before or with the test. </p>
     pub depends_on_alarms: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -32,31 +32,31 @@ impl TestRecommendation {
     pub fn recommendation_id(&self) -> ::std::option::Option<&str> {
         self.recommendation_id.as_deref()
     }
-    /// <p>The reference identifier for the test recommendation.</p>
+    /// <p>Reference identifier for the test recommendation.</p>
     pub fn reference_id(&self) -> ::std::option::Option<&str> {
         self.reference_id.as_deref()
     }
-    /// <p>The name of the Application Component.</p>
+    /// <p>Name of the Application Component.</p>
     pub fn app_component_name(&self) -> ::std::option::Option<&str> {
         self.app_component_name.as_deref()
     }
-    /// <p>The name of the test recommendation.</p>
+    /// <p>Name of the test recommendation.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The intent of the test recommendation.</p>
+    /// <p>Intent of the test recommendation.</p>
     pub fn intent(&self) -> ::std::option::Option<&str> {
         self.intent.as_deref()
     }
-    /// <p>The level of risk for this test recommendation.</p>
+    /// <p>Level of risk for this test recommendation.</p>
     pub fn risk(&self) -> ::std::option::Option<&crate::types::TestRisk> {
         self.risk.as_ref()
     }
-    /// <p>The type of test recommendation.</p>
+    /// <p>Type of test recommendation.</p>
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::TestType> {
         self.r#type.as_ref()
     }
-    /// <p>The description for the test recommendation.</p>
+    /// <p>Description for the test recommendation.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
@@ -64,7 +64,7 @@ impl TestRecommendation {
     pub fn items(&self) -> ::std::option::Option<&[crate::types::RecommendationItem]> {
         self.items.as_deref()
     }
-    /// <p>The prerequisite of the test recommendation.</p>
+    /// <p>Prerequisite of the test recommendation.</p>
     pub fn prerequisite(&self) -> ::std::option::Option<&str> {
         self.prerequisite.as_deref()
     }
@@ -111,101 +111,101 @@ impl TestRecommendationBuilder {
     pub fn get_recommendation_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.recommendation_id
     }
-    /// <p>The reference identifier for the test recommendation.</p>
+    /// <p>Reference identifier for the test recommendation.</p>
     pub fn reference_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reference_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The reference identifier for the test recommendation.</p>
+    /// <p>Reference identifier for the test recommendation.</p>
     pub fn set_reference_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reference_id = input;
         self
     }
-    /// <p>The reference identifier for the test recommendation.</p>
+    /// <p>Reference identifier for the test recommendation.</p>
     pub fn get_reference_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.reference_id
     }
-    /// <p>The name of the Application Component.</p>
+    /// <p>Name of the Application Component.</p>
     pub fn app_component_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_component_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the Application Component.</p>
+    /// <p>Name of the Application Component.</p>
     pub fn set_app_component_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.app_component_name = input;
         self
     }
-    /// <p>The name of the Application Component.</p>
+    /// <p>Name of the Application Component.</p>
     pub fn get_app_component_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.app_component_name
     }
-    /// <p>The name of the test recommendation.</p>
+    /// <p>Name of the test recommendation.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the test recommendation.</p>
+    /// <p>Name of the test recommendation.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>The name of the test recommendation.</p>
+    /// <p>Name of the test recommendation.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>The intent of the test recommendation.</p>
+    /// <p>Intent of the test recommendation.</p>
     pub fn intent(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.intent = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The intent of the test recommendation.</p>
+    /// <p>Intent of the test recommendation.</p>
     pub fn set_intent(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.intent = input;
         self
     }
-    /// <p>The intent of the test recommendation.</p>
+    /// <p>Intent of the test recommendation.</p>
     pub fn get_intent(&self) -> &::std::option::Option<::std::string::String> {
         &self.intent
     }
-    /// <p>The level of risk for this test recommendation.</p>
+    /// <p>Level of risk for this test recommendation.</p>
     pub fn risk(mut self, input: crate::types::TestRisk) -> Self {
         self.risk = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The level of risk for this test recommendation.</p>
+    /// <p>Level of risk for this test recommendation.</p>
     pub fn set_risk(mut self, input: ::std::option::Option<crate::types::TestRisk>) -> Self {
         self.risk = input;
         self
     }
-    /// <p>The level of risk for this test recommendation.</p>
+    /// <p>Level of risk for this test recommendation.</p>
     pub fn get_risk(&self) -> &::std::option::Option<crate::types::TestRisk> {
         &self.risk
     }
-    /// <p>The type of test recommendation.</p>
+    /// <p>Type of test recommendation.</p>
     pub fn r#type(mut self, input: crate::types::TestType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of test recommendation.</p>
+    /// <p>Type of test recommendation.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::TestType>) -> Self {
         self.r#type = input;
         self
     }
-    /// <p>The type of test recommendation.</p>
+    /// <p>Type of test recommendation.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::TestType> {
         &self.r#type
     }
-    /// <p>The description for the test recommendation.</p>
+    /// <p>Description for the test recommendation.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The description for the test recommendation.</p>
+    /// <p>Description for the test recommendation.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
-    /// <p>The description for the test recommendation.</p>
+    /// <p>Description for the test recommendation.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
@@ -229,17 +229,17 @@ impl TestRecommendationBuilder {
     pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RecommendationItem>> {
         &self.items
     }
-    /// <p>The prerequisite of the test recommendation.</p>
+    /// <p>Prerequisite of the test recommendation.</p>
     pub fn prerequisite(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.prerequisite = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The prerequisite of the test recommendation.</p>
+    /// <p>Prerequisite of the test recommendation.</p>
     pub fn set_prerequisite(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.prerequisite = input;
         self
     }
-    /// <p>The prerequisite of the test recommendation.</p>
+    /// <p>Prerequisite of the test recommendation.</p>
     pub fn get_prerequisite(&self) -> &::std::option::Option<::std::string::String> {
         &self.prerequisite
     }

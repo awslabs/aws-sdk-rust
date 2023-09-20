@@ -41,6 +41,7 @@ pub struct Event {
     /// <p> <b>Spot instance events:</b> </p>
     /// <ul>
     /// <li> <p> INSTANCE_INTERRUPTED -- A spot instance was interrupted by EC2 with a two-minute notification.</p> </li>
+    /// <li> <p>INSTANCE_RECYCLED -- A spot instance was determined to have a high risk of interruption and is scheduled to be recycled once it has no active game sessions.</p> </li>
     /// </ul>
     /// <p> <b>Server process events:</b> </p>
     /// <ul>
@@ -113,6 +114,7 @@ impl Event {
     /// <p> <b>Spot instance events:</b> </p>
     /// <ul>
     /// <li> <p> INSTANCE_INTERRUPTED -- A spot instance was interrupted by EC2 with a two-minute notification.</p> </li>
+    /// <li> <p>INSTANCE_RECYCLED -- A spot instance was determined to have a high risk of interruption and is scheduled to be recycled once it has no active game sessions.</p> </li>
     /// </ul>
     /// <p> <b>Server process events:</b> </p>
     /// <ul>
@@ -231,6 +233,7 @@ impl EventBuilder {
     /// <p> <b>Spot instance events:</b> </p>
     /// <ul>
     /// <li> <p> INSTANCE_INTERRUPTED -- A spot instance was interrupted by EC2 with a two-minute notification.</p> </li>
+    /// <li> <p>INSTANCE_RECYCLED -- A spot instance was determined to have a high risk of interruption and is scheduled to be recycled once it has no active game sessions.</p> </li>
     /// </ul>
     /// <p> <b>Server process events:</b> </p>
     /// <ul>
@@ -290,6 +293,7 @@ impl EventBuilder {
     /// <p> <b>Spot instance events:</b> </p>
     /// <ul>
     /// <li> <p> INSTANCE_INTERRUPTED -- A spot instance was interrupted by EC2 with a two-minute notification.</p> </li>
+    /// <li> <p>INSTANCE_RECYCLED -- A spot instance was determined to have a high risk of interruption and is scheduled to be recycled once it has no active game sessions.</p> </li>
     /// </ul>
     /// <p> <b>Server process events:</b> </p>
     /// <ul>
@@ -349,6 +353,7 @@ impl EventBuilder {
     /// <p> <b>Spot instance events:</b> </p>
     /// <ul>
     /// <li> <p> INSTANCE_INTERRUPTED -- A spot instance was interrupted by EC2 with a two-minute notification.</p> </li>
+    /// <li> <p>INSTANCE_RECYCLED -- A spot instance was determined to have a high risk of interruption and is scheduled to be recycled once it has no active game sessions.</p> </li>
     /// </ul>
     /// <p> <b>Server process events:</b> </p>
     /// <ul>

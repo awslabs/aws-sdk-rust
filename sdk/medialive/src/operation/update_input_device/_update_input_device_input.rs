@@ -12,6 +12,8 @@ pub struct UpdateInputDeviceInput {
     pub name: ::std::option::Option<::std::string::String>,
     /// The settings that you want to apply to the UHD input device.
     pub uhd_device_settings: ::std::option::Option<crate::types::InputDeviceConfigurableSettings>,
+    /// The Availability Zone you want associated with this input device.
+    pub availability_zone: ::std::option::Option<::std::string::String>,
 }
 impl UpdateInputDeviceInput {
     /// The settings that you want to apply to the HD input device.
@@ -30,6 +32,10 @@ impl UpdateInputDeviceInput {
     pub fn uhd_device_settings(&self) -> ::std::option::Option<&crate::types::InputDeviceConfigurableSettings> {
         self.uhd_device_settings.as_ref()
     }
+    /// The Availability Zone you want associated with this input device.
+    pub fn availability_zone(&self) -> ::std::option::Option<&str> {
+        self.availability_zone.as_deref()
+    }
 }
 impl UpdateInputDeviceInput {
     /// Creates a new builder-style object to manufacture [`UpdateInputDeviceInput`](crate::operation::update_input_device::UpdateInputDeviceInput).
@@ -46,6 +52,7 @@ pub struct UpdateInputDeviceInputBuilder {
     pub(crate) input_device_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) uhd_device_settings: ::std::option::Option<crate::types::InputDeviceConfigurableSettings>,
+    pub(crate) availability_zone: ::std::option::Option<::std::string::String>,
 }
 impl UpdateInputDeviceInputBuilder {
     /// The settings that you want to apply to the HD input device.
@@ -104,6 +111,20 @@ impl UpdateInputDeviceInputBuilder {
     pub fn get_uhd_device_settings(&self) -> &::std::option::Option<crate::types::InputDeviceConfigurableSettings> {
         &self.uhd_device_settings
     }
+    /// The Availability Zone you want associated with this input device.
+    pub fn availability_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.availability_zone = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// The Availability Zone you want associated with this input device.
+    pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.availability_zone = input;
+        self
+    }
+    /// The Availability Zone you want associated with this input device.
+    pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
+        &self.availability_zone
+    }
     /// Consumes the builder and constructs a [`UpdateInputDeviceInput`](crate::operation::update_input_device::UpdateInputDeviceInput).
     pub fn build(
         self,
@@ -113,6 +134,7 @@ impl UpdateInputDeviceInputBuilder {
             input_device_id: self.input_device_id,
             name: self.name,
             uhd_device_settings: self.uhd_device_settings,
+            availability_zone: self.availability_zone,
         })
     }
 }

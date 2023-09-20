@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EventFeedbackType {
-    /// <p>The event feedback value.</p>
+    /// <p>The authentication event feedback value. When you provide a <code>FeedbackValue</code> value of <code>valid</code>, you tell Amazon Cognito that you trust a user session where Amazon Cognito has evaluated some level of risk. When you provide a <code>FeedbackValue</code> value of <code>invalid</code>, you tell Amazon Cognito that you don't trust a user session, or you don't believe that Amazon Cognito evaluated a high-enough risk level.</p>
     pub feedback_value: ::std::option::Option<crate::types::FeedbackValueType>,
     /// <p>The provider.</p>
     pub provider: ::std::option::Option<::std::string::String>,
@@ -12,7 +12,7 @@ pub struct EventFeedbackType {
     pub feedback_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl EventFeedbackType {
-    /// <p>The event feedback value.</p>
+    /// <p>The authentication event feedback value. When you provide a <code>FeedbackValue</code> value of <code>valid</code>, you tell Amazon Cognito that you trust a user session where Amazon Cognito has evaluated some level of risk. When you provide a <code>FeedbackValue</code> value of <code>invalid</code>, you tell Amazon Cognito that you don't trust a user session, or you don't believe that Amazon Cognito evaluated a high-enough risk level.</p>
     pub fn feedback_value(&self) -> ::std::option::Option<&crate::types::FeedbackValueType> {
         self.feedback_value.as_ref()
     }
@@ -41,17 +41,17 @@ pub struct EventFeedbackTypeBuilder {
     pub(crate) feedback_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl EventFeedbackTypeBuilder {
-    /// <p>The event feedback value.</p>
+    /// <p>The authentication event feedback value. When you provide a <code>FeedbackValue</code> value of <code>valid</code>, you tell Amazon Cognito that you trust a user session where Amazon Cognito has evaluated some level of risk. When you provide a <code>FeedbackValue</code> value of <code>invalid</code>, you tell Amazon Cognito that you don't trust a user session, or you don't believe that Amazon Cognito evaluated a high-enough risk level.</p>
     pub fn feedback_value(mut self, input: crate::types::FeedbackValueType) -> Self {
         self.feedback_value = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The event feedback value.</p>
+    /// <p>The authentication event feedback value. When you provide a <code>FeedbackValue</code> value of <code>valid</code>, you tell Amazon Cognito that you trust a user session where Amazon Cognito has evaluated some level of risk. When you provide a <code>FeedbackValue</code> value of <code>invalid</code>, you tell Amazon Cognito that you don't trust a user session, or you don't believe that Amazon Cognito evaluated a high-enough risk level.</p>
     pub fn set_feedback_value(mut self, input: ::std::option::Option<crate::types::FeedbackValueType>) -> Self {
         self.feedback_value = input;
         self
     }
-    /// <p>The event feedback value.</p>
+    /// <p>The authentication event feedback value. When you provide a <code>FeedbackValue</code> value of <code>valid</code>, you tell Amazon Cognito that you trust a user session where Amazon Cognito has evaluated some level of risk. When you provide a <code>FeedbackValue</code> value of <code>invalid</code>, you tell Amazon Cognito that you don't trust a user session, or you don't believe that Amazon Cognito evaluated a high-enough risk level.</p>
     pub fn get_feedback_value(&self) -> &::std::option::Option<crate::types::FeedbackValueType> {
         &self.feedback_value
     }

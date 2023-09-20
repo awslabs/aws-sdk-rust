@@ -54,6 +54,24 @@ pub fn de_describe_folder_resolved_permissions_http_error(
                 tmp
             })
         }
+        "InvalidNextTokenException" => {
+            crate::operation::describe_folder_resolved_permissions::DescribeFolderResolvedPermissionsError::InvalidNextTokenException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InvalidNextTokenExceptionBuilder::default();
+                    output =
+                        crate::protocol_serde::shape_invalid_next_token_exception::de_invalid_next_token_exception_json_err(_response_body, output)
+                            .map_err(crate::operation::describe_folder_resolved_permissions::DescribeFolderResolvedPermissionsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         "InvalidParameterValueException" => {
             crate::operation::describe_folder_resolved_permissions::DescribeFolderResolvedPermissionsError::InvalidParameterValueException({
                 #[allow(unused_mut)]
@@ -176,6 +194,13 @@ pub(crate) fn de_describe_folder_resolved_permissions(
                 }
                 "FolderId" => {
                     builder = builder.set_folder_id(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                "NextToken" => {
+                    builder = builder.set_next_token(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                             .transpose()?,

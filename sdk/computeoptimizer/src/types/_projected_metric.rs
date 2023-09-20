@@ -2,7 +2,7 @@
 
 /// <p>Describes a projected utilization metric of a recommendation option, such as an Amazon EC2 instance. This represents the projected utilization of a recommendation option had you used that resource during the analyzed period.</p>
 /// <p>Compare the utilization metric data of your resource against its projected utilization metric data to determine the performance difference between your current resource and the recommended option.</p> <note>
-/// <p>The <code>Cpu</code> and <code>Memory</code> metrics are the only projected utilization metrics returned when you run the <code>GetEC2RecommendationProjectedMetrics</code> action. Additionally, the <code>Memory</code> metric is returned only for resources that have the unified CloudWatch agent installed on them. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling Memory Utilization with the CloudWatch Agent</a>.</p>
+/// <p>The <code>Cpu</code>, <code>Memory</code>, <code>GPU</code>, and <code>GPU_MEMORY</code> metrics are the only projected utilization metrics returned when you run the <code>GetEC2RecommendationProjectedMetrics</code> action. Additionally, these metrics are only returned for resources with the unified CloudWatch agent installed on them. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling Memory Utilization with the CloudWatch Agent</a> and <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#nvidia-cw-agent">Enabling NVIDIA GPU utilization with the CloudWatch Agent</a>.</p>
 /// </note>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
@@ -10,9 +10,13 @@ pub struct ProjectedMetric {
     /// <p>The name of the projected utilization metric.</p>
     /// <p>The following projected utilization metrics are returned:</p>
     /// <ul>
-    /// <li> <p> <code>Cpu</code> - The projected percentage of allocated EC2 compute units that would be in use on the recommendation option had you used that resource during the analyzed period. This metric identifies the processing power required to run an application on the recommendation option.</p> <p>Depending on the instance type, tools in your operating system can show a lower percentage than CloudWatch when the instance is not allocated a full processor core.</p> <p>Units: Percent</p> </li>
+    /// <li> <p> <code>Cpu</code> - The projected percentage of allocated EC2 compute units that would be in use on the recommendation option had you used that resource during the analyzed period. This metric identifies the processing power required to run an application on the recommendation option.</p> <p>Depending on the instance type, tools in your operating system can show a lower percentage than CloudWatch when the instance is not allocated a full processor core.</p> </li>
     /// <li> <p> <code>Memory</code> - The percentage of memory that would be in use on the recommendation option had you used that resource during the analyzed period. This metric identifies the amount of memory required to run an application on the recommendation option.</p> <p>Units: Percent</p> <note>
-    /// <p>The <code>Memory</code> metric is returned only for resources that have the unified CloudWatch agent installed on them. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling Memory Utilization with the CloudWatch Agent</a>.</p>
+    /// <p>The <code>Memory</code> metric is only returned for resources with the unified CloudWatch agent installed on them. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling Memory Utilization with the CloudWatch Agent</a>.</p>
+    /// </note> </li>
+    /// <li> <p> <code>GPU</code> - The projected percentage of allocated GPUs if you adjust your configurations to Compute Optimizer's recommendation option.</p> </li>
+    /// <li> <p> <code>GPU_MEMORY</code> - The projected percentage of total GPU memory if you adjust your configurations to Compute Optimizer's recommendation option.</p> <note>
+    /// <p>The <code>GPU</code> and <code>GPU_MEMORY</code> metrics are only returned for resources with the unified CloudWatch Agent installed on them. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#nvidia-cw-agent">Enabling NVIDIA GPU utilization with the CloudWatch Agent</a>.</p>
     /// </note> </li>
     /// </ul>
     pub name: ::std::option::Option<crate::types::MetricName>,
@@ -25,9 +29,13 @@ impl ProjectedMetric {
     /// <p>The name of the projected utilization metric.</p>
     /// <p>The following projected utilization metrics are returned:</p>
     /// <ul>
-    /// <li> <p> <code>Cpu</code> - The projected percentage of allocated EC2 compute units that would be in use on the recommendation option had you used that resource during the analyzed period. This metric identifies the processing power required to run an application on the recommendation option.</p> <p>Depending on the instance type, tools in your operating system can show a lower percentage than CloudWatch when the instance is not allocated a full processor core.</p> <p>Units: Percent</p> </li>
+    /// <li> <p> <code>Cpu</code> - The projected percentage of allocated EC2 compute units that would be in use on the recommendation option had you used that resource during the analyzed period. This metric identifies the processing power required to run an application on the recommendation option.</p> <p>Depending on the instance type, tools in your operating system can show a lower percentage than CloudWatch when the instance is not allocated a full processor core.</p> </li>
     /// <li> <p> <code>Memory</code> - The percentage of memory that would be in use on the recommendation option had you used that resource during the analyzed period. This metric identifies the amount of memory required to run an application on the recommendation option.</p> <p>Units: Percent</p> <note>
-    /// <p>The <code>Memory</code> metric is returned only for resources that have the unified CloudWatch agent installed on them. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling Memory Utilization with the CloudWatch Agent</a>.</p>
+    /// <p>The <code>Memory</code> metric is only returned for resources with the unified CloudWatch agent installed on them. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling Memory Utilization with the CloudWatch Agent</a>.</p>
+    /// </note> </li>
+    /// <li> <p> <code>GPU</code> - The projected percentage of allocated GPUs if you adjust your configurations to Compute Optimizer's recommendation option.</p> </li>
+    /// <li> <p> <code>GPU_MEMORY</code> - The projected percentage of total GPU memory if you adjust your configurations to Compute Optimizer's recommendation option.</p> <note>
+    /// <p>The <code>GPU</code> and <code>GPU_MEMORY</code> metrics are only returned for resources with the unified CloudWatch Agent installed on them. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#nvidia-cw-agent">Enabling NVIDIA GPU utilization with the CloudWatch Agent</a>.</p>
     /// </note> </li>
     /// </ul>
     pub fn name(&self) -> ::std::option::Option<&crate::types::MetricName> {
@@ -61,9 +69,13 @@ impl ProjectedMetricBuilder {
     /// <p>The name of the projected utilization metric.</p>
     /// <p>The following projected utilization metrics are returned:</p>
     /// <ul>
-    /// <li> <p> <code>Cpu</code> - The projected percentage of allocated EC2 compute units that would be in use on the recommendation option had you used that resource during the analyzed period. This metric identifies the processing power required to run an application on the recommendation option.</p> <p>Depending on the instance type, tools in your operating system can show a lower percentage than CloudWatch when the instance is not allocated a full processor core.</p> <p>Units: Percent</p> </li>
+    /// <li> <p> <code>Cpu</code> - The projected percentage of allocated EC2 compute units that would be in use on the recommendation option had you used that resource during the analyzed period. This metric identifies the processing power required to run an application on the recommendation option.</p> <p>Depending on the instance type, tools in your operating system can show a lower percentage than CloudWatch when the instance is not allocated a full processor core.</p> </li>
     /// <li> <p> <code>Memory</code> - The percentage of memory that would be in use on the recommendation option had you used that resource during the analyzed period. This metric identifies the amount of memory required to run an application on the recommendation option.</p> <p>Units: Percent</p> <note>
-    /// <p>The <code>Memory</code> metric is returned only for resources that have the unified CloudWatch agent installed on them. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling Memory Utilization with the CloudWatch Agent</a>.</p>
+    /// <p>The <code>Memory</code> metric is only returned for resources with the unified CloudWatch agent installed on them. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling Memory Utilization with the CloudWatch Agent</a>.</p>
+    /// </note> </li>
+    /// <li> <p> <code>GPU</code> - The projected percentage of allocated GPUs if you adjust your configurations to Compute Optimizer's recommendation option.</p> </li>
+    /// <li> <p> <code>GPU_MEMORY</code> - The projected percentage of total GPU memory if you adjust your configurations to Compute Optimizer's recommendation option.</p> <note>
+    /// <p>The <code>GPU</code> and <code>GPU_MEMORY</code> metrics are only returned for resources with the unified CloudWatch Agent installed on them. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#nvidia-cw-agent">Enabling NVIDIA GPU utilization with the CloudWatch Agent</a>.</p>
     /// </note> </li>
     /// </ul>
     pub fn name(mut self, input: crate::types::MetricName) -> Self {
@@ -73,9 +85,13 @@ impl ProjectedMetricBuilder {
     /// <p>The name of the projected utilization metric.</p>
     /// <p>The following projected utilization metrics are returned:</p>
     /// <ul>
-    /// <li> <p> <code>Cpu</code> - The projected percentage of allocated EC2 compute units that would be in use on the recommendation option had you used that resource during the analyzed period. This metric identifies the processing power required to run an application on the recommendation option.</p> <p>Depending on the instance type, tools in your operating system can show a lower percentage than CloudWatch when the instance is not allocated a full processor core.</p> <p>Units: Percent</p> </li>
+    /// <li> <p> <code>Cpu</code> - The projected percentage of allocated EC2 compute units that would be in use on the recommendation option had you used that resource during the analyzed period. This metric identifies the processing power required to run an application on the recommendation option.</p> <p>Depending on the instance type, tools in your operating system can show a lower percentage than CloudWatch when the instance is not allocated a full processor core.</p> </li>
     /// <li> <p> <code>Memory</code> - The percentage of memory that would be in use on the recommendation option had you used that resource during the analyzed period. This metric identifies the amount of memory required to run an application on the recommendation option.</p> <p>Units: Percent</p> <note>
-    /// <p>The <code>Memory</code> metric is returned only for resources that have the unified CloudWatch agent installed on them. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling Memory Utilization with the CloudWatch Agent</a>.</p>
+    /// <p>The <code>Memory</code> metric is only returned for resources with the unified CloudWatch agent installed on them. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling Memory Utilization with the CloudWatch Agent</a>.</p>
+    /// </note> </li>
+    /// <li> <p> <code>GPU</code> - The projected percentage of allocated GPUs if you adjust your configurations to Compute Optimizer's recommendation option.</p> </li>
+    /// <li> <p> <code>GPU_MEMORY</code> - The projected percentage of total GPU memory if you adjust your configurations to Compute Optimizer's recommendation option.</p> <note>
+    /// <p>The <code>GPU</code> and <code>GPU_MEMORY</code> metrics are only returned for resources with the unified CloudWatch Agent installed on them. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#nvidia-cw-agent">Enabling NVIDIA GPU utilization with the CloudWatch Agent</a>.</p>
     /// </note> </li>
     /// </ul>
     pub fn set_name(mut self, input: ::std::option::Option<crate::types::MetricName>) -> Self {
@@ -85,9 +101,13 @@ impl ProjectedMetricBuilder {
     /// <p>The name of the projected utilization metric.</p>
     /// <p>The following projected utilization metrics are returned:</p>
     /// <ul>
-    /// <li> <p> <code>Cpu</code> - The projected percentage of allocated EC2 compute units that would be in use on the recommendation option had you used that resource during the analyzed period. This metric identifies the processing power required to run an application on the recommendation option.</p> <p>Depending on the instance type, tools in your operating system can show a lower percentage than CloudWatch when the instance is not allocated a full processor core.</p> <p>Units: Percent</p> </li>
+    /// <li> <p> <code>Cpu</code> - The projected percentage of allocated EC2 compute units that would be in use on the recommendation option had you used that resource during the analyzed period. This metric identifies the processing power required to run an application on the recommendation option.</p> <p>Depending on the instance type, tools in your operating system can show a lower percentage than CloudWatch when the instance is not allocated a full processor core.</p> </li>
     /// <li> <p> <code>Memory</code> - The percentage of memory that would be in use on the recommendation option had you used that resource during the analyzed period. This metric identifies the amount of memory required to run an application on the recommendation option.</p> <p>Units: Percent</p> <note>
-    /// <p>The <code>Memory</code> metric is returned only for resources that have the unified CloudWatch agent installed on them. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling Memory Utilization with the CloudWatch Agent</a>.</p>
+    /// <p>The <code>Memory</code> metric is only returned for resources with the unified CloudWatch agent installed on them. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling Memory Utilization with the CloudWatch Agent</a>.</p>
+    /// </note> </li>
+    /// <li> <p> <code>GPU</code> - The projected percentage of allocated GPUs if you adjust your configurations to Compute Optimizer's recommendation option.</p> </li>
+    /// <li> <p> <code>GPU_MEMORY</code> - The projected percentage of total GPU memory if you adjust your configurations to Compute Optimizer's recommendation option.</p> <note>
+    /// <p>The <code>GPU</code> and <code>GPU_MEMORY</code> metrics are only returned for resources with the unified CloudWatch Agent installed on them. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#nvidia-cw-agent">Enabling NVIDIA GPU utilization with the CloudWatch Agent</a>.</p>
     /// </note> </li>
     /// </ul>
     pub fn get_name(&self) -> &::std::option::Option<crate::types::MetricName> {

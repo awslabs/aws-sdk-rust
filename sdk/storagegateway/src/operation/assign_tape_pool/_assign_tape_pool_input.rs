@@ -9,7 +9,7 @@ pub struct AssignTapePoolInput {
     pub pool_id: ::std::option::Option<::std::string::String>,
     /// <p>Set permissions to bypass governance retention. If the lock type of the archived tape is <code>Governance</code>, the tape's archived age is not older than <code>RetentionLockInDays</code>, and the user does not already have <code>BypassGovernanceRetention</code>, setting this to TRUE enables the user to bypass the retention lock. This parameter is set to true by default for calls from the console.</p>
     /// <p>Valid values: <code>TRUE</code> | <code>FALSE</code> </p>
-    pub bypass_governance_retention: bool,
+    pub bypass_governance_retention: ::std::option::Option<bool>,
 }
 impl AssignTapePoolInput {
     /// <p>The unique Amazon Resource Name (ARN) of the virtual tape that you want to add to the tape pool.</p>
@@ -22,7 +22,7 @@ impl AssignTapePoolInput {
     }
     /// <p>Set permissions to bypass governance retention. If the lock type of the archived tape is <code>Governance</code>, the tape's archived age is not older than <code>RetentionLockInDays</code>, and the user does not already have <code>BypassGovernanceRetention</code>, setting this to TRUE enables the user to bypass the retention lock. This parameter is set to true by default for calls from the console.</p>
     /// <p>Valid values: <code>TRUE</code> | <code>FALSE</code> </p>
-    pub fn bypass_governance_retention(&self) -> bool {
+    pub fn bypass_governance_retention(&self) -> ::std::option::Option<bool> {
         self.bypass_governance_retention
     }
 }
@@ -94,7 +94,7 @@ impl AssignTapePoolInputBuilder {
         ::std::result::Result::Ok(crate::operation::assign_tape_pool::AssignTapePoolInput {
             tape_arn: self.tape_arn,
             pool_id: self.pool_id,
-            bypass_governance_retention: self.bypass_governance_retention.unwrap_or_default(),
+            bypass_governance_retention: self.bypass_governance_retention,
         })
     }
 }

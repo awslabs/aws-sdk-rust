@@ -2,7 +2,7 @@
 
 /// <p>Contains the Basic authorization parameters for the connection.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UpdateConnectionBasicAuthRequestParameters {
     /// <p>The user name to use for Basic authorization.</p>
     pub username: ::std::option::Option<::std::string::String>,
@@ -19,6 +19,14 @@ impl UpdateConnectionBasicAuthRequestParameters {
         self.password.as_deref()
     }
 }
+impl ::std::fmt::Debug for UpdateConnectionBasicAuthRequestParameters {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateConnectionBasicAuthRequestParameters");
+        formatter.field("username", &self.username);
+        formatter.field("password", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl UpdateConnectionBasicAuthRequestParameters {
     /// Creates a new builder-style object to manufacture [`UpdateConnectionBasicAuthRequestParameters`](crate::types::UpdateConnectionBasicAuthRequestParameters).
     pub fn builder() -> crate::types::builders::UpdateConnectionBasicAuthRequestParametersBuilder {
@@ -28,7 +36,7 @@ impl UpdateConnectionBasicAuthRequestParameters {
 
 /// A builder for [`UpdateConnectionBasicAuthRequestParameters`](crate::types::UpdateConnectionBasicAuthRequestParameters).
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct UpdateConnectionBasicAuthRequestParametersBuilder {
     pub(crate) username: ::std::option::Option<::std::string::String>,
     pub(crate) password: ::std::option::Option<::std::string::String>,
@@ -68,5 +76,13 @@ impl UpdateConnectionBasicAuthRequestParametersBuilder {
             username: self.username,
             password: self.password,
         }
+    }
+}
+impl ::std::fmt::Debug for UpdateConnectionBasicAuthRequestParametersBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateConnectionBasicAuthRequestParametersBuilder");
+        formatter.field("username", &self.username);
+        formatter.field("password", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

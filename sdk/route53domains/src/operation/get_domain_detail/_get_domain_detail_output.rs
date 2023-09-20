@@ -159,8 +159,8 @@ impl ::std::fmt::Debug for GetDomainDetailOutput {
         formatter.field("registrar_name", &self.registrar_name);
         formatter.field("who_is_server", &self.who_is_server);
         formatter.field("registrar_url", &self.registrar_url);
-        formatter.field("abuse_contact_email", &self.abuse_contact_email);
-        formatter.field("abuse_contact_phone", &self.abuse_contact_phone);
+        formatter.field("abuse_contact_email", &"*** Sensitive Data Redacted ***");
+        formatter.field("abuse_contact_phone", &"*** Sensitive Data Redacted ***");
         formatter.field("registry_domain_id", &self.registry_domain_id);
         formatter.field("creation_date", &self.creation_date);
         formatter.field("updated_date", &self.updated_date);
@@ -599,8 +599,8 @@ impl ::std::fmt::Debug for GetDomainDetailOutputBuilder {
         formatter.field("registrar_name", &self.registrar_name);
         formatter.field("who_is_server", &self.who_is_server);
         formatter.field("registrar_url", &self.registrar_url);
-        formatter.field("abuse_contact_email", &self.abuse_contact_email);
-        formatter.field("abuse_contact_phone", &self.abuse_contact_phone);
+        formatter.field("abuse_contact_email", &"*** Sensitive Data Redacted ***");
+        formatter.field("abuse_contact_phone", &"*** Sensitive Data Redacted ***");
         formatter.field("registry_domain_id", &self.registry_domain_id);
         formatter.field("creation_date", &self.creation_date);
         formatter.field("updated_date", &self.updated_date);

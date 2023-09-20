@@ -15,8 +15,8 @@ pub fn ser_create_data_source_from_s3_input(
         crate::protocol_serde::shape_s3_data_spec::ser_s3_data_spec(&mut object_4, var_3)?;
         object_4.finish();
     }
-    if input.compute_statistics {
-        object.key("ComputeStatistics").boolean(input.compute_statistics);
+    if let Some(var_5) = &input.compute_statistics {
+        object.key("ComputeStatistics").boolean(*var_5);
     }
     Ok(())
 }

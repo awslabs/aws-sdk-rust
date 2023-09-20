@@ -31,7 +31,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = "0.56.1"
-//! aws-sdk-applicationinsights = "0.31.0"
+//! aws-sdk-applicationinsights = "0.31.1"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
@@ -148,13 +148,13 @@ pub use config::Config;
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`CreateApplication`](crate::operation::create_application) operation has
-/// a [`Client::create_application`], function which returns a builder for that operation.
+/// For example, the [`AddWorkload`](crate::operation::add_workload) operation has
+/// a [`Client::add_workload`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.create_application()
+/// let result = client.add_workload()
 ///     .resource_group_name("example")
 ///     .send()
 ///     .await;

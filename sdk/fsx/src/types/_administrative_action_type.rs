@@ -15,9 +15,12 @@
 ///     AdministrativeActionType::FileSystemAliasAssociation => { /* ... */ },
 ///     AdministrativeActionType::FileSystemAliasDisassociation => { /* ... */ },
 ///     AdministrativeActionType::FileSystemUpdate => { /* ... */ },
+///     AdministrativeActionType::IopsOptimization => { /* ... */ },
 ///     AdministrativeActionType::ReleaseNfsV3Locks => { /* ... */ },
 ///     AdministrativeActionType::SnapshotUpdate => { /* ... */ },
 ///     AdministrativeActionType::StorageOptimization => { /* ... */ },
+///     AdministrativeActionType::StorageTypeOptimization => { /* ... */ },
+///     AdministrativeActionType::ThroughputOptimization => { /* ... */ },
 ///     AdministrativeActionType::VolumeRestore => { /* ... */ },
 ///     AdministrativeActionType::VolumeUpdate => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -49,6 +52,19 @@
 /// initiated from the Amazon FSx console, API
 /// (<code>UpdateFileSystem</code>), or CLI
 /// (<code>update-file-system</code>).</p>
+/// </li>
+/// <li>
+/// <p>
+/// <code>THROUGHPUT_OPTIMIZATION</code> - After the <code>FILE_SYSTEM_UPDATE</code>
+/// task to increase a file system's throughput capacity has been completed
+/// successfully, a <code>THROUGHPUT_OPTIMIZATION</code> task starts.</p>
+/// <p>You can track the storage-optimization progress using the
+/// <code>ProgressPercent</code> property. When
+/// <code>THROUGHPUT_OPTIMIZATION</code> has been completed successfully, the
+/// parent <code>FILE_SYSTEM_UPDATE</code> action status changes to
+/// <code>COMPLETED</code>. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-throughput-capacity.html">Managing
+/// throughput capacity</a> in the <i>Amazon FSx for Windows
+/// File Server User Guide</i>.</p>
 /// </li>
 /// <li>
 /// <p>
@@ -90,6 +106,30 @@
 /// </li>
 /// <li>
 /// <p>
+/// <code>IOPS_OPTIMIZATION</code> - After the <code>FILE_SYSTEM_UPDATE</code>
+/// task to increase a file system's throughput capacity has been completed
+/// successfully, a <code>IOPS_OPTIMIZATION</code> task starts.</p>
+/// <p>You can track the storage-optimization progress using the
+/// <code>ProgressPercent</code> property. When
+/// <code>IOPS_OPTIMIZATION</code> has been completed successfully, the
+/// parent <code>FILE_SYSTEM_UPDATE</code> action status changes to
+/// <code>COMPLETED</code>. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-provisioned-ssd-iops.html">Managing
+/// provisioned SSD IOPS</a> in the <i>Amazon FSx for Windows
+/// File Server User Guide</i>.</p>
+/// </li>
+/// <li>
+/// <p>
+/// <code>STORAGE_TYPE_OPTIMIZATION</code> - After the <code>FILE_SYSTEM_UPDATE</code>
+/// task to increase a file system's throughput capacity has been completed
+/// successfully, a <code>STORAGE_TYPE_OPTIMIZATION</code> task starts.</p>
+/// <p>You can track the storage-optimization progress using the
+/// <code>ProgressPercent</code> property. When
+/// <code>STORAGE_TYPE_OPTIMIZATION</code> has been completed successfully, the
+/// parent <code>FILE_SYSTEM_UPDATE</code> action status changes to
+/// <code>COMPLETED</code>.</p>
+/// </li>
+/// <li>
+/// <p>
 /// <code>VOLUME_UPDATE</code> - A volume update to an Amazon FSx for NetApp ONTAP or
 /// Amazon FSx for OpenZFS volume initiated from the Amazon FSx
 /// console, API (<code>UpdateVolume</code>), or CLI
@@ -126,11 +166,17 @@ pub enum AdministrativeActionType {
     #[allow(missing_docs)] // documentation missing in model
     FileSystemUpdate,
     #[allow(missing_docs)] // documentation missing in model
+    IopsOptimization,
+    #[allow(missing_docs)] // documentation missing in model
     ReleaseNfsV3Locks,
     #[allow(missing_docs)] // documentation missing in model
     SnapshotUpdate,
     #[allow(missing_docs)] // documentation missing in model
     StorageOptimization,
+    #[allow(missing_docs)] // documentation missing in model
+    StorageTypeOptimization,
+    #[allow(missing_docs)] // documentation missing in model
+    ThroughputOptimization,
     #[allow(missing_docs)] // documentation missing in model
     VolumeRestore,
     #[allow(missing_docs)] // documentation missing in model
@@ -144,9 +190,12 @@ impl ::std::convert::From<&str> for AdministrativeActionType {
             "FILE_SYSTEM_ALIAS_ASSOCIATION" => AdministrativeActionType::FileSystemAliasAssociation,
             "FILE_SYSTEM_ALIAS_DISASSOCIATION" => AdministrativeActionType::FileSystemAliasDisassociation,
             "FILE_SYSTEM_UPDATE" => AdministrativeActionType::FileSystemUpdate,
+            "IOPS_OPTIMIZATION" => AdministrativeActionType::IopsOptimization,
             "RELEASE_NFS_V3_LOCKS" => AdministrativeActionType::ReleaseNfsV3Locks,
             "SNAPSHOT_UPDATE" => AdministrativeActionType::SnapshotUpdate,
             "STORAGE_OPTIMIZATION" => AdministrativeActionType::StorageOptimization,
+            "STORAGE_TYPE_OPTIMIZATION" => AdministrativeActionType::StorageTypeOptimization,
+            "THROUGHPUT_OPTIMIZATION" => AdministrativeActionType::ThroughputOptimization,
             "VOLUME_RESTORE" => AdministrativeActionType::VolumeRestore,
             "VOLUME_UPDATE" => AdministrativeActionType::VolumeUpdate,
             other => AdministrativeActionType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
@@ -167,9 +216,12 @@ impl AdministrativeActionType {
             AdministrativeActionType::FileSystemAliasAssociation => "FILE_SYSTEM_ALIAS_ASSOCIATION",
             AdministrativeActionType::FileSystemAliasDisassociation => "FILE_SYSTEM_ALIAS_DISASSOCIATION",
             AdministrativeActionType::FileSystemUpdate => "FILE_SYSTEM_UPDATE",
+            AdministrativeActionType::IopsOptimization => "IOPS_OPTIMIZATION",
             AdministrativeActionType::ReleaseNfsV3Locks => "RELEASE_NFS_V3_LOCKS",
             AdministrativeActionType::SnapshotUpdate => "SNAPSHOT_UPDATE",
             AdministrativeActionType::StorageOptimization => "STORAGE_OPTIMIZATION",
+            AdministrativeActionType::StorageTypeOptimization => "STORAGE_TYPE_OPTIMIZATION",
+            AdministrativeActionType::ThroughputOptimization => "THROUGHPUT_OPTIMIZATION",
             AdministrativeActionType::VolumeRestore => "VOLUME_RESTORE",
             AdministrativeActionType::VolumeUpdate => "VOLUME_UPDATE",
             AdministrativeActionType::Unknown(value) => value.as_str(),
@@ -181,9 +233,12 @@ impl AdministrativeActionType {
             "FILE_SYSTEM_ALIAS_ASSOCIATION",
             "FILE_SYSTEM_ALIAS_DISASSOCIATION",
             "FILE_SYSTEM_UPDATE",
+            "IOPS_OPTIMIZATION",
             "RELEASE_NFS_V3_LOCKS",
             "SNAPSHOT_UPDATE",
             "STORAGE_OPTIMIZATION",
+            "STORAGE_TYPE_OPTIMIZATION",
+            "THROUGHPUT_OPTIMIZATION",
             "VOLUME_RESTORE",
             "VOLUME_UPDATE",
         ]

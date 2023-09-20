@@ -52,6 +52,11 @@ where
                         "QuietTime" => {
                             builder = builder.set_quiet_time(crate::protocol_serde::shape_quiet_time::de_quiet_time(tokens)?);
                         }
+                        "JourneyLimits" => {
+                            builder = builder.set_journey_limits(
+                                crate::protocol_serde::shape_application_settings_journey_limits::de_application_settings_journey_limits(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

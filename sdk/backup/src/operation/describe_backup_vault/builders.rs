@@ -124,4 +124,18 @@ impl DescribeBackupVaultFluentBuilder {
     pub fn get_backup_vault_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_backup_vault_name()
     }
+    /// <p>This is the account ID of the specified backup vault.</p>
+    pub fn backup_vault_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.backup_vault_account_id(input.into());
+        self
+    }
+    /// <p>This is the account ID of the specified backup vault.</p>
+    pub fn set_backup_vault_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_backup_vault_account_id(input);
+        self
+    }
+    /// <p>This is the account ID of the specified backup vault.</p>
+    pub fn get_backup_vault_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_backup_vault_account_id()
+    }
 }

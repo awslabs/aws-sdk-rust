@@ -207,27 +207,29 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for ListObjects
                         query.push_kv("starting-object-prefix", &::aws_smithy_http::query::fmt_string(&inner_3));
                     }
                 }
-                if _input.max_results != 0 {
-                    query.push_kv("max-results", ::aws_smithy_types::primitive::Encoder::from(_input.max_results).encode());
-                }
-                if let ::std::option::Option::Some(inner_4) = &_input.next_token {
-                    {
-                        query.push_kv("next-token", &::aws_smithy_http::query::fmt_string(&inner_4));
+                if let ::std::option::Option::Some(inner_4) = &_input.max_results {
+                    if *inner_4 != 0 {
+                        query.push_kv("max-results", ::aws_smithy_types::primitive::Encoder::from(*inner_4).encode());
                     }
                 }
-                if let ::std::option::Option::Some(inner_5) = &_input.created_before {
+                if let ::std::option::Option::Some(inner_5) = &_input.next_token {
+                    {
+                        query.push_kv("next-token", &::aws_smithy_http::query::fmt_string(&inner_5));
+                    }
+                }
+                if let ::std::option::Option::Some(inner_6) = &_input.created_before {
                     {
                         query.push_kv(
                             "created-before",
-                            &::aws_smithy_http::query::fmt_timestamp(inner_5, ::aws_smithy_types::date_time::Format::DateTime)?,
+                            &::aws_smithy_http::query::fmt_timestamp(inner_6, ::aws_smithy_types::date_time::Format::DateTime)?,
                         );
                     }
                 }
-                if let ::std::option::Option::Some(inner_6) = &_input.created_after {
+                if let ::std::option::Option::Some(inner_7) = &_input.created_after {
                     {
                         query.push_kv(
                             "created-after",
-                            &::aws_smithy_http::query::fmt_timestamp(inner_6, ::aws_smithy_types::date_time::Format::DateTime)?,
+                            &::aws_smithy_http::query::fmt_timestamp(inner_7, ::aws_smithy_types::date_time::Format::DateTime)?,
                         );
                     }
                 }

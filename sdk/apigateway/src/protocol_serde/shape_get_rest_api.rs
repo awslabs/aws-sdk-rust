@@ -171,6 +171,13 @@ pub(crate) fn de_get_rest_api(
                             .transpose()?,
                     );
                 }
+                "rootResourceId" => {
+                    builder = builder.set_root_resource_id(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 "tags" => {
                     builder = builder.set_tags(crate::protocol_serde::shape_map_of_string_to_string::de_map_of_string_to_string(tokens)?);
                 }

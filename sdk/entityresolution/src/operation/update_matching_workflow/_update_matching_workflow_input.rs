@@ -11,11 +11,11 @@ pub struct UpdateMatchingWorkflowInput {
     pub input_source_config: ::std::option::Option<::std::vec::Vec<crate::types::InputSource>>,
     /// <p>A list of <code>OutputSource</code> objects, each of which contains fields <code>OutputS3Path</code>, <code>ApplyNormalization</code>, and <code>Output</code>.</p>
     pub output_source_config: ::std::option::Option<::std::vec::Vec<crate::types::OutputSource>>,
-    /// <p>An object which defines the <code>resolutionType</code> and the <code>ruleBasedProperties</code> </p>
+    /// <p>An object which defines the <code>resolutionType</code> and the <code>ruleBasedProperties</code>.</p>
     pub resolution_techniques: ::std::option::Option<crate::types::ResolutionTechniques>,
     /// <p>An object which defines an incremental run type and has only <code>incrementalRunType</code> as a field.</p>
     pub incremental_run_config: ::std::option::Option<crate::types::IncrementalRunConfig>,
-    /// <p>The Amazon Resource Name (ARN) of the IAM role. AWS Entity Resolution assumes this role to create resources on your behalf as part of workflow execution.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role. Entity Resolution assumes this role to create resources on your behalf as part of workflow execution.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
 }
 impl UpdateMatchingWorkflowInput {
@@ -35,7 +35,7 @@ impl UpdateMatchingWorkflowInput {
     pub fn output_source_config(&self) -> ::std::option::Option<&[crate::types::OutputSource]> {
         self.output_source_config.as_deref()
     }
-    /// <p>An object which defines the <code>resolutionType</code> and the <code>ruleBasedProperties</code> </p>
+    /// <p>An object which defines the <code>resolutionType</code> and the <code>ruleBasedProperties</code>.</p>
     pub fn resolution_techniques(&self) -> ::std::option::Option<&crate::types::ResolutionTechniques> {
         self.resolution_techniques.as_ref()
     }
@@ -43,7 +43,7 @@ impl UpdateMatchingWorkflowInput {
     pub fn incremental_run_config(&self) -> ::std::option::Option<&crate::types::IncrementalRunConfig> {
         self.incremental_run_config.as_ref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM role. AWS Entity Resolution assumes this role to create resources on your behalf as part of workflow execution.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role. Entity Resolution assumes this role to create resources on your behalf as part of workflow execution.</p>
     pub fn role_arn(&self) -> ::std::option::Option<&str> {
         self.role_arn.as_deref()
     }
@@ -136,17 +136,17 @@ impl UpdateMatchingWorkflowInputBuilder {
     pub fn get_output_source_config(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OutputSource>> {
         &self.output_source_config
     }
-    /// <p>An object which defines the <code>resolutionType</code> and the <code>ruleBasedProperties</code> </p>
+    /// <p>An object which defines the <code>resolutionType</code> and the <code>ruleBasedProperties</code>.</p>
     pub fn resolution_techniques(mut self, input: crate::types::ResolutionTechniques) -> Self {
         self.resolution_techniques = ::std::option::Option::Some(input);
         self
     }
-    /// <p>An object which defines the <code>resolutionType</code> and the <code>ruleBasedProperties</code> </p>
+    /// <p>An object which defines the <code>resolutionType</code> and the <code>ruleBasedProperties</code>.</p>
     pub fn set_resolution_techniques(mut self, input: ::std::option::Option<crate::types::ResolutionTechniques>) -> Self {
         self.resolution_techniques = input;
         self
     }
-    /// <p>An object which defines the <code>resolutionType</code> and the <code>ruleBasedProperties</code> </p>
+    /// <p>An object which defines the <code>resolutionType</code> and the <code>ruleBasedProperties</code>.</p>
     pub fn get_resolution_techniques(&self) -> &::std::option::Option<crate::types::ResolutionTechniques> {
         &self.resolution_techniques
     }
@@ -164,17 +164,17 @@ impl UpdateMatchingWorkflowInputBuilder {
     pub fn get_incremental_run_config(&self) -> &::std::option::Option<crate::types::IncrementalRunConfig> {
         &self.incremental_run_config
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM role. AWS Entity Resolution assumes this role to create resources on your behalf as part of workflow execution.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role. Entity Resolution assumes this role to create resources on your behalf as part of workflow execution.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM role. AWS Entity Resolution assumes this role to create resources on your behalf as part of workflow execution.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role. Entity Resolution assumes this role to create resources on your behalf as part of workflow execution.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM role. AWS Entity Resolution assumes this role to create resources on your behalf as part of workflow execution.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role. Entity Resolution assumes this role to create resources on your behalf as part of workflow execution.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.role_arn
     }

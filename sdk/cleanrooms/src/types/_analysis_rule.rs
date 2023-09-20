@@ -6,7 +6,7 @@
 pub struct AnalysisRule {
     /// <p>The unique ID for the associated collaboration.</p>
     pub collaboration_id: ::std::option::Option<::std::string::String>,
-    /// <p>The type of analysis rule. Valid values are `AGGREGATION` and `LIST`.</p>
+    /// <p>The type of analysis rule.</p>
     pub r#type: ::std::option::Option<crate::types::AnalysisRuleType>,
     /// <p>The name for the analysis rule.</p>
     pub name: ::std::option::Option<::std::string::String>,
@@ -22,7 +22,7 @@ impl AnalysisRule {
     pub fn collaboration_id(&self) -> ::std::option::Option<&str> {
         self.collaboration_id.as_deref()
     }
-    /// <p>The type of analysis rule. Valid values are `AGGREGATION` and `LIST`.</p>
+    /// <p>The type of analysis rule.</p>
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::AnalysisRuleType> {
         self.r#type.as_ref()
     }
@@ -76,17 +76,17 @@ impl AnalysisRuleBuilder {
     pub fn get_collaboration_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.collaboration_id
     }
-    /// <p>The type of analysis rule. Valid values are `AGGREGATION` and `LIST`.</p>
+    /// <p>The type of analysis rule.</p>
     pub fn r#type(mut self, input: crate::types::AnalysisRuleType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of analysis rule. Valid values are `AGGREGATION` and `LIST`.</p>
+    /// <p>The type of analysis rule.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::AnalysisRuleType>) -> Self {
         self.r#type = input;
         self
     }
-    /// <p>The type of analysis rule. Valid values are `AGGREGATION` and `LIST`.</p>
+    /// <p>The type of analysis rule.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::AnalysisRuleType> {
         &self.r#type
     }

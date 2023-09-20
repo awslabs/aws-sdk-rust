@@ -7,6 +7,9 @@ pub mod complete_attachment_upload;
 /// Types for the `CreateParticipantConnection` operation.
 pub mod create_participant_connection;
 
+/// Types for the `DescribeView` operation.
+pub mod describe_view;
+
 /// Types for the `DisconnectParticipant` operation.
 pub mod disconnect_participant;
 

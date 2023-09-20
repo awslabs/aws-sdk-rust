@@ -3,7 +3,7 @@
 /// <p>Contains details about a policy template</p>
 /// <p>This data type is used as a response parameter for the <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_ListPolicyTemplates.html">ListPolicyTemplates</a> operation.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct PolicyTemplateItem {
     /// <p>The unique identifier of the policy store that contains the template.</p>
     pub policy_store_id: ::std::option::Option<::std::string::String>,
@@ -38,6 +38,17 @@ impl PolicyTemplateItem {
         self.last_updated_date.as_ref()
     }
 }
+impl ::std::fmt::Debug for PolicyTemplateItem {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("PolicyTemplateItem");
+        formatter.field("policy_store_id", &self.policy_store_id);
+        formatter.field("policy_template_id", &self.policy_template_id);
+        formatter.field("description", &"*** Sensitive Data Redacted ***");
+        formatter.field("created_date", &self.created_date);
+        formatter.field("last_updated_date", &self.last_updated_date);
+        formatter.finish()
+    }
+}
 impl PolicyTemplateItem {
     /// Creates a new builder-style object to manufacture [`PolicyTemplateItem`](crate::types::PolicyTemplateItem).
     pub fn builder() -> crate::types::builders::PolicyTemplateItemBuilder {
@@ -47,7 +58,7 @@ impl PolicyTemplateItem {
 
 /// A builder for [`PolicyTemplateItem`](crate::types::PolicyTemplateItem).
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct PolicyTemplateItemBuilder {
     pub(crate) policy_store_id: ::std::option::Option<::std::string::String>,
     pub(crate) policy_template_id: ::std::option::Option<::std::string::String>,
@@ -135,5 +146,16 @@ impl PolicyTemplateItemBuilder {
             created_date: self.created_date,
             last_updated_date: self.last_updated_date,
         }
+    }
+}
+impl ::std::fmt::Debug for PolicyTemplateItemBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("PolicyTemplateItemBuilder");
+        formatter.field("policy_store_id", &self.policy_store_id);
+        formatter.field("policy_template_id", &self.policy_template_id);
+        formatter.field("description", &"*** Sensitive Data Redacted ***");
+        formatter.field("created_date", &self.created_date);
+        formatter.field("last_updated_date", &self.last_updated_date);
+        formatter.finish()
     }
 }

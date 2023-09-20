@@ -229,6 +229,10 @@ pub use crate::types::_click_feedback::ClickFeedback;
 
 pub use crate::types::_retrieve_result_item::RetrieveResultItem;
 
+pub use crate::types::_score_attributes::ScoreAttributes;
+
+pub use crate::types::_score_confidence::ScoreConfidence;
+
 pub use crate::types::_document_attribute::DocumentAttribute;
 
 pub use crate::types::_user_context::UserContext;
@@ -274,10 +278,6 @@ pub use crate::types::_table_excerpt::TableExcerpt;
 pub use crate::types::_table_row::TableRow;
 
 pub use crate::types::_table_cell::TableCell;
-
-pub use crate::types::_score_attributes::ScoreAttributes;
-
-pub use crate::types::_score_confidence::ScoreConfidence;
 
 pub use crate::types::_query_result_format::QueryResultFormat;
 

@@ -59,6 +59,8 @@ pub struct TransformJob {
     pub experiment_config: ::std::option::Option<crate::types::ExperimentConfig>,
     /// <p>A list of tags associated with the transform job.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    /// <p>Configuration to control how SageMaker captures inference data for batch transform jobs.</p>
+    pub data_capture_config: ::std::option::Option<crate::types::BatchDataCaptureConfig>,
 }
 impl TransformJob {
     /// <p>The name of the transform job.</p>
@@ -158,6 +160,10 @@ impl TransformJob {
     pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
+    /// <p>Configuration to control how SageMaker captures inference data for batch transform jobs.</p>
+    pub fn data_capture_config(&self) -> ::std::option::Option<&crate::types::BatchDataCaptureConfig> {
+        self.data_capture_config.as_ref()
+    }
 }
 impl TransformJob {
     /// Creates a new builder-style object to manufacture [`TransformJob`](crate::types::TransformJob).
@@ -191,6 +197,7 @@ pub struct TransformJobBuilder {
     pub(crate) data_processing: ::std::option::Option<crate::types::DataProcessing>,
     pub(crate) experiment_config: ::std::option::Option<crate::types::ExperimentConfig>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) data_capture_config: ::std::option::Option<crate::types::BatchDataCaptureConfig>,
 }
 impl TransformJobBuilder {
     /// <p>The name of the transform job.</p>
@@ -541,6 +548,20 @@ impl TransformJobBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }
+    /// <p>Configuration to control how SageMaker captures inference data for batch transform jobs.</p>
+    pub fn data_capture_config(mut self, input: crate::types::BatchDataCaptureConfig) -> Self {
+        self.data_capture_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Configuration to control how SageMaker captures inference data for batch transform jobs.</p>
+    pub fn set_data_capture_config(mut self, input: ::std::option::Option<crate::types::BatchDataCaptureConfig>) -> Self {
+        self.data_capture_config = input;
+        self
+    }
+    /// <p>Configuration to control how SageMaker captures inference data for batch transform jobs.</p>
+    pub fn get_data_capture_config(&self) -> &::std::option::Option<crate::types::BatchDataCaptureConfig> {
+        &self.data_capture_config
+    }
     /// Consumes the builder and constructs a [`TransformJob`](crate::types::TransformJob).
     pub fn build(self) -> crate::types::TransformJob {
         crate::types::TransformJob {
@@ -565,6 +586,7 @@ impl TransformJobBuilder {
             data_processing: self.data_processing,
             experiment_config: self.experiment_config,
             tags: self.tags,
+            data_capture_config: self.data_capture_config,
         }
     }
 }

@@ -286,7 +286,7 @@ pub enum CreateRepositoryError {
     RepositoryNameRequiredException(crate::types::error::RepositoryNameRequiredException),
     /// <p>The tag policy is not valid.</p>
     TagPolicyException(crate::types::error::TagPolicyException),
-    /// <p>The maximum number of tags for an AWS CodeCommit resource has been exceeded.</p>
+    /// <p>The maximum number of tags for an CodeCommit resource has been exceeded.</p>
     TooManyTagsException(crate::types::error::TooManyTagsException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(::aws_smithy_types::error::Unhandled),

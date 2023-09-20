@@ -10,7 +10,7 @@ pub struct ModifyClusterSnapshotInput {
     /// <p>The value must be either -1 or an integer between 1 and 3,653.</p>
     pub manual_snapshot_retention_period: ::std::option::Option<i32>,
     /// <p>A Boolean option to override an exception if the retention period has already passed.</p>
-    pub force: bool,
+    pub force: ::std::option::Option<bool>,
 }
 impl ModifyClusterSnapshotInput {
     /// <p>The identifier of the snapshot whose setting you want to modify.</p>
@@ -24,7 +24,7 @@ impl ModifyClusterSnapshotInput {
         self.manual_snapshot_retention_period
     }
     /// <p>A Boolean option to override an exception if the retention period has already passed.</p>
-    pub fn force(&self) -> bool {
+    pub fn force(&self) -> ::std::option::Option<bool> {
         self.force
     }
 }
@@ -100,7 +100,7 @@ impl ModifyClusterSnapshotInputBuilder {
         ::std::result::Result::Ok(crate::operation::modify_cluster_snapshot::ModifyClusterSnapshotInput {
             snapshot_identifier: self.snapshot_identifier,
             manual_snapshot_retention_period: self.manual_snapshot_retention_period,
-            force: self.force.unwrap_or_default(),
+            force: self.force,
         })
     }
 }

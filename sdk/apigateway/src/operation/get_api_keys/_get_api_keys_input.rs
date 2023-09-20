@@ -10,7 +10,7 @@ pub struct GetApiKeysInput {
     pub limit: ::std::option::Option<i32>,
     /// <p>The name of queried API keys.</p>
     pub name_query: ::std::option::Option<::std::string::String>,
-    /// <p>The identifier of a customer in AWS Marketplace or an external system, such as a developer portal.</p>
+    /// <p>The identifier of a customer in Amazon Web Services Marketplace or an external system, such as a developer portal.</p>
     pub customer_id: ::std::option::Option<::std::string::String>,
     /// <p>A boolean flag to specify whether (<code>true</code>) or not (<code>false</code>) the result contains key values.</p>
     pub include_values: ::std::option::Option<bool>,
@@ -28,7 +28,7 @@ impl GetApiKeysInput {
     pub fn name_query(&self) -> ::std::option::Option<&str> {
         self.name_query.as_deref()
     }
-    /// <p>The identifier of a customer in AWS Marketplace or an external system, such as a developer portal.</p>
+    /// <p>The identifier of a customer in Amazon Web Services Marketplace or an external system, such as a developer portal.</p>
     pub fn customer_id(&self) -> ::std::option::Option<&str> {
         self.customer_id.as_deref()
     }
@@ -97,17 +97,17 @@ impl GetApiKeysInputBuilder {
     pub fn get_name_query(&self) -> &::std::option::Option<::std::string::String> {
         &self.name_query
     }
-    /// <p>The identifier of a customer in AWS Marketplace or an external system, such as a developer portal.</p>
+    /// <p>The identifier of a customer in Amazon Web Services Marketplace or an external system, such as a developer portal.</p>
     pub fn customer_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.customer_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of a customer in AWS Marketplace or an external system, such as a developer portal.</p>
+    /// <p>The identifier of a customer in Amazon Web Services Marketplace or an external system, such as a developer portal.</p>
     pub fn set_customer_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.customer_id = input;
         self
     }
-    /// <p>The identifier of a customer in AWS Marketplace or an external system, such as a developer portal.</p>
+    /// <p>The identifier of a customer in Amazon Web Services Marketplace or an external system, such as a developer portal.</p>
     pub fn get_customer_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.customer_id
     }

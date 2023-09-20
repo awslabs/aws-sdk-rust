@@ -63,7 +63,15 @@ impl UpdateKxClusterDatabases {
         config_override: ::std::option::Option<crate::config::Builder>,
     ) -> ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugins {
         let mut runtime_plugins = client_runtime_plugins.with_operation_plugin(Self::new());
-
+        runtime_plugins = runtime_plugins.with_operation_plugin(crate::client_idempotency_token::IdempotencyTokenRuntimePlugin::new(
+            |token_provider, input| {
+                let input: &mut crate::operation::update_kx_cluster_databases::UpdateKxClusterDatabasesInput =
+                    input.downcast_mut().expect("correct type");
+                if input.client_token.is_none() {
+                    input.client_token = ::std::option::Option::Some(token_provider.make_idempotency_token());
+                }
+            },
+        ));
         if let ::std::option::Option::Some(config_override) = config_override {
             for plugin in config_override.runtime_plugins.iter().cloned() {
                 runtime_plugins = runtime_plugins.with_operation_plugin(plugin);
@@ -286,6 +294,8 @@ pub type UpdateKxClusterDatabasesErrorKind = UpdateKxClusterDatabasesError;
 pub enum UpdateKxClusterDatabasesError {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
+    /// <p>There was a conflict with this action, and it could not be completed.</p>
+    ConflictException(crate::types::error::ConflictException),
     /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     InternalServerException(crate::types::error::InternalServerException),
     /// <p>A service limit or quota is exceeded.</p>
@@ -315,6 +325,7 @@ impl ::std::fmt::Display for UpdateKxClusterDatabasesError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
             Self::AccessDeniedException(_inner) => _inner.fmt(f),
+            Self::ConflictException(_inner) => _inner.fmt(f),
             Self::InternalServerException(_inner) => _inner.fmt(f),
             Self::LimitExceededException(_inner) => _inner.fmt(f),
             Self::ResourceNotFoundException(_inner) => _inner.fmt(f),
@@ -328,6 +339,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for UpdateKxClust
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::AccessDeniedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ConflictException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InternalServerException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::LimitExceededException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ResourceNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
@@ -370,6 +382,7 @@ impl UpdateKxClusterDatabasesError {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         match self {
             Self::AccessDeniedException(e) => e.meta(),
+            Self::ConflictException(e) => e.meta(),
             Self::InternalServerException(e) => e.meta(),
             Self::LimitExceededException(e) => e.meta(),
             Self::ResourceNotFoundException(e) => e.meta(),
@@ -381,6 +394,10 @@ impl UpdateKxClusterDatabasesError {
     /// Returns `true` if the error kind is `UpdateKxClusterDatabasesError::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(self, Self::AccessDeniedException(_))
+    }
+    /// Returns `true` if the error kind is `UpdateKxClusterDatabasesError::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(self, Self::ConflictException(_))
     }
     /// Returns `true` if the error kind is `UpdateKxClusterDatabasesError::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
@@ -407,6 +424,7 @@ impl ::std::error::Error for UpdateKxClusterDatabasesError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
             Self::AccessDeniedException(_inner) => ::std::option::Option::Some(_inner),
+            Self::ConflictException(_inner) => ::std::option::Option::Some(_inner),
             Self::InternalServerException(_inner) => ::std::option::Option::Some(_inner),
             Self::LimitExceededException(_inner) => ::std::option::Option::Some(_inner),
             Self::ResourceNotFoundException(_inner) => ::std::option::Option::Some(_inner),

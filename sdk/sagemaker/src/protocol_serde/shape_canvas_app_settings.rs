@@ -21,6 +21,18 @@ pub fn ser_canvas_app_settings(
         crate::protocol_serde::shape_workspace_settings::ser_workspace_settings(&mut object_6, var_5)?;
         object_6.finish();
     }
+    if let Some(var_7) = &input.identity_provider_o_auth_settings {
+        let mut array_8 = object.key("IdentityProviderOAuthSettings").start_array();
+        for item_9 in var_7 {
+            {
+                #[allow(unused_mut)]
+                let mut object_10 = array_8.value().start_object();
+                crate::protocol_serde::shape_identity_provider_o_auth_setting::ser_identity_provider_o_auth_setting(&mut object_10, item_9)?;
+                object_10.finish();
+            }
+        }
+        array_8.finish();
+    }
     Ok(())
 }
 
@@ -51,6 +63,11 @@ where
                         }
                         "WorkspaceSettings" => {
                             builder = builder.set_workspace_settings(crate::protocol_serde::shape_workspace_settings::de_workspace_settings(tokens)?);
+                        }
+                        "IdentityProviderOAuthSettings" => {
+                            builder = builder.set_identity_provider_o_auth_settings(
+                                crate::protocol_serde::shape_identity_provider_o_auth_settings::de_identity_provider_o_auth_settings(tokens)?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

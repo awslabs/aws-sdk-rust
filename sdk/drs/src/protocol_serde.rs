@@ -35,6 +35,8 @@ pub(crate) mod shape_create_source_network;
 
 pub(crate) mod shape_delete_job;
 
+pub(crate) mod shape_delete_launch_action;
+
 pub(crate) mod shape_delete_launch_configuration_template;
 
 pub(crate) mod shape_delete_recovery_instance;
@@ -77,9 +79,13 @@ pub(crate) mod shape_initialize_service;
 
 pub(crate) mod shape_list_extensible_source_servers;
 
+pub(crate) mod shape_list_launch_actions;
+
 pub(crate) mod shape_list_staging_accounts;
 
 pub(crate) mod shape_list_tags_for_resource;
+
+pub(crate) mod shape_put_launch_action;
 
 pub(crate) mod shape_retry_data_replication;
 
@@ -141,6 +147,8 @@ pub(crate) mod shape_create_source_network_input;
 
 pub(crate) mod shape_delete_job_input;
 
+pub(crate) mod shape_delete_launch_action_input;
+
 pub(crate) mod shape_delete_launch_configuration_template_input;
 
 pub(crate) mod shape_delete_recovery_instance_input;
@@ -182,6 +190,10 @@ pub(crate) mod shape_get_replication_configuration_input;
 pub(crate) mod shape_internal_server_exception;
 
 pub(crate) mod shape_list_extensible_source_servers_input;
+
+pub(crate) mod shape_list_launch_actions_input;
+
+pub(crate) mod shape_put_launch_action_input;
 
 pub(crate) mod shape_resource_not_found_exception;
 
@@ -249,6 +261,14 @@ pub(crate) mod shape_job_logs;
 
 pub(crate) mod shape_jobs_list;
 
+pub(crate) mod shape_launch_action_parameter;
+
+pub(crate) mod shape_launch_action_parameters;
+
+pub(crate) mod shape_launch_actions;
+
+pub(crate) mod shape_launch_actions_request_filters;
+
 pub(crate) mod shape_launch_configuration_template;
 
 pub(crate) mod shape_launch_configuration_templates;
@@ -311,6 +331,8 @@ pub(crate) mod shape_identification_hints;
 
 pub(crate) mod shape_job_log;
 
+pub(crate) mod shape_launch_action;
+
 pub(crate) mod shape_life_cycle_last_launch;
 
 pub(crate) mod shape_network_interfaces;
@@ -367,6 +389,8 @@ pub(crate) mod shape_event_resource_data;
 
 pub(crate) mod shape_i_ps_list;
 
+pub(crate) mod shape_launch_actions_status;
+
 pub(crate) mod shape_participating_resource_id;
 
 pub(crate) mod shape_recovery_instance_data_replication_error;
@@ -376,6 +400,8 @@ pub(crate) mod shape_recovery_instance_data_replication_info_replicated_disks;
 pub(crate) mod shape_recovery_instance_data_replication_initiation;
 
 pub(crate) mod shape_recovery_instance_disks;
+
+pub(crate) mod shape_launch_action_runs;
 
 pub(crate) mod shape_recovery_instance_data_replication_info_replicated_disk;
 
@@ -390,5 +416,7 @@ pub(crate) mod shape_volume_to_conversion_map;
 pub(crate) mod shape_volume_to_size_map;
 
 pub(crate) mod shape_conversion_map;
+
+pub(crate) mod shape_launch_action_run;
 
 pub(crate) mod shape_recovery_instance_data_replication_initiation_step;

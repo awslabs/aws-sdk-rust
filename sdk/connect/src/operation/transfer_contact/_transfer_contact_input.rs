@@ -9,7 +9,7 @@ pub struct TransferContactInput {
     pub contact_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier for the queue.</p>
     pub queue_id: ::std::option::Option<::std::string::String>,
-    /// <p>The identifier for the user.</p>
+    /// <p>The identifier for the user. This can be the ID or the ARN of the user.</p>
     pub user_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the flow.</p>
     pub contact_flow_id: ::std::option::Option<::std::string::String>,
@@ -29,7 +29,7 @@ impl TransferContactInput {
     pub fn queue_id(&self) -> ::std::option::Option<&str> {
         self.queue_id.as_deref()
     }
-    /// <p>The identifier for the user.</p>
+    /// <p>The identifier for the user. This can be the ID or the ARN of the user.</p>
     pub fn user_id(&self) -> ::std::option::Option<&str> {
         self.user_id.as_deref()
     }
@@ -103,17 +103,17 @@ impl TransferContactInputBuilder {
     pub fn get_queue_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.queue_id
     }
-    /// <p>The identifier for the user.</p>
+    /// <p>The identifier for the user. This can be the ID or the ARN of the user.</p>
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier for the user.</p>
+    /// <p>The identifier for the user. This can be the ID or the ARN of the user.</p>
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_id = input;
         self
     }
-    /// <p>The identifier for the user.</p>
+    /// <p>The identifier for the user. This can be the ID or the ARN of the user.</p>
     pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.user_id
     }

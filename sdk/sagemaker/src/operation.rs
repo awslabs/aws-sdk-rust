@@ -508,6 +508,9 @@ pub mod get_model_package_group_policy;
 /// Types for the `GetSagemakerServicecatalogPortfolioStatus` operation.
 pub mod get_sagemaker_servicecatalog_portfolio_status;
 
+/// Types for the `GetScalingConfigurationRecommendation` operation.
+pub mod get_scaling_configuration_recommendation;
+
 /// Types for the `GetSearchSuggestions` operation.
 pub mod get_search_suggestions;
 

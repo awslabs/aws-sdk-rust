@@ -170,6 +170,19 @@ pub fn de_load_balancer(
                 builder = builder.set_customer_owned_ipv4_pool(var_13);
             }
             ,
+            s if s.matches("EnforceSecurityGroupInboundRulesOnPrivateLinkTraffic") /* EnforceSecurityGroupInboundRulesOnPrivateLinkTraffic com.amazonaws.elasticloadbalancingv2#LoadBalancer$EnforceSecurityGroupInboundRulesOnPrivateLinkTraffic */ =>  {
+                let var_14 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_enforce_security_group_inbound_rules_on_private_link_traffic(var_14);
+            }
+            ,
             _ => {}
         }
     }

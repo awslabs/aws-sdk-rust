@@ -262,6 +262,7 @@ where
 impl From<crate::operation::create_service_network_service_association::CreateServiceNetworkServiceAssociationError> for Error {
     fn from(err: crate::operation::create_service_network_service_association::CreateServiceNetworkServiceAssociationError) -> Self {
         match err {
+            crate::operation::create_service_network_service_association::CreateServiceNetworkServiceAssociationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::create_service_network_service_association::CreateServiceNetworkServiceAssociationError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::create_service_network_service_association::CreateServiceNetworkServiceAssociationError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::create_service_network_service_association::CreateServiceNetworkServiceAssociationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
@@ -1057,6 +1058,7 @@ where
 impl From<crate::operation::get_target_group::GetTargetGroupError> for Error {
     fn from(err: crate::operation::get_target_group::GetTargetGroupError) -> Self {
         match err {
+            crate::operation::get_target_group::GetTargetGroupError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::get_target_group::GetTargetGroupError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::get_target_group::GetTargetGroupError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::get_target_group::GetTargetGroupError::ThrottlingException(inner) => Error::ThrottlingException(inner),
@@ -1084,6 +1086,9 @@ where
 impl From<crate::operation::list_access_log_subscriptions::ListAccessLogSubscriptionsError> for Error {
     fn from(err: crate::operation::list_access_log_subscriptions::ListAccessLogSubscriptionsError) -> Self {
         match err {
+            crate::operation::list_access_log_subscriptions::ListAccessLogSubscriptionsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
             crate::operation::list_access_log_subscriptions::ListAccessLogSubscriptionsError::InternalServerException(inner) => {
                 Error::InternalServerException(inner)
             }
@@ -1316,6 +1321,7 @@ where
 impl From<crate::operation::list_tags_for_resource::ListTagsForResourceError> for Error {
     fn from(err: crate::operation::list_tags_for_resource::ListTagsForResourceError) -> Self {
         match err {
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::list_tags_for_resource::ListTagsForResourceError::InternalServerException(inner) => {
                 Error::InternalServerException(inner)
             }
@@ -1519,6 +1525,7 @@ where
 impl From<crate::operation::untag_resource::UntagResourceError> for Error {
     fn from(err: crate::operation::untag_resource::UntagResourceError) -> Self {
         match err {
+            crate::operation::untag_resource::UntagResourceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::untag_resource::UntagResourceError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::untag_resource::UntagResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::untag_resource::UntagResourceError::ValidationException(inner) => Error::ValidationException(inner),
@@ -1756,6 +1763,7 @@ where
 impl From<crate::operation::update_target_group::UpdateTargetGroupError> for Error {
     fn from(err: crate::operation::update_target_group::UpdateTargetGroupError) -> Self {
         match err {
+            crate::operation::update_target_group::UpdateTargetGroupError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::update_target_group::UpdateTargetGroupError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::update_target_group::UpdateTargetGroupError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::update_target_group::UpdateTargetGroupError::ResourceNotFoundException(inner) => {

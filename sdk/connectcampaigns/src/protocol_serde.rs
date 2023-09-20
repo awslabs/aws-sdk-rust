@@ -141,6 +141,8 @@ pub(crate) mod shape_successful_request_list;
 
 pub(crate) mod shape_tag_map;
 
+pub(crate) mod shape_agentless_dialer_config;
+
 pub(crate) mod shape_campaign_summary;
 
 pub(crate) mod shape_failed_campaign_state_response;

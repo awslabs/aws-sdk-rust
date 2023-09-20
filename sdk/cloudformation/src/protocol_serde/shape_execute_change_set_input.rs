@@ -25,6 +25,11 @@ pub fn ser_execute_change_set_input_input(
     if let Some(var_8) = &input.disable_rollback {
         scope_7.boolean(*var_8);
     }
+    #[allow(unused_mut)]
+    let mut scope_9 = writer.prefix("RetainExceptOnCreate");
+    if let Some(var_10) = &input.retain_except_on_create {
+        scope_9.boolean(*var_10);
+    }
     writer.finish();
     Ok(::aws_smithy_http::body::SdkBody::from(out))
 }

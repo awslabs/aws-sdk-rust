@@ -42,7 +42,7 @@ pub(super) fn resolve_endpoint(
                     if let Some(partition_result) = partition_resolver.resolve_partition(region, _diagnostic_collector) {
                         if (*use_dual_stack) == (true) {
                             return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(
-                                "S3 Snow does not support Dual-stack".to_string(),
+                                "S3 Snow does not support DualStack".to_string(),
                             ));
                         }
                         if (*use_fips) == (true) {
@@ -73,9 +73,11 @@ pub(super) fn resolve_endpoint(
                             )
                             .build());
                     }
-                    return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(
-                        "A valid partition could not be determined".to_string(),
-                    ));
+                    #[allow(unreachable_code)]
+                    return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(format!(
+                        "No rules matched these parameters. This is a bug. {:?}",
+                        _params
+                    )));
                 }
             }
         }
@@ -202,9 +204,11 @@ pub(super) fn resolve_endpoint(
                     "Invalid region: region was not a valid DNS name.".to_string(),
                 ));
             }
-            return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(
-                "A valid partition could not be determined".to_string(),
-            ));
+            #[allow(unreachable_code)]
+            return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(format!(
+                "No rules matched these parameters. This is a bug. {:?}",
+                _params
+            )));
         }
         #[allow(unused_variables)]
         if let Some(access_point_name) = access_point_name {
@@ -459,18 +463,17 @@ pub(super) fn resolve_endpoint(
                                                 out
                                             }));
                                         }
-                                        return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message({
-                                            let mut out = String::new();
-                                            out.push_str("Could not load partition for ARN region `");
-                                            #[allow(clippy::needless_borrow)]
-                                            out.push_str(&access_point_arn.region());
-                                            out.push('`');
-                                            out
-                                        }));
+                                        #[allow(unreachable_code)]
+                                        return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(format!(
+                                            "No rules matched these parameters. This is a bug. {:?}",
+                                            _params
+                                        )));
                                     }
-                                    return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(
-                                        "A valid partition could not be determined".to_string(),
-                                    ));
+                                    #[allow(unreachable_code)]
+                                    return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(format!(
+                                        "No rules matched these parameters. This is a bug. {:?}",
+                                        _params
+                                    )));
                                 }
                                 return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message({
                                     let mut out = String::new();
@@ -741,18 +744,17 @@ pub(super) fn resolve_endpoint(
                                                 out
                                             }));
                                         }
-                                        return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(
-                                            "A valid partition could not be determined".to_string(),
-                                        ));
+                                        #[allow(unreachable_code)]
+                                        return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(format!(
+                                            "No rules matched these parameters. This is a bug. {:?}",
+                                            _params
+                                        )));
                                     }
-                                    return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message({
-                                        let mut out = String::new();
-                                        out.push_str("Could not load partition for ARN region `");
-                                        #[allow(clippy::needless_borrow)]
-                                        out.push_str(&bucket_arn.region());
-                                        out.push('`');
-                                        out
-                                    }));
+                                    #[allow(unreachable_code)]
+                                    return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(format!(
+                                        "No rules matched these parameters. This is a bug. {:?}",
+                                        _params
+                                    )));
                                 }
                                 return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message({
                                     let mut out = String::new();
@@ -813,7 +815,7 @@ pub(super) fn resolve_endpoint(
                     if let Some(url) = crate::endpoint_lib::parse_url::parse_url(endpoint, _diagnostic_collector) {
                         if (*use_dual_stack) == (true) {
                             return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(
-                                "Invalid Configuration: Dualstack and custom endpoint are not supported".to_string(),
+                                "Invalid Configuration: DualStack and custom endpoint are not supported".to_string(),
                             ));
                         }
                         #[allow(unused_variables)]
@@ -1147,9 +1149,11 @@ pub(super) fn resolve_endpoint(
                 "Invalid region: region was not a valid DNS name.".to_string(),
             ));
         }
-        return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(
-            "A valid partition could not be determined".to_string(),
-        ));
+        #[allow(unreachable_code)]
+        return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(format!(
+            "No rules matched these parameters. This is a bug. {:?}",
+            _params
+        )));
     }
     return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(
         "Region must be set".to_string(),

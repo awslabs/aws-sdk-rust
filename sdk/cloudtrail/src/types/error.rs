@@ -5,6 +5,8 @@ pub use crate::types::error::_trail_not_provided_exception::TrailNotProvidedExce
 
 pub use crate::types::error::_trail_not_found_exception::TrailNotFoundException;
 
+pub use crate::types::error::_throttling_exception::ThrottlingException;
+
 pub use crate::types::error::_s3_bucket_does_not_exist_exception::S3BucketDoesNotExistException;
 
 pub use crate::types::error::_organizations_not_in_use_exception::OrganizationsNotInUseException;
@@ -306,6 +308,8 @@ mod _resource_type_not_supported_exception;
 mod _s3_bucket_does_not_exist_exception;
 
 mod _tags_limit_exceeded_exception;
+
+mod _throttling_exception;
 
 mod _trail_already_exists_exception;
 

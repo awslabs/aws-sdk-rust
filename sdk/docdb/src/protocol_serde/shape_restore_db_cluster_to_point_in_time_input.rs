@@ -27,64 +27,64 @@ pub fn ser_restore_db_cluster_to_point_in_time_input_input(
     }
     #[allow(unused_mut)]
     let mut scope_9 = writer.prefix("UseLatestRestorableTime");
-    if input.use_latest_restorable_time {
-        scope_9.boolean(input.use_latest_restorable_time);
+    if let Some(var_10) = &input.use_latest_restorable_time {
+        scope_9.boolean(*var_10);
     }
     #[allow(unused_mut)]
-    let mut scope_10 = writer.prefix("Port");
-    if let Some(var_11) = &input.port {
-        scope_10.number(
+    let mut scope_11 = writer.prefix("Port");
+    if let Some(var_12) = &input.port {
+        scope_11.number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_11).into()),
+            ::aws_smithy_types::Number::NegInt((*var_12).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_12 = writer.prefix("DBSubnetGroupName");
-    if let Some(var_13) = &input.db_subnet_group_name {
-        scope_12.string(var_13);
+    let mut scope_13 = writer.prefix("DBSubnetGroupName");
+    if let Some(var_14) = &input.db_subnet_group_name {
+        scope_13.string(var_14);
     }
     #[allow(unused_mut)]
-    let mut scope_14 = writer.prefix("VpcSecurityGroupIds");
-    if let Some(var_15) = &input.vpc_security_group_ids {
-        let mut list_17 = scope_14.start_list(false, Some("VpcSecurityGroupId"));
-        for item_16 in var_15 {
+    let mut scope_15 = writer.prefix("VpcSecurityGroupIds");
+    if let Some(var_16) = &input.vpc_security_group_ids {
+        let mut list_18 = scope_15.start_list(false, Some("VpcSecurityGroupId"));
+        for item_17 in var_16 {
             #[allow(unused_mut)]
-            let mut entry_18 = list_17.entry();
-            entry_18.string(item_16);
+            let mut entry_19 = list_18.entry();
+            entry_19.string(item_17);
         }
-        list_17.finish();
+        list_18.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_19 = writer.prefix("Tags");
-    if let Some(var_20) = &input.tags {
-        let mut list_22 = scope_19.start_list(false, Some("Tag"));
-        for item_21 in var_20 {
+    let mut scope_20 = writer.prefix("Tags");
+    if let Some(var_21) = &input.tags {
+        let mut list_23 = scope_20.start_list(false, Some("Tag"));
+        for item_22 in var_21 {
             #[allow(unused_mut)]
-            let mut entry_23 = list_22.entry();
-            crate::protocol_serde::shape_tag::ser_tag(entry_23, item_21)?;
+            let mut entry_24 = list_23.entry();
+            crate::protocol_serde::shape_tag::ser_tag(entry_24, item_22)?;
         }
-        list_22.finish();
+        list_23.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_24 = writer.prefix("KmsKeyId");
-    if let Some(var_25) = &input.kms_key_id {
-        scope_24.string(var_25);
+    let mut scope_25 = writer.prefix("KmsKeyId");
+    if let Some(var_26) = &input.kms_key_id {
+        scope_25.string(var_26);
     }
     #[allow(unused_mut)]
-    let mut scope_26 = writer.prefix("EnableCloudwatchLogsExports");
-    if let Some(var_27) = &input.enable_cloudwatch_logs_exports {
-        let mut list_29 = scope_26.start_list(false, None);
-        for item_28 in var_27 {
+    let mut scope_27 = writer.prefix("EnableCloudwatchLogsExports");
+    if let Some(var_28) = &input.enable_cloudwatch_logs_exports {
+        let mut list_30 = scope_27.start_list(false, None);
+        for item_29 in var_28 {
             #[allow(unused_mut)]
-            let mut entry_30 = list_29.entry();
-            entry_30.string(item_28);
+            let mut entry_31 = list_30.entry();
+            entry_31.string(item_29);
         }
-        list_29.finish();
+        list_30.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_31 = writer.prefix("DeletionProtection");
-    if let Some(var_32) = &input.deletion_protection {
-        scope_31.boolean(*var_32);
+    let mut scope_32 = writer.prefix("DeletionProtection");
+    if let Some(var_33) = &input.deletion_protection {
+        scope_32.boolean(*var_33);
     }
     writer.finish();
     Ok(::aws_smithy_http::body::SdkBody::from(out))

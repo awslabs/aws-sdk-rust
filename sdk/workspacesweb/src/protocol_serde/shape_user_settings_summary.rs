@@ -70,6 +70,11 @@ where
                                     .transpose()?,
                             );
                         }
+                        "cookieSynchronizationConfiguration" => {
+                            builder = builder.set_cookie_synchronization_configuration(
+                                crate::protocol_serde::shape_cookie_synchronization_configuration::de_cookie_synchronization_configuration(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

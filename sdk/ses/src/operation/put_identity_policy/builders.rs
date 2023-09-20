@@ -23,9 +23,9 @@ impl PutIdentityPolicyInputBuilder {
 /// Fluent builder constructing a request to `PutIdentityPolicy`.
 ///
 /// <p>Adds or updates a sending authorization policy for the specified identity (an email address or a domain).</p> <note>
-/// <p>This API is for the identity owner only. If you have not verified the identity, this API will return an error.</p>
+/// <p>This operation is for the identity owner only. If you have not verified the identity, it returns an error.</p>
 /// </note>
-/// <p>Sending authorization is a feature that enables an identity owner to authorize other senders to use its identities. For information about using sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
+/// <p>Sending authorization is a feature that enables an identity owner to authorize other senders to use its identities. For information about using sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/dg/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
 /// <p>You can execute this operation no more than once per second.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutIdentityPolicyFluentBuilder {
@@ -114,20 +114,20 @@ impl PutIdentityPolicyFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The identity that the policy will apply to. You can specify an identity by using its name or by using its Amazon Resource Name (ARN). Examples: <code>user@example.com</code>, <code>example.com</code>, <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
-    /// <p>To successfully call this API, you must own the identity.</p>
+    /// <p>The identity to which that the policy applies. You can specify an identity by using its name or by using its Amazon Resource Name (ARN). Examples: <code>user@example.com</code>, <code>example.com</code>, <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
+    /// <p>To successfully call this operation, you must own the identity.</p>
     pub fn identity(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.identity(input.into());
         self
     }
-    /// <p>The identity that the policy will apply to. You can specify an identity by using its name or by using its Amazon Resource Name (ARN). Examples: <code>user@example.com</code>, <code>example.com</code>, <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
-    /// <p>To successfully call this API, you must own the identity.</p>
+    /// <p>The identity to which that the policy applies. You can specify an identity by using its name or by using its Amazon Resource Name (ARN). Examples: <code>user@example.com</code>, <code>example.com</code>, <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
+    /// <p>To successfully call this operation, you must own the identity.</p>
     pub fn set_identity(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_identity(input);
         self
     }
-    /// <p>The identity that the policy will apply to. You can specify an identity by using its name or by using its Amazon Resource Name (ARN). Examples: <code>user@example.com</code>, <code>example.com</code>, <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
-    /// <p>To successfully call this API, you must own the identity.</p>
+    /// <p>The identity to which that the policy applies. You can specify an identity by using its name or by using its Amazon Resource Name (ARN). Examples: <code>user@example.com</code>, <code>example.com</code>, <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
+    /// <p>To successfully call this operation, you must own the identity.</p>
     pub fn get_identity(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_identity()
     }
@@ -149,19 +149,19 @@ impl PutIdentityPolicyFluentBuilder {
         self.inner.get_policy_name()
     }
     /// <p>The text of the policy in JSON format. The policy cannot exceed 4 KB.</p>
-    /// <p>For information about the syntax of sending authorization policies, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-policies.html">Amazon SES Developer Guide</a>. </p>
+    /// <p>For information about the syntax of sending authorization policies, see the <a href="https://docs.aws.amazon.com/ses/latest/dg/sending-authorization-policies.html">Amazon SES Developer Guide</a>. </p>
     pub fn policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.policy(input.into());
         self
     }
     /// <p>The text of the policy in JSON format. The policy cannot exceed 4 KB.</p>
-    /// <p>For information about the syntax of sending authorization policies, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-policies.html">Amazon SES Developer Guide</a>. </p>
+    /// <p>For information about the syntax of sending authorization policies, see the <a href="https://docs.aws.amazon.com/ses/latest/dg/sending-authorization-policies.html">Amazon SES Developer Guide</a>. </p>
     pub fn set_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_policy(input);
         self
     }
     /// <p>The text of the policy in JSON format. The policy cannot exceed 4 KB.</p>
-    /// <p>For information about the syntax of sending authorization policies, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-policies.html">Amazon SES Developer Guide</a>. </p>
+    /// <p>For information about the syntax of sending authorization policies, see the <a href="https://docs.aws.amazon.com/ses/latest/dg/sending-authorization-policies.html">Amazon SES Developer Guide</a>. </p>
     pub fn get_policy(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_policy()
     }

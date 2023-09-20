@@ -24,8 +24,10 @@ pub struct GcmMessage {
     pub image_icon_url: ::std::option::Option<::std::string::String>,
     /// <p>The URL of an image to display in the push notification.</p>
     pub image_url: ::std::option::Option<::std::string::String>,
-    /// <p>para&gt;normal - The notification might be delayed. Delivery is optimized for battery usage on the recipient's device. Use this value unless immediate delivery is required.</p>/listitem&gt;
-    /// <li><p>high - The notification is sent immediately and might wake a sleeping device.</p></li>/para&gt;
+    /// <p>The preferred authentication method, with valid values "KEY" or "TOKEN". If a value isn't provided then the <b>DefaultAuthenticationMethod</b> is used.</p>
+    pub preferred_authentication_method: ::std::option::Option<::std::string::String>,
+    /// <p>para&gt;normal – The notification might be delayed. Delivery is optimized for battery usage on the recipient's device. Use this value unless immediate delivery is required.</p>/listitem&gt;
+    /// <li><p>high – The notification is sent immediately and might wake a sleeping device.</p></li>/para&gt;
     /// <p>Amazon Pinpoint specifies this value in the FCM priority parameter when it sends the notification message to FCM.</p>
     /// <p>The equivalent values for Apple Push Notification service (APNs) are 5, for normal, and 10, for high. If you specify an APNs value for this property, Amazon Pinpoint accepts and converts the value to the corresponding FCM value.</p>
     pub priority: ::std::option::Option<::std::string::String>,
@@ -84,8 +86,12 @@ impl GcmMessage {
     pub fn image_url(&self) -> ::std::option::Option<&str> {
         self.image_url.as_deref()
     }
-    /// <p>para&gt;normal - The notification might be delayed. Delivery is optimized for battery usage on the recipient's device. Use this value unless immediate delivery is required.</p>/listitem&gt;
-    /// <li><p>high - The notification is sent immediately and might wake a sleeping device.</p></li>/para&gt;
+    /// <p>The preferred authentication method, with valid values "KEY" or "TOKEN". If a value isn't provided then the <b>DefaultAuthenticationMethod</b> is used.</p>
+    pub fn preferred_authentication_method(&self) -> ::std::option::Option<&str> {
+        self.preferred_authentication_method.as_deref()
+    }
+    /// <p>para&gt;normal – The notification might be delayed. Delivery is optimized for battery usage on the recipient's device. Use this value unless immediate delivery is required.</p>/listitem&gt;
+    /// <li><p>high – The notification is sent immediately and might wake a sleeping device.</p></li>/para&gt;
     /// <p>Amazon Pinpoint specifies this value in the FCM priority parameter when it sends the notification message to FCM.</p>
     /// <p>The equivalent values for Apple Push Notification service (APNs) are 5, for normal, and 10, for high. If you specify an APNs value for this property, Amazon Pinpoint accepts and converts the value to the corresponding FCM value.</p>
     pub fn priority(&self) -> ::std::option::Option<&str> {
@@ -149,6 +155,7 @@ pub struct GcmMessageBuilder {
     pub(crate) icon_reference: ::std::option::Option<::std::string::String>,
     pub(crate) image_icon_url: ::std::option::Option<::std::string::String>,
     pub(crate) image_url: ::std::option::Option<::std::string::String>,
+    pub(crate) preferred_authentication_method: ::std::option::Option<::std::string::String>,
     pub(crate) priority: ::std::option::Option<::std::string::String>,
     pub(crate) raw_content: ::std::option::Option<::std::string::String>,
     pub(crate) restricted_package_name: ::std::option::Option<::std::string::String>,
@@ -283,24 +290,38 @@ impl GcmMessageBuilder {
     pub fn get_image_url(&self) -> &::std::option::Option<::std::string::String> {
         &self.image_url
     }
-    /// <p>para&gt;normal - The notification might be delayed. Delivery is optimized for battery usage on the recipient's device. Use this value unless immediate delivery is required.</p>/listitem&gt;
-    /// <li><p>high - The notification is sent immediately and might wake a sleeping device.</p></li>/para&gt;
+    /// <p>The preferred authentication method, with valid values "KEY" or "TOKEN". If a value isn't provided then the <b>DefaultAuthenticationMethod</b> is used.</p>
+    pub fn preferred_authentication_method(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.preferred_authentication_method = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The preferred authentication method, with valid values "KEY" or "TOKEN". If a value isn't provided then the <b>DefaultAuthenticationMethod</b> is used.</p>
+    pub fn set_preferred_authentication_method(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.preferred_authentication_method = input;
+        self
+    }
+    /// <p>The preferred authentication method, with valid values "KEY" or "TOKEN". If a value isn't provided then the <b>DefaultAuthenticationMethod</b> is used.</p>
+    pub fn get_preferred_authentication_method(&self) -> &::std::option::Option<::std::string::String> {
+        &self.preferred_authentication_method
+    }
+    /// <p>para&gt;normal – The notification might be delayed. Delivery is optimized for battery usage on the recipient's device. Use this value unless immediate delivery is required.</p>/listitem&gt;
+    /// <li><p>high – The notification is sent immediately and might wake a sleeping device.</p></li>/para&gt;
     /// <p>Amazon Pinpoint specifies this value in the FCM priority parameter when it sends the notification message to FCM.</p>
     /// <p>The equivalent values for Apple Push Notification service (APNs) are 5, for normal, and 10, for high. If you specify an APNs value for this property, Amazon Pinpoint accepts and converts the value to the corresponding FCM value.</p>
     pub fn priority(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.priority = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>para&gt;normal - The notification might be delayed. Delivery is optimized for battery usage on the recipient's device. Use this value unless immediate delivery is required.</p>/listitem&gt;
-    /// <li><p>high - The notification is sent immediately and might wake a sleeping device.</p></li>/para&gt;
+    /// <p>para&gt;normal – The notification might be delayed. Delivery is optimized for battery usage on the recipient's device. Use this value unless immediate delivery is required.</p>/listitem&gt;
+    /// <li><p>high – The notification is sent immediately and might wake a sleeping device.</p></li>/para&gt;
     /// <p>Amazon Pinpoint specifies this value in the FCM priority parameter when it sends the notification message to FCM.</p>
     /// <p>The equivalent values for Apple Push Notification service (APNs) are 5, for normal, and 10, for high. If you specify an APNs value for this property, Amazon Pinpoint accepts and converts the value to the corresponding FCM value.</p>
     pub fn set_priority(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.priority = input;
         self
     }
-    /// <p>para&gt;normal - The notification might be delayed. Delivery is optimized for battery usage on the recipient's device. Use this value unless immediate delivery is required.</p>/listitem&gt;
-    /// <li><p>high - The notification is sent immediately and might wake a sleeping device.</p></li>/para&gt;
+    /// <p>para&gt;normal – The notification might be delayed. Delivery is optimized for battery usage on the recipient's device. Use this value unless immediate delivery is required.</p>/listitem&gt;
+    /// <li><p>high – The notification is sent immediately and might wake a sleeping device.</p></li>/para&gt;
     /// <p>Amazon Pinpoint specifies this value in the FCM priority parameter when it sends the notification message to FCM.</p>
     /// <p>The equivalent values for Apple Push Notification service (APNs) are 5, for normal, and 10, for high. If you specify an APNs value for this property, Amazon Pinpoint accepts and converts the value to the corresponding FCM value.</p>
     pub fn get_priority(&self) -> &::std::option::Option<::std::string::String> {
@@ -456,6 +477,7 @@ impl GcmMessageBuilder {
             icon_reference: self.icon_reference,
             image_icon_url: self.image_icon_url,
             image_url: self.image_url,
+            preferred_authentication_method: self.preferred_authentication_method,
             priority: self.priority,
             raw_content: self.raw_content,
             restricted_package_name: self.restricted_package_name,

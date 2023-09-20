@@ -25,7 +25,7 @@ pub struct StackSetOperation {
     /// <p>For stack set operations of action type <code>DELETE</code>, specifies whether to remove the stack instances from the specified stack set, but doesn't delete the stacks. You can't re-associate a retained stack, or add an existing, saved stack to a new stack set.</p>
     pub retain_stacks: ::std::option::Option<bool>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role used to perform this stack set operation.</p>
-    /// <p>Use customized administrator roles to control which users or groups can manage specific stack sets within the same administrator account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/stacksets-prereqs.html">Define Permissions for Multiple Administrators</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>Use customized administrator roles to control which users or groups can manage specific stack sets within the same administrator account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Define Permissions for Multiple Administrators</a> in the <i>CloudFormation User Guide</i>.</p>
     pub administration_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the IAM execution role used to create or update the stack set.</p>
     /// <p>Use customized execution roles to control which stack resources users and groups can include in their stack sets.</p>
@@ -79,7 +79,7 @@ impl StackSetOperation {
         self.retain_stacks
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role used to perform this stack set operation.</p>
-    /// <p>Use customized administrator roles to control which users or groups can manage specific stack sets within the same administrator account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/stacksets-prereqs.html">Define Permissions for Multiple Administrators</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>Use customized administrator roles to control which users or groups can manage specific stack sets within the same administrator account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Define Permissions for Multiple Administrators</a> in the <i>CloudFormation User Guide</i>.</p>
     pub fn administration_role_arn(&self) -> ::std::option::Option<&str> {
         self.administration_role_arn.as_deref()
     }
@@ -251,19 +251,19 @@ impl StackSetOperationBuilder {
         &self.retain_stacks
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role used to perform this stack set operation.</p>
-    /// <p>Use customized administrator roles to control which users or groups can manage specific stack sets within the same administrator account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/stacksets-prereqs.html">Define Permissions for Multiple Administrators</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>Use customized administrator roles to control which users or groups can manage specific stack sets within the same administrator account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Define Permissions for Multiple Administrators</a> in the <i>CloudFormation User Guide</i>.</p>
     pub fn administration_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.administration_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role used to perform this stack set operation.</p>
-    /// <p>Use customized administrator roles to control which users or groups can manage specific stack sets within the same administrator account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/stacksets-prereqs.html">Define Permissions for Multiple Administrators</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>Use customized administrator roles to control which users or groups can manage specific stack sets within the same administrator account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Define Permissions for Multiple Administrators</a> in the <i>CloudFormation User Guide</i>.</p>
     pub fn set_administration_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.administration_role_arn = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role used to perform this stack set operation.</p>
-    /// <p>Use customized administrator roles to control which users or groups can manage specific stack sets within the same administrator account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/stacksets-prereqs.html">Define Permissions for Multiple Administrators</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>Use customized administrator roles to control which users or groups can manage specific stack sets within the same administrator account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Define Permissions for Multiple Administrators</a> in the <i>CloudFormation User Guide</i>.</p>
     pub fn get_administration_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.administration_role_arn
     }

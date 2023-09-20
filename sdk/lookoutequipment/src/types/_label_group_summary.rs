@@ -6,7 +6,7 @@
 pub struct LabelGroupSummary {
     /// <p> The name of the label group. </p>
     pub label_group_name: ::std::option::Option<::std::string::String>,
-    /// <p> The ARN of the label group. </p>
+    /// <p> The Amazon Resource Name (ARN) of the label group. </p>
     pub label_group_arn: ::std::option::Option<::std::string::String>,
     /// <p> The time at which the label group was created. </p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -18,7 +18,7 @@ impl LabelGroupSummary {
     pub fn label_group_name(&self) -> ::std::option::Option<&str> {
         self.label_group_name.as_deref()
     }
-    /// <p> The ARN of the label group. </p>
+    /// <p> The Amazon Resource Name (ARN) of the label group. </p>
     pub fn label_group_arn(&self) -> ::std::option::Option<&str> {
         self.label_group_arn.as_deref()
     }
@@ -62,17 +62,17 @@ impl LabelGroupSummaryBuilder {
     pub fn get_label_group_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.label_group_name
     }
-    /// <p> The ARN of the label group. </p>
+    /// <p> The Amazon Resource Name (ARN) of the label group. </p>
     pub fn label_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.label_group_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The ARN of the label group. </p>
+    /// <p> The Amazon Resource Name (ARN) of the label group. </p>
     pub fn set_label_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.label_group_arn = input;
         self
     }
-    /// <p> The ARN of the label group. </p>
+    /// <p> The Amazon Resource Name (ARN) of the label group. </p>
     pub fn get_label_group_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.label_group_arn
     }

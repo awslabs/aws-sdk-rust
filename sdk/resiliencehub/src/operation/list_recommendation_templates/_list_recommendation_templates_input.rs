@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListRecommendationTemplatesInput {
-    /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+    /// <p>Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
     pub assessment_arn: ::std::option::Option<::std::string::String>,
     /// <p>The default is to sort by ascending <b>startTime</b>. To sort by descending <b>startTime</b>, set reverseOrder to <code>true</code>.</p>
     pub reverse_order: ::std::option::Option<bool>,
-    /// <p>The status of the action.</p>
+    /// <p>Status of the action.</p>
     pub status: ::std::option::Option<::std::vec::Vec<crate::types::RecommendationTemplateStatus>>,
     /// <p>The Amazon Resource Name (ARN) for a recommendation template.</p>
     pub recommendation_template_arn: ::std::option::Option<::std::string::String>,
@@ -15,11 +15,11 @@ pub struct ListRecommendationTemplatesInput {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Null, or the token from a previous call to get the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
+    /// <p>Maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListRecommendationTemplatesInput {
-    /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+    /// <p>Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
     pub fn assessment_arn(&self) -> ::std::option::Option<&str> {
         self.assessment_arn.as_deref()
     }
@@ -27,7 +27,7 @@ impl ListRecommendationTemplatesInput {
     pub fn reverse_order(&self) -> ::std::option::Option<bool> {
         self.reverse_order
     }
-    /// <p>The status of the action.</p>
+    /// <p>Status of the action.</p>
     pub fn status(&self) -> ::std::option::Option<&[crate::types::RecommendationTemplateStatus]> {
         self.status.as_deref()
     }
@@ -43,7 +43,7 @@ impl ListRecommendationTemplatesInput {
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
+    /// <p>Maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
@@ -68,17 +68,17 @@ pub struct ListRecommendationTemplatesInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
 }
 impl ListRecommendationTemplatesInputBuilder {
-    /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+    /// <p>Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
     pub fn assessment_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assessment_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+    /// <p>Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
     pub fn set_assessment_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.assessment_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+    /// <p>Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
     pub fn get_assessment_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.assessment_arn
     }
@@ -100,19 +100,19 @@ impl ListRecommendationTemplatesInputBuilder {
     ///
     /// To override the contents of this collection use [`set_status`](Self::set_status).
     ///
-    /// <p>The status of the action.</p>
+    /// <p>Status of the action.</p>
     pub fn status(mut self, input: crate::types::RecommendationTemplateStatus) -> Self {
         let mut v = self.status.unwrap_or_default();
         v.push(input);
         self.status = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The status of the action.</p>
+    /// <p>Status of the action.</p>
     pub fn set_status(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RecommendationTemplateStatus>>) -> Self {
         self.status = input;
         self
     }
-    /// <p>The status of the action.</p>
+    /// <p>Status of the action.</p>
     pub fn get_status(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RecommendationTemplateStatus>> {
         &self.status
     }
@@ -158,17 +158,17 @@ impl ListRecommendationTemplatesInputBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
-    /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
+    /// <p>Maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
+    /// <p>Maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }
-    /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
+    /// <p>Maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }

@@ -7,6 +7,8 @@ pub use crate::types::_load_balancer_address::LoadBalancerAddress;
 
 pub use crate::types::_subnet_mapping::SubnetMapping;
 
+pub use crate::types::_enforce_security_group_inbound_rules_on_private_link_traffic_enum::EnforceSecurityGroupInboundRulesOnPrivateLinkTrafficEnum;
+
 pub use crate::types::_rule::Rule;
 
 pub use crate::types::_action::Action;
@@ -116,6 +118,8 @@ mod _availability_zone;
 mod _certificate;
 
 mod _cipher;
+
+mod _enforce_security_group_inbound_rules_on_private_link_traffic_enum;
 
 mod _fixed_response_action_config;
 

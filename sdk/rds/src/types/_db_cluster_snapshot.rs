@@ -47,7 +47,7 @@ pub struct DbClusterSnapshot {
     /// <p>If <code>StorageEncrypted</code> is true, the Amazon Web Services KMS key identifier for the encrypted DB cluster snapshot.</p>
     /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) for the DB cluster snapshot.</p>
+    /// <p>Specifies the Amazon Resource Name (ARN) for the DB cluster snapshot.</p>
     pub db_cluster_snapshot_arn: ::std::option::Option<::std::string::String>,
     /// <p>If the DB cluster snapshot was copied from a source DB cluster snapshot, the Amazon Resource Name (ARN) for the source DB cluster snapshot, otherwise, a null value.</p>
     pub source_db_cluster_snapshot_arn: ::std::option::Option<::std::string::String>,
@@ -60,6 +60,8 @@ pub struct DbClusterSnapshot {
     /// <p>The storage type associated with the DB cluster snapshot.</p>
     /// <p>This setting is only for Aurora DB clusters.</p>
     pub storage_type: ::std::option::Option<::std::string::String>,
+    /// <p>Specifies the resource ID of the DB cluster that this DB cluster snapshot was created from.</p>
+    pub db_cluster_resource_id: ::std::option::Option<::std::string::String>,
 }
 impl DbClusterSnapshot {
     /// <p>Provides the list of Availability Zones (AZs) where instances in the DB cluster snapshot can be restored.</p>
@@ -140,7 +142,7 @@ impl DbClusterSnapshot {
     pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) for the DB cluster snapshot.</p>
+    /// <p>Specifies the Amazon Resource Name (ARN) for the DB cluster snapshot.</p>
     pub fn db_cluster_snapshot_arn(&self) -> ::std::option::Option<&str> {
         self.db_cluster_snapshot_arn.as_deref()
     }
@@ -164,6 +166,10 @@ impl DbClusterSnapshot {
     /// <p>This setting is only for Aurora DB clusters.</p>
     pub fn storage_type(&self) -> ::std::option::Option<&str> {
         self.storage_type.as_deref()
+    }
+    /// <p>Specifies the resource ID of the DB cluster that this DB cluster snapshot was created from.</p>
+    pub fn db_cluster_resource_id(&self) -> ::std::option::Option<&str> {
+        self.db_cluster_resource_id.as_deref()
     }
 }
 impl DbClusterSnapshot {
@@ -201,6 +207,7 @@ pub struct DbClusterSnapshotBuilder {
     pub(crate) tag_list: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) db_system_id: ::std::option::Option<::std::string::String>,
     pub(crate) storage_type: ::std::option::Option<::std::string::String>,
+    pub(crate) db_cluster_resource_id: ::std::option::Option<::std::string::String>,
 }
 impl DbClusterSnapshotBuilder {
     /// Appends an item to `availability_zones`.
@@ -479,17 +486,17 @@ impl DbClusterSnapshotBuilder {
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.kms_key_id
     }
-    /// <p>The Amazon Resource Name (ARN) for the DB cluster snapshot.</p>
+    /// <p>Specifies the Amazon Resource Name (ARN) for the DB cluster snapshot.</p>
     pub fn db_cluster_snapshot_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_cluster_snapshot_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) for the DB cluster snapshot.</p>
+    /// <p>Specifies the Amazon Resource Name (ARN) for the DB cluster snapshot.</p>
     pub fn set_db_cluster_snapshot_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_cluster_snapshot_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) for the DB cluster snapshot.</p>
+    /// <p>Specifies the Amazon Resource Name (ARN) for the DB cluster snapshot.</p>
     pub fn get_db_cluster_snapshot_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.db_cluster_snapshot_arn
     }
@@ -572,6 +579,20 @@ impl DbClusterSnapshotBuilder {
     pub fn get_storage_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.storage_type
     }
+    /// <p>Specifies the resource ID of the DB cluster that this DB cluster snapshot was created from.</p>
+    pub fn db_cluster_resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.db_cluster_resource_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Specifies the resource ID of the DB cluster that this DB cluster snapshot was created from.</p>
+    pub fn set_db_cluster_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.db_cluster_resource_id = input;
+        self
+    }
+    /// <p>Specifies the resource ID of the DB cluster that this DB cluster snapshot was created from.</p>
+    pub fn get_db_cluster_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.db_cluster_resource_id
+    }
     /// Consumes the builder and constructs a [`DbClusterSnapshot`](crate::types::DbClusterSnapshot).
     pub fn build(self) -> crate::types::DbClusterSnapshot {
         crate::types::DbClusterSnapshot {
@@ -599,6 +620,7 @@ impl DbClusterSnapshotBuilder {
             tag_list: self.tag_list,
             db_system_id: self.db_system_id,
             storage_type: self.storage_type,
+            db_cluster_resource_id: self.db_cluster_resource_id,
         }
     }
 }

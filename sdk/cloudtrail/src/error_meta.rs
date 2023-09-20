@@ -140,7 +140,7 @@ pub enum Error {
     KmsKeyDisabledException(crate::types::error::KmsKeyDisabledException),
     /// <p>This exception is thrown when the KMS key does not exist, when the S3 bucket and the KMS key are not in the same Region, or when the KMS key associated with the Amazon SNS topic either does not exist or is not in the same Region.</p>
     KmsKeyNotFoundException(crate::types::error::KmsKeyNotFoundException),
-    /// <p>You are already running the maximum number of concurrent queries. Wait a minute for some queries to finish, and then run the query again.</p>
+    /// <p>You are already running the maximum number of concurrent queries. The maximum number of concurrent queries is 10. Wait a minute for some queries to finish, and then run the query again.</p>
     MaxConcurrentQueriesException(crate::types::error::MaxConcurrentQueriesException),
     /// <p>This exception is thrown when the maximum number of trails is reached.</p>
     MaximumNumberOfTrailsExceededException(crate::types::error::MaximumNumberOfTrailsExceededException),
@@ -178,6 +178,8 @@ pub enum Error {
     S3BucketDoesNotExistException(crate::types::error::S3BucketDoesNotExistException),
     /// <p>The number of tags per trail, event data store, or channel has exceeded the permitted amount. Currently, the limit is 50.</p>
     TagsLimitExceededException(crate::types::error::TagsLimitExceededException),
+    /// <p> This exception is thrown when the request rate exceeds the limit. </p>
+    ThrottlingException(crate::types::error::ThrottlingException),
     /// <p>This exception is thrown when the specified trail already exists.</p>
     TrailAlreadyExistsException(crate::types::error::TrailAlreadyExistsException),
     /// <p>This exception is thrown when the trail with the given name is not found.</p>
@@ -267,6 +269,7 @@ impl ::std::fmt::Display for Error {
             Error::ResourceTypeNotSupportedException(inner) => inner.fmt(f),
             Error::S3BucketDoesNotExistException(inner) => inner.fmt(f),
             Error::TagsLimitExceededException(inner) => inner.fmt(f),
+            Error::ThrottlingException(inner) => inner.fmt(f),
             Error::TrailAlreadyExistsException(inner) => inner.fmt(f),
             Error::TrailNotFoundException(inner) => inner.fmt(f),
             Error::TrailNotProvidedException(inner) => inner.fmt(f),
@@ -550,6 +553,7 @@ impl From<crate::operation::create_trail::CreateTrailError> for Error {
             crate::operation::create_trail::CreateTrailError::OrganizationsNotInUseException(inner) => Error::OrganizationsNotInUseException(inner),
             crate::operation::create_trail::CreateTrailError::S3BucketDoesNotExistException(inner) => Error::S3BucketDoesNotExistException(inner),
             crate::operation::create_trail::CreateTrailError::TagsLimitExceededException(inner) => Error::TagsLimitExceededException(inner),
+            crate::operation::create_trail::CreateTrailError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::create_trail::CreateTrailError::TrailAlreadyExistsException(inner) => Error::TrailAlreadyExistsException(inner),
             crate::operation::create_trail::CreateTrailError::TrailNotProvidedException(inner) => Error::TrailNotProvidedException(inner),
             crate::operation::create_trail::CreateTrailError::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
@@ -719,6 +723,7 @@ impl From<crate::operation::delete_trail::DeleteTrailError> for Error {
                 Error::NotOrganizationMasterAccountException(inner)
             }
             crate::operation::delete_trail::DeleteTrailError::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
+            crate::operation::delete_trail::DeleteTrailError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::delete_trail::DeleteTrailError::TrailNotFoundException(inner) => Error::TrailNotFoundException(inner),
             crate::operation::delete_trail::DeleteTrailError::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
             crate::operation::delete_trail::DeleteTrailError::Unhandled(inner) => Error::Unhandled(inner),
@@ -1008,6 +1013,7 @@ impl From<crate::operation::get_insight_selectors::GetInsightSelectorsError> for
             crate::operation::get_insight_selectors::GetInsightSelectorsError::OperationNotPermittedException(inner) => {
                 Error::OperationNotPermittedException(inner)
             }
+            crate::operation::get_insight_selectors::GetInsightSelectorsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::get_insight_selectors::GetInsightSelectorsError::TrailNotFoundException(inner) => Error::TrailNotFoundException(inner),
             crate::operation::get_insight_selectors::GetInsightSelectorsError::UnsupportedOperationException(inner) => {
                 Error::UnsupportedOperationException(inner)
@@ -1500,6 +1506,7 @@ impl From<crate::operation::put_event_selectors::PutEventSelectorsError> for Err
             crate::operation::put_event_selectors::PutEventSelectorsError::OperationNotPermittedException(inner) => {
                 Error::OperationNotPermittedException(inner)
             }
+            crate::operation::put_event_selectors::PutEventSelectorsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::put_event_selectors::PutEventSelectorsError::TrailNotFoundException(inner) => Error::TrailNotFoundException(inner),
             crate::operation::put_event_selectors::PutEventSelectorsError::UnsupportedOperationException(inner) => {
                 Error::UnsupportedOperationException(inner)
@@ -1558,6 +1565,7 @@ impl From<crate::operation::put_insight_selectors::PutInsightSelectorsError> for
             crate::operation::put_insight_selectors::PutInsightSelectorsError::S3BucketDoesNotExistException(inner) => {
                 Error::S3BucketDoesNotExistException(inner)
             }
+            crate::operation::put_insight_selectors::PutInsightSelectorsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::put_insight_selectors::PutInsightSelectorsError::TrailNotFoundException(inner) => Error::TrailNotFoundException(inner),
             crate::operation::put_insight_selectors::PutInsightSelectorsError::UnsupportedOperationException(inner) => {
                 Error::UnsupportedOperationException(inner)
@@ -1866,6 +1874,7 @@ impl From<crate::operation::start_logging::StartLoggingError> for Error {
                 Error::NotOrganizationMasterAccountException(inner)
             }
             crate::operation::start_logging::StartLoggingError::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
+            crate::operation::start_logging::StartLoggingError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::start_logging::StartLoggingError::TrailNotFoundException(inner) => Error::TrailNotFoundException(inner),
             crate::operation::start_logging::StartLoggingError::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
             crate::operation::start_logging::StartLoggingError::Unhandled(inner) => Error::Unhandled(inner),
@@ -2012,6 +2021,7 @@ impl From<crate::operation::stop_logging::StopLoggingError> for Error {
                 Error::NotOrganizationMasterAccountException(inner)
             }
             crate::operation::stop_logging::StopLoggingError::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
+            crate::operation::stop_logging::StopLoggingError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::stop_logging::StopLoggingError::TrailNotFoundException(inner) => Error::TrailNotFoundException(inner),
             crate::operation::stop_logging::StopLoggingError::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
             crate::operation::stop_logging::StopLoggingError::Unhandled(inner) => Error::Unhandled(inner),
@@ -2213,6 +2223,7 @@ impl From<crate::operation::update_trail::UpdateTrailError> for Error {
             }
             crate::operation::update_trail::UpdateTrailError::OrganizationsNotInUseException(inner) => Error::OrganizationsNotInUseException(inner),
             crate::operation::update_trail::UpdateTrailError::S3BucketDoesNotExistException(inner) => Error::S3BucketDoesNotExistException(inner),
+            crate::operation::update_trail::UpdateTrailError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::update_trail::UpdateTrailError::TrailNotFoundException(inner) => Error::TrailNotFoundException(inner),
             crate::operation::update_trail::UpdateTrailError::TrailNotProvidedException(inner) => Error::TrailNotProvidedException(inner),
             crate::operation::update_trail::UpdateTrailError::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
@@ -2298,6 +2309,7 @@ impl ::std::error::Error for Error {
             Error::ResourceTypeNotSupportedException(inner) => inner.source(),
             Error::S3BucketDoesNotExistException(inner) => inner.source(),
             Error::TagsLimitExceededException(inner) => inner.source(),
+            Error::ThrottlingException(inner) => inner.source(),
             Error::TrailAlreadyExistsException(inner) => inner.source(),
             Error::TrailNotFoundException(inner) => inner.source(),
             Error::TrailNotProvidedException(inner) => inner.source(),
@@ -2384,6 +2396,7 @@ impl ::aws_http::request_id::RequestId for Error {
             Self::ResourceTypeNotSupportedException(e) => e.request_id(),
             Self::S3BucketDoesNotExistException(e) => e.request_id(),
             Self::TagsLimitExceededException(e) => e.request_id(),
+            Self::ThrottlingException(e) => e.request_id(),
             Self::TrailAlreadyExistsException(e) => e.request_id(),
             Self::TrailNotFoundException(e) => e.request_id(),
             Self::TrailNotProvidedException(e) => e.request_id(),

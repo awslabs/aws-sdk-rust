@@ -14,6 +14,8 @@ impl super::Client {
     ///   - [`completed_date(Option<DateTime>)`](crate::operation::describe_organization::DescribeOrganizationOutput::completed_date): <p>The date at which the organization became usable in the WorkMail context, in UNIX epoch time format.</p>
     ///   - [`error_message(Option<String>)`](crate::operation::describe_organization::DescribeOrganizationOutput::error_message): <p>(Optional) The error message indicating if unexpected behavior was encountered with regards to the organization.</p>
     ///   - [`arn(Option<String>)`](crate::operation::describe_organization::DescribeOrganizationOutput::arn): <p>The Amazon Resource Name (ARN) of the organization.</p>
+    ///   - [`migration_admin(Option<String>)`](crate::operation::describe_organization::DescribeOrganizationOutput::migration_admin): <p>The user ID of the migration admin if migration is enabled for the organization.</p>
+    ///   - [`interoperability_enabled(bool)`](crate::operation::describe_organization::DescribeOrganizationOutput::interoperability_enabled): <p>Indicates if interoperability is enabled for this organization.</p>
     /// - On failure, responds with [`SdkError<DescribeOrganizationError>`](crate::operation::describe_organization::DescribeOrganizationError)
     pub fn describe_organization(&self) -> crate::operation::describe_organization::builders::DescribeOrganizationFluentBuilder {
         crate::operation::describe_organization::builders::DescribeOrganizationFluentBuilder::new(self.handle.clone())

@@ -7,7 +7,7 @@ pub struct ListIdentityPoolUsageInput {
     /// A pagination token for obtaining the next page of results.
     pub next_token: ::std::option::Option<::std::string::String>,
     /// The maximum number of results to be returned.
-    pub max_results: i32,
+    pub max_results: ::std::option::Option<i32>,
 }
 impl ListIdentityPoolUsageInput {
     /// A pagination token for obtaining the next page of results.
@@ -15,7 +15,7 @@ impl ListIdentityPoolUsageInput {
         self.next_token.as_deref()
     }
     /// The maximum number of results to be returned.
-    pub fn max_results(&self) -> i32 {
+    pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
 }
@@ -69,7 +69,7 @@ impl ListIdentityPoolUsageInputBuilder {
     {
         ::std::result::Result::Ok(crate::operation::list_identity_pool_usage::ListIdentityPoolUsageInput {
             next_token: self.next_token,
-            max_results: self.max_results.unwrap_or_default(),
+            max_results: self.max_results,
         })
     }
 }

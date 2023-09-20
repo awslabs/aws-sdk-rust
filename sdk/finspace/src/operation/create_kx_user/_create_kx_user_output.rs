@@ -5,7 +5,7 @@
 pub struct CreateKxUserOutput {
     /// <p>A unique identifier for the user.</p>
     pub user_name: ::std::option::Option<::std::string::String>,
-    /// <p> The Amazon Resource Name (ARN) that identifies the user. For more information about ARNs and how to use ARNs in policies, see <a href="IAM/latest/UserGuide/reference_identifiers.html">IAM Identifiers</a> in the <i>IAM User Guide</i>. </p>
+    /// <p> The Amazon Resource Name (ARN) that identifies the user. For more information about ARNs and how to use ARNs in policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM Identifiers</a> in the <i>IAM User Guide</i>. </p>
     pub user_arn: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for the kdb environment.</p>
     pub environment_id: ::std::option::Option<::std::string::String>,
@@ -18,7 +18,7 @@ impl CreateKxUserOutput {
     pub fn user_name(&self) -> ::std::option::Option<&str> {
         self.user_name.as_deref()
     }
-    /// <p> The Amazon Resource Name (ARN) that identifies the user. For more information about ARNs and how to use ARNs in policies, see <a href="IAM/latest/UserGuide/reference_identifiers.html">IAM Identifiers</a> in the <i>IAM User Guide</i>. </p>
+    /// <p> The Amazon Resource Name (ARN) that identifies the user. For more information about ARNs and how to use ARNs in policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM Identifiers</a> in the <i>IAM User Guide</i>. </p>
     pub fn user_arn(&self) -> ::std::option::Option<&str> {
         self.user_arn.as_deref()
     }
@@ -68,17 +68,17 @@ impl CreateKxUserOutputBuilder {
     pub fn get_user_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.user_name
     }
-    /// <p> The Amazon Resource Name (ARN) that identifies the user. For more information about ARNs and how to use ARNs in policies, see <a href="IAM/latest/UserGuide/reference_identifiers.html">IAM Identifiers</a> in the <i>IAM User Guide</i>. </p>
+    /// <p> The Amazon Resource Name (ARN) that identifies the user. For more information about ARNs and how to use ARNs in policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM Identifiers</a> in the <i>IAM User Guide</i>. </p>
     pub fn user_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The Amazon Resource Name (ARN) that identifies the user. For more information about ARNs and how to use ARNs in policies, see <a href="IAM/latest/UserGuide/reference_identifiers.html">IAM Identifiers</a> in the <i>IAM User Guide</i>. </p>
+    /// <p> The Amazon Resource Name (ARN) that identifies the user. For more information about ARNs and how to use ARNs in policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM Identifiers</a> in the <i>IAM User Guide</i>. </p>
     pub fn set_user_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_arn = input;
         self
     }
-    /// <p> The Amazon Resource Name (ARN) that identifies the user. For more information about ARNs and how to use ARNs in policies, see <a href="IAM/latest/UserGuide/reference_identifiers.html">IAM Identifiers</a> in the <i>IAM User Guide</i>. </p>
+    /// <p> The Amazon Resource Name (ARN) that identifies the user. For more information about ARNs and how to use ARNs in policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM Identifiers</a> in the <i>IAM User Guide</i>. </p>
     pub fn get_user_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.user_arn
     }

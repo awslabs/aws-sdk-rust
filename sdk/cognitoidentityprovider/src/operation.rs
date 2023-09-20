@@ -181,6 +181,9 @@ pub mod get_group;
 /// Types for the `GetIdentityProviderByIdentifier` operation.
 pub mod get_identity_provider_by_identifier;
 
+/// Types for the `GetLogDeliveryConfiguration` operation.
+pub mod get_log_delivery_configuration;
+
 /// Types for the `GetSigningCertificate` operation.
 pub mod get_signing_certificate;
 
@@ -240,6 +243,9 @@ pub mod respond_to_auth_challenge;
 
 /// Types for the `RevokeToken` operation.
 pub mod revoke_token;
+
+/// Types for the `SetLogDeliveryConfiguration` operation.
+pub mod set_log_delivery_configuration;
 
 /// Types for the `SetRiskConfiguration` operation.
 pub mod set_risk_configuration;

@@ -55,5 +55,8 @@ pub fn ser_backup_rule_input(
     if let Some(var_16) = &input.enable_continuous_backup {
         object.key("EnableContinuousBackup").boolean(*var_16);
     }
+    if let Some(var_17) = &input.schedule_expression_timezone {
+        object.key("ScheduleExpressionTimezone").string(var_17.as_str());
+    }
     Ok(())
 }

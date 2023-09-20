@@ -22,7 +22,7 @@ impl DeleteDataRepositoryAssociationInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteDataRepositoryAssociation`.
 ///
-/// <p>Deletes a data repository association on an Amazon FSx for Lustre file system. Deleting the data repository association unlinks the file system from the Amazon S3 bucket. When deleting a data repository association, you have the option of deleting the data in the file system that corresponds to the data repository association. Data repository associations are supported on all FSx for Lustre 2.12 and newer file systems, excluding <code>scratch_1</code> deployment type.</p>
+/// <p>Deletes a data repository association on an Amazon FSx for Lustre file system. Deleting the data repository association unlinks the file system from the Amazon S3 bucket. When deleting a data repository association, you have the option of deleting the data in the file system that corresponds to the data repository association. Data repository associations are supported on all FSx for Lustre 2.12 and 2.15 file systems, excluding <code>scratch_1</code> deployment type.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteDataRepositoryAssociationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

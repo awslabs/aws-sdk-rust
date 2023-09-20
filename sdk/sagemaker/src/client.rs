@@ -513,6 +513,8 @@ mod get_model_package_group_policy;
 
 mod get_sagemaker_servicecatalog_portfolio_status;
 
+mod get_scaling_configuration_recommendation;
+
 mod get_search_suggestions;
 
 mod import_hub_content;

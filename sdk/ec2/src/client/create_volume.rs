@@ -33,6 +33,7 @@ impl super::Client {
     ///   - [`fast_restored(Option<bool>)`](crate::operation::create_volume::CreateVolumeOutput::fast_restored): <p>Indicates whether the volume was created using fast snapshot restore.</p>
     ///   - [`multi_attach_enabled(Option<bool>)`](crate::operation::create_volume::CreateVolumeOutput::multi_attach_enabled): <p>Indicates whether Amazon EBS Multi-Attach is enabled.</p>
     ///   - [`throughput(Option<i32>)`](crate::operation::create_volume::CreateVolumeOutput::throughput): <p>The throughput that the volume supports, in MiB/s.</p>
+    ///   - [`sse_type(Option<SseType>)`](crate::operation::create_volume::CreateVolumeOutput::sse_type): <p>Reserved for future use.</p>
     /// - On failure, responds with [`SdkError<CreateVolumeError>`](crate::operation::create_volume::CreateVolumeError)
     pub fn create_volume(&self) -> crate::operation::create_volume::builders::CreateVolumeFluentBuilder {
         crate::operation::create_volume::builders::CreateVolumeFluentBuilder::new(self.handle.clone())

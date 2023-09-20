@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LineItem {
-    /// <p> The ID of the catalog item. </p>
+    /// <p> The ID of the catalog item.</p>
     pub catalog_item_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the line item.</p>
     pub line_item_id: ::std::option::Option<::std::string::String>,
@@ -18,11 +18,11 @@ pub struct LineItem {
     pub asset_information_list: ::std::option::Option<::std::vec::Vec<crate::types::LineItemAssetInformation>>,
     /// <p>The ID of the previous line item.</p>
     pub previous_line_item_id: ::std::option::Option<::std::string::String>,
-    /// <p>The ID of the previous order item.</p>
+    /// <p>The ID of the previous order.</p>
     pub previous_order_id: ::std::option::Option<::std::string::String>,
 }
 impl LineItem {
-    /// <p> The ID of the catalog item. </p>
+    /// <p> The ID of the catalog item.</p>
     pub fn catalog_item_id(&self) -> ::std::option::Option<&str> {
         self.catalog_item_id.as_deref()
     }
@@ -50,7 +50,7 @@ impl LineItem {
     pub fn previous_line_item_id(&self) -> ::std::option::Option<&str> {
         self.previous_line_item_id.as_deref()
     }
-    /// <p>The ID of the previous order item.</p>
+    /// <p>The ID of the previous order.</p>
     pub fn previous_order_id(&self) -> ::std::option::Option<&str> {
         self.previous_order_id.as_deref()
     }
@@ -76,17 +76,17 @@ pub struct LineItemBuilder {
     pub(crate) previous_order_id: ::std::option::Option<::std::string::String>,
 }
 impl LineItemBuilder {
-    /// <p> The ID of the catalog item. </p>
+    /// <p> The ID of the catalog item.</p>
     pub fn catalog_item_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.catalog_item_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The ID of the catalog item. </p>
+    /// <p> The ID of the catalog item.</p>
     pub fn set_catalog_item_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.catalog_item_id = input;
         self
     }
-    /// <p> The ID of the catalog item. </p>
+    /// <p> The ID of the catalog item.</p>
     pub fn get_catalog_item_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.catalog_item_id
     }
@@ -180,17 +180,17 @@ impl LineItemBuilder {
     pub fn get_previous_line_item_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.previous_line_item_id
     }
-    /// <p>The ID of the previous order item.</p>
+    /// <p>The ID of the previous order.</p>
     pub fn previous_order_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.previous_order_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the previous order item.</p>
+    /// <p>The ID of the previous order.</p>
     pub fn set_previous_order_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.previous_order_id = input;
         self
     }
-    /// <p>The ID of the previous order item.</p>
+    /// <p>The ID of the previous order.</p>
     pub fn get_previous_order_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.previous_order_id
     }

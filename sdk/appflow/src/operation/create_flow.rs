@@ -256,6 +256,8 @@ pub type CreateFlowErrorKind = CreateFlowError;
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum CreateFlowError {
+    /// <p>AppFlow/Requester has invalid or missing permissions.</p>
+    AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p> There was a conflict when processing the request (for example, a flow with the given name already exists within the account. Check for conflicting resource names and try again. </p>
     ConflictException(crate::types::error::ConflictException),
     /// <p> An error occurred when authenticating with the connector endpoint. </p>
@@ -288,6 +290,7 @@ impl ::aws_smithy_http::result::CreateUnhandledError for CreateFlowError {
 impl ::std::fmt::Display for CreateFlowError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
+            Self::AccessDeniedException(_inner) => _inner.fmt(f),
             Self::ConflictException(_inner) => _inner.fmt(f),
             Self::ConnectorAuthenticationException(_inner) => _inner.fmt(f),
             Self::ConnectorServerException(_inner) => _inner.fmt(f),
@@ -302,6 +305,7 @@ impl ::std::fmt::Display for CreateFlowError {
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for CreateFlowError {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::AccessDeniedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ConflictException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ConnectorAuthenticationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ConnectorServerException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
@@ -345,6 +349,7 @@ impl CreateFlowError {
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         match self {
+            Self::AccessDeniedException(e) => e.meta(),
             Self::ConflictException(e) => e.meta(),
             Self::ConnectorAuthenticationException(e) => e.meta(),
             Self::ConnectorServerException(e) => e.meta(),
@@ -354,6 +359,10 @@ impl CreateFlowError {
             Self::ValidationException(e) => e.meta(),
             Self::Unhandled(e) => e.meta(),
         }
+    }
+    /// Returns `true` if the error kind is `CreateFlowError::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(self, Self::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `CreateFlowError::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
@@ -387,6 +396,7 @@ impl CreateFlowError {
 impl ::std::error::Error for CreateFlowError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
+            Self::AccessDeniedException(_inner) => ::std::option::Option::Some(_inner),
             Self::ConflictException(_inner) => ::std::option::Option::Some(_inner),
             Self::ConnectorAuthenticationException(_inner) => ::std::option::Option::Some(_inner),
             Self::ConnectorServerException(_inner) => ::std::option::Option::Some(_inner),

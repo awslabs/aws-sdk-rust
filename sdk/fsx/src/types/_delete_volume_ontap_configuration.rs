@@ -9,7 +9,7 @@ pub struct DeleteVolumeOntapConfiguration {
     /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
     pub final_backup_tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>Setting this to <code>true</code> allows a SnapLock administrator to delete an FSx for ONTAP SnapLock Enterprise volume with unexpired write once, read many (WORM) files. The IAM permission <code>fsx:BypassSnaplockEnterpriseRetention</code> is also required to delete SnapLock Enterprise volumes with unexpired WORM files. The default value is <code>false</code>. </p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/how-snaplock-works.html#snaplock-delete-volume"> Deleting a SnapLock volume </a>. </p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snaplock-delete-volume.html"> Deleting a SnapLock volume</a>. </p>
     pub bypass_snaplock_enterprise_retention: ::std::option::Option<bool>,
 }
 impl DeleteVolumeOntapConfiguration {
@@ -22,7 +22,7 @@ impl DeleteVolumeOntapConfiguration {
         self.final_backup_tags.as_deref()
     }
     /// <p>Setting this to <code>true</code> allows a SnapLock administrator to delete an FSx for ONTAP SnapLock Enterprise volume with unexpired write once, read many (WORM) files. The IAM permission <code>fsx:BypassSnaplockEnterpriseRetention</code> is also required to delete SnapLock Enterprise volumes with unexpired WORM files. The default value is <code>false</code>. </p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/how-snaplock-works.html#snaplock-delete-volume"> Deleting a SnapLock volume </a>. </p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snaplock-delete-volume.html"> Deleting a SnapLock volume</a>. </p>
     pub fn bypass_snaplock_enterprise_retention(&self) -> ::std::option::Option<bool> {
         self.bypass_snaplock_enterprise_retention
     }
@@ -78,19 +78,19 @@ impl DeleteVolumeOntapConfigurationBuilder {
         &self.final_backup_tags
     }
     /// <p>Setting this to <code>true</code> allows a SnapLock administrator to delete an FSx for ONTAP SnapLock Enterprise volume with unexpired write once, read many (WORM) files. The IAM permission <code>fsx:BypassSnaplockEnterpriseRetention</code> is also required to delete SnapLock Enterprise volumes with unexpired WORM files. The default value is <code>false</code>. </p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/how-snaplock-works.html#snaplock-delete-volume"> Deleting a SnapLock volume </a>. </p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snaplock-delete-volume.html"> Deleting a SnapLock volume</a>. </p>
     pub fn bypass_snaplock_enterprise_retention(mut self, input: bool) -> Self {
         self.bypass_snaplock_enterprise_retention = ::std::option::Option::Some(input);
         self
     }
     /// <p>Setting this to <code>true</code> allows a SnapLock administrator to delete an FSx for ONTAP SnapLock Enterprise volume with unexpired write once, read many (WORM) files. The IAM permission <code>fsx:BypassSnaplockEnterpriseRetention</code> is also required to delete SnapLock Enterprise volumes with unexpired WORM files. The default value is <code>false</code>. </p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/how-snaplock-works.html#snaplock-delete-volume"> Deleting a SnapLock volume </a>. </p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snaplock-delete-volume.html"> Deleting a SnapLock volume</a>. </p>
     pub fn set_bypass_snaplock_enterprise_retention(mut self, input: ::std::option::Option<bool>) -> Self {
         self.bypass_snaplock_enterprise_retention = input;
         self
     }
     /// <p>Setting this to <code>true</code> allows a SnapLock administrator to delete an FSx for ONTAP SnapLock Enterprise volume with unexpired write once, read many (WORM) files. The IAM permission <code>fsx:BypassSnaplockEnterpriseRetention</code> is also required to delete SnapLock Enterprise volumes with unexpired WORM files. The default value is <code>false</code>. </p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/how-snaplock-works.html#snaplock-delete-volume"> Deleting a SnapLock volume </a>. </p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snaplock-delete-volume.html"> Deleting a SnapLock volume</a>. </p>
     pub fn get_bypass_snaplock_enterprise_retention(&self) -> &::std::option::Option<bool> {
         &self.bypass_snaplock_enterprise_retention
     }

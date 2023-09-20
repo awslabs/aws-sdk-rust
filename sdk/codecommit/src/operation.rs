@@ -136,6 +136,9 @@ pub mod list_associated_approval_rule_templates_for_repository;
 /// Types for the `ListBranches` operation.
 pub mod list_branches;
 
+/// Types for the `ListFileCommitHistory` operation.
+pub mod list_file_commit_history;
+
 /// Types for the `ListPullRequests` operation.
 pub mod list_pull_requests;
 

@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeComputeOutput {
-    /// <p>The details of the compute resource you registered to the specified fleet.</p>
+    /// <p>The set of properties for the requested compute resource.</p>
     pub compute: ::std::option::Option<crate::types::Compute>,
     _request_id: Option<String>,
 }
 impl DescribeComputeOutput {
-    /// <p>The details of the compute resource you registered to the specified fleet.</p>
+    /// <p>The set of properties for the requested compute resource.</p>
     pub fn compute(&self) -> ::std::option::Option<&crate::types::Compute> {
         self.compute.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct DescribeComputeOutputBuilder {
     _request_id: Option<String>,
 }
 impl DescribeComputeOutputBuilder {
-    /// <p>The details of the compute resource you registered to the specified fleet.</p>
+    /// <p>The set of properties for the requested compute resource.</p>
     pub fn compute(mut self, input: crate::types::Compute) -> Self {
         self.compute = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The details of the compute resource you registered to the specified fleet.</p>
+    /// <p>The set of properties for the requested compute resource.</p>
     pub fn set_compute(mut self, input: ::std::option::Option<crate::types::Compute>) -> Self {
         self.compute = input;
         self
     }
-    /// <p>The details of the compute resource you registered to the specified fleet.</p>
+    /// <p>The set of properties for the requested compute resource.</p>
     pub fn get_compute(&self) -> &::std::option::Option<crate::types::Compute> {
         &self.compute
     }

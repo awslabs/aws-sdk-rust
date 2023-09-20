@@ -265,6 +265,8 @@ mod list_associated_approval_rule_templates_for_repository;
 
 mod list_branches;
 
+mod list_file_commit_history;
+
 mod list_pull_requests;
 
 mod list_repositories;

@@ -2,7 +2,7 @@
 
 /// <p>Describes the storage parameters for Amazon S3 and Amazon S3 buckets for an instance store-backed AMI.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct S3Storage {
     /// <p>The access key ID of the owner of the bucket. Before you specify a value for your access key ID, review and follow the guidance in <a href="https://docs.aws.amazon.com/accounts/latest/reference/best-practices.html">Best Practices for Amazon Web Services accounts</a> in the <i>Account ManagementReference Guide</i>.</p>
     pub aws_access_key_id: ::std::option::Option<::std::string::String>,
@@ -37,6 +37,17 @@ impl S3Storage {
         self.upload_policy_signature.as_deref()
     }
 }
+impl ::std::fmt::Debug for S3Storage {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("S3Storage");
+        formatter.field("aws_access_key_id", &self.aws_access_key_id);
+        formatter.field("bucket", &self.bucket);
+        formatter.field("prefix", &self.prefix);
+        formatter.field("upload_policy", &self.upload_policy);
+        formatter.field("upload_policy_signature", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl S3Storage {
     /// Creates a new builder-style object to manufacture [`S3Storage`](crate::types::S3Storage).
     pub fn builder() -> crate::types::builders::S3StorageBuilder {
@@ -46,7 +57,7 @@ impl S3Storage {
 
 /// A builder for [`S3Storage`](crate::types::S3Storage).
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct S3StorageBuilder {
     pub(crate) aws_access_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) bucket: ::std::option::Option<::std::string::String>,
@@ -134,5 +145,16 @@ impl S3StorageBuilder {
             upload_policy: self.upload_policy,
             upload_policy_signature: self.upload_policy_signature,
         }
+    }
+}
+impl ::std::fmt::Debug for S3StorageBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("S3StorageBuilder");
+        formatter.field("aws_access_key_id", &self.aws_access_key_id);
+        formatter.field("bucket", &self.bucket);
+        formatter.field("prefix", &self.prefix);
+        formatter.field("upload_policy", &self.upload_policy);
+        formatter.field("upload_policy_signature", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

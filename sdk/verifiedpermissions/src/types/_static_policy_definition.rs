@@ -3,7 +3,7 @@
 /// <p>Contains information about a static policy.</p>
 /// <p>This data type is used as a field that is part of the <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_PolicyDefinitionDetail.html">PolicyDefinitionDetail</a> type.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct StaticPolicyDefinition {
     /// <p>The description of the static policy.</p>
     pub description: ::std::option::Option<::std::string::String>,
@@ -20,6 +20,14 @@ impl StaticPolicyDefinition {
         self.statement.as_deref()
     }
 }
+impl ::std::fmt::Debug for StaticPolicyDefinition {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("StaticPolicyDefinition");
+        formatter.field("description", &"*** Sensitive Data Redacted ***");
+        formatter.field("statement", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl StaticPolicyDefinition {
     /// Creates a new builder-style object to manufacture [`StaticPolicyDefinition`](crate::types::StaticPolicyDefinition).
     pub fn builder() -> crate::types::builders::StaticPolicyDefinitionBuilder {
@@ -29,7 +37,7 @@ impl StaticPolicyDefinition {
 
 /// A builder for [`StaticPolicyDefinition`](crate::types::StaticPolicyDefinition).
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct StaticPolicyDefinitionBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) statement: ::std::option::Option<::std::string::String>,
@@ -69,5 +77,13 @@ impl StaticPolicyDefinitionBuilder {
             description: self.description,
             statement: self.statement,
         }
+    }
+}
+impl ::std::fmt::Debug for StaticPolicyDefinitionBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("StaticPolicyDefinitionBuilder");
+        formatter.field("description", &"*** Sensitive Data Redacted ***");
+        formatter.field("statement", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

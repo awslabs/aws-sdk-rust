@@ -3,6 +3,8 @@ pub use crate::types::_tag::TagBuilder;
 
 pub use crate::types::_requested_service_quota_change::RequestedServiceQuotaChangeBuilder;
 
+pub use crate::types::_quota_context_info::QuotaContextInfoBuilder;
+
 pub use crate::types::_service_quota_increase_request_in_template::ServiceQuotaIncreaseRequestInTemplateBuilder;
 
 pub use crate::types::_service_info::ServiceInfoBuilder;

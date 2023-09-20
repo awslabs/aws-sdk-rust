@@ -5,7 +5,7 @@
 pub struct UpdateFleetCapacityInput {
     /// <p>A unique identifier for the fleet to update capacity settings for. You can use either the fleet ID or ARN value.</p>
     pub fleet_id: ::std::option::Option<::std::string::String>,
-    /// <p>The number of Amazon EC2 instances you want to maintain in the specified fleet location. This value must fall between the minimum and maximum size limits.</p>
+    /// <p>The number of Amazon EC2 instances you want to maintain in the specified fleet location. This value must fall between the minimum and maximum size limits. Changes in desired instance value can take up to 1 minute to be reflected when viewing the fleet's capacity settings.</p>
     pub desired_instances: ::std::option::Option<i32>,
     /// <p>The minimum number of instances that are allowed in the specified fleet location. If this parameter is not set, the default is 0.</p>
     pub min_size: ::std::option::Option<i32>,
@@ -19,7 +19,7 @@ impl UpdateFleetCapacityInput {
     pub fn fleet_id(&self) -> ::std::option::Option<&str> {
         self.fleet_id.as_deref()
     }
-    /// <p>The number of Amazon EC2 instances you want to maintain in the specified fleet location. This value must fall between the minimum and maximum size limits.</p>
+    /// <p>The number of Amazon EC2 instances you want to maintain in the specified fleet location. This value must fall between the minimum and maximum size limits. Changes in desired instance value can take up to 1 minute to be reflected when viewing the fleet's capacity settings.</p>
     pub fn desired_instances(&self) -> ::std::option::Option<i32> {
         self.desired_instances
     }
@@ -68,17 +68,17 @@ impl UpdateFleetCapacityInputBuilder {
     pub fn get_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.fleet_id
     }
-    /// <p>The number of Amazon EC2 instances you want to maintain in the specified fleet location. This value must fall between the minimum and maximum size limits.</p>
+    /// <p>The number of Amazon EC2 instances you want to maintain in the specified fleet location. This value must fall between the minimum and maximum size limits. Changes in desired instance value can take up to 1 minute to be reflected when viewing the fleet's capacity settings.</p>
     pub fn desired_instances(mut self, input: i32) -> Self {
         self.desired_instances = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of Amazon EC2 instances you want to maintain in the specified fleet location. This value must fall between the minimum and maximum size limits.</p>
+    /// <p>The number of Amazon EC2 instances you want to maintain in the specified fleet location. This value must fall between the minimum and maximum size limits. Changes in desired instance value can take up to 1 minute to be reflected when viewing the fleet's capacity settings.</p>
     pub fn set_desired_instances(mut self, input: ::std::option::Option<i32>) -> Self {
         self.desired_instances = input;
         self
     }
-    /// <p>The number of Amazon EC2 instances you want to maintain in the specified fleet location. This value must fall between the minimum and maximum size limits.</p>
+    /// <p>The number of Amazon EC2 instances you want to maintain in the specified fleet location. This value must fall between the minimum and maximum size limits. Changes in desired instance value can take up to 1 minute to be reflected when viewing the fleet's capacity settings.</p>
     pub fn get_desired_instances(&self) -> &::std::option::Option<i32> {
         &self.desired_instances
     }

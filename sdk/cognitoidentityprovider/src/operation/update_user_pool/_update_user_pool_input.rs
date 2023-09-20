@@ -46,7 +46,8 @@ pub struct UpdateUserPoolInput {
     pub user_pool_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The configuration for <code>AdminCreateUser</code> requests.</p>
     pub admin_create_user_config: ::std::option::Option<crate::types::AdminCreateUserConfigType>,
-    /// <p>Enables advanced security risk detection. Set the key <code>AdvancedSecurityMode</code> to the value "AUDIT".</p>
+    /// <p>User pool add-ons. Contains settings for activation of advanced security features. To log user security information but take no action, set to <code>AUDIT</code>. To configure automatic security responses to risky traffic to your user pool, set to <code>ENFORCED</code>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-advanced-security.html">Adding advanced security to a user pool</a>.</p>
     pub user_pool_add_ons: ::std::option::Option<crate::types::UserPoolAddOnsType>,
     /// <p>The available verified method a user can use to recover their password when they call <code>ForgotPassword</code>. You can use this setting to define a preferred method when a user has more than one method available. With this setting, SMS doesn't qualify for a valid password recovery mechanism if the user also has SMS multi-factor authentication (MFA) activated. In the absence of this setting, Amazon Cognito uses the legacy behavior to determine the recovery method where SMS is preferred through email.</p>
     pub account_recovery_setting: ::std::option::Option<crate::types::AccountRecoverySettingType>,
@@ -128,7 +129,8 @@ impl UpdateUserPoolInput {
     pub fn admin_create_user_config(&self) -> ::std::option::Option<&crate::types::AdminCreateUserConfigType> {
         self.admin_create_user_config.as_ref()
     }
-    /// <p>Enables advanced security risk detection. Set the key <code>AdvancedSecurityMode</code> to the value "AUDIT".</p>
+    /// <p>User pool add-ons. Contains settings for activation of advanced security features. To log user security information but take no action, set to <code>AUDIT</code>. To configure automatic security responses to risky traffic to your user pool, set to <code>ENFORCED</code>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-advanced-security.html">Adding advanced security to a user pool</a>.</p>
     pub fn user_pool_add_ons(&self) -> ::std::option::Option<&crate::types::UserPoolAddOnsType> {
         self.user_pool_add_ons.as_ref()
     }
@@ -450,17 +452,20 @@ impl UpdateUserPoolInputBuilder {
     pub fn get_admin_create_user_config(&self) -> &::std::option::Option<crate::types::AdminCreateUserConfigType> {
         &self.admin_create_user_config
     }
-    /// <p>Enables advanced security risk detection. Set the key <code>AdvancedSecurityMode</code> to the value "AUDIT".</p>
+    /// <p>User pool add-ons. Contains settings for activation of advanced security features. To log user security information but take no action, set to <code>AUDIT</code>. To configure automatic security responses to risky traffic to your user pool, set to <code>ENFORCED</code>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-advanced-security.html">Adding advanced security to a user pool</a>.</p>
     pub fn user_pool_add_ons(mut self, input: crate::types::UserPoolAddOnsType) -> Self {
         self.user_pool_add_ons = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Enables advanced security risk detection. Set the key <code>AdvancedSecurityMode</code> to the value "AUDIT".</p>
+    /// <p>User pool add-ons. Contains settings for activation of advanced security features. To log user security information but take no action, set to <code>AUDIT</code>. To configure automatic security responses to risky traffic to your user pool, set to <code>ENFORCED</code>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-advanced-security.html">Adding advanced security to a user pool</a>.</p>
     pub fn set_user_pool_add_ons(mut self, input: ::std::option::Option<crate::types::UserPoolAddOnsType>) -> Self {
         self.user_pool_add_ons = input;
         self
     }
-    /// <p>Enables advanced security risk detection. Set the key <code>AdvancedSecurityMode</code> to the value "AUDIT".</p>
+    /// <p>User pool add-ons. Contains settings for activation of advanced security features. To log user security information but take no action, set to <code>AUDIT</code>. To configure automatic security responses to risky traffic to your user pool, set to <code>ENFORCED</code>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-advanced-security.html">Adding advanced security to a user pool</a>.</p>
     pub fn get_user_pool_add_ons(&self) -> &::std::option::Option<crate::types::UserPoolAddOnsType> {
         &self.user_pool_add_ons
     }

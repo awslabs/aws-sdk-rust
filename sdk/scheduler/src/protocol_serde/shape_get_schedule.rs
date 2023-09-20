@@ -108,6 +108,13 @@ pub(crate) fn de_get_schedule(
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                "ActionAfterCompletion" => {
+                    builder = builder.set_action_after_completion(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::ActionAfterCompletion::from(u.as_ref())))
+                            .transpose()?,
+                    );
+                }
                 "Arn" => {
                     builder = builder.set_arn(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

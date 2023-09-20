@@ -12,8 +12,8 @@ pub fn ser_delete_global_replication_group_input_input(
     }
     #[allow(unused_mut)]
     let mut scope_3 = writer.prefix("RetainPrimaryReplicationGroup");
-    {
-        scope_3.boolean(input.retain_primary_replication_group);
+    if let Some(var_4) = &input.retain_primary_replication_group {
+        scope_3.boolean(*var_4);
     }
     writer.finish();
     Ok(::aws_smithy_http::body::SdkBody::from(out))

@@ -11,7 +11,7 @@ pub struct AccessLevelFilter {
     /// <li> <p> <code>User</code> - Filter results based on the specified user.</p> </li>
     /// </ul>
     pub key: ::std::option::Option<crate::types::AccessLevelFilterKey>,
-    /// <p>The user to which the access level applies. The only supported value is <code>Self</code>.</p>
+    /// <p>The user to which the access level applies. The only supported value is <code>self</code>.</p>
     pub value: ::std::option::Option<::std::string::String>,
 }
 impl AccessLevelFilter {
@@ -24,7 +24,7 @@ impl AccessLevelFilter {
     pub fn key(&self) -> ::std::option::Option<&crate::types::AccessLevelFilterKey> {
         self.key.as_ref()
     }
-    /// <p>The user to which the access level applies. The only supported value is <code>Self</code>.</p>
+    /// <p>The user to which the access level applies. The only supported value is <code>self</code>.</p>
     pub fn value(&self) -> ::std::option::Option<&str> {
         self.value.as_deref()
     }
@@ -73,17 +73,17 @@ impl AccessLevelFilterBuilder {
     pub fn get_key(&self) -> &::std::option::Option<crate::types::AccessLevelFilterKey> {
         &self.key
     }
-    /// <p>The user to which the access level applies. The only supported value is <code>Self</code>.</p>
+    /// <p>The user to which the access level applies. The only supported value is <code>self</code>.</p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The user to which the access level applies. The only supported value is <code>Self</code>.</p>
+    /// <p>The user to which the access level applies. The only supported value is <code>self</code>.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
     }
-    /// <p>The user to which the access level applies. The only supported value is <code>Self</code>.</p>
+    /// <p>The user to which the access level applies. The only supported value is <code>self</code>.</p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
         &self.value
     }

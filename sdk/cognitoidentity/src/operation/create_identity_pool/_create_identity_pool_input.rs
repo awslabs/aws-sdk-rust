@@ -7,7 +7,7 @@ pub struct CreateIdentityPoolInput {
     /// <p>A string that you provide.</p>
     pub identity_pool_name: ::std::option::Option<::std::string::String>,
     /// <p>TRUE if the identity pool supports unauthenticated logins.</p>
-    pub allow_unauthenticated_identities: bool,
+    pub allow_unauthenticated_identities: ::std::option::Option<bool>,
     /// <p>Enables or disables the Basic (Classic) authentication flow. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flow.html">Identity Pools (Federated Identities) Authentication Flow</a> in the <i>Amazon Cognito Developer Guide</i>.</p>
     pub allow_classic_flow: ::std::option::Option<bool>,
     /// <p>Optional key:value pairs mapping provider names to provider app IDs.</p>
@@ -30,7 +30,7 @@ impl CreateIdentityPoolInput {
         self.identity_pool_name.as_deref()
     }
     /// <p>TRUE if the identity pool supports unauthenticated logins.</p>
-    pub fn allow_unauthenticated_identities(&self) -> bool {
+    pub fn allow_unauthenticated_identities(&self) -> ::std::option::Option<bool> {
         self.allow_unauthenticated_identities
     }
     /// <p>Enables or disables the Basic (Classic) authentication flow. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flow.html">Identity Pools (Federated Identities) Authentication Flow</a> in the <i>Amazon Cognito Developer Guide</i>.</p>
@@ -264,7 +264,7 @@ impl CreateIdentityPoolInputBuilder {
     ) -> ::std::result::Result<crate::operation::create_identity_pool::CreateIdentityPoolInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_identity_pool::CreateIdentityPoolInput {
             identity_pool_name: self.identity_pool_name,
-            allow_unauthenticated_identities: self.allow_unauthenticated_identities.unwrap_or_default(),
+            allow_unauthenticated_identities: self.allow_unauthenticated_identities,
             allow_classic_flow: self.allow_classic_flow,
             supported_login_providers: self.supported_login_providers,
             developer_provider_name: self.developer_provider_name,

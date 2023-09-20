@@ -341,6 +341,8 @@ pub(crate) mod shape_activity;
 
 pub(crate) mod shape_adjustment_types;
 
+pub(crate) mod shape_alarm_specification;
+
 pub(crate) mod shape_alarms;
 
 pub(crate) mod shape_auto_scaling_groups;
@@ -524,6 +526,8 @@ pub(crate) mod shape_suspended_process;
 pub(crate) mod shape_total_local_storage_gb_request;
 
 pub(crate) mod shape_v_cpu_count_request;
+
+pub(crate) mod shape_alarm_list;
 
 pub(crate) mod shape_metric_data_queries;
 

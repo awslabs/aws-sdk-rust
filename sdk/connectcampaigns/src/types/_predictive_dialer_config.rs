@@ -6,11 +6,17 @@
 pub struct PredictiveDialerConfig {
     /// The bandwidth allocation of a queue resource.
     pub bandwidth_allocation: ::std::option::Option<f64>,
+    /// Allocates dialing capacity for this campaign between multiple active campaigns
+    pub dialing_capacity: ::std::option::Option<f64>,
 }
 impl PredictiveDialerConfig {
     /// The bandwidth allocation of a queue resource.
     pub fn bandwidth_allocation(&self) -> ::std::option::Option<f64> {
         self.bandwidth_allocation
+    }
+    /// Allocates dialing capacity for this campaign between multiple active campaigns
+    pub fn dialing_capacity(&self) -> ::std::option::Option<f64> {
+        self.dialing_capacity
     }
 }
 impl PredictiveDialerConfig {
@@ -25,6 +31,7 @@ impl PredictiveDialerConfig {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PredictiveDialerConfigBuilder {
     pub(crate) bandwidth_allocation: ::std::option::Option<f64>,
+    pub(crate) dialing_capacity: ::std::option::Option<f64>,
 }
 impl PredictiveDialerConfigBuilder {
     /// The bandwidth allocation of a queue resource.
@@ -41,10 +48,25 @@ impl PredictiveDialerConfigBuilder {
     pub fn get_bandwidth_allocation(&self) -> &::std::option::Option<f64> {
         &self.bandwidth_allocation
     }
+    /// Allocates dialing capacity for this campaign between multiple active campaigns
+    pub fn dialing_capacity(mut self, input: f64) -> Self {
+        self.dialing_capacity = ::std::option::Option::Some(input);
+        self
+    }
+    /// Allocates dialing capacity for this campaign between multiple active campaigns
+    pub fn set_dialing_capacity(mut self, input: ::std::option::Option<f64>) -> Self {
+        self.dialing_capacity = input;
+        self
+    }
+    /// Allocates dialing capacity for this campaign between multiple active campaigns
+    pub fn get_dialing_capacity(&self) -> &::std::option::Option<f64> {
+        &self.dialing_capacity
+    }
     /// Consumes the builder and constructs a [`PredictiveDialerConfig`](crate::types::PredictiveDialerConfig).
     pub fn build(self) -> crate::types::PredictiveDialerConfig {
         crate::types::PredictiveDialerConfig {
             bandwidth_allocation: self.bandwidth_allocation,
+            dialing_capacity: self.dialing_capacity,
         }
     }
 }

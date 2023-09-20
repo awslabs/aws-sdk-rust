@@ -6,7 +6,7 @@ pub struct ListTagsInput {
     /// <p>The stack or layer's Amazon Resource Number (ARN).</p>
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>Do not use. A validation exception occurs if you add a <code>MaxResults</code> parameter to a <code>ListTagsRequest</code> call. </p>
-    pub max_results: i32,
+    pub max_results: ::std::option::Option<i32>,
     /// <p>Do not use. A validation exception occurs if you add a <code>NextToken</code> parameter to a <code>ListTagsRequest</code> call. </p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
@@ -16,7 +16,7 @@ impl ListTagsInput {
         self.resource_arn.as_deref()
     }
     /// <p>Do not use. A validation exception occurs if you add a <code>MaxResults</code> parameter to a <code>ListTagsRequest</code> call. </p>
-    pub fn max_results(&self) -> i32 {
+    pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
     /// <p>Do not use. A validation exception occurs if you add a <code>NextToken</code> parameter to a <code>ListTagsRequest</code> call. </p>
@@ -86,7 +86,7 @@ impl ListTagsInputBuilder {
     pub fn build(self) -> ::std::result::Result<crate::operation::list_tags::ListTagsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_tags::ListTagsInput {
             resource_arn: self.resource_arn,
-            max_results: self.max_results.unwrap_or_default(),
+            max_results: self.max_results,
             next_token: self.next_token,
         })
     }

@@ -10,7 +10,7 @@ pub struct BatchModifyClusterSnapshotsInput {
     /// <p>If you decrease the manual snapshot retention period from its current value, existing manual snapshots that fall outside of the new retention period will return an error. If you want to suppress the errors and delete the snapshots, use the force option. </p>
     pub manual_snapshot_retention_period: ::std::option::Option<i32>,
     /// <p>A boolean value indicating whether to override an exception if the retention period has passed. </p>
-    pub force: bool,
+    pub force: ::std::option::Option<bool>,
 }
 impl BatchModifyClusterSnapshotsInput {
     /// <p>A list of snapshot identifiers you want to modify.</p>
@@ -24,7 +24,7 @@ impl BatchModifyClusterSnapshotsInput {
         self.manual_snapshot_retention_period
     }
     /// <p>A boolean value indicating whether to override an exception if the retention period has passed. </p>
-    pub fn force(&self) -> bool {
+    pub fn force(&self) -> ::std::option::Option<bool> {
         self.force
     }
 }
@@ -108,7 +108,7 @@ impl BatchModifyClusterSnapshotsInputBuilder {
         ::std::result::Result::Ok(crate::operation::batch_modify_cluster_snapshots::BatchModifyClusterSnapshotsInput {
             snapshot_identifier_list: self.snapshot_identifier_list,
             manual_snapshot_retention_period: self.manual_snapshot_retention_period,
-            force: self.force.unwrap_or_default(),
+            force: self.force,
         })
     }
 }

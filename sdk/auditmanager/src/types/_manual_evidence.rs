@@ -2,7 +2,7 @@
 
 /// <p> Evidence that's manually added to a control in Audit Manager. <code>manualEvidence</code> can be one of the following: <code>evidenceFileName</code>, <code>s3ResourcePath</code>, or <code>textResponse</code>.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ManualEvidence {
     /// <p>The S3 URL of the object that's imported as manual evidence. </p>
     pub s3_resource_path: ::std::option::Option<::std::string::String>,
@@ -25,6 +25,15 @@ impl ManualEvidence {
         self.evidence_file_name.as_deref()
     }
 }
+impl ::std::fmt::Debug for ManualEvidence {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("ManualEvidence");
+        formatter.field("s3_resource_path", &self.s3_resource_path);
+        formatter.field("text_response", &"*** Sensitive Data Redacted ***");
+        formatter.field("evidence_file_name", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl ManualEvidence {
     /// Creates a new builder-style object to manufacture [`ManualEvidence`](crate::types::ManualEvidence).
     pub fn builder() -> crate::types::builders::ManualEvidenceBuilder {
@@ -34,7 +43,7 @@ impl ManualEvidence {
 
 /// A builder for [`ManualEvidence`](crate::types::ManualEvidence).
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct ManualEvidenceBuilder {
     pub(crate) s3_resource_path: ::std::option::Option<::std::string::String>,
     pub(crate) text_response: ::std::option::Option<::std::string::String>,
@@ -90,5 +99,14 @@ impl ManualEvidenceBuilder {
             text_response: self.text_response,
             evidence_file_name: self.evidence_file_name,
         }
+    }
+}
+impl ::std::fmt::Debug for ManualEvidenceBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("ManualEvidenceBuilder");
+        formatter.field("s3_resource_path", &self.s3_resource_path);
+        formatter.field("text_response", &"*** Sensitive Data Redacted ***");
+        formatter.field("evidence_file_name", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

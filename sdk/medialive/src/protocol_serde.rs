@@ -119,11 +119,15 @@ pub(crate) mod shape_reject_input_device_transfer;
 
 pub(crate) mod shape_start_channel;
 
+pub(crate) mod shape_start_input_device;
+
 pub(crate) mod shape_start_input_device_maintenance_window;
 
 pub(crate) mod shape_start_multiplex;
 
 pub(crate) mod shape_stop_channel;
+
+pub(crate) mod shape_stop_input_device;
 
 pub(crate) mod shape_stop_multiplex;
 
@@ -418,6 +422,10 @@ pub(crate) mod shape_global_configuration;
 
 pub(crate) mod shape_input_destination;
 
+pub(crate) mod shape_input_device_media_connect_configurable_settings;
+
+pub(crate) mod shape_input_device_media_connect_settings;
+
 pub(crate) mod shape_input_device_summary;
 
 pub(crate) mod shape_input_settings;
@@ -515,6 +523,8 @@ pub(crate) mod shape_output;
 
 pub(crate) mod shape_output_group_settings;
 
+pub(crate) mod shape_output_locking_settings;
+
 pub(crate) mod shape_remix_settings;
 
 pub(crate) mod shape_schedule_action_settings;
@@ -564,6 +574,8 @@ pub(crate) mod shape_ebu_tt_d_destination_settings;
 pub(crate) mod shape_embedded_destination_settings;
 
 pub(crate) mod shape_embedded_plus_scte20_destination_settings;
+
+pub(crate) mod shape_epoch_locking_settings;
 
 pub(crate) mod shape_esam;
 
@@ -618,6 +630,8 @@ pub(crate) mod shape_output_settings;
 pub(crate) mod shape_pass_through_settings;
 
 pub(crate) mod shape_pause_state_schedule_action_settings;
+
+pub(crate) mod shape_pipeline_locking_settings;
 
 pub(crate) mod shape_rtmp_caption_info_destination_settings;
 

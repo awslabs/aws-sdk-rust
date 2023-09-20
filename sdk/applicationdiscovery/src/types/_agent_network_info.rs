@@ -2,7 +2,7 @@
 
 /// <p>Network details about the host where the agent/collector resides.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct AgentNetworkInfo {
     /// <p>The IP address for the host where the agent/collector resides.</p>
     pub ip_address: ::std::option::Option<::std::string::String>,
@@ -19,6 +19,14 @@ impl AgentNetworkInfo {
         self.mac_address.as_deref()
     }
 }
+impl ::std::fmt::Debug for AgentNetworkInfo {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("AgentNetworkInfo");
+        formatter.field("ip_address", &"*** Sensitive Data Redacted ***");
+        formatter.field("mac_address", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl AgentNetworkInfo {
     /// Creates a new builder-style object to manufacture [`AgentNetworkInfo`](crate::types::AgentNetworkInfo).
     pub fn builder() -> crate::types::builders::AgentNetworkInfoBuilder {
@@ -28,7 +36,7 @@ impl AgentNetworkInfo {
 
 /// A builder for [`AgentNetworkInfo`](crate::types::AgentNetworkInfo).
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct AgentNetworkInfoBuilder {
     pub(crate) ip_address: ::std::option::Option<::std::string::String>,
     pub(crate) mac_address: ::std::option::Option<::std::string::String>,
@@ -68,5 +76,13 @@ impl AgentNetworkInfoBuilder {
             ip_address: self.ip_address,
             mac_address: self.mac_address,
         }
+    }
+}
+impl ::std::fmt::Debug for AgentNetworkInfoBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("AgentNetworkInfoBuilder");
+        formatter.field("ip_address", &"*** Sensitive Data Redacted ***");
+        formatter.field("mac_address", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

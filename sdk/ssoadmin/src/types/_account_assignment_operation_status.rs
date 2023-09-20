@@ -10,11 +10,11 @@ pub struct AccountAssignmentOperationStatus {
     pub request_id: ::std::option::Option<::std::string::String>,
     /// <p>The message that contains an error or exception in case of an operation failure.</p>
     pub failure_reason: ::std::option::Option<::std::string::String>,
-    /// <p>TargetID is an AWS account identifier, typically a 10-12 digit string (For example, 123456789012).</p>
+    /// <p>TargetID is an Amazon Web Services account identifier, (For example, 123456789012).</p>
     pub target_id: ::std::option::Option<::std::string::String>,
     /// <p>The entity type for which the assignment will be created.</p>
     pub target_type: ::std::option::Option<crate::types::TargetType>,
-    /// <p>The ARN of the permission set. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
+    /// <p>The ARN of the permission set. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub permission_set_arn: ::std::option::Option<::std::string::String>,
     /// <p>The entity type for which the assignment will be created.</p>
     pub principal_type: ::std::option::Option<crate::types::PrincipalType>,
@@ -36,7 +36,7 @@ impl AccountAssignmentOperationStatus {
     pub fn failure_reason(&self) -> ::std::option::Option<&str> {
         self.failure_reason.as_deref()
     }
-    /// <p>TargetID is an AWS account identifier, typically a 10-12 digit string (For example, 123456789012).</p>
+    /// <p>TargetID is an Amazon Web Services account identifier, (For example, 123456789012).</p>
     pub fn target_id(&self) -> ::std::option::Option<&str> {
         self.target_id.as_deref()
     }
@@ -44,7 +44,7 @@ impl AccountAssignmentOperationStatus {
     pub fn target_type(&self) -> ::std::option::Option<&crate::types::TargetType> {
         self.target_type.as_ref()
     }
-    /// <p>The ARN of the permission set. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
+    /// <p>The ARN of the permission set. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub fn permission_set_arn(&self) -> ::std::option::Option<&str> {
         self.permission_set_arn.as_deref()
     }
@@ -125,17 +125,17 @@ impl AccountAssignmentOperationStatusBuilder {
     pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
         &self.failure_reason
     }
-    /// <p>TargetID is an AWS account identifier, typically a 10-12 digit string (For example, 123456789012).</p>
+    /// <p>TargetID is an Amazon Web Services account identifier, (For example, 123456789012).</p>
     pub fn target_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>TargetID is an AWS account identifier, typically a 10-12 digit string (For example, 123456789012).</p>
+    /// <p>TargetID is an Amazon Web Services account identifier, (For example, 123456789012).</p>
     pub fn set_target_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_id = input;
         self
     }
-    /// <p>TargetID is an AWS account identifier, typically a 10-12 digit string (For example, 123456789012).</p>
+    /// <p>TargetID is an Amazon Web Services account identifier, (For example, 123456789012).</p>
     pub fn get_target_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.target_id
     }
@@ -153,17 +153,17 @@ impl AccountAssignmentOperationStatusBuilder {
     pub fn get_target_type(&self) -> &::std::option::Option<crate::types::TargetType> {
         &self.target_type
     }
-    /// <p>The ARN of the permission set. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
+    /// <p>The ARN of the permission set. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub fn permission_set_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.permission_set_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the permission set. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
+    /// <p>The ARN of the permission set. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub fn set_permission_set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.permission_set_arn = input;
         self
     }
-    /// <p>The ARN of the permission set. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
+    /// <p>The ARN of the permission set. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub fn get_permission_set_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.permission_set_arn
     }

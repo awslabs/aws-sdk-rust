@@ -31,6 +31,8 @@ pub struct LoadBalancer {
     pub ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
     /// <p>[Application Load Balancers on Outposts] The ID of the customer-owned address pool.</p>
     pub customer_owned_ipv4_pool: ::std::option::Option<::std::string::String>,
+    /// <p>Indicates whether to evaluate inbound security group rules for traffic sent to a Network Load Balancer through Amazon Web Services PrivateLink.</p>
+    pub enforce_security_group_inbound_rules_on_private_link_traffic: ::std::option::Option<::std::string::String>,
 }
 impl LoadBalancer {
     /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
@@ -86,6 +88,10 @@ impl LoadBalancer {
     pub fn customer_owned_ipv4_pool(&self) -> ::std::option::Option<&str> {
         self.customer_owned_ipv4_pool.as_deref()
     }
+    /// <p>Indicates whether to evaluate inbound security group rules for traffic sent to a Network Load Balancer through Amazon Web Services PrivateLink.</p>
+    pub fn enforce_security_group_inbound_rules_on_private_link_traffic(&self) -> ::std::option::Option<&str> {
+        self.enforce_security_group_inbound_rules_on_private_link_traffic.as_deref()
+    }
 }
 impl LoadBalancer {
     /// Creates a new builder-style object to manufacture [`LoadBalancer`](crate::types::LoadBalancer).
@@ -111,6 +117,7 @@ pub struct LoadBalancerBuilder {
     pub(crate) security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
     pub(crate) customer_owned_ipv4_pool: ::std::option::Option<::std::string::String>,
+    pub(crate) enforce_security_group_inbound_rules_on_private_link_traffic: ::std::option::Option<::std::string::String>,
 }
 impl LoadBalancerBuilder {
     /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
@@ -310,6 +317,20 @@ impl LoadBalancerBuilder {
     pub fn get_customer_owned_ipv4_pool(&self) -> &::std::option::Option<::std::string::String> {
         &self.customer_owned_ipv4_pool
     }
+    /// <p>Indicates whether to evaluate inbound security group rules for traffic sent to a Network Load Balancer through Amazon Web Services PrivateLink.</p>
+    pub fn enforce_security_group_inbound_rules_on_private_link_traffic(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.enforce_security_group_inbound_rules_on_private_link_traffic = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Indicates whether to evaluate inbound security group rules for traffic sent to a Network Load Balancer through Amazon Web Services PrivateLink.</p>
+    pub fn set_enforce_security_group_inbound_rules_on_private_link_traffic(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.enforce_security_group_inbound_rules_on_private_link_traffic = input;
+        self
+    }
+    /// <p>Indicates whether to evaluate inbound security group rules for traffic sent to a Network Load Balancer through Amazon Web Services PrivateLink.</p>
+    pub fn get_enforce_security_group_inbound_rules_on_private_link_traffic(&self) -> &::std::option::Option<::std::string::String> {
+        &self.enforce_security_group_inbound_rules_on_private_link_traffic
+    }
     /// Consumes the builder and constructs a [`LoadBalancer`](crate::types::LoadBalancer).
     pub fn build(self) -> crate::types::LoadBalancer {
         crate::types::LoadBalancer {
@@ -326,6 +347,7 @@ impl LoadBalancerBuilder {
             security_groups: self.security_groups,
             ip_address_type: self.ip_address_type,
             customer_owned_ipv4_pool: self.customer_owned_ipv4_pool,
+            enforce_security_group_inbound_rules_on_private_link_traffic: self.enforce_security_group_inbound_rules_on_private_link_traffic,
         }
     }
 }

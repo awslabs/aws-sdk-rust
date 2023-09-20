@@ -7,7 +7,7 @@ pub struct ListAnnotationImportJobsInput {
     pub max_results: ::std::option::Option<i32>,
     /// <p>IDs of annotation import jobs to retrieve.</p>
     pub ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
+    /// <p>Specifies the pagination token from a previous request to retrieve the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>A filter to apply to the list.</p>
     pub filter: ::std::option::Option<crate::types::ListAnnotationImportJobsFilter>,
@@ -21,7 +21,7 @@ impl ListAnnotationImportJobsInput {
     pub fn ids(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.ids.as_deref()
     }
-    /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
+    /// <p>Specifies the pagination token from a previous request to retrieve the next page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -81,17 +81,17 @@ impl ListAnnotationImportJobsInputBuilder {
     pub fn get_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.ids
     }
-    /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
+    /// <p>Specifies the pagination token from a previous request to retrieve the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
+    /// <p>Specifies the pagination token from a previous request to retrieve the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
+    /// <p>Specifies the pagination token from a previous request to retrieve the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

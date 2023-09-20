@@ -43,6 +43,8 @@ pub struct LaunchTemplateInstanceNetworkInterfaceSpecification {
     pub ipv6_prefixes: ::std::option::Option<::std::vec::Vec<crate::types::Ipv6PrefixSpecificationResponse>>,
     /// <p>The number of IPv6 prefixes that Amazon Web Services automatically assigned to the network interface.</p>
     pub ipv6_prefix_count: ::std::option::Option<i32>,
+    /// <p>The primary IPv6 address of the network interface. When you enable an IPv6 GUA address to be a primary IPv6, the first IPv6 GUA will be made the primary IPv6 address until the instance is terminated or the network interface is detached. For more information about primary IPv6 addresses, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>.</p>
+    pub primary_ipv6: ::std::option::Option<bool>,
 }
 impl LaunchTemplateInstanceNetworkInterfaceSpecification {
     /// <p>Indicates whether to associate a Carrier IP address with eth0 for a new network interface.</p>
@@ -122,6 +124,10 @@ impl LaunchTemplateInstanceNetworkInterfaceSpecification {
     pub fn ipv6_prefix_count(&self) -> ::std::option::Option<i32> {
         self.ipv6_prefix_count
     }
+    /// <p>The primary IPv6 address of the network interface. When you enable an IPv6 GUA address to be a primary IPv6, the first IPv6 GUA will be made the primary IPv6 address until the instance is terminated or the network interface is detached. For more information about primary IPv6 addresses, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>.</p>
+    pub fn primary_ipv6(&self) -> ::std::option::Option<bool> {
+        self.primary_ipv6
+    }
 }
 impl LaunchTemplateInstanceNetworkInterfaceSpecification {
     /// Creates a new builder-style object to manufacture [`LaunchTemplateInstanceNetworkInterfaceSpecification`](crate::types::LaunchTemplateInstanceNetworkInterfaceSpecification).
@@ -153,6 +159,7 @@ pub struct LaunchTemplateInstanceNetworkInterfaceSpecificationBuilder {
     pub(crate) ipv4_prefix_count: ::std::option::Option<i32>,
     pub(crate) ipv6_prefixes: ::std::option::Option<::std::vec::Vec<crate::types::Ipv6PrefixSpecificationResponse>>,
     pub(crate) ipv6_prefix_count: ::std::option::Option<i32>,
+    pub(crate) primary_ipv6: ::std::option::Option<bool>,
 }
 impl LaunchTemplateInstanceNetworkInterfaceSpecificationBuilder {
     /// <p>Indicates whether to associate a Carrier IP address with eth0 for a new network interface.</p>
@@ -454,6 +461,20 @@ impl LaunchTemplateInstanceNetworkInterfaceSpecificationBuilder {
     pub fn get_ipv6_prefix_count(&self) -> &::std::option::Option<i32> {
         &self.ipv6_prefix_count
     }
+    /// <p>The primary IPv6 address of the network interface. When you enable an IPv6 GUA address to be a primary IPv6, the first IPv6 GUA will be made the primary IPv6 address until the instance is terminated or the network interface is detached. For more information about primary IPv6 addresses, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>.</p>
+    pub fn primary_ipv6(mut self, input: bool) -> Self {
+        self.primary_ipv6 = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The primary IPv6 address of the network interface. When you enable an IPv6 GUA address to be a primary IPv6, the first IPv6 GUA will be made the primary IPv6 address until the instance is terminated or the network interface is detached. For more information about primary IPv6 addresses, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>.</p>
+    pub fn set_primary_ipv6(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.primary_ipv6 = input;
+        self
+    }
+    /// <p>The primary IPv6 address of the network interface. When you enable an IPv6 GUA address to be a primary IPv6, the first IPv6 GUA will be made the primary IPv6 address until the instance is terminated or the network interface is detached. For more information about primary IPv6 addresses, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>.</p>
+    pub fn get_primary_ipv6(&self) -> &::std::option::Option<bool> {
+        &self.primary_ipv6
+    }
     /// Consumes the builder and constructs a [`LaunchTemplateInstanceNetworkInterfaceSpecification`](crate::types::LaunchTemplateInstanceNetworkInterfaceSpecification).
     pub fn build(self) -> crate::types::LaunchTemplateInstanceNetworkInterfaceSpecification {
         crate::types::LaunchTemplateInstanceNetworkInterfaceSpecification {
@@ -476,6 +497,7 @@ impl LaunchTemplateInstanceNetworkInterfaceSpecificationBuilder {
             ipv4_prefix_count: self.ipv4_prefix_count,
             ipv6_prefixes: self.ipv6_prefixes,
             ipv6_prefix_count: self.ipv6_prefix_count,
+            primary_ipv6: self.primary_ipv6,
         }
     }
 }

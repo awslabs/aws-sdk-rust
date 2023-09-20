@@ -19,9 +19,9 @@ pub struct ModifyVpcEndpointInput {
     pub add_subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>(Interface endpoint) The IDs of the subnets from which to remove the endpoint.</p>
     pub remove_subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>(Interface endpoint) The IDs of the security groups to associate with the network interface.</p>
+    /// <p>(Interface endpoint) The IDs of the security groups to associate with the endpoint network interfaces.</p>
     pub add_security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>(Interface endpoint) The IDs of the security groups to disassociate from the network interface.</p>
+    /// <p>(Interface endpoint) The IDs of the security groups to disassociate from the endpoint network interfaces.</p>
     pub remove_security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The IP address type for the endpoint.</p>
     pub ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
@@ -29,6 +29,8 @@ pub struct ModifyVpcEndpointInput {
     pub dns_options: ::std::option::Option<crate::types::DnsOptionsSpecification>,
     /// <p>(Interface endpoint) Indicates whether a private hosted zone is associated with the VPC.</p>
     pub private_dns_enabled: ::std::option::Option<bool>,
+    /// <p>The subnet configurations for the endpoint.</p>
+    pub subnet_configurations: ::std::option::Option<::std::vec::Vec<crate::types::SubnetConfiguration>>,
 }
 impl ModifyVpcEndpointInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -63,11 +65,11 @@ impl ModifyVpcEndpointInput {
     pub fn remove_subnet_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.remove_subnet_ids.as_deref()
     }
-    /// <p>(Interface endpoint) The IDs of the security groups to associate with the network interface.</p>
+    /// <p>(Interface endpoint) The IDs of the security groups to associate with the endpoint network interfaces.</p>
     pub fn add_security_group_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.add_security_group_ids.as_deref()
     }
-    /// <p>(Interface endpoint) The IDs of the security groups to disassociate from the network interface.</p>
+    /// <p>(Interface endpoint) The IDs of the security groups to disassociate from the endpoint network interfaces.</p>
     pub fn remove_security_group_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.remove_security_group_ids.as_deref()
     }
@@ -82,6 +84,10 @@ impl ModifyVpcEndpointInput {
     /// <p>(Interface endpoint) Indicates whether a private hosted zone is associated with the VPC.</p>
     pub fn private_dns_enabled(&self) -> ::std::option::Option<bool> {
         self.private_dns_enabled
+    }
+    /// <p>The subnet configurations for the endpoint.</p>
+    pub fn subnet_configurations(&self) -> ::std::option::Option<&[crate::types::SubnetConfiguration]> {
+        self.subnet_configurations.as_deref()
     }
 }
 impl ModifyVpcEndpointInput {
@@ -108,6 +114,7 @@ pub struct ModifyVpcEndpointInputBuilder {
     pub(crate) ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
     pub(crate) dns_options: ::std::option::Option<crate::types::DnsOptionsSpecification>,
     pub(crate) private_dns_enabled: ::std::option::Option<bool>,
+    pub(crate) subnet_configurations: ::std::option::Option<::std::vec::Vec<crate::types::SubnetConfiguration>>,
 }
 impl ModifyVpcEndpointInputBuilder {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -250,19 +257,19 @@ impl ModifyVpcEndpointInputBuilder {
     ///
     /// To override the contents of this collection use [`set_add_security_group_ids`](Self::set_add_security_group_ids).
     ///
-    /// <p>(Interface endpoint) The IDs of the security groups to associate with the network interface.</p>
+    /// <p>(Interface endpoint) The IDs of the security groups to associate with the endpoint network interfaces.</p>
     pub fn add_security_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.add_security_group_ids.unwrap_or_default();
         v.push(input.into());
         self.add_security_group_ids = ::std::option::Option::Some(v);
         self
     }
-    /// <p>(Interface endpoint) The IDs of the security groups to associate with the network interface.</p>
+    /// <p>(Interface endpoint) The IDs of the security groups to associate with the endpoint network interfaces.</p>
     pub fn set_add_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.add_security_group_ids = input;
         self
     }
-    /// <p>(Interface endpoint) The IDs of the security groups to associate with the network interface.</p>
+    /// <p>(Interface endpoint) The IDs of the security groups to associate with the endpoint network interfaces.</p>
     pub fn get_add_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.add_security_group_ids
     }
@@ -270,19 +277,19 @@ impl ModifyVpcEndpointInputBuilder {
     ///
     /// To override the contents of this collection use [`set_remove_security_group_ids`](Self::set_remove_security_group_ids).
     ///
-    /// <p>(Interface endpoint) The IDs of the security groups to disassociate from the network interface.</p>
+    /// <p>(Interface endpoint) The IDs of the security groups to disassociate from the endpoint network interfaces.</p>
     pub fn remove_security_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.remove_security_group_ids.unwrap_or_default();
         v.push(input.into());
         self.remove_security_group_ids = ::std::option::Option::Some(v);
         self
     }
-    /// <p>(Interface endpoint) The IDs of the security groups to disassociate from the network interface.</p>
+    /// <p>(Interface endpoint) The IDs of the security groups to disassociate from the endpoint network interfaces.</p>
     pub fn set_remove_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.remove_security_group_ids = input;
         self
     }
-    /// <p>(Interface endpoint) The IDs of the security groups to disassociate from the network interface.</p>
+    /// <p>(Interface endpoint) The IDs of the security groups to disassociate from the endpoint network interfaces.</p>
     pub fn get_remove_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.remove_security_group_ids
     }
@@ -328,6 +335,26 @@ impl ModifyVpcEndpointInputBuilder {
     pub fn get_private_dns_enabled(&self) -> &::std::option::Option<bool> {
         &self.private_dns_enabled
     }
+    /// Appends an item to `subnet_configurations`.
+    ///
+    /// To override the contents of this collection use [`set_subnet_configurations`](Self::set_subnet_configurations).
+    ///
+    /// <p>The subnet configurations for the endpoint.</p>
+    pub fn subnet_configurations(mut self, input: crate::types::SubnetConfiguration) -> Self {
+        let mut v = self.subnet_configurations.unwrap_or_default();
+        v.push(input);
+        self.subnet_configurations = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The subnet configurations for the endpoint.</p>
+    pub fn set_subnet_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SubnetConfiguration>>) -> Self {
+        self.subnet_configurations = input;
+        self
+    }
+    /// <p>The subnet configurations for the endpoint.</p>
+    pub fn get_subnet_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SubnetConfiguration>> {
+        &self.subnet_configurations
+    }
     /// Consumes the builder and constructs a [`ModifyVpcEndpointInput`](crate::operation::modify_vpc_endpoint::ModifyVpcEndpointInput).
     pub fn build(
         self,
@@ -346,6 +373,7 @@ impl ModifyVpcEndpointInputBuilder {
             ip_address_type: self.ip_address_type,
             dns_options: self.dns_options,
             private_dns_enabled: self.private_dns_enabled,
+            subnet_configurations: self.subnet_configurations,
         })
     }
 }

@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateDocumentationVersionInput {
-    /// <p>The string identifier of the associated RestApi..</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub rest_api_id: ::std::option::Option<::std::string::String>,
     /// <p>The version identifier of the to-be-updated documentation version.</p>
     pub documentation_version: ::std::option::Option<::std::string::String>,
@@ -12,7 +12,7 @@ pub struct UpdateDocumentationVersionInput {
     pub patch_operations: ::std::option::Option<::std::vec::Vec<crate::types::PatchOperation>>,
 }
 impl UpdateDocumentationVersionInput {
-    /// <p>The string identifier of the associated RestApi..</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub fn rest_api_id(&self) -> ::std::option::Option<&str> {
         self.rest_api_id.as_deref()
     }
@@ -41,17 +41,17 @@ pub struct UpdateDocumentationVersionInputBuilder {
     pub(crate) patch_operations: ::std::option::Option<::std::vec::Vec<crate::types::PatchOperation>>,
 }
 impl UpdateDocumentationVersionInputBuilder {
-    /// <p>The string identifier of the associated RestApi..</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub fn rest_api_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rest_api_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The string identifier of the associated RestApi..</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub fn set_rest_api_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.rest_api_id = input;
         self
     }
-    /// <p>The string identifier of the associated RestApi..</p>
+    /// <p>The string identifier of the associated RestApi.</p>
     pub fn get_rest_api_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.rest_api_id
     }

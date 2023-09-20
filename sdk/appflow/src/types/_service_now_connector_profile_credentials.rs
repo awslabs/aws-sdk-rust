@@ -8,6 +8,8 @@ pub struct ServiceNowConnectorProfileCredentials {
     pub username: ::std::option::Option<::std::string::String>,
     /// <p> The password that corresponds to the user name. </p>
     pub password: ::std::option::Option<::std::string::String>,
+    /// <p> The OAuth 2.0 credentials required to authenticate the user. </p>
+    pub o_auth2_credentials: ::std::option::Option<crate::types::OAuth2Credentials>,
 }
 impl ServiceNowConnectorProfileCredentials {
     /// <p> The name of the user. </p>
@@ -18,12 +20,17 @@ impl ServiceNowConnectorProfileCredentials {
     pub fn password(&self) -> ::std::option::Option<&str> {
         self.password.as_deref()
     }
+    /// <p> The OAuth 2.0 credentials required to authenticate the user. </p>
+    pub fn o_auth2_credentials(&self) -> ::std::option::Option<&crate::types::OAuth2Credentials> {
+        self.o_auth2_credentials.as_ref()
+    }
 }
 impl ::std::fmt::Debug for ServiceNowConnectorProfileCredentials {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ServiceNowConnectorProfileCredentials");
         formatter.field("username", &self.username);
         formatter.field("password", &"*** Sensitive Data Redacted ***");
+        formatter.field("o_auth2_credentials", &self.o_auth2_credentials);
         formatter.finish()
     }
 }
@@ -40,6 +47,7 @@ impl ServiceNowConnectorProfileCredentials {
 pub struct ServiceNowConnectorProfileCredentialsBuilder {
     pub(crate) username: ::std::option::Option<::std::string::String>,
     pub(crate) password: ::std::option::Option<::std::string::String>,
+    pub(crate) o_auth2_credentials: ::std::option::Option<crate::types::OAuth2Credentials>,
 }
 impl ServiceNowConnectorProfileCredentialsBuilder {
     /// <p> The name of the user. </p>
@@ -70,11 +78,26 @@ impl ServiceNowConnectorProfileCredentialsBuilder {
     pub fn get_password(&self) -> &::std::option::Option<::std::string::String> {
         &self.password
     }
+    /// <p> The OAuth 2.0 credentials required to authenticate the user. </p>
+    pub fn o_auth2_credentials(mut self, input: crate::types::OAuth2Credentials) -> Self {
+        self.o_auth2_credentials = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p> The OAuth 2.0 credentials required to authenticate the user. </p>
+    pub fn set_o_auth2_credentials(mut self, input: ::std::option::Option<crate::types::OAuth2Credentials>) -> Self {
+        self.o_auth2_credentials = input;
+        self
+    }
+    /// <p> The OAuth 2.0 credentials required to authenticate the user. </p>
+    pub fn get_o_auth2_credentials(&self) -> &::std::option::Option<crate::types::OAuth2Credentials> {
+        &self.o_auth2_credentials
+    }
     /// Consumes the builder and constructs a [`ServiceNowConnectorProfileCredentials`](crate::types::ServiceNowConnectorProfileCredentials).
     pub fn build(self) -> crate::types::ServiceNowConnectorProfileCredentials {
         crate::types::ServiceNowConnectorProfileCredentials {
             username: self.username,
             password: self.password,
+            o_auth2_credentials: self.o_auth2_credentials,
         }
     }
 }
@@ -83,6 +106,7 @@ impl ::std::fmt::Debug for ServiceNowConnectorProfileCredentialsBuilder {
         let mut formatter = f.debug_struct("ServiceNowConnectorProfileCredentialsBuilder");
         formatter.field("username", &self.username);
         formatter.field("password", &"*** Sensitive Data Redacted ***");
+        formatter.field("o_auth2_credentials", &self.o_auth2_credentials);
         formatter.finish()
     }
 }

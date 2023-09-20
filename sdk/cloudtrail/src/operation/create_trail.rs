@@ -320,6 +320,8 @@ pub enum CreateTrailError {
     S3BucketDoesNotExistException(crate::types::error::S3BucketDoesNotExistException),
     /// <p>The number of tags per trail, event data store, or channel has exceeded the permitted amount. Currently, the limit is 50.</p>
     TagsLimitExceededException(crate::types::error::TagsLimitExceededException),
+    /// <p> This exception is thrown when the request rate exceeds the limit. </p>
+    ThrottlingException(crate::types::error::ThrottlingException),
     /// <p>This exception is thrown when the specified trail already exists.</p>
     TrailAlreadyExistsException(crate::types::error::TrailAlreadyExistsException),
     /// <p>This exception is no longer in use.</p>
@@ -372,6 +374,7 @@ impl ::std::fmt::Display for CreateTrailError {
             Self::OrganizationsNotInUseException(_inner) => _inner.fmt(f),
             Self::S3BucketDoesNotExistException(_inner) => _inner.fmt(f),
             Self::TagsLimitExceededException(_inner) => _inner.fmt(f),
+            Self::ThrottlingException(_inner) => _inner.fmt(f),
             Self::TrailAlreadyExistsException(_inner) => _inner.fmt(f),
             Self::TrailNotProvidedException(_inner) => _inner.fmt(f),
             Self::UnsupportedOperationException(_inner) => _inner.fmt(f),
@@ -412,6 +415,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for CreateTrailEr
             Self::OrganizationsNotInUseException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::S3BucketDoesNotExistException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::TagsLimitExceededException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ThrottlingException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::TrailAlreadyExistsException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::TrailNotProvidedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::UnsupportedOperationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
@@ -479,6 +483,7 @@ impl CreateTrailError {
             Self::OrganizationsNotInUseException(e) => e.meta(),
             Self::S3BucketDoesNotExistException(e) => e.meta(),
             Self::TagsLimitExceededException(e) => e.meta(),
+            Self::ThrottlingException(e) => e.meta(),
             Self::TrailAlreadyExistsException(e) => e.meta(),
             Self::TrailNotProvidedException(e) => e.meta(),
             Self::UnsupportedOperationException(e) => e.meta(),
@@ -597,6 +602,10 @@ impl CreateTrailError {
     pub fn is_tags_limit_exceeded_exception(&self) -> bool {
         matches!(self, Self::TagsLimitExceededException(_))
     }
+    /// Returns `true` if the error kind is `CreateTrailError::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(self, Self::ThrottlingException(_))
+    }
     /// Returns `true` if the error kind is `CreateTrailError::TrailAlreadyExistsException`.
     pub fn is_trail_already_exists_exception(&self) -> bool {
         matches!(self, Self::TrailAlreadyExistsException(_))
@@ -641,6 +650,7 @@ impl ::std::error::Error for CreateTrailError {
             Self::OrganizationsNotInUseException(_inner) => ::std::option::Option::Some(_inner),
             Self::S3BucketDoesNotExistException(_inner) => ::std::option::Option::Some(_inner),
             Self::TagsLimitExceededException(_inner) => ::std::option::Option::Some(_inner),
+            Self::ThrottlingException(_inner) => ::std::option::Option::Some(_inner),
             Self::TrailAlreadyExistsException(_inner) => ::std::option::Option::Some(_inner),
             Self::TrailNotProvidedException(_inner) => ::std::option::Option::Some(_inner),
             Self::UnsupportedOperationException(_inner) => ::std::option::Option::Some(_inner),

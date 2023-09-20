@@ -67,6 +67,30 @@ where
                                     .transpose()?,
                             );
                         }
+                        "PreferredSubnetId" => {
+                            builder = builder.set_preferred_subnet_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "EndpointIpAddressRange" => {
+                            builder = builder.set_endpoint_ip_address_range(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "RouteTableIds" => {
+                            builder = builder.set_route_table_ids(crate::protocol_serde::shape_route_table_ids::de_route_table_ids(tokens)?);
+                        }
+                        "EndpointIpAddress" => {
+                            builder = builder.set_endpoint_ip_address(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

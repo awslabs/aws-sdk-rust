@@ -16,7 +16,7 @@ pub struct NotifyObjectCompleteInput {
     /// Optional metadata associated with an Object. Maximum length is 4MB.
     pub metadata_blob: ::aws_smithy_http::byte_stream::ByteStream,
     /// The size of MetadataBlob.
-    pub metadata_blob_length: i64,
+    pub metadata_blob_length: ::std::option::Option<i64>,
     /// Checksum of MetadataBlob.
     pub metadata_blob_checksum: ::std::option::Option<::std::string::String>,
     /// Checksum algorithm.
@@ -48,7 +48,7 @@ impl NotifyObjectCompleteInput {
         &self.metadata_blob
     }
     /// The size of MetadataBlob.
-    pub fn metadata_blob_length(&self) -> i64 {
+    pub fn metadata_blob_length(&self) -> ::std::option::Option<i64> {
         self.metadata_blob_length
     }
     /// Checksum of MetadataBlob.
@@ -220,7 +220,7 @@ impl NotifyObjectCompleteInputBuilder {
             object_checksum_algorithm: self.object_checksum_algorithm,
             metadata_string: self.metadata_string,
             metadata_blob: self.metadata_blob.unwrap_or_default(),
-            metadata_blob_length: self.metadata_blob_length.unwrap_or_default(),
+            metadata_blob_length: self.metadata_blob_length,
             metadata_blob_checksum: self.metadata_blob_checksum,
             metadata_blob_checksum_algorithm: self.metadata_blob_checksum_algorithm,
         })

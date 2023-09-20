@@ -12,7 +12,7 @@ pub struct RuntimePlatform {
     /// <p>Fargate Spot is not supported for Windows-based containers on Fargate. A job queue will be blocked if a Fargate Windows job is submitted to a job queue with only Fargate Spot compute environments. However, you can attach both <code>FARGATE</code> and <code>FARGATE_SPOT</code> compute environments to the same job queue.</p>
     /// </note>
     pub operating_system_family: ::std::option::Option<::std::string::String>,
-    /// <p>The vCPU architecture. The default value is <code>X86_64</code>. Valid values are <code>X86_64</code> and <code> ARM64</code>.</p> <note>
+    /// <p>The vCPU architecture. The default value is <code>X86_64</code>. Valid values are <code>X86_64</code> and <code>ARM64</code>.</p> <note>
     /// <p>This parameter must be set to <code>X86_64</code> for Windows containers.</p>
     /// </note>
     pub cpu_architecture: ::std::option::Option<::std::string::String>,
@@ -28,7 +28,7 @@ impl RuntimePlatform {
     pub fn operating_system_family(&self) -> ::std::option::Option<&str> {
         self.operating_system_family.as_deref()
     }
-    /// <p>The vCPU architecture. The default value is <code>X86_64</code>. Valid values are <code>X86_64</code> and <code> ARM64</code>.</p> <note>
+    /// <p>The vCPU architecture. The default value is <code>X86_64</code>. Valid values are <code>X86_64</code> and <code>ARM64</code>.</p> <note>
     /// <p>This parameter must be set to <code>X86_64</code> for Windows containers.</p>
     /// </note>
     pub fn cpu_architecture(&self) -> ::std::option::Option<&str> {
@@ -82,21 +82,21 @@ impl RuntimePlatformBuilder {
     pub fn get_operating_system_family(&self) -> &::std::option::Option<::std::string::String> {
         &self.operating_system_family
     }
-    /// <p>The vCPU architecture. The default value is <code>X86_64</code>. Valid values are <code>X86_64</code> and <code> ARM64</code>.</p> <note>
+    /// <p>The vCPU architecture. The default value is <code>X86_64</code>. Valid values are <code>X86_64</code> and <code>ARM64</code>.</p> <note>
     /// <p>This parameter must be set to <code>X86_64</code> for Windows containers.</p>
     /// </note>
     pub fn cpu_architecture(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cpu_architecture = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The vCPU architecture. The default value is <code>X86_64</code>. Valid values are <code>X86_64</code> and <code> ARM64</code>.</p> <note>
+    /// <p>The vCPU architecture. The default value is <code>X86_64</code>. Valid values are <code>X86_64</code> and <code>ARM64</code>.</p> <note>
     /// <p>This parameter must be set to <code>X86_64</code> for Windows containers.</p>
     /// </note>
     pub fn set_cpu_architecture(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cpu_architecture = input;
         self
     }
-    /// <p>The vCPU architecture. The default value is <code>X86_64</code>. Valid values are <code>X86_64</code> and <code> ARM64</code>.</p> <note>
+    /// <p>The vCPU architecture. The default value is <code>X86_64</code>. Valid values are <code>X86_64</code> and <code>ARM64</code>.</p> <note>
     /// <p>This parameter must be set to <code>X86_64</code> for Windows containers.</p>
     /// </note>
     pub fn get_cpu_architecture(&self) -> &::std::option::Option<::std::string::String> {

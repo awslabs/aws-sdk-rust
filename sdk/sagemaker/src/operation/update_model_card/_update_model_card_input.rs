@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UpdateModelCardInput {
-    /// <p>The name of the model card to update.</p>
+    /// <p>The name or Amazon Resource Name (ARN) of the model card to update.</p>
     pub model_card_name: ::std::option::Option<::std::string::String>,
     /// <p>The updated model card content. Content must be in <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-cards.html#model-cards-json-schema">model card JSON schema</a> and provided as a string.</p>
     /// <p>When updating model card content, be sure to include the full content and not just updated content.</p>
@@ -18,7 +18,7 @@ pub struct UpdateModelCardInput {
     pub model_card_status: ::std::option::Option<crate::types::ModelCardStatus>,
 }
 impl UpdateModelCardInput {
-    /// <p>The name of the model card to update.</p>
+    /// <p>The name or Amazon Resource Name (ARN) of the model card to update.</p>
     pub fn model_card_name(&self) -> ::std::option::Option<&str> {
         self.model_card_name.as_deref()
     }
@@ -63,17 +63,17 @@ pub struct UpdateModelCardInputBuilder {
     pub(crate) model_card_status: ::std::option::Option<crate::types::ModelCardStatus>,
 }
 impl UpdateModelCardInputBuilder {
-    /// <p>The name of the model card to update.</p>
+    /// <p>The name or Amazon Resource Name (ARN) of the model card to update.</p>
     pub fn model_card_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_card_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the model card to update.</p>
+    /// <p>The name or Amazon Resource Name (ARN) of the model card to update.</p>
     pub fn set_model_card_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_card_name = input;
         self
     }
-    /// <p>The name of the model card to update.</p>
+    /// <p>The name or Amazon Resource Name (ARN) of the model card to update.</p>
     pub fn get_model_card_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.model_card_name
     }

@@ -8,7 +8,7 @@ pub struct ResetCacheParameterGroupInput {
     pub cache_parameter_group_name: ::std::option::Option<::std::string::String>,
     /// <p>If <code>true</code>, all parameters in the cache parameter group are reset to their default values. If <code>false</code>, only the parameters listed by <code>ParameterNameValues</code> are reset to their default values.</p>
     /// <p>Valid values: <code>true</code> | <code>false</code> </p>
-    pub reset_all_parameters: bool,
+    pub reset_all_parameters: ::std::option::Option<bool>,
     /// <p>An array of parameter names to reset to their default values. If <code>ResetAllParameters</code> is <code>true</code>, do not use <code>ParameterNameValues</code>. If <code>ResetAllParameters</code> is <code>false</code>, you must specify the name of at least one parameter to reset.</p>
     pub parameter_name_values: ::std::option::Option<::std::vec::Vec<crate::types::ParameterNameValue>>,
 }
@@ -19,7 +19,7 @@ impl ResetCacheParameterGroupInput {
     }
     /// <p>If <code>true</code>, all parameters in the cache parameter group are reset to their default values. If <code>false</code>, only the parameters listed by <code>ParameterNameValues</code> are reset to their default values.</p>
     /// <p>Valid values: <code>true</code> | <code>false</code> </p>
-    pub fn reset_all_parameters(&self) -> bool {
+    pub fn reset_all_parameters(&self) -> ::std::option::Option<bool> {
         self.reset_all_parameters
     }
     /// <p>An array of parameter names to reset to their default values. If <code>ResetAllParameters</code> is <code>true</code>, do not use <code>ParameterNameValues</code>. If <code>ResetAllParameters</code> is <code>false</code>, you must specify the name of at least one parameter to reset.</p>
@@ -103,7 +103,7 @@ impl ResetCacheParameterGroupInputBuilder {
     > {
         ::std::result::Result::Ok(crate::operation::reset_cache_parameter_group::ResetCacheParameterGroupInput {
             cache_parameter_group_name: self.cache_parameter_group_name,
-            reset_all_parameters: self.reset_all_parameters.unwrap_or_default(),
+            reset_all_parameters: self.reset_all_parameters,
             parameter_name_values: self.parameter_name_values,
         })
     }

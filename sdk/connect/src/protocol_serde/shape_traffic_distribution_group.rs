@@ -59,6 +59,9 @@ where
                         "Tags" => {
                             builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens)?);
                         }
+                        "IsDefault" => {
+                            builder = builder.set_is_default(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

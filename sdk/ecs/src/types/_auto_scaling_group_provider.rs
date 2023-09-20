@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AutoScalingGroupProvider {
-    /// <p>The Amazon Resource Name (ARN) that identifies the Auto Scaling group.</p>
+    /// <p>The Amazon Resource Name (ARN) that identifies the Auto Scaling group, or the Auto Scaling group name.</p>
     pub auto_scaling_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>The managed scaling settings for the Auto Scaling group capacity provider.</p>
     pub managed_scaling: ::std::option::Option<crate::types::ManagedScaling>,
@@ -16,7 +16,7 @@ pub struct AutoScalingGroupProvider {
     pub managed_termination_protection: ::std::option::Option<crate::types::ManagedTerminationProtection>,
 }
 impl AutoScalingGroupProvider {
-    /// <p>The Amazon Resource Name (ARN) that identifies the Auto Scaling group.</p>
+    /// <p>The Amazon Resource Name (ARN) that identifies the Auto Scaling group, or the Auto Scaling group name.</p>
     pub fn auto_scaling_group_arn(&self) -> ::std::option::Option<&str> {
         self.auto_scaling_group_arn.as_deref()
     }
@@ -49,17 +49,17 @@ pub struct AutoScalingGroupProviderBuilder {
     pub(crate) managed_termination_protection: ::std::option::Option<crate::types::ManagedTerminationProtection>,
 }
 impl AutoScalingGroupProviderBuilder {
-    /// <p>The Amazon Resource Name (ARN) that identifies the Auto Scaling group.</p>
+    /// <p>The Amazon Resource Name (ARN) that identifies the Auto Scaling group, or the Auto Scaling group name.</p>
     pub fn auto_scaling_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.auto_scaling_group_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) that identifies the Auto Scaling group.</p>
+    /// <p>The Amazon Resource Name (ARN) that identifies the Auto Scaling group, or the Auto Scaling group name.</p>
     pub fn set_auto_scaling_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.auto_scaling_group_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) that identifies the Auto Scaling group.</p>
+    /// <p>The Amazon Resource Name (ARN) that identifies the Auto Scaling group, or the Auto Scaling group name.</p>
     pub fn get_auto_scaling_group_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.auto_scaling_group_arn
     }

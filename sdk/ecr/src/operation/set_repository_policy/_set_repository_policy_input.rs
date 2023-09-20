@@ -10,7 +10,7 @@ pub struct SetRepositoryPolicyInput {
     /// <p>The JSON repository policy text to apply to the repository. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/repository-policy-examples.html">Amazon ECR repository policies</a> in the <i>Amazon Elastic Container Registry User Guide</i>.</p>
     pub policy_text: ::std::option::Option<::std::string::String>,
     /// <p>If the policy you are attempting to set on a repository policy would prevent you from setting another policy in the future, you must force the <code>SetRepositoryPolicy</code> operation. This is intended to prevent accidental repository lock outs.</p>
-    pub force: bool,
+    pub force: ::std::option::Option<bool>,
 }
 impl SetRepositoryPolicyInput {
     /// <p>The Amazon Web Services account ID associated with the registry that contains the repository. If you do not specify a registry, the default registry is assumed.</p>
@@ -26,7 +26,7 @@ impl SetRepositoryPolicyInput {
         self.policy_text.as_deref()
     }
     /// <p>If the policy you are attempting to set on a repository policy would prevent you from setting another policy in the future, you must force the <code>SetRepositoryPolicy</code> operation. This is intended to prevent accidental repository lock outs.</p>
-    pub fn force(&self) -> bool {
+    pub fn force(&self) -> ::std::option::Option<bool> {
         self.force
     }
 }
@@ -112,7 +112,7 @@ impl SetRepositoryPolicyInputBuilder {
             registry_id: self.registry_id,
             repository_name: self.repository_name,
             policy_text: self.policy_text,
-            force: self.force.unwrap_or_default(),
+            force: self.force,
         })
     }
 }

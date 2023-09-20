@@ -98,6 +98,22 @@ pub fn de_list_resource_delegates_http_error(
             }
             tmp
         }),
+        "UnsupportedOperationException" => crate::operation::list_resource_delegates::ListResourceDelegatesError::UnsupportedOperationException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::UnsupportedOperationExceptionBuilder::default();
+                output =
+                    crate::protocol_serde::shape_unsupported_operation_exception::de_unsupported_operation_exception_json_err(_response_body, output)
+                        .map_err(crate::operation::list_resource_delegates::ListResourceDelegatesError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::operation::list_resource_delegates::ListResourceDelegatesError::generic(generic),
     })
 }

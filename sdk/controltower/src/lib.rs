@@ -53,7 +53,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = "0.56.1"
-//! aws-sdk-controltower = "0.12.0"
+//! aws-sdk-controltower = "0.12.1"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

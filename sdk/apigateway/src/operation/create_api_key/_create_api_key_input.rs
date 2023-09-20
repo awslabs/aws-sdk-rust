@@ -9,14 +9,14 @@ pub struct CreateApiKeyInput {
     /// <p>The description of the ApiKey.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether the ApiKey can be used by callers.</p>
-    pub enabled: bool,
+    pub enabled: ::std::option::Option<bool>,
     /// <p>Specifies whether (<code>true</code>) or not (<code>false</code>) the key identifier is distinct from the created API key value. This parameter is deprecated and should not be used.</p>
-    pub generate_distinct_id: bool,
+    pub generate_distinct_id: ::std::option::Option<bool>,
     /// <p>Specifies a value of the API key.</p>
     pub value: ::std::option::Option<::std::string::String>,
     /// <p>DEPRECATED FOR USAGE PLANS - Specifies stages associated with the API key.</p>
     pub stage_keys: ::std::option::Option<::std::vec::Vec<crate::types::StageKey>>,
-    /// <p>An AWS Marketplace customer identifier , when integrating with the AWS SaaS Marketplace.</p>
+    /// <p>An Amazon Web Services Marketplace customer identifier, when integrating with the Amazon Web Services SaaS Marketplace.</p>
     pub customer_id: ::std::option::Option<::std::string::String>,
     /// <p>The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters and must not start with <code>aws:</code>. The tag value can be up to 256 characters.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -31,11 +31,11 @@ impl CreateApiKeyInput {
         self.description.as_deref()
     }
     /// <p>Specifies whether the ApiKey can be used by callers.</p>
-    pub fn enabled(&self) -> bool {
+    pub fn enabled(&self) -> ::std::option::Option<bool> {
         self.enabled
     }
     /// <p>Specifies whether (<code>true</code>) or not (<code>false</code>) the key identifier is distinct from the created API key value. This parameter is deprecated and should not be used.</p>
-    pub fn generate_distinct_id(&self) -> bool {
+    pub fn generate_distinct_id(&self) -> ::std::option::Option<bool> {
         self.generate_distinct_id
     }
     /// <p>Specifies a value of the API key.</p>
@@ -46,7 +46,7 @@ impl CreateApiKeyInput {
     pub fn stage_keys(&self) -> ::std::option::Option<&[crate::types::StageKey]> {
         self.stage_keys.as_deref()
     }
-    /// <p>An AWS Marketplace customer identifier , when integrating with the AWS SaaS Marketplace.</p>
+    /// <p>An Amazon Web Services Marketplace customer identifier, when integrating with the Amazon Web Services SaaS Marketplace.</p>
     pub fn customer_id(&self) -> ::std::option::Option<&str> {
         self.customer_id.as_deref()
     }
@@ -166,17 +166,17 @@ impl CreateApiKeyInputBuilder {
     pub fn get_stage_keys(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StageKey>> {
         &self.stage_keys
     }
-    /// <p>An AWS Marketplace customer identifier , when integrating with the AWS SaaS Marketplace.</p>
+    /// <p>An Amazon Web Services Marketplace customer identifier, when integrating with the Amazon Web Services SaaS Marketplace.</p>
     pub fn customer_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.customer_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>An AWS Marketplace customer identifier , when integrating with the AWS SaaS Marketplace.</p>
+    /// <p>An Amazon Web Services Marketplace customer identifier, when integrating with the Amazon Web Services SaaS Marketplace.</p>
     pub fn set_customer_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.customer_id = input;
         self
     }
-    /// <p>An AWS Marketplace customer identifier , when integrating with the AWS SaaS Marketplace.</p>
+    /// <p>An Amazon Web Services Marketplace customer identifier, when integrating with the Amazon Web Services SaaS Marketplace.</p>
     pub fn get_customer_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.customer_id
     }
@@ -207,8 +207,8 @@ impl CreateApiKeyInputBuilder {
         ::std::result::Result::Ok(crate::operation::create_api_key::CreateApiKeyInput {
             name: self.name,
             description: self.description,
-            enabled: self.enabled.unwrap_or_default(),
-            generate_distinct_id: self.generate_distinct_id.unwrap_or_default(),
+            enabled: self.enabled,
+            generate_distinct_id: self.generate_distinct_id,
             value: self.value,
             stage_keys: self.stage_keys,
             customer_id: self.customer_id,

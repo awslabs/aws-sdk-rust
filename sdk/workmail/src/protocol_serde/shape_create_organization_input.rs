@@ -27,8 +27,8 @@ pub fn ser_create_organization_input(
     if let Some(var_8) = &input.kms_key_arn {
         object.key("KmsKeyArn").string(var_8.as_str());
     }
-    if input.enable_interoperability {
-        object.key("EnableInteroperability").boolean(input.enable_interoperability);
+    if let Some(var_9) = &input.enable_interoperability {
+        object.key("EnableInteroperability").boolean(*var_9);
     }
     Ok(())
 }

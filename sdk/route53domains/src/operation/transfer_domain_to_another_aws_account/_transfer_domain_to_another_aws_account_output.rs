@@ -2,7 +2,7 @@
 
 /// <p>The <code>TransferDomainToAnotherAwsAccount</code> response includes the following elements.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct TransferDomainToAnotherAwsAccountOutput {
     /// <p>Identifier for tracking the progress of the request. To query the operation status, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>.</p>
     pub operation_id: ::std::option::Option<::std::string::String>,
@@ -20,6 +20,15 @@ impl TransferDomainToAnotherAwsAccountOutput {
         self.password.as_deref()
     }
 }
+impl ::std::fmt::Debug for TransferDomainToAnotherAwsAccountOutput {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("TransferDomainToAnotherAwsAccountOutput");
+        formatter.field("operation_id", &self.operation_id);
+        formatter.field("password", &"*** Sensitive Data Redacted ***");
+        formatter.field("_request_id", &self._request_id);
+        formatter.finish()
+    }
+}
 impl ::aws_http::request_id::RequestId for TransferDomainToAnotherAwsAccountOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
@@ -34,7 +43,7 @@ impl TransferDomainToAnotherAwsAccountOutput {
 
 /// A builder for [`TransferDomainToAnotherAwsAccountOutput`](crate::operation::transfer_domain_to_another_aws_account::TransferDomainToAnotherAwsAccountOutput).
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct TransferDomainToAnotherAwsAccountOutputBuilder {
     pub(crate) operation_id: ::std::option::Option<::std::string::String>,
     pub(crate) password: ::std::option::Option<::std::string::String>,
@@ -85,5 +94,14 @@ impl TransferDomainToAnotherAwsAccountOutputBuilder {
             password: self.password,
             _request_id: self._request_id,
         }
+    }
+}
+impl ::std::fmt::Debug for TransferDomainToAnotherAwsAccountOutputBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("TransferDomainToAnotherAwsAccountOutputBuilder");
+        formatter.field("operation_id", &self.operation_id);
+        formatter.field("password", &"*** Sensitive Data Redacted ***");
+        formatter.field("_request_id", &self._request_id);
+        formatter.finish()
     }
 }

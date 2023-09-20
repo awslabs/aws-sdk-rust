@@ -37,7 +37,7 @@ pub struct UpdateWebAclInput {
     /// <p>Public suffixes aren't allowed. For example, you can't use <code>usa.gov</code> or <code>co.uk</code> as token domains.</p>
     pub token_domains: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specifies custom configurations for the associations between the web ACL and protected resources. </p>
-    /// <p>Use this to customize the maximum size of the request body that your protected CloudFront distributions forward to WAF for inspection. The default is 16 KB (16,384 kilobytes). </p> <note>
+    /// <p>Use this to customize the maximum size of the request body that your protected CloudFront distributions forward to WAF for inspection. The default is 16 KB (16,384 bytes). </p> <note>
     /// <p>You are charged additional fees when your protected resources forward body sizes that are larger than the default. For more information, see <a href="http://aws.amazon.com/waf/pricing/">WAF Pricing</a>.</p>
     /// </note>
     pub association_config: ::std::option::Option<crate::types::AssociationConfig>,
@@ -103,7 +103,7 @@ impl UpdateWebAclInput {
         self.token_domains.as_deref()
     }
     /// <p>Specifies custom configurations for the associations between the web ACL and protected resources. </p>
-    /// <p>Use this to customize the maximum size of the request body that your protected CloudFront distributions forward to WAF for inspection. The default is 16 KB (16,384 kilobytes). </p> <note>
+    /// <p>Use this to customize the maximum size of the request body that your protected CloudFront distributions forward to WAF for inspection. The default is 16 KB (16,384 bytes). </p> <note>
     /// <p>You are charged additional fees when your protected resources forward body sizes that are larger than the default. For more information, see <a href="http://aws.amazon.com/waf/pricing/">WAF Pricing</a>.</p>
     /// </note>
     pub fn association_config(&self) -> ::std::option::Option<&crate::types::AssociationConfig> {
@@ -355,7 +355,7 @@ impl UpdateWebAclInputBuilder {
         &self.token_domains
     }
     /// <p>Specifies custom configurations for the associations between the web ACL and protected resources. </p>
-    /// <p>Use this to customize the maximum size of the request body that your protected CloudFront distributions forward to WAF for inspection. The default is 16 KB (16,384 kilobytes). </p> <note>
+    /// <p>Use this to customize the maximum size of the request body that your protected CloudFront distributions forward to WAF for inspection. The default is 16 KB (16,384 bytes). </p> <note>
     /// <p>You are charged additional fees when your protected resources forward body sizes that are larger than the default. For more information, see <a href="http://aws.amazon.com/waf/pricing/">WAF Pricing</a>.</p>
     /// </note>
     pub fn association_config(mut self, input: crate::types::AssociationConfig) -> Self {
@@ -363,7 +363,7 @@ impl UpdateWebAclInputBuilder {
         self
     }
     /// <p>Specifies custom configurations for the associations between the web ACL and protected resources. </p>
-    /// <p>Use this to customize the maximum size of the request body that your protected CloudFront distributions forward to WAF for inspection. The default is 16 KB (16,384 kilobytes). </p> <note>
+    /// <p>Use this to customize the maximum size of the request body that your protected CloudFront distributions forward to WAF for inspection. The default is 16 KB (16,384 bytes). </p> <note>
     /// <p>You are charged additional fees when your protected resources forward body sizes that are larger than the default. For more information, see <a href="http://aws.amazon.com/waf/pricing/">WAF Pricing</a>.</p>
     /// </note>
     pub fn set_association_config(mut self, input: ::std::option::Option<crate::types::AssociationConfig>) -> Self {
@@ -371,7 +371,7 @@ impl UpdateWebAclInputBuilder {
         self
     }
     /// <p>Specifies custom configurations for the associations between the web ACL and protected resources. </p>
-    /// <p>Use this to customize the maximum size of the request body that your protected CloudFront distributions forward to WAF for inspection. The default is 16 KB (16,384 kilobytes). </p> <note>
+    /// <p>Use this to customize the maximum size of the request body that your protected CloudFront distributions forward to WAF for inspection. The default is 16 KB (16,384 bytes). </p> <note>
     /// <p>You are charged additional fees when your protected resources forward body sizes that are larger than the default. For more information, see <a href="http://aws.amazon.com/waf/pricing/">WAF Pricing</a>.</p>
     /// </note>
     pub fn get_association_config(&self) -> &::std::option::Option<crate::types::AssociationConfig> {

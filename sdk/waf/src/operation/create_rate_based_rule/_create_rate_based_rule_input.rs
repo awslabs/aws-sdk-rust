@@ -10,7 +10,7 @@ pub struct CreateRateBasedRuleInput {
     /// <p>The field that AWS WAF uses to determine if requests are likely arriving from a single source and thus subject to rate monitoring. The only valid value for <code>RateKey</code> is <code>IP</code>. <code>IP</code> indicates that requests that arrive from the same IP address are subject to the <code>RateLimit</code> that is specified in the <code>RateBasedRule</code>.</p>
     pub rate_key: ::std::option::Option<crate::types::RateKey>,
     /// <p>The maximum number of requests, which have an identical value in the field that is specified by <code>RateKey</code>, allowed in a five-minute period. If the number of requests exceeds the <code>RateLimit</code> and the other predicates specified in the rule are also met, AWS WAF triggers the action that is specified for this rule.</p>
-    pub rate_limit: i64,
+    pub rate_limit: ::std::option::Option<i64>,
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>CreateRateBasedRule</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     pub change_token: ::std::option::Option<::std::string::String>,
     /// <p></p>
@@ -30,7 +30,7 @@ impl CreateRateBasedRuleInput {
         self.rate_key.as_ref()
     }
     /// <p>The maximum number of requests, which have an identical value in the field that is specified by <code>RateKey</code>, allowed in a five-minute period. If the number of requests exceeds the <code>RateLimit</code> and the other predicates specified in the rule are also met, AWS WAF triggers the action that is specified for this rule.</p>
-    pub fn rate_limit(&self) -> i64 {
+    pub fn rate_limit(&self) -> ::std::option::Option<i64> {
         self.rate_limit
     }
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>CreateRateBasedRule</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
@@ -160,7 +160,7 @@ impl CreateRateBasedRuleInputBuilder {
             name: self.name,
             metric_name: self.metric_name,
             rate_key: self.rate_key,
-            rate_limit: self.rate_limit.unwrap_or_default(),
+            rate_limit: self.rate_limit,
             change_token: self.change_token,
             tags: self.tags,
         })

@@ -34,6 +34,12 @@ pub mod get_media_insights_pipeline_configuration;
 /// Types for the `GetMediaPipeline` operation.
 pub mod get_media_pipeline;
 
+/// Types for the `GetSpeakerSearchTask` operation.
+pub mod get_speaker_search_task;
+
+/// Types for the `GetVoiceToneAnalysisTask` operation.
+pub mod get_voice_tone_analysis_task;
+
 /// Types for the `ListMediaCapturePipelines` operation.
 pub mod list_media_capture_pipelines;
 
@@ -45,6 +51,18 @@ pub mod list_media_pipelines;
 
 /// Types for the `ListTagsForResource` operation.
 pub mod list_tags_for_resource;
+
+/// Types for the `StartSpeakerSearchTask` operation.
+pub mod start_speaker_search_task;
+
+/// Types for the `StartVoiceToneAnalysisTask` operation.
+pub mod start_voice_tone_analysis_task;
+
+/// Types for the `StopSpeakerSearchTask` operation.
+pub mod stop_speaker_search_task;
+
+/// Types for the `StopVoiceToneAnalysisTask` operation.
+pub mod stop_voice_tone_analysis_task;
 
 /// Types for the `TagResource` operation.
 pub mod tag_resource;

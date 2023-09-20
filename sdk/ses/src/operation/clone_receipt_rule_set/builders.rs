@@ -23,7 +23,7 @@ impl CloneReceiptRuleSetInputBuilder {
 /// Fluent builder constructing a request to `CloneReceiptRuleSet`.
 ///
 /// <p>Creates a receipt rule set by cloning an existing one. All receipt rules and configurations are copied to the new receipt rule set and are completely independent of the source rule set.</p>
-/// <p>For information about setting up rule sets, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rule-set.html">Amazon SES Developer Guide</a>.</p>
+/// <p>For information about setting up rule sets, see the <a href="https://docs.aws.amazon.com/ses/latest/dg/receiving-email-concepts.html#receiving-email-concepts-rules">Amazon SES Developer Guide</a>.</p>
 /// <p>You can execute this operation no more than once per second.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CloneReceiptRuleSetFluentBuilder {
@@ -112,31 +112,31 @@ impl CloneReceiptRuleSetFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name of the rule set to create. The name must:</p>
+    /// <p>The name of the rule set to create. The name must meet the following requirements:</p>
     /// <ul>
-    /// <li> <p>This value can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li>
+    /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li>
     /// <li> <p>Start and end with a letter or number.</p> </li>
-    /// <li> <p>Contain less than 64 characters.</p> </li>
+    /// <li> <p>Contain 64 characters or fewer.</p> </li>
     /// </ul>
     pub fn rule_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.rule_set_name(input.into());
         self
     }
-    /// <p>The name of the rule set to create. The name must:</p>
+    /// <p>The name of the rule set to create. The name must meet the following requirements:</p>
     /// <ul>
-    /// <li> <p>This value can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li>
+    /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li>
     /// <li> <p>Start and end with a letter or number.</p> </li>
-    /// <li> <p>Contain less than 64 characters.</p> </li>
+    /// <li> <p>Contain 64 characters or fewer.</p> </li>
     /// </ul>
     pub fn set_rule_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_rule_set_name(input);
         self
     }
-    /// <p>The name of the rule set to create. The name must:</p>
+    /// <p>The name of the rule set to create. The name must meet the following requirements:</p>
     /// <ul>
-    /// <li> <p>This value can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li>
+    /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li>
     /// <li> <p>Start and end with a letter or number.</p> </li>
-    /// <li> <p>Contain less than 64 characters.</p> </li>
+    /// <li> <p>Contain 64 characters or fewer.</p> </li>
     /// </ul>
     pub fn get_rule_set_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_rule_set_name()

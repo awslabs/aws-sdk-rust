@@ -23,6 +23,8 @@ pub struct MediaInsightsPipeline {
     pub s3_recording_sink_runtime_configuration: ::std::option::Option<crate::types::S3RecordingSinkRuntimeConfiguration>,
     /// <p>The time at which the media insights pipeline was created.</p>
     pub created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The statuses that the elements in a media insights pipeline can have during data processing.</p>
+    pub element_statuses: ::std::option::Option<::std::vec::Vec<crate::types::MediaInsightsPipelineElementStatus>>,
 }
 impl MediaInsightsPipeline {
     /// <p>The ID of a media insights pipeline.</p>
@@ -67,6 +69,10 @@ impl MediaInsightsPipeline {
     pub fn created_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
+    /// <p>The statuses that the elements in a media insights pipeline can have during data processing.</p>
+    pub fn element_statuses(&self) -> ::std::option::Option<&[crate::types::MediaInsightsPipelineElementStatus]> {
+        self.element_statuses.as_deref()
+    }
 }
 impl ::std::fmt::Debug for MediaInsightsPipeline {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -86,6 +92,7 @@ impl ::std::fmt::Debug for MediaInsightsPipeline {
         );
         formatter.field("s3_recording_sink_runtime_configuration", &self.s3_recording_sink_runtime_configuration);
         formatter.field("created_timestamp", &self.created_timestamp);
+        formatter.field("element_statuses", &self.element_statuses);
         formatter.finish()
     }
 }
@@ -110,6 +117,7 @@ pub struct MediaInsightsPipelineBuilder {
         ::std::option::Option<crate::types::KinesisVideoStreamRecordingSourceRuntimeConfiguration>,
     pub(crate) s3_recording_sink_runtime_configuration: ::std::option::Option<crate::types::S3RecordingSinkRuntimeConfiguration>,
     pub(crate) created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) element_statuses: ::std::option::Option<::std::vec::Vec<crate::types::MediaInsightsPipelineElementStatus>>,
 }
 impl MediaInsightsPipelineBuilder {
     /// <p>The ID of a media insights pipeline.</p>
@@ -269,6 +277,26 @@ impl MediaInsightsPipelineBuilder {
     pub fn get_created_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.created_timestamp
     }
+    /// Appends an item to `element_statuses`.
+    ///
+    /// To override the contents of this collection use [`set_element_statuses`](Self::set_element_statuses).
+    ///
+    /// <p>The statuses that the elements in a media insights pipeline can have during data processing.</p>
+    pub fn element_statuses(mut self, input: crate::types::MediaInsightsPipelineElementStatus) -> Self {
+        let mut v = self.element_statuses.unwrap_or_default();
+        v.push(input);
+        self.element_statuses = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The statuses that the elements in a media insights pipeline can have during data processing.</p>
+    pub fn set_element_statuses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MediaInsightsPipelineElementStatus>>) -> Self {
+        self.element_statuses = input;
+        self
+    }
+    /// <p>The statuses that the elements in a media insights pipeline can have during data processing.</p>
+    pub fn get_element_statuses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MediaInsightsPipelineElementStatus>> {
+        &self.element_statuses
+    }
     /// Consumes the builder and constructs a [`MediaInsightsPipeline`](crate::types::MediaInsightsPipeline).
     pub fn build(self) -> crate::types::MediaInsightsPipeline {
         crate::types::MediaInsightsPipeline {
@@ -281,6 +309,7 @@ impl MediaInsightsPipelineBuilder {
             kinesis_video_stream_recording_source_runtime_configuration: self.kinesis_video_stream_recording_source_runtime_configuration,
             s3_recording_sink_runtime_configuration: self.s3_recording_sink_runtime_configuration,
             created_timestamp: self.created_timestamp,
+            element_statuses: self.element_statuses,
         }
     }
 }
@@ -302,6 +331,7 @@ impl ::std::fmt::Debug for MediaInsightsPipelineBuilder {
         );
         formatter.field("s3_recording_sink_runtime_configuration", &self.s3_recording_sink_runtime_configuration);
         formatter.field("created_timestamp", &self.created_timestamp);
+        formatter.field("element_statuses", &self.element_statuses);
         formatter.finish()
     }
 }

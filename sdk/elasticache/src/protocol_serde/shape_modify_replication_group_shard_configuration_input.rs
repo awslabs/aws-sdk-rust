@@ -12,49 +12,49 @@ pub fn ser_modify_replication_group_shard_configuration_input_input(
     }
     #[allow(unused_mut)]
     let mut scope_3 = writer.prefix("NodeGroupCount");
-    {
+    if let Some(var_4) = &input.node_group_count {
         scope_3.number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.node_group_count).into()),
+            ::aws_smithy_types::Number::NegInt((*var_4).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_4 = writer.prefix("ApplyImmediately");
-    {
-        scope_4.boolean(input.apply_immediately);
+    let mut scope_5 = writer.prefix("ApplyImmediately");
+    if let Some(var_6) = &input.apply_immediately {
+        scope_5.boolean(*var_6);
     }
     #[allow(unused_mut)]
-    let mut scope_5 = writer.prefix("ReshardingConfiguration");
-    if let Some(var_6) = &input.resharding_configuration {
-        let mut list_8 = scope_5.start_list(false, Some("ReshardingConfiguration"));
-        for item_7 in var_6 {
+    let mut scope_7 = writer.prefix("ReshardingConfiguration");
+    if let Some(var_8) = &input.resharding_configuration {
+        let mut list_10 = scope_7.start_list(false, Some("ReshardingConfiguration"));
+        for item_9 in var_8 {
             #[allow(unused_mut)]
-            let mut entry_9 = list_8.entry();
-            crate::protocol_serde::shape_resharding_configuration::ser_resharding_configuration(entry_9, item_7)?;
+            let mut entry_11 = list_10.entry();
+            crate::protocol_serde::shape_resharding_configuration::ser_resharding_configuration(entry_11, item_9)?;
         }
-        list_8.finish();
+        list_10.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_10 = writer.prefix("NodeGroupsToRemove");
-    if let Some(var_11) = &input.node_groups_to_remove {
-        let mut list_13 = scope_10.start_list(false, Some("NodeGroupToRemove"));
-        for item_12 in var_11 {
+    let mut scope_12 = writer.prefix("NodeGroupsToRemove");
+    if let Some(var_13) = &input.node_groups_to_remove {
+        let mut list_15 = scope_12.start_list(false, Some("NodeGroupToRemove"));
+        for item_14 in var_13 {
             #[allow(unused_mut)]
-            let mut entry_14 = list_13.entry();
-            entry_14.string(item_12);
+            let mut entry_16 = list_15.entry();
+            entry_16.string(item_14);
         }
-        list_13.finish();
+        list_15.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_15 = writer.prefix("NodeGroupsToRetain");
-    if let Some(var_16) = &input.node_groups_to_retain {
-        let mut list_18 = scope_15.start_list(false, Some("NodeGroupToRetain"));
-        for item_17 in var_16 {
+    let mut scope_17 = writer.prefix("NodeGroupsToRetain");
+    if let Some(var_18) = &input.node_groups_to_retain {
+        let mut list_20 = scope_17.start_list(false, Some("NodeGroupToRetain"));
+        for item_19 in var_18 {
             #[allow(unused_mut)]
-            let mut entry_19 = list_18.entry();
-            entry_19.string(item_17);
+            let mut entry_21 = list_20.entry();
+            entry_21.string(item_19);
         }
-        list_18.finish();
+        list_20.finish();
     }
     writer.finish();
     Ok(::aws_smithy_http::body::SdkBody::from(out))

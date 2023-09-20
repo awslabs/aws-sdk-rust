@@ -6,7 +6,7 @@ pub struct ListAnomalyGroupSummariesInput {
     /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
     pub anomaly_detector_arn: ::std::option::Option<::std::string::String>,
     /// <p>The minimum severity score for inclusion in the output.</p>
-    pub sensitivity_threshold: i32,
+    pub sensitivity_threshold: ::std::option::Option<i32>,
     /// <p>The maximum number of results to return.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
@@ -18,7 +18,7 @@ impl ListAnomalyGroupSummariesInput {
         self.anomaly_detector_arn.as_deref()
     }
     /// <p>The minimum severity score for inclusion in the output.</p>
-    pub fn sensitivity_threshold(&self) -> i32 {
+    pub fn sensitivity_threshold(&self) -> ::std::option::Option<i32> {
         self.sensitivity_threshold
     }
     /// <p>The maximum number of results to return.</p>
@@ -112,7 +112,7 @@ impl ListAnomalyGroupSummariesInputBuilder {
     > {
         ::std::result::Result::Ok(crate::operation::list_anomaly_group_summaries::ListAnomalyGroupSummariesInput {
             anomaly_detector_arn: self.anomaly_detector_arn,
-            sensitivity_threshold: self.sensitivity_threshold.unwrap_or_default(),
+            sensitivity_threshold: self.sensitivity_threshold,
             max_results: self.max_results,
             next_token: self.next_token,
         })

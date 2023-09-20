@@ -22,9 +22,7 @@ impl CreateTrafficPolicyInstanceInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateTrafficPolicyInstance`.
 ///
-/// <p>Creates resource record sets in a specified hosted zone based on the settings in a specified traffic policy version. In addition, <code>CreateTrafficPolicyInstance</code> associates the resource record sets with a specified domain name (such as example.com) or subdomain name (such as www.example.com). Amazon Route 53 responds to DNS queries for the domain or subdomain name by using the resource record sets that <code>CreateTrafficPolicyInstance</code> created.</p> <note>
-/// <p>After you submit an <code>CreateTrafficPolicyInstance</code> request, there's a brief delay while Amazon Route 53 creates the resource record sets that are specified in the traffic policy definition. Use <code>GetTrafficPolicyInstance</code> with the <code>id</code> of new traffic policy instance to confirm that the <code>CreateTrafficPolicyInstance</code> request completed successfully. For more information, see the <code>State</code> response element.</p>
-/// </note>
+/// <p>Creates resource record sets in a specified hosted zone based on the settings in a specified traffic policy version. In addition, <code>CreateTrafficPolicyInstance</code> associates the resource record sets with a specified domain name (such as example.com) or subdomain name (such as www.example.com). Amazon Route 53 responds to DNS queries for the domain or subdomain name by using the resource record sets that <code>CreateTrafficPolicyInstance</code> created.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateTrafficPolicyInstanceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

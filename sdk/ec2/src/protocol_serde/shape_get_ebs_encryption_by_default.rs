@@ -72,6 +72,20 @@ pub fn de_get_ebs_encryption_by_default(
                 builder = builder.set_ebs_encryption_by_default(var_1);
             }
             ,
+            s if s.matches("sseType") /* SseType com.amazonaws.ec2.synthetic#GetEbsEncryptionByDefaultOutput$SseType */ =>  {
+                let var_2 =
+                    Some(
+                        Result::<crate::types::SseType, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::SseType::from(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_sse_type(var_2);
+            }
+            ,
             _ => {}
         }
     }

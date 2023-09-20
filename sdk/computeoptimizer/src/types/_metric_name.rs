@@ -21,6 +21,8 @@
 ///     MetricName::EbsReadOpsPerSecond => { /* ... */ },
 ///     MetricName::EbsWriteBytesPerSecond => { /* ... */ },
 ///     MetricName::EbsWriteOpsPerSecond => { /* ... */ },
+///     MetricName::GpuMemoryPercentage => { /* ... */ },
+///     MetricName::GpuPercentage => { /* ... */ },
 ///     MetricName::Memory => { /* ... */ },
 ///     MetricName::NetworkInBytesPerSecond => { /* ... */ },
 ///     MetricName::NetworkOutBytesPerSecond => { /* ... */ },
@@ -72,6 +74,10 @@ pub enum MetricName {
     #[allow(missing_docs)] // documentation missing in model
     EbsWriteOpsPerSecond,
     #[allow(missing_docs)] // documentation missing in model
+    GpuMemoryPercentage,
+    #[allow(missing_docs)] // documentation missing in model
+    GpuPercentage,
+    #[allow(missing_docs)] // documentation missing in model
     Memory,
     #[allow(missing_docs)] // documentation missing in model
     NetworkInBytesPerSecond,
@@ -96,6 +102,8 @@ impl ::std::convert::From<&str> for MetricName {
             "EBS_READ_OPS_PER_SECOND" => MetricName::EbsReadOpsPerSecond,
             "EBS_WRITE_BYTES_PER_SECOND" => MetricName::EbsWriteBytesPerSecond,
             "EBS_WRITE_OPS_PER_SECOND" => MetricName::EbsWriteOpsPerSecond,
+            "GPU_MEMORY_PERCENTAGE" => MetricName::GpuMemoryPercentage,
+            "GPU_PERCENTAGE" => MetricName::GpuPercentage,
             "Memory" => MetricName::Memory,
             "NETWORK_IN_BYTES_PER_SECOND" => MetricName::NetworkInBytesPerSecond,
             "NETWORK_OUT_BYTES_PER_SECOND" => MetricName::NetworkOutBytesPerSecond,
@@ -125,6 +133,8 @@ impl MetricName {
             MetricName::EbsReadOpsPerSecond => "EBS_READ_OPS_PER_SECOND",
             MetricName::EbsWriteBytesPerSecond => "EBS_WRITE_BYTES_PER_SECOND",
             MetricName::EbsWriteOpsPerSecond => "EBS_WRITE_OPS_PER_SECOND",
+            MetricName::GpuMemoryPercentage => "GPU_MEMORY_PERCENTAGE",
+            MetricName::GpuPercentage => "GPU_PERCENTAGE",
             MetricName::Memory => "Memory",
             MetricName::NetworkInBytesPerSecond => "NETWORK_IN_BYTES_PER_SECOND",
             MetricName::NetworkOutBytesPerSecond => "NETWORK_OUT_BYTES_PER_SECOND",
@@ -145,6 +155,8 @@ impl MetricName {
             "EBS_READ_OPS_PER_SECOND",
             "EBS_WRITE_BYTES_PER_SECOND",
             "EBS_WRITE_OPS_PER_SECOND",
+            "GPU_MEMORY_PERCENTAGE",
+            "GPU_PERCENTAGE",
             "Memory",
             "NETWORK_IN_BYTES_PER_SECOND",
             "NETWORK_OUT_BYTES_PER_SECOND",

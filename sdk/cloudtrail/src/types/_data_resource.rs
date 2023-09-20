@@ -38,12 +38,16 @@ pub struct DataResource {
     /// <li> <p> <code>AWS::Glue::Table</code> </p> </li>
     /// <li> <p> <code>AWS::GuardDuty::Detector</code> </p> </li>
     /// <li> <p> <code>AWS::KendraRanking::ExecutionPlan</code> </p> </li>
+    /// <li> <p> <code>AWS::ManagedBlockchain::Network</code> </p> </li>
     /// <li> <p> <code>AWS::ManagedBlockchain::Node</code> </p> </li>
+    /// <li> <p> <code>AWS::MedicalImaging::Datastore</code> </p> </li>
     /// <li> <p> <code>AWS::SageMaker::ExperimentTrialComponent</code> </p> </li>
     /// <li> <p> <code>AWS::SageMaker::FeatureGroup</code> </p> </li>
     /// <li> <p> <code>AWS::S3::AccessPoint</code> </p> </li>
     /// <li> <p> <code>AWS::S3ObjectLambda::AccessPoint</code> </p> </li>
     /// <li> <p> <code>AWS::S3Outposts::Object</code> </p> </li>
+    /// <li> <p> <code>AWS::SSMMessages::ControlChannel</code> </p> </li>
+    /// <li> <p> <code>AWS::VerifiedPermissions::PolicyStore</code> </p> </li>
     /// </ul>
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>An array of Amazon Resource Name (ARN) strings or partial ARN strings for the specified objects.</p>
@@ -82,12 +86,16 @@ impl DataResource {
     /// <li> <p> <code>AWS::Glue::Table</code> </p> </li>
     /// <li> <p> <code>AWS::GuardDuty::Detector</code> </p> </li>
     /// <li> <p> <code>AWS::KendraRanking::ExecutionPlan</code> </p> </li>
+    /// <li> <p> <code>AWS::ManagedBlockchain::Network</code> </p> </li>
     /// <li> <p> <code>AWS::ManagedBlockchain::Node</code> </p> </li>
+    /// <li> <p> <code>AWS::MedicalImaging::Datastore</code> </p> </li>
     /// <li> <p> <code>AWS::SageMaker::ExperimentTrialComponent</code> </p> </li>
     /// <li> <p> <code>AWS::SageMaker::FeatureGroup</code> </p> </li>
     /// <li> <p> <code>AWS::S3::AccessPoint</code> </p> </li>
     /// <li> <p> <code>AWS::S3ObjectLambda::AccessPoint</code> </p> </li>
     /// <li> <p> <code>AWS::S3Outposts::Object</code> </p> </li>
+    /// <li> <p> <code>AWS::SSMMessages::ControlChannel</code> </p> </li>
+    /// <li> <p> <code>AWS::VerifiedPermissions::PolicyStore</code> </p> </li>
     /// </ul>
     pub fn r#type(&self) -> ::std::option::Option<&str> {
         self.r#type.as_deref()
@@ -144,12 +152,16 @@ impl DataResourceBuilder {
     /// <li> <p> <code>AWS::Glue::Table</code> </p> </li>
     /// <li> <p> <code>AWS::GuardDuty::Detector</code> </p> </li>
     /// <li> <p> <code>AWS::KendraRanking::ExecutionPlan</code> </p> </li>
+    /// <li> <p> <code>AWS::ManagedBlockchain::Network</code> </p> </li>
     /// <li> <p> <code>AWS::ManagedBlockchain::Node</code> </p> </li>
+    /// <li> <p> <code>AWS::MedicalImaging::Datastore</code> </p> </li>
     /// <li> <p> <code>AWS::SageMaker::ExperimentTrialComponent</code> </p> </li>
     /// <li> <p> <code>AWS::SageMaker::FeatureGroup</code> </p> </li>
     /// <li> <p> <code>AWS::S3::AccessPoint</code> </p> </li>
     /// <li> <p> <code>AWS::S3ObjectLambda::AccessPoint</code> </p> </li>
     /// <li> <p> <code>AWS::S3Outposts::Object</code> </p> </li>
+    /// <li> <p> <code>AWS::SSMMessages::ControlChannel</code> </p> </li>
+    /// <li> <p> <code>AWS::VerifiedPermissions::PolicyStore</code> </p> </li>
     /// </ul>
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.r#type = ::std::option::Option::Some(input.into());
@@ -173,12 +185,16 @@ impl DataResourceBuilder {
     /// <li> <p> <code>AWS::Glue::Table</code> </p> </li>
     /// <li> <p> <code>AWS::GuardDuty::Detector</code> </p> </li>
     /// <li> <p> <code>AWS::KendraRanking::ExecutionPlan</code> </p> </li>
+    /// <li> <p> <code>AWS::ManagedBlockchain::Network</code> </p> </li>
     /// <li> <p> <code>AWS::ManagedBlockchain::Node</code> </p> </li>
+    /// <li> <p> <code>AWS::MedicalImaging::Datastore</code> </p> </li>
     /// <li> <p> <code>AWS::SageMaker::ExperimentTrialComponent</code> </p> </li>
     /// <li> <p> <code>AWS::SageMaker::FeatureGroup</code> </p> </li>
     /// <li> <p> <code>AWS::S3::AccessPoint</code> </p> </li>
     /// <li> <p> <code>AWS::S3ObjectLambda::AccessPoint</code> </p> </li>
     /// <li> <p> <code>AWS::S3Outposts::Object</code> </p> </li>
+    /// <li> <p> <code>AWS::SSMMessages::ControlChannel</code> </p> </li>
+    /// <li> <p> <code>AWS::VerifiedPermissions::PolicyStore</code> </p> </li>
     /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.r#type = input;
@@ -202,12 +218,16 @@ impl DataResourceBuilder {
     /// <li> <p> <code>AWS::Glue::Table</code> </p> </li>
     /// <li> <p> <code>AWS::GuardDuty::Detector</code> </p> </li>
     /// <li> <p> <code>AWS::KendraRanking::ExecutionPlan</code> </p> </li>
+    /// <li> <p> <code>AWS::ManagedBlockchain::Network</code> </p> </li>
     /// <li> <p> <code>AWS::ManagedBlockchain::Node</code> </p> </li>
+    /// <li> <p> <code>AWS::MedicalImaging::Datastore</code> </p> </li>
     /// <li> <p> <code>AWS::SageMaker::ExperimentTrialComponent</code> </p> </li>
     /// <li> <p> <code>AWS::SageMaker::FeatureGroup</code> </p> </li>
     /// <li> <p> <code>AWS::S3::AccessPoint</code> </p> </li>
     /// <li> <p> <code>AWS::S3ObjectLambda::AccessPoint</code> </p> </li>
     /// <li> <p> <code>AWS::S3Outposts::Object</code> </p> </li>
+    /// <li> <p> <code>AWS::SSMMessages::ControlChannel</code> </p> </li>
+    /// <li> <p> <code>AWS::VerifiedPermissions::PolicyStore</code> </p> </li>
     /// </ul>
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.r#type

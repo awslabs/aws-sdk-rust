@@ -7,6 +7,7 @@ impl super::Client {
     /// - On success, responds with [`ListTagsForResourceOutput`](crate::operation::list_tags_for_resource::ListTagsForResourceOutput) with field(s):
     ///   - [`tag_list(Option<Vec<Tag>>)`](crate::operation::list_tags_for_resource::ListTagsForResourceOutput::tag_list): <p>One or more tags.</p>
     /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::operation::list_tags_for_resource::ListTagsForResourceError)
+    #[deprecated(note = "This API is deprecated.")]
     pub fn list_tags_for_resource(&self) -> crate::operation::list_tags_for_resource::builders::ListTagsForResourceFluentBuilder {
         crate::operation::list_tags_for_resource::builders::ListTagsForResourceFluentBuilder::new(self.handle.clone())
     }

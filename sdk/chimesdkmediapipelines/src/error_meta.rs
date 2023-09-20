@@ -375,6 +375,7 @@ impl From<crate::operation::delete_media_pipeline::DeleteMediaPipelineError> for
     fn from(err: crate::operation::delete_media_pipeline::DeleteMediaPipelineError) -> Self {
         match err {
             crate::operation::delete_media_pipeline::DeleteMediaPipelineError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::delete_media_pipeline::DeleteMediaPipelineError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::delete_media_pipeline::DeleteMediaPipelineError::ForbiddenException(inner) => Error::ForbiddenException(inner),
             crate::operation::delete_media_pipeline::DeleteMediaPipelineError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::delete_media_pipeline::DeleteMediaPipelineError::ServiceFailureException(inner) => {
@@ -521,6 +522,88 @@ impl From<crate::operation::get_media_pipeline::GetMediaPipelineError> for Error
                 Error::UnauthorizedClientException(inner)
             }
             crate::operation::get_media_pipeline::GetMediaPipelineError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_speaker_search_task::GetSpeakerSearchTaskError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::get_speaker_search_task::GetSpeakerSearchTaskError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_speaker_search_task::GetSpeakerSearchTaskError> for Error {
+    fn from(err: crate::operation::get_speaker_search_task::GetSpeakerSearchTaskError) -> Self {
+        match err {
+            crate::operation::get_speaker_search_task::GetSpeakerSearchTaskError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::get_speaker_search_task::GetSpeakerSearchTaskError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::get_speaker_search_task::GetSpeakerSearchTaskError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_speaker_search_task::GetSpeakerSearchTaskError::ServiceFailureException(inner) => {
+                Error::ServiceFailureException(inner)
+            }
+            crate::operation::get_speaker_search_task::GetSpeakerSearchTaskError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::get_speaker_search_task::GetSpeakerSearchTaskError::ThrottledClientException(inner) => {
+                Error::ThrottledClientException(inner)
+            }
+            crate::operation::get_speaker_search_task::GetSpeakerSearchTaskError::UnauthorizedClientException(inner) => {
+                Error::UnauthorizedClientException(inner)
+            }
+            crate::operation::get_speaker_search_task::GetSpeakerSearchTaskError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_voice_tone_analysis_task::GetVoiceToneAnalysisTaskError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::get_voice_tone_analysis_task::GetVoiceToneAnalysisTaskError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_voice_tone_analysis_task::GetVoiceToneAnalysisTaskError> for Error {
+    fn from(err: crate::operation::get_voice_tone_analysis_task::GetVoiceToneAnalysisTaskError) -> Self {
+        match err {
+            crate::operation::get_voice_tone_analysis_task::GetVoiceToneAnalysisTaskError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::get_voice_tone_analysis_task::GetVoiceToneAnalysisTaskError::ForbiddenException(inner) => {
+                Error::ForbiddenException(inner)
+            }
+            crate::operation::get_voice_tone_analysis_task::GetVoiceToneAnalysisTaskError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::get_voice_tone_analysis_task::GetVoiceToneAnalysisTaskError::ServiceFailureException(inner) => {
+                Error::ServiceFailureException(inner)
+            }
+            crate::operation::get_voice_tone_analysis_task::GetVoiceToneAnalysisTaskError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::get_voice_tone_analysis_task::GetVoiceToneAnalysisTaskError::ThrottledClientException(inner) => {
+                Error::ThrottledClientException(inner)
+            }
+            crate::operation::get_voice_tone_analysis_task::GetVoiceToneAnalysisTaskError::UnauthorizedClientException(inner) => {
+                Error::UnauthorizedClientException(inner)
+            }
+            crate::operation::get_voice_tone_analysis_task::GetVoiceToneAnalysisTaskError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -682,6 +765,178 @@ impl From<crate::operation::list_tags_for_resource::ListTagsForResourceError> fo
                 Error::UnauthorizedClientException(inner)
             }
             crate::operation::list_tags_for_resource::ListTagsForResourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::start_speaker_search_task::StartSpeakerSearchTaskError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::start_speaker_search_task::StartSpeakerSearchTaskError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::start_speaker_search_task::StartSpeakerSearchTaskError> for Error {
+    fn from(err: crate::operation::start_speaker_search_task::StartSpeakerSearchTaskError) -> Self {
+        match err {
+            crate::operation::start_speaker_search_task::StartSpeakerSearchTaskError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::start_speaker_search_task::StartSpeakerSearchTaskError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::start_speaker_search_task::StartSpeakerSearchTaskError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::start_speaker_search_task::StartSpeakerSearchTaskError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::start_speaker_search_task::StartSpeakerSearchTaskError::ServiceFailureException(inner) => {
+                Error::ServiceFailureException(inner)
+            }
+            crate::operation::start_speaker_search_task::StartSpeakerSearchTaskError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::start_speaker_search_task::StartSpeakerSearchTaskError::ThrottledClientException(inner) => {
+                Error::ThrottledClientException(inner)
+            }
+            crate::operation::start_speaker_search_task::StartSpeakerSearchTaskError::UnauthorizedClientException(inner) => {
+                Error::UnauthorizedClientException(inner)
+            }
+            crate::operation::start_speaker_search_task::StartSpeakerSearchTaskError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::start_voice_tone_analysis_task::StartVoiceToneAnalysisTaskError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::start_voice_tone_analysis_task::StartVoiceToneAnalysisTaskError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::start_voice_tone_analysis_task::StartVoiceToneAnalysisTaskError> for Error {
+    fn from(err: crate::operation::start_voice_tone_analysis_task::StartVoiceToneAnalysisTaskError) -> Self {
+        match err {
+            crate::operation::start_voice_tone_analysis_task::StartVoiceToneAnalysisTaskError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::start_voice_tone_analysis_task::StartVoiceToneAnalysisTaskError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::start_voice_tone_analysis_task::StartVoiceToneAnalysisTaskError::ForbiddenException(inner) => {
+                Error::ForbiddenException(inner)
+            }
+            crate::operation::start_voice_tone_analysis_task::StartVoiceToneAnalysisTaskError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::start_voice_tone_analysis_task::StartVoiceToneAnalysisTaskError::ServiceFailureException(inner) => {
+                Error::ServiceFailureException(inner)
+            }
+            crate::operation::start_voice_tone_analysis_task::StartVoiceToneAnalysisTaskError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::start_voice_tone_analysis_task::StartVoiceToneAnalysisTaskError::ThrottledClientException(inner) => {
+                Error::ThrottledClientException(inner)
+            }
+            crate::operation::start_voice_tone_analysis_task::StartVoiceToneAnalysisTaskError::UnauthorizedClientException(inner) => {
+                Error::UnauthorizedClientException(inner)
+            }
+            crate::operation::start_voice_tone_analysis_task::StartVoiceToneAnalysisTaskError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::stop_speaker_search_task::StopSpeakerSearchTaskError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::stop_speaker_search_task::StopSpeakerSearchTaskError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::stop_speaker_search_task::StopSpeakerSearchTaskError> for Error {
+    fn from(err: crate::operation::stop_speaker_search_task::StopSpeakerSearchTaskError) -> Self {
+        match err {
+            crate::operation::stop_speaker_search_task::StopSpeakerSearchTaskError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::stop_speaker_search_task::StopSpeakerSearchTaskError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::stop_speaker_search_task::StopSpeakerSearchTaskError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::stop_speaker_search_task::StopSpeakerSearchTaskError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::stop_speaker_search_task::StopSpeakerSearchTaskError::ServiceFailureException(inner) => {
+                Error::ServiceFailureException(inner)
+            }
+            crate::operation::stop_speaker_search_task::StopSpeakerSearchTaskError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::stop_speaker_search_task::StopSpeakerSearchTaskError::ThrottledClientException(inner) => {
+                Error::ThrottledClientException(inner)
+            }
+            crate::operation::stop_speaker_search_task::StopSpeakerSearchTaskError::UnauthorizedClientException(inner) => {
+                Error::UnauthorizedClientException(inner)
+            }
+            crate::operation::stop_speaker_search_task::StopSpeakerSearchTaskError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::stop_voice_tone_analysis_task::StopVoiceToneAnalysisTaskError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::stop_voice_tone_analysis_task::StopVoiceToneAnalysisTaskError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::stop_voice_tone_analysis_task::StopVoiceToneAnalysisTaskError> for Error {
+    fn from(err: crate::operation::stop_voice_tone_analysis_task::StopVoiceToneAnalysisTaskError) -> Self {
+        match err {
+            crate::operation::stop_voice_tone_analysis_task::StopVoiceToneAnalysisTaskError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::stop_voice_tone_analysis_task::StopVoiceToneAnalysisTaskError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::stop_voice_tone_analysis_task::StopVoiceToneAnalysisTaskError::ForbiddenException(inner) => {
+                Error::ForbiddenException(inner)
+            }
+            crate::operation::stop_voice_tone_analysis_task::StopVoiceToneAnalysisTaskError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::stop_voice_tone_analysis_task::StopVoiceToneAnalysisTaskError::ServiceFailureException(inner) => {
+                Error::ServiceFailureException(inner)
+            }
+            crate::operation::stop_voice_tone_analysis_task::StopVoiceToneAnalysisTaskError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::stop_voice_tone_analysis_task::StopVoiceToneAnalysisTaskError::ThrottledClientException(inner) => {
+                Error::ThrottledClientException(inner)
+            }
+            crate::operation::stop_voice_tone_analysis_task::StopVoiceToneAnalysisTaskError::UnauthorizedClientException(inner) => {
+                Error::UnauthorizedClientException(inner)
+            }
+            crate::operation::stop_voice_tone_analysis_task::StopVoiceToneAnalysisTaskError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

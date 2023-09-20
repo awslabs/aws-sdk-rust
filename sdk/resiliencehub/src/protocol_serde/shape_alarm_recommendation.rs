@@ -68,6 +68,10 @@ where
                                     .transpose()?,
                             );
                         }
+                        "appComponentNames" => {
+                            builder = builder
+                                .set_app_component_names(crate::protocol_serde::shape_app_component_name_list::de_app_component_name_list(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

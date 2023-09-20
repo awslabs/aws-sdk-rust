@@ -40,5 +40,8 @@ pub fn ser_start_annotation_import_job_input(
     if let Some(var_13) = &input.run_left_normalization {
         object.key("runLeftNormalization").boolean(*var_13);
     }
+    if let Some(var_14) = &input.version_name {
+        object.key("versionName").string(var_14.as_str());
+    }
     Ok(())
 }

@@ -2,7 +2,7 @@
 
 /// <p> The control mapping fields that represent the source for evidence collection, along with related parameters and metadata. This doesn't contain <code>mappingID</code>. </p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateControlMappingSource {
     /// <p> The name of the control mapping data source. </p>
     pub source_name: ::std::option::Option<::std::string::String>,
@@ -67,6 +67,19 @@ impl CreateControlMappingSource {
         self.troubleshooting_text.as_deref()
     }
 }
+impl ::std::fmt::Debug for CreateControlMappingSource {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateControlMappingSource");
+        formatter.field("source_name", &self.source_name);
+        formatter.field("source_description", &self.source_description);
+        formatter.field("source_set_up_option", &self.source_set_up_option);
+        formatter.field("source_type", &self.source_type);
+        formatter.field("source_keyword", &self.source_keyword);
+        formatter.field("source_frequency", &self.source_frequency);
+        formatter.field("troubleshooting_text", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl CreateControlMappingSource {
     /// Creates a new builder-style object to manufacture [`CreateControlMappingSource`](crate::types::CreateControlMappingSource).
     pub fn builder() -> crate::types::builders::CreateControlMappingSourceBuilder {
@@ -76,7 +89,7 @@ impl CreateControlMappingSource {
 
 /// A builder for [`CreateControlMappingSource`](crate::types::CreateControlMappingSource).
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct CreateControlMappingSourceBuilder {
     pub(crate) source_name: ::std::option::Option<::std::string::String>,
     pub(crate) source_description: ::std::option::Option<::std::string::String>,
@@ -223,5 +236,18 @@ impl CreateControlMappingSourceBuilder {
             source_frequency: self.source_frequency,
             troubleshooting_text: self.troubleshooting_text,
         }
+    }
+}
+impl ::std::fmt::Debug for CreateControlMappingSourceBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateControlMappingSourceBuilder");
+        formatter.field("source_name", &self.source_name);
+        formatter.field("source_description", &self.source_description);
+        formatter.field("source_set_up_option", &self.source_set_up_option);
+        formatter.field("source_type", &self.source_type);
+        formatter.field("source_keyword", &self.source_keyword);
+        formatter.field("source_frequency", &self.source_frequency);
+        formatter.field("troubleshooting_text", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

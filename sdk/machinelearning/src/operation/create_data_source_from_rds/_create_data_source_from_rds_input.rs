@@ -29,7 +29,7 @@ pub struct CreateDataSourceFromRdsInput {
     /// <p></p>
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The compute statistics for a <code>DataSource</code>. The statistics are generated from the observation data referenced by a <code>DataSource</code>. Amazon ML uses the statistics internally during <code>MLModel</code> training. This parameter must be set to <code>true</code> if the <code></code>DataSource<code></code> needs to be used for <code>MLModel</code> training. </p>
-    pub compute_statistics: bool,
+    pub compute_statistics: ::std::option::Option<bool>,
 }
 impl CreateDataSourceFromRdsInput {
     /// <p>A user-supplied ID that uniquely identifies the <code>DataSource</code>. Typically, an Amazon Resource Number (ARN) becomes the ID for a <code>DataSource</code>.</p>
@@ -66,7 +66,7 @@ impl CreateDataSourceFromRdsInput {
         self.role_arn.as_deref()
     }
     /// <p>The compute statistics for a <code>DataSource</code>. The statistics are generated from the observation data referenced by a <code>DataSource</code>. Amazon ML uses the statistics internally during <code>MLModel</code> training. This parameter must be set to <code>true</code> if the <code></code>DataSource<code></code> needs to be used for <code>MLModel</code> training. </p>
-    pub fn compute_statistics(&self) -> bool {
+    pub fn compute_statistics(&self) -> ::std::option::Option<bool> {
         self.compute_statistics
     }
 }
@@ -221,7 +221,7 @@ impl CreateDataSourceFromRdsInputBuilder {
             data_source_name: self.data_source_name,
             rds_data: self.rds_data,
             role_arn: self.role_arn,
-            compute_statistics: self.compute_statistics.unwrap_or_default(),
+            compute_statistics: self.compute_statistics,
         })
     }
 }

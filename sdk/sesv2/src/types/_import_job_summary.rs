@@ -4,11 +4,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImportJobSummary {
-    /// <p>A string that represents the import job ID.</p>
+    /// <p>A string that represents a job ID.</p>
     pub job_id: ::std::option::Option<::std::string::String>,
     /// <p>An object that contains details about the resource destination the import job is going to target.</p>
     pub import_destination: ::std::option::Option<crate::types::ImportDestination>,
-    /// <p>The status of the import job.</p>
+    /// <p>The status of a job.</p>
+    /// <ul>
+    /// <li> <p> <code>CREATED</code> – Job has just been created.</p> </li>
+    /// <li> <p> <code>PROCESSING</code> – Job is processing.</p> </li>
+    /// <li> <p> <code>ERROR</code> – An error occurred during processing.</p> </li>
+    /// <li> <p> <code>COMPLETED</code> – Job has completed processing successfully.</p> </li>
+    /// </ul>
     pub job_status: ::std::option::Option<crate::types::JobStatus>,
     /// <p>The date and time when the import job was created.</p>
     pub created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -18,7 +24,7 @@ pub struct ImportJobSummary {
     pub failed_records_count: ::std::option::Option<i32>,
 }
 impl ImportJobSummary {
-    /// <p>A string that represents the import job ID.</p>
+    /// <p>A string that represents a job ID.</p>
     pub fn job_id(&self) -> ::std::option::Option<&str> {
         self.job_id.as_deref()
     }
@@ -26,7 +32,13 @@ impl ImportJobSummary {
     pub fn import_destination(&self) -> ::std::option::Option<&crate::types::ImportDestination> {
         self.import_destination.as_ref()
     }
-    /// <p>The status of the import job.</p>
+    /// <p>The status of a job.</p>
+    /// <ul>
+    /// <li> <p> <code>CREATED</code> – Job has just been created.</p> </li>
+    /// <li> <p> <code>PROCESSING</code> – Job is processing.</p> </li>
+    /// <li> <p> <code>ERROR</code> – An error occurred during processing.</p> </li>
+    /// <li> <p> <code>COMPLETED</code> – Job has completed processing successfully.</p> </li>
+    /// </ul>
     pub fn job_status(&self) -> ::std::option::Option<&crate::types::JobStatus> {
         self.job_status.as_ref()
     }
@@ -62,17 +74,17 @@ pub struct ImportJobSummaryBuilder {
     pub(crate) failed_records_count: ::std::option::Option<i32>,
 }
 impl ImportJobSummaryBuilder {
-    /// <p>A string that represents the import job ID.</p>
+    /// <p>A string that represents a job ID.</p>
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A string that represents the import job ID.</p>
+    /// <p>A string that represents a job ID.</p>
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.job_id = input;
         self
     }
-    /// <p>A string that represents the import job ID.</p>
+    /// <p>A string that represents a job ID.</p>
     pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.job_id
     }
@@ -90,17 +102,35 @@ impl ImportJobSummaryBuilder {
     pub fn get_import_destination(&self) -> &::std::option::Option<crate::types::ImportDestination> {
         &self.import_destination
     }
-    /// <p>The status of the import job.</p>
+    /// <p>The status of a job.</p>
+    /// <ul>
+    /// <li> <p> <code>CREATED</code> – Job has just been created.</p> </li>
+    /// <li> <p> <code>PROCESSING</code> – Job is processing.</p> </li>
+    /// <li> <p> <code>ERROR</code> – An error occurred during processing.</p> </li>
+    /// <li> <p> <code>COMPLETED</code> – Job has completed processing successfully.</p> </li>
+    /// </ul>
     pub fn job_status(mut self, input: crate::types::JobStatus) -> Self {
         self.job_status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The status of the import job.</p>
+    /// <p>The status of a job.</p>
+    /// <ul>
+    /// <li> <p> <code>CREATED</code> – Job has just been created.</p> </li>
+    /// <li> <p> <code>PROCESSING</code> – Job is processing.</p> </li>
+    /// <li> <p> <code>ERROR</code> – An error occurred during processing.</p> </li>
+    /// <li> <p> <code>COMPLETED</code> – Job has completed processing successfully.</p> </li>
+    /// </ul>
     pub fn set_job_status(mut self, input: ::std::option::Option<crate::types::JobStatus>) -> Self {
         self.job_status = input;
         self
     }
-    /// <p>The status of the import job.</p>
+    /// <p>The status of a job.</p>
+    /// <ul>
+    /// <li> <p> <code>CREATED</code> – Job has just been created.</p> </li>
+    /// <li> <p> <code>PROCESSING</code> – Job is processing.</p> </li>
+    /// <li> <p> <code>ERROR</code> – An error occurred during processing.</p> </li>
+    /// <li> <p> <code>COMPLETED</code> – Job has completed processing successfully.</p> </li>
+    /// </ul>
     pub fn get_job_status(&self) -> &::std::option::Option<crate::types::JobStatus> {
         &self.job_status
     }

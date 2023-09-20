@@ -36,9 +36,9 @@ pub struct DescribeDbClusterSnapshotsInput {
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>Set to <code>true</code> to include shared manual cluster snapshots from other Amazon Web Services accounts that this Amazon Web Services account has been given permission to copy or restore, and otherwise <code>false</code>. The default is <code>false</code>.</p>
-    pub include_shared: bool,
+    pub include_shared: ::std::option::Option<bool>,
     /// <p>Set to <code>true</code> to include manual cluster snapshots that are public and can be copied or restored by any Amazon Web Services account, and otherwise <code>false</code>. The default is <code>false</code>.</p>
-    pub include_public: bool,
+    pub include_public: ::std::option::Option<bool>,
 }
 impl DescribeDbClusterSnapshotsInput {
     /// <p>The ID of the cluster to retrieve the list of cluster snapshots for. This parameter can't be used with the <code>DBClusterSnapshotIdentifier</code> parameter. This parameter is not case sensitive. </p>
@@ -85,11 +85,11 @@ impl DescribeDbClusterSnapshotsInput {
         self.marker.as_deref()
     }
     /// <p>Set to <code>true</code> to include shared manual cluster snapshots from other Amazon Web Services accounts that this Amazon Web Services account has been given permission to copy or restore, and otherwise <code>false</code>. The default is <code>false</code>.</p>
-    pub fn include_shared(&self) -> bool {
+    pub fn include_shared(&self) -> ::std::option::Option<bool> {
         self.include_shared
     }
     /// <p>Set to <code>true</code> to include manual cluster snapshots that are public and can be copied or restored by any Amazon Web Services account, and otherwise <code>false</code>. The default is <code>false</code>.</p>
-    pub fn include_public(&self) -> bool {
+    pub fn include_public(&self) -> ::std::option::Option<bool> {
         self.include_public
     }
 }
@@ -303,8 +303,8 @@ impl DescribeDbClusterSnapshotsInputBuilder {
             filters: self.filters,
             max_records: self.max_records,
             marker: self.marker,
-            include_shared: self.include_shared.unwrap_or_default(),
-            include_public: self.include_public.unwrap_or_default(),
+            include_shared: self.include_shared,
+            include_public: self.include_public,
         })
     }
 }

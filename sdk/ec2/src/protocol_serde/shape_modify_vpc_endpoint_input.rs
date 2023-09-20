@@ -106,6 +106,17 @@ pub fn ser_modify_vpc_endpoint_input_input(
     if let Some(var_44) = &input.private_dns_enabled {
         scope_43.boolean(*var_44);
     }
+    #[allow(unused_mut)]
+    let mut scope_45 = writer.prefix("SubnetConfiguration");
+    if let Some(var_46) = &input.subnet_configurations {
+        let mut list_48 = scope_45.start_list(true, Some("item"));
+        for item_47 in var_46 {
+            #[allow(unused_mut)]
+            let mut entry_49 = list_48.entry();
+            crate::protocol_serde::shape_subnet_configuration::ser_subnet_configuration(entry_49, item_47)?;
+        }
+        list_48.finish();
+    }
     writer.finish();
     Ok(::aws_smithy_http::body::SdkBody::from(out))
 }

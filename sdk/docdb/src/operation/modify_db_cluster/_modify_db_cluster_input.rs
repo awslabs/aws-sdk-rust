@@ -22,7 +22,7 @@ pub struct ModifyDbClusterInput {
     /// <p>A value that specifies whether the changes in this request and any pending changes are asynchronously applied as soon as possible, regardless of the <code>PreferredMaintenanceWindow</code> setting for the cluster. If this parameter is set to <code>false</code>, changes to the cluster are applied during the next maintenance window.</p>
     /// <p>The <code>ApplyImmediately</code> parameter affects only the <code>NewDBClusterIdentifier</code> and <code>MasterUserPassword</code> values. If you set this parameter value to <code>false</code>, the changes to the <code>NewDBClusterIdentifier</code> and <code>MasterUserPassword</code> values are applied during the next maintenance window. All other changes are applied immediately, regardless of the value of the <code>ApplyImmediately</code> parameter.</p>
     /// <p>Default: <code>false</code> </p>
-    pub apply_immediately: bool,
+    pub apply_immediately: ::std::option::Option<bool>,
     /// <p>The number of days for which automated backups are retained. You must specify a minimum value of 1.</p>
     /// <p>Default: 1</p>
     /// <p>Constraints:</p>
@@ -65,7 +65,7 @@ pub struct ModifyDbClusterInput {
     pub engine_version: ::std::option::Option<::std::string::String>,
     /// <p>A value that indicates whether major version upgrades are allowed.</p>
     /// <p>Constraints: You must allow major version upgrades when specifying a value for the <code>EngineVersion</code> parameter that is a different major version than the DB cluster's current version.</p>
-    pub allow_major_version_upgrade: bool,
+    pub allow_major_version_upgrade: ::std::option::Option<bool>,
     /// <p>Specifies whether this cluster can be deleted. If <code>DeletionProtection</code> is enabled, the cluster cannot be deleted unless it is modified and <code>DeletionProtection</code> is disabled. <code>DeletionProtection</code> protects clusters from being accidentally deleted.</p>
     pub deletion_protection: ::std::option::Option<bool>,
 }
@@ -92,7 +92,7 @@ impl ModifyDbClusterInput {
     /// <p>A value that specifies whether the changes in this request and any pending changes are asynchronously applied as soon as possible, regardless of the <code>PreferredMaintenanceWindow</code> setting for the cluster. If this parameter is set to <code>false</code>, changes to the cluster are applied during the next maintenance window.</p>
     /// <p>The <code>ApplyImmediately</code> parameter affects only the <code>NewDBClusterIdentifier</code> and <code>MasterUserPassword</code> values. If you set this parameter value to <code>false</code>, the changes to the <code>NewDBClusterIdentifier</code> and <code>MasterUserPassword</code> values are applied during the next maintenance window. All other changes are applied immediately, regardless of the value of the <code>ApplyImmediately</code> parameter.</p>
     /// <p>Default: <code>false</code> </p>
-    pub fn apply_immediately(&self) -> bool {
+    pub fn apply_immediately(&self) -> ::std::option::Option<bool> {
         self.apply_immediately
     }
     /// <p>The number of days for which automated backups are retained. You must specify a minimum value of 1.</p>
@@ -155,7 +155,7 @@ impl ModifyDbClusterInput {
     }
     /// <p>A value that indicates whether major version upgrades are allowed.</p>
     /// <p>Constraints: You must allow major version upgrades when specifying a value for the <code>EngineVersion</code> parameter that is a different major version than the DB cluster's current version.</p>
-    pub fn allow_major_version_upgrade(&self) -> bool {
+    pub fn allow_major_version_upgrade(&self) -> ::std::option::Option<bool> {
         self.allow_major_version_upgrade
     }
     /// <p>Specifies whether this cluster can be deleted. If <code>DeletionProtection</code> is enabled, the cluster cannot be deleted unless it is modified and <code>DeletionProtection</code> is disabled. <code>DeletionProtection</code> protects clusters from being accidentally deleted.</p>
@@ -507,7 +507,7 @@ impl ModifyDbClusterInputBuilder {
         ::std::result::Result::Ok(crate::operation::modify_db_cluster::ModifyDbClusterInput {
             db_cluster_identifier: self.db_cluster_identifier,
             new_db_cluster_identifier: self.new_db_cluster_identifier,
-            apply_immediately: self.apply_immediately.unwrap_or_default(),
+            apply_immediately: self.apply_immediately,
             backup_retention_period: self.backup_retention_period,
             db_cluster_parameter_group_name: self.db_cluster_parameter_group_name,
             vpc_security_group_ids: self.vpc_security_group_ids,
@@ -517,7 +517,7 @@ impl ModifyDbClusterInputBuilder {
             preferred_maintenance_window: self.preferred_maintenance_window,
             cloudwatch_logs_export_configuration: self.cloudwatch_logs_export_configuration,
             engine_version: self.engine_version,
-            allow_major_version_upgrade: self.allow_major_version_upgrade.unwrap_or_default(),
+            allow_major_version_upgrade: self.allow_major_version_upgrade,
             deletion_protection: self.deletion_protection,
         })
     }

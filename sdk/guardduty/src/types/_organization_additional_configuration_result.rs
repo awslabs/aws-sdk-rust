@@ -6,9 +6,12 @@
 pub struct OrganizationAdditionalConfigurationResult {
     /// <p>The name of the additional configuration that is configured for the member accounts within the organization.</p>
     pub name: ::std::option::Option<crate::types::OrgFeatureAdditionalConfiguration>,
-    /// <p>Describes how The status of the additional configuration that are configured for the member accounts within the organization.</p>
-    /// <p>If you set <code>AutoEnable</code> to <code>NEW</code>, a feature will be configured for only the new accounts when they join the organization.</p>
-    /// <p>If you set <code>AutoEnable</code> to <code>NONE</code>, no feature will be configured for the accounts when they join the organization.</p>
+    /// <p>Describes the status of the additional configuration that is configured for the member accounts within the organization. One of the following values is the status for the entire organization:</p>
+    /// <ul>
+    /// <li> <p> <code>NEW</code>: Indicates that when a new account joins the organization, they will have the additional configuration enabled automatically. </p> </li>
+    /// <li> <p> <code>ALL</code>: Indicates that all accounts in the organization have the additional configuration enabled automatically. This includes <code>NEW</code> accounts that join the organization and accounts that may have been suspended or removed from the organization in GuardDuty.</p> <p>It may take up to 24 hours to update the configuration for all the member accounts.</p> </li>
+    /// <li> <p> <code>NONE</code>: Indicates that the additional configuration will not be automatically enabled for any account in the organization. The administrator must manage the additional configuration for each account individually.</p> </li>
+    /// </ul>
     pub auto_enable: ::std::option::Option<crate::types::OrgFeatureStatus>,
 }
 impl OrganizationAdditionalConfigurationResult {
@@ -16,9 +19,12 @@ impl OrganizationAdditionalConfigurationResult {
     pub fn name(&self) -> ::std::option::Option<&crate::types::OrgFeatureAdditionalConfiguration> {
         self.name.as_ref()
     }
-    /// <p>Describes how The status of the additional configuration that are configured for the member accounts within the organization.</p>
-    /// <p>If you set <code>AutoEnable</code> to <code>NEW</code>, a feature will be configured for only the new accounts when they join the organization.</p>
-    /// <p>If you set <code>AutoEnable</code> to <code>NONE</code>, no feature will be configured for the accounts when they join the organization.</p>
+    /// <p>Describes the status of the additional configuration that is configured for the member accounts within the organization. One of the following values is the status for the entire organization:</p>
+    /// <ul>
+    /// <li> <p> <code>NEW</code>: Indicates that when a new account joins the organization, they will have the additional configuration enabled automatically. </p> </li>
+    /// <li> <p> <code>ALL</code>: Indicates that all accounts in the organization have the additional configuration enabled automatically. This includes <code>NEW</code> accounts that join the organization and accounts that may have been suspended or removed from the organization in GuardDuty.</p> <p>It may take up to 24 hours to update the configuration for all the member accounts.</p> </li>
+    /// <li> <p> <code>NONE</code>: Indicates that the additional configuration will not be automatically enabled for any account in the organization. The administrator must manage the additional configuration for each account individually.</p> </li>
+    /// </ul>
     pub fn auto_enable(&self) -> ::std::option::Option<&crate::types::OrgFeatureStatus> {
         self.auto_enable.as_ref()
     }
@@ -52,23 +58,32 @@ impl OrganizationAdditionalConfigurationResultBuilder {
     pub fn get_name(&self) -> &::std::option::Option<crate::types::OrgFeatureAdditionalConfiguration> {
         &self.name
     }
-    /// <p>Describes how The status of the additional configuration that are configured for the member accounts within the organization.</p>
-    /// <p>If you set <code>AutoEnable</code> to <code>NEW</code>, a feature will be configured for only the new accounts when they join the organization.</p>
-    /// <p>If you set <code>AutoEnable</code> to <code>NONE</code>, no feature will be configured for the accounts when they join the organization.</p>
+    /// <p>Describes the status of the additional configuration that is configured for the member accounts within the organization. One of the following values is the status for the entire organization:</p>
+    /// <ul>
+    /// <li> <p> <code>NEW</code>: Indicates that when a new account joins the organization, they will have the additional configuration enabled automatically. </p> </li>
+    /// <li> <p> <code>ALL</code>: Indicates that all accounts in the organization have the additional configuration enabled automatically. This includes <code>NEW</code> accounts that join the organization and accounts that may have been suspended or removed from the organization in GuardDuty.</p> <p>It may take up to 24 hours to update the configuration for all the member accounts.</p> </li>
+    /// <li> <p> <code>NONE</code>: Indicates that the additional configuration will not be automatically enabled for any account in the organization. The administrator must manage the additional configuration for each account individually.</p> </li>
+    /// </ul>
     pub fn auto_enable(mut self, input: crate::types::OrgFeatureStatus) -> Self {
         self.auto_enable = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Describes how The status of the additional configuration that are configured for the member accounts within the organization.</p>
-    /// <p>If you set <code>AutoEnable</code> to <code>NEW</code>, a feature will be configured for only the new accounts when they join the organization.</p>
-    /// <p>If you set <code>AutoEnable</code> to <code>NONE</code>, no feature will be configured for the accounts when they join the organization.</p>
+    /// <p>Describes the status of the additional configuration that is configured for the member accounts within the organization. One of the following values is the status for the entire organization:</p>
+    /// <ul>
+    /// <li> <p> <code>NEW</code>: Indicates that when a new account joins the organization, they will have the additional configuration enabled automatically. </p> </li>
+    /// <li> <p> <code>ALL</code>: Indicates that all accounts in the organization have the additional configuration enabled automatically. This includes <code>NEW</code> accounts that join the organization and accounts that may have been suspended or removed from the organization in GuardDuty.</p> <p>It may take up to 24 hours to update the configuration for all the member accounts.</p> </li>
+    /// <li> <p> <code>NONE</code>: Indicates that the additional configuration will not be automatically enabled for any account in the organization. The administrator must manage the additional configuration for each account individually.</p> </li>
+    /// </ul>
     pub fn set_auto_enable(mut self, input: ::std::option::Option<crate::types::OrgFeatureStatus>) -> Self {
         self.auto_enable = input;
         self
     }
-    /// <p>Describes how The status of the additional configuration that are configured for the member accounts within the organization.</p>
-    /// <p>If you set <code>AutoEnable</code> to <code>NEW</code>, a feature will be configured for only the new accounts when they join the organization.</p>
-    /// <p>If you set <code>AutoEnable</code> to <code>NONE</code>, no feature will be configured for the accounts when they join the organization.</p>
+    /// <p>Describes the status of the additional configuration that is configured for the member accounts within the organization. One of the following values is the status for the entire organization:</p>
+    /// <ul>
+    /// <li> <p> <code>NEW</code>: Indicates that when a new account joins the organization, they will have the additional configuration enabled automatically. </p> </li>
+    /// <li> <p> <code>ALL</code>: Indicates that all accounts in the organization have the additional configuration enabled automatically. This includes <code>NEW</code> accounts that join the organization and accounts that may have been suspended or removed from the organization in GuardDuty.</p> <p>It may take up to 24 hours to update the configuration for all the member accounts.</p> </li>
+    /// <li> <p> <code>NONE</code>: Indicates that the additional configuration will not be automatically enabled for any account in the organization. The administrator must manage the additional configuration for each account individually.</p> </li>
+    /// </ul>
     pub fn get_auto_enable(&self) -> &::std::option::Option<crate::types::OrgFeatureStatus> {
         &self.auto_enable
     }

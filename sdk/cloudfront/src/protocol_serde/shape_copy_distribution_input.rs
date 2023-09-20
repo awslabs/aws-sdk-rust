@@ -9,6 +9,10 @@ pub fn ser_copy_distribution_input_input(
         let mut inner_writer = scope.start_el("CallerReference").finish();
         inner_writer.data(var_1.as_str());
     }
+    if let Some(var_2) = &input.enabled {
+        let mut inner_writer = scope.start_el("Enabled").finish();
+        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(*var_2).encode());
+    }
     scope.finish();
     Ok(())
 }

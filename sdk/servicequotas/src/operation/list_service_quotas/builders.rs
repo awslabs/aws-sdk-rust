@@ -22,7 +22,7 @@ impl ListServiceQuotasInputBuilder {
 }
 /// Fluent builder constructing a request to `ListServiceQuotas`.
 ///
-/// <p>Lists the applied quota values for the specified AWS service. For some quotas, only the default values are available. If the applied quota value is not available for a quota, the quota is not retrieved.</p>
+/// <p>Lists the applied quota values for the specified Amazon Web Service. For some quotas, only the default values are available. If the applied quota value is not available for a quota, the quota is not retrieved.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListServiceQuotasFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -116,46 +116,80 @@ impl ListServiceQuotasFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_service_quotas::paginator::ListServiceQuotasPaginator {
         crate::operation::list_service_quotas::paginator::ListServiceQuotasPaginator::new(self.handle, self.inner)
     }
-    /// <p>The service identifier.</p>
+    /// <p>Specifies the service identifier. To find the service code value for an Amazon Web Services service, use the <code>ListServices</code> operation.</p>
     pub fn service_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.service_code(input.into());
         self
     }
-    /// <p>The service identifier.</p>
+    /// <p>Specifies the service identifier. To find the service code value for an Amazon Web Services service, use the <code>ListServices</code> operation.</p>
     pub fn set_service_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_service_code(input);
         self
     }
-    /// <p>The service identifier.</p>
+    /// <p>Specifies the service identifier. To find the service code value for an Amazon Web Services service, use the <code>ListServices</code> operation.</p>
     pub fn get_service_code(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_service_code()
     }
-    /// <p>The token for the next page of results.</p>
+    /// <p>Specifies a value for receiving additional results after you receive a <code>NextToken</code> response in a previous request. A <code>NextToken</code> response indicates that more output is available. Set this parameter to the value of the previous call's <code>NextToken</code> response to indicate where the output should continue from.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// <p>The token for the next page of results.</p>
+    /// <p>Specifies a value for receiving additional results after you receive a <code>NextToken</code> response in a previous request. A <code>NextToken</code> response indicates that more output is available. Set this parameter to the value of the previous call's <code>NextToken</code> response to indicate where the output should continue from.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// <p>The token for the next page of results.</p>
+    /// <p>Specifies a value for receiving additional results after you receive a <code>NextToken</code> response in a previous request. A <code>NextToken</code> response indicates that more output is available. Set this parameter to the value of the previous call's <code>NextToken</code> response to indicate where the output should continue from.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }
-    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, if any, make another call with the token returned from this call.</p>
+    /// <p>Specifies the maximum number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value appropriate to the operation. If additional items exist beyond those included in the current response, the <code>NextToken</code> response element is present and has a value (is not null). Include that value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results.</p> <note>
+    /// <p>An API operation can return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
+    /// </note>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, if any, make another call with the token returned from this call.</p>
+    /// <p>Specifies the maximum number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value appropriate to the operation. If additional items exist beyond those included in the current response, the <code>NextToken</code> response element is present and has a value (is not null). Include that value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results.</p> <note>
+    /// <p>An API operation can return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
+    /// </note>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
-    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, if any, make another call with the token returned from this call.</p>
+    /// <p>Specifies the maximum number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value appropriate to the operation. If additional items exist beyond those included in the current response, the <code>NextToken</code> response element is present and has a value (is not null). Include that value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results.</p> <note>
+    /// <p>An API operation can return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
+    /// </note>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
+    }
+    /// <p>Specifies the quota identifier. To find the quota code for a specific quota, use the <code>ListServiceQuotas</code> operation, and look for the <code>QuotaCode</code> response in the output for the quota you want.</p>
+    pub fn quota_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.quota_code(input.into());
+        self
+    }
+    /// <p>Specifies the quota identifier. To find the quota code for a specific quota, use the <code>ListServiceQuotas</code> operation, and look for the <code>QuotaCode</code> response in the output for the quota you want.</p>
+    pub fn set_quota_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_quota_code(input);
+        self
+    }
+    /// <p>Specifies the quota identifier. To find the quota code for a specific quota, use the <code>ListServiceQuotas</code> operation, and look for the <code>QuotaCode</code> response in the output for the quota you want.</p>
+    pub fn get_quota_code(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_quota_code()
+    }
+    /// <p>Specifies at which level of granularity that the quota value is applied.</p>
+    pub fn quota_applied_at_level(mut self, input: crate::types::AppliedLevelEnum) -> Self {
+        self.inner = self.inner.quota_applied_at_level(input);
+        self
+    }
+    /// <p>Specifies at which level of granularity that the quota value is applied.</p>
+    pub fn set_quota_applied_at_level(mut self, input: ::std::option::Option<crate::types::AppliedLevelEnum>) -> Self {
+        self.inner = self.inner.set_quota_applied_at_level(input);
+        self
+    }
+    /// <p>Specifies at which level of granularity that the quota value is applied.</p>
+    pub fn get_quota_applied_at_level(&self) -> &::std::option::Option<crate::types::AppliedLevelEnum> {
+        self.inner.get_quota_applied_at_level()
     }
 }

@@ -4,17 +4,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SnapshotFile {
-    /// <p>A list of <code>SnapshotFileSheetSelection</code> objects that contain information on the dashboard sheet that is exported. These objects provide information about the snapshot artifacts that are generated during the job. This structure can hold a maximum of 5 CSV configurations or 1 configuration for PDF.</p>
+    /// <p>A list of <code>SnapshotFileSheetSelection</code> objects that contain information on the dashboard sheet that is exported. These objects provide information about the snapshot artifacts that are generated during the job. This structure can hold a maximum of 5 CSV configurations, 5 Excel configurations, or 1 configuration for PDF.</p>
     pub sheet_selections: ::std::option::Option<::std::vec::Vec<crate::types::SnapshotFileSheetSelection>>,
-    /// <p>The format of the snapshot file to be generated. You can choose between <code>CSV</code> and <code>PDF</code>.</p>
+    /// <p>The format of the snapshot file to be generated. You can choose between <code>CSV</code>, <code>Excel</code>, or <code>PDF</code>.</p>
     pub format_type: ::std::option::Option<crate::types::SnapshotFileFormatType>,
 }
 impl SnapshotFile {
-    /// <p>A list of <code>SnapshotFileSheetSelection</code> objects that contain information on the dashboard sheet that is exported. These objects provide information about the snapshot artifacts that are generated during the job. This structure can hold a maximum of 5 CSV configurations or 1 configuration for PDF.</p>
+    /// <p>A list of <code>SnapshotFileSheetSelection</code> objects that contain information on the dashboard sheet that is exported. These objects provide information about the snapshot artifacts that are generated during the job. This structure can hold a maximum of 5 CSV configurations, 5 Excel configurations, or 1 configuration for PDF.</p>
     pub fn sheet_selections(&self) -> ::std::option::Option<&[crate::types::SnapshotFileSheetSelection]> {
         self.sheet_selections.as_deref()
     }
-    /// <p>The format of the snapshot file to be generated. You can choose between <code>CSV</code> and <code>PDF</code>.</p>
+    /// <p>The format of the snapshot file to be generated. You can choose between <code>CSV</code>, <code>Excel</code>, or <code>PDF</code>.</p>
     pub fn format_type(&self) -> ::std::option::Option<&crate::types::SnapshotFileFormatType> {
         self.format_type.as_ref()
     }
@@ -38,33 +38,33 @@ impl SnapshotFileBuilder {
     ///
     /// To override the contents of this collection use [`set_sheet_selections`](Self::set_sheet_selections).
     ///
-    /// <p>A list of <code>SnapshotFileSheetSelection</code> objects that contain information on the dashboard sheet that is exported. These objects provide information about the snapshot artifacts that are generated during the job. This structure can hold a maximum of 5 CSV configurations or 1 configuration for PDF.</p>
+    /// <p>A list of <code>SnapshotFileSheetSelection</code> objects that contain information on the dashboard sheet that is exported. These objects provide information about the snapshot artifacts that are generated during the job. This structure can hold a maximum of 5 CSV configurations, 5 Excel configurations, or 1 configuration for PDF.</p>
     pub fn sheet_selections(mut self, input: crate::types::SnapshotFileSheetSelection) -> Self {
         let mut v = self.sheet_selections.unwrap_or_default();
         v.push(input);
         self.sheet_selections = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of <code>SnapshotFileSheetSelection</code> objects that contain information on the dashboard sheet that is exported. These objects provide information about the snapshot artifacts that are generated during the job. This structure can hold a maximum of 5 CSV configurations or 1 configuration for PDF.</p>
+    /// <p>A list of <code>SnapshotFileSheetSelection</code> objects that contain information on the dashboard sheet that is exported. These objects provide information about the snapshot artifacts that are generated during the job. This structure can hold a maximum of 5 CSV configurations, 5 Excel configurations, or 1 configuration for PDF.</p>
     pub fn set_sheet_selections(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SnapshotFileSheetSelection>>) -> Self {
         self.sheet_selections = input;
         self
     }
-    /// <p>A list of <code>SnapshotFileSheetSelection</code> objects that contain information on the dashboard sheet that is exported. These objects provide information about the snapshot artifacts that are generated during the job. This structure can hold a maximum of 5 CSV configurations or 1 configuration for PDF.</p>
+    /// <p>A list of <code>SnapshotFileSheetSelection</code> objects that contain information on the dashboard sheet that is exported. These objects provide information about the snapshot artifacts that are generated during the job. This structure can hold a maximum of 5 CSV configurations, 5 Excel configurations, or 1 configuration for PDF.</p>
     pub fn get_sheet_selections(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SnapshotFileSheetSelection>> {
         &self.sheet_selections
     }
-    /// <p>The format of the snapshot file to be generated. You can choose between <code>CSV</code> and <code>PDF</code>.</p>
+    /// <p>The format of the snapshot file to be generated. You can choose between <code>CSV</code>, <code>Excel</code>, or <code>PDF</code>.</p>
     pub fn format_type(mut self, input: crate::types::SnapshotFileFormatType) -> Self {
         self.format_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The format of the snapshot file to be generated. You can choose between <code>CSV</code> and <code>PDF</code>.</p>
+    /// <p>The format of the snapshot file to be generated. You can choose between <code>CSV</code>, <code>Excel</code>, or <code>PDF</code>.</p>
     pub fn set_format_type(mut self, input: ::std::option::Option<crate::types::SnapshotFileFormatType>) -> Self {
         self.format_type = input;
         self
     }
-    /// <p>The format of the snapshot file to be generated. You can choose between <code>CSV</code> and <code>PDF</code>.</p>
+    /// <p>The format of the snapshot file to be generated. You can choose between <code>CSV</code>, <code>Excel</code>, or <code>PDF</code>.</p>
     pub fn get_format_type(&self) -> &::std::option::Option<crate::types::SnapshotFileFormatType> {
         &self.format_type
     }

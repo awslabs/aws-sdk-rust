@@ -3,7 +3,7 @@
 /// <p>A structure that contains details about a static policy. It includes the description and policy body.</p>
 /// <p>This data type is used within a <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_PolicyDefinition.html">PolicyDefinition</a> structure as part of a request parameter for the <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_CreatePolicy.html">CreatePolicy</a> operation.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct StaticPolicyDefinitionDetail {
     /// <p>A description of the static policy.</p>
     pub description: ::std::option::Option<::std::string::String>,
@@ -20,6 +20,14 @@ impl StaticPolicyDefinitionDetail {
         self.statement.as_deref()
     }
 }
+impl ::std::fmt::Debug for StaticPolicyDefinitionDetail {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("StaticPolicyDefinitionDetail");
+        formatter.field("description", &"*** Sensitive Data Redacted ***");
+        formatter.field("statement", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl StaticPolicyDefinitionDetail {
     /// Creates a new builder-style object to manufacture [`StaticPolicyDefinitionDetail`](crate::types::StaticPolicyDefinitionDetail).
     pub fn builder() -> crate::types::builders::StaticPolicyDefinitionDetailBuilder {
@@ -29,7 +37,7 @@ impl StaticPolicyDefinitionDetail {
 
 /// A builder for [`StaticPolicyDefinitionDetail`](crate::types::StaticPolicyDefinitionDetail).
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct StaticPolicyDefinitionDetailBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) statement: ::std::option::Option<::std::string::String>,
@@ -69,5 +77,13 @@ impl StaticPolicyDefinitionDetailBuilder {
             description: self.description,
             statement: self.statement,
         }
+    }
+}
+impl ::std::fmt::Debug for StaticPolicyDefinitionDetailBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("StaticPolicyDefinitionDetailBuilder");
+        formatter.field("description", &"*** Sensitive Data Redacted ***");
+        formatter.field("statement", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

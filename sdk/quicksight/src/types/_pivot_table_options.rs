@@ -24,6 +24,16 @@ pub struct PivotTableOptions {
     pub row_alternate_color_options: ::std::option::Option<crate::types::RowAlternateColorOptions>,
     /// <p>The visibility setting of a pivot table's collapsed row dimension fields. If the value of this structure is <code>HIDDEN</code>, all collapsed columns in a pivot table are automatically hidden. The default value is <code>VISIBLE</code>.</p>
     pub collapsed_row_dimensions_visibility: ::std::option::Option<crate::types::Visibility>,
+    /// <p>The layout for the row dimension headers of a pivot table. Choose one of the following options.</p>
+    /// <ul>
+    /// <li> <p> <code>TABULAR</code>: (Default) Each row field is displayed in a separate column.</p> </li>
+    /// <li> <p> <code>HIERARCHY</code>: All row fields are displayed in a single column. Indentation is used to differentiate row headers of different fields.</p> </li>
+    /// </ul>
+    pub rows_layout: ::std::option::Option<crate::types::PivotTableRowsLayout>,
+    /// <p>The options for the label that is located above the row headers. This option is only applicable when <code>RowsLayout</code> is set to <code>HIERARCHY</code>.</p>
+    pub rows_label_options: ::std::option::Option<crate::types::PivotTableRowsLabelOptions>,
+    /// <p>The default cell width of the pivot table.</p>
+    pub default_cell_width: ::std::option::Option<::std::string::String>,
 }
 impl PivotTableOptions {
     /// <p>The metric placement (row, column) options.</p>
@@ -66,6 +76,22 @@ impl PivotTableOptions {
     pub fn collapsed_row_dimensions_visibility(&self) -> ::std::option::Option<&crate::types::Visibility> {
         self.collapsed_row_dimensions_visibility.as_ref()
     }
+    /// <p>The layout for the row dimension headers of a pivot table. Choose one of the following options.</p>
+    /// <ul>
+    /// <li> <p> <code>TABULAR</code>: (Default) Each row field is displayed in a separate column.</p> </li>
+    /// <li> <p> <code>HIERARCHY</code>: All row fields are displayed in a single column. Indentation is used to differentiate row headers of different fields.</p> </li>
+    /// </ul>
+    pub fn rows_layout(&self) -> ::std::option::Option<&crate::types::PivotTableRowsLayout> {
+        self.rows_layout.as_ref()
+    }
+    /// <p>The options for the label that is located above the row headers. This option is only applicable when <code>RowsLayout</code> is set to <code>HIERARCHY</code>.</p>
+    pub fn rows_label_options(&self) -> ::std::option::Option<&crate::types::PivotTableRowsLabelOptions> {
+        self.rows_label_options.as_ref()
+    }
+    /// <p>The default cell width of the pivot table.</p>
+    pub fn default_cell_width(&self) -> ::std::option::Option<&str> {
+        self.default_cell_width.as_deref()
+    }
 }
 impl PivotTableOptions {
     /// Creates a new builder-style object to manufacture [`PivotTableOptions`](crate::types::PivotTableOptions).
@@ -88,6 +114,9 @@ pub struct PivotTableOptionsBuilder {
     pub(crate) row_field_names_style: ::std::option::Option<crate::types::TableCellStyle>,
     pub(crate) row_alternate_color_options: ::std::option::Option<crate::types::RowAlternateColorOptions>,
     pub(crate) collapsed_row_dimensions_visibility: ::std::option::Option<crate::types::Visibility>,
+    pub(crate) rows_layout: ::std::option::Option<crate::types::PivotTableRowsLayout>,
+    pub(crate) rows_label_options: ::std::option::Option<crate::types::PivotTableRowsLabelOptions>,
+    pub(crate) default_cell_width: ::std::option::Option<::std::string::String>,
 }
 impl PivotTableOptionsBuilder {
     /// <p>The metric placement (row, column) options.</p>
@@ -230,6 +259,60 @@ impl PivotTableOptionsBuilder {
     pub fn get_collapsed_row_dimensions_visibility(&self) -> &::std::option::Option<crate::types::Visibility> {
         &self.collapsed_row_dimensions_visibility
     }
+    /// <p>The layout for the row dimension headers of a pivot table. Choose one of the following options.</p>
+    /// <ul>
+    /// <li> <p> <code>TABULAR</code>: (Default) Each row field is displayed in a separate column.</p> </li>
+    /// <li> <p> <code>HIERARCHY</code>: All row fields are displayed in a single column. Indentation is used to differentiate row headers of different fields.</p> </li>
+    /// </ul>
+    pub fn rows_layout(mut self, input: crate::types::PivotTableRowsLayout) -> Self {
+        self.rows_layout = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The layout for the row dimension headers of a pivot table. Choose one of the following options.</p>
+    /// <ul>
+    /// <li> <p> <code>TABULAR</code>: (Default) Each row field is displayed in a separate column.</p> </li>
+    /// <li> <p> <code>HIERARCHY</code>: All row fields are displayed in a single column. Indentation is used to differentiate row headers of different fields.</p> </li>
+    /// </ul>
+    pub fn set_rows_layout(mut self, input: ::std::option::Option<crate::types::PivotTableRowsLayout>) -> Self {
+        self.rows_layout = input;
+        self
+    }
+    /// <p>The layout for the row dimension headers of a pivot table. Choose one of the following options.</p>
+    /// <ul>
+    /// <li> <p> <code>TABULAR</code>: (Default) Each row field is displayed in a separate column.</p> </li>
+    /// <li> <p> <code>HIERARCHY</code>: All row fields are displayed in a single column. Indentation is used to differentiate row headers of different fields.</p> </li>
+    /// </ul>
+    pub fn get_rows_layout(&self) -> &::std::option::Option<crate::types::PivotTableRowsLayout> {
+        &self.rows_layout
+    }
+    /// <p>The options for the label that is located above the row headers. This option is only applicable when <code>RowsLayout</code> is set to <code>HIERARCHY</code>.</p>
+    pub fn rows_label_options(mut self, input: crate::types::PivotTableRowsLabelOptions) -> Self {
+        self.rows_label_options = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The options for the label that is located above the row headers. This option is only applicable when <code>RowsLayout</code> is set to <code>HIERARCHY</code>.</p>
+    pub fn set_rows_label_options(mut self, input: ::std::option::Option<crate::types::PivotTableRowsLabelOptions>) -> Self {
+        self.rows_label_options = input;
+        self
+    }
+    /// <p>The options for the label that is located above the row headers. This option is only applicable when <code>RowsLayout</code> is set to <code>HIERARCHY</code>.</p>
+    pub fn get_rows_label_options(&self) -> &::std::option::Option<crate::types::PivotTableRowsLabelOptions> {
+        &self.rows_label_options
+    }
+    /// <p>The default cell width of the pivot table.</p>
+    pub fn default_cell_width(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.default_cell_width = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The default cell width of the pivot table.</p>
+    pub fn set_default_cell_width(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.default_cell_width = input;
+        self
+    }
+    /// <p>The default cell width of the pivot table.</p>
+    pub fn get_default_cell_width(&self) -> &::std::option::Option<::std::string::String> {
+        &self.default_cell_width
+    }
     /// Consumes the builder and constructs a [`PivotTableOptions`](crate::types::PivotTableOptions).
     pub fn build(self) -> crate::types::PivotTableOptions {
         crate::types::PivotTableOptions {
@@ -243,6 +326,9 @@ impl PivotTableOptionsBuilder {
             row_field_names_style: self.row_field_names_style,
             row_alternate_color_options: self.row_alternate_color_options,
             collapsed_row_dimensions_visibility: self.collapsed_row_dimensions_visibility,
+            rows_layout: self.rows_layout,
+            rows_label_options: self.rows_label_options,
+            default_cell_width: self.default_cell_width,
         }
     }
 }

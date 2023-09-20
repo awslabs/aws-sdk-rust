@@ -157,6 +157,13 @@ pub(crate) fn de_get_annotation_store(
                             .transpose()?,
                     );
                 }
+                "numVersions" => {
+                    builder = builder.set_num_versions(
+                        ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                            .map(i32::try_from)
+                            .transpose()?,
+                    );
+                }
                 "reference" => {
                     builder = builder.set_reference(crate::protocol_serde::shape_reference_item::de_reference_item(tokens)?);
                 }

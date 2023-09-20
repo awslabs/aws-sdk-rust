@@ -21,6 +21,7 @@ impl super::Client {
     ///   - [`error_detail(Option<String>)`](crate::operation::describe_task::DescribeTaskOutput::error_detail): <p>Detailed description of an error that was encountered during the task execution. You can use this information to help troubleshoot issues. </p>
     ///   - [`creation_time(Option<DateTime>)`](crate::operation::describe_task::DescribeTaskOutput::creation_time): <p>The time that the task was created.</p>
     ///   - [`includes(Option<Vec<FilterRule>>)`](crate::operation::describe_task::DescribeTaskOutput::includes): <p>A list of filter rules that include specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
+    ///   - [`task_report_config(Option<TaskReportConfig>)`](crate::operation::describe_task::DescribeTaskOutput::task_report_config): <p>The configuration of your task report. For more information, see <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/datasync/latest/userguide/creating-task-reports.html">Creating a task report</a>.</p>
     /// - On failure, responds with [`SdkError<DescribeTaskError>`](crate::operation::describe_task::DescribeTaskError)
     pub fn describe_task(&self) -> crate::operation::describe_task::builders::DescribeTaskFluentBuilder {
         crate::operation::describe_task::builders::DescribeTaskFluentBuilder::new(self.handle.clone())

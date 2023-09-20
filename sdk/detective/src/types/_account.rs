@@ -2,7 +2,7 @@
 
 /// <p>An Amazon Web Services account that is the administrator account of or a member of a behavior graph.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct Account {
     /// <p>The account identifier of the Amazon Web Services account.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
@@ -19,6 +19,14 @@ impl Account {
         self.email_address.as_deref()
     }
 }
+impl ::std::fmt::Debug for Account {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("Account");
+        formatter.field("account_id", &self.account_id);
+        formatter.field("email_address", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl Account {
     /// Creates a new builder-style object to manufacture [`Account`](crate::types::Account).
     pub fn builder() -> crate::types::builders::AccountBuilder {
@@ -28,7 +36,7 @@ impl Account {
 
 /// A builder for [`Account`](crate::types::Account).
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct AccountBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) email_address: ::std::option::Option<::std::string::String>,
@@ -68,5 +76,13 @@ impl AccountBuilder {
             account_id: self.account_id,
             email_address: self.email_address,
         }
+    }
+}
+impl ::std::fmt::Debug for AccountBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("AccountBuilder");
+        formatter.field("account_id", &self.account_id);
+        formatter.field("email_address", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

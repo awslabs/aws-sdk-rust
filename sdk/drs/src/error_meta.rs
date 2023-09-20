@@ -277,6 +277,38 @@ impl From<crate::operation::delete_job::DeleteJobError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::delete_launch_action::DeleteLaunchActionError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::delete_launch_action::DeleteLaunchActionError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_launch_action::DeleteLaunchActionError> for Error {
+    fn from(err: crate::operation::delete_launch_action::DeleteLaunchActionError) -> Self {
+        match err {
+            crate::operation::delete_launch_action::DeleteLaunchActionError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::delete_launch_action::DeleteLaunchActionError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_launch_action::DeleteLaunchActionError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_launch_action::DeleteLaunchActionError::UninitializedAccountException(inner) => {
+                Error::UninitializedAccountException(inner)
+            }
+            crate::operation::delete_launch_action::DeleteLaunchActionError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_launch_action::DeleteLaunchActionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::delete_launch_configuration_template::DeleteLaunchConfigurationTemplateError, R>>
     for Error
 where
@@ -1037,6 +1069,40 @@ impl From<crate::operation::list_extensible_source_servers::ListExtensibleSource
         }
     }
 }
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_launch_actions::ListLaunchActionsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_launch_actions::ListLaunchActionsError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_launch_actions::ListLaunchActionsError> for Error {
+    fn from(err: crate::operation::list_launch_actions::ListLaunchActionsError) -> Self {
+        match err {
+            crate::operation::list_launch_actions::ListLaunchActionsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_launch_actions::ListLaunchActionsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_launch_actions::ListLaunchActionsError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::list_launch_actions::ListLaunchActionsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_launch_actions::ListLaunchActionsError::UninitializedAccountException(inner) => {
+                Error::UninitializedAccountException(inner)
+            }
+            crate::operation::list_launch_actions::ListLaunchActionsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_staging_accounts::ListStagingAccountsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1098,6 +1164,37 @@ impl From<crate::operation::list_tags_for_resource::ListTagsForResourceError> fo
             crate::operation::list_tags_for_resource::ListTagsForResourceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_tags_for_resource::ListTagsForResourceError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_tags_for_resource::ListTagsForResourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::put_launch_action::PutLaunchActionError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::put_launch_action::PutLaunchActionError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::put_launch_action::PutLaunchActionError> for Error {
+    fn from(err: crate::operation::put_launch_action::PutLaunchActionError) -> Self {
+        match err {
+            crate::operation::put_launch_action::PutLaunchActionError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::put_launch_action::PutLaunchActionError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::put_launch_action::PutLaunchActionError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::put_launch_action::PutLaunchActionError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::put_launch_action::PutLaunchActionError::UninitializedAccountException(inner) => {
+                Error::UninitializedAccountException(inner)
+            }
+            crate::operation::put_launch_action::PutLaunchActionError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::put_launch_action::PutLaunchActionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

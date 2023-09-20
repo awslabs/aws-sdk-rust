@@ -142,17 +142,17 @@ impl CreateVpcLinkFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_target_arns`](Self::set_target_arns).
     ///
-    /// <p>The ARN of the network load balancer of the VPC targeted by the VPC link. The network load balancer must be owned by the same AWS account of the API owner.</p>
+    /// <p>The ARN of the network load balancer of the VPC targeted by the VPC link. The network load balancer must be owned by the same Amazon Web Services account of the API owner.</p>
     pub fn target_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.target_arns(input.into());
         self
     }
-    /// <p>The ARN of the network load balancer of the VPC targeted by the VPC link. The network load balancer must be owned by the same AWS account of the API owner.</p>
+    /// <p>The ARN of the network load balancer of the VPC targeted by the VPC link. The network load balancer must be owned by the same Amazon Web Services account of the API owner.</p>
     pub fn set_target_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_target_arns(input);
         self
     }
-    /// <p>The ARN of the network load balancer of the VPC targeted by the VPC link. The network load balancer must be owned by the same AWS account of the API owner.</p>
+    /// <p>The ARN of the network load balancer of the VPC targeted by the VPC link. The network load balancer must be owned by the same Amazon Web Services account of the API owner.</p>
     pub fn get_target_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_target_arns()
     }

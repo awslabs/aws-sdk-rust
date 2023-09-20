@@ -211,4 +211,18 @@ impl UpdateLaunchConfigurationFluentBuilder {
     pub fn get_licensing(&self) -> &::std::option::Option<crate::types::Licensing> {
         self.inner.get_licensing()
     }
+    /// <p>Whether we want to enable post-launch actions for the Source Server.</p>
+    pub fn post_launch_enabled(mut self, input: bool) -> Self {
+        self.inner = self.inner.post_launch_enabled(input);
+        self
+    }
+    /// <p>Whether we want to enable post-launch actions for the Source Server.</p>
+    pub fn set_post_launch_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_post_launch_enabled(input);
+        self
+    }
+    /// <p>Whether we want to enable post-launch actions for the Source Server.</p>
+    pub fn get_post_launch_enabled(&self) -> &::std::option::Option<bool> {
+        self.inner.get_post_launch_enabled()
+    }
 }

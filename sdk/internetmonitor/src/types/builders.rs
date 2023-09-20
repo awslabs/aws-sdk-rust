@@ -3,6 +3,8 @@ pub use crate::types::_monitor::MonitorBuilder;
 
 pub use crate::types::_health_events_config::HealthEventsConfigBuilder;
 
+pub use crate::types::_local_health_events_config::LocalHealthEventsConfigBuilder;
+
 pub use crate::types::_internet_measurements_log_delivery::InternetMeasurementsLogDeliveryBuilder;
 
 pub use crate::types::_s3_config::S3ConfigBuilder;

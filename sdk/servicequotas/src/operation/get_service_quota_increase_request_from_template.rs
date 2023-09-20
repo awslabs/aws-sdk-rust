@@ -276,13 +276,13 @@ pub enum GetServiceQuotaIncreaseRequestFromTemplateError {
     DependencyAccessDeniedException(crate::types::error::DependencyAccessDeniedException),
     /// <p>Invalid input was provided.</p>
     IllegalArgumentException(crate::types::error::IllegalArgumentException),
-    /// <p>The account making this call is not a member of an organization.</p>
+    /// <p>The Amazon Web Services account making this call is not a member of an organization.</p>
     NoAvailableOrganizationException(crate::types::error::NoAvailableOrganizationException),
     /// <p>The specified resource does not exist.</p>
     NoSuchResourceException(crate::types::error::NoSuchResourceException),
     /// <p>Something went wrong.</p>
     ServiceException(crate::types::error::ServiceException),
-    /// <p>The Service Quotas template is not available in this AWS Region.</p>
+    /// <p>The Service Quotas template is not available in this Amazon Web Services Region.</p>
     TemplatesNotAvailableInRegionException(crate::types::error::TemplatesNotAvailableInRegionException),
     /// <p>Due to throttling, the request was denied. Slow down the rate of request calls, or request an increase for this quota.</p>
     TooManyRequestsException(crate::types::error::TooManyRequestsException),

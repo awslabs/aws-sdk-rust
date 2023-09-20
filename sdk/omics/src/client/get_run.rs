@@ -30,6 +30,7 @@ impl super::Client {
     ///   - [`status_message(Option<String>)`](crate::operation::get_run::GetRunOutput::status_message): <p>The run's status message.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::get_run::GetRunOutput::tags): <p>The run's tags.</p>
     ///   - [`accelerators(Option<Accelerators>)`](crate::operation::get_run::GetRunOutput::accelerators): <p> The computational accelerator used to run the workflow. </p>
+    ///   - [`retention_mode(Option<RunRetentionMode>)`](crate::operation::get_run::GetRunOutput::retention_mode): <p>The run's retention mode.</p>
     /// - On failure, responds with [`SdkError<GetRunError>`](crate::operation::get_run::GetRunError)
     pub fn get_run(&self) -> crate::operation::get_run::builders::GetRunFluentBuilder {
         crate::operation::get_run::builders::GetRunFluentBuilder::new(self.handle.clone())

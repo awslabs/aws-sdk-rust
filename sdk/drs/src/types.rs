@@ -89,6 +89,22 @@ pub use crate::types::_participating_resource_id::ParticipatingResourceId;
 
 pub use crate::types::_participating_server::ParticipatingServer;
 
+pub use crate::types::_launch_actions_status::LaunchActionsStatus;
+
+pub use crate::types::_launch_action_run::LaunchActionRun;
+
+pub use crate::types::_launch_action_run_status::LaunchActionRunStatus;
+
+pub use crate::types::_launch_action::LaunchAction;
+
+pub use crate::types::_launch_action_category::LaunchActionCategory;
+
+pub use crate::types::_launch_action_parameter::LaunchActionParameter;
+
+pub use crate::types::_launch_action_parameter_type::LaunchActionParameterType;
+
+pub use crate::types::_launch_action_type::LaunchActionType;
+
 pub use crate::types::_job_status::JobStatus;
 
 pub use crate::types::_initiated_by::InitiatedBy;
@@ -167,6 +183,8 @@ pub use crate::types::_describe_jobs_request_filters::DescribeJobsRequestFilters
 
 pub use crate::types::_account::Account;
 
+pub use crate::types::_launch_actions_request_filters::LaunchActionsRequestFilters;
+
 pub use crate::types::_staging_source_server::StagingSourceServer;
 
 mod _account;
@@ -236,6 +254,24 @@ mod _job_type;
 mod _last_launch_result;
 
 mod _last_launch_type;
+
+mod _launch_action;
+
+mod _launch_action_category;
+
+mod _launch_action_parameter;
+
+mod _launch_action_parameter_type;
+
+mod _launch_action_run;
+
+mod _launch_action_run_status;
+
+mod _launch_action_type;
+
+mod _launch_actions_request_filters;
+
+mod _launch_actions_status;
 
 mod _launch_configuration_template;
 

@@ -10,7 +10,7 @@ pub struct DisassociateDiscoveredResourceInput {
     /// <p>ConfigurationId of the Application Discovery Service resource to be disassociated.</p>
     pub configuration_id: ::std::option::Option<::std::string::String>,
     /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
-    pub dry_run: bool,
+    pub dry_run: ::std::option::Option<bool>,
 }
 impl DisassociateDiscoveredResourceInput {
     /// <p>The name of the ProgressUpdateStream.</p>
@@ -26,7 +26,7 @@ impl DisassociateDiscoveredResourceInput {
         self.configuration_id.as_deref()
     }
     /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
-    pub fn dry_run(&self) -> bool {
+    pub fn dry_run(&self) -> ::std::option::Option<bool> {
         self.dry_run
     }
 }
@@ -114,7 +114,7 @@ impl DisassociateDiscoveredResourceInputBuilder {
             progress_update_stream: self.progress_update_stream,
             migration_task_name: self.migration_task_name,
             configuration_id: self.configuration_id,
-            dry_run: self.dry_run.unwrap_or_default(),
+            dry_run: self.dry_run,
         })
     }
 }

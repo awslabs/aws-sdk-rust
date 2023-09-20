@@ -245,6 +245,12 @@ pub fn ser_aws_security_finding(
     if input.sample {
         object.key("Sample").boolean(input.sample);
     }
+    if let Some(var_78) = &input.generator_details {
+        #[allow(unused_mut)]
+        let mut object_79 = object.key("GeneratorDetails").start_object();
+        crate::protocol_serde::shape_generator_details::ser_generator_details(&mut object_79, var_78)?;
+        object_79.finish();
+    }
     Ok(())
 }
 
@@ -470,6 +476,9 @@ where
                         }
                         "Sample" => {
                             builder = builder.set_sample(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
+                        "GeneratorDetails" => {
+                            builder = builder.set_generator_details(crate::protocol_serde::shape_generator_details::de_generator_details(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

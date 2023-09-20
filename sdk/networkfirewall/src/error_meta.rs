@@ -244,11 +244,17 @@ where
 impl From<crate::operation::create_tls_inspection_configuration::CreateTLSInspectionConfigurationError> for Error {
     fn from(err: crate::operation::create_tls_inspection_configuration::CreateTLSInspectionConfigurationError) -> Self {
         match err {
+            crate::operation::create_tls_inspection_configuration::CreateTLSInspectionConfigurationError::InsufficientCapacityException(inner) => {
+                Error::InsufficientCapacityException(inner)
+            }
             crate::operation::create_tls_inspection_configuration::CreateTLSInspectionConfigurationError::InternalServerError(inner) => {
                 Error::InternalServerError(inner)
             }
             crate::operation::create_tls_inspection_configuration::CreateTLSInspectionConfigurationError::InvalidRequestException(inner) => {
                 Error::InvalidRequestException(inner)
+            }
+            crate::operation::create_tls_inspection_configuration::CreateTLSInspectionConfigurationError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
             }
             crate::operation::create_tls_inspection_configuration::CreateTLSInspectionConfigurationError::ThrottlingException(inner) => {
                 Error::ThrottlingException(inner)

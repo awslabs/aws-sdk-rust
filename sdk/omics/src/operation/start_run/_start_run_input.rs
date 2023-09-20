@@ -5,9 +5,9 @@
 pub struct StartRunInput {
     /// <p>The run's workflow ID.</p>
     pub workflow_id: ::std::option::Option<::std::string::String>,
-    /// <p>The run's workflows type.</p>
+    /// <p>The run's workflow type.</p>
     pub workflow_type: ::std::option::Option<crate::types::WorkflowType>,
-    /// <p>The run's ID.</p>
+    /// <p>The ID of a run to duplicate.</p>
     pub run_id: ::std::option::Option<::std::string::String>,
     /// <p>A service role for the run.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
@@ -29,17 +29,19 @@ pub struct StartRunInput {
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>To ensure that requests don't run multiple times, specify a unique ID for each request.</p>
     pub request_id: ::std::option::Option<::std::string::String>,
+    /// <p>The retention mode for the run.</p>
+    pub retention_mode: ::std::option::Option<crate::types::RunRetentionMode>,
 }
 impl StartRunInput {
     /// <p>The run's workflow ID.</p>
     pub fn workflow_id(&self) -> ::std::option::Option<&str> {
         self.workflow_id.as_deref()
     }
-    /// <p>The run's workflows type.</p>
+    /// <p>The run's workflow type.</p>
     pub fn workflow_type(&self) -> ::std::option::Option<&crate::types::WorkflowType> {
         self.workflow_type.as_ref()
     }
-    /// <p>The run's ID.</p>
+    /// <p>The ID of a run to duplicate.</p>
     pub fn run_id(&self) -> ::std::option::Option<&str> {
         self.run_id.as_deref()
     }
@@ -83,6 +85,10 @@ impl StartRunInput {
     pub fn request_id(&self) -> ::std::option::Option<&str> {
         self.request_id.as_deref()
     }
+    /// <p>The retention mode for the run.</p>
+    pub fn retention_mode(&self) -> ::std::option::Option<&crate::types::RunRetentionMode> {
+        self.retention_mode.as_ref()
+    }
 }
 impl StartRunInput {
     /// Creates a new builder-style object to manufacture [`StartRunInput`](crate::operation::start_run::StartRunInput).
@@ -108,6 +114,7 @@ pub struct StartRunInputBuilder {
     pub(crate) log_level: ::std::option::Option<crate::types::RunLogLevel>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
+    pub(crate) retention_mode: ::std::option::Option<crate::types::RunRetentionMode>,
 }
 impl StartRunInputBuilder {
     /// <p>The run's workflow ID.</p>
@@ -124,31 +131,31 @@ impl StartRunInputBuilder {
     pub fn get_workflow_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.workflow_id
     }
-    /// <p>The run's workflows type.</p>
+    /// <p>The run's workflow type.</p>
     pub fn workflow_type(mut self, input: crate::types::WorkflowType) -> Self {
         self.workflow_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The run's workflows type.</p>
+    /// <p>The run's workflow type.</p>
     pub fn set_workflow_type(mut self, input: ::std::option::Option<crate::types::WorkflowType>) -> Self {
         self.workflow_type = input;
         self
     }
-    /// <p>The run's workflows type.</p>
+    /// <p>The run's workflow type.</p>
     pub fn get_workflow_type(&self) -> &::std::option::Option<crate::types::WorkflowType> {
         &self.workflow_type
     }
-    /// <p>The run's ID.</p>
+    /// <p>The ID of a run to duplicate.</p>
     pub fn run_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.run_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The run's ID.</p>
+    /// <p>The ID of a run to duplicate.</p>
     pub fn set_run_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.run_id = input;
         self
     }
-    /// <p>The run's ID.</p>
+    /// <p>The ID of a run to duplicate.</p>
     pub fn get_run_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.run_id
     }
@@ -298,6 +305,20 @@ impl StartRunInputBuilder {
     pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.request_id
     }
+    /// <p>The retention mode for the run.</p>
+    pub fn retention_mode(mut self, input: crate::types::RunRetentionMode) -> Self {
+        self.retention_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The retention mode for the run.</p>
+    pub fn set_retention_mode(mut self, input: ::std::option::Option<crate::types::RunRetentionMode>) -> Self {
+        self.retention_mode = input;
+        self
+    }
+    /// <p>The retention mode for the run.</p>
+    pub fn get_retention_mode(&self) -> &::std::option::Option<crate::types::RunRetentionMode> {
+        &self.retention_mode
+    }
     /// Consumes the builder and constructs a [`StartRunInput`](crate::operation::start_run::StartRunInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::start_run::StartRunInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_run::StartRunInput {
@@ -314,6 +335,7 @@ impl StartRunInputBuilder {
             log_level: self.log_level,
             tags: self.tags,
             request_id: self.request_id,
+            retention_mode: self.retention_mode,
         })
     }
 }

@@ -84,104 +84,104 @@ pub fn ser_modify_replication_group_input_input(
     }
     #[allow(unused_mut)]
     let mut scope_33 = writer.prefix("ApplyImmediately");
-    if input.apply_immediately {
-        scope_33.boolean(input.apply_immediately);
+    if let Some(var_34) = &input.apply_immediately {
+        scope_33.boolean(*var_34);
     }
     #[allow(unused_mut)]
-    let mut scope_34 = writer.prefix("EngineVersion");
-    if let Some(var_35) = &input.engine_version {
-        scope_34.string(var_35);
+    let mut scope_35 = writer.prefix("EngineVersion");
+    if let Some(var_36) = &input.engine_version {
+        scope_35.string(var_36);
     }
     #[allow(unused_mut)]
-    let mut scope_36 = writer.prefix("AutoMinorVersionUpgrade");
-    if let Some(var_37) = &input.auto_minor_version_upgrade {
-        scope_36.boolean(*var_37);
+    let mut scope_37 = writer.prefix("AutoMinorVersionUpgrade");
+    if let Some(var_38) = &input.auto_minor_version_upgrade {
+        scope_37.boolean(*var_38);
     }
     #[allow(unused_mut)]
-    let mut scope_38 = writer.prefix("SnapshotRetentionLimit");
-    if let Some(var_39) = &input.snapshot_retention_limit {
-        scope_38.number(
+    let mut scope_39 = writer.prefix("SnapshotRetentionLimit");
+    if let Some(var_40) = &input.snapshot_retention_limit {
+        scope_39.number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_39).into()),
+            ::aws_smithy_types::Number::NegInt((*var_40).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_40 = writer.prefix("SnapshotWindow");
-    if let Some(var_41) = &input.snapshot_window {
-        scope_40.string(var_41);
+    let mut scope_41 = writer.prefix("SnapshotWindow");
+    if let Some(var_42) = &input.snapshot_window {
+        scope_41.string(var_42);
     }
     #[allow(unused_mut)]
-    let mut scope_42 = writer.prefix("CacheNodeType");
-    if let Some(var_43) = &input.cache_node_type {
-        scope_42.string(var_43);
+    let mut scope_43 = writer.prefix("CacheNodeType");
+    if let Some(var_44) = &input.cache_node_type {
+        scope_43.string(var_44);
     }
     #[allow(unused_mut)]
-    let mut scope_44 = writer.prefix("AuthToken");
-    if let Some(var_45) = &input.auth_token {
-        scope_44.string(var_45);
+    let mut scope_45 = writer.prefix("AuthToken");
+    if let Some(var_46) = &input.auth_token {
+        scope_45.string(var_46);
     }
     #[allow(unused_mut)]
-    let mut scope_46 = writer.prefix("AuthTokenUpdateStrategy");
-    if let Some(var_47) = &input.auth_token_update_strategy {
-        scope_46.string(var_47.as_str());
+    let mut scope_47 = writer.prefix("AuthTokenUpdateStrategy");
+    if let Some(var_48) = &input.auth_token_update_strategy {
+        scope_47.string(var_48.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_48 = writer.prefix("UserGroupIdsToAdd");
-    if let Some(var_49) = &input.user_group_ids_to_add {
-        let mut list_51 = scope_48.start_list(false, None);
-        for item_50 in var_49 {
+    let mut scope_49 = writer.prefix("UserGroupIdsToAdd");
+    if let Some(var_50) = &input.user_group_ids_to_add {
+        let mut list_52 = scope_49.start_list(false, None);
+        for item_51 in var_50 {
             #[allow(unused_mut)]
-            let mut entry_52 = list_51.entry();
-            entry_52.string(item_50);
+            let mut entry_53 = list_52.entry();
+            entry_53.string(item_51);
         }
-        list_51.finish();
+        list_52.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_53 = writer.prefix("UserGroupIdsToRemove");
-    if let Some(var_54) = &input.user_group_ids_to_remove {
-        let mut list_56 = scope_53.start_list(false, None);
-        for item_55 in var_54 {
+    let mut scope_54 = writer.prefix("UserGroupIdsToRemove");
+    if let Some(var_55) = &input.user_group_ids_to_remove {
+        let mut list_57 = scope_54.start_list(false, None);
+        for item_56 in var_55 {
             #[allow(unused_mut)]
-            let mut entry_57 = list_56.entry();
-            entry_57.string(item_55);
+            let mut entry_58 = list_57.entry();
+            entry_58.string(item_56);
         }
-        list_56.finish();
+        list_57.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_58 = writer.prefix("RemoveUserGroups");
-    if let Some(var_59) = &input.remove_user_groups {
-        scope_58.boolean(*var_59);
+    let mut scope_59 = writer.prefix("RemoveUserGroups");
+    if let Some(var_60) = &input.remove_user_groups {
+        scope_59.boolean(*var_60);
     }
     #[allow(unused_mut)]
-    let mut scope_60 = writer.prefix("LogDeliveryConfigurations");
-    if let Some(var_61) = &input.log_delivery_configurations {
-        let mut list_63 = scope_60.start_list(false, Some("LogDeliveryConfigurationRequest"));
-        for item_62 in var_61 {
+    let mut scope_61 = writer.prefix("LogDeliveryConfigurations");
+    if let Some(var_62) = &input.log_delivery_configurations {
+        let mut list_64 = scope_61.start_list(false, Some("LogDeliveryConfigurationRequest"));
+        for item_63 in var_62 {
             #[allow(unused_mut)]
-            let mut entry_64 = list_63.entry();
-            crate::protocol_serde::shape_log_delivery_configuration_request::ser_log_delivery_configuration_request(entry_64, item_62)?;
+            let mut entry_65 = list_64.entry();
+            crate::protocol_serde::shape_log_delivery_configuration_request::ser_log_delivery_configuration_request(entry_65, item_63)?;
         }
-        list_63.finish();
+        list_64.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_65 = writer.prefix("IpDiscovery");
-    if let Some(var_66) = &input.ip_discovery {
-        scope_65.string(var_66.as_str());
+    let mut scope_66 = writer.prefix("IpDiscovery");
+    if let Some(var_67) = &input.ip_discovery {
+        scope_66.string(var_67.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_67 = writer.prefix("TransitEncryptionEnabled");
-    if let Some(var_68) = &input.transit_encryption_enabled {
-        scope_67.boolean(*var_68);
+    let mut scope_68 = writer.prefix("TransitEncryptionEnabled");
+    if let Some(var_69) = &input.transit_encryption_enabled {
+        scope_68.boolean(*var_69);
     }
     #[allow(unused_mut)]
-    let mut scope_69 = writer.prefix("TransitEncryptionMode");
-    if let Some(var_70) = &input.transit_encryption_mode {
-        scope_69.string(var_70.as_str());
+    let mut scope_70 = writer.prefix("TransitEncryptionMode");
+    if let Some(var_71) = &input.transit_encryption_mode {
+        scope_70.string(var_71.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_71 = writer.prefix("ClusterMode");
-    if let Some(var_72) = &input.cluster_mode {
-        scope_71.string(var_72.as_str());
+    let mut scope_72 = writer.prefix("ClusterMode");
+    if let Some(var_73) = &input.cluster_mode {
+        scope_72.string(var_73.as_str());
     }
     writer.finish();
     Ok(::aws_smithy_http::body::SdkBody::from(out))

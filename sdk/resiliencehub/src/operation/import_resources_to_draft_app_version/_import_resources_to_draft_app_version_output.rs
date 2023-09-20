@@ -3,13 +3,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImportResourcesToDraftAppVersionOutput {
-    /// <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+    /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
     pub app_arn: ::std::option::Option<::std::string::String>,
     /// <p>The version of the application.</p>
     pub app_version: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Names (ARNs) for the resources you have imported.</p>
     pub source_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>The status of the action.</p>
+    /// <p>Status of the action.</p>
     pub status: ::std::option::Option<crate::types::ResourceImportStatusType>,
     /// <p> A list of terraform file s3 URLs you have imported. </p>
     pub terraform_sources: ::std::option::Option<::std::vec::Vec<crate::types::TerraformSource>>,
@@ -18,7 +18,7 @@ pub struct ImportResourcesToDraftAppVersionOutput {
     _request_id: Option<String>,
 }
 impl ImportResourcesToDraftAppVersionOutput {
-    /// <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+    /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
     pub fn app_arn(&self) -> ::std::option::Option<&str> {
         self.app_arn.as_deref()
     }
@@ -30,7 +30,7 @@ impl ImportResourcesToDraftAppVersionOutput {
     pub fn source_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.source_arns.as_deref()
     }
-    /// <p>The status of the action.</p>
+    /// <p>Status of the action.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::ResourceImportStatusType> {
         self.status.as_ref()
     }
@@ -68,17 +68,17 @@ pub struct ImportResourcesToDraftAppVersionOutputBuilder {
     _request_id: Option<String>,
 }
 impl ImportResourcesToDraftAppVersionOutputBuilder {
-    /// <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+    /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
     pub fn app_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+    /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
     pub fn set_app_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.app_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+    /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
     pub fn get_app_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.app_arn
     }
@@ -116,17 +116,17 @@ impl ImportResourcesToDraftAppVersionOutputBuilder {
     pub fn get_source_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.source_arns
     }
-    /// <p>The status of the action.</p>
+    /// <p>Status of the action.</p>
     pub fn status(mut self, input: crate::types::ResourceImportStatusType) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The status of the action.</p>
+    /// <p>Status of the action.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ResourceImportStatusType>) -> Self {
         self.status = input;
         self
     }
-    /// <p>The status of the action.</p>
+    /// <p>Status of the action.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ResourceImportStatusType> {
         &self.status
     }

@@ -34,7 +34,7 @@ pub struct GetKxClusterOutput {
     pub auto_scaling_configuration: ::std::option::Option<crate::types::AutoScalingConfiguration>,
     /// <p>A description of the cluster.</p>
     pub cluster_description: ::std::option::Option<::std::string::String>,
-    /// <p>A structure for the metadata of a cluster. It includes information like the CPUs needed, memory of instances, number of instances, and the port used while establishing a connection.</p>
+    /// <p>A structure for the metadata of a cluster. It includes information like the CPUs needed, memory of instances, and number of instances.</p>
     pub capacity_configuration: ::std::option::Option<crate::types::CapacityConfiguration>,
     /// <p>The version of FinSpace managed kdb to run.</p>
     pub release_label: ::std::option::Option<::std::string::String>,
@@ -112,7 +112,7 @@ impl GetKxClusterOutput {
     pub fn cluster_description(&self) -> ::std::option::Option<&str> {
         self.cluster_description.as_deref()
     }
-    /// <p>A structure for the metadata of a cluster. It includes information like the CPUs needed, memory of instances, number of instances, and the port used while establishing a connection.</p>
+    /// <p>A structure for the metadata of a cluster. It includes information like the CPUs needed, memory of instances, and number of instances.</p>
     pub fn capacity_configuration(&self) -> ::std::option::Option<&crate::types::CapacityConfiguration> {
         self.capacity_configuration.as_ref()
     }
@@ -376,17 +376,17 @@ impl GetKxClusterOutputBuilder {
     pub fn get_cluster_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.cluster_description
     }
-    /// <p>A structure for the metadata of a cluster. It includes information like the CPUs needed, memory of instances, number of instances, and the port used while establishing a connection.</p>
+    /// <p>A structure for the metadata of a cluster. It includes information like the CPUs needed, memory of instances, and number of instances.</p>
     pub fn capacity_configuration(mut self, input: crate::types::CapacityConfiguration) -> Self {
         self.capacity_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A structure for the metadata of a cluster. It includes information like the CPUs needed, memory of instances, number of instances, and the port used while establishing a connection.</p>
+    /// <p>A structure for the metadata of a cluster. It includes information like the CPUs needed, memory of instances, and number of instances.</p>
     pub fn set_capacity_configuration(mut self, input: ::std::option::Option<crate::types::CapacityConfiguration>) -> Self {
         self.capacity_configuration = input;
         self
     }
-    /// <p>A structure for the metadata of a cluster. It includes information like the CPUs needed, memory of instances, number of instances, and the port used while establishing a connection.</p>
+    /// <p>A structure for the metadata of a cluster. It includes information like the CPUs needed, memory of instances, and number of instances.</p>
     pub fn get_capacity_configuration(&self) -> &::std::option::Option<crate::types::CapacityConfiguration> {
         &self.capacity_configuration
     }

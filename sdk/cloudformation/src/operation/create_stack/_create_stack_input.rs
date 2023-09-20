@@ -70,6 +70,9 @@ pub struct CreateStackInput {
     /// <p>Whether to enable termination protection on the specified stack. If a user attempts to delete a stack with termination protection enabled, the operation fails and the stack remains unchanged. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html">Protecting a Stack From Being Deleted</a> in the <i>CloudFormation User Guide</i>. Termination protection is deactivated on stacks by default.</p>
     /// <p>For <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">nested stacks</a>, termination protection is set on the root stack and can't be changed directly on the nested stack.</p>
     pub enable_termination_protection: ::std::option::Option<bool>,
+    /// <p>When set to <code>true</code>, newly created resources are deleted when the operation rolls back. This includes newly created resources marked with a deletion policy of <code>Retain</code>.</p>
+    /// <p>Default: <code>false</code> </p>
+    pub retain_except_on_create: ::std::option::Option<bool>,
 }
 impl CreateStackInput {
     /// <p>The name that's associated with the stack. The name must be unique in the Region in which you are creating the stack.</p> <note>
@@ -172,6 +175,11 @@ impl CreateStackInput {
     pub fn enable_termination_protection(&self) -> ::std::option::Option<bool> {
         self.enable_termination_protection
     }
+    /// <p>When set to <code>true</code>, newly created resources are deleted when the operation rolls back. This includes newly created resources marked with a deletion policy of <code>Retain</code>.</p>
+    /// <p>Default: <code>false</code> </p>
+    pub fn retain_except_on_create(&self) -> ::std::option::Option<bool> {
+        self.retain_except_on_create
+    }
 }
 impl CreateStackInput {
     /// Creates a new builder-style object to manufacture [`CreateStackInput`](crate::operation::create_stack::CreateStackInput).
@@ -201,6 +209,7 @@ pub struct CreateStackInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,
     pub(crate) enable_termination_protection: ::std::option::Option<bool>,
+    pub(crate) retain_except_on_create: ::std::option::Option<bool>,
 }
 impl CreateStackInputBuilder {
     /// <p>The name that's associated with the stack. The name must be unique in the Region in which you are creating the stack.</p> <note>
@@ -567,6 +576,23 @@ impl CreateStackInputBuilder {
     pub fn get_enable_termination_protection(&self) -> &::std::option::Option<bool> {
         &self.enable_termination_protection
     }
+    /// <p>When set to <code>true</code>, newly created resources are deleted when the operation rolls back. This includes newly created resources marked with a deletion policy of <code>Retain</code>.</p>
+    /// <p>Default: <code>false</code> </p>
+    pub fn retain_except_on_create(mut self, input: bool) -> Self {
+        self.retain_except_on_create = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>When set to <code>true</code>, newly created resources are deleted when the operation rolls back. This includes newly created resources marked with a deletion policy of <code>Retain</code>.</p>
+    /// <p>Default: <code>false</code> </p>
+    pub fn set_retain_except_on_create(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.retain_except_on_create = input;
+        self
+    }
+    /// <p>When set to <code>true</code>, newly created resources are deleted when the operation rolls back. This includes newly created resources marked with a deletion policy of <code>Retain</code>.</p>
+    /// <p>Default: <code>false</code> </p>
+    pub fn get_retain_except_on_create(&self) -> &::std::option::Option<bool> {
+        &self.retain_except_on_create
+    }
     /// Consumes the builder and constructs a [`CreateStackInput`](crate::operation::create_stack::CreateStackInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_stack::CreateStackInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_stack::CreateStackInput {
@@ -587,6 +613,7 @@ impl CreateStackInputBuilder {
             tags: self.tags,
             client_request_token: self.client_request_token,
             enable_termination_protection: self.enable_termination_protection,
+            retain_except_on_create: self.retain_except_on_create,
         })
     }
 }

@@ -1104,7 +1104,9 @@ impl CreateDBClusterFluentBuilder {
     /// <ul>
     /// <li> <p>Aurora DB clusters - <code>aurora</code> </p> </li>
     /// <li> <p>Multi-AZ DB clusters - <code>io1</code> </p> </li>
-    /// </ul>
+    /// </ul> <note>
+    /// <p>When you create an Aurora DB cluster with the storage type set to <code>aurora-iopt1</code>, the storage type is returned in the response. The storage type isn't returned when you set it to <code>aurora</code>.</p>
+    /// </note>
     pub fn storage_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.storage_type(input.into());
         self
@@ -1123,7 +1125,9 @@ impl CreateDBClusterFluentBuilder {
     /// <ul>
     /// <li> <p>Aurora DB clusters - <code>aurora</code> </p> </li>
     /// <li> <p>Multi-AZ DB clusters - <code>io1</code> </p> </li>
-    /// </ul>
+    /// </ul> <note>
+    /// <p>When you create an Aurora DB cluster with the storage type set to <code>aurora-iopt1</code>, the storage type is returned in the response. The storage type isn't returned when you set it to <code>aurora</code>.</p>
+    /// </note>
     pub fn set_storage_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_storage_type(input);
         self
@@ -1142,7 +1146,9 @@ impl CreateDBClusterFluentBuilder {
     /// <ul>
     /// <li> <p>Aurora DB clusters - <code>aurora</code> </p> </li>
     /// <li> <p>Multi-AZ DB clusters - <code>io1</code> </p> </li>
-    /// </ul>
+    /// </ul> <note>
+    /// <p>When you create an Aurora DB cluster with the storage type set to <code>aurora-iopt1</code>, the storage type is returned in the response. The storage type isn't returned when you set it to <code>aurora</code>.</p>
+    /// </note>
     pub fn get_storage_type(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_storage_type()
     }
@@ -1501,5 +1507,22 @@ impl CreateDBClusterFluentBuilder {
     /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn get_master_user_secret_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_master_user_secret_kms_key_id()
+    }
+    /// <p>Specifies whether read replicas can forward write operations to the writer DB instance in the DB cluster. By default, write operations aren't allowed on reader DB instances.</p>
+    /// <p>Valid for: Aurora DB clusters only</p>
+    pub fn enable_local_write_forwarding(mut self, input: bool) -> Self {
+        self.inner = self.inner.enable_local_write_forwarding(input);
+        self
+    }
+    /// <p>Specifies whether read replicas can forward write operations to the writer DB instance in the DB cluster. By default, write operations aren't allowed on reader DB instances.</p>
+    /// <p>Valid for: Aurora DB clusters only</p>
+    pub fn set_enable_local_write_forwarding(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_enable_local_write_forwarding(input);
+        self
+    }
+    /// <p>Specifies whether read replicas can forward write operations to the writer DB instance in the DB cluster. By default, write operations aren't allowed on reader DB instances.</p>
+    /// <p>Valid for: Aurora DB clusters only</p>
+    pub fn get_enable_local_write_forwarding(&self) -> &::std::option::Option<bool> {
+        self.inner.get_enable_local_write_forwarding()
     }
 }

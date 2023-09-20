@@ -22,7 +22,7 @@ impl ListTagsForResourceInputBuilder {
 }
 /// Fluent builder constructing a request to `ListTagsForResource`.
 ///
-/// <p>Lists tags for a resource. Tagging is currently supported for detectors, finding filters, IP sets, threat intel sets, publishing destination, with a limit of 50 tags per resource. When invoked, this operation returns all assigned tags for a given resource.</p>
+/// <p>Lists tags for a resource. Tagging is currently supported for detectors, finding filters, IP sets, threat intel sets, and publishing destination, with a limit of 50 tags per resource. When invoked, this operation returns all assigned tags for a given resource.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListTagsForResourceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

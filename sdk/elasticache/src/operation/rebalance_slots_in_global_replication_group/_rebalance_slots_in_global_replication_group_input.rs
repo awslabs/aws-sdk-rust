@@ -6,7 +6,7 @@ pub struct RebalanceSlotsInGlobalReplicationGroupInput {
     /// <p>The name of the Global datastore</p>
     pub global_replication_group_id: ::std::option::Option<::std::string::String>,
     /// <p>If <code>True</code>, redistribution is applied immediately.</p>
-    pub apply_immediately: bool,
+    pub apply_immediately: ::std::option::Option<bool>,
 }
 impl RebalanceSlotsInGlobalReplicationGroupInput {
     /// <p>The name of the Global datastore</p>
@@ -14,7 +14,7 @@ impl RebalanceSlotsInGlobalReplicationGroupInput {
         self.global_replication_group_id.as_deref()
     }
     /// <p>If <code>True</code>, redistribution is applied immediately.</p>
-    pub fn apply_immediately(&self) -> bool {
+    pub fn apply_immediately(&self) -> ::std::option::Option<bool> {
         self.apply_immediately
     }
 }
@@ -71,7 +71,7 @@ impl RebalanceSlotsInGlobalReplicationGroupInputBuilder {
         ::std::result::Result::Ok(
             crate::operation::rebalance_slots_in_global_replication_group::RebalanceSlotsInGlobalReplicationGroupInput {
                 global_replication_group_id: self.global_replication_group_id,
-                apply_immediately: self.apply_immediately.unwrap_or_default(),
+                apply_immediately: self.apply_immediately,
             },
         )
     }

@@ -12,6 +12,8 @@ pub struct DecisionTaskScheduledEventAttributes {
     /// <p>The maximum duration for this decision task. The task is considered timed out if it doesn't completed within this duration.</p>
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
     pub start_to_close_timeout: ::std::option::Option<::std::string::String>,
+    /// <p>The maximum amount of time the decision task can wait to be assigned to a worker.</p>
+    pub schedule_to_start_timeout: ::std::option::Option<::std::string::String>,
 }
 impl DecisionTaskScheduledEventAttributes {
     /// <p>The name of the task list in which the decision task was scheduled.</p>
@@ -28,6 +30,10 @@ impl DecisionTaskScheduledEventAttributes {
     pub fn start_to_close_timeout(&self) -> ::std::option::Option<&str> {
         self.start_to_close_timeout.as_deref()
     }
+    /// <p>The maximum amount of time the decision task can wait to be assigned to a worker.</p>
+    pub fn schedule_to_start_timeout(&self) -> ::std::option::Option<&str> {
+        self.schedule_to_start_timeout.as_deref()
+    }
 }
 impl DecisionTaskScheduledEventAttributes {
     /// Creates a new builder-style object to manufacture [`DecisionTaskScheduledEventAttributes`](crate::types::DecisionTaskScheduledEventAttributes).
@@ -43,6 +49,7 @@ pub struct DecisionTaskScheduledEventAttributesBuilder {
     pub(crate) task_list: ::std::option::Option<crate::types::TaskList>,
     pub(crate) task_priority: ::std::option::Option<::std::string::String>,
     pub(crate) start_to_close_timeout: ::std::option::Option<::std::string::String>,
+    pub(crate) schedule_to_start_timeout: ::std::option::Option<::std::string::String>,
 }
 impl DecisionTaskScheduledEventAttributesBuilder {
     /// <p>The name of the task list in which the decision task was scheduled.</p>
@@ -93,12 +100,27 @@ impl DecisionTaskScheduledEventAttributesBuilder {
     pub fn get_start_to_close_timeout(&self) -> &::std::option::Option<::std::string::String> {
         &self.start_to_close_timeout
     }
+    /// <p>The maximum amount of time the decision task can wait to be assigned to a worker.</p>
+    pub fn schedule_to_start_timeout(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.schedule_to_start_timeout = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The maximum amount of time the decision task can wait to be assigned to a worker.</p>
+    pub fn set_schedule_to_start_timeout(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.schedule_to_start_timeout = input;
+        self
+    }
+    /// <p>The maximum amount of time the decision task can wait to be assigned to a worker.</p>
+    pub fn get_schedule_to_start_timeout(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schedule_to_start_timeout
+    }
     /// Consumes the builder and constructs a [`DecisionTaskScheduledEventAttributes`](crate::types::DecisionTaskScheduledEventAttributes).
     pub fn build(self) -> crate::types::DecisionTaskScheduledEventAttributes {
         crate::types::DecisionTaskScheduledEventAttributes {
             task_list: self.task_list,
             task_priority: self.task_priority,
             start_to_close_timeout: self.start_to_close_timeout,
+            schedule_to_start_timeout: self.schedule_to_start_timeout,
         }
     }
 }

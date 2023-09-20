@@ -14,15 +14,16 @@ pub struct CreateFileSystemOpenZfsConfiguration {
     pub daily_automatic_backup_start_time: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the file system deployment type. Single AZ deployment types are configured for redundancy within a single Availability Zone in an Amazon Web Services Region . Valid values are the following:</p>
     /// <ul>
-    /// <li> <p> <code>SINGLE_AZ_1</code>- (Default) Creates file systems with throughput capacities of 64 - 4,096 MBps. <code>Single_AZ_1</code> is available in all Amazon Web Services Regions where Amazon FSx for OpenZFS is available.</p> </li>
-    /// <li> <p> <code>SINGLE_AZ_2</code>- Creates file systems with throughput capacities of 160 - 10,240 MB/s using an NVMe L2ARC cache. <code>Single_AZ_2</code> is available only in the US East (N. Virginia), US East (Ohio), US West (Oregon), and Europe (Ireland) Amazon Web Services Regions.</p> </li>
+    /// <li> <p> <code>MULTI_AZ_1</code>- Creates file systems with high availability that are configured for Multi-AZ redundancy to tolerate temporary unavailability in Availability Zones (AZs). <code>Multi_AZ_1</code> is available only in the US East (N. Virginia), US East (Ohio), US West (Oregon), Asia Pacific (Singapore), Asia Pacific (Tokyo), and Europe (Ireland) Amazon Web Services Regions.</p> </li>
+    /// <li> <p> <code>SINGLE_AZ_1</code>- Creates file systems with throughput capacities of 64 - 4,096 MB/s. <code>Single_AZ_1</code> is available in all Amazon Web Services Regions where Amazon FSx for OpenZFS is available.</p> </li>
+    /// <li> <p> <code>SINGLE_AZ_2</code>- Creates file systems with throughput capacities of 160 - 10,240 MB/s using an NVMe L2ARC cache. <code>Single_AZ_2</code> is available only in the US East (N. Virginia), US East (Ohio), US West (Oregon), Asia Pacific (Singapore), Asia Pacific (Tokyo), and Europe (Ireland) Amazon Web Services Regions.</p> </li>
     /// </ul>
-    /// <p>For more information, see: <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/availability-durability.html#available-aws-regions">Deployment type availability</a> and <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/performance.html#zfs-fs-performance">File system performance</a> in the <i>Amazon FSx for OpenZFS User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/availability-durability.html#available-aws-regions">Deployment type availability</a> and <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/performance.html#zfs-fs-performance">File system performance</a> in the <i>Amazon FSx for OpenZFS User Guide</i>.</p>
     pub deployment_type: ::std::option::Option<crate::types::OpenZfsDeploymentType>,
     /// <p>Specifies the throughput of an Amazon FSx for OpenZFS file system, measured in megabytes per second (MBps). Valid values depend on the DeploymentType you choose, as follows:</p>
     /// <ul>
+    /// <li> <p>For <code>MULTI_AZ_1</code> and <code>SINGLE_AZ_2</code>, valid values are 160, 320, 640, 1280, 2560, 3840, 5120, 7680, or 10240 MBps.</p> </li>
     /// <li> <p>For <code>SINGLE_AZ_1</code>, valid values are 64, 128, 256, 512, 1024, 2048, 3072, or 4096 MBps.</p> </li>
-    /// <li> <p>For <code>SINGLE_AZ_2</code>, valid values are 160, 320, 640, 1280, 2560, 3840, 5120, 7680, or 10240 MBps.</p> </li>
     /// </ul>
     /// <p>You pay for additional throughput capacity that you provision.</p>
     pub throughput_capacity: ::std::option::Option<i32>,
@@ -31,10 +32,16 @@ pub struct CreateFileSystemOpenZfsConfiguration {
     /// <p> <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour. </p>
     /// <p>For example, <code>1:05:00</code> specifies maintenance at 5 AM Monday.</p>
     pub weekly_maintenance_start_time: ::std::option::Option<::std::string::String>,
-    /// <p>The SSD IOPS (input/output operations per second) configuration for an Amazon FSx for NetApp ONTAP or FSx for OpenZFS file system. By default, Amazon FSx automatically provisions 3 IOPS per GB of storage capacity. You can provision additional IOPS per GB of storage. The configuration consists of the total number of provisioned SSD IOPS and how it is was provisioned, or the mode (by the customer or by Amazon FSx).</p>
+    /// <p>The SSD IOPS (input/output operations per second) configuration for an Amazon FSx for NetApp ONTAP, Amazon FSx for Windows File Server, or FSx for OpenZFS file system. By default, Amazon FSx automatically provisions 3 IOPS per GB of storage capacity. You can provision additional IOPS per GB of storage. The configuration consists of the total number of provisioned SSD IOPS and how it is was provisioned, or the mode (by the customer or by Amazon FSx).</p>
     pub disk_iops_configuration: ::std::option::Option<crate::types::DiskIopsConfiguration>,
     /// <p>The configuration Amazon FSx uses when creating the root value of the Amazon FSx for OpenZFS file system. All volumes are children of the root volume. </p>
     pub root_volume_configuration: ::std::option::Option<crate::types::OpenZfsCreateRootVolumeConfiguration>,
+    /// <p>Required when <code>DeploymentType</code> is set to <code>MULTI_AZ_1</code>. This specifies the subnet in which you want the preferred file server to be located.</p>
+    pub preferred_subnet_id: ::std::option::Option<::std::string::String>,
+    /// <p>(Multi-AZ only) Specifies the IP address range in which the endpoints to access your file system will be created. By default in the Amazon FSx API and Amazon FSx console, Amazon FSx selects an available /28 IP address range for you from one of the VPC's CIDR ranges. You can have overlapping endpoint IP addresses for file systems deployed in the same VPC/route tables.</p>
+    pub endpoint_ip_address_range: ::std::option::Option<::std::string::String>,
+    /// <p>(Multi-AZ only) Specifies the route tables in which Amazon FSx creates the rules for routing traffic to the correct file server. You should specify all virtual private cloud (VPC) route tables associated with the subnets in which your clients are located. By default, Amazon FSx selects your VPC's default route table.</p>
+    pub route_table_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl CreateFileSystemOpenZfsConfiguration {
     /// <p>The number of days to retain automatic backups. Setting this property to <code>0</code> disables automatic backups. You can retain automatic backups for a maximum of 90 days. The default is <code>30</code>.</p>
@@ -55,17 +62,18 @@ impl CreateFileSystemOpenZfsConfiguration {
     }
     /// <p>Specifies the file system deployment type. Single AZ deployment types are configured for redundancy within a single Availability Zone in an Amazon Web Services Region . Valid values are the following:</p>
     /// <ul>
-    /// <li> <p> <code>SINGLE_AZ_1</code>- (Default) Creates file systems with throughput capacities of 64 - 4,096 MBps. <code>Single_AZ_1</code> is available in all Amazon Web Services Regions where Amazon FSx for OpenZFS is available.</p> </li>
-    /// <li> <p> <code>SINGLE_AZ_2</code>- Creates file systems with throughput capacities of 160 - 10,240 MB/s using an NVMe L2ARC cache. <code>Single_AZ_2</code> is available only in the US East (N. Virginia), US East (Ohio), US West (Oregon), and Europe (Ireland) Amazon Web Services Regions.</p> </li>
+    /// <li> <p> <code>MULTI_AZ_1</code>- Creates file systems with high availability that are configured for Multi-AZ redundancy to tolerate temporary unavailability in Availability Zones (AZs). <code>Multi_AZ_1</code> is available only in the US East (N. Virginia), US East (Ohio), US West (Oregon), Asia Pacific (Singapore), Asia Pacific (Tokyo), and Europe (Ireland) Amazon Web Services Regions.</p> </li>
+    /// <li> <p> <code>SINGLE_AZ_1</code>- Creates file systems with throughput capacities of 64 - 4,096 MB/s. <code>Single_AZ_1</code> is available in all Amazon Web Services Regions where Amazon FSx for OpenZFS is available.</p> </li>
+    /// <li> <p> <code>SINGLE_AZ_2</code>- Creates file systems with throughput capacities of 160 - 10,240 MB/s using an NVMe L2ARC cache. <code>Single_AZ_2</code> is available only in the US East (N. Virginia), US East (Ohio), US West (Oregon), Asia Pacific (Singapore), Asia Pacific (Tokyo), and Europe (Ireland) Amazon Web Services Regions.</p> </li>
     /// </ul>
-    /// <p>For more information, see: <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/availability-durability.html#available-aws-regions">Deployment type availability</a> and <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/performance.html#zfs-fs-performance">File system performance</a> in the <i>Amazon FSx for OpenZFS User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/availability-durability.html#available-aws-regions">Deployment type availability</a> and <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/performance.html#zfs-fs-performance">File system performance</a> in the <i>Amazon FSx for OpenZFS User Guide</i>.</p>
     pub fn deployment_type(&self) -> ::std::option::Option<&crate::types::OpenZfsDeploymentType> {
         self.deployment_type.as_ref()
     }
     /// <p>Specifies the throughput of an Amazon FSx for OpenZFS file system, measured in megabytes per second (MBps). Valid values depend on the DeploymentType you choose, as follows:</p>
     /// <ul>
+    /// <li> <p>For <code>MULTI_AZ_1</code> and <code>SINGLE_AZ_2</code>, valid values are 160, 320, 640, 1280, 2560, 3840, 5120, 7680, or 10240 MBps.</p> </li>
     /// <li> <p>For <code>SINGLE_AZ_1</code>, valid values are 64, 128, 256, 512, 1024, 2048, 3072, or 4096 MBps.</p> </li>
-    /// <li> <p>For <code>SINGLE_AZ_2</code>, valid values are 160, 320, 640, 1280, 2560, 3840, 5120, 7680, or 10240 MBps.</p> </li>
     /// </ul>
     /// <p>You pay for additional throughput capacity that you provision.</p>
     pub fn throughput_capacity(&self) -> ::std::option::Option<i32> {
@@ -78,13 +86,25 @@ impl CreateFileSystemOpenZfsConfiguration {
     pub fn weekly_maintenance_start_time(&self) -> ::std::option::Option<&str> {
         self.weekly_maintenance_start_time.as_deref()
     }
-    /// <p>The SSD IOPS (input/output operations per second) configuration for an Amazon FSx for NetApp ONTAP or FSx for OpenZFS file system. By default, Amazon FSx automatically provisions 3 IOPS per GB of storage capacity. You can provision additional IOPS per GB of storage. The configuration consists of the total number of provisioned SSD IOPS and how it is was provisioned, or the mode (by the customer or by Amazon FSx).</p>
+    /// <p>The SSD IOPS (input/output operations per second) configuration for an Amazon FSx for NetApp ONTAP, Amazon FSx for Windows File Server, or FSx for OpenZFS file system. By default, Amazon FSx automatically provisions 3 IOPS per GB of storage capacity. You can provision additional IOPS per GB of storage. The configuration consists of the total number of provisioned SSD IOPS and how it is was provisioned, or the mode (by the customer or by Amazon FSx).</p>
     pub fn disk_iops_configuration(&self) -> ::std::option::Option<&crate::types::DiskIopsConfiguration> {
         self.disk_iops_configuration.as_ref()
     }
     /// <p>The configuration Amazon FSx uses when creating the root value of the Amazon FSx for OpenZFS file system. All volumes are children of the root volume. </p>
     pub fn root_volume_configuration(&self) -> ::std::option::Option<&crate::types::OpenZfsCreateRootVolumeConfiguration> {
         self.root_volume_configuration.as_ref()
+    }
+    /// <p>Required when <code>DeploymentType</code> is set to <code>MULTI_AZ_1</code>. This specifies the subnet in which you want the preferred file server to be located.</p>
+    pub fn preferred_subnet_id(&self) -> ::std::option::Option<&str> {
+        self.preferred_subnet_id.as_deref()
+    }
+    /// <p>(Multi-AZ only) Specifies the IP address range in which the endpoints to access your file system will be created. By default in the Amazon FSx API and Amazon FSx console, Amazon FSx selects an available /28 IP address range for you from one of the VPC's CIDR ranges. You can have overlapping endpoint IP addresses for file systems deployed in the same VPC/route tables.</p>
+    pub fn endpoint_ip_address_range(&self) -> ::std::option::Option<&str> {
+        self.endpoint_ip_address_range.as_deref()
+    }
+    /// <p>(Multi-AZ only) Specifies the route tables in which Amazon FSx creates the rules for routing traffic to the correct file server. You should specify all virtual private cloud (VPC) route tables associated with the subnets in which your clients are located. By default, Amazon FSx selects your VPC's default route table.</p>
+    pub fn route_table_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
+        self.route_table_ids.as_deref()
     }
 }
 impl CreateFileSystemOpenZfsConfiguration {
@@ -107,6 +127,9 @@ pub struct CreateFileSystemOpenZfsConfigurationBuilder {
     pub(crate) weekly_maintenance_start_time: ::std::option::Option<::std::string::String>,
     pub(crate) disk_iops_configuration: ::std::option::Option<crate::types::DiskIopsConfiguration>,
     pub(crate) root_volume_configuration: ::std::option::Option<crate::types::OpenZfsCreateRootVolumeConfiguration>,
+    pub(crate) preferred_subnet_id: ::std::option::Option<::std::string::String>,
+    pub(crate) endpoint_ip_address_range: ::std::option::Option<::std::string::String>,
+    pub(crate) route_table_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl CreateFileSystemOpenZfsConfigurationBuilder {
     /// <p>The number of days to retain automatic backups. Setting this property to <code>0</code> disables automatic backups. You can retain automatic backups for a maximum of 90 days. The default is <code>30</code>.</p>
@@ -167,37 +190,40 @@ impl CreateFileSystemOpenZfsConfigurationBuilder {
     }
     /// <p>Specifies the file system deployment type. Single AZ deployment types are configured for redundancy within a single Availability Zone in an Amazon Web Services Region . Valid values are the following:</p>
     /// <ul>
-    /// <li> <p> <code>SINGLE_AZ_1</code>- (Default) Creates file systems with throughput capacities of 64 - 4,096 MBps. <code>Single_AZ_1</code> is available in all Amazon Web Services Regions where Amazon FSx for OpenZFS is available.</p> </li>
-    /// <li> <p> <code>SINGLE_AZ_2</code>- Creates file systems with throughput capacities of 160 - 10,240 MB/s using an NVMe L2ARC cache. <code>Single_AZ_2</code> is available only in the US East (N. Virginia), US East (Ohio), US West (Oregon), and Europe (Ireland) Amazon Web Services Regions.</p> </li>
+    /// <li> <p> <code>MULTI_AZ_1</code>- Creates file systems with high availability that are configured for Multi-AZ redundancy to tolerate temporary unavailability in Availability Zones (AZs). <code>Multi_AZ_1</code> is available only in the US East (N. Virginia), US East (Ohio), US West (Oregon), Asia Pacific (Singapore), Asia Pacific (Tokyo), and Europe (Ireland) Amazon Web Services Regions.</p> </li>
+    /// <li> <p> <code>SINGLE_AZ_1</code>- Creates file systems with throughput capacities of 64 - 4,096 MB/s. <code>Single_AZ_1</code> is available in all Amazon Web Services Regions where Amazon FSx for OpenZFS is available.</p> </li>
+    /// <li> <p> <code>SINGLE_AZ_2</code>- Creates file systems with throughput capacities of 160 - 10,240 MB/s using an NVMe L2ARC cache. <code>Single_AZ_2</code> is available only in the US East (N. Virginia), US East (Ohio), US West (Oregon), Asia Pacific (Singapore), Asia Pacific (Tokyo), and Europe (Ireland) Amazon Web Services Regions.</p> </li>
     /// </ul>
-    /// <p>For more information, see: <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/availability-durability.html#available-aws-regions">Deployment type availability</a> and <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/performance.html#zfs-fs-performance">File system performance</a> in the <i>Amazon FSx for OpenZFS User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/availability-durability.html#available-aws-regions">Deployment type availability</a> and <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/performance.html#zfs-fs-performance">File system performance</a> in the <i>Amazon FSx for OpenZFS User Guide</i>.</p>
     pub fn deployment_type(mut self, input: crate::types::OpenZfsDeploymentType) -> Self {
         self.deployment_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies the file system deployment type. Single AZ deployment types are configured for redundancy within a single Availability Zone in an Amazon Web Services Region . Valid values are the following:</p>
     /// <ul>
-    /// <li> <p> <code>SINGLE_AZ_1</code>- (Default) Creates file systems with throughput capacities of 64 - 4,096 MBps. <code>Single_AZ_1</code> is available in all Amazon Web Services Regions where Amazon FSx for OpenZFS is available.</p> </li>
-    /// <li> <p> <code>SINGLE_AZ_2</code>- Creates file systems with throughput capacities of 160 - 10,240 MB/s using an NVMe L2ARC cache. <code>Single_AZ_2</code> is available only in the US East (N. Virginia), US East (Ohio), US West (Oregon), and Europe (Ireland) Amazon Web Services Regions.</p> </li>
+    /// <li> <p> <code>MULTI_AZ_1</code>- Creates file systems with high availability that are configured for Multi-AZ redundancy to tolerate temporary unavailability in Availability Zones (AZs). <code>Multi_AZ_1</code> is available only in the US East (N. Virginia), US East (Ohio), US West (Oregon), Asia Pacific (Singapore), Asia Pacific (Tokyo), and Europe (Ireland) Amazon Web Services Regions.</p> </li>
+    /// <li> <p> <code>SINGLE_AZ_1</code>- Creates file systems with throughput capacities of 64 - 4,096 MB/s. <code>Single_AZ_1</code> is available in all Amazon Web Services Regions where Amazon FSx for OpenZFS is available.</p> </li>
+    /// <li> <p> <code>SINGLE_AZ_2</code>- Creates file systems with throughput capacities of 160 - 10,240 MB/s using an NVMe L2ARC cache. <code>Single_AZ_2</code> is available only in the US East (N. Virginia), US East (Ohio), US West (Oregon), Asia Pacific (Singapore), Asia Pacific (Tokyo), and Europe (Ireland) Amazon Web Services Regions.</p> </li>
     /// </ul>
-    /// <p>For more information, see: <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/availability-durability.html#available-aws-regions">Deployment type availability</a> and <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/performance.html#zfs-fs-performance">File system performance</a> in the <i>Amazon FSx for OpenZFS User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/availability-durability.html#available-aws-regions">Deployment type availability</a> and <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/performance.html#zfs-fs-performance">File system performance</a> in the <i>Amazon FSx for OpenZFS User Guide</i>.</p>
     pub fn set_deployment_type(mut self, input: ::std::option::Option<crate::types::OpenZfsDeploymentType>) -> Self {
         self.deployment_type = input;
         self
     }
     /// <p>Specifies the file system deployment type. Single AZ deployment types are configured for redundancy within a single Availability Zone in an Amazon Web Services Region . Valid values are the following:</p>
     /// <ul>
-    /// <li> <p> <code>SINGLE_AZ_1</code>- (Default) Creates file systems with throughput capacities of 64 - 4,096 MBps. <code>Single_AZ_1</code> is available in all Amazon Web Services Regions where Amazon FSx for OpenZFS is available.</p> </li>
-    /// <li> <p> <code>SINGLE_AZ_2</code>- Creates file systems with throughput capacities of 160 - 10,240 MB/s using an NVMe L2ARC cache. <code>Single_AZ_2</code> is available only in the US East (N. Virginia), US East (Ohio), US West (Oregon), and Europe (Ireland) Amazon Web Services Regions.</p> </li>
+    /// <li> <p> <code>MULTI_AZ_1</code>- Creates file systems with high availability that are configured for Multi-AZ redundancy to tolerate temporary unavailability in Availability Zones (AZs). <code>Multi_AZ_1</code> is available only in the US East (N. Virginia), US East (Ohio), US West (Oregon), Asia Pacific (Singapore), Asia Pacific (Tokyo), and Europe (Ireland) Amazon Web Services Regions.</p> </li>
+    /// <li> <p> <code>SINGLE_AZ_1</code>- Creates file systems with throughput capacities of 64 - 4,096 MB/s. <code>Single_AZ_1</code> is available in all Amazon Web Services Regions where Amazon FSx for OpenZFS is available.</p> </li>
+    /// <li> <p> <code>SINGLE_AZ_2</code>- Creates file systems with throughput capacities of 160 - 10,240 MB/s using an NVMe L2ARC cache. <code>Single_AZ_2</code> is available only in the US East (N. Virginia), US East (Ohio), US West (Oregon), Asia Pacific (Singapore), Asia Pacific (Tokyo), and Europe (Ireland) Amazon Web Services Regions.</p> </li>
     /// </ul>
-    /// <p>For more information, see: <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/availability-durability.html#available-aws-regions">Deployment type availability</a> and <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/performance.html#zfs-fs-performance">File system performance</a> in the <i>Amazon FSx for OpenZFS User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/availability-durability.html#available-aws-regions">Deployment type availability</a> and <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/performance.html#zfs-fs-performance">File system performance</a> in the <i>Amazon FSx for OpenZFS User Guide</i>.</p>
     pub fn get_deployment_type(&self) -> &::std::option::Option<crate::types::OpenZfsDeploymentType> {
         &self.deployment_type
     }
     /// <p>Specifies the throughput of an Amazon FSx for OpenZFS file system, measured in megabytes per second (MBps). Valid values depend on the DeploymentType you choose, as follows:</p>
     /// <ul>
+    /// <li> <p>For <code>MULTI_AZ_1</code> and <code>SINGLE_AZ_2</code>, valid values are 160, 320, 640, 1280, 2560, 3840, 5120, 7680, or 10240 MBps.</p> </li>
     /// <li> <p>For <code>SINGLE_AZ_1</code>, valid values are 64, 128, 256, 512, 1024, 2048, 3072, or 4096 MBps.</p> </li>
-    /// <li> <p>For <code>SINGLE_AZ_2</code>, valid values are 160, 320, 640, 1280, 2560, 3840, 5120, 7680, or 10240 MBps.</p> </li>
     /// </ul>
     /// <p>You pay for additional throughput capacity that you provision.</p>
     pub fn throughput_capacity(mut self, input: i32) -> Self {
@@ -206,8 +232,8 @@ impl CreateFileSystemOpenZfsConfigurationBuilder {
     }
     /// <p>Specifies the throughput of an Amazon FSx for OpenZFS file system, measured in megabytes per second (MBps). Valid values depend on the DeploymentType you choose, as follows:</p>
     /// <ul>
+    /// <li> <p>For <code>MULTI_AZ_1</code> and <code>SINGLE_AZ_2</code>, valid values are 160, 320, 640, 1280, 2560, 3840, 5120, 7680, or 10240 MBps.</p> </li>
     /// <li> <p>For <code>SINGLE_AZ_1</code>, valid values are 64, 128, 256, 512, 1024, 2048, 3072, or 4096 MBps.</p> </li>
-    /// <li> <p>For <code>SINGLE_AZ_2</code>, valid values are 160, 320, 640, 1280, 2560, 3840, 5120, 7680, or 10240 MBps.</p> </li>
     /// </ul>
     /// <p>You pay for additional throughput capacity that you provision.</p>
     pub fn set_throughput_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
@@ -216,8 +242,8 @@ impl CreateFileSystemOpenZfsConfigurationBuilder {
     }
     /// <p>Specifies the throughput of an Amazon FSx for OpenZFS file system, measured in megabytes per second (MBps). Valid values depend on the DeploymentType you choose, as follows:</p>
     /// <ul>
+    /// <li> <p>For <code>MULTI_AZ_1</code> and <code>SINGLE_AZ_2</code>, valid values are 160, 320, 640, 1280, 2560, 3840, 5120, 7680, or 10240 MBps.</p> </li>
     /// <li> <p>For <code>SINGLE_AZ_1</code>, valid values are 64, 128, 256, 512, 1024, 2048, 3072, or 4096 MBps.</p> </li>
-    /// <li> <p>For <code>SINGLE_AZ_2</code>, valid values are 160, 320, 640, 1280, 2560, 3840, 5120, 7680, or 10240 MBps.</p> </li>
     /// </ul>
     /// <p>You pay for additional throughput capacity that you provision.</p>
     pub fn get_throughput_capacity(&self) -> &::std::option::Option<i32> {
@@ -246,17 +272,17 @@ impl CreateFileSystemOpenZfsConfigurationBuilder {
     pub fn get_weekly_maintenance_start_time(&self) -> &::std::option::Option<::std::string::String> {
         &self.weekly_maintenance_start_time
     }
-    /// <p>The SSD IOPS (input/output operations per second) configuration for an Amazon FSx for NetApp ONTAP or FSx for OpenZFS file system. By default, Amazon FSx automatically provisions 3 IOPS per GB of storage capacity. You can provision additional IOPS per GB of storage. The configuration consists of the total number of provisioned SSD IOPS and how it is was provisioned, or the mode (by the customer or by Amazon FSx).</p>
+    /// <p>The SSD IOPS (input/output operations per second) configuration for an Amazon FSx for NetApp ONTAP, Amazon FSx for Windows File Server, or FSx for OpenZFS file system. By default, Amazon FSx automatically provisions 3 IOPS per GB of storage capacity. You can provision additional IOPS per GB of storage. The configuration consists of the total number of provisioned SSD IOPS and how it is was provisioned, or the mode (by the customer or by Amazon FSx).</p>
     pub fn disk_iops_configuration(mut self, input: crate::types::DiskIopsConfiguration) -> Self {
         self.disk_iops_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The SSD IOPS (input/output operations per second) configuration for an Amazon FSx for NetApp ONTAP or FSx for OpenZFS file system. By default, Amazon FSx automatically provisions 3 IOPS per GB of storage capacity. You can provision additional IOPS per GB of storage. The configuration consists of the total number of provisioned SSD IOPS and how it is was provisioned, or the mode (by the customer or by Amazon FSx).</p>
+    /// <p>The SSD IOPS (input/output operations per second) configuration for an Amazon FSx for NetApp ONTAP, Amazon FSx for Windows File Server, or FSx for OpenZFS file system. By default, Amazon FSx automatically provisions 3 IOPS per GB of storage capacity. You can provision additional IOPS per GB of storage. The configuration consists of the total number of provisioned SSD IOPS and how it is was provisioned, or the mode (by the customer or by Amazon FSx).</p>
     pub fn set_disk_iops_configuration(mut self, input: ::std::option::Option<crate::types::DiskIopsConfiguration>) -> Self {
         self.disk_iops_configuration = input;
         self
     }
-    /// <p>The SSD IOPS (input/output operations per second) configuration for an Amazon FSx for NetApp ONTAP or FSx for OpenZFS file system. By default, Amazon FSx automatically provisions 3 IOPS per GB of storage capacity. You can provision additional IOPS per GB of storage. The configuration consists of the total number of provisioned SSD IOPS and how it is was provisioned, or the mode (by the customer or by Amazon FSx).</p>
+    /// <p>The SSD IOPS (input/output operations per second) configuration for an Amazon FSx for NetApp ONTAP, Amazon FSx for Windows File Server, or FSx for OpenZFS file system. By default, Amazon FSx automatically provisions 3 IOPS per GB of storage capacity. You can provision additional IOPS per GB of storage. The configuration consists of the total number of provisioned SSD IOPS and how it is was provisioned, or the mode (by the customer or by Amazon FSx).</p>
     pub fn get_disk_iops_configuration(&self) -> &::std::option::Option<crate::types::DiskIopsConfiguration> {
         &self.disk_iops_configuration
     }
@@ -274,6 +300,54 @@ impl CreateFileSystemOpenZfsConfigurationBuilder {
     pub fn get_root_volume_configuration(&self) -> &::std::option::Option<crate::types::OpenZfsCreateRootVolumeConfiguration> {
         &self.root_volume_configuration
     }
+    /// <p>Required when <code>DeploymentType</code> is set to <code>MULTI_AZ_1</code>. This specifies the subnet in which you want the preferred file server to be located.</p>
+    pub fn preferred_subnet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.preferred_subnet_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Required when <code>DeploymentType</code> is set to <code>MULTI_AZ_1</code>. This specifies the subnet in which you want the preferred file server to be located.</p>
+    pub fn set_preferred_subnet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.preferred_subnet_id = input;
+        self
+    }
+    /// <p>Required when <code>DeploymentType</code> is set to <code>MULTI_AZ_1</code>. This specifies the subnet in which you want the preferred file server to be located.</p>
+    pub fn get_preferred_subnet_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.preferred_subnet_id
+    }
+    /// <p>(Multi-AZ only) Specifies the IP address range in which the endpoints to access your file system will be created. By default in the Amazon FSx API and Amazon FSx console, Amazon FSx selects an available /28 IP address range for you from one of the VPC's CIDR ranges. You can have overlapping endpoint IP addresses for file systems deployed in the same VPC/route tables.</p>
+    pub fn endpoint_ip_address_range(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.endpoint_ip_address_range = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>(Multi-AZ only) Specifies the IP address range in which the endpoints to access your file system will be created. By default in the Amazon FSx API and Amazon FSx console, Amazon FSx selects an available /28 IP address range for you from one of the VPC's CIDR ranges. You can have overlapping endpoint IP addresses for file systems deployed in the same VPC/route tables.</p>
+    pub fn set_endpoint_ip_address_range(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.endpoint_ip_address_range = input;
+        self
+    }
+    /// <p>(Multi-AZ only) Specifies the IP address range in which the endpoints to access your file system will be created. By default in the Amazon FSx API and Amazon FSx console, Amazon FSx selects an available /28 IP address range for you from one of the VPC's CIDR ranges. You can have overlapping endpoint IP addresses for file systems deployed in the same VPC/route tables.</p>
+    pub fn get_endpoint_ip_address_range(&self) -> &::std::option::Option<::std::string::String> {
+        &self.endpoint_ip_address_range
+    }
+    /// Appends an item to `route_table_ids`.
+    ///
+    /// To override the contents of this collection use [`set_route_table_ids`](Self::set_route_table_ids).
+    ///
+    /// <p>(Multi-AZ only) Specifies the route tables in which Amazon FSx creates the rules for routing traffic to the correct file server. You should specify all virtual private cloud (VPC) route tables associated with the subnets in which your clients are located. By default, Amazon FSx selects your VPC's default route table.</p>
+    pub fn route_table_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.route_table_ids.unwrap_or_default();
+        v.push(input.into());
+        self.route_table_ids = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>(Multi-AZ only) Specifies the route tables in which Amazon FSx creates the rules for routing traffic to the correct file server. You should specify all virtual private cloud (VPC) route tables associated with the subnets in which your clients are located. By default, Amazon FSx selects your VPC's default route table.</p>
+    pub fn set_route_table_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.route_table_ids = input;
+        self
+    }
+    /// <p>(Multi-AZ only) Specifies the route tables in which Amazon FSx creates the rules for routing traffic to the correct file server. You should specify all virtual private cloud (VPC) route tables associated with the subnets in which your clients are located. By default, Amazon FSx selects your VPC's default route table.</p>
+    pub fn get_route_table_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.route_table_ids
+    }
     /// Consumes the builder and constructs a [`CreateFileSystemOpenZfsConfiguration`](crate::types::CreateFileSystemOpenZfsConfiguration).
     pub fn build(self) -> crate::types::CreateFileSystemOpenZfsConfiguration {
         crate::types::CreateFileSystemOpenZfsConfiguration {
@@ -286,6 +360,9 @@ impl CreateFileSystemOpenZfsConfigurationBuilder {
             weekly_maintenance_start_time: self.weekly_maintenance_start_time,
             disk_iops_configuration: self.disk_iops_configuration,
             root_volume_configuration: self.root_volume_configuration,
+            preferred_subnet_id: self.preferred_subnet_id,
+            endpoint_ip_address_range: self.endpoint_ip_address_range,
+            route_table_ids: self.route_table_ids,
         }
     }
 }

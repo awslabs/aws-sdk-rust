@@ -22,7 +22,7 @@ impl DeregisterComputeInputBuilder {
 }
 /// Fluent builder constructing a request to `DeregisterCompute`.
 ///
-/// <p>Removes a compute resource from the specified fleet. Deregister your compute resources before you delete the compute.</p>
+/// <p>Removes a compute resource from an Amazon GameLift Anywhere fleet. Deregistered computes can no longer host game sessions through Amazon GameLift.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeregisterComputeFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -110,31 +110,31 @@ impl DeregisterComputeFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>&gt;A unique identifier for the fleet the compute resource is registered to.</p>
+    /// <p>A unique identifier for the fleet the compute resource is currently registered to.</p>
     pub fn fleet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.fleet_id(input.into());
         self
     }
-    /// <p>&gt;A unique identifier for the fleet the compute resource is registered to.</p>
+    /// <p>A unique identifier for the fleet the compute resource is currently registered to.</p>
     pub fn set_fleet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_fleet_id(input);
         self
     }
-    /// <p>&gt;A unique identifier for the fleet the compute resource is registered to.</p>
+    /// <p>A unique identifier for the fleet the compute resource is currently registered to.</p>
     pub fn get_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_fleet_id()
     }
-    /// <p>The name of the compute resource you want to delete.</p>
+    /// <p>The name of the compute resource to remove from the specified Anywhere fleet.</p>
     pub fn compute_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.compute_name(input.into());
         self
     }
-    /// <p>The name of the compute resource you want to delete.</p>
+    /// <p>The name of the compute resource to remove from the specified Anywhere fleet.</p>
     pub fn set_compute_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_compute_name(input);
         self
     }
-    /// <p>The name of the compute resource you want to delete.</p>
+    /// <p>The name of the compute resource to remove from the specified Anywhere fleet.</p>
     pub fn get_compute_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_compute_name()
     }

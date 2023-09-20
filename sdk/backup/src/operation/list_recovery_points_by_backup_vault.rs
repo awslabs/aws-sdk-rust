@@ -215,50 +215,55 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for ListRecover
                 mut output: &mut ::std::string::String,
             ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError> {
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
-                if let ::std::option::Option::Some(inner_2) = &_input.next_token {
+                if let ::std::option::Option::Some(inner_2) = &_input.backup_vault_account_id {
                     {
-                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(&inner_2));
+                        query.push_kv("backupVaultAccountId", &::aws_smithy_http::query::fmt_string(&inner_2));
                     }
                 }
-                if let ::std::option::Option::Some(inner_3) = &_input.max_results {
-                    if *inner_3 != 0 {
-                        query.push_kv("maxResults", ::aws_smithy_types::primitive::Encoder::from(*inner_3).encode());
-                    }
-                }
-                if let ::std::option::Option::Some(inner_4) = &_input.by_resource_arn {
+                if let ::std::option::Option::Some(inner_3) = &_input.next_token {
                     {
-                        query.push_kv("resourceArn", &::aws_smithy_http::query::fmt_string(&inner_4));
+                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(&inner_3));
                     }
                 }
-                if let ::std::option::Option::Some(inner_5) = &_input.by_resource_type {
+                if let ::std::option::Option::Some(inner_4) = &_input.max_results {
+                    if *inner_4 != 0 {
+                        query.push_kv("maxResults", ::aws_smithy_types::primitive::Encoder::from(*inner_4).encode());
+                    }
+                }
+                if let ::std::option::Option::Some(inner_5) = &_input.by_resource_arn {
                     {
-                        query.push_kv("resourceType", &::aws_smithy_http::query::fmt_string(&inner_5));
+                        query.push_kv("resourceArn", &::aws_smithy_http::query::fmt_string(&inner_5));
                     }
                 }
-                if let ::std::option::Option::Some(inner_6) = &_input.by_backup_plan_id {
+                if let ::std::option::Option::Some(inner_6) = &_input.by_resource_type {
                     {
-                        query.push_kv("backupPlanId", &::aws_smithy_http::query::fmt_string(&inner_6));
+                        query.push_kv("resourceType", &::aws_smithy_http::query::fmt_string(&inner_6));
                     }
                 }
-                if let ::std::option::Option::Some(inner_7) = &_input.by_created_before {
+                if let ::std::option::Option::Some(inner_7) = &_input.by_backup_plan_id {
+                    {
+                        query.push_kv("backupPlanId", &::aws_smithy_http::query::fmt_string(&inner_7));
+                    }
+                }
+                if let ::std::option::Option::Some(inner_8) = &_input.by_created_before {
                     {
                         query.push_kv(
                             "createdBefore",
-                            &::aws_smithy_http::query::fmt_timestamp(inner_7, ::aws_smithy_types::date_time::Format::DateTime)?,
-                        );
-                    }
-                }
-                if let ::std::option::Option::Some(inner_8) = &_input.by_created_after {
-                    {
-                        query.push_kv(
-                            "createdAfter",
                             &::aws_smithy_http::query::fmt_timestamp(inner_8, ::aws_smithy_types::date_time::Format::DateTime)?,
                         );
                     }
                 }
-                if let ::std::option::Option::Some(inner_9) = &_input.by_parent_recovery_point_arn {
+                if let ::std::option::Option::Some(inner_9) = &_input.by_created_after {
                     {
-                        query.push_kv("parentRecoveryPointArn", &::aws_smithy_http::query::fmt_string(&inner_9));
+                        query.push_kv(
+                            "createdAfter",
+                            &::aws_smithy_http::query::fmt_timestamp(inner_9, ::aws_smithy_types::date_time::Format::DateTime)?,
+                        );
+                    }
+                }
+                if let ::std::option::Option::Some(inner_10) = &_input.by_parent_recovery_point_arn {
+                    {
+                        query.push_kv("parentRecoveryPointArn", &::aws_smithy_http::query::fmt_string(&inner_10));
                     }
                 }
                 ::std::result::Result::Ok(())

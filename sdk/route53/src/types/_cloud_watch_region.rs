@@ -34,6 +34,7 @@
 ///     CloudWatchRegion::EuWest1 => { /* ... */ },
 ///     CloudWatchRegion::EuWest2 => { /* ... */ },
 ///     CloudWatchRegion::EuWest3 => { /* ... */ },
+///     CloudWatchRegion::IlCentral1 => { /* ... */ },
 ///     CloudWatchRegion::MeCentral1 => { /* ... */ },
 ///     CloudWatchRegion::MeSouth1 => { /* ... */ },
 ///     CloudWatchRegion::SaEast1 => { /* ... */ },
@@ -118,6 +119,8 @@ pub enum CloudWatchRegion {
     #[allow(missing_docs)] // documentation missing in model
     EuWest3,
     #[allow(missing_docs)] // documentation missing in model
+    IlCentral1,
+    #[allow(missing_docs)] // documentation missing in model
     MeCentral1,
     #[allow(missing_docs)] // documentation missing in model
     MeSouth1,
@@ -169,6 +172,7 @@ impl ::std::convert::From<&str> for CloudWatchRegion {
             "eu-west-1" => CloudWatchRegion::EuWest1,
             "eu-west-2" => CloudWatchRegion::EuWest2,
             "eu-west-3" => CloudWatchRegion::EuWest3,
+            "il-central-1" => CloudWatchRegion::IlCentral1,
             "me-central-1" => CloudWatchRegion::MeCentral1,
             "me-south-1" => CloudWatchRegion::MeSouth1,
             "sa-east-1" => CloudWatchRegion::SaEast1,
@@ -218,6 +222,7 @@ impl CloudWatchRegion {
             CloudWatchRegion::EuWest1 => "eu-west-1",
             CloudWatchRegion::EuWest2 => "eu-west-2",
             CloudWatchRegion::EuWest3 => "eu-west-3",
+            CloudWatchRegion::IlCentral1 => "il-central-1",
             CloudWatchRegion::MeCentral1 => "me-central-1",
             CloudWatchRegion::MeSouth1 => "me-south-1",
             CloudWatchRegion::SaEast1 => "sa-east-1",
@@ -258,6 +263,7 @@ impl CloudWatchRegion {
             "eu-west-1",
             "eu-west-2",
             "eu-west-3",
+            "il-central-1",
             "me-central-1",
             "me-south-1",
             "sa-east-1",

@@ -265,6 +265,8 @@ pub type GetTargetGroupErrorKind = GetTargetGroupError;
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum GetTargetGroupError {
+    /// <p>The user does not have sufficient access to perform this action.</p>
+    AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>An unexpected error occurred while processing the request.</p>
     InternalServerException(crate::types::error::InternalServerException),
     /// <p>The request references a resource that does not exist.</p>
@@ -291,6 +293,7 @@ impl ::aws_smithy_http::result::CreateUnhandledError for GetTargetGroupError {
 impl ::std::fmt::Display for GetTargetGroupError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
+            Self::AccessDeniedException(_inner) => _inner.fmt(f),
             Self::InternalServerException(_inner) => _inner.fmt(f),
             Self::ResourceNotFoundException(_inner) => _inner.fmt(f),
             Self::ThrottlingException(_inner) => _inner.fmt(f),
@@ -302,6 +305,7 @@ impl ::std::fmt::Display for GetTargetGroupError {
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for GetTargetGroupError {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::AccessDeniedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InternalServerException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ResourceNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ThrottlingException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
@@ -346,12 +350,17 @@ impl GetTargetGroupError {
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         match self {
+            Self::AccessDeniedException(e) => e.meta(),
             Self::InternalServerException(e) => e.meta(),
             Self::ResourceNotFoundException(e) => e.meta(),
             Self::ThrottlingException(e) => e.meta(),
             Self::ValidationException(e) => e.meta(),
             Self::Unhandled(e) => e.meta(),
         }
+    }
+    /// Returns `true` if the error kind is `GetTargetGroupError::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(self, Self::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `GetTargetGroupError::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
@@ -373,6 +382,7 @@ impl GetTargetGroupError {
 impl ::std::error::Error for GetTargetGroupError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
+            Self::AccessDeniedException(_inner) => ::std::option::Option::Some(_inner),
             Self::InternalServerException(_inner) => ::std::option::Option::Some(_inner),
             Self::ResourceNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::ThrottlingException(_inner) => ::std::option::Option::Some(_inner),

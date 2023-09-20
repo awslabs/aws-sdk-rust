@@ -8,7 +8,7 @@ pub struct ResetClusterParameterGroupInput {
     pub parameter_group_name: ::std::option::Option<::std::string::String>,
     /// <p>If <code>true</code>, all parameters in the specified parameter group will be reset to their default values. </p>
     /// <p>Default: <code>true</code> </p>
-    pub reset_all_parameters: bool,
+    pub reset_all_parameters: ::std::option::Option<bool>,
     /// <p>An array of names of parameters to be reset. If <i>ResetAllParameters</i> option is not used, then at least one parameter name must be supplied. </p>
     /// <p>Constraints: A maximum of 20 parameters can be reset in a single request.</p>
     pub parameters: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>,
@@ -20,7 +20,7 @@ impl ResetClusterParameterGroupInput {
     }
     /// <p>If <code>true</code>, all parameters in the specified parameter group will be reset to their default values. </p>
     /// <p>Default: <code>true</code> </p>
-    pub fn reset_all_parameters(&self) -> bool {
+    pub fn reset_all_parameters(&self) -> ::std::option::Option<bool> {
         self.reset_all_parameters
     }
     /// <p>An array of names of parameters to be reset. If <i>ResetAllParameters</i> option is not used, then at least one parameter name must be supplied. </p>
@@ -108,7 +108,7 @@ impl ResetClusterParameterGroupInputBuilder {
     > {
         ::std::result::Result::Ok(crate::operation::reset_cluster_parameter_group::ResetClusterParameterGroupInput {
             parameter_group_name: self.parameter_group_name,
-            reset_all_parameters: self.reset_all_parameters.unwrap_or_default(),
+            reset_all_parameters: self.reset_all_parameters,
             parameters: self.parameters,
         })
     }

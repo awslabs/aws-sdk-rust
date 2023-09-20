@@ -14,11 +14,11 @@ pub struct CreateDomainNameInput {
     pub certificate_private_key: ::std::option::Option<::std::string::String>,
     /// <p>[Deprecated] The intermediate certificates and optionally the root certificate, one after the other without any blank lines, used by an edge-optimized endpoint for this domain name. If you include the root certificate, your certificate chain must start with intermediate certificates and end with the root certificate. Use the intermediate certificates that were provided by your certificate authority. Do not include any intermediaries that are not in the chain of trust path.</p>
     pub certificate_chain: ::std::option::Option<::std::string::String>,
-    /// <p>The reference to an AWS-managed certificate that will be used by edge-optimized endpoint for this domain name. AWS Certificate Manager is the only supported source.</p>
+    /// <p>The reference to an Amazon Web Services-managed certificate that will be used by edge-optimized endpoint for this domain name. Certificate Manager is the only supported source.</p>
     pub certificate_arn: ::std::option::Option<::std::string::String>,
     /// <p>The user-friendly name of the certificate that will be used by regional endpoint for this domain name.</p>
     pub regional_certificate_name: ::std::option::Option<::std::string::String>,
-    /// <p>The reference to an AWS-managed certificate that will be used by regional endpoint for this domain name. AWS Certificate Manager is the only supported source.</p>
+    /// <p>The reference to an Amazon Web Services-managed certificate that will be used by regional endpoint for this domain name. Certificate Manager is the only supported source.</p>
     pub regional_certificate_arn: ::std::option::Option<::std::string::String>,
     /// <p>The endpoint configuration of this DomainName showing the endpoint types of the domain name. </p>
     pub endpoint_configuration: ::std::option::Option<crate::types::EndpointConfiguration>,
@@ -52,7 +52,7 @@ impl CreateDomainNameInput {
     pub fn certificate_chain(&self) -> ::std::option::Option<&str> {
         self.certificate_chain.as_deref()
     }
-    /// <p>The reference to an AWS-managed certificate that will be used by edge-optimized endpoint for this domain name. AWS Certificate Manager is the only supported source.</p>
+    /// <p>The reference to an Amazon Web Services-managed certificate that will be used by edge-optimized endpoint for this domain name. Certificate Manager is the only supported source.</p>
     pub fn certificate_arn(&self) -> ::std::option::Option<&str> {
         self.certificate_arn.as_deref()
     }
@@ -60,7 +60,7 @@ impl CreateDomainNameInput {
     pub fn regional_certificate_name(&self) -> ::std::option::Option<&str> {
         self.regional_certificate_name.as_deref()
     }
-    /// <p>The reference to an AWS-managed certificate that will be used by regional endpoint for this domain name. AWS Certificate Manager is the only supported source.</p>
+    /// <p>The reference to an Amazon Web Services-managed certificate that will be used by regional endpoint for this domain name. Certificate Manager is the only supported source.</p>
     pub fn regional_certificate_arn(&self) -> ::std::option::Option<&str> {
         self.regional_certificate_arn.as_deref()
     }
@@ -181,17 +181,17 @@ impl CreateDomainNameInputBuilder {
     pub fn get_certificate_chain(&self) -> &::std::option::Option<::std::string::String> {
         &self.certificate_chain
     }
-    /// <p>The reference to an AWS-managed certificate that will be used by edge-optimized endpoint for this domain name. AWS Certificate Manager is the only supported source.</p>
+    /// <p>The reference to an Amazon Web Services-managed certificate that will be used by edge-optimized endpoint for this domain name. Certificate Manager is the only supported source.</p>
     pub fn certificate_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The reference to an AWS-managed certificate that will be used by edge-optimized endpoint for this domain name. AWS Certificate Manager is the only supported source.</p>
+    /// <p>The reference to an Amazon Web Services-managed certificate that will be used by edge-optimized endpoint for this domain name. Certificate Manager is the only supported source.</p>
     pub fn set_certificate_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.certificate_arn = input;
         self
     }
-    /// <p>The reference to an AWS-managed certificate that will be used by edge-optimized endpoint for this domain name. AWS Certificate Manager is the only supported source.</p>
+    /// <p>The reference to an Amazon Web Services-managed certificate that will be used by edge-optimized endpoint for this domain name. Certificate Manager is the only supported source.</p>
     pub fn get_certificate_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.certificate_arn
     }
@@ -209,17 +209,17 @@ impl CreateDomainNameInputBuilder {
     pub fn get_regional_certificate_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.regional_certificate_name
     }
-    /// <p>The reference to an AWS-managed certificate that will be used by regional endpoint for this domain name. AWS Certificate Manager is the only supported source.</p>
+    /// <p>The reference to an Amazon Web Services-managed certificate that will be used by regional endpoint for this domain name. Certificate Manager is the only supported source.</p>
     pub fn regional_certificate_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.regional_certificate_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The reference to an AWS-managed certificate that will be used by regional endpoint for this domain name. AWS Certificate Manager is the only supported source.</p>
+    /// <p>The reference to an Amazon Web Services-managed certificate that will be used by regional endpoint for this domain name. Certificate Manager is the only supported source.</p>
     pub fn set_regional_certificate_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.regional_certificate_arn = input;
         self
     }
-    /// <p>The reference to an AWS-managed certificate that will be used by regional endpoint for this domain name. AWS Certificate Manager is the only supported source.</p>
+    /// <p>The reference to an Amazon Web Services-managed certificate that will be used by regional endpoint for this domain name. Certificate Manager is the only supported source.</p>
     pub fn get_regional_certificate_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.regional_certificate_arn
     }

@@ -12,6 +12,10 @@ pub struct ExecutionResult {
     pub bytes_written: ::std::option::Option<i64>,
     /// <p> The number of records processed in the flow run. </p>
     pub records_processed: ::std::option::Option<i64>,
+    /// <p>The number of processes that Amazon AppFlow ran at the same time when it retrieved your data.</p>
+    pub num_parallel_processes: ::std::option::Option<i64>,
+    /// <p>The maximum number of records that Amazon AppFlow receives in each page of the response from your SAP application.</p>
+    pub max_page_size: ::std::option::Option<i64>,
 }
 impl ExecutionResult {
     /// <p> Provides any error message information related to the flow run. </p>
@@ -30,6 +34,14 @@ impl ExecutionResult {
     pub fn records_processed(&self) -> ::std::option::Option<i64> {
         self.records_processed
     }
+    /// <p>The number of processes that Amazon AppFlow ran at the same time when it retrieved your data.</p>
+    pub fn num_parallel_processes(&self) -> ::std::option::Option<i64> {
+        self.num_parallel_processes
+    }
+    /// <p>The maximum number of records that Amazon AppFlow receives in each page of the response from your SAP application.</p>
+    pub fn max_page_size(&self) -> ::std::option::Option<i64> {
+        self.max_page_size
+    }
 }
 impl ExecutionResult {
     /// Creates a new builder-style object to manufacture [`ExecutionResult`](crate::types::ExecutionResult).
@@ -46,6 +58,8 @@ pub struct ExecutionResultBuilder {
     pub(crate) bytes_processed: ::std::option::Option<i64>,
     pub(crate) bytes_written: ::std::option::Option<i64>,
     pub(crate) records_processed: ::std::option::Option<i64>,
+    pub(crate) num_parallel_processes: ::std::option::Option<i64>,
+    pub(crate) max_page_size: ::std::option::Option<i64>,
 }
 impl ExecutionResultBuilder {
     /// <p> Provides any error message information related to the flow run. </p>
@@ -104,6 +118,34 @@ impl ExecutionResultBuilder {
     pub fn get_records_processed(&self) -> &::std::option::Option<i64> {
         &self.records_processed
     }
+    /// <p>The number of processes that Amazon AppFlow ran at the same time when it retrieved your data.</p>
+    pub fn num_parallel_processes(mut self, input: i64) -> Self {
+        self.num_parallel_processes = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The number of processes that Amazon AppFlow ran at the same time when it retrieved your data.</p>
+    pub fn set_num_parallel_processes(mut self, input: ::std::option::Option<i64>) -> Self {
+        self.num_parallel_processes = input;
+        self
+    }
+    /// <p>The number of processes that Amazon AppFlow ran at the same time when it retrieved your data.</p>
+    pub fn get_num_parallel_processes(&self) -> &::std::option::Option<i64> {
+        &self.num_parallel_processes
+    }
+    /// <p>The maximum number of records that Amazon AppFlow receives in each page of the response from your SAP application.</p>
+    pub fn max_page_size(mut self, input: i64) -> Self {
+        self.max_page_size = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The maximum number of records that Amazon AppFlow receives in each page of the response from your SAP application.</p>
+    pub fn set_max_page_size(mut self, input: ::std::option::Option<i64>) -> Self {
+        self.max_page_size = input;
+        self
+    }
+    /// <p>The maximum number of records that Amazon AppFlow receives in each page of the response from your SAP application.</p>
+    pub fn get_max_page_size(&self) -> &::std::option::Option<i64> {
+        &self.max_page_size
+    }
     /// Consumes the builder and constructs a [`ExecutionResult`](crate::types::ExecutionResult).
     pub fn build(self) -> crate::types::ExecutionResult {
         crate::types::ExecutionResult {
@@ -111,6 +153,8 @@ impl ExecutionResultBuilder {
             bytes_processed: self.bytes_processed,
             bytes_written: self.bytes_written,
             records_processed: self.records_processed,
+            num_parallel_processes: self.num_parallel_processes,
+            max_page_size: self.max_page_size,
         }
     }
 }

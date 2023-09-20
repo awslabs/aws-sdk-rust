@@ -18,12 +18,15 @@
 ///     ValidationExceptionReason::InvalidContentEncoding => { /* ... */ },
 ///     ValidationExceptionReason::InvalidCustomerKey => { /* ... */ },
 ///     ValidationExceptionReason::InvalidDependencyRequest => { /* ... */ },
+///     ValidationExceptionReason::InvalidGrantToken => { /* ... */ },
+///     ValidationExceptionReason::InvalidImageId => { /* ... */ },
 ///     ValidationExceptionReason::InvalidPageToken => { /* ... */ },
 ///     ValidationExceptionReason::InvalidParameterValue => { /* ... */ },
 ///     ValidationExceptionReason::InvalidSnapshotId => { /* ... */ },
 ///     ValidationExceptionReason::InvalidTag => { /* ... */ },
 ///     ValidationExceptionReason::InvalidVolumeSize => { /* ... */ },
 ///     ValidationExceptionReason::UnrelatedSnapshots => { /* ... */ },
+///     ValidationExceptionReason::WriteRequestTimeout => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -64,6 +67,10 @@ pub enum ValidationExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
     InvalidDependencyRequest,
     #[allow(missing_docs)] // documentation missing in model
+    InvalidGrantToken,
+    #[allow(missing_docs)] // documentation missing in model
+    InvalidImageId,
+    #[allow(missing_docs)] // documentation missing in model
     InvalidPageToken,
     #[allow(missing_docs)] // documentation missing in model
     InvalidParameterValue,
@@ -75,6 +82,8 @@ pub enum ValidationExceptionReason {
     InvalidVolumeSize,
     #[allow(missing_docs)] // documentation missing in model
     UnrelatedSnapshots,
+    #[allow(missing_docs)] // documentation missing in model
+    WriteRequestTimeout,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
@@ -87,12 +96,15 @@ impl ::std::convert::From<&str> for ValidationExceptionReason {
             "INVALID_CONTENT_ENCODING" => ValidationExceptionReason::InvalidContentEncoding,
             "INVALID_CUSTOMER_KEY" => ValidationExceptionReason::InvalidCustomerKey,
             "INVALID_DEPENDENCY_REQUEST" => ValidationExceptionReason::InvalidDependencyRequest,
+            "INVALID_GRANT_TOKEN" => ValidationExceptionReason::InvalidGrantToken,
+            "INVALID_IMAGE_ID" => ValidationExceptionReason::InvalidImageId,
             "INVALID_PAGE_TOKEN" => ValidationExceptionReason::InvalidPageToken,
             "INVALID_PARAMETER_VALUE" => ValidationExceptionReason::InvalidParameterValue,
             "INVALID_SNAPSHOT_ID" => ValidationExceptionReason::InvalidSnapshotId,
             "INVALID_TAG" => ValidationExceptionReason::InvalidTag,
             "INVALID_VOLUME_SIZE" => ValidationExceptionReason::InvalidVolumeSize,
             "UNRELATED_SNAPSHOTS" => ValidationExceptionReason::UnrelatedSnapshots,
+            "WRITE_REQUEST_TIMEOUT" => ValidationExceptionReason::WriteRequestTimeout,
             other => ValidationExceptionReason::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -114,12 +126,15 @@ impl ValidationExceptionReason {
             ValidationExceptionReason::InvalidContentEncoding => "INVALID_CONTENT_ENCODING",
             ValidationExceptionReason::InvalidCustomerKey => "INVALID_CUSTOMER_KEY",
             ValidationExceptionReason::InvalidDependencyRequest => "INVALID_DEPENDENCY_REQUEST",
+            ValidationExceptionReason::InvalidGrantToken => "INVALID_GRANT_TOKEN",
+            ValidationExceptionReason::InvalidImageId => "INVALID_IMAGE_ID",
             ValidationExceptionReason::InvalidPageToken => "INVALID_PAGE_TOKEN",
             ValidationExceptionReason::InvalidParameterValue => "INVALID_PARAMETER_VALUE",
             ValidationExceptionReason::InvalidSnapshotId => "INVALID_SNAPSHOT_ID",
             ValidationExceptionReason::InvalidTag => "INVALID_TAG",
             ValidationExceptionReason::InvalidVolumeSize => "INVALID_VOLUME_SIZE",
             ValidationExceptionReason::UnrelatedSnapshots => "UNRELATED_SNAPSHOTS",
+            ValidationExceptionReason::WriteRequestTimeout => "WRITE_REQUEST_TIMEOUT",
             ValidationExceptionReason::Unknown(value) => value.as_str(),
         }
     }
@@ -132,12 +147,15 @@ impl ValidationExceptionReason {
             "INVALID_CONTENT_ENCODING",
             "INVALID_CUSTOMER_KEY",
             "INVALID_DEPENDENCY_REQUEST",
+            "INVALID_GRANT_TOKEN",
+            "INVALID_IMAGE_ID",
             "INVALID_PAGE_TOKEN",
             "INVALID_PARAMETER_VALUE",
             "INVALID_SNAPSHOT_ID",
             "INVALID_TAG",
             "INVALID_VOLUME_SIZE",
             "UNRELATED_SNAPSHOTS",
+            "WRITE_REQUEST_TIMEOUT",
         ]
     }
 }

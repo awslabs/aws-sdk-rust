@@ -158,4 +158,18 @@ impl ListGroupsFluentBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }
+    /// <p>Limit the search results based on the filter criteria. Only one filter per request is supported.</p>
+    pub fn filters(mut self, input: crate::types::ListGroupsFilters) -> Self {
+        self.inner = self.inner.filters(input);
+        self
+    }
+    /// <p>Limit the search results based on the filter criteria. Only one filter per request is supported.</p>
+    pub fn set_filters(mut self, input: ::std::option::Option<crate::types::ListGroupsFilters>) -> Self {
+        self.inner = self.inner.set_filters(input);
+        self
+    }
+    /// <p>Limit the search results based on the filter criteria. Only one filter per request is supported.</p>
+    pub fn get_filters(&self) -> &::std::option::Option<crate::types::ListGroupsFilters> {
+        self.inner.get_filters()
+    }
 }

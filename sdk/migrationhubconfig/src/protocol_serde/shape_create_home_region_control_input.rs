@@ -12,8 +12,8 @@ pub fn ser_create_home_region_control_input(
         crate::protocol_serde::shape_target::ser_target(&mut object_3, var_2)?;
         object_3.finish();
     }
-    if input.dry_run {
-        object.key("DryRun").boolean(input.dry_run);
+    if let Some(var_4) = &input.dry_run {
+        object.key("DryRun").boolean(*var_4);
     }
     Ok(())
 }

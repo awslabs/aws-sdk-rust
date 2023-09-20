@@ -12,6 +12,10 @@ pub struct JourneyLimits {
     pub messages_per_second: ::std::option::Option<i32>,
     /// <p>Minimum time that must pass before an endpoint can re-enter a given journey. The duration should use an ISO 8601 format, such as PT1H. </p>
     pub endpoint_reentry_interval: ::std::option::Option<::std::string::String>,
+    /// <p>The number of messages that an endpoint can receive during the specified timeframe.</p>
+    pub timeframe_cap: ::std::option::Option<crate::types::JourneyTimeframeCap>,
+    /// <p>The maximum number of messages a journey can sent to a single endpoint. The maximum value is 100. If set to 0, this limit will not apply.</p>
+    pub total_cap: ::std::option::Option<i32>,
 }
 impl JourneyLimits {
     /// <p>The maximum number of messages that the journey can send to a single participant during a 24-hour period. The maximum value is 100.</p>
@@ -30,6 +34,14 @@ impl JourneyLimits {
     pub fn endpoint_reentry_interval(&self) -> ::std::option::Option<&str> {
         self.endpoint_reentry_interval.as_deref()
     }
+    /// <p>The number of messages that an endpoint can receive during the specified timeframe.</p>
+    pub fn timeframe_cap(&self) -> ::std::option::Option<&crate::types::JourneyTimeframeCap> {
+        self.timeframe_cap.as_ref()
+    }
+    /// <p>The maximum number of messages a journey can sent to a single endpoint. The maximum value is 100. If set to 0, this limit will not apply.</p>
+    pub fn total_cap(&self) -> ::std::option::Option<i32> {
+        self.total_cap
+    }
 }
 impl JourneyLimits {
     /// Creates a new builder-style object to manufacture [`JourneyLimits`](crate::types::JourneyLimits).
@@ -46,6 +58,8 @@ pub struct JourneyLimitsBuilder {
     pub(crate) endpoint_reentry_cap: ::std::option::Option<i32>,
     pub(crate) messages_per_second: ::std::option::Option<i32>,
     pub(crate) endpoint_reentry_interval: ::std::option::Option<::std::string::String>,
+    pub(crate) timeframe_cap: ::std::option::Option<crate::types::JourneyTimeframeCap>,
+    pub(crate) total_cap: ::std::option::Option<i32>,
 }
 impl JourneyLimitsBuilder {
     /// <p>The maximum number of messages that the journey can send to a single participant during a 24-hour period. The maximum value is 100.</p>
@@ -104,6 +118,34 @@ impl JourneyLimitsBuilder {
     pub fn get_endpoint_reentry_interval(&self) -> &::std::option::Option<::std::string::String> {
         &self.endpoint_reentry_interval
     }
+    /// <p>The number of messages that an endpoint can receive during the specified timeframe.</p>
+    pub fn timeframe_cap(mut self, input: crate::types::JourneyTimeframeCap) -> Self {
+        self.timeframe_cap = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The number of messages that an endpoint can receive during the specified timeframe.</p>
+    pub fn set_timeframe_cap(mut self, input: ::std::option::Option<crate::types::JourneyTimeframeCap>) -> Self {
+        self.timeframe_cap = input;
+        self
+    }
+    /// <p>The number of messages that an endpoint can receive during the specified timeframe.</p>
+    pub fn get_timeframe_cap(&self) -> &::std::option::Option<crate::types::JourneyTimeframeCap> {
+        &self.timeframe_cap
+    }
+    /// <p>The maximum number of messages a journey can sent to a single endpoint. The maximum value is 100. If set to 0, this limit will not apply.</p>
+    pub fn total_cap(mut self, input: i32) -> Self {
+        self.total_cap = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The maximum number of messages a journey can sent to a single endpoint. The maximum value is 100. If set to 0, this limit will not apply.</p>
+    pub fn set_total_cap(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.total_cap = input;
+        self
+    }
+    /// <p>The maximum number of messages a journey can sent to a single endpoint. The maximum value is 100. If set to 0, this limit will not apply.</p>
+    pub fn get_total_cap(&self) -> &::std::option::Option<i32> {
+        &self.total_cap
+    }
     /// Consumes the builder and constructs a [`JourneyLimits`](crate::types::JourneyLimits).
     pub fn build(self) -> crate::types::JourneyLimits {
         crate::types::JourneyLimits {
@@ -111,6 +153,8 @@ impl JourneyLimitsBuilder {
             endpoint_reentry_cap: self.endpoint_reentry_cap,
             messages_per_second: self.messages_per_second,
             endpoint_reentry_interval: self.endpoint_reentry_interval,
+            timeframe_cap: self.timeframe_cap,
+            total_cap: self.total_cap,
         }
     }
 }

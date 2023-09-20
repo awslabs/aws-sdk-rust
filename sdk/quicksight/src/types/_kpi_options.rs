@@ -18,6 +18,10 @@ pub struct KpiOptions {
     pub primary_value_font_configuration: ::std::option::Option<crate::types::FontConfiguration>,
     /// <p>The options that determine the secondary value font configuration.</p>
     pub secondary_value_font_configuration: ::std::option::Option<crate::types::FontConfiguration>,
+    /// <p>The options that determine the visibility, color, type, and tooltip visibility of the sparkline of a KPI visual.</p>
+    pub sparkline: ::std::option::Option<crate::types::KpiSparklineOptions>,
+    /// <p>The options that determine the layout a KPI visual.</p>
+    pub visual_layout_options: ::std::option::Option<crate::types::KpiVisualLayoutOptions>,
 }
 impl KpiOptions {
     /// <p>The options that determine the presentation of the progress bar of a KPI visual.</p>
@@ -48,6 +52,14 @@ impl KpiOptions {
     pub fn secondary_value_font_configuration(&self) -> ::std::option::Option<&crate::types::FontConfiguration> {
         self.secondary_value_font_configuration.as_ref()
     }
+    /// <p>The options that determine the visibility, color, type, and tooltip visibility of the sparkline of a KPI visual.</p>
+    pub fn sparkline(&self) -> ::std::option::Option<&crate::types::KpiSparklineOptions> {
+        self.sparkline.as_ref()
+    }
+    /// <p>The options that determine the layout a KPI visual.</p>
+    pub fn visual_layout_options(&self) -> ::std::option::Option<&crate::types::KpiVisualLayoutOptions> {
+        self.visual_layout_options.as_ref()
+    }
 }
 impl KpiOptions {
     /// Creates a new builder-style object to manufacture [`KpiOptions`](crate::types::KpiOptions).
@@ -67,6 +79,8 @@ pub struct KpiOptionsBuilder {
     pub(crate) primary_value_display_type: ::std::option::Option<crate::types::PrimaryValueDisplayType>,
     pub(crate) primary_value_font_configuration: ::std::option::Option<crate::types::FontConfiguration>,
     pub(crate) secondary_value_font_configuration: ::std::option::Option<crate::types::FontConfiguration>,
+    pub(crate) sparkline: ::std::option::Option<crate::types::KpiSparklineOptions>,
+    pub(crate) visual_layout_options: ::std::option::Option<crate::types::KpiVisualLayoutOptions>,
 }
 impl KpiOptionsBuilder {
     /// <p>The options that determine the presentation of the progress bar of a KPI visual.</p>
@@ -167,6 +181,34 @@ impl KpiOptionsBuilder {
     pub fn get_secondary_value_font_configuration(&self) -> &::std::option::Option<crate::types::FontConfiguration> {
         &self.secondary_value_font_configuration
     }
+    /// <p>The options that determine the visibility, color, type, and tooltip visibility of the sparkline of a KPI visual.</p>
+    pub fn sparkline(mut self, input: crate::types::KpiSparklineOptions) -> Self {
+        self.sparkline = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The options that determine the visibility, color, type, and tooltip visibility of the sparkline of a KPI visual.</p>
+    pub fn set_sparkline(mut self, input: ::std::option::Option<crate::types::KpiSparklineOptions>) -> Self {
+        self.sparkline = input;
+        self
+    }
+    /// <p>The options that determine the visibility, color, type, and tooltip visibility of the sparkline of a KPI visual.</p>
+    pub fn get_sparkline(&self) -> &::std::option::Option<crate::types::KpiSparklineOptions> {
+        &self.sparkline
+    }
+    /// <p>The options that determine the layout a KPI visual.</p>
+    pub fn visual_layout_options(mut self, input: crate::types::KpiVisualLayoutOptions) -> Self {
+        self.visual_layout_options = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The options that determine the layout a KPI visual.</p>
+    pub fn set_visual_layout_options(mut self, input: ::std::option::Option<crate::types::KpiVisualLayoutOptions>) -> Self {
+        self.visual_layout_options = input;
+        self
+    }
+    /// <p>The options that determine the layout a KPI visual.</p>
+    pub fn get_visual_layout_options(&self) -> &::std::option::Option<crate::types::KpiVisualLayoutOptions> {
+        &self.visual_layout_options
+    }
     /// Consumes the builder and constructs a [`KpiOptions`](crate::types::KpiOptions).
     pub fn build(self) -> crate::types::KpiOptions {
         crate::types::KpiOptions {
@@ -177,6 +219,8 @@ impl KpiOptionsBuilder {
             primary_value_display_type: self.primary_value_display_type,
             primary_value_font_configuration: self.primary_value_font_configuration,
             secondary_value_font_configuration: self.secondary_value_font_configuration,
+            sparkline: self.sparkline,
+            visual_layout_options: self.visual_layout_options,
         }
     }
 }

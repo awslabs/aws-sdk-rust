@@ -3,18 +3,18 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListServicesOutput {
-    /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
+    /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p>Information about the services.</p>
+    /// <p>The list of the Amazon Web Service names and service codes.</p>
     pub services: ::std::option::Option<::std::vec::Vec<crate::types::ServiceInfo>>,
     _request_id: Option<String>,
 }
 impl ListServicesOutput {
-    /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
+    /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>Information about the services.</p>
+    /// <p>The list of the Amazon Web Service names and service codes.</p>
     pub fn services(&self) -> ::std::option::Option<&[crate::types::ServiceInfo]> {
         self.services.as_deref()
     }
@@ -40,17 +40,17 @@ pub struct ListServicesOutputBuilder {
     _request_id: Option<String>,
 }
 impl ListServicesOutputBuilder {
-    /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
+    /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
+    /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
+    /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
@@ -58,19 +58,19 @@ impl ListServicesOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_services`](Self::set_services).
     ///
-    /// <p>Information about the services.</p>
+    /// <p>The list of the Amazon Web Service names and service codes.</p>
     pub fn services(mut self, input: crate::types::ServiceInfo) -> Self {
         let mut v = self.services.unwrap_or_default();
         v.push(input);
         self.services = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Information about the services.</p>
+    /// <p>The list of the Amazon Web Service names and service codes.</p>
     pub fn set_services(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ServiceInfo>>) -> Self {
         self.services = input;
         self
     }
-    /// <p>Information about the services.</p>
+    /// <p>The list of the Amazon Web Service names and service codes.</p>
     pub fn get_services(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceInfo>> {
         &self.services
     }

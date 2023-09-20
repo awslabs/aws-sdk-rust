@@ -6,7 +6,7 @@
 pub struct AnalysisRuleList {
     /// <p>Columns that can be used to join a configured table with the table of the member who can query and other members' configured tables.</p>
     pub join_columns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>Which logical operators (if any) are to be used in an INNER JOIN match condition. Default is <code>AND</code>.</p>
+    /// <p>The logical operators (if any) that are to be used in an INNER JOIN match condition. Default is <code>AND</code>.</p>
     pub allowed_join_operators: ::std::option::Option<::std::vec::Vec<crate::types::JoinOperator>>,
     /// <p>Columns that can be listed in the output.</p>
     pub list_columns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -16,7 +16,7 @@ impl AnalysisRuleList {
     pub fn join_columns(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.join_columns.as_deref()
     }
-    /// <p>Which logical operators (if any) are to be used in an INNER JOIN match condition. Default is <code>AND</code>.</p>
+    /// <p>The logical operators (if any) that are to be used in an INNER JOIN match condition. Default is <code>AND</code>.</p>
     pub fn allowed_join_operators(&self) -> ::std::option::Option<&[crate::types::JoinOperator]> {
         self.allowed_join_operators.as_deref()
     }
@@ -65,19 +65,19 @@ impl AnalysisRuleListBuilder {
     ///
     /// To override the contents of this collection use [`set_allowed_join_operators`](Self::set_allowed_join_operators).
     ///
-    /// <p>Which logical operators (if any) are to be used in an INNER JOIN match condition. Default is <code>AND</code>.</p>
+    /// <p>The logical operators (if any) that are to be used in an INNER JOIN match condition. Default is <code>AND</code>.</p>
     pub fn allowed_join_operators(mut self, input: crate::types::JoinOperator) -> Self {
         let mut v = self.allowed_join_operators.unwrap_or_default();
         v.push(input);
         self.allowed_join_operators = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Which logical operators (if any) are to be used in an INNER JOIN match condition. Default is <code>AND</code>.</p>
+    /// <p>The logical operators (if any) that are to be used in an INNER JOIN match condition. Default is <code>AND</code>.</p>
     pub fn set_allowed_join_operators(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::JoinOperator>>) -> Self {
         self.allowed_join_operators = input;
         self
     }
-    /// <p>Which logical operators (if any) are to be used in an INNER JOIN match condition. Default is <code>AND</code>.</p>
+    /// <p>The logical operators (if any) that are to be used in an INNER JOIN match condition. Default is <code>AND</code>.</p>
     pub fn get_allowed_join_operators(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::JoinOperator>> {
         &self.allowed_join_operators
     }

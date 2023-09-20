@@ -119,59 +119,59 @@ impl PutServiceQuotaIncreaseRequestIntoTemplateFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The quota identifier.</p>
+    /// <p>Specifies the quota identifier. To find the quota code for a specific quota, use the <code>ListServiceQuotas</code> operation, and look for the <code>QuotaCode</code> response in the output for the quota you want.</p>
     pub fn quota_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.quota_code(input.into());
         self
     }
-    /// <p>The quota identifier.</p>
+    /// <p>Specifies the quota identifier. To find the quota code for a specific quota, use the <code>ListServiceQuotas</code> operation, and look for the <code>QuotaCode</code> response in the output for the quota you want.</p>
     pub fn set_quota_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_quota_code(input);
         self
     }
-    /// <p>The quota identifier.</p>
+    /// <p>Specifies the quota identifier. To find the quota code for a specific quota, use the <code>ListServiceQuotas</code> operation, and look for the <code>QuotaCode</code> response in the output for the quota you want.</p>
     pub fn get_quota_code(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_quota_code()
     }
-    /// <p>The service identifier.</p>
+    /// <p>Specifies the service identifier. To find the service code value for an Amazon Web Services service, use the <code>ListServices</code> operation.</p>
     pub fn service_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.service_code(input.into());
         self
     }
-    /// <p>The service identifier.</p>
+    /// <p>Specifies the service identifier. To find the service code value for an Amazon Web Services service, use the <code>ListServices</code> operation.</p>
     pub fn set_service_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_service_code(input);
         self
     }
-    /// <p>The service identifier.</p>
+    /// <p>Specifies the service identifier. To find the service code value for an Amazon Web Services service, use the <code>ListServices</code> operation.</p>
     pub fn get_service_code(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_service_code()
     }
-    /// <p>The AWS Region.</p>
+    /// <p>Specifies the Amazon Web Services Region to which the template applies.</p>
     pub fn aws_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.aws_region(input.into());
         self
     }
-    /// <p>The AWS Region.</p>
+    /// <p>Specifies the Amazon Web Services Region to which the template applies.</p>
     pub fn set_aws_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_aws_region(input);
         self
     }
-    /// <p>The AWS Region.</p>
+    /// <p>Specifies the Amazon Web Services Region to which the template applies.</p>
     pub fn get_aws_region(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_aws_region()
     }
-    /// <p>The new, increased value for the quota.</p>
+    /// <p>Specifies the new, increased value for the quota.</p>
     pub fn desired_value(mut self, input: f64) -> Self {
         self.inner = self.inner.desired_value(input);
         self
     }
-    /// <p>The new, increased value for the quota.</p>
+    /// <p>Specifies the new, increased value for the quota.</p>
     pub fn set_desired_value(mut self, input: ::std::option::Option<f64>) -> Self {
         self.inner = self.inner.set_desired_value(input);
         self
     }
-    /// <p>The new, increased value for the quota.</p>
+    /// <p>Specifies the new, increased value for the quota.</p>
     pub fn get_desired_value(&self) -> &::std::option::Option<f64> {
         self.inner.get_desired_value()
     }

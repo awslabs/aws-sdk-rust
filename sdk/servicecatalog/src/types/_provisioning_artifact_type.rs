@@ -15,6 +15,7 @@
 ///     ProvisioningArtifactType::CloudFormationTemplate => { /* ... */ },
 ///     ProvisioningArtifactType::MarketplaceAmi => { /* ... */ },
 ///     ProvisioningArtifactType::MarketplaceCar => { /* ... */ },
+///     ProvisioningArtifactType::TerraformCloud => { /* ... */ },
 ///     ProvisioningArtifactType::TerraformOpenSource => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -50,6 +51,8 @@ pub enum ProvisioningArtifactType {
     #[allow(missing_docs)] // documentation missing in model
     MarketplaceCar,
     #[allow(missing_docs)] // documentation missing in model
+    TerraformCloud,
+    #[allow(missing_docs)] // documentation missing in model
     TerraformOpenSource,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
@@ -60,6 +63,7 @@ impl ::std::convert::From<&str> for ProvisioningArtifactType {
             "CLOUD_FORMATION_TEMPLATE" => ProvisioningArtifactType::CloudFormationTemplate,
             "MARKETPLACE_AMI" => ProvisioningArtifactType::MarketplaceAmi,
             "MARKETPLACE_CAR" => ProvisioningArtifactType::MarketplaceCar,
+            "TERRAFORM_CLOUD" => ProvisioningArtifactType::TerraformCloud,
             "TERRAFORM_OPEN_SOURCE" => ProvisioningArtifactType::TerraformOpenSource,
             other => ProvisioningArtifactType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
@@ -79,13 +83,20 @@ impl ProvisioningArtifactType {
             ProvisioningArtifactType::CloudFormationTemplate => "CLOUD_FORMATION_TEMPLATE",
             ProvisioningArtifactType::MarketplaceAmi => "MARKETPLACE_AMI",
             ProvisioningArtifactType::MarketplaceCar => "MARKETPLACE_CAR",
+            ProvisioningArtifactType::TerraformCloud => "TERRAFORM_CLOUD",
             ProvisioningArtifactType::TerraformOpenSource => "TERRAFORM_OPEN_SOURCE",
             ProvisioningArtifactType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CLOUD_FORMATION_TEMPLATE", "MARKETPLACE_AMI", "MARKETPLACE_CAR", "TERRAFORM_OPEN_SOURCE"]
+        &[
+            "CLOUD_FORMATION_TEMPLATE",
+            "MARKETPLACE_AMI",
+            "MARKETPLACE_CAR",
+            "TERRAFORM_CLOUD",
+            "TERRAFORM_OPEN_SOURCE",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for ProvisioningArtifactType {

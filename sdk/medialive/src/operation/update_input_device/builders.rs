@@ -166,4 +166,18 @@ impl UpdateInputDeviceFluentBuilder {
     pub fn get_uhd_device_settings(&self) -> &::std::option::Option<crate::types::InputDeviceConfigurableSettings> {
         self.inner.get_uhd_device_settings()
     }
+    /// The Availability Zone you want associated with this input device.
+    pub fn availability_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.availability_zone(input.into());
+        self
+    }
+    /// The Availability Zone you want associated with this input device.
+    pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_availability_zone(input);
+        self
+    }
+    /// The Availability Zone you want associated with this input device.
+    pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_availability_zone()
+    }
 }

@@ -8,7 +8,7 @@ pub struct UpdateAlertInput {
     /// <p>A description of the alert.</p>
     pub alert_description: ::std::option::Option<::std::string::String>,
     /// <p>An integer from 0 to 100 specifying the alert sensitivity threshold.</p>
-    pub alert_sensitivity_threshold: i32,
+    pub alert_sensitivity_threshold: ::std::option::Option<i32>,
     /// <p>Action that will be triggered when there is an alert.</p>
     pub action: ::std::option::Option<crate::types::Action>,
     /// <p>The configuration of the alert filters, containing MetricList and DimensionFilterList.</p>
@@ -24,7 +24,7 @@ impl UpdateAlertInput {
         self.alert_description.as_deref()
     }
     /// <p>An integer from 0 to 100 specifying the alert sensitivity threshold.</p>
-    pub fn alert_sensitivity_threshold(&self) -> i32 {
+    pub fn alert_sensitivity_threshold(&self) -> ::std::option::Option<i32> {
         self.alert_sensitivity_threshold
     }
     /// <p>Action that will be triggered when there is an alert.</p>
@@ -129,7 +129,7 @@ impl UpdateAlertInputBuilder {
         ::std::result::Result::Ok(crate::operation::update_alert::UpdateAlertInput {
             alert_arn: self.alert_arn,
             alert_description: self.alert_description,
-            alert_sensitivity_threshold: self.alert_sensitivity_threshold.unwrap_or_default(),
+            alert_sensitivity_threshold: self.alert_sensitivity_threshold,
             action: self.action,
             alert_filters: self.alert_filters,
         })

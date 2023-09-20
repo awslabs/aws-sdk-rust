@@ -22,7 +22,7 @@ impl UpdateConfigurationSetReputationMetricsEnabledInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateConfigurationSetReputationMetricsEnabled`.
 ///
-/// <p>Enables or disables the publishing of reputation metrics for emails sent using a specific configuration set in a given AWS Region. Reputation metrics include bounce and complaint rates. These metrics are published to Amazon CloudWatch. By using CloudWatch, you can create alarms when bounce or complaint rates exceed certain thresholds.</p>
+/// <p>Enables or disables the publishing of reputation metrics for emails sent using a specific configuration set in a given Amazon Web Services Region. Reputation metrics include bounce and complaint rates. These metrics are published to Amazon CloudWatch. By using CloudWatch, you can create alarms when bounce or complaint rates exceed certain thresholds.</p>
 /// <p>You can execute this operation no more than once per second.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateConfigurationSetReputationMetricsEnabledFluentBuilder {
@@ -121,31 +121,31 @@ impl UpdateConfigurationSetReputationMetricsEnabledFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name of the configuration set that you want to update.</p>
+    /// <p>The name of the configuration set to update.</p>
     pub fn configuration_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.configuration_set_name(input.into());
         self
     }
-    /// <p>The name of the configuration set that you want to update.</p>
+    /// <p>The name of the configuration set to update.</p>
     pub fn set_configuration_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_configuration_set_name(input);
         self
     }
-    /// <p>The name of the configuration set that you want to update.</p>
+    /// <p>The name of the configuration set to update.</p>
     pub fn get_configuration_set_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_configuration_set_name()
     }
-    /// <p>Describes whether or not Amazon SES will publish reputation metrics for the configuration set, such as bounce and complaint rates, to Amazon CloudWatch.</p>
+    /// <p>Describes whether or not Amazon SES publishes reputation metrics for the configuration set, such as bounce and complaint rates, to Amazon CloudWatch.</p>
     pub fn enabled(mut self, input: bool) -> Self {
         self.inner = self.inner.enabled(input);
         self
     }
-    /// <p>Describes whether or not Amazon SES will publish reputation metrics for the configuration set, such as bounce and complaint rates, to Amazon CloudWatch.</p>
+    /// <p>Describes whether or not Amazon SES publishes reputation metrics for the configuration set, such as bounce and complaint rates, to Amazon CloudWatch.</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_enabled(input);
         self
     }
-    /// <p>Describes whether or not Amazon SES will publish reputation metrics for the configuration set, such as bounce and complaint rates, to Amazon CloudWatch.</p>
+    /// <p>Describes whether or not Amazon SES publishes reputation metrics for the configuration set, such as bounce and complaint rates, to Amazon CloudWatch.</p>
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
         self.inner.get_enabled()
     }

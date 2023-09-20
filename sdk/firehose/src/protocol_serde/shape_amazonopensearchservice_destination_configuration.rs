@@ -60,5 +60,11 @@ pub fn ser_amazonopensearchservice_destination_configuration(
         crate::protocol_serde::shape_vpc_configuration::ser_vpc_configuration(&mut object_19, var_18)?;
         object_19.finish();
     }
+    if let Some(var_20) = &input.document_id_options {
+        #[allow(unused_mut)]
+        let mut object_21 = object.key("DocumentIdOptions").start_object();
+        crate::protocol_serde::shape_document_id_options::ser_document_id_options(&mut object_21, var_20)?;
+        object_21.finish();
+    }
     Ok(())
 }

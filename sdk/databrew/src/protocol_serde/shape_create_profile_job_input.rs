@@ -27,57 +27,57 @@ pub fn ser_create_profile_job_input(
     if let Some(var_8) = &input.log_subscription {
         object.key("LogSubscription").string(var_8.as_str());
     }
-    if input.max_capacity != 0 {
+    if let Some(var_9) = &input.max_capacity {
         object.key("MaxCapacity").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.max_capacity).into()),
+            ::aws_smithy_types::Number::NegInt((*var_9).into()),
         );
     }
-    if input.max_retries != 0 {
+    if let Some(var_10) = &input.max_retries {
         object.key("MaxRetries").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.max_retries).into()),
+            ::aws_smithy_types::Number::NegInt((*var_10).into()),
         );
     }
-    if let Some(var_9) = &input.name {
-        object.key("Name").string(var_9.as_str());
+    if let Some(var_11) = &input.name {
+        object.key("Name").string(var_11.as_str());
     }
-    if let Some(var_10) = &input.output_location {
+    if let Some(var_12) = &input.output_location {
         #[allow(unused_mut)]
-        let mut object_11 = object.key("OutputLocation").start_object();
-        crate::protocol_serde::shape_s3_location::ser_s3_location(&mut object_11, var_10)?;
-        object_11.finish();
+        let mut object_13 = object.key("OutputLocation").start_object();
+        crate::protocol_serde::shape_s3_location::ser_s3_location(&mut object_13, var_12)?;
+        object_13.finish();
     }
-    if let Some(var_12) = &input.role_arn {
-        object.key("RoleArn").string(var_12.as_str());
+    if let Some(var_14) = &input.role_arn {
+        object.key("RoleArn").string(var_14.as_str());
     }
-    if let Some(var_13) = &input.tags {
+    if let Some(var_15) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_14 = object.key("Tags").start_object();
-        for (key_15, value_16) in var_13 {
+        let mut object_16 = object.key("Tags").start_object();
+        for (key_17, value_18) in var_15 {
             {
-                object_14.key(key_15.as_str()).string(value_16.as_str());
+                object_16.key(key_17.as_str()).string(value_18.as_str());
             }
         }
-        object_14.finish();
+        object_16.finish();
     }
-    if input.timeout != 0 {
+    if let Some(var_19) = &input.timeout {
         object.key("Timeout").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.timeout).into()),
+            ::aws_smithy_types::Number::NegInt((*var_19).into()),
         );
     }
-    if let Some(var_17) = &input.validation_configurations {
-        let mut array_18 = object.key("ValidationConfigurations").start_array();
-        for item_19 in var_17 {
+    if let Some(var_20) = &input.validation_configurations {
+        let mut array_21 = object.key("ValidationConfigurations").start_array();
+        for item_22 in var_20 {
             {
                 #[allow(unused_mut)]
-                let mut object_20 = array_18.value().start_object();
-                crate::protocol_serde::shape_validation_configuration::ser_validation_configuration(&mut object_20, item_19)?;
-                object_20.finish();
+                let mut object_23 = array_21.value().start_object();
+                crate::protocol_serde::shape_validation_configuration::ser_validation_configuration(&mut object_23, item_22)?;
+                object_23.finish();
             }
         }
-        array_18.finish();
+        array_21.finish();
     }
     Ok(())
 }

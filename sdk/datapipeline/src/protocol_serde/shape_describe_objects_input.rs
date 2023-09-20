@@ -15,11 +15,11 @@ pub fn ser_describe_objects_input(
         }
         array_3.finish();
     }
-    if input.evaluate_expressions {
-        object.key("evaluateExpressions").boolean(input.evaluate_expressions);
+    if let Some(var_5) = &input.evaluate_expressions {
+        object.key("evaluateExpressions").boolean(*var_5);
     }
-    if let Some(var_5) = &input.marker {
-        object.key("marker").string(var_5.as_str());
+    if let Some(var_6) = &input.marker {
+        object.key("marker").string(var_6.as_str());
     }
     Ok(())
 }

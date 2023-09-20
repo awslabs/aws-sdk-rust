@@ -45,6 +45,8 @@ pub(crate) mod shape_associate_routing_profile_queues;
 
 pub(crate) mod shape_associate_security_key;
 
+pub(crate) mod shape_associate_traffic_distribution_group_user;
+
 pub(crate) mod shape_claim_phone_number;
 
 pub(crate) mod shape_create_agent_status;
@@ -85,6 +87,10 @@ pub(crate) mod shape_create_user;
 
 pub(crate) mod shape_create_user_hierarchy_group;
 
+pub(crate) mod shape_create_view;
+
+pub(crate) mod shape_create_view_version;
+
 pub(crate) mod shape_create_vocabulary;
 
 pub(crate) mod shape_deactivate_evaluation_form;
@@ -124,6 +130,10 @@ pub(crate) mod shape_delete_use_case;
 pub(crate) mod shape_delete_user;
 
 pub(crate) mod shape_delete_user_hierarchy_group;
+
+pub(crate) mod shape_delete_view;
+
+pub(crate) mod shape_delete_view_version;
 
 pub(crate) mod shape_delete_vocabulary;
 
@@ -169,6 +179,8 @@ pub(crate) mod shape_describe_user_hierarchy_group;
 
 pub(crate) mod shape_describe_user_hierarchy_structure;
 
+pub(crate) mod shape_describe_view;
+
 pub(crate) mod shape_describe_vocabulary;
 
 pub(crate) mod shape_disassociate_approved_origin;
@@ -188,6 +200,8 @@ pub(crate) mod shape_disassociate_queue_quick_connects;
 pub(crate) mod shape_disassociate_routing_profile_queues;
 
 pub(crate) mod shape_disassociate_security_key;
+
+pub(crate) mod shape_disassociate_traffic_distribution_group_user;
 
 pub(crate) mod shape_dismiss_user_contact;
 
@@ -271,6 +285,8 @@ pub(crate) mod shape_list_tags_for_resource;
 
 pub(crate) mod shape_list_task_templates;
 
+pub(crate) mod shape_list_traffic_distribution_group_users;
+
 pub(crate) mod shape_list_traffic_distribution_groups;
 
 pub(crate) mod shape_list_use_cases;
@@ -278,6 +294,10 @@ pub(crate) mod shape_list_use_cases;
 pub(crate) mod shape_list_user_hierarchy_groups;
 
 pub(crate) mod shape_list_users;
+
+pub(crate) mod shape_list_view_versions;
+
+pub(crate) mod shape_list_views;
 
 pub(crate) mod shape_monitor_contact;
 
@@ -385,6 +405,8 @@ pub(crate) mod shape_update_quick_connect_config;
 
 pub(crate) mod shape_update_quick_connect_name;
 
+pub(crate) mod shape_update_routing_profile_agent_availability_timer;
+
 pub(crate) mod shape_update_routing_profile_concurrency;
 
 pub(crate) mod shape_update_routing_profile_default_outbound_queue;
@@ -414,6 +436,10 @@ pub(crate) mod shape_update_user_phone_config;
 pub(crate) mod shape_update_user_routing_profile;
 
 pub(crate) mod shape_update_user_security_profiles;
+
+pub(crate) mod shape_update_view_content;
+
+pub(crate) mod shape_update_view_metadata;
 
 pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
     if data.is_empty() {
@@ -446,6 +472,8 @@ pub(crate) mod shape_associate_queue_quick_connects_input;
 pub(crate) mod shape_associate_routing_profile_queues_input;
 
 pub(crate) mod shape_associate_security_key_input;
+
+pub(crate) mod shape_associate_traffic_distribution_group_user_input;
 
 pub(crate) mod shape_claim_phone_number_input;
 
@@ -490,6 +518,10 @@ pub(crate) mod shape_create_use_case_input;
 pub(crate) mod shape_create_user_hierarchy_group_input;
 
 pub(crate) mod shape_create_user_input;
+
+pub(crate) mod shape_create_view_input;
+
+pub(crate) mod shape_create_view_version_input;
 
 pub(crate) mod shape_create_vocabulary_input;
 
@@ -603,6 +635,8 @@ pub(crate) mod shape_tag_resource_input;
 
 pub(crate) mod shape_throttling_exception;
 
+pub(crate) mod shape_too_many_requests_exception;
+
 pub(crate) mod shape_transfer_contact_input;
 
 pub(crate) mod shape_update_agent_status_input;
@@ -653,6 +687,8 @@ pub(crate) mod shape_update_quick_connect_config_input;
 
 pub(crate) mod shape_update_quick_connect_name_input;
 
+pub(crate) mod shape_update_routing_profile_agent_availability_timer_input;
+
 pub(crate) mod shape_update_routing_profile_concurrency_input;
 
 pub(crate) mod shape_update_routing_profile_default_outbound_queue_input;
@@ -683,7 +719,13 @@ pub(crate) mod shape_update_user_routing_profile_input;
 
 pub(crate) mod shape_update_user_security_profiles_input;
 
+pub(crate) mod shape_update_view_content_input;
+
+pub(crate) mod shape_update_view_metadata_input;
+
 pub(crate) mod shape_user_not_found_exception;
+
+pub(crate) mod shape_agent_config;
 
 pub(crate) mod shape_agent_status;
 
@@ -895,6 +937,8 @@ pub(crate) mod shape_security_profiles_search_filter;
 
 pub(crate) mod shape_security_profiles_search_summary_list;
 
+pub(crate) mod shape_sign_in_config;
+
 pub(crate) mod shape_tag_map;
 
 pub(crate) mod shape_tags_list;
@@ -914,6 +958,8 @@ pub(crate) mod shape_telephony_config;
 pub(crate) mod shape_traffic_distribution_group;
 
 pub(crate) mod shape_traffic_distribution_group_summary_list;
+
+pub(crate) mod shape_traffic_distribution_group_user_summary_list;
 
 pub(crate) mod shape_update_participant_role_config_channel_info;
 
@@ -936,6 +982,14 @@ pub(crate) mod shape_user_search_filter;
 pub(crate) mod shape_user_search_summary_list;
 
 pub(crate) mod shape_user_summary_list;
+
+pub(crate) mod shape_view;
+
+pub(crate) mod shape_view_input_content;
+
+pub(crate) mod shape_view_version_summary_list;
+
+pub(crate) mod shape_views_summary_list;
 
 pub(crate) mod shape_vocabulary;
 
@@ -1091,6 +1145,10 @@ pub(crate) mod shape_security_profile_summary;
 
 pub(crate) mod shape_send_notification_action_definition;
 
+pub(crate) mod shape_sign_in_distribution;
+
+pub(crate) mod shape_sign_in_distribution_list;
+
 pub(crate) mod shape_string_condition;
 
 pub(crate) mod shape_tag_restricted_resource_list;
@@ -1115,6 +1173,8 @@ pub(crate) mod shape_threshold_v2;
 
 pub(crate) mod shape_traffic_distribution_group_summary;
 
+pub(crate) mod shape_traffic_distribution_group_user_summary;
+
 pub(crate) mod shape_use_case;
 
 pub(crate) mod shape_user_data;
@@ -1124,6 +1184,12 @@ pub(crate) mod shape_user_quick_connect_config;
 pub(crate) mod shape_user_search_summary;
 
 pub(crate) mod shape_user_summary;
+
+pub(crate) mod shape_view_content;
+
+pub(crate) mod shape_view_summary;
+
+pub(crate) mod shape_view_version_summary;
 
 pub(crate) mod shape_vocabulary_summary;
 
@@ -1182,6 +1248,8 @@ pub(crate) mod shape_url_reference;
 pub(crate) mod shape_user_identity_info_lite;
 
 pub(crate) mod shape_user_reference;
+
+pub(crate) mod shape_view_actions;
 
 pub(crate) mod shape_action_summary;
 

@@ -37,6 +37,9 @@ pub mod describe_cluster;
 /// Types for the `DescribeClusterOperation` operation.
 pub mod describe_cluster_operation;
 
+/// Types for the `DescribeClusterOperationV2` operation.
+pub mod describe_cluster_operation_v2;
+
 /// Types for the `DescribeClusterV2` operation.
 pub mod describe_cluster_v2;
 
@@ -63,6 +66,9 @@ pub mod list_client_vpc_connections;
 
 /// Types for the `ListClusterOperations` operation.
 pub mod list_cluster_operations;
+
+/// Types for the `ListClusterOperationsV2` operation.
+pub mod list_cluster_operations_v2;
 
 /// Types for the `ListClusters` operation.
 pub mod list_clusters;

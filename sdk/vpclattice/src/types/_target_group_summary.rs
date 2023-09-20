@@ -28,6 +28,8 @@ pub struct TargetGroupSummary {
     pub status: ::std::option::Option<crate::types::TargetGroupStatus>,
     /// <p>The list of Amazon Resource Names (ARNs) of the service.</p>
     pub service_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// Lambda event structure version
+    pub lambda_event_structure_version: ::std::option::Option<crate::types::LambdaEventStructureVersion>,
 }
 impl TargetGroupSummary {
     /// <p>The ID of the target group.</p>
@@ -78,6 +80,10 @@ impl TargetGroupSummary {
     pub fn service_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.service_arns.as_deref()
     }
+    /// Lambda event structure version
+    pub fn lambda_event_structure_version(&self) -> ::std::option::Option<&crate::types::LambdaEventStructureVersion> {
+        self.lambda_event_structure_version.as_ref()
+    }
 }
 impl TargetGroupSummary {
     /// Creates a new builder-style object to manufacture [`TargetGroupSummary`](crate::types::TargetGroupSummary).
@@ -102,6 +108,7 @@ pub struct TargetGroupSummaryBuilder {
     pub(crate) last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) status: ::std::option::Option<crate::types::TargetGroupStatus>,
     pub(crate) service_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) lambda_event_structure_version: ::std::option::Option<crate::types::LambdaEventStructureVersion>,
 }
 impl TargetGroupSummaryBuilder {
     /// <p>The ID of the target group.</p>
@@ -278,6 +285,20 @@ impl TargetGroupSummaryBuilder {
     pub fn get_service_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.service_arns
     }
+    /// Lambda event structure version
+    pub fn lambda_event_structure_version(mut self, input: crate::types::LambdaEventStructureVersion) -> Self {
+        self.lambda_event_structure_version = ::std::option::Option::Some(input);
+        self
+    }
+    /// Lambda event structure version
+    pub fn set_lambda_event_structure_version(mut self, input: ::std::option::Option<crate::types::LambdaEventStructureVersion>) -> Self {
+        self.lambda_event_structure_version = input;
+        self
+    }
+    /// Lambda event structure version
+    pub fn get_lambda_event_structure_version(&self) -> &::std::option::Option<crate::types::LambdaEventStructureVersion> {
+        &self.lambda_event_structure_version
+    }
     /// Consumes the builder and constructs a [`TargetGroupSummary`](crate::types::TargetGroupSummary).
     pub fn build(self) -> crate::types::TargetGroupSummary {
         crate::types::TargetGroupSummary {
@@ -293,6 +314,7 @@ impl TargetGroupSummaryBuilder {
             last_updated_at: self.last_updated_at,
             status: self.status,
             service_arns: self.service_arns,
+            lambda_event_structure_version: self.lambda_event_structure_version,
         }
     }
 }

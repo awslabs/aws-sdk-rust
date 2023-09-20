@@ -6,29 +6,29 @@ pub fn ser_decrease_replication_factor_input(
     if let Some(var_1) = &input.cluster_name {
         object.key("ClusterName").string(var_1.as_str());
     }
-    {
+    if let Some(var_2) = &input.new_replication_factor {
         object.key("NewReplicationFactor").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.new_replication_factor).into()),
+            ::aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
-    if let Some(var_2) = &input.availability_zones {
-        let mut array_3 = object.key("AvailabilityZones").start_array();
-        for item_4 in var_2 {
+    if let Some(var_3) = &input.availability_zones {
+        let mut array_4 = object.key("AvailabilityZones").start_array();
+        for item_5 in var_3 {
             {
-                array_3.value().string(item_4.as_str());
+                array_4.value().string(item_5.as_str());
             }
         }
-        array_3.finish();
+        array_4.finish();
     }
-    if let Some(var_5) = &input.node_ids_to_remove {
-        let mut array_6 = object.key("NodeIdsToRemove").start_array();
-        for item_7 in var_5 {
+    if let Some(var_6) = &input.node_ids_to_remove {
+        let mut array_7 = object.key("NodeIdsToRemove").start_array();
+        for item_8 in var_6 {
             {
-                array_6.value().string(item_7.as_str());
+                array_7.value().string(item_8.as_str());
             }
         }
-        array_6.finish();
+        array_7.finish();
     }
     Ok(())
 }

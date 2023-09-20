@@ -128,6 +128,7 @@ where
 impl From<crate::operation::create_flow::CreateFlowError> for Error {
     fn from(err: crate::operation::create_flow::CreateFlowError) -> Self {
         match err {
+            crate::operation::create_flow::CreateFlowError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::create_flow::CreateFlowError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::create_flow::CreateFlowError::ConnectorAuthenticationException(inner) => Error::ConnectorAuthenticationException(inner),
             crate::operation::create_flow::CreateFlowError::ConnectorServerException(inner) => Error::ConnectorServerException(inner),
@@ -796,6 +797,7 @@ where
 impl From<crate::operation::update_flow::UpdateFlowError> for Error {
     fn from(err: crate::operation::update_flow::UpdateFlowError) -> Self {
         match err {
+            crate::operation::update_flow::UpdateFlowError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::update_flow::UpdateFlowError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::update_flow::UpdateFlowError::ConnectorAuthenticationException(inner) => Error::ConnectorAuthenticationException(inner),
             crate::operation::update_flow::UpdateFlowError::ConnectorServerException(inner) => Error::ConnectorServerException(inner),

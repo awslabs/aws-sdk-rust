@@ -21,6 +21,12 @@ pub use crate::types::_sort_key::SortKey;
 
 pub use crate::types::_scan_direction::ScanDirection;
 
+pub use crate::types::_resource_type::ResourceType;
+
+pub use crate::types::_view::View;
+
+pub use crate::types::_view_content::ViewContent;
+
 pub use crate::types::_connection_credentials::ConnectionCredentials;
 
 pub use crate::types::_websocket::Websocket;
@@ -45,6 +51,8 @@ mod _participant_role;
 
 mod _receipt;
 
+mod _resource_type;
+
 mod _scan_direction;
 
 mod _sort_key;
@@ -52,6 +60,10 @@ mod _sort_key;
 mod _start_position;
 
 mod _upload_metadata;
+
+mod _view;
+
+mod _view_content;
 
 mod _websocket;
 

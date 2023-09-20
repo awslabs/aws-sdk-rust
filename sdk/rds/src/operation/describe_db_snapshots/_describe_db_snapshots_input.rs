@@ -47,11 +47,11 @@ pub struct DescribeDbSnapshotsInput {
     /// <p>A value that indicates whether to include shared manual DB cluster snapshots from other Amazon Web Services accounts that this Amazon Web Services account has been given permission to copy or restore. By default, these snapshots are not included.</p>
     /// <p>You can give an Amazon Web Services account permission to restore a manual DB snapshot from another Amazon Web Services account by using the <code>ModifyDBSnapshotAttribute</code> API action.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
-    pub include_shared: bool,
+    pub include_shared: ::std::option::Option<bool>,
     /// <p>A value that indicates whether to include manual DB cluster snapshots that are public and can be copied or restored by any Amazon Web Services account. By default, the public snapshots are not included.</p>
     /// <p>You can share a manual DB snapshot as public by using the <code>ModifyDBSnapshotAttribute</code> API.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
-    pub include_public: bool,
+    pub include_public: ::std::option::Option<bool>,
     /// <p>A specific DB resource ID to describe.</p>
     pub dbi_resource_id: ::std::option::Option<::std::string::String>,
 }
@@ -111,13 +111,13 @@ impl DescribeDbSnapshotsInput {
     /// <p>A value that indicates whether to include shared manual DB cluster snapshots from other Amazon Web Services accounts that this Amazon Web Services account has been given permission to copy or restore. By default, these snapshots are not included.</p>
     /// <p>You can give an Amazon Web Services account permission to restore a manual DB snapshot from another Amazon Web Services account by using the <code>ModifyDBSnapshotAttribute</code> API action.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
-    pub fn include_shared(&self) -> bool {
+    pub fn include_shared(&self) -> ::std::option::Option<bool> {
         self.include_shared
     }
     /// <p>A value that indicates whether to include manual DB cluster snapshots that are public and can be copied or restored by any Amazon Web Services account. By default, the public snapshots are not included.</p>
     /// <p>You can share a manual DB snapshot as public by using the <code>ModifyDBSnapshotAttribute</code> API.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
-    pub fn include_public(&self) -> bool {
+    pub fn include_public(&self) -> ::std::option::Option<bool> {
         self.include_public
     }
     /// <p>A specific DB resource ID to describe.</p>
@@ -387,8 +387,8 @@ impl DescribeDbSnapshotsInputBuilder {
             filters: self.filters,
             max_records: self.max_records,
             marker: self.marker,
-            include_shared: self.include_shared.unwrap_or_default(),
-            include_public: self.include_public.unwrap_or_default(),
+            include_shared: self.include_shared,
+            include_public: self.include_public,
             dbi_resource_id: self.dbi_resource_id,
         })
     }

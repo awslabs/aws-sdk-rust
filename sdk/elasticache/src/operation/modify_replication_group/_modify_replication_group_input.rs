@@ -53,7 +53,7 @@ pub struct ModifyReplicationGroupInput {
     /// <p>If <code>false</code>, changes to the nodes in the replication group are applied on the next maintenance reboot, or the next failure reboot, whichever occurs first.</p>
     /// <p>Valid values: <code>true</code> | <code>false</code> </p>
     /// <p>Default: <code>false</code> </p>
-    pub apply_immediately: bool,
+    pub apply_immediately: ::std::option::Option<bool>,
     /// <p>The upgraded version of the cache engine to be run on the clusters in the replication group.</p>
     /// <p> <b>Important:</b> You can upgrade to a newer engine version (see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SelectEngine.html#VersionManagement">Selecting a Cache Engine and Version</a>), but you cannot downgrade to an earlier engine version. If you want to use an earlier engine version, you must delete the existing replication group and create it anew with the earlier engine version. </p>
     pub engine_version: ::std::option::Option<::std::string::String>,
@@ -178,7 +178,7 @@ impl ModifyReplicationGroupInput {
     /// <p>If <code>false</code>, changes to the nodes in the replication group are applied on the next maintenance reboot, or the next failure reboot, whichever occurs first.</p>
     /// <p>Valid values: <code>true</code> | <code>false</code> </p>
     /// <p>Default: <code>false</code> </p>
-    pub fn apply_immediately(&self) -> bool {
+    pub fn apply_immediately(&self) -> ::std::option::Option<bool> {
         self.apply_immediately
     }
     /// <p>The upgraded version of the cache engine to be run on the clusters in the replication group.</p>
@@ -876,7 +876,7 @@ impl ModifyReplicationGroupInputBuilder {
             notification_topic_arn: self.notification_topic_arn,
             cache_parameter_group_name: self.cache_parameter_group_name,
             notification_topic_status: self.notification_topic_status,
-            apply_immediately: self.apply_immediately.unwrap_or_default(),
+            apply_immediately: self.apply_immediately,
             engine_version: self.engine_version,
             auto_minor_version_upgrade: self.auto_minor_version_upgrade,
             snapshot_retention_limit: self.snapshot_retention_limit,

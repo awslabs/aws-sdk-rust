@@ -5,20 +5,20 @@
 pub struct IncreaseNodeGroupsInGlobalReplicationGroupInput {
     /// <p>The name of the Global datastore</p>
     pub global_replication_group_id: ::std::option::Option<::std::string::String>,
-    /// <p>The number of node groups you wish to add</p>
-    pub node_group_count: i32,
+    /// <p>Total number of node groups you want</p>
+    pub node_group_count: ::std::option::Option<i32>,
     /// <p>Describes the replication group IDs, the Amazon regions where they are stored and the shard configuration for each that comprise the Global datastore</p>
     pub regional_configurations: ::std::option::Option<::std::vec::Vec<crate::types::RegionalConfiguration>>,
     /// <p>Indicates that the process begins immediately. At present, the only permitted value for this parameter is true.</p>
-    pub apply_immediately: bool,
+    pub apply_immediately: ::std::option::Option<bool>,
 }
 impl IncreaseNodeGroupsInGlobalReplicationGroupInput {
     /// <p>The name of the Global datastore</p>
     pub fn global_replication_group_id(&self) -> ::std::option::Option<&str> {
         self.global_replication_group_id.as_deref()
     }
-    /// <p>The number of node groups you wish to add</p>
-    pub fn node_group_count(&self) -> i32 {
+    /// <p>Total number of node groups you want</p>
+    pub fn node_group_count(&self) -> ::std::option::Option<i32> {
         self.node_group_count
     }
     /// <p>Describes the replication group IDs, the Amazon regions where they are stored and the shard configuration for each that comprise the Global datastore</p>
@@ -26,7 +26,7 @@ impl IncreaseNodeGroupsInGlobalReplicationGroupInput {
         self.regional_configurations.as_deref()
     }
     /// <p>Indicates that the process begins immediately. At present, the only permitted value for this parameter is true.</p>
-    pub fn apply_immediately(&self) -> bool {
+    pub fn apply_immediately(&self) -> ::std::option::Option<bool> {
         self.apply_immediately
     }
 }
@@ -63,17 +63,17 @@ impl IncreaseNodeGroupsInGlobalReplicationGroupInputBuilder {
     pub fn get_global_replication_group_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.global_replication_group_id
     }
-    /// <p>The number of node groups you wish to add</p>
+    /// <p>Total number of node groups you want</p>
     pub fn node_group_count(mut self, input: i32) -> Self {
         self.node_group_count = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of node groups you wish to add</p>
+    /// <p>Total number of node groups you want</p>
     pub fn set_node_group_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.node_group_count = input;
         self
     }
-    /// <p>The number of node groups you wish to add</p>
+    /// <p>Total number of node groups you want</p>
     pub fn get_node_group_count(&self) -> &::std::option::Option<i32> {
         &self.node_group_count
     }
@@ -121,9 +121,9 @@ impl IncreaseNodeGroupsInGlobalReplicationGroupInputBuilder {
         ::std::result::Result::Ok(
             crate::operation::increase_node_groups_in_global_replication_group::IncreaseNodeGroupsInGlobalReplicationGroupInput {
                 global_replication_group_id: self.global_replication_group_id,
-                node_group_count: self.node_group_count.unwrap_or_default(),
+                node_group_count: self.node_group_count,
                 regional_configurations: self.regional_configurations,
-                apply_immediately: self.apply_immediately.unwrap_or_default(),
+                apply_immediately: self.apply_immediately,
             },
         )
     }

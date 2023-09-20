@@ -5,28 +5,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImportRestApiInput {
     /// <p>A query parameter to indicate whether to rollback the API creation (<code>true</code>) or not (<code>false</code>) when a warning is encountered. The default value is <code>false</code>.</p>
-    pub fail_on_warnings: bool,
+    pub fail_on_warnings: ::std::option::Option<bool>,
     /// <p>A key-value map of context-specific query string parameters specifying the behavior of different API importing operations. The following shows operation-specific parameters and their supported values.</p>
     /// <p> To exclude DocumentationParts from the import, set <code>parameters</code> as <code>ignore=documentation</code>.</p>
     /// <p> To configure the endpoint type, set <code>parameters</code> as <code>endpointConfigurationTypes=EDGE</code>, <code>endpointConfigurationTypes=REGIONAL</code>, or <code>endpointConfigurationTypes=PRIVATE</code>. The default endpoint type is <code>EDGE</code>.</p>
     /// <p> To handle imported <code>basepath</code>, set <code>parameters</code> as <code>basepath=ignore</code>, <code>basepath=prepend</code> or <code>basepath=split</code>.</p>
-    /// <p>For example, the AWS CLI command to exclude documentation from the imported API is:</p>
-    /// <p>The AWS CLI command to set the regional endpoint on the imported API is:</p>
     pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The POST request body containing external API definitions. Currently, only OpenAPI definition JSON/YAML files are supported. The maximum size of the API definition file is 6MB.</p>
     pub body: ::std::option::Option<::aws_smithy_types::Blob>,
 }
 impl ImportRestApiInput {
     /// <p>A query parameter to indicate whether to rollback the API creation (<code>true</code>) or not (<code>false</code>) when a warning is encountered. The default value is <code>false</code>.</p>
-    pub fn fail_on_warnings(&self) -> bool {
+    pub fn fail_on_warnings(&self) -> ::std::option::Option<bool> {
         self.fail_on_warnings
     }
     /// <p>A key-value map of context-specific query string parameters specifying the behavior of different API importing operations. The following shows operation-specific parameters and their supported values.</p>
     /// <p> To exclude DocumentationParts from the import, set <code>parameters</code> as <code>ignore=documentation</code>.</p>
     /// <p> To configure the endpoint type, set <code>parameters</code> as <code>endpointConfigurationTypes=EDGE</code>, <code>endpointConfigurationTypes=REGIONAL</code>, or <code>endpointConfigurationTypes=PRIVATE</code>. The default endpoint type is <code>EDGE</code>.</p>
     /// <p> To handle imported <code>basepath</code>, set <code>parameters</code> as <code>basepath=ignore</code>, <code>basepath=prepend</code> or <code>basepath=split</code>.</p>
-    /// <p>For example, the AWS CLI command to exclude documentation from the imported API is:</p>
-    /// <p>The AWS CLI command to set the regional endpoint on the imported API is:</p>
     pub fn parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.parameters.as_ref()
     }
@@ -73,8 +69,6 @@ impl ImportRestApiInputBuilder {
     /// <p> To exclude DocumentationParts from the import, set <code>parameters</code> as <code>ignore=documentation</code>.</p>
     /// <p> To configure the endpoint type, set <code>parameters</code> as <code>endpointConfigurationTypes=EDGE</code>, <code>endpointConfigurationTypes=REGIONAL</code>, or <code>endpointConfigurationTypes=PRIVATE</code>. The default endpoint type is <code>EDGE</code>.</p>
     /// <p> To handle imported <code>basepath</code>, set <code>parameters</code> as <code>basepath=ignore</code>, <code>basepath=prepend</code> or <code>basepath=split</code>.</p>
-    /// <p>For example, the AWS CLI command to exclude documentation from the imported API is:</p>
-    /// <p>The AWS CLI command to set the regional endpoint on the imported API is:</p>
     pub fn parameters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.parameters.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
@@ -85,8 +79,6 @@ impl ImportRestApiInputBuilder {
     /// <p> To exclude DocumentationParts from the import, set <code>parameters</code> as <code>ignore=documentation</code>.</p>
     /// <p> To configure the endpoint type, set <code>parameters</code> as <code>endpointConfigurationTypes=EDGE</code>, <code>endpointConfigurationTypes=REGIONAL</code>, or <code>endpointConfigurationTypes=PRIVATE</code>. The default endpoint type is <code>EDGE</code>.</p>
     /// <p> To handle imported <code>basepath</code>, set <code>parameters</code> as <code>basepath=ignore</code>, <code>basepath=prepend</code> or <code>basepath=split</code>.</p>
-    /// <p>For example, the AWS CLI command to exclude documentation from the imported API is:</p>
-    /// <p>The AWS CLI command to set the regional endpoint on the imported API is:</p>
     pub fn set_parameters(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.parameters = input;
         self
@@ -95,8 +87,6 @@ impl ImportRestApiInputBuilder {
     /// <p> To exclude DocumentationParts from the import, set <code>parameters</code> as <code>ignore=documentation</code>.</p>
     /// <p> To configure the endpoint type, set <code>parameters</code> as <code>endpointConfigurationTypes=EDGE</code>, <code>endpointConfigurationTypes=REGIONAL</code>, or <code>endpointConfigurationTypes=PRIVATE</code>. The default endpoint type is <code>EDGE</code>.</p>
     /// <p> To handle imported <code>basepath</code>, set <code>parameters</code> as <code>basepath=ignore</code>, <code>basepath=prepend</code> or <code>basepath=split</code>.</p>
-    /// <p>For example, the AWS CLI command to exclude documentation from the imported API is:</p>
-    /// <p>The AWS CLI command to set the regional endpoint on the imported API is:</p>
     pub fn get_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.parameters
     }
@@ -119,7 +109,7 @@ impl ImportRestApiInputBuilder {
         self,
     ) -> ::std::result::Result<crate::operation::import_rest_api::ImportRestApiInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::import_rest_api::ImportRestApiInput {
-            fail_on_warnings: self.fail_on_warnings.unwrap_or_default(),
+            fail_on_warnings: self.fail_on_warnings,
             parameters: self.parameters,
             body: self.body,
         })

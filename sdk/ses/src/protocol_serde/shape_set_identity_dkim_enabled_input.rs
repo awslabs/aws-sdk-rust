@@ -12,8 +12,8 @@ pub fn ser_set_identity_dkim_enabled_input_input(
     }
     #[allow(unused_mut)]
     let mut scope_3 = writer.prefix("DkimEnabled");
-    {
-        scope_3.boolean(input.dkim_enabled);
+    if let Some(var_4) = &input.dkim_enabled {
+        scope_3.boolean(*var_4);
     }
     writer.finish();
     Ok(::aws_smithy_http::body::SdkBody::from(out))

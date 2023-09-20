@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct GetUserOutput {
-    /// <p>The user name of the user you want to retrieve from the get user request.</p>
+    /// <p>The username of the user that you requested.</p>
     pub username: ::std::option::Option<::std::string::String>,
     /// <p>An array of name-value pairs representing user attributes.</p>
     /// <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.</p>
@@ -18,7 +18,7 @@ pub struct GetUserOutput {
     _request_id: Option<String>,
 }
 impl GetUserOutput {
-    /// <p>The user name of the user you want to retrieve from the get user request.</p>
+    /// <p>The username of the user that you requested.</p>
     pub fn username(&self) -> ::std::option::Option<&str> {
         self.username.as_deref()
     }
@@ -76,17 +76,17 @@ pub struct GetUserOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetUserOutputBuilder {
-    /// <p>The user name of the user you want to retrieve from the get user request.</p>
+    /// <p>The username of the user that you requested.</p>
     pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.username = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The user name of the user you want to retrieve from the get user request.</p>
+    /// <p>The username of the user that you requested.</p>
     pub fn set_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.username = input;
         self
     }
-    /// <p>The user name of the user you want to retrieve from the get user request.</p>
+    /// <p>The username of the user that you requested.</p>
     pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
         &self.username
     }

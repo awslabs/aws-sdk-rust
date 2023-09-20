@@ -19,6 +19,8 @@ pub struct CreateFolderInput {
     pub permissions: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>,
     /// <p>Tags for the folder.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    /// <p>An optional parameter that determines the sharing scope of the folder. The default value for this parameter is <code>ACCOUNT</code>.</p>
+    pub sharing_model: ::std::option::Option<crate::types::SharingModel>,
 }
 impl CreateFolderInput {
     /// <p>The ID for the Amazon Web Services account where you want to create the folder.</p>
@@ -51,6 +53,10 @@ impl CreateFolderInput {
     pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
+    /// <p>An optional parameter that determines the sharing scope of the folder. The default value for this parameter is <code>ACCOUNT</code>.</p>
+    pub fn sharing_model(&self) -> ::std::option::Option<&crate::types::SharingModel> {
+        self.sharing_model.as_ref()
+    }
 }
 impl CreateFolderInput {
     /// Creates a new builder-style object to manufacture [`CreateFolderInput`](crate::operation::create_folder::CreateFolderInput).
@@ -70,6 +76,7 @@ pub struct CreateFolderInputBuilder {
     pub(crate) parent_folder_arn: ::std::option::Option<::std::string::String>,
     pub(crate) permissions: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) sharing_model: ::std::option::Option<crate::types::SharingModel>,
 }
 impl CreateFolderInputBuilder {
     /// <p>The ID for the Amazon Web Services account where you want to create the folder.</p>
@@ -188,6 +195,20 @@ impl CreateFolderInputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }
+    /// <p>An optional parameter that determines the sharing scope of the folder. The default value for this parameter is <code>ACCOUNT</code>.</p>
+    pub fn sharing_model(mut self, input: crate::types::SharingModel) -> Self {
+        self.sharing_model = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>An optional parameter that determines the sharing scope of the folder. The default value for this parameter is <code>ACCOUNT</code>.</p>
+    pub fn set_sharing_model(mut self, input: ::std::option::Option<crate::types::SharingModel>) -> Self {
+        self.sharing_model = input;
+        self
+    }
+    /// <p>An optional parameter that determines the sharing scope of the folder. The default value for this parameter is <code>ACCOUNT</code>.</p>
+    pub fn get_sharing_model(&self) -> &::std::option::Option<crate::types::SharingModel> {
+        &self.sharing_model
+    }
     /// Consumes the builder and constructs a [`CreateFolderInput`](crate::operation::create_folder::CreateFolderInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_folder::CreateFolderInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_folder::CreateFolderInput {
@@ -198,6 +219,7 @@ impl CreateFolderInputBuilder {
             parent_folder_arn: self.parent_folder_arn,
             permissions: self.permissions,
             tags: self.tags,
+            sharing_model: self.sharing_model,
         })
     }
 }

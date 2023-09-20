@@ -99,6 +99,16 @@ pub(crate) fn reflens_list_branches_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_file_commit_history_output_next_token(
+    input: &crate::operation::list_file_commit_history::ListFileCommitHistoryOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_pull_requests_output_next_token(
     input: &crate::operation::list_pull_requests::ListPullRequestsOutput,
 ) -> ::std::option::Option<&::std::string::String> {

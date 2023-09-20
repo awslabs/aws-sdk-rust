@@ -23,7 +23,7 @@ impl DeletePolicyInputBuilder {
 /// Fluent builder constructing a request to `DeletePolicy`.
 ///
 /// <p>Deletes the specified policy from your organization. Before you perform this operation, you must first detach the policy from all organizational units (OUs), roots, and accounts.</p>
-/// <p>This operation can be called only from the organization's management account.</p>
+/// <p>This operation can be called only from the organization's management account or by a member account that is a delegated administrator for an Amazon Web Services service.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeletePolicyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

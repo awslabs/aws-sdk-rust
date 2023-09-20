@@ -35,19 +35,29 @@ pub use crate::types::_event_aggregate::EventAggregate;
 
 pub use crate::types::_event_aggregate_field::EventAggregateField;
 
+pub use crate::types::_organization_entity_aggregate::OrganizationEntityAggregate;
+
+pub use crate::types::_account_entity_aggregate::AccountEntityAggregate;
+
+pub use crate::types::_entity_status_code::EntityStatusCode;
+
 pub use crate::types::_entity_aggregate::EntityAggregate;
 
 pub use crate::types::_organization_affected_entities_error_item::OrganizationAffectedEntitiesErrorItem;
 
 pub use crate::types::_affected_entity::AffectedEntity;
 
-pub use crate::types::_entity_status_code::EntityStatusCode;
+pub use crate::types::_entity_account_filter::EntityAccountFilter;
 
 pub use crate::types::_entity_filter::EntityFilter;
+
+mod _account_entity_aggregate;
 
 mod _affected_entity;
 
 mod _date_time_range;
+
+mod _entity_account_filter;
 
 mod _entity_aggregate;
 
@@ -82,6 +92,8 @@ mod _event_type_category;
 mod _event_type_filter;
 
 mod _organization_affected_entities_error_item;
+
+mod _organization_entity_aggregate;
 
 mod _organization_event;
 

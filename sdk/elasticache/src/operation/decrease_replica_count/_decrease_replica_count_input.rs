@@ -21,7 +21,7 @@ pub struct DecreaseReplicaCountInput {
     /// <p>A list of the node ids to remove from the replication group or node group (shard).</p>
     pub replicas_to_remove: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>If <code>True</code>, the number of replica nodes is decreased immediately. <code>ApplyImmediately=False</code> is not currently supported.</p>
-    pub apply_immediately: bool,
+    pub apply_immediately: ::std::option::Option<bool>,
 }
 impl DecreaseReplicaCountInput {
     /// <p>The id of the replication group from which you want to remove replica nodes.</p>
@@ -50,7 +50,7 @@ impl DecreaseReplicaCountInput {
         self.replicas_to_remove.as_deref()
     }
     /// <p>If <code>True</code>, the number of replica nodes is decreased immediately. <code>ApplyImmediately=False</code> is not currently supported.</p>
-    pub fn apply_immediately(&self) -> bool {
+    pub fn apply_immediately(&self) -> ::std::option::Option<bool> {
         self.apply_immediately
     }
 }
@@ -191,7 +191,7 @@ impl DecreaseReplicaCountInputBuilder {
             new_replica_count: self.new_replica_count,
             replica_configuration: self.replica_configuration,
             replicas_to_remove: self.replicas_to_remove,
-            apply_immediately: self.apply_immediately.unwrap_or_default(),
+            apply_immediately: self.apply_immediately,
         })
     }
 }

@@ -11,6 +11,7 @@ impl super::Client {
     ///   - [`config_file(Option<String>)`](crate::operation::get_config::GetConfigOutput::config_file): <p>The chrystoki.conf configuration file.</p>
     ///   - [`config_cred(Option<String>)`](crate::operation::get_config::GetConfigOutput::config_cred): <p>The certificate file containing the server.pem files of the HSMs.</p>
     /// - On failure, responds with [`SdkError<GetConfigError>`](crate::operation::get_config::GetConfigError)
+    #[deprecated(note = "This API is deprecated.")]
     pub fn get_config(&self) -> crate::operation::get_config::builders::GetConfigFluentBuilder {
         crate::operation::get_config::builders::GetConfigFluentBuilder::new(self.handle.clone())
     }

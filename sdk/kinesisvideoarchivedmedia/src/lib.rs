@@ -27,7 +27,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = "0.56.1"
-//! aws-sdk-kinesisvideoarchivedmedia = "0.31.0"
+//! aws-sdk-kinesisvideoarchivedmedia = "0.31.1"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
@@ -184,6 +184,8 @@ pub mod types;
 pub(crate) mod protocol_serde;
 
 mod serialization_settings;
+
+mod lens;
 
 mod endpoint_lib;
 

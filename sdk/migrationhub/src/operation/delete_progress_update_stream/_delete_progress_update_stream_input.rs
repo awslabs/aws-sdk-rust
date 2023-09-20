@@ -6,7 +6,7 @@ pub struct DeleteProgressUpdateStreamInput {
     /// <p>The name of the ProgressUpdateStream. <i>Do not store personal data in this field.</i> </p>
     pub progress_update_stream_name: ::std::option::Option<::std::string::String>,
     /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
-    pub dry_run: bool,
+    pub dry_run: ::std::option::Option<bool>,
 }
 impl DeleteProgressUpdateStreamInput {
     /// <p>The name of the ProgressUpdateStream. <i>Do not store personal data in this field.</i> </p>
@@ -14,7 +14,7 @@ impl DeleteProgressUpdateStreamInput {
         self.progress_update_stream_name.as_deref()
     }
     /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
-    pub fn dry_run(&self) -> bool {
+    pub fn dry_run(&self) -> ::std::option::Option<bool> {
         self.dry_run
     }
 }
@@ -70,7 +70,7 @@ impl DeleteProgressUpdateStreamInputBuilder {
     > {
         ::std::result::Result::Ok(crate::operation::delete_progress_update_stream::DeleteProgressUpdateStreamInput {
             progress_update_stream_name: self.progress_update_stream_name,
-            dry_run: self.dry_run.unwrap_or_default(),
+            dry_run: self.dry_run,
         })
     }
 }

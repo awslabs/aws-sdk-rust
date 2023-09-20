@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeFleetLocationCapacityOutput {
-    /// <p>Resource capacity information for the requested fleet location. Capacity objects are returned only for fleets and locations that currently exist.</p>
+    /// <p>Resource capacity information for the requested fleet location. Capacity objects are returned only for fleets and locations that currently exist. Changes in desired instance value can take up to 1 minute to be reflected.</p>
     pub fleet_capacity: ::std::option::Option<crate::types::FleetCapacity>,
     _request_id: Option<String>,
 }
 impl DescribeFleetLocationCapacityOutput {
-    /// <p>Resource capacity information for the requested fleet location. Capacity objects are returned only for fleets and locations that currently exist.</p>
+    /// <p>Resource capacity information for the requested fleet location. Capacity objects are returned only for fleets and locations that currently exist. Changes in desired instance value can take up to 1 minute to be reflected.</p>
     pub fn fleet_capacity(&self) -> ::std::option::Option<&crate::types::FleetCapacity> {
         self.fleet_capacity.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct DescribeFleetLocationCapacityOutputBuilder {
     _request_id: Option<String>,
 }
 impl DescribeFleetLocationCapacityOutputBuilder {
-    /// <p>Resource capacity information for the requested fleet location. Capacity objects are returned only for fleets and locations that currently exist.</p>
+    /// <p>Resource capacity information for the requested fleet location. Capacity objects are returned only for fleets and locations that currently exist. Changes in desired instance value can take up to 1 minute to be reflected.</p>
     pub fn fleet_capacity(mut self, input: crate::types::FleetCapacity) -> Self {
         self.fleet_capacity = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Resource capacity information for the requested fleet location. Capacity objects are returned only for fleets and locations that currently exist.</p>
+    /// <p>Resource capacity information for the requested fleet location. Capacity objects are returned only for fleets and locations that currently exist. Changes in desired instance value can take up to 1 minute to be reflected.</p>
     pub fn set_fleet_capacity(mut self, input: ::std::option::Option<crate::types::FleetCapacity>) -> Self {
         self.fleet_capacity = input;
         self
     }
-    /// <p>Resource capacity information for the requested fleet location. Capacity objects are returned only for fleets and locations that currently exist.</p>
+    /// <p>Resource capacity information for the requested fleet location. Capacity objects are returned only for fleets and locations that currently exist. Changes in desired instance value can take up to 1 minute to be reflected.</p>
     pub fn get_fleet_capacity(&self) -> &::std::option::Option<crate::types::FleetCapacity> {
         &self.fleet_capacity
     }

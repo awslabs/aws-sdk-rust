@@ -50,7 +50,7 @@ pub struct FilterCriteria {
     pub ecr_image_hash: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p>Details on the port ranges used to filter findings.</p>
     pub port_range: ::std::option::Option<::std::vec::Vec<crate::types::PortRangeFilter>>,
-    /// <p>Details on the ingress source addresses used to filter findings.</p>
+    /// <p>Details on network protocol used to filter findings.</p>
     pub network_protocol: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p>Details of the component IDs used to filter findings.</p>
     pub component_id: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
@@ -182,7 +182,7 @@ impl FilterCriteria {
     pub fn port_range(&self) -> ::std::option::Option<&[crate::types::PortRangeFilter]> {
         self.port_range.as_deref()
     }
-    /// <p>Details on the ingress source addresses used to filter findings.</p>
+    /// <p>Details on network protocol used to filter findings.</p>
     pub fn network_protocol(&self) -> ::std::option::Option<&[crate::types::StringFilter]> {
         self.network_protocol.as_deref()
     }
@@ -778,19 +778,19 @@ impl FilterCriteriaBuilder {
     ///
     /// To override the contents of this collection use [`set_network_protocol`](Self::set_network_protocol).
     ///
-    /// <p>Details on the ingress source addresses used to filter findings.</p>
+    /// <p>Details on network protocol used to filter findings.</p>
     pub fn network_protocol(mut self, input: crate::types::StringFilter) -> Self {
         let mut v = self.network_protocol.unwrap_or_default();
         v.push(input);
         self.network_protocol = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Details on the ingress source addresses used to filter findings.</p>
+    /// <p>Details on network protocol used to filter findings.</p>
     pub fn set_network_protocol(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
         self.network_protocol = input;
         self
     }
-    /// <p>Details on the ingress source addresses used to filter findings.</p>
+    /// <p>Details on network protocol used to filter findings.</p>
     pub fn get_network_protocol(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
         &self.network_protocol
     }

@@ -9,5 +9,8 @@ pub fn ser_describe_component_input(
     if let Some(var_2) = &input.component_name {
         object.key("ComponentName").string(var_2.as_str());
     }
+    if let Some(var_3) = &input.account_id {
+        object.key("AccountId").string(var_3.as_str());
+    }
     Ok(())
 }

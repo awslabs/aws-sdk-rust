@@ -15,6 +15,16 @@ pub fn ser_failover_global_cluster_input_input(
     if let Some(var_4) = &input.target_db_cluster_identifier {
         scope_3.string(var_4);
     }
+    #[allow(unused_mut)]
+    let mut scope_5 = writer.prefix("AllowDataLoss");
+    if let Some(var_6) = &input.allow_data_loss {
+        scope_5.boolean(*var_6);
+    }
+    #[allow(unused_mut)]
+    let mut scope_7 = writer.prefix("Switchover");
+    if let Some(var_8) = &input.switchover {
+        scope_7.boolean(*var_8);
+    }
     writer.finish();
     Ok(::aws_smithy_http::body::SdkBody::from(out))
 }

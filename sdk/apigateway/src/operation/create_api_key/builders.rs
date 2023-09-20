@@ -198,17 +198,17 @@ impl CreateApiKeyFluentBuilder {
     pub fn get_stage_keys(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StageKey>> {
         self.inner.get_stage_keys()
     }
-    /// <p>An AWS Marketplace customer identifier , when integrating with the AWS SaaS Marketplace.</p>
+    /// <p>An Amazon Web Services Marketplace customer identifier, when integrating with the Amazon Web Services SaaS Marketplace.</p>
     pub fn customer_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.customer_id(input.into());
         self
     }
-    /// <p>An AWS Marketplace customer identifier , when integrating with the AWS SaaS Marketplace.</p>
+    /// <p>An Amazon Web Services Marketplace customer identifier, when integrating with the Amazon Web Services SaaS Marketplace.</p>
     pub fn set_customer_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_customer_id(input);
         self
     }
-    /// <p>An AWS Marketplace customer identifier , when integrating with the AWS SaaS Marketplace.</p>
+    /// <p>An Amazon Web Services Marketplace customer identifier, when integrating with the Amazon Web Services SaaS Marketplace.</p>
     pub fn get_customer_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_customer_id()
     }

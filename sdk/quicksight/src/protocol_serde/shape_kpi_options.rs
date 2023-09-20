@@ -42,6 +42,18 @@ pub fn ser_kpi_options(
         crate::protocol_serde::shape_font_configuration::ser_font_configuration(&mut object_13, var_12)?;
         object_13.finish();
     }
+    if let Some(var_14) = &input.sparkline {
+        #[allow(unused_mut)]
+        let mut object_15 = object.key("Sparkline").start_object();
+        crate::protocol_serde::shape_kpi_sparkline_options::ser_kpi_sparkline_options(&mut object_15, var_14)?;
+        object_15.finish();
+    }
+    if let Some(var_16) = &input.visual_layout_options {
+        #[allow(unused_mut)]
+        let mut object_17 = object.key("VisualLayoutOptions").start_object();
+        crate::protocol_serde::shape_kpi_visual_layout_options::ser_kpi_visual_layout_options(&mut object_17, var_16)?;
+        object_17.finish();
+    }
     Ok(())
 }
 
@@ -90,6 +102,14 @@ where
                         "SecondaryValueFontConfiguration" => {
                             builder = builder.set_secondary_value_font_configuration(
                                 crate::protocol_serde::shape_font_configuration::de_font_configuration(tokens)?,
+                            );
+                        }
+                        "Sparkline" => {
+                            builder = builder.set_sparkline(crate::protocol_serde::shape_kpi_sparkline_options::de_kpi_sparkline_options(tokens)?);
+                        }
+                        "VisualLayoutOptions" => {
+                            builder = builder.set_visual_layout_options(
+                                crate::protocol_serde::shape_kpi_visual_layout_options::de_kpi_visual_layout_options(tokens)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

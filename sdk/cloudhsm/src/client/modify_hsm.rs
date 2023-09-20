@@ -12,6 +12,7 @@ impl super::Client {
     /// - On success, responds with [`ModifyHsmOutput`](crate::operation::modify_hsm::ModifyHsmOutput) with field(s):
     ///   - [`hsm_arn(Option<String>)`](crate::operation::modify_hsm::ModifyHsmOutput::hsm_arn): <p>The ARN of the HSM.</p>
     /// - On failure, responds with [`SdkError<ModifyHsmError>`](crate::operation::modify_hsm::ModifyHsmError)
+    #[deprecated(note = "This API is deprecated.")]
     pub fn modify_hsm(&self) -> crate::operation::modify_hsm::builders::ModifyHsmFluentBuilder {
         crate::operation::modify_hsm::builders::ModifyHsmFluentBuilder::new(self.handle.clone())
     }

@@ -121,6 +121,8 @@ pub struct RunInstancesInput {
     pub maintenance_options: ::std::option::Option<crate::types::InstanceMaintenanceOptionsRequest>,
     /// <p>Indicates whether an instance is enabled for stop protection. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html#Using_StopProtection">Stop protection</a>. </p>
     pub disable_api_stop: ::std::option::Option<bool>,
+    /// <p>If you’re launching an instance into a dual-stack or IPv6-only subnet, you can enable assigning a primary IPv6 address. A primary IPv6 address is an IPv6 GUA address associated with an ENI that you have enabled to use a primary IPv6 address. Use this option if an instance relies on its IPv6 address not changing. When you launch the instance, Amazon Web Services will automatically assign an IPv6 address associated with the ENI attached to your instance to be the primary IPv6 address. Once you enable an IPv6 GUA address to be a primary IPv6, you cannot disable it. When you enable an IPv6 GUA address to be a primary IPv6, the first IPv6 GUA will be made the primary IPv6 address until the instance is terminated or the network interface is detached. If you have multiple IPv6 addresses associated with an ENI attached to your instance and you enable a primary IPv6 address, the first IPv6 GUA address associated with the ENI becomes the primary IPv6 address.</p>
+    pub enable_primary_ipv6: ::std::option::Option<bool>,
 }
 impl RunInstancesInput {
     /// <p>The block device mapping, which defines the EBS volumes and instance store volumes to attach to the instance at launch. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block device mappings</a> in the <i>Amazon EC2 User Guide</i>.</p>
@@ -321,6 +323,10 @@ impl RunInstancesInput {
     pub fn disable_api_stop(&self) -> ::std::option::Option<bool> {
         self.disable_api_stop
     }
+    /// <p>If you’re launching an instance into a dual-stack or IPv6-only subnet, you can enable assigning a primary IPv6 address. A primary IPv6 address is an IPv6 GUA address associated with an ENI that you have enabled to use a primary IPv6 address. Use this option if an instance relies on its IPv6 address not changing. When you launch the instance, Amazon Web Services will automatically assign an IPv6 address associated with the ENI attached to your instance to be the primary IPv6 address. Once you enable an IPv6 GUA address to be a primary IPv6, you cannot disable it. When you enable an IPv6 GUA address to be a primary IPv6, the first IPv6 GUA will be made the primary IPv6 address until the instance is terminated or the network interface is detached. If you have multiple IPv6 addresses associated with an ENI attached to your instance and you enable a primary IPv6 address, the first IPv6 GUA address associated with the ENI becomes the primary IPv6 address.</p>
+    pub fn enable_primary_ipv6(&self) -> ::std::option::Option<bool> {
+        self.enable_primary_ipv6
+    }
 }
 impl ::std::fmt::Debug for RunInstancesInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -365,6 +371,7 @@ impl ::std::fmt::Debug for RunInstancesInput {
         formatter.field("private_dns_name_options", &self.private_dns_name_options);
         formatter.field("maintenance_options", &self.maintenance_options);
         formatter.field("disable_api_stop", &self.disable_api_stop);
+        formatter.field("enable_primary_ipv6", &self.enable_primary_ipv6);
         formatter.finish()
     }
 }
@@ -419,6 +426,7 @@ pub struct RunInstancesInputBuilder {
     pub(crate) private_dns_name_options: ::std::option::Option<crate::types::PrivateDnsNameOptionsRequest>,
     pub(crate) maintenance_options: ::std::option::Option<crate::types::InstanceMaintenanceOptionsRequest>,
     pub(crate) disable_api_stop: ::std::option::Option<bool>,
+    pub(crate) enable_primary_ipv6: ::std::option::Option<bool>,
 }
 impl RunInstancesInputBuilder {
     /// Appends an item to `block_device_mappings`.
@@ -1155,6 +1163,20 @@ impl RunInstancesInputBuilder {
     pub fn get_disable_api_stop(&self) -> &::std::option::Option<bool> {
         &self.disable_api_stop
     }
+    /// <p>If you’re launching an instance into a dual-stack or IPv6-only subnet, you can enable assigning a primary IPv6 address. A primary IPv6 address is an IPv6 GUA address associated with an ENI that you have enabled to use a primary IPv6 address. Use this option if an instance relies on its IPv6 address not changing. When you launch the instance, Amazon Web Services will automatically assign an IPv6 address associated with the ENI attached to your instance to be the primary IPv6 address. Once you enable an IPv6 GUA address to be a primary IPv6, you cannot disable it. When you enable an IPv6 GUA address to be a primary IPv6, the first IPv6 GUA will be made the primary IPv6 address until the instance is terminated or the network interface is detached. If you have multiple IPv6 addresses associated with an ENI attached to your instance and you enable a primary IPv6 address, the first IPv6 GUA address associated with the ENI becomes the primary IPv6 address.</p>
+    pub fn enable_primary_ipv6(mut self, input: bool) -> Self {
+        self.enable_primary_ipv6 = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>If you’re launching an instance into a dual-stack or IPv6-only subnet, you can enable assigning a primary IPv6 address. A primary IPv6 address is an IPv6 GUA address associated with an ENI that you have enabled to use a primary IPv6 address. Use this option if an instance relies on its IPv6 address not changing. When you launch the instance, Amazon Web Services will automatically assign an IPv6 address associated with the ENI attached to your instance to be the primary IPv6 address. Once you enable an IPv6 GUA address to be a primary IPv6, you cannot disable it. When you enable an IPv6 GUA address to be a primary IPv6, the first IPv6 GUA will be made the primary IPv6 address until the instance is terminated or the network interface is detached. If you have multiple IPv6 addresses associated with an ENI attached to your instance and you enable a primary IPv6 address, the first IPv6 GUA address associated with the ENI becomes the primary IPv6 address.</p>
+    pub fn set_enable_primary_ipv6(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.enable_primary_ipv6 = input;
+        self
+    }
+    /// <p>If you’re launching an instance into a dual-stack or IPv6-only subnet, you can enable assigning a primary IPv6 address. A primary IPv6 address is an IPv6 GUA address associated with an ENI that you have enabled to use a primary IPv6 address. Use this option if an instance relies on its IPv6 address not changing. When you launch the instance, Amazon Web Services will automatically assign an IPv6 address associated with the ENI attached to your instance to be the primary IPv6 address. Once you enable an IPv6 GUA address to be a primary IPv6, you cannot disable it. When you enable an IPv6 GUA address to be a primary IPv6, the first IPv6 GUA will be made the primary IPv6 address until the instance is terminated or the network interface is detached. If you have multiple IPv6 addresses associated with an ENI attached to your instance and you enable a primary IPv6 address, the first IPv6 GUA address associated with the ENI becomes the primary IPv6 address.</p>
+    pub fn get_enable_primary_ipv6(&self) -> &::std::option::Option<bool> {
+        &self.enable_primary_ipv6
+    }
     /// Consumes the builder and constructs a [`RunInstancesInput`](crate::operation::run_instances::RunInstancesInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::run_instances::RunInstancesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::run_instances::RunInstancesInput {
@@ -1198,6 +1220,7 @@ impl RunInstancesInputBuilder {
             private_dns_name_options: self.private_dns_name_options,
             maintenance_options: self.maintenance_options,
             disable_api_stop: self.disable_api_stop,
+            enable_primary_ipv6: self.enable_primary_ipv6,
         })
     }
 }
@@ -1244,6 +1267,7 @@ impl ::std::fmt::Debug for RunInstancesInputBuilder {
         formatter.field("private_dns_name_options", &self.private_dns_name_options);
         formatter.field("maintenance_options", &self.maintenance_options);
         formatter.field("disable_api_stop", &self.disable_api_stop);
+        formatter.field("enable_primary_ipv6", &self.enable_primary_ipv6);
         formatter.finish()
     }
 }

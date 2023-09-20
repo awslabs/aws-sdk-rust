@@ -22,7 +22,7 @@ impl UpdateConfigurationSetEventDestinationInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateConfigurationSetEventDestination`.
 ///
-/// <p>Updates the event destination of a configuration set. Event destinations are associated with configuration sets, which enable you to publish email sending events to Amazon CloudWatch, Amazon Kinesis Firehose, or Amazon Simple Notification Service (Amazon SNS). For information about using configuration sets, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Monitoring Your Amazon SES Sending Activity</a> in the <i>Amazon SES Developer Guide.</i> </p> <note>
+/// <p>Updates the event destination of a configuration set. Event destinations are associated with configuration sets, which enable you to publish email sending events to Amazon CloudWatch, Amazon Kinesis Firehose, or Amazon Simple Notification Service (Amazon SNS). For information about using configuration sets, see <a href="https://docs.aws.amazon.com/ses/latest/dg/monitor-sending-activity.html">Monitoring Your Amazon SES Sending Activity</a> in the <i>Amazon SES Developer Guide.</i> </p> <note>
 /// <p>When you create or update an event destination, you must provide one, and only one, destination. The destination can be Amazon CloudWatch, Amazon Kinesis Firehose, or Amazon Simple Notification Service (Amazon SNS).</p>
 /// </note>
 /// <p>You can execute this operation no more than once per second.</p>
@@ -119,31 +119,31 @@ impl UpdateConfigurationSetEventDestinationFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name of the configuration set that contains the event destination that you want to update.</p>
+    /// <p>The name of the configuration set that contains the event destination.</p>
     pub fn configuration_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.configuration_set_name(input.into());
         self
     }
-    /// <p>The name of the configuration set that contains the event destination that you want to update.</p>
+    /// <p>The name of the configuration set that contains the event destination.</p>
     pub fn set_configuration_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_configuration_set_name(input);
         self
     }
-    /// <p>The name of the configuration set that contains the event destination that you want to update.</p>
+    /// <p>The name of the configuration set that contains the event destination.</p>
     pub fn get_configuration_set_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_configuration_set_name()
     }
-    /// <p>The event destination object that you want to apply to the specified configuration set.</p>
+    /// <p>The event destination object.</p>
     pub fn event_destination(mut self, input: crate::types::EventDestination) -> Self {
         self.inner = self.inner.event_destination(input);
         self
     }
-    /// <p>The event destination object that you want to apply to the specified configuration set.</p>
+    /// <p>The event destination object.</p>
     pub fn set_event_destination(mut self, input: ::std::option::Option<crate::types::EventDestination>) -> Self {
         self.inner = self.inner.set_event_destination(input);
         self
     }
-    /// <p>The event destination object that you want to apply to the specified configuration set.</p>
+    /// <p>The event destination object.</p>
     pub fn get_event_destination(&self) -> &::std::option::Option<crate::types::EventDestination> {
         self.inner.get_event_destination()
     }

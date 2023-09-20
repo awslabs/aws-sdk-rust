@@ -9,7 +9,7 @@ pub struct PutRestApiInput {
     /// <p>The <code>mode</code> query parameter to specify the update mode. Valid values are "merge" and "overwrite". By default, the update mode is "merge".</p>
     pub mode: ::std::option::Option<crate::types::PutMode>,
     /// <p>A query parameter to indicate whether to rollback the API update (<code>true</code>) or not (<code>false</code>) when a warning is encountered. The default value is <code>false</code>.</p>
-    pub fail_on_warnings: bool,
+    pub fail_on_warnings: ::std::option::Option<bool>,
     /// <p>Custom header parameters as part of the request. For example, to exclude DocumentationParts from an imported API, set <code>ignore=documentation</code> as a <code>parameters</code> value, as in the AWS CLI command of <code>aws apigateway import-rest-api --parameters ignore=documentation --body 'file:///path/to/imported-api-body.json'</code>.</p>
     pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The PUT request body containing external API definitions. Currently, only OpenAPI definition JSON/YAML files are supported. The maximum size of the API definition file is 6MB.</p>
@@ -25,7 +25,7 @@ impl PutRestApiInput {
         self.mode.as_ref()
     }
     /// <p>A query parameter to indicate whether to rollback the API update (<code>true</code>) or not (<code>false</code>) when a warning is encountered. The default value is <code>false</code>.</p>
-    pub fn fail_on_warnings(&self) -> bool {
+    pub fn fail_on_warnings(&self) -> ::std::option::Option<bool> {
         self.fail_on_warnings
     }
     /// <p>Custom header parameters as part of the request. For example, to exclude DocumentationParts from an imported API, set <code>ignore=documentation</code> as a <code>parameters</code> value, as in the AWS CLI command of <code>aws apigateway import-rest-api --parameters ignore=documentation --body 'file:///path/to/imported-api-body.json'</code>.</p>
@@ -136,7 +136,7 @@ impl PutRestApiInputBuilder {
         ::std::result::Result::Ok(crate::operation::put_rest_api::PutRestApiInput {
             rest_api_id: self.rest_api_id,
             mode: self.mode,
-            fail_on_warnings: self.fail_on_warnings.unwrap_or_default(),
+            fail_on_warnings: self.fail_on_warnings,
             parameters: self.parameters,
             body: self.body,
         })

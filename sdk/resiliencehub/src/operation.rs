@@ -4,6 +4,9 @@ pub use ::aws_http::request_id::RequestId;
 /// Types for the `AddDraftAppVersionResourceMappings` operation.
 pub mod add_draft_app_version_resource_mappings;
 
+/// Types for the `BatchUpdateRecommendationStatus` operation.
+pub mod batch_update_recommendation_status;
+
 /// Types for the `CreateApp` operation.
 pub mod create_app;
 
@@ -72,6 +75,9 @@ pub mod import_resources_to_draft_app_version;
 
 /// Types for the `ListAlarmRecommendations` operation.
 pub mod list_alarm_recommendations;
+
+/// Types for the `ListAppAssessmentComplianceDrifts` operation.
+pub mod list_app_assessment_compliance_drifts;
 
 /// Types for the `ListAppAssessments` operation.
 pub mod list_app_assessments;

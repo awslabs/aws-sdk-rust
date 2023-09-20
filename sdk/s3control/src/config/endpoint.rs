@@ -602,7 +602,7 @@ mod test {
     fn test_17() {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::config::endpoint::Params::builder()
-            .account_id("123".to_string())
+            .account_id("123456789012".to_string())
             .outpost_id("op-123".to_string())
             .region("us-east-2".to_string())
             .requires_account_id(true)
@@ -637,7 +637,7 @@ mod test {
     fn test_18() {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::config::endpoint::Params::builder()
-            .account_id("123".to_string())
+            .account_id("123456789012".to_string())
             .region("us-east-2".to_string())
             .requires_account_id(true)
             .use_dual_stack(false)
@@ -646,11 +646,11 @@ mod test {
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://123.s3-control.us-east-2.amazonaws.com");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://123456789012.s3-control.us-east-2.amazonaws.com");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://123.s3-control.us-east-2.amazonaws.com")
+                .url("https://123456789012.s3-control.us-east-2.amazonaws.com")
                 .property(
                     "authSchemes",
                     vec![::aws_smithy_types::Document::from({
@@ -671,7 +671,7 @@ mod test {
     fn test_19() {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::config::endpoint::Params::builder()
-            .account_id("123".to_string())
+            .account_id("123456789012".to_string())
             .outpost_id("op-123".to_string())
             .region("us-east-2".to_string())
             .requires_account_id(true)
@@ -903,7 +903,7 @@ mod test {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::config::endpoint::Params::builder()
             .access_point_name("arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_string())
-            .account_id("9999999".to_string())
+            .account_id("999999999999".to_string())
             .region("us-west-2".to_string())
             .requires_account_id(true)
             .use_arn_region(false)
@@ -913,10 +913,10 @@ mod test {
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let error = endpoint.expect_err("expected error: Invalid ARN: the accountId specified in the ARN (`123456789012`) does not match the parameter (`9999999`) [Account ID set inline and in ARN and they do not match@us-west-2]");
+        let error = endpoint.expect_err("expected error: Invalid ARN: the accountId specified in the ARN (`123456789012`) does not match the parameter (`999999999999`) [Account ID set inline and in ARN and they do not match@us-west-2]");
         assert_eq!(
             format!("{}", error),
-            "Invalid ARN: the accountId specified in the ARN (`123456789012`) does not match the parameter (`9999999`)"
+            "Invalid ARN: the accountId specified in the ARN (`123456789012`) does not match the parameter (`999999999999`)"
         )
     }
 
@@ -1116,7 +1116,7 @@ mod test {
     fn test_35() {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::config::endpoint::Params::builder()
-            .account_id("123".to_string())
+            .account_id("123456789012".to_string())
             .endpoint("https://beta.example.com".to_string())
             .outpost_id("op-123".to_string())
             .region("us-east-2".to_string())
@@ -1152,7 +1152,7 @@ mod test {
     fn test_36() {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::config::endpoint::Params::builder()
-            .account_id("123".to_string())
+            .account_id("123456789012".to_string())
             .endpoint("https://beta.example.com".to_string())
             .outpost_id("op-123".to_string())
             .region("us-east-2".to_string())
@@ -2044,7 +2044,7 @@ mod test {
     fn test_65() {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::config::endpoint::Params::builder()
-            .account_id("1234567890-aBC".to_string())
+            .account_id("123456789012".to_string())
             .region("us-east-1".to_string())
             .requires_account_id(true)
             .use_dual_stack(false)
@@ -2053,11 +2053,11 @@ mod test {
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://1234567890-aBC.s3-control-fips.us-east-1.amazonaws.com");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://123456789012.s3-control-fips.us-east-1.amazonaws.com");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://1234567890-aBC.s3-control-fips.us-east-1.amazonaws.com")
+                .url("https://123456789012.s3-control-fips.us-east-1.amazonaws.com")
                 .property(
                     "authSchemes",
                     vec![::aws_smithy_types::Document::from({
@@ -2248,7 +2248,7 @@ mod test {
     fn test_72() {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::config::endpoint::Params::builder()
-            .account_id("1234567890-aBC".to_string())
+            .account_id("123456789012".to_string())
             .region("us-east-1".to_string())
             .requires_account_id(true)
             .use_dual_stack(false)
@@ -2257,11 +2257,11 @@ mod test {
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://1234567890-aBC.s3-control.us-east-1.amazonaws.com");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://123456789012.s3-control.us-east-1.amazonaws.com");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://1234567890-aBC.s3-control.us-east-1.amazonaws.com")
+                .url("https://123456789012.s3-control.us-east-1.amazonaws.com")
                 .property(
                     "authSchemes",
                     vec![::aws_smithy_types::Document::from({
@@ -2300,7 +2300,7 @@ mod test {
     fn test_74() {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::config::endpoint::Params::builder()
-            .account_id("1234567890-aBC".to_string())
+            .account_id("123456789012".to_string())
             .region("us-east-1".to_string())
             .requires_account_id(true)
             .use_dual_stack(false)
@@ -2309,11 +2309,11 @@ mod test {
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://1234567890-aBC.s3-control-fips.us-east-1.amazonaws.com");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://123456789012.s3-control-fips.us-east-1.amazonaws.com");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://1234567890-aBC.s3-control-fips.us-east-1.amazonaws.com")
+                .url("https://123456789012.s3-control-fips.us-east-1.amazonaws.com")
                 .property(
                     "authSchemes",
                     vec![::aws_smithy_types::Document::from({
@@ -2334,7 +2334,7 @@ mod test {
     fn test_75() {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::config::endpoint::Params::builder()
-            .account_id("1234567890-aBC".to_string())
+            .account_id("123456789012".to_string())
             .region("us-east-1".to_string())
             .requires_account_id(true)
             .use_dual_stack(true)
@@ -2343,11 +2343,11 @@ mod test {
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://1234567890-aBC.s3-control-fips.dualstack.us-east-1.amazonaws.com");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://123456789012.s3-control-fips.dualstack.us-east-1.amazonaws.com");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://1234567890-aBC.s3-control-fips.dualstack.us-east-1.amazonaws.com")
+                .url("https://123456789012.s3-control-fips.dualstack.us-east-1.amazonaws.com")
                 .property(
                     "authSchemes",
                     vec![::aws_smithy_types::Document::from({
@@ -2368,7 +2368,7 @@ mod test {
     fn test_76() {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::config::endpoint::Params::builder()
-            .account_id("1234567890-aBC".to_string())
+            .account_id("123456789012".to_string())
             .region("us-east-1".to_string())
             .requires_account_id(true)
             .endpoint("https://example.com".to_string())
@@ -2376,11 +2376,11 @@ mod test {
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://1234567890-aBC.example.com");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://123456789012.example.com");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://1234567890-aBC.example.com")
+                .url("https://123456789012.example.com")
                 .property(
                     "authSchemes",
                     vec![::aws_smithy_types::Document::from({
@@ -2447,12 +2447,12 @@ mod test {
         assert_eq!(format!("{}", error), "AccountId must only contain a-z, A-Z, 0-9 and `-`.")
     }
 
-    /// account id with custom endpoint, fips and dualstack
+    /// account id with custom endpoint, fips
     #[test]
     fn test_80() {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::config::endpoint::Params::builder()
-            .account_id("1234567890-aBC".to_string())
+            .account_id("123456789012".to_string())
             .region("us-east-1".to_string())
             .requires_account_id(true)
             .endpoint("https://example.com".to_string())
@@ -2461,11 +2461,11 @@ mod test {
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://1234567890-aBC.example.com");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://123456789012.example.com");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://1234567890-aBC.example.com")
+                .url("https://123456789012.example.com")
                 .property(
                     "authSchemes",
                     vec![::aws_smithy_types::Document::from({
@@ -2481,7 +2481,7 @@ mod test {
         );
     }
 
-    /// custom endpoint, fips and dualstack
+    /// custom endpoint, fips
     #[test]
     fn test_81() {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
@@ -2545,7 +2545,7 @@ mod test {
         );
     }
 
-    /// custom endpoint, dualstack
+    /// custom endpoint, DualStack
     #[test]
     fn test_83() {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
@@ -2553,28 +2553,17 @@ mod test {
             .region("us-east-1".to_string())
             .endpoint("https://example.com".to_string())
             .use_fips(false)
+            .use_dual_stack(true)
             .build()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://example.com");
+        let error = endpoint
+            .expect_err("expected error: Invalid Configuration: DualStack and custom endpoint are not supported [custom endpoint, DualStack]");
         assert_eq!(
-            endpoint,
-            ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://example.com")
-                .property(
-                    "authSchemes",
-                    vec![::aws_smithy_types::Document::from({
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "s3".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out
-                    })]
-                )
-                .build()
-        );
+            format!("{}", error),
+            "Invalid Configuration: DualStack and custom endpoint are not supported"
+        )
     }
 
     /// region not set
@@ -2768,7 +2757,7 @@ mod test {
         );
     }
 
-    /// Dualstack + Custom endpoint is not supported(non-arn)
+    /// DualStack + Custom endpoint is not supported(non-arn)
     #[test]
     fn test_93() {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
@@ -2784,10 +2773,10 @@ mod test {
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let error = endpoint.expect_err("expected error: Invalid Configuration: Dualstack and custom endpoint are not supported [Dualstack + Custom endpoint is not supported(non-arn)]");
+        let error = endpoint.expect_err("expected error: Invalid Configuration: DualStack and custom endpoint are not supported [DualStack + Custom endpoint is not supported(non-arn)]");
         assert_eq!(
             format!("{}", error),
-            "Invalid Configuration: Dualstack and custom endpoint are not supported"
+            "Invalid Configuration: DualStack and custom endpoint are not supported"
         )
     }
 
@@ -3293,7 +3282,7 @@ mod test {
         assert_eq!(format!("{}", error), "S3 Snow does not support FIPS")
     }
 
-    /// S3 Snow Control with Dual-stack enabled
+    /// S3 Snow Control with Dualstack enabled
     #[test]
     fn test_113() {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
@@ -3307,8 +3296,8 @@ mod test {
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let error = endpoint.expect_err("expected error: S3 Snow does not support Dual-stack [S3 Snow Control with Dual-stack enabled]");
-        assert_eq!(format!("{}", error), "S3 Snow does not support Dual-stack")
+        let error = endpoint.expect_err("expected error: S3 Snow does not support DualStack [S3 Snow Control with Dualstack enabled]");
+        assert_eq!(format!("{}", error), "S3 Snow does not support DualStack")
     }
 }
 

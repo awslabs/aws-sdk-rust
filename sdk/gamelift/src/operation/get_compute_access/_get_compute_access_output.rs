@@ -3,26 +3,26 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct GetComputeAccessOutput {
-    /// <p>The fleet ID of compute resource.</p>
+    /// <p>The ID of the fleet that contains the compute resource to be accessed.</p>
     pub fleet_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a Amazon GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
     /// <region>
     /// ::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912
     /// </region></code>.</p>
     pub fleet_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The name of the compute resource you requested credentials for.</p>
+    /// <p>The identifier of the compute resource to be accessed. This value might be either a compute name or an instance ID.</p>
     pub compute_name: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a Amazon GameLift compute resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to an Amazon GameLift compute resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
     /// <region>
     /// ::compute/compute-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912
     /// </region></code>.</p>
     pub compute_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The access credentials for the compute resource.</p>
+    /// <p>A set of temporary Amazon Web Services credentials for use when connecting to the compute resource with Amazon EC2 Systems Manager (SSM).</p>
     pub credentials: ::std::option::Option<crate::types::AwsCredentials>,
     _request_id: Option<String>,
 }
 impl GetComputeAccessOutput {
-    /// <p>The fleet ID of compute resource.</p>
+    /// <p>The ID of the fleet that contains the compute resource to be accessed.</p>
     pub fn fleet_id(&self) -> ::std::option::Option<&str> {
         self.fleet_id.as_deref()
     }
@@ -33,18 +33,18 @@ impl GetComputeAccessOutput {
     pub fn fleet_arn(&self) -> ::std::option::Option<&str> {
         self.fleet_arn.as_deref()
     }
-    /// <p>The name of the compute resource you requested credentials for.</p>
+    /// <p>The identifier of the compute resource to be accessed. This value might be either a compute name or an instance ID.</p>
     pub fn compute_name(&self) -> ::std::option::Option<&str> {
         self.compute_name.as_deref()
     }
-    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a Amazon GameLift compute resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to an Amazon GameLift compute resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
     /// <region>
     /// ::compute/compute-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912
     /// </region></code>.</p>
     pub fn compute_arn(&self) -> ::std::option::Option<&str> {
         self.compute_arn.as_deref()
     }
-    /// <p>The access credentials for the compute resource.</p>
+    /// <p>A set of temporary Amazon Web Services credentials for use when connecting to the compute resource with Amazon EC2 Systems Manager (SSM).</p>
     pub fn credentials(&self) -> ::std::option::Option<&crate::types::AwsCredentials> {
         self.credentials.as_ref()
     }
@@ -85,17 +85,17 @@ pub struct GetComputeAccessOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetComputeAccessOutputBuilder {
-    /// <p>The fleet ID of compute resource.</p>
+    /// <p>The ID of the fleet that contains the compute resource to be accessed.</p>
     pub fn fleet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fleet_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The fleet ID of compute resource.</p>
+    /// <p>The ID of the fleet that contains the compute resource to be accessed.</p>
     pub fn set_fleet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.fleet_id = input;
         self
     }
-    /// <p>The fleet ID of compute resource.</p>
+    /// <p>The ID of the fleet that contains the compute resource to be accessed.</p>
     pub fn get_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.fleet_id
     }
@@ -122,21 +122,21 @@ impl GetComputeAccessOutputBuilder {
     pub fn get_fleet_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.fleet_arn
     }
-    /// <p>The name of the compute resource you requested credentials for.</p>
+    /// <p>The identifier of the compute resource to be accessed. This value might be either a compute name or an instance ID.</p>
     pub fn compute_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.compute_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the compute resource you requested credentials for.</p>
+    /// <p>The identifier of the compute resource to be accessed. This value might be either a compute name or an instance ID.</p>
     pub fn set_compute_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.compute_name = input;
         self
     }
-    /// <p>The name of the compute resource you requested credentials for.</p>
+    /// <p>The identifier of the compute resource to be accessed. This value might be either a compute name or an instance ID.</p>
     pub fn get_compute_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.compute_name
     }
-    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a Amazon GameLift compute resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to an Amazon GameLift compute resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
     /// <region>
     /// ::compute/compute-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912
     /// </region></code>.</p>
@@ -144,7 +144,7 @@ impl GetComputeAccessOutputBuilder {
         self.compute_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a Amazon GameLift compute resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to an Amazon GameLift compute resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
     /// <region>
     /// ::compute/compute-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912
     /// </region></code>.</p>
@@ -152,24 +152,24 @@ impl GetComputeAccessOutputBuilder {
         self.compute_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a Amazon GameLift compute resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to an Amazon GameLift compute resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
     /// <region>
     /// ::compute/compute-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912
     /// </region></code>.</p>
     pub fn get_compute_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.compute_arn
     }
-    /// <p>The access credentials for the compute resource.</p>
+    /// <p>A set of temporary Amazon Web Services credentials for use when connecting to the compute resource with Amazon EC2 Systems Manager (SSM).</p>
     pub fn credentials(mut self, input: crate::types::AwsCredentials) -> Self {
         self.credentials = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The access credentials for the compute resource.</p>
+    /// <p>A set of temporary Amazon Web Services credentials for use when connecting to the compute resource with Amazon EC2 Systems Manager (SSM).</p>
     pub fn set_credentials(mut self, input: ::std::option::Option<crate::types::AwsCredentials>) -> Self {
         self.credentials = input;
         self
     }
-    /// <p>The access credentials for the compute resource.</p>
+    /// <p>A set of temporary Amazon Web Services credentials for use when connecting to the compute resource with Amazon EC2 Systems Manager (SSM).</p>
     pub fn get_credentials(&self) -> &::std::option::Option<crate::types::AwsCredentials> {
         &self.credentials
     }

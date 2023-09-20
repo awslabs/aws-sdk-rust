@@ -7,7 +7,7 @@ pub struct DescribeProjectInput {
     /// <p> Unique project identifier. </p>
     pub project_id: ::std::option::Option<::std::string::String>,
     /// <p> If set to true, causes AWS Mobile Hub to synchronize information from other services, e.g., update state of AWS CloudFormation stacks in the AWS Mobile Hub project. </p>
-    pub sync_from_resources: bool,
+    pub sync_from_resources: ::std::option::Option<bool>,
 }
 impl DescribeProjectInput {
     /// <p> Unique project identifier. </p>
@@ -15,7 +15,7 @@ impl DescribeProjectInput {
         self.project_id.as_deref()
     }
     /// <p> If set to true, causes AWS Mobile Hub to synchronize information from other services, e.g., update state of AWS CloudFormation stacks in the AWS Mobile Hub project. </p>
-    pub fn sync_from_resources(&self) -> bool {
+    pub fn sync_from_resources(&self) -> ::std::option::Option<bool> {
         self.sync_from_resources
     }
 }
@@ -68,7 +68,7 @@ impl DescribeProjectInputBuilder {
     ) -> ::std::result::Result<crate::operation::describe_project::DescribeProjectInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_project::DescribeProjectInput {
             project_id: self.project_id,
-            sync_from_resources: self.sync_from_resources.unwrap_or_default(),
+            sync_from_resources: self.sync_from_resources,
         })
     }
 }

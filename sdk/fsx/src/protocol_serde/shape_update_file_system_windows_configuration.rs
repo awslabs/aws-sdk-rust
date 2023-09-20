@@ -36,5 +36,11 @@ pub fn ser_update_file_system_windows_configuration(
         crate::protocol_serde::shape_windows_audit_log_create_configuration::ser_windows_audit_log_create_configuration(&mut object_8, var_7)?;
         object_8.finish();
     }
+    if let Some(var_9) = &input.disk_iops_configuration {
+        #[allow(unused_mut)]
+        let mut object_10 = object.key("DiskIopsConfiguration").start_object();
+        crate::protocol_serde::shape_disk_iops_configuration::ser_disk_iops_configuration(&mut object_10, var_9)?;
+        object_10.finish();
+    }
     Ok(())
 }

@@ -100,6 +100,11 @@ where
                                 crate::protocol_serde::shape_windows_audit_log_configuration::de_windows_audit_log_configuration(tokens)?,
                             );
                         }
+                        "DiskIopsConfiguration" => {
+                            builder = builder.set_disk_iops_configuration(
+                                crate::protocol_serde::shape_disk_iops_configuration::de_disk_iops_configuration(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

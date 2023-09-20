@@ -22,7 +22,7 @@ impl CreateSubnetCidrReservationInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateSubnetCidrReservation`.
 ///
-/// <p>Creates a subnet CIDR reservation. For information about subnet CIDR reservations, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/subnet-cidr-reservation.html">Subnet CIDR reservations</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
+/// <p>Creates a subnet CIDR reservation. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/subnet-cidr-reservation.html">Subnet CIDR reservations</a> in the <i>Amazon Virtual Private Cloud User Guide</i> and <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-prefix-eni.html">Assign prefixes to network interfaces</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateSubnetCidrReservationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -138,31 +138,28 @@ impl CreateSubnetCidrReservationFluentBuilder {
     pub fn get_cidr(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_cidr()
     }
-    /// <p>The type of reservation.</p>
-    /// <p>The following are valid values:</p>
+    /// <p>The type of reservation. The reservation type determines how the reserved IP addresses are assigned to resources.</p>
     /// <ul>
-    /// <li> <p> <code>prefix</code>: The Amazon EC2 Prefix Delegation feature assigns the IP addresses to network interfaces that are associated with an instance. For information about Prefix Delegation, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-prefix-delegation.html">Prefix Delegation for Amazon EC2 network interfaces</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> </li>
-    /// <li> <p> <code>explicit</code>: You manually assign the IP addresses to resources that reside in your subnet. </p> </li>
+    /// <li> <p> <code>prefix</code> - Amazon Web Services assigns the reserved IP addresses to network interfaces.</p> </li>
+    /// <li> <p> <code>explicit</code> - You assign the reserved IP addresses to network interfaces.</p> </li>
     /// </ul>
     pub fn reservation_type(mut self, input: crate::types::SubnetCidrReservationType) -> Self {
         self.inner = self.inner.reservation_type(input);
         self
     }
-    /// <p>The type of reservation.</p>
-    /// <p>The following are valid values:</p>
+    /// <p>The type of reservation. The reservation type determines how the reserved IP addresses are assigned to resources.</p>
     /// <ul>
-    /// <li> <p> <code>prefix</code>: The Amazon EC2 Prefix Delegation feature assigns the IP addresses to network interfaces that are associated with an instance. For information about Prefix Delegation, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-prefix-delegation.html">Prefix Delegation for Amazon EC2 network interfaces</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> </li>
-    /// <li> <p> <code>explicit</code>: You manually assign the IP addresses to resources that reside in your subnet. </p> </li>
+    /// <li> <p> <code>prefix</code> - Amazon Web Services assigns the reserved IP addresses to network interfaces.</p> </li>
+    /// <li> <p> <code>explicit</code> - You assign the reserved IP addresses to network interfaces.</p> </li>
     /// </ul>
     pub fn set_reservation_type(mut self, input: ::std::option::Option<crate::types::SubnetCidrReservationType>) -> Self {
         self.inner = self.inner.set_reservation_type(input);
         self
     }
-    /// <p>The type of reservation.</p>
-    /// <p>The following are valid values:</p>
+    /// <p>The type of reservation. The reservation type determines how the reserved IP addresses are assigned to resources.</p>
     /// <ul>
-    /// <li> <p> <code>prefix</code>: The Amazon EC2 Prefix Delegation feature assigns the IP addresses to network interfaces that are associated with an instance. For information about Prefix Delegation, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-prefix-delegation.html">Prefix Delegation for Amazon EC2 network interfaces</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> </li>
-    /// <li> <p> <code>explicit</code>: You manually assign the IP addresses to resources that reside in your subnet. </p> </li>
+    /// <li> <p> <code>prefix</code> - Amazon Web Services assigns the reserved IP addresses to network interfaces.</p> </li>
+    /// <li> <p> <code>explicit</code> - You assign the reserved IP addresses to network interfaces.</p> </li>
     /// </ul>
     pub fn get_reservation_type(&self) -> &::std::option::Option<crate::types::SubnetCidrReservationType> {
         self.inner.get_reservation_type()

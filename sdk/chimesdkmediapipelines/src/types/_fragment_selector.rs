@@ -12,13 +12,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FragmentSelector {
-    /// <p>The origin of the timestamps to use, <code>Server</code> or <code>Producer</code>. For more information, see <a href="kinesisvideostreams/latest/dg/API_dataplane_StartSelector.html#KinesisVideo-Type-dataplane_StartSelector-StartSelectorType">StartSelectorType</a> in the <i>Amazon Kinesis Video Streams Developer Guide</i>.</p>
+    /// <p>The origin of the timestamps to use, <code>Server</code> or <code>Producer</code>. For more information, see <a href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_dataplane_StartSelector.html">StartSelectorType</a> in the <i>Amazon Kinesis Video Streams Developer Guide</i>.</p>
     pub fragment_selector_type: ::std::option::Option<crate::types::FragmentSelectorType>,
     /// <p>The range of timestamps to return.</p>
     pub timestamp_range: ::std::option::Option<crate::types::TimestampRange>,
 }
 impl FragmentSelector {
-    /// <p>The origin of the timestamps to use, <code>Server</code> or <code>Producer</code>. For more information, see <a href="kinesisvideostreams/latest/dg/API_dataplane_StartSelector.html#KinesisVideo-Type-dataplane_StartSelector-StartSelectorType">StartSelectorType</a> in the <i>Amazon Kinesis Video Streams Developer Guide</i>.</p>
+    /// <p>The origin of the timestamps to use, <code>Server</code> or <code>Producer</code>. For more information, see <a href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_dataplane_StartSelector.html">StartSelectorType</a> in the <i>Amazon Kinesis Video Streams Developer Guide</i>.</p>
     pub fn fragment_selector_type(&self) -> ::std::option::Option<&crate::types::FragmentSelectorType> {
         self.fragment_selector_type.as_ref()
     }
@@ -42,17 +42,17 @@ pub struct FragmentSelectorBuilder {
     pub(crate) timestamp_range: ::std::option::Option<crate::types::TimestampRange>,
 }
 impl FragmentSelectorBuilder {
-    /// <p>The origin of the timestamps to use, <code>Server</code> or <code>Producer</code>. For more information, see <a href="kinesisvideostreams/latest/dg/API_dataplane_StartSelector.html#KinesisVideo-Type-dataplane_StartSelector-StartSelectorType">StartSelectorType</a> in the <i>Amazon Kinesis Video Streams Developer Guide</i>.</p>
+    /// <p>The origin of the timestamps to use, <code>Server</code> or <code>Producer</code>. For more information, see <a href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_dataplane_StartSelector.html">StartSelectorType</a> in the <i>Amazon Kinesis Video Streams Developer Guide</i>.</p>
     pub fn fragment_selector_type(mut self, input: crate::types::FragmentSelectorType) -> Self {
         self.fragment_selector_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The origin of the timestamps to use, <code>Server</code> or <code>Producer</code>. For more information, see <a href="kinesisvideostreams/latest/dg/API_dataplane_StartSelector.html#KinesisVideo-Type-dataplane_StartSelector-StartSelectorType">StartSelectorType</a> in the <i>Amazon Kinesis Video Streams Developer Guide</i>.</p>
+    /// <p>The origin of the timestamps to use, <code>Server</code> or <code>Producer</code>. For more information, see <a href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_dataplane_StartSelector.html">StartSelectorType</a> in the <i>Amazon Kinesis Video Streams Developer Guide</i>.</p>
     pub fn set_fragment_selector_type(mut self, input: ::std::option::Option<crate::types::FragmentSelectorType>) -> Self {
         self.fragment_selector_type = input;
         self
     }
-    /// <p>The origin of the timestamps to use, <code>Server</code> or <code>Producer</code>. For more information, see <a href="kinesisvideostreams/latest/dg/API_dataplane_StartSelector.html#KinesisVideo-Type-dataplane_StartSelector-StartSelectorType">StartSelectorType</a> in the <i>Amazon Kinesis Video Streams Developer Guide</i>.</p>
+    /// <p>The origin of the timestamps to use, <code>Server</code> or <code>Producer</code>. For more information, see <a href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_dataplane_StartSelector.html">StartSelectorType</a> in the <i>Amazon Kinesis Video Streams Developer Guide</i>.</p>
     pub fn get_fragment_selector_type(&self) -> &::std::option::Option<crate::types::FragmentSelectorType> {
         &self.fragment_selector_type
     }

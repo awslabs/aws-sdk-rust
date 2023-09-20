@@ -16,12 +16,11 @@ pub struct ProvisioningArtifactProperties {
     /// <p>The type of provisioning artifact.</p>
     /// <ul>
     /// <li> <p> <code>CLOUD_FORMATION_TEMPLATE</code> - CloudFormation template</p> </li>
-    /// <li> <p> <code>MARKETPLACE_AMI</code> - Amazon Web Services Marketplace AMI</p> </li>
-    /// <li> <p> <code>MARKETPLACE_CAR</code> - Amazon Web Services Marketplace Clusters and Amazon Web Services Resources</p> </li>
     /// <li> <p> <code>TERRAFORM_OPEN_SOURCE</code> - Terraform open source configuration file</p> </li>
     /// </ul>
     pub r#type: ::std::option::Option<crate::types::ProvisioningArtifactType>,
-    /// <p>If set to true, Service Catalog stops validating the specified provisioning artifact even if it is invalid.</p>
+    /// <p>If set to true, Service Catalog stops validating the specified provisioning artifact even if it is invalid. </p>
+    /// <p>Service Catalog does not support template validation for the <code>TERRAFORM_OS</code> product type. </p>
     pub disable_template_validation: bool,
 }
 impl ProvisioningArtifactProperties {
@@ -43,14 +42,13 @@ impl ProvisioningArtifactProperties {
     /// <p>The type of provisioning artifact.</p>
     /// <ul>
     /// <li> <p> <code>CLOUD_FORMATION_TEMPLATE</code> - CloudFormation template</p> </li>
-    /// <li> <p> <code>MARKETPLACE_AMI</code> - Amazon Web Services Marketplace AMI</p> </li>
-    /// <li> <p> <code>MARKETPLACE_CAR</code> - Amazon Web Services Marketplace Clusters and Amazon Web Services Resources</p> </li>
     /// <li> <p> <code>TERRAFORM_OPEN_SOURCE</code> - Terraform open source configuration file</p> </li>
     /// </ul>
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::ProvisioningArtifactType> {
         self.r#type.as_ref()
     }
-    /// <p>If set to true, Service Catalog stops validating the specified provisioning artifact even if it is invalid.</p>
+    /// <p>If set to true, Service Catalog stops validating the specified provisioning artifact even if it is invalid. </p>
+    /// <p>Service Catalog does not support template validation for the <code>TERRAFORM_OS</code> product type. </p>
     pub fn disable_template_validation(&self) -> bool {
         self.disable_template_validation
     }
@@ -133,8 +131,6 @@ impl ProvisioningArtifactPropertiesBuilder {
     /// <p>The type of provisioning artifact.</p>
     /// <ul>
     /// <li> <p> <code>CLOUD_FORMATION_TEMPLATE</code> - CloudFormation template</p> </li>
-    /// <li> <p> <code>MARKETPLACE_AMI</code> - Amazon Web Services Marketplace AMI</p> </li>
-    /// <li> <p> <code>MARKETPLACE_CAR</code> - Amazon Web Services Marketplace Clusters and Amazon Web Services Resources</p> </li>
     /// <li> <p> <code>TERRAFORM_OPEN_SOURCE</code> - Terraform open source configuration file</p> </li>
     /// </ul>
     pub fn r#type(mut self, input: crate::types::ProvisioningArtifactType) -> Self {
@@ -144,8 +140,6 @@ impl ProvisioningArtifactPropertiesBuilder {
     /// <p>The type of provisioning artifact.</p>
     /// <ul>
     /// <li> <p> <code>CLOUD_FORMATION_TEMPLATE</code> - CloudFormation template</p> </li>
-    /// <li> <p> <code>MARKETPLACE_AMI</code> - Amazon Web Services Marketplace AMI</p> </li>
-    /// <li> <p> <code>MARKETPLACE_CAR</code> - Amazon Web Services Marketplace Clusters and Amazon Web Services Resources</p> </li>
     /// <li> <p> <code>TERRAFORM_OPEN_SOURCE</code> - Terraform open source configuration file</p> </li>
     /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ProvisioningArtifactType>) -> Self {
@@ -155,24 +149,25 @@ impl ProvisioningArtifactPropertiesBuilder {
     /// <p>The type of provisioning artifact.</p>
     /// <ul>
     /// <li> <p> <code>CLOUD_FORMATION_TEMPLATE</code> - CloudFormation template</p> </li>
-    /// <li> <p> <code>MARKETPLACE_AMI</code> - Amazon Web Services Marketplace AMI</p> </li>
-    /// <li> <p> <code>MARKETPLACE_CAR</code> - Amazon Web Services Marketplace Clusters and Amazon Web Services Resources</p> </li>
     /// <li> <p> <code>TERRAFORM_OPEN_SOURCE</code> - Terraform open source configuration file</p> </li>
     /// </ul>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::ProvisioningArtifactType> {
         &self.r#type
     }
-    /// <p>If set to true, Service Catalog stops validating the specified provisioning artifact even if it is invalid.</p>
+    /// <p>If set to true, Service Catalog stops validating the specified provisioning artifact even if it is invalid. </p>
+    /// <p>Service Catalog does not support template validation for the <code>TERRAFORM_OS</code> product type. </p>
     pub fn disable_template_validation(mut self, input: bool) -> Self {
         self.disable_template_validation = ::std::option::Option::Some(input);
         self
     }
-    /// <p>If set to true, Service Catalog stops validating the specified provisioning artifact even if it is invalid.</p>
+    /// <p>If set to true, Service Catalog stops validating the specified provisioning artifact even if it is invalid. </p>
+    /// <p>Service Catalog does not support template validation for the <code>TERRAFORM_OS</code> product type. </p>
     pub fn set_disable_template_validation(mut self, input: ::std::option::Option<bool>) -> Self {
         self.disable_template_validation = input;
         self
     }
-    /// <p>If set to true, Service Catalog stops validating the specified provisioning artifact even if it is invalid.</p>
+    /// <p>If set to true, Service Catalog stops validating the specified provisioning artifact even if it is invalid. </p>
+    /// <p>Service Catalog does not support template validation for the <code>TERRAFORM_OS</code> product type. </p>
     pub fn get_disable_template_validation(&self) -> &::std::option::Option<bool> {
         &self.disable_template_validation
     }

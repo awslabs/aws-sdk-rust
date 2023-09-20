@@ -2,7 +2,7 @@
 
 /// <p>The AcceptDomainTransferFromAnotherAwsAccount request includes the following elements.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct AcceptDomainTransferFromAnotherAwsAccountInput {
     /// <p>The name of the domain that was specified when another Amazon Web Services account submitted a <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_TransferDomainToAnotherAwsAccount.html">TransferDomainToAnotherAwsAccount</a> request. </p>
     pub domain_name: ::std::option::Option<::std::string::String>,
@@ -19,6 +19,14 @@ impl AcceptDomainTransferFromAnotherAwsAccountInput {
         self.password.as_deref()
     }
 }
+impl ::std::fmt::Debug for AcceptDomainTransferFromAnotherAwsAccountInput {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("AcceptDomainTransferFromAnotherAwsAccountInput");
+        formatter.field("domain_name", &self.domain_name);
+        formatter.field("password", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl AcceptDomainTransferFromAnotherAwsAccountInput {
     /// Creates a new builder-style object to manufacture [`AcceptDomainTransferFromAnotherAwsAccountInput`](crate::operation::accept_domain_transfer_from_another_aws_account::AcceptDomainTransferFromAnotherAwsAccountInput).
     pub fn builder(
@@ -29,7 +37,7 @@ impl AcceptDomainTransferFromAnotherAwsAccountInput {
 
 /// A builder for [`AcceptDomainTransferFromAnotherAwsAccountInput`](crate::operation::accept_domain_transfer_from_another_aws_account::AcceptDomainTransferFromAnotherAwsAccountInput).
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct AcceptDomainTransferFromAnotherAwsAccountInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) password: ::std::option::Option<::std::string::String>,
@@ -76,5 +84,13 @@ impl AcceptDomainTransferFromAnotherAwsAccountInputBuilder {
                 password: self.password,
             },
         )
+    }
+}
+impl ::std::fmt::Debug for AcceptDomainTransferFromAnotherAwsAccountInputBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("AcceptDomainTransferFromAnotherAwsAccountInputBuilder");
+        formatter.field("domain_name", &self.domain_name);
+        formatter.field("password", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

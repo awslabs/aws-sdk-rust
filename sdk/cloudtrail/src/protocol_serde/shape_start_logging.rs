@@ -147,6 +147,21 @@ pub fn de_start_logging_http_error(
             }
             tmp
         }),
+        "ThrottlingException" => crate::operation::start_logging::StartLoggingError::ThrottlingException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
+                output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::start_logging::StartLoggingError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "TrailNotFoundException" => crate::operation::start_logging::StartLoggingError::TrailNotFoundException({
             #[allow(unused_mut)]
             let mut tmp = {

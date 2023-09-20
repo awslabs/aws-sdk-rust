@@ -28,7 +28,7 @@ impl DetectLabelsInputBuilder {
 /// <p> <b>Optional Parameters</b> </p>
 /// <p>You can specify one or both of the <code>GENERAL_LABELS</code> and <code>IMAGE_PROPERTIES</code> feature types when calling the DetectLabels API. Including <code>GENERAL_LABELS</code> will ensure the response includes the labels detected in the input image, while including <code>IMAGE_PROPERTIES </code>will ensure the response includes information about the image quality and color.</p>
 /// <p>When using <code>GENERAL_LABELS</code> and/or <code>IMAGE_PROPERTIES</code> you can provide filtering criteria to the Settings parameter. You can filter with sets of individual labels or with label categories. You can specify inclusive filters, exclusive filters, or a combination of inclusive and exclusive filters. For more information on filtering see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/labels-detect-labels-image.html">Detecting Labels in an Image</a>.</p>
-/// <p>You can specify <code>MinConfidence</code> to control the confidence threshold for the labels returned. The default is 55%. You can also add the <code>MaxLabels</code> parameter to limit the number of labels returned. The default and upper limit is 1000 labels.</p>
+/// <p>When getting labels, you can specify <code>MinConfidence</code> to control the confidence threshold for the labels returned. The default is 55%. You can also add the <code>MaxLabels</code> parameter to limit the number of labels returned. The default and upper limit is 1000 labels. These arguments are only valid when supplying GENERAL_LABELS as a feature type.</p>
 /// <p> <b>Response Elements</b> </p>
 /// <p> For each object, scene, and concept the API returns one or more labels. The API returns the following types of information about labels:</p>
 /// <ul>
@@ -163,34 +163,34 @@ impl DetectLabelsFluentBuilder {
     pub fn get_image(&self) -> &::std::option::Option<crate::types::Image> {
         self.inner.get_image()
     }
-    /// <p>Maximum number of labels you want the service to return in the response. The service returns the specified number of highest confidence labels. </p>
+    /// <p>Maximum number of labels you want the service to return in the response. The service returns the specified number of highest confidence labels. Only valid when GENERAL_LABELS is specified as a feature type in the Feature input parameter.</p>
     pub fn max_labels(mut self, input: i32) -> Self {
         self.inner = self.inner.max_labels(input);
         self
     }
-    /// <p>Maximum number of labels you want the service to return in the response. The service returns the specified number of highest confidence labels. </p>
+    /// <p>Maximum number of labels you want the service to return in the response. The service returns the specified number of highest confidence labels. Only valid when GENERAL_LABELS is specified as a feature type in the Feature input parameter.</p>
     pub fn set_max_labels(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_labels(input);
         self
     }
-    /// <p>Maximum number of labels you want the service to return in the response. The service returns the specified number of highest confidence labels. </p>
+    /// <p>Maximum number of labels you want the service to return in the response. The service returns the specified number of highest confidence labels. Only valid when GENERAL_LABELS is specified as a feature type in the Feature input parameter.</p>
     pub fn get_max_labels(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_labels()
     }
     /// <p>Specifies the minimum confidence level for the labels to return. Amazon Rekognition doesn't return any labels with confidence lower than this specified value.</p>
-    /// <p>If <code>MinConfidence</code> is not specified, the operation returns labels with a confidence values greater than or equal to 55 percent.</p>
+    /// <p>If <code>MinConfidence</code> is not specified, the operation returns labels with a confidence values greater than or equal to 55 percent. Only valid when GENERAL_LABELS is specified as a feature type in the Feature input parameter.</p>
     pub fn min_confidence(mut self, input: f32) -> Self {
         self.inner = self.inner.min_confidence(input);
         self
     }
     /// <p>Specifies the minimum confidence level for the labels to return. Amazon Rekognition doesn't return any labels with confidence lower than this specified value.</p>
-    /// <p>If <code>MinConfidence</code> is not specified, the operation returns labels with a confidence values greater than or equal to 55 percent.</p>
+    /// <p>If <code>MinConfidence</code> is not specified, the operation returns labels with a confidence values greater than or equal to 55 percent. Only valid when GENERAL_LABELS is specified as a feature type in the Feature input parameter.</p>
     pub fn set_min_confidence(mut self, input: ::std::option::Option<f32>) -> Self {
         self.inner = self.inner.set_min_confidence(input);
         self
     }
     /// <p>Specifies the minimum confidence level for the labels to return. Amazon Rekognition doesn't return any labels with confidence lower than this specified value.</p>
-    /// <p>If <code>MinConfidence</code> is not specified, the operation returns labels with a confidence values greater than or equal to 55 percent.</p>
+    /// <p>If <code>MinConfidence</code> is not specified, the operation returns labels with a confidence values greater than or equal to 55 percent. Only valid when GENERAL_LABELS is specified as a feature type in the Feature input parameter.</p>
     pub fn get_min_confidence(&self) -> &::std::option::Option<f32> {
         self.inner.get_min_confidence()
     }

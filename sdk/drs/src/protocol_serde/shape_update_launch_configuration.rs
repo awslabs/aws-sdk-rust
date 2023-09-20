@@ -210,6 +210,9 @@ pub(crate) fn de_update_launch_configuration(
                             .transpose()?,
                     );
                 }
+                "postLaunchEnabled" => {
+                    builder = builder.set_post_launch_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                }
                 "sourceServerID" => {
                     builder = builder.set_source_server_id(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

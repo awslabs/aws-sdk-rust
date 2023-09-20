@@ -8,7 +8,9 @@ pub struct DescribeAlarmsInput {
     /// <p>An alarm name prefix. If you specify this parameter, you receive information about all alarms that have names that start with this prefix.</p>
     /// <p>If this parameter is specified, you cannot specify <code>AlarmNames</code>.</p>
     pub alarm_name_prefix: ::std::option::Option<::std::string::String>,
-    /// <p>Use this parameter to specify whether you want the operation to return metric alarms or composite alarms. If you omit this parameter, only metric alarms are returned.</p>
+    /// <p>Use this parameter to specify whether you want the operation to return metric alarms or composite alarms. If you omit this parameter, only metric alarms are returned, even if composite alarms exist in the account.</p>
+    /// <p>For example, if you omit this parameter or specify <code>MetricAlarms</code>, the operation returns only a list of metric alarms. It does not return any composite alarms, even if composite alarms exist in the account.</p>
+    /// <p>If you specify <code>CompositeAlarms</code>, the operation returns only a list of composite alarms, and does not return any metric alarms.</p>
     pub alarm_types: ::std::option::Option<::std::vec::Vec<crate::types::AlarmType>>,
     /// <p>If you use this parameter and specify the name of a composite alarm, the operation returns information about the "children" alarms of the alarm you specify. These are the metric alarms and composite alarms referenced in the <code>AlarmRule</code> field of the composite alarm that you specify in <code>ChildrenOfAlarmName</code>. Information about the composite alarm that you name in <code>ChildrenOfAlarmName</code> is not returned.</p>
     /// <p>If you specify <code>ChildrenOfAlarmName</code>, you cannot specify any other parameters in the request except for <code>MaxRecords</code> and <code>NextToken</code>. If you do so, you receive a validation error.</p> <note>
@@ -39,7 +41,9 @@ impl DescribeAlarmsInput {
     pub fn alarm_name_prefix(&self) -> ::std::option::Option<&str> {
         self.alarm_name_prefix.as_deref()
     }
-    /// <p>Use this parameter to specify whether you want the operation to return metric alarms or composite alarms. If you omit this parameter, only metric alarms are returned.</p>
+    /// <p>Use this parameter to specify whether you want the operation to return metric alarms or composite alarms. If you omit this parameter, only metric alarms are returned, even if composite alarms exist in the account.</p>
+    /// <p>For example, if you omit this parameter or specify <code>MetricAlarms</code>, the operation returns only a list of metric alarms. It does not return any composite alarms, even if composite alarms exist in the account.</p>
+    /// <p>If you specify <code>CompositeAlarms</code>, the operation returns only a list of composite alarms, and does not return any metric alarms.</p>
     pub fn alarm_types(&self) -> ::std::option::Option<&[crate::types::AlarmType]> {
         self.alarm_types.as_deref()
     }
@@ -137,19 +141,25 @@ impl DescribeAlarmsInputBuilder {
     ///
     /// To override the contents of this collection use [`set_alarm_types`](Self::set_alarm_types).
     ///
-    /// <p>Use this parameter to specify whether you want the operation to return metric alarms or composite alarms. If you omit this parameter, only metric alarms are returned.</p>
+    /// <p>Use this parameter to specify whether you want the operation to return metric alarms or composite alarms. If you omit this parameter, only metric alarms are returned, even if composite alarms exist in the account.</p>
+    /// <p>For example, if you omit this parameter or specify <code>MetricAlarms</code>, the operation returns only a list of metric alarms. It does not return any composite alarms, even if composite alarms exist in the account.</p>
+    /// <p>If you specify <code>CompositeAlarms</code>, the operation returns only a list of composite alarms, and does not return any metric alarms.</p>
     pub fn alarm_types(mut self, input: crate::types::AlarmType) -> Self {
         let mut v = self.alarm_types.unwrap_or_default();
         v.push(input);
         self.alarm_types = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Use this parameter to specify whether you want the operation to return metric alarms or composite alarms. If you omit this parameter, only metric alarms are returned.</p>
+    /// <p>Use this parameter to specify whether you want the operation to return metric alarms or composite alarms. If you omit this parameter, only metric alarms are returned, even if composite alarms exist in the account.</p>
+    /// <p>For example, if you omit this parameter or specify <code>MetricAlarms</code>, the operation returns only a list of metric alarms. It does not return any composite alarms, even if composite alarms exist in the account.</p>
+    /// <p>If you specify <code>CompositeAlarms</code>, the operation returns only a list of composite alarms, and does not return any metric alarms.</p>
     pub fn set_alarm_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AlarmType>>) -> Self {
         self.alarm_types = input;
         self
     }
-    /// <p>Use this parameter to specify whether you want the operation to return metric alarms or composite alarms. If you omit this parameter, only metric alarms are returned.</p>
+    /// <p>Use this parameter to specify whether you want the operation to return metric alarms or composite alarms. If you omit this parameter, only metric alarms are returned, even if composite alarms exist in the account.</p>
+    /// <p>For example, if you omit this parameter or specify <code>MetricAlarms</code>, the operation returns only a list of metric alarms. It does not return any composite alarms, even if composite alarms exist in the account.</p>
+    /// <p>If you specify <code>CompositeAlarms</code>, the operation returns only a list of composite alarms, and does not return any metric alarms.</p>
     pub fn get_alarm_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AlarmType>> {
         &self.alarm_types
     }

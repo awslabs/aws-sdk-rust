@@ -6,8 +6,11 @@ pub fn ser_update_phone_number_input(
     if let Some(var_1) = &input.calling_name {
         object.key("CallingName").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.product_type {
-        object.key("ProductType").string(var_2.as_str());
+    if let Some(var_2) = &input.name {
+        object.key("Name").string(var_2.as_str());
+    }
+    if let Some(var_3) = &input.product_type {
+        object.key("ProductType").string(var_3.as_str());
     }
     Ok(())
 }

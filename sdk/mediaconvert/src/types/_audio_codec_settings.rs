@@ -16,6 +16,8 @@ pub struct AudioCodecSettings {
     pub eac3_atmos_settings: ::std::option::Option<crate::types::Eac3AtmosSettings>,
     /// Required when you set Codec to the value EAC3.
     pub eac3_settings: ::std::option::Option<crate::types::Eac3Settings>,
+    /// Required when you set Codec, under AudioDescriptions&gt;CodecSettings, to the value FLAC.
+    pub flac_settings: ::std::option::Option<crate::types::FlacSettings>,
     /// Required when you set Codec to the value MP2.
     pub mp2_settings: ::std::option::Option<crate::types::Mp2Settings>,
     /// Required when you set Codec, under AudioDescriptions&gt;CodecSettings, to the value MP3.
@@ -51,6 +53,10 @@ impl AudioCodecSettings {
     /// Required when you set Codec to the value EAC3.
     pub fn eac3_settings(&self) -> ::std::option::Option<&crate::types::Eac3Settings> {
         self.eac3_settings.as_ref()
+    }
+    /// Required when you set Codec, under AudioDescriptions&gt;CodecSettings, to the value FLAC.
+    pub fn flac_settings(&self) -> ::std::option::Option<&crate::types::FlacSettings> {
+        self.flac_settings.as_ref()
     }
     /// Required when you set Codec to the value MP2.
     pub fn mp2_settings(&self) -> ::std::option::Option<&crate::types::Mp2Settings> {
@@ -90,6 +96,7 @@ pub struct AudioCodecSettingsBuilder {
     pub(crate) codec: ::std::option::Option<crate::types::AudioCodec>,
     pub(crate) eac3_atmos_settings: ::std::option::Option<crate::types::Eac3AtmosSettings>,
     pub(crate) eac3_settings: ::std::option::Option<crate::types::Eac3Settings>,
+    pub(crate) flac_settings: ::std::option::Option<crate::types::FlacSettings>,
     pub(crate) mp2_settings: ::std::option::Option<crate::types::Mp2Settings>,
     pub(crate) mp3_settings: ::std::option::Option<crate::types::Mp3Settings>,
     pub(crate) opus_settings: ::std::option::Option<crate::types::OpusSettings>,
@@ -181,6 +188,20 @@ impl AudioCodecSettingsBuilder {
     pub fn get_eac3_settings(&self) -> &::std::option::Option<crate::types::Eac3Settings> {
         &self.eac3_settings
     }
+    /// Required when you set Codec, under AudioDescriptions&gt;CodecSettings, to the value FLAC.
+    pub fn flac_settings(mut self, input: crate::types::FlacSettings) -> Self {
+        self.flac_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// Required when you set Codec, under AudioDescriptions&gt;CodecSettings, to the value FLAC.
+    pub fn set_flac_settings(mut self, input: ::std::option::Option<crate::types::FlacSettings>) -> Self {
+        self.flac_settings = input;
+        self
+    }
+    /// Required when you set Codec, under AudioDescriptions&gt;CodecSettings, to the value FLAC.
+    pub fn get_flac_settings(&self) -> &::std::option::Option<crate::types::FlacSettings> {
+        &self.flac_settings
+    }
     /// Required when you set Codec to the value MP2.
     pub fn mp2_settings(mut self, input: crate::types::Mp2Settings) -> Self {
         self.mp2_settings = ::std::option::Option::Some(input);
@@ -260,6 +281,7 @@ impl AudioCodecSettingsBuilder {
             codec: self.codec,
             eac3_atmos_settings: self.eac3_atmos_settings,
             eac3_settings: self.eac3_settings,
+            flac_settings: self.flac_settings,
             mp2_settings: self.mp2_settings,
             mp3_settings: self.mp3_settings,
             opus_settings: self.opus_settings,

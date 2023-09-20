@@ -22,7 +22,7 @@ impl CreateTemplateInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateTemplate`.
 ///
-/// <p>Creates an email template. Email templates enable you to send personalized email to one or more destinations in a single API operation. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html">Amazon SES Developer Guide</a>.</p>
+/// <p>Creates an email template. Email templates enable you to send personalized email to one or more destinations in a single operation. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/dg/send-personalized-email-api.html">Amazon SES Developer Guide</a>.</p>
 /// <p>You can execute this operation no more than once per second.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateTemplateFluentBuilder {
@@ -111,17 +111,17 @@ impl CreateTemplateFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The content of the email, composed of a subject line, an HTML part, and a text-only part.</p>
+    /// <p>The content of the email, composed of a subject line and either an HTML part or a text-only part.</p>
     pub fn template(mut self, input: crate::types::Template) -> Self {
         self.inner = self.inner.template(input);
         self
     }
-    /// <p>The content of the email, composed of a subject line, an HTML part, and a text-only part.</p>
+    /// <p>The content of the email, composed of a subject line and either an HTML part or a text-only part.</p>
     pub fn set_template(mut self, input: ::std::option::Option<crate::types::Template>) -> Self {
         self.inner = self.inner.set_template(input);
         self
     }
-    /// <p>The content of the email, composed of a subject line, an HTML part, and a text-only part.</p>
+    /// <p>The content of the email, composed of a subject line and either an HTML part or a text-only part.</p>
     pub fn get_template(&self) -> &::std::option::Option<crate::types::Template> {
         self.inner.get_template()
     }

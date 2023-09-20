@@ -187,6 +187,8 @@ pub(crate) mod shape_kx_database_configurations;
 
 pub(crate) mod shape_kx_databases;
 
+pub(crate) mod shape_kx_deployment_configuration;
+
 pub(crate) mod shape_kx_environment_list;
 
 pub(crate) mod shape_kx_node_summaries;
@@ -217,12 +219,20 @@ pub(crate) mod shape_kx_node;
 
 pub(crate) mod shape_kx_user;
 
+pub(crate) mod shape_network_acl_configuration;
+
+pub(crate) mod shape_network_acl_entry;
+
 pub(crate) mod shape_security_group_id_list;
 
 pub(crate) mod shape_subnet_id_list;
 
 pub(crate) mod shape_attribute_map;
 
+pub(crate) mod shape_icmp_type_code;
+
 pub(crate) mod shape_kx_database_cache_configurations;
+
+pub(crate) mod shape_port_range;
 
 pub(crate) mod shape_db_paths;

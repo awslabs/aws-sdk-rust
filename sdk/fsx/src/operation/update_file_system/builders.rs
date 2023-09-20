@@ -30,7 +30,9 @@ impl UpdateFileSystemInputBuilder {
 /// <li> <p> <code>DailyAutomaticBackupStartTime</code> </p> </li>
 /// <li> <p> <code>SelfManagedActiveDirectoryConfiguration</code> </p> </li>
 /// <li> <p> <code>StorageCapacity</code> </p> </li>
+/// <li> <p> <code>StorageType</code> </p> </li>
 /// <li> <p> <code>ThroughputCapacity</code> </p> </li>
+/// <li> <p> <code>DiskIopsConfiguration</code> </p> </li>
 /// <li> <p> <code>WeeklyMaintenanceStartTime</code> </p> </li>
 /// </ul>
 /// <p>For FSx for Lustre file systems, you can update the following properties:</p>
@@ -58,11 +60,13 @@ impl UpdateFileSystemInputBuilder {
 /// </ul>
 /// <p>For FSx for OpenZFS file systems, you can update the following properties:</p>
 /// <ul>
+/// <li> <p> <code>AddRouteTableIds</code> </p> </li>
 /// <li> <p> <code>AutomaticBackupRetentionDays</code> </p> </li>
 /// <li> <p> <code>CopyTagsToBackups</code> </p> </li>
 /// <li> <p> <code>CopyTagsToVolumes</code> </p> </li>
 /// <li> <p> <code>DailyAutomaticBackupStartTime</code> </p> </li>
 /// <li> <p> <code>DiskIopsConfiguration</code> </p> </li>
+/// <li> <p> <code>RemoveRouteTableIds</code> </p> </li>
 /// <li> <p> <code>StorageCapacity</code> </p> </li>
 /// <li> <p> <code>ThroughputCapacity</code> </p> </li>
 /// <li> <p> <code>WeeklyMaintenanceStartTime</code> </p> </li>
@@ -287,5 +291,19 @@ impl UpdateFileSystemFluentBuilder {
     /// <p>The configuration updates for an FSx for OpenZFS file system.</p>
     pub fn get_open_zfs_configuration(&self) -> &::std::option::Option<crate::types::UpdateFileSystemOpenZfsConfiguration> {
         self.inner.get_open_zfs_configuration()
+    }
+    /// <p>Specifies the file system's storage type.</p>
+    pub fn storage_type(mut self, input: crate::types::StorageType) -> Self {
+        self.inner = self.inner.storage_type(input);
+        self
+    }
+    /// <p>Specifies the file system's storage type.</p>
+    pub fn set_storage_type(mut self, input: ::std::option::Option<crate::types::StorageType>) -> Self {
+        self.inner = self.inner.set_storage_type(input);
+        self
+    }
+    /// <p>Specifies the file system's storage type.</p>
+    pub fn get_storage_type(&self) -> &::std::option::Option<crate::types::StorageType> {
+        self.inner.get_storage_type()
     }
 }

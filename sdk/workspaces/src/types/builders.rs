@@ -51,6 +51,8 @@ pub use crate::types::_modification_state::ModificationStateBuilder;
 
 pub use crate::types::_workspace_image::WorkspaceImageBuilder;
 
+pub use crate::types::_error_details::ErrorDetailsBuilder;
+
 pub use crate::types::_update_result::UpdateResultBuilder;
 
 pub use crate::types::_operating_system::OperatingSystemBuilder;

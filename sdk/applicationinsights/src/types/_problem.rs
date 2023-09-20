@@ -20,6 +20,8 @@ pub struct Problem {
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A measure of the level of impact of the problem.</p>
     pub severity_level: ::std::option::Option<crate::types::SeverityLevel>,
+    /// <p>The AWS account ID for the owner of the resource group affected by the problem.</p>
+    pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the resource group affected by the problem.</p>
     pub resource_group_name: ::std::option::Option<::std::string::String>,
     /// <p>Feedback provided by the user about the problem.</p>
@@ -28,6 +30,10 @@ pub struct Problem {
     pub recurring_count: ::std::option::Option<i64>,
     /// <p> The last time that the problem reoccurred after its last resolution. </p>
     pub last_recurrence_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>Specifies whether or not you can view the problem. Updates to ignored problems do not generate notifications.</p>
+    pub visibility: ::std::option::Option<crate::types::Visibility>,
+    /// <p>Specifies how the problem was resolved. If the value is <code>AUTOMATIC</code>, the system resolved the problem. If the value is <code>MANUAL</code>, the user resolved the problem. If the value is <code>UNRESOLVED</code>, then the problem is not resolved.</p>
+    pub resolution_method: ::std::option::Option<crate::types::ResolutionMethod>,
 }
 impl Problem {
     /// <p>The ID of the problem.</p>
@@ -62,6 +68,10 @@ impl Problem {
     pub fn severity_level(&self) -> ::std::option::Option<&crate::types::SeverityLevel> {
         self.severity_level.as_ref()
     }
+    /// <p>The AWS account ID for the owner of the resource group affected by the problem.</p>
+    pub fn account_id(&self) -> ::std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
     /// <p>The name of the resource group affected by the problem.</p>
     pub fn resource_group_name(&self) -> ::std::option::Option<&str> {
         self.resource_group_name.as_deref()
@@ -77,6 +87,14 @@ impl Problem {
     /// <p> The last time that the problem reoccurred after its last resolution. </p>
     pub fn last_recurrence_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_recurrence_time.as_ref()
+    }
+    /// <p>Specifies whether or not you can view the problem. Updates to ignored problems do not generate notifications.</p>
+    pub fn visibility(&self) -> ::std::option::Option<&crate::types::Visibility> {
+        self.visibility.as_ref()
+    }
+    /// <p>Specifies how the problem was resolved. If the value is <code>AUTOMATIC</code>, the system resolved the problem. If the value is <code>MANUAL</code>, the user resolved the problem. If the value is <code>UNRESOLVED</code>, then the problem is not resolved.</p>
+    pub fn resolution_method(&self) -> ::std::option::Option<&crate::types::ResolutionMethod> {
+        self.resolution_method.as_ref()
     }
 }
 impl Problem {
@@ -98,10 +116,13 @@ pub struct ProblemBuilder {
     pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) severity_level: ::std::option::Option<crate::types::SeverityLevel>,
+    pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) resource_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) feedback: ::std::option::Option<::std::collections::HashMap<crate::types::FeedbackKey, crate::types::FeedbackValue>>,
     pub(crate) recurring_count: ::std::option::Option<i64>,
     pub(crate) last_recurrence_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) visibility: ::std::option::Option<crate::types::Visibility>,
+    pub(crate) resolution_method: ::std::option::Option<crate::types::ResolutionMethod>,
 }
 impl ProblemBuilder {
     /// <p>The ID of the problem.</p>
@@ -216,6 +237,20 @@ impl ProblemBuilder {
     pub fn get_severity_level(&self) -> &::std::option::Option<crate::types::SeverityLevel> {
         &self.severity_level
     }
+    /// <p>The AWS account ID for the owner of the resource group affected by the problem.</p>
+    pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.account_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The AWS account ID for the owner of the resource group affected by the problem.</p>
+    pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.account_id = input;
+        self
+    }
+    /// <p>The AWS account ID for the owner of the resource group affected by the problem.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
+    }
     /// <p>The name of the resource group affected by the problem.</p>
     pub fn resource_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_group_name = ::std::option::Option::Some(input.into());
@@ -281,6 +316,34 @@ impl ProblemBuilder {
     pub fn get_last_recurrence_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_recurrence_time
     }
+    /// <p>Specifies whether or not you can view the problem. Updates to ignored problems do not generate notifications.</p>
+    pub fn visibility(mut self, input: crate::types::Visibility) -> Self {
+        self.visibility = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether or not you can view the problem. Updates to ignored problems do not generate notifications.</p>
+    pub fn set_visibility(mut self, input: ::std::option::Option<crate::types::Visibility>) -> Self {
+        self.visibility = input;
+        self
+    }
+    /// <p>Specifies whether or not you can view the problem. Updates to ignored problems do not generate notifications.</p>
+    pub fn get_visibility(&self) -> &::std::option::Option<crate::types::Visibility> {
+        &self.visibility
+    }
+    /// <p>Specifies how the problem was resolved. If the value is <code>AUTOMATIC</code>, the system resolved the problem. If the value is <code>MANUAL</code>, the user resolved the problem. If the value is <code>UNRESOLVED</code>, then the problem is not resolved.</p>
+    pub fn resolution_method(mut self, input: crate::types::ResolutionMethod) -> Self {
+        self.resolution_method = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies how the problem was resolved. If the value is <code>AUTOMATIC</code>, the system resolved the problem. If the value is <code>MANUAL</code>, the user resolved the problem. If the value is <code>UNRESOLVED</code>, then the problem is not resolved.</p>
+    pub fn set_resolution_method(mut self, input: ::std::option::Option<crate::types::ResolutionMethod>) -> Self {
+        self.resolution_method = input;
+        self
+    }
+    /// <p>Specifies how the problem was resolved. If the value is <code>AUTOMATIC</code>, the system resolved the problem. If the value is <code>MANUAL</code>, the user resolved the problem. If the value is <code>UNRESOLVED</code>, then the problem is not resolved.</p>
+    pub fn get_resolution_method(&self) -> &::std::option::Option<crate::types::ResolutionMethod> {
+        &self.resolution_method
+    }
     /// Consumes the builder and constructs a [`Problem`](crate::types::Problem).
     pub fn build(self) -> crate::types::Problem {
         crate::types::Problem {
@@ -292,10 +355,13 @@ impl ProblemBuilder {
             start_time: self.start_time,
             end_time: self.end_time,
             severity_level: self.severity_level,
+            account_id: self.account_id,
             resource_group_name: self.resource_group_name,
             feedback: self.feedback,
             recurring_count: self.recurring_count,
             last_recurrence_time: self.last_recurrence_time,
+            visibility: self.visibility,
+            resolution_method: self.resolution_method,
         }
     }
 }

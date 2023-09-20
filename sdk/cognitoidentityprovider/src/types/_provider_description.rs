@@ -10,7 +10,7 @@ pub struct ProviderDescription {
     pub provider_type: ::std::option::Option<crate::types::IdentityProviderTypeType>,
     /// <p>The date the provider was last modified.</p>
     pub last_modified_date: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The date the provider was added to the user pool.</p>
+    /// <p>The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format, when the item was created.</p>
     pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ProviderDescription {
@@ -26,7 +26,7 @@ impl ProviderDescription {
     pub fn last_modified_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_modified_date.as_ref()
     }
-    /// <p>The date the provider was added to the user pool.</p>
+    /// <p>The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format, when the item was created.</p>
     pub fn creation_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
@@ -90,17 +90,17 @@ impl ProviderDescriptionBuilder {
     pub fn get_last_modified_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modified_date
     }
-    /// <p>The date the provider was added to the user pool.</p>
+    /// <p>The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format, when the item was created.</p>
     pub fn creation_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_date = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The date the provider was added to the user pool.</p>
+    /// <p>The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format, when the item was created.</p>
     pub fn set_creation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_date = input;
         self
     }
-    /// <p>The date the provider was added to the user pool.</p>
+    /// <p>The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format, when the item was created.</p>
     pub fn get_creation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.creation_date
     }

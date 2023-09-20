@@ -27,5 +27,11 @@ pub fn ser_write_application_settings_request(
         crate::protocol_serde::shape_quiet_time::ser_quiet_time(&mut object_8, var_7)?;
         object_8.finish();
     }
+    if let Some(var_9) = &input.journey_limits {
+        #[allow(unused_mut)]
+        let mut object_10 = object.key("JourneyLimits").start_object();
+        crate::protocol_serde::shape_application_settings_journey_limits::ser_application_settings_journey_limits(&mut object_10, var_9)?;
+        object_10.finish();
+    }
     Ok(())
 }

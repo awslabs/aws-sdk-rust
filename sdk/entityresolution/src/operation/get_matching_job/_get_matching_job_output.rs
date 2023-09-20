@@ -5,7 +5,7 @@
 pub struct GetMatchingJobOutput {
     /// <p>The ID of the job.</p>
     pub job_id: ::std::option::Option<::std::string::String>,
-    /// <p>The current status of the job. Either <code>running</code>, <code>succeeded</code>, <code>queued</code>, or <code>failed</code>.</p>
+    /// <p>The current status of the job.</p>
     pub status: ::std::option::Option<crate::types::JobStatus>,
     /// <p>The time at which the job was started.</p>
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -22,7 +22,7 @@ impl GetMatchingJobOutput {
     pub fn job_id(&self) -> ::std::option::Option<&str> {
         self.job_id.as_deref()
     }
-    /// <p>The current status of the job. Either <code>running</code>, <code>succeeded</code>, <code>queued</code>, or <code>failed</code>.</p>
+    /// <p>The current status of the job.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::JobStatus> {
         self.status.as_ref()
     }
@@ -82,17 +82,17 @@ impl GetMatchingJobOutputBuilder {
     pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.job_id
     }
-    /// <p>The current status of the job. Either <code>running</code>, <code>succeeded</code>, <code>queued</code>, or <code>failed</code>.</p>
+    /// <p>The current status of the job.</p>
     pub fn status(mut self, input: crate::types::JobStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The current status of the job. Either <code>running</code>, <code>succeeded</code>, <code>queued</code>, or <code>failed</code>.</p>
+    /// <p>The current status of the job.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::JobStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p>The current status of the job. Either <code>running</code>, <code>succeeded</code>, <code>queued</code>, or <code>failed</code>.</p>
+    /// <p>The current status of the job.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::JobStatus> {
         &self.status
     }

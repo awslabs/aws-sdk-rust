@@ -46,18 +46,18 @@ pub fn ser_describe_db_snapshots_input_input(
     }
     #[allow(unused_mut)]
     let mut scope_16 = writer.prefix("IncludeShared");
-    if input.include_shared {
-        scope_16.boolean(input.include_shared);
+    if let Some(var_17) = &input.include_shared {
+        scope_16.boolean(*var_17);
     }
     #[allow(unused_mut)]
-    let mut scope_17 = writer.prefix("IncludePublic");
-    if input.include_public {
-        scope_17.boolean(input.include_public);
+    let mut scope_18 = writer.prefix("IncludePublic");
+    if let Some(var_19) = &input.include_public {
+        scope_18.boolean(*var_19);
     }
     #[allow(unused_mut)]
-    let mut scope_18 = writer.prefix("DbiResourceId");
-    if let Some(var_19) = &input.dbi_resource_id {
-        scope_18.string(var_19);
+    let mut scope_20 = writer.prefix("DbiResourceId");
+    if let Some(var_21) = &input.dbi_resource_id {
+        scope_20.string(var_21);
     }
     writer.finish();
     Ok(::aws_smithy_http::body::SdkBody::from(out))

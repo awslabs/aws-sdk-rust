@@ -12,7 +12,7 @@ pub struct GetRecommendationsInput {
     /// <p>Required for <code>USER_PERSONALIZATION</code> recipe type.</p>
     pub user_id: ::std::option::Option<::std::string::String>,
     /// <p>The number of results to return. The default is 25. The maximum is 500.</p>
-    pub num_results: i32,
+    pub num_results: ::std::option::Option<i32>,
     /// <p>The contextual metadata to use when getting recommendations. Contextual metadata includes any interaction information that might be relevant when getting a user's recommendations, such as the user's current location or device type.</p>
     pub context: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The ARN of the filter to apply to the returned recommendations. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/filter.html">Filtering Recommendations</a>.</p>
@@ -43,7 +43,7 @@ impl GetRecommendationsInput {
         self.user_id.as_deref()
     }
     /// <p>The number of results to return. The default is 25. The maximum is 500.</p>
-    pub fn num_results(&self) -> i32 {
+    pub fn num_results(&self) -> ::std::option::Option<i32> {
         self.num_results
     }
     /// <p>The contextual metadata to use when getting recommendations. Contextual metadata includes any interaction information that might be relevant when getting a user's recommendations, such as the user's current location or device type.</p>
@@ -262,7 +262,7 @@ impl GetRecommendationsInputBuilder {
             campaign_arn: self.campaign_arn,
             item_id: self.item_id,
             user_id: self.user_id,
-            num_results: self.num_results.unwrap_or_default(),
+            num_results: self.num_results,
             context: self.context,
             filter_arn: self.filter_arn,
             filter_values: self.filter_values,

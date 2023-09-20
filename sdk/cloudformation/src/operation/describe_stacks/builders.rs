@@ -119,7 +119,8 @@ impl DescribeStacksFluentBuilder {
         crate::operation::describe_stacks::paginator::DescribeStacksPaginator::new(self.handle, self.inner)
     }
     /// <note>
-    /// <p>If you don't pass a parameter to <code>StackName</code>, the API returns a response that describes all resources in the account. This requires <code>ListStacks</code> and <code>DescribeStacks</code> permissions.</p>
+    /// <p>If you don't pass a parameter to <code>StackName</code>, the API returns a response that describes all resources in the account, which can impact performance. This requires <code>ListStacks</code> and <code>DescribeStacks</code> permissions.</p>
+    /// <p>Consider using the <code>ListStacks</code> API if you're not passing a parameter to <code>StackName</code>.</p>
     /// <p>The IAM policy below can be added to IAM policies when you want to limit resource-level permissions and avoid returning a response when no parameter is sent in the request:</p>
     /// <p>{ "Version": "2012-10-17", "Statement": [{ "Effect": "Deny", "Action": "cloudformation:DescribeStacks", "NotResource": "arn:aws:cloudformation:*:*:stack/*/*" }] }</p>
     /// </note>
@@ -134,7 +135,8 @@ impl DescribeStacksFluentBuilder {
         self
     }
     /// <note>
-    /// <p>If you don't pass a parameter to <code>StackName</code>, the API returns a response that describes all resources in the account. This requires <code>ListStacks</code> and <code>DescribeStacks</code> permissions.</p>
+    /// <p>If you don't pass a parameter to <code>StackName</code>, the API returns a response that describes all resources in the account, which can impact performance. This requires <code>ListStacks</code> and <code>DescribeStacks</code> permissions.</p>
+    /// <p>Consider using the <code>ListStacks</code> API if you're not passing a parameter to <code>StackName</code>.</p>
     /// <p>The IAM policy below can be added to IAM policies when you want to limit resource-level permissions and avoid returning a response when no parameter is sent in the request:</p>
     /// <p>{ "Version": "2012-10-17", "Statement": [{ "Effect": "Deny", "Action": "cloudformation:DescribeStacks", "NotResource": "arn:aws:cloudformation:*:*:stack/*/*" }] }</p>
     /// </note>
@@ -149,7 +151,8 @@ impl DescribeStacksFluentBuilder {
         self
     }
     /// <note>
-    /// <p>If you don't pass a parameter to <code>StackName</code>, the API returns a response that describes all resources in the account. This requires <code>ListStacks</code> and <code>DescribeStacks</code> permissions.</p>
+    /// <p>If you don't pass a parameter to <code>StackName</code>, the API returns a response that describes all resources in the account, which can impact performance. This requires <code>ListStacks</code> and <code>DescribeStacks</code> permissions.</p>
+    /// <p>Consider using the <code>ListStacks</code> API if you're not passing a parameter to <code>StackName</code>.</p>
     /// <p>The IAM policy below can be added to IAM policies when you want to limit resource-level permissions and avoid returning a response when no parameter is sent in the request:</p>
     /// <p>{ "Version": "2012-10-17", "Statement": [{ "Effect": "Deny", "Action": "cloudformation:DescribeStacks", "NotResource": "arn:aws:cloudformation:*:*:stack/*/*" }] }</p>
     /// </note>

@@ -2,7 +2,7 @@
 
 /// <p> The assignment of a control set to a delegate for review. </p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct Delegation {
     /// <p> The unique identifier for the delegation. </p>
     pub id: ::std::option::Option<::std::string::String>,
@@ -81,6 +81,23 @@ impl Delegation {
         self.created_by.as_deref()
     }
 }
+impl ::std::fmt::Debug for Delegation {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("Delegation");
+        formatter.field("id", &"*** Sensitive Data Redacted ***");
+        formatter.field("assessment_name", &"*** Sensitive Data Redacted ***");
+        formatter.field("assessment_id", &"*** Sensitive Data Redacted ***");
+        formatter.field("status", &"*** Sensitive Data Redacted ***");
+        formatter.field("role_arn", &"*** Sensitive Data Redacted ***");
+        formatter.field("role_type", &"*** Sensitive Data Redacted ***");
+        formatter.field("creation_time", &"*** Sensitive Data Redacted ***");
+        formatter.field("last_updated", &"*** Sensitive Data Redacted ***");
+        formatter.field("control_set_id", &"*** Sensitive Data Redacted ***");
+        formatter.field("comment", &"*** Sensitive Data Redacted ***");
+        formatter.field("created_by", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl Delegation {
     /// Creates a new builder-style object to manufacture [`Delegation`](crate::types::Delegation).
     pub fn builder() -> crate::types::builders::DelegationBuilder {
@@ -90,7 +107,7 @@ impl Delegation {
 
 /// A builder for [`Delegation`](crate::types::Delegation).
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct DelegationBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) assessment_name: ::std::option::Option<::std::string::String>,
@@ -286,5 +303,22 @@ impl DelegationBuilder {
             comment: self.comment,
             created_by: self.created_by,
         }
+    }
+}
+impl ::std::fmt::Debug for DelegationBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("DelegationBuilder");
+        formatter.field("id", &"*** Sensitive Data Redacted ***");
+        formatter.field("assessment_name", &"*** Sensitive Data Redacted ***");
+        formatter.field("assessment_id", &"*** Sensitive Data Redacted ***");
+        formatter.field("status", &"*** Sensitive Data Redacted ***");
+        formatter.field("role_arn", &"*** Sensitive Data Redacted ***");
+        formatter.field("role_type", &"*** Sensitive Data Redacted ***");
+        formatter.field("creation_time", &"*** Sensitive Data Redacted ***");
+        formatter.field("last_updated", &"*** Sensitive Data Redacted ***");
+        formatter.field("control_set_id", &"*** Sensitive Data Redacted ***");
+        formatter.field("comment", &"*** Sensitive Data Redacted ***");
+        formatter.field("created_by", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

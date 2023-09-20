@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RepositoryMetadata {
-    /// <p>The ID of the AWS account associated with the repository.</p>
+    /// <p>The ID of the Amazon Web Services account associated with the repository.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the repository.</p>
     pub repository_id: ::std::option::Option<::std::string::String>,
@@ -26,7 +26,7 @@ pub struct RepositoryMetadata {
     pub arn: ::std::option::Option<::std::string::String>,
 }
 impl RepositoryMetadata {
-    /// <p>The ID of the AWS account associated with the repository.</p>
+    /// <p>The ID of the Amazon Web Services account associated with the repository.</p>
     pub fn account_id(&self) -> ::std::option::Option<&str> {
         self.account_id.as_deref()
     }
@@ -90,17 +90,17 @@ pub struct RepositoryMetadataBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
 }
 impl RepositoryMetadataBuilder {
-    /// <p>The ID of the AWS account associated with the repository.</p>
+    /// <p>The ID of the Amazon Web Services account associated with the repository.</p>
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the AWS account associated with the repository.</p>
+    /// <p>The ID of the Amazon Web Services account associated with the repository.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_id = input;
         self
     }
-    /// <p>The ID of the AWS account associated with the repository.</p>
+    /// <p>The ID of the Amazon Web Services account associated with the repository.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.account_id
     }

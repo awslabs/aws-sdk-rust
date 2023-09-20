@@ -103,5 +103,8 @@ pub fn ser_create_model_package_input(
         }
         array_31.finish();
     }
+    if let Some(var_34) = &input.skip_model_validation {
+        object.key("SkipModelValidation").string(var_34.as_str());
+    }
     Ok(())
 }

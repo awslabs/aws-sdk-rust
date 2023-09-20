@@ -9,11 +9,11 @@ pub fn ser_upload_entity_definitions_input(
         crate::protocol_serde::shape_definition_document::ser_definition_document(&mut object_2, var_1)?;
         object_2.finish();
     }
-    if input.sync_with_public_namespace {
-        object.key("syncWithPublicNamespace").boolean(input.sync_with_public_namespace);
+    if let Some(var_3) = &input.sync_with_public_namespace {
+        object.key("syncWithPublicNamespace").boolean(*var_3);
     }
-    if input.deprecate_existing_entities {
-        object.key("deprecateExistingEntities").boolean(input.deprecate_existing_entities);
+    if let Some(var_4) = &input.deprecate_existing_entities {
+        object.key("deprecateExistingEntities").boolean(*var_4);
     }
     Ok(())
 }

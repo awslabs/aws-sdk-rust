@@ -28,6 +28,7 @@ impl super::Client {
     ///   - [`server_cert_last_updated(Option<String>)`](crate::operation::describe_hsm::DescribeHsmOutput::server_cert_last_updated): <p>The date and time that the server certificate was last updated.</p>
     ///   - [`partitions(Option<Vec<String>>)`](crate::operation::describe_hsm::DescribeHsmOutput::partitions): <p>The list of partitions on the HSM.</p>
     /// - On failure, responds with [`SdkError<DescribeHsmError>`](crate::operation::describe_hsm::DescribeHsmError)
+    #[deprecated(note = "This API is deprecated.")]
     pub fn describe_hsm(&self) -> crate::operation::describe_hsm::builders::DescribeHsmFluentBuilder {
         crate::operation::describe_hsm::builders::DescribeHsmFluentBuilder::new(self.handle.clone())
     }

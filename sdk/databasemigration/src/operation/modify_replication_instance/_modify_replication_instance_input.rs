@@ -9,7 +9,7 @@ pub struct ModifyReplicationInstanceInput {
     /// <p>The amount of storage (in gigabytes) to be allocated for the replication instance.</p>
     pub allocated_storage: ::std::option::Option<i32>,
     /// <p>Indicates whether the changes should be applied immediately or during the next maintenance window.</p>
-    pub apply_immediately: bool,
+    pub apply_immediately: ::std::option::Option<bool>,
     /// <p>The compute and memory capacity of the replication instance as defined for the specified replication instance class. For example to specify the instance class dms.c4.large, set this parameter to <code>"dms.c4.large"</code>.</p>
     /// <p>For more information on the settings and capacities for the available replication instance classes, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth"> Selecting the right DMS replication instance for your migration</a>. </p>
     pub replication_instance_class: ::std::option::Option<::std::string::String>,
@@ -28,7 +28,7 @@ pub struct ModifyReplicationInstanceInput {
     pub engine_version: ::std::option::Option<::std::string::String>,
     /// <p>Indicates that major version upgrades are allowed. Changing this parameter does not result in an outage, and the change is asynchronously applied as soon as possible.</p>
     /// <p>This parameter must be set to <code>true</code> when specifying a value for the <code>EngineVersion</code> parameter that is a different major version than the replication instance's current version.</p>
-    pub allow_major_version_upgrade: bool,
+    pub allow_major_version_upgrade: ::std::option::Option<bool>,
     /// <p>A value that indicates that minor version upgrades are applied automatically to the replication instance during the maintenance window. Changing this parameter doesn't result in an outage, except in the case described following. The change is asynchronously applied as soon as possible. </p>
     /// <p>An outage does result if these factors apply: </p>
     /// <ul>
@@ -54,7 +54,7 @@ impl ModifyReplicationInstanceInput {
         self.allocated_storage
     }
     /// <p>Indicates whether the changes should be applied immediately or during the next maintenance window.</p>
-    pub fn apply_immediately(&self) -> bool {
+    pub fn apply_immediately(&self) -> ::std::option::Option<bool> {
         self.apply_immediately
     }
     /// <p>The compute and memory capacity of the replication instance as defined for the specified replication instance class. For example to specify the instance class dms.c4.large, set this parameter to <code>"dms.c4.large"</code>.</p>
@@ -85,7 +85,7 @@ impl ModifyReplicationInstanceInput {
     }
     /// <p>Indicates that major version upgrades are allowed. Changing this parameter does not result in an outage, and the change is asynchronously applied as soon as possible.</p>
     /// <p>This parameter must be set to <code>true</code> when specifying a value for the <code>EngineVersion</code> parameter that is a different major version than the replication instance's current version.</p>
-    pub fn allow_major_version_upgrade(&self) -> bool {
+    pub fn allow_major_version_upgrade(&self) -> ::std::option::Option<bool> {
         self.allow_major_version_upgrade
     }
     /// <p>A value that indicates that minor version upgrades are applied automatically to the replication instance during the maintenance window. Changing this parameter doesn't result in an outage, except in the case described following. The change is asynchronously applied as soon as possible. </p>
@@ -363,13 +363,13 @@ impl ModifyReplicationInstanceInputBuilder {
         ::std::result::Result::Ok(crate::operation::modify_replication_instance::ModifyReplicationInstanceInput {
             replication_instance_arn: self.replication_instance_arn,
             allocated_storage: self.allocated_storage,
-            apply_immediately: self.apply_immediately.unwrap_or_default(),
+            apply_immediately: self.apply_immediately,
             replication_instance_class: self.replication_instance_class,
             vpc_security_group_ids: self.vpc_security_group_ids,
             preferred_maintenance_window: self.preferred_maintenance_window,
             multi_az: self.multi_az,
             engine_version: self.engine_version,
-            allow_major_version_upgrade: self.allow_major_version_upgrade.unwrap_or_default(),
+            allow_major_version_upgrade: self.allow_major_version_upgrade,
             auto_minor_version_upgrade: self.auto_minor_version_upgrade,
             replication_instance_identifier: self.replication_instance_identifier,
             network_type: self.network_type,

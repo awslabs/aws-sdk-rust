@@ -2,7 +2,7 @@
 
 /// <p>Details for workflow of type <code>APPFLOW_INTEGRATION</code>.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct AppflowIntegration {
     /// <p>The configurations that control how Customer Profiles retrieves data from the source, Amazon AppFlow. Customer Profiles uses this information to create an AppFlow flow on behalf of customers.</p>
     pub flow_definition: ::std::option::Option<crate::types::FlowDefinition>,
@@ -19,6 +19,14 @@ impl AppflowIntegration {
         self.batches.as_deref()
     }
 }
+impl ::std::fmt::Debug for AppflowIntegration {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("AppflowIntegration");
+        formatter.field("flow_definition", &"*** Sensitive Data Redacted ***");
+        formatter.field("batches", &self.batches);
+        formatter.finish()
+    }
+}
 impl AppflowIntegration {
     /// Creates a new builder-style object to manufacture [`AppflowIntegration`](crate::types::AppflowIntegration).
     pub fn builder() -> crate::types::builders::AppflowIntegrationBuilder {
@@ -28,7 +36,7 @@ impl AppflowIntegration {
 
 /// A builder for [`AppflowIntegration`](crate::types::AppflowIntegration).
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct AppflowIntegrationBuilder {
     pub(crate) flow_definition: ::std::option::Option<crate::types::FlowDefinition>,
     pub(crate) batches: ::std::option::Option<::std::vec::Vec<crate::types::Batch>>,
@@ -74,5 +82,13 @@ impl AppflowIntegrationBuilder {
             flow_definition: self.flow_definition,
             batches: self.batches,
         }
+    }
+}
+impl ::std::fmt::Debug for AppflowIntegrationBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("AppflowIntegrationBuilder");
+        formatter.field("flow_definition", &"*** Sensitive Data Redacted ***");
+        formatter.field("batches", &self.batches);
+        formatter.finish()
     }
 }

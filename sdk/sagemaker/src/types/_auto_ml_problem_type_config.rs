@@ -10,9 +10,7 @@ pub enum AutoMlProblemTypeConfig {
     TabularJobConfig(crate::types::TabularJobConfig),
     /// <p>Settings used to configure an AutoML job V2 for the text classification problem type.</p>
     TextClassificationJobConfig(crate::types::TextClassificationJobConfig),
-    /// <p>Settings used to configure an AutoML job V2 for a time-series forecasting problem type.</p> <note>
-    /// <p>The <code>TimeSeriesForecastingJobConfig</code> problem type is only available in private beta. Contact Amazon Web Services Support or your account manager to learn more about access privileges.</p>
-    /// </note>
+    /// <p>Settings used to configure an AutoML job V2 for a time-series forecasting problem type.</p>
     TimeSeriesForecastingJobConfig(crate::types::TimeSeriesForecastingJobConfig),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant

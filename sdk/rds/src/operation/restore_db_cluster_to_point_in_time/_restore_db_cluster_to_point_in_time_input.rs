@@ -43,7 +43,7 @@ pub struct RestoreDbClusterToPointInTimeInput {
     /// <p>A value that indicates whether to restore the DB cluster to the latest restorable backup time. By default, the DB cluster isn't restored to the latest restorable backup time.</p>
     /// <p>Constraints: Can't be specified if <code>RestoreToTime</code> parameter is provided.</p>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
-    pub use_latest_restorable_time: bool,
+    pub use_latest_restorable_time: ::std::option::Option<bool>,
     /// <p>The port number on which the new DB cluster accepts connections.</p>
     /// <p>Constraints: A value from <code>1150-65535</code>.</p>
     /// <p>Default: The default port for the engine.</p>
@@ -171,6 +171,8 @@ pub struct RestoreDbClusterToPointInTimeInput {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i> </p>
     /// <p>Valid for: Aurora DB clusters only</p>
     pub network_type: ::std::option::Option<::std::string::String>,
+    /// <p>The resource ID of the source DB cluster from which to restore.</p>
+    pub source_db_cluster_resource_id: ::std::option::Option<::std::string::String>,
 }
 impl RestoreDbClusterToPointInTimeInput {
     /// <p>The name of the new DB cluster to be created.</p>
@@ -220,7 +222,7 @@ impl RestoreDbClusterToPointInTimeInput {
     /// <p>A value that indicates whether to restore the DB cluster to the latest restorable backup time. By default, the DB cluster isn't restored to the latest restorable backup time.</p>
     /// <p>Constraints: Can't be specified if <code>RestoreToTime</code> parameter is provided.</p>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
-    pub fn use_latest_restorable_time(&self) -> bool {
+    pub fn use_latest_restorable_time(&self) -> ::std::option::Option<bool> {
         self.use_latest_restorable_time
     }
     /// <p>The port number on which the new DB cluster accepts connections.</p>
@@ -394,6 +396,10 @@ impl RestoreDbClusterToPointInTimeInput {
     pub fn network_type(&self) -> ::std::option::Option<&str> {
         self.network_type.as_deref()
     }
+    /// <p>The resource ID of the source DB cluster from which to restore.</p>
+    pub fn source_db_cluster_resource_id(&self) -> ::std::option::Option<&str> {
+        self.source_db_cluster_resource_id.as_deref()
+    }
 }
 impl RestoreDbClusterToPointInTimeInput {
     /// Creates a new builder-style object to manufacture [`RestoreDbClusterToPointInTimeInput`](crate::operation::restore_db_cluster_to_point_in_time::RestoreDbClusterToPointInTimeInput).
@@ -433,6 +439,7 @@ pub struct RestoreDbClusterToPointInTimeInputBuilder {
     pub(crate) iops: ::std::option::Option<i32>,
     pub(crate) serverless_v2_scaling_configuration: ::std::option::Option<crate::types::ServerlessV2ScalingConfiguration>,
     pub(crate) network_type: ::std::option::Option<::std::string::String>,
+    pub(crate) source_db_cluster_resource_id: ::std::option::Option<::std::string::String>,
 }
 impl RestoreDbClusterToPointInTimeInputBuilder {
     /// <p>The name of the new DB cluster to be created.</p>
@@ -1170,6 +1177,20 @@ impl RestoreDbClusterToPointInTimeInputBuilder {
     pub fn get_network_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.network_type
     }
+    /// <p>The resource ID of the source DB cluster from which to restore.</p>
+    pub fn source_db_cluster_resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.source_db_cluster_resource_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The resource ID of the source DB cluster from which to restore.</p>
+    pub fn set_source_db_cluster_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.source_db_cluster_resource_id = input;
+        self
+    }
+    /// <p>The resource ID of the source DB cluster from which to restore.</p>
+    pub fn get_source_db_cluster_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_db_cluster_resource_id
+    }
     /// Consumes the builder and constructs a [`RestoreDbClusterToPointInTimeInput`](crate::operation::restore_db_cluster_to_point_in_time::RestoreDbClusterToPointInTimeInput).
     pub fn build(
         self,
@@ -1183,7 +1204,7 @@ impl RestoreDbClusterToPointInTimeInputBuilder {
                 restore_type: self.restore_type,
                 source_db_cluster_identifier: self.source_db_cluster_identifier,
                 restore_to_time: self.restore_to_time,
-                use_latest_restorable_time: self.use_latest_restorable_time.unwrap_or_default(),
+                use_latest_restorable_time: self.use_latest_restorable_time,
                 port: self.port,
                 db_subnet_group_name: self.db_subnet_group_name,
                 option_group_name: self.option_group_name,
@@ -1206,6 +1227,7 @@ impl RestoreDbClusterToPointInTimeInputBuilder {
                 iops: self.iops,
                 serverless_v2_scaling_configuration: self.serverless_v2_scaling_configuration,
                 network_type: self.network_type,
+                source_db_cluster_resource_id: self.source_db_cluster_resource_id,
             },
         )
     }

@@ -13,6 +13,7 @@
 /// # let validationexceptionreason = unimplemented!();
 /// match validationexceptionreason {
 ///     ValidationExceptionReason::FieldValidationFailed => { /* ... */ },
+///     ValidationExceptionReason::IamSynchronizationDelay => { /* ... */ },
 ///     ValidationExceptionReason::InvalidConfiguration => { /* ... */ },
 ///     ValidationExceptionReason::InvalidQuery => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -45,6 +46,8 @@ pub enum ValidationExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
     FieldValidationFailed,
     #[allow(missing_docs)] // documentation missing in model
+    IamSynchronizationDelay,
+    #[allow(missing_docs)] // documentation missing in model
     InvalidConfiguration,
     #[allow(missing_docs)] // documentation missing in model
     InvalidQuery,
@@ -55,6 +58,7 @@ impl ::std::convert::From<&str> for ValidationExceptionReason {
     fn from(s: &str) -> Self {
         match s {
             "FIELD_VALIDATION_FAILED" => ValidationExceptionReason::FieldValidationFailed,
+            "IAM_SYNCHRONIZATION_DELAY" => ValidationExceptionReason::IamSynchronizationDelay,
             "INVALID_CONFIGURATION" => ValidationExceptionReason::InvalidConfiguration,
             "INVALID_QUERY" => ValidationExceptionReason::InvalidQuery,
             other => ValidationExceptionReason::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
@@ -73,6 +77,7 @@ impl ValidationExceptionReason {
     pub fn as_str(&self) -> &str {
         match self {
             ValidationExceptionReason::FieldValidationFailed => "FIELD_VALIDATION_FAILED",
+            ValidationExceptionReason::IamSynchronizationDelay => "IAM_SYNCHRONIZATION_DELAY",
             ValidationExceptionReason::InvalidConfiguration => "INVALID_CONFIGURATION",
             ValidationExceptionReason::InvalidQuery => "INVALID_QUERY",
             ValidationExceptionReason::Unknown(value) => value.as_str(),
@@ -80,7 +85,12 @@ impl ValidationExceptionReason {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["FIELD_VALIDATION_FAILED", "INVALID_CONFIGURATION", "INVALID_QUERY"]
+        &[
+            "FIELD_VALIDATION_FAILED",
+            "IAM_SYNCHRONIZATION_DELAY",
+            "INVALID_CONFIGURATION",
+            "INVALID_QUERY",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for ValidationExceptionReason {

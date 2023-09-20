@@ -27,6 +27,8 @@ pub struct BackupRule {
     pub copy_actions: ::std::option::Option<::std::vec::Vec<crate::types::CopyAction>>,
     /// <p>Specifies whether Backup creates continuous backups. True causes Backup to create continuous backups capable of point-in-time restore (PITR). False (or not specified) causes Backup to create snapshot backups.</p>
     pub enable_continuous_backup: ::std::option::Option<bool>,
+    /// <p>This is the timezone in which the schedule expression is set. By default, ScheduleExpressions are in UTC. You can modify this to a specified timezone.</p>
+    pub schedule_expression_timezone: ::std::option::Option<::std::string::String>,
 }
 impl BackupRule {
     /// <p>A display name for a backup rule. Must contain 1 to 50 alphanumeric or '-_.' characters.</p>
@@ -72,6 +74,10 @@ impl BackupRule {
     pub fn enable_continuous_backup(&self) -> ::std::option::Option<bool> {
         self.enable_continuous_backup
     }
+    /// <p>This is the timezone in which the schedule expression is set. By default, ScheduleExpressions are in UTC. You can modify this to a specified timezone.</p>
+    pub fn schedule_expression_timezone(&self) -> ::std::option::Option<&str> {
+        self.schedule_expression_timezone.as_deref()
+    }
 }
 impl ::std::fmt::Debug for BackupRule {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -86,6 +92,7 @@ impl ::std::fmt::Debug for BackupRule {
         formatter.field("rule_id", &self.rule_id);
         formatter.field("copy_actions", &self.copy_actions);
         formatter.field("enable_continuous_backup", &self.enable_continuous_backup);
+        formatter.field("schedule_expression_timezone", &self.schedule_expression_timezone);
         formatter.finish()
     }
 }
@@ -110,6 +117,7 @@ pub struct BackupRuleBuilder {
     pub(crate) rule_id: ::std::option::Option<::std::string::String>,
     pub(crate) copy_actions: ::std::option::Option<::std::vec::Vec<crate::types::CopyAction>>,
     pub(crate) enable_continuous_backup: ::std::option::Option<bool>,
+    pub(crate) schedule_expression_timezone: ::std::option::Option<::std::string::String>,
 }
 impl BackupRuleBuilder {
     /// <p>A display name for a backup rule. Must contain 1 to 50 alphanumeric or '-_.' characters.</p>
@@ -280,6 +288,20 @@ impl BackupRuleBuilder {
     pub fn get_enable_continuous_backup(&self) -> &::std::option::Option<bool> {
         &self.enable_continuous_backup
     }
+    /// <p>This is the timezone in which the schedule expression is set. By default, ScheduleExpressions are in UTC. You can modify this to a specified timezone.</p>
+    pub fn schedule_expression_timezone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.schedule_expression_timezone = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>This is the timezone in which the schedule expression is set. By default, ScheduleExpressions are in UTC. You can modify this to a specified timezone.</p>
+    pub fn set_schedule_expression_timezone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.schedule_expression_timezone = input;
+        self
+    }
+    /// <p>This is the timezone in which the schedule expression is set. By default, ScheduleExpressions are in UTC. You can modify this to a specified timezone.</p>
+    pub fn get_schedule_expression_timezone(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schedule_expression_timezone
+    }
     /// Consumes the builder and constructs a [`BackupRule`](crate::types::BackupRule).
     pub fn build(self) -> crate::types::BackupRule {
         crate::types::BackupRule {
@@ -293,6 +315,7 @@ impl BackupRuleBuilder {
             rule_id: self.rule_id,
             copy_actions: self.copy_actions,
             enable_continuous_backup: self.enable_continuous_backup,
+            schedule_expression_timezone: self.schedule_expression_timezone,
         }
     }
 }
@@ -309,6 +332,7 @@ impl ::std::fmt::Debug for BackupRuleBuilder {
         formatter.field("rule_id", &self.rule_id);
         formatter.field("copy_actions", &self.copy_actions);
         formatter.field("enable_continuous_backup", &self.enable_continuous_backup);
+        formatter.field("schedule_expression_timezone", &self.schedule_expression_timezone);
         formatter.finish()
     }
 }

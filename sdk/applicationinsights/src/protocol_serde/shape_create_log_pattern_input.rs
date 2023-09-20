@@ -15,10 +15,10 @@ pub fn ser_create_log_pattern_input(
     if let Some(var_4) = &input.pattern {
         object.key("Pattern").string(var_4.as_str());
     }
-    {
+    if let Some(var_5) = &input.rank {
         object.key("Rank").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.rank).into()),
+            ::aws_smithy_types::Number::NegInt((*var_5).into()),
         );
     }
     Ok(())

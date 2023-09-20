@@ -18,5 +18,11 @@ pub fn ser_update_kx_cluster_databases_input(
         }
         array_3.finish();
     }
+    if let Some(var_6) = &input.deployment_configuration {
+        #[allow(unused_mut)]
+        let mut object_7 = object.key("deploymentConfiguration").start_object();
+        crate::protocol_serde::shape_kx_deployment_configuration::ser_kx_deployment_configuration(&mut object_7, var_6)?;
+        object_7.finish();
+    }
     Ok(())
 }

@@ -20,8 +20,8 @@ pub fn ser_modify_cluster_snapshot_input_input(
     }
     #[allow(unused_mut)]
     let mut scope_5 = writer.prefix("Force");
-    if input.force {
-        scope_5.boolean(input.force);
+    if let Some(var_6) = &input.force {
+        scope_5.boolean(*var_6);
     }
     writer.finish();
     Ok(::aws_smithy_http::body::SdkBody::from(out))

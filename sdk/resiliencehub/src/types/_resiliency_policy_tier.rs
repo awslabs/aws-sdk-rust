@@ -17,6 +17,7 @@
 ///     ResiliencyPolicyTier::Important => { /* ... */ },
 ///     ResiliencyPolicyTier::MissionCritical => { /* ... */ },
 ///     ResiliencyPolicyTier::NonCritical => { /* ... */ },
+///     ResiliencyPolicyTier::NotApplicable => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -54,6 +55,8 @@ pub enum ResiliencyPolicyTier {
     MissionCritical,
     #[allow(missing_docs)] // documentation missing in model
     NonCritical,
+    #[allow(missing_docs)] // documentation missing in model
+    NotApplicable,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
@@ -65,6 +68,7 @@ impl ::std::convert::From<&str> for ResiliencyPolicyTier {
             "Important" => ResiliencyPolicyTier::Important,
             "MissionCritical" => ResiliencyPolicyTier::MissionCritical,
             "NonCritical" => ResiliencyPolicyTier::NonCritical,
+            "NotApplicable" => ResiliencyPolicyTier::NotApplicable,
             other => ResiliencyPolicyTier::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -85,12 +89,13 @@ impl ResiliencyPolicyTier {
             ResiliencyPolicyTier::Important => "Important",
             ResiliencyPolicyTier::MissionCritical => "MissionCritical",
             ResiliencyPolicyTier::NonCritical => "NonCritical",
+            ResiliencyPolicyTier::NotApplicable => "NotApplicable",
             ResiliencyPolicyTier::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CoreServices", "Critical", "Important", "MissionCritical", "NonCritical"]
+        &["CoreServices", "Critical", "Important", "MissionCritical", "NonCritical", "NotApplicable"]
     }
 }
 impl ::std::convert::AsRef<str> for ResiliencyPolicyTier {

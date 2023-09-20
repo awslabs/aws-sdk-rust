@@ -2,7 +2,7 @@
 
 /// <p>Additional query string parameter for the connection. You can include up to 100 additional query string parameters per request. Each additional parameter counts towards the event payload size, which cannot exceed 64 KB.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ConnectionQueryStringParameter {
     /// <p>The key for a query string parameter.</p>
     pub key: ::std::option::Option<::std::string::String>,
@@ -25,6 +25,15 @@ impl ConnectionQueryStringParameter {
         self.is_value_secret
     }
 }
+impl ::std::fmt::Debug for ConnectionQueryStringParameter {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("ConnectionQueryStringParameter");
+        formatter.field("key", &self.key);
+        formatter.field("value", &"*** Sensitive Data Redacted ***");
+        formatter.field("is_value_secret", &self.is_value_secret);
+        formatter.finish()
+    }
+}
 impl ConnectionQueryStringParameter {
     /// Creates a new builder-style object to manufacture [`ConnectionQueryStringParameter`](crate::types::ConnectionQueryStringParameter).
     pub fn builder() -> crate::types::builders::ConnectionQueryStringParameterBuilder {
@@ -34,7 +43,7 @@ impl ConnectionQueryStringParameter {
 
 /// A builder for [`ConnectionQueryStringParameter`](crate::types::ConnectionQueryStringParameter).
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct ConnectionQueryStringParameterBuilder {
     pub(crate) key: ::std::option::Option<::std::string::String>,
     pub(crate) value: ::std::option::Option<::std::string::String>,
@@ -90,5 +99,14 @@ impl ConnectionQueryStringParameterBuilder {
             value: self.value,
             is_value_secret: self.is_value_secret.unwrap_or_default(),
         }
+    }
+}
+impl ::std::fmt::Debug for ConnectionQueryStringParameterBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("ConnectionQueryStringParameterBuilder");
+        formatter.field("key", &self.key);
+        formatter.field("value", &"*** Sensitive Data Redacted ***");
+        formatter.field("is_value_secret", &self.is_value_secret);
+        formatter.finish()
     }
 }

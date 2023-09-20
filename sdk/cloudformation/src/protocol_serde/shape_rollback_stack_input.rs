@@ -20,6 +20,11 @@ pub fn ser_rollback_stack_input_input(
     if let Some(var_6) = &input.client_request_token {
         scope_5.string(var_6);
     }
+    #[allow(unused_mut)]
+    let mut scope_7 = writer.prefix("RetainExceptOnCreate");
+    if let Some(var_8) = &input.retain_except_on_create {
+        scope_7.boolean(*var_8);
+    }
     writer.finish();
     Ok(::aws_smithy_http::body::SdkBody::from(out))
 }

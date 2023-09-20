@@ -42,5 +42,8 @@ pub fn ser_create_csv_classifier_request(
         }
         array_12.finish();
     }
+    if let Some(var_14) = &input.serde {
+        object.key("Serde").string(var_14.as_str());
+    }
     Ok(())
 }

@@ -75,6 +75,16 @@ where
                         "ErrorReason" => {
                             builder = builder.set_error_reason(crate::protocol_serde::shape_error_reason::de_error_reason(tokens)?);
                         }
+                        "QuotaAppliedAtLevel" => {
+                            builder = builder.set_quota_applied_at_level(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::AppliedLevelEnum::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "QuotaContext" => {
+                            builder = builder.set_quota_context(crate::protocol_serde::shape_quota_context_info::de_quota_context_info(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

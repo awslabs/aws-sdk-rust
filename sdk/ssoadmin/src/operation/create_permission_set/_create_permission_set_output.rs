@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreatePermissionSetOutput {
-    /// <p>Defines the level of access on an AWS account.</p>
+    /// <p>Defines the level of access on an Amazon Web Services account.</p>
     pub permission_set: ::std::option::Option<crate::types::PermissionSet>,
     _request_id: Option<String>,
 }
 impl CreatePermissionSetOutput {
-    /// <p>Defines the level of access on an AWS account.</p>
+    /// <p>Defines the level of access on an Amazon Web Services account.</p>
     pub fn permission_set(&self) -> ::std::option::Option<&crate::types::PermissionSet> {
         self.permission_set.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct CreatePermissionSetOutputBuilder {
     _request_id: Option<String>,
 }
 impl CreatePermissionSetOutputBuilder {
-    /// <p>Defines the level of access on an AWS account.</p>
+    /// <p>Defines the level of access on an Amazon Web Services account.</p>
     pub fn permission_set(mut self, input: crate::types::PermissionSet) -> Self {
         self.permission_set = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Defines the level of access on an AWS account.</p>
+    /// <p>Defines the level of access on an Amazon Web Services account.</p>
     pub fn set_permission_set(mut self, input: ::std::option::Option<crate::types::PermissionSet>) -> Self {
         self.permission_set = input;
         self
     }
-    /// <p>Defines the level of access on an AWS account.</p>
+    /// <p>Defines the level of access on an Amazon Web Services account.</p>
     pub fn get_permission_set(&self) -> &::std::option::Option<crate::types::PermissionSet> {
         &self.permission_set
     }

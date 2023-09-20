@@ -9,6 +9,12 @@ pub fn ser_predictive_dialer_config(
             ::aws_smithy_types::Number::Float((*var_1).into()),
         );
     }
+    if let Some(var_2) = &input.dialing_capacity {
+        object.key("dialingCapacity").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::Float((*var_2).into()),
+        );
+    }
     Ok(())
 }
 
@@ -29,6 +35,11 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "bandwidthAllocation" => {
                             builder = builder.set_bandwidth_allocation(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?.map(|v| v.to_f64_lossy()),
+                            );
+                        }
+                        "dialingCapacity" => {
+                            builder = builder.set_dialing_capacity(
                                 ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?.map(|v| v.to_f64_lossy()),
                             );
                         }

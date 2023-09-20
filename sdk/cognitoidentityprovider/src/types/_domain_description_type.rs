@@ -12,7 +12,7 @@ pub struct DomainDescriptionType {
     pub domain: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon S3 bucket where the static files for this domain are stored.</p>
     pub s3_bucket: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the Amazon CloudFront distribution.</p>
+    /// <p>The Amazon CloudFront endpoint that you use as the target of the alias that you set up with your Domain Name Service (DNS) provider.</p>
     pub cloud_front_distribution: ::std::option::Option<::std::string::String>,
     /// <p>The app version.</p>
     pub version: ::std::option::Option<::std::string::String>,
@@ -38,7 +38,7 @@ impl DomainDescriptionType {
     pub fn s3_bucket(&self) -> ::std::option::Option<&str> {
         self.s3_bucket.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the Amazon CloudFront distribution.</p>
+    /// <p>The Amazon CloudFront endpoint that you use as the target of the alias that you set up with your Domain Name Service (DNS) provider.</p>
     pub fn cloud_front_distribution(&self) -> ::std::option::Option<&str> {
         self.cloud_front_distribution.as_deref()
     }
@@ -132,17 +132,17 @@ impl DomainDescriptionTypeBuilder {
     pub fn get_s3_bucket(&self) -> &::std::option::Option<::std::string::String> {
         &self.s3_bucket
     }
-    /// <p>The Amazon Resource Name (ARN) of the Amazon CloudFront distribution.</p>
+    /// <p>The Amazon CloudFront endpoint that you use as the target of the alias that you set up with your Domain Name Service (DNS) provider.</p>
     pub fn cloud_front_distribution(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cloud_front_distribution = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Amazon CloudFront distribution.</p>
+    /// <p>The Amazon CloudFront endpoint that you use as the target of the alias that you set up with your Domain Name Service (DNS) provider.</p>
     pub fn set_cloud_front_distribution(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cloud_front_distribution = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Amazon CloudFront distribution.</p>
+    /// <p>The Amazon CloudFront endpoint that you use as the target of the alias that you set up with your Domain Name Service (DNS) provider.</p>
     pub fn get_cloud_front_distribution(&self) -> &::std::option::Option<::std::string::String> {
         &self.cloud_front_distribution
     }

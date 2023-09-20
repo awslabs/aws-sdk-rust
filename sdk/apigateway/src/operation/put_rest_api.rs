@@ -210,11 +210,10 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for PutRestApiR
                         query.push_kv("mode", &::aws_smithy_http::query::fmt_string(&inner_3));
                     }
                 }
-                if _input.fail_on_warnings {
-                    query.push_kv(
-                        "failonwarnings",
-                        ::aws_smithy_types::primitive::Encoder::from(_input.fail_on_warnings).encode(),
-                    );
+                if let ::std::option::Option::Some(inner_4) = &_input.fail_on_warnings {
+                    if *inner_4 {
+                        query.push_kv("failonwarnings", ::aws_smithy_types::primitive::Encoder::from(*inner_4).encode());
+                    }
                 }
                 ::std::result::Result::Ok(())
             }

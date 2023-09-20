@@ -18,6 +18,12 @@ pub fn ser_traffic_pattern(
         }
         array_3.finish();
     }
+    if let Some(var_6) = &input.stairs {
+        #[allow(unused_mut)]
+        let mut object_7 = object.key("Stairs").start_object();
+        crate::protocol_serde::shape_stairs::ser_stairs(&mut object_7, var_6)?;
+        object_7.finish();
+    }
     Ok(())
 }
 
@@ -45,6 +51,9 @@ where
                         }
                         "Phases" => {
                             builder = builder.set_phases(crate::protocol_serde::shape_phases::de_phases(tokens)?);
+                        }
+                        "Stairs" => {
+                            builder = builder.set_stairs(crate::protocol_serde::shape_stairs::de_stairs(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

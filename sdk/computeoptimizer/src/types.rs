@@ -41,9 +41,35 @@ pub use crate::types::_finding::Finding;
 
 pub use crate::types::_recommendation_preferences_detail::RecommendationPreferencesDetail;
 
-pub use crate::types::_lambda_function_recommendation::LambdaFunctionRecommendation;
+pub use crate::types::_get_recommendation_error::GetRecommendationError;
+
+pub use crate::types::_license_recommendation::LicenseRecommendation;
 
 pub use crate::types::_tag::Tag;
+
+pub use crate::types::_license_recommendation_option::LicenseRecommendationOption;
+
+pub use crate::types::_license_model::LicenseModel;
+
+pub use crate::types::_license_edition::LicenseEdition;
+
+pub use crate::types::_license_finding_reason_code::LicenseFindingReasonCode;
+
+pub use crate::types::_license_finding::LicenseFinding;
+
+pub use crate::types::_license_configuration::LicenseConfiguration;
+
+pub use crate::types::_metric_source::MetricSource;
+
+pub use crate::types::_metric_source_provider::MetricSourceProvider;
+
+pub use crate::types::_license_name::LicenseName;
+
+pub use crate::types::_license_recommendation_filter::LicenseRecommendationFilter;
+
+pub use crate::types::_license_recommendation_filter_name::LicenseRecommendationFilterName;
+
+pub use crate::types::_lambda_function_recommendation::LambdaFunctionRecommendation;
 
 pub use crate::types::_current_performance_risk::CurrentPerformanceRisk;
 
@@ -74,8 +100,6 @@ pub use crate::types::_account_enrollment_status::AccountEnrollmentStatus;
 pub use crate::types::_enrollment_filter::EnrollmentFilter;
 
 pub use crate::types::_enrollment_filter_name::EnrollmentFilterName;
-
-pub use crate::types::_get_recommendation_error::GetRecommendationError;
 
 pub use crate::types::_ecs_service_recommendation::EcsServiceRecommendation;
 
@@ -126,6 +150,12 @@ pub use crate::types::_recommendation_preferences::RecommendationPreferences;
 pub use crate::types::_cpu_vendor_architecture::CpuVendorArchitecture;
 
 pub use crate::types::_instance_recommendation::InstanceRecommendation;
+
+pub use crate::types::_instance_idle::InstanceIdle;
+
+pub use crate::types::_gpu_info::GpuInfo;
+
+pub use crate::types::_gpu::Gpu;
 
 pub use crate::types::_external_metric_status::ExternalMetricStatus;
 
@@ -178,6 +208,8 @@ pub use crate::types::_s3_destination::S3Destination;
 pub use crate::types::_file_format::FileFormat;
 
 pub use crate::types::_s3_destination_config::S3DestinationConfig;
+
+pub use crate::types::_exportable_license_field::ExportableLicenseField;
 
 pub use crate::types::_exportable_lambda_function_field::ExportableLambdaFunctionField;
 
@@ -279,6 +311,8 @@ mod _exportable_instance_field;
 
 mod _exportable_lambda_function_field;
 
+mod _exportable_license_field;
+
 mod _exportable_volume_field;
 
 mod _external_metric_status;
@@ -301,11 +335,17 @@ mod _finding_reason_code;
 
 mod _get_recommendation_error;
 
+mod _gpu;
+
+mod _gpu_info;
+
 mod _inferred_workload_saving;
 
 mod _inferred_workload_type;
 
 mod _inferred_workload_types_preference;
+
+mod _instance_idle;
 
 mod _instance_recommendation;
 
@@ -345,9 +385,33 @@ mod _lambda_function_recommendation_finding_reason_code;
 
 mod _lambda_function_utilization_metric;
 
+mod _license_configuration;
+
+mod _license_edition;
+
+mod _license_finding;
+
+mod _license_finding_reason_code;
+
+mod _license_model;
+
+mod _license_name;
+
+mod _license_recommendation;
+
+mod _license_recommendation_filter;
+
+mod _license_recommendation_filter_name;
+
+mod _license_recommendation_option;
+
 mod _memory_size_configuration;
 
 mod _metric_name;
+
+mod _metric_source;
+
+mod _metric_source_provider;
 
 mod _metric_statistic;
 

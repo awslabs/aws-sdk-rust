@@ -39,6 +39,8 @@ pub use crate::types::_splunk_retry_options::SplunkRetryOptionsBuilder;
 
 pub use crate::types::_amazonopensearchservice_destination_update::AmazonopensearchserviceDestinationUpdateBuilder;
 
+pub use crate::types::_document_id_options::DocumentIdOptionsBuilder;
+
 pub use crate::types::_amazonopensearchservice_retry_options::AmazonopensearchserviceRetryOptionsBuilder;
 
 pub use crate::types::_amazonopensearchservice_buffering_hints::AmazonopensearchserviceBufferingHintsBuilder;

@@ -281,7 +281,7 @@ pub enum PostCommentForPullRequestError {
     ClientRequestTokenRequiredException(crate::types::error::ClientRequestTokenRequiredException),
     /// <p>The comment is empty. You must provide some content for a comment. The content cannot be null.</p>
     CommentContentRequiredException(crate::types::error::CommentContentRequiredException),
-    /// <p>The comment is too large. Comments are limited to 1,000 characters.</p>
+    /// <p>The comment is too large. Comments are limited to 10,240 characters.</p>
     CommentContentSizeLimitExceededException(crate::types::error::CommentContentSizeLimitExceededException),
     /// <p>The specified commit does not exist or no commit was specified, and the specified repository has no default branch.</p>
     CommitDoesNotExistException(crate::types::error::CommitDoesNotExistException),

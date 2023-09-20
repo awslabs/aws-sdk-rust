@@ -23,6 +23,8 @@ pub fn parse_http_error_metadata(
     crate::json_errors::parse_error_metadata(response_body, response_headers)
 }
 
+pub(crate) mod shape_add_workload;
+
 pub(crate) mod shape_create_application;
 
 pub(crate) mod shape_create_component;
@@ -51,6 +53,8 @@ pub(crate) mod shape_describe_problem;
 
 pub(crate) mod shape_describe_problem_observations;
 
+pub(crate) mod shape_describe_workload;
+
 pub(crate) mod shape_list_applications;
 
 pub(crate) mod shape_list_components;
@@ -65,6 +69,10 @@ pub(crate) mod shape_list_problems;
 
 pub(crate) mod shape_list_tags_for_resource;
 
+pub(crate) mod shape_list_workloads;
+
+pub(crate) mod shape_remove_workload;
+
 pub(crate) mod shape_tag_resource;
 
 pub(crate) mod shape_untag_resource;
@@ -77,6 +85,10 @@ pub(crate) mod shape_update_component_configuration;
 
 pub(crate) mod shape_update_log_pattern;
 
+pub(crate) mod shape_update_problem;
+
+pub(crate) mod shape_update_workload;
+
 pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
     if data.is_empty() {
         b"{}"
@@ -86,6 +98,8 @@ pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
 }
 
 pub(crate) mod shape_access_denied_exception;
+
+pub(crate) mod shape_add_workload_input;
 
 pub(crate) mod shape_bad_request_exception;
 
@@ -117,6 +131,8 @@ pub(crate) mod shape_describe_problem_input;
 
 pub(crate) mod shape_describe_problem_observations_input;
 
+pub(crate) mod shape_describe_workload_input;
+
 pub(crate) mod shape_internal_server_exception;
 
 pub(crate) mod shape_list_applications_input;
@@ -132,6 +148,10 @@ pub(crate) mod shape_list_log_patterns_input;
 pub(crate) mod shape_list_problems_input;
 
 pub(crate) mod shape_list_tags_for_resource_input;
+
+pub(crate) mod shape_list_workloads_input;
+
+pub(crate) mod shape_remove_workload_input;
 
 pub(crate) mod shape_resource_in_use_exception;
 
@@ -152,6 +172,10 @@ pub(crate) mod shape_update_component_configuration_input;
 pub(crate) mod shape_update_component_input;
 
 pub(crate) mod shape_update_log_pattern_input;
+
+pub(crate) mod shape_update_problem_input;
+
+pub(crate) mod shape_update_workload_input;
 
 pub(crate) mod shape_validation_exception;
 
@@ -185,6 +209,10 @@ pub(crate) mod shape_tag;
 
 pub(crate) mod shape_tag_list;
 
+pub(crate) mod shape_workload_configuration;
+
+pub(crate) mod shape_workload_list;
+
 pub(crate) mod shape_configuration_event;
 
 pub(crate) mod shape_detected_workload;
@@ -192,5 +220,7 @@ pub(crate) mod shape_detected_workload;
 pub(crate) mod shape_feedback;
 
 pub(crate) mod shape_observation_list;
+
+pub(crate) mod shape_workload;
 
 pub(crate) mod shape_workload_meta_data;

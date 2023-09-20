@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`id(Option<String>)`](crate::operation::get_api_key::GetApiKeyOutput::id): <p>The identifier of the API Key.</p>
     ///   - [`value(Option<String>)`](crate::operation::get_api_key::GetApiKeyOutput::value): <p>The value of the API Key.</p>
     ///   - [`name(Option<String>)`](crate::operation::get_api_key::GetApiKeyOutput::name): <p>The name of the API Key.</p>
-    ///   - [`customer_id(Option<String>)`](crate::operation::get_api_key::GetApiKeyOutput::customer_id): <p>An AWS Marketplace customer identifier , when integrating with the AWS SaaS Marketplace.</p>
+    ///   - [`customer_id(Option<String>)`](crate::operation::get_api_key::GetApiKeyOutput::customer_id): <p>An Amazon Web Services Marketplace customer identifier, when integrating with the Amazon Web Services SaaS Marketplace.</p>
     ///   - [`description(Option<String>)`](crate::operation::get_api_key::GetApiKeyOutput::description): <p>The description of the API Key.</p>
     ///   - [`enabled(bool)`](crate::operation::get_api_key::GetApiKeyOutput::enabled): <p>Specifies whether the API Key can be used by callers.</p>
     ///   - [`created_date(Option<DateTime>)`](crate::operation::get_api_key::GetApiKeyOutput::created_date): <p>The timestamp when the API Key was created.</p>

@@ -13,7 +13,11 @@ pub use crate::types::_folder_configuration::FolderConfigurationBuilder;
 
 pub use crate::types::_user::UserBuilder;
 
+pub use crate::types::_list_users_filters::ListUsersFiltersBuilder;
+
 pub use crate::types::_resource::ResourceBuilder;
+
+pub use crate::types::_list_resources_filters::ListResourcesFiltersBuilder;
 
 pub use crate::types::_delegate::DelegateBuilder;
 
@@ -31,7 +35,13 @@ pub use crate::types::_mailbox_export_job::MailboxExportJobBuilder;
 
 pub use crate::types::_impersonation_role::ImpersonationRoleBuilder;
 
+pub use crate::types::_group_identifier::GroupIdentifierBuilder;
+
+pub use crate::types::_list_groups_for_entity_filters::ListGroupsForEntityFiltersBuilder;
+
 pub use crate::types::_group::GroupBuilder;
+
+pub use crate::types::_list_groups_filters::ListGroupsFiltersBuilder;
 
 pub use crate::types::_member::MemberBuilder;
 

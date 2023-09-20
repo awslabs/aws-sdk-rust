@@ -9,7 +9,7 @@ pub struct ListModelCardVersionsInput {
     pub creation_time_before: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The maximum number of model card versions to list.</p>
     pub max_results: ::std::option::Option<i32>,
-    /// <p>List model card versions for the model card with the specified name.</p>
+    /// <p>List model card versions for the model card with the specified name or Amazon Resource Name (ARN).</p>
     pub model_card_name: ::std::option::Option<::std::string::String>,
     /// <p>Only list model card versions with the specified approval status.</p>
     pub model_card_status: ::std::option::Option<crate::types::ModelCardStatus>,
@@ -33,7 +33,7 @@ impl ListModelCardVersionsInput {
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
-    /// <p>List model card versions for the model card with the specified name.</p>
+    /// <p>List model card versions for the model card with the specified name or Amazon Resource Name (ARN).</p>
     pub fn model_card_name(&self) -> ::std::option::Option<&str> {
         self.model_card_name.as_deref()
     }
@@ -117,17 +117,17 @@ impl ListModelCardVersionsInputBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
-    /// <p>List model card versions for the model card with the specified name.</p>
+    /// <p>List model card versions for the model card with the specified name or Amazon Resource Name (ARN).</p>
     pub fn model_card_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_card_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>List model card versions for the model card with the specified name.</p>
+    /// <p>List model card versions for the model card with the specified name or Amazon Resource Name (ARN).</p>
     pub fn set_model_card_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_card_name = input;
         self
     }
-    /// <p>List model card versions for the model card with the specified name.</p>
+    /// <p>List model card versions for the model card with the specified name or Amazon Resource Name (ARN).</p>
     pub fn get_model_card_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.model_card_name
     }

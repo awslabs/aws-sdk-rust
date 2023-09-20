@@ -24,6 +24,12 @@ pub fn ser_table_field_options(
         }
         array_6.finish();
     }
+    if let Some(var_8) = &input.pinned_field_options {
+        #[allow(unused_mut)]
+        let mut object_9 = object.key("PinnedFieldOptions").start_object();
+        crate::protocol_serde::shape_table_pinned_field_options::ser_table_pinned_field_options(&mut object_9, var_8)?;
+        object_9.finish();
+    }
     Ok(())
 }
 
@@ -49,6 +55,11 @@ where
                         }
                         "Order" => {
                             builder = builder.set_order(crate::protocol_serde::shape_field_order_list::de_field_order_list(tokens)?);
+                        }
+                        "PinnedFieldOptions" => {
+                            builder = builder.set_pinned_field_options(
+                                crate::protocol_serde::shape_table_pinned_field_options::de_table_pinned_field_options(tokens)?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -22,7 +22,7 @@ impl UntagResourceInputBuilder {
 }
 /// Fluent builder constructing a request to `UntagResource`.
 ///
-/// <p>Removes one or more tags from the specified AWS Entity Resolution resource. In Entity Resolution, <code>SchemaMapping</code>, and <code>MatchingWorkflow</code> can be tagged.</p>
+/// <p>Removes one or more tags from the specified Entity Resolution resource. In Entity Resolution, <code>SchemaMapping</code>, and <code>MatchingWorkflow</code> can be tagged.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UntagResourceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

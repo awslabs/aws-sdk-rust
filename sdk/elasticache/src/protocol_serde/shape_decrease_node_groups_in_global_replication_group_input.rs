@@ -12,38 +12,38 @@ pub fn ser_decrease_node_groups_in_global_replication_group_input_input(
     }
     #[allow(unused_mut)]
     let mut scope_3 = writer.prefix("NodeGroupCount");
-    {
+    if let Some(var_4) = &input.node_group_count {
         scope_3.number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.node_group_count).into()),
+            ::aws_smithy_types::Number::NegInt((*var_4).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_4 = writer.prefix("GlobalNodeGroupsToRemove");
-    if let Some(var_5) = &input.global_node_groups_to_remove {
-        let mut list_7 = scope_4.start_list(false, Some("GlobalNodeGroupId"));
-        for item_6 in var_5 {
+    let mut scope_5 = writer.prefix("GlobalNodeGroupsToRemove");
+    if let Some(var_6) = &input.global_node_groups_to_remove {
+        let mut list_8 = scope_5.start_list(false, Some("GlobalNodeGroupId"));
+        for item_7 in var_6 {
             #[allow(unused_mut)]
-            let mut entry_8 = list_7.entry();
-            entry_8.string(item_6);
+            let mut entry_9 = list_8.entry();
+            entry_9.string(item_7);
         }
-        list_7.finish();
+        list_8.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_9 = writer.prefix("GlobalNodeGroupsToRetain");
-    if let Some(var_10) = &input.global_node_groups_to_retain {
-        let mut list_12 = scope_9.start_list(false, Some("GlobalNodeGroupId"));
-        for item_11 in var_10 {
+    let mut scope_10 = writer.prefix("GlobalNodeGroupsToRetain");
+    if let Some(var_11) = &input.global_node_groups_to_retain {
+        let mut list_13 = scope_10.start_list(false, Some("GlobalNodeGroupId"));
+        for item_12 in var_11 {
             #[allow(unused_mut)]
-            let mut entry_13 = list_12.entry();
-            entry_13.string(item_11);
+            let mut entry_14 = list_13.entry();
+            entry_14.string(item_12);
         }
-        list_12.finish();
+        list_13.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_14 = writer.prefix("ApplyImmediately");
-    {
-        scope_14.boolean(input.apply_immediately);
+    let mut scope_15 = writer.prefix("ApplyImmediately");
+    if let Some(var_16) = &input.apply_immediately {
+        scope_15.boolean(*var_16);
     }
     writer.finish();
     Ok(::aws_smithy_http::body::SdkBody::from(out))

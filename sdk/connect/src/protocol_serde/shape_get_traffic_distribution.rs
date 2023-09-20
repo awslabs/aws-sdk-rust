@@ -136,6 +136,9 @@ pub(crate) fn de_get_traffic_distribution(
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                "AgentConfig" => {
+                    builder = builder.set_agent_config(crate::protocol_serde::shape_agent_config::de_agent_config(tokens)?);
+                }
                 "Arn" => {
                     builder = builder.set_arn(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -149,6 +152,9 @@ pub(crate) fn de_get_traffic_distribution(
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                             .transpose()?,
                     );
+                }
+                "SignInConfig" => {
+                    builder = builder.set_sign_in_config(crate::protocol_serde::shape_sign_in_config::de_sign_in_config(tokens)?);
                 }
                 "TelephonyConfig" => {
                     builder = builder.set_telephony_config(crate::protocol_serde::shape_telephony_config::de_telephony_config(tokens)?);

@@ -205,6 +205,8 @@ pub(crate) mod shape_certificate;
 
 pub(crate) mod shape_certificate_summary_list;
 
+pub(crate) mod shape_cookie_synchronization_configuration;
+
 pub(crate) mod shape_identity_provider;
 
 pub(crate) mod shape_identity_provider_list;
@@ -247,6 +249,8 @@ pub(crate) mod shape_browser_settings_summary;
 
 pub(crate) mod shape_certificate_summary;
 
+pub(crate) mod shape_cookie_specification;
+
 pub(crate) mod shape_identity_provider_details;
 
 pub(crate) mod shape_identity_provider_summary;
@@ -270,3 +274,5 @@ pub(crate) mod shape_user_access_logging_settings_summary;
 pub(crate) mod shape_user_settings_summary;
 
 pub(crate) mod shape_validation_exception_field;
+
+pub(crate) mod shape_cookie_specifications;

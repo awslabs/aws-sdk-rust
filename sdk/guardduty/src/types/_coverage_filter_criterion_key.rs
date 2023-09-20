@@ -16,6 +16,7 @@
 ///     CoverageFilterCriterionKey::AddonVersion => { /* ... */ },
 ///     CoverageFilterCriterionKey::ClusterName => { /* ... */ },
 ///     CoverageFilterCriterionKey::CoverageStatus => { /* ... */ },
+///     CoverageFilterCriterionKey::ManagementType => { /* ... */ },
 ///     CoverageFilterCriterionKey::ResourceType => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -53,6 +54,8 @@ pub enum CoverageFilterCriterionKey {
     #[allow(missing_docs)] // documentation missing in model
     CoverageStatus,
     #[allow(missing_docs)] // documentation missing in model
+    ManagementType,
+    #[allow(missing_docs)] // documentation missing in model
     ResourceType,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
@@ -64,6 +67,7 @@ impl ::std::convert::From<&str> for CoverageFilterCriterionKey {
             "ADDON_VERSION" => CoverageFilterCriterionKey::AddonVersion,
             "CLUSTER_NAME" => CoverageFilterCriterionKey::ClusterName,
             "COVERAGE_STATUS" => CoverageFilterCriterionKey::CoverageStatus,
+            "MANAGEMENT_TYPE" => CoverageFilterCriterionKey::ManagementType,
             "RESOURCE_TYPE" => CoverageFilterCriterionKey::ResourceType,
             other => CoverageFilterCriterionKey::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
@@ -84,13 +88,21 @@ impl CoverageFilterCriterionKey {
             CoverageFilterCriterionKey::AddonVersion => "ADDON_VERSION",
             CoverageFilterCriterionKey::ClusterName => "CLUSTER_NAME",
             CoverageFilterCriterionKey::CoverageStatus => "COVERAGE_STATUS",
+            CoverageFilterCriterionKey::ManagementType => "MANAGEMENT_TYPE",
             CoverageFilterCriterionKey::ResourceType => "RESOURCE_TYPE",
             CoverageFilterCriterionKey::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ACCOUNT_ID", "ADDON_VERSION", "CLUSTER_NAME", "COVERAGE_STATUS", "RESOURCE_TYPE"]
+        &[
+            "ACCOUNT_ID",
+            "ADDON_VERSION",
+            "CLUSTER_NAME",
+            "COVERAGE_STATUS",
+            "MANAGEMENT_TYPE",
+            "RESOURCE_TYPE",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for CoverageFilterCriterionKey {

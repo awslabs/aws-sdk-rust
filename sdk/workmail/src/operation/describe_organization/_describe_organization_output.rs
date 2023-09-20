@@ -21,6 +21,10 @@ pub struct DescribeOrganizationOutput {
     pub error_message: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the organization.</p>
     pub arn: ::std::option::Option<::std::string::String>,
+    /// <p>The user ID of the migration admin if migration is enabled for the organization.</p>
+    pub migration_admin: ::std::option::Option<::std::string::String>,
+    /// <p>Indicates if interoperability is enabled for this organization.</p>
+    pub interoperability_enabled: bool,
     _request_id: Option<String>,
 }
 impl DescribeOrganizationOutput {
@@ -60,6 +64,14 @@ impl DescribeOrganizationOutput {
     pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
+    /// <p>The user ID of the migration admin if migration is enabled for the organization.</p>
+    pub fn migration_admin(&self) -> ::std::option::Option<&str> {
+        self.migration_admin.as_deref()
+    }
+    /// <p>Indicates if interoperability is enabled for this organization.</p>
+    pub fn interoperability_enabled(&self) -> bool {
+        self.interoperability_enabled
+    }
 }
 impl ::aws_http::request_id::RequestId for DescribeOrganizationOutput {
     fn request_id(&self) -> Option<&str> {
@@ -86,6 +98,8 @@ pub struct DescribeOrganizationOutputBuilder {
     pub(crate) completed_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) error_message: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
+    pub(crate) migration_admin: ::std::option::Option<::std::string::String>,
+    pub(crate) interoperability_enabled: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }
 impl DescribeOrganizationOutputBuilder {
@@ -215,6 +229,34 @@ impl DescribeOrganizationOutputBuilder {
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
+    /// <p>The user ID of the migration admin if migration is enabled for the organization.</p>
+    pub fn migration_admin(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.migration_admin = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The user ID of the migration admin if migration is enabled for the organization.</p>
+    pub fn set_migration_admin(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.migration_admin = input;
+        self
+    }
+    /// <p>The user ID of the migration admin if migration is enabled for the organization.</p>
+    pub fn get_migration_admin(&self) -> &::std::option::Option<::std::string::String> {
+        &self.migration_admin
+    }
+    /// <p>Indicates if interoperability is enabled for this organization.</p>
+    pub fn interoperability_enabled(mut self, input: bool) -> Self {
+        self.interoperability_enabled = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates if interoperability is enabled for this organization.</p>
+    pub fn set_interoperability_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.interoperability_enabled = input;
+        self
+    }
+    /// <p>Indicates if interoperability is enabled for this organization.</p>
+    pub fn get_interoperability_enabled(&self) -> &::std::option::Option<bool> {
+        &self.interoperability_enabled
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -236,6 +278,8 @@ impl DescribeOrganizationOutputBuilder {
             completed_date: self.completed_date,
             error_message: self.error_message,
             arn: self.arn,
+            migration_admin: self.migration_admin,
+            interoperability_enabled: self.interoperability_enabled.unwrap_or_default(),
             _request_id: self._request_id,
         }
     }

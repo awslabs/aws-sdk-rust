@@ -97,6 +97,8 @@ pub(crate) mod shape_health_event;
 
 pub(crate) mod shape_impacted_location;
 
+pub(crate) mod shape_local_health_events_config;
+
 pub(crate) mod shape_monitor;
 
 pub(crate) mod shape_s3_config;

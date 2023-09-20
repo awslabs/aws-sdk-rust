@@ -36,10 +36,10 @@ pub struct DescribeDbClusterSnapshotsInput {
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>True to include shared manual DB cluster snapshots from other Amazon accounts that this Amazon account has been given permission to copy or restore, and otherwise false. The default is <code>false</code>.</p>
     /// <p>You can give an Amazon account permission to restore a manual DB cluster snapshot from another Amazon account by the <code>ModifyDBClusterSnapshotAttribute</code> API action.</p>
-    pub include_shared: bool,
+    pub include_shared: ::std::option::Option<bool>,
     /// <p>True to include manual DB cluster snapshots that are public and can be copied or restored by any Amazon account, and otherwise false. The default is <code>false</code>. The default is false.</p>
     /// <p>You can share a manual DB cluster snapshot as public by using the <code>ModifyDBClusterSnapshotAttribute</code> API action.</p>
-    pub include_public: bool,
+    pub include_public: ::std::option::Option<bool>,
 }
 impl DescribeDbClusterSnapshotsInput {
     /// <p>The ID of the DB cluster to retrieve the list of DB cluster snapshots for. This parameter can't be used in conjunction with the <code>DBClusterSnapshotIdentifier</code> parameter. This parameter is not case-sensitive.</p>
@@ -87,12 +87,12 @@ impl DescribeDbClusterSnapshotsInput {
     }
     /// <p>True to include shared manual DB cluster snapshots from other Amazon accounts that this Amazon account has been given permission to copy or restore, and otherwise false. The default is <code>false</code>.</p>
     /// <p>You can give an Amazon account permission to restore a manual DB cluster snapshot from another Amazon account by the <code>ModifyDBClusterSnapshotAttribute</code> API action.</p>
-    pub fn include_shared(&self) -> bool {
+    pub fn include_shared(&self) -> ::std::option::Option<bool> {
         self.include_shared
     }
     /// <p>True to include manual DB cluster snapshots that are public and can be copied or restored by any Amazon account, and otherwise false. The default is <code>false</code>. The default is false.</p>
     /// <p>You can share a manual DB cluster snapshot as public by using the <code>ModifyDBClusterSnapshotAttribute</code> API action.</p>
-    pub fn include_public(&self) -> bool {
+    pub fn include_public(&self) -> ::std::option::Option<bool> {
         self.include_public
     }
 }
@@ -312,8 +312,8 @@ impl DescribeDbClusterSnapshotsInputBuilder {
             filters: self.filters,
             max_records: self.max_records,
             marker: self.marker,
-            include_shared: self.include_shared.unwrap_or_default(),
-            include_public: self.include_public.unwrap_or_default(),
+            include_shared: self.include_shared,
+            include_public: self.include_public,
         })
     }
 }

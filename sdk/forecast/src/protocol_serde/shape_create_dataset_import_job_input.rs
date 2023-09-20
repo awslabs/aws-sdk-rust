@@ -21,29 +21,29 @@ pub fn ser_create_dataset_import_job_input(
     if let Some(var_6) = &input.time_zone {
         object.key("TimeZone").string(var_6.as_str());
     }
-    if input.use_geolocation_for_time_zone {
-        object.key("UseGeolocationForTimeZone").boolean(input.use_geolocation_for_time_zone);
+    if let Some(var_7) = &input.use_geolocation_for_time_zone {
+        object.key("UseGeolocationForTimeZone").boolean(*var_7);
     }
-    if let Some(var_7) = &input.geolocation_format {
-        object.key("GeolocationFormat").string(var_7.as_str());
+    if let Some(var_8) = &input.geolocation_format {
+        object.key("GeolocationFormat").string(var_8.as_str());
     }
-    if let Some(var_8) = &input.tags {
-        let mut array_9 = object.key("Tags").start_array();
-        for item_10 in var_8 {
+    if let Some(var_9) = &input.tags {
+        let mut array_10 = object.key("Tags").start_array();
+        for item_11 in var_9 {
             {
                 #[allow(unused_mut)]
-                let mut object_11 = array_9.value().start_object();
-                crate::protocol_serde::shape_tag::ser_tag(&mut object_11, item_10)?;
-                object_11.finish();
+                let mut object_12 = array_10.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_12, item_11)?;
+                object_12.finish();
             }
         }
-        array_9.finish();
+        array_10.finish();
     }
-    if let Some(var_12) = &input.format {
-        object.key("Format").string(var_12.as_str());
+    if let Some(var_13) = &input.format {
+        object.key("Format").string(var_13.as_str());
     }
-    if let Some(var_13) = &input.import_mode {
-        object.key("ImportMode").string(var_13.as_str());
+    if let Some(var_14) = &input.import_mode {
+        object.key("ImportMode").string(var_14.as_str());
     }
     Ok(())
 }

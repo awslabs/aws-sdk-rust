@@ -27,7 +27,7 @@ pub struct DescribeDbClustersInput {
     /// <p>An optional pagination token provided by a previous <code>DescribeDBClusters</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether the output includes information about clusters shared from other Amazon Web Services accounts.</p>
-    pub include_shared: bool,
+    pub include_shared: ::std::option::Option<bool>,
 }
 impl DescribeDbClustersInput {
     /// <p>The user-supplied DB cluster identifier or the Amazon Resource Name (ARN) of the DB cluster. If this parameter is specified, information for only the specific DB cluster is returned. This parameter isn't case-sensitive.</p>
@@ -61,7 +61,7 @@ impl DescribeDbClustersInput {
         self.marker.as_deref()
     }
     /// <p>Specifies whether the output includes information about clusters shared from other Amazon Web Services accounts.</p>
-    pub fn include_shared(&self) -> bool {
+    pub fn include_shared(&self) -> ::std::option::Option<bool> {
         self.include_shared
     }
 }
@@ -210,7 +210,7 @@ impl DescribeDbClustersInputBuilder {
             filters: self.filters,
             max_records: self.max_records,
             marker: self.marker,
-            include_shared: self.include_shared.unwrap_or_default(),
+            include_shared: self.include_shared,
         })
     }
 }

@@ -65,7 +65,13 @@ pub use crate::types::_input_security_group_state::InputSecurityGroupState;
 
 pub use crate::types::_input_whitelist_rule_cidr::InputWhitelistRuleCidr;
 
+pub use crate::types::_input_device_output_type::InputDeviceOutputType;
+
 pub use crate::types::_input_device_uhd_settings::InputDeviceUhdSettings;
+
+pub use crate::types::_input_device_media_connect_settings::InputDeviceMediaConnectSettings;
+
+pub use crate::types::_input_device_codec::InputDeviceCodec;
 
 pub use crate::types::_input_device_scan_type::InputDeviceScanType;
 
@@ -90,6 +96,8 @@ pub use crate::types::_device_settings_sync_state::DeviceSettingsSyncState;
 pub use crate::types::_input_device_connection_state::InputDeviceConnectionState;
 
 pub use crate::types::_input_device_configurable_settings::InputDeviceConfigurableSettings;
+
+pub use crate::types::_input_device_media_connect_configurable_settings::InputDeviceMediaConnectConfigurableSettings;
 
 pub use crate::types::_input::Input;
 
@@ -473,6 +481,8 @@ pub use crate::types::_standard_hls_settings::StandardHlsSettings;
 
 pub use crate::types::_m3u8_settings::M3u8Settings;
 
+pub use crate::types::_m3u8_klv_behavior::M3u8KlvBehavior;
+
 pub use crate::types::_m3u8_timed_metadata_behavior::M3u8TimedMetadataBehavior;
 
 pub use crate::types::_m3u8_scte35_behavior::M3u8Scte35Behavior;
@@ -516,6 +526,8 @@ pub use crate::types::_udp_timed_metadata_id3_frame::UdpTimedMetadataId3Frame;
 pub use crate::types::_input_loss_action_for_udp_out::InputLossActionForUdpOut;
 
 pub use crate::types::_rtmp_group_settings::RtmpGroupSettings;
+
+pub use crate::types::_include_filler_nal_units::IncludeFillerNalUnits;
 
 pub use crate::types::_input_loss_action_for_rtmp_out::InputLossActionForRtmpOut;
 
@@ -652,6 +664,12 @@ pub use crate::types::_html_motion_graphics_settings::HtmlMotionGraphicsSettings
 pub use crate::types::_motion_graphics_insertion::MotionGraphicsInsertion;
 
 pub use crate::types::_global_configuration::GlobalConfiguration;
+
+pub use crate::types::_output_locking_settings::OutputLockingSettings;
+
+pub use crate::types::_pipeline_locking_settings::PipelineLockingSettings;
+
+pub use crate::types::_epoch_locking_settings::EpochLockingSettings;
 
 pub use crate::types::_global_configuration_low_framerate_inputs::GlobalConfigurationLowFramerateInputs;
 
@@ -822,6 +840,8 @@ pub use crate::types::_eac3_atmos_drc_line::Eac3AtmosDrcLine;
 pub use crate::types::_eac3_atmos_coding_mode::Eac3AtmosCodingMode;
 
 pub use crate::types::_ac3_settings::Ac3Settings;
+
+pub use crate::types::_ac3_attenuation_control::Ac3AttenuationControl;
 
 pub use crate::types::_ac3_metadata_control::Ac3MetadataControl;
 
@@ -1026,6 +1046,8 @@ mod _aac_settings;
 mod _aac_spec;
 
 mod _aac_vbr_quality;
+
+mod _ac3_attenuation_control;
 
 mod _ac3_bitstream_mode;
 
@@ -1273,6 +1295,8 @@ mod _embedded_source_settings;
 
 mod _encoder_settings;
 
+mod _epoch_locking_settings;
+
 mod _esam;
 
 mod _failover_condition;
@@ -1491,6 +1515,8 @@ mod _i_frame_only_playlist_type;
 
 mod _immediate_mode_schedule_action_start_settings;
 
+mod _include_filler_nal_units;
+
 mod _input;
 
 mod _input_attachment;
@@ -1515,6 +1541,8 @@ mod _input_destination_vpc;
 
 mod _input_device_active_input;
 
+mod _input_device_codec;
+
 mod _input_device_configurable_settings;
 
 mod _input_device_configured_input;
@@ -1525,7 +1553,13 @@ mod _input_device_hd_settings;
 
 mod _input_device_ip_scheme;
 
+mod _input_device_media_connect_configurable_settings;
+
+mod _input_device_media_connect_settings;
+
 mod _input_device_network_settings;
+
+mod _input_device_output_type;
 
 mod _input_device_request;
 
@@ -1644,6 +1678,8 @@ mod _m2ts_segmentation_style;
 mod _m2ts_settings;
 
 mod _m2ts_timed_metadata_behavior;
+
+mod _m3u8_klv_behavior;
 
 mod _m3u8_nielsen_id3_behavior;
 
@@ -1787,6 +1823,8 @@ mod _output_group_settings;
 
 mod _output_location_ref;
 
+mod _output_locking_settings;
+
 mod _output_settings;
 
 mod _pass_through_settings;
@@ -1796,6 +1834,8 @@ mod _pause_state_schedule_action_settings;
 mod _pipeline_detail;
 
 mod _pipeline_id;
+
+mod _pipeline_locking_settings;
 
 mod _pipeline_pause_state_settings;
 

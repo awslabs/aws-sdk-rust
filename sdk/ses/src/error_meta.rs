@@ -37,13 +37,13 @@ pub enum Error {
     InvalidDeliveryOptionsException(crate::types::error::InvalidDeliveryOptionsException),
     /// <p>Indicates that the Amazon Kinesis Firehose destination is invalid. See the error message for details.</p>
     InvalidFirehoseDestinationException(crate::types::error::InvalidFirehoseDestinationException),
-    /// <p>Indicates that the provided AWS Lambda function is invalid, or that Amazon SES could not execute the provided function, possibly due to permissions issues. For information about giving permissions, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html">Amazon SES Developer Guide</a>.</p>
+    /// <p>Indicates that the provided Amazon Web Services Lambda function is invalid, or that Amazon SES could not execute the provided function, possibly due to permissions issues. For information about giving permissions, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html">Amazon SES Developer Guide</a>.</p>
     InvalidLambdaFunctionException(crate::types::error::InvalidLambdaFunctionException),
     /// <p>Indicates that the provided policy is invalid. Check the error stack for more information about what caused the error.</p>
     InvalidPolicyException(crate::types::error::InvalidPolicyException),
     /// <p>Indicates that one or more of the replacement values you provided is invalid. This error may occur when the TemplateData object contains invalid JSON.</p>
     InvalidRenderingParameterException(crate::types::error::InvalidRenderingParameterException),
-    /// <p>Indicates that the provided Amazon S3 bucket or AWS KMS encryption key is invalid, or that Amazon SES could not publish to the bucket, possibly due to permissions issues. For information about giving permissions, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html">Amazon SES Developer Guide</a>.</p>
+    /// <p>Indicates that the provided Amazon S3 bucket or Amazon Web Services KMS encryption key is invalid, or that Amazon SES could not publish to the bucket, possibly due to permissions issues. For information about giving permissions, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html">Amazon SES Developer Guide</a>.</p>
     InvalidS3ConfigurationException(crate::types::error::InvalidS3ConfigurationException),
     /// <p>Indicates that the Amazon Simple Notification Service (Amazon SNS) destination is invalid. See the error message for details.</p>
     InvalidSnsDestinationException(crate::types::error::InvalidSnsDestinationException),

@@ -103,6 +103,8 @@ pub use crate::types::_resource_type::ResourceType;
 
 pub use crate::types::_coverage_eks_cluster_details::CoverageEksClusterDetails;
 
+pub use crate::types::_management_type::ManagementType;
+
 pub use crate::types::_addon_details::AddonDetails;
 
 pub use crate::types::_coverage_sort_criteria::CoverageSortCriteria;
@@ -596,6 +598,8 @@ mod _malware_protection_configuration;
 mod _malware_protection_configuration_result;
 
 mod _malware_protection_data_source_free_trial;
+
+mod _management_type;
 
 mod _master;
 

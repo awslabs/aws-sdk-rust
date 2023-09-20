@@ -180,17 +180,17 @@ impl CreateDomainNameFluentBuilder {
     pub fn get_certificate_chain(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_certificate_chain()
     }
-    /// <p>The reference to an AWS-managed certificate that will be used by edge-optimized endpoint for this domain name. AWS Certificate Manager is the only supported source.</p>
+    /// <p>The reference to an Amazon Web Services-managed certificate that will be used by edge-optimized endpoint for this domain name. Certificate Manager is the only supported source.</p>
     pub fn certificate_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.certificate_arn(input.into());
         self
     }
-    /// <p>The reference to an AWS-managed certificate that will be used by edge-optimized endpoint for this domain name. AWS Certificate Manager is the only supported source.</p>
+    /// <p>The reference to an Amazon Web Services-managed certificate that will be used by edge-optimized endpoint for this domain name. Certificate Manager is the only supported source.</p>
     pub fn set_certificate_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_certificate_arn(input);
         self
     }
-    /// <p>The reference to an AWS-managed certificate that will be used by edge-optimized endpoint for this domain name. AWS Certificate Manager is the only supported source.</p>
+    /// <p>The reference to an Amazon Web Services-managed certificate that will be used by edge-optimized endpoint for this domain name. Certificate Manager is the only supported source.</p>
     pub fn get_certificate_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_certificate_arn()
     }
@@ -208,17 +208,17 @@ impl CreateDomainNameFluentBuilder {
     pub fn get_regional_certificate_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_regional_certificate_name()
     }
-    /// <p>The reference to an AWS-managed certificate that will be used by regional endpoint for this domain name. AWS Certificate Manager is the only supported source.</p>
+    /// <p>The reference to an Amazon Web Services-managed certificate that will be used by regional endpoint for this domain name. Certificate Manager is the only supported source.</p>
     pub fn regional_certificate_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.regional_certificate_arn(input.into());
         self
     }
-    /// <p>The reference to an AWS-managed certificate that will be used by regional endpoint for this domain name. AWS Certificate Manager is the only supported source.</p>
+    /// <p>The reference to an Amazon Web Services-managed certificate that will be used by regional endpoint for this domain name. Certificate Manager is the only supported source.</p>
     pub fn set_regional_certificate_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_regional_certificate_arn(input);
         self
     }
-    /// <p>The reference to an AWS-managed certificate that will be used by regional endpoint for this domain name. AWS Certificate Manager is the only supported source.</p>
+    /// <p>The reference to an Amazon Web Services-managed certificate that will be used by regional endpoint for this domain name. Certificate Manager is the only supported source.</p>
     pub fn get_regional_certificate_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_regional_certificate_arn()
     }

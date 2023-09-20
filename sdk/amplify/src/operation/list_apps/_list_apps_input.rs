@@ -7,7 +7,7 @@ pub struct ListAppsInput {
     /// <p> A pagination token. If non-null, the pagination token is returned in a result. Pass its value in another request to retrieve more entries. </p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p> The maximum number of records to list in a single response. </p>
-    pub max_results: i32,
+    pub max_results: ::std::option::Option<i32>,
 }
 impl ListAppsInput {
     /// <p> A pagination token. If non-null, the pagination token is returned in a result. Pass its value in another request to retrieve more entries. </p>
@@ -15,7 +15,7 @@ impl ListAppsInput {
         self.next_token.as_deref()
     }
     /// <p> The maximum number of records to list in a single response. </p>
-    pub fn max_results(&self) -> i32 {
+    pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
 }
@@ -66,7 +66,7 @@ impl ListAppsInputBuilder {
     pub fn build(self) -> ::std::result::Result<crate::operation::list_apps::ListAppsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_apps::ListAppsInput {
             next_token: self.next_token,
-            max_results: self.max_results.unwrap_or_default(),
+            max_results: self.max_results,
         })
     }
 }

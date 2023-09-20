@@ -18,6 +18,8 @@ pub struct Ac3Settings {
     pub lfe_filter: ::std::option::Option<crate::types::Ac3LfeFilter>,
     /// When set to "followInput", encoder metadata will be sourced from the DD, DD+, or DolbyE decoder that supplied this audio data. If audio was not supplied from one of these streams, then the static metadata settings will be used.
     pub metadata_control: ::std::option::Option<crate::types::Ac3MetadataControl>,
+    /// Applies a 3 dB attenuation to the surround channels. Applies only when the coding mode parameter is CODING_MODE_3_2_LFE.
+    pub attenuation_control: ::std::option::Option<crate::types::Ac3AttenuationControl>,
 }
 impl Ac3Settings {
     /// Average bitrate in bits/second. Valid bitrates depend on the coding mode.
@@ -48,6 +50,10 @@ impl Ac3Settings {
     pub fn metadata_control(&self) -> ::std::option::Option<&crate::types::Ac3MetadataControl> {
         self.metadata_control.as_ref()
     }
+    /// Applies a 3 dB attenuation to the surround channels. Applies only when the coding mode parameter is CODING_MODE_3_2_LFE.
+    pub fn attenuation_control(&self) -> ::std::option::Option<&crate::types::Ac3AttenuationControl> {
+        self.attenuation_control.as_ref()
+    }
 }
 impl Ac3Settings {
     /// Creates a new builder-style object to manufacture [`Ac3Settings`](crate::types::Ac3Settings).
@@ -67,6 +73,7 @@ pub struct Ac3SettingsBuilder {
     pub(crate) drc_profile: ::std::option::Option<crate::types::Ac3DrcProfile>,
     pub(crate) lfe_filter: ::std::option::Option<crate::types::Ac3LfeFilter>,
     pub(crate) metadata_control: ::std::option::Option<crate::types::Ac3MetadataControl>,
+    pub(crate) attenuation_control: ::std::option::Option<crate::types::Ac3AttenuationControl>,
 }
 impl Ac3SettingsBuilder {
     /// Average bitrate in bits/second. Valid bitrates depend on the coding mode.
@@ -167,6 +174,20 @@ impl Ac3SettingsBuilder {
     pub fn get_metadata_control(&self) -> &::std::option::Option<crate::types::Ac3MetadataControl> {
         &self.metadata_control
     }
+    /// Applies a 3 dB attenuation to the surround channels. Applies only when the coding mode parameter is CODING_MODE_3_2_LFE.
+    pub fn attenuation_control(mut self, input: crate::types::Ac3AttenuationControl) -> Self {
+        self.attenuation_control = ::std::option::Option::Some(input);
+        self
+    }
+    /// Applies a 3 dB attenuation to the surround channels. Applies only when the coding mode parameter is CODING_MODE_3_2_LFE.
+    pub fn set_attenuation_control(mut self, input: ::std::option::Option<crate::types::Ac3AttenuationControl>) -> Self {
+        self.attenuation_control = input;
+        self
+    }
+    /// Applies a 3 dB attenuation to the surround channels. Applies only when the coding mode parameter is CODING_MODE_3_2_LFE.
+    pub fn get_attenuation_control(&self) -> &::std::option::Option<crate::types::Ac3AttenuationControl> {
+        &self.attenuation_control
+    }
     /// Consumes the builder and constructs a [`Ac3Settings`](crate::types::Ac3Settings).
     pub fn build(self) -> crate::types::Ac3Settings {
         crate::types::Ac3Settings {
@@ -177,6 +198,7 @@ impl Ac3SettingsBuilder {
             drc_profile: self.drc_profile,
             lfe_filter: self.lfe_filter,
             metadata_control: self.metadata_control,
+            attenuation_control: self.attenuation_control,
         }
     }
 }

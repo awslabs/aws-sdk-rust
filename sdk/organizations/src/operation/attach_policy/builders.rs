@@ -29,7 +29,7 @@ impl AttachPolicyInputBuilder {
 /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">SERVICE_CONTROL_POLICY</a> </p> </li>
 /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">TAG_POLICY</a> </p> </li>
 /// </ul>
-/// <p>This operation can be called only from the organization's management account.</p>
+/// <p>This operation can be called only from the organization's management account or by a member account that is a delegated administrator for an Amazon Web Services service.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AttachPolicyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -35,6 +35,16 @@ where
                                     .transpose()?,
                             );
                         }
+                        "taskList" => {
+                            builder = builder.set_task_list(crate::protocol_serde::shape_task_list::de_task_list(tokens)?);
+                        }
+                        "taskListScheduleToStartTimeout" => {
+                            builder = builder.set_task_list_schedule_to_start_timeout(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

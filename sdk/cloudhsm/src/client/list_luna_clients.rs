@@ -8,6 +8,7 @@ impl super::Client {
     ///   - [`client_list(Option<Vec<String>>)`](crate::operation::list_luna_clients::ListLunaClientsOutput::client_list): <p>The list of clients.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_luna_clients::ListLunaClientsOutput::next_token): <p>If not null, more results are available. Pass this to <code>ListLunaClients</code> to retrieve the next set of items.</p>
     /// - On failure, responds with [`SdkError<ListLunaClientsError>`](crate::operation::list_luna_clients::ListLunaClientsError)
+    #[deprecated(note = "This API is deprecated.")]
     pub fn list_luna_clients(&self) -> crate::operation::list_luna_clients::builders::ListLunaClientsFluentBuilder {
         crate::operation::list_luna_clients::builders::ListLunaClientsFluentBuilder::new(self.handle.clone())
     }

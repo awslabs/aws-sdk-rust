@@ -4,7 +4,7 @@
 /// <p>Contains information about the runtime context for a request for which an authorization decision is made. </p>
 /// <p>This data type is used as a member of the <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_ContextDefinition.html">ContextDefinition</a> structure which is uses as a request parameter for the <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_IsAuthorized.html">IsAuthorized</a> and <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_IsAuthorizedWithToken.html">IsAuthorizedWithToken</a> operations.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub enum AttributeValue {
     /// <p>An attribute value of <a href="https://docs.cedarpolicy.com/syntax-datatypes.html#boolean">Boolean</a> type.</p>
     /// <p>Example: <code>{"boolean": true}</code> </p>
@@ -116,5 +116,18 @@ impl AttributeValue {
     /// Returns true if the enum instance is the `Unknown` variant.
     pub fn is_unknown(&self) -> bool {
         matches!(self, Self::Unknown)
+    }
+}
+impl ::std::fmt::Debug for AttributeValue {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        match self {
+            AttributeValue::Boolean(_) => f.debug_tuple("*** Sensitive Data Redacted ***").finish(),
+            AttributeValue::EntityIdentifier(val) => f.debug_tuple("EntityIdentifier").field(&val).finish(),
+            AttributeValue::Long(_) => f.debug_tuple("*** Sensitive Data Redacted ***").finish(),
+            AttributeValue::Record(val) => f.debug_tuple("Record").field(&val).finish(),
+            AttributeValue::Set(val) => f.debug_tuple("Set").field(&val).finish(),
+            AttributeValue::String(_) => f.debug_tuple("*** Sensitive Data Redacted ***").finish(),
+            AttributeValue::Unknown => f.debug_tuple("Unknown").finish(),
+        }
     }
 }

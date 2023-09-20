@@ -28,8 +28,8 @@ pub fn ser_revoke_endpoint_access_input_input(
     }
     #[allow(unused_mut)]
     let mut scope_10 = writer.prefix("Force");
-    if input.force {
-        scope_10.boolean(input.force);
+    if let Some(var_11) = &input.force {
+        scope_10.boolean(*var_11);
     }
     writer.finish();
     Ok(::aws_smithy_http::body::SdkBody::from(out))

@@ -19,11 +19,11 @@ pub struct GetHealthEventOutput {
     pub impacted_locations: ::std::option::Option<::std::vec::Vec<crate::types::ImpactedLocation>>,
     /// <p>The status of a health event.</p>
     pub status: ::std::option::Option<crate::types::HealthEventStatus>,
-    /// <p>The impact on total traffic that a health event has.</p>
+    /// <p>The impact on total traffic that a health event has, in increased latency or reduced availability. This is the percentage of how much latency has increased or availability has decreased during the event, compared to what is typical for traffic from this client location to the Amazon Web Services location using this client network.</p>
     pub percent_of_total_traffic_impacted: ::std::option::Option<f64>,
     /// <p>The type of impairment of a specific health event.</p>
     pub impact_type: ::std::option::Option<crate::types::HealthEventImpactType>,
-    /// <p>The threshold percentage for health events when Amazon CloudWatch Internet Monitor creates a health event.</p>
+    /// <p>The threshold percentage for a health score that determines, along with other configuration information, when Internet Monitor creates a health event when there's an internet issue that affects your application end users.</p>
     pub health_score_threshold: f64,
     _request_id: Option<String>,
 }
@@ -60,7 +60,7 @@ impl GetHealthEventOutput {
     pub fn status(&self) -> ::std::option::Option<&crate::types::HealthEventStatus> {
         self.status.as_ref()
     }
-    /// <p>The impact on total traffic that a health event has.</p>
+    /// <p>The impact on total traffic that a health event has, in increased latency or reduced availability. This is the percentage of how much latency has increased or availability has decreased during the event, compared to what is typical for traffic from this client location to the Amazon Web Services location using this client network.</p>
     pub fn percent_of_total_traffic_impacted(&self) -> ::std::option::Option<f64> {
         self.percent_of_total_traffic_impacted
     }
@@ -68,7 +68,7 @@ impl GetHealthEventOutput {
     pub fn impact_type(&self) -> ::std::option::Option<&crate::types::HealthEventImpactType> {
         self.impact_type.as_ref()
     }
-    /// <p>The threshold percentage for health events when Amazon CloudWatch Internet Monitor creates a health event.</p>
+    /// <p>The threshold percentage for a health score that determines, along with other configuration information, when Internet Monitor creates a health event when there's an internet issue that affects your application end users.</p>
     pub fn health_score_threshold(&self) -> f64 {
         self.health_score_threshold
     }
@@ -221,17 +221,17 @@ impl GetHealthEventOutputBuilder {
     pub fn get_status(&self) -> &::std::option::Option<crate::types::HealthEventStatus> {
         &self.status
     }
-    /// <p>The impact on total traffic that a health event has.</p>
+    /// <p>The impact on total traffic that a health event has, in increased latency or reduced availability. This is the percentage of how much latency has increased or availability has decreased during the event, compared to what is typical for traffic from this client location to the Amazon Web Services location using this client network.</p>
     pub fn percent_of_total_traffic_impacted(mut self, input: f64) -> Self {
         self.percent_of_total_traffic_impacted = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The impact on total traffic that a health event has.</p>
+    /// <p>The impact on total traffic that a health event has, in increased latency or reduced availability. This is the percentage of how much latency has increased or availability has decreased during the event, compared to what is typical for traffic from this client location to the Amazon Web Services location using this client network.</p>
     pub fn set_percent_of_total_traffic_impacted(mut self, input: ::std::option::Option<f64>) -> Self {
         self.percent_of_total_traffic_impacted = input;
         self
     }
-    /// <p>The impact on total traffic that a health event has.</p>
+    /// <p>The impact on total traffic that a health event has, in increased latency or reduced availability. This is the percentage of how much latency has increased or availability has decreased during the event, compared to what is typical for traffic from this client location to the Amazon Web Services location using this client network.</p>
     pub fn get_percent_of_total_traffic_impacted(&self) -> &::std::option::Option<f64> {
         &self.percent_of_total_traffic_impacted
     }
@@ -249,17 +249,17 @@ impl GetHealthEventOutputBuilder {
     pub fn get_impact_type(&self) -> &::std::option::Option<crate::types::HealthEventImpactType> {
         &self.impact_type
     }
-    /// <p>The threshold percentage for health events when Amazon CloudWatch Internet Monitor creates a health event.</p>
+    /// <p>The threshold percentage for a health score that determines, along with other configuration information, when Internet Monitor creates a health event when there's an internet issue that affects your application end users.</p>
     pub fn health_score_threshold(mut self, input: f64) -> Self {
         self.health_score_threshold = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The threshold percentage for health events when Amazon CloudWatch Internet Monitor creates a health event.</p>
+    /// <p>The threshold percentage for a health score that determines, along with other configuration information, when Internet Monitor creates a health event when there's an internet issue that affects your application end users.</p>
     pub fn set_health_score_threshold(mut self, input: ::std::option::Option<f64>) -> Self {
         self.health_score_threshold = input;
         self
     }
-    /// <p>The threshold percentage for health events when Amazon CloudWatch Internet Monitor creates a health event.</p>
+    /// <p>The threshold percentage for a health score that determines, along with other configuration information, when Internet Monitor creates a health event when there's an internet issue that affects your application end users.</p>
     pub fn get_health_score_threshold(&self) -> &::std::option::Option<f64> {
         &self.health_score_threshold
     }

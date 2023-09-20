@@ -12,6 +12,12 @@ pub fn ser_filter_scope_configuration(
         )?;
         object_2.finish();
     }
+    if let Some(var_3) = &input.all_sheets {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("AllSheets").start_object();
+        crate::protocol_serde::shape_all_sheets_filter_scope_configuration::ser_all_sheets_filter_scope_configuration(&mut object_4, var_3)?;
+        object_4.finish();
+    }
     Ok(())
 }
 
@@ -34,6 +40,11 @@ where
                             builder = builder.set_selected_sheets(
                                     crate::protocol_serde::shape_selected_sheets_filter_scope_configuration::de_selected_sheets_filter_scope_configuration(tokens)?
                                 );
+                        }
+                        "AllSheets" => {
+                            builder = builder.set_all_sheets(
+                                crate::protocol_serde::shape_all_sheets_filter_scope_configuration::de_all_sheets_filter_scope_configuration(tokens)?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

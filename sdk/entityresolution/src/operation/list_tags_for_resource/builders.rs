@@ -22,7 +22,7 @@ impl ListTagsForResourceInputBuilder {
 }
 /// Fluent builder constructing a request to `ListTagsForResource`.
 ///
-/// <p>Displays the tags associated with an AWS Entity Resolution resource. In Entity Resolution, <code>SchemaMapping</code>, and <code>MatchingWorkflow</code> can be tagged.</p>
+/// <p>Displays the tags associated with an Entity Resolution resource. In Entity Resolution, <code>SchemaMapping</code>, and <code>MatchingWorkflow</code> can be tagged.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListTagsForResourceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

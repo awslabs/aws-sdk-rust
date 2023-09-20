@@ -256,6 +256,8 @@ pub type TagResourceErrorKind = TagResourceError;
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum TagResourceError {
+    /// <p>One or more of the input parameters don't match the service's restrictions.</p>
+    InvalidParameterException(crate::types::error::InvalidParameterException),
     /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
     OrganizationStateException(crate::types::error::OrganizationStateException),
     /// <p>The resource cannot be found.</p>
@@ -280,6 +282,7 @@ impl ::aws_smithy_http::result::CreateUnhandledError for TagResourceError {
 impl ::std::fmt::Display for TagResourceError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
+            Self::InvalidParameterException(_inner) => _inner.fmt(f),
             Self::OrganizationStateException(_inner) => _inner.fmt(f),
             Self::ResourceNotFoundException(_inner) => _inner.fmt(f),
             Self::TooManyTagsException(_inner) => _inner.fmt(f),
@@ -290,6 +293,7 @@ impl ::std::fmt::Display for TagResourceError {
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for TagResourceError {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::InvalidParameterException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::OrganizationStateException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ResourceNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::TooManyTagsException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
@@ -329,11 +333,16 @@ impl TagResourceError {
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         match self {
+            Self::InvalidParameterException(e) => e.meta(),
             Self::OrganizationStateException(e) => e.meta(),
             Self::ResourceNotFoundException(e) => e.meta(),
             Self::TooManyTagsException(e) => e.meta(),
             Self::Unhandled(e) => e.meta(),
         }
+    }
+    /// Returns `true` if the error kind is `TagResourceError::InvalidParameterException`.
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(self, Self::InvalidParameterException(_))
     }
     /// Returns `true` if the error kind is `TagResourceError::OrganizationStateException`.
     pub fn is_organization_state_exception(&self) -> bool {
@@ -351,6 +360,7 @@ impl TagResourceError {
 impl ::std::error::Error for TagResourceError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
+            Self::InvalidParameterException(_inner) => ::std::option::Option::Some(_inner),
             Self::OrganizationStateException(_inner) => ::std::option::Option::Some(_inner),
             Self::ResourceNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::TooManyTagsException(_inner) => ::std::option::Option::Some(_inner),

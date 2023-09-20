@@ -6,8 +6,8 @@ pub fn ser_delete_tape_archive_input(
     if let Some(var_1) = &input.tape_arn {
         object.key("TapeARN").string(var_1.as_str());
     }
-    if input.bypass_governance_retention {
-        object.key("BypassGovernanceRetention").boolean(input.bypass_governance_retention);
+    if let Some(var_2) = &input.bypass_governance_retention {
+        object.key("BypassGovernanceRetention").boolean(*var_2);
     }
     Ok(())
 }

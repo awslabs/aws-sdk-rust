@@ -15,10 +15,10 @@ pub fn ser_list_anomaly_group_summaries_input(
     if let Some(var_3) = &input.next_token {
         object.key("NextToken").string(var_3.as_str());
     }
-    {
+    if let Some(var_4) = &input.sensitivity_threshold {
         object.key("SensitivityThreshold").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.sensitivity_threshold).into()),
+            ::aws_smithy_types::Number::NegInt((*var_4).into()),
         );
     }
     Ok(())

@@ -34,6 +34,57 @@ impl ::std::fmt::Display for Error {
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_get_collaboration_analysis_template::BatchGetCollaborationAnalysisTemplateError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_get_collaboration_analysis_template::BatchGetCollaborationAnalysisTemplateError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::batch_get_collaboration_analysis_template::BatchGetCollaborationAnalysisTemplateError> for Error {
+    fn from(err: crate::operation::batch_get_collaboration_analysis_template::BatchGetCollaborationAnalysisTemplateError) -> Self {
+        match err {
+            crate::operation::batch_get_collaboration_analysis_template::BatchGetCollaborationAnalysisTemplateError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::batch_get_collaboration_analysis_template::BatchGetCollaborationAnalysisTemplateError::InternalServerException(
+                inner,
+            ) => Error::InternalServerException(inner),
+            crate::operation::batch_get_collaboration_analysis_template::BatchGetCollaborationAnalysisTemplateError::ResourceNotFoundException(
+                inner,
+            ) => Error::ResourceNotFoundException(inner),
+            crate::operation::batch_get_collaboration_analysis_template::BatchGetCollaborationAnalysisTemplateError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::batch_get_collaboration_analysis_template::BatchGetCollaborationAnalysisTemplateError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::batch_get_collaboration_analysis_template::BatchGetCollaborationAnalysisTemplateError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
 impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::batch_get_schema::BatchGetSchemaError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -59,6 +110,44 @@ impl From<crate::operation::batch_get_schema::BatchGetSchemaError> for Error {
             crate::operation::batch_get_schema::BatchGetSchemaError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::batch_get_schema::BatchGetSchemaError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::batch_get_schema::BatchGetSchemaError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::create_analysis_template::CreateAnalysisTemplateError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::create_analysis_template::CreateAnalysisTemplateError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::create_analysis_template::CreateAnalysisTemplateError> for Error {
+    fn from(err: crate::operation::create_analysis_template::CreateAnalysisTemplateError) -> Self {
+        match err {
+            crate::operation::create_analysis_template::CreateAnalysisTemplateError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::create_analysis_template::CreateAnalysisTemplateError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_analysis_template::CreateAnalysisTemplateError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::create_analysis_template::CreateAnalysisTemplateError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::create_analysis_template::CreateAnalysisTemplateError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_analysis_template::CreateAnalysisTemplateError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_analysis_template::CreateAnalysisTemplateError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_analysis_template::CreateAnalysisTemplateError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -252,6 +341,40 @@ impl From<crate::operation::create_membership::CreateMembershipError> for Error 
             crate::operation::create_membership::CreateMembershipError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::create_membership::CreateMembershipError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::create_membership::CreateMembershipError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::delete_analysis_template::DeleteAnalysisTemplateError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::delete_analysis_template::DeleteAnalysisTemplateError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_analysis_template::DeleteAnalysisTemplateError> for Error {
+    fn from(err: crate::operation::delete_analysis_template::DeleteAnalysisTemplateError) -> Self {
+        match err {
+            crate::operation::delete_analysis_template::DeleteAnalysisTemplateError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::delete_analysis_template::DeleteAnalysisTemplateError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::delete_analysis_template::DeleteAnalysisTemplateError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_analysis_template::DeleteAnalysisTemplateError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_analysis_template::DeleteAnalysisTemplateError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_analysis_template::DeleteAnalysisTemplateError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -465,6 +588,38 @@ impl From<crate::operation::delete_membership::DeleteMembershipError> for Error 
         }
     }
 }
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_analysis_template::GetAnalysisTemplateError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::get_analysis_template::GetAnalysisTemplateError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_analysis_template::GetAnalysisTemplateError> for Error {
+    fn from(err: crate::operation::get_analysis_template::GetAnalysisTemplateError) -> Self {
+        match err {
+            crate::operation::get_analysis_template::GetAnalysisTemplateError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_analysis_template::GetAnalysisTemplateError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_analysis_template::GetAnalysisTemplateError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_analysis_template::GetAnalysisTemplateError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_analysis_template::GetAnalysisTemplateError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_analysis_template::GetAnalysisTemplateError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_collaboration::GetCollaborationError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -489,6 +644,47 @@ impl From<crate::operation::get_collaboration::GetCollaborationError> for Error 
             crate::operation::get_collaboration::GetCollaborationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::get_collaboration::GetCollaborationError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_collaboration::GetCollaborationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_collaboration_analysis_template::GetCollaborationAnalysisTemplateError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<crate::operation::get_collaboration_analysis_template::GetCollaborationAnalysisTemplateError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_collaboration_analysis_template::GetCollaborationAnalysisTemplateError> for Error {
+    fn from(err: crate::operation::get_collaboration_analysis_template::GetCollaborationAnalysisTemplateError) -> Self {
+        match err {
+            crate::operation::get_collaboration_analysis_template::GetCollaborationAnalysisTemplateError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_collaboration_analysis_template::GetCollaborationAnalysisTemplateError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_collaboration_analysis_template::GetCollaborationAnalysisTemplateError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_collaboration_analysis_template::GetCollaborationAnalysisTemplateError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::get_collaboration_analysis_template::GetCollaborationAnalysisTemplateError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::get_collaboration_analysis_template::GetCollaborationAnalysisTemplateError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -720,6 +916,83 @@ impl From<crate::operation::get_schema_analysis_rule::GetSchemaAnalysisRuleError
             crate::operation::get_schema_analysis_rule::GetSchemaAnalysisRuleError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::get_schema_analysis_rule::GetSchemaAnalysisRuleError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_schema_analysis_rule::GetSchemaAnalysisRuleError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_analysis_templates::ListAnalysisTemplatesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_analysis_templates::ListAnalysisTemplatesError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_analysis_templates::ListAnalysisTemplatesError> for Error {
+    fn from(err: crate::operation::list_analysis_templates::ListAnalysisTemplatesError) -> Self {
+        match err {
+            crate::operation::list_analysis_templates::ListAnalysisTemplatesError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_analysis_templates::ListAnalysisTemplatesError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_analysis_templates::ListAnalysisTemplatesError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_analysis_templates::ListAnalysisTemplatesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_analysis_templates::ListAnalysisTemplatesError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_analysis_templates::ListAnalysisTemplatesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_collaboration_analysis_templates::ListCollaborationAnalysisTemplatesError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<crate::operation::list_collaboration_analysis_templates::ListCollaborationAnalysisTemplatesError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_collaboration_analysis_templates::ListCollaborationAnalysisTemplatesError> for Error {
+    fn from(err: crate::operation::list_collaboration_analysis_templates::ListCollaborationAnalysisTemplatesError) -> Self {
+        match err {
+            crate::operation::list_collaboration_analysis_templates::ListCollaborationAnalysisTemplatesError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_collaboration_analysis_templates::ListCollaborationAnalysisTemplatesError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_collaboration_analysis_templates::ListCollaborationAnalysisTemplatesError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_collaboration_analysis_templates::ListCollaborationAnalysisTemplatesError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_collaboration_analysis_templates::ListCollaborationAnalysisTemplatesError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_collaboration_analysis_templates::ListCollaborationAnalysisTemplatesError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
@@ -1044,6 +1317,40 @@ impl From<crate::operation::untag_resource::UntagResourceError> for Error {
             crate::operation::untag_resource::UntagResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::untag_resource::UntagResourceError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::untag_resource::UntagResourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::update_analysis_template::UpdateAnalysisTemplateError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::update_analysis_template::UpdateAnalysisTemplateError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::update_analysis_template::UpdateAnalysisTemplateError> for Error {
+    fn from(err: crate::operation::update_analysis_template::UpdateAnalysisTemplateError) -> Self {
+        match err {
+            crate::operation::update_analysis_template::UpdateAnalysisTemplateError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::update_analysis_template::UpdateAnalysisTemplateError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::update_analysis_template::UpdateAnalysisTemplateError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_analysis_template::UpdateAnalysisTemplateError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_analysis_template::UpdateAnalysisTemplateError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_analysis_template::UpdateAnalysisTemplateError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

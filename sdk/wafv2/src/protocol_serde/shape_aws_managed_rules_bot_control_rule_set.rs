@@ -6,6 +6,9 @@ pub fn ser_aws_managed_rules_bot_control_rule_set(
     if let Some(var_1) = &input.inspection_level {
         object.key("InspectionLevel").string(var_1.as_str());
     }
+    if input.enable_machine_learning {
+        object.key("EnableMachineLearning").boolean(input.enable_machine_learning);
+    }
     Ok(())
 }
 
@@ -30,6 +33,9 @@ where
                                     .map(|s| s.to_unescaped().map(|u| crate::types::InspectionLevel::from(u.as_ref())))
                                     .transpose()?,
                             );
+                        }
+                        "EnableMachineLearning" => {
+                            builder = builder.set_enable_machine_learning(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

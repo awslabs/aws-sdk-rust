@@ -18,9 +18,9 @@ pub struct CreateProfileJobInput {
     /// <p>Enables or disables Amazon CloudWatch logging for the job. If logging is enabled, CloudWatch writes one log stream for each job run.</p>
     pub log_subscription: ::std::option::Option<crate::types::LogSubscription>,
     /// <p>The maximum number of nodes that DataBrew can use when the job processes data.</p>
-    pub max_capacity: i32,
+    pub max_capacity: ::std::option::Option<i32>,
     /// <p>The maximum number of times to retry the job after a job run fails.</p>
-    pub max_retries: i32,
+    pub max_retries: ::std::option::Option<i32>,
     /// <p>Represents an Amazon S3 location (bucket name, bucket owner, and object key) where DataBrew can read input data, or write output from a job.</p>
     pub output_location: ::std::option::Option<crate::types::S3Location>,
     /// <p>Configuration for profile jobs. Used to select columns, do evaluations, and override default parameters of evaluations. When configuration is null, the profile job will run with default settings.</p>
@@ -32,7 +32,7 @@ pub struct CreateProfileJobInput {
     /// <p>Metadata tags to apply to this job.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The job's timeout in minutes. A job that attempts to run longer than this timeout period ends with a status of <code>TIMEOUT</code>.</p>
-    pub timeout: i32,
+    pub timeout: ::std::option::Option<i32>,
     /// <p>Sample configuration for profile jobs only. Determines the number of rows on which the profile job will be executed. If a JobSample value is not provided, the default value will be used. The default value is CUSTOM_ROWS for the mode parameter and 20000 for the size parameter.</p>
     pub job_sample: ::std::option::Option<crate::types::JobSample>,
 }
@@ -62,11 +62,11 @@ impl CreateProfileJobInput {
         self.log_subscription.as_ref()
     }
     /// <p>The maximum number of nodes that DataBrew can use when the job processes data.</p>
-    pub fn max_capacity(&self) -> i32 {
+    pub fn max_capacity(&self) -> ::std::option::Option<i32> {
         self.max_capacity
     }
     /// <p>The maximum number of times to retry the job after a job run fails.</p>
-    pub fn max_retries(&self) -> i32 {
+    pub fn max_retries(&self) -> ::std::option::Option<i32> {
         self.max_retries
     }
     /// <p>Represents an Amazon S3 location (bucket name, bucket owner, and object key) where DataBrew can read input data, or write output from a job.</p>
@@ -90,7 +90,7 @@ impl CreateProfileJobInput {
         self.tags.as_ref()
     }
     /// <p>The job's timeout in minutes. A job that attempts to run longer than this timeout period ends with a status of <code>TIMEOUT</code>.</p>
-    pub fn timeout(&self) -> i32 {
+    pub fn timeout(&self) -> ::std::option::Option<i32> {
         self.timeout
     }
     /// <p>Sample configuration for profile jobs only. Determines the number of rows on which the profile job will be executed. If a JobSample value is not provided, the default value will be used. The default value is CUSTOM_ROWS for the mode parameter and 20000 for the size parameter.</p>
@@ -355,14 +355,14 @@ impl CreateProfileJobInputBuilder {
             encryption_mode: self.encryption_mode,
             name: self.name,
             log_subscription: self.log_subscription,
-            max_capacity: self.max_capacity.unwrap_or_default(),
-            max_retries: self.max_retries.unwrap_or_default(),
+            max_capacity: self.max_capacity,
+            max_retries: self.max_retries,
             output_location: self.output_location,
             configuration: self.configuration,
             validation_configurations: self.validation_configurations,
             role_arn: self.role_arn,
             tags: self.tags,
-            timeout: self.timeout.unwrap_or_default(),
+            timeout: self.timeout,
             job_sample: self.job_sample,
         })
     }

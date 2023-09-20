@@ -250,6 +250,56 @@ impl From<crate::operation::create_legal_hold::CreateLegalHoldError> for Error {
         }
     }
 }
+impl<R>
+    From<::aws_smithy_http::result::SdkError<crate::operation::create_logically_air_gapped_backup_vault::CreateLogicallyAirGappedBackupVaultError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::create_logically_air_gapped_backup_vault::CreateLogicallyAirGappedBackupVaultError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::create_logically_air_gapped_backup_vault::CreateLogicallyAirGappedBackupVaultError> for Error {
+    fn from(err: crate::operation::create_logically_air_gapped_backup_vault::CreateLogicallyAirGappedBackupVaultError) -> Self {
+        match err {
+            crate::operation::create_logically_air_gapped_backup_vault::CreateLogicallyAirGappedBackupVaultError::AlreadyExistsException(inner) => {
+                Error::AlreadyExistsException(inner)
+            }
+            crate::operation::create_logically_air_gapped_backup_vault::CreateLogicallyAirGappedBackupVaultError::InvalidParameterValueException(
+                inner,
+            ) => Error::InvalidParameterValueException(inner),
+            crate::operation::create_logically_air_gapped_backup_vault::CreateLogicallyAirGappedBackupVaultError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::create_logically_air_gapped_backup_vault::CreateLogicallyAirGappedBackupVaultError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::operation::create_logically_air_gapped_backup_vault::CreateLogicallyAirGappedBackupVaultError::MissingParameterValueException(
+                inner,
+            ) => Error::MissingParameterValueException(inner),
+            crate::operation::create_logically_air_gapped_backup_vault::CreateLogicallyAirGappedBackupVaultError::ServiceUnavailableException(
+                inner,
+            ) => Error::ServiceUnavailableException(inner),
+            crate::operation::create_logically_air_gapped_backup_vault::CreateLogicallyAirGappedBackupVaultError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
 impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::create_report_plan::CreateReportPlanError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1720,6 +1770,47 @@ impl From<crate::operation::list_protected_resources::ListProtectedResourcesErro
                 Error::ServiceUnavailableException(inner)
             }
             crate::operation::list_protected_resources::ListProtectedResourcesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_http::result::SdkError<crate::operation::list_protected_resources_by_backup_vault::ListProtectedResourcesByBackupVaultError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::list_protected_resources_by_backup_vault::ListProtectedResourcesByBackupVaultError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_protected_resources_by_backup_vault::ListProtectedResourcesByBackupVaultError> for Error {
+    fn from(err: crate::operation::list_protected_resources_by_backup_vault::ListProtectedResourcesByBackupVaultError) -> Self {
+        match err {
+            crate::operation::list_protected_resources_by_backup_vault::ListProtectedResourcesByBackupVaultError::InvalidParameterValueException(
+                inner,
+            ) => Error::InvalidParameterValueException(inner),
+            crate::operation::list_protected_resources_by_backup_vault::ListProtectedResourcesByBackupVaultError::ResourceNotFoundException(
+                inner,
+            ) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_protected_resources_by_backup_vault::ListProtectedResourcesByBackupVaultError::ServiceUnavailableException(
+                inner,
+            ) => Error::ServiceUnavailableException(inner),
+            crate::operation::list_protected_resources_by_backup_vault::ListProtectedResourcesByBackupVaultError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }

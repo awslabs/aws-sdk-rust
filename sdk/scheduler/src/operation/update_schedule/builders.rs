@@ -142,7 +142,7 @@ impl UpdateScheduleFluentBuilder {
     /// <p> The expression that defines when the schedule runs. The following formats are supported. </p>
     /// <ul>
     /// <li> <p> <code>at</code> expression - <code>at(yyyy-mm-ddThh:mm:ss)</code> </p> </li>
-    /// <li> <p> <code>rate</code> expression - <code>rate(unit value)</code> </p> </li>
+    /// <li> <p> <code>rate</code> expression - <code>rate(value unit)</code> </p> </li>
     /// <li> <p> <code>cron</code> expression - <code>cron(fields)</code> </p> </li>
     /// </ul>
     /// <p> You can use <code>at</code> expressions to create one-time schedules that invoke a target once, at the time and in the time zone, that you specify. You can use <code>rate</code> and <code>cron</code> expressions to create recurring schedules. Rate-based schedules are useful when you want to invoke a target at regular intervals, such as every 15 minutes or every five days. Cron-based schedules are useful when you want to invoke a target periodically at a specific time, such as at 8:00 am (UTC+0) every 1st day of the month. </p>
@@ -156,7 +156,7 @@ impl UpdateScheduleFluentBuilder {
     /// <p> The expression that defines when the schedule runs. The following formats are supported. </p>
     /// <ul>
     /// <li> <p> <code>at</code> expression - <code>at(yyyy-mm-ddThh:mm:ss)</code> </p> </li>
-    /// <li> <p> <code>rate</code> expression - <code>rate(unit value)</code> </p> </li>
+    /// <li> <p> <code>rate</code> expression - <code>rate(value unit)</code> </p> </li>
     /// <li> <p> <code>cron</code> expression - <code>cron(fields)</code> </p> </li>
     /// </ul>
     /// <p> You can use <code>at</code> expressions to create one-time schedules that invoke a target once, at the time and in the time zone, that you specify. You can use <code>rate</code> and <code>cron</code> expressions to create recurring schedules. Rate-based schedules are useful when you want to invoke a target at regular intervals, such as every 15 minutes or every five days. Cron-based schedules are useful when you want to invoke a target periodically at a specific time, such as at 8:00 am (UTC+0) every 1st day of the month. </p>
@@ -170,7 +170,7 @@ impl UpdateScheduleFluentBuilder {
     /// <p> The expression that defines when the schedule runs. The following formats are supported. </p>
     /// <ul>
     /// <li> <p> <code>at</code> expression - <code>at(yyyy-mm-ddThh:mm:ss)</code> </p> </li>
-    /// <li> <p> <code>rate</code> expression - <code>rate(unit value)</code> </p> </li>
+    /// <li> <p> <code>rate</code> expression - <code>rate(value unit)</code> </p> </li>
     /// <li> <p> <code>cron</code> expression - <code>cron(fields)</code> </p> </li>
     /// </ul>
     /// <p> You can use <code>at</code> expressions to create one-time schedules that invoke a target once, at the time and in the time zone, that you specify. You can use <code>rate</code> and <code>cron</code> expressions to create recurring schedules. Rate-based schedules are useful when you want to invoke a target at regular intervals, such as every 15 minutes or every five days. Cron-based schedules are useful when you want to invoke a target periodically at a specific time, such as at 8:00 am (UTC+0) every 1st day of the month. </p>
@@ -305,5 +305,19 @@ impl UpdateScheduleFluentBuilder {
     /// <p> Unique, case-sensitive identifier you provide to ensure the idempotency of the request. If you do not specify a client token, EventBridge Scheduler uses a randomly generated token for the request to ensure idempotency. </p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
+    }
+    /// <p>Specifies the action that EventBridge Scheduler applies to the schedule after the schedule completes invoking the target.</p>
+    pub fn action_after_completion(mut self, input: crate::types::ActionAfterCompletion) -> Self {
+        self.inner = self.inner.action_after_completion(input);
+        self
+    }
+    /// <p>Specifies the action that EventBridge Scheduler applies to the schedule after the schedule completes invoking the target.</p>
+    pub fn set_action_after_completion(mut self, input: ::std::option::Option<crate::types::ActionAfterCompletion>) -> Self {
+        self.inner = self.inner.set_action_after_completion(input);
+        self
+    }
+    /// <p>Specifies the action that EventBridge Scheduler applies to the schedule after the schedule completes invoking the target.</p>
+    pub fn get_action_after_completion(&self) -> &::std::option::Option<crate::types::ActionAfterCompletion> {
+        self.inner.get_action_after_completion()
     }
 }

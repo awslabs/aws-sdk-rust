@@ -9,39 +9,39 @@ pub fn ser_create_api_key_input(
     if let Some(var_2) = &input.description {
         object.key("description").string(var_2.as_str());
     }
-    if input.enabled {
-        object.key("enabled").boolean(input.enabled);
+    if let Some(var_3) = &input.enabled {
+        object.key("enabled").boolean(*var_3);
     }
-    if input.generate_distinct_id {
-        object.key("generateDistinctId").boolean(input.generate_distinct_id);
+    if let Some(var_4) = &input.generate_distinct_id {
+        object.key("generateDistinctId").boolean(*var_4);
     }
-    if let Some(var_3) = &input.name {
-        object.key("name").string(var_3.as_str());
+    if let Some(var_5) = &input.name {
+        object.key("name").string(var_5.as_str());
     }
-    if let Some(var_4) = &input.stage_keys {
-        let mut array_5 = object.key("stageKeys").start_array();
-        for item_6 in var_4 {
+    if let Some(var_6) = &input.stage_keys {
+        let mut array_7 = object.key("stageKeys").start_array();
+        for item_8 in var_6 {
             {
                 #[allow(unused_mut)]
-                let mut object_7 = array_5.value().start_object();
-                crate::protocol_serde::shape_stage_key::ser_stage_key(&mut object_7, item_6)?;
-                object_7.finish();
+                let mut object_9 = array_7.value().start_object();
+                crate::protocol_serde::shape_stage_key::ser_stage_key(&mut object_9, item_8)?;
+                object_9.finish();
             }
         }
-        array_5.finish();
+        array_7.finish();
     }
-    if let Some(var_8) = &input.tags {
+    if let Some(var_10) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_9 = object.key("tags").start_object();
-        for (key_10, value_11) in var_8 {
+        let mut object_11 = object.key("tags").start_object();
+        for (key_12, value_13) in var_10 {
             {
-                object_9.key(key_10.as_str()).string(value_11.as_str());
+                object_11.key(key_12.as_str()).string(value_13.as_str());
             }
         }
-        object_9.finish();
+        object_11.finish();
     }
-    if let Some(var_12) = &input.value {
-        object.key("value").string(var_12.as_str());
+    if let Some(var_14) = &input.value {
+        object.key("value").string(var_14.as_str());
     }
     Ok(())
 }

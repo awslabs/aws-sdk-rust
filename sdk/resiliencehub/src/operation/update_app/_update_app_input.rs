@@ -3,19 +3,23 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateAppInput {
-    /// <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+    /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
     pub app_arn: ::std::option::Option<::std::string::String>,
     /// <p>The optional description for an app.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+    /// <p>Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
     pub policy_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies if the resiliency policy ARN should be cleared.</p>
     pub clear_resiliency_policy_arn: ::std::option::Option<bool>,
     /// <p> Assessment execution schedule with 'Daily' or 'Disabled' values. </p>
     pub assessment_schedule: ::std::option::Option<crate::types::AppAssessmentScheduleType>,
+    /// <p>Defines the roles and credentials that Resilience Hub would use while creating an application, importing its resources, and running an assessment.</p>
+    pub permission_model: ::std::option::Option<crate::types::PermissionModel>,
+    /// <p>The list of events you would like to subscribe and get notification for. Currently, Resilience Hub supports notifications only for <b>Drift detected</b> and <b>Scheduled assessment failure</b> events.</p>
+    pub event_subscriptions: ::std::option::Option<::std::vec::Vec<crate::types::EventSubscription>>,
 }
 impl UpdateAppInput {
-    /// <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+    /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
     pub fn app_arn(&self) -> ::std::option::Option<&str> {
         self.app_arn.as_deref()
     }
@@ -23,7 +27,7 @@ impl UpdateAppInput {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+    /// <p>Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
     pub fn policy_arn(&self) -> ::std::option::Option<&str> {
         self.policy_arn.as_deref()
     }
@@ -34,6 +38,14 @@ impl UpdateAppInput {
     /// <p> Assessment execution schedule with 'Daily' or 'Disabled' values. </p>
     pub fn assessment_schedule(&self) -> ::std::option::Option<&crate::types::AppAssessmentScheduleType> {
         self.assessment_schedule.as_ref()
+    }
+    /// <p>Defines the roles and credentials that Resilience Hub would use while creating an application, importing its resources, and running an assessment.</p>
+    pub fn permission_model(&self) -> ::std::option::Option<&crate::types::PermissionModel> {
+        self.permission_model.as_ref()
+    }
+    /// <p>The list of events you would like to subscribe and get notification for. Currently, Resilience Hub supports notifications only for <b>Drift detected</b> and <b>Scheduled assessment failure</b> events.</p>
+    pub fn event_subscriptions(&self) -> ::std::option::Option<&[crate::types::EventSubscription]> {
+        self.event_subscriptions.as_deref()
     }
 }
 impl UpdateAppInput {
@@ -52,19 +64,21 @@ pub struct UpdateAppInputBuilder {
     pub(crate) policy_arn: ::std::option::Option<::std::string::String>,
     pub(crate) clear_resiliency_policy_arn: ::std::option::Option<bool>,
     pub(crate) assessment_schedule: ::std::option::Option<crate::types::AppAssessmentScheduleType>,
+    pub(crate) permission_model: ::std::option::Option<crate::types::PermissionModel>,
+    pub(crate) event_subscriptions: ::std::option::Option<::std::vec::Vec<crate::types::EventSubscription>>,
 }
 impl UpdateAppInputBuilder {
-    /// <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+    /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
     pub fn app_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+    /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
     pub fn set_app_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.app_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+    /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
     pub fn get_app_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.app_arn
     }
@@ -82,17 +96,17 @@ impl UpdateAppInputBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
-    /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+    /// <p>Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
     pub fn policy_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+    /// <p>Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
     pub fn set_policy_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+    /// <p>Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
     pub fn get_policy_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.policy_arn
     }
@@ -124,6 +138,40 @@ impl UpdateAppInputBuilder {
     pub fn get_assessment_schedule(&self) -> &::std::option::Option<crate::types::AppAssessmentScheduleType> {
         &self.assessment_schedule
     }
+    /// <p>Defines the roles and credentials that Resilience Hub would use while creating an application, importing its resources, and running an assessment.</p>
+    pub fn permission_model(mut self, input: crate::types::PermissionModel) -> Self {
+        self.permission_model = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Defines the roles and credentials that Resilience Hub would use while creating an application, importing its resources, and running an assessment.</p>
+    pub fn set_permission_model(mut self, input: ::std::option::Option<crate::types::PermissionModel>) -> Self {
+        self.permission_model = input;
+        self
+    }
+    /// <p>Defines the roles and credentials that Resilience Hub would use while creating an application, importing its resources, and running an assessment.</p>
+    pub fn get_permission_model(&self) -> &::std::option::Option<crate::types::PermissionModel> {
+        &self.permission_model
+    }
+    /// Appends an item to `event_subscriptions`.
+    ///
+    /// To override the contents of this collection use [`set_event_subscriptions`](Self::set_event_subscriptions).
+    ///
+    /// <p>The list of events you would like to subscribe and get notification for. Currently, Resilience Hub supports notifications only for <b>Drift detected</b> and <b>Scheduled assessment failure</b> events.</p>
+    pub fn event_subscriptions(mut self, input: crate::types::EventSubscription) -> Self {
+        let mut v = self.event_subscriptions.unwrap_or_default();
+        v.push(input);
+        self.event_subscriptions = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The list of events you would like to subscribe and get notification for. Currently, Resilience Hub supports notifications only for <b>Drift detected</b> and <b>Scheduled assessment failure</b> events.</p>
+    pub fn set_event_subscriptions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EventSubscription>>) -> Self {
+        self.event_subscriptions = input;
+        self
+    }
+    /// <p>The list of events you would like to subscribe and get notification for. Currently, Resilience Hub supports notifications only for <b>Drift detected</b> and <b>Scheduled assessment failure</b> events.</p>
+    pub fn get_event_subscriptions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EventSubscription>> {
+        &self.event_subscriptions
+    }
     /// Consumes the builder and constructs a [`UpdateAppInput`](crate::operation::update_app::UpdateAppInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_app::UpdateAppInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_app::UpdateAppInput {
@@ -132,6 +180,8 @@ impl UpdateAppInputBuilder {
             policy_arn: self.policy_arn,
             clear_resiliency_policy_arn: self.clear_resiliency_policy_arn,
             assessment_schedule: self.assessment_schedule,
+            permission_model: self.permission_model,
+            event_subscriptions: self.event_subscriptions,
         })
     }
 }

@@ -16,6 +16,8 @@ pub struct TargetGroupConfig {
     pub vpc_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The health check configuration.</p>
     pub health_check: ::std::option::Option<crate::types::HealthCheckConfig>,
+    /// Lambda event structure version
+    pub lambda_event_structure_version: ::std::option::Option<crate::types::LambdaEventStructureVersion>,
 }
 impl TargetGroupConfig {
     /// <p>The port on which the targets are listening. For HTTP, the default is <code>80</code>. For HTTPS, the default is <code>443</code> </p>
@@ -42,6 +44,10 @@ impl TargetGroupConfig {
     pub fn health_check(&self) -> ::std::option::Option<&crate::types::HealthCheckConfig> {
         self.health_check.as_ref()
     }
+    /// Lambda event structure version
+    pub fn lambda_event_structure_version(&self) -> ::std::option::Option<&crate::types::LambdaEventStructureVersion> {
+        self.lambda_event_structure_version.as_ref()
+    }
 }
 impl TargetGroupConfig {
     /// Creates a new builder-style object to manufacture [`TargetGroupConfig`](crate::types::TargetGroupConfig).
@@ -60,6 +66,7 @@ pub struct TargetGroupConfigBuilder {
     pub(crate) ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
     pub(crate) vpc_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) health_check: ::std::option::Option<crate::types::HealthCheckConfig>,
+    pub(crate) lambda_event_structure_version: ::std::option::Option<crate::types::LambdaEventStructureVersion>,
 }
 impl TargetGroupConfigBuilder {
     /// <p>The port on which the targets are listening. For HTTP, the default is <code>80</code>. For HTTPS, the default is <code>443</code> </p>
@@ -146,6 +153,20 @@ impl TargetGroupConfigBuilder {
     pub fn get_health_check(&self) -> &::std::option::Option<crate::types::HealthCheckConfig> {
         &self.health_check
     }
+    /// Lambda event structure version
+    pub fn lambda_event_structure_version(mut self, input: crate::types::LambdaEventStructureVersion) -> Self {
+        self.lambda_event_structure_version = ::std::option::Option::Some(input);
+        self
+    }
+    /// Lambda event structure version
+    pub fn set_lambda_event_structure_version(mut self, input: ::std::option::Option<crate::types::LambdaEventStructureVersion>) -> Self {
+        self.lambda_event_structure_version = input;
+        self
+    }
+    /// Lambda event structure version
+    pub fn get_lambda_event_structure_version(&self) -> &::std::option::Option<crate::types::LambdaEventStructureVersion> {
+        &self.lambda_event_structure_version
+    }
     /// Consumes the builder and constructs a [`TargetGroupConfig`](crate::types::TargetGroupConfig).
     pub fn build(self) -> crate::types::TargetGroupConfig {
         crate::types::TargetGroupConfig {
@@ -155,6 +176,7 @@ impl TargetGroupConfigBuilder {
             ip_address_type: self.ip_address_type,
             vpc_identifier: self.vpc_identifier,
             health_check: self.health_check,
+            lambda_event_structure_version: self.lambda_event_structure_version,
         }
     }
 }

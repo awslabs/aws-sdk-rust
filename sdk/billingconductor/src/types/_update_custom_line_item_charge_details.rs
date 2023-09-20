@@ -8,6 +8,8 @@ pub struct UpdateCustomLineItemChargeDetails {
     pub flat: ::std::option::Option<crate::types::UpdateCustomLineItemFlatChargeDetails>,
     /// <p> An <code>UpdateCustomLineItemPercentageChargeDetails</code> that describes the new charge details of a percentage custom line item. </p>
     pub percentage: ::std::option::Option<crate::types::UpdateCustomLineItemPercentageChargeDetails>,
+    /// <p>A representation of the line item filter.</p>
+    pub line_item_filters: ::std::option::Option<::std::vec::Vec<crate::types::LineItemFilter>>,
 }
 impl UpdateCustomLineItemChargeDetails {
     /// <p> An <code>UpdateCustomLineItemFlatChargeDetails</code> that describes the new charge details of a flat custom line item. </p>
@@ -17,6 +19,10 @@ impl UpdateCustomLineItemChargeDetails {
     /// <p> An <code>UpdateCustomLineItemPercentageChargeDetails</code> that describes the new charge details of a percentage custom line item. </p>
     pub fn percentage(&self) -> ::std::option::Option<&crate::types::UpdateCustomLineItemPercentageChargeDetails> {
         self.percentage.as_ref()
+    }
+    /// <p>A representation of the line item filter.</p>
+    pub fn line_item_filters(&self) -> ::std::option::Option<&[crate::types::LineItemFilter]> {
+        self.line_item_filters.as_deref()
     }
 }
 impl UpdateCustomLineItemChargeDetails {
@@ -32,6 +38,7 @@ impl UpdateCustomLineItemChargeDetails {
 pub struct UpdateCustomLineItemChargeDetailsBuilder {
     pub(crate) flat: ::std::option::Option<crate::types::UpdateCustomLineItemFlatChargeDetails>,
     pub(crate) percentage: ::std::option::Option<crate::types::UpdateCustomLineItemPercentageChargeDetails>,
+    pub(crate) line_item_filters: ::std::option::Option<::std::vec::Vec<crate::types::LineItemFilter>>,
 }
 impl UpdateCustomLineItemChargeDetailsBuilder {
     /// <p> An <code>UpdateCustomLineItemFlatChargeDetails</code> that describes the new charge details of a flat custom line item. </p>
@@ -62,11 +69,32 @@ impl UpdateCustomLineItemChargeDetailsBuilder {
     pub fn get_percentage(&self) -> &::std::option::Option<crate::types::UpdateCustomLineItemPercentageChargeDetails> {
         &self.percentage
     }
+    /// Appends an item to `line_item_filters`.
+    ///
+    /// To override the contents of this collection use [`set_line_item_filters`](Self::set_line_item_filters).
+    ///
+    /// <p>A representation of the line item filter.</p>
+    pub fn line_item_filters(mut self, input: crate::types::LineItemFilter) -> Self {
+        let mut v = self.line_item_filters.unwrap_or_default();
+        v.push(input);
+        self.line_item_filters = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A representation of the line item filter.</p>
+    pub fn set_line_item_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LineItemFilter>>) -> Self {
+        self.line_item_filters = input;
+        self
+    }
+    /// <p>A representation of the line item filter.</p>
+    pub fn get_line_item_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LineItemFilter>> {
+        &self.line_item_filters
+    }
     /// Consumes the builder and constructs a [`UpdateCustomLineItemChargeDetails`](crate::types::UpdateCustomLineItemChargeDetails).
     pub fn build(self) -> crate::types::UpdateCustomLineItemChargeDetails {
         crate::types::UpdateCustomLineItemChargeDetails {
             flat: self.flat,
             percentage: self.percentage,
+            line_item_filters: self.line_item_filters,
         }
     }
 }

@@ -993,7 +993,7 @@ async fn operation_input_test_list_regional_buckets_30() {
     let _result = dbg!(
         client
             .list_regional_buckets()
-            .set_account_id(::std::option::Option::Some("123".to_owned()))
+            .set_account_id(::std::option::Option::Some("123456789012".to_owned()))
             .set_outpost_id(::std::option::Option::Some("op-123".to_owned()))
             .send()
             .await
@@ -1024,15 +1024,15 @@ async fn operation_input_test_list_regional_buckets_31() {
     let _result = dbg!(
         client
             .list_regional_buckets()
-            .set_account_id(::std::option::Option::Some("123".to_owned()))
+            .set_account_id(::std::option::Option::Some("123456789012".to_owned()))
             .send()
             .await
     );
     let req = rcvr.expect_request();
     let uri = req.uri().to_string();
     assert!(
-        uri.starts_with("https://123.s3-control.us-east-2.amazonaws.com"),
-        "expected URI to start with `https://123.s3-control.us-east-2.amazonaws.com` but it was `{}`",
+        uri.starts_with("https://123456789012.s3-control.us-east-2.amazonaws.com"),
+        "expected URI to start with `https://123456789012.s3-control.us-east-2.amazonaws.com` but it was `{}`",
         uri
     );
 }
@@ -1056,7 +1056,7 @@ async fn operation_input_test_list_regional_buckets_32() {
     let _result = dbg!(
         client
             .list_regional_buckets()
-            .set_account_id(::std::option::Option::Some("123".to_owned()))
+            .set_account_id(::std::option::Option::Some("123456789012".to_owned()))
             .set_outpost_id(::std::option::Option::Some("op-123".to_owned()))
             .send()
             .await
@@ -1124,7 +1124,7 @@ async fn operation_input_test_get_access_point_34() {
     let _result = dbg!(
         client
             .get_access_point()
-            .set_account_id(::std::option::Option::Some("9999999".to_owned()))
+            .set_account_id(::std::option::Option::Some("999999999999".to_owned()))
             .set_name(::std::option::Option::Some(
                 "arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_owned()
             ))
@@ -1132,10 +1132,10 @@ async fn operation_input_test_get_access_point_34() {
             .await
     );
     rcvr.expect_no_request();
-    let error = _result.expect_err("expected error: Invalid ARN: the accountId specified in the ARN (`123456789012`) does not match the parameter (`9999999`) [Account ID set inline and in ARN and they do not match@us-west-2]");
+    let error = _result.expect_err("expected error: Invalid ARN: the accountId specified in the ARN (`123456789012`) does not match the parameter (`999999999999`) [Account ID set inline and in ARN and they do not match@us-west-2]");
     assert!(
-                                    format!("{:?}", error).contains("Invalid ARN: the accountId specified in the ARN (`123456789012`) does not match the parameter (`9999999`)"),
-                                    "expected error to contain `Invalid ARN: the accountId specified in the ARN (`123456789012`) does not match the parameter (`9999999`)` but it was {:?}", error
+                                    format!("{:?}", error).contains("Invalid ARN: the accountId specified in the ARN (`123456789012`) does not match the parameter (`999999999999`)"),
+                                    "expected error to contain `Invalid ARN: the accountId specified in the ARN (`123456789012`) does not match the parameter (`999999999999`)` but it was {:?}", error
                                 );
 }
 
@@ -1229,6 +1229,7 @@ async fn operation_input_test_get_bucket_37() {
             .set_bucket(::std::option::Option::Some(
                 "arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:bucket:mybucket".to_owned()
             ))
+            .set_account_id(::std::option::Option::Some("123456789012".to_owned()))
             .send()
             .await
     );
@@ -1260,7 +1261,7 @@ async fn operation_input_test_list_regional_buckets_38() {
     let _result = dbg!(
         client
             .list_regional_buckets()
-            .set_account_id(::std::option::Option::Some("123".to_owned()))
+            .set_account_id(::std::option::Option::Some("123456789012".to_owned()))
             .set_outpost_id(::std::option::Option::Some("op-123".to_owned()))
             .send()
             .await
@@ -1295,7 +1296,7 @@ async fn operation_input_test_list_regional_buckets_39() {
     let _result = dbg!(
         client
             .list_regional_buckets()
-            .set_account_id(::std::option::Option::Some("123".to_owned()))
+            .set_account_id(::std::option::Option::Some("123456789012".to_owned()))
             .set_outpost_id(::std::option::Option::Some("op-123".to_owned()))
             .send()
             .await
@@ -1365,6 +1366,7 @@ async fn operation_input_test_create_access_point_41() {
                 "arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:bucket:mybucket".to_owned()
             ))
             .set_name(::std::option::Option::Some("apname".to_owned()))
+            .set_account_id(::std::option::Option::Some("123456789012".to_owned()))
             .send()
             .await
     );
@@ -1397,6 +1399,7 @@ async fn operation_input_test_get_bucket_42() {
             .set_bucket(::std::option::Option::Some(
                 "arn:aws:s3-outposts:us-east-1:123456789012:outpost:op-01234567890123456:bucket:mybucket".to_owned()
             ))
+            .set_account_id(::std::option::Option::Some("123456789012".to_owned()))
             .send()
             .await
     );
@@ -1429,6 +1432,7 @@ async fn operation_input_test_get_bucket_43() {
             .set_bucket(::std::option::Option::Some(
                 "arn:aws-us-gov:s3-outposts:us-gov-east-1:123456789012:outpost:op-01234567890123456:bucket:mybucket".to_owned()
             ))
+            .set_account_id(::std::option::Option::Some("123456789012".to_owned()))
             .send()
             .await
     );
@@ -1463,6 +1467,7 @@ async fn operation_input_test_get_bucket_44() {
             .set_bucket(::std::option::Option::Some(
                 "arn:aws-us-gov:s3-outposts:us-gov-west-1:123456789012:outpost:op-01234567890123456:bucket:mybucket".to_owned()
             ))
+            .set_account_id(::std::option::Option::Some("123456789012".to_owned()))
             .send()
             .await
     );
@@ -1497,6 +1502,7 @@ async fn operation_input_test_get_bucket_45() {
             .set_bucket(::std::option::Option::Some(
                 "arn:aws:s3-outposts:us-east-2:123456789012:outpost:op-01234567890123456:bucket:mybucket".to_owned()
             ))
+            .set_account_id(::std::option::Option::Some("123456789012".to_owned()))
             .send()
             .await
     );
@@ -1530,6 +1536,7 @@ async fn operation_input_test_create_access_point_46() {
                 "arn:aws-cn:s3-outposts:cn-north-1:123456789012:outpost:op-01234567890123456:bucket:mybucket".to_owned()
             ))
             .set_name(::std::option::Option::Some("apname".to_owned()))
+            .set_account_id(::std::option::Option::Some("123456789012".to_owned()))
             .send()
             .await
     );
@@ -1562,6 +1569,7 @@ async fn operation_input_test_get_bucket_47() {
             .set_bucket(::std::option::Option::Some(
                 "arn:aws:s3-outposts:us-east-1:123456789012:outpost:op-01234567890123456:bucket:mybucket".to_owned()
             ))
+            .set_account_id(::std::option::Option::Some("123456789012".to_owned()))
             .send()
             .await
     );
@@ -1594,6 +1602,7 @@ async fn operation_input_test_get_bucket_48() {
             .set_bucket(::std::option::Option::Some(
                 "arn:aws-us-gov:s3-outposts:us-gov-east-1:123456789012:outpost:op-01234567890123456:bucket:mybucket".to_owned()
             ))
+            .set_account_id(::std::option::Option::Some("123456789012".to_owned()))
             .send()
             .await
     );
@@ -1628,6 +1637,7 @@ async fn operation_input_test_get_bucket_49() {
             .set_bucket(::std::option::Option::Some(
                 "arn:aws-us-gov:s3-outposts:us-gov-west-1:123456789012:outpost:op-01234567890123456:bucket:mybucket".to_owned()
             ))
+            .set_account_id(::std::option::Option::Some("123456789012".to_owned()))
             .send()
             .await
     );
@@ -1662,6 +1672,7 @@ async fn operation_input_test_get_bucket_50() {
             .set_bucket(::std::option::Option::Some(
                 "arn:aws:s3-outposts:us-east-2:123456789012:outpost:op-01234567890123456:bucket:mybucket".to_owned()
             ))
+            .set_account_id(::std::option::Option::Some("123456789012".to_owned()))
             .send()
             .await
     );
@@ -1695,6 +1706,7 @@ async fn operation_input_test_create_access_point_51() {
                 "arn:aws:s3-outposts:af-south-1:123456789012:outpost:op-01234567890123456:bucket:mybucket".to_owned()
             ))
             .set_name(::std::option::Option::Some("apname".to_owned()))
+            .set_account_id(::std::option::Option::Some("123456789012".to_owned()))
             .send()
             .await
     );
@@ -1727,6 +1739,7 @@ async fn operation_input_test_get_bucket_52() {
             .set_bucket(::std::option::Option::Some(
                 "arn:aws:s3-outposts:us-east-1:123456789012:outpost:op-01234567890123456:bucket:mybucket".to_owned()
             ))
+            .set_account_id(::std::option::Option::Some("123456789012".to_owned()))
             .send()
             .await
     );
@@ -1759,6 +1772,7 @@ async fn operation_input_test_get_bucket_53() {
             .set_bucket(::std::option::Option::Some(
                 "arn:aws-us-gov:s3-outposts:us-gov-east-1:123456789012:outpost:op-01234567890123456:bucket:mybucket".to_owned()
             ))
+            .set_account_id(::std::option::Option::Some("123456789012".to_owned()))
             .send()
             .await
     );
@@ -1793,6 +1807,7 @@ async fn operation_input_test_get_bucket_54() {
             .set_bucket(::std::option::Option::Some(
                 "arn:aws-us-gov:s3-outposts:us-gov-west-1:123456789012:outpost:op-01234567890123456:bucket:mybucket".to_owned()
             ))
+            .set_account_id(::std::option::Option::Some("123456789012".to_owned()))
             .send()
             .await
     );
@@ -1827,6 +1842,7 @@ async fn operation_input_test_get_bucket_55() {
             .set_bucket(::std::option::Option::Some(
                 "arn:aws:s3-outposts:us-east-2:123456789012:outpost:op-01234567890123456:bucket:mybucket".to_owned()
             ))
+            .set_account_id(::std::option::Option::Some("123456789012".to_owned()))
             .send()
             .await
     );
@@ -1856,15 +1872,15 @@ async fn operation_input_test_list_regional_buckets_56() {
     let _result = dbg!(
         client
             .list_regional_buckets()
-            .set_account_id(::std::option::Option::Some("1234567890-aBC".to_owned()))
+            .set_account_id(::std::option::Option::Some("123456789012".to_owned()))
             .send()
             .await
     );
     let req = rcvr.expect_request();
     let uri = req.uri().to_string();
     assert!(
-        uri.starts_with("https://1234567890-aBC.s3-control.us-east-1.amazonaws.com"),
-        "expected URI to start with `https://1234567890-aBC.s3-control.us-east-1.amazonaws.com` but it was `{}`",
+        uri.starts_with("https://123456789012.s3-control.us-east-1.amazonaws.com"),
+        "expected URI to start with `https://123456789012.s3-control.us-east-1.amazonaws.com` but it was `{}`",
         uri
     );
 }
@@ -1918,15 +1934,15 @@ async fn operation_input_test_list_regional_buckets_58() {
     let _result = dbg!(
         client
             .list_regional_buckets()
-            .set_account_id(::std::option::Option::Some("1234567890-aBC".to_owned()))
+            .set_account_id(::std::option::Option::Some("123456789012".to_owned()))
             .send()
             .await
     );
     let req = rcvr.expect_request();
     let uri = req.uri().to_string();
     assert!(
-        uri.starts_with("https://1234567890-aBC.s3-control-fips.us-east-1.amazonaws.com"),
-        "expected URI to start with `https://1234567890-aBC.s3-control-fips.us-east-1.amazonaws.com` but it was `{}`",
+        uri.starts_with("https://123456789012.s3-control-fips.us-east-1.amazonaws.com"),
+        "expected URI to start with `https://123456789012.s3-control-fips.us-east-1.amazonaws.com` but it was `{}`",
         uri
     );
 }
@@ -1952,15 +1968,15 @@ async fn operation_input_test_list_regional_buckets_59() {
     let _result = dbg!(
         client
             .list_regional_buckets()
-            .set_account_id(::std::option::Option::Some("1234567890-aBC".to_owned()))
+            .set_account_id(::std::option::Option::Some("123456789012".to_owned()))
             .send()
             .await
     );
     let req = rcvr.expect_request();
     let uri = req.uri().to_string();
     assert!(
-        uri.starts_with("https://1234567890-aBC.s3-control-fips.dualstack.us-east-1.amazonaws.com"),
-        "expected URI to start with `https://1234567890-aBC.s3-control-fips.dualstack.us-east-1.amazonaws.com` but it was `{}`",
+        uri.starts_with("https://123456789012.s3-control-fips.dualstack.us-east-1.amazonaws.com"),
+        "expected URI to start with `https://123456789012.s3-control-fips.dualstack.us-east-1.amazonaws.com` but it was `{}`",
         uri
     );
 }
@@ -1984,15 +2000,15 @@ async fn operation_input_test_list_regional_buckets_60() {
     let _result = dbg!(
         client
             .list_regional_buckets()
-            .set_account_id(::std::option::Option::Some("1234567890-aBC".to_owned()))
+            .set_account_id(::std::option::Option::Some("123456789012".to_owned()))
             .send()
             .await
     );
     let req = rcvr.expect_request();
     let uri = req.uri().to_string();
     assert!(
-        uri.starts_with("https://1234567890-aBC.example.com"),
-        "expected URI to start with `https://1234567890-aBC.example.com` but it was `{}`",
+        uri.starts_with("https://123456789012.example.com"),
+        "expected URI to start with `https://123456789012.example.com` but it was `{}`",
         uri
     );
 }
@@ -2052,15 +2068,15 @@ async fn operation_input_test_list_regional_buckets_62() {
     let _result = dbg!(
         client
             .list_regional_buckets()
-            .set_account_id(::std::option::Option::Some("1234567890-aBC".to_owned()))
+            .set_account_id(::std::option::Option::Some("123456789012".to_owned()))
             .send()
             .await
     );
     let req = rcvr.expect_request();
     let uri = req.uri().to_string();
     assert!(
-        uri.starts_with("https://1234567890-aBC.example.com"),
-        "expected URI to start with `https://1234567890-aBC.example.com` but it was `{}`",
+        uri.starts_with("https://123456789012.example.com"),
+        "expected URI to start with `https://123456789012.example.com` but it was `{}`",
         uri
     );
 }
@@ -2158,10 +2174,10 @@ async fn operation_input_test_get_access_point_65() {
             .await
     );
     rcvr.expect_no_request();
-    let error = _result.expect_err("expected error: Invalid Configuration: Dualstack and custom endpoint are not supported [Dualstack + Custom endpoint is not supported(non-arn)]");
+    let error = _result.expect_err("expected error: Invalid Configuration: DualStack and custom endpoint are not supported [DualStack + Custom endpoint is not supported(non-arn)]");
     assert!(
-        format!("{:?}", error).contains("Invalid Configuration: Dualstack and custom endpoint are not supported"),
-        "expected error to contain `Invalid Configuration: Dualstack and custom endpoint are not supported` but it was {:?}",
+        format!("{:?}", error).contains("Invalid Configuration: DualStack and custom endpoint are not supported"),
+        "expected error to contain `Invalid Configuration: DualStack and custom endpoint are not supported` but it was {:?}",
         error
     );
 }
@@ -2190,6 +2206,7 @@ async fn operation_input_test_get_bucket_66() {
             .set_bucket(::std::option::Option::Some(
                 "arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:bucket:mybucket".to_owned()
             ))
+            .set_account_id(::std::option::Option::Some("123456789012".to_owned()))
             .send()
             .await
     );
@@ -2358,6 +2375,7 @@ async fn operation_input_test_get_bucket_71() {
             .set_bucket(::std::option::Option::Some(
                 "arn:aws:s3-outposts:us-east-1:123456789012:outpost:op-01234567890123456:bucket:mybucket".to_owned()
             ))
+            .set_account_id(::std::option::Option::Some("123456789012".to_owned()))
             .send()
             .await
     );
@@ -2455,6 +2473,7 @@ async fn operation_input_test_get_bucket_74() {
             .set_bucket(::std::option::Option::Some(
                 "arn:aws:s3-outposts:us-east-1:123456789012:outpost:op-01234567890123456:bucket:mybucket".to_owned()
             ))
+            .set_account_id(::std::option::Option::Some("123456789012".to_owned()))
             .send()
             .await
     );
@@ -2489,6 +2508,7 @@ async fn operation_input_test_get_bucket_75() {
             .set_bucket(::std::option::Option::Some(
                 "arn:aws:s3-outposts:cn-north-1:123456789012:outpost:op-01234567890123456:bucket:mybucket".to_owned()
             ))
+            .set_account_id(::std::option::Option::Some("123456789012".to_owned()))
             .send()
             .await
     );

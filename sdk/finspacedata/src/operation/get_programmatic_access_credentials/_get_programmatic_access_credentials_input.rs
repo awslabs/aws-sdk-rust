@@ -5,13 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetProgrammaticAccessCredentialsInput {
     /// <p>The time duration in which the credentials remain valid. </p>
-    pub duration_in_minutes: i64,
+    pub duration_in_minutes: ::std::option::Option<i64>,
     /// <p>The FinSpace environment identifier.</p>
     pub environment_id: ::std::option::Option<::std::string::String>,
 }
 impl GetProgrammaticAccessCredentialsInput {
     /// <p>The time duration in which the credentials remain valid. </p>
-    pub fn duration_in_minutes(&self) -> i64 {
+    pub fn duration_in_minutes(&self) -> ::std::option::Option<i64> {
         self.duration_in_minutes
     }
     /// <p>The FinSpace environment identifier.</p>
@@ -71,7 +71,7 @@ impl GetProgrammaticAccessCredentialsInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::get_programmatic_access_credentials::GetProgrammaticAccessCredentialsInput {
-                duration_in_minutes: self.duration_in_minutes.unwrap_or_default(),
+                duration_in_minutes: self.duration_in_minutes,
                 environment_id: self.environment_id,
             },
         )

@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RegisterComputeOutput {
-    /// <p>The details of the compute resource you registered to the specified fleet.</p>
+    /// <p>The details of the compute resource you registered.</p>
     pub compute: ::std::option::Option<crate::types::Compute>,
     _request_id: Option<String>,
 }
 impl RegisterComputeOutput {
-    /// <p>The details of the compute resource you registered to the specified fleet.</p>
+    /// <p>The details of the compute resource you registered.</p>
     pub fn compute(&self) -> ::std::option::Option<&crate::types::Compute> {
         self.compute.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct RegisterComputeOutputBuilder {
     _request_id: Option<String>,
 }
 impl RegisterComputeOutputBuilder {
-    /// <p>The details of the compute resource you registered to the specified fleet.</p>
+    /// <p>The details of the compute resource you registered.</p>
     pub fn compute(mut self, input: crate::types::Compute) -> Self {
         self.compute = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The details of the compute resource you registered to the specified fleet.</p>
+    /// <p>The details of the compute resource you registered.</p>
     pub fn set_compute(mut self, input: ::std::option::Option<crate::types::Compute>) -> Self {
         self.compute = input;
         self
     }
-    /// <p>The details of the compute resource you registered to the specified fleet.</p>
+    /// <p>The details of the compute resource you registered.</p>
     pub fn get_compute(&self) -> &::std::option::Option<crate::types::Compute> {
         &self.compute
     }

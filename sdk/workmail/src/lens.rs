@@ -39,6 +39,16 @@ pub(crate) fn reflens_list_groups_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_groups_for_entity_output_next_token(
+    input: &crate::operation::list_groups_for_entity::ListGroupsForEntityOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_impersonation_roles_output_next_token(
     input: &crate::operation::list_impersonation_roles::ListImpersonationRolesOutput,
 ) -> ::std::option::Option<&::std::string::String> {

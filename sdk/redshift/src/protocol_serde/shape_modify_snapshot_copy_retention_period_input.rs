@@ -12,16 +12,16 @@ pub fn ser_modify_snapshot_copy_retention_period_input_input(
     }
     #[allow(unused_mut)]
     let mut scope_3 = writer.prefix("RetentionPeriod");
-    {
+    if let Some(var_4) = &input.retention_period {
         scope_3.number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.retention_period).into()),
+            ::aws_smithy_types::Number::NegInt((*var_4).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_4 = writer.prefix("Manual");
-    if input.manual {
-        scope_4.boolean(input.manual);
+    let mut scope_5 = writer.prefix("Manual");
+    if let Some(var_6) = &input.manual {
+        scope_5.boolean(*var_6);
     }
     writer.finish();
     Ok(::aws_smithy_http::body::SdkBody::from(out))

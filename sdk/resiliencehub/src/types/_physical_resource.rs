@@ -6,9 +6,9 @@
 pub struct PhysicalResource {
     /// <p>The name of the resource.</p>
     pub resource_name: ::std::option::Option<::std::string::String>,
-    /// <p>The logical identifier of the resource.</p>
+    /// <p>Logical identifier of the resource.</p>
     pub logical_resource_id: ::std::option::Option<crate::types::LogicalResourceId>,
-    /// <p>The physical identifier of the resource.</p>
+    /// <p>Identifier of the physical resource.</p>
     pub physical_resource_id: ::std::option::Option<crate::types::PhysicalResourceId>,
     /// <p>The type of resource.</p>
     pub resource_type: ::std::option::Option<::std::string::String>,
@@ -22,9 +22,9 @@ pub struct PhysicalResource {
     pub additional_info: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     /// <p>Indicates if a resource is included or excluded from the assessment.</p>
     pub excluded: ::std::option::Option<bool>,
-    /// <p>The type of input source.</p>
+    /// <p>Type of input source.</p>
     pub source_type: ::std::option::Option<crate::types::ResourceSourceType>,
-    /// <p>The name of the parent resource.</p>
+    /// <p>Name of the parent resource.</p>
     pub parent_resource_name: ::std::option::Option<::std::string::String>,
 }
 impl PhysicalResource {
@@ -32,11 +32,11 @@ impl PhysicalResource {
     pub fn resource_name(&self) -> ::std::option::Option<&str> {
         self.resource_name.as_deref()
     }
-    /// <p>The logical identifier of the resource.</p>
+    /// <p>Logical identifier of the resource.</p>
     pub fn logical_resource_id(&self) -> ::std::option::Option<&crate::types::LogicalResourceId> {
         self.logical_resource_id.as_ref()
     }
-    /// <p>The physical identifier of the resource.</p>
+    /// <p>Identifier of the physical resource.</p>
     pub fn physical_resource_id(&self) -> ::std::option::Option<&crate::types::PhysicalResourceId> {
         self.physical_resource_id.as_ref()
     }
@@ -62,11 +62,11 @@ impl PhysicalResource {
     pub fn excluded(&self) -> ::std::option::Option<bool> {
         self.excluded
     }
-    /// <p>The type of input source.</p>
+    /// <p>Type of input source.</p>
     pub fn source_type(&self) -> ::std::option::Option<&crate::types::ResourceSourceType> {
         self.source_type.as_ref()
     }
-    /// <p>The name of the parent resource.</p>
+    /// <p>Name of the parent resource.</p>
     pub fn parent_resource_name(&self) -> ::std::option::Option<&str> {
         self.parent_resource_name.as_deref()
     }
@@ -107,31 +107,31 @@ impl PhysicalResourceBuilder {
     pub fn get_resource_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_name
     }
-    /// <p>The logical identifier of the resource.</p>
+    /// <p>Logical identifier of the resource.</p>
     pub fn logical_resource_id(mut self, input: crate::types::LogicalResourceId) -> Self {
         self.logical_resource_id = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The logical identifier of the resource.</p>
+    /// <p>Logical identifier of the resource.</p>
     pub fn set_logical_resource_id(mut self, input: ::std::option::Option<crate::types::LogicalResourceId>) -> Self {
         self.logical_resource_id = input;
         self
     }
-    /// <p>The logical identifier of the resource.</p>
+    /// <p>Logical identifier of the resource.</p>
     pub fn get_logical_resource_id(&self) -> &::std::option::Option<crate::types::LogicalResourceId> {
         &self.logical_resource_id
     }
-    /// <p>The physical identifier of the resource.</p>
+    /// <p>Identifier of the physical resource.</p>
     pub fn physical_resource_id(mut self, input: crate::types::PhysicalResourceId) -> Self {
         self.physical_resource_id = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The physical identifier of the resource.</p>
+    /// <p>Identifier of the physical resource.</p>
     pub fn set_physical_resource_id(mut self, input: ::std::option::Option<crate::types::PhysicalResourceId>) -> Self {
         self.physical_resource_id = input;
         self
     }
-    /// <p>The physical identifier of the resource.</p>
+    /// <p>Identifier of the physical resource.</p>
     pub fn get_physical_resource_id(&self) -> &::std::option::Option<crate::types::PhysicalResourceId> {
         &self.physical_resource_id
     }
@@ -220,31 +220,31 @@ impl PhysicalResourceBuilder {
     pub fn get_excluded(&self) -> &::std::option::Option<bool> {
         &self.excluded
     }
-    /// <p>The type of input source.</p>
+    /// <p>Type of input source.</p>
     pub fn source_type(mut self, input: crate::types::ResourceSourceType) -> Self {
         self.source_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of input source.</p>
+    /// <p>Type of input source.</p>
     pub fn set_source_type(mut self, input: ::std::option::Option<crate::types::ResourceSourceType>) -> Self {
         self.source_type = input;
         self
     }
-    /// <p>The type of input source.</p>
+    /// <p>Type of input source.</p>
     pub fn get_source_type(&self) -> &::std::option::Option<crate::types::ResourceSourceType> {
         &self.source_type
     }
-    /// <p>The name of the parent resource.</p>
+    /// <p>Name of the parent resource.</p>
     pub fn parent_resource_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parent_resource_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the parent resource.</p>
+    /// <p>Name of the parent resource.</p>
     pub fn set_parent_resource_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.parent_resource_name = input;
         self
     }
-    /// <p>The name of the parent resource.</p>
+    /// <p>Name of the parent resource.</p>
     pub fn get_parent_resource_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.parent_resource_name
     }

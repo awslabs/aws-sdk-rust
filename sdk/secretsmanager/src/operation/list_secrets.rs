@@ -262,6 +262,14 @@ pub enum ListSecretsError {
     InvalidNextTokenException(crate::types::error::InvalidNextTokenException),
     /// <p>The parameter name or value is invalid.</p>
     InvalidParameterException(crate::types::error::InvalidParameterException),
+    /// <p>A parameter value is not valid for the current state of the resource.</p>
+    /// <p>Possible causes:</p>
+    /// <ul>
+    /// <li> <p>The secret is scheduled for deletion.</p> </li>
+    /// <li> <p>You tried to enable rotation on a secret that doesn't already have a Lambda function ARN configured and you didn't include such an ARN as a parameter in this call. </p> </li>
+    /// <li> <p>The secret is managed by another service, and you must use that service to update it. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/service-linked-secrets.html">Secrets managed by other Amazon Web Services services</a>.</p> </li>
+    /// </ul>
+    InvalidRequestException(crate::types::error::InvalidRequestException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(::aws_smithy_types::error::Unhandled),
 }
@@ -283,6 +291,7 @@ impl ::std::fmt::Display for ListSecretsError {
             Self::InternalServiceError(_inner) => _inner.fmt(f),
             Self::InvalidNextTokenException(_inner) => _inner.fmt(f),
             Self::InvalidParameterException(_inner) => _inner.fmt(f),
+            Self::InvalidRequestException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -293,6 +302,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for ListSecretsEr
             Self::InternalServiceError(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidNextTokenException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidParameterException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidRequestException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
         }
     }
@@ -332,6 +342,7 @@ impl ListSecretsError {
             Self::InternalServiceError(e) => e.meta(),
             Self::InvalidNextTokenException(e) => e.meta(),
             Self::InvalidParameterException(e) => e.meta(),
+            Self::InvalidRequestException(e) => e.meta(),
             Self::Unhandled(e) => e.meta(),
         }
     }
@@ -347,6 +358,10 @@ impl ListSecretsError {
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(self, Self::InvalidParameterException(_))
     }
+    /// Returns `true` if the error kind is `ListSecretsError::InvalidRequestException`.
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(self, Self::InvalidRequestException(_))
+    }
 }
 impl ::std::error::Error for ListSecretsError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
@@ -354,6 +369,7 @@ impl ::std::error::Error for ListSecretsError {
             Self::InternalServiceError(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidNextTokenException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidParameterException(_inner) => ::std::option::Option::Some(_inner),
+            Self::InvalidRequestException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(_inner),
         }
     }

@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder takes no input, just [`send`](crate::operation::get_account_sending_enabled::builders::GetAccountSendingEnabledFluentBuilder::send) it.
     /// - On success, responds with [`GetAccountSendingEnabledOutput`](crate::operation::get_account_sending_enabled::GetAccountSendingEnabledOutput) with field(s):
-    ///   - [`enabled(bool)`](crate::operation::get_account_sending_enabled::GetAccountSendingEnabledOutput::enabled): <p>Describes whether email sending is enabled or disabled for your Amazon SES account in the current AWS Region.</p>
+    ///   - [`enabled(bool)`](crate::operation::get_account_sending_enabled::GetAccountSendingEnabledOutput::enabled): <p>Describes whether email sending is enabled or disabled for your Amazon SES account in the current Amazon Web Services Region.</p>
     /// - On failure, responds with [`SdkError<GetAccountSendingEnabledError>`](crate::operation::get_account_sending_enabled::GetAccountSendingEnabledError)
     pub fn get_account_sending_enabled(&self) -> crate::operation::get_account_sending_enabled::builders::GetAccountSendingEnabledFluentBuilder {
         crate::operation::get_account_sending_enabled::builders::GetAccountSendingEnabledFluentBuilder::new(self.handle.clone())

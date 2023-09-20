@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`progress_update_stream_name(impl Into<String>)`](crate::operation::create_progress_update_stream::builders::CreateProgressUpdateStreamFluentBuilder::progress_update_stream_name) / [`set_progress_update_stream_name(Option<String>)`](crate::operation::create_progress_update_stream::builders::CreateProgressUpdateStreamFluentBuilder::set_progress_update_stream_name): <p>The name of the ProgressUpdateStream. <i>Do not store personal data in this field.</i> </p>
-    ///   - [`dry_run(bool)`](crate::operation::create_progress_update_stream::builders::CreateProgressUpdateStreamFluentBuilder::dry_run) / [`set_dry_run(bool)`](crate::operation::create_progress_update_stream::builders::CreateProgressUpdateStreamFluentBuilder::set_dry_run): <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
+    ///   - [`dry_run(bool)`](crate::operation::create_progress_update_stream::builders::CreateProgressUpdateStreamFluentBuilder::dry_run) / [`set_dry_run(Option<bool>)`](crate::operation::create_progress_update_stream::builders::CreateProgressUpdateStreamFluentBuilder::set_dry_run): <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
     /// - On success, responds with [`CreateProgressUpdateStreamOutput`](crate::operation::create_progress_update_stream::CreateProgressUpdateStreamOutput)
     /// - On failure, responds with [`SdkError<CreateProgressUpdateStreamError>`](crate::operation::create_progress_update_stream::CreateProgressUpdateStreamError)
     pub fn create_progress_update_stream(

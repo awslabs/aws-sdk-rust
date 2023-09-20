@@ -4,18 +4,18 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateConfigurationSetSendingEnabledInput {
-    /// <p>The name of the configuration set that you want to update.</p>
+    /// <p>The name of the configuration set to update.</p>
     pub configuration_set_name: ::std::option::Option<::std::string::String>,
     /// <p>Describes whether email sending is enabled or disabled for the configuration set. </p>
-    pub enabled: bool,
+    pub enabled: ::std::option::Option<bool>,
 }
 impl UpdateConfigurationSetSendingEnabledInput {
-    /// <p>The name of the configuration set that you want to update.</p>
+    /// <p>The name of the configuration set to update.</p>
     pub fn configuration_set_name(&self) -> ::std::option::Option<&str> {
         self.configuration_set_name.as_deref()
     }
     /// <p>Describes whether email sending is enabled or disabled for the configuration set. </p>
-    pub fn enabled(&self) -> bool {
+    pub fn enabled(&self) -> ::std::option::Option<bool> {
         self.enabled
     }
 }
@@ -34,17 +34,17 @@ pub struct UpdateConfigurationSetSendingEnabledInputBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
 }
 impl UpdateConfigurationSetSendingEnabledInputBuilder {
-    /// <p>The name of the configuration set that you want to update.</p>
+    /// <p>The name of the configuration set to update.</p>
     pub fn configuration_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration_set_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the configuration set that you want to update.</p>
+    /// <p>The name of the configuration set to update.</p>
     pub fn set_configuration_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.configuration_set_name = input;
         self
     }
-    /// <p>The name of the configuration set that you want to update.</p>
+    /// <p>The name of the configuration set to update.</p>
     pub fn get_configuration_set_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.configuration_set_name
     }
@@ -72,7 +72,7 @@ impl UpdateConfigurationSetSendingEnabledInputBuilder {
         ::std::result::Result::Ok(
             crate::operation::update_configuration_set_sending_enabled::UpdateConfigurationSetSendingEnabledInput {
                 configuration_set_name: self.configuration_set_name,
-                enabled: self.enabled.unwrap_or_default(),
+                enabled: self.enabled,
             },
         )
     }

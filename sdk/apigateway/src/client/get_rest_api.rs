@@ -18,6 +18,7 @@ impl super::Client {
     ///   - [`policy(Option<String>)`](crate::operation::get_rest_api::GetRestApiOutput::policy): <p>A stringified JSON policy document that applies to this RestApi regardless of the caller and Method configuration.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::get_rest_api::GetRestApiOutput::tags): <p>The collection of tags. Each tag element is associated with a given resource.</p>
     ///   - [`disable_execute_api_endpoint(bool)`](crate::operation::get_rest_api::GetRestApiOutput::disable_execute_api_endpoint): <p>Specifies whether clients can invoke your API by using the default <code>execute-api</code> endpoint. By default, clients can invoke your API with the default <code>https://{api_id}.execute-api.{region}.amazonaws.com</code> endpoint. To require that clients use a custom domain name to invoke your API, disable the default endpoint.</p>
+    ///   - [`root_resource_id(Option<String>)`](crate::operation::get_rest_api::GetRestApiOutput::root_resource_id): <p>The API's root resource ID.</p>
     /// - On failure, responds with [`SdkError<GetRestApiError>`](crate::operation::get_rest_api::GetRestApiError)
     pub fn get_rest_api(&self) -> crate::operation::get_rest_api::builders::GetRestApiFluentBuilder {
         crate::operation::get_rest_api::builders::GetRestApiFluentBuilder::new(self.handle.clone())

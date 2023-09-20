@@ -18,7 +18,7 @@ pub struct ConfiguredTable {
     pub create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time the configured table was last updated</p>
     pub update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The types of analysis rules associated with this configured table. Valid values are `AGGREGATION` and `LIST`. Currently, only one analysis rule may be associated with a configured table.</p>
+    /// <p>The types of analysis rules associated with this configured table. Currently, only one analysis rule may be associated with a configured table.</p>
     pub analysis_rule_types: ::std::option::Option<::std::vec::Vec<crate::types::ConfiguredTableAnalysisRuleType>>,
     /// <p>The analysis method for the configured table. The only valid value is currently `DIRECT_QUERY`.</p>
     pub analysis_method: ::std::option::Option<crate::types::AnalysisMethod>,
@@ -54,7 +54,7 @@ impl ConfiguredTable {
     pub fn update_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.update_time.as_ref()
     }
-    /// <p>The types of analysis rules associated with this configured table. Valid values are `AGGREGATION` and `LIST`. Currently, only one analysis rule may be associated with a configured table.</p>
+    /// <p>The types of analysis rules associated with this configured table. Currently, only one analysis rule may be associated with a configured table.</p>
     pub fn analysis_rule_types(&self) -> ::std::option::Option<&[crate::types::ConfiguredTableAnalysisRuleType]> {
         self.analysis_rule_types.as_deref()
     }
@@ -192,19 +192,19 @@ impl ConfiguredTableBuilder {
     ///
     /// To override the contents of this collection use [`set_analysis_rule_types`](Self::set_analysis_rule_types).
     ///
-    /// <p>The types of analysis rules associated with this configured table. Valid values are `AGGREGATION` and `LIST`. Currently, only one analysis rule may be associated with a configured table.</p>
+    /// <p>The types of analysis rules associated with this configured table. Currently, only one analysis rule may be associated with a configured table.</p>
     pub fn analysis_rule_types(mut self, input: crate::types::ConfiguredTableAnalysisRuleType) -> Self {
         let mut v = self.analysis_rule_types.unwrap_or_default();
         v.push(input);
         self.analysis_rule_types = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The types of analysis rules associated with this configured table. Valid values are `AGGREGATION` and `LIST`. Currently, only one analysis rule may be associated with a configured table.</p>
+    /// <p>The types of analysis rules associated with this configured table. Currently, only one analysis rule may be associated with a configured table.</p>
     pub fn set_analysis_rule_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ConfiguredTableAnalysisRuleType>>) -> Self {
         self.analysis_rule_types = input;
         self
     }
-    /// <p>The types of analysis rules associated with this configured table. Valid values are `AGGREGATION` and `LIST`. Currently, only one analysis rule may be associated with a configured table.</p>
+    /// <p>The types of analysis rules associated with this configured table. Currently, only one analysis rule may be associated with a configured table.</p>
     pub fn get_analysis_rule_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ConfiguredTableAnalysisRuleType>> {
         &self.analysis_rule_types
     }

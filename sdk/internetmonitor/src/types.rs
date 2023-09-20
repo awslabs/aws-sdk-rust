@@ -7,6 +7,10 @@ pub use crate::types::_monitor_config_state::MonitorConfigState;
 
 pub use crate::types::_health_events_config::HealthEventsConfig;
 
+pub use crate::types::_local_health_events_config::LocalHealthEventsConfig;
+
+pub use crate::types::_local_health_events_config_status::LocalHealthEventsConfigStatus;
+
 pub use crate::types::_internet_measurements_log_delivery::InternetMeasurementsLogDelivery;
 
 pub use crate::types::_s3_config::S3Config;
@@ -50,6 +54,10 @@ mod _impacted_location;
 mod _internet_health;
 
 mod _internet_measurements_log_delivery;
+
+mod _local_health_events_config;
+
+mod _local_health_events_config_status;
 
 mod _log_delivery_status;
 

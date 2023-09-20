@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum Error {
-    /// <p>The specified Amazon Resource Name (ARN) does not exist in the AWS account.</p>
+    /// <p>The specified Amazon Resource Name (ARN) does not exist in the Amazon Web Services account.</p>
     ActorDoesNotExistException(crate::types::error::ActorDoesNotExistException),
     /// <p>The content for the approval rule is empty. You must provide some content for an approval rule. The content cannot be null.</p>
     ApprovalRuleContentRequiredException(crate::types::error::ApprovalRuleContentRequiredException),
@@ -15,17 +15,17 @@ pub enum Error {
     ApprovalRuleNameRequiredException(crate::types::error::ApprovalRuleNameRequiredException),
     /// <p>The content for the approval rule template is empty. You must provide some content for an approval rule template. The content cannot be null.</p>
     ApprovalRuleTemplateContentRequiredException(crate::types::error::ApprovalRuleTemplateContentRequiredException),
-    /// <p>The specified approval rule template does not exist. Verify that the name is correct and that you are signed in to the AWS Region where the template was created, and then try again.</p>
+    /// <p>The specified approval rule template does not exist. Verify that the name is correct and that you are signed in to the Amazon Web Services Region where the template was created, and then try again.</p>
     ApprovalRuleTemplateDoesNotExistException(crate::types::error::ApprovalRuleTemplateDoesNotExistException),
     /// <p>The approval rule template is associated with one or more repositories. You cannot delete a template that is associated with a repository. Remove all associations, and then try again.</p>
     ApprovalRuleTemplateInUseException(crate::types::error::ApprovalRuleTemplateInUseException),
-    /// <p>You cannot create an approval rule template with that name because a template with that name already exists in this AWS Region for your AWS account. Approval rule template names must be unique.</p>
+    /// <p>You cannot create an approval rule template with that name because a template with that name already exists in this Amazon Web Services Region for your Amazon Web Services account. Approval rule template names must be unique.</p>
     ApprovalRuleTemplateNameAlreadyExistsException(crate::types::error::ApprovalRuleTemplateNameAlreadyExistsException),
     /// <p>An approval rule template name is required, but was not specified.</p>
     ApprovalRuleTemplateNameRequiredException(crate::types::error::ApprovalRuleTemplateNameRequiredException),
     /// <p>An approval state is required, but was not specified.</p>
     ApprovalStateRequiredException(crate::types::error::ApprovalStateRequiredException),
-    /// <p>The specified Amazon Resource Name (ARN) does not exist in the AWS account.</p>
+    /// <p>The specified Amazon Resource Name (ARN) does not exist in the Amazon Web Services account.</p>
     AuthorDoesNotExistException(crate::types::error::AuthorDoesNotExistException),
     /// <p>The before commit ID and the after commit ID are the same, which is not valid. The before commit ID and the after commit ID must be different commit IDs.</p>
     BeforeCommitIdAndAfterCommitIdAreSameException(crate::types::error::BeforeCommitIdAndAfterCommitIdAreSameException),
@@ -49,7 +49,7 @@ pub enum Error {
     ClientRequestTokenRequiredException(crate::types::error::ClientRequestTokenRequiredException),
     /// <p>The comment is empty. You must provide some content for a comment. The content cannot be null.</p>
     CommentContentRequiredException(crate::types::error::CommentContentRequiredException),
-    /// <p>The comment is too large. Comments are limited to 1,000 characters.</p>
+    /// <p>The comment is too large. Comments are limited to 10,240 characters.</p>
     CommentContentSizeLimitExceededException(crate::types::error::CommentContentSizeLimitExceededException),
     /// <p>This comment has already been deleted. You cannot edit or delete a deleted comment.</p>
     CommentDeletedException(crate::types::error::CommentDeletedException),
@@ -105,7 +105,7 @@ pub enum Error {
     FileNameConflictsWithDirectoryNameException(crate::types::error::FileNameConflictsWithDirectoryNameException),
     /// <p>The commit cannot be created because a specified file path points to a submodule. Verify that the destination files have valid file paths that do not point to a submodule.</p>
     FilePathConflictsWithSubmodulePathException(crate::types::error::FilePathConflictsWithSubmodulePathException),
-    /// <p>The specified file exceeds the file size limit for AWS CodeCommit. For more information about limits in AWS CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS CodeCommit User Guide</a>.</p>
+    /// <p>The specified file exceeds the file size limit for CodeCommit. For more information about limits in CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">Quotas</a> in the <i>CodeCommit User Guide</i>.</p>
     FileTooLargeException(crate::types::error::FileTooLargeException),
     /// <p>The commit cannot be created because at least one of the overall changes in the commit results in a folder whose contents exceed the limit of 6 MB. Either reduce the number and size of your changes, or split the changes across multiple folders.</p>
     FolderContentSizeLimitExceededException(crate::types::error::FolderContentSizeLimitExceededException),
@@ -121,9 +121,9 @@ pub enum Error {
     InvalidApprovalRuleNameException(crate::types::error::InvalidApprovalRuleNameException),
     /// <p>The content of the approval rule template is not valid.</p>
     InvalidApprovalRuleTemplateContentException(crate::types::error::InvalidApprovalRuleTemplateContentException),
-    /// <p>The description for the approval rule template is not valid because it exceeds the maximum characters allowed for a description. For more information about limits in AWS CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS CodeCommit User Guide</a>.</p>
+    /// <p>The description for the approval rule template is not valid because it exceeds the maximum characters allowed for a description. For more information about limits in CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">Quotas</a> in the <i>CodeCommit User Guide</i>.</p>
     InvalidApprovalRuleTemplateDescriptionException(crate::types::error::InvalidApprovalRuleTemplateDescriptionException),
-    /// <p>The name of the approval rule template is not valid. Template names must be between 1 and 100 valid characters in length. For more information about limits in AWS CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS CodeCommit User Guide</a>.</p>
+    /// <p>The name of the approval rule template is not valid. Template names must be between 1 and 100 valid characters in length. For more information about limits in CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">Quotas</a> in the <i>CodeCommit User Guide</i>.</p>
     InvalidApprovalRuleTemplateNameException(crate::types::error::InvalidApprovalRuleTemplateNameException),
     /// <p>The state for the approval is not valid. Valid values include APPROVE and REVOKE. </p>
     InvalidApprovalStateException(crate::types::error::InvalidApprovalStateException),
@@ -189,9 +189,9 @@ pub enum Error {
     InvalidPullRequestStatusUpdateException(crate::types::error::InvalidPullRequestStatusUpdateException),
     /// <p>The Amazon Resource Name (ARN) of the user or identity is not valid.</p>
     InvalidReactionUserArnException(crate::types::error::InvalidReactionUserArnException),
-    /// <p>The value of the reaction is not valid. For more information, see the <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS CodeCommit User Guide</a>.</p>
+    /// <p>The value of the reaction is not valid. For more information, see the <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">CodeCommit User Guide</a>.</p>
     InvalidReactionValueException(crate::types::error::InvalidReactionValueException),
-    /// <p>The specified reference name format is not valid. Reference names must conform to the Git references format (for example, refs/heads/master). For more information, see <a href="https://git-scm.com/book/en/v2/Git-Internals-Git-References">Git Internals - Git References</a> or consult your Git documentation.</p>
+    /// <p>The specified reference name format is not valid. Reference names must conform to the Git references format (for example, refs/heads/main). For more information, see <a href="https://git-scm.com/book/en/v2/Git-Internals-Git-References">Git Internals - Git References</a> or consult your Git documentation.</p>
     InvalidReferenceNameException(crate::types::error::InvalidReferenceNameException),
     /// <p>Either the enum is not in a valid format, or the specified file version enum is not valid in respect to the current file version.</p>
     InvalidRelativeFileVersionEnumException(crate::types::error::InvalidRelativeFileVersionEnumException),
@@ -215,9 +215,9 @@ pub enum Error {
     InvalidRepositoryTriggerEventsException(crate::types::error::InvalidRepositoryTriggerEventsException),
     /// <p>The name of the trigger is not valid.</p>
     InvalidRepositoryTriggerNameException(crate::types::error::InvalidRepositoryTriggerNameException),
-    /// <p>The AWS Region for the trigger target does not match the AWS Region for the repository. Triggers must be created in the same Region as the target for the trigger.</p>
+    /// <p>The Amazon Web Services Region for the trigger target does not match the Amazon Web Services Region for the repository. Triggers must be created in the same Amazon Web Services Region as the target for the trigger.</p>
     InvalidRepositoryTriggerRegionException(crate::types::error::InvalidRepositoryTriggerRegionException),
-    /// <p>The value for the resource ARN is not valid. For more information about resources in AWS CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats">CodeCommit Resources and Operations</a> in the AWS CodeCommit User Guide.</p>
+    /// <p>The value for the resource ARN is not valid. For more information about resources in CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats">CodeCommit Resources and Operations</a> in the CodeCommit User Guide.</p>
     InvalidResourceArnException(crate::types::error::InvalidResourceArnException),
     /// <p>The revision ID is not valid. Use GetPullRequest to determine the value.</p>
     InvalidRevisionIdException(crate::types::error::InvalidRevisionIdException),
@@ -273,7 +273,7 @@ pub enum Error {
     NameLengthExceededException(crate::types::error::NameLengthExceededException),
     /// <p>The commit cannot be created because no changes will be made to the repository as a result of this commit. A commit must contain at least one change.</p>
     NoChangeException(crate::types::error::NoChangeException),
-    /// <p>The maximum number of approval rule templates has been exceeded for this AWS Region. </p>
+    /// <p>The maximum number of approval rule templates has been exceeded for this Amazon Web Services Region. </p>
     NumberOfRuleTemplatesExceededException(crate::types::error::NumberOfRuleTemplatesExceededException),
     /// <p>The approval rule cannot be added. The pull request has the maximum number of approval rules associated with it.</p>
     NumberOfRulesExceededException(crate::types::error::NumberOfRulesExceededException),
@@ -341,7 +341,7 @@ pub enum Error {
     RepositoryTriggerNameRequiredException(crate::types::error::RepositoryTriggerNameRequiredException),
     /// <p>The list of triggers for the repository is required, but was not specified.</p>
     RepositoryTriggersListRequiredException(crate::types::error::RepositoryTriggersListRequiredException),
-    /// <p>A valid Amazon Resource Name (ARN) for an AWS CodeCommit resource is required. For a list of valid resources in AWS CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats">CodeCommit Resources and Operations</a> in the AWS CodeCommit User Guide.</p>
+    /// <p>A valid Amazon Resource Name (ARN) for an CodeCommit resource is required. For a list of valid resources in CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats">CodeCommit Resources and Operations</a> in the CodeCommit User Guide.</p>
     ResourceArnRequiredException(crate::types::error::ResourceArnRequiredException),
     /// <p>The commit cannot be created because one of the changes specifies copying or moving a .gitkeep file.</p>
     RestrictedSourceFileException(crate::types::error::RestrictedSourceFileException),
@@ -373,7 +373,7 @@ pub enum Error {
     TipsDivergenceExceededException(crate::types::error::TipsDivergenceExceededException),
     /// <p>A pull request title is required. It cannot be empty or null.</p>
     TitleRequiredException(crate::types::error::TitleRequiredException),
-    /// <p>The maximum number of tags for an AWS CodeCommit resource has been exceeded.</p>
+    /// <p>The maximum number of tags for an CodeCommit resource has been exceeded.</p>
     TooManyTagsException(crate::types::error::TooManyTagsException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(::aws_smithy_types::error::Unhandled),
@@ -2925,6 +2925,71 @@ impl From<crate::operation::list_branches::ListBranchesError> for Error {
                 Error::RepositoryNameRequiredException(inner)
             }
             crate::operation::list_branches::ListBranchesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_file_commit_history::ListFileCommitHistoryError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_file_commit_history::ListFileCommitHistoryError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_file_commit_history::ListFileCommitHistoryError> for Error {
+    fn from(err: crate::operation::list_file_commit_history::ListFileCommitHistoryError) -> Self {
+        match err {
+            crate::operation::list_file_commit_history::ListFileCommitHistoryError::CommitDoesNotExistException(inner) => {
+                Error::CommitDoesNotExistException(inner)
+            }
+            crate::operation::list_file_commit_history::ListFileCommitHistoryError::CommitRequiredException(inner) => {
+                Error::CommitRequiredException(inner)
+            }
+            crate::operation::list_file_commit_history::ListFileCommitHistoryError::EncryptionIntegrityChecksFailedException(inner) => {
+                Error::EncryptionIntegrityChecksFailedException(inner)
+            }
+            crate::operation::list_file_commit_history::ListFileCommitHistoryError::EncryptionKeyAccessDeniedException(inner) => {
+                Error::EncryptionKeyAccessDeniedException(inner)
+            }
+            crate::operation::list_file_commit_history::ListFileCommitHistoryError::EncryptionKeyDisabledException(inner) => {
+                Error::EncryptionKeyDisabledException(inner)
+            }
+            crate::operation::list_file_commit_history::ListFileCommitHistoryError::EncryptionKeyNotFoundException(inner) => {
+                Error::EncryptionKeyNotFoundException(inner)
+            }
+            crate::operation::list_file_commit_history::ListFileCommitHistoryError::EncryptionKeyUnavailableException(inner) => {
+                Error::EncryptionKeyUnavailableException(inner)
+            }
+            crate::operation::list_file_commit_history::ListFileCommitHistoryError::InvalidCommitException(inner) => {
+                Error::InvalidCommitException(inner)
+            }
+            crate::operation::list_file_commit_history::ListFileCommitHistoryError::InvalidContinuationTokenException(inner) => {
+                Error::InvalidContinuationTokenException(inner)
+            }
+            crate::operation::list_file_commit_history::ListFileCommitHistoryError::InvalidMaxResultsException(inner) => {
+                Error::InvalidMaxResultsException(inner)
+            }
+            crate::operation::list_file_commit_history::ListFileCommitHistoryError::InvalidRepositoryNameException(inner) => {
+                Error::InvalidRepositoryNameException(inner)
+            }
+            crate::operation::list_file_commit_history::ListFileCommitHistoryError::RepositoryDoesNotExistException(inner) => {
+                Error::RepositoryDoesNotExistException(inner)
+            }
+            crate::operation::list_file_commit_history::ListFileCommitHistoryError::RepositoryNameRequiredException(inner) => {
+                Error::RepositoryNameRequiredException(inner)
+            }
+            crate::operation::list_file_commit_history::ListFileCommitHistoryError::TipsDivergenceExceededException(inner) => {
+                Error::TipsDivergenceExceededException(inner)
+            }
+            crate::operation::list_file_commit_history::ListFileCommitHistoryError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

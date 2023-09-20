@@ -69,6 +69,13 @@ where
                             builder =
                                 builder.set_enable_continuous_backup(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
+                        "ScheduleExpressionTimezone" => {
+                            builder = builder.set_schedule_expression_timezone(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

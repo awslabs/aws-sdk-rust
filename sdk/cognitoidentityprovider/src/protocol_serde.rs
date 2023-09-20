@@ -143,6 +143,8 @@ pub(crate) mod shape_get_group;
 
 pub(crate) mod shape_get_identity_provider_by_identifier;
 
+pub(crate) mod shape_get_log_delivery_configuration;
+
 pub(crate) mod shape_get_signing_certificate;
 
 pub(crate) mod shape_get_ui_customization;
@@ -182,6 +184,8 @@ pub(crate) mod shape_resend_confirmation_code;
 pub(crate) mod shape_respond_to_auth_challenge;
 
 pub(crate) mod shape_revoke_token;
+
+pub(crate) mod shape_set_log_delivery_configuration;
 
 pub(crate) mod shape_set_risk_configuration;
 
@@ -369,6 +373,8 @@ pub(crate) mod shape_get_group_input;
 
 pub(crate) mod shape_get_identity_provider_by_identifier_input;
 
+pub(crate) mod shape_get_log_delivery_configuration_input;
+
 pub(crate) mod shape_get_signing_certificate_input;
 
 pub(crate) mod shape_get_ui_customization_input;
@@ -442,6 +448,8 @@ pub(crate) mod shape_respond_to_auth_challenge_input;
 pub(crate) mod shape_revoke_token_input;
 
 pub(crate) mod shape_scope_does_not_exist_exception;
+
+pub(crate) mod shape_set_log_delivery_configuration_input;
 
 pub(crate) mod shape_set_risk_configuration_input;
 
@@ -569,6 +577,10 @@ pub(crate) mod shape_lambda_config_type;
 
 pub(crate) mod shape_list_of_string_types;
 
+pub(crate) mod shape_log_configuration_type;
+
+pub(crate) mod shape_log_delivery_configuration_type;
+
 pub(crate) mod shape_mfa_option_list_type;
 
 pub(crate) mod shape_mfa_option_type;
@@ -647,6 +659,8 @@ pub(crate) mod shape_callback_ur_ls_list_type;
 
 pub(crate) mod shape_client_permission_list_type;
 
+pub(crate) mod shape_cloud_watch_logs_configuration_type;
+
 pub(crate) mod shape_compromised_credentials_actions_type;
 
 pub(crate) mod shape_custom_email_lambda_version_config_type;
@@ -658,6 +672,8 @@ pub(crate) mod shape_explicit_auth_flows_list_type;
 pub(crate) mod shape_http_header;
 
 pub(crate) mod shape_idp_identifiers_list_type;
+
+pub(crate) mod shape_log_configuration_list_type;
 
 pub(crate) mod shape_logout_ur_ls_list_type;
 

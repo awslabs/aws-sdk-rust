@@ -192,6 +192,9 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for PutChunkReq
                     ));
                 }
                 let input_3 = &_input.chunk_index;
+                let input_3 = input_3
+                    .as_ref()
+                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("chunk_index", "cannot be empty or unset"))?;
                 let mut chunk_index_encoder = ::aws_smithy_types::primitive::Encoder::from(*input_3);
                 let chunk_index = chunk_index_encoder.encode();
                 if chunk_index.is_empty() {
@@ -216,6 +219,9 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for PutChunkReq
             ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError> {
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
                 let inner_4 = &_input.length;
+                let inner_4 = inner_4
+                    .as_ref()
+                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("length", "cannot be empty or unset"))?;
                 query.push_kv("length", ::aws_smithy_types::primitive::Encoder::from(*inner_4).encode());
                 let inner_5 = &_input.checksum;
                 let inner_5 = inner_5

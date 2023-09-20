@@ -17,17 +17,17 @@
 //!
 //! __Introduction__
 //!
-//! The Amazon Interactive Video Service (IVS) stage API is REST compatible, using a standard HTTP API and an AWS EventBridge event stream for responses. JSON is used for both requests and responses, including errors.
+//! The Amazon Interactive Video Service (IVS) real-time API is REST compatible, using a standard HTTP API and an AWS EventBridge event stream for responses. JSON is used for both requests and responses, including errors.
 //!
 //! Terminology:
-//!   - The IVS stage API sometimes is referred to as the IVS _RealTime_ API.
-//!   - A _participant token_ is an authorization token used to publish/subscribe to a stage.
+//!   - A _stage_ is a virtual space where participants can exchange video in real time.
+//!   - A _participant token_ is a token that authenticates a participant when they join a stage.
 //!   - A _participant object_ represents participants (people) in the stage and contains information about them. When a token is created, it includes a participant ID; when a participant uses that token to join a stage, the participant is associated with that participant ID There is a 1:1 mapping between participant tokens and participants.
 //!
 //! __Resources__
 //!
-//! The following resources contain information about your IVS live stream (see [Getting Started with Amazon IVS](https://docs.aws.amazon.com/ivs/latest/userguide/getting-started.html)):
-//!   - __Stage__ — A stage is a virtual space where multiple participants can exchange audio and video in real time.
+//! The following resources contain information about your IVS live stream (see [Getting Started with Amazon IVS Real-Time Streaming](https://docs.aws.amazon.com/ivs/latest/RealTimeUserGuide/getting-started.html)):
+//!   - __Stage__ — A stage is a virtual space where participants can exchange video in real time.
 //!
 //! __Tagging__
 //!
@@ -35,7 +35,7 @@
 //!
 //! Tags can help you identify and organize your AWS resources. For example, you can use the same tag for different resources to indicate that they are related. You can also use tags to manage access (see [Access Tags](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html)).
 //!
-//! The Amazon IVS stage API has these tag-related endpoints: TagResource, UntagResource, and ListTagsForResource. The following resource supports tagging: Stage.
+//! The Amazon IVS real-time API has these tag-related endpoints: TagResource, UntagResource, and ListTagsForResource. The following resource supports tagging: Stage.
 //!
 //! At most 50 tags can be applied to a resource.
 //!
@@ -70,7 +70,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = "0.56.1"
-//! aws-sdk-ivsrealtime = "0.7.0"
+//! aws-sdk-ivsrealtime = "0.7.1"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

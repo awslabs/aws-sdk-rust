@@ -262,7 +262,7 @@ pub enum GetImagesError {
     InvalidArgumentException(crate::types::error::InvalidArgumentException),
     /// <p>Status Code: 403, The caller is not authorized to perform an operation on the given stream, or the token has expired.</p>
     NotAuthorizedException(crate::types::error::NotAuthorizedException),
-    /// <p> <code>GetMedia</code> throws this error when Kinesis Video Streams can't find the stream that you specified.</p>
+    /// <p> <code>GetImages</code> will throw this error when Kinesis Video Streams can't find the stream that you specified.</p>
     /// <p> <code>GetHLSStreamingSessionURL</code> and <code>GetDASHStreamingSessionURL</code> throw this error if a session with a <code>PlaybackMode</code> of <code>ON_DEMAND</code> or <code>LIVE_REPLAY</code>is requested for a stream that has no fragments within the requested time range, or if a session with a <code>PlaybackMode</code> of <code>LIVE</code> is requested for a stream that has no fragments within the last 30 seconds.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
@@ -380,3 +380,6 @@ mod _get_images_output;
 
 /// Builders
 pub mod builders;
+
+/// Paginator for this operation
+pub mod paginator;

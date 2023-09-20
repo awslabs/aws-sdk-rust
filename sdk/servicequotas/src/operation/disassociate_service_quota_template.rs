@@ -275,13 +275,13 @@ pub enum DisassociateServiceQuotaTemplateError {
     AwsServiceAccessNotEnabledException(crate::types::error::AwsServiceAccessNotEnabledException),
     /// <p>You can't perform this action because a dependency does not have access.</p>
     DependencyAccessDeniedException(crate::types::error::DependencyAccessDeniedException),
-    /// <p>The account making this call is not a member of an organization.</p>
+    /// <p>The Amazon Web Services account making this call is not a member of an organization.</p>
     NoAvailableOrganizationException(crate::types::error::NoAvailableOrganizationException),
     /// <p>Something went wrong.</p>
     ServiceException(crate::types::error::ServiceException),
     /// <p>The quota request template is not associated with your organization.</p>
     ServiceQuotaTemplateNotInUseException(crate::types::error::ServiceQuotaTemplateNotInUseException),
-    /// <p>The Service Quotas template is not available in this AWS Region.</p>
+    /// <p>The Service Quotas template is not available in this Amazon Web Services Region.</p>
     TemplatesNotAvailableInRegionException(crate::types::error::TemplatesNotAvailableInRegionException),
     /// <p>Due to throttling, the request was denied. Slow down the rate of request calls, or request an increase for this quota.</p>
     TooManyRequestsException(crate::types::error::TooManyRequestsException),

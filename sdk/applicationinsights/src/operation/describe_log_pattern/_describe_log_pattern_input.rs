@@ -9,6 +9,8 @@ pub struct DescribeLogPatternInput {
     pub pattern_set_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the log pattern.</p>
     pub pattern_name: ::std::option::Option<::std::string::String>,
+    /// <p>The AWS account ID for the resource group owner.</p>
+    pub account_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeLogPatternInput {
     /// <p>The name of the resource group.</p>
@@ -22,6 +24,10 @@ impl DescribeLogPatternInput {
     /// <p>The name of the log pattern.</p>
     pub fn pattern_name(&self) -> ::std::option::Option<&str> {
         self.pattern_name.as_deref()
+    }
+    /// <p>The AWS account ID for the resource group owner.</p>
+    pub fn account_id(&self) -> ::std::option::Option<&str> {
+        self.account_id.as_deref()
     }
 }
 impl DescribeLogPatternInput {
@@ -38,6 +44,7 @@ pub struct DescribeLogPatternInputBuilder {
     pub(crate) resource_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) pattern_set_name: ::std::option::Option<::std::string::String>,
     pub(crate) pattern_name: ::std::option::Option<::std::string::String>,
+    pub(crate) account_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeLogPatternInputBuilder {
     /// <p>The name of the resource group.</p>
@@ -82,6 +89,20 @@ impl DescribeLogPatternInputBuilder {
     pub fn get_pattern_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.pattern_name
     }
+    /// <p>The AWS account ID for the resource group owner.</p>
+    pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.account_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The AWS account ID for the resource group owner.</p>
+    pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.account_id = input;
+        self
+    }
+    /// <p>The AWS account ID for the resource group owner.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
+    }
     /// Consumes the builder and constructs a [`DescribeLogPatternInput`](crate::operation::describe_log_pattern::DescribeLogPatternInput).
     pub fn build(
         self,
@@ -90,6 +111,7 @@ impl DescribeLogPatternInputBuilder {
             resource_group_name: self.resource_group_name,
             pattern_set_name: self.pattern_set_name,
             pattern_name: self.pattern_name,
+            account_id: self.account_id,
         })
     }
 }

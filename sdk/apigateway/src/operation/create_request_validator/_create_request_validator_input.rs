@@ -9,9 +9,9 @@ pub struct CreateRequestValidatorInput {
     /// <p>The name of the to-be-created RequestValidator.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A Boolean flag to indicate whether to validate request body according to the configured model schema for the method (<code>true</code>) or not (<code>false</code>).</p>
-    pub validate_request_body: bool,
+    pub validate_request_body: ::std::option::Option<bool>,
     /// <p>A Boolean flag to indicate whether to validate request parameters, <code>true</code>, or not <code>false</code>.</p>
-    pub validate_request_parameters: bool,
+    pub validate_request_parameters: ::std::option::Option<bool>,
 }
 impl CreateRequestValidatorInput {
     /// <p>The string identifier of the associated RestApi.</p>
@@ -23,11 +23,11 @@ impl CreateRequestValidatorInput {
         self.name.as_deref()
     }
     /// <p>A Boolean flag to indicate whether to validate request body according to the configured model schema for the method (<code>true</code>) or not (<code>false</code>).</p>
-    pub fn validate_request_body(&self) -> bool {
+    pub fn validate_request_body(&self) -> ::std::option::Option<bool> {
         self.validate_request_body
     }
     /// <p>A Boolean flag to indicate whether to validate request parameters, <code>true</code>, or not <code>false</code>.</p>
-    pub fn validate_request_parameters(&self) -> bool {
+    pub fn validate_request_parameters(&self) -> ::std::option::Option<bool> {
         self.validate_request_parameters
     }
 }
@@ -112,8 +112,8 @@ impl CreateRequestValidatorInputBuilder {
         ::std::result::Result::Ok(crate::operation::create_request_validator::CreateRequestValidatorInput {
             rest_api_id: self.rest_api_id,
             name: self.name,
-            validate_request_body: self.validate_request_body.unwrap_or_default(),
-            validate_request_parameters: self.validate_request_parameters.unwrap_or_default(),
+            validate_request_body: self.validate_request_body,
+            validate_request_parameters: self.validate_request_parameters,
         })
     }
 }

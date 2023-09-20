@@ -13,6 +13,9 @@ pub mod describe_affected_entities_for_organization;
 /// Types for the `DescribeEntityAggregates` operation.
 pub mod describe_entity_aggregates;
 
+/// Types for the `DescribeEntityAggregatesForOrganization` operation.
+pub mod describe_entity_aggregates_for_organization;
+
 /// Types for the `DescribeEventAggregates` operation.
 pub mod describe_event_aggregates;
 

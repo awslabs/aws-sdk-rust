@@ -4,16 +4,31 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`organization_id(impl Into<String>)`](crate::operation::describe_user::builders::DescribeUserFluentBuilder::organization_id) / [`set_organization_id(Option<String>)`](crate::operation::describe_user::builders::DescribeUserFluentBuilder::set_organization_id): <p>The identifier for the organization under which the user exists.</p>
-    ///   - [`user_id(impl Into<String>)`](crate::operation::describe_user::builders::DescribeUserFluentBuilder::user_id) / [`set_user_id(Option<String>)`](crate::operation::describe_user::builders::DescribeUserFluentBuilder::set_user_id): <p>The identifier for the user to be described.</p>
+    ///   - [`user_id(impl Into<String>)`](crate::operation::describe_user::builders::DescribeUserFluentBuilder::user_id) / [`set_user_id(Option<String>)`](crate::operation::describe_user::builders::DescribeUserFluentBuilder::set_user_id): <p>The identifier for the user to be described.</p>  <p>The identifier can be the <i>UserId</i>, <i>Username</i>, or <i>email</i>. The following identity formats are available:</p>  <ul>   <li> <p>User ID: 12345678-1234-1234-1234-123456789012 or S-1-1-12-1234567890-123456789-123456789-1234</p> </li>   <li> <p>Email address: user@domain.tld</p> </li>   <li> <p>User name: user</p> </li>  </ul>  <p></p>
     /// - On success, responds with [`DescribeUserOutput`](crate::operation::describe_user::DescribeUserOutput) with field(s):
     ///   - [`user_id(Option<String>)`](crate::operation::describe_user::DescribeUserOutput::user_id): <p>The identifier for the described user.</p>
     ///   - [`name(Option<String>)`](crate::operation::describe_user::DescribeUserOutput::name): <p>The name for the user.</p>
     ///   - [`email(Option<String>)`](crate::operation::describe_user::DescribeUserOutput::email): <p>The email of the user.</p>
     ///   - [`display_name(Option<String>)`](crate::operation::describe_user::DescribeUserOutput::display_name): <p>The display name of the user.</p>
     ///   - [`state(Option<EntityState>)`](crate::operation::describe_user::DescribeUserOutput::state): <p>The state of a user: enabled (registered to WorkMail) or disabled (deregistered or never registered to WorkMail).</p>
-    ///   - [`user_role(Option<UserRole>)`](crate::operation::describe_user::DescribeUserOutput::user_role): <p>In certain cases, other entities are modeled as users. If interoperability is enabled, resources are imported into WorkMail as users. Because different WorkMail organizations rely on different directory types, administrators can distinguish between an unregistered user (account is disabled and has a user role) and the directory administrators. The values are USER, RESOURCE, and SYSTEM_USER.</p>
+    ///   - [`user_role(Option<UserRole>)`](crate::operation::describe_user::DescribeUserOutput::user_role): <p>In certain cases, other entities are modeled as users. If interoperability is enabled, resources are imported into WorkMail as users. Because different WorkMail organizations rely on different directory types, administrators can distinguish between an unregistered user (account is disabled and has a user role) and the directory administrators. The values are USER, RESOURCE, SYSTEM_USER, and REMOTE_USER.</p>
     ///   - [`enabled_date(Option<DateTime>)`](crate::operation::describe_user::DescribeUserOutput::enabled_date): <p>The date and time at which the user was enabled for WorkMailusage, in UNIX epoch time format.</p>
     ///   - [`disabled_date(Option<DateTime>)`](crate::operation::describe_user::DescribeUserOutput::disabled_date): <p>The date and time at which the user was disabled for WorkMail usage, in UNIX epoch time format.</p>
+    ///   - [`mailbox_provisioned_date(Option<DateTime>)`](crate::operation::describe_user::DescribeUserOutput::mailbox_provisioned_date): <p>The date when the mailbox was created for the user.</p>
+    ///   - [`mailbox_deprovisioned_date(Option<DateTime>)`](crate::operation::describe_user::DescribeUserOutput::mailbox_deprovisioned_date): <p>The date when the mailbox was removed for the user.</p>
+    ///   - [`first_name(Option<String>)`](crate::operation::describe_user::DescribeUserOutput::first_name): <p>First name of the user.</p>
+    ///   - [`last_name(Option<String>)`](crate::operation::describe_user::DescribeUserOutput::last_name): <p>Last name of the user.</p>
+    ///   - [`hidden_from_global_address_list(bool)`](crate::operation::describe_user::DescribeUserOutput::hidden_from_global_address_list): <p>If enabled, the user is hidden from the global address list.</p>
+    ///   - [`initials(Option<String>)`](crate::operation::describe_user::DescribeUserOutput::initials): <p>Initials of the user.</p>
+    ///   - [`telephone(Option<String>)`](crate::operation::describe_user::DescribeUserOutput::telephone): <p>User's contact number.</p>
+    ///   - [`street(Option<String>)`](crate::operation::describe_user::DescribeUserOutput::street): <p>Street where the user is located.</p>
+    ///   - [`job_title(Option<String>)`](crate::operation::describe_user::DescribeUserOutput::job_title): <p>Job title of the user.</p>
+    ///   - [`city(Option<String>)`](crate::operation::describe_user::DescribeUserOutput::city): <p>City where the user is located.</p>
+    ///   - [`company(Option<String>)`](crate::operation::describe_user::DescribeUserOutput::company): <p>Company of the user.</p>
+    ///   - [`zip_code(Option<String>)`](crate::operation::describe_user::DescribeUserOutput::zip_code): <p>Zip code of the user.</p>
+    ///   - [`department(Option<String>)`](crate::operation::describe_user::DescribeUserOutput::department): <p>Department of the user.</p>
+    ///   - [`country(Option<String>)`](crate::operation::describe_user::DescribeUserOutput::country): <p>Country where the user is located.</p>
+    ///   - [`office(Option<String>)`](crate::operation::describe_user::DescribeUserOutput::office): <p>Office where the user is located.</p>
     /// - On failure, responds with [`SdkError<DescribeUserError>`](crate::operation::describe_user::DescribeUserError)
     pub fn describe_user(&self) -> crate::operation::describe_user::builders::DescribeUserFluentBuilder {
         crate::operation::describe_user::builders::DescribeUserFluentBuilder::new(self.handle.clone())

@@ -22,6 +22,8 @@ pub struct CreateCsvClassifierRequest {
     pub custom_datatype_configured: ::std::option::Option<bool>,
     /// <p>Creates a list of supported custom datatypes.</p>
     pub custom_datatypes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>Sets the SerDe for processing CSV in the classifier, which will be applied in the Data Catalog. Valid values are <code>OpenCSVSerDe</code>, <code>LazySimpleSerDe</code>, and <code>None</code>. You can specify the <code>None</code> value when you want the crawler to do the detection.</p>
+    pub serde: ::std::option::Option<crate::types::CsvSerdeOption>,
 }
 impl CreateCsvClassifierRequest {
     /// <p>The name of the classifier.</p>
@@ -60,6 +62,10 @@ impl CreateCsvClassifierRequest {
     pub fn custom_datatypes(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.custom_datatypes.as_deref()
     }
+    /// <p>Sets the SerDe for processing CSV in the classifier, which will be applied in the Data Catalog. Valid values are <code>OpenCSVSerDe</code>, <code>LazySimpleSerDe</code>, and <code>None</code>. You can specify the <code>None</code> value when you want the crawler to do the detection.</p>
+    pub fn serde(&self) -> ::std::option::Option<&crate::types::CsvSerdeOption> {
+        self.serde.as_ref()
+    }
 }
 impl CreateCsvClassifierRequest {
     /// Creates a new builder-style object to manufacture [`CreateCsvClassifierRequest`](crate::types::CreateCsvClassifierRequest).
@@ -81,6 +87,7 @@ pub struct CreateCsvClassifierRequestBuilder {
     pub(crate) allow_single_column: ::std::option::Option<bool>,
     pub(crate) custom_datatype_configured: ::std::option::Option<bool>,
     pub(crate) custom_datatypes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) serde: ::std::option::Option<crate::types::CsvSerdeOption>,
 }
 impl CreateCsvClassifierRequestBuilder {
     /// <p>The name of the classifier.</p>
@@ -221,6 +228,20 @@ impl CreateCsvClassifierRequestBuilder {
     pub fn get_custom_datatypes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.custom_datatypes
     }
+    /// <p>Sets the SerDe for processing CSV in the classifier, which will be applied in the Data Catalog. Valid values are <code>OpenCSVSerDe</code>, <code>LazySimpleSerDe</code>, and <code>None</code>. You can specify the <code>None</code> value when you want the crawler to do the detection.</p>
+    pub fn serde(mut self, input: crate::types::CsvSerdeOption) -> Self {
+        self.serde = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Sets the SerDe for processing CSV in the classifier, which will be applied in the Data Catalog. Valid values are <code>OpenCSVSerDe</code>, <code>LazySimpleSerDe</code>, and <code>None</code>. You can specify the <code>None</code> value when you want the crawler to do the detection.</p>
+    pub fn set_serde(mut self, input: ::std::option::Option<crate::types::CsvSerdeOption>) -> Self {
+        self.serde = input;
+        self
+    }
+    /// <p>Sets the SerDe for processing CSV in the classifier, which will be applied in the Data Catalog. Valid values are <code>OpenCSVSerDe</code>, <code>LazySimpleSerDe</code>, and <code>None</code>. You can specify the <code>None</code> value when you want the crawler to do the detection.</p>
+    pub fn get_serde(&self) -> &::std::option::Option<crate::types::CsvSerdeOption> {
+        &self.serde
+    }
     /// Consumes the builder and constructs a [`CreateCsvClassifierRequest`](crate::types::CreateCsvClassifierRequest).
     pub fn build(self) -> crate::types::CreateCsvClassifierRequest {
         crate::types::CreateCsvClassifierRequest {
@@ -233,6 +254,7 @@ impl CreateCsvClassifierRequestBuilder {
             allow_single_column: self.allow_single_column,
             custom_datatype_configured: self.custom_datatype_configured,
             custom_datatypes: self.custom_datatypes,
+            serde: self.serde,
         }
     }
 }

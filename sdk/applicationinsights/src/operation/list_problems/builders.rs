@@ -116,6 +116,20 @@ impl ListProblemsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_problems::paginator::ListProblemsPaginator {
         crate::operation::list_problems::paginator::ListProblemsPaginator::new(self.handle, self.inner)
     }
+    /// <p>The AWS account ID for the resource group owner.</p>
+    pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.account_id(input.into());
+        self
+    }
+    /// <p>The AWS account ID for the resource group owner.</p>
+    pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_account_id(input);
+        self
+    }
+    /// <p>The AWS account ID for the resource group owner.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_account_id()
+    }
     /// <p>The name of the resource group.</p>
     pub fn resource_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_group_name(input.into());
@@ -199,5 +213,19 @@ impl ListProblemsFluentBuilder {
     /// <p> The name of the component. </p>
     pub fn get_component_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_component_name()
+    }
+    /// <p>Specifies whether or not you can view the problem. If not specified, visible and ignored problems are returned.</p>
+    pub fn visibility(mut self, input: crate::types::Visibility) -> Self {
+        self.inner = self.inner.visibility(input);
+        self
+    }
+    /// <p>Specifies whether or not you can view the problem. If not specified, visible and ignored problems are returned.</p>
+    pub fn set_visibility(mut self, input: ::std::option::Option<crate::types::Visibility>) -> Self {
+        self.inner = self.inner.set_visibility(input);
+        self
+    }
+    /// <p>Specifies whether or not you can view the problem. If not specified, visible and ignored problems are returned.</p>
+    pub fn get_visibility(&self) -> &::std::option::Option<crate::types::Visibility> {
+        self.inner.get_visibility()
     }
 }

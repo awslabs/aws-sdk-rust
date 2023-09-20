@@ -15,8 +15,8 @@ pub fn ser_associate_discovered_resource_input(
         crate::protocol_serde::shape_discovered_resource::ser_discovered_resource(&mut object_4, var_3)?;
         object_4.finish();
     }
-    if input.dry_run {
-        object.key("DryRun").boolean(input.dry_run);
+    if let Some(var_5) = &input.dry_run {
+        object.key("DryRun").boolean(*var_5);
     }
     Ok(())
 }

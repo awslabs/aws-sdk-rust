@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAccountsForProvisionedPermissionSetOutput {
-    /// <p>The list of AWS <code>AccountIds</code>.</p>
+    /// <p>The list of Amazon Web Services <code>AccountIds</code>.</p>
     pub account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListAccountsForProvisionedPermissionSetOutput {
-    /// <p>The list of AWS <code>AccountIds</code>.</p>
+    /// <p>The list of Amazon Web Services <code>AccountIds</code>.</p>
     pub fn account_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.account_ids.as_deref()
     }
@@ -45,19 +45,19 @@ impl ListAccountsForProvisionedPermissionSetOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
     ///
-    /// <p>The list of AWS <code>AccountIds</code>.</p>
+    /// <p>The list of Amazon Web Services <code>AccountIds</code>.</p>
     pub fn account_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.account_ids.unwrap_or_default();
         v.push(input.into());
         self.account_ids = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The list of AWS <code>AccountIds</code>.</p>
+    /// <p>The list of Amazon Web Services <code>AccountIds</code>.</p>
     pub fn set_account_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.account_ids = input;
         self
     }
-    /// <p>The list of AWS <code>AccountIds</code>.</p>
+    /// <p>The list of Amazon Web Services <code>AccountIds</code>.</p>
     pub fn get_account_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.account_ids
     }

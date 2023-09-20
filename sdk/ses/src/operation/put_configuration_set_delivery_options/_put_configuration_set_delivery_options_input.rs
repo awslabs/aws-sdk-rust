@@ -4,13 +4,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutConfigurationSetDeliveryOptionsInput {
-    /// <p>The name of the configuration set that you want to specify the delivery options for.</p>
+    /// <p>The name of the configuration set.</p>
     pub configuration_set_name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether messages that use the configuration set are required to use Transport Layer Security (TLS).</p>
     pub delivery_options: ::std::option::Option<crate::types::DeliveryOptions>,
 }
 impl PutConfigurationSetDeliveryOptionsInput {
-    /// <p>The name of the configuration set that you want to specify the delivery options for.</p>
+    /// <p>The name of the configuration set.</p>
     pub fn configuration_set_name(&self) -> ::std::option::Option<&str> {
         self.configuration_set_name.as_deref()
     }
@@ -34,17 +34,17 @@ pub struct PutConfigurationSetDeliveryOptionsInputBuilder {
     pub(crate) delivery_options: ::std::option::Option<crate::types::DeliveryOptions>,
 }
 impl PutConfigurationSetDeliveryOptionsInputBuilder {
-    /// <p>The name of the configuration set that you want to specify the delivery options for.</p>
+    /// <p>The name of the configuration set.</p>
     pub fn configuration_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration_set_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the configuration set that you want to specify the delivery options for.</p>
+    /// <p>The name of the configuration set.</p>
     pub fn set_configuration_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.configuration_set_name = input;
         self
     }
-    /// <p>The name of the configuration set that you want to specify the delivery options for.</p>
+    /// <p>The name of the configuration set.</p>
     pub fn get_configuration_set_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.configuration_set_name
     }

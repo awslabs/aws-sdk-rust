@@ -11,7 +11,7 @@ pub struct ResetDbParameterGroupInput {
     /// </ul>
     pub db_parameter_group_name: ::std::option::Option<::std::string::String>,
     /// <p>A value that indicates whether to reset all parameters in the DB parameter group to default values. By default, all parameters in the DB parameter group are reset to default values.</p>
-    pub reset_all_parameters: bool,
+    pub reset_all_parameters: ::std::option::Option<bool>,
     /// <p>To reset the entire DB parameter group, specify the <code>DBParameterGroup</code> name and <code>ResetAllParameters</code> parameters. To reset specific parameters, provide a list of the following: <code>ParameterName</code> and <code>ApplyMethod</code>. A maximum of 20 parameters can be modified in a single request.</p>
     /// <p> <b>MySQL</b> </p>
     /// <p>Valid Values (for Apply method): <code>immediate</code> | <code>pending-reboot</code> </p>
@@ -33,7 +33,7 @@ impl ResetDbParameterGroupInput {
         self.db_parameter_group_name.as_deref()
     }
     /// <p>A value that indicates whether to reset all parameters in the DB parameter group to default values. By default, all parameters in the DB parameter group are reset to default values.</p>
-    pub fn reset_all_parameters(&self) -> bool {
+    pub fn reset_all_parameters(&self) -> ::std::option::Option<bool> {
         self.reset_all_parameters
     }
     /// <p>To reset the entire DB parameter group, specify the <code>DBParameterGroup</code> name and <code>ResetAllParameters</code> parameters. To reset specific parameters, provide a list of the following: <code>ParameterName</code> and <code>ApplyMethod</code>. A maximum of 20 parameters can be modified in a single request.</p>
@@ -156,7 +156,7 @@ impl ResetDbParameterGroupInputBuilder {
     {
         ::std::result::Result::Ok(crate::operation::reset_db_parameter_group::ResetDbParameterGroupInput {
             db_parameter_group_name: self.db_parameter_group_name,
-            reset_all_parameters: self.reset_all_parameters.unwrap_or_default(),
+            reset_all_parameters: self.reset_all_parameters,
             parameters: self.parameters,
         })
     }

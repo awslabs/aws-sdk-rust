@@ -22,6 +22,8 @@ pub struct TrafficDistributionGroupSummary {
     /// <li> <p> <code>UPDATE_IN_PROGRESS</code> means the previous <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateTrafficDistributionGroup.html">UpdateTrafficDistributionGroup</a> operation is still in progress and has not yet completed.</p> </li>
     /// </ul>
     pub status: ::std::option::Option<crate::types::TrafficDistributionGroupStatus>,
+    /// <p>Whether this is the default traffic distribution group created during instance replication. The default traffic distribution group cannot be deleted by the <code>DeleteTrafficDistributionGroup</code> API. The default traffic distribution group is deleted as part of the process for deleting a replica.</p>
+    pub is_default: bool,
 }
 impl TrafficDistributionGroupSummary {
     /// <p>The identifier of the traffic distribution group. This can be the ID or the ARN if the API is being called in the Region where the traffic distribution group was created. The ARN must be provided if the call is from the replicated Region.</p>
@@ -52,6 +54,10 @@ impl TrafficDistributionGroupSummary {
     pub fn status(&self) -> ::std::option::Option<&crate::types::TrafficDistributionGroupStatus> {
         self.status.as_ref()
     }
+    /// <p>Whether this is the default traffic distribution group created during instance replication. The default traffic distribution group cannot be deleted by the <code>DeleteTrafficDistributionGroup</code> API. The default traffic distribution group is deleted as part of the process for deleting a replica.</p>
+    pub fn is_default(&self) -> bool {
+        self.is_default
+    }
 }
 impl TrafficDistributionGroupSummary {
     /// Creates a new builder-style object to manufacture [`TrafficDistributionGroupSummary`](crate::types::TrafficDistributionGroupSummary).
@@ -69,6 +75,7 @@ pub struct TrafficDistributionGroupSummaryBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) instance_arn: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::TrafficDistributionGroupStatus>,
+    pub(crate) is_default: ::std::option::Option<bool>,
 }
 impl TrafficDistributionGroupSummaryBuilder {
     /// <p>The identifier of the traffic distribution group. This can be the ID or the ARN if the API is being called in the Region where the traffic distribution group was created. The ARN must be provided if the call is from the replicated Region.</p>
@@ -165,6 +172,20 @@ impl TrafficDistributionGroupSummaryBuilder {
     pub fn get_status(&self) -> &::std::option::Option<crate::types::TrafficDistributionGroupStatus> {
         &self.status
     }
+    /// <p>Whether this is the default traffic distribution group created during instance replication. The default traffic distribution group cannot be deleted by the <code>DeleteTrafficDistributionGroup</code> API. The default traffic distribution group is deleted as part of the process for deleting a replica.</p>
+    pub fn is_default(mut self, input: bool) -> Self {
+        self.is_default = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Whether this is the default traffic distribution group created during instance replication. The default traffic distribution group cannot be deleted by the <code>DeleteTrafficDistributionGroup</code> API. The default traffic distribution group is deleted as part of the process for deleting a replica.</p>
+    pub fn set_is_default(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.is_default = input;
+        self
+    }
+    /// <p>Whether this is the default traffic distribution group created during instance replication. The default traffic distribution group cannot be deleted by the <code>DeleteTrafficDistributionGroup</code> API. The default traffic distribution group is deleted as part of the process for deleting a replica.</p>
+    pub fn get_is_default(&self) -> &::std::option::Option<bool> {
+        &self.is_default
+    }
     /// Consumes the builder and constructs a [`TrafficDistributionGroupSummary`](crate::types::TrafficDistributionGroupSummary).
     pub fn build(self) -> crate::types::TrafficDistributionGroupSummary {
         crate::types::TrafficDistributionGroupSummary {
@@ -173,6 +194,7 @@ impl TrafficDistributionGroupSummaryBuilder {
             name: self.name,
             instance_arn: self.instance_arn,
             status: self.status,
+            is_default: self.is_default.unwrap_or_default(),
         }
     }
 }

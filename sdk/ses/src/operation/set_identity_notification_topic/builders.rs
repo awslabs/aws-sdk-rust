@@ -24,7 +24,7 @@ impl SetIdentityNotificationTopicInputBuilder {
 ///
 /// <p>Sets an Amazon Simple Notification Service (Amazon SNS) topic to use when delivering notifications. When you use this operation, you specify a verified identity, such as an email address or domain. When you send an email that uses the chosen identity in the Source field, Amazon SES sends notifications to the topic you specified. You can send bounce, complaint, or delivery notifications (or any combination of the three) to the Amazon SNS topic that you specify.</p>
 /// <p>You can execute this operation no more than once per second.</p>
-/// <p>For more information about feedback notification, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html">Amazon SES Developer Guide</a>.</p>
+/// <p>For more information about feedback notification, see the <a href="https://docs.aws.amazon.com/ses/latest/dg/monitor-sending-activity-using-notifications.html">Amazon SES Developer Guide</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SetIdentityNotificationTopicFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -112,7 +112,7 @@ impl SetIdentityNotificationTopicFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The identity (email address or domain) that you want to set the Amazon SNS topic for.</p> <important>
+    /// <p>The identity (email address or domain) for the Amazon SNS topic.</p> <important>
     /// <p>You can only specify a verified identity for this parameter.</p>
     /// </important>
     /// <p>You can specify an identity by using its name or by using its Amazon Resource Name (ARN). The following examples are all valid identities: <code>sender@example.com</code>, <code>example.com</code>, <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
@@ -120,7 +120,7 @@ impl SetIdentityNotificationTopicFluentBuilder {
         self.inner = self.inner.identity(input.into());
         self
     }
-    /// <p>The identity (email address or domain) that you want to set the Amazon SNS topic for.</p> <important>
+    /// <p>The identity (email address or domain) for the Amazon SNS topic.</p> <important>
     /// <p>You can only specify a verified identity for this parameter.</p>
     /// </important>
     /// <p>You can specify an identity by using its name or by using its Amazon Resource Name (ARN). The following examples are all valid identities: <code>sender@example.com</code>, <code>example.com</code>, <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
@@ -128,24 +128,24 @@ impl SetIdentityNotificationTopicFluentBuilder {
         self.inner = self.inner.set_identity(input);
         self
     }
-    /// <p>The identity (email address or domain) that you want to set the Amazon SNS topic for.</p> <important>
+    /// <p>The identity (email address or domain) for the Amazon SNS topic.</p> <important>
     /// <p>You can only specify a verified identity for this parameter.</p>
     /// </important>
     /// <p>You can specify an identity by using its name or by using its Amazon Resource Name (ARN). The following examples are all valid identities: <code>sender@example.com</code>, <code>example.com</code>, <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
     pub fn get_identity(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_identity()
     }
-    /// <p>The type of notifications that will be published to the specified Amazon SNS topic.</p>
+    /// <p>The type of notifications that are published to the specified Amazon SNS topic.</p>
     pub fn notification_type(mut self, input: crate::types::NotificationType) -> Self {
         self.inner = self.inner.notification_type(input);
         self
     }
-    /// <p>The type of notifications that will be published to the specified Amazon SNS topic.</p>
+    /// <p>The type of notifications that are published to the specified Amazon SNS topic.</p>
     pub fn set_notification_type(mut self, input: ::std::option::Option<crate::types::NotificationType>) -> Self {
         self.inner = self.inner.set_notification_type(input);
         self
     }
-    /// <p>The type of notifications that will be published to the specified Amazon SNS topic.</p>
+    /// <p>The type of notifications that are published to the specified Amazon SNS topic.</p>
     pub fn get_notification_type(&self) -> &::std::option::Option<crate::types::NotificationType> {
         self.inner.get_notification_type()
     }

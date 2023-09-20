@@ -226,6 +226,13 @@ pub(crate) fn de_start_snapshot(
                             .transpose()?,
                     );
                 }
+                "SseType" => {
+                    builder = builder.set_sse_type(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::SseType::from(u.as_ref())))
+                            .transpose()?,
+                    );
+                }
                 "StartTime" => {
                     builder = builder.set_start_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                         tokens.next(),

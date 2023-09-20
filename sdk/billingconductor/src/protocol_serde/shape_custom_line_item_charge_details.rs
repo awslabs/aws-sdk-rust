@@ -21,5 +21,17 @@ pub fn ser_custom_line_item_charge_details(
     if let Some(var_5) = &input.r#type {
         object.key("Type").string(var_5.as_str());
     }
+    if let Some(var_6) = &input.line_item_filters {
+        let mut array_7 = object.key("LineItemFilters").start_array();
+        for item_8 in var_6 {
+            {
+                #[allow(unused_mut)]
+                let mut object_9 = array_7.value().start_object();
+                crate::protocol_serde::shape_line_item_filter::ser_line_item_filter(&mut object_9, item_8)?;
+                object_9.finish();
+            }
+        }
+        array_7.finish();
+    }
     Ok(())
 }

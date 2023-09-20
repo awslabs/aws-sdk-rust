@@ -24,6 +24,8 @@ pub struct CreateTaskInput {
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::TagListEntry>>,
     /// <p>Specifies a list of filter rules that include specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
     pub includes: ::std::option::Option<::std::vec::Vec<crate::types::FilterRule>>,
+    /// <p>Specifies how you want to configure a task report, which provides detailed information about for your DataSync transfer.</p>
+    pub task_report_config: ::std::option::Option<crate::types::TaskReportConfig>,
 }
 impl CreateTaskInput {
     /// <p>The Amazon Resource Name (ARN) of the source location for the task.</p>
@@ -64,6 +66,10 @@ impl CreateTaskInput {
     pub fn includes(&self) -> ::std::option::Option<&[crate::types::FilterRule]> {
         self.includes.as_deref()
     }
+    /// <p>Specifies how you want to configure a task report, which provides detailed information about for your DataSync transfer.</p>
+    pub fn task_report_config(&self) -> ::std::option::Option<&crate::types::TaskReportConfig> {
+        self.task_report_config.as_ref()
+    }
 }
 impl CreateTaskInput {
     /// Creates a new builder-style object to manufacture [`CreateTaskInput`](crate::operation::create_task::CreateTaskInput).
@@ -85,6 +91,7 @@ pub struct CreateTaskInputBuilder {
     pub(crate) schedule: ::std::option::Option<crate::types::TaskSchedule>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::TagListEntry>>,
     pub(crate) includes: ::std::option::Option<::std::vec::Vec<crate::types::FilterRule>>,
+    pub(crate) task_report_config: ::std::option::Option<crate::types::TaskReportConfig>,
 }
 impl CreateTaskInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the source location for the task.</p>
@@ -237,6 +244,20 @@ impl CreateTaskInputBuilder {
     pub fn get_includes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FilterRule>> {
         &self.includes
     }
+    /// <p>Specifies how you want to configure a task report, which provides detailed information about for your DataSync transfer.</p>
+    pub fn task_report_config(mut self, input: crate::types::TaskReportConfig) -> Self {
+        self.task_report_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies how you want to configure a task report, which provides detailed information about for your DataSync transfer.</p>
+    pub fn set_task_report_config(mut self, input: ::std::option::Option<crate::types::TaskReportConfig>) -> Self {
+        self.task_report_config = input;
+        self
+    }
+    /// <p>Specifies how you want to configure a task report, which provides detailed information about for your DataSync transfer.</p>
+    pub fn get_task_report_config(&self) -> &::std::option::Option<crate::types::TaskReportConfig> {
+        &self.task_report_config
+    }
     /// Consumes the builder and constructs a [`CreateTaskInput`](crate::operation::create_task::CreateTaskInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_task::CreateTaskInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_task::CreateTaskInput {
@@ -249,6 +270,7 @@ impl CreateTaskInputBuilder {
             schedule: self.schedule,
             tags: self.tags,
             includes: self.includes,
+            task_report_config: self.task_report_config,
         })
     }
 }

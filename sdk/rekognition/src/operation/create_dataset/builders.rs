@@ -23,7 +23,7 @@ impl CreateDatasetInputBuilder {
 /// Fluent builder constructing a request to `CreateDataset`.
 ///
 /// <p>Creates a new Amazon Rekognition Custom Labels dataset. You can create a dataset by using an Amazon Sagemaker format manifest file or by copying an existing Amazon Rekognition Custom Labels dataset.</p>
-/// <p>To create a training dataset for a project, specify <code>train</code> for the value of <code>DatasetType</code>. To create the test dataset for a project, specify <code>test</code> for the value of <code>DatasetType</code>. </p>
+/// <p>To create a training dataset for a project, specify <code>TRAIN</code> for the value of <code>DatasetType</code>. To create the test dataset for a project, specify <code>TEST</code> for the value of <code>DatasetType</code>. </p>
 /// <p>The response from <code>CreateDataset</code> is the Amazon Resource Name (ARN) for the dataset. Creating a dataset takes a while to complete. Use <code>DescribeDataset</code> to check the current status. The dataset created successfully if the value of <code>Status</code> is <code>CREATE_COMPLETE</code>. </p>
 /// <p>To check if any non-terminal errors occurred, call <code>ListDatasetEntries</code> and check for the presence of <code>errors</code> lists in the JSON Lines.</p>
 /// <p>Dataset creation fails if a terminal error occurs (<code>Status</code> = <code>CREATE_FAILED</code>). Currently, you can't access the terminal error information. </p>
@@ -130,17 +130,17 @@ impl CreateDatasetFluentBuilder {
     pub fn get_dataset_source(&self) -> &::std::option::Option<crate::types::DatasetSource> {
         self.inner.get_dataset_source()
     }
-    /// <p> The type of the dataset. Specify <code>train</code> to create a training dataset. Specify <code>test</code> to create a test dataset. </p>
+    /// <p> The type of the dataset. Specify <code>TRAIN</code> to create a training dataset. Specify <code>TEST</code> to create a test dataset. </p>
     pub fn dataset_type(mut self, input: crate::types::DatasetType) -> Self {
         self.inner = self.inner.dataset_type(input);
         self
     }
-    /// <p> The type of the dataset. Specify <code>train</code> to create a training dataset. Specify <code>test</code> to create a test dataset. </p>
+    /// <p> The type of the dataset. Specify <code>TRAIN</code> to create a training dataset. Specify <code>TEST</code> to create a test dataset. </p>
     pub fn set_dataset_type(mut self, input: ::std::option::Option<crate::types::DatasetType>) -> Self {
         self.inner = self.inner.set_dataset_type(input);
         self
     }
-    /// <p> The type of the dataset. Specify <code>train</code> to create a training dataset. Specify <code>test</code> to create a test dataset. </p>
+    /// <p> The type of the dataset. Specify <code>TRAIN</code> to create a training dataset. Specify <code>TEST</code> to create a test dataset. </p>
     pub fn get_dataset_type(&self) -> &::std::option::Option<crate::types::DatasetType> {
         self.inner.get_dataset_type()
     }

@@ -6,8 +6,8 @@ pub fn ser_get_data_source_input(
     if let Some(var_1) = &input.data_source_id {
         object.key("DataSourceId").string(var_1.as_str());
     }
-    if input.verbose {
-        object.key("Verbose").boolean(input.verbose);
+    if let Some(var_2) = &input.verbose {
+        object.key("Verbose").boolean(*var_2);
     }
     Ok(())
 }

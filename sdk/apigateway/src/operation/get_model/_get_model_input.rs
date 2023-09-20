@@ -9,7 +9,7 @@ pub struct GetModelInput {
     /// <p>The name of the model as an identifier.</p>
     pub model_name: ::std::option::Option<::std::string::String>,
     /// <p>A query parameter of a Boolean value to resolve (<code>true</code>) all external model references and returns a flattened model schema or not (<code>false</code>) The default is <code>false</code>.</p>
-    pub flatten: bool,
+    pub flatten: ::std::option::Option<bool>,
 }
 impl GetModelInput {
     /// <p>The RestApi identifier under which the Model exists.</p>
@@ -21,7 +21,7 @@ impl GetModelInput {
         self.model_name.as_deref()
     }
     /// <p>A query parameter of a Boolean value to resolve (<code>true</code>) all external model references and returns a flattened model schema or not (<code>false</code>) The default is <code>false</code>.</p>
-    pub fn flatten(&self) -> bool {
+    pub fn flatten(&self) -> ::std::option::Option<bool> {
         self.flatten
     }
 }
@@ -88,7 +88,7 @@ impl GetModelInputBuilder {
         ::std::result::Result::Ok(crate::operation::get_model::GetModelInput {
             rest_api_id: self.rest_api_id,
             model_name: self.model_name,
-            flatten: self.flatten.unwrap_or_default(),
+            flatten: self.flatten,
         })
     }
 }

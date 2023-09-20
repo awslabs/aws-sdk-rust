@@ -169,6 +169,7 @@ impl StartInstanceRefreshFluentBuilder {
     /// <ul>
     /// <li> <p>Auto rollback</p> </li>
     /// <li> <p>Checkpoints</p> </li>
+    /// <li> <p>CloudWatch alarms</p> </li>
     /// <li> <p>Skip matching</p> </li>
     /// </ul>
     pub fn preferences(mut self, input: crate::types::RefreshPreferences) -> Self {
@@ -179,6 +180,7 @@ impl StartInstanceRefreshFluentBuilder {
     /// <ul>
     /// <li> <p>Auto rollback</p> </li>
     /// <li> <p>Checkpoints</p> </li>
+    /// <li> <p>CloudWatch alarms</p> </li>
     /// <li> <p>Skip matching</p> </li>
     /// </ul>
     pub fn set_preferences(mut self, input: ::std::option::Option<crate::types::RefreshPreferences>) -> Self {
@@ -189,6 +191,7 @@ impl StartInstanceRefreshFluentBuilder {
     /// <ul>
     /// <li> <p>Auto rollback</p> </li>
     /// <li> <p>Checkpoints</p> </li>
+    /// <li> <p>CloudWatch alarms</p> </li>
     /// <li> <p>Skip matching</p> </li>
     /// </ul>
     pub fn get_preferences(&self) -> &::std::option::Option<crate::types::RefreshPreferences> {

@@ -57,6 +57,8 @@ pub use crate::types::_copy_job_state::CopyJobState;
 
 pub use crate::types::_backup_vault_list_member::BackupVaultListMember;
 
+pub use crate::types::_vault_type::VaultType;
+
 pub use crate::types::_backup_selections_list_member::BackupSelectionsListMember;
 
 pub use crate::types::_backup_plans_list_member::BackupPlansListMember;
@@ -86,6 +88,8 @@ pub use crate::types::_backup_plan::BackupPlan;
 pub use crate::types::_backup_rule::BackupRule;
 
 pub use crate::types::_storage_class::StorageClass;
+
+pub use crate::types::_vault_state::VaultState;
 
 mod _advanced_backup_setting;
 
@@ -174,6 +178,10 @@ mod _restore_job_status;
 mod _restore_jobs_list_member;
 
 mod _storage_class;
+
+mod _vault_state;
+
+mod _vault_type;
 
 /// Builders
 pub mod builders;

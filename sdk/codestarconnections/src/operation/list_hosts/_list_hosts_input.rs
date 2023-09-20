@@ -4,13 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListHostsInput {
     /// <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
-    pub max_results: i32,
+    pub max_results: ::std::option::Option<i32>,
     /// <p>The token that was returned from the previous <code>ListHosts</code> call, which can be used to return the next set of hosts in the list.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListHostsInput {
     /// <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
-    pub fn max_results(&self) -> i32 {
+    pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
     /// <p>The token that was returned from the previous <code>ListHosts</code> call, which can be used to return the next set of hosts in the list.</p>
@@ -64,7 +64,7 @@ impl ListHostsInputBuilder {
     /// Consumes the builder and constructs a [`ListHostsInput`](crate::operation::list_hosts::ListHostsInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::list_hosts::ListHostsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_hosts::ListHostsInput {
-            max_results: self.max_results.unwrap_or_default(),
+            max_results: self.max_results,
             next_token: self.next_token,
         })
     }

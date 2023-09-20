@@ -153,6 +153,42 @@ impl From<crate::operation::describe_entity_aggregates::DescribeEntityAggregates
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_entity_aggregates_for_organization::DescribeEntityAggregatesForOrganizationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_entity_aggregates_for_organization::DescribeEntityAggregatesForOrganizationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_entity_aggregates_for_organization::DescribeEntityAggregatesForOrganizationError> for Error {
+    fn from(err: crate::operation::describe_entity_aggregates_for_organization::DescribeEntityAggregatesForOrganizationError) -> Self {
+        match err {
+            crate::operation::describe_entity_aggregates_for_organization::DescribeEntityAggregatesForOrganizationError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
 impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::describe_event_aggregates::DescribeEventAggregatesError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

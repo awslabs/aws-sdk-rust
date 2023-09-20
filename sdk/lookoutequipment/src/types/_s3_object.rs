@@ -6,7 +6,7 @@
 pub struct S3Object {
     /// <p>The name of the specific S3 bucket. </p>
     pub bucket: ::std::option::Option<::std::string::String>,
-    /// <p>The AWS Key Management Service (AWS KMS) key being used to encrypt the S3 object. Without this key, data in the bucket is not accessible. </p>
+    /// <p>The Amazon Web Services Key Management Service (KMS key) key being used to encrypt the S3 object. Without this key, data in the bucket is not accessible. </p>
     pub key: ::std::option::Option<::std::string::String>,
 }
 impl S3Object {
@@ -14,7 +14,7 @@ impl S3Object {
     pub fn bucket(&self) -> ::std::option::Option<&str> {
         self.bucket.as_deref()
     }
-    /// <p>The AWS Key Management Service (AWS KMS) key being used to encrypt the S3 object. Without this key, data in the bucket is not accessible. </p>
+    /// <p>The Amazon Web Services Key Management Service (KMS key) key being used to encrypt the S3 object. Without this key, data in the bucket is not accessible. </p>
     pub fn key(&self) -> ::std::option::Option<&str> {
         self.key.as_deref()
     }
@@ -48,17 +48,17 @@ impl S3ObjectBuilder {
     pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
         &self.bucket
     }
-    /// <p>The AWS Key Management Service (AWS KMS) key being used to encrypt the S3 object. Without this key, data in the bucket is not accessible. </p>
+    /// <p>The Amazon Web Services Key Management Service (KMS key) key being used to encrypt the S3 object. Without this key, data in the bucket is not accessible. </p>
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The AWS Key Management Service (AWS KMS) key being used to encrypt the S3 object. Without this key, data in the bucket is not accessible. </p>
+    /// <p>The Amazon Web Services Key Management Service (KMS key) key being used to encrypt the S3 object. Without this key, data in the bucket is not accessible. </p>
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key = input;
         self
     }
-    /// <p>The AWS Key Management Service (AWS KMS) key being used to encrypt the S3 object. Without this key, data in the bucket is not accessible. </p>
+    /// <p>The Amazon Web Services Key Management Service (KMS key) key being used to encrypt the S3 object. Without this key, data in the bucket is not accessible. </p>
     pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
         &self.key
     }

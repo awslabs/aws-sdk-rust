@@ -9,32 +9,32 @@ pub fn ser_create_assessment_template_input(
     if let Some(var_2) = &input.assessment_template_name {
         object.key("assessmentTemplateName").string(var_2.as_str());
     }
-    {
+    if let Some(var_3) = &input.duration_in_seconds {
         object.key("durationInSeconds").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.duration_in_seconds).into()),
+            ::aws_smithy_types::Number::NegInt((*var_3).into()),
         );
     }
-    if let Some(var_3) = &input.rules_package_arns {
-        let mut array_4 = object.key("rulesPackageArns").start_array();
-        for item_5 in var_3 {
+    if let Some(var_4) = &input.rules_package_arns {
+        let mut array_5 = object.key("rulesPackageArns").start_array();
+        for item_6 in var_4 {
             {
-                array_4.value().string(item_5.as_str());
+                array_5.value().string(item_6.as_str());
             }
         }
-        array_4.finish();
+        array_5.finish();
     }
-    if let Some(var_6) = &input.user_attributes_for_findings {
-        let mut array_7 = object.key("userAttributesForFindings").start_array();
-        for item_8 in var_6 {
+    if let Some(var_7) = &input.user_attributes_for_findings {
+        let mut array_8 = object.key("userAttributesForFindings").start_array();
+        for item_9 in var_7 {
             {
                 #[allow(unused_mut)]
-                let mut object_9 = array_7.value().start_object();
-                crate::protocol_serde::shape_attribute::ser_attribute(&mut object_9, item_8)?;
-                object_9.finish();
+                let mut object_10 = array_8.value().start_object();
+                crate::protocol_serde::shape_attribute::ser_attribute(&mut object_10, item_9)?;
+                object_10.finish();
             }
         }
-        array_7.finish();
+        array_8.finish();
     }
     Ok(())
 }

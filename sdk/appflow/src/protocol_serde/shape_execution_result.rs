@@ -38,6 +38,20 @@ where
                                     .transpose()?,
                             );
                         }
+                        "numParallelProcesses" => {
+                            builder = builder.set_num_parallel_processes(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i64::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "maxPageSize" => {
+                            builder = builder.set_max_page_size(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i64::try_from)
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

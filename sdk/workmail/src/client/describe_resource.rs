@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`organization_id(impl Into<String>)`](crate::operation::describe_resource::builders::DescribeResourceFluentBuilder::organization_id) / [`set_organization_id(Option<String>)`](crate::operation::describe_resource::builders::DescribeResourceFluentBuilder::set_organization_id): <p>The identifier associated with the organization for which the resource is described.</p>
-    ///   - [`resource_id(impl Into<String>)`](crate::operation::describe_resource::builders::DescribeResourceFluentBuilder::resource_id) / [`set_resource_id(Option<String>)`](crate::operation::describe_resource::builders::DescribeResourceFluentBuilder::set_resource_id): <p>The identifier of the resource to be described.</p>
+    ///   - [`resource_id(impl Into<String>)`](crate::operation::describe_resource::builders::DescribeResourceFluentBuilder::resource_id) / [`set_resource_id(Option<String>)`](crate::operation::describe_resource::builders::DescribeResourceFluentBuilder::set_resource_id): <p>The identifier of the resource to be described.</p>  <p>The identifier can accept <i>ResourceId</i>, <i>Resourcename</i>, or <i>email</i>. The following identity formats are available:</p>  <ul>   <li> <p>Resource ID: r-0123456789a0123456789b0123456789</p> </li>   <li> <p>Email address: resource@domain.tld</p> </li>   <li> <p>Resource name: resource</p> </li>  </ul>
     /// - On success, responds with [`DescribeResourceOutput`](crate::operation::describe_resource::DescribeResourceOutput) with field(s):
     ///   - [`resource_id(Option<String>)`](crate::operation::describe_resource::DescribeResourceOutput::resource_id): <p>The identifier of the described resource.</p>
     ///   - [`email(Option<String>)`](crate::operation::describe_resource::DescribeResourceOutput::email): <p>The email of the described resource.</p>
@@ -14,6 +14,8 @@ impl super::Client {
     ///   - [`state(Option<EntityState>)`](crate::operation::describe_resource::DescribeResourceOutput::state): <p>The state of the resource: enabled (registered to WorkMail), disabled (deregistered or never registered to WorkMail), or deleted.</p>
     ///   - [`enabled_date(Option<DateTime>)`](crate::operation::describe_resource::DescribeResourceOutput::enabled_date): <p>The date and time when a resource was enabled for WorkMail, in UNIX epoch time format.</p>
     ///   - [`disabled_date(Option<DateTime>)`](crate::operation::describe_resource::DescribeResourceOutput::disabled_date): <p>The date and time when a resource was disabled from WorkMail, in UNIX epoch time format.</p>
+    ///   - [`description(Option<String>)`](crate::operation::describe_resource::DescribeResourceOutput::description): <p>Description of the resource.</p>
+    ///   - [`hidden_from_global_address_list(bool)`](crate::operation::describe_resource::DescribeResourceOutput::hidden_from_global_address_list): <p>If enabled, the resource is hidden from the global address list.</p>
     /// - On failure, responds with [`SdkError<DescribeResourceError>`](crate::operation::describe_resource::DescribeResourceError)
     pub fn describe_resource(&self) -> crate::operation::describe_resource::builders::DescribeResourceFluentBuilder {
         crate::operation::describe_resource::builders::DescribeResourceFluentBuilder::new(self.handle.clone())

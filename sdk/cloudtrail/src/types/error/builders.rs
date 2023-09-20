@@ -5,6 +5,8 @@ pub use crate::types::error::_trail_not_provided_exception::TrailNotProvidedExce
 
 pub use crate::types::error::_trail_not_found_exception::TrailNotFoundExceptionBuilder;
 
+pub use crate::types::error::_throttling_exception::ThrottlingExceptionBuilder;
+
 pub use crate::types::error::_s3_bucket_does_not_exist_exception::S3BucketDoesNotExistExceptionBuilder;
 
 pub use crate::types::error::_organizations_not_in_use_exception::OrganizationsNotInUseExceptionBuilder;

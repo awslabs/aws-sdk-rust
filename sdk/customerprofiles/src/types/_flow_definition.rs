@@ -2,7 +2,7 @@
 
 /// <p>The configurations that control how Customer Profiles retrieves data from the source, Amazon AppFlow. Customer Profiles uses this information to create an AppFlow flow on behalf of customers.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct FlowDefinition {
     /// <p>A description of the flow you want to create.</p>
     pub description: ::std::option::Option<::std::string::String>,
@@ -43,6 +43,18 @@ impl FlowDefinition {
         self.trigger_config.as_ref()
     }
 }
+impl ::std::fmt::Debug for FlowDefinition {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("FlowDefinition");
+        formatter.field("description", &"*** Sensitive Data Redacted ***");
+        formatter.field("flow_name", &"*** Sensitive Data Redacted ***");
+        formatter.field("kms_arn", &"*** Sensitive Data Redacted ***");
+        formatter.field("source_flow_config", &"*** Sensitive Data Redacted ***");
+        formatter.field("tasks", &"*** Sensitive Data Redacted ***");
+        formatter.field("trigger_config", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl FlowDefinition {
     /// Creates a new builder-style object to manufacture [`FlowDefinition`](crate::types::FlowDefinition).
     pub fn builder() -> crate::types::builders::FlowDefinitionBuilder {
@@ -52,7 +64,7 @@ impl FlowDefinition {
 
 /// A builder for [`FlowDefinition`](crate::types::FlowDefinition).
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct FlowDefinitionBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) flow_name: ::std::option::Option<::std::string::String>,
@@ -162,5 +174,17 @@ impl FlowDefinitionBuilder {
             tasks: self.tasks,
             trigger_config: self.trigger_config,
         }
+    }
+}
+impl ::std::fmt::Debug for FlowDefinitionBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("FlowDefinitionBuilder");
+        formatter.field("description", &"*** Sensitive Data Redacted ***");
+        formatter.field("flow_name", &"*** Sensitive Data Redacted ***");
+        formatter.field("kms_arn", &"*** Sensitive Data Redacted ***");
+        formatter.field("source_flow_config", &"*** Sensitive Data Redacted ***");
+        formatter.field("tasks", &"*** Sensitive Data Redacted ***");
+        formatter.field("trigger_config", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

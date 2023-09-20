@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_matching_jobs::builders::ListMatchingJobsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_matching_jobs::builders::ListMatchingJobsFluentBuilder::set_next_token): <p>The pagination token from the previous <code>ListSchemaMappings</code> API call.</p>
     ///   - [`max_results(i32)`](crate::operation::list_matching_jobs::builders::ListMatchingJobsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_matching_jobs::builders::ListMatchingJobsFluentBuilder::set_max_results): <p>The maximum number of objects returned per page.</p>
     /// - On success, responds with [`ListMatchingJobsOutput`](crate::operation::list_matching_jobs::ListMatchingJobsOutput) with field(s):
-    ///   - [`jobs(Option<Vec<JobSummary>>)`](crate::operation::list_matching_jobs::ListMatchingJobsOutput::jobs): <p>A list of JobSummary objects, each of which contain the ID, status, start time, and end time of a job.</p>
+    ///   - [`jobs(Option<Vec<JobSummary>>)`](crate::operation::list_matching_jobs::ListMatchingJobsOutput::jobs): <p>A list of <code>JobSummary</code> objects, each of which contain the ID, status, start time, and end time of a job.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_matching_jobs::ListMatchingJobsOutput::next_token): <p>The pagination token from the previous <code>ListSchemaMappings</code> API call.</p>
     /// - On failure, responds with [`SdkError<ListMatchingJobsError>`](crate::operation::list_matching_jobs::ListMatchingJobsError)
     pub fn list_matching_jobs(&self) -> crate::operation::list_matching_jobs::builders::ListMatchingJobsFluentBuilder {

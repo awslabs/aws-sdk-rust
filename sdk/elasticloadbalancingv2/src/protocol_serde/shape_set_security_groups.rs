@@ -130,6 +130,20 @@ pub fn de_set_security_groups(
                 builder = builder.set_security_group_ids(var_1);
             }
             ,
+            s if s.matches("EnforceSecurityGroupInboundRulesOnPrivateLinkTraffic") /* EnforceSecurityGroupInboundRulesOnPrivateLinkTraffic com.amazonaws.elasticloadbalancingv2.synthetic#SetSecurityGroupsOutput$EnforceSecurityGroupInboundRulesOnPrivateLinkTraffic */ =>  {
+                let var_2 =
+                    Some(
+                        Result::<crate::types::EnforceSecurityGroupInboundRulesOnPrivateLinkTrafficEnum, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::EnforceSecurityGroupInboundRulesOnPrivateLinkTrafficEnum::from(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_enforce_security_group_inbound_rules_on_private_link_traffic(var_2);
+            }
+            ,
             _ => {}
         }
         }

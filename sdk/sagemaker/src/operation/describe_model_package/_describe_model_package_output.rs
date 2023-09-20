@@ -53,6 +53,8 @@ pub struct DescribeModelPackageOutput {
     pub sample_payload_url: ::std::option::Option<::std::string::String>,
     /// <p>An array of additional Inference Specification objects. Each additional Inference Specification specifies artifacts based on this model package that can be used on inference endpoints. Generally used with SageMaker Neo to store the compiled artifacts.</p>
     pub additional_inference_specifications: ::std::option::Option<::std::vec::Vec<crate::types::AdditionalInferenceSpecificationDefinition>>,
+    /// <p>Indicates if you want to skip model validation.</p>
+    pub skip_model_validation: ::std::option::Option<crate::types::SkipModelValidation>,
     _request_id: Option<String>,
 }
 impl DescribeModelPackageOutput {
@@ -156,6 +158,10 @@ impl DescribeModelPackageOutput {
     pub fn additional_inference_specifications(&self) -> ::std::option::Option<&[crate::types::AdditionalInferenceSpecificationDefinition]> {
         self.additional_inference_specifications.as_deref()
     }
+    /// <p>Indicates if you want to skip model validation.</p>
+    pub fn skip_model_validation(&self) -> ::std::option::Option<&crate::types::SkipModelValidation> {
+        self.skip_model_validation.as_ref()
+    }
 }
 impl ::aws_http::request_id::RequestId for DescribeModelPackageOutput {
     fn request_id(&self) -> Option<&str> {
@@ -198,6 +204,7 @@ pub struct DescribeModelPackageOutputBuilder {
     pub(crate) task: ::std::option::Option<::std::string::String>,
     pub(crate) sample_payload_url: ::std::option::Option<::std::string::String>,
     pub(crate) additional_inference_specifications: ::std::option::Option<::std::vec::Vec<crate::types::AdditionalInferenceSpecificationDefinition>>,
+    pub(crate) skip_model_validation: ::std::option::Option<crate::types::SkipModelValidation>,
     _request_id: Option<String>,
 }
 impl DescribeModelPackageOutputBuilder {
@@ -577,6 +584,20 @@ impl DescribeModelPackageOutputBuilder {
     ) -> &::std::option::Option<::std::vec::Vec<crate::types::AdditionalInferenceSpecificationDefinition>> {
         &self.additional_inference_specifications
     }
+    /// <p>Indicates if you want to skip model validation.</p>
+    pub fn skip_model_validation(mut self, input: crate::types::SkipModelValidation) -> Self {
+        self.skip_model_validation = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates if you want to skip model validation.</p>
+    pub fn set_skip_model_validation(mut self, input: ::std::option::Option<crate::types::SkipModelValidation>) -> Self {
+        self.skip_model_validation = input;
+        self
+    }
+    /// <p>Indicates if you want to skip model validation.</p>
+    pub fn get_skip_model_validation(&self) -> &::std::option::Option<crate::types::SkipModelValidation> {
+        &self.skip_model_validation
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -614,6 +635,7 @@ impl DescribeModelPackageOutputBuilder {
             task: self.task,
             sample_payload_url: self.sample_payload_url,
             additional_inference_specifications: self.additional_inference_specifications,
+            skip_model_validation: self.skip_model_validation,
             _request_id: self._request_id,
         }
     }

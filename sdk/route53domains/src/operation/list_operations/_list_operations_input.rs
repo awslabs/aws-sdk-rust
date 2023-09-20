@@ -17,7 +17,7 @@ pub struct ListOperationsInput {
     pub r#type: ::std::option::Option<::std::vec::Vec<crate::types::OperationType>>,
     /// <p> The sort type for returned values. </p>
     pub sort_by: ::std::option::Option<crate::types::ListOperationsSortAttributeName>,
-    /// <p> The sort order ofr returned values, either ascending or descending. </p>
+    /// <p> The sort order for returned values, either ascending or descending. </p>
     pub sort_order: ::std::option::Option<crate::types::SortOrder>,
 }
 impl ListOperationsInput {
@@ -46,7 +46,7 @@ impl ListOperationsInput {
     pub fn sort_by(&self) -> ::std::option::Option<&crate::types::ListOperationsSortAttributeName> {
         self.sort_by.as_ref()
     }
-    /// <p> The sort order ofr returned values, either ascending or descending. </p>
+    /// <p> The sort order for returned values, either ascending or descending. </p>
     pub fn sort_order(&self) -> ::std::option::Option<&crate::types::SortOrder> {
         self.sort_order.as_ref()
     }
@@ -170,17 +170,17 @@ impl ListOperationsInputBuilder {
     pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::ListOperationsSortAttributeName> {
         &self.sort_by
     }
-    /// <p> The sort order ofr returned values, either ascending or descending. </p>
+    /// <p> The sort order for returned values, either ascending or descending. </p>
     pub fn sort_order(mut self, input: crate::types::SortOrder) -> Self {
         self.sort_order = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The sort order ofr returned values, either ascending or descending. </p>
+    /// <p> The sort order for returned values, either ascending or descending. </p>
     pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrder>) -> Self {
         self.sort_order = input;
         self
     }
-    /// <p> The sort order ofr returned values, either ascending or descending. </p>
+    /// <p> The sort order for returned values, either ascending or descending. </p>
     pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrder> {
         &self.sort_order
     }

@@ -53,6 +53,9 @@ where
                             builder = builder
                                 .set_document_attributes(crate::protocol_serde::shape_document_attribute_list::de_document_attribute_list(tokens)?);
                         }
+                        "ScoreAttributes" => {
+                            builder = builder.set_score_attributes(crate::protocol_serde::shape_score_attributes::de_score_attributes(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

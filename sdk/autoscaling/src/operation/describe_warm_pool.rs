@@ -369,3 +369,6 @@ mod _describe_warm_pool_output;
 
 /// Builders
 pub mod builders;
+
+/// Paginator for this operation
+pub mod paginator;

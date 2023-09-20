@@ -3,8 +3,17 @@ pub fn ser_update_membership_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_membership::UpdateMembershipInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.query_log_status {
-        object.key("queryLogStatus").string(var_1.as_str());
+    if let Some(var_1) = &input.default_result_configuration {
+        #[allow(unused_mut)]
+        let mut object_2 = object.key("defaultResultConfiguration").start_object();
+        crate::protocol_serde::shape_membership_protected_query_result_configuration::ser_membership_protected_query_result_configuration(
+            &mut object_2,
+            var_1,
+        )?;
+        object_2.finish();
+    }
+    if let Some(var_3) = &input.query_log_status {
+        object.key("queryLogStatus").string(var_3.as_str());
     }
     Ok(())
 }

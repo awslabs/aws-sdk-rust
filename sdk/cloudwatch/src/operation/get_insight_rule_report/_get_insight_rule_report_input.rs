@@ -24,7 +24,7 @@ pub struct GetInsightRuleReportInput {
     /// <li> <p> <code>Average</code> -- the average value from all contributors during the time period represented by that data point.</p> </li>
     /// </ul>
     pub metrics: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>Determines what statistic to use to rank the contributors. Valid values are SUM and MAXIMUM.</p>
+    /// <p>Determines what statistic to use to rank the contributors. Valid values are <code>Sum</code> and <code>Maximum</code>.</p>
     pub order_by: ::std::option::Option<::std::string::String>,
 }
 impl GetInsightRuleReportInput {
@@ -61,7 +61,7 @@ impl GetInsightRuleReportInput {
     pub fn metrics(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.metrics.as_deref()
     }
-    /// <p>Determines what statistic to use to rank the contributors. Valid values are SUM and MAXIMUM.</p>
+    /// <p>Determines what statistic to use to rank the contributors. Valid values are <code>Sum</code> and <code>Maximum</code>.</p>
     pub fn order_by(&self) -> ::std::option::Option<&str> {
         self.order_by.as_deref()
     }
@@ -203,17 +203,17 @@ impl GetInsightRuleReportInputBuilder {
     pub fn get_metrics(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.metrics
     }
-    /// <p>Determines what statistic to use to rank the contributors. Valid values are SUM and MAXIMUM.</p>
+    /// <p>Determines what statistic to use to rank the contributors. Valid values are <code>Sum</code> and <code>Maximum</code>.</p>
     pub fn order_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.order_by = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Determines what statistic to use to rank the contributors. Valid values are SUM and MAXIMUM.</p>
+    /// <p>Determines what statistic to use to rank the contributors. Valid values are <code>Sum</code> and <code>Maximum</code>.</p>
     pub fn set_order_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.order_by = input;
         self
     }
-    /// <p>Determines what statistic to use to rank the contributors. Valid values are SUM and MAXIMUM.</p>
+    /// <p>Determines what statistic to use to rank the contributors. Valid values are <code>Sum</code> and <code>Maximum</code>.</p>
     pub fn get_order_by(&self) -> &::std::option::Option<::std::string::String> {
         &self.order_by
     }

@@ -9,5 +9,11 @@ pub fn ser_service_now_connector_profile_credentials(
     if let Some(var_2) = &input.password {
         object.key("password").string(var_2.as_str());
     }
+    if let Some(var_3) = &input.o_auth2_credentials {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("oAuth2Credentials").start_object();
+        crate::protocol_serde::shape_o_auth2_credentials::ser_o_auth2_credentials(&mut object_4, var_3)?;
+        object_4.finish();
+    }
     Ok(())
 }

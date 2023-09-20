@@ -110,17 +110,17 @@ impl PutConfigurationSetDeliveryOptionsFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name of the configuration set that you want to specify the delivery options for.</p>
+    /// <p>The name of the configuration set.</p>
     pub fn configuration_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.configuration_set_name(input.into());
         self
     }
-    /// <p>The name of the configuration set that you want to specify the delivery options for.</p>
+    /// <p>The name of the configuration set.</p>
     pub fn set_configuration_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_configuration_set_name(input);
         self
     }
-    /// <p>The name of the configuration set that you want to specify the delivery options for.</p>
+    /// <p>The name of the configuration set.</p>
     pub fn get_configuration_set_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_configuration_set_name()
     }

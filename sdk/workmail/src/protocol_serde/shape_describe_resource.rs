@@ -80,6 +80,22 @@ pub fn de_describe_resource_http_error(
             }
             tmp
         }),
+        "UnsupportedOperationException" => crate::operation::describe_resource::DescribeResourceError::UnsupportedOperationException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::UnsupportedOperationExceptionBuilder::default();
+                output =
+                    crate::protocol_serde::shape_unsupported_operation_exception::de_unsupported_operation_exception_json_err(_response_body, output)
+                        .map_err(crate::operation::describe_resource::DescribeResourceError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::operation::describe_resource::DescribeResourceError::generic(generic),
     })
 }
@@ -170,6 +186,16 @@ pub(crate) fn de_describe_resource(
                         tokens.next(),
                         ::aws_smithy_types::date_time::Format::EpochSeconds,
                     )?);
+                }
+                "Description" => {
+                    builder = builder.set_description(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                "HiddenFromGlobalAddressList" => {
+                    builder = builder.set_hidden_from_global_address_list(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

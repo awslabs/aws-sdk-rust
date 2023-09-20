@@ -22,7 +22,7 @@ impl ListSchemaMappingsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListSchemaMappings`.
 ///
-/// <p>Returns a list of all the <code>SchemaMappings</code> that have been created for an AWS account.</p>
+/// <p>Returns a list of all the <code>SchemaMappings</code> that have been created for an Amazon Web Services account.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListSchemaMappingsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

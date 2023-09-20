@@ -12,6 +12,7 @@
 /// ```text
 /// # let verticaltextalignment = unimplemented!();
 /// match verticaltextalignment {
+///     VerticalTextAlignment::Auto => { /* ... */ },
 ///     VerticalTextAlignment::Bottom => { /* ... */ },
 ///     VerticalTextAlignment::Middle => { /* ... */ },
 ///     VerticalTextAlignment::Top => { /* ... */ },
@@ -43,6 +44,8 @@
 )]
 pub enum VerticalTextAlignment {
     #[allow(missing_docs)] // documentation missing in model
+    Auto,
+    #[allow(missing_docs)] // documentation missing in model
     Bottom,
     #[allow(missing_docs)] // documentation missing in model
     Middle,
@@ -54,6 +57,7 @@ pub enum VerticalTextAlignment {
 impl ::std::convert::From<&str> for VerticalTextAlignment {
     fn from(s: &str) -> Self {
         match s {
+            "AUTO" => VerticalTextAlignment::Auto,
             "BOTTOM" => VerticalTextAlignment::Bottom,
             "MIDDLE" => VerticalTextAlignment::Middle,
             "TOP" => VerticalTextAlignment::Top,
@@ -72,6 +76,7 @@ impl VerticalTextAlignment {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            VerticalTextAlignment::Auto => "AUTO",
             VerticalTextAlignment::Bottom => "BOTTOM",
             VerticalTextAlignment::Middle => "MIDDLE",
             VerticalTextAlignment::Top => "TOP",
@@ -80,7 +85,7 @@ impl VerticalTextAlignment {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["BOTTOM", "MIDDLE", "TOP"]
+        &["AUTO", "BOTTOM", "MIDDLE", "TOP"]
     }
 }
 impl ::std::convert::AsRef<str> for VerticalTextAlignment {

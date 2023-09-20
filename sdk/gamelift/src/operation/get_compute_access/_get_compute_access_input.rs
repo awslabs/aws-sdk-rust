@@ -3,17 +3,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetComputeAccessInput {
-    /// <p>A unique identifier for the fleet that the compute resource is registered to.</p>
+    /// <p>A unique identifier for the fleet that contains the compute resource you want to connect to. You can use either the fleet ID or ARN value.</p>
     pub fleet_id: ::std::option::Option<::std::string::String>,
-    /// <p>The name of the compute resource you are requesting credentials for.</p>
+    /// <p>A unique identifier for the compute resource that you want to connect to. You can use either a registered compute name or an instance ID.</p>
     pub compute_name: ::std::option::Option<::std::string::String>,
 }
 impl GetComputeAccessInput {
-    /// <p>A unique identifier for the fleet that the compute resource is registered to.</p>
+    /// <p>A unique identifier for the fleet that contains the compute resource you want to connect to. You can use either the fleet ID or ARN value.</p>
     pub fn fleet_id(&self) -> ::std::option::Option<&str> {
         self.fleet_id.as_deref()
     }
-    /// <p>The name of the compute resource you are requesting credentials for.</p>
+    /// <p>A unique identifier for the compute resource that you want to connect to. You can use either a registered compute name or an instance ID.</p>
     pub fn compute_name(&self) -> ::std::option::Option<&str> {
         self.compute_name.as_deref()
     }
@@ -33,31 +33,31 @@ pub struct GetComputeAccessInputBuilder {
     pub(crate) compute_name: ::std::option::Option<::std::string::String>,
 }
 impl GetComputeAccessInputBuilder {
-    /// <p>A unique identifier for the fleet that the compute resource is registered to.</p>
+    /// <p>A unique identifier for the fleet that contains the compute resource you want to connect to. You can use either the fleet ID or ARN value.</p>
     pub fn fleet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fleet_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A unique identifier for the fleet that the compute resource is registered to.</p>
+    /// <p>A unique identifier for the fleet that contains the compute resource you want to connect to. You can use either the fleet ID or ARN value.</p>
     pub fn set_fleet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.fleet_id = input;
         self
     }
-    /// <p>A unique identifier for the fleet that the compute resource is registered to.</p>
+    /// <p>A unique identifier for the fleet that contains the compute resource you want to connect to. You can use either the fleet ID or ARN value.</p>
     pub fn get_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.fleet_id
     }
-    /// <p>The name of the compute resource you are requesting credentials for.</p>
+    /// <p>A unique identifier for the compute resource that you want to connect to. You can use either a registered compute name or an instance ID.</p>
     pub fn compute_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.compute_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the compute resource you are requesting credentials for.</p>
+    /// <p>A unique identifier for the compute resource that you want to connect to. You can use either a registered compute name or an instance ID.</p>
     pub fn set_compute_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.compute_name = input;
         self
     }
-    /// <p>The name of the compute resource you are requesting credentials for.</p>
+    /// <p>A unique identifier for the compute resource that you want to connect to. You can use either a registered compute name or an instance ID.</p>
     pub fn get_compute_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.compute_name
     }

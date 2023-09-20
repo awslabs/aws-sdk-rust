@@ -153,6 +153,10 @@ pub(crate) mod shape_delete_custom_db_engine_version_input;
 
 pub(crate) mod shape_delete_db_cluster;
 
+pub(crate) mod shape_delete_db_cluster_automated_backup;
+
+pub(crate) mod shape_delete_db_cluster_automated_backup_input;
+
 pub(crate) mod shape_delete_db_cluster_endpoint;
 
 pub(crate) mod shape_delete_db_cluster_endpoint_input;
@@ -226,6 +230,10 @@ pub(crate) mod shape_describe_blue_green_deployments_input;
 pub(crate) mod shape_describe_certificates;
 
 pub(crate) mod shape_describe_certificates_input;
+
+pub(crate) mod shape_describe_db_cluster_automated_backups;
+
+pub(crate) mod shape_describe_db_cluster_automated_backups_input;
 
 pub(crate) mod shape_describe_db_cluster_backtracks;
 
@@ -583,6 +591,10 @@ pub(crate) mod shape_switchover_blue_green_deployment;
 
 pub(crate) mod shape_switchover_blue_green_deployment_input;
 
+pub(crate) mod shape_switchover_global_cluster;
+
+pub(crate) mod shape_switchover_global_cluster_input;
+
 pub(crate) mod shape_switchover_read_replica;
 
 pub(crate) mod shape_switchover_read_replica_input;
@@ -616,6 +628,10 @@ pub(crate) mod shape_custom_db_engine_version_not_found_fault;
 pub(crate) mod shape_custom_db_engine_version_quota_exceeded_fault;
 
 pub(crate) mod shape_db_cluster_already_exists_fault;
+
+pub(crate) mod shape_db_cluster_automated_backup_not_found_fault;
+
+pub(crate) mod shape_db_cluster_automated_backup_quota_exceeded_fault;
 
 pub(crate) mod shape_db_cluster_backtrack_not_found_fault;
 
@@ -742,6 +758,8 @@ pub(crate) mod shape_insufficient_storage_cluster_capacity_fault;
 pub(crate) mod shape_invalid_blue_green_deployment_state_fault;
 
 pub(crate) mod shape_invalid_custom_db_engine_version_state_fault;
+
+pub(crate) mod shape_invalid_db_cluster_automated_backup_state_fault;
 
 pub(crate) mod shape_invalid_db_cluster_capacity_fault;
 
@@ -876,6 +894,10 @@ pub(crate) mod shape_character_set;
 pub(crate) mod shape_custom_db_engine_version_ami;
 
 pub(crate) mod shape_db_cluster;
+
+pub(crate) mod shape_db_cluster_automated_backup;
+
+pub(crate) mod shape_db_cluster_automated_backup_list;
 
 pub(crate) mod shape_db_cluster_backtrack_list;
 

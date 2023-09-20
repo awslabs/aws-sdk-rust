@@ -38,6 +38,8 @@ pub struct Snapshot {
     pub storage_tier: ::std::option::Option<crate::types::StorageTier>,
     /// <p>Only for archived snapshots that are temporarily restored. Indicates the date and time when a temporarily restored snapshot will be automatically re-archived.</p>
     pub restore_expiry_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>Reserved for future use.</p>
+    pub sse_type: ::std::option::Option<crate::types::SseType>,
 }
 impl Snapshot {
     /// <p>The data encryption key identifier for the snapshot. This value is a unique identifier that corresponds to the data encryption key that was used to encrypt the original volume or snapshot copy. Because data encryption keys are inherited by volumes created from snapshots, and vice versa, if snapshots share the same data encryption key identifier, then they belong to the same volume/snapshot lineage. This parameter is only returned by <code>DescribeSnapshots</code>.</p>
@@ -108,6 +110,10 @@ impl Snapshot {
     pub fn restore_expiry_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.restore_expiry_time.as_ref()
     }
+    /// <p>Reserved for future use.</p>
+    pub fn sse_type(&self) -> ::std::option::Option<&crate::types::SseType> {
+        self.sse_type.as_ref()
+    }
 }
 impl Snapshot {
     /// Creates a new builder-style object to manufacture [`Snapshot`](crate::types::Snapshot).
@@ -137,6 +143,7 @@ pub struct SnapshotBuilder {
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) storage_tier: ::std::option::Option<crate::types::StorageTier>,
     pub(crate) restore_expiry_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) sse_type: ::std::option::Option<crate::types::SseType>,
 }
 impl SnapshotBuilder {
     /// <p>The data encryption key identifier for the snapshot. This value is a unique identifier that corresponds to the data encryption key that was used to encrypt the original volume or snapshot copy. Because data encryption keys are inherited by volumes created from snapshots, and vice versa, if snapshots share the same data encryption key identifier, then they belong to the same volume/snapshot lineage. This parameter is only returned by <code>DescribeSnapshots</code>.</p>
@@ -383,6 +390,20 @@ impl SnapshotBuilder {
     pub fn get_restore_expiry_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.restore_expiry_time
     }
+    /// <p>Reserved for future use.</p>
+    pub fn sse_type(mut self, input: crate::types::SseType) -> Self {
+        self.sse_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Reserved for future use.</p>
+    pub fn set_sse_type(mut self, input: ::std::option::Option<crate::types::SseType>) -> Self {
+        self.sse_type = input;
+        self
+    }
+    /// <p>Reserved for future use.</p>
+    pub fn get_sse_type(&self) -> &::std::option::Option<crate::types::SseType> {
+        &self.sse_type
+    }
     /// Consumes the builder and constructs a [`Snapshot`](crate::types::Snapshot).
     pub fn build(self) -> crate::types::Snapshot {
         crate::types::Snapshot {
@@ -403,6 +424,7 @@ impl SnapshotBuilder {
             tags: self.tags,
             storage_tier: self.storage_tier,
             restore_expiry_time: self.restore_expiry_time,
+            sse_type: self.sse_type,
         }
     }
 }

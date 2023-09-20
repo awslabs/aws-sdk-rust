@@ -29,6 +29,8 @@ pub(crate) mod shape_batch_get_account_status;
 
 pub(crate) mod shape_batch_get_code_snippet;
 
+pub(crate) mod shape_batch_get_finding_details;
+
 pub(crate) mod shape_batch_get_free_trial_info;
 
 pub(crate) mod shape_batch_get_member_ec2_deep_inspection_status;
@@ -130,6 +132,8 @@ pub(crate) mod shape_bad_request_exception;
 pub(crate) mod shape_batch_get_account_status_input;
 
 pub(crate) mod shape_batch_get_code_snippet_input;
+
+pub(crate) mod shape_batch_get_finding_details_input;
 
 pub(crate) mod shape_batch_get_free_trial_info_input;
 
@@ -251,6 +255,10 @@ pub(crate) mod shape_filter_criteria;
 
 pub(crate) mod shape_filter_list;
 
+pub(crate) mod shape_finding_details;
+
+pub(crate) mod shape_finding_details_error_list;
+
 pub(crate) mod shape_finding_list;
 
 pub(crate) mod shape_free_trial_account_info_list;
@@ -328,6 +336,10 @@ pub(crate) mod shape_failed_member_account_ec2_deep_inspection_status_state;
 pub(crate) mod shape_filter;
 
 pub(crate) mod shape_finding;
+
+pub(crate) mod shape_finding_detail;
+
+pub(crate) mod shape_finding_details_error;
 
 pub(crate) mod shape_finding_type_aggregation;
 
@@ -411,6 +423,8 @@ pub(crate) mod shape_epss;
 
 pub(crate) mod shape_epss_details;
 
+pub(crate) mod shape_evidence_list;
+
 pub(crate) mod shape_exploit_observed;
 
 pub(crate) mod shape_exploitability_details;
@@ -455,6 +469,10 @@ pub(crate) mod shape_suggested_fixes;
 
 pub(crate) mod shape_title_aggregation_response;
 
+pub(crate) mod shape_tools;
+
+pub(crate) mod shape_ttps;
+
 pub(crate) mod shape_usage_list;
 
 pub(crate) mod shape_vulnerability_reference_urls;
@@ -476,6 +494,8 @@ pub(crate) mod shape_ec2_metadata;
 pub(crate) mod shape_ecr_container_image_metadata;
 
 pub(crate) mod shape_ecr_repository_metadata;
+
+pub(crate) mod shape_evidence;
 
 pub(crate) mod shape_free_trial_info;
 
@@ -500,8 +520,6 @@ pub(crate) mod shape_string_list;
 pub(crate) mod shape_suggested_fix;
 
 pub(crate) mod shape_targets;
-
-pub(crate) mod shape_ttps;
 
 pub(crate) mod shape_usage;
 

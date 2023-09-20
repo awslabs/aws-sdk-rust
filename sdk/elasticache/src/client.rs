@@ -304,3 +304,5 @@ mod revoke_cache_security_group_ingress;
 mod start_migration;
 
 mod test_failover;
+
+mod test_migration;

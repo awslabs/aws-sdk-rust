@@ -9472,6 +9472,32 @@ impl From<crate::operation::disable_fast_snapshot_restores::DisableFastSnapshotR
         }
     }
 }
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::disable_image_block_public_access::DisableImageBlockPublicAccessError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<crate::operation::disable_image_block_public_access::DisableImageBlockPublicAccessError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::disable_image_block_public_access::DisableImageBlockPublicAccessError> for Error {
+    fn from(err: crate::operation::disable_image_block_public_access::DisableImageBlockPublicAccessError) -> Self {
+        match err {
+            crate::operation::disable_image_block_public_access::DisableImageBlockPublicAccessError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::disable_image_deprecation::DisableImageDeprecationError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -10181,6 +10207,31 @@ impl From<crate::operation::enable_fast_snapshot_restores::EnableFastSnapshotRes
         }
     }
 }
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::enable_image_block_public_access::EnableImageBlockPublicAccessError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<crate::operation::enable_image_block_public_access::EnableImageBlockPublicAccessError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::enable_image_block_public_access::EnableImageBlockPublicAccessError> for Error {
+    fn from(err: crate::operation::enable_image_block_public_access::EnableImageBlockPublicAccessError) -> Self {
+        match err {
+            crate::operation::enable_image_block_public_access::EnableImageBlockPublicAccessError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::enable_image_deprecation::EnableImageDeprecationError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -10864,6 +10915,32 @@ impl From<crate::operation::get_host_reservation_purchase_preview::GetHostReserv
             crate::operation::get_host_reservation_purchase_preview::GetHostReservationPurchasePreviewError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
+        }
+    }
+}
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_image_block_public_access_state::GetImageBlockPublicAccessStateError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<crate::operation::get_image_block_public_access_state::GetImageBlockPublicAccessStateError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_image_block_public_access_state::GetImageBlockPublicAccessStateError> for Error {
+    fn from(err: crate::operation::get_image_block_public_access_state::GetImageBlockPublicAccessStateError) -> Self {
+        match err {
+            crate::operation::get_image_block_public_access_state::GetImageBlockPublicAccessStateError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

@@ -10,7 +10,7 @@ pub struct RevokeEndpointAccessInput {
     /// <p>The virtual private cloud (VPC) identifiers for which access is to be revoked.</p>
     pub vpc_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Indicates whether to force the revoke action. If true, the Redshift-managed VPC endpoints associated with the endpoint authorization are also deleted.</p>
-    pub force: bool,
+    pub force: ::std::option::Option<bool>,
 }
 impl RevokeEndpointAccessInput {
     /// <p>The cluster to revoke access from.</p>
@@ -26,7 +26,7 @@ impl RevokeEndpointAccessInput {
         self.vpc_ids.as_deref()
     }
     /// <p>Indicates whether to force the revoke action. If true, the Redshift-managed VPC endpoints associated with the endpoint authorization are also deleted.</p>
-    pub fn force(&self) -> bool {
+    pub fn force(&self) -> ::std::option::Option<bool> {
         self.force
     }
 }
@@ -118,7 +118,7 @@ impl RevokeEndpointAccessInputBuilder {
             cluster_identifier: self.cluster_identifier,
             account: self.account,
             vpc_ids: self.vpc_ids,
-            force: self.force.unwrap_or_default(),
+            force: self.force,
         })
     }
 }

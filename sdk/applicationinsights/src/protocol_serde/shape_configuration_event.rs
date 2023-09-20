@@ -14,6 +14,20 @@ where
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "ResourceGroupName" => {
+                            builder = builder.set_resource_group_name(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "AccountId" => {
+                            builder = builder.set_account_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "MonitoredResourceARN" => {
                             builder = builder.set_monitored_resource_arn(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

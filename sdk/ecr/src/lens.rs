@@ -69,6 +69,16 @@ pub(crate) fn lens_describe_images_output_image_details(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn lens_describe_pull_through_cache_rules_output_pull_through_cache_rules(
+    input: crate::operation::describe_pull_through_cache_rules::DescribePullThroughCacheRulesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::PullThroughCacheRule>> {
+    let input = match input.pull_through_cache_rules {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_describe_repositories_output_repositories(
     input: crate::operation::describe_repositories::DescribeRepositoriesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Repository>> {

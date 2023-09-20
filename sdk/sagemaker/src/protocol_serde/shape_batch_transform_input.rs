@@ -42,6 +42,9 @@ pub fn ser_batch_transform_input(
     if let Some(var_12) = &input.end_time_offset {
         object.key("EndTimeOffset").string(var_12.as_str());
     }
+    if let Some(var_13) = &input.exclude_features_attribute {
+        object.key("ExcludeFeaturesAttribute").string(var_13.as_str());
+    }
     Ok(())
 }
 
@@ -128,6 +131,13 @@ where
                         }
                         "EndTimeOffset" => {
                             builder = builder.set_end_time_offset(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "ExcludeFeaturesAttribute" => {
+                            builder = builder.set_exclude_features_attribute(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,

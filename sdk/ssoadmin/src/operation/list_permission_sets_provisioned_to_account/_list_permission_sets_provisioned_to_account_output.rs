@@ -5,7 +5,7 @@
 pub struct ListPermissionSetsProvisionedToAccountOutput {
     /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p>Defines the level of access that an AWS account has.</p>
+    /// <p>Defines the level of access that an Amazon Web Services account has.</p>
     pub permission_sets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }
@@ -14,7 +14,7 @@ impl ListPermissionSetsProvisionedToAccountOutput {
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>Defines the level of access that an AWS account has.</p>
+    /// <p>Defines the level of access that an Amazon Web Services account has.</p>
     pub fn permission_sets(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.permission_sets.as_deref()
     }
@@ -58,19 +58,19 @@ impl ListPermissionSetsProvisionedToAccountOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_permission_sets`](Self::set_permission_sets).
     ///
-    /// <p>Defines the level of access that an AWS account has.</p>
+    /// <p>Defines the level of access that an Amazon Web Services account has.</p>
     pub fn permission_sets(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.permission_sets.unwrap_or_default();
         v.push(input.into());
         self.permission_sets = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Defines the level of access that an AWS account has.</p>
+    /// <p>Defines the level of access that an Amazon Web Services account has.</p>
     pub fn set_permission_sets(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.permission_sets = input;
         self
     }
-    /// <p>Defines the level of access that an AWS account has.</p>
+    /// <p>Defines the level of access that an Amazon Web Services account has.</p>
     pub fn get_permission_sets(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.permission_sets
     }

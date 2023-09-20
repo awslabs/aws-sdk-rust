@@ -2,7 +2,7 @@
 
 /// <p> The metadata objects that are associated with the specified assessment report. </p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct AssessmentReportMetadata {
     /// <p> The unique identifier for the assessment report. </p>
     pub id: ::std::option::Option<::std::string::String>,
@@ -55,6 +55,20 @@ impl AssessmentReportMetadata {
         self.creation_time.as_ref()
     }
 }
+impl ::std::fmt::Debug for AssessmentReportMetadata {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("AssessmentReportMetadata");
+        formatter.field("id", &self.id);
+        formatter.field("name", &self.name);
+        formatter.field("description", &"*** Sensitive Data Redacted ***");
+        formatter.field("assessment_id", &self.assessment_id);
+        formatter.field("assessment_name", &"*** Sensitive Data Redacted ***");
+        formatter.field("author", &"*** Sensitive Data Redacted ***");
+        formatter.field("status", &self.status);
+        formatter.field("creation_time", &self.creation_time);
+        formatter.finish()
+    }
+}
 impl AssessmentReportMetadata {
     /// Creates a new builder-style object to manufacture [`AssessmentReportMetadata`](crate::types::AssessmentReportMetadata).
     pub fn builder() -> crate::types::builders::AssessmentReportMetadataBuilder {
@@ -64,7 +78,7 @@ impl AssessmentReportMetadata {
 
 /// A builder for [`AssessmentReportMetadata`](crate::types::AssessmentReportMetadata).
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct AssessmentReportMetadataBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -200,5 +214,19 @@ impl AssessmentReportMetadataBuilder {
             status: self.status,
             creation_time: self.creation_time,
         }
+    }
+}
+impl ::std::fmt::Debug for AssessmentReportMetadataBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("AssessmentReportMetadataBuilder");
+        formatter.field("id", &self.id);
+        formatter.field("name", &self.name);
+        formatter.field("description", &"*** Sensitive Data Redacted ***");
+        formatter.field("assessment_id", &self.assessment_id);
+        formatter.field("assessment_name", &"*** Sensitive Data Redacted ***");
+        formatter.field("author", &"*** Sensitive Data Redacted ***");
+        formatter.field("status", &self.status);
+        formatter.field("creation_time", &self.creation_time);
+        formatter.finish()
     }
 }

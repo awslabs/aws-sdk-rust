@@ -38,6 +38,8 @@ pub struct DescribeCompilationJobOutput {
     pub output_config: ::std::option::Option<crate::types::OutputConfig>,
     /// <p>A <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VpcConfig.html">VpcConfig</a> object that specifies the VPC that you want your compilation job to connect to. Control access to your models by configuring the VPC. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-vpc.html">Protect Compilation Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
     pub vpc_config: ::std::option::Option<crate::types::NeoVpcConfig>,
+    /// <p>Information that SageMaker Neo automatically derived about the model.</p>
+    pub derived_information: ::std::option::Option<crate::types::DerivedInformation>,
     _request_id: Option<String>,
 }
 impl DescribeCompilationJobOutput {
@@ -110,6 +112,10 @@ impl DescribeCompilationJobOutput {
     pub fn vpc_config(&self) -> ::std::option::Option<&crate::types::NeoVpcConfig> {
         self.vpc_config.as_ref()
     }
+    /// <p>Information that SageMaker Neo automatically derived about the model.</p>
+    pub fn derived_information(&self) -> ::std::option::Option<&crate::types::DerivedInformation> {
+        self.derived_information.as_ref()
+    }
 }
 impl ::aws_http::request_id::RequestId for DescribeCompilationJobOutput {
     fn request_id(&self) -> Option<&str> {
@@ -144,6 +150,7 @@ pub struct DescribeCompilationJobOutputBuilder {
     pub(crate) input_config: ::std::option::Option<crate::types::InputConfig>,
     pub(crate) output_config: ::std::option::Option<crate::types::OutputConfig>,
     pub(crate) vpc_config: ::std::option::Option<crate::types::NeoVpcConfig>,
+    pub(crate) derived_information: ::std::option::Option<crate::types::DerivedInformation>,
     _request_id: Option<String>,
 }
 impl DescribeCompilationJobOutputBuilder {
@@ -388,6 +395,20 @@ impl DescribeCompilationJobOutputBuilder {
     pub fn get_vpc_config(&self) -> &::std::option::Option<crate::types::NeoVpcConfig> {
         &self.vpc_config
     }
+    /// <p>Information that SageMaker Neo automatically derived about the model.</p>
+    pub fn derived_information(mut self, input: crate::types::DerivedInformation) -> Self {
+        self.derived_information = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Information that SageMaker Neo automatically derived about the model.</p>
+    pub fn set_derived_information(mut self, input: ::std::option::Option<crate::types::DerivedInformation>) -> Self {
+        self.derived_information = input;
+        self
+    }
+    /// <p>Information that SageMaker Neo automatically derived about the model.</p>
+    pub fn get_derived_information(&self) -> &::std::option::Option<crate::types::DerivedInformation> {
+        &self.derived_information
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -417,6 +438,7 @@ impl DescribeCompilationJobOutputBuilder {
             input_config: self.input_config,
             output_config: self.output_config,
             vpc_config: self.vpc_config,
+            derived_information: self.derived_information,
             _request_id: self._request_id,
         }
     }

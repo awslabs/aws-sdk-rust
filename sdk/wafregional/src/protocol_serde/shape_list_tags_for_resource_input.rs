@@ -6,14 +6,14 @@ pub fn ser_list_tags_for_resource_input(
     if let Some(var_1) = &input.next_marker {
         object.key("NextMarker").string(var_1.as_str());
     }
-    if input.limit != 0 {
+    if let Some(var_2) = &input.limit {
         object.key("Limit").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.limit).into()),
+            ::aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
-    if let Some(var_2) = &input.resource_arn {
-        object.key("ResourceARN").string(var_2.as_str());
+    if let Some(var_3) = &input.resource_arn {
+        object.key("ResourceARN").string(var_3.as_str());
     }
     Ok(())
 }

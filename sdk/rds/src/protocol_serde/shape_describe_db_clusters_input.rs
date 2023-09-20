@@ -36,8 +36,8 @@ pub fn ser_describe_db_clusters_input_input(
     }
     #[allow(unused_mut)]
     let mut scope_12 = writer.prefix("IncludeShared");
-    if input.include_shared {
-        scope_12.boolean(input.include_shared);
+    if let Some(var_13) = &input.include_shared {
+        scope_12.boolean(*var_13);
     }
     writer.finish();
     Ok(::aws_smithy_http::body::SdkBody::from(out))

@@ -31,11 +31,17 @@ pub(crate) mod shape_batch_start_recommendations;
 
 pub(crate) mod shape_cancel_replication_task_assessment_run;
 
+pub(crate) mod shape_create_data_provider;
+
 pub(crate) mod shape_create_endpoint;
 
 pub(crate) mod shape_create_event_subscription;
 
 pub(crate) mod shape_create_fleet_advisor_collector;
+
+pub(crate) mod shape_create_instance_profile;
+
+pub(crate) mod shape_create_migration_project;
 
 pub(crate) mod shape_create_replication_config;
 
@@ -49,6 +55,8 @@ pub(crate) mod shape_delete_certificate;
 
 pub(crate) mod shape_delete_connection;
 
+pub(crate) mod shape_delete_data_provider;
+
 pub(crate) mod shape_delete_endpoint;
 
 pub(crate) mod shape_delete_event_subscription;
@@ -56,6 +64,10 @@ pub(crate) mod shape_delete_event_subscription;
 pub(crate) mod shape_delete_fleet_advisor_collector;
 
 pub(crate) mod shape_delete_fleet_advisor_databases;
+
+pub(crate) mod shape_delete_instance_profile;
+
+pub(crate) mod shape_delete_migration_project;
 
 pub(crate) mod shape_delete_replication_config;
 
@@ -75,17 +87,25 @@ pub(crate) mod shape_describe_certificates;
 
 pub(crate) mod shape_describe_connections;
 
+pub(crate) mod shape_describe_conversion_configuration;
+
+pub(crate) mod shape_describe_data_providers;
+
 pub(crate) mod shape_describe_endpoint_settings;
 
 pub(crate) mod shape_describe_endpoint_types;
 
 pub(crate) mod shape_describe_endpoints;
 
+pub(crate) mod shape_describe_engine_versions;
+
 pub(crate) mod shape_describe_event_categories;
 
 pub(crate) mod shape_describe_event_subscriptions;
 
 pub(crate) mod shape_describe_events;
+
+pub(crate) mod shape_describe_extension_pack_associations;
 
 pub(crate) mod shape_describe_fleet_advisor_collectors;
 
@@ -96,6 +116,20 @@ pub(crate) mod shape_describe_fleet_advisor_lsa_analysis;
 pub(crate) mod shape_describe_fleet_advisor_schema_object_summary;
 
 pub(crate) mod shape_describe_fleet_advisor_schemas;
+
+pub(crate) mod shape_describe_instance_profiles;
+
+pub(crate) mod shape_describe_metadata_model_assessments;
+
+pub(crate) mod shape_describe_metadata_model_conversions;
+
+pub(crate) mod shape_describe_metadata_model_exports_as_script;
+
+pub(crate) mod shape_describe_metadata_model_exports_to_target;
+
+pub(crate) mod shape_describe_metadata_model_imports;
+
+pub(crate) mod shape_describe_migration_projects;
 
 pub(crate) mod shape_describe_orderable_replication_instances;
 
@@ -131,13 +165,23 @@ pub(crate) mod shape_describe_schemas;
 
 pub(crate) mod shape_describe_table_statistics;
 
+pub(crate) mod shape_export_metadata_model_assessment;
+
 pub(crate) mod shape_import_certificate;
 
 pub(crate) mod shape_list_tags_for_resource;
 
+pub(crate) mod shape_modify_conversion_configuration;
+
+pub(crate) mod shape_modify_data_provider;
+
 pub(crate) mod shape_modify_endpoint;
 
 pub(crate) mod shape_modify_event_subscription;
+
+pub(crate) mod shape_modify_instance_profile;
+
+pub(crate) mod shape_modify_migration_project;
 
 pub(crate) mod shape_modify_replication_config;
 
@@ -160,6 +204,18 @@ pub(crate) mod shape_reload_tables;
 pub(crate) mod shape_remove_tags_from_resource;
 
 pub(crate) mod shape_run_fleet_advisor_lsa_analysis;
+
+pub(crate) mod shape_start_extension_pack_association;
+
+pub(crate) mod shape_start_metadata_model_assessment;
+
+pub(crate) mod shape_start_metadata_model_conversion;
+
+pub(crate) mod shape_start_metadata_model_export_as_script;
+
+pub(crate) mod shape_start_metadata_model_export_to_target;
+
+pub(crate) mod shape_start_metadata_model_import;
 
 pub(crate) mod shape_start_recommendations;
 
@@ -199,11 +255,17 @@ pub(crate) mod shape_cancel_replication_task_assessment_run_input;
 
 pub(crate) mod shape_collector_not_found_fault;
 
+pub(crate) mod shape_create_data_provider_input;
+
 pub(crate) mod shape_create_endpoint_input;
 
 pub(crate) mod shape_create_event_subscription_input;
 
 pub(crate) mod shape_create_fleet_advisor_collector_input;
+
+pub(crate) mod shape_create_instance_profile_input;
+
+pub(crate) mod shape_create_migration_project_input;
 
 pub(crate) mod shape_create_replication_config_input;
 
@@ -217,6 +279,8 @@ pub(crate) mod shape_delete_certificate_input;
 
 pub(crate) mod shape_delete_connection_input;
 
+pub(crate) mod shape_delete_data_provider_input;
+
 pub(crate) mod shape_delete_endpoint_input;
 
 pub(crate) mod shape_delete_event_subscription_input;
@@ -224,6 +288,10 @@ pub(crate) mod shape_delete_event_subscription_input;
 pub(crate) mod shape_delete_fleet_advisor_collector_input;
 
 pub(crate) mod shape_delete_fleet_advisor_databases_input;
+
+pub(crate) mod shape_delete_instance_profile_input;
+
+pub(crate) mod shape_delete_migration_project_input;
 
 pub(crate) mod shape_delete_replication_config_input;
 
@@ -241,17 +309,25 @@ pub(crate) mod shape_describe_certificates_input;
 
 pub(crate) mod shape_describe_connections_input;
 
+pub(crate) mod shape_describe_conversion_configuration_input;
+
+pub(crate) mod shape_describe_data_providers_input;
+
 pub(crate) mod shape_describe_endpoint_settings_input;
 
 pub(crate) mod shape_describe_endpoint_types_input;
 
 pub(crate) mod shape_describe_endpoints_input;
 
+pub(crate) mod shape_describe_engine_versions_input;
+
 pub(crate) mod shape_describe_event_categories_input;
 
 pub(crate) mod shape_describe_event_subscriptions_input;
 
 pub(crate) mod shape_describe_events_input;
+
+pub(crate) mod shape_describe_extension_pack_associations_input;
 
 pub(crate) mod shape_describe_fleet_advisor_collectors_input;
 
@@ -262,6 +338,20 @@ pub(crate) mod shape_describe_fleet_advisor_lsa_analysis_input;
 pub(crate) mod shape_describe_fleet_advisor_schema_object_summary_input;
 
 pub(crate) mod shape_describe_fleet_advisor_schemas_input;
+
+pub(crate) mod shape_describe_instance_profiles_input;
+
+pub(crate) mod shape_describe_metadata_model_assessments_input;
+
+pub(crate) mod shape_describe_metadata_model_conversions_input;
+
+pub(crate) mod shape_describe_metadata_model_exports_as_script_input;
+
+pub(crate) mod shape_describe_metadata_model_exports_to_target_input;
+
+pub(crate) mod shape_describe_metadata_model_imports_input;
+
+pub(crate) mod shape_describe_migration_projects_input;
 
 pub(crate) mod shape_describe_orderable_replication_instances_input;
 
@@ -297,6 +387,8 @@ pub(crate) mod shape_describe_schemas_input;
 
 pub(crate) mod shape_describe_table_statistics_input;
 
+pub(crate) mod shape_export_metadata_model_assessment_input;
+
 pub(crate) mod shape_import_certificate_input;
 
 pub(crate) mod shape_insufficient_resource_capacity_fault;
@@ -325,9 +417,17 @@ pub(crate) mod shape_kms_throttling_fault;
 
 pub(crate) mod shape_list_tags_for_resource_input;
 
+pub(crate) mod shape_modify_conversion_configuration_input;
+
+pub(crate) mod shape_modify_data_provider_input;
+
 pub(crate) mod shape_modify_endpoint_input;
 
 pub(crate) mod shape_modify_event_subscription_input;
+
+pub(crate) mod shape_modify_instance_profile_input;
+
+pub(crate) mod shape_modify_migration_project_input;
 
 pub(crate) mod shape_modify_replication_config_input;
 
@@ -364,6 +464,18 @@ pub(crate) mod shape_s3_resource_not_found_fault;
 pub(crate) mod shape_sns_invalid_topic_fault;
 
 pub(crate) mod shape_sns_no_authorization_fault;
+
+pub(crate) mod shape_start_extension_pack_association_input;
+
+pub(crate) mod shape_start_metadata_model_assessment_input;
+
+pub(crate) mod shape_start_metadata_model_conversion_input;
+
+pub(crate) mod shape_start_metadata_model_export_as_script_input;
+
+pub(crate) mod shape_start_metadata_model_export_to_target_input;
+
+pub(crate) mod shape_start_metadata_model_import_input;
 
 pub(crate) mod shape_start_recommendations_input;
 
@@ -405,6 +517,14 @@ pub(crate) mod shape_connection;
 
 pub(crate) mod shape_connection_list;
 
+pub(crate) mod shape_data_provider;
+
+pub(crate) mod shape_data_provider_descriptor_definition;
+
+pub(crate) mod shape_data_provider_list;
+
+pub(crate) mod shape_data_provider_settings;
+
 pub(crate) mod shape_database_list;
 
 pub(crate) mod shape_dms_transfer_settings;
@@ -421,6 +541,8 @@ pub(crate) mod shape_endpoint_list;
 
 pub(crate) mod shape_endpoint_settings_list;
 
+pub(crate) mod shape_engine_version_list;
+
 pub(crate) mod shape_event_category_group_list;
 
 pub(crate) mod shape_event_list;
@@ -428,6 +550,8 @@ pub(crate) mod shape_event_list;
 pub(crate) mod shape_event_subscription;
 
 pub(crate) mod shape_event_subscriptions_list;
+
+pub(crate) mod shape_export_metadata_model_assessment_result_entry;
 
 pub(crate) mod shape_filter;
 
@@ -443,6 +567,10 @@ pub(crate) mod shape_ibm_db2_settings;
 
 pub(crate) mod shape_individual_assessment_name_list;
 
+pub(crate) mod shape_instance_profile;
+
+pub(crate) mod shape_instance_profile_list;
+
 pub(crate) mod shape_kafka_settings;
 
 pub(crate) mod shape_kinesis_settings;
@@ -450,6 +578,10 @@ pub(crate) mod shape_kinesis_settings;
 pub(crate) mod shape_limitation_list;
 
 pub(crate) mod shape_microsoft_sql_server_settings;
+
+pub(crate) mod shape_migration_project;
+
+pub(crate) mod shape_migration_project_list;
 
 pub(crate) mod shape_mongo_db_settings;
 
@@ -511,6 +643,10 @@ pub(crate) mod shape_resource_pending_maintenance_actions;
 
 pub(crate) mod shape_s3_settings;
 
+pub(crate) mod shape_sc_application_attributes;
+
+pub(crate) mod shape_schema_conversion_request_list;
+
 pub(crate) mod shape_schema_list;
 
 pub(crate) mod shape_start_recommendations_request_entry;
@@ -537,9 +673,13 @@ pub(crate) mod shape_batch_start_recommendations_error_entry;
 
 pub(crate) mod shape_collector_response;
 
+pub(crate) mod shape_data_provider_descriptor_list;
+
 pub(crate) mod shape_database_response;
 
 pub(crate) mod shape_endpoint_setting;
+
+pub(crate) mod shape_engine_version;
 
 pub(crate) mod shape_event;
 
@@ -553,9 +693,17 @@ pub(crate) mod shape_fleet_advisor_schema_object_response;
 
 pub(crate) mod shape_limitation;
 
+pub(crate) mod shape_microsoft_sql_server_data_provider_settings;
+
+pub(crate) mod shape_my_sql_data_provider_settings;
+
+pub(crate) mod shape_oracle_data_provider_settings;
+
 pub(crate) mod shape_orderable_replication_instance;
 
 pub(crate) mod shape_pending_maintenance_action_details;
+
+pub(crate) mod shape_postgre_sql_data_provider_settings;
 
 pub(crate) mod shape_provision_data;
 
@@ -581,6 +729,8 @@ pub(crate) mod shape_replication_task_individual_assessment;
 
 pub(crate) mod shape_replication_task_stats;
 
+pub(crate) mod shape_schema_conversion_request;
+
 pub(crate) mod shape_schema_response;
 
 pub(crate) mod shape_source_ids_list;
@@ -595,15 +745,23 @@ pub(crate) mod shape_vpc_security_group_membership_list;
 
 pub(crate) mod shape_availability_zones_list;
 
+pub(crate) mod shape_available_upgrades_list;
+
 pub(crate) mod shape_collector_health_check;
 
 pub(crate) mod shape_collectors_list;
+
+pub(crate) mod shape_data_provider_descriptor;
 
 pub(crate) mod shape_database_instance_software_details_response;
 
 pub(crate) mod shape_database_short_info_response;
 
 pub(crate) mod shape_endpoint_setting_enum_values;
+
+pub(crate) mod shape_error_details;
+
+pub(crate) mod shape_export_sql_details;
 
 pub(crate) mod shape_integer_list;
 
@@ -624,6 +782,8 @@ pub(crate) mod shape_vpc_security_group_membership;
 pub(crate) mod shape_availability_zone;
 
 pub(crate) mod shape_collector_short_info_response;
+
+pub(crate) mod shape_default_error_details;
 
 pub(crate) mod shape_rds_recommendation;
 

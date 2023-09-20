@@ -5,7 +5,7 @@
 pub struct PutResourcePolicyInput {
     /// <p>The ID or Amazon Resource Name (ARN) of the service network or service for which the policy is created.</p>
     pub resource_arn: ::std::option::Option<::std::string::String>,
-    /// <p>An IAM policy. The policy string in JSON must not contain newlines or blank lines.</p>
+    /// <p>An IAM policy.</p>
     pub policy: ::std::option::Option<::std::string::String>,
 }
 impl PutResourcePolicyInput {
@@ -13,7 +13,7 @@ impl PutResourcePolicyInput {
     pub fn resource_arn(&self) -> ::std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>An IAM policy. The policy string in JSON must not contain newlines or blank lines.</p>
+    /// <p>An IAM policy.</p>
     pub fn policy(&self) -> ::std::option::Option<&str> {
         self.policy.as_deref()
     }
@@ -47,17 +47,17 @@ impl PutResourcePolicyInputBuilder {
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_arn
     }
-    /// <p>An IAM policy. The policy string in JSON must not contain newlines or blank lines.</p>
+    /// <p>An IAM policy.</p>
     pub fn policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>An IAM policy. The policy string in JSON must not contain newlines or blank lines.</p>
+    /// <p>An IAM policy.</p>
     pub fn set_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy = input;
         self
     }
-    /// <p>An IAM policy. The policy string in JSON must not contain newlines or blank lines.</p>
+    /// <p>An IAM policy.</p>
     pub fn get_policy(&self) -> &::std::option::Option<::std::string::String> {
         &self.policy
     }

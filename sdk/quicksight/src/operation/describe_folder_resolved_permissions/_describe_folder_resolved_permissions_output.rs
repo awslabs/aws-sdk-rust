@@ -13,6 +13,8 @@ pub struct DescribeFolderResolvedPermissionsOutput {
     pub permissions: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>,
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: ::std::option::Option<::std::string::String>,
+    /// <p>A pagination token for the next set of results, or null if there are no more results.</p>
+    pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeFolderResolvedPermissionsOutput {
@@ -36,6 +38,10 @@ impl DescribeFolderResolvedPermissionsOutput {
     pub fn request_id(&self) -> ::std::option::Option<&str> {
         self.request_id.as_deref()
     }
+    /// <p>A pagination token for the next set of results, or null if there are no more results.</p>
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl ::aws_http::request_id::RequestId for DescribeFolderResolvedPermissionsOutput {
     fn request_id(&self) -> Option<&str> {
@@ -58,6 +64,7 @@ pub struct DescribeFolderResolvedPermissionsOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) permissions: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>,
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeFolderResolvedPermissionsOutputBuilder {
@@ -137,6 +144,20 @@ impl DescribeFolderResolvedPermissionsOutputBuilder {
     pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.request_id
     }
+    /// <p>A pagination token for the next set of results, or null if there are no more results.</p>
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>A pagination token for the next set of results, or null if there are no more results.</p>
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.next_token = input;
+        self
+    }
+    /// <p>A pagination token for the next set of results, or null if there are no more results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -154,6 +175,7 @@ impl DescribeFolderResolvedPermissionsOutputBuilder {
             arn: self.arn,
             permissions: self.permissions,
             request_id: self.request_id,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

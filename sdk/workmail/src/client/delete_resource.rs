@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`organization_id(impl Into<String>)`](crate::operation::delete_resource::builders::DeleteResourceFluentBuilder::organization_id) / [`set_organization_id(Option<String>)`](crate::operation::delete_resource::builders::DeleteResourceFluentBuilder::set_organization_id): <p>The identifier associated with the organization from which the resource is deleted.</p>
-    ///   - [`resource_id(impl Into<String>)`](crate::operation::delete_resource::builders::DeleteResourceFluentBuilder::resource_id) / [`set_resource_id(Option<String>)`](crate::operation::delete_resource::builders::DeleteResourceFluentBuilder::set_resource_id): <p>The identifier of the resource to be deleted.</p>
+    ///   - [`resource_id(impl Into<String>)`](crate::operation::delete_resource::builders::DeleteResourceFluentBuilder::resource_id) / [`set_resource_id(Option<String>)`](crate::operation::delete_resource::builders::DeleteResourceFluentBuilder::set_resource_id): <p>The identifier of the resource to be deleted.</p>  <p>The identifier can accept <i>ResourceId</i>, or <i>Resourcename</i>. The following identity formats are available:</p>  <ul>   <li> <p>Resource ID: r-0123456789a0123456789b0123456789</p> </li>   <li> <p>Resource name: resource</p> </li>  </ul>
     /// - On success, responds with [`DeleteResourceOutput`](crate::operation::delete_resource::DeleteResourceOutput)
     /// - On failure, responds with [`SdkError<DeleteResourceError>`](crate::operation::delete_resource::DeleteResourceError)
     pub fn delete_resource(&self) -> crate::operation::delete_resource::builders::DeleteResourceFluentBuilder {

@@ -9,7 +9,7 @@ pub struct PutEmailIdentityFeedbackAttributesInput {
     /// <p>Sets the feedback forwarding configuration for the identity.</p>
     /// <p>If the value is <code>true</code>, Amazon Pinpoint sends you email notifications when bounce or complaint events occur. Amazon Pinpoint sends this notification to the address that you specified in the Return-Path header of the original email.</p>
     /// <p>When you set this value to <code>false</code>, Amazon Pinpoint sends notifications through other mechanisms, such as by notifying an Amazon SNS topic or another event destination. You're required to have a method of tracking bounces and complaints. If you haven't set up another mechanism for receiving bounce or complaint notifications, Amazon Pinpoint sends an email notification when these events occur (even if this setting is disabled).</p>
-    pub email_forwarding_enabled: bool,
+    pub email_forwarding_enabled: ::std::option::Option<bool>,
 }
 impl PutEmailIdentityFeedbackAttributesInput {
     /// <p>The email identity that you want to configure bounce and complaint feedback forwarding for.</p>
@@ -19,7 +19,7 @@ impl PutEmailIdentityFeedbackAttributesInput {
     /// <p>Sets the feedback forwarding configuration for the identity.</p>
     /// <p>If the value is <code>true</code>, Amazon Pinpoint sends you email notifications when bounce or complaint events occur. Amazon Pinpoint sends this notification to the address that you specified in the Return-Path header of the original email.</p>
     /// <p>When you set this value to <code>false</code>, Amazon Pinpoint sends notifications through other mechanisms, such as by notifying an Amazon SNS topic or another event destination. You're required to have a method of tracking bounces and complaints. If you haven't set up another mechanism for receiving bounce or complaint notifications, Amazon Pinpoint sends an email notification when these events occur (even if this setting is disabled).</p>
-    pub fn email_forwarding_enabled(&self) -> bool {
+    pub fn email_forwarding_enabled(&self) -> ::std::option::Option<bool> {
         self.email_forwarding_enabled
     }
 }
@@ -82,7 +82,7 @@ impl PutEmailIdentityFeedbackAttributesInputBuilder {
         ::std::result::Result::Ok(
             crate::operation::put_email_identity_feedback_attributes::PutEmailIdentityFeedbackAttributesInput {
                 email_identity: self.email_identity,
-                email_forwarding_enabled: self.email_forwarding_enabled.unwrap_or_default(),
+                email_forwarding_enabled: self.email_forwarding_enabled,
             },
         )
     }

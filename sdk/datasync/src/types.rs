@@ -29,6 +29,22 @@ pub use crate::types::_overwrite_mode::OverwriteMode;
 
 pub use crate::types::_verify_mode::VerifyMode;
 
+pub use crate::types::_task_report_config::TaskReportConfig;
+
+pub use crate::types::_report_overrides::ReportOverrides;
+
+pub use crate::types::_report_override::ReportOverride;
+
+pub use crate::types::_report_level::ReportLevel;
+
+pub use crate::types::_object_version_ids::ObjectVersionIds;
+
+pub use crate::types::_report_output_type::ReportOutputType;
+
+pub use crate::types::_report_destination::ReportDestination;
+
+pub use crate::types::_report_destination_s3::ReportDestinationS3;
+
 pub use crate::types::_filter_rule::FilterRule;
 
 pub use crate::types::_filter_type::FilterType;
@@ -103,9 +119,11 @@ pub use crate::types::_agent_status::AgentStatus;
 
 pub use crate::types::_discovery_resource_type::DiscoveryResourceType;
 
-pub use crate::types::_task_execution_result_detail::TaskExecutionResultDetail;
+pub use crate::types::_report_result::ReportResult;
 
 pub use crate::types::_phase_status::PhaseStatus;
+
+pub use crate::types::_task_execution_result_detail::TaskExecutionResultDetail;
 
 pub use crate::types::_resource_details::ResourceDetails;
 
@@ -243,6 +261,8 @@ mod _object_storage_server_protocol;
 
 mod _object_tags;
 
+mod _object_version_ids;
+
 mod _on_prem_config;
 
 mod _operator;
@@ -268,6 +288,20 @@ mod _qop_configuration;
 mod _recommendation;
 
 mod _recommendation_status;
+
+mod _report_destination;
+
+mod _report_destination_s3;
+
+mod _report_level;
+
+mod _report_output_type;
+
+mod _report_override;
+
+mod _report_overrides;
+
+mod _report_result;
 
 mod _resource_details;
 
@@ -302,6 +336,8 @@ mod _task_filter_name;
 mod _task_list_entry;
 
 mod _task_queueing;
+
+mod _task_report_config;
 
 mod _task_schedule;
 

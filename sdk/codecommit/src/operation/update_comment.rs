@@ -260,7 +260,7 @@ pub type UpdateCommentErrorKind = UpdateCommentError;
 pub enum UpdateCommentError {
     /// <p>The comment is empty. You must provide some content for a comment. The content cannot be null.</p>
     CommentContentRequiredException(crate::types::error::CommentContentRequiredException),
-    /// <p>The comment is too large. Comments are limited to 1,000 characters.</p>
+    /// <p>The comment is too large. Comments are limited to 10,240 characters.</p>
     CommentContentSizeLimitExceededException(crate::types::error::CommentContentSizeLimitExceededException),
     /// <p>This comment has already been deleted. You cannot edit or delete a deleted comment.</p>
     CommentDeletedException(crate::types::error::CommentDeletedException),

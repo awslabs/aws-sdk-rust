@@ -18,8 +18,8 @@ pub fn ser_create_data_source_from_rds_input(
     if let Some(var_5) = &input.role_arn {
         object.key("RoleARN").string(var_5.as_str());
     }
-    if input.compute_statistics {
-        object.key("ComputeStatistics").boolean(input.compute_statistics);
+    if let Some(var_6) = &input.compute_statistics {
+        object.key("ComputeStatistics").boolean(*var_6);
     }
     Ok(())
 }

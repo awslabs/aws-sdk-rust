@@ -6,44 +6,44 @@ pub fn ser_create_cachedi_scsi_volume_input(
     if let Some(var_1) = &input.gateway_arn {
         object.key("GatewayARN").string(var_1.as_str());
     }
-    {
+    if let Some(var_2) = &input.volume_size_in_bytes {
         object.key("VolumeSizeInBytes").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.volume_size_in_bytes).into()),
+            ::aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
-    if let Some(var_2) = &input.snapshot_id {
-        object.key("SnapshotId").string(var_2.as_str());
+    if let Some(var_3) = &input.snapshot_id {
+        object.key("SnapshotId").string(var_3.as_str());
     }
-    if let Some(var_3) = &input.target_name {
-        object.key("TargetName").string(var_3.as_str());
+    if let Some(var_4) = &input.target_name {
+        object.key("TargetName").string(var_4.as_str());
     }
-    if let Some(var_4) = &input.source_volume_arn {
-        object.key("SourceVolumeARN").string(var_4.as_str());
+    if let Some(var_5) = &input.source_volume_arn {
+        object.key("SourceVolumeARN").string(var_5.as_str());
     }
-    if let Some(var_5) = &input.network_interface_id {
-        object.key("NetworkInterfaceId").string(var_5.as_str());
+    if let Some(var_6) = &input.network_interface_id {
+        object.key("NetworkInterfaceId").string(var_6.as_str());
     }
-    if let Some(var_6) = &input.client_token {
-        object.key("ClientToken").string(var_6.as_str());
+    if let Some(var_7) = &input.client_token {
+        object.key("ClientToken").string(var_7.as_str());
     }
-    if let Some(var_7) = &input.kms_encrypted {
-        object.key("KMSEncrypted").boolean(*var_7);
+    if let Some(var_8) = &input.kms_encrypted {
+        object.key("KMSEncrypted").boolean(*var_8);
     }
-    if let Some(var_8) = &input.kms_key {
-        object.key("KMSKey").string(var_8.as_str());
+    if let Some(var_9) = &input.kms_key {
+        object.key("KMSKey").string(var_9.as_str());
     }
-    if let Some(var_9) = &input.tags {
-        let mut array_10 = object.key("Tags").start_array();
-        for item_11 in var_9 {
+    if let Some(var_10) = &input.tags {
+        let mut array_11 = object.key("Tags").start_array();
+        for item_12 in var_10 {
             {
                 #[allow(unused_mut)]
-                let mut object_12 = array_10.value().start_object();
-                crate::protocol_serde::shape_tag::ser_tag(&mut object_12, item_11)?;
-                object_12.finish();
+                let mut object_13 = array_11.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_13, item_12)?;
+                object_13.finish();
             }
         }
-        array_10.finish();
+        array_11.finish();
     }
     Ok(())
 }

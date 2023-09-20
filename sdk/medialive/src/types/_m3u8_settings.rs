@@ -38,6 +38,10 @@ pub struct M3u8Settings {
     pub transport_stream_id: ::std::option::Option<i32>,
     /// Packet Identifier (PID) of the elementary video stream in the transport stream. Can be entered as a decimal or hexadecimal value.
     pub video_pid: ::std::option::Option<::std::string::String>,
+    /// If set to passthrough, passes any KLV data from the input source to this output.
+    pub klv_behavior: ::std::option::Option<crate::types::M3u8KlvBehavior>,
+    /// Packet Identifier (PID) for input source KLV data to this output. Multiple values are accepted, and can be entered in ranges and/or by comma separation. Can be entered as decimal or hexadecimal values. Each PID specified must be in the range of 32 (or 0x20)..8182 (or 0x1ff6).
+    pub klv_data_pids: ::std::option::Option<::std::string::String>,
 }
 impl M3u8Settings {
     /// The number of audio frames to insert for each PES packet.
@@ -108,6 +112,14 @@ impl M3u8Settings {
     pub fn video_pid(&self) -> ::std::option::Option<&str> {
         self.video_pid.as_deref()
     }
+    /// If set to passthrough, passes any KLV data from the input source to this output.
+    pub fn klv_behavior(&self) -> ::std::option::Option<&crate::types::M3u8KlvBehavior> {
+        self.klv_behavior.as_ref()
+    }
+    /// Packet Identifier (PID) for input source KLV data to this output. Multiple values are accepted, and can be entered in ranges and/or by comma separation. Can be entered as decimal or hexadecimal values. Each PID specified must be in the range of 32 (or 0x20)..8182 (or 0x1ff6).
+    pub fn klv_data_pids(&self) -> ::std::option::Option<&str> {
+        self.klv_data_pids.as_deref()
+    }
 }
 impl M3u8Settings {
     /// Creates a new builder-style object to manufacture [`M3u8Settings`](crate::types::M3u8Settings).
@@ -137,6 +149,8 @@ pub struct M3u8SettingsBuilder {
     pub(crate) timed_metadata_pid: ::std::option::Option<::std::string::String>,
     pub(crate) transport_stream_id: ::std::option::Option<i32>,
     pub(crate) video_pid: ::std::option::Option<::std::string::String>,
+    pub(crate) klv_behavior: ::std::option::Option<crate::types::M3u8KlvBehavior>,
+    pub(crate) klv_data_pids: ::std::option::Option<::std::string::String>,
 }
 impl M3u8SettingsBuilder {
     /// The number of audio frames to insert for each PES packet.
@@ -377,6 +391,34 @@ impl M3u8SettingsBuilder {
     pub fn get_video_pid(&self) -> &::std::option::Option<::std::string::String> {
         &self.video_pid
     }
+    /// If set to passthrough, passes any KLV data from the input source to this output.
+    pub fn klv_behavior(mut self, input: crate::types::M3u8KlvBehavior) -> Self {
+        self.klv_behavior = ::std::option::Option::Some(input);
+        self
+    }
+    /// If set to passthrough, passes any KLV data from the input source to this output.
+    pub fn set_klv_behavior(mut self, input: ::std::option::Option<crate::types::M3u8KlvBehavior>) -> Self {
+        self.klv_behavior = input;
+        self
+    }
+    /// If set to passthrough, passes any KLV data from the input source to this output.
+    pub fn get_klv_behavior(&self) -> &::std::option::Option<crate::types::M3u8KlvBehavior> {
+        &self.klv_behavior
+    }
+    /// Packet Identifier (PID) for input source KLV data to this output. Multiple values are accepted, and can be entered in ranges and/or by comma separation. Can be entered as decimal or hexadecimal values. Each PID specified must be in the range of 32 (or 0x20)..8182 (or 0x1ff6).
+    pub fn klv_data_pids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.klv_data_pids = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// Packet Identifier (PID) for input source KLV data to this output. Multiple values are accepted, and can be entered in ranges and/or by comma separation. Can be entered as decimal or hexadecimal values. Each PID specified must be in the range of 32 (or 0x20)..8182 (or 0x1ff6).
+    pub fn set_klv_data_pids(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.klv_data_pids = input;
+        self
+    }
+    /// Packet Identifier (PID) for input source KLV data to this output. Multiple values are accepted, and can be entered in ranges and/or by comma separation. Can be entered as decimal or hexadecimal values. Each PID specified must be in the range of 32 (or 0x20)..8182 (or 0x1ff6).
+    pub fn get_klv_data_pids(&self) -> &::std::option::Option<::std::string::String> {
+        &self.klv_data_pids
+    }
     /// Consumes the builder and constructs a [`M3u8Settings`](crate::types::M3u8Settings).
     pub fn build(self) -> crate::types::M3u8Settings {
         crate::types::M3u8Settings {
@@ -397,6 +439,8 @@ impl M3u8SettingsBuilder {
             timed_metadata_pid: self.timed_metadata_pid,
             transport_stream_id: self.transport_stream_id,
             video_pid: self.video_pid,
+            klv_behavior: self.klv_behavior,
+            klv_data_pids: self.klv_data_pids,
         }
     }
 }

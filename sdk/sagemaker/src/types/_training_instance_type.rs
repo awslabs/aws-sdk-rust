@@ -59,6 +59,7 @@
 ///     TrainingInstanceType::MlP38Xlarge => { /* ... */ },
 ///     TrainingInstanceType::MlP3Dn24Xlarge => { /* ... */ },
 ///     TrainingInstanceType::MlP4D24Xlarge => { /* ... */ },
+///     TrainingInstanceType::MlP548Xlarge => { /* ... */ },
 ///     TrainingInstanceType::MlTrn12Xlarge => { /* ... */ },
 ///     TrainingInstanceType::MlTrn132Xlarge => { /* ... */ },
 ///     TrainingInstanceType::MlTrn1N32Xlarge => { /* ... */ },
@@ -184,6 +185,8 @@ pub enum TrainingInstanceType {
     #[allow(missing_docs)] // documentation missing in model
     MlP4D24Xlarge,
     #[allow(missing_docs)] // documentation missing in model
+    MlP548Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
     MlTrn12Xlarge,
     #[allow(missing_docs)] // documentation missing in model
     MlTrn132Xlarge,
@@ -242,6 +245,7 @@ impl ::std::convert::From<&str> for TrainingInstanceType {
             "ml.p3.8xlarge" => TrainingInstanceType::MlP38Xlarge,
             "ml.p3dn.24xlarge" => TrainingInstanceType::MlP3Dn24Xlarge,
             "ml.p4d.24xlarge" => TrainingInstanceType::MlP4D24Xlarge,
+            "ml.p5.48xlarge" => TrainingInstanceType::MlP548Xlarge,
             "ml.trn1.2xlarge" => TrainingInstanceType::MlTrn12Xlarge,
             "ml.trn1.32xlarge" => TrainingInstanceType::MlTrn132Xlarge,
             "ml.trn1n.32xlarge" => TrainingInstanceType::MlTrn1N32Xlarge,
@@ -307,6 +311,7 @@ impl TrainingInstanceType {
             TrainingInstanceType::MlP38Xlarge => "ml.p3.8xlarge",
             TrainingInstanceType::MlP3Dn24Xlarge => "ml.p3dn.24xlarge",
             TrainingInstanceType::MlP4D24Xlarge => "ml.p4d.24xlarge",
+            TrainingInstanceType::MlP548Xlarge => "ml.p5.48xlarge",
             TrainingInstanceType::MlTrn12Xlarge => "ml.trn1.2xlarge",
             TrainingInstanceType::MlTrn132Xlarge => "ml.trn1.32xlarge",
             TrainingInstanceType::MlTrn1N32Xlarge => "ml.trn1n.32xlarge",
@@ -363,6 +368,7 @@ impl TrainingInstanceType {
             "ml.p3.8xlarge",
             "ml.p3dn.24xlarge",
             "ml.p4d.24xlarge",
+            "ml.p5.48xlarge",
             "ml.trn1.2xlarge",
             "ml.trn1.32xlarge",
             "ml.trn1n.32xlarge",

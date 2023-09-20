@@ -272,6 +272,8 @@ pub type CreateTLSInspectionConfigurationErrorKind = CreateTLSInspectionConfigur
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum CreateTLSInspectionConfigurationError {
+    /// <p>Amazon Web Services doesn't currently have enough available capacity to fulfill your request. Try your request later. </p>
+    InsufficientCapacityException(crate::types::error::InsufficientCapacityException),
     /// <p>Your request is valid, but Network Firewall couldn’t perform the operation because of a system problem. Retry your request. </p>
     InternalServerError(crate::types::error::InternalServerError),
     /// <p>The operation failed because of a problem with your request. Examples include: </p>
@@ -281,6 +283,8 @@ pub enum CreateTLSInspectionConfigurationError {
     /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource that isn't valid in the context of the request.</p> </li>
     /// </ul>
     InvalidRequestException(crate::types::error::InvalidRequestException),
+    /// <p>Unable to perform the operation because doing so would violate a limit setting. </p>
+    LimitExceededException(crate::types::error::LimitExceededException),
     /// <p>Unable to process the request due to throttling limitations.</p>
     ThrottlingException(crate::types::error::ThrottlingException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
@@ -301,8 +305,10 @@ impl ::aws_smithy_http::result::CreateUnhandledError for CreateTLSInspectionConf
 impl ::std::fmt::Display for CreateTLSInspectionConfigurationError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
+            Self::InsufficientCapacityException(_inner) => _inner.fmt(f),
             Self::InternalServerError(_inner) => _inner.fmt(f),
             Self::InvalidRequestException(_inner) => _inner.fmt(f),
+            Self::LimitExceededException(_inner) => _inner.fmt(f),
             Self::ThrottlingException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => _inner.fmt(f),
         }
@@ -311,8 +317,10 @@ impl ::std::fmt::Display for CreateTLSInspectionConfigurationError {
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for CreateTLSInspectionConfigurationError {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::InsufficientCapacityException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InternalServerError(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidRequestException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::LimitExceededException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ThrottlingException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
         }
@@ -350,11 +358,17 @@ impl CreateTLSInspectionConfigurationError {
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         match self {
+            Self::InsufficientCapacityException(e) => e.meta(),
             Self::InternalServerError(e) => e.meta(),
             Self::InvalidRequestException(e) => e.meta(),
+            Self::LimitExceededException(e) => e.meta(),
             Self::ThrottlingException(e) => e.meta(),
             Self::Unhandled(e) => e.meta(),
         }
+    }
+    /// Returns `true` if the error kind is `CreateTLSInspectionConfigurationError::InsufficientCapacityException`.
+    pub fn is_insufficient_capacity_exception(&self) -> bool {
+        matches!(self, Self::InsufficientCapacityException(_))
     }
     /// Returns `true` if the error kind is `CreateTLSInspectionConfigurationError::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
@@ -364,6 +378,10 @@ impl CreateTLSInspectionConfigurationError {
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(self, Self::InvalidRequestException(_))
     }
+    /// Returns `true` if the error kind is `CreateTLSInspectionConfigurationError::LimitExceededException`.
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(self, Self::LimitExceededException(_))
+    }
     /// Returns `true` if the error kind is `CreateTLSInspectionConfigurationError::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(self, Self::ThrottlingException(_))
@@ -372,8 +390,10 @@ impl CreateTLSInspectionConfigurationError {
 impl ::std::error::Error for CreateTLSInspectionConfigurationError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
+            Self::InsufficientCapacityException(_inner) => ::std::option::Option::Some(_inner),
             Self::InternalServerError(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidRequestException(_inner) => ::std::option::Option::Some(_inner),
+            Self::LimitExceededException(_inner) => ::std::option::Option::Some(_inner),
             Self::ThrottlingException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(_inner),
         }

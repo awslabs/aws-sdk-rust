@@ -389,6 +389,21 @@ pub fn de_db_engine_version(
                 builder = builder.set_supported_ca_certificate_identifiers(var_31);
             }
             ,
+            s if s.matches("SupportsLocalWriteForwarding") /* SupportsLocalWriteForwarding com.amazonaws.rds#DBEngineVersion$SupportsLocalWriteForwarding */ =>  {
+                let var_32 =
+                    Some(
+                         {
+                            <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.rds#BooleanOptional`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_supports_local_write_forwarding(var_32);
+            }
+            ,
             _ => {}
         }
     }

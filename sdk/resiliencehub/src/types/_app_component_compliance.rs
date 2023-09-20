@@ -6,13 +6,13 @@
 pub struct AppComponentCompliance {
     /// <p>The cost for the application.</p>
     pub cost: ::std::option::Option<crate::types::Cost>,
-    /// <p>The name of the Application Component.</p>
+    /// <p>Name of the Application Component.</p>
     pub app_component_name: ::std::option::Option<::std::string::String>,
     /// <p>The compliance of the Application Component against the resiliency policy.</p>
     pub compliance: ::std::option::Option<::std::collections::HashMap<crate::types::DisruptionType, crate::types::DisruptionCompliance>>,
     /// <p>The compliance message.</p>
     pub message: ::std::option::Option<::std::string::String>,
-    /// <p>The status of the action.</p>
+    /// <p>Status of the action.</p>
     pub status: ::std::option::Option<crate::types::ComplianceStatus>,
     /// <p>The current resiliency score for the application.</p>
     pub resiliency_score: ::std::option::Option<crate::types::ResiliencyScore>,
@@ -22,7 +22,7 @@ impl AppComponentCompliance {
     pub fn cost(&self) -> ::std::option::Option<&crate::types::Cost> {
         self.cost.as_ref()
     }
-    /// <p>The name of the Application Component.</p>
+    /// <p>Name of the Application Component.</p>
     pub fn app_component_name(&self) -> ::std::option::Option<&str> {
         self.app_component_name.as_deref()
     }
@@ -36,7 +36,7 @@ impl AppComponentCompliance {
     pub fn message(&self) -> ::std::option::Option<&str> {
         self.message.as_deref()
     }
-    /// <p>The status of the action.</p>
+    /// <p>Status of the action.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::ComplianceStatus> {
         self.status.as_ref()
     }
@@ -78,17 +78,17 @@ impl AppComponentComplianceBuilder {
     pub fn get_cost(&self) -> &::std::option::Option<crate::types::Cost> {
         &self.cost
     }
-    /// <p>The name of the Application Component.</p>
+    /// <p>Name of the Application Component.</p>
     pub fn app_component_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_component_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the Application Component.</p>
+    /// <p>Name of the Application Component.</p>
     pub fn set_app_component_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.app_component_name = input;
         self
     }
-    /// <p>The name of the Application Component.</p>
+    /// <p>Name of the Application Component.</p>
     pub fn get_app_component_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.app_component_name
     }
@@ -131,17 +131,17 @@ impl AppComponentComplianceBuilder {
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.message
     }
-    /// <p>The status of the action.</p>
+    /// <p>Status of the action.</p>
     pub fn status(mut self, input: crate::types::ComplianceStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The status of the action.</p>
+    /// <p>Status of the action.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ComplianceStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p>The status of the action.</p>
+    /// <p>Status of the action.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ComplianceStatus> {
         &self.status
     }

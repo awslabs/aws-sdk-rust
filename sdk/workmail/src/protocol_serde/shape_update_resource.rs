@@ -95,6 +95,21 @@ pub fn de_update_resource_http_error(
             }
             tmp
         }),
+        "InvalidParameterException" => crate::operation::update_resource::UpdateResourceError::InvalidParameterException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidParameterExceptionBuilder::default();
+                output = crate::protocol_serde::shape_invalid_parameter_exception::de_invalid_parameter_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::update_resource::UpdateResourceError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "MailDomainNotFoundException" => crate::operation::update_resource::UpdateResourceError::MailDomainNotFoundException({
             #[allow(unused_mut)]
             let mut tmp = {
@@ -166,6 +181,22 @@ pub fn de_update_resource_http_error(
                 let mut output = crate::types::error::builders::OrganizationStateExceptionBuilder::default();
                 output = crate::protocol_serde::shape_organization_state_exception::de_organization_state_exception_json_err(_response_body, output)
                     .map_err(crate::operation::update_resource::UpdateResourceError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "UnsupportedOperationException" => crate::operation::update_resource::UpdateResourceError::UnsupportedOperationException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::UnsupportedOperationExceptionBuilder::default();
+                output =
+                    crate::protocol_serde::shape_unsupported_operation_exception::de_unsupported_operation_exception_json_err(_response_body, output)
+                        .map_err(crate::operation::update_resource::UpdateResourceError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
             };

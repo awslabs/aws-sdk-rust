@@ -12,5 +12,8 @@ pub fn ser_describe_log_pattern_input(
     if let Some(var_3) = &input.pattern_name {
         object.key("PatternName").string(var_3.as_str());
     }
+    if let Some(var_4) = &input.account_id {
+        object.key("AccountId").string(var_4.as_str());
+    }
     Ok(())
 }

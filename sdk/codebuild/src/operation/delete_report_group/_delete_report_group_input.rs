@@ -7,7 +7,7 @@ pub struct DeleteReportGroupInput {
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>If <code>true</code>, deletes any reports that belong to a report group before deleting the report group. </p>
     /// <p>If <code>false</code>, you must delete any reports in the report group. Use <a href="https://docs.aws.amazon.com/codebuild/latest/APIReference/API_ListReportsForReportGroup.html">ListReportsForReportGroup</a> to get the reports in a report group. Use <a href="https://docs.aws.amazon.com/codebuild/latest/APIReference/API_DeleteReport.html">DeleteReport</a> to delete the reports. If you call <code>DeleteReportGroup</code> for a report group that contains one or more reports, an exception is thrown. </p>
-    pub delete_reports: bool,
+    pub delete_reports: ::std::option::Option<bool>,
 }
 impl DeleteReportGroupInput {
     /// <p>The ARN of the report group to delete. </p>
@@ -16,7 +16,7 @@ impl DeleteReportGroupInput {
     }
     /// <p>If <code>true</code>, deletes any reports that belong to a report group before deleting the report group. </p>
     /// <p>If <code>false</code>, you must delete any reports in the report group. Use <a href="https://docs.aws.amazon.com/codebuild/latest/APIReference/API_ListReportsForReportGroup.html">ListReportsForReportGroup</a> to get the reports in a report group. Use <a href="https://docs.aws.amazon.com/codebuild/latest/APIReference/API_DeleteReport.html">DeleteReport</a> to delete the reports. If you call <code>DeleteReportGroup</code> for a report group that contains one or more reports, an exception is thrown. </p>
-    pub fn delete_reports(&self) -> bool {
+    pub fn delete_reports(&self) -> ::std::option::Option<bool> {
         self.delete_reports
     }
 }
@@ -72,7 +72,7 @@ impl DeleteReportGroupInputBuilder {
     ) -> ::std::result::Result<crate::operation::delete_report_group::DeleteReportGroupInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_report_group::DeleteReportGroupInput {
             arn: self.arn,
-            delete_reports: self.delete_reports.unwrap_or_default(),
+            delete_reports: self.delete_reports,
         })
     }
 }

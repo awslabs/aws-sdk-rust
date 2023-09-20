@@ -22,8 +22,8 @@ impl UpdateTaskExecutionInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateTaskExecution`.
 ///
-/// <p>Modifies a running DataSync task.</p> <note>
-/// <p>Currently, the only <code>Option</code> that you can modify with <code>UpdateTaskExecution</code> is <code> <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_Options.html#DataSync-Type-Options-BytesPerSecond">BytesPerSecond</a> </code>, which throttles bandwidth for a running or queued task.</p>
+/// <p>Updates the configuration of a running DataSync task execution.</p> <note>
+/// <p>Currently, the only <code>Option</code> that you can modify with <code>UpdateTaskExecution</code> is <code> <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_Options.html#DataSync-Type-Options-BytesPerSecond">BytesPerSecond</a> </code>, which throttles bandwidth for a running or queued task execution.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateTaskExecutionFluentBuilder {
@@ -126,20 +126,20 @@ impl UpdateTaskExecutionFluentBuilder {
     pub fn get_task_execution_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_task_execution_arn()
     }
-    /// <p>Configures your DataSync task settings. These options include how DataSync handles files, objects, and their associated metadata. You also can specify how DataSync verifies data integrity, set bandwidth limits for your task, among other options.</p>
-    /// <p>Each task setting has a default value. Unless you need to, you don't have to configure any of these <code>Options</code> before starting your task.</p>
+    /// <p>Indicates how your transfer task is configured. These options include how DataSync handles files, objects, and their associated metadata during your transfer. You also can specify how to verify data integrity, set bandwidth limits for your task, among other options.</p>
+    /// <p>Each option has a default value. Unless you need to, you don't have to configure any of these options before starting your task.</p>
     pub fn options(mut self, input: crate::types::Options) -> Self {
         self.inner = self.inner.options(input);
         self
     }
-    /// <p>Configures your DataSync task settings. These options include how DataSync handles files, objects, and their associated metadata. You also can specify how DataSync verifies data integrity, set bandwidth limits for your task, among other options.</p>
-    /// <p>Each task setting has a default value. Unless you need to, you don't have to configure any of these <code>Options</code> before starting your task.</p>
+    /// <p>Indicates how your transfer task is configured. These options include how DataSync handles files, objects, and their associated metadata during your transfer. You also can specify how to verify data integrity, set bandwidth limits for your task, among other options.</p>
+    /// <p>Each option has a default value. Unless you need to, you don't have to configure any of these options before starting your task.</p>
     pub fn set_options(mut self, input: ::std::option::Option<crate::types::Options>) -> Self {
         self.inner = self.inner.set_options(input);
         self
     }
-    /// <p>Configures your DataSync task settings. These options include how DataSync handles files, objects, and their associated metadata. You also can specify how DataSync verifies data integrity, set bandwidth limits for your task, among other options.</p>
-    /// <p>Each task setting has a default value. Unless you need to, you don't have to configure any of these <code>Options</code> before starting your task.</p>
+    /// <p>Indicates how your transfer task is configured. These options include how DataSync handles files, objects, and their associated metadata during your transfer. You also can specify how to verify data integrity, set bandwidth limits for your task, among other options.</p>
+    /// <p>Each option has a default value. Unless you need to, you don't have to configure any of these options before starting your task.</p>
     pub fn get_options(&self) -> &::std::option::Option<crate::types::Options> {
         self.inner.get_options()
     }

@@ -15,6 +15,21 @@ pub fn ser_kpi_conditional_formatting_option(
         crate::protocol_serde::shape_kpi_progress_bar_conditional_formatting::ser_kpi_progress_bar_conditional_formatting(&mut object_4, var_3)?;
         object_4.finish();
     }
+    if let Some(var_5) = &input.actual_value {
+        #[allow(unused_mut)]
+        let mut object_6 = object.key("ActualValue").start_object();
+        crate::protocol_serde::shape_kpi_actual_value_conditional_formatting::ser_kpi_actual_value_conditional_formatting(&mut object_6, var_5)?;
+        object_6.finish();
+    }
+    if let Some(var_7) = &input.comparison_value {
+        #[allow(unused_mut)]
+        let mut object_8 = object.key("ComparisonValue").start_object();
+        crate::protocol_serde::shape_kpi_comparison_value_conditional_formatting::ser_kpi_comparison_value_conditional_formatting(
+            &mut object_8,
+            var_7,
+        )?;
+        object_8.finish();
+    }
     Ok(())
 }
 
@@ -44,6 +59,18 @@ where
                                     crate::protocol_serde::shape_kpi_progress_bar_conditional_formatting::de_kpi_progress_bar_conditional_formatting(
                                         tokens,
                                     )?,
+                                );
+                            }
+                            "ActualValue" => {
+                                builder = builder.set_actual_value(
+                                    crate::protocol_serde::shape_kpi_actual_value_conditional_formatting::de_kpi_actual_value_conditional_formatting(
+                                        tokens,
+                                    )?,
+                                );
+                            }
+                            "ComparisonValue" => {
+                                builder = builder.set_comparison_value(
+                                    crate::protocol_serde::shape_kpi_comparison_value_conditional_formatting::de_kpi_comparison_value_conditional_formatting(tokens)?
                                 );
                             }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

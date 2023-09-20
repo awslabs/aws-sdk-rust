@@ -23,9 +23,9 @@ impl ReorderReceiptRuleSetInputBuilder {
 /// Fluent builder constructing a request to `ReorderReceiptRuleSet`.
 ///
 /// <p>Reorders the receipt rules within a receipt rule set.</p> <note>
-/// <p>All of the rules in the rule set must be represented in this request. That is, this API will return an error if the reorder request doesn't explicitly position all of the rules.</p>
+/// <p>All of the rules in the rule set must be represented in this request. That is, it is error if the reorder request doesn't explicitly position all of the rules.</p>
 /// </note>
-/// <p>For information about managing receipt rule sets, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html">Amazon SES Developer Guide</a>.</p>
+/// <p>For information about managing receipt rule sets, see the <a href="https://docs.aws.amazon.com/ses/latest/dg/receiving-email-receipt-rules-console-walkthrough.html">Amazon SES Developer Guide</a>.</p>
 /// <p>You can execute this operation no more than once per second.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ReorderReceiptRuleSetFluentBuilder {
@@ -132,17 +132,17 @@ impl ReorderReceiptRuleSetFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_rule_names`](Self::set_rule_names).
     ///
-    /// <p>A list of the specified receipt rule set's receipt rules in the order that you want to put them.</p>
+    /// <p>The specified receipt rule set's receipt rules, in order.</p>
     pub fn rule_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.rule_names(input.into());
         self
     }
-    /// <p>A list of the specified receipt rule set's receipt rules in the order that you want to put them.</p>
+    /// <p>The specified receipt rule set's receipt rules, in order.</p>
     pub fn set_rule_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_rule_names(input);
         self
     }
-    /// <p>A list of the specified receipt rule set's receipt rules in the order that you want to put them.</p>
+    /// <p>The specified receipt rule set's receipt rules, in order.</p>
     pub fn get_rule_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_rule_names()
     }

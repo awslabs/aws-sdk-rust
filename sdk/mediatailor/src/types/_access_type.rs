@@ -12,6 +12,7 @@
 /// ```text
 /// # let accesstype = unimplemented!();
 /// match accesstype {
+///     AccessType::AutodetectSigv4 => { /* ... */ },
 ///     AccessType::S3Sigv4 => { /* ... */ },
 ///     AccessType::SecretsManagerAccessToken => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -42,6 +43,8 @@
 )]
 pub enum AccessType {
     #[allow(missing_docs)] // documentation missing in model
+    AutodetectSigv4,
+    #[allow(missing_docs)] // documentation missing in model
     S3Sigv4,
     #[allow(missing_docs)] // documentation missing in model
     SecretsManagerAccessToken,
@@ -51,6 +54,7 @@ pub enum AccessType {
 impl ::std::convert::From<&str> for AccessType {
     fn from(s: &str) -> Self {
         match s {
+            "AUTODETECT_SIGV4" => AccessType::AutodetectSigv4,
             "S3_SIGV4" => AccessType::S3Sigv4,
             "SECRETS_MANAGER_ACCESS_TOKEN" => AccessType::SecretsManagerAccessToken,
             other => AccessType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
@@ -68,6 +72,7 @@ impl AccessType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            AccessType::AutodetectSigv4 => "AUTODETECT_SIGV4",
             AccessType::S3Sigv4 => "S3_SIGV4",
             AccessType::SecretsManagerAccessToken => "SECRETS_MANAGER_ACCESS_TOKEN",
             AccessType::Unknown(value) => value.as_str(),
@@ -75,7 +80,7 @@ impl AccessType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["S3_SIGV4", "SECRETS_MANAGER_ACCESS_TOKEN"]
+        &["AUTODETECT_SIGV4", "S3_SIGV4", "SECRETS_MANAGER_ACCESS_TOKEN"]
     }
 }
 impl ::std::convert::AsRef<str> for AccessType {

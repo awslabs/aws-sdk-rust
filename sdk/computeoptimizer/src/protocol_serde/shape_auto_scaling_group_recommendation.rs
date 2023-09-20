@@ -86,6 +86,9 @@ where
                                 crate::protocol_serde::shape_inferred_workload_types::de_inferred_workload_types(tokens)?,
                             );
                         }
+                        "currentInstanceGpuInfo" => {
+                            builder = builder.set_current_instance_gpu_info(crate::protocol_serde::shape_gpu_info::de_gpu_info(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

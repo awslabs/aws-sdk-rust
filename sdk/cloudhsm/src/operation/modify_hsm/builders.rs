@@ -27,6 +27,7 @@ impl ModifyHsmInputBuilder {
 /// <p>Modifies an HSM.</p> <important>
 /// <p>This operation can result in the HSM being offline for up to 15 minutes while the AWS CloudHSM service is reconfigured. If you are modifying a production HSM, you should ensure that your AWS CloudHSM service is configured for high availability, and consider executing this operation during a maintenance window.</p>
 /// </important>
+#[deprecated(note = "This API is deprecated.")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ModifyHsmFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

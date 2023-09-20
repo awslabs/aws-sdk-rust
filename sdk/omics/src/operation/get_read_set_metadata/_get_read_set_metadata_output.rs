@@ -31,6 +31,8 @@ pub struct GetReadSetMetadataOutput {
     pub files: ::std::option::Option<crate::types::ReadSetFiles>,
     /// <p> The status message for a read set. It provides more detail as to why the read set has a status. </p>
     pub status_message: ::std::option::Option<::std::string::String>,
+    /// <p> The creation type of the read set. </p>
+    pub creation_type: ::std::option::Option<crate::types::CreationType>,
     _request_id: Option<String>,
 }
 impl GetReadSetMetadataOutput {
@@ -90,6 +92,10 @@ impl GetReadSetMetadataOutput {
     pub fn status_message(&self) -> ::std::option::Option<&str> {
         self.status_message.as_deref()
     }
+    /// <p> The creation type of the read set. </p>
+    pub fn creation_type(&self) -> ::std::option::Option<&crate::types::CreationType> {
+        self.creation_type.as_ref()
+    }
 }
 impl ::aws_http::request_id::RequestId for GetReadSetMetadataOutput {
     fn request_id(&self) -> Option<&str> {
@@ -121,6 +127,7 @@ pub struct GetReadSetMetadataOutputBuilder {
     pub(crate) reference_arn: ::std::option::Option<::std::string::String>,
     pub(crate) files: ::std::option::Option<crate::types::ReadSetFiles>,
     pub(crate) status_message: ::std::option::Option<::std::string::String>,
+    pub(crate) creation_type: ::std::option::Option<crate::types::CreationType>,
     _request_id: Option<String>,
 }
 impl GetReadSetMetadataOutputBuilder {
@@ -320,6 +327,20 @@ impl GetReadSetMetadataOutputBuilder {
     pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.status_message
     }
+    /// <p> The creation type of the read set. </p>
+    pub fn creation_type(mut self, input: crate::types::CreationType) -> Self {
+        self.creation_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p> The creation type of the read set. </p>
+    pub fn set_creation_type(mut self, input: ::std::option::Option<crate::types::CreationType>) -> Self {
+        self.creation_type = input;
+        self
+    }
+    /// <p> The creation type of the read set. </p>
+    pub fn get_creation_type(&self) -> &::std::option::Option<crate::types::CreationType> {
+        &self.creation_type
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -346,6 +367,7 @@ impl GetReadSetMetadataOutputBuilder {
             reference_arn: self.reference_arn,
             files: self.files,
             status_message: self.status_message,
+            creation_type: self.creation_type,
             _request_id: self._request_id,
         }
     }

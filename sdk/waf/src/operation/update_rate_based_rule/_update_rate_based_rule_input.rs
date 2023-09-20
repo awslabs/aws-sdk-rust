@@ -10,7 +10,7 @@ pub struct UpdateRateBasedRuleInput {
     /// <p>An array of <code>RuleUpdate</code> objects that you want to insert into or delete from a <code>RateBasedRule</code>. </p>
     pub updates: ::std::option::Option<::std::vec::Vec<crate::types::RuleUpdate>>,
     /// <p>The maximum number of requests, which have an identical value in the field specified by the <code>RateKey</code>, allowed in a five-minute period. If the number of requests exceeds the <code>RateLimit</code> and the other predicates specified in the rule are also met, AWS WAF triggers the action that is specified for this rule.</p>
-    pub rate_limit: i64,
+    pub rate_limit: ::std::option::Option<i64>,
 }
 impl UpdateRateBasedRuleInput {
     /// <p>The <code>RuleId</code> of the <code>RateBasedRule</code> that you want to update. <code>RuleId</code> is returned by <code>CreateRateBasedRule</code> and by <code>ListRateBasedRules</code>.</p>
@@ -26,7 +26,7 @@ impl UpdateRateBasedRuleInput {
         self.updates.as_deref()
     }
     /// <p>The maximum number of requests, which have an identical value in the field specified by the <code>RateKey</code>, allowed in a five-minute period. If the number of requests exceeds the <code>RateLimit</code> and the other predicates specified in the rule are also met, AWS WAF triggers the action that is specified for this rule.</p>
-    pub fn rate_limit(&self) -> i64 {
+    pub fn rate_limit(&self) -> ::std::option::Option<i64> {
         self.rate_limit
     }
 }
@@ -118,7 +118,7 @@ impl UpdateRateBasedRuleInputBuilder {
             rule_id: self.rule_id,
             change_token: self.change_token,
             updates: self.updates,
-            rate_limit: self.rate_limit.unwrap_or_default(),
+            rate_limit: self.rate_limit,
         })
     }
 }

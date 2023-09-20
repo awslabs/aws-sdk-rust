@@ -156,4 +156,21 @@ impl CreateMembershipFluentBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
+    /// <p>The default protected query result configuration as specified by the member who can receive results.</p>
+    pub fn default_result_configuration(mut self, input: crate::types::MembershipProtectedQueryResultConfiguration) -> Self {
+        self.inner = self.inner.default_result_configuration(input);
+        self
+    }
+    /// <p>The default protected query result configuration as specified by the member who can receive results.</p>
+    pub fn set_default_result_configuration(
+        mut self,
+        input: ::std::option::Option<crate::types::MembershipProtectedQueryResultConfiguration>,
+    ) -> Self {
+        self.inner = self.inner.set_default_result_configuration(input);
+        self
+    }
+    /// <p>The default protected query result configuration as specified by the member who can receive results.</p>
+    pub fn get_default_result_configuration(&self) -> &::std::option::Option<crate::types::MembershipProtectedQueryResultConfiguration> {
+        self.inner.get_default_result_configuration()
+    }
 }

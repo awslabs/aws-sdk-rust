@@ -23,12 +23,12 @@ pub struct CreateAccountInput {
     /// <p>If you don't specify this parameter, the role name defaults to <code>OrganizationAccountAccessRole</code>.</p>
     /// <p>For more information about how to use this role to access the member account, see the following links:</p>
     /// <ul>
-    /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html#orgs_manage_accounts_create-cross-account-role">Accessing and Administering the Member Accounts in Your Organization</a> in the <i>Organizations User Guide</i> </p> </li>
-    /// <li> <p>Steps 2 and 3 in <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html">Tutorial: Delegate Access Across Amazon Web Services accounts Using IAM Roles</a> in the <i>IAM User Guide</i> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html#orgs_manage_accounts_create-cross-account-role">Creating the OrganizationAccountAccessRole in an invited member account</a> in the <i>Organizations User Guide</i> </p> </li>
+    /// <li> <p>Steps 2 and 3 in <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html">IAM Tutorial: Delegate access across Amazon Web Services accounts using IAM roles</a> in the <i>IAM User Guide</i> </p> </li>
     /// </ul>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter. The pattern can include uppercase letters, lowercase letters, digits with no spaces, and any of the following characters: =,.@-</p>
     pub role_name: ::std::option::Option<::std::string::String>,
-    /// <p>If set to <code>ALLOW</code>, the new account enables IAM users to access account billing information <i>if</i> they have the required permissions. If set to <code>DENY</code>, only the root user of the new account can access account billing information. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate">Activating Access to the Billing and Cost Management Console</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.</p>
+    /// <p>If set to <code>ALLOW</code>, the new account enables IAM users to access account billing information <i>if</i> they have the required permissions. If set to <code>DENY</code>, only the root user of the new account can access account billing information. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate">About IAM access to the Billing and Cost Management console</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.</p>
     /// <p>If you don't specify this parameter, the value defaults to <code>ALLOW</code>, and IAM users and roles with the required permissions can access billing information for the new account.</p>
     pub iam_user_access_to_billing: ::std::option::Option<crate::types::IamUserAccessToBilling>,
     /// <p>A list of tags that you want to attach to the newly created account. For each tag in the list, you must specify both a tag key and a value. You can set the value to an empty string, but you can't set it to <code>null</code>. For more information about tagging, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging Organizations resources</a> in the Organizations User Guide.</p> <note>
@@ -61,14 +61,14 @@ impl CreateAccountInput {
     /// <p>If you don't specify this parameter, the role name defaults to <code>OrganizationAccountAccessRole</code>.</p>
     /// <p>For more information about how to use this role to access the member account, see the following links:</p>
     /// <ul>
-    /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html#orgs_manage_accounts_create-cross-account-role">Accessing and Administering the Member Accounts in Your Organization</a> in the <i>Organizations User Guide</i> </p> </li>
-    /// <li> <p>Steps 2 and 3 in <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html">Tutorial: Delegate Access Across Amazon Web Services accounts Using IAM Roles</a> in the <i>IAM User Guide</i> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html#orgs_manage_accounts_create-cross-account-role">Creating the OrganizationAccountAccessRole in an invited member account</a> in the <i>Organizations User Guide</i> </p> </li>
+    /// <li> <p>Steps 2 and 3 in <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html">IAM Tutorial: Delegate access across Amazon Web Services accounts using IAM roles</a> in the <i>IAM User Guide</i> </p> </li>
     /// </ul>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter. The pattern can include uppercase letters, lowercase letters, digits with no spaces, and any of the following characters: =,.@-</p>
     pub fn role_name(&self) -> ::std::option::Option<&str> {
         self.role_name.as_deref()
     }
-    /// <p>If set to <code>ALLOW</code>, the new account enables IAM users to access account billing information <i>if</i> they have the required permissions. If set to <code>DENY</code>, only the root user of the new account can access account billing information. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate">Activating Access to the Billing and Cost Management Console</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.</p>
+    /// <p>If set to <code>ALLOW</code>, the new account enables IAM users to access account billing information <i>if</i> they have the required permissions. If set to <code>DENY</code>, only the root user of the new account can access account billing information. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate">About IAM access to the Billing and Cost Management console</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.</p>
     /// <p>If you don't specify this parameter, the value defaults to <code>ALLOW</code>, and IAM users and roles with the required permissions can access billing information for the new account.</p>
     pub fn iam_user_access_to_billing(&self) -> ::std::option::Option<&crate::types::IamUserAccessToBilling> {
         self.iam_user_access_to_billing.as_ref()
@@ -177,8 +177,8 @@ impl CreateAccountInputBuilder {
     /// <p>If you don't specify this parameter, the role name defaults to <code>OrganizationAccountAccessRole</code>.</p>
     /// <p>For more information about how to use this role to access the member account, see the following links:</p>
     /// <ul>
-    /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html#orgs_manage_accounts_create-cross-account-role">Accessing and Administering the Member Accounts in Your Organization</a> in the <i>Organizations User Guide</i> </p> </li>
-    /// <li> <p>Steps 2 and 3 in <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html">Tutorial: Delegate Access Across Amazon Web Services accounts Using IAM Roles</a> in the <i>IAM User Guide</i> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html#orgs_manage_accounts_create-cross-account-role">Creating the OrganizationAccountAccessRole in an invited member account</a> in the <i>Organizations User Guide</i> </p> </li>
+    /// <li> <p>Steps 2 and 3 in <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html">IAM Tutorial: Delegate access across Amazon Web Services accounts using IAM roles</a> in the <i>IAM User Guide</i> </p> </li>
     /// </ul>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter. The pattern can include uppercase letters, lowercase letters, digits with no spaces, and any of the following characters: =,.@-</p>
     pub fn role_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -189,8 +189,8 @@ impl CreateAccountInputBuilder {
     /// <p>If you don't specify this parameter, the role name defaults to <code>OrganizationAccountAccessRole</code>.</p>
     /// <p>For more information about how to use this role to access the member account, see the following links:</p>
     /// <ul>
-    /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html#orgs_manage_accounts_create-cross-account-role">Accessing and Administering the Member Accounts in Your Organization</a> in the <i>Organizations User Guide</i> </p> </li>
-    /// <li> <p>Steps 2 and 3 in <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html">Tutorial: Delegate Access Across Amazon Web Services accounts Using IAM Roles</a> in the <i>IAM User Guide</i> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html#orgs_manage_accounts_create-cross-account-role">Creating the OrganizationAccountAccessRole in an invited member account</a> in the <i>Organizations User Guide</i> </p> </li>
+    /// <li> <p>Steps 2 and 3 in <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html">IAM Tutorial: Delegate access across Amazon Web Services accounts using IAM roles</a> in the <i>IAM User Guide</i> </p> </li>
     /// </ul>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter. The pattern can include uppercase letters, lowercase letters, digits with no spaces, and any of the following characters: =,.@-</p>
     pub fn set_role_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -201,26 +201,26 @@ impl CreateAccountInputBuilder {
     /// <p>If you don't specify this parameter, the role name defaults to <code>OrganizationAccountAccessRole</code>.</p>
     /// <p>For more information about how to use this role to access the member account, see the following links:</p>
     /// <ul>
-    /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html#orgs_manage_accounts_create-cross-account-role">Accessing and Administering the Member Accounts in Your Organization</a> in the <i>Organizations User Guide</i> </p> </li>
-    /// <li> <p>Steps 2 and 3 in <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html">Tutorial: Delegate Access Across Amazon Web Services accounts Using IAM Roles</a> in the <i>IAM User Guide</i> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html#orgs_manage_accounts_create-cross-account-role">Creating the OrganizationAccountAccessRole in an invited member account</a> in the <i>Organizations User Guide</i> </p> </li>
+    /// <li> <p>Steps 2 and 3 in <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html">IAM Tutorial: Delegate access across Amazon Web Services accounts using IAM roles</a> in the <i>IAM User Guide</i> </p> </li>
     /// </ul>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter. The pattern can include uppercase letters, lowercase letters, digits with no spaces, and any of the following characters: =,.@-</p>
     pub fn get_role_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.role_name
     }
-    /// <p>If set to <code>ALLOW</code>, the new account enables IAM users to access account billing information <i>if</i> they have the required permissions. If set to <code>DENY</code>, only the root user of the new account can access account billing information. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate">Activating Access to the Billing and Cost Management Console</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.</p>
+    /// <p>If set to <code>ALLOW</code>, the new account enables IAM users to access account billing information <i>if</i> they have the required permissions. If set to <code>DENY</code>, only the root user of the new account can access account billing information. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate">About IAM access to the Billing and Cost Management console</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.</p>
     /// <p>If you don't specify this parameter, the value defaults to <code>ALLOW</code>, and IAM users and roles with the required permissions can access billing information for the new account.</p>
     pub fn iam_user_access_to_billing(mut self, input: crate::types::IamUserAccessToBilling) -> Self {
         self.iam_user_access_to_billing = ::std::option::Option::Some(input);
         self
     }
-    /// <p>If set to <code>ALLOW</code>, the new account enables IAM users to access account billing information <i>if</i> they have the required permissions. If set to <code>DENY</code>, only the root user of the new account can access account billing information. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate">Activating Access to the Billing and Cost Management Console</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.</p>
+    /// <p>If set to <code>ALLOW</code>, the new account enables IAM users to access account billing information <i>if</i> they have the required permissions. If set to <code>DENY</code>, only the root user of the new account can access account billing information. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate">About IAM access to the Billing and Cost Management console</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.</p>
     /// <p>If you don't specify this parameter, the value defaults to <code>ALLOW</code>, and IAM users and roles with the required permissions can access billing information for the new account.</p>
     pub fn set_iam_user_access_to_billing(mut self, input: ::std::option::Option<crate::types::IamUserAccessToBilling>) -> Self {
         self.iam_user_access_to_billing = input;
         self
     }
-    /// <p>If set to <code>ALLOW</code>, the new account enables IAM users to access account billing information <i>if</i> they have the required permissions. If set to <code>DENY</code>, only the root user of the new account can access account billing information. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate">Activating Access to the Billing and Cost Management Console</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.</p>
+    /// <p>If set to <code>ALLOW</code>, the new account enables IAM users to access account billing information <i>if</i> they have the required permissions. If set to <code>DENY</code>, only the root user of the new account can access account billing information. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate">About IAM access to the Billing and Cost Management console</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.</p>
     /// <p>If you don't specify this parameter, the value defaults to <code>ALLOW</code>, and IAM users and roles with the required permissions can access billing information for the new account.</p>
     pub fn get_iam_user_access_to_billing(&self) -> &::std::option::Option<crate::types::IamUserAccessToBilling> {
         &self.iam_user_access_to_billing

@@ -267,7 +267,7 @@ pub type ListPoliciesForTargetErrorKind = ListPoliciesForTargetError;
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum ListPoliciesForTargetError {
-    /// <p>You don't have permissions to perform the requested operation. The user or role that is making the request must have at least one IAM permissions policy attached that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access Management</a> in the <i>IAM User Guide.</i> </p>
+    /// <p>You don't have permissions to perform the requested operation. The user or role that is making the request must have at least one IAM permissions policy attached that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access Management</a> in the <i>IAM User Guide</i>.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>Your account isn't a member of an organization. To make this request, you must use the credentials of an account that belongs to an organization.</p>
     AwsOrganizationsNotInUseException(crate::types::error::AwsOrganizationsNotInUseException),
@@ -306,7 +306,7 @@ pub enum ListPoliciesForTargetError {
     /// <p>We can't find a root, OU, account, or policy with the <code>TargetId</code> that you specified.</p>
     TargetNotFoundException(crate::types::error::TargetNotFoundException),
     /// <p>You have sent too many requests in too short a period of time. The quota helps protect against denial-of-service attacks. Try again later.</p>
-    /// <p>For information about quotas that affect Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas for Organizations</a>in the <i>Organizations User Guide.</i> </p>
+    /// <p>For information about quotas that affect Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas for Organizations</a> in the <i>Organizations User Guide</i>.</p>
     TooManyRequestsException(crate::types::error::TooManyRequestsException),
     /// <p>This action isn't available in the current Amazon Web Services Region.</p>
     UnsupportedApiEndpointException(crate::types::error::UnsupportedApiEndpointException),

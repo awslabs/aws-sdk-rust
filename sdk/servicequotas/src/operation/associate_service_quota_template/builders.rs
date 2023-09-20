@@ -22,7 +22,7 @@ impl AssociateServiceQuotaTemplateInputBuilder {
 }
 /// Fluent builder constructing a request to `AssociateServiceQuotaTemplate`.
 ///
-/// <p>Associates your quota request template with your organization. When a new account is created in your organization, the quota increase requests in the template are automatically applied to the account. You can add a quota increase request for any adjustable quota to your template.</p>
+/// <p>Associates your quota request template with your organization. When a new Amazon Web Services account is created in your organization, the quota increase requests in the template are automatically applied to the account. You can add a quota increase request for any adjustable quota to your template.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AssociateServiceQuotaTemplateFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

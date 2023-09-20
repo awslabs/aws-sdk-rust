@@ -7,15 +7,15 @@ pub enum Error {
     AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>The request could not be processed because of conflict in the current state of the resource. Example: Workflow already exists, Schema already exists, Workflow is currently running, etc. <code>HTTP Status Code: 400</code> </p>
     ConflictException(crate::types::error::ConflictException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current AWS Entity Resolution account limits. The error message describes the limit exceeded. <code>HTTP Status Code: 402</code> </p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Entity Resolution account limits. The error message describes the limit exceeded. <code>HTTP Status Code: 402</code> </p>
     ExceedsLimitException(crate::types::error::ExceedsLimitException),
-    /// <p>This exception occurs when there is an internal failure in the AWS Entity Resolution service. <code>HTTP Status Code: 500</code> </p>
+    /// <p>This exception occurs when there is an internal failure in the Entity Resolution service. <code>HTTP Status Code: 500</code> </p>
     InternalServerException(crate::types::error::InternalServerException),
     /// <p>The resource could not be found. <code>HTTP Status Code: 404</code> </p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>The request was denied due to request throttling. <code>HTTP Status Code: 429</code> </p>
     ThrottlingException(crate::types::error::ThrottlingException),
-    /// <p>The input fails to satisfy the constraints specified by AWS Entity Resolution. <code>HTTP Status Code: 400</code> </p>
+    /// <p>The input fails to satisfy the constraints specified by Entity Resolution. <code>HTTP Status Code: 400</code> </p>
     ValidationException(crate::types::error::ValidationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(::aws_smithy_types::error::Unhandled),

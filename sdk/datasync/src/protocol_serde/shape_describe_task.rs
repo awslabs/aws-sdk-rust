@@ -179,6 +179,9 @@ pub(crate) fn de_describe_task(
                 "Includes" => {
                     builder = builder.set_includes(crate::protocol_serde::shape_filter_list::de_filter_list(tokens)?);
                 }
+                "TaskReportConfig" => {
+                    builder = builder.set_task_report_config(crate::protocol_serde::shape_task_report_config::de_task_report_config(tokens)?);
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

@@ -162,6 +162,16 @@ pub(crate) fn de_describe_organization(
                             .transpose()?,
                     );
                 }
+                "MigrationAdmin" => {
+                    builder = builder.set_migration_admin(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                "InteroperabilityEnabled" => {
+                    builder = builder.set_interoperability_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

@@ -14,6 +14,7 @@
 /// match crupdateallocationstrategy {
 ///     CrUpdateAllocationStrategy::BestFitProgressive => { /* ... */ },
 ///     CrUpdateAllocationStrategy::SpotCapacityOptimized => { /* ... */ },
+///     CrUpdateAllocationStrategy::SpotPriceCapacityOptimized => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -45,6 +46,8 @@ pub enum CrUpdateAllocationStrategy {
     BestFitProgressive,
     #[allow(missing_docs)] // documentation missing in model
     SpotCapacityOptimized,
+    #[allow(missing_docs)] // documentation missing in model
+    SpotPriceCapacityOptimized,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
@@ -53,6 +56,7 @@ impl ::std::convert::From<&str> for CrUpdateAllocationStrategy {
         match s {
             "BEST_FIT_PROGRESSIVE" => CrUpdateAllocationStrategy::BestFitProgressive,
             "SPOT_CAPACITY_OPTIMIZED" => CrUpdateAllocationStrategy::SpotCapacityOptimized,
+            "SPOT_PRICE_CAPACITY_OPTIMIZED" => CrUpdateAllocationStrategy::SpotPriceCapacityOptimized,
             other => CrUpdateAllocationStrategy::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -70,12 +74,13 @@ impl CrUpdateAllocationStrategy {
         match self {
             CrUpdateAllocationStrategy::BestFitProgressive => "BEST_FIT_PROGRESSIVE",
             CrUpdateAllocationStrategy::SpotCapacityOptimized => "SPOT_CAPACITY_OPTIMIZED",
+            CrUpdateAllocationStrategy::SpotPriceCapacityOptimized => "SPOT_PRICE_CAPACITY_OPTIMIZED",
             CrUpdateAllocationStrategy::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["BEST_FIT_PROGRESSIVE", "SPOT_CAPACITY_OPTIMIZED"]
+        &["BEST_FIT_PROGRESSIVE", "SPOT_CAPACITY_OPTIMIZED", "SPOT_PRICE_CAPACITY_OPTIMIZED"]
     }
 }
 impl ::std::convert::AsRef<str> for CrUpdateAllocationStrategy {

@@ -37,7 +37,7 @@ pub struct EbsBlockDevice {
     /// <p>Valid Range: Minimum value of 125. Maximum value of 1000.</p>
     pub throughput: ::std::option::Option<i32>,
     /// <p>The ARN of the Outpost on which the snapshot is stored.</p>
-    /// <p>This parameter is only supported on <code>BlockDeviceMapping</code> objects called by <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html"> CreateImage</a>.</p>
+    /// <p>This parameter is not supported when using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">CreateImage</a>.</p>
     pub outpost_arn: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the encryption state of an EBS volume is changed while being restored from a backing snapshot. The effect of setting the encryption state to <code>true</code> depends on the volume origin (new or from a snapshot), starting encryption state, ownership, and whether encryption by default is enabled. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#encryption-parameters">Amazon EBS encryption</a> in the <i>Amazon EC2 User Guide</i>.</p>
     /// <p>In no case can you remove encryption from an encrypted volume.</p>
@@ -100,7 +100,7 @@ impl EbsBlockDevice {
         self.throughput
     }
     /// <p>The ARN of the Outpost on which the snapshot is stored.</p>
-    /// <p>This parameter is only supported on <code>BlockDeviceMapping</code> objects called by <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html"> CreateImage</a>.</p>
+    /// <p>This parameter is not supported when using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">CreateImage</a>.</p>
     pub fn outpost_arn(&self) -> ::std::option::Option<&str> {
         self.outpost_arn.as_deref()
     }
@@ -294,19 +294,19 @@ impl EbsBlockDeviceBuilder {
         &self.throughput
     }
     /// <p>The ARN of the Outpost on which the snapshot is stored.</p>
-    /// <p>This parameter is only supported on <code>BlockDeviceMapping</code> objects called by <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html"> CreateImage</a>.</p>
+    /// <p>This parameter is not supported when using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">CreateImage</a>.</p>
     pub fn outpost_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.outpost_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the Outpost on which the snapshot is stored.</p>
-    /// <p>This parameter is only supported on <code>BlockDeviceMapping</code> objects called by <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html"> CreateImage</a>.</p>
+    /// <p>This parameter is not supported when using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">CreateImage</a>.</p>
     pub fn set_outpost_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.outpost_arn = input;
         self
     }
     /// <p>The ARN of the Outpost on which the snapshot is stored.</p>
-    /// <p>This parameter is only supported on <code>BlockDeviceMapping</code> objects called by <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html"> CreateImage</a>.</p>
+    /// <p>This parameter is not supported when using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">CreateImage</a>.</p>
     pub fn get_outpost_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.outpost_arn
     }

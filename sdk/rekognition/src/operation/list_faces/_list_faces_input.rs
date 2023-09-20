@@ -9,9 +9,9 @@ pub struct ListFacesInput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Maximum number of faces to return.</p>
     pub max_results: ::std::option::Option<i32>,
-    /// <p>An array of user IDs to match when listing faces in a collection.</p>
+    /// <p>An array of user IDs to filter results with when listing faces in a collection.</p>
     pub user_id: ::std::option::Option<::std::string::String>,
-    /// <p>An array of face IDs to match when listing faces in a collection.</p>
+    /// <p>An array of face IDs to filter results with when listing faces in a collection.</p>
     pub face_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ListFacesInput {
@@ -27,11 +27,11 @@ impl ListFacesInput {
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
-    /// <p>An array of user IDs to match when listing faces in a collection.</p>
+    /// <p>An array of user IDs to filter results with when listing faces in a collection.</p>
     pub fn user_id(&self) -> ::std::option::Option<&str> {
         self.user_id.as_deref()
     }
-    /// <p>An array of face IDs to match when listing faces in a collection.</p>
+    /// <p>An array of face IDs to filter results with when listing faces in a collection.</p>
     pub fn face_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.face_ids.as_deref()
     }
@@ -96,17 +96,17 @@ impl ListFacesInputBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
-    /// <p>An array of user IDs to match when listing faces in a collection.</p>
+    /// <p>An array of user IDs to filter results with when listing faces in a collection.</p>
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>An array of user IDs to match when listing faces in a collection.</p>
+    /// <p>An array of user IDs to filter results with when listing faces in a collection.</p>
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_id = input;
         self
     }
-    /// <p>An array of user IDs to match when listing faces in a collection.</p>
+    /// <p>An array of user IDs to filter results with when listing faces in a collection.</p>
     pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.user_id
     }
@@ -114,19 +114,19 @@ impl ListFacesInputBuilder {
     ///
     /// To override the contents of this collection use [`set_face_ids`](Self::set_face_ids).
     ///
-    /// <p>An array of face IDs to match when listing faces in a collection.</p>
+    /// <p>An array of face IDs to filter results with when listing faces in a collection.</p>
     pub fn face_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.face_ids.unwrap_or_default();
         v.push(input.into());
         self.face_ids = ::std::option::Option::Some(v);
         self
     }
-    /// <p>An array of face IDs to match when listing faces in a collection.</p>
+    /// <p>An array of face IDs to filter results with when listing faces in a collection.</p>
     pub fn set_face_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.face_ids = input;
         self
     }
-    /// <p>An array of face IDs to match when listing faces in a collection.</p>
+    /// <p>An array of face IDs to filter results with when listing faces in a collection.</p>
     pub fn get_face_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.face_ids
     }

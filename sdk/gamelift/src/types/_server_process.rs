@@ -4,11 +4,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ServerProcess {
-    /// <p>The location of a game build executable or the Realtime script file that contains the <code>Init()</code> function. Game builds and Realtime scripts are installed on instances at the root: </p>
+    /// <p>The location of a game build executable or Realtime script. Game builds and Realtime scripts are installed on instances at the root: </p>
     /// <ul>
     /// <li> <p>Windows (custom game builds only): <code>C:\game</code>. Example: "<code>C:\game\MyGame\server.exe</code>" </p> </li>
     /// <li> <p>Linux: <code>/local/game</code>. Examples: "<code>/local/game/MyGame/server.exe</code>" or "<code>/local/game/MyRealtimeScript.js</code>"</p> </li>
-    /// </ul>
+    /// </ul> <note>
+    /// <p>Amazon GameLift doesn't support the use of setup scripts that launch the game executable. For custom game builds, this parameter must indicate the executable that calls the server SDK operations <code>initSDK()</code> and <code>ProcessReady()</code>. </p>
+    /// </note>
     pub launch_path: ::std::option::Option<::std::string::String>,
     /// <p>An optional list of parameters to pass to the server executable or Realtime script on launch.</p>
     pub parameters: ::std::option::Option<::std::string::String>,
@@ -16,11 +18,13 @@ pub struct ServerProcess {
     pub concurrent_executions: ::std::option::Option<i32>,
 }
 impl ServerProcess {
-    /// <p>The location of a game build executable or the Realtime script file that contains the <code>Init()</code> function. Game builds and Realtime scripts are installed on instances at the root: </p>
+    /// <p>The location of a game build executable or Realtime script. Game builds and Realtime scripts are installed on instances at the root: </p>
     /// <ul>
     /// <li> <p>Windows (custom game builds only): <code>C:\game</code>. Example: "<code>C:\game\MyGame\server.exe</code>" </p> </li>
     /// <li> <p>Linux: <code>/local/game</code>. Examples: "<code>/local/game/MyGame/server.exe</code>" or "<code>/local/game/MyRealtimeScript.js</code>"</p> </li>
-    /// </ul>
+    /// </ul> <note>
+    /// <p>Amazon GameLift doesn't support the use of setup scripts that launch the game executable. For custom game builds, this parameter must indicate the executable that calls the server SDK operations <code>initSDK()</code> and <code>ProcessReady()</code>. </p>
+    /// </note>
     pub fn launch_path(&self) -> ::std::option::Option<&str> {
         self.launch_path.as_deref()
     }
@@ -49,29 +53,35 @@ pub struct ServerProcessBuilder {
     pub(crate) concurrent_executions: ::std::option::Option<i32>,
 }
 impl ServerProcessBuilder {
-    /// <p>The location of a game build executable or the Realtime script file that contains the <code>Init()</code> function. Game builds and Realtime scripts are installed on instances at the root: </p>
+    /// <p>The location of a game build executable or Realtime script. Game builds and Realtime scripts are installed on instances at the root: </p>
     /// <ul>
     /// <li> <p>Windows (custom game builds only): <code>C:\game</code>. Example: "<code>C:\game\MyGame\server.exe</code>" </p> </li>
     /// <li> <p>Linux: <code>/local/game</code>. Examples: "<code>/local/game/MyGame/server.exe</code>" or "<code>/local/game/MyRealtimeScript.js</code>"</p> </li>
-    /// </ul>
+    /// </ul> <note>
+    /// <p>Amazon GameLift doesn't support the use of setup scripts that launch the game executable. For custom game builds, this parameter must indicate the executable that calls the server SDK operations <code>initSDK()</code> and <code>ProcessReady()</code>. </p>
+    /// </note>
     pub fn launch_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.launch_path = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The location of a game build executable or the Realtime script file that contains the <code>Init()</code> function. Game builds and Realtime scripts are installed on instances at the root: </p>
+    /// <p>The location of a game build executable or Realtime script. Game builds and Realtime scripts are installed on instances at the root: </p>
     /// <ul>
     /// <li> <p>Windows (custom game builds only): <code>C:\game</code>. Example: "<code>C:\game\MyGame\server.exe</code>" </p> </li>
     /// <li> <p>Linux: <code>/local/game</code>. Examples: "<code>/local/game/MyGame/server.exe</code>" or "<code>/local/game/MyRealtimeScript.js</code>"</p> </li>
-    /// </ul>
+    /// </ul> <note>
+    /// <p>Amazon GameLift doesn't support the use of setup scripts that launch the game executable. For custom game builds, this parameter must indicate the executable that calls the server SDK operations <code>initSDK()</code> and <code>ProcessReady()</code>. </p>
+    /// </note>
     pub fn set_launch_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.launch_path = input;
         self
     }
-    /// <p>The location of a game build executable or the Realtime script file that contains the <code>Init()</code> function. Game builds and Realtime scripts are installed on instances at the root: </p>
+    /// <p>The location of a game build executable or Realtime script. Game builds and Realtime scripts are installed on instances at the root: </p>
     /// <ul>
     /// <li> <p>Windows (custom game builds only): <code>C:\game</code>. Example: "<code>C:\game\MyGame\server.exe</code>" </p> </li>
     /// <li> <p>Linux: <code>/local/game</code>. Examples: "<code>/local/game/MyGame/server.exe</code>" or "<code>/local/game/MyRealtimeScript.js</code>"</p> </li>
-    /// </ul>
+    /// </ul> <note>
+    /// <p>Amazon GameLift doesn't support the use of setup scripts that launch the game executable. For custom game builds, this parameter must indicate the executable that calls the server SDK operations <code>initSDK()</code> and <code>ProcessReady()</code>. </p>
+    /// </note>
     pub fn get_launch_path(&self) -> &::std::option::Option<::std::string::String> {
         &self.launch_path
     }

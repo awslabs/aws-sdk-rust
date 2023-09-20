@@ -9,6 +9,8 @@ pub struct DescribeComponentConfigurationRecommendationInput {
     pub component_name: ::std::option::Option<::std::string::String>,
     /// <p>The tier of the application component.</p>
     pub tier: ::std::option::Option<crate::types::Tier>,
+    /// <p>The recommended configuration type.</p>
+    pub recommendation_type: ::std::option::Option<crate::types::RecommendationType>,
 }
 impl DescribeComponentConfigurationRecommendationInput {
     /// <p>The name of the resource group.</p>
@@ -22,6 +24,10 @@ impl DescribeComponentConfigurationRecommendationInput {
     /// <p>The tier of the application component.</p>
     pub fn tier(&self) -> ::std::option::Option<&crate::types::Tier> {
         self.tier.as_ref()
+    }
+    /// <p>The recommended configuration type.</p>
+    pub fn recommendation_type(&self) -> ::std::option::Option<&crate::types::RecommendationType> {
+        self.recommendation_type.as_ref()
     }
 }
 impl DescribeComponentConfigurationRecommendationInput {
@@ -40,6 +46,7 @@ pub struct DescribeComponentConfigurationRecommendationInputBuilder {
     pub(crate) resource_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) component_name: ::std::option::Option<::std::string::String>,
     pub(crate) tier: ::std::option::Option<crate::types::Tier>,
+    pub(crate) recommendation_type: ::std::option::Option<crate::types::RecommendationType>,
 }
 impl DescribeComponentConfigurationRecommendationInputBuilder {
     /// <p>The name of the resource group.</p>
@@ -84,6 +91,20 @@ impl DescribeComponentConfigurationRecommendationInputBuilder {
     pub fn get_tier(&self) -> &::std::option::Option<crate::types::Tier> {
         &self.tier
     }
+    /// <p>The recommended configuration type.</p>
+    pub fn recommendation_type(mut self, input: crate::types::RecommendationType) -> Self {
+        self.recommendation_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The recommended configuration type.</p>
+    pub fn set_recommendation_type(mut self, input: ::std::option::Option<crate::types::RecommendationType>) -> Self {
+        self.recommendation_type = input;
+        self
+    }
+    /// <p>The recommended configuration type.</p>
+    pub fn get_recommendation_type(&self) -> &::std::option::Option<crate::types::RecommendationType> {
+        &self.recommendation_type
+    }
     /// Consumes the builder and constructs a [`DescribeComponentConfigurationRecommendationInput`](crate::operation::describe_component_configuration_recommendation::DescribeComponentConfigurationRecommendationInput).
     pub fn build(
         self,
@@ -96,6 +117,7 @@ impl DescribeComponentConfigurationRecommendationInputBuilder {
                 resource_group_name: self.resource_group_name,
                 component_name: self.component_name,
                 tier: self.tier,
+                recommendation_type: self.recommendation_type,
             },
         )
     }

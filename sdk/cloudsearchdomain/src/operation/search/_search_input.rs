@@ -44,7 +44,7 @@ pub struct SearchInput {
     /// <p> <code>{ "actors": {}, "title": {"format": "text","max_phrases": 2,"pre_tag": "<b>","post_tag": "</b>"} }</code></p>
     pub highlight: ::std::option::Option<::std::string::String>,
     /// <p>Enables partial results to be returned if one or more index partitions are unavailable. When your search index is partitioned across multiple search instances, by default Amazon CloudSearch only returns results if every partition can be queried. This means that the failure of a single search instance can result in 5xx (internal server) errors. When you enable partial results, Amazon CloudSearch returns whatever results are available and includes the percentage of documents searched in the search results (percent-searched). This enables you to more gracefully degrade your users' search experience. For example, rather than displaying no results, you could display the partial results and a message indicating that the results might be incomplete due to a temporary system outage.</p>
-    pub partial: bool,
+    pub partial: ::std::option::Option<bool>,
     /// <p>Specifies the search criteria for the request. How you specify the search criteria depends on the query parser used for the request and the parser options specified in the <code>queryOptions</code> parameter. By default, the <code>simple</code> query parser is used to process requests. To use the <code>structured</code>, <code>lucene</code>, or <code>dismax</code> query parser, you must also specify the <code>queryParser</code> parameter. </p>
     /// <p>For more information about specifying search criteria, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/searching.html">Searching Your Data</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>
     pub query: ::std::option::Option<::std::string::String>,
@@ -72,13 +72,13 @@ pub struct SearchInput {
     /// <p>Specifies the field and expression values to include in the response. Multiple fields or expressions are specified as a comma-separated list. By default, a search response includes all return enabled fields (<code>_all_fields</code>). To return only the document IDs for the matching documents, specify <code>_no_fields</code>. To retrieve the relevance score calculated for each document, specify <code>_score</code>. </p>
     pub r#return: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the maximum number of search hits to include in the response. </p>
-    pub size: i64,
+    pub size: ::std::option::Option<i64>,
     /// <p>Specifies the fields or custom expressions to use to sort the search results. Multiple fields or expressions are specified as a comma-separated list. You must specify the sort direction (<code>asc</code> or <code>desc</code>) for each field; for example, <code>year desc,title asc</code>. To use a field to sort results, the field must be sort-enabled in the domain configuration. Array type fields cannot be used for sorting. If no <code>sort</code> parameter is specified, results are sorted by their default relevance scores in descending order: <code>_score desc</code>. You can also sort by document ID (<code>_id asc</code>) and version (<code>_version desc</code>).</p>
     /// <p>For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/sorting-results.html">Sorting Results</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>
     pub sort: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the offset of the first search hit you want to return. Note that the result set is zero-based; the first result is at index 0. You can specify either the <code>start</code> or <code>cursor</code> parameter in a request, they are mutually exclusive. </p>
     /// <p>For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/paginating-results.html">Paginating Results</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>
-    pub start: i64,
+    pub start: ::std::option::Option<i64>,
     /// <p>Specifies one or more fields for which to get statistics information. Each specified field must be facet-enabled in the domain configuration. The fields are specified in JSON using the form:</p> <code>{"FIELD-A":{},"FIELD-B":{}}</code>
     /// <p>There are currently no options supported for statistics.</p>
     pub stats: ::std::option::Option<::std::string::String>,
@@ -134,7 +134,7 @@ impl SearchInput {
         self.highlight.as_deref()
     }
     /// <p>Enables partial results to be returned if one or more index partitions are unavailable. When your search index is partitioned across multiple search instances, by default Amazon CloudSearch only returns results if every partition can be queried. This means that the failure of a single search instance can result in 5xx (internal server) errors. When you enable partial results, Amazon CloudSearch returns whatever results are available and includes the percentage of documents searched in the search results (percent-searched). This enables you to more gracefully degrade your users' search experience. For example, rather than displaying no results, you could display the partial results and a message indicating that the results might be incomplete due to a temporary system outage.</p>
-    pub fn partial(&self) -> bool {
+    pub fn partial(&self) -> ::std::option::Option<bool> {
         self.partial
     }
     /// <p>Specifies the search criteria for the request. How you specify the search criteria depends on the query parser used for the request and the parser options specified in the <code>queryOptions</code> parameter. By default, the <code>simple</code> query parser is used to process requests. To use the <code>structured</code>, <code>lucene</code>, or <code>dismax</code> query parser, you must also specify the <code>queryParser</code> parameter. </p>
@@ -172,7 +172,7 @@ impl SearchInput {
         self.r#return.as_deref()
     }
     /// <p>Specifies the maximum number of search hits to include in the response. </p>
-    pub fn size(&self) -> i64 {
+    pub fn size(&self) -> ::std::option::Option<i64> {
         self.size
     }
     /// <p>Specifies the fields or custom expressions to use to sort the search results. Multiple fields or expressions are specified as a comma-separated list. You must specify the sort direction (<code>asc</code> or <code>desc</code>) for each field; for example, <code>year desc,title asc</code>. To use a field to sort results, the field must be sort-enabled in the domain configuration. Array type fields cannot be used for sorting. If no <code>sort</code> parameter is specified, results are sorted by their default relevance scores in descending order: <code>_score desc</code>. You can also sort by document ID (<code>_id asc</code>) and version (<code>_version desc</code>).</p>
@@ -182,7 +182,7 @@ impl SearchInput {
     }
     /// <p>Specifies the offset of the first search hit you want to return. Note that the result set is zero-based; the first result is at index 0. You can specify either the <code>start</code> or <code>cursor</code> parameter in a request, they are mutually exclusive. </p>
     /// <p>For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/paginating-results.html">Paginating Results</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>
-    pub fn start(&self) -> i64 {
+    pub fn start(&self) -> ::std::option::Option<i64> {
         self.start
     }
     /// <p>Specifies one or more fields for which to get statistics information. Each specified field must be facet-enabled in the domain configuration. The fields are specified in JSON using the form:</p> <code>{"FIELD-A":{},"FIELD-B":{}}</code>
@@ -572,14 +572,14 @@ impl SearchInputBuilder {
             facet: self.facet,
             filter_query: self.filter_query,
             highlight: self.highlight,
-            partial: self.partial.unwrap_or_default(),
+            partial: self.partial,
             query: self.query,
             query_options: self.query_options,
             query_parser: self.query_parser,
             r#return: self.r#return,
-            size: self.size.unwrap_or_default(),
+            size: self.size,
             sort: self.sort,
-            start: self.start.unwrap_or_default(),
+            start: self.start,
             stats: self.stats,
         })
     }

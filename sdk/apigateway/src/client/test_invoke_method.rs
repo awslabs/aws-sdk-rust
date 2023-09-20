@@ -18,7 +18,7 @@ impl super::Client {
     ///   - [`headers(Option<HashMap<String, String>>)`](crate::operation::test_invoke_method::TestInvokeMethodOutput::headers): <p>The headers of the HTTP response.</p>
     ///   - [`multi_value_headers(Option<HashMap<String, Vec<String>>>)`](crate::operation::test_invoke_method::TestInvokeMethodOutput::multi_value_headers): <p>The headers of the HTTP response as a map from string to list of values.</p>
     ///   - [`log(Option<String>)`](crate::operation::test_invoke_method::TestInvokeMethodOutput::log): <p>The API Gateway execution log for the test invoke request.</p>
-    ///   - [`latency(i64)`](crate::operation::test_invoke_method::TestInvokeMethodOutput::latency): <p>The execution latency of the test invoke request.</p>
+    ///   - [`latency(i64)`](crate::operation::test_invoke_method::TestInvokeMethodOutput::latency): <p>The execution latency, in ms, of the test invoke request.</p>
     /// - On failure, responds with [`SdkError<TestInvokeMethodError>`](crate::operation::test_invoke_method::TestInvokeMethodError)
     pub fn test_invoke_method(&self) -> crate::operation::test_invoke_method::builders::TestInvokeMethodFluentBuilder {
         crate::operation::test_invoke_method::builders::TestInvokeMethodFluentBuilder::new(self.handle.clone())

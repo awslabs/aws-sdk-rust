@@ -283,6 +283,8 @@ pub use crate::types::_client_vpn_authorization_rule_status::ClientVpnAuthorizat
 
 pub use crate::types::_client_vpn_authorization_rule_status_code::ClientVpnAuthorizationRuleStatusCode;
 
+pub use crate::types::_sse_type::SseType;
+
 pub use crate::types::_snapshot_state::SnapshotState;
 
 pub use crate::types::_managed_prefix_list::ManagedPrefixList;
@@ -558,6 +560,8 @@ pub use crate::types::_added_principal::AddedPrincipal;
 pub use crate::types::_principal_type::PrincipalType;
 
 pub use crate::types::_payer_responsibility::PayerResponsibility;
+
+pub use crate::types::_subnet_configuration::SubnetConfiguration;
 
 pub use crate::types::_dns_options_specification::DnsOptionsSpecification;
 
@@ -1089,6 +1093,8 @@ pub use crate::types::_client_certificate_revocation_list_status_code::ClientCer
 
 pub use crate::types::_transit_gateway_propagation::TransitGatewayPropagation;
 
+pub use crate::types::_image_block_public_access_enabled_state::ImageBlockPublicAccessEnabledState;
+
 pub use crate::types::_enable_fast_snapshot_restore_error_item::EnableFastSnapshotRestoreErrorItem;
 
 pub use crate::types::_enable_fast_snapshot_restore_state_error_item::EnableFastSnapshotRestoreStateErrorItem;
@@ -1142,6 +1148,8 @@ pub use crate::types::_instance_event_window_disassociation_request::InstanceEve
 pub use crate::types::_association_status::AssociationStatus;
 
 pub use crate::types::_association_status_code::AssociationStatusCode;
+
+pub use crate::types::_image_block_public_access_disabled_state::ImageBlockPublicAccessDisabledState;
 
 pub use crate::types::_disable_fast_snapshot_restore_error_item::DisableFastSnapshotRestoreErrorItem;
 
@@ -2719,6 +2727,10 @@ mod _image;
 
 mod _image_attribute_name;
 
+mod _image_block_public_access_disabled_state;
+
+mod _image_block_public_access_enabled_state;
+
 mod _image_disk_container;
 
 mod _image_recycle_bin_info;
@@ -3637,6 +3649,8 @@ mod _spot_price;
 
 mod _spread_level;
 
+mod _sse_type;
+
 mod _stale_ip_permission;
 
 mod _stale_security_group;
@@ -3674,6 +3688,8 @@ mod _subnet_cidr_block_state_code;
 mod _subnet_cidr_reservation;
 
 mod _subnet_cidr_reservation_type;
+
+mod _subnet_configuration;
 
 mod _subnet_ipv6_cidr_block_association;
 

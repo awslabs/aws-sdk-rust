@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`credentials(Option<Credentials>)`](crate::operation::get_federation_token::GetFederationTokenOutput::credentials): <p>The credentials to use for federation.</p>
     ///   - [`sign_in_url(Option<String>)`](crate::operation::get_federation_token::GetFederationTokenOutput::sign_in_url): <p>The URL to sign into the user's instance. </p>
     ///   - [`user_arn(Option<String>)`](crate::operation::get_federation_token::GetFederationTokenOutput::user_arn): <p>The Amazon Resource Name (ARN) of the user.</p>
-    ///   - [`user_id(Option<String>)`](crate::operation::get_federation_token::GetFederationTokenOutput::user_id): <p>The identifier for the user.</p>
+    ///   - [`user_id(Option<String>)`](crate::operation::get_federation_token::GetFederationTokenOutput::user_id): <p>The identifier for the user. This can be the ID or the ARN of the user.</p>
     /// - On failure, responds with [`SdkError<GetFederationTokenError>`](crate::operation::get_federation_token::GetFederationTokenError)
     pub fn get_federation_token(&self) -> crate::operation::get_federation_token::builders::GetFederationTokenFluentBuilder {
         crate::operation::get_federation_token::builders::GetFederationTokenFluentBuilder::new(self.handle.clone())

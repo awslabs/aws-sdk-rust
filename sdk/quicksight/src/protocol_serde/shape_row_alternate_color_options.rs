@@ -15,6 +15,9 @@ pub fn ser_row_alternate_color_options(
         }
         array_3.finish();
     }
+    if let Some(var_5) = &input.use_primary_background_color {
+        object.key("UsePrimaryBackgroundColor").string(var_5.as_str());
+    }
     Ok(())
 }
 
@@ -43,6 +46,13 @@ where
                         "RowAlternateColors" => {
                             builder = builder.set_row_alternate_colors(
                                 crate::protocol_serde::shape_row_alternate_color_list::de_row_alternate_color_list(tokens)?,
+                            );
+                        }
+                        "UsePrimaryBackgroundColor" => {
+                            builder = builder.set_use_primary_background_color(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::WidgetStatus::from(u.as_ref())))
+                                    .transpose()?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

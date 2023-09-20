@@ -6,11 +6,11 @@
 pub struct DbInstanceAutomatedBackup {
     /// <p>The Amazon Resource Name (ARN) for the automated backups.</p>
     pub db_instance_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The identifier for the source DB instance, which can't be changed and which is unique to an Amazon Web Services Region.</p>
+    /// <p>The resource ID for the source DB instance, which can't be changed and which is unique to an Amazon Web Services Region.</p>
     pub dbi_resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services Region associated with the automated backup.</p>
     pub region: ::std::option::Option<::std::string::String>,
-    /// <p>The customer id of the instance that is/was associated with the automated backup.</p>
+    /// <p>The identifier for the source DB instance, which can't be changed and which is unique to an Amazon Web Services Region.</p>
     pub db_instance_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Earliest and latest time an instance can be restored to.</p>
     pub restore_window: ::std::option::Option<crate::types::RestoreWindow>,
@@ -18,9 +18,9 @@ pub struct DbInstanceAutomatedBackup {
     pub allocated_storage: i32,
     /// <p>Provides a list of status information for an automated backup:</p>
     /// <ul>
-    /// <li> <p> <code>active</code> - automated backups for current instances</p> </li>
-    /// <li> <p> <code>retained</code> - automated backups for deleted instances</p> </li>
-    /// <li> <p> <code>creating</code> - automated backups that are waiting for the first automated snapshot to be available.</p> </li>
+    /// <li> <p> <code>active</code> - Automated backups for current instances.</p> </li>
+    /// <li> <p> <code>retained</code> - Automated backups for deleted instances.</p> </li>
+    /// <li> <p> <code>creating</code> - Automated backups that are waiting for the first automated snapshot to be available.</p> </li>
     /// </ul>
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>The port number that the automated backup used for connections.</p>
@@ -33,7 +33,7 @@ pub struct DbInstanceAutomatedBackup {
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>Provides the date and time that the DB instance was created.</p>
     pub instance_create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The license model of an automated backup.</p>
+    /// <p>The master user name of an automated backup.</p>
     pub master_username: ::std::option::Option<::std::string::String>,
     /// <p>The name of the database engine for this automated backup.</p>
     pub engine: ::std::option::Option<::std::string::String>,
@@ -68,13 +68,15 @@ pub struct DbInstanceAutomatedBackup {
     pub backup_target: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the storage throughput for the automated backup.</p>
     pub storage_throughput: ::std::option::Option<i32>,
+    /// <p>The Amazon Resource Name (ARN) of the recovery point in Amazon Web Services Backup.</p>
+    pub aws_backup_recovery_point_arn: ::std::option::Option<::std::string::String>,
 }
 impl DbInstanceAutomatedBackup {
     /// <p>The Amazon Resource Name (ARN) for the automated backups.</p>
     pub fn db_instance_arn(&self) -> ::std::option::Option<&str> {
         self.db_instance_arn.as_deref()
     }
-    /// <p>The identifier for the source DB instance, which can't be changed and which is unique to an Amazon Web Services Region.</p>
+    /// <p>The resource ID for the source DB instance, which can't be changed and which is unique to an Amazon Web Services Region.</p>
     pub fn dbi_resource_id(&self) -> ::std::option::Option<&str> {
         self.dbi_resource_id.as_deref()
     }
@@ -82,7 +84,7 @@ impl DbInstanceAutomatedBackup {
     pub fn region(&self) -> ::std::option::Option<&str> {
         self.region.as_deref()
     }
-    /// <p>The customer id of the instance that is/was associated with the automated backup.</p>
+    /// <p>The identifier for the source DB instance, which can't be changed and which is unique to an Amazon Web Services Region.</p>
     pub fn db_instance_identifier(&self) -> ::std::option::Option<&str> {
         self.db_instance_identifier.as_deref()
     }
@@ -96,9 +98,9 @@ impl DbInstanceAutomatedBackup {
     }
     /// <p>Provides a list of status information for an automated backup:</p>
     /// <ul>
-    /// <li> <p> <code>active</code> - automated backups for current instances</p> </li>
-    /// <li> <p> <code>retained</code> - automated backups for deleted instances</p> </li>
-    /// <li> <p> <code>creating</code> - automated backups that are waiting for the first automated snapshot to be available.</p> </li>
+    /// <li> <p> <code>active</code> - Automated backups for current instances.</p> </li>
+    /// <li> <p> <code>retained</code> - Automated backups for deleted instances.</p> </li>
+    /// <li> <p> <code>creating</code> - Automated backups that are waiting for the first automated snapshot to be available.</p> </li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
@@ -121,7 +123,7 @@ impl DbInstanceAutomatedBackup {
     pub fn instance_create_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.instance_create_time.as_ref()
     }
-    /// <p>The license model of an automated backup.</p>
+    /// <p>The master user name of an automated backup.</p>
     pub fn master_username(&self) -> ::std::option::Option<&str> {
         self.master_username.as_deref()
     }
@@ -190,6 +192,10 @@ impl DbInstanceAutomatedBackup {
     pub fn storage_throughput(&self) -> ::std::option::Option<i32> {
         self.storage_throughput
     }
+    /// <p>The Amazon Resource Name (ARN) of the recovery point in Amazon Web Services Backup.</p>
+    pub fn aws_backup_recovery_point_arn(&self) -> ::std::option::Option<&str> {
+        self.aws_backup_recovery_point_arn.as_deref()
+    }
 }
 impl DbInstanceAutomatedBackup {
     /// Creates a new builder-style object to manufacture [`DbInstanceAutomatedBackup`](crate::types::DbInstanceAutomatedBackup).
@@ -231,6 +237,7 @@ pub struct DbInstanceAutomatedBackupBuilder {
         ::std::option::Option<::std::vec::Vec<crate::types::DbInstanceAutomatedBackupsReplication>>,
     pub(crate) backup_target: ::std::option::Option<::std::string::String>,
     pub(crate) storage_throughput: ::std::option::Option<i32>,
+    pub(crate) aws_backup_recovery_point_arn: ::std::option::Option<::std::string::String>,
 }
 impl DbInstanceAutomatedBackupBuilder {
     /// <p>The Amazon Resource Name (ARN) for the automated backups.</p>
@@ -247,17 +254,17 @@ impl DbInstanceAutomatedBackupBuilder {
     pub fn get_db_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.db_instance_arn
     }
-    /// <p>The identifier for the source DB instance, which can't be changed and which is unique to an Amazon Web Services Region.</p>
+    /// <p>The resource ID for the source DB instance, which can't be changed and which is unique to an Amazon Web Services Region.</p>
     pub fn dbi_resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dbi_resource_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier for the source DB instance, which can't be changed and which is unique to an Amazon Web Services Region.</p>
+    /// <p>The resource ID for the source DB instance, which can't be changed and which is unique to an Amazon Web Services Region.</p>
     pub fn set_dbi_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dbi_resource_id = input;
         self
     }
-    /// <p>The identifier for the source DB instance, which can't be changed and which is unique to an Amazon Web Services Region.</p>
+    /// <p>The resource ID for the source DB instance, which can't be changed and which is unique to an Amazon Web Services Region.</p>
     pub fn get_dbi_resource_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.dbi_resource_id
     }
@@ -275,17 +282,17 @@ impl DbInstanceAutomatedBackupBuilder {
     pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
         &self.region
     }
-    /// <p>The customer id of the instance that is/was associated with the automated backup.</p>
+    /// <p>The identifier for the source DB instance, which can't be changed and which is unique to an Amazon Web Services Region.</p>
     pub fn db_instance_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_instance_identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The customer id of the instance that is/was associated with the automated backup.</p>
+    /// <p>The identifier for the source DB instance, which can't be changed and which is unique to an Amazon Web Services Region.</p>
     pub fn set_db_instance_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_instance_identifier = input;
         self
     }
-    /// <p>The customer id of the instance that is/was associated with the automated backup.</p>
+    /// <p>The identifier for the source DB instance, which can't be changed and which is unique to an Amazon Web Services Region.</p>
     pub fn get_db_instance_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.db_instance_identifier
     }
@@ -319,9 +326,9 @@ impl DbInstanceAutomatedBackupBuilder {
     }
     /// <p>Provides a list of status information for an automated backup:</p>
     /// <ul>
-    /// <li> <p> <code>active</code> - automated backups for current instances</p> </li>
-    /// <li> <p> <code>retained</code> - automated backups for deleted instances</p> </li>
-    /// <li> <p> <code>creating</code> - automated backups that are waiting for the first automated snapshot to be available.</p> </li>
+    /// <li> <p> <code>active</code> - Automated backups for current instances.</p> </li>
+    /// <li> <p> <code>retained</code> - Automated backups for deleted instances.</p> </li>
+    /// <li> <p> <code>creating</code> - Automated backups that are waiting for the first automated snapshot to be available.</p> </li>
     /// </ul>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
@@ -329,9 +336,9 @@ impl DbInstanceAutomatedBackupBuilder {
     }
     /// <p>Provides a list of status information for an automated backup:</p>
     /// <ul>
-    /// <li> <p> <code>active</code> - automated backups for current instances</p> </li>
-    /// <li> <p> <code>retained</code> - automated backups for deleted instances</p> </li>
-    /// <li> <p> <code>creating</code> - automated backups that are waiting for the first automated snapshot to be available.</p> </li>
+    /// <li> <p> <code>active</code> - Automated backups for current instances.</p> </li>
+    /// <li> <p> <code>retained</code> - Automated backups for deleted instances.</p> </li>
+    /// <li> <p> <code>creating</code> - Automated backups that are waiting for the first automated snapshot to be available.</p> </li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
@@ -339,9 +346,9 @@ impl DbInstanceAutomatedBackupBuilder {
     }
     /// <p>Provides a list of status information for an automated backup:</p>
     /// <ul>
-    /// <li> <p> <code>active</code> - automated backups for current instances</p> </li>
-    /// <li> <p> <code>retained</code> - automated backups for deleted instances</p> </li>
-    /// <li> <p> <code>creating</code> - automated backups that are waiting for the first automated snapshot to be available.</p> </li>
+    /// <li> <p> <code>active</code> - Automated backups for current instances.</p> </li>
+    /// <li> <p> <code>retained</code> - Automated backups for deleted instances.</p> </li>
+    /// <li> <p> <code>creating</code> - Automated backups that are waiting for the first automated snapshot to be available.</p> </li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.status
@@ -408,17 +415,17 @@ impl DbInstanceAutomatedBackupBuilder {
     pub fn get_instance_create_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.instance_create_time
     }
-    /// <p>The license model of an automated backup.</p>
+    /// <p>The master user name of an automated backup.</p>
     pub fn master_username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.master_username = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The license model of an automated backup.</p>
+    /// <p>The master user name of an automated backup.</p>
     pub fn set_master_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.master_username = input;
         self
     }
-    /// <p>The license model of an automated backup.</p>
+    /// <p>The master user name of an automated backup.</p>
     pub fn get_master_username(&self) -> &::std::option::Option<::std::string::String> {
         &self.master_username
     }
@@ -660,6 +667,20 @@ impl DbInstanceAutomatedBackupBuilder {
     pub fn get_storage_throughput(&self) -> &::std::option::Option<i32> {
         &self.storage_throughput
     }
+    /// <p>The Amazon Resource Name (ARN) of the recovery point in Amazon Web Services Backup.</p>
+    pub fn aws_backup_recovery_point_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.aws_backup_recovery_point_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the recovery point in Amazon Web Services Backup.</p>
+    pub fn set_aws_backup_recovery_point_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.aws_backup_recovery_point_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the recovery point in Amazon Web Services Backup.</p>
+    pub fn get_aws_backup_recovery_point_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_backup_recovery_point_arn
+    }
     /// Consumes the builder and constructs a [`DbInstanceAutomatedBackup`](crate::types::DbInstanceAutomatedBackup).
     pub fn build(self) -> crate::types::DbInstanceAutomatedBackup {
         crate::types::DbInstanceAutomatedBackup {
@@ -691,6 +712,7 @@ impl DbInstanceAutomatedBackupBuilder {
             db_instance_automated_backups_replications: self.db_instance_automated_backups_replications,
             backup_target: self.backup_target,
             storage_throughput: self.storage_throughput,
+            aws_backup_recovery_point_arn: self.aws_backup_recovery_point_arn,
         }
     }
 }

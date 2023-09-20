@@ -92,6 +92,11 @@ where
                                     .transpose()?,
                             );
                         }
+                        "defaultResultConfiguration" => {
+                            builder = builder.set_default_result_configuration(
+                                    crate::protocol_serde::shape_membership_protected_query_result_configuration::de_membership_protected_query_result_configuration(tokens)?
+                                );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

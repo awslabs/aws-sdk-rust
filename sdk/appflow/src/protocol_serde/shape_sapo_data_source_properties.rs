@@ -6,6 +6,18 @@ pub fn ser_sapo_data_source_properties(
     if let Some(var_1) = &input.object_path {
         object.key("objectPath").string(var_1.as_str());
     }
+    if let Some(var_2) = &input.parallelism_config {
+        #[allow(unused_mut)]
+        let mut object_3 = object.key("parallelismConfig").start_object();
+        crate::protocol_serde::shape_sapo_data_parallelism_config::ser_sapo_data_parallelism_config(&mut object_3, var_2)?;
+        object_3.finish();
+    }
+    if let Some(var_4) = &input.pagination_config {
+        #[allow(unused_mut)]
+        let mut object_5 = object.key("paginationConfig").start_object();
+        crate::protocol_serde::shape_sapo_data_pagination_config::ser_sapo_data_pagination_config(&mut object_5, var_4)?;
+        object_5.finish();
+    }
     Ok(())
 }
 
@@ -29,6 +41,16 @@ where
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
+                            );
+                        }
+                        "parallelismConfig" => {
+                            builder = builder.set_parallelism_config(
+                                crate::protocol_serde::shape_sapo_data_parallelism_config::de_sapo_data_parallelism_config(tokens)?,
+                            );
+                        }
+                        "paginationConfig" => {
+                            builder = builder.set_pagination_config(
+                                crate::protocol_serde::shape_sapo_data_pagination_config::de_sapo_data_pagination_config(tokens)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

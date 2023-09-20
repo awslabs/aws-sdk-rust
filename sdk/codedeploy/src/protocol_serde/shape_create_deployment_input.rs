@@ -21,34 +21,32 @@ pub fn ser_create_deployment_input(
     if let Some(var_6) = &input.description {
         object.key("description").string(var_6.as_str());
     }
-    if input.ignore_application_stop_failures {
-        object
-            .key("ignoreApplicationStopFailures")
-            .boolean(input.ignore_application_stop_failures);
+    if let Some(var_7) = &input.ignore_application_stop_failures {
+        object.key("ignoreApplicationStopFailures").boolean(*var_7);
     }
-    if let Some(var_7) = &input.target_instances {
+    if let Some(var_8) = &input.target_instances {
         #[allow(unused_mut)]
-        let mut object_8 = object.key("targetInstances").start_object();
-        crate::protocol_serde::shape_target_instances::ser_target_instances(&mut object_8, var_7)?;
-        object_8.finish();
+        let mut object_9 = object.key("targetInstances").start_object();
+        crate::protocol_serde::shape_target_instances::ser_target_instances(&mut object_9, var_8)?;
+        object_9.finish();
     }
-    if let Some(var_9) = &input.auto_rollback_configuration {
+    if let Some(var_10) = &input.auto_rollback_configuration {
         #[allow(unused_mut)]
-        let mut object_10 = object.key("autoRollbackConfiguration").start_object();
-        crate::protocol_serde::shape_auto_rollback_configuration::ser_auto_rollback_configuration(&mut object_10, var_9)?;
-        object_10.finish();
+        let mut object_11 = object.key("autoRollbackConfiguration").start_object();
+        crate::protocol_serde::shape_auto_rollback_configuration::ser_auto_rollback_configuration(&mut object_11, var_10)?;
+        object_11.finish();
     }
-    if input.update_outdated_instances_only {
-        object.key("updateOutdatedInstancesOnly").boolean(input.update_outdated_instances_only);
+    if let Some(var_12) = &input.update_outdated_instances_only {
+        object.key("updateOutdatedInstancesOnly").boolean(*var_12);
     }
-    if let Some(var_11) = &input.file_exists_behavior {
-        object.key("fileExistsBehavior").string(var_11.as_str());
+    if let Some(var_13) = &input.file_exists_behavior {
+        object.key("fileExistsBehavior").string(var_13.as_str());
     }
-    if let Some(var_12) = &input.override_alarm_configuration {
+    if let Some(var_14) = &input.override_alarm_configuration {
         #[allow(unused_mut)]
-        let mut object_13 = object.key("overrideAlarmConfiguration").start_object();
-        crate::protocol_serde::shape_alarm_configuration::ser_alarm_configuration(&mut object_13, var_12)?;
-        object_13.finish();
+        let mut object_15 = object.key("overrideAlarmConfiguration").start_object();
+        crate::protocol_serde::shape_alarm_configuration::ser_alarm_configuration(&mut object_15, var_14)?;
+        object_15.finish();
     }
     Ok(())
 }

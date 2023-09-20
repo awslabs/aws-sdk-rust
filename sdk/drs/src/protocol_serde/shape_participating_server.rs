@@ -35,6 +35,10 @@ where
                                     .transpose()?,
                             );
                         }
+                        "launchActionsStatus" => {
+                            builder = builder
+                                .set_launch_actions_status(crate::protocol_serde::shape_launch_actions_status::de_launch_actions_status(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

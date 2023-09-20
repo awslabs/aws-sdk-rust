@@ -29,11 +29,15 @@ pub use crate::types::_user_settings::UserSettings;
 
 pub use crate::types::_canvas_app_settings::CanvasAppSettings;
 
+pub use crate::types::_identity_provider_o_auth_setting::IdentityProviderOAuthSetting;
+
+pub use crate::types::_feature_status::FeatureStatus;
+
+pub use crate::types::_data_source_name::DataSourceName;
+
 pub use crate::types::_workspace_settings::WorkspaceSettings;
 
 pub use crate::types::_model_register_settings::ModelRegisterSettings;
-
-pub use crate::types::_feature_status::FeatureStatus;
 
 pub use crate::types::_time_series_forecasting_settings::TimeSeriesForecastingSettings;
 
@@ -299,6 +303,8 @@ pub use crate::types::_schedule_status::ScheduleStatus;
 
 pub use crate::types::_transform_job::TransformJob;
 
+pub use crate::types::_batch_data_capture_config::BatchDataCaptureConfig;
+
 pub use crate::types::_experiment_config::ExperimentConfig;
 
 pub use crate::types::_data_processing::DataProcessing;
@@ -527,6 +533,8 @@ pub use crate::types::_model_package_group_status::ModelPackageGroupStatus;
 
 pub use crate::types::_model_package::ModelPackage;
 
+pub use crate::types::_skip_model_validation::SkipModelValidation;
+
 pub use crate::types::_drift_check_baselines::DriftCheckBaselines;
 
 pub use crate::types::_drift_check_model_data_quality::DriftCheckModelDataQuality;
@@ -644,6 +652,8 @@ pub use crate::types::_processing_s3_compression_type::ProcessingS3CompressionTy
 pub use crate::types::_processing_s3_data_type::ProcessingS3DataType;
 
 pub use crate::types::_training_job::TrainingJob;
+
+pub use crate::types::_profiler_config::ProfilerConfig;
 
 pub use crate::types::_debug_rule_evaluation_status::DebugRuleEvaluationStatus;
 
@@ -1159,6 +1169,24 @@ pub use crate::types::_suggestion_query::SuggestionQuery;
 
 pub use crate::types::_property_name_query::PropertyNameQuery;
 
+pub use crate::types::_dynamic_scaling_configuration::DynamicScalingConfiguration;
+
+pub use crate::types::_scaling_policy::ScalingPolicy;
+
+pub use crate::types::_target_tracking_scaling_policy_configuration::TargetTrackingScalingPolicyConfiguration;
+
+pub use crate::types::_metric_specification::MetricSpecification;
+
+pub use crate::types::_customized_metric_specification::CustomizedMetricSpecification;
+
+pub use crate::types::_statistic::Statistic;
+
+pub use crate::types::_predefined_metric_specification::PredefinedMetricSpecification;
+
+pub use crate::types::_scaling_policy_metric::ScalingPolicyMetric;
+
+pub use crate::types::_scaling_policy_objective::ScalingPolicyObjective;
+
 pub use crate::types::_sagemaker_servicecatalog_status::SagemakerServicecatalogStatus;
 
 pub use crate::types::_edge_model_stat::EdgeModelStat;
@@ -1167,13 +1195,9 @@ pub use crate::types::_agent_version::AgentVersion;
 
 pub use crate::types::_device_stats::DeviceStats;
 
-pub use crate::types::_batch_data_capture_config::BatchDataCaptureConfig;
-
 pub use crate::types::_profiling_status::ProfilingStatus;
 
 pub use crate::types::_profiler_rule_evaluation_status::ProfilerRuleEvaluationStatus;
-
-pub use crate::types::_profiler_config::ProfilerConfig;
 
 pub use crate::types::_direct_internet_access::DirectInternetAccess;
 
@@ -1233,6 +1257,8 @@ pub use crate::types::_inference_recommendation::InferenceRecommendation;
 
 pub use crate::types::_recommendation_job_stopping_conditions::RecommendationJobStoppingConditions;
 
+pub use crate::types::_flat_invocations::FlatInvocations;
+
 pub use crate::types::_model_latency_threshold::ModelLatencyThreshold;
 
 pub use crate::types::_recommendation_job_input_config::RecommendationJobInputConfig;
@@ -1254,6 +1280,8 @@ pub use crate::types::_categorical_parameter::CategoricalParameter;
 pub use crate::types::_recommendation_job_resource_limit::RecommendationJobResourceLimit;
 
 pub use crate::types::_traffic_pattern::TrafficPattern;
+
+pub use crate::types::_stairs::Stairs;
 
 pub use crate::types::_phase::Phase;
 
@@ -1369,6 +1397,8 @@ pub use crate::types::_data_quality_app_specification::DataQualityAppSpecificati
 
 pub use crate::types::_data_quality_baseline_config::DataQualityBaselineConfig;
 
+pub use crate::types::_derived_information::DerivedInformation;
+
 pub use crate::types::_neo_vpc_config::NeoVpcConfig;
 
 pub use crate::types::_output_config::OutputConfig;
@@ -1408,6 +1438,8 @@ pub use crate::types::_model_deploy_config::ModelDeployConfig;
 pub use crate::types::_auto_ml_problem_type_config::AutoMlProblemTypeConfig;
 
 pub use crate::types::_time_series_forecasting_job_config::TimeSeriesForecastingJobConfig;
+
+pub use crate::types::_holiday_config_attributes::HolidayConfigAttributes;
 
 pub use crate::types::_time_series_config::TimeSeriesConfig;
 
@@ -1781,6 +1813,8 @@ mod _cross_account_filter_option;
 
 mod _custom_image;
 
+mod _customized_metric_specification;
+
 mod _data_capture_config;
 
 mod _data_capture_config_summary;
@@ -1798,6 +1832,8 @@ mod _data_quality_baseline_config;
 mod _data_quality_job_input;
 
 mod _data_source;
+
+mod _data_source_name;
 
 mod _dataset_definition;
 
@@ -1818,6 +1854,8 @@ mod _deployment_recommendation;
 mod _deployment_stage;
 
 mod _deployment_stage_status_summary;
+
+mod _derived_information;
 
 mod _desired_weight_and_capacity;
 
@@ -1862,6 +1900,8 @@ mod _drift_check_explainability;
 mod _drift_check_model_data_quality;
 
 mod _drift_check_model_quality;
+
+mod _dynamic_scaling_configuration;
 
 mod _edge;
 
@@ -1979,6 +2019,8 @@ mod _final_auto_ml_job_objective_metric;
 
 mod _final_hyper_parameter_tuning_job_objective_metric;
 
+mod _flat_invocations;
+
 mod _flow_definition_output_config;
 
 mod _flow_definition_status;
@@ -1990,6 +2032,8 @@ mod _framework;
 mod _git_config;
 
 mod _git_config_for_update;
+
+mod _holiday_config_attributes;
 
 mod _hub_content_dependency;
 
@@ -2068,6 +2112,8 @@ mod _hyper_parameter_tuning_resource_config;
 mod _hyperband_strategy_config;
 
 mod _iam_identity;
+
+mod _identity_provider_o_auth_setting;
 
 mod _image;
 
@@ -2208,6 +2254,8 @@ mod _metric_datum;
 mod _metric_definition;
 
 mod _metric_set_source;
+
+mod _metric_specification;
 
 mod _metrics_source;
 
@@ -2527,6 +2575,8 @@ mod _pipeline_status;
 
 mod _pipeline_summary;
 
+mod _predefined_metric_specification;
+
 mod _problem_type;
 
 mod _processing_cluster_config;
@@ -2725,6 +2775,12 @@ mod _s3_storage_config;
 
 mod _sagemaker_servicecatalog_status;
 
+mod _scaling_policy;
+
+mod _scaling_policy_metric;
+
+mod _scaling_policy_objective;
+
 mod _schedule_config;
 
 mod _schedule_status;
@@ -2758,6 +2814,8 @@ mod _shadow_model_variant_config;
 mod _sharing_settings;
 
 mod _shuffle_config;
+
+mod _skip_model_validation;
 
 mod _sort_actions_by;
 
@@ -2803,6 +2861,10 @@ mod _split_type;
 
 mod _stage_status;
 
+mod _stairs;
+
+mod _statistic;
+
 mod _step_status;
 
 mod _stopping_condition;
@@ -2834,6 +2896,8 @@ mod _target_platform_accelerator;
 mod _target_platform_arch;
 
 mod _target_platform_os;
+
+mod _target_tracking_scaling_policy_configuration;
 
 mod _tensor_board_app_settings;
 

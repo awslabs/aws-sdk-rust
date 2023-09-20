@@ -11,6 +11,10 @@ pub use crate::types::_attachment_item::AttachmentItemBuilder;
 
 pub use crate::types::_start_position::StartPositionBuilder;
 
+pub use crate::types::_view::ViewBuilder;
+
+pub use crate::types::_view_content::ViewContentBuilder;
+
 pub use crate::types::_connection_credentials::ConnectionCredentialsBuilder;
 
 pub use crate::types::_websocket::WebsocketBuilder;

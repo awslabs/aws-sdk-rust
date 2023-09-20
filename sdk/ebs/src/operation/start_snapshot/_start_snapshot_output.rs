@@ -23,6 +23,8 @@ pub struct StartSnapshotOutput {
     pub parent_snapshot_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) key used to encrypt the snapshot.</p>
     pub kms_key_arn: ::std::option::Option<::std::string::String>,
+    /// <p>Reserved for future use.</p>
+    pub sse_type: ::std::option::Option<crate::types::SseType>,
     _request_id: Option<String>,
 }
 impl StartSnapshotOutput {
@@ -66,6 +68,10 @@ impl StartSnapshotOutput {
     pub fn kms_key_arn(&self) -> ::std::option::Option<&str> {
         self.kms_key_arn.as_deref()
     }
+    /// <p>Reserved for future use.</p>
+    pub fn sse_type(&self) -> ::std::option::Option<&crate::types::SseType> {
+        self.sse_type.as_ref()
+    }
 }
 impl ::std::fmt::Debug for StartSnapshotOutput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -80,6 +86,7 @@ impl ::std::fmt::Debug for StartSnapshotOutput {
         formatter.field("tags", &self.tags);
         formatter.field("parent_snapshot_id", &self.parent_snapshot_id);
         formatter.field("kms_key_arn", &"*** Sensitive Data Redacted ***");
+        formatter.field("sse_type", &self.sse_type);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
@@ -110,6 +117,7 @@ pub struct StartSnapshotOutputBuilder {
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) parent_snapshot_id: ::std::option::Option<::std::string::String>,
     pub(crate) kms_key_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) sse_type: ::std::option::Option<crate::types::SseType>,
     _request_id: Option<String>,
 }
 impl StartSnapshotOutputBuilder {
@@ -259,6 +267,20 @@ impl StartSnapshotOutputBuilder {
     pub fn get_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.kms_key_arn
     }
+    /// <p>Reserved for future use.</p>
+    pub fn sse_type(mut self, input: crate::types::SseType) -> Self {
+        self.sse_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Reserved for future use.</p>
+    pub fn set_sse_type(mut self, input: ::std::option::Option<crate::types::SseType>) -> Self {
+        self.sse_type = input;
+        self
+    }
+    /// <p>Reserved for future use.</p>
+    pub fn get_sse_type(&self) -> &::std::option::Option<crate::types::SseType> {
+        &self.sse_type
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -281,6 +303,7 @@ impl StartSnapshotOutputBuilder {
             tags: self.tags,
             parent_snapshot_id: self.parent_snapshot_id,
             kms_key_arn: self.kms_key_arn,
+            sse_type: self.sse_type,
             _request_id: self._request_id,
         }
     }
@@ -298,6 +321,7 @@ impl ::std::fmt::Debug for StartSnapshotOutputBuilder {
         formatter.field("tags", &self.tags);
         formatter.field("parent_snapshot_id", &self.parent_snapshot_id);
         formatter.field("kms_key_arn", &"*** Sensitive Data Redacted ***");
+        formatter.field("sse_type", &self.sse_type);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }

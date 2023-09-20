@@ -67,6 +67,8 @@ pub use crate::types::_insight_result_value::InsightResultValue;
 
 pub use crate::types::_aws_security_finding::AwsSecurityFinding;
 
+pub use crate::types::_generator_details::GeneratorDetails;
+
 pub use crate::types::_finding_provider_fields::FindingProviderFields;
 
 pub use crate::types::_finding_provider_severity::FindingProviderSeverity;
@@ -108,6 +110,12 @@ pub use crate::types::_action_remote_port_details::ActionRemotePortDetails;
 pub use crate::types::_patch_summary::PatchSummary;
 
 pub use crate::types::_vulnerability::Vulnerability;
+
+pub use crate::types::_vulnerability_code_vulnerabilities::VulnerabilityCodeVulnerabilities;
+
+pub use crate::types::_code_vulnerabilities_file_path::CodeVulnerabilitiesFilePath;
+
+pub use crate::types::_vulnerability_exploit_available::VulnerabilityExploitAvailable;
 
 pub use crate::types::_vulnerability_fix_available::VulnerabilityFixAvailable;
 
@@ -2247,6 +2255,8 @@ mod _classification_result;
 
 mod _classification_status;
 
+mod _code_vulnerabilities_file_path;
+
 mod _compliance;
 
 mod _compliance_status;
@@ -2298,6 +2308,8 @@ mod _firewall_policy_stateful_rule_group_references_details;
 mod _firewall_policy_stateless_custom_actions_details;
 
 mod _firewall_policy_stateless_rule_group_references_details;
+
+mod _generator_details;
 
 mod _geo_location;
 
@@ -2528,6 +2540,10 @@ mod _vpc_info_ipv6_cidr_block_set_details;
 mod _vpc_info_peering_options_details;
 
 mod _vulnerability;
+
+mod _vulnerability_code_vulnerabilities;
+
+mod _vulnerability_exploit_available;
 
 mod _vulnerability_fix_available;
 

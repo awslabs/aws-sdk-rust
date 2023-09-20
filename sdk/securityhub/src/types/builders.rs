@@ -43,6 +43,8 @@ pub use crate::types::_insight_result_value::InsightResultValueBuilder;
 
 pub use crate::types::_aws_security_finding::AwsSecurityFindingBuilder;
 
+pub use crate::types::_generator_details::GeneratorDetailsBuilder;
+
 pub use crate::types::_finding_provider_fields::FindingProviderFieldsBuilder;
 
 pub use crate::types::_finding_provider_severity::FindingProviderSeverityBuilder;
@@ -82,6 +84,10 @@ pub use crate::types::_action_remote_port_details::ActionRemotePortDetailsBuilde
 pub use crate::types::_patch_summary::PatchSummaryBuilder;
 
 pub use crate::types::_vulnerability::VulnerabilityBuilder;
+
+pub use crate::types::_vulnerability_code_vulnerabilities::VulnerabilityCodeVulnerabilitiesBuilder;
+
+pub use crate::types::_code_vulnerabilities_file_path::CodeVulnerabilitiesFilePathBuilder;
 
 pub use crate::types::_vulnerability_vendor::VulnerabilityVendorBuilder;
 

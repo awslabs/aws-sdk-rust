@@ -125,16 +125,19 @@ impl CreateRepositoryFluentBuilder {
         self.inner.get_registry_id()
     }
     /// <p>The name to use for the repository. The repository name may be specified on its own (such as <code>nginx-web-app</code>) or it can be prepended with a namespace to group the repository into a category (such as <code>project-a/nginx-web-app</code>).</p>
+    /// <p>The repository name must start with a letter and can only contain lowercase letters, numbers, hyphens, underscores, and forward slashes.</p>
     pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.repository_name(input.into());
         self
     }
     /// <p>The name to use for the repository. The repository name may be specified on its own (such as <code>nginx-web-app</code>) or it can be prepended with a namespace to group the repository into a category (such as <code>project-a/nginx-web-app</code>).</p>
+    /// <p>The repository name must start with a letter and can only contain lowercase letters, numbers, hyphens, underscores, and forward slashes.</p>
     pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_repository_name(input);
         self
     }
     /// <p>The name to use for the repository. The repository name may be specified on its own (such as <code>nginx-web-app</code>) or it can be prepended with a namespace to group the repository into a category (such as <code>project-a/nginx-web-app</code>).</p>
+    /// <p>The repository name must start with a letter and can only contain lowercase letters, numbers, hyphens, underscores, and forward slashes.</p>
     pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_repository_name()
     }

@@ -7,9 +7,9 @@ pub struct DeleteFolderMembershipInput {
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The Folder ID.</p>
     pub folder_id: ::std::option::Option<::std::string::String>,
-    /// <p>The ID of the asset (the dashboard, analysis, or dataset) that you want to delete.</p>
+    /// <p>The ID of the asset that you want to delete.</p>
     pub member_id: ::std::option::Option<::std::string::String>,
-    /// <p>The type of the member, including <code>DASHBOARD</code>, <code>ANALYSIS</code>, and <code>DATASET</code> </p>
+    /// <p>The member type of the asset that you want to delete from a folder.</p>
     pub member_type: ::std::option::Option<crate::types::MemberType>,
 }
 impl DeleteFolderMembershipInput {
@@ -21,11 +21,11 @@ impl DeleteFolderMembershipInput {
     pub fn folder_id(&self) -> ::std::option::Option<&str> {
         self.folder_id.as_deref()
     }
-    /// <p>The ID of the asset (the dashboard, analysis, or dataset) that you want to delete.</p>
+    /// <p>The ID of the asset that you want to delete.</p>
     pub fn member_id(&self) -> ::std::option::Option<&str> {
         self.member_id.as_deref()
     }
-    /// <p>The type of the member, including <code>DASHBOARD</code>, <code>ANALYSIS</code>, and <code>DATASET</code> </p>
+    /// <p>The member type of the asset that you want to delete from a folder.</p>
     pub fn member_type(&self) -> ::std::option::Option<&crate::types::MemberType> {
         self.member_type.as_ref()
     }
@@ -75,31 +75,31 @@ impl DeleteFolderMembershipInputBuilder {
     pub fn get_folder_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.folder_id
     }
-    /// <p>The ID of the asset (the dashboard, analysis, or dataset) that you want to delete.</p>
+    /// <p>The ID of the asset that you want to delete.</p>
     pub fn member_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.member_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the asset (the dashboard, analysis, or dataset) that you want to delete.</p>
+    /// <p>The ID of the asset that you want to delete.</p>
     pub fn set_member_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.member_id = input;
         self
     }
-    /// <p>The ID of the asset (the dashboard, analysis, or dataset) that you want to delete.</p>
+    /// <p>The ID of the asset that you want to delete.</p>
     pub fn get_member_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.member_id
     }
-    /// <p>The type of the member, including <code>DASHBOARD</code>, <code>ANALYSIS</code>, and <code>DATASET</code> </p>
+    /// <p>The member type of the asset that you want to delete from a folder.</p>
     pub fn member_type(mut self, input: crate::types::MemberType) -> Self {
         self.member_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of the member, including <code>DASHBOARD</code>, <code>ANALYSIS</code>, and <code>DATASET</code> </p>
+    /// <p>The member type of the asset that you want to delete from a folder.</p>
     pub fn set_member_type(mut self, input: ::std::option::Option<crate::types::MemberType>) -> Self {
         self.member_type = input;
         self
     }
-    /// <p>The type of the member, including <code>DASHBOARD</code>, <code>ANALYSIS</code>, and <code>DATASET</code> </p>
+    /// <p>The member type of the asset that you want to delete from a folder.</p>
     pub fn get_member_type(&self) -> &::std::option::Option<crate::types::MemberType> {
         &self.member_type
     }

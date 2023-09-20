@@ -38,6 +38,16 @@ where
                         "alreadyImplemented" => {
                             builder = builder.set_already_implemented(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
+                        "excluded" => {
+                            builder = builder.set_excluded(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
+                        "excludeReason" => {
+                            builder = builder.set_exclude_reason(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::ExcludeRecommendationReason::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

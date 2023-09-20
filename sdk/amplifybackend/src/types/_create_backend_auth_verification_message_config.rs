@@ -2,7 +2,7 @@
 
 /// <p>Creates an email or SMS verification message for the auth resource configured for your Amplify project.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateBackendAuthVerificationMessageConfig {
     /// <p>The type of verification message to send.</p>
     pub delivery_method: ::std::option::Option<crate::types::DeliveryMethod>,
@@ -25,6 +25,15 @@ impl CreateBackendAuthVerificationMessageConfig {
         self.sms_settings.as_ref()
     }
 }
+impl ::std::fmt::Debug for CreateBackendAuthVerificationMessageConfig {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateBackendAuthVerificationMessageConfig");
+        formatter.field("delivery_method", &self.delivery_method);
+        formatter.field("email_settings", &"*** Sensitive Data Redacted ***");
+        formatter.field("sms_settings", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl CreateBackendAuthVerificationMessageConfig {
     /// Creates a new builder-style object to manufacture [`CreateBackendAuthVerificationMessageConfig`](crate::types::CreateBackendAuthVerificationMessageConfig).
     pub fn builder() -> crate::types::builders::CreateBackendAuthVerificationMessageConfigBuilder {
@@ -34,7 +43,7 @@ impl CreateBackendAuthVerificationMessageConfig {
 
 /// A builder for [`CreateBackendAuthVerificationMessageConfig`](crate::types::CreateBackendAuthVerificationMessageConfig).
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct CreateBackendAuthVerificationMessageConfigBuilder {
     pub(crate) delivery_method: ::std::option::Option<crate::types::DeliveryMethod>,
     pub(crate) email_settings: ::std::option::Option<crate::types::EmailSettings>,
@@ -90,5 +99,14 @@ impl CreateBackendAuthVerificationMessageConfigBuilder {
             email_settings: self.email_settings,
             sms_settings: self.sms_settings,
         }
+    }
+}
+impl ::std::fmt::Debug for CreateBackendAuthVerificationMessageConfigBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateBackendAuthVerificationMessageConfigBuilder");
+        formatter.field("delivery_method", &self.delivery_method);
+        formatter.field("email_settings", &"*** Sensitive Data Redacted ***");
+        formatter.field("sms_settings", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

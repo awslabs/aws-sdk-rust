@@ -8,7 +8,7 @@ pub struct DeleteRuleInput {
     /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default event bus is used.</p>
     pub event_bus_name: ::std::option::Option<::std::string::String>,
     /// <p>If this is a managed rule, created by an Amazon Web Services service on your behalf, you must specify <code>Force</code> as <code>True</code> to delete the rule. This parameter is ignored for rules that are not managed rules. You can check whether a rule is a managed rule by using <code>DescribeRule</code> or <code>ListRules</code> and checking the <code>ManagedBy</code> field of the response.</p>
-    pub force: bool,
+    pub force: ::std::option::Option<bool>,
 }
 impl DeleteRuleInput {
     /// <p>The name of the rule.</p>
@@ -20,7 +20,7 @@ impl DeleteRuleInput {
         self.event_bus_name.as_deref()
     }
     /// <p>If this is a managed rule, created by an Amazon Web Services service on your behalf, you must specify <code>Force</code> as <code>True</code> to delete the rule. This parameter is ignored for rules that are not managed rules. You can check whether a rule is a managed rule by using <code>DescribeRule</code> or <code>ListRules</code> and checking the <code>ManagedBy</code> field of the response.</p>
-    pub fn force(&self) -> bool {
+    pub fn force(&self) -> ::std::option::Option<bool> {
         self.force
     }
 }
@@ -87,7 +87,7 @@ impl DeleteRuleInputBuilder {
         ::std::result::Result::Ok(crate::operation::delete_rule::DeleteRuleInput {
             name: self.name,
             event_bus_name: self.event_bus_name,
-            force: self.force.unwrap_or_default(),
+            force: self.force,
         })
     }
 }

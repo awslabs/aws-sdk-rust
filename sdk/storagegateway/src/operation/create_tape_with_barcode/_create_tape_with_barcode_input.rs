@@ -22,7 +22,7 @@ pub struct CreateTapeWithBarcodeInput {
     /// <p>The ID of the pool that you want to add your tape to for archiving. The tape in this pool is archived in the S3 storage class that is associated with the pool. When you use your backup application to eject the tape, the tape is archived directly into the storage class (S3 Glacier or S3 Deep Archive) that corresponds to the pool.</p>
     pub pool_id: ::std::option::Option<::std::string::String>,
     /// <p>Set to <code>TRUE</code> if the tape you are creating is to be configured as a write-once-read-many (WORM) tape.</p>
-    pub worm: bool,
+    pub worm: ::std::option::Option<bool>,
     /// <p>A list of up to 50 tags that can be assigned to a virtual tape that has a barcode. Each tag is a key-value pair.</p> <note>
     /// <p>Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and the maximum length for a tag's value is 256.</p>
     /// </note>
@@ -59,7 +59,7 @@ impl CreateTapeWithBarcodeInput {
         self.pool_id.as_deref()
     }
     /// <p>Set to <code>TRUE</code> if the tape you are creating is to be configured as a write-once-read-many (WORM) tape.</p>
-    pub fn worm(&self) -> bool {
+    pub fn worm(&self) -> ::std::option::Option<bool> {
         self.worm
     }
     /// <p>A list of up to 50 tags that can be assigned to a virtual tape that has a barcode. Each tag is a key-value pair.</p> <note>
@@ -241,7 +241,7 @@ impl CreateTapeWithBarcodeInputBuilder {
             kms_encrypted: self.kms_encrypted,
             kms_key: self.kms_key,
             pool_id: self.pool_id,
-            worm: self.worm.unwrap_or_default(),
+            worm: self.worm,
             tags: self.tags,
         })
     }

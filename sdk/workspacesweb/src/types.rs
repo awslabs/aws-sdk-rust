@@ -3,13 +3,31 @@ pub use crate::types::_validation_exception_field::ValidationExceptionField;
 
 pub use crate::types::_validation_exception_reason::ValidationExceptionReason;
 
-pub use crate::types::_user_settings::UserSettings;
+pub use crate::types::_user_settings_summary::UserSettingsSummary;
+
+pub use crate::types::_cookie_synchronization_configuration::CookieSynchronizationConfiguration;
+
+pub use crate::types::_cookie_specification::CookieSpecification;
 
 pub use crate::types::_enabled_type::EnabledType;
 
+pub use crate::types::_tag::Tag;
+
+pub use crate::types::_user_settings::UserSettings;
+
+pub use crate::types::_user_access_logging_settings_summary::UserAccessLoggingSettingsSummary;
+
 pub use crate::types::_user_access_logging_settings::UserAccessLoggingSettings;
 
-pub use crate::types::_portal::Portal;
+pub use crate::types::_certificate_summary::CertificateSummary;
+
+pub use crate::types::_certificate::Certificate;
+
+pub use crate::types::_trust_store_summary::TrustStoreSummary;
+
+pub use crate::types::_trust_store::TrustStore;
+
+pub use crate::types::_portal_summary::PortalSummary;
 
 pub use crate::types::_authentication_type::AuthenticationType;
 
@@ -19,41 +37,27 @@ pub use crate::types::_browser_type::BrowserType;
 
 pub use crate::types::_renderer_type::RendererType;
 
-pub use crate::types::_network_settings::NetworkSettings;
-
-pub use crate::types::_ip_access_settings::IpAccessSettings;
-
-pub use crate::types::_ip_rule::IpRule;
-
-pub use crate::types::_identity_provider::IdentityProvider;
-
-pub use crate::types::_identity_provider_type::IdentityProviderType;
-
-pub use crate::types::_browser_settings::BrowserSettings;
-
-pub use crate::types::_tag::Tag;
-
-pub use crate::types::_user_settings_summary::UserSettingsSummary;
-
-pub use crate::types::_user_access_logging_settings_summary::UserAccessLoggingSettingsSummary;
-
-pub use crate::types::_trust_store_summary::TrustStoreSummary;
-
-pub use crate::types::_certificate_summary::CertificateSummary;
-
-pub use crate::types::_portal_summary::PortalSummary;
+pub use crate::types::_portal::Portal;
 
 pub use crate::types::_network_settings_summary::NetworkSettingsSummary;
 
+pub use crate::types::_network_settings::NetworkSettings;
+
 pub use crate::types::_ip_access_settings_summary::IpAccessSettingsSummary;
+
+pub use crate::types::_ip_rule::IpRule;
+
+pub use crate::types::_ip_access_settings::IpAccessSettings;
 
 pub use crate::types::_identity_provider_summary::IdentityProviderSummary;
 
+pub use crate::types::_identity_provider_type::IdentityProviderType;
+
+pub use crate::types::_identity_provider::IdentityProvider;
+
 pub use crate::types::_browser_settings_summary::BrowserSettingsSummary;
 
-pub use crate::types::_certificate::Certificate;
-
-pub use crate::types::_trust_store::TrustStore;
+pub use crate::types::_browser_settings::BrowserSettings;
 
 mod _authentication_type;
 
@@ -66,6 +70,10 @@ mod _browser_type;
 mod _certificate;
 
 mod _certificate_summary;
+
+mod _cookie_specification;
+
+mod _cookie_synchronization_configuration;
 
 mod _enabled_type;
 

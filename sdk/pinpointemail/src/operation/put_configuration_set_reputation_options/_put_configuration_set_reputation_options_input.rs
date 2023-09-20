@@ -7,7 +7,7 @@ pub struct PutConfigurationSetReputationOptionsInput {
     /// <p>The name of the configuration set that you want to enable or disable reputation metric tracking for.</p>
     pub configuration_set_name: ::std::option::Option<::std::string::String>,
     /// <p>If <code>true</code>, tracking of reputation metrics is enabled for the configuration set. If <code>false</code>, tracking of reputation metrics is disabled for the configuration set.</p>
-    pub reputation_metrics_enabled: bool,
+    pub reputation_metrics_enabled: ::std::option::Option<bool>,
 }
 impl PutConfigurationSetReputationOptionsInput {
     /// <p>The name of the configuration set that you want to enable or disable reputation metric tracking for.</p>
@@ -15,7 +15,7 @@ impl PutConfigurationSetReputationOptionsInput {
         self.configuration_set_name.as_deref()
     }
     /// <p>If <code>true</code>, tracking of reputation metrics is enabled for the configuration set. If <code>false</code>, tracking of reputation metrics is disabled for the configuration set.</p>
-    pub fn reputation_metrics_enabled(&self) -> bool {
+    pub fn reputation_metrics_enabled(&self) -> ::std::option::Option<bool> {
         self.reputation_metrics_enabled
     }
 }
@@ -72,7 +72,7 @@ impl PutConfigurationSetReputationOptionsInputBuilder {
         ::std::result::Result::Ok(
             crate::operation::put_configuration_set_reputation_options::PutConfigurationSetReputationOptionsInput {
                 configuration_set_name: self.configuration_set_name,
-                reputation_metrics_enabled: self.reputation_metrics_enabled.unwrap_or_default(),
+                reputation_metrics_enabled: self.reputation_metrics_enabled,
             },
         )
     }

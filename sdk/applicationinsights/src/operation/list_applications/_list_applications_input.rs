@@ -7,6 +7,8 @@ pub struct ListApplicationsInput {
     pub max_results: ::std::option::Option<i32>,
     /// <p>The token to request the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
+    /// <p>The AWS account ID for the resource group owner.</p>
+    pub account_id: ::std::option::Option<::std::string::String>,
 }
 impl ListApplicationsInput {
     /// <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
@@ -16,6 +18,10 @@ impl ListApplicationsInput {
     /// <p>The token to request the next page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
+    }
+    /// <p>The AWS account ID for the resource group owner.</p>
+    pub fn account_id(&self) -> ::std::option::Option<&str> {
+        self.account_id.as_deref()
     }
 }
 impl ListApplicationsInput {
@@ -31,6 +37,7 @@ impl ListApplicationsInput {
 pub struct ListApplicationsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
+    pub(crate) account_id: ::std::option::Option<::std::string::String>,
 }
 impl ListApplicationsInputBuilder {
     /// <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
@@ -61,6 +68,20 @@ impl ListApplicationsInputBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
+    /// <p>The AWS account ID for the resource group owner.</p>
+    pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.account_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The AWS account ID for the resource group owner.</p>
+    pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.account_id = input;
+        self
+    }
+    /// <p>The AWS account ID for the resource group owner.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
+    }
     /// Consumes the builder and constructs a [`ListApplicationsInput`](crate::operation::list_applications::ListApplicationsInput).
     pub fn build(
         self,
@@ -68,6 +89,7 @@ impl ListApplicationsInputBuilder {
         ::std::result::Result::Ok(crate::operation::list_applications::ListApplicationsInput {
             max_results: self.max_results,
             next_token: self.next_token,
+            account_id: self.account_id,
         })
     }
 }

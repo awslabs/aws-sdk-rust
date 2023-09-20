@@ -2,7 +2,7 @@
 
 /// <p> The wrapper that contains the Amazon Web Services accounts and services that are in scope for the assessment. </p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct Scope {
     /// <p> The Amazon Web Services accounts that are included in the scope of the assessment. </p>
     pub aws_accounts: ::std::option::Option<::std::vec::Vec<crate::types::AwsAccount>>,
@@ -19,6 +19,14 @@ impl Scope {
         self.aws_services.as_deref()
     }
 }
+impl ::std::fmt::Debug for Scope {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("Scope");
+        formatter.field("aws_accounts", &"*** Sensitive Data Redacted ***");
+        formatter.field("aws_services", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl Scope {
     /// Creates a new builder-style object to manufacture [`Scope`](crate::types::Scope).
     pub fn builder() -> crate::types::builders::ScopeBuilder {
@@ -28,7 +36,7 @@ impl Scope {
 
 /// A builder for [`Scope`](crate::types::Scope).
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct ScopeBuilder {
     pub(crate) aws_accounts: ::std::option::Option<::std::vec::Vec<crate::types::AwsAccount>>,
     pub(crate) aws_services: ::std::option::Option<::std::vec::Vec<crate::types::AwsService>>,
@@ -80,5 +88,13 @@ impl ScopeBuilder {
             aws_accounts: self.aws_accounts,
             aws_services: self.aws_services,
         }
+    }
+}
+impl ::std::fmt::Debug for ScopeBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("ScopeBuilder");
+        formatter.field("aws_accounts", &"*** Sensitive Data Redacted ***");
+        formatter.field("aws_services", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

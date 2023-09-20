@@ -42,16 +42,16 @@ pub struct StartStreamTranscriptionInput {
     pub vocabulary_filter_method: ::std::option::Option<crate::types::VocabularyFilterMethod>,
     /// <p>Enables speaker partitioning (diarization) in your transcription output. Speaker partitioning labels the speech from individual speakers in your media file.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/diarization.html">Partitioning speakers (diarization)</a>.</p>
-    pub show_speaker_label: bool,
+    pub show_speaker_label: ::std::option::Option<bool>,
     /// <p>Enables channel identification in multi-channel audio.</p>
     /// <p>Channel identification transcribes the audio on each channel independently, then appends the output for each channel into one transcript.</p>
     /// <p>If you have multi-channel audio and do not enable channel identification, your audio is transcribed in a continuous manner and your transcript is not separated by channel.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/channel-id.html">Transcribing multi-channel audio</a>.</p>
-    pub enable_channel_identification: bool,
+    pub enable_channel_identification: ::std::option::Option<bool>,
     /// <p>Specify the number of channels in your audio stream. Up to two channels are supported.</p>
     pub number_of_channels: ::std::option::Option<i32>,
     /// <p>Enables partial result stabilization for your transcription. Partial result stabilization can reduce latency in your output, but may impact accuracy. For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/streaming.html#streaming-partial-result-stabilization">Partial-result stabilization</a>.</p>
-    pub enable_partial_results_stabilization: bool,
+    pub enable_partial_results_stabilization: ::std::option::Option<bool>,
     /// <p>Specify the level of stability to use when you enable partial results stabilization (<code>EnablePartialResultsStabilization</code>).</p>
     /// <p>Low stability provides the highest accuracy. High stability transcribes faster, but with slightly lower accuracy.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/streaming.html#streaming-partial-result-stabilization">Partial-result stabilization</a>.</p>
@@ -80,7 +80,7 @@ pub struct StartStreamTranscriptionInput {
     /// <p>If you have multi-channel audio that contains different languages on each channel, and you've enabled channel identification, automatic language identification identifies the dominant language on each audio channel.</p>
     /// <p>Note that you must include either <code>LanguageCode</code> or <code>IdentifyLanguage</code> in your request. If you include both parameters, your request fails.</p>
     /// <p>Streaming language identification can't be combined with custom language models or redaction.</p>
-    pub identify_language: bool,
+    pub identify_language: ::std::option::Option<bool>,
     /// <p>Specify two or more language codes that represent the languages you think may be present in your media; including more than five is not recommended. If you're unsure what languages are present, do not include this parameter.</p>
     /// <p>Including language options can improve the accuracy of language identification.</p>
     /// <p>If you include <code>LanguageOptions</code> in your request, you must also include <code>IdentifyLanguage</code>.</p>
@@ -162,14 +162,14 @@ impl StartStreamTranscriptionInput {
     }
     /// <p>Enables speaker partitioning (diarization) in your transcription output. Speaker partitioning labels the speech from individual speakers in your media file.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/diarization.html">Partitioning speakers (diarization)</a>.</p>
-    pub fn show_speaker_label(&self) -> bool {
+    pub fn show_speaker_label(&self) -> ::std::option::Option<bool> {
         self.show_speaker_label
     }
     /// <p>Enables channel identification in multi-channel audio.</p>
     /// <p>Channel identification transcribes the audio on each channel independently, then appends the output for each channel into one transcript.</p>
     /// <p>If you have multi-channel audio and do not enable channel identification, your audio is transcribed in a continuous manner and your transcript is not separated by channel.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/channel-id.html">Transcribing multi-channel audio</a>.</p>
-    pub fn enable_channel_identification(&self) -> bool {
+    pub fn enable_channel_identification(&self) -> ::std::option::Option<bool> {
         self.enable_channel_identification
     }
     /// <p>Specify the number of channels in your audio stream. Up to two channels are supported.</p>
@@ -177,7 +177,7 @@ impl StartStreamTranscriptionInput {
         self.number_of_channels
     }
     /// <p>Enables partial result stabilization for your transcription. Partial result stabilization can reduce latency in your output, but may impact accuracy. For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/streaming.html#streaming-partial-result-stabilization">Partial-result stabilization</a>.</p>
-    pub fn enable_partial_results_stabilization(&self) -> bool {
+    pub fn enable_partial_results_stabilization(&self) -> ::std::option::Option<bool> {
         self.enable_partial_results_stabilization
     }
     /// <p>Specify the level of stability to use when you enable partial results stabilization (<code>EnablePartialResultsStabilization</code>).</p>
@@ -218,7 +218,7 @@ impl StartStreamTranscriptionInput {
     /// <p>If you have multi-channel audio that contains different languages on each channel, and you've enabled channel identification, automatic language identification identifies the dominant language on each audio channel.</p>
     /// <p>Note that you must include either <code>LanguageCode</code> or <code>IdentifyLanguage</code> in your request. If you include both parameters, your request fails.</p>
     /// <p>Streaming language identification can't be combined with custom language models or redaction.</p>
-    pub fn identify_language(&self) -> bool {
+    pub fn identify_language(&self) -> ::std::option::Option<bool> {
         self.identify_language
     }
     /// <p>Specify two or more language codes that represent the languages you think may be present in your media; including more than five is not recommended. If you're unsure what languages are present, do not include this parameter.</p>
@@ -796,16 +796,16 @@ impl StartStreamTranscriptionInputBuilder {
             })?,
             vocabulary_filter_name: self.vocabulary_filter_name,
             vocabulary_filter_method: self.vocabulary_filter_method,
-            show_speaker_label: self.show_speaker_label.unwrap_or_default(),
-            enable_channel_identification: self.enable_channel_identification.unwrap_or_default(),
+            show_speaker_label: self.show_speaker_label,
+            enable_channel_identification: self.enable_channel_identification,
             number_of_channels: self.number_of_channels,
-            enable_partial_results_stabilization: self.enable_partial_results_stabilization.unwrap_or_default(),
+            enable_partial_results_stabilization: self.enable_partial_results_stabilization,
             partial_results_stability: self.partial_results_stability,
             content_identification_type: self.content_identification_type,
             content_redaction_type: self.content_redaction_type,
             pii_entity_types: self.pii_entity_types,
             language_model_name: self.language_model_name,
-            identify_language: self.identify_language.unwrap_or_default(),
+            identify_language: self.identify_language,
             language_options: self.language_options,
             preferred_language: self.preferred_language,
             vocabulary_names: self.vocabulary_names,

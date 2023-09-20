@@ -13,6 +13,7 @@
 /// # let modelstatus = unimplemented!();
 /// match modelstatus {
 ///     ModelStatus::Failed => { /* ... */ },
+///     ModelStatus::ImportInProgress => { /* ... */ },
 ///     ModelStatus::InProgress => { /* ... */ },
 ///     ModelStatus::Success => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -45,6 +46,8 @@ pub enum ModelStatus {
     #[allow(missing_docs)] // documentation missing in model
     Failed,
     #[allow(missing_docs)] // documentation missing in model
+    ImportInProgress,
+    #[allow(missing_docs)] // documentation missing in model
     InProgress,
     #[allow(missing_docs)] // documentation missing in model
     Success,
@@ -55,6 +58,7 @@ impl ::std::convert::From<&str> for ModelStatus {
     fn from(s: &str) -> Self {
         match s {
             "FAILED" => ModelStatus::Failed,
+            "IMPORT_IN_PROGRESS" => ModelStatus::ImportInProgress,
             "IN_PROGRESS" => ModelStatus::InProgress,
             "SUCCESS" => ModelStatus::Success,
             other => ModelStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
@@ -73,6 +77,7 @@ impl ModelStatus {
     pub fn as_str(&self) -> &str {
         match self {
             ModelStatus::Failed => "FAILED",
+            ModelStatus::ImportInProgress => "IMPORT_IN_PROGRESS",
             ModelStatus::InProgress => "IN_PROGRESS",
             ModelStatus::Success => "SUCCESS",
             ModelStatus::Unknown(value) => value.as_str(),
@@ -80,7 +85,7 @@ impl ModelStatus {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["FAILED", "IN_PROGRESS", "SUCCESS"]
+        &["FAILED", "IMPORT_IN_PROGRESS", "IN_PROGRESS", "SUCCESS"]
     }
 }
 impl ::std::convert::AsRef<str> for ModelStatus {

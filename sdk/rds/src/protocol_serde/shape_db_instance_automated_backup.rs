@@ -379,6 +379,19 @@ pub fn de_db_instance_automated_backup(
                 builder = builder.set_storage_throughput(var_28);
             }
             ,
+            s if s.matches("AwsBackupRecoveryPointArn") /* AwsBackupRecoveryPointArn com.amazonaws.rds#DBInstanceAutomatedBackup$AwsBackupRecoveryPointArn */ =>  {
+                let var_29 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_aws_backup_recovery_point_arn(var_29);
+            }
+            ,
             _ => {}
         }
     }

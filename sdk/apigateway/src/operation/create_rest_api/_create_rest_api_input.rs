@@ -16,7 +16,7 @@ pub struct CreateRestApiInput {
     pub binary_media_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A nullable integer that is used to enable compression (with non-negative between 0 and 10485760 (10M) bytes, inclusive) or disable compression (with a null value) on an API. When compression is enabled, compression or decompression is not applied on the payload if the payload size is smaller than this value. Setting it to zero allows compression for any payload size.</p>
     pub minimum_compression_size: ::std::option::Option<i32>,
-    /// <p>The source of the API key for metering requests according to a usage plan. Valid values are: &gt;<code>HEADER</code> to read the API key from the <code>X-API-Key</code> header of a request. <code>AUTHORIZER</code> to read the API key from the <code>UsageIdentifierKey</code> from a custom authorizer.</p>
+    /// <p>The source of the API key for metering requests according to a usage plan. Valid values are: <code>HEADER</code> to read the API key from the <code>X-API-Key</code> header of a request. <code>AUTHORIZER</code> to read the API key from the <code>UsageIdentifierKey</code> from a custom authorizer.</p>
     pub api_key_source: ::std::option::Option<crate::types::ApiKeySourceType>,
     /// <p>The endpoint configuration of this RestApi showing the endpoint types of the API. </p>
     pub endpoint_configuration: ::std::option::Option<crate::types::EndpointConfiguration>,
@@ -25,7 +25,7 @@ pub struct CreateRestApiInput {
     /// <p>The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters and must not start with <code>aws:</code>. The tag value can be up to 256 characters.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Specifies whether clients can invoke your API by using the default <code>execute-api</code> endpoint. By default, clients can invoke your API with the default <code>https://{api_id}.execute-api.{region}.amazonaws.com</code> endpoint. To require that clients use a custom domain name to invoke your API, disable the default endpoint</p>
-    pub disable_execute_api_endpoint: bool,
+    pub disable_execute_api_endpoint: ::std::option::Option<bool>,
 }
 impl CreateRestApiInput {
     /// <p>The name of the RestApi.</p>
@@ -52,7 +52,7 @@ impl CreateRestApiInput {
     pub fn minimum_compression_size(&self) -> ::std::option::Option<i32> {
         self.minimum_compression_size
     }
-    /// <p>The source of the API key for metering requests according to a usage plan. Valid values are: &gt;<code>HEADER</code> to read the API key from the <code>X-API-Key</code> header of a request. <code>AUTHORIZER</code> to read the API key from the <code>UsageIdentifierKey</code> from a custom authorizer.</p>
+    /// <p>The source of the API key for metering requests according to a usage plan. Valid values are: <code>HEADER</code> to read the API key from the <code>X-API-Key</code> header of a request. <code>AUTHORIZER</code> to read the API key from the <code>UsageIdentifierKey</code> from a custom authorizer.</p>
     pub fn api_key_source(&self) -> ::std::option::Option<&crate::types::ApiKeySourceType> {
         self.api_key_source.as_ref()
     }
@@ -69,7 +69,7 @@ impl CreateRestApiInput {
         self.tags.as_ref()
     }
     /// <p>Specifies whether clients can invoke your API by using the default <code>execute-api</code> endpoint. By default, clients can invoke your API with the default <code>https://{api_id}.execute-api.{region}.amazonaws.com</code> endpoint. To require that clients use a custom domain name to invoke your API, disable the default endpoint</p>
-    pub fn disable_execute_api_endpoint(&self) -> bool {
+    pub fn disable_execute_api_endpoint(&self) -> ::std::option::Option<bool> {
         self.disable_execute_api_endpoint
     }
 }
@@ -187,17 +187,17 @@ impl CreateRestApiInputBuilder {
     pub fn get_minimum_compression_size(&self) -> &::std::option::Option<i32> {
         &self.minimum_compression_size
     }
-    /// <p>The source of the API key for metering requests according to a usage plan. Valid values are: &gt;<code>HEADER</code> to read the API key from the <code>X-API-Key</code> header of a request. <code>AUTHORIZER</code> to read the API key from the <code>UsageIdentifierKey</code> from a custom authorizer.</p>
+    /// <p>The source of the API key for metering requests according to a usage plan. Valid values are: <code>HEADER</code> to read the API key from the <code>X-API-Key</code> header of a request. <code>AUTHORIZER</code> to read the API key from the <code>UsageIdentifierKey</code> from a custom authorizer.</p>
     pub fn api_key_source(mut self, input: crate::types::ApiKeySourceType) -> Self {
         self.api_key_source = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The source of the API key for metering requests according to a usage plan. Valid values are: &gt;<code>HEADER</code> to read the API key from the <code>X-API-Key</code> header of a request. <code>AUTHORIZER</code> to read the API key from the <code>UsageIdentifierKey</code> from a custom authorizer.</p>
+    /// <p>The source of the API key for metering requests according to a usage plan. Valid values are: <code>HEADER</code> to read the API key from the <code>X-API-Key</code> header of a request. <code>AUTHORIZER</code> to read the API key from the <code>UsageIdentifierKey</code> from a custom authorizer.</p>
     pub fn set_api_key_source(mut self, input: ::std::option::Option<crate::types::ApiKeySourceType>) -> Self {
         self.api_key_source = input;
         self
     }
-    /// <p>The source of the API key for metering requests according to a usage plan. Valid values are: &gt;<code>HEADER</code> to read the API key from the <code>X-API-Key</code> header of a request. <code>AUTHORIZER</code> to read the API key from the <code>UsageIdentifierKey</code> from a custom authorizer.</p>
+    /// <p>The source of the API key for metering requests according to a usage plan. Valid values are: <code>HEADER</code> to read the API key from the <code>X-API-Key</code> header of a request. <code>AUTHORIZER</code> to read the API key from the <code>UsageIdentifierKey</code> from a custom authorizer.</p>
     pub fn get_api_key_source(&self) -> &::std::option::Option<crate::types::ApiKeySourceType> {
         &self.api_key_source
     }
@@ -278,7 +278,7 @@ impl CreateRestApiInputBuilder {
             endpoint_configuration: self.endpoint_configuration,
             policy: self.policy,
             tags: self.tags,
-            disable_execute_api_endpoint: self.disable_execute_api_endpoint.unwrap_or_default(),
+            disable_execute_api_endpoint: self.disable_execute_api_endpoint,
         })
     }
 }

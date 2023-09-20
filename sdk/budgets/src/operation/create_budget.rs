@@ -266,7 +266,7 @@ pub enum CreateBudgetError {
     InternalErrorException(crate::types::error::InternalErrorException),
     /// <p>An error on the client occurred. Typically, the cause is an invalid input value.</p>
     InvalidParameterException(crate::types::error::InvalidParameterException),
-    /// <p> The number of API requests has exceeded the maximum allowed API request throttling limit for the account. </p>
+    /// <p>The number of API requests has exceeded the maximum allowed API request throttling limit for the account.</p>
     ThrottlingException(crate::types::error::ThrottlingException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(::aws_smithy_types::error::Unhandled),

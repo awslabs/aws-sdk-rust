@@ -72,6 +72,12 @@ pub fn ser_m3u8_settings(
     if let Some(var_17) = &input.video_pid {
         object.key("videoPid").string(var_17.as_str());
     }
+    if let Some(var_18) = &input.klv_behavior {
+        object.key("klvBehavior").string(var_18.as_str());
+    }
+    if let Some(var_19) = &input.klv_data_pids {
+        object.key("klvDataPids").string(var_19.as_str());
+    }
     Ok(())
 }
 
@@ -204,6 +210,20 @@ where
                         }
                         "videoPid" => {
                             builder = builder.set_video_pid(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "klvBehavior" => {
+                            builder = builder.set_klv_behavior(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::M3u8KlvBehavior::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "klvDataPids" => {
+                            builder = builder.set_klv_data_pids(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,

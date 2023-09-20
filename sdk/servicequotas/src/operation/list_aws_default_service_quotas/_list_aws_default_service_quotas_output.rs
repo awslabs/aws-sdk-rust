@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAwsDefaultServiceQuotasOutput {
-    /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
+    /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Information about the quotas.</p>
     pub quotas: ::std::option::Option<::std::vec::Vec<crate::types::ServiceQuota>>,
     _request_id: Option<String>,
 }
 impl ListAwsDefaultServiceQuotasOutput {
-    /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
+    /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -40,17 +40,17 @@ pub struct ListAwsDefaultServiceQuotasOutputBuilder {
     _request_id: Option<String>,
 }
 impl ListAwsDefaultServiceQuotasOutputBuilder {
-    /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
+    /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
+    /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
+    /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

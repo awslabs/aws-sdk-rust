@@ -8,6 +8,8 @@ pub struct Av1Settings {
     pub adaptive_quantization: ::std::option::Option<crate::types::Av1AdaptiveQuantization>,
     /// Specify the Bit depth. You can choose 8-bit or 10-bit.
     pub bit_depth: ::std::option::Option<crate::types::Av1BitDepth>,
+    /// Film grain synthesis replaces film grain present in your content with similar quality synthesized AV1 film grain. We recommend that you choose Enabled to reduce the bandwidth of your QVBR quality level 5, 6, 7, or 8 outputs. For QVBR quality level 9 or 10 outputs we recommend that you keep the default value, Disabled. When you include Film grain synthesis, you cannot include the Noise reducer preprocessor.
+    pub film_grain_synthesis: ::std::option::Option<crate::types::Av1FilmGrainSynthesis>,
     /// Use the Framerate setting to specify the frame rate for this output. If you want to keep the same frame rate as the input video, choose Follow source. If you want to do frame rate conversion, choose a frame rate from the dropdown list or choose Custom. The framerates shown in the dropdown list are decimal approximations of fractions. If you choose Custom, specify your frame rate as a fraction.
     pub framerate_control: ::std::option::Option<crate::types::Av1FramerateControl>,
     /// Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. For numerically simple conversions, such as 60 fps to 30 fps: We recommend that you keep the default value, Drop duplicate. For numerically complex conversions, to avoid stutter: Choose Interpolate. This results in a smooth picture, but might introduce undesirable video artifacts. For complex frame rate conversions, especially if your source video has already been converted from its original cadence: Choose FrameFormer to do motion-compensated interpolation. FrameFormer uses the best conversion method frame by frame. Note that using FrameFormer increases the transcoding time and incurs a significant add-on cost. When you choose FrameFormer, your input video resolution must be at least 128x96.
@@ -39,6 +41,10 @@ impl Av1Settings {
     /// Specify the Bit depth. You can choose 8-bit or 10-bit.
     pub fn bit_depth(&self) -> ::std::option::Option<&crate::types::Av1BitDepth> {
         self.bit_depth.as_ref()
+    }
+    /// Film grain synthesis replaces film grain present in your content with similar quality synthesized AV1 film grain. We recommend that you choose Enabled to reduce the bandwidth of your QVBR quality level 5, 6, 7, or 8 outputs. For QVBR quality level 9 or 10 outputs we recommend that you keep the default value, Disabled. When you include Film grain synthesis, you cannot include the Noise reducer preprocessor.
+    pub fn film_grain_synthesis(&self) -> ::std::option::Option<&crate::types::Av1FilmGrainSynthesis> {
+        self.film_grain_synthesis.as_ref()
     }
     /// Use the Framerate setting to specify the frame rate for this output. If you want to keep the same frame rate as the input video, choose Follow source. If you want to do frame rate conversion, choose a frame rate from the dropdown list or choose Custom. The framerates shown in the dropdown list are decimal approximations of fractions. If you choose Custom, specify your frame rate as a fraction.
     pub fn framerate_control(&self) -> ::std::option::Option<&crate::types::Av1FramerateControl> {
@@ -98,6 +104,7 @@ impl Av1Settings {
 pub struct Av1SettingsBuilder {
     pub(crate) adaptive_quantization: ::std::option::Option<crate::types::Av1AdaptiveQuantization>,
     pub(crate) bit_depth: ::std::option::Option<crate::types::Av1BitDepth>,
+    pub(crate) film_grain_synthesis: ::std::option::Option<crate::types::Av1FilmGrainSynthesis>,
     pub(crate) framerate_control: ::std::option::Option<crate::types::Av1FramerateControl>,
     pub(crate) framerate_conversion_algorithm: ::std::option::Option<crate::types::Av1FramerateConversionAlgorithm>,
     pub(crate) framerate_denominator: ::std::option::Option<i32>,
@@ -138,6 +145,20 @@ impl Av1SettingsBuilder {
     /// Specify the Bit depth. You can choose 8-bit or 10-bit.
     pub fn get_bit_depth(&self) -> &::std::option::Option<crate::types::Av1BitDepth> {
         &self.bit_depth
+    }
+    /// Film grain synthesis replaces film grain present in your content with similar quality synthesized AV1 film grain. We recommend that you choose Enabled to reduce the bandwidth of your QVBR quality level 5, 6, 7, or 8 outputs. For QVBR quality level 9 or 10 outputs we recommend that you keep the default value, Disabled. When you include Film grain synthesis, you cannot include the Noise reducer preprocessor.
+    pub fn film_grain_synthesis(mut self, input: crate::types::Av1FilmGrainSynthesis) -> Self {
+        self.film_grain_synthesis = ::std::option::Option::Some(input);
+        self
+    }
+    /// Film grain synthesis replaces film grain present in your content with similar quality synthesized AV1 film grain. We recommend that you choose Enabled to reduce the bandwidth of your QVBR quality level 5, 6, 7, or 8 outputs. For QVBR quality level 9 or 10 outputs we recommend that you keep the default value, Disabled. When you include Film grain synthesis, you cannot include the Noise reducer preprocessor.
+    pub fn set_film_grain_synthesis(mut self, input: ::std::option::Option<crate::types::Av1FilmGrainSynthesis>) -> Self {
+        self.film_grain_synthesis = input;
+        self
+    }
+    /// Film grain synthesis replaces film grain present in your content with similar quality synthesized AV1 film grain. We recommend that you choose Enabled to reduce the bandwidth of your QVBR quality level 5, 6, 7, or 8 outputs. For QVBR quality level 9 or 10 outputs we recommend that you keep the default value, Disabled. When you include Film grain synthesis, you cannot include the Noise reducer preprocessor.
+    pub fn get_film_grain_synthesis(&self) -> &::std::option::Option<crate::types::Av1FilmGrainSynthesis> {
+        &self.film_grain_synthesis
     }
     /// Use the Framerate setting to specify the frame rate for this output. If you want to keep the same frame rate as the input video, choose Follow source. If you want to do frame rate conversion, choose a frame rate from the dropdown list or choose Custom. The framerates shown in the dropdown list are decimal approximations of fractions. If you choose Custom, specify your frame rate as a fraction.
     pub fn framerate_control(mut self, input: crate::types::Av1FramerateControl) -> Self {
@@ -298,6 +319,7 @@ impl Av1SettingsBuilder {
         crate::types::Av1Settings {
             adaptive_quantization: self.adaptive_quantization,
             bit_depth: self.bit_depth,
+            film_grain_synthesis: self.film_grain_synthesis,
             framerate_control: self.framerate_control,
             framerate_conversion_algorithm: self.framerate_conversion_algorithm,
             framerate_denominator: self.framerate_denominator,

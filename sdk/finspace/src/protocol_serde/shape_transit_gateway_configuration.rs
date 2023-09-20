@@ -28,6 +28,11 @@ where
                                     .transpose()?,
                             );
                         }
+                        "attachmentNetworkAclConfiguration" => {
+                            builder = builder.set_attachment_network_acl_configuration(
+                                crate::protocol_serde::shape_network_acl_configuration::de_network_acl_configuration(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
@@ -55,6 +60,18 @@ pub fn ser_transit_gateway_configuration(
     }
     if let Some(var_2) = &input.routable_cidr_space {
         object.key("routableCIDRSpace").string(var_2.as_str());
+    }
+    if let Some(var_3) = &input.attachment_network_acl_configuration {
+        let mut array_4 = object.key("attachmentNetworkAclConfiguration").start_array();
+        for item_5 in var_3 {
+            {
+                #[allow(unused_mut)]
+                let mut object_6 = array_4.value().start_object();
+                crate::protocol_serde::shape_network_acl_entry::ser_network_acl_entry(&mut object_6, item_5)?;
+                object_6.finish();
+            }
+        }
+        array_4.finish();
     }
     Ok(())
 }

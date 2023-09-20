@@ -23,7 +23,7 @@ impl CreateReceiptRuleInputBuilder {
 /// Fluent builder constructing a request to `CreateReceiptRule`.
 ///
 /// <p>Creates a receipt rule.</p>
-/// <p>For information about setting up receipt rules, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rules.html">Amazon SES Developer Guide</a>.</p>
+/// <p>For information about setting up receipt rules, see the <a href="https://docs.aws.amazon.com/ses/latest/dg/receiving-email-receipt-rules-console-walkthrough.html">Amazon SES Developer Guide</a>.</p>
 /// <p>You can execute this operation no more than once per second.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateReceiptRuleFluentBuilder {
@@ -112,31 +112,31 @@ impl CreateReceiptRuleFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name of the rule set that the receipt rule will be added to.</p>
+    /// <p>The name of the rule set where the receipt rule is added.</p>
     pub fn rule_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.rule_set_name(input.into());
         self
     }
-    /// <p>The name of the rule set that the receipt rule will be added to.</p>
+    /// <p>The name of the rule set where the receipt rule is added.</p>
     pub fn set_rule_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_rule_set_name(input);
         self
     }
-    /// <p>The name of the rule set that the receipt rule will be added to.</p>
+    /// <p>The name of the rule set where the receipt rule is added.</p>
     pub fn get_rule_set_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_rule_set_name()
     }
-    /// <p>The name of an existing rule after which the new rule will be placed. If this parameter is null, the new rule will be inserted at the beginning of the rule list.</p>
+    /// <p>The name of an existing rule after which the new rule is placed. If this parameter is null, the new rule is inserted at the beginning of the rule list.</p>
     pub fn after(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.after(input.into());
         self
     }
-    /// <p>The name of an existing rule after which the new rule will be placed. If this parameter is null, the new rule will be inserted at the beginning of the rule list.</p>
+    /// <p>The name of an existing rule after which the new rule is placed. If this parameter is null, the new rule is inserted at the beginning of the rule list.</p>
     pub fn set_after(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_after(input);
         self
     }
-    /// <p>The name of an existing rule after which the new rule will be placed. If this parameter is null, the new rule will be inserted at the beginning of the rule list.</p>
+    /// <p>The name of an existing rule after which the new rule is placed. If this parameter is null, the new rule is inserted at the beginning of the rule list.</p>
     pub fn get_after(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_after()
     }

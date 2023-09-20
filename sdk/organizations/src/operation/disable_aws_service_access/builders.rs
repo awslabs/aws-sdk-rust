@@ -34,7 +34,7 @@ impl DisableAwsServiceAccessInputBuilder {
 /// <p>Using the other service's console or commands to disable the integration ensures that the other service is aware that it can clean up any resources that are required only for the integration. How the service cleans up its resources in the organization's accounts depends on that service. For more information, see the documentation for the other Amazon Web Services service. </p>
 /// </important>
 /// <p>After you perform the <code>DisableAWSServiceAccess</code> operation, the specified service can no longer perform operations in your organization's accounts </p>
-/// <p>For more information about integrating other services with Organizations, including the list of services that work with Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html">Integrating Organizations with Other Amazon Web Services Services</a> in the <i>Organizations User Guide.</i> </p>
+/// <p>For more information about integrating other services with Organizations, including the list of services that work with Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html">Using Organizations with other Amazon Web Services services</a> in the <i>Organizations User Guide</i>.</p>
 /// <p>This operation can be called only from the organization's management account.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisableAWSServiceAccessFluentBuilder {

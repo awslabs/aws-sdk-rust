@@ -251,7 +251,7 @@ pub type StopContactErrorKind = StopContactError;
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum StopContactError {
-    /// <p>The contact with the specified ID is not active or does not exist. Applies to Voice calls only, not to Chat, Task, or Voice Callback.</p>
+    /// <p>The contact with the specified ID is not active or does not exist. Applies to Voice calls only, not to Chat or Task contacts.</p>
     ContactNotFoundException(crate::types::error::ContactNotFoundException),
     /// <p>Request processing failed because of an error or failure with the service.</p>
     InternalServiceException(crate::types::error::InternalServiceException),

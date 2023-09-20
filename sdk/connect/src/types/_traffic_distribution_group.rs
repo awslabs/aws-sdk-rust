@@ -26,6 +26,10 @@ pub struct TrafficDistributionGroup {
     pub status: ::std::option::Option<crate::types::TrafficDistributionGroupStatus>,
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>Whether this is the default traffic distribution group created during instance replication. The default traffic distribution group cannot be deleted by the <code>DeleteTrafficDistributionGroup</code> API. The default traffic distribution group is deleted as part of the process for deleting a replica.</p> <note>
+    /// <p>You can change the <code>SignInConfig</code> distribution only for a default <code>TrafficDistributionGroup</code> (see the <code>IsDefault</code> parameter in the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_TrafficDistributionGroup.html">TrafficDistributionGroup</a> data type). If you call <code>UpdateTrafficDistribution</code> with a modified <code>SignInConfig</code> and a non-default <code>TrafficDistributionGroup</code>, an <code>InvalidRequestException</code> is returned.</p>
+    /// </note>
+    pub is_default: bool,
 }
 impl TrafficDistributionGroup {
     /// <p>The identifier of the traffic distribution group. This can be the ID or the ARN if the API is being called in the Region where the traffic distribution group was created. The ARN must be provided if the call is from the replicated Region.</p>
@@ -64,6 +68,12 @@ impl TrafficDistributionGroup {
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
+    /// <p>Whether this is the default traffic distribution group created during instance replication. The default traffic distribution group cannot be deleted by the <code>DeleteTrafficDistributionGroup</code> API. The default traffic distribution group is deleted as part of the process for deleting a replica.</p> <note>
+    /// <p>You can change the <code>SignInConfig</code> distribution only for a default <code>TrafficDistributionGroup</code> (see the <code>IsDefault</code> parameter in the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_TrafficDistributionGroup.html">TrafficDistributionGroup</a> data type). If you call <code>UpdateTrafficDistribution</code> with a modified <code>SignInConfig</code> and a non-default <code>TrafficDistributionGroup</code>, an <code>InvalidRequestException</code> is returned.</p>
+    /// </note>
+    pub fn is_default(&self) -> bool {
+        self.is_default
+    }
 }
 impl TrafficDistributionGroup {
     /// Creates a new builder-style object to manufacture [`TrafficDistributionGroup`](crate::types::TrafficDistributionGroup).
@@ -83,6 +93,7 @@ pub struct TrafficDistributionGroupBuilder {
     pub(crate) instance_arn: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::TrafficDistributionGroupStatus>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) is_default: ::std::option::Option<bool>,
 }
 impl TrafficDistributionGroupBuilder {
     /// <p>The identifier of the traffic distribution group. This can be the ID or the ARN if the API is being called in the Region where the traffic distribution group was created. The ARN must be provided if the call is from the replicated Region.</p>
@@ -213,6 +224,26 @@ impl TrafficDistributionGroupBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
+    /// <p>Whether this is the default traffic distribution group created during instance replication. The default traffic distribution group cannot be deleted by the <code>DeleteTrafficDistributionGroup</code> API. The default traffic distribution group is deleted as part of the process for deleting a replica.</p> <note>
+    /// <p>You can change the <code>SignInConfig</code> distribution only for a default <code>TrafficDistributionGroup</code> (see the <code>IsDefault</code> parameter in the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_TrafficDistributionGroup.html">TrafficDistributionGroup</a> data type). If you call <code>UpdateTrafficDistribution</code> with a modified <code>SignInConfig</code> and a non-default <code>TrafficDistributionGroup</code>, an <code>InvalidRequestException</code> is returned.</p>
+    /// </note>
+    pub fn is_default(mut self, input: bool) -> Self {
+        self.is_default = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Whether this is the default traffic distribution group created during instance replication. The default traffic distribution group cannot be deleted by the <code>DeleteTrafficDistributionGroup</code> API. The default traffic distribution group is deleted as part of the process for deleting a replica.</p> <note>
+    /// <p>You can change the <code>SignInConfig</code> distribution only for a default <code>TrafficDistributionGroup</code> (see the <code>IsDefault</code> parameter in the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_TrafficDistributionGroup.html">TrafficDistributionGroup</a> data type). If you call <code>UpdateTrafficDistribution</code> with a modified <code>SignInConfig</code> and a non-default <code>TrafficDistributionGroup</code>, an <code>InvalidRequestException</code> is returned.</p>
+    /// </note>
+    pub fn set_is_default(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.is_default = input;
+        self
+    }
+    /// <p>Whether this is the default traffic distribution group created during instance replication. The default traffic distribution group cannot be deleted by the <code>DeleteTrafficDistributionGroup</code> API. The default traffic distribution group is deleted as part of the process for deleting a replica.</p> <note>
+    /// <p>You can change the <code>SignInConfig</code> distribution only for a default <code>TrafficDistributionGroup</code> (see the <code>IsDefault</code> parameter in the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_TrafficDistributionGroup.html">TrafficDistributionGroup</a> data type). If you call <code>UpdateTrafficDistribution</code> with a modified <code>SignInConfig</code> and a non-default <code>TrafficDistributionGroup</code>, an <code>InvalidRequestException</code> is returned.</p>
+    /// </note>
+    pub fn get_is_default(&self) -> &::std::option::Option<bool> {
+        &self.is_default
+    }
     /// Consumes the builder and constructs a [`TrafficDistributionGroup`](crate::types::TrafficDistributionGroup).
     pub fn build(self) -> crate::types::TrafficDistributionGroup {
         crate::types::TrafficDistributionGroup {
@@ -223,6 +254,7 @@ impl TrafficDistributionGroupBuilder {
             instance_arn: self.instance_arn,
             status: self.status,
             tags: self.tags,
+            is_default: self.is_default.unwrap_or_default(),
         }
     }
 }

@@ -11,6 +11,8 @@ pub struct CreateAnnotationStoreInput {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Tags for the store.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p> The name given to an annotation store version to distinguish it from other versions. </p>
+    pub version_name: ::std::option::Option<::std::string::String>,
     /// <p>Server-side encryption (SSE) settings for the store.</p>
     pub sse_config: ::std::option::Option<crate::types::SseConfig>,
     /// <p>The annotation file format of the store.</p>
@@ -34,6 +36,10 @@ impl CreateAnnotationStoreInput {
     /// <p>Tags for the store.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
+    }
+    /// <p> The name given to an annotation store version to distinguish it from other versions. </p>
+    pub fn version_name(&self) -> ::std::option::Option<&str> {
+        self.version_name.as_deref()
     }
     /// <p>Server-side encryption (SSE) settings for the store.</p>
     pub fn sse_config(&self) -> ::std::option::Option<&crate::types::SseConfig> {
@@ -63,6 +69,7 @@ pub struct CreateAnnotationStoreInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) version_name: ::std::option::Option<::std::string::String>,
     pub(crate) sse_config: ::std::option::Option<crate::types::SseConfig>,
     pub(crate) store_format: ::std::option::Option<crate::types::StoreFormat>,
     pub(crate) store_options: ::std::option::Option<crate::types::StoreOptions>,
@@ -130,6 +137,20 @@ impl CreateAnnotationStoreInputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
+    /// <p> The name given to an annotation store version to distinguish it from other versions. </p>
+    pub fn version_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.version_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p> The name given to an annotation store version to distinguish it from other versions. </p>
+    pub fn set_version_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.version_name = input;
+        self
+    }
+    /// <p> The name given to an annotation store version to distinguish it from other versions. </p>
+    pub fn get_version_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version_name
+    }
     /// <p>Server-side encryption (SSE) settings for the store.</p>
     pub fn sse_config(mut self, input: crate::types::SseConfig) -> Self {
         self.sse_config = ::std::option::Option::Some(input);
@@ -182,6 +203,7 @@ impl CreateAnnotationStoreInputBuilder {
             name: self.name,
             description: self.description,
             tags: self.tags,
+            version_name: self.version_name,
             sse_config: self.sse_config,
             store_format: self.store_format,
             store_options: self.store_options,

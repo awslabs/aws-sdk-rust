@@ -8,3 +8,13 @@ pub(crate) fn reflens_list_report_definitions_output_next_token(
     };
     ::std::option::Option::Some(input)
 }
+
+pub(crate) fn lens_list_report_definitions_output_report_definitions(
+    input: crate::operation::list_report_definitions::ListReportDefinitionsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ReportDefinition>> {
+    let input = match input.report_definitions {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}

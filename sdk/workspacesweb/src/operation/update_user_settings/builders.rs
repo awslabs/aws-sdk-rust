@@ -239,4 +239,24 @@ impl UpdateUserSettingsFluentBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }
+    /// <p>The configuration that specifies which cookies should be synchronized from the end user's local browser to the remote browser.</p>
+    /// <p>If the allowlist and blocklist are empty, the configuration becomes null.</p>
+    pub fn cookie_synchronization_configuration(mut self, input: crate::types::CookieSynchronizationConfiguration) -> Self {
+        self.inner = self.inner.cookie_synchronization_configuration(input);
+        self
+    }
+    /// <p>The configuration that specifies which cookies should be synchronized from the end user's local browser to the remote browser.</p>
+    /// <p>If the allowlist and blocklist are empty, the configuration becomes null.</p>
+    pub fn set_cookie_synchronization_configuration(
+        mut self,
+        input: ::std::option::Option<crate::types::CookieSynchronizationConfiguration>,
+    ) -> Self {
+        self.inner = self.inner.set_cookie_synchronization_configuration(input);
+        self
+    }
+    /// <p>The configuration that specifies which cookies should be synchronized from the end user's local browser to the remote browser.</p>
+    /// <p>If the allowlist and blocklist are empty, the configuration becomes null.</p>
+    pub fn get_cookie_synchronization_configuration(&self) -> &::std::option::Option<crate::types::CookieSynchronizationConfiguration> {
+        self.inner.get_cookie_synchronization_configuration()
+    }
 }

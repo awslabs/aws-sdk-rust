@@ -4,47 +4,47 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IdentityNotificationAttributes {
-    /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic where Amazon SES will publish bounce notifications.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic where Amazon SES publishes bounce notifications.</p>
     pub bounce_topic: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic where Amazon SES will publish complaint notifications.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic where Amazon SES publishes complaint notifications.</p>
     pub complaint_topic: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic where Amazon SES will publish delivery notifications.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic where Amazon SES publishes delivery notifications.</p>
     pub delivery_topic: ::std::option::Option<::std::string::String>,
-    /// <p>Describes whether Amazon SES will forward bounce and complaint notifications as email. <code>true</code> indicates that Amazon SES will forward bounce and complaint notifications as email, while <code>false</code> indicates that bounce and complaint notifications will be published only to the specified bounce and complaint Amazon SNS topics.</p>
+    /// <p>Describes whether Amazon SES forwards bounce and complaint notifications as email. <code>true</code> indicates that Amazon SES forwards bounce and complaint notifications as email, while <code>false</code> indicates that bounce and complaint notifications are published only to the specified bounce and complaint Amazon SNS topics.</p>
     pub forwarding_enabled: bool,
-    /// <p>Describes whether Amazon SES includes the original email headers in Amazon SNS notifications of type <code>Bounce</code>. A value of <code>true</code> specifies that Amazon SES will include headers in bounce notifications, and a value of <code>false</code> specifies that Amazon SES will not include headers in bounce notifications.</p>
+    /// <p>Describes whether Amazon SES includes the original email headers in Amazon SNS notifications of type <code>Bounce</code>. A value of <code>true</code> specifies that Amazon SES includes headers in bounce notifications, and a value of <code>false</code> specifies that Amazon SES does not include headers in bounce notifications.</p>
     pub headers_in_bounce_notifications_enabled: bool,
-    /// <p>Describes whether Amazon SES includes the original email headers in Amazon SNS notifications of type <code>Complaint</code>. A value of <code>true</code> specifies that Amazon SES will include headers in complaint notifications, and a value of <code>false</code> specifies that Amazon SES will not include headers in complaint notifications.</p>
+    /// <p>Describes whether Amazon SES includes the original email headers in Amazon SNS notifications of type <code>Complaint</code>. A value of <code>true</code> specifies that Amazon SES includes headers in complaint notifications, and a value of <code>false</code> specifies that Amazon SES does not include headers in complaint notifications.</p>
     pub headers_in_complaint_notifications_enabled: bool,
-    /// <p>Describes whether Amazon SES includes the original email headers in Amazon SNS notifications of type <code>Delivery</code>. A value of <code>true</code> specifies that Amazon SES will include headers in delivery notifications, and a value of <code>false</code> specifies that Amazon SES will not include headers in delivery notifications.</p>
+    /// <p>Describes whether Amazon SES includes the original email headers in Amazon SNS notifications of type <code>Delivery</code>. A value of <code>true</code> specifies that Amazon SES includes headers in delivery notifications, and a value of <code>false</code> specifies that Amazon SES does not include headers in delivery notifications.</p>
     pub headers_in_delivery_notifications_enabled: bool,
 }
 impl IdentityNotificationAttributes {
-    /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic where Amazon SES will publish bounce notifications.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic where Amazon SES publishes bounce notifications.</p>
     pub fn bounce_topic(&self) -> ::std::option::Option<&str> {
         self.bounce_topic.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic where Amazon SES will publish complaint notifications.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic where Amazon SES publishes complaint notifications.</p>
     pub fn complaint_topic(&self) -> ::std::option::Option<&str> {
         self.complaint_topic.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic where Amazon SES will publish delivery notifications.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic where Amazon SES publishes delivery notifications.</p>
     pub fn delivery_topic(&self) -> ::std::option::Option<&str> {
         self.delivery_topic.as_deref()
     }
-    /// <p>Describes whether Amazon SES will forward bounce and complaint notifications as email. <code>true</code> indicates that Amazon SES will forward bounce and complaint notifications as email, while <code>false</code> indicates that bounce and complaint notifications will be published only to the specified bounce and complaint Amazon SNS topics.</p>
+    /// <p>Describes whether Amazon SES forwards bounce and complaint notifications as email. <code>true</code> indicates that Amazon SES forwards bounce and complaint notifications as email, while <code>false</code> indicates that bounce and complaint notifications are published only to the specified bounce and complaint Amazon SNS topics.</p>
     pub fn forwarding_enabled(&self) -> bool {
         self.forwarding_enabled
     }
-    /// <p>Describes whether Amazon SES includes the original email headers in Amazon SNS notifications of type <code>Bounce</code>. A value of <code>true</code> specifies that Amazon SES will include headers in bounce notifications, and a value of <code>false</code> specifies that Amazon SES will not include headers in bounce notifications.</p>
+    /// <p>Describes whether Amazon SES includes the original email headers in Amazon SNS notifications of type <code>Bounce</code>. A value of <code>true</code> specifies that Amazon SES includes headers in bounce notifications, and a value of <code>false</code> specifies that Amazon SES does not include headers in bounce notifications.</p>
     pub fn headers_in_bounce_notifications_enabled(&self) -> bool {
         self.headers_in_bounce_notifications_enabled
     }
-    /// <p>Describes whether Amazon SES includes the original email headers in Amazon SNS notifications of type <code>Complaint</code>. A value of <code>true</code> specifies that Amazon SES will include headers in complaint notifications, and a value of <code>false</code> specifies that Amazon SES will not include headers in complaint notifications.</p>
+    /// <p>Describes whether Amazon SES includes the original email headers in Amazon SNS notifications of type <code>Complaint</code>. A value of <code>true</code> specifies that Amazon SES includes headers in complaint notifications, and a value of <code>false</code> specifies that Amazon SES does not include headers in complaint notifications.</p>
     pub fn headers_in_complaint_notifications_enabled(&self) -> bool {
         self.headers_in_complaint_notifications_enabled
     }
-    /// <p>Describes whether Amazon SES includes the original email headers in Amazon SNS notifications of type <code>Delivery</code>. A value of <code>true</code> specifies that Amazon SES will include headers in delivery notifications, and a value of <code>false</code> specifies that Amazon SES will not include headers in delivery notifications.</p>
+    /// <p>Describes whether Amazon SES includes the original email headers in Amazon SNS notifications of type <code>Delivery</code>. A value of <code>true</code> specifies that Amazon SES includes headers in delivery notifications, and a value of <code>false</code> specifies that Amazon SES does not include headers in delivery notifications.</p>
     pub fn headers_in_delivery_notifications_enabled(&self) -> bool {
         self.headers_in_delivery_notifications_enabled
     }
@@ -69,101 +69,101 @@ pub struct IdentityNotificationAttributesBuilder {
     pub(crate) headers_in_delivery_notifications_enabled: ::std::option::Option<bool>,
 }
 impl IdentityNotificationAttributesBuilder {
-    /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic where Amazon SES will publish bounce notifications.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic where Amazon SES publishes bounce notifications.</p>
     pub fn bounce_topic(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bounce_topic = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic where Amazon SES will publish bounce notifications.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic where Amazon SES publishes bounce notifications.</p>
     pub fn set_bounce_topic(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bounce_topic = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic where Amazon SES will publish bounce notifications.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic where Amazon SES publishes bounce notifications.</p>
     pub fn get_bounce_topic(&self) -> &::std::option::Option<::std::string::String> {
         &self.bounce_topic
     }
-    /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic where Amazon SES will publish complaint notifications.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic where Amazon SES publishes complaint notifications.</p>
     pub fn complaint_topic(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.complaint_topic = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic where Amazon SES will publish complaint notifications.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic where Amazon SES publishes complaint notifications.</p>
     pub fn set_complaint_topic(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.complaint_topic = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic where Amazon SES will publish complaint notifications.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic where Amazon SES publishes complaint notifications.</p>
     pub fn get_complaint_topic(&self) -> &::std::option::Option<::std::string::String> {
         &self.complaint_topic
     }
-    /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic where Amazon SES will publish delivery notifications.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic where Amazon SES publishes delivery notifications.</p>
     pub fn delivery_topic(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.delivery_topic = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic where Amazon SES will publish delivery notifications.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic where Amazon SES publishes delivery notifications.</p>
     pub fn set_delivery_topic(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.delivery_topic = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic where Amazon SES will publish delivery notifications.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic where Amazon SES publishes delivery notifications.</p>
     pub fn get_delivery_topic(&self) -> &::std::option::Option<::std::string::String> {
         &self.delivery_topic
     }
-    /// <p>Describes whether Amazon SES will forward bounce and complaint notifications as email. <code>true</code> indicates that Amazon SES will forward bounce and complaint notifications as email, while <code>false</code> indicates that bounce and complaint notifications will be published only to the specified bounce and complaint Amazon SNS topics.</p>
+    /// <p>Describes whether Amazon SES forwards bounce and complaint notifications as email. <code>true</code> indicates that Amazon SES forwards bounce and complaint notifications as email, while <code>false</code> indicates that bounce and complaint notifications are published only to the specified bounce and complaint Amazon SNS topics.</p>
     pub fn forwarding_enabled(mut self, input: bool) -> Self {
         self.forwarding_enabled = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Describes whether Amazon SES will forward bounce and complaint notifications as email. <code>true</code> indicates that Amazon SES will forward bounce and complaint notifications as email, while <code>false</code> indicates that bounce and complaint notifications will be published only to the specified bounce and complaint Amazon SNS topics.</p>
+    /// <p>Describes whether Amazon SES forwards bounce and complaint notifications as email. <code>true</code> indicates that Amazon SES forwards bounce and complaint notifications as email, while <code>false</code> indicates that bounce and complaint notifications are published only to the specified bounce and complaint Amazon SNS topics.</p>
     pub fn set_forwarding_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.forwarding_enabled = input;
         self
     }
-    /// <p>Describes whether Amazon SES will forward bounce and complaint notifications as email. <code>true</code> indicates that Amazon SES will forward bounce and complaint notifications as email, while <code>false</code> indicates that bounce and complaint notifications will be published only to the specified bounce and complaint Amazon SNS topics.</p>
+    /// <p>Describes whether Amazon SES forwards bounce and complaint notifications as email. <code>true</code> indicates that Amazon SES forwards bounce and complaint notifications as email, while <code>false</code> indicates that bounce and complaint notifications are published only to the specified bounce and complaint Amazon SNS topics.</p>
     pub fn get_forwarding_enabled(&self) -> &::std::option::Option<bool> {
         &self.forwarding_enabled
     }
-    /// <p>Describes whether Amazon SES includes the original email headers in Amazon SNS notifications of type <code>Bounce</code>. A value of <code>true</code> specifies that Amazon SES will include headers in bounce notifications, and a value of <code>false</code> specifies that Amazon SES will not include headers in bounce notifications.</p>
+    /// <p>Describes whether Amazon SES includes the original email headers in Amazon SNS notifications of type <code>Bounce</code>. A value of <code>true</code> specifies that Amazon SES includes headers in bounce notifications, and a value of <code>false</code> specifies that Amazon SES does not include headers in bounce notifications.</p>
     pub fn headers_in_bounce_notifications_enabled(mut self, input: bool) -> Self {
         self.headers_in_bounce_notifications_enabled = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Describes whether Amazon SES includes the original email headers in Amazon SNS notifications of type <code>Bounce</code>. A value of <code>true</code> specifies that Amazon SES will include headers in bounce notifications, and a value of <code>false</code> specifies that Amazon SES will not include headers in bounce notifications.</p>
+    /// <p>Describes whether Amazon SES includes the original email headers in Amazon SNS notifications of type <code>Bounce</code>. A value of <code>true</code> specifies that Amazon SES includes headers in bounce notifications, and a value of <code>false</code> specifies that Amazon SES does not include headers in bounce notifications.</p>
     pub fn set_headers_in_bounce_notifications_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.headers_in_bounce_notifications_enabled = input;
         self
     }
-    /// <p>Describes whether Amazon SES includes the original email headers in Amazon SNS notifications of type <code>Bounce</code>. A value of <code>true</code> specifies that Amazon SES will include headers in bounce notifications, and a value of <code>false</code> specifies that Amazon SES will not include headers in bounce notifications.</p>
+    /// <p>Describes whether Amazon SES includes the original email headers in Amazon SNS notifications of type <code>Bounce</code>. A value of <code>true</code> specifies that Amazon SES includes headers in bounce notifications, and a value of <code>false</code> specifies that Amazon SES does not include headers in bounce notifications.</p>
     pub fn get_headers_in_bounce_notifications_enabled(&self) -> &::std::option::Option<bool> {
         &self.headers_in_bounce_notifications_enabled
     }
-    /// <p>Describes whether Amazon SES includes the original email headers in Amazon SNS notifications of type <code>Complaint</code>. A value of <code>true</code> specifies that Amazon SES will include headers in complaint notifications, and a value of <code>false</code> specifies that Amazon SES will not include headers in complaint notifications.</p>
+    /// <p>Describes whether Amazon SES includes the original email headers in Amazon SNS notifications of type <code>Complaint</code>. A value of <code>true</code> specifies that Amazon SES includes headers in complaint notifications, and a value of <code>false</code> specifies that Amazon SES does not include headers in complaint notifications.</p>
     pub fn headers_in_complaint_notifications_enabled(mut self, input: bool) -> Self {
         self.headers_in_complaint_notifications_enabled = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Describes whether Amazon SES includes the original email headers in Amazon SNS notifications of type <code>Complaint</code>. A value of <code>true</code> specifies that Amazon SES will include headers in complaint notifications, and a value of <code>false</code> specifies that Amazon SES will not include headers in complaint notifications.</p>
+    /// <p>Describes whether Amazon SES includes the original email headers in Amazon SNS notifications of type <code>Complaint</code>. A value of <code>true</code> specifies that Amazon SES includes headers in complaint notifications, and a value of <code>false</code> specifies that Amazon SES does not include headers in complaint notifications.</p>
     pub fn set_headers_in_complaint_notifications_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.headers_in_complaint_notifications_enabled = input;
         self
     }
-    /// <p>Describes whether Amazon SES includes the original email headers in Amazon SNS notifications of type <code>Complaint</code>. A value of <code>true</code> specifies that Amazon SES will include headers in complaint notifications, and a value of <code>false</code> specifies that Amazon SES will not include headers in complaint notifications.</p>
+    /// <p>Describes whether Amazon SES includes the original email headers in Amazon SNS notifications of type <code>Complaint</code>. A value of <code>true</code> specifies that Amazon SES includes headers in complaint notifications, and a value of <code>false</code> specifies that Amazon SES does not include headers in complaint notifications.</p>
     pub fn get_headers_in_complaint_notifications_enabled(&self) -> &::std::option::Option<bool> {
         &self.headers_in_complaint_notifications_enabled
     }
-    /// <p>Describes whether Amazon SES includes the original email headers in Amazon SNS notifications of type <code>Delivery</code>. A value of <code>true</code> specifies that Amazon SES will include headers in delivery notifications, and a value of <code>false</code> specifies that Amazon SES will not include headers in delivery notifications.</p>
+    /// <p>Describes whether Amazon SES includes the original email headers in Amazon SNS notifications of type <code>Delivery</code>. A value of <code>true</code> specifies that Amazon SES includes headers in delivery notifications, and a value of <code>false</code> specifies that Amazon SES does not include headers in delivery notifications.</p>
     pub fn headers_in_delivery_notifications_enabled(mut self, input: bool) -> Self {
         self.headers_in_delivery_notifications_enabled = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Describes whether Amazon SES includes the original email headers in Amazon SNS notifications of type <code>Delivery</code>. A value of <code>true</code> specifies that Amazon SES will include headers in delivery notifications, and a value of <code>false</code> specifies that Amazon SES will not include headers in delivery notifications.</p>
+    /// <p>Describes whether Amazon SES includes the original email headers in Amazon SNS notifications of type <code>Delivery</code>. A value of <code>true</code> specifies that Amazon SES includes headers in delivery notifications, and a value of <code>false</code> specifies that Amazon SES does not include headers in delivery notifications.</p>
     pub fn set_headers_in_delivery_notifications_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.headers_in_delivery_notifications_enabled = input;
         self
     }
-    /// <p>Describes whether Amazon SES includes the original email headers in Amazon SNS notifications of type <code>Delivery</code>. A value of <code>true</code> specifies that Amazon SES will include headers in delivery notifications, and a value of <code>false</code> specifies that Amazon SES will not include headers in delivery notifications.</p>
+    /// <p>Describes whether Amazon SES includes the original email headers in Amazon SNS notifications of type <code>Delivery</code>. A value of <code>true</code> specifies that Amazon SES includes headers in delivery notifications, and a value of <code>false</code> specifies that Amazon SES does not include headers in delivery notifications.</p>
     pub fn get_headers_in_delivery_notifications_enabled(&self) -> &::std::option::Option<bool> {
         &self.headers_in_delivery_notifications_enabled
     }

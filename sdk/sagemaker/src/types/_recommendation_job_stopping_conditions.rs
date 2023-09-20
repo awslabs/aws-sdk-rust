@@ -8,6 +8,8 @@ pub struct RecommendationJobStoppingConditions {
     pub max_invocations: i32,
     /// <p>The interval of time taken by a model to respond as viewed from SageMaker. The interval includes the local communication time taken to send the request and to fetch the response from the container of a model and the time taken to complete the inference in the container.</p>
     pub model_latency_thresholds: ::std::option::Option<::std::vec::Vec<crate::types::ModelLatencyThreshold>>,
+    /// <p>Stops a load test when the number of invocations (TPS) peaks and flattens, which means that the instance has reached capacity. The default value is <code>Stop</code>. If you want the load test to continue after invocations have flattened, set the value to <code>Continue</code>.</p>
+    pub flat_invocations: ::std::option::Option<crate::types::FlatInvocations>,
 }
 impl RecommendationJobStoppingConditions {
     /// <p>The maximum number of requests per minute expected for the endpoint.</p>
@@ -17,6 +19,10 @@ impl RecommendationJobStoppingConditions {
     /// <p>The interval of time taken by a model to respond as viewed from SageMaker. The interval includes the local communication time taken to send the request and to fetch the response from the container of a model and the time taken to complete the inference in the container.</p>
     pub fn model_latency_thresholds(&self) -> ::std::option::Option<&[crate::types::ModelLatencyThreshold]> {
         self.model_latency_thresholds.as_deref()
+    }
+    /// <p>Stops a load test when the number of invocations (TPS) peaks and flattens, which means that the instance has reached capacity. The default value is <code>Stop</code>. If you want the load test to continue after invocations have flattened, set the value to <code>Continue</code>.</p>
+    pub fn flat_invocations(&self) -> ::std::option::Option<&crate::types::FlatInvocations> {
+        self.flat_invocations.as_ref()
     }
 }
 impl RecommendationJobStoppingConditions {
@@ -32,6 +38,7 @@ impl RecommendationJobStoppingConditions {
 pub struct RecommendationJobStoppingConditionsBuilder {
     pub(crate) max_invocations: ::std::option::Option<i32>,
     pub(crate) model_latency_thresholds: ::std::option::Option<::std::vec::Vec<crate::types::ModelLatencyThreshold>>,
+    pub(crate) flat_invocations: ::std::option::Option<crate::types::FlatInvocations>,
 }
 impl RecommendationJobStoppingConditionsBuilder {
     /// <p>The maximum number of requests per minute expected for the endpoint.</p>
@@ -68,11 +75,26 @@ impl RecommendationJobStoppingConditionsBuilder {
     pub fn get_model_latency_thresholds(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ModelLatencyThreshold>> {
         &self.model_latency_thresholds
     }
+    /// <p>Stops a load test when the number of invocations (TPS) peaks and flattens, which means that the instance has reached capacity. The default value is <code>Stop</code>. If you want the load test to continue after invocations have flattened, set the value to <code>Continue</code>.</p>
+    pub fn flat_invocations(mut self, input: crate::types::FlatInvocations) -> Self {
+        self.flat_invocations = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Stops a load test when the number of invocations (TPS) peaks and flattens, which means that the instance has reached capacity. The default value is <code>Stop</code>. If you want the load test to continue after invocations have flattened, set the value to <code>Continue</code>.</p>
+    pub fn set_flat_invocations(mut self, input: ::std::option::Option<crate::types::FlatInvocations>) -> Self {
+        self.flat_invocations = input;
+        self
+    }
+    /// <p>Stops a load test when the number of invocations (TPS) peaks and flattens, which means that the instance has reached capacity. The default value is <code>Stop</code>. If you want the load test to continue after invocations have flattened, set the value to <code>Continue</code>.</p>
+    pub fn get_flat_invocations(&self) -> &::std::option::Option<crate::types::FlatInvocations> {
+        &self.flat_invocations
+    }
     /// Consumes the builder and constructs a [`RecommendationJobStoppingConditions`](crate::types::RecommendationJobStoppingConditions).
     pub fn build(self) -> crate::types::RecommendationJobStoppingConditions {
         crate::types::RecommendationJobStoppingConditions {
             max_invocations: self.max_invocations.unwrap_or_default(),
             model_latency_thresholds: self.model_latency_thresholds,
+            flat_invocations: self.flat_invocations,
         }
     }
 }

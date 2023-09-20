@@ -22,6 +22,7 @@ impl super::Client {
     ///   - [`tags(Option<Vec<Tag>>)`](crate::operation::start_snapshot::StartSnapshotOutput::tags): <p>The tags applied to the snapshot. You can specify up to 50 tags per snapshot. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html"> Tagging your Amazon EC2 resources</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     ///   - [`parent_snapshot_id(Option<String>)`](crate::operation::start_snapshot::StartSnapshotOutput::parent_snapshot_id): <p>The ID of the parent snapshot.</p>
     ///   - [`kms_key_arn(Option<String>)`](crate::operation::start_snapshot::StartSnapshotOutput::kms_key_arn): <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) key used to encrypt the snapshot.</p>
+    ///   - [`sse_type(Option<SseType>)`](crate::operation::start_snapshot::StartSnapshotOutput::sse_type): <p>Reserved for future use.</p>
     /// - On failure, responds with [`SdkError<StartSnapshotError>`](crate::operation::start_snapshot::StartSnapshotError)
     pub fn start_snapshot(&self) -> crate::operation::start_snapshot::builders::StartSnapshotFluentBuilder {
         crate::operation::start_snapshot::builders::StartSnapshotFluentBuilder::new(self.handle.clone())

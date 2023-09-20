@@ -22,7 +22,7 @@ impl CreateModelInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateModel`.
 ///
-/// <p>Creates an ML model for data inference. </p>
+/// <p>Creates a machine learning model for data inference. </p>
 /// <p>A machine-learning (ML) model is a mathematical model that finds patterns in your data. In Amazon Lookout for Equipment, the model learns the patterns of normal behavior and detects abnormal behavior that could be potential equipment failure (or maintenance events). The models are made by analyzing normal data and abnormalities in machine behavior that have already occurred.</p>
 /// <p>Your model is trained using a portion of the data from your dataset and uses that data to learn patterns of normal behavior and abnormal patterns that lead to equipment failure. Another portion of the data is used to evaluate the model's accuracy. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -112,59 +112,59 @@ impl CreateModelFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name for the ML model to be created.</p>
+    /// <p>The name for the machine learning model to be created.</p>
     pub fn model_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.model_name(input.into());
         self
     }
-    /// <p>The name for the ML model to be created.</p>
+    /// <p>The name for the machine learning model to be created.</p>
     pub fn set_model_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_model_name(input);
         self
     }
-    /// <p>The name for the ML model to be created.</p>
+    /// <p>The name for the machine learning model to be created.</p>
     pub fn get_model_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_model_name()
     }
-    /// <p>The name of the dataset for the ML model being created. </p>
+    /// <p>The name of the dataset for the machine learning model being created. </p>
     pub fn dataset_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.dataset_name(input.into());
         self
     }
-    /// <p>The name of the dataset for the ML model being created. </p>
+    /// <p>The name of the dataset for the machine learning model being created. </p>
     pub fn set_dataset_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_dataset_name(input);
         self
     }
-    /// <p>The name of the dataset for the ML model being created. </p>
+    /// <p>The name of the dataset for the machine learning model being created. </p>
     pub fn get_dataset_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_dataset_name()
     }
-    /// <p>The data schema for the ML model being created. </p>
+    /// <p>The data schema for the machine learning model being created. </p>
     pub fn dataset_schema(mut self, input: crate::types::DatasetSchema) -> Self {
         self.inner = self.inner.dataset_schema(input);
         self
     }
-    /// <p>The data schema for the ML model being created. </p>
+    /// <p>The data schema for the machine learning model being created. </p>
     pub fn set_dataset_schema(mut self, input: ::std::option::Option<crate::types::DatasetSchema>) -> Self {
         self.inner = self.inner.set_dataset_schema(input);
         self
     }
-    /// <p>The data schema for the ML model being created. </p>
+    /// <p>The data schema for the machine learning model being created. </p>
     pub fn get_dataset_schema(&self) -> &::std::option::Option<crate::types::DatasetSchema> {
         self.inner.get_dataset_schema()
     }
-    /// <p>The input configuration for the labels being used for the ML model that's being created. </p>
+    /// <p>The input configuration for the labels being used for the machine learning model that's being created. </p>
     pub fn labels_input_configuration(mut self, input: crate::types::LabelsInputConfiguration) -> Self {
         self.inner = self.inner.labels_input_configuration(input);
         self
     }
-    /// <p>The input configuration for the labels being used for the ML model that's being created. </p>
+    /// <p>The input configuration for the labels being used for the machine learning model that's being created. </p>
     pub fn set_labels_input_configuration(mut self, input: ::std::option::Option<crate::types::LabelsInputConfiguration>) -> Self {
         self.inner = self.inner.set_labels_input_configuration(input);
         self
     }
-    /// <p>The input configuration for the labels being used for the ML model that's being created. </p>
+    /// <p>The input configuration for the labels being used for the machine learning model that's being created. </p>
     pub fn get_labels_input_configuration(&self) -> &::std::option::Option<crate::types::LabelsInputConfiguration> {
         self.inner.get_labels_input_configuration()
     }
@@ -182,73 +182,73 @@ impl CreateModelFluentBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }
-    /// <p>Indicates the time reference in the dataset that should be used to begin the subset of training data for the ML model. </p>
+    /// <p>Indicates the time reference in the dataset that should be used to begin the subset of training data for the machine learning model. </p>
     pub fn training_data_start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.training_data_start_time(input);
         self
     }
-    /// <p>Indicates the time reference in the dataset that should be used to begin the subset of training data for the ML model. </p>
+    /// <p>Indicates the time reference in the dataset that should be used to begin the subset of training data for the machine learning model. </p>
     pub fn set_training_data_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_training_data_start_time(input);
         self
     }
-    /// <p>Indicates the time reference in the dataset that should be used to begin the subset of training data for the ML model. </p>
+    /// <p>Indicates the time reference in the dataset that should be used to begin the subset of training data for the machine learning model. </p>
     pub fn get_training_data_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_training_data_start_time()
     }
-    /// <p>Indicates the time reference in the dataset that should be used to end the subset of training data for the ML model. </p>
+    /// <p>Indicates the time reference in the dataset that should be used to end the subset of training data for the machine learning model. </p>
     pub fn training_data_end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.training_data_end_time(input);
         self
     }
-    /// <p>Indicates the time reference in the dataset that should be used to end the subset of training data for the ML model. </p>
+    /// <p>Indicates the time reference in the dataset that should be used to end the subset of training data for the machine learning model. </p>
     pub fn set_training_data_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_training_data_end_time(input);
         self
     }
-    /// <p>Indicates the time reference in the dataset that should be used to end the subset of training data for the ML model. </p>
+    /// <p>Indicates the time reference in the dataset that should be used to end the subset of training data for the machine learning model. </p>
     pub fn get_training_data_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_training_data_end_time()
     }
-    /// <p>Indicates the time reference in the dataset that should be used to begin the subset of evaluation data for the ML model. </p>
+    /// <p>Indicates the time reference in the dataset that should be used to begin the subset of evaluation data for the machine learning model. </p>
     pub fn evaluation_data_start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.evaluation_data_start_time(input);
         self
     }
-    /// <p>Indicates the time reference in the dataset that should be used to begin the subset of evaluation data for the ML model. </p>
+    /// <p>Indicates the time reference in the dataset that should be used to begin the subset of evaluation data for the machine learning model. </p>
     pub fn set_evaluation_data_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_evaluation_data_start_time(input);
         self
     }
-    /// <p>Indicates the time reference in the dataset that should be used to begin the subset of evaluation data for the ML model. </p>
+    /// <p>Indicates the time reference in the dataset that should be used to begin the subset of evaluation data for the machine learning model. </p>
     pub fn get_evaluation_data_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_evaluation_data_start_time()
     }
-    /// <p> Indicates the time reference in the dataset that should be used to end the subset of evaluation data for the ML model. </p>
+    /// <p> Indicates the time reference in the dataset that should be used to end the subset of evaluation data for the machine learning model. </p>
     pub fn evaluation_data_end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.evaluation_data_end_time(input);
         self
     }
-    /// <p> Indicates the time reference in the dataset that should be used to end the subset of evaluation data for the ML model. </p>
+    /// <p> Indicates the time reference in the dataset that should be used to end the subset of evaluation data for the machine learning model. </p>
     pub fn set_evaluation_data_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_evaluation_data_end_time(input);
         self
     }
-    /// <p> Indicates the time reference in the dataset that should be used to end the subset of evaluation data for the ML model. </p>
+    /// <p> Indicates the time reference in the dataset that should be used to end the subset of evaluation data for the machine learning model. </p>
     pub fn get_evaluation_data_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_evaluation_data_end_time()
     }
-    /// <p> The Amazon Resource Name (ARN) of a role with permission to access the data source being used to create the ML model. </p>
+    /// <p> The Amazon Resource Name (ARN) of a role with permission to access the data source being used to create the machine learning model. </p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.role_arn(input.into());
         self
     }
-    /// <p> The Amazon Resource Name (ARN) of a role with permission to access the data source being used to create the ML model. </p>
+    /// <p> The Amazon Resource Name (ARN) of a role with permission to access the data source being used to create the machine learning model. </p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_role_arn(input);
         self
     }
-    /// <p> The Amazon Resource Name (ARN) of a role with permission to access the data source being used to create the ML model. </p>
+    /// <p> The Amazon Resource Name (ARN) of a role with permission to access the data source being used to create the machine learning model. </p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_role_arn()
     }
@@ -287,17 +287,17 @@ impl CreateModelFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p> Any tags associated with the ML model being created. </p>
+    /// <p> Any tags associated with the machine learning model being created. </p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         self.inner = self.inner.tags(input);
         self
     }
-    /// <p> Any tags associated with the ML model being created. </p>
+    /// <p> Any tags associated with the machine learning model being created. </p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
-    /// <p> Any tags associated with the ML model being created. </p>
+    /// <p> Any tags associated with the machine learning model being created. </p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         self.inner.get_tags()
     }

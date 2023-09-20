@@ -19,6 +19,9 @@ pub mod create_source_network;
 /// Types for the `DeleteJob` operation.
 pub mod delete_job;
 
+/// Types for the `DeleteLaunchAction` operation.
+pub mod delete_launch_action;
+
 /// Types for the `DeleteLaunchConfigurationTemplate` operation.
 pub mod delete_launch_configuration_template;
 
@@ -82,11 +85,17 @@ pub mod initialize_service;
 /// Types for the `ListExtensibleSourceServers` operation.
 pub mod list_extensible_source_servers;
 
+/// Types for the `ListLaunchActions` operation.
+pub mod list_launch_actions;
+
 /// Types for the `ListStagingAccounts` operation.
 pub mod list_staging_accounts;
 
 /// Types for the `ListTagsForResource` operation.
 pub mod list_tags_for_resource;
+
+/// Types for the `PutLaunchAction` operation.
+pub mod put_launch_action;
 
 /// Types for the `RetryDataReplication` operation.
 pub mod retry_data_replication;

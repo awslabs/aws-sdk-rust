@@ -5,7 +5,7 @@
 pub struct GetFileInput {
     /// <p>The name of the repository that contains the file.</p>
     pub repository_name: ::std::option::Option<::std::string::String>,
-    /// <p>The fully quaified reference that identifies the commit that contains the file. For example, you can specify a full commit ID, a tag, a branch name, or a reference such as refs/heads/master. If none is provided, the head commit is used.</p>
+    /// <p>The fully quaified reference that identifies the commit that contains the file. For example, you can specify a full commit ID, a tag, a branch name, or a reference such as refs/heads/main. If none is provided, the head commit is used.</p>
     pub commit_specifier: ::std::option::Option<::std::string::String>,
     /// <p>The fully qualified path to the file, including the full name and extension of the file. For example, /examples/file.md is the fully qualified path to a file named file.md in a folder named examples.</p>
     pub file_path: ::std::option::Option<::std::string::String>,
@@ -15,7 +15,7 @@ impl GetFileInput {
     pub fn repository_name(&self) -> ::std::option::Option<&str> {
         self.repository_name.as_deref()
     }
-    /// <p>The fully quaified reference that identifies the commit that contains the file. For example, you can specify a full commit ID, a tag, a branch name, or a reference such as refs/heads/master. If none is provided, the head commit is used.</p>
+    /// <p>The fully quaified reference that identifies the commit that contains the file. For example, you can specify a full commit ID, a tag, a branch name, or a reference such as refs/heads/main. If none is provided, the head commit is used.</p>
     pub fn commit_specifier(&self) -> ::std::option::Option<&str> {
         self.commit_specifier.as_deref()
     }
@@ -54,17 +54,17 @@ impl GetFileInputBuilder {
     pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.repository_name
     }
-    /// <p>The fully quaified reference that identifies the commit that contains the file. For example, you can specify a full commit ID, a tag, a branch name, or a reference such as refs/heads/master. If none is provided, the head commit is used.</p>
+    /// <p>The fully quaified reference that identifies the commit that contains the file. For example, you can specify a full commit ID, a tag, a branch name, or a reference such as refs/heads/main. If none is provided, the head commit is used.</p>
     pub fn commit_specifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.commit_specifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The fully quaified reference that identifies the commit that contains the file. For example, you can specify a full commit ID, a tag, a branch name, or a reference such as refs/heads/master. If none is provided, the head commit is used.</p>
+    /// <p>The fully quaified reference that identifies the commit that contains the file. For example, you can specify a full commit ID, a tag, a branch name, or a reference such as refs/heads/main. If none is provided, the head commit is used.</p>
     pub fn set_commit_specifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.commit_specifier = input;
         self
     }
-    /// <p>The fully quaified reference that identifies the commit that contains the file. For example, you can specify a full commit ID, a tag, a branch name, or a reference such as refs/heads/master. If none is provided, the head commit is used.</p>
+    /// <p>The fully quaified reference that identifies the commit that contains the file. For example, you can specify a full commit ID, a tag, a branch name, or a reference such as refs/heads/main. If none is provided, the head commit is used.</p>
     pub fn get_commit_specifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.commit_specifier
     }

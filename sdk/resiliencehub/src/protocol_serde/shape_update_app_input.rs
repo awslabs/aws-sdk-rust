@@ -15,8 +15,26 @@ pub fn ser_update_app_input(
     if let Some(var_4) = &input.description {
         object.key("description").string(var_4.as_str());
     }
-    if let Some(var_5) = &input.policy_arn {
-        object.key("policyArn").string(var_5.as_str());
+    if let Some(var_5) = &input.event_subscriptions {
+        let mut array_6 = object.key("eventSubscriptions").start_array();
+        for item_7 in var_5 {
+            {
+                #[allow(unused_mut)]
+                let mut object_8 = array_6.value().start_object();
+                crate::protocol_serde::shape_event_subscription::ser_event_subscription(&mut object_8, item_7)?;
+                object_8.finish();
+            }
+        }
+        array_6.finish();
+    }
+    if let Some(var_9) = &input.permission_model {
+        #[allow(unused_mut)]
+        let mut object_10 = object.key("permissionModel").start_object();
+        crate::protocol_serde::shape_permission_model::ser_permission_model(&mut object_10, var_9)?;
+        object_10.finish();
+    }
+    if let Some(var_11) = &input.policy_arn {
+        object.key("policyArn").string(var_11.as_str());
     }
     Ok(())
 }

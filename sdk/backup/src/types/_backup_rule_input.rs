@@ -11,6 +11,7 @@ pub struct BackupRuleInput {
     /// <p>A CRON expression in UTC specifying when Backup initiates a backup job.</p>
     pub schedule_expression: ::std::option::Option<::std::string::String>,
     /// <p>A value in minutes after a backup is scheduled before a job will be canceled if it doesn't start successfully. This value is optional. If this value is included, it must be at least 60 minutes to avoid errors.</p>
+    /// <p>This parameter has a maximum value of 100 years (52,560,000 minutes).</p>
     /// <p>During the start window, the backup job status remains in <code>CREATED</code> status until it has successfully begun or until the start window time has run out. If within the start window time Backup receives an error that allows the job to be retried, Backup will automatically retry to begin the job at least every 10 minutes until the backup successfully begins (the job status changes to <code>RUNNING</code>) or until the job status changes to <code>EXPIRED</code> (which is expected to occur when the start window time is over).</p>
     pub start_window_minutes: ::std::option::Option<i64>,
     /// <p>A value in minutes after a backup job is successfully started before it must be completed or it will be canceled by Backup. This value is optional.</p>
@@ -18,6 +19,7 @@ pub struct BackupRuleInput {
     /// <p>The lifecycle defines when a protected resource is transitioned to cold storage and when it expires. Backup will transition and expire backups automatically according to the lifecycle that you define. </p>
     /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, the “retention” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold.</p>
     /// <p>Resource types that are able to be transitioned to cold storage are listed in the "Lifecycle to cold storage" section of the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource"> Feature availability by resource</a> table. Backup ignores this expression for other resource types.</p>
+    /// <p>This parameter has a maximum value of 100 years (36,500 days).</p>
     pub lifecycle: ::std::option::Option<crate::types::Lifecycle>,
     /// <p>To help organize your resources, you can assign your own metadata to the resources that you create. Each tag is a key-value pair.</p>
     pub recovery_point_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -25,6 +27,8 @@ pub struct BackupRuleInput {
     pub copy_actions: ::std::option::Option<::std::vec::Vec<crate::types::CopyAction>>,
     /// <p>Specifies whether Backup creates continuous backups. True causes Backup to create continuous backups capable of point-in-time restore (PITR). False (or not specified) causes Backup to create snapshot backups.</p>
     pub enable_continuous_backup: ::std::option::Option<bool>,
+    /// <p>This is the timezone in which the schedule expression is set. By default, ScheduleExpressions are in UTC. You can modify this to a specified timezone.</p>
+    pub schedule_expression_timezone: ::std::option::Option<::std::string::String>,
 }
 impl BackupRuleInput {
     /// <p>A display name for a backup rule. Must contain 1 to 50 alphanumeric or '-_.' characters.</p>
@@ -40,6 +44,7 @@ impl BackupRuleInput {
         self.schedule_expression.as_deref()
     }
     /// <p>A value in minutes after a backup is scheduled before a job will be canceled if it doesn't start successfully. This value is optional. If this value is included, it must be at least 60 minutes to avoid errors.</p>
+    /// <p>This parameter has a maximum value of 100 years (52,560,000 minutes).</p>
     /// <p>During the start window, the backup job status remains in <code>CREATED</code> status until it has successfully begun or until the start window time has run out. If within the start window time Backup receives an error that allows the job to be retried, Backup will automatically retry to begin the job at least every 10 minutes until the backup successfully begins (the job status changes to <code>RUNNING</code>) or until the job status changes to <code>EXPIRED</code> (which is expected to occur when the start window time is over).</p>
     pub fn start_window_minutes(&self) -> ::std::option::Option<i64> {
         self.start_window_minutes
@@ -51,6 +56,7 @@ impl BackupRuleInput {
     /// <p>The lifecycle defines when a protected resource is transitioned to cold storage and when it expires. Backup will transition and expire backups automatically according to the lifecycle that you define. </p>
     /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, the “retention” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold.</p>
     /// <p>Resource types that are able to be transitioned to cold storage are listed in the "Lifecycle to cold storage" section of the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource"> Feature availability by resource</a> table. Backup ignores this expression for other resource types.</p>
+    /// <p>This parameter has a maximum value of 100 years (36,500 days).</p>
     pub fn lifecycle(&self) -> ::std::option::Option<&crate::types::Lifecycle> {
         self.lifecycle.as_ref()
     }
@@ -66,6 +72,10 @@ impl BackupRuleInput {
     pub fn enable_continuous_backup(&self) -> ::std::option::Option<bool> {
         self.enable_continuous_backup
     }
+    /// <p>This is the timezone in which the schedule expression is set. By default, ScheduleExpressions are in UTC. You can modify this to a specified timezone.</p>
+    pub fn schedule_expression_timezone(&self) -> ::std::option::Option<&str> {
+        self.schedule_expression_timezone.as_deref()
+    }
 }
 impl ::std::fmt::Debug for BackupRuleInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -79,6 +89,7 @@ impl ::std::fmt::Debug for BackupRuleInput {
         formatter.field("recovery_point_tags", &"*** Sensitive Data Redacted ***");
         formatter.field("copy_actions", &self.copy_actions);
         formatter.field("enable_continuous_backup", &self.enable_continuous_backup);
+        formatter.field("schedule_expression_timezone", &self.schedule_expression_timezone);
         formatter.finish()
     }
 }
@@ -102,6 +113,7 @@ pub struct BackupRuleInputBuilder {
     pub(crate) recovery_point_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) copy_actions: ::std::option::Option<::std::vec::Vec<crate::types::CopyAction>>,
     pub(crate) enable_continuous_backup: ::std::option::Option<bool>,
+    pub(crate) schedule_expression_timezone: ::std::option::Option<::std::string::String>,
 }
 impl BackupRuleInputBuilder {
     /// <p>A display name for a backup rule. Must contain 1 to 50 alphanumeric or '-_.' characters.</p>
@@ -147,18 +159,21 @@ impl BackupRuleInputBuilder {
         &self.schedule_expression
     }
     /// <p>A value in minutes after a backup is scheduled before a job will be canceled if it doesn't start successfully. This value is optional. If this value is included, it must be at least 60 minutes to avoid errors.</p>
+    /// <p>This parameter has a maximum value of 100 years (52,560,000 minutes).</p>
     /// <p>During the start window, the backup job status remains in <code>CREATED</code> status until it has successfully begun or until the start window time has run out. If within the start window time Backup receives an error that allows the job to be retried, Backup will automatically retry to begin the job at least every 10 minutes until the backup successfully begins (the job status changes to <code>RUNNING</code>) or until the job status changes to <code>EXPIRED</code> (which is expected to occur when the start window time is over).</p>
     pub fn start_window_minutes(mut self, input: i64) -> Self {
         self.start_window_minutes = ::std::option::Option::Some(input);
         self
     }
     /// <p>A value in minutes after a backup is scheduled before a job will be canceled if it doesn't start successfully. This value is optional. If this value is included, it must be at least 60 minutes to avoid errors.</p>
+    /// <p>This parameter has a maximum value of 100 years (52,560,000 minutes).</p>
     /// <p>During the start window, the backup job status remains in <code>CREATED</code> status until it has successfully begun or until the start window time has run out. If within the start window time Backup receives an error that allows the job to be retried, Backup will automatically retry to begin the job at least every 10 minutes until the backup successfully begins (the job status changes to <code>RUNNING</code>) or until the job status changes to <code>EXPIRED</code> (which is expected to occur when the start window time is over).</p>
     pub fn set_start_window_minutes(mut self, input: ::std::option::Option<i64>) -> Self {
         self.start_window_minutes = input;
         self
     }
     /// <p>A value in minutes after a backup is scheduled before a job will be canceled if it doesn't start successfully. This value is optional. If this value is included, it must be at least 60 minutes to avoid errors.</p>
+    /// <p>This parameter has a maximum value of 100 years (52,560,000 minutes).</p>
     /// <p>During the start window, the backup job status remains in <code>CREATED</code> status until it has successfully begun or until the start window time has run out. If within the start window time Backup receives an error that allows the job to be retried, Backup will automatically retry to begin the job at least every 10 minutes until the backup successfully begins (the job status changes to <code>RUNNING</code>) or until the job status changes to <code>EXPIRED</code> (which is expected to occur when the start window time is over).</p>
     pub fn get_start_window_minutes(&self) -> &::std::option::Option<i64> {
         &self.start_window_minutes
@@ -180,6 +195,7 @@ impl BackupRuleInputBuilder {
     /// <p>The lifecycle defines when a protected resource is transitioned to cold storage and when it expires. Backup will transition and expire backups automatically according to the lifecycle that you define. </p>
     /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, the “retention” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold.</p>
     /// <p>Resource types that are able to be transitioned to cold storage are listed in the "Lifecycle to cold storage" section of the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource"> Feature availability by resource</a> table. Backup ignores this expression for other resource types.</p>
+    /// <p>This parameter has a maximum value of 100 years (36,500 days).</p>
     pub fn lifecycle(mut self, input: crate::types::Lifecycle) -> Self {
         self.lifecycle = ::std::option::Option::Some(input);
         self
@@ -187,6 +203,7 @@ impl BackupRuleInputBuilder {
     /// <p>The lifecycle defines when a protected resource is transitioned to cold storage and when it expires. Backup will transition and expire backups automatically according to the lifecycle that you define. </p>
     /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, the “retention” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold.</p>
     /// <p>Resource types that are able to be transitioned to cold storage are listed in the "Lifecycle to cold storage" section of the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource"> Feature availability by resource</a> table. Backup ignores this expression for other resource types.</p>
+    /// <p>This parameter has a maximum value of 100 years (36,500 days).</p>
     pub fn set_lifecycle(mut self, input: ::std::option::Option<crate::types::Lifecycle>) -> Self {
         self.lifecycle = input;
         self
@@ -194,6 +211,7 @@ impl BackupRuleInputBuilder {
     /// <p>The lifecycle defines when a protected resource is transitioned to cold storage and when it expires. Backup will transition and expire backups automatically according to the lifecycle that you define. </p>
     /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, the “retention” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold.</p>
     /// <p>Resource types that are able to be transitioned to cold storage are listed in the "Lifecycle to cold storage" section of the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource"> Feature availability by resource</a> table. Backup ignores this expression for other resource types.</p>
+    /// <p>This parameter has a maximum value of 100 years (36,500 days).</p>
     pub fn get_lifecycle(&self) -> &::std::option::Option<crate::types::Lifecycle> {
         &self.lifecycle
     }
@@ -258,6 +276,20 @@ impl BackupRuleInputBuilder {
     pub fn get_enable_continuous_backup(&self) -> &::std::option::Option<bool> {
         &self.enable_continuous_backup
     }
+    /// <p>This is the timezone in which the schedule expression is set. By default, ScheduleExpressions are in UTC. You can modify this to a specified timezone.</p>
+    pub fn schedule_expression_timezone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.schedule_expression_timezone = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>This is the timezone in which the schedule expression is set. By default, ScheduleExpressions are in UTC. You can modify this to a specified timezone.</p>
+    pub fn set_schedule_expression_timezone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.schedule_expression_timezone = input;
+        self
+    }
+    /// <p>This is the timezone in which the schedule expression is set. By default, ScheduleExpressions are in UTC. You can modify this to a specified timezone.</p>
+    pub fn get_schedule_expression_timezone(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schedule_expression_timezone
+    }
     /// Consumes the builder and constructs a [`BackupRuleInput`](crate::types::BackupRuleInput).
     pub fn build(self) -> crate::types::BackupRuleInput {
         crate::types::BackupRuleInput {
@@ -270,6 +302,7 @@ impl BackupRuleInputBuilder {
             recovery_point_tags: self.recovery_point_tags,
             copy_actions: self.copy_actions,
             enable_continuous_backup: self.enable_continuous_backup,
+            schedule_expression_timezone: self.schedule_expression_timezone,
         }
     }
 }
@@ -285,6 +318,7 @@ impl ::std::fmt::Debug for BackupRuleInputBuilder {
         formatter.field("recovery_point_tags", &"*** Sensitive Data Redacted ***");
         formatter.field("copy_actions", &self.copy_actions);
         formatter.field("enable_continuous_backup", &self.enable_continuous_backup);
+        formatter.field("schedule_expression_timezone", &self.schedule_expression_timezone);
         formatter.finish()
     }
 }

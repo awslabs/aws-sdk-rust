@@ -33,6 +33,8 @@ pub(crate) mod shape_create_label_group;
 
 pub(crate) mod shape_create_model;
 
+pub(crate) mod shape_create_retraining_scheduler;
+
 pub(crate) mod shape_delete_dataset;
 
 pub(crate) mod shape_delete_inference_scheduler;
@@ -42,6 +44,10 @@ pub(crate) mod shape_delete_label;
 pub(crate) mod shape_delete_label_group;
 
 pub(crate) mod shape_delete_model;
+
+pub(crate) mod shape_delete_resource_policy;
+
+pub(crate) mod shape_delete_retraining_scheduler;
 
 pub(crate) mod shape_describe_data_ingestion_job;
 
@@ -54,6 +60,16 @@ pub(crate) mod shape_describe_label;
 pub(crate) mod shape_describe_label_group;
 
 pub(crate) mod shape_describe_model;
+
+pub(crate) mod shape_describe_model_version;
+
+pub(crate) mod shape_describe_resource_policy;
+
+pub(crate) mod shape_describe_retraining_scheduler;
+
+pub(crate) mod shape_import_dataset;
+
+pub(crate) mod shape_import_model_version;
 
 pub(crate) mod shape_list_data_ingestion_jobs;
 
@@ -69,25 +85,41 @@ pub(crate) mod shape_list_label_groups;
 
 pub(crate) mod shape_list_labels;
 
+pub(crate) mod shape_list_model_versions;
+
 pub(crate) mod shape_list_models;
+
+pub(crate) mod shape_list_retraining_schedulers;
 
 pub(crate) mod shape_list_sensor_statistics;
 
 pub(crate) mod shape_list_tags_for_resource;
 
+pub(crate) mod shape_put_resource_policy;
+
 pub(crate) mod shape_start_data_ingestion_job;
 
 pub(crate) mod shape_start_inference_scheduler;
 
+pub(crate) mod shape_start_retraining_scheduler;
+
 pub(crate) mod shape_stop_inference_scheduler;
+
+pub(crate) mod shape_stop_retraining_scheduler;
 
 pub(crate) mod shape_tag_resource;
 
 pub(crate) mod shape_untag_resource;
 
+pub(crate) mod shape_update_active_model_version;
+
 pub(crate) mod shape_update_inference_scheduler;
 
 pub(crate) mod shape_update_label_group;
+
+pub(crate) mod shape_update_model;
+
+pub(crate) mod shape_update_retraining_scheduler;
 
 pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
     if data.is_empty() {
@@ -111,6 +143,8 @@ pub(crate) mod shape_create_label_input;
 
 pub(crate) mod shape_create_model_input;
 
+pub(crate) mod shape_create_retraining_scheduler_input;
+
 pub(crate) mod shape_delete_dataset_input;
 
 pub(crate) mod shape_delete_inference_scheduler_input;
@@ -120,6 +154,10 @@ pub(crate) mod shape_delete_label_group_input;
 pub(crate) mod shape_delete_label_input;
 
 pub(crate) mod shape_delete_model_input;
+
+pub(crate) mod shape_delete_resource_policy_input;
+
+pub(crate) mod shape_delete_retraining_scheduler_input;
 
 pub(crate) mod shape_describe_data_ingestion_job_input;
 
@@ -132,6 +170,16 @@ pub(crate) mod shape_describe_label_group_input;
 pub(crate) mod shape_describe_label_input;
 
 pub(crate) mod shape_describe_model_input;
+
+pub(crate) mod shape_describe_model_version_input;
+
+pub(crate) mod shape_describe_resource_policy_input;
+
+pub(crate) mod shape_describe_retraining_scheduler_input;
+
+pub(crate) mod shape_import_dataset_input;
+
+pub(crate) mod shape_import_model_version_input;
 
 pub(crate) mod shape_internal_server_exception;
 
@@ -149,11 +197,17 @@ pub(crate) mod shape_list_label_groups_input;
 
 pub(crate) mod shape_list_labels_input;
 
+pub(crate) mod shape_list_model_versions_input;
+
 pub(crate) mod shape_list_models_input;
+
+pub(crate) mod shape_list_retraining_schedulers_input;
 
 pub(crate) mod shape_list_sensor_statistics_input;
 
 pub(crate) mod shape_list_tags_for_resource_input;
+
+pub(crate) mod shape_put_resource_policy_input;
 
 pub(crate) mod shape_resource_not_found_exception;
 
@@ -163,7 +217,11 @@ pub(crate) mod shape_start_data_ingestion_job_input;
 
 pub(crate) mod shape_start_inference_scheduler_input;
 
+pub(crate) mod shape_start_retraining_scheduler_input;
+
 pub(crate) mod shape_stop_inference_scheduler_input;
+
+pub(crate) mod shape_stop_retraining_scheduler_input;
 
 pub(crate) mod shape_tag_resource_input;
 
@@ -171,9 +229,15 @@ pub(crate) mod shape_throttling_exception;
 
 pub(crate) mod shape_untag_resource_input;
 
+pub(crate) mod shape_update_active_model_version_input;
+
 pub(crate) mod shape_update_inference_scheduler_input;
 
 pub(crate) mod shape_update_label_group_input;
+
+pub(crate) mod shape_update_model_input;
+
+pub(crate) mod shape_update_retraining_scheduler_input;
 
 pub(crate) mod shape_validation_exception;
 
@@ -210,6 +274,10 @@ pub(crate) mod shape_label_summaries;
 pub(crate) mod shape_labels_input_configuration;
 
 pub(crate) mod shape_model_summaries;
+
+pub(crate) mod shape_model_version_summaries;
+
+pub(crate) mod shape_retraining_scheduler_summaries;
 
 pub(crate) mod shape_sensor_statistics_summaries;
 
@@ -252,6 +320,10 @@ pub(crate) mod shape_list_of_discarded_files;
 pub(crate) mod shape_missing_sensor_data;
 
 pub(crate) mod shape_model_summary;
+
+pub(crate) mod shape_model_version_summary;
+
+pub(crate) mod shape_retraining_scheduler_summary;
 
 pub(crate) mod shape_sensor_statistics_summary;
 

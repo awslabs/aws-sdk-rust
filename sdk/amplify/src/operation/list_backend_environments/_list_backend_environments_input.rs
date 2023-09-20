@@ -11,7 +11,7 @@ pub struct ListBackendEnvironmentsInput {
     /// <p> A pagination token. Set to null to start listing backend environments from the start. If a non-null pagination token is returned in a result, pass its value in here to list more backend environments. </p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p> The maximum number of records to list in a single response. </p>
-    pub max_results: i32,
+    pub max_results: ::std::option::Option<i32>,
 }
 impl ListBackendEnvironmentsInput {
     /// <p> The unique ID for an Amplify app. </p>
@@ -27,7 +27,7 @@ impl ListBackendEnvironmentsInput {
         self.next_token.as_deref()
     }
     /// <p> The maximum number of records to list in a single response. </p>
-    pub fn max_results(&self) -> i32 {
+    pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
 }
@@ -115,7 +115,7 @@ impl ListBackendEnvironmentsInputBuilder {
             app_id: self.app_id,
             environment_name: self.environment_name,
             next_token: self.next_token,
-            max_results: self.max_results.unwrap_or_default(),
+            max_results: self.max_results,
         })
     }
 }

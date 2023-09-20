@@ -21,6 +21,7 @@
 ///     ConnectionPropertyKey::CustomJdbcCertString => { /* ... */ },
 ///     ConnectionPropertyKey::EncryptedKafkaClientKeystorePassword => { /* ... */ },
 ///     ConnectionPropertyKey::EncryptedKafkaClientKeyPassword => { /* ... */ },
+///     ConnectionPropertyKey::EncryptedKafkaSaslScramPassword => { /* ... */ },
 ///     ConnectionPropertyKey::EncryptedPassword => { /* ... */ },
 ///     ConnectionPropertyKey::Host => { /* ... */ },
 ///     ConnectionPropertyKey::InstanceId => { /* ... */ },
@@ -35,6 +36,14 @@
 ///     ConnectionPropertyKey::KafkaClientKeystorePassword => { /* ... */ },
 ///     ConnectionPropertyKey::KafkaClientKeyPassword => { /* ... */ },
 ///     ConnectionPropertyKey::KafkaCustomCert => { /* ... */ },
+///     ConnectionPropertyKey::KafkaSaslGssapiKeytab => { /* ... */ },
+///     ConnectionPropertyKey::KafkaSaslGssapiKrb5Conf => { /* ... */ },
+///     ConnectionPropertyKey::KafkaSaslGssapiPrincipal => { /* ... */ },
+///     ConnectionPropertyKey::KafkaSaslGssapiService => { /* ... */ },
+///     ConnectionPropertyKey::KafkaSaslMechanism => { /* ... */ },
+///     ConnectionPropertyKey::KafkaSaslScramPassword => { /* ... */ },
+///     ConnectionPropertyKey::KafkaSaslScramSecretsArn => { /* ... */ },
+///     ConnectionPropertyKey::KafkaSaslScramUsername => { /* ... */ },
 ///     ConnectionPropertyKey::KafkaSkipCustomCertValidation => { /* ... */ },
 ///     ConnectionPropertyKey::KafkaSslEnabled => { /* ... */ },
 ///     ConnectionPropertyKey::Password => { /* ... */ },
@@ -88,6 +97,8 @@ pub enum ConnectionPropertyKey {
     #[allow(missing_docs)] // documentation missing in model
     EncryptedKafkaClientKeyPassword,
     #[allow(missing_docs)] // documentation missing in model
+    EncryptedKafkaSaslScramPassword,
+    #[allow(missing_docs)] // documentation missing in model
     EncryptedPassword,
     #[allow(missing_docs)] // documentation missing in model
     Host,
@@ -115,6 +126,22 @@ pub enum ConnectionPropertyKey {
     KafkaClientKeyPassword,
     #[allow(missing_docs)] // documentation missing in model
     KafkaCustomCert,
+    #[allow(missing_docs)] // documentation missing in model
+    KafkaSaslGssapiKeytab,
+    #[allow(missing_docs)] // documentation missing in model
+    KafkaSaslGssapiKrb5Conf,
+    #[allow(missing_docs)] // documentation missing in model
+    KafkaSaslGssapiPrincipal,
+    #[allow(missing_docs)] // documentation missing in model
+    KafkaSaslGssapiService,
+    #[allow(missing_docs)] // documentation missing in model
+    KafkaSaslMechanism,
+    #[allow(missing_docs)] // documentation missing in model
+    KafkaSaslScramPassword,
+    #[allow(missing_docs)] // documentation missing in model
+    KafkaSaslScramSecretsArn,
+    #[allow(missing_docs)] // documentation missing in model
+    KafkaSaslScramUsername,
     #[allow(missing_docs)] // documentation missing in model
     KafkaSkipCustomCertValidation,
     #[allow(missing_docs)] // documentation missing in model
@@ -144,6 +171,7 @@ impl ::std::convert::From<&str> for ConnectionPropertyKey {
             "CUSTOM_JDBC_CERT_STRING" => ConnectionPropertyKey::CustomJdbcCertString,
             "ENCRYPTED_KAFKA_CLIENT_KEYSTORE_PASSWORD" => ConnectionPropertyKey::EncryptedKafkaClientKeystorePassword,
             "ENCRYPTED_KAFKA_CLIENT_KEY_PASSWORD" => ConnectionPropertyKey::EncryptedKafkaClientKeyPassword,
+            "ENCRYPTED_KAFKA_SASL_SCRAM_PASSWORD" => ConnectionPropertyKey::EncryptedKafkaSaslScramPassword,
             "ENCRYPTED_PASSWORD" => ConnectionPropertyKey::EncryptedPassword,
             "HOST" => ConnectionPropertyKey::Host,
             "INSTANCE_ID" => ConnectionPropertyKey::InstanceId,
@@ -158,6 +186,14 @@ impl ::std::convert::From<&str> for ConnectionPropertyKey {
             "KAFKA_CLIENT_KEYSTORE_PASSWORD" => ConnectionPropertyKey::KafkaClientKeystorePassword,
             "KAFKA_CLIENT_KEY_PASSWORD" => ConnectionPropertyKey::KafkaClientKeyPassword,
             "KAFKA_CUSTOM_CERT" => ConnectionPropertyKey::KafkaCustomCert,
+            "KAFKA_SASL_GSSAPI_KEYTAB" => ConnectionPropertyKey::KafkaSaslGssapiKeytab,
+            "KAFKA_SASL_GSSAPI_KRB5_CONF" => ConnectionPropertyKey::KafkaSaslGssapiKrb5Conf,
+            "KAFKA_SASL_GSSAPI_PRINCIPAL" => ConnectionPropertyKey::KafkaSaslGssapiPrincipal,
+            "KAFKA_SASL_GSSAPI_SERVICE" => ConnectionPropertyKey::KafkaSaslGssapiService,
+            "KAFKA_SASL_MECHANISM" => ConnectionPropertyKey::KafkaSaslMechanism,
+            "KAFKA_SASL_SCRAM_PASSWORD" => ConnectionPropertyKey::KafkaSaslScramPassword,
+            "KAFKA_SASL_SCRAM_SECRETS_ARN" => ConnectionPropertyKey::KafkaSaslScramSecretsArn,
+            "KAFKA_SASL_SCRAM_USERNAME" => ConnectionPropertyKey::KafkaSaslScramUsername,
             "KAFKA_SKIP_CUSTOM_CERT_VALIDATION" => ConnectionPropertyKey::KafkaSkipCustomCertValidation,
             "KAFKA_SSL_ENABLED" => ConnectionPropertyKey::KafkaSslEnabled,
             "PASSWORD" => ConnectionPropertyKey::Password,
@@ -189,6 +225,7 @@ impl ConnectionPropertyKey {
             ConnectionPropertyKey::CustomJdbcCertString => "CUSTOM_JDBC_CERT_STRING",
             ConnectionPropertyKey::EncryptedKafkaClientKeystorePassword => "ENCRYPTED_KAFKA_CLIENT_KEYSTORE_PASSWORD",
             ConnectionPropertyKey::EncryptedKafkaClientKeyPassword => "ENCRYPTED_KAFKA_CLIENT_KEY_PASSWORD",
+            ConnectionPropertyKey::EncryptedKafkaSaslScramPassword => "ENCRYPTED_KAFKA_SASL_SCRAM_PASSWORD",
             ConnectionPropertyKey::EncryptedPassword => "ENCRYPTED_PASSWORD",
             ConnectionPropertyKey::Host => "HOST",
             ConnectionPropertyKey::InstanceId => "INSTANCE_ID",
@@ -203,6 +240,14 @@ impl ConnectionPropertyKey {
             ConnectionPropertyKey::KafkaClientKeystorePassword => "KAFKA_CLIENT_KEYSTORE_PASSWORD",
             ConnectionPropertyKey::KafkaClientKeyPassword => "KAFKA_CLIENT_KEY_PASSWORD",
             ConnectionPropertyKey::KafkaCustomCert => "KAFKA_CUSTOM_CERT",
+            ConnectionPropertyKey::KafkaSaslGssapiKeytab => "KAFKA_SASL_GSSAPI_KEYTAB",
+            ConnectionPropertyKey::KafkaSaslGssapiKrb5Conf => "KAFKA_SASL_GSSAPI_KRB5_CONF",
+            ConnectionPropertyKey::KafkaSaslGssapiPrincipal => "KAFKA_SASL_GSSAPI_PRINCIPAL",
+            ConnectionPropertyKey::KafkaSaslGssapiService => "KAFKA_SASL_GSSAPI_SERVICE",
+            ConnectionPropertyKey::KafkaSaslMechanism => "KAFKA_SASL_MECHANISM",
+            ConnectionPropertyKey::KafkaSaslScramPassword => "KAFKA_SASL_SCRAM_PASSWORD",
+            ConnectionPropertyKey::KafkaSaslScramSecretsArn => "KAFKA_SASL_SCRAM_SECRETS_ARN",
+            ConnectionPropertyKey::KafkaSaslScramUsername => "KAFKA_SASL_SCRAM_USERNAME",
             ConnectionPropertyKey::KafkaSkipCustomCertValidation => "KAFKA_SKIP_CUSTOM_CERT_VALIDATION",
             ConnectionPropertyKey::KafkaSslEnabled => "KAFKA_SSL_ENABLED",
             ConnectionPropertyKey::Password => "PASSWORD",
@@ -225,6 +270,7 @@ impl ConnectionPropertyKey {
             "CUSTOM_JDBC_CERT_STRING",
             "ENCRYPTED_KAFKA_CLIENT_KEYSTORE_PASSWORD",
             "ENCRYPTED_KAFKA_CLIENT_KEY_PASSWORD",
+            "ENCRYPTED_KAFKA_SASL_SCRAM_PASSWORD",
             "ENCRYPTED_PASSWORD",
             "HOST",
             "INSTANCE_ID",
@@ -239,6 +285,14 @@ impl ConnectionPropertyKey {
             "KAFKA_CLIENT_KEYSTORE_PASSWORD",
             "KAFKA_CLIENT_KEY_PASSWORD",
             "KAFKA_CUSTOM_CERT",
+            "KAFKA_SASL_GSSAPI_KEYTAB",
+            "KAFKA_SASL_GSSAPI_KRB5_CONF",
+            "KAFKA_SASL_GSSAPI_PRINCIPAL",
+            "KAFKA_SASL_GSSAPI_SERVICE",
+            "KAFKA_SASL_MECHANISM",
+            "KAFKA_SASL_SCRAM_PASSWORD",
+            "KAFKA_SASL_SCRAM_SECRETS_ARN",
+            "KAFKA_SASL_SCRAM_USERNAME",
             "KAFKA_SKIP_CUSTOM_CERT_VALIDATION",
             "KAFKA_SSL_ENABLED",
             "PASSWORD",

@@ -10,7 +10,7 @@ pub struct TargetGroup {
     pub target_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The protocol to use for routing traffic to the targets.</p>
     pub protocol: ::std::option::Option<crate::types::ProtocolEnum>,
-    /// <p>The port on which the targets are listening. Not used if the target is a Lambda function.</p>
+    /// <p>The port on which the targets are listening. This parameter is not used if the target is a Lambda function.</p>
     pub port: ::std::option::Option<i32>,
     /// <p>The ID of the VPC for the targets.</p>
     pub vpc_id: ::std::option::Option<::std::string::String>,
@@ -32,7 +32,7 @@ pub struct TargetGroup {
     pub health_check_path: ::std::option::Option<::std::string::String>,
     /// <p>The HTTP or gRPC codes to use when checking for a successful response from a target.</p>
     pub matcher: ::std::option::Option<crate::types::Matcher>,
-    /// <p>The Amazon Resource Names (ARN) of the load balancers that route traffic to this target group.</p>
+    /// <p>The Amazon Resource Name (ARN) of the load balancer that routes traffic to this target group. You can use each target group with only one load balancer.</p>
     pub load_balancer_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The type of target that you must specify when registering targets with this target group. The possible values are <code>instance</code> (register targets by instance ID), <code>ip</code> (register targets by IP address), <code>lambda</code> (register a single Lambda function as a target), or <code>alb</code> (register a single Application Load Balancer as a target).</p>
     pub target_type: ::std::option::Option<crate::types::TargetTypeEnum>,
@@ -54,7 +54,7 @@ impl TargetGroup {
     pub fn protocol(&self) -> ::std::option::Option<&crate::types::ProtocolEnum> {
         self.protocol.as_ref()
     }
-    /// <p>The port on which the targets are listening. Not used if the target is a Lambda function.</p>
+    /// <p>The port on which the targets are listening. This parameter is not used if the target is a Lambda function.</p>
     pub fn port(&self) -> ::std::option::Option<i32> {
         self.port
     }
@@ -98,7 +98,7 @@ impl TargetGroup {
     pub fn matcher(&self) -> ::std::option::Option<&crate::types::Matcher> {
         self.matcher.as_ref()
     }
-    /// <p>The Amazon Resource Names (ARN) of the load balancers that route traffic to this target group.</p>
+    /// <p>The Amazon Resource Name (ARN) of the load balancer that routes traffic to this target group. You can use each target group with only one load balancer.</p>
     pub fn load_balancer_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.load_balancer_arns.as_deref()
     }
@@ -188,17 +188,17 @@ impl TargetGroupBuilder {
     pub fn get_protocol(&self) -> &::std::option::Option<crate::types::ProtocolEnum> {
         &self.protocol
     }
-    /// <p>The port on which the targets are listening. Not used if the target is a Lambda function.</p>
+    /// <p>The port on which the targets are listening. This parameter is not used if the target is a Lambda function.</p>
     pub fn port(mut self, input: i32) -> Self {
         self.port = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The port on which the targets are listening. Not used if the target is a Lambda function.</p>
+    /// <p>The port on which the targets are listening. This parameter is not used if the target is a Lambda function.</p>
     pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.port = input;
         self
     }
-    /// <p>The port on which the targets are listening. Not used if the target is a Lambda function.</p>
+    /// <p>The port on which the targets are listening. This parameter is not used if the target is a Lambda function.</p>
     pub fn get_port(&self) -> &::std::option::Option<i32> {
         &self.port
     }
@@ -346,19 +346,19 @@ impl TargetGroupBuilder {
     ///
     /// To override the contents of this collection use [`set_load_balancer_arns`](Self::set_load_balancer_arns).
     ///
-    /// <p>The Amazon Resource Names (ARN) of the load balancers that route traffic to this target group.</p>
+    /// <p>The Amazon Resource Name (ARN) of the load balancer that routes traffic to this target group. You can use each target group with only one load balancer.</p>
     pub fn load_balancer_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.load_balancer_arns.unwrap_or_default();
         v.push(input.into());
         self.load_balancer_arns = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The Amazon Resource Names (ARN) of the load balancers that route traffic to this target group.</p>
+    /// <p>The Amazon Resource Name (ARN) of the load balancer that routes traffic to this target group. You can use each target group with only one load balancer.</p>
     pub fn set_load_balancer_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.load_balancer_arns = input;
         self
     }
-    /// <p>The Amazon Resource Names (ARN) of the load balancers that route traffic to this target group.</p>
+    /// <p>The Amazon Resource Name (ARN) of the load balancer that routes traffic to this target group. You can use each target group with only one load balancer.</p>
     pub fn get_load_balancer_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.load_balancer_arns
     }

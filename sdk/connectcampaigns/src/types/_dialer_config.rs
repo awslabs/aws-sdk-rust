@@ -4,6 +4,8 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum DialerConfig {
+    /// Agentless Dialer config
+    AgentlessDialerConfig(crate::types::AgentlessDialerConfig),
     /// Predictive Dialer config
     PredictiveDialerConfig(crate::types::PredictiveDialerConfig),
     /// Progressive Dialer config
@@ -19,6 +21,19 @@ pub enum DialerConfig {
     Unknown,
 }
 impl DialerConfig {
+    /// Tries to convert the enum instance into [`AgentlessDialerConfig`](crate::types::DialerConfig::AgentlessDialerConfig), extracting the inner [`AgentlessDialerConfig`](crate::types::AgentlessDialerConfig).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_agentless_dialer_config(&self) -> ::std::result::Result<&crate::types::AgentlessDialerConfig, &Self> {
+        if let DialerConfig::AgentlessDialerConfig(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`AgentlessDialerConfig`](crate::types::DialerConfig::AgentlessDialerConfig).
+    pub fn is_agentless_dialer_config(&self) -> bool {
+        self.as_agentless_dialer_config().is_ok()
+    }
     /// Tries to convert the enum instance into [`PredictiveDialerConfig`](crate::types::DialerConfig::PredictiveDialerConfig), extracting the inner [`PredictiveDialerConfig`](crate::types::PredictiveDialerConfig).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_predictive_dialer_config(&self) -> ::std::result::Result<&crate::types::PredictiveDialerConfig, &Self> {

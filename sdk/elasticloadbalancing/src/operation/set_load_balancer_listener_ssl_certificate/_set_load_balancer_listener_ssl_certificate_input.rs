@@ -7,7 +7,7 @@ pub struct SetLoadBalancerListenerSslCertificateInput {
     /// <p>The name of the load balancer.</p>
     pub load_balancer_name: ::std::option::Option<::std::string::String>,
     /// <p>The port that uses the specified SSL certificate.</p>
-    pub load_balancer_port: i32,
+    pub load_balancer_port: ::std::option::Option<i32>,
     /// <p>The Amazon Resource Name (ARN) of the SSL certificate.</p>
     pub ssl_certificate_id: ::std::option::Option<::std::string::String>,
 }
@@ -17,7 +17,7 @@ impl SetLoadBalancerListenerSslCertificateInput {
         self.load_balancer_name.as_deref()
     }
     /// <p>The port that uses the specified SSL certificate.</p>
-    pub fn load_balancer_port(&self) -> i32 {
+    pub fn load_balancer_port(&self) -> ::std::option::Option<i32> {
         self.load_balancer_port
     }
     /// <p>The Amazon Resource Name (ARN) of the SSL certificate.</p>
@@ -93,7 +93,7 @@ impl SetLoadBalancerListenerSslCertificateInputBuilder {
         ::std::result::Result::Ok(
             crate::operation::set_load_balancer_listener_ssl_certificate::SetLoadBalancerListenerSslCertificateInput {
                 load_balancer_name: self.load_balancer_name,
-                load_balancer_port: self.load_balancer_port.unwrap_or_default(),
+                load_balancer_port: self.load_balancer_port,
                 ssl_certificate_id: self.ssl_certificate_id,
             },
         )

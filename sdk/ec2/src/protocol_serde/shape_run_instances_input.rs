@@ -268,6 +268,11 @@ pub fn ser_run_instances_input_input(
     if let Some(var_107) = &input.disable_api_stop {
         scope_106.boolean(*var_107);
     }
+    #[allow(unused_mut)]
+    let mut scope_108 = writer.prefix("EnablePrimaryIpv6");
+    if let Some(var_109) = &input.enable_primary_ipv6 {
+        scope_108.boolean(*var_109);
+    }
     writer.finish();
     Ok(::aws_smithy_http::body::SdkBody::from(out))
 }

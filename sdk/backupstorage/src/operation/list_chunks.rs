@@ -212,12 +212,14 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for ListChunksR
                 mut output: &mut ::std::string::String,
             ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError> {
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
-                if _input.max_results != 0 {
-                    query.push_kv("max-results", ::aws_smithy_types::primitive::Encoder::from(_input.max_results).encode());
+                if let ::std::option::Option::Some(inner_3) = &_input.max_results {
+                    if *inner_3 != 0 {
+                        query.push_kv("max-results", ::aws_smithy_types::primitive::Encoder::from(*inner_3).encode());
+                    }
                 }
-                if let ::std::option::Option::Some(inner_3) = &_input.next_token {
+                if let ::std::option::Option::Some(inner_4) = &_input.next_token {
                     {
-                        query.push_kv("next-token", &::aws_smithy_http::query::fmt_string(&inner_3));
+                        query.push_kv("next-token", &::aws_smithy_http::query::fmt_string(&inner_4));
                     }
                 }
                 ::std::result::Result::Ok(())

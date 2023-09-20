@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`organization_id(impl Into<String>)`](crate::operation::delete_group::builders::DeleteGroupFluentBuilder::organization_id) / [`set_organization_id(Option<String>)`](crate::operation::delete_group::builders::DeleteGroupFluentBuilder::set_organization_id): <p>The organization that contains the group.</p>
-    ///   - [`group_id(impl Into<String>)`](crate::operation::delete_group::builders::DeleteGroupFluentBuilder::group_id) / [`set_group_id(Option<String>)`](crate::operation::delete_group::builders::DeleteGroupFluentBuilder::set_group_id): <p>The identifier of the group to be deleted.</p>
+    ///   - [`group_id(impl Into<String>)`](crate::operation::delete_group::builders::DeleteGroupFluentBuilder::group_id) / [`set_group_id(Option<String>)`](crate::operation::delete_group::builders::DeleteGroupFluentBuilder::set_group_id): <p>The identifier of the group to be deleted.</p>  <p>The identifier can be the <i>GroupId</i>, or <i>Groupname</i>. The following identity formats are available:</p>  <ul>   <li> <p>Group ID: 12345678-1234-1234-1234-123456789012 or S-1-1-12-1234567890-123456789-123456789-1234</p> </li>   <li> <p>Group name: group</p> </li>  </ul>
     /// - On success, responds with [`DeleteGroupOutput`](crate::operation::delete_group::DeleteGroupOutput)
     /// - On failure, responds with [`SdkError<DeleteGroupError>`](crate::operation::delete_group::DeleteGroupError)
     pub fn delete_group(&self) -> crate::operation::delete_group::builders::DeleteGroupFluentBuilder {

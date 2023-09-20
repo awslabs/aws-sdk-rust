@@ -170,6 +170,13 @@ pub(crate) fn de_describe_input_device(
                             .transpose()?,
                     );
                 }
+                "availabilityZone" => {
+                    builder = builder.set_availability_zone(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 "connectionState" => {
                     builder = builder.set_connection_state(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -210,6 +217,9 @@ pub(crate) fn de_describe_input_device(
                             .transpose()?,
                     );
                 }
+                "medialiveInputArns" => {
+                    builder = builder.set_medialive_input_arns(crate::protocol_serde::shape___list_of__string::de___list_of__string(tokens)?);
+                }
                 "name" => {
                     builder = builder.set_name(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -220,6 +230,13 @@ pub(crate) fn de_describe_input_device(
                 "networkSettings" => {
                     builder = builder
                         .set_network_settings(crate::protocol_serde::shape_input_device_network_settings::de_input_device_network_settings(tokens)?);
+                }
+                "outputType" => {
+                    builder = builder.set_output_type(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::InputDeviceOutputType::from(u.as_ref())))
+                            .transpose()?,
+                    );
                 }
                 "serialNumber" => {
                     builder = builder.set_serial_number(

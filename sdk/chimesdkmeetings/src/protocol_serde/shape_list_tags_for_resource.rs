@@ -20,12 +20,125 @@ pub fn de_list_tags_for_resource_http_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "BadRequestException" => crate::operation::list_tags_for_resource::ListTagsForResourceError::BadRequestException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::BadRequestExceptionBuilder::default();
+                output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::list_tags_for_resource::ListTagsForResourceError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ForbiddenException" => crate::operation::list_tags_for_resource::ListTagsForResourceError::ForbiddenException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ForbiddenExceptionBuilder::default();
+                output = crate::protocol_serde::shape_forbidden_exception::de_forbidden_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::list_tags_for_resource::ListTagsForResourceError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "LimitExceededException" => crate::operation::list_tags_for_resource::ListTagsForResourceError::LimitExceededException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::LimitExceededExceptionBuilder::default();
+                output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::list_tags_for_resource::ListTagsForResourceError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "ResourceNotFoundException" => crate::operation::list_tags_for_resource::ListTagsForResourceError::ResourceNotFoundException({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
                 output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::list_tags_for_resource::ListTagsForResourceError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ServiceFailureException" => crate::operation::list_tags_for_resource::ListTagsForResourceError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ServiceFailureExceptionBuilder::default();
+                output = crate::protocol_serde::shape_service_failure_exception::de_service_failure_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::list_tags_for_resource::ListTagsForResourceError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ServiceUnavailableException" => crate::operation::list_tags_for_resource::ListTagsForResourceError::ServiceUnavailableException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ServiceUnavailableExceptionBuilder::default();
+                output =
+                    crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(_response_body, output)
+                        .map_err(crate::operation::list_tags_for_resource::ListTagsForResourceError::unhandled)?;
+                output = output.set_retry_after_seconds(
+                    crate::protocol_serde::shape_service_unavailable_exception::de_retry_after_seconds_header(_response_headers).map_err(|_| {
+                        crate::operation::list_tags_for_resource::ListTagsForResourceError::unhandled(
+                            "Failed to parse RetryAfterSeconds from header `Retry-After",
+                        )
+                    })?,
+                );
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ThrottlingException" => crate::operation::list_tags_for_resource::ListTagsForResourceError::ThrottlingException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
+                output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::list_tags_for_resource::ListTagsForResourceError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "UnauthorizedException" => crate::operation::list_tags_for_resource::ListTagsForResourceError::UnauthorizedException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::UnauthorizedExceptionBuilder::default();
+                output = crate::protocol_serde::shape_unauthorized_exception::de_unauthorized_exception_json_err(_response_body, output)
                     .map_err(crate::operation::list_tags_for_resource::ListTagsForResourceError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()

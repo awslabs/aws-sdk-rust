@@ -200,49 +200,55 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for SearchReque
                         query.push_kv("highlight", &::aws_smithy_http::query::fmt_string(&inner_5));
                     }
                 }
-                if _input.partial {
-                    query.push_kv("partial", ::aws_smithy_types::primitive::Encoder::from(_input.partial).encode());
+                if let ::std::option::Option::Some(inner_6) = &_input.partial {
+                    if *inner_6 {
+                        query.push_kv("partial", ::aws_smithy_types::primitive::Encoder::from(*inner_6).encode());
+                    }
                 }
-                let inner_6 = &_input.query;
-                let inner_6 = inner_6
+                let inner_7 = &_input.query;
+                let inner_7 = inner_7
                     .as_ref()
                     .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("query", "cannot be empty or unset"))?;
-                if inner_6.is_empty() {
+                if inner_7.is_empty() {
                     return ::std::result::Result::Err(::aws_smithy_http::operation::error::BuildError::missing_field(
                         "query",
                         "cannot be empty or unset",
                     ));
                 }
-                query.push_kv("q", &::aws_smithy_http::query::fmt_string(&inner_6));
-                if let ::std::option::Option::Some(inner_7) = &_input.query_options {
+                query.push_kv("q", &::aws_smithy_http::query::fmt_string(&inner_7));
+                if let ::std::option::Option::Some(inner_8) = &_input.query_options {
                     {
-                        query.push_kv("q.options", &::aws_smithy_http::query::fmt_string(&inner_7));
+                        query.push_kv("q.options", &::aws_smithy_http::query::fmt_string(&inner_8));
                     }
                 }
-                if let ::std::option::Option::Some(inner_8) = &_input.query_parser {
+                if let ::std::option::Option::Some(inner_9) = &_input.query_parser {
                     {
-                        query.push_kv("q.parser", &::aws_smithy_http::query::fmt_string(&inner_8));
+                        query.push_kv("q.parser", &::aws_smithy_http::query::fmt_string(&inner_9));
                     }
                 }
-                if let ::std::option::Option::Some(inner_9) = &_input.r#return {
+                if let ::std::option::Option::Some(inner_10) = &_input.r#return {
                     {
-                        query.push_kv("return", &::aws_smithy_http::query::fmt_string(&inner_9));
+                        query.push_kv("return", &::aws_smithy_http::query::fmt_string(&inner_10));
                     }
                 }
-                if _input.size != 0 {
-                    query.push_kv("size", ::aws_smithy_types::primitive::Encoder::from(_input.size).encode());
-                }
-                if let ::std::option::Option::Some(inner_10) = &_input.sort {
-                    {
-                        query.push_kv("sort", &::aws_smithy_http::query::fmt_string(&inner_10));
+                if let ::std::option::Option::Some(inner_11) = &_input.size {
+                    if *inner_11 != 0 {
+                        query.push_kv("size", ::aws_smithy_types::primitive::Encoder::from(*inner_11).encode());
                     }
                 }
-                if _input.start != 0 {
-                    query.push_kv("start", ::aws_smithy_types::primitive::Encoder::from(_input.start).encode());
-                }
-                if let ::std::option::Option::Some(inner_11) = &_input.stats {
+                if let ::std::option::Option::Some(inner_12) = &_input.sort {
                     {
-                        query.push_kv("stats", &::aws_smithy_http::query::fmt_string(&inner_11));
+                        query.push_kv("sort", &::aws_smithy_http::query::fmt_string(&inner_12));
+                    }
+                }
+                if let ::std::option::Option::Some(inner_13) = &_input.start {
+                    if *inner_13 != 0 {
+                        query.push_kv("start", ::aws_smithy_types::primitive::Encoder::from(*inner_13).encode());
+                    }
+                }
+                if let ::std::option::Option::Some(inner_14) = &_input.stats {
+                    {
+                        query.push_kv("stats", &::aws_smithy_http::query::fmt_string(&inner_14));
                     }
                 }
                 ::std::result::Result::Ok(())

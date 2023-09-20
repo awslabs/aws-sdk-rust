@@ -8,7 +8,7 @@ pub struct DeleteAddonInput {
     /// <p>The name of the add-on. The name must match one of the names returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAddons.html"> <code>ListAddons</code> </a>.</p>
     pub addon_name: ::std::option::Option<::std::string::String>,
     /// <p>Specifying this option preserves the add-on software on your cluster but Amazon EKS stops managing any settings for the add-on. If an IAM account is associated with the add-on, it isn't removed.</p>
-    pub preserve: bool,
+    pub preserve: ::std::option::Option<bool>,
 }
 impl DeleteAddonInput {
     /// <p>The name of the cluster to delete the add-on from.</p>
@@ -20,7 +20,7 @@ impl DeleteAddonInput {
         self.addon_name.as_deref()
     }
     /// <p>Specifying this option preserves the add-on software on your cluster but Amazon EKS stops managing any settings for the add-on. If an IAM account is associated with the add-on, it isn't removed.</p>
-    pub fn preserve(&self) -> bool {
+    pub fn preserve(&self) -> ::std::option::Option<bool> {
         self.preserve
     }
 }
@@ -87,7 +87,7 @@ impl DeleteAddonInputBuilder {
         ::std::result::Result::Ok(crate::operation::delete_addon::DeleteAddonInput {
             cluster_name: self.cluster_name,
             addon_name: self.addon_name,
-            preserve: self.preserve.unwrap_or_default(),
+            preserve: self.preserve,
         })
     }
 }

@@ -22,6 +22,8 @@ pub struct LaunchConfigurationTemplate {
     pub licensing: ::std::option::Option<crate::types::Licensing>,
     /// <p>S3 bucket ARN to export Source Network templates.</p>
     pub export_bucket_arn: ::std::option::Option<::std::string::String>,
+    /// <p>Post-launch actions activated.</p>
+    pub post_launch_enabled: ::std::option::Option<bool>,
 }
 impl LaunchConfigurationTemplate {
     /// <p>ID of the Launch Configuration Template.</p>
@@ -60,6 +62,10 @@ impl LaunchConfigurationTemplate {
     pub fn export_bucket_arn(&self) -> ::std::option::Option<&str> {
         self.export_bucket_arn.as_deref()
     }
+    /// <p>Post-launch actions activated.</p>
+    pub fn post_launch_enabled(&self) -> ::std::option::Option<bool> {
+        self.post_launch_enabled
+    }
 }
 impl ::std::fmt::Debug for LaunchConfigurationTemplate {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -73,6 +79,7 @@ impl ::std::fmt::Debug for LaunchConfigurationTemplate {
         formatter.field("copy_tags", &self.copy_tags);
         formatter.field("licensing", &self.licensing);
         formatter.field("export_bucket_arn", &self.export_bucket_arn);
+        formatter.field("post_launch_enabled", &self.post_launch_enabled);
         formatter.finish()
     }
 }
@@ -96,6 +103,7 @@ pub struct LaunchConfigurationTemplateBuilder {
     pub(crate) copy_tags: ::std::option::Option<bool>,
     pub(crate) licensing: ::std::option::Option<crate::types::Licensing>,
     pub(crate) export_bucket_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) post_launch_enabled: ::std::option::Option<bool>,
 }
 impl LaunchConfigurationTemplateBuilder {
     /// <p>ID of the Launch Configuration Template.</p>
@@ -233,6 +241,20 @@ impl LaunchConfigurationTemplateBuilder {
     pub fn get_export_bucket_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.export_bucket_arn
     }
+    /// <p>Post-launch actions activated.</p>
+    pub fn post_launch_enabled(mut self, input: bool) -> Self {
+        self.post_launch_enabled = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Post-launch actions activated.</p>
+    pub fn set_post_launch_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.post_launch_enabled = input;
+        self
+    }
+    /// <p>Post-launch actions activated.</p>
+    pub fn get_post_launch_enabled(&self) -> &::std::option::Option<bool> {
+        &self.post_launch_enabled
+    }
     /// Consumes the builder and constructs a [`LaunchConfigurationTemplate`](crate::types::LaunchConfigurationTemplate).
     pub fn build(self) -> crate::types::LaunchConfigurationTemplate {
         crate::types::LaunchConfigurationTemplate {
@@ -245,6 +267,7 @@ impl LaunchConfigurationTemplateBuilder {
             copy_tags: self.copy_tags,
             licensing: self.licensing,
             export_bucket_arn: self.export_bucket_arn,
+            post_launch_enabled: self.post_launch_enabled,
         }
     }
 }
@@ -260,6 +283,7 @@ impl ::std::fmt::Debug for LaunchConfigurationTemplateBuilder {
         formatter.field("copy_tags", &self.copy_tags);
         formatter.field("licensing", &self.licensing);
         formatter.field("export_bucket_arn", &self.export_bucket_arn);
+        formatter.field("post_launch_enabled", &self.post_launch_enabled);
         formatter.finish()
     }
 }

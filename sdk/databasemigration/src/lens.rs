@@ -29,6 +29,16 @@ pub(crate) fn reflens_describe_connections_output_marker(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_describe_data_providers_output_marker(
+    input: &crate::operation::describe_data_providers::DescribeDataProvidersOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.marker {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_describe_endpoint_settings_output_marker(
     input: &crate::operation::describe_endpoint_settings::DescribeEndpointSettingsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -59,6 +69,16 @@ pub(crate) fn reflens_describe_endpoints_output_marker(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_describe_engine_versions_output_marker(
+    input: &crate::operation::describe_engine_versions::DescribeEngineVersionsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.marker {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_describe_event_subscriptions_output_marker(
     input: &crate::operation::describe_event_subscriptions::DescribeEventSubscriptionsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -71,6 +91,16 @@ pub(crate) fn reflens_describe_event_subscriptions_output_marker(
 
 pub(crate) fn reflens_describe_events_output_marker(
     input: &crate::operation::describe_events::DescribeEventsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.marker {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_describe_extension_pack_associations_output_marker(
+    input: &crate::operation::describe_extension_pack_associations::DescribeExtensionPackAssociationsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
     let input = match &input.marker {
         ::std::option::Option::None => return ::std::option::Option::None,
@@ -123,6 +153,76 @@ pub(crate) fn reflens_describe_fleet_advisor_schemas_output_next_token(
     input: &crate::operation::describe_fleet_advisor_schemas::DescribeFleetAdvisorSchemasOutput,
 ) -> ::std::option::Option<&::std::string::String> {
     let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_describe_instance_profiles_output_marker(
+    input: &crate::operation::describe_instance_profiles::DescribeInstanceProfilesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.marker {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_describe_metadata_model_assessments_output_marker(
+    input: &crate::operation::describe_metadata_model_assessments::DescribeMetadataModelAssessmentsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.marker {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_describe_metadata_model_conversions_output_marker(
+    input: &crate::operation::describe_metadata_model_conversions::DescribeMetadataModelConversionsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.marker {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_describe_metadata_model_exports_as_script_output_marker(
+    input: &crate::operation::describe_metadata_model_exports_as_script::DescribeMetadataModelExportsAsScriptOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.marker {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_describe_metadata_model_exports_to_target_output_marker(
+    input: &crate::operation::describe_metadata_model_exports_to_target::DescribeMetadataModelExportsToTargetOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.marker {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_describe_metadata_model_imports_output_marker(
+    input: &crate::operation::describe_metadata_model_imports::DescribeMetadataModelImportsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.marker {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_describe_migration_projects_output_marker(
+    input: &crate::operation::describe_migration_projects::DescribeMigrationProjectsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.marker {
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,
     };

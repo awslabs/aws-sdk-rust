@@ -13,6 +13,8 @@
 /// # let healtheventimpacttype = unimplemented!();
 /// match healtheventimpacttype {
 ///     HealthEventImpactType::Availability => { /* ... */ },
+///     HealthEventImpactType::LocalAvailability => { /* ... */ },
+///     HealthEventImpactType::LocalPerformance => { /* ... */ },
 ///     HealthEventImpactType::Performance => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -44,6 +46,10 @@ pub enum HealthEventImpactType {
     #[allow(missing_docs)] // documentation missing in model
     Availability,
     #[allow(missing_docs)] // documentation missing in model
+    LocalAvailability,
+    #[allow(missing_docs)] // documentation missing in model
+    LocalPerformance,
+    #[allow(missing_docs)] // documentation missing in model
     Performance,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
@@ -52,6 +58,8 @@ impl ::std::convert::From<&str> for HealthEventImpactType {
     fn from(s: &str) -> Self {
         match s {
             "AVAILABILITY" => HealthEventImpactType::Availability,
+            "LOCAL_AVAILABILITY" => HealthEventImpactType::LocalAvailability,
+            "LOCAL_PERFORMANCE" => HealthEventImpactType::LocalPerformance,
             "PERFORMANCE" => HealthEventImpactType::Performance,
             other => HealthEventImpactType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
@@ -69,13 +77,15 @@ impl HealthEventImpactType {
     pub fn as_str(&self) -> &str {
         match self {
             HealthEventImpactType::Availability => "AVAILABILITY",
+            HealthEventImpactType::LocalAvailability => "LOCAL_AVAILABILITY",
+            HealthEventImpactType::LocalPerformance => "LOCAL_PERFORMANCE",
             HealthEventImpactType::Performance => "PERFORMANCE",
             HealthEventImpactType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AVAILABILITY", "PERFORMANCE"]
+        &["AVAILABILITY", "LOCAL_AVAILABILITY", "LOCAL_PERFORMANCE", "PERFORMANCE"]
     }
 }
 impl ::std::convert::AsRef<str> for HealthEventImpactType {

@@ -59,7 +59,7 @@ pub struct DescribeDbEngineVersionsInput {
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>A value that indicates whether only the default version of the specified engine or engine and major version combination is returned.</p>
-    pub default_only: bool,
+    pub default_only: ::std::option::Option<bool>,
     /// <p>A value that indicates whether to list the supported character sets for each engine version.</p>
     /// <p>If this parameter is enabled and the requested engine supports the <code>CharacterSetName</code> parameter for <code>CreateDBInstance</code>, the response includes a list of supported character sets for each engine version.</p>
     /// <p>For RDS Custom, the default is not to list supported character sets. If you set <code>ListSupportedCharacterSets</code> to <code>true</code>, RDS Custom returns no results.</p>
@@ -140,7 +140,7 @@ impl DescribeDbEngineVersionsInput {
         self.marker.as_deref()
     }
     /// <p>A value that indicates whether only the default version of the specified engine or engine and major version combination is returned.</p>
-    pub fn default_only(&self) -> bool {
+    pub fn default_only(&self) -> ::std::option::Option<bool> {
         self.default_only
     }
     /// <p>A value that indicates whether to list the supported character sets for each engine version.</p>
@@ -484,7 +484,7 @@ impl DescribeDbEngineVersionsInputBuilder {
             filters: self.filters,
             max_records: self.max_records,
             marker: self.marker,
-            default_only: self.default_only.unwrap_or_default(),
+            default_only: self.default_only,
             list_supported_character_sets: self.list_supported_character_sets,
             list_supported_timezones: self.list_supported_timezones,
             include_all: self.include_all,

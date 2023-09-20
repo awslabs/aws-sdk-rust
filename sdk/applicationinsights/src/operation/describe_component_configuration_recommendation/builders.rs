@@ -160,4 +160,18 @@ impl DescribeComponentConfigurationRecommendationFluentBuilder {
     pub fn get_tier(&self) -> &::std::option::Option<crate::types::Tier> {
         self.inner.get_tier()
     }
+    /// <p>The recommended configuration type.</p>
+    pub fn recommendation_type(mut self, input: crate::types::RecommendationType) -> Self {
+        self.inner = self.inner.recommendation_type(input);
+        self
+    }
+    /// <p>The recommended configuration type.</p>
+    pub fn set_recommendation_type(mut self, input: ::std::option::Option<crate::types::RecommendationType>) -> Self {
+        self.inner = self.inner.set_recommendation_type(input);
+        self
+    }
+    /// <p>The recommended configuration type.</p>
+    pub fn get_recommendation_type(&self) -> &::std::option::Option<crate::types::RecommendationType> {
+        self.inner.get_recommendation_type()
+    }
 }

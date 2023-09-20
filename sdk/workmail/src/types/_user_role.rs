@@ -12,6 +12,7 @@
 /// ```text
 /// # let userrole = unimplemented!();
 /// match userrole {
+///     UserRole::RemoteUser => { /* ... */ },
 ///     UserRole::Resource => { /* ... */ },
 ///     UserRole::SystemUser => { /* ... */ },
 ///     UserRole::User => { /* ... */ },
@@ -43,6 +44,8 @@
 )]
 pub enum UserRole {
     #[allow(missing_docs)] // documentation missing in model
+    RemoteUser,
+    #[allow(missing_docs)] // documentation missing in model
     Resource,
     #[allow(missing_docs)] // documentation missing in model
     SystemUser,
@@ -54,6 +57,7 @@ pub enum UserRole {
 impl ::std::convert::From<&str> for UserRole {
     fn from(s: &str) -> Self {
         match s {
+            "REMOTE_USER" => UserRole::RemoteUser,
             "RESOURCE" => UserRole::Resource,
             "SYSTEM_USER" => UserRole::SystemUser,
             "USER" => UserRole::User,
@@ -72,6 +76,7 @@ impl UserRole {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            UserRole::RemoteUser => "REMOTE_USER",
             UserRole::Resource => "RESOURCE",
             UserRole::SystemUser => "SYSTEM_USER",
             UserRole::User => "USER",
@@ -80,7 +85,7 @@ impl UserRole {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["RESOURCE", "SYSTEM_USER", "USER"]
+        &["REMOTE_USER", "RESOURCE", "SYSTEM_USER", "USER"]
     }
 }
 impl ::std::convert::AsRef<str> for UserRole {

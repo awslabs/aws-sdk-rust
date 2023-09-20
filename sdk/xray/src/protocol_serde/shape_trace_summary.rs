@@ -21,6 +21,12 @@ where
                                     .transpose()?,
                             );
                         }
+                        "StartTime" => {
+                            builder = builder.set_start_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                                tokens.next(),
+                                ::aws_smithy_types::date_time::Format::EpochSeconds,
+                            )?);
+                        }
                         "Duration" => {
                             builder = builder
                                 .set_duration(::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?.map(|v| v.to_f64_lossy()));

@@ -2,7 +2,7 @@
 
 /// <p>The configuration for the email sent when an app user forgets their password.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct EmailSettings {
     /// <p>The contents of the email message.</p>
     pub email_message: ::std::option::Option<::std::string::String>,
@@ -19,6 +19,14 @@ impl EmailSettings {
         self.email_subject.as_deref()
     }
 }
+impl ::std::fmt::Debug for EmailSettings {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("EmailSettings");
+        formatter.field("email_message", &"*** Sensitive Data Redacted ***");
+        formatter.field("email_subject", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl EmailSettings {
     /// Creates a new builder-style object to manufacture [`EmailSettings`](crate::types::EmailSettings).
     pub fn builder() -> crate::types::builders::EmailSettingsBuilder {
@@ -28,7 +36,7 @@ impl EmailSettings {
 
 /// A builder for [`EmailSettings`](crate::types::EmailSettings).
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct EmailSettingsBuilder {
     pub(crate) email_message: ::std::option::Option<::std::string::String>,
     pub(crate) email_subject: ::std::option::Option<::std::string::String>,
@@ -68,5 +76,13 @@ impl EmailSettingsBuilder {
             email_message: self.email_message,
             email_subject: self.email_subject,
         }
+    }
+}
+impl ::std::fmt::Debug for EmailSettingsBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("EmailSettingsBuilder");
+        formatter.field("email_message", &"*** Sensitive Data Redacted ***");
+        formatter.field("email_subject", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

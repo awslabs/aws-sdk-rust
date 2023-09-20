@@ -112,31 +112,31 @@ impl UpdateDefaultBranchFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name of the repository to set or change the default branch for.</p>
+    /// <p>The name of the repository for which you want to set or change the default branch.</p>
     pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.repository_name(input.into());
         self
     }
-    /// <p>The name of the repository to set or change the default branch for.</p>
+    /// <p>The name of the repository for which you want to set or change the default branch.</p>
     pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_repository_name(input);
         self
     }
-    /// <p>The name of the repository to set or change the default branch for.</p>
+    /// <p>The name of the repository for which you want to set or change the default branch.</p>
     pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_repository_name()
     }
-    /// <p>The name of the branch to set as the default.</p>
+    /// <p>The name of the branch to set as the default branch.</p>
     pub fn default_branch_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.default_branch_name(input.into());
         self
     }
-    /// <p>The name of the branch to set as the default.</p>
+    /// <p>The name of the branch to set as the default branch.</p>
     pub fn set_default_branch_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_default_branch_name(input);
         self
     }
-    /// <p>The name of the branch to set as the default.</p>
+    /// <p>The name of the branch to set as the default branch.</p>
     pub fn get_default_branch_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_default_branch_name()
     }

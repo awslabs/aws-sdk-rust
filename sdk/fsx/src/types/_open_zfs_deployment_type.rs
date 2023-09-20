@@ -12,6 +12,7 @@
 /// ```text
 /// # let openzfsdeploymenttype = unimplemented!();
 /// match openzfsdeploymenttype {
+///     OpenZfsDeploymentType::MultiAz1 => { /* ... */ },
 ///     OpenZfsDeploymentType::SingleAz1 => { /* ... */ },
 ///     OpenZfsDeploymentType::SingleAz2 => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -42,6 +43,8 @@
 )]
 pub enum OpenZfsDeploymentType {
     #[allow(missing_docs)] // documentation missing in model
+    MultiAz1,
+    #[allow(missing_docs)] // documentation missing in model
     SingleAz1,
     #[allow(missing_docs)] // documentation missing in model
     SingleAz2,
@@ -51,6 +54,7 @@ pub enum OpenZfsDeploymentType {
 impl ::std::convert::From<&str> for OpenZfsDeploymentType {
     fn from(s: &str) -> Self {
         match s {
+            "MULTI_AZ_1" => OpenZfsDeploymentType::MultiAz1,
             "SINGLE_AZ_1" => OpenZfsDeploymentType::SingleAz1,
             "SINGLE_AZ_2" => OpenZfsDeploymentType::SingleAz2,
             other => OpenZfsDeploymentType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
@@ -68,6 +72,7 @@ impl OpenZfsDeploymentType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            OpenZfsDeploymentType::MultiAz1 => "MULTI_AZ_1",
             OpenZfsDeploymentType::SingleAz1 => "SINGLE_AZ_1",
             OpenZfsDeploymentType::SingleAz2 => "SINGLE_AZ_2",
             OpenZfsDeploymentType::Unknown(value) => value.as_str(),
@@ -75,7 +80,7 @@ impl OpenZfsDeploymentType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["SINGLE_AZ_1", "SINGLE_AZ_2"]
+        &["MULTI_AZ_1", "SINGLE_AZ_1", "SINGLE_AZ_2"]
     }
 }
 impl ::std::convert::AsRef<str> for OpenZfsDeploymentType {

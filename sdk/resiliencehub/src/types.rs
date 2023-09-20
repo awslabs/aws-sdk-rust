@@ -25,6 +25,16 @@ pub use crate::types::_logical_resource_id::LogicalResourceId;
 
 pub use crate::types::_app::App;
 
+pub use crate::types::_app_drift_status_type::AppDriftStatusType;
+
+pub use crate::types::_event_subscription::EventSubscription;
+
+pub use crate::types::_event_type::EventType;
+
+pub use crate::types::_permission_model::PermissionModel;
+
+pub use crate::types::_permission_model_type::PermissionModelType;
+
 pub use crate::types::_app_assessment_schedule_type::AppAssessmentScheduleType;
 
 pub use crate::types::_app_compliance_status_type::AppComplianceStatusType;
@@ -32,6 +42,8 @@ pub use crate::types::_app_compliance_status_type::AppComplianceStatusType;
 pub use crate::types::_app_status_type::AppStatusType;
 
 pub use crate::types::_app_assessment::AppAssessment;
+
+pub use crate::types::_drift_status::DriftStatus;
 
 pub use crate::types::_resource_errors_details::ResourceErrorsDetails;
 
@@ -58,6 +70,8 @@ pub use crate::types::_unsupported_resource::UnsupportedResource;
 pub use crate::types::_test_recommendation::TestRecommendation;
 
 pub use crate::types::_recommendation_item::RecommendationItem;
+
+pub use crate::types::_exclude_recommendation_reason::ExcludeRecommendationReason;
 
 pub use crate::types::_test_type::TestType;
 
@@ -107,6 +121,12 @@ pub use crate::types::_app_component_compliance::AppComponentCompliance;
 
 pub use crate::types::_app_assessment_summary::AppAssessmentSummary;
 
+pub use crate::types::_compliance_drift::ComplianceDrift;
+
+pub use crate::types::_difference_type::DifferenceType;
+
+pub use crate::types::_drift_type::DriftType;
+
 pub use crate::types::_alarm_recommendation::AlarmRecommendation;
 
 pub use crate::types::_alarm_type::AlarmType;
@@ -116,6 +136,14 @@ pub use crate::types::_eks_source::EksSource;
 pub use crate::types::_resource_import_status_type::ResourceImportStatusType;
 
 pub use crate::types::_resource_import_strategy_type::ResourceImportStrategyType;
+
+pub use crate::types::_batch_update_recommendation_status_failed_entry::BatchUpdateRecommendationStatusFailedEntry;
+
+pub use crate::types::_batch_update_recommendation_status_successful_entry::BatchUpdateRecommendationStatusSuccessfulEntry;
+
+pub use crate::types::_update_recommendation_status_item::UpdateRecommendationStatusItem;
+
+pub use crate::types::_update_recommendation_status_request_entry::UpdateRecommendationStatusRequestEntry;
 
 mod _alarm_recommendation;
 
@@ -135,6 +163,8 @@ mod _app_component;
 
 mod _app_component_compliance;
 
+mod _app_drift_status_type;
+
 mod _app_input_source;
 
 mod _app_status_type;
@@ -146,6 +176,12 @@ mod _app_version_summary;
 mod _assessment_invoker;
 
 mod _assessment_status;
+
+mod _batch_update_recommendation_status_failed_entry;
+
+mod _batch_update_recommendation_status_successful_entry;
+
+mod _compliance_drift;
 
 mod _compliance_status;
 
@@ -161,9 +197,15 @@ mod _cost_frequency;
 
 mod _data_location_constraint;
 
+mod _difference_type;
+
 mod _disruption_compliance;
 
 mod _disruption_type;
+
+mod _drift_status;
+
+mod _drift_type;
 
 mod _eks_source;
 
@@ -171,11 +213,21 @@ mod _eks_source_cluster_namespace;
 
 mod _estimated_cost_tier;
 
+mod _event_subscription;
+
+mod _event_type;
+
+mod _exclude_recommendation_reason;
+
 mod _failure_policy;
 
 mod _ha_architecture;
 
 mod _logical_resource_id;
+
+mod _permission_model;
+
+mod _permission_model_type;
 
 mod _physical_identifier_type;
 
@@ -234,6 +286,10 @@ mod _test_risk;
 mod _test_type;
 
 mod _unsupported_resource;
+
+mod _update_recommendation_status_item;
+
+mod _update_recommendation_status_request_entry;
 
 /// Builders
 pub mod builders;

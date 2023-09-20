@@ -39,6 +39,15 @@ pub fn ser_recommendation_job_container_config(
     if let Some(var_12) = &input.supported_endpoint_type {
         object.key("SupportedEndpointType").string(var_12.as_str());
     }
+    if let Some(var_13) = &input.supported_response_mime_types {
+        let mut array_14 = object.key("SupportedResponseMIMETypes").start_array();
+        for item_15 in var_13 {
+            {
+                array_14.value().string(item_15.as_str());
+            }
+        }
+        array_14.finish();
+    }
     Ok(())
 }
 
@@ -118,6 +127,11 @@ where
                                     })
                                     .transpose()?,
                             );
+                        }
+                        "SupportedResponseMIMETypes" => {
+                            builder = builder.set_supported_response_mime_types(
+                                    crate::protocol_serde::shape_recommendation_job_supported_response_mime_types::de_recommendation_job_supported_response_mime_types(tokens)?
+                                );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

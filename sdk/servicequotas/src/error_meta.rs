@@ -15,11 +15,11 @@ pub enum Error {
     InvalidPaginationTokenException(crate::types::error::InvalidPaginationTokenException),
     /// <p>The resource is in an invalid state.</p>
     InvalidResourceStateException(crate::types::error::InvalidResourceStateException),
-    /// <p>The account making this call is not a member of an organization.</p>
+    /// <p>The Amazon Web Services account making this call is not a member of an organization.</p>
     NoAvailableOrganizationException(crate::types::error::NoAvailableOrganizationException),
     /// <p>The specified resource does not exist.</p>
     NoSuchResourceException(crate::types::error::NoSuchResourceException),
-    /// <p>The organization that your account belongs to is not in All Features mode.</p>
+    /// <p>The organization that your Amazon Web Services account belongs to is not in All Features mode.</p>
     OrganizationNotInAllFeaturesModeException(crate::types::error::OrganizationNotInAllFeaturesModeException),
     /// <p>You have exceeded your service quota. To perform the requested action, remove some of the relevant resources, or use Service Quotas to request a service quota increase.</p>
     QuotaExceededException(crate::types::error::QuotaExceededException),
@@ -31,7 +31,7 @@ pub enum Error {
     ServiceQuotaTemplateNotInUseException(crate::types::error::ServiceQuotaTemplateNotInUseException),
     /// <p>The specified tag is a reserved word and cannot be used.</p>
     TagPolicyViolationException(crate::types::error::TagPolicyViolationException),
-    /// <p>The Service Quotas template is not available in this AWS Region.</p>
+    /// <p>The Service Quotas template is not available in this Amazon Web Services Region.</p>
     TemplatesNotAvailableInRegionException(crate::types::error::TemplatesNotAvailableInRegionException),
     /// <p>Due to throttling, the request was denied. Slow down the rate of request calls, or request an increase for this quota.</p>
     TooManyRequestsException(crate::types::error::TooManyRequestsException),

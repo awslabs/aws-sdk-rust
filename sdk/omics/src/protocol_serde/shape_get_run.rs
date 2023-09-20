@@ -246,6 +246,13 @@ pub(crate) fn de_get_run(
                 "resourceDigests" => {
                     builder = builder.set_resource_digests(crate::protocol_serde::shape_run_resource_digests::de_run_resource_digests(tokens)?);
                 }
+                "retentionMode" => {
+                    builder = builder.set_retention_mode(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::RunRetentionMode::from(u.as_ref())))
+                            .transpose()?,
+                    );
+                }
                 "roleArn" => {
                     builder = builder.set_role_arn(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

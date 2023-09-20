@@ -23,7 +23,7 @@ impl DetachTrafficSourcesInputBuilder {
 /// Fluent builder constructing a request to `DetachTrafficSources`.
 ///
 /// <p>Detaches one or more traffic sources from the specified Auto Scaling group.</p>
-/// <p>When you detach a taffic, it enters the <code>Removing</code> state while deregistering the instances in the group. When all instances are deregistered, then you can no longer describe the traffic source using the <code>DescribeTrafficSources</code> API call. The instances continue to run.</p>
+/// <p>When you detach a traffic source, it enters the <code>Removing</code> state while deregistering the instances in the group. When all instances are deregistered, then you can no longer describe the traffic source using the <code>DescribeTrafficSources</code> API call. The instances continue to run.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DetachTrafficSourcesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

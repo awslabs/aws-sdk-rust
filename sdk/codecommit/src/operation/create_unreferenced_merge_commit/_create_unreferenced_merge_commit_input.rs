@@ -22,7 +22,7 @@ pub struct CreateUnreferencedMergeCommitInput {
     /// <p>The commit message for the unreferenced commit.</p>
     pub commit_message: ::std::option::Option<::std::string::String>,
     /// <p>If the commit contains deletions, whether to keep a folder or folder structure if the changes leave the folders empty. If this is specified as true, a .gitkeep file is created for empty folders. The default is false.</p>
-    pub keep_empty_folders: bool,
+    pub keep_empty_folders: ::std::option::Option<bool>,
     /// <p>If AUTOMERGE is the conflict resolution strategy, a list of inputs to use when resolving conflicts during a merge.</p>
     pub conflict_resolution: ::std::option::Option<crate::types::ConflictResolution>,
 }
@@ -64,7 +64,7 @@ impl CreateUnreferencedMergeCommitInput {
         self.commit_message.as_deref()
     }
     /// <p>If the commit contains deletions, whether to keep a folder or folder structure if the changes leave the folders empty. If this is specified as true, a .gitkeep file is created for empty folders. The default is false.</p>
-    pub fn keep_empty_folders(&self) -> bool {
+    pub fn keep_empty_folders(&self) -> ::std::option::Option<bool> {
         self.keep_empty_folders
     }
     /// <p>If AUTOMERGE is the conflict resolution strategy, a list of inputs to use when resolving conflicts during a merge.</p>
@@ -267,7 +267,7 @@ impl CreateUnreferencedMergeCommitInputBuilder {
             author_name: self.author_name,
             email: self.email,
             commit_message: self.commit_message,
-            keep_empty_folders: self.keep_empty_folders.unwrap_or_default(),
+            keep_empty_folders: self.keep_empty_folders,
             conflict_resolution: self.conflict_resolution,
         })
     }

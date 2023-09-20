@@ -12,6 +12,10 @@ pub struct CoverageEksClusterDetails {
     pub compatible_nodes: i64,
     /// <p>Information about the installed EKS add-on.</p>
     pub addon_details: ::std::option::Option<crate::types::AddonDetails>,
+    /// <p>Indicates how the Amazon EKS add-on GuardDuty agent is managed for this EKS cluster.</p>
+    /// <p> <code>AUTO_MANAGED</code> indicates GuardDuty deploys and manages updates for this resource.</p>
+    /// <p> <code>MANUAL</code> indicates that you are responsible to deploy, update, and manage the Amazon EKS add-on GuardDuty agent for this resource.</p>
+    pub management_type: ::std::option::Option<crate::types::ManagementType>,
 }
 impl CoverageEksClusterDetails {
     /// <p>Name of the EKS cluster.</p>
@@ -30,6 +34,12 @@ impl CoverageEksClusterDetails {
     pub fn addon_details(&self) -> ::std::option::Option<&crate::types::AddonDetails> {
         self.addon_details.as_ref()
     }
+    /// <p>Indicates how the Amazon EKS add-on GuardDuty agent is managed for this EKS cluster.</p>
+    /// <p> <code>AUTO_MANAGED</code> indicates GuardDuty deploys and manages updates for this resource.</p>
+    /// <p> <code>MANUAL</code> indicates that you are responsible to deploy, update, and manage the Amazon EKS add-on GuardDuty agent for this resource.</p>
+    pub fn management_type(&self) -> ::std::option::Option<&crate::types::ManagementType> {
+        self.management_type.as_ref()
+    }
 }
 impl CoverageEksClusterDetails {
     /// Creates a new builder-style object to manufacture [`CoverageEksClusterDetails`](crate::types::CoverageEksClusterDetails).
@@ -46,6 +56,7 @@ pub struct CoverageEksClusterDetailsBuilder {
     pub(crate) covered_nodes: ::std::option::Option<i64>,
     pub(crate) compatible_nodes: ::std::option::Option<i64>,
     pub(crate) addon_details: ::std::option::Option<crate::types::AddonDetails>,
+    pub(crate) management_type: ::std::option::Option<crate::types::ManagementType>,
 }
 impl CoverageEksClusterDetailsBuilder {
     /// <p>Name of the EKS cluster.</p>
@@ -104,6 +115,26 @@ impl CoverageEksClusterDetailsBuilder {
     pub fn get_addon_details(&self) -> &::std::option::Option<crate::types::AddonDetails> {
         &self.addon_details
     }
+    /// <p>Indicates how the Amazon EKS add-on GuardDuty agent is managed for this EKS cluster.</p>
+    /// <p> <code>AUTO_MANAGED</code> indicates GuardDuty deploys and manages updates for this resource.</p>
+    /// <p> <code>MANUAL</code> indicates that you are responsible to deploy, update, and manage the Amazon EKS add-on GuardDuty agent for this resource.</p>
+    pub fn management_type(mut self, input: crate::types::ManagementType) -> Self {
+        self.management_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates how the Amazon EKS add-on GuardDuty agent is managed for this EKS cluster.</p>
+    /// <p> <code>AUTO_MANAGED</code> indicates GuardDuty deploys and manages updates for this resource.</p>
+    /// <p> <code>MANUAL</code> indicates that you are responsible to deploy, update, and manage the Amazon EKS add-on GuardDuty agent for this resource.</p>
+    pub fn set_management_type(mut self, input: ::std::option::Option<crate::types::ManagementType>) -> Self {
+        self.management_type = input;
+        self
+    }
+    /// <p>Indicates how the Amazon EKS add-on GuardDuty agent is managed for this EKS cluster.</p>
+    /// <p> <code>AUTO_MANAGED</code> indicates GuardDuty deploys and manages updates for this resource.</p>
+    /// <p> <code>MANUAL</code> indicates that you are responsible to deploy, update, and manage the Amazon EKS add-on GuardDuty agent for this resource.</p>
+    pub fn get_management_type(&self) -> &::std::option::Option<crate::types::ManagementType> {
+        &self.management_type
+    }
     /// Consumes the builder and constructs a [`CoverageEksClusterDetails`](crate::types::CoverageEksClusterDetails).
     pub fn build(self) -> crate::types::CoverageEksClusterDetails {
         crate::types::CoverageEksClusterDetails {
@@ -111,6 +142,7 @@ impl CoverageEksClusterDetailsBuilder {
             covered_nodes: self.covered_nodes.unwrap_or_default(),
             compatible_nodes: self.compatible_nodes.unwrap_or_default(),
             addon_details: self.addon_details,
+            management_type: self.management_type,
         }
     }
 }

@@ -10,7 +10,7 @@ pub struct CreateSimulationJobInput {
     /// <p>The logging configuration.</p>
     pub logging_config: ::std::option::Option<crate::types::LoggingConfig>,
     /// <p>The maximum simulation job duration in seconds (up to 14 days or 1,209,600 seconds. When <code>maxJobDurationInSeconds</code> is reached, the simulation job will status will transition to <code>Completed</code>.</p>
-    pub max_job_duration_in_seconds: i64,
+    pub max_job_duration_in_seconds: ::std::option::Option<i64>,
     /// <p>The IAM role name that allows the simulation instance to call the AWS APIs that are specified in its associated policies on your behalf. This is how credentials are passed in to your simulation job. </p>
     pub iam_role: ::std::option::Option<::std::string::String>,
     /// <p>The failure behavior the simulation job.</p>
@@ -58,7 +58,7 @@ impl CreateSimulationJobInput {
         self.logging_config.as_ref()
     }
     /// <p>The maximum simulation job duration in seconds (up to 14 days or 1,209,600 seconds. When <code>maxJobDurationInSeconds</code> is reached, the simulation job will status will transition to <code>Completed</code>.</p>
-    pub fn max_job_duration_in_seconds(&self) -> i64 {
+    pub fn max_job_duration_in_seconds(&self) -> ::std::option::Option<i64> {
         self.max_job_duration_in_seconds
     }
     /// <p>The IAM role name that allows the simulation instance to call the AWS APIs that are specified in its associated policies on your behalf. This is how credentials are passed in to your simulation job. </p>
@@ -384,7 +384,7 @@ impl CreateSimulationJobInputBuilder {
             client_request_token: self.client_request_token,
             output_location: self.output_location,
             logging_config: self.logging_config,
-            max_job_duration_in_seconds: self.max_job_duration_in_seconds.unwrap_or_default(),
+            max_job_duration_in_seconds: self.max_job_duration_in_seconds,
             iam_role: self.iam_role,
             failure_behavior: self.failure_behavior,
             robot_applications: self.robot_applications,

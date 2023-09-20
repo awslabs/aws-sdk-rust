@@ -243,4 +243,62 @@ impl CreateUserSettingsFluentBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }
+    /// <p>The configuration that specifies which cookies should be synchronized from the end user's local browser to the remote browser.</p>
+    pub fn cookie_synchronization_configuration(mut self, input: crate::types::CookieSynchronizationConfiguration) -> Self {
+        self.inner = self.inner.cookie_synchronization_configuration(input);
+        self
+    }
+    /// <p>The configuration that specifies which cookies should be synchronized from the end user's local browser to the remote browser.</p>
+    pub fn set_cookie_synchronization_configuration(
+        mut self,
+        input: ::std::option::Option<crate::types::CookieSynchronizationConfiguration>,
+    ) -> Self {
+        self.inner = self.inner.set_cookie_synchronization_configuration(input);
+        self
+    }
+    /// <p>The configuration that specifies which cookies should be synchronized from the end user's local browser to the remote browser.</p>
+    pub fn get_cookie_synchronization_configuration(&self) -> &::std::option::Option<crate::types::CookieSynchronizationConfiguration> {
+        self.inner.get_cookie_synchronization_configuration()
+    }
+    /// <p>The customer managed key used to encrypt sensitive information in the user settings.</p>
+    pub fn customer_managed_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.customer_managed_key(input.into());
+        self
+    }
+    /// <p>The customer managed key used to encrypt sensitive information in the user settings.</p>
+    pub fn set_customer_managed_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_customer_managed_key(input);
+        self
+    }
+    /// <p>The customer managed key used to encrypt sensitive information in the user settings.</p>
+    pub fn get_customer_managed_key(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_customer_managed_key()
+    }
+    /// Adds a key-value pair to `additionalEncryptionContext`.
+    ///
+    /// To override the contents of this collection use [`set_additional_encryption_context`](Self::set_additional_encryption_context).
+    ///
+    /// <p>The additional encryption context of the user settings.</p>
+    pub fn additional_encryption_context(
+        mut self,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.inner = self.inner.additional_encryption_context(k.into(), v.into());
+        self
+    }
+    /// <p>The additional encryption context of the user settings.</p>
+    pub fn set_additional_encryption_context(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    ) -> Self {
+        self.inner = self.inner.set_additional_encryption_context(input);
+        self
+    }
+    /// <p>The additional encryption context of the user settings.</p>
+    pub fn get_additional_encryption_context(
+        &self,
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.inner.get_additional_encryption_context()
+    }
 }

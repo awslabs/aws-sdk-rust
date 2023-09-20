@@ -10,7 +10,7 @@ pub struct AssociateCreatedArtifactInput {
     /// <p>An ARN of the AWS resource related to the migration (e.g., AMI, EC2 instance, RDS instance, etc.) </p>
     pub created_artifact: ::std::option::Option<crate::types::CreatedArtifact>,
     /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
-    pub dry_run: bool,
+    pub dry_run: ::std::option::Option<bool>,
 }
 impl AssociateCreatedArtifactInput {
     /// <p>The name of the ProgressUpdateStream. </p>
@@ -26,7 +26,7 @@ impl AssociateCreatedArtifactInput {
         self.created_artifact.as_ref()
     }
     /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
-    pub fn dry_run(&self) -> bool {
+    pub fn dry_run(&self) -> ::std::option::Option<bool> {
         self.dry_run
     }
 }
@@ -114,7 +114,7 @@ impl AssociateCreatedArtifactInputBuilder {
             progress_update_stream: self.progress_update_stream,
             migration_task_name: self.migration_task_name,
             created_artifact: self.created_artifact,
-            dry_run: self.dry_run.unwrap_or_default(),
+            dry_run: self.dry_run,
         })
     }
 }

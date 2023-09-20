@@ -9,6 +9,8 @@ pub use crate::types::_request_throttled_exception_reason::RequestThrottledExcep
 
 pub use crate::types::_access_denied_exception_reason::AccessDeniedExceptionReason;
 
+pub use crate::types::_sse_type::SseType;
+
 pub use crate::types::_tag::Tag;
 
 pub use crate::types::_status::Status;
@@ -36,6 +38,8 @@ mod _request_throttled_exception_reason;
 mod _resource_not_found_exception_reason;
 
 mod _service_quota_exceeded_exception_reason;
+
+mod _sse_type;
 
 mod _status;
 

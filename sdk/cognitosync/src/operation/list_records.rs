@@ -236,12 +236,14 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for ListRecords
                         query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(&inner_5));
                     }
                 }
-                if _input.max_results != 0 {
-                    query.push_kv("maxResults", ::aws_smithy_types::primitive::Encoder::from(_input.max_results).encode());
+                if let ::std::option::Option::Some(inner_6) = &_input.max_results {
+                    if *inner_6 != 0 {
+                        query.push_kv("maxResults", ::aws_smithy_types::primitive::Encoder::from(*inner_6).encode());
+                    }
                 }
-                if let ::std::option::Option::Some(inner_6) = &_input.sync_session_token {
+                if let ::std::option::Option::Some(inner_7) = &_input.sync_session_token {
                     {
-                        query.push_kv("syncSessionToken", &::aws_smithy_http::query::fmt_string(&inner_6));
+                        query.push_kv("syncSessionToken", &::aws_smithy_http::query::fmt_string(&inner_7));
                     }
                 }
                 ::std::result::Result::Ok(())

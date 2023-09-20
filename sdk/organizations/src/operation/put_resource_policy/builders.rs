@@ -111,17 +111,17 @@ impl PutResourcePolicyFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>If provided, the new content for the resource policy. The text must be correctly formatted JSON that complies with the syntax for the resource policy's type. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_scp-syntax.html">Service Control Policy Syntax</a> in the <i>Organizations User Guide.</i> </p>
+    /// <p>If provided, the new content for the resource policy. The text must be correctly formatted JSON that complies with the syntax for the resource policy's type. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scps_syntax.html">SCP syntax</a> in the <i>Organizations User Guide</i>.</p>
     pub fn content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.content(input.into());
         self
     }
-    /// <p>If provided, the new content for the resource policy. The text must be correctly formatted JSON that complies with the syntax for the resource policy's type. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_scp-syntax.html">Service Control Policy Syntax</a> in the <i>Organizations User Guide.</i> </p>
+    /// <p>If provided, the new content for the resource policy. The text must be correctly formatted JSON that complies with the syntax for the resource policy's type. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scps_syntax.html">SCP syntax</a> in the <i>Organizations User Guide</i>.</p>
     pub fn set_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_content(input);
         self
     }
-    /// <p>If provided, the new content for the resource policy. The text must be correctly formatted JSON that complies with the syntax for the resource policy's type. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_scp-syntax.html">Service Control Policy Syntax</a> in the <i>Organizations User Guide.</i> </p>
+    /// <p>If provided, the new content for the resource policy. The text must be correctly formatted JSON that complies with the syntax for the resource policy's type. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scps_syntax.html">SCP syntax</a> in the <i>Organizations User Guide</i>.</p>
     pub fn get_content(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_content()
     }

@@ -3,7 +3,7 @@
 /// <p>A structure that contains details about a static policy. It includes the description and policy statement.</p>
 /// <p>This data type is used within a <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_PolicyDefinition.html">PolicyDefinition</a> structure as part of a request parameter for the <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_CreatePolicy.html">CreatePolicy</a> operation.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct StaticPolicyDefinitionItem {
     /// <p>A description of the static policy.</p>
     pub description: ::std::option::Option<::std::string::String>,
@@ -12,6 +12,13 @@ impl StaticPolicyDefinitionItem {
     /// <p>A description of the static policy.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
+    }
+}
+impl ::std::fmt::Debug for StaticPolicyDefinitionItem {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("StaticPolicyDefinitionItem");
+        formatter.field("description", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }
 impl StaticPolicyDefinitionItem {
@@ -23,7 +30,7 @@ impl StaticPolicyDefinitionItem {
 
 /// A builder for [`StaticPolicyDefinitionItem`](crate::types::StaticPolicyDefinitionItem).
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct StaticPolicyDefinitionItemBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
 }
@@ -47,5 +54,12 @@ impl StaticPolicyDefinitionItemBuilder {
         crate::types::StaticPolicyDefinitionItem {
             description: self.description,
         }
+    }
+}
+impl ::std::fmt::Debug for StaticPolicyDefinitionItemBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("StaticPolicyDefinitionItemBuilder");
+        formatter.field("description", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

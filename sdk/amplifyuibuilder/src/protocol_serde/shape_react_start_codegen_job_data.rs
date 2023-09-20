@@ -18,6 +18,12 @@ pub fn ser_react_start_codegen_job_data(
     if input.inline_source_map {
         object.key("inlineSourceMap").boolean(input.inline_source_map);
     }
+    if let Some(var_4) = &input.api_configuration {
+        #[allow(unused_mut)]
+        let mut object_5 = object.key("apiConfiguration").start_object();
+        crate::protocol_serde::shape_api_configuration::ser_api_configuration(&mut object_5, var_4)?;
+        object_5.finish();
+    }
     Ok(())
 }
 
@@ -63,6 +69,9 @@ where
                         }
                         "inlineSourceMap" => {
                             builder = builder.set_inline_source_map(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
+                        "apiConfiguration" => {
+                            builder = builder.set_api_configuration(crate::protocol_serde::shape_api_configuration::de_api_configuration(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -10,6 +10,10 @@ pub struct InputDeviceConfigurableSettings {
     pub max_bitrate: ::std::option::Option<i32>,
     /// The Link device's buffer size (latency) in milliseconds (ms).
     pub latency_ms: ::std::option::Option<i32>,
+    /// Choose the codec for the video that the device produces. Only UHD devices can specify this parameter.
+    pub codec: ::std::option::Option<crate::types::InputDeviceCodec>,
+    /// To attach this device to a MediaConnect flow, specify these parameters. To detach an existing flow, enter {} for the value of mediaconnectSettings. Only UHD devices can specify this parameter.
+    pub mediaconnect_settings: ::std::option::Option<crate::types::InputDeviceMediaConnectConfigurableSettings>,
 }
 impl InputDeviceConfigurableSettings {
     /// The input source that you want to use. If the device has a source connected to only one of its input ports, or if you don't care which source the device sends, specify Auto. If the device has sources connected to both its input ports, and you want to use a specific source, specify the source.
@@ -23,6 +27,14 @@ impl InputDeviceConfigurableSettings {
     /// The Link device's buffer size (latency) in milliseconds (ms).
     pub fn latency_ms(&self) -> ::std::option::Option<i32> {
         self.latency_ms
+    }
+    /// Choose the codec for the video that the device produces. Only UHD devices can specify this parameter.
+    pub fn codec(&self) -> ::std::option::Option<&crate::types::InputDeviceCodec> {
+        self.codec.as_ref()
+    }
+    /// To attach this device to a MediaConnect flow, specify these parameters. To detach an existing flow, enter {} for the value of mediaconnectSettings. Only UHD devices can specify this parameter.
+    pub fn mediaconnect_settings(&self) -> ::std::option::Option<&crate::types::InputDeviceMediaConnectConfigurableSettings> {
+        self.mediaconnect_settings.as_ref()
     }
 }
 impl InputDeviceConfigurableSettings {
@@ -39,6 +51,8 @@ pub struct InputDeviceConfigurableSettingsBuilder {
     pub(crate) configured_input: ::std::option::Option<crate::types::InputDeviceConfiguredInput>,
     pub(crate) max_bitrate: ::std::option::Option<i32>,
     pub(crate) latency_ms: ::std::option::Option<i32>,
+    pub(crate) codec: ::std::option::Option<crate::types::InputDeviceCodec>,
+    pub(crate) mediaconnect_settings: ::std::option::Option<crate::types::InputDeviceMediaConnectConfigurableSettings>,
 }
 impl InputDeviceConfigurableSettingsBuilder {
     /// The input source that you want to use. If the device has a source connected to only one of its input ports, or if you don't care which source the device sends, specify Auto. If the device has sources connected to both its input ports, and you want to use a specific source, specify the source.
@@ -83,12 +97,42 @@ impl InputDeviceConfigurableSettingsBuilder {
     pub fn get_latency_ms(&self) -> &::std::option::Option<i32> {
         &self.latency_ms
     }
+    /// Choose the codec for the video that the device produces. Only UHD devices can specify this parameter.
+    pub fn codec(mut self, input: crate::types::InputDeviceCodec) -> Self {
+        self.codec = ::std::option::Option::Some(input);
+        self
+    }
+    /// Choose the codec for the video that the device produces. Only UHD devices can specify this parameter.
+    pub fn set_codec(mut self, input: ::std::option::Option<crate::types::InputDeviceCodec>) -> Self {
+        self.codec = input;
+        self
+    }
+    /// Choose the codec for the video that the device produces. Only UHD devices can specify this parameter.
+    pub fn get_codec(&self) -> &::std::option::Option<crate::types::InputDeviceCodec> {
+        &self.codec
+    }
+    /// To attach this device to a MediaConnect flow, specify these parameters. To detach an existing flow, enter {} for the value of mediaconnectSettings. Only UHD devices can specify this parameter.
+    pub fn mediaconnect_settings(mut self, input: crate::types::InputDeviceMediaConnectConfigurableSettings) -> Self {
+        self.mediaconnect_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// To attach this device to a MediaConnect flow, specify these parameters. To detach an existing flow, enter {} for the value of mediaconnectSettings. Only UHD devices can specify this parameter.
+    pub fn set_mediaconnect_settings(mut self, input: ::std::option::Option<crate::types::InputDeviceMediaConnectConfigurableSettings>) -> Self {
+        self.mediaconnect_settings = input;
+        self
+    }
+    /// To attach this device to a MediaConnect flow, specify these parameters. To detach an existing flow, enter {} for the value of mediaconnectSettings. Only UHD devices can specify this parameter.
+    pub fn get_mediaconnect_settings(&self) -> &::std::option::Option<crate::types::InputDeviceMediaConnectConfigurableSettings> {
+        &self.mediaconnect_settings
+    }
     /// Consumes the builder and constructs a [`InputDeviceConfigurableSettings`](crate::types::InputDeviceConfigurableSettings).
     pub fn build(self) -> crate::types::InputDeviceConfigurableSettings {
         crate::types::InputDeviceConfigurableSettings {
             configured_input: self.configured_input,
             max_bitrate: self.max_bitrate,
             latency_ms: self.latency_ms,
+            codec: self.codec,
+            mediaconnect_settings: self.mediaconnect_settings,
         }
     }
 }

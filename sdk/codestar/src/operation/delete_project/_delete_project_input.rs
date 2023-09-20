@@ -8,7 +8,7 @@ pub struct DeleteProjectInput {
     /// <p>A user- or system-generated token that identifies the entity that requested project deletion. This token can be used to repeat the request. </p>
     pub client_request_token: ::std::option::Option<::std::string::String>,
     /// <p>Whether to send a delete request for the primary stack in AWS CloudFormation originally used to generate the project and its resources. This option will delete all AWS resources for the project (except for any buckets in Amazon S3) as well as deleting the project itself. Recommended for most use cases.</p>
-    pub delete_stack: bool,
+    pub delete_stack: ::std::option::Option<bool>,
 }
 impl DeleteProjectInput {
     /// <p>The ID of the project to be deleted in AWS CodeStar.</p>
@@ -20,7 +20,7 @@ impl DeleteProjectInput {
         self.client_request_token.as_deref()
     }
     /// <p>Whether to send a delete request for the primary stack in AWS CloudFormation originally used to generate the project and its resources. This option will delete all AWS resources for the project (except for any buckets in Amazon S3) as well as deleting the project itself. Recommended for most use cases.</p>
-    pub fn delete_stack(&self) -> bool {
+    pub fn delete_stack(&self) -> ::std::option::Option<bool> {
         self.delete_stack
     }
 }
@@ -89,7 +89,7 @@ impl DeleteProjectInputBuilder {
         ::std::result::Result::Ok(crate::operation::delete_project::DeleteProjectInput {
             id: self.id,
             client_request_token: self.client_request_token,
-            delete_stack: self.delete_stack.unwrap_or_default(),
+            delete_stack: self.delete_stack,
         })
     }
 }

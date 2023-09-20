@@ -161,17 +161,17 @@ impl UpdateFirewallPolicyFluentBuilder {
     pub fn get_firewall_policy_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_firewall_policy_name()
     }
-    /// <p>The updated firewall policy to use for the firewall. </p>
+    /// <p>The updated firewall policy to use for the firewall. You can't add or remove a <code>TLSInspectionConfiguration</code> after you create a firewall policy. However, you can replace an existing TLS inspection configuration with another <code>TLSInspectionConfiguration</code>.</p>
     pub fn firewall_policy(mut self, input: crate::types::FirewallPolicy) -> Self {
         self.inner = self.inner.firewall_policy(input);
         self
     }
-    /// <p>The updated firewall policy to use for the firewall. </p>
+    /// <p>The updated firewall policy to use for the firewall. You can't add or remove a <code>TLSInspectionConfiguration</code> after you create a firewall policy. However, you can replace an existing TLS inspection configuration with another <code>TLSInspectionConfiguration</code>.</p>
     pub fn set_firewall_policy(mut self, input: ::std::option::Option<crate::types::FirewallPolicy>) -> Self {
         self.inner = self.inner.set_firewall_policy(input);
         self
     }
-    /// <p>The updated firewall policy to use for the firewall. </p>
+    /// <p>The updated firewall policy to use for the firewall. You can't add or remove a <code>TLSInspectionConfiguration</code> after you create a firewall policy. However, you can replace an existing TLS inspection configuration with another <code>TLSInspectionConfiguration</code>.</p>
     pub fn get_firewall_policy(&self) -> &::std::option::Option<crate::types::FirewallPolicy> {
         self.inner.get_firewall_policy()
     }

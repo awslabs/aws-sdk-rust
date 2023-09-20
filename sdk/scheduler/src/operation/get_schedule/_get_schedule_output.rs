@@ -12,7 +12,7 @@ pub struct GetScheduleOutput {
     /// <p> The expression that defines when the schedule runs. The following formats are supported. </p>
     /// <ul>
     /// <li> <p> <code>at</code> expression - <code>at(yyyy-mm-ddThh:mm:ss)</code> </p> </li>
-    /// <li> <p> <code>rate</code> expression - <code>rate(unit value)</code> </p> </li>
+    /// <li> <p> <code>rate</code> expression - <code>rate(value unit)</code> </p> </li>
     /// <li> <p> <code>cron</code> expression - <code>cron(fields)</code> </p> </li>
     /// </ul>
     /// <p> You can use <code>at</code> expressions to create one-time schedules that invoke a target once, at the time and in the time zone, that you specify. You can use <code>rate</code> and <code>cron</code> expressions to create recurring schedules. Rate-based schedules are useful when you want to invoke a target at regular intervals, such as every 15 minutes or every five days. Cron-based schedules are useful when you want to invoke a target periodically at a specific time, such as at 8:00 am (UTC+0) every 1st day of the month. </p>
@@ -40,6 +40,8 @@ pub struct GetScheduleOutput {
     pub target: ::std::option::Option<crate::types::Target>,
     /// <p>Allows you to configure a time window during which EventBridge Scheduler invokes the schedule.</p>
     pub flexible_time_window: ::std::option::Option<crate::types::FlexibleTimeWindow>,
+    /// <p>Indicates the action that EventBridge Scheduler applies to the schedule after the schedule completes invoking the target.</p>
+    pub action_after_completion: ::std::option::Option<crate::types::ActionAfterCompletion>,
     _request_id: Option<String>,
 }
 impl GetScheduleOutput {
@@ -58,7 +60,7 @@ impl GetScheduleOutput {
     /// <p> The expression that defines when the schedule runs. The following formats are supported. </p>
     /// <ul>
     /// <li> <p> <code>at</code> expression - <code>at(yyyy-mm-ddThh:mm:ss)</code> </p> </li>
-    /// <li> <p> <code>rate</code> expression - <code>rate(unit value)</code> </p> </li>
+    /// <li> <p> <code>rate</code> expression - <code>rate(value unit)</code> </p> </li>
     /// <li> <p> <code>cron</code> expression - <code>cron(fields)</code> </p> </li>
     /// </ul>
     /// <p> You can use <code>at</code> expressions to create one-time schedules that invoke a target once, at the time and in the time zone, that you specify. You can use <code>rate</code> and <code>cron</code> expressions to create recurring schedules. Rate-based schedules are useful when you want to invoke a target at regular intervals, such as every 15 minutes or every five days. Cron-based schedules are useful when you want to invoke a target periodically at a specific time, such as at 8:00 am (UTC+0) every 1st day of the month. </p>
@@ -108,6 +110,10 @@ impl GetScheduleOutput {
     pub fn flexible_time_window(&self) -> ::std::option::Option<&crate::types::FlexibleTimeWindow> {
         self.flexible_time_window.as_ref()
     }
+    /// <p>Indicates the action that EventBridge Scheduler applies to the schedule after the schedule completes invoking the target.</p>
+    pub fn action_after_completion(&self) -> ::std::option::Option<&crate::types::ActionAfterCompletion> {
+        self.action_after_completion.as_ref()
+    }
 }
 impl ::aws_http::request_id::RequestId for GetScheduleOutput {
     fn request_id(&self) -> Option<&str> {
@@ -139,6 +145,7 @@ pub struct GetScheduleOutputBuilder {
     pub(crate) kms_key_arn: ::std::option::Option<::std::string::String>,
     pub(crate) target: ::std::option::Option<crate::types::Target>,
     pub(crate) flexible_time_window: ::std::option::Option<crate::types::FlexibleTimeWindow>,
+    pub(crate) action_after_completion: ::std::option::Option<crate::types::ActionAfterCompletion>,
     _request_id: Option<String>,
 }
 impl GetScheduleOutputBuilder {
@@ -187,7 +194,7 @@ impl GetScheduleOutputBuilder {
     /// <p> The expression that defines when the schedule runs. The following formats are supported. </p>
     /// <ul>
     /// <li> <p> <code>at</code> expression - <code>at(yyyy-mm-ddThh:mm:ss)</code> </p> </li>
-    /// <li> <p> <code>rate</code> expression - <code>rate(unit value)</code> </p> </li>
+    /// <li> <p> <code>rate</code> expression - <code>rate(value unit)</code> </p> </li>
     /// <li> <p> <code>cron</code> expression - <code>cron(fields)</code> </p> </li>
     /// </ul>
     /// <p> You can use <code>at</code> expressions to create one-time schedules that invoke a target once, at the time and in the time zone, that you specify. You can use <code>rate</code> and <code>cron</code> expressions to create recurring schedules. Rate-based schedules are useful when you want to invoke a target at regular intervals, such as every 15 minutes or every five days. Cron-based schedules are useful when you want to invoke a target periodically at a specific time, such as at 8:00 am (UTC+0) every 1st day of the month. </p>
@@ -201,7 +208,7 @@ impl GetScheduleOutputBuilder {
     /// <p> The expression that defines when the schedule runs. The following formats are supported. </p>
     /// <ul>
     /// <li> <p> <code>at</code> expression - <code>at(yyyy-mm-ddThh:mm:ss)</code> </p> </li>
-    /// <li> <p> <code>rate</code> expression - <code>rate(unit value)</code> </p> </li>
+    /// <li> <p> <code>rate</code> expression - <code>rate(value unit)</code> </p> </li>
     /// <li> <p> <code>cron</code> expression - <code>cron(fields)</code> </p> </li>
     /// </ul>
     /// <p> You can use <code>at</code> expressions to create one-time schedules that invoke a target once, at the time and in the time zone, that you specify. You can use <code>rate</code> and <code>cron</code> expressions to create recurring schedules. Rate-based schedules are useful when you want to invoke a target at regular intervals, such as every 15 minutes or every five days. Cron-based schedules are useful when you want to invoke a target periodically at a specific time, such as at 8:00 am (UTC+0) every 1st day of the month. </p>
@@ -215,7 +222,7 @@ impl GetScheduleOutputBuilder {
     /// <p> The expression that defines when the schedule runs. The following formats are supported. </p>
     /// <ul>
     /// <li> <p> <code>at</code> expression - <code>at(yyyy-mm-ddThh:mm:ss)</code> </p> </li>
-    /// <li> <p> <code>rate</code> expression - <code>rate(unit value)</code> </p> </li>
+    /// <li> <p> <code>rate</code> expression - <code>rate(value unit)</code> </p> </li>
     /// <li> <p> <code>cron</code> expression - <code>cron(fields)</code> </p> </li>
     /// </ul>
     /// <p> You can use <code>at</code> expressions to create one-time schedules that invoke a target once, at the time and in the time zone, that you specify. You can use <code>rate</code> and <code>cron</code> expressions to create recurring schedules. Rate-based schedules are useful when you want to invoke a target at regular intervals, such as every 15 minutes or every five days. Cron-based schedules are useful when you want to invoke a target periodically at a specific time, such as at 8:00 am (UTC+0) every 1st day of the month. </p>
@@ -365,6 +372,20 @@ impl GetScheduleOutputBuilder {
     pub fn get_flexible_time_window(&self) -> &::std::option::Option<crate::types::FlexibleTimeWindow> {
         &self.flexible_time_window
     }
+    /// <p>Indicates the action that EventBridge Scheduler applies to the schedule after the schedule completes invoking the target.</p>
+    pub fn action_after_completion(mut self, input: crate::types::ActionAfterCompletion) -> Self {
+        self.action_after_completion = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates the action that EventBridge Scheduler applies to the schedule after the schedule completes invoking the target.</p>
+    pub fn set_action_after_completion(mut self, input: ::std::option::Option<crate::types::ActionAfterCompletion>) -> Self {
+        self.action_after_completion = input;
+        self
+    }
+    /// <p>Indicates the action that EventBridge Scheduler applies to the schedule after the schedule completes invoking the target.</p>
+    pub fn get_action_after_completion(&self) -> &::std::option::Option<crate::types::ActionAfterCompletion> {
+        &self.action_after_completion
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -391,6 +412,7 @@ impl GetScheduleOutputBuilder {
             kms_key_arn: self.kms_key_arn,
             target: self.target,
             flexible_time_window: self.flexible_time_window,
+            action_after_completion: self.action_after_completion,
             _request_id: self._request_id,
         }
     }

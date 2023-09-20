@@ -19,7 +19,7 @@ pub struct CreateStorediScsiVolumeInput {
     pub snapshot_id: ::std::option::Option<::std::string::String>,
     /// <p>Set to <code>true</code> if you want to preserve the data on the local disk. Otherwise, set to <code>false</code> to create an empty volume.</p>
     /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
-    pub preserve_existing_data: bool,
+    pub preserve_existing_data: ::std::option::Option<bool>,
     /// <p>The name of the iSCSI target used by an initiator to connect to a volume and used as a suffix for the target ARN. For example, specifying <code>TargetName</code> as <i>myvolume</i> results in the target ARN of <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume</code>. The target name must be unique across all volumes on a gateway.</p>
     /// <p>If you don't specify a value, Storage Gateway uses the value that was previously used for this volume as the new target name.</p>
     pub target_name: ::std::option::Option<::std::string::String>,
@@ -51,7 +51,7 @@ impl CreateStorediScsiVolumeInput {
     }
     /// <p>Set to <code>true</code> if you want to preserve the data on the local disk. Otherwise, set to <code>false</code> to create an empty volume.</p>
     /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
-    pub fn preserve_existing_data(&self) -> bool {
+    pub fn preserve_existing_data(&self) -> ::std::option::Option<bool> {
         self.preserve_existing_data
     }
     /// <p>The name of the iSCSI target used by an initiator to connect to a volume and used as a suffix for the target ARN. For example, specifying <code>TargetName</code> as <i>myvolume</i> results in the target ARN of <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume</code>. The target name must be unique across all volumes on a gateway.</p>
@@ -263,7 +263,7 @@ impl CreateStorediScsiVolumeInputBuilder {
             gateway_arn: self.gateway_arn,
             disk_id: self.disk_id,
             snapshot_id: self.snapshot_id,
-            preserve_existing_data: self.preserve_existing_data.unwrap_or_default(),
+            preserve_existing_data: self.preserve_existing_data,
             target_name: self.target_name,
             network_interface_id: self.network_interface_id,
             kms_encrypted: self.kms_encrypted,

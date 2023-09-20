@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReputationOptions {
-    /// <p>Describes whether email sending is enabled or disabled for the configuration set. If the value is <code>true</code>, then Amazon SES will send emails that use the configuration set. If the value is <code>false</code>, Amazon SES will not send emails that use the configuration set. The default value is <code>true</code>. You can change this setting using <code>UpdateConfigurationSetSendingEnabled</code>.</p>
+    /// <p>Describes whether email sending is enabled or disabled for the configuration set. If the value is <code>true</code>, then Amazon SES sends emails that use the configuration set. If the value is <code>false</code>, Amazon SES does not send emails that use the configuration set. The default value is <code>true</code>. You can change this setting using <code>UpdateConfigurationSetSendingEnabled</code>.</p>
     pub sending_enabled: bool,
     /// <p>Describes whether or not Amazon SES publishes reputation metrics for the configuration set, such as bounce and complaint rates, to Amazon CloudWatch.</p>
     /// <p>If the value is <code>true</code>, reputation metrics are published. If the value is <code>false</code>, reputation metrics are not published. The default value is <code>false</code>.</p>
@@ -15,7 +15,7 @@ pub struct ReputationOptions {
     pub last_fresh_start: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ReputationOptions {
-    /// <p>Describes whether email sending is enabled or disabled for the configuration set. If the value is <code>true</code>, then Amazon SES will send emails that use the configuration set. If the value is <code>false</code>, Amazon SES will not send emails that use the configuration set. The default value is <code>true</code>. You can change this setting using <code>UpdateConfigurationSetSendingEnabled</code>.</p>
+    /// <p>Describes whether email sending is enabled or disabled for the configuration set. If the value is <code>true</code>, then Amazon SES sends emails that use the configuration set. If the value is <code>false</code>, Amazon SES does not send emails that use the configuration set. The default value is <code>true</code>. You can change this setting using <code>UpdateConfigurationSetSendingEnabled</code>.</p>
     pub fn sending_enabled(&self) -> bool {
         self.sending_enabled
     }
@@ -47,17 +47,17 @@ pub struct ReputationOptionsBuilder {
     pub(crate) last_fresh_start: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ReputationOptionsBuilder {
-    /// <p>Describes whether email sending is enabled or disabled for the configuration set. If the value is <code>true</code>, then Amazon SES will send emails that use the configuration set. If the value is <code>false</code>, Amazon SES will not send emails that use the configuration set. The default value is <code>true</code>. You can change this setting using <code>UpdateConfigurationSetSendingEnabled</code>.</p>
+    /// <p>Describes whether email sending is enabled or disabled for the configuration set. If the value is <code>true</code>, then Amazon SES sends emails that use the configuration set. If the value is <code>false</code>, Amazon SES does not send emails that use the configuration set. The default value is <code>true</code>. You can change this setting using <code>UpdateConfigurationSetSendingEnabled</code>.</p>
     pub fn sending_enabled(mut self, input: bool) -> Self {
         self.sending_enabled = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Describes whether email sending is enabled or disabled for the configuration set. If the value is <code>true</code>, then Amazon SES will send emails that use the configuration set. If the value is <code>false</code>, Amazon SES will not send emails that use the configuration set. The default value is <code>true</code>. You can change this setting using <code>UpdateConfigurationSetSendingEnabled</code>.</p>
+    /// <p>Describes whether email sending is enabled or disabled for the configuration set. If the value is <code>true</code>, then Amazon SES sends emails that use the configuration set. If the value is <code>false</code>, Amazon SES does not send emails that use the configuration set. The default value is <code>true</code>. You can change this setting using <code>UpdateConfigurationSetSendingEnabled</code>.</p>
     pub fn set_sending_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.sending_enabled = input;
         self
     }
-    /// <p>Describes whether email sending is enabled or disabled for the configuration set. If the value is <code>true</code>, then Amazon SES will send emails that use the configuration set. If the value is <code>false</code>, Amazon SES will not send emails that use the configuration set. The default value is <code>true</code>. You can change this setting using <code>UpdateConfigurationSetSendingEnabled</code>.</p>
+    /// <p>Describes whether email sending is enabled or disabled for the configuration set. If the value is <code>true</code>, then Amazon SES sends emails that use the configuration set. If the value is <code>false</code>, Amazon SES does not send emails that use the configuration set. The default value is <code>true</code>. You can change this setting using <code>UpdateConfigurationSetSendingEnabled</code>.</p>
     pub fn get_sending_enabled(&self) -> &::std::option::Option<bool> {
         &self.sending_enabled
     }

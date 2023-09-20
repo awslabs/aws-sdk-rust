@@ -13,65 +13,72 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                        "MediaPipelineId" => {
-                            builder = builder.set_media_pipeline_id(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "MediaPipelineArn" => {
-                            builder = builder.set_media_pipeline_arn(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "MediaInsightsPipelineConfigurationArn" => {
-                            builder = builder.set_media_insights_pipeline_configuration_arn(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "Status" => {
-                            builder = builder.set_status(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| crate::types::MediaPipelineStatus::from(u.as_ref())))
-                                    .transpose()?,
-                            );
-                        }
-                        "KinesisVideoStreamSourceRuntimeConfiguration" => {
-                            builder = builder.set_kinesis_video_stream_source_runtime_configuration(
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "MediaPipelineId" => {
+                                builder = builder.set_media_pipeline_id(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "MediaPipelineArn" => {
+                                builder = builder.set_media_pipeline_arn(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "MediaInsightsPipelineConfigurationArn" => {
+                                builder = builder.set_media_insights_pipeline_configuration_arn(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "Status" => {
+                                builder = builder.set_status(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| crate::types::MediaPipelineStatus::from(u.as_ref())))
+                                        .transpose()?,
+                                );
+                            }
+                            "KinesisVideoStreamSourceRuntimeConfiguration" => {
+                                builder = builder.set_kinesis_video_stream_source_runtime_configuration(
                                     crate::protocol_serde::shape_kinesis_video_stream_source_runtime_configuration::de_kinesis_video_stream_source_runtime_configuration(tokens)?
                                 );
-                        }
-                        "MediaInsightsRuntimeMetadata" => {
-                            builder = builder.set_media_insights_runtime_metadata(
-                                crate::protocol_serde::shape_media_insights_runtime_metadata::de_media_insights_runtime_metadata(tokens)?,
-                            );
-                        }
-                        "KinesisVideoStreamRecordingSourceRuntimeConfiguration" => {
-                            builder = builder.set_kinesis_video_stream_recording_source_runtime_configuration(
+                            }
+                            "MediaInsightsRuntimeMetadata" => {
+                                builder = builder.set_media_insights_runtime_metadata(
+                                    crate::protocol_serde::shape_media_insights_runtime_metadata::de_media_insights_runtime_metadata(tokens)?,
+                                );
+                            }
+                            "KinesisVideoStreamRecordingSourceRuntimeConfiguration" => {
+                                builder = builder.set_kinesis_video_stream_recording_source_runtime_configuration(
                                     crate::protocol_serde::shape_kinesis_video_stream_recording_source_runtime_configuration::de_kinesis_video_stream_recording_source_runtime_configuration(tokens)?
                                 );
+                            }
+                            "S3RecordingSinkRuntimeConfiguration" => {
+                                builder = builder.set_s3_recording_sink_runtime_configuration(
+                                    crate::protocol_serde::shape_s3_recording_sink_runtime_configuration::de_s3_recording_sink_runtime_configuration(
+                                        tokens,
+                                    )?,
+                                );
+                            }
+                            "CreatedTimestamp" => {
+                                builder = builder.set_created_timestamp(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                                    tokens.next(),
+                                    ::aws_smithy_types::date_time::Format::DateTimeWithOffset,
+                                )?);
+                            }
+                            "ElementStatuses" => {
+                                builder = builder.set_element_statuses(
+                                    crate::protocol_serde::shape_media_insights_pipeline_element_statuses::de_media_insights_pipeline_element_statuses(tokens)?
+                                );
+                            }
+                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                        "S3RecordingSinkRuntimeConfiguration" => {
-                            builder = builder.set_s3_recording_sink_runtime_configuration(
-                                crate::protocol_serde::shape_s3_recording_sink_runtime_configuration::de_s3_recording_sink_runtime_configuration(
-                                    tokens,
-                                )?,
-                            );
-                        }
-                        "CreatedTimestamp" => {
-                            builder = builder.set_created_timestamp(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
-                                tokens.next(),
-                                ::aws_smithy_types::date_time::Format::DateTimeWithOffset,
-                            )?);
-                        }
-                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-                    },
+                    }
                     other => {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                             "expected object key or end object, found: {:?}",

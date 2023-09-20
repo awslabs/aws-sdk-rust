@@ -29,7 +29,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = "0.56.1"
-//! aws-sdk-networkmanager = "0.31.0"
+//! aws-sdk-networkmanager = "0.31.1"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

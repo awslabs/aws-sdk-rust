@@ -7,6 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteHsmOutput`](crate::operation::delete_hsm::DeleteHsmOutput) with field(s):
     ///   - [`status(Option<String>)`](crate::operation::delete_hsm::DeleteHsmOutput::status): <p>The status of the operation.</p>
     /// - On failure, responds with [`SdkError<DeleteHsmError>`](crate::operation::delete_hsm::DeleteHsmError)
+    #[deprecated(note = "This API is deprecated.")]
     pub fn delete_hsm(&self) -> crate::operation::delete_hsm::builders::DeleteHsmFluentBuilder {
         crate::operation::delete_hsm::builders::DeleteHsmFluentBuilder::new(self.handle.clone())
     }

@@ -366,6 +366,9 @@ pub enum UpdateDistributionError {
     TooManyDistributionsAssociatedToFieldLevelEncryptionConfig(crate::types::error::TooManyDistributionsAssociatedToFieldLevelEncryptionConfig),
     /// <p>The number of distributions that reference this key group is more than the maximum allowed. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.</p>
     TooManyDistributionsAssociatedToKeyGroup(crate::types::error::TooManyDistributionsAssociatedToKeyGroup),
+    /// <p>The maximum number of distributions have been associated with the specified origin access control.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    TooManyDistributionsAssociatedToOriginAccessControl(crate::types::error::TooManyDistributionsAssociatedToOriginAccessControl),
     /// <p>The maximum number of distributions have been associated with the specified origin request policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.</p>
     TooManyDistributionsAssociatedToOriginRequestPolicy(crate::types::error::TooManyDistributionsAssociatedToOriginRequestPolicy),
     /// <p>The maximum number of distributions have been associated with the specified response headers policy.</p>
@@ -466,6 +469,7 @@ impl ::std::fmt::Display for UpdateDistributionError {
             Self::TooManyDistributionsAssociatedToCachePolicy(_inner) => _inner.fmt(f),
             Self::TooManyDistributionsAssociatedToFieldLevelEncryptionConfig(_inner) => _inner.fmt(f),
             Self::TooManyDistributionsAssociatedToKeyGroup(_inner) => _inner.fmt(f),
+            Self::TooManyDistributionsAssociatedToOriginAccessControl(_inner) => _inner.fmt(f),
             Self::TooManyDistributionsAssociatedToOriginRequestPolicy(_inner) => _inner.fmt(f),
             Self::TooManyDistributionsAssociatedToResponseHeadersPolicy(_inner) => _inner.fmt(f),
             Self::TooManyDistributionsWithFunctionAssociations(_inner) => _inner.fmt(f),
@@ -542,6 +546,9 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for UpdateDistrib
                 ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
             Self::TooManyDistributionsAssociatedToKeyGroup(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::TooManyDistributionsAssociatedToOriginAccessControl(_inner) => {
+                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
             Self::TooManyDistributionsAssociatedToOriginRequestPolicy(_inner) => {
                 ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
@@ -647,6 +654,7 @@ impl UpdateDistributionError {
             Self::TooManyDistributionsAssociatedToCachePolicy(e) => e.meta(),
             Self::TooManyDistributionsAssociatedToFieldLevelEncryptionConfig(e) => e.meta(),
             Self::TooManyDistributionsAssociatedToKeyGroup(e) => e.meta(),
+            Self::TooManyDistributionsAssociatedToOriginAccessControl(e) => e.meta(),
             Self::TooManyDistributionsAssociatedToOriginRequestPolicy(e) => e.meta(),
             Self::TooManyDistributionsAssociatedToResponseHeadersPolicy(e) => e.meta(),
             Self::TooManyDistributionsWithFunctionAssociations(e) => e.meta(),
@@ -862,6 +870,10 @@ impl UpdateDistributionError {
     pub fn is_too_many_distributions_associated_to_key_group(&self) -> bool {
         matches!(self, Self::TooManyDistributionsAssociatedToKeyGroup(_))
     }
+    /// Returns `true` if the error kind is `UpdateDistributionError::TooManyDistributionsAssociatedToOriginAccessControl`.
+    pub fn is_too_many_distributions_associated_to_origin_access_control(&self) -> bool {
+        matches!(self, Self::TooManyDistributionsAssociatedToOriginAccessControl(_))
+    }
     /// Returns `true` if the error kind is `UpdateDistributionError::TooManyDistributionsAssociatedToOriginRequestPolicy`.
     pub fn is_too_many_distributions_associated_to_origin_request_policy(&self) -> bool {
         matches!(self, Self::TooManyDistributionsAssociatedToOriginRequestPolicy(_))
@@ -979,6 +991,7 @@ impl ::std::error::Error for UpdateDistributionError {
             Self::TooManyDistributionsAssociatedToCachePolicy(_inner) => ::std::option::Option::Some(_inner),
             Self::TooManyDistributionsAssociatedToFieldLevelEncryptionConfig(_inner) => ::std::option::Option::Some(_inner),
             Self::TooManyDistributionsAssociatedToKeyGroup(_inner) => ::std::option::Option::Some(_inner),
+            Self::TooManyDistributionsAssociatedToOriginAccessControl(_inner) => ::std::option::Option::Some(_inner),
             Self::TooManyDistributionsAssociatedToOriginRequestPolicy(_inner) => ::std::option::Option::Some(_inner),
             Self::TooManyDistributionsAssociatedToResponseHeadersPolicy(_inner) => ::std::option::Option::Some(_inner),
             Self::TooManyDistributionsWithFunctionAssociations(_inner) => ::std::option::Option::Some(_inner),

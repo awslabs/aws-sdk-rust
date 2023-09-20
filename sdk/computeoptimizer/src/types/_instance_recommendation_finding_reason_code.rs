@@ -22,6 +22,10 @@
 ///     InstanceRecommendationFindingReasonCode::EbsIopsUnderProvisioned => { /* ... */ },
 ///     InstanceRecommendationFindingReasonCode::EbsThroughputOverProvisioned => { /* ... */ },
 ///     InstanceRecommendationFindingReasonCode::EbsThroughputUnderProvisioned => { /* ... */ },
+///     InstanceRecommendationFindingReasonCode::GpuMemoryOverProvisioned => { /* ... */ },
+///     InstanceRecommendationFindingReasonCode::GpuMemoryUnderProvisioned => { /* ... */ },
+///     InstanceRecommendationFindingReasonCode::GpuOverProvisioned => { /* ... */ },
+///     InstanceRecommendationFindingReasonCode::GpuUnderProvisioned => { /* ... */ },
 ///     InstanceRecommendationFindingReasonCode::MemoryOverProvisioned => { /* ... */ },
 ///     InstanceRecommendationFindingReasonCode::MemoryUnderProvisioned => { /* ... */ },
 ///     InstanceRecommendationFindingReasonCode::NetworkBandwidthOverProvisioned => { /* ... */ },
@@ -76,6 +80,14 @@ pub enum InstanceRecommendationFindingReasonCode {
     #[allow(missing_docs)] // documentation missing in model
     EbsThroughputUnderProvisioned,
     #[allow(missing_docs)] // documentation missing in model
+    GpuMemoryOverProvisioned,
+    #[allow(missing_docs)] // documentation missing in model
+    GpuMemoryUnderProvisioned,
+    #[allow(missing_docs)] // documentation missing in model
+    GpuOverProvisioned,
+    #[allow(missing_docs)] // documentation missing in model
+    GpuUnderProvisioned,
+    #[allow(missing_docs)] // documentation missing in model
     MemoryOverProvisioned,
     #[allow(missing_docs)] // documentation missing in model
     MemoryUnderProvisioned,
@@ -103,6 +115,10 @@ impl ::std::convert::From<&str> for InstanceRecommendationFindingReasonCode {
             "EBSIOPSUnderprovisioned" => InstanceRecommendationFindingReasonCode::EbsIopsUnderProvisioned,
             "EBSThroughputOverprovisioned" => InstanceRecommendationFindingReasonCode::EbsThroughputOverProvisioned,
             "EBSThroughputUnderprovisioned" => InstanceRecommendationFindingReasonCode::EbsThroughputUnderProvisioned,
+            "GPUMemoryOverprovisioned" => InstanceRecommendationFindingReasonCode::GpuMemoryOverProvisioned,
+            "GPUMemoryUnderprovisioned" => InstanceRecommendationFindingReasonCode::GpuMemoryUnderProvisioned,
+            "GPUOverprovisioned" => InstanceRecommendationFindingReasonCode::GpuOverProvisioned,
+            "GPUUnderprovisioned" => InstanceRecommendationFindingReasonCode::GpuUnderProvisioned,
             "MemoryOverprovisioned" => InstanceRecommendationFindingReasonCode::MemoryOverProvisioned,
             "MemoryUnderprovisioned" => InstanceRecommendationFindingReasonCode::MemoryUnderProvisioned,
             "NetworkBandwidthOverprovisioned" => InstanceRecommendationFindingReasonCode::NetworkBandwidthOverProvisioned,
@@ -134,6 +150,10 @@ impl InstanceRecommendationFindingReasonCode {
             InstanceRecommendationFindingReasonCode::EbsIopsUnderProvisioned => "EBSIOPSUnderprovisioned",
             InstanceRecommendationFindingReasonCode::EbsThroughputOverProvisioned => "EBSThroughputOverprovisioned",
             InstanceRecommendationFindingReasonCode::EbsThroughputUnderProvisioned => "EBSThroughputUnderprovisioned",
+            InstanceRecommendationFindingReasonCode::GpuMemoryOverProvisioned => "GPUMemoryOverprovisioned",
+            InstanceRecommendationFindingReasonCode::GpuMemoryUnderProvisioned => "GPUMemoryUnderprovisioned",
+            InstanceRecommendationFindingReasonCode::GpuOverProvisioned => "GPUOverprovisioned",
+            InstanceRecommendationFindingReasonCode::GpuUnderProvisioned => "GPUUnderprovisioned",
             InstanceRecommendationFindingReasonCode::MemoryOverProvisioned => "MemoryOverprovisioned",
             InstanceRecommendationFindingReasonCode::MemoryUnderProvisioned => "MemoryUnderprovisioned",
             InstanceRecommendationFindingReasonCode::NetworkBandwidthOverProvisioned => "NetworkBandwidthOverprovisioned",
@@ -156,6 +176,10 @@ impl InstanceRecommendationFindingReasonCode {
             "EBSIOPSUnderprovisioned",
             "EBSThroughputOverprovisioned",
             "EBSThroughputUnderprovisioned",
+            "GPUMemoryOverprovisioned",
+            "GPUMemoryUnderprovisioned",
+            "GPUOverprovisioned",
+            "GPUUnderprovisioned",
             "MemoryOverprovisioned",
             "MemoryUnderprovisioned",
             "NetworkBandwidthOverprovisioned",

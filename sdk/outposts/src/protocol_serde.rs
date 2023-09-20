@@ -169,6 +169,8 @@ pub(crate) mod shape_line_item;
 
 pub(crate) mod shape_line_item_status_counts;
 
+pub(crate) mod shape_instance_families;
+
 pub(crate) mod shape_line_item_asset_information_list;
 
 pub(crate) mod shape_shipment_information;

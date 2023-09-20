@@ -11,6 +11,8 @@ pub use crate::types::_target_summary::TargetSummary;
 
 pub use crate::types::_schedule_state::ScheduleState;
 
+pub use crate::types::_action_after_completion::ActionAfterCompletion;
+
 pub use crate::types::_flexible_time_window::FlexibleTimeWindow;
 
 pub use crate::types::_flexible_time_window_mode::FlexibleTimeWindowMode;
@@ -52,6 +54,8 @@ pub use crate::types::_launch_type::LaunchType;
 pub use crate::types::_retry_policy::RetryPolicy;
 
 pub use crate::types::_dead_letter_config::DeadLetterConfig;
+
+mod _action_after_completion;
 
 mod _assign_public_ip;
 

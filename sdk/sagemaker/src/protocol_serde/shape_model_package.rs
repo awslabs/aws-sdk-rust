@@ -158,6 +158,13 @@ where
                             builder = builder
                                 .set_drift_check_baselines(crate::protocol_serde::shape_drift_check_baselines::de_drift_check_baselines(tokens)?);
                         }
+                        "SkipModelValidation" => {
+                            builder = builder.set_skip_model_validation(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::SkipModelValidation::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

@@ -13,6 +13,8 @@ pub use crate::types::_target_status::TargetStatus;
 
 pub use crate::types::_target_group_summary::TargetGroupSummary;
 
+pub use crate::types::_lambda_event_structure_version::LambdaEventStructureVersion;
+
 pub use crate::types::_target_group_status::TargetGroupStatus;
 
 pub use crate::types::_ip_address_type::IpAddressType;
@@ -108,6 +110,8 @@ mod _health_check_protocol_version;
 mod _http_match;
 
 mod _ip_address_type;
+
+mod _lambda_event_structure_version;
 
 mod _listener_protocol;
 

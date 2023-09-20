@@ -15,6 +15,8 @@ pub struct CreateAnnotationStoreOutput {
     pub status: ::std::option::Option<crate::types::StoreStatus>,
     /// <p>The store's name.</p>
     pub name: ::std::option::Option<::std::string::String>,
+    /// <p> The name given to an annotation store version to distinguish it from other versions. </p>
+    pub version_name: ::std::option::Option<::std::string::String>,
     /// <p>When the store was created.</p>
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
@@ -44,6 +46,10 @@ impl CreateAnnotationStoreOutput {
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
+    /// <p> The name given to an annotation store version to distinguish it from other versions. </p>
+    pub fn version_name(&self) -> ::std::option::Option<&str> {
+        self.version_name.as_deref()
+    }
     /// <p>When the store was created.</p>
     pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
@@ -71,6 +77,7 @@ pub struct CreateAnnotationStoreOutputBuilder {
     pub(crate) store_options: ::std::option::Option<crate::types::StoreOptions>,
     pub(crate) status: ::std::option::Option<crate::types::StoreStatus>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) version_name: ::std::option::Option<::std::string::String>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
@@ -159,6 +166,20 @@ impl CreateAnnotationStoreOutputBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
+    /// <p> The name given to an annotation store version to distinguish it from other versions. </p>
+    pub fn version_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.version_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p> The name given to an annotation store version to distinguish it from other versions. </p>
+    pub fn set_version_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.version_name = input;
+        self
+    }
+    /// <p> The name given to an annotation store version to distinguish it from other versions. </p>
+    pub fn get_version_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version_name
+    }
     /// <p>When the store was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
@@ -191,6 +212,7 @@ impl CreateAnnotationStoreOutputBuilder {
             store_options: self.store_options,
             status: self.status,
             name: self.name,
+            version_name: self.version_name,
             creation_time: self.creation_time,
             _request_id: self._request_id,
         }

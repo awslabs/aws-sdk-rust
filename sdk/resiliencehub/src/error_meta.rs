@@ -84,6 +84,47 @@ impl From<crate::operation::add_draft_app_version_resource_mappings::AddDraftApp
         }
     }
 }
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::batch_update_recommendation_status::BatchUpdateRecommendationStatusError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<crate::operation::batch_update_recommendation_status::BatchUpdateRecommendationStatusError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::batch_update_recommendation_status::BatchUpdateRecommendationStatusError> for Error {
+    fn from(err: crate::operation::batch_update_recommendation_status::BatchUpdateRecommendationStatusError) -> Self {
+        match err {
+            crate::operation::batch_update_recommendation_status::BatchUpdateRecommendationStatusError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::batch_update_recommendation_status::BatchUpdateRecommendationStatusError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::batch_update_recommendation_status::BatchUpdateRecommendationStatusError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::batch_update_recommendation_status::BatchUpdateRecommendationStatusError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::batch_update_recommendation_status::BatchUpdateRecommendationStatusError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::batch_update_recommendation_status::BatchUpdateRecommendationStatusError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::create_app::CreateAppError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -899,6 +940,9 @@ impl From<crate::operation::import_resources_to_draft_app_version::ImportResourc
             crate::operation::import_resources_to_draft_app_version::ImportResourcesToDraftAppVersionError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
+            crate::operation::import_resources_to_draft_app_version::ImportResourcesToDraftAppVersionError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
             crate::operation::import_resources_to_draft_app_version::ImportResourcesToDraftAppVersionError::ThrottlingException(inner) => {
                 Error::ThrottlingException(inner)
             }
@@ -946,6 +990,46 @@ impl From<crate::operation::list_alarm_recommendations::ListAlarmRecommendations
                 Error::ValidationException(inner)
             }
             crate::operation::list_alarm_recommendations::ListAlarmRecommendationsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_app_assessment_compliance_drifts::ListAppAssessmentComplianceDriftsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<crate::operation::list_app_assessment_compliance_drifts::ListAppAssessmentComplianceDriftsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_app_assessment_compliance_drifts::ListAppAssessmentComplianceDriftsError> for Error {
+    fn from(err: crate::operation::list_app_assessment_compliance_drifts::ListAppAssessmentComplianceDriftsError) -> Self {
+        match err {
+            crate::operation::list_app_assessment_compliance_drifts::ListAppAssessmentComplianceDriftsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_app_assessment_compliance_drifts::ListAppAssessmentComplianceDriftsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_app_assessment_compliance_drifts::ListAppAssessmentComplianceDriftsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_app_assessment_compliance_drifts::ListAppAssessmentComplianceDriftsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_app_assessment_compliance_drifts::ListAppAssessmentComplianceDriftsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }

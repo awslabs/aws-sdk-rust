@@ -9,6 +9,8 @@ pub enum Error {
     ConflictException(crate::types::error::ConflictException),
     /// <p>This exception occurs when there is an internal failure in the Amazon Connect service.</p>
     InternalServerException(crate::types::error::InternalServerException),
+    /// <p>The resource was not found.</p>
+    ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>The number of attachments per contact exceeds the quota.</p>
     ServiceQuotaExceededException(crate::types::error::ServiceQuotaExceededException),
     /// <p>The request was denied due to request throttling.</p>
@@ -24,6 +26,7 @@ impl ::std::fmt::Display for Error {
             Error::AccessDeniedException(inner) => inner.fmt(f),
             Error::ConflictException(inner) => inner.fmt(f),
             Error::InternalServerException(inner) => inner.fmt(f),
+            Error::ResourceNotFoundException(inner) => inner.fmt(f),
             Error::ServiceQuotaExceededException(inner) => inner.fmt(f),
             Error::ThrottlingException(inner) => inner.fmt(f),
             Error::ValidationException(inner) => inner.fmt(f),
@@ -102,6 +105,34 @@ impl From<crate::operation::create_participant_connection::CreateParticipantConn
                 Error::ValidationException(inner)
             }
             crate::operation::create_participant_connection::CreateParticipantConnectionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::describe_view::DescribeViewError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::describe_view::DescribeViewError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_view::DescribeViewError> for Error {
+    fn from(err: crate::operation::describe_view::DescribeViewError) -> Self {
+        match err {
+            crate::operation::describe_view::DescribeViewError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::describe_view::DescribeViewError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::describe_view::DescribeViewError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::describe_view::DescribeViewError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::describe_view::DescribeViewError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::describe_view::DescribeViewError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -282,6 +313,7 @@ impl ::std::error::Error for Error {
             Error::AccessDeniedException(inner) => inner.source(),
             Error::ConflictException(inner) => inner.source(),
             Error::InternalServerException(inner) => inner.source(),
+            Error::ResourceNotFoundException(inner) => inner.source(),
             Error::ServiceQuotaExceededException(inner) => inner.source(),
             Error::ThrottlingException(inner) => inner.source(),
             Error::ValidationException(inner) => inner.source(),
@@ -295,6 +327,7 @@ impl ::aws_http::request_id::RequestId for Error {
             Self::AccessDeniedException(e) => e.request_id(),
             Self::ConflictException(e) => e.request_id(),
             Self::InternalServerException(e) => e.request_id(),
+            Self::ResourceNotFoundException(e) => e.request_id(),
             Self::ServiceQuotaExceededException(e) => e.request_id(),
             Self::ThrottlingException(e) => e.request_id(),
             Self::ValidationException(e) => e.request_id(),

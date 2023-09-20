@@ -42,6 +42,18 @@ pub fn ser_subtotal_options(
         crate::protocol_serde::shape_table_cell_style::ser_table_cell_style(&mut object_13, var_12)?;
         object_13.finish();
     }
+    if let Some(var_14) = &input.style_targets {
+        let mut array_15 = object.key("StyleTargets").start_array();
+        for item_16 in var_14 {
+            {
+                #[allow(unused_mut)]
+                let mut object_17 = array_15.value().start_object();
+                crate::protocol_serde::shape_table_style_target::ser_table_style_target(&mut object_17, item_16)?;
+                object_17.finish();
+            }
+        }
+        array_15.finish();
+    }
     Ok(())
 }
 
@@ -97,6 +109,10 @@ where
                         "MetricHeaderCellStyle" => {
                             builder =
                                 builder.set_metric_header_cell_style(crate::protocol_serde::shape_table_cell_style::de_table_cell_style(tokens)?);
+                        }
+                        "StyleTargets" => {
+                            builder =
+                                builder.set_style_targets(crate::protocol_serde::shape_table_style_target_list::de_table_style_target_list(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

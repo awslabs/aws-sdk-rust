@@ -35,6 +35,8 @@ pub(crate) mod shape_create_framework;
 
 pub(crate) mod shape_create_legal_hold;
 
+pub(crate) mod shape_create_logically_air_gapped_backup_vault;
+
 pub(crate) mod shape_create_report_plan;
 
 pub(crate) mod shape_delete_backup_plan;
@@ -121,6 +123,8 @@ pub(crate) mod shape_list_legal_holds;
 
 pub(crate) mod shape_list_protected_resources;
 
+pub(crate) mod shape_list_protected_resources_by_backup_vault;
+
 pub(crate) mod shape_list_recovery_points_by_backup_vault;
 
 pub(crate) mod shape_list_recovery_points_by_legal_hold;
@@ -188,6 +192,8 @@ pub(crate) mod shape_create_backup_vault_input;
 pub(crate) mod shape_create_framework_input;
 
 pub(crate) mod shape_create_legal_hold_input;
+
+pub(crate) mod shape_create_logically_air_gapped_backup_vault_input;
 
 pub(crate) mod shape_create_report_plan_input;
 

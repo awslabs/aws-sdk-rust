@@ -37,11 +37,15 @@ pub use crate::types::_input_whitelist_rule_cidr::InputWhitelistRuleCidrBuilder;
 
 pub use crate::types::_input_device_uhd_settings::InputDeviceUhdSettingsBuilder;
 
+pub use crate::types::_input_device_media_connect_settings::InputDeviceMediaConnectSettingsBuilder;
+
 pub use crate::types::_input_device_network_settings::InputDeviceNetworkSettingsBuilder;
 
 pub use crate::types::_input_device_hd_settings::InputDeviceHdSettingsBuilder;
 
 pub use crate::types::_input_device_configurable_settings::InputDeviceConfigurableSettingsBuilder;
+
+pub use crate::types::_input_device_media_connect_configurable_settings::InputDeviceMediaConnectConfigurableSettingsBuilder;
 
 pub use crate::types::_input::InputBuilder;
 
@@ -288,6 +292,12 @@ pub use crate::types::_motion_graphics_settings::MotionGraphicsSettingsBuilder;
 pub use crate::types::_html_motion_graphics_settings::HtmlMotionGraphicsSettingsBuilder;
 
 pub use crate::types::_global_configuration::GlobalConfigurationBuilder;
+
+pub use crate::types::_output_locking_settings::OutputLockingSettingsBuilder;
+
+pub use crate::types::_pipeline_locking_settings::PipelineLockingSettingsBuilder;
+
+pub use crate::types::_epoch_locking_settings::EpochLockingSettingsBuilder;
 
 pub use crate::types::_input_loss_behavior::InputLossBehaviorBuilder;
 

@@ -22,7 +22,7 @@ impl DescribeTaskExecutionInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeTaskExecution`.
 ///
-/// <p>Provides information about an DataSync transfer task that's running.</p>
+/// <p>Provides information about an execution of your DataSync task. You can use this operation to help monitor the progress of an ongoing transfer or check the results of the transfer.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeTaskExecutionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -110,17 +110,17 @@ impl DescribeTaskExecutionFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>Specifies the Amazon Resource Name (ARN) of the transfer task that's running.</p>
+    /// <p>Specifies the Amazon Resource Name (ARN) of the task execution that you want information about.</p>
     pub fn task_execution_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.task_execution_arn(input.into());
         self
     }
-    /// <p>Specifies the Amazon Resource Name (ARN) of the transfer task that's running.</p>
+    /// <p>Specifies the Amazon Resource Name (ARN) of the task execution that you want information about.</p>
     pub fn set_task_execution_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_task_execution_arn(input);
         self
     }
-    /// <p>Specifies the Amazon Resource Name (ARN) of the transfer task that's running.</p>
+    /// <p>Specifies the Amazon Resource Name (ARN) of the task execution that you want information about.</p>
     pub fn get_task_execution_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_task_execution_arn()
     }

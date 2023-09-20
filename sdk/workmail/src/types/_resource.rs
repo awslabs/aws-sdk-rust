@@ -18,6 +18,8 @@ pub struct Resource {
     pub enabled_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date indicating when the resource was disabled from WorkMail use.</p>
     pub disabled_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>Resource description.</p>
+    pub description: ::std::option::Option<::std::string::String>,
 }
 impl Resource {
     /// <p>The identifier of the resource.</p>
@@ -48,6 +50,10 @@ impl Resource {
     pub fn disabled_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.disabled_date.as_ref()
     }
+    /// <p>Resource description.</p>
+    pub fn description(&self) -> ::std::option::Option<&str> {
+        self.description.as_deref()
+    }
 }
 impl Resource {
     /// Creates a new builder-style object to manufacture [`Resource`](crate::types::Resource).
@@ -67,6 +73,7 @@ pub struct ResourceBuilder {
     pub(crate) state: ::std::option::Option<crate::types::EntityState>,
     pub(crate) enabled_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) disabled_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
 }
 impl ResourceBuilder {
     /// <p>The identifier of the resource.</p>
@@ -167,6 +174,20 @@ impl ResourceBuilder {
     pub fn get_disabled_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.disabled_date
     }
+    /// <p>Resource description.</p>
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Resource description.</p>
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.description = input;
+        self
+    }
+    /// <p>Resource description.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// Consumes the builder and constructs a [`Resource`](crate::types::Resource).
     pub fn build(self) -> crate::types::Resource {
         crate::types::Resource {
@@ -177,6 +198,7 @@ impl ResourceBuilder {
             state: self.state,
             enabled_date: self.enabled_date,
             disabled_date: self.disabled_date,
+            description: self.description,
         }
     }
 }

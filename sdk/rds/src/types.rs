@@ -49,6 +49,18 @@ pub use crate::types::_vpc_security_group_membership::VpcSecurityGroupMembership
 
 pub use crate::types::_db_security_group_membership::DbSecurityGroupMembership;
 
+pub use crate::types::_global_cluster::GlobalCluster;
+
+pub use crate::types::_failover_state::FailoverState;
+
+pub use crate::types::_failover_status::FailoverStatus;
+
+pub use crate::types::_global_cluster_member::GlobalClusterMember;
+
+pub use crate::types::_global_cluster_member_synchronization_status::GlobalClusterMemberSynchronizationStatus;
+
+pub use crate::types::_write_forwarding_status::WriteForwardingStatus;
+
 pub use crate::types::_blue_green_deployment::BlueGreenDeployment;
 
 pub use crate::types::_blue_green_deployment_task::BlueGreenDeploymentTask;
@@ -61,11 +73,11 @@ pub use crate::types::_restore_window::RestoreWindow;
 
 pub use crate::types::_db_cluster::DbCluster;
 
+pub use crate::types::_local_write_forwarding_status::LocalWriteForwardingStatus;
+
 pub use crate::types::_serverless_v2_scaling_configuration_info::ServerlessV2ScalingConfigurationInfo;
 
 pub use crate::types::_cluster_pending_modified_values::ClusterPendingModifiedValues;
-
-pub use crate::types::_write_forwarding_status::WriteForwardingStatus;
 
 pub use crate::types::_scaling_configuration_info::ScalingConfigurationInfo;
 
@@ -92,14 +104,6 @@ pub use crate::types::_parameter::Parameter;
 pub use crate::types::_apply_method::ApplyMethod;
 
 pub use crate::types::_event_subscription::EventSubscription;
-
-pub use crate::types::_global_cluster::GlobalCluster;
-
-pub use crate::types::_failover_state::FailoverState;
-
-pub use crate::types::_failover_status::FailoverStatus;
-
-pub use crate::types::_global_cluster_member::GlobalClusterMember;
 
 pub use crate::types::_db_proxy_target::DbProxyTarget;
 
@@ -231,6 +235,8 @@ pub use crate::types::_db_cluster_endpoint::DbClusterEndpoint;
 
 pub use crate::types::_db_cluster_backtrack::DbClusterBacktrack;
 
+pub use crate::types::_db_cluster_automated_backup::DbClusterAutomatedBackup;
+
 pub use crate::types::_account_quota::AccountQuota;
 
 pub use crate::types::_engine_family::EngineFamily;
@@ -280,6 +286,8 @@ mod _custom_db_engine_version_ami;
 mod _custom_engine_version_status;
 
 mod _db_cluster;
+
+mod _db_cluster_automated_backup;
 
 mod _db_cluster_backtrack;
 
@@ -375,9 +383,13 @@ mod _global_cluster;
 
 mod _global_cluster_member;
 
+mod _global_cluster_member_synchronization_status;
+
 mod _iam_auth_mode;
 
 mod _ip_range;
+
+mod _local_write_forwarding_status;
 
 mod _master_user_secret;
 

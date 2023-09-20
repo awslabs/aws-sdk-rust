@@ -24,6 +24,18 @@ pub fn ser_journey_limits(
     if let Some(var_4) = &input.endpoint_reentry_interval {
         object.key("EndpointReentryInterval").string(var_4.as_str());
     }
+    if let Some(var_5) = &input.timeframe_cap {
+        #[allow(unused_mut)]
+        let mut object_6 = object.key("TimeframeCap").start_object();
+        crate::protocol_serde::shape_journey_timeframe_cap::ser_journey_timeframe_cap(&mut object_6, var_5)?;
+        object_6.finish();
+    }
+    if let Some(var_7) = &input.total_cap {
+        object.key("TotalCap").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_7).into()),
+        );
+    }
     Ok(())
 }
 
@@ -67,6 +79,17 @@ where
                             builder = builder.set_endpoint_reentry_interval(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "TimeframeCap" => {
+                            builder =
+                                builder.set_timeframe_cap(crate::protocol_serde::shape_journey_timeframe_cap::de_journey_timeframe_cap(tokens)?);
+                        }
+                        "TotalCap" => {
+                            builder = builder.set_total_cap(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
                                     .transpose()?,
                             );
                         }

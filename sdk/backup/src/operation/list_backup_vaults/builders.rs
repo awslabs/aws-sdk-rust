@@ -116,6 +116,34 @@ impl ListBackupVaultsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_backup_vaults::paginator::ListBackupVaultsPaginator {
         crate::operation::list_backup_vaults::paginator::ListBackupVaultsPaginator::new(self.handle, self.inner)
     }
+    /// <p>This parameter will sort the list of vaults by vault type.</p>
+    pub fn by_vault_type(mut self, input: crate::types::VaultType) -> Self {
+        self.inner = self.inner.by_vault_type(input);
+        self
+    }
+    /// <p>This parameter will sort the list of vaults by vault type.</p>
+    pub fn set_by_vault_type(mut self, input: ::std::option::Option<crate::types::VaultType>) -> Self {
+        self.inner = self.inner.set_by_vault_type(input);
+        self
+    }
+    /// <p>This parameter will sort the list of vaults by vault type.</p>
+    pub fn get_by_vault_type(&self) -> &::std::option::Option<crate::types::VaultType> {
+        self.inner.get_by_vault_type()
+    }
+    /// <p>This parameter will sort the list of vaults by shared vaults.</p>
+    pub fn by_shared(mut self, input: bool) -> Self {
+        self.inner = self.inner.by_shared(input);
+        self
+    }
+    /// <p>This parameter will sort the list of vaults by shared vaults.</p>
+    pub fn set_by_shared(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_by_shared(input);
+        self
+    }
+    /// <p>This parameter will sort the list of vaults by shared vaults.</p>
+    pub fn get_by_shared(&self) -> &::std::option::Option<bool> {
+        self.inner.get_by_shared()
+    }
     /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());

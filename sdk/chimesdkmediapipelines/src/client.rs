@@ -197,6 +197,10 @@ mod get_media_insights_pipeline_configuration;
 
 mod get_media_pipeline;
 
+mod get_speaker_search_task;
+
+mod get_voice_tone_analysis_task;
+
 mod list_media_capture_pipelines;
 
 mod list_media_insights_pipeline_configurations;
@@ -204,6 +208,14 @@ mod list_media_insights_pipeline_configurations;
 mod list_media_pipelines;
 
 mod list_tags_for_resource;
+
+mod start_speaker_search_task;
+
+mod start_voice_tone_analysis_task;
+
+mod stop_speaker_search_task;
+
+mod stop_voice_tone_analysis_task;
 
 mod tag_resource;
 

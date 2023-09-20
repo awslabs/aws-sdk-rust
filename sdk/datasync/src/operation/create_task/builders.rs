@@ -22,8 +22,8 @@ impl CreateTaskInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateTask`.
 ///
-/// <p>Configures a task, which defines where and how DataSync transfers your data.</p>
-/// <p>A task includes a source location, a destination location, and the preferences for how and when you want to transfer your data (such as bandwidth limits, scheduling, among other options).</p> <important>
+/// <p>Configures a transfer task, which defines where and how DataSync moves your data.</p>
+/// <p>A task includes a source location, destination location, and the options for how and when you want to transfer your data (such as bandwidth limits, scheduling, among other options).</p> <important>
 /// <p>If you're planning to transfer data to or from an Amazon S3 location, review <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#create-s3-location-s3-requests">how DataSync can affect your S3 request charges</a> and the <a href="http://aws.amazon.com/datasync/pricing/">DataSync pricing page</a> before you begin.</p>
 /// </important>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -256,5 +256,19 @@ impl CreateTaskFluentBuilder {
     /// <p>Specifies a list of filter rules that include specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
     pub fn get_includes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FilterRule>> {
         self.inner.get_includes()
+    }
+    /// <p>Specifies how you want to configure a task report, which provides detailed information about for your DataSync transfer.</p>
+    pub fn task_report_config(mut self, input: crate::types::TaskReportConfig) -> Self {
+        self.inner = self.inner.task_report_config(input);
+        self
+    }
+    /// <p>Specifies how you want to configure a task report, which provides detailed information about for your DataSync transfer.</p>
+    pub fn set_task_report_config(mut self, input: ::std::option::Option<crate::types::TaskReportConfig>) -> Self {
+        self.inner = self.inner.set_task_report_config(input);
+        self
+    }
+    /// <p>Specifies how you want to configure a task report, which provides detailed information about for your DataSync transfer.</p>
+    pub fn get_task_report_config(&self) -> &::std::option::Option<crate::types::TaskReportConfig> {
+        self.inner.get_task_report_config()
     }
 }

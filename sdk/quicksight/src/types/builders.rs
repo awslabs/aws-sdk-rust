@@ -151,6 +151,8 @@ pub use crate::types::_filter_group::FilterGroupBuilder;
 
 pub use crate::types::_filter_scope_configuration::FilterScopeConfigurationBuilder;
 
+pub use crate::types::_all_sheets_filter_scope_configuration::AllSheetsFilterScopeConfigurationBuilder;
+
 pub use crate::types::_selected_sheets_filter_scope_configuration::SelectedSheetsFilterScopeConfigurationBuilder;
 
 pub use crate::types::_sheet_visual_scoping_configuration::SheetVisualScopingConfigurationBuilder;
@@ -779,6 +781,10 @@ pub use crate::types::_kpi_conditional_formatting::KpiConditionalFormattingBuild
 
 pub use crate::types::_kpi_conditional_formatting_option::KpiConditionalFormattingOptionBuilder;
 
+pub use crate::types::_kpi_comparison_value_conditional_formatting::KpiComparisonValueConditionalFormattingBuilder;
+
+pub use crate::types::_kpi_actual_value_conditional_formatting::KpiActualValueConditionalFormattingBuilder;
+
 pub use crate::types::_kpi_progress_bar_conditional_formatting::KpiProgressBarConditionalFormattingBuilder;
 
 pub use crate::types::_kpi_primary_value_conditional_formatting::KpiPrimaryValueConditionalFormattingBuilder;
@@ -786,6 +792,12 @@ pub use crate::types::_kpi_primary_value_conditional_formatting::KpiPrimaryValue
 pub use crate::types::_kpi_configuration::KpiConfigurationBuilder;
 
 pub use crate::types::_kpi_options::KpiOptionsBuilder;
+
+pub use crate::types::_kpi_visual_layout_options::KpiVisualLayoutOptionsBuilder;
+
+pub use crate::types::_kpi_visual_standard_layout::KpiVisualStandardLayoutBuilder;
+
+pub use crate::types::_kpi_sparkline_options::KpiSparklineOptionsBuilder;
 
 pub use crate::types::_secondary_value_options::SecondaryValueOptionsBuilder;
 
@@ -847,9 +859,13 @@ pub use crate::types::_table_border_options::TableBorderOptionsBuilder;
 
 pub use crate::types::_subtotal_options::SubtotalOptionsBuilder;
 
+pub use crate::types::_table_style_target::TableStyleTargetBuilder;
+
 pub use crate::types::_pivot_table_field_subtotal_options::PivotTableFieldSubtotalOptionsBuilder;
 
 pub use crate::types::_pivot_table_options::PivotTableOptionsBuilder;
+
+pub use crate::types::_pivot_table_rows_label_options::PivotTableRowsLabelOptionsBuilder;
 
 pub use crate::types::_row_alternate_color_options::RowAlternateColorOptionsBuilder;
 
@@ -884,6 +900,8 @@ pub use crate::types::_data_bars_options::DataBarsOptionsBuilder;
 pub use crate::types::_table_paginated_report_options::TablePaginatedReportOptionsBuilder;
 
 pub use crate::types::_table_field_options::TableFieldOptionsBuilder;
+
+pub use crate::types::_table_pinned_field_options::TablePinnedFieldOptionsBuilder;
 
 pub use crate::types::_table_field_option::TableFieldOptionBuilder;
 

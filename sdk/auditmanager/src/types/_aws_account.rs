@@ -2,7 +2,7 @@
 
 /// <p> The wrapper of Amazon Web Services account details, such as account ID or email address. </p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct AwsAccount {
     /// <p> The identifier for the Amazon Web Services account. </p>
     pub id: ::std::option::Option<::std::string::String>,
@@ -25,6 +25,15 @@ impl AwsAccount {
         self.name.as_deref()
     }
 }
+impl ::std::fmt::Debug for AwsAccount {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("AwsAccount");
+        formatter.field("id", &self.id);
+        formatter.field("email_address", &"*** Sensitive Data Redacted ***");
+        formatter.field("name", &self.name);
+        formatter.finish()
+    }
+}
 impl AwsAccount {
     /// Creates a new builder-style object to manufacture [`AwsAccount`](crate::types::AwsAccount).
     pub fn builder() -> crate::types::builders::AwsAccountBuilder {
@@ -34,7 +43,7 @@ impl AwsAccount {
 
 /// A builder for [`AwsAccount`](crate::types::AwsAccount).
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct AwsAccountBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) email_address: ::std::option::Option<::std::string::String>,
@@ -90,5 +99,14 @@ impl AwsAccountBuilder {
             email_address: self.email_address,
             name: self.name,
         }
+    }
+}
+impl ::std::fmt::Debug for AwsAccountBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("AwsAccountBuilder");
+        formatter.field("id", &self.id);
+        formatter.field("email_address", &"*** Sensitive Data Redacted ***");
+        formatter.field("name", &self.name);
+        formatter.finish()
     }
 }

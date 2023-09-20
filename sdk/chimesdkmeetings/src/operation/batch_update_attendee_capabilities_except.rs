@@ -297,8 +297,12 @@ pub enum BatchUpdateAttendeeCapabilitiesExceptError {
     ForbiddenException(crate::types::error::ForbiddenException),
     /// <p>One or more of the resources in the request does not exist in the system.</p>
     NotFoundException(crate::types::error::NotFoundException),
+    /// <p>The service encountered an unexpected error.</p>
+    ServiceFailureException(crate::types::error::ServiceFailureException),
     /// <p>The service is currently unavailable.</p>
     ServiceUnavailableException(crate::types::error::ServiceUnavailableException),
+    /// <p>The number of customer requests exceeds the request rate limit.</p>
+    ThrottlingException(crate::types::error::ThrottlingException),
     /// <p>The user isn't authorized to request a resource.</p>
     UnauthorizedException(crate::types::error::UnauthorizedException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
@@ -323,7 +327,9 @@ impl ::std::fmt::Display for BatchUpdateAttendeeCapabilitiesExceptError {
             Self::ConflictException(_inner) => _inner.fmt(f),
             Self::ForbiddenException(_inner) => _inner.fmt(f),
             Self::NotFoundException(_inner) => _inner.fmt(f),
+            Self::ServiceFailureException(_inner) => _inner.fmt(f),
             Self::ServiceUnavailableException(_inner) => _inner.fmt(f),
+            Self::ThrottlingException(_inner) => _inner.fmt(f),
             Self::UnauthorizedException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => _inner.fmt(f),
         }
@@ -336,7 +342,9 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for BatchUpdateAt
             Self::ConflictException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ForbiddenException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::NotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ServiceFailureException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ServiceUnavailableException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ThrottlingException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::UnauthorizedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
         }
@@ -378,7 +386,9 @@ impl BatchUpdateAttendeeCapabilitiesExceptError {
             Self::ConflictException(e) => e.meta(),
             Self::ForbiddenException(e) => e.meta(),
             Self::NotFoundException(e) => e.meta(),
+            Self::ServiceFailureException(e) => e.meta(),
             Self::ServiceUnavailableException(e) => e.meta(),
+            Self::ThrottlingException(e) => e.meta(),
             Self::UnauthorizedException(e) => e.meta(),
             Self::Unhandled(e) => e.meta(),
         }
@@ -399,9 +409,17 @@ impl BatchUpdateAttendeeCapabilitiesExceptError {
     pub fn is_not_found_exception(&self) -> bool {
         matches!(self, Self::NotFoundException(_))
     }
+    /// Returns `true` if the error kind is `BatchUpdateAttendeeCapabilitiesExceptError::ServiceFailureException`.
+    pub fn is_service_failure_exception(&self) -> bool {
+        matches!(self, Self::ServiceFailureException(_))
+    }
     /// Returns `true` if the error kind is `BatchUpdateAttendeeCapabilitiesExceptError::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(self, Self::ServiceUnavailableException(_))
+    }
+    /// Returns `true` if the error kind is `BatchUpdateAttendeeCapabilitiesExceptError::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(self, Self::ThrottlingException(_))
     }
     /// Returns `true` if the error kind is `BatchUpdateAttendeeCapabilitiesExceptError::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
@@ -415,7 +433,9 @@ impl ::std::error::Error for BatchUpdateAttendeeCapabilitiesExceptError {
             Self::ConflictException(_inner) => ::std::option::Option::Some(_inner),
             Self::ForbiddenException(_inner) => ::std::option::Option::Some(_inner),
             Self::NotFoundException(_inner) => ::std::option::Option::Some(_inner),
+            Self::ServiceFailureException(_inner) => ::std::option::Option::Some(_inner),
             Self::ServiceUnavailableException(_inner) => ::std::option::Option::Some(_inner),
+            Self::ThrottlingException(_inner) => ::std::option::Option::Some(_inner),
             Self::UnauthorizedException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(_inner),
         }

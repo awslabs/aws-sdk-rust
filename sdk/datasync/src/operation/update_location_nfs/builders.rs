@@ -22,7 +22,8 @@ impl UpdateLocationNfsInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateLocationNfs`.
 ///
-/// <p>Updates some of the parameters of a previously created location for Network File System (NFS) access. For information about creating an NFS location, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html">Creating a location for NFS</a>.</p>
+/// <p>Modifies some configurations of the Network File System (NFS) transfer location that you're using with DataSync.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html">Configuring transfers to or from an NFS file server</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateLocationNfsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -110,54 +111,48 @@ impl UpdateLocationNfsFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>Specifies the Amazon Resource Name (ARN) of the NFS location that you want to update.</p>
+    /// <p>Specifies the Amazon Resource Name (ARN) of the NFS transfer location that you want to update.</p>
     pub fn location_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.location_arn(input.into());
         self
     }
-    /// <p>Specifies the Amazon Resource Name (ARN) of the NFS location that you want to update.</p>
+    /// <p>Specifies the Amazon Resource Name (ARN) of the NFS transfer location that you want to update.</p>
     pub fn set_location_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_location_arn(input);
         self
     }
-    /// <p>Specifies the Amazon Resource Name (ARN) of the NFS location that you want to update.</p>
+    /// <p>Specifies the Amazon Resource Name (ARN) of the NFS transfer location that you want to update.</p>
     pub fn get_location_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_location_arn()
     }
-    /// <p>Specifies the subdirectory in your NFS file system that DataSync uses to read from or write to during a transfer. The NFS path should be exported by the NFS server, or a subdirectory of that path. The path should be such that it can be mounted by other NFS clients in your network.</p>
-    /// <p>To see all the paths exported by your NFS server, run "<code>showmount -e nfs-server-name</code>" from an NFS client that has access to your server. You can specify any directory that appears in the results, and any subdirectory of that directory. Ensure that the NFS export is accessible without Kerberos authentication. </p>
-    /// <p>To transfer all the data in the folder that you specified, DataSync must have permissions to read all the data. To ensure this, either configure the NFS export with <code>no_root_squash</code>, or ensure that the files you want DataSync to access have permissions that allow read access for all users. Doing either option enables the agent to read the files. For the agent to access directories, you must additionally enable all execute access.</p>
-    /// <p>If you are copying data to or from your Snowcone device, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS Server on Snowcone</a> for more information.</p>
+    /// <p>Specifies the export path in your NFS file server that you want DataSync to mount.</p>
+    /// <p>This path (or a subdirectory of the path) is where DataSync transfers data to or from. For information on configuring an export for DataSync, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#accessing-nfs">Accessing NFS file servers</a>.</p>
     pub fn subdirectory(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.subdirectory(input.into());
         self
     }
-    /// <p>Specifies the subdirectory in your NFS file system that DataSync uses to read from or write to during a transfer. The NFS path should be exported by the NFS server, or a subdirectory of that path. The path should be such that it can be mounted by other NFS clients in your network.</p>
-    /// <p>To see all the paths exported by your NFS server, run "<code>showmount -e nfs-server-name</code>" from an NFS client that has access to your server. You can specify any directory that appears in the results, and any subdirectory of that directory. Ensure that the NFS export is accessible without Kerberos authentication. </p>
-    /// <p>To transfer all the data in the folder that you specified, DataSync must have permissions to read all the data. To ensure this, either configure the NFS export with <code>no_root_squash</code>, or ensure that the files you want DataSync to access have permissions that allow read access for all users. Doing either option enables the agent to read the files. For the agent to access directories, you must additionally enable all execute access.</p>
-    /// <p>If you are copying data to or from your Snowcone device, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS Server on Snowcone</a> for more information.</p>
+    /// <p>Specifies the export path in your NFS file server that you want DataSync to mount.</p>
+    /// <p>This path (or a subdirectory of the path) is where DataSync transfers data to or from. For information on configuring an export for DataSync, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#accessing-nfs">Accessing NFS file servers</a>.</p>
     pub fn set_subdirectory(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_subdirectory(input);
         self
     }
-    /// <p>Specifies the subdirectory in your NFS file system that DataSync uses to read from or write to during a transfer. The NFS path should be exported by the NFS server, or a subdirectory of that path. The path should be such that it can be mounted by other NFS clients in your network.</p>
-    /// <p>To see all the paths exported by your NFS server, run "<code>showmount -e nfs-server-name</code>" from an NFS client that has access to your server. You can specify any directory that appears in the results, and any subdirectory of that directory. Ensure that the NFS export is accessible without Kerberos authentication. </p>
-    /// <p>To transfer all the data in the folder that you specified, DataSync must have permissions to read all the data. To ensure this, either configure the NFS export with <code>no_root_squash</code>, or ensure that the files you want DataSync to access have permissions that allow read access for all users. Doing either option enables the agent to read the files. For the agent to access directories, you must additionally enable all execute access.</p>
-    /// <p>If you are copying data to or from your Snowcone device, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS Server on Snowcone</a> for more information.</p>
+    /// <p>Specifies the export path in your NFS file server that you want DataSync to mount.</p>
+    /// <p>This path (or a subdirectory of the path) is where DataSync transfers data to or from. For information on configuring an export for DataSync, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#accessing-nfs">Accessing NFS file servers</a>.</p>
     pub fn get_subdirectory(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_subdirectory()
     }
-    /// <p>A list of Amazon Resource Names (ARNs) of agents to use for a Network File System (NFS) location.</p>
+    /// <p>The DataSync agents that are connecting to a Network File System (NFS) location.</p>
     pub fn on_prem_config(mut self, input: crate::types::OnPremConfig) -> Self {
         self.inner = self.inner.on_prem_config(input);
         self
     }
-    /// <p>A list of Amazon Resource Names (ARNs) of agents to use for a Network File System (NFS) location.</p>
+    /// <p>The DataSync agents that are connecting to a Network File System (NFS) location.</p>
     pub fn set_on_prem_config(mut self, input: ::std::option::Option<crate::types::OnPremConfig>) -> Self {
         self.inner = self.inner.set_on_prem_config(input);
         self
     }
-    /// <p>A list of Amazon Resource Names (ARNs) of agents to use for a Network File System (NFS) location.</p>
+    /// <p>The DataSync agents that are connecting to a Network File System (NFS) location.</p>
     pub fn get_on_prem_config(&self) -> &::std::option::Option<crate::types::OnPremConfig> {
         self.inner.get_on_prem_config()
     }

@@ -6,6 +6,19 @@ pub fn ser_protected_query_sql_parameters(
     if let Some(var_1) = &input.query_string {
         object.key("queryString").string(var_1.as_str());
     }
+    if let Some(var_2) = &input.analysis_template_arn {
+        object.key("analysisTemplateArn").string(var_2.as_str());
+    }
+    if let Some(var_3) = &input.parameters {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("parameters").start_object();
+        for (key_5, value_6) in var_3 {
+            {
+                object_4.key(key_5.as_str()).string(value_6.as_str());
+            }
+        }
+        object_4.finish();
+    }
     Ok(())
 }
 
@@ -30,6 +43,16 @@ where
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
                             );
+                        }
+                        "analysisTemplateArn" => {
+                            builder = builder.set_analysis_template_arn(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "parameters" => {
+                            builder = builder.set_parameters(crate::protocol_serde::shape_parameter_map::de_parameter_map(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

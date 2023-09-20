@@ -77,6 +77,13 @@ where
                         "CustomDatatypes" => {
                             builder = builder.set_custom_datatypes(crate::protocol_serde::shape_custom_datatypes::de_custom_datatypes(tokens)?);
                         }
+                        "Serde" => {
+                            builder = builder.set_serde(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CsvSerdeOption::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

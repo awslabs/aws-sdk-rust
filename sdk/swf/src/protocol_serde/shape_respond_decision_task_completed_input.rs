@@ -21,5 +21,14 @@ pub fn ser_respond_decision_task_completed_input(
     if let Some(var_6) = &input.execution_context {
         object.key("executionContext").string(var_6.as_str());
     }
+    if let Some(var_7) = &input.task_list {
+        #[allow(unused_mut)]
+        let mut object_8 = object.key("taskList").start_object();
+        crate::protocol_serde::shape_task_list::ser_task_list(&mut object_8, var_7)?;
+        object_8.finish();
+    }
+    if let Some(var_9) = &input.task_list_schedule_to_start_timeout {
+        object.key("taskListScheduleToStartTimeout").string(var_9.as_str());
+    }
     Ok(())
 }

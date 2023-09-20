@@ -92,6 +92,13 @@ where
                         "serviceArns" => {
                             builder = builder.set_service_arns(crate::protocol_serde::shape_service_arn_list::de_service_arn_list(tokens)?);
                         }
+                        "lambdaEventStructureVersion" => {
+                            builder = builder.set_lambda_event_structure_version(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::LambdaEventStructureVersion::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

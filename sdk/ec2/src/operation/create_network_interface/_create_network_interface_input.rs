@@ -45,6 +45,8 @@ pub struct CreateNetworkInterfaceInput {
     pub tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
+    /// <p>If you’re creating a network interface in a dual-stack or IPv6-only subnet, you have the option to assign a primary IPv6 IP address. A primary IPv6 address is an IPv6 GUA address associated with an ENI that you have enabled to use a primary IPv6 address. Use this option if the instance that this ENI will be attached to relies on its IPv6 address not changing. Amazon Web Services will automatically assign an IPv6 address associated with the ENI attached to your instance to be the primary IPv6 address. Once you enable an IPv6 GUA address to be a primary IPv6, you cannot disable it. When you enable an IPv6 GUA address to be a primary IPv6, the first IPv6 GUA will be made the primary IPv6 address until the instance is terminated or the network interface is detached. If you have multiple IPv6 addresses associated with an ENI attached to your instance and you enable a primary IPv6 address, the first IPv6 GUA address associated with the ENI becomes the primary IPv6 address.</p>
+    pub enable_primary_ipv6: ::std::option::Option<bool>,
 }
 impl CreateNetworkInterfaceInput {
     /// <p>A description for the network interface.</p>
@@ -121,6 +123,10 @@ impl CreateNetworkInterfaceInput {
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
+    /// <p>If you’re creating a network interface in a dual-stack or IPv6-only subnet, you have the option to assign a primary IPv6 IP address. A primary IPv6 address is an IPv6 GUA address associated with an ENI that you have enabled to use a primary IPv6 address. Use this option if the instance that this ENI will be attached to relies on its IPv6 address not changing. Amazon Web Services will automatically assign an IPv6 address associated with the ENI attached to your instance to be the primary IPv6 address. Once you enable an IPv6 GUA address to be a primary IPv6, you cannot disable it. When you enable an IPv6 GUA address to be a primary IPv6, the first IPv6 GUA will be made the primary IPv6 address until the instance is terminated or the network interface is detached. If you have multiple IPv6 addresses associated with an ENI attached to your instance and you enable a primary IPv6 address, the first IPv6 GUA address associated with the ENI becomes the primary IPv6 address.</p>
+    pub fn enable_primary_ipv6(&self) -> ::std::option::Option<bool> {
+        self.enable_primary_ipv6
+    }
 }
 impl CreateNetworkInterfaceInput {
     /// Creates a new builder-style object to manufacture [`CreateNetworkInterfaceInput`](crate::operation::create_network_interface::CreateNetworkInterfaceInput).
@@ -149,6 +155,7 @@ pub struct CreateNetworkInterfaceInputBuilder {
     pub(crate) subnet_id: ::std::option::Option<::std::string::String>,
     pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
+    pub(crate) enable_primary_ipv6: ::std::option::Option<bool>,
 }
 impl CreateNetworkInterfaceInputBuilder {
     /// <p>A description for the network interface.</p>
@@ -441,6 +448,20 @@ impl CreateNetworkInterfaceInputBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
+    /// <p>If you’re creating a network interface in a dual-stack or IPv6-only subnet, you have the option to assign a primary IPv6 IP address. A primary IPv6 address is an IPv6 GUA address associated with an ENI that you have enabled to use a primary IPv6 address. Use this option if the instance that this ENI will be attached to relies on its IPv6 address not changing. Amazon Web Services will automatically assign an IPv6 address associated with the ENI attached to your instance to be the primary IPv6 address. Once you enable an IPv6 GUA address to be a primary IPv6, you cannot disable it. When you enable an IPv6 GUA address to be a primary IPv6, the first IPv6 GUA will be made the primary IPv6 address until the instance is terminated or the network interface is detached. If you have multiple IPv6 addresses associated with an ENI attached to your instance and you enable a primary IPv6 address, the first IPv6 GUA address associated with the ENI becomes the primary IPv6 address.</p>
+    pub fn enable_primary_ipv6(mut self, input: bool) -> Self {
+        self.enable_primary_ipv6 = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>If you’re creating a network interface in a dual-stack or IPv6-only subnet, you have the option to assign a primary IPv6 IP address. A primary IPv6 address is an IPv6 GUA address associated with an ENI that you have enabled to use a primary IPv6 address. Use this option if the instance that this ENI will be attached to relies on its IPv6 address not changing. Amazon Web Services will automatically assign an IPv6 address associated with the ENI attached to your instance to be the primary IPv6 address. Once you enable an IPv6 GUA address to be a primary IPv6, you cannot disable it. When you enable an IPv6 GUA address to be a primary IPv6, the first IPv6 GUA will be made the primary IPv6 address until the instance is terminated or the network interface is detached. If you have multiple IPv6 addresses associated with an ENI attached to your instance and you enable a primary IPv6 address, the first IPv6 GUA address associated with the ENI becomes the primary IPv6 address.</p>
+    pub fn set_enable_primary_ipv6(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.enable_primary_ipv6 = input;
+        self
+    }
+    /// <p>If you’re creating a network interface in a dual-stack or IPv6-only subnet, you have the option to assign a primary IPv6 IP address. A primary IPv6 address is an IPv6 GUA address associated with an ENI that you have enabled to use a primary IPv6 address. Use this option if the instance that this ENI will be attached to relies on its IPv6 address not changing. Amazon Web Services will automatically assign an IPv6 address associated with the ENI attached to your instance to be the primary IPv6 address. Once you enable an IPv6 GUA address to be a primary IPv6, you cannot disable it. When you enable an IPv6 GUA address to be a primary IPv6, the first IPv6 GUA will be made the primary IPv6 address until the instance is terminated or the network interface is detached. If you have multiple IPv6 addresses associated with an ENI attached to your instance and you enable a primary IPv6 address, the first IPv6 GUA address associated with the ENI becomes the primary IPv6 address.</p>
+    pub fn get_enable_primary_ipv6(&self) -> &::std::option::Option<bool> {
+        &self.enable_primary_ipv6
+    }
     /// Consumes the builder and constructs a [`CreateNetworkInterfaceInput`](crate::operation::create_network_interface::CreateNetworkInterfaceInput).
     pub fn build(
         self,
@@ -463,6 +484,7 @@ impl CreateNetworkInterfaceInputBuilder {
             subnet_id: self.subnet_id,
             tag_specifications: self.tag_specifications,
             client_token: self.client_token,
+            enable_primary_ipv6: self.enable_primary_ipv6,
         })
     }
 }

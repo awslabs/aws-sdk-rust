@@ -34,8 +34,8 @@ pub fn ser_modify_option_group_input_input(
     }
     #[allow(unused_mut)]
     let mut scope_13 = writer.prefix("ApplyImmediately");
-    if input.apply_immediately {
-        scope_13.boolean(input.apply_immediately);
+    if let Some(var_14) = &input.apply_immediately {
+        scope_13.boolean(*var_14);
     }
     writer.finish();
     Ok(::aws_smithy_http::body::SdkBody::from(out))

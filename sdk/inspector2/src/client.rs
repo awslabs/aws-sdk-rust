@@ -153,6 +153,8 @@ mod batch_get_account_status;
 
 mod batch_get_code_snippet;
 
+mod batch_get_finding_details;
+
 mod batch_get_free_trial_info;
 
 mod batch_get_member_ec2_deep_inspection_status;

@@ -41,7 +41,7 @@ pub struct StartCallAnalyticsStreamTranscriptionInput {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-language-models.html">Custom language models</a>.</p>
     pub language_model_name: ::std::option::Option<::std::string::String>,
     /// <p>Enables partial result stabilization for your transcription. Partial result stabilization can reduce latency in your output, but may impact accuracy. For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/streaming.html#streaming-partial-result-stabilization">Partial-result stabilization</a>.</p>
-    pub enable_partial_results_stabilization: bool,
+    pub enable_partial_results_stabilization: ::std::option::Option<bool>,
     /// <p>Specify the level of stability to use when you enable partial results stabilization (<code>EnablePartialResultsStabilization</code>).</p>
     /// <p>Low stability provides the highest accuracy. High stability transcribes faster, but with slightly lower accuracy.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/streaming.html#streaming-partial-result-stabilization">Partial-result stabilization</a>.</p>
@@ -120,7 +120,7 @@ impl StartCallAnalyticsStreamTranscriptionInput {
         self.language_model_name.as_deref()
     }
     /// <p>Enables partial result stabilization for your transcription. Partial result stabilization can reduce latency in your output, but may impact accuracy. For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/streaming.html#streaming-partial-result-stabilization">Partial-result stabilization</a>.</p>
-    pub fn enable_partial_results_stabilization(&self) -> bool {
+    pub fn enable_partial_results_stabilization(&self) -> ::std::option::Option<bool> {
         self.enable_partial_results_stabilization
     }
     /// <p>Specify the level of stability to use when you enable partial results stabilization (<code>EnablePartialResultsStabilization</code>).</p>
@@ -495,7 +495,7 @@ impl StartCallAnalyticsStreamTranscriptionInputBuilder {
                 vocabulary_filter_name: self.vocabulary_filter_name,
                 vocabulary_filter_method: self.vocabulary_filter_method,
                 language_model_name: self.language_model_name,
-                enable_partial_results_stabilization: self.enable_partial_results_stabilization.unwrap_or_default(),
+                enable_partial_results_stabilization: self.enable_partial_results_stabilization,
                 partial_results_stability: self.partial_results_stability,
                 content_identification_type: self.content_identification_type,
                 content_redaction_type: self.content_redaction_type,

@@ -17,6 +17,10 @@ pub use crate::types::_variant_import_item_source::VariantImportItemSourceBuilde
 
 pub use crate::types::_variant_import_item_detail::VariantImportItemDetailBuilder;
 
+pub use crate::types::_share_details::ShareDetailsBuilder;
+
+pub use crate::types::_filter::FilterBuilder;
+
 pub use crate::types::_start_read_set_import_job_source_item::StartReadSetImportJobSourceItemBuilder;
 
 pub use crate::types::_source_files::SourceFilesBuilder;
@@ -90,6 +94,14 @@ pub use crate::types::_reference_list_item::ReferenceListItemBuilder;
 pub use crate::types::_reference_filter::ReferenceFilterBuilder;
 
 pub use crate::types::_reference_files::ReferenceFilesBuilder;
+
+pub use crate::types::_version_delete_error::VersionDeleteErrorBuilder;
+
+pub use crate::types::_annotation_store_version_item::AnnotationStoreVersionItemBuilder;
+
+pub use crate::types::_list_annotation_store_versions_filter::ListAnnotationStoreVersionsFilterBuilder;
+
+pub use crate::types::_tsv_version_options::TsvVersionOptionsBuilder;
 
 pub use crate::types::_annotation_store_item::AnnotationStoreItemBuilder;
 

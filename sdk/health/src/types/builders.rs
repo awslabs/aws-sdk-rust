@@ -27,10 +27,16 @@ pub use crate::types::_event_details::EventDetailsBuilder;
 
 pub use crate::types::_event_aggregate::EventAggregateBuilder;
 
+pub use crate::types::_organization_entity_aggregate::OrganizationEntityAggregateBuilder;
+
+pub use crate::types::_account_entity_aggregate::AccountEntityAggregateBuilder;
+
 pub use crate::types::_entity_aggregate::EntityAggregateBuilder;
 
 pub use crate::types::_organization_affected_entities_error_item::OrganizationAffectedEntitiesErrorItemBuilder;
 
 pub use crate::types::_affected_entity::AffectedEntityBuilder;
+
+pub use crate::types::_entity_account_filter::EntityAccountFilterBuilder;
 
 pub use crate::types::_entity_filter::EntityFilterBuilder;

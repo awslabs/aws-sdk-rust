@@ -7,6 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteHapgOutput`](crate::operation::delete_hapg::DeleteHapgOutput) with field(s):
     ///   - [`status(Option<String>)`](crate::operation::delete_hapg::DeleteHapgOutput::status): <p>The status of the action.</p>
     /// - On failure, responds with [`SdkError<DeleteHapgError>`](crate::operation::delete_hapg::DeleteHapgError)
+    #[deprecated(note = "This API is deprecated.")]
     pub fn delete_hapg(&self) -> crate::operation::delete_hapg::builders::DeleteHapgFluentBuilder {
         crate::operation::delete_hapg::builders::DeleteHapgFluentBuilder::new(self.handle.clone())
     }

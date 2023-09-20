@@ -32,6 +32,10 @@ where
                                         .transpose()?,
                                 );
                             }
+                            "LineItemFilters" => {
+                                builder = builder
+                                    .set_line_item_filters(crate::protocol_serde::shape_line_item_filters_list::de_line_item_filters_list(tokens)?);
+                            }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

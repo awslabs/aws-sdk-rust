@@ -8,6 +8,7 @@ impl super::Client {
     ///   - [`hapg_list(Option<Vec<String>>)`](crate::operation::list_hapgs::ListHapgsOutput::hapg_list): <p>The list of high-availability partition groups.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_hapgs::ListHapgsOutput::next_token): <p>If not null, more results are available. Pass this value to <code>ListHapgs</code> to retrieve the next set of items.</p>
     /// - On failure, responds with [`SdkError<ListHapgsError>`](crate::operation::list_hapgs::ListHapgsError)
+    #[deprecated(note = "This API is deprecated.")]
     pub fn list_hapgs(&self) -> crate::operation::list_hapgs::builders::ListHapgsFluentBuilder {
         crate::operation::list_hapgs::builders::ListHapgsFluentBuilder::new(self.handle.clone())
     }

@@ -10,6 +10,9 @@ pub mod batch_get_account_status;
 /// Types for the `BatchGetCodeSnippet` operation.
 pub mod batch_get_code_snippet;
 
+/// Types for the `BatchGetFindingDetails` operation.
+pub mod batch_get_finding_details;
+
 /// Types for the `BatchGetFreeTrialInfo` operation.
 pub mod batch_get_free_trial_info;
 

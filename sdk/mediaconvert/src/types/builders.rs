@@ -161,6 +161,8 @@ pub use crate::types::_mp3_settings::Mp3SettingsBuilder;
 
 pub use crate::types::_mp2_settings::Mp2SettingsBuilder;
 
+pub use crate::types::_flac_settings::FlacSettingsBuilder;
+
 pub use crate::types::_eac3_settings::Eac3SettingsBuilder;
 
 pub use crate::types::_eac3_atmos_settings::Eac3AtmosSettingsBuilder;

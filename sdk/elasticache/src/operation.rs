@@ -195,3 +195,6 @@ pub mod start_migration;
 
 /// Types for the `TestFailover` operation.
 pub mod test_failover;
+
+/// Types for the `TestMigration` operation.
+pub mod test_migration;

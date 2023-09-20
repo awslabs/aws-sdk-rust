@@ -129,6 +129,16 @@ pub use crate::types::_compromised_credentials_event_action_type::CompromisedCre
 
 pub use crate::types::_event_filter_type::EventFilterType;
 
+pub use crate::types::_log_delivery_configuration_type::LogDeliveryConfigurationType;
+
+pub use crate::types::_log_configuration_type::LogConfigurationType;
+
+pub use crate::types::_cloud_watch_logs_configuration_type::CloudWatchLogsConfigurationType;
+
+pub use crate::types::_event_source_name::EventSourceName;
+
+pub use crate::types::_log_level::LogLevel;
+
 pub use crate::types::_authentication_result_type::AuthenticationResultType;
 
 pub use crate::types::_new_device_metadata_type::NewDeviceMetadataType;
@@ -241,6 +251,8 @@ mod _challenge_response;
 
 mod _challenge_response_type;
 
+mod _cloud_watch_logs_configuration_type;
+
 mod _code_delivery_details_type;
 
 mod _compromised_credentials_actions_type;
@@ -293,6 +305,8 @@ mod _event_response_type;
 
 mod _event_risk_type;
 
+mod _event_source_name;
+
 mod _event_type;
 
 mod _explicit_auth_flows_type;
@@ -308,6 +322,12 @@ mod _identity_provider_type;
 mod _identity_provider_type_type;
 
 mod _lambda_config_type;
+
+mod _log_configuration_type;
+
+mod _log_delivery_configuration_type;
+
+mod _log_level;
 
 mod _message_action_type;
 

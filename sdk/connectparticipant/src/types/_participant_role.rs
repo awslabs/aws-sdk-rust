@@ -14,6 +14,7 @@
 /// match participantrole {
 ///     ParticipantRole::Agent => { /* ... */ },
 ///     ParticipantRole::Customer => { /* ... */ },
+///     ParticipantRole::CustomBot => { /* ... */ },
 ///     ParticipantRole::System => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -47,6 +48,8 @@ pub enum ParticipantRole {
     #[allow(missing_docs)] // documentation missing in model
     Customer,
     #[allow(missing_docs)] // documentation missing in model
+    CustomBot,
+    #[allow(missing_docs)] // documentation missing in model
     System,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
@@ -56,6 +59,7 @@ impl ::std::convert::From<&str> for ParticipantRole {
         match s {
             "AGENT" => ParticipantRole::Agent,
             "CUSTOMER" => ParticipantRole::Customer,
+            "CUSTOM_BOT" => ParticipantRole::CustomBot,
             "SYSTEM" => ParticipantRole::System,
             other => ParticipantRole::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
@@ -74,13 +78,14 @@ impl ParticipantRole {
         match self {
             ParticipantRole::Agent => "AGENT",
             ParticipantRole::Customer => "CUSTOMER",
+            ParticipantRole::CustomBot => "CUSTOM_BOT",
             ParticipantRole::System => "SYSTEM",
             ParticipantRole::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AGENT", "CUSTOMER", "SYSTEM"]
+        &["AGENT", "CUSTOMER", "CUSTOM_BOT", "SYSTEM"]
     }
 }
 impl ::std::convert::AsRef<str> for ParticipantRole {

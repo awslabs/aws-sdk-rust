@@ -7,6 +7,8 @@ pub struct ListRecoveryPointsByBackupVaultInput {
     /// <p>Backup vault name might not be available when a supported service creates the backup.</p>
     /// </note>
     pub backup_vault_name: ::std::option::Option<::std::string::String>,
+    /// <p>This parameter will sort the list of recovery points by account ID.</p>
+    pub backup_vault_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of items to be returned.</p>
@@ -30,6 +32,10 @@ impl ListRecoveryPointsByBackupVaultInput {
     /// </note>
     pub fn backup_vault_name(&self) -> ::std::option::Option<&str> {
         self.backup_vault_name.as_deref()
+    }
+    /// <p>This parameter will sort the list of recovery points by account ID.</p>
+    pub fn backup_vault_account_id(&self) -> ::std::option::Option<&str> {
+        self.backup_vault_account_id.as_deref()
     }
     /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -76,6 +82,7 @@ impl ListRecoveryPointsByBackupVaultInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListRecoveryPointsByBackupVaultInputBuilder {
     pub(crate) backup_vault_name: ::std::option::Option<::std::string::String>,
+    pub(crate) backup_vault_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) by_resource_arn: ::std::option::Option<::std::string::String>,
@@ -105,6 +112,20 @@ impl ListRecoveryPointsByBackupVaultInputBuilder {
     /// </note>
     pub fn get_backup_vault_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.backup_vault_name
+    }
+    /// <p>This parameter will sort the list of recovery points by account ID.</p>
+    pub fn backup_vault_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.backup_vault_account_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>This parameter will sort the list of recovery points by account ID.</p>
+    pub fn set_backup_vault_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.backup_vault_account_id = input;
+        self
+    }
+    /// <p>This parameter will sort the list of recovery points by account ID.</p>
+    pub fn get_backup_vault_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.backup_vault_account_id
     }
     /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -228,6 +249,7 @@ impl ListRecoveryPointsByBackupVaultInputBuilder {
         ::std::result::Result::Ok(
             crate::operation::list_recovery_points_by_backup_vault::ListRecoveryPointsByBackupVaultInput {
                 backup_vault_name: self.backup_vault_name,
+                backup_vault_account_id: self.backup_vault_account_id,
                 next_token: self.next_token,
                 max_results: self.max_results,
                 by_resource_arn: self.by_resource_arn,

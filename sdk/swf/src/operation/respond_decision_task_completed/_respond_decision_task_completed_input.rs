@@ -12,6 +12,11 @@ pub struct RespondDecisionTaskCompletedInput {
     pub decisions: ::std::option::Option<::std::vec::Vec<crate::types::Decision>>,
     /// <p>User defined context to add to workflow execution.</p>
     pub execution_context: ::std::option::Option<::std::string::String>,
+    /// <p>The task list to use for the future decision tasks of this workflow execution. This list overrides the original task list you specified while starting the workflow execution. </p>
+    pub task_list: ::std::option::Option<crate::types::TaskList>,
+    /// <p>Specifies a timeout (in seconds) for the task list override. When this parameter is missing, the task list override is permanent. This parameter makes it possible to temporarily override the task list. If a decision task scheduled on the override task list is not started within the timeout, the decision task will time out. Amazon SWF will revert the override and schedule a new decision task to the original task list.</p>
+    /// <p>If a decision task scheduled on the override task list is started within the timeout, but not completed within the start-to-close timeout, Amazon SWF will also revert the override and schedule a new decision task to the original task list.</p>
+    pub task_list_schedule_to_start_timeout: ::std::option::Option<::std::string::String>,
 }
 impl RespondDecisionTaskCompletedInput {
     /// <p>The <code>taskToken</code> from the <code>DecisionTask</code>.</p> <important>
@@ -28,6 +33,15 @@ impl RespondDecisionTaskCompletedInput {
     pub fn execution_context(&self) -> ::std::option::Option<&str> {
         self.execution_context.as_deref()
     }
+    /// <p>The task list to use for the future decision tasks of this workflow execution. This list overrides the original task list you specified while starting the workflow execution. </p>
+    pub fn task_list(&self) -> ::std::option::Option<&crate::types::TaskList> {
+        self.task_list.as_ref()
+    }
+    /// <p>Specifies a timeout (in seconds) for the task list override. When this parameter is missing, the task list override is permanent. This parameter makes it possible to temporarily override the task list. If a decision task scheduled on the override task list is not started within the timeout, the decision task will time out. Amazon SWF will revert the override and schedule a new decision task to the original task list.</p>
+    /// <p>If a decision task scheduled on the override task list is started within the timeout, but not completed within the start-to-close timeout, Amazon SWF will also revert the override and schedule a new decision task to the original task list.</p>
+    pub fn task_list_schedule_to_start_timeout(&self) -> ::std::option::Option<&str> {
+        self.task_list_schedule_to_start_timeout.as_deref()
+    }
 }
 impl RespondDecisionTaskCompletedInput {
     /// Creates a new builder-style object to manufacture [`RespondDecisionTaskCompletedInput`](crate::operation::respond_decision_task_completed::RespondDecisionTaskCompletedInput).
@@ -43,6 +57,8 @@ pub struct RespondDecisionTaskCompletedInputBuilder {
     pub(crate) task_token: ::std::option::Option<::std::string::String>,
     pub(crate) decisions: ::std::option::Option<::std::vec::Vec<crate::types::Decision>>,
     pub(crate) execution_context: ::std::option::Option<::std::string::String>,
+    pub(crate) task_list: ::std::option::Option<crate::types::TaskList>,
+    pub(crate) task_list_schedule_to_start_timeout: ::std::option::Option<::std::string::String>,
 }
 impl RespondDecisionTaskCompletedInputBuilder {
     /// <p>The <code>taskToken</code> from the <code>DecisionTask</code>.</p> <important>
@@ -99,6 +115,37 @@ impl RespondDecisionTaskCompletedInputBuilder {
     pub fn get_execution_context(&self) -> &::std::option::Option<::std::string::String> {
         &self.execution_context
     }
+    /// <p>The task list to use for the future decision tasks of this workflow execution. This list overrides the original task list you specified while starting the workflow execution. </p>
+    pub fn task_list(mut self, input: crate::types::TaskList) -> Self {
+        self.task_list = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The task list to use for the future decision tasks of this workflow execution. This list overrides the original task list you specified while starting the workflow execution. </p>
+    pub fn set_task_list(mut self, input: ::std::option::Option<crate::types::TaskList>) -> Self {
+        self.task_list = input;
+        self
+    }
+    /// <p>The task list to use for the future decision tasks of this workflow execution. This list overrides the original task list you specified while starting the workflow execution. </p>
+    pub fn get_task_list(&self) -> &::std::option::Option<crate::types::TaskList> {
+        &self.task_list
+    }
+    /// <p>Specifies a timeout (in seconds) for the task list override. When this parameter is missing, the task list override is permanent. This parameter makes it possible to temporarily override the task list. If a decision task scheduled on the override task list is not started within the timeout, the decision task will time out. Amazon SWF will revert the override and schedule a new decision task to the original task list.</p>
+    /// <p>If a decision task scheduled on the override task list is started within the timeout, but not completed within the start-to-close timeout, Amazon SWF will also revert the override and schedule a new decision task to the original task list.</p>
+    pub fn task_list_schedule_to_start_timeout(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.task_list_schedule_to_start_timeout = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Specifies a timeout (in seconds) for the task list override. When this parameter is missing, the task list override is permanent. This parameter makes it possible to temporarily override the task list. If a decision task scheduled on the override task list is not started within the timeout, the decision task will time out. Amazon SWF will revert the override and schedule a new decision task to the original task list.</p>
+    /// <p>If a decision task scheduled on the override task list is started within the timeout, but not completed within the start-to-close timeout, Amazon SWF will also revert the override and schedule a new decision task to the original task list.</p>
+    pub fn set_task_list_schedule_to_start_timeout(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.task_list_schedule_to_start_timeout = input;
+        self
+    }
+    /// <p>Specifies a timeout (in seconds) for the task list override. When this parameter is missing, the task list override is permanent. This parameter makes it possible to temporarily override the task list. If a decision task scheduled on the override task list is not started within the timeout, the decision task will time out. Amazon SWF will revert the override and schedule a new decision task to the original task list.</p>
+    /// <p>If a decision task scheduled on the override task list is started within the timeout, but not completed within the start-to-close timeout, Amazon SWF will also revert the override and schedule a new decision task to the original task list.</p>
+    pub fn get_task_list_schedule_to_start_timeout(&self) -> &::std::option::Option<::std::string::String> {
+        &self.task_list_schedule_to_start_timeout
+    }
     /// Consumes the builder and constructs a [`RespondDecisionTaskCompletedInput`](crate::operation::respond_decision_task_completed::RespondDecisionTaskCompletedInput).
     pub fn build(
         self,
@@ -110,6 +157,8 @@ impl RespondDecisionTaskCompletedInputBuilder {
             task_token: self.task_token,
             decisions: self.decisions,
             execution_context: self.execution_context,
+            task_list: self.task_list,
+            task_list_schedule_to_start_timeout: self.task_list_schedule_to_start_timeout,
         })
     }
 }

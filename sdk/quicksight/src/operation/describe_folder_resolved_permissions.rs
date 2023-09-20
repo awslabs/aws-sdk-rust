@@ -225,6 +225,28 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for DescribeFol
                 .expect("formatting should succeed");
                 ::std::result::Result::Ok(())
             }
+            fn uri_query(
+                _input: &crate::operation::describe_folder_resolved_permissions::DescribeFolderResolvedPermissionsInput,
+                mut output: &mut ::std::string::String,
+            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError> {
+                let mut query = ::aws_smithy_http::query::Writer::new(output);
+                if let ::std::option::Option::Some(inner_3) = &_input.namespace {
+                    {
+                        query.push_kv("namespace", &::aws_smithy_http::query::fmt_string(&inner_3));
+                    }
+                }
+                if let ::std::option::Option::Some(inner_4) = &_input.max_results {
+                    if *inner_4 != 0 {
+                        query.push_kv("max-results", ::aws_smithy_types::primitive::Encoder::from(*inner_4).encode());
+                    }
+                }
+                if let ::std::option::Option::Some(inner_5) = &_input.next_token {
+                    {
+                        query.push_kv("next-token", &::aws_smithy_http::query::fmt_string(&inner_5));
+                    }
+                }
+                ::std::result::Result::Ok(())
+            }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
                 input: &crate::operation::describe_folder_resolved_permissions::DescribeFolderResolvedPermissionsInput,
@@ -232,6 +254,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for DescribeFol
             ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
                 let mut uri = ::std::string::String::new();
                 uri_base(input, &mut uri)?;
+                uri_query(input, &mut uri)?;
                 ::std::result::Result::Ok(builder.method("GET").uri(uri))
             }
             let mut builder = update_http_builder(&input, ::http::request::Builder::new())?;
@@ -295,6 +318,8 @@ pub enum DescribeFolderResolvedPermissionsError {
     AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>An internal failure occurred.</p>
     InternalFailureException(crate::types::error::InternalFailureException),
+    /// <p>The <code>NextToken</code> value isn't valid.</p>
+    InvalidNextTokenException(crate::types::error::InvalidNextTokenException),
     /// <p>One or more parameters has a value that isn't valid.</p>
     InvalidParameterValueException(crate::types::error::InvalidParameterValueException),
     /// <p>One or more resources can't be found.</p>
@@ -323,6 +348,7 @@ impl ::std::fmt::Display for DescribeFolderResolvedPermissionsError {
         match self {
             Self::AccessDeniedException(_inner) => _inner.fmt(f),
             Self::InternalFailureException(_inner) => _inner.fmt(f),
+            Self::InvalidNextTokenException(_inner) => _inner.fmt(f),
             Self::InvalidParameterValueException(_inner) => _inner.fmt(f),
             Self::ResourceNotFoundException(_inner) => _inner.fmt(f),
             Self::ThrottlingException(_inner) => _inner.fmt(f),
@@ -336,6 +362,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for DescribeFolde
         match self {
             Self::AccessDeniedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InternalFailureException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidNextTokenException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidParameterValueException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ResourceNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ThrottlingException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
@@ -378,6 +405,7 @@ impl DescribeFolderResolvedPermissionsError {
         match self {
             Self::AccessDeniedException(e) => e.meta(),
             Self::InternalFailureException(e) => e.meta(),
+            Self::InvalidNextTokenException(e) => e.meta(),
             Self::InvalidParameterValueException(e) => e.meta(),
             Self::ResourceNotFoundException(e) => e.meta(),
             Self::ThrottlingException(e) => e.meta(),
@@ -392,6 +420,10 @@ impl DescribeFolderResolvedPermissionsError {
     /// Returns `true` if the error kind is `DescribeFolderResolvedPermissionsError::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(self, Self::InternalFailureException(_))
+    }
+    /// Returns `true` if the error kind is `DescribeFolderResolvedPermissionsError::InvalidNextTokenException`.
+    pub fn is_invalid_next_token_exception(&self) -> bool {
+        matches!(self, Self::InvalidNextTokenException(_))
     }
     /// Returns `true` if the error kind is `DescribeFolderResolvedPermissionsError::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
@@ -415,6 +447,7 @@ impl ::std::error::Error for DescribeFolderResolvedPermissionsError {
         match self {
             Self::AccessDeniedException(_inner) => ::std::option::Option::Some(_inner),
             Self::InternalFailureException(_inner) => ::std::option::Option::Some(_inner),
+            Self::InvalidNextTokenException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidParameterValueException(_inner) => ::std::option::Option::Some(_inner),
             Self::ResourceNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::ThrottlingException(_inner) => ::std::option::Option::Some(_inner),
@@ -434,3 +467,6 @@ mod _describe_folder_resolved_permissions_output;
 
 /// Builders
 pub mod builders;
+
+/// Paginator for this operation
+pub mod paginator;

@@ -158,17 +158,17 @@ impl GetApiKeysFluentBuilder {
     pub fn get_name_query(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name_query()
     }
-    /// <p>The identifier of a customer in AWS Marketplace or an external system, such as a developer portal.</p>
+    /// <p>The identifier of a customer in Amazon Web Services Marketplace or an external system, such as a developer portal.</p>
     pub fn customer_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.customer_id(input.into());
         self
     }
-    /// <p>The identifier of a customer in AWS Marketplace or an external system, such as a developer portal.</p>
+    /// <p>The identifier of a customer in Amazon Web Services Marketplace or an external system, such as a developer portal.</p>
     pub fn set_customer_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_customer_id(input);
         self
     }
-    /// <p>The identifier of a customer in AWS Marketplace or an external system, such as a developer portal.</p>
+    /// <p>The identifier of a customer in Amazon Web Services Marketplace or an external system, such as a developer portal.</p>
     pub fn get_customer_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_customer_id()
     }

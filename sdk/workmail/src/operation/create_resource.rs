@@ -272,6 +272,8 @@ pub enum CreateResourceError {
     OrganizationStateException(crate::types::error::OrganizationStateException),
     /// <p>This user, group, or resource name is not allowed in WorkMail.</p>
     ReservedNameException(crate::types::error::ReservedNameException),
+    /// <p>You can't perform a write operation against a read-only directory.</p>
+    UnsupportedOperationException(crate::types::error::UnsupportedOperationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(::aws_smithy_types::error::Unhandled),
 }
@@ -297,6 +299,7 @@ impl ::std::fmt::Display for CreateResourceError {
             Self::OrganizationNotFoundException(_inner) => _inner.fmt(f),
             Self::OrganizationStateException(_inner) => _inner.fmt(f),
             Self::ReservedNameException(_inner) => _inner.fmt(f),
+            Self::UnsupportedOperationException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -311,6 +314,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for CreateResourc
             Self::OrganizationNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::OrganizationStateException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ReservedNameException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::UnsupportedOperationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
         }
     }
@@ -354,6 +358,7 @@ impl CreateResourceError {
             Self::OrganizationNotFoundException(e) => e.meta(),
             Self::OrganizationStateException(e) => e.meta(),
             Self::ReservedNameException(e) => e.meta(),
+            Self::UnsupportedOperationException(e) => e.meta(),
             Self::Unhandled(e) => e.meta(),
         }
     }
@@ -385,6 +390,10 @@ impl CreateResourceError {
     pub fn is_reserved_name_exception(&self) -> bool {
         matches!(self, Self::ReservedNameException(_))
     }
+    /// Returns `true` if the error kind is `CreateResourceError::UnsupportedOperationException`.
+    pub fn is_unsupported_operation_exception(&self) -> bool {
+        matches!(self, Self::UnsupportedOperationException(_))
+    }
 }
 impl ::std::error::Error for CreateResourceError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
@@ -396,6 +405,7 @@ impl ::std::error::Error for CreateResourceError {
             Self::OrganizationNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::OrganizationStateException(_inner) => ::std::option::Option::Some(_inner),
             Self::ReservedNameException(_inner) => ::std::option::Option::Some(_inner),
+            Self::UnsupportedOperationException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(_inner),
         }
     }

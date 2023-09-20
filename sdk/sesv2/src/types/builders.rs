@@ -77,6 +77,8 @@ pub use crate::types::_contact_list_destination::ContactListDestinationBuilder;
 
 pub use crate::types::_suppression_list_destination::SuppressionListDestinationBuilder;
 
+pub use crate::types::_export_job_summary::ExportJobSummaryBuilder;
+
 pub use crate::types::_email_template_metadata::EmailTemplateMetadataBuilder;
 
 pub use crate::types::_identity_info::IdentityInfoBuilder;
@@ -99,9 +101,33 @@ pub use crate::types::_suppressed_destination::SuppressedDestinationBuilder;
 
 pub use crate::types::_suppressed_destination_attributes::SuppressedDestinationAttributesBuilder;
 
+pub use crate::types::_email_insights::EmailInsightsBuilder;
+
+pub use crate::types::_insights_event::InsightsEventBuilder;
+
+pub use crate::types::_event_details::EventDetailsBuilder;
+
+pub use crate::types::_complaint::ComplaintBuilder;
+
+pub use crate::types::_bounce::BounceBuilder;
+
 pub use crate::types::_failure_info::FailureInfoBuilder;
 
 pub use crate::types::_import_data_source::ImportDataSourceBuilder;
+
+pub use crate::types::_export_statistics::ExportStatisticsBuilder;
+
+pub use crate::types::_export_data_source::ExportDataSourceBuilder;
+
+pub use crate::types::_message_insights_data_source::MessageInsightsDataSourceBuilder;
+
+pub use crate::types::_message_insights_filters::MessageInsightsFiltersBuilder;
+
+pub use crate::types::_metrics_data_source::MetricsDataSourceBuilder;
+
+pub use crate::types::_export_metric::ExportMetricBuilder;
+
+pub use crate::types::_export_destination::ExportDestinationBuilder;
 
 pub use crate::types::_mail_from_attributes::MailFromAttributesBuilder;
 

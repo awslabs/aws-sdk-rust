@@ -8,7 +8,7 @@ pub struct Schema {
     pub columns: ::std::option::Option<::std::vec::Vec<crate::types::Column>>,
     /// <p>The partition keys for the dataset underlying this schema.</p>
     pub partition_keys: ::std::option::Option<::std::vec::Vec<crate::types::Column>>,
-    /// <p>The analysis rule types associated with the schema. Valued values are LIST and AGGREGATION. Currently, only one entry is present.</p>
+    /// <p>The analysis rule types associated with the schema. Currently, only one entry is present.</p>
     pub analysis_rule_types: ::std::option::Option<::std::vec::Vec<crate::types::AnalysisRuleType>>,
     /// <p>The analysis method for the schema. The only valid value is currently DIRECT_QUERY.</p>
     pub analysis_method: ::std::option::Option<crate::types::AnalysisMethod>,
@@ -38,7 +38,7 @@ impl Schema {
     pub fn partition_keys(&self) -> ::std::option::Option<&[crate::types::Column]> {
         self.partition_keys.as_deref()
     }
-    /// <p>The analysis rule types associated with the schema. Valued values are LIST and AGGREGATION. Currently, only one entry is present.</p>
+    /// <p>The analysis rule types associated with the schema. Currently, only one entry is present.</p>
     pub fn analysis_rule_types(&self) -> ::std::option::Option<&[crate::types::AnalysisRuleType]> {
         self.analysis_rule_types.as_deref()
     }
@@ -148,19 +148,19 @@ impl SchemaBuilder {
     ///
     /// To override the contents of this collection use [`set_analysis_rule_types`](Self::set_analysis_rule_types).
     ///
-    /// <p>The analysis rule types associated with the schema. Valued values are LIST and AGGREGATION. Currently, only one entry is present.</p>
+    /// <p>The analysis rule types associated with the schema. Currently, only one entry is present.</p>
     pub fn analysis_rule_types(mut self, input: crate::types::AnalysisRuleType) -> Self {
         let mut v = self.analysis_rule_types.unwrap_or_default();
         v.push(input);
         self.analysis_rule_types = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The analysis rule types associated with the schema. Valued values are LIST and AGGREGATION. Currently, only one entry is present.</p>
+    /// <p>The analysis rule types associated with the schema. Currently, only one entry is present.</p>
     pub fn set_analysis_rule_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AnalysisRuleType>>) -> Self {
         self.analysis_rule_types = input;
         self
     }
-    /// <p>The analysis rule types associated with the schema. Valued values are LIST and AGGREGATION. Currently, only one entry is present.</p>
+    /// <p>The analysis rule types associated with the schema. Currently, only one entry is present.</p>
     pub fn get_analysis_rule_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalysisRuleType>> {
         &self.analysis_rule_types
     }

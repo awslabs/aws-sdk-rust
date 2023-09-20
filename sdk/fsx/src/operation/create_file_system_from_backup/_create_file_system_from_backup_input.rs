@@ -45,7 +45,7 @@ pub struct CreateFileSystemFromBackupInput {
     /// </ul>
     /// <p>If a <code>KmsKeyId</code> isn't specified, the Amazon FSx-managed KMS key for your account is used. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_Encrypt.html">Encrypt</a> in the <i>Key Management Service API Reference</i>.</p>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
-    /// <p>Sets the version for the Amazon FSx for Lustre file system that you're creating from a backup. Valid values are <code>2.10</code> and <code>2.12</code>.</p>
+    /// <p>Sets the version for the Amazon FSx for Lustre file system that you're creating from a backup. Valid values are <code>2.10</code>, <code>2.12</code>, and <code>2.15</code>.</p>
     /// <p>You don't need to specify <code>FileSystemTypeVersion</code> because it will be applied using the backup's <code>FileSystemTypeVersion</code> setting. If you choose to specify <code>FileSystemTypeVersion</code> when creating from backup, the value must match the backup's <code>FileSystemTypeVersion</code> setting.</p>
     pub file_system_type_version: ::std::option::Option<::std::string::String>,
     /// <p>The OpenZFS configuration for the file system that's being created. </p>
@@ -114,7 +114,7 @@ impl CreateFileSystemFromBackupInput {
     pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
-    /// <p>Sets the version for the Amazon FSx for Lustre file system that you're creating from a backup. Valid values are <code>2.10</code> and <code>2.12</code>.</p>
+    /// <p>Sets the version for the Amazon FSx for Lustre file system that you're creating from a backup. Valid values are <code>2.10</code>, <code>2.12</code>, and <code>2.15</code>.</p>
     /// <p>You don't need to specify <code>FileSystemTypeVersion</code> because it will be applied using the backup's <code>FileSystemTypeVersion</code> setting. If you choose to specify <code>FileSystemTypeVersion</code> when creating from backup, the value must match the backup's <code>FileSystemTypeVersion</code> setting.</p>
     pub fn file_system_type_version(&self) -> ::std::option::Option<&str> {
         self.file_system_type_version.as_deref()
@@ -367,19 +367,19 @@ impl CreateFileSystemFromBackupInputBuilder {
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.kms_key_id
     }
-    /// <p>Sets the version for the Amazon FSx for Lustre file system that you're creating from a backup. Valid values are <code>2.10</code> and <code>2.12</code>.</p>
+    /// <p>Sets the version for the Amazon FSx for Lustre file system that you're creating from a backup. Valid values are <code>2.10</code>, <code>2.12</code>, and <code>2.15</code>.</p>
     /// <p>You don't need to specify <code>FileSystemTypeVersion</code> because it will be applied using the backup's <code>FileSystemTypeVersion</code> setting. If you choose to specify <code>FileSystemTypeVersion</code> when creating from backup, the value must match the backup's <code>FileSystemTypeVersion</code> setting.</p>
     pub fn file_system_type_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_system_type_version = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Sets the version for the Amazon FSx for Lustre file system that you're creating from a backup. Valid values are <code>2.10</code> and <code>2.12</code>.</p>
+    /// <p>Sets the version for the Amazon FSx for Lustre file system that you're creating from a backup. Valid values are <code>2.10</code>, <code>2.12</code>, and <code>2.15</code>.</p>
     /// <p>You don't need to specify <code>FileSystemTypeVersion</code> because it will be applied using the backup's <code>FileSystemTypeVersion</code> setting. If you choose to specify <code>FileSystemTypeVersion</code> when creating from backup, the value must match the backup's <code>FileSystemTypeVersion</code> setting.</p>
     pub fn set_file_system_type_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.file_system_type_version = input;
         self
     }
-    /// <p>Sets the version for the Amazon FSx for Lustre file system that you're creating from a backup. Valid values are <code>2.10</code> and <code>2.12</code>.</p>
+    /// <p>Sets the version for the Amazon FSx for Lustre file system that you're creating from a backup. Valid values are <code>2.10</code>, <code>2.12</code>, and <code>2.15</code>.</p>
     /// <p>You don't need to specify <code>FileSystemTypeVersion</code> because it will be applied using the backup's <code>FileSystemTypeVersion</code> setting. If you choose to specify <code>FileSystemTypeVersion</code> when creating from backup, the value must match the backup's <code>FileSystemTypeVersion</code> setting.</p>
     pub fn get_file_system_type_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.file_system_type_version

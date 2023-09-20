@@ -4,7 +4,7 @@
 /// <p>This data type is used as an request parameter to the <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_IsAuthorized.html">IsAuthorized</a> and <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_IsAuthorizedWithToken.html">IsAuthorizedWithToken</a> operations.</p>
 /// <p>Example: <code>{ "actionId": "&lt;action name&gt;", "actionType": "Action" }</code> </p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ActionIdentifier {
     /// <p>The type of an action.</p>
     pub action_type: ::std::option::Option<::std::string::String>,
@@ -21,6 +21,14 @@ impl ActionIdentifier {
         self.action_id.as_deref()
     }
 }
+impl ::std::fmt::Debug for ActionIdentifier {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("ActionIdentifier");
+        formatter.field("action_type", &"*** Sensitive Data Redacted ***");
+        formatter.field("action_id", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl ActionIdentifier {
     /// Creates a new builder-style object to manufacture [`ActionIdentifier`](crate::types::ActionIdentifier).
     pub fn builder() -> crate::types::builders::ActionIdentifierBuilder {
@@ -30,7 +38,7 @@ impl ActionIdentifier {
 
 /// A builder for [`ActionIdentifier`](crate::types::ActionIdentifier).
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct ActionIdentifierBuilder {
     pub(crate) action_type: ::std::option::Option<::std::string::String>,
     pub(crate) action_id: ::std::option::Option<::std::string::String>,
@@ -70,5 +78,13 @@ impl ActionIdentifierBuilder {
             action_type: self.action_type,
             action_id: self.action_id,
         }
+    }
+}
+impl ::std::fmt::Debug for ActionIdentifierBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("ActionIdentifierBuilder");
+        formatter.field("action_type", &"*** Sensitive Data Redacted ***");
+        formatter.field("action_id", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

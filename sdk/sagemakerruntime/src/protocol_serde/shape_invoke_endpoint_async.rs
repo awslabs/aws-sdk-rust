@@ -35,12 +35,12 @@ pub fn de_invoke_endpoint_async_http_error(
             }
             tmp
         }),
-        "ServiceUnavailable" => crate::operation::invoke_endpoint_async::InvokeEndpointAsyncError::ServiceUnavailable({
+        "ValidationError" => crate::operation::invoke_endpoint_async::InvokeEndpointAsyncError::ValidationError({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::ServiceUnavailableBuilder::default();
-                output = crate::protocol_serde::shape_service_unavailable::de_service_unavailable_json_err(_response_body, output)
+                let mut output = crate::types::error::builders::ValidationErrorBuilder::default();
+                output = crate::protocol_serde::shape_validation_error::de_validation_error_json_err(_response_body, output)
                     .map_err(crate::operation::invoke_endpoint_async::InvokeEndpointAsyncError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
@@ -50,12 +50,12 @@ pub fn de_invoke_endpoint_async_http_error(
             }
             tmp
         }),
-        "ValidationError" => crate::operation::invoke_endpoint_async::InvokeEndpointAsyncError::ValidationError({
+        "ServiceUnavailable" => crate::operation::invoke_endpoint_async::InvokeEndpointAsyncError::ServiceUnavailable({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::ValidationErrorBuilder::default();
-                output = crate::protocol_serde::shape_validation_error::de_validation_error_json_err(_response_body, output)
+                let mut output = crate::types::error::builders::ServiceUnavailableBuilder::default();
+                output = crate::protocol_serde::shape_service_unavailable::de_service_unavailable_json_err(_response_body, output)
                     .map_err(crate::operation::invoke_endpoint_async::InvokeEndpointAsyncError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()

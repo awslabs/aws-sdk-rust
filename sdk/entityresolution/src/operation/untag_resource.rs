@@ -276,7 +276,7 @@ pub type UntagResourceErrorKind = UntagResourceError;
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum UntagResourceError {
-    /// <p>This exception occurs when there is an internal failure in the AWS Entity Resolution service. <code>HTTP Status Code: 500</code> </p>
+    /// <p>This exception occurs when there is an internal failure in the Entity Resolution service. <code>HTTP Status Code: 500</code> </p>
     InternalServerException(crate::types::error::InternalServerException),
     /// <p>The resource could not be found. <code>HTTP Status Code: 404</code> </p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),

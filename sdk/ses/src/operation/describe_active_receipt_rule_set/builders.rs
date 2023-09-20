@@ -23,7 +23,7 @@ impl DescribeActiveReceiptRuleSetInputBuilder {
 /// Fluent builder constructing a request to `DescribeActiveReceiptRuleSet`.
 ///
 /// <p>Returns the metadata and receipt rules for the receipt rule set that is currently active.</p>
-/// <p>For information about setting up receipt rule sets, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rule-set.html">Amazon SES Developer Guide</a>.</p>
+/// <p>For information about setting up receipt rule sets, see the <a href="https://docs.aws.amazon.com/ses/latest/dg/receiving-email-concepts.html#receiving-email-concepts-rules">Amazon SES Developer Guide</a>.</p>
 /// <p>You can execute this operation no more than once per second.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeActiveReceiptRuleSetFluentBuilder {

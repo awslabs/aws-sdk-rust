@@ -132,45 +132,45 @@ impl GetCommentsForPullRequestFluentBuilder {
     pub fn get_pull_request_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_pull_request_id()
     }
-    /// <p>The name of the repository that contains the pull request.</p>
+    /// <p>The name of the repository that contains the pull request. Requirement is conditional: <code>repositoryName</code> must be specified when <code>beforeCommitId</code> and <code>afterCommitId</code> are included.</p>
     pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.repository_name(input.into());
         self
     }
-    /// <p>The name of the repository that contains the pull request.</p>
+    /// <p>The name of the repository that contains the pull request. Requirement is conditional: <code>repositoryName</code> must be specified when <code>beforeCommitId</code> and <code>afterCommitId</code> are included.</p>
     pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_repository_name(input);
         self
     }
-    /// <p>The name of the repository that contains the pull request.</p>
+    /// <p>The name of the repository that contains the pull request. Requirement is conditional: <code>repositoryName</code> must be specified when <code>beforeCommitId</code> and <code>afterCommitId</code> are included.</p>
     pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_repository_name()
     }
-    /// <p>The full commit ID of the commit in the destination branch that was the tip of the branch at the time the pull request was created.</p>
+    /// <p>The full commit ID of the commit in the destination branch that was the tip of the branch at the time the pull request was created. Requirement is conditional: <code>beforeCommitId</code> must be specified when <code>repositoryName</code> is included.</p>
     pub fn before_commit_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.before_commit_id(input.into());
         self
     }
-    /// <p>The full commit ID of the commit in the destination branch that was the tip of the branch at the time the pull request was created.</p>
+    /// <p>The full commit ID of the commit in the destination branch that was the tip of the branch at the time the pull request was created. Requirement is conditional: <code>beforeCommitId</code> must be specified when <code>repositoryName</code> is included.</p>
     pub fn set_before_commit_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_before_commit_id(input);
         self
     }
-    /// <p>The full commit ID of the commit in the destination branch that was the tip of the branch at the time the pull request was created.</p>
+    /// <p>The full commit ID of the commit in the destination branch that was the tip of the branch at the time the pull request was created. Requirement is conditional: <code>beforeCommitId</code> must be specified when <code>repositoryName</code> is included.</p>
     pub fn get_before_commit_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_before_commit_id()
     }
-    /// <p>The full commit ID of the commit in the source branch that was the tip of the branch at the time the comment was made.</p>
+    /// <p>The full commit ID of the commit in the source branch that was the tip of the branch at the time the comment was made. Requirement is conditional: <code>afterCommitId</code> must be specified when <code>repositoryName</code> is included.</p>
     pub fn after_commit_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.after_commit_id(input.into());
         self
     }
-    /// <p>The full commit ID of the commit in the source branch that was the tip of the branch at the time the comment was made.</p>
+    /// <p>The full commit ID of the commit in the source branch that was the tip of the branch at the time the comment was made. Requirement is conditional: <code>afterCommitId</code> must be specified when <code>repositoryName</code> is included.</p>
     pub fn set_after_commit_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_after_commit_id(input);
         self
     }
-    /// <p>The full commit ID of the commit in the source branch that was the tip of the branch at the time the comment was made.</p>
+    /// <p>The full commit ID of the commit in the source branch that was the tip of the branch at the time the comment was made. Requirement is conditional: <code>afterCommitId</code> must be specified when <code>repositoryName</code> is included.</p>
     pub fn get_after_commit_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_after_commit_id()
     }

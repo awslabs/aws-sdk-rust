@@ -15,5 +15,17 @@ pub fn ser_create_user_input(
     if let Some(var_4) = &input.password {
         object.key("Password").string(var_4.as_str());
     }
+    if let Some(var_5) = &input.role {
+        object.key("Role").string(var_5.as_str());
+    }
+    if let Some(var_6) = &input.first_name {
+        object.key("FirstName").string(var_6.as_str());
+    }
+    if let Some(var_7) = &input.last_name {
+        object.key("LastName").string(var_7.as_str());
+    }
+    if let Some(var_8) = &input.hidden_from_global_address_list {
+        object.key("HiddenFromGlobalAddressList").boolean(*var_8);
+    }
     Ok(())
 }

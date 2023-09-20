@@ -3,7 +3,7 @@
 /// <p>Contains a description of an evaluation error.</p>
 /// <p>This data type is used as a request parameter in the <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_IsAuthorized.html">IsAuthorized</a> and <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_IsAuthorizedWithToken.html">IsAuthorizedWithToken</a> operations.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct EvaluationErrorItem {
     /// <p>The error description.</p>
     pub error_description: ::std::option::Option<::std::string::String>,
@@ -12,6 +12,13 @@ impl EvaluationErrorItem {
     /// <p>The error description.</p>
     pub fn error_description(&self) -> ::std::option::Option<&str> {
         self.error_description.as_deref()
+    }
+}
+impl ::std::fmt::Debug for EvaluationErrorItem {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("EvaluationErrorItem");
+        formatter.field("error_description", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }
 impl EvaluationErrorItem {
@@ -23,7 +30,7 @@ impl EvaluationErrorItem {
 
 /// A builder for [`EvaluationErrorItem`](crate::types::EvaluationErrorItem).
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct EvaluationErrorItemBuilder {
     pub(crate) error_description: ::std::option::Option<::std::string::String>,
 }
@@ -47,5 +54,12 @@ impl EvaluationErrorItemBuilder {
         crate::types::EvaluationErrorItem {
             error_description: self.error_description,
         }
+    }
+}
+impl ::std::fmt::Debug for EvaluationErrorItemBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("EvaluationErrorItemBuilder");
+        formatter.field("error_description", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

@@ -215,4 +215,18 @@ impl CreateLaunchConfigurationTemplateFluentBuilder {
     pub fn get_export_bucket_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_export_bucket_arn()
     }
+    /// <p>Whether we want to activate post-launch actions.</p>
+    pub fn post_launch_enabled(mut self, input: bool) -> Self {
+        self.inner = self.inner.post_launch_enabled(input);
+        self
+    }
+    /// <p>Whether we want to activate post-launch actions.</p>
+    pub fn set_post_launch_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_post_launch_enabled(input);
+        self
+    }
+    /// <p>Whether we want to activate post-launch actions.</p>
+    pub fn get_post_launch_enabled(&self) -> &::std::option::Option<bool> {
+        self.inner.get_post_launch_enabled()
+    }
 }

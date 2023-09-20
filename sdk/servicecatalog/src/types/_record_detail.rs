@@ -21,7 +21,7 @@ pub struct RecordDetail {
     pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time when the record was last updated.</p>
     pub updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The type of provisioned product. The supported values are <code>CFN_STACK</code> and <code>CFN_STACKSET</code>.</p>
+    /// <p>The type of provisioned product. The supported values are <code>CFN_STACK</code>, <code>CFN_STACKSET</code>, <code>TERRAFORM_OPEN_SOURCE</code>, and <code>TERRAFORM_CLOUD</code>.</p>
     pub provisioned_product_type: ::std::option::Option<::std::string::String>,
     /// <p>The record type.</p>
     /// <ul>
@@ -73,7 +73,7 @@ impl RecordDetail {
     pub fn updated_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.updated_time.as_ref()
     }
-    /// <p>The type of provisioned product. The supported values are <code>CFN_STACK</code> and <code>CFN_STACKSET</code>.</p>
+    /// <p>The type of provisioned product. The supported values are <code>CFN_STACK</code>, <code>CFN_STACKSET</code>, <code>TERRAFORM_OPEN_SOURCE</code>, and <code>TERRAFORM_CLOUD</code>.</p>
     pub fn provisioned_product_type(&self) -> ::std::option::Option<&str> {
         self.provisioned_product_type.as_deref()
     }
@@ -233,17 +233,17 @@ impl RecordDetailBuilder {
     pub fn get_updated_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.updated_time
     }
-    /// <p>The type of provisioned product. The supported values are <code>CFN_STACK</code> and <code>CFN_STACKSET</code>.</p>
+    /// <p>The type of provisioned product. The supported values are <code>CFN_STACK</code>, <code>CFN_STACKSET</code>, <code>TERRAFORM_OPEN_SOURCE</code>, and <code>TERRAFORM_CLOUD</code>.</p>
     pub fn provisioned_product_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.provisioned_product_type = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The type of provisioned product. The supported values are <code>CFN_STACK</code> and <code>CFN_STACKSET</code>.</p>
+    /// <p>The type of provisioned product. The supported values are <code>CFN_STACK</code>, <code>CFN_STACKSET</code>, <code>TERRAFORM_OPEN_SOURCE</code>, and <code>TERRAFORM_CLOUD</code>.</p>
     pub fn set_provisioned_product_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.provisioned_product_type = input;
         self
     }
-    /// <p>The type of provisioned product. The supported values are <code>CFN_STACK</code> and <code>CFN_STACKSET</code>.</p>
+    /// <p>The type of provisioned product. The supported values are <code>CFN_STACK</code>, <code>CFN_STACKSET</code>, <code>TERRAFORM_OPEN_SOURCE</code>, and <code>TERRAFORM_CLOUD</code>.</p>
     pub fn get_provisioned_product_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.provisioned_product_type
     }

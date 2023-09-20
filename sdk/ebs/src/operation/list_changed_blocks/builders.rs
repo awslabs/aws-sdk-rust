@@ -22,7 +22,9 @@ impl ListChangedBlocksInputBuilder {
 }
 /// Fluent builder constructing a request to `ListChangedBlocks`.
 ///
-/// <p>Returns information about the blocks that are different between two Amazon Elastic Block Store snapshots of the same volume/snapshot lineage.</p>
+/// <p>Returns information about the blocks that are different between two Amazon Elastic Block Store snapshots of the same volume/snapshot lineage.</p> <note>
+/// <p>You should always retry requests that receive server (<code>5xx</code>) error responses, and <code>ThrottlingException</code> and <code>RequestThrottledException</code> client error responses. For more information see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/error-retries.html">Error retries</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListChangedBlocksFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

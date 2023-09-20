@@ -186,12 +186,14 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for ListBundles
                 mut output: &mut ::std::string::String,
             ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError> {
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
-                if _input.max_results != 0 {
-                    query.push_kv("maxResults", ::aws_smithy_types::primitive::Encoder::from(_input.max_results).encode());
+                if let ::std::option::Option::Some(inner_1) = &_input.max_results {
+                    if *inner_1 != 0 {
+                        query.push_kv("maxResults", ::aws_smithy_types::primitive::Encoder::from(*inner_1).encode());
+                    }
                 }
-                if let ::std::option::Option::Some(inner_1) = &_input.next_token {
+                if let ::std::option::Option::Some(inner_2) = &_input.next_token {
                     {
-                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(&inner_1));
+                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(&inner_2));
                     }
                 }
                 ::std::result::Result::Ok(())

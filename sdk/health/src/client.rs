@@ -183,6 +183,8 @@ mod describe_affected_entities_for_organization;
 
 mod describe_entity_aggregates;
 
+mod describe_entity_aggregates_for_organization;
+
 mod describe_event_aggregates;
 
 mod describe_event_details;

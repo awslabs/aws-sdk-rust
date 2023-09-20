@@ -9,7 +9,7 @@ pub struct DescribeObjectsInput {
     /// <p>The IDs of the pipeline objects that contain the definitions to be described. You can pass as many as 25 identifiers in a single call to <code>DescribeObjects</code>.</p>
     pub object_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Indicates whether any expressions in the object should be evaluated when the object descriptions are returned.</p>
-    pub evaluate_expressions: bool,
+    pub evaluate_expressions: ::std::option::Option<bool>,
     /// <p>The starting point for the results to be returned. For the first call, this value should be empty. As long as there are more results, continue to call <code>DescribeObjects</code> with the marker value from the previous call to retrieve the next set of results.</p>
     pub marker: ::std::option::Option<::std::string::String>,
 }
@@ -23,7 +23,7 @@ impl DescribeObjectsInput {
         self.object_ids.as_deref()
     }
     /// <p>Indicates whether any expressions in the object should be evaluated when the object descriptions are returned.</p>
-    pub fn evaluate_expressions(&self) -> bool {
+    pub fn evaluate_expressions(&self) -> ::std::option::Option<bool> {
         self.evaluate_expressions
     }
     /// <p>The starting point for the results to be returned. For the first call, this value should be empty. As long as there are more results, continue to call <code>DescribeObjects</code> with the marker value from the previous call to retrieve the next set of results.</p>
@@ -117,7 +117,7 @@ impl DescribeObjectsInputBuilder {
         ::std::result::Result::Ok(crate::operation::describe_objects::DescribeObjectsInput {
             pipeline_id: self.pipeline_id,
             object_ids: self.object_ids,
-            evaluate_expressions: self.evaluate_expressions.unwrap_or_default(),
+            evaluate_expressions: self.evaluate_expressions,
             marker: self.marker,
         })
     }

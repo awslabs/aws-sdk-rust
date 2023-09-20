@@ -3,27 +3,57 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FailoverGlobalClusterInput {
-    /// <p>Identifier of the Aurora global database (<code>GlobalCluster</code>) that should be failed over. The identifier is the unique key assigned by the user when the Aurora global database was created. In other words, it's the name of the Aurora global database that you want to fail over.</p>
+    /// <p>The identifier of the global database cluster (Aurora global database) this operation should apply to. The identifier is the unique key assigned by the user when the Aurora global database is created. In other words, it's the name of the Aurora global database.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must match the identifier of an existing <code>GlobalCluster</code> (Aurora global database).</p> </li>
+    /// <li> <p>Must match the identifier of an existing global database cluster.</p> </li>
     /// </ul>
     pub global_cluster_identifier: ::std::option::Option<::std::string::String>,
-    /// <p>Identifier of the secondary Aurora DB cluster that you want to promote to primary for the Aurora global database (<code>GlobalCluster</code>.) Use the Amazon Resource Name (ARN) for the identifier so that Aurora can locate the cluster in its Amazon Web Services Region.</p>
+    /// <p>The identifier of the secondary Aurora DB cluster that you want to promote to the primary for the global database cluster. Use the Amazon Resource Name (ARN) for the identifier so that Aurora can locate the cluster in its Amazon Web Services Region.</p>
     pub target_db_cluster_identifier: ::std::option::Option<::std::string::String>,
-}
-impl FailoverGlobalClusterInput {
-    /// <p>Identifier of the Aurora global database (<code>GlobalCluster</code>) that should be failed over. The identifier is the unique key assigned by the user when the Aurora global database was created. In other words, it's the name of the Aurora global database that you want to fail over.</p>
+    /// <p>Specifies whether to allow data loss for this global database cluster operation. Allowing data loss triggers a global failover operation.</p>
+    /// <p>If you don't specify <code>AllowDataLoss</code>, the global database cluster operation defaults to a switchover.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must match the identifier of an existing <code>GlobalCluster</code> (Aurora global database).</p> </li>
+    /// <li> <p>Can't be specified together with the <code>Switchover</code> parameter.</p> </li>
+    /// </ul>
+    pub allow_data_loss: ::std::option::Option<bool>,
+    /// <p>Specifies whether to switch over this global database cluster.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Can't be specified together with the <code>AllowDataLoss</code> parameter.</p> </li>
+    /// </ul>
+    pub switchover: ::std::option::Option<bool>,
+}
+impl FailoverGlobalClusterInput {
+    /// <p>The identifier of the global database cluster (Aurora global database) this operation should apply to. The identifier is the unique key assigned by the user when the Aurora global database is created. In other words, it's the name of the Aurora global database.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must match the identifier of an existing global database cluster.</p> </li>
     /// </ul>
     pub fn global_cluster_identifier(&self) -> ::std::option::Option<&str> {
         self.global_cluster_identifier.as_deref()
     }
-    /// <p>Identifier of the secondary Aurora DB cluster that you want to promote to primary for the Aurora global database (<code>GlobalCluster</code>.) Use the Amazon Resource Name (ARN) for the identifier so that Aurora can locate the cluster in its Amazon Web Services Region.</p>
+    /// <p>The identifier of the secondary Aurora DB cluster that you want to promote to the primary for the global database cluster. Use the Amazon Resource Name (ARN) for the identifier so that Aurora can locate the cluster in its Amazon Web Services Region.</p>
     pub fn target_db_cluster_identifier(&self) -> ::std::option::Option<&str> {
         self.target_db_cluster_identifier.as_deref()
+    }
+    /// <p>Specifies whether to allow data loss for this global database cluster operation. Allowing data loss triggers a global failover operation.</p>
+    /// <p>If you don't specify <code>AllowDataLoss</code>, the global database cluster operation defaults to a switchover.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Can't be specified together with the <code>Switchover</code> parameter.</p> </li>
+    /// </ul>
+    pub fn allow_data_loss(&self) -> ::std::option::Option<bool> {
+        self.allow_data_loss
+    }
+    /// <p>Specifies whether to switch over this global database cluster.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Can't be specified together with the <code>AllowDataLoss</code> parameter.</p> </li>
+    /// </ul>
+    pub fn switchover(&self) -> ::std::option::Option<bool> {
+        self.switchover
     }
 }
 impl FailoverGlobalClusterInput {
@@ -39,47 +69,104 @@ impl FailoverGlobalClusterInput {
 pub struct FailoverGlobalClusterInputBuilder {
     pub(crate) global_cluster_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) target_db_cluster_identifier: ::std::option::Option<::std::string::String>,
+    pub(crate) allow_data_loss: ::std::option::Option<bool>,
+    pub(crate) switchover: ::std::option::Option<bool>,
 }
 impl FailoverGlobalClusterInputBuilder {
-    /// <p>Identifier of the Aurora global database (<code>GlobalCluster</code>) that should be failed over. The identifier is the unique key assigned by the user when the Aurora global database was created. In other words, it's the name of the Aurora global database that you want to fail over.</p>
+    /// <p>The identifier of the global database cluster (Aurora global database) this operation should apply to. The identifier is the unique key assigned by the user when the Aurora global database is created. In other words, it's the name of the Aurora global database.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must match the identifier of an existing <code>GlobalCluster</code> (Aurora global database).</p> </li>
+    /// <li> <p>Must match the identifier of an existing global database cluster.</p> </li>
     /// </ul>
     pub fn global_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.global_cluster_identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Identifier of the Aurora global database (<code>GlobalCluster</code>) that should be failed over. The identifier is the unique key assigned by the user when the Aurora global database was created. In other words, it's the name of the Aurora global database that you want to fail over.</p>
+    /// <p>The identifier of the global database cluster (Aurora global database) this operation should apply to. The identifier is the unique key assigned by the user when the Aurora global database is created. In other words, it's the name of the Aurora global database.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must match the identifier of an existing <code>GlobalCluster</code> (Aurora global database).</p> </li>
+    /// <li> <p>Must match the identifier of an existing global database cluster.</p> </li>
     /// </ul>
     pub fn set_global_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.global_cluster_identifier = input;
         self
     }
-    /// <p>Identifier of the Aurora global database (<code>GlobalCluster</code>) that should be failed over. The identifier is the unique key assigned by the user when the Aurora global database was created. In other words, it's the name of the Aurora global database that you want to fail over.</p>
+    /// <p>The identifier of the global database cluster (Aurora global database) this operation should apply to. The identifier is the unique key assigned by the user when the Aurora global database is created. In other words, it's the name of the Aurora global database.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must match the identifier of an existing <code>GlobalCluster</code> (Aurora global database).</p> </li>
+    /// <li> <p>Must match the identifier of an existing global database cluster.</p> </li>
     /// </ul>
     pub fn get_global_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.global_cluster_identifier
     }
-    /// <p>Identifier of the secondary Aurora DB cluster that you want to promote to primary for the Aurora global database (<code>GlobalCluster</code>.) Use the Amazon Resource Name (ARN) for the identifier so that Aurora can locate the cluster in its Amazon Web Services Region.</p>
+    /// <p>The identifier of the secondary Aurora DB cluster that you want to promote to the primary for the global database cluster. Use the Amazon Resource Name (ARN) for the identifier so that Aurora can locate the cluster in its Amazon Web Services Region.</p>
     pub fn target_db_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_db_cluster_identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Identifier of the secondary Aurora DB cluster that you want to promote to primary for the Aurora global database (<code>GlobalCluster</code>.) Use the Amazon Resource Name (ARN) for the identifier so that Aurora can locate the cluster in its Amazon Web Services Region.</p>
+    /// <p>The identifier of the secondary Aurora DB cluster that you want to promote to the primary for the global database cluster. Use the Amazon Resource Name (ARN) for the identifier so that Aurora can locate the cluster in its Amazon Web Services Region.</p>
     pub fn set_target_db_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_db_cluster_identifier = input;
         self
     }
-    /// <p>Identifier of the secondary Aurora DB cluster that you want to promote to primary for the Aurora global database (<code>GlobalCluster</code>.) Use the Amazon Resource Name (ARN) for the identifier so that Aurora can locate the cluster in its Amazon Web Services Region.</p>
+    /// <p>The identifier of the secondary Aurora DB cluster that you want to promote to the primary for the global database cluster. Use the Amazon Resource Name (ARN) for the identifier so that Aurora can locate the cluster in its Amazon Web Services Region.</p>
     pub fn get_target_db_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.target_db_cluster_identifier
+    }
+    /// <p>Specifies whether to allow data loss for this global database cluster operation. Allowing data loss triggers a global failover operation.</p>
+    /// <p>If you don't specify <code>AllowDataLoss</code>, the global database cluster operation defaults to a switchover.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Can't be specified together with the <code>Switchover</code> parameter.</p> </li>
+    /// </ul>
+    pub fn allow_data_loss(mut self, input: bool) -> Self {
+        self.allow_data_loss = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether to allow data loss for this global database cluster operation. Allowing data loss triggers a global failover operation.</p>
+    /// <p>If you don't specify <code>AllowDataLoss</code>, the global database cluster operation defaults to a switchover.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Can't be specified together with the <code>Switchover</code> parameter.</p> </li>
+    /// </ul>
+    pub fn set_allow_data_loss(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.allow_data_loss = input;
+        self
+    }
+    /// <p>Specifies whether to allow data loss for this global database cluster operation. Allowing data loss triggers a global failover operation.</p>
+    /// <p>If you don't specify <code>AllowDataLoss</code>, the global database cluster operation defaults to a switchover.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Can't be specified together with the <code>Switchover</code> parameter.</p> </li>
+    /// </ul>
+    pub fn get_allow_data_loss(&self) -> &::std::option::Option<bool> {
+        &self.allow_data_loss
+    }
+    /// <p>Specifies whether to switch over this global database cluster.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Can't be specified together with the <code>AllowDataLoss</code> parameter.</p> </li>
+    /// </ul>
+    pub fn switchover(mut self, input: bool) -> Self {
+        self.switchover = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether to switch over this global database cluster.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Can't be specified together with the <code>AllowDataLoss</code> parameter.</p> </li>
+    /// </ul>
+    pub fn set_switchover(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.switchover = input;
+        self
+    }
+    /// <p>Specifies whether to switch over this global database cluster.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Can't be specified together with the <code>AllowDataLoss</code> parameter.</p> </li>
+    /// </ul>
+    pub fn get_switchover(&self) -> &::std::option::Option<bool> {
+        &self.switchover
     }
     /// Consumes the builder and constructs a [`FailoverGlobalClusterInput`](crate::operation::failover_global_cluster::FailoverGlobalClusterInput).
     pub fn build(
@@ -89,6 +176,8 @@ impl FailoverGlobalClusterInputBuilder {
         ::std::result::Result::Ok(crate::operation::failover_global_cluster::FailoverGlobalClusterInput {
             global_cluster_identifier: self.global_cluster_identifier,
             target_db_cluster_identifier: self.target_db_cluster_identifier,
+            allow_data_loss: self.allow_data_loss,
+            switchover: self.switchover,
         })
     }
 }

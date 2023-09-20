@@ -10,7 +10,7 @@ pub struct IncreaseReplicaCountInput {
     /// <p>A list of <code>ConfigureShard</code> objects that can be used to configure each shard in a Redis (cluster mode enabled) replication group. The <code>ConfigureShard</code> has three members: <code>NewReplicaCount</code>, <code>NodeGroupId</code>, and <code>PreferredAvailabilityZones</code>.</p>
     pub replica_configuration: ::std::option::Option<::std::vec::Vec<crate::types::ConfigureShard>>,
     /// <p>If <code>True</code>, the number of replica nodes is increased immediately. <code>ApplyImmediately=False</code> is not currently supported.</p>
-    pub apply_immediately: bool,
+    pub apply_immediately: ::std::option::Option<bool>,
 }
 impl IncreaseReplicaCountInput {
     /// <p>The id of the replication group to which you want to add replica nodes.</p>
@@ -26,7 +26,7 @@ impl IncreaseReplicaCountInput {
         self.replica_configuration.as_deref()
     }
     /// <p>If <code>True</code>, the number of replica nodes is increased immediately. <code>ApplyImmediately=False</code> is not currently supported.</p>
-    pub fn apply_immediately(&self) -> bool {
+    pub fn apply_immediately(&self) -> ::std::option::Option<bool> {
         self.apply_immediately
     }
 }
@@ -118,7 +118,7 @@ impl IncreaseReplicaCountInputBuilder {
             replication_group_id: self.replication_group_id,
             new_replica_count: self.new_replica_count,
             replica_configuration: self.replica_configuration,
-            apply_immediately: self.apply_immediately.unwrap_or_default(),
+            apply_immediately: self.apply_immediately,
         })
     }
 }

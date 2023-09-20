@@ -59,7 +59,7 @@ pub struct FileSystem {
     pub administrative_actions: ::std::option::Option<::std::vec::Vec<crate::types::AdministrativeAction>>,
     /// <p>The configuration for this Amazon FSx for NetApp ONTAP file system.</p>
     pub ontap_configuration: ::std::option::Option<crate::types::OntapFileSystemConfiguration>,
-    /// <p>The Lustre version of the Amazon FSx for Lustre file system, either <code>2.10</code> or <code>2.12</code>.</p>
+    /// <p>The Lustre version of the Amazon FSx for Lustre file system, which can be <code>2.10</code>, <code>2.12</code>, or <code>2.15</code>.</p>
     pub file_system_type_version: ::std::option::Option<::std::string::String>,
     /// <p>The configuration for this Amazon FSx for OpenZFS file system.</p>
     pub open_zfs_configuration: ::std::option::Option<crate::types::OpenZfsFileSystemConfiguration>,
@@ -158,7 +158,7 @@ impl FileSystem {
     pub fn ontap_configuration(&self) -> ::std::option::Option<&crate::types::OntapFileSystemConfiguration> {
         self.ontap_configuration.as_ref()
     }
-    /// <p>The Lustre version of the Amazon FSx for Lustre file system, either <code>2.10</code> or <code>2.12</code>.</p>
+    /// <p>The Lustre version of the Amazon FSx for Lustre file system, which can be <code>2.10</code>, <code>2.12</code>, or <code>2.15</code>.</p>
     pub fn file_system_type_version(&self) -> ::std::option::Option<&str> {
         self.file_system_type_version.as_deref()
     }
@@ -542,17 +542,17 @@ impl FileSystemBuilder {
     pub fn get_ontap_configuration(&self) -> &::std::option::Option<crate::types::OntapFileSystemConfiguration> {
         &self.ontap_configuration
     }
-    /// <p>The Lustre version of the Amazon FSx for Lustre file system, either <code>2.10</code> or <code>2.12</code>.</p>
+    /// <p>The Lustre version of the Amazon FSx for Lustre file system, which can be <code>2.10</code>, <code>2.12</code>, or <code>2.15</code>.</p>
     pub fn file_system_type_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_system_type_version = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Lustre version of the Amazon FSx for Lustre file system, either <code>2.10</code> or <code>2.12</code>.</p>
+    /// <p>The Lustre version of the Amazon FSx for Lustre file system, which can be <code>2.10</code>, <code>2.12</code>, or <code>2.15</code>.</p>
     pub fn set_file_system_type_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.file_system_type_version = input;
         self
     }
-    /// <p>The Lustre version of the Amazon FSx for Lustre file system, either <code>2.10</code> or <code>2.12</code>.</p>
+    /// <p>The Lustre version of the Amazon FSx for Lustre file system, which can be <code>2.10</code>, <code>2.12</code>, or <code>2.15</code>.</p>
     pub fn get_file_system_type_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.file_system_type_version
     }

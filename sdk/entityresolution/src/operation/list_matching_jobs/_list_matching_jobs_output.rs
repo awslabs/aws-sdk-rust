@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListMatchingJobsOutput {
-    /// <p>A list of JobSummary objects, each of which contain the ID, status, start time, and end time of a job.</p>
+    /// <p>A list of <code>JobSummary</code> objects, each of which contain the ID, status, start time, and end time of a job.</p>
     pub jobs: ::std::option::Option<::std::vec::Vec<crate::types::JobSummary>>,
     /// <p>The pagination token from the previous <code>ListSchemaMappings</code> API call.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListMatchingJobsOutput {
-    /// <p>A list of JobSummary objects, each of which contain the ID, status, start time, and end time of a job.</p>
+    /// <p>A list of <code>JobSummary</code> objects, each of which contain the ID, status, start time, and end time of a job.</p>
     pub fn jobs(&self) -> ::std::option::Option<&[crate::types::JobSummary]> {
         self.jobs.as_deref()
     }
@@ -44,19 +44,19 @@ impl ListMatchingJobsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_jobs`](Self::set_jobs).
     ///
-    /// <p>A list of JobSummary objects, each of which contain the ID, status, start time, and end time of a job.</p>
+    /// <p>A list of <code>JobSummary</code> objects, each of which contain the ID, status, start time, and end time of a job.</p>
     pub fn jobs(mut self, input: crate::types::JobSummary) -> Self {
         let mut v = self.jobs.unwrap_or_default();
         v.push(input);
         self.jobs = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of JobSummary objects, each of which contain the ID, status, start time, and end time of a job.</p>
+    /// <p>A list of <code>JobSummary</code> objects, each of which contain the ID, status, start time, and end time of a job.</p>
     pub fn set_jobs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::JobSummary>>) -> Self {
         self.jobs = input;
         self
     }
-    /// <p>A list of JobSummary objects, each of which contain the ID, status, start time, and end time of a job.</p>
+    /// <p>A list of <code>JobSummary</code> objects, each of which contain the ID, status, start time, and end time of a job.</p>
     pub fn get_jobs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::JobSummary>> {
         &self.jobs
     }

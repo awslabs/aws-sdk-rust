@@ -8,13 +8,13 @@ pub struct RequestedServiceQuotaChange {
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The case ID.</p>
     pub case_id: ::std::option::Option<::std::string::String>,
-    /// <p>The service identifier.</p>
+    /// <p>Specifies the service identifier. To find the service code value for an Amazon Web Services service, use the <code>ListServices</code> operation.</p>
     pub service_code: ::std::option::Option<::std::string::String>,
-    /// <p>The service name.</p>
+    /// <p>Specifies the service name.</p>
     pub service_name: ::std::option::Option<::std::string::String>,
-    /// <p>The quota identifier.</p>
+    /// <p>Specifies the quota identifier. To find the quota code for a specific quota, use the <code>ListServiceQuotas</code> operation, and look for the <code>QuotaCode</code> response in the output for the quota you want.</p>
     pub quota_code: ::std::option::Option<::std::string::String>,
-    /// <p>The quota name.</p>
+    /// <p>Specifies the quota name.</p>
     pub quota_name: ::std::option::Option<::std::string::String>,
     /// <p>The new, increased value for the quota.</p>
     pub desired_value: ::std::option::Option<f64>,
@@ -32,6 +32,10 @@ pub struct RequestedServiceQuotaChange {
     pub global_quota: bool,
     /// <p>The unit of measurement.</p>
     pub unit: ::std::option::Option<::std::string::String>,
+    /// <p>Specifies at which level within the Amazon Web Services account the quota request applies to.</p>
+    pub quota_requested_at_level: ::std::option::Option<crate::types::AppliedLevelEnum>,
+    /// <p>The context for this service quota.</p>
+    pub quota_context: ::std::option::Option<crate::types::QuotaContextInfo>,
 }
 impl RequestedServiceQuotaChange {
     /// <p>The unique identifier.</p>
@@ -42,19 +46,19 @@ impl RequestedServiceQuotaChange {
     pub fn case_id(&self) -> ::std::option::Option<&str> {
         self.case_id.as_deref()
     }
-    /// <p>The service identifier.</p>
+    /// <p>Specifies the service identifier. To find the service code value for an Amazon Web Services service, use the <code>ListServices</code> operation.</p>
     pub fn service_code(&self) -> ::std::option::Option<&str> {
         self.service_code.as_deref()
     }
-    /// <p>The service name.</p>
+    /// <p>Specifies the service name.</p>
     pub fn service_name(&self) -> ::std::option::Option<&str> {
         self.service_name.as_deref()
     }
-    /// <p>The quota identifier.</p>
+    /// <p>Specifies the quota identifier. To find the quota code for a specific quota, use the <code>ListServiceQuotas</code> operation, and look for the <code>QuotaCode</code> response in the output for the quota you want.</p>
     pub fn quota_code(&self) -> ::std::option::Option<&str> {
         self.quota_code.as_deref()
     }
-    /// <p>The quota name.</p>
+    /// <p>Specifies the quota name.</p>
     pub fn quota_name(&self) -> ::std::option::Option<&str> {
         self.quota_name.as_deref()
     }
@@ -90,6 +94,14 @@ impl RequestedServiceQuotaChange {
     pub fn unit(&self) -> ::std::option::Option<&str> {
         self.unit.as_deref()
     }
+    /// <p>Specifies at which level within the Amazon Web Services account the quota request applies to.</p>
+    pub fn quota_requested_at_level(&self) -> ::std::option::Option<&crate::types::AppliedLevelEnum> {
+        self.quota_requested_at_level.as_ref()
+    }
+    /// <p>The context for this service quota.</p>
+    pub fn quota_context(&self) -> ::std::option::Option<&crate::types::QuotaContextInfo> {
+        self.quota_context.as_ref()
+    }
 }
 impl RequestedServiceQuotaChange {
     /// Creates a new builder-style object to manufacture [`RequestedServiceQuotaChange`](crate::types::RequestedServiceQuotaChange).
@@ -116,6 +128,8 @@ pub struct RequestedServiceQuotaChangeBuilder {
     pub(crate) quota_arn: ::std::option::Option<::std::string::String>,
     pub(crate) global_quota: ::std::option::Option<bool>,
     pub(crate) unit: ::std::option::Option<::std::string::String>,
+    pub(crate) quota_requested_at_level: ::std::option::Option<crate::types::AppliedLevelEnum>,
+    pub(crate) quota_context: ::std::option::Option<crate::types::QuotaContextInfo>,
 }
 impl RequestedServiceQuotaChangeBuilder {
     /// <p>The unique identifier.</p>
@@ -146,59 +160,59 @@ impl RequestedServiceQuotaChangeBuilder {
     pub fn get_case_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.case_id
     }
-    /// <p>The service identifier.</p>
+    /// <p>Specifies the service identifier. To find the service code value for an Amazon Web Services service, use the <code>ListServices</code> operation.</p>
     pub fn service_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_code = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The service identifier.</p>
+    /// <p>Specifies the service identifier. To find the service code value for an Amazon Web Services service, use the <code>ListServices</code> operation.</p>
     pub fn set_service_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_code = input;
         self
     }
-    /// <p>The service identifier.</p>
+    /// <p>Specifies the service identifier. To find the service code value for an Amazon Web Services service, use the <code>ListServices</code> operation.</p>
     pub fn get_service_code(&self) -> &::std::option::Option<::std::string::String> {
         &self.service_code
     }
-    /// <p>The service name.</p>
+    /// <p>Specifies the service name.</p>
     pub fn service_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The service name.</p>
+    /// <p>Specifies the service name.</p>
     pub fn set_service_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_name = input;
         self
     }
-    /// <p>The service name.</p>
+    /// <p>Specifies the service name.</p>
     pub fn get_service_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.service_name
     }
-    /// <p>The quota identifier.</p>
+    /// <p>Specifies the quota identifier. To find the quota code for a specific quota, use the <code>ListServiceQuotas</code> operation, and look for the <code>QuotaCode</code> response in the output for the quota you want.</p>
     pub fn quota_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.quota_code = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The quota identifier.</p>
+    /// <p>Specifies the quota identifier. To find the quota code for a specific quota, use the <code>ListServiceQuotas</code> operation, and look for the <code>QuotaCode</code> response in the output for the quota you want.</p>
     pub fn set_quota_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.quota_code = input;
         self
     }
-    /// <p>The quota identifier.</p>
+    /// <p>Specifies the quota identifier. To find the quota code for a specific quota, use the <code>ListServiceQuotas</code> operation, and look for the <code>QuotaCode</code> response in the output for the quota you want.</p>
     pub fn get_quota_code(&self) -> &::std::option::Option<::std::string::String> {
         &self.quota_code
     }
-    /// <p>The quota name.</p>
+    /// <p>Specifies the quota name.</p>
     pub fn quota_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.quota_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The quota name.</p>
+    /// <p>Specifies the quota name.</p>
     pub fn set_quota_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.quota_name = input;
         self
     }
-    /// <p>The quota name.</p>
+    /// <p>Specifies the quota name.</p>
     pub fn get_quota_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.quota_name
     }
@@ -314,6 +328,34 @@ impl RequestedServiceQuotaChangeBuilder {
     pub fn get_unit(&self) -> &::std::option::Option<::std::string::String> {
         &self.unit
     }
+    /// <p>Specifies at which level within the Amazon Web Services account the quota request applies to.</p>
+    pub fn quota_requested_at_level(mut self, input: crate::types::AppliedLevelEnum) -> Self {
+        self.quota_requested_at_level = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies at which level within the Amazon Web Services account the quota request applies to.</p>
+    pub fn set_quota_requested_at_level(mut self, input: ::std::option::Option<crate::types::AppliedLevelEnum>) -> Self {
+        self.quota_requested_at_level = input;
+        self
+    }
+    /// <p>Specifies at which level within the Amazon Web Services account the quota request applies to.</p>
+    pub fn get_quota_requested_at_level(&self) -> &::std::option::Option<crate::types::AppliedLevelEnum> {
+        &self.quota_requested_at_level
+    }
+    /// <p>The context for this service quota.</p>
+    pub fn quota_context(mut self, input: crate::types::QuotaContextInfo) -> Self {
+        self.quota_context = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The context for this service quota.</p>
+    pub fn set_quota_context(mut self, input: ::std::option::Option<crate::types::QuotaContextInfo>) -> Self {
+        self.quota_context = input;
+        self
+    }
+    /// <p>The context for this service quota.</p>
+    pub fn get_quota_context(&self) -> &::std::option::Option<crate::types::QuotaContextInfo> {
+        &self.quota_context
+    }
     /// Consumes the builder and constructs a [`RequestedServiceQuotaChange`](crate::types::RequestedServiceQuotaChange).
     pub fn build(self) -> crate::types::RequestedServiceQuotaChange {
         crate::types::RequestedServiceQuotaChange {
@@ -331,6 +373,8 @@ impl RequestedServiceQuotaChangeBuilder {
             quota_arn: self.quota_arn,
             global_quota: self.global_quota.unwrap_or_default(),
             unit: self.unit,
+            quota_requested_at_level: self.quota_requested_at_level,
+            quota_context: self.quota_context,
         }
     }
 }

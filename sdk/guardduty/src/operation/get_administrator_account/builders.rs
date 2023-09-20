@@ -22,7 +22,9 @@ impl GetAdministratorAccountInputBuilder {
 }
 /// Fluent builder constructing a request to `GetAdministratorAccount`.
 ///
-/// <p>Provides the details for the GuardDuty administrator account associated with the current GuardDuty member account.</p>
+/// <p>Provides the details of the GuardDuty administrator account associated with the current GuardDuty member account.</p> <note>
+/// <p>If the organization's management account or a delegated administrator runs this API, it will return success (<code>HTTP 200</code>) but no content.</p>
+/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetAdministratorAccountFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

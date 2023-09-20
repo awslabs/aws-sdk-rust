@@ -22,7 +22,7 @@ impl DeleteModelInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteModel`.
 ///
-/// <p>Deletes an ML model currently available for Amazon Lookout for Equipment. This will prevent it from being used with an inference scheduler, even one that is already set up. </p>
+/// <p>Deletes a machine learning model currently available for Amazon Lookout for Equipment. This will prevent it from being used with an inference scheduler, even one that is already set up. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteModelFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -110,17 +110,17 @@ impl DeleteModelFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name of the ML model to be deleted. </p>
+    /// <p>The name of the machine learning model to be deleted. </p>
     pub fn model_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.model_name(input.into());
         self
     }
-    /// <p>The name of the ML model to be deleted. </p>
+    /// <p>The name of the machine learning model to be deleted. </p>
     pub fn set_model_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_model_name(input);
         self
     }
-    /// <p>The name of the ML model to be deleted. </p>
+    /// <p>The name of the machine learning model to be deleted. </p>
     pub fn get_model_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_model_name()
     }

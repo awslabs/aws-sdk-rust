@@ -793,6 +793,22 @@ pub fn de_update_distribution_http_error(
                 tmp
             })
         }
+        "TooManyDistributionsAssociatedToOriginAccessControl" => {
+            crate::operation::update_distribution::UpdateDistributionError::TooManyDistributionsAssociatedToOriginAccessControl({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::TooManyDistributionsAssociatedToOriginAccessControlBuilder::default();
+                    output = crate::protocol_serde::shape_too_many_distributions_associated_to_origin_access_control::de_too_many_distributions_associated_to_origin_access_control_xml_err(_response_body, output).map_err(crate::operation::update_distribution::UpdateDistributionError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         "TooManyDistributionsAssociatedToOriginRequestPolicy" => {
             crate::operation::update_distribution::UpdateDistributionError::TooManyDistributionsAssociatedToOriginRequestPolicy({
                 #[allow(unused_mut)]

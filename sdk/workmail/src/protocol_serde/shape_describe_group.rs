@@ -161,6 +161,9 @@ pub(crate) fn de_describe_group(
                         ::aws_smithy_types::date_time::Format::EpochSeconds,
                     )?);
                 }
+                "HiddenFromGlobalAddressList" => {
+                    builder = builder.set_hidden_from_global_address_list(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

@@ -22,12 +22,13 @@ impl StopContactInputBuilder {
 }
 /// Fluent builder constructing a request to `StopContact`.
 ///
-/// <p>Ends the specified contact. This call does not work for the following initiation methods:</p>
+/// <p>Ends the specified contact. This call does not work for voice contacts that use the following initiation methods:</p>
 /// <ul>
 /// <li> <p>DISCONNECT</p> </li>
 /// <li> <p>TRANSFER</p> </li>
 /// <li> <p>QUEUE_TRANSFER</p> </li>
 /// </ul>
+/// <p>Chat and task contacts, however, can be terminated in any state, regardless of initiation method.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StopContactFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -2,7 +2,7 @@
 
 /// <p>The conditions including range, object count, and threshold for the calculated attribute.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct Conditions {
     /// <p>The relative time period over which data is included in the aggregation.</p>
     pub range: ::std::option::Option<crate::types::Range>,
@@ -25,6 +25,15 @@ impl Conditions {
         self.threshold.as_ref()
     }
 }
+impl ::std::fmt::Debug for Conditions {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("Conditions");
+        formatter.field("range", &"*** Sensitive Data Redacted ***");
+        formatter.field("object_count", &"*** Sensitive Data Redacted ***");
+        formatter.field("threshold", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl Conditions {
     /// Creates a new builder-style object to manufacture [`Conditions`](crate::types::Conditions).
     pub fn builder() -> crate::types::builders::ConditionsBuilder {
@@ -34,7 +43,7 @@ impl Conditions {
 
 /// A builder for [`Conditions`](crate::types::Conditions).
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct ConditionsBuilder {
     pub(crate) range: ::std::option::Option<crate::types::Range>,
     pub(crate) object_count: ::std::option::Option<i32>,
@@ -90,5 +99,14 @@ impl ConditionsBuilder {
             object_count: self.object_count,
             threshold: self.threshold,
         }
+    }
+}
+impl ::std::fmt::Debug for ConditionsBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("ConditionsBuilder");
+        formatter.field("range", &"*** Sensitive Data Redacted ***");
+        formatter.field("object_count", &"*** Sensitive Data Redacted ***");
+        formatter.field("threshold", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

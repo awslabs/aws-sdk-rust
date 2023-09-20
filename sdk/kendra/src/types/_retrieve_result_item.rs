@@ -16,6 +16,8 @@ pub struct RetrieveResultItem {
     pub document_uri: ::std::option::Option<::std::string::String>,
     /// <p>An array of document fields/attributes assigned to a document in the search results. For example, the document author (<code>_author</code>) or the source URI (<code>_source_uri</code>) of the document.</p>
     pub document_attributes: ::std::option::Option<::std::vec::Vec<crate::types::DocumentAttribute>>,
+    /// <p>The confidence score bucket for a retrieved passage result. The confidence bucket provides a relative ranking that indicates how confident Amazon Kendra is that the response is relevant to the query.</p>
+    pub score_attributes: ::std::option::Option<crate::types::ScoreAttributes>,
 }
 impl RetrieveResultItem {
     /// <p>The identifier of the relevant passage result.</p>
@@ -42,6 +44,10 @@ impl RetrieveResultItem {
     pub fn document_attributes(&self) -> ::std::option::Option<&[crate::types::DocumentAttribute]> {
         self.document_attributes.as_deref()
     }
+    /// <p>The confidence score bucket for a retrieved passage result. The confidence bucket provides a relative ranking that indicates how confident Amazon Kendra is that the response is relevant to the query.</p>
+    pub fn score_attributes(&self) -> ::std::option::Option<&crate::types::ScoreAttributes> {
+        self.score_attributes.as_ref()
+    }
 }
 impl RetrieveResultItem {
     /// Creates a new builder-style object to manufacture [`RetrieveResultItem`](crate::types::RetrieveResultItem).
@@ -60,6 +66,7 @@ pub struct RetrieveResultItemBuilder {
     pub(crate) content: ::std::option::Option<::std::string::String>,
     pub(crate) document_uri: ::std::option::Option<::std::string::String>,
     pub(crate) document_attributes: ::std::option::Option<::std::vec::Vec<crate::types::DocumentAttribute>>,
+    pub(crate) score_attributes: ::std::option::Option<crate::types::ScoreAttributes>,
 }
 impl RetrieveResultItemBuilder {
     /// <p>The identifier of the relevant passage result.</p>
@@ -152,6 +159,20 @@ impl RetrieveResultItemBuilder {
     pub fn get_document_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DocumentAttribute>> {
         &self.document_attributes
     }
+    /// <p>The confidence score bucket for a retrieved passage result. The confidence bucket provides a relative ranking that indicates how confident Amazon Kendra is that the response is relevant to the query.</p>
+    pub fn score_attributes(mut self, input: crate::types::ScoreAttributes) -> Self {
+        self.score_attributes = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The confidence score bucket for a retrieved passage result. The confidence bucket provides a relative ranking that indicates how confident Amazon Kendra is that the response is relevant to the query.</p>
+    pub fn set_score_attributes(mut self, input: ::std::option::Option<crate::types::ScoreAttributes>) -> Self {
+        self.score_attributes = input;
+        self
+    }
+    /// <p>The confidence score bucket for a retrieved passage result. The confidence bucket provides a relative ranking that indicates how confident Amazon Kendra is that the response is relevant to the query.</p>
+    pub fn get_score_attributes(&self) -> &::std::option::Option<crate::types::ScoreAttributes> {
+        &self.score_attributes
+    }
     /// Consumes the builder and constructs a [`RetrieveResultItem`](crate::types::RetrieveResultItem).
     pub fn build(self) -> crate::types::RetrieveResultItem {
         crate::types::RetrieveResultItem {
@@ -161,6 +182,7 @@ impl RetrieveResultItemBuilder {
             content: self.content,
             document_uri: self.document_uri,
             document_attributes: self.document_attributes,
+            score_attributes: self.score_attributes,
         }
     }
 }

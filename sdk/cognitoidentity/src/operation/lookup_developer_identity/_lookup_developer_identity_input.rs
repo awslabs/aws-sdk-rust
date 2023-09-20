@@ -11,7 +11,7 @@ pub struct LookupDeveloperIdentityInput {
     /// <p>A unique ID used by your backend authentication process to identify a user. Typically, a developer identity provider would issue many developer user identifiers, in keeping with the number of users.</p>
     pub developer_user_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of identities to return.</p>
-    pub max_results: i32,
+    pub max_results: ::std::option::Option<i32>,
     /// <p>A pagination token. The first call you make will have <code>NextToken</code> set to null. After that the service will return <code>NextToken</code> values as needed. For example, let's say you make a request with <code>MaxResults</code> set to 10, and there are 20 matches in the database. The service will return a pagination token as a part of the response. This token can be used to call the API again and get results starting from the 11th match.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
@@ -29,7 +29,7 @@ impl LookupDeveloperIdentityInput {
         self.developer_user_identifier.as_deref()
     }
     /// <p>The maximum number of identities to return.</p>
-    pub fn max_results(&self) -> i32 {
+    pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
     /// <p>A pagination token. The first call you make will have <code>NextToken</code> set to null. After that the service will return <code>NextToken</code> values as needed. For example, let's say you make a request with <code>MaxResults</code> set to 10, and there are 20 matches in the database. The service will return a pagination token as a part of the response. This token can be used to call the API again and get results starting from the 11th match.</p>
@@ -136,7 +136,7 @@ impl LookupDeveloperIdentityInputBuilder {
             identity_pool_id: self.identity_pool_id,
             identity_id: self.identity_id,
             developer_user_identifier: self.developer_user_identifier,
-            max_results: self.max_results.unwrap_or_default(),
+            max_results: self.max_results,
             next_token: self.next_token,
         })
     }

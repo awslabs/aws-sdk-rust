@@ -2,7 +2,7 @@
 
 /// <p>Additional parameter included in the header. You can include up to 100 additional header parameters per request. An event payload cannot exceed 64 KB.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ConnectionHeaderParameter {
     /// <p>The key for the parameter.</p>
     pub key: ::std::option::Option<::std::string::String>,
@@ -25,6 +25,15 @@ impl ConnectionHeaderParameter {
         self.is_value_secret
     }
 }
+impl ::std::fmt::Debug for ConnectionHeaderParameter {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("ConnectionHeaderParameter");
+        formatter.field("key", &self.key);
+        formatter.field("value", &"*** Sensitive Data Redacted ***");
+        formatter.field("is_value_secret", &self.is_value_secret);
+        formatter.finish()
+    }
+}
 impl ConnectionHeaderParameter {
     /// Creates a new builder-style object to manufacture [`ConnectionHeaderParameter`](crate::types::ConnectionHeaderParameter).
     pub fn builder() -> crate::types::builders::ConnectionHeaderParameterBuilder {
@@ -34,7 +43,7 @@ impl ConnectionHeaderParameter {
 
 /// A builder for [`ConnectionHeaderParameter`](crate::types::ConnectionHeaderParameter).
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct ConnectionHeaderParameterBuilder {
     pub(crate) key: ::std::option::Option<::std::string::String>,
     pub(crate) value: ::std::option::Option<::std::string::String>,
@@ -90,5 +99,14 @@ impl ConnectionHeaderParameterBuilder {
             value: self.value,
             is_value_secret: self.is_value_secret.unwrap_or_default(),
         }
+    }
+}
+impl ::std::fmt::Debug for ConnectionHeaderParameterBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("ConnectionHeaderParameterBuilder");
+        formatter.field("key", &self.key);
+        formatter.field("value", &"*** Sensitive Data Redacted ***");
+        formatter.field("is_value_secret", &self.is_value_secret);
+        formatter.finish()
     }
 }

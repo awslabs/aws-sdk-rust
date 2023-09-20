@@ -14,7 +14,7 @@ pub struct DescribeModelCardExportJobOutput {
     /// <li> <p> <code>Failed</code>: The model card export job failed. To see the reason for the failure, see the <code>FailureReason</code> field in the response to a <code>DescribeModelCardExportJob</code> call.</p> </li>
     /// </ul>
     pub status: ::std::option::Option<crate::types::ModelCardExportJobStatus>,
-    /// <p>The name of the model card that the model export job exports.</p>
+    /// <p>The name or Amazon Resource Name (ARN) of the model card that the model export job exports.</p>
     pub model_card_name: ::std::option::Option<::std::string::String>,
     /// <p>The version of the model card that the model export job exports.</p>
     pub model_card_version: i32,
@@ -48,7 +48,7 @@ impl DescribeModelCardExportJobOutput {
     pub fn status(&self) -> ::std::option::Option<&crate::types::ModelCardExportJobStatus> {
         self.status.as_ref()
     }
-    /// <p>The name of the model card that the model export job exports.</p>
+    /// <p>The name or Amazon Resource Name (ARN) of the model card that the model export job exports.</p>
     pub fn model_card_name(&self) -> ::std::option::Option<&str> {
         self.model_card_name.as_deref()
     }
@@ -163,17 +163,17 @@ impl DescribeModelCardExportJobOutputBuilder {
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ModelCardExportJobStatus> {
         &self.status
     }
-    /// <p>The name of the model card that the model export job exports.</p>
+    /// <p>The name or Amazon Resource Name (ARN) of the model card that the model export job exports.</p>
     pub fn model_card_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_card_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the model card that the model export job exports.</p>
+    /// <p>The name or Amazon Resource Name (ARN) of the model card that the model export job exports.</p>
     pub fn set_model_card_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_card_name = input;
         self
     }
-    /// <p>The name of the model card that the model export job exports.</p>
+    /// <p>The name or Amazon Resource Name (ARN) of the model card that the model export job exports.</p>
     pub fn get_model_card_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.model_card_name
     }

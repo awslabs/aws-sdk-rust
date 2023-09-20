@@ -22,6 +22,8 @@ pub struct TaskListItem {
     pub stop_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> The number of Graphics Processing Units (GPU) specified for the task. </p>
     pub gpus: ::std::option::Option<i32>,
+    /// <p> The instance type for a task. </p>
+    pub instance_type: ::std::option::Option<::std::string::String>,
 }
 impl TaskListItem {
     /// <p>The task's ID.</p>
@@ -60,6 +62,10 @@ impl TaskListItem {
     pub fn gpus(&self) -> ::std::option::Option<i32> {
         self.gpus
     }
+    /// <p> The instance type for a task. </p>
+    pub fn instance_type(&self) -> ::std::option::Option<&str> {
+        self.instance_type.as_deref()
+    }
 }
 impl TaskListItem {
     /// Creates a new builder-style object to manufacture [`TaskListItem`](crate::types::TaskListItem).
@@ -81,6 +87,7 @@ pub struct TaskListItemBuilder {
     pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) stop_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) gpus: ::std::option::Option<i32>,
+    pub(crate) instance_type: ::std::option::Option<::std::string::String>,
 }
 impl TaskListItemBuilder {
     /// <p>The task's ID.</p>
@@ -209,6 +216,20 @@ impl TaskListItemBuilder {
     pub fn get_gpus(&self) -> &::std::option::Option<i32> {
         &self.gpus
     }
+    /// <p> The instance type for a task. </p>
+    pub fn instance_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.instance_type = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p> The instance type for a task. </p>
+    pub fn set_instance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.instance_type = input;
+        self
+    }
+    /// <p> The instance type for a task. </p>
+    pub fn get_instance_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_type
+    }
     /// Consumes the builder and constructs a [`TaskListItem`](crate::types::TaskListItem).
     pub fn build(self) -> crate::types::TaskListItem {
         crate::types::TaskListItem {
@@ -221,6 +242,7 @@ impl TaskListItemBuilder {
             start_time: self.start_time,
             stop_time: self.stop_time,
             gpus: self.gpus,
+            instance_type: self.instance_type,
         }
     }
 }

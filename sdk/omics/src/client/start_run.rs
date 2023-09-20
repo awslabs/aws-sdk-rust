@@ -4,8 +4,8 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`workflow_id(impl Into<String>)`](crate::operation::start_run::builders::StartRunFluentBuilder::workflow_id) / [`set_workflow_id(Option<String>)`](crate::operation::start_run::builders::StartRunFluentBuilder::set_workflow_id): <p>The run's workflow ID.</p>
-    ///   - [`workflow_type(WorkflowType)`](crate::operation::start_run::builders::StartRunFluentBuilder::workflow_type) / [`set_workflow_type(Option<WorkflowType>)`](crate::operation::start_run::builders::StartRunFluentBuilder::set_workflow_type): <p>The run's workflows type.</p>
-    ///   - [`run_id(impl Into<String>)`](crate::operation::start_run::builders::StartRunFluentBuilder::run_id) / [`set_run_id(Option<String>)`](crate::operation::start_run::builders::StartRunFluentBuilder::set_run_id): <p>The run's ID.</p>
+    ///   - [`workflow_type(WorkflowType)`](crate::operation::start_run::builders::StartRunFluentBuilder::workflow_type) / [`set_workflow_type(Option<WorkflowType>)`](crate::operation::start_run::builders::StartRunFluentBuilder::set_workflow_type): <p>The run's workflow type.</p>
+    ///   - [`run_id(impl Into<String>)`](crate::operation::start_run::builders::StartRunFluentBuilder::run_id) / [`set_run_id(Option<String>)`](crate::operation::start_run::builders::StartRunFluentBuilder::set_run_id): <p>The ID of a run to duplicate.</p>
     ///   - [`role_arn(impl Into<String>)`](crate::operation::start_run::builders::StartRunFluentBuilder::role_arn) / [`set_role_arn(Option<String>)`](crate::operation::start_run::builders::StartRunFluentBuilder::set_role_arn): <p>A service role for the run.</p>
     ///   - [`name(impl Into<String>)`](crate::operation::start_run::builders::StartRunFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::start_run::builders::StartRunFluentBuilder::set_name): <p>A name for the run.</p>
     ///   - [`run_group_id(impl Into<String>)`](crate::operation::start_run::builders::StartRunFluentBuilder::run_group_id) / [`set_run_group_id(Option<String>)`](crate::operation::start_run::builders::StartRunFluentBuilder::set_run_group_id): <p>The run's group ID.</p>
@@ -16,6 +16,7 @@ impl super::Client {
     ///   - [`log_level(RunLogLevel)`](crate::operation::start_run::builders::StartRunFluentBuilder::log_level) / [`set_log_level(Option<RunLogLevel>)`](crate::operation::start_run::builders::StartRunFluentBuilder::set_log_level): <p>A log level for the run.</p>
     ///   - [`tags(impl Into<String>, impl Into<String>)`](crate::operation::start_run::builders::StartRunFluentBuilder::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::operation::start_run::builders::StartRunFluentBuilder::set_tags): <p>Tags for the run.</p>
     ///   - [`request_id(impl Into<String>)`](crate::operation::start_run::builders::StartRunFluentBuilder::request_id) / [`set_request_id(Option<String>)`](crate::operation::start_run::builders::StartRunFluentBuilder::set_request_id): <p>To ensure that requests don't run multiple times, specify a unique ID for each request.</p>
+    ///   - [`retention_mode(RunRetentionMode)`](crate::operation::start_run::builders::StartRunFluentBuilder::retention_mode) / [`set_retention_mode(Option<RunRetentionMode>)`](crate::operation::start_run::builders::StartRunFluentBuilder::set_retention_mode): <p>The retention mode for the run.</p>
     /// - On success, responds with [`StartRunOutput`](crate::operation::start_run::StartRunOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::start_run::StartRunOutput::arn): <p>The run's ARN.</p>
     ///   - [`id(Option<String>)`](crate::operation::start_run::StartRunOutput::id): <p>The run's ID.</p>

@@ -35,6 +35,14 @@ pub use crate::types::_variant_import_item_source::VariantImportItemSource;
 
 pub use crate::types::_variant_import_item_detail::VariantImportItemDetail;
 
+pub use crate::types::_share_details::ShareDetails;
+
+pub use crate::types::_share_status::ShareStatus;
+
+pub use crate::types::_filter::Filter;
+
+pub use crate::types::_resource_owner::ResourceOwner;
+
 pub use crate::types::_read_set_part_source::ReadSetPartSource;
 
 pub use crate::types::_read_set_import_job_status::ReadSetImportJobStatus;
@@ -95,6 +103,8 @@ pub use crate::types::_read_set_batch_error::ReadSetBatchError;
 
 pub use crate::types::_read_set_list_item::ReadSetListItem;
 
+pub use crate::types::_creation_type::CreationType;
+
 pub use crate::types::_sequence_information::SequenceInformation;
 
 pub use crate::types::_read_set_status::ReadSetStatus;
@@ -108,6 +118,8 @@ pub use crate::types::_file_information::FileInformation;
 pub use crate::types::_run_list_item::RunListItem;
 
 pub use crate::types::_run_status::RunStatus;
+
+pub use crate::types::_run_retention_mode::RunRetentionMode;
 
 pub use crate::types::_run_log_level::RunLogLevel;
 
@@ -145,6 +157,24 @@ pub use crate::types::_reference_filter::ReferenceFilter;
 
 pub use crate::types::_reference_files::ReferenceFiles;
 
+pub use crate::types::_version_delete_error::VersionDeleteError;
+
+pub use crate::types::_annotation_store_version_item::AnnotationStoreVersionItem;
+
+pub use crate::types::_version_status::VersionStatus;
+
+pub use crate::types::_list_annotation_store_versions_filter::ListAnnotationStoreVersionsFilter;
+
+pub use crate::types::_version_options::VersionOptions;
+
+pub use crate::types::_tsv_version_options::TsvVersionOptions;
+
+pub use crate::types::_schema_value_type::SchemaValueType;
+
+pub use crate::types::_format_to_header_key::FormatToHeaderKey;
+
+pub use crate::types::_annotation_type::AnnotationType;
+
 pub use crate::types::_annotation_store_item::AnnotationStoreItem;
 
 pub use crate::types::_store_format::StoreFormat;
@@ -154,12 +184,6 @@ pub use crate::types::_list_annotation_stores_filter::ListAnnotationStoresFilter
 pub use crate::types::_store_options::StoreOptions;
 
 pub use crate::types::_tsv_store_options::TsvStoreOptions;
-
-pub use crate::types::_schema_value_type::SchemaValueType;
-
-pub use crate::types::_format_to_header_key::FormatToHeaderKey;
-
-pub use crate::types::_annotation_type::AnnotationType;
 
 pub use crate::types::_annotation_import_job_item::AnnotationImportJobItem;
 
@@ -193,9 +217,13 @@ mod _annotation_import_job_item;
 
 mod _annotation_store_item;
 
+mod _annotation_store_version_item;
+
 mod _annotation_type;
 
 mod _complete_read_set_upload_part_list_item;
+
+mod _creation_type;
 
 mod _encryption_type;
 
@@ -210,6 +238,8 @@ mod _export_read_set_job_detail;
 mod _file_information;
 
 mod _file_type;
+
+mod _filter;
 
 mod _format_options;
 
@@ -230,6 +260,8 @@ mod _import_reference_source_item;
 mod _job_status;
 
 mod _list_annotation_import_jobs_filter;
+
+mod _list_annotation_store_versions_filter;
 
 mod _list_annotation_stores_filter;
 
@@ -291,6 +323,8 @@ mod _reference_store_detail;
 
 mod _reference_store_filter;
 
+mod _resource_owner;
+
 mod _run_export;
 
 mod _run_group_list_item;
@@ -298,6 +332,8 @@ mod _run_group_list_item;
 mod _run_list_item;
 
 mod _run_log_level;
+
+mod _run_retention_mode;
 
 mod _run_status;
 
@@ -308,6 +344,10 @@ mod _sequence_information;
 mod _sequence_store_detail;
 
 mod _sequence_store_filter;
+
+mod _share_details;
+
+mod _share_status;
 
 mod _source_files;
 
@@ -333,6 +373,8 @@ mod _tsv_options;
 
 mod _tsv_store_options;
 
+mod _tsv_version_options;
+
 mod _variant_import_item_detail;
 
 mod _variant_import_item_source;
@@ -342,6 +384,12 @@ mod _variant_import_job_item;
 mod _variant_store_item;
 
 mod _vcf_options;
+
+mod _version_delete_error;
+
+mod _version_options;
+
+mod _version_status;
 
 mod _workflow_engine;
 

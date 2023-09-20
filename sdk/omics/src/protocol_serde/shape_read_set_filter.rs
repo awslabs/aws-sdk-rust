@@ -31,5 +31,8 @@ pub fn ser_read_set_filter(
     if let Some(var_8) = &input.generated_from {
         object.key("generatedFrom").string(var_8.as_str());
     }
+    if let Some(var_9) = &input.creation_type {
+        object.key("creationType").string(var_9.as_str());
+    }
     Ok(())
 }

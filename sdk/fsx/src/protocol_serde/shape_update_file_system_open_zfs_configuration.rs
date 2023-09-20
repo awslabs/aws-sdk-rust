@@ -33,5 +33,23 @@ pub fn ser_update_file_system_open_zfs_configuration(
         crate::protocol_serde::shape_disk_iops_configuration::ser_disk_iops_configuration(&mut object_8, var_7)?;
         object_8.finish();
     }
+    if let Some(var_9) = &input.add_route_table_ids {
+        let mut array_10 = object.key("AddRouteTableIds").start_array();
+        for item_11 in var_9 {
+            {
+                array_10.value().string(item_11.as_str());
+            }
+        }
+        array_10.finish();
+    }
+    if let Some(var_12) = &input.remove_route_table_ids {
+        let mut array_13 = object.key("RemoveRouteTableIds").start_array();
+        for item_14 in var_12 {
+            {
+                array_13.value().string(item_14.as_str());
+            }
+        }
+        array_13.finish();
+    }
     Ok(())
 }

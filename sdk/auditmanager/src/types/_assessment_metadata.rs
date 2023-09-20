@@ -2,7 +2,7 @@
 
 /// <p> The metadata that's associated with the specified assessment. </p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct AssessmentMetadata {
     /// <p> The name of the assessment. </p>
     pub name: ::std::option::Option<::std::string::String>,
@@ -73,6 +73,23 @@ impl AssessmentMetadata {
         self.last_updated.as_ref()
     }
 }
+impl ::std::fmt::Debug for AssessmentMetadata {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("AssessmentMetadata");
+        formatter.field("name", &"*** Sensitive Data Redacted ***");
+        formatter.field("id", &self.id);
+        formatter.field("description", &"*** Sensitive Data Redacted ***");
+        formatter.field("compliance_type", &"*** Sensitive Data Redacted ***");
+        formatter.field("status", &self.status);
+        formatter.field("assessment_reports_destination", &"*** Sensitive Data Redacted ***");
+        formatter.field("scope", &"*** Sensitive Data Redacted ***");
+        formatter.field("roles", &"*** Sensitive Data Redacted ***");
+        formatter.field("delegations", &self.delegations);
+        formatter.field("creation_time", &self.creation_time);
+        formatter.field("last_updated", &self.last_updated);
+        formatter.finish()
+    }
+}
 impl AssessmentMetadata {
     /// Creates a new builder-style object to manufacture [`AssessmentMetadata`](crate::types::AssessmentMetadata).
     pub fn builder() -> crate::types::builders::AssessmentMetadataBuilder {
@@ -82,7 +99,7 @@ impl AssessmentMetadata {
 
 /// A builder for [`AssessmentMetadata`](crate::types::AssessmentMetadata).
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct AssessmentMetadataBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
@@ -278,5 +295,22 @@ impl AssessmentMetadataBuilder {
             creation_time: self.creation_time,
             last_updated: self.last_updated,
         }
+    }
+}
+impl ::std::fmt::Debug for AssessmentMetadataBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("AssessmentMetadataBuilder");
+        formatter.field("name", &"*** Sensitive Data Redacted ***");
+        formatter.field("id", &self.id);
+        formatter.field("description", &"*** Sensitive Data Redacted ***");
+        formatter.field("compliance_type", &"*** Sensitive Data Redacted ***");
+        formatter.field("status", &self.status);
+        formatter.field("assessment_reports_destination", &"*** Sensitive Data Redacted ***");
+        formatter.field("scope", &"*** Sensitive Data Redacted ***");
+        formatter.field("roles", &"*** Sensitive Data Redacted ***");
+        formatter.field("delegations", &self.delegations);
+        formatter.field("creation_time", &self.creation_time);
+        formatter.field("last_updated", &self.last_updated);
+        formatter.finish()
     }
 }

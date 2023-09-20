@@ -13,6 +13,7 @@
 /// # let exportablevolumefield = unimplemented!();
 /// match exportablevolumefield {
 ///     ExportableVolumeField::AccountId => { /* ... */ },
+///     ExportableVolumeField::CurrentConfigurationRootVolume => { /* ... */ },
 ///     ExportableVolumeField::CurrentConfigurationVolumeBaselineIops => { /* ... */ },
 ///     ExportableVolumeField::CurrentConfigurationVolumeBaselineThroughput => { /* ... */ },
 ///     ExportableVolumeField::CurrentConfigurationVolumeBurstIops => { /* ... */ },
@@ -71,6 +72,8 @@
 pub enum ExportableVolumeField {
     #[allow(missing_docs)] // documentation missing in model
     AccountId,
+    #[allow(missing_docs)] // documentation missing in model
+    CurrentConfigurationRootVolume,
     #[allow(missing_docs)] // documentation missing in model
     CurrentConfigurationVolumeBaselineIops,
     #[allow(missing_docs)] // documentation missing in model
@@ -136,6 +139,7 @@ impl ::std::convert::From<&str> for ExportableVolumeField {
     fn from(s: &str) -> Self {
         match s {
             "AccountId" => ExportableVolumeField::AccountId,
+            "CurrentConfigurationRootVolume" => ExportableVolumeField::CurrentConfigurationRootVolume,
             "CurrentConfigurationVolumeBaselineIOPS" => ExportableVolumeField::CurrentConfigurationVolumeBaselineIops,
             "CurrentConfigurationVolumeBaselineThroughput" => ExportableVolumeField::CurrentConfigurationVolumeBaselineThroughput,
             "CurrentConfigurationVolumeBurstIOPS" => ExportableVolumeField::CurrentConfigurationVolumeBurstIops,
@@ -185,6 +189,7 @@ impl ExportableVolumeField {
     pub fn as_str(&self) -> &str {
         match self {
             ExportableVolumeField::AccountId => "AccountId",
+            ExportableVolumeField::CurrentConfigurationRootVolume => "CurrentConfigurationRootVolume",
             ExportableVolumeField::CurrentConfigurationVolumeBaselineIops => "CurrentConfigurationVolumeBaselineIOPS",
             ExportableVolumeField::CurrentConfigurationVolumeBaselineThroughput => "CurrentConfigurationVolumeBaselineThroughput",
             ExportableVolumeField::CurrentConfigurationVolumeBurstIops => "CurrentConfigurationVolumeBurstIOPS",
@@ -225,6 +230,7 @@ impl ExportableVolumeField {
     pub const fn values() -> &'static [&'static str] {
         &[
             "AccountId",
+            "CurrentConfigurationRootVolume",
             "CurrentConfigurationVolumeBaselineIOPS",
             "CurrentConfigurationVolumeBaselineThroughput",
             "CurrentConfigurationVolumeBurstIOPS",

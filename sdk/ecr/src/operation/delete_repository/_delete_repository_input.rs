@@ -8,7 +8,7 @@ pub struct DeleteRepositoryInput {
     /// <p>The name of the repository to delete.</p>
     pub repository_name: ::std::option::Option<::std::string::String>,
     /// <p> If a repository contains images, forces the deletion.</p>
-    pub force: bool,
+    pub force: ::std::option::Option<bool>,
 }
 impl DeleteRepositoryInput {
     /// <p>The Amazon Web Services account ID associated with the registry that contains the repository to delete. If you do not specify a registry, the default registry is assumed.</p>
@@ -20,7 +20,7 @@ impl DeleteRepositoryInput {
         self.repository_name.as_deref()
     }
     /// <p> If a repository contains images, forces the deletion.</p>
-    pub fn force(&self) -> bool {
+    pub fn force(&self) -> ::std::option::Option<bool> {
         self.force
     }
 }
@@ -89,7 +89,7 @@ impl DeleteRepositoryInputBuilder {
         ::std::result::Result::Ok(crate::operation::delete_repository::DeleteRepositoryInput {
             registry_id: self.registry_id,
             repository_name: self.repository_name,
-            force: self.force.unwrap_or_default(),
+            force: self.force,
         })
     }
 }

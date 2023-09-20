@@ -2,7 +2,7 @@
 
 /// <p> Represents a share request for a custom framework in Audit Manager. </p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct AssessmentFrameworkShareRequest {
     /// <p> The unique identifier for the share request. </p>
     pub id: ::std::option::Option<::std::string::String>,
@@ -97,6 +97,27 @@ impl AssessmentFrameworkShareRequest {
         self.compliance_type.as_deref()
     }
 }
+impl ::std::fmt::Debug for AssessmentFrameworkShareRequest {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("AssessmentFrameworkShareRequest");
+        formatter.field("id", &self.id);
+        formatter.field("framework_id", &self.framework_id);
+        formatter.field("framework_name", &self.framework_name);
+        formatter.field("framework_description", &self.framework_description);
+        formatter.field("status", &self.status);
+        formatter.field("source_account", &self.source_account);
+        formatter.field("destination_account", &self.destination_account);
+        formatter.field("destination_region", &self.destination_region);
+        formatter.field("expiration_time", &self.expiration_time);
+        formatter.field("creation_time", &self.creation_time);
+        formatter.field("last_updated", &self.last_updated);
+        formatter.field("comment", &self.comment);
+        formatter.field("standard_controls_count", &self.standard_controls_count);
+        formatter.field("custom_controls_count", &self.custom_controls_count);
+        formatter.field("compliance_type", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl AssessmentFrameworkShareRequest {
     /// Creates a new builder-style object to manufacture [`AssessmentFrameworkShareRequest`](crate::types::AssessmentFrameworkShareRequest).
     pub fn builder() -> crate::types::builders::AssessmentFrameworkShareRequestBuilder {
@@ -106,7 +127,7 @@ impl AssessmentFrameworkShareRequest {
 
 /// A builder for [`AssessmentFrameworkShareRequest`](crate::types::AssessmentFrameworkShareRequest).
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct AssessmentFrameworkShareRequestBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) framework_id: ::std::option::Option<::std::string::String>,
@@ -354,5 +375,26 @@ impl AssessmentFrameworkShareRequestBuilder {
             custom_controls_count: self.custom_controls_count,
             compliance_type: self.compliance_type,
         }
+    }
+}
+impl ::std::fmt::Debug for AssessmentFrameworkShareRequestBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("AssessmentFrameworkShareRequestBuilder");
+        formatter.field("id", &self.id);
+        formatter.field("framework_id", &self.framework_id);
+        formatter.field("framework_name", &self.framework_name);
+        formatter.field("framework_description", &self.framework_description);
+        formatter.field("status", &self.status);
+        formatter.field("source_account", &self.source_account);
+        formatter.field("destination_account", &self.destination_account);
+        formatter.field("destination_region", &self.destination_region);
+        formatter.field("expiration_time", &self.expiration_time);
+        formatter.field("creation_time", &self.creation_time);
+        formatter.field("last_updated", &self.last_updated);
+        formatter.field("comment", &self.comment);
+        formatter.field("standard_controls_count", &self.standard_controls_count);
+        formatter.field("custom_controls_count", &self.custom_controls_count);
+        formatter.field("compliance_type", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

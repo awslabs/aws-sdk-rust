@@ -260,6 +260,8 @@ pub type GetMailboxDetailsErrorKind = GetMailboxDetailsError;
 pub enum GetMailboxDetailsError {
     /// <p>The identifier supplied for the user, group, or resource does not exist in your organization.</p>
     EntityNotFoundException(crate::types::error::EntityNotFoundException),
+    /// <p>One or more of the input parameters don't match the service's restrictions.</p>
+    InvalidParameterException(crate::types::error::InvalidParameterException),
     /// <p>An operation received a valid organization identifier that either doesn't belong or exist in the system.</p>
     OrganizationNotFoundException(crate::types::error::OrganizationNotFoundException),
     /// <p>The organization must have a valid state to perform certain operations on the organization or its members.</p>
@@ -283,6 +285,7 @@ impl ::std::fmt::Display for GetMailboxDetailsError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
             Self::EntityNotFoundException(_inner) => _inner.fmt(f),
+            Self::InvalidParameterException(_inner) => _inner.fmt(f),
             Self::OrganizationNotFoundException(_inner) => _inner.fmt(f),
             Self::OrganizationStateException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => _inner.fmt(f),
@@ -293,6 +296,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for GetMailboxDet
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::EntityNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidParameterException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::OrganizationNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::OrganizationStateException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
@@ -332,6 +336,7 @@ impl GetMailboxDetailsError {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         match self {
             Self::EntityNotFoundException(e) => e.meta(),
+            Self::InvalidParameterException(e) => e.meta(),
             Self::OrganizationNotFoundException(e) => e.meta(),
             Self::OrganizationStateException(e) => e.meta(),
             Self::Unhandled(e) => e.meta(),
@@ -340,6 +345,10 @@ impl GetMailboxDetailsError {
     /// Returns `true` if the error kind is `GetMailboxDetailsError::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(self, Self::EntityNotFoundException(_))
+    }
+    /// Returns `true` if the error kind is `GetMailboxDetailsError::InvalidParameterException`.
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(self, Self::InvalidParameterException(_))
     }
     /// Returns `true` if the error kind is `GetMailboxDetailsError::OrganizationNotFoundException`.
     pub fn is_organization_not_found_exception(&self) -> bool {
@@ -354,6 +363,7 @@ impl ::std::error::Error for GetMailboxDetailsError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
             Self::EntityNotFoundException(_inner) => ::std::option::Option::Some(_inner),
+            Self::InvalidParameterException(_inner) => ::std::option::Option::Some(_inner),
             Self::OrganizationNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::OrganizationStateException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(_inner),

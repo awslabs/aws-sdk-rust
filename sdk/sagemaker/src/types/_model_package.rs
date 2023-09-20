@@ -68,6 +68,8 @@ pub struct ModelPackage {
     pub customer_metadata_properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Represents the drift check baselines that can be used when the model monitor is set using the model package.</p>
     pub drift_check_baselines: ::std::option::Option<crate::types::DriftCheckBaselines>,
+    /// <p>Indicates if you want to skip model validation.</p>
+    pub skip_model_validation: ::std::option::Option<crate::types::SkipModelValidation>,
 }
 impl ModelPackage {
     /// <p>The name of the model.</p>
@@ -186,6 +188,10 @@ impl ModelPackage {
     pub fn drift_check_baselines(&self) -> ::std::option::Option<&crate::types::DriftCheckBaselines> {
         self.drift_check_baselines.as_ref()
     }
+    /// <p>Indicates if you want to skip model validation.</p>
+    pub fn skip_model_validation(&self) -> ::std::option::Option<&crate::types::SkipModelValidation> {
+        self.skip_model_validation.as_ref()
+    }
 }
 impl ModelPackage {
     /// Creates a new builder-style object to manufacture [`ModelPackage`](crate::types::ModelPackage).
@@ -224,6 +230,7 @@ pub struct ModelPackageBuilder {
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) customer_metadata_properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) drift_check_baselines: ::std::option::Option<crate::types::DriftCheckBaselines>,
+    pub(crate) skip_model_validation: ::std::option::Option<crate::types::SkipModelValidation>,
 }
 impl ModelPackageBuilder {
     /// <p>The name of the model.</p>
@@ -658,6 +665,20 @@ impl ModelPackageBuilder {
     pub fn get_drift_check_baselines(&self) -> &::std::option::Option<crate::types::DriftCheckBaselines> {
         &self.drift_check_baselines
     }
+    /// <p>Indicates if you want to skip model validation.</p>
+    pub fn skip_model_validation(mut self, input: crate::types::SkipModelValidation) -> Self {
+        self.skip_model_validation = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates if you want to skip model validation.</p>
+    pub fn set_skip_model_validation(mut self, input: ::std::option::Option<crate::types::SkipModelValidation>) -> Self {
+        self.skip_model_validation = input;
+        self
+    }
+    /// <p>Indicates if you want to skip model validation.</p>
+    pub fn get_skip_model_validation(&self) -> &::std::option::Option<crate::types::SkipModelValidation> {
+        &self.skip_model_validation
+    }
     /// Consumes the builder and constructs a [`ModelPackage`](crate::types::ModelPackage).
     pub fn build(self) -> crate::types::ModelPackage {
         crate::types::ModelPackage {
@@ -687,6 +708,7 @@ impl ModelPackageBuilder {
             tags: self.tags,
             customer_metadata_properties: self.customer_metadata_properties,
             drift_check_baselines: self.drift_check_baselines,
+            skip_model_validation: self.skip_model_validation,
         }
     }
 }

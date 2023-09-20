@@ -177,6 +177,9 @@ pub(crate) fn de_describe_compilation_job(
                 "VpcConfig" => {
                     builder = builder.set_vpc_config(crate::protocol_serde::shape_neo_vpc_config::de_neo_vpc_config(tokens)?);
                 }
+                "DerivedInformation" => {
+                    builder = builder.set_derived_information(crate::protocol_serde::shape_derived_information::de_derived_information(tokens)?);
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

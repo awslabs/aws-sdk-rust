@@ -13,6 +13,7 @@
 /// # let functionruntime = unimplemented!();
 /// match functionruntime {
 ///     FunctionRuntime::CloudfrontJs10 => { /* ... */ },
+///     FunctionRuntime::CloudfrontJs20 => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -42,6 +43,8 @@
 pub enum FunctionRuntime {
     #[allow(missing_docs)] // documentation missing in model
     CloudfrontJs10,
+    #[allow(missing_docs)] // documentation missing in model
+    CloudfrontJs20,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
@@ -49,6 +52,7 @@ impl ::std::convert::From<&str> for FunctionRuntime {
     fn from(s: &str) -> Self {
         match s {
             "cloudfront-js-1.0" => FunctionRuntime::CloudfrontJs10,
+            "cloudfront-js-2.0" => FunctionRuntime::CloudfrontJs20,
             other => FunctionRuntime::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -65,12 +69,13 @@ impl FunctionRuntime {
     pub fn as_str(&self) -> &str {
         match self {
             FunctionRuntime::CloudfrontJs10 => "cloudfront-js-1.0",
+            FunctionRuntime::CloudfrontJs20 => "cloudfront-js-2.0",
             FunctionRuntime::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["cloudfront-js-1.0"]
+        &["cloudfront-js-1.0", "cloudfront-js-2.0"]
     }
 }
 impl ::std::convert::AsRef<str> for FunctionRuntime {

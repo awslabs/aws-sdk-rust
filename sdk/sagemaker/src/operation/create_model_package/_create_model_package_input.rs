@@ -26,6 +26,7 @@ pub struct CreateModelPackageInput {
     /// <p>This parameter is optional for unversioned models, and does not apply to versioned models.</p>
     pub certify_for_marketplace: ::std::option::Option<bool>,
     /// <p>A list of key value pairs associated with the model. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
+    /// <p>If you supply <code>ModelPackageGroupName</code>, your model package belongs to the model group you specify and uses the tags associated with the model group. In this case, you cannot supply a <code>tag</code> argument. </p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>Whether the model is approved for deployment.</p>
     /// <p>This parameter is optional for versioned models, and does not apply to unversioned models.</p>
@@ -50,6 +51,8 @@ pub struct CreateModelPackageInput {
     pub sample_payload_url: ::std::option::Option<::std::string::String>,
     /// <p>An array of additional Inference Specification objects. Each additional Inference Specification specifies artifacts based on this model package that can be used on inference endpoints. Generally used with SageMaker Neo to store the compiled artifacts. </p>
     pub additional_inference_specifications: ::std::option::Option<::std::vec::Vec<crate::types::AdditionalInferenceSpecificationDefinition>>,
+    /// <p>Indicates if you want to skip model validation.</p>
+    pub skip_model_validation: ::std::option::Option<crate::types::SkipModelValidation>,
 }
 impl CreateModelPackageInput {
     /// <p>The name of the model package. The name must have 1 to 63 characters. Valid characters are a-z, A-Z, 0-9, and - (hyphen).</p>
@@ -89,6 +92,7 @@ impl CreateModelPackageInput {
         self.certify_for_marketplace
     }
     /// <p>A list of key value pairs associated with the model. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
+    /// <p>If you supply <code>ModelPackageGroupName</code>, your model package belongs to the model group you specify and uses the tags associated with the model group. In this case, you cannot supply a <code>tag</code> argument. </p>
     pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
@@ -135,6 +139,10 @@ impl CreateModelPackageInput {
     pub fn additional_inference_specifications(&self) -> ::std::option::Option<&[crate::types::AdditionalInferenceSpecificationDefinition]> {
         self.additional_inference_specifications.as_deref()
     }
+    /// <p>Indicates if you want to skip model validation.</p>
+    pub fn skip_model_validation(&self) -> ::std::option::Option<&crate::types::SkipModelValidation> {
+        self.skip_model_validation.as_ref()
+    }
 }
 impl CreateModelPackageInput {
     /// Creates a new builder-style object to manufacture [`CreateModelPackageInput`](crate::operation::create_model_package::CreateModelPackageInput).
@@ -165,6 +173,7 @@ pub struct CreateModelPackageInputBuilder {
     pub(crate) task: ::std::option::Option<::std::string::String>,
     pub(crate) sample_payload_url: ::std::option::Option<::std::string::String>,
     pub(crate) additional_inference_specifications: ::std::option::Option<::std::vec::Vec<crate::types::AdditionalInferenceSpecificationDefinition>>,
+    pub(crate) skip_model_validation: ::std::option::Option<crate::types::SkipModelValidation>,
 }
 impl CreateModelPackageInputBuilder {
     /// <p>The name of the model package. The name must have 1 to 63 characters. Valid characters are a-z, A-Z, 0-9, and - (hyphen).</p>
@@ -294,6 +303,7 @@ impl CreateModelPackageInputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>A list of key value pairs associated with the model. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
+    /// <p>If you supply <code>ModelPackageGroupName</code>, your model package belongs to the model group you specify and uses the tags associated with the model group. In this case, you cannot supply a <code>tag</code> argument. </p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
         v.push(input);
@@ -301,11 +311,13 @@ impl CreateModelPackageInputBuilder {
         self
     }
     /// <p>A list of key value pairs associated with the model. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
+    /// <p>If you supply <code>ModelPackageGroupName</code>, your model package belongs to the model group you specify and uses the tags associated with the model group. In this case, you cannot supply a <code>tag</code> argument. </p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>A list of key value pairs associated with the model. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
+    /// <p>If you supply <code>ModelPackageGroupName</code>, your model package belongs to the model group you specify and uses the tags associated with the model group. In this case, you cannot supply a <code>tag</code> argument. </p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }
@@ -484,6 +496,20 @@ impl CreateModelPackageInputBuilder {
     ) -> &::std::option::Option<::std::vec::Vec<crate::types::AdditionalInferenceSpecificationDefinition>> {
         &self.additional_inference_specifications
     }
+    /// <p>Indicates if you want to skip model validation.</p>
+    pub fn skip_model_validation(mut self, input: crate::types::SkipModelValidation) -> Self {
+        self.skip_model_validation = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates if you want to skip model validation.</p>
+    pub fn set_skip_model_validation(mut self, input: ::std::option::Option<crate::types::SkipModelValidation>) -> Self {
+        self.skip_model_validation = input;
+        self
+    }
+    /// <p>Indicates if you want to skip model validation.</p>
+    pub fn get_skip_model_validation(&self) -> &::std::option::Option<crate::types::SkipModelValidation> {
+        &self.skip_model_validation
+    }
     /// Consumes the builder and constructs a [`CreateModelPackageInput`](crate::operation::create_model_package::CreateModelPackageInput).
     pub fn build(
         self,
@@ -507,6 +533,7 @@ impl CreateModelPackageInputBuilder {
             task: self.task,
             sample_payload_url: self.sample_payload_url,
             additional_inference_specifications: self.additional_inference_specifications,
+            skip_model_validation: self.skip_model_validation,
         })
     }
 }

@@ -17,11 +17,11 @@ pub use crate::types::error::_too_many_tags_exception::TooManyTagsExceptionBuild
 
 pub use crate::types::error::_invalid_tag_parameter_exception::InvalidTagParameterExceptionBuilder;
 
+pub use crate::types::error::_validation_exception::ValidationExceptionBuilder;
+
 pub use crate::types::error::_lifecycle_policy_preview_in_progress_exception::LifecyclePolicyPreviewInProgressExceptionBuilder;
 
 pub use crate::types::error::_lifecycle_policy_not_found_exception::LifecyclePolicyNotFoundExceptionBuilder;
-
-pub use crate::types::error::_validation_exception::ValidationExceptionBuilder;
 
 pub use crate::types::error::_unsupported_image_type_exception::UnsupportedImageTypeExceptionBuilder;
 

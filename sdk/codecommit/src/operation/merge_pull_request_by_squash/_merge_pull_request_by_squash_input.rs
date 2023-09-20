@@ -20,7 +20,7 @@ pub struct MergePullRequestBySquashInput {
     /// <p>The email address of the person merging the branches. This information is used in the commit information for the merge.</p>
     pub email: ::std::option::Option<::std::string::String>,
     /// <p>If the commit contains deletions, whether to keep a folder or folder structure if the changes leave the folders empty. If true, a .gitkeep file is created for empty folders. The default is false.</p>
-    pub keep_empty_folders: bool,
+    pub keep_empty_folders: ::std::option::Option<bool>,
     /// <p>If AUTOMERGE is the conflict resolution strategy, a list of inputs to use when resolving conflicts during a merge.</p>
     pub conflict_resolution: ::std::option::Option<crate::types::ConflictResolution>,
 }
@@ -58,7 +58,7 @@ impl MergePullRequestBySquashInput {
         self.email.as_deref()
     }
     /// <p>If the commit contains deletions, whether to keep a folder or folder structure if the changes leave the folders empty. If true, a .gitkeep file is created for empty folders. The default is false.</p>
-    pub fn keep_empty_folders(&self) -> bool {
+    pub fn keep_empty_folders(&self) -> ::std::option::Option<bool> {
         self.keep_empty_folders
     }
     /// <p>If AUTOMERGE is the conflict resolution strategy, a list of inputs to use when resolving conflicts during a merge.</p>
@@ -245,7 +245,7 @@ impl MergePullRequestBySquashInputBuilder {
             commit_message: self.commit_message,
             author_name: self.author_name,
             email: self.email,
-            keep_empty_folders: self.keep_empty_folders.unwrap_or_default(),
+            keep_empty_folders: self.keep_empty_folders,
             conflict_resolution: self.conflict_resolution,
         })
     }

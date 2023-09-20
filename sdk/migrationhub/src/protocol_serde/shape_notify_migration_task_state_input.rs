@@ -20,14 +20,14 @@ pub fn ser_notify_migration_task_state_input(
             .key("UpdateDateTime")
             .date_time(var_5, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
-    {
+    if let Some(var_6) = &input.next_update_seconds {
         object.key("NextUpdateSeconds").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.next_update_seconds).into()),
+            ::aws_smithy_types::Number::NegInt((*var_6).into()),
         );
     }
-    if input.dry_run {
-        object.key("DryRun").boolean(input.dry_run);
+    if let Some(var_7) = &input.dry_run {
+        object.key("DryRun").boolean(*var_7);
     }
     Ok(())
 }

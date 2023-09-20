@@ -12,13 +12,13 @@ pub fn ser_delete_db_instance_input_input(
     }
     #[allow(unused_mut)]
     let mut scope_3 = writer.prefix("SkipFinalSnapshot");
-    if input.skip_final_snapshot {
-        scope_3.boolean(input.skip_final_snapshot);
+    if let Some(var_4) = &input.skip_final_snapshot {
+        scope_3.boolean(*var_4);
     }
     #[allow(unused_mut)]
-    let mut scope_4 = writer.prefix("FinalDBSnapshotIdentifier");
-    if let Some(var_5) = &input.final_db_snapshot_identifier {
-        scope_4.string(var_5);
+    let mut scope_5 = writer.prefix("FinalDBSnapshotIdentifier");
+    if let Some(var_6) = &input.final_db_snapshot_identifier {
+        scope_5.string(var_6);
     }
     writer.finish();
     Ok(::aws_smithy_http::body::SdkBody::from(out))

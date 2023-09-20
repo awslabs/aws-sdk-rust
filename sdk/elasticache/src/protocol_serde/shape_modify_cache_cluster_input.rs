@@ -89,62 +89,62 @@ pub fn ser_modify_cache_cluster_input_input(
     }
     #[allow(unused_mut)]
     let mut scope_35 = writer.prefix("ApplyImmediately");
-    if input.apply_immediately {
-        scope_35.boolean(input.apply_immediately);
+    if let Some(var_36) = &input.apply_immediately {
+        scope_35.boolean(*var_36);
     }
     #[allow(unused_mut)]
-    let mut scope_36 = writer.prefix("EngineVersion");
-    if let Some(var_37) = &input.engine_version {
-        scope_36.string(var_37);
+    let mut scope_37 = writer.prefix("EngineVersion");
+    if let Some(var_38) = &input.engine_version {
+        scope_37.string(var_38);
     }
     #[allow(unused_mut)]
-    let mut scope_38 = writer.prefix("AutoMinorVersionUpgrade");
-    if let Some(var_39) = &input.auto_minor_version_upgrade {
-        scope_38.boolean(*var_39);
+    let mut scope_39 = writer.prefix("AutoMinorVersionUpgrade");
+    if let Some(var_40) = &input.auto_minor_version_upgrade {
+        scope_39.boolean(*var_40);
     }
     #[allow(unused_mut)]
-    let mut scope_40 = writer.prefix("SnapshotRetentionLimit");
-    if let Some(var_41) = &input.snapshot_retention_limit {
-        scope_40.number(
+    let mut scope_41 = writer.prefix("SnapshotRetentionLimit");
+    if let Some(var_42) = &input.snapshot_retention_limit {
+        scope_41.number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_41).into()),
+            ::aws_smithy_types::Number::NegInt((*var_42).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_42 = writer.prefix("SnapshotWindow");
-    if let Some(var_43) = &input.snapshot_window {
-        scope_42.string(var_43);
+    let mut scope_43 = writer.prefix("SnapshotWindow");
+    if let Some(var_44) = &input.snapshot_window {
+        scope_43.string(var_44);
     }
     #[allow(unused_mut)]
-    let mut scope_44 = writer.prefix("CacheNodeType");
-    if let Some(var_45) = &input.cache_node_type {
-        scope_44.string(var_45);
+    let mut scope_45 = writer.prefix("CacheNodeType");
+    if let Some(var_46) = &input.cache_node_type {
+        scope_45.string(var_46);
     }
     #[allow(unused_mut)]
-    let mut scope_46 = writer.prefix("AuthToken");
-    if let Some(var_47) = &input.auth_token {
-        scope_46.string(var_47);
+    let mut scope_47 = writer.prefix("AuthToken");
+    if let Some(var_48) = &input.auth_token {
+        scope_47.string(var_48);
     }
     #[allow(unused_mut)]
-    let mut scope_48 = writer.prefix("AuthTokenUpdateStrategy");
-    if let Some(var_49) = &input.auth_token_update_strategy {
-        scope_48.string(var_49.as_str());
+    let mut scope_49 = writer.prefix("AuthTokenUpdateStrategy");
+    if let Some(var_50) = &input.auth_token_update_strategy {
+        scope_49.string(var_50.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_50 = writer.prefix("LogDeliveryConfigurations");
-    if let Some(var_51) = &input.log_delivery_configurations {
-        let mut list_53 = scope_50.start_list(false, Some("LogDeliveryConfigurationRequest"));
-        for item_52 in var_51 {
+    let mut scope_51 = writer.prefix("LogDeliveryConfigurations");
+    if let Some(var_52) = &input.log_delivery_configurations {
+        let mut list_54 = scope_51.start_list(false, Some("LogDeliveryConfigurationRequest"));
+        for item_53 in var_52 {
             #[allow(unused_mut)]
-            let mut entry_54 = list_53.entry();
-            crate::protocol_serde::shape_log_delivery_configuration_request::ser_log_delivery_configuration_request(entry_54, item_52)?;
+            let mut entry_55 = list_54.entry();
+            crate::protocol_serde::shape_log_delivery_configuration_request::ser_log_delivery_configuration_request(entry_55, item_53)?;
         }
-        list_53.finish();
+        list_54.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_55 = writer.prefix("IpDiscovery");
-    if let Some(var_56) = &input.ip_discovery {
-        scope_55.string(var_56.as_str());
+    let mut scope_56 = writer.prefix("IpDiscovery");
+    if let Some(var_57) = &input.ip_discovery {
+        scope_56.string(var_57.as_str());
     }
     writer.finish();
     Ok(::aws_smithy_http::body::SdkBody::from(out))

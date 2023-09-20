@@ -16,6 +16,12 @@ pub fn ser_configured_table_analysis_rule_policy_v1(
             crate::protocol_serde::shape_analysis_rule_aggregation::ser_analysis_rule_aggregation(&mut object_2, inner)?;
             object_2.finish();
         }
+        crate::types::ConfiguredTableAnalysisRulePolicyV1::Custom(inner) => {
+            #[allow(unused_mut)]
+            let mut object_3 = object_1.key("custom").start_object();
+            crate::protocol_serde::shape_analysis_rule_custom::ser_analysis_rule_custom(&mut object_3, inner)?;
+            object_3.finish();
+        }
         crate::types::ConfiguredTableAnalysisRulePolicyV1::Unknown => {
             return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant(
                 "ConfiguredTableAnalysisRulePolicyV1",
@@ -51,6 +57,11 @@ where
                         "aggregation" => Some(crate::types::ConfiguredTableAnalysisRulePolicyV1::Aggregation(
                             crate::protocol_serde::shape_analysis_rule_aggregation::de_analysis_rule_aggregation(tokens)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'aggregation' cannot be null")
+                            })?,
+                        )),
+                        "custom" => Some(crate::types::ConfiguredTableAnalysisRulePolicyV1::Custom(
+                            crate::protocol_serde::shape_analysis_rule_custom::de_analysis_rule_custom(tokens)?.ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'custom' cannot be null")
                             })?,
                         )),
                         _ => {

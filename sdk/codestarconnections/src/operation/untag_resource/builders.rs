@@ -22,7 +22,7 @@ impl UntagResourceInputBuilder {
 }
 /// Fluent builder constructing a request to `UntagResource`.
 ///
-/// <p>Removes tags from an AWS resource.</p>
+/// <p>Removes tags from an Amazon Web Services resource.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UntagResourceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

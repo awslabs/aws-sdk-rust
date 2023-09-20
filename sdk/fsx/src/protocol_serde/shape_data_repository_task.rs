@@ -102,6 +102,10 @@ where
                                     .transpose()?,
                             );
                         }
+                        "ReleaseConfiguration" => {
+                            builder = builder
+                                .set_release_configuration(crate::protocol_serde::shape_release_configuration::de_release_configuration(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

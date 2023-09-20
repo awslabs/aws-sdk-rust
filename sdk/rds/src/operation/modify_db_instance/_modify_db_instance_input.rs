@@ -47,7 +47,7 @@ pub struct ModifyDbInstanceInput {
     pub vpc_security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specifies whether the modifications in this request and any pending modifications are asynchronously applied as soon as possible, regardless of the <code>PreferredMaintenanceWindow</code> setting for the DB instance. By default, this parameter is disabled.</p>
     /// <p>If this parameter is disabled, changes to the DB instance are applied during the next maintenance window. Some parameter changes can cause an outage and are applied on the next call to <code>RebootDBInstance</code>, or the next failure reboot. Review the table of parameters in <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.DBInstance.Modifying.html">Modifying a DB Instance</a> in the <i>Amazon RDS User Guide</i> to see the impact of enabling or disabling <code>ApplyImmediately</code> for each modified parameter and to determine when the changes are applied.</p>
-    pub apply_immediately: bool,
+    pub apply_immediately: ::std::option::Option<bool>,
     /// <p>The new password for the master user.</p>
     /// <p>Changing this parameter doesn't result in an outage and the change is asynchronously applied as soon as possible. Between the time of the request and the completion of the request, the <code>MasterUserPassword</code> element exists in the <code>PendingModifiedValues</code> element of the operation response.</p> <note>
     /// <p>Amazon RDS API operations never return the password, so this action provides a way to regain access to a primary instance user if the password is lost. This includes restoring privileges that might have been accidentally revoked.</p>
@@ -131,7 +131,7 @@ pub struct ModifyDbInstanceInput {
     /// <ul>
     /// <li> <p>Major version upgrades must be allowed when specifying a value for the <code>EngineVersion</code> parameter that's a different major version than the DB instance's current version.</p> </li>
     /// </ul>
-    pub allow_major_version_upgrade: bool,
+    pub allow_major_version_upgrade: ::std::option::Option<bool>,
     /// <p>Specifies whether minor version upgrades are applied automatically to the DB instance during the maintenance window. An outage occurs when all the following conditions are met:</p>
     /// <ul>
     /// <li> <p>The automatic upgrade is enabled for the maintenance window.</p> </li>
@@ -452,7 +452,7 @@ impl ModifyDbInstanceInput {
     }
     /// <p>Specifies whether the modifications in this request and any pending modifications are asynchronously applied as soon as possible, regardless of the <code>PreferredMaintenanceWindow</code> setting for the DB instance. By default, this parameter is disabled.</p>
     /// <p>If this parameter is disabled, changes to the DB instance are applied during the next maintenance window. Some parameter changes can cause an outage and are applied on the next call to <code>RebootDBInstance</code>, or the next failure reboot. Review the table of parameters in <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.DBInstance.Modifying.html">Modifying a DB Instance</a> in the <i>Amazon RDS User Guide</i> to see the impact of enabling or disabling <code>ApplyImmediately</code> for each modified parameter and to determine when the changes are applied.</p>
-    pub fn apply_immediately(&self) -> bool {
+    pub fn apply_immediately(&self) -> ::std::option::Option<bool> {
         self.apply_immediately
     }
     /// <p>The new password for the master user.</p>
@@ -552,7 +552,7 @@ impl ModifyDbInstanceInput {
     /// <ul>
     /// <li> <p>Major version upgrades must be allowed when specifying a value for the <code>EngineVersion</code> parameter that's a different major version than the DB instance's current version.</p> </li>
     /// </ul>
-    pub fn allow_major_version_upgrade(&self) -> bool {
+    pub fn allow_major_version_upgrade(&self) -> ::std::option::Option<bool> {
         self.allow_major_version_upgrade
     }
     /// <p>Specifies whether minor version upgrades are applied automatically to the DB instance during the maintenance window. An outage occurs when all the following conditions are met:</p>
@@ -2648,7 +2648,7 @@ impl ModifyDbInstanceInputBuilder {
             db_subnet_group_name: self.db_subnet_group_name,
             db_security_groups: self.db_security_groups,
             vpc_security_group_ids: self.vpc_security_group_ids,
-            apply_immediately: self.apply_immediately.unwrap_or_default(),
+            apply_immediately: self.apply_immediately,
             master_user_password: self.master_user_password,
             db_parameter_group_name: self.db_parameter_group_name,
             backup_retention_period: self.backup_retention_period,
@@ -2656,7 +2656,7 @@ impl ModifyDbInstanceInputBuilder {
             preferred_maintenance_window: self.preferred_maintenance_window,
             multi_az: self.multi_az,
             engine_version: self.engine_version,
-            allow_major_version_upgrade: self.allow_major_version_upgrade.unwrap_or_default(),
+            allow_major_version_upgrade: self.allow_major_version_upgrade,
             auto_minor_version_upgrade: self.auto_minor_version_upgrade,
             license_model: self.license_model,
             iops: self.iops,

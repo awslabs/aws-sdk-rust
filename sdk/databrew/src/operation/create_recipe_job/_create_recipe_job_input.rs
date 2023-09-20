@@ -18,9 +18,9 @@ pub struct CreateRecipeJobInput {
     /// <p>Enables or disables Amazon CloudWatch logging for the job. If logging is enabled, CloudWatch writes one log stream for each job run.</p>
     pub log_subscription: ::std::option::Option<crate::types::LogSubscription>,
     /// <p>The maximum number of nodes that DataBrew can consume when the job processes data.</p>
-    pub max_capacity: i32,
+    pub max_capacity: ::std::option::Option<i32>,
     /// <p>The maximum number of times to retry the job after a job run fails.</p>
-    pub max_retries: i32,
+    pub max_retries: ::std::option::Option<i32>,
     /// <p>One or more artifacts that represent the output from running the job.</p>
     pub outputs: ::std::option::Option<::std::vec::Vec<crate::types::Output>>,
     /// <p>One or more artifacts that represent the Glue Data Catalog output from running the job.</p>
@@ -36,7 +36,7 @@ pub struct CreateRecipeJobInput {
     /// <p>Metadata tags to apply to this job.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The job's timeout in minutes. A job that attempts to run longer than this timeout period ends with a status of <code>TIMEOUT</code>.</p>
-    pub timeout: i32,
+    pub timeout: ::std::option::Option<i32>,
 }
 impl CreateRecipeJobInput {
     /// <p>The name of the dataset that this job processes.</p>
@@ -64,11 +64,11 @@ impl CreateRecipeJobInput {
         self.log_subscription.as_ref()
     }
     /// <p>The maximum number of nodes that DataBrew can consume when the job processes data.</p>
-    pub fn max_capacity(&self) -> i32 {
+    pub fn max_capacity(&self) -> ::std::option::Option<i32> {
         self.max_capacity
     }
     /// <p>The maximum number of times to retry the job after a job run fails.</p>
-    pub fn max_retries(&self) -> i32 {
+    pub fn max_retries(&self) -> ::std::option::Option<i32> {
         self.max_retries
     }
     /// <p>One or more artifacts that represent the output from running the job.</p>
@@ -100,7 +100,7 @@ impl CreateRecipeJobInput {
         self.tags.as_ref()
     }
     /// <p>The job's timeout in minutes. A job that attempts to run longer than this timeout period ends with a status of <code>TIMEOUT</code>.</p>
-    pub fn timeout(&self) -> i32 {
+    pub fn timeout(&self) -> ::std::option::Option<i32> {
         self.timeout
     }
 }
@@ -388,8 +388,8 @@ impl CreateRecipeJobInputBuilder {
             encryption_mode: self.encryption_mode,
             name: self.name,
             log_subscription: self.log_subscription,
-            max_capacity: self.max_capacity.unwrap_or_default(),
-            max_retries: self.max_retries.unwrap_or_default(),
+            max_capacity: self.max_capacity,
+            max_retries: self.max_retries,
             outputs: self.outputs,
             data_catalog_outputs: self.data_catalog_outputs,
             database_outputs: self.database_outputs,
@@ -397,7 +397,7 @@ impl CreateRecipeJobInputBuilder {
             recipe_reference: self.recipe_reference,
             role_arn: self.role_arn,
             tags: self.tags,
-            timeout: self.timeout.unwrap_or_default(),
+            timeout: self.timeout,
         })
     }
 }

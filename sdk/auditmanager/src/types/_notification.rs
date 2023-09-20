@@ -2,7 +2,7 @@
 
 /// <p> The notification that informs a user of an update in Audit Manager. For example, this includes the notification that's sent when a control set is delegated for review. </p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct Notification {
     /// <p> The unique identifier for the notification. </p>
     pub id: ::std::option::Option<::std::string::String>,
@@ -55,6 +55,20 @@ impl Notification {
         self.source.as_deref()
     }
 }
+impl ::std::fmt::Debug for Notification {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("Notification");
+        formatter.field("id", &self.id);
+        formatter.field("assessment_id", &self.assessment_id);
+        formatter.field("assessment_name", &"*** Sensitive Data Redacted ***");
+        formatter.field("control_set_id", &self.control_set_id);
+        formatter.field("control_set_name", &self.control_set_name);
+        formatter.field("description", &self.description);
+        formatter.field("event_time", &self.event_time);
+        formatter.field("source", &self.source);
+        formatter.finish()
+    }
+}
 impl Notification {
     /// Creates a new builder-style object to manufacture [`Notification`](crate::types::Notification).
     pub fn builder() -> crate::types::builders::NotificationBuilder {
@@ -64,7 +78,7 @@ impl Notification {
 
 /// A builder for [`Notification`](crate::types::Notification).
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct NotificationBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) assessment_id: ::std::option::Option<::std::string::String>,
@@ -200,5 +214,19 @@ impl NotificationBuilder {
             event_time: self.event_time,
             source: self.source,
         }
+    }
+}
+impl ::std::fmt::Debug for NotificationBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("NotificationBuilder");
+        formatter.field("id", &self.id);
+        formatter.field("assessment_id", &self.assessment_id);
+        formatter.field("assessment_name", &"*** Sensitive Data Redacted ***");
+        formatter.field("control_set_id", &self.control_set_id);
+        formatter.field("control_set_name", &self.control_set_name);
+        formatter.field("description", &self.description);
+        formatter.field("event_time", &self.event_time);
+        formatter.field("source", &self.source);
+        formatter.finish()
     }
 }

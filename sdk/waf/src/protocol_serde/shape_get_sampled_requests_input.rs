@@ -15,10 +15,10 @@ pub fn ser_get_sampled_requests_input(
         crate::protocol_serde::shape_time_window::ser_time_window(&mut object_4, var_3)?;
         object_4.finish();
     }
-    {
+    if let Some(var_5) = &input.max_items {
         object.key("MaxItems").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.max_items).into()),
+            ::aws_smithy_types::Number::NegInt((*var_5).into()),
         );
     }
     Ok(())

@@ -100,6 +100,9 @@ pub mod delete_custom_db_engine_version;
 /// Types for the `DeleteDBCluster` operation.
 pub mod delete_db_cluster;
 
+/// Types for the `DeleteDBClusterAutomatedBackup` operation.
+pub mod delete_db_cluster_automated_backup;
+
 /// Types for the `DeleteDBClusterEndpoint` operation.
 pub mod delete_db_cluster_endpoint;
 
@@ -153,6 +156,9 @@ pub mod describe_blue_green_deployments;
 
 /// Types for the `DescribeCertificates` operation.
 pub mod describe_certificates;
+
+/// Types for the `DescribeDBClusterAutomatedBackups` operation.
+pub mod describe_db_cluster_automated_backups;
 
 /// Types for the `DescribeDBClusterBacktracks` operation.
 pub mod describe_db_cluster_backtracks;
@@ -420,6 +426,9 @@ pub mod stop_db_instance_automated_backups_replication;
 
 /// Types for the `SwitchoverBlueGreenDeployment` operation.
 pub mod switchover_blue_green_deployment;
+
+/// Types for the `SwitchoverGlobalCluster` operation.
+pub mod switchover_global_cluster;
 
 /// Types for the `SwitchoverReadReplica` operation.
 pub mod switchover_read_replica;

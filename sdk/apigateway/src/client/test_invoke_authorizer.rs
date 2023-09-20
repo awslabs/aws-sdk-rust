@@ -14,7 +14,7 @@ impl super::Client {
     /// - On success, responds with [`TestInvokeAuthorizerOutput`](crate::operation::test_invoke_authorizer::TestInvokeAuthorizerOutput) with field(s):
     ///   - [`client_status(i32)`](crate::operation::test_invoke_authorizer::TestInvokeAuthorizerOutput::client_status): <p>The HTTP status code that the client would have received. Value is 0 if the authorizer succeeded.</p>
     ///   - [`log(Option<String>)`](crate::operation::test_invoke_authorizer::TestInvokeAuthorizerOutput::log): <p>The API Gateway execution log for the test authorizer request.</p>
-    ///   - [`latency(i64)`](crate::operation::test_invoke_authorizer::TestInvokeAuthorizerOutput::latency): <p>The execution latency of the test authorizer request.</p>
+    ///   - [`latency(i64)`](crate::operation::test_invoke_authorizer::TestInvokeAuthorizerOutput::latency): <p>The execution latency, in ms, of the test authorizer request.</p>
     ///   - [`principal_id(Option<String>)`](crate::operation::test_invoke_authorizer::TestInvokeAuthorizerOutput::principal_id): <p>The principal identity returned by the Authorizer</p>
     ///   - [`policy(Option<String>)`](crate::operation::test_invoke_authorizer::TestInvokeAuthorizerOutput::policy): <p>The JSON policy document returned by the Authorizer</p>
     ///   - [`authorization(Option<HashMap<String, Vec<String>>>)`](crate::operation::test_invoke_authorizer::TestInvokeAuthorizerOutput::authorization): <p>The authorization response.</p>

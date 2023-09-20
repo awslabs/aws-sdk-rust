@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AppSummary {
-    /// <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+    /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
     pub app_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the application.</p>
     pub name: ::std::option::Option<::std::string::String>,
@@ -18,11 +18,13 @@ pub struct AppSummary {
     pub resiliency_score: f64,
     /// <p> Assessment execution schedule with 'Daily' or 'Disabled' values. </p>
     pub assessment_schedule: ::std::option::Option<crate::types::AppAssessmentScheduleType>,
-    /// <p>The status of the application.</p>
+    /// <p>Status of the application.</p>
     pub status: ::std::option::Option<crate::types::AppStatusType>,
+    /// <p>Indicates if compliance drifts (deviations) were detected while running an assessment for your application.</p>
+    pub drift_status: ::std::option::Option<crate::types::AppDriftStatusType>,
 }
 impl AppSummary {
-    /// <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+    /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
     pub fn app_arn(&self) -> ::std::option::Option<&str> {
         self.app_arn.as_deref()
     }
@@ -50,9 +52,13 @@ impl AppSummary {
     pub fn assessment_schedule(&self) -> ::std::option::Option<&crate::types::AppAssessmentScheduleType> {
         self.assessment_schedule.as_ref()
     }
-    /// <p>The status of the application.</p>
+    /// <p>Status of the application.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::AppStatusType> {
         self.status.as_ref()
+    }
+    /// <p>Indicates if compliance drifts (deviations) were detected while running an assessment for your application.</p>
+    pub fn drift_status(&self) -> ::std::option::Option<&crate::types::AppDriftStatusType> {
+        self.drift_status.as_ref()
     }
 }
 impl AppSummary {
@@ -74,19 +80,20 @@ pub struct AppSummaryBuilder {
     pub(crate) resiliency_score: ::std::option::Option<f64>,
     pub(crate) assessment_schedule: ::std::option::Option<crate::types::AppAssessmentScheduleType>,
     pub(crate) status: ::std::option::Option<crate::types::AppStatusType>,
+    pub(crate) drift_status: ::std::option::Option<crate::types::AppDriftStatusType>,
 }
 impl AppSummaryBuilder {
-    /// <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+    /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
     pub fn app_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+    /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
     pub fn set_app_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.app_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+    /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
     pub fn get_app_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.app_arn
     }
@@ -174,19 +181,33 @@ impl AppSummaryBuilder {
     pub fn get_assessment_schedule(&self) -> &::std::option::Option<crate::types::AppAssessmentScheduleType> {
         &self.assessment_schedule
     }
-    /// <p>The status of the application.</p>
+    /// <p>Status of the application.</p>
     pub fn status(mut self, input: crate::types::AppStatusType) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The status of the application.</p>
+    /// <p>Status of the application.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::AppStatusType>) -> Self {
         self.status = input;
         self
     }
-    /// <p>The status of the application.</p>
+    /// <p>Status of the application.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::AppStatusType> {
         &self.status
+    }
+    /// <p>Indicates if compliance drifts (deviations) were detected while running an assessment for your application.</p>
+    pub fn drift_status(mut self, input: crate::types::AppDriftStatusType) -> Self {
+        self.drift_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates if compliance drifts (deviations) were detected while running an assessment for your application.</p>
+    pub fn set_drift_status(mut self, input: ::std::option::Option<crate::types::AppDriftStatusType>) -> Self {
+        self.drift_status = input;
+        self
+    }
+    /// <p>Indicates if compliance drifts (deviations) were detected while running an assessment for your application.</p>
+    pub fn get_drift_status(&self) -> &::std::option::Option<crate::types::AppDriftStatusType> {
+        &self.drift_status
     }
     /// Consumes the builder and constructs a [`AppSummary`](crate::types::AppSummary).
     pub fn build(self) -> crate::types::AppSummary {
@@ -199,6 +220,7 @@ impl AppSummaryBuilder {
             resiliency_score: self.resiliency_score.unwrap_or_default(),
             assessment_schedule: self.assessment_schedule,
             status: self.status,
+            drift_status: self.drift_status,
         }
     }
 }

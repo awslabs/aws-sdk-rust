@@ -22,7 +22,7 @@ impl UpdateConfigurationSetSendingEnabledInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateConfigurationSetSendingEnabled`.
 ///
-/// <p>Enables or disables email sending for messages sent using a specific configuration set in a given AWS Region. You can use this operation in conjunction with Amazon CloudWatch alarms to temporarily pause email sending for a configuration set when the reputation metrics for that configuration set (such as your bounce on complaint rate) exceed certain thresholds.</p>
+/// <p>Enables or disables email sending for messages sent using a specific configuration set in a given Amazon Web Services Region. You can use this operation in conjunction with Amazon CloudWatch alarms to temporarily pause email sending for a configuration set when the reputation metrics for that configuration set (such as your bounce on complaint rate) exceed certain thresholds.</p>
 /// <p>You can execute this operation no more than once per second.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateConfigurationSetSendingEnabledFluentBuilder {
@@ -114,17 +114,17 @@ impl UpdateConfigurationSetSendingEnabledFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name of the configuration set that you want to update.</p>
+    /// <p>The name of the configuration set to update.</p>
     pub fn configuration_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.configuration_set_name(input.into());
         self
     }
-    /// <p>The name of the configuration set that you want to update.</p>
+    /// <p>The name of the configuration set to update.</p>
     pub fn set_configuration_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_configuration_set_name(input);
         self
     }
-    /// <p>The name of the configuration set that you want to update.</p>
+    /// <p>The name of the configuration set to update.</p>
     pub fn get_configuration_set_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_configuration_set_name()
     }

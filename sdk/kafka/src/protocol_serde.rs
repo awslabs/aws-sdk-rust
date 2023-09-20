@@ -47,6 +47,8 @@ pub(crate) mod shape_describe_cluster;
 
 pub(crate) mod shape_describe_cluster_operation;
 
+pub(crate) mod shape_describe_cluster_operation_v2;
+
 pub(crate) mod shape_describe_cluster_v2;
 
 pub(crate) mod shape_describe_configuration;
@@ -64,6 +66,8 @@ pub(crate) mod shape_get_compatible_kafka_versions;
 pub(crate) mod shape_list_client_vpc_connections;
 
 pub(crate) mod shape_list_cluster_operations;
+
+pub(crate) mod shape_list_cluster_operations_v2;
 
 pub(crate) mod shape_list_clusters;
 
@@ -193,6 +197,9 @@ pub(crate) mod shape___list_of_cluster_info;
 pub(crate) mod shape___list_of_cluster_operation_info;
 
 #[allow(non_snake_case)]
+pub(crate) mod shape___list_of_cluster_operation_v2_summary;
+
+#[allow(non_snake_case)]
 pub(crate) mod shape___list_of_compatible_kafka_version;
 
 #[allow(non_snake_case)]
@@ -228,6 +235,8 @@ pub(crate) mod shape_cluster_info;
 
 pub(crate) mod shape_cluster_operation_info;
 
+pub(crate) mod shape_cluster_operation_v2;
+
 pub(crate) mod shape_configuration_info;
 
 pub(crate) mod shape_configuration_revision;
@@ -254,6 +263,12 @@ pub(crate) mod shape_broker_logs;
 pub(crate) mod shape_broker_software_info;
 
 pub(crate) mod shape_client_vpc_connection;
+
+pub(crate) mod shape_cluster_operation_v2_provisioned;
+
+pub(crate) mod shape_cluster_operation_v2_serverless;
+
+pub(crate) mod shape_cluster_operation_v2_summary;
 
 pub(crate) mod shape_compatible_kafka_version;
 
@@ -334,6 +349,8 @@ pub(crate) mod shape_scram;
 pub(crate) mod shape_serverless_sasl;
 
 pub(crate) mod shape_user_identity;
+
+pub(crate) mod shape_vpc_connection_info_serverless;
 
 pub(crate) mod shape_vpc_connectivity_client_authentication;
 

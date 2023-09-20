@@ -411,6 +411,8 @@ pub use crate::types::_column_statistics_type::ColumnStatisticsType;
 
 pub use crate::types::_update_csv_classifier_request::UpdateCsvClassifierRequest;
 
+pub use crate::types::_csv_serde_option::CsvSerdeOption;
+
 pub use crate::types::_csv_header_option::CsvHeaderOption;
 
 pub use crate::types::_update_json_classifier_request::UpdateJsonClassifierRequest;
@@ -908,6 +910,8 @@ mod _create_xml_classifier_request;
 mod _csv_classifier;
 
 mod _csv_header_option;
+
+mod _csv_serde_option;
 
 mod _custom_code;
 

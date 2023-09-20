@@ -4,6 +4,10 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConfigurationEvent {
+    /// <p>The name of the resource group of the application to which the configuration event belongs.</p>
+    pub resource_group_name: ::std::option::Option<::std::string::String>,
+    /// <p>The AWS account ID for the owner of the application to which the configuration event belongs.</p>
+    pub account_id: ::std::option::Option<::std::string::String>,
     /// <p> The resource monitored by Application Insights. </p>
     pub monitored_resource_arn: ::std::option::Option<::std::string::String>,
     /// <p> The status of the configuration update event. Possible values include INFO, WARN, and ERROR. </p>
@@ -18,6 +22,14 @@ pub struct ConfigurationEvent {
     pub event_resource_name: ::std::option::Option<::std::string::String>,
 }
 impl ConfigurationEvent {
+    /// <p>The name of the resource group of the application to which the configuration event belongs.</p>
+    pub fn resource_group_name(&self) -> ::std::option::Option<&str> {
+        self.resource_group_name.as_deref()
+    }
+    /// <p>The AWS account ID for the owner of the application to which the configuration event belongs.</p>
+    pub fn account_id(&self) -> ::std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
     /// <p> The resource monitored by Application Insights. </p>
     pub fn monitored_resource_arn(&self) -> ::std::option::Option<&str> {
         self.monitored_resource_arn.as_deref()
@@ -54,6 +66,8 @@ impl ConfigurationEvent {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConfigurationEventBuilder {
+    pub(crate) resource_group_name: ::std::option::Option<::std::string::String>,
+    pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) monitored_resource_arn: ::std::option::Option<::std::string::String>,
     pub(crate) event_status: ::std::option::Option<crate::types::ConfigurationEventStatus>,
     pub(crate) event_resource_type: ::std::option::Option<crate::types::ConfigurationEventResourceType>,
@@ -62,6 +76,34 @@ pub struct ConfigurationEventBuilder {
     pub(crate) event_resource_name: ::std::option::Option<::std::string::String>,
 }
 impl ConfigurationEventBuilder {
+    /// <p>The name of the resource group of the application to which the configuration event belongs.</p>
+    pub fn resource_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.resource_group_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the resource group of the application to which the configuration event belongs.</p>
+    pub fn set_resource_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.resource_group_name = input;
+        self
+    }
+    /// <p>The name of the resource group of the application to which the configuration event belongs.</p>
+    pub fn get_resource_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_group_name
+    }
+    /// <p>The AWS account ID for the owner of the application to which the configuration event belongs.</p>
+    pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.account_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The AWS account ID for the owner of the application to which the configuration event belongs.</p>
+    pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.account_id = input;
+        self
+    }
+    /// <p>The AWS account ID for the owner of the application to which the configuration event belongs.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
+    }
     /// <p> The resource monitored by Application Insights. </p>
     pub fn monitored_resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.monitored_resource_arn = ::std::option::Option::Some(input.into());
@@ -149,6 +191,8 @@ impl ConfigurationEventBuilder {
     /// Consumes the builder and constructs a [`ConfigurationEvent`](crate::types::ConfigurationEvent).
     pub fn build(self) -> crate::types::ConfigurationEvent {
         crate::types::ConfigurationEvent {
+            resource_group_name: self.resource_group_name,
+            account_id: self.account_id,
             monitored_resource_arn: self.monitored_resource_arn,
             event_status: self.event_status,
             event_resource_type: self.event_resource_type,

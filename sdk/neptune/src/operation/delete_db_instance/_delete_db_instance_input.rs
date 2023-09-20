@@ -15,7 +15,7 @@ pub struct DeleteDbInstanceInput {
     /// <p>The FinalDBSnapshotIdentifier parameter must be specified if SkipFinalSnapshot is <code>false</code>.</p>
     /// </note>
     /// <p>Default: <code>false</code> </p>
-    pub skip_final_snapshot: bool,
+    pub skip_final_snapshot: ::std::option::Option<bool>,
     /// <p> The DBSnapshotIdentifier of the new DBSnapshot created when SkipFinalSnapshot is set to <code>false</code>.</p> <note>
     /// <p>Specifying this parameter and also setting the SkipFinalShapshot parameter to true results in an error.</p>
     /// </note>
@@ -43,7 +43,7 @@ impl DeleteDbInstanceInput {
     /// <p>The FinalDBSnapshotIdentifier parameter must be specified if SkipFinalSnapshot is <code>false</code>.</p>
     /// </note>
     /// <p>Default: <code>false</code> </p>
-    pub fn skip_final_snapshot(&self) -> bool {
+    pub fn skip_final_snapshot(&self) -> ::std::option::Option<bool> {
         self.skip_final_snapshot
     }
     /// <p> The DBSnapshotIdentifier of the new DBSnapshot created when SkipFinalSnapshot is set to <code>false</code>.</p> <note>
@@ -178,7 +178,7 @@ impl DeleteDbInstanceInputBuilder {
     ) -> ::std::result::Result<crate::operation::delete_db_instance::DeleteDbInstanceInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_db_instance::DeleteDbInstanceInput {
             db_instance_identifier: self.db_instance_identifier,
-            skip_final_snapshot: self.skip_final_snapshot.unwrap_or_default(),
+            skip_final_snapshot: self.skip_final_snapshot,
             final_db_snapshot_identifier: self.final_db_snapshot_identifier,
         })
     }

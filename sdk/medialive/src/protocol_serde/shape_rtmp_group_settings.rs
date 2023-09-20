@@ -36,6 +36,9 @@ pub fn ser_rtmp_group_settings(
             ::aws_smithy_types::Number::NegInt((*var_9).into()),
         );
     }
+    if let Some(var_10) = &input.include_filler_nal_units {
+        object.key("includeFillerNalUnits").string(var_10.as_str());
+    }
     Ok(())
 }
 
@@ -98,6 +101,13 @@ where
                             builder = builder.set_restart_delay(
                                 ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
                                     .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "includeFillerNalUnits" => {
+                            builder = builder.set_include_filler_nal_units(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::IncludeFillerNalUnits::from(u.as_ref())))
                                     .transpose()?,
                             );
                         }

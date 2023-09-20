@@ -4,7 +4,7 @@ impl super::Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_identity_pools::builders::ListIdentityPoolsFluentBuilder::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`max_results(i32)`](crate::operation::list_identity_pools::builders::ListIdentityPoolsFluentBuilder::max_results) / [`set_max_results(i32)`](crate::operation::list_identity_pools::builders::ListIdentityPoolsFluentBuilder::set_max_results): <p>The maximum number of identities to return.</p>
+    ///   - [`max_results(i32)`](crate::operation::list_identity_pools::builders::ListIdentityPoolsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_identity_pools::builders::ListIdentityPoolsFluentBuilder::set_max_results): <p>The maximum number of identities to return.</p>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_identity_pools::builders::ListIdentityPoolsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_identity_pools::builders::ListIdentityPoolsFluentBuilder::set_next_token): <p>A pagination token.</p>
     /// - On success, responds with [`ListIdentityPoolsOutput`](crate::operation::list_identity_pools::ListIdentityPoolsOutput) with field(s):
     ///   - [`identity_pools(Option<Vec<IdentityPoolShortDescription>>)`](crate::operation::list_identity_pools::ListIdentityPoolsOutput::identity_pools): <p>The identity pools returned by the ListIdentityPools action.</p>

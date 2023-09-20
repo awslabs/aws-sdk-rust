@@ -269,7 +269,7 @@ pub enum PostCommentReplyError {
     ClientRequestTokenRequiredException(crate::types::error::ClientRequestTokenRequiredException),
     /// <p>The comment is empty. You must provide some content for a comment. The content cannot be null.</p>
     CommentContentRequiredException(crate::types::error::CommentContentRequiredException),
-    /// <p>The comment is too large. Comments are limited to 1,000 characters.</p>
+    /// <p>The comment is too large. Comments are limited to 10,240 characters.</p>
     CommentContentSizeLimitExceededException(crate::types::error::CommentContentSizeLimitExceededException),
     /// <p>No comment exists with the provided ID. Verify that you have used the correct ID, and then try again.</p>
     CommentDoesNotExistException(crate::types::error::CommentDoesNotExistException),

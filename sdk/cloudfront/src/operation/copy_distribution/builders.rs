@@ -24,6 +24,12 @@ impl CopyDistributionInputBuilder {
 ///
 /// <p>Creates a staging distribution using the configuration of the provided primary distribution. A staging distribution is a copy of an existing distribution (called the primary distribution) that you can use in a continuous deployment workflow.</p>
 /// <p>After you create a staging distribution, you can use <code>UpdateDistribution</code> to modify the staging distribution's configuration. Then you can use <code>CreateContinuousDeploymentPolicy</code> to incrementally move traffic to the staging distribution.</p>
+/// <p>This API operation requires the following IAM permissions:</p>
+/// <ul>
+/// <li> <p> <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetDistribution.html">GetDistribution</a> </p> </li>
+/// <li> <p> <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreateDistribution.html">CreateDistribution</a> </p> </li>
+/// <li> <p> <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CopyDistribution.html">CopyDistribution</a> </p> </li>
+/// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CopyDistributionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -166,5 +172,22 @@ impl CopyDistributionFluentBuilder {
     /// <p>A value that uniquely identifies a request to create a resource. This helps to prevent CloudFront from creating a duplicate resource if you accidentally resubmit an identical request.</p>
     pub fn get_caller_reference(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_caller_reference()
+    }
+    /// <p>A Boolean flag to specify the state of the staging distribution when it's created. When you set this value to <code>True</code>, the staging distribution is enabled. When you set this value to <code>False</code>, the staging distribution is disabled.</p>
+    /// <p>If you omit this field, the default value is <code>True</code>.</p>
+    pub fn enabled(mut self, input: bool) -> Self {
+        self.inner = self.inner.enabled(input);
+        self
+    }
+    /// <p>A Boolean flag to specify the state of the staging distribution when it's created. When you set this value to <code>True</code>, the staging distribution is enabled. When you set this value to <code>False</code>, the staging distribution is disabled.</p>
+    /// <p>If you omit this field, the default value is <code>True</code>.</p>
+    pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_enabled(input);
+        self
+    }
+    /// <p>A Boolean flag to specify the state of the staging distribution when it's created. When you set this value to <code>True</code>, the staging distribution is enabled. When you set this value to <code>False</code>, the staging distribution is disabled.</p>
+    /// <p>If you omit this field, the default value is <code>True</code>.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        self.inner.get_enabled()
     }
 }

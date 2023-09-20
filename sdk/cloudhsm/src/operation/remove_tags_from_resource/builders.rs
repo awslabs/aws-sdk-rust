@@ -26,6 +26,7 @@ impl RemoveTagsFromResourceInputBuilder {
 /// <p> <b>For information about the current version of AWS CloudHSM</b>, see <a href="http://aws.amazon.com/cloudhsm/">AWS CloudHSM</a>, the <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS CloudHSM User Guide</a>, and the <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS CloudHSM API Reference</a>.</p>
 /// <p>Removes one or more tags from the specified AWS CloudHSM resource.</p>
 /// <p>To remove a tag, specify only the tag key to remove (not the value). To overwrite the value for an existing tag, use <code>AddTagsToResource</code>.</p>
+#[deprecated(note = "This API is deprecated.")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RemoveTagsFromResourceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

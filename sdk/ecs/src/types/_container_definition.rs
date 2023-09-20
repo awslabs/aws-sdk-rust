@@ -113,6 +113,7 @@ pub struct ContainerDefinition {
     /// <li> <p>Windows platform version <code>1.0.0</code> or later.</p> </li>
     /// </ul>
     /// <p>For tasks using the EC2 launch type, your container instances require at least version <code>1.26.0</code> of the container agent to use a container start timeout value. However, we recommend using the latest container agent version. For information about checking your agent version and updating to the latest version, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. If you're using an Amazon ECS-optimized Linux AMI, your instance needs at least version <code>1.26.0-1</code> of the <code>ecs-init</code> package. If your container instances are launched from version <code>20190301</code> or later, then they contain the required versions of the container agent and <code>ecs-init</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    /// <p>The valid values are 2-120 seconds.</p>
     pub start_timeout: ::std::option::Option<i32>,
     /// <p>Time duration (in seconds) to wait before the container is forcefully killed if it doesn't exit normally on its own.</p>
     /// <p>For tasks using the Fargate launch type, the task or service requires the following platforms:</p>
@@ -122,6 +123,7 @@ pub struct ContainerDefinition {
     /// </ul>
     /// <p>The max stop timeout value is 120 seconds and if the parameter is not specified, the default value of 30 seconds is used.</p>
     /// <p>For tasks that use the EC2 launch type, if the <code>stopTimeout</code> parameter isn't specified, the value set for the Amazon ECS container agent configuration variable <code>ECS_CONTAINER_STOP_TIMEOUT</code> is used. If neither the <code>stopTimeout</code> parameter or the <code>ECS_CONTAINER_STOP_TIMEOUT</code> agent configuration variable are set, then the default values of 30 seconds for Linux containers and 30 seconds on Windows containers are used. Your container instances require at least version 1.26.0 of the container agent to use a container stop timeout value. However, we recommend using the latest container agent version. For information about checking your agent version and updating to the latest version, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. If you're using an Amazon ECS-optimized Linux AMI, your instance needs at least version 1.26.0-1 of the <code>ecs-init</code> package. If your container instances are launched from version <code>20190301</code> or later, then they contain the required versions of the container agent and <code>ecs-init</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    /// <p>The valid values are 2-120 seconds.</p>
     pub stop_timeout: ::std::option::Option<i32>,
     /// <p>The hostname to use for your container. This parameter maps to <code>Hostname</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--hostname</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p> <note>
     /// <p>The <code>hostname</code> parameter is not supported if you're using the <code>awsvpc</code> network mode.</p>
@@ -199,17 +201,39 @@ pub struct ContainerDefinition {
     pub log_configuration: ::std::option::Option<crate::types::LogConfiguration>,
     /// <p>The container health check command and associated configuration parameters for the container. This parameter maps to <code>HealthCheck</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>HEALTHCHECK</code> parameter of <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p>
     pub health_check: ::std::option::Option<crate::types::HealthCheck>,
-    /// <p>A list of namespaced kernel parameters to set in the container. This parameter maps to <code>Sysctls</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--sysctl</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p> <note>
+    /// <p>A list of namespaced kernel parameters to set in the container. This parameter maps to <code>Sysctls</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--sysctl</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>. For example, you can configure <code>net.ipv4.tcp_keepalive_time</code> setting to maintain longer lived connections.</p> <note>
     /// <p>We don't recommended that you specify network-related <code>systemControls</code> parameters for multiple containers in a single task that also uses either the <code>awsvpc</code> or <code>host</code> network modes. For tasks that use the <code>awsvpc</code> network mode, the container that's started last determines which <code>systemControls</code> parameters take effect. For tasks that use the <code>host</code> network mode, it changes the container instance's namespaced kernel parameters as well as the containers.</p>
+    /// </note> <note>
+    /// <p>This parameter is not supported for Windows containers.</p>
+    /// </note> <note>
+    /// <p>This parameter is only supported for tasks that are hosted on Fargate if the tasks are using platform version <code>1.4.0</code> or later (Linux). This isn't supported for Windows containers on Fargate.</p>
     /// </note>
     pub system_controls: ::std::option::Option<::std::vec::Vec<crate::types::SystemControl>>,
     /// <p>The type and amount of a resource to assign to a container. The only supported resource is a GPU.</p>
     pub resource_requirements: ::std::option::Option<::std::vec::Vec<crate::types::ResourceRequirement>>,
     /// <p>The FireLens configuration for the container. This is used to specify and configure a log router for container logs. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html">Custom Log Routing</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub firelens_configuration: ::std::option::Option<crate::types::FirelensConfiguration>,
-    /// <p>A list of ARNs in SSM or Amazon S3 to a credential spec (<code>credspec</code>code&gt;) file that configures a container for Active Directory authentication. This parameter is only used with domainless authentication.</p>
-    /// <p>The format for each ARN is <code>credentialspecdomainless:MyARN</code>. Replace <code>MyARN</code> with the ARN in SSM or Amazon S3.</p>
-    /// <p>The <code>credspec</code> must provide a ARN in Secrets Manager for a secret containing the username, password, and the domain to connect to. For better security, the instance isn't joined to the domain for domainless authentication. Other applications on the instance can't use the domainless credentials. You can use this parameter to run tasks on the same instance, even it the tasks need to join different domains. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/windows-gmsa.html">Using gMSAs for Windows Containers</a> and <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/linux-gmsa.html">Using gMSAs for Linux Containers</a>.</p>
+    /// <p>A list of ARNs in SSM or Amazon S3 to a credential spec (<code>CredSpec</code>) file that configures the container for Active Directory authentication. We recommend that you use this parameter instead of the <code>dockerSecurityOptions</code>. The maximum number of ARNs is 1.</p>
+    /// <p>There are two formats for each ARN.</p>
+    /// <dl>
+    /// <dt>
+    /// credentialspecdomainless:MyARN
+    /// </dt>
+    /// <dd>
+    /// <p>You use <code>credentialspecdomainless:MyARN</code> to provide a <code>CredSpec</code> with an additional section for a secret in Secrets Manager. You provide the login credentials to the domain in the secret.</p>
+    /// <p>Each task that runs on any container instance can join different domains.</p>
+    /// <p>You can use this format without joining the container instance to a domain.</p>
+    /// </dd>
+    /// <dt>
+    /// credentialspec:MyARN
+    /// </dt>
+    /// <dd>
+    /// <p>You use <code>credentialspec:MyARN</code> to provide a <code>CredSpec</code> for a single domain.</p>
+    /// <p>You must join the container instance to the domain before you start any tasks that use this task definition.</p>
+    /// </dd>
+    /// </dl>
+    /// <p>In both formats, replace <code>MyARN</code> with the ARN in SSM or Amazon S3.</p>
+    /// <p>If you provide a <code>credentialspecdomainless:MyARN</code>, the <code>credspec</code> must provide a ARN in Secrets Manager for a secret containing the username, password, and the domain to connect to. For better security, the instance isn't joined to the domain for domainless authentication. Other applications on the instance can't use the domainless credentials. You can use this parameter to run tasks on the same instance, even it the tasks need to join different domains. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/windows-gmsa.html">Using gMSAs for Windows Containers</a> and <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/linux-gmsa.html">Using gMSAs for Linux Containers</a>.</p>
     pub credential_specs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ContainerDefinition {
@@ -358,6 +382,7 @@ impl ContainerDefinition {
     /// <li> <p>Windows platform version <code>1.0.0</code> or later.</p> </li>
     /// </ul>
     /// <p>For tasks using the EC2 launch type, your container instances require at least version <code>1.26.0</code> of the container agent to use a container start timeout value. However, we recommend using the latest container agent version. For information about checking your agent version and updating to the latest version, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. If you're using an Amazon ECS-optimized Linux AMI, your instance needs at least version <code>1.26.0-1</code> of the <code>ecs-init</code> package. If your container instances are launched from version <code>20190301</code> or later, then they contain the required versions of the container agent and <code>ecs-init</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    /// <p>The valid values are 2-120 seconds.</p>
     pub fn start_timeout(&self) -> ::std::option::Option<i32> {
         self.start_timeout
     }
@@ -369,6 +394,7 @@ impl ContainerDefinition {
     /// </ul>
     /// <p>The max stop timeout value is 120 seconds and if the parameter is not specified, the default value of 30 seconds is used.</p>
     /// <p>For tasks that use the EC2 launch type, if the <code>stopTimeout</code> parameter isn't specified, the value set for the Amazon ECS container agent configuration variable <code>ECS_CONTAINER_STOP_TIMEOUT</code> is used. If neither the <code>stopTimeout</code> parameter or the <code>ECS_CONTAINER_STOP_TIMEOUT</code> agent configuration variable are set, then the default values of 30 seconds for Linux containers and 30 seconds on Windows containers are used. Your container instances require at least version 1.26.0 of the container agent to use a container stop timeout value. However, we recommend using the latest container agent version. For information about checking your agent version and updating to the latest version, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. If you're using an Amazon ECS-optimized Linux AMI, your instance needs at least version 1.26.0-1 of the <code>ecs-init</code> package. If your container instances are launched from version <code>20190301</code> or later, then they contain the required versions of the container agent and <code>ecs-init</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    /// <p>The valid values are 2-120 seconds.</p>
     pub fn stop_timeout(&self) -> ::std::option::Option<i32> {
         self.stop_timeout
     }
@@ -480,8 +506,12 @@ impl ContainerDefinition {
     pub fn health_check(&self) -> ::std::option::Option<&crate::types::HealthCheck> {
         self.health_check.as_ref()
     }
-    /// <p>A list of namespaced kernel parameters to set in the container. This parameter maps to <code>Sysctls</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--sysctl</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p> <note>
+    /// <p>A list of namespaced kernel parameters to set in the container. This parameter maps to <code>Sysctls</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--sysctl</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>. For example, you can configure <code>net.ipv4.tcp_keepalive_time</code> setting to maintain longer lived connections.</p> <note>
     /// <p>We don't recommended that you specify network-related <code>systemControls</code> parameters for multiple containers in a single task that also uses either the <code>awsvpc</code> or <code>host</code> network modes. For tasks that use the <code>awsvpc</code> network mode, the container that's started last determines which <code>systemControls</code> parameters take effect. For tasks that use the <code>host</code> network mode, it changes the container instance's namespaced kernel parameters as well as the containers.</p>
+    /// </note> <note>
+    /// <p>This parameter is not supported for Windows containers.</p>
+    /// </note> <note>
+    /// <p>This parameter is only supported for tasks that are hosted on Fargate if the tasks are using platform version <code>1.4.0</code> or later (Linux). This isn't supported for Windows containers on Fargate.</p>
     /// </note>
     pub fn system_controls(&self) -> ::std::option::Option<&[crate::types::SystemControl]> {
         self.system_controls.as_deref()
@@ -494,9 +524,27 @@ impl ContainerDefinition {
     pub fn firelens_configuration(&self) -> ::std::option::Option<&crate::types::FirelensConfiguration> {
         self.firelens_configuration.as_ref()
     }
-    /// <p>A list of ARNs in SSM or Amazon S3 to a credential spec (<code>credspec</code>code&gt;) file that configures a container for Active Directory authentication. This parameter is only used with domainless authentication.</p>
-    /// <p>The format for each ARN is <code>credentialspecdomainless:MyARN</code>. Replace <code>MyARN</code> with the ARN in SSM or Amazon S3.</p>
-    /// <p>The <code>credspec</code> must provide a ARN in Secrets Manager for a secret containing the username, password, and the domain to connect to. For better security, the instance isn't joined to the domain for domainless authentication. Other applications on the instance can't use the domainless credentials. You can use this parameter to run tasks on the same instance, even it the tasks need to join different domains. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/windows-gmsa.html">Using gMSAs for Windows Containers</a> and <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/linux-gmsa.html">Using gMSAs for Linux Containers</a>.</p>
+    /// <p>A list of ARNs in SSM or Amazon S3 to a credential spec (<code>CredSpec</code>) file that configures the container for Active Directory authentication. We recommend that you use this parameter instead of the <code>dockerSecurityOptions</code>. The maximum number of ARNs is 1.</p>
+    /// <p>There are two formats for each ARN.</p>
+    /// <dl>
+    /// <dt>
+    /// credentialspecdomainless:MyARN
+    /// </dt>
+    /// <dd>
+    /// <p>You use <code>credentialspecdomainless:MyARN</code> to provide a <code>CredSpec</code> with an additional section for a secret in Secrets Manager. You provide the login credentials to the domain in the secret.</p>
+    /// <p>Each task that runs on any container instance can join different domains.</p>
+    /// <p>You can use this format without joining the container instance to a domain.</p>
+    /// </dd>
+    /// <dt>
+    /// credentialspec:MyARN
+    /// </dt>
+    /// <dd>
+    /// <p>You use <code>credentialspec:MyARN</code> to provide a <code>CredSpec</code> for a single domain.</p>
+    /// <p>You must join the container instance to the domain before you start any tasks that use this task definition.</p>
+    /// </dd>
+    /// </dl>
+    /// <p>In both formats, replace <code>MyARN</code> with the ARN in SSM or Amazon S3.</p>
+    /// <p>If you provide a <code>credentialspecdomainless:MyARN</code>, the <code>credspec</code> must provide a ARN in Secrets Manager for a secret containing the username, password, and the domain to connect to. For better security, the instance isn't joined to the domain for domainless authentication. Other applications on the instance can't use the domainless credentials. You can use this parameter to run tasks on the same instance, even it the tasks need to join different domains. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/windows-gmsa.html">Using gMSAs for Windows Containers</a> and <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/linux-gmsa.html">Using gMSAs for Linux Containers</a>.</p>
     pub fn credential_specs(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.credential_specs.as_deref()
     }
@@ -1067,6 +1115,7 @@ impl ContainerDefinitionBuilder {
     /// <li> <p>Windows platform version <code>1.0.0</code> or later.</p> </li>
     /// </ul>
     /// <p>For tasks using the EC2 launch type, your container instances require at least version <code>1.26.0</code> of the container agent to use a container start timeout value. However, we recommend using the latest container agent version. For information about checking your agent version and updating to the latest version, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. If you're using an Amazon ECS-optimized Linux AMI, your instance needs at least version <code>1.26.0-1</code> of the <code>ecs-init</code> package. If your container instances are launched from version <code>20190301</code> or later, then they contain the required versions of the container agent and <code>ecs-init</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    /// <p>The valid values are 2-120 seconds.</p>
     pub fn start_timeout(mut self, input: i32) -> Self {
         self.start_timeout = ::std::option::Option::Some(input);
         self
@@ -1080,6 +1129,7 @@ impl ContainerDefinitionBuilder {
     /// <li> <p>Windows platform version <code>1.0.0</code> or later.</p> </li>
     /// </ul>
     /// <p>For tasks using the EC2 launch type, your container instances require at least version <code>1.26.0</code> of the container agent to use a container start timeout value. However, we recommend using the latest container agent version. For information about checking your agent version and updating to the latest version, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. If you're using an Amazon ECS-optimized Linux AMI, your instance needs at least version <code>1.26.0-1</code> of the <code>ecs-init</code> package. If your container instances are launched from version <code>20190301</code> or later, then they contain the required versions of the container agent and <code>ecs-init</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    /// <p>The valid values are 2-120 seconds.</p>
     pub fn set_start_timeout(mut self, input: ::std::option::Option<i32>) -> Self {
         self.start_timeout = input;
         self
@@ -1093,6 +1143,7 @@ impl ContainerDefinitionBuilder {
     /// <li> <p>Windows platform version <code>1.0.0</code> or later.</p> </li>
     /// </ul>
     /// <p>For tasks using the EC2 launch type, your container instances require at least version <code>1.26.0</code> of the container agent to use a container start timeout value. However, we recommend using the latest container agent version. For information about checking your agent version and updating to the latest version, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. If you're using an Amazon ECS-optimized Linux AMI, your instance needs at least version <code>1.26.0-1</code> of the <code>ecs-init</code> package. If your container instances are launched from version <code>20190301</code> or later, then they contain the required versions of the container agent and <code>ecs-init</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    /// <p>The valid values are 2-120 seconds.</p>
     pub fn get_start_timeout(&self) -> &::std::option::Option<i32> {
         &self.start_timeout
     }
@@ -1104,6 +1155,7 @@ impl ContainerDefinitionBuilder {
     /// </ul>
     /// <p>The max stop timeout value is 120 seconds and if the parameter is not specified, the default value of 30 seconds is used.</p>
     /// <p>For tasks that use the EC2 launch type, if the <code>stopTimeout</code> parameter isn't specified, the value set for the Amazon ECS container agent configuration variable <code>ECS_CONTAINER_STOP_TIMEOUT</code> is used. If neither the <code>stopTimeout</code> parameter or the <code>ECS_CONTAINER_STOP_TIMEOUT</code> agent configuration variable are set, then the default values of 30 seconds for Linux containers and 30 seconds on Windows containers are used. Your container instances require at least version 1.26.0 of the container agent to use a container stop timeout value. However, we recommend using the latest container agent version. For information about checking your agent version and updating to the latest version, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. If you're using an Amazon ECS-optimized Linux AMI, your instance needs at least version 1.26.0-1 of the <code>ecs-init</code> package. If your container instances are launched from version <code>20190301</code> or later, then they contain the required versions of the container agent and <code>ecs-init</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    /// <p>The valid values are 2-120 seconds.</p>
     pub fn stop_timeout(mut self, input: i32) -> Self {
         self.stop_timeout = ::std::option::Option::Some(input);
         self
@@ -1116,6 +1168,7 @@ impl ContainerDefinitionBuilder {
     /// </ul>
     /// <p>The max stop timeout value is 120 seconds and if the parameter is not specified, the default value of 30 seconds is used.</p>
     /// <p>For tasks that use the EC2 launch type, if the <code>stopTimeout</code> parameter isn't specified, the value set for the Amazon ECS container agent configuration variable <code>ECS_CONTAINER_STOP_TIMEOUT</code> is used. If neither the <code>stopTimeout</code> parameter or the <code>ECS_CONTAINER_STOP_TIMEOUT</code> agent configuration variable are set, then the default values of 30 seconds for Linux containers and 30 seconds on Windows containers are used. Your container instances require at least version 1.26.0 of the container agent to use a container stop timeout value. However, we recommend using the latest container agent version. For information about checking your agent version and updating to the latest version, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. If you're using an Amazon ECS-optimized Linux AMI, your instance needs at least version 1.26.0-1 of the <code>ecs-init</code> package. If your container instances are launched from version <code>20190301</code> or later, then they contain the required versions of the container agent and <code>ecs-init</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    /// <p>The valid values are 2-120 seconds.</p>
     pub fn set_stop_timeout(mut self, input: ::std::option::Option<i32>) -> Self {
         self.stop_timeout = input;
         self
@@ -1128,6 +1181,7 @@ impl ContainerDefinitionBuilder {
     /// </ul>
     /// <p>The max stop timeout value is 120 seconds and if the parameter is not specified, the default value of 30 seconds is used.</p>
     /// <p>For tasks that use the EC2 launch type, if the <code>stopTimeout</code> parameter isn't specified, the value set for the Amazon ECS container agent configuration variable <code>ECS_CONTAINER_STOP_TIMEOUT</code> is used. If neither the <code>stopTimeout</code> parameter or the <code>ECS_CONTAINER_STOP_TIMEOUT</code> agent configuration variable are set, then the default values of 30 seconds for Linux containers and 30 seconds on Windows containers are used. Your container instances require at least version 1.26.0 of the container agent to use a container stop timeout value. However, we recommend using the latest container agent version. For information about checking your agent version and updating to the latest version, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. If you're using an Amazon ECS-optimized Linux AMI, your instance needs at least version 1.26.0-1 of the <code>ecs-init</code> package. If your container instances are launched from version <code>20190301</code> or later, then they contain the required versions of the container agent and <code>ecs-init</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    /// <p>The valid values are 2-120 seconds.</p>
     pub fn get_stop_timeout(&self) -> &::std::option::Option<i32> {
         &self.stop_timeout
     }
@@ -1530,8 +1584,12 @@ impl ContainerDefinitionBuilder {
     ///
     /// To override the contents of this collection use [`set_system_controls`](Self::set_system_controls).
     ///
-    /// <p>A list of namespaced kernel parameters to set in the container. This parameter maps to <code>Sysctls</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--sysctl</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p> <note>
+    /// <p>A list of namespaced kernel parameters to set in the container. This parameter maps to <code>Sysctls</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--sysctl</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>. For example, you can configure <code>net.ipv4.tcp_keepalive_time</code> setting to maintain longer lived connections.</p> <note>
     /// <p>We don't recommended that you specify network-related <code>systemControls</code> parameters for multiple containers in a single task that also uses either the <code>awsvpc</code> or <code>host</code> network modes. For tasks that use the <code>awsvpc</code> network mode, the container that's started last determines which <code>systemControls</code> parameters take effect. For tasks that use the <code>host</code> network mode, it changes the container instance's namespaced kernel parameters as well as the containers.</p>
+    /// </note> <note>
+    /// <p>This parameter is not supported for Windows containers.</p>
+    /// </note> <note>
+    /// <p>This parameter is only supported for tasks that are hosted on Fargate if the tasks are using platform version <code>1.4.0</code> or later (Linux). This isn't supported for Windows containers on Fargate.</p>
     /// </note>
     pub fn system_controls(mut self, input: crate::types::SystemControl) -> Self {
         let mut v = self.system_controls.unwrap_or_default();
@@ -1539,15 +1597,23 @@ impl ContainerDefinitionBuilder {
         self.system_controls = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of namespaced kernel parameters to set in the container. This parameter maps to <code>Sysctls</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--sysctl</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p> <note>
+    /// <p>A list of namespaced kernel parameters to set in the container. This parameter maps to <code>Sysctls</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--sysctl</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>. For example, you can configure <code>net.ipv4.tcp_keepalive_time</code> setting to maintain longer lived connections.</p> <note>
     /// <p>We don't recommended that you specify network-related <code>systemControls</code> parameters for multiple containers in a single task that also uses either the <code>awsvpc</code> or <code>host</code> network modes. For tasks that use the <code>awsvpc</code> network mode, the container that's started last determines which <code>systemControls</code> parameters take effect. For tasks that use the <code>host</code> network mode, it changes the container instance's namespaced kernel parameters as well as the containers.</p>
+    /// </note> <note>
+    /// <p>This parameter is not supported for Windows containers.</p>
+    /// </note> <note>
+    /// <p>This parameter is only supported for tasks that are hosted on Fargate if the tasks are using platform version <code>1.4.0</code> or later (Linux). This isn't supported for Windows containers on Fargate.</p>
     /// </note>
     pub fn set_system_controls(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SystemControl>>) -> Self {
         self.system_controls = input;
         self
     }
-    /// <p>A list of namespaced kernel parameters to set in the container. This parameter maps to <code>Sysctls</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--sysctl</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p> <note>
+    /// <p>A list of namespaced kernel parameters to set in the container. This parameter maps to <code>Sysctls</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--sysctl</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>. For example, you can configure <code>net.ipv4.tcp_keepalive_time</code> setting to maintain longer lived connections.</p> <note>
     /// <p>We don't recommended that you specify network-related <code>systemControls</code> parameters for multiple containers in a single task that also uses either the <code>awsvpc</code> or <code>host</code> network modes. For tasks that use the <code>awsvpc</code> network mode, the container that's started last determines which <code>systemControls</code> parameters take effect. For tasks that use the <code>host</code> network mode, it changes the container instance's namespaced kernel parameters as well as the containers.</p>
+    /// </note> <note>
+    /// <p>This parameter is not supported for Windows containers.</p>
+    /// </note> <note>
+    /// <p>This parameter is only supported for tasks that are hosted on Fargate if the tasks are using platform version <code>1.4.0</code> or later (Linux). This isn't supported for Windows containers on Fargate.</p>
     /// </note>
     pub fn get_system_controls(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SystemControl>> {
         &self.system_controls
@@ -1590,25 +1656,79 @@ impl ContainerDefinitionBuilder {
     ///
     /// To override the contents of this collection use [`set_credential_specs`](Self::set_credential_specs).
     ///
-    /// <p>A list of ARNs in SSM or Amazon S3 to a credential spec (<code>credspec</code>code&gt;) file that configures a container for Active Directory authentication. This parameter is only used with domainless authentication.</p>
-    /// <p>The format for each ARN is <code>credentialspecdomainless:MyARN</code>. Replace <code>MyARN</code> with the ARN in SSM or Amazon S3.</p>
-    /// <p>The <code>credspec</code> must provide a ARN in Secrets Manager for a secret containing the username, password, and the domain to connect to. For better security, the instance isn't joined to the domain for domainless authentication. Other applications on the instance can't use the domainless credentials. You can use this parameter to run tasks on the same instance, even it the tasks need to join different domains. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/windows-gmsa.html">Using gMSAs for Windows Containers</a> and <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/linux-gmsa.html">Using gMSAs for Linux Containers</a>.</p>
+    /// <p>A list of ARNs in SSM or Amazon S3 to a credential spec (<code>CredSpec</code>) file that configures the container for Active Directory authentication. We recommend that you use this parameter instead of the <code>dockerSecurityOptions</code>. The maximum number of ARNs is 1.</p>
+    /// <p>There are two formats for each ARN.</p>
+    /// <dl>
+    /// <dt>
+    /// credentialspecdomainless:MyARN
+    /// </dt>
+    /// <dd>
+    /// <p>You use <code>credentialspecdomainless:MyARN</code> to provide a <code>CredSpec</code> with an additional section for a secret in Secrets Manager. You provide the login credentials to the domain in the secret.</p>
+    /// <p>Each task that runs on any container instance can join different domains.</p>
+    /// <p>You can use this format without joining the container instance to a domain.</p>
+    /// </dd>
+    /// <dt>
+    /// credentialspec:MyARN
+    /// </dt>
+    /// <dd>
+    /// <p>You use <code>credentialspec:MyARN</code> to provide a <code>CredSpec</code> for a single domain.</p>
+    /// <p>You must join the container instance to the domain before you start any tasks that use this task definition.</p>
+    /// </dd>
+    /// </dl>
+    /// <p>In both formats, replace <code>MyARN</code> with the ARN in SSM or Amazon S3.</p>
+    /// <p>If you provide a <code>credentialspecdomainless:MyARN</code>, the <code>credspec</code> must provide a ARN in Secrets Manager for a secret containing the username, password, and the domain to connect to. For better security, the instance isn't joined to the domain for domainless authentication. Other applications on the instance can't use the domainless credentials. You can use this parameter to run tasks on the same instance, even it the tasks need to join different domains. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/windows-gmsa.html">Using gMSAs for Windows Containers</a> and <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/linux-gmsa.html">Using gMSAs for Linux Containers</a>.</p>
     pub fn credential_specs(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.credential_specs.unwrap_or_default();
         v.push(input.into());
         self.credential_specs = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of ARNs in SSM or Amazon S3 to a credential spec (<code>credspec</code>code&gt;) file that configures a container for Active Directory authentication. This parameter is only used with domainless authentication.</p>
-    /// <p>The format for each ARN is <code>credentialspecdomainless:MyARN</code>. Replace <code>MyARN</code> with the ARN in SSM or Amazon S3.</p>
-    /// <p>The <code>credspec</code> must provide a ARN in Secrets Manager for a secret containing the username, password, and the domain to connect to. For better security, the instance isn't joined to the domain for domainless authentication. Other applications on the instance can't use the domainless credentials. You can use this parameter to run tasks on the same instance, even it the tasks need to join different domains. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/windows-gmsa.html">Using gMSAs for Windows Containers</a> and <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/linux-gmsa.html">Using gMSAs for Linux Containers</a>.</p>
+    /// <p>A list of ARNs in SSM or Amazon S3 to a credential spec (<code>CredSpec</code>) file that configures the container for Active Directory authentication. We recommend that you use this parameter instead of the <code>dockerSecurityOptions</code>. The maximum number of ARNs is 1.</p>
+    /// <p>There are two formats for each ARN.</p>
+    /// <dl>
+    /// <dt>
+    /// credentialspecdomainless:MyARN
+    /// </dt>
+    /// <dd>
+    /// <p>You use <code>credentialspecdomainless:MyARN</code> to provide a <code>CredSpec</code> with an additional section for a secret in Secrets Manager. You provide the login credentials to the domain in the secret.</p>
+    /// <p>Each task that runs on any container instance can join different domains.</p>
+    /// <p>You can use this format without joining the container instance to a domain.</p>
+    /// </dd>
+    /// <dt>
+    /// credentialspec:MyARN
+    /// </dt>
+    /// <dd>
+    /// <p>You use <code>credentialspec:MyARN</code> to provide a <code>CredSpec</code> for a single domain.</p>
+    /// <p>You must join the container instance to the domain before you start any tasks that use this task definition.</p>
+    /// </dd>
+    /// </dl>
+    /// <p>In both formats, replace <code>MyARN</code> with the ARN in SSM or Amazon S3.</p>
+    /// <p>If you provide a <code>credentialspecdomainless:MyARN</code>, the <code>credspec</code> must provide a ARN in Secrets Manager for a secret containing the username, password, and the domain to connect to. For better security, the instance isn't joined to the domain for domainless authentication. Other applications on the instance can't use the domainless credentials. You can use this parameter to run tasks on the same instance, even it the tasks need to join different domains. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/windows-gmsa.html">Using gMSAs for Windows Containers</a> and <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/linux-gmsa.html">Using gMSAs for Linux Containers</a>.</p>
     pub fn set_credential_specs(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.credential_specs = input;
         self
     }
-    /// <p>A list of ARNs in SSM or Amazon S3 to a credential spec (<code>credspec</code>code&gt;) file that configures a container for Active Directory authentication. This parameter is only used with domainless authentication.</p>
-    /// <p>The format for each ARN is <code>credentialspecdomainless:MyARN</code>. Replace <code>MyARN</code> with the ARN in SSM or Amazon S3.</p>
-    /// <p>The <code>credspec</code> must provide a ARN in Secrets Manager for a secret containing the username, password, and the domain to connect to. For better security, the instance isn't joined to the domain for domainless authentication. Other applications on the instance can't use the domainless credentials. You can use this parameter to run tasks on the same instance, even it the tasks need to join different domains. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/windows-gmsa.html">Using gMSAs for Windows Containers</a> and <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/linux-gmsa.html">Using gMSAs for Linux Containers</a>.</p>
+    /// <p>A list of ARNs in SSM or Amazon S3 to a credential spec (<code>CredSpec</code>) file that configures the container for Active Directory authentication. We recommend that you use this parameter instead of the <code>dockerSecurityOptions</code>. The maximum number of ARNs is 1.</p>
+    /// <p>There are two formats for each ARN.</p>
+    /// <dl>
+    /// <dt>
+    /// credentialspecdomainless:MyARN
+    /// </dt>
+    /// <dd>
+    /// <p>You use <code>credentialspecdomainless:MyARN</code> to provide a <code>CredSpec</code> with an additional section for a secret in Secrets Manager. You provide the login credentials to the domain in the secret.</p>
+    /// <p>Each task that runs on any container instance can join different domains.</p>
+    /// <p>You can use this format without joining the container instance to a domain.</p>
+    /// </dd>
+    /// <dt>
+    /// credentialspec:MyARN
+    /// </dt>
+    /// <dd>
+    /// <p>You use <code>credentialspec:MyARN</code> to provide a <code>CredSpec</code> for a single domain.</p>
+    /// <p>You must join the container instance to the domain before you start any tasks that use this task definition.</p>
+    /// </dd>
+    /// </dl>
+    /// <p>In both formats, replace <code>MyARN</code> with the ARN in SSM or Amazon S3.</p>
+    /// <p>If you provide a <code>credentialspecdomainless:MyARN</code>, the <code>credspec</code> must provide a ARN in Secrets Manager for a secret containing the username, password, and the domain to connect to. For better security, the instance isn't joined to the domain for domainless authentication. Other applications on the instance can't use the domainless credentials. You can use this parameter to run tasks on the same instance, even it the tasks need to join different domains. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/windows-gmsa.html">Using gMSAs for Windows Containers</a> and <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/linux-gmsa.html">Using gMSAs for Linux Containers</a>.</p>
     pub fn get_credential_specs(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.credential_specs
     }

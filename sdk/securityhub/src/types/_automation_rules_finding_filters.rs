@@ -5,222 +5,292 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AutomationRulesFindingFilters {
     /// <p> The Amazon Resource Name (ARN) for a third-party product that generated a finding in Security Hub. </p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub product_arn: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p> The Amazon Web Services account ID in which a finding was generated. </p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 100 items. </p>
     pub aws_account_id: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p> The product-specific identifier for a finding. </p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub id: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p> The identifier for the solution-specific component that generated a finding. </p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 100 items. </p>
     pub generator_id: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    /// <p> One or more finding types in the format of namespace/category/classifier that classify a finding. For a list of namespaces, classifiers, and categories, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-findings-format-type-taxonomy.html">Types taxonomy for ASFF</a> in the <i>Security Hub User Guide</i>. </p>
+    /// <p> One or more finding types in the format of namespace/category/classifier that classify a finding. For a list of namespaces, classifiers, and categories, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-findings-format-type-taxonomy.html">Types taxonomy for ASFF</a> in the <i>Security Hub User Guide</i>.</p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub r#type: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p> A timestamp that indicates when the potential security issue captured by a finding was first observed by the security findings product. </p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub first_observed_at: ::std::option::Option<::std::vec::Vec<crate::types::DateFilter>>,
     /// <p> A timestamp that indicates when the potential security issue captured by a finding was most recently observed by the security findings product. </p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub last_observed_at: ::std::option::Option<::std::vec::Vec<crate::types::DateFilter>>,
     /// <p> A timestamp that indicates when this finding record was created. </p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub created_at: ::std::option::Option<::std::vec::Vec<crate::types::DateFilter>>,
     /// <p> A timestamp that indicates when the finding record was most recently updated. </p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub updated_at: ::std::option::Option<::std::vec::Vec<crate::types::DateFilter>>,
-    /// <p>The likelihood that a finding accurately identifies the behavior or issue that it was intended to identify. <code>Confidence</code> is scored on a 0–100 basis using a ratio scale. A value of <code>0</code> means 0 percent confidence, and a value of <code>100</code> means 100 percent confidence. For example, a data exfiltration detection based on a statistical deviation of network traffic has low confidence because an actual exfiltration hasn't been verified. For more information, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/asff-top-level-attributes.html#asff-confidence">Confidence</a> in the <i>Security Hub User Guide</i>. </p>
+    /// <p>The likelihood that a finding accurately identifies the behavior or issue that it was intended to identify. <code>Confidence</code> is scored on a 0–100 basis using a ratio scale. A value of <code>0</code> means 0 percent confidence, and a value of <code>100</code> means 100 percent confidence. For example, a data exfiltration detection based on a statistical deviation of network traffic has low confidence because an actual exfiltration hasn't been verified. For more information, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/asff-top-level-attributes.html#asff-confidence">Confidence</a> in the <i>Security Hub User Guide</i>.</p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub confidence: ::std::option::Option<::std::vec::Vec<crate::types::NumberFilter>>,
     /// <p> The level of importance that is assigned to the resources that are associated with a finding. <code>Criticality</code> is scored on a 0–100 basis, using a ratio scale that supports only full integers. A score of <code>0</code> means that the underlying resources have no criticality, and a score of <code>100</code> is reserved for the most critical resources. For more information, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/asff-top-level-attributes.html#asff-criticality">Criticality</a> in the <i>Security Hub User Guide</i>.</p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub criticality: ::std::option::Option<::std::vec::Vec<crate::types::NumberFilter>>,
     /// <p> A finding's title. </p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 100 items. </p>
     pub title: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p> A finding's description. </p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub description: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p> Provides a URL that links to a page about the current finding in the finding product. </p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub source_url: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p> Provides the name of the product that generated the finding. For control-based findings, the product name is Security Hub. </p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub product_name: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p> The name of the company for the product that generated the finding. For control-based findings, the company is Amazon Web Services. </p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub company_name: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p> The severity value of the finding. </p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub severity_label: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p> The type of resource that the finding pertains to. </p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub resource_type: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p> The identifier for the given resource type. For Amazon Web Services resources that are identified by Amazon Resource Names (ARNs), this is the ARN. For Amazon Web Services resources that lack ARNs, this is the identifier as defined by the Amazon Web Service that created the resource. For non-Amazon Web Services resources, this is a unique identifier that is associated with the resource. </p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 100 items. </p>
     pub resource_id: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p> The partition in which the resource that the finding pertains to is located. A partition is a group of Amazon Web Services Regions. Each Amazon Web Services account is scoped to one partition. </p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub resource_partition: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p> The Amazon Web Services Region where the resource that a finding pertains to is located. </p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub resource_region: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p> A list of Amazon Web Services tags associated with a resource at the time the finding was processed. </p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub resource_tags: ::std::option::Option<::std::vec::Vec<crate::types::MapFilter>>,
     /// <p> Custom fields and values about the resource that a finding pertains to. </p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub resource_details_other: ::std::option::Option<::std::vec::Vec<crate::types::MapFilter>>,
     /// <p> The result of a security check. This field is only used for findings generated from controls. </p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub compliance_status: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p> The security control ID for which a finding was generated. Security control IDs are the same across standards.</p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub compliance_security_control_id: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p>The unique identifier of a standard in which a control is enabled. This field consists of the resource portion of the Amazon Resource Name (ARN) returned for a standard in the <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DescribeStandards.html">DescribeStandards</a> API response.</p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub compliance_associated_standards_id: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p> Provides the veracity of a finding. </p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub verification_state: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p> Provides information about the status of the investigation into a finding. </p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub workflow_status: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p> Provides the current state of a finding. </p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub record_state: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p> The ARN for the product that generated a related finding. </p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub related_findings_product_arn: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p> The product-generated identifier for a related finding. </p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub related_findings_id: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p> The text of a user-defined note that's added to a finding. </p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub note_text: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p> The timestamp of when the note was updated. Uses the date-time format specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>. </p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub note_updated_at: ::std::option::Option<::std::vec::Vec<crate::types::DateFilter>>,
     /// <p> The principal that created a note. </p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub note_updated_by: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p> A list of user-defined name and value string pairs added to a finding. </p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub user_defined_fields: ::std::option::Option<::std::vec::Vec<crate::types::MapFilter>>,
 }
 impl AutomationRulesFindingFilters {
     /// <p> The Amazon Resource Name (ARN) for a third-party product that generated a finding in Security Hub. </p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub fn product_arn(&self) -> ::std::option::Option<&[crate::types::StringFilter]> {
         self.product_arn.as_deref()
     }
     /// <p> The Amazon Web Services account ID in which a finding was generated. </p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 100 items. </p>
     pub fn aws_account_id(&self) -> ::std::option::Option<&[crate::types::StringFilter]> {
         self.aws_account_id.as_deref()
     }
     /// <p> The product-specific identifier for a finding. </p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub fn id(&self) -> ::std::option::Option<&[crate::types::StringFilter]> {
         self.id.as_deref()
     }
     /// <p> The identifier for the solution-specific component that generated a finding. </p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 100 items. </p>
     pub fn generator_id(&self) -> ::std::option::Option<&[crate::types::StringFilter]> {
         self.generator_id.as_deref()
     }
-    /// <p> One or more finding types in the format of namespace/category/classifier that classify a finding. For a list of namespaces, classifiers, and categories, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-findings-format-type-taxonomy.html">Types taxonomy for ASFF</a> in the <i>Security Hub User Guide</i>. </p>
+    /// <p> One or more finding types in the format of namespace/category/classifier that classify a finding. For a list of namespaces, classifiers, and categories, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-findings-format-type-taxonomy.html">Types taxonomy for ASFF</a> in the <i>Security Hub User Guide</i>.</p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub fn r#type(&self) -> ::std::option::Option<&[crate::types::StringFilter]> {
         self.r#type.as_deref()
     }
     /// <p> A timestamp that indicates when the potential security issue captured by a finding was first observed by the security findings product. </p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub fn first_observed_at(&self) -> ::std::option::Option<&[crate::types::DateFilter]> {
         self.first_observed_at.as_deref()
     }
     /// <p> A timestamp that indicates when the potential security issue captured by a finding was most recently observed by the security findings product. </p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub fn last_observed_at(&self) -> ::std::option::Option<&[crate::types::DateFilter]> {
         self.last_observed_at.as_deref()
     }
     /// <p> A timestamp that indicates when this finding record was created. </p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub fn created_at(&self) -> ::std::option::Option<&[crate::types::DateFilter]> {
         self.created_at.as_deref()
     }
     /// <p> A timestamp that indicates when the finding record was most recently updated. </p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub fn updated_at(&self) -> ::std::option::Option<&[crate::types::DateFilter]> {
         self.updated_at.as_deref()
     }
-    /// <p>The likelihood that a finding accurately identifies the behavior or issue that it was intended to identify. <code>Confidence</code> is scored on a 0–100 basis using a ratio scale. A value of <code>0</code> means 0 percent confidence, and a value of <code>100</code> means 100 percent confidence. For example, a data exfiltration detection based on a statistical deviation of network traffic has low confidence because an actual exfiltration hasn't been verified. For more information, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/asff-top-level-attributes.html#asff-confidence">Confidence</a> in the <i>Security Hub User Guide</i>. </p>
+    /// <p>The likelihood that a finding accurately identifies the behavior or issue that it was intended to identify. <code>Confidence</code> is scored on a 0–100 basis using a ratio scale. A value of <code>0</code> means 0 percent confidence, and a value of <code>100</code> means 100 percent confidence. For example, a data exfiltration detection based on a statistical deviation of network traffic has low confidence because an actual exfiltration hasn't been verified. For more information, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/asff-top-level-attributes.html#asff-confidence">Confidence</a> in the <i>Security Hub User Guide</i>.</p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub fn confidence(&self) -> ::std::option::Option<&[crate::types::NumberFilter]> {
         self.confidence.as_deref()
     }
     /// <p> The level of importance that is assigned to the resources that are associated with a finding. <code>Criticality</code> is scored on a 0–100 basis, using a ratio scale that supports only full integers. A score of <code>0</code> means that the underlying resources have no criticality, and a score of <code>100</code> is reserved for the most critical resources. For more information, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/asff-top-level-attributes.html#asff-criticality">Criticality</a> in the <i>Security Hub User Guide</i>.</p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub fn criticality(&self) -> ::std::option::Option<&[crate::types::NumberFilter]> {
         self.criticality.as_deref()
     }
     /// <p> A finding's title. </p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 100 items. </p>
     pub fn title(&self) -> ::std::option::Option<&[crate::types::StringFilter]> {
         self.title.as_deref()
     }
     /// <p> A finding's description. </p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub fn description(&self) -> ::std::option::Option<&[crate::types::StringFilter]> {
         self.description.as_deref()
     }
     /// <p> Provides a URL that links to a page about the current finding in the finding product. </p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub fn source_url(&self) -> ::std::option::Option<&[crate::types::StringFilter]> {
         self.source_url.as_deref()
     }
     /// <p> Provides the name of the product that generated the finding. For control-based findings, the product name is Security Hub. </p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub fn product_name(&self) -> ::std::option::Option<&[crate::types::StringFilter]> {
         self.product_name.as_deref()
     }
     /// <p> The name of the company for the product that generated the finding. For control-based findings, the company is Amazon Web Services. </p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub fn company_name(&self) -> ::std::option::Option<&[crate::types::StringFilter]> {
         self.company_name.as_deref()
     }
     /// <p> The severity value of the finding. </p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub fn severity_label(&self) -> ::std::option::Option<&[crate::types::StringFilter]> {
         self.severity_label.as_deref()
     }
     /// <p> The type of resource that the finding pertains to. </p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub fn resource_type(&self) -> ::std::option::Option<&[crate::types::StringFilter]> {
         self.resource_type.as_deref()
     }
     /// <p> The identifier for the given resource type. For Amazon Web Services resources that are identified by Amazon Resource Names (ARNs), this is the ARN. For Amazon Web Services resources that lack ARNs, this is the identifier as defined by the Amazon Web Service that created the resource. For non-Amazon Web Services resources, this is a unique identifier that is associated with the resource. </p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 100 items. </p>
     pub fn resource_id(&self) -> ::std::option::Option<&[crate::types::StringFilter]> {
         self.resource_id.as_deref()
     }
     /// <p> The partition in which the resource that the finding pertains to is located. A partition is a group of Amazon Web Services Regions. Each Amazon Web Services account is scoped to one partition. </p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub fn resource_partition(&self) -> ::std::option::Option<&[crate::types::StringFilter]> {
         self.resource_partition.as_deref()
     }
     /// <p> The Amazon Web Services Region where the resource that a finding pertains to is located. </p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub fn resource_region(&self) -> ::std::option::Option<&[crate::types::StringFilter]> {
         self.resource_region.as_deref()
     }
     /// <p> A list of Amazon Web Services tags associated with a resource at the time the finding was processed. </p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub fn resource_tags(&self) -> ::std::option::Option<&[crate::types::MapFilter]> {
         self.resource_tags.as_deref()
     }
     /// <p> Custom fields and values about the resource that a finding pertains to. </p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub fn resource_details_other(&self) -> ::std::option::Option<&[crate::types::MapFilter]> {
         self.resource_details_other.as_deref()
     }
     /// <p> The result of a security check. This field is only used for findings generated from controls. </p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub fn compliance_status(&self) -> ::std::option::Option<&[crate::types::StringFilter]> {
         self.compliance_status.as_deref()
     }
     /// <p> The security control ID for which a finding was generated. Security control IDs are the same across standards.</p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub fn compliance_security_control_id(&self) -> ::std::option::Option<&[crate::types::StringFilter]> {
         self.compliance_security_control_id.as_deref()
     }
     /// <p>The unique identifier of a standard in which a control is enabled. This field consists of the resource portion of the Amazon Resource Name (ARN) returned for a standard in the <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DescribeStandards.html">DescribeStandards</a> API response.</p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub fn compliance_associated_standards_id(&self) -> ::std::option::Option<&[crate::types::StringFilter]> {
         self.compliance_associated_standards_id.as_deref()
     }
     /// <p> Provides the veracity of a finding. </p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub fn verification_state(&self) -> ::std::option::Option<&[crate::types::StringFilter]> {
         self.verification_state.as_deref()
     }
     /// <p> Provides information about the status of the investigation into a finding. </p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub fn workflow_status(&self) -> ::std::option::Option<&[crate::types::StringFilter]> {
         self.workflow_status.as_deref()
     }
     /// <p> Provides the current state of a finding. </p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub fn record_state(&self) -> ::std::option::Option<&[crate::types::StringFilter]> {
         self.record_state.as_deref()
     }
     /// <p> The ARN for the product that generated a related finding. </p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub fn related_findings_product_arn(&self) -> ::std::option::Option<&[crate::types::StringFilter]> {
         self.related_findings_product_arn.as_deref()
     }
     /// <p> The product-generated identifier for a related finding. </p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub fn related_findings_id(&self) -> ::std::option::Option<&[crate::types::StringFilter]> {
         self.related_findings_id.as_deref()
     }
     /// <p> The text of a user-defined note that's added to a finding. </p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub fn note_text(&self) -> ::std::option::Option<&[crate::types::StringFilter]> {
         self.note_text.as_deref()
     }
     /// <p> The timestamp of when the note was updated. Uses the date-time format specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>. </p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub fn note_updated_at(&self) -> ::std::option::Option<&[crate::types::DateFilter]> {
         self.note_updated_at.as_deref()
     }
     /// <p> The principal that created a note. </p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub fn note_updated_by(&self) -> ::std::option::Option<&[crate::types::StringFilter]> {
         self.note_updated_by.as_deref()
     }
     /// <p> A list of user-defined name and value string pairs added to a finding. </p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub fn user_defined_fields(&self) -> ::std::option::Option<&[crate::types::MapFilter]> {
         self.user_defined_fields.as_deref()
     }
@@ -278,6 +348,7 @@ impl AutomationRulesFindingFiltersBuilder {
     /// To override the contents of this collection use [`set_product_arn`](Self::set_product_arn).
     ///
     /// <p> The Amazon Resource Name (ARN) for a third-party product that generated a finding in Security Hub. </p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub fn product_arn(mut self, input: crate::types::StringFilter) -> Self {
         let mut v = self.product_arn.unwrap_or_default();
         v.push(input);
@@ -285,11 +356,13 @@ impl AutomationRulesFindingFiltersBuilder {
         self
     }
     /// <p> The Amazon Resource Name (ARN) for a third-party product that generated a finding in Security Hub. </p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub fn set_product_arn(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
         self.product_arn = input;
         self
     }
     /// <p> The Amazon Resource Name (ARN) for a third-party product that generated a finding in Security Hub. </p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub fn get_product_arn(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
         &self.product_arn
     }
@@ -298,6 +371,7 @@ impl AutomationRulesFindingFiltersBuilder {
     /// To override the contents of this collection use [`set_aws_account_id`](Self::set_aws_account_id).
     ///
     /// <p> The Amazon Web Services account ID in which a finding was generated. </p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 100 items. </p>
     pub fn aws_account_id(mut self, input: crate::types::StringFilter) -> Self {
         let mut v = self.aws_account_id.unwrap_or_default();
         v.push(input);
@@ -305,11 +379,13 @@ impl AutomationRulesFindingFiltersBuilder {
         self
     }
     /// <p> The Amazon Web Services account ID in which a finding was generated. </p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 100 items. </p>
     pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
         self.aws_account_id = input;
         self
     }
     /// <p> The Amazon Web Services account ID in which a finding was generated. </p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 100 items. </p>
     pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
         &self.aws_account_id
     }
@@ -318,6 +394,7 @@ impl AutomationRulesFindingFiltersBuilder {
     /// To override the contents of this collection use [`set_id`](Self::set_id).
     ///
     /// <p> The product-specific identifier for a finding. </p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub fn id(mut self, input: crate::types::StringFilter) -> Self {
         let mut v = self.id.unwrap_or_default();
         v.push(input);
@@ -325,11 +402,13 @@ impl AutomationRulesFindingFiltersBuilder {
         self
     }
     /// <p> The product-specific identifier for a finding. </p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
         self.id = input;
         self
     }
     /// <p> The product-specific identifier for a finding. </p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub fn get_id(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
         &self.id
     }
@@ -338,6 +417,7 @@ impl AutomationRulesFindingFiltersBuilder {
     /// To override the contents of this collection use [`set_generator_id`](Self::set_generator_id).
     ///
     /// <p> The identifier for the solution-specific component that generated a finding. </p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 100 items. </p>
     pub fn generator_id(mut self, input: crate::types::StringFilter) -> Self {
         let mut v = self.generator_id.unwrap_or_default();
         v.push(input);
@@ -345,11 +425,13 @@ impl AutomationRulesFindingFiltersBuilder {
         self
     }
     /// <p> The identifier for the solution-specific component that generated a finding. </p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 100 items. </p>
     pub fn set_generator_id(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
         self.generator_id = input;
         self
     }
     /// <p> The identifier for the solution-specific component that generated a finding. </p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 100 items. </p>
     pub fn get_generator_id(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
         &self.generator_id
     }
@@ -357,19 +439,22 @@ impl AutomationRulesFindingFiltersBuilder {
     ///
     /// To override the contents of this collection use [`set_type`](Self::set_type).
     ///
-    /// <p> One or more finding types in the format of namespace/category/classifier that classify a finding. For a list of namespaces, classifiers, and categories, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-findings-format-type-taxonomy.html">Types taxonomy for ASFF</a> in the <i>Security Hub User Guide</i>. </p>
+    /// <p> One or more finding types in the format of namespace/category/classifier that classify a finding. For a list of namespaces, classifiers, and categories, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-findings-format-type-taxonomy.html">Types taxonomy for ASFF</a> in the <i>Security Hub User Guide</i>.</p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub fn r#type(mut self, input: crate::types::StringFilter) -> Self {
         let mut v = self.r#type.unwrap_or_default();
         v.push(input);
         self.r#type = ::std::option::Option::Some(v);
         self
     }
-    /// <p> One or more finding types in the format of namespace/category/classifier that classify a finding. For a list of namespaces, classifiers, and categories, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-findings-format-type-taxonomy.html">Types taxonomy for ASFF</a> in the <i>Security Hub User Guide</i>. </p>
+    /// <p> One or more finding types in the format of namespace/category/classifier that classify a finding. For a list of namespaces, classifiers, and categories, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-findings-format-type-taxonomy.html">Types taxonomy for ASFF</a> in the <i>Security Hub User Guide</i>.</p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub fn set_type(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
         self.r#type = input;
         self
     }
-    /// <p> One or more finding types in the format of namespace/category/classifier that classify a finding. For a list of namespaces, classifiers, and categories, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-findings-format-type-taxonomy.html">Types taxonomy for ASFF</a> in the <i>Security Hub User Guide</i>. </p>
+    /// <p> One or more finding types in the format of namespace/category/classifier that classify a finding. For a list of namespaces, classifiers, and categories, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-findings-format-type-taxonomy.html">Types taxonomy for ASFF</a> in the <i>Security Hub User Guide</i>.</p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub fn get_type(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
         &self.r#type
     }
@@ -379,6 +464,7 @@ impl AutomationRulesFindingFiltersBuilder {
     ///
     /// <p> A timestamp that indicates when the potential security issue captured by a finding was first observed by the security findings product. </p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub fn first_observed_at(mut self, input: crate::types::DateFilter) -> Self {
         let mut v = self.first_observed_at.unwrap_or_default();
         v.push(input);
@@ -387,12 +473,14 @@ impl AutomationRulesFindingFiltersBuilder {
     }
     /// <p> A timestamp that indicates when the potential security issue captured by a finding was first observed by the security findings product. </p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub fn set_first_observed_at(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DateFilter>>) -> Self {
         self.first_observed_at = input;
         self
     }
     /// <p> A timestamp that indicates when the potential security issue captured by a finding was first observed by the security findings product. </p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub fn get_first_observed_at(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DateFilter>> {
         &self.first_observed_at
     }
@@ -402,6 +490,7 @@ impl AutomationRulesFindingFiltersBuilder {
     ///
     /// <p> A timestamp that indicates when the potential security issue captured by a finding was most recently observed by the security findings product. </p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub fn last_observed_at(mut self, input: crate::types::DateFilter) -> Self {
         let mut v = self.last_observed_at.unwrap_or_default();
         v.push(input);
@@ -410,12 +499,14 @@ impl AutomationRulesFindingFiltersBuilder {
     }
     /// <p> A timestamp that indicates when the potential security issue captured by a finding was most recently observed by the security findings product. </p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub fn set_last_observed_at(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DateFilter>>) -> Self {
         self.last_observed_at = input;
         self
     }
     /// <p> A timestamp that indicates when the potential security issue captured by a finding was most recently observed by the security findings product. </p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub fn get_last_observed_at(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DateFilter>> {
         &self.last_observed_at
     }
@@ -425,6 +516,7 @@ impl AutomationRulesFindingFiltersBuilder {
     ///
     /// <p> A timestamp that indicates when this finding record was created. </p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub fn created_at(mut self, input: crate::types::DateFilter) -> Self {
         let mut v = self.created_at.unwrap_or_default();
         v.push(input);
@@ -433,12 +525,14 @@ impl AutomationRulesFindingFiltersBuilder {
     }
     /// <p> A timestamp that indicates when this finding record was created. </p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DateFilter>>) -> Self {
         self.created_at = input;
         self
     }
     /// <p> A timestamp that indicates when this finding record was created. </p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub fn get_created_at(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DateFilter>> {
         &self.created_at
     }
@@ -448,6 +542,7 @@ impl AutomationRulesFindingFiltersBuilder {
     ///
     /// <p> A timestamp that indicates when the finding record was most recently updated. </p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub fn updated_at(mut self, input: crate::types::DateFilter) -> Self {
         let mut v = self.updated_at.unwrap_or_default();
         v.push(input);
@@ -456,12 +551,14 @@ impl AutomationRulesFindingFiltersBuilder {
     }
     /// <p> A timestamp that indicates when the finding record was most recently updated. </p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub fn set_updated_at(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DateFilter>>) -> Self {
         self.updated_at = input;
         self
     }
     /// <p> A timestamp that indicates when the finding record was most recently updated. </p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub fn get_updated_at(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DateFilter>> {
         &self.updated_at
     }
@@ -469,19 +566,22 @@ impl AutomationRulesFindingFiltersBuilder {
     ///
     /// To override the contents of this collection use [`set_confidence`](Self::set_confidence).
     ///
-    /// <p>The likelihood that a finding accurately identifies the behavior or issue that it was intended to identify. <code>Confidence</code> is scored on a 0–100 basis using a ratio scale. A value of <code>0</code> means 0 percent confidence, and a value of <code>100</code> means 100 percent confidence. For example, a data exfiltration detection based on a statistical deviation of network traffic has low confidence because an actual exfiltration hasn't been verified. For more information, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/asff-top-level-attributes.html#asff-confidence">Confidence</a> in the <i>Security Hub User Guide</i>. </p>
+    /// <p>The likelihood that a finding accurately identifies the behavior or issue that it was intended to identify. <code>Confidence</code> is scored on a 0–100 basis using a ratio scale. A value of <code>0</code> means 0 percent confidence, and a value of <code>100</code> means 100 percent confidence. For example, a data exfiltration detection based on a statistical deviation of network traffic has low confidence because an actual exfiltration hasn't been verified. For more information, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/asff-top-level-attributes.html#asff-confidence">Confidence</a> in the <i>Security Hub User Guide</i>.</p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub fn confidence(mut self, input: crate::types::NumberFilter) -> Self {
         let mut v = self.confidence.unwrap_or_default();
         v.push(input);
         self.confidence = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The likelihood that a finding accurately identifies the behavior or issue that it was intended to identify. <code>Confidence</code> is scored on a 0–100 basis using a ratio scale. A value of <code>0</code> means 0 percent confidence, and a value of <code>100</code> means 100 percent confidence. For example, a data exfiltration detection based on a statistical deviation of network traffic has low confidence because an actual exfiltration hasn't been verified. For more information, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/asff-top-level-attributes.html#asff-confidence">Confidence</a> in the <i>Security Hub User Guide</i>. </p>
+    /// <p>The likelihood that a finding accurately identifies the behavior or issue that it was intended to identify. <code>Confidence</code> is scored on a 0–100 basis using a ratio scale. A value of <code>0</code> means 0 percent confidence, and a value of <code>100</code> means 100 percent confidence. For example, a data exfiltration detection based on a statistical deviation of network traffic has low confidence because an actual exfiltration hasn't been verified. For more information, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/asff-top-level-attributes.html#asff-confidence">Confidence</a> in the <i>Security Hub User Guide</i>.</p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub fn set_confidence(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NumberFilter>>) -> Self {
         self.confidence = input;
         self
     }
-    /// <p>The likelihood that a finding accurately identifies the behavior or issue that it was intended to identify. <code>Confidence</code> is scored on a 0–100 basis using a ratio scale. A value of <code>0</code> means 0 percent confidence, and a value of <code>100</code> means 100 percent confidence. For example, a data exfiltration detection based on a statistical deviation of network traffic has low confidence because an actual exfiltration hasn't been verified. For more information, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/asff-top-level-attributes.html#asff-confidence">Confidence</a> in the <i>Security Hub User Guide</i>. </p>
+    /// <p>The likelihood that a finding accurately identifies the behavior or issue that it was intended to identify. <code>Confidence</code> is scored on a 0–100 basis using a ratio scale. A value of <code>0</code> means 0 percent confidence, and a value of <code>100</code> means 100 percent confidence. For example, a data exfiltration detection based on a statistical deviation of network traffic has low confidence because an actual exfiltration hasn't been verified. For more information, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/asff-top-level-attributes.html#asff-confidence">Confidence</a> in the <i>Security Hub User Guide</i>.</p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub fn get_confidence(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NumberFilter>> {
         &self.confidence
     }
@@ -490,6 +590,7 @@ impl AutomationRulesFindingFiltersBuilder {
     /// To override the contents of this collection use [`set_criticality`](Self::set_criticality).
     ///
     /// <p> The level of importance that is assigned to the resources that are associated with a finding. <code>Criticality</code> is scored on a 0–100 basis, using a ratio scale that supports only full integers. A score of <code>0</code> means that the underlying resources have no criticality, and a score of <code>100</code> is reserved for the most critical resources. For more information, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/asff-top-level-attributes.html#asff-criticality">Criticality</a> in the <i>Security Hub User Guide</i>.</p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub fn criticality(mut self, input: crate::types::NumberFilter) -> Self {
         let mut v = self.criticality.unwrap_or_default();
         v.push(input);
@@ -497,11 +598,13 @@ impl AutomationRulesFindingFiltersBuilder {
         self
     }
     /// <p> The level of importance that is assigned to the resources that are associated with a finding. <code>Criticality</code> is scored on a 0–100 basis, using a ratio scale that supports only full integers. A score of <code>0</code> means that the underlying resources have no criticality, and a score of <code>100</code> is reserved for the most critical resources. For more information, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/asff-top-level-attributes.html#asff-criticality">Criticality</a> in the <i>Security Hub User Guide</i>.</p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub fn set_criticality(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NumberFilter>>) -> Self {
         self.criticality = input;
         self
     }
     /// <p> The level of importance that is assigned to the resources that are associated with a finding. <code>Criticality</code> is scored on a 0–100 basis, using a ratio scale that supports only full integers. A score of <code>0</code> means that the underlying resources have no criticality, and a score of <code>100</code> is reserved for the most critical resources. For more information, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/asff-top-level-attributes.html#asff-criticality">Criticality</a> in the <i>Security Hub User Guide</i>.</p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub fn get_criticality(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NumberFilter>> {
         &self.criticality
     }
@@ -510,6 +613,7 @@ impl AutomationRulesFindingFiltersBuilder {
     /// To override the contents of this collection use [`set_title`](Self::set_title).
     ///
     /// <p> A finding's title. </p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 100 items. </p>
     pub fn title(mut self, input: crate::types::StringFilter) -> Self {
         let mut v = self.title.unwrap_or_default();
         v.push(input);
@@ -517,11 +621,13 @@ impl AutomationRulesFindingFiltersBuilder {
         self
     }
     /// <p> A finding's title. </p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 100 items. </p>
     pub fn set_title(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
         self.title = input;
         self
     }
     /// <p> A finding's title. </p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 100 items. </p>
     pub fn get_title(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
         &self.title
     }
@@ -530,6 +636,7 @@ impl AutomationRulesFindingFiltersBuilder {
     /// To override the contents of this collection use [`set_description`](Self::set_description).
     ///
     /// <p> A finding's description. </p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub fn description(mut self, input: crate::types::StringFilter) -> Self {
         let mut v = self.description.unwrap_or_default();
         v.push(input);
@@ -537,11 +644,13 @@ impl AutomationRulesFindingFiltersBuilder {
         self
     }
     /// <p> A finding's description. </p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
         self.description = input;
         self
     }
     /// <p> A finding's description. </p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub fn get_description(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
         &self.description
     }
@@ -550,6 +659,7 @@ impl AutomationRulesFindingFiltersBuilder {
     /// To override the contents of this collection use [`set_source_url`](Self::set_source_url).
     ///
     /// <p> Provides a URL that links to a page about the current finding in the finding product. </p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub fn source_url(mut self, input: crate::types::StringFilter) -> Self {
         let mut v = self.source_url.unwrap_or_default();
         v.push(input);
@@ -557,11 +667,13 @@ impl AutomationRulesFindingFiltersBuilder {
         self
     }
     /// <p> Provides a URL that links to a page about the current finding in the finding product. </p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub fn set_source_url(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
         self.source_url = input;
         self
     }
     /// <p> Provides a URL that links to a page about the current finding in the finding product. </p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub fn get_source_url(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
         &self.source_url
     }
@@ -570,6 +682,7 @@ impl AutomationRulesFindingFiltersBuilder {
     /// To override the contents of this collection use [`set_product_name`](Self::set_product_name).
     ///
     /// <p> Provides the name of the product that generated the finding. For control-based findings, the product name is Security Hub. </p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub fn product_name(mut self, input: crate::types::StringFilter) -> Self {
         let mut v = self.product_name.unwrap_or_default();
         v.push(input);
@@ -577,11 +690,13 @@ impl AutomationRulesFindingFiltersBuilder {
         self
     }
     /// <p> Provides the name of the product that generated the finding. For control-based findings, the product name is Security Hub. </p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub fn set_product_name(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
         self.product_name = input;
         self
     }
     /// <p> Provides the name of the product that generated the finding. For control-based findings, the product name is Security Hub. </p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub fn get_product_name(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
         &self.product_name
     }
@@ -590,6 +705,7 @@ impl AutomationRulesFindingFiltersBuilder {
     /// To override the contents of this collection use [`set_company_name`](Self::set_company_name).
     ///
     /// <p> The name of the company for the product that generated the finding. For control-based findings, the company is Amazon Web Services. </p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub fn company_name(mut self, input: crate::types::StringFilter) -> Self {
         let mut v = self.company_name.unwrap_or_default();
         v.push(input);
@@ -597,11 +713,13 @@ impl AutomationRulesFindingFiltersBuilder {
         self
     }
     /// <p> The name of the company for the product that generated the finding. For control-based findings, the company is Amazon Web Services. </p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub fn set_company_name(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
         self.company_name = input;
         self
     }
     /// <p> The name of the company for the product that generated the finding. For control-based findings, the company is Amazon Web Services. </p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub fn get_company_name(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
         &self.company_name
     }
@@ -610,6 +728,7 @@ impl AutomationRulesFindingFiltersBuilder {
     /// To override the contents of this collection use [`set_severity_label`](Self::set_severity_label).
     ///
     /// <p> The severity value of the finding. </p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub fn severity_label(mut self, input: crate::types::StringFilter) -> Self {
         let mut v = self.severity_label.unwrap_or_default();
         v.push(input);
@@ -617,11 +736,13 @@ impl AutomationRulesFindingFiltersBuilder {
         self
     }
     /// <p> The severity value of the finding. </p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub fn set_severity_label(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
         self.severity_label = input;
         self
     }
     /// <p> The severity value of the finding. </p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub fn get_severity_label(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
         &self.severity_label
     }
@@ -630,6 +751,7 @@ impl AutomationRulesFindingFiltersBuilder {
     /// To override the contents of this collection use [`set_resource_type`](Self::set_resource_type).
     ///
     /// <p> The type of resource that the finding pertains to. </p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub fn resource_type(mut self, input: crate::types::StringFilter) -> Self {
         let mut v = self.resource_type.unwrap_or_default();
         v.push(input);
@@ -637,11 +759,13 @@ impl AutomationRulesFindingFiltersBuilder {
         self
     }
     /// <p> The type of resource that the finding pertains to. </p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
         self.resource_type = input;
         self
     }
     /// <p> The type of resource that the finding pertains to. </p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub fn get_resource_type(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
         &self.resource_type
     }
@@ -650,6 +774,7 @@ impl AutomationRulesFindingFiltersBuilder {
     /// To override the contents of this collection use [`set_resource_id`](Self::set_resource_id).
     ///
     /// <p> The identifier for the given resource type. For Amazon Web Services resources that are identified by Amazon Resource Names (ARNs), this is the ARN. For Amazon Web Services resources that lack ARNs, this is the identifier as defined by the Amazon Web Service that created the resource. For non-Amazon Web Services resources, this is a unique identifier that is associated with the resource. </p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 100 items. </p>
     pub fn resource_id(mut self, input: crate::types::StringFilter) -> Self {
         let mut v = self.resource_id.unwrap_or_default();
         v.push(input);
@@ -657,11 +782,13 @@ impl AutomationRulesFindingFiltersBuilder {
         self
     }
     /// <p> The identifier for the given resource type. For Amazon Web Services resources that are identified by Amazon Resource Names (ARNs), this is the ARN. For Amazon Web Services resources that lack ARNs, this is the identifier as defined by the Amazon Web Service that created the resource. For non-Amazon Web Services resources, this is a unique identifier that is associated with the resource. </p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 100 items. </p>
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
         self.resource_id = input;
         self
     }
     /// <p> The identifier for the given resource type. For Amazon Web Services resources that are identified by Amazon Resource Names (ARNs), this is the ARN. For Amazon Web Services resources that lack ARNs, this is the identifier as defined by the Amazon Web Service that created the resource. For non-Amazon Web Services resources, this is a unique identifier that is associated with the resource. </p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 100 items. </p>
     pub fn get_resource_id(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
         &self.resource_id
     }
@@ -670,6 +797,7 @@ impl AutomationRulesFindingFiltersBuilder {
     /// To override the contents of this collection use [`set_resource_partition`](Self::set_resource_partition).
     ///
     /// <p> The partition in which the resource that the finding pertains to is located. A partition is a group of Amazon Web Services Regions. Each Amazon Web Services account is scoped to one partition. </p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub fn resource_partition(mut self, input: crate::types::StringFilter) -> Self {
         let mut v = self.resource_partition.unwrap_or_default();
         v.push(input);
@@ -677,11 +805,13 @@ impl AutomationRulesFindingFiltersBuilder {
         self
     }
     /// <p> The partition in which the resource that the finding pertains to is located. A partition is a group of Amazon Web Services Regions. Each Amazon Web Services account is scoped to one partition. </p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub fn set_resource_partition(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
         self.resource_partition = input;
         self
     }
     /// <p> The partition in which the resource that the finding pertains to is located. A partition is a group of Amazon Web Services Regions. Each Amazon Web Services account is scoped to one partition. </p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub fn get_resource_partition(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
         &self.resource_partition
     }
@@ -690,6 +820,7 @@ impl AutomationRulesFindingFiltersBuilder {
     /// To override the contents of this collection use [`set_resource_region`](Self::set_resource_region).
     ///
     /// <p> The Amazon Web Services Region where the resource that a finding pertains to is located. </p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub fn resource_region(mut self, input: crate::types::StringFilter) -> Self {
         let mut v = self.resource_region.unwrap_or_default();
         v.push(input);
@@ -697,11 +828,13 @@ impl AutomationRulesFindingFiltersBuilder {
         self
     }
     /// <p> The Amazon Web Services Region where the resource that a finding pertains to is located. </p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub fn set_resource_region(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
         self.resource_region = input;
         self
     }
     /// <p> The Amazon Web Services Region where the resource that a finding pertains to is located. </p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub fn get_resource_region(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
         &self.resource_region
     }
@@ -710,6 +843,7 @@ impl AutomationRulesFindingFiltersBuilder {
     /// To override the contents of this collection use [`set_resource_tags`](Self::set_resource_tags).
     ///
     /// <p> A list of Amazon Web Services tags associated with a resource at the time the finding was processed. </p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub fn resource_tags(mut self, input: crate::types::MapFilter) -> Self {
         let mut v = self.resource_tags.unwrap_or_default();
         v.push(input);
@@ -717,11 +851,13 @@ impl AutomationRulesFindingFiltersBuilder {
         self
     }
     /// <p> A list of Amazon Web Services tags associated with a resource at the time the finding was processed. </p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub fn set_resource_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MapFilter>>) -> Self {
         self.resource_tags = input;
         self
     }
     /// <p> A list of Amazon Web Services tags associated with a resource at the time the finding was processed. </p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub fn get_resource_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MapFilter>> {
         &self.resource_tags
     }
@@ -730,6 +866,7 @@ impl AutomationRulesFindingFiltersBuilder {
     /// To override the contents of this collection use [`set_resource_details_other`](Self::set_resource_details_other).
     ///
     /// <p> Custom fields and values about the resource that a finding pertains to. </p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub fn resource_details_other(mut self, input: crate::types::MapFilter) -> Self {
         let mut v = self.resource_details_other.unwrap_or_default();
         v.push(input);
@@ -737,11 +874,13 @@ impl AutomationRulesFindingFiltersBuilder {
         self
     }
     /// <p> Custom fields and values about the resource that a finding pertains to. </p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub fn set_resource_details_other(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MapFilter>>) -> Self {
         self.resource_details_other = input;
         self
     }
     /// <p> Custom fields and values about the resource that a finding pertains to. </p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub fn get_resource_details_other(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MapFilter>> {
         &self.resource_details_other
     }
@@ -750,6 +889,7 @@ impl AutomationRulesFindingFiltersBuilder {
     /// To override the contents of this collection use [`set_compliance_status`](Self::set_compliance_status).
     ///
     /// <p> The result of a security check. This field is only used for findings generated from controls. </p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub fn compliance_status(mut self, input: crate::types::StringFilter) -> Self {
         let mut v = self.compliance_status.unwrap_or_default();
         v.push(input);
@@ -757,11 +897,13 @@ impl AutomationRulesFindingFiltersBuilder {
         self
     }
     /// <p> The result of a security check. This field is only used for findings generated from controls. </p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub fn set_compliance_status(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
         self.compliance_status = input;
         self
     }
     /// <p> The result of a security check. This field is only used for findings generated from controls. </p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub fn get_compliance_status(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
         &self.compliance_status
     }
@@ -770,6 +912,7 @@ impl AutomationRulesFindingFiltersBuilder {
     /// To override the contents of this collection use [`set_compliance_security_control_id`](Self::set_compliance_security_control_id).
     ///
     /// <p> The security control ID for which a finding was generated. Security control IDs are the same across standards.</p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub fn compliance_security_control_id(mut self, input: crate::types::StringFilter) -> Self {
         let mut v = self.compliance_security_control_id.unwrap_or_default();
         v.push(input);
@@ -777,11 +920,13 @@ impl AutomationRulesFindingFiltersBuilder {
         self
     }
     /// <p> The security control ID for which a finding was generated. Security control IDs are the same across standards.</p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub fn set_compliance_security_control_id(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
         self.compliance_security_control_id = input;
         self
     }
     /// <p> The security control ID for which a finding was generated. Security control IDs are the same across standards.</p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub fn get_compliance_security_control_id(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
         &self.compliance_security_control_id
     }
@@ -790,6 +935,7 @@ impl AutomationRulesFindingFiltersBuilder {
     /// To override the contents of this collection use [`set_compliance_associated_standards_id`](Self::set_compliance_associated_standards_id).
     ///
     /// <p>The unique identifier of a standard in which a control is enabled. This field consists of the resource portion of the Amazon Resource Name (ARN) returned for a standard in the <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DescribeStandards.html">DescribeStandards</a> API response.</p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub fn compliance_associated_standards_id(mut self, input: crate::types::StringFilter) -> Self {
         let mut v = self.compliance_associated_standards_id.unwrap_or_default();
         v.push(input);
@@ -797,11 +943,13 @@ impl AutomationRulesFindingFiltersBuilder {
         self
     }
     /// <p>The unique identifier of a standard in which a control is enabled. This field consists of the resource portion of the Amazon Resource Name (ARN) returned for a standard in the <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DescribeStandards.html">DescribeStandards</a> API response.</p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub fn set_compliance_associated_standards_id(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
         self.compliance_associated_standards_id = input;
         self
     }
     /// <p>The unique identifier of a standard in which a control is enabled. This field consists of the resource portion of the Amazon Resource Name (ARN) returned for a standard in the <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DescribeStandards.html">DescribeStandards</a> API response.</p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub fn get_compliance_associated_standards_id(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
         &self.compliance_associated_standards_id
     }
@@ -810,6 +958,7 @@ impl AutomationRulesFindingFiltersBuilder {
     /// To override the contents of this collection use [`set_verification_state`](Self::set_verification_state).
     ///
     /// <p> Provides the veracity of a finding. </p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub fn verification_state(mut self, input: crate::types::StringFilter) -> Self {
         let mut v = self.verification_state.unwrap_or_default();
         v.push(input);
@@ -817,11 +966,13 @@ impl AutomationRulesFindingFiltersBuilder {
         self
     }
     /// <p> Provides the veracity of a finding. </p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub fn set_verification_state(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
         self.verification_state = input;
         self
     }
     /// <p> Provides the veracity of a finding. </p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub fn get_verification_state(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
         &self.verification_state
     }
@@ -830,6 +981,7 @@ impl AutomationRulesFindingFiltersBuilder {
     /// To override the contents of this collection use [`set_workflow_status`](Self::set_workflow_status).
     ///
     /// <p> Provides information about the status of the investigation into a finding. </p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub fn workflow_status(mut self, input: crate::types::StringFilter) -> Self {
         let mut v = self.workflow_status.unwrap_or_default();
         v.push(input);
@@ -837,11 +989,13 @@ impl AutomationRulesFindingFiltersBuilder {
         self
     }
     /// <p> Provides information about the status of the investigation into a finding. </p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub fn set_workflow_status(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
         self.workflow_status = input;
         self
     }
     /// <p> Provides information about the status of the investigation into a finding. </p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub fn get_workflow_status(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
         &self.workflow_status
     }
@@ -850,6 +1004,7 @@ impl AutomationRulesFindingFiltersBuilder {
     /// To override the contents of this collection use [`set_record_state`](Self::set_record_state).
     ///
     /// <p> Provides the current state of a finding. </p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub fn record_state(mut self, input: crate::types::StringFilter) -> Self {
         let mut v = self.record_state.unwrap_or_default();
         v.push(input);
@@ -857,11 +1012,13 @@ impl AutomationRulesFindingFiltersBuilder {
         self
     }
     /// <p> Provides the current state of a finding. </p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub fn set_record_state(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
         self.record_state = input;
         self
     }
     /// <p> Provides the current state of a finding. </p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub fn get_record_state(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
         &self.record_state
     }
@@ -870,6 +1027,7 @@ impl AutomationRulesFindingFiltersBuilder {
     /// To override the contents of this collection use [`set_related_findings_product_arn`](Self::set_related_findings_product_arn).
     ///
     /// <p> The ARN for the product that generated a related finding. </p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub fn related_findings_product_arn(mut self, input: crate::types::StringFilter) -> Self {
         let mut v = self.related_findings_product_arn.unwrap_or_default();
         v.push(input);
@@ -877,11 +1035,13 @@ impl AutomationRulesFindingFiltersBuilder {
         self
     }
     /// <p> The ARN for the product that generated a related finding. </p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub fn set_related_findings_product_arn(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
         self.related_findings_product_arn = input;
         self
     }
     /// <p> The ARN for the product that generated a related finding. </p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub fn get_related_findings_product_arn(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
         &self.related_findings_product_arn
     }
@@ -890,6 +1050,7 @@ impl AutomationRulesFindingFiltersBuilder {
     /// To override the contents of this collection use [`set_related_findings_id`](Self::set_related_findings_id).
     ///
     /// <p> The product-generated identifier for a related finding. </p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub fn related_findings_id(mut self, input: crate::types::StringFilter) -> Self {
         let mut v = self.related_findings_id.unwrap_or_default();
         v.push(input);
@@ -897,11 +1058,13 @@ impl AutomationRulesFindingFiltersBuilder {
         self
     }
     /// <p> The product-generated identifier for a related finding. </p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub fn set_related_findings_id(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
         self.related_findings_id = input;
         self
     }
     /// <p> The product-generated identifier for a related finding. </p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub fn get_related_findings_id(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
         &self.related_findings_id
     }
@@ -910,6 +1073,7 @@ impl AutomationRulesFindingFiltersBuilder {
     /// To override the contents of this collection use [`set_note_text`](Self::set_note_text).
     ///
     /// <p> The text of a user-defined note that's added to a finding. </p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub fn note_text(mut self, input: crate::types::StringFilter) -> Self {
         let mut v = self.note_text.unwrap_or_default();
         v.push(input);
@@ -917,11 +1081,13 @@ impl AutomationRulesFindingFiltersBuilder {
         self
     }
     /// <p> The text of a user-defined note that's added to a finding. </p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub fn set_note_text(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
         self.note_text = input;
         self
     }
     /// <p> The text of a user-defined note that's added to a finding. </p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub fn get_note_text(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
         &self.note_text
     }
@@ -930,6 +1096,7 @@ impl AutomationRulesFindingFiltersBuilder {
     /// To override the contents of this collection use [`set_note_updated_at`](Self::set_note_updated_at).
     ///
     /// <p> The timestamp of when the note was updated. Uses the date-time format specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>. </p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub fn note_updated_at(mut self, input: crate::types::DateFilter) -> Self {
         let mut v = self.note_updated_at.unwrap_or_default();
         v.push(input);
@@ -937,11 +1104,13 @@ impl AutomationRulesFindingFiltersBuilder {
         self
     }
     /// <p> The timestamp of when the note was updated. Uses the date-time format specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>. </p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub fn set_note_updated_at(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DateFilter>>) -> Self {
         self.note_updated_at = input;
         self
     }
     /// <p> The timestamp of when the note was updated. Uses the date-time format specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>. </p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub fn get_note_updated_at(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DateFilter>> {
         &self.note_updated_at
     }
@@ -950,6 +1119,7 @@ impl AutomationRulesFindingFiltersBuilder {
     /// To override the contents of this collection use [`set_note_updated_by`](Self::set_note_updated_by).
     ///
     /// <p> The principal that created a note. </p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub fn note_updated_by(mut self, input: crate::types::StringFilter) -> Self {
         let mut v = self.note_updated_by.unwrap_or_default();
         v.push(input);
@@ -957,11 +1127,13 @@ impl AutomationRulesFindingFiltersBuilder {
         self
     }
     /// <p> The principal that created a note. </p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub fn set_note_updated_by(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
         self.note_updated_by = input;
         self
     }
     /// <p> The principal that created a note. </p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub fn get_note_updated_by(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
         &self.note_updated_by
     }
@@ -970,6 +1142,7 @@ impl AutomationRulesFindingFiltersBuilder {
     /// To override the contents of this collection use [`set_user_defined_fields`](Self::set_user_defined_fields).
     ///
     /// <p> A list of user-defined name and value string pairs added to a finding. </p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub fn user_defined_fields(mut self, input: crate::types::MapFilter) -> Self {
         let mut v = self.user_defined_fields.unwrap_or_default();
         v.push(input);
@@ -977,11 +1150,13 @@ impl AutomationRulesFindingFiltersBuilder {
         self
     }
     /// <p> A list of user-defined name and value string pairs added to a finding. </p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub fn set_user_defined_fields(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MapFilter>>) -> Self {
         self.user_defined_fields = input;
         self
     }
     /// <p> A list of user-defined name and value string pairs added to a finding. </p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub fn get_user_defined_fields(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MapFilter>> {
         &self.user_defined_fields
     }

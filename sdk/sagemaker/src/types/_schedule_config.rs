@@ -5,9 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ScheduleConfig {
     /// <p>A cron expression that describes details about the monitoring schedule.</p>
-    /// <p>Currently the only supported cron expressions are:</p>
+    /// <p>The supported cron expressions are:</p>
     /// <ul>
-    /// <li> <p>If you want to set the job to start every hour, please use the following:</p> <p> <code>Hourly: cron(0 * ? * * *)</code> </p> </li>
+    /// <li> <p>If you want to set the job to start every hour, use the following:</p> <p> <code>Hourly: cron(0 * ? * * *)</code> </p> </li>
     /// <li> <p>If you want to start the job daily:</p> <p> <code>cron(0 [00-23] ? * * *)</code> </p> </li>
     /// </ul>
     /// <p>For example, the following are valid cron expressions:</p>
@@ -27,13 +27,22 @@ pub struct ScheduleConfig {
     /// <li> <p>We recommend that if you would like a daily schedule, you do not provide this parameter. Amazon SageMaker will pick a time for running every day.</p> </li>
     /// </ul>
     /// </note>
+    /// <p>You can also specify the keyword <code>NOW</code> to run the monitoring job immediately, one time, without recurring.</p>
     pub schedule_expression: ::std::option::Option<::std::string::String>,
+    /// <p>Sets the start time for a monitoring job window. Express this time as an offset to the times that you schedule your monitoring jobs to run. You schedule monitoring jobs with the <code>ScheduleExpression</code> parameter. Specify this offset in ISO 8601 duration format. For example, if you want to monitor the five hours of data in your dataset that precede the start of each monitoring job, you would specify: <code>"-PT5H"</code>.</p>
+    /// <p>The start time that you specify must not precede the end time that you specify by more than 24 hours. You specify the end time with the <code>DataAnalysisEndTime</code> parameter.</p>
+    /// <p>If you set <code>ScheduleExpression</code> to <code>NOW</code>, this parameter is required.</p>
+    pub data_analysis_start_time: ::std::option::Option<::std::string::String>,
+    /// <p>Sets the end time for a monitoring job window. Express this time as an offset to the times that you schedule your monitoring jobs to run. You schedule monitoring jobs with the <code>ScheduleExpression</code> parameter. Specify this offset in ISO 8601 duration format. For example, if you want to end the window one hour before the start of each monitoring job, you would specify: <code>"-PT1H"</code>.</p>
+    /// <p>The end time that you specify must not follow the start time that you specify by more than 24 hours. You specify the start time with the <code>DataAnalysisStartTime</code> parameter.</p>
+    /// <p>If you set <code>ScheduleExpression</code> to <code>NOW</code>, this parameter is required.</p>
+    pub data_analysis_end_time: ::std::option::Option<::std::string::String>,
 }
 impl ScheduleConfig {
     /// <p>A cron expression that describes details about the monitoring schedule.</p>
-    /// <p>Currently the only supported cron expressions are:</p>
+    /// <p>The supported cron expressions are:</p>
     /// <ul>
-    /// <li> <p>If you want to set the job to start every hour, please use the following:</p> <p> <code>Hourly: cron(0 * ? * * *)</code> </p> </li>
+    /// <li> <p>If you want to set the job to start every hour, use the following:</p> <p> <code>Hourly: cron(0 * ? * * *)</code> </p> </li>
     /// <li> <p>If you want to start the job daily:</p> <p> <code>cron(0 [00-23] ? * * *)</code> </p> </li>
     /// </ul>
     /// <p>For example, the following are valid cron expressions:</p>
@@ -53,8 +62,21 @@ impl ScheduleConfig {
     /// <li> <p>We recommend that if you would like a daily schedule, you do not provide this parameter. Amazon SageMaker will pick a time for running every day.</p> </li>
     /// </ul>
     /// </note>
+    /// <p>You can also specify the keyword <code>NOW</code> to run the monitoring job immediately, one time, without recurring.</p>
     pub fn schedule_expression(&self) -> ::std::option::Option<&str> {
         self.schedule_expression.as_deref()
+    }
+    /// <p>Sets the start time for a monitoring job window. Express this time as an offset to the times that you schedule your monitoring jobs to run. You schedule monitoring jobs with the <code>ScheduleExpression</code> parameter. Specify this offset in ISO 8601 duration format. For example, if you want to monitor the five hours of data in your dataset that precede the start of each monitoring job, you would specify: <code>"-PT5H"</code>.</p>
+    /// <p>The start time that you specify must not precede the end time that you specify by more than 24 hours. You specify the end time with the <code>DataAnalysisEndTime</code> parameter.</p>
+    /// <p>If you set <code>ScheduleExpression</code> to <code>NOW</code>, this parameter is required.</p>
+    pub fn data_analysis_start_time(&self) -> ::std::option::Option<&str> {
+        self.data_analysis_start_time.as_deref()
+    }
+    /// <p>Sets the end time for a monitoring job window. Express this time as an offset to the times that you schedule your monitoring jobs to run. You schedule monitoring jobs with the <code>ScheduleExpression</code> parameter. Specify this offset in ISO 8601 duration format. For example, if you want to end the window one hour before the start of each monitoring job, you would specify: <code>"-PT1H"</code>.</p>
+    /// <p>The end time that you specify must not follow the start time that you specify by more than 24 hours. You specify the start time with the <code>DataAnalysisStartTime</code> parameter.</p>
+    /// <p>If you set <code>ScheduleExpression</code> to <code>NOW</code>, this parameter is required.</p>
+    pub fn data_analysis_end_time(&self) -> ::std::option::Option<&str> {
+        self.data_analysis_end_time.as_deref()
     }
 }
 impl ScheduleConfig {
@@ -69,12 +91,14 @@ impl ScheduleConfig {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ScheduleConfigBuilder {
     pub(crate) schedule_expression: ::std::option::Option<::std::string::String>,
+    pub(crate) data_analysis_start_time: ::std::option::Option<::std::string::String>,
+    pub(crate) data_analysis_end_time: ::std::option::Option<::std::string::String>,
 }
 impl ScheduleConfigBuilder {
     /// <p>A cron expression that describes details about the monitoring schedule.</p>
-    /// <p>Currently the only supported cron expressions are:</p>
+    /// <p>The supported cron expressions are:</p>
     /// <ul>
-    /// <li> <p>If you want to set the job to start every hour, please use the following:</p> <p> <code>Hourly: cron(0 * ? * * *)</code> </p> </li>
+    /// <li> <p>If you want to set the job to start every hour, use the following:</p> <p> <code>Hourly: cron(0 * ? * * *)</code> </p> </li>
     /// <li> <p>If you want to start the job daily:</p> <p> <code>cron(0 [00-23] ? * * *)</code> </p> </li>
     /// </ul>
     /// <p>For example, the following are valid cron expressions:</p>
@@ -94,14 +118,15 @@ impl ScheduleConfigBuilder {
     /// <li> <p>We recommend that if you would like a daily schedule, you do not provide this parameter. Amazon SageMaker will pick a time for running every day.</p> </li>
     /// </ul>
     /// </note>
+    /// <p>You can also specify the keyword <code>NOW</code> to run the monitoring job immediately, one time, without recurring.</p>
     pub fn schedule_expression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schedule_expression = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A cron expression that describes details about the monitoring schedule.</p>
-    /// <p>Currently the only supported cron expressions are:</p>
+    /// <p>The supported cron expressions are:</p>
     /// <ul>
-    /// <li> <p>If you want to set the job to start every hour, please use the following:</p> <p> <code>Hourly: cron(0 * ? * * *)</code> </p> </li>
+    /// <li> <p>If you want to set the job to start every hour, use the following:</p> <p> <code>Hourly: cron(0 * ? * * *)</code> </p> </li>
     /// <li> <p>If you want to start the job daily:</p> <p> <code>cron(0 [00-23] ? * * *)</code> </p> </li>
     /// </ul>
     /// <p>For example, the following are valid cron expressions:</p>
@@ -121,14 +146,15 @@ impl ScheduleConfigBuilder {
     /// <li> <p>We recommend that if you would like a daily schedule, you do not provide this parameter. Amazon SageMaker will pick a time for running every day.</p> </li>
     /// </ul>
     /// </note>
+    /// <p>You can also specify the keyword <code>NOW</code> to run the monitoring job immediately, one time, without recurring.</p>
     pub fn set_schedule_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.schedule_expression = input;
         self
     }
     /// <p>A cron expression that describes details about the monitoring schedule.</p>
-    /// <p>Currently the only supported cron expressions are:</p>
+    /// <p>The supported cron expressions are:</p>
     /// <ul>
-    /// <li> <p>If you want to set the job to start every hour, please use the following:</p> <p> <code>Hourly: cron(0 * ? * * *)</code> </p> </li>
+    /// <li> <p>If you want to set the job to start every hour, use the following:</p> <p> <code>Hourly: cron(0 * ? * * *)</code> </p> </li>
     /// <li> <p>If you want to start the job daily:</p> <p> <code>cron(0 [00-23] ? * * *)</code> </p> </li>
     /// </ul>
     /// <p>For example, the following are valid cron expressions:</p>
@@ -148,13 +174,56 @@ impl ScheduleConfigBuilder {
     /// <li> <p>We recommend that if you would like a daily schedule, you do not provide this parameter. Amazon SageMaker will pick a time for running every day.</p> </li>
     /// </ul>
     /// </note>
+    /// <p>You can also specify the keyword <code>NOW</code> to run the monitoring job immediately, one time, without recurring.</p>
     pub fn get_schedule_expression(&self) -> &::std::option::Option<::std::string::String> {
         &self.schedule_expression
+    }
+    /// <p>Sets the start time for a monitoring job window. Express this time as an offset to the times that you schedule your monitoring jobs to run. You schedule monitoring jobs with the <code>ScheduleExpression</code> parameter. Specify this offset in ISO 8601 duration format. For example, if you want to monitor the five hours of data in your dataset that precede the start of each monitoring job, you would specify: <code>"-PT5H"</code>.</p>
+    /// <p>The start time that you specify must not precede the end time that you specify by more than 24 hours. You specify the end time with the <code>DataAnalysisEndTime</code> parameter.</p>
+    /// <p>If you set <code>ScheduleExpression</code> to <code>NOW</code>, this parameter is required.</p>
+    pub fn data_analysis_start_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.data_analysis_start_time = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Sets the start time for a monitoring job window. Express this time as an offset to the times that you schedule your monitoring jobs to run. You schedule monitoring jobs with the <code>ScheduleExpression</code> parameter. Specify this offset in ISO 8601 duration format. For example, if you want to monitor the five hours of data in your dataset that precede the start of each monitoring job, you would specify: <code>"-PT5H"</code>.</p>
+    /// <p>The start time that you specify must not precede the end time that you specify by more than 24 hours. You specify the end time with the <code>DataAnalysisEndTime</code> parameter.</p>
+    /// <p>If you set <code>ScheduleExpression</code> to <code>NOW</code>, this parameter is required.</p>
+    pub fn set_data_analysis_start_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.data_analysis_start_time = input;
+        self
+    }
+    /// <p>Sets the start time for a monitoring job window. Express this time as an offset to the times that you schedule your monitoring jobs to run. You schedule monitoring jobs with the <code>ScheduleExpression</code> parameter. Specify this offset in ISO 8601 duration format. For example, if you want to monitor the five hours of data in your dataset that precede the start of each monitoring job, you would specify: <code>"-PT5H"</code>.</p>
+    /// <p>The start time that you specify must not precede the end time that you specify by more than 24 hours. You specify the end time with the <code>DataAnalysisEndTime</code> parameter.</p>
+    /// <p>If you set <code>ScheduleExpression</code> to <code>NOW</code>, this parameter is required.</p>
+    pub fn get_data_analysis_start_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_analysis_start_time
+    }
+    /// <p>Sets the end time for a monitoring job window. Express this time as an offset to the times that you schedule your monitoring jobs to run. You schedule monitoring jobs with the <code>ScheduleExpression</code> parameter. Specify this offset in ISO 8601 duration format. For example, if you want to end the window one hour before the start of each monitoring job, you would specify: <code>"-PT1H"</code>.</p>
+    /// <p>The end time that you specify must not follow the start time that you specify by more than 24 hours. You specify the start time with the <code>DataAnalysisStartTime</code> parameter.</p>
+    /// <p>If you set <code>ScheduleExpression</code> to <code>NOW</code>, this parameter is required.</p>
+    pub fn data_analysis_end_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.data_analysis_end_time = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Sets the end time for a monitoring job window. Express this time as an offset to the times that you schedule your monitoring jobs to run. You schedule monitoring jobs with the <code>ScheduleExpression</code> parameter. Specify this offset in ISO 8601 duration format. For example, if you want to end the window one hour before the start of each monitoring job, you would specify: <code>"-PT1H"</code>.</p>
+    /// <p>The end time that you specify must not follow the start time that you specify by more than 24 hours. You specify the start time with the <code>DataAnalysisStartTime</code> parameter.</p>
+    /// <p>If you set <code>ScheduleExpression</code> to <code>NOW</code>, this parameter is required.</p>
+    pub fn set_data_analysis_end_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.data_analysis_end_time = input;
+        self
+    }
+    /// <p>Sets the end time for a monitoring job window. Express this time as an offset to the times that you schedule your monitoring jobs to run. You schedule monitoring jobs with the <code>ScheduleExpression</code> parameter. Specify this offset in ISO 8601 duration format. For example, if you want to end the window one hour before the start of each monitoring job, you would specify: <code>"-PT1H"</code>.</p>
+    /// <p>The end time that you specify must not follow the start time that you specify by more than 24 hours. You specify the start time with the <code>DataAnalysisStartTime</code> parameter.</p>
+    /// <p>If you set <code>ScheduleExpression</code> to <code>NOW</code>, this parameter is required.</p>
+    pub fn get_data_analysis_end_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_analysis_end_time
     }
     /// Consumes the builder and constructs a [`ScheduleConfig`](crate::types::ScheduleConfig).
     pub fn build(self) -> crate::types::ScheduleConfig {
         crate::types::ScheduleConfig {
             schedule_expression: self.schedule_expression,
+            data_analysis_start_time: self.data_analysis_start_time,
+            data_analysis_end_time: self.data_analysis_end_time,
         }
     }
 }

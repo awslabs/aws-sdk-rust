@@ -13,24 +13,38 @@
 /// # let nodegroupissuecode = unimplemented!();
 /// match nodegroupissuecode {
 ///     NodegroupIssueCode::AccessDenied => { /* ... */ },
+///     NodegroupIssueCode::AmiIdNotFound => { /* ... */ },
 ///     NodegroupIssueCode::AsgInstanceLaunchFailures => { /* ... */ },
+///     NodegroupIssueCode::AutoScalingGroupInstanceRefreshActive => { /* ... */ },
 ///     NodegroupIssueCode::AutoScalingGroupInvalidConfiguration => { /* ... */ },
 ///     NodegroupIssueCode::AutoScalingGroupNotFound => { /* ... */ },
+///     NodegroupIssueCode::AutoScalingGroupOptInRequired => { /* ... */ },
+///     NodegroupIssueCode::AutoScalingGroupRateLimitExceeded => { /* ... */ },
 ///     NodegroupIssueCode::ClusterUnreachable => { /* ... */ },
+///     NodegroupIssueCode::Ec2LaunchTemplateDeletionFailure => { /* ... */ },
+///     NodegroupIssueCode::Ec2LaunchTemplateInvalidConfiguration => { /* ... */ },
+///     NodegroupIssueCode::Ec2LaunchTemplateMaxLimitExceeded => { /* ... */ },
 ///     NodegroupIssueCode::Ec2LaunchTemplateNotFound => { /* ... */ },
 ///     NodegroupIssueCode::Ec2LaunchTemplateVersionMismatch => { /* ... */ },
 ///     NodegroupIssueCode::Ec2SecurityGroupDeletionFailure => { /* ... */ },
 ///     NodegroupIssueCode::Ec2SecurityGroupNotFound => { /* ... */ },
 ///     NodegroupIssueCode::Ec2SubnetInvalidConfiguration => { /* ... */ },
+///     NodegroupIssueCode::Ec2SubnetListTooLong => { /* ... */ },
 ///     NodegroupIssueCode::Ec2SubnetMissingIpv6Assignment => { /* ... */ },
 ///     NodegroupIssueCode::Ec2SubnetNotFound => { /* ... */ },
 ///     NodegroupIssueCode::IamInstanceProfileNotFound => { /* ... */ },
 ///     NodegroupIssueCode::IamLimitExceeded => { /* ... */ },
 ///     NodegroupIssueCode::IamNodeRoleNotFound => { /* ... */ },
+///     NodegroupIssueCode::IamThrottling => { /* ... */ },
 ///     NodegroupIssueCode::InstanceLimitExceeded => { /* ... */ },
 ///     NodegroupIssueCode::InsufficientFreeAddresses => { /* ... */ },
 ///     NodegroupIssueCode::InternalFailure => { /* ... */ },
+///     NodegroupIssueCode::LimitExceeded => { /* ... */ },
 ///     NodegroupIssueCode::NodeCreationFailure => { /* ... */ },
+///     NodegroupIssueCode::NodeTerminationFailure => { /* ... */ },
+///     NodegroupIssueCode::PodEvictionFailure => { /* ... */ },
+///     NodegroupIssueCode::SourceEc2LaunchTemplateNotFound => { /* ... */ },
+///     NodegroupIssueCode::UnknownValue => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -52,7 +66,7 @@
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
-#[allow(missing_docs)] // documentation missing in model
+/// _Note: `NodegroupIssueCode::Unknown` has been renamed to `::UnknownValue`._
 #[non_exhaustive]
 #[derive(
     ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
@@ -61,13 +75,27 @@ pub enum NodegroupIssueCode {
     #[allow(missing_docs)] // documentation missing in model
     AccessDenied,
     #[allow(missing_docs)] // documentation missing in model
+    AmiIdNotFound,
+    #[allow(missing_docs)] // documentation missing in model
     AsgInstanceLaunchFailures,
+    #[allow(missing_docs)] // documentation missing in model
+    AutoScalingGroupInstanceRefreshActive,
     #[allow(missing_docs)] // documentation missing in model
     AutoScalingGroupInvalidConfiguration,
     #[allow(missing_docs)] // documentation missing in model
     AutoScalingGroupNotFound,
     #[allow(missing_docs)] // documentation missing in model
+    AutoScalingGroupOptInRequired,
+    #[allow(missing_docs)] // documentation missing in model
+    AutoScalingGroupRateLimitExceeded,
+    #[allow(missing_docs)] // documentation missing in model
     ClusterUnreachable,
+    #[allow(missing_docs)] // documentation missing in model
+    Ec2LaunchTemplateDeletionFailure,
+    #[allow(missing_docs)] // documentation missing in model
+    Ec2LaunchTemplateInvalidConfiguration,
+    #[allow(missing_docs)] // documentation missing in model
+    Ec2LaunchTemplateMaxLimitExceeded,
     #[allow(missing_docs)] // documentation missing in model
     Ec2LaunchTemplateNotFound,
     #[allow(missing_docs)] // documentation missing in model
@@ -79,6 +107,8 @@ pub enum NodegroupIssueCode {
     #[allow(missing_docs)] // documentation missing in model
     Ec2SubnetInvalidConfiguration,
     #[allow(missing_docs)] // documentation missing in model
+    Ec2SubnetListTooLong,
+    #[allow(missing_docs)] // documentation missing in model
     Ec2SubnetMissingIpv6Assignment,
     #[allow(missing_docs)] // documentation missing in model
     Ec2SubnetNotFound,
@@ -89,13 +119,25 @@ pub enum NodegroupIssueCode {
     #[allow(missing_docs)] // documentation missing in model
     IamNodeRoleNotFound,
     #[allow(missing_docs)] // documentation missing in model
+    IamThrottling,
+    #[allow(missing_docs)] // documentation missing in model
     InstanceLimitExceeded,
     #[allow(missing_docs)] // documentation missing in model
     InsufficientFreeAddresses,
     #[allow(missing_docs)] // documentation missing in model
     InternalFailure,
     #[allow(missing_docs)] // documentation missing in model
+    LimitExceeded,
+    #[allow(missing_docs)] // documentation missing in model
     NodeCreationFailure,
+    #[allow(missing_docs)] // documentation missing in model
+    NodeTerminationFailure,
+    #[allow(missing_docs)] // documentation missing in model
+    PodEvictionFailure,
+    #[allow(missing_docs)] // documentation missing in model
+    SourceEc2LaunchTemplateNotFound,
+    /// _Note: `::Unknown` has been renamed to `::UnknownValue`._
+    UnknownValue,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
@@ -103,24 +145,38 @@ impl ::std::convert::From<&str> for NodegroupIssueCode {
     fn from(s: &str) -> Self {
         match s {
             "AccessDenied" => NodegroupIssueCode::AccessDenied,
+            "AmiIdNotFound" => NodegroupIssueCode::AmiIdNotFound,
             "AsgInstanceLaunchFailures" => NodegroupIssueCode::AsgInstanceLaunchFailures,
+            "AutoScalingGroupInstanceRefreshActive" => NodegroupIssueCode::AutoScalingGroupInstanceRefreshActive,
             "AutoScalingGroupInvalidConfiguration" => NodegroupIssueCode::AutoScalingGroupInvalidConfiguration,
             "AutoScalingGroupNotFound" => NodegroupIssueCode::AutoScalingGroupNotFound,
+            "AutoScalingGroupOptInRequired" => NodegroupIssueCode::AutoScalingGroupOptInRequired,
+            "AutoScalingGroupRateLimitExceeded" => NodegroupIssueCode::AutoScalingGroupRateLimitExceeded,
             "ClusterUnreachable" => NodegroupIssueCode::ClusterUnreachable,
+            "Ec2LaunchTemplateDeletionFailure" => NodegroupIssueCode::Ec2LaunchTemplateDeletionFailure,
+            "Ec2LaunchTemplateInvalidConfiguration" => NodegroupIssueCode::Ec2LaunchTemplateInvalidConfiguration,
+            "Ec2LaunchTemplateMaxLimitExceeded" => NodegroupIssueCode::Ec2LaunchTemplateMaxLimitExceeded,
             "Ec2LaunchTemplateNotFound" => NodegroupIssueCode::Ec2LaunchTemplateNotFound,
             "Ec2LaunchTemplateVersionMismatch" => NodegroupIssueCode::Ec2LaunchTemplateVersionMismatch,
             "Ec2SecurityGroupDeletionFailure" => NodegroupIssueCode::Ec2SecurityGroupDeletionFailure,
             "Ec2SecurityGroupNotFound" => NodegroupIssueCode::Ec2SecurityGroupNotFound,
             "Ec2SubnetInvalidConfiguration" => NodegroupIssueCode::Ec2SubnetInvalidConfiguration,
+            "Ec2SubnetListTooLong" => NodegroupIssueCode::Ec2SubnetListTooLong,
             "Ec2SubnetMissingIpv6Assignment" => NodegroupIssueCode::Ec2SubnetMissingIpv6Assignment,
             "Ec2SubnetNotFound" => NodegroupIssueCode::Ec2SubnetNotFound,
             "IamInstanceProfileNotFound" => NodegroupIssueCode::IamInstanceProfileNotFound,
             "IamLimitExceeded" => NodegroupIssueCode::IamLimitExceeded,
             "IamNodeRoleNotFound" => NodegroupIssueCode::IamNodeRoleNotFound,
+            "IamThrottling" => NodegroupIssueCode::IamThrottling,
             "InstanceLimitExceeded" => NodegroupIssueCode::InstanceLimitExceeded,
             "InsufficientFreeAddresses" => NodegroupIssueCode::InsufficientFreeAddresses,
             "InternalFailure" => NodegroupIssueCode::InternalFailure,
+            "LimitExceeded" => NodegroupIssueCode::LimitExceeded,
             "NodeCreationFailure" => NodegroupIssueCode::NodeCreationFailure,
+            "NodeTerminationFailure" => NodegroupIssueCode::NodeTerminationFailure,
+            "PodEvictionFailure" => NodegroupIssueCode::PodEvictionFailure,
+            "SourceEc2LaunchTemplateNotFound" => NodegroupIssueCode::SourceEc2LaunchTemplateNotFound,
+            "Unknown" => NodegroupIssueCode::UnknownValue,
             other => NodegroupIssueCode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -137,24 +193,38 @@ impl NodegroupIssueCode {
     pub fn as_str(&self) -> &str {
         match self {
             NodegroupIssueCode::AccessDenied => "AccessDenied",
+            NodegroupIssueCode::AmiIdNotFound => "AmiIdNotFound",
             NodegroupIssueCode::AsgInstanceLaunchFailures => "AsgInstanceLaunchFailures",
+            NodegroupIssueCode::AutoScalingGroupInstanceRefreshActive => "AutoScalingGroupInstanceRefreshActive",
             NodegroupIssueCode::AutoScalingGroupInvalidConfiguration => "AutoScalingGroupInvalidConfiguration",
             NodegroupIssueCode::AutoScalingGroupNotFound => "AutoScalingGroupNotFound",
+            NodegroupIssueCode::AutoScalingGroupOptInRequired => "AutoScalingGroupOptInRequired",
+            NodegroupIssueCode::AutoScalingGroupRateLimitExceeded => "AutoScalingGroupRateLimitExceeded",
             NodegroupIssueCode::ClusterUnreachable => "ClusterUnreachable",
+            NodegroupIssueCode::Ec2LaunchTemplateDeletionFailure => "Ec2LaunchTemplateDeletionFailure",
+            NodegroupIssueCode::Ec2LaunchTemplateInvalidConfiguration => "Ec2LaunchTemplateInvalidConfiguration",
+            NodegroupIssueCode::Ec2LaunchTemplateMaxLimitExceeded => "Ec2LaunchTemplateMaxLimitExceeded",
             NodegroupIssueCode::Ec2LaunchTemplateNotFound => "Ec2LaunchTemplateNotFound",
             NodegroupIssueCode::Ec2LaunchTemplateVersionMismatch => "Ec2LaunchTemplateVersionMismatch",
             NodegroupIssueCode::Ec2SecurityGroupDeletionFailure => "Ec2SecurityGroupDeletionFailure",
             NodegroupIssueCode::Ec2SecurityGroupNotFound => "Ec2SecurityGroupNotFound",
             NodegroupIssueCode::Ec2SubnetInvalidConfiguration => "Ec2SubnetInvalidConfiguration",
+            NodegroupIssueCode::Ec2SubnetListTooLong => "Ec2SubnetListTooLong",
             NodegroupIssueCode::Ec2SubnetMissingIpv6Assignment => "Ec2SubnetMissingIpv6Assignment",
             NodegroupIssueCode::Ec2SubnetNotFound => "Ec2SubnetNotFound",
             NodegroupIssueCode::IamInstanceProfileNotFound => "IamInstanceProfileNotFound",
             NodegroupIssueCode::IamLimitExceeded => "IamLimitExceeded",
             NodegroupIssueCode::IamNodeRoleNotFound => "IamNodeRoleNotFound",
+            NodegroupIssueCode::IamThrottling => "IamThrottling",
             NodegroupIssueCode::InstanceLimitExceeded => "InstanceLimitExceeded",
             NodegroupIssueCode::InsufficientFreeAddresses => "InsufficientFreeAddresses",
             NodegroupIssueCode::InternalFailure => "InternalFailure",
+            NodegroupIssueCode::LimitExceeded => "LimitExceeded",
             NodegroupIssueCode::NodeCreationFailure => "NodeCreationFailure",
+            NodegroupIssueCode::NodeTerminationFailure => "NodeTerminationFailure",
+            NodegroupIssueCode::PodEvictionFailure => "PodEvictionFailure",
+            NodegroupIssueCode::SourceEc2LaunchTemplateNotFound => "SourceEc2LaunchTemplateNotFound",
+            NodegroupIssueCode::UnknownValue => "Unknown",
             NodegroupIssueCode::Unknown(value) => value.as_str(),
         }
     }
@@ -162,24 +232,38 @@ impl NodegroupIssueCode {
     pub const fn values() -> &'static [&'static str] {
         &[
             "AccessDenied",
+            "AmiIdNotFound",
             "AsgInstanceLaunchFailures",
+            "AutoScalingGroupInstanceRefreshActive",
             "AutoScalingGroupInvalidConfiguration",
             "AutoScalingGroupNotFound",
+            "AutoScalingGroupOptInRequired",
+            "AutoScalingGroupRateLimitExceeded",
             "ClusterUnreachable",
+            "Ec2LaunchTemplateDeletionFailure",
+            "Ec2LaunchTemplateInvalidConfiguration",
+            "Ec2LaunchTemplateMaxLimitExceeded",
             "Ec2LaunchTemplateNotFound",
             "Ec2LaunchTemplateVersionMismatch",
             "Ec2SecurityGroupDeletionFailure",
             "Ec2SecurityGroupNotFound",
             "Ec2SubnetInvalidConfiguration",
+            "Ec2SubnetListTooLong",
             "Ec2SubnetMissingIpv6Assignment",
             "Ec2SubnetNotFound",
             "IamInstanceProfileNotFound",
             "IamLimitExceeded",
             "IamNodeRoleNotFound",
+            "IamThrottling",
             "InstanceLimitExceeded",
             "InsufficientFreeAddresses",
             "InternalFailure",
+            "LimitExceeded",
             "NodeCreationFailure",
+            "NodeTerminationFailure",
+            "PodEvictionFailure",
+            "SourceEc2LaunchTemplateNotFound",
+            "Unknown",
         ]
     }
 }

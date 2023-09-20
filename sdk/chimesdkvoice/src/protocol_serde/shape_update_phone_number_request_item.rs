@@ -12,5 +12,8 @@ pub fn ser_update_phone_number_request_item(
     if let Some(var_3) = &input.calling_name {
         object.key("CallingName").string(var_3.as_str());
     }
+    if let Some(var_4) = &input.name {
+        object.key("Name").string(var_4.as_str());
+    }
     Ok(())
 }

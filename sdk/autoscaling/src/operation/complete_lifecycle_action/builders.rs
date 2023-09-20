@@ -32,7 +32,7 @@ impl CompleteLifecycleActionInputBuilder {
 /// <li> <p>If you need more time, record the lifecycle action heartbeat to keep the instance in a wait state.</p> </li>
 /// <li> <p> <b>If you finish before the timeout period ends, send a callback by using the <code>CompleteLifecycleAction</code> API call.</b> </p> </li>
 /// </ol>
-/// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/lifecycle-hooks.html">Amazon EC2 Auto Scaling lifecycle hooks</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/completing-lifecycle-hooks.html">Complete a lifecycle action</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CompleteLifecycleActionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

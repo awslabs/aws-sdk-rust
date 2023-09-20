@@ -8,7 +8,7 @@ pub struct CreateDomainNameOutput {
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the certificate that will be used by edge-optimized endpoint for this domain name.</p>
     pub certificate_name: ::std::option::Option<::std::string::String>,
-    /// <p>The reference to an AWS-managed certificate that will be used by edge-optimized endpoint for this domain name. AWS Certificate Manager is the only supported source.</p>
+    /// <p>The reference to an Amazon Web Services-managed certificate that will be used by edge-optimized endpoint for this domain name. Certificate Manager is the only supported source.</p>
     pub certificate_arn: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp when the certificate that was used by edge-optimized endpoint for this domain name was uploaded.</p>
     pub certificate_upload_date: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -18,7 +18,7 @@ pub struct CreateDomainNameOutput {
     pub regional_hosted_zone_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the certificate that will be used for validating the regional domain name.</p>
     pub regional_certificate_name: ::std::option::Option<::std::string::String>,
-    /// <p>The reference to an AWS-managed certificate that will be used for validating the regional domain name. AWS Certificate Manager is the only supported source.</p>
+    /// <p>The reference to an Amazon Web Services-managed certificate that will be used for validating the regional domain name. Certificate Manager is the only supported source.</p>
     pub regional_certificate_arn: ::std::option::Option<::std::string::String>,
     /// <p>The domain name of the Amazon CloudFront distribution associated with this custom domain name for an edge-optimized endpoint. You set up this association when adding a DNS record pointing the custom domain name to this distribution name. For more information about CloudFront distributions, see the Amazon CloudFront documentation.</p>
     pub distribution_domain_name: ::std::option::Option<::std::string::String>,
@@ -49,7 +49,7 @@ impl CreateDomainNameOutput {
     pub fn certificate_name(&self) -> ::std::option::Option<&str> {
         self.certificate_name.as_deref()
     }
-    /// <p>The reference to an AWS-managed certificate that will be used by edge-optimized endpoint for this domain name. AWS Certificate Manager is the only supported source.</p>
+    /// <p>The reference to an Amazon Web Services-managed certificate that will be used by edge-optimized endpoint for this domain name. Certificate Manager is the only supported source.</p>
     pub fn certificate_arn(&self) -> ::std::option::Option<&str> {
         self.certificate_arn.as_deref()
     }
@@ -69,7 +69,7 @@ impl CreateDomainNameOutput {
     pub fn regional_certificate_name(&self) -> ::std::option::Option<&str> {
         self.regional_certificate_name.as_deref()
     }
-    /// <p>The reference to an AWS-managed certificate that will be used for validating the regional domain name. AWS Certificate Manager is the only supported source.</p>
+    /// <p>The reference to an Amazon Web Services-managed certificate that will be used for validating the regional domain name. Certificate Manager is the only supported source.</p>
     pub fn regional_certificate_arn(&self) -> ::std::option::Option<&str> {
         self.regional_certificate_arn.as_deref()
     }
@@ -174,17 +174,17 @@ impl CreateDomainNameOutputBuilder {
     pub fn get_certificate_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.certificate_name
     }
-    /// <p>The reference to an AWS-managed certificate that will be used by edge-optimized endpoint for this domain name. AWS Certificate Manager is the only supported source.</p>
+    /// <p>The reference to an Amazon Web Services-managed certificate that will be used by edge-optimized endpoint for this domain name. Certificate Manager is the only supported source.</p>
     pub fn certificate_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The reference to an AWS-managed certificate that will be used by edge-optimized endpoint for this domain name. AWS Certificate Manager is the only supported source.</p>
+    /// <p>The reference to an Amazon Web Services-managed certificate that will be used by edge-optimized endpoint for this domain name. Certificate Manager is the only supported source.</p>
     pub fn set_certificate_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.certificate_arn = input;
         self
     }
-    /// <p>The reference to an AWS-managed certificate that will be used by edge-optimized endpoint for this domain name. AWS Certificate Manager is the only supported source.</p>
+    /// <p>The reference to an Amazon Web Services-managed certificate that will be used by edge-optimized endpoint for this domain name. Certificate Manager is the only supported source.</p>
     pub fn get_certificate_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.certificate_arn
     }
@@ -244,17 +244,17 @@ impl CreateDomainNameOutputBuilder {
     pub fn get_regional_certificate_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.regional_certificate_name
     }
-    /// <p>The reference to an AWS-managed certificate that will be used for validating the regional domain name. AWS Certificate Manager is the only supported source.</p>
+    /// <p>The reference to an Amazon Web Services-managed certificate that will be used for validating the regional domain name. Certificate Manager is the only supported source.</p>
     pub fn regional_certificate_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.regional_certificate_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The reference to an AWS-managed certificate that will be used for validating the regional domain name. AWS Certificate Manager is the only supported source.</p>
+    /// <p>The reference to an Amazon Web Services-managed certificate that will be used for validating the regional domain name. Certificate Manager is the only supported source.</p>
     pub fn set_regional_certificate_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.regional_certificate_arn = input;
         self
     }
-    /// <p>The reference to an AWS-managed certificate that will be used for validating the regional domain name. AWS Certificate Manager is the only supported source.</p>
+    /// <p>The reference to an Amazon Web Services-managed certificate that will be used for validating the regional domain name. Certificate Manager is the only supported source.</p>
     pub fn get_regional_certificate_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.regional_certificate_arn
     }

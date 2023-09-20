@@ -7,8 +7,8 @@ pub fn ser_update_account_sending_enabled_input_input(
     let mut writer = ::aws_smithy_query::QueryWriter::new(&mut out, "UpdateAccountSendingEnabled", "2010-12-01");
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Enabled");
-    if input.enabled {
-        scope_1.boolean(input.enabled);
+    if let Some(var_2) = &input.enabled {
+        scope_1.boolean(*var_2);
     }
     writer.finish();
     Ok(::aws_smithy_http::body::SdkBody::from(out))

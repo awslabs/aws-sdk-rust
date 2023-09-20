@@ -4374,6 +4374,45 @@ impl From<crate::operation::get_sagemaker_servicecatalog_portfolio_status::GetSa
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_scaling_configuration_recommendation::GetScalingConfigurationRecommendationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::get_scaling_configuration_recommendation::GetScalingConfigurationRecommendationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_scaling_configuration_recommendation::GetScalingConfigurationRecommendationError> for Error {
+    fn from(err: crate::operation::get_scaling_configuration_recommendation::GetScalingConfigurationRecommendationError) -> Self {
+        match err {
+            crate::operation::get_scaling_configuration_recommendation::GetScalingConfigurationRecommendationError::ResourceNotFound(inner) => {
+                Error::ResourceNotFound(inner)
+            }
+            crate::operation::get_scaling_configuration_recommendation::GetScalingConfigurationRecommendationError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
 impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_search_suggestions::GetSearchSuggestionsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

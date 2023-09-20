@@ -22,32 +22,32 @@ pub fn ser_create_usage_limit_input_input(
     }
     #[allow(unused_mut)]
     let mut scope_7 = writer.prefix("Amount");
-    {
+    if let Some(var_8) = &input.amount {
         scope_7.number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.amount).into()),
+            ::aws_smithy_types::Number::NegInt((*var_8).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_8 = writer.prefix("Period");
-    if let Some(var_9) = &input.period {
-        scope_8.string(var_9.as_str());
+    let mut scope_9 = writer.prefix("Period");
+    if let Some(var_10) = &input.period {
+        scope_9.string(var_10.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_10 = writer.prefix("BreachAction");
-    if let Some(var_11) = &input.breach_action {
-        scope_10.string(var_11.as_str());
+    let mut scope_11 = writer.prefix("BreachAction");
+    if let Some(var_12) = &input.breach_action {
+        scope_11.string(var_12.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_12 = writer.prefix("Tags");
-    if let Some(var_13) = &input.tags {
-        let mut list_15 = scope_12.start_list(false, Some("Tag"));
-        for item_14 in var_13 {
+    let mut scope_13 = writer.prefix("Tags");
+    if let Some(var_14) = &input.tags {
+        let mut list_16 = scope_13.start_list(false, Some("Tag"));
+        for item_15 in var_14 {
             #[allow(unused_mut)]
-            let mut entry_16 = list_15.entry();
-            crate::protocol_serde::shape_tag::ser_tag(entry_16, item_14)?;
+            let mut entry_17 = list_16.entry();
+            crate::protocol_serde::shape_tag::ser_tag(entry_17, item_15)?;
         }
-        list_15.finish();
+        list_16.finish();
     }
     writer.finish();
     Ok(::aws_smithy_http::body::SdkBody::from(out))

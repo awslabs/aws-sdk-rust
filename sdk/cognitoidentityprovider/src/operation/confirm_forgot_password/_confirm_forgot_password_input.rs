@@ -6,7 +6,7 @@
 pub struct ConfirmForgotPasswordInput {
     /// <p>The app client ID of the app associated with the user pool.</p>
     pub client_id: ::std::option::Option<::std::string::String>,
-    /// <p>A keyed-hash message authentication code (HMAC) calculated using the secret key of a user pool client and username plus the client ID in the message.</p>
+    /// <p>A keyed-hash message authentication code (HMAC) calculated using the secret key of a user pool client and username plus the client ID in the message. For more information about <code>SecretHash</code>, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/signing-up-users-in-your-app.html#cognito-user-pools-computing-secret-hash">Computing secret hash values</a>.</p>
     pub secret_hash: ::std::option::Option<::std::string::String>,
     /// <p>The user name of the user for whom you want to enter a code to retrieve a forgotten password.</p>
     pub username: ::std::option::Option<::std::string::String>,
@@ -35,7 +35,7 @@ impl ConfirmForgotPasswordInput {
     pub fn client_id(&self) -> ::std::option::Option<&str> {
         self.client_id.as_deref()
     }
-    /// <p>A keyed-hash message authentication code (HMAC) calculated using the secret key of a user pool client and username plus the client ID in the message.</p>
+    /// <p>A keyed-hash message authentication code (HMAC) calculated using the secret key of a user pool client and username plus the client ID in the message. For more information about <code>SecretHash</code>, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/signing-up-users-in-your-app.html#cognito-user-pools-computing-secret-hash">Computing secret hash values</a>.</p>
     pub fn secret_hash(&self) -> ::std::option::Option<&str> {
         self.secret_hash.as_deref()
     }
@@ -122,17 +122,17 @@ impl ConfirmForgotPasswordInputBuilder {
     pub fn get_client_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_id
     }
-    /// <p>A keyed-hash message authentication code (HMAC) calculated using the secret key of a user pool client and username plus the client ID in the message.</p>
+    /// <p>A keyed-hash message authentication code (HMAC) calculated using the secret key of a user pool client and username plus the client ID in the message. For more information about <code>SecretHash</code>, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/signing-up-users-in-your-app.html#cognito-user-pools-computing-secret-hash">Computing secret hash values</a>.</p>
     pub fn secret_hash(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.secret_hash = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A keyed-hash message authentication code (HMAC) calculated using the secret key of a user pool client and username plus the client ID in the message.</p>
+    /// <p>A keyed-hash message authentication code (HMAC) calculated using the secret key of a user pool client and username plus the client ID in the message. For more information about <code>SecretHash</code>, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/signing-up-users-in-your-app.html#cognito-user-pools-computing-secret-hash">Computing secret hash values</a>.</p>
     pub fn set_secret_hash(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.secret_hash = input;
         self
     }
-    /// <p>A keyed-hash message authentication code (HMAC) calculated using the secret key of a user pool client and username plus the client ID in the message.</p>
+    /// <p>A keyed-hash message authentication code (HMAC) calculated using the secret key of a user pool client and username plus the client ID in the message. For more information about <code>SecretHash</code>, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/signing-up-users-in-your-app.html#cognito-user-pools-computing-secret-hash">Computing secret hash values</a>.</p>
     pub fn get_secret_hash(&self) -> &::std::option::Option<::std::string::String> {
         &self.secret_hash
     }

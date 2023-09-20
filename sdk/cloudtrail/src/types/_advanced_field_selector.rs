@@ -33,12 +33,16 @@ pub struct AdvancedFieldSelector {
     /// <li> <p> <code>AWS::Glue::Table</code> </p> </li>
     /// <li> <p> <code>AWS::GuardDuty::Detector</code> </p> </li>
     /// <li> <p> <code>AWS::KendraRanking::ExecutionPlan</code> </p> </li>
+    /// <li> <p> <code>AWS::ManagedBlockchain::Network</code> </p> </li>
     /// <li> <p> <code>AWS::ManagedBlockchain::Node</code> </p> </li>
+    /// <li> <p> <code>AWS::MedicalImaging::Datastore</code> </p> </li>
     /// <li> <p> <code>AWS::SageMaker::ExperimentTrialComponent</code> </p> </li>
     /// <li> <p> <code>AWS::SageMaker::FeatureGroup</code> </p> </li>
     /// <li> <p> <code>AWS::S3::AccessPoint</code> </p> </li>
     /// <li> <p> <code>AWS::S3ObjectLambda::AccessPoint</code> </p> </li>
     /// <li> <p> <code>AWS::S3Outposts::Object</code> </p> </li>
+    /// <li> <p> <code>AWS::SSMMessages::ControlChannel</code> </p> </li>
+    /// <li> <p> <code>AWS::VerifiedPermissions::PolicyStore</code> </p> </li>
     /// </ul> <p> You can have only one <code>resources.type</code> ﬁeld per selector. To log data events on more than one resource type, add another selector.</p> </li>
     /// <li> <p> <b> <code>resources.ARN</code> </b> - You can use any operator with <code>resources.ARN</code>, but if you use <code>Equals</code> or <code>NotEquals</code>, the value must exactly match the ARN of a valid resource of the type you've speciﬁed in the template as the value of resources.type. For example, if resources.type equals <code>AWS::S3::Object</code>, the ARN must be in one of the following formats. To log all data events for all objects in a specific S3 bucket, use the <code>StartsWith</code> operator, and include only the bucket ARN as the matching value.</p> <p>The trailing slash is intentional; do not exclude it. Replace the text between less than and greater than symbols (&lt;&gt;) with resource-specific information. </p>
     /// <ul>
@@ -215,6 +219,13 @@ pub struct AdvancedFieldSelector {
     /// </account_id>
     /// </region>
     /// </partition></code> </p> </li>
+    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::ManagedBlockchain::Network</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :managedblockchain:::networks/
+    /// <network_name></network_name>
+    /// </partition></code> </p> </li>
     /// </ul> <p>When <code>resources.type</code> equals <code>AWS::ManagedBlockchain::Node</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
     /// <ul>
     /// <li> <p> <code>arn:
@@ -225,6 +236,19 @@ pub struct AdvancedFieldSelector {
     /// <account_id>
     /// :nodes/
     /// <node_id></node_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code> </p> </li>
+    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::MedicalImaging::Datastore</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :medical-imaging:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :datastore/
+    /// <data_store_id></data_store_id>
     /// </account_id>
     /// </region>
     /// </partition></code> </p> </li>
@@ -304,6 +328,32 @@ pub struct AdvancedFieldSelector {
     /// <account_id>
     /// :
     /// <object_path></object_path>
+    /// </account_id>
+    /// </region>
+    /// </partition></code> </p> </li>
+    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::SSMMessages::ControlChannel</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :ssmmessages:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :control-channel/
+    /// <channel_id></channel_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code> </p> </li>
+    /// </ul> <p>When resources.type equals <code>AWS::VerifiedPermissions::PolicyStore</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :verifiedpermissions:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :policy-store/
+    /// <policy_store_uuid></policy_store_uuid>
     /// </account_id>
     /// </region>
     /// </partition></code> </p> </li>
@@ -353,12 +403,16 @@ impl AdvancedFieldSelector {
     /// <li> <p> <code>AWS::Glue::Table</code> </p> </li>
     /// <li> <p> <code>AWS::GuardDuty::Detector</code> </p> </li>
     /// <li> <p> <code>AWS::KendraRanking::ExecutionPlan</code> </p> </li>
+    /// <li> <p> <code>AWS::ManagedBlockchain::Network</code> </p> </li>
     /// <li> <p> <code>AWS::ManagedBlockchain::Node</code> </p> </li>
+    /// <li> <p> <code>AWS::MedicalImaging::Datastore</code> </p> </li>
     /// <li> <p> <code>AWS::SageMaker::ExperimentTrialComponent</code> </p> </li>
     /// <li> <p> <code>AWS::SageMaker::FeatureGroup</code> </p> </li>
     /// <li> <p> <code>AWS::S3::AccessPoint</code> </p> </li>
     /// <li> <p> <code>AWS::S3ObjectLambda::AccessPoint</code> </p> </li>
     /// <li> <p> <code>AWS::S3Outposts::Object</code> </p> </li>
+    /// <li> <p> <code>AWS::SSMMessages::ControlChannel</code> </p> </li>
+    /// <li> <p> <code>AWS::VerifiedPermissions::PolicyStore</code> </p> </li>
     /// </ul> <p> You can have only one <code>resources.type</code> ﬁeld per selector. To log data events on more than one resource type, add another selector.</p> </li>
     /// <li> <p> <b> <code>resources.ARN</code> </b> - You can use any operator with <code>resources.ARN</code>, but if you use <code>Equals</code> or <code>NotEquals</code>, the value must exactly match the ARN of a valid resource of the type you've speciﬁed in the template as the value of resources.type. For example, if resources.type equals <code>AWS::S3::Object</code>, the ARN must be in one of the following formats. To log all data events for all objects in a specific S3 bucket, use the <code>StartsWith</code> operator, and include only the bucket ARN as the matching value.</p> <p>The trailing slash is intentional; do not exclude it. Replace the text between less than and greater than symbols (&lt;&gt;) with resource-specific information. </p>
     /// <ul>
@@ -535,6 +589,13 @@ impl AdvancedFieldSelector {
     /// </account_id>
     /// </region>
     /// </partition></code> </p> </li>
+    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::ManagedBlockchain::Network</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :managedblockchain:::networks/
+    /// <network_name></network_name>
+    /// </partition></code> </p> </li>
     /// </ul> <p>When <code>resources.type</code> equals <code>AWS::ManagedBlockchain::Node</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
     /// <ul>
     /// <li> <p> <code>arn:
@@ -545,6 +606,19 @@ impl AdvancedFieldSelector {
     /// <account_id>
     /// :nodes/
     /// <node_id></node_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code> </p> </li>
+    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::MedicalImaging::Datastore</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :medical-imaging:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :datastore/
+    /// <data_store_id></data_store_id>
     /// </account_id>
     /// </region>
     /// </partition></code> </p> </li>
@@ -624,6 +698,32 @@ impl AdvancedFieldSelector {
     /// <account_id>
     /// :
     /// <object_path></object_path>
+    /// </account_id>
+    /// </region>
+    /// </partition></code> </p> </li>
+    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::SSMMessages::ControlChannel</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :ssmmessages:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :control-channel/
+    /// <channel_id></channel_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code> </p> </li>
+    /// </ul> <p>When resources.type equals <code>AWS::VerifiedPermissions::PolicyStore</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :verifiedpermissions:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :policy-store/
+    /// <policy_store_uuid></policy_store_uuid>
     /// </account_id>
     /// </region>
     /// </partition></code> </p> </li>
@@ -706,12 +806,16 @@ impl AdvancedFieldSelectorBuilder {
     /// <li> <p> <code>AWS::Glue::Table</code> </p> </li>
     /// <li> <p> <code>AWS::GuardDuty::Detector</code> </p> </li>
     /// <li> <p> <code>AWS::KendraRanking::ExecutionPlan</code> </p> </li>
+    /// <li> <p> <code>AWS::ManagedBlockchain::Network</code> </p> </li>
     /// <li> <p> <code>AWS::ManagedBlockchain::Node</code> </p> </li>
+    /// <li> <p> <code>AWS::MedicalImaging::Datastore</code> </p> </li>
     /// <li> <p> <code>AWS::SageMaker::ExperimentTrialComponent</code> </p> </li>
     /// <li> <p> <code>AWS::SageMaker::FeatureGroup</code> </p> </li>
     /// <li> <p> <code>AWS::S3::AccessPoint</code> </p> </li>
     /// <li> <p> <code>AWS::S3ObjectLambda::AccessPoint</code> </p> </li>
     /// <li> <p> <code>AWS::S3Outposts::Object</code> </p> </li>
+    /// <li> <p> <code>AWS::SSMMessages::ControlChannel</code> </p> </li>
+    /// <li> <p> <code>AWS::VerifiedPermissions::PolicyStore</code> </p> </li>
     /// </ul> <p> You can have only one <code>resources.type</code> ﬁeld per selector. To log data events on more than one resource type, add another selector.</p> </li>
     /// <li> <p> <b> <code>resources.ARN</code> </b> - You can use any operator with <code>resources.ARN</code>, but if you use <code>Equals</code> or <code>NotEquals</code>, the value must exactly match the ARN of a valid resource of the type you've speciﬁed in the template as the value of resources.type. For example, if resources.type equals <code>AWS::S3::Object</code>, the ARN must be in one of the following formats. To log all data events for all objects in a specific S3 bucket, use the <code>StartsWith</code> operator, and include only the bucket ARN as the matching value.</p> <p>The trailing slash is intentional; do not exclude it. Replace the text between less than and greater than symbols (&lt;&gt;) with resource-specific information. </p>
     /// <ul>
@@ -888,6 +992,13 @@ impl AdvancedFieldSelectorBuilder {
     /// </account_id>
     /// </region>
     /// </partition></code> </p> </li>
+    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::ManagedBlockchain::Network</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :managedblockchain:::networks/
+    /// <network_name></network_name>
+    /// </partition></code> </p> </li>
     /// </ul> <p>When <code>resources.type</code> equals <code>AWS::ManagedBlockchain::Node</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
     /// <ul>
     /// <li> <p> <code>arn:
@@ -898,6 +1009,19 @@ impl AdvancedFieldSelectorBuilder {
     /// <account_id>
     /// :nodes/
     /// <node_id></node_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code> </p> </li>
+    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::MedicalImaging::Datastore</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :medical-imaging:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :datastore/
+    /// <data_store_id></data_store_id>
     /// </account_id>
     /// </region>
     /// </partition></code> </p> </li>
@@ -977,6 +1101,32 @@ impl AdvancedFieldSelectorBuilder {
     /// <account_id>
     /// :
     /// <object_path></object_path>
+    /// </account_id>
+    /// </region>
+    /// </partition></code> </p> </li>
+    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::SSMMessages::ControlChannel</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :ssmmessages:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :control-channel/
+    /// <channel_id></channel_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code> </p> </li>
+    /// </ul> <p>When resources.type equals <code>AWS::VerifiedPermissions::PolicyStore</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :verifiedpermissions:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :policy-store/
+    /// <policy_store_uuid></policy_store_uuid>
     /// </account_id>
     /// </region>
     /// </partition></code> </p> </li>
@@ -1015,12 +1165,16 @@ impl AdvancedFieldSelectorBuilder {
     /// <li> <p> <code>AWS::Glue::Table</code> </p> </li>
     /// <li> <p> <code>AWS::GuardDuty::Detector</code> </p> </li>
     /// <li> <p> <code>AWS::KendraRanking::ExecutionPlan</code> </p> </li>
+    /// <li> <p> <code>AWS::ManagedBlockchain::Network</code> </p> </li>
     /// <li> <p> <code>AWS::ManagedBlockchain::Node</code> </p> </li>
+    /// <li> <p> <code>AWS::MedicalImaging::Datastore</code> </p> </li>
     /// <li> <p> <code>AWS::SageMaker::ExperimentTrialComponent</code> </p> </li>
     /// <li> <p> <code>AWS::SageMaker::FeatureGroup</code> </p> </li>
     /// <li> <p> <code>AWS::S3::AccessPoint</code> </p> </li>
     /// <li> <p> <code>AWS::S3ObjectLambda::AccessPoint</code> </p> </li>
     /// <li> <p> <code>AWS::S3Outposts::Object</code> </p> </li>
+    /// <li> <p> <code>AWS::SSMMessages::ControlChannel</code> </p> </li>
+    /// <li> <p> <code>AWS::VerifiedPermissions::PolicyStore</code> </p> </li>
     /// </ul> <p> You can have only one <code>resources.type</code> ﬁeld per selector. To log data events on more than one resource type, add another selector.</p> </li>
     /// <li> <p> <b> <code>resources.ARN</code> </b> - You can use any operator with <code>resources.ARN</code>, but if you use <code>Equals</code> or <code>NotEquals</code>, the value must exactly match the ARN of a valid resource of the type you've speciﬁed in the template as the value of resources.type. For example, if resources.type equals <code>AWS::S3::Object</code>, the ARN must be in one of the following formats. To log all data events for all objects in a specific S3 bucket, use the <code>StartsWith</code> operator, and include only the bucket ARN as the matching value.</p> <p>The trailing slash is intentional; do not exclude it. Replace the text between less than and greater than symbols (&lt;&gt;) with resource-specific information. </p>
     /// <ul>
@@ -1197,6 +1351,13 @@ impl AdvancedFieldSelectorBuilder {
     /// </account_id>
     /// </region>
     /// </partition></code> </p> </li>
+    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::ManagedBlockchain::Network</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :managedblockchain:::networks/
+    /// <network_name></network_name>
+    /// </partition></code> </p> </li>
     /// </ul> <p>When <code>resources.type</code> equals <code>AWS::ManagedBlockchain::Node</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
     /// <ul>
     /// <li> <p> <code>arn:
@@ -1207,6 +1368,19 @@ impl AdvancedFieldSelectorBuilder {
     /// <account_id>
     /// :nodes/
     /// <node_id></node_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code> </p> </li>
+    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::MedicalImaging::Datastore</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :medical-imaging:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :datastore/
+    /// <data_store_id></data_store_id>
     /// </account_id>
     /// </region>
     /// </partition></code> </p> </li>
@@ -1286,6 +1460,32 @@ impl AdvancedFieldSelectorBuilder {
     /// <account_id>
     /// :
     /// <object_path></object_path>
+    /// </account_id>
+    /// </region>
+    /// </partition></code> </p> </li>
+    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::SSMMessages::ControlChannel</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :ssmmessages:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :control-channel/
+    /// <channel_id></channel_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code> </p> </li>
+    /// </ul> <p>When resources.type equals <code>AWS::VerifiedPermissions::PolicyStore</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :verifiedpermissions:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :policy-store/
+    /// <policy_store_uuid></policy_store_uuid>
     /// </account_id>
     /// </region>
     /// </partition></code> </p> </li>
@@ -1324,12 +1524,16 @@ impl AdvancedFieldSelectorBuilder {
     /// <li> <p> <code>AWS::Glue::Table</code> </p> </li>
     /// <li> <p> <code>AWS::GuardDuty::Detector</code> </p> </li>
     /// <li> <p> <code>AWS::KendraRanking::ExecutionPlan</code> </p> </li>
+    /// <li> <p> <code>AWS::ManagedBlockchain::Network</code> </p> </li>
     /// <li> <p> <code>AWS::ManagedBlockchain::Node</code> </p> </li>
+    /// <li> <p> <code>AWS::MedicalImaging::Datastore</code> </p> </li>
     /// <li> <p> <code>AWS::SageMaker::ExperimentTrialComponent</code> </p> </li>
     /// <li> <p> <code>AWS::SageMaker::FeatureGroup</code> </p> </li>
     /// <li> <p> <code>AWS::S3::AccessPoint</code> </p> </li>
     /// <li> <p> <code>AWS::S3ObjectLambda::AccessPoint</code> </p> </li>
     /// <li> <p> <code>AWS::S3Outposts::Object</code> </p> </li>
+    /// <li> <p> <code>AWS::SSMMessages::ControlChannel</code> </p> </li>
+    /// <li> <p> <code>AWS::VerifiedPermissions::PolicyStore</code> </p> </li>
     /// </ul> <p> You can have only one <code>resources.type</code> ﬁeld per selector. To log data events on more than one resource type, add another selector.</p> </li>
     /// <li> <p> <b> <code>resources.ARN</code> </b> - You can use any operator with <code>resources.ARN</code>, but if you use <code>Equals</code> or <code>NotEquals</code>, the value must exactly match the ARN of a valid resource of the type you've speciﬁed in the template as the value of resources.type. For example, if resources.type equals <code>AWS::S3::Object</code>, the ARN must be in one of the following formats. To log all data events for all objects in a specific S3 bucket, use the <code>StartsWith</code> operator, and include only the bucket ARN as the matching value.</p> <p>The trailing slash is intentional; do not exclude it. Replace the text between less than and greater than symbols (&lt;&gt;) with resource-specific information. </p>
     /// <ul>
@@ -1506,6 +1710,13 @@ impl AdvancedFieldSelectorBuilder {
     /// </account_id>
     /// </region>
     /// </partition></code> </p> </li>
+    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::ManagedBlockchain::Network</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :managedblockchain:::networks/
+    /// <network_name></network_name>
+    /// </partition></code> </p> </li>
     /// </ul> <p>When <code>resources.type</code> equals <code>AWS::ManagedBlockchain::Node</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
     /// <ul>
     /// <li> <p> <code>arn:
@@ -1516,6 +1727,19 @@ impl AdvancedFieldSelectorBuilder {
     /// <account_id>
     /// :nodes/
     /// <node_id></node_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code> </p> </li>
+    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::MedicalImaging::Datastore</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :medical-imaging:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :datastore/
+    /// <data_store_id></data_store_id>
     /// </account_id>
     /// </region>
     /// </partition></code> </p> </li>
@@ -1595,6 +1819,32 @@ impl AdvancedFieldSelectorBuilder {
     /// <account_id>
     /// :
     /// <object_path></object_path>
+    /// </account_id>
+    /// </region>
+    /// </partition></code> </p> </li>
+    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::SSMMessages::ControlChannel</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :ssmmessages:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :control-channel/
+    /// <channel_id></channel_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code> </p> </li>
+    /// </ul> <p>When resources.type equals <code>AWS::VerifiedPermissions::PolicyStore</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :verifiedpermissions:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :policy-store/
+    /// <policy_store_uuid></policy_store_uuid>
     /// </account_id>
     /// </region>
     /// </partition></code> </p> </li>

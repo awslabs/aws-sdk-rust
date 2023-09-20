@@ -22,7 +22,7 @@ impl StartCodegenJobInputBuilder {
 }
 /// Fluent builder constructing a request to `StartCodegenJob`.
 ///
-/// <p>Starts a code generation job for for a specified Amplify app and backend environment.</p>
+/// <p>Starts a code generation job for a specified Amplify app and backend environment.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartCodegenJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

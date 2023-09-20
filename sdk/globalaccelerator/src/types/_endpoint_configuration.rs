@@ -11,7 +11,7 @@ pub struct EndpointConfiguration {
     pub weight: ::std::option::Option<i32>,
     /// <p>Indicates whether client IP address preservation is enabled for an endpoint. The value is true or false. The default value is true for new accelerators. </p>
     /// <p>If the value is set to true, the client's IP address is preserved in the <code>X-Forwarded-For</code> request header as traffic travels to applications on the endpoint fronted by the accelerator.</p>
-    /// <p>Client IP address preservation is supported, in specific Amazon Web Services Regions, for endpoints that are Application Load Balancers and Amazon EC2 instances.</p>
+    /// <p>Client IP address preservation is supported, in specific Amazon Web Services Regions, for endpoints that are Application Load Balancers, Amazon EC2 instances, and Network Load Balancers with Security Groups. IMPORTANT: You cannot use client IP address preservation with Network Load Balancers with TLS listeners.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/preserve-client-ip-address.html"> Preserve client IP addresses in Global Accelerator</a> in the <i>Global Accelerator Developer Guide</i>.</p>
     pub client_ip_preservation_enabled: ::std::option::Option<bool>,
 }
@@ -27,7 +27,7 @@ impl EndpointConfiguration {
     }
     /// <p>Indicates whether client IP address preservation is enabled for an endpoint. The value is true or false. The default value is true for new accelerators. </p>
     /// <p>If the value is set to true, the client's IP address is preserved in the <code>X-Forwarded-For</code> request header as traffic travels to applications on the endpoint fronted by the accelerator.</p>
-    /// <p>Client IP address preservation is supported, in specific Amazon Web Services Regions, for endpoints that are Application Load Balancers and Amazon EC2 instances.</p>
+    /// <p>Client IP address preservation is supported, in specific Amazon Web Services Regions, for endpoints that are Application Load Balancers, Amazon EC2 instances, and Network Load Balancers with Security Groups. IMPORTANT: You cannot use client IP address preservation with Network Load Balancers with TLS listeners.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/preserve-client-ip-address.html"> Preserve client IP addresses in Global Accelerator</a> in the <i>Global Accelerator Developer Guide</i>.</p>
     pub fn client_ip_preservation_enabled(&self) -> ::std::option::Option<bool> {
         self.client_ip_preservation_enabled
@@ -82,7 +82,7 @@ impl EndpointConfigurationBuilder {
     }
     /// <p>Indicates whether client IP address preservation is enabled for an endpoint. The value is true or false. The default value is true for new accelerators. </p>
     /// <p>If the value is set to true, the client's IP address is preserved in the <code>X-Forwarded-For</code> request header as traffic travels to applications on the endpoint fronted by the accelerator.</p>
-    /// <p>Client IP address preservation is supported, in specific Amazon Web Services Regions, for endpoints that are Application Load Balancers and Amazon EC2 instances.</p>
+    /// <p>Client IP address preservation is supported, in specific Amazon Web Services Regions, for endpoints that are Application Load Balancers, Amazon EC2 instances, and Network Load Balancers with Security Groups. IMPORTANT: You cannot use client IP address preservation with Network Load Balancers with TLS listeners.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/preserve-client-ip-address.html"> Preserve client IP addresses in Global Accelerator</a> in the <i>Global Accelerator Developer Guide</i>.</p>
     pub fn client_ip_preservation_enabled(mut self, input: bool) -> Self {
         self.client_ip_preservation_enabled = ::std::option::Option::Some(input);
@@ -90,7 +90,7 @@ impl EndpointConfigurationBuilder {
     }
     /// <p>Indicates whether client IP address preservation is enabled for an endpoint. The value is true or false. The default value is true for new accelerators. </p>
     /// <p>If the value is set to true, the client's IP address is preserved in the <code>X-Forwarded-For</code> request header as traffic travels to applications on the endpoint fronted by the accelerator.</p>
-    /// <p>Client IP address preservation is supported, in specific Amazon Web Services Regions, for endpoints that are Application Load Balancers and Amazon EC2 instances.</p>
+    /// <p>Client IP address preservation is supported, in specific Amazon Web Services Regions, for endpoints that are Application Load Balancers, Amazon EC2 instances, and Network Load Balancers with Security Groups. IMPORTANT: You cannot use client IP address preservation with Network Load Balancers with TLS listeners.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/preserve-client-ip-address.html"> Preserve client IP addresses in Global Accelerator</a> in the <i>Global Accelerator Developer Guide</i>.</p>
     pub fn set_client_ip_preservation_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.client_ip_preservation_enabled = input;
@@ -98,7 +98,7 @@ impl EndpointConfigurationBuilder {
     }
     /// <p>Indicates whether client IP address preservation is enabled for an endpoint. The value is true or false. The default value is true for new accelerators. </p>
     /// <p>If the value is set to true, the client's IP address is preserved in the <code>X-Forwarded-For</code> request header as traffic travels to applications on the endpoint fronted by the accelerator.</p>
-    /// <p>Client IP address preservation is supported, in specific Amazon Web Services Regions, for endpoints that are Application Load Balancers and Amazon EC2 instances.</p>
+    /// <p>Client IP address preservation is supported, in specific Amazon Web Services Regions, for endpoints that are Application Load Balancers, Amazon EC2 instances, and Network Load Balancers with Security Groups. IMPORTANT: You cannot use client IP address preservation with Network Load Balancers with TLS listeners.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/preserve-client-ip-address.html"> Preserve client IP addresses in Global Accelerator</a> in the <i>Global Accelerator Developer Guide</i>.</p>
     pub fn get_client_ip_preservation_enabled(&self) -> &::std::option::Option<bool> {
         &self.client_ip_preservation_enabled

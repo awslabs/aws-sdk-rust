@@ -156,52 +156,61 @@ pub fn ser_m2ts_settings(
             ::aws_smithy_types::Number::NegInt((*var_36).into()),
         );
     }
-    if let Some(var_37) = &input.rate_mode {
-        object.key("rateMode").string(var_37.as_str());
+    if let Some(var_37) = &input.pts_offset {
+        object.key("ptsOffset").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_37).into()),
+        );
     }
-    if let Some(var_38) = &input.scte35_esam {
+    if let Some(var_38) = &input.pts_offset_mode {
+        object.key("ptsOffsetMode").string(var_38.as_str());
+    }
+    if let Some(var_39) = &input.rate_mode {
+        object.key("rateMode").string(var_39.as_str());
+    }
+    if let Some(var_40) = &input.scte35_esam {
         #[allow(unused_mut)]
-        let mut object_39 = object.key("scte35Esam").start_object();
-        crate::protocol_serde::shape_m2ts_scte35_esam::ser_m2ts_scte35_esam(&mut object_39, var_38)?;
-        object_39.finish();
+        let mut object_41 = object.key("scte35Esam").start_object();
+        crate::protocol_serde::shape_m2ts_scte35_esam::ser_m2ts_scte35_esam(&mut object_41, var_40)?;
+        object_41.finish();
     }
-    if let Some(var_40) = &input.scte35_pid {
+    if let Some(var_42) = &input.scte35_pid {
         object.key("scte35Pid").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_40).into()),
+            ::aws_smithy_types::Number::NegInt((*var_42).into()),
         );
     }
-    if let Some(var_41) = &input.scte35_source {
-        object.key("scte35Source").string(var_41.as_str());
+    if let Some(var_43) = &input.scte35_source {
+        object.key("scte35Source").string(var_43.as_str());
     }
-    if let Some(var_42) = &input.segmentation_markers {
-        object.key("segmentationMarkers").string(var_42.as_str());
+    if let Some(var_44) = &input.segmentation_markers {
+        object.key("segmentationMarkers").string(var_44.as_str());
     }
-    if let Some(var_43) = &input.segmentation_style {
-        object.key("segmentationStyle").string(var_43.as_str());
+    if let Some(var_45) = &input.segmentation_style {
+        object.key("segmentationStyle").string(var_45.as_str());
     }
-    if let Some(var_44) = &input.segmentation_time {
+    if let Some(var_46) = &input.segmentation_time {
         object.key("segmentationTime").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::Float((*var_44).into()),
+            ::aws_smithy_types::Number::Float((*var_46).into()),
         );
     }
-    if let Some(var_45) = &input.timed_metadata_pid {
+    if let Some(var_47) = &input.timed_metadata_pid {
         object.key("timedMetadataPid").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_45).into()),
+            ::aws_smithy_types::Number::NegInt((*var_47).into()),
         );
     }
-    if let Some(var_46) = &input.transport_stream_id {
+    if let Some(var_48) = &input.transport_stream_id {
         object.key("transportStreamId").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_46).into()),
+            ::aws_smithy_types::Number::NegInt((*var_48).into()),
         );
     }
-    if let Some(var_47) = &input.video_pid {
+    if let Some(var_49) = &input.video_pid {
         object.key("videoPid").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_47).into()),
+            ::aws_smithy_types::Number::NegInt((*var_49).into()),
         );
     }
     Ok(())
@@ -402,6 +411,20 @@ where
                             builder = builder.set_program_number(
                                 ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
                                     .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "ptsOffset" => {
+                            builder = builder.set_pts_offset(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "ptsOffsetMode" => {
+                            builder = builder.set_pts_offset_mode(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::TsPtsOffset::from(u.as_ref())))
                                     .transpose()?,
                             );
                         }

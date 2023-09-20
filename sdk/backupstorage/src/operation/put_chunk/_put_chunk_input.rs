@@ -8,11 +8,11 @@ pub struct PutChunkInput {
     /// Upload Id for the in-progress upload.
     pub upload_id: ::std::option::Option<::std::string::String>,
     /// Describes this chunk's position relative to the other chunks
-    pub chunk_index: i64,
+    pub chunk_index: ::std::option::Option<i64>,
     /// Data to be uploaded
     pub data: ::aws_smithy_http::byte_stream::ByteStream,
     /// Data length
-    pub length: i64,
+    pub length: ::std::option::Option<i64>,
     /// Data checksum
     pub checksum: ::std::option::Option<::std::string::String>,
     /// Checksum algorithm
@@ -28,7 +28,7 @@ impl PutChunkInput {
         self.upload_id.as_deref()
     }
     /// Describes this chunk's position relative to the other chunks
-    pub fn chunk_index(&self) -> i64 {
+    pub fn chunk_index(&self) -> ::std::option::Option<i64> {
         self.chunk_index
     }
     /// Data to be uploaded
@@ -36,7 +36,7 @@ impl PutChunkInput {
         &self.data
     }
     /// Data length
-    pub fn length(&self) -> i64 {
+    pub fn length(&self) -> ::std::option::Option<i64> {
         self.length
     }
     /// Data checksum
@@ -171,9 +171,9 @@ impl PutChunkInputBuilder {
         ::std::result::Result::Ok(crate::operation::put_chunk::PutChunkInput {
             backup_job_id: self.backup_job_id,
             upload_id: self.upload_id,
-            chunk_index: self.chunk_index.unwrap_or_default(),
+            chunk_index: self.chunk_index,
             data: self.data.unwrap_or_default(),
-            length: self.length.unwrap_or_default(),
+            length: self.length,
             checksum: self.checksum,
             checksum_algorithm: self.checksum_algorithm,
         })

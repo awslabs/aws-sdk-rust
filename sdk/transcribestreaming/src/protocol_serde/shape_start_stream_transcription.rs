@@ -385,11 +385,11 @@ pub fn ser_start_stream_transcription_headers(
             builder = builder.header("x-amzn-transcribe-vocabulary-filter-method", header_value);
         }
     }
-    if input.show_speaker_label {
-        let mut encoder = ::aws_smithy_types::primitive::Encoder::from(input.show_speaker_label);
-        let formatted_15 = encoder.encode();
-        if !formatted_15.is_empty() {
-            let header_value = formatted_15;
+    if let ::std::option::Option::Some(inner_15) = &input.show_speaker_label {
+        let mut encoder = ::aws_smithy_types::primitive::Encoder::from(*inner_15);
+        let formatted_16 = encoder.encode();
+        if !formatted_16.is_empty() {
+            let header_value = formatted_16;
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "show_speaker_label",
@@ -399,11 +399,11 @@ pub fn ser_start_stream_transcription_headers(
             builder = builder.header("x-amzn-transcribe-show-speaker-label", header_value);
         }
     }
-    if input.enable_channel_identification {
-        let mut encoder = ::aws_smithy_types::primitive::Encoder::from(input.enable_channel_identification);
-        let formatted_16 = encoder.encode();
-        if !formatted_16.is_empty() {
-            let header_value = formatted_16;
+    if let ::std::option::Option::Some(inner_17) = &input.enable_channel_identification {
+        let mut encoder = ::aws_smithy_types::primitive::Encoder::from(*inner_17);
+        let formatted_18 = encoder.encode();
+        if !formatted_18.is_empty() {
+            let header_value = formatted_18;
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "enable_channel_identification",
@@ -413,11 +413,11 @@ pub fn ser_start_stream_transcription_headers(
             builder = builder.header("x-amzn-transcribe-enable-channel-identification", header_value);
         }
     }
-    if let ::std::option::Option::Some(inner_17) = &input.number_of_channels {
-        let mut encoder = ::aws_smithy_types::primitive::Encoder::from(*inner_17);
-        let formatted_18 = encoder.encode();
-        if !formatted_18.is_empty() {
-            let header_value = formatted_18;
+    if let ::std::option::Option::Some(inner_19) = &input.number_of_channels {
+        let mut encoder = ::aws_smithy_types::primitive::Encoder::from(*inner_19);
+        let formatted_20 = encoder.encode();
+        if !formatted_20.is_empty() {
+            let header_value = formatted_20;
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "number_of_channels",
@@ -427,11 +427,11 @@ pub fn ser_start_stream_transcription_headers(
             builder = builder.header("x-amzn-transcribe-number-of-channels", header_value);
         }
     }
-    if input.enable_partial_results_stabilization {
-        let mut encoder = ::aws_smithy_types::primitive::Encoder::from(input.enable_partial_results_stabilization);
-        let formatted_19 = encoder.encode();
-        if !formatted_19.is_empty() {
-            let header_value = formatted_19;
+    if let ::std::option::Option::Some(inner_21) = &input.enable_partial_results_stabilization {
+        let mut encoder = ::aws_smithy_types::primitive::Encoder::from(*inner_21);
+        let formatted_22 = encoder.encode();
+        if !formatted_22.is_empty() {
+            let header_value = formatted_22;
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "enable_partial_results_stabilization",
@@ -441,10 +441,10 @@ pub fn ser_start_stream_transcription_headers(
             builder = builder.header("x-amzn-transcribe-enable-partial-results-stabilization", header_value);
         }
     }
-    if let ::std::option::Option::Some(inner_20) = &input.partial_results_stability {
-        let formatted_21 = inner_20.as_str();
-        if !formatted_21.is_empty() {
-            let header_value = formatted_21;
+    if let ::std::option::Option::Some(inner_23) = &input.partial_results_stability {
+        let formatted_24 = inner_23.as_str();
+        if !formatted_24.is_empty() {
+            let header_value = formatted_24;
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "partial_results_stability",
@@ -454,10 +454,10 @@ pub fn ser_start_stream_transcription_headers(
             builder = builder.header("x-amzn-transcribe-partial-results-stability", header_value);
         }
     }
-    if let ::std::option::Option::Some(inner_22) = &input.content_identification_type {
-        let formatted_23 = inner_22.as_str();
-        if !formatted_23.is_empty() {
-            let header_value = formatted_23;
+    if let ::std::option::Option::Some(inner_25) = &input.content_identification_type {
+        let formatted_26 = inner_25.as_str();
+        if !formatted_26.is_empty() {
+            let header_value = formatted_26;
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "content_identification_type",
@@ -467,10 +467,10 @@ pub fn ser_start_stream_transcription_headers(
             builder = builder.header("x-amzn-transcribe-content-identification-type", header_value);
         }
     }
-    if let ::std::option::Option::Some(inner_24) = &input.content_redaction_type {
-        let formatted_25 = inner_24.as_str();
-        if !formatted_25.is_empty() {
-            let header_value = formatted_25;
+    if let ::std::option::Option::Some(inner_27) = &input.content_redaction_type {
+        let formatted_28 = inner_27.as_str();
+        if !formatted_28.is_empty() {
+            let header_value = formatted_28;
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "content_redaction_type",
@@ -480,10 +480,10 @@ pub fn ser_start_stream_transcription_headers(
             builder = builder.header("x-amzn-transcribe-content-redaction-type", header_value);
         }
     }
-    if let ::std::option::Option::Some(inner_26) = &input.pii_entity_types {
-        let formatted_27 = inner_26.as_str();
-        if !formatted_27.is_empty() {
-            let header_value = formatted_27;
+    if let ::std::option::Option::Some(inner_29) = &input.pii_entity_types {
+        let formatted_30 = inner_29.as_str();
+        if !formatted_30.is_empty() {
+            let header_value = formatted_30;
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "pii_entity_types",
@@ -493,10 +493,10 @@ pub fn ser_start_stream_transcription_headers(
             builder = builder.header("x-amzn-transcribe-pii-entity-types", header_value);
         }
     }
-    if let ::std::option::Option::Some(inner_28) = &input.language_model_name {
-        let formatted_29 = inner_28.as_str();
-        if !formatted_29.is_empty() {
-            let header_value = formatted_29;
+    if let ::std::option::Option::Some(inner_31) = &input.language_model_name {
+        let formatted_32 = inner_31.as_str();
+        if !formatted_32.is_empty() {
+            let header_value = formatted_32;
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "language_model_name",
@@ -506,11 +506,11 @@ pub fn ser_start_stream_transcription_headers(
             builder = builder.header("x-amzn-transcribe-language-model-name", header_value);
         }
     }
-    if input.identify_language {
-        let mut encoder = ::aws_smithy_types::primitive::Encoder::from(input.identify_language);
-        let formatted_30 = encoder.encode();
-        if !formatted_30.is_empty() {
-            let header_value = formatted_30;
+    if let ::std::option::Option::Some(inner_33) = &input.identify_language {
+        let mut encoder = ::aws_smithy_types::primitive::Encoder::from(*inner_33);
+        let formatted_34 = encoder.encode();
+        if !formatted_34.is_empty() {
+            let header_value = formatted_34;
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "identify_language",
@@ -520,10 +520,10 @@ pub fn ser_start_stream_transcription_headers(
             builder = builder.header("x-amzn-transcribe-identify-language", header_value);
         }
     }
-    if let ::std::option::Option::Some(inner_31) = &input.language_options {
-        let formatted_32 = inner_31.as_str();
-        if !formatted_32.is_empty() {
-            let header_value = formatted_32;
+    if let ::std::option::Option::Some(inner_35) = &input.language_options {
+        let formatted_36 = inner_35.as_str();
+        if !formatted_36.is_empty() {
+            let header_value = formatted_36;
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "language_options",
@@ -533,10 +533,10 @@ pub fn ser_start_stream_transcription_headers(
             builder = builder.header("x-amzn-transcribe-language-options", header_value);
         }
     }
-    if let ::std::option::Option::Some(inner_33) = &input.preferred_language {
-        let formatted_34 = inner_33.as_str();
-        if !formatted_34.is_empty() {
-            let header_value = formatted_34;
+    if let ::std::option::Option::Some(inner_37) = &input.preferred_language {
+        let formatted_38 = inner_37.as_str();
+        if !formatted_38.is_empty() {
+            let header_value = formatted_38;
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "preferred_language",
@@ -546,10 +546,10 @@ pub fn ser_start_stream_transcription_headers(
             builder = builder.header("x-amzn-transcribe-preferred-language", header_value);
         }
     }
-    if let ::std::option::Option::Some(inner_35) = &input.vocabulary_names {
-        let formatted_36 = inner_35.as_str();
-        if !formatted_36.is_empty() {
-            let header_value = formatted_36;
+    if let ::std::option::Option::Some(inner_39) = &input.vocabulary_names {
+        let formatted_40 = inner_39.as_str();
+        if !formatted_40.is_empty() {
+            let header_value = formatted_40;
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "vocabulary_names",
@@ -559,10 +559,10 @@ pub fn ser_start_stream_transcription_headers(
             builder = builder.header("x-amzn-transcribe-vocabulary-names", header_value);
         }
     }
-    if let ::std::option::Option::Some(inner_37) = &input.vocabulary_filter_names {
-        let formatted_38 = inner_37.as_str();
-        if !formatted_38.is_empty() {
-            let header_value = formatted_38;
+    if let ::std::option::Option::Some(inner_41) = &input.vocabulary_filter_names {
+        let formatted_42 = inner_41.as_str();
+        if !formatted_42.is_empty() {
+            let header_value = formatted_42;
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "vocabulary_filter_names",

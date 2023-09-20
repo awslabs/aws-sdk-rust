@@ -22,6 +22,9 @@ pub struct UpgradeTarget {
     pub supports_global_databases: ::std::option::Option<bool>,
     /// <p>A value that indicates whether you can use Babelfish for Aurora PostgreSQL with the target engine version.</p>
     pub supports_babelfish: ::std::option::Option<bool>,
+    /// <p>A value that indicates whether the target engine version supports forwarding write operations from reader DB instances to the writer DB instance in the DB cluster. By default, write operations aren't allowed on reader DB instances.</p>
+    /// <p>Valid for: Aurora DB clusters only</p>
+    pub supports_local_write_forwarding: ::std::option::Option<bool>,
 }
 impl UpgradeTarget {
     /// <p>The name of the upgrade target database engine.</p>
@@ -60,6 +63,11 @@ impl UpgradeTarget {
     pub fn supports_babelfish(&self) -> ::std::option::Option<bool> {
         self.supports_babelfish
     }
+    /// <p>A value that indicates whether the target engine version supports forwarding write operations from reader DB instances to the writer DB instance in the DB cluster. By default, write operations aren't allowed on reader DB instances.</p>
+    /// <p>Valid for: Aurora DB clusters only</p>
+    pub fn supports_local_write_forwarding(&self) -> ::std::option::Option<bool> {
+        self.supports_local_write_forwarding
+    }
 }
 impl UpgradeTarget {
     /// Creates a new builder-style object to manufacture [`UpgradeTarget`](crate::types::UpgradeTarget).
@@ -81,6 +89,7 @@ pub struct UpgradeTargetBuilder {
     pub(crate) supports_parallel_query: ::std::option::Option<bool>,
     pub(crate) supports_global_databases: ::std::option::Option<bool>,
     pub(crate) supports_babelfish: ::std::option::Option<bool>,
+    pub(crate) supports_local_write_forwarding: ::std::option::Option<bool>,
 }
 impl UpgradeTargetBuilder {
     /// <p>The name of the upgrade target database engine.</p>
@@ -215,6 +224,23 @@ impl UpgradeTargetBuilder {
     pub fn get_supports_babelfish(&self) -> &::std::option::Option<bool> {
         &self.supports_babelfish
     }
+    /// <p>A value that indicates whether the target engine version supports forwarding write operations from reader DB instances to the writer DB instance in the DB cluster. By default, write operations aren't allowed on reader DB instances.</p>
+    /// <p>Valid for: Aurora DB clusters only</p>
+    pub fn supports_local_write_forwarding(mut self, input: bool) -> Self {
+        self.supports_local_write_forwarding = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A value that indicates whether the target engine version supports forwarding write operations from reader DB instances to the writer DB instance in the DB cluster. By default, write operations aren't allowed on reader DB instances.</p>
+    /// <p>Valid for: Aurora DB clusters only</p>
+    pub fn set_supports_local_write_forwarding(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.supports_local_write_forwarding = input;
+        self
+    }
+    /// <p>A value that indicates whether the target engine version supports forwarding write operations from reader DB instances to the writer DB instance in the DB cluster. By default, write operations aren't allowed on reader DB instances.</p>
+    /// <p>Valid for: Aurora DB clusters only</p>
+    pub fn get_supports_local_write_forwarding(&self) -> &::std::option::Option<bool> {
+        &self.supports_local_write_forwarding
+    }
     /// Consumes the builder and constructs a [`UpgradeTarget`](crate::types::UpgradeTarget).
     pub fn build(self) -> crate::types::UpgradeTarget {
         crate::types::UpgradeTarget {
@@ -227,6 +253,7 @@ impl UpgradeTargetBuilder {
             supports_parallel_query: self.supports_parallel_query,
             supports_global_databases: self.supports_global_databases,
             supports_babelfish: self.supports_babelfish,
+            supports_local_write_forwarding: self.supports_local_write_forwarding,
         }
     }
 }

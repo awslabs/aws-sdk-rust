@@ -4,6 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`problem_id(impl Into<String>)`](crate::operation::describe_problem::builders::DescribeProblemFluentBuilder::problem_id) / [`set_problem_id(Option<String>)`](crate::operation::describe_problem::builders::DescribeProblemFluentBuilder::set_problem_id): <p>The ID of the problem.</p>
+    ///   - [`account_id(impl Into<String>)`](crate::operation::describe_problem::builders::DescribeProblemFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::describe_problem::builders::DescribeProblemFluentBuilder::set_account_id): <p>The AWS account ID for the owner of the resource group affected by the problem.</p>
     /// - On success, responds with [`DescribeProblemOutput`](crate::operation::describe_problem::DescribeProblemOutput) with field(s):
     ///   - [`problem(Option<Problem>)`](crate::operation::describe_problem::DescribeProblemOutput::problem): <p>Information about the problem. </p>
     /// - On failure, responds with [`SdkError<DescribeProblemError>`](crate::operation::describe_problem::DescribeProblemError)

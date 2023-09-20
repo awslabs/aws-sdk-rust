@@ -94,6 +94,17 @@ pub fn ser_create_vpc_endpoint_input_input(
         }
         list_37.finish();
     }
+    #[allow(unused_mut)]
+    let mut scope_39 = writer.prefix("SubnetConfiguration");
+    if let Some(var_40) = &input.subnet_configurations {
+        let mut list_42 = scope_39.start_list(true, Some("item"));
+        for item_41 in var_40 {
+            #[allow(unused_mut)]
+            let mut entry_43 = list_42.entry();
+            crate::protocol_serde::shape_subnet_configuration::ser_subnet_configuration(entry_43, item_41)?;
+        }
+        list_42.finish();
+    }
     writer.finish();
     Ok(::aws_smithy_http::body::SdkBody::from(out))
 }

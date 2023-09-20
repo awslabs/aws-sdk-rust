@@ -277,6 +277,8 @@ pub enum ImportResourcesToDraftAppVersionError {
     InternalServerException(crate::types::error::InternalServerException),
     /// <p>This exception occurs when the specified resource could not be found.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
+    /// <p>This exception occurs when you have exceeded your service quota. To perform the requested action, remove some of the relevant resources, or use Service Quotas to request a service quota increase.</p>
+    ServiceQuotaExceededException(crate::types::error::ServiceQuotaExceededException),
     /// <p>This exception occurs when you have exceeded the limit on the number of requests per second.</p>
     ThrottlingException(crate::types::error::ThrottlingException),
     /// <p>This exception occurs when a request is not valid.</p>
@@ -303,6 +305,7 @@ impl ::std::fmt::Display for ImportResourcesToDraftAppVersionError {
             Self::ConflictException(_inner) => _inner.fmt(f),
             Self::InternalServerException(_inner) => _inner.fmt(f),
             Self::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            Self::ServiceQuotaExceededException(_inner) => _inner.fmt(f),
             Self::ThrottlingException(_inner) => _inner.fmt(f),
             Self::ValidationException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => _inner.fmt(f),
@@ -316,6 +319,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for ImportResourc
             Self::ConflictException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InternalServerException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ResourceNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ServiceQuotaExceededException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ThrottlingException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ValidationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
@@ -358,6 +362,7 @@ impl ImportResourcesToDraftAppVersionError {
             Self::ConflictException(e) => e.meta(),
             Self::InternalServerException(e) => e.meta(),
             Self::ResourceNotFoundException(e) => e.meta(),
+            Self::ServiceQuotaExceededException(e) => e.meta(),
             Self::ThrottlingException(e) => e.meta(),
             Self::ValidationException(e) => e.meta(),
             Self::Unhandled(e) => e.meta(),
@@ -379,6 +384,10 @@ impl ImportResourcesToDraftAppVersionError {
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(self, Self::ResourceNotFoundException(_))
     }
+    /// Returns `true` if the error kind is `ImportResourcesToDraftAppVersionError::ServiceQuotaExceededException`.
+    pub fn is_service_quota_exceeded_exception(&self) -> bool {
+        matches!(self, Self::ServiceQuotaExceededException(_))
+    }
     /// Returns `true` if the error kind is `ImportResourcesToDraftAppVersionError::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(self, Self::ThrottlingException(_))
@@ -395,6 +404,7 @@ impl ::std::error::Error for ImportResourcesToDraftAppVersionError {
             Self::ConflictException(_inner) => ::std::option::Option::Some(_inner),
             Self::InternalServerException(_inner) => ::std::option::Option::Some(_inner),
             Self::ResourceNotFoundException(_inner) => ::std::option::Option::Some(_inner),
+            Self::ServiceQuotaExceededException(_inner) => ::std::option::Option::Some(_inner),
             Self::ThrottlingException(_inner) => ::std::option::Option::Some(_inner),
             Self::ValidationException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(_inner),

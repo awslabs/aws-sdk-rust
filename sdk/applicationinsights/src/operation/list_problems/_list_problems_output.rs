@@ -9,6 +9,8 @@ pub struct ListProblemsOutput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p> The name of the resource group. </p>
     pub resource_group_name: ::std::option::Option<::std::string::String>,
+    /// <p>The AWS account ID for the resource group owner.</p>
+    pub account_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListProblemsOutput {
@@ -23,6 +25,10 @@ impl ListProblemsOutput {
     /// <p> The name of the resource group. </p>
     pub fn resource_group_name(&self) -> ::std::option::Option<&str> {
         self.resource_group_name.as_deref()
+    }
+    /// <p>The AWS account ID for the resource group owner.</p>
+    pub fn account_id(&self) -> ::std::option::Option<&str> {
+        self.account_id.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for ListProblemsOutput {
@@ -44,6 +50,7 @@ pub struct ListProblemsOutputBuilder {
     pub(crate) problem_list: ::std::option::Option<::std::vec::Vec<crate::types::Problem>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) resource_group_name: ::std::option::Option<::std::string::String>,
+    pub(crate) account_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListProblemsOutputBuilder {
@@ -95,6 +102,20 @@ impl ListProblemsOutputBuilder {
     pub fn get_resource_group_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_group_name
     }
+    /// <p>The AWS account ID for the resource group owner.</p>
+    pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.account_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The AWS account ID for the resource group owner.</p>
+    pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.account_id = input;
+        self
+    }
+    /// <p>The AWS account ID for the resource group owner.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -110,6 +131,7 @@ impl ListProblemsOutputBuilder {
             problem_list: self.problem_list,
             next_token: self.next_token,
             resource_group_name: self.resource_group_name,
+            account_id: self.account_id,
             _request_id: self._request_id,
         }
     }

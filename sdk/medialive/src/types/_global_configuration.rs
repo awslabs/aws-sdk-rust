@@ -16,6 +16,8 @@ pub struct GlobalConfiguration {
     pub output_timing_source: ::std::option::Option<crate::types::GlobalConfigurationOutputTimingSource>,
     /// Adjusts video input buffer for streams with very low video framerates. This is commonly set to enabled for music channels with less than one video frame per second.
     pub support_low_framerate_inputs: ::std::option::Option<crate::types::GlobalConfigurationLowFramerateInputs>,
+    /// Advanced output locking settings
+    pub output_locking_settings: ::std::option::Option<crate::types::OutputLockingSettings>,
 }
 impl GlobalConfiguration {
     /// Value to set the initial audio gain for the Live Event.
@@ -42,6 +44,10 @@ impl GlobalConfiguration {
     pub fn support_low_framerate_inputs(&self) -> ::std::option::Option<&crate::types::GlobalConfigurationLowFramerateInputs> {
         self.support_low_framerate_inputs.as_ref()
     }
+    /// Advanced output locking settings
+    pub fn output_locking_settings(&self) -> ::std::option::Option<&crate::types::OutputLockingSettings> {
+        self.output_locking_settings.as_ref()
+    }
 }
 impl GlobalConfiguration {
     /// Creates a new builder-style object to manufacture [`GlobalConfiguration`](crate::types::GlobalConfiguration).
@@ -60,6 +66,7 @@ pub struct GlobalConfigurationBuilder {
     pub(crate) output_locking_mode: ::std::option::Option<crate::types::GlobalConfigurationOutputLockingMode>,
     pub(crate) output_timing_source: ::std::option::Option<crate::types::GlobalConfigurationOutputTimingSource>,
     pub(crate) support_low_framerate_inputs: ::std::option::Option<crate::types::GlobalConfigurationLowFramerateInputs>,
+    pub(crate) output_locking_settings: ::std::option::Option<crate::types::OutputLockingSettings>,
 }
 impl GlobalConfigurationBuilder {
     /// Value to set the initial audio gain for the Live Event.
@@ -146,6 +153,20 @@ impl GlobalConfigurationBuilder {
     pub fn get_support_low_framerate_inputs(&self) -> &::std::option::Option<crate::types::GlobalConfigurationLowFramerateInputs> {
         &self.support_low_framerate_inputs
     }
+    /// Advanced output locking settings
+    pub fn output_locking_settings(mut self, input: crate::types::OutputLockingSettings) -> Self {
+        self.output_locking_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// Advanced output locking settings
+    pub fn set_output_locking_settings(mut self, input: ::std::option::Option<crate::types::OutputLockingSettings>) -> Self {
+        self.output_locking_settings = input;
+        self
+    }
+    /// Advanced output locking settings
+    pub fn get_output_locking_settings(&self) -> &::std::option::Option<crate::types::OutputLockingSettings> {
+        &self.output_locking_settings
+    }
     /// Consumes the builder and constructs a [`GlobalConfiguration`](crate::types::GlobalConfiguration).
     pub fn build(self) -> crate::types::GlobalConfiguration {
         crate::types::GlobalConfiguration {
@@ -155,6 +176,7 @@ impl GlobalConfigurationBuilder {
             output_locking_mode: self.output_locking_mode,
             output_timing_source: self.output_timing_source,
             support_low_framerate_inputs: self.support_low_framerate_inputs,
+            output_locking_settings: self.output_locking_settings,
         }
     }
 }

@@ -263,6 +263,8 @@ pub type CreateMeetingErrorKind = CreateMeetingError;
 pub enum CreateMeetingError {
     /// <p>The input parameters don't match the service's restrictions.</p>
     BadRequestException(crate::types::error::BadRequestException),
+    /// <p>Multiple instances of the same request have been made simultaneously.</p>
+    ConflictException(crate::types::error::ConflictException),
     /// <p>The client is permanently forbidden from making the request.</p>
     ForbiddenException(crate::types::error::ForbiddenException),
     /// <p>The request exceeds the resource limit.</p>
@@ -294,6 +296,7 @@ impl ::std::fmt::Display for CreateMeetingError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
             Self::BadRequestException(_inner) => _inner.fmt(f),
+            Self::ConflictException(_inner) => _inner.fmt(f),
             Self::ForbiddenException(_inner) => _inner.fmt(f),
             Self::LimitExceededException(_inner) => _inner.fmt(f),
             Self::ServiceFailureException(_inner) => _inner.fmt(f),
@@ -308,6 +311,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for CreateMeeting
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::BadRequestException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ConflictException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ForbiddenException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::LimitExceededException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ServiceFailureException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
@@ -351,6 +355,7 @@ impl CreateMeetingError {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         match self {
             Self::BadRequestException(e) => e.meta(),
+            Self::ConflictException(e) => e.meta(),
             Self::ForbiddenException(e) => e.meta(),
             Self::LimitExceededException(e) => e.meta(),
             Self::ServiceFailureException(e) => e.meta(),
@@ -363,6 +368,10 @@ impl CreateMeetingError {
     /// Returns `true` if the error kind is `CreateMeetingError::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(self, Self::BadRequestException(_))
+    }
+    /// Returns `true` if the error kind is `CreateMeetingError::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(self, Self::ConflictException(_))
     }
     /// Returns `true` if the error kind is `CreateMeetingError::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
@@ -393,6 +402,7 @@ impl ::std::error::Error for CreateMeetingError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
             Self::BadRequestException(_inner) => ::std::option::Option::Some(_inner),
+            Self::ConflictException(_inner) => ::std::option::Option::Some(_inner),
             Self::ForbiddenException(_inner) => ::std::option::Option::Some(_inner),
             Self::LimitExceededException(_inner) => ::std::option::Option::Some(_inner),
             Self::ServiceFailureException(_inner) => ::std::option::Option::Some(_inner),

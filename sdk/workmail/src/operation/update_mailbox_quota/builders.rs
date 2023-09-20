@@ -125,16 +125,34 @@ impl UpdateMailboxQuotaFluentBuilder {
         self.inner.get_organization_id()
     }
     /// <p>The identifer for the user for whom to update the mailbox quota.</p>
+    /// <p>The identifier can be the <i>UserId</i>, <i>Username</i>, or <i>email</i>. The following identity formats are available:</p>
+    /// <ul>
+    /// <li> <p>User ID: 12345678-1234-1234-1234-123456789012 or S-1-1-12-1234567890-123456789-123456789-1234</p> </li>
+    /// <li> <p>Email address: user@domain.tld</p> </li>
+    /// <li> <p>User name: user</p> </li>
+    /// </ul>
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user_id(input.into());
         self
     }
     /// <p>The identifer for the user for whom to update the mailbox quota.</p>
+    /// <p>The identifier can be the <i>UserId</i>, <i>Username</i>, or <i>email</i>. The following identity formats are available:</p>
+    /// <ul>
+    /// <li> <p>User ID: 12345678-1234-1234-1234-123456789012 or S-1-1-12-1234567890-123456789-123456789-1234</p> </li>
+    /// <li> <p>Email address: user@domain.tld</p> </li>
+    /// <li> <p>User name: user</p> </li>
+    /// </ul>
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_user_id(input);
         self
     }
     /// <p>The identifer for the user for whom to update the mailbox quota.</p>
+    /// <p>The identifier can be the <i>UserId</i>, <i>Username</i>, or <i>email</i>. The following identity formats are available:</p>
+    /// <ul>
+    /// <li> <p>User ID: 12345678-1234-1234-1234-123456789012 or S-1-1-12-1234567890-123456789-123456789-1234</p> </li>
+    /// <li> <p>Email address: user@domain.tld</p> </li>
+    /// <li> <p>User name: user</p> </li>
+    /// </ul>
     pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_user_id()
     }

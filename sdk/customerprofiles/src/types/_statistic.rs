@@ -43,9 +43,7 @@
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::hash::Hash)]
 pub enum Statistic {
     #[allow(missing_docs)] // documentation missing in model
     Average,
@@ -120,5 +118,10 @@ impl Statistic {
 impl ::std::convert::AsRef<str> for Statistic {
     fn as_ref(&self) -> &str {
         self.as_str()
+    }
+}
+impl ::std::fmt::Debug for Statistic {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        ::std::write!(f, "*** Sensitive Data Redacted ***")
     }
 }

@@ -29,15 +29,21 @@ pub struct ComputeResource {
     /// <dd>
     /// <p>Batch selects one or more instance types that are large enough to meet the requirements of the jobs in the queue. Its preference is for instance types that are less likely to be interrupted. This allocation strategy is only available for Spot Instance compute resources.</p>
     /// </dd>
+    /// <dt>
+    /// SPOT_PRICE_CAPACITY_OPTIMIZED
+    /// </dt>
+    /// <dd>
+    /// <p>The price and capacity optimized allocation strategy looks at both price and capacity to select the Spot Instance pools that are the least likely to be interrupted and have the lowest possible price. This allocation strategy is only available for Spot Instance compute resources.</p>
+    /// </dd>
     /// </dl>
-    /// <p>With both <code>BEST_FIT_PROGRESSIVE</code> and <code>SPOT_CAPACITY_OPTIMIZED</code> strategies using On-Demand or Spot Instances, and the <code>BEST_FIT</code> strategy using Spot Instances, Batch might need to exceed <code>maxvCpus</code> to meet your capacity requirements. In this event, Batch never exceeds <code>maxvCpus</code> by more than a single instance.</p>
+    /// <p>With <code>BEST_FIT_PROGRESSIVE</code>,<code>SPOT_CAPACITY_OPTIMIZED</code> and <code>SPOT_PRICE_CAPACITY_OPTIMIZED</code> strategies using On-Demand or Spot Instances, and the <code>BEST_FIT</code> strategy using Spot Instances, Batch might need to exceed <code>maxvCpus</code> to meet your capacity requirements. In this event, Batch never exceeds <code>maxvCpus</code> by more than a single instance.</p>
     pub allocation_strategy: ::std::option::Option<crate::types::CrAllocationStrategy>,
     /// <p>The minimum number of vCPUs that a compute environment should maintain (even if the compute environment is <code>DISABLED</code>).</p> <note>
     /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
     /// </note>
     pub minv_cpus: ::std::option::Option<i32>,
     /// <p>The maximum number of vCPUs that a compute environment can support.</p> <note>
-    /// <p>With both <code>BEST_FIT_PROGRESSIVE</code> and <code>SPOT_CAPACITY_OPTIMIZED</code> allocation strategies using On-Demand or Spot Instances, and the <code>BEST_FIT</code> strategy using Spot Instances, Batch might need to exceed <code>maxvCpus</code> to meet your capacity requirements. In this event, Batch never exceeds <code>maxvCpus</code> by more than a single instance. For example, no more than a single instance from among those specified in your compute environment is allocated.</p>
+    /// <p>With <code>BEST_FIT_PROGRESSIVE</code>, <code>SPOT_CAPACITY_OPTIMIZED</code> and <code>SPOT_PRICE_CAPACITY_OPTIMIZED</code> allocation strategies using On-Demand or Spot Instances, and the <code>BEST_FIT</code> strategy using Spot Instances, Batch might need to exceed <code>maxvCpus</code> to meet your capacity requirements. In this event, Batch never exceeds <code>maxvCpus</code> by more than a single instance. For example, no more than a single instance from among those specified in your compute environment is allocated.</p>
     /// </note>
     pub maxv_cpus: ::std::option::Option<i32>,
     /// <p>The desired number of vCPUS in the compute environment. Batch modifies this value between the minimum and maximum values based on job queue demand.</p> <note>
@@ -131,8 +137,14 @@ impl ComputeResource {
     /// <dd>
     /// <p>Batch selects one or more instance types that are large enough to meet the requirements of the jobs in the queue. Its preference is for instance types that are less likely to be interrupted. This allocation strategy is only available for Spot Instance compute resources.</p>
     /// </dd>
+    /// <dt>
+    /// SPOT_PRICE_CAPACITY_OPTIMIZED
+    /// </dt>
+    /// <dd>
+    /// <p>The price and capacity optimized allocation strategy looks at both price and capacity to select the Spot Instance pools that are the least likely to be interrupted and have the lowest possible price. This allocation strategy is only available for Spot Instance compute resources.</p>
+    /// </dd>
     /// </dl>
-    /// <p>With both <code>BEST_FIT_PROGRESSIVE</code> and <code>SPOT_CAPACITY_OPTIMIZED</code> strategies using On-Demand or Spot Instances, and the <code>BEST_FIT</code> strategy using Spot Instances, Batch might need to exceed <code>maxvCpus</code> to meet your capacity requirements. In this event, Batch never exceeds <code>maxvCpus</code> by more than a single instance.</p>
+    /// <p>With <code>BEST_FIT_PROGRESSIVE</code>,<code>SPOT_CAPACITY_OPTIMIZED</code> and <code>SPOT_PRICE_CAPACITY_OPTIMIZED</code> strategies using On-Demand or Spot Instances, and the <code>BEST_FIT</code> strategy using Spot Instances, Batch might need to exceed <code>maxvCpus</code> to meet your capacity requirements. In this event, Batch never exceeds <code>maxvCpus</code> by more than a single instance.</p>
     pub fn allocation_strategy(&self) -> ::std::option::Option<&crate::types::CrAllocationStrategy> {
         self.allocation_strategy.as_ref()
     }
@@ -143,7 +155,7 @@ impl ComputeResource {
         self.minv_cpus
     }
     /// <p>The maximum number of vCPUs that a compute environment can support.</p> <note>
-    /// <p>With both <code>BEST_FIT_PROGRESSIVE</code> and <code>SPOT_CAPACITY_OPTIMIZED</code> allocation strategies using On-Demand or Spot Instances, and the <code>BEST_FIT</code> strategy using Spot Instances, Batch might need to exceed <code>maxvCpus</code> to meet your capacity requirements. In this event, Batch never exceeds <code>maxvCpus</code> by more than a single instance. For example, no more than a single instance from among those specified in your compute environment is allocated.</p>
+    /// <p>With <code>BEST_FIT_PROGRESSIVE</code>, <code>SPOT_CAPACITY_OPTIMIZED</code> and <code>SPOT_PRICE_CAPACITY_OPTIMIZED</code> allocation strategies using On-Demand or Spot Instances, and the <code>BEST_FIT</code> strategy using Spot Instances, Batch might need to exceed <code>maxvCpus</code> to meet your capacity requirements. In this event, Batch never exceeds <code>maxvCpus</code> by more than a single instance. For example, no more than a single instance from among those specified in your compute environment is allocated.</p>
     /// </note>
     pub fn maxv_cpus(&self) -> ::std::option::Option<i32> {
         self.maxv_cpus
@@ -306,8 +318,14 @@ impl ComputeResourceBuilder {
     /// <dd>
     /// <p>Batch selects one or more instance types that are large enough to meet the requirements of the jobs in the queue. Its preference is for instance types that are less likely to be interrupted. This allocation strategy is only available for Spot Instance compute resources.</p>
     /// </dd>
+    /// <dt>
+    /// SPOT_PRICE_CAPACITY_OPTIMIZED
+    /// </dt>
+    /// <dd>
+    /// <p>The price and capacity optimized allocation strategy looks at both price and capacity to select the Spot Instance pools that are the least likely to be interrupted and have the lowest possible price. This allocation strategy is only available for Spot Instance compute resources.</p>
+    /// </dd>
     /// </dl>
-    /// <p>With both <code>BEST_FIT_PROGRESSIVE</code> and <code>SPOT_CAPACITY_OPTIMIZED</code> strategies using On-Demand or Spot Instances, and the <code>BEST_FIT</code> strategy using Spot Instances, Batch might need to exceed <code>maxvCpus</code> to meet your capacity requirements. In this event, Batch never exceeds <code>maxvCpus</code> by more than a single instance.</p>
+    /// <p>With <code>BEST_FIT_PROGRESSIVE</code>,<code>SPOT_CAPACITY_OPTIMIZED</code> and <code>SPOT_PRICE_CAPACITY_OPTIMIZED</code> strategies using On-Demand or Spot Instances, and the <code>BEST_FIT</code> strategy using Spot Instances, Batch might need to exceed <code>maxvCpus</code> to meet your capacity requirements. In this event, Batch never exceeds <code>maxvCpus</code> by more than a single instance.</p>
     pub fn allocation_strategy(mut self, input: crate::types::CrAllocationStrategy) -> Self {
         self.allocation_strategy = ::std::option::Option::Some(input);
         self
@@ -334,8 +352,14 @@ impl ComputeResourceBuilder {
     /// <dd>
     /// <p>Batch selects one or more instance types that are large enough to meet the requirements of the jobs in the queue. Its preference is for instance types that are less likely to be interrupted. This allocation strategy is only available for Spot Instance compute resources.</p>
     /// </dd>
+    /// <dt>
+    /// SPOT_PRICE_CAPACITY_OPTIMIZED
+    /// </dt>
+    /// <dd>
+    /// <p>The price and capacity optimized allocation strategy looks at both price and capacity to select the Spot Instance pools that are the least likely to be interrupted and have the lowest possible price. This allocation strategy is only available for Spot Instance compute resources.</p>
+    /// </dd>
     /// </dl>
-    /// <p>With both <code>BEST_FIT_PROGRESSIVE</code> and <code>SPOT_CAPACITY_OPTIMIZED</code> strategies using On-Demand or Spot Instances, and the <code>BEST_FIT</code> strategy using Spot Instances, Batch might need to exceed <code>maxvCpus</code> to meet your capacity requirements. In this event, Batch never exceeds <code>maxvCpus</code> by more than a single instance.</p>
+    /// <p>With <code>BEST_FIT_PROGRESSIVE</code>,<code>SPOT_CAPACITY_OPTIMIZED</code> and <code>SPOT_PRICE_CAPACITY_OPTIMIZED</code> strategies using On-Demand or Spot Instances, and the <code>BEST_FIT</code> strategy using Spot Instances, Batch might need to exceed <code>maxvCpus</code> to meet your capacity requirements. In this event, Batch never exceeds <code>maxvCpus</code> by more than a single instance.</p>
     pub fn set_allocation_strategy(mut self, input: ::std::option::Option<crate::types::CrAllocationStrategy>) -> Self {
         self.allocation_strategy = input;
         self
@@ -362,8 +386,14 @@ impl ComputeResourceBuilder {
     /// <dd>
     /// <p>Batch selects one or more instance types that are large enough to meet the requirements of the jobs in the queue. Its preference is for instance types that are less likely to be interrupted. This allocation strategy is only available for Spot Instance compute resources.</p>
     /// </dd>
+    /// <dt>
+    /// SPOT_PRICE_CAPACITY_OPTIMIZED
+    /// </dt>
+    /// <dd>
+    /// <p>The price and capacity optimized allocation strategy looks at both price and capacity to select the Spot Instance pools that are the least likely to be interrupted and have the lowest possible price. This allocation strategy is only available for Spot Instance compute resources.</p>
+    /// </dd>
     /// </dl>
-    /// <p>With both <code>BEST_FIT_PROGRESSIVE</code> and <code>SPOT_CAPACITY_OPTIMIZED</code> strategies using On-Demand or Spot Instances, and the <code>BEST_FIT</code> strategy using Spot Instances, Batch might need to exceed <code>maxvCpus</code> to meet your capacity requirements. In this event, Batch never exceeds <code>maxvCpus</code> by more than a single instance.</p>
+    /// <p>With <code>BEST_FIT_PROGRESSIVE</code>,<code>SPOT_CAPACITY_OPTIMIZED</code> and <code>SPOT_PRICE_CAPACITY_OPTIMIZED</code> strategies using On-Demand or Spot Instances, and the <code>BEST_FIT</code> strategy using Spot Instances, Batch might need to exceed <code>maxvCpus</code> to meet your capacity requirements. In this event, Batch never exceeds <code>maxvCpus</code> by more than a single instance.</p>
     pub fn get_allocation_strategy(&self) -> &::std::option::Option<crate::types::CrAllocationStrategy> {
         &self.allocation_strategy
     }
@@ -388,21 +418,21 @@ impl ComputeResourceBuilder {
         &self.minv_cpus
     }
     /// <p>The maximum number of vCPUs that a compute environment can support.</p> <note>
-    /// <p>With both <code>BEST_FIT_PROGRESSIVE</code> and <code>SPOT_CAPACITY_OPTIMIZED</code> allocation strategies using On-Demand or Spot Instances, and the <code>BEST_FIT</code> strategy using Spot Instances, Batch might need to exceed <code>maxvCpus</code> to meet your capacity requirements. In this event, Batch never exceeds <code>maxvCpus</code> by more than a single instance. For example, no more than a single instance from among those specified in your compute environment is allocated.</p>
+    /// <p>With <code>BEST_FIT_PROGRESSIVE</code>, <code>SPOT_CAPACITY_OPTIMIZED</code> and <code>SPOT_PRICE_CAPACITY_OPTIMIZED</code> allocation strategies using On-Demand or Spot Instances, and the <code>BEST_FIT</code> strategy using Spot Instances, Batch might need to exceed <code>maxvCpus</code> to meet your capacity requirements. In this event, Batch never exceeds <code>maxvCpus</code> by more than a single instance. For example, no more than a single instance from among those specified in your compute environment is allocated.</p>
     /// </note>
     pub fn maxv_cpus(mut self, input: i32) -> Self {
         self.maxv_cpus = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum number of vCPUs that a compute environment can support.</p> <note>
-    /// <p>With both <code>BEST_FIT_PROGRESSIVE</code> and <code>SPOT_CAPACITY_OPTIMIZED</code> allocation strategies using On-Demand or Spot Instances, and the <code>BEST_FIT</code> strategy using Spot Instances, Batch might need to exceed <code>maxvCpus</code> to meet your capacity requirements. In this event, Batch never exceeds <code>maxvCpus</code> by more than a single instance. For example, no more than a single instance from among those specified in your compute environment is allocated.</p>
+    /// <p>With <code>BEST_FIT_PROGRESSIVE</code>, <code>SPOT_CAPACITY_OPTIMIZED</code> and <code>SPOT_PRICE_CAPACITY_OPTIMIZED</code> allocation strategies using On-Demand or Spot Instances, and the <code>BEST_FIT</code> strategy using Spot Instances, Batch might need to exceed <code>maxvCpus</code> to meet your capacity requirements. In this event, Batch never exceeds <code>maxvCpus</code> by more than a single instance. For example, no more than a single instance from among those specified in your compute environment is allocated.</p>
     /// </note>
     pub fn set_maxv_cpus(mut self, input: ::std::option::Option<i32>) -> Self {
         self.maxv_cpus = input;
         self
     }
     /// <p>The maximum number of vCPUs that a compute environment can support.</p> <note>
-    /// <p>With both <code>BEST_FIT_PROGRESSIVE</code> and <code>SPOT_CAPACITY_OPTIMIZED</code> allocation strategies using On-Demand or Spot Instances, and the <code>BEST_FIT</code> strategy using Spot Instances, Batch might need to exceed <code>maxvCpus</code> to meet your capacity requirements. In this event, Batch never exceeds <code>maxvCpus</code> by more than a single instance. For example, no more than a single instance from among those specified in your compute environment is allocated.</p>
+    /// <p>With <code>BEST_FIT_PROGRESSIVE</code>, <code>SPOT_CAPACITY_OPTIMIZED</code> and <code>SPOT_PRICE_CAPACITY_OPTIMIZED</code> allocation strategies using On-Demand or Spot Instances, and the <code>BEST_FIT</code> strategy using Spot Instances, Batch might need to exceed <code>maxvCpus</code> to meet your capacity requirements. In this event, Batch never exceeds <code>maxvCpus</code> by more than a single instance. For example, no more than a single instance from among those specified in your compute environment is allocated.</p>
     /// </note>
     pub fn get_maxv_cpus(&self) -> &::std::option::Option<i32> {
         &self.maxv_cpus

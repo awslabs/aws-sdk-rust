@@ -24,7 +24,7 @@ impl SetIdentityHeadersInNotificationsEnabledInputBuilder {
 ///
 /// <p>Given an identity (an email address or a domain), sets whether Amazon SES includes the original email headers in the Amazon Simple Notification Service (Amazon SNS) notifications of a specified type.</p>
 /// <p>You can execute this operation no more than once per second.</p>
-/// <p>For more information about using notifications with Amazon SES, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html">Amazon SES Developer Guide</a>.</p>
+/// <p>For more information about using notifications with Amazon SES, see the <a href="https://docs.aws.amazon.com/ses/latest/dg/monitor-sending-activity-using-notifications.html">Amazon SES Developer Guide</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SetIdentityHeadersInNotificationsEnabledFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -149,19 +149,19 @@ impl SetIdentityHeadersInNotificationsEnabledFluentBuilder {
     pub fn get_notification_type(&self) -> &::std::option::Option<crate::types::NotificationType> {
         self.inner.get_notification_type()
     }
-    /// <p>Sets whether Amazon SES includes the original email headers in Amazon SNS notifications of the specified notification type. A value of <code>true</code> specifies that Amazon SES will include headers in notifications, and a value of <code>false</code> specifies that Amazon SES will not include headers in notifications.</p>
+    /// <p>Sets whether Amazon SES includes the original email headers in Amazon SNS notifications of the specified notification type. A value of <code>true</code> specifies that Amazon SES includes headers in notifications, and a value of <code>false</code> specifies that Amazon SES does not include headers in notifications.</p>
     /// <p>This value can only be set when <code>NotificationType</code> is already set to use a particular Amazon SNS topic.</p>
     pub fn enabled(mut self, input: bool) -> Self {
         self.inner = self.inner.enabled(input);
         self
     }
-    /// <p>Sets whether Amazon SES includes the original email headers in Amazon SNS notifications of the specified notification type. A value of <code>true</code> specifies that Amazon SES will include headers in notifications, and a value of <code>false</code> specifies that Amazon SES will not include headers in notifications.</p>
+    /// <p>Sets whether Amazon SES includes the original email headers in Amazon SNS notifications of the specified notification type. A value of <code>true</code> specifies that Amazon SES includes headers in notifications, and a value of <code>false</code> specifies that Amazon SES does not include headers in notifications.</p>
     /// <p>This value can only be set when <code>NotificationType</code> is already set to use a particular Amazon SNS topic.</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_enabled(input);
         self
     }
-    /// <p>Sets whether Amazon SES includes the original email headers in Amazon SNS notifications of the specified notification type. A value of <code>true</code> specifies that Amazon SES will include headers in notifications, and a value of <code>false</code> specifies that Amazon SES will not include headers in notifications.</p>
+    /// <p>Sets whether Amazon SES includes the original email headers in Amazon SNS notifications of the specified notification type. A value of <code>true</code> specifies that Amazon SES includes headers in notifications, and a value of <code>false</code> specifies that Amazon SES does not include headers in notifications.</p>
     /// <p>This value can only be set when <code>NotificationType</code> is already set to use a particular Amazon SNS topic.</p>
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
         self.inner.get_enabled()

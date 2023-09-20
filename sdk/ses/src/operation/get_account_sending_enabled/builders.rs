@@ -22,7 +22,7 @@ impl GetAccountSendingEnabledInputBuilder {
 }
 /// Fluent builder constructing a request to `GetAccountSendingEnabled`.
 ///
-/// <p>Returns the email sending status of the Amazon SES account for the current region.</p>
+/// <p>Returns the email sending status of the Amazon SES account for the current Region.</p>
 /// <p>You can execute this operation no more than once per second.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetAccountSendingEnabledFluentBuilder {

@@ -12,7 +12,7 @@ pub struct DeleteFileInput {
     /// <p>The ID of the commit that is the tip of the branch where you want to create the commit that deletes the file. This must be the HEAD commit for the branch. The commit that deletes the file is created from this commit ID.</p>
     pub parent_commit_id: ::std::option::Option<::std::string::String>,
     /// <p>If a file is the only object in the folder or directory, specifies whether to delete the folder or directory that contains the file. By default, empty folders are deleted. This includes empty folders that are part of the directory structure. For example, if the path to a file is dir1/dir2/dir3/dir4, and dir2 and dir3 are empty, deleting the last file in dir4 also deletes the empty folders dir4, dir3, and dir2.</p>
-    pub keep_empty_folders: bool,
+    pub keep_empty_folders: ::std::option::Option<bool>,
     /// <p>The commit message you want to include as part of deleting the file. Commit messages are limited to 256 KB. If no message is specified, a default message is used.</p>
     pub commit_message: ::std::option::Option<::std::string::String>,
     /// <p>The name of the author of the commit that deletes the file. If no name is specified, the user's ARN is used as the author name and committer name.</p>
@@ -38,7 +38,7 @@ impl DeleteFileInput {
         self.parent_commit_id.as_deref()
     }
     /// <p>If a file is the only object in the folder or directory, specifies whether to delete the folder or directory that contains the file. By default, empty folders are deleted. This includes empty folders that are part of the directory structure. For example, if the path to a file is dir1/dir2/dir3/dir4, and dir2 and dir3 are empty, deleting the last file in dir4 also deletes the empty folders dir4, dir3, and dir2.</p>
-    pub fn keep_empty_folders(&self) -> bool {
+    pub fn keep_empty_folders(&self) -> ::std::option::Option<bool> {
         self.keep_empty_folders
     }
     /// <p>The commit message you want to include as part of deleting the file. Commit messages are limited to 256 KB. If no message is specified, a default message is used.</p>
@@ -194,7 +194,7 @@ impl DeleteFileInputBuilder {
             branch_name: self.branch_name,
             file_path: self.file_path,
             parent_commit_id: self.parent_commit_id,
-            keep_empty_folders: self.keep_empty_folders.unwrap_or_default(),
+            keep_empty_folders: self.keep_empty_folders,
             commit_message: self.commit_message,
             name: self.name,
             email: self.email,

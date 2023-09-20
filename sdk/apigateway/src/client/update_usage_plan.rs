@@ -12,7 +12,7 @@ impl super::Client {
     ///   - [`api_stages(Option<Vec<ApiStage>>)`](crate::operation::update_usage_plan::UpdateUsagePlanOutput::api_stages): <p>The associated API stages of a usage plan.</p>
     ///   - [`throttle(Option<ThrottleSettings>)`](crate::operation::update_usage_plan::UpdateUsagePlanOutput::throttle): <p>A map containing method level throttling information for API stage in a usage plan.</p>
     ///   - [`quota(Option<QuotaSettings>)`](crate::operation::update_usage_plan::UpdateUsagePlanOutput::quota): <p>The target maximum number of permitted requests per a given unit time interval.</p>
-    ///   - [`product_code(Option<String>)`](crate::operation::update_usage_plan::UpdateUsagePlanOutput::product_code): <p>The AWS Markeplace product identifier to associate with the usage plan as a SaaS product on AWS Marketplace.</p>
+    ///   - [`product_code(Option<String>)`](crate::operation::update_usage_plan::UpdateUsagePlanOutput::product_code): <p>The Amazon Web Services Marketplace product identifier to associate with the usage plan as a SaaS product on the Amazon Web Services Marketplace.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::update_usage_plan::UpdateUsagePlanOutput::tags): <p>The collection of tags. Each tag element is associated with a given resource.</p>
     /// - On failure, responds with [`SdkError<UpdateUsagePlanError>`](crate::operation::update_usage_plan::UpdateUsagePlanError)
     pub fn update_usage_plan(&self) -> crate::operation::update_usage_plan::builders::UpdateUsagePlanFluentBuilder {

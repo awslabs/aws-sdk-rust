@@ -14,8 +14,8 @@ pub fn ser_notify_application_state_input(
             .key("UpdateDateTime")
             .date_time(var_3, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
-    if input.dry_run {
-        object.key("DryRun").boolean(input.dry_run);
+    if let Some(var_4) = &input.dry_run {
+        object.key("DryRun").boolean(*var_4);
     }
     Ok(())
 }

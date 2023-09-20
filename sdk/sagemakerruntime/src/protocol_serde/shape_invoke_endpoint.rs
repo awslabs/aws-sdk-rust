@@ -33,12 +33,42 @@ pub fn de_invoke_endpoint_http_error(
             }
             tmp
         }),
+        "ModelNotReadyException" => crate::operation::invoke_endpoint::InvokeEndpointError::ModelNotReadyException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ModelNotReadyExceptionBuilder::default();
+                output = crate::protocol_serde::shape_model_not_ready_exception::de_model_not_ready_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::invoke_endpoint::InvokeEndpointError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "InternalFailure" => crate::operation::invoke_endpoint::InvokeEndpointError::InternalFailure({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::InternalFailureBuilder::default();
                 output = crate::protocol_serde::shape_internal_failure::de_internal_failure_json_err(_response_body, output)
+                    .map_err(crate::operation::invoke_endpoint::InvokeEndpointError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ValidationError" => crate::operation::invoke_endpoint::InvokeEndpointError::ValidationError({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ValidationErrorBuilder::default();
+                output = crate::protocol_serde::shape_validation_error::de_validation_error_json_err(_response_body, output)
                     .map_err(crate::operation::invoke_endpoint::InvokeEndpointError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
@@ -63,42 +93,12 @@ pub fn de_invoke_endpoint_http_error(
             }
             tmp
         }),
-        "ModelNotReadyException" => crate::operation::invoke_endpoint::InvokeEndpointError::ModelNotReadyException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::ModelNotReadyExceptionBuilder::default();
-                output = crate::protocol_serde::shape_model_not_ready_exception::de_model_not_ready_exception_json_err(_response_body, output)
-                    .map_err(crate::operation::invoke_endpoint::InvokeEndpointError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
         "ServiceUnavailable" => crate::operation::invoke_endpoint::InvokeEndpointError::ServiceUnavailable({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::ServiceUnavailableBuilder::default();
                 output = crate::protocol_serde::shape_service_unavailable::de_service_unavailable_json_err(_response_body, output)
-                    .map_err(crate::operation::invoke_endpoint::InvokeEndpointError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "ValidationError" => crate::operation::invoke_endpoint::InvokeEndpointError::ValidationError({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::ValidationErrorBuilder::default();
-                output = crate::protocol_serde::shape_validation_error::de_validation_error_json_err(_response_body, output)
                     .map_err(crate::operation::invoke_endpoint::InvokeEndpointError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()

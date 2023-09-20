@@ -37,6 +37,8 @@ pub(crate) mod shape_export_ecs_service_recommendations;
 
 pub(crate) mod shape_export_lambda_function_recommendations;
 
+pub(crate) mod shape_export_license_recommendations;
+
 pub(crate) mod shape_get_auto_scaling_group_recommendations;
 
 pub(crate) mod shape_get_ebs_volume_recommendations;
@@ -56,6 +58,8 @@ pub(crate) mod shape_get_enrollment_status;
 pub(crate) mod shape_get_enrollment_statuses_for_organization;
 
 pub(crate) mod shape_get_lambda_function_recommendations;
+
+pub(crate) mod shape_get_license_recommendations;
 
 pub(crate) mod shape_get_recommendation_preferences;
 
@@ -89,6 +93,8 @@ pub(crate) mod shape_export_ecs_service_recommendations_input;
 
 pub(crate) mod shape_export_lambda_function_recommendations_input;
 
+pub(crate) mod shape_export_license_recommendations_input;
+
 pub(crate) mod shape_get_auto_scaling_group_recommendations_input;
 
 pub(crate) mod shape_get_ebs_volume_recommendations_input;
@@ -106,6 +112,8 @@ pub(crate) mod shape_get_effective_recommendation_preferences_input;
 pub(crate) mod shape_get_enrollment_statuses_for_organization_input;
 
 pub(crate) mod shape_get_lambda_function_recommendations_input;
+
+pub(crate) mod shape_get_license_recommendations_input;
 
 pub(crate) mod shape_get_recommendation_preferences_input;
 
@@ -159,6 +167,10 @@ pub(crate) mod shape_lambda_function_recommendation_filter;
 
 pub(crate) mod shape_lambda_function_recommendations;
 
+pub(crate) mod shape_license_recommendation_filter;
+
+pub(crate) mod shape_license_recommendations;
+
 pub(crate) mod shape_recommendation_export_jobs;
 
 pub(crate) mod shape_recommendation_preferences;
@@ -190,6 +202,8 @@ pub(crate) mod shape_get_recommendation_error;
 pub(crate) mod shape_instance_recommendation;
 
 pub(crate) mod shape_lambda_function_recommendation;
+
+pub(crate) mod shape_license_recommendation;
 
 pub(crate) mod shape_recommendation_export_job;
 
@@ -223,6 +237,8 @@ pub(crate) mod shape_export_destination;
 
 pub(crate) mod shape_external_metric_status;
 
+pub(crate) mod shape_gpu_info;
+
 pub(crate) mod shape_inferred_workload_savings;
 
 pub(crate) mod shape_inferred_workload_types;
@@ -234,6 +250,12 @@ pub(crate) mod shape_lambda_function_memory_recommendation_options;
 pub(crate) mod shape_lambda_function_recommendation_finding_reason_codes;
 
 pub(crate) mod shape_lambda_function_utilization_metrics;
+
+pub(crate) mod shape_license_configuration;
+
+pub(crate) mod shape_license_finding_reason_codes;
+
+pub(crate) mod shape_license_recommendation_options;
 
 pub(crate) mod shape_projected_metrics;
 
@@ -271,6 +293,8 @@ pub(crate) mod shape_ecs_service_utilization_metric;
 
 pub(crate) mod shape_estimated_monthly_savings;
 
+pub(crate) mod shape_gpus;
+
 pub(crate) mod shape_inferred_workload_saving;
 
 pub(crate) mod shape_instance_recommendation_option;
@@ -278,6 +302,10 @@ pub(crate) mod shape_instance_recommendation_option;
 pub(crate) mod shape_lambda_function_memory_recommendation_option;
 
 pub(crate) mod shape_lambda_function_utilization_metric;
+
+pub(crate) mod shape_license_recommendation_option;
+
+pub(crate) mod shape_metrics_source;
 
 pub(crate) mod shape_projected_metric;
 
@@ -297,7 +325,11 @@ pub(crate) mod shape_container_recommendations;
 
 pub(crate) mod shape_ecs_service_projected_utilization_metrics;
 
+pub(crate) mod shape_gpu;
+
 pub(crate) mod shape_lambda_function_memory_projected_metrics;
+
+pub(crate) mod shape_metric_source;
 
 pub(crate) mod shape_metric_values;
 

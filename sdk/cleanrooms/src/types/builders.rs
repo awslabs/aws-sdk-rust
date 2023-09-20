@@ -7,6 +7,8 @@ pub use crate::types::_protected_query_error::ProtectedQueryErrorBuilder;
 
 pub use crate::types::_protected_query_result::ProtectedQueryResultBuilder;
 
+pub use crate::types::_protected_query_single_member_output::ProtectedQuerySingleMemberOutputBuilder;
+
 pub use crate::types::_protected_query_s3_output::ProtectedQueryS3OutputBuilder;
 
 pub use crate::types::_protected_query_statistics::ProtectedQueryStatisticsBuilder;
@@ -23,7 +25,11 @@ pub use crate::types::_membership_summary::MembershipSummaryBuilder;
 
 pub use crate::types::_membership::MembershipBuilder;
 
+pub use crate::types::_membership_protected_query_result_configuration::MembershipProtectedQueryResultConfigurationBuilder;
+
 pub use crate::types::_configured_table_analysis_rule::ConfiguredTableAnalysisRuleBuilder;
+
+pub use crate::types::_analysis_rule_custom::AnalysisRuleCustomBuilder;
 
 pub use crate::types::_analysis_rule_aggregation::AnalysisRuleAggregationBuilder;
 
@@ -47,13 +53,23 @@ pub use crate::types::_schema_summary::SchemaSummaryBuilder;
 
 pub use crate::types::_member_summary::MemberSummaryBuilder;
 
+pub use crate::types::_collaboration_analysis_template_summary::CollaborationAnalysisTemplateSummaryBuilder;
+
 pub use crate::types::_analysis_rule::AnalysisRuleBuilder;
 
 pub use crate::types::_schema::SchemaBuilder;
 
 pub use crate::types::_column::ColumnBuilder;
 
+pub use crate::types::_collaboration_analysis_template::CollaborationAnalysisTemplateBuilder;
+
+pub use crate::types::_analysis_parameter::AnalysisParameterBuilder;
+
+pub use crate::types::_analysis_schema::AnalysisSchemaBuilder;
+
 pub use crate::types::_batch_get_schema_error::BatchGetSchemaErrorBuilder;
+
+pub use crate::types::_batch_get_collaboration_analysis_template_error::BatchGetCollaborationAnalysisTemplateErrorBuilder;
 
 pub use crate::types::_collaboration_summary::CollaborationSummaryBuilder;
 
@@ -62,3 +78,7 @@ pub use crate::types::_collaboration::CollaborationBuilder;
 pub use crate::types::_data_encryption_metadata::DataEncryptionMetadataBuilder;
 
 pub use crate::types::_member_specification::MemberSpecificationBuilder;
+
+pub use crate::types::_analysis_template_summary::AnalysisTemplateSummaryBuilder;
+
+pub use crate::types::_analysis_template::AnalysisTemplateBuilder;

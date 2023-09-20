@@ -145,6 +145,9 @@ pub mod reject_input_device_transfer;
 /// Types for the `StartChannel` operation.
 pub mod start_channel;
 
+/// Types for the `StartInputDevice` operation.
+pub mod start_input_device;
+
 /// Types for the `StartInputDeviceMaintenanceWindow` operation.
 pub mod start_input_device_maintenance_window;
 
@@ -153,6 +156,9 @@ pub mod start_multiplex;
 
 /// Types for the `StopChannel` operation.
 pub mod stop_channel;
+
+/// Types for the `StopInputDevice` operation.
+pub mod stop_input_device;
 
 /// Types for the `StopMultiplex` operation.
 pub mod stop_multiplex;

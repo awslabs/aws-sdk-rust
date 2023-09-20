@@ -22,10 +22,10 @@ impl SendBounceInputBuilder {
 }
 /// Fluent builder constructing a request to `SendBounce`.
 ///
-/// <p>Generates and sends a bounce message to the sender of an email you received through Amazon SES. You can only use this API on an email up to 24 hours after you receive it.</p> <note>
-/// <p>You cannot use this API to send generic bounces for mail that was not received by Amazon SES.</p>
+/// <p>Generates and sends a bounce message to the sender of an email you received through Amazon SES. You can only use this operation on an email up to 24 hours after you receive it.</p> <note>
+/// <p>You cannot use this operation to send generic bounces for mail that was not received by Amazon SES.</p>
 /// </note>
-/// <p>For information about receiving email through Amazon SES, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email.html">Amazon SES Developer Guide</a>.</p>
+/// <p>For information about receiving email through Amazon SES, see the <a href="https://docs.aws.amazon.com/ses/latest/dg/receiving-email.html">Amazon SES Developer Guide</a>.</p>
 /// <p>You can execute this operation no more than once per second.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SendBounceFluentBuilder {
@@ -142,31 +142,31 @@ impl SendBounceFluentBuilder {
     pub fn get_bounce_sender(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_bounce_sender()
     }
-    /// <p>Human-readable text for the bounce message to explain the failure. If not specified, the text will be auto-generated based on the bounced recipient information.</p>
+    /// <p>Human-readable text for the bounce message to explain the failure. If not specified, the text is auto-generated based on the bounced recipient information.</p>
     pub fn explanation(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.explanation(input.into());
         self
     }
-    /// <p>Human-readable text for the bounce message to explain the failure. If not specified, the text will be auto-generated based on the bounced recipient information.</p>
+    /// <p>Human-readable text for the bounce message to explain the failure. If not specified, the text is auto-generated based on the bounced recipient information.</p>
     pub fn set_explanation(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_explanation(input);
         self
     }
-    /// <p>Human-readable text for the bounce message to explain the failure. If not specified, the text will be auto-generated based on the bounced recipient information.</p>
+    /// <p>Human-readable text for the bounce message to explain the failure. If not specified, the text is auto-generated based on the bounced recipient information.</p>
     pub fn get_explanation(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_explanation()
     }
-    /// <p>Message-related DSN fields. If not specified, Amazon SES will choose the values.</p>
+    /// <p>Message-related DSN fields. If not specified, Amazon SES chooses the values.</p>
     pub fn message_dsn(mut self, input: crate::types::MessageDsn) -> Self {
         self.inner = self.inner.message_dsn(input);
         self
     }
-    /// <p>Message-related DSN fields. If not specified, Amazon SES will choose the values.</p>
+    /// <p>Message-related DSN fields. If not specified, Amazon SES chooses the values.</p>
     pub fn set_message_dsn(mut self, input: ::std::option::Option<crate::types::MessageDsn>) -> Self {
         self.inner = self.inner.set_message_dsn(input);
         self
     }
-    /// <p>Message-related DSN fields. If not specified, Amazon SES will choose the values.</p>
+    /// <p>Message-related DSN fields. If not specified, Amazon SES chooses the values.</p>
     pub fn get_message_dsn(&self) -> &::std::option::Option<crate::types::MessageDsn> {
         self.inner.get_message_dsn()
     }
@@ -188,17 +188,17 @@ impl SendBounceFluentBuilder {
     pub fn get_bounced_recipient_info_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BouncedRecipientInfo>> {
         self.inner.get_bounced_recipient_info_list()
     }
-    /// <p>This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the sending authorization policy that permits you to use the address in the "From" header of the bounce. For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
+    /// <p>This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the sending authorization policy that permits you to use the address in the "From" header of the bounce. For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/dg/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
     pub fn bounce_sender_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.bounce_sender_arn(input.into());
         self
     }
-    /// <p>This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the sending authorization policy that permits you to use the address in the "From" header of the bounce. For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
+    /// <p>This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the sending authorization policy that permits you to use the address in the "From" header of the bounce. For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/dg/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
     pub fn set_bounce_sender_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_bounce_sender_arn(input);
         self
     }
-    /// <p>This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the sending authorization policy that permits you to use the address in the "From" header of the bounce. For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
+    /// <p>This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the sending authorization policy that permits you to use the address in the "From" header of the bounce. For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/dg/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
     pub fn get_bounce_sender_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_bounce_sender_arn()
     }

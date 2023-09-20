@@ -130,17 +130,35 @@ impl ListMailboxPermissionsFluentBuilder {
     pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_organization_id()
     }
-    /// <p>The identifier of the user, group, or resource for which to list mailbox permissions.</p>
+    /// <p>The identifier of the user, or resource for which to list mailbox permissions.</p>
+    /// <p>The entity ID can accept <i>UserId or ResourceId</i>, <i>Username or Resourcename</i>, or <i>email</i>.</p>
+    /// <ul>
+    /// <li> <p>Entity ID: 12345678-1234-1234-1234-123456789012, or r-0123456789a0123456789b0123456789</p> </li>
+    /// <li> <p>Email address: entity@domain.tld</p> </li>
+    /// <li> <p>Entity name: entity</p> </li>
+    /// </ul>
     pub fn entity_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.entity_id(input.into());
         self
     }
-    /// <p>The identifier of the user, group, or resource for which to list mailbox permissions.</p>
+    /// <p>The identifier of the user, or resource for which to list mailbox permissions.</p>
+    /// <p>The entity ID can accept <i>UserId or ResourceId</i>, <i>Username or Resourcename</i>, or <i>email</i>.</p>
+    /// <ul>
+    /// <li> <p>Entity ID: 12345678-1234-1234-1234-123456789012, or r-0123456789a0123456789b0123456789</p> </li>
+    /// <li> <p>Email address: entity@domain.tld</p> </li>
+    /// <li> <p>Entity name: entity</p> </li>
+    /// </ul>
     pub fn set_entity_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_entity_id(input);
         self
     }
-    /// <p>The identifier of the user, group, or resource for which to list mailbox permissions.</p>
+    /// <p>The identifier of the user, or resource for which to list mailbox permissions.</p>
+    /// <p>The entity ID can accept <i>UserId or ResourceId</i>, <i>Username or Resourcename</i>, or <i>email</i>.</p>
+    /// <ul>
+    /// <li> <p>Entity ID: 12345678-1234-1234-1234-123456789012, or r-0123456789a0123456789b0123456789</p> </li>
+    /// <li> <p>Email address: entity@domain.tld</p> </li>
+    /// <li> <p>Entity name: entity</p> </li>
+    /// </ul>
     pub fn get_entity_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_entity_id()
     }

@@ -255,7 +255,7 @@ pub type DeleteDBInstanceErrorKind = DeleteDBInstanceError;
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum DeleteDBInstanceError {
-    /// <p>The quota for retained automated backups was exceeded. This prevents you from retaining any additional automated backups. The retained automated backups quota is the same as your DB Instance quota.</p>
+    /// <p>The quota for retained automated backups was exceeded. This prevents you from retaining any additional automated backups. The retained automated backups quota is the same as your DB instance quota.</p>
     DbInstanceAutomatedBackupQuotaExceededFault(crate::types::error::DbInstanceAutomatedBackupQuotaExceededFault),
     /// <p> <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.</p>
     DbInstanceNotFoundFault(crate::types::error::DbInstanceNotFoundFault),

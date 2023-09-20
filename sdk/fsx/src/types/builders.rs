@@ -123,6 +123,10 @@ pub use crate::types::_snapshot_filter::SnapshotFilterBuilder;
 
 pub use crate::types::_data_repository_task::DataRepositoryTaskBuilder;
 
+pub use crate::types::_release_configuration::ReleaseConfigurationBuilder;
+
+pub use crate::types::_duration_since_last_access::DurationSinceLastAccessBuilder;
+
 pub use crate::types::_completion_report::CompletionReportBuilder;
 
 pub use crate::types::_data_repository_task_status::DataRepositoryTaskStatusBuilder;

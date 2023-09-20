@@ -12,33 +12,33 @@ pub fn ser_modify_global_replication_group_input_input(
     }
     #[allow(unused_mut)]
     let mut scope_3 = writer.prefix("ApplyImmediately");
-    {
-        scope_3.boolean(input.apply_immediately);
+    if let Some(var_4) = &input.apply_immediately {
+        scope_3.boolean(*var_4);
     }
     #[allow(unused_mut)]
-    let mut scope_4 = writer.prefix("CacheNodeType");
-    if let Some(var_5) = &input.cache_node_type {
-        scope_4.string(var_5);
+    let mut scope_5 = writer.prefix("CacheNodeType");
+    if let Some(var_6) = &input.cache_node_type {
+        scope_5.string(var_6);
     }
     #[allow(unused_mut)]
-    let mut scope_6 = writer.prefix("EngineVersion");
-    if let Some(var_7) = &input.engine_version {
-        scope_6.string(var_7);
+    let mut scope_7 = writer.prefix("EngineVersion");
+    if let Some(var_8) = &input.engine_version {
+        scope_7.string(var_8);
     }
     #[allow(unused_mut)]
-    let mut scope_8 = writer.prefix("CacheParameterGroupName");
-    if let Some(var_9) = &input.cache_parameter_group_name {
-        scope_8.string(var_9);
+    let mut scope_9 = writer.prefix("CacheParameterGroupName");
+    if let Some(var_10) = &input.cache_parameter_group_name {
+        scope_9.string(var_10);
     }
     #[allow(unused_mut)]
-    let mut scope_10 = writer.prefix("GlobalReplicationGroupDescription");
-    if let Some(var_11) = &input.global_replication_group_description {
-        scope_10.string(var_11);
+    let mut scope_11 = writer.prefix("GlobalReplicationGroupDescription");
+    if let Some(var_12) = &input.global_replication_group_description {
+        scope_11.string(var_12);
     }
     #[allow(unused_mut)]
-    let mut scope_12 = writer.prefix("AutomaticFailoverEnabled");
-    if let Some(var_13) = &input.automatic_failover_enabled {
-        scope_12.boolean(*var_13);
+    let mut scope_13 = writer.prefix("AutomaticFailoverEnabled");
+    if let Some(var_14) = &input.automatic_failover_enabled {
+        scope_13.boolean(*var_14);
     }
     writer.finish();
     Ok(::aws_smithy_http::body::SdkBody::from(out))

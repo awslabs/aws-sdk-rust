@@ -47,7 +47,7 @@ pub struct TaskDefinition {
     /// <p>The operating system that your task definitions are running on. A platform family is specified only for tasks using the Fargate launch type. </p>
     /// <p>When you specify a task in a service, this value must match the <code>runtimePlatform</code> value of the service.</p>
     pub runtime_platform: ::std::option::Option<crate::types::RuntimePlatform>,
-    /// <p>The task launch types the task definition was validated against. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    /// <p>The task launch types the task definition was validated against. The valid values are <code>EC2</code>, <code>FARGATE</code>, and <code>EXTERNAL</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub requires_compatibilities: ::std::option::Option<::std::vec::Vec<crate::types::Compatibility>>,
     /// <p>The number of <code>cpu</code> units used by the task. If you use the EC2 launch type, this field is optional. Any value can be used. If you use the Fargate launch type, this field is required. You must use one of the following values. The value that you choose determines your range of valid values for the <code>memory</code> parameter.</p>
     /// <p>The CPU units cannot be less than 1 vCPU when you use Windows containers on Fargate.</p>
@@ -76,9 +76,14 @@ pub struct TaskDefinition {
     pub memory: ::std::option::Option<::std::string::String>,
     /// <p>The Elastic Inference accelerator that's associated with the task.</p>
     pub inference_accelerators: ::std::option::Option<::std::vec::Vec<crate::types::InferenceAccelerator>>,
-    /// <p>The process namespace to use for the containers in the task. The valid values are <code>host</code> or <code>task</code>. If <code>host</code> is specified, then all containers within the tasks that specified the <code>host</code> PID mode on the same container instance share the same process namespace with the host Amazon EC2 instance. If <code>task</code> is specified, all containers within the specified task share the same process namespace. If no value is specified, the default is a private namespace. For more information, see <a href="https://docs.docker.com/engine/reference/run/#pid-settings---pid">PID settings</a> in the <i>Docker run reference</i>.</p>
-    /// <p>If the <code>host</code> PID mode is used, be aware that there is a heightened risk of undesired process namespace expose. For more information, see <a href="https://docs.docker.com/engine/security/security/">Docker security</a>.</p> <note>
-    /// <p>This parameter is not supported for Windows containers or tasks run on Fargate.</p>
+    /// <p>The process namespace to use for the containers in the task. The valid values are <code>host</code> or <code>task</code>. On Fargate for Linux containers, the only valid value is <code>task</code>. For example, monitoring sidecars might need <code>pidMode</code> to access information about other containers running in the same task.</p>
+    /// <p>If <code>host</code> is specified, all containers within the tasks that specified the <code>host</code> PID mode on the same container instance share the same process namespace with the host Amazon EC2 instance.</p>
+    /// <p>If <code>task</code> is specified, all containers within the specified task share the same process namespace.</p>
+    /// <p>If no value is specified, the default is a private namespace for each container. For more information, see <a href="https://docs.docker.com/engine/reference/run/#pid-settings---pid">PID settings</a> in the <i>Docker run reference</i>.</p>
+    /// <p>If the <code>host</code> PID mode is used, there's a heightened risk of undesired process namespace exposure. For more information, see <a href="https://docs.docker.com/engine/security/security/">Docker security</a>.</p> <note>
+    /// <p>This parameter is not supported for Windows containers.</p>
+    /// </note> <note>
+    /// <p>This parameter is only supported for tasks that are hosted on Fargate if the tasks are using platform version <code>1.4.0</code> or later (Linux). This isn't supported for Windows containers on Fargate.</p>
     /// </note>
     pub pid_mode: ::std::option::Option<crate::types::PidMode>,
     /// <p>The IPC resource namespace to use for the containers in the task. The valid values are <code>host</code>, <code>task</code>, or <code>none</code>. If <code>host</code> is specified, then all containers within the tasks that specified the <code>host</code> IPC mode on the same container instance share the same IPC resources with the host Amazon EC2 instance. If <code>task</code> is specified, all containers within the specified task share the same IPC resources. If <code>none</code> is specified, then IPC resources within the containers of a task are private and not shared with other containers in a task or on the container instance. If no value is specified, then the IPC resource namespace sharing depends on the Docker daemon setting on the container instance. For more information, see <a href="https://docs.docker.com/engine/reference/run/#ipc-settings---ipc">IPC settings</a> in the <i>Docker run reference</i>.</p>
@@ -173,7 +178,7 @@ impl TaskDefinition {
     pub fn runtime_platform(&self) -> ::std::option::Option<&crate::types::RuntimePlatform> {
         self.runtime_platform.as_ref()
     }
-    /// <p>The task launch types the task definition was validated against. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    /// <p>The task launch types the task definition was validated against. The valid values are <code>EC2</code>, <code>FARGATE</code>, and <code>EXTERNAL</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub fn requires_compatibilities(&self) -> ::std::option::Option<&[crate::types::Compatibility]> {
         self.requires_compatibilities.as_deref()
     }
@@ -210,9 +215,14 @@ impl TaskDefinition {
     pub fn inference_accelerators(&self) -> ::std::option::Option<&[crate::types::InferenceAccelerator]> {
         self.inference_accelerators.as_deref()
     }
-    /// <p>The process namespace to use for the containers in the task. The valid values are <code>host</code> or <code>task</code>. If <code>host</code> is specified, then all containers within the tasks that specified the <code>host</code> PID mode on the same container instance share the same process namespace with the host Amazon EC2 instance. If <code>task</code> is specified, all containers within the specified task share the same process namespace. If no value is specified, the default is a private namespace. For more information, see <a href="https://docs.docker.com/engine/reference/run/#pid-settings---pid">PID settings</a> in the <i>Docker run reference</i>.</p>
-    /// <p>If the <code>host</code> PID mode is used, be aware that there is a heightened risk of undesired process namespace expose. For more information, see <a href="https://docs.docker.com/engine/security/security/">Docker security</a>.</p> <note>
-    /// <p>This parameter is not supported for Windows containers or tasks run on Fargate.</p>
+    /// <p>The process namespace to use for the containers in the task. The valid values are <code>host</code> or <code>task</code>. On Fargate for Linux containers, the only valid value is <code>task</code>. For example, monitoring sidecars might need <code>pidMode</code> to access information about other containers running in the same task.</p>
+    /// <p>If <code>host</code> is specified, all containers within the tasks that specified the <code>host</code> PID mode on the same container instance share the same process namespace with the host Amazon EC2 instance.</p>
+    /// <p>If <code>task</code> is specified, all containers within the specified task share the same process namespace.</p>
+    /// <p>If no value is specified, the default is a private namespace for each container. For more information, see <a href="https://docs.docker.com/engine/reference/run/#pid-settings---pid">PID settings</a> in the <i>Docker run reference</i>.</p>
+    /// <p>If the <code>host</code> PID mode is used, there's a heightened risk of undesired process namespace exposure. For more information, see <a href="https://docs.docker.com/engine/security/security/">Docker security</a>.</p> <note>
+    /// <p>This parameter is not supported for Windows containers.</p>
+    /// </note> <note>
+    /// <p>This parameter is only supported for tasks that are hosted on Fargate if the tasks are using platform version <code>1.4.0</code> or later (Linux). This isn't supported for Windows containers on Fargate.</p>
     /// </note>
     pub fn pid_mode(&self) -> ::std::option::Option<&crate::types::PidMode> {
         self.pid_mode.as_ref()
@@ -558,19 +568,19 @@ impl TaskDefinitionBuilder {
     ///
     /// To override the contents of this collection use [`set_requires_compatibilities`](Self::set_requires_compatibilities).
     ///
-    /// <p>The task launch types the task definition was validated against. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    /// <p>The task launch types the task definition was validated against. The valid values are <code>EC2</code>, <code>FARGATE</code>, and <code>EXTERNAL</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub fn requires_compatibilities(mut self, input: crate::types::Compatibility) -> Self {
         let mut v = self.requires_compatibilities.unwrap_or_default();
         v.push(input);
         self.requires_compatibilities = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The task launch types the task definition was validated against. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    /// <p>The task launch types the task definition was validated against. The valid values are <code>EC2</code>, <code>FARGATE</code>, and <code>EXTERNAL</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub fn set_requires_compatibilities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Compatibility>>) -> Self {
         self.requires_compatibilities = input;
         self
     }
-    /// <p>The task launch types the task definition was validated against. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    /// <p>The task launch types the task definition was validated against. The valid values are <code>EC2</code>, <code>FARGATE</code>, and <code>EXTERNAL</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub fn get_requires_compatibilities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Compatibility>> {
         &self.requires_compatibilities
     }
@@ -685,25 +695,40 @@ impl TaskDefinitionBuilder {
     pub fn get_inference_accelerators(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InferenceAccelerator>> {
         &self.inference_accelerators
     }
-    /// <p>The process namespace to use for the containers in the task. The valid values are <code>host</code> or <code>task</code>. If <code>host</code> is specified, then all containers within the tasks that specified the <code>host</code> PID mode on the same container instance share the same process namespace with the host Amazon EC2 instance. If <code>task</code> is specified, all containers within the specified task share the same process namespace. If no value is specified, the default is a private namespace. For more information, see <a href="https://docs.docker.com/engine/reference/run/#pid-settings---pid">PID settings</a> in the <i>Docker run reference</i>.</p>
-    /// <p>If the <code>host</code> PID mode is used, be aware that there is a heightened risk of undesired process namespace expose. For more information, see <a href="https://docs.docker.com/engine/security/security/">Docker security</a>.</p> <note>
-    /// <p>This parameter is not supported for Windows containers or tasks run on Fargate.</p>
+    /// <p>The process namespace to use for the containers in the task. The valid values are <code>host</code> or <code>task</code>. On Fargate for Linux containers, the only valid value is <code>task</code>. For example, monitoring sidecars might need <code>pidMode</code> to access information about other containers running in the same task.</p>
+    /// <p>If <code>host</code> is specified, all containers within the tasks that specified the <code>host</code> PID mode on the same container instance share the same process namespace with the host Amazon EC2 instance.</p>
+    /// <p>If <code>task</code> is specified, all containers within the specified task share the same process namespace.</p>
+    /// <p>If no value is specified, the default is a private namespace for each container. For more information, see <a href="https://docs.docker.com/engine/reference/run/#pid-settings---pid">PID settings</a> in the <i>Docker run reference</i>.</p>
+    /// <p>If the <code>host</code> PID mode is used, there's a heightened risk of undesired process namespace exposure. For more information, see <a href="https://docs.docker.com/engine/security/security/">Docker security</a>.</p> <note>
+    /// <p>This parameter is not supported for Windows containers.</p>
+    /// </note> <note>
+    /// <p>This parameter is only supported for tasks that are hosted on Fargate if the tasks are using platform version <code>1.4.0</code> or later (Linux). This isn't supported for Windows containers on Fargate.</p>
     /// </note>
     pub fn pid_mode(mut self, input: crate::types::PidMode) -> Self {
         self.pid_mode = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The process namespace to use for the containers in the task. The valid values are <code>host</code> or <code>task</code>. If <code>host</code> is specified, then all containers within the tasks that specified the <code>host</code> PID mode on the same container instance share the same process namespace with the host Amazon EC2 instance. If <code>task</code> is specified, all containers within the specified task share the same process namespace. If no value is specified, the default is a private namespace. For more information, see <a href="https://docs.docker.com/engine/reference/run/#pid-settings---pid">PID settings</a> in the <i>Docker run reference</i>.</p>
-    /// <p>If the <code>host</code> PID mode is used, be aware that there is a heightened risk of undesired process namespace expose. For more information, see <a href="https://docs.docker.com/engine/security/security/">Docker security</a>.</p> <note>
-    /// <p>This parameter is not supported for Windows containers or tasks run on Fargate.</p>
+    /// <p>The process namespace to use for the containers in the task. The valid values are <code>host</code> or <code>task</code>. On Fargate for Linux containers, the only valid value is <code>task</code>. For example, monitoring sidecars might need <code>pidMode</code> to access information about other containers running in the same task.</p>
+    /// <p>If <code>host</code> is specified, all containers within the tasks that specified the <code>host</code> PID mode on the same container instance share the same process namespace with the host Amazon EC2 instance.</p>
+    /// <p>If <code>task</code> is specified, all containers within the specified task share the same process namespace.</p>
+    /// <p>If no value is specified, the default is a private namespace for each container. For more information, see <a href="https://docs.docker.com/engine/reference/run/#pid-settings---pid">PID settings</a> in the <i>Docker run reference</i>.</p>
+    /// <p>If the <code>host</code> PID mode is used, there's a heightened risk of undesired process namespace exposure. For more information, see <a href="https://docs.docker.com/engine/security/security/">Docker security</a>.</p> <note>
+    /// <p>This parameter is not supported for Windows containers.</p>
+    /// </note> <note>
+    /// <p>This parameter is only supported for tasks that are hosted on Fargate if the tasks are using platform version <code>1.4.0</code> or later (Linux). This isn't supported for Windows containers on Fargate.</p>
     /// </note>
     pub fn set_pid_mode(mut self, input: ::std::option::Option<crate::types::PidMode>) -> Self {
         self.pid_mode = input;
         self
     }
-    /// <p>The process namespace to use for the containers in the task. The valid values are <code>host</code> or <code>task</code>. If <code>host</code> is specified, then all containers within the tasks that specified the <code>host</code> PID mode on the same container instance share the same process namespace with the host Amazon EC2 instance. If <code>task</code> is specified, all containers within the specified task share the same process namespace. If no value is specified, the default is a private namespace. For more information, see <a href="https://docs.docker.com/engine/reference/run/#pid-settings---pid">PID settings</a> in the <i>Docker run reference</i>.</p>
-    /// <p>If the <code>host</code> PID mode is used, be aware that there is a heightened risk of undesired process namespace expose. For more information, see <a href="https://docs.docker.com/engine/security/security/">Docker security</a>.</p> <note>
-    /// <p>This parameter is not supported for Windows containers or tasks run on Fargate.</p>
+    /// <p>The process namespace to use for the containers in the task. The valid values are <code>host</code> or <code>task</code>. On Fargate for Linux containers, the only valid value is <code>task</code>. For example, monitoring sidecars might need <code>pidMode</code> to access information about other containers running in the same task.</p>
+    /// <p>If <code>host</code> is specified, all containers within the tasks that specified the <code>host</code> PID mode on the same container instance share the same process namespace with the host Amazon EC2 instance.</p>
+    /// <p>If <code>task</code> is specified, all containers within the specified task share the same process namespace.</p>
+    /// <p>If no value is specified, the default is a private namespace for each container. For more information, see <a href="https://docs.docker.com/engine/reference/run/#pid-settings---pid">PID settings</a> in the <i>Docker run reference</i>.</p>
+    /// <p>If the <code>host</code> PID mode is used, there's a heightened risk of undesired process namespace exposure. For more information, see <a href="https://docs.docker.com/engine/security/security/">Docker security</a>.</p> <note>
+    /// <p>This parameter is not supported for Windows containers.</p>
+    /// </note> <note>
+    /// <p>This parameter is only supported for tasks that are hosted on Fargate if the tasks are using platform version <code>1.4.0</code> or later (Linux). This isn't supported for Windows containers on Fargate.</p>
     /// </note>
     pub fn get_pid_mode(&self) -> &::std::option::Option<crate::types::PidMode> {
         &self.pid_mode

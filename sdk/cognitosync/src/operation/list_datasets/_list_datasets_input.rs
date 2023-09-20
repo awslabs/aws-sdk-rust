@@ -11,7 +11,7 @@ pub struct ListDatasetsInput {
     /// A pagination token for obtaining the next page of results.
     pub next_token: ::std::option::Option<::std::string::String>,
     /// The maximum number of results to be returned.
-    pub max_results: i32,
+    pub max_results: ::std::option::Option<i32>,
 }
 impl ListDatasetsInput {
     /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
@@ -27,7 +27,7 @@ impl ListDatasetsInput {
         self.next_token.as_deref()
     }
     /// The maximum number of results to be returned.
-    pub fn max_results(&self) -> i32 {
+    pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
 }
@@ -110,7 +110,7 @@ impl ListDatasetsInputBuilder {
             identity_pool_id: self.identity_pool_id,
             identity_id: self.identity_id,
             next_token: self.next_token,
-            max_results: self.max_results.unwrap_or_default(),
+            max_results: self.max_results,
         })
     }
 }

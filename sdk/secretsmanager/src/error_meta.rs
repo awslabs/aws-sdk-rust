@@ -316,6 +316,7 @@ impl From<crate::operation::list_secrets::ListSecretsError> for Error {
             crate::operation::list_secrets::ListSecretsError::InternalServiceError(inner) => Error::InternalServiceError(inner),
             crate::operation::list_secrets::ListSecretsError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
             crate::operation::list_secrets::ListSecretsError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::list_secrets::ListSecretsError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
             crate::operation::list_secrets::ListSecretsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }

@@ -245,7 +245,9 @@ pub struct CreateDbClusterInput {
     /// <ul>
     /// <li> <p>Aurora DB clusters - <code>aurora</code> </p> </li>
     /// <li> <p>Multi-AZ DB clusters - <code>io1</code> </p> </li>
-    /// </ul>
+    /// </ul> <note>
+    /// <p>When you create an Aurora DB cluster with the storage type set to <code>aurora-iopt1</code>, the storage type is returned in the response. The storage type isn't returned when you set it to <code>aurora</code>.</p>
+    /// </note>
     pub storage_type: ::std::option::Option<::std::string::String>,
     /// <p>The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for each DB instance in the Multi-AZ DB cluster.</p>
     /// <p>For information about valid IOPS values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Provisioned IOPS storage</a> in the <i>Amazon RDS User Guide</i>.</p>
@@ -331,6 +333,9 @@ pub struct CreateDbClusterInput {
     /// <p>There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.</p>
     /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub master_user_secret_kms_key_id: ::std::option::Option<::std::string::String>,
+    /// <p>Specifies whether read replicas can forward write operations to the writer DB instance in the DB cluster. By default, write operations aren't allowed on reader DB instances.</p>
+    /// <p>Valid for: Aurora DB clusters only</p>
+    pub enable_local_write_forwarding: ::std::option::Option<bool>,
 }
 impl CreateDbClusterInput {
     /// <p>A list of Availability Zones (AZs) where DB instances in the DB cluster can be created.</p>
@@ -644,7 +649,9 @@ impl CreateDbClusterInput {
     /// <ul>
     /// <li> <p>Aurora DB clusters - <code>aurora</code> </p> </li>
     /// <li> <p>Multi-AZ DB clusters - <code>io1</code> </p> </li>
-    /// </ul>
+    /// </ul> <note>
+    /// <p>When you create an Aurora DB cluster with the storage type set to <code>aurora-iopt1</code>, the storage type is returned in the response. The storage type isn't returned when you set it to <code>aurora</code>.</p>
+    /// </note>
     pub fn storage_type(&self) -> ::std::option::Option<&str> {
         self.storage_type.as_deref()
     }
@@ -758,6 +765,11 @@ impl CreateDbClusterInput {
     pub fn master_user_secret_kms_key_id(&self) -> ::std::option::Option<&str> {
         self.master_user_secret_kms_key_id.as_deref()
     }
+    /// <p>Specifies whether read replicas can forward write operations to the writer DB instance in the DB cluster. By default, write operations aren't allowed on reader DB instances.</p>
+    /// <p>Valid for: Aurora DB clusters only</p>
+    pub fn enable_local_write_forwarding(&self) -> ::std::option::Option<bool> {
+        self.enable_local_write_forwarding
+    }
 }
 impl CreateDbClusterInput {
     /// Creates a new builder-style object to manufacture [`CreateDbClusterInput`](crate::operation::create_db_cluster::CreateDbClusterInput).
@@ -819,6 +831,7 @@ pub struct CreateDbClusterInputBuilder {
     pub(crate) db_system_id: ::std::option::Option<::std::string::String>,
     pub(crate) manage_master_user_password: ::std::option::Option<bool>,
     pub(crate) master_user_secret_kms_key_id: ::std::option::Option<::std::string::String>,
+    pub(crate) enable_local_write_forwarding: ::std::option::Option<bool>,
 }
 impl CreateDbClusterInputBuilder {
     /// Appends an item to `availability_zones`.
@@ -1820,7 +1833,9 @@ impl CreateDbClusterInputBuilder {
     /// <ul>
     /// <li> <p>Aurora DB clusters - <code>aurora</code> </p> </li>
     /// <li> <p>Multi-AZ DB clusters - <code>io1</code> </p> </li>
-    /// </ul>
+    /// </ul> <note>
+    /// <p>When you create an Aurora DB cluster with the storage type set to <code>aurora-iopt1</code>, the storage type is returned in the response. The storage type isn't returned when you set it to <code>aurora</code>.</p>
+    /// </note>
     pub fn storage_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.storage_type = ::std::option::Option::Some(input.into());
         self
@@ -1839,7 +1854,9 @@ impl CreateDbClusterInputBuilder {
     /// <ul>
     /// <li> <p>Aurora DB clusters - <code>aurora</code> </p> </li>
     /// <li> <p>Multi-AZ DB clusters - <code>io1</code> </p> </li>
-    /// </ul>
+    /// </ul> <note>
+    /// <p>When you create an Aurora DB cluster with the storage type set to <code>aurora-iopt1</code>, the storage type is returned in the response. The storage type isn't returned when you set it to <code>aurora</code>.</p>
+    /// </note>
     pub fn set_storage_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.storage_type = input;
         self
@@ -1858,7 +1875,9 @@ impl CreateDbClusterInputBuilder {
     /// <ul>
     /// <li> <p>Aurora DB clusters - <code>aurora</code> </p> </li>
     /// <li> <p>Multi-AZ DB clusters - <code>io1</code> </p> </li>
-    /// </ul>
+    /// </ul> <note>
+    /// <p>When you create an Aurora DB cluster with the storage type set to <code>aurora-iopt1</code>, the storage type is returned in the response. The storage type isn't returned when you set it to <code>aurora</code>.</p>
+    /// </note>
     pub fn get_storage_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.storage_type
     }
@@ -2218,6 +2237,23 @@ impl CreateDbClusterInputBuilder {
     pub fn get_master_user_secret_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.master_user_secret_kms_key_id
     }
+    /// <p>Specifies whether read replicas can forward write operations to the writer DB instance in the DB cluster. By default, write operations aren't allowed on reader DB instances.</p>
+    /// <p>Valid for: Aurora DB clusters only</p>
+    pub fn enable_local_write_forwarding(mut self, input: bool) -> Self {
+        self.enable_local_write_forwarding = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether read replicas can forward write operations to the writer DB instance in the DB cluster. By default, write operations aren't allowed on reader DB instances.</p>
+    /// <p>Valid for: Aurora DB clusters only</p>
+    pub fn set_enable_local_write_forwarding(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.enable_local_write_forwarding = input;
+        self
+    }
+    /// <p>Specifies whether read replicas can forward write operations to the writer DB instance in the DB cluster. By default, write operations aren't allowed on reader DB instances.</p>
+    /// <p>Valid for: Aurora DB clusters only</p>
+    pub fn get_enable_local_write_forwarding(&self) -> &::std::option::Option<bool> {
+        &self.enable_local_write_forwarding
+    }
     /// Consumes the builder and constructs a [`CreateDbClusterInput`](crate::operation::create_db_cluster::CreateDbClusterInput).
     pub fn build(
         self,
@@ -2272,6 +2308,7 @@ impl CreateDbClusterInputBuilder {
             db_system_id: self.db_system_id,
             manage_master_user_password: self.manage_master_user_password,
             master_user_secret_kms_key_id: self.master_user_secret_kms_key_id,
+            enable_local_write_forwarding: self.enable_local_write_forwarding,
         })
     }
 }

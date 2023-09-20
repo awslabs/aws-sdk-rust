@@ -82,6 +82,9 @@ where
                         "Updates" => {
                             builder = builder.set_updates(crate::protocol_serde::shape_update_result::de_update_result(tokens)?);
                         }
+                        "ErrorDetails" => {
+                            builder = builder.set_error_details(crate::protocol_serde::shape_error_details_list::de_error_details_list(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

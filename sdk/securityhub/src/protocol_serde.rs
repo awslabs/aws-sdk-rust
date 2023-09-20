@@ -379,6 +379,8 @@ pub(crate) mod shape_finding_history_record;
 
 pub(crate) mod shape_finding_provider_fields;
 
+pub(crate) mod shape_generator_details;
+
 pub(crate) mod shape_import_findings_error;
 
 pub(crate) mod shape_insight;
@@ -518,6 +520,8 @@ pub(crate) mod shape_threat_intel_indicator_list;
 pub(crate) mod shape_threat_list;
 
 pub(crate) mod shape_type_list;
+
+pub(crate) mod shape_vulnerability_code_vulnerabilities;
 
 pub(crate) mod shape_vulnerability_list;
 
@@ -714,6 +718,8 @@ pub(crate) mod shape_aws_xray_encryption_config_details;
 pub(crate) mod shape_boolean_filter_list;
 
 pub(crate) mod shape_classification_result;
+
+pub(crate) mod shape_code_vulnerabilities_file_path;
 
 pub(crate) mod shape_container_details;
 
@@ -1176,6 +1182,8 @@ pub(crate) mod shape_sensitive_data_result;
 pub(crate) mod shape_software_package_list;
 
 pub(crate) mod shape_volume_mount;
+
+pub(crate) mod shape_vulnerability_code_vulnerabilities_list;
 
 pub(crate) mod shape_association_state_details;
 

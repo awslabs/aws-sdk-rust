@@ -9,59 +9,62 @@ pub fn ser_av1_settings(
     if let Some(var_2) = &input.bit_depth {
         object.key("bitDepth").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.framerate_control {
-        object.key("framerateControl").string(var_3.as_str());
+    if let Some(var_3) = &input.film_grain_synthesis {
+        object.key("filmGrainSynthesis").string(var_3.as_str());
     }
-    if let Some(var_4) = &input.framerate_conversion_algorithm {
-        object.key("framerateConversionAlgorithm").string(var_4.as_str());
+    if let Some(var_4) = &input.framerate_control {
+        object.key("framerateControl").string(var_4.as_str());
     }
-    if let Some(var_5) = &input.framerate_denominator {
+    if let Some(var_5) = &input.framerate_conversion_algorithm {
+        object.key("framerateConversionAlgorithm").string(var_5.as_str());
+    }
+    if let Some(var_6) = &input.framerate_denominator {
         object.key("framerateDenominator").number(
-            #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_5).into()),
-        );
-    }
-    if let Some(var_6) = &input.framerate_numerator {
-        object.key("framerateNumerator").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((*var_6).into()),
         );
     }
-    if let Some(var_7) = &input.gop_size {
+    if let Some(var_7) = &input.framerate_numerator {
+        object.key("framerateNumerator").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_7).into()),
+        );
+    }
+    if let Some(var_8) = &input.gop_size {
         object.key("gopSize").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::Float((*var_7).into()),
+            ::aws_smithy_types::Number::Float((*var_8).into()),
         );
     }
-    if let Some(var_8) = &input.max_bitrate {
+    if let Some(var_9) = &input.max_bitrate {
         object.key("maxBitrate").number(
-            #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_8).into()),
-        );
-    }
-    if let Some(var_9) = &input.number_b_frames_between_reference_frames {
-        object.key("numberBFramesBetweenReferenceFrames").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((*var_9).into()),
         );
     }
-    if let Some(var_10) = &input.qvbr_settings {
-        #[allow(unused_mut)]
-        let mut object_11 = object.key("qvbrSettings").start_object();
-        crate::protocol_serde::shape_av1_qvbr_settings::ser_av1_qvbr_settings(&mut object_11, var_10)?;
-        object_11.finish();
-    }
-    if let Some(var_12) = &input.rate_control_mode {
-        object.key("rateControlMode").string(var_12.as_str());
-    }
-    if let Some(var_13) = &input.slices {
-        object.key("slices").number(
+    if let Some(var_10) = &input.number_b_frames_between_reference_frames {
+        object.key("numberBFramesBetweenReferenceFrames").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_13).into()),
+            ::aws_smithy_types::Number::NegInt((*var_10).into()),
         );
     }
-    if let Some(var_14) = &input.spatial_adaptive_quantization {
-        object.key("spatialAdaptiveQuantization").string(var_14.as_str());
+    if let Some(var_11) = &input.qvbr_settings {
+        #[allow(unused_mut)]
+        let mut object_12 = object.key("qvbrSettings").start_object();
+        crate::protocol_serde::shape_av1_qvbr_settings::ser_av1_qvbr_settings(&mut object_12, var_11)?;
+        object_12.finish();
+    }
+    if let Some(var_13) = &input.rate_control_mode {
+        object.key("rateControlMode").string(var_13.as_str());
+    }
+    if let Some(var_14) = &input.slices {
+        object.key("slices").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_14).into()),
+        );
+    }
+    if let Some(var_15) = &input.spatial_adaptive_quantization {
+        object.key("spatialAdaptiveQuantization").string(var_15.as_str());
     }
     Ok(())
 }
@@ -92,6 +95,13 @@ where
                             builder = builder.set_bit_depth(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| crate::types::Av1BitDepth::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "filmGrainSynthesis" => {
+                            builder = builder.set_film_grain_synthesis(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::Av1FilmGrainSynthesis::from(u.as_ref())))
                                     .transpose()?,
                             );
                         }

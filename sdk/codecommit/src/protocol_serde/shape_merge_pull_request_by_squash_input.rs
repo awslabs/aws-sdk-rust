@@ -27,14 +27,14 @@ pub fn ser_merge_pull_request_by_squash_input(
     if let Some(var_8) = &input.email {
         object.key("email").string(var_8.as_str());
     }
-    if input.keep_empty_folders {
-        object.key("keepEmptyFolders").boolean(input.keep_empty_folders);
+    if let Some(var_9) = &input.keep_empty_folders {
+        object.key("keepEmptyFolders").boolean(*var_9);
     }
-    if let Some(var_9) = &input.conflict_resolution {
+    if let Some(var_10) = &input.conflict_resolution {
         #[allow(unused_mut)]
-        let mut object_10 = object.key("conflictResolution").start_object();
-        crate::protocol_serde::shape_conflict_resolution::ser_conflict_resolution(&mut object_10, var_9)?;
-        object_10.finish();
+        let mut object_11 = object.key("conflictResolution").start_object();
+        crate::protocol_serde::shape_conflict_resolution::ser_conflict_resolution(&mut object_11, var_10)?;
+        object_11.finish();
     }
     Ok(())
 }

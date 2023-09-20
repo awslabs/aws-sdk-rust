@@ -31,6 +31,8 @@ pub struct GetAnnotationStoreOutput {
     pub status_message: ::std::option::Option<::std::string::String>,
     /// <p>The store's size in bytes.</p>
     pub store_size_bytes: ::std::option::Option<i64>,
+    /// <p> An integer indicating how many versions of an annotation store exist. </p>
+    pub num_versions: ::std::option::Option<i32>,
     _request_id: Option<String>,
 }
 impl GetAnnotationStoreOutput {
@@ -90,6 +92,10 @@ impl GetAnnotationStoreOutput {
     pub fn store_size_bytes(&self) -> ::std::option::Option<i64> {
         self.store_size_bytes
     }
+    /// <p> An integer indicating how many versions of an annotation store exist. </p>
+    pub fn num_versions(&self) -> ::std::option::Option<i32> {
+        self.num_versions
+    }
 }
 impl ::aws_http::request_id::RequestId for GetAnnotationStoreOutput {
     fn request_id(&self) -> Option<&str> {
@@ -121,6 +127,7 @@ pub struct GetAnnotationStoreOutputBuilder {
     pub(crate) store_format: ::std::option::Option<crate::types::StoreFormat>,
     pub(crate) status_message: ::std::option::Option<::std::string::String>,
     pub(crate) store_size_bytes: ::std::option::Option<i64>,
+    pub(crate) num_versions: ::std::option::Option<i32>,
     _request_id: Option<String>,
 }
 impl GetAnnotationStoreOutputBuilder {
@@ -326,6 +333,20 @@ impl GetAnnotationStoreOutputBuilder {
     pub fn get_store_size_bytes(&self) -> &::std::option::Option<i64> {
         &self.store_size_bytes
     }
+    /// <p> An integer indicating how many versions of an annotation store exist. </p>
+    pub fn num_versions(mut self, input: i32) -> Self {
+        self.num_versions = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p> An integer indicating how many versions of an annotation store exist. </p>
+    pub fn set_num_versions(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.num_versions = input;
+        self
+    }
+    /// <p> An integer indicating how many versions of an annotation store exist. </p>
+    pub fn get_num_versions(&self) -> &::std::option::Option<i32> {
+        &self.num_versions
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -352,6 +373,7 @@ impl GetAnnotationStoreOutputBuilder {
             store_format: self.store_format,
             status_message: self.status_message,
             store_size_bytes: self.store_size_bytes,
+            num_versions: self.num_versions,
             _request_id: self._request_id,
         }
     }

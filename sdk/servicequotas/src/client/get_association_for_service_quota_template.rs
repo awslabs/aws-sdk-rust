@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder takes no input, just [`send`](crate::operation::get_association_for_service_quota_template::builders::GetAssociationForServiceQuotaTemplateFluentBuilder::send) it.
     /// - On success, responds with [`GetAssociationForServiceQuotaTemplateOutput`](crate::operation::get_association_for_service_quota_template::GetAssociationForServiceQuotaTemplateOutput) with field(s):
-    ///   - [`service_quota_template_association_status(Option<ServiceQuotaTemplateAssociationStatus>)`](crate::operation::get_association_for_service_quota_template::GetAssociationForServiceQuotaTemplateOutput::service_quota_template_association_status): <p>The association status. If the status is <code>ASSOCIATED</code>, the quota increase requests in the template are automatically applied to new accounts in your organization.</p>
+    ///   - [`service_quota_template_association_status(Option<ServiceQuotaTemplateAssociationStatus>)`](crate::operation::get_association_for_service_quota_template::GetAssociationForServiceQuotaTemplateOutput::service_quota_template_association_status): <p>The association status. If the status is <code>ASSOCIATED</code>, the quota increase requests in the template are automatically applied to new Amazon Web Services accounts in your organization.</p>
     /// - On failure, responds with [`SdkError<GetAssociationForServiceQuotaTemplateError>`](crate::operation::get_association_for_service_quota_template::GetAssociationForServiceQuotaTemplateError)
     pub fn get_association_for_service_quota_template(
         &self,

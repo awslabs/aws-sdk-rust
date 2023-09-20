@@ -121,6 +121,10 @@ pub use crate::types::_suppression_list_import_action::SuppressionListImportActi
 
 pub use crate::types::_import_destination_type::ImportDestinationType;
 
+pub use crate::types::_export_job_summary::ExportJobSummary;
+
+pub use crate::types::_export_source_type::ExportSourceType;
+
 pub use crate::types::_email_template_metadata::EmailTemplateMetadata;
 
 pub use crate::types::_identity_info::IdentityInfo;
@@ -149,11 +153,49 @@ pub use crate::types::_suppressed_destination::SuppressedDestination;
 
 pub use crate::types::_suppressed_destination_attributes::SuppressedDestinationAttributes;
 
+pub use crate::types::_email_insights::EmailInsights;
+
+pub use crate::types::_insights_event::InsightsEvent;
+
+pub use crate::types::_event_details::EventDetails;
+
+pub use crate::types::_complaint::Complaint;
+
+pub use crate::types::_bounce::Bounce;
+
+pub use crate::types::_bounce_type::BounceType;
+
 pub use crate::types::_failure_info::FailureInfo;
 
 pub use crate::types::_import_data_source::ImportDataSource;
 
 pub use crate::types::_data_format::DataFormat;
+
+pub use crate::types::_export_statistics::ExportStatistics;
+
+pub use crate::types::_export_data_source::ExportDataSource;
+
+pub use crate::types::_message_insights_data_source::MessageInsightsDataSource;
+
+pub use crate::types::_message_insights_filters::MessageInsightsFilters;
+
+pub use crate::types::_engagement_event_type::EngagementEventType;
+
+pub use crate::types::_delivery_event_type::DeliveryEventType;
+
+pub use crate::types::_metrics_data_source::MetricsDataSource;
+
+pub use crate::types::_export_metric::ExportMetric;
+
+pub use crate::types::_metric_aggregation::MetricAggregation;
+
+pub use crate::types::_metric::Metric;
+
+pub use crate::types::_metric_namespace::MetricNamespace;
+
+pub use crate::types::_metric_dimension_name::MetricDimensionName;
+
+pub use crate::types::_export_destination::ExportDestination;
 
 pub use crate::types::_mail_from_attributes::MailFromAttributes;
 
@@ -213,12 +255,6 @@ pub use crate::types::_metric_data_result::MetricDataResult;
 
 pub use crate::types::_batch_get_metric_data_query::BatchGetMetricDataQuery;
 
-pub use crate::types::_metric_dimension_name::MetricDimensionName;
-
-pub use crate::types::_metric::Metric;
-
-pub use crate::types::_metric_namespace::MetricNamespace;
-
 mod _account_details;
 
 mod _batch_get_metric_data_query;
@@ -228,6 +264,10 @@ mod _behavior_on_mx_failure;
 mod _blacklist_entry;
 
 mod _body;
+
+mod _bounce;
+
+mod _bounce_type;
 
 mod _bulk_email_content;
 
@@ -240,6 +280,8 @@ mod _bulk_email_status;
 mod _cloud_watch_destination;
 
 mod _cloud_watch_dimension_configuration;
+
+mod _complaint;
 
 mod _contact;
 
@@ -273,6 +315,8 @@ mod _deliverability_test_report;
 
 mod _deliverability_test_status;
 
+mod _delivery_event_type;
+
 mod _delivery_options;
 
 mod _destination;
@@ -297,15 +341,33 @@ mod _domain_isp_placement;
 
 mod _email_content;
 
+mod _email_insights;
+
 mod _email_template_content;
 
 mod _email_template_metadata;
+
+mod _engagement_event_type;
 
 mod _event_destination;
 
 mod _event_destination_definition;
 
+mod _event_details;
+
 mod _event_type;
+
+mod _export_data_source;
+
+mod _export_destination;
+
+mod _export_job_summary;
+
+mod _export_metric;
+
+mod _export_source_type;
+
+mod _export_statistics;
 
 mod _failure_info;
 
@@ -329,6 +391,8 @@ mod _import_job_summary;
 
 mod _inbox_placement_tracking_option;
 
+mod _insights_event;
+
 mod _isp_placement;
 
 mod _job_status;
@@ -349,9 +413,15 @@ mod _mail_type;
 
 mod _message;
 
+mod _message_insights_data_source;
+
+mod _message_insights_filters;
+
 mod _message_tag;
 
 mod _metric;
+
+mod _metric_aggregation;
 
 mod _metric_data_error;
 
@@ -360,6 +430,8 @@ mod _metric_data_result;
 mod _metric_dimension_name;
 
 mod _metric_namespace;
+
+mod _metrics_data_source;
 
 mod _overall_volume;
 

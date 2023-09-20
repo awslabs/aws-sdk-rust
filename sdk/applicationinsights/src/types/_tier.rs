@@ -26,6 +26,9 @@
 ///     Tier::SapHanaHighAvailability => { /* ... */ },
 ///     Tier::SapHanaMultiNode => { /* ... */ },
 ///     Tier::SapHanaSingleNode => { /* ... */ },
+///     Tier::SapNetweaverDistributed => { /* ... */ },
+///     Tier::SapNetweaverHighAvailability => { /* ... */ },
+///     Tier::SapNetweaverStandard => { /* ... */ },
 ///     Tier::Sharepoint => { /* ... */ },
 ///     Tier::SqlServer => { /* ... */ },
 ///     Tier::SqlServerAlwaysonAvailabilityGroup => { /* ... */ },
@@ -86,6 +89,12 @@ pub enum Tier {
     #[allow(missing_docs)] // documentation missing in model
     SapHanaSingleNode,
     #[allow(missing_docs)] // documentation missing in model
+    SapNetweaverDistributed,
+    #[allow(missing_docs)] // documentation missing in model
+    SapNetweaverHighAvailability,
+    #[allow(missing_docs)] // documentation missing in model
+    SapNetweaverStandard,
+    #[allow(missing_docs)] // documentation missing in model
     Sharepoint,
     #[allow(missing_docs)] // documentation missing in model
     SqlServer,
@@ -113,6 +122,9 @@ impl ::std::convert::From<&str> for Tier {
             "SAP_HANA_HIGH_AVAILABILITY" => Tier::SapHanaHighAvailability,
             "SAP_HANA_MULTI_NODE" => Tier::SapHanaMultiNode,
             "SAP_HANA_SINGLE_NODE" => Tier::SapHanaSingleNode,
+            "SAP_NETWEAVER_DISTRIBUTED" => Tier::SapNetweaverDistributed,
+            "SAP_NETWEAVER_HIGH_AVAILABILITY" => Tier::SapNetweaverHighAvailability,
+            "SAP_NETWEAVER_STANDARD" => Tier::SapNetweaverStandard,
             "SHAREPOINT" => Tier::Sharepoint,
             "SQL_SERVER" => Tier::SqlServer,
             "SQL_SERVER_ALWAYSON_AVAILABILITY_GROUP" => Tier::SqlServerAlwaysonAvailabilityGroup,
@@ -146,6 +158,9 @@ impl Tier {
             Tier::SapHanaHighAvailability => "SAP_HANA_HIGH_AVAILABILITY",
             Tier::SapHanaMultiNode => "SAP_HANA_MULTI_NODE",
             Tier::SapHanaSingleNode => "SAP_HANA_SINGLE_NODE",
+            Tier::SapNetweaverDistributed => "SAP_NETWEAVER_DISTRIBUTED",
+            Tier::SapNetweaverHighAvailability => "SAP_NETWEAVER_HIGH_AVAILABILITY",
+            Tier::SapNetweaverStandard => "SAP_NETWEAVER_STANDARD",
             Tier::Sharepoint => "SHAREPOINT",
             Tier::SqlServer => "SQL_SERVER",
             Tier::SqlServerAlwaysonAvailabilityGroup => "SQL_SERVER_ALWAYSON_AVAILABILITY_GROUP",
@@ -170,6 +185,9 @@ impl Tier {
             "SAP_HANA_HIGH_AVAILABILITY",
             "SAP_HANA_MULTI_NODE",
             "SAP_HANA_SINGLE_NODE",
+            "SAP_NETWEAVER_DISTRIBUTED",
+            "SAP_NETWEAVER_HIGH_AVAILABILITY",
+            "SAP_NETWEAVER_STANDARD",
             "SHAREPOINT",
             "SQL_SERVER",
             "SQL_SERVER_ALWAYSON_AVAILABILITY_GROUP",

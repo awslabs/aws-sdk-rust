@@ -84,7 +84,8 @@ pub struct Task {
     pub started_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The tag specified when a task is started. If an Amazon ECS service started the task, the <code>startedBy</code> parameter contains the deployment ID of that service.</p>
     pub started_by: ::std::option::Option<::std::string::String>,
-    /// <p>The stop code indicating why a task was stopped. The <code>stoppedReason</code> might contain additional details.</p>
+    /// <p>The stop code indicating why a task was stopped. The <code>stoppedReason</code> might contain additional details. </p>
+    /// <p>For more information about stop code, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/stopped-task-error-codes.html">Stopped tasks error codes</a> in the <i>Amazon ECS User Guide</i>.</p>
     /// <p>The following are valid values:</p>
     /// <ul>
     /// <li> <p> <code>TaskFailedToStart</code> </p> </li>
@@ -99,7 +100,7 @@ pub struct Task {
     pub stopped_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The reason that the task was stopped.</p>
     pub stopped_reason: ::std::option::Option<::std::string::String>,
-    /// <p>The Unix timestamp for the time when the task stops. More specifically, it's for the time when the task transitions from the <code>RUNNING</code> state to <code>STOPPED</code>.</p>
+    /// <p>The Unix timestamp for the time when the task stops. More specifically, it's for the time when the task transitions from the <code>RUNNING</code> state to <code>STOPPING</code>.</p>
     pub stopping_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The metadata that you apply to the task to help you categorize and organize the task. Each tag consists of a key and an optional value. You define both the key and value.</p>
     /// <p>The following basic restrictions apply to tags:</p>
@@ -257,7 +258,8 @@ impl Task {
     pub fn started_by(&self) -> ::std::option::Option<&str> {
         self.started_by.as_deref()
     }
-    /// <p>The stop code indicating why a task was stopped. The <code>stoppedReason</code> might contain additional details.</p>
+    /// <p>The stop code indicating why a task was stopped. The <code>stoppedReason</code> might contain additional details. </p>
+    /// <p>For more information about stop code, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/stopped-task-error-codes.html">Stopped tasks error codes</a> in the <i>Amazon ECS User Guide</i>.</p>
     /// <p>The following are valid values:</p>
     /// <ul>
     /// <li> <p> <code>TaskFailedToStart</code> </p> </li>
@@ -278,7 +280,7 @@ impl Task {
     pub fn stopped_reason(&self) -> ::std::option::Option<&str> {
         self.stopped_reason.as_deref()
     }
-    /// <p>The Unix timestamp for the time when the task stops. More specifically, it's for the time when the task transitions from the <code>RUNNING</code> state to <code>STOPPED</code>.</p>
+    /// <p>The Unix timestamp for the time when the task stops. More specifically, it's for the time when the task transitions from the <code>RUNNING</code> state to <code>STOPPING</code>.</p>
     pub fn stopping_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.stopping_at.as_ref()
     }
@@ -842,7 +844,8 @@ impl TaskBuilder {
     pub fn get_started_by(&self) -> &::std::option::Option<::std::string::String> {
         &self.started_by
     }
-    /// <p>The stop code indicating why a task was stopped. The <code>stoppedReason</code> might contain additional details.</p>
+    /// <p>The stop code indicating why a task was stopped. The <code>stoppedReason</code> might contain additional details. </p>
+    /// <p>For more information about stop code, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/stopped-task-error-codes.html">Stopped tasks error codes</a> in the <i>Amazon ECS User Guide</i>.</p>
     /// <p>The following are valid values:</p>
     /// <ul>
     /// <li> <p> <code>TaskFailedToStart</code> </p> </li>
@@ -856,7 +859,8 @@ impl TaskBuilder {
         self.stop_code = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The stop code indicating why a task was stopped. The <code>stoppedReason</code> might contain additional details.</p>
+    /// <p>The stop code indicating why a task was stopped. The <code>stoppedReason</code> might contain additional details. </p>
+    /// <p>For more information about stop code, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/stopped-task-error-codes.html">Stopped tasks error codes</a> in the <i>Amazon ECS User Guide</i>.</p>
     /// <p>The following are valid values:</p>
     /// <ul>
     /// <li> <p> <code>TaskFailedToStart</code> </p> </li>
@@ -870,7 +874,8 @@ impl TaskBuilder {
         self.stop_code = input;
         self
     }
-    /// <p>The stop code indicating why a task was stopped. The <code>stoppedReason</code> might contain additional details.</p>
+    /// <p>The stop code indicating why a task was stopped. The <code>stoppedReason</code> might contain additional details. </p>
+    /// <p>For more information about stop code, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/stopped-task-error-codes.html">Stopped tasks error codes</a> in the <i>Amazon ECS User Guide</i>.</p>
     /// <p>The following are valid values:</p>
     /// <ul>
     /// <li> <p> <code>TaskFailedToStart</code> </p> </li>
@@ -911,17 +916,17 @@ impl TaskBuilder {
     pub fn get_stopped_reason(&self) -> &::std::option::Option<::std::string::String> {
         &self.stopped_reason
     }
-    /// <p>The Unix timestamp for the time when the task stops. More specifically, it's for the time when the task transitions from the <code>RUNNING</code> state to <code>STOPPED</code>.</p>
+    /// <p>The Unix timestamp for the time when the task stops. More specifically, it's for the time when the task transitions from the <code>RUNNING</code> state to <code>STOPPING</code>.</p>
     pub fn stopping_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.stopping_at = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The Unix timestamp for the time when the task stops. More specifically, it's for the time when the task transitions from the <code>RUNNING</code> state to <code>STOPPED</code>.</p>
+    /// <p>The Unix timestamp for the time when the task stops. More specifically, it's for the time when the task transitions from the <code>RUNNING</code> state to <code>STOPPING</code>.</p>
     pub fn set_stopping_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.stopping_at = input;
         self
     }
-    /// <p>The Unix timestamp for the time when the task stops. More specifically, it's for the time when the task transitions from the <code>RUNNING</code> state to <code>STOPPED</code>.</p>
+    /// <p>The Unix timestamp for the time when the task stops. More specifically, it's for the time when the task transitions from the <code>RUNNING</code> state to <code>STOPPING</code>.</p>
     pub fn get_stopping_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.stopping_at
     }

@@ -14,6 +14,7 @@
 /// match datasetstatus {
 ///     DatasetStatus::Active => { /* ... */ },
 ///     DatasetStatus::Created => { /* ... */ },
+///     DatasetStatus::ImportInProgress => { /* ... */ },
 ///     DatasetStatus::IngestionInProgress => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -47,6 +48,8 @@ pub enum DatasetStatus {
     #[allow(missing_docs)] // documentation missing in model
     Created,
     #[allow(missing_docs)] // documentation missing in model
+    ImportInProgress,
+    #[allow(missing_docs)] // documentation missing in model
     IngestionInProgress,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
@@ -56,6 +59,7 @@ impl ::std::convert::From<&str> for DatasetStatus {
         match s {
             "ACTIVE" => DatasetStatus::Active,
             "CREATED" => DatasetStatus::Created,
+            "IMPORT_IN_PROGRESS" => DatasetStatus::ImportInProgress,
             "INGESTION_IN_PROGRESS" => DatasetStatus::IngestionInProgress,
             other => DatasetStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
@@ -74,13 +78,14 @@ impl DatasetStatus {
         match self {
             DatasetStatus::Active => "ACTIVE",
             DatasetStatus::Created => "CREATED",
+            DatasetStatus::ImportInProgress => "IMPORT_IN_PROGRESS",
             DatasetStatus::IngestionInProgress => "INGESTION_IN_PROGRESS",
             DatasetStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ACTIVE", "CREATED", "INGESTION_IN_PROGRESS"]
+        &["ACTIVE", "CREATED", "IMPORT_IN_PROGRESS", "INGESTION_IN_PROGRESS"]
     }
 }
 impl ::std::convert::AsRef<str> for DatasetStatus {

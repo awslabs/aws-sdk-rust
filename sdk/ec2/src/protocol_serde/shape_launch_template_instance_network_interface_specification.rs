@@ -256,6 +256,21 @@ pub fn de_launch_template_instance_network_interface_specification(
                 builder = builder.set_ipv6_prefix_count(var_19);
             }
             ,
+            s if s.matches("primaryIpv6") /* PrimaryIpv6 com.amazonaws.ec2#LaunchTemplateInstanceNetworkInterfaceSpecification$PrimaryIpv6 */ =>  {
+                let var_20 =
+                    Some(
+                         {
+                            <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_primary_ipv6(var_20);
+            }
+            ,
             _ => {}
         }
     }

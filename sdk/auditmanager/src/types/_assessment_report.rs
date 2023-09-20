@@ -2,7 +2,7 @@
 
 /// <p> A finalized document that's generated from an Audit Manager assessment. These reports summarize the relevant evidence that was collected for your audit, and link to the relevant evidence folders. These evidence folders are named and organized according to the controls that are specified in your assessment. </p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct AssessmentReport {
     /// <p> The unique identifier for the assessment report. </p>
     pub id: ::std::option::Option<::std::string::String>,
@@ -61,6 +61,21 @@ impl AssessmentReport {
         self.creation_time.as_ref()
     }
 }
+impl ::std::fmt::Debug for AssessmentReport {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("AssessmentReport");
+        formatter.field("id", &self.id);
+        formatter.field("name", &self.name);
+        formatter.field("description", &"*** Sensitive Data Redacted ***");
+        formatter.field("aws_account_id", &self.aws_account_id);
+        formatter.field("assessment_id", &self.assessment_id);
+        formatter.field("assessment_name", &"*** Sensitive Data Redacted ***");
+        formatter.field("author", &"*** Sensitive Data Redacted ***");
+        formatter.field("status", &self.status);
+        formatter.field("creation_time", &self.creation_time);
+        formatter.finish()
+    }
+}
 impl AssessmentReport {
     /// Creates a new builder-style object to manufacture [`AssessmentReport`](crate::types::AssessmentReport).
     pub fn builder() -> crate::types::builders::AssessmentReportBuilder {
@@ -70,7 +85,7 @@ impl AssessmentReport {
 
 /// A builder for [`AssessmentReport`](crate::types::AssessmentReport).
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct AssessmentReportBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -222,5 +237,20 @@ impl AssessmentReportBuilder {
             status: self.status,
             creation_time: self.creation_time,
         }
+    }
+}
+impl ::std::fmt::Debug for AssessmentReportBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("AssessmentReportBuilder");
+        formatter.field("id", &self.id);
+        formatter.field("name", &self.name);
+        formatter.field("description", &"*** Sensitive Data Redacted ***");
+        formatter.field("aws_account_id", &self.aws_account_id);
+        formatter.field("assessment_id", &self.assessment_id);
+        formatter.field("assessment_name", &"*** Sensitive Data Redacted ***");
+        formatter.field("author", &"*** Sensitive Data Redacted ***");
+        formatter.field("status", &self.status);
+        formatter.field("creation_time", &self.creation_time);
+        formatter.finish()
     }
 }

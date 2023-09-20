@@ -51,6 +51,14 @@ pub use crate::types::_participating_resource::ParticipatingResourceBuilder;
 
 pub use crate::types::_participating_server::ParticipatingServerBuilder;
 
+pub use crate::types::_launch_actions_status::LaunchActionsStatusBuilder;
+
+pub use crate::types::_launch_action_run::LaunchActionRunBuilder;
+
+pub use crate::types::_launch_action::LaunchActionBuilder;
+
+pub use crate::types::_launch_action_parameter::LaunchActionParameterBuilder;
+
 pub use crate::types::_start_recovery_request_source_server::StartRecoveryRequestSourceServerBuilder;
 
 pub use crate::types::_describe_source_servers_request_filters::DescribeSourceServersRequestFiltersBuilder;
@@ -98,5 +106,7 @@ pub use crate::types::_conversion_properties::ConversionPropertiesBuilder;
 pub use crate::types::_describe_jobs_request_filters::DescribeJobsRequestFiltersBuilder;
 
 pub use crate::types::_account::AccountBuilder;
+
+pub use crate::types::_launch_actions_request_filters::LaunchActionsRequestFiltersBuilder;
 
 pub use crate::types::_staging_source_server::StagingSourceServerBuilder;

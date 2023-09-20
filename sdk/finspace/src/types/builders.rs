@@ -3,6 +3,14 @@ pub use crate::types::_custom_dns_server::CustomDnsServerBuilder;
 
 pub use crate::types::_transit_gateway_configuration::TransitGatewayConfigurationBuilder;
 
+pub use crate::types::_network_acl_entry::NetworkAclEntryBuilder;
+
+pub use crate::types::_icmp_type_code::IcmpTypeCodeBuilder;
+
+pub use crate::types::_port_range::PortRangeBuilder;
+
+pub use crate::types::_kx_deployment_configuration::KxDeploymentConfigurationBuilder;
+
 pub use crate::types::_kx_database_configuration::KxDatabaseConfigurationBuilder;
 
 pub use crate::types::_kx_database_cache_configuration::KxDatabaseCacheConfigurationBuilder;

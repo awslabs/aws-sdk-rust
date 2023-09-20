@@ -3,9 +3,9 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListComputeInput {
-    /// <p>A unique identifier for the fleet the compute resources are registered to.</p>
+    /// <p>A unique identifier for the fleet to retrieve compute resources for.</p>
     pub fleet_id: ::std::option::Option<::std::string::String>,
-    /// <p>The name of the custom location that the compute resources are assigned to.</p>
+    /// <p>The name of a location to retrieve compute resources for.</p>
     pub location: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
     pub limit: ::std::option::Option<i32>,
@@ -13,11 +13,11 @@ pub struct ListComputeInput {
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListComputeInput {
-    /// <p>A unique identifier for the fleet the compute resources are registered to.</p>
+    /// <p>A unique identifier for the fleet to retrieve compute resources for.</p>
     pub fn fleet_id(&self) -> ::std::option::Option<&str> {
         self.fleet_id.as_deref()
     }
-    /// <p>The name of the custom location that the compute resources are assigned to.</p>
+    /// <p>The name of a location to retrieve compute resources for.</p>
     pub fn location(&self) -> ::std::option::Option<&str> {
         self.location.as_deref()
     }
@@ -47,31 +47,31 @@ pub struct ListComputeInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListComputeInputBuilder {
-    /// <p>A unique identifier for the fleet the compute resources are registered to.</p>
+    /// <p>A unique identifier for the fleet to retrieve compute resources for.</p>
     pub fn fleet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fleet_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A unique identifier for the fleet the compute resources are registered to.</p>
+    /// <p>A unique identifier for the fleet to retrieve compute resources for.</p>
     pub fn set_fleet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.fleet_id = input;
         self
     }
-    /// <p>A unique identifier for the fleet the compute resources are registered to.</p>
+    /// <p>A unique identifier for the fleet to retrieve compute resources for.</p>
     pub fn get_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.fleet_id
     }
-    /// <p>The name of the custom location that the compute resources are assigned to.</p>
+    /// <p>The name of a location to retrieve compute resources for.</p>
     pub fn location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.location = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the custom location that the compute resources are assigned to.</p>
+    /// <p>The name of a location to retrieve compute resources for.</p>
     pub fn set_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.location = input;
         self
     }
-    /// <p>The name of the custom location that the compute resources are assigned to.</p>
+    /// <p>The name of a location to retrieve compute resources for.</p>
     pub fn get_location(&self) -> &::std::option::Option<::std::string::String> {
         &self.location
     }

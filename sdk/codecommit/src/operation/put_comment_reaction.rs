@@ -267,7 +267,7 @@ pub enum PutCommentReactionError {
     CommentIdRequiredException(crate::types::error::CommentIdRequiredException),
     /// <p>The comment ID is not in a valid format. Make sure that you have provided the full comment ID.</p>
     InvalidCommentIdException(crate::types::error::InvalidCommentIdException),
-    /// <p>The value of the reaction is not valid. For more information, see the <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS CodeCommit User Guide</a>.</p>
+    /// <p>The value of the reaction is not valid. For more information, see the <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">CodeCommit User Guide</a>.</p>
     InvalidReactionValueException(crate::types::error::InvalidReactionValueException),
     /// <p>The number of reactions has been exceeded. Reactions are limited to one reaction per user for each individual comment ID.</p>
     ReactionLimitExceededException(crate::types::error::ReactionLimitExceededException),

@@ -22,8 +22,8 @@ impl ListReceiptFiltersInputBuilder {
 }
 /// Fluent builder constructing a request to `ListReceiptFilters`.
 ///
-/// <p>Lists the IP address filters associated with your AWS account in the current AWS Region.</p>
-/// <p>For information about managing IP address filters, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-ip-filters.html">Amazon SES Developer Guide</a>.</p>
+/// <p>Lists the IP address filters associated with your Amazon Web Services account in the current Amazon Web Services Region.</p>
+/// <p>For information about managing IP address filters, see the <a href="https://docs.aws.amazon.com/ses/latest/dg/receiving-email-ip-filtering-console-walkthrough.html">Amazon SES Developer Guide</a>.</p>
 /// <p>You can execute this operation no more than once per second.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListReceiptFiltersFluentBuilder {

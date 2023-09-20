@@ -17,6 +17,9 @@ pub struct ExecuteChangeSetInput {
     /// </ul>
     /// <p>Default: <code>True</code> </p>
     pub disable_rollback: ::std::option::Option<bool>,
+    /// <p>When set to <code>true</code>, newly created resources are deleted when the operation rolls back. This includes newly created resources marked with a deletion policy of <code>Retain</code>.</p>
+    /// <p>Default: <code>false</code> </p>
+    pub retain_except_on_create: ::std::option::Option<bool>,
 }
 impl ExecuteChangeSetInput {
     /// <p>The name or Amazon Resource Name (ARN) of the change set that you want use to update the specified stack.</p>
@@ -40,6 +43,11 @@ impl ExecuteChangeSetInput {
     pub fn disable_rollback(&self) -> ::std::option::Option<bool> {
         self.disable_rollback
     }
+    /// <p>When set to <code>true</code>, newly created resources are deleted when the operation rolls back. This includes newly created resources marked with a deletion policy of <code>Retain</code>.</p>
+    /// <p>Default: <code>false</code> </p>
+    pub fn retain_except_on_create(&self) -> ::std::option::Option<bool> {
+        self.retain_except_on_create
+    }
 }
 impl ExecuteChangeSetInput {
     /// Creates a new builder-style object to manufacture [`ExecuteChangeSetInput`](crate::operation::execute_change_set::ExecuteChangeSetInput).
@@ -56,6 +64,7 @@ pub struct ExecuteChangeSetInputBuilder {
     pub(crate) stack_name: ::std::option::Option<::std::string::String>,
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,
     pub(crate) disable_rollback: ::std::option::Option<bool>,
+    pub(crate) retain_except_on_create: ::std::option::Option<bool>,
 }
 impl ExecuteChangeSetInputBuilder {
     /// <p>The name or Amazon Resource Name (ARN) of the change set that you want use to update the specified stack.</p>
@@ -129,6 +138,23 @@ impl ExecuteChangeSetInputBuilder {
     pub fn get_disable_rollback(&self) -> &::std::option::Option<bool> {
         &self.disable_rollback
     }
+    /// <p>When set to <code>true</code>, newly created resources are deleted when the operation rolls back. This includes newly created resources marked with a deletion policy of <code>Retain</code>.</p>
+    /// <p>Default: <code>false</code> </p>
+    pub fn retain_except_on_create(mut self, input: bool) -> Self {
+        self.retain_except_on_create = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>When set to <code>true</code>, newly created resources are deleted when the operation rolls back. This includes newly created resources marked with a deletion policy of <code>Retain</code>.</p>
+    /// <p>Default: <code>false</code> </p>
+    pub fn set_retain_except_on_create(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.retain_except_on_create = input;
+        self
+    }
+    /// <p>When set to <code>true</code>, newly created resources are deleted when the operation rolls back. This includes newly created resources marked with a deletion policy of <code>Retain</code>.</p>
+    /// <p>Default: <code>false</code> </p>
+    pub fn get_retain_except_on_create(&self) -> &::std::option::Option<bool> {
+        &self.retain_except_on_create
+    }
     /// Consumes the builder and constructs a [`ExecuteChangeSetInput`](crate::operation::execute_change_set::ExecuteChangeSetInput).
     pub fn build(
         self,
@@ -138,6 +164,7 @@ impl ExecuteChangeSetInputBuilder {
             stack_name: self.stack_name,
             client_request_token: self.client_request_token,
             disable_rollback: self.disable_rollback,
+            retain_except_on_create: self.retain_except_on_create,
         })
     }
 }

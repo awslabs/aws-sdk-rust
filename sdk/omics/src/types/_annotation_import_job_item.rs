@@ -8,6 +8,8 @@ pub struct AnnotationImportJobItem {
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The job's destination annotation store.</p>
     pub destination_name: ::std::option::Option<::std::string::String>,
+    /// <p> The name of the annotation store version. </p>
+    pub version_name: ::std::option::Option<::std::string::String>,
     /// <p>The job's service role ARN.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The job's status.</p>
@@ -31,6 +33,10 @@ impl AnnotationImportJobItem {
     /// <p>The job's destination annotation store.</p>
     pub fn destination_name(&self) -> ::std::option::Option<&str> {
         self.destination_name.as_deref()
+    }
+    /// <p> The name of the annotation store version. </p>
+    pub fn version_name(&self) -> ::std::option::Option<&str> {
+        self.version_name.as_deref()
     }
     /// <p>The job's service role ARN.</p>
     pub fn role_arn(&self) -> ::std::option::Option<&str> {
@@ -74,6 +80,7 @@ impl AnnotationImportJobItem {
 pub struct AnnotationImportJobItemBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) destination_name: ::std::option::Option<::std::string::String>,
+    pub(crate) version_name: ::std::option::Option<::std::string::String>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::JobStatus>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -110,6 +117,20 @@ impl AnnotationImportJobItemBuilder {
     /// <p>The job's destination annotation store.</p>
     pub fn get_destination_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.destination_name
+    }
+    /// <p> The name of the annotation store version. </p>
+    pub fn version_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.version_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p> The name of the annotation store version. </p>
+    pub fn set_version_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.version_name = input;
+        self
+    }
+    /// <p> The name of the annotation store version. </p>
+    pub fn get_version_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version_name
     }
     /// <p>The job's service role ARN.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -227,6 +248,7 @@ impl AnnotationImportJobItemBuilder {
         crate::types::AnnotationImportJobItem {
             id: self.id,
             destination_name: self.destination_name,
+            version_name: self.version_name,
             role_arn: self.role_arn,
             status: self.status,
             creation_time: self.creation_time,

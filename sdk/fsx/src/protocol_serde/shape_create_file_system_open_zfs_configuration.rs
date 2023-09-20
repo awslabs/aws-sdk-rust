@@ -45,5 +45,20 @@ pub fn ser_create_file_system_open_zfs_configuration(
         )?;
         object_11.finish();
     }
+    if let Some(var_12) = &input.preferred_subnet_id {
+        object.key("PreferredSubnetId").string(var_12.as_str());
+    }
+    if let Some(var_13) = &input.endpoint_ip_address_range {
+        object.key("EndpointIpAddressRange").string(var_13.as_str());
+    }
+    if let Some(var_14) = &input.route_table_ids {
+        let mut array_15 = object.key("RouteTableIds").start_array();
+        for item_16 in var_14 {
+            {
+                array_15.value().string(item_16.as_str());
+            }
+        }
+        array_15.finish();
+    }
     Ok(())
 }

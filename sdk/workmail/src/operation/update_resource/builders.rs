@@ -125,16 +125,34 @@ impl UpdateResourceFluentBuilder {
         self.inner.get_organization_id()
     }
     /// <p>The identifier of the resource to be updated.</p>
+    /// <p>The identifier can accept <i>ResourceId</i>, <i>Resourcename</i>, or <i>email</i>. The following identity formats are available:</p>
+    /// <ul>
+    /// <li> <p>Resource ID: r-0123456789a0123456789b0123456789</p> </li>
+    /// <li> <p>Email address: resource@domain.tld</p> </li>
+    /// <li> <p>Resource name: resource</p> </li>
+    /// </ul>
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_id(input.into());
         self
     }
     /// <p>The identifier of the resource to be updated.</p>
+    /// <p>The identifier can accept <i>ResourceId</i>, <i>Resourcename</i>, or <i>email</i>. The following identity formats are available:</p>
+    /// <ul>
+    /// <li> <p>Resource ID: r-0123456789a0123456789b0123456789</p> </li>
+    /// <li> <p>Email address: resource@domain.tld</p> </li>
+    /// <li> <p>Resource name: resource</p> </li>
+    /// </ul>
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_id(input);
         self
     }
     /// <p>The identifier of the resource to be updated.</p>
+    /// <p>The identifier can accept <i>ResourceId</i>, <i>Resourcename</i>, or <i>email</i>. The following identity formats are available:</p>
+    /// <ul>
+    /// <li> <p>Resource ID: r-0123456789a0123456789b0123456789</p> </li>
+    /// <li> <p>Email address: resource@domain.tld</p> </li>
+    /// <li> <p>Resource name: resource</p> </li>
+    /// </ul>
     pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_resource_id()
     }
@@ -165,5 +183,47 @@ impl UpdateResourceFluentBuilder {
     /// <p>The resource's booking options to be updated.</p>
     pub fn get_booking_options(&self) -> &::std::option::Option<crate::types::BookingOptions> {
         self.inner.get_booking_options()
+    }
+    /// <p>Updates the resource description.</p>
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.description(input.into());
+        self
+    }
+    /// <p>Updates the resource description.</p>
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_description(input);
+        self
+    }
+    /// <p>Updates the resource description.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
+    }
+    /// <p>Updates the resource type.</p>
+    pub fn r#type(mut self, input: crate::types::ResourceType) -> Self {
+        self.inner = self.inner.r#type(input);
+        self
+    }
+    /// <p>Updates the resource type.</p>
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
+        self.inner = self.inner.set_type(input);
+        self
+    }
+    /// <p>Updates the resource type.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
+        self.inner.get_type()
+    }
+    /// <p>If enabled, the resource is hidden from the global address list.</p>
+    pub fn hidden_from_global_address_list(mut self, input: bool) -> Self {
+        self.inner = self.inner.hidden_from_global_address_list(input);
+        self
+    }
+    /// <p>If enabled, the resource is hidden from the global address list.</p>
+    pub fn set_hidden_from_global_address_list(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_hidden_from_global_address_list(input);
+        self
+    }
+    /// <p>If enabled, the resource is hidden from the global address list.</p>
+    pub fn get_hidden_from_global_address_list(&self) -> &::std::option::Option<bool> {
+        self.inner.get_hidden_from_global_address_list()
     }
 }

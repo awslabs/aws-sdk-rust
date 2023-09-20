@@ -657,9 +657,30 @@ mod test {
         );
     }
 
-    /// For region us-gov-west-1 with FIPS disabled and DualStack disabled
+    /// For region us-gov-east-1 with FIPS enabled and DualStack disabled
     #[test]
     fn test_32() {
+        use ::aws_smithy_http::endpoint::ResolveEndpoint;
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-gov-east-1".to_string())
+            .use_fips(true)
+            .use_dual_stack(false)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://route53resolver.us-gov-east-1.amazonaws.com");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://route53resolver.us-gov-east-1.amazonaws.com")
+                .build()
+        );
+    }
+
+    /// For region us-gov-west-1 with FIPS disabled and DualStack disabled
+    #[test]
+    fn test_33() {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::config::endpoint::Params::builder()
             .region("us-gov-west-1".to_string())
@@ -678,9 +699,30 @@ mod test {
         );
     }
 
+    /// For region us-gov-west-1 with FIPS enabled and DualStack disabled
+    #[test]
+    fn test_34() {
+        use ::aws_smithy_http::endpoint::ResolveEndpoint;
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-gov-west-1".to_string())
+            .use_fips(true)
+            .use_dual_stack(false)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://route53resolver.us-gov-west-1.amazonaws.com");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://route53resolver.us-gov-west-1.amazonaws.com")
+                .build()
+        );
+    }
+
     /// For region us-gov-east-1 with FIPS enabled and DualStack enabled
     #[test]
-    fn test_33() {
+    fn test_35() {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::config::endpoint::Params::builder()
             .region("us-gov-east-1".to_string())
@@ -699,30 +741,9 @@ mod test {
         );
     }
 
-    /// For region us-gov-east-1 with FIPS enabled and DualStack disabled
-    #[test]
-    fn test_34() {
-        use ::aws_smithy_http::endpoint::ResolveEndpoint;
-        let params = crate::config::endpoint::Params::builder()
-            .region("us-gov-east-1".to_string())
-            .use_fips(true)
-            .use_dual_stack(false)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::config::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://route53resolver-fips.us-gov-east-1.amazonaws.com");
-        assert_eq!(
-            endpoint,
-            ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://route53resolver-fips.us-gov-east-1.amazonaws.com")
-                .build()
-        );
-    }
-
     /// For region us-gov-east-1 with FIPS disabled and DualStack enabled
     #[test]
-    fn test_35() {
+    fn test_36() {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::config::endpoint::Params::builder()
             .region("us-gov-east-1".to_string())
@@ -743,7 +764,7 @@ mod test {
 
     /// For region us-iso-east-1 with FIPS disabled and DualStack disabled
     #[test]
-    fn test_36() {
+    fn test_37() {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::config::endpoint::Params::builder()
             .region("us-iso-east-1".to_string())
@@ -764,7 +785,7 @@ mod test {
 
     /// For region us-iso-east-1 with FIPS enabled and DualStack enabled
     #[test]
-    fn test_37() {
+    fn test_38() {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::config::endpoint::Params::builder()
             .region("us-iso-east-1".to_string())
@@ -783,7 +804,7 @@ mod test {
 
     /// For region us-iso-east-1 with FIPS enabled and DualStack disabled
     #[test]
-    fn test_38() {
+    fn test_39() {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::config::endpoint::Params::builder()
             .region("us-iso-east-1".to_string())
@@ -804,7 +825,7 @@ mod test {
 
     /// For region us-iso-east-1 with FIPS disabled and DualStack enabled
     #[test]
-    fn test_39() {
+    fn test_40() {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::config::endpoint::Params::builder()
             .region("us-iso-east-1".to_string())
@@ -820,7 +841,7 @@ mod test {
 
     /// For region us-isob-east-1 with FIPS enabled and DualStack enabled
     #[test]
-    fn test_40() {
+    fn test_41() {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::config::endpoint::Params::builder()
             .region("us-isob-east-1".to_string())
@@ -839,7 +860,7 @@ mod test {
 
     /// For region us-isob-east-1 with FIPS enabled and DualStack disabled
     #[test]
-    fn test_41() {
+    fn test_42() {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::config::endpoint::Params::builder()
             .region("us-isob-east-1".to_string())
@@ -860,7 +881,7 @@ mod test {
 
     /// For region us-isob-east-1 with FIPS disabled and DualStack enabled
     #[test]
-    fn test_42() {
+    fn test_43() {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::config::endpoint::Params::builder()
             .region("us-isob-east-1".to_string())
@@ -876,7 +897,7 @@ mod test {
 
     /// For region us-isob-east-1 with FIPS disabled and DualStack disabled
     #[test]
-    fn test_43() {
+    fn test_44() {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::config::endpoint::Params::builder()
             .region("us-isob-east-1".to_string())
@@ -897,7 +918,7 @@ mod test {
 
     /// For custom endpoint with region set and fips disabled and dualstack disabled
     #[test]
-    fn test_44() {
+    fn test_45() {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
@@ -917,7 +938,7 @@ mod test {
 
     /// For custom endpoint with region not set and fips disabled and dualstack disabled
     #[test]
-    fn test_45() {
+    fn test_46() {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::config::endpoint::Params::builder()
             .use_fips(false)
@@ -936,7 +957,7 @@ mod test {
 
     /// For custom endpoint with fips enabled and dualstack disabled
     #[test]
-    fn test_46() {
+    fn test_47() {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
@@ -953,7 +974,7 @@ mod test {
 
     /// For custom endpoint with fips disabled and dualstack enabled
     #[test]
-    fn test_47() {
+    fn test_48() {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
@@ -973,7 +994,7 @@ mod test {
 
     /// Missing region
     #[test]
-    fn test_48() {
+    fn test_49() {
         use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::config::endpoint::Params::builder().build().expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();

@@ -47,6 +47,7 @@
 ///     VoiceId::Hiujin => { /* ... */ },
 ///     VoiceId::Ida => { /* ... */ },
 ///     VoiceId::Ines => { /* ... */ },
+///     VoiceId::Isabelle => { /* ... */ },
 ///     VoiceId::Ivy => { /* ... */ },
 ///     VoiceId::Jacek => { /* ... */ },
 ///     VoiceId::Jan => { /* ... */ },
@@ -101,6 +102,7 @@
 ///     VoiceId::Tomoko => { /* ... */ },
 ///     VoiceId::Vicki => { /* ... */ },
 ///     VoiceId::Vitoria => { /* ... */ },
+///     VoiceId::Zayd => { /* ... */ },
 ///     VoiceId::Zeina => { /* ... */ },
 ///     VoiceId::Zhiyu => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -200,6 +202,8 @@ pub enum VoiceId {
     Ida,
     #[allow(missing_docs)] // documentation missing in model
     Ines,
+    #[allow(missing_docs)] // documentation missing in model
+    Isabelle,
     #[allow(missing_docs)] // documentation missing in model
     Ivy,
     #[allow(missing_docs)] // documentation missing in model
@@ -309,6 +313,8 @@ pub enum VoiceId {
     #[allow(missing_docs)] // documentation missing in model
     Vitoria,
     #[allow(missing_docs)] // documentation missing in model
+    Zayd,
+    #[allow(missing_docs)] // documentation missing in model
     Zeina,
     #[allow(missing_docs)] // documentation missing in model
     Zhiyu,
@@ -353,6 +359,7 @@ impl ::std::convert::From<&str> for VoiceId {
             "Hiujin" => VoiceId::Hiujin,
             "Ida" => VoiceId::Ida,
             "Ines" => VoiceId::Ines,
+            "Isabelle" => VoiceId::Isabelle,
             "Ivy" => VoiceId::Ivy,
             "Jacek" => VoiceId::Jacek,
             "Jan" => VoiceId::Jan,
@@ -407,6 +414,7 @@ impl ::std::convert::From<&str> for VoiceId {
             "Tomoko" => VoiceId::Tomoko,
             "Vicki" => VoiceId::Vicki,
             "Vitoria" => VoiceId::Vitoria,
+            "Zayd" => VoiceId::Zayd,
             "Zeina" => VoiceId::Zeina,
             "Zhiyu" => VoiceId::Zhiyu,
             other => VoiceId::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
@@ -459,6 +467,7 @@ impl VoiceId {
             VoiceId::Hiujin => "Hiujin",
             VoiceId::Ida => "Ida",
             VoiceId::Ines => "Ines",
+            VoiceId::Isabelle => "Isabelle",
             VoiceId::Ivy => "Ivy",
             VoiceId::Jacek => "Jacek",
             VoiceId::Jan => "Jan",
@@ -513,6 +522,7 @@ impl VoiceId {
             VoiceId::Tomoko => "Tomoko",
             VoiceId::Vicki => "Vicki",
             VoiceId::Vitoria => "Vitoria",
+            VoiceId::Zayd => "Zayd",
             VoiceId::Zeina => "Zeina",
             VoiceId::Zhiyu => "Zhiyu",
             VoiceId::Unknown(value) => value.as_str(),
@@ -556,6 +566,7 @@ impl VoiceId {
             "Hiujin",
             "Ida",
             "Ines",
+            "Isabelle",
             "Ivy",
             "Jacek",
             "Jan",
@@ -610,6 +621,7 @@ impl VoiceId {
             "Tomoko",
             "Vicki",
             "Vitoria",
+            "Zayd",
             "Zeina",
             "Zhiyu",
         ]

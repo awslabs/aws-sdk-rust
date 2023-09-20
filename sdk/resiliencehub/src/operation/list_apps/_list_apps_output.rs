@@ -5,7 +5,7 @@
 pub struct ListAppsOutput {
     /// <p>Summaries for the Resilience Hub application.</p>
     pub app_summaries: ::std::option::Option<::std::vec::Vec<crate::types::AppSummary>>,
-    /// <p>The token for the next set of results, or null if there are no more results.</p>
+    /// <p>Token for the next set of results, or null if there are no more results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -14,7 +14,7 @@ impl ListAppsOutput {
     pub fn app_summaries(&self) -> ::std::option::Option<&[crate::types::AppSummary]> {
         self.app_summaries.as_deref()
     }
-    /// <p>The token for the next set of results, or null if there are no more results.</p>
+    /// <p>Token for the next set of results, or null if there are no more results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -60,17 +60,17 @@ impl ListAppsOutputBuilder {
     pub fn get_app_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AppSummary>> {
         &self.app_summaries
     }
-    /// <p>The token for the next set of results, or null if there are no more results.</p>
+    /// <p>Token for the next set of results, or null if there are no more results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The token for the next set of results, or null if there are no more results.</p>
+    /// <p>Token for the next set of results, or null if there are no more results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>The token for the next set of results, or null if there are no more results.</p>
+    /// <p>Token for the next set of results, or null if there are no more results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

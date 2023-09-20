@@ -18,6 +18,8 @@ pub struct Folder {
     pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time that the folder was last updated.</p>
     pub last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The sharing scope of the folder.</p>
+    pub sharing_model: ::std::option::Option<crate::types::SharingModel>,
 }
 impl Folder {
     /// <p>The ID of the folder.</p>
@@ -48,6 +50,10 @@ impl Folder {
     pub fn last_updated_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
     }
+    /// <p>The sharing scope of the folder.</p>
+    pub fn sharing_model(&self) -> ::std::option::Option<&crate::types::SharingModel> {
+        self.sharing_model.as_ref()
+    }
 }
 impl Folder {
     /// Creates a new builder-style object to manufacture [`Folder`](crate::types::Folder).
@@ -67,6 +73,7 @@ pub struct FolderBuilder {
     pub(crate) folder_path: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) sharing_model: ::std::option::Option<crate::types::SharingModel>,
 }
 impl FolderBuilder {
     /// <p>The ID of the folder.</p>
@@ -173,6 +180,20 @@ impl FolderBuilder {
     pub fn get_last_updated_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_updated_time
     }
+    /// <p>The sharing scope of the folder.</p>
+    pub fn sharing_model(mut self, input: crate::types::SharingModel) -> Self {
+        self.sharing_model = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The sharing scope of the folder.</p>
+    pub fn set_sharing_model(mut self, input: ::std::option::Option<crate::types::SharingModel>) -> Self {
+        self.sharing_model = input;
+        self
+    }
+    /// <p>The sharing scope of the folder.</p>
+    pub fn get_sharing_model(&self) -> &::std::option::Option<crate::types::SharingModel> {
+        &self.sharing_model
+    }
     /// Consumes the builder and constructs a [`Folder`](crate::types::Folder).
     pub fn build(self) -> crate::types::Folder {
         crate::types::Folder {
@@ -183,6 +204,7 @@ impl FolderBuilder {
             folder_path: self.folder_path,
             created_time: self.created_time,
             last_updated_time: self.last_updated_time,
+            sharing_model: self.sharing_model,
         }
     }
 }

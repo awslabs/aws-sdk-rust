@@ -22,7 +22,8 @@ impl GetFaceLivenessSessionResultsInputBuilder {
 }
 /// Fluent builder constructing a request to `GetFaceLivenessSessionResults`.
 ///
-/// <p>Retrieves the results of a specific Face Liveness session. It requires the <code>sessionId</code> as input, which was created using <code>CreateFaceLivenessSession</code>. Returns the corresponding Face Liveness confidence score, a reference image that includes a face bounding box, and audit images that also contain face bounding boxes. The Face Liveness confidence score ranges from 0 to 100. The reference image can optionally be returned.</p>
+/// <p>Retrieves the results of a specific Face Liveness session. It requires the <code>sessionId</code> as input, which was created using <code>CreateFaceLivenessSession</code>. Returns the corresponding Face Liveness confidence score, a reference image that includes a face bounding box, and audit images that also contain face bounding boxes. The Face Liveness confidence score ranges from 0 to 100. </p>
+/// <p>The number of audit images returned by <code>GetFaceLivenessSessionResults</code> is defined by the <code>AuditImagesLimit</code> paramater when calling <code>CreateFaceLivenessSession</code>. Reference images are always returned when possible.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetFaceLivenessSessionResultsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

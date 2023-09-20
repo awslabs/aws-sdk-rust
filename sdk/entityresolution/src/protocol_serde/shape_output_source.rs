@@ -6,20 +6,20 @@ pub fn ser_output_source(
     if let Some(var_1) = &input.output_s3_path {
         object.key("outputS3Path").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.output {
-        let mut array_3 = object.key("output").start_array();
-        for item_4 in var_2 {
+    if let Some(var_2) = &input.kms_arn {
+        object.key("KMSArn").string(var_2.as_str());
+    }
+    if let Some(var_3) = &input.output {
+        let mut array_4 = object.key("output").start_array();
+        for item_5 in var_3 {
             {
                 #[allow(unused_mut)]
-                let mut object_5 = array_3.value().start_object();
-                crate::protocol_serde::shape_output_attribute::ser_output_attribute(&mut object_5, item_4)?;
-                object_5.finish();
+                let mut object_6 = array_4.value().start_object();
+                crate::protocol_serde::shape_output_attribute::ser_output_attribute(&mut object_6, item_5)?;
+                object_6.finish();
             }
         }
-        array_3.finish();
-    }
-    if let Some(var_6) = &input.kms_arn {
-        object.key("KMSArn").string(var_6.as_str());
+        array_4.finish();
     }
     if let Some(var_7) = &input.apply_normalization {
         object.key("applyNormalization").boolean(*var_7);
@@ -49,15 +49,15 @@ where
                                     .transpose()?,
                             );
                         }
-                        "output" => {
-                            builder = builder.set_output(crate::protocol_serde::shape_output_attributes::de_output_attributes(tokens)?);
-                        }
                         "KMSArn" => {
                             builder = builder.set_kms_arn(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
                             );
+                        }
+                        "output" => {
+                            builder = builder.set_output(crate::protocol_serde::shape_output_attributes::de_output_attributes(tokens)?);
                         }
                         "applyNormalization" => {
                             builder = builder.set_apply_normalization(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);

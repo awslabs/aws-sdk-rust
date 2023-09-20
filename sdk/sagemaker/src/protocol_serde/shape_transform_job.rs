@@ -130,6 +130,11 @@ where
                         "Tags" => {
                             builder = builder.set_tags(crate::protocol_serde::shape_tag_list::de_tag_list(tokens)?);
                         }
+                        "DataCaptureConfig" => {
+                            builder = builder.set_data_capture_config(
+                                crate::protocol_serde::shape_batch_data_capture_config::de_batch_data_capture_config(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

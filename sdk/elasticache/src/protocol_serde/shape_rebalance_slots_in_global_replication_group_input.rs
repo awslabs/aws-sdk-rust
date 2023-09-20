@@ -12,8 +12,8 @@ pub fn ser_rebalance_slots_in_global_replication_group_input_input(
     }
     #[allow(unused_mut)]
     let mut scope_3 = writer.prefix("ApplyImmediately");
-    {
-        scope_3.boolean(input.apply_immediately);
+    if let Some(var_4) = &input.apply_immediately {
+        scope_3.boolean(*var_4);
     }
     writer.finish();
     Ok(::aws_smithy_http::body::SdkBody::from(out))

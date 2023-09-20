@@ -41,6 +41,14 @@ pub use crate::types::_currency_code::CurrencyCode;
 
 pub use crate::types::_list_custom_line_item_charge_details::ListCustomLineItemChargeDetails;
 
+pub use crate::types::_line_item_filter::LineItemFilter;
+
+pub use crate::types::_line_item_filter_value::LineItemFilterValue;
+
+pub use crate::types::_match_option::MatchOption;
+
+pub use crate::types::_line_item_filter_attribute_name::LineItemFilterAttributeName;
+
 pub use crate::types::_custom_line_item_type::CustomLineItemType;
 
 pub use crate::types::_list_custom_line_item_percentage_charge_details::ListCustomLineItemPercentageChargeDetails;
@@ -145,6 +153,12 @@ mod _disassociate_resource_response_element;
 
 mod _free_tier_config;
 
+mod _line_item_filter;
+
+mod _line_item_filter_attribute_name;
+
+mod _line_item_filter_value;
+
 mod _list_account_associations_filter;
 
 mod _list_billing_group_account_grouping;
@@ -172,6 +186,8 @@ mod _list_pricing_rules_filter;
 mod _list_resources_associated_to_custom_line_item_filter;
 
 mod _list_resources_associated_to_custom_line_item_response_element;
+
+mod _match_option;
 
 mod _pricing_plan_list_element;
 

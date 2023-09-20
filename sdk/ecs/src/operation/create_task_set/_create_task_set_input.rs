@@ -9,7 +9,7 @@ pub struct CreateTaskSetInput {
     pub cluster: ::std::option::Option<::std::string::String>,
     /// <p>An optional non-unique tag that identifies this task set in external systems. If the task set is associated with a service discovery registry, the tasks in this task set will have the <code>ECS_TASK_SET_EXTERNAL_ID</code> Cloud Map attribute set to the provided value.</p>
     pub external_id: ::std::option::Option<::std::string::String>,
-    /// <p>The task definition for the tasks in the task set to use.</p>
+    /// <p>The task definition for the tasks in the task set to use. If a revision isn't specified, the latest <code>ACTIVE</code> revision is used.</p>
     pub task_definition: ::std::option::Option<::std::string::String>,
     /// <p>An object representing the network configuration for a task set.</p>
     pub network_configuration: ::std::option::Option<crate::types::NetworkConfiguration>,
@@ -59,7 +59,7 @@ impl CreateTaskSetInput {
     pub fn external_id(&self) -> ::std::option::Option<&str> {
         self.external_id.as_deref()
     }
-    /// <p>The task definition for the tasks in the task set to use.</p>
+    /// <p>The task definition for the tasks in the task set to use. If a revision isn't specified, the latest <code>ACTIVE</code> revision is used.</p>
     pub fn task_definition(&self) -> ::std::option::Option<&str> {
         self.task_definition.as_deref()
     }
@@ -184,17 +184,17 @@ impl CreateTaskSetInputBuilder {
     pub fn get_external_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.external_id
     }
-    /// <p>The task definition for the tasks in the task set to use.</p>
+    /// <p>The task definition for the tasks in the task set to use. If a revision isn't specified, the latest <code>ACTIVE</code> revision is used.</p>
     pub fn task_definition(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.task_definition = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The task definition for the tasks in the task set to use.</p>
+    /// <p>The task definition for the tasks in the task set to use. If a revision isn't specified, the latest <code>ACTIVE</code> revision is used.</p>
     pub fn set_task_definition(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.task_definition = input;
         self
     }
-    /// <p>The task definition for the tasks in the task set to use.</p>
+    /// <p>The task definition for the tasks in the task set to use. If a revision isn't specified, the latest <code>ACTIVE</code> revision is used.</p>
     pub fn get_task_definition(&self) -> &::std::option::Option<::std::string::String> {
         &self.task_definition
     }

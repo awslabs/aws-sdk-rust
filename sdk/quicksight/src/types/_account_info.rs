@@ -21,6 +21,8 @@ pub struct AccountInfo {
     pub authentication_type: ::std::option::Option<::std::string::String>,
     /// <p>The status of your account subscription.</p>
     pub account_subscription_status: ::std::option::Option<::std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) for the IAM Identity Center instance.</p>
+    pub iam_identity_center_instance_arn: ::std::option::Option<::std::string::String>,
 }
 impl AccountInfo {
     /// <p>The account name that you provided for the Amazon QuickSight subscription in your Amazon Web Services account. You create this name when you sign up for Amazon QuickSight. It's unique over all of Amazon Web Services, and it appears only when users sign in.</p>
@@ -43,6 +45,10 @@ impl AccountInfo {
     pub fn account_subscription_status(&self) -> ::std::option::Option<&str> {
         self.account_subscription_status.as_deref()
     }
+    /// <p>The Amazon Resource Name (ARN) for the IAM Identity Center instance.</p>
+    pub fn iam_identity_center_instance_arn(&self) -> ::std::option::Option<&str> {
+        self.iam_identity_center_instance_arn.as_deref()
+    }
 }
 impl AccountInfo {
     /// Creates a new builder-style object to manufacture [`AccountInfo`](crate::types::AccountInfo).
@@ -60,6 +66,7 @@ pub struct AccountInfoBuilder {
     pub(crate) notification_email: ::std::option::Option<::std::string::String>,
     pub(crate) authentication_type: ::std::option::Option<::std::string::String>,
     pub(crate) account_subscription_status: ::std::option::Option<::std::string::String>,
+    pub(crate) iam_identity_center_instance_arn: ::std::option::Option<::std::string::String>,
 }
 impl AccountInfoBuilder {
     /// <p>The account name that you provided for the Amazon QuickSight subscription in your Amazon Web Services account. You create this name when you sign up for Amazon QuickSight. It's unique over all of Amazon Web Services, and it appears only when users sign in.</p>
@@ -132,6 +139,20 @@ impl AccountInfoBuilder {
     pub fn get_account_subscription_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.account_subscription_status
     }
+    /// <p>The Amazon Resource Name (ARN) for the IAM Identity Center instance.</p>
+    pub fn iam_identity_center_instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.iam_identity_center_instance_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) for the IAM Identity Center instance.</p>
+    pub fn set_iam_identity_center_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.iam_identity_center_instance_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) for the IAM Identity Center instance.</p>
+    pub fn get_iam_identity_center_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.iam_identity_center_instance_arn
+    }
     /// Consumes the builder and constructs a [`AccountInfo`](crate::types::AccountInfo).
     pub fn build(self) -> crate::types::AccountInfo {
         crate::types::AccountInfo {
@@ -140,6 +161,7 @@ impl AccountInfoBuilder {
             notification_email: self.notification_email,
             authentication_type: self.authentication_type,
             account_subscription_status: self.account_subscription_status,
+            iam_identity_center_instance_arn: self.iam_identity_center_instance_arn,
         }
     }
 }

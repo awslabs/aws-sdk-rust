@@ -9,6 +9,8 @@ pub struct ListUsersInput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return in a single call.</p>
     pub max_results: ::std::option::Option<i32>,
+    /// <p>Limit the user search results based on the filter criteria. You can only use one filter per request.</p>
+    pub filters: ::std::option::Option<crate::types::ListUsersFilters>,
 }
 impl ListUsersInput {
     /// <p>The identifier for the organization under which the users exist.</p>
@@ -22,6 +24,10 @@ impl ListUsersInput {
     /// <p>The maximum number of results to return in a single call.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
+    }
+    /// <p>Limit the user search results based on the filter criteria. You can only use one filter per request.</p>
+    pub fn filters(&self) -> ::std::option::Option<&crate::types::ListUsersFilters> {
+        self.filters.as_ref()
     }
 }
 impl ListUsersInput {
@@ -38,6 +44,7 @@ pub struct ListUsersInputBuilder {
     pub(crate) organization_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
+    pub(crate) filters: ::std::option::Option<crate::types::ListUsersFilters>,
 }
 impl ListUsersInputBuilder {
     /// <p>The identifier for the organization under which the users exist.</p>
@@ -82,12 +89,27 @@ impl ListUsersInputBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
+    /// <p>Limit the user search results based on the filter criteria. You can only use one filter per request.</p>
+    pub fn filters(mut self, input: crate::types::ListUsersFilters) -> Self {
+        self.filters = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Limit the user search results based on the filter criteria. You can only use one filter per request.</p>
+    pub fn set_filters(mut self, input: ::std::option::Option<crate::types::ListUsersFilters>) -> Self {
+        self.filters = input;
+        self
+    }
+    /// <p>Limit the user search results based on the filter criteria. You can only use one filter per request.</p>
+    pub fn get_filters(&self) -> &::std::option::Option<crate::types::ListUsersFilters> {
+        &self.filters
+    }
     /// Consumes the builder and constructs a [`ListUsersInput`](crate::operation::list_users::ListUsersInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::list_users::ListUsersInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_users::ListUsersInput {
             organization_id: self.organization_id,
             next_token: self.next_token,
             max_results: self.max_results,
+            filters: self.filters,
         })
     }
 }

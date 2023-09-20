@@ -30,7 +30,7 @@ impl GetIdentityDkimAttributesInputBuilder {
 /// <li> <p>Whether Amazon SES has successfully verified the DKIM tokens published in the domain's DNS. This information is only returned for domain name identities, not for email addresses.</p> </li>
 /// </ul>
 /// <p>This operation is throttled at one request per second and can only get DKIM attributes for up to 100 identities at a time.</p>
-/// <p>For more information about creating DNS records using DKIM tokens, go to the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim-dns-records.html">Amazon SES Developer Guide</a>.</p>
+/// <p>For more information about creating DNS records using DKIM tokens, go to the <a href="https://docs.aws.amazon.com/ses/latest/dg/send-email-authentication-dkim-easy-managing.html">Amazon SES Developer Guide</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetIdentityDkimAttributesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

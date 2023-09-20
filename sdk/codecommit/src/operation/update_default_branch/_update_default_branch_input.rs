@@ -4,17 +4,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateDefaultBranchInput {
-    /// <p>The name of the repository to set or change the default branch for.</p>
+    /// <p>The name of the repository for which you want to set or change the default branch.</p>
     pub repository_name: ::std::option::Option<::std::string::String>,
-    /// <p>The name of the branch to set as the default.</p>
+    /// <p>The name of the branch to set as the default branch.</p>
     pub default_branch_name: ::std::option::Option<::std::string::String>,
 }
 impl UpdateDefaultBranchInput {
-    /// <p>The name of the repository to set or change the default branch for.</p>
+    /// <p>The name of the repository for which you want to set or change the default branch.</p>
     pub fn repository_name(&self) -> ::std::option::Option<&str> {
         self.repository_name.as_deref()
     }
-    /// <p>The name of the branch to set as the default.</p>
+    /// <p>The name of the branch to set as the default branch.</p>
     pub fn default_branch_name(&self) -> ::std::option::Option<&str> {
         self.default_branch_name.as_deref()
     }
@@ -34,31 +34,31 @@ pub struct UpdateDefaultBranchInputBuilder {
     pub(crate) default_branch_name: ::std::option::Option<::std::string::String>,
 }
 impl UpdateDefaultBranchInputBuilder {
-    /// <p>The name of the repository to set or change the default branch for.</p>
+    /// <p>The name of the repository for which you want to set or change the default branch.</p>
     pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the repository to set or change the default branch for.</p>
+    /// <p>The name of the repository for which you want to set or change the default branch.</p>
     pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.repository_name = input;
         self
     }
-    /// <p>The name of the repository to set or change the default branch for.</p>
+    /// <p>The name of the repository for which you want to set or change the default branch.</p>
     pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.repository_name
     }
-    /// <p>The name of the branch to set as the default.</p>
+    /// <p>The name of the branch to set as the default branch.</p>
     pub fn default_branch_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.default_branch_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the branch to set as the default.</p>
+    /// <p>The name of the branch to set as the default branch.</p>
     pub fn set_default_branch_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.default_branch_name = input;
         self
     }
-    /// <p>The name of the branch to set as the default.</p>
+    /// <p>The name of the branch to set as the default branch.</p>
     pub fn get_default_branch_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.default_branch_name
     }

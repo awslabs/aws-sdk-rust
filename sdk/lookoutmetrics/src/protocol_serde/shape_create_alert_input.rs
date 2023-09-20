@@ -21,24 +21,24 @@ pub fn ser_create_alert_input(
     if let Some(var_6) = &input.alert_name {
         object.key("AlertName").string(var_6.as_str());
     }
-    if input.alert_sensitivity_threshold != 0 {
+    if let Some(var_7) = &input.alert_sensitivity_threshold {
         object.key("AlertSensitivityThreshold").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.alert_sensitivity_threshold).into()),
+            ::aws_smithy_types::Number::NegInt((*var_7).into()),
         );
     }
-    if let Some(var_7) = &input.anomaly_detector_arn {
-        object.key("AnomalyDetectorArn").string(var_7.as_str());
+    if let Some(var_8) = &input.anomaly_detector_arn {
+        object.key("AnomalyDetectorArn").string(var_8.as_str());
     }
-    if let Some(var_8) = &input.tags {
+    if let Some(var_9) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_9 = object.key("Tags").start_object();
-        for (key_10, value_11) in var_8 {
+        let mut object_10 = object.key("Tags").start_object();
+        for (key_11, value_12) in var_9 {
             {
-                object_9.key(key_10.as_str()).string(value_11.as_str());
+                object_10.key(key_11.as_str()).string(value_12.as_str());
             }
         }
-        object_9.finish();
+        object_10.finish();
     }
     Ok(())
 }

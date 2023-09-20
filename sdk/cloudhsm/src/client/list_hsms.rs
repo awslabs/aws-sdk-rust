@@ -8,6 +8,7 @@ impl super::Client {
     ///   - [`hsm_list(Option<Vec<String>>)`](crate::operation::list_hsms::ListHsmsOutput::hsm_list): <p>The list of ARNs that identify the HSMs.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_hsms::ListHsmsOutput::next_token): <p>If not null, more results are available. Pass this value to <code>ListHsms</code> to retrieve the next set of items.</p>
     /// - On failure, responds with [`SdkError<ListHsmsError>`](crate::operation::list_hsms::ListHsmsError)
+    #[deprecated(note = "This API is deprecated.")]
     pub fn list_hsms(&self) -> crate::operation::list_hsms::builders::ListHsmsFluentBuilder {
         crate::operation::list_hsms::builders::ListHsmsFluentBuilder::new(self.handle.clone())
     }

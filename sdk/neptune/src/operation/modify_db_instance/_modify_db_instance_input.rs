@@ -36,7 +36,7 @@ pub struct ModifyDbInstanceInput {
     /// <p>Specifies whether the modifications in this request and any pending modifications are asynchronously applied as soon as possible, regardless of the <code>PreferredMaintenanceWindow</code> setting for the DB instance.</p>
     /// <p> If this parameter is set to <code>false</code>, changes to the DB instance are applied during the next maintenance window. Some parameter changes can cause an outage and are applied on the next call to <code>RebootDBInstance</code>, or the next failure reboot.</p>
     /// <p>Default: <code>false</code> </p>
-    pub apply_immediately: bool,
+    pub apply_immediately: ::std::option::Option<bool>,
     /// <p>Not supported by Neptune.</p>
     pub master_user_password: ::std::option::Option<::std::string::String>,
     /// <p>The name of the DB parameter group to apply to the DB instance. Changing this setting doesn't result in an outage. The parameter group name itself is changed immediately, but the actual parameter changes are not applied until you reboot the instance without failover. The db instance will NOT be rebooted automatically and the parameter changes will NOT be applied during the next maintenance window.</p>
@@ -67,7 +67,7 @@ pub struct ModifyDbInstanceInput {
     /// <p>The version number of the database engine to upgrade to. Currently, setting this parameter has no effect. To upgrade your database engine to the most recent release, use the <code>ApplyPendingMaintenanceAction</code> API.</p>
     pub engine_version: ::std::option::Option<::std::string::String>,
     /// <p>Indicates that major version upgrades are allowed. Changing this parameter doesn't result in an outage and the change is asynchronously applied as soon as possible.</p>
-    pub allow_major_version_upgrade: bool,
+    pub allow_major_version_upgrade: ::std::option::Option<bool>,
     /// <p> Indicates that minor version upgrades are applied automatically to the DB instance during the maintenance window. Changing this parameter doesn't result in an outage except in the following case and the change is asynchronously applied as soon as possible. An outage will result if this parameter is set to <code>true</code> during the maintenance window, and a newer minor version is available, and Neptune has enabled auto patching for that engine version.</p>
     pub auto_minor_version_upgrade: ::std::option::Option<bool>,
     /// <p>Not supported by Neptune.</p>
@@ -180,7 +180,7 @@ impl ModifyDbInstanceInput {
     /// <p>Specifies whether the modifications in this request and any pending modifications are asynchronously applied as soon as possible, regardless of the <code>PreferredMaintenanceWindow</code> setting for the DB instance.</p>
     /// <p> If this parameter is set to <code>false</code>, changes to the DB instance are applied during the next maintenance window. Some parameter changes can cause an outage and are applied on the next call to <code>RebootDBInstance</code>, or the next failure reboot.</p>
     /// <p>Default: <code>false</code> </p>
-    pub fn apply_immediately(&self) -> bool {
+    pub fn apply_immediately(&self) -> ::std::option::Option<bool> {
         self.apply_immediately
     }
     /// <p>Not supported by Neptune.</p>
@@ -227,7 +227,7 @@ impl ModifyDbInstanceInput {
         self.engine_version.as_deref()
     }
     /// <p>Indicates that major version upgrades are allowed. Changing this parameter doesn't result in an outage and the change is asynchronously applied as soon as possible.</p>
-    pub fn allow_major_version_upgrade(&self) -> bool {
+    pub fn allow_major_version_upgrade(&self) -> ::std::option::Option<bool> {
         self.allow_major_version_upgrade
     }
     /// <p> Indicates that minor version upgrades are applied automatically to the DB instance during the maintenance window. Changing this parameter doesn't result in an outage except in the following case and the change is asynchronously applied as soon as possible. An outage will result if this parameter is set to <code>true</code> during the maintenance window, and a newer minor version is available, and Neptune has enabled auto patching for that engine version.</p>
@@ -1099,7 +1099,7 @@ impl ModifyDbInstanceInputBuilder {
             db_subnet_group_name: self.db_subnet_group_name,
             db_security_groups: self.db_security_groups,
             vpc_security_group_ids: self.vpc_security_group_ids,
-            apply_immediately: self.apply_immediately.unwrap_or_default(),
+            apply_immediately: self.apply_immediately,
             master_user_password: self.master_user_password,
             db_parameter_group_name: self.db_parameter_group_name,
             backup_retention_period: self.backup_retention_period,
@@ -1107,7 +1107,7 @@ impl ModifyDbInstanceInputBuilder {
             preferred_maintenance_window: self.preferred_maintenance_window,
             multi_az: self.multi_az,
             engine_version: self.engine_version,
-            allow_major_version_upgrade: self.allow_major_version_upgrade.unwrap_or_default(),
+            allow_major_version_upgrade: self.allow_major_version_upgrade,
             auto_minor_version_upgrade: self.auto_minor_version_upgrade,
             license_model: self.license_model,
             iops: self.iops,

@@ -6,7 +6,7 @@ pub struct CompleteMigrationInput {
     /// <p>The ID of the replication group to which data is being migrated.</p>
     pub replication_group_id: ::std::option::Option<::std::string::String>,
     /// <p>Forces the migration to stop without ensuring that data is in sync. It is recommended to use this option only to abort the migration and not recommended when application wants to continue migration to ElastiCache.</p>
-    pub force: bool,
+    pub force: ::std::option::Option<bool>,
 }
 impl CompleteMigrationInput {
     /// <p>The ID of the replication group to which data is being migrated.</p>
@@ -14,7 +14,7 @@ impl CompleteMigrationInput {
         self.replication_group_id.as_deref()
     }
     /// <p>Forces the migration to stop without ensuring that data is in sync. It is recommended to use this option only to abort the migration and not recommended when application wants to continue migration to ElastiCache.</p>
-    pub fn force(&self) -> bool {
+    pub fn force(&self) -> ::std::option::Option<bool> {
         self.force
     }
 }
@@ -67,7 +67,7 @@ impl CompleteMigrationInputBuilder {
     ) -> ::std::result::Result<crate::operation::complete_migration::CompleteMigrationInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::complete_migration::CompleteMigrationInput {
             replication_group_id: self.replication_group_id,
-            force: self.force.unwrap_or_default(),
+            force: self.force,
         })
     }
 }

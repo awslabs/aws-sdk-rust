@@ -6,7 +6,7 @@ pub struct DescribeChannelInput {
     /// <p>The name of the channel whose information is retrieved.</p>
     pub channel_name: ::std::option::Option<::std::string::String>,
     /// <p>If true, additional statistical information about the channel is included in the response. This feature can't be used with a channel whose S3 storage is customer-managed.</p>
-    pub include_statistics: bool,
+    pub include_statistics: ::std::option::Option<bool>,
 }
 impl DescribeChannelInput {
     /// <p>The name of the channel whose information is retrieved.</p>
@@ -14,7 +14,7 @@ impl DescribeChannelInput {
         self.channel_name.as_deref()
     }
     /// <p>If true, additional statistical information about the channel is included in the response. This feature can't be used with a channel whose S3 storage is customer-managed.</p>
-    pub fn include_statistics(&self) -> bool {
+    pub fn include_statistics(&self) -> ::std::option::Option<bool> {
         self.include_statistics
     }
 }
@@ -67,7 +67,7 @@ impl DescribeChannelInputBuilder {
     ) -> ::std::result::Result<crate::operation::describe_channel::DescribeChannelInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_channel::DescribeChannelInput {
             channel_name: self.channel_name,
-            include_statistics: self.include_statistics.unwrap_or_default(),
+            include_statistics: self.include_statistics,
         })
     }
 }

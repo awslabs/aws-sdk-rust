@@ -18,6 +18,8 @@ pub struct CreateRoutingProfileInput {
     pub media_concurrencies: ::std::option::Option<::std::vec::Vec<crate::types::MediaConcurrency>>,
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>Whether agents with this routing profile will have their routing order calculated based on <i>longest idle time</i> or <i>time since their last inbound contact</i>. </p>
+    pub agent_availability_timer: ::std::option::Option<crate::types::AgentAvailabilityTimer>,
 }
 impl CreateRoutingProfileInput {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
@@ -49,6 +51,10 @@ impl CreateRoutingProfileInput {
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
+    /// <p>Whether agents with this routing profile will have their routing order calculated based on <i>longest idle time</i> or <i>time since their last inbound contact</i>. </p>
+    pub fn agent_availability_timer(&self) -> ::std::option::Option<&crate::types::AgentAvailabilityTimer> {
+        self.agent_availability_timer.as_ref()
+    }
 }
 impl CreateRoutingProfileInput {
     /// Creates a new builder-style object to manufacture [`CreateRoutingProfileInput`](crate::operation::create_routing_profile::CreateRoutingProfileInput).
@@ -68,6 +74,7 @@ pub struct CreateRoutingProfileInputBuilder {
     pub(crate) queue_configs: ::std::option::Option<::std::vec::Vec<crate::types::RoutingProfileQueueConfig>>,
     pub(crate) media_concurrencies: ::std::option::Option<::std::vec::Vec<crate::types::MediaConcurrency>>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) agent_availability_timer: ::std::option::Option<crate::types::AgentAvailabilityTimer>,
 }
 impl CreateRoutingProfileInputBuilder {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
@@ -189,6 +196,20 @@ impl CreateRoutingProfileInputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
+    /// <p>Whether agents with this routing profile will have their routing order calculated based on <i>longest idle time</i> or <i>time since their last inbound contact</i>. </p>
+    pub fn agent_availability_timer(mut self, input: crate::types::AgentAvailabilityTimer) -> Self {
+        self.agent_availability_timer = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Whether agents with this routing profile will have their routing order calculated based on <i>longest idle time</i> or <i>time since their last inbound contact</i>. </p>
+    pub fn set_agent_availability_timer(mut self, input: ::std::option::Option<crate::types::AgentAvailabilityTimer>) -> Self {
+        self.agent_availability_timer = input;
+        self
+    }
+    /// <p>Whether agents with this routing profile will have their routing order calculated based on <i>longest idle time</i> or <i>time since their last inbound contact</i>. </p>
+    pub fn get_agent_availability_timer(&self) -> &::std::option::Option<crate::types::AgentAvailabilityTimer> {
+        &self.agent_availability_timer
+    }
     /// Consumes the builder and constructs a [`CreateRoutingProfileInput`](crate::operation::create_routing_profile::CreateRoutingProfileInput).
     pub fn build(
         self,
@@ -202,6 +223,7 @@ impl CreateRoutingProfileInputBuilder {
             queue_configs: self.queue_configs,
             media_concurrencies: self.media_concurrencies,
             tags: self.tags,
+            agent_availability_timer: self.agent_availability_timer,
         })
     }
 }

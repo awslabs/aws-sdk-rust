@@ -200,23 +200,22 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for GetProgramm
                 mut output: &mut ::std::string::String,
             ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError> {
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
-                if _input.duration_in_minutes != 0 {
-                    query.push_kv(
-                        "durationInMinutes",
-                        ::aws_smithy_types::primitive::Encoder::from(_input.duration_in_minutes).encode(),
-                    );
+                if let ::std::option::Option::Some(inner_1) = &_input.duration_in_minutes {
+                    if *inner_1 != 0 {
+                        query.push_kv("durationInMinutes", ::aws_smithy_types::primitive::Encoder::from(*inner_1).encode());
+                    }
                 }
-                let inner_1 = &_input.environment_id;
-                let inner_1 = inner_1
+                let inner_2 = &_input.environment_id;
+                let inner_2 = inner_2
                     .as_ref()
                     .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("environment_id", "cannot be empty or unset"))?;
-                if inner_1.is_empty() {
+                if inner_2.is_empty() {
                     return ::std::result::Result::Err(::aws_smithy_http::operation::error::BuildError::missing_field(
                         "environment_id",
                         "cannot be empty or unset",
                     ));
                 }
-                query.push_kv("environmentId", &::aws_smithy_http::query::fmt_string(&inner_1));
+                query.push_kv("environmentId", &::aws_smithy_http::query::fmt_string(&inner_2));
                 ::std::result::Result::Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]

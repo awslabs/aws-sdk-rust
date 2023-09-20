@@ -30,6 +30,8 @@ pub struct ReadSetListItem {
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> The status for a read set. It provides more detail as to why the read set has a status. </p>
     pub status_message: ::std::option::Option<::std::string::String>,
+    /// <p> The creation type of the read set. </p>
+    pub creation_type: ::std::option::Option<crate::types::CreationType>,
 }
 impl ReadSetListItem {
     /// <p>The read set's ID.</p>
@@ -84,6 +86,10 @@ impl ReadSetListItem {
     pub fn status_message(&self) -> ::std::option::Option<&str> {
         self.status_message.as_deref()
     }
+    /// <p> The creation type of the read set. </p>
+    pub fn creation_type(&self) -> ::std::option::Option<&crate::types::CreationType> {
+        self.creation_type.as_ref()
+    }
 }
 impl ReadSetListItem {
     /// Creates a new builder-style object to manufacture [`ReadSetListItem`](crate::types::ReadSetListItem).
@@ -109,6 +115,7 @@ pub struct ReadSetListItemBuilder {
     pub(crate) sequence_information: ::std::option::Option<crate::types::SequenceInformation>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) status_message: ::std::option::Option<::std::string::String>,
+    pub(crate) creation_type: ::std::option::Option<crate::types::CreationType>,
 }
 impl ReadSetListItemBuilder {
     /// <p>The read set's ID.</p>
@@ -293,6 +300,20 @@ impl ReadSetListItemBuilder {
     pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.status_message
     }
+    /// <p> The creation type of the read set. </p>
+    pub fn creation_type(mut self, input: crate::types::CreationType) -> Self {
+        self.creation_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p> The creation type of the read set. </p>
+    pub fn set_creation_type(mut self, input: ::std::option::Option<crate::types::CreationType>) -> Self {
+        self.creation_type = input;
+        self
+    }
+    /// <p> The creation type of the read set. </p>
+    pub fn get_creation_type(&self) -> &::std::option::Option<crate::types::CreationType> {
+        &self.creation_type
+    }
     /// Consumes the builder and constructs a [`ReadSetListItem`](crate::types::ReadSetListItem).
     pub fn build(self) -> crate::types::ReadSetListItem {
         crate::types::ReadSetListItem {
@@ -309,6 +330,7 @@ impl ReadSetListItemBuilder {
             sequence_information: self.sequence_information,
             creation_time: self.creation_time,
             status_message: self.status_message,
+            creation_type: self.creation_type,
         }
     }
 }
