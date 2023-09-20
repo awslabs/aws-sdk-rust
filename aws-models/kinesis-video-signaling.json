@@ -114,9 +114,188 @@
                                     "type": "error"
                                 },
                                 {
+                                    "conditions": [
+                                        {
+                                            "fn": "booleanEquals",
+                                            "argv": [
+                                                {
+                                                    "ref": "UseDualStack"
+                                                },
+                                                true
+                                            ]
+                                        }
+                                    ],
+                                    "error": "Invalid Configuration: Dualstack and custom endpoint are not supported",
+                                    "type": "error"
+                                },
+                                {
                                     "conditions": [],
+                                    "endpoint": {
+                                        "url": {
+                                            "ref": "Endpoint"
+                                        },
+                                        "properties": {},
+                                        "headers": {}
+                                    },
+                                    "type": "endpoint"
+                                }
+                            ]
+                        },
+                        {
+                            "conditions": [
+                                {
+                                    "fn": "isSet",
+                                    "argv": [
+                                        {
+                                            "ref": "Region"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "type": "tree",
+                            "rules": [
+                                {
+                                    "conditions": [
+                                        {
+                                            "fn": "aws.partition",
+                                            "argv": [
+                                                {
+                                                    "ref": "Region"
+                                                }
+                                            ],
+                                            "assign": "PartitionResult"
+                                        }
+                                    ],
                                     "type": "tree",
                                     "rules": [
+                                        {
+                                            "conditions": [
+                                                {
+                                                    "fn": "booleanEquals",
+                                                    "argv": [
+                                                        {
+                                                            "ref": "UseFIPS"
+                                                        },
+                                                        true
+                                                    ]
+                                                },
+                                                {
+                                                    "fn": "booleanEquals",
+                                                    "argv": [
+                                                        {
+                                                            "ref": "UseDualStack"
+                                                        },
+                                                        true
+                                                    ]
+                                                }
+                                            ],
+                                            "type": "tree",
+                                            "rules": [
+                                                {
+                                                    "conditions": [
+                                                        {
+                                                            "fn": "booleanEquals",
+                                                            "argv": [
+                                                                true,
+                                                                {
+                                                                    "fn": "getAttr",
+                                                                    "argv": [
+                                                                        {
+                                                                            "ref": "PartitionResult"
+                                                                        },
+                                                                        "supportsFIPS"
+                                                                    ]
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            "fn": "booleanEquals",
+                                                            "argv": [
+                                                                true,
+                                                                {
+                                                                    "fn": "getAttr",
+                                                                    "argv": [
+                                                                        {
+                                                                            "ref": "PartitionResult"
+                                                                        },
+                                                                        "supportsDualStack"
+                                                                    ]
+                                                                }
+                                                            ]
+                                                        }
+                                                    ],
+                                                    "type": "tree",
+                                                    "rules": [
+                                                        {
+                                                            "conditions": [],
+                                                            "endpoint": {
+                                                                "url": "https://kinesisvideo-fips.{Region}.{PartitionResult#dualStackDnsSuffix}",
+                                                                "properties": {},
+                                                                "headers": {}
+                                                            },
+                                                            "type": "endpoint"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "conditions": [],
+                                                    "error": "FIPS and DualStack are enabled, but this partition does not support one or both",
+                                                    "type": "error"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "conditions": [
+                                                {
+                                                    "fn": "booleanEquals",
+                                                    "argv": [
+                                                        {
+                                                            "ref": "UseFIPS"
+                                                        },
+                                                        true
+                                                    ]
+                                                }
+                                            ],
+                                            "type": "tree",
+                                            "rules": [
+                                                {
+                                                    "conditions": [
+                                                        {
+                                                            "fn": "booleanEquals",
+                                                            "argv": [
+                                                                true,
+                                                                {
+                                                                    "fn": "getAttr",
+                                                                    "argv": [
+                                                                        {
+                                                                            "ref": "PartitionResult"
+                                                                        },
+                                                                        "supportsFIPS"
+                                                                    ]
+                                                                }
+                                                            ]
+                                                        }
+                                                    ],
+                                                    "type": "tree",
+                                                    "rules": [
+                                                        {
+                                                            "conditions": [],
+                                                            "endpoint": {
+                                                                "url": "https://kinesisvideo-fips.{Region}.{PartitionResult#dnsSuffix}",
+                                                                "properties": {},
+                                                                "headers": {}
+                                                            },
+                                                            "type": "endpoint"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "conditions": [],
+                                                    "error": "FIPS is enabled but this partition does not support FIPS",
+                                                    "type": "error"
+                                                }
+                                            ]
+                                        },
                                         {
                                             "conditions": [
                                                 {
@@ -129,15 +308,50 @@
                                                     ]
                                                 }
                                             ],
-                                            "error": "Invalid Configuration: Dualstack and custom endpoint are not supported",
-                                            "type": "error"
+                                            "type": "tree",
+                                            "rules": [
+                                                {
+                                                    "conditions": [
+                                                        {
+                                                            "fn": "booleanEquals",
+                                                            "argv": [
+                                                                true,
+                                                                {
+                                                                    "fn": "getAttr",
+                                                                    "argv": [
+                                                                        {
+                                                                            "ref": "PartitionResult"
+                                                                        },
+                                                                        "supportsDualStack"
+                                                                    ]
+                                                                }
+                                                            ]
+                                                        }
+                                                    ],
+                                                    "type": "tree",
+                                                    "rules": [
+                                                        {
+                                                            "conditions": [],
+                                                            "endpoint": {
+                                                                "url": "https://kinesisvideo.{Region}.{PartitionResult#dualStackDnsSuffix}",
+                                                                "properties": {},
+                                                                "headers": {}
+                                                            },
+                                                            "type": "endpoint"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "conditions": [],
+                                                    "error": "DualStack is enabled but this partition does not support DualStack",
+                                                    "type": "error"
+                                                }
+                                            ]
                                         },
                                         {
                                             "conditions": [],
                                             "endpoint": {
-                                                "url": {
-                                                    "ref": "Endpoint"
-                                                },
+                                                "url": "https://kinesisvideo.{Region}.{PartitionResult#dnsSuffix}",
                                                 "properties": {},
                                                 "headers": {}
                                             },
@@ -149,258 +363,8 @@
                         },
                         {
                             "conditions": [],
-                            "type": "tree",
-                            "rules": [
-                                {
-                                    "conditions": [
-                                        {
-                                            "fn": "isSet",
-                                            "argv": [
-                                                {
-                                                    "ref": "Region"
-                                                }
-                                            ]
-                                        }
-                                    ],
-                                    "type": "tree",
-                                    "rules": [
-                                        {
-                                            "conditions": [
-                                                {
-                                                    "fn": "aws.partition",
-                                                    "argv": [
-                                                        {
-                                                            "ref": "Region"
-                                                        }
-                                                    ],
-                                                    "assign": "PartitionResult"
-                                                }
-                                            ],
-                                            "type": "tree",
-                                            "rules": [
-                                                {
-                                                    "conditions": [
-                                                        {
-                                                            "fn": "booleanEquals",
-                                                            "argv": [
-                                                                {
-                                                                    "ref": "UseFIPS"
-                                                                },
-                                                                true
-                                                            ]
-                                                        },
-                                                        {
-                                                            "fn": "booleanEquals",
-                                                            "argv": [
-                                                                {
-                                                                    "ref": "UseDualStack"
-                                                                },
-                                                                true
-                                                            ]
-                                                        }
-                                                    ],
-                                                    "type": "tree",
-                                                    "rules": [
-                                                        {
-                                                            "conditions": [
-                                                                {
-                                                                    "fn": "booleanEquals",
-                                                                    "argv": [
-                                                                        true,
-                                                                        {
-                                                                            "fn": "getAttr",
-                                                                            "argv": [
-                                                                                {
-                                                                                    "ref": "PartitionResult"
-                                                                                },
-                                                                                "supportsFIPS"
-                                                                            ]
-                                                                        }
-                                                                    ]
-                                                                },
-                                                                {
-                                                                    "fn": "booleanEquals",
-                                                                    "argv": [
-                                                                        true,
-                                                                        {
-                                                                            "fn": "getAttr",
-                                                                            "argv": [
-                                                                                {
-                                                                                    "ref": "PartitionResult"
-                                                                                },
-                                                                                "supportsDualStack"
-                                                                            ]
-                                                                        }
-                                                                    ]
-                                                                }
-                                                            ],
-                                                            "type": "tree",
-                                                            "rules": [
-                                                                {
-                                                                    "conditions": [],
-                                                                    "type": "tree",
-                                                                    "rules": [
-                                                                        {
-                                                                            "conditions": [],
-                                                                            "endpoint": {
-                                                                                "url": "https://kinesisvideo-fips.{Region}.{PartitionResult#dualStackDnsSuffix}",
-                                                                                "properties": {},
-                                                                                "headers": {}
-                                                                            },
-                                                                            "type": "endpoint"
-                                                                        }
-                                                                    ]
-                                                                }
-                                                            ]
-                                                        },
-                                                        {
-                                                            "conditions": [],
-                                                            "error": "FIPS and DualStack are enabled, but this partition does not support one or both",
-                                                            "type": "error"
-                                                        }
-                                                    ]
-                                                },
-                                                {
-                                                    "conditions": [
-                                                        {
-                                                            "fn": "booleanEquals",
-                                                            "argv": [
-                                                                {
-                                                                    "ref": "UseFIPS"
-                                                                },
-                                                                true
-                                                            ]
-                                                        }
-                                                    ],
-                                                    "type": "tree",
-                                                    "rules": [
-                                                        {
-                                                            "conditions": [
-                                                                {
-                                                                    "fn": "booleanEquals",
-                                                                    "argv": [
-                                                                        true,
-                                                                        {
-                                                                            "fn": "getAttr",
-                                                                            "argv": [
-                                                                                {
-                                                                                    "ref": "PartitionResult"
-                                                                                },
-                                                                                "supportsFIPS"
-                                                                            ]
-                                                                        }
-                                                                    ]
-                                                                }
-                                                            ],
-                                                            "type": "tree",
-                                                            "rules": [
-                                                                {
-                                                                    "conditions": [],
-                                                                    "type": "tree",
-                                                                    "rules": [
-                                                                        {
-                                                                            "conditions": [],
-                                                                            "endpoint": {
-                                                                                "url": "https://kinesisvideo-fips.{Region}.{PartitionResult#dnsSuffix}",
-                                                                                "properties": {},
-                                                                                "headers": {}
-                                                                            },
-                                                                            "type": "endpoint"
-                                                                        }
-                                                                    ]
-                                                                }
-                                                            ]
-                                                        },
-                                                        {
-                                                            "conditions": [],
-                                                            "error": "FIPS is enabled but this partition does not support FIPS",
-                                                            "type": "error"
-                                                        }
-                                                    ]
-                                                },
-                                                {
-                                                    "conditions": [
-                                                        {
-                                                            "fn": "booleanEquals",
-                                                            "argv": [
-                                                                {
-                                                                    "ref": "UseDualStack"
-                                                                },
-                                                                true
-                                                            ]
-                                                        }
-                                                    ],
-                                                    "type": "tree",
-                                                    "rules": [
-                                                        {
-                                                            "conditions": [
-                                                                {
-                                                                    "fn": "booleanEquals",
-                                                                    "argv": [
-                                                                        true,
-                                                                        {
-                                                                            "fn": "getAttr",
-                                                                            "argv": [
-                                                                                {
-                                                                                    "ref": "PartitionResult"
-                                                                                },
-                                                                                "supportsDualStack"
-                                                                            ]
-                                                                        }
-                                                                    ]
-                                                                }
-                                                            ],
-                                                            "type": "tree",
-                                                            "rules": [
-                                                                {
-                                                                    "conditions": [],
-                                                                    "type": "tree",
-                                                                    "rules": [
-                                                                        {
-                                                                            "conditions": [],
-                                                                            "endpoint": {
-                                                                                "url": "https://kinesisvideo.{Region}.{PartitionResult#dualStackDnsSuffix}",
-                                                                                "properties": {},
-                                                                                "headers": {}
-                                                                            },
-                                                                            "type": "endpoint"
-                                                                        }
-                                                                    ]
-                                                                }
-                                                            ]
-                                                        },
-                                                        {
-                                                            "conditions": [],
-                                                            "error": "DualStack is enabled but this partition does not support DualStack",
-                                                            "type": "error"
-                                                        }
-                                                    ]
-                                                },
-                                                {
-                                                    "conditions": [],
-                                                    "type": "tree",
-                                                    "rules": [
-                                                        {
-                                                            "conditions": [],
-                                                            "endpoint": {
-                                                                "url": "https://kinesisvideo.{Region}.{PartitionResult#dnsSuffix}",
-                                                                "properties": {},
-                                                                "headers": {}
-                                                            },
-                                                            "type": "endpoint"
-                                                        }
-                                                    ]
-                                                }
-                                            ]
-                                        }
-                                    ]
-                                },
-                                {
-                                    "conditions": [],
-                                    "error": "Invalid Configuration: Missing Region",
-                                    "type": "error"
-                                }
-                            ]
+                            "error": "Invalid Configuration: Missing Region",
+                            "type": "error"
                         }
                     ]
                 },
@@ -931,7 +895,7 @@
                     "min": 1,
                     "max": 256
                 },
-                "smithy.api#pattern": "[a-zA-Z0-9_.-]+"
+                "smithy.api#pattern": "^[a-zA-Z0-9_.-]+$"
             }
         },
         "com.amazonaws.kinesisvideosignaling#ClientLimitExceededException": {
@@ -1015,6 +979,9 @@
                         "smithy.api#documentation": "<p>An optional user ID to be associated with the credentials.</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.kinesisvideosignaling#GetIceServerConfigResponse": {
@@ -1026,6 +993,9 @@
                         "smithy.api#documentation": "<p>The list of ICE server information objects.</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.kinesisvideosignaling#IceServer": {
@@ -1100,7 +1070,7 @@
                     "min": 1,
                     "max": 10000
                 },
-                "smithy.api#pattern": "[a-zA-Z0-9+/=]+"
+                "smithy.api#pattern": "^[a-zA-Z0-9+/=]+$"
             }
         },
         "com.amazonaws.kinesisvideosignaling#NotAuthorizedException": {
@@ -1123,7 +1093,7 @@
                     "min": 1,
                     "max": 256
                 },
-                "smithy.api#pattern": "[a-zA-Z0-9_.-]+"
+                "smithy.api#pattern": "^[a-zA-Z0-9_.-]+$"
             }
         },
         "com.amazonaws.kinesisvideosignaling#ResourceARN": {
@@ -1133,7 +1103,7 @@
                     "min": 1,
                     "max": 1024
                 },
-                "smithy.api#pattern": "arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+"
+                "smithy.api#pattern": "^arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+$"
             }
         },
         "com.amazonaws.kinesisvideosignaling#ResourceNotFoundException": {
@@ -1204,6 +1174,9 @@
                         "smithy.api#required": {}
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.kinesisvideosignaling#SendAlexaOfferToMasterResponse": {
@@ -1215,17 +1188,20 @@
                         "smithy.api#documentation": "<p>The base64-encoded SDP answer content.</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.kinesisvideosignaling#Service": {
-            "type": "string",
-            "traits": {
-                "smithy.api#enum": [
-                    {
-                        "value": "TURN",
-                        "name": "TURN"
+            "type": "enum",
+            "members": {
+                "TURN": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "TURN"
                     }
-                ]
+                }
             }
         },
         "com.amazonaws.kinesisvideosignaling#SessionExpiredException": {
@@ -1273,7 +1249,7 @@
                     "min": 1,
                     "max": 256
                 },
-                "smithy.api#pattern": "[a-zA-Z0-9_.-]+"
+                "smithy.api#pattern": "^[a-zA-Z0-9_.-]+$"
             }
         }
     }

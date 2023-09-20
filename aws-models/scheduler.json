@@ -388,158 +388,6 @@
                 "smithy.rules#endpointTests": {
                     "testCases": [
                         {
-                            "documentation": "For region us-gov-east-1 with FIPS enabled and DualStack enabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://scheduler-fips.us-gov-east-1.api.aws"
-                                }
-                            },
-                            "params": {
-                                "UseDualStack": true,
-                                "Region": "us-gov-east-1",
-                                "UseFIPS": true
-                            }
-                        },
-                        {
-                            "documentation": "For region us-gov-east-1 with FIPS enabled and DualStack disabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://scheduler-fips.us-gov-east-1.amazonaws.com"
-                                }
-                            },
-                            "params": {
-                                "UseDualStack": false,
-                                "Region": "us-gov-east-1",
-                                "UseFIPS": true
-                            }
-                        },
-                        {
-                            "documentation": "For region us-gov-east-1 with FIPS disabled and DualStack enabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://scheduler.us-gov-east-1.api.aws"
-                                }
-                            },
-                            "params": {
-                                "UseDualStack": true,
-                                "Region": "us-gov-east-1",
-                                "UseFIPS": false
-                            }
-                        },
-                        {
-                            "documentation": "For region us-gov-east-1 with FIPS disabled and DualStack disabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://scheduler.us-gov-east-1.amazonaws.com"
-                                }
-                            },
-                            "params": {
-                                "UseDualStack": false,
-                                "Region": "us-gov-east-1",
-                                "UseFIPS": false
-                            }
-                        },
-                        {
-                            "documentation": "For region cn-north-1 with FIPS enabled and DualStack enabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://scheduler-fips.cn-north-1.api.amazonwebservices.com.cn"
-                                }
-                            },
-                            "params": {
-                                "UseDualStack": true,
-                                "Region": "cn-north-1",
-                                "UseFIPS": true
-                            }
-                        },
-                        {
-                            "documentation": "For region cn-north-1 with FIPS enabled and DualStack disabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://scheduler-fips.cn-north-1.amazonaws.com.cn"
-                                }
-                            },
-                            "params": {
-                                "UseDualStack": false,
-                                "Region": "cn-north-1",
-                                "UseFIPS": true
-                            }
-                        },
-                        {
-                            "documentation": "For region cn-north-1 with FIPS disabled and DualStack enabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://scheduler.cn-north-1.api.amazonwebservices.com.cn"
-                                }
-                            },
-                            "params": {
-                                "UseDualStack": true,
-                                "Region": "cn-north-1",
-                                "UseFIPS": false
-                            }
-                        },
-                        {
-                            "documentation": "For region cn-north-1 with FIPS disabled and DualStack disabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://scheduler.cn-north-1.amazonaws.com.cn"
-                                }
-                            },
-                            "params": {
-                                "UseDualStack": false,
-                                "Region": "cn-north-1",
-                                "UseFIPS": false
-                            }
-                        },
-                        {
-                            "documentation": "For region us-iso-east-1 with FIPS enabled and DualStack enabled",
-                            "expect": {
-                                "error": "FIPS and DualStack are enabled, but this partition does not support one or both"
-                            },
-                            "params": {
-                                "UseDualStack": true,
-                                "Region": "us-iso-east-1",
-                                "UseFIPS": true
-                            }
-                        },
-                        {
-                            "documentation": "For region us-iso-east-1 with FIPS enabled and DualStack disabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://scheduler-fips.us-iso-east-1.c2s.ic.gov"
-                                }
-                            },
-                            "params": {
-                                "UseDualStack": false,
-                                "Region": "us-iso-east-1",
-                                "UseFIPS": true
-                            }
-                        },
-                        {
-                            "documentation": "For region us-iso-east-1 with FIPS disabled and DualStack enabled",
-                            "expect": {
-                                "error": "DualStack is enabled but this partition does not support DualStack"
-                            },
-                            "params": {
-                                "UseDualStack": true,
-                                "Region": "us-iso-east-1",
-                                "UseFIPS": false
-                            }
-                        },
-                        {
-                            "documentation": "For region us-iso-east-1 with FIPS disabled and DualStack disabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://scheduler.us-iso-east-1.c2s.ic.gov"
-                                }
-                            },
-                            "params": {
-                                "UseDualStack": false,
-                                "Region": "us-iso-east-1",
-                                "UseFIPS": false
-                            }
-                        },
-                        {
                             "documentation": "For region us-east-1 with FIPS enabled and DualStack enabled",
                             "expect": {
                                 "endpoint": {
@@ -547,9 +395,9 @@
                                 }
                             },
                             "params": {
-                                "UseDualStack": true,
                                 "Region": "us-east-1",
-                                "UseFIPS": true
+                                "UseFIPS": true,
+                                "UseDualStack": true
                             }
                         },
                         {
@@ -560,9 +408,9 @@
                                 }
                             },
                             "params": {
-                                "UseDualStack": false,
                                 "Region": "us-east-1",
-                                "UseFIPS": true
+                                "UseFIPS": true,
+                                "UseDualStack": false
                             }
                         },
                         {
@@ -573,9 +421,9 @@
                                 }
                             },
                             "params": {
-                                "UseDualStack": true,
                                 "Region": "us-east-1",
-                                "UseFIPS": false
+                                "UseFIPS": false,
+                                "UseDualStack": true
                             }
                         },
                         {
@@ -586,9 +434,161 @@
                                 }
                             },
                             "params": {
-                                "UseDualStack": false,
                                 "Region": "us-east-1",
-                                "UseFIPS": false
+                                "UseFIPS": false,
+                                "UseDualStack": false
+                            }
+                        },
+                        {
+                            "documentation": "For region cn-north-1 with FIPS enabled and DualStack enabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://scheduler-fips.cn-north-1.api.amazonwebservices.com.cn"
+                                }
+                            },
+                            "params": {
+                                "Region": "cn-north-1",
+                                "UseFIPS": true,
+                                "UseDualStack": true
+                            }
+                        },
+                        {
+                            "documentation": "For region cn-north-1 with FIPS enabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://scheduler-fips.cn-north-1.amazonaws.com.cn"
+                                }
+                            },
+                            "params": {
+                                "Region": "cn-north-1",
+                                "UseFIPS": true,
+                                "UseDualStack": false
+                            }
+                        },
+                        {
+                            "documentation": "For region cn-north-1 with FIPS disabled and DualStack enabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://scheduler.cn-north-1.api.amazonwebservices.com.cn"
+                                }
+                            },
+                            "params": {
+                                "Region": "cn-north-1",
+                                "UseFIPS": false,
+                                "UseDualStack": true
+                            }
+                        },
+                        {
+                            "documentation": "For region cn-north-1 with FIPS disabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://scheduler.cn-north-1.amazonaws.com.cn"
+                                }
+                            },
+                            "params": {
+                                "Region": "cn-north-1",
+                                "UseFIPS": false,
+                                "UseDualStack": false
+                            }
+                        },
+                        {
+                            "documentation": "For region us-gov-east-1 with FIPS enabled and DualStack enabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://scheduler-fips.us-gov-east-1.api.aws"
+                                }
+                            },
+                            "params": {
+                                "Region": "us-gov-east-1",
+                                "UseFIPS": true,
+                                "UseDualStack": true
+                            }
+                        },
+                        {
+                            "documentation": "For region us-gov-east-1 with FIPS enabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://scheduler-fips.us-gov-east-1.amazonaws.com"
+                                }
+                            },
+                            "params": {
+                                "Region": "us-gov-east-1",
+                                "UseFIPS": true,
+                                "UseDualStack": false
+                            }
+                        },
+                        {
+                            "documentation": "For region us-gov-east-1 with FIPS disabled and DualStack enabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://scheduler.us-gov-east-1.api.aws"
+                                }
+                            },
+                            "params": {
+                                "Region": "us-gov-east-1",
+                                "UseFIPS": false,
+                                "UseDualStack": true
+                            }
+                        },
+                        {
+                            "documentation": "For region us-gov-east-1 with FIPS disabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://scheduler.us-gov-east-1.amazonaws.com"
+                                }
+                            },
+                            "params": {
+                                "Region": "us-gov-east-1",
+                                "UseFIPS": false,
+                                "UseDualStack": false
+                            }
+                        },
+                        {
+                            "documentation": "For region us-iso-east-1 with FIPS enabled and DualStack enabled",
+                            "expect": {
+                                "error": "FIPS and DualStack are enabled, but this partition does not support one or both"
+                            },
+                            "params": {
+                                "Region": "us-iso-east-1",
+                                "UseFIPS": true,
+                                "UseDualStack": true
+                            }
+                        },
+                        {
+                            "documentation": "For region us-iso-east-1 with FIPS enabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://scheduler-fips.us-iso-east-1.c2s.ic.gov"
+                                }
+                            },
+                            "params": {
+                                "Region": "us-iso-east-1",
+                                "UseFIPS": true,
+                                "UseDualStack": false
+                            }
+                        },
+                        {
+                            "documentation": "For region us-iso-east-1 with FIPS disabled and DualStack enabled",
+                            "expect": {
+                                "error": "DualStack is enabled but this partition does not support DualStack"
+                            },
+                            "params": {
+                                "Region": "us-iso-east-1",
+                                "UseFIPS": false,
+                                "UseDualStack": true
+                            }
+                        },
+                        {
+                            "documentation": "For region us-iso-east-1 with FIPS disabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://scheduler.us-iso-east-1.c2s.ic.gov"
+                                }
+                            },
+                            "params": {
+                                "Region": "us-iso-east-1",
+                                "UseFIPS": false,
+                                "UseDualStack": false
                             }
                         },
                         {
@@ -597,9 +597,9 @@
                                 "error": "FIPS and DualStack are enabled, but this partition does not support one or both"
                             },
                             "params": {
-                                "UseDualStack": true,
                                 "Region": "us-isob-east-1",
-                                "UseFIPS": true
+                                "UseFIPS": true,
+                                "UseDualStack": true
                             }
                         },
                         {
@@ -610,9 +610,9 @@
                                 }
                             },
                             "params": {
-                                "UseDualStack": false,
                                 "Region": "us-isob-east-1",
-                                "UseFIPS": true
+                                "UseFIPS": true,
+                                "UseDualStack": false
                             }
                         },
                         {
@@ -621,9 +621,9 @@
                                 "error": "DualStack is enabled but this partition does not support DualStack"
                             },
                             "params": {
-                                "UseDualStack": true,
                                 "Region": "us-isob-east-1",
-                                "UseFIPS": false
+                                "UseFIPS": false,
+                                "UseDualStack": true
                             }
                         },
                         {
@@ -634,22 +634,35 @@
                                 }
                             },
                             "params": {
-                                "UseDualStack": false,
                                 "Region": "us-isob-east-1",
-                                "UseFIPS": false
+                                "UseFIPS": false,
+                                "UseDualStack": false
                             }
                         },
                         {
-                            "documentation": "For custom endpoint with fips disabled and dualstack disabled",
+                            "documentation": "For custom endpoint with region set and fips disabled and dualstack disabled",
                             "expect": {
                                 "endpoint": {
                                     "url": "https://example.com"
                                 }
                             },
                             "params": {
-                                "UseDualStack": false,
                                 "Region": "us-east-1",
                                 "UseFIPS": false,
+                                "UseDualStack": false,
+                                "Endpoint": "https://example.com"
+                            }
+                        },
+                        {
+                            "documentation": "For custom endpoint with region not set and fips disabled and dualstack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://example.com"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": false,
+                                "UseDualStack": false,
                                 "Endpoint": "https://example.com"
                             }
                         },
@@ -659,9 +672,9 @@
                                 "error": "Invalid Configuration: FIPS and custom endpoint are not supported"
                             },
                             "params": {
-                                "UseDualStack": false,
                                 "Region": "us-east-1",
                                 "UseFIPS": true,
+                                "UseDualStack": false,
                                 "Endpoint": "https://example.com"
                             }
                         },
@@ -671,15 +684,36 @@
                                 "error": "Invalid Configuration: Dualstack and custom endpoint are not supported"
                             },
                             "params": {
-                                "UseDualStack": true,
                                 "Region": "us-east-1",
                                 "UseFIPS": false,
+                                "UseDualStack": true,
                                 "Endpoint": "https://example.com"
+                            }
+                        },
+                        {
+                            "documentation": "Missing region",
+                            "expect": {
+                                "error": "Invalid Configuration: Missing Region"
                             }
                         }
                     ],
                     "version": "1.0"
                 }
+            }
+        },
+        "com.amazonaws.scheduler#ActionAfterCompletion": {
+            "type": "string",
+            "traits": {
+                "smithy.api#enum": [
+                    {
+                        "value": "NONE",
+                        "name": "NONE"
+                    },
+                    {
+                        "value": "DELETE",
+                        "name": "DELETE"
+                    }
+                ]
             }
         },
         "com.amazonaws.scheduler#AssignPublicIp": {
@@ -950,7 +984,7 @@
                 "ScheduleExpression": {
                     "target": "com.amazonaws.scheduler#ScheduleExpression",
                     "traits": {
-                        "smithy.api#documentation": "<p>\n  The expression that defines when the schedule runs. The following formats are supported.\n</p>\n         <ul>\n            <li>\n               <p>\n                  <code>at</code> expression - <code>at(yyyy-mm-ddThh:mm:ss)</code>\n               </p>\n            </li>\n            <li>\n               <p>\n                  <code>rate</code> expression - <code>rate(unit value)</code>\n               </p>\n            </li>\n            <li>\n               <p>\n                  <code>cron</code> expression - <code>cron(fields)</code>\n               </p>\n            </li>\n         </ul>\n         <p>\n  You can use <code>at</code> expressions to create one-time schedules that invoke a target once, at the time and in the time zone, that you specify.\n  You can use <code>rate</code> and <code>cron</code> expressions to create recurring schedules. Rate-based schedules are useful when you want to invoke a target\n  at regular intervals, such as every 15 minutes or every five days. Cron-based schedules are useful when you want to invoke a target periodically at a specific time,\n  such as at 8:00 am (UTC+0) every 1st day of the month.\n</p>\n         <p>\n  A <code>cron</code> expression consists of six fields separated by white spaces: <code>(minutes hours day_of_month month day_of_week year)</code>.\n</p>\n         <p>\n  A <code>rate</code> expression consists of a <i>value</i> as a positive integer, and a <i>unit</i> with the following options:\n  <code>minute</code> | <code>minutes</code> | <code>hour</code> | <code>hours</code> | <code>day</code> | <code>days</code>\n         </p>\n         <p>\n  For more information and examples, see <a href=\"https://docs.aws.amazon.com/scheduler/latest/UserGuide/schedule-types.html\">Schedule types on EventBridge Scheduler</a> in the <i>EventBridge Scheduler User Guide</i>.\n</p>",
+                        "smithy.api#documentation": "<p>\n  The expression that defines when the schedule runs. The following formats are supported.\n</p>\n         <ul>\n            <li>\n               <p>\n                  <code>at</code> expression - <code>at(yyyy-mm-ddThh:mm:ss)</code>\n               </p>\n            </li>\n            <li>\n               <p>\n                  <code>rate</code> expression - <code>rate(value unit)</code>\n               </p>\n            </li>\n            <li>\n               <p>\n                  <code>cron</code> expression - <code>cron(fields)</code>\n               </p>\n            </li>\n         </ul>\n         <p>\n  You can use <code>at</code> expressions to create one-time schedules that invoke a target once, at the time and in the time zone, that you specify.\n  You can use <code>rate</code> and <code>cron</code> expressions to create recurring schedules. Rate-based schedules are useful when you want to invoke a target\n  at regular intervals, such as every 15 minutes or every five days. Cron-based schedules are useful when you want to invoke a target periodically at a specific time,\n  such as at 8:00 am (UTC+0) every 1st day of the month.\n</p>\n         <p>\n  A <code>cron</code> expression consists of six fields separated by white spaces: <code>(minutes hours day_of_month month day_of_week year)</code>.\n</p>\n         <p>\n  A <code>rate</code> expression consists of a <i>value</i> as a positive integer, and a <i>unit</i> with the following options:\n  <code>minute</code> | <code>minutes</code> | <code>hour</code> | <code>hours</code> | <code>day</code> | <code>days</code>\n         </p>\n         <p>\n  For more information and examples, see <a href=\"https://docs.aws.amazon.com/scheduler/latest/UserGuide/schedule-types.html\">Schedule types on EventBridge Scheduler</a> in the <i>EventBridge Scheduler User Guide</i>.\n</p>",
                         "smithy.api#required": {}
                     }
                 },
@@ -1009,6 +1043,12 @@
                     "traits": {
                         "smithy.api#documentation": "<p>\n  Unique, case-sensitive identifier you provide to ensure the idempotency of the request. If you do not specify a client token,\n  EventBridge Scheduler uses a randomly generated token for the request to ensure idempotency.  \n</p>",
                         "smithy.api#idempotencyToken": {}
+                    }
+                },
+                "ActionAfterCompletion": {
+                    "target": "com.amazonaws.scheduler#ActionAfterCompletion",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Specifies the action that EventBridge Scheduler applies to the schedule after the schedule completes invoking the target.</p>"
                     }
                 }
             }
@@ -1505,7 +1545,7 @@
                 "ScheduleExpression": {
                     "target": "com.amazonaws.scheduler#ScheduleExpression",
                     "traits": {
-                        "smithy.api#documentation": "<p>\n  The expression that defines when the schedule runs. The following formats are supported.\n</p>\n         <ul>\n            <li>\n               <p>\n                  <code>at</code> expression - <code>at(yyyy-mm-ddThh:mm:ss)</code>\n               </p>\n            </li>\n            <li>\n               <p>\n                  <code>rate</code> expression - <code>rate(unit value)</code>\n               </p>\n            </li>\n            <li>\n               <p>\n                  <code>cron</code> expression - <code>cron(fields)</code>\n               </p>\n            </li>\n         </ul>\n         <p>\n  You can use <code>at</code> expressions to create one-time schedules that invoke a target once, at the time and in the time zone, that you specify.\n  You can use <code>rate</code> and <code>cron</code> expressions to create recurring schedules. Rate-based schedules are useful when you want to invoke a target\n  at regular intervals, such as every 15 minutes or every five days. Cron-based schedules are useful when you want to invoke a target periodically at a specific time,\n  such as at 8:00 am (UTC+0) every 1st day of the month.\n</p>\n         <p>\n  A <code>cron</code> expression consists of six fields separated by white spaces: <code>(minutes hours day_of_month month day_of_week year)</code>.\n</p>\n         <p>\n  A <code>rate</code> expression consists of a <i>value</i> as a positive integer, and a <i>unit</i> with the following options:\n  <code>minute</code> | <code>minutes</code> | <code>hour</code> | <code>hours</code> | <code>day</code> | <code>days</code>\n         </p>\n         <p>\n  For more information and examples, see <a href=\"https://docs.aws.amazon.com/scheduler/latest/UserGuide/schedule-types.html\">Schedule types on EventBridge Scheduler</a> in the <i>EventBridge Scheduler User Guide</i>.\n</p>"
+                        "smithy.api#documentation": "<p>\n  The expression that defines when the schedule runs. The following formats are supported.\n</p>\n         <ul>\n            <li>\n               <p>\n                  <code>at</code> expression - <code>at(yyyy-mm-ddThh:mm:ss)</code>\n               </p>\n            </li>\n            <li>\n               <p>\n                  <code>rate</code> expression - <code>rate(value unit)</code>\n               </p>\n            </li>\n            <li>\n               <p>\n                  <code>cron</code> expression - <code>cron(fields)</code>\n               </p>\n            </li>\n         </ul>\n         <p>\n  You can use <code>at</code> expressions to create one-time schedules that invoke a target once, at the time and in the time zone, that you specify.\n  You can use <code>rate</code> and <code>cron</code> expressions to create recurring schedules. Rate-based schedules are useful when you want to invoke a target\n  at regular intervals, such as every 15 minutes or every five days. Cron-based schedules are useful when you want to invoke a target periodically at a specific time,\n  such as at 8:00 am (UTC+0) every 1st day of the month.\n</p>\n         <p>\n  A <code>cron</code> expression consists of six fields separated by white spaces: <code>(minutes hours day_of_month month day_of_week year)</code>.\n</p>\n         <p>\n  A <code>rate</code> expression consists of a <i>value</i> as a positive integer, and a <i>unit</i> with the following options:\n  <code>minute</code> | <code>minutes</code> | <code>hour</code> | <code>hours</code> | <code>day</code> | <code>days</code>\n         </p>\n         <p>\n  For more information and examples, see <a href=\"https://docs.aws.amazon.com/scheduler/latest/UserGuide/schedule-types.html\">Schedule types on EventBridge Scheduler</a> in the <i>EventBridge Scheduler User Guide</i>.\n</p>"
                     }
                 },
                 "StartDate": {
@@ -1574,6 +1614,12 @@
                     "target": "com.amazonaws.scheduler#FlexibleTimeWindow",
                     "traits": {
                         "smithy.api#documentation": "<p>Allows you to configure a time window during which EventBridge Scheduler invokes the schedule.</p>"
+                    }
+                },
+                "ActionAfterCompletion": {
+                    "target": "com.amazonaws.scheduler#ActionAfterCompletion",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Indicates the action that EventBridge Scheduler applies to the schedule after the schedule completes invoking the target.</p>"
                     }
                 }
             }
@@ -2978,7 +3024,7 @@
                 "ScheduleExpression": {
                     "target": "com.amazonaws.scheduler#ScheduleExpression",
                     "traits": {
-                        "smithy.api#documentation": "<p>\n  The expression that defines when the schedule runs. The following formats are supported.\n</p>\n         <ul>\n            <li>\n               <p>\n                  <code>at</code> expression - <code>at(yyyy-mm-ddThh:mm:ss)</code>\n               </p>\n            </li>\n            <li>\n               <p>\n                  <code>rate</code> expression - <code>rate(unit value)</code>\n               </p>\n            </li>\n            <li>\n               <p>\n                  <code>cron</code> expression - <code>cron(fields)</code>\n               </p>\n            </li>\n         </ul>\n         <p>\n  You can use <code>at</code> expressions to create one-time schedules that invoke a target once, at the time and in the time zone, that you specify.\n  You can use <code>rate</code> and <code>cron</code> expressions to create recurring schedules. Rate-based schedules are useful when you want to invoke a target\n  at regular intervals, such as every 15 minutes or every five days. Cron-based schedules are useful when you want to invoke a target periodically at a specific time,\n  such as at 8:00 am (UTC+0) every 1st day of the month.\n</p>\n         <p>\n  A <code>cron</code> expression consists of six fields separated by white spaces: <code>(minutes hours day_of_month month day_of_week year)</code>.\n</p>\n         <p>\n  A <code>rate</code> expression consists of a <i>value</i> as a positive integer, and a <i>unit</i> with the following options:\n  <code>minute</code> | <code>minutes</code> | <code>hour</code> | <code>hours</code> | <code>day</code> | <code>days</code>\n         </p>\n         <p>\n  For more information and examples, see <a href=\"https://docs.aws.amazon.com/scheduler/latest/UserGuide/schedule-types.html\">Schedule types on EventBridge Scheduler</a> in the <i>EventBridge Scheduler User Guide</i>.\n</p>",
+                        "smithy.api#documentation": "<p>\n  The expression that defines when the schedule runs. The following formats are supported.\n</p>\n         <ul>\n            <li>\n               <p>\n                  <code>at</code> expression - <code>at(yyyy-mm-ddThh:mm:ss)</code>\n               </p>\n            </li>\n            <li>\n               <p>\n                  <code>rate</code> expression - <code>rate(value unit)</code>\n               </p>\n            </li>\n            <li>\n               <p>\n                  <code>cron</code> expression - <code>cron(fields)</code>\n               </p>\n            </li>\n         </ul>\n         <p>\n  You can use <code>at</code> expressions to create one-time schedules that invoke a target once, at the time and in the time zone, that you specify.\n  You can use <code>rate</code> and <code>cron</code> expressions to create recurring schedules. Rate-based schedules are useful when you want to invoke a target\n  at regular intervals, such as every 15 minutes or every five days. Cron-based schedules are useful when you want to invoke a target periodically at a specific time,\n  such as at 8:00 am (UTC+0) every 1st day of the month.\n</p>\n         <p>\n  A <code>cron</code> expression consists of six fields separated by white spaces: <code>(minutes hours day_of_month month day_of_week year)</code>.\n</p>\n         <p>\n  A <code>rate</code> expression consists of a <i>value</i> as a positive integer, and a <i>unit</i> with the following options:\n  <code>minute</code> | <code>minutes</code> | <code>hour</code> | <code>hours</code> | <code>day</code> | <code>days</code>\n         </p>\n         <p>\n  For more information and examples, see <a href=\"https://docs.aws.amazon.com/scheduler/latest/UserGuide/schedule-types.html\">Schedule types on EventBridge Scheduler</a> in the <i>EventBridge Scheduler User Guide</i>.\n</p>",
                         "smithy.api#required": {}
                     }
                 },
@@ -3037,6 +3083,12 @@
                     "traits": {
                         "smithy.api#documentation": "<p>\n  Unique, case-sensitive identifier you provide to ensure the idempotency of the request. If you do not specify a client token,\n  EventBridge Scheduler uses a randomly generated token for the request to ensure idempotency.  \n</p>",
                         "smithy.api#idempotencyToken": {}
+                    }
+                },
+                "ActionAfterCompletion": {
+                    "target": "com.amazonaws.scheduler#ActionAfterCompletion",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Specifies the action that EventBridge Scheduler applies to the schedule after the schedule completes invoking the target.</p>"
                     }
                 }
             }

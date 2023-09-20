@@ -93,11 +93,17 @@
                         "smithy.api#required": {}
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.mediastoredata#DeleteObjectResponse": {
             "type": "structure",
-            "members": {}
+            "members": {},
+            "traits": {
+                "smithy.api#output": {}
+            }
         },
         "com.amazonaws.mediastoredata#DescribeObject": {
             "type": "operation",
@@ -138,6 +144,9 @@
                         "smithy.api#required": {}
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.mediastoredata#DescribeObjectResponse": {
@@ -178,6 +187,9 @@
                         "smithy.api#httpHeader": "Last-Modified"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.mediastoredata#ETag": {
@@ -187,7 +199,7 @@
                     "min": 1,
                     "max": 64
                 },
-                "smithy.api#pattern": "[0-9A-Fa-f]+"
+                "smithy.api#pattern": "^[0-9A-Fa-f]+$"
             }
         },
         "com.amazonaws.mediastoredata#ErrorMessage": {
@@ -197,7 +209,7 @@
                     "min": 1,
                     "max": 255
                 },
-                "smithy.api#pattern": "[ \\w:\\.\\?-]+"
+                "smithy.api#pattern": "^[ \\w:\\.\\?-]+$"
             }
         },
         "com.amazonaws.mediastoredata#GetObject": {
@@ -249,6 +261,9 @@
                         "smithy.api#httpHeader": "Range"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.mediastoredata#GetObjectResponse": {
@@ -313,6 +328,9 @@
                         "smithy.api#required": {}
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.mediastoredata#InternalServerError": {
@@ -380,22 +398,24 @@
         "com.amazonaws.mediastoredata#ItemName": {
             "type": "string",
             "traits": {
-                "smithy.api#pattern": "[A-Za-z0-9_\\.\\-\\~]+"
+                "smithy.api#pattern": "^[A-Za-z0-9_\\.\\-\\~]+$"
             }
         },
         "com.amazonaws.mediastoredata#ItemType": {
-            "type": "string",
-            "traits": {
-                "smithy.api#enum": [
-                    {
-                        "value": "OBJECT",
-                        "name": "OBJECT"
-                    },
-                    {
-                        "value": "FOLDER",
-                        "name": "FOLDER"
+            "type": "enum",
+            "members": {
+                "OBJECT": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "OBJECT"
                     }
-                ]
+                },
+                "FOLDER": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "FOLDER"
+                    }
+                }
             }
         },
         "com.amazonaws.mediastoredata#ListItems": {
@@ -452,6 +472,9 @@
                         "smithy.api#httpQuery": "NextToken"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.mediastoredata#ListItemsResponse": {
@@ -469,6 +492,9 @@
                         "smithy.api#documentation": "<p>The token that can be used in a request to view the next set of results. For example,\n         you submit a <code>ListItems</code> request that matches 2,000 items with\n            <code>MaxResults</code> set at 500. The service returns the first batch of results (up\n         to 500) and a <code>NextToken</code> value that can be used to fetch the next batch of\n         results.</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.mediastoredata#ListLimit": {
@@ -487,7 +513,7 @@
                     "min": 0,
                     "max": 900
                 },
-                "smithy.api#pattern": "/?(?:[A-Za-z0-9_\\.\\-\\~]+/){0,10}(?:[A-Za-z0-9_\\.\\-\\~]+)?/?"
+                "smithy.api#pattern": "^/?(?:[A-Za-z0-9_\\.\\-\\~]+/){0,10}(?:[A-Za-z0-9_\\.\\-\\~]+)?/?$"
             }
         },
         "com.amazonaws.mediastoredata#MediaStoreObject_20170901": {
@@ -587,9 +613,188 @@
                                     "type": "error"
                                 },
                                 {
+                                    "conditions": [
+                                        {
+                                            "fn": "booleanEquals",
+                                            "argv": [
+                                                {
+                                                    "ref": "UseDualStack"
+                                                },
+                                                true
+                                            ]
+                                        }
+                                    ],
+                                    "error": "Invalid Configuration: Dualstack and custom endpoint are not supported",
+                                    "type": "error"
+                                },
+                                {
                                     "conditions": [],
+                                    "endpoint": {
+                                        "url": {
+                                            "ref": "Endpoint"
+                                        },
+                                        "properties": {},
+                                        "headers": {}
+                                    },
+                                    "type": "endpoint"
+                                }
+                            ]
+                        },
+                        {
+                            "conditions": [
+                                {
+                                    "fn": "isSet",
+                                    "argv": [
+                                        {
+                                            "ref": "Region"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "type": "tree",
+                            "rules": [
+                                {
+                                    "conditions": [
+                                        {
+                                            "fn": "aws.partition",
+                                            "argv": [
+                                                {
+                                                    "ref": "Region"
+                                                }
+                                            ],
+                                            "assign": "PartitionResult"
+                                        }
+                                    ],
                                     "type": "tree",
                                     "rules": [
+                                        {
+                                            "conditions": [
+                                                {
+                                                    "fn": "booleanEquals",
+                                                    "argv": [
+                                                        {
+                                                            "ref": "UseFIPS"
+                                                        },
+                                                        true
+                                                    ]
+                                                },
+                                                {
+                                                    "fn": "booleanEquals",
+                                                    "argv": [
+                                                        {
+                                                            "ref": "UseDualStack"
+                                                        },
+                                                        true
+                                                    ]
+                                                }
+                                            ],
+                                            "type": "tree",
+                                            "rules": [
+                                                {
+                                                    "conditions": [
+                                                        {
+                                                            "fn": "booleanEquals",
+                                                            "argv": [
+                                                                true,
+                                                                {
+                                                                    "fn": "getAttr",
+                                                                    "argv": [
+                                                                        {
+                                                                            "ref": "PartitionResult"
+                                                                        },
+                                                                        "supportsFIPS"
+                                                                    ]
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            "fn": "booleanEquals",
+                                                            "argv": [
+                                                                true,
+                                                                {
+                                                                    "fn": "getAttr",
+                                                                    "argv": [
+                                                                        {
+                                                                            "ref": "PartitionResult"
+                                                                        },
+                                                                        "supportsDualStack"
+                                                                    ]
+                                                                }
+                                                            ]
+                                                        }
+                                                    ],
+                                                    "type": "tree",
+                                                    "rules": [
+                                                        {
+                                                            "conditions": [],
+                                                            "endpoint": {
+                                                                "url": "https://data.mediastore-fips.{Region}.{PartitionResult#dualStackDnsSuffix}",
+                                                                "properties": {},
+                                                                "headers": {}
+                                                            },
+                                                            "type": "endpoint"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "conditions": [],
+                                                    "error": "FIPS and DualStack are enabled, but this partition does not support one or both",
+                                                    "type": "error"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "conditions": [
+                                                {
+                                                    "fn": "booleanEquals",
+                                                    "argv": [
+                                                        {
+                                                            "ref": "UseFIPS"
+                                                        },
+                                                        true
+                                                    ]
+                                                }
+                                            ],
+                                            "type": "tree",
+                                            "rules": [
+                                                {
+                                                    "conditions": [
+                                                        {
+                                                            "fn": "booleanEquals",
+                                                            "argv": [
+                                                                true,
+                                                                {
+                                                                    "fn": "getAttr",
+                                                                    "argv": [
+                                                                        {
+                                                                            "ref": "PartitionResult"
+                                                                        },
+                                                                        "supportsFIPS"
+                                                                    ]
+                                                                }
+                                                            ]
+                                                        }
+                                                    ],
+                                                    "type": "tree",
+                                                    "rules": [
+                                                        {
+                                                            "conditions": [],
+                                                            "endpoint": {
+                                                                "url": "https://data.mediastore-fips.{Region}.{PartitionResult#dnsSuffix}",
+                                                                "properties": {},
+                                                                "headers": {}
+                                                            },
+                                                            "type": "endpoint"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "conditions": [],
+                                                    "error": "FIPS is enabled but this partition does not support FIPS",
+                                                    "type": "error"
+                                                }
+                                            ]
+                                        },
                                         {
                                             "conditions": [
                                                 {
@@ -602,15 +807,50 @@
                                                     ]
                                                 }
                                             ],
-                                            "error": "Invalid Configuration: Dualstack and custom endpoint are not supported",
-                                            "type": "error"
+                                            "type": "tree",
+                                            "rules": [
+                                                {
+                                                    "conditions": [
+                                                        {
+                                                            "fn": "booleanEquals",
+                                                            "argv": [
+                                                                true,
+                                                                {
+                                                                    "fn": "getAttr",
+                                                                    "argv": [
+                                                                        {
+                                                                            "ref": "PartitionResult"
+                                                                        },
+                                                                        "supportsDualStack"
+                                                                    ]
+                                                                }
+                                                            ]
+                                                        }
+                                                    ],
+                                                    "type": "tree",
+                                                    "rules": [
+                                                        {
+                                                            "conditions": [],
+                                                            "endpoint": {
+                                                                "url": "https://data.mediastore.{Region}.{PartitionResult#dualStackDnsSuffix}",
+                                                                "properties": {},
+                                                                "headers": {}
+                                                            },
+                                                            "type": "endpoint"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "conditions": [],
+                                                    "error": "DualStack is enabled but this partition does not support DualStack",
+                                                    "type": "error"
+                                                }
+                                            ]
                                         },
                                         {
                                             "conditions": [],
                                             "endpoint": {
-                                                "url": {
-                                                    "ref": "Endpoint"
-                                                },
+                                                "url": "https://data.mediastore.{Region}.{PartitionResult#dnsSuffix}",
                                                 "properties": {},
                                                 "headers": {}
                                             },
@@ -622,258 +862,8 @@
                         },
                         {
                             "conditions": [],
-                            "type": "tree",
-                            "rules": [
-                                {
-                                    "conditions": [
-                                        {
-                                            "fn": "isSet",
-                                            "argv": [
-                                                {
-                                                    "ref": "Region"
-                                                }
-                                            ]
-                                        }
-                                    ],
-                                    "type": "tree",
-                                    "rules": [
-                                        {
-                                            "conditions": [
-                                                {
-                                                    "fn": "aws.partition",
-                                                    "argv": [
-                                                        {
-                                                            "ref": "Region"
-                                                        }
-                                                    ],
-                                                    "assign": "PartitionResult"
-                                                }
-                                            ],
-                                            "type": "tree",
-                                            "rules": [
-                                                {
-                                                    "conditions": [
-                                                        {
-                                                            "fn": "booleanEquals",
-                                                            "argv": [
-                                                                {
-                                                                    "ref": "UseFIPS"
-                                                                },
-                                                                true
-                                                            ]
-                                                        },
-                                                        {
-                                                            "fn": "booleanEquals",
-                                                            "argv": [
-                                                                {
-                                                                    "ref": "UseDualStack"
-                                                                },
-                                                                true
-                                                            ]
-                                                        }
-                                                    ],
-                                                    "type": "tree",
-                                                    "rules": [
-                                                        {
-                                                            "conditions": [
-                                                                {
-                                                                    "fn": "booleanEquals",
-                                                                    "argv": [
-                                                                        true,
-                                                                        {
-                                                                            "fn": "getAttr",
-                                                                            "argv": [
-                                                                                {
-                                                                                    "ref": "PartitionResult"
-                                                                                },
-                                                                                "supportsFIPS"
-                                                                            ]
-                                                                        }
-                                                                    ]
-                                                                },
-                                                                {
-                                                                    "fn": "booleanEquals",
-                                                                    "argv": [
-                                                                        true,
-                                                                        {
-                                                                            "fn": "getAttr",
-                                                                            "argv": [
-                                                                                {
-                                                                                    "ref": "PartitionResult"
-                                                                                },
-                                                                                "supportsDualStack"
-                                                                            ]
-                                                                        }
-                                                                    ]
-                                                                }
-                                                            ],
-                                                            "type": "tree",
-                                                            "rules": [
-                                                                {
-                                                                    "conditions": [],
-                                                                    "type": "tree",
-                                                                    "rules": [
-                                                                        {
-                                                                            "conditions": [],
-                                                                            "endpoint": {
-                                                                                "url": "https://data.mediastore-fips.{Region}.{PartitionResult#dualStackDnsSuffix}",
-                                                                                "properties": {},
-                                                                                "headers": {}
-                                                                            },
-                                                                            "type": "endpoint"
-                                                                        }
-                                                                    ]
-                                                                }
-                                                            ]
-                                                        },
-                                                        {
-                                                            "conditions": [],
-                                                            "error": "FIPS and DualStack are enabled, but this partition does not support one or both",
-                                                            "type": "error"
-                                                        }
-                                                    ]
-                                                },
-                                                {
-                                                    "conditions": [
-                                                        {
-                                                            "fn": "booleanEquals",
-                                                            "argv": [
-                                                                {
-                                                                    "ref": "UseFIPS"
-                                                                },
-                                                                true
-                                                            ]
-                                                        }
-                                                    ],
-                                                    "type": "tree",
-                                                    "rules": [
-                                                        {
-                                                            "conditions": [
-                                                                {
-                                                                    "fn": "booleanEquals",
-                                                                    "argv": [
-                                                                        true,
-                                                                        {
-                                                                            "fn": "getAttr",
-                                                                            "argv": [
-                                                                                {
-                                                                                    "ref": "PartitionResult"
-                                                                                },
-                                                                                "supportsFIPS"
-                                                                            ]
-                                                                        }
-                                                                    ]
-                                                                }
-                                                            ],
-                                                            "type": "tree",
-                                                            "rules": [
-                                                                {
-                                                                    "conditions": [],
-                                                                    "type": "tree",
-                                                                    "rules": [
-                                                                        {
-                                                                            "conditions": [],
-                                                                            "endpoint": {
-                                                                                "url": "https://data.mediastore-fips.{Region}.{PartitionResult#dnsSuffix}",
-                                                                                "properties": {},
-                                                                                "headers": {}
-                                                                            },
-                                                                            "type": "endpoint"
-                                                                        }
-                                                                    ]
-                                                                }
-                                                            ]
-                                                        },
-                                                        {
-                                                            "conditions": [],
-                                                            "error": "FIPS is enabled but this partition does not support FIPS",
-                                                            "type": "error"
-                                                        }
-                                                    ]
-                                                },
-                                                {
-                                                    "conditions": [
-                                                        {
-                                                            "fn": "booleanEquals",
-                                                            "argv": [
-                                                                {
-                                                                    "ref": "UseDualStack"
-                                                                },
-                                                                true
-                                                            ]
-                                                        }
-                                                    ],
-                                                    "type": "tree",
-                                                    "rules": [
-                                                        {
-                                                            "conditions": [
-                                                                {
-                                                                    "fn": "booleanEquals",
-                                                                    "argv": [
-                                                                        true,
-                                                                        {
-                                                                            "fn": "getAttr",
-                                                                            "argv": [
-                                                                                {
-                                                                                    "ref": "PartitionResult"
-                                                                                },
-                                                                                "supportsDualStack"
-                                                                            ]
-                                                                        }
-                                                                    ]
-                                                                }
-                                                            ],
-                                                            "type": "tree",
-                                                            "rules": [
-                                                                {
-                                                                    "conditions": [],
-                                                                    "type": "tree",
-                                                                    "rules": [
-                                                                        {
-                                                                            "conditions": [],
-                                                                            "endpoint": {
-                                                                                "url": "https://data.mediastore.{Region}.{PartitionResult#dualStackDnsSuffix}",
-                                                                                "properties": {},
-                                                                                "headers": {}
-                                                                            },
-                                                                            "type": "endpoint"
-                                                                        }
-                                                                    ]
-                                                                }
-                                                            ]
-                                                        },
-                                                        {
-                                                            "conditions": [],
-                                                            "error": "DualStack is enabled but this partition does not support DualStack",
-                                                            "type": "error"
-                                                        }
-                                                    ]
-                                                },
-                                                {
-                                                    "conditions": [],
-                                                    "type": "tree",
-                                                    "rules": [
-                                                        {
-                                                            "conditions": [],
-                                                            "endpoint": {
-                                                                "url": "https://data.mediastore.{Region}.{PartitionResult#dnsSuffix}",
-                                                                "properties": {},
-                                                                "headers": {}
-                                                            },
-                                                            "type": "endpoint"
-                                                        }
-                                                    ]
-                                                }
-                                            ]
-                                        }
-                                    ]
-                                },
-                                {
-                                    "conditions": [],
-                                    "error": "Invalid Configuration: Missing Region",
-                                    "type": "error"
-                                }
-                            ]
+                            "error": "Invalid Configuration: Missing Region",
+                            "type": "error"
                         }
                     ]
                 },
@@ -1328,7 +1318,7 @@
                     "min": 1,
                     "max": 900
                 },
-                "smithy.api#pattern": "(?:[A-Za-z0-9_\\.\\-\\~]+/){0,10}[A-Za-z0-9_\\.\\-\\~]+"
+                "smithy.api#pattern": "^(?:[A-Za-z0-9_\\.\\-\\~]+/){0,10}[A-Za-z0-9_\\.\\-\\~]+$"
             }
         },
         "com.amazonaws.mediastoredata#PayloadBlob": {
@@ -1413,6 +1403,9 @@
                         "smithy.api#httpHeader": "x-amz-upload-availability"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.mediastoredata#PutObjectResponse": {
@@ -1436,6 +1429,9 @@
                         "smithy.api#documentation": "<p>The storage class where the object was persisted. The class should be\n         “Temporal”.</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.mediastoredata#RangePattern": {
@@ -1464,18 +1460,20 @@
                     "min": 64,
                     "max": 64
                 },
-                "smithy.api#pattern": "[0-9A-Fa-f]{64}"
+                "smithy.api#pattern": "^[0-9A-Fa-f]{64}$"
             }
         },
         "com.amazonaws.mediastoredata#StorageClass": {
-            "type": "string",
-            "traits": {
-                "smithy.api#enum": [
-                    {
-                        "value": "TEMPORAL",
-                        "name": "TEMPORAL"
+            "type": "enum",
+            "members": {
+                "TEMPORAL": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "TEMPORAL"
                     }
-                ],
+                }
+            },
+            "traits": {
                 "smithy.api#length": {
                     "min": 1,
                     "max": 16
@@ -1489,18 +1487,22 @@
             "type": "timestamp"
         },
         "com.amazonaws.mediastoredata#UploadAvailability": {
-            "type": "string",
-            "traits": {
-                "smithy.api#enum": [
-                    {
-                        "value": "STANDARD",
-                        "name": "STANDARD"
-                    },
-                    {
-                        "value": "STREAMING",
-                        "name": "STREAMING"
+            "type": "enum",
+            "members": {
+                "STANDARD": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "STANDARD"
                     }
-                ],
+                },
+                "STREAMING": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "STREAMING"
+                    }
+                }
+            },
+            "traits": {
                 "smithy.api#length": {
                     "min": 1,
                     "max": 16
