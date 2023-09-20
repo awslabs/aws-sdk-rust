@@ -174,9 +174,188 @@
                                     "type": "error"
                                 },
                                 {
+                                    "conditions": [
+                                        {
+                                            "fn": "booleanEquals",
+                                            "argv": [
+                                                {
+                                                    "ref": "UseDualStack"
+                                                },
+                                                true
+                                            ]
+                                        }
+                                    ],
+                                    "error": "Invalid Configuration: Dualstack and custom endpoint are not supported",
+                                    "type": "error"
+                                },
+                                {
                                     "conditions": [],
+                                    "endpoint": {
+                                        "url": {
+                                            "ref": "Endpoint"
+                                        },
+                                        "properties": {},
+                                        "headers": {}
+                                    },
+                                    "type": "endpoint"
+                                }
+                            ]
+                        },
+                        {
+                            "conditions": [
+                                {
+                                    "fn": "isSet",
+                                    "argv": [
+                                        {
+                                            "ref": "Region"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "type": "tree",
+                            "rules": [
+                                {
+                                    "conditions": [
+                                        {
+                                            "fn": "aws.partition",
+                                            "argv": [
+                                                {
+                                                    "ref": "Region"
+                                                }
+                                            ],
+                                            "assign": "PartitionResult"
+                                        }
+                                    ],
                                     "type": "tree",
                                     "rules": [
+                                        {
+                                            "conditions": [
+                                                {
+                                                    "fn": "booleanEquals",
+                                                    "argv": [
+                                                        {
+                                                            "ref": "UseFIPS"
+                                                        },
+                                                        true
+                                                    ]
+                                                },
+                                                {
+                                                    "fn": "booleanEquals",
+                                                    "argv": [
+                                                        {
+                                                            "ref": "UseDualStack"
+                                                        },
+                                                        true
+                                                    ]
+                                                }
+                                            ],
+                                            "type": "tree",
+                                            "rules": [
+                                                {
+                                                    "conditions": [
+                                                        {
+                                                            "fn": "booleanEquals",
+                                                            "argv": [
+                                                                true,
+                                                                {
+                                                                    "fn": "getAttr",
+                                                                    "argv": [
+                                                                        {
+                                                                            "ref": "PartitionResult"
+                                                                        },
+                                                                        "supportsFIPS"
+                                                                    ]
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            "fn": "booleanEquals",
+                                                            "argv": [
+                                                                true,
+                                                                {
+                                                                    "fn": "getAttr",
+                                                                    "argv": [
+                                                                        {
+                                                                            "ref": "PartitionResult"
+                                                                        },
+                                                                        "supportsDualStack"
+                                                                    ]
+                                                                }
+                                                            ]
+                                                        }
+                                                    ],
+                                                    "type": "tree",
+                                                    "rules": [
+                                                        {
+                                                            "conditions": [],
+                                                            "endpoint": {
+                                                                "url": "https://dax-fips.{Region}.{PartitionResult#dualStackDnsSuffix}",
+                                                                "properties": {},
+                                                                "headers": {}
+                                                            },
+                                                            "type": "endpoint"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "conditions": [],
+                                                    "error": "FIPS and DualStack are enabled, but this partition does not support one or both",
+                                                    "type": "error"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "conditions": [
+                                                {
+                                                    "fn": "booleanEquals",
+                                                    "argv": [
+                                                        {
+                                                            "ref": "UseFIPS"
+                                                        },
+                                                        true
+                                                    ]
+                                                }
+                                            ],
+                                            "type": "tree",
+                                            "rules": [
+                                                {
+                                                    "conditions": [
+                                                        {
+                                                            "fn": "booleanEquals",
+                                                            "argv": [
+                                                                true,
+                                                                {
+                                                                    "fn": "getAttr",
+                                                                    "argv": [
+                                                                        {
+                                                                            "ref": "PartitionResult"
+                                                                        },
+                                                                        "supportsFIPS"
+                                                                    ]
+                                                                }
+                                                            ]
+                                                        }
+                                                    ],
+                                                    "type": "tree",
+                                                    "rules": [
+                                                        {
+                                                            "conditions": [],
+                                                            "endpoint": {
+                                                                "url": "https://dax-fips.{Region}.{PartitionResult#dnsSuffix}",
+                                                                "properties": {},
+                                                                "headers": {}
+                                                            },
+                                                            "type": "endpoint"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "conditions": [],
+                                                    "error": "FIPS is enabled but this partition does not support FIPS",
+                                                    "type": "error"
+                                                }
+                                            ]
+                                        },
                                         {
                                             "conditions": [
                                                 {
@@ -189,15 +368,50 @@
                                                     ]
                                                 }
                                             ],
-                                            "error": "Invalid Configuration: Dualstack and custom endpoint are not supported",
-                                            "type": "error"
+                                            "type": "tree",
+                                            "rules": [
+                                                {
+                                                    "conditions": [
+                                                        {
+                                                            "fn": "booleanEquals",
+                                                            "argv": [
+                                                                true,
+                                                                {
+                                                                    "fn": "getAttr",
+                                                                    "argv": [
+                                                                        {
+                                                                            "ref": "PartitionResult"
+                                                                        },
+                                                                        "supportsDualStack"
+                                                                    ]
+                                                                }
+                                                            ]
+                                                        }
+                                                    ],
+                                                    "type": "tree",
+                                                    "rules": [
+                                                        {
+                                                            "conditions": [],
+                                                            "endpoint": {
+                                                                "url": "https://dax.{Region}.{PartitionResult#dualStackDnsSuffix}",
+                                                                "properties": {},
+                                                                "headers": {}
+                                                            },
+                                                            "type": "endpoint"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "conditions": [],
+                                                    "error": "DualStack is enabled but this partition does not support DualStack",
+                                                    "type": "error"
+                                                }
+                                            ]
                                         },
                                         {
                                             "conditions": [],
                                             "endpoint": {
-                                                "url": {
-                                                    "ref": "Endpoint"
-                                                },
+                                                "url": "https://dax.{Region}.{PartitionResult#dnsSuffix}",
                                                 "properties": {},
                                                 "headers": {}
                                             },
@@ -209,258 +423,8 @@
                         },
                         {
                             "conditions": [],
-                            "type": "tree",
-                            "rules": [
-                                {
-                                    "conditions": [
-                                        {
-                                            "fn": "isSet",
-                                            "argv": [
-                                                {
-                                                    "ref": "Region"
-                                                }
-                                            ]
-                                        }
-                                    ],
-                                    "type": "tree",
-                                    "rules": [
-                                        {
-                                            "conditions": [
-                                                {
-                                                    "fn": "aws.partition",
-                                                    "argv": [
-                                                        {
-                                                            "ref": "Region"
-                                                        }
-                                                    ],
-                                                    "assign": "PartitionResult"
-                                                }
-                                            ],
-                                            "type": "tree",
-                                            "rules": [
-                                                {
-                                                    "conditions": [
-                                                        {
-                                                            "fn": "booleanEquals",
-                                                            "argv": [
-                                                                {
-                                                                    "ref": "UseFIPS"
-                                                                },
-                                                                true
-                                                            ]
-                                                        },
-                                                        {
-                                                            "fn": "booleanEquals",
-                                                            "argv": [
-                                                                {
-                                                                    "ref": "UseDualStack"
-                                                                },
-                                                                true
-                                                            ]
-                                                        }
-                                                    ],
-                                                    "type": "tree",
-                                                    "rules": [
-                                                        {
-                                                            "conditions": [
-                                                                {
-                                                                    "fn": "booleanEquals",
-                                                                    "argv": [
-                                                                        true,
-                                                                        {
-                                                                            "fn": "getAttr",
-                                                                            "argv": [
-                                                                                {
-                                                                                    "ref": "PartitionResult"
-                                                                                },
-                                                                                "supportsFIPS"
-                                                                            ]
-                                                                        }
-                                                                    ]
-                                                                },
-                                                                {
-                                                                    "fn": "booleanEquals",
-                                                                    "argv": [
-                                                                        true,
-                                                                        {
-                                                                            "fn": "getAttr",
-                                                                            "argv": [
-                                                                                {
-                                                                                    "ref": "PartitionResult"
-                                                                                },
-                                                                                "supportsDualStack"
-                                                                            ]
-                                                                        }
-                                                                    ]
-                                                                }
-                                                            ],
-                                                            "type": "tree",
-                                                            "rules": [
-                                                                {
-                                                                    "conditions": [],
-                                                                    "type": "tree",
-                                                                    "rules": [
-                                                                        {
-                                                                            "conditions": [],
-                                                                            "endpoint": {
-                                                                                "url": "https://dax-fips.{Region}.{PartitionResult#dualStackDnsSuffix}",
-                                                                                "properties": {},
-                                                                                "headers": {}
-                                                                            },
-                                                                            "type": "endpoint"
-                                                                        }
-                                                                    ]
-                                                                }
-                                                            ]
-                                                        },
-                                                        {
-                                                            "conditions": [],
-                                                            "error": "FIPS and DualStack are enabled, but this partition does not support one or both",
-                                                            "type": "error"
-                                                        }
-                                                    ]
-                                                },
-                                                {
-                                                    "conditions": [
-                                                        {
-                                                            "fn": "booleanEquals",
-                                                            "argv": [
-                                                                {
-                                                                    "ref": "UseFIPS"
-                                                                },
-                                                                true
-                                                            ]
-                                                        }
-                                                    ],
-                                                    "type": "tree",
-                                                    "rules": [
-                                                        {
-                                                            "conditions": [
-                                                                {
-                                                                    "fn": "booleanEquals",
-                                                                    "argv": [
-                                                                        true,
-                                                                        {
-                                                                            "fn": "getAttr",
-                                                                            "argv": [
-                                                                                {
-                                                                                    "ref": "PartitionResult"
-                                                                                },
-                                                                                "supportsFIPS"
-                                                                            ]
-                                                                        }
-                                                                    ]
-                                                                }
-                                                            ],
-                                                            "type": "tree",
-                                                            "rules": [
-                                                                {
-                                                                    "conditions": [],
-                                                                    "type": "tree",
-                                                                    "rules": [
-                                                                        {
-                                                                            "conditions": [],
-                                                                            "endpoint": {
-                                                                                "url": "https://dax-fips.{Region}.{PartitionResult#dnsSuffix}",
-                                                                                "properties": {},
-                                                                                "headers": {}
-                                                                            },
-                                                                            "type": "endpoint"
-                                                                        }
-                                                                    ]
-                                                                }
-                                                            ]
-                                                        },
-                                                        {
-                                                            "conditions": [],
-                                                            "error": "FIPS is enabled but this partition does not support FIPS",
-                                                            "type": "error"
-                                                        }
-                                                    ]
-                                                },
-                                                {
-                                                    "conditions": [
-                                                        {
-                                                            "fn": "booleanEquals",
-                                                            "argv": [
-                                                                {
-                                                                    "ref": "UseDualStack"
-                                                                },
-                                                                true
-                                                            ]
-                                                        }
-                                                    ],
-                                                    "type": "tree",
-                                                    "rules": [
-                                                        {
-                                                            "conditions": [
-                                                                {
-                                                                    "fn": "booleanEquals",
-                                                                    "argv": [
-                                                                        true,
-                                                                        {
-                                                                            "fn": "getAttr",
-                                                                            "argv": [
-                                                                                {
-                                                                                    "ref": "PartitionResult"
-                                                                                },
-                                                                                "supportsDualStack"
-                                                                            ]
-                                                                        }
-                                                                    ]
-                                                                }
-                                                            ],
-                                                            "type": "tree",
-                                                            "rules": [
-                                                                {
-                                                                    "conditions": [],
-                                                                    "type": "tree",
-                                                                    "rules": [
-                                                                        {
-                                                                            "conditions": [],
-                                                                            "endpoint": {
-                                                                                "url": "https://dax.{Region}.{PartitionResult#dualStackDnsSuffix}",
-                                                                                "properties": {},
-                                                                                "headers": {}
-                                                                            },
-                                                                            "type": "endpoint"
-                                                                        }
-                                                                    ]
-                                                                }
-                                                            ]
-                                                        },
-                                                        {
-                                                            "conditions": [],
-                                                            "error": "DualStack is enabled but this partition does not support DualStack",
-                                                            "type": "error"
-                                                        }
-                                                    ]
-                                                },
-                                                {
-                                                    "conditions": [],
-                                                    "type": "tree",
-                                                    "rules": [
-                                                        {
-                                                            "conditions": [],
-                                                            "endpoint": {
-                                                                "url": "https://dax.{Region}.{PartitionResult#dnsSuffix}",
-                                                                "properties": {},
-                                                                "headers": {}
-                                                            },
-                                                            "type": "endpoint"
-                                                        }
-                                                    ]
-                                                }
-                                            ]
-                                        }
-                                    ]
-                                },
-                                {
-                                    "conditions": [],
-                                    "error": "Invalid Configuration: Missing Region",
-                                    "type": "error"
-                                }
-                            ]
+                            "error": "Invalid Configuration: Missing Region",
+                            "type": "error"
                         }
                     ]
                 },
@@ -959,18 +923,20 @@
             "type": "string"
         },
         "com.amazonaws.dax#ChangeType": {
-            "type": "string",
-            "traits": {
-                "smithy.api#enum": [
-                    {
-                        "value": "IMMEDIATE",
-                        "name": "IMMEDIATE"
-                    },
-                    {
-                        "value": "REQUIRES_REBOOT",
-                        "name": "REQUIRES_REBOOT"
+            "type": "enum",
+            "members": {
+                "IMMEDIATE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "IMMEDIATE"
                     }
-                ]
+                },
+                "REQUIRES_REBOOT": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "REQUIRES_REBOOT"
+                    }
+                }
             }
         },
         "com.amazonaws.dax#Cluster": {
@@ -1097,24 +1063,30 @@
                 }
             },
             "traits": {
+                "aws.protocols#awsQueryError": {
+                    "code": "ClusterAlreadyExists",
+                    "httpResponseCode": 400
+                },
                 "smithy.api#documentation": "<p>You already have a DAX cluster with the given identifier.</p>",
                 "smithy.api#error": "client",
                 "smithy.api#httpError": 400
             }
         },
         "com.amazonaws.dax#ClusterEndpointEncryptionType": {
-            "type": "string",
-            "traits": {
-                "smithy.api#enum": [
-                    {
-                        "value": "NONE",
-                        "name": "NONE"
-                    },
-                    {
-                        "value": "TLS",
-                        "name": "TLS"
+            "type": "enum",
+            "members": {
+                "NONE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "NONE"
                     }
-                ]
+                },
+                "TLS": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "TLS"
+                    }
+                }
             }
         },
         "com.amazonaws.dax#ClusterList": {
@@ -1137,6 +1109,10 @@
                 }
             },
             "traits": {
+                "aws.protocols#awsQueryError": {
+                    "code": "ClusterNotFound",
+                    "httpResponseCode": 404
+                },
                 "smithy.api#documentation": "<p>The requested cluster ID does not refer to an existing DAX cluster.</p>",
                 "smithy.api#error": "client",
                 "smithy.api#httpError": 404
@@ -1150,6 +1126,10 @@
                 }
             },
             "traits": {
+                "aws.protocols#awsQueryError": {
+                    "code": "ClusterQuotaForCustomerExceeded",
+                    "httpResponseCode": 400
+                },
                 "smithy.api#documentation": "<p>You have attempted to exceed the maximum number of DAX clusters for your AWS\n            account.</p>",
                 "smithy.api#error": "client",
                 "smithy.api#httpError": 400
@@ -1306,6 +1286,9 @@
                         "smithy.api#documentation": "<p>The type of encryption the cluster's endpoint should support. Values are:</p>\n        <ul>\n            <li>\n                <p>\n                  <code>NONE</code> for no encryption</p>\n            </li>\n            <li>\n                <p>\n                  <code>TLS</code> for Transport Layer Security</p>\n            </li>\n         </ul>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.dax#CreateClusterResponse": {
@@ -1317,6 +1300,9 @@
                         "smithy.api#documentation": "<p>A description of the DAX cluster that you have created.</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.dax#CreateParameterGroup": {
@@ -1367,6 +1353,9 @@
                         "smithy.api#documentation": "<p>A description of the parameter group.</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.dax#CreateParameterGroupResponse": {
@@ -1378,6 +1367,9 @@
                         "smithy.api#documentation": "<p>Represents the output of a <i>CreateParameterGroup</i>\n            action.</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.dax#CreateSubnetGroup": {
@@ -1432,6 +1424,9 @@
                         "smithy.api#required": {}
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.dax#CreateSubnetGroupResponse": {
@@ -1443,6 +1438,9 @@
                         "smithy.api#documentation": "<p>Represents the output of a <i>CreateSubnetGroup</i>\n            operation.</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.dax#DecreaseReplicationFactor": {
@@ -1507,6 +1505,9 @@
                         "smithy.api#documentation": "<p>The unique identifiers of the nodes to be removed from the cluster.</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.dax#DecreaseReplicationFactorResponse": {
@@ -1518,6 +1519,9 @@
                         "smithy.api#documentation": "<p>A description of the DAX cluster, after you have decreased its replication\n            factor.</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.dax#DeleteCluster": {
@@ -1559,6 +1563,9 @@
                         "smithy.api#required": {}
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.dax#DeleteClusterResponse": {
@@ -1570,6 +1577,9 @@
                         "smithy.api#documentation": "<p>A description of the DAX cluster that is being deleted.</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.dax#DeleteParameterGroup": {
@@ -1611,6 +1621,9 @@
                         "smithy.api#required": {}
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.dax#DeleteParameterGroupResponse": {
@@ -1622,6 +1635,9 @@
                         "smithy.api#documentation": "<p>A user-specified message for this action (i.e., a reason for deleting the parameter\n            group).</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.dax#DeleteSubnetGroup": {
@@ -1657,6 +1673,9 @@
                         "smithy.api#required": {}
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.dax#DeleteSubnetGroupResponse": {
@@ -1668,6 +1687,9 @@
                         "smithy.api#documentation": "<p>A user-specified message for this action (i.e., a reason for deleting the subnet\n            group).</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.dax#DescribeClusters": {
@@ -1717,6 +1739,9 @@
                         "smithy.api#documentation": "<p>An optional token returned from a prior request. Use this token for pagination of\n            results from this action. If this parameter is specified, the response includes only\n            results beyond the token, up to the value specified by\n            <code>MaxResults</code>.</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.dax#DescribeClustersResponse": {
@@ -1734,6 +1759,9 @@
                         "smithy.api#documentation": "<p>The descriptions of your DAX clusters, in response to a\n            <i>DescribeClusters</i> request.</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.dax#DescribeDefaultParameters": {
@@ -1774,6 +1802,9 @@
                         "smithy.api#documentation": "<p>An optional token returned from a prior request. Use this token for pagination of\n            results from this action. If this parameter is specified, the response includes only\n            results beyond the token, up to the value specified by\n            <code>MaxResults</code>.</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.dax#DescribeDefaultParametersResponse": {
@@ -1791,6 +1822,9 @@
                         "smithy.api#documentation": "<p>A list of parameters.  Each element in the list represents one parameter.</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.dax#DescribeEvents": {
@@ -1861,6 +1895,9 @@
                         "smithy.api#documentation": "<p>An optional token returned from a prior request. Use this token for pagination of\n            results from this action. If this parameter is specified, the response includes only\n            results beyond the token, up to the value specified by\n            <code>MaxResults</code>.</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.dax#DescribeEventsResponse": {
@@ -1878,6 +1915,9 @@
                         "smithy.api#documentation": "<p>An array of events.  Each element in the array represents one event.</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.dax#DescribeParameterGroups": {
@@ -1927,6 +1967,9 @@
                         "smithy.api#documentation": "<p>An optional token returned from a prior request. Use this token for pagination of\n            results from this action. If this parameter is specified, the response includes only\n            results beyond the token, up to the value specified by\n            <code>MaxResults</code>.</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.dax#DescribeParameterGroupsResponse": {
@@ -1944,6 +1987,9 @@
                         "smithy.api#documentation": "<p>An array of parameter groups.  Each element in the array represents one parameter group.</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.dax#DescribeParameters": {
@@ -2000,6 +2046,9 @@
                         "smithy.api#documentation": "<p>An optional token returned from a prior request. Use this token for pagination of\n            results from this action. If this parameter is specified, the response includes only\n            results beyond the token, up to the value specified by\n            <code>MaxResults</code>.</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.dax#DescribeParametersResponse": {
@@ -2017,6 +2066,9 @@
                         "smithy.api#documentation": "<p>A list of parameters within a parameter group.  Each element in the list represents one parameter.</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.dax#DescribeSubnetGroups": {
@@ -2060,6 +2112,9 @@
                         "smithy.api#documentation": "<p>An optional token returned from a prior request. Use this token for pagination of\n            results from this action. If this parameter is specified, the response includes only\n            results beyond the token, up to the value specified by\n            <code>MaxResults</code>.</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.dax#DescribeSubnetGroupsResponse": {
@@ -2077,6 +2132,9 @@
                         "smithy.api#documentation": "<p>An array of subnet groups.  Each element in the array represents a single subnet group.</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.dax#Endpoint": {
@@ -2212,6 +2270,9 @@
                         "smithy.api#documentation": "<p>The Availability Zones (AZs) in which the cluster nodes will be created. All nodes\n            belonging to the cluster are placed in these Availability Zones. Use this parameter if you want\n            to distribute the nodes across multiple AZs.</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.dax#IncreaseReplicationFactorResponse": {
@@ -2223,6 +2284,9 @@
                         "smithy.api#documentation": "<p>A description of the DAX cluster. with its new replication factor.</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.dax#InsufficientClusterCapacityFault": {
@@ -2233,6 +2297,10 @@
                 }
             },
             "traits": {
+                "aws.protocols#awsQueryError": {
+                    "code": "InsufficientClusterCapacity",
+                    "httpResponseCode": 400
+                },
                 "smithy.api#documentation": "<p>There are not enough system resources to create the cluster you requested (or to\n            resize an already-existing cluster). </p>",
                 "smithy.api#error": "client",
                 "smithy.api#httpError": 400
@@ -2255,6 +2323,10 @@
                 }
             },
             "traits": {
+                "aws.protocols#awsQueryError": {
+                    "code": "InvalidARN",
+                    "httpResponseCode": 400
+                },
                 "smithy.api#documentation": "<p>The Amazon Resource Name (ARN) supplied in the request is not valid.</p>",
                 "smithy.api#error": "client",
                 "smithy.api#httpError": 400
@@ -2268,6 +2340,10 @@
                 }
             },
             "traits": {
+                "aws.protocols#awsQueryError": {
+                    "code": "InvalidClusterState",
+                    "httpResponseCode": 400
+                },
                 "smithy.api#documentation": "<p>The requested DAX cluster is not in the <i>available</i>\n            state.</p>",
                 "smithy.api#error": "client",
                 "smithy.api#httpError": 400
@@ -2281,6 +2357,10 @@
                 }
             },
             "traits": {
+                "aws.protocols#awsQueryError": {
+                    "code": "InvalidParameterCombination",
+                    "httpResponseCode": 400
+                },
                 "smithy.api#documentation": "<p>Two or more incompatible parameters were specified.</p>",
                 "smithy.api#error": "client",
                 "smithy.api#httpError": 400
@@ -2294,6 +2374,10 @@
                 }
             },
             "traits": {
+                "aws.protocols#awsQueryError": {
+                    "code": "InvalidParameterGroupState",
+                    "httpResponseCode": 400
+                },
                 "smithy.api#documentation": "<p>One or more parameters in a parameter group are in an invalid state.</p>",
                 "smithy.api#error": "client",
                 "smithy.api#httpError": 400
@@ -2307,6 +2391,10 @@
                 }
             },
             "traits": {
+                "aws.protocols#awsQueryError": {
+                    "code": "InvalidParameterValue",
+                    "httpResponseCode": 400
+                },
                 "smithy.api#documentation": "<p>The value for a parameter is invalid.</p>",
                 "smithy.api#error": "client",
                 "smithy.api#httpError": 400
@@ -2320,6 +2408,10 @@
                 }
             },
             "traits": {
+                "aws.protocols#awsQueryError": {
+                    "code": "InvalidSubnet",
+                    "httpResponseCode": 400
+                },
                 "smithy.api#documentation": "<p>An invalid subnet identifier was specified.</p>",
                 "smithy.api#error": "client",
                 "smithy.api#httpError": 400
@@ -2333,28 +2425,36 @@
                 }
             },
             "traits": {
+                "aws.protocols#awsQueryError": {
+                    "code": "InvalidVPCNetworkStateFault",
+                    "httpResponseCode": 400
+                },
                 "smithy.api#documentation": "<p>The VPC network is in an invalid state.</p>",
                 "smithy.api#error": "client",
                 "smithy.api#httpError": 400
             }
         },
         "com.amazonaws.dax#IsModifiable": {
-            "type": "string",
-            "traits": {
-                "smithy.api#enum": [
-                    {
-                        "value": "TRUE",
-                        "name": "TRUE"
-                    },
-                    {
-                        "value": "FALSE",
-                        "name": "FALSE"
-                    },
-                    {
-                        "value": "CONDITIONAL",
-                        "name": "CONDITIONAL"
+            "type": "enum",
+            "members": {
+                "TRUE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "TRUE"
                     }
-                ]
+                },
+                "FALSE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "FALSE"
+                    }
+                },
+                "CONDITIONAL": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "CONDITIONAL"
+                    }
+                }
             }
         },
         "com.amazonaws.dax#KeyList": {
@@ -2411,6 +2511,9 @@
                         "smithy.api#documentation": "<p>An optional token returned from a prior request. Use this token for pagination of\n            results from this action. If this parameter is specified, the response includes only\n            results beyond the token.</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.dax#ListTagsResponse": {
@@ -2428,6 +2531,9 @@
                         "smithy.api#documentation": "<p>If this value is present, there are additional results to be displayed.  To retrieve them, call \n            <code>ListTags</code> again, with <code>NextToken</code> set to this value.</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.dax#Node": {
@@ -2494,6 +2600,10 @@
                 }
             },
             "traits": {
+                "aws.protocols#awsQueryError": {
+                    "code": "NodeNotFound",
+                    "httpResponseCode": 404
+                },
                 "smithy.api#documentation": "<p>None of the nodes in the cluster have the given node ID.</p>",
                 "smithy.api#error": "client",
                 "smithy.api#httpError": 404
@@ -2507,6 +2617,10 @@
                 }
             },
             "traits": {
+                "aws.protocols#awsQueryError": {
+                    "code": "NodeQuotaForClusterExceeded",
+                    "httpResponseCode": 400
+                },
                 "smithy.api#documentation": "<p>You have attempted to exceed the maximum number of nodes for a DAX\n            cluster.</p>",
                 "smithy.api#error": "client",
                 "smithy.api#httpError": 400
@@ -2520,6 +2634,10 @@
                 }
             },
             "traits": {
+                "aws.protocols#awsQueryError": {
+                    "code": "NodeQuotaForCustomerExceeded",
+                    "httpResponseCode": 400
+                },
                 "smithy.api#documentation": "<p>You have attempted to exceed the maximum number of nodes for your AWS\n            account.</p>",
                 "smithy.api#error": "client",
                 "smithy.api#httpError": 400
@@ -2667,6 +2785,10 @@
                 }
             },
             "traits": {
+                "aws.protocols#awsQueryError": {
+                    "code": "ParameterGroupAlreadyExists",
+                    "httpResponseCode": 400
+                },
                 "smithy.api#documentation": "<p>The specified parameter group already exists.</p>",
                 "smithy.api#error": "client",
                 "smithy.api#httpError": 400
@@ -2692,6 +2814,10 @@
                 }
             },
             "traits": {
+                "aws.protocols#awsQueryError": {
+                    "code": "ParameterGroupNotFound",
+                    "httpResponseCode": 404
+                },
                 "smithy.api#documentation": "<p>The specified parameter group does not exist.</p>",
                 "smithy.api#error": "client",
                 "smithy.api#httpError": 404
@@ -2705,6 +2831,10 @@
                 }
             },
             "traits": {
+                "aws.protocols#awsQueryError": {
+                    "code": "ParameterGroupQuotaExceeded",
+                    "httpResponseCode": 400
+                },
                 "smithy.api#documentation": "<p>You have attempted to exceed the maximum number of parameter groups.</p>",
                 "smithy.api#error": "client",
                 "smithy.api#httpError": 400
@@ -2769,18 +2899,20 @@
             }
         },
         "com.amazonaws.dax#ParameterType": {
-            "type": "string",
-            "traits": {
-                "smithy.api#enum": [
-                    {
-                        "value": "DEFAULT",
-                        "name": "DEFAULT"
-                    },
-                    {
-                        "value": "NODE_TYPE_SPECIFIC",
-                        "name": "NODE_TYPE_SPECIFIC"
+            "type": "enum",
+            "members": {
+                "DEFAULT": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "DEFAULT"
                     }
-                ]
+                },
+                "NODE_TYPE_SPECIFIC": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "NODE_TYPE_SPECIFIC"
+                    }
+                }
             }
         },
         "com.amazonaws.dax#RebootNode": {
@@ -2832,6 +2964,9 @@
                         "smithy.api#required": {}
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.dax#RebootNodeResponse": {
@@ -2843,6 +2978,9 @@
                         "smithy.api#documentation": "<p>A description of the DAX cluster after a node has been rebooted.</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.dax#SSEDescription": {
@@ -2878,26 +3016,32 @@
             }
         },
         "com.amazonaws.dax#SSEStatus": {
-            "type": "string",
-            "traits": {
-                "smithy.api#enum": [
-                    {
-                        "value": "ENABLING",
-                        "name": "ENABLING"
-                    },
-                    {
-                        "value": "ENABLED",
-                        "name": "ENABLED"
-                    },
-                    {
-                        "value": "DISABLING",
-                        "name": "DISABLING"
-                    },
-                    {
-                        "value": "DISABLED",
-                        "name": "DISABLED"
+            "type": "enum",
+            "members": {
+                "ENABLING": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ENABLING"
                     }
-                ]
+                },
+                "ENABLED": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ENABLED"
+                    }
+                },
+                "DISABLING": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "DISABLING"
+                    }
+                },
+                "DISABLED": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "DISABLED"
+                    }
+                }
             }
         },
         "com.amazonaws.dax#SecurityGroupIdentifierList": {
@@ -2940,6 +3084,10 @@
                 }
             },
             "traits": {
+                "aws.protocols#awsQueryError": {
+                    "code": "ServiceLinkedRoleNotFoundFault",
+                    "httpResponseCode": 400
+                },
                 "smithy.api#documentation": "<p>The specified service linked role (SLR) was not found.</p>",
                 "smithy.api#error": "client",
                 "smithy.api#httpError": 400
@@ -2949,28 +3097,36 @@
             "type": "structure",
             "members": {},
             "traits": {
+                "aws.protocols#awsQueryError": {
+                    "code": "ServiceQuotaExceeded",
+                    "httpResponseCode": 402
+                },
                 "smithy.api#documentation": "<p>You have reached the maximum number of x509 certificates that can be created for\n            encrypted clusters in a 30 day period. Contact AWS customer support to discuss options\n            for continuing to create encrypted clusters.</p>",
                 "smithy.api#error": "client",
                 "smithy.api#httpError": 402
             }
         },
         "com.amazonaws.dax#SourceType": {
-            "type": "string",
-            "traits": {
-                "smithy.api#enum": [
-                    {
-                        "value": "CLUSTER",
-                        "name": "CLUSTER"
-                    },
-                    {
-                        "value": "PARAMETER_GROUP",
-                        "name": "PARAMETER_GROUP"
-                    },
-                    {
-                        "value": "SUBNET_GROUP",
-                        "name": "SUBNET_GROUP"
+            "type": "enum",
+            "members": {
+                "CLUSTER": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "CLUSTER"
                     }
-                ]
+                },
+                "PARAMETER_GROUP": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "PARAMETER_GROUP"
+                    }
+                },
+                "SUBNET_GROUP": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "SUBNET_GROUP"
+                    }
+                }
             }
         },
         "com.amazonaws.dax#String": {
@@ -3036,6 +3192,10 @@
                 }
             },
             "traits": {
+                "aws.protocols#awsQueryError": {
+                    "code": "SubnetGroupAlreadyExists",
+                    "httpResponseCode": 400
+                },
                 "smithy.api#documentation": "<p>The specified subnet group already exists.</p>",
                 "smithy.api#error": "client",
                 "smithy.api#httpError": 400
@@ -3049,6 +3209,10 @@
                 }
             },
             "traits": {
+                "aws.protocols#awsQueryError": {
+                    "code": "SubnetGroupInUse",
+                    "httpResponseCode": 400
+                },
                 "smithy.api#documentation": "<p>The specified subnet group is currently in use.</p>",
                 "smithy.api#error": "client",
                 "smithy.api#httpError": 400
@@ -3074,6 +3238,10 @@
                 }
             },
             "traits": {
+                "aws.protocols#awsQueryError": {
+                    "code": "SubnetGroupNotFoundFault",
+                    "httpResponseCode": 404
+                },
                 "smithy.api#documentation": "<p>The requested subnet group name does not refer to an existing subnet\n            group.</p>",
                 "smithy.api#error": "client",
                 "smithy.api#httpError": 404
@@ -3087,6 +3255,10 @@
                 }
             },
             "traits": {
+                "aws.protocols#awsQueryError": {
+                    "code": "SubnetGroupQuotaExceeded",
+                    "httpResponseCode": 400
+                },
                 "smithy.api#documentation": "<p>The request cannot be processed because it would exceed the allowed number of\n            subnets in a subnet group.</p>",
                 "smithy.api#error": "client",
                 "smithy.api#httpError": 400
@@ -3106,6 +3278,10 @@
                 }
             },
             "traits": {
+                "aws.protocols#awsQueryError": {
+                    "code": "SubnetInUse",
+                    "httpResponseCode": 400
+                },
                 "smithy.api#documentation": "<p>The requested subnet is being used by another subnet group.</p>",
                 "smithy.api#error": "client",
                 "smithy.api#httpError": 400
@@ -3125,6 +3301,10 @@
                 }
             },
             "traits": {
+                "aws.protocols#awsQueryError": {
+                    "code": "SubnetQuotaExceededFault",
+                    "httpResponseCode": 400
+                },
                 "smithy.api#documentation": "<p>The request cannot be processed because it would exceed the allowed number of\n            subnets in a subnet group.</p>",
                 "smithy.api#error": "client",
                 "smithy.api#httpError": 400
@@ -3167,6 +3347,10 @@
                 }
             },
             "traits": {
+                "aws.protocols#awsQueryError": {
+                    "code": "TagNotFound",
+                    "httpResponseCode": 404
+                },
                 "smithy.api#documentation": "<p>The tag does not exist.</p>",
                 "smithy.api#error": "client",
                 "smithy.api#httpError": 404
@@ -3180,6 +3364,10 @@
                 }
             },
             "traits": {
+                "aws.protocols#awsQueryError": {
+                    "code": "TagQuotaPerResourceExceeded",
+                    "httpResponseCode": 400
+                },
                 "smithy.api#documentation": "<p>You have exceeded the maximum number of tags for this DAX cluster.</p>",
                 "smithy.api#error": "client",
                 "smithy.api#httpError": 400
@@ -3237,6 +3425,9 @@
                         "smithy.api#required": {}
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.dax#TagResourceResponse": {
@@ -3248,6 +3439,9 @@
                         "smithy.api#documentation": "<p>The list of tags that are associated with the DAX resource.</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.dax#UntagResource": {
@@ -3302,6 +3496,9 @@
                         "smithy.api#required": {}
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.dax#UntagResourceResponse": {
@@ -3313,6 +3510,9 @@
                         "smithy.api#documentation": "<p>The tag keys that have been removed from the cluster.</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.dax#UpdateCluster": {
@@ -3396,6 +3596,9 @@
                         "smithy.api#documentation": "<p>A list of user-specified security group IDs to be assigned to each node in the DAX cluster.  If this parameter is not \n            specified, DAX assigns the default VPC security group to each node.</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.dax#UpdateClusterResponse": {
@@ -3407,6 +3610,9 @@
                         "smithy.api#documentation": "<p>A description of the DAX cluster, after it has been modified.</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.dax#UpdateParameterGroup": {
@@ -3455,6 +3661,9 @@
                         "smithy.api#required": {}
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.dax#UpdateParameterGroupResponse": {
@@ -3466,6 +3675,9 @@
                         "smithy.api#documentation": "<p>The parameter group that has been modified.</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.dax#UpdateSubnetGroup": {
@@ -3519,6 +3731,9 @@
                         "smithy.api#documentation": "<p>A list of subnet IDs in the subnet group.</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.dax#UpdateSubnetGroupResponse": {
@@ -3530,6 +3745,9 @@
                         "smithy.api#documentation": "<p>The subnet group that has been modified.</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         }
     }

@@ -230,9 +230,188 @@
                                     "type": "error"
                                 },
                                 {
+                                    "conditions": [
+                                        {
+                                            "fn": "booleanEquals",
+                                            "argv": [
+                                                {
+                                                    "ref": "UseDualStack"
+                                                },
+                                                true
+                                            ]
+                                        }
+                                    ],
+                                    "error": "Invalid Configuration: Dualstack and custom endpoint are not supported",
+                                    "type": "error"
+                                },
+                                {
                                     "conditions": [],
+                                    "endpoint": {
+                                        "url": {
+                                            "ref": "Endpoint"
+                                        },
+                                        "properties": {},
+                                        "headers": {}
+                                    },
+                                    "type": "endpoint"
+                                }
+                            ]
+                        },
+                        {
+                            "conditions": [
+                                {
+                                    "fn": "isSet",
+                                    "argv": [
+                                        {
+                                            "ref": "Region"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "type": "tree",
+                            "rules": [
+                                {
+                                    "conditions": [
+                                        {
+                                            "fn": "aws.partition",
+                                            "argv": [
+                                                {
+                                                    "ref": "Region"
+                                                }
+                                            ],
+                                            "assign": "PartitionResult"
+                                        }
+                                    ],
                                     "type": "tree",
                                     "rules": [
+                                        {
+                                            "conditions": [
+                                                {
+                                                    "fn": "booleanEquals",
+                                                    "argv": [
+                                                        {
+                                                            "ref": "UseFIPS"
+                                                        },
+                                                        true
+                                                    ]
+                                                },
+                                                {
+                                                    "fn": "booleanEquals",
+                                                    "argv": [
+                                                        {
+                                                            "ref": "UseDualStack"
+                                                        },
+                                                        true
+                                                    ]
+                                                }
+                                            ],
+                                            "type": "tree",
+                                            "rules": [
+                                                {
+                                                    "conditions": [
+                                                        {
+                                                            "fn": "booleanEquals",
+                                                            "argv": [
+                                                                true,
+                                                                {
+                                                                    "fn": "getAttr",
+                                                                    "argv": [
+                                                                        {
+                                                                            "ref": "PartitionResult"
+                                                                        },
+                                                                        "supportsFIPS"
+                                                                    ]
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            "fn": "booleanEquals",
+                                                            "argv": [
+                                                                true,
+                                                                {
+                                                                    "fn": "getAttr",
+                                                                    "argv": [
+                                                                        {
+                                                                            "ref": "PartitionResult"
+                                                                        },
+                                                                        "supportsDualStack"
+                                                                    ]
+                                                                }
+                                                            ]
+                                                        }
+                                                    ],
+                                                    "type": "tree",
+                                                    "rules": [
+                                                        {
+                                                            "conditions": [],
+                                                            "endpoint": {
+                                                                "url": "https://amplifybackend-fips.{Region}.{PartitionResult#dualStackDnsSuffix}",
+                                                                "properties": {},
+                                                                "headers": {}
+                                                            },
+                                                            "type": "endpoint"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "conditions": [],
+                                                    "error": "FIPS and DualStack are enabled, but this partition does not support one or both",
+                                                    "type": "error"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "conditions": [
+                                                {
+                                                    "fn": "booleanEquals",
+                                                    "argv": [
+                                                        {
+                                                            "ref": "UseFIPS"
+                                                        },
+                                                        true
+                                                    ]
+                                                }
+                                            ],
+                                            "type": "tree",
+                                            "rules": [
+                                                {
+                                                    "conditions": [
+                                                        {
+                                                            "fn": "booleanEquals",
+                                                            "argv": [
+                                                                true,
+                                                                {
+                                                                    "fn": "getAttr",
+                                                                    "argv": [
+                                                                        {
+                                                                            "ref": "PartitionResult"
+                                                                        },
+                                                                        "supportsFIPS"
+                                                                    ]
+                                                                }
+                                                            ]
+                                                        }
+                                                    ],
+                                                    "type": "tree",
+                                                    "rules": [
+                                                        {
+                                                            "conditions": [],
+                                                            "endpoint": {
+                                                                "url": "https://amplifybackend-fips.{Region}.{PartitionResult#dnsSuffix}",
+                                                                "properties": {},
+                                                                "headers": {}
+                                                            },
+                                                            "type": "endpoint"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "conditions": [],
+                                                    "error": "FIPS is enabled but this partition does not support FIPS",
+                                                    "type": "error"
+                                                }
+                                            ]
+                                        },
                                         {
                                             "conditions": [
                                                 {
@@ -245,15 +424,50 @@
                                                     ]
                                                 }
                                             ],
-                                            "error": "Invalid Configuration: Dualstack and custom endpoint are not supported",
-                                            "type": "error"
+                                            "type": "tree",
+                                            "rules": [
+                                                {
+                                                    "conditions": [
+                                                        {
+                                                            "fn": "booleanEquals",
+                                                            "argv": [
+                                                                true,
+                                                                {
+                                                                    "fn": "getAttr",
+                                                                    "argv": [
+                                                                        {
+                                                                            "ref": "PartitionResult"
+                                                                        },
+                                                                        "supportsDualStack"
+                                                                    ]
+                                                                }
+                                                            ]
+                                                        }
+                                                    ],
+                                                    "type": "tree",
+                                                    "rules": [
+                                                        {
+                                                            "conditions": [],
+                                                            "endpoint": {
+                                                                "url": "https://amplifybackend.{Region}.{PartitionResult#dualStackDnsSuffix}",
+                                                                "properties": {},
+                                                                "headers": {}
+                                                            },
+                                                            "type": "endpoint"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "conditions": [],
+                                                    "error": "DualStack is enabled but this partition does not support DualStack",
+                                                    "type": "error"
+                                                }
+                                            ]
                                         },
                                         {
                                             "conditions": [],
                                             "endpoint": {
-                                                "url": {
-                                                    "ref": "Endpoint"
-                                                },
+                                                "url": "https://amplifybackend.{Region}.{PartitionResult#dnsSuffix}",
                                                 "properties": {},
                                                 "headers": {}
                                             },
@@ -265,258 +479,8 @@
                         },
                         {
                             "conditions": [],
-                            "type": "tree",
-                            "rules": [
-                                {
-                                    "conditions": [
-                                        {
-                                            "fn": "isSet",
-                                            "argv": [
-                                                {
-                                                    "ref": "Region"
-                                                }
-                                            ]
-                                        }
-                                    ],
-                                    "type": "tree",
-                                    "rules": [
-                                        {
-                                            "conditions": [
-                                                {
-                                                    "fn": "aws.partition",
-                                                    "argv": [
-                                                        {
-                                                            "ref": "Region"
-                                                        }
-                                                    ],
-                                                    "assign": "PartitionResult"
-                                                }
-                                            ],
-                                            "type": "tree",
-                                            "rules": [
-                                                {
-                                                    "conditions": [
-                                                        {
-                                                            "fn": "booleanEquals",
-                                                            "argv": [
-                                                                {
-                                                                    "ref": "UseFIPS"
-                                                                },
-                                                                true
-                                                            ]
-                                                        },
-                                                        {
-                                                            "fn": "booleanEquals",
-                                                            "argv": [
-                                                                {
-                                                                    "ref": "UseDualStack"
-                                                                },
-                                                                true
-                                                            ]
-                                                        }
-                                                    ],
-                                                    "type": "tree",
-                                                    "rules": [
-                                                        {
-                                                            "conditions": [
-                                                                {
-                                                                    "fn": "booleanEquals",
-                                                                    "argv": [
-                                                                        true,
-                                                                        {
-                                                                            "fn": "getAttr",
-                                                                            "argv": [
-                                                                                {
-                                                                                    "ref": "PartitionResult"
-                                                                                },
-                                                                                "supportsFIPS"
-                                                                            ]
-                                                                        }
-                                                                    ]
-                                                                },
-                                                                {
-                                                                    "fn": "booleanEquals",
-                                                                    "argv": [
-                                                                        true,
-                                                                        {
-                                                                            "fn": "getAttr",
-                                                                            "argv": [
-                                                                                {
-                                                                                    "ref": "PartitionResult"
-                                                                                },
-                                                                                "supportsDualStack"
-                                                                            ]
-                                                                        }
-                                                                    ]
-                                                                }
-                                                            ],
-                                                            "type": "tree",
-                                                            "rules": [
-                                                                {
-                                                                    "conditions": [],
-                                                                    "type": "tree",
-                                                                    "rules": [
-                                                                        {
-                                                                            "conditions": [],
-                                                                            "endpoint": {
-                                                                                "url": "https://amplifybackend-fips.{Region}.{PartitionResult#dualStackDnsSuffix}",
-                                                                                "properties": {},
-                                                                                "headers": {}
-                                                                            },
-                                                                            "type": "endpoint"
-                                                                        }
-                                                                    ]
-                                                                }
-                                                            ]
-                                                        },
-                                                        {
-                                                            "conditions": [],
-                                                            "error": "FIPS and DualStack are enabled, but this partition does not support one or both",
-                                                            "type": "error"
-                                                        }
-                                                    ]
-                                                },
-                                                {
-                                                    "conditions": [
-                                                        {
-                                                            "fn": "booleanEquals",
-                                                            "argv": [
-                                                                {
-                                                                    "ref": "UseFIPS"
-                                                                },
-                                                                true
-                                                            ]
-                                                        }
-                                                    ],
-                                                    "type": "tree",
-                                                    "rules": [
-                                                        {
-                                                            "conditions": [
-                                                                {
-                                                                    "fn": "booleanEquals",
-                                                                    "argv": [
-                                                                        true,
-                                                                        {
-                                                                            "fn": "getAttr",
-                                                                            "argv": [
-                                                                                {
-                                                                                    "ref": "PartitionResult"
-                                                                                },
-                                                                                "supportsFIPS"
-                                                                            ]
-                                                                        }
-                                                                    ]
-                                                                }
-                                                            ],
-                                                            "type": "tree",
-                                                            "rules": [
-                                                                {
-                                                                    "conditions": [],
-                                                                    "type": "tree",
-                                                                    "rules": [
-                                                                        {
-                                                                            "conditions": [],
-                                                                            "endpoint": {
-                                                                                "url": "https://amplifybackend-fips.{Region}.{PartitionResult#dnsSuffix}",
-                                                                                "properties": {},
-                                                                                "headers": {}
-                                                                            },
-                                                                            "type": "endpoint"
-                                                                        }
-                                                                    ]
-                                                                }
-                                                            ]
-                                                        },
-                                                        {
-                                                            "conditions": [],
-                                                            "error": "FIPS is enabled but this partition does not support FIPS",
-                                                            "type": "error"
-                                                        }
-                                                    ]
-                                                },
-                                                {
-                                                    "conditions": [
-                                                        {
-                                                            "fn": "booleanEquals",
-                                                            "argv": [
-                                                                {
-                                                                    "ref": "UseDualStack"
-                                                                },
-                                                                true
-                                                            ]
-                                                        }
-                                                    ],
-                                                    "type": "tree",
-                                                    "rules": [
-                                                        {
-                                                            "conditions": [
-                                                                {
-                                                                    "fn": "booleanEquals",
-                                                                    "argv": [
-                                                                        true,
-                                                                        {
-                                                                            "fn": "getAttr",
-                                                                            "argv": [
-                                                                                {
-                                                                                    "ref": "PartitionResult"
-                                                                                },
-                                                                                "supportsDualStack"
-                                                                            ]
-                                                                        }
-                                                                    ]
-                                                                }
-                                                            ],
-                                                            "type": "tree",
-                                                            "rules": [
-                                                                {
-                                                                    "conditions": [],
-                                                                    "type": "tree",
-                                                                    "rules": [
-                                                                        {
-                                                                            "conditions": [],
-                                                                            "endpoint": {
-                                                                                "url": "https://amplifybackend.{Region}.{PartitionResult#dualStackDnsSuffix}",
-                                                                                "properties": {},
-                                                                                "headers": {}
-                                                                            },
-                                                                            "type": "endpoint"
-                                                                        }
-                                                                    ]
-                                                                }
-                                                            ]
-                                                        },
-                                                        {
-                                                            "conditions": [],
-                                                            "error": "DualStack is enabled but this partition does not support DualStack",
-                                                            "type": "error"
-                                                        }
-                                                    ]
-                                                },
-                                                {
-                                                    "conditions": [],
-                                                    "type": "tree",
-                                                    "rules": [
-                                                        {
-                                                            "conditions": [],
-                                                            "endpoint": {
-                                                                "url": "https://amplifybackend.{Region}.{PartitionResult#dnsSuffix}",
-                                                                "properties": {},
-                                                                "headers": {}
-                                                            },
-                                                            "type": "endpoint"
-                                                        }
-                                                    ]
-                                                }
-                                            ]
-                                        }
-                                    ]
-                                },
-                                {
-                                    "conditions": [],
-                                    "error": "Invalid Configuration: Missing Region",
-                                    "type": "error"
-                                }
-                            ]
+                            "error": "Invalid Configuration: Missing Region",
+                            "type": "error"
                         }
                     ]
                 },
@@ -1268,7 +1232,8 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "<p>Describes Apple social federation configurations for allowing your app users to sign in using OAuth.</p>"
+                "smithy.api#documentation": "<p>Describes Apple social federation configurations for allowing your app users to sign in using OAuth.</p>",
+                "smithy.api#sensitive": {}
             }
         },
         "com.amazonaws.amplifybackend#BackendAuthSocialProviderConfig": {
@@ -1290,7 +1255,8 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "<p>Describes third-party social federation configurations for allowing your app users to sign in using OAuth.</p>"
+                "smithy.api#documentation": "<p>Describes third-party social federation configurations for allowing your app users to sign in using OAuth.</p>",
+                "smithy.api#sensitive": {}
             }
         },
         "com.amazonaws.amplifybackend#BackendJobRespObj": {
@@ -1459,7 +1425,8 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "<p>The request body for CloneBackend.</p>"
+                "smithy.api#documentation": "<p>The request body for CloneBackend.</p>",
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.amplifybackend#CloneBackendResponse": {
@@ -1507,6 +1474,9 @@
                         "smithy.api#jsonName": "status"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.amplifybackend#CreateBackend": {
@@ -1608,7 +1578,8 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "<p>The request body for CreateBackendAPI.</p>"
+                "smithy.api#documentation": "<p>The request body for CreateBackendAPI.</p>",
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.amplifybackend#CreateBackendAPIResponse": {
@@ -1656,6 +1627,9 @@
                         "smithy.api#jsonName": "status"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.amplifybackend#CreateBackendAuth": {
@@ -1879,7 +1853,8 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "<p>The request body for CreateBackendAuth.</p>"
+                "smithy.api#documentation": "<p>The request body for CreateBackendAuth.</p>",
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.amplifybackend#CreateBackendAuthResourceConfig": {
@@ -1966,6 +1941,9 @@
                         "smithy.api#jsonName": "status"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.amplifybackend#CreateBackendAuthUserPoolConfig": {
@@ -2116,7 +2094,8 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "<p>The request body for CreateBackendConfig.</p>"
+                "smithy.api#documentation": "<p>The request body for CreateBackendConfig.</p>",
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.amplifybackend#CreateBackendConfigResponse": {
@@ -2150,6 +2129,9 @@
                         "smithy.api#jsonName": "status"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.amplifybackend#CreateBackendRequest": {
@@ -2195,7 +2177,8 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "<p>The request body for CreateBackend.</p>"
+                "smithy.api#documentation": "<p>The request body for CreateBackend.</p>",
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.amplifybackend#CreateBackendResponse": {
@@ -2243,6 +2226,9 @@
                         "smithy.api#jsonName": "status"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.amplifybackend#CreateBackendStorage": {
@@ -2313,7 +2299,8 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "<p>The request body for CreateBackendStorage.</p>"
+                "smithy.api#documentation": "<p>The request body for CreateBackendStorage.</p>",
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.amplifybackend#CreateBackendStorageResourceConfig": {
@@ -2378,6 +2365,9 @@
                         "smithy.api#jsonName": "status"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.amplifybackend#CreateToken": {
@@ -2422,6 +2412,9 @@
                         "smithy.api#required": {}
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.amplifybackend#CreateTokenResponse": {
@@ -2455,6 +2448,9 @@
                         "smithy.api#jsonName": "ttl"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.amplifybackend#DeleteBackend": {
@@ -2555,7 +2551,8 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "<p>The request body for DeleteBackendAPI.</p>"
+                "smithy.api#documentation": "<p>The request body for DeleteBackendAPI.</p>",
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.amplifybackend#DeleteBackendAPIResponse": {
@@ -2603,6 +2600,9 @@
                         "smithy.api#jsonName": "status"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.amplifybackend#DeleteBackendAuth": {
@@ -2665,7 +2665,8 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "<p>The request body for DeleteBackendAuth.</p>"
+                "smithy.api#documentation": "<p>The request body for DeleteBackendAuth.</p>",
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.amplifybackend#DeleteBackendAuthResponse": {
@@ -2713,6 +2714,9 @@
                         "smithy.api#jsonName": "status"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.amplifybackend#DeleteBackendRequest": {
@@ -2734,6 +2738,9 @@
                         "smithy.api#required": {}
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.amplifybackend#DeleteBackendResponse": {
@@ -2781,6 +2788,9 @@
                         "smithy.api#jsonName": "status"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.amplifybackend#DeleteBackendStorage": {
@@ -2851,7 +2861,8 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "<p>The request body for DeleteBackendStorage.</p>"
+                "smithy.api#documentation": "<p>The request body for DeleteBackendStorage.</p>",
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.amplifybackend#DeleteBackendStorageResponse": {
@@ -2885,6 +2896,9 @@
                         "smithy.api#jsonName": "status"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.amplifybackend#DeleteToken": {
@@ -2937,6 +2951,9 @@
                         "smithy.api#required": {}
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.amplifybackend#DeleteTokenResponse": {
@@ -2949,6 +2966,9 @@
                         "smithy.api#jsonName": "isSuccess"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.amplifybackend#DeliveryMethod": {
@@ -2990,7 +3010,8 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "<p>The configuration for the email sent when an app user forgets their password.</p>"
+                "smithy.api#documentation": "<p>The configuration for the email sent when an app user forgets their password.</p>",
+                "smithy.api#sensitive": {}
             }
         },
         "com.amazonaws.amplifybackend#GatewayTimeoutException": {
@@ -3070,7 +3091,8 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "<p>The request body for GenerateBackendAPIModels.</p>"
+                "smithy.api#documentation": "<p>The request body for GenerateBackendAPIModels.</p>",
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.amplifybackend#GenerateBackendAPIModelsResponse": {
@@ -3118,6 +3140,9 @@
                         "smithy.api#jsonName": "status"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.amplifybackend#GetBackend": {
@@ -3242,7 +3267,8 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "<p>The request body for GetBackendAPIModels.</p>"
+                "smithy.api#documentation": "<p>The request body for GetBackendAPIModels.</p>",
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.amplifybackend#GetBackendAPIModelsResponse": {
@@ -3269,6 +3295,9 @@
                         "smithy.api#jsonName": "modelIntrospectionSchema"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.amplifybackend#GetBackendAPIRequest": {
@@ -3307,7 +3336,8 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "<p>The request body for GetBackendAPI.</p>"
+                "smithy.api#documentation": "<p>The request body for GetBackendAPI.</p>",
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.amplifybackend#GetBackendAPIResponse": {
@@ -3348,6 +3378,9 @@
                         "smithy.api#jsonName": "resourceName"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.amplifybackend#GetBackendAuth": {
@@ -3410,7 +3443,8 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "<p>The request body for GetBackendAuth.</p>"
+                "smithy.api#documentation": "<p>The request body for GetBackendAuth.</p>",
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.amplifybackend#GetBackendAuthResponse": {
@@ -3451,6 +3485,9 @@
                         "smithy.api#jsonName": "resourceName"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.amplifybackend#GetBackendJob": {
@@ -3511,6 +3548,9 @@
                         "smithy.api#required": {}
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.amplifybackend#GetBackendJobResponse": {
@@ -3572,6 +3612,9 @@
                         "smithy.api#jsonName": "updateTime"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.amplifybackend#GetBackendRequest": {
@@ -3594,7 +3637,8 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "<p>The request body for GetBackend.</p>"
+                "smithy.api#documentation": "<p>The request body for GetBackend.</p>",
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.amplifybackend#GetBackendResponse": {
@@ -3649,6 +3693,9 @@
                         "smithy.api#jsonName": "error"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.amplifybackend#GetBackendStorage": {
@@ -3711,7 +3758,8 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "<p>The request body for GetBackendStorage.</p>"
+                "smithy.api#documentation": "<p>The request body for GetBackendStorage.</p>",
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.amplifybackend#GetBackendStorageResourceConfig": {
@@ -3783,6 +3831,9 @@
                         "smithy.api#jsonName": "resourceName"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.amplifybackend#GetToken": {
@@ -3835,6 +3886,9 @@
                         "smithy.api#required": {}
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.amplifybackend#GetTokenResponse": {
@@ -3868,6 +3922,9 @@
                         "smithy.api#jsonName": "ttl"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.amplifybackend#ImportBackendAuth": {
@@ -3953,7 +4010,8 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "<p>The request body for ImportBackendAuth.</p>"
+                "smithy.api#documentation": "<p>The request body for ImportBackendAuth.</p>",
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.amplifybackend#ImportBackendAuthResponse": {
@@ -4001,6 +4059,9 @@
                         "smithy.api#jsonName": "status"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.amplifybackend#ImportBackendStorage": {
@@ -4070,7 +4131,8 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "<p>The request body for ImportBackendStorage.</p>"
+                "smithy.api#documentation": "<p>The request body for ImportBackendStorage.</p>",
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.amplifybackend#ImportBackendStorageResponse": {
@@ -4104,6 +4166,9 @@
                         "smithy.api#jsonName": "status"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.amplifybackend#ListBackendJobs": {
@@ -4193,7 +4258,8 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "<p>The request body for ListBackendJobs.</p>"
+                "smithy.api#documentation": "<p>The request body for ListBackendJobs.</p>",
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.amplifybackend#ListBackendJobsResponse": {
@@ -4213,6 +4279,9 @@
                         "smithy.api#jsonName": "nextToken"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.amplifybackend#ListOfAdditionalConstraintsElement": {
@@ -4318,7 +4387,8 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "<p>The request body for S3Buckets.</p>"
+                "smithy.api#documentation": "<p>The request body for S3Buckets.</p>",
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.amplifybackend#ListS3BucketsResponse": {
@@ -4338,6 +4408,9 @@
                         "smithy.api#jsonName": "nextToken"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.amplifybackend#LoginAuthConfigReqObj": {
@@ -4572,7 +4645,8 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "<p>The request body for RemoveAllBackends.</p>"
+                "smithy.api#documentation": "<p>The request body for RemoveAllBackends.</p>",
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.amplifybackend#RemoveAllBackendsResponse": {
@@ -4613,6 +4687,9 @@
                         "smithy.api#jsonName": "status"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.amplifybackend#RemoveBackendConfig": {
@@ -4657,6 +4734,9 @@
                         "smithy.api#required": {}
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.amplifybackend#RemoveBackendConfigResponse": {
@@ -4669,6 +4749,9 @@
                         "smithy.api#jsonName": "error"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.amplifybackend#RequiredSignUpAttributesElement": {
@@ -4921,7 +5004,8 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "<p>SMS settings for authentication.</p>"
+                "smithy.api#documentation": "<p>SMS settings for authentication.</p>",
+                "smithy.api#sensitive": {}
             }
         },
         "com.amazonaws.amplifybackend#SocialProviderSettings": {
@@ -5075,7 +5159,8 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "<p>The request body for UpdateBackendAPI.</p>"
+                "smithy.api#documentation": "<p>The request body for UpdateBackendAPI.</p>",
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.amplifybackend#UpdateBackendAPIResponse": {
@@ -5123,6 +5208,9 @@
                         "smithy.api#jsonName": "status"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.amplifybackend#UpdateBackendAuth": {
@@ -5330,7 +5418,8 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "<p>The request body for UpdateBackendAuth.</p>"
+                "smithy.api#documentation": "<p>The request body for UpdateBackendAuth.</p>",
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.amplifybackend#UpdateBackendAuthResourceConfig": {
@@ -5417,6 +5506,9 @@
                         "smithy.api#jsonName": "status"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.amplifybackend#UpdateBackendAuthUserPoolConfig": {
@@ -5543,7 +5635,8 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "<p>The request body for UpdateBackendConfig.</p>"
+                "smithy.api#documentation": "<p>The request body for UpdateBackendConfig.</p>",
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.amplifybackend#UpdateBackendConfigResponse": {
@@ -5577,6 +5670,9 @@
                         "smithy.api#jsonName": "loginAuthConfig"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.amplifybackend#UpdateBackendJob": {
@@ -5653,7 +5749,8 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "<p>The request body for GetBackendJob.</p>"
+                "smithy.api#documentation": "<p>The request body for GetBackendJob.</p>",
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.amplifybackend#UpdateBackendJobResponse": {
@@ -5715,6 +5812,9 @@
                         "smithy.api#jsonName": "updateTime"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.amplifybackend#UpdateBackendStorage": {
@@ -5785,7 +5885,8 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "<p>The request body for UpdateBackendStorage.</p>"
+                "smithy.api#documentation": "<p>The request body for UpdateBackendStorage.</p>",
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.amplifybackend#UpdateBackendStorageResourceConfig": {
@@ -5843,6 +5944,9 @@
                         "smithy.api#jsonName": "status"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.amplifybackend#__boolean": {
