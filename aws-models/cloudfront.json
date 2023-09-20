@@ -112,7 +112,7 @@
                 "Enabled": {
                     "target": "com.amazonaws.cloudfront#boolean",
                     "traits": {
-                        "smithy.api#documentation": "<p>This field is <code>true</code> if any of the Amazon Web Services accounts in the list have active\n\t\t\tCloudFront key pairs that CloudFront can use to verify the signatures of signed URLs and signed\n\t\t\tcookies. If not, this field is <code>false</code>.</p>",
+                        "smithy.api#documentation": "<p>This field is <code>true</code> if any of the Amazon Web Services accounts in the list are configured as\n\t\t\ttrusted signers. If not, this field is <code>false</code>.</p>",
                         "smithy.api#required": {}
                     }
                 },
@@ -1402,9 +1402,341 @@
                                     "type": "error"
                                 },
                                 {
+                                    "conditions": [
+                                        {
+                                            "fn": "booleanEquals",
+                                            "argv": [
+                                                {
+                                                    "ref": "UseDualStack"
+                                                },
+                                                true
+                                            ]
+                                        }
+                                    ],
+                                    "error": "Invalid Configuration: Dualstack and custom endpoint are not supported",
+                                    "type": "error"
+                                },
+                                {
                                     "conditions": [],
+                                    "endpoint": {
+                                        "url": {
+                                            "ref": "Endpoint"
+                                        },
+                                        "properties": {},
+                                        "headers": {}
+                                    },
+                                    "type": "endpoint"
+                                }
+                            ]
+                        },
+                        {
+                            "conditions": [
+                                {
+                                    "fn": "isSet",
+                                    "argv": [
+                                        {
+                                            "ref": "Region"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "type": "tree",
+                            "rules": [
+                                {
+                                    "conditions": [
+                                        {
+                                            "fn": "aws.partition",
+                                            "argv": [
+                                                {
+                                                    "ref": "Region"
+                                                }
+                                            ],
+                                            "assign": "PartitionResult"
+                                        }
+                                    ],
                                     "type": "tree",
                                     "rules": [
+                                        {
+                                            "conditions": [
+                                                {
+                                                    "fn": "stringEquals",
+                                                    "argv": [
+                                                        {
+                                                            "fn": "getAttr",
+                                                            "argv": [
+                                                                {
+                                                                    "ref": "PartitionResult"
+                                                                },
+                                                                "name"
+                                                            ]
+                                                        },
+                                                        "aws"
+                                                    ]
+                                                },
+                                                {
+                                                    "fn": "booleanEquals",
+                                                    "argv": [
+                                                        {
+                                                            "ref": "UseFIPS"
+                                                        },
+                                                        false
+                                                    ]
+                                                },
+                                                {
+                                                    "fn": "booleanEquals",
+                                                    "argv": [
+                                                        {
+                                                            "ref": "UseDualStack"
+                                                        },
+                                                        false
+                                                    ]
+                                                }
+                                            ],
+                                            "endpoint": {
+                                                "url": "https://cloudfront.amazonaws.com",
+                                                "properties": {
+                                                    "authSchemes": [
+                                                        {
+                                                            "name": "sigv4",
+                                                            "signingName": "cloudfront",
+                                                            "signingRegion": "us-east-1"
+                                                        }
+                                                    ]
+                                                },
+                                                "headers": {}
+                                            },
+                                            "type": "endpoint"
+                                        },
+                                        {
+                                            "conditions": [
+                                                {
+                                                    "fn": "stringEquals",
+                                                    "argv": [
+                                                        {
+                                                            "fn": "getAttr",
+                                                            "argv": [
+                                                                {
+                                                                    "ref": "PartitionResult"
+                                                                },
+                                                                "name"
+                                                            ]
+                                                        },
+                                                        "aws"
+                                                    ]
+                                                },
+                                                {
+                                                    "fn": "booleanEquals",
+                                                    "argv": [
+                                                        {
+                                                            "ref": "UseFIPS"
+                                                        },
+                                                        true
+                                                    ]
+                                                },
+                                                {
+                                                    "fn": "booleanEquals",
+                                                    "argv": [
+                                                        {
+                                                            "ref": "UseDualStack"
+                                                        },
+                                                        false
+                                                    ]
+                                                }
+                                            ],
+                                            "endpoint": {
+                                                "url": "https://cloudfront-fips.amazonaws.com",
+                                                "properties": {
+                                                    "authSchemes": [
+                                                        {
+                                                            "name": "sigv4",
+                                                            "signingName": "cloudfront",
+                                                            "signingRegion": "us-east-1"
+                                                        }
+                                                    ]
+                                                },
+                                                "headers": {}
+                                            },
+                                            "type": "endpoint"
+                                        },
+                                        {
+                                            "conditions": [
+                                                {
+                                                    "fn": "stringEquals",
+                                                    "argv": [
+                                                        {
+                                                            "fn": "getAttr",
+                                                            "argv": [
+                                                                {
+                                                                    "ref": "PartitionResult"
+                                                                },
+                                                                "name"
+                                                            ]
+                                                        },
+                                                        "aws-cn"
+                                                    ]
+                                                },
+                                                {
+                                                    "fn": "booleanEquals",
+                                                    "argv": [
+                                                        {
+                                                            "ref": "UseFIPS"
+                                                        },
+                                                        false
+                                                    ]
+                                                },
+                                                {
+                                                    "fn": "booleanEquals",
+                                                    "argv": [
+                                                        {
+                                                            "ref": "UseDualStack"
+                                                        },
+                                                        false
+                                                    ]
+                                                }
+                                            ],
+                                            "endpoint": {
+                                                "url": "https://cloudfront.cn-northwest-1.amazonaws.com.cn",
+                                                "properties": {
+                                                    "authSchemes": [
+                                                        {
+                                                            "name": "sigv4",
+                                                            "signingName": "cloudfront",
+                                                            "signingRegion": "cn-northwest-1"
+                                                        }
+                                                    ]
+                                                },
+                                                "headers": {}
+                                            },
+                                            "type": "endpoint"
+                                        },
+                                        {
+                                            "conditions": [
+                                                {
+                                                    "fn": "booleanEquals",
+                                                    "argv": [
+                                                        {
+                                                            "ref": "UseFIPS"
+                                                        },
+                                                        true
+                                                    ]
+                                                },
+                                                {
+                                                    "fn": "booleanEquals",
+                                                    "argv": [
+                                                        {
+                                                            "ref": "UseDualStack"
+                                                        },
+                                                        true
+                                                    ]
+                                                }
+                                            ],
+                                            "type": "tree",
+                                            "rules": [
+                                                {
+                                                    "conditions": [
+                                                        {
+                                                            "fn": "booleanEquals",
+                                                            "argv": [
+                                                                true,
+                                                                {
+                                                                    "fn": "getAttr",
+                                                                    "argv": [
+                                                                        {
+                                                                            "ref": "PartitionResult"
+                                                                        },
+                                                                        "supportsFIPS"
+                                                                    ]
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            "fn": "booleanEquals",
+                                                            "argv": [
+                                                                true,
+                                                                {
+                                                                    "fn": "getAttr",
+                                                                    "argv": [
+                                                                        {
+                                                                            "ref": "PartitionResult"
+                                                                        },
+                                                                        "supportsDualStack"
+                                                                    ]
+                                                                }
+                                                            ]
+                                                        }
+                                                    ],
+                                                    "type": "tree",
+                                                    "rules": [
+                                                        {
+                                                            "conditions": [],
+                                                            "endpoint": {
+                                                                "url": "https://cloudfront-fips.{Region}.{PartitionResult#dualStackDnsSuffix}",
+                                                                "properties": {},
+                                                                "headers": {}
+                                                            },
+                                                            "type": "endpoint"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "conditions": [],
+                                                    "error": "FIPS and DualStack are enabled, but this partition does not support one or both",
+                                                    "type": "error"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "conditions": [
+                                                {
+                                                    "fn": "booleanEquals",
+                                                    "argv": [
+                                                        {
+                                                            "ref": "UseFIPS"
+                                                        },
+                                                        true
+                                                    ]
+                                                }
+                                            ],
+                                            "type": "tree",
+                                            "rules": [
+                                                {
+                                                    "conditions": [
+                                                        {
+                                                            "fn": "booleanEquals",
+                                                            "argv": [
+                                                                true,
+                                                                {
+                                                                    "fn": "getAttr",
+                                                                    "argv": [
+                                                                        {
+                                                                            "ref": "PartitionResult"
+                                                                        },
+                                                                        "supportsFIPS"
+                                                                    ]
+                                                                }
+                                                            ]
+                                                        }
+                                                    ],
+                                                    "type": "tree",
+                                                    "rules": [
+                                                        {
+                                                            "conditions": [],
+                                                            "endpoint": {
+                                                                "url": "https://cloudfront-fips.{Region}.{PartitionResult#dnsSuffix}",
+                                                                "properties": {},
+                                                                "headers": {}
+                                                            },
+                                                            "type": "endpoint"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "conditions": [],
+                                                    "error": "FIPS is enabled but this partition does not support FIPS",
+                                                    "type": "error"
+                                                }
+                                            ]
+                                        },
                                         {
                                             "conditions": [
                                                 {
@@ -1417,15 +1749,50 @@
                                                     ]
                                                 }
                                             ],
-                                            "error": "Invalid Configuration: Dualstack and custom endpoint are not supported",
-                                            "type": "error"
+                                            "type": "tree",
+                                            "rules": [
+                                                {
+                                                    "conditions": [
+                                                        {
+                                                            "fn": "booleanEquals",
+                                                            "argv": [
+                                                                true,
+                                                                {
+                                                                    "fn": "getAttr",
+                                                                    "argv": [
+                                                                        {
+                                                                            "ref": "PartitionResult"
+                                                                        },
+                                                                        "supportsDualStack"
+                                                                    ]
+                                                                }
+                                                            ]
+                                                        }
+                                                    ],
+                                                    "type": "tree",
+                                                    "rules": [
+                                                        {
+                                                            "conditions": [],
+                                                            "endpoint": {
+                                                                "url": "https://cloudfront.{Region}.{PartitionResult#dualStackDnsSuffix}",
+                                                                "properties": {},
+                                                                "headers": {}
+                                                            },
+                                                            "type": "endpoint"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "conditions": [],
+                                                    "error": "DualStack is enabled but this partition does not support DualStack",
+                                                    "type": "error"
+                                                }
+                                            ]
                                         },
                                         {
                                             "conditions": [],
                                             "endpoint": {
-                                                "url": {
-                                                    "ref": "Endpoint"
-                                                },
+                                                "url": "https://cloudfront.{Region}.{PartitionResult#dnsSuffix}",
                                                 "properties": {},
                                                 "headers": {}
                                             },
@@ -1437,411 +1804,8 @@
                         },
                         {
                             "conditions": [],
-                            "type": "tree",
-                            "rules": [
-                                {
-                                    "conditions": [
-                                        {
-                                            "fn": "isSet",
-                                            "argv": [
-                                                {
-                                                    "ref": "Region"
-                                                }
-                                            ]
-                                        }
-                                    ],
-                                    "type": "tree",
-                                    "rules": [
-                                        {
-                                            "conditions": [
-                                                {
-                                                    "fn": "aws.partition",
-                                                    "argv": [
-                                                        {
-                                                            "ref": "Region"
-                                                        }
-                                                    ],
-                                                    "assign": "PartitionResult"
-                                                }
-                                            ],
-                                            "type": "tree",
-                                            "rules": [
-                                                {
-                                                    "conditions": [
-                                                        {
-                                                            "fn": "stringEquals",
-                                                            "argv": [
-                                                                {
-                                                                    "fn": "getAttr",
-                                                                    "argv": [
-                                                                        {
-                                                                            "ref": "PartitionResult"
-                                                                        },
-                                                                        "name"
-                                                                    ]
-                                                                },
-                                                                "aws"
-                                                            ]
-                                                        },
-                                                        {
-                                                            "fn": "booleanEquals",
-                                                            "argv": [
-                                                                {
-                                                                    "ref": "UseFIPS"
-                                                                },
-                                                                false
-                                                            ]
-                                                        },
-                                                        {
-                                                            "fn": "booleanEquals",
-                                                            "argv": [
-                                                                {
-                                                                    "ref": "UseDualStack"
-                                                                },
-                                                                false
-                                                            ]
-                                                        }
-                                                    ],
-                                                    "endpoint": {
-                                                        "url": "https://cloudfront.amazonaws.com",
-                                                        "properties": {
-                                                            "authSchemes": [
-                                                                {
-                                                                    "name": "sigv4",
-                                                                    "signingName": "cloudfront",
-                                                                    "signingRegion": "us-east-1"
-                                                                }
-                                                            ]
-                                                        },
-                                                        "headers": {}
-                                                    },
-                                                    "type": "endpoint"
-                                                },
-                                                {
-                                                    "conditions": [
-                                                        {
-                                                            "fn": "stringEquals",
-                                                            "argv": [
-                                                                {
-                                                                    "fn": "getAttr",
-                                                                    "argv": [
-                                                                        {
-                                                                            "ref": "PartitionResult"
-                                                                        },
-                                                                        "name"
-                                                                    ]
-                                                                },
-                                                                "aws"
-                                                            ]
-                                                        },
-                                                        {
-                                                            "fn": "booleanEquals",
-                                                            "argv": [
-                                                                {
-                                                                    "ref": "UseFIPS"
-                                                                },
-                                                                true
-                                                            ]
-                                                        },
-                                                        {
-                                                            "fn": "booleanEquals",
-                                                            "argv": [
-                                                                {
-                                                                    "ref": "UseDualStack"
-                                                                },
-                                                                false
-                                                            ]
-                                                        }
-                                                    ],
-                                                    "endpoint": {
-                                                        "url": "https://cloudfront-fips.amazonaws.com",
-                                                        "properties": {
-                                                            "authSchemes": [
-                                                                {
-                                                                    "name": "sigv4",
-                                                                    "signingName": "cloudfront",
-                                                                    "signingRegion": "us-east-1"
-                                                                }
-                                                            ]
-                                                        },
-                                                        "headers": {}
-                                                    },
-                                                    "type": "endpoint"
-                                                },
-                                                {
-                                                    "conditions": [
-                                                        {
-                                                            "fn": "stringEquals",
-                                                            "argv": [
-                                                                {
-                                                                    "fn": "getAttr",
-                                                                    "argv": [
-                                                                        {
-                                                                            "ref": "PartitionResult"
-                                                                        },
-                                                                        "name"
-                                                                    ]
-                                                                },
-                                                                "aws-cn"
-                                                            ]
-                                                        },
-                                                        {
-                                                            "fn": "booleanEquals",
-                                                            "argv": [
-                                                                {
-                                                                    "ref": "UseFIPS"
-                                                                },
-                                                                false
-                                                            ]
-                                                        },
-                                                        {
-                                                            "fn": "booleanEquals",
-                                                            "argv": [
-                                                                {
-                                                                    "ref": "UseDualStack"
-                                                                },
-                                                                false
-                                                            ]
-                                                        }
-                                                    ],
-                                                    "endpoint": {
-                                                        "url": "https://cloudfront.cn-northwest-1.amazonaws.com.cn",
-                                                        "properties": {
-                                                            "authSchemes": [
-                                                                {
-                                                                    "name": "sigv4",
-                                                                    "signingName": "cloudfront",
-                                                                    "signingRegion": "cn-northwest-1"
-                                                                }
-                                                            ]
-                                                        },
-                                                        "headers": {}
-                                                    },
-                                                    "type": "endpoint"
-                                                },
-                                                {
-                                                    "conditions": [
-                                                        {
-                                                            "fn": "booleanEquals",
-                                                            "argv": [
-                                                                {
-                                                                    "ref": "UseFIPS"
-                                                                },
-                                                                true
-                                                            ]
-                                                        },
-                                                        {
-                                                            "fn": "booleanEquals",
-                                                            "argv": [
-                                                                {
-                                                                    "ref": "UseDualStack"
-                                                                },
-                                                                true
-                                                            ]
-                                                        }
-                                                    ],
-                                                    "type": "tree",
-                                                    "rules": [
-                                                        {
-                                                            "conditions": [
-                                                                {
-                                                                    "fn": "booleanEquals",
-                                                                    "argv": [
-                                                                        true,
-                                                                        {
-                                                                            "fn": "getAttr",
-                                                                            "argv": [
-                                                                                {
-                                                                                    "ref": "PartitionResult"
-                                                                                },
-                                                                                "supportsFIPS"
-                                                                            ]
-                                                                        }
-                                                                    ]
-                                                                },
-                                                                {
-                                                                    "fn": "booleanEquals",
-                                                                    "argv": [
-                                                                        true,
-                                                                        {
-                                                                            "fn": "getAttr",
-                                                                            "argv": [
-                                                                                {
-                                                                                    "ref": "PartitionResult"
-                                                                                },
-                                                                                "supportsDualStack"
-                                                                            ]
-                                                                        }
-                                                                    ]
-                                                                }
-                                                            ],
-                                                            "type": "tree",
-                                                            "rules": [
-                                                                {
-                                                                    "conditions": [],
-                                                                    "type": "tree",
-                                                                    "rules": [
-                                                                        {
-                                                                            "conditions": [],
-                                                                            "endpoint": {
-                                                                                "url": "https://cloudfront-fips.{Region}.{PartitionResult#dualStackDnsSuffix}",
-                                                                                "properties": {},
-                                                                                "headers": {}
-                                                                            },
-                                                                            "type": "endpoint"
-                                                                        }
-                                                                    ]
-                                                                }
-                                                            ]
-                                                        },
-                                                        {
-                                                            "conditions": [],
-                                                            "error": "FIPS and DualStack are enabled, but this partition does not support one or both",
-                                                            "type": "error"
-                                                        }
-                                                    ]
-                                                },
-                                                {
-                                                    "conditions": [
-                                                        {
-                                                            "fn": "booleanEquals",
-                                                            "argv": [
-                                                                {
-                                                                    "ref": "UseFIPS"
-                                                                },
-                                                                true
-                                                            ]
-                                                        }
-                                                    ],
-                                                    "type": "tree",
-                                                    "rules": [
-                                                        {
-                                                            "conditions": [
-                                                                {
-                                                                    "fn": "booleanEquals",
-                                                                    "argv": [
-                                                                        true,
-                                                                        {
-                                                                            "fn": "getAttr",
-                                                                            "argv": [
-                                                                                {
-                                                                                    "ref": "PartitionResult"
-                                                                                },
-                                                                                "supportsFIPS"
-                                                                            ]
-                                                                        }
-                                                                    ]
-                                                                }
-                                                            ],
-                                                            "type": "tree",
-                                                            "rules": [
-                                                                {
-                                                                    "conditions": [],
-                                                                    "type": "tree",
-                                                                    "rules": [
-                                                                        {
-                                                                            "conditions": [],
-                                                                            "endpoint": {
-                                                                                "url": "https://cloudfront-fips.{Region}.{PartitionResult#dnsSuffix}",
-                                                                                "properties": {},
-                                                                                "headers": {}
-                                                                            },
-                                                                            "type": "endpoint"
-                                                                        }
-                                                                    ]
-                                                                }
-                                                            ]
-                                                        },
-                                                        {
-                                                            "conditions": [],
-                                                            "error": "FIPS is enabled but this partition does not support FIPS",
-                                                            "type": "error"
-                                                        }
-                                                    ]
-                                                },
-                                                {
-                                                    "conditions": [
-                                                        {
-                                                            "fn": "booleanEquals",
-                                                            "argv": [
-                                                                {
-                                                                    "ref": "UseDualStack"
-                                                                },
-                                                                true
-                                                            ]
-                                                        }
-                                                    ],
-                                                    "type": "tree",
-                                                    "rules": [
-                                                        {
-                                                            "conditions": [
-                                                                {
-                                                                    "fn": "booleanEquals",
-                                                                    "argv": [
-                                                                        true,
-                                                                        {
-                                                                            "fn": "getAttr",
-                                                                            "argv": [
-                                                                                {
-                                                                                    "ref": "PartitionResult"
-                                                                                },
-                                                                                "supportsDualStack"
-                                                                            ]
-                                                                        }
-                                                                    ]
-                                                                }
-                                                            ],
-                                                            "type": "tree",
-                                                            "rules": [
-                                                                {
-                                                                    "conditions": [],
-                                                                    "type": "tree",
-                                                                    "rules": [
-                                                                        {
-                                                                            "conditions": [],
-                                                                            "endpoint": {
-                                                                                "url": "https://cloudfront.{Region}.{PartitionResult#dualStackDnsSuffix}",
-                                                                                "properties": {},
-                                                                                "headers": {}
-                                                                            },
-                                                                            "type": "endpoint"
-                                                                        }
-                                                                    ]
-                                                                }
-                                                            ]
-                                                        },
-                                                        {
-                                                            "conditions": [],
-                                                            "error": "DualStack is enabled but this partition does not support DualStack",
-                                                            "type": "error"
-                                                        }
-                                                    ]
-                                                },
-                                                {
-                                                    "conditions": [],
-                                                    "type": "tree",
-                                                    "rules": [
-                                                        {
-                                                            "conditions": [],
-                                                            "endpoint": {
-                                                                "url": "https://cloudfront.{Region}.{PartitionResult#dnsSuffix}",
-                                                                "properties": {},
-                                                                "headers": {}
-                                                            },
-                                                            "type": "endpoint"
-                                                        }
-                                                    ]
-                                                }
-                                            ]
-                                        }
-                                    ]
-                                },
-                                {
-                                    "conditions": [],
-                                    "error": "Invalid Configuration: Missing Region",
-                                    "type": "error"
-                                }
-                            ]
+                            "error": "Invalid Configuration: Missing Region",
+                            "type": "error"
                         }
                     ]
                 },
@@ -2805,6 +2769,9 @@
                     "target": "com.amazonaws.cloudfront#TooManyDistributionsAssociatedToKeyGroup"
                 },
                 {
+                    "target": "com.amazonaws.cloudfront#TooManyDistributionsAssociatedToOriginAccessControl"
+                },
+                {
                     "target": "com.amazonaws.cloudfront#TooManyDistributionsAssociatedToOriginRequestPolicy"
                 },
                 {
@@ -2854,7 +2821,7 @@
                 }
             ],
             "traits": {
-                "smithy.api#documentation": "<p>Creates a staging distribution using the configuration of the provided primary\n\t\t\tdistribution. A staging distribution is a copy of an existing distribution (called the\n\t\t\tprimary distribution) that you can use in a continuous deployment workflow.</p>\n         <p>After you create a staging distribution, you can use <code>UpdateDistribution</code>\n\t\t\tto modify the staging distribution's configuration. Then you can use\n\t\t\t\t<code>CreateContinuousDeploymentPolicy</code> to incrementally move traffic to the\n\t\t\tstaging distribution.</p>",
+                "smithy.api#documentation": "<p>Creates a staging distribution using the configuration of the provided primary\n\t\t\tdistribution. A staging distribution is a copy of an existing distribution (called the\n\t\t\tprimary distribution) that you can use in a continuous deployment workflow.</p>\n         <p>After you create a staging distribution, you can use <code>UpdateDistribution</code>\n\t\t\tto modify the staging distribution's configuration. Then you can use\n\t\t\t\t<code>CreateContinuousDeploymentPolicy</code> to incrementally move traffic to the\n\t\t\tstaging distribution.</p>\n         <p>This API operation requires the following IAM permissions:</p>\n         <ul>\n            <li>\n               <p>\n                  <a href=\"https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetDistribution.html\">GetDistribution</a>\n               </p>\n            </li>\n            <li>\n               <p>\n                  <a href=\"https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreateDistribution.html\">CreateDistribution</a>\n               </p>\n            </li>\n            <li>\n               <p>\n                  <a href=\"https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CopyDistribution.html\">CopyDistribution</a>\n               </p>\n            </li>\n         </ul>",
                 "smithy.api#http": {
                     "method": "POST",
                     "uri": "/2020-05-31/distribution/{PrimaryDistributionId}/copy",
@@ -2893,6 +2860,12 @@
                         "smithy.api#documentation": "<p>A value that uniquely identifies a request to create a resource. This helps to prevent\n\t\t\tCloudFront from creating a duplicate resource if you accidentally resubmit an identical\n\t\t\trequest.</p>",
                         "smithy.api#required": {}
                     }
+                },
+                "Enabled": {
+                    "target": "com.amazonaws.cloudfront#boolean",
+                    "traits": {
+                        "smithy.api#documentation": "<p>A Boolean flag to specify the state of the staging distribution when it's\n\t\t\tcreated. When you set this value to <code>True</code>, the staging\n\t\t\tdistribution is enabled. When you set this value to <code>False</code>, the\n\t\t\tstaging distribution is disabled.</p>\n         <p>If you omit this field, the default value is <code>True</code>.</p>"
+                    }
                 }
             },
             "traits": {
@@ -2922,6 +2895,9 @@
                         "smithy.api#httpHeader": "ETag"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.cloudfront#CreateCachePolicy": {
@@ -3008,6 +2984,9 @@
                         "smithy.api#httpHeader": "ETag"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.cloudfront#CreateCloudFrontOriginAccessIdentity": {
@@ -3088,7 +3067,8 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "<p>The returned result of the corresponding request.</p>"
+                "smithy.api#documentation": "<p>The returned result of the corresponding request.</p>",
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.cloudfront#CreateContinuousDeploymentPolicy": {
@@ -3169,6 +3149,9 @@
                         "smithy.api#httpHeader": "ETag"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.cloudfront#CreateDistribution": {
@@ -3429,7 +3412,8 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "<p>The returned result of the corresponding request.</p>"
+                "smithy.api#documentation": "<p>The returned result of the corresponding request.</p>",
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.cloudfront#CreateDistributionWithTags": {
@@ -3455,6 +3439,9 @@
                 },
                 {
                     "target": "com.amazonaws.cloudfront#IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior"
+                },
+                {
+                    "target": "com.amazonaws.cloudfront#IllegalOriginAccessConfiguration"
                 },
                 {
                     "target": "com.amazonaws.cloudfront#InconsistentQuantities"
@@ -3586,6 +3573,9 @@
                     "target": "com.amazonaws.cloudfront#TooManyDistributionsAssociatedToKeyGroup"
                 },
                 {
+                    "target": "com.amazonaws.cloudfront#TooManyDistributionsAssociatedToOriginAccessControl"
+                },
+                {
                     "target": "com.amazonaws.cloudfront#TooManyDistributionsAssociatedToOriginRequestPolicy"
                 },
                 {
@@ -3635,7 +3625,7 @@
                 }
             ],
             "traits": {
-                "smithy.api#documentation": "<p>Create a new distribution with tags.</p>",
+                "smithy.api#documentation": "<p>Create a new distribution with tags. This API operation requires the following IAM\n\t\t\tpermissions:</p>\n         <ul>\n            <li>\n               <p>\n                  <a href=\"https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreateDistribution.html\">CreateDistribution</a>\n               </p>\n            </li>\n            <li>\n               <p>\n                  <a href=\"https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_TagResource.html\">TagResource</a>\n               </p>\n            </li>\n         </ul>",
                 "smithy.api#http": {
                     "method": "POST",
                     "uri": "/2020-05-31/distribution?WithTags",
@@ -3687,7 +3677,8 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "<p>The returned result of the corresponding request.</p>"
+                "smithy.api#documentation": "<p>The returned result of the corresponding request.</p>",
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.cloudfront#CreateFieldLevelEncryptionConfig": {
@@ -3774,6 +3765,9 @@
                         "smithy.api#httpHeader": "ETag"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.cloudfront#CreateFieldLevelEncryptionProfile": {
@@ -3860,6 +3854,9 @@
                         "smithy.api#httpHeader": "ETag"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.cloudfront#CreateFunction": {
@@ -3949,6 +3946,9 @@
                         "smithy.api#httpHeader": "ETag"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.cloudfront#CreateInvalidation": {
@@ -4036,7 +4036,8 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "<p>The returned result of the corresponding request.</p>"
+                "smithy.api#documentation": "<p>The returned result of the corresponding request.</p>",
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.cloudfront#CreateKeyGroup": {
@@ -4111,6 +4112,9 @@
                         "smithy.api#httpHeader": "ETag"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.cloudfront#CreateMonitoringSubscription": {
@@ -4179,6 +4183,9 @@
                         "smithy.api#httpPayload": {}
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.cloudfront#CreateOriginAccessControl": {
@@ -4250,6 +4257,9 @@
                         "smithy.api#httpHeader": "ETag"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.cloudfront#CreateOriginRequestPolicy": {
@@ -4336,6 +4346,9 @@
                         "smithy.api#httpHeader": "ETag"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.cloudfront#CreatePublicKey": {
@@ -4407,6 +4420,9 @@
                         "smithy.api#httpHeader": "ETag"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.cloudfront#CreateRealtimeLogConfig": {
@@ -4485,6 +4501,9 @@
                         "smithy.api#documentation": "<p>A real-time log configuration.</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.cloudfront#CreateResponseHeadersPolicy": {
@@ -4571,6 +4590,9 @@
                         "smithy.api#httpHeader": "ETag"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.cloudfront#CreateStreamingDistribution": {
@@ -4675,7 +4697,8 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "<p>The returned result of the corresponding request.</p>"
+                "smithy.api#documentation": "<p>The returned result of the corresponding request.</p>",
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.cloudfront#CreateStreamingDistributionWithTags": {
@@ -4783,7 +4806,8 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "<p>The returned result of the corresponding request.</p>"
+                "smithy.api#documentation": "<p>The returned result of the corresponding request.</p>",
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.cloudfront#CustomErrorResponse": {
@@ -5547,7 +5571,10 @@
         },
         "com.amazonaws.cloudfront#DeleteMonitoringSubscriptionResult": {
             "type": "structure",
-            "members": {}
+            "members": {},
+            "traits": {
+                "smithy.api#output": {}
+            }
         },
         "com.amazonaws.cloudfront#DeleteOriginAccessControl": {
             "type": "operation",
@@ -5957,6 +5984,9 @@
                         "smithy.api#httpHeader": "ETag"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.cloudfront#Distribution": {
@@ -7149,7 +7179,7 @@
                 "Runtime": {
                     "target": "com.amazonaws.cloudfront#FunctionRuntime",
                     "traits": {
-                        "smithy.api#documentation": "<p>The function's runtime environment. The only valid value is\n\t\t\t\t<code>cloudfront-js-1.0</code>.</p>",
+                        "smithy.api#documentation": "<p>The function's runtime environment verion.</p>",
                         "smithy.api#required": {}
                     }
                 }
@@ -7275,6 +7305,12 @@
                     "target": "smithy.api#Unit",
                     "traits": {
                         "smithy.api#enumValue": "cloudfront-js-1.0"
+                    }
+                },
+                "cloudfront_js_2_0": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "cloudfront-js-2.0"
                     }
                 }
             }
@@ -7487,6 +7523,9 @@
                         "smithy.api#httpHeader": "ETag"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.cloudfront#GetCachePolicyRequest": {
@@ -7522,6 +7561,9 @@
                         "smithy.api#httpHeader": "ETag"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.cloudfront#GetCloudFrontOriginAccessIdentity": {
@@ -7610,7 +7652,8 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "<p>The returned result of the corresponding request.</p>"
+                "smithy.api#documentation": "<p>The returned result of the corresponding request.</p>",
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.cloudfront#GetCloudFrontOriginAccessIdentityRequest": {
@@ -7649,7 +7692,8 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "<p>The returned result of the corresponding request.</p>"
+                "smithy.api#documentation": "<p>The returned result of the corresponding request.</p>",
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.cloudfront#GetContinuousDeploymentPolicy": {
@@ -7734,6 +7778,9 @@
                         "smithy.api#httpHeader": "ETag"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.cloudfront#GetContinuousDeploymentPolicyRequest": {
@@ -7769,6 +7816,9 @@
                         "smithy.api#httpHeader": "ETag"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.cloudfront#GetDistribution": {
@@ -7875,7 +7925,8 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "<p>The returned result of the corresponding request.</p>"
+                "smithy.api#documentation": "<p>The returned result of the corresponding request.</p>",
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.cloudfront#GetDistributionRequest": {
@@ -7914,7 +7965,8 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "<p>The returned result of the corresponding request.</p>"
+                "smithy.api#documentation": "<p>The returned result of the corresponding request.</p>",
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.cloudfront#GetFieldLevelEncryption": {
@@ -8000,6 +8052,9 @@
                         "smithy.api#httpHeader": "ETag"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.cloudfront#GetFieldLevelEncryptionProfile": {
@@ -8085,6 +8140,9 @@
                         "smithy.api#httpHeader": "ETag"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.cloudfront#GetFieldLevelEncryptionProfileRequest": {
@@ -8120,6 +8178,9 @@
                         "smithy.api#httpHeader": "ETag"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.cloudfront#GetFieldLevelEncryptionRequest": {
@@ -8155,6 +8216,9 @@
                         "smithy.api#httpHeader": "ETag"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.cloudfront#GetFunction": {
@@ -8229,6 +8293,9 @@
                         "smithy.api#httpHeader": "Content-Type"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.cloudfront#GetInvalidation": {
@@ -8314,7 +8381,8 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "<p>The returned result of the corresponding request.</p>"
+                "smithy.api#documentation": "<p>The returned result of the corresponding request.</p>",
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.cloudfront#GetKeyGroup": {
@@ -8394,6 +8462,9 @@
                         "smithy.api#httpHeader": "ETag"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.cloudfront#GetKeyGroupRequest": {
@@ -8429,6 +8500,9 @@
                         "smithy.api#httpHeader": "ETag"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.cloudfront#GetMonitoringSubscription": {
@@ -8488,6 +8562,9 @@
                         "smithy.api#httpPayload": {}
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.cloudfront#GetOriginAccessControl": {
@@ -8573,6 +8650,9 @@
                         "smithy.api#httpHeader": "ETag"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.cloudfront#GetOriginAccessControlRequest": {
@@ -8608,6 +8688,9 @@
                         "smithy.api#httpHeader": "ETag"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.cloudfront#GetOriginRequestPolicy": {
@@ -8693,6 +8776,9 @@
                         "smithy.api#httpHeader": "ETag"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.cloudfront#GetOriginRequestPolicyRequest": {
@@ -8728,6 +8814,9 @@
                         "smithy.api#httpHeader": "ETag"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.cloudfront#GetPublicKey": {
@@ -8813,6 +8902,9 @@
                         "smithy.api#httpHeader": "ETag"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.cloudfront#GetPublicKeyRequest": {
@@ -8848,6 +8940,9 @@
                         "smithy.api#httpHeader": "ETag"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.cloudfront#GetRealtimeLogConfig": {
@@ -8907,6 +9002,9 @@
                         "smithy.api#documentation": "<p>A real-time log configuration.</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.cloudfront#GetResponseHeadersPolicy": {
@@ -8992,6 +9090,9 @@
                         "smithy.api#httpHeader": "ETag"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.cloudfront#GetResponseHeadersPolicyRequest": {
@@ -9027,6 +9128,9 @@
                         "smithy.api#httpHeader": "ETag"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.cloudfront#GetStreamingDistribution": {
@@ -9133,7 +9237,8 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "<p>The returned result of the corresponding request.</p>"
+                "smithy.api#documentation": "<p>The returned result of the corresponding request.</p>",
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.cloudfront#GetStreamingDistributionRequest": {
@@ -9172,7 +9277,8 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "<p>The returned result of the corresponding request.</p>"
+                "smithy.api#documentation": "<p>The returned result of the corresponding request.</p>",
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.cloudfront#HeaderList": {
@@ -10161,6 +10267,9 @@
                         "smithy.api#httpPayload": {}
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.cloudfront#ListCloudFrontOriginAccessIdentities": {
@@ -10226,7 +10335,8 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "<p>The returned result of the corresponding request.</p>"
+                "smithy.api#documentation": "<p>The returned result of the corresponding request.</p>",
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.cloudfront#ListConflictingAliases": {
@@ -10302,6 +10412,9 @@
                         "smithy.api#httpPayload": {}
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.cloudfront#ListContinuousDeploymentPolicies": {
@@ -10364,6 +10477,9 @@
                         "smithy.api#httpPayload": {}
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.cloudfront#ListDistributions": {
@@ -10462,6 +10578,9 @@
                         "smithy.api#httpPayload": {}
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.cloudfront#ListDistributionsByKeyGroup": {
@@ -10528,6 +10647,9 @@
                         "smithy.api#httpPayload": {}
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.cloudfront#ListDistributionsByOriginRequestPolicyId": {
@@ -10598,6 +10720,9 @@
                         "smithy.api#httpPayload": {}
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.cloudfront#ListDistributionsByRealtimeLogConfig": {
@@ -10663,6 +10788,9 @@
                         "smithy.api#httpPayload": {}
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.cloudfront#ListDistributionsByResponseHeadersPolicyId": {
@@ -10732,6 +10860,9 @@
                         "smithy.api#httpPayload": {}
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.cloudfront#ListDistributionsByWebACLId": {
@@ -10802,7 +10933,8 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "<p>The response to a request to list the distributions that are associated with a\n\t\t\tspecified WAF web ACL.</p>"
+                "smithy.api#documentation": "<p>The response to a request to list the distributions that are associated with a\n\t\t\tspecified WAF web ACL.</p>",
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.cloudfront#ListDistributionsRequest": {
@@ -10840,7 +10972,8 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "<p>The returned result of the corresponding request.</p>"
+                "smithy.api#documentation": "<p>The returned result of the corresponding request.</p>",
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.cloudfront#ListFieldLevelEncryptionConfigs": {
@@ -10897,6 +11030,9 @@
                         "smithy.api#httpPayload": {}
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.cloudfront#ListFieldLevelEncryptionProfiles": {
@@ -10953,6 +11089,9 @@
                         "smithy.api#httpPayload": {}
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.cloudfront#ListFunctions": {
@@ -11019,6 +11158,9 @@
                         "smithy.api#httpPayload": {}
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.cloudfront#ListInvalidations": {
@@ -11098,7 +11240,8 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "<p>The returned result of the corresponding request.</p>"
+                "smithy.api#documentation": "<p>The returned result of the corresponding request.</p>",
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.cloudfront#ListKeyGroups": {
@@ -11155,6 +11298,9 @@
                         "smithy.api#httpPayload": {}
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.cloudfront#ListOriginAccessControls": {
@@ -11211,6 +11357,9 @@
                         "smithy.api#httpPayload": {}
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.cloudfront#ListOriginRequestPolicies": {
@@ -11280,6 +11429,9 @@
                         "smithy.api#httpPayload": {}
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.cloudfront#ListPublicKeys": {
@@ -11336,6 +11488,9 @@
                         "smithy.api#httpPayload": {}
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.cloudfront#ListRealtimeLogConfigs": {
@@ -11398,6 +11553,9 @@
                         "smithy.api#httpPayload": {}
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.cloudfront#ListResponseHeadersPolicies": {
@@ -11467,6 +11625,9 @@
                         "smithy.api#httpPayload": {}
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.cloudfront#ListStreamingDistributions": {
@@ -11532,7 +11693,8 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "<p>The returned result of the corresponding request.</p>"
+                "smithy.api#documentation": "<p>The returned result of the corresponding request.</p>",
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.cloudfront#ListTagsForResource": {
@@ -11596,7 +11758,8 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "<p>The returned result of the corresponding request.</p>"
+                "smithy.api#documentation": "<p>The returned result of the corresponding request.</p>",
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.cloudfront#LocationList": {
@@ -13287,6 +13450,9 @@
                         "smithy.api#httpPayload": {}
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.cloudfront#QueryArgProfile": {
@@ -15197,6 +15363,9 @@
                         "smithy.api#httpPayload": {}
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.cloudfront#TestResult": {
@@ -16009,7 +16178,7 @@
                 "Enabled": {
                     "target": "com.amazonaws.cloudfront#boolean",
                     "traits": {
-                        "smithy.api#documentation": "<p>This field is <code>true</code> if any of the Amazon Web Services accounts have public keys that\n\t\t\tCloudFront can use to verify the signatures of signed URLs and signed cookies. If not, this\n\t\t\tfield is <code>false</code>.</p>",
+                        "smithy.api#documentation": "<p>This field is <code>true</code> if any of the Amazon Web Services accounts in the list are configured as\n\t\t\ttrusted signers. If not, this field is <code>false</code>.</p>",
                         "smithy.api#required": {}
                     }
                 },
@@ -16202,6 +16371,9 @@
                         "smithy.api#httpHeader": "ETag"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.cloudfront#UpdateCloudFrontOriginAccessIdentity": {
@@ -16299,7 +16471,8 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "<p>The returned result of the corresponding request.</p>"
+                "smithy.api#documentation": "<p>The returned result of the corresponding request.</p>",
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.cloudfront#UpdateContinuousDeploymentPolicy": {
@@ -16391,6 +16564,9 @@
                         "smithy.api#httpHeader": "ETag"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.cloudfront#UpdateDistribution": {
@@ -16550,6 +16726,9 @@
                     "target": "com.amazonaws.cloudfront#TooManyDistributionsAssociatedToKeyGroup"
                 },
                 {
+                    "target": "com.amazonaws.cloudfront#TooManyDistributionsAssociatedToOriginAccessControl"
+                },
+                {
                     "target": "com.amazonaws.cloudfront#TooManyDistributionsAssociatedToOriginRequestPolicy"
                 },
                 {
@@ -16659,7 +16838,8 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "<p>The returned result of the corresponding request.</p>"
+                "smithy.api#documentation": "<p>The returned result of the corresponding request.</p>",
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.cloudfront#UpdateDistributionWithStagingConfig": {
@@ -16804,6 +16984,9 @@
                     "target": "com.amazonaws.cloudfront#TooManyDistributionsAssociatedToKeyGroup"
                 },
                 {
+                    "target": "com.amazonaws.cloudfront#TooManyDistributionsAssociatedToOriginAccessControl"
+                },
+                {
                     "target": "com.amazonaws.cloudfront#TooManyDistributionsAssociatedToOriginRequestPolicy"
                 },
                 {
@@ -16853,7 +17036,7 @@
                 }
             ],
             "traits": {
-                "smithy.api#documentation": "<p>Copies the staging distribution's configuration to its corresponding primary\n\t\t\tdistribution. The primary distribution retains its <code>Aliases</code> (also known as\n\t\t\talternate domain names or CNAMEs) and <code>ContinuousDeploymentPolicyId</code> value,\n\t\t\tbut otherwise its configuration is overwritten to match the staging distribution.</p>\n         <p>You can use this operation in a continuous deployment workflow after you have tested\n\t\t\tconfiguration changes on the staging distribution. After using a continuous deployment\n\t\t\tpolicy to move a portion of your domain name's traffic to the staging distribution and\n\t\t\tverifying that it works as intended, you can use this operation to copy the staging\n\t\t\tdistribution's configuration to the primary distribution. This action will disable the\n\t\t\tcontinuous deployment policy and move your domain's traffic back to the primary distribution.</p>",
+                "smithy.api#documentation": "<p>Copies the staging distribution's configuration to its corresponding primary\n\t\t\tdistribution. The primary distribution retains its <code>Aliases</code> (also known as\n\t\t\talternate domain names or CNAMEs) and <code>ContinuousDeploymentPolicyId</code> value,\n\t\t\tbut otherwise its configuration is overwritten to match the staging distribution.</p>\n         <p>You can use this operation in a continuous deployment workflow after you have tested\n\t\t\tconfiguration changes on the staging distribution. After using a continuous deployment\n\t\t\tpolicy to move a portion of your domain name's traffic to the staging distribution and\n\t\t\tverifying that it works as intended, you can use this operation to copy the staging\n\t\t\tdistribution's configuration to the primary distribution. This action will disable the\n\t\t\tcontinuous deployment policy and move your domain's traffic back to the primary distribution.</p>\n         <p>This API operation requires the following IAM permissions:</p>\n         <ul>\n            <li>\n               <p>\n                  <a href=\"https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetDistribution.html\">GetDistribution</a>\n               </p>\n            </li>\n            <li>\n               <p>\n                  <a href=\"https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.html\">UpdateDistribution</a>\n               </p>\n            </li>\n         </ul>",
                 "smithy.api#http": {
                     "method": "PUT",
                     "uri": "/2020-05-31/distribution/{Id}/promote-staging-config",
@@ -16907,6 +17090,9 @@
                         "smithy.api#httpHeader": "ETag"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.cloudfront#UpdateFieldLevelEncryptionConfig": {
@@ -17010,6 +17196,9 @@
                         "smithy.api#httpHeader": "ETag"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.cloudfront#UpdateFieldLevelEncryptionProfile": {
@@ -17116,6 +17305,9 @@
                         "smithy.api#httpHeader": "ETag"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.cloudfront#UpdateFunction": {
@@ -17210,6 +17402,9 @@
                         "smithy.api#httpHeader": "ETtag"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.cloudfront#UpdateKeyGroup": {
@@ -17298,6 +17493,9 @@
                         "smithy.api#httpHeader": "ETag"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.cloudfront#UpdateOriginAccessControl": {
@@ -17389,6 +17587,9 @@
                         "smithy.api#httpHeader": "ETag"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.cloudfront#UpdateOriginRequestPolicy": {
@@ -17492,6 +17693,9 @@
                         "smithy.api#httpHeader": "ETag"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.cloudfront#UpdatePublicKey": {
@@ -17583,6 +17787,9 @@
                         "smithy.api#httpHeader": "ETag"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.cloudfront#UpdateRealtimeLogConfig": {
@@ -17660,6 +17867,9 @@
                         "smithy.api#documentation": "<p>A real-time log configuration.</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.cloudfront#UpdateResponseHeadersPolicy": {
@@ -17763,6 +17973,9 @@
                         "smithy.api#httpHeader": "ETag"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.cloudfront#UpdateStreamingDistribution": {
@@ -17878,7 +18091,8 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "<p>The returned result of the corresponding request.</p>"
+                "smithy.api#documentation": "<p>The returned result of the corresponding request.</p>",
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.cloudfront#ViewerCertificate": {
