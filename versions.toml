@@ -2276,6 +2276,10 @@ source_hash = 'dee08c00def8c2f4b739fa03330c35ddcdd10ef2a3009d3cb70bc90a51796497'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = 'c465ec640d900e5c4c5e409be245c7c66c40f142819556b4759403c9b887eaaf'
+
+[release]
+tag = 'release-2023-09-22'
+
 [release.crates]
 aws-sdk-appconfig = '0.31.2'
 aws-sdk-apprunner = '0.31.2'
