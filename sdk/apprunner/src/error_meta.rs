@@ -818,6 +818,43 @@ impl From<crate::operation::list_services::ListServicesError> for Error {
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_services_for_auto_scaling_configuration::ListServicesForAutoScalingConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::list_services_for_auto_scaling_configuration::ListServicesForAutoScalingConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_services_for_auto_scaling_configuration::ListServicesForAutoScalingConfigurationError> for Error {
+    fn from(err: crate::operation::list_services_for_auto_scaling_configuration::ListServicesForAutoScalingConfigurationError) -> Self {
+        match err {
+            crate::operation::list_services_for_auto_scaling_configuration::ListServicesForAutoScalingConfigurationError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
+            crate::operation::list_services_for_auto_scaling_configuration::ListServicesForAutoScalingConfigurationError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::list_services_for_auto_scaling_configuration::ListServicesForAutoScalingConfigurationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_services_for_auto_scaling_configuration::ListServicesForAutoScalingConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_tags_for_resource::ListTagsForResourceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1040,6 +1077,43 @@ impl From<crate::operation::untag_resource::UntagResourceError> for Error {
             crate::operation::untag_resource::UntagResourceError::InvalidStateException(inner) => Error::InvalidStateException(inner),
             crate::operation::untag_resource::UntagResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::untag_resource::UntagResourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_default_auto_scaling_configuration::UpdateDefaultAutoScalingConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::update_default_auto_scaling_configuration::UpdateDefaultAutoScalingConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::update_default_auto_scaling_configuration::UpdateDefaultAutoScalingConfigurationError> for Error {
+    fn from(err: crate::operation::update_default_auto_scaling_configuration::UpdateDefaultAutoScalingConfigurationError) -> Self {
+        match err {
+            crate::operation::update_default_auto_scaling_configuration::UpdateDefaultAutoScalingConfigurationError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
+            crate::operation::update_default_auto_scaling_configuration::UpdateDefaultAutoScalingConfigurationError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::update_default_auto_scaling_configuration::UpdateDefaultAutoScalingConfigurationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_default_auto_scaling_configuration::UpdateDefaultAutoScalingConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

@@ -22,6 +22,9 @@ impl UpdateMediaStorageConfigurationInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateMediaStorageConfiguration`.
 ///
+/// <important>
+/// <p>This API is related to <a href="https://docs.aws.amazon.com/kinesisvideostreams-webrtc-dg/latest/devguide/webrtc-ingestion.html">WebRTC Ingestion</a> and is only available in the <code>us-west-2</code> region.</p>
+/// </important>
 /// <p>Associates a <code>SignalingChannel</code> to a stream to store the media. There are two signaling modes that can specified :</p>
 /// <ul>
 /// <li> <p>If the <code>StorageStatus</code> is disabled, no data will be stored, and the <code>StreamARN</code> parameter will not be needed. </p> </li>

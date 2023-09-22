@@ -37,6 +37,8 @@ pub use crate::types::_code_configuration_values::CodeConfigurationValuesBuilder
 
 pub use crate::types::_source_code_version::SourceCodeVersionBuilder;
 
+pub use crate::types::_auto_scaling_configuration::AutoScalingConfigurationBuilder;
+
 pub use crate::types::_tag::TagBuilder;
 
 pub use crate::types::_vpc_ingress_connection_summary::VpcIngressConnectionSummaryBuilder;
@@ -62,7 +64,5 @@ pub use crate::types::_certificate_validation_record::CertificateValidationRecor
 pub use crate::types::_observability_configuration::ObservabilityConfigurationBuilder;
 
 pub use crate::types::_trace_configuration::TraceConfigurationBuilder;
-
-pub use crate::types::_auto_scaling_configuration::AutoScalingConfigurationBuilder;
 
 pub use crate::types::_connection::ConnectionBuilder;

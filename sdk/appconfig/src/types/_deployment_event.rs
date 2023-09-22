@@ -8,7 +8,12 @@ pub struct DeploymentEvent {
     pub event_type: ::std::option::Option<crate::types::DeploymentEventType>,
     /// <p>The entity that triggered the deployment event. Events can be triggered by a user, AppConfig, an Amazon CloudWatch alarm, or an internal error.</p>
     pub triggered_by: ::std::option::Option<crate::types::TriggeredBy>,
-    /// <p>A description of the deployment event. Descriptions include, but are not limited to, the user account or the Amazon CloudWatch alarm ARN that initiated a rollback, the percentage of hosts that received the deployment, or in the case of an internal error, a recommendation to attempt a new deployment.</p>
+    /// <p>A description of the deployment event. Descriptions include, but are not limited to, the following:</p>
+    /// <ul>
+    /// <li> <p>The Amazon Web Services account or the Amazon CloudWatch alarm ARN that initiated a rollback.</p> </li>
+    /// <li> <p>The percentage of hosts that received the deployment.</p> </li>
+    /// <li> <p>A recommendation to attempt a new deployment (in the case of an internal error).</p> </li>
+    /// </ul>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The list of extensions that were invoked as part of the deployment.</p>
     pub action_invocations: ::std::option::Option<::std::vec::Vec<crate::types::ActionInvocation>>,
@@ -24,7 +29,12 @@ impl DeploymentEvent {
     pub fn triggered_by(&self) -> ::std::option::Option<&crate::types::TriggeredBy> {
         self.triggered_by.as_ref()
     }
-    /// <p>A description of the deployment event. Descriptions include, but are not limited to, the user account or the Amazon CloudWatch alarm ARN that initiated a rollback, the percentage of hosts that received the deployment, or in the case of an internal error, a recommendation to attempt a new deployment.</p>
+    /// <p>A description of the deployment event. Descriptions include, but are not limited to, the following:</p>
+    /// <ul>
+    /// <li> <p>The Amazon Web Services account or the Amazon CloudWatch alarm ARN that initiated a rollback.</p> </li>
+    /// <li> <p>The percentage of hosts that received the deployment.</p> </li>
+    /// <li> <p>A recommendation to attempt a new deployment (in the case of an internal error).</p> </li>
+    /// </ul>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
@@ -83,17 +93,32 @@ impl DeploymentEventBuilder {
     pub fn get_triggered_by(&self) -> &::std::option::Option<crate::types::TriggeredBy> {
         &self.triggered_by
     }
-    /// <p>A description of the deployment event. Descriptions include, but are not limited to, the user account or the Amazon CloudWatch alarm ARN that initiated a rollback, the percentage of hosts that received the deployment, or in the case of an internal error, a recommendation to attempt a new deployment.</p>
+    /// <p>A description of the deployment event. Descriptions include, but are not limited to, the following:</p>
+    /// <ul>
+    /// <li> <p>The Amazon Web Services account or the Amazon CloudWatch alarm ARN that initiated a rollback.</p> </li>
+    /// <li> <p>The percentage of hosts that received the deployment.</p> </li>
+    /// <li> <p>A recommendation to attempt a new deployment (in the case of an internal error).</p> </li>
+    /// </ul>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A description of the deployment event. Descriptions include, but are not limited to, the user account or the Amazon CloudWatch alarm ARN that initiated a rollback, the percentage of hosts that received the deployment, or in the case of an internal error, a recommendation to attempt a new deployment.</p>
+    /// <p>A description of the deployment event. Descriptions include, but are not limited to, the following:</p>
+    /// <ul>
+    /// <li> <p>The Amazon Web Services account or the Amazon CloudWatch alarm ARN that initiated a rollback.</p> </li>
+    /// <li> <p>The percentage of hosts that received the deployment.</p> </li>
+    /// <li> <p>A recommendation to attempt a new deployment (in the case of an internal error).</p> </li>
+    /// </ul>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
-    /// <p>A description of the deployment event. Descriptions include, but are not limited to, the user account or the Amazon CloudWatch alarm ARN that initiated a rollback, the percentage of hosts that received the deployment, or in the case of an internal error, a recommendation to attempt a new deployment.</p>
+    /// <p>A description of the deployment event. Descriptions include, but are not limited to, the following:</p>
+    /// <ul>
+    /// <li> <p>The Amazon Web Services account or the Amazon CloudWatch alarm ARN that initiated a rollback.</p> </li>
+    /// <li> <p>The percentage of hosts that received the deployment.</p> </li>
+    /// <li> <p>A recommendation to attempt a new deployment (in the case of an internal error).</p> </li>
+    /// </ul>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }

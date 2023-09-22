@@ -59,6 +59,16 @@ pub(crate) fn reflens_list_services_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_services_for_auto_scaling_configuration_output_next_token(
+    input: &crate::operation::list_services_for_auto_scaling_configuration::ListServicesForAutoScalingConfigurationOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_vpc_connectors_output_next_token(
     input: &crate::operation::list_vpc_connectors::ListVpcConnectorsOutput,
 ) -> ::std::option::Option<&::std::string::String> {

@@ -10,7 +10,7 @@ pub struct ImageGenerationConfiguration {
     pub image_selector_type: ::std::option::Option<crate::types::ImageSelectorType>,
     /// <p>The structure that contains the information required to deliver images to a customer.</p>
     pub destination_config: ::std::option::Option<crate::types::ImageGenerationDestinationConfig>,
-    /// <p>The time interval in milliseconds (ms) at which the images need to be generated from the stream. The minimum value that can be provided is 33 ms, because a camera that generates content at 30 FPS would create a frame every 33.3 ms. If the timestamp range is less than the sampling interval, the Image from the <code>StartTimestamp</code> will be returned if available. </p>
+    /// <p>The time interval in milliseconds (ms) at which the images need to be generated from the stream. The minimum value that can be provided is 200 ms. If the timestamp range is less than the sampling interval, the Image from the <code>StartTimestamp</code> will be returned if available. </p>
     pub sampling_interval: ::std::option::Option<i32>,
     /// <p>The accepted image format.</p>
     pub format: ::std::option::Option<crate::types::Format>,
@@ -34,7 +34,7 @@ impl ImageGenerationConfiguration {
     pub fn destination_config(&self) -> ::std::option::Option<&crate::types::ImageGenerationDestinationConfig> {
         self.destination_config.as_ref()
     }
-    /// <p>The time interval in milliseconds (ms) at which the images need to be generated from the stream. The minimum value that can be provided is 33 ms, because a camera that generates content at 30 FPS would create a frame every 33.3 ms. If the timestamp range is less than the sampling interval, the Image from the <code>StartTimestamp</code> will be returned if available. </p>
+    /// <p>The time interval in milliseconds (ms) at which the images need to be generated from the stream. The minimum value that can be provided is 200 ms. If the timestamp range is less than the sampling interval, the Image from the <code>StartTimestamp</code> will be returned if available. </p>
     pub fn sampling_interval(&self) -> ::std::option::Option<i32> {
         self.sampling_interval
     }
@@ -118,17 +118,17 @@ impl ImageGenerationConfigurationBuilder {
     pub fn get_destination_config(&self) -> &::std::option::Option<crate::types::ImageGenerationDestinationConfig> {
         &self.destination_config
     }
-    /// <p>The time interval in milliseconds (ms) at which the images need to be generated from the stream. The minimum value that can be provided is 33 ms, because a camera that generates content at 30 FPS would create a frame every 33.3 ms. If the timestamp range is less than the sampling interval, the Image from the <code>StartTimestamp</code> will be returned if available. </p>
+    /// <p>The time interval in milliseconds (ms) at which the images need to be generated from the stream. The minimum value that can be provided is 200 ms. If the timestamp range is less than the sampling interval, the Image from the <code>StartTimestamp</code> will be returned if available. </p>
     pub fn sampling_interval(mut self, input: i32) -> Self {
         self.sampling_interval = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The time interval in milliseconds (ms) at which the images need to be generated from the stream. The minimum value that can be provided is 33 ms, because a camera that generates content at 30 FPS would create a frame every 33.3 ms. If the timestamp range is less than the sampling interval, the Image from the <code>StartTimestamp</code> will be returned if available. </p>
+    /// <p>The time interval in milliseconds (ms) at which the images need to be generated from the stream. The minimum value that can be provided is 200 ms. If the timestamp range is less than the sampling interval, the Image from the <code>StartTimestamp</code> will be returned if available. </p>
     pub fn set_sampling_interval(mut self, input: ::std::option::Option<i32>) -> Self {
         self.sampling_interval = input;
         self
     }
-    /// <p>The time interval in milliseconds (ms) at which the images need to be generated from the stream. The minimum value that can be provided is 33 ms, because a camera that generates content at 30 FPS would create a frame every 33.3 ms. If the timestamp range is less than the sampling interval, the Image from the <code>StartTimestamp</code> will be returned if available. </p>
+    /// <p>The time interval in milliseconds (ms) at which the images need to be generated from the stream. The minimum value that can be provided is 200 ms. If the timestamp range is less than the sampling interval, the Image from the <code>StartTimestamp</code> will be returned if available. </p>
     pub fn get_sampling_interval(&self) -> &::std::option::Option<i32> {
         &self.sampling_interval
     }

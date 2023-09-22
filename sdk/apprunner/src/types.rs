@@ -19,6 +19,8 @@ pub use crate::types::_egress_type::EgressType;
 
 pub use crate::types::_auto_scaling_configuration_summary::AutoScalingConfigurationSummary;
 
+pub use crate::types::_auto_scaling_configuration_status::AutoScalingConfigurationStatus;
+
 pub use crate::types::_health_check_configuration::HealthCheckConfiguration;
 
 pub use crate::types::_health_check_protocol::HealthCheckProtocol;
@@ -52,6 +54,8 @@ pub use crate::types::_source_code_version::SourceCodeVersion;
 pub use crate::types::_source_code_version_type::SourceCodeVersionType;
 
 pub use crate::types::_service_status::ServiceStatus;
+
+pub use crate::types::_auto_scaling_configuration::AutoScalingConfiguration;
 
 pub use crate::types::_tag::Tag;
 
@@ -96,10 +100,6 @@ pub use crate::types::_observability_configuration_status::ObservabilityConfigur
 pub use crate::types::_trace_configuration::TraceConfiguration;
 
 pub use crate::types::_tracing_vendor::TracingVendor;
-
-pub use crate::types::_auto_scaling_configuration::AutoScalingConfiguration;
-
-pub use crate::types::_auto_scaling_configuration_status::AutoScalingConfigurationStatus;
 
 pub use crate::types::_connection::Connection;
 

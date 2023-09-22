@@ -85,6 +85,13 @@ where
                                 ::aws_smithy_types::date_time::Format::DateTimeWithOffset,
                             )?);
                         }
+                        "VersionLabel" => {
+                            builder = builder.set_version_label(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

@@ -284,6 +284,13 @@ pub enum CreateConfigurationProfileError {
     InternalServerException(crate::types::error::InternalServerException),
     /// <p>The requested resource could not be found.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
+    /// <p>The number of one more AppConfig resources exceeds the maximum allowed. Verify that your environment doesn't exceed the following service quotas:</p>
+    /// <p>Applications: 100 max</p>
+    /// <p>Deployment strategies: 20 max</p>
+    /// <p>Configuration profiles: 100 max per application</p>
+    /// <p>Environments: 20 max per application</p>
+    /// <p>To resolve this issue, you can delete one or more resources and try again. Or, you can request a quota increase. For more information about quotas and to request an increase, see <a href="https://docs.aws.amazon.com/general/latest/gr/appconfig.html#limits_appconfig">Service quotas for AppConfig</a> in the Amazon Web Services General Reference.</p>
+    ServiceQuotaExceededException(crate::types::error::ServiceQuotaExceededException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(::aws_smithy_types::error::Unhandled),
 }
@@ -305,6 +312,7 @@ impl ::std::fmt::Display for CreateConfigurationProfileError {
             Self::BadRequestException(_inner) => _inner.fmt(f),
             Self::InternalServerException(_inner) => _inner.fmt(f),
             Self::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            Self::ServiceQuotaExceededException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -315,6 +323,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for CreateConfigu
             Self::BadRequestException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InternalServerException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ResourceNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ServiceQuotaExceededException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
         }
     }
@@ -354,6 +363,7 @@ impl CreateConfigurationProfileError {
             Self::BadRequestException(e) => e.meta(),
             Self::InternalServerException(e) => e.meta(),
             Self::ResourceNotFoundException(e) => e.meta(),
+            Self::ServiceQuotaExceededException(e) => e.meta(),
             Self::Unhandled(e) => e.meta(),
         }
     }
@@ -369,6 +379,10 @@ impl CreateConfigurationProfileError {
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(self, Self::ResourceNotFoundException(_))
     }
+    /// Returns `true` if the error kind is `CreateConfigurationProfileError::ServiceQuotaExceededException`.
+    pub fn is_service_quota_exceeded_exception(&self) -> bool {
+        matches!(self, Self::ServiceQuotaExceededException(_))
+    }
 }
 impl ::std::error::Error for CreateConfigurationProfileError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
@@ -376,6 +390,7 @@ impl ::std::error::Error for CreateConfigurationProfileError {
             Self::BadRequestException(_inner) => ::std::option::Option::Some(_inner),
             Self::InternalServerException(_inner) => ::std::option::Option::Some(_inner),
             Self::ResourceNotFoundException(_inner) => ::std::option::Option::Some(_inner),
+            Self::ServiceQuotaExceededException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(_inner),
         }
     }

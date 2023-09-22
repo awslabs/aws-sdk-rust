@@ -21,5 +21,8 @@ pub fn ser_put_query_definition_input(
     if let Some(var_6) = &input.query_string {
         object.key("queryString").string(var_6.as_str());
     }
+    if let Some(var_7) = &input.client_token {
+        object.key("clientToken").string(var_7.as_str());
+    }
     Ok(())
 }

@@ -35,6 +35,25 @@ where
                                     .transpose()?,
                             );
                         }
+                        "Status" => {
+                            builder = builder.set_status(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::AutoScalingConfigurationStatus::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "CreatedAt" => {
+                            builder = builder.set_created_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                                tokens.next(),
+                                ::aws_smithy_types::date_time::Format::EpochSeconds,
+                            )?);
+                        }
+                        "HasAssociatedService" => {
+                            builder = builder.set_has_associated_service(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
+                        "IsDefault" => {
+                            builder = builder.set_is_default(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

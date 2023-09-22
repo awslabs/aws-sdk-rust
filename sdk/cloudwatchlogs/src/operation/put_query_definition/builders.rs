@@ -178,4 +178,18 @@ impl PutQueryDefinitionFluentBuilder {
     pub fn get_query_string(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_query_string()
     }
+    /// <p>Used as an idempotency token, to avoid returning an exception if the service receives the same request twice because of a network error.</p>
+    pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.client_token(input.into());
+        self
+    }
+    /// <p>Used as an idempotency token, to avoid returning an exception if the service receives the same request twice because of a network error.</p>
+    pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_client_token(input);
+        self
+    }
+    /// <p>Used as an idempotency token, to avoid returning an exception if the service receives the same request twice because of a network error.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
+    }
 }

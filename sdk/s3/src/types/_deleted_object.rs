@@ -8,7 +8,7 @@ pub struct DeletedObject {
     pub key: ::std::option::Option<::std::string::String>,
     /// <p>The version ID of the deleted object.</p>
     pub version_id: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies whether the versioned object that was permanently deleted was (true) or was not (false) a delete marker. In a simple DELETE, this header indicates whether (true) or not (false) a delete marker was created.</p>
+    /// <p>Indicates whether the specified object version that was permanently deleted was (true) or was not (false) a delete marker before deletion. In a simple DELETE, this header indicates whether (true) or not (false) the current version of the object is a delete marker.</p>
     pub delete_marker: bool,
     /// <p>The version ID of the delete marker created as a result of the DELETE operation. If you delete a specific object version, the value returned by this header is the version ID of the object version deleted.</p>
     pub delete_marker_version_id: ::std::option::Option<::std::string::String>,
@@ -22,7 +22,7 @@ impl DeletedObject {
     pub fn version_id(&self) -> ::std::option::Option<&str> {
         self.version_id.as_deref()
     }
-    /// <p>Specifies whether the versioned object that was permanently deleted was (true) or was not (false) a delete marker. In a simple DELETE, this header indicates whether (true) or not (false) a delete marker was created.</p>
+    /// <p>Indicates whether the specified object version that was permanently deleted was (true) or was not (false) a delete marker before deletion. In a simple DELETE, this header indicates whether (true) or not (false) the current version of the object is a delete marker.</p>
     pub fn delete_marker(&self) -> bool {
         self.delete_marker
     }
@@ -76,17 +76,17 @@ impl DeletedObjectBuilder {
     pub fn get_version_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.version_id
     }
-    /// <p>Specifies whether the versioned object that was permanently deleted was (true) or was not (false) a delete marker. In a simple DELETE, this header indicates whether (true) or not (false) a delete marker was created.</p>
+    /// <p>Indicates whether the specified object version that was permanently deleted was (true) or was not (false) a delete marker before deletion. In a simple DELETE, this header indicates whether (true) or not (false) the current version of the object is a delete marker.</p>
     pub fn delete_marker(mut self, input: bool) -> Self {
         self.delete_marker = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies whether the versioned object that was permanently deleted was (true) or was not (false) a delete marker. In a simple DELETE, this header indicates whether (true) or not (false) a delete marker was created.</p>
+    /// <p>Indicates whether the specified object version that was permanently deleted was (true) or was not (false) a delete marker before deletion. In a simple DELETE, this header indicates whether (true) or not (false) the current version of the object is a delete marker.</p>
     pub fn set_delete_marker(mut self, input: ::std::option::Option<bool>) -> Self {
         self.delete_marker = input;
         self
     }
-    /// <p>Specifies whether the versioned object that was permanently deleted was (true) or was not (false) a delete marker. In a simple DELETE, this header indicates whether (true) or not (false) a delete marker was created.</p>
+    /// <p>Indicates whether the specified object version that was permanently deleted was (true) or was not (false) a delete marker before deletion. In a simple DELETE, this header indicates whether (true) or not (false) the current version of the object is a delete marker.</p>
     pub fn get_delete_marker(&self) -> &::std::option::Option<bool> {
         &self.delete_marker
     }

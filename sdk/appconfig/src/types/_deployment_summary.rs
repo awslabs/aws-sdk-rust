@@ -26,6 +26,8 @@ pub struct DeploymentSummary {
     pub started_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Time the deployment completed.</p>
     pub completed_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>A user-defined label for an AppConfig hosted configuration version.</p>
+    pub version_label: ::std::option::Option<::std::string::String>,
 }
 impl DeploymentSummary {
     /// <p>The sequence number of the deployment.</p>
@@ -72,6 +74,10 @@ impl DeploymentSummary {
     pub fn completed_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.completed_at.as_ref()
     }
+    /// <p>A user-defined label for an AppConfig hosted configuration version.</p>
+    pub fn version_label(&self) -> ::std::option::Option<&str> {
+        self.version_label.as_deref()
+    }
 }
 impl DeploymentSummary {
     /// Creates a new builder-style object to manufacture [`DeploymentSummary`](crate::types::DeploymentSummary).
@@ -95,6 +101,7 @@ pub struct DeploymentSummaryBuilder {
     pub(crate) percentage_complete: ::std::option::Option<f32>,
     pub(crate) started_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) completed_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) version_label: ::std::option::Option<::std::string::String>,
 }
 impl DeploymentSummaryBuilder {
     /// <p>The sequence number of the deployment.</p>
@@ -251,6 +258,20 @@ impl DeploymentSummaryBuilder {
     pub fn get_completed_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.completed_at
     }
+    /// <p>A user-defined label for an AppConfig hosted configuration version.</p>
+    pub fn version_label(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.version_label = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>A user-defined label for an AppConfig hosted configuration version.</p>
+    pub fn set_version_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.version_label = input;
+        self
+    }
+    /// <p>A user-defined label for an AppConfig hosted configuration version.</p>
+    pub fn get_version_label(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version_label
+    }
     /// Consumes the builder and constructs a [`DeploymentSummary`](crate::types::DeploymentSummary).
     pub fn build(self) -> crate::types::DeploymentSummary {
         crate::types::DeploymentSummary {
@@ -265,6 +286,7 @@ impl DeploymentSummaryBuilder {
             percentage_complete: self.percentage_complete.unwrap_or_default(),
             started_at: self.started_at,
             completed_at: self.completed_at,
+            version_label: self.version_label,
         }
     }
 }

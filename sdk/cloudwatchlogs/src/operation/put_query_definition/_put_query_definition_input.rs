@@ -13,6 +13,8 @@ pub struct PutQueryDefinitionInput {
     pub log_group_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The query string to use for this definition. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html">CloudWatch Logs Insights Query Syntax</a>.</p>
     pub query_string: ::std::option::Option<::std::string::String>,
+    /// <p>Used as an idempotency token, to avoid returning an exception if the service receives the same request twice because of a network error.</p>
+    pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl PutQueryDefinitionInput {
     /// <p>A name for the query definition. If you are saving numerous query definitions, we recommend that you name them. This way, you can find the ones you want by using the first part of the name as a filter in the <code>queryDefinitionNamePrefix</code> parameter of <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeQueryDefinitions.html">DescribeQueryDefinitions</a>.</p>
@@ -33,6 +35,10 @@ impl PutQueryDefinitionInput {
     pub fn query_string(&self) -> ::std::option::Option<&str> {
         self.query_string.as_deref()
     }
+    /// <p>Used as an idempotency token, to avoid returning an exception if the service receives the same request twice because of a network error.</p>
+    pub fn client_token(&self) -> ::std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
 }
 impl PutQueryDefinitionInput {
     /// Creates a new builder-style object to manufacture [`PutQueryDefinitionInput`](crate::operation::put_query_definition::PutQueryDefinitionInput).
@@ -49,6 +55,7 @@ pub struct PutQueryDefinitionInputBuilder {
     pub(crate) query_definition_id: ::std::option::Option<::std::string::String>,
     pub(crate) log_group_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) query_string: ::std::option::Option<::std::string::String>,
+    pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl PutQueryDefinitionInputBuilder {
     /// <p>A name for the query definition. If you are saving numerous query definitions, we recommend that you name them. This way, you can find the ones you want by using the first part of the name as a filter in the <code>queryDefinitionNamePrefix</code> parameter of <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeQueryDefinitions.html">DescribeQueryDefinitions</a>.</p>
@@ -119,6 +126,20 @@ impl PutQueryDefinitionInputBuilder {
     pub fn get_query_string(&self) -> &::std::option::Option<::std::string::String> {
         &self.query_string
     }
+    /// <p>Used as an idempotency token, to avoid returning an exception if the service receives the same request twice because of a network error.</p>
+    pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.client_token = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Used as an idempotency token, to avoid returning an exception if the service receives the same request twice because of a network error.</p>
+    pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.client_token = input;
+        self
+    }
+    /// <p>Used as an idempotency token, to avoid returning an exception if the service receives the same request twice because of a network error.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
+    }
     /// Consumes the builder and constructs a [`PutQueryDefinitionInput`](crate::operation::put_query_definition::PutQueryDefinitionInput).
     pub fn build(
         self,
@@ -128,6 +149,7 @@ impl PutQueryDefinitionInputBuilder {
             query_definition_id: self.query_definition_id,
             log_group_names: self.log_group_names,
             query_string: self.query_string,
+            client_token: self.client_token,
         })
     }
 }

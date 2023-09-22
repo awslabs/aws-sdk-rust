@@ -95,7 +95,7 @@ pub struct WriteGetObjectResponseInput {
     pub server_side_encryption: ::std::option::Option<crate::types::ServerSideEncryption>,
     /// <p>Encryption algorithm used if server-side encryption with a customer-provided encryption key was specified for object stored in Amazon S3.</p>
     pub sse_customer_algorithm: ::std::option::Option<::std::string::String>,
-    /// <p> If present, specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric encryption customer managed key that was used for stored in Amazon S3 object. </p>
+    /// <p> If present, specifies the ID (Key ID, Key ARN, or Key Alias) of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric encryption customer managed key that was used for stored in Amazon S3 object. </p>
     pub ssekms_key_id: ::std::option::Option<::std::string::String>,
     /// <p> 128-bit MD5 digest of customer-provided encryption key used in Amazon S3 to encrypt data stored in S3. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ServerSideEncryptionCustomerKeys.html">Protecting data using server-side encryption with customer-provided encryption keys (SSE-C)</a>.</p>
     pub sse_customer_key_md5: ::std::option::Option<::std::string::String>,
@@ -271,7 +271,7 @@ impl WriteGetObjectResponseInput {
     pub fn sse_customer_algorithm(&self) -> ::std::option::Option<&str> {
         self.sse_customer_algorithm.as_deref()
     }
-    /// <p> If present, specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric encryption customer managed key that was used for stored in Amazon S3 object. </p>
+    /// <p> If present, specifies the ID (Key ID, Key ARN, or Key Alias) of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric encryption customer managed key that was used for stored in Amazon S3 object. </p>
     pub fn ssekms_key_id(&self) -> ::std::option::Option<&str> {
         self.ssekms_key_id.as_deref()
     }
@@ -953,17 +953,17 @@ impl WriteGetObjectResponseInputBuilder {
     pub fn get_sse_customer_algorithm(&self) -> &::std::option::Option<::std::string::String> {
         &self.sse_customer_algorithm
     }
-    /// <p> If present, specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric encryption customer managed key that was used for stored in Amazon S3 object. </p>
+    /// <p> If present, specifies the ID (Key ID, Key ARN, or Key Alias) of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric encryption customer managed key that was used for stored in Amazon S3 object. </p>
     pub fn ssekms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ssekms_key_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> If present, specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric encryption customer managed key that was used for stored in Amazon S3 object. </p>
+    /// <p> If present, specifies the ID (Key ID, Key ARN, or Key Alias) of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric encryption customer managed key that was used for stored in Amazon S3 object. </p>
     pub fn set_ssekms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ssekms_key_id = input;
         self
     }
-    /// <p> If present, specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric encryption customer managed key that was used for stored in Amazon S3 object. </p>
+    /// <p> If present, specifies the ID (Key ID, Key ARN, or Key Alias) of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric encryption customer managed key that was used for stored in Amazon S3 object. </p>
     pub fn get_ssekms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.ssekms_key_id
     }

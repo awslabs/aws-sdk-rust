@@ -225,6 +225,8 @@ mod list_operations;
 
 mod list_services;
 
+mod list_services_for_auto_scaling_configuration;
+
 mod list_tags_for_resource;
 
 mod list_vpc_connectors;
@@ -240,6 +242,8 @@ mod start_deployment;
 mod tag_resource;
 
 mod untag_resource;
+
+mod update_default_auto_scaling_configuration;
 
 mod update_service;
 

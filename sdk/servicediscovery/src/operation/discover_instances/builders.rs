@@ -22,7 +22,7 @@ impl DiscoverInstancesInputBuilder {
 }
 /// Fluent builder constructing a request to `DiscoverInstances`.
 ///
-/// <p>Discovers registered instances for a specified namespace and service. You can use <code>DiscoverInstances</code> to discover instances for any type of namespace. For public and private DNS namespaces, you can also use DNS queries to discover instances.</p>
+/// <p>Discovers registered instances for a specified namespace and service. You can use <code>DiscoverInstances</code> to discover instances for any type of namespace. <code>DiscoverInstances</code> returns a randomized list of instances allowing customers to distribute traffic evenly across instances. For public and private DNS namespaces, you can also use DNS queries to discover instances.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DiscoverInstancesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

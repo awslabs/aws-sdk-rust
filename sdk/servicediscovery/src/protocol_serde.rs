@@ -39,6 +39,8 @@ pub(crate) mod shape_deregister_instance;
 
 pub(crate) mod shape_discover_instances;
 
+pub(crate) mod shape_discover_instances_revision;
+
 pub(crate) mod shape_get_instance;
 
 pub(crate) mod shape_get_instances_health_status;
@@ -100,6 +102,8 @@ pub(crate) mod shape_delete_service_input;
 pub(crate) mod shape_deregister_instance_input;
 
 pub(crate) mod shape_discover_instances_input;
+
+pub(crate) mod shape_discover_instances_revision_input;
 
 pub(crate) mod shape_duplicate_request;
 

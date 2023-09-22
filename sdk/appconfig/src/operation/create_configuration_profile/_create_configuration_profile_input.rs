@@ -14,7 +14,10 @@ pub struct CreateConfigurationProfileInput {
     /// <li> <p>For the AppConfig hosted configuration store and for feature flags, specify <code>hosted</code>.</p> </li>
     /// <li> <p>For an Amazon Web Services Systems Manager Parameter Store parameter, specify either the parameter name in the format <code>ssm-parameter://
     /// <parameter name></parameter></code> or the ARN.</p> </li>
-    /// <li> <p>For an Secrets Manager secret, specify the URI in the following format: <code>secrets-manager</code>://<secret name>
+    /// <li> <p>For an Amazon Web Services CodePipeline pipeline, specify the URI in the following format: <code>codepipeline</code>://<pipeline name>
+    /// .
+    /// </pipeline></p> </li>
+    /// <li> <p>For an Secrets Manager secret, specify the URI in the following format: <code>secretsmanager</code>://<secret name>
     /// .
     /// </secret></p> </li>
     /// <li> <p>For an Amazon S3 object, specify the URI in the following format: <code>s3://
@@ -58,7 +61,10 @@ impl CreateConfigurationProfileInput {
     /// <li> <p>For the AppConfig hosted configuration store and for feature flags, specify <code>hosted</code>.</p> </li>
     /// <li> <p>For an Amazon Web Services Systems Manager Parameter Store parameter, specify either the parameter name in the format <code>ssm-parameter://
     /// <parameter name></parameter></code> or the ARN.</p> </li>
-    /// <li> <p>For an Secrets Manager secret, specify the URI in the following format: <code>secrets-manager</code>://<secret name>
+    /// <li> <p>For an Amazon Web Services CodePipeline pipeline, specify the URI in the following format: <code>codepipeline</code>://<pipeline name>
+    /// .
+    /// </pipeline></p> </li>
+    /// <li> <p>For an Secrets Manager secret, specify the URI in the following format: <code>secretsmanager</code>://<secret name>
     /// .
     /// </secret></p> </li>
     /// <li> <p>For an Amazon S3 object, specify the URI in the following format: <code>s3://
@@ -162,7 +168,10 @@ impl CreateConfigurationProfileInputBuilder {
     /// <li> <p>For the AppConfig hosted configuration store and for feature flags, specify <code>hosted</code>.</p> </li>
     /// <li> <p>For an Amazon Web Services Systems Manager Parameter Store parameter, specify either the parameter name in the format <code>ssm-parameter://
     /// <parameter name></parameter></code> or the ARN.</p> </li>
-    /// <li> <p>For an Secrets Manager secret, specify the URI in the following format: <code>secrets-manager</code>://<secret name>
+    /// <li> <p>For an Amazon Web Services CodePipeline pipeline, specify the URI in the following format: <code>codepipeline</code>://<pipeline name>
+    /// .
+    /// </pipeline></p> </li>
+    /// <li> <p>For an Secrets Manager secret, specify the URI in the following format: <code>secretsmanager</code>://<secret name>
     /// .
     /// </secret></p> </li>
     /// <li> <p>For an Amazon S3 object, specify the URI in the following format: <code>s3://
@@ -183,7 +192,10 @@ impl CreateConfigurationProfileInputBuilder {
     /// <li> <p>For the AppConfig hosted configuration store and for feature flags, specify <code>hosted</code>.</p> </li>
     /// <li> <p>For an Amazon Web Services Systems Manager Parameter Store parameter, specify either the parameter name in the format <code>ssm-parameter://
     /// <parameter name></parameter></code> or the ARN.</p> </li>
-    /// <li> <p>For an Secrets Manager secret, specify the URI in the following format: <code>secrets-manager</code>://<secret name>
+    /// <li> <p>For an Amazon Web Services CodePipeline pipeline, specify the URI in the following format: <code>codepipeline</code>://<pipeline name>
+    /// .
+    /// </pipeline></p> </li>
+    /// <li> <p>For an Secrets Manager secret, specify the URI in the following format: <code>secretsmanager</code>://<secret name>
     /// .
     /// </secret></p> </li>
     /// <li> <p>For an Amazon S3 object, specify the URI in the following format: <code>s3://
@@ -204,7 +216,10 @@ impl CreateConfigurationProfileInputBuilder {
     /// <li> <p>For the AppConfig hosted configuration store and for feature flags, specify <code>hosted</code>.</p> </li>
     /// <li> <p>For an Amazon Web Services Systems Manager Parameter Store parameter, specify either the parameter name in the format <code>ssm-parameter://
     /// <parameter name></parameter></code> or the ARN.</p> </li>
-    /// <li> <p>For an Secrets Manager secret, specify the URI in the following format: <code>secrets-manager</code>://<secret name>
+    /// <li> <p>For an Amazon Web Services CodePipeline pipeline, specify the URI in the following format: <code>codepipeline</code>://<pipeline name>
+    /// .
+    /// </pipeline></p> </li>
+    /// <li> <p>For an Secrets Manager secret, specify the URI in the following format: <code>secretsmanager</code>://<secret name>
     /// .
     /// </secret></p> </li>
     /// <li> <p>For an Amazon S3 object, specify the URI in the following format: <code>s3://

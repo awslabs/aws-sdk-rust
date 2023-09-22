@@ -38,7 +38,7 @@ pub struct RegisterInstanceInput {
     /// <li> <p>The configuration for the service that's specified by <code>ServiceId</code> must include settings for an <code>A</code> record, an <code>AAAA</code> record, or both.</p> </li>
     /// <li> <p>In the service that's specified by <code>ServiceId</code>, the value of <code>RoutingPolicy</code> must be <code>WEIGHTED</code>.</p> </li>
     /// <li> <p>If the service that's specified by <code>ServiceId</code> includes <code>HealthCheckConfig</code> settings, Cloud Map will create the Route&nbsp;53 health check, but it doesn't associate the health check with the alias record.</p> </li>
-    /// <li> <p>Auto naming currently doesn't support creating alias records that route traffic to Amazon Web Services resources other than Elastic Load Balancing load balancers.</p> </li>
+    /// <li> <p>Cloud Map currently doesn't support creating alias records that route traffic to Amazon Web Services resources other than Elastic Load Balancing load balancers.</p> </li>
     /// <li> <p>If you specify a value for <code>AWS_ALIAS_DNS_NAME</code>, don't specify values for any of the <code>AWS_INSTANCE</code> attributes.</p> </li>
     /// </ul>
     /// </dd>
@@ -134,7 +134,7 @@ impl RegisterInstanceInput {
     /// <li> <p>The configuration for the service that's specified by <code>ServiceId</code> must include settings for an <code>A</code> record, an <code>AAAA</code> record, or both.</p> </li>
     /// <li> <p>In the service that's specified by <code>ServiceId</code>, the value of <code>RoutingPolicy</code> must be <code>WEIGHTED</code>.</p> </li>
     /// <li> <p>If the service that's specified by <code>ServiceId</code> includes <code>HealthCheckConfig</code> settings, Cloud Map will create the Route&nbsp;53 health check, but it doesn't associate the health check with the alias record.</p> </li>
-    /// <li> <p>Auto naming currently doesn't support creating alias records that route traffic to Amazon Web Services resources other than Elastic Load Balancing load balancers.</p> </li>
+    /// <li> <p>Cloud Map currently doesn't support creating alias records that route traffic to Amazon Web Services resources other than Elastic Load Balancing load balancers.</p> </li>
     /// <li> <p>If you specify a value for <code>AWS_ALIAS_DNS_NAME</code>, don't specify values for any of the <code>AWS_INSTANCE</code> attributes.</p> </li>
     /// </ul>
     /// </dd>
@@ -302,7 +302,7 @@ impl RegisterInstanceInputBuilder {
     /// <li> <p>The configuration for the service that's specified by <code>ServiceId</code> must include settings for an <code>A</code> record, an <code>AAAA</code> record, or both.</p> </li>
     /// <li> <p>In the service that's specified by <code>ServiceId</code>, the value of <code>RoutingPolicy</code> must be <code>WEIGHTED</code>.</p> </li>
     /// <li> <p>If the service that's specified by <code>ServiceId</code> includes <code>HealthCheckConfig</code> settings, Cloud Map will create the Route&nbsp;53 health check, but it doesn't associate the health check with the alias record.</p> </li>
-    /// <li> <p>Auto naming currently doesn't support creating alias records that route traffic to Amazon Web Services resources other than Elastic Load Balancing load balancers.</p> </li>
+    /// <li> <p>Cloud Map currently doesn't support creating alias records that route traffic to Amazon Web Services resources other than Elastic Load Balancing load balancers.</p> </li>
     /// <li> <p>If you specify a value for <code>AWS_ALIAS_DNS_NAME</code>, don't specify values for any of the <code>AWS_INSTANCE</code> attributes.</p> </li>
     /// </ul>
     /// </dd>
@@ -379,7 +379,7 @@ impl RegisterInstanceInputBuilder {
     /// <li> <p>The configuration for the service that's specified by <code>ServiceId</code> must include settings for an <code>A</code> record, an <code>AAAA</code> record, or both.</p> </li>
     /// <li> <p>In the service that's specified by <code>ServiceId</code>, the value of <code>RoutingPolicy</code> must be <code>WEIGHTED</code>.</p> </li>
     /// <li> <p>If the service that's specified by <code>ServiceId</code> includes <code>HealthCheckConfig</code> settings, Cloud Map will create the Route&nbsp;53 health check, but it doesn't associate the health check with the alias record.</p> </li>
-    /// <li> <p>Auto naming currently doesn't support creating alias records that route traffic to Amazon Web Services resources other than Elastic Load Balancing load balancers.</p> </li>
+    /// <li> <p>Cloud Map currently doesn't support creating alias records that route traffic to Amazon Web Services resources other than Elastic Load Balancing load balancers.</p> </li>
     /// <li> <p>If you specify a value for <code>AWS_ALIAS_DNS_NAME</code>, don't specify values for any of the <code>AWS_INSTANCE</code> attributes.</p> </li>
     /// </ul>
     /// </dd>
@@ -454,7 +454,7 @@ impl RegisterInstanceInputBuilder {
     /// <li> <p>The configuration for the service that's specified by <code>ServiceId</code> must include settings for an <code>A</code> record, an <code>AAAA</code> record, or both.</p> </li>
     /// <li> <p>In the service that's specified by <code>ServiceId</code>, the value of <code>RoutingPolicy</code> must be <code>WEIGHTED</code>.</p> </li>
     /// <li> <p>If the service that's specified by <code>ServiceId</code> includes <code>HealthCheckConfig</code> settings, Cloud Map will create the Route&nbsp;53 health check, but it doesn't associate the health check with the alias record.</p> </li>
-    /// <li> <p>Auto naming currently doesn't support creating alias records that route traffic to Amazon Web Services resources other than Elastic Load Balancing load balancers.</p> </li>
+    /// <li> <p>Cloud Map currently doesn't support creating alias records that route traffic to Amazon Web Services resources other than Elastic Load Balancing load balancers.</p> </li>
     /// <li> <p>If you specify a value for <code>AWS_ALIAS_DNS_NAME</code>, don't specify values for any of the <code>AWS_INSTANCE</code> attributes.</p> </li>
     /// </ul>
     /// </dd>

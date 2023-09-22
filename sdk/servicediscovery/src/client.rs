@@ -191,6 +191,8 @@ mod deregister_instance;
 
 mod discover_instances;
 
+mod discover_instances_revision;
+
 mod get_instance;
 
 mod get_instances_health_status;

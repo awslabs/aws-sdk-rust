@@ -17,6 +17,7 @@
 ///     PackageFormat::Npm => { /* ... */ },
 ///     PackageFormat::Nuget => { /* ... */ },
 ///     PackageFormat::Pypi => { /* ... */ },
+///     PackageFormat::Swift => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -54,6 +55,8 @@ pub enum PackageFormat {
     Nuget,
     #[allow(missing_docs)] // documentation missing in model
     Pypi,
+    #[allow(missing_docs)] // documentation missing in model
+    Swift,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
@@ -65,6 +68,7 @@ impl ::std::convert::From<&str> for PackageFormat {
             "npm" => PackageFormat::Npm,
             "nuget" => PackageFormat::Nuget,
             "pypi" => PackageFormat::Pypi,
+            "swift" => PackageFormat::Swift,
             other => PackageFormat::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -85,12 +89,13 @@ impl PackageFormat {
             PackageFormat::Npm => "npm",
             PackageFormat::Nuget => "nuget",
             PackageFormat::Pypi => "pypi",
+            PackageFormat::Swift => "swift",
             PackageFormat::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["generic", "maven", "npm", "nuget", "pypi"]
+        &["generic", "maven", "npm", "nuget", "pypi", "swift"]
     }
 }
 impl ::std::convert::AsRef<str> for PackageFormat {

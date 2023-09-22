@@ -73,6 +73,8 @@ pub(crate) mod shape_list_operations;
 
 pub(crate) mod shape_list_services;
 
+pub(crate) mod shape_list_services_for_auto_scaling_configuration;
+
 pub(crate) mod shape_list_tags_for_resource;
 
 pub(crate) mod shape_list_vpc_connectors;
@@ -88,6 +90,8 @@ pub(crate) mod shape_start_deployment;
 pub(crate) mod shape_tag_resource;
 
 pub(crate) mod shape_untag_resource;
+
+pub(crate) mod shape_update_default_auto_scaling_configuration;
 
 pub(crate) mod shape_update_service;
 
@@ -155,6 +159,8 @@ pub(crate) mod shape_list_observability_configurations_input;
 
 pub(crate) mod shape_list_operations_input;
 
+pub(crate) mod shape_list_services_for_auto_scaling_configuration_input;
+
 pub(crate) mod shape_list_services_input;
 
 pub(crate) mod shape_list_tags_for_resource_input;
@@ -176,6 +182,8 @@ pub(crate) mod shape_start_deployment_input;
 pub(crate) mod shape_tag_resource_input;
 
 pub(crate) mod shape_untag_resource_input;
+
+pub(crate) mod shape_update_default_auto_scaling_configuration_input;
 
 pub(crate) mod shape_update_service_input;
 
@@ -212,6 +220,8 @@ pub(crate) mod shape_observability_configuration_summary_list;
 pub(crate) mod shape_operation_summary_list;
 
 pub(crate) mod shape_service;
+
+pub(crate) mod shape_service_arn_list;
 
 pub(crate) mod shape_service_observability_configuration;
 

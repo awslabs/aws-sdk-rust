@@ -166,17 +166,17 @@ impl StartDeploymentFluentBuilder {
     pub fn get_configuration_profile_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_configuration_profile_id()
     }
-    /// <p>The configuration version to deploy. If deploying an AppConfig hosted configuration version, you can specify either the version number or version label.</p>
+    /// <p>The configuration version to deploy. If deploying an AppConfig hosted configuration version, you can specify either the version number or version label. For all other configurations, you must specify the version number.</p>
     pub fn configuration_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.configuration_version(input.into());
         self
     }
-    /// <p>The configuration version to deploy. If deploying an AppConfig hosted configuration version, you can specify either the version number or version label.</p>
+    /// <p>The configuration version to deploy. If deploying an AppConfig hosted configuration version, you can specify either the version number or version label. For all other configurations, you must specify the version number.</p>
     pub fn set_configuration_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_configuration_version(input);
         self
     }
-    /// <p>The configuration version to deploy. If deploying an AppConfig hosted configuration version, you can specify either the version number or version label.</p>
+    /// <p>The configuration version to deploy. If deploying an AppConfig hosted configuration version, you can specify either the version number or version label. For all other configurations, you must specify the version number.</p>
     pub fn get_configuration_version(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_configuration_version()
     }

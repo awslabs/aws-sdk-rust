@@ -45,6 +45,8 @@ pub struct GetDeploymentOutput {
     pub kms_key_arn: ::std::option::Option<::std::string::String>,
     /// <p>The KMS key identifier (key ID, key alias, or key ARN). AppConfig uses this ID to encrypt the configuration data using a customer managed key. </p>
     pub kms_key_identifier: ::std::option::Option<::std::string::String>,
+    /// <p>A user-defined label for an AppConfig hosted configuration version.</p>
+    pub version_label: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetDeploymentOutput {
@@ -132,6 +134,10 @@ impl GetDeploymentOutput {
     pub fn kms_key_identifier(&self) -> ::std::option::Option<&str> {
         self.kms_key_identifier.as_deref()
     }
+    /// <p>A user-defined label for an AppConfig hosted configuration version.</p>
+    pub fn version_label(&self) -> ::std::option::Option<&str> {
+        self.version_label.as_deref()
+    }
 }
 impl ::aws_http::request_id::RequestId for GetDeploymentOutput {
     fn request_id(&self) -> Option<&str> {
@@ -170,6 +176,7 @@ pub struct GetDeploymentOutputBuilder {
     pub(crate) applied_extensions: ::std::option::Option<::std::vec::Vec<crate::types::AppliedExtension>>,
     pub(crate) kms_key_arn: ::std::option::Option<::std::string::String>,
     pub(crate) kms_key_identifier: ::std::option::Option<::std::string::String>,
+    pub(crate) version_label: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetDeploymentOutputBuilder {
@@ -479,6 +486,20 @@ impl GetDeploymentOutputBuilder {
     pub fn get_kms_key_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.kms_key_identifier
     }
+    /// <p>A user-defined label for an AppConfig hosted configuration version.</p>
+    pub fn version_label(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.version_label = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>A user-defined label for an AppConfig hosted configuration version.</p>
+    pub fn set_version_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.version_label = input;
+        self
+    }
+    /// <p>A user-defined label for an AppConfig hosted configuration version.</p>
+    pub fn get_version_label(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version_label
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -512,6 +533,7 @@ impl GetDeploymentOutputBuilder {
             applied_extensions: self.applied_extensions,
             kms_key_arn: self.kms_key_arn,
             kms_key_identifier: self.kms_key_identifier,
+            version_label: self.version_label,
             _request_id: self._request_id,
         }
     }

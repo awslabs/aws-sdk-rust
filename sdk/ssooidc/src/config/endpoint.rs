@@ -627,11 +627,11 @@ mod test {
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://oidc-fips.us-gov-east-1.amazonaws.com");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://oidc.us-gov-east-1.amazonaws.com");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://oidc-fips.us-gov-east-1.amazonaws.com")
+                .url("https://oidc.us-gov-east-1.amazonaws.com")
                 .build()
         );
     }

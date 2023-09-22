@@ -25,6 +25,9 @@ pub mod deregister_instance;
 /// Types for the `DiscoverInstances` operation.
 pub mod discover_instances;
 
+/// Types for the `DiscoverInstancesRevision` operation.
+pub mod discover_instances_revision;
+
 /// Types for the `GetInstance` operation.
 pub mod get_instance;
 

@@ -287,6 +287,37 @@ impl From<crate::operation::discover_instances::DiscoverInstancesError> for Erro
         }
     }
 }
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::discover_instances_revision::DiscoverInstancesRevisionError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::discover_instances_revision::DiscoverInstancesRevisionError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::discover_instances_revision::DiscoverInstancesRevisionError> for Error {
+    fn from(err: crate::operation::discover_instances_revision::DiscoverInstancesRevisionError) -> Self {
+        match err {
+            crate::operation::discover_instances_revision::DiscoverInstancesRevisionError::InvalidInput(inner) => Error::InvalidInput(inner),
+            crate::operation::discover_instances_revision::DiscoverInstancesRevisionError::NamespaceNotFound(inner) => {
+                Error::NamespaceNotFound(inner)
+            }
+            crate::operation::discover_instances_revision::DiscoverInstancesRevisionError::RequestLimitExceeded(inner) => {
+                Error::RequestLimitExceeded(inner)
+            }
+            crate::operation::discover_instances_revision::DiscoverInstancesRevisionError::ServiceNotFound(inner) => Error::ServiceNotFound(inner),
+            crate::operation::discover_instances_revision::DiscoverInstancesRevisionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_instance::GetInstanceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

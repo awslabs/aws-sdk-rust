@@ -6,5 +6,8 @@ pub fn ser_delete_auto_scaling_configuration_input(
     if let Some(var_1) = &input.auto_scaling_configuration_arn {
         object.key("AutoScalingConfigurationArn").string(var_1.as_str());
     }
+    if let Some(var_2) = &input.delete_all_revisions {
+        object.key("DeleteAllRevisions").boolean(*var_2);
+    }
     Ok(())
 }

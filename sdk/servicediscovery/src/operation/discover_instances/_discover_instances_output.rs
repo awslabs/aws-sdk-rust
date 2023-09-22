@@ -5,12 +5,18 @@
 pub struct DiscoverInstancesOutput {
     /// <p>A complex type that contains one <code>HttpInstanceSummary</code> for each registered instance.</p>
     pub instances: ::std::option::Option<::std::vec::Vec<crate::types::HttpInstanceSummary>>,
+    /// <p>The increasing revision associated to the response Instances list. If a new instance is registered or deregistered, the <code>InstancesRevision</code> updates. The health status updates don't update <code>InstancesRevision</code>.</p>
+    pub instances_revision: ::std::option::Option<i64>,
     _request_id: Option<String>,
 }
 impl DiscoverInstancesOutput {
     /// <p>A complex type that contains one <code>HttpInstanceSummary</code> for each registered instance.</p>
     pub fn instances(&self) -> ::std::option::Option<&[crate::types::HttpInstanceSummary]> {
         self.instances.as_deref()
+    }
+    /// <p>The increasing revision associated to the response Instances list. If a new instance is registered or deregistered, the <code>InstancesRevision</code> updates. The health status updates don't update <code>InstancesRevision</code>.</p>
+    pub fn instances_revision(&self) -> ::std::option::Option<i64> {
+        self.instances_revision
     }
 }
 impl ::aws_http::request_id::RequestId for DiscoverInstancesOutput {
@@ -30,6 +36,7 @@ impl DiscoverInstancesOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DiscoverInstancesOutputBuilder {
     pub(crate) instances: ::std::option::Option<::std::vec::Vec<crate::types::HttpInstanceSummary>>,
+    pub(crate) instances_revision: ::std::option::Option<i64>,
     _request_id: Option<String>,
 }
 impl DiscoverInstancesOutputBuilder {
@@ -53,6 +60,20 @@ impl DiscoverInstancesOutputBuilder {
     pub fn get_instances(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HttpInstanceSummary>> {
         &self.instances
     }
+    /// <p>The increasing revision associated to the response Instances list. If a new instance is registered or deregistered, the <code>InstancesRevision</code> updates. The health status updates don't update <code>InstancesRevision</code>.</p>
+    pub fn instances_revision(mut self, input: i64) -> Self {
+        self.instances_revision = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The increasing revision associated to the response Instances list. If a new instance is registered or deregistered, the <code>InstancesRevision</code> updates. The health status updates don't update <code>InstancesRevision</code>.</p>
+    pub fn set_instances_revision(mut self, input: ::std::option::Option<i64>) -> Self {
+        self.instances_revision = input;
+        self
+    }
+    /// <p>The increasing revision associated to the response Instances list. If a new instance is registered or deregistered, the <code>InstancesRevision</code> updates. The health status updates don't update <code>InstancesRevision</code>.</p>
+    pub fn get_instances_revision(&self) -> &::std::option::Option<i64> {
+        &self.instances_revision
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -66,6 +87,7 @@ impl DiscoverInstancesOutputBuilder {
     pub fn build(self) -> crate::operation::discover_instances::DiscoverInstancesOutput {
         crate::operation::discover_instances::DiscoverInstancesOutput {
             instances: self.instances,
+            instances_revision: self.instances_revision,
             _request_id: self._request_id,
         }
     }

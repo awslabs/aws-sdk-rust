@@ -76,6 +76,9 @@ pub mod list_operations;
 /// Types for the `ListServices` operation.
 pub mod list_services;
 
+/// Types for the `ListServicesForAutoScalingConfiguration` operation.
+pub mod list_services_for_auto_scaling_configuration;
+
 /// Types for the `ListTagsForResource` operation.
 pub mod list_tags_for_resource;
 
@@ -99,6 +102,9 @@ pub mod tag_resource;
 
 /// Types for the `UntagResource` operation.
 pub mod untag_resource;
+
+/// Types for the `UpdateDefaultAutoScalingConfiguration` operation.
+pub mod update_default_auto_scaling_configuration;
 
 /// Types for the `UpdateService` operation.
 pub mod update_service;
