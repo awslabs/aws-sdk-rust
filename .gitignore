@@ -1,6 +1,10 @@
 # MacOS
 .DS_Store
 
+# IDEs
+.idea/
+.vscode/
+
 # Rust build artifacts
 target/
 
