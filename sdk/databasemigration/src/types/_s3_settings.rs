@@ -145,7 +145,7 @@ pub struct S3Settings {
     /// <p>When <code>CdcMinFileSize</code> and <code>CdcMaxBatchInterval</code> are both specified, the file write is triggered by whichever parameter condition is met first within an DMS CloudFormation template.</p>
     /// <p>The default value is 32 MB.</p>
     pub cdc_min_file_size: ::std::option::Option<i32>,
-    /// <p>An optional parameter that specifies how DMS treats null values. While handling the null value, you can use this parameter to pass a user-defined string as null when writing to the target. For example, when target columns are not nullable, you can use this option to differentiate between the empty string value and the null value. So, if you set this parameter value to the empty string ("" or ''), DMS treats the empty string as the null value instead of <code>NULL</code>.</p>
+    /// <p>An optional parameter that specifies how DMS treats null values. While handling the null value, you can use this parameter to pass a user-defined string as null when writing to the target. For example, when target columns are nullable, you can use this option to differentiate between the empty string value and the null value. So, if you set this parameter value to the empty string ("" or ''), DMS treats the empty string as the null value instead of <code>NULL</code>.</p>
     /// <p>The default value is <code>NULL</code>. Valid values include any valid string.</p>
     pub csv_null_value: ::std::option::Option<::std::string::String>,
     /// <p>When this value is set to 1, DMS ignores the first row header in a .csv file. A value of 1 turns on the feature; a value of 0 turns off the feature.</p>
@@ -378,7 +378,7 @@ impl S3Settings {
     pub fn cdc_min_file_size(&self) -> ::std::option::Option<i32> {
         self.cdc_min_file_size
     }
-    /// <p>An optional parameter that specifies how DMS treats null values. While handling the null value, you can use this parameter to pass a user-defined string as null when writing to the target. For example, when target columns are not nullable, you can use this option to differentiate between the empty string value and the null value. So, if you set this parameter value to the empty string ("" or ''), DMS treats the empty string as the null value instead of <code>NULL</code>.</p>
+    /// <p>An optional parameter that specifies how DMS treats null values. While handling the null value, you can use this parameter to pass a user-defined string as null when writing to the target. For example, when target columns are nullable, you can use this option to differentiate between the empty string value and the null value. So, if you set this parameter value to the empty string ("" or ''), DMS treats the empty string as the null value instead of <code>NULL</code>.</p>
     /// <p>The default value is <code>NULL</code>. Valid values include any valid string.</p>
     pub fn csv_null_value(&self) -> ::std::option::Option<&str> {
         self.csv_null_value.as_deref()
@@ -1160,19 +1160,19 @@ impl S3SettingsBuilder {
     pub fn get_cdc_min_file_size(&self) -> &::std::option::Option<i32> {
         &self.cdc_min_file_size
     }
-    /// <p>An optional parameter that specifies how DMS treats null values. While handling the null value, you can use this parameter to pass a user-defined string as null when writing to the target. For example, when target columns are not nullable, you can use this option to differentiate between the empty string value and the null value. So, if you set this parameter value to the empty string ("" or ''), DMS treats the empty string as the null value instead of <code>NULL</code>.</p>
+    /// <p>An optional parameter that specifies how DMS treats null values. While handling the null value, you can use this parameter to pass a user-defined string as null when writing to the target. For example, when target columns are nullable, you can use this option to differentiate between the empty string value and the null value. So, if you set this parameter value to the empty string ("" or ''), DMS treats the empty string as the null value instead of <code>NULL</code>.</p>
     /// <p>The default value is <code>NULL</code>. Valid values include any valid string.</p>
     pub fn csv_null_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.csv_null_value = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>An optional parameter that specifies how DMS treats null values. While handling the null value, you can use this parameter to pass a user-defined string as null when writing to the target. For example, when target columns are not nullable, you can use this option to differentiate between the empty string value and the null value. So, if you set this parameter value to the empty string ("" or ''), DMS treats the empty string as the null value instead of <code>NULL</code>.</p>
+    /// <p>An optional parameter that specifies how DMS treats null values. While handling the null value, you can use this parameter to pass a user-defined string as null when writing to the target. For example, when target columns are nullable, you can use this option to differentiate between the empty string value and the null value. So, if you set this parameter value to the empty string ("" or ''), DMS treats the empty string as the null value instead of <code>NULL</code>.</p>
     /// <p>The default value is <code>NULL</code>. Valid values include any valid string.</p>
     pub fn set_csv_null_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.csv_null_value = input;
         self
     }
-    /// <p>An optional parameter that specifies how DMS treats null values. While handling the null value, you can use this parameter to pass a user-defined string as null when writing to the target. For example, when target columns are not nullable, you can use this option to differentiate between the empty string value and the null value. So, if you set this parameter value to the empty string ("" or ''), DMS treats the empty string as the null value instead of <code>NULL</code>.</p>
+    /// <p>An optional parameter that specifies how DMS treats null values. While handling the null value, you can use this parameter to pass a user-defined string as null when writing to the target. For example, when target columns are nullable, you can use this option to differentiate between the empty string value and the null value. So, if you set this parameter value to the empty string ("" or ''), DMS treats the empty string as the null value instead of <code>NULL</code>.</p>
     /// <p>The default value is <code>NULL</code>. Valid values include any valid string.</p>
     pub fn get_csv_null_value(&self) -> &::std::option::Option<::std::string::String> {
         &self.csv_null_value

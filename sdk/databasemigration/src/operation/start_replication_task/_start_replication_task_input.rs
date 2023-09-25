@@ -25,7 +25,7 @@ pub struct StartReplicationTaskInput {
     pub cdc_start_position: ::std::option::Option<::std::string::String>,
     /// <p>Indicates when you want a change data capture (CDC) operation to stop. The value can be either server time or commit time.</p>
     /// <p>Server time example: --cdc-stop-position “server_time:2018-02-09T12:12:12”</p>
-    /// <p>Commit time example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12“</p>
+    /// <p>Commit time example: --cdc-stop-position “commit_time:2018-02-09T12:12:12“</p>
     pub cdc_stop_position: ::std::option::Option<::std::string::String>,
 }
 impl StartReplicationTaskInput {
@@ -58,7 +58,7 @@ impl StartReplicationTaskInput {
     }
     /// <p>Indicates when you want a change data capture (CDC) operation to stop. The value can be either server time or commit time.</p>
     /// <p>Server time example: --cdc-stop-position “server_time:2018-02-09T12:12:12”</p>
-    /// <p>Commit time example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12“</p>
+    /// <p>Commit time example: --cdc-stop-position “commit_time:2018-02-09T12:12:12“</p>
     pub fn cdc_stop_position(&self) -> ::std::option::Option<&str> {
         self.cdc_stop_position.as_deref()
     }
@@ -172,21 +172,21 @@ impl StartReplicationTaskInputBuilder {
     }
     /// <p>Indicates when you want a change data capture (CDC) operation to stop. The value can be either server time or commit time.</p>
     /// <p>Server time example: --cdc-stop-position “server_time:2018-02-09T12:12:12”</p>
-    /// <p>Commit time example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12“</p>
+    /// <p>Commit time example: --cdc-stop-position “commit_time:2018-02-09T12:12:12“</p>
     pub fn cdc_stop_position(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cdc_stop_position = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Indicates when you want a change data capture (CDC) operation to stop. The value can be either server time or commit time.</p>
     /// <p>Server time example: --cdc-stop-position “server_time:2018-02-09T12:12:12”</p>
-    /// <p>Commit time example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12“</p>
+    /// <p>Commit time example: --cdc-stop-position “commit_time:2018-02-09T12:12:12“</p>
     pub fn set_cdc_stop_position(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cdc_stop_position = input;
         self
     }
     /// <p>Indicates when you want a change data capture (CDC) operation to stop. The value can be either server time or commit time.</p>
     /// <p>Server time example: --cdc-stop-position “server_time:2018-02-09T12:12:12”</p>
-    /// <p>Commit time example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12“</p>
+    /// <p>Commit time example: --cdc-stop-position “commit_time:2018-02-09T12:12:12“</p>
     pub fn get_cdc_stop_position(&self) -> &::std::option::Option<::std::string::String> {
         &self.cdc_stop_position
     }

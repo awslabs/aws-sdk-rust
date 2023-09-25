@@ -188,6 +188,9 @@ pub(crate) fn de_get_job(
                 "outputDataConfig" => {
                     builder = builder.set_output_data_config(crate::protocol_serde::shape_job_output_data_config::de_job_output_data_config(tokens)?);
                 }
+                "queueInfo" => {
+                    builder = builder.set_queue_info(crate::protocol_serde::shape_hybrid_job_queue_info::de_hybrid_job_queue_info(tokens)?);
+                }
                 "roleArn" => {
                     builder = builder.set_role_arn(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

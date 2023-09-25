@@ -4,13 +4,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FilterCriterion {
-    /// <p>An enum value representing possible scan properties to match with given scan entries.</p>
+    /// <p>An enum value representing possible scan properties to match with given scan entries.</p> <note>
+    /// <p>Replace the enum value <code>CLUSTER_NAME</code> with <code>EKS_CLUSTER_NAME</code>. <code>CLUSTER_NAME</code> has been deprecated.</p>
+    /// </note>
     pub criterion_key: ::std::option::Option<crate::types::CriterionKey>,
     /// <p>Contains information about the condition.</p>
     pub filter_condition: ::std::option::Option<crate::types::FilterCondition>,
 }
 impl FilterCriterion {
-    /// <p>An enum value representing possible scan properties to match with given scan entries.</p>
+    /// <p>An enum value representing possible scan properties to match with given scan entries.</p> <note>
+    /// <p>Replace the enum value <code>CLUSTER_NAME</code> with <code>EKS_CLUSTER_NAME</code>. <code>CLUSTER_NAME</code> has been deprecated.</p>
+    /// </note>
     pub fn criterion_key(&self) -> ::std::option::Option<&crate::types::CriterionKey> {
         self.criterion_key.as_ref()
     }
@@ -34,17 +38,23 @@ pub struct FilterCriterionBuilder {
     pub(crate) filter_condition: ::std::option::Option<crate::types::FilterCondition>,
 }
 impl FilterCriterionBuilder {
-    /// <p>An enum value representing possible scan properties to match with given scan entries.</p>
+    /// <p>An enum value representing possible scan properties to match with given scan entries.</p> <note>
+    /// <p>Replace the enum value <code>CLUSTER_NAME</code> with <code>EKS_CLUSTER_NAME</code>. <code>CLUSTER_NAME</code> has been deprecated.</p>
+    /// </note>
     pub fn criterion_key(mut self, input: crate::types::CriterionKey) -> Self {
         self.criterion_key = ::std::option::Option::Some(input);
         self
     }
-    /// <p>An enum value representing possible scan properties to match with given scan entries.</p>
+    /// <p>An enum value representing possible scan properties to match with given scan entries.</p> <note>
+    /// <p>Replace the enum value <code>CLUSTER_NAME</code> with <code>EKS_CLUSTER_NAME</code>. <code>CLUSTER_NAME</code> has been deprecated.</p>
+    /// </note>
     pub fn set_criterion_key(mut self, input: ::std::option::Option<crate::types::CriterionKey>) -> Self {
         self.criterion_key = input;
         self
     }
-    /// <p>An enum value representing possible scan properties to match with given scan entries.</p>
+    /// <p>An enum value representing possible scan properties to match with given scan entries.</p> <note>
+    /// <p>Replace the enum value <code>CLUSTER_NAME</code> with <code>EKS_CLUSTER_NAME</code>. <code>CLUSTER_NAME</code> has been deprecated.</p>
+    /// </note>
     pub fn get_criterion_key(&self) -> &::std::option::Option<crate::types::CriterionKey> {
         &self.criterion_key
     }

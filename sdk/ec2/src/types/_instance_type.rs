@@ -483,6 +483,7 @@
 ///     InstanceType::M7iLarge => { /* ... */ },
 ///     InstanceType::M7iXlarge => { /* ... */ },
 ///     InstanceType::Mac1Metal => { /* ... */ },
+///     InstanceType::Mac2M2proMetal => { /* ... */ },
 ///     InstanceType::Mac2Metal => { /* ... */ },
 ///     InstanceType::P216xlarge => { /* ... */ },
 ///     InstanceType::P28xlarge => { /* ... */ },
@@ -1722,6 +1723,8 @@ pub enum InstanceType {
     #[allow(missing_docs)] // documentation missing in model
     Mac1Metal,
     #[allow(missing_docs)] // documentation missing in model
+    Mac2M2proMetal,
+    #[allow(missing_docs)] // documentation missing in model
     Mac2Metal,
     #[allow(missing_docs)] // documentation missing in model
     P216xlarge,
@@ -2736,6 +2739,7 @@ impl ::std::convert::From<&str> for InstanceType {
             "m7i.large" => InstanceType::M7iLarge,
             "m7i.xlarge" => InstanceType::M7iXlarge,
             "mac1.metal" => InstanceType::Mac1Metal,
+            "mac2-m2pro.metal" => InstanceType::Mac2M2proMetal,
             "mac2.metal" => InstanceType::Mac2Metal,
             "p2.16xlarge" => InstanceType::P216xlarge,
             "p2.8xlarge" => InstanceType::P28xlarge,
@@ -3491,6 +3495,7 @@ impl InstanceType {
             InstanceType::M7iLarge => "m7i.large",
             InstanceType::M7iXlarge => "m7i.xlarge",
             InstanceType::Mac1Metal => "mac1.metal",
+            InstanceType::Mac2M2proMetal => "mac2-m2pro.metal",
             InstanceType::Mac2Metal => "mac2.metal",
             InstanceType::P216xlarge => "p2.16xlarge",
             InstanceType::P28xlarge => "p2.8xlarge",
@@ -4237,6 +4242,7 @@ impl InstanceType {
             "m7i.large",
             "m7i.xlarge",
             "mac1.metal",
+            "mac2-m2pro.metal",
             "mac2.metal",
             "p2.16xlarge",
             "p2.8xlarge",

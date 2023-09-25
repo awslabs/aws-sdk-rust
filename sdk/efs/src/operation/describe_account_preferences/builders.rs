@@ -22,7 +22,7 @@ impl DescribeAccountPreferencesInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeAccountPreferences`.
 ///
-/// <p>Returns the account preferences settings for the Amazon Web Services account associated with the user making the request, in the current Amazon Web Services Region. For more information, see <a href="efs/latest/ug/manage-efs-resource-ids.html">Managing Amazon EFS resource IDs</a>.</p>
+/// <p>Returns the account preferences settings for the Amazon Web Services account associated with the user making the request, in the current Amazon Web Services Region.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeAccountPreferencesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

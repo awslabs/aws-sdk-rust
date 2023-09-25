@@ -194,6 +194,20 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for GetQuantumT
                 ::std::write!(output, "/quantum-task/{quantumTaskArn}", quantumTaskArn = quantum_task_arn).expect("formatting should succeed");
                 ::std::result::Result::Ok(())
             }
+            fn uri_query(
+                _input: &crate::operation::get_quantum_task::GetQuantumTaskInput,
+                mut output: &mut ::std::string::String,
+            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError> {
+                let mut query = ::aws_smithy_http::query::Writer::new(output);
+                if let ::std::option::Option::Some(inner_2) = &_input.additional_attribute_names {
+                    {
+                        for inner_3 in inner_2 {
+                            query.push_kv("additionalAttributeNames", &::aws_smithy_http::query::fmt_string(&inner_3));
+                        }
+                    }
+                }
+                ::std::result::Result::Ok(())
+            }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
                 input: &crate::operation::get_quantum_task::GetQuantumTaskInput,
@@ -201,6 +215,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for GetQuantumT
             ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
                 let mut uri = ::std::string::String::new();
                 uri_base(input, &mut uri)?;
+                uri_query(input, &mut uri)?;
                 ::std::result::Result::Ok(builder.method("GET").uri(uri))
             }
             let mut builder = update_http_builder(&input, ::http::request::Builder::new())?;

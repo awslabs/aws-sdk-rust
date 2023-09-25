@@ -155,6 +155,12 @@ pub use crate::types::_data_provider::DataProvider;
 
 pub use crate::types::_data_provider_settings::DataProviderSettings;
 
+pub use crate::types::_mongo_db_data_provider_settings::MongoDbDataProviderSettings;
+
+pub use crate::types::_maria_db_data_provider_settings::MariaDbDataProviderSettings;
+
+pub use crate::types::_doc_db_data_provider_settings::DocDbDataProviderSettings;
+
 pub use crate::types::_microsoft_sql_server_data_provider_settings::MicrosoftSqlServerDataProviderSettings;
 
 pub use crate::types::_oracle_data_provider_settings::OracleDataProviderSettings;
@@ -162,6 +168,8 @@ pub use crate::types::_oracle_data_provider_settings::OracleDataProviderSettings
 pub use crate::types::_my_sql_data_provider_settings::MySqlDataProviderSettings;
 
 pub use crate::types::_postgre_sql_data_provider_settings::PostgreSqlDataProviderSettings;
+
+pub use crate::types::_redshift_data_provider_settings::RedshiftDataProviderSettings;
 
 pub use crate::types::_tag::Tag;
 
@@ -317,6 +325,8 @@ mod _dms_ssl_mode_value;
 
 mod _dms_transfer_settings;
 
+mod _doc_db_data_provider_settings;
+
 mod _doc_db_settings;
 
 mod _dynamo_db_settings;
@@ -375,6 +385,8 @@ mod _limitation;
 
 mod _long_varchar_mapping_type;
 
+mod _maria_db_data_provider_settings;
+
 mod _message_format_value;
 
 mod _microsoft_sql_server_data_provider_settings;
@@ -384,6 +396,8 @@ mod _microsoft_sql_server_settings;
 mod _migration_project;
 
 mod _migration_type_value;
+
+mod _mongo_db_data_provider_settings;
 
 mod _mongo_db_settings;
 
@@ -430,6 +444,8 @@ mod _recommendation_settings;
 mod _redis_auth_type_value;
 
 mod _redis_settings;
+
+mod _redshift_data_provider_settings;
 
 mod _redshift_settings;
 

@@ -9,6 +9,14 @@ pub use crate::types::_search_quantum_tasks_filter_operator::SearchQuantumTasksF
 
 pub use crate::types::_cancellation_status::CancellationStatus;
 
+pub use crate::types::_quantum_task_queue_info::QuantumTaskQueueInfo;
+
+pub use crate::types::_queue_priority::QueuePriority;
+
+pub use crate::types::_queue_name::QueueName;
+
+pub use crate::types::_quantum_task_additional_attribute_name::QuantumTaskAdditionalAttributeName;
+
 pub use crate::types::_job_summary::JobSummary;
 
 pub use crate::types::_job_primary_status::JobPrimaryStatus;
@@ -43,9 +51,13 @@ pub use crate::types::_script_mode_config::ScriptModeConfig;
 
 pub use crate::types::_compression_type::CompressionType;
 
+pub use crate::types::_hybrid_job_queue_info::HybridJobQueueInfo;
+
 pub use crate::types::_job_event_details::JobEventDetails;
 
 pub use crate::types::_job_event_type::JobEventType;
+
+pub use crate::types::_hybrid_job_additional_attribute_name::HybridJobAdditionalAttributeName;
 
 pub use crate::types::_device_summary::DeviceSummary;
 
@@ -54,6 +66,8 @@ pub use crate::types::_device_status::DeviceStatus;
 pub use crate::types::_device_type::DeviceType;
 
 pub use crate::types::_search_devices_filter::SearchDevicesFilter;
+
+pub use crate::types::_device_queue_info::DeviceQueueInfo;
 
 mod _algorithm_specification;
 
@@ -67,11 +81,17 @@ mod _data_source;
 
 mod _device_config;
 
+mod _device_queue_info;
+
 mod _device_status;
 
 mod _device_summary;
 
 mod _device_type;
+
+mod _hybrid_job_additional_attribute_name;
+
+mod _hybrid_job_queue_info;
 
 mod _input_file_config;
 
@@ -93,9 +113,17 @@ mod _job_stopping_condition;
 
 mod _job_summary;
 
+mod _quantum_task_additional_attribute_name;
+
+mod _quantum_task_queue_info;
+
 mod _quantum_task_status;
 
 mod _quantum_task_summary;
+
+mod _queue_name;
+
+mod _queue_priority;
 
 mod _s3_data_source;
 

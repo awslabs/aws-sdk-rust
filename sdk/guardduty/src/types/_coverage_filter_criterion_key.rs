@@ -16,6 +16,7 @@
 ///     CoverageFilterCriterionKey::AddonVersion => { /* ... */ },
 ///     CoverageFilterCriterionKey::ClusterName => { /* ... */ },
 ///     CoverageFilterCriterionKey::CoverageStatus => { /* ... */ },
+///     CoverageFilterCriterionKey::EksClusterName => { /* ... */ },
 ///     CoverageFilterCriterionKey::ManagementType => { /* ... */ },
 ///     CoverageFilterCriterionKey::ResourceType => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -54,6 +55,8 @@ pub enum CoverageFilterCriterionKey {
     #[allow(missing_docs)] // documentation missing in model
     CoverageStatus,
     #[allow(missing_docs)] // documentation missing in model
+    EksClusterName,
+    #[allow(missing_docs)] // documentation missing in model
     ManagementType,
     #[allow(missing_docs)] // documentation missing in model
     ResourceType,
@@ -67,6 +70,7 @@ impl ::std::convert::From<&str> for CoverageFilterCriterionKey {
             "ADDON_VERSION" => CoverageFilterCriterionKey::AddonVersion,
             "CLUSTER_NAME" => CoverageFilterCriterionKey::ClusterName,
             "COVERAGE_STATUS" => CoverageFilterCriterionKey::CoverageStatus,
+            "EKS_CLUSTER_NAME" => CoverageFilterCriterionKey::EksClusterName,
             "MANAGEMENT_TYPE" => CoverageFilterCriterionKey::ManagementType,
             "RESOURCE_TYPE" => CoverageFilterCriterionKey::ResourceType,
             other => CoverageFilterCriterionKey::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
@@ -88,6 +92,7 @@ impl CoverageFilterCriterionKey {
             CoverageFilterCriterionKey::AddonVersion => "ADDON_VERSION",
             CoverageFilterCriterionKey::ClusterName => "CLUSTER_NAME",
             CoverageFilterCriterionKey::CoverageStatus => "COVERAGE_STATUS",
+            CoverageFilterCriterionKey::EksClusterName => "EKS_CLUSTER_NAME",
             CoverageFilterCriterionKey::ManagementType => "MANAGEMENT_TYPE",
             CoverageFilterCriterionKey::ResourceType => "RESOURCE_TYPE",
             CoverageFilterCriterionKey::Unknown(value) => value.as_str(),
@@ -100,6 +105,7 @@ impl CoverageFilterCriterionKey {
             "ADDON_VERSION",
             "CLUSTER_NAME",
             "COVERAGE_STATUS",
+            "EKS_CLUSTER_NAME",
             "MANAGEMENT_TYPE",
             "RESOURCE_TYPE",
         ]

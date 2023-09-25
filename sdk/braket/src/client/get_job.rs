@@ -4,6 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`job_arn(impl Into<String>)`](crate::operation::get_job::builders::GetJobFluentBuilder::job_arn) / [`set_job_arn(Option<String>)`](crate::operation::get_job::builders::GetJobFluentBuilder::set_job_arn): <p>The ARN of the job to retrieve.</p>
+    ///   - [`additional_attribute_names(HybridJobAdditionalAttributeName)`](crate::operation::get_job::builders::GetJobFluentBuilder::additional_attribute_names) / [`set_additional_attribute_names(Option<Vec<HybridJobAdditionalAttributeName>>)`](crate::operation::get_job::builders::GetJobFluentBuilder::set_additional_attribute_names): <p>A list of attributes to return information for.</p>
     /// - On success, responds with [`GetJobOutput`](crate::operation::get_job::GetJobOutput) with field(s):
     ///   - [`status(Option<JobPrimaryStatus>)`](crate::operation::get_job::GetJobOutput::status): <p>The status of the Amazon Braket job.</p>
     ///   - [`job_arn(Option<String>)`](crate::operation::get_job::GetJobOutput::job_arn): <p>The ARN of the Amazon Braket job.</p>
@@ -24,6 +25,7 @@ impl super::Client {
     ///   - [`device_config(Option<DeviceConfig>)`](crate::operation::get_job::GetJobOutput::device_config): <p>The quantum processing unit (QPU) or simulator used to run the Amazon Braket job.</p>
     ///   - [`events(Option<Vec<JobEventDetails>>)`](crate::operation::get_job::GetJobOutput::events): <p>Details about the type and time events occurred related to the Amazon Braket job.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::get_job::GetJobOutput::tags): <p>A tag object that consists of a key and an optional value, used to manage metadata for Amazon Braket resources.</p>
+    ///   - [`queue_info(Option<HybridJobQueueInfo>)`](crate::operation::get_job::GetJobOutput::queue_info): <p>Queue information for the requested job. Only returned if <code>QueueInfo</code> is specified in the <code>additionalAttributeNames"</code> field in the <code>GetJob</code> API request.</p>
     /// - On failure, responds with [`SdkError<GetJobError>`](crate::operation::get_job::GetJobError)
     pub fn get_job(&self) -> crate::operation::get_job::builders::GetJobFluentBuilder {
         crate::operation::get_job::builders::GetJobFluentBuilder::new(self.handle.clone())

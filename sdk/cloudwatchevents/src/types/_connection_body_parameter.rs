@@ -2,7 +2,7 @@
 
 /// <p>Additional parameter included in the body. You can include up to 100 additional body parameters per request. An event payload cannot exceed 64 KB.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ConnectionBodyParameter {
     /// <p>The key for the parameter.</p>
     pub key: ::std::option::Option<::std::string::String>,
@@ -25,6 +25,15 @@ impl ConnectionBodyParameter {
         self.is_value_secret
     }
 }
+impl ::std::fmt::Debug for ConnectionBodyParameter {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("ConnectionBodyParameter");
+        formatter.field("key", &self.key);
+        formatter.field("value", &"*** Sensitive Data Redacted ***");
+        formatter.field("is_value_secret", &self.is_value_secret);
+        formatter.finish()
+    }
+}
 impl ConnectionBodyParameter {
     /// Creates a new builder-style object to manufacture [`ConnectionBodyParameter`](crate::types::ConnectionBodyParameter).
     pub fn builder() -> crate::types::builders::ConnectionBodyParameterBuilder {
@@ -34,7 +43,7 @@ impl ConnectionBodyParameter {
 
 /// A builder for [`ConnectionBodyParameter`](crate::types::ConnectionBodyParameter).
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct ConnectionBodyParameterBuilder {
     pub(crate) key: ::std::option::Option<::std::string::String>,
     pub(crate) value: ::std::option::Option<::std::string::String>,
@@ -90,5 +99,14 @@ impl ConnectionBodyParameterBuilder {
             value: self.value,
             is_value_secret: self.is_value_secret.unwrap_or_default(),
         }
+    }
+}
+impl ::std::fmt::Debug for ConnectionBodyParameterBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("ConnectionBodyParameterBuilder");
+        formatter.field("key", &self.key);
+        formatter.field("value", &"*** Sensitive Data Redacted ***");
+        formatter.field("is_value_secret", &self.is_value_secret);
+        formatter.finish()
     }
 }

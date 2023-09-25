@@ -4,6 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`quantum_task_arn(impl Into<String>)`](crate::operation::get_quantum_task::builders::GetQuantumTaskFluentBuilder::quantum_task_arn) / [`set_quantum_task_arn(Option<String>)`](crate::operation::get_quantum_task::builders::GetQuantumTaskFluentBuilder::set_quantum_task_arn): <p>the ARN of the task to retrieve.</p>
+    ///   - [`additional_attribute_names(QuantumTaskAdditionalAttributeName)`](crate::operation::get_quantum_task::builders::GetQuantumTaskFluentBuilder::additional_attribute_names) / [`set_additional_attribute_names(Option<Vec<QuantumTaskAdditionalAttributeName>>)`](crate::operation::get_quantum_task::builders::GetQuantumTaskFluentBuilder::set_additional_attribute_names): <p>A list of attributes to return information for.</p>
     /// - On success, responds with [`GetQuantumTaskOutput`](crate::operation::get_quantum_task::GetQuantumTaskOutput) with field(s):
     ///   - [`quantum_task_arn(Option<String>)`](crate::operation::get_quantum_task::GetQuantumTaskOutput::quantum_task_arn): <p>The ARN of the task.</p>
     ///   - [`status(Option<QuantumTaskStatus>)`](crate::operation::get_quantum_task::GetQuantumTaskOutput::status): <p>The status of the task.</p>
@@ -17,6 +18,7 @@ impl super::Client {
     ///   - [`ended_at(Option<DateTime>)`](crate::operation::get_quantum_task::GetQuantumTaskOutput::ended_at): <p>The time at which the task ended.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::get_quantum_task::GetQuantumTaskOutput::tags): <p>The tags that belong to this task.</p>
     ///   - [`job_arn(Option<String>)`](crate::operation::get_quantum_task::GetQuantumTaskOutput::job_arn): <p>The ARN of the Amazon Braket job associated with the quantum task.</p>
+    ///   - [`queue_info(Option<QuantumTaskQueueInfo>)`](crate::operation::get_quantum_task::GetQuantumTaskOutput::queue_info): <p>Queue information for the requested quantum task. Only returned if <code>QueueInfo</code> is specified in the <code>additionalAttributeNames"</code> field in the <code>GetQuantumTask</code> API request.</p>
     /// - On failure, responds with [`SdkError<GetQuantumTaskError>`](crate::operation::get_quantum_task::GetQuantumTaskError)
     pub fn get_quantum_task(&self) -> crate::operation::get_quantum_task::builders::GetQuantumTaskFluentBuilder {
         crate::operation::get_quantum_task::builders::GetQuantumTaskFluentBuilder::new(self.handle.clone())

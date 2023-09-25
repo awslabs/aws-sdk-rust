@@ -8,7 +8,7 @@ pub struct MongoDbSettings {
     pub username: ::std::option::Option<::std::string::String>,
     /// <p> The password for the user account you use to access the MongoDB source endpoint. </p>
     pub password: ::std::option::Option<::std::string::String>,
-    /// <p> The name of the server on the MongoDB source endpoint. </p>
+    /// <p> The name of the server on the MongoDB source endpoint. For MongoDB Atlas, provide the server name for any of the servers in the replication set.</p>
     pub server_name: ::std::option::Option<::std::string::String>,
     /// <p> The port value for the MongoDB source endpoint. </p>
     pub port: ::std::option::Option<i32>,
@@ -59,7 +59,7 @@ impl MongoDbSettings {
     pub fn password(&self) -> ::std::option::Option<&str> {
         self.password.as_deref()
     }
-    /// <p> The name of the server on the MongoDB source endpoint. </p>
+    /// <p> The name of the server on the MongoDB source endpoint. For MongoDB Atlas, provide the server name for any of the servers in the replication set.</p>
     pub fn server_name(&self) -> ::std::option::Option<&str> {
         self.server_name.as_deref()
     }
@@ -208,17 +208,17 @@ impl MongoDbSettingsBuilder {
     pub fn get_password(&self) -> &::std::option::Option<::std::string::String> {
         &self.password
     }
-    /// <p> The name of the server on the MongoDB source endpoint. </p>
+    /// <p> The name of the server on the MongoDB source endpoint. For MongoDB Atlas, provide the server name for any of the servers in the replication set.</p>
     pub fn server_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.server_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The name of the server on the MongoDB source endpoint. </p>
+    /// <p> The name of the server on the MongoDB source endpoint. For MongoDB Atlas, provide the server name for any of the servers in the replication set.</p>
     pub fn set_server_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.server_name = input;
         self
     }
-    /// <p> The name of the server on the MongoDB source endpoint. </p>
+    /// <p> The name of the server on the MongoDB source endpoint. For MongoDB Atlas, provide the server name for any of the servers in the replication set.</p>
     pub fn get_server_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.server_name
     }

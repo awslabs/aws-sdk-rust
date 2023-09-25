@@ -677,6 +677,8 @@ pub(crate) mod shape_data_provider_descriptor_list;
 
 pub(crate) mod shape_database_response;
 
+pub(crate) mod shape_doc_db_data_provider_settings;
+
 pub(crate) mod shape_endpoint_setting;
 
 pub(crate) mod shape_engine_version;
@@ -693,7 +695,11 @@ pub(crate) mod shape_fleet_advisor_schema_object_response;
 
 pub(crate) mod shape_limitation;
 
+pub(crate) mod shape_maria_db_data_provider_settings;
+
 pub(crate) mod shape_microsoft_sql_server_data_provider_settings;
+
+pub(crate) mod shape_mongo_db_data_provider_settings;
 
 pub(crate) mod shape_my_sql_data_provider_settings;
 
@@ -708,6 +714,8 @@ pub(crate) mod shape_postgre_sql_data_provider_settings;
 pub(crate) mod shape_provision_data;
 
 pub(crate) mod shape_recommendation;
+
+pub(crate) mod shape_redshift_data_provider_settings;
 
 pub(crate) mod shape_replication_instance_ipv6_address_list;
 

@@ -125,22 +125,22 @@ impl UpdateOrganizationConfigurationFluentBuilder {
     pub fn get_detector_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_detector_id()
     }
-    /// <p>Indicates whether to automatically enable member accounts in the organization.</p>
-    /// <p>Even though this is still supported, we recommend using <code>AutoEnableOrganizationMembers</code> to achieve the similar results. You must provide the value for either <code>autoEnableOrganizationMembers</code> or <code>autoEnable</code>.</p>
+    /// <p>Represents whether or not to automatically enable member accounts in the organization.</p>
+    /// <p>Even though this is still supported, we recommend using <code>AutoEnableOrganizationMembers</code> to achieve the similar results. You must provide a value for either <code>autoEnableOrganizationMembers</code> or <code>autoEnable</code>.</p>
     #[deprecated(note = "This field is deprecated, use AutoEnableOrganizationMembers instead")]
     pub fn auto_enable(mut self, input: bool) -> Self {
         self.inner = self.inner.auto_enable(input);
         self
     }
-    /// <p>Indicates whether to automatically enable member accounts in the organization.</p>
-    /// <p>Even though this is still supported, we recommend using <code>AutoEnableOrganizationMembers</code> to achieve the similar results. You must provide the value for either <code>autoEnableOrganizationMembers</code> or <code>autoEnable</code>.</p>
+    /// <p>Represents whether or not to automatically enable member accounts in the organization.</p>
+    /// <p>Even though this is still supported, we recommend using <code>AutoEnableOrganizationMembers</code> to achieve the similar results. You must provide a value for either <code>autoEnableOrganizationMembers</code> or <code>autoEnable</code>.</p>
     #[deprecated(note = "This field is deprecated, use AutoEnableOrganizationMembers instead")]
     pub fn set_auto_enable(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_auto_enable(input);
         self
     }
-    /// <p>Indicates whether to automatically enable member accounts in the organization.</p>
-    /// <p>Even though this is still supported, we recommend using <code>AutoEnableOrganizationMembers</code> to achieve the similar results. You must provide the value for either <code>autoEnableOrganizationMembers</code> or <code>autoEnable</code>.</p>
+    /// <p>Represents whether or not to automatically enable member accounts in the organization.</p>
+    /// <p>Even though this is still supported, we recommend using <code>AutoEnableOrganizationMembers</code> to achieve the similar results. You must provide a value for either <code>autoEnableOrganizationMembers</code> or <code>autoEnable</code>.</p>
     #[deprecated(note = "This field is deprecated, use AutoEnableOrganizationMembers instead")]
     pub fn get_auto_enable(&self) -> &::std::option::Option<bool> {
         self.inner.get_auto_enable()

@@ -15,6 +15,8 @@ pub struct GetDeviceOutput {
     pub device_status: ::std::option::Option<crate::types::DeviceStatus>,
     /// <p>Details about the capabilities of the device.</p>
     pub device_capabilities: ::std::option::Option<::std::string::String>,
+    /// <p>List of information about tasks and jobs queued on a device.</p>
+    pub device_queue_info: ::std::option::Option<::std::vec::Vec<crate::types::DeviceQueueInfo>>,
     _request_id: Option<String>,
 }
 impl GetDeviceOutput {
@@ -42,6 +44,10 @@ impl GetDeviceOutput {
     pub fn device_capabilities(&self) -> ::std::option::Option<&str> {
         self.device_capabilities.as_deref()
     }
+    /// <p>List of information about tasks and jobs queued on a device.</p>
+    pub fn device_queue_info(&self) -> ::std::option::Option<&[crate::types::DeviceQueueInfo]> {
+        self.device_queue_info.as_deref()
+    }
 }
 impl ::aws_http::request_id::RequestId for GetDeviceOutput {
     fn request_id(&self) -> Option<&str> {
@@ -65,6 +71,7 @@ pub struct GetDeviceOutputBuilder {
     pub(crate) device_type: ::std::option::Option<crate::types::DeviceType>,
     pub(crate) device_status: ::std::option::Option<crate::types::DeviceStatus>,
     pub(crate) device_capabilities: ::std::option::Option<::std::string::String>,
+    pub(crate) device_queue_info: ::std::option::Option<::std::vec::Vec<crate::types::DeviceQueueInfo>>,
     _request_id: Option<String>,
 }
 impl GetDeviceOutputBuilder {
@@ -152,6 +159,26 @@ impl GetDeviceOutputBuilder {
     pub fn get_device_capabilities(&self) -> &::std::option::Option<::std::string::String> {
         &self.device_capabilities
     }
+    /// Appends an item to `device_queue_info`.
+    ///
+    /// To override the contents of this collection use [`set_device_queue_info`](Self::set_device_queue_info).
+    ///
+    /// <p>List of information about tasks and jobs queued on a device.</p>
+    pub fn device_queue_info(mut self, input: crate::types::DeviceQueueInfo) -> Self {
+        let mut v = self.device_queue_info.unwrap_or_default();
+        v.push(input);
+        self.device_queue_info = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>List of information about tasks and jobs queued on a device.</p>
+    pub fn set_device_queue_info(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DeviceQueueInfo>>) -> Self {
+        self.device_queue_info = input;
+        self
+    }
+    /// <p>List of information about tasks and jobs queued on a device.</p>
+    pub fn get_device_queue_info(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DeviceQueueInfo>> {
+        &self.device_queue_info
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -170,6 +197,7 @@ impl GetDeviceOutputBuilder {
             device_type: self.device_type,
             device_status: self.device_status,
             device_capabilities: self.device_capabilities,
+            device_queue_info: self.device_queue_info,
             _request_id: self._request_id,
         }
     }

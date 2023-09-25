@@ -36,8 +36,6 @@ pub struct ModifyReplicationInstanceInput {
     /// <li> <p>A newer minor version is available. </p> </li>
     /// <li> <p>DMS has enabled automatic patching for the given engine version. </p> </li>
     /// </ul>
-    /// <p>When <code>AutoMinorVersionUpgrade</code> is enabled, DMS uses the current default engine version when you modify a replication instance. For example, if you set <code>EngineVersion</code> to a lower version number than the current default version, DMS uses the default version.</p>
-    /// <p>If <code>AutoMinorVersionUpgrade</code> <i>isn’t</i> enabled when you modify a replication instance, DMS uses the engine version specified by the <code>EngineVersion</code> parameter.</p>
     pub auto_minor_version_upgrade: ::std::option::Option<bool>,
     /// <p>The replication instance identifier. This parameter is stored as a lowercase string.</p>
     pub replication_instance_identifier: ::std::option::Option<::std::string::String>,
@@ -95,8 +93,6 @@ impl ModifyReplicationInstanceInput {
     /// <li> <p>A newer minor version is available. </p> </li>
     /// <li> <p>DMS has enabled automatic patching for the given engine version. </p> </li>
     /// </ul>
-    /// <p>When <code>AutoMinorVersionUpgrade</code> is enabled, DMS uses the current default engine version when you modify a replication instance. For example, if you set <code>EngineVersion</code> to a lower version number than the current default version, DMS uses the default version.</p>
-    /// <p>If <code>AutoMinorVersionUpgrade</code> <i>isn’t</i> enabled when you modify a replication instance, DMS uses the engine version specified by the <code>EngineVersion</code> parameter.</p>
     pub fn auto_minor_version_upgrade(&self) -> ::std::option::Option<bool> {
         self.auto_minor_version_upgrade
     }
@@ -294,8 +290,6 @@ impl ModifyReplicationInstanceInputBuilder {
     /// <li> <p>A newer minor version is available. </p> </li>
     /// <li> <p>DMS has enabled automatic patching for the given engine version. </p> </li>
     /// </ul>
-    /// <p>When <code>AutoMinorVersionUpgrade</code> is enabled, DMS uses the current default engine version when you modify a replication instance. For example, if you set <code>EngineVersion</code> to a lower version number than the current default version, DMS uses the default version.</p>
-    /// <p>If <code>AutoMinorVersionUpgrade</code> <i>isn’t</i> enabled when you modify a replication instance, DMS uses the engine version specified by the <code>EngineVersion</code> parameter.</p>
     pub fn auto_minor_version_upgrade(mut self, input: bool) -> Self {
         self.auto_minor_version_upgrade = ::std::option::Option::Some(input);
         self
@@ -307,8 +301,6 @@ impl ModifyReplicationInstanceInputBuilder {
     /// <li> <p>A newer minor version is available. </p> </li>
     /// <li> <p>DMS has enabled automatic patching for the given engine version. </p> </li>
     /// </ul>
-    /// <p>When <code>AutoMinorVersionUpgrade</code> is enabled, DMS uses the current default engine version when you modify a replication instance. For example, if you set <code>EngineVersion</code> to a lower version number than the current default version, DMS uses the default version.</p>
-    /// <p>If <code>AutoMinorVersionUpgrade</code> <i>isn’t</i> enabled when you modify a replication instance, DMS uses the engine version specified by the <code>EngineVersion</code> parameter.</p>
     pub fn set_auto_minor_version_upgrade(mut self, input: ::std::option::Option<bool>) -> Self {
         self.auto_minor_version_upgrade = input;
         self
@@ -320,8 +312,6 @@ impl ModifyReplicationInstanceInputBuilder {
     /// <li> <p>A newer minor version is available. </p> </li>
     /// <li> <p>DMS has enabled automatic patching for the given engine version. </p> </li>
     /// </ul>
-    /// <p>When <code>AutoMinorVersionUpgrade</code> is enabled, DMS uses the current default engine version when you modify a replication instance. For example, if you set <code>EngineVersion</code> to a lower version number than the current default version, DMS uses the default version.</p>
-    /// <p>If <code>AutoMinorVersionUpgrade</code> <i>isn’t</i> enabled when you modify a replication instance, DMS uses the engine version specified by the <code>EngineVersion</code> parameter.</p>
     pub fn get_auto_minor_version_upgrade(&self) -> &::std::option::Option<bool> {
         &self.auto_minor_version_upgrade
     }

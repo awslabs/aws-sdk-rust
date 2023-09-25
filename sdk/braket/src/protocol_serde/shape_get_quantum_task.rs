@@ -184,6 +184,9 @@ pub(crate) fn de_get_quantum_task(
                             .transpose()?,
                     );
                 }
+                "queueInfo" => {
+                    builder = builder.set_queue_info(crate::protocol_serde::shape_quantum_task_queue_info::de_quantum_task_queue_info(tokens)?);
+                }
                 "shots" => {
                     builder = builder.set_shots(
                         ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?

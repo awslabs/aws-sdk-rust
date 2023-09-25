@@ -8,7 +8,7 @@ pub struct S3DestinationSettings {
     pub access_control: ::std::option::Option<crate::types::S3DestinationAccessControl>,
     /// Settings for how your job outputs are encrypted as they are uploaded to Amazon S3.
     pub encryption: ::std::option::Option<crate::types::S3EncryptionSettings>,
-    /// Specify the S3 storage class to use for this destination.
+    /// Specify the S3 storage class to use for this output. To use your destination's default storage class: Keep the default value, Not set. For more information about S3 storage classes, see https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-class-intro.html
     pub storage_class: ::std::option::Option<crate::types::S3StorageClass>,
 }
 impl S3DestinationSettings {
@@ -20,7 +20,7 @@ impl S3DestinationSettings {
     pub fn encryption(&self) -> ::std::option::Option<&crate::types::S3EncryptionSettings> {
         self.encryption.as_ref()
     }
-    /// Specify the S3 storage class to use for this destination.
+    /// Specify the S3 storage class to use for this output. To use your destination's default storage class: Keep the default value, Not set. For more information about S3 storage classes, see https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-class-intro.html
     pub fn storage_class(&self) -> ::std::option::Option<&crate::types::S3StorageClass> {
         self.storage_class.as_ref()
     }
@@ -69,17 +69,17 @@ impl S3DestinationSettingsBuilder {
     pub fn get_encryption(&self) -> &::std::option::Option<crate::types::S3EncryptionSettings> {
         &self.encryption
     }
-    /// Specify the S3 storage class to use for this destination.
+    /// Specify the S3 storage class to use for this output. To use your destination's default storage class: Keep the default value, Not set. For more information about S3 storage classes, see https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-class-intro.html
     pub fn storage_class(mut self, input: crate::types::S3StorageClass) -> Self {
         self.storage_class = ::std::option::Option::Some(input);
         self
     }
-    /// Specify the S3 storage class to use for this destination.
+    /// Specify the S3 storage class to use for this output. To use your destination's default storage class: Keep the default value, Not set. For more information about S3 storage classes, see https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-class-intro.html
     pub fn set_storage_class(mut self, input: ::std::option::Option<crate::types::S3StorageClass>) -> Self {
         self.storage_class = input;
         self
     }
-    /// Specify the S3 storage class to use for this destination.
+    /// Specify the S3 storage class to use for this output. To use your destination's default storage class: Keep the default value, Not set. For more information about S3 storage classes, see https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-class-intro.html
     pub fn get_storage_class(&self) -> &::std::option::Option<crate::types::S3StorageClass> {
         &self.storage_class
     }

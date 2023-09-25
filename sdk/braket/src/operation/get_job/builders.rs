@@ -112,4 +112,25 @@ impl GetJobFluentBuilder {
     pub fn get_job_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_job_arn()
     }
+    /// Appends an item to `additionalAttributeNames`.
+    ///
+    /// To override the contents of this collection use [`set_additional_attribute_names`](Self::set_additional_attribute_names).
+    ///
+    /// <p>A list of attributes to return information for.</p>
+    pub fn additional_attribute_names(mut self, input: crate::types::HybridJobAdditionalAttributeName) -> Self {
+        self.inner = self.inner.additional_attribute_names(input);
+        self
+    }
+    /// <p>A list of attributes to return information for.</p>
+    pub fn set_additional_attribute_names(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::HybridJobAdditionalAttributeName>>,
+    ) -> Self {
+        self.inner = self.inner.set_additional_attribute_names(input);
+        self
+    }
+    /// <p>A list of attributes to return information for.</p>
+    pub fn get_additional_attribute_names(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HybridJobAdditionalAttributeName>> {
+        self.inner.get_additional_attribute_names()
+    }
 }

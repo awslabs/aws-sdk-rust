@@ -16,6 +16,7 @@
 ///     CoverageSortKey::AddonVersion => { /* ... */ },
 ///     CoverageSortKey::ClusterName => { /* ... */ },
 ///     CoverageSortKey::CoverageStatus => { /* ... */ },
+///     CoverageSortKey::EksClusterName => { /* ... */ },
 ///     CoverageSortKey::Issue => { /* ... */ },
 ///     CoverageSortKey::UpdatedAt => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -54,6 +55,8 @@ pub enum CoverageSortKey {
     #[allow(missing_docs)] // documentation missing in model
     CoverageStatus,
     #[allow(missing_docs)] // documentation missing in model
+    EksClusterName,
+    #[allow(missing_docs)] // documentation missing in model
     Issue,
     #[allow(missing_docs)] // documentation missing in model
     UpdatedAt,
@@ -67,6 +70,7 @@ impl ::std::convert::From<&str> for CoverageSortKey {
             "ADDON_VERSION" => CoverageSortKey::AddonVersion,
             "CLUSTER_NAME" => CoverageSortKey::ClusterName,
             "COVERAGE_STATUS" => CoverageSortKey::CoverageStatus,
+            "EKS_CLUSTER_NAME" => CoverageSortKey::EksClusterName,
             "ISSUE" => CoverageSortKey::Issue,
             "UPDATED_AT" => CoverageSortKey::UpdatedAt,
             other => CoverageSortKey::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
@@ -88,6 +92,7 @@ impl CoverageSortKey {
             CoverageSortKey::AddonVersion => "ADDON_VERSION",
             CoverageSortKey::ClusterName => "CLUSTER_NAME",
             CoverageSortKey::CoverageStatus => "COVERAGE_STATUS",
+            CoverageSortKey::EksClusterName => "EKS_CLUSTER_NAME",
             CoverageSortKey::Issue => "ISSUE",
             CoverageSortKey::UpdatedAt => "UPDATED_AT",
             CoverageSortKey::Unknown(value) => value.as_str(),
@@ -95,7 +100,15 @@ impl CoverageSortKey {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ACCOUNT_ID", "ADDON_VERSION", "CLUSTER_NAME", "COVERAGE_STATUS", "ISSUE", "UPDATED_AT"]
+        &[
+            "ACCOUNT_ID",
+            "ADDON_VERSION",
+            "CLUSTER_NAME",
+            "COVERAGE_STATUS",
+            "EKS_CLUSTER_NAME",
+            "ISSUE",
+            "UPDATED_AT",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for CoverageSortKey {

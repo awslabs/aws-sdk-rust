@@ -2,7 +2,7 @@
 
 /// <p>Contains the API key authorization parameters to use to update the connection.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UpdateConnectionApiKeyAuthRequestParameters {
     /// <p>The name of the API key to use for authorization.</p>
     pub api_key_name: ::std::option::Option<::std::string::String>,
@@ -19,6 +19,14 @@ impl UpdateConnectionApiKeyAuthRequestParameters {
         self.api_key_value.as_deref()
     }
 }
+impl ::std::fmt::Debug for UpdateConnectionApiKeyAuthRequestParameters {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateConnectionApiKeyAuthRequestParameters");
+        formatter.field("api_key_name", &self.api_key_name);
+        formatter.field("api_key_value", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl UpdateConnectionApiKeyAuthRequestParameters {
     /// Creates a new builder-style object to manufacture [`UpdateConnectionApiKeyAuthRequestParameters`](crate::types::UpdateConnectionApiKeyAuthRequestParameters).
     pub fn builder() -> crate::types::builders::UpdateConnectionApiKeyAuthRequestParametersBuilder {
@@ -28,7 +36,7 @@ impl UpdateConnectionApiKeyAuthRequestParameters {
 
 /// A builder for [`UpdateConnectionApiKeyAuthRequestParameters`](crate::types::UpdateConnectionApiKeyAuthRequestParameters).
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct UpdateConnectionApiKeyAuthRequestParametersBuilder {
     pub(crate) api_key_name: ::std::option::Option<::std::string::String>,
     pub(crate) api_key_value: ::std::option::Option<::std::string::String>,
@@ -68,5 +76,13 @@ impl UpdateConnectionApiKeyAuthRequestParametersBuilder {
             api_key_name: self.api_key_name,
             api_key_value: self.api_key_value,
         }
+    }
+}
+impl ::std::fmt::Debug for UpdateConnectionApiKeyAuthRequestParametersBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateConnectionApiKeyAuthRequestParametersBuilder");
+        formatter.field("api_key_name", &self.api_key_name);
+        formatter.field("api_key_value", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

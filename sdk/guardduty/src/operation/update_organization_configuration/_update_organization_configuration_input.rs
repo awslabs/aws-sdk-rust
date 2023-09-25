@@ -5,8 +5,8 @@
 pub struct UpdateOrganizationConfigurationInput {
     /// <p>The ID of the detector that configures the delegated administrator.</p>
     pub detector_id: ::std::option::Option<::std::string::String>,
-    /// <p>Indicates whether to automatically enable member accounts in the organization.</p>
-    /// <p>Even though this is still supported, we recommend using <code>AutoEnableOrganizationMembers</code> to achieve the similar results. You must provide the value for either <code>autoEnableOrganizationMembers</code> or <code>autoEnable</code>.</p>
+    /// <p>Represents whether or not to automatically enable member accounts in the organization.</p>
+    /// <p>Even though this is still supported, we recommend using <code>AutoEnableOrganizationMembers</code> to achieve the similar results. You must provide a value for either <code>autoEnableOrganizationMembers</code> or <code>autoEnable</code>.</p>
     #[deprecated(note = "This field is deprecated, use AutoEnableOrganizationMembers instead")]
     pub auto_enable: ::std::option::Option<bool>,
     /// <p>Describes which data sources will be updated.</p>
@@ -28,8 +28,8 @@ impl UpdateOrganizationConfigurationInput {
     pub fn detector_id(&self) -> ::std::option::Option<&str> {
         self.detector_id.as_deref()
     }
-    /// <p>Indicates whether to automatically enable member accounts in the organization.</p>
-    /// <p>Even though this is still supported, we recommend using <code>AutoEnableOrganizationMembers</code> to achieve the similar results. You must provide the value for either <code>autoEnableOrganizationMembers</code> or <code>autoEnable</code>.</p>
+    /// <p>Represents whether or not to automatically enable member accounts in the organization.</p>
+    /// <p>Even though this is still supported, we recommend using <code>AutoEnableOrganizationMembers</code> to achieve the similar results. You must provide a value for either <code>autoEnableOrganizationMembers</code> or <code>autoEnable</code>.</p>
     #[deprecated(note = "This field is deprecated, use AutoEnableOrganizationMembers instead")]
     pub fn auto_enable(&self) -> ::std::option::Option<bool> {
         self.auto_enable
@@ -86,22 +86,22 @@ impl UpdateOrganizationConfigurationInputBuilder {
     pub fn get_detector_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.detector_id
     }
-    /// <p>Indicates whether to automatically enable member accounts in the organization.</p>
-    /// <p>Even though this is still supported, we recommend using <code>AutoEnableOrganizationMembers</code> to achieve the similar results. You must provide the value for either <code>autoEnableOrganizationMembers</code> or <code>autoEnable</code>.</p>
+    /// <p>Represents whether or not to automatically enable member accounts in the organization.</p>
+    /// <p>Even though this is still supported, we recommend using <code>AutoEnableOrganizationMembers</code> to achieve the similar results. You must provide a value for either <code>autoEnableOrganizationMembers</code> or <code>autoEnable</code>.</p>
     #[deprecated(note = "This field is deprecated, use AutoEnableOrganizationMembers instead")]
     pub fn auto_enable(mut self, input: bool) -> Self {
         self.auto_enable = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates whether to automatically enable member accounts in the organization.</p>
-    /// <p>Even though this is still supported, we recommend using <code>AutoEnableOrganizationMembers</code> to achieve the similar results. You must provide the value for either <code>autoEnableOrganizationMembers</code> or <code>autoEnable</code>.</p>
+    /// <p>Represents whether or not to automatically enable member accounts in the organization.</p>
+    /// <p>Even though this is still supported, we recommend using <code>AutoEnableOrganizationMembers</code> to achieve the similar results. You must provide a value for either <code>autoEnableOrganizationMembers</code> or <code>autoEnable</code>.</p>
     #[deprecated(note = "This field is deprecated, use AutoEnableOrganizationMembers instead")]
     pub fn set_auto_enable(mut self, input: ::std::option::Option<bool>) -> Self {
         self.auto_enable = input;
         self
     }
-    /// <p>Indicates whether to automatically enable member accounts in the organization.</p>
-    /// <p>Even though this is still supported, we recommend using <code>AutoEnableOrganizationMembers</code> to achieve the similar results. You must provide the value for either <code>autoEnableOrganizationMembers</code> or <code>autoEnable</code>.</p>
+    /// <p>Represents whether or not to automatically enable member accounts in the organization.</p>
+    /// <p>Even though this is still supported, we recommend using <code>AutoEnableOrganizationMembers</code> to achieve the similar results. You must provide a value for either <code>autoEnableOrganizationMembers</code> or <code>autoEnable</code>.</p>
     #[deprecated(note = "This field is deprecated, use AutoEnableOrganizationMembers instead")]
     pub fn get_auto_enable(&self) -> &::std::option::Option<bool> {
         &self.auto_enable

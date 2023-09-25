@@ -5,11 +5,17 @@
 pub struct GetJobInput {
     /// <p>The ARN of the job to retrieve.</p>
     pub job_arn: ::std::option::Option<::std::string::String>,
+    /// <p>A list of attributes to return information for.</p>
+    pub additional_attribute_names: ::std::option::Option<::std::vec::Vec<crate::types::HybridJobAdditionalAttributeName>>,
 }
 impl GetJobInput {
     /// <p>The ARN of the job to retrieve.</p>
     pub fn job_arn(&self) -> ::std::option::Option<&str> {
         self.job_arn.as_deref()
+    }
+    /// <p>A list of attributes to return information for.</p>
+    pub fn additional_attribute_names(&self) -> ::std::option::Option<&[crate::types::HybridJobAdditionalAttributeName]> {
+        self.additional_attribute_names.as_deref()
     }
 }
 impl GetJobInput {
@@ -24,6 +30,7 @@ impl GetJobInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetJobInputBuilder {
     pub(crate) job_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) additional_attribute_names: ::std::option::Option<::std::vec::Vec<crate::types::HybridJobAdditionalAttributeName>>,
 }
 impl GetJobInputBuilder {
     /// <p>The ARN of the job to retrieve.</p>
@@ -40,8 +47,34 @@ impl GetJobInputBuilder {
     pub fn get_job_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.job_arn
     }
+    /// Appends an item to `additional_attribute_names`.
+    ///
+    /// To override the contents of this collection use [`set_additional_attribute_names`](Self::set_additional_attribute_names).
+    ///
+    /// <p>A list of attributes to return information for.</p>
+    pub fn additional_attribute_names(mut self, input: crate::types::HybridJobAdditionalAttributeName) -> Self {
+        let mut v = self.additional_attribute_names.unwrap_or_default();
+        v.push(input);
+        self.additional_attribute_names = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of attributes to return information for.</p>
+    pub fn set_additional_attribute_names(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::HybridJobAdditionalAttributeName>>,
+    ) -> Self {
+        self.additional_attribute_names = input;
+        self
+    }
+    /// <p>A list of attributes to return information for.</p>
+    pub fn get_additional_attribute_names(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HybridJobAdditionalAttributeName>> {
+        &self.additional_attribute_names
+    }
     /// Consumes the builder and constructs a [`GetJobInput`](crate::operation::get_job::GetJobInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_job::GetJobInput, ::aws_smithy_http::operation::error::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_job::GetJobInput { job_arn: self.job_arn })
+        ::std::result::Result::Ok(crate::operation::get_job::GetJobInput {
+            job_arn: self.job_arn,
+            additional_attribute_names: self.additional_attribute_names,
+        })
     }
 }

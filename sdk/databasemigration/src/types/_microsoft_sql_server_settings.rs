@@ -36,7 +36,7 @@ pub struct MicrosoftSqlServerSettings {
     pub secrets_manager_access_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The full ARN, partial ARN, or friendly name of the <code>SecretsManagerSecret</code> that contains the SQL Server endpoint connection details.</p>
     pub secrets_manager_secret_id: ::std::option::Option<::std::string::String>,
-    /// <p>Use the <code>TrimSpaceInChar</code> source endpoint setting to trim data on CHAR and NCHAR data types during migration. The default value is <code>true</code>.</p>
+    /// <p>Use the <code>TrimSpaceInChar</code> source endpoint setting to right-trim data on CHAR and NCHAR data types during migration. Setting <code>TrimSpaceInChar</code> does not left-trim data. The default value is <code>true</code>.</p>
     pub trim_space_in_char: ::std::option::Option<bool>,
     /// <p>Indicates the mode used to fetch CDC data.</p>
     pub tlog_access_mode: ::std::option::Option<crate::types::TlogAccessMode>,
@@ -104,7 +104,7 @@ impl MicrosoftSqlServerSettings {
     pub fn secrets_manager_secret_id(&self) -> ::std::option::Option<&str> {
         self.secrets_manager_secret_id.as_deref()
     }
-    /// <p>Use the <code>TrimSpaceInChar</code> source endpoint setting to trim data on CHAR and NCHAR data types during migration. The default value is <code>true</code>.</p>
+    /// <p>Use the <code>TrimSpaceInChar</code> source endpoint setting to right-trim data on CHAR and NCHAR data types during migration. Setting <code>TrimSpaceInChar</code> does not left-trim data. The default value is <code>true</code>.</p>
     pub fn trim_space_in_char(&self) -> ::std::option::Option<bool> {
         self.trim_space_in_char
     }
@@ -378,17 +378,17 @@ impl MicrosoftSqlServerSettingsBuilder {
     pub fn get_secrets_manager_secret_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.secrets_manager_secret_id
     }
-    /// <p>Use the <code>TrimSpaceInChar</code> source endpoint setting to trim data on CHAR and NCHAR data types during migration. The default value is <code>true</code>.</p>
+    /// <p>Use the <code>TrimSpaceInChar</code> source endpoint setting to right-trim data on CHAR and NCHAR data types during migration. Setting <code>TrimSpaceInChar</code> does not left-trim data. The default value is <code>true</code>.</p>
     pub fn trim_space_in_char(mut self, input: bool) -> Self {
         self.trim_space_in_char = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Use the <code>TrimSpaceInChar</code> source endpoint setting to trim data on CHAR and NCHAR data types during migration. The default value is <code>true</code>.</p>
+    /// <p>Use the <code>TrimSpaceInChar</code> source endpoint setting to right-trim data on CHAR and NCHAR data types during migration. Setting <code>TrimSpaceInChar</code> does not left-trim data. The default value is <code>true</code>.</p>
     pub fn set_trim_space_in_char(mut self, input: ::std::option::Option<bool>) -> Self {
         self.trim_space_in_char = input;
         self
     }
-    /// <p>Use the <code>TrimSpaceInChar</code> source endpoint setting to trim data on CHAR and NCHAR data types during migration. The default value is <code>true</code>.</p>
+    /// <p>Use the <code>TrimSpaceInChar</code> source endpoint setting to right-trim data on CHAR and NCHAR data types during migration. Setting <code>TrimSpaceInChar</code> does not left-trim data. The default value is <code>true</code>.</p>
     pub fn get_trim_space_in_char(&self) -> &::std::option::Option<bool> {
         &self.trim_space_in_char
     }

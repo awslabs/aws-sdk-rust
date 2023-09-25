@@ -2,7 +2,7 @@
 
 /// <p>Contains the OAuth authorization parameters to use for the connection.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UpdateConnectionOAuthClientRequestParameters {
     /// <p>The client ID to use for OAuth authorization.</p>
     pub client_id: ::std::option::Option<::std::string::String>,
@@ -19,6 +19,14 @@ impl UpdateConnectionOAuthClientRequestParameters {
         self.client_secret.as_deref()
     }
 }
+impl ::std::fmt::Debug for UpdateConnectionOAuthClientRequestParameters {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateConnectionOAuthClientRequestParameters");
+        formatter.field("client_id", &self.client_id);
+        formatter.field("client_secret", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl UpdateConnectionOAuthClientRequestParameters {
     /// Creates a new builder-style object to manufacture [`UpdateConnectionOAuthClientRequestParameters`](crate::types::UpdateConnectionOAuthClientRequestParameters).
     pub fn builder() -> crate::types::builders::UpdateConnectionOAuthClientRequestParametersBuilder {
@@ -28,7 +36,7 @@ impl UpdateConnectionOAuthClientRequestParameters {
 
 /// A builder for [`UpdateConnectionOAuthClientRequestParameters`](crate::types::UpdateConnectionOAuthClientRequestParameters).
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct UpdateConnectionOAuthClientRequestParametersBuilder {
     pub(crate) client_id: ::std::option::Option<::std::string::String>,
     pub(crate) client_secret: ::std::option::Option<::std::string::String>,
@@ -68,5 +76,13 @@ impl UpdateConnectionOAuthClientRequestParametersBuilder {
             client_id: self.client_id,
             client_secret: self.client_secret,
         }
+    }
+}
+impl ::std::fmt::Debug for UpdateConnectionOAuthClientRequestParametersBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateConnectionOAuthClientRequestParametersBuilder");
+        formatter.field("client_id", &self.client_id);
+        formatter.field("client_secret", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

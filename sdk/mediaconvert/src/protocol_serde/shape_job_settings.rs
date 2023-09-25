@@ -27,65 +27,71 @@ pub fn ser_job_settings(
         crate::protocol_serde::shape_extended_data_services::ser_extended_data_services(&mut object_7, var_6)?;
         object_7.finish();
     }
-    if let Some(var_8) = &input.inputs {
-        let mut array_9 = object.key("inputs").start_array();
-        for item_10 in var_8 {
+    if let Some(var_8) = &input.follow_input_index {
+        object.key("followInputIndex").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_8).into()),
+        );
+    }
+    if let Some(var_9) = &input.inputs {
+        let mut array_10 = object.key("inputs").start_array();
+        for item_11 in var_9 {
             {
                 #[allow(unused_mut)]
-                let mut object_11 = array_9.value().start_object();
-                crate::protocol_serde::shape_input::ser_input(&mut object_11, item_10)?;
-                object_11.finish();
+                let mut object_12 = array_10.value().start_object();
+                crate::protocol_serde::shape_input::ser_input(&mut object_12, item_11)?;
+                object_12.finish();
             }
         }
-        array_9.finish();
+        array_10.finish();
     }
-    if let Some(var_12) = &input.kantar_watermark {
+    if let Some(var_13) = &input.kantar_watermark {
         #[allow(unused_mut)]
-        let mut object_13 = object.key("kantarWatermark").start_object();
-        crate::protocol_serde::shape_kantar_watermark_settings::ser_kantar_watermark_settings(&mut object_13, var_12)?;
-        object_13.finish();
+        let mut object_14 = object.key("kantarWatermark").start_object();
+        crate::protocol_serde::shape_kantar_watermark_settings::ser_kantar_watermark_settings(&mut object_14, var_13)?;
+        object_14.finish();
     }
-    if let Some(var_14) = &input.motion_image_inserter {
+    if let Some(var_15) = &input.motion_image_inserter {
         #[allow(unused_mut)]
-        let mut object_15 = object.key("motionImageInserter").start_object();
-        crate::protocol_serde::shape_motion_image_inserter::ser_motion_image_inserter(&mut object_15, var_14)?;
-        object_15.finish();
+        let mut object_16 = object.key("motionImageInserter").start_object();
+        crate::protocol_serde::shape_motion_image_inserter::ser_motion_image_inserter(&mut object_16, var_15)?;
+        object_16.finish();
     }
-    if let Some(var_16) = &input.nielsen_configuration {
+    if let Some(var_17) = &input.nielsen_configuration {
         #[allow(unused_mut)]
-        let mut object_17 = object.key("nielsenConfiguration").start_object();
-        crate::protocol_serde::shape_nielsen_configuration::ser_nielsen_configuration(&mut object_17, var_16)?;
-        object_17.finish();
+        let mut object_18 = object.key("nielsenConfiguration").start_object();
+        crate::protocol_serde::shape_nielsen_configuration::ser_nielsen_configuration(&mut object_18, var_17)?;
+        object_18.finish();
     }
-    if let Some(var_18) = &input.nielsen_non_linear_watermark {
+    if let Some(var_19) = &input.nielsen_non_linear_watermark {
         #[allow(unused_mut)]
-        let mut object_19 = object.key("nielsenNonLinearWatermark").start_object();
-        crate::protocol_serde::shape_nielsen_non_linear_watermark_settings::ser_nielsen_non_linear_watermark_settings(&mut object_19, var_18)?;
-        object_19.finish();
+        let mut object_20 = object.key("nielsenNonLinearWatermark").start_object();
+        crate::protocol_serde::shape_nielsen_non_linear_watermark_settings::ser_nielsen_non_linear_watermark_settings(&mut object_20, var_19)?;
+        object_20.finish();
     }
-    if let Some(var_20) = &input.output_groups {
-        let mut array_21 = object.key("outputGroups").start_array();
-        for item_22 in var_20 {
+    if let Some(var_21) = &input.output_groups {
+        let mut array_22 = object.key("outputGroups").start_array();
+        for item_23 in var_21 {
             {
                 #[allow(unused_mut)]
-                let mut object_23 = array_21.value().start_object();
-                crate::protocol_serde::shape_output_group::ser_output_group(&mut object_23, item_22)?;
-                object_23.finish();
+                let mut object_24 = array_22.value().start_object();
+                crate::protocol_serde::shape_output_group::ser_output_group(&mut object_24, item_23)?;
+                object_24.finish();
             }
         }
-        array_21.finish();
+        array_22.finish();
     }
-    if let Some(var_24) = &input.timecode_config {
+    if let Some(var_25) = &input.timecode_config {
         #[allow(unused_mut)]
-        let mut object_25 = object.key("timecodeConfig").start_object();
-        crate::protocol_serde::shape_timecode_config::ser_timecode_config(&mut object_25, var_24)?;
-        object_25.finish();
+        let mut object_26 = object.key("timecodeConfig").start_object();
+        crate::protocol_serde::shape_timecode_config::ser_timecode_config(&mut object_26, var_25)?;
+        object_26.finish();
     }
-    if let Some(var_26) = &input.timed_metadata_insertion {
+    if let Some(var_27) = &input.timed_metadata_insertion {
         #[allow(unused_mut)]
-        let mut object_27 = object.key("timedMetadataInsertion").start_object();
-        crate::protocol_serde::shape_timed_metadata_insertion::ser_timed_metadata_insertion(&mut object_27, var_26)?;
-        object_27.finish();
+        let mut object_28 = object.key("timedMetadataInsertion").start_object();
+        crate::protocol_serde::shape_timed_metadata_insertion::ser_timed_metadata_insertion(&mut object_28, var_27)?;
+        object_28.finish();
     }
     Ok(())
 }
@@ -121,6 +127,13 @@ where
                         "extendedDataServices" => {
                             builder = builder
                                 .set_extended_data_services(crate::protocol_serde::shape_extended_data_services::de_extended_data_services(tokens)?);
+                        }
+                        "followInputIndex" => {
+                            builder = builder.set_follow_input_index(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
                         }
                         "inputs" => {
                             builder = builder.set_inputs(crate::protocol_serde::shape___list_of_input::de___list_of_input(tokens)?);

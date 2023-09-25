@@ -54,7 +54,7 @@ pub struct PostgreSqlSettings {
     pub secrets_manager_secret_id: ::std::option::Option<::std::string::String>,
     /// <p>Use the <code>TrimSpaceInChar</code> source endpoint setting to trim data on CHAR and NCHAR data types during migration. The default value is <code>true</code>.</p>
     pub trim_space_in_char: ::std::option::Option<bool>,
-    /// <p>When true, lets PostgreSQL migrate the boolean type as boolean. By default, PostgreSQL migrates booleans as <code>varchar(5)</code>.</p>
+    /// <p>When true, lets PostgreSQL migrate the boolean type as boolean. By default, PostgreSQL migrates booleans as <code>varchar(5)</code>. You must set this setting on both the source and target endpoints for it to take effect.</p>
     pub map_boolean_as_boolean: ::std::option::Option<bool>,
     /// <p>When true, DMS migrates JSONB values as CLOB.</p>
     pub map_jsonb_as_clob: ::std::option::Option<bool>,
@@ -154,7 +154,7 @@ impl PostgreSqlSettings {
     pub fn trim_space_in_char(&self) -> ::std::option::Option<bool> {
         self.trim_space_in_char
     }
-    /// <p>When true, lets PostgreSQL migrate the boolean type as boolean. By default, PostgreSQL migrates booleans as <code>varchar(5)</code>.</p>
+    /// <p>When true, lets PostgreSQL migrate the boolean type as boolean. By default, PostgreSQL migrates booleans as <code>varchar(5)</code>. You must set this setting on both the source and target endpoints for it to take effect.</p>
     pub fn map_boolean_as_boolean(&self) -> ::std::option::Option<bool> {
         self.map_boolean_as_boolean
     }
@@ -544,17 +544,17 @@ impl PostgreSqlSettingsBuilder {
     pub fn get_trim_space_in_char(&self) -> &::std::option::Option<bool> {
         &self.trim_space_in_char
     }
-    /// <p>When true, lets PostgreSQL migrate the boolean type as boolean. By default, PostgreSQL migrates booleans as <code>varchar(5)</code>.</p>
+    /// <p>When true, lets PostgreSQL migrate the boolean type as boolean. By default, PostgreSQL migrates booleans as <code>varchar(5)</code>. You must set this setting on both the source and target endpoints for it to take effect.</p>
     pub fn map_boolean_as_boolean(mut self, input: bool) -> Self {
         self.map_boolean_as_boolean = ::std::option::Option::Some(input);
         self
     }
-    /// <p>When true, lets PostgreSQL migrate the boolean type as boolean. By default, PostgreSQL migrates booleans as <code>varchar(5)</code>.</p>
+    /// <p>When true, lets PostgreSQL migrate the boolean type as boolean. By default, PostgreSQL migrates booleans as <code>varchar(5)</code>. You must set this setting on both the source and target endpoints for it to take effect.</p>
     pub fn set_map_boolean_as_boolean(mut self, input: ::std::option::Option<bool>) -> Self {
         self.map_boolean_as_boolean = input;
         self
     }
-    /// <p>When true, lets PostgreSQL migrate the boolean type as boolean. By default, PostgreSQL migrates booleans as <code>varchar(5)</code>.</p>
+    /// <p>When true, lets PostgreSQL migrate the boolean type as boolean. By default, PostgreSQL migrates booleans as <code>varchar(5)</code>. You must set this setting on both the source and target endpoints for it to take effect.</p>
     pub fn get_map_boolean_as_boolean(&self) -> &::std::option::Option<bool> {
         &self.map_boolean_as_boolean
     }

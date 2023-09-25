@@ -4,14 +4,22 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum DataProviderSettings {
+    /// <p>Provides information that defines a DocumentDB data provider.</p>
+    DocDbSettings(crate::types::DocDbDataProviderSettings),
+    /// <p>Provides information that defines a MariaDB data provider.</p>
+    MariaDbSettings(crate::types::MariaDbDataProviderSettings),
     /// <p>Provides information that defines a Microsoft SQL Server data provider.</p>
     MicrosoftSqlServerSettings(crate::types::MicrosoftSqlServerDataProviderSettings),
+    /// <p>Provides information that defines a MongoDB data provider.</p>
+    MongoDbSettings(crate::types::MongoDbDataProviderSettings),
     /// <p>Provides information that defines a MySQL data provider.</p>
     MySqlSettings(crate::types::MySqlDataProviderSettings),
     /// <p>Provides information that defines an Oracle data provider.</p>
     OracleSettings(crate::types::OracleDataProviderSettings),
     /// <p>Provides information that defines a PostgreSQL data provider.</p>
     PostgreSqlSettings(crate::types::PostgreSqlDataProviderSettings),
+    /// <p>Provides information that defines an Amazon Redshift data provider.</p>
+    RedshiftSettings(crate::types::RedshiftDataProviderSettings),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
     ///
@@ -23,6 +31,32 @@ pub enum DataProviderSettings {
     Unknown,
 }
 impl DataProviderSettings {
+    /// Tries to convert the enum instance into [`DocDbSettings`](crate::types::DataProviderSettings::DocDbSettings), extracting the inner [`DocDbDataProviderSettings`](crate::types::DocDbDataProviderSettings).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_doc_db_settings(&self) -> ::std::result::Result<&crate::types::DocDbDataProviderSettings, &Self> {
+        if let DataProviderSettings::DocDbSettings(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`DocDbSettings`](crate::types::DataProviderSettings::DocDbSettings).
+    pub fn is_doc_db_settings(&self) -> bool {
+        self.as_doc_db_settings().is_ok()
+    }
+    /// Tries to convert the enum instance into [`MariaDbSettings`](crate::types::DataProviderSettings::MariaDbSettings), extracting the inner [`MariaDbDataProviderSettings`](crate::types::MariaDbDataProviderSettings).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_maria_db_settings(&self) -> ::std::result::Result<&crate::types::MariaDbDataProviderSettings, &Self> {
+        if let DataProviderSettings::MariaDbSettings(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`MariaDbSettings`](crate::types::DataProviderSettings::MariaDbSettings).
+    pub fn is_maria_db_settings(&self) -> bool {
+        self.as_maria_db_settings().is_ok()
+    }
     /// Tries to convert the enum instance into [`MicrosoftSqlServerSettings`](crate::types::DataProviderSettings::MicrosoftSqlServerSettings), extracting the inner [`MicrosoftSqlServerDataProviderSettings`](crate::types::MicrosoftSqlServerDataProviderSettings).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_microsoft_sql_server_settings(&self) -> ::std::result::Result<&crate::types::MicrosoftSqlServerDataProviderSettings, &Self> {
@@ -35,6 +69,19 @@ impl DataProviderSettings {
     /// Returns true if this is a [`MicrosoftSqlServerSettings`](crate::types::DataProviderSettings::MicrosoftSqlServerSettings).
     pub fn is_microsoft_sql_server_settings(&self) -> bool {
         self.as_microsoft_sql_server_settings().is_ok()
+    }
+    /// Tries to convert the enum instance into [`MongoDbSettings`](crate::types::DataProviderSettings::MongoDbSettings), extracting the inner [`MongoDbDataProviderSettings`](crate::types::MongoDbDataProviderSettings).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_mongo_db_settings(&self) -> ::std::result::Result<&crate::types::MongoDbDataProviderSettings, &Self> {
+        if let DataProviderSettings::MongoDbSettings(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`MongoDbSettings`](crate::types::DataProviderSettings::MongoDbSettings).
+    pub fn is_mongo_db_settings(&self) -> bool {
+        self.as_mongo_db_settings().is_ok()
     }
     /// Tries to convert the enum instance into [`MySqlSettings`](crate::types::DataProviderSettings::MySqlSettings), extracting the inner [`MySqlDataProviderSettings`](crate::types::MySqlDataProviderSettings).
     /// Returns `Err(&Self)` if it can't be converted.
@@ -74,6 +121,19 @@ impl DataProviderSettings {
     /// Returns true if this is a [`PostgreSqlSettings`](crate::types::DataProviderSettings::PostgreSqlSettings).
     pub fn is_postgre_sql_settings(&self) -> bool {
         self.as_postgre_sql_settings().is_ok()
+    }
+    /// Tries to convert the enum instance into [`RedshiftSettings`](crate::types::DataProviderSettings::RedshiftSettings), extracting the inner [`RedshiftDataProviderSettings`](crate::types::RedshiftDataProviderSettings).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_redshift_settings(&self) -> ::std::result::Result<&crate::types::RedshiftDataProviderSettings, &Self> {
+        if let DataProviderSettings::RedshiftSettings(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`RedshiftSettings`](crate::types::DataProviderSettings::RedshiftSettings).
+    pub fn is_redshift_settings(&self) -> bool {
+        self.as_redshift_settings().is_ok()
     }
     /// Returns true if the enum instance is the `Unknown` variant.
     pub fn is_unknown(&self) -> bool {

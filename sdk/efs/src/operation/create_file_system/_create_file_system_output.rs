@@ -30,7 +30,7 @@ pub struct CreateFileSystemOutput {
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>Displays the file system's throughput mode. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/performance.html#throughput-modes">Throughput modes</a> in the <i>Amazon EFS User Guide</i>. </p>
     pub throughput_mode: ::std::option::Option<crate::types::ThroughputMode>,
-    /// <p>The amount of provisioned throughput, measured in MiB/s, for the file system. Valid for file systems using <code>ThroughputMode</code> set to <code>provisioned</code>.</p>
+    /// <p>The amount of provisioned throughput, measured in MiBps, for the file system. Valid for file systems using <code>ThroughputMode</code> set to <code>provisioned</code>.</p>
     pub provisioned_throughput_in_mibps: ::std::option::Option<f64>,
     /// <p>Describes the Amazon Web Services Availability Zone in which the file system is located, and is valid only for file systems using One Zone storage classes. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html">Using EFS storage classes</a> in the <i>Amazon EFS User Guide</i>.</p>
     pub availability_zone_name: ::std::option::Option<::std::string::String>,
@@ -93,7 +93,7 @@ impl CreateFileSystemOutput {
     pub fn throughput_mode(&self) -> ::std::option::Option<&crate::types::ThroughputMode> {
         self.throughput_mode.as_ref()
     }
-    /// <p>The amount of provisioned throughput, measured in MiB/s, for the file system. Valid for file systems using <code>ThroughputMode</code> set to <code>provisioned</code>.</p>
+    /// <p>The amount of provisioned throughput, measured in MiBps, for the file system. Valid for file systems using <code>ThroughputMode</code> set to <code>provisioned</code>.</p>
     pub fn provisioned_throughput_in_mibps(&self) -> ::std::option::Option<f64> {
         self.provisioned_throughput_in_mibps
     }
@@ -328,17 +328,17 @@ impl CreateFileSystemOutputBuilder {
     pub fn get_throughput_mode(&self) -> &::std::option::Option<crate::types::ThroughputMode> {
         &self.throughput_mode
     }
-    /// <p>The amount of provisioned throughput, measured in MiB/s, for the file system. Valid for file systems using <code>ThroughputMode</code> set to <code>provisioned</code>.</p>
+    /// <p>The amount of provisioned throughput, measured in MiBps, for the file system. Valid for file systems using <code>ThroughputMode</code> set to <code>provisioned</code>.</p>
     pub fn provisioned_throughput_in_mibps(mut self, input: f64) -> Self {
         self.provisioned_throughput_in_mibps = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The amount of provisioned throughput, measured in MiB/s, for the file system. Valid for file systems using <code>ThroughputMode</code> set to <code>provisioned</code>.</p>
+    /// <p>The amount of provisioned throughput, measured in MiBps, for the file system. Valid for file systems using <code>ThroughputMode</code> set to <code>provisioned</code>.</p>
     pub fn set_provisioned_throughput_in_mibps(mut self, input: ::std::option::Option<f64>) -> Self {
         self.provisioned_throughput_in_mibps = input;
         self
     }
-    /// <p>The amount of provisioned throughput, measured in MiB/s, for the file system. Valid for file systems using <code>ThroughputMode</code> set to <code>provisioned</code>.</p>
+    /// <p>The amount of provisioned throughput, measured in MiBps, for the file system. Valid for file systems using <code>ThroughputMode</code> set to <code>provisioned</code>.</p>
     pub fn get_provisioned_throughput_in_mibps(&self) -> &::std::option::Option<f64> {
         &self.provisioned_throughput_in_mibps
     }

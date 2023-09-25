@@ -110,17 +110,17 @@ impl EnableOrganizationAdminAccountFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The Amazon Web Services Account ID for the organization account to be enabled as a GuardDuty delegated administrator.</p>
+    /// <p>The Amazon Web Services account ID for the organization account to be enabled as a GuardDuty delegated administrator.</p>
     pub fn admin_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.admin_account_id(input.into());
         self
     }
-    /// <p>The Amazon Web Services Account ID for the organization account to be enabled as a GuardDuty delegated administrator.</p>
+    /// <p>The Amazon Web Services account ID for the organization account to be enabled as a GuardDuty delegated administrator.</p>
     pub fn set_admin_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_admin_account_id(input);
         self
     }
-    /// <p>The Amazon Web Services Account ID for the organization account to be enabled as a GuardDuty delegated administrator.</p>
+    /// <p>The Amazon Web Services account ID for the organization account to be enabled as a GuardDuty delegated administrator.</p>
     pub fn get_admin_account_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_admin_account_id()
     }

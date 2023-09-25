@@ -144,6 +144,9 @@ pub(crate) fn de_get_device(
                             .transpose()?,
                     );
                 }
+                "deviceQueueInfo" => {
+                    builder = builder.set_device_queue_info(crate::protocol_serde::shape_device_queue_info_list::de_device_queue_info_list(tokens)?);
+                }
                 "deviceStatus" => {
                     builder = builder.set_device_status(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

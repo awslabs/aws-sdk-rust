@@ -4,32 +4,56 @@ pub fn ser_data_provider_settings(
     input: &crate::types::DataProviderSettings,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     match input {
+        crate::types::DataProviderSettings::RedshiftSettings(inner) => {
+            #[allow(unused_mut)]
+            let mut object_1 = object_5.key("RedshiftSettings").start_object();
+            crate::protocol_serde::shape_redshift_data_provider_settings::ser_redshift_data_provider_settings(&mut object_1, inner)?;
+            object_1.finish();
+        }
         crate::types::DataProviderSettings::PostgreSqlSettings(inner) => {
             #[allow(unused_mut)]
-            let mut object_1 = object_5.key("PostgreSqlSettings").start_object();
-            crate::protocol_serde::shape_postgre_sql_data_provider_settings::ser_postgre_sql_data_provider_settings(&mut object_1, inner)?;
-            object_1.finish();
+            let mut object_2 = object_5.key("PostgreSqlSettings").start_object();
+            crate::protocol_serde::shape_postgre_sql_data_provider_settings::ser_postgre_sql_data_provider_settings(&mut object_2, inner)?;
+            object_2.finish();
         }
         crate::types::DataProviderSettings::MySqlSettings(inner) => {
             #[allow(unused_mut)]
-            let mut object_2 = object_5.key("MySqlSettings").start_object();
-            crate::protocol_serde::shape_my_sql_data_provider_settings::ser_my_sql_data_provider_settings(&mut object_2, inner)?;
-            object_2.finish();
+            let mut object_3 = object_5.key("MySqlSettings").start_object();
+            crate::protocol_serde::shape_my_sql_data_provider_settings::ser_my_sql_data_provider_settings(&mut object_3, inner)?;
+            object_3.finish();
         }
         crate::types::DataProviderSettings::OracleSettings(inner) => {
             #[allow(unused_mut)]
-            let mut object_3 = object_5.key("OracleSettings").start_object();
-            crate::protocol_serde::shape_oracle_data_provider_settings::ser_oracle_data_provider_settings(&mut object_3, inner)?;
-            object_3.finish();
+            let mut object_4 = object_5.key("OracleSettings").start_object();
+            crate::protocol_serde::shape_oracle_data_provider_settings::ser_oracle_data_provider_settings(&mut object_4, inner)?;
+            object_4.finish();
         }
         crate::types::DataProviderSettings::MicrosoftSqlServerSettings(inner) => {
             #[allow(unused_mut)]
-            let mut object_4 = object_5.key("MicrosoftSqlServerSettings").start_object();
+            let mut object_5 = object_5.key("MicrosoftSqlServerSettings").start_object();
             crate::protocol_serde::shape_microsoft_sql_server_data_provider_settings::ser_microsoft_sql_server_data_provider_settings(
-                &mut object_4,
+                &mut object_5,
                 inner,
             )?;
-            object_4.finish();
+            object_5.finish();
+        }
+        crate::types::DataProviderSettings::DocDbSettings(inner) => {
+            #[allow(unused_mut)]
+            let mut object_6 = object_5.key("DocDbSettings").start_object();
+            crate::protocol_serde::shape_doc_db_data_provider_settings::ser_doc_db_data_provider_settings(&mut object_6, inner)?;
+            object_6.finish();
+        }
+        crate::types::DataProviderSettings::MariaDbSettings(inner) => {
+            #[allow(unused_mut)]
+            let mut object_7 = object_5.key("MariaDbSettings").start_object();
+            crate::protocol_serde::shape_maria_db_data_provider_settings::ser_maria_db_data_provider_settings(&mut object_7, inner)?;
+            object_7.finish();
+        }
+        crate::types::DataProviderSettings::MongoDbSettings(inner) => {
+            #[allow(unused_mut)]
+            let mut object_8 = object_5.key("MongoDbSettings").start_object();
+            crate::protocol_serde::shape_mongo_db_data_provider_settings::ser_mongo_db_data_provider_settings(&mut object_8, inner)?;
+            object_8.finish();
         }
         crate::types::DataProviderSettings::Unknown => {
             return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant(
@@ -49,56 +73,76 @@ where
     let mut variant = None;
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => return Ok(None),
-        Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
-            loop {
-                match tokens.next().transpose()? {
-                    Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        if variant.is_some() {
-                            return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                "encountered mixed variants in union",
-                            ));
+        Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => loop {
+            match tokens.next().transpose()? {
+                Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
+                Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                    if variant.is_some() {
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                            "encountered mixed variants in union",
+                        ));
+                    }
+                    variant = match key.to_unescaped()?.as_ref() {
+                        "RedshiftSettings" => Some(crate::types::DataProviderSettings::RedshiftSettings(
+                            crate::protocol_serde::shape_redshift_data_provider_settings::de_redshift_data_provider_settings(tokens)?.ok_or_else(
+                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'RedshiftSettings' cannot be null"),
+                            )?,
+                        )),
+                        "PostgreSqlSettings" => Some(crate::types::DataProviderSettings::PostgreSqlSettings(
+                            crate::protocol_serde::shape_postgre_sql_data_provider_settings::de_postgre_sql_data_provider_settings(tokens)?
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'PostgreSqlSettings' cannot be null")
+                                })?,
+                        )),
+                        "MySqlSettings" => Some(crate::types::DataProviderSettings::MySqlSettings(
+                            crate::protocol_serde::shape_my_sql_data_provider_settings::de_my_sql_data_provider_settings(tokens)?.ok_or_else(
+                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'MySqlSettings' cannot be null"),
+                            )?,
+                        )),
+                        "OracleSettings" => Some(crate::types::DataProviderSettings::OracleSettings(
+                            crate::protocol_serde::shape_oracle_data_provider_settings::de_oracle_data_provider_settings(tokens)?.ok_or_else(
+                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'OracleSettings' cannot be null"),
+                            )?,
+                        )),
+                        "MicrosoftSqlServerSettings" => Some(crate::types::DataProviderSettings::MicrosoftSqlServerSettings(
+                            crate::protocol_serde::shape_microsoft_sql_server_data_provider_settings::de_microsoft_sql_server_data_provider_settings(
+                                tokens,
+                            )?
+                            .ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                                    "value for 'MicrosoftSqlServerSettings' cannot be null",
+                                )
+                            })?,
+                        )),
+                        "DocDbSettings" => Some(crate::types::DataProviderSettings::DocDbSettings(
+                            crate::protocol_serde::shape_doc_db_data_provider_settings::de_doc_db_data_provider_settings(tokens)?.ok_or_else(
+                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'DocDbSettings' cannot be null"),
+                            )?,
+                        )),
+                        "MariaDbSettings" => Some(crate::types::DataProviderSettings::MariaDbSettings(
+                            crate::protocol_serde::shape_maria_db_data_provider_settings::de_maria_db_data_provider_settings(tokens)?.ok_or_else(
+                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'MariaDbSettings' cannot be null"),
+                            )?,
+                        )),
+                        "MongoDbSettings" => Some(crate::types::DataProviderSettings::MongoDbSettings(
+                            crate::protocol_serde::shape_mongo_db_data_provider_settings::de_mongo_db_data_provider_settings(tokens)?.ok_or_else(
+                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'MongoDbSettings' cannot be null"),
+                            )?,
+                        )),
+                        _ => {
+                            ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
+                            Some(crate::types::DataProviderSettings::Unknown)
                         }
-                        variant = match key.to_unescaped()?.as_ref() {
-                            "PostgreSqlSettings" => {
-                                Some(crate::types::DataProviderSettings::PostgreSqlSettings(
-                                    crate::protocol_serde::shape_postgre_sql_data_provider_settings::de_postgre_sql_data_provider_settings(tokens)?
-                                    .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'PostgreSqlSettings' cannot be null"))?
-                                ))
-                            }
-                            "MySqlSettings" => {
-                                Some(crate::types::DataProviderSettings::MySqlSettings(
-                                    crate::protocol_serde::shape_my_sql_data_provider_settings::de_my_sql_data_provider_settings(tokens)?
-                                    .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'MySqlSettings' cannot be null"))?
-                                ))
-                            }
-                            "OracleSettings" => {
-                                Some(crate::types::DataProviderSettings::OracleSettings(
-                                    crate::protocol_serde::shape_oracle_data_provider_settings::de_oracle_data_provider_settings(tokens)?
-                                    .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'OracleSettings' cannot be null"))?
-                                ))
-                            }
-                            "MicrosoftSqlServerSettings" => {
-                                Some(crate::types::DataProviderSettings::MicrosoftSqlServerSettings(
-                                    crate::protocol_serde::shape_microsoft_sql_server_data_provider_settings::de_microsoft_sql_server_data_provider_settings(tokens)?
-                                    .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'MicrosoftSqlServerSettings' cannot be null"))?
-                                ))
-                            }
-                            _ => {
-                                                                      ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
-                                                                      Some(crate::types::DataProviderSettings::Unknown)
-                                                                    }
-                        };
-                    }
-                    other => {
-                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
-                            "expected object key or end object, found: {:?}",
-                            other
-                        )))
-                    }
+                    };
+                }
+                other => {
+                    return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                        "expected object key or end object, found: {:?}",
+                        other
+                    )))
                 }
             }
-        }
+        },
         _ => {
             return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
                 "expected start object or null",

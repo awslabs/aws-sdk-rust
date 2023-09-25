@@ -27,6 +27,8 @@ pub struct GetQuantumTaskOutput {
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The ARN of the Amazon Braket job associated with the quantum task.</p>
     pub job_arn: ::std::option::Option<::std::string::String>,
+    /// <p>Queue information for the requested quantum task. Only returned if <code>QueueInfo</code> is specified in the <code>additionalAttributeNames"</code> field in the <code>GetQuantumTask</code> API request.</p>
+    pub queue_info: ::std::option::Option<crate::types::QuantumTaskQueueInfo>,
     _request_id: Option<String>,
 }
 impl GetQuantumTaskOutput {
@@ -78,6 +80,10 @@ impl GetQuantumTaskOutput {
     pub fn job_arn(&self) -> ::std::option::Option<&str> {
         self.job_arn.as_deref()
     }
+    /// <p>Queue information for the requested quantum task. Only returned if <code>QueueInfo</code> is specified in the <code>additionalAttributeNames"</code> field in the <code>GetQuantumTask</code> API request.</p>
+    pub fn queue_info(&self) -> ::std::option::Option<&crate::types::QuantumTaskQueueInfo> {
+        self.queue_info.as_ref()
+    }
 }
 impl ::aws_http::request_id::RequestId for GetQuantumTaskOutput {
     fn request_id(&self) -> Option<&str> {
@@ -107,6 +113,7 @@ pub struct GetQuantumTaskOutputBuilder {
     pub(crate) ended_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) job_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) queue_info: ::std::option::Option<crate::types::QuantumTaskQueueInfo>,
     _request_id: Option<String>,
 }
 impl GetQuantumTaskOutputBuilder {
@@ -284,6 +291,20 @@ impl GetQuantumTaskOutputBuilder {
     pub fn get_job_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.job_arn
     }
+    /// <p>Queue information for the requested quantum task. Only returned if <code>QueueInfo</code> is specified in the <code>additionalAttributeNames"</code> field in the <code>GetQuantumTask</code> API request.</p>
+    pub fn queue_info(mut self, input: crate::types::QuantumTaskQueueInfo) -> Self {
+        self.queue_info = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Queue information for the requested quantum task. Only returned if <code>QueueInfo</code> is specified in the <code>additionalAttributeNames"</code> field in the <code>GetQuantumTask</code> API request.</p>
+    pub fn set_queue_info(mut self, input: ::std::option::Option<crate::types::QuantumTaskQueueInfo>) -> Self {
+        self.queue_info = input;
+        self
+    }
+    /// <p>Queue information for the requested quantum task. Only returned if <code>QueueInfo</code> is specified in the <code>additionalAttributeNames"</code> field in the <code>GetQuantumTask</code> API request.</p>
+    pub fn get_queue_info(&self) -> &::std::option::Option<crate::types::QuantumTaskQueueInfo> {
+        &self.queue_info
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -308,6 +329,7 @@ impl GetQuantumTaskOutputBuilder {
             ended_at: self.ended_at,
             tags: self.tags,
             job_arn: self.job_arn,
+            queue_info: self.queue_info,
             _request_id: self._request_id,
         }
     }

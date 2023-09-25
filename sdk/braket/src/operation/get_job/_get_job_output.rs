@@ -41,6 +41,8 @@ pub struct GetJobOutput {
     pub events: ::std::option::Option<::std::vec::Vec<crate::types::JobEventDetails>>,
     /// <p>A tag object that consists of a key and an optional value, used to manage metadata for Amazon Braket resources.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>Queue information for the requested job. Only returned if <code>QueueInfo</code> is specified in the <code>additionalAttributeNames"</code> field in the <code>GetJob</code> API request.</p>
+    pub queue_info: ::std::option::Option<crate::types::HybridJobQueueInfo>,
     _request_id: Option<String>,
 }
 impl GetJobOutput {
@@ -120,6 +122,10 @@ impl GetJobOutput {
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
+    /// <p>Queue information for the requested job. Only returned if <code>QueueInfo</code> is specified in the <code>additionalAttributeNames"</code> field in the <code>GetJob</code> API request.</p>
+    pub fn queue_info(&self) -> ::std::option::Option<&crate::types::HybridJobQueueInfo> {
+        self.queue_info.as_ref()
+    }
 }
 impl ::aws_http::request_id::RequestId for GetJobOutput {
     fn request_id(&self) -> Option<&str> {
@@ -156,6 +162,7 @@ pub struct GetJobOutputBuilder {
     pub(crate) device_config: ::std::option::Option<crate::types::DeviceConfig>,
     pub(crate) events: ::std::option::Option<::std::vec::Vec<crate::types::JobEventDetails>>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) queue_info: ::std::option::Option<crate::types::HybridJobQueueInfo>,
     _request_id: Option<String>,
 }
 impl GetJobOutputBuilder {
@@ -456,6 +463,20 @@ impl GetJobOutputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
+    /// <p>Queue information for the requested job. Only returned if <code>QueueInfo</code> is specified in the <code>additionalAttributeNames"</code> field in the <code>GetJob</code> API request.</p>
+    pub fn queue_info(mut self, input: crate::types::HybridJobQueueInfo) -> Self {
+        self.queue_info = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Queue information for the requested job. Only returned if <code>QueueInfo</code> is specified in the <code>additionalAttributeNames"</code> field in the <code>GetJob</code> API request.</p>
+    pub fn set_queue_info(mut self, input: ::std::option::Option<crate::types::HybridJobQueueInfo>) -> Self {
+        self.queue_info = input;
+        self
+    }
+    /// <p>Queue information for the requested job. Only returned if <code>QueueInfo</code> is specified in the <code>additionalAttributeNames"</code> field in the <code>GetJob</code> API request.</p>
+    pub fn get_queue_info(&self) -> &::std::option::Option<crate::types::HybridJobQueueInfo> {
+        &self.queue_info
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -487,6 +508,7 @@ impl GetJobOutputBuilder {
             device_config: self.device_config,
             events: self.events,
             tags: self.tags,
+            queue_info: self.queue_info,
             _request_id: self._request_id,
         }
     }

@@ -3,6 +3,8 @@ pub use crate::types::_quantum_task_summary::QuantumTaskSummaryBuilder;
 
 pub use crate::types::_search_quantum_tasks_filter::SearchQuantumTasksFilterBuilder;
 
+pub use crate::types::_quantum_task_queue_info::QuantumTaskQueueInfoBuilder;
+
 pub use crate::types::_job_summary::JobSummaryBuilder;
 
 pub use crate::types::_search_jobs_filter::SearchJobsFilterBuilder;
@@ -29,8 +31,12 @@ pub use crate::types::_container_image::ContainerImageBuilder;
 
 pub use crate::types::_script_mode_config::ScriptModeConfigBuilder;
 
+pub use crate::types::_hybrid_job_queue_info::HybridJobQueueInfoBuilder;
+
 pub use crate::types::_job_event_details::JobEventDetailsBuilder;
 
 pub use crate::types::_device_summary::DeviceSummaryBuilder;
 
 pub use crate::types::_search_devices_filter::SearchDevicesFilterBuilder;
+
+pub use crate::types::_device_queue_info::DeviceQueueInfoBuilder;

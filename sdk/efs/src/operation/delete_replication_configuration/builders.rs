@@ -22,7 +22,7 @@ impl DeleteReplicationConfigurationInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteReplicationConfiguration`.
 ///
-/// <p>Deletes an existing replication configuration. To delete a replication configuration, you must make the request from the Amazon Web Services Region in which the destination file system is located. Deleting a replication configuration ends the replication process. After a replication configuration is deleted, the destination file system is no longer read-only. You can write to the destination file system after its status becomes <code>Writeable</code>.</p>
+/// <p>Deletes an existing replication configuration. Deleting a replication configuration ends the replication process. After a replication configuration is deleted, the destination file system is no longer read-only. You can write to the destination file system after its status becomes <code>Writeable</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteReplicationConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

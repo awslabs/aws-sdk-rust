@@ -22,7 +22,7 @@ impl ListOrganizationAdminAccountsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListOrganizationAdminAccounts`.
 ///
-/// <p>Lists the accounts configured as GuardDuty delegated administrators. Only the organization's management account can run this API operation.</p>
+/// <p>Lists the accounts designated as GuardDuty delegated administrators. Only the organization's management account can run this API operation.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListOrganizationAdminAccountsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

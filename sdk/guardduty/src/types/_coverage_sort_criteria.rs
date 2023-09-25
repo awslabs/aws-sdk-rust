@@ -4,13 +4,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CoverageSortCriteria {
-    /// <p>Represents the field name used to sort the coverage details.</p>
+    /// <p>Represents the field name used to sort the coverage details.</p> <note>
+    /// <p>Replace the enum value <code>CLUSTER_NAME</code> with <code>EKS_CLUSTER_NAME</code>. <code>CLUSTER_NAME</code> has been deprecated.</p>
+    /// </note>
     pub attribute_name: ::std::option::Option<crate::types::CoverageSortKey>,
     /// <p>The order in which the sorted findings are to be displayed.</p>
     pub order_by: ::std::option::Option<crate::types::OrderBy>,
 }
 impl CoverageSortCriteria {
-    /// <p>Represents the field name used to sort the coverage details.</p>
+    /// <p>Represents the field name used to sort the coverage details.</p> <note>
+    /// <p>Replace the enum value <code>CLUSTER_NAME</code> with <code>EKS_CLUSTER_NAME</code>. <code>CLUSTER_NAME</code> has been deprecated.</p>
+    /// </note>
     pub fn attribute_name(&self) -> ::std::option::Option<&crate::types::CoverageSortKey> {
         self.attribute_name.as_ref()
     }
@@ -34,17 +38,23 @@ pub struct CoverageSortCriteriaBuilder {
     pub(crate) order_by: ::std::option::Option<crate::types::OrderBy>,
 }
 impl CoverageSortCriteriaBuilder {
-    /// <p>Represents the field name used to sort the coverage details.</p>
+    /// <p>Represents the field name used to sort the coverage details.</p> <note>
+    /// <p>Replace the enum value <code>CLUSTER_NAME</code> with <code>EKS_CLUSTER_NAME</code>. <code>CLUSTER_NAME</code> has been deprecated.</p>
+    /// </note>
     pub fn attribute_name(mut self, input: crate::types::CoverageSortKey) -> Self {
         self.attribute_name = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Represents the field name used to sort the coverage details.</p>
+    /// <p>Represents the field name used to sort the coverage details.</p> <note>
+    /// <p>Replace the enum value <code>CLUSTER_NAME</code> with <code>EKS_CLUSTER_NAME</code>. <code>CLUSTER_NAME</code> has been deprecated.</p>
+    /// </note>
     pub fn set_attribute_name(mut self, input: ::std::option::Option<crate::types::CoverageSortKey>) -> Self {
         self.attribute_name = input;
         self
     }
-    /// <p>Represents the field name used to sort the coverage details.</p>
+    /// <p>Represents the field name used to sort the coverage details.</p> <note>
+    /// <p>Replace the enum value <code>CLUSTER_NAME</code> with <code>EKS_CLUSTER_NAME</code>. <code>CLUSTER_NAME</code> has been deprecated.</p>
+    /// </note>
     pub fn get_attribute_name(&self) -> &::std::option::Option<crate::types::CoverageSortKey> {
         &self.attribute_name
     }

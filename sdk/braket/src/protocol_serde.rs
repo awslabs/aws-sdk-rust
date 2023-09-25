@@ -93,7 +93,11 @@ pub(crate) mod shape_algorithm_specification;
 
 pub(crate) mod shape_device_config;
 
+pub(crate) mod shape_device_queue_info_list;
+
 pub(crate) mod shape_device_summary_list;
+
+pub(crate) mod shape_hybrid_job_queue_info;
 
 pub(crate) mod shape_hyper_parameters;
 
@@ -113,6 +117,8 @@ pub(crate) mod shape_job_stopping_condition;
 
 pub(crate) mod shape_job_summary_list;
 
+pub(crate) mod shape_quantum_task_queue_info;
+
 pub(crate) mod shape_quantum_task_summary_list;
 
 pub(crate) mod shape_search_devices_filter;
@@ -126,6 +132,8 @@ pub(crate) mod shape_tags_map;
 pub(crate) mod shape_container_image;
 
 pub(crate) mod shape_data_source;
+
+pub(crate) mod shape_device_queue_info;
 
 pub(crate) mod shape_device_summary;
 

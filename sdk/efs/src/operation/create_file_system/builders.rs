@@ -143,6 +143,7 @@ impl CreateFileSystemFluentBuilder {
     /// <p>The performance mode of the file system. We recommend <code>generalPurpose</code> performance mode for most file systems. File systems using the <code>maxIO</code> performance mode can scale to higher levels of aggregate throughput and operations per second with a tradeoff of slightly higher latencies for most file operations. The performance mode can't be changed after the file system has been created.</p> <note>
     /// <p>The <code>maxIO</code> mode is not supported on file systems using One Zone storage classes.</p>
     /// </note>
+    /// <p>Default is <code>generalPurpose</code>.</p>
     pub fn performance_mode(mut self, input: crate::types::PerformanceMode) -> Self {
         self.inner = self.inner.performance_mode(input);
         self
@@ -150,6 +151,7 @@ impl CreateFileSystemFluentBuilder {
     /// <p>The performance mode of the file system. We recommend <code>generalPurpose</code> performance mode for most file systems. File systems using the <code>maxIO</code> performance mode can scale to higher levels of aggregate throughput and operations per second with a tradeoff of slightly higher latencies for most file operations. The performance mode can't be changed after the file system has been created.</p> <note>
     /// <p>The <code>maxIO</code> mode is not supported on file systems using One Zone storage classes.</p>
     /// </note>
+    /// <p>Default is <code>generalPurpose</code>.</p>
     pub fn set_performance_mode(mut self, input: ::std::option::Option<crate::types::PerformanceMode>) -> Self {
         self.inner = self.inner.set_performance_mode(input);
         self
@@ -157,6 +159,7 @@ impl CreateFileSystemFluentBuilder {
     /// <p>The performance mode of the file system. We recommend <code>generalPurpose</code> performance mode for most file systems. File systems using the <code>maxIO</code> performance mode can scale to higher levels of aggregate throughput and operations per second with a tradeoff of slightly higher latencies for most file operations. The performance mode can't be changed after the file system has been created.</p> <note>
     /// <p>The <code>maxIO</code> mode is not supported on file systems using One Zone storage classes.</p>
     /// </note>
+    /// <p>Default is <code>generalPurpose</code>.</p>
     pub fn get_performance_mode(&self) -> &::std::option::Option<crate::types::PerformanceMode> {
         self.inner.get_performance_mode()
     }
@@ -232,17 +235,17 @@ impl CreateFileSystemFluentBuilder {
     pub fn get_throughput_mode(&self) -> &::std::option::Option<crate::types::ThroughputMode> {
         self.inner.get_throughput_mode()
     }
-    /// <p>The throughput, measured in MiB/s, that you want to provision for a file system that you're creating. Valid values are 1-1024. Required if <code>ThroughputMode</code> is set to <code>provisioned</code>. The upper limit for throughput is 1024 MiB/s. To increase this limit, contact Amazon Web Services Support. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/limits.html#soft-limits">Amazon EFS quotas that you can increase</a> in the <i>Amazon EFS User Guide</i>.</p>
+    /// <p>The throughput, measured in mebibytes per second (MiBps), that you want to provision for a file system that you're creating. Required if <code>ThroughputMode</code> is set to <code>provisioned</code>. Valid values are 1-3414 MiBps, with the upper limit depending on Region. To increase this limit, contact Amazon Web Services Support. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/limits.html#soft-limits">Amazon EFS quotas that you can increase</a> in the <i>Amazon EFS User Guide</i>.</p>
     pub fn provisioned_throughput_in_mibps(mut self, input: f64) -> Self {
         self.inner = self.inner.provisioned_throughput_in_mibps(input);
         self
     }
-    /// <p>The throughput, measured in MiB/s, that you want to provision for a file system that you're creating. Valid values are 1-1024. Required if <code>ThroughputMode</code> is set to <code>provisioned</code>. The upper limit for throughput is 1024 MiB/s. To increase this limit, contact Amazon Web Services Support. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/limits.html#soft-limits">Amazon EFS quotas that you can increase</a> in the <i>Amazon EFS User Guide</i>.</p>
+    /// <p>The throughput, measured in mebibytes per second (MiBps), that you want to provision for a file system that you're creating. Required if <code>ThroughputMode</code> is set to <code>provisioned</code>. Valid values are 1-3414 MiBps, with the upper limit depending on Region. To increase this limit, contact Amazon Web Services Support. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/limits.html#soft-limits">Amazon EFS quotas that you can increase</a> in the <i>Amazon EFS User Guide</i>.</p>
     pub fn set_provisioned_throughput_in_mibps(mut self, input: ::std::option::Option<f64>) -> Self {
         self.inner = self.inner.set_provisioned_throughput_in_mibps(input);
         self
     }
-    /// <p>The throughput, measured in MiB/s, that you want to provision for a file system that you're creating. Valid values are 1-1024. Required if <code>ThroughputMode</code> is set to <code>provisioned</code>. The upper limit for throughput is 1024 MiB/s. To increase this limit, contact Amazon Web Services Support. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/limits.html#soft-limits">Amazon EFS quotas that you can increase</a> in the <i>Amazon EFS User Guide</i>.</p>
+    /// <p>The throughput, measured in mebibytes per second (MiBps), that you want to provision for a file system that you're creating. Required if <code>ThroughputMode</code> is set to <code>provisioned</code>. Valid values are 1-3414 MiBps, with the upper limit depending on Region. To increase this limit, contact Amazon Web Services Support. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/limits.html#soft-limits">Amazon EFS quotas that you can increase</a> in the <i>Amazon EFS User Guide</i>.</p>
     pub fn get_provisioned_throughput_in_mibps(&self) -> &::std::option::Option<f64> {
         self.inner.get_provisioned_throughput_in_mibps()
     }

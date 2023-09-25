@@ -91,6 +91,12 @@ pub use crate::types::_dynamo_db_settings::DynamoDbSettingsBuilder;
 
 pub use crate::types::_data_provider::DataProviderBuilder;
 
+pub use crate::types::_mongo_db_data_provider_settings::MongoDbDataProviderSettingsBuilder;
+
+pub use crate::types::_maria_db_data_provider_settings::MariaDbDataProviderSettingsBuilder;
+
+pub use crate::types::_doc_db_data_provider_settings::DocDbDataProviderSettingsBuilder;
+
 pub use crate::types::_microsoft_sql_server_data_provider_settings::MicrosoftSqlServerDataProviderSettingsBuilder;
 
 pub use crate::types::_oracle_data_provider_settings::OracleDataProviderSettingsBuilder;
@@ -98,6 +104,8 @@ pub use crate::types::_oracle_data_provider_settings::OracleDataProviderSettings
 pub use crate::types::_my_sql_data_provider_settings::MySqlDataProviderSettingsBuilder;
 
 pub use crate::types::_postgre_sql_data_provider_settings::PostgreSqlDataProviderSettingsBuilder;
+
+pub use crate::types::_redshift_data_provider_settings::RedshiftDataProviderSettingsBuilder;
 
 pub use crate::types::_tag::TagBuilder;
 

@@ -76,7 +76,7 @@ pub struct RedshiftSettings {
     pub secrets_manager_access_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The full ARN, partial ARN, or friendly name of the <code>SecretsManagerSecret</code> that contains the Amazon Redshift endpoint connection details.</p>
     pub secrets_manager_secret_id: ::std::option::Option<::std::string::String>,
-    /// <p>When true, lets Redshift migrate the boolean type as boolean. By default, Redshift migrates booleans as <code>varchar(1)</code>.</p>
+    /// <p>When true, lets Redshift migrate the boolean type as boolean. By default, Redshift migrates booleans as <code>varchar(1)</code>. You must set this setting on both the source and target endpoints for it to take effect.</p>
     pub map_boolean_as_boolean: ::std::option::Option<bool>,
 }
 impl RedshiftSettings {
@@ -212,7 +212,7 @@ impl RedshiftSettings {
     pub fn secrets_manager_secret_id(&self) -> ::std::option::Option<&str> {
         self.secrets_manager_secret_id.as_deref()
     }
-    /// <p>When true, lets Redshift migrate the boolean type as boolean. By default, Redshift migrates booleans as <code>varchar(1)</code>.</p>
+    /// <p>When true, lets Redshift migrate the boolean type as boolean. By default, Redshift migrates booleans as <code>varchar(1)</code>. You must set this setting on both the source and target endpoints for it to take effect.</p>
     pub fn map_boolean_as_boolean(&self) -> ::std::option::Option<bool> {
         self.map_boolean_as_boolean
     }
@@ -754,17 +754,17 @@ impl RedshiftSettingsBuilder {
     pub fn get_secrets_manager_secret_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.secrets_manager_secret_id
     }
-    /// <p>When true, lets Redshift migrate the boolean type as boolean. By default, Redshift migrates booleans as <code>varchar(1)</code>.</p>
+    /// <p>When true, lets Redshift migrate the boolean type as boolean. By default, Redshift migrates booleans as <code>varchar(1)</code>. You must set this setting on both the source and target endpoints for it to take effect.</p>
     pub fn map_boolean_as_boolean(mut self, input: bool) -> Self {
         self.map_boolean_as_boolean = ::std::option::Option::Some(input);
         self
     }
-    /// <p>When true, lets Redshift migrate the boolean type as boolean. By default, Redshift migrates booleans as <code>varchar(1)</code>.</p>
+    /// <p>When true, lets Redshift migrate the boolean type as boolean. By default, Redshift migrates booleans as <code>varchar(1)</code>. You must set this setting on both the source and target endpoints for it to take effect.</p>
     pub fn set_map_boolean_as_boolean(mut self, input: ::std::option::Option<bool>) -> Self {
         self.map_boolean_as_boolean = input;
         self
     }
-    /// <p>When true, lets Redshift migrate the boolean type as boolean. By default, Redshift migrates booleans as <code>varchar(1)</code>.</p>
+    /// <p>When true, lets Redshift migrate the boolean type as boolean. By default, Redshift migrates booleans as <code>varchar(1)</code>. You must set this setting on both the source and target endpoints for it to take effect.</p>
     pub fn get_map_boolean_as_boolean(&self) -> &::std::option::Option<bool> {
         &self.map_boolean_as_boolean
     }
