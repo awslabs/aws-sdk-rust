@@ -60,6 +60,7 @@ impl Client {
 #[derive(Debug)]
 pub(crate) struct Handle {
     pub(crate) conf: crate::Config,
+    #[allow(dead_code)] // unused when a service does not provide any operations
     pub(crate) runtime_plugins: ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugins,
 }
 

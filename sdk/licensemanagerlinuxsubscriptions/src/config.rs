@@ -852,6 +852,7 @@ pub(crate) struct ConfigOverrideRuntimePlugin {
 }
 
 impl ConfigOverrideRuntimePlugin {
+    #[allow(dead_code)] // unused when a service does not provide any operations
     pub(crate) fn new(
         config_override: Builder,
         initial_config: ::aws_smithy_types::config_bag::FrozenLayer,
