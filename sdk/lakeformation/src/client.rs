@@ -161,6 +161,8 @@ mod commit_transaction;
 
 mod create_data_cells_filter;
 
+mod create_lake_formation_opt_in;
+
 mod create_lf_tag;
 
 /// Operation customization and supporting types.
@@ -192,6 +194,8 @@ mod create_lf_tag;
 pub mod customize;
 
 mod delete_data_cells_filter;
+
+mod delete_lake_formation_opt_in;
 
 mod delete_lf_tag;
 
@@ -232,6 +236,8 @@ mod get_work_units;
 mod grant_permissions;
 
 mod list_data_cells_filter;
+
+mod list_lake_formation_opt_ins;
 
 mod list_lf_tags;
 

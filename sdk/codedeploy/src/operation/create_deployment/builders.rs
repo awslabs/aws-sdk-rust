@@ -110,17 +110,17 @@ impl CreateDeploymentFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account.</p>
+    /// <p>The name of an CodeDeploy application associated with the user or Amazon Web Services account.</p>
     pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_name(input.into());
         self
     }
-    /// <p>The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account.</p>
+    /// <p>The name of an CodeDeploy application associated with the user or Amazon Web Services account.</p>
     pub fn set_application_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_name(input);
         self
     }
-    /// <p>The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account.</p>
+    /// <p>The name of an CodeDeploy application associated with the user or Amazon Web Services account.</p>
     pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_application_name()
     }
@@ -152,19 +152,19 @@ impl CreateDeploymentFluentBuilder {
     pub fn get_revision(&self) -> &::std::option::Option<crate::types::RevisionLocation> {
         self.inner.get_revision()
     }
-    /// <p>The name of a deployment configuration associated with the IAM user or Amazon Web Services account.</p>
+    /// <p>The name of a deployment configuration associated with the user or Amazon Web Services account.</p>
     /// <p>If not specified, the value configured in the deployment group is used as the default. If the deployment group does not have a deployment configuration associated with it, <code>CodeDeployDefault</code>.<code>OneAtATime</code> is used by default.</p>
     pub fn deployment_config_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.deployment_config_name(input.into());
         self
     }
-    /// <p>The name of a deployment configuration associated with the IAM user or Amazon Web Services account.</p>
+    /// <p>The name of a deployment configuration associated with the user or Amazon Web Services account.</p>
     /// <p>If not specified, the value configured in the deployment group is used as the default. If the deployment group does not have a deployment configuration associated with it, <code>CodeDeployDefault</code>.<code>OneAtATime</code> is used by default.</p>
     pub fn set_deployment_config_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_deployment_config_name(input);
         self
     }
-    /// <p>The name of a deployment configuration associated with the IAM user or Amazon Web Services account.</p>
+    /// <p>The name of a deployment configuration associated with the user or Amazon Web Services account.</p>
     /// <p>If not specified, the value configured in the deployment group is used as the default. If the deployment group does not have a deployment configuration associated with it, <code>CodeDeployDefault</code>.<code>OneAtATime</code> is used by default.</p>
     pub fn get_deployment_config_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_deployment_config_name()

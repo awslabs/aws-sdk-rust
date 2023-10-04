@@ -152,4 +152,18 @@ impl UpdateResourceFluentBuilder {
     pub fn get_with_federation(&self) -> &::std::option::Option<bool> {
         self.inner.get_with_federation()
     }
+    /// <p> Specifies whether the data access of tables pointing to the location can be managed by both Lake Formation permissions as well as Amazon S3 bucket policies. </p>
+    pub fn hybrid_access_enabled(mut self, input: bool) -> Self {
+        self.inner = self.inner.hybrid_access_enabled(input);
+        self
+    }
+    /// <p> Specifies whether the data access of tables pointing to the location can be managed by both Lake Formation permissions as well as Amazon S3 bucket policies. </p>
+    pub fn set_hybrid_access_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_hybrid_access_enabled(input);
+        self
+    }
+    /// <p> Specifies whether the data access of tables pointing to the location can be managed by both Lake Formation permissions as well as Amazon S3 bucket policies. </p>
+    pub fn get_hybrid_access_enabled(&self) -> &::std::option::Option<bool> {
+        self.inner.get_hybrid_access_enabled()
+    }
 }

@@ -315,6 +315,47 @@ impl From<crate::operation::create_data_cells_filter::CreateDataCellsFilterError
         }
     }
 }
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::create_lake_formation_opt_in::CreateLakeFormationOptInError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::create_lake_formation_opt_in::CreateLakeFormationOptInError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::create_lake_formation_opt_in::CreateLakeFormationOptInError> for Error {
+    fn from(err: crate::operation::create_lake_formation_opt_in::CreateLakeFormationOptInError) -> Self {
+        match err {
+            crate::operation::create_lake_formation_opt_in::CreateLakeFormationOptInError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::create_lake_formation_opt_in::CreateLakeFormationOptInError::ConcurrentModificationException(inner) => {
+                Error::ConcurrentModificationException(inner)
+            }
+            crate::operation::create_lake_formation_opt_in::CreateLakeFormationOptInError::EntityNotFoundException(inner) => {
+                Error::EntityNotFoundException(inner)
+            }
+            crate::operation::create_lake_formation_opt_in::CreateLakeFormationOptInError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::create_lake_formation_opt_in::CreateLakeFormationOptInError::InvalidInputException(inner) => {
+                Error::InvalidInputException(inner)
+            }
+            crate::operation::create_lake_formation_opt_in::CreateLakeFormationOptInError::OperationTimeoutException(inner) => {
+                Error::OperationTimeoutException(inner)
+            }
+            crate::operation::create_lake_formation_opt_in::CreateLakeFormationOptInError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::create_lf_tag::CreateLFTagError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -381,6 +422,47 @@ impl From<crate::operation::delete_data_cells_filter::DeleteDataCellsFilterError
                 Error::OperationTimeoutException(inner)
             }
             crate::operation::delete_data_cells_filter::DeleteDataCellsFilterError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::delete_lake_formation_opt_in::DeleteLakeFormationOptInError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::delete_lake_formation_opt_in::DeleteLakeFormationOptInError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_lake_formation_opt_in::DeleteLakeFormationOptInError> for Error {
+    fn from(err: crate::operation::delete_lake_formation_opt_in::DeleteLakeFormationOptInError) -> Self {
+        match err {
+            crate::operation::delete_lake_formation_opt_in::DeleteLakeFormationOptInError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::delete_lake_formation_opt_in::DeleteLakeFormationOptInError::ConcurrentModificationException(inner) => {
+                Error::ConcurrentModificationException(inner)
+            }
+            crate::operation::delete_lake_formation_opt_in::DeleteLakeFormationOptInError::EntityNotFoundException(inner) => {
+                Error::EntityNotFoundException(inner)
+            }
+            crate::operation::delete_lake_formation_opt_in::DeleteLakeFormationOptInError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::delete_lake_formation_opt_in::DeleteLakeFormationOptInError::InvalidInputException(inner) => {
+                Error::InvalidInputException(inner)
+            }
+            crate::operation::delete_lake_formation_opt_in::DeleteLakeFormationOptInError::OperationTimeoutException(inner) => {
+                Error::OperationTimeoutException(inner)
+            }
+            crate::operation::delete_lake_formation_opt_in::DeleteLakeFormationOptInError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1031,6 +1113,41 @@ impl From<crate::operation::list_data_cells_filter::ListDataCellsFilterError> fo
                 Error::OperationTimeoutException(inner)
             }
             crate::operation::list_data_cells_filter::ListDataCellsFilterError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_lake_formation_opt_ins::ListLakeFormationOptInsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_lake_formation_opt_ins::ListLakeFormationOptInsError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_lake_formation_opt_ins::ListLakeFormationOptInsError> for Error {
+    fn from(err: crate::operation::list_lake_formation_opt_ins::ListLakeFormationOptInsError) -> Self {
+        match err {
+            crate::operation::list_lake_formation_opt_ins::ListLakeFormationOptInsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_lake_formation_opt_ins::ListLakeFormationOptInsError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::list_lake_formation_opt_ins::ListLakeFormationOptInsError::InvalidInputException(inner) => {
+                Error::InvalidInputException(inner)
+            }
+            crate::operation::list_lake_formation_opt_ins::ListLakeFormationOptInsError::OperationTimeoutException(inner) => {
+                Error::OperationTimeoutException(inner)
+            }
+            crate::operation::list_lake_formation_opt_ins::ListLakeFormationOptInsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

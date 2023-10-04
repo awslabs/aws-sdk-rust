@@ -267,7 +267,7 @@ pub type BatchGetApplicationRevisionsErrorKind = BatchGetApplicationRevisionsErr
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum BatchGetApplicationRevisionsError {
-    /// <p>The application does not exist with the IAM user or Amazon Web Services account.</p>
+    /// <p>The application does not exist with the user or Amazon Web Services account.</p>
     ApplicationDoesNotExistException(crate::types::error::ApplicationDoesNotExistException),
     /// <p>The minimum number of required application names was not specified.</p>
     ApplicationNameRequiredException(crate::types::error::ApplicationNameRequiredException),

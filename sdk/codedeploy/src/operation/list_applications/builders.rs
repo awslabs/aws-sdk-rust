@@ -22,7 +22,7 @@ impl ListApplicationsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListApplications`.
 ///
-/// <p>Lists the applications registered with the IAM user or Amazon Web Services account.</p>
+/// <p>Lists the applications registered with the user or Amazon Web Services account.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListApplicationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

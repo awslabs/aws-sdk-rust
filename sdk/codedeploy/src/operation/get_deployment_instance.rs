@@ -261,7 +261,7 @@ pub type GetDeploymentInstanceErrorKind = GetDeploymentInstanceError;
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum GetDeploymentInstanceError {
-    /// <p>The deployment with the IAM user or Amazon Web Services account does not exist.</p>
+    /// <p>The deployment with the user or Amazon Web Services account does not exist.</p>
     DeploymentDoesNotExistException(crate::types::error::DeploymentDoesNotExistException),
     /// <p>At least one deployment ID must be specified.</p>
     DeploymentIdRequiredException(crate::types::error::DeploymentIdRequiredException),

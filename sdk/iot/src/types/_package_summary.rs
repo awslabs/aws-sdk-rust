@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PackageSummary {
-    /// <p>The name for the target package.</p>
+    /// <p>The name for the target software package.</p>
     pub package_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the default package version.</p>
     pub default_version_name: ::std::option::Option<::std::string::String>,
@@ -14,7 +14,7 @@ pub struct PackageSummary {
     pub last_modified_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl PackageSummary {
-    /// <p>The name for the target package.</p>
+    /// <p>The name for the target software package.</p>
     pub fn package_name(&self) -> ::std::option::Option<&str> {
         self.package_name.as_deref()
     }
@@ -48,17 +48,17 @@ pub struct PackageSummaryBuilder {
     pub(crate) last_modified_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl PackageSummaryBuilder {
-    /// <p>The name for the target package.</p>
+    /// <p>The name for the target software package.</p>
     pub fn package_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.package_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name for the target package.</p>
+    /// <p>The name for the target software package.</p>
     pub fn set_package_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.package_name = input;
         self
     }
-    /// <p>The name for the target package.</p>
+    /// <p>The name for the target software package.</p>
     pub fn get_package_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.package_name
     }

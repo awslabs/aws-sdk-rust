@@ -11,6 +11,8 @@ pub struct CreateVerifiedAccessInstanceInput {
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
+    /// <p>Enable or disable support for Federal Information Processing Standards (FIPS) on the instance.</p>
+    pub fips_enabled: ::std::option::Option<bool>,
 }
 impl CreateVerifiedAccessInstanceInput {
     /// <p>A description for the Verified Access instance.</p>
@@ -29,6 +31,10 @@ impl CreateVerifiedAccessInstanceInput {
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
         self.dry_run
     }
+    /// <p>Enable or disable support for Federal Information Processing Standards (FIPS) on the instance.</p>
+    pub fn fips_enabled(&self) -> ::std::option::Option<bool> {
+        self.fips_enabled
+    }
 }
 impl CreateVerifiedAccessInstanceInput {
     /// Creates a new builder-style object to manufacture [`CreateVerifiedAccessInstanceInput`](crate::operation::create_verified_access_instance::CreateVerifiedAccessInstanceInput).
@@ -45,6 +51,7 @@ pub struct CreateVerifiedAccessInstanceInputBuilder {
     pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) dry_run: ::std::option::Option<bool>,
+    pub(crate) fips_enabled: ::std::option::Option<bool>,
 }
 impl CreateVerifiedAccessInstanceInputBuilder {
     /// <p>A description for the Verified Access instance.</p>
@@ -109,6 +116,20 @@ impl CreateVerifiedAccessInstanceInputBuilder {
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
         &self.dry_run
     }
+    /// <p>Enable or disable support for Federal Information Processing Standards (FIPS) on the instance.</p>
+    pub fn fips_enabled(mut self, input: bool) -> Self {
+        self.fips_enabled = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Enable or disable support for Federal Information Processing Standards (FIPS) on the instance.</p>
+    pub fn set_fips_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.fips_enabled = input;
+        self
+    }
+    /// <p>Enable or disable support for Federal Information Processing Standards (FIPS) on the instance.</p>
+    pub fn get_fips_enabled(&self) -> &::std::option::Option<bool> {
+        &self.fips_enabled
+    }
     /// Consumes the builder and constructs a [`CreateVerifiedAccessInstanceInput`](crate::operation::create_verified_access_instance::CreateVerifiedAccessInstanceInput).
     pub fn build(
         self,
@@ -121,6 +142,7 @@ impl CreateVerifiedAccessInstanceInputBuilder {
             tag_specifications: self.tag_specifications,
             client_token: self.client_token,
             dry_run: self.dry_run,
+            fips_enabled: self.fips_enabled,
         })
     }
 }

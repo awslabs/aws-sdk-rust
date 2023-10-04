@@ -62,6 +62,18 @@ pub(super) fn resolve_endpoint(
             }
             if (*use_fips) == (true) {
                 if (true) == (partition_result.supports_fips()) {
+                    if ("aws-us-gov") == (partition_result.name()) {
+                        return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
+                            .url({
+                                let mut out = String::new();
+                                out.push_str("https://portal.sso.");
+                                #[allow(clippy::needless_borrow)]
+                                out.push_str(&region);
+                                out.push_str(".amazonaws.com");
+                                out
+                            })
+                            .build());
+                    }
                     return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
                         .url({
                             let mut out = String::new();

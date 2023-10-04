@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteApplicationInput {
-    /// <p>The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account.</p>
+    /// <p>The name of an CodeDeploy application associated with the user or Amazon Web Services account.</p>
     pub application_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteApplicationInput {
-    /// <p>The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account.</p>
+    /// <p>The name of an CodeDeploy application associated with the user or Amazon Web Services account.</p>
     pub fn application_name(&self) -> ::std::option::Option<&str> {
         self.application_name.as_deref()
     }
@@ -27,17 +27,17 @@ pub struct DeleteApplicationInputBuilder {
     pub(crate) application_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteApplicationInputBuilder {
-    /// <p>The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account.</p>
+    /// <p>The name of an CodeDeploy application associated with the user or Amazon Web Services account.</p>
     pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account.</p>
+    /// <p>The name of an CodeDeploy application associated with the user or Amazon Web Services account.</p>
     pub fn set_application_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_name = input;
         self
     }
-    /// <p>The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account.</p>
+    /// <p>The name of an CodeDeploy application associated with the user or Amazon Web Services account.</p>
     pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.application_name
     }

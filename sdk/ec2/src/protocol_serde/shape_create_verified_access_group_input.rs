@@ -41,6 +41,11 @@ pub fn ser_create_verified_access_group_input_input(
     if let Some(var_15) = &input.dry_run {
         scope_14.boolean(*var_15);
     }
+    #[allow(unused_mut)]
+    let mut scope_16 = writer.prefix("SseSpecification");
+    if let Some(var_17) = &input.sse_specification {
+        crate::protocol_serde::shape_verified_access_sse_specification_request::ser_verified_access_sse_specification_request(scope_16, var_17)?;
+    }
     writer.finish();
     Ok(::aws_smithy_http::body::SdkBody::from(out))
 }

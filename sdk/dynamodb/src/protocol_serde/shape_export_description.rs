@@ -144,6 +144,18 @@ where
                                     .transpose()?,
                             );
                         }
+                        "ExportType" => {
+                            builder = builder.set_export_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::ExportType::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "IncrementalExportSpecification" => {
+                            builder = builder.set_incremental_export_specification(
+                                crate::protocol_serde::shape_incremental_export_specification::de_incremental_export_specification(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

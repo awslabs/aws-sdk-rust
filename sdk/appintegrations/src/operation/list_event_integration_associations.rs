@@ -428,3 +428,6 @@ mod _list_event_integration_associations_output;
 
 /// Builders
 pub mod builders;
+
+/// Paginator for this operation
+pub mod paginator;

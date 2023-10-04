@@ -664,6 +664,14 @@
 ///     InstanceType::R7gdLarge => { /* ... */ },
 ///     InstanceType::R7gdMedium => { /* ... */ },
 ///     InstanceType::R7gdXlarge => { /* ... */ },
+///     InstanceType::R7iz12xlarge => { /* ... */ },
+///     InstanceType::R7iz16xlarge => { /* ... */ },
+///     InstanceType::R7iz2xlarge => { /* ... */ },
+///     InstanceType::R7iz32xlarge => { /* ... */ },
+///     InstanceType::R7iz4xlarge => { /* ... */ },
+///     InstanceType::R7iz8xlarge => { /* ... */ },
+///     InstanceType::R7izLarge => { /* ... */ },
+///     InstanceType::R7izXlarge => { /* ... */ },
 ///     InstanceType::T1Micro => { /* ... */ },
 ///     InstanceType::T22xlarge => { /* ... */ },
 ///     InstanceType::T2Large => { /* ... */ },
@@ -2085,6 +2093,22 @@ pub enum InstanceType {
     #[allow(missing_docs)] // documentation missing in model
     R7gdXlarge,
     #[allow(missing_docs)] // documentation missing in model
+    R7iz12xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    R7iz16xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    R7iz2xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    R7iz32xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    R7iz4xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    R7iz8xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    R7izLarge,
+    #[allow(missing_docs)] // documentation missing in model
+    R7izXlarge,
+    #[allow(missing_docs)] // documentation missing in model
     T1Micro,
     #[allow(missing_docs)] // documentation missing in model
     T22xlarge,
@@ -2920,6 +2944,14 @@ impl ::std::convert::From<&str> for InstanceType {
             "r7gd.large" => InstanceType::R7gdLarge,
             "r7gd.medium" => InstanceType::R7gdMedium,
             "r7gd.xlarge" => InstanceType::R7gdXlarge,
+            "r7iz.12xlarge" => InstanceType::R7iz12xlarge,
+            "r7iz.16xlarge" => InstanceType::R7iz16xlarge,
+            "r7iz.2xlarge" => InstanceType::R7iz2xlarge,
+            "r7iz.32xlarge" => InstanceType::R7iz32xlarge,
+            "r7iz.4xlarge" => InstanceType::R7iz4xlarge,
+            "r7iz.8xlarge" => InstanceType::R7iz8xlarge,
+            "r7iz.large" => InstanceType::R7izLarge,
+            "r7iz.xlarge" => InstanceType::R7izXlarge,
             "t1.micro" => InstanceType::T1Micro,
             "t2.2xlarge" => InstanceType::T22xlarge,
             "t2.large" => InstanceType::T2Large,
@@ -3676,6 +3708,14 @@ impl InstanceType {
             InstanceType::R7gdLarge => "r7gd.large",
             InstanceType::R7gdMedium => "r7gd.medium",
             InstanceType::R7gdXlarge => "r7gd.xlarge",
+            InstanceType::R7iz12xlarge => "r7iz.12xlarge",
+            InstanceType::R7iz16xlarge => "r7iz.16xlarge",
+            InstanceType::R7iz2xlarge => "r7iz.2xlarge",
+            InstanceType::R7iz32xlarge => "r7iz.32xlarge",
+            InstanceType::R7iz4xlarge => "r7iz.4xlarge",
+            InstanceType::R7iz8xlarge => "r7iz.8xlarge",
+            InstanceType::R7izLarge => "r7iz.large",
+            InstanceType::R7izXlarge => "r7iz.xlarge",
             InstanceType::T1Micro => "t1.micro",
             InstanceType::T22xlarge => "t2.2xlarge",
             InstanceType::T2Large => "t2.large",
@@ -4423,6 +4463,14 @@ impl InstanceType {
             "r7gd.large",
             "r7gd.medium",
             "r7gd.xlarge",
+            "r7iz.12xlarge",
+            "r7iz.16xlarge",
+            "r7iz.2xlarge",
+            "r7iz.32xlarge",
+            "r7iz.4xlarge",
+            "r7iz.8xlarge",
+            "r7iz.large",
+            "r7iz.xlarge",
             "t1.micro",
             "t2.2xlarge",
             "t2.large",

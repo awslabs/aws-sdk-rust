@@ -14,6 +14,16 @@
 /// match blocktype {
 ///     BlockType::Cell => { /* ... */ },
 ///     BlockType::KeyValueSet => { /* ... */ },
+///     BlockType::LayoutFigure => { /* ... */ },
+///     BlockType::LayoutFooter => { /* ... */ },
+///     BlockType::LayoutHeader => { /* ... */ },
+///     BlockType::LayoutKeyValue => { /* ... */ },
+///     BlockType::LayoutList => { /* ... */ },
+///     BlockType::LayoutPageNumber => { /* ... */ },
+///     BlockType::LayoutSectionHeader => { /* ... */ },
+///     BlockType::LayoutTable => { /* ... */ },
+///     BlockType::LayoutText => { /* ... */ },
+///     BlockType::LayoutTitle => { /* ... */ },
 ///     BlockType::Line => { /* ... */ },
 ///     BlockType::MergedCell => { /* ... */ },
 ///     BlockType::Page => { /* ... */ },
@@ -58,6 +68,26 @@ pub enum BlockType {
     #[allow(missing_docs)] // documentation missing in model
     KeyValueSet,
     #[allow(missing_docs)] // documentation missing in model
+    LayoutFigure,
+    #[allow(missing_docs)] // documentation missing in model
+    LayoutFooter,
+    #[allow(missing_docs)] // documentation missing in model
+    LayoutHeader,
+    #[allow(missing_docs)] // documentation missing in model
+    LayoutKeyValue,
+    #[allow(missing_docs)] // documentation missing in model
+    LayoutList,
+    #[allow(missing_docs)] // documentation missing in model
+    LayoutPageNumber,
+    #[allow(missing_docs)] // documentation missing in model
+    LayoutSectionHeader,
+    #[allow(missing_docs)] // documentation missing in model
+    LayoutTable,
+    #[allow(missing_docs)] // documentation missing in model
+    LayoutText,
+    #[allow(missing_docs)] // documentation missing in model
+    LayoutTitle,
+    #[allow(missing_docs)] // documentation missing in model
     Line,
     #[allow(missing_docs)] // documentation missing in model
     MergedCell,
@@ -89,6 +119,16 @@ impl ::std::convert::From<&str> for BlockType {
         match s {
             "CELL" => BlockType::Cell,
             "KEY_VALUE_SET" => BlockType::KeyValueSet,
+            "LAYOUT_FIGURE" => BlockType::LayoutFigure,
+            "LAYOUT_FOOTER" => BlockType::LayoutFooter,
+            "LAYOUT_HEADER" => BlockType::LayoutHeader,
+            "LAYOUT_KEY_VALUE" => BlockType::LayoutKeyValue,
+            "LAYOUT_LIST" => BlockType::LayoutList,
+            "LAYOUT_PAGE_NUMBER" => BlockType::LayoutPageNumber,
+            "LAYOUT_SECTION_HEADER" => BlockType::LayoutSectionHeader,
+            "LAYOUT_TABLE" => BlockType::LayoutTable,
+            "LAYOUT_TEXT" => BlockType::LayoutText,
+            "LAYOUT_TITLE" => BlockType::LayoutTitle,
             "LINE" => BlockType::Line,
             "MERGED_CELL" => BlockType::MergedCell,
             "PAGE" => BlockType::Page,
@@ -118,6 +158,16 @@ impl BlockType {
         match self {
             BlockType::Cell => "CELL",
             BlockType::KeyValueSet => "KEY_VALUE_SET",
+            BlockType::LayoutFigure => "LAYOUT_FIGURE",
+            BlockType::LayoutFooter => "LAYOUT_FOOTER",
+            BlockType::LayoutHeader => "LAYOUT_HEADER",
+            BlockType::LayoutKeyValue => "LAYOUT_KEY_VALUE",
+            BlockType::LayoutList => "LAYOUT_LIST",
+            BlockType::LayoutPageNumber => "LAYOUT_PAGE_NUMBER",
+            BlockType::LayoutSectionHeader => "LAYOUT_SECTION_HEADER",
+            BlockType::LayoutTable => "LAYOUT_TABLE",
+            BlockType::LayoutText => "LAYOUT_TEXT",
+            BlockType::LayoutTitle => "LAYOUT_TITLE",
             BlockType::Line => "LINE",
             BlockType::MergedCell => "MERGED_CELL",
             BlockType::Page => "PAGE",
@@ -138,6 +188,16 @@ impl BlockType {
         &[
             "CELL",
             "KEY_VALUE_SET",
+            "LAYOUT_FIGURE",
+            "LAYOUT_FOOTER",
+            "LAYOUT_HEADER",
+            "LAYOUT_KEY_VALUE",
+            "LAYOUT_LIST",
+            "LAYOUT_PAGE_NUMBER",
+            "LAYOUT_SECTION_HEADER",
+            "LAYOUT_TABLE",
+            "LAYOUT_TEXT",
+            "LAYOUT_TITLE",
             "LINE",
             "MERGED_CELL",
             "PAGE",

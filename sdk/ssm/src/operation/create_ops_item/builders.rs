@@ -111,17 +111,23 @@ impl CreateOpsItemFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>Information about the OpsItem. </p>
+    /// <p>User-defined text that contains information about the OpsItem, in Markdown format. </p> <note>
+    /// <p>Provide enough information so that users viewing this OpsItem for the first time understand the issue. </p>
+    /// </note>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
-    /// <p>Information about the OpsItem. </p>
+    /// <p>User-defined text that contains information about the OpsItem, in Markdown format. </p> <note>
+    /// <p>Provide enough information so that users viewing this OpsItem for the first time understand the issue. </p>
+    /// </note>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
-    /// <p>Information about the OpsItem. </p>
+    /// <p>User-defined text that contains information about the OpsItem, in Markdown format. </p> <note>
+    /// <p>Provide enough information so that users viewing this OpsItem for the first time understand the issue. </p>
+    /// </note>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
@@ -129,7 +135,7 @@ impl CreateOpsItemFluentBuilder {
     /// <ul>
     /// <li> <p> <code>/aws/issue</code> </p> <p>This type of OpsItem is used for default OpsItems created by OpsCenter. </p> </li>
     /// <li> <p> <code>/aws/changerequest</code> </p> <p>This type of OpsItem is used by Change Manager for reviewing and approving or rejecting change requests. </p> </li>
-    /// <li> <p> <code>/aws/insights</code> </p> <p>This type of OpsItem is used by OpsCenter for aggregating and reporting on duplicate OpsItems. </p> </li>
+    /// <li> <p> <code>/aws/insight</code> </p> <p>This type of OpsItem is used by OpsCenter for aggregating and reporting on duplicate OpsItems. </p> </li>
     /// </ul>
     pub fn ops_item_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.ops_item_type(input.into());
@@ -139,7 +145,7 @@ impl CreateOpsItemFluentBuilder {
     /// <ul>
     /// <li> <p> <code>/aws/issue</code> </p> <p>This type of OpsItem is used for default OpsItems created by OpsCenter. </p> </li>
     /// <li> <p> <code>/aws/changerequest</code> </p> <p>This type of OpsItem is used by Change Manager for reviewing and approving or rejecting change requests. </p> </li>
-    /// <li> <p> <code>/aws/insights</code> </p> <p>This type of OpsItem is used by OpsCenter for aggregating and reporting on duplicate OpsItems. </p> </li>
+    /// <li> <p> <code>/aws/insight</code> </p> <p>This type of OpsItem is used by OpsCenter for aggregating and reporting on duplicate OpsItems. </p> </li>
     /// </ul>
     pub fn set_ops_item_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_ops_item_type(input);
@@ -149,7 +155,7 @@ impl CreateOpsItemFluentBuilder {
     /// <ul>
     /// <li> <p> <code>/aws/issue</code> </p> <p>This type of OpsItem is used for default OpsItems created by OpsCenter. </p> </li>
     /// <li> <p> <code>/aws/changerequest</code> </p> <p>This type of OpsItem is used by Change Manager for reviewing and approving or rejecting change requests. </p> </li>
-    /// <li> <p> <code>/aws/insights</code> </p> <p>This type of OpsItem is used by OpsCenter for aggregating and reporting on duplicate OpsItems. </p> </li>
+    /// <li> <p> <code>/aws/insight</code> </p> <p>This type of OpsItem is used by OpsCenter for aggregating and reporting on duplicate OpsItems. </p> </li>
     /// </ul>
     pub fn get_ops_item_type(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_ops_item_type()

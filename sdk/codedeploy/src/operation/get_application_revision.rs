@@ -261,7 +261,7 @@ pub type GetApplicationRevisionErrorKind = GetApplicationRevisionError;
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum GetApplicationRevisionError {
-    /// <p>The application does not exist with the IAM user or Amazon Web Services account.</p>
+    /// <p>The application does not exist with the user or Amazon Web Services account.</p>
     ApplicationDoesNotExistException(crate::types::error::ApplicationDoesNotExistException),
     /// <p>The minimum number of required application names was not specified.</p>
     ApplicationNameRequiredException(crate::types::error::ApplicationNameRequiredException),
@@ -269,7 +269,7 @@ pub enum GetApplicationRevisionError {
     InvalidApplicationNameException(crate::types::error::InvalidApplicationNameException),
     /// <p>The revision was specified in an invalid format.</p>
     InvalidRevisionException(crate::types::error::InvalidRevisionException),
-    /// <p>The named revision does not exist with the IAM user or Amazon Web Services account.</p>
+    /// <p>The named revision does not exist with the user or Amazon Web Services account.</p>
     RevisionDoesNotExistException(crate::types::error::RevisionDoesNotExistException),
     /// <p>The revision ID was not specified.</p>
     RevisionRequiredException(crate::types::error::RevisionRequiredException),

@@ -211,6 +211,8 @@ pub use crate::types::_open_search_action::OpenSearchAction;
 
 pub use crate::types::_kafka_action::KafkaAction;
 
+pub use crate::types::_kafka_action_header::KafkaActionHeader;
+
 pub use crate::types::_http_action::HttpAction;
 
 pub use crate::types::_http_authorization::HttpAuthorization;
@@ -842,6 +844,8 @@ mod _job_summary;
 mod _job_template_summary;
 
 mod _kafka_action;
+
+mod _kafka_action_header;
 
 mod _key_pair;
 

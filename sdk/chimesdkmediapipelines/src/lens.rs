@@ -19,6 +19,16 @@ pub(crate) fn reflens_list_media_insights_pipeline_configurations_output_next_to
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_media_pipeline_kinesis_video_stream_pools_output_next_token(
+    input: &crate::operation::list_media_pipeline_kinesis_video_stream_pools::ListMediaPipelineKinesisVideoStreamPoolsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_media_pipelines_output_next_token(
     input: &crate::operation::list_media_pipelines::ListMediaPipelinesOutput,
 ) -> ::std::option::Option<&::std::string::String> {

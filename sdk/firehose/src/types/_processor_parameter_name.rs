@@ -14,6 +14,7 @@
 /// match processorparametername {
 ///     ProcessorParameterName::BufferIntervalInSeconds => { /* ... */ },
 ///     ProcessorParameterName::BufferSizeInMb => { /* ... */ },
+///     ProcessorParameterName::CompressionFormat => { /* ... */ },
 ///     ProcessorParameterName::Delimiter => { /* ... */ },
 ///     ProcessorParameterName::JsonParsingEngine => { /* ... */ },
 ///     ProcessorParameterName::LambdaArn => { /* ... */ },
@@ -53,6 +54,8 @@ pub enum ProcessorParameterName {
     #[allow(missing_docs)] // documentation missing in model
     BufferSizeInMb,
     #[allow(missing_docs)] // documentation missing in model
+    CompressionFormat,
+    #[allow(missing_docs)] // documentation missing in model
     Delimiter,
     #[allow(missing_docs)] // documentation missing in model
     JsonParsingEngine,
@@ -74,6 +77,7 @@ impl ::std::convert::From<&str> for ProcessorParameterName {
         match s {
             "BufferIntervalInSeconds" => ProcessorParameterName::BufferIntervalInSeconds,
             "BufferSizeInMBs" => ProcessorParameterName::BufferSizeInMb,
+            "CompressionFormat" => ProcessorParameterName::CompressionFormat,
             "Delimiter" => ProcessorParameterName::Delimiter,
             "JsonParsingEngine" => ProcessorParameterName::JsonParsingEngine,
             "LambdaArn" => ProcessorParameterName::LambdaArn,
@@ -98,6 +102,7 @@ impl ProcessorParameterName {
         match self {
             ProcessorParameterName::BufferIntervalInSeconds => "BufferIntervalInSeconds",
             ProcessorParameterName::BufferSizeInMb => "BufferSizeInMBs",
+            ProcessorParameterName::CompressionFormat => "CompressionFormat",
             ProcessorParameterName::Delimiter => "Delimiter",
             ProcessorParameterName::JsonParsingEngine => "JsonParsingEngine",
             ProcessorParameterName::LambdaArn => "LambdaArn",
@@ -113,6 +118,7 @@ impl ProcessorParameterName {
         &[
             "BufferIntervalInSeconds",
             "BufferSizeInMBs",
+            "CompressionFormat",
             "Delimiter",
             "JsonParsingEngine",
             "LambdaArn",

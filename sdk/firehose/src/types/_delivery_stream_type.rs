@@ -14,6 +14,7 @@
 /// match deliverystreamtype {
 ///     DeliveryStreamType::DirectPut => { /* ... */ },
 ///     DeliveryStreamType::KinesisStreamAsSource => { /* ... */ },
+///     DeliveryStreamType::MskAsSource => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -45,6 +46,8 @@ pub enum DeliveryStreamType {
     DirectPut,
     #[allow(missing_docs)] // documentation missing in model
     KinesisStreamAsSource,
+    #[allow(missing_docs)] // documentation missing in model
+    MskAsSource,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
@@ -53,6 +56,7 @@ impl ::std::convert::From<&str> for DeliveryStreamType {
         match s {
             "DirectPut" => DeliveryStreamType::DirectPut,
             "KinesisStreamAsSource" => DeliveryStreamType::KinesisStreamAsSource,
+            "MSKAsSource" => DeliveryStreamType::MskAsSource,
             other => DeliveryStreamType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -70,12 +74,13 @@ impl DeliveryStreamType {
         match self {
             DeliveryStreamType::DirectPut => "DirectPut",
             DeliveryStreamType::KinesisStreamAsSource => "KinesisStreamAsSource",
+            DeliveryStreamType::MskAsSource => "MSKAsSource",
             DeliveryStreamType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DirectPut", "KinesisStreamAsSource"]
+        &["DirectPut", "KinesisStreamAsSource", "MSKAsSource"]
     }
 }
 impl ::std::convert::AsRef<str> for DeliveryStreamType {

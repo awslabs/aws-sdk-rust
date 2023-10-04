@@ -16,6 +16,8 @@ pub struct VerifiedAccessInstance {
     pub last_updated_time: ::std::option::Option<::std::string::String>,
     /// <p>The tags.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    /// <p>Describes whether support for Federal Information Processing Standards (FIPS) is enabled on the instance.</p>
+    pub fips_enabled: ::std::option::Option<bool>,
 }
 impl VerifiedAccessInstance {
     /// <p>The ID of the Amazon Web Services Verified Access instance.</p>
@@ -42,6 +44,10 @@ impl VerifiedAccessInstance {
     pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
+    /// <p>Describes whether support for Federal Information Processing Standards (FIPS) is enabled on the instance.</p>
+    pub fn fips_enabled(&self) -> ::std::option::Option<bool> {
+        self.fips_enabled
+    }
 }
 impl VerifiedAccessInstance {
     /// Creates a new builder-style object to manufacture [`VerifiedAccessInstance`](crate::types::VerifiedAccessInstance).
@@ -60,6 +66,7 @@ pub struct VerifiedAccessInstanceBuilder {
     pub(crate) creation_time: ::std::option::Option<::std::string::String>,
     pub(crate) last_updated_time: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) fips_enabled: ::std::option::Option<bool>,
 }
 impl VerifiedAccessInstanceBuilder {
     /// <p>The ID of the Amazon Web Services Verified Access instance.</p>
@@ -161,6 +168,20 @@ impl VerifiedAccessInstanceBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }
+    /// <p>Describes whether support for Federal Information Processing Standards (FIPS) is enabled on the instance.</p>
+    pub fn fips_enabled(mut self, input: bool) -> Self {
+        self.fips_enabled = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Describes whether support for Federal Information Processing Standards (FIPS) is enabled on the instance.</p>
+    pub fn set_fips_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.fips_enabled = input;
+        self
+    }
+    /// <p>Describes whether support for Federal Information Processing Standards (FIPS) is enabled on the instance.</p>
+    pub fn get_fips_enabled(&self) -> &::std::option::Option<bool> {
+        &self.fips_enabled
+    }
     /// Consumes the builder and constructs a [`VerifiedAccessInstance`](crate::types::VerifiedAccessInstance).
     pub fn build(self) -> crate::types::VerifiedAccessInstance {
         crate::types::VerifiedAccessInstance {
@@ -170,6 +191,7 @@ impl VerifiedAccessInstanceBuilder {
             creation_time: self.creation_time,
             last_updated_time: self.last_updated_time,
             tags: self.tags,
+            fips_enabled: self.fips_enabled,
         }
     }
 }

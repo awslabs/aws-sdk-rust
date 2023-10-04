@@ -44,7 +44,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = "0.56.1"
-//! aws-sdk-verifiedpermissions = "0.3.1"
+//! aws-sdk-verifiedpermissions = "0.4.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

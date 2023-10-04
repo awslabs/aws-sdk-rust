@@ -6,7 +6,7 @@
 pub struct ModelExplainabilityAppSpecification {
     /// <p>The container image to be run by the model explainability job.</p>
     pub image_uri: ::std::option::Option<::std::string::String>,
-    /// <p>JSON formatted S3 file that defines explainability parameters. For more information on this JSON configuration file, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-config-json-monitor-model-explainability-parameters.html">Configure model explainability parameters</a>.</p>
+    /// <p>JSON formatted Amazon S3 file that defines explainability parameters. For more information on this JSON configuration file, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-config-json-monitor-model-explainability-parameters.html">Configure model explainability parameters</a>.</p>
     pub config_uri: ::std::option::Option<::std::string::String>,
     /// <p>Sets the environment variables in the Docker container.</p>
     pub environment: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -16,7 +16,7 @@ impl ModelExplainabilityAppSpecification {
     pub fn image_uri(&self) -> ::std::option::Option<&str> {
         self.image_uri.as_deref()
     }
-    /// <p>JSON formatted S3 file that defines explainability parameters. For more information on this JSON configuration file, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-config-json-monitor-model-explainability-parameters.html">Configure model explainability parameters</a>.</p>
+    /// <p>JSON formatted Amazon S3 file that defines explainability parameters. For more information on this JSON configuration file, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-config-json-monitor-model-explainability-parameters.html">Configure model explainability parameters</a>.</p>
     pub fn config_uri(&self) -> ::std::option::Option<&str> {
         self.config_uri.as_deref()
     }
@@ -55,17 +55,17 @@ impl ModelExplainabilityAppSpecificationBuilder {
     pub fn get_image_uri(&self) -> &::std::option::Option<::std::string::String> {
         &self.image_uri
     }
-    /// <p>JSON formatted S3 file that defines explainability parameters. For more information on this JSON configuration file, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-config-json-monitor-model-explainability-parameters.html">Configure model explainability parameters</a>.</p>
+    /// <p>JSON formatted Amazon S3 file that defines explainability parameters. For more information on this JSON configuration file, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-config-json-monitor-model-explainability-parameters.html">Configure model explainability parameters</a>.</p>
     pub fn config_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.config_uri = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>JSON formatted S3 file that defines explainability parameters. For more information on this JSON configuration file, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-config-json-monitor-model-explainability-parameters.html">Configure model explainability parameters</a>.</p>
+    /// <p>JSON formatted Amazon S3 file that defines explainability parameters. For more information on this JSON configuration file, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-config-json-monitor-model-explainability-parameters.html">Configure model explainability parameters</a>.</p>
     pub fn set_config_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.config_uri = input;
         self
     }
-    /// <p>JSON formatted S3 file that defines explainability parameters. For more information on this JSON configuration file, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-config-json-monitor-model-explainability-parameters.html">Configure model explainability parameters</a>.</p>
+    /// <p>JSON formatted Amazon S3 file that defines explainability parameters. For more information on this JSON configuration file, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-config-json-monitor-model-explainability-parameters.html">Configure model explainability parameters</a>.</p>
     pub fn get_config_uri(&self) -> &::std::option::Option<::std::string::String> {
         &self.config_uri
     }

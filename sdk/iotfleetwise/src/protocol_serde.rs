@@ -59,6 +59,8 @@ pub(crate) mod shape_get_campaign;
 
 pub(crate) mod shape_get_decoder_manifest;
 
+pub(crate) mod shape_get_encryption_configuration;
+
 pub(crate) mod shape_get_fleet;
 
 pub(crate) mod shape_get_logging_options;
@@ -102,6 +104,8 @@ pub(crate) mod shape_list_tags_for_resource;
 pub(crate) mod shape_list_vehicles;
 
 pub(crate) mod shape_list_vehicles_in_fleet;
+
+pub(crate) mod shape_put_encryption_configuration;
 
 pub(crate) mod shape_put_logging_options;
 
@@ -220,6 +224,8 @@ pub(crate) mod shape_list_tags_for_resource_input;
 pub(crate) mod shape_list_vehicles_in_fleet_input;
 
 pub(crate) mod shape_list_vehicles_input;
+
+pub(crate) mod shape_put_encryption_configuration_input;
 
 pub(crate) mod shape_put_logging_options_input;
 

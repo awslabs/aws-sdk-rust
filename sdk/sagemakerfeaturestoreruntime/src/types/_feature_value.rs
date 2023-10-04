@@ -6,17 +6,23 @@
 pub struct FeatureValue {
     /// <p>The name of a feature that a feature value corresponds to.</p>
     pub feature_name: ::std::option::Option<::std::string::String>,
-    /// <p>The value associated with a feature, in string format. Note that features types can be String, Integral, or Fractional. This value represents all three types as a string.</p>
+    /// <p>The value in string format associated with a feature. Used when your <code>CollectionType</code> is <code>None</code>. Note that features types can be <code>String</code>, <code>Integral</code>, or <code>Fractional</code>. This value represents all three types as a string.</p>
     pub value_as_string: ::std::option::Option<::std::string::String>,
+    /// <p>The list of values in string format associated with a feature. Used when your <code>CollectionType</code> is a <code>List</code>, <code>Set</code>, or <code>Vector</code>. Note that features types can be <code>String</code>, <code>Integral</code>, or <code>Fractional</code>. These values represents all three types as a string.</p>
+    pub value_as_string_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl FeatureValue {
     /// <p>The name of a feature that a feature value corresponds to.</p>
     pub fn feature_name(&self) -> ::std::option::Option<&str> {
         self.feature_name.as_deref()
     }
-    /// <p>The value associated with a feature, in string format. Note that features types can be String, Integral, or Fractional. This value represents all three types as a string.</p>
+    /// <p>The value in string format associated with a feature. Used when your <code>CollectionType</code> is <code>None</code>. Note that features types can be <code>String</code>, <code>Integral</code>, or <code>Fractional</code>. This value represents all three types as a string.</p>
     pub fn value_as_string(&self) -> ::std::option::Option<&str> {
         self.value_as_string.as_deref()
+    }
+    /// <p>The list of values in string format associated with a feature. Used when your <code>CollectionType</code> is a <code>List</code>, <code>Set</code>, or <code>Vector</code>. Note that features types can be <code>String</code>, <code>Integral</code>, or <code>Fractional</code>. These values represents all three types as a string.</p>
+    pub fn value_as_string_list(&self) -> ::std::option::Option<&[::std::string::String]> {
+        self.value_as_string_list.as_deref()
     }
 }
 impl FeatureValue {
@@ -32,6 +38,7 @@ impl FeatureValue {
 pub struct FeatureValueBuilder {
     pub(crate) feature_name: ::std::option::Option<::std::string::String>,
     pub(crate) value_as_string: ::std::option::Option<::std::string::String>,
+    pub(crate) value_as_string_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl FeatureValueBuilder {
     /// <p>The name of a feature that a feature value corresponds to.</p>
@@ -48,25 +55,46 @@ impl FeatureValueBuilder {
     pub fn get_feature_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.feature_name
     }
-    /// <p>The value associated with a feature, in string format. Note that features types can be String, Integral, or Fractional. This value represents all three types as a string.</p>
+    /// <p>The value in string format associated with a feature. Used when your <code>CollectionType</code> is <code>None</code>. Note that features types can be <code>String</code>, <code>Integral</code>, or <code>Fractional</code>. This value represents all three types as a string.</p>
     pub fn value_as_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value_as_string = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The value associated with a feature, in string format. Note that features types can be String, Integral, or Fractional. This value represents all three types as a string.</p>
+    /// <p>The value in string format associated with a feature. Used when your <code>CollectionType</code> is <code>None</code>. Note that features types can be <code>String</code>, <code>Integral</code>, or <code>Fractional</code>. This value represents all three types as a string.</p>
     pub fn set_value_as_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value_as_string = input;
         self
     }
-    /// <p>The value associated with a feature, in string format. Note that features types can be String, Integral, or Fractional. This value represents all three types as a string.</p>
+    /// <p>The value in string format associated with a feature. Used when your <code>CollectionType</code> is <code>None</code>. Note that features types can be <code>String</code>, <code>Integral</code>, or <code>Fractional</code>. This value represents all three types as a string.</p>
     pub fn get_value_as_string(&self) -> &::std::option::Option<::std::string::String> {
         &self.value_as_string
+    }
+    /// Appends an item to `value_as_string_list`.
+    ///
+    /// To override the contents of this collection use [`set_value_as_string_list`](Self::set_value_as_string_list).
+    ///
+    /// <p>The list of values in string format associated with a feature. Used when your <code>CollectionType</code> is a <code>List</code>, <code>Set</code>, or <code>Vector</code>. Note that features types can be <code>String</code>, <code>Integral</code>, or <code>Fractional</code>. These values represents all three types as a string.</p>
+    pub fn value_as_string_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.value_as_string_list.unwrap_or_default();
+        v.push(input.into());
+        self.value_as_string_list = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The list of values in string format associated with a feature. Used when your <code>CollectionType</code> is a <code>List</code>, <code>Set</code>, or <code>Vector</code>. Note that features types can be <code>String</code>, <code>Integral</code>, or <code>Fractional</code>. These values represents all three types as a string.</p>
+    pub fn set_value_as_string_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.value_as_string_list = input;
+        self
+    }
+    /// <p>The list of values in string format associated with a feature. Used when your <code>CollectionType</code> is a <code>List</code>, <code>Set</code>, or <code>Vector</code>. Note that features types can be <code>String</code>, <code>Integral</code>, or <code>Fractional</code>. These values represents all three types as a string.</p>
+    pub fn get_value_as_string_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.value_as_string_list
     }
     /// Consumes the builder and constructs a [`FeatureValue`](crate::types::FeatureValue).
     pub fn build(self) -> crate::types::FeatureValue {
         crate::types::FeatureValue {
             feature_name: self.feature_name,
             value_as_string: self.value_as_string,
+            value_as_string_list: self.value_as_string_list,
         }
     }
 }

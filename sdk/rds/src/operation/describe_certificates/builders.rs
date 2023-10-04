@@ -22,7 +22,7 @@ impl DescribeCertificatesInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeCertificates`.
 ///
-/// <p>Lists the set of CA certificates provided by Amazon RDS for this Amazon Web Services account.</p>
+/// <p>Lists the set of certificate authority (CA) certificates provided by Amazon RDS for this Amazon Web Services account.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeCertificatesFluentBuilder {

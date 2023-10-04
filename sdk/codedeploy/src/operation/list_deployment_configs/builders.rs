@@ -22,7 +22,7 @@ impl ListDeploymentConfigsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListDeploymentConfigs`.
 ///
-/// <p>Lists the deployment configurations with the IAM user or Amazon Web Services account.</p>
+/// <p>Lists the deployment configurations with the user or Amazon Web Services account.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListDeploymentConfigsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

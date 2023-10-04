@@ -256,11 +256,11 @@ pub type UpdateAccessErrorKind = UpdateAccessError;
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum UpdateAccessError {
-    /// <p>This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family service.</p>
+    /// <p>This exception is thrown when an error occurs in the Transfer Family service.</p>
     InternalServiceError(crate::types::error::InternalServiceError),
     /// <p>This exception is thrown when the client submits a malformed request.</p>
     InvalidRequestException(crate::types::error::InvalidRequestException),
-    /// <p>The requested resource does not exist.</p>
+    /// <p>The requested resource does not exist, or exists in a region other than the one specified for the command.</p>
     ResourceExistsException(crate::types::error::ResourceExistsException),
     /// <p>This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family service.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),

@@ -82,7 +82,7 @@ pub mod orchestrator {
         /// Convenience for `map_request` where infallible direct mutation of request is acceptable.
         pub fn mutate_request<F>(mut self, f: F) -> Self
         where
-            F: ::std::ops::Fn(&mut http::Request<::aws_smithy_http::body::SdkBody>) + ::std::marker::Send + ::std::marker::Sync + 'static,
+            F: ::std::ops::Fn(&mut ::aws_smithy_runtime_api::client::orchestrator::HttpRequest) + ::std::marker::Send + ::std::marker::Sync + 'static,
         {
             self.interceptors
                 .push(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::new(

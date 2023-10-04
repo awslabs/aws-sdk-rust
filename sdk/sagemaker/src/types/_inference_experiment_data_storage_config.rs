@@ -8,7 +8,7 @@ pub struct InferenceExperimentDataStorageConfig {
     pub destination: ::std::option::Option<::std::string::String>,
     /// <p> The Amazon Web Services Key Management Service key that Amazon SageMaker uses to encrypt captured data at rest using Amazon S3 server-side encryption. </p>
     pub kms_key: ::std::option::Option<::std::string::String>,
-    /// <p>Configuration specifying how to treat different headers. If no headers are specified SageMaker will by default base64 encode when capturing the data.</p>
+    /// <p>Configuration specifying how to treat different headers. If no headers are specified Amazon SageMaker will by default base64 encode when capturing the data.</p>
     pub content_type: ::std::option::Option<crate::types::CaptureContentTypeHeader>,
 }
 impl InferenceExperimentDataStorageConfig {
@@ -20,7 +20,7 @@ impl InferenceExperimentDataStorageConfig {
     pub fn kms_key(&self) -> ::std::option::Option<&str> {
         self.kms_key.as_deref()
     }
-    /// <p>Configuration specifying how to treat different headers. If no headers are specified SageMaker will by default base64 encode when capturing the data.</p>
+    /// <p>Configuration specifying how to treat different headers. If no headers are specified Amazon SageMaker will by default base64 encode when capturing the data.</p>
     pub fn content_type(&self) -> ::std::option::Option<&crate::types::CaptureContentTypeHeader> {
         self.content_type.as_ref()
     }
@@ -69,17 +69,17 @@ impl InferenceExperimentDataStorageConfigBuilder {
     pub fn get_kms_key(&self) -> &::std::option::Option<::std::string::String> {
         &self.kms_key
     }
-    /// <p>Configuration specifying how to treat different headers. If no headers are specified SageMaker will by default base64 encode when capturing the data.</p>
+    /// <p>Configuration specifying how to treat different headers. If no headers are specified Amazon SageMaker will by default base64 encode when capturing the data.</p>
     pub fn content_type(mut self, input: crate::types::CaptureContentTypeHeader) -> Self {
         self.content_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Configuration specifying how to treat different headers. If no headers are specified SageMaker will by default base64 encode when capturing the data.</p>
+    /// <p>Configuration specifying how to treat different headers. If no headers are specified Amazon SageMaker will by default base64 encode when capturing the data.</p>
     pub fn set_content_type(mut self, input: ::std::option::Option<crate::types::CaptureContentTypeHeader>) -> Self {
         self.content_type = input;
         self
     }
-    /// <p>Configuration specifying how to treat different headers. If no headers are specified SageMaker will by default base64 encode when capturing the data.</p>
+    /// <p>Configuration specifying how to treat different headers. If no headers are specified Amazon SageMaker will by default base64 encode when capturing the data.</p>
     pub fn get_content_type(&self) -> &::std::option::Option<crate::types::CaptureContentTypeHeader> {
         &self.content_type
     }

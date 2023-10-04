@@ -12,7 +12,6 @@
 /// ```text
 /// # let resourcetype = unimplemented!();
 /// match resourcetype {
-///     ResourceType::Document => { /* ... */ },
 ///     ResourceType::Ec2Instance => { /* ... */ },
 ///     ResourceType::ManagedInstance => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -43,8 +42,6 @@
 )]
 pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
-    Document,
-    #[allow(missing_docs)] // documentation missing in model
     Ec2Instance,
     #[allow(missing_docs)] // documentation missing in model
     ManagedInstance,
@@ -54,7 +51,6 @@ pub enum ResourceType {
 impl ::std::convert::From<&str> for ResourceType {
     fn from(s: &str) -> Self {
         match s {
-            "Document" => ResourceType::Document,
             "EC2Instance" => ResourceType::Ec2Instance,
             "ManagedInstance" => ResourceType::ManagedInstance,
             other => ResourceType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
@@ -72,7 +68,6 @@ impl ResourceType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
-            ResourceType::Document => "Document",
             ResourceType::Ec2Instance => "EC2Instance",
             ResourceType::ManagedInstance => "ManagedInstance",
             ResourceType::Unknown(value) => value.as_str(),
@@ -80,7 +75,7 @@ impl ResourceType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Document", "EC2Instance", "ManagedInstance"]
+        &["EC2Instance", "ManagedInstance"]
     }
 }
 impl ::std::convert::AsRef<str> for ResourceType {

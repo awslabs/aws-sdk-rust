@@ -22,7 +22,7 @@ impl ListPermissionGroupsByUserInputBuilder {
 }
 /// Fluent builder constructing a request to `ListPermissionGroupsByUser`.
 ///
-/// <p>Lists all the permission groups that are associated with a specific user account.</p>
+/// <p>Lists all the permission groups that are associated with a specific user.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListPermissionGroupsByUserFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

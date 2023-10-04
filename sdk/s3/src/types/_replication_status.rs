@@ -13,6 +13,7 @@
 /// # let replicationstatus = unimplemented!();
 /// match replicationstatus {
 ///     ReplicationStatus::Complete => { /* ... */ },
+///     ReplicationStatus::Completed => { /* ... */ },
 ///     ReplicationStatus::Failed => { /* ... */ },
 ///     ReplicationStatus::Pending => { /* ... */ },
 ///     ReplicationStatus::Replica => { /* ... */ },
@@ -46,6 +47,8 @@ pub enum ReplicationStatus {
     #[allow(missing_docs)] // documentation missing in model
     Complete,
     #[allow(missing_docs)] // documentation missing in model
+    Completed,
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
     #[allow(missing_docs)] // documentation missing in model
     Pending,
@@ -58,6 +61,7 @@ impl ::std::convert::From<&str> for ReplicationStatus {
     fn from(s: &str) -> Self {
         match s {
             "COMPLETE" => ReplicationStatus::Complete,
+            "COMPLETED" => ReplicationStatus::Completed,
             "FAILED" => ReplicationStatus::Failed,
             "PENDING" => ReplicationStatus::Pending,
             "REPLICA" => ReplicationStatus::Replica,
@@ -77,6 +81,7 @@ impl ReplicationStatus {
     pub fn as_str(&self) -> &str {
         match self {
             ReplicationStatus::Complete => "COMPLETE",
+            ReplicationStatus::Completed => "COMPLETED",
             ReplicationStatus::Failed => "FAILED",
             ReplicationStatus::Pending => "PENDING",
             ReplicationStatus::Replica => "REPLICA",
@@ -85,7 +90,7 @@ impl ReplicationStatus {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["COMPLETE", "FAILED", "PENDING", "REPLICA"]
+        &["COMPLETE", "COMPLETED", "FAILED", "PENDING", "REPLICA"]
     }
 }
 impl ::std::convert::AsRef<str> for ReplicationStatus {

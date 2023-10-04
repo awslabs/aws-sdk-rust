@@ -10,7 +10,7 @@ pub struct HorizontalLayoutConfiguration {
     pub tile_position: ::std::option::Option<crate::types::HorizontalTilePosition>,
     /// <p>The maximum number of video tiles to display.</p>
     pub tile_count: ::std::option::Option<i32>,
-    /// <p>Sets the aspect ratio of the video tiles, such as 16:9.</p>
+    /// <p>Specifies the aspect ratio of all video tiles.</p>
     pub tile_aspect_ratio: ::std::option::Option<::std::string::String>,
 }
 impl HorizontalLayoutConfiguration {
@@ -26,7 +26,7 @@ impl HorizontalLayoutConfiguration {
     pub fn tile_count(&self) -> ::std::option::Option<i32> {
         self.tile_count
     }
-    /// <p>Sets the aspect ratio of the video tiles, such as 16:9.</p>
+    /// <p>Specifies the aspect ratio of all video tiles.</p>
     pub fn tile_aspect_ratio(&self) -> ::std::option::Option<&str> {
         self.tile_aspect_ratio.as_deref()
     }
@@ -90,17 +90,17 @@ impl HorizontalLayoutConfigurationBuilder {
     pub fn get_tile_count(&self) -> &::std::option::Option<i32> {
         &self.tile_count
     }
-    /// <p>Sets the aspect ratio of the video tiles, such as 16:9.</p>
+    /// <p>Specifies the aspect ratio of all video tiles.</p>
     pub fn tile_aspect_ratio(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.tile_aspect_ratio = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Sets the aspect ratio of the video tiles, such as 16:9.</p>
+    /// <p>Specifies the aspect ratio of all video tiles.</p>
     pub fn set_tile_aspect_ratio(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.tile_aspect_ratio = input;
         self
     }
-    /// <p>Sets the aspect ratio of the video tiles, such as 16:9.</p>
+    /// <p>Specifies the aspect ratio of all video tiles.</p>
     pub fn get_tile_aspect_ratio(&self) -> &::std::option::Option<::std::string::String> {
         &self.tile_aspect_ratio
     }

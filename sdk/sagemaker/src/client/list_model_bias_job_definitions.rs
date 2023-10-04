@@ -14,7 +14,7 @@ impl super::Client {
     ///   - [`creation_time_after(DateTime)`](crate::operation::list_model_bias_job_definitions::builders::ListModelBiasJobDefinitionsFluentBuilder::creation_time_after) / [`set_creation_time_after(Option<DateTime>)`](crate::operation::list_model_bias_job_definitions::builders::ListModelBiasJobDefinitionsFluentBuilder::set_creation_time_after): <p>A filter that returns only model bias jobs created after a specified time.</p>
     /// - On success, responds with [`ListModelBiasJobDefinitionsOutput`](crate::operation::list_model_bias_job_definitions::ListModelBiasJobDefinitionsOutput) with field(s):
     ///   - [`job_definition_summaries(Option<Vec<MonitoringJobDefinitionSummary>>)`](crate::operation::list_model_bias_job_definitions::ListModelBiasJobDefinitionsOutput::job_definition_summaries): <p>A JSON array in which each element is a summary for a model bias jobs.</p>
-    ///   - [`next_token(Option<String>)`](crate::operation::list_model_bias_job_definitions::ListModelBiasJobDefinitionsOutput::next_token): <p>If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of jobs, use it in the subsequent request.</p>
+    ///   - [`next_token(Option<String>)`](crate::operation::list_model_bias_job_definitions::ListModelBiasJobDefinitionsOutput::next_token): <p>The token returned if the response is truncated. To retrieve the next set of job executions, use it in the next request.</p>
     /// - On failure, responds with [`SdkError<ListModelBiasJobDefinitionsError>`](crate::operation::list_model_bias_job_definitions::ListModelBiasJobDefinitionsError)
     pub fn list_model_bias_job_definitions(
         &self,

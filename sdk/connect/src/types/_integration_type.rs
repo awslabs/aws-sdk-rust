@@ -12,6 +12,7 @@
 /// ```text
 /// # let integrationtype = unimplemented!();
 /// match integrationtype {
+///     IntegrationType::Application => { /* ... */ },
 ///     IntegrationType::CasesDomain => { /* ... */ },
 ///     IntegrationType::Event => { /* ... */ },
 ///     IntegrationType::PinpointApp => { /* ... */ },
@@ -46,6 +47,8 @@
 )]
 pub enum IntegrationType {
     #[allow(missing_docs)] // documentation missing in model
+    Application,
+    #[allow(missing_docs)] // documentation missing in model
     CasesDomain,
     #[allow(missing_docs)] // documentation missing in model
     Event,
@@ -63,6 +66,7 @@ pub enum IntegrationType {
 impl ::std::convert::From<&str> for IntegrationType {
     fn from(s: &str) -> Self {
         match s {
+            "APPLICATION" => IntegrationType::Application,
             "CASES_DOMAIN" => IntegrationType::CasesDomain,
             "EVENT" => IntegrationType::Event,
             "PINPOINT_APP" => IntegrationType::PinpointApp,
@@ -84,6 +88,7 @@ impl IntegrationType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            IntegrationType::Application => "APPLICATION",
             IntegrationType::CasesDomain => "CASES_DOMAIN",
             IntegrationType::Event => "EVENT",
             IntegrationType::PinpointApp => "PINPOINT_APP",
@@ -96,6 +101,7 @@ impl IntegrationType {
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
+            "APPLICATION",
             "CASES_DOMAIN",
             "EVENT",
             "PINPOINT_APP",

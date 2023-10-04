@@ -30,6 +30,11 @@ pub fn ser_modify_verified_access_endpoint_policy_input_input(
     if let Some(var_10) = &input.dry_run {
         scope_9.boolean(*var_10);
     }
+    #[allow(unused_mut)]
+    let mut scope_11 = writer.prefix("SseSpecification");
+    if let Some(var_12) = &input.sse_specification {
+        crate::protocol_serde::shape_verified_access_sse_specification_request::ser_verified_access_sse_specification_request(scope_11, var_12)?;
+    }
     writer.finish();
     Ok(::aws_smithy_http::body::SdkBody::from(out))
 }

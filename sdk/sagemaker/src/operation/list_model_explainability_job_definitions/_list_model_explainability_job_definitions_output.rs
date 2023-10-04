@@ -5,7 +5,7 @@
 pub struct ListModelExplainabilityJobDefinitionsOutput {
     /// <p>A JSON array in which each element is a summary for a explainability bias jobs.</p>
     pub job_definition_summaries: ::std::option::Option<::std::vec::Vec<crate::types::MonitoringJobDefinitionSummary>>,
-    /// <p>If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of jobs, use it in the subsequent request.</p>
+    /// <p>The token returned if the response is truncated. To retrieve the next set of job executions, use it in the next request.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -14,7 +14,7 @@ impl ListModelExplainabilityJobDefinitionsOutput {
     pub fn job_definition_summaries(&self) -> ::std::option::Option<&[crate::types::MonitoringJobDefinitionSummary]> {
         self.job_definition_summaries.as_deref()
     }
-    /// <p>If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of jobs, use it in the subsequent request.</p>
+    /// <p>The token returned if the response is truncated. To retrieve the next set of job executions, use it in the next request.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -63,17 +63,17 @@ impl ListModelExplainabilityJobDefinitionsOutputBuilder {
     pub fn get_job_definition_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MonitoringJobDefinitionSummary>> {
         &self.job_definition_summaries
     }
-    /// <p>If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of jobs, use it in the subsequent request.</p>
+    /// <p>The token returned if the response is truncated. To retrieve the next set of job executions, use it in the next request.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of jobs, use it in the subsequent request.</p>
+    /// <p>The token returned if the response is truncated. To retrieve the next set of job executions, use it in the next request.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of jobs, use it in the subsequent request.</p>
+    /// <p>The token returned if the response is truncated. To retrieve the next set of job executions, use it in the next request.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

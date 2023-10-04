@@ -33,6 +33,10 @@ where
                                 crate::protocol_serde::shape_media_insights_pipeline::de_media_insights_pipeline(tokens)?,
                             );
                         }
+                        "MediaStreamPipeline" => {
+                            builder = builder
+                                .set_media_stream_pipeline(crate::protocol_serde::shape_media_stream_pipeline::de_media_stream_pipeline(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

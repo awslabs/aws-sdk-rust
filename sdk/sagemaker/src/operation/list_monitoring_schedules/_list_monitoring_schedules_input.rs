@@ -5,7 +5,7 @@
 pub struct ListMonitoringSchedulesInput {
     /// <p>Name of a specific endpoint to fetch schedules for.</p>
     pub endpoint_name: ::std::option::Option<::std::string::String>,
-    /// <p>Whether to sort results by <code>Status</code>, <code>CreationTime</code>, <code>ScheduledTime</code> field. The default is <code>CreationTime</code>.</p>
+    /// <p>Whether to sort the results by the <code>Status</code>, <code>CreationTime</code>, or <code>ScheduledTime</code> field. The default is <code>CreationTime</code>.</p>
     pub sort_by: ::std::option::Option<crate::types::MonitoringScheduleSortKey>,
     /// <p>Whether to sort the results in <code>Ascending</code> or <code>Descending</code> order. The default is <code>Descending</code>.</p>
     pub sort_order: ::std::option::Option<crate::types::SortOrder>,
@@ -35,7 +35,7 @@ impl ListMonitoringSchedulesInput {
     pub fn endpoint_name(&self) -> ::std::option::Option<&str> {
         self.endpoint_name.as_deref()
     }
-    /// <p>Whether to sort results by <code>Status</code>, <code>CreationTime</code>, <code>ScheduledTime</code> field. The default is <code>CreationTime</code>.</p>
+    /// <p>Whether to sort the results by the <code>Status</code>, <code>CreationTime</code>, or <code>ScheduledTime</code> field. The default is <code>CreationTime</code>.</p>
     pub fn sort_by(&self) -> ::std::option::Option<&crate::types::MonitoringScheduleSortKey> {
         self.sort_by.as_ref()
     }
@@ -124,17 +124,17 @@ impl ListMonitoringSchedulesInputBuilder {
     pub fn get_endpoint_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.endpoint_name
     }
-    /// <p>Whether to sort results by <code>Status</code>, <code>CreationTime</code>, <code>ScheduledTime</code> field. The default is <code>CreationTime</code>.</p>
+    /// <p>Whether to sort the results by the <code>Status</code>, <code>CreationTime</code>, or <code>ScheduledTime</code> field. The default is <code>CreationTime</code>.</p>
     pub fn sort_by(mut self, input: crate::types::MonitoringScheduleSortKey) -> Self {
         self.sort_by = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Whether to sort results by <code>Status</code>, <code>CreationTime</code>, <code>ScheduledTime</code> field. The default is <code>CreationTime</code>.</p>
+    /// <p>Whether to sort the results by the <code>Status</code>, <code>CreationTime</code>, or <code>ScheduledTime</code> field. The default is <code>CreationTime</code>.</p>
     pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::MonitoringScheduleSortKey>) -> Self {
         self.sort_by = input;
         self
     }
-    /// <p>Whether to sort results by <code>Status</code>, <code>CreationTime</code>, <code>ScheduledTime</code> field. The default is <code>CreationTime</code>.</p>
+    /// <p>Whether to sort the results by the <code>Status</code>, <code>CreationTime</code>, or <code>ScheduledTime</code> field. The default is <code>CreationTime</code>.</p>
     pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::MonitoringScheduleSortKey> {
         &self.sort_by
     }

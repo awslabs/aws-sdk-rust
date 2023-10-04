@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsManagedRulesAtpRuleSet {
-    /// <p>The path of the login endpoint for your application. For example, for the URL <code>https://example.com/web/login</code>, you would provide the path <code>/web/login</code>.</p>
+    /// <p>The path of the login endpoint for your application. For example, for the URL <code>https://example.com/web/login</code>, you would provide the path <code>/web/login</code>. Login paths that start with the path that you provide are considered a match. For example <code>/web/login</code> matches the login paths <code>/web/login</code>, <code>/web/login/</code>, <code>/web/loginPage</code>, and <code>/web/login/thisPage</code>, but doesn't match the login path <code>/home/web/login</code> or <code>/website/login</code>.</p>
     /// <p>The rule group inspects only HTTP <code>POST</code> requests to your specified login endpoint.</p>
     pub login_path: ::std::option::Option<::std::string::String>,
     /// <p>The criteria for inspecting login requests, used by the ATP rule group to validate credentials usage. </p>
@@ -18,7 +18,7 @@ pub struct AwsManagedRulesAtpRuleSet {
     pub enable_regex_in_path: bool,
 }
 impl AwsManagedRulesAtpRuleSet {
-    /// <p>The path of the login endpoint for your application. For example, for the URL <code>https://example.com/web/login</code>, you would provide the path <code>/web/login</code>.</p>
+    /// <p>The path of the login endpoint for your application. For example, for the URL <code>https://example.com/web/login</code>, you would provide the path <code>/web/login</code>. Login paths that start with the path that you provide are considered a match. For example <code>/web/login</code> matches the login paths <code>/web/login</code>, <code>/web/login/</code>, <code>/web/loginPage</code>, and <code>/web/login/thisPage</code>, but doesn't match the login path <code>/home/web/login</code> or <code>/website/login</code>.</p>
     /// <p>The rule group inspects only HTTP <code>POST</code> requests to your specified login endpoint.</p>
     pub fn login_path(&self) -> ::std::option::Option<&str> {
         self.login_path.as_deref()
@@ -56,19 +56,19 @@ pub struct AwsManagedRulesAtpRuleSetBuilder {
     pub(crate) enable_regex_in_path: ::std::option::Option<bool>,
 }
 impl AwsManagedRulesAtpRuleSetBuilder {
-    /// <p>The path of the login endpoint for your application. For example, for the URL <code>https://example.com/web/login</code>, you would provide the path <code>/web/login</code>.</p>
+    /// <p>The path of the login endpoint for your application. For example, for the URL <code>https://example.com/web/login</code>, you would provide the path <code>/web/login</code>. Login paths that start with the path that you provide are considered a match. For example <code>/web/login</code> matches the login paths <code>/web/login</code>, <code>/web/login/</code>, <code>/web/loginPage</code>, and <code>/web/login/thisPage</code>, but doesn't match the login path <code>/home/web/login</code> or <code>/website/login</code>.</p>
     /// <p>The rule group inspects only HTTP <code>POST</code> requests to your specified login endpoint.</p>
     pub fn login_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.login_path = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The path of the login endpoint for your application. For example, for the URL <code>https://example.com/web/login</code>, you would provide the path <code>/web/login</code>.</p>
+    /// <p>The path of the login endpoint for your application. For example, for the URL <code>https://example.com/web/login</code>, you would provide the path <code>/web/login</code>. Login paths that start with the path that you provide are considered a match. For example <code>/web/login</code> matches the login paths <code>/web/login</code>, <code>/web/login/</code>, <code>/web/loginPage</code>, and <code>/web/login/thisPage</code>, but doesn't match the login path <code>/home/web/login</code> or <code>/website/login</code>.</p>
     /// <p>The rule group inspects only HTTP <code>POST</code> requests to your specified login endpoint.</p>
     pub fn set_login_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.login_path = input;
         self
     }
-    /// <p>The path of the login endpoint for your application. For example, for the URL <code>https://example.com/web/login</code>, you would provide the path <code>/web/login</code>.</p>
+    /// <p>The path of the login endpoint for your application. For example, for the URL <code>https://example.com/web/login</code>, you would provide the path <code>/web/login</code>. Login paths that start with the path that you provide are considered a match. For example <code>/web/login</code> matches the login paths <code>/web/login</code>, <code>/web/login/</code>, <code>/web/loginPage</code>, and <code>/web/login/thisPage</code>, but doesn't match the login path <code>/home/web/login</code> or <code>/website/login</code>.</p>
     /// <p>The rule group inspects only HTTP <code>POST</code> requests to your specified login endpoint.</p>
     pub fn get_login_path(&self) -> &::std::option::Option<::std::string::String> {
         &self.login_path

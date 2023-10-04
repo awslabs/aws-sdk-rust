@@ -12,6 +12,8 @@ pub struct ResourceInfo {
     pub last_modified: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Whether or not the resource is a federated resource.</p>
     pub with_federation: ::std::option::Option<bool>,
+    /// <p> Indicates whether the data access of tables pointing to the location can be managed by both Lake Formation permissions as well as Amazon S3 bucket policies. </p>
+    pub hybrid_access_enabled: ::std::option::Option<bool>,
 }
 impl ResourceInfo {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
@@ -30,6 +32,10 @@ impl ResourceInfo {
     pub fn with_federation(&self) -> ::std::option::Option<bool> {
         self.with_federation
     }
+    /// <p> Indicates whether the data access of tables pointing to the location can be managed by both Lake Formation permissions as well as Amazon S3 bucket policies. </p>
+    pub fn hybrid_access_enabled(&self) -> ::std::option::Option<bool> {
+        self.hybrid_access_enabled
+    }
 }
 impl ResourceInfo {
     /// Creates a new builder-style object to manufacture [`ResourceInfo`](crate::types::ResourceInfo).
@@ -46,6 +52,7 @@ pub struct ResourceInfoBuilder {
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) last_modified: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) with_federation: ::std::option::Option<bool>,
+    pub(crate) hybrid_access_enabled: ::std::option::Option<bool>,
 }
 impl ResourceInfoBuilder {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
@@ -104,6 +111,20 @@ impl ResourceInfoBuilder {
     pub fn get_with_federation(&self) -> &::std::option::Option<bool> {
         &self.with_federation
     }
+    /// <p> Indicates whether the data access of tables pointing to the location can be managed by both Lake Formation permissions as well as Amazon S3 bucket policies. </p>
+    pub fn hybrid_access_enabled(mut self, input: bool) -> Self {
+        self.hybrid_access_enabled = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p> Indicates whether the data access of tables pointing to the location can be managed by both Lake Formation permissions as well as Amazon S3 bucket policies. </p>
+    pub fn set_hybrid_access_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.hybrid_access_enabled = input;
+        self
+    }
+    /// <p> Indicates whether the data access of tables pointing to the location can be managed by both Lake Formation permissions as well as Amazon S3 bucket policies. </p>
+    pub fn get_hybrid_access_enabled(&self) -> &::std::option::Option<bool> {
+        &self.hybrid_access_enabled
+    }
     /// Consumes the builder and constructs a [`ResourceInfo`](crate::types::ResourceInfo).
     pub fn build(self) -> crate::types::ResourceInfo {
         crate::types::ResourceInfo {
@@ -111,6 +132,7 @@ impl ResourceInfoBuilder {
             role_arn: self.role_arn,
             last_modified: self.last_modified,
             with_federation: self.with_federation,
+            hybrid_access_enabled: self.hybrid_access_enabled,
         }
     }
 }

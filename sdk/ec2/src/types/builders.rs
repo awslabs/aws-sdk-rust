@@ -383,9 +383,13 @@ pub use crate::types::_volume_modification::VolumeModificationBuilder;
 
 pub use crate::types::_verified_access_trust_provider::VerifiedAccessTrustProviderBuilder;
 
+pub use crate::types::_verified_access_sse_specification_response::VerifiedAccessSseSpecificationResponseBuilder;
+
 pub use crate::types::_device_options::DeviceOptionsBuilder;
 
 pub use crate::types::_oidc_options::OidcOptionsBuilder;
+
+pub use crate::types::_verified_access_sse_specification_request::VerifiedAccessSseSpecificationRequestBuilder;
 
 pub use crate::types::_modify_verified_access_trust_provider_oidc_options::ModifyVerifiedAccessTrustProviderOidcOptionsBuilder;
 

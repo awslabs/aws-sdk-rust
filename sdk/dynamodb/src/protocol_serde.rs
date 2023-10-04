@@ -367,6 +367,8 @@ pub(crate) mod shape_import_summary_list;
 
 pub(crate) mod shape_import_table_description;
 
+pub(crate) mod shape_incremental_export_specification;
+
 pub(crate) mod shape_input_format_options;
 
 pub(crate) mod shape_item_collection_metrics;

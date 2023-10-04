@@ -260,9 +260,9 @@ pub type StopDeploymentErrorKind = StopDeploymentError;
 pub enum StopDeploymentError {
     /// <p>The deployment is already complete.</p>
     DeploymentAlreadyCompletedException(crate::types::error::DeploymentAlreadyCompletedException),
-    /// <p>The deployment with the IAM user or Amazon Web Services account does not exist.</p>
+    /// <p>The deployment with the user or Amazon Web Services account does not exist.</p>
     DeploymentDoesNotExistException(crate::types::error::DeploymentDoesNotExistException),
-    /// <p>The named deployment group with the IAM user or Amazon Web Services account does not exist.</p>
+    /// <p>The named deployment group with the user or Amazon Web Services account does not exist.</p>
     DeploymentGroupDoesNotExistException(crate::types::error::DeploymentGroupDoesNotExistException),
     /// <p>At least one deployment ID must be specified.</p>
     DeploymentIdRequiredException(crate::types::error::DeploymentIdRequiredException),

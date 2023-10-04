@@ -117,17 +117,17 @@ impl ListPackageVersionsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_package_versions::paginator::ListPackageVersionsPaginator {
         crate::operation::list_package_versions::paginator::ListPackageVersionsPaginator::new(self.handle, self.inner)
     }
-    /// <p>The name of the target package.</p>
+    /// <p>The name of the target software package.</p>
     pub fn package_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.package_name(input.into());
         self
     }
-    /// <p>The name of the target package.</p>
+    /// <p>The name of the target software package.</p>
     pub fn set_package_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_package_name(input);
         self
     }
-    /// <p>The name of the target package.</p>
+    /// <p>The name of the target software package.</p>
     pub fn get_package_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_package_name()
     }

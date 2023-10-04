@@ -40,6 +40,10 @@ pub struct Application {
     pub image_configuration: ::std::option::Option<crate::types::ImageConfiguration>,
     /// <p>The specification applied to each worker type.</p>
     pub worker_type_specifications: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::WorkerTypeSpecification>>,
+    /// <p>The <a href="https://docs.aws.amazon.com/emr-serverless/latest/APIReference/API_Configuration.html">Configuration</a> specifications of an application. Each configuration consists of a classification and properties. You use this parameter when creating or updating an application. To see the runtimeConfiguration object of an application, run the <a href="https://docs.aws.amazon.com/emr-serverless/latest/APIReference/API_GetApplication.html">GetApplication</a> API operation.</p>
+    pub runtime_configuration: ::std::option::Option<::std::vec::Vec<crate::types::Configuration>>,
+    /// <p>The configuration setting for monitoring.</p>
+    pub monitoring_configuration: ::std::option::Option<crate::types::MonitoringConfiguration>,
 }
 impl Application {
     /// <p>The ID of the application.</p>
@@ -118,6 +122,14 @@ impl Application {
     ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::WorkerTypeSpecification>> {
         self.worker_type_specifications.as_ref()
     }
+    /// <p>The <a href="https://docs.aws.amazon.com/emr-serverless/latest/APIReference/API_Configuration.html">Configuration</a> specifications of an application. Each configuration consists of a classification and properties. You use this parameter when creating or updating an application. To see the runtimeConfiguration object of an application, run the <a href="https://docs.aws.amazon.com/emr-serverless/latest/APIReference/API_GetApplication.html">GetApplication</a> API operation.</p>
+    pub fn runtime_configuration(&self) -> ::std::option::Option<&[crate::types::Configuration]> {
+        self.runtime_configuration.as_deref()
+    }
+    /// <p>The configuration setting for monitoring.</p>
+    pub fn monitoring_configuration(&self) -> ::std::option::Option<&crate::types::MonitoringConfiguration> {
+        self.monitoring_configuration.as_ref()
+    }
 }
 impl Application {
     /// Creates a new builder-style object to manufacture [`Application`](crate::types::Application).
@@ -149,6 +161,8 @@ pub struct ApplicationBuilder {
     pub(crate) image_configuration: ::std::option::Option<crate::types::ImageConfiguration>,
     pub(crate) worker_type_specifications:
         ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::WorkerTypeSpecification>>,
+    pub(crate) runtime_configuration: ::std::option::Option<::std::vec::Vec<crate::types::Configuration>>,
+    pub(crate) monitoring_configuration: ::std::option::Option<crate::types::MonitoringConfiguration>,
 }
 impl ApplicationBuilder {
     /// <p>The ID of the application.</p>
@@ -435,6 +449,40 @@ impl ApplicationBuilder {
     ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::WorkerTypeSpecification>> {
         &self.worker_type_specifications
     }
+    /// Appends an item to `runtime_configuration`.
+    ///
+    /// To override the contents of this collection use [`set_runtime_configuration`](Self::set_runtime_configuration).
+    ///
+    /// <p>The <a href="https://docs.aws.amazon.com/emr-serverless/latest/APIReference/API_Configuration.html">Configuration</a> specifications of an application. Each configuration consists of a classification and properties. You use this parameter when creating or updating an application. To see the runtimeConfiguration object of an application, run the <a href="https://docs.aws.amazon.com/emr-serverless/latest/APIReference/API_GetApplication.html">GetApplication</a> API operation.</p>
+    pub fn runtime_configuration(mut self, input: crate::types::Configuration) -> Self {
+        let mut v = self.runtime_configuration.unwrap_or_default();
+        v.push(input);
+        self.runtime_configuration = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The <a href="https://docs.aws.amazon.com/emr-serverless/latest/APIReference/API_Configuration.html">Configuration</a> specifications of an application. Each configuration consists of a classification and properties. You use this parameter when creating or updating an application. To see the runtimeConfiguration object of an application, run the <a href="https://docs.aws.amazon.com/emr-serverless/latest/APIReference/API_GetApplication.html">GetApplication</a> API operation.</p>
+    pub fn set_runtime_configuration(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Configuration>>) -> Self {
+        self.runtime_configuration = input;
+        self
+    }
+    /// <p>The <a href="https://docs.aws.amazon.com/emr-serverless/latest/APIReference/API_Configuration.html">Configuration</a> specifications of an application. Each configuration consists of a classification and properties. You use this parameter when creating or updating an application. To see the runtimeConfiguration object of an application, run the <a href="https://docs.aws.amazon.com/emr-serverless/latest/APIReference/API_GetApplication.html">GetApplication</a> API operation.</p>
+    pub fn get_runtime_configuration(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Configuration>> {
+        &self.runtime_configuration
+    }
+    /// <p>The configuration setting for monitoring.</p>
+    pub fn monitoring_configuration(mut self, input: crate::types::MonitoringConfiguration) -> Self {
+        self.monitoring_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration setting for monitoring.</p>
+    pub fn set_monitoring_configuration(mut self, input: ::std::option::Option<crate::types::MonitoringConfiguration>) -> Self {
+        self.monitoring_configuration = input;
+        self
+    }
+    /// <p>The configuration setting for monitoring.</p>
+    pub fn get_monitoring_configuration(&self) -> &::std::option::Option<crate::types::MonitoringConfiguration> {
+        &self.monitoring_configuration
+    }
     /// Consumes the builder and constructs a [`Application`](crate::types::Application).
     pub fn build(self) -> crate::types::Application {
         crate::types::Application {
@@ -456,6 +504,8 @@ impl ApplicationBuilder {
             architecture: self.architecture,
             image_configuration: self.image_configuration,
             worker_type_specifications: self.worker_type_specifications,
+            runtime_configuration: self.runtime_configuration,
+            monitoring_configuration: self.monitoring_configuration,
         }
     }
 }

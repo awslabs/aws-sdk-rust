@@ -269,6 +269,95 @@ impl From<crate::operation::create_media_live_connector_pipeline::CreateMediaLiv
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_media_pipeline_kinesis_video_stream_pool::CreateMediaPipelineKinesisVideoStreamPoolError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::create_media_pipeline_kinesis_video_stream_pool::CreateMediaPipelineKinesisVideoStreamPoolError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::create_media_pipeline_kinesis_video_stream_pool::CreateMediaPipelineKinesisVideoStreamPoolError> for Error {
+    fn from(err: crate::operation::create_media_pipeline_kinesis_video_stream_pool::CreateMediaPipelineKinesisVideoStreamPoolError) -> Self {
+        match err {
+            crate::operation::create_media_pipeline_kinesis_video_stream_pool::CreateMediaPipelineKinesisVideoStreamPoolError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::create_media_pipeline_kinesis_video_stream_pool::CreateMediaPipelineKinesisVideoStreamPoolError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_media_pipeline_kinesis_video_stream_pool::CreateMediaPipelineKinesisVideoStreamPoolError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::create_media_pipeline_kinesis_video_stream_pool::CreateMediaPipelineKinesisVideoStreamPoolError::ResourceLimitExceededException(inner) => Error::ResourceLimitExceededException(inner),
+            crate::operation::create_media_pipeline_kinesis_video_stream_pool::CreateMediaPipelineKinesisVideoStreamPoolError::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::operation::create_media_pipeline_kinesis_video_stream_pool::CreateMediaPipelineKinesisVideoStreamPoolError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::create_media_pipeline_kinesis_video_stream_pool::CreateMediaPipelineKinesisVideoStreamPoolError::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::operation::create_media_pipeline_kinesis_video_stream_pool::CreateMediaPipelineKinesisVideoStreamPoolError::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::operation::create_media_pipeline_kinesis_video_stream_pool::CreateMediaPipelineKinesisVideoStreamPoolError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::create_media_stream_pipeline::CreateMediaStreamPipelineError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::create_media_stream_pipeline::CreateMediaStreamPipelineError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::create_media_stream_pipeline::CreateMediaStreamPipelineError> for Error {
+    fn from(err: crate::operation::create_media_stream_pipeline::CreateMediaStreamPipelineError) -> Self {
+        match err {
+            crate::operation::create_media_stream_pipeline::CreateMediaStreamPipelineError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::create_media_stream_pipeline::CreateMediaStreamPipelineError::ForbiddenException(inner) => {
+                Error::ForbiddenException(inner)
+            }
+            crate::operation::create_media_stream_pipeline::CreateMediaStreamPipelineError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::create_media_stream_pipeline::CreateMediaStreamPipelineError::ResourceLimitExceededException(inner) => {
+                Error::ResourceLimitExceededException(inner)
+            }
+            crate::operation::create_media_stream_pipeline::CreateMediaStreamPipelineError::ServiceFailureException(inner) => {
+                Error::ServiceFailureException(inner)
+            }
+            crate::operation::create_media_stream_pipeline::CreateMediaStreamPipelineError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::create_media_stream_pipeline::CreateMediaStreamPipelineError::ThrottledClientException(inner) => {
+                Error::ThrottledClientException(inner)
+            }
+            crate::operation::create_media_stream_pipeline::CreateMediaStreamPipelineError::UnauthorizedClientException(inner) => {
+                Error::UnauthorizedClientException(inner)
+            }
+            crate::operation::create_media_stream_pipeline::CreateMediaStreamPipelineError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::delete_media_capture_pipeline::DeleteMediaCapturePipelineError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -391,6 +480,48 @@ impl From<crate::operation::delete_media_pipeline::DeleteMediaPipelineError> for
                 Error::UnauthorizedClientException(inner)
             }
             crate::operation::delete_media_pipeline::DeleteMediaPipelineError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_media_pipeline_kinesis_video_stream_pool::DeleteMediaPipelineKinesisVideoStreamPoolError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_media_pipeline_kinesis_video_stream_pool::DeleteMediaPipelineKinesisVideoStreamPoolError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_media_pipeline_kinesis_video_stream_pool::DeleteMediaPipelineKinesisVideoStreamPoolError> for Error {
+    fn from(err: crate::operation::delete_media_pipeline_kinesis_video_stream_pool::DeleteMediaPipelineKinesisVideoStreamPoolError) -> Self {
+        match err {
+            crate::operation::delete_media_pipeline_kinesis_video_stream_pool::DeleteMediaPipelineKinesisVideoStreamPoolError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::delete_media_pipeline_kinesis_video_stream_pool::DeleteMediaPipelineKinesisVideoStreamPoolError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_media_pipeline_kinesis_video_stream_pool::DeleteMediaPipelineKinesisVideoStreamPoolError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::delete_media_pipeline_kinesis_video_stream_pool::DeleteMediaPipelineKinesisVideoStreamPoolError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::delete_media_pipeline_kinesis_video_stream_pool::DeleteMediaPipelineKinesisVideoStreamPoolError::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::operation::delete_media_pipeline_kinesis_video_stream_pool::DeleteMediaPipelineKinesisVideoStreamPoolError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::delete_media_pipeline_kinesis_video_stream_pool::DeleteMediaPipelineKinesisVideoStreamPoolError::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::operation::delete_media_pipeline_kinesis_video_stream_pool::DeleteMediaPipelineKinesisVideoStreamPoolError::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::operation::delete_media_pipeline_kinesis_video_stream_pool::DeleteMediaPipelineKinesisVideoStreamPoolError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -522,6 +653,47 @@ impl From<crate::operation::get_media_pipeline::GetMediaPipelineError> for Error
                 Error::UnauthorizedClientException(inner)
             }
             crate::operation::get_media_pipeline::GetMediaPipelineError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_media_pipeline_kinesis_video_stream_pool::GetMediaPipelineKinesisVideoStreamPoolError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::get_media_pipeline_kinesis_video_stream_pool::GetMediaPipelineKinesisVideoStreamPoolError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_media_pipeline_kinesis_video_stream_pool::GetMediaPipelineKinesisVideoStreamPoolError> for Error {
+    fn from(err: crate::operation::get_media_pipeline_kinesis_video_stream_pool::GetMediaPipelineKinesisVideoStreamPoolError) -> Self {
+        match err {
+            crate::operation::get_media_pipeline_kinesis_video_stream_pool::GetMediaPipelineKinesisVideoStreamPoolError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::get_media_pipeline_kinesis_video_stream_pool::GetMediaPipelineKinesisVideoStreamPoolError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::get_media_pipeline_kinesis_video_stream_pool::GetMediaPipelineKinesisVideoStreamPoolError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_media_pipeline_kinesis_video_stream_pool::GetMediaPipelineKinesisVideoStreamPoolError::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::operation::get_media_pipeline_kinesis_video_stream_pool::GetMediaPipelineKinesisVideoStreamPoolError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::get_media_pipeline_kinesis_video_stream_pool::GetMediaPipelineKinesisVideoStreamPoolError::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::operation::get_media_pipeline_kinesis_video_stream_pool::GetMediaPipelineKinesisVideoStreamPoolError::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::operation::get_media_pipeline_kinesis_video_stream_pool::GetMediaPipelineKinesisVideoStreamPoolError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -689,6 +861,47 @@ impl From<crate::operation::list_media_insights_pipeline_configurations::ListMed
             crate::operation::list_media_insights_pipeline_configurations::ListMediaInsightsPipelineConfigurationsError::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
             crate::operation::list_media_insights_pipeline_configurations::ListMediaInsightsPipelineConfigurationsError::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
             crate::operation::list_media_insights_pipeline_configurations::ListMediaInsightsPipelineConfigurationsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_media_pipeline_kinesis_video_stream_pools::ListMediaPipelineKinesisVideoStreamPoolsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::list_media_pipeline_kinesis_video_stream_pools::ListMediaPipelineKinesisVideoStreamPoolsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_media_pipeline_kinesis_video_stream_pools::ListMediaPipelineKinesisVideoStreamPoolsError> for Error {
+    fn from(err: crate::operation::list_media_pipeline_kinesis_video_stream_pools::ListMediaPipelineKinesisVideoStreamPoolsError) -> Self {
+        match err {
+            crate::operation::list_media_pipeline_kinesis_video_stream_pools::ListMediaPipelineKinesisVideoStreamPoolsError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::list_media_pipeline_kinesis_video_stream_pools::ListMediaPipelineKinesisVideoStreamPoolsError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::list_media_pipeline_kinesis_video_stream_pools::ListMediaPipelineKinesisVideoStreamPoolsError::ResourceLimitExceededException(inner) => Error::ResourceLimitExceededException(inner),
+            crate::operation::list_media_pipeline_kinesis_video_stream_pools::ListMediaPipelineKinesisVideoStreamPoolsError::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::operation::list_media_pipeline_kinesis_video_stream_pools::ListMediaPipelineKinesisVideoStreamPoolsError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::list_media_pipeline_kinesis_video_stream_pools::ListMediaPipelineKinesisVideoStreamPoolsError::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::operation::list_media_pipeline_kinesis_video_stream_pools::ListMediaPipelineKinesisVideoStreamPoolsError::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::operation::list_media_pipeline_kinesis_video_stream_pools::ListMediaPipelineKinesisVideoStreamPoolsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1091,6 +1304,48 @@ impl From<crate::operation::update_media_insights_pipeline_status::UpdateMediaIn
             crate::operation::update_media_insights_pipeline_status::UpdateMediaInsightsPipelineStatusError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_media_pipeline_kinesis_video_stream_pool::UpdateMediaPipelineKinesisVideoStreamPoolError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::update_media_pipeline_kinesis_video_stream_pool::UpdateMediaPipelineKinesisVideoStreamPoolError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::update_media_pipeline_kinesis_video_stream_pool::UpdateMediaPipelineKinesisVideoStreamPoolError> for Error {
+    fn from(err: crate::operation::update_media_pipeline_kinesis_video_stream_pool::UpdateMediaPipelineKinesisVideoStreamPoolError) -> Self {
+        match err {
+            crate::operation::update_media_pipeline_kinesis_video_stream_pool::UpdateMediaPipelineKinesisVideoStreamPoolError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::update_media_pipeline_kinesis_video_stream_pool::UpdateMediaPipelineKinesisVideoStreamPoolError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::update_media_pipeline_kinesis_video_stream_pool::UpdateMediaPipelineKinesisVideoStreamPoolError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::update_media_pipeline_kinesis_video_stream_pool::UpdateMediaPipelineKinesisVideoStreamPoolError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::update_media_pipeline_kinesis_video_stream_pool::UpdateMediaPipelineKinesisVideoStreamPoolError::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::operation::update_media_pipeline_kinesis_video_stream_pool::UpdateMediaPipelineKinesisVideoStreamPoolError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::update_media_pipeline_kinesis_video_stream_pool::UpdateMediaPipelineKinesisVideoStreamPoolError::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::operation::update_media_pipeline_kinesis_video_stream_pool::UpdateMediaPipelineKinesisVideoStreamPoolError::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::operation::update_media_pipeline_kinesis_video_stream_pool::UpdateMediaPipelineKinesisVideoStreamPoolError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

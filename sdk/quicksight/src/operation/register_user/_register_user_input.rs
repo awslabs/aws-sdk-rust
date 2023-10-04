@@ -52,6 +52,8 @@ pub struct RegisterUserInput {
     pub custom_federation_provider_url: ::std::option::Option<::std::string::String>,
     /// <p>The identity ID for a user in the external login provider.</p>
     pub external_login_id: ::std::option::Option<::std::string::String>,
+    /// <p>The tags to associate with the user.</p>
+    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl RegisterUserInput {
     /// <p>Amazon QuickSight supports several ways of managing the identity of users. This parameter accepts two values:</p>
@@ -127,6 +129,10 @@ impl RegisterUserInput {
     pub fn external_login_id(&self) -> ::std::option::Option<&str> {
         self.external_login_id.as_deref()
     }
+    /// <p>The tags to associate with the user.</p>
+    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl RegisterUserInput {
     /// Creates a new builder-style object to manufacture [`RegisterUserInput`](crate::operation::register_user::RegisterUserInput).
@@ -151,6 +157,7 @@ pub struct RegisterUserInputBuilder {
     pub(crate) external_login_federation_provider_type: ::std::option::Option<::std::string::String>,
     pub(crate) custom_federation_provider_url: ::std::option::Option<::std::string::String>,
     pub(crate) external_login_id: ::std::option::Option<::std::string::String>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl RegisterUserInputBuilder {
     /// <p>Amazon QuickSight supports several ways of managing the identity of users. This parameter accepts two values:</p>
@@ -396,6 +403,26 @@ impl RegisterUserInputBuilder {
     pub fn get_external_login_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.external_login_id
     }
+    /// Appends an item to `tags`.
+    ///
+    /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+    ///
+    /// <p>The tags to associate with the user.</p>
+    pub fn tags(mut self, input: crate::types::Tag) -> Self {
+        let mut v = self.tags.unwrap_or_default();
+        v.push(input);
+        self.tags = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The tags to associate with the user.</p>
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input;
+        self
+    }
+    /// <p>The tags to associate with the user.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// Consumes the builder and constructs a [`RegisterUserInput`](crate::operation::register_user::RegisterUserInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::register_user::RegisterUserInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::register_user::RegisterUserInput {
@@ -411,6 +438,7 @@ impl RegisterUserInputBuilder {
             external_login_federation_provider_type: self.external_login_federation_provider_type,
             custom_federation_provider_url: self.custom_federation_provider_url,
             external_login_id: self.external_login_id,
+            tags: self.tags,
         })
     }
 }

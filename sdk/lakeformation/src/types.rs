@@ -87,6 +87,8 @@ pub use crate::types::_data_lake_resource_type::DataLakeResourceType;
 
 pub use crate::types::_resource_share_type::ResourceShareType;
 
+pub use crate::types::_lake_formation_opt_ins_info::LakeFormationOptInsInfo;
+
 pub use crate::types::_work_unit_range::WorkUnitRange;
 
 pub use crate::types::_permission_type::PermissionType;
@@ -154,6 +156,8 @@ mod _execution_statistics;
 mod _field_name_string;
 
 mod _filter_condition;
+
+mod _lake_formation_opt_ins_info;
 
 mod _lf_tag;
 

@@ -112,17 +112,17 @@ impl GetDeploymentFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p> The unique ID of a deployment associated with the IAM user or Amazon Web Services account. </p>
+    /// <p> The unique ID of a deployment associated with the user or Amazon Web Services account. </p>
     pub fn deployment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.deployment_id(input.into());
         self
     }
-    /// <p> The unique ID of a deployment associated with the IAM user or Amazon Web Services account. </p>
+    /// <p> The unique ID of a deployment associated with the user or Amazon Web Services account. </p>
     pub fn set_deployment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_deployment_id(input);
         self
     }
-    /// <p> The unique ID of a deployment associated with the IAM user or Amazon Web Services account. </p>
+    /// <p> The unique ID of a deployment associated with the user or Amazon Web Services account. </p>
     pub fn get_deployment_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_deployment_id()
     }

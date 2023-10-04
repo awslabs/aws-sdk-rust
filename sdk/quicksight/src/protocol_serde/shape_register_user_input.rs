@@ -27,11 +27,23 @@ pub fn ser_register_user_input(
     if let Some(var_8) = &input.session_name {
         object.key("SessionName").string(var_8.as_str());
     }
-    if let Some(var_9) = &input.user_name {
-        object.key("UserName").string(var_9.as_str());
+    if let Some(var_9) = &input.tags {
+        let mut array_10 = object.key("Tags").start_array();
+        for item_11 in var_9 {
+            {
+                #[allow(unused_mut)]
+                let mut object_12 = array_10.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_12, item_11)?;
+                object_12.finish();
+            }
+        }
+        array_10.finish();
     }
-    if let Some(var_10) = &input.user_role {
-        object.key("UserRole").string(var_10.as_str());
+    if let Some(var_13) = &input.user_name {
+        object.key("UserName").string(var_13.as_str());
+    }
+    if let Some(var_14) = &input.user_role {
+        object.key("UserRole").string(var_14.as_str());
     }
     Ok(())
 }

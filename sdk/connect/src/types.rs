@@ -55,6 +55,8 @@ pub use crate::types::_read_only_field_info::ReadOnlyFieldInfo;
 
 pub use crate::types::_required_field_info::RequiredFieldInfo;
 
+pub use crate::types::_application::Application;
+
 pub use crate::types::_rule_publish_status::RulePublishStatus;
 
 pub use crate::types::_rule_action::RuleAction;
@@ -564,6 +566,8 @@ mod _agent_status_summary;
 mod _agent_status_type;
 
 mod _answer_machine_detection_config;
+
+mod _application;
 
 mod _assign_contact_category_action_definition;
 

@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreatePackageVersionInput {
-    /// <p>The name of the associated package.</p>
+    /// <p>The name of the associated software package.</p>
     pub package_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the new package version.</p>
     pub version_name: ::std::option::Option<::std::string::String>,
@@ -18,7 +18,7 @@ pub struct CreatePackageVersionInput {
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl CreatePackageVersionInput {
-    /// <p>The name of the associated package.</p>
+    /// <p>The name of the associated software package.</p>
     pub fn package_name(&self) -> ::std::option::Option<&str> {
         self.package_name.as_deref()
     }
@@ -75,17 +75,17 @@ pub struct CreatePackageVersionInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl CreatePackageVersionInputBuilder {
-    /// <p>The name of the associated package.</p>
+    /// <p>The name of the associated software package.</p>
     pub fn package_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.package_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the associated package.</p>
+    /// <p>The name of the associated software package.</p>
     pub fn set_package_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.package_name = input;
         self
     }
-    /// <p>The name of the associated package.</p>
+    /// <p>The name of the associated software package.</p>
     pub fn get_package_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.package_name
     }

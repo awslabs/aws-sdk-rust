@@ -163,6 +163,8 @@ pub use crate::types::_csv_options::CsvOptionsBuilder;
 
 pub use crate::types::_export_description::ExportDescriptionBuilder;
 
+pub use crate::types::_incremental_export_specification::IncrementalExportSpecificationBuilder;
+
 pub use crate::types::_parameterized_statement::ParameterizedStatementBuilder;
 
 pub use crate::types::_time_to_live_description::TimeToLiveDescriptionBuilder;

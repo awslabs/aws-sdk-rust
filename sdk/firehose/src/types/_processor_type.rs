@@ -13,6 +13,7 @@
 /// # let processortype = unimplemented!();
 /// match processortype {
 ///     ProcessorType::AppendDelimiterToRecord => { /* ... */ },
+///     ProcessorType::Decompression => { /* ... */ },
 ///     ProcessorType::Lambda => { /* ... */ },
 ///     ProcessorType::MetadataExtraction => { /* ... */ },
 ///     ProcessorType::RecordDeAggregation => { /* ... */ },
@@ -46,6 +47,8 @@ pub enum ProcessorType {
     #[allow(missing_docs)] // documentation missing in model
     AppendDelimiterToRecord,
     #[allow(missing_docs)] // documentation missing in model
+    Decompression,
+    #[allow(missing_docs)] // documentation missing in model
     Lambda,
     #[allow(missing_docs)] // documentation missing in model
     MetadataExtraction,
@@ -58,6 +61,7 @@ impl ::std::convert::From<&str> for ProcessorType {
     fn from(s: &str) -> Self {
         match s {
             "AppendDelimiterToRecord" => ProcessorType::AppendDelimiterToRecord,
+            "Decompression" => ProcessorType::Decompression,
             "Lambda" => ProcessorType::Lambda,
             "MetadataExtraction" => ProcessorType::MetadataExtraction,
             "RecordDeAggregation" => ProcessorType::RecordDeAggregation,
@@ -77,6 +81,7 @@ impl ProcessorType {
     pub fn as_str(&self) -> &str {
         match self {
             ProcessorType::AppendDelimiterToRecord => "AppendDelimiterToRecord",
+            ProcessorType::Decompression => "Decompression",
             ProcessorType::Lambda => "Lambda",
             ProcessorType::MetadataExtraction => "MetadataExtraction",
             ProcessorType::RecordDeAggregation => "RecordDeAggregation",
@@ -85,7 +90,13 @@ impl ProcessorType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AppendDelimiterToRecord", "Lambda", "MetadataExtraction", "RecordDeAggregation"]
+        &[
+            "AppendDelimiterToRecord",
+            "Decompression",
+            "Lambda",
+            "MetadataExtraction",
+            "RecordDeAggregation",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for ProcessorType {

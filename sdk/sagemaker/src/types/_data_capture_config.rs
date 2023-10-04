@@ -10,7 +10,7 @@ pub struct DataCaptureConfig {
     pub initial_sampling_percentage: ::std::option::Option<i32>,
     /// <p>The Amazon S3 location used to capture the data.</p>
     pub destination_s3_uri: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of a Amazon Web Services Key Management Service key that SageMaker uses to encrypt the captured data at rest using Amazon S3 server-side encryption.</p>
+    /// <p>The Amazon Resource Name (ARN) of an Key Management Service key that SageMaker uses to encrypt the captured data at rest using Amazon S3 server-side encryption.</p>
     /// <p>The KmsKeyId can be any of the following formats: </p>
     /// <ul>
     /// <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
@@ -37,7 +37,7 @@ impl DataCaptureConfig {
     pub fn destination_s3_uri(&self) -> ::std::option::Option<&str> {
         self.destination_s3_uri.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of a Amazon Web Services Key Management Service key that SageMaker uses to encrypt the captured data at rest using Amazon S3 server-side encryption.</p>
+    /// <p>The Amazon Resource Name (ARN) of an Key Management Service key that SageMaker uses to encrypt the captured data at rest using Amazon S3 server-side encryption.</p>
     /// <p>The KmsKeyId can be any of the following formats: </p>
     /// <ul>
     /// <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
@@ -118,7 +118,7 @@ impl DataCaptureConfigBuilder {
     pub fn get_destination_s3_uri(&self) -> &::std::option::Option<::std::string::String> {
         &self.destination_s3_uri
     }
-    /// <p>The Amazon Resource Name (ARN) of a Amazon Web Services Key Management Service key that SageMaker uses to encrypt the captured data at rest using Amazon S3 server-side encryption.</p>
+    /// <p>The Amazon Resource Name (ARN) of an Key Management Service key that SageMaker uses to encrypt the captured data at rest using Amazon S3 server-side encryption.</p>
     /// <p>The KmsKeyId can be any of the following formats: </p>
     /// <ul>
     /// <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
@@ -130,7 +130,7 @@ impl DataCaptureConfigBuilder {
         self.kms_key_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of a Amazon Web Services Key Management Service key that SageMaker uses to encrypt the captured data at rest using Amazon S3 server-side encryption.</p>
+    /// <p>The Amazon Resource Name (ARN) of an Key Management Service key that SageMaker uses to encrypt the captured data at rest using Amazon S3 server-side encryption.</p>
     /// <p>The KmsKeyId can be any of the following formats: </p>
     /// <ul>
     /// <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
@@ -142,7 +142,7 @@ impl DataCaptureConfigBuilder {
         self.kms_key_id = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of a Amazon Web Services Key Management Service key that SageMaker uses to encrypt the captured data at rest using Amazon S3 server-side encryption.</p>
+    /// <p>The Amazon Resource Name (ARN) of an Key Management Service key that SageMaker uses to encrypt the captured data at rest using Amazon S3 server-side encryption.</p>
     /// <p>The KmsKeyId can be any of the following formats: </p>
     /// <ul>
     /// <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>

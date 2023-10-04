@@ -22,7 +22,7 @@ impl UpdatePackageConfigurationInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdatePackageConfiguration`.
 ///
-/// <p>Updates the package configuration.</p>
+/// <p>Updates the software package configuration.</p>
 /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdatePackageConfiguration</a> and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_passrole.html">iam:PassRole</a> actions.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdatePackageConfigurationFluentBuilder {

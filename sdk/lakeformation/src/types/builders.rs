@@ -67,6 +67,8 @@ pub use crate::types::_principal_resource_permissions::PrincipalResourcePermissi
 
 pub use crate::types::_details_map::DetailsMapBuilder;
 
+pub use crate::types::_lake_formation_opt_ins_info::LakeFormationOptInsInfoBuilder;
+
 pub use crate::types::_work_unit_range::WorkUnitRangeBuilder;
 
 pub use crate::types::_audit_context::AuditContextBuilder;

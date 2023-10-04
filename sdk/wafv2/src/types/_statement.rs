@@ -36,7 +36,7 @@ pub struct Statement {
     /// <p>For additional details, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-rule-statement-type-geo-match.html">Geographic match rule statement</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
     pub geo_match_statement: ::std::option::Option<crate::types::GeoMatchStatement>,
     /// <p>A rule statement used to run the rules that are defined in a <code>RuleGroup</code>. To use this, create a rule group with your rules, then provide the ARN of the rule group in this statement.</p>
-    /// <p>You cannot nest a <code>RuleGroupReferenceStatement</code>, for example for use inside a <code>NotStatement</code> or <code>OrStatement</code>. You can only use a rule group reference statement at the top level inside a web ACL. </p>
+    /// <p>You cannot nest a <code>RuleGroupReferenceStatement</code>, for example for use inside a <code>NotStatement</code> or <code>OrStatement</code>. You cannot use a rule group reference statement inside another rule group. You can only reference a rule group as a top-level statement within a rule that you define in a web ACL.</p>
     pub rule_group_reference_statement: ::std::option::Option<crate::types::RuleGroupReferenceStatement>,
     /// <p>A rule statement used to detect web requests coming from particular IP addresses or address ranges. To use this, create an <code>IPSet</code> that specifies the addresses you want to detect, then use the ARN of that set in this statement. To create an IP set, see <code>CreateIPSet</code>.</p>
     /// <p>Each IP set rule statement references an IP set. You create and maintain the set independent of your rules. This allows you to use the single set in multiple rules. When you update the referenced set, WAF automatically updates all rules that reference it.</p>
@@ -87,7 +87,7 @@ pub struct Statement {
     /// <p>A logical rule statement used to negate the results of another rule statement. You provide one <code>Statement</code> within the <code>NotStatement</code>.</p>
     pub not_statement: ::std::option::Option<crate::types::NotStatement>,
     /// <p>A rule statement used to run the rules that are defined in a managed rule group. To use this, provide the vendor name and the name of the rule group in this statement. You can retrieve the required names by calling <code>ListAvailableManagedRuleGroups</code>.</p>
-    /// <p>You cannot nest a <code>ManagedRuleGroupStatement</code>, for example for use inside a <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced as a top-level statement within a rule.</p> <note>
+    /// <p>You cannot nest a <code>ManagedRuleGroupStatement</code>, for example for use inside a <code>NotStatement</code> or <code>OrStatement</code>. You cannot use a managed rule group inside another rule group. You can only reference a managed rule group as a top-level statement within a rule that you define in a web ACL.</p> <note>
     /// <p>You are charged additional fees when you use the WAF Bot Control managed rule group <code>AWSManagedRulesBotControlRuleSet</code>, the WAF Fraud Control account takeover prevention (ATP) managed rule group <code>AWSManagedRulesATPRuleSet</code>, or the WAF Fraud Control account creation fraud prevention (ACFP) managed rule group <code>AWSManagedRulesACFPRuleSet</code>. For more information, see <a href="http://aws.amazon.com/waf/pricing/">WAF Pricing</a>.</p>
     /// </note>
     pub managed_rule_group_statement: ::std::option::Option<crate::types::ManagedRuleGroupStatement>,
@@ -139,7 +139,7 @@ impl Statement {
         self.geo_match_statement.as_ref()
     }
     /// <p>A rule statement used to run the rules that are defined in a <code>RuleGroup</code>. To use this, create a rule group with your rules, then provide the ARN of the rule group in this statement.</p>
-    /// <p>You cannot nest a <code>RuleGroupReferenceStatement</code>, for example for use inside a <code>NotStatement</code> or <code>OrStatement</code>. You can only use a rule group reference statement at the top level inside a web ACL. </p>
+    /// <p>You cannot nest a <code>RuleGroupReferenceStatement</code>, for example for use inside a <code>NotStatement</code> or <code>OrStatement</code>. You cannot use a rule group reference statement inside another rule group. You can only reference a rule group as a top-level statement within a rule that you define in a web ACL.</p>
     pub fn rule_group_reference_statement(&self) -> ::std::option::Option<&crate::types::RuleGroupReferenceStatement> {
         self.rule_group_reference_statement.as_ref()
     }
@@ -204,7 +204,7 @@ impl Statement {
         self.not_statement.as_ref()
     }
     /// <p>A rule statement used to run the rules that are defined in a managed rule group. To use this, provide the vendor name and the name of the rule group in this statement. You can retrieve the required names by calling <code>ListAvailableManagedRuleGroups</code>.</p>
-    /// <p>You cannot nest a <code>ManagedRuleGroupStatement</code>, for example for use inside a <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced as a top-level statement within a rule.</p> <note>
+    /// <p>You cannot nest a <code>ManagedRuleGroupStatement</code>, for example for use inside a <code>NotStatement</code> or <code>OrStatement</code>. You cannot use a managed rule group inside another rule group. You can only reference a managed rule group as a top-level statement within a rule that you define in a web ACL.</p> <note>
     /// <p>You are charged additional fees when you use the WAF Bot Control managed rule group <code>AWSManagedRulesBotControlRuleSet</code>, the WAF Fraud Control account takeover prevention (ATP) managed rule group <code>AWSManagedRulesATPRuleSet</code>, or the WAF Fraud Control account creation fraud prevention (ACFP) managed rule group <code>AWSManagedRulesACFPRuleSet</code>. For more information, see <a href="http://aws.amazon.com/waf/pricing/">WAF Pricing</a>.</p>
     /// </note>
     pub fn managed_rule_group_statement(&self) -> ::std::option::Option<&crate::types::ManagedRuleGroupStatement> {
@@ -379,19 +379,19 @@ impl StatementBuilder {
         &self.geo_match_statement
     }
     /// <p>A rule statement used to run the rules that are defined in a <code>RuleGroup</code>. To use this, create a rule group with your rules, then provide the ARN of the rule group in this statement.</p>
-    /// <p>You cannot nest a <code>RuleGroupReferenceStatement</code>, for example for use inside a <code>NotStatement</code> or <code>OrStatement</code>. You can only use a rule group reference statement at the top level inside a web ACL. </p>
+    /// <p>You cannot nest a <code>RuleGroupReferenceStatement</code>, for example for use inside a <code>NotStatement</code> or <code>OrStatement</code>. You cannot use a rule group reference statement inside another rule group. You can only reference a rule group as a top-level statement within a rule that you define in a web ACL.</p>
     pub fn rule_group_reference_statement(mut self, input: crate::types::RuleGroupReferenceStatement) -> Self {
         self.rule_group_reference_statement = ::std::option::Option::Some(input);
         self
     }
     /// <p>A rule statement used to run the rules that are defined in a <code>RuleGroup</code>. To use this, create a rule group with your rules, then provide the ARN of the rule group in this statement.</p>
-    /// <p>You cannot nest a <code>RuleGroupReferenceStatement</code>, for example for use inside a <code>NotStatement</code> or <code>OrStatement</code>. You can only use a rule group reference statement at the top level inside a web ACL. </p>
+    /// <p>You cannot nest a <code>RuleGroupReferenceStatement</code>, for example for use inside a <code>NotStatement</code> or <code>OrStatement</code>. You cannot use a rule group reference statement inside another rule group. You can only reference a rule group as a top-level statement within a rule that you define in a web ACL.</p>
     pub fn set_rule_group_reference_statement(mut self, input: ::std::option::Option<crate::types::RuleGroupReferenceStatement>) -> Self {
         self.rule_group_reference_statement = input;
         self
     }
     /// <p>A rule statement used to run the rules that are defined in a <code>RuleGroup</code>. To use this, create a rule group with your rules, then provide the ARN of the rule group in this statement.</p>
-    /// <p>You cannot nest a <code>RuleGroupReferenceStatement</code>, for example for use inside a <code>NotStatement</code> or <code>OrStatement</code>. You can only use a rule group reference statement at the top level inside a web ACL. </p>
+    /// <p>You cannot nest a <code>RuleGroupReferenceStatement</code>, for example for use inside a <code>NotStatement</code> or <code>OrStatement</code>. You cannot use a rule group reference statement inside another rule group. You can only reference a rule group as a top-level statement within a rule that you define in a web ACL.</p>
     pub fn get_rule_group_reference_statement(&self) -> &::std::option::Option<crate::types::RuleGroupReferenceStatement> {
         &self.rule_group_reference_statement
     }
@@ -591,7 +591,7 @@ impl StatementBuilder {
         &self.not_statement
     }
     /// <p>A rule statement used to run the rules that are defined in a managed rule group. To use this, provide the vendor name and the name of the rule group in this statement. You can retrieve the required names by calling <code>ListAvailableManagedRuleGroups</code>.</p>
-    /// <p>You cannot nest a <code>ManagedRuleGroupStatement</code>, for example for use inside a <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced as a top-level statement within a rule.</p> <note>
+    /// <p>You cannot nest a <code>ManagedRuleGroupStatement</code>, for example for use inside a <code>NotStatement</code> or <code>OrStatement</code>. You cannot use a managed rule group inside another rule group. You can only reference a managed rule group as a top-level statement within a rule that you define in a web ACL.</p> <note>
     /// <p>You are charged additional fees when you use the WAF Bot Control managed rule group <code>AWSManagedRulesBotControlRuleSet</code>, the WAF Fraud Control account takeover prevention (ATP) managed rule group <code>AWSManagedRulesATPRuleSet</code>, or the WAF Fraud Control account creation fraud prevention (ACFP) managed rule group <code>AWSManagedRulesACFPRuleSet</code>. For more information, see <a href="http://aws.amazon.com/waf/pricing/">WAF Pricing</a>.</p>
     /// </note>
     pub fn managed_rule_group_statement(mut self, input: crate::types::ManagedRuleGroupStatement) -> Self {
@@ -599,7 +599,7 @@ impl StatementBuilder {
         self
     }
     /// <p>A rule statement used to run the rules that are defined in a managed rule group. To use this, provide the vendor name and the name of the rule group in this statement. You can retrieve the required names by calling <code>ListAvailableManagedRuleGroups</code>.</p>
-    /// <p>You cannot nest a <code>ManagedRuleGroupStatement</code>, for example for use inside a <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced as a top-level statement within a rule.</p> <note>
+    /// <p>You cannot nest a <code>ManagedRuleGroupStatement</code>, for example for use inside a <code>NotStatement</code> or <code>OrStatement</code>. You cannot use a managed rule group inside another rule group. You can only reference a managed rule group as a top-level statement within a rule that you define in a web ACL.</p> <note>
     /// <p>You are charged additional fees when you use the WAF Bot Control managed rule group <code>AWSManagedRulesBotControlRuleSet</code>, the WAF Fraud Control account takeover prevention (ATP) managed rule group <code>AWSManagedRulesATPRuleSet</code>, or the WAF Fraud Control account creation fraud prevention (ACFP) managed rule group <code>AWSManagedRulesACFPRuleSet</code>. For more information, see <a href="http://aws.amazon.com/waf/pricing/">WAF Pricing</a>.</p>
     /// </note>
     pub fn set_managed_rule_group_statement(mut self, input: ::std::option::Option<crate::types::ManagedRuleGroupStatement>) -> Self {
@@ -607,7 +607,7 @@ impl StatementBuilder {
         self
     }
     /// <p>A rule statement used to run the rules that are defined in a managed rule group. To use this, provide the vendor name and the name of the rule group in this statement. You can retrieve the required names by calling <code>ListAvailableManagedRuleGroups</code>.</p>
-    /// <p>You cannot nest a <code>ManagedRuleGroupStatement</code>, for example for use inside a <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced as a top-level statement within a rule.</p> <note>
+    /// <p>You cannot nest a <code>ManagedRuleGroupStatement</code>, for example for use inside a <code>NotStatement</code> or <code>OrStatement</code>. You cannot use a managed rule group inside another rule group. You can only reference a managed rule group as a top-level statement within a rule that you define in a web ACL.</p> <note>
     /// <p>You are charged additional fees when you use the WAF Bot Control managed rule group <code>AWSManagedRulesBotControlRuleSet</code>, the WAF Fraud Control account takeover prevention (ATP) managed rule group <code>AWSManagedRulesATPRuleSet</code>, or the WAF Fraud Control account creation fraud prevention (ACFP) managed rule group <code>AWSManagedRulesACFPRuleSet</code>. For more information, see <a href="http://aws.amazon.com/waf/pricing/">WAF Pricing</a>.</p>
     /// </note>
     pub fn get_managed_rule_group_statement(&self) -> &::std::option::Option<crate::types::ManagedRuleGroupStatement> {

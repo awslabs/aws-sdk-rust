@@ -25,7 +25,7 @@ impl ListDeploymentInstancesInputBuilder {
 /// <note>
 /// <p> The newer <code>BatchGetDeploymentTargets</code> should be used instead because it works with all compute types. <code>ListDeploymentInstances</code> throws an exception if it is used with a compute platform other than EC2/On-premises or Lambda. </p>
 /// </note>
-/// <p> Lists the instance for a deployment associated with the IAM user or Amazon Web Services account. </p>
+/// <p> Lists the instance for a deployment associated with the user or Amazon Web Services account. </p>
 #[deprecated(note = "This operation is deprecated, use ListDeploymentTargets instead.")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListDeploymentInstancesFluentBuilder {

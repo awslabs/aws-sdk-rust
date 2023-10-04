@@ -170,4 +170,18 @@ impl CreateVerifiedAccessInstanceFluentBuilder {
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
         self.inner.get_dry_run()
     }
+    /// <p>Enable or disable support for Federal Information Processing Standards (FIPS) on the instance.</p>
+    pub fn fips_enabled(mut self, input: bool) -> Self {
+        self.inner = self.inner.fips_enabled(input);
+        self
+    }
+    /// <p>Enable or disable support for Federal Information Processing Standards (FIPS) on the instance.</p>
+    pub fn set_fips_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_fips_enabled(input);
+        self
+    }
+    /// <p>Enable or disable support for Federal Information Processing Standards (FIPS) on the instance.</p>
+    pub fn get_fips_enabled(&self) -> &::std::option::Option<bool> {
+        self.inner.get_fips_enabled()
+    }
 }

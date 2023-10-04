@@ -14,6 +14,8 @@ pub struct KafkaAction {
     pub partition: ::std::option::Option<::std::string::String>,
     /// <p>Properties of the Apache Kafka producer client.</p>
     pub client_properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>The list of Kafka headers that you specify.</p>
+    pub headers: ::std::option::Option<::std::vec::Vec<crate::types::KafkaActionHeader>>,
 }
 impl KafkaAction {
     /// <p>The ARN of Kafka action's VPC <code>TopicRuleDestination</code>.</p>
@@ -36,6 +38,10 @@ impl KafkaAction {
     pub fn client_properties(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.client_properties.as_ref()
     }
+    /// <p>The list of Kafka headers that you specify.</p>
+    pub fn headers(&self) -> ::std::option::Option<&[crate::types::KafkaActionHeader]> {
+        self.headers.as_deref()
+    }
 }
 impl KafkaAction {
     /// Creates a new builder-style object to manufacture [`KafkaAction`](crate::types::KafkaAction).
@@ -53,6 +59,7 @@ pub struct KafkaActionBuilder {
     pub(crate) key: ::std::option::Option<::std::string::String>,
     pub(crate) partition: ::std::option::Option<::std::string::String>,
     pub(crate) client_properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) headers: ::std::option::Option<::std::vec::Vec<crate::types::KafkaActionHeader>>,
 }
 impl KafkaActionBuilder {
     /// <p>The ARN of Kafka action's VPC <code>TopicRuleDestination</code>.</p>
@@ -138,6 +145,26 @@ impl KafkaActionBuilder {
     pub fn get_client_properties(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.client_properties
     }
+    /// Appends an item to `headers`.
+    ///
+    /// To override the contents of this collection use [`set_headers`](Self::set_headers).
+    ///
+    /// <p>The list of Kafka headers that you specify.</p>
+    pub fn headers(mut self, input: crate::types::KafkaActionHeader) -> Self {
+        let mut v = self.headers.unwrap_or_default();
+        v.push(input);
+        self.headers = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The list of Kafka headers that you specify.</p>
+    pub fn set_headers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::KafkaActionHeader>>) -> Self {
+        self.headers = input;
+        self
+    }
+    /// <p>The list of Kafka headers that you specify.</p>
+    pub fn get_headers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::KafkaActionHeader>> {
+        &self.headers
+    }
     /// Consumes the builder and constructs a [`KafkaAction`](crate::types::KafkaAction).
     pub fn build(self) -> crate::types::KafkaAction {
         crate::types::KafkaAction {
@@ -146,6 +173,7 @@ impl KafkaActionBuilder {
             key: self.key,
             partition: self.partition,
             client_properties: self.client_properties,
+            headers: self.headers,
         }
     }
 }

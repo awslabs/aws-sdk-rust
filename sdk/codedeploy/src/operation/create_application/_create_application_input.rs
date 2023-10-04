@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateApplicationInput {
-    /// <p>The name of the application. This name must be unique with the applicable IAM or Amazon Web Services account.</p>
+    /// <p>The name of the application. This name must be unique with the applicable user or Amazon Web Services account.</p>
     pub application_name: ::std::option::Option<::std::string::String>,
     /// <p> The destination platform type for the deployment (<code>Lambda</code>, <code>Server</code>, or <code>ECS</code>).</p>
     pub compute_platform: ::std::option::Option<crate::types::ComputePlatform>,
@@ -12,7 +12,7 @@ pub struct CreateApplicationInput {
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateApplicationInput {
-    /// <p>The name of the application. This name must be unique with the applicable IAM or Amazon Web Services account.</p>
+    /// <p>The name of the application. This name must be unique with the applicable user or Amazon Web Services account.</p>
     pub fn application_name(&self) -> ::std::option::Option<&str> {
         self.application_name.as_deref()
     }
@@ -41,17 +41,17 @@ pub struct CreateApplicationInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateApplicationInputBuilder {
-    /// <p>The name of the application. This name must be unique with the applicable IAM or Amazon Web Services account.</p>
+    /// <p>The name of the application. This name must be unique with the applicable user or Amazon Web Services account.</p>
     pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the application. This name must be unique with the applicable IAM or Amazon Web Services account.</p>
+    /// <p>The name of the application. This name must be unique with the applicable user or Amazon Web Services account.</p>
     pub fn set_application_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_name = input;
         self
     }
-    /// <p>The name of the application. This name must be unique with the applicable IAM or Amazon Web Services account.</p>
+    /// <p>The name of the application. This name must be unique with the applicable user or Amazon Web Services account.</p>
     pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.application_name
     }

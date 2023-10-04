@@ -107,6 +107,8 @@ pub use crate::types::_codegen_job_summary::CodegenJobSummary;
 
 pub use crate::types::_codegen_job::CodegenJob;
 
+pub use crate::types::_codegen_dependency::CodegenDependency;
+
 pub use crate::types::_codegen_job_asset::CodegenJobAsset;
 
 pub use crate::types::_codegen_job_status::CodegenJobStatus;
@@ -162,6 +164,8 @@ pub use crate::types::_exchange_code_for_token_request_body::ExchangeCodeForToke
 mod _action_parameters;
 
 mod _api_configuration;
+
+mod _codegen_dependency;
 
 mod _codegen_feature_flags;
 

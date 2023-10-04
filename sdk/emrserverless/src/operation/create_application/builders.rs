@@ -318,4 +318,36 @@ impl CreateApplicationFluentBuilder {
     ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::WorkerTypeSpecificationInput>> {
         self.inner.get_worker_type_specifications()
     }
+    /// Appends an item to `runtimeConfiguration`.
+    ///
+    /// To override the contents of this collection use [`set_runtime_configuration`](Self::set_runtime_configuration).
+    ///
+    /// <p>The <a href="https://docs.aws.amazon.com/emr-serverless/latest/APIReference/API_Configuration.html">Configuration</a> specifications to use when creating an application. Each configuration consists of a classification and properties. This configuration is applied to all the job runs submitted under the application.</p>
+    pub fn runtime_configuration(mut self, input: crate::types::Configuration) -> Self {
+        self.inner = self.inner.runtime_configuration(input);
+        self
+    }
+    /// <p>The <a href="https://docs.aws.amazon.com/emr-serverless/latest/APIReference/API_Configuration.html">Configuration</a> specifications to use when creating an application. Each configuration consists of a classification and properties. This configuration is applied to all the job runs submitted under the application.</p>
+    pub fn set_runtime_configuration(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Configuration>>) -> Self {
+        self.inner = self.inner.set_runtime_configuration(input);
+        self
+    }
+    /// <p>The <a href="https://docs.aws.amazon.com/emr-serverless/latest/APIReference/API_Configuration.html">Configuration</a> specifications to use when creating an application. Each configuration consists of a classification and properties. This configuration is applied to all the job runs submitted under the application.</p>
+    pub fn get_runtime_configuration(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Configuration>> {
+        self.inner.get_runtime_configuration()
+    }
+    /// <p>The configuration setting for monitoring.</p>
+    pub fn monitoring_configuration(mut self, input: crate::types::MonitoringConfiguration) -> Self {
+        self.inner = self.inner.monitoring_configuration(input);
+        self
+    }
+    /// <p>The configuration setting for monitoring.</p>
+    pub fn set_monitoring_configuration(mut self, input: ::std::option::Option<crate::types::MonitoringConfiguration>) -> Self {
+        self.inner = self.inner.set_monitoring_configuration(input);
+        self
+    }
+    /// <p>The configuration setting for monitoring.</p>
+    pub fn get_monitoring_configuration(&self) -> &::std::option::Option<crate::types::MonitoringConfiguration> {
+        self.inner.get_monitoring_configuration()
+    }
 }

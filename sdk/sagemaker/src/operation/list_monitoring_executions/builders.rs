@@ -144,17 +144,17 @@ impl ListMonitoringExecutionsFluentBuilder {
     pub fn get_endpoint_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_endpoint_name()
     }
-    /// <p>Whether to sort results by <code>Status</code>, <code>CreationTime</code>, <code>ScheduledTime</code> field. The default is <code>CreationTime</code>.</p>
+    /// <p>Whether to sort the results by the <code>Status</code>, <code>CreationTime</code>, or <code>ScheduledTime</code> field. The default is <code>CreationTime</code>.</p>
     pub fn sort_by(mut self, input: crate::types::MonitoringExecutionSortKey) -> Self {
         self.inner = self.inner.sort_by(input);
         self
     }
-    /// <p>Whether to sort results by <code>Status</code>, <code>CreationTime</code>, <code>ScheduledTime</code> field. The default is <code>CreationTime</code>.</p>
+    /// <p>Whether to sort the results by the <code>Status</code>, <code>CreationTime</code>, or <code>ScheduledTime</code> field. The default is <code>CreationTime</code>.</p>
     pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::MonitoringExecutionSortKey>) -> Self {
         self.inner = self.inner.set_sort_by(input);
         self
     }
-    /// <p>Whether to sort results by <code>Status</code>, <code>CreationTime</code>, <code>ScheduledTime</code> field. The default is <code>CreationTime</code>.</p>
+    /// <p>Whether to sort the results by the <code>Status</code>, <code>CreationTime</code>, or <code>ScheduledTime</code> field. The default is <code>CreationTime</code>.</p>
     pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::MonitoringExecutionSortKey> {
         self.inner.get_sort_by()
     }

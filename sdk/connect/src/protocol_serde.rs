@@ -277,6 +277,8 @@ pub(crate) mod shape_list_rules;
 
 pub(crate) mod shape_list_security_keys;
 
+pub(crate) mod shape_list_security_profile_applications;
+
 pub(crate) mod shape_list_security_profile_permissions;
 
 pub(crate) mod shape_list_security_profiles;
@@ -732,6 +734,10 @@ pub(crate) mod shape_agent_status;
 pub(crate) mod shape_agent_status_summary_list;
 
 pub(crate) mod shape_answer_machine_detection_config;
+
+pub(crate) mod shape_application;
+
+pub(crate) mod shape_applications;
 
 pub(crate) mod shape_attribute;
 
@@ -1200,6 +1206,8 @@ pub(crate) mod shape_action_summaries;
 pub(crate) mod shape_agent_contact_reference_list;
 
 pub(crate) mod shape_agent_status_reference;
+
+pub(crate) mod shape_application_permissions;
 
 pub(crate) mod shape_attachment_reference;
 

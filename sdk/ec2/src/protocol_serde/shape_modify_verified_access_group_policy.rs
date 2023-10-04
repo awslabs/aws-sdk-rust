@@ -85,6 +85,16 @@ pub fn de_modify_verified_access_group_policy(
                 builder = builder.set_policy_document(var_2);
             }
             ,
+            s if s.matches("sseSpecification") /* SseSpecification com.amazonaws.ec2.synthetic#ModifyVerifiedAccessGroupPolicyOutput$SseSpecification */ =>  {
+                let var_3 =
+                    Some(
+                        crate::protocol_serde::shape_verified_access_sse_specification_response::de_verified_access_sse_specification_response(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_sse_specification(var_3);
+            }
+            ,
             _ => {}
         }
     }

@@ -2,7 +2,7 @@
 
 /// <p>Short term API credentials.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct Credentials {
     /// <p>The access key identifier.</p>
     pub access_key_id: ::std::option::Option<::std::string::String>,
@@ -25,6 +25,15 @@ impl Credentials {
         self.session_token.as_deref()
     }
 }
+impl ::std::fmt::Debug for Credentials {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("Credentials");
+        formatter.field("access_key_id", &"*** Sensitive Data Redacted ***");
+        formatter.field("secret_access_key", &"*** Sensitive Data Redacted ***");
+        formatter.field("session_token", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl Credentials {
     /// Creates a new builder-style object to manufacture [`Credentials`](crate::types::Credentials).
     pub fn builder() -> crate::types::builders::CredentialsBuilder {
@@ -34,7 +43,7 @@ impl Credentials {
 
 /// A builder for [`Credentials`](crate::types::Credentials).
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct CredentialsBuilder {
     pub(crate) access_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) secret_access_key: ::std::option::Option<::std::string::String>,
@@ -90,5 +99,14 @@ impl CredentialsBuilder {
             secret_access_key: self.secret_access_key,
             session_token: self.session_token,
         }
+    }
+}
+impl ::std::fmt::Debug for CredentialsBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("CredentialsBuilder");
+        formatter.field("access_key_id", &"*** Sensitive Data Redacted ***");
+        formatter.field("secret_access_key", &"*** Sensitive Data Redacted ***");
+        formatter.field("session_token", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

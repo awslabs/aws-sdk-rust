@@ -3,9 +3,9 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetPackage`](crate::operation::get_package::builders::GetPackageFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`package_name(impl Into<String>)`](crate::operation::get_package::builders::GetPackageFluentBuilder::package_name) / [`set_package_name(Option<String>)`](crate::operation::get_package::builders::GetPackageFluentBuilder::set_package_name): <p>The name of the target package.</p>
+    ///   - [`package_name(impl Into<String>)`](crate::operation::get_package::builders::GetPackageFluentBuilder::package_name) / [`set_package_name(Option<String>)`](crate::operation::get_package::builders::GetPackageFluentBuilder::set_package_name): <p>The name of the target software package.</p>
     /// - On success, responds with [`GetPackageOutput`](crate::operation::get_package::GetPackageOutput) with field(s):
-    ///   - [`package_name(Option<String>)`](crate::operation::get_package::GetPackageOutput::package_name): <p>The name of the package.</p>
+    ///   - [`package_name(Option<String>)`](crate::operation::get_package::GetPackageOutput::package_name): <p>The name of the software package.</p>
     ///   - [`package_arn(Option<String>)`](crate::operation::get_package::GetPackageOutput::package_arn): <p>The ARN for the package.</p>
     ///   - [`description(Option<String>)`](crate::operation::get_package::GetPackageOutput::description): <p>The package description.</p>
     ///   - [`default_version_name(Option<String>)`](crate::operation::get_package::GetPackageOutput::default_version_name): <p>The name of the default package version.</p>

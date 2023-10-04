@@ -13,6 +13,7 @@
 /// # let featuretype = unimplemented!();
 /// match featuretype {
 ///     FeatureType::Forms => { /* ... */ },
+///     FeatureType::Layout => { /* ... */ },
 ///     FeatureType::Queries => { /* ... */ },
 ///     FeatureType::Signatures => { /* ... */ },
 ///     FeatureType::Tables => { /* ... */ },
@@ -46,6 +47,8 @@ pub enum FeatureType {
     #[allow(missing_docs)] // documentation missing in model
     Forms,
     #[allow(missing_docs)] // documentation missing in model
+    Layout,
+    #[allow(missing_docs)] // documentation missing in model
     Queries,
     #[allow(missing_docs)] // documentation missing in model
     Signatures,
@@ -58,6 +61,7 @@ impl ::std::convert::From<&str> for FeatureType {
     fn from(s: &str) -> Self {
         match s {
             "FORMS" => FeatureType::Forms,
+            "LAYOUT" => FeatureType::Layout,
             "QUERIES" => FeatureType::Queries,
             "SIGNATURES" => FeatureType::Signatures,
             "TABLES" => FeatureType::Tables,
@@ -77,6 +81,7 @@ impl FeatureType {
     pub fn as_str(&self) -> &str {
         match self {
             FeatureType::Forms => "FORMS",
+            FeatureType::Layout => "LAYOUT",
             FeatureType::Queries => "QUERIES",
             FeatureType::Signatures => "SIGNATURES",
             FeatureType::Tables => "TABLES",
@@ -85,7 +90,7 @@ impl FeatureType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["FORMS", "QUERIES", "SIGNATURES", "TABLES"]
+        &["FORMS", "LAYOUT", "QUERIES", "SIGNATURES", "TABLES"]
     }
 }
 impl ::std::convert::AsRef<str> for FeatureType {

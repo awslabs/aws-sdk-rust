@@ -7,7 +7,7 @@ pub struct ListModelQualityJobDefinitionsInput {
     pub endpoint_name: ::std::option::Option<::std::string::String>,
     /// <p>The field to sort results by. The default is <code>CreationTime</code>.</p>
     pub sort_by: ::std::option::Option<crate::types::MonitoringJobDefinitionSortKey>,
-    /// <p>The sort order for results. The default is <code>Descending</code>.</p>
+    /// <p>Whether to sort the results in <code>Ascending</code> or <code>Descending</code> order. The default is <code>Descending</code>.</p>
     pub sort_order: ::std::option::Option<crate::types::SortOrder>,
     /// <p>If the result of the previous <code>ListModelQualityJobDefinitions</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of model quality monitoring job definitions, use the token in the next request.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -29,7 +29,7 @@ impl ListModelQualityJobDefinitionsInput {
     pub fn sort_by(&self) -> ::std::option::Option<&crate::types::MonitoringJobDefinitionSortKey> {
         self.sort_by.as_ref()
     }
-    /// <p>The sort order for results. The default is <code>Descending</code>.</p>
+    /// <p>Whether to sort the results in <code>Ascending</code> or <code>Descending</code> order. The default is <code>Descending</code>.</p>
     pub fn sort_order(&self) -> ::std::option::Option<&crate::types::SortOrder> {
         self.sort_order.as_ref()
     }
@@ -103,17 +103,17 @@ impl ListModelQualityJobDefinitionsInputBuilder {
     pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::MonitoringJobDefinitionSortKey> {
         &self.sort_by
     }
-    /// <p>The sort order for results. The default is <code>Descending</code>.</p>
+    /// <p>Whether to sort the results in <code>Ascending</code> or <code>Descending</code> order. The default is <code>Descending</code>.</p>
     pub fn sort_order(mut self, input: crate::types::SortOrder) -> Self {
         self.sort_order = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The sort order for results. The default is <code>Descending</code>.</p>
+    /// <p>Whether to sort the results in <code>Ascending</code> or <code>Descending</code> order. The default is <code>Descending</code>.</p>
     pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrder>) -> Self {
         self.sort_order = input;
         self
     }
-    /// <p>The sort order for results. The default is <code>Descending</code>.</p>
+    /// <p>Whether to sort the results in <code>Ascending</code> or <code>Descending</code> order. The default is <code>Descending</code>.</p>
     pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrder> {
         &self.sort_order
     }

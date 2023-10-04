@@ -4,13 +4,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateDeploymentInput {
-    /// <p>The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account.</p>
+    /// <p>The name of an CodeDeploy application associated with the user or Amazon Web Services account.</p>
     pub application_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the deployment group.</p>
     pub deployment_group_name: ::std::option::Option<::std::string::String>,
     /// <p> The type and location of the revision to deploy. </p>
     pub revision: ::std::option::Option<crate::types::RevisionLocation>,
-    /// <p>The name of a deployment configuration associated with the IAM user or Amazon Web Services account.</p>
+    /// <p>The name of a deployment configuration associated with the user or Amazon Web Services account.</p>
     /// <p>If not specified, the value configured in the deployment group is used as the default. If the deployment group does not have a deployment configuration associated with it, <code>CodeDeployDefault</code>.<code>OneAtATime</code> is used by default.</p>
     pub deployment_config_name: ::std::option::Option<::std::string::String>,
     /// <p>A comment about the deployment.</p>
@@ -40,7 +40,7 @@ pub struct CreateDeploymentInput {
     pub override_alarm_configuration: ::std::option::Option<crate::types::AlarmConfiguration>,
 }
 impl CreateDeploymentInput {
-    /// <p>The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account.</p>
+    /// <p>The name of an CodeDeploy application associated with the user or Amazon Web Services account.</p>
     pub fn application_name(&self) -> ::std::option::Option<&str> {
         self.application_name.as_deref()
     }
@@ -52,7 +52,7 @@ impl CreateDeploymentInput {
     pub fn revision(&self) -> ::std::option::Option<&crate::types::RevisionLocation> {
         self.revision.as_ref()
     }
-    /// <p>The name of a deployment configuration associated with the IAM user or Amazon Web Services account.</p>
+    /// <p>The name of a deployment configuration associated with the user or Amazon Web Services account.</p>
     /// <p>If not specified, the value configured in the deployment group is used as the default. If the deployment group does not have a deployment configuration associated with it, <code>CodeDeployDefault</code>.<code>OneAtATime</code> is used by default.</p>
     pub fn deployment_config_name(&self) -> ::std::option::Option<&str> {
         self.deployment_config_name.as_deref()
@@ -121,17 +121,17 @@ pub struct CreateDeploymentInputBuilder {
     pub(crate) override_alarm_configuration: ::std::option::Option<crate::types::AlarmConfiguration>,
 }
 impl CreateDeploymentInputBuilder {
-    /// <p>The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account.</p>
+    /// <p>The name of an CodeDeploy application associated with the user or Amazon Web Services account.</p>
     pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account.</p>
+    /// <p>The name of an CodeDeploy application associated with the user or Amazon Web Services account.</p>
     pub fn set_application_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_name = input;
         self
     }
-    /// <p>The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account.</p>
+    /// <p>The name of an CodeDeploy application associated with the user or Amazon Web Services account.</p>
     pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.application_name
     }
@@ -163,19 +163,19 @@ impl CreateDeploymentInputBuilder {
     pub fn get_revision(&self) -> &::std::option::Option<crate::types::RevisionLocation> {
         &self.revision
     }
-    /// <p>The name of a deployment configuration associated with the IAM user or Amazon Web Services account.</p>
+    /// <p>The name of a deployment configuration associated with the user or Amazon Web Services account.</p>
     /// <p>If not specified, the value configured in the deployment group is used as the default. If the deployment group does not have a deployment configuration associated with it, <code>CodeDeployDefault</code>.<code>OneAtATime</code> is used by default.</p>
     pub fn deployment_config_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.deployment_config_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of a deployment configuration associated with the IAM user or Amazon Web Services account.</p>
+    /// <p>The name of a deployment configuration associated with the user or Amazon Web Services account.</p>
     /// <p>If not specified, the value configured in the deployment group is used as the default. If the deployment group does not have a deployment configuration associated with it, <code>CodeDeployDefault</code>.<code>OneAtATime</code> is used by default.</p>
     pub fn set_deployment_config_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.deployment_config_name = input;
         self
     }
-    /// <p>The name of a deployment configuration associated with the IAM user or Amazon Web Services account.</p>
+    /// <p>The name of a deployment configuration associated with the user or Amazon Web Services account.</p>
     /// <p>If not specified, the value configured in the deployment group is used as the default. If the deployment group does not have a deployment configuration associated with it, <code>CodeDeployDefault</code>.<code>OneAtATime</code> is used by default.</p>
     pub fn get_deployment_config_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.deployment_config_name

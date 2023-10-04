@@ -36,6 +36,8 @@ pub struct CreateDeliveryStreamInput {
     /// <p>The destination in the Serverless offering for Amazon OpenSearch Service. You can specify only one destination.</p>
     pub amazon_open_search_serverless_destination_configuration:
         ::std::option::Option<crate::types::AmazonOpenSearchServerlessDestinationConfiguration>,
+    /// <p>The configuration for the Amazon MSK cluster to be used as the source for a delivery stream.</p>
+    pub msk_source_configuration: ::std::option::Option<crate::types::MskSourceConfiguration>,
 }
 impl CreateDeliveryStreamInput {
     /// <p>The name of the delivery stream. This name must be unique per Amazon Web Services account in the same Amazon Web Services Region. If the delivery streams are in different accounts or different Regions, you can have multiple delivery streams with the same name.</p>
@@ -100,6 +102,10 @@ impl CreateDeliveryStreamInput {
     ) -> ::std::option::Option<&crate::types::AmazonOpenSearchServerlessDestinationConfiguration> {
         self.amazon_open_search_serverless_destination_configuration.as_ref()
     }
+    /// <p>The configuration for the Amazon MSK cluster to be used as the source for a delivery stream.</p>
+    pub fn msk_source_configuration(&self) -> ::std::option::Option<&crate::types::MskSourceConfiguration> {
+        self.msk_source_configuration.as_ref()
+    }
 }
 impl CreateDeliveryStreamInput {
     /// Creates a new builder-style object to manufacture [`CreateDeliveryStreamInput`](crate::operation::create_delivery_stream::CreateDeliveryStreamInput).
@@ -127,6 +133,7 @@ pub struct CreateDeliveryStreamInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) amazon_open_search_serverless_destination_configuration:
         ::std::option::Option<crate::types::AmazonOpenSearchServerlessDestinationConfiguration>,
+    pub(crate) msk_source_configuration: ::std::option::Option<crate::types::MskSourceConfiguration>,
 }
 impl CreateDeliveryStreamInputBuilder {
     /// <p>The name of the delivery stream. This name must be unique per Amazon Web Services account in the same Amazon Web Services Region. If the delivery streams are in different accounts or different Regions, you can have multiple delivery streams with the same name.</p>
@@ -362,6 +369,20 @@ impl CreateDeliveryStreamInputBuilder {
     ) -> &::std::option::Option<crate::types::AmazonOpenSearchServerlessDestinationConfiguration> {
         &self.amazon_open_search_serverless_destination_configuration
     }
+    /// <p>The configuration for the Amazon MSK cluster to be used as the source for a delivery stream.</p>
+    pub fn msk_source_configuration(mut self, input: crate::types::MskSourceConfiguration) -> Self {
+        self.msk_source_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration for the Amazon MSK cluster to be used as the source for a delivery stream.</p>
+    pub fn set_msk_source_configuration(mut self, input: ::std::option::Option<crate::types::MskSourceConfiguration>) -> Self {
+        self.msk_source_configuration = input;
+        self
+    }
+    /// <p>The configuration for the Amazon MSK cluster to be used as the source for a delivery stream.</p>
+    pub fn get_msk_source_configuration(&self) -> &::std::option::Option<crate::types::MskSourceConfiguration> {
+        &self.msk_source_configuration
+    }
     /// Consumes the builder and constructs a [`CreateDeliveryStreamInput`](crate::operation::create_delivery_stream::CreateDeliveryStreamInput).
     pub fn build(
         self,
@@ -381,6 +402,7 @@ impl CreateDeliveryStreamInputBuilder {
             http_endpoint_destination_configuration: self.http_endpoint_destination_configuration,
             tags: self.tags,
             amazon_open_search_serverless_destination_configuration: self.amazon_open_search_serverless_destination_configuration,
+            msk_source_configuration: self.msk_source_configuration,
         })
     }
 }

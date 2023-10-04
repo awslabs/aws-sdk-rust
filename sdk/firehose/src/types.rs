@@ -161,6 +161,12 @@ pub use crate::types::_extended_s3_destination_description::ExtendedS3Destinatio
 
 pub use crate::types::_source_description::SourceDescription;
 
+pub use crate::types::_msk_source_description::MskSourceDescription;
+
+pub use crate::types::_authentication_configuration::AuthenticationConfiguration;
+
+pub use crate::types::_connectivity::Connectivity;
+
 pub use crate::types::_kinesis_stream_source_description::KinesisStreamSourceDescription;
 
 pub use crate::types::_delivery_stream_encryption_configuration::DeliveryStreamEncryptionConfiguration;
@@ -172,6 +178,8 @@ pub use crate::types::_delivery_stream_failure_type::DeliveryStreamFailureType;
 pub use crate::types::_delivery_stream_encryption_status::DeliveryStreamEncryptionStatus;
 
 pub use crate::types::_delivery_stream_status::DeliveryStreamStatus;
+
+pub use crate::types::_msk_source_configuration::MskSourceConfiguration;
 
 pub use crate::types::_amazon_open_search_serverless_destination_configuration::AmazonOpenSearchServerlessDestinationConfiguration;
 
@@ -219,11 +227,15 @@ mod _amazonopensearchservice_retry_options;
 
 mod _amazonopensearchservice_s3_backup_mode;
 
+mod _authentication_configuration;
+
 mod _buffering_hints;
 
 mod _cloud_watch_logging_options;
 
 mod _compression_format;
+
+mod _connectivity;
 
 mod _content_encoding;
 
@@ -312,6 +324,10 @@ mod _kinesis_stream_source_configuration;
 mod _kinesis_stream_source_description;
 
 mod _kms_encryption_config;
+
+mod _msk_source_configuration;
+
+mod _msk_source_description;
 
 mod _no_encryption_config;
 

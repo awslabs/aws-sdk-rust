@@ -47,6 +47,8 @@ pub use crate::types::_text_transformation::TextTransformationBuilder;
 
 pub use crate::types::_field_to_match::FieldToMatchBuilder;
 
+pub use crate::types::_ja3_fingerprint::Ja3FingerprintBuilder;
+
 pub use crate::types::_header_order::HeaderOrderBuilder;
 
 pub use crate::types::_cookies::CookiesBuilder;

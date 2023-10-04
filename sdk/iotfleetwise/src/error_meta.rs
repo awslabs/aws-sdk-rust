@@ -605,6 +605,44 @@ impl From<crate::operation::get_decoder_manifest::GetDecoderManifestError> for E
         }
     }
 }
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_encryption_configuration::GetEncryptionConfigurationError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::get_encryption_configuration::GetEncryptionConfigurationError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_encryption_configuration::GetEncryptionConfigurationError> for Error {
+    fn from(err: crate::operation::get_encryption_configuration::GetEncryptionConfigurationError) -> Self {
+        match err {
+            crate::operation::get_encryption_configuration::GetEncryptionConfigurationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_encryption_configuration::GetEncryptionConfigurationError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_encryption_configuration::GetEncryptionConfigurationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_encryption_configuration::GetEncryptionConfigurationError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::get_encryption_configuration::GetEncryptionConfigurationError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::get_encryption_configuration::GetEncryptionConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_fleet::GetFleetError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1305,6 +1343,47 @@ impl From<crate::operation::list_vehicles_in_fleet::ListVehiclesInFleetError> fo
             crate::operation::list_vehicles_in_fleet::ListVehiclesInFleetError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_vehicles_in_fleet::ListVehiclesInFleetError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_vehicles_in_fleet::ListVehiclesInFleetError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::put_encryption_configuration::PutEncryptionConfigurationError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::put_encryption_configuration::PutEncryptionConfigurationError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::put_encryption_configuration::PutEncryptionConfigurationError> for Error {
+    fn from(err: crate::operation::put_encryption_configuration::PutEncryptionConfigurationError) -> Self {
+        match err {
+            crate::operation::put_encryption_configuration::PutEncryptionConfigurationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::put_encryption_configuration::PutEncryptionConfigurationError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::put_encryption_configuration::PutEncryptionConfigurationError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::put_encryption_configuration::PutEncryptionConfigurationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::put_encryption_configuration::PutEncryptionConfigurationError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::put_encryption_configuration::PutEncryptionConfigurationError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::put_encryption_configuration::PutEncryptionConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

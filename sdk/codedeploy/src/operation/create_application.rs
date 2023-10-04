@@ -259,7 +259,7 @@ pub type CreateApplicationErrorKind = CreateApplicationError;
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum CreateApplicationError {
-    /// <p>An application with the specified name with the IAM user or Amazon Web Services account already exists.</p>
+    /// <p>An application with the specified name with the user or Amazon Web Services account already exists.</p>
     ApplicationAlreadyExistsException(crate::types::error::ApplicationAlreadyExistsException),
     /// <p>More applications were attempted to be created than are allowed.</p>
     ApplicationLimitExceededException(crate::types::error::ApplicationLimitExceededException),

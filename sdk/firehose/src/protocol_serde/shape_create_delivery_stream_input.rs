@@ -87,5 +87,11 @@ pub fn ser_create_delivery_stream_input(
         crate::protocol_serde::shape_amazon_open_search_serverless_destination_configuration::ser_amazon_open_search_serverless_destination_configuration(&mut object_26, var_25)?;
         object_26.finish();
     }
+    if let Some(var_27) = &input.msk_source_configuration {
+        #[allow(unused_mut)]
+        let mut object_28 = object.key("MSKSourceConfiguration").start_object();
+        crate::protocol_serde::shape_msk_source_configuration::ser_msk_source_configuration(&mut object_28, var_27)?;
+        object_28.finish();
+    }
     Ok(())
 }

@@ -9,7 +9,9 @@ pub struct SftpConnectorConfig {
     /// <p>The public portion of the host key, or keys, that are used to authenticate the user to the external server to which you are connecting. You can use the <code>ssh-keyscan</code> command against the SFTP server to retrieve the necessary key.</p>
     /// <p>The three standard SSH public key format elements are <code>
     /// <key type></key></code>, <code></code>, and an optional <code>
-    /// <comment></comment></code>, with spaces between each element.</p>
+    /// <comment></comment></code>, with spaces between each element. Specify only the <code>
+    /// <key type></key></code> and <code></code>: do not enter the <code>
+    /// <comment></comment></code> portion of the key.</p>
     /// <p>For the trusted host key, Transfer Family accepts RSA and ECDSA keys.</p>
     /// <ul>
     /// <li> <p>For RSA keys, the key type is <code>ssh-rsa</code>.</p> </li>
@@ -25,7 +27,9 @@ impl SftpConnectorConfig {
     /// <p>The public portion of the host key, or keys, that are used to authenticate the user to the external server to which you are connecting. You can use the <code>ssh-keyscan</code> command against the SFTP server to retrieve the necessary key.</p>
     /// <p>The three standard SSH public key format elements are <code>
     /// <key type></key></code>, <code></code>, and an optional <code>
-    /// <comment></comment></code>, with spaces between each element.</p>
+    /// <comment></comment></code>, with spaces between each element. Specify only the <code>
+    /// <key type></key></code> and <code></code>: do not enter the <code>
+    /// <comment></comment></code> portion of the key.</p>
     /// <p>For the trusted host key, Transfer Family accepts RSA and ECDSA keys.</p>
     /// <ul>
     /// <li> <p>For RSA keys, the key type is <code>ssh-rsa</code>.</p> </li>
@@ -71,7 +75,9 @@ impl SftpConnectorConfigBuilder {
     /// <p>The public portion of the host key, or keys, that are used to authenticate the user to the external server to which you are connecting. You can use the <code>ssh-keyscan</code> command against the SFTP server to retrieve the necessary key.</p>
     /// <p>The three standard SSH public key format elements are <code>
     /// <key type></key></code>, <code></code>, and an optional <code>
-    /// <comment></comment></code>, with spaces between each element.</p>
+    /// <comment></comment></code>, with spaces between each element. Specify only the <code>
+    /// <key type></key></code> and <code></code>: do not enter the <code>
+    /// <comment></comment></code> portion of the key.</p>
     /// <p>For the trusted host key, Transfer Family accepts RSA and ECDSA keys.</p>
     /// <ul>
     /// <li> <p>For RSA keys, the key type is <code>ssh-rsa</code>.</p> </li>
@@ -86,7 +92,9 @@ impl SftpConnectorConfigBuilder {
     /// <p>The public portion of the host key, or keys, that are used to authenticate the user to the external server to which you are connecting. You can use the <code>ssh-keyscan</code> command against the SFTP server to retrieve the necessary key.</p>
     /// <p>The three standard SSH public key format elements are <code>
     /// <key type></key></code>, <code></code>, and an optional <code>
-    /// <comment></comment></code>, with spaces between each element.</p>
+    /// <comment></comment></code>, with spaces between each element. Specify only the <code>
+    /// <key type></key></code> and <code></code>: do not enter the <code>
+    /// <comment></comment></code> portion of the key.</p>
     /// <p>For the trusted host key, Transfer Family accepts RSA and ECDSA keys.</p>
     /// <ul>
     /// <li> <p>For RSA keys, the key type is <code>ssh-rsa</code>.</p> </li>
@@ -99,7 +107,9 @@ impl SftpConnectorConfigBuilder {
     /// <p>The public portion of the host key, or keys, that are used to authenticate the user to the external server to which you are connecting. You can use the <code>ssh-keyscan</code> command against the SFTP server to retrieve the necessary key.</p>
     /// <p>The three standard SSH public key format elements are <code>
     /// <key type></key></code>, <code></code>, and an optional <code>
-    /// <comment></comment></code>, with spaces between each element.</p>
+    /// <comment></comment></code>, with spaces between each element. Specify only the <code>
+    /// <key type></key></code> and <code></code>: do not enter the <code>
+    /// <comment></comment></code> portion of the key.</p>
     /// <p>For the trusted host key, Transfer Family accepts RSA and ECDSA keys.</p>
     /// <ul>
     /// <li> <p>For RSA keys, the key type is <code>ssh-rsa</code>.</p> </li>

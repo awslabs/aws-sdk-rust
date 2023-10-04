@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListUsersOutput {
-    /// <p>A list of all the user accounts.</p>
+    /// <p>A list of all the users.</p>
     pub users: ::std::option::Option<::std::vec::Vec<crate::types::User>>,
     /// <p>A token that indicates where a results page should begin.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListUsersOutput {
-    /// <p>A list of all the user accounts.</p>
+    /// <p>A list of all the users.</p>
     pub fn users(&self) -> ::std::option::Option<&[crate::types::User]> {
         self.users.as_deref()
     }
@@ -44,19 +44,19 @@ impl ListUsersOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_users`](Self::set_users).
     ///
-    /// <p>A list of all the user accounts.</p>
+    /// <p>A list of all the users.</p>
     pub fn users(mut self, input: crate::types::User) -> Self {
         let mut v = self.users.unwrap_or_default();
         v.push(input);
         self.users = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of all the user accounts.</p>
+    /// <p>A list of all the users.</p>
     pub fn set_users(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::User>>) -> Self {
         self.users = input;
         self
     }
-    /// <p>A list of all the user accounts.</p>
+    /// <p>A list of all the users.</p>
     pub fn get_users(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::User>> {
         &self.users
     }

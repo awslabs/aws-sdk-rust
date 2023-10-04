@@ -3,13 +3,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisableUserInput {
-    /// <p>The unique identifier for the user account that you want to disable.</p>
+    /// <p>The unique identifier for the user that you want to deactivate.</p>
     pub user_id: ::std::option::Option<::std::string::String>,
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl DisableUserInput {
-    /// <p>The unique identifier for the user account that you want to disable.</p>
+    /// <p>The unique identifier for the user that you want to deactivate.</p>
     pub fn user_id(&self) -> ::std::option::Option<&str> {
         self.user_id.as_deref()
     }
@@ -33,17 +33,17 @@ pub struct DisableUserInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl DisableUserInputBuilder {
-    /// <p>The unique identifier for the user account that you want to disable.</p>
+    /// <p>The unique identifier for the user that you want to deactivate.</p>
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier for the user account that you want to disable.</p>
+    /// <p>The unique identifier for the user that you want to deactivate.</p>
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_id = input;
         self
     }
-    /// <p>The unique identifier for the user account that you want to disable.</p>
+    /// <p>The unique identifier for the user that you want to deactivate.</p>
     pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.user_id
     }

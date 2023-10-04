@@ -7,6 +7,7 @@ pub struct LfTag {
     /// <p>The key-name for the LF-tag.</p>
     pub tag_key: ::std::option::Option<::std::string::String>,
     /// <p>A list of possible values an attribute can take.</p>
+    /// <p>The maximum number of values that can be defined for a LF-Tag is 1000. A single API call supports 50 values. You can use multiple API calls to add more values.</p>
     pub tag_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl LfTag {
@@ -15,6 +16,7 @@ impl LfTag {
         self.tag_key.as_deref()
     }
     /// <p>A list of possible values an attribute can take.</p>
+    /// <p>The maximum number of values that can be defined for a LF-Tag is 1000. A single API call supports 50 values. You can use multiple API calls to add more values.</p>
     pub fn tag_values(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.tag_values.as_deref()
     }
@@ -53,6 +55,7 @@ impl LfTagBuilder {
     /// To override the contents of this collection use [`set_tag_values`](Self::set_tag_values).
     ///
     /// <p>A list of possible values an attribute can take.</p>
+    /// <p>The maximum number of values that can be defined for a LF-Tag is 1000. A single API call supports 50 values. You can use multiple API calls to add more values.</p>
     pub fn tag_values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.tag_values.unwrap_or_default();
         v.push(input.into());
@@ -60,11 +63,13 @@ impl LfTagBuilder {
         self
     }
     /// <p>A list of possible values an attribute can take.</p>
+    /// <p>The maximum number of values that can be defined for a LF-Tag is 1000. A single API call supports 50 values. You can use multiple API calls to add more values.</p>
     pub fn set_tag_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.tag_values = input;
         self
     }
     /// <p>A list of possible values an attribute can take.</p>
+    /// <p>The maximum number of values that can be defined for a LF-Tag is 1000. A single API call supports 50 values. You can use multiple API calls to add more values.</p>
     pub fn get_tag_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.tag_values
     }

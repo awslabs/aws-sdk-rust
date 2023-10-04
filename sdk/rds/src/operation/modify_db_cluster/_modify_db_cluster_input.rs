@@ -116,7 +116,7 @@ pub struct ModifyDbClusterInput {
     /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub engine_version: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether major version upgrades are allowed.</p>
-    /// <p>Valid for Cluster Type: Aurora DB clusters only</p>
+    /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li> <p>You must allow major version upgrades when specifying a value for the <code>EngineVersion</code> parameter that is a different major version than the DB cluster's current version.</p> </li>
@@ -417,7 +417,7 @@ impl ModifyDbClusterInput {
         self.engine_version.as_deref()
     }
     /// <p>Specifies whether major version upgrades are allowed.</p>
-    /// <p>Valid for Cluster Type: Aurora DB clusters only</p>
+    /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li> <p>You must allow major version upgrades when specifying a value for the <code>EngineVersion</code> parameter that is a different major version than the DB cluster's current version.</p> </li>
@@ -1147,7 +1147,7 @@ impl ModifyDbClusterInputBuilder {
         &self.engine_version
     }
     /// <p>Specifies whether major version upgrades are allowed.</p>
-    /// <p>Valid for Cluster Type: Aurora DB clusters only</p>
+    /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li> <p>You must allow major version upgrades when specifying a value for the <code>EngineVersion</code> parameter that is a different major version than the DB cluster's current version.</p> </li>
@@ -1157,7 +1157,7 @@ impl ModifyDbClusterInputBuilder {
         self
     }
     /// <p>Specifies whether major version upgrades are allowed.</p>
-    /// <p>Valid for Cluster Type: Aurora DB clusters only</p>
+    /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li> <p>You must allow major version upgrades when specifying a value for the <code>EngineVersion</code> parameter that is a different major version than the DB cluster's current version.</p> </li>
@@ -1167,7 +1167,7 @@ impl ModifyDbClusterInputBuilder {
         self
     }
     /// <p>Specifies whether major version upgrades are allowed.</p>
-    /// <p>Valid for Cluster Type: Aurora DB clusters only</p>
+    /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li> <p>You must allow major version upgrades when specifying a value for the <code>EngineVersion</code> parameter that is a different major version than the DB cluster's current version.</p> </li>

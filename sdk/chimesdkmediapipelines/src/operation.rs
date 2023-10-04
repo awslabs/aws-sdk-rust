@@ -16,6 +16,12 @@ pub mod create_media_insights_pipeline_configuration;
 /// Types for the `CreateMediaLiveConnectorPipeline` operation.
 pub mod create_media_live_connector_pipeline;
 
+/// Types for the `CreateMediaPipelineKinesisVideoStreamPool` operation.
+pub mod create_media_pipeline_kinesis_video_stream_pool;
+
+/// Types for the `CreateMediaStreamPipeline` operation.
+pub mod create_media_stream_pipeline;
+
 /// Types for the `DeleteMediaCapturePipeline` operation.
 pub mod delete_media_capture_pipeline;
 
@@ -25,6 +31,9 @@ pub mod delete_media_insights_pipeline_configuration;
 /// Types for the `DeleteMediaPipeline` operation.
 pub mod delete_media_pipeline;
 
+/// Types for the `DeleteMediaPipelineKinesisVideoStreamPool` operation.
+pub mod delete_media_pipeline_kinesis_video_stream_pool;
+
 /// Types for the `GetMediaCapturePipeline` operation.
 pub mod get_media_capture_pipeline;
 
@@ -33,6 +42,9 @@ pub mod get_media_insights_pipeline_configuration;
 
 /// Types for the `GetMediaPipeline` operation.
 pub mod get_media_pipeline;
+
+/// Types for the `GetMediaPipelineKinesisVideoStreamPool` operation.
+pub mod get_media_pipeline_kinesis_video_stream_pool;
 
 /// Types for the `GetSpeakerSearchTask` operation.
 pub mod get_speaker_search_task;
@@ -45,6 +57,9 @@ pub mod list_media_capture_pipelines;
 
 /// Types for the `ListMediaInsightsPipelineConfigurations` operation.
 pub mod list_media_insights_pipeline_configurations;
+
+/// Types for the `ListMediaPipelineKinesisVideoStreamPools` operation.
+pub mod list_media_pipeline_kinesis_video_stream_pools;
 
 /// Types for the `ListMediaPipelines` operation.
 pub mod list_media_pipelines;
@@ -75,3 +90,6 @@ pub mod update_media_insights_pipeline_configuration;
 
 /// Types for the `UpdateMediaInsightsPipelineStatus` operation.
 pub mod update_media_insights_pipeline_status;
+
+/// Types for the `UpdateMediaPipelineKinesisVideoStreamPool` operation.
+pub mod update_media_pipeline_kinesis_video_stream_pool;

@@ -51,8 +51,8 @@ pub enum ConnectionStatus {
 impl ::std::convert::From<&str> for ConnectionStatus {
     fn from(s: &str) -> Self {
         match s {
-            "Connected" => ConnectionStatus::Connected,
-            "NotConnected" => ConnectionStatus::NotConnected,
+            "connected" => ConnectionStatus::Connected,
+            "notconnected" => ConnectionStatus::NotConnected,
             other => ConnectionStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -68,14 +68,14 @@ impl ConnectionStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
-            ConnectionStatus::Connected => "Connected",
-            ConnectionStatus::NotConnected => "NotConnected",
+            ConnectionStatus::Connected => "connected",
+            ConnectionStatus::NotConnected => "notconnected",
             ConnectionStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Connected", "NotConnected"]
+        &["connected", "notconnected"]
     }
 }
 impl ::std::convert::AsRef<str> for ConnectionStatus {

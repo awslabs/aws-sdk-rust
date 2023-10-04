@@ -2,7 +2,7 @@
 
 /// Response for GetProgrammaticAccessCredentials operation
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct GetProgrammaticAccessCredentialsOutput {
     /// <p>Returns the programmatic credentials.</p>
     pub credentials: ::std::option::Option<crate::types::Credentials>,
@@ -20,6 +20,15 @@ impl GetProgrammaticAccessCredentialsOutput {
         self.duration_in_minutes
     }
 }
+impl ::std::fmt::Debug for GetProgrammaticAccessCredentialsOutput {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("GetProgrammaticAccessCredentialsOutput");
+        formatter.field("credentials", &"*** Sensitive Data Redacted ***");
+        formatter.field("duration_in_minutes", &self.duration_in_minutes);
+        formatter.field("_request_id", &self._request_id);
+        formatter.finish()
+    }
+}
 impl ::aws_http::request_id::RequestId for GetProgrammaticAccessCredentialsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
@@ -34,7 +43,7 @@ impl GetProgrammaticAccessCredentialsOutput {
 
 /// A builder for [`GetProgrammaticAccessCredentialsOutput`](crate::operation::get_programmatic_access_credentials::GetProgrammaticAccessCredentialsOutput).
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct GetProgrammaticAccessCredentialsOutputBuilder {
     pub(crate) credentials: ::std::option::Option<crate::types::Credentials>,
     pub(crate) duration_in_minutes: ::std::option::Option<i64>,
@@ -85,5 +94,14 @@ impl GetProgrammaticAccessCredentialsOutputBuilder {
             duration_in_minutes: self.duration_in_minutes.unwrap_or_default(),
             _request_id: self._request_id,
         }
+    }
+}
+impl ::std::fmt::Debug for GetProgrammaticAccessCredentialsOutputBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("GetProgrammaticAccessCredentialsOutputBuilder");
+        formatter.field("credentials", &"*** Sensitive Data Redacted ***");
+        formatter.field("duration_in_minutes", &self.duration_in_minutes);
+        formatter.field("_request_id", &self._request_id);
+        formatter.finish()
     }
 }

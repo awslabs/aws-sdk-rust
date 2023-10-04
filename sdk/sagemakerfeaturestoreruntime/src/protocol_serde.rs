@@ -74,3 +74,5 @@ pub(crate) mod shape_batch_get_record_result_detail;
 pub(crate) mod shape_feature_names;
 
 pub(crate) mod shape_record_identifiers;
+
+pub(crate) mod shape_value_as_string_list;

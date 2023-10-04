@@ -10,7 +10,7 @@ pub struct DescribeSubscribersForNotificationInput {
     pub budget_name: ::std::option::Option<::std::string::String>,
     /// <p>The notification whose subscribers you want to list.</p>
     pub notification: ::std::option::Option<crate::types::Notification>,
-    /// <p>An optional integer that represents how many entries a paginated response contains. The maximum is 100.</p>
+    /// <p>An optional integer that represents how many entries a paginated response contains.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>The pagination token that you include in your request to indicate the next set of results that you want to retrieve.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -28,7 +28,7 @@ impl DescribeSubscribersForNotificationInput {
     pub fn notification(&self) -> ::std::option::Option<&crate::types::Notification> {
         self.notification.as_ref()
     }
-    /// <p>An optional integer that represents how many entries a paginated response contains. The maximum is 100.</p>
+    /// <p>An optional integer that represents how many entries a paginated response contains.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
@@ -97,17 +97,17 @@ impl DescribeSubscribersForNotificationInputBuilder {
     pub fn get_notification(&self) -> &::std::option::Option<crate::types::Notification> {
         &self.notification
     }
-    /// <p>An optional integer that represents how many entries a paginated response contains. The maximum is 100.</p>
+    /// <p>An optional integer that represents how many entries a paginated response contains.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self
     }
-    /// <p>An optional integer that represents how many entries a paginated response contains. The maximum is 100.</p>
+    /// <p>An optional integer that represents how many entries a paginated response contains.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }
-    /// <p>An optional integer that represents how many entries a paginated response contains. The maximum is 100.</p>
+    /// <p>An optional integer that represents how many entries a paginated response contains.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }

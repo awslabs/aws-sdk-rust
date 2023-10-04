@@ -22,7 +22,10 @@ impl RefreshTokenInputBuilder {
 }
 /// Fluent builder constructing a request to `RefreshToken`.
 ///
-/// <p>Refreshes a previously issued access token that might have expired.</p>
+/// <note>
+/// <p>This is for internal use.</p>
+/// </note>
+/// <p>Amplify uses this action to refresh a previously issued access token that might have expired.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RefreshTokenFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

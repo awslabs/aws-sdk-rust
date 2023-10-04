@@ -18,6 +18,9 @@ pub fn ser_online_store_config(
         crate::protocol_serde::shape_ttl_duration::ser_ttl_duration(&mut object_4, var_3)?;
         object_4.finish();
     }
+    if let Some(var_5) = &input.storage_type {
+        object.key("StorageType").string(var_5.as_str());
+    }
     Ok(())
 }
 
@@ -46,6 +49,13 @@ where
                         }
                         "TtlDuration" => {
                             builder = builder.set_ttl_duration(crate::protocol_serde::shape_ttl_duration::de_ttl_duration(tokens)?);
+                        }
+                        "StorageType" => {
+                            builder = builder.set_storage_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::StorageType::from(u.as_ref())))
+                                    .transpose()?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

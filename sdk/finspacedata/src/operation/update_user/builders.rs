@@ -22,7 +22,7 @@ impl UpdateUserInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateUser`.
 ///
-/// <p>Modifies the details of the specified user account. You cannot update the <code>userId</code> for a user.</p>
+/// <p>Modifies the details of the specified user. You cannot update the <code>userId</code> for a user.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateUserFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -110,17 +110,17 @@ impl UpdateUserFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The unique identifier for the user account to update.</p>
+    /// <p>The unique identifier for the user that you want to update.</p>
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user_id(input.into());
         self
     }
-    /// <p>The unique identifier for the user account to update.</p>
+    /// <p>The unique identifier for the user that you want to update.</p>
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_user_id(input);
         self
     }
-    /// <p>The unique identifier for the user account to update.</p>
+    /// <p>The unique identifier for the user that you want to update.</p>
     pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_user_id()
     }

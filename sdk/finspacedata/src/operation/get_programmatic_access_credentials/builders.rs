@@ -22,7 +22,7 @@ impl GetProgrammaticAccessCredentialsInputBuilder {
 }
 /// Fluent builder constructing a request to `GetProgrammaticAccessCredentials`.
 ///
-/// <p>Request programmatic credentials to use with FinSpace SDK.</p>
+/// <p>Request programmatic credentials to use with FinSpace SDK. For more information, see <a href="https://docs.aws.amazon.com/finspace/latest/data-api/fs-using-the-finspace-api.html#accessing-credentials">Step 2. Access credentials programmatically using IAM access key id and secret access key</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetProgrammaticAccessCredentialsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

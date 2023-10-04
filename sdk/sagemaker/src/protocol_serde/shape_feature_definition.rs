@@ -9,6 +9,15 @@ pub fn ser_feature_definition(
     if let Some(var_2) = &input.feature_type {
         object.key("FeatureType").string(var_2.as_str());
     }
+    if let Some(var_3) = &input.collection_type {
+        object.key("CollectionType").string(var_3.as_str());
+    }
+    if let Some(var_4) = &input.collection_config {
+        #[allow(unused_mut)]
+        let mut object_5 = object.key("CollectionConfig").start_object();
+        crate::protocol_serde::shape_collection_config::ser_collection_config(&mut object_5, var_4)?;
+        object_5.finish();
+    }
     Ok(())
 }
 
@@ -40,6 +49,16 @@ where
                                     .map(|s| s.to_unescaped().map(|u| crate::types::FeatureType::from(u.as_ref())))
                                     .transpose()?,
                             );
+                        }
+                        "CollectionType" => {
+                            builder = builder.set_collection_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CollectionType::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "CollectionConfig" => {
+                            builder = builder.set_collection_config(crate::protocol_serde::shape_collection_config::de_collection_config(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

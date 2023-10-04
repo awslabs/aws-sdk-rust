@@ -1939,6 +1939,8 @@ pub(crate) mod shape_code_repository_summary;
 
 pub(crate) mod shape_cognito_member_definition;
 
+pub(crate) mod shape_collection_config;
+
 pub(crate) mod shape_collection_configuration;
 
 pub(crate) mod shape_collection_configurations;
@@ -2588,6 +2590,8 @@ pub(crate) mod shape_trial;
 pub(crate) mod shape_trial_component;
 
 pub(crate) mod shape_usd;
+
+pub(crate) mod shape_vector_config;
 
 pub(crate) mod shape_workforce_security_group_ids;
 

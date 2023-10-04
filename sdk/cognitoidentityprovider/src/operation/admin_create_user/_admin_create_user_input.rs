@@ -6,7 +6,12 @@
 pub struct AdminCreateUserInput {
     /// <p>The user pool ID for the user pool where the user will be created.</p>
     pub user_pool_id: ::std::option::Option<::std::string::String>,
-    /// <p>The username for the user. Must be unique within the user pool. Must be a UTF-8 string between 1 and 128 characters. After the user is created, the username can't be changed.</p>
+    /// <p>The value that you want to set as the username sign-in attribute. The following conditions apply to the username parameter.</p>
+    /// <ul>
+    /// <li> <p>The username can't be a duplicate of another username in the same user pool.</p> </li>
+    /// <li> <p>You can't change the value of a username after you create it.</p> </li>
+    /// <li> <p>You can only provide a value if usernames are a valid sign-in attribute for your user pool. If your user pool only supports phone numbers or email addresses as sign-in attributes, Amazon Cognito automatically generates a username value. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-attributes.html#user-pool-settings-aliases">Customizing sign-in attributes</a>.</p> </li>
+    /// </ul>
     pub username: ::std::option::Option<::std::string::String>,
     /// <p>An array of name-value pairs that contain user attributes and attribute values to be set for the user to be created. You can create a user without specifying any attributes other than <code>Username</code>. However, any attributes that you specify as required (when creating a user pool or in the <b>Attributes</b> tab of the console) either you should supply (in your call to <code>AdminCreateUser</code>) or the user should supply (when they sign up in response to your welcome message).</p>
     /// <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.</p>
@@ -51,7 +56,12 @@ impl AdminCreateUserInput {
     pub fn user_pool_id(&self) -> ::std::option::Option<&str> {
         self.user_pool_id.as_deref()
     }
-    /// <p>The username for the user. Must be unique within the user pool. Must be a UTF-8 string between 1 and 128 characters. After the user is created, the username can't be changed.</p>
+    /// <p>The value that you want to set as the username sign-in attribute. The following conditions apply to the username parameter.</p>
+    /// <ul>
+    /// <li> <p>The username can't be a duplicate of another username in the same user pool.</p> </li>
+    /// <li> <p>You can't change the value of a username after you create it.</p> </li>
+    /// <li> <p>You can only provide a value if usernames are a valid sign-in attribute for your user pool. If your user pool only supports phone numbers or email addresses as sign-in attributes, Amazon Cognito automatically generates a username value. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-attributes.html#user-pool-settings-aliases">Customizing sign-in attributes</a>.</p> </li>
+    /// </ul>
     pub fn username(&self) -> ::std::option::Option<&str> {
         self.username.as_deref()
     }
@@ -158,17 +168,32 @@ impl AdminCreateUserInputBuilder {
     pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.user_pool_id
     }
-    /// <p>The username for the user. Must be unique within the user pool. Must be a UTF-8 string between 1 and 128 characters. After the user is created, the username can't be changed.</p>
+    /// <p>The value that you want to set as the username sign-in attribute. The following conditions apply to the username parameter.</p>
+    /// <ul>
+    /// <li> <p>The username can't be a duplicate of another username in the same user pool.</p> </li>
+    /// <li> <p>You can't change the value of a username after you create it.</p> </li>
+    /// <li> <p>You can only provide a value if usernames are a valid sign-in attribute for your user pool. If your user pool only supports phone numbers or email addresses as sign-in attributes, Amazon Cognito automatically generates a username value. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-attributes.html#user-pool-settings-aliases">Customizing sign-in attributes</a>.</p> </li>
+    /// </ul>
     pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.username = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The username for the user. Must be unique within the user pool. Must be a UTF-8 string between 1 and 128 characters. After the user is created, the username can't be changed.</p>
+    /// <p>The value that you want to set as the username sign-in attribute. The following conditions apply to the username parameter.</p>
+    /// <ul>
+    /// <li> <p>The username can't be a duplicate of another username in the same user pool.</p> </li>
+    /// <li> <p>You can't change the value of a username after you create it.</p> </li>
+    /// <li> <p>You can only provide a value if usernames are a valid sign-in attribute for your user pool. If your user pool only supports phone numbers or email addresses as sign-in attributes, Amazon Cognito automatically generates a username value. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-attributes.html#user-pool-settings-aliases">Customizing sign-in attributes</a>.</p> </li>
+    /// </ul>
     pub fn set_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.username = input;
         self
     }
-    /// <p>The username for the user. Must be unique within the user pool. Must be a UTF-8 string between 1 and 128 characters. After the user is created, the username can't be changed.</p>
+    /// <p>The value that you want to set as the username sign-in attribute. The following conditions apply to the username parameter.</p>
+    /// <ul>
+    /// <li> <p>The username can't be a duplicate of another username in the same user pool.</p> </li>
+    /// <li> <p>You can't change the value of a username after you create it.</p> </li>
+    /// <li> <p>You can only provide a value if usernames are a valid sign-in attribute for your user pool. If your user pool only supports phone numbers or email addresses as sign-in attributes, Amazon Cognito automatically generates a username value. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-attributes.html#user-pool-settings-aliases">Customizing sign-in attributes</a>.</p> </li>
+    /// </ul>
     pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
         &self.username
     }

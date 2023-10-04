@@ -5,7 +5,7 @@
 pub struct ResetUserPasswordOutput {
     /// <p>The unique identifier of the user that a new password is generated for.</p>
     pub user_id: ::std::option::Option<::std::string::String>,
-    /// <p>A randomly generated temporary password for the requested user account. This password expires in 7 days.</p>
+    /// <p>A randomly generated temporary password for the requested user. This password expires in 7 days.</p>
     pub temporary_password: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -14,7 +14,7 @@ impl ResetUserPasswordOutput {
     pub fn user_id(&self) -> ::std::option::Option<&str> {
         self.user_id.as_deref()
     }
-    /// <p>A randomly generated temporary password for the requested user account. This password expires in 7 days.</p>
+    /// <p>A randomly generated temporary password for the requested user. This password expires in 7 days.</p>
     pub fn temporary_password(&self) -> ::std::option::Option<&str> {
         self.temporary_password.as_deref()
     }
@@ -63,17 +63,17 @@ impl ResetUserPasswordOutputBuilder {
     pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.user_id
     }
-    /// <p>A randomly generated temporary password for the requested user account. This password expires in 7 days.</p>
+    /// <p>A randomly generated temporary password for the requested user. This password expires in 7 days.</p>
     pub fn temporary_password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.temporary_password = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A randomly generated temporary password for the requested user account. This password expires in 7 days.</p>
+    /// <p>A randomly generated temporary password for the requested user. This password expires in 7 days.</p>
     pub fn set_temporary_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.temporary_password = input;
         self
     }
-    /// <p>A randomly generated temporary password for the requested user account. This password expires in 7 days.</p>
+    /// <p>A randomly generated temporary password for the requested user. This password expires in 7 days.</p>
     pub fn get_temporary_password(&self) -> &::std::option::Option<::std::string::String> {
         &self.temporary_password
     }

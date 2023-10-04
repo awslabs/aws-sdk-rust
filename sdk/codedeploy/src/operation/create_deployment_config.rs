@@ -261,7 +261,7 @@ pub type CreateDeploymentConfigErrorKind = CreateDeploymentConfigError;
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum CreateDeploymentConfigError {
-    /// <p>A deployment configuration with the specified name with the IAM user or Amazon Web Services account already exists.</p>
+    /// <p>A deployment configuration with the specified name with the user or Amazon Web Services account already exists.</p>
     DeploymentConfigAlreadyExistsException(crate::types::error::DeploymentConfigAlreadyExistsException),
     /// <p>The deployment configurations limit was exceeded.</p>
     DeploymentConfigLimitExceededException(crate::types::error::DeploymentConfigLimitExceededException),

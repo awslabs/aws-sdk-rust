@@ -8,6 +8,15 @@ pub struct FeatureDefinition {
     pub feature_name: ::std::option::Option<::std::string::String>,
     /// <p>The value type of a feature. Valid values are Integral, Fractional, or String.</p>
     pub feature_type: ::std::option::Option<crate::types::FeatureType>,
+    /// <p>A grouping of elements where each element within the collection must have the same feature type (<code>String</code>, <code>Integral</code>, or <code>Fractional</code>).</p>
+    /// <ul>
+    /// <li> <p> <code>List</code>: An ordered collection of elements.</p> </li>
+    /// <li> <p> <code>Set</code>: An unordered collection of unique elements.</p> </li>
+    /// <li> <p> <code>Vector</code>: A specialized list that represents a fixed-size array of elements. The vector dimension is determined by you. Must have elements with fractional feature types. </p> </li>
+    /// </ul>
+    pub collection_type: ::std::option::Option<crate::types::CollectionType>,
+    /// <p>Configuration for your collection.</p>
+    pub collection_config: ::std::option::Option<crate::types::CollectionConfig>,
 }
 impl FeatureDefinition {
     /// <p>The name of a feature. The type must be a string. <code>FeatureName</code> cannot be any of the following: <code>is_deleted</code>, <code>write_time</code>, <code>api_invocation_time</code>.</p>
@@ -17,6 +26,19 @@ impl FeatureDefinition {
     /// <p>The value type of a feature. Valid values are Integral, Fractional, or String.</p>
     pub fn feature_type(&self) -> ::std::option::Option<&crate::types::FeatureType> {
         self.feature_type.as_ref()
+    }
+    /// <p>A grouping of elements where each element within the collection must have the same feature type (<code>String</code>, <code>Integral</code>, or <code>Fractional</code>).</p>
+    /// <ul>
+    /// <li> <p> <code>List</code>: An ordered collection of elements.</p> </li>
+    /// <li> <p> <code>Set</code>: An unordered collection of unique elements.</p> </li>
+    /// <li> <p> <code>Vector</code>: A specialized list that represents a fixed-size array of elements. The vector dimension is determined by you. Must have elements with fractional feature types. </p> </li>
+    /// </ul>
+    pub fn collection_type(&self) -> ::std::option::Option<&crate::types::CollectionType> {
+        self.collection_type.as_ref()
+    }
+    /// <p>Configuration for your collection.</p>
+    pub fn collection_config(&self) -> ::std::option::Option<&crate::types::CollectionConfig> {
+        self.collection_config.as_ref()
     }
 }
 impl FeatureDefinition {
@@ -32,6 +54,8 @@ impl FeatureDefinition {
 pub struct FeatureDefinitionBuilder {
     pub(crate) feature_name: ::std::option::Option<::std::string::String>,
     pub(crate) feature_type: ::std::option::Option<crate::types::FeatureType>,
+    pub(crate) collection_type: ::std::option::Option<crate::types::CollectionType>,
+    pub(crate) collection_config: ::std::option::Option<crate::types::CollectionConfig>,
 }
 impl FeatureDefinitionBuilder {
     /// <p>The name of a feature. The type must be a string. <code>FeatureName</code> cannot be any of the following: <code>is_deleted</code>, <code>write_time</code>, <code>api_invocation_time</code>.</p>
@@ -62,11 +86,56 @@ impl FeatureDefinitionBuilder {
     pub fn get_feature_type(&self) -> &::std::option::Option<crate::types::FeatureType> {
         &self.feature_type
     }
+    /// <p>A grouping of elements where each element within the collection must have the same feature type (<code>String</code>, <code>Integral</code>, or <code>Fractional</code>).</p>
+    /// <ul>
+    /// <li> <p> <code>List</code>: An ordered collection of elements.</p> </li>
+    /// <li> <p> <code>Set</code>: An unordered collection of unique elements.</p> </li>
+    /// <li> <p> <code>Vector</code>: A specialized list that represents a fixed-size array of elements. The vector dimension is determined by you. Must have elements with fractional feature types. </p> </li>
+    /// </ul>
+    pub fn collection_type(mut self, input: crate::types::CollectionType) -> Self {
+        self.collection_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A grouping of elements where each element within the collection must have the same feature type (<code>String</code>, <code>Integral</code>, or <code>Fractional</code>).</p>
+    /// <ul>
+    /// <li> <p> <code>List</code>: An ordered collection of elements.</p> </li>
+    /// <li> <p> <code>Set</code>: An unordered collection of unique elements.</p> </li>
+    /// <li> <p> <code>Vector</code>: A specialized list that represents a fixed-size array of elements. The vector dimension is determined by you. Must have elements with fractional feature types. </p> </li>
+    /// </ul>
+    pub fn set_collection_type(mut self, input: ::std::option::Option<crate::types::CollectionType>) -> Self {
+        self.collection_type = input;
+        self
+    }
+    /// <p>A grouping of elements where each element within the collection must have the same feature type (<code>String</code>, <code>Integral</code>, or <code>Fractional</code>).</p>
+    /// <ul>
+    /// <li> <p> <code>List</code>: An ordered collection of elements.</p> </li>
+    /// <li> <p> <code>Set</code>: An unordered collection of unique elements.</p> </li>
+    /// <li> <p> <code>Vector</code>: A specialized list that represents a fixed-size array of elements. The vector dimension is determined by you. Must have elements with fractional feature types. </p> </li>
+    /// </ul>
+    pub fn get_collection_type(&self) -> &::std::option::Option<crate::types::CollectionType> {
+        &self.collection_type
+    }
+    /// <p>Configuration for your collection.</p>
+    pub fn collection_config(mut self, input: crate::types::CollectionConfig) -> Self {
+        self.collection_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Configuration for your collection.</p>
+    pub fn set_collection_config(mut self, input: ::std::option::Option<crate::types::CollectionConfig>) -> Self {
+        self.collection_config = input;
+        self
+    }
+    /// <p>Configuration for your collection.</p>
+    pub fn get_collection_config(&self) -> &::std::option::Option<crate::types::CollectionConfig> {
+        &self.collection_config
+    }
     /// Consumes the builder and constructs a [`FeatureDefinition`](crate::types::FeatureDefinition).
     pub fn build(self) -> crate::types::FeatureDefinition {
         crate::types::FeatureDefinition {
             feature_name: self.feature_name,
             feature_type: self.feature_type,
+            collection_type: self.collection_type,
+            collection_config: self.collection_config,
         }
     }
 }

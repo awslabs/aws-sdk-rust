@@ -355,4 +355,18 @@ impl CreateDeliveryStreamFluentBuilder {
     ) -> &::std::option::Option<crate::types::AmazonOpenSearchServerlessDestinationConfiguration> {
         self.inner.get_amazon_open_search_serverless_destination_configuration()
     }
+    /// <p>The configuration for the Amazon MSK cluster to be used as the source for a delivery stream.</p>
+    pub fn msk_source_configuration(mut self, input: crate::types::MskSourceConfiguration) -> Self {
+        self.inner = self.inner.msk_source_configuration(input);
+        self
+    }
+    /// <p>The configuration for the Amazon MSK cluster to be used as the source for a delivery stream.</p>
+    pub fn set_msk_source_configuration(mut self, input: ::std::option::Option<crate::types::MskSourceConfiguration>) -> Self {
+        self.inner = self.inner.set_msk_source_configuration(input);
+        self
+    }
+    /// <p>The configuration for the Amazon MSK cluster to be used as the source for a delivery stream.</p>
+    pub fn get_msk_source_configuration(&self) -> &::std::option::Option<crate::types::MskSourceConfiguration> {
+        self.inner.get_msk_source_configuration()
+    }
 }

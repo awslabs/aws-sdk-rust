@@ -30,6 +30,10 @@ pub struct CreateApplicationInput {
     /// <p>The key-value pairs that specify worker type to <code>WorkerTypeSpecificationInput</code>. This parameter must contain all valid worker types for a Spark or Hive application. Valid worker types include <code>Driver</code> and <code>Executor</code> for Spark applications and <code>HiveDriver</code> and <code>TezTask</code> for Hive applications. You can either set image details in this parameter for each worker type, or in <code>imageConfiguration</code> for all worker types.</p>
     pub worker_type_specifications:
         ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::WorkerTypeSpecificationInput>>,
+    /// <p>The <a href="https://docs.aws.amazon.com/emr-serverless/latest/APIReference/API_Configuration.html">Configuration</a> specifications to use when creating an application. Each configuration consists of a classification and properties. This configuration is applied to all the job runs submitted under the application.</p>
+    pub runtime_configuration: ::std::option::Option<::std::vec::Vec<crate::types::Configuration>>,
+    /// <p>The configuration setting for monitoring.</p>
+    pub monitoring_configuration: ::std::option::Option<crate::types::MonitoringConfiguration>,
 }
 impl CreateApplicationInput {
     /// <p>The name of the application.</p>
@@ -88,6 +92,14 @@ impl CreateApplicationInput {
     ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::WorkerTypeSpecificationInput>> {
         self.worker_type_specifications.as_ref()
     }
+    /// <p>The <a href="https://docs.aws.amazon.com/emr-serverless/latest/APIReference/API_Configuration.html">Configuration</a> specifications to use when creating an application. Each configuration consists of a classification and properties. This configuration is applied to all the job runs submitted under the application.</p>
+    pub fn runtime_configuration(&self) -> ::std::option::Option<&[crate::types::Configuration]> {
+        self.runtime_configuration.as_deref()
+    }
+    /// <p>The configuration setting for monitoring.</p>
+    pub fn monitoring_configuration(&self) -> ::std::option::Option<&crate::types::MonitoringConfiguration> {
+        self.monitoring_configuration.as_ref()
+    }
 }
 impl CreateApplicationInput {
     /// Creates a new builder-style object to manufacture [`CreateApplicationInput`](crate::operation::create_application::CreateApplicationInput).
@@ -114,6 +126,8 @@ pub struct CreateApplicationInputBuilder {
     pub(crate) image_configuration: ::std::option::Option<crate::types::ImageConfigurationInput>,
     pub(crate) worker_type_specifications:
         ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::WorkerTypeSpecificationInput>>,
+    pub(crate) runtime_configuration: ::std::option::Option<::std::vec::Vec<crate::types::Configuration>>,
+    pub(crate) monitoring_configuration: ::std::option::Option<crate::types::MonitoringConfiguration>,
 }
 impl CreateApplicationInputBuilder {
     /// <p>The name of the application.</p>
@@ -330,6 +344,40 @@ impl CreateApplicationInputBuilder {
     ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::WorkerTypeSpecificationInput>> {
         &self.worker_type_specifications
     }
+    /// Appends an item to `runtime_configuration`.
+    ///
+    /// To override the contents of this collection use [`set_runtime_configuration`](Self::set_runtime_configuration).
+    ///
+    /// <p>The <a href="https://docs.aws.amazon.com/emr-serverless/latest/APIReference/API_Configuration.html">Configuration</a> specifications to use when creating an application. Each configuration consists of a classification and properties. This configuration is applied to all the job runs submitted under the application.</p>
+    pub fn runtime_configuration(mut self, input: crate::types::Configuration) -> Self {
+        let mut v = self.runtime_configuration.unwrap_or_default();
+        v.push(input);
+        self.runtime_configuration = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The <a href="https://docs.aws.amazon.com/emr-serverless/latest/APIReference/API_Configuration.html">Configuration</a> specifications to use when creating an application. Each configuration consists of a classification and properties. This configuration is applied to all the job runs submitted under the application.</p>
+    pub fn set_runtime_configuration(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Configuration>>) -> Self {
+        self.runtime_configuration = input;
+        self
+    }
+    /// <p>The <a href="https://docs.aws.amazon.com/emr-serverless/latest/APIReference/API_Configuration.html">Configuration</a> specifications to use when creating an application. Each configuration consists of a classification and properties. This configuration is applied to all the job runs submitted under the application.</p>
+    pub fn get_runtime_configuration(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Configuration>> {
+        &self.runtime_configuration
+    }
+    /// <p>The configuration setting for monitoring.</p>
+    pub fn monitoring_configuration(mut self, input: crate::types::MonitoringConfiguration) -> Self {
+        self.monitoring_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration setting for monitoring.</p>
+    pub fn set_monitoring_configuration(mut self, input: ::std::option::Option<crate::types::MonitoringConfiguration>) -> Self {
+        self.monitoring_configuration = input;
+        self
+    }
+    /// <p>The configuration setting for monitoring.</p>
+    pub fn get_monitoring_configuration(&self) -> &::std::option::Option<crate::types::MonitoringConfiguration> {
+        &self.monitoring_configuration
+    }
     /// Consumes the builder and constructs a [`CreateApplicationInput`](crate::operation::create_application::CreateApplicationInput).
     pub fn build(
         self,
@@ -348,6 +396,8 @@ impl CreateApplicationInputBuilder {
             architecture: self.architecture,
             image_configuration: self.image_configuration,
             worker_type_specifications: self.worker_type_specifications,
+            runtime_configuration: self.runtime_configuration,
+            monitoring_configuration: self.monitoring_configuration,
         })
     }
 }

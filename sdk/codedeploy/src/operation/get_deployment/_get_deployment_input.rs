@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDeploymentInput {
-    /// <p> The unique ID of a deployment associated with the IAM user or Amazon Web Services account. </p>
+    /// <p> The unique ID of a deployment associated with the user or Amazon Web Services account. </p>
     pub deployment_id: ::std::option::Option<::std::string::String>,
 }
 impl GetDeploymentInput {
-    /// <p> The unique ID of a deployment associated with the IAM user or Amazon Web Services account. </p>
+    /// <p> The unique ID of a deployment associated with the user or Amazon Web Services account. </p>
     pub fn deployment_id(&self) -> ::std::option::Option<&str> {
         self.deployment_id.as_deref()
     }
@@ -27,17 +27,17 @@ pub struct GetDeploymentInputBuilder {
     pub(crate) deployment_id: ::std::option::Option<::std::string::String>,
 }
 impl GetDeploymentInputBuilder {
-    /// <p> The unique ID of a deployment associated with the IAM user or Amazon Web Services account. </p>
+    /// <p> The unique ID of a deployment associated with the user or Amazon Web Services account. </p>
     pub fn deployment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.deployment_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The unique ID of a deployment associated with the IAM user or Amazon Web Services account. </p>
+    /// <p> The unique ID of a deployment associated with the user or Amazon Web Services account. </p>
     pub fn set_deployment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.deployment_id = input;
         self
     }
-    /// <p> The unique ID of a deployment associated with the IAM user or Amazon Web Services account. </p>
+    /// <p> The unique ID of a deployment associated with the user or Amazon Web Services account. </p>
     pub fn get_deployment_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.deployment_id
     }

@@ -38,7 +38,7 @@ version = "0.56.1"
 [dependencies.aws-sdk-sts]
 path = "../sts"
 default-features = false
-version = "0.31.1"
+version = "0.32.0"
 
 [dependencies.aws-smithy-async]
 path = "../aws-smithy-async"
@@ -91,7 +91,7 @@ version = "0.4.8"
 path = "../sso"
 default-features = false
 optional = true
-version = "0.31.1"
+version = "0.32.0"
 
 [dependencies.ring]
 version = "0.16"

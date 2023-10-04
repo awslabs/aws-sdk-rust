@@ -14,6 +14,10 @@ pub struct PrincipalResourcePermissions {
     pub permissions_with_grant_option: ::std::option::Option<::std::vec::Vec<crate::types::Permission>>,
     /// <p>This attribute can be used to return any additional details of <code>PrincipalResourcePermissions</code>. Currently returns only as a RAM resource share ARN.</p>
     pub additional_details: ::std::option::Option<crate::types::DetailsMap>,
+    /// <p>The date and time when the resource was last updated.</p>
+    pub last_updated: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The user who updated the record.</p>
+    pub last_updated_by: ::std::option::Option<::std::string::String>,
 }
 impl PrincipalResourcePermissions {
     /// <p>The Data Lake principal to be granted or revoked permissions.</p>
@@ -36,6 +40,14 @@ impl PrincipalResourcePermissions {
     pub fn additional_details(&self) -> ::std::option::Option<&crate::types::DetailsMap> {
         self.additional_details.as_ref()
     }
+    /// <p>The date and time when the resource was last updated.</p>
+    pub fn last_updated(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.last_updated.as_ref()
+    }
+    /// <p>The user who updated the record.</p>
+    pub fn last_updated_by(&self) -> ::std::option::Option<&str> {
+        self.last_updated_by.as_deref()
+    }
 }
 impl PrincipalResourcePermissions {
     /// Creates a new builder-style object to manufacture [`PrincipalResourcePermissions`](crate::types::PrincipalResourcePermissions).
@@ -53,6 +65,8 @@ pub struct PrincipalResourcePermissionsBuilder {
     pub(crate) permissions: ::std::option::Option<::std::vec::Vec<crate::types::Permission>>,
     pub(crate) permissions_with_grant_option: ::std::option::Option<::std::vec::Vec<crate::types::Permission>>,
     pub(crate) additional_details: ::std::option::Option<crate::types::DetailsMap>,
+    pub(crate) last_updated: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) last_updated_by: ::std::option::Option<::std::string::String>,
 }
 impl PrincipalResourcePermissionsBuilder {
     /// <p>The Data Lake principal to be granted or revoked permissions.</p>
@@ -137,6 +151,34 @@ impl PrincipalResourcePermissionsBuilder {
     pub fn get_additional_details(&self) -> &::std::option::Option<crate::types::DetailsMap> {
         &self.additional_details
     }
+    /// <p>The date and time when the resource was last updated.</p>
+    pub fn last_updated(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_updated = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The date and time when the resource was last updated.</p>
+    pub fn set_last_updated(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.last_updated = input;
+        self
+    }
+    /// <p>The date and time when the resource was last updated.</p>
+    pub fn get_last_updated(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated
+    }
+    /// <p>The user who updated the record.</p>
+    pub fn last_updated_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.last_updated_by = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The user who updated the record.</p>
+    pub fn set_last_updated_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.last_updated_by = input;
+        self
+    }
+    /// <p>The user who updated the record.</p>
+    pub fn get_last_updated_by(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_updated_by
+    }
     /// Consumes the builder and constructs a [`PrincipalResourcePermissions`](crate::types::PrincipalResourcePermissions).
     pub fn build(self) -> crate::types::PrincipalResourcePermissions {
         crate::types::PrincipalResourcePermissions {
@@ -145,6 +187,8 @@ impl PrincipalResourcePermissionsBuilder {
             permissions: self.permissions,
             permissions_with_grant_option: self.permissions_with_grant_option,
             additional_details: self.additional_details,
+            last_updated: self.last_updated,
+            last_updated_by: self.last_updated_by,
         }
     }
 }

@@ -459,6 +459,8 @@ pub(crate) mod shape_http_request;
 
 pub(crate) mod shape_ip_set_reference_statement;
 
+pub(crate) mod shape_ja3_fingerprint;
+
 pub(crate) mod shape_json_body;
 
 pub(crate) mod shape_label_match_statement;

@@ -205,6 +205,12 @@ pub use crate::types::_ttl_duration_unit::TtlDurationUnit;
 
 pub use crate::types::_feature_definition::FeatureDefinition;
 
+pub use crate::types::_collection_config::CollectionConfig;
+
+pub use crate::types::_vector_config::VectorConfig;
+
+pub use crate::types::_collection_type::CollectionType;
+
 pub use crate::types::_feature_type::FeatureType;
 
 pub use crate::types::_desired_weight_and_capacity::DesiredWeightAndCapacity;
@@ -514,6 +520,8 @@ pub use crate::types::_data_catalog_config::DataCatalogConfig;
 pub use crate::types::_s3_storage_config::S3StorageConfig;
 
 pub use crate::types::_online_store_config::OnlineStoreConfig;
+
+pub use crate::types::_storage_type::StorageType;
 
 pub use crate::types::_online_store_security_config::OnlineStoreSecurityConfig;
 
@@ -1779,7 +1787,11 @@ mod _cognito_config;
 
 mod _cognito_member_definition;
 
+mod _collection_config;
+
 mod _collection_configuration;
+
+mod _collection_type;
 
 mod _compilation_job_status;
 
@@ -2869,6 +2881,8 @@ mod _step_status;
 
 mod _stopping_condition;
 
+mod _storage_type;
+
 mod _studio_lifecycle_config_app_type;
 
 mod _studio_lifecycle_config_details;
@@ -3028,6 +3042,8 @@ mod _variant_property;
 mod _variant_property_type;
 
 mod _variant_status;
+
+mod _vector_config;
 
 mod _vendor_guidance;
 

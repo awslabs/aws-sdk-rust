@@ -18,6 +18,9 @@ pub fn ser_code_repository(
         crate::protocol_serde::shape_code_configuration::ser_code_configuration(&mut object_5, var_4)?;
         object_5.finish();
     }
+    if let Some(var_6) = &input.source_directory {
+        object.key("SourceDirectory").string(var_6.as_str());
+    }
     Ok(())
 }
 
@@ -49,6 +52,13 @@ where
                         }
                         "CodeConfiguration" => {
                             builder = builder.set_code_configuration(crate::protocol_serde::shape_code_configuration::de_code_configuration(tokens)?);
+                        }
+                        "SourceDirectory" => {
+                            builder = builder.set_source_directory(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -27,6 +27,10 @@ pub struct ExportTableToPointInTimeInput {
     pub s3_sse_kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The format for the exported data. Valid values for <code>ExportFormat</code> are <code>DYNAMODB_JSON</code> or <code>ION</code>.</p>
     pub export_format: ::std::option::Option<crate::types::ExportFormat>,
+    /// <p>Choice of whether to execute as a full export or incremental export. Valid values are <code>FULL_EXPORT</code> or <code>INCREMENTAL_EXPORT</code>. If <code>INCREMENTAL_EXPORT</code> is provided, the <code>IncrementalExportSpecification</code> must also be used.</p>
+    pub export_type: ::std::option::Option<crate::types::ExportType>,
+    /// <p>Optional object containing the parameters specific to an incremental export.</p>
+    pub incremental_export_specification: ::std::option::Option<crate::types::IncrementalExportSpecification>,
 }
 impl ExportTableToPointInTimeInput {
     /// <p>The Amazon Resource Name (ARN) associated with the table to export.</p>
@@ -71,6 +75,14 @@ impl ExportTableToPointInTimeInput {
     pub fn export_format(&self) -> ::std::option::Option<&crate::types::ExportFormat> {
         self.export_format.as_ref()
     }
+    /// <p>Choice of whether to execute as a full export or incremental export. Valid values are <code>FULL_EXPORT</code> or <code>INCREMENTAL_EXPORT</code>. If <code>INCREMENTAL_EXPORT</code> is provided, the <code>IncrementalExportSpecification</code> must also be used.</p>
+    pub fn export_type(&self) -> ::std::option::Option<&crate::types::ExportType> {
+        self.export_type.as_ref()
+    }
+    /// <p>Optional object containing the parameters specific to an incremental export.</p>
+    pub fn incremental_export_specification(&self) -> ::std::option::Option<&crate::types::IncrementalExportSpecification> {
+        self.incremental_export_specification.as_ref()
+    }
 }
 impl ExportTableToPointInTimeInput {
     /// Creates a new builder-style object to manufacture [`ExportTableToPointInTimeInput`](crate::operation::export_table_to_point_in_time::ExportTableToPointInTimeInput).
@@ -92,6 +104,8 @@ pub struct ExportTableToPointInTimeInputBuilder {
     pub(crate) s3_sse_algorithm: ::std::option::Option<crate::types::S3SseAlgorithm>,
     pub(crate) s3_sse_kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) export_format: ::std::option::Option<crate::types::ExportFormat>,
+    pub(crate) export_type: ::std::option::Option<crate::types::ExportType>,
+    pub(crate) incremental_export_specification: ::std::option::Option<crate::types::IncrementalExportSpecification>,
 }
 impl ExportTableToPointInTimeInputBuilder {
     /// <p>The Amazon Resource Name (ARN) associated with the table to export.</p>
@@ -238,6 +252,34 @@ impl ExportTableToPointInTimeInputBuilder {
     pub fn get_export_format(&self) -> &::std::option::Option<crate::types::ExportFormat> {
         &self.export_format
     }
+    /// <p>Choice of whether to execute as a full export or incremental export. Valid values are <code>FULL_EXPORT</code> or <code>INCREMENTAL_EXPORT</code>. If <code>INCREMENTAL_EXPORT</code> is provided, the <code>IncrementalExportSpecification</code> must also be used.</p>
+    pub fn export_type(mut self, input: crate::types::ExportType) -> Self {
+        self.export_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Choice of whether to execute as a full export or incremental export. Valid values are <code>FULL_EXPORT</code> or <code>INCREMENTAL_EXPORT</code>. If <code>INCREMENTAL_EXPORT</code> is provided, the <code>IncrementalExportSpecification</code> must also be used.</p>
+    pub fn set_export_type(mut self, input: ::std::option::Option<crate::types::ExportType>) -> Self {
+        self.export_type = input;
+        self
+    }
+    /// <p>Choice of whether to execute as a full export or incremental export. Valid values are <code>FULL_EXPORT</code> or <code>INCREMENTAL_EXPORT</code>. If <code>INCREMENTAL_EXPORT</code> is provided, the <code>IncrementalExportSpecification</code> must also be used.</p>
+    pub fn get_export_type(&self) -> &::std::option::Option<crate::types::ExportType> {
+        &self.export_type
+    }
+    /// <p>Optional object containing the parameters specific to an incremental export.</p>
+    pub fn incremental_export_specification(mut self, input: crate::types::IncrementalExportSpecification) -> Self {
+        self.incremental_export_specification = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Optional object containing the parameters specific to an incremental export.</p>
+    pub fn set_incremental_export_specification(mut self, input: ::std::option::Option<crate::types::IncrementalExportSpecification>) -> Self {
+        self.incremental_export_specification = input;
+        self
+    }
+    /// <p>Optional object containing the parameters specific to an incremental export.</p>
+    pub fn get_incremental_export_specification(&self) -> &::std::option::Option<crate::types::IncrementalExportSpecification> {
+        &self.incremental_export_specification
+    }
     /// Consumes the builder and constructs a [`ExportTableToPointInTimeInput`](crate::operation::export_table_to_point_in_time::ExportTableToPointInTimeInput).
     pub fn build(
         self,
@@ -255,6 +297,8 @@ impl ExportTableToPointInTimeInputBuilder {
             s3_sse_algorithm: self.s3_sse_algorithm,
             s3_sse_kms_key_id: self.s3_sse_kms_key_id,
             export_format: self.export_format,
+            export_type: self.export_type,
+            incremental_export_specification: self.incremental_export_specification,
         })
     }
 }

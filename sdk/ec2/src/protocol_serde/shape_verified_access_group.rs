@@ -120,6 +120,16 @@ pub fn de_verified_access_group(
                 builder = builder.set_tags(var_9);
             }
             ,
+            s if s.matches("sseSpecification") /* SseSpecification com.amazonaws.ec2#VerifiedAccessGroup$SseSpecification */ =>  {
+                let var_10 =
+                    Some(
+                        crate::protocol_serde::shape_verified_access_sse_specification_response::de_verified_access_sse_specification_response(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_sse_specification(var_10);
+            }
+            ,
             _ => {}
         }
     }

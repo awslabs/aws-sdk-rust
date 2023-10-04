@@ -267,13 +267,13 @@ pub type BatchGetDeploymentGroupsErrorKind = BatchGetDeploymentGroupsError;
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum BatchGetDeploymentGroupsError {
-    /// <p>The application does not exist with the IAM user or Amazon Web Services account.</p>
+    /// <p>The application does not exist with the user or Amazon Web Services account.</p>
     ApplicationDoesNotExistException(crate::types::error::ApplicationDoesNotExistException),
     /// <p>The minimum number of required application names was not specified.</p>
     ApplicationNameRequiredException(crate::types::error::ApplicationNameRequiredException),
     /// <p>The maximum number of names or IDs allowed for this request (100) was exceeded.</p>
     BatchLimitExceededException(crate::types::error::BatchLimitExceededException),
-    /// <p>The deployment configuration does not exist with the IAM user or Amazon Web Services account.</p>
+    /// <p>The deployment configuration does not exist with the user or Amazon Web Services account.</p>
     DeploymentConfigDoesNotExistException(crate::types::error::DeploymentConfigDoesNotExistException),
     /// <p>The deployment group name was not specified.</p>
     DeploymentGroupNameRequiredException(crate::types::error::DeploymentGroupNameRequiredException),

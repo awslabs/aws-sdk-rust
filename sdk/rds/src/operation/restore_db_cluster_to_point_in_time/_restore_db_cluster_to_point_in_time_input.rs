@@ -98,7 +98,8 @@ pub struct RestoreDbClusterToPointInTimeInput {
     /// <p>For more information about exporting CloudWatch Logs for Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User Guide</i>.</p>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub enable_cloudwatch_logs_exports: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>The name of the DB cluster parameter group to associate with this DB cluster. If this argument is omitted, the default DB cluster parameter group for the specified engine is used.</p>
+    /// <p>The name of the custom DB cluster parameter group to associate with this DB cluster.</p>
+    /// <p>If the <code>DBClusterParameterGroupName</code> parameter is omitted, the default DB cluster parameter group for the specified engine is used.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li> <p>If supplied, must match the name of an existing DB cluster parameter group.</p> </li>
@@ -128,7 +129,7 @@ pub struct RestoreDbClusterToPointInTimeInput {
     /// <p>Valid for: Aurora DB clusters only</p>
     pub engine_mode: ::std::option::Option<::std::string::String>,
     /// <p>The compute and memory capacity of the each DB instance in the Multi-AZ DB cluster, for example db.m6gd.xlarge. Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines.</p>
-    /// <p>For the full list of DB instance classes, and availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB instance class</a> in the <i>Amazon RDS User Guide.</i> </p>
+    /// <p>For the full list of DB instance classes, and availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB instance class</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>Valid for: Multi-AZ DB clusters only</p>
     pub db_cluster_instance_class: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the storage type to be associated with the DB cluster.</p>
@@ -297,7 +298,8 @@ impl RestoreDbClusterToPointInTimeInput {
     pub fn enable_cloudwatch_logs_exports(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.enable_cloudwatch_logs_exports.as_deref()
     }
-    /// <p>The name of the DB cluster parameter group to associate with this DB cluster. If this argument is omitted, the default DB cluster parameter group for the specified engine is used.</p>
+    /// <p>The name of the custom DB cluster parameter group to associate with this DB cluster.</p>
+    /// <p>If the <code>DBClusterParameterGroupName</code> parameter is omitted, the default DB cluster parameter group for the specified engine is used.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li> <p>If supplied, must match the name of an existing DB cluster parameter group.</p> </li>
@@ -341,7 +343,7 @@ impl RestoreDbClusterToPointInTimeInput {
         self.engine_mode.as_deref()
     }
     /// <p>The compute and memory capacity of the each DB instance in the Multi-AZ DB cluster, for example db.m6gd.xlarge. Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines.</p>
-    /// <p>For the full list of DB instance classes, and availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB instance class</a> in the <i>Amazon RDS User Guide.</i> </p>
+    /// <p>For the full list of DB instance classes, and availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB instance class</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>Valid for: Multi-AZ DB clusters only</p>
     pub fn db_cluster_instance_class(&self) -> ::std::option::Option<&str> {
         self.db_cluster_instance_class.as_deref()
@@ -854,7 +856,8 @@ impl RestoreDbClusterToPointInTimeInputBuilder {
     pub fn get_enable_cloudwatch_logs_exports(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.enable_cloudwatch_logs_exports
     }
-    /// <p>The name of the DB cluster parameter group to associate with this DB cluster. If this argument is omitted, the default DB cluster parameter group for the specified engine is used.</p>
+    /// <p>The name of the custom DB cluster parameter group to associate with this DB cluster.</p>
+    /// <p>If the <code>DBClusterParameterGroupName</code> parameter is omitted, the default DB cluster parameter group for the specified engine is used.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li> <p>If supplied, must match the name of an existing DB cluster parameter group.</p> </li>
@@ -867,7 +870,8 @@ impl RestoreDbClusterToPointInTimeInputBuilder {
         self.db_cluster_parameter_group_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the DB cluster parameter group to associate with this DB cluster. If this argument is omitted, the default DB cluster parameter group for the specified engine is used.</p>
+    /// <p>The name of the custom DB cluster parameter group to associate with this DB cluster.</p>
+    /// <p>If the <code>DBClusterParameterGroupName</code> parameter is omitted, the default DB cluster parameter group for the specified engine is used.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li> <p>If supplied, must match the name of an existing DB cluster parameter group.</p> </li>
@@ -880,7 +884,8 @@ impl RestoreDbClusterToPointInTimeInputBuilder {
         self.db_cluster_parameter_group_name = input;
         self
     }
-    /// <p>The name of the DB cluster parameter group to associate with this DB cluster. If this argument is omitted, the default DB cluster parameter group for the specified engine is used.</p>
+    /// <p>The name of the custom DB cluster parameter group to associate with this DB cluster.</p>
+    /// <p>If the <code>DBClusterParameterGroupName</code> parameter is omitted, the default DB cluster parameter group for the specified engine is used.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li> <p>If supplied, must match the name of an existing DB cluster parameter group.</p> </li>
@@ -998,21 +1003,21 @@ impl RestoreDbClusterToPointInTimeInputBuilder {
         &self.engine_mode
     }
     /// <p>The compute and memory capacity of the each DB instance in the Multi-AZ DB cluster, for example db.m6gd.xlarge. Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines.</p>
-    /// <p>For the full list of DB instance classes, and availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB instance class</a> in the <i>Amazon RDS User Guide.</i> </p>
+    /// <p>For the full list of DB instance classes, and availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB instance class</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>Valid for: Multi-AZ DB clusters only</p>
     pub fn db_cluster_instance_class(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_cluster_instance_class = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The compute and memory capacity of the each DB instance in the Multi-AZ DB cluster, for example db.m6gd.xlarge. Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines.</p>
-    /// <p>For the full list of DB instance classes, and availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB instance class</a> in the <i>Amazon RDS User Guide.</i> </p>
+    /// <p>For the full list of DB instance classes, and availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB instance class</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>Valid for: Multi-AZ DB clusters only</p>
     pub fn set_db_cluster_instance_class(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_cluster_instance_class = input;
         self
     }
     /// <p>The compute and memory capacity of the each DB instance in the Multi-AZ DB cluster, for example db.m6gd.xlarge. Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines.</p>
-    /// <p>For the full list of DB instance classes, and availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB instance class</a> in the <i>Amazon RDS User Guide.</i> </p>
+    /// <p>For the full list of DB instance classes, and availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB instance class</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>Valid for: Multi-AZ DB clusters only</p>
     pub fn get_db_cluster_instance_class(&self) -> &::std::option::Option<::std::string::String> {
         &self.db_cluster_instance_class

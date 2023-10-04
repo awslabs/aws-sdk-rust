@@ -267,13 +267,13 @@ pub type RegisterOnPremisesInstanceErrorKind = RegisterOnPremisesInstanceError;
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum RegisterOnPremisesInstanceError {
-    /// <p>No IAM ARN was included in the request. You must use an IAM session ARN or IAM user ARN in the request.</p>
+    /// <p>No IAM ARN was included in the request. You must use an IAM session ARN or user ARN in the request.</p>
     IamArnRequiredException(crate::types::error::IamArnRequiredException),
     /// <p>The request included an IAM session ARN that has already been used to register a different instance.</p>
     IamSessionArnAlreadyRegisteredException(crate::types::error::IamSessionArnAlreadyRegisteredException),
-    /// <p>The specified IAM user ARN is already registered with an on-premises instance.</p>
+    /// <p>The specified user ARN is already registered with an on-premises instance.</p>
     IamUserArnAlreadyRegisteredException(crate::types::error::IamUserArnAlreadyRegisteredException),
-    /// <p>An IAM user ARN was not specified.</p>
+    /// <p>An user ARN was not specified.</p>
     IamUserArnRequiredException(crate::types::error::IamUserArnRequiredException),
     /// <p>The specified on-premises instance name is already registered.</p>
     InstanceNameAlreadyRegisteredException(crate::types::error::InstanceNameAlreadyRegisteredException),
@@ -281,11 +281,11 @@ pub enum RegisterOnPremisesInstanceError {
     InstanceNameRequiredException(crate::types::error::InstanceNameRequiredException),
     /// <p>The IAM session ARN was specified in an invalid format.</p>
     InvalidIamSessionArnException(crate::types::error::InvalidIamSessionArnException),
-    /// <p>The IAM user ARN was specified in an invalid format.</p>
+    /// <p>The user ARN was specified in an invalid format.</p>
     InvalidIamUserArnException(crate::types::error::InvalidIamUserArnException),
     /// <p>The on-premises instance name was specified in an invalid format.</p>
     InvalidInstanceNameException(crate::types::error::InvalidInstanceNameException),
-    /// <p>Both an IAM user ARN and an IAM session ARN were included in the request. Use only one ARN type.</p>
+    /// <p>Both an user ARN and an IAM session ARN were included in the request. Use only one ARN type.</p>
     MultipleIamArnsProvidedException(crate::types::error::MultipleIamArnsProvidedException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(::aws_smithy_types::error::Unhandled),

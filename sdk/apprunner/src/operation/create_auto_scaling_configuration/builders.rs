@@ -114,7 +114,7 @@ impl CreateAutoScalingConfigurationFluentBuilder {
         self
     }
     /// <p>A name for the auto scaling configuration. When you use it for the first time in an Amazon Web Services Region, App Runner creates revision number <code>1</code> of this name. When you use the same name in subsequent calls, App Runner creates incremental revisions of the configuration.</p> <note>
-    /// <p>Prior to the release of <a href="https://docs.aws.amazon.com/apprunner/latest/relnotes/release-yyyy-mm-dd-asc-improvements.html">Managing auto scaling</a>, the name <code>DefaultConfiguration</code> was reserved. </p>
+    /// <p>Prior to the release of <a href="https://docs.aws.amazon.com/apprunner/latest/relnotes/release-2023-09-22-auto-scale-config.html">Auto scale configuration enhancements</a>, the name <code>DefaultConfiguration</code> was reserved. </p>
     /// <p>This restriction is no longer in place. You can now manage <code>DefaultConfiguration</code> the same way you manage your custom auto scaling configurations. This means you can do the following with the <code>DefaultConfiguration</code> that App Runner provides:</p>
     /// <ul>
     /// <li> <p>Create new revisions of the <code>DefaultConfiguration</code>.</p> </li>
@@ -128,7 +128,7 @@ impl CreateAutoScalingConfigurationFluentBuilder {
         self
     }
     /// <p>A name for the auto scaling configuration. When you use it for the first time in an Amazon Web Services Region, App Runner creates revision number <code>1</code> of this name. When you use the same name in subsequent calls, App Runner creates incremental revisions of the configuration.</p> <note>
-    /// <p>Prior to the release of <a href="https://docs.aws.amazon.com/apprunner/latest/relnotes/release-yyyy-mm-dd-asc-improvements.html">Managing auto scaling</a>, the name <code>DefaultConfiguration</code> was reserved. </p>
+    /// <p>Prior to the release of <a href="https://docs.aws.amazon.com/apprunner/latest/relnotes/release-2023-09-22-auto-scale-config.html">Auto scale configuration enhancements</a>, the name <code>DefaultConfiguration</code> was reserved. </p>
     /// <p>This restriction is no longer in place. You can now manage <code>DefaultConfiguration</code> the same way you manage your custom auto scaling configurations. This means you can do the following with the <code>DefaultConfiguration</code> that App Runner provides:</p>
     /// <ul>
     /// <li> <p>Create new revisions of the <code>DefaultConfiguration</code>.</p> </li>
@@ -142,7 +142,7 @@ impl CreateAutoScalingConfigurationFluentBuilder {
         self
     }
     /// <p>A name for the auto scaling configuration. When you use it for the first time in an Amazon Web Services Region, App Runner creates revision number <code>1</code> of this name. When you use the same name in subsequent calls, App Runner creates incremental revisions of the configuration.</p> <note>
-    /// <p>Prior to the release of <a href="https://docs.aws.amazon.com/apprunner/latest/relnotes/release-yyyy-mm-dd-asc-improvements.html">Managing auto scaling</a>, the name <code>DefaultConfiguration</code> was reserved. </p>
+    /// <p>Prior to the release of <a href="https://docs.aws.amazon.com/apprunner/latest/relnotes/release-2023-09-22-auto-scale-config.html">Auto scale configuration enhancements</a>, the name <code>DefaultConfiguration</code> was reserved. </p>
     /// <p>This restriction is no longer in place. You can now manage <code>DefaultConfiguration</code> the same way you manage your custom auto scaling configurations. This means you can do the following with the <code>DefaultConfiguration</code> that App Runner provides:</p>
     /// <ul>
     /// <li> <p>Create new revisions of the <code>DefaultConfiguration</code>.</p> </li>

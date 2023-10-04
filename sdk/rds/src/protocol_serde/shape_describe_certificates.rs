@@ -85,18 +85,8 @@ pub fn de_describe_certificates(
         }
         while let Some(mut tag) = result_tag.next_tag() {
             match tag.start_el() {
-            s if s.matches("Certificates") /* Certificates com.amazonaws.rds.synthetic#DescribeCertificatesOutput$Certificates */ =>  {
+            s if s.matches("DefaultCertificateForNewLaunches") /* DefaultCertificateForNewLaunches com.amazonaws.rds.synthetic#DescribeCertificatesOutput$DefaultCertificateForNewLaunches */ =>  {
                 let var_1 =
-                    Some(
-                        crate::protocol_serde::shape_certificate_list::de_certificate_list(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_certificates(var_1);
-            }
-            ,
-            s if s.matches("Marker") /* Marker com.amazonaws.rds.synthetic#DescribeCertificatesOutput$Marker */ =>  {
-                let var_2 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -105,7 +95,30 @@ pub fn de_describe_certificates(
                         ?
                     )
                 ;
-                builder = builder.set_marker(var_2);
+                builder = builder.set_default_certificate_for_new_launches(var_1);
+            }
+            ,
+            s if s.matches("Certificates") /* Certificates com.amazonaws.rds.synthetic#DescribeCertificatesOutput$Certificates */ =>  {
+                let var_2 =
+                    Some(
+                        crate::protocol_serde::shape_certificate_list::de_certificate_list(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_certificates(var_2);
+            }
+            ,
+            s if s.matches("Marker") /* Marker com.amazonaws.rds.synthetic#DescribeCertificatesOutput$Marker */ =>  {
+                let var_3 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_marker(var_3);
             }
             ,
             _ => {}

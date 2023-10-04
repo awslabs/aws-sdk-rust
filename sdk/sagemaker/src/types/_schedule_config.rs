@@ -9,6 +9,7 @@ pub struct ScheduleConfig {
     /// <ul>
     /// <li> <p>If you want to set the job to start every hour, use the following:</p> <p> <code>Hourly: cron(0 * ? * * *)</code> </p> </li>
     /// <li> <p>If you want to start the job daily:</p> <p> <code>cron(0 [00-23] ? * * *)</code> </p> </li>
+    /// <li> <p>If you want to run the job one time, immediately, use the following keyword:</p> <p> <code>NOW</code> </p> </li>
     /// </ul>
     /// <p>For example, the following are valid cron expressions:</p>
     /// <ul>
@@ -44,6 +45,7 @@ impl ScheduleConfig {
     /// <ul>
     /// <li> <p>If you want to set the job to start every hour, use the following:</p> <p> <code>Hourly: cron(0 * ? * * *)</code> </p> </li>
     /// <li> <p>If you want to start the job daily:</p> <p> <code>cron(0 [00-23] ? * * *)</code> </p> </li>
+    /// <li> <p>If you want to run the job one time, immediately, use the following keyword:</p> <p> <code>NOW</code> </p> </li>
     /// </ul>
     /// <p>For example, the following are valid cron expressions:</p>
     /// <ul>
@@ -100,6 +102,7 @@ impl ScheduleConfigBuilder {
     /// <ul>
     /// <li> <p>If you want to set the job to start every hour, use the following:</p> <p> <code>Hourly: cron(0 * ? * * *)</code> </p> </li>
     /// <li> <p>If you want to start the job daily:</p> <p> <code>cron(0 [00-23] ? * * *)</code> </p> </li>
+    /// <li> <p>If you want to run the job one time, immediately, use the following keyword:</p> <p> <code>NOW</code> </p> </li>
     /// </ul>
     /// <p>For example, the following are valid cron expressions:</p>
     /// <ul>
@@ -128,6 +131,7 @@ impl ScheduleConfigBuilder {
     /// <ul>
     /// <li> <p>If you want to set the job to start every hour, use the following:</p> <p> <code>Hourly: cron(0 * ? * * *)</code> </p> </li>
     /// <li> <p>If you want to start the job daily:</p> <p> <code>cron(0 [00-23] ? * * *)</code> </p> </li>
+    /// <li> <p>If you want to run the job one time, immediately, use the following keyword:</p> <p> <code>NOW</code> </p> </li>
     /// </ul>
     /// <p>For example, the following are valid cron expressions:</p>
     /// <ul>
@@ -156,6 +160,7 @@ impl ScheduleConfigBuilder {
     /// <ul>
     /// <li> <p>If you want to set the job to start every hour, use the following:</p> <p> <code>Hourly: cron(0 * ? * * *)</code> </p> </li>
     /// <li> <p>If you want to start the job daily:</p> <p> <code>cron(0 [00-23] ? * * *)</code> </p> </li>
+    /// <li> <p>If you want to run the job one time, immediately, use the following keyword:</p> <p> <code>NOW</code> </p> </li>
     /// </ul>
     /// <p>For example, the following are valid cron expressions:</p>
     /// <ul>

@@ -254,4 +254,18 @@ impl CreateVerifiedAccessTrustProviderFluentBuilder {
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
         self.inner.get_dry_run()
     }
+    /// <p> Options for server side encryption. </p>
+    pub fn sse_specification(mut self, input: crate::types::VerifiedAccessSseSpecificationRequest) -> Self {
+        self.inner = self.inner.sse_specification(input);
+        self
+    }
+    /// <p> Options for server side encryption. </p>
+    pub fn set_sse_specification(mut self, input: ::std::option::Option<crate::types::VerifiedAccessSseSpecificationRequest>) -> Self {
+        self.inner = self.inner.set_sse_specification(input);
+        self
+    }
+    /// <p> Options for server side encryption. </p>
+    pub fn get_sse_specification(&self) -> &::std::option::Option<crate::types::VerifiedAccessSseSpecificationRequest> {
+        self.inner.get_sse_specification()
+    }
 }

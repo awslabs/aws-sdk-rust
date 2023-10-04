@@ -7,6 +7,8 @@ pub struct ModifyVerifiedAccessEndpointPolicyOutput {
     pub policy_enabled: ::std::option::Option<bool>,
     /// <p>The Verified Access policy document.</p>
     pub policy_document: ::std::option::Option<::std::string::String>,
+    /// <p> Describes the options in use for server side encryption. </p>
+    pub sse_specification: ::std::option::Option<crate::types::VerifiedAccessSseSpecificationResponse>,
     _request_id: Option<String>,
 }
 impl ModifyVerifiedAccessEndpointPolicyOutput {
@@ -17,6 +19,10 @@ impl ModifyVerifiedAccessEndpointPolicyOutput {
     /// <p>The Verified Access policy document.</p>
     pub fn policy_document(&self) -> ::std::option::Option<&str> {
         self.policy_document.as_deref()
+    }
+    /// <p> Describes the options in use for server side encryption. </p>
+    pub fn sse_specification(&self) -> ::std::option::Option<&crate::types::VerifiedAccessSseSpecificationResponse> {
+        self.sse_specification.as_ref()
     }
 }
 impl ::aws_http::request_id::RequestId for ModifyVerifiedAccessEndpointPolicyOutput {
@@ -37,6 +43,7 @@ impl ModifyVerifiedAccessEndpointPolicyOutput {
 pub struct ModifyVerifiedAccessEndpointPolicyOutputBuilder {
     pub(crate) policy_enabled: ::std::option::Option<bool>,
     pub(crate) policy_document: ::std::option::Option<::std::string::String>,
+    pub(crate) sse_specification: ::std::option::Option<crate::types::VerifiedAccessSseSpecificationResponse>,
     _request_id: Option<String>,
 }
 impl ModifyVerifiedAccessEndpointPolicyOutputBuilder {
@@ -68,6 +75,20 @@ impl ModifyVerifiedAccessEndpointPolicyOutputBuilder {
     pub fn get_policy_document(&self) -> &::std::option::Option<::std::string::String> {
         &self.policy_document
     }
+    /// <p> Describes the options in use for server side encryption. </p>
+    pub fn sse_specification(mut self, input: crate::types::VerifiedAccessSseSpecificationResponse) -> Self {
+        self.sse_specification = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p> Describes the options in use for server side encryption. </p>
+    pub fn set_sse_specification(mut self, input: ::std::option::Option<crate::types::VerifiedAccessSseSpecificationResponse>) -> Self {
+        self.sse_specification = input;
+        self
+    }
+    /// <p> Describes the options in use for server side encryption. </p>
+    pub fn get_sse_specification(&self) -> &::std::option::Option<crate::types::VerifiedAccessSseSpecificationResponse> {
+        &self.sse_specification
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -82,6 +103,7 @@ impl ModifyVerifiedAccessEndpointPolicyOutputBuilder {
         crate::operation::modify_verified_access_endpoint_policy::ModifyVerifiedAccessEndpointPolicyOutput {
             policy_enabled: self.policy_enabled,
             policy_document: self.policy_document,
+            sse_specification: self.sse_specification,
             _request_id: self._request_id,
         }
     }

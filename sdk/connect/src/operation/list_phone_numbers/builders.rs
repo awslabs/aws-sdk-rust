@@ -140,17 +140,23 @@ impl ListPhoneNumbersFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_phone_number_types`](Self::set_phone_number_types).
     ///
-    /// <p>The type of phone number.</p>
+    /// <p>The type of phone number.</p> <note>
+    /// <p>We recommend using <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ListPhoneNumbersV2.html">ListPhoneNumbersV2</a> to return phone number types. While ListPhoneNumbers returns number types <code>UIFN</code>, <code>SHARED</code>, <code>THIRD_PARTY_TF</code>, and <code>THIRD_PARTY_DID</code>, it incorrectly lists them as <code>TOLL_FREE</code> or <code>DID</code>. </p>
+    /// </note>
     pub fn phone_number_types(mut self, input: crate::types::PhoneNumberType) -> Self {
         self.inner = self.inner.phone_number_types(input);
         self
     }
-    /// <p>The type of phone number.</p>
+    /// <p>The type of phone number.</p> <note>
+    /// <p>We recommend using <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ListPhoneNumbersV2.html">ListPhoneNumbersV2</a> to return phone number types. While ListPhoneNumbers returns number types <code>UIFN</code>, <code>SHARED</code>, <code>THIRD_PARTY_TF</code>, and <code>THIRD_PARTY_DID</code>, it incorrectly lists them as <code>TOLL_FREE</code> or <code>DID</code>. </p>
+    /// </note>
     pub fn set_phone_number_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberType>>) -> Self {
         self.inner = self.inner.set_phone_number_types(input);
         self
     }
-    /// <p>The type of phone number.</p>
+    /// <p>The type of phone number.</p> <note>
+    /// <p>We recommend using <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ListPhoneNumbersV2.html">ListPhoneNumbersV2</a> to return phone number types. While ListPhoneNumbers returns number types <code>UIFN</code>, <code>SHARED</code>, <code>THIRD_PARTY_TF</code>, and <code>THIRD_PARTY_DID</code>, it incorrectly lists them as <code>TOLL_FREE</code> or <code>DID</code>. </p>
+    /// </note>
     pub fn get_phone_number_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberType>> {
         self.inner.get_phone_number_types()
     }

@@ -24,6 +24,16 @@ pub fn ser_react_start_codegen_job_data(
         crate::protocol_serde::shape_api_configuration::ser_api_configuration(&mut object_5, var_4)?;
         object_5.finish();
     }
+    if let Some(var_6) = &input.dependencies {
+        #[allow(unused_mut)]
+        let mut object_7 = object.key("dependencies").start_object();
+        for (key_8, value_9) in var_6 {
+            {
+                object_7.key(key_8.as_str()).string(value_9.as_str());
+            }
+        }
+        object_7.finish();
+    }
     Ok(())
 }
 
@@ -72,6 +82,11 @@ where
                         }
                         "apiConfiguration" => {
                             builder = builder.set_api_configuration(crate::protocol_serde::shape_api_configuration::de_api_configuration(tokens)?);
+                        }
+                        "dependencies" => {
+                            builder = builder.set_dependencies(
+                                crate::protocol_serde::shape_react_codegen_dependencies::de_react_codegen_dependencies(tokens)?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

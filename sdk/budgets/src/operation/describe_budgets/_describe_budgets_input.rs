@@ -4,19 +4,19 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeBudgetsInput {
-    /// <p>The <code>accountId</code> that is associated with the budgets that you want descriptions of.</p>
+    /// <p>The <code>accountId</code> that is associated with the budgets that you want to describe.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
-    /// <p>An optional integer that represents how many entries a paginated response contains. The maximum is 100.</p>
+    /// <p>An integer that represents how many budgets a paginated response contains. The default is 100.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>The pagination token that you include in your request to indicate the next set of results that you want to retrieve.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribeBudgetsInput {
-    /// <p>The <code>accountId</code> that is associated with the budgets that you want descriptions of.</p>
+    /// <p>The <code>accountId</code> that is associated with the budgets that you want to describe.</p>
     pub fn account_id(&self) -> ::std::option::Option<&str> {
         self.account_id.as_deref()
     }
-    /// <p>An optional integer that represents how many entries a paginated response contains. The maximum is 100.</p>
+    /// <p>An integer that represents how many budgets a paginated response contains. The default is 100.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
@@ -41,31 +41,31 @@ pub struct DescribeBudgetsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribeBudgetsInputBuilder {
-    /// <p>The <code>accountId</code> that is associated with the budgets that you want descriptions of.</p>
+    /// <p>The <code>accountId</code> that is associated with the budgets that you want to describe.</p>
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The <code>accountId</code> that is associated with the budgets that you want descriptions of.</p>
+    /// <p>The <code>accountId</code> that is associated with the budgets that you want to describe.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_id = input;
         self
     }
-    /// <p>The <code>accountId</code> that is associated with the budgets that you want descriptions of.</p>
+    /// <p>The <code>accountId</code> that is associated with the budgets that you want to describe.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.account_id
     }
-    /// <p>An optional integer that represents how many entries a paginated response contains. The maximum is 100.</p>
+    /// <p>An integer that represents how many budgets a paginated response contains. The default is 100.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self
     }
-    /// <p>An optional integer that represents how many entries a paginated response contains. The maximum is 100.</p>
+    /// <p>An integer that represents how many budgets a paginated response contains. The default is 100.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }
-    /// <p>An optional integer that represents how many entries a paginated response contains. The maximum is 100.</p>
+    /// <p>An integer that represents how many budgets a paginated response contains. The default is 100.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }

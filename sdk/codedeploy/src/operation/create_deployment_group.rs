@@ -263,13 +263,13 @@ pub type CreateDeploymentGroupErrorKind = CreateDeploymentGroupError;
 pub enum CreateDeploymentGroupError {
     /// <p>The maximum number of alarms for a deployment group (10) was exceeded.</p>
     AlarmsLimitExceededException(crate::types::error::AlarmsLimitExceededException),
-    /// <p>The application does not exist with the IAM user or Amazon Web Services account.</p>
+    /// <p>The application does not exist with the user or Amazon Web Services account.</p>
     ApplicationDoesNotExistException(crate::types::error::ApplicationDoesNotExistException),
     /// <p>The minimum number of required application names was not specified.</p>
     ApplicationNameRequiredException(crate::types::error::ApplicationNameRequiredException),
-    /// <p>The deployment configuration does not exist with the IAM user or Amazon Web Services account.</p>
+    /// <p>The deployment configuration does not exist with the user or Amazon Web Services account.</p>
     DeploymentConfigDoesNotExistException(crate::types::error::DeploymentConfigDoesNotExistException),
-    /// <p>A deployment group with the specified name with the IAM user or Amazon Web Services account already exists.</p>
+    /// <p>A deployment group with the specified name with the user or Amazon Web Services account already exists.</p>
     DeploymentGroupAlreadyExistsException(crate::types::error::DeploymentGroupAlreadyExistsException),
     /// <p> The deployment groups limit was exceeded.</p>
     DeploymentGroupLimitExceededException(crate::types::error::DeploymentGroupLimitExceededException),

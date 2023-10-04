@@ -22,7 +22,7 @@ impl ListDeploymentsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListDeployments`.
 ///
-/// <p>Lists the deployments in a deployment group for an application registered with the IAM user or Amazon Web Services account.</p>
+/// <p>Lists the deployments in a deployment group for an application registered with the user or Amazon Web Services account.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListDeploymentsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -116,21 +116,21 @@ impl ListDeploymentsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_deployments::paginator::ListDeploymentsPaginator {
         crate::operation::list_deployments::paginator::ListDeploymentsPaginator::new(self.handle, self.inner)
     }
-    /// <p>The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account.</p> <note>
+    /// <p>The name of an CodeDeploy application associated with the user or Amazon Web Services account.</p> <note>
     /// <p>If <code>applicationName</code> is specified, then <code>deploymentGroupName</code> must be specified. If it is not specified, then <code>deploymentGroupName</code> must not be specified. </p>
     /// </note>
     pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_name(input.into());
         self
     }
-    /// <p>The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account.</p> <note>
+    /// <p>The name of an CodeDeploy application associated with the user or Amazon Web Services account.</p> <note>
     /// <p>If <code>applicationName</code> is specified, then <code>deploymentGroupName</code> must be specified. If it is not specified, then <code>deploymentGroupName</code> must not be specified. </p>
     /// </note>
     pub fn set_application_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_name(input);
         self
     }
-    /// <p>The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account.</p> <note>
+    /// <p>The name of an CodeDeploy application associated with the user or Amazon Web Services account.</p> <note>
     /// <p>If <code>applicationName</code> is specified, then <code>deploymentGroupName</code> must be specified. If it is not specified, then <code>deploymentGroupName</code> must not be specified. </p>
     /// </note>
     pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {

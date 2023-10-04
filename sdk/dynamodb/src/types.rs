@@ -203,6 +203,8 @@ pub use crate::types::_replica::Replica;
 
 pub use crate::types::_export_summary::ExportSummary;
 
+pub use crate::types::_export_type::ExportType;
+
 pub use crate::types::_export_status::ExportStatus;
 
 pub use crate::types::_contributor_insights_summary::ContributorInsightsSummary;
@@ -226,6 +228,10 @@ pub use crate::types::_input_format_options::InputFormatOptions;
 pub use crate::types::_csv_options::CsvOptions;
 
 pub use crate::types::_export_description::ExportDescription;
+
+pub use crate::types::_incremental_export_specification::IncrementalExportSpecification;
+
+pub use crate::types::_export_view_type::ExportViewType;
 
 pub use crate::types::_export_format::ExportFormat;
 
@@ -375,6 +381,10 @@ mod _export_status;
 
 mod _export_summary;
 
+mod _export_type;
+
+mod _export_view_type;
+
 mod _failure_exception;
 
 mod _get;
@@ -402,6 +412,8 @@ mod _import_status;
 mod _import_summary;
 
 mod _import_table_description;
+
+mod _incremental_export_specification;
 
 mod _index_status;
 

@@ -45,6 +45,9 @@ where
                         "clientProperties" => {
                             builder = builder.set_client_properties(crate::protocol_serde::shape_client_properties::de_client_properties(tokens)?);
                         }
+                        "headers" => {
+                            builder = builder.set_headers(crate::protocol_serde::shape_kafka_headers::de_kafka_headers(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
@@ -88,6 +91,18 @@ pub fn ser_kafka_action(
             }
         }
         object_6.finish();
+    }
+    if let Some(var_9) = &input.headers {
+        let mut array_10 = object.key("headers").start_array();
+        for item_11 in var_9 {
+            {
+                #[allow(unused_mut)]
+                let mut object_12 = array_10.value().start_object();
+                crate::protocol_serde::shape_kafka_action_header::ser_kafka_action_header(&mut object_12, item_11)?;
+                object_12.finish();
+            }
+        }
+        array_10.finish();
     }
     Ok(())
 }

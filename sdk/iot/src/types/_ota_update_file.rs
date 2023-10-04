@@ -14,7 +14,7 @@ pub struct OtaUpdateFile {
     pub file_location: ::std::option::Option<crate::types::FileLocation>,
     /// <p>The code signing method of the file.</p>
     pub code_signing: ::std::option::Option<crate::types::CodeSigning>,
-    /// <p>A list of name/attribute pairs.</p>
+    /// <p>A list of name-attribute pairs. They won't be sent to devices as a part of the Job document.</p>
     pub attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl OtaUpdateFile {
@@ -38,7 +38,7 @@ impl OtaUpdateFile {
     pub fn code_signing(&self) -> ::std::option::Option<&crate::types::CodeSigning> {
         self.code_signing.as_ref()
     }
-    /// <p>A list of name/attribute pairs.</p>
+    /// <p>A list of name-attribute pairs. They won't be sent to devices as a part of the Job document.</p>
     pub fn attributes(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.attributes.as_ref()
     }
@@ -136,19 +136,19 @@ impl OtaUpdateFileBuilder {
     ///
     /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
     ///
-    /// <p>A list of name/attribute pairs.</p>
+    /// <p>A list of name-attribute pairs. They won't be sent to devices as a part of the Job document.</p>
     pub fn attributes(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.attributes.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.attributes = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>A list of name/attribute pairs.</p>
+    /// <p>A list of name-attribute pairs. They won't be sent to devices as a part of the Job document.</p>
     pub fn set_attributes(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.attributes = input;
         self
     }
-    /// <p>A list of name/attribute pairs.</p>
+    /// <p>A list of name-attribute pairs. They won't be sent to devices as a part of the Job document.</p>
     pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.attributes
     }

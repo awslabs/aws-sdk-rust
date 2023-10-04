@@ -13,26 +13,38 @@ pub fn ser_update_security_profile_input(
         }
         object_2.finish();
     }
-    if let Some(var_5) = &input.description {
-        object.key("Description").string(var_5.as_str());
-    }
-    if let Some(var_6) = &input.permissions {
-        let mut array_7 = object.key("Permissions").start_array();
-        for item_8 in var_6 {
+    if let Some(var_5) = &input.applications {
+        let mut array_6 = object.key("Applications").start_array();
+        for item_7 in var_5 {
             {
-                array_7.value().string(item_8.as_str());
+                #[allow(unused_mut)]
+                let mut object_8 = array_6.value().start_object();
+                crate::protocol_serde::shape_application::ser_application(&mut object_8, item_7)?;
+                object_8.finish();
             }
         }
-        array_7.finish();
+        array_6.finish();
     }
-    if let Some(var_9) = &input.tag_restricted_resources {
-        let mut array_10 = object.key("TagRestrictedResources").start_array();
-        for item_11 in var_9 {
+    if let Some(var_9) = &input.description {
+        object.key("Description").string(var_9.as_str());
+    }
+    if let Some(var_10) = &input.permissions {
+        let mut array_11 = object.key("Permissions").start_array();
+        for item_12 in var_10 {
             {
-                array_10.value().string(item_11.as_str());
+                array_11.value().string(item_12.as_str());
             }
         }
-        array_10.finish();
+        array_11.finish();
+    }
+    if let Some(var_13) = &input.tag_restricted_resources {
+        let mut array_14 = object.key("TagRestrictedResources").start_array();
+        for item_15 in var_13 {
+            {
+                array_14.value().string(item_15.as_str());
+            }
+        }
+        array_14.finish();
     }
     Ok(())
 }

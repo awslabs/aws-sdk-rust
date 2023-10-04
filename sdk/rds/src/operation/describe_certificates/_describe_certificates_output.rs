@@ -4,6 +4,8 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeCertificatesOutput {
+    /// <p>The default root CA for new databases created by your Amazon Web Services account. This is either the root CA override set on your Amazon Web Services account or the system default CA for the Region if no override exists. To override the default CA, use the <code>ModifyCertificates</code> operation.</p>
+    pub default_certificate_for_new_launches: ::std::option::Option<::std::string::String>,
     /// <p>The list of <code>Certificate</code> objects for the Amazon Web Services account.</p>
     pub certificates: ::std::option::Option<::std::vec::Vec<crate::types::Certificate>>,
     /// <p>An optional pagination token provided by a previous <code>DescribeCertificates</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code> .</p>
@@ -11,6 +13,10 @@ pub struct DescribeCertificatesOutput {
     _request_id: Option<String>,
 }
 impl DescribeCertificatesOutput {
+    /// <p>The default root CA for new databases created by your Amazon Web Services account. This is either the root CA override set on your Amazon Web Services account or the system default CA for the Region if no override exists. To override the default CA, use the <code>ModifyCertificates</code> operation.</p>
+    pub fn default_certificate_for_new_launches(&self) -> ::std::option::Option<&str> {
+        self.default_certificate_for_new_launches.as_deref()
+    }
     /// <p>The list of <code>Certificate</code> objects for the Amazon Web Services account.</p>
     pub fn certificates(&self) -> ::std::option::Option<&[crate::types::Certificate]> {
         self.certificates.as_deref()
@@ -36,11 +42,26 @@ impl DescribeCertificatesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeCertificatesOutputBuilder {
+    pub(crate) default_certificate_for_new_launches: ::std::option::Option<::std::string::String>,
     pub(crate) certificates: ::std::option::Option<::std::vec::Vec<crate::types::Certificate>>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeCertificatesOutputBuilder {
+    /// <p>The default root CA for new databases created by your Amazon Web Services account. This is either the root CA override set on your Amazon Web Services account or the system default CA for the Region if no override exists. To override the default CA, use the <code>ModifyCertificates</code> operation.</p>
+    pub fn default_certificate_for_new_launches(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.default_certificate_for_new_launches = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The default root CA for new databases created by your Amazon Web Services account. This is either the root CA override set on your Amazon Web Services account or the system default CA for the Region if no override exists. To override the default CA, use the <code>ModifyCertificates</code> operation.</p>
+    pub fn set_default_certificate_for_new_launches(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.default_certificate_for_new_launches = input;
+        self
+    }
+    /// <p>The default root CA for new databases created by your Amazon Web Services account. This is either the root CA override set on your Amazon Web Services account or the system default CA for the Region if no override exists. To override the default CA, use the <code>ModifyCertificates</code> operation.</p>
+    pub fn get_default_certificate_for_new_launches(&self) -> &::std::option::Option<::std::string::String> {
+        &self.default_certificate_for_new_launches
+    }
     /// Appends an item to `certificates`.
     ///
     /// To override the contents of this collection use [`set_certificates`](Self::set_certificates).
@@ -87,6 +108,7 @@ impl DescribeCertificatesOutputBuilder {
     /// Consumes the builder and constructs a [`DescribeCertificatesOutput`](crate::operation::describe_certificates::DescribeCertificatesOutput).
     pub fn build(self) -> crate::operation::describe_certificates::DescribeCertificatesOutput {
         crate::operation::describe_certificates::DescribeCertificatesOutput {
+            default_certificate_for_new_launches: self.default_certificate_for_new_launches,
             certificates: self.certificates,
             marker: self.marker,
             _request_id: self._request_id,

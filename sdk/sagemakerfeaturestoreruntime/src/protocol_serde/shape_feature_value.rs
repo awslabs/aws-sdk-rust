@@ -9,6 +9,15 @@ pub fn ser_feature_value(
     if let Some(var_2) = &input.value_as_string {
         object.key("ValueAsString").string(var_2.as_str());
     }
+    if let Some(var_3) = &input.value_as_string_list {
+        let mut array_4 = object.key("ValueAsStringList").start_array();
+        for item_5 in var_3 {
+            {
+                array_4.value().string(item_5.as_str());
+            }
+        }
+        array_4.finish();
+    }
     Ok(())
 }
 
@@ -40,6 +49,10 @@ where
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
                             );
+                        }
+                        "ValueAsStringList" => {
+                            builder =
+                                builder.set_value_as_string_list(crate::protocol_serde::shape_value_as_string_list::de_value_as_string_list(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

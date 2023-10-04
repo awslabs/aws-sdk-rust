@@ -21,7 +21,7 @@ pub struct DescribeModelBiasJobDefinitionOutput {
     pub job_resources: ::std::option::Option<crate::types::MonitoringResources>,
     /// <p>Networking options for a model bias job.</p>
     pub network_config: ::std::option::Option<crate::types::MonitoringNetworkConfig>,
-    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role that has read permission to the input data location and write permission to the output data location in Amazon S3.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that has read permission to the input data location and write permission to the output data location in Amazon S3.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>A time limit for how long the monitoring job is allowed to run before stopping.</p>
     pub stopping_condition: ::std::option::Option<crate::types::MonitoringStoppingCondition>,
@@ -64,7 +64,7 @@ impl DescribeModelBiasJobDefinitionOutput {
     pub fn network_config(&self) -> ::std::option::Option<&crate::types::MonitoringNetworkConfig> {
         self.network_config.as_ref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role that has read permission to the input data location and write permission to the output data location in Amazon S3.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that has read permission to the input data location and write permission to the output data location in Amazon S3.</p>
     pub fn role_arn(&self) -> ::std::option::Option<&str> {
         self.role_arn.as_deref()
     }
@@ -229,17 +229,17 @@ impl DescribeModelBiasJobDefinitionOutputBuilder {
     pub fn get_network_config(&self) -> &::std::option::Option<crate::types::MonitoringNetworkConfig> {
         &self.network_config
     }
-    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role that has read permission to the input data location and write permission to the output data location in Amazon S3.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that has read permission to the input data location and write permission to the output data location in Amazon S3.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role that has read permission to the input data location and write permission to the output data location in Amazon S3.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that has read permission to the input data location and write permission to the output data location in Amazon S3.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role that has read permission to the input data location and write permission to the output data location in Amazon S3.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that has read permission to the input data location and write permission to the output data location in Amazon S3.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.role_arn
     }

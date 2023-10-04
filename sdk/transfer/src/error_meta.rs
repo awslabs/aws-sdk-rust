@@ -7,13 +7,13 @@ pub enum Error {
     AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>This exception is thrown when the <code>UpdateServer</code> is called for a file transfer protocol-enabled server that has VPC as the endpoint type and the server's <code>VpcEndpointID</code> is not in the available state.</p>
     ConflictException(crate::types::error::ConflictException),
-    /// <p>This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family service.</p>
+    /// <p>This exception is thrown when an error occurs in the Transfer Family service.</p>
     InternalServiceError(crate::types::error::InternalServiceError),
     /// <p>The <code>NextToken</code> parameter that was passed is invalid.</p>
     InvalidNextTokenException(crate::types::error::InvalidNextTokenException),
     /// <p>This exception is thrown when the client submits a malformed request.</p>
     InvalidRequestException(crate::types::error::InvalidRequestException),
-    /// <p>The requested resource does not exist.</p>
+    /// <p>The requested resource does not exist, or exists in a region other than the one specified for the command.</p>
     ResourceExistsException(crate::types::error::ResourceExistsException),
     /// <p>This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family service.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),

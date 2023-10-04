@@ -58,13 +58,13 @@ pub(crate) struct Handle {
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`CreateDataIntegration`](crate::operation::create_data_integration) operation has
-/// a [`Client::create_data_integration`], function which returns a builder for that operation.
+/// For example, the [`CreateApplication`](crate::operation::create_application) operation has
+/// a [`Client::create_application`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.create_data_integration()
+/// let result = client.create_application()
 ///     .name("example")
 ///     .send()
 ///     .await;
@@ -147,6 +147,8 @@ impl Client {
     }
 }
 
+mod create_application;
+
 mod create_data_integration;
 
 mod create_event_integration;
@@ -162,7 +164,7 @@ mod create_event_integration;
 /// # let client: aws_sdk_appintegrations::Client = unimplemented!();
 /// use ::http::header::{HeaderName, HeaderValue};
 ///
-/// let result = client.create_data_integration()
+/// let result = client.create_application()
 ///     .customize()
 ///     .await?
 ///     .mutate_request(|req| {
@@ -183,9 +185,13 @@ mod delete_data_integration;
 
 mod delete_event_integration;
 
+mod get_application;
+
 mod get_data_integration;
 
 mod get_event_integration;
+
+mod list_applications;
 
 mod list_data_integration_associations;
 
@@ -200,6 +206,8 @@ mod list_tags_for_resource;
 mod tag_resource;
 
 mod untag_resource;
+
+mod update_application;
 
 mod update_data_integration;
 

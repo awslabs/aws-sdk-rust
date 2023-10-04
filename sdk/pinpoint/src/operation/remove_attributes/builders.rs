@@ -22,7 +22,7 @@ impl RemoveAttributesInputBuilder {
 }
 /// Fluent builder constructing a request to `RemoveAttributes`.
 ///
-/// <p>Removes one or more attributes, of the same attribute type, from all the endpoints that are associated with an application.</p>
+/// <p>Removes one or more custom attributes, of the same attribute type, from the application. Existing endpoints still have the attributes but Amazon Pinpoint will stop capturing new or changed values for these attributes.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RemoveAttributesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

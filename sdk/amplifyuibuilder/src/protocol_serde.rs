@@ -225,6 +225,8 @@ pub(crate) mod shape_theme_values;
 
 pub(crate) mod shape_action_parameters;
 
+pub(crate) mod shape_codegen_dependencies;
+
 pub(crate) mod shape_codegen_generic_data_enum;
 
 pub(crate) mod shape_codegen_generic_data_model;
@@ -283,6 +285,8 @@ pub(crate) mod shape_theme_values_list;
 
 pub(crate) mod shape_api_configuration;
 
+pub(crate) mod shape_codegen_dependency;
+
 pub(crate) mod shape_codegen_generic_data_enums;
 
 pub(crate) mod shape_codegen_generic_data_field;
@@ -316,6 +320,8 @@ pub(crate) mod shape_graph_ql_render_config;
 pub(crate) mod shape_identifier_list;
 
 pub(crate) mod shape_no_api_render_config;
+
+pub(crate) mod shape_react_codegen_dependencies;
 
 pub(crate) mod shape_sort_property_list;
 

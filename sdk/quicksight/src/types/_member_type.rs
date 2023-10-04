@@ -15,6 +15,7 @@
 ///     MemberType::Analysis => { /* ... */ },
 ///     MemberType::Dashboard => { /* ... */ },
 ///     MemberType::Dataset => { /* ... */ },
+///     MemberType::Topic => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -48,6 +49,8 @@ pub enum MemberType {
     Dashboard,
     #[allow(missing_docs)] // documentation missing in model
     Dataset,
+    #[allow(missing_docs)] // documentation missing in model
+    Topic,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
@@ -57,6 +60,7 @@ impl ::std::convert::From<&str> for MemberType {
             "ANALYSIS" => MemberType::Analysis,
             "DASHBOARD" => MemberType::Dashboard,
             "DATASET" => MemberType::Dataset,
+            "TOPIC" => MemberType::Topic,
             other => MemberType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -75,12 +79,13 @@ impl MemberType {
             MemberType::Analysis => "ANALYSIS",
             MemberType::Dashboard => "DASHBOARD",
             MemberType::Dataset => "DATASET",
+            MemberType::Topic => "TOPIC",
             MemberType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ANALYSIS", "DASHBOARD", "DATASET"]
+        &["ANALYSIS", "DASHBOARD", "DATASET", "TOPIC"]
     }
 }
 impl ::std::convert::AsRef<str> for MemberType {

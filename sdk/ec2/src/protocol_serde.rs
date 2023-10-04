@@ -2649,6 +2649,8 @@ pub(crate) mod shape_transit_gateway_request_options;
 
 pub(crate) mod shape_verified_access_log_options;
 
+pub(crate) mod shape_verified_access_sse_specification_request;
+
 pub(crate) mod shape_volume_detail;
 
 pub(crate) mod shape_vpn_connection_options_specification;
@@ -3410,6 +3412,8 @@ pub(crate) mod shape_verified_access_log_cloud_watch_logs_destination_options;
 pub(crate) mod shape_verified_access_log_kinesis_data_firehose_destination_options;
 
 pub(crate) mod shape_verified_access_log_s3_destination_options;
+
+pub(crate) mod shape_verified_access_sse_specification_response;
 
 pub(crate) mod shape_verified_access_trust_provider;
 

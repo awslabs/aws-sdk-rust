@@ -5,12 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsManagedRulesAcfpRuleSet {
     /// <p>The path of the account creation endpoint for your application. This is the page on your website that accepts the completed registration form for a new user. This page must accept <code>POST</code> requests.</p>
-    /// <p>For example, for the URL <code>https://example.com/web/signup</code>, you would provide the path <code>/web/signup</code>.</p>
+    /// <p>For example, for the URL <code>https://example.com/web/newaccount</code>, you would provide the path <code>/web/newaccount</code>. Account creation page paths that start with the path that you provide are considered a match. For example <code>/web/newaccount</code> matches the account creation paths <code>/web/newaccount</code>, <code>/web/newaccount/</code>, <code>/web/newaccountPage</code>, and <code>/web/newaccount/thisPage</code>, but doesn't match the path <code>/home/web/newaccount</code> or <code>/website/newaccount</code>. </p>
     pub creation_path: ::std::option::Option<::std::string::String>,
     /// <p>The path of the account registration endpoint for your application. This is the page on your website that presents the registration form to new users. </p> <note>
     /// <p>This page must accept <code>GET</code> text/html requests.</p>
     /// </note>
-    /// <p>For example, for the URL <code>https://example.com/web/register</code>, you would provide the path <code>/web/register</code>.</p>
+    /// <p>For example, for the URL <code>https://example.com/web/registration</code>, you would provide the path <code>/web/registration</code>. Registration page paths that start with the path that you provide are considered a match. For example <code>/web/registration</code> matches the registration paths <code>/web/registration</code>, <code>/web/registration/</code>, <code>/web/registrationPage</code>, and <code>/web/registration/thisPage</code>, but doesn't match the path <code>/home/web/registration</code> or <code>/website/registration</code>. </p>
     pub registration_page_path: ::std::option::Option<::std::string::String>,
     /// <p>The criteria for inspecting account creation requests, used by the ACFP rule group to validate and track account creation attempts. </p>
     pub request_inspection: ::std::option::Option<crate::types::RequestInspectionAcfp>,
@@ -24,14 +24,14 @@ pub struct AwsManagedRulesAcfpRuleSet {
 }
 impl AwsManagedRulesAcfpRuleSet {
     /// <p>The path of the account creation endpoint for your application. This is the page on your website that accepts the completed registration form for a new user. This page must accept <code>POST</code> requests.</p>
-    /// <p>For example, for the URL <code>https://example.com/web/signup</code>, you would provide the path <code>/web/signup</code>.</p>
+    /// <p>For example, for the URL <code>https://example.com/web/newaccount</code>, you would provide the path <code>/web/newaccount</code>. Account creation page paths that start with the path that you provide are considered a match. For example <code>/web/newaccount</code> matches the account creation paths <code>/web/newaccount</code>, <code>/web/newaccount/</code>, <code>/web/newaccountPage</code>, and <code>/web/newaccount/thisPage</code>, but doesn't match the path <code>/home/web/newaccount</code> or <code>/website/newaccount</code>. </p>
     pub fn creation_path(&self) -> ::std::option::Option<&str> {
         self.creation_path.as_deref()
     }
     /// <p>The path of the account registration endpoint for your application. This is the page on your website that presents the registration form to new users. </p> <note>
     /// <p>This page must accept <code>GET</code> text/html requests.</p>
     /// </note>
-    /// <p>For example, for the URL <code>https://example.com/web/register</code>, you would provide the path <code>/web/register</code>.</p>
+    /// <p>For example, for the URL <code>https://example.com/web/registration</code>, you would provide the path <code>/web/registration</code>. Registration page paths that start with the path that you provide are considered a match. For example <code>/web/registration</code> matches the registration paths <code>/web/registration</code>, <code>/web/registration/</code>, <code>/web/registrationPage</code>, and <code>/web/registration/thisPage</code>, but doesn't match the path <code>/home/web/registration</code> or <code>/website/registration</code>. </p>
     pub fn registration_page_path(&self) -> ::std::option::Option<&str> {
         self.registration_page_path.as_deref()
     }
@@ -70,26 +70,26 @@ pub struct AwsManagedRulesAcfpRuleSetBuilder {
 }
 impl AwsManagedRulesAcfpRuleSetBuilder {
     /// <p>The path of the account creation endpoint for your application. This is the page on your website that accepts the completed registration form for a new user. This page must accept <code>POST</code> requests.</p>
-    /// <p>For example, for the URL <code>https://example.com/web/signup</code>, you would provide the path <code>/web/signup</code>.</p>
+    /// <p>For example, for the URL <code>https://example.com/web/newaccount</code>, you would provide the path <code>/web/newaccount</code>. Account creation page paths that start with the path that you provide are considered a match. For example <code>/web/newaccount</code> matches the account creation paths <code>/web/newaccount</code>, <code>/web/newaccount/</code>, <code>/web/newaccountPage</code>, and <code>/web/newaccount/thisPage</code>, but doesn't match the path <code>/home/web/newaccount</code> or <code>/website/newaccount</code>. </p>
     pub fn creation_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.creation_path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The path of the account creation endpoint for your application. This is the page on your website that accepts the completed registration form for a new user. This page must accept <code>POST</code> requests.</p>
-    /// <p>For example, for the URL <code>https://example.com/web/signup</code>, you would provide the path <code>/web/signup</code>.</p>
+    /// <p>For example, for the URL <code>https://example.com/web/newaccount</code>, you would provide the path <code>/web/newaccount</code>. Account creation page paths that start with the path that you provide are considered a match. For example <code>/web/newaccount</code> matches the account creation paths <code>/web/newaccount</code>, <code>/web/newaccount/</code>, <code>/web/newaccountPage</code>, and <code>/web/newaccount/thisPage</code>, but doesn't match the path <code>/home/web/newaccount</code> or <code>/website/newaccount</code>. </p>
     pub fn set_creation_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.creation_path = input;
         self
     }
     /// <p>The path of the account creation endpoint for your application. This is the page on your website that accepts the completed registration form for a new user. This page must accept <code>POST</code> requests.</p>
-    /// <p>For example, for the URL <code>https://example.com/web/signup</code>, you would provide the path <code>/web/signup</code>.</p>
+    /// <p>For example, for the URL <code>https://example.com/web/newaccount</code>, you would provide the path <code>/web/newaccount</code>. Account creation page paths that start with the path that you provide are considered a match. For example <code>/web/newaccount</code> matches the account creation paths <code>/web/newaccount</code>, <code>/web/newaccount/</code>, <code>/web/newaccountPage</code>, and <code>/web/newaccount/thisPage</code>, but doesn't match the path <code>/home/web/newaccount</code> or <code>/website/newaccount</code>. </p>
     pub fn get_creation_path(&self) -> &::std::option::Option<::std::string::String> {
         &self.creation_path
     }
     /// <p>The path of the account registration endpoint for your application. This is the page on your website that presents the registration form to new users. </p> <note>
     /// <p>This page must accept <code>GET</code> text/html requests.</p>
     /// </note>
-    /// <p>For example, for the URL <code>https://example.com/web/register</code>, you would provide the path <code>/web/register</code>.</p>
+    /// <p>For example, for the URL <code>https://example.com/web/registration</code>, you would provide the path <code>/web/registration</code>. Registration page paths that start with the path that you provide are considered a match. For example <code>/web/registration</code> matches the registration paths <code>/web/registration</code>, <code>/web/registration/</code>, <code>/web/registrationPage</code>, and <code>/web/registration/thisPage</code>, but doesn't match the path <code>/home/web/registration</code> or <code>/website/registration</code>. </p>
     pub fn registration_page_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.registration_page_path = ::std::option::Option::Some(input.into());
         self
@@ -97,7 +97,7 @@ impl AwsManagedRulesAcfpRuleSetBuilder {
     /// <p>The path of the account registration endpoint for your application. This is the page on your website that presents the registration form to new users. </p> <note>
     /// <p>This page must accept <code>GET</code> text/html requests.</p>
     /// </note>
-    /// <p>For example, for the URL <code>https://example.com/web/register</code>, you would provide the path <code>/web/register</code>.</p>
+    /// <p>For example, for the URL <code>https://example.com/web/registration</code>, you would provide the path <code>/web/registration</code>. Registration page paths that start with the path that you provide are considered a match. For example <code>/web/registration</code> matches the registration paths <code>/web/registration</code>, <code>/web/registration/</code>, <code>/web/registrationPage</code>, and <code>/web/registration/thisPage</code>, but doesn't match the path <code>/home/web/registration</code> or <code>/website/registration</code>. </p>
     pub fn set_registration_page_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.registration_page_path = input;
         self
@@ -105,7 +105,7 @@ impl AwsManagedRulesAcfpRuleSetBuilder {
     /// <p>The path of the account registration endpoint for your application. This is the page on your website that presents the registration form to new users. </p> <note>
     /// <p>This page must accept <code>GET</code> text/html requests.</p>
     /// </note>
-    /// <p>For example, for the URL <code>https://example.com/web/register</code>, you would provide the path <code>/web/register</code>.</p>
+    /// <p>For example, for the URL <code>https://example.com/web/registration</code>, you would provide the path <code>/web/registration</code>. Registration page paths that start with the path that you provide are considered a match. For example <code>/web/registration</code> matches the registration paths <code>/web/registration</code>, <code>/web/registration/</code>, <code>/web/registrationPage</code>, and <code>/web/registration/thisPage</code>, but doesn't match the path <code>/home/web/registration</code> or <code>/website/registration</code>. </p>
     pub fn get_registration_page_path(&self) -> &::std::option::Option<::std::string::String> {
         &self.registration_page_path
     }

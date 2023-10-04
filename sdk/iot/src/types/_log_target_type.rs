@@ -14,6 +14,8 @@
 /// match logtargettype {
 ///     LogTargetType::ClientId => { /* ... */ },
 ///     LogTargetType::Default => { /* ... */ },
+///     LogTargetType::DeviceDefender => { /* ... */ },
+///     LogTargetType::EventType => { /* ... */ },
 ///     LogTargetType::PrincipalId => { /* ... */ },
 ///     LogTargetType::SourceIp => { /* ... */ },
 ///     LogTargetType::ThingGroup => { /* ... */ },
@@ -49,6 +51,10 @@ pub enum LogTargetType {
     #[allow(missing_docs)] // documentation missing in model
     Default,
     #[allow(missing_docs)] // documentation missing in model
+    DeviceDefender,
+    #[allow(missing_docs)] // documentation missing in model
+    EventType,
+    #[allow(missing_docs)] // documentation missing in model
     PrincipalId,
     #[allow(missing_docs)] // documentation missing in model
     SourceIp,
@@ -62,6 +68,8 @@ impl ::std::convert::From<&str> for LogTargetType {
         match s {
             "CLIENT_ID" => LogTargetType::ClientId,
             "DEFAULT" => LogTargetType::Default,
+            "DEVICE_DEFENDER" => LogTargetType::DeviceDefender,
+            "EVENT_TYPE" => LogTargetType::EventType,
             "PRINCIPAL_ID" => LogTargetType::PrincipalId,
             "SOURCE_IP" => LogTargetType::SourceIp,
             "THING_GROUP" => LogTargetType::ThingGroup,
@@ -82,6 +90,8 @@ impl LogTargetType {
         match self {
             LogTargetType::ClientId => "CLIENT_ID",
             LogTargetType::Default => "DEFAULT",
+            LogTargetType::DeviceDefender => "DEVICE_DEFENDER",
+            LogTargetType::EventType => "EVENT_TYPE",
             LogTargetType::PrincipalId => "PRINCIPAL_ID",
             LogTargetType::SourceIp => "SOURCE_IP",
             LogTargetType::ThingGroup => "THING_GROUP",
@@ -90,7 +100,15 @@ impl LogTargetType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CLIENT_ID", "DEFAULT", "PRINCIPAL_ID", "SOURCE_IP", "THING_GROUP"]
+        &[
+            "CLIENT_ID",
+            "DEFAULT",
+            "DEVICE_DEFENDER",
+            "EVENT_TYPE",
+            "PRINCIPAL_ID",
+            "SOURCE_IP",
+            "THING_GROUP",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for LogTargetType {

@@ -3,13 +3,15 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateOpsItemInput {
-    /// <p>Information about the OpsItem. </p>
+    /// <p>User-defined text that contains information about the OpsItem, in Markdown format. </p> <note>
+    /// <p>Provide enough information so that users viewing this OpsItem for the first time understand the issue. </p>
+    /// </note>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The type of OpsItem to create. Systems Manager supports the following types of OpsItems:</p>
     /// <ul>
     /// <li> <p> <code>/aws/issue</code> </p> <p>This type of OpsItem is used for default OpsItems created by OpsCenter. </p> </li>
     /// <li> <p> <code>/aws/changerequest</code> </p> <p>This type of OpsItem is used by Change Manager for reviewing and approving or rejecting change requests. </p> </li>
-    /// <li> <p> <code>/aws/insights</code> </p> <p>This type of OpsItem is used by OpsCenter for aggregating and reporting on duplicate OpsItems. </p> </li>
+    /// <li> <p> <code>/aws/insight</code> </p> <p>This type of OpsItem is used by OpsCenter for aggregating and reporting on duplicate OpsItems. </p> </li>
     /// </ul>
     pub ops_item_type: ::std::option::Option<::std::string::String>,
     /// <p>Operational data is custom data that provides useful reference details about the OpsItem. For example, you can specify log files, error strings, license keys, troubleshooting tips, or other relevant data. You enter operational data as key-value pairs. The key has a maximum length of 128 characters. The value has a maximum size of 20 KB.</p> <important>
@@ -52,7 +54,9 @@ pub struct CreateOpsItemInput {
     pub account_id: ::std::option::Option<::std::string::String>,
 }
 impl CreateOpsItemInput {
-    /// <p>Information about the OpsItem. </p>
+    /// <p>User-defined text that contains information about the OpsItem, in Markdown format. </p> <note>
+    /// <p>Provide enough information so that users viewing this OpsItem for the first time understand the issue. </p>
+    /// </note>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
@@ -60,7 +64,7 @@ impl CreateOpsItemInput {
     /// <ul>
     /// <li> <p> <code>/aws/issue</code> </p> <p>This type of OpsItem is used for default OpsItems created by OpsCenter. </p> </li>
     /// <li> <p> <code>/aws/changerequest</code> </p> <p>This type of OpsItem is used by Change Manager for reviewing and approving or rejecting change requests. </p> </li>
-    /// <li> <p> <code>/aws/insights</code> </p> <p>This type of OpsItem is used by OpsCenter for aggregating and reporting on duplicate OpsItems. </p> </li>
+    /// <li> <p> <code>/aws/insight</code> </p> <p>This type of OpsItem is used by OpsCenter for aggregating and reporting on duplicate OpsItems. </p> </li>
     /// </ul>
     pub fn ops_item_type(&self) -> ::std::option::Option<&str> {
         self.ops_item_type.as_deref()
@@ -161,17 +165,23 @@ pub struct CreateOpsItemInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
 }
 impl CreateOpsItemInputBuilder {
-    /// <p>Information about the OpsItem. </p>
+    /// <p>User-defined text that contains information about the OpsItem, in Markdown format. </p> <note>
+    /// <p>Provide enough information so that users viewing this OpsItem for the first time understand the issue. </p>
+    /// </note>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Information about the OpsItem. </p>
+    /// <p>User-defined text that contains information about the OpsItem, in Markdown format. </p> <note>
+    /// <p>Provide enough information so that users viewing this OpsItem for the first time understand the issue. </p>
+    /// </note>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
-    /// <p>Information about the OpsItem. </p>
+    /// <p>User-defined text that contains information about the OpsItem, in Markdown format. </p> <note>
+    /// <p>Provide enough information so that users viewing this OpsItem for the first time understand the issue. </p>
+    /// </note>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
@@ -179,7 +189,7 @@ impl CreateOpsItemInputBuilder {
     /// <ul>
     /// <li> <p> <code>/aws/issue</code> </p> <p>This type of OpsItem is used for default OpsItems created by OpsCenter. </p> </li>
     /// <li> <p> <code>/aws/changerequest</code> </p> <p>This type of OpsItem is used by Change Manager for reviewing and approving or rejecting change requests. </p> </li>
-    /// <li> <p> <code>/aws/insights</code> </p> <p>This type of OpsItem is used by OpsCenter for aggregating and reporting on duplicate OpsItems. </p> </li>
+    /// <li> <p> <code>/aws/insight</code> </p> <p>This type of OpsItem is used by OpsCenter for aggregating and reporting on duplicate OpsItems. </p> </li>
     /// </ul>
     pub fn ops_item_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ops_item_type = ::std::option::Option::Some(input.into());
@@ -189,7 +199,7 @@ impl CreateOpsItemInputBuilder {
     /// <ul>
     /// <li> <p> <code>/aws/issue</code> </p> <p>This type of OpsItem is used for default OpsItems created by OpsCenter. </p> </li>
     /// <li> <p> <code>/aws/changerequest</code> </p> <p>This type of OpsItem is used by Change Manager for reviewing and approving or rejecting change requests. </p> </li>
-    /// <li> <p> <code>/aws/insights</code> </p> <p>This type of OpsItem is used by OpsCenter for aggregating and reporting on duplicate OpsItems. </p> </li>
+    /// <li> <p> <code>/aws/insight</code> </p> <p>This type of OpsItem is used by OpsCenter for aggregating and reporting on duplicate OpsItems. </p> </li>
     /// </ul>
     pub fn set_ops_item_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ops_item_type = input;
@@ -199,7 +209,7 @@ impl CreateOpsItemInputBuilder {
     /// <ul>
     /// <li> <p> <code>/aws/issue</code> </p> <p>This type of OpsItem is used for default OpsItems created by OpsCenter. </p> </li>
     /// <li> <p> <code>/aws/changerequest</code> </p> <p>This type of OpsItem is used by Change Manager for reviewing and approving or rejecting change requests. </p> </li>
-    /// <li> <p> <code>/aws/insights</code> </p> <p>This type of OpsItem is used by OpsCenter for aggregating and reporting on duplicate OpsItems. </p> </li>
+    /// <li> <p> <code>/aws/insight</code> </p> <p>This type of OpsItem is used by OpsCenter for aggregating and reporting on duplicate OpsItems. </p> </li>
     /// </ul>
     pub fn get_ops_item_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.ops_item_type

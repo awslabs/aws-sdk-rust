@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDeploymentConfigInput {
-    /// <p>The name of a deployment configuration associated with the IAM user or Amazon Web Services account.</p>
+    /// <p>The name of a deployment configuration associated with the user or Amazon Web Services account.</p>
     pub deployment_config_name: ::std::option::Option<::std::string::String>,
 }
 impl GetDeploymentConfigInput {
-    /// <p>The name of a deployment configuration associated with the IAM user or Amazon Web Services account.</p>
+    /// <p>The name of a deployment configuration associated with the user or Amazon Web Services account.</p>
     pub fn deployment_config_name(&self) -> ::std::option::Option<&str> {
         self.deployment_config_name.as_deref()
     }
@@ -27,17 +27,17 @@ pub struct GetDeploymentConfigInputBuilder {
     pub(crate) deployment_config_name: ::std::option::Option<::std::string::String>,
 }
 impl GetDeploymentConfigInputBuilder {
-    /// <p>The name of a deployment configuration associated with the IAM user or Amazon Web Services account.</p>
+    /// <p>The name of a deployment configuration associated with the user or Amazon Web Services account.</p>
     pub fn deployment_config_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.deployment_config_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of a deployment configuration associated with the IAM user or Amazon Web Services account.</p>
+    /// <p>The name of a deployment configuration associated with the user or Amazon Web Services account.</p>
     pub fn set_deployment_config_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.deployment_config_name = input;
         self
     }
-    /// <p>The name of a deployment configuration associated with the IAM user or Amazon Web Services account.</p>
+    /// <p>The name of a deployment configuration associated with the user or Amazon Web Services account.</p>
     pub fn get_deployment_config_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.deployment_config_name
     }

@@ -87,6 +87,8 @@ pub(crate) mod shape_auto_start_config;
 
 pub(crate) mod shape_auto_stop_config;
 
+pub(crate) mod shape_configuration;
+
 pub(crate) mod shape_configuration_overrides;
 
 pub(crate) mod shape_image_configuration_input;
@@ -101,6 +103,8 @@ pub(crate) mod shape_job_runs;
 
 pub(crate) mod shape_maximum_allowed_resources;
 
+pub(crate) mod shape_monitoring_configuration;
+
 pub(crate) mod shape_network_configuration;
 
 pub(crate) mod shape_tag_map;
@@ -109,7 +113,9 @@ pub(crate) mod shape_worker_type_specification_input;
 
 pub(crate) mod shape_application_summary;
 
-pub(crate) mod shape_configuration;
+pub(crate) mod shape_cloud_watch_logging_configuration;
+
+pub(crate) mod shape_configuration_list;
 
 pub(crate) mod shape_hive;
 
@@ -119,9 +125,11 @@ pub(crate) mod shape_initial_capacity_config_map;
 
 pub(crate) mod shape_job_run_summary;
 
-pub(crate) mod shape_monitoring_configuration;
+pub(crate) mod shape_managed_persistence_monitoring_configuration;
 
 pub(crate) mod shape_resource_utilization;
+
+pub(crate) mod shape_s3_monitoring_configuration;
 
 pub(crate) mod shape_spark_submit;
 
@@ -130,14 +138,6 @@ pub(crate) mod shape_total_resource_utilization;
 pub(crate) mod shape_worker_resource_config;
 
 pub(crate) mod shape_worker_type_specification_map;
-
-pub(crate) mod shape_cloud_watch_logging_configuration;
-
-pub(crate) mod shape_configuration_list;
-
-pub(crate) mod shape_managed_persistence_monitoring_configuration;
-
-pub(crate) mod shape_s3_monitoring_configuration;
 
 pub(crate) mod shape_security_group_ids;
 

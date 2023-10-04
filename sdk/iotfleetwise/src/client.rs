@@ -211,6 +211,8 @@ mod get_campaign;
 
 mod get_decoder_manifest;
 
+mod get_encryption_configuration;
+
 mod get_fleet;
 
 mod get_logging_options;
@@ -254,6 +256,8 @@ mod list_tags_for_resource;
 mod list_vehicles;
 
 mod list_vehicles_in_fleet;
+
+mod put_encryption_configuration;
 
 mod put_logging_options;
 

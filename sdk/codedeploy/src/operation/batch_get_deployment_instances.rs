@@ -269,7 +269,7 @@ pub type BatchGetDeploymentInstancesErrorKind = BatchGetDeploymentInstancesError
 pub enum BatchGetDeploymentInstancesError {
     /// <p>The maximum number of names or IDs allowed for this request (100) was exceeded.</p>
     BatchLimitExceededException(crate::types::error::BatchLimitExceededException),
-    /// <p>The deployment with the IAM user or Amazon Web Services account does not exist.</p>
+    /// <p>The deployment with the user or Amazon Web Services account does not exist.</p>
     DeploymentDoesNotExistException(crate::types::error::DeploymentDoesNotExistException),
     /// <p>At least one deployment ID must be specified.</p>
     DeploymentIdRequiredException(crate::types::error::DeploymentIdRequiredException),

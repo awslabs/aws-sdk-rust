@@ -29,7 +29,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = "0.56.1"
-//! aws-sdk-pcaconnectorad = "0.1.0"
+//! aws-sdk-pcaconnectorad = "0.2.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

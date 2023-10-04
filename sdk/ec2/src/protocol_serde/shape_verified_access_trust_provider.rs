@@ -143,6 +143,16 @@ pub fn de_verified_access_trust_provider(
                 builder = builder.set_tags(var_11);
             }
             ,
+            s if s.matches("sseSpecification") /* SseSpecification com.amazonaws.ec2#VerifiedAccessTrustProvider$SseSpecification */ =>  {
+                let var_12 =
+                    Some(
+                        crate::protocol_serde::shape_verified_access_sse_specification_response::de_verified_access_sse_specification_response(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_sse_specification(var_12);
+            }
+            ,
             _ => {}
         }
     }

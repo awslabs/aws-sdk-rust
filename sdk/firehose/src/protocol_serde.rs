@@ -123,6 +123,8 @@ pub(crate) mod shape_kinesis_stream_source_configuration;
 
 pub(crate) mod shape_list_tags_for_delivery_stream_output_tag_list;
 
+pub(crate) mod shape_msk_source_configuration;
+
 pub(crate) mod shape_put_record_batch_response_entry_list;
 
 pub(crate) mod shape_record;
@@ -148,6 +150,8 @@ pub(crate) mod shape_amazon_open_search_serverless_retry_options;
 pub(crate) mod shape_amazonopensearchservice_buffering_hints;
 
 pub(crate) mod shape_amazonopensearchservice_retry_options;
+
+pub(crate) mod shape_authentication_configuration;
 
 pub(crate) mod shape_buffering_hints;
 
@@ -202,6 +206,8 @@ pub(crate) mod shape_input_format_configuration;
 pub(crate) mod shape_kinesis_stream_source_description;
 
 pub(crate) mod shape_kms_encryption_config;
+
+pub(crate) mod shape_msk_source_description;
 
 pub(crate) mod shape_output_format_configuration;
 

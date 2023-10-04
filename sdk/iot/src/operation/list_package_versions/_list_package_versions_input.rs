@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListPackageVersionsInput {
-    /// <p>The name of the target package.</p>
+    /// <p>The name of the target software package.</p>
     pub package_name: ::std::option::Option<::std::string::String>,
     /// <p>The status of the package version. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/preparing-to-use-software-package-catalog.html#package-version-lifecycle">Package version lifecycle</a>.</p>
     pub status: ::std::option::Option<crate::types::PackageVersionStatus>,
@@ -13,7 +13,7 @@ pub struct ListPackageVersionsInput {
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListPackageVersionsInput {
-    /// <p>The name of the target package.</p>
+    /// <p>The name of the target software package.</p>
     pub fn package_name(&self) -> ::std::option::Option<&str> {
         self.package_name.as_deref()
     }
@@ -47,17 +47,17 @@ pub struct ListPackageVersionsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListPackageVersionsInputBuilder {
-    /// <p>The name of the target package.</p>
+    /// <p>The name of the target software package.</p>
     pub fn package_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.package_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the target package.</p>
+    /// <p>The name of the target software package.</p>
     pub fn set_package_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.package_name = input;
         self
     }
-    /// <p>The name of the target package.</p>
+    /// <p>The name of the target software package.</p>
     pub fn get_package_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.package_name
     }

@@ -429,6 +429,8 @@ mod list_rules;
 
 mod list_security_keys;
 
+mod list_security_profile_applications;
+
 mod list_security_profile_permissions;
 
 mod list_security_profiles;

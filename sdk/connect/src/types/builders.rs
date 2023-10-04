@@ -41,6 +41,8 @@ pub use crate::types::_read_only_field_info::ReadOnlyFieldInfoBuilder;
 
 pub use crate::types::_required_field_info::RequiredFieldInfoBuilder;
 
+pub use crate::types::_application::ApplicationBuilder;
+
 pub use crate::types::_rule_action::RuleActionBuilder;
 
 pub use crate::types::_send_notification_action_definition::SendNotificationActionDefinitionBuilder;

@@ -34,6 +34,39 @@ impl ::std::fmt::Display for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::create_application::CreateApplicationError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::create_application::CreateApplicationError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::create_application::CreateApplicationError> for Error {
+    fn from(err: crate::operation::create_application::CreateApplicationError) -> Self {
+        match err {
+            crate::operation::create_application::CreateApplicationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_application::CreateApplicationError::DuplicateResourceException(inner) => {
+                Error::DuplicateResourceException(inner)
+            }
+            crate::operation::create_application::CreateApplicationError::InternalServiceError(inner) => Error::InternalServiceError(inner),
+            crate::operation::create_application::CreateApplicationError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::create_application::CreateApplicationError::ResourceQuotaExceededException(inner) => {
+                Error::ResourceQuotaExceededException(inner)
+            }
+            crate::operation::create_application::CreateApplicationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_application::CreateApplicationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::create_data_integration::CreateDataIntegrationError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -180,6 +213,34 @@ impl From<crate::operation::delete_event_integration::DeleteEventIntegrationErro
         }
     }
 }
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_application::GetApplicationError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::get_application::GetApplicationError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_application::GetApplicationError> for Error {
+    fn from(err: crate::operation::get_application::GetApplicationError) -> Self {
+        match err {
+            crate::operation::get_application::GetApplicationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_application::GetApplicationError::InternalServiceError(inner) => Error::InternalServiceError(inner),
+            crate::operation::get_application::GetApplicationError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::get_application::GetApplicationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_application::GetApplicationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_application::GetApplicationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_data_integration::GetDataIntegrationError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -239,6 +300,33 @@ impl From<crate::operation::get_event_integration::GetEventIntegrationError> for
             }
             crate::operation::get_event_integration::GetEventIntegrationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::get_event_integration::GetEventIntegrationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_applications::ListApplicationsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_applications::ListApplicationsError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_applications::ListApplicationsError> for Error {
+    fn from(err: crate::operation::list_applications::ListApplicationsError) -> Self {
+        match err {
+            crate::operation::list_applications::ListApplicationsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_applications::ListApplicationsError::InternalServiceError(inner) => Error::InternalServiceError(inner),
+            crate::operation::list_applications::ListApplicationsError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::list_applications::ListApplicationsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_applications::ListApplicationsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -466,6 +554,34 @@ impl From<crate::operation::untag_resource::UntagResourceError> for Error {
             crate::operation::untag_resource::UntagResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::untag_resource::UntagResourceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::untag_resource::UntagResourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::update_application::UpdateApplicationError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::update_application::UpdateApplicationError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::update_application::UpdateApplicationError> for Error {
+    fn from(err: crate::operation::update_application::UpdateApplicationError) -> Self {
+        match err {
+            crate::operation::update_application::UpdateApplicationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_application::UpdateApplicationError::InternalServiceError(inner) => Error::InternalServiceError(inner),
+            crate::operation::update_application::UpdateApplicationError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::update_application::UpdateApplicationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_application::UpdateApplicationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_application::UpdateApplicationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

@@ -382,6 +382,9 @@ pub mod list_rules;
 /// Types for the `ListSecurityKeys` operation.
 pub mod list_security_keys;
 
+/// Types for the `ListSecurityProfileApplications` operation.
+pub mod list_security_profile_applications;
+
 /// Types for the `ListSecurityProfilePermissions` operation.
 pub mod list_security_profile_permissions;
 

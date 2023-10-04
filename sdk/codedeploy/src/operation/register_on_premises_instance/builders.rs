@@ -140,17 +140,17 @@ impl RegisterOnPremisesInstanceFluentBuilder {
     pub fn get_iam_session_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_iam_session_arn()
     }
-    /// <p>The ARN of the IAM user to associate with the on-premises instance.</p>
+    /// <p>The ARN of the user to associate with the on-premises instance.</p>
     pub fn iam_user_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.iam_user_arn(input.into());
         self
     }
-    /// <p>The ARN of the IAM user to associate with the on-premises instance.</p>
+    /// <p>The ARN of the user to associate with the on-premises instance.</p>
     pub fn set_iam_user_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_iam_user_arn(input);
         self
     }
-    /// <p>The ARN of the IAM user to associate with the on-premises instance.</p>
+    /// <p>The ARN of the user to associate with the on-premises instance.</p>
     pub fn get_iam_user_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_iam_user_arn()
     }

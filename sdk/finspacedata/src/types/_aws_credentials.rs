@@ -34,10 +34,10 @@ impl AwsCredentials {
 impl ::std::fmt::Debug for AwsCredentials {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("AwsCredentials");
-        formatter.field("access_key_id", &self.access_key_id);
+        formatter.field("access_key_id", &"*** Sensitive Data Redacted ***");
         formatter.field("secret_access_key", &"*** Sensitive Data Redacted ***");
         formatter.field("session_token", &"*** Sensitive Data Redacted ***");
-        formatter.field("expiration", &self.expiration);
+        formatter.field("expiration", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -127,10 +127,10 @@ impl AwsCredentialsBuilder {
 impl ::std::fmt::Debug for AwsCredentialsBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("AwsCredentialsBuilder");
-        formatter.field("access_key_id", &self.access_key_id);
+        formatter.field("access_key_id", &"*** Sensitive Data Redacted ***");
         formatter.field("secret_access_key", &"*** Sensitive Data Redacted ***");
         formatter.field("session_token", &"*** Sensitive Data Redacted ***");
-        formatter.field("expiration", &self.expiration);
+        formatter.field("expiration", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }

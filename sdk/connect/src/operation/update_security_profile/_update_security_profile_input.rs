@@ -15,6 +15,9 @@ pub struct UpdateSecurityProfileInput {
     pub allowed_access_control_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The list of resources that a security profile applies tag restrictions to in Amazon Connect.</p>
     pub tag_restricted_resources: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
+    /// <p>A list of the third party application's metadata.</p>
+    pub applications: ::std::option::Option<::std::vec::Vec<crate::types::Application>>,
 }
 impl UpdateSecurityProfileInput {
     /// <p>The description of the security profile.</p>
@@ -41,6 +44,11 @@ impl UpdateSecurityProfileInput {
     pub fn tag_restricted_resources(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.tag_restricted_resources.as_deref()
     }
+    /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
+    /// <p>A list of the third party application's metadata.</p>
+    pub fn applications(&self) -> ::std::option::Option<&[crate::types::Application]> {
+        self.applications.as_deref()
+    }
 }
 impl UpdateSecurityProfileInput {
     /// Creates a new builder-style object to manufacture [`UpdateSecurityProfileInput`](crate::operation::update_security_profile::UpdateSecurityProfileInput).
@@ -59,6 +67,7 @@ pub struct UpdateSecurityProfileInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) allowed_access_control_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) tag_restricted_resources: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) applications: ::std::option::Option<::std::vec::Vec<crate::types::Application>>,
 }
 impl UpdateSecurityProfileInputBuilder {
     /// <p>The description of the security profile.</p>
@@ -172,6 +181,29 @@ impl UpdateSecurityProfileInputBuilder {
     pub fn get_tag_restricted_resources(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.tag_restricted_resources
     }
+    /// Appends an item to `applications`.
+    ///
+    /// To override the contents of this collection use [`set_applications`](Self::set_applications).
+    ///
+    /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
+    /// <p>A list of the third party application's metadata.</p>
+    pub fn applications(mut self, input: crate::types::Application) -> Self {
+        let mut v = self.applications.unwrap_or_default();
+        v.push(input);
+        self.applications = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
+    /// <p>A list of the third party application's metadata.</p>
+    pub fn set_applications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Application>>) -> Self {
+        self.applications = input;
+        self
+    }
+    /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
+    /// <p>A list of the third party application's metadata.</p>
+    pub fn get_applications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Application>> {
+        &self.applications
+    }
     /// Consumes the builder and constructs a [`UpdateSecurityProfileInput`](crate::operation::update_security_profile::UpdateSecurityProfileInput).
     pub fn build(
         self,
@@ -184,6 +216,7 @@ impl UpdateSecurityProfileInputBuilder {
             instance_id: self.instance_id,
             allowed_access_control_tags: self.allowed_access_control_tags,
             tag_restricted_resources: self.tag_restricted_resources,
+            applications: self.applications,
         })
     }
 }

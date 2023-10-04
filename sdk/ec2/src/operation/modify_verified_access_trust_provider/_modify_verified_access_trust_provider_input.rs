@@ -13,6 +13,8 @@ pub struct ModifyVerifiedAccessTrustProviderInput {
     pub dry_run: ::std::option::Option<bool>,
     /// <p>A unique, case-sensitive token that you provide to ensure idempotency of your modification request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
+    /// <p> Options for server side encryption. </p>
+    pub sse_specification: ::std::option::Option<crate::types::VerifiedAccessSseSpecificationRequest>,
 }
 impl ModifyVerifiedAccessTrustProviderInput {
     /// <p>The ID of the Verified Access trust provider.</p>
@@ -35,6 +37,10 @@ impl ModifyVerifiedAccessTrustProviderInput {
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
+    /// <p> Options for server side encryption. </p>
+    pub fn sse_specification(&self) -> ::std::option::Option<&crate::types::VerifiedAccessSseSpecificationRequest> {
+        self.sse_specification.as_ref()
+    }
 }
 impl ModifyVerifiedAccessTrustProviderInput {
     /// Creates a new builder-style object to manufacture [`ModifyVerifiedAccessTrustProviderInput`](crate::operation::modify_verified_access_trust_provider::ModifyVerifiedAccessTrustProviderInput).
@@ -52,6 +58,7 @@ pub struct ModifyVerifiedAccessTrustProviderInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
+    pub(crate) sse_specification: ::std::option::Option<crate::types::VerifiedAccessSseSpecificationRequest>,
 }
 impl ModifyVerifiedAccessTrustProviderInputBuilder {
     /// <p>The ID of the Verified Access trust provider.</p>
@@ -124,6 +131,20 @@ impl ModifyVerifiedAccessTrustProviderInputBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
+    /// <p> Options for server side encryption. </p>
+    pub fn sse_specification(mut self, input: crate::types::VerifiedAccessSseSpecificationRequest) -> Self {
+        self.sse_specification = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p> Options for server side encryption. </p>
+    pub fn set_sse_specification(mut self, input: ::std::option::Option<crate::types::VerifiedAccessSseSpecificationRequest>) -> Self {
+        self.sse_specification = input;
+        self
+    }
+    /// <p> Options for server side encryption. </p>
+    pub fn get_sse_specification(&self) -> &::std::option::Option<crate::types::VerifiedAccessSseSpecificationRequest> {
+        &self.sse_specification
+    }
     /// Consumes the builder and constructs a [`ModifyVerifiedAccessTrustProviderInput`](crate::operation::modify_verified_access_trust_provider::ModifyVerifiedAccessTrustProviderInput).
     pub fn build(
         self,
@@ -138,6 +159,7 @@ impl ModifyVerifiedAccessTrustProviderInputBuilder {
                 description: self.description,
                 dry_run: self.dry_run,
                 client_token: self.client_token,
+                sse_specification: self.sse_specification,
             },
         )
     }

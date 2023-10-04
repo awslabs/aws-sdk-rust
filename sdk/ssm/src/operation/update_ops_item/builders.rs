@@ -111,17 +111,17 @@ impl UpdateOpsItemFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>Update the information about the OpsItem. Provide enough information so that users reading this OpsItem for the first time understand the issue. </p>
+    /// <p>User-defined text that contains information about the OpsItem, in Markdown format. </p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
-    /// <p>Update the information about the OpsItem. Provide enough information so that users reading this OpsItem for the first time understand the issue. </p>
+    /// <p>User-defined text that contains information about the OpsItem, in Markdown format. </p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
-    /// <p>Update the information about the OpsItem. Provide enough information so that users reading this OpsItem for the first time understand the issue. </p>
+    /// <p>User-defined text that contains information about the OpsItem, in Markdown format. </p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }

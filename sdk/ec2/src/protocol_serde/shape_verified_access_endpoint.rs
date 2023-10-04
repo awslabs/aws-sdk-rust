@@ -227,6 +227,16 @@ pub fn de_verified_access_endpoint(
                 builder = builder.set_tags(var_18);
             }
             ,
+            s if s.matches("sseSpecification") /* SseSpecification com.amazonaws.ec2#VerifiedAccessEndpoint$SseSpecification */ =>  {
+                let var_19 =
+                    Some(
+                        crate::protocol_serde::shape_verified_access_sse_specification_response::de_verified_access_sse_specification_response(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_sse_specification(var_19);
+            }
+            ,
             _ => {}
         }
     }

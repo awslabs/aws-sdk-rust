@@ -112,6 +112,12 @@ impl ListDataIntegrationsFluentBuilder {
         self.config_override = config_override;
         self
     }
+    /// Create a paginator for this request
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::list_data_integrations::paginator::ListDataIntegrationsPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(self) -> crate::operation::list_data_integrations::paginator::ListDataIntegrationsPaginator {
+        crate::operation::list_data_integrations::paginator::ListDataIntegrationsPaginator::new(self.handle, self.inner)
+    }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());

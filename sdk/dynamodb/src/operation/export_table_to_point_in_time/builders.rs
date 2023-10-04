@@ -254,4 +254,32 @@ impl ExportTableToPointInTimeFluentBuilder {
     pub fn get_export_format(&self) -> &::std::option::Option<crate::types::ExportFormat> {
         self.inner.get_export_format()
     }
+    /// <p>Choice of whether to execute as a full export or incremental export. Valid values are <code>FULL_EXPORT</code> or <code>INCREMENTAL_EXPORT</code>. If <code>INCREMENTAL_EXPORT</code> is provided, the <code>IncrementalExportSpecification</code> must also be used.</p>
+    pub fn export_type(mut self, input: crate::types::ExportType) -> Self {
+        self.inner = self.inner.export_type(input);
+        self
+    }
+    /// <p>Choice of whether to execute as a full export or incremental export. Valid values are <code>FULL_EXPORT</code> or <code>INCREMENTAL_EXPORT</code>. If <code>INCREMENTAL_EXPORT</code> is provided, the <code>IncrementalExportSpecification</code> must also be used.</p>
+    pub fn set_export_type(mut self, input: ::std::option::Option<crate::types::ExportType>) -> Self {
+        self.inner = self.inner.set_export_type(input);
+        self
+    }
+    /// <p>Choice of whether to execute as a full export or incremental export. Valid values are <code>FULL_EXPORT</code> or <code>INCREMENTAL_EXPORT</code>. If <code>INCREMENTAL_EXPORT</code> is provided, the <code>IncrementalExportSpecification</code> must also be used.</p>
+    pub fn get_export_type(&self) -> &::std::option::Option<crate::types::ExportType> {
+        self.inner.get_export_type()
+    }
+    /// <p>Optional object containing the parameters specific to an incremental export.</p>
+    pub fn incremental_export_specification(mut self, input: crate::types::IncrementalExportSpecification) -> Self {
+        self.inner = self.inner.incremental_export_specification(input);
+        self
+    }
+    /// <p>Optional object containing the parameters specific to an incremental export.</p>
+    pub fn set_incremental_export_specification(mut self, input: ::std::option::Option<crate::types::IncrementalExportSpecification>) -> Self {
+        self.inner = self.inner.set_incremental_export_specification(input);
+        self
+    }
+    /// <p>Optional object containing the parameters specific to an incremental export.</p>
+    pub fn get_incremental_export_specification(&self) -> &::std::option::Option<crate::types::IncrementalExportSpecification> {
+        self.inner.get_incremental_export_specification()
+    }
 }

@@ -55,6 +55,9 @@ pub mod get_campaign;
 /// Types for the `GetDecoderManifest` operation.
 pub mod get_decoder_manifest;
 
+/// Types for the `GetEncryptionConfiguration` operation.
+pub mod get_encryption_configuration;
+
 /// Types for the `GetFleet` operation.
 pub mod get_fleet;
 
@@ -120,6 +123,9 @@ pub mod list_vehicles;
 
 /// Types for the `ListVehiclesInFleet` operation.
 pub mod list_vehicles_in_fleet;
+
+/// Types for the `PutEncryptionConfiguration` operation.
+pub mod put_encryption_configuration;
 
 /// Types for the `PutLoggingOptions` operation.
 pub mod put_logging_options;

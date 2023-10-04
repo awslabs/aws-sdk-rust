@@ -5,7 +5,7 @@
 pub struct GetPackageVersionOutput {
     /// <p>The ARN for the package version.</p>
     pub package_version_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The name of the package.</p>
+    /// <p>The name of the software package.</p>
     pub package_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the package version.</p>
     pub version_name: ::std::option::Option<::std::string::String>,
@@ -28,7 +28,7 @@ impl GetPackageVersionOutput {
     pub fn package_version_arn(&self) -> ::std::option::Option<&str> {
         self.package_version_arn.as_deref()
     }
-    /// <p>The name of the package.</p>
+    /// <p>The name of the software package.</p>
     pub fn package_name(&self) -> ::std::option::Option<&str> {
         self.package_name.as_deref()
     }
@@ -119,17 +119,17 @@ impl GetPackageVersionOutputBuilder {
     pub fn get_package_version_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.package_version_arn
     }
-    /// <p>The name of the package.</p>
+    /// <p>The name of the software package.</p>
     pub fn package_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.package_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the package.</p>
+    /// <p>The name of the software package.</p>
     pub fn set_package_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.package_name = input;
         self
     }
-    /// <p>The name of the package.</p>
+    /// <p>The name of the software package.</p>
     pub fn get_package_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.package_name
     }

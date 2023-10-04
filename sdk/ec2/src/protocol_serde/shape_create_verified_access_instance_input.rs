@@ -31,6 +31,11 @@ pub fn ser_create_verified_access_instance_input_input(
     if let Some(var_11) = &input.dry_run {
         scope_10.boolean(*var_11);
     }
+    #[allow(unused_mut)]
+    let mut scope_12 = writer.prefix("FIPSEnabled");
+    if let Some(var_13) = &input.fips_enabled {
+        scope_12.boolean(*var_13);
+    }
     writer.finish();
     Ok(::aws_smithy_http::body::SdkBody::from(out))
 }

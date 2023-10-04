@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetPackageInput {
-    /// <p>The name of the target package.</p>
+    /// <p>The name of the target software package.</p>
     pub package_name: ::std::option::Option<::std::string::String>,
 }
 impl GetPackageInput {
-    /// <p>The name of the target package.</p>
+    /// <p>The name of the target software package.</p>
     pub fn package_name(&self) -> ::std::option::Option<&str> {
         self.package_name.as_deref()
     }
@@ -26,17 +26,17 @@ pub struct GetPackageInputBuilder {
     pub(crate) package_name: ::std::option::Option<::std::string::String>,
 }
 impl GetPackageInputBuilder {
-    /// <p>The name of the target package.</p>
+    /// <p>The name of the target software package.</p>
     pub fn package_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.package_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the target package.</p>
+    /// <p>The name of the target software package.</p>
     pub fn set_package_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.package_name = input;
         self
     }
-    /// <p>The name of the target package.</p>
+    /// <p>The name of the target software package.</p>
     pub fn get_package_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.package_name
     }

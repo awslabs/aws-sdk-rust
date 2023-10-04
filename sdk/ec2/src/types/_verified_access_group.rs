@@ -22,6 +22,8 @@ pub struct VerifiedAccessGroup {
     pub deletion_time: ::std::option::Option<::std::string::String>,
     /// <p>The tags.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    /// <p> Describes the options in use for server side encryption. </p>
+    pub sse_specification: ::std::option::Option<crate::types::VerifiedAccessSseSpecificationResponse>,
 }
 impl VerifiedAccessGroup {
     /// <p>The ID of the Verified Access group.</p>
@@ -60,6 +62,10 @@ impl VerifiedAccessGroup {
     pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
+    /// <p> Describes the options in use for server side encryption. </p>
+    pub fn sse_specification(&self) -> ::std::option::Option<&crate::types::VerifiedAccessSseSpecificationResponse> {
+        self.sse_specification.as_ref()
+    }
 }
 impl VerifiedAccessGroup {
     /// Creates a new builder-style object to manufacture [`VerifiedAccessGroup`](crate::types::VerifiedAccessGroup).
@@ -81,6 +87,7 @@ pub struct VerifiedAccessGroupBuilder {
     pub(crate) last_updated_time: ::std::option::Option<::std::string::String>,
     pub(crate) deletion_time: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) sse_specification: ::std::option::Option<crate::types::VerifiedAccessSseSpecificationResponse>,
 }
 impl VerifiedAccessGroupBuilder {
     /// <p>The ID of the Verified Access group.</p>
@@ -215,6 +222,20 @@ impl VerifiedAccessGroupBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }
+    /// <p> Describes the options in use for server side encryption. </p>
+    pub fn sse_specification(mut self, input: crate::types::VerifiedAccessSseSpecificationResponse) -> Self {
+        self.sse_specification = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p> Describes the options in use for server side encryption. </p>
+    pub fn set_sse_specification(mut self, input: ::std::option::Option<crate::types::VerifiedAccessSseSpecificationResponse>) -> Self {
+        self.sse_specification = input;
+        self
+    }
+    /// <p> Describes the options in use for server side encryption. </p>
+    pub fn get_sse_specification(&self) -> &::std::option::Option<crate::types::VerifiedAccessSseSpecificationResponse> {
+        &self.sse_specification
+    }
     /// Consumes the builder and constructs a [`VerifiedAccessGroup`](crate::types::VerifiedAccessGroup).
     pub fn build(self) -> crate::types::VerifiedAccessGroup {
         crate::types::VerifiedAccessGroup {
@@ -227,6 +248,7 @@ impl VerifiedAccessGroupBuilder {
             last_updated_time: self.last_updated_time,
             deletion_time: self.deletion_time,
             tags: self.tags,
+            sse_specification: self.sse_specification,
         }
     }
 }

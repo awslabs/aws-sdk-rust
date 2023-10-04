@@ -16,6 +16,8 @@ pub struct ReactStartCodegenJobData {
     pub inline_source_map: bool,
     /// <p>The API configuration for the code generation job.</p>
     pub api_configuration: ::std::option::Option<crate::types::ApiConfiguration>,
+    /// <p>Lists the dependency packages that may be required for the project code to run.</p>
+    pub dependencies: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl ReactStartCodegenJobData {
     /// <p>The JavaScript module type.</p>
@@ -42,6 +44,10 @@ impl ReactStartCodegenJobData {
     pub fn api_configuration(&self) -> ::std::option::Option<&crate::types::ApiConfiguration> {
         self.api_configuration.as_ref()
     }
+    /// <p>Lists the dependency packages that may be required for the project code to run.</p>
+    pub fn dependencies(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.dependencies.as_ref()
+    }
 }
 impl ReactStartCodegenJobData {
     /// Creates a new builder-style object to manufacture [`ReactStartCodegenJobData`](crate::types::ReactStartCodegenJobData).
@@ -60,6 +66,7 @@ pub struct ReactStartCodegenJobDataBuilder {
     pub(crate) render_type_declarations: ::std::option::Option<bool>,
     pub(crate) inline_source_map: ::std::option::Option<bool>,
     pub(crate) api_configuration: ::std::option::Option<crate::types::ApiConfiguration>,
+    pub(crate) dependencies: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl ReactStartCodegenJobDataBuilder {
     /// <p>The JavaScript module type.</p>
@@ -146,6 +153,29 @@ impl ReactStartCodegenJobDataBuilder {
     pub fn get_api_configuration(&self) -> &::std::option::Option<crate::types::ApiConfiguration> {
         &self.api_configuration
     }
+    /// Adds a key-value pair to `dependencies`.
+    ///
+    /// To override the contents of this collection use [`set_dependencies`](Self::set_dependencies).
+    ///
+    /// <p>Lists the dependency packages that may be required for the project code to run.</p>
+    pub fn dependencies(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut hash_map = self.dependencies.unwrap_or_default();
+        hash_map.insert(k.into(), v.into());
+        self.dependencies = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>Lists the dependency packages that may be required for the project code to run.</p>
+    pub fn set_dependencies(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    ) -> Self {
+        self.dependencies = input;
+        self
+    }
+    /// <p>Lists the dependency packages that may be required for the project code to run.</p>
+    pub fn get_dependencies(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.dependencies
+    }
     /// Consumes the builder and constructs a [`ReactStartCodegenJobData`](crate::types::ReactStartCodegenJobData).
     pub fn build(self) -> crate::types::ReactStartCodegenJobData {
         crate::types::ReactStartCodegenJobData {
@@ -155,6 +185,7 @@ impl ReactStartCodegenJobDataBuilder {
             render_type_declarations: self.render_type_declarations.unwrap_or_default(),
             inline_source_map: self.inline_source_map.unwrap_or_default(),
             api_configuration: self.api_configuration,
+            dependencies: self.dependencies,
         }
     }
 }

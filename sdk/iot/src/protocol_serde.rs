@@ -1411,6 +1411,10 @@ pub(crate) mod shape_http_authorization;
 
 pub(crate) mod shape_implicit_deny;
 
+pub(crate) mod shape_kafka_action_header;
+
+pub(crate) mod shape_kafka_headers;
+
 pub(crate) mod shape_location_timestamp;
 
 pub(crate) mod shape_mqtt_headers;

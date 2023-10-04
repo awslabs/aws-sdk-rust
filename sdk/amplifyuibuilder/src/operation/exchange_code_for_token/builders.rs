@@ -22,7 +22,10 @@ impl ExchangeCodeForTokenInputBuilder {
 }
 /// Fluent builder constructing a request to `ExchangeCodeForToken`.
 ///
-/// <p>Exchanges an access code for a token.</p>
+/// <note>
+/// <p>This is for internal use.</p>
+/// </note>
+/// <p>Amplify uses this action to exchange an access code for a token.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ExchangeCodeForTokenFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

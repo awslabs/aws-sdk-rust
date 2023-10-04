@@ -78,6 +78,21 @@ pub fn de_verified_access_instance(
                 builder = builder.set_tags(var_6);
             }
             ,
+            s if s.matches("fipsEnabled") /* FipsEnabled com.amazonaws.ec2#VerifiedAccessInstance$FipsEnabled */ =>  {
+                let var_7 =
+                    Some(
+                         {
+                            <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_fips_enabled(var_7);
+            }
+            ,
             _ => {}
         }
     }

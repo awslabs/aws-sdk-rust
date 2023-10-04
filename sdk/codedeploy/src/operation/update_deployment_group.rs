@@ -263,15 +263,15 @@ pub type UpdateDeploymentGroupErrorKind = UpdateDeploymentGroupError;
 pub enum UpdateDeploymentGroupError {
     /// <p>The maximum number of alarms for a deployment group (10) was exceeded.</p>
     AlarmsLimitExceededException(crate::types::error::AlarmsLimitExceededException),
-    /// <p>The application does not exist with the IAM user or Amazon Web Services account.</p>
+    /// <p>The application does not exist with the user or Amazon Web Services account.</p>
     ApplicationDoesNotExistException(crate::types::error::ApplicationDoesNotExistException),
     /// <p>The minimum number of required application names was not specified.</p>
     ApplicationNameRequiredException(crate::types::error::ApplicationNameRequiredException),
-    /// <p>The deployment configuration does not exist with the IAM user or Amazon Web Services account.</p>
+    /// <p>The deployment configuration does not exist with the user or Amazon Web Services account.</p>
     DeploymentConfigDoesNotExistException(crate::types::error::DeploymentConfigDoesNotExistException),
-    /// <p>A deployment group with the specified name with the IAM user or Amazon Web Services account already exists.</p>
+    /// <p>A deployment group with the specified name with the user or Amazon Web Services account already exists.</p>
     DeploymentGroupAlreadyExistsException(crate::types::error::DeploymentGroupAlreadyExistsException),
-    /// <p>The named deployment group with the IAM user or Amazon Web Services account does not exist.</p>
+    /// <p>The named deployment group with the user or Amazon Web Services account does not exist.</p>
     DeploymentGroupDoesNotExistException(crate::types::error::DeploymentGroupDoesNotExistException),
     /// <p>The deployment group name was not specified.</p>
     DeploymentGroupNameRequiredException(crate::types::error::DeploymentGroupNameRequiredException),

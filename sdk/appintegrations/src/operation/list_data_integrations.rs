@@ -397,3 +397,6 @@ mod _list_data_integrations_output;
 
 /// Builders
 pub mod builders;
+
+/// Paginator for this operation
+pub mod paginator;

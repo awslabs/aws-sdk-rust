@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EnableUserOutput {
-    /// <p>The unique identifier for the enabled user account.</p>
+    /// <p>The unique identifier for the active user.</p>
     pub user_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl EnableUserOutput {
-    /// <p>The unique identifier for the enabled user account.</p>
+    /// <p>The unique identifier for the active user.</p>
     pub fn user_id(&self) -> ::std::option::Option<&str> {
         self.user_id.as_deref()
     }
@@ -33,17 +33,17 @@ pub struct EnableUserOutputBuilder {
     _request_id: Option<String>,
 }
 impl EnableUserOutputBuilder {
-    /// <p>The unique identifier for the enabled user account.</p>
+    /// <p>The unique identifier for the active user.</p>
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier for the enabled user account.</p>
+    /// <p>The unique identifier for the active user.</p>
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_id = input;
         self
     }
-    /// <p>The unique identifier for the enabled user account.</p>
+    /// <p>The unique identifier for the active user.</p>
     pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.user_id
     }

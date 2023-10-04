@@ -5,9 +5,9 @@
 pub enum Error {
     /// <p>The maximum number of alarms for a deployment group (10) was exceeded.</p>
     AlarmsLimitExceededException(crate::types::error::AlarmsLimitExceededException),
-    /// <p>An application with the specified name with the IAM user or Amazon Web Services account already exists.</p>
+    /// <p>An application with the specified name with the user or Amazon Web Services account already exists.</p>
     ApplicationAlreadyExistsException(crate::types::error::ApplicationAlreadyExistsException),
-    /// <p>The application does not exist with the IAM user or Amazon Web Services account.</p>
+    /// <p>The application does not exist with the user or Amazon Web Services account.</p>
     ApplicationDoesNotExistException(crate::types::error::ApplicationDoesNotExistException),
     /// <p>More applications were attempted to be created than are allowed.</p>
     ApplicationLimitExceededException(crate::types::error::ApplicationLimitExceededException),
@@ -21,9 +21,9 @@ pub enum Error {
     BucketNameFilterRequiredException(crate::types::error::BucketNameFilterRequiredException),
     /// <p>The deployment is already complete.</p>
     DeploymentAlreadyCompletedException(crate::types::error::DeploymentAlreadyCompletedException),
-    /// <p>A deployment configuration with the specified name with the IAM user or Amazon Web Services account already exists.</p>
+    /// <p>A deployment configuration with the specified name with the user or Amazon Web Services account already exists.</p>
     DeploymentConfigAlreadyExistsException(crate::types::error::DeploymentConfigAlreadyExistsException),
-    /// <p>The deployment configuration does not exist with the IAM user or Amazon Web Services account.</p>
+    /// <p>The deployment configuration does not exist with the user or Amazon Web Services account.</p>
     DeploymentConfigDoesNotExistException(crate::types::error::DeploymentConfigDoesNotExistException),
     /// <p>The deployment configuration is still in use.</p>
     DeploymentConfigInUseException(crate::types::error::DeploymentConfigInUseException),
@@ -31,11 +31,11 @@ pub enum Error {
     DeploymentConfigLimitExceededException(crate::types::error::DeploymentConfigLimitExceededException),
     /// <p>The deployment configuration name was not specified.</p>
     DeploymentConfigNameRequiredException(crate::types::error::DeploymentConfigNameRequiredException),
-    /// <p>The deployment with the IAM user or Amazon Web Services account does not exist.</p>
+    /// <p>The deployment with the user or Amazon Web Services account does not exist.</p>
     DeploymentDoesNotExistException(crate::types::error::DeploymentDoesNotExistException),
-    /// <p>A deployment group with the specified name with the IAM user or Amazon Web Services account already exists.</p>
+    /// <p>A deployment group with the specified name with the user or Amazon Web Services account already exists.</p>
     DeploymentGroupAlreadyExistsException(crate::types::error::DeploymentGroupAlreadyExistsException),
-    /// <p>The named deployment group with the IAM user or Amazon Web Services account does not exist.</p>
+    /// <p>The named deployment group with the user or Amazon Web Services account does not exist.</p>
     DeploymentGroupDoesNotExistException(crate::types::error::DeploymentGroupDoesNotExistException),
     /// <p> The deployment groups limit was exceeded.</p>
     DeploymentGroupLimitExceededException(crate::types::error::DeploymentGroupLimitExceededException),
@@ -63,13 +63,13 @@ pub enum Error {
     GitHubAccountTokenDoesNotExistException(crate::types::error::GitHubAccountTokenDoesNotExistException),
     /// <p>The call is missing a required GitHub account connection name.</p>
     GitHubAccountTokenNameRequiredException(crate::types::error::GitHubAccountTokenNameRequiredException),
-    /// <p>No IAM ARN was included in the request. You must use an IAM session ARN or IAM user ARN in the request.</p>
+    /// <p>No IAM ARN was included in the request. You must use an IAM session ARN or user ARN in the request.</p>
     IamArnRequiredException(crate::types::error::IamArnRequiredException),
     /// <p>The request included an IAM session ARN that has already been used to register a different instance.</p>
     IamSessionArnAlreadyRegisteredException(crate::types::error::IamSessionArnAlreadyRegisteredException),
-    /// <p>The specified IAM user ARN is already registered with an on-premises instance.</p>
+    /// <p>The specified user ARN is already registered with an on-premises instance.</p>
     IamUserArnAlreadyRegisteredException(crate::types::error::IamUserArnAlreadyRegisteredException),
-    /// <p>An IAM user ARN was not specified.</p>
+    /// <p>An user ARN was not specified.</p>
     IamUserArnRequiredException(crate::types::error::IamUserArnRequiredException),
     /// <p>The specified instance does not exist in the deployment group.</p>
     #[deprecated(note = "This exception is deprecated, use DeploymentTargetDoesNotExistException instead.")]
@@ -142,7 +142,7 @@ pub enum Error {
     InvalidGitHubAccountTokenNameException(crate::types::error::InvalidGitHubAccountTokenNameException),
     /// <p>The IAM session ARN was specified in an invalid format.</p>
     InvalidIamSessionArnException(crate::types::error::InvalidIamSessionArnException),
-    /// <p>The IAM user ARN was specified in an invalid format.</p>
+    /// <p>The user ARN was specified in an invalid format.</p>
     InvalidIamUserArnException(crate::types::error::InvalidIamUserArnException),
     /// <p>The IgnoreApplicationStopFailures value is invalid. For Lambda deployments, <code>false</code> is expected. For EC2/On-premises deployments, <code>true</code> or <code>false</code> is expected.</p>
     InvalidIgnoreApplicationStopFailuresValueException(crate::types::error::InvalidIgnoreApplicationStopFailuresValueException),
@@ -210,7 +210,7 @@ pub enum Error {
     LifecycleEventAlreadyCompletedException(crate::types::error::LifecycleEventAlreadyCompletedException),
     /// <p>The limit for lifecycle hooks was exceeded.</p>
     LifecycleHookLimitExceededException(crate::types::error::LifecycleHookLimitExceededException),
-    /// <p>Both an IAM user ARN and an IAM session ARN were included in the request. Use only one ARN type.</p>
+    /// <p>Both an user ARN and an IAM session ARN were included in the request. Use only one ARN type.</p>
     MultipleIamArnsProvidedException(crate::types::error::MultipleIamArnsProvidedException),
     /// <p>The API used does not support the deployment.</p>
     OperationNotSupportedException(crate::types::error::OperationNotSupportedException),
@@ -218,7 +218,7 @@ pub enum Error {
     ResourceArnRequiredException(crate::types::error::ResourceArnRequiredException),
     /// <p>The specified resource could not be validated.</p>
     ResourceValidationException(crate::types::error::ResourceValidationException),
-    /// <p>The named revision does not exist with the IAM user or Amazon Web Services account.</p>
+    /// <p>The named revision does not exist with the user or Amazon Web Services account.</p>
     RevisionDoesNotExistException(crate::types::error::RevisionDoesNotExistException),
     /// <p>The revision ID was not specified.</p>
     RevisionRequiredException(crate::types::error::RevisionRequiredException),

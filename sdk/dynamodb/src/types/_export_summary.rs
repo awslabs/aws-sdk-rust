@@ -8,6 +8,8 @@ pub struct ExportSummary {
     pub export_arn: ::std::option::Option<::std::string::String>,
     /// <p>Export can be in one of the following states: IN_PROGRESS, COMPLETED, or FAILED.</p>
     pub export_status: ::std::option::Option<crate::types::ExportStatus>,
+    /// <p>Choice of whether to execute as a full export or incremental export. Valid values are <code>FULL_EXPORT</code> or <code>INCREMENTAL_EXPORT</code>. If <code>INCREMENTAL_EXPORT</code> is provided, the <code>IncrementalExportSpecification</code> must also be used.</p>
+    pub export_type: ::std::option::Option<crate::types::ExportType>,
 }
 impl ExportSummary {
     /// <p>The Amazon Resource Name (ARN) of the export.</p>
@@ -17,6 +19,10 @@ impl ExportSummary {
     /// <p>Export can be in one of the following states: IN_PROGRESS, COMPLETED, or FAILED.</p>
     pub fn export_status(&self) -> ::std::option::Option<&crate::types::ExportStatus> {
         self.export_status.as_ref()
+    }
+    /// <p>Choice of whether to execute as a full export or incremental export. Valid values are <code>FULL_EXPORT</code> or <code>INCREMENTAL_EXPORT</code>. If <code>INCREMENTAL_EXPORT</code> is provided, the <code>IncrementalExportSpecification</code> must also be used.</p>
+    pub fn export_type(&self) -> ::std::option::Option<&crate::types::ExportType> {
+        self.export_type.as_ref()
     }
 }
 impl ExportSummary {
@@ -32,6 +38,7 @@ impl ExportSummary {
 pub struct ExportSummaryBuilder {
     pub(crate) export_arn: ::std::option::Option<::std::string::String>,
     pub(crate) export_status: ::std::option::Option<crate::types::ExportStatus>,
+    pub(crate) export_type: ::std::option::Option<crate::types::ExportType>,
 }
 impl ExportSummaryBuilder {
     /// <p>The Amazon Resource Name (ARN) of the export.</p>
@@ -62,11 +69,26 @@ impl ExportSummaryBuilder {
     pub fn get_export_status(&self) -> &::std::option::Option<crate::types::ExportStatus> {
         &self.export_status
     }
+    /// <p>Choice of whether to execute as a full export or incremental export. Valid values are <code>FULL_EXPORT</code> or <code>INCREMENTAL_EXPORT</code>. If <code>INCREMENTAL_EXPORT</code> is provided, the <code>IncrementalExportSpecification</code> must also be used.</p>
+    pub fn export_type(mut self, input: crate::types::ExportType) -> Self {
+        self.export_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Choice of whether to execute as a full export or incremental export. Valid values are <code>FULL_EXPORT</code> or <code>INCREMENTAL_EXPORT</code>. If <code>INCREMENTAL_EXPORT</code> is provided, the <code>IncrementalExportSpecification</code> must also be used.</p>
+    pub fn set_export_type(mut self, input: ::std::option::Option<crate::types::ExportType>) -> Self {
+        self.export_type = input;
+        self
+    }
+    /// <p>Choice of whether to execute as a full export or incremental export. Valid values are <code>FULL_EXPORT</code> or <code>INCREMENTAL_EXPORT</code>. If <code>INCREMENTAL_EXPORT</code> is provided, the <code>IncrementalExportSpecification</code> must also be used.</p>
+    pub fn get_export_type(&self) -> &::std::option::Option<crate::types::ExportType> {
+        &self.export_type
+    }
     /// Consumes the builder and constructs a [`ExportSummary`](crate::types::ExportSummary).
     pub fn build(self) -> crate::types::ExportSummary {
         crate::types::ExportSummary {
             export_arn: self.export_arn,
             export_status: self.export_status,
+            export_type: self.export_type,
         }
     }
 }

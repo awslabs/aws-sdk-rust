@@ -22,7 +22,7 @@ impl ListUsersInputBuilder {
 }
 /// Fluent builder constructing a request to `ListUsers`.
 ///
-/// <p>Lists all available user accounts in FinSpace.</p>
+/// <p>Lists all available users in FinSpace.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListUsersFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

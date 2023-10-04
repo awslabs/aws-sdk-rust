@@ -5,12 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HolidayConfigAttributes {
     /// <p>The country code for the holiday calendar.</p>
-    /// <p>For the list of public holiday calendars supported by AutoML job V2, see <a href="https://docs.aws.amazon.com/forecast/latest/dg/holidays.html#holidays-country-codes">Country Codes</a>. Use the country code corresponding to the country of your choice.</p>
+    /// <p>For the list of public holiday calendars supported by AutoML job V2, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-timeseries-forecasting-holiday-calendars.html#holiday-country-codes">Country Codes</a>. Use the country code corresponding to the country of your choice.</p>
     pub country_code: ::std::option::Option<::std::string::String>,
 }
 impl HolidayConfigAttributes {
     /// <p>The country code for the holiday calendar.</p>
-    /// <p>For the list of public holiday calendars supported by AutoML job V2, see <a href="https://docs.aws.amazon.com/forecast/latest/dg/holidays.html#holidays-country-codes">Country Codes</a>. Use the country code corresponding to the country of your choice.</p>
+    /// <p>For the list of public holiday calendars supported by AutoML job V2, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-timeseries-forecasting-holiday-calendars.html#holiday-country-codes">Country Codes</a>. Use the country code corresponding to the country of your choice.</p>
     pub fn country_code(&self) -> ::std::option::Option<&str> {
         self.country_code.as_deref()
     }
@@ -30,19 +30,19 @@ pub struct HolidayConfigAttributesBuilder {
 }
 impl HolidayConfigAttributesBuilder {
     /// <p>The country code for the holiday calendar.</p>
-    /// <p>For the list of public holiday calendars supported by AutoML job V2, see <a href="https://docs.aws.amazon.com/forecast/latest/dg/holidays.html#holidays-country-codes">Country Codes</a>. Use the country code corresponding to the country of your choice.</p>
+    /// <p>For the list of public holiday calendars supported by AutoML job V2, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-timeseries-forecasting-holiday-calendars.html#holiday-country-codes">Country Codes</a>. Use the country code corresponding to the country of your choice.</p>
     pub fn country_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.country_code = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The country code for the holiday calendar.</p>
-    /// <p>For the list of public holiday calendars supported by AutoML job V2, see <a href="https://docs.aws.amazon.com/forecast/latest/dg/holidays.html#holidays-country-codes">Country Codes</a>. Use the country code corresponding to the country of your choice.</p>
+    /// <p>For the list of public holiday calendars supported by AutoML job V2, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-timeseries-forecasting-holiday-calendars.html#holiday-country-codes">Country Codes</a>. Use the country code corresponding to the country of your choice.</p>
     pub fn set_country_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.country_code = input;
         self
     }
     /// <p>The country code for the holiday calendar.</p>
-    /// <p>For the list of public holiday calendars supported by AutoML job V2, see <a href="https://docs.aws.amazon.com/forecast/latest/dg/holidays.html#holidays-country-codes">Country Codes</a>. Use the country code corresponding to the country of your choice.</p>
+    /// <p>For the list of public holiday calendars supported by AutoML job V2, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-timeseries-forecasting-holiday-calendars.html#holiday-country-codes">Country Codes</a>. Use the country code corresponding to the country of your choice.</p>
     pub fn get_country_code(&self) -> &::std::option::Option<::std::string::String> {
         &self.country_code
     }

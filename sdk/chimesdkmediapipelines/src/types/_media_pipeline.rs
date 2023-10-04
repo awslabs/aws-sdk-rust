@@ -12,6 +12,8 @@ pub struct MediaPipeline {
     pub media_concatenation_pipeline: ::std::option::Option<crate::types::MediaConcatenationPipeline>,
     /// <p>The media insights pipeline of a media pipeline.</p>
     pub media_insights_pipeline: ::std::option::Option<crate::types::MediaInsightsPipeline>,
+    /// <p>Designates a media pipeline as a media stream pipeline.</p>
+    pub media_stream_pipeline: ::std::option::Option<crate::types::MediaStreamPipeline>,
 }
 impl MediaPipeline {
     /// <p>A pipeline that enables users to capture audio and video.</p>
@@ -30,6 +32,10 @@ impl MediaPipeline {
     pub fn media_insights_pipeline(&self) -> ::std::option::Option<&crate::types::MediaInsightsPipeline> {
         self.media_insights_pipeline.as_ref()
     }
+    /// <p>Designates a media pipeline as a media stream pipeline.</p>
+    pub fn media_stream_pipeline(&self) -> ::std::option::Option<&crate::types::MediaStreamPipeline> {
+        self.media_stream_pipeline.as_ref()
+    }
 }
 impl MediaPipeline {
     /// Creates a new builder-style object to manufacture [`MediaPipeline`](crate::types::MediaPipeline).
@@ -46,6 +52,7 @@ pub struct MediaPipelineBuilder {
     pub(crate) media_live_connector_pipeline: ::std::option::Option<crate::types::MediaLiveConnectorPipeline>,
     pub(crate) media_concatenation_pipeline: ::std::option::Option<crate::types::MediaConcatenationPipeline>,
     pub(crate) media_insights_pipeline: ::std::option::Option<crate::types::MediaInsightsPipeline>,
+    pub(crate) media_stream_pipeline: ::std::option::Option<crate::types::MediaStreamPipeline>,
 }
 impl MediaPipelineBuilder {
     /// <p>A pipeline that enables users to capture audio and video.</p>
@@ -104,6 +111,20 @@ impl MediaPipelineBuilder {
     pub fn get_media_insights_pipeline(&self) -> &::std::option::Option<crate::types::MediaInsightsPipeline> {
         &self.media_insights_pipeline
     }
+    /// <p>Designates a media pipeline as a media stream pipeline.</p>
+    pub fn media_stream_pipeline(mut self, input: crate::types::MediaStreamPipeline) -> Self {
+        self.media_stream_pipeline = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Designates a media pipeline as a media stream pipeline.</p>
+    pub fn set_media_stream_pipeline(mut self, input: ::std::option::Option<crate::types::MediaStreamPipeline>) -> Self {
+        self.media_stream_pipeline = input;
+        self
+    }
+    /// <p>Designates a media pipeline as a media stream pipeline.</p>
+    pub fn get_media_stream_pipeline(&self) -> &::std::option::Option<crate::types::MediaStreamPipeline> {
+        &self.media_stream_pipeline
+    }
     /// Consumes the builder and constructs a [`MediaPipeline`](crate::types::MediaPipeline).
     pub fn build(self) -> crate::types::MediaPipeline {
         crate::types::MediaPipeline {
@@ -111,6 +132,7 @@ impl MediaPipelineBuilder {
             media_live_connector_pipeline: self.media_live_connector_pipeline,
             media_concatenation_pipeline: self.media_concatenation_pipeline,
             media_insights_pipeline: self.media_insights_pipeline,
+            media_stream_pipeline: self.media_stream_pipeline,
         }
     }
 }

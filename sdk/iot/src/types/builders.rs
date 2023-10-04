@@ -141,6 +141,8 @@ pub use crate::types::_open_search_action::OpenSearchActionBuilder;
 
 pub use crate::types::_kafka_action::KafkaActionBuilder;
 
+pub use crate::types::_kafka_action_header::KafkaActionHeaderBuilder;
+
 pub use crate::types::_http_action::HttpActionBuilder;
 
 pub use crate::types::_http_authorization::HttpAuthorizationBuilder;

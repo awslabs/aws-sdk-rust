@@ -117,11 +117,17 @@ pub use crate::types::_extended_s3_destination_description::ExtendedS3Destinatio
 
 pub use crate::types::_source_description::SourceDescriptionBuilder;
 
+pub use crate::types::_msk_source_description::MskSourceDescriptionBuilder;
+
+pub use crate::types::_authentication_configuration::AuthenticationConfigurationBuilder;
+
 pub use crate::types::_kinesis_stream_source_description::KinesisStreamSourceDescriptionBuilder;
 
 pub use crate::types::_delivery_stream_encryption_configuration::DeliveryStreamEncryptionConfigurationBuilder;
 
 pub use crate::types::_failure_description::FailureDescriptionBuilder;
+
+pub use crate::types::_msk_source_configuration::MskSourceConfigurationBuilder;
 
 pub use crate::types::_amazon_open_search_serverless_destination_configuration::AmazonOpenSearchServerlessDestinationConfigurationBuilder;
 

@@ -9,7 +9,7 @@ pub struct UpdatePackageVersionInput {
     pub version_name: ::std::option::Option<::std::string::String>,
     /// <p>The package version description.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>Metadata that can be used to define a package version’s configuration. For example, the S3 file location, configuration options that are being sent to the device or fleet. </p>
+    /// <p>Metadata that can be used to define a package version’s configuration. For example, the Amazon S3 file location, configuration options that are being sent to the device or fleet. </p>
     /// <p> <b>Note:</b> Attributes can be updated only when the package version is in a draft state.</p>
     /// <p>The combined size of all the attributes on a package version is limited to 3KB.</p>
     pub attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -31,7 +31,7 @@ impl UpdatePackageVersionInput {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>Metadata that can be used to define a package version’s configuration. For example, the S3 file location, configuration options that are being sent to the device or fleet. </p>
+    /// <p>Metadata that can be used to define a package version’s configuration. For example, the Amazon S3 file location, configuration options that are being sent to the device or fleet. </p>
     /// <p> <b>Note:</b> Attributes can be updated only when the package version is in a draft state.</p>
     /// <p>The combined size of all the attributes on a package version is limited to 3KB.</p>
     pub fn attributes(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -123,7 +123,7 @@ impl UpdatePackageVersionInputBuilder {
     ///
     /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
     ///
-    /// <p>Metadata that can be used to define a package version’s configuration. For example, the S3 file location, configuration options that are being sent to the device or fleet. </p>
+    /// <p>Metadata that can be used to define a package version’s configuration. For example, the Amazon S3 file location, configuration options that are being sent to the device or fleet. </p>
     /// <p> <b>Note:</b> Attributes can be updated only when the package version is in a draft state.</p>
     /// <p>The combined size of all the attributes on a package version is limited to 3KB.</p>
     pub fn attributes(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -132,14 +132,14 @@ impl UpdatePackageVersionInputBuilder {
         self.attributes = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>Metadata that can be used to define a package version’s configuration. For example, the S3 file location, configuration options that are being sent to the device or fleet. </p>
+    /// <p>Metadata that can be used to define a package version’s configuration. For example, the Amazon S3 file location, configuration options that are being sent to the device or fleet. </p>
     /// <p> <b>Note:</b> Attributes can be updated only when the package version is in a draft state.</p>
     /// <p>The combined size of all the attributes on a package version is limited to 3KB.</p>
     pub fn set_attributes(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.attributes = input;
         self
     }
-    /// <p>Metadata that can be used to define a package version’s configuration. For example, the S3 file location, configuration options that are being sent to the device or fleet. </p>
+    /// <p>Metadata that can be used to define a package version’s configuration. For example, the Amazon S3 file location, configuration options that are being sent to the device or fleet. </p>
     /// <p> <b>Note:</b> Attributes can be updated only when the package version is in a draft state.</p>
     /// <p>The combined size of all the attributes on a package version is limited to 3KB.</p>
     pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {

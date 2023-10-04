@@ -110,17 +110,17 @@ impl EnableUserFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The unique identifier for the user account that you want to enable.</p>
+    /// <p>The unique identifier for the user that you want to activate.</p>
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user_id(input.into());
         self
     }
-    /// <p>The unique identifier for the user account that you want to enable.</p>
+    /// <p>The unique identifier for the user that you want to activate.</p>
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_user_id(input);
         self
     }
-    /// <p>The unique identifier for the user account that you want to enable.</p>
+    /// <p>The unique identifier for the user that you want to activate.</p>
     pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_user_id()
     }

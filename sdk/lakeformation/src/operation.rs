@@ -22,11 +22,17 @@ pub mod commit_transaction;
 /// Types for the `CreateDataCellsFilter` operation.
 pub mod create_data_cells_filter;
 
+/// Types for the `CreateLakeFormationOptIn` operation.
+pub mod create_lake_formation_opt_in;
+
 /// Types for the `CreateLFTag` operation.
 pub mod create_lf_tag;
 
 /// Types for the `DeleteDataCellsFilter` operation.
 pub mod delete_data_cells_filter;
+
+/// Types for the `DeleteLakeFormationOptIn` operation.
+pub mod delete_lake_formation_opt_in;
 
 /// Types for the `DeleteLFTag` operation.
 pub mod delete_lf_tag;
@@ -87,6 +93,9 @@ pub mod grant_permissions;
 
 /// Types for the `ListDataCellsFilter` operation.
 pub mod list_data_cells_filter;
+
+/// Types for the `ListLakeFormationOptIns` operation.
+pub mod list_lake_formation_opt_ins;
 
 /// Types for the `ListLFTags` operation.
 pub mod list_lf_tags;

@@ -96,6 +96,9 @@ where
                                 ::aws_smithy_types::date_time::Format::DateTimeWithOffset,
                             )?);
                         }
+                        "dependencies" => {
+                            builder = builder.set_dependencies(crate::protocol_serde::shape_codegen_dependencies::de_codegen_dependencies(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

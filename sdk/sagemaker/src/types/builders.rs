@@ -153,6 +153,8 @@ pub use crate::types::_ttl_duration::TtlDurationBuilder;
 
 pub use crate::types::_feature_definition::FeatureDefinitionBuilder;
 
+pub use crate::types::_vector_config::VectorConfigBuilder;
+
 pub use crate::types::_desired_weight_and_capacity::DesiredWeightAndCapacityBuilder;
 
 pub use crate::types::_production_variant_serverless_update_config::ProductionVariantServerlessUpdateConfigBuilder;

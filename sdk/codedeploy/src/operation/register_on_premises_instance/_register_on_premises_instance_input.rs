@@ -8,7 +8,7 @@ pub struct RegisterOnPremisesInstanceInput {
     pub instance_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the IAM session to associate with the on-premises instance.</p>
     pub iam_session_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The ARN of the IAM user to associate with the on-premises instance.</p>
+    /// <p>The ARN of the user to associate with the on-premises instance.</p>
     pub iam_user_arn: ::std::option::Option<::std::string::String>,
 }
 impl RegisterOnPremisesInstanceInput {
@@ -20,7 +20,7 @@ impl RegisterOnPremisesInstanceInput {
     pub fn iam_session_arn(&self) -> ::std::option::Option<&str> {
         self.iam_session_arn.as_deref()
     }
-    /// <p>The ARN of the IAM user to associate with the on-premises instance.</p>
+    /// <p>The ARN of the user to associate with the on-premises instance.</p>
     pub fn iam_user_arn(&self) -> ::std::option::Option<&str> {
         self.iam_user_arn.as_deref()
     }
@@ -69,17 +69,17 @@ impl RegisterOnPremisesInstanceInputBuilder {
     pub fn get_iam_session_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.iam_session_arn
     }
-    /// <p>The ARN of the IAM user to associate with the on-premises instance.</p>
+    /// <p>The ARN of the user to associate with the on-premises instance.</p>
     pub fn iam_user_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.iam_user_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the IAM user to associate with the on-premises instance.</p>
+    /// <p>The ARN of the user to associate with the on-premises instance.</p>
     pub fn set_iam_user_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.iam_user_arn = input;
         self
     }
-    /// <p>The ARN of the IAM user to associate with the on-premises instance.</p>
+    /// <p>The ARN of the user to associate with the on-premises instance.</p>
     pub fn get_iam_user_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.iam_user_arn
     }

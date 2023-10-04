@@ -35,7 +35,7 @@ pub struct TimeSeriesForecastingJobConfig {
     pub transformations: ::std::option::Option<crate::types::TimeSeriesTransformations>,
     /// <p>The collection of components that defines the time-series.</p>
     pub time_series_config: ::std::option::Option<crate::types::TimeSeriesConfig>,
-    /// <p>The collection of holidays featurization attributes used to incorporate national holiday information into your forecasting model.</p>
+    /// <p>The collection of holiday featurization attributes used to incorporate national holiday information into your forecasting model.</p>
     pub holiday_config: ::std::option::Option<::std::vec::Vec<crate::types::HolidayConfigAttributes>>,
 }
 impl TimeSeriesForecastingJobConfig {
@@ -84,7 +84,7 @@ impl TimeSeriesForecastingJobConfig {
     pub fn time_series_config(&self) -> ::std::option::Option<&crate::types::TimeSeriesConfig> {
         self.time_series_config.as_ref()
     }
-    /// <p>The collection of holidays featurization attributes used to incorporate national holiday information into your forecasting model.</p>
+    /// <p>The collection of holiday featurization attributes used to incorporate national holiday information into your forecasting model.</p>
     pub fn holiday_config(&self) -> ::std::option::Option<&[crate::types::HolidayConfigAttributes]> {
         self.holiday_config.as_deref()
     }
@@ -269,19 +269,19 @@ impl TimeSeriesForecastingJobConfigBuilder {
     ///
     /// To override the contents of this collection use [`set_holiday_config`](Self::set_holiday_config).
     ///
-    /// <p>The collection of holidays featurization attributes used to incorporate national holiday information into your forecasting model.</p>
+    /// <p>The collection of holiday featurization attributes used to incorporate national holiday information into your forecasting model.</p>
     pub fn holiday_config(mut self, input: crate::types::HolidayConfigAttributes) -> Self {
         let mut v = self.holiday_config.unwrap_or_default();
         v.push(input);
         self.holiday_config = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The collection of holidays featurization attributes used to incorporate national holiday information into your forecasting model.</p>
+    /// <p>The collection of holiday featurization attributes used to incorporate national holiday information into your forecasting model.</p>
     pub fn set_holiday_config(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::HolidayConfigAttributes>>) -> Self {
         self.holiday_config = input;
         self
     }
-    /// <p>The collection of holidays featurization attributes used to incorporate national holiday information into your forecasting model.</p>
+    /// <p>The collection of holiday featurization attributes used to incorporate national holiday information into your forecasting model.</p>
     pub fn get_holiday_config(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HolidayConfigAttributes>> {
         &self.holiday_config
     }

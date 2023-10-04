@@ -5,7 +5,7 @@
 pub struct GetVoiceToneAnalysisTaskInput {
     /// <p>The unique identifier of the resource to be updated. Valid values include the ID and ARN of the media insights pipeline.</p>
     pub identifier: ::std::option::Option<::std::string::String>,
-    /// <p>The ID of the voice tone anlysis task.</p>
+    /// <p>The ID of the voice tone analysis task.</p>
     pub voice_tone_analysis_task_id: ::std::option::Option<::std::string::String>,
 }
 impl GetVoiceToneAnalysisTaskInput {
@@ -13,7 +13,7 @@ impl GetVoiceToneAnalysisTaskInput {
     pub fn identifier(&self) -> ::std::option::Option<&str> {
         self.identifier.as_deref()
     }
-    /// <p>The ID of the voice tone anlysis task.</p>
+    /// <p>The ID of the voice tone analysis task.</p>
     pub fn voice_tone_analysis_task_id(&self) -> ::std::option::Option<&str> {
         self.voice_tone_analysis_task_id.as_deref()
     }
@@ -47,17 +47,17 @@ impl GetVoiceToneAnalysisTaskInputBuilder {
     pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.identifier
     }
-    /// <p>The ID of the voice tone anlysis task.</p>
+    /// <p>The ID of the voice tone analysis task.</p>
     pub fn voice_tone_analysis_task_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.voice_tone_analysis_task_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the voice tone anlysis task.</p>
+    /// <p>The ID of the voice tone analysis task.</p>
     pub fn set_voice_tone_analysis_task_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.voice_tone_analysis_task_id = input;
         self
     }
-    /// <p>The ID of the voice tone anlysis task.</p>
+    /// <p>The ID of the voice tone analysis task.</p>
     pub fn get_voice_tone_analysis_task_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.voice_tone_analysis_task_id
     }

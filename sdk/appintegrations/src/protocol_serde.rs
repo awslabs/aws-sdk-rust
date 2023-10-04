@@ -23,6 +23,8 @@ pub fn parse_http_error_metadata(
     crate::json_errors::parse_error_metadata(response_body, response_headers)
 }
 
+pub(crate) mod shape_create_application;
+
 pub(crate) mod shape_create_data_integration;
 
 pub(crate) mod shape_create_event_integration;
@@ -31,9 +33,13 @@ pub(crate) mod shape_delete_data_integration;
 
 pub(crate) mod shape_delete_event_integration;
 
+pub(crate) mod shape_get_application;
+
 pub(crate) mod shape_get_data_integration;
 
 pub(crate) mod shape_get_event_integration;
+
+pub(crate) mod shape_list_applications;
 
 pub(crate) mod shape_list_data_integration_associations;
 
@@ -49,6 +55,8 @@ pub(crate) mod shape_tag_resource;
 
 pub(crate) mod shape_untag_resource;
 
+pub(crate) mod shape_update_application;
+
 pub(crate) mod shape_update_data_integration;
 
 pub(crate) mod shape_update_event_integration;
@@ -62,6 +70,8 @@ pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
 }
 
 pub(crate) mod shape_access_denied_exception;
+
+pub(crate) mod shape_create_application_input;
 
 pub(crate) mod shape_create_data_integration_input;
 
@@ -81,9 +91,15 @@ pub(crate) mod shape_tag_resource_input;
 
 pub(crate) mod shape_throttling_exception;
 
+pub(crate) mod shape_update_application_input;
+
 pub(crate) mod shape_update_data_integration_input;
 
 pub(crate) mod shape_update_event_integration_input;
+
+pub(crate) mod shape_application_source_config;
+
+pub(crate) mod shape_applications_list;
 
 pub(crate) mod shape_data_integration_associations_list;
 
@@ -99,9 +115,19 @@ pub(crate) mod shape_file_configuration;
 
 pub(crate) mod shape_object_configuration;
 
+pub(crate) mod shape_publication;
+
+pub(crate) mod shape_publication_list;
+
 pub(crate) mod shape_schedule_configuration;
 
+pub(crate) mod shape_subscription;
+
+pub(crate) mod shape_subscription_list;
+
 pub(crate) mod shape_tag_map;
+
+pub(crate) mod shape_application_summary;
 
 pub(crate) mod shape_data_integration_association_summary;
 
@@ -111,9 +137,13 @@ pub(crate) mod shape_event_integration;
 
 pub(crate) mod shape_event_integration_association;
 
+pub(crate) mod shape_external_url_config;
+
 pub(crate) mod shape_fields_map;
 
 pub(crate) mod shape_folder_list;
+
+pub(crate) mod shape_application_approved_origins;
 
 pub(crate) mod shape_client_association_metadata;
 

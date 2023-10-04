@@ -22,7 +22,7 @@ impl UpdatePackageInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdatePackage`.
 ///
-/// <p>Updates the supported fields for a specific package.</p>
+/// <p>Updates the supported fields for a specific software package.</p>
 /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdatePackage</a> and <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetIndexingConfiguration</a> actions.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdatePackageFluentBuilder {
@@ -111,17 +111,17 @@ impl UpdatePackageFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name of the target package.</p>
+    /// <p>The name of the target software package.</p>
     pub fn package_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.package_name(input.into());
         self
     }
-    /// <p>The name of the target package.</p>
+    /// <p>The name of the target software package.</p>
     pub fn set_package_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_package_name(input);
         self
     }
-    /// <p>The name of the target package.</p>
+    /// <p>The name of the target software package.</p>
     pub fn get_package_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_package_name()
     }

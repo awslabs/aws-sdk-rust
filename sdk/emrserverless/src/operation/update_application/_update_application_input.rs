@@ -26,6 +26,10 @@ pub struct UpdateApplicationInput {
         ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::WorkerTypeSpecificationInput>>,
     /// <p>The Amazon EMR release label for the application. You can change the release label to use a different release of Amazon EMR.</p>
     pub release_label: ::std::option::Option<::std::string::String>,
+    /// <p>The <a href="https://docs.aws.amazon.com/emr-serverless/latest/APIReference/API_Configuration.html">Configuration</a> specifications to use when updating an application. Each configuration consists of a classification and properties. This configuration is applied across all the job runs submitted under the application.</p>
+    pub runtime_configuration: ::std::option::Option<::std::vec::Vec<crate::types::Configuration>>,
+    /// <p>The configuration setting for monitoring.</p>
+    pub monitoring_configuration: ::std::option::Option<crate::types::MonitoringConfiguration>,
 }
 impl UpdateApplicationInput {
     /// <p>The ID of the application to update.</p>
@@ -76,6 +80,14 @@ impl UpdateApplicationInput {
     pub fn release_label(&self) -> ::std::option::Option<&str> {
         self.release_label.as_deref()
     }
+    /// <p>The <a href="https://docs.aws.amazon.com/emr-serverless/latest/APIReference/API_Configuration.html">Configuration</a> specifications to use when updating an application. Each configuration consists of a classification and properties. This configuration is applied across all the job runs submitted under the application.</p>
+    pub fn runtime_configuration(&self) -> ::std::option::Option<&[crate::types::Configuration]> {
+        self.runtime_configuration.as_deref()
+    }
+    /// <p>The configuration setting for monitoring.</p>
+    pub fn monitoring_configuration(&self) -> ::std::option::Option<&crate::types::MonitoringConfiguration> {
+        self.monitoring_configuration.as_ref()
+    }
 }
 impl UpdateApplicationInput {
     /// Creates a new builder-style object to manufacture [`UpdateApplicationInput`](crate::operation::update_application::UpdateApplicationInput).
@@ -100,6 +112,8 @@ pub struct UpdateApplicationInputBuilder {
     pub(crate) worker_type_specifications:
         ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::WorkerTypeSpecificationInput>>,
     pub(crate) release_label: ::std::option::Option<::std::string::String>,
+    pub(crate) runtime_configuration: ::std::option::Option<::std::vec::Vec<crate::types::Configuration>>,
+    pub(crate) monitoring_configuration: ::std::option::Option<crate::types::MonitoringConfiguration>,
 }
 impl UpdateApplicationInputBuilder {
     /// <p>The ID of the application to update.</p>
@@ -282,6 +296,40 @@ impl UpdateApplicationInputBuilder {
     pub fn get_release_label(&self) -> &::std::option::Option<::std::string::String> {
         &self.release_label
     }
+    /// Appends an item to `runtime_configuration`.
+    ///
+    /// To override the contents of this collection use [`set_runtime_configuration`](Self::set_runtime_configuration).
+    ///
+    /// <p>The <a href="https://docs.aws.amazon.com/emr-serverless/latest/APIReference/API_Configuration.html">Configuration</a> specifications to use when updating an application. Each configuration consists of a classification and properties. This configuration is applied across all the job runs submitted under the application.</p>
+    pub fn runtime_configuration(mut self, input: crate::types::Configuration) -> Self {
+        let mut v = self.runtime_configuration.unwrap_or_default();
+        v.push(input);
+        self.runtime_configuration = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The <a href="https://docs.aws.amazon.com/emr-serverless/latest/APIReference/API_Configuration.html">Configuration</a> specifications to use when updating an application. Each configuration consists of a classification and properties. This configuration is applied across all the job runs submitted under the application.</p>
+    pub fn set_runtime_configuration(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Configuration>>) -> Self {
+        self.runtime_configuration = input;
+        self
+    }
+    /// <p>The <a href="https://docs.aws.amazon.com/emr-serverless/latest/APIReference/API_Configuration.html">Configuration</a> specifications to use when updating an application. Each configuration consists of a classification and properties. This configuration is applied across all the job runs submitted under the application.</p>
+    pub fn get_runtime_configuration(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Configuration>> {
+        &self.runtime_configuration
+    }
+    /// <p>The configuration setting for monitoring.</p>
+    pub fn monitoring_configuration(mut self, input: crate::types::MonitoringConfiguration) -> Self {
+        self.monitoring_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration setting for monitoring.</p>
+    pub fn set_monitoring_configuration(mut self, input: ::std::option::Option<crate::types::MonitoringConfiguration>) -> Self {
+        self.monitoring_configuration = input;
+        self
+    }
+    /// <p>The configuration setting for monitoring.</p>
+    pub fn get_monitoring_configuration(&self) -> &::std::option::Option<crate::types::MonitoringConfiguration> {
+        &self.monitoring_configuration
+    }
     /// Consumes the builder and constructs a [`UpdateApplicationInput`](crate::operation::update_application::UpdateApplicationInput).
     pub fn build(
         self,
@@ -298,6 +346,8 @@ impl UpdateApplicationInputBuilder {
             image_configuration: self.image_configuration,
             worker_type_specifications: self.worker_type_specifications,
             release_label: self.release_label,
+            runtime_configuration: self.runtime_configuration,
+            monitoring_configuration: self.monitoring_configuration,
         })
     }
 }

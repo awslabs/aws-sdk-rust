@@ -281,7 +281,7 @@ impl CreateOTAUpdateFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_additional_parameters`](Self::set_additional_parameters).
     ///
-    /// <p>A list of additional OTA update parameters which are name-value pairs.</p>
+    /// <p>A list of additional OTA update parameters, which are name-value pairs. They won't be sent to devices as a part of the Job document.</p>
     pub fn additional_parameters(
         mut self,
         k: impl ::std::convert::Into<::std::string::String>,
@@ -290,7 +290,7 @@ impl CreateOTAUpdateFluentBuilder {
         self.inner = self.inner.additional_parameters(k.into(), v.into());
         self
     }
-    /// <p>A list of additional OTA update parameters which are name-value pairs.</p>
+    /// <p>A list of additional OTA update parameters, which are name-value pairs. They won't be sent to devices as a part of the Job document.</p>
     pub fn set_additional_parameters(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -298,7 +298,7 @@ impl CreateOTAUpdateFluentBuilder {
         self.inner = self.inner.set_additional_parameters(input);
         self
     }
-    /// <p>A list of additional OTA update parameters which are name-value pairs.</p>
+    /// <p>A list of additional OTA update parameters, which are name-value pairs. They won't be sent to devices as a part of the Job document.</p>
     pub fn get_additional_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_additional_parameters()
     }

@@ -118,31 +118,31 @@ impl DescribeBudgetsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::describe_budgets::paginator::DescribeBudgetsPaginator {
         crate::operation::describe_budgets::paginator::DescribeBudgetsPaginator::new(self.handle, self.inner)
     }
-    /// <p>The <code>accountId</code> that is associated with the budgets that you want descriptions of.</p>
+    /// <p>The <code>accountId</code> that is associated with the budgets that you want to describe.</p>
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.account_id(input.into());
         self
     }
-    /// <p>The <code>accountId</code> that is associated with the budgets that you want descriptions of.</p>
+    /// <p>The <code>accountId</code> that is associated with the budgets that you want to describe.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_account_id(input);
         self
     }
-    /// <p>The <code>accountId</code> that is associated with the budgets that you want descriptions of.</p>
+    /// <p>The <code>accountId</code> that is associated with the budgets that you want to describe.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_account_id()
     }
-    /// <p>An optional integer that represents how many entries a paginated response contains. The maximum is 100.</p>
+    /// <p>An integer that represents how many budgets a paginated response contains. The default is 100.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    /// <p>An optional integer that represents how many entries a paginated response contains. The maximum is 100.</p>
+    /// <p>An integer that represents how many budgets a paginated response contains. The default is 100.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
-    /// <p>An optional integer that represents how many entries a paginated response contains. The maximum is 100.</p>
+    /// <p>An integer that represents how many budgets a paginated response contains. The default is 100.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }

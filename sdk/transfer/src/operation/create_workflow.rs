@@ -260,11 +260,11 @@ pub type CreateWorkflowErrorKind = CreateWorkflowError;
 pub enum CreateWorkflowError {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
-    /// <p>This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family service.</p>
+    /// <p>This exception is thrown when an error occurs in the Transfer Family service.</p>
     InternalServiceError(crate::types::error::InternalServiceError),
     /// <p>This exception is thrown when the client submits a malformed request.</p>
     InvalidRequestException(crate::types::error::InvalidRequestException),
-    /// <p>The requested resource does not exist.</p>
+    /// <p>The requested resource does not exist, or exists in a region other than the one specified for the command.</p>
     ResourceExistsException(crate::types::error::ResourceExistsException),
     /// <p>The request has failed because the Amazon Web ServicesTransfer Family service is not available.</p>
     ServiceUnavailableException(crate::types::error::ServiceUnavailableException),

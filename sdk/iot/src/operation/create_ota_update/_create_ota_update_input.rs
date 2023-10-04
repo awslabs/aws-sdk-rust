@@ -25,7 +25,7 @@ pub struct CreateOtaUpdateInput {
     pub files: ::std::option::Option<::std::vec::Vec<crate::types::OtaUpdateFile>>,
     /// <p>The IAM role that grants Amazon Web Services IoT Core access to the Amazon S3, IoT jobs and Amazon Web Services Code Signing resources to create an OTA update job.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
-    /// <p>A list of additional OTA update parameters which are name-value pairs.</p>
+    /// <p>A list of additional OTA update parameters, which are name-value pairs. They won't be sent to devices as a part of the Job document.</p>
     pub additional_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Metadata which can be used to manage updates.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -75,7 +75,7 @@ impl CreateOtaUpdateInput {
     pub fn role_arn(&self) -> ::std::option::Option<&str> {
         self.role_arn.as_deref()
     }
-    /// <p>A list of additional OTA update parameters which are name-value pairs.</p>
+    /// <p>A list of additional OTA update parameters, which are name-value pairs. They won't be sent to devices as a part of the Job document.</p>
     pub fn additional_parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.additional_parameters.as_ref()
     }
@@ -286,7 +286,7 @@ impl CreateOtaUpdateInputBuilder {
     ///
     /// To override the contents of this collection use [`set_additional_parameters`](Self::set_additional_parameters).
     ///
-    /// <p>A list of additional OTA update parameters which are name-value pairs.</p>
+    /// <p>A list of additional OTA update parameters, which are name-value pairs. They won't be sent to devices as a part of the Job document.</p>
     pub fn additional_parameters(
         mut self,
         k: impl ::std::convert::Into<::std::string::String>,
@@ -297,7 +297,7 @@ impl CreateOtaUpdateInputBuilder {
         self.additional_parameters = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>A list of additional OTA update parameters which are name-value pairs.</p>
+    /// <p>A list of additional OTA update parameters, which are name-value pairs. They won't be sent to devices as a part of the Job document.</p>
     pub fn set_additional_parameters(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -305,7 +305,7 @@ impl CreateOtaUpdateInputBuilder {
         self.additional_parameters = input;
         self
     }
-    /// <p>A list of additional OTA update parameters which are name-value pairs.</p>
+    /// <p>A list of additional OTA update parameters, which are name-value pairs. They won't be sent to devices as a part of the Job document.</p>
     pub fn get_additional_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.additional_parameters
     }

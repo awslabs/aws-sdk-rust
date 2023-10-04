@@ -157,6 +157,10 @@ mod create_media_insights_pipeline_configuration;
 
 mod create_media_live_connector_pipeline;
 
+mod create_media_pipeline_kinesis_video_stream_pool;
+
+mod create_media_stream_pipeline;
+
 /// Operation customization and supporting types.
 ///
 /// The underlying HTTP requests made during an operation can be customized
@@ -191,11 +195,15 @@ mod delete_media_insights_pipeline_configuration;
 
 mod delete_media_pipeline;
 
+mod delete_media_pipeline_kinesis_video_stream_pool;
+
 mod get_media_capture_pipeline;
 
 mod get_media_insights_pipeline_configuration;
 
 mod get_media_pipeline;
+
+mod get_media_pipeline_kinesis_video_stream_pool;
 
 mod get_speaker_search_task;
 
@@ -204,6 +212,8 @@ mod get_voice_tone_analysis_task;
 mod list_media_capture_pipelines;
 
 mod list_media_insights_pipeline_configurations;
+
+mod list_media_pipeline_kinesis_video_stream_pools;
 
 mod list_media_pipelines;
 
@@ -224,3 +234,5 @@ mod untag_resource;
 mod update_media_insights_pipeline_configuration;
 
 mod update_media_insights_pipeline_status;
+
+mod update_media_pipeline_kinesis_video_stream_pool;

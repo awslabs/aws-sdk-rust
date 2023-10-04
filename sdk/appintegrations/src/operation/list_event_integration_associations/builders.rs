@@ -110,6 +110,12 @@ impl ListEventIntegrationAssociationsFluentBuilder {
         self.config_override = config_override;
         self
     }
+    /// Create a paginator for this request
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::list_event_integration_associations::paginator::ListEventIntegrationAssociationsPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(self) -> crate::operation::list_event_integration_associations::paginator::ListEventIntegrationAssociationsPaginator {
+        crate::operation::list_event_integration_associations::paginator::ListEventIntegrationAssociationsPaginator::new(self.handle, self.inner)
+    }
     /// <p>The name of the event integration. </p>
     pub fn event_integration_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.event_integration_name(input.into());

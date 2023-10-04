@@ -4,7 +4,7 @@ pub fn ser_create_user_input(
     input: &crate::operation::create_user::CreateUserInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.api_access {
-        object.key("ApiAccess").string(var_1.as_str());
+        object.key("apiAccess").string(var_1.as_str());
     }
     if let Some(var_2) = &input.api_access_principal_arn {
         object.key("apiAccessPrincipalArn").string(var_2.as_str());

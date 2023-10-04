@@ -4,13 +4,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetDeploymentGroupsInput {
-    /// <p>The name of an CodeDeploy application associated with the applicable IAM or Amazon Web Services account.</p>
+    /// <p>The name of an CodeDeploy application associated with the applicable user or Amazon Web Services account.</p>
     pub application_name: ::std::option::Option<::std::string::String>,
     /// <p>The names of the deployment groups.</p>
     pub deployment_group_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl BatchGetDeploymentGroupsInput {
-    /// <p>The name of an CodeDeploy application associated with the applicable IAM or Amazon Web Services account.</p>
+    /// <p>The name of an CodeDeploy application associated with the applicable user or Amazon Web Services account.</p>
     pub fn application_name(&self) -> ::std::option::Option<&str> {
         self.application_name.as_deref()
     }
@@ -34,17 +34,17 @@ pub struct BatchGetDeploymentGroupsInputBuilder {
     pub(crate) deployment_group_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl BatchGetDeploymentGroupsInputBuilder {
-    /// <p>The name of an CodeDeploy application associated with the applicable IAM or Amazon Web Services account.</p>
+    /// <p>The name of an CodeDeploy application associated with the applicable user or Amazon Web Services account.</p>
     pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of an CodeDeploy application associated with the applicable IAM or Amazon Web Services account.</p>
+    /// <p>The name of an CodeDeploy application associated with the applicable user or Amazon Web Services account.</p>
     pub fn set_application_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_name = input;
         self
     }
-    /// <p>The name of an CodeDeploy application associated with the applicable IAM or Amazon Web Services account.</p>
+    /// <p>The name of an CodeDeploy application associated with the applicable user or Amazon Web Services account.</p>
     pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.application_name
     }

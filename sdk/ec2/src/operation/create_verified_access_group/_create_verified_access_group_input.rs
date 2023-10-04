@@ -15,6 +15,8 @@ pub struct CreateVerifiedAccessGroupInput {
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
+    /// <p> Options for server side encryption. </p>
+    pub sse_specification: ::std::option::Option<crate::types::VerifiedAccessSseSpecificationRequest>,
 }
 impl CreateVerifiedAccessGroupInput {
     /// <p>The ID of the Verified Access instance.</p>
@@ -41,6 +43,10 @@ impl CreateVerifiedAccessGroupInput {
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
         self.dry_run
     }
+    /// <p> Options for server side encryption. </p>
+    pub fn sse_specification(&self) -> ::std::option::Option<&crate::types::VerifiedAccessSseSpecificationRequest> {
+        self.sse_specification.as_ref()
+    }
 }
 impl CreateVerifiedAccessGroupInput {
     /// Creates a new builder-style object to manufacture [`CreateVerifiedAccessGroupInput`](crate::operation::create_verified_access_group::CreateVerifiedAccessGroupInput).
@@ -59,6 +65,7 @@ pub struct CreateVerifiedAccessGroupInputBuilder {
     pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) dry_run: ::std::option::Option<bool>,
+    pub(crate) sse_specification: ::std::option::Option<crate::types::VerifiedAccessSseSpecificationRequest>,
 }
 impl CreateVerifiedAccessGroupInputBuilder {
     /// <p>The ID of the Verified Access instance.</p>
@@ -151,6 +158,20 @@ impl CreateVerifiedAccessGroupInputBuilder {
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
         &self.dry_run
     }
+    /// <p> Options for server side encryption. </p>
+    pub fn sse_specification(mut self, input: crate::types::VerifiedAccessSseSpecificationRequest) -> Self {
+        self.sse_specification = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p> Options for server side encryption. </p>
+    pub fn set_sse_specification(mut self, input: ::std::option::Option<crate::types::VerifiedAccessSseSpecificationRequest>) -> Self {
+        self.sse_specification = input;
+        self
+    }
+    /// <p> Options for server side encryption. </p>
+    pub fn get_sse_specification(&self) -> &::std::option::Option<crate::types::VerifiedAccessSseSpecificationRequest> {
+        &self.sse_specification
+    }
     /// Consumes the builder and constructs a [`CreateVerifiedAccessGroupInput`](crate::operation::create_verified_access_group::CreateVerifiedAccessGroupInput).
     pub fn build(
         self,
@@ -165,6 +186,7 @@ impl CreateVerifiedAccessGroupInputBuilder {
             tag_specifications: self.tag_specifications,
             client_token: self.client_token,
             dry_run: self.dry_run,
+            sse_specification: self.sse_specification,
         })
     }
 }

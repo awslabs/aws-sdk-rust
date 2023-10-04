@@ -261,7 +261,7 @@ pub type GetDeploymentConfigErrorKind = GetDeploymentConfigError;
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum GetDeploymentConfigError {
-    /// <p>The deployment configuration does not exist with the IAM user or Amazon Web Services account.</p>
+    /// <p>The deployment configuration does not exist with the user or Amazon Web Services account.</p>
     DeploymentConfigDoesNotExistException(crate::types::error::DeploymentConfigDoesNotExistException),
     /// <p>The deployment configuration name was not specified.</p>
     DeploymentConfigNameRequiredException(crate::types::error::DeploymentConfigNameRequiredException),

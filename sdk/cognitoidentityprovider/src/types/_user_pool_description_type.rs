@@ -11,6 +11,7 @@ pub struct UserPoolDescriptionType {
     /// <p>The Lambda configuration information in a user pool description.</p>
     pub lambda_config: ::std::option::Option<crate::types::LambdaConfigType>,
     /// <p>The user pool status in a user pool description.</p>
+    #[deprecated(note = "This property is no longer available.")]
     pub status: ::std::option::Option<crate::types::StatusType>,
     /// <p>The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format, when the item was modified.</p>
     pub last_modified_date: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -31,6 +32,7 @@ impl UserPoolDescriptionType {
         self.lambda_config.as_ref()
     }
     /// <p>The user pool status in a user pool description.</p>
+    #[deprecated(note = "This property is no longer available.")]
     pub fn status(&self) -> ::std::option::Option<&crate::types::StatusType> {
         self.status.as_ref()
     }
@@ -105,16 +107,19 @@ impl UserPoolDescriptionTypeBuilder {
         &self.lambda_config
     }
     /// <p>The user pool status in a user pool description.</p>
+    #[deprecated(note = "This property is no longer available.")]
     pub fn status(mut self, input: crate::types::StatusType) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The user pool status in a user pool description.</p>
+    #[deprecated(note = "This property is no longer available.")]
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::StatusType>) -> Self {
         self.status = input;
         self
     }
     /// <p>The user pool status in a user pool description.</p>
+    #[deprecated(note = "This property is no longer available.")]
     pub fn get_status(&self) -> &::std::option::Option<crate::types::StatusType> {
         &self.status
     }

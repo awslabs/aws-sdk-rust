@@ -12,6 +12,8 @@ pub struct CodeRepository {
     /// <p> <code>CodeConfiguration</code> is required only for <code>CreateService</code> request.</p>
     /// </note>
     pub code_configuration: ::std::option::Option<crate::types::CodeConfiguration>,
+    /// <p>The path of the directory that stores source code and configuration files. The build and start commands also execute from here. The path is absolute from root and, if not specified, defaults to the repository root.</p>
+    pub source_directory: ::std::option::Option<::std::string::String>,
 }
 impl CodeRepository {
     /// <p>The location of the repository that contains the source code.</p>
@@ -28,6 +30,10 @@ impl CodeRepository {
     pub fn code_configuration(&self) -> ::std::option::Option<&crate::types::CodeConfiguration> {
         self.code_configuration.as_ref()
     }
+    /// <p>The path of the directory that stores source code and configuration files. The build and start commands also execute from here. The path is absolute from root and, if not specified, defaults to the repository root.</p>
+    pub fn source_directory(&self) -> ::std::option::Option<&str> {
+        self.source_directory.as_deref()
+    }
 }
 impl CodeRepository {
     /// Creates a new builder-style object to manufacture [`CodeRepository`](crate::types::CodeRepository).
@@ -43,6 +49,7 @@ pub struct CodeRepositoryBuilder {
     pub(crate) repository_url: ::std::option::Option<::std::string::String>,
     pub(crate) source_code_version: ::std::option::Option<crate::types::SourceCodeVersion>,
     pub(crate) code_configuration: ::std::option::Option<crate::types::CodeConfiguration>,
+    pub(crate) source_directory: ::std::option::Option<::std::string::String>,
 }
 impl CodeRepositoryBuilder {
     /// <p>The location of the repository that contains the source code.</p>
@@ -93,12 +100,27 @@ impl CodeRepositoryBuilder {
     pub fn get_code_configuration(&self) -> &::std::option::Option<crate::types::CodeConfiguration> {
         &self.code_configuration
     }
+    /// <p>The path of the directory that stores source code and configuration files. The build and start commands also execute from here. The path is absolute from root and, if not specified, defaults to the repository root.</p>
+    pub fn source_directory(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.source_directory = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The path of the directory that stores source code and configuration files. The build and start commands also execute from here. The path is absolute from root and, if not specified, defaults to the repository root.</p>
+    pub fn set_source_directory(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.source_directory = input;
+        self
+    }
+    /// <p>The path of the directory that stores source code and configuration files. The build and start commands also execute from here. The path is absolute from root and, if not specified, defaults to the repository root.</p>
+    pub fn get_source_directory(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_directory
+    }
     /// Consumes the builder and constructs a [`CodeRepository`](crate::types::CodeRepository).
     pub fn build(self) -> crate::types::CodeRepository {
         crate::types::CodeRepository {
             repository_url: self.repository_url,
             source_code_version: self.source_code_version,
             code_configuration: self.code_configuration,
+            source_directory: self.source_directory,
         }
     }
 }

@@ -10,7 +10,7 @@ pub struct ModelQualityAppSpecification {
     pub container_entrypoint: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>An array of arguments for the container used to run the monitoring job.</p>
     pub container_arguments: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>An Amazon S3 URI to a script that is called per row prior to running analysis. It can base64 decode the payload and convert it into a flatted json so that the built-in container can use the converted data. Applicable only for the built-in (first party) containers.</p>
+    /// <p>An Amazon S3 URI to a script that is called per row prior to running analysis. It can base64 decode the payload and convert it into a flattened JSON so that the built-in container can use the converted data. Applicable only for the built-in (first party) containers.</p>
     pub record_preprocessor_source_uri: ::std::option::Option<::std::string::String>,
     /// <p>An Amazon S3 URI to a script that is called after analysis has been performed. Applicable only for the built-in (first party) containers.</p>
     pub post_analytics_processor_source_uri: ::std::option::Option<::std::string::String>,
@@ -32,7 +32,7 @@ impl ModelQualityAppSpecification {
     pub fn container_arguments(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.container_arguments.as_deref()
     }
-    /// <p>An Amazon S3 URI to a script that is called per row prior to running analysis. It can base64 decode the payload and convert it into a flatted json so that the built-in container can use the converted data. Applicable only for the built-in (first party) containers.</p>
+    /// <p>An Amazon S3 URI to a script that is called per row prior to running analysis. It can base64 decode the payload and convert it into a flattened JSON so that the built-in container can use the converted data. Applicable only for the built-in (first party) containers.</p>
     pub fn record_preprocessor_source_uri(&self) -> ::std::option::Option<&str> {
         self.record_preprocessor_source_uri.as_deref()
     }
@@ -123,17 +123,17 @@ impl ModelQualityAppSpecificationBuilder {
     pub fn get_container_arguments(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.container_arguments
     }
-    /// <p>An Amazon S3 URI to a script that is called per row prior to running analysis. It can base64 decode the payload and convert it into a flatted json so that the built-in container can use the converted data. Applicable only for the built-in (first party) containers.</p>
+    /// <p>An Amazon S3 URI to a script that is called per row prior to running analysis. It can base64 decode the payload and convert it into a flattened JSON so that the built-in container can use the converted data. Applicable only for the built-in (first party) containers.</p>
     pub fn record_preprocessor_source_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.record_preprocessor_source_uri = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>An Amazon S3 URI to a script that is called per row prior to running analysis. It can base64 decode the payload and convert it into a flatted json so that the built-in container can use the converted data. Applicable only for the built-in (first party) containers.</p>
+    /// <p>An Amazon S3 URI to a script that is called per row prior to running analysis. It can base64 decode the payload and convert it into a flattened JSON so that the built-in container can use the converted data. Applicable only for the built-in (first party) containers.</p>
     pub fn set_record_preprocessor_source_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.record_preprocessor_source_uri = input;
         self
     }
-    /// <p>An Amazon S3 URI to a script that is called per row prior to running analysis. It can base64 decode the payload and convert it into a flatted json so that the built-in container can use the converted data. Applicable only for the built-in (first party) containers.</p>
+    /// <p>An Amazon S3 URI to a script that is called per row prior to running analysis. It can base64 decode the payload and convert it into a flattened JSON so that the built-in container can use the converted data. Applicable only for the built-in (first party) containers.</p>
     pub fn get_record_preprocessor_source_uri(&self) -> &::std::option::Option<::std::string::String> {
         &self.record_preprocessor_source_uri
     }

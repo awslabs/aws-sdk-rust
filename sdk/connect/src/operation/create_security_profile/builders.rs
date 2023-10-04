@@ -234,4 +234,25 @@ impl CreateSecurityProfileFluentBuilder {
     pub fn get_tag_restricted_resources(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_tag_restricted_resources()
     }
+    /// Appends an item to `Applications`.
+    ///
+    /// To override the contents of this collection use [`set_applications`](Self::set_applications).
+    ///
+    /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
+    /// <p>A list of third party applications that the security profile will give access to.</p>
+    pub fn applications(mut self, input: crate::types::Application) -> Self {
+        self.inner = self.inner.applications(input);
+        self
+    }
+    /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
+    /// <p>A list of third party applications that the security profile will give access to.</p>
+    pub fn set_applications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Application>>) -> Self {
+        self.inner = self.inner.set_applications(input);
+        self
+    }
+    /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
+    /// <p>A list of third party applications that the security profile will give access to.</p>
+    pub fn get_applications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Application>> {
+        self.inner.get_applications()
+    }
 }

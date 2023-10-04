@@ -89,6 +89,8 @@ pub use crate::types::_codegen_job_summary::CodegenJobSummaryBuilder;
 
 pub use crate::types::_codegen_job::CodegenJobBuilder;
 
+pub use crate::types::_codegen_dependency::CodegenDependencyBuilder;
+
 pub use crate::types::_codegen_job_asset::CodegenJobAssetBuilder;
 
 pub use crate::types::_codegen_feature_flags::CodegenFeatureFlagsBuilder;

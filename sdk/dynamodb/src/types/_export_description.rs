@@ -46,6 +46,10 @@ pub struct ExportDescription {
     pub billed_size_bytes: ::std::option::Option<i64>,
     /// <p>The number of items exported.</p>
     pub item_count: ::std::option::Option<i64>,
+    /// <p>Choice of whether to execute as a full export or incremental export. Valid values are <code>FULL_EXPORT</code> or <code>INCREMENTAL_EXPORT</code>. If <code>INCREMENTAL_EXPORT</code> is provided, the <code>IncrementalExportSpecification</code> must also be used.</p>
+    pub export_type: ::std::option::Option<crate::types::ExportType>,
+    /// <p>Optional object containing the parameters specific to an incremental export.</p>
+    pub incremental_export_specification: ::std::option::Option<crate::types::IncrementalExportSpecification>,
 }
 impl ExportDescription {
     /// <p>The Amazon Resource Name (ARN) of the table export.</p>
@@ -128,6 +132,14 @@ impl ExportDescription {
     pub fn item_count(&self) -> ::std::option::Option<i64> {
         self.item_count
     }
+    /// <p>Choice of whether to execute as a full export or incremental export. Valid values are <code>FULL_EXPORT</code> or <code>INCREMENTAL_EXPORT</code>. If <code>INCREMENTAL_EXPORT</code> is provided, the <code>IncrementalExportSpecification</code> must also be used.</p>
+    pub fn export_type(&self) -> ::std::option::Option<&crate::types::ExportType> {
+        self.export_type.as_ref()
+    }
+    /// <p>Optional object containing the parameters specific to an incremental export.</p>
+    pub fn incremental_export_specification(&self) -> ::std::option::Option<&crate::types::IncrementalExportSpecification> {
+        self.incremental_export_specification.as_ref()
+    }
 }
 impl ExportDescription {
     /// Creates a new builder-style object to manufacture [`ExportDescription`](crate::types::ExportDescription).
@@ -159,6 +171,8 @@ pub struct ExportDescriptionBuilder {
     pub(crate) export_format: ::std::option::Option<crate::types::ExportFormat>,
     pub(crate) billed_size_bytes: ::std::option::Option<i64>,
     pub(crate) item_count: ::std::option::Option<i64>,
+    pub(crate) export_type: ::std::option::Option<crate::types::ExportType>,
+    pub(crate) incremental_export_specification: ::std::option::Option<crate::types::IncrementalExportSpecification>,
 }
 impl ExportDescriptionBuilder {
     /// <p>The Amazon Resource Name (ARN) of the table export.</p>
@@ -439,6 +453,34 @@ impl ExportDescriptionBuilder {
     pub fn get_item_count(&self) -> &::std::option::Option<i64> {
         &self.item_count
     }
+    /// <p>Choice of whether to execute as a full export or incremental export. Valid values are <code>FULL_EXPORT</code> or <code>INCREMENTAL_EXPORT</code>. If <code>INCREMENTAL_EXPORT</code> is provided, the <code>IncrementalExportSpecification</code> must also be used.</p>
+    pub fn export_type(mut self, input: crate::types::ExportType) -> Self {
+        self.export_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Choice of whether to execute as a full export or incremental export. Valid values are <code>FULL_EXPORT</code> or <code>INCREMENTAL_EXPORT</code>. If <code>INCREMENTAL_EXPORT</code> is provided, the <code>IncrementalExportSpecification</code> must also be used.</p>
+    pub fn set_export_type(mut self, input: ::std::option::Option<crate::types::ExportType>) -> Self {
+        self.export_type = input;
+        self
+    }
+    /// <p>Choice of whether to execute as a full export or incremental export. Valid values are <code>FULL_EXPORT</code> or <code>INCREMENTAL_EXPORT</code>. If <code>INCREMENTAL_EXPORT</code> is provided, the <code>IncrementalExportSpecification</code> must also be used.</p>
+    pub fn get_export_type(&self) -> &::std::option::Option<crate::types::ExportType> {
+        &self.export_type
+    }
+    /// <p>Optional object containing the parameters specific to an incremental export.</p>
+    pub fn incremental_export_specification(mut self, input: crate::types::IncrementalExportSpecification) -> Self {
+        self.incremental_export_specification = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Optional object containing the parameters specific to an incremental export.</p>
+    pub fn set_incremental_export_specification(mut self, input: ::std::option::Option<crate::types::IncrementalExportSpecification>) -> Self {
+        self.incremental_export_specification = input;
+        self
+    }
+    /// <p>Optional object containing the parameters specific to an incremental export.</p>
+    pub fn get_incremental_export_specification(&self) -> &::std::option::Option<crate::types::IncrementalExportSpecification> {
+        &self.incremental_export_specification
+    }
     /// Consumes the builder and constructs a [`ExportDescription`](crate::types::ExportDescription).
     pub fn build(self) -> crate::types::ExportDescription {
         crate::types::ExportDescription {
@@ -461,6 +503,8 @@ impl ExportDescriptionBuilder {
             export_format: self.export_format,
             billed_size_bytes: self.billed_size_bytes,
             item_count: self.item_count,
+            export_type: self.export_type,
+            incremental_export_specification: self.incremental_export_specification,
         }
     }
 }

@@ -69,6 +69,12 @@ pub fn ser_field_to_match(
         crate::protocol_serde::shape_header_order::ser_header_order(&mut object_22, var_21)?;
         object_22.finish();
     }
+    if let Some(var_23) = &input.ja3_fingerprint {
+        #[allow(unused_mut)]
+        let mut object_24 = object.key("JA3Fingerprint").start_object();
+        crate::protocol_serde::shape_ja3_fingerprint::ser_ja3_fingerprint(&mut object_24, var_23)?;
+        object_24.finish();
+    }
     Ok(())
 }
 
@@ -121,6 +127,9 @@ where
                         }
                         "HeaderOrder" => {
                             builder = builder.set_header_order(crate::protocol_serde::shape_header_order::de_header_order(tokens)?);
+                        }
+                        "JA3Fingerprint" => {
+                            builder = builder.set_ja3_fingerprint(crate::protocol_serde::shape_ja3_fingerprint::de_ja3_fingerprint(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

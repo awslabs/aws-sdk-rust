@@ -3,13 +3,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct GetUserOutput {
-    /// <p>The unique identifier for the user account that is retrieved.</p>
+    /// <p>The unique identifier for the user that is retrieved.</p>
     pub user_id: ::std::option::Option<::std::string::String>,
-    /// <p>The current status of the user account. </p>
+    /// <p>The current status of the user. </p>
     /// <ul>
-    /// <li> <p> <code>CREATING</code> – The user account creation is in progress.</p> </li>
-    /// <li> <p> <code>ENABLED</code> – The user account is created and is currently active.</p> </li>
-    /// <li> <p> <code>DISABLED</code> – The user account is currently inactive.</p> </li>
+    /// <li> <p> <code>CREATING</code> – The creation is in progress.</p> </li>
+    /// <li> <p> <code>ENABLED</code> – The user is created and is currently active.</p> </li>
+    /// <li> <p> <code>DISABLED</code> – The user is currently inactive.</p> </li>
     /// </ul>
     pub status: ::std::option::Option<crate::types::UserStatus>,
     /// <p>The first name of the user.</p>
@@ -34,28 +34,28 @@ pub struct GetUserOutput {
     pub api_access: ::std::option::Option<crate::types::ApiAccess>,
     /// <p>The ARN identifier of an AWS user or role that is allowed to call the <code>GetProgrammaticAccessCredentials</code> API to obtain a credentials token for a specific FinSpace user. This must be an IAM role within your FinSpace account.</p>
     pub api_access_principal_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The timestamp at which the user account was created in FinSpace. The value is determined as epoch time in milliseconds. </p>
+    /// <p>The timestamp at which the user was created in FinSpace. The value is determined as epoch time in milliseconds. </p>
     pub create_time: i64,
-    /// <p>Describes the last time the user account was enabled. The value is determined as epoch time in milliseconds.</p>
+    /// <p>Describes the last time the user was activated. The value is determined as epoch time in milliseconds.</p>
     pub last_enabled_time: i64,
-    /// <p>Describes the last time the user account was disabled. The value is determined as epoch time in milliseconds.</p>
+    /// <p>Describes the last time the user was deactivated. The value is determined as epoch time in milliseconds.</p>
     pub last_disabled_time: i64,
-    /// <p>Describes the last time the user account was updated. The value is determined as epoch time in milliseconds.</p>
+    /// <p>Describes the last time the user details were updated. The value is determined as epoch time in milliseconds.</p>
     pub last_modified_time: i64,
     /// <p>Describes the last time that the user logged into their account. The value is determined as epoch time in milliseconds.</p>
     pub last_login_time: i64,
     _request_id: Option<String>,
 }
 impl GetUserOutput {
-    /// <p>The unique identifier for the user account that is retrieved.</p>
+    /// <p>The unique identifier for the user that is retrieved.</p>
     pub fn user_id(&self) -> ::std::option::Option<&str> {
         self.user_id.as_deref()
     }
-    /// <p>The current status of the user account. </p>
+    /// <p>The current status of the user. </p>
     /// <ul>
-    /// <li> <p> <code>CREATING</code> – The user account creation is in progress.</p> </li>
-    /// <li> <p> <code>ENABLED</code> – The user account is created and is currently active.</p> </li>
-    /// <li> <p> <code>DISABLED</code> – The user account is currently inactive.</p> </li>
+    /// <li> <p> <code>CREATING</code> – The creation is in progress.</p> </li>
+    /// <li> <p> <code>ENABLED</code> – The user is created and is currently active.</p> </li>
+    /// <li> <p> <code>DISABLED</code> – The user is currently inactive.</p> </li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&crate::types::UserStatus> {
         self.status.as_ref()
@@ -94,19 +94,19 @@ impl GetUserOutput {
     pub fn api_access_principal_arn(&self) -> ::std::option::Option<&str> {
         self.api_access_principal_arn.as_deref()
     }
-    /// <p>The timestamp at which the user account was created in FinSpace. The value is determined as epoch time in milliseconds. </p>
+    /// <p>The timestamp at which the user was created in FinSpace. The value is determined as epoch time in milliseconds. </p>
     pub fn create_time(&self) -> i64 {
         self.create_time
     }
-    /// <p>Describes the last time the user account was enabled. The value is determined as epoch time in milliseconds.</p>
+    /// <p>Describes the last time the user was activated. The value is determined as epoch time in milliseconds.</p>
     pub fn last_enabled_time(&self) -> i64 {
         self.last_enabled_time
     }
-    /// <p>Describes the last time the user account was disabled. The value is determined as epoch time in milliseconds.</p>
+    /// <p>Describes the last time the user was deactivated. The value is determined as epoch time in milliseconds.</p>
     pub fn last_disabled_time(&self) -> i64 {
         self.last_disabled_time
     }
-    /// <p>Describes the last time the user account was updated. The value is determined as epoch time in milliseconds.</p>
+    /// <p>Describes the last time the user details were updated. The value is determined as epoch time in milliseconds.</p>
     pub fn last_modified_time(&self) -> i64 {
         self.last_modified_time
     }
@@ -167,45 +167,45 @@ pub struct GetUserOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetUserOutputBuilder {
-    /// <p>The unique identifier for the user account that is retrieved.</p>
+    /// <p>The unique identifier for the user that is retrieved.</p>
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier for the user account that is retrieved.</p>
+    /// <p>The unique identifier for the user that is retrieved.</p>
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_id = input;
         self
     }
-    /// <p>The unique identifier for the user account that is retrieved.</p>
+    /// <p>The unique identifier for the user that is retrieved.</p>
     pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.user_id
     }
-    /// <p>The current status of the user account. </p>
+    /// <p>The current status of the user. </p>
     /// <ul>
-    /// <li> <p> <code>CREATING</code> – The user account creation is in progress.</p> </li>
-    /// <li> <p> <code>ENABLED</code> – The user account is created and is currently active.</p> </li>
-    /// <li> <p> <code>DISABLED</code> – The user account is currently inactive.</p> </li>
+    /// <li> <p> <code>CREATING</code> – The creation is in progress.</p> </li>
+    /// <li> <p> <code>ENABLED</code> – The user is created and is currently active.</p> </li>
+    /// <li> <p> <code>DISABLED</code> – The user is currently inactive.</p> </li>
     /// </ul>
     pub fn status(mut self, input: crate::types::UserStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The current status of the user account. </p>
+    /// <p>The current status of the user. </p>
     /// <ul>
-    /// <li> <p> <code>CREATING</code> – The user account creation is in progress.</p> </li>
-    /// <li> <p> <code>ENABLED</code> – The user account is created and is currently active.</p> </li>
-    /// <li> <p> <code>DISABLED</code> – The user account is currently inactive.</p> </li>
+    /// <li> <p> <code>CREATING</code> – The creation is in progress.</p> </li>
+    /// <li> <p> <code>ENABLED</code> – The user is created and is currently active.</p> </li>
+    /// <li> <p> <code>DISABLED</code> – The user is currently inactive.</p> </li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::UserStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p>The current status of the user account. </p>
+    /// <p>The current status of the user. </p>
     /// <ul>
-    /// <li> <p> <code>CREATING</code> – The user account creation is in progress.</p> </li>
-    /// <li> <p> <code>ENABLED</code> – The user account is created and is currently active.</p> </li>
-    /// <li> <p> <code>DISABLED</code> – The user account is currently inactive.</p> </li>
+    /// <li> <p> <code>CREATING</code> – The creation is in progress.</p> </li>
+    /// <li> <p> <code>ENABLED</code> – The user is created and is currently active.</p> </li>
+    /// <li> <p> <code>DISABLED</code> – The user is currently inactive.</p> </li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::UserStatus> {
         &self.status
@@ -324,59 +324,59 @@ impl GetUserOutputBuilder {
     pub fn get_api_access_principal_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.api_access_principal_arn
     }
-    /// <p>The timestamp at which the user account was created in FinSpace. The value is determined as epoch time in milliseconds. </p>
+    /// <p>The timestamp at which the user was created in FinSpace. The value is determined as epoch time in milliseconds. </p>
     pub fn create_time(mut self, input: i64) -> Self {
         self.create_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The timestamp at which the user account was created in FinSpace. The value is determined as epoch time in milliseconds. </p>
+    /// <p>The timestamp at which the user was created in FinSpace. The value is determined as epoch time in milliseconds. </p>
     pub fn set_create_time(mut self, input: ::std::option::Option<i64>) -> Self {
         self.create_time = input;
         self
     }
-    /// <p>The timestamp at which the user account was created in FinSpace. The value is determined as epoch time in milliseconds. </p>
+    /// <p>The timestamp at which the user was created in FinSpace. The value is determined as epoch time in milliseconds. </p>
     pub fn get_create_time(&self) -> &::std::option::Option<i64> {
         &self.create_time
     }
-    /// <p>Describes the last time the user account was enabled. The value is determined as epoch time in milliseconds.</p>
+    /// <p>Describes the last time the user was activated. The value is determined as epoch time in milliseconds.</p>
     pub fn last_enabled_time(mut self, input: i64) -> Self {
         self.last_enabled_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Describes the last time the user account was enabled. The value is determined as epoch time in milliseconds.</p>
+    /// <p>Describes the last time the user was activated. The value is determined as epoch time in milliseconds.</p>
     pub fn set_last_enabled_time(mut self, input: ::std::option::Option<i64>) -> Self {
         self.last_enabled_time = input;
         self
     }
-    /// <p>Describes the last time the user account was enabled. The value is determined as epoch time in milliseconds.</p>
+    /// <p>Describes the last time the user was activated. The value is determined as epoch time in milliseconds.</p>
     pub fn get_last_enabled_time(&self) -> &::std::option::Option<i64> {
         &self.last_enabled_time
     }
-    /// <p>Describes the last time the user account was disabled. The value is determined as epoch time in milliseconds.</p>
+    /// <p>Describes the last time the user was deactivated. The value is determined as epoch time in milliseconds.</p>
     pub fn last_disabled_time(mut self, input: i64) -> Self {
         self.last_disabled_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Describes the last time the user account was disabled. The value is determined as epoch time in milliseconds.</p>
+    /// <p>Describes the last time the user was deactivated. The value is determined as epoch time in milliseconds.</p>
     pub fn set_last_disabled_time(mut self, input: ::std::option::Option<i64>) -> Self {
         self.last_disabled_time = input;
         self
     }
-    /// <p>Describes the last time the user account was disabled. The value is determined as epoch time in milliseconds.</p>
+    /// <p>Describes the last time the user was deactivated. The value is determined as epoch time in milliseconds.</p>
     pub fn get_last_disabled_time(&self) -> &::std::option::Option<i64> {
         &self.last_disabled_time
     }
-    /// <p>Describes the last time the user account was updated. The value is determined as epoch time in milliseconds.</p>
+    /// <p>Describes the last time the user details were updated. The value is determined as epoch time in milliseconds.</p>
     pub fn last_modified_time(mut self, input: i64) -> Self {
         self.last_modified_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Describes the last time the user account was updated. The value is determined as epoch time in milliseconds.</p>
+    /// <p>Describes the last time the user details were updated. The value is determined as epoch time in milliseconds.</p>
     pub fn set_last_modified_time(mut self, input: ::std::option::Option<i64>) -> Self {
         self.last_modified_time = input;
         self
     }
-    /// <p>Describes the last time the user account was updated. The value is determined as epoch time in milliseconds.</p>
+    /// <p>Describes the last time the user details were updated. The value is determined as epoch time in milliseconds.</p>
     pub fn get_last_modified_time(&self) -> &::std::option::Option<i64> {
         &self.last_modified_time
     }

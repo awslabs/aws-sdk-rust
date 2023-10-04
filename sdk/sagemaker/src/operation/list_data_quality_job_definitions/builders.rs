@@ -144,17 +144,17 @@ impl ListDataQualityJobDefinitionsFluentBuilder {
     pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::MonitoringJobDefinitionSortKey> {
         self.inner.get_sort_by()
     }
-    /// <p>The sort order for results. The default is <code>Descending</code>.</p>
+    /// <p>Whether to sort the results in <code>Ascending</code> or <code>Descending</code> order. The default is <code>Descending</code>.</p>
     pub fn sort_order(mut self, input: crate::types::SortOrder) -> Self {
         self.inner = self.inner.sort_order(input);
         self
     }
-    /// <p>The sort order for results. The default is <code>Descending</code>.</p>
+    /// <p>Whether to sort the results in <code>Ascending</code> or <code>Descending</code> order. The default is <code>Descending</code>.</p>
     pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrder>) -> Self {
         self.inner = self.inner.set_sort_order(input);
         self
     }
-    /// <p>The sort order for results. The default is <code>Descending</code>.</p>
+    /// <p>Whether to sort the results in <code>Ascending</code> or <code>Descending</code> order. The default is <code>Descending</code>.</p>
     pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrder> {
         self.inner.get_sort_order()
     }

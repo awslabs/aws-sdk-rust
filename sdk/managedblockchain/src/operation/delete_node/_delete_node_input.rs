@@ -8,7 +8,6 @@ pub struct DeleteNodeInput {
     /// <ul>
     /// <li> <p> <code>n-ethereum-mainnet</code> </p> </li>
     /// <li> <p> <code>n-ethereum-goerli</code> </p> </li>
-    /// <li> <p> <code>n-ethereum-rinkeby</code> </p> </li>
     /// </ul>
     pub network_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the member that owns this node.</p>
@@ -23,7 +22,6 @@ impl DeleteNodeInput {
     /// <ul>
     /// <li> <p> <code>n-ethereum-mainnet</code> </p> </li>
     /// <li> <p> <code>n-ethereum-goerli</code> </p> </li>
-    /// <li> <p> <code>n-ethereum-rinkeby</code> </p> </li>
     /// </ul>
     pub fn network_id(&self) -> ::std::option::Option<&str> {
         self.network_id.as_deref()
@@ -59,7 +57,6 @@ impl DeleteNodeInputBuilder {
     /// <ul>
     /// <li> <p> <code>n-ethereum-mainnet</code> </p> </li>
     /// <li> <p> <code>n-ethereum-goerli</code> </p> </li>
-    /// <li> <p> <code>n-ethereum-rinkeby</code> </p> </li>
     /// </ul>
     pub fn network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_id = ::std::option::Option::Some(input.into());
@@ -70,7 +67,6 @@ impl DeleteNodeInputBuilder {
     /// <ul>
     /// <li> <p> <code>n-ethereum-mainnet</code> </p> </li>
     /// <li> <p> <code>n-ethereum-goerli</code> </p> </li>
-    /// <li> <p> <code>n-ethereum-rinkeby</code> </p> </li>
     /// </ul>
     pub fn set_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.network_id = input;
@@ -81,7 +77,6 @@ impl DeleteNodeInputBuilder {
     /// <ul>
     /// <li> <p> <code>n-ethereum-mainnet</code> </p> </li>
     /// <li> <p> <code>n-ethereum-goerli</code> </p> </li>
-    /// <li> <p> <code>n-ethereum-rinkeby</code> </p> </li>
     /// </ul>
     pub fn get_network_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.network_id

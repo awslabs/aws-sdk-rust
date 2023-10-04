@@ -3,17 +3,20 @@ pub fn ser_register_resource_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::register_resource::RegisterResourceInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.resource_arn {
-        object.key("ResourceArn").string(var_1.as_str());
+    if let Some(var_1) = &input.hybrid_access_enabled {
+        object.key("HybridAccessEnabled").boolean(*var_1);
     }
-    if let Some(var_2) = &input.role_arn {
-        object.key("RoleArn").string(var_2.as_str());
+    if let Some(var_2) = &input.resource_arn {
+        object.key("ResourceArn").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.use_service_linked_role {
-        object.key("UseServiceLinkedRole").boolean(*var_3);
+    if let Some(var_3) = &input.role_arn {
+        object.key("RoleArn").string(var_3.as_str());
     }
-    if let Some(var_4) = &input.with_federation {
-        object.key("WithFederation").boolean(*var_4);
+    if let Some(var_4) = &input.use_service_linked_role {
+        object.key("UseServiceLinkedRole").boolean(*var_4);
+    }
+    if let Some(var_5) = &input.with_federation {
+        object.key("WithFederation").boolean(*var_5);
     }
     Ok(())
 }

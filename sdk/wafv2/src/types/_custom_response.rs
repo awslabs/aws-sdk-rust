@@ -10,7 +10,7 @@ pub struct CustomResponse {
     pub response_code: ::std::option::Option<i32>,
     /// <p>References the response body that you want WAF to return to the web request client. You can define a custom response for a rule action or a default web ACL action that is set to block. To do this, you first define the response body key and value in the <code>CustomResponseBodies</code> setting for the <code>WebACL</code> or <code>RuleGroup</code> where you want to use it. Then, in the rule action or web ACL default action <code>BlockAction</code> setting, you reference the response body using this key. </p>
     pub custom_response_body_key: ::std::option::Option<::std::string::String>,
-    /// <p>The HTTP headers to use in the response. Duplicate header names are not allowed. </p>
+    /// <p>The HTTP headers to use in the response. You can specify any header name except for <code>content-type</code>. Duplicate header names are not allowed.</p>
     /// <p>For information about the limits on count and size for custom request and response settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <i>WAF Developer Guide</i>. </p>
     pub response_headers: ::std::option::Option<::std::vec::Vec<crate::types::CustomHttpHeader>>,
 }
@@ -24,7 +24,7 @@ impl CustomResponse {
     pub fn custom_response_body_key(&self) -> ::std::option::Option<&str> {
         self.custom_response_body_key.as_deref()
     }
-    /// <p>The HTTP headers to use in the response. Duplicate header names are not allowed. </p>
+    /// <p>The HTTP headers to use in the response. You can specify any header name except for <code>content-type</code>. Duplicate header names are not allowed.</p>
     /// <p>For information about the limits on count and size for custom request and response settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <i>WAF Developer Guide</i>. </p>
     pub fn response_headers(&self) -> ::std::option::Option<&[crate::types::CustomHttpHeader]> {
         self.response_headers.as_deref()
@@ -81,7 +81,7 @@ impl CustomResponseBuilder {
     ///
     /// To override the contents of this collection use [`set_response_headers`](Self::set_response_headers).
     ///
-    /// <p>The HTTP headers to use in the response. Duplicate header names are not allowed. </p>
+    /// <p>The HTTP headers to use in the response. You can specify any header name except for <code>content-type</code>. Duplicate header names are not allowed.</p>
     /// <p>For information about the limits on count and size for custom request and response settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <i>WAF Developer Guide</i>. </p>
     pub fn response_headers(mut self, input: crate::types::CustomHttpHeader) -> Self {
         let mut v = self.response_headers.unwrap_or_default();
@@ -89,13 +89,13 @@ impl CustomResponseBuilder {
         self.response_headers = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The HTTP headers to use in the response. Duplicate header names are not allowed. </p>
+    /// <p>The HTTP headers to use in the response. You can specify any header name except for <code>content-type</code>. Duplicate header names are not allowed.</p>
     /// <p>For information about the limits on count and size for custom request and response settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <i>WAF Developer Guide</i>. </p>
     pub fn set_response_headers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CustomHttpHeader>>) -> Self {
         self.response_headers = input;
         self
     }
-    /// <p>The HTTP headers to use in the response. Duplicate header names are not allowed. </p>
+    /// <p>The HTTP headers to use in the response. You can specify any header name except for <code>content-type</code>. Duplicate header names are not allowed.</p>
     /// <p>For information about the limits on count and size for custom request and response settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <i>WAF Developer Guide</i>. </p>
     pub fn get_response_headers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomHttpHeader>> {
         &self.response_headers

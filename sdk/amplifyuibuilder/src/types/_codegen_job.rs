@@ -30,6 +30,8 @@ pub struct CodegenJob {
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time that the code generation job was modified.</p>
     pub modified_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>Lists the dependency packages that may be required for the project code to run.</p>
+    pub dependencies: ::std::option::Option<::std::vec::Vec<crate::types::CodegenDependency>>,
 }
 impl CodegenJob {
     /// <p>The unique ID for the code generation job.</p>
@@ -84,6 +86,10 @@ impl CodegenJob {
     pub fn modified_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.modified_at.as_ref()
     }
+    /// <p>Lists the dependency packages that may be required for the project code to run.</p>
+    pub fn dependencies(&self) -> ::std::option::Option<&[crate::types::CodegenDependency]> {
+        self.dependencies.as_deref()
+    }
 }
 impl CodegenJob {
     /// Creates a new builder-style object to manufacture [`CodegenJob`](crate::types::CodegenJob).
@@ -109,6 +115,7 @@ pub struct CodegenJobBuilder {
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) modified_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) dependencies: ::std::option::Option<::std::vec::Vec<crate::types::CodegenDependency>>,
 }
 impl CodegenJobBuilder {
     /// <p>The unique ID for the code generation job.</p>
@@ -299,6 +306,26 @@ impl CodegenJobBuilder {
     pub fn get_modified_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.modified_at
     }
+    /// Appends an item to `dependencies`.
+    ///
+    /// To override the contents of this collection use [`set_dependencies`](Self::set_dependencies).
+    ///
+    /// <p>Lists the dependency packages that may be required for the project code to run.</p>
+    pub fn dependencies(mut self, input: crate::types::CodegenDependency) -> Self {
+        let mut v = self.dependencies.unwrap_or_default();
+        v.push(input);
+        self.dependencies = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Lists the dependency packages that may be required for the project code to run.</p>
+    pub fn set_dependencies(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CodegenDependency>>) -> Self {
+        self.dependencies = input;
+        self
+    }
+    /// <p>Lists the dependency packages that may be required for the project code to run.</p>
+    pub fn get_dependencies(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CodegenDependency>> {
+        &self.dependencies
+    }
     /// Consumes the builder and constructs a [`CodegenJob`](crate::types::CodegenJob).
     pub fn build(self) -> crate::types::CodegenJob {
         crate::types::CodegenJob {
@@ -315,6 +342,7 @@ impl CodegenJobBuilder {
             tags: self.tags,
             created_at: self.created_at,
             modified_at: self.modified_at,
+            dependencies: self.dependencies,
         }
     }
 }

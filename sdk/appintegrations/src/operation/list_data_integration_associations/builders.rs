@@ -112,6 +112,12 @@ impl ListDataIntegrationAssociationsFluentBuilder {
         self.config_override = config_override;
         self
     }
+    /// Create a paginator for this request
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::list_data_integration_associations::paginator::ListDataIntegrationAssociationsPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(self) -> crate::operation::list_data_integration_associations::paginator::ListDataIntegrationAssociationsPaginator {
+        crate::operation::list_data_integration_associations::paginator::ListDataIntegrationAssociationsPaginator::new(self.handle, self.inner)
+    }
     /// <p>A unique identifier for the DataIntegration.</p>
     pub fn data_integration_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.data_integration_identifier(input.into());

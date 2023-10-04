@@ -261,7 +261,7 @@ pub type DescribeSecurityPolicyErrorKind = DescribeSecurityPolicyError;
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum DescribeSecurityPolicyError {
-    /// <p>This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family service.</p>
+    /// <p>This exception is thrown when an error occurs in the Transfer Family service.</p>
     InternalServiceError(crate::types::error::InternalServiceError),
     /// <p>This exception is thrown when the client submits a malformed request.</p>
     InvalidRequestException(crate::types::error::InvalidRequestException),

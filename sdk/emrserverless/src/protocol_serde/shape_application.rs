@@ -116,6 +116,15 @@ where
                                 crate::protocol_serde::shape_worker_type_specification_map::de_worker_type_specification_map(tokens)?,
                             );
                         }
+                        "runtimeConfiguration" => {
+                            builder =
+                                builder.set_runtime_configuration(crate::protocol_serde::shape_configuration_list::de_configuration_list(tokens)?);
+                        }
+                        "monitoringConfiguration" => {
+                            builder = builder.set_monitoring_configuration(
+                                crate::protocol_serde::shape_monitoring_configuration::de_monitoring_configuration(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

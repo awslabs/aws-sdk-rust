@@ -7,7 +7,7 @@ impl super::Client {
     ///   - [`version_name(impl Into<String>)`](crate::operation::get_package_version::builders::GetPackageVersionFluentBuilder::version_name) / [`set_version_name(Option<String>)`](crate::operation::get_package_version::builders::GetPackageVersionFluentBuilder::set_version_name): <p>The name of the target package version.</p>
     /// - On success, responds with [`GetPackageVersionOutput`](crate::operation::get_package_version::GetPackageVersionOutput) with field(s):
     ///   - [`package_version_arn(Option<String>)`](crate::operation::get_package_version::GetPackageVersionOutput::package_version_arn): <p>The ARN for the package version.</p>
-    ///   - [`package_name(Option<String>)`](crate::operation::get_package_version::GetPackageVersionOutput::package_name): <p>The name of the package.</p>
+    ///   - [`package_name(Option<String>)`](crate::operation::get_package_version::GetPackageVersionOutput::package_name): <p>The name of the software package.</p>
     ///   - [`version_name(Option<String>)`](crate::operation::get_package_version::GetPackageVersionOutput::version_name): <p>The name of the package version.</p>
     ///   - [`description(Option<String>)`](crate::operation::get_package_version::GetPackageVersionOutput::description): <p>The package version description.</p>
     ///   - [`attributes(Option<HashMap<String, String>>)`](crate::operation::get_package_version::GetPackageVersionOutput::attributes): <p>Metadata that were added to the package version that can be used to define a package version’s configuration.</p>

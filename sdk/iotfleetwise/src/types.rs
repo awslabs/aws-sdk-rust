@@ -109,6 +109,10 @@ pub use crate::types::_cloud_watch_log_delivery_options::CloudWatchLogDeliveryOp
 
 pub use crate::types::_log_type::LogType;
 
+pub use crate::types::_encryption_type::EncryptionType;
+
+pub use crate::types::_encryption_status::EncryptionStatus;
+
 pub use crate::types::_vehicle_status::VehicleStatus;
 
 pub use crate::types::_vehicle_state::VehicleState;
@@ -166,6 +170,10 @@ mod _data_format;
 mod _decoder_manifest_summary;
 
 mod _diagnostics_mode;
+
+mod _encryption_status;
+
+mod _encryption_type;
 
 mod _fleet_summary;
 

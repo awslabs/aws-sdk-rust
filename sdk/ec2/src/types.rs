@@ -577,6 +577,8 @@ pub use crate::types::_volume_modification_state::VolumeModificationState;
 
 pub use crate::types::_verified_access_trust_provider::VerifiedAccessTrustProvider;
 
+pub use crate::types::_verified_access_sse_specification_response::VerifiedAccessSseSpecificationResponse;
+
 pub use crate::types::_device_options::DeviceOptions;
 
 pub use crate::types::_oidc_options::OidcOptions;
@@ -586,6 +588,8 @@ pub use crate::types::_device_trust_provider_type::DeviceTrustProviderType;
 pub use crate::types::_user_trust_provider_type::UserTrustProviderType;
 
 pub use crate::types::_trust_provider_type::TrustProviderType;
+
+pub use crate::types::_verified_access_sse_specification_request::VerifiedAccessSseSpecificationRequest;
 
 pub use crate::types::_modify_verified_access_trust_provider_oidc_options::ModifyVerifiedAccessTrustProviderOidcOptions;
 
@@ -3972,6 +3976,10 @@ mod _verified_access_log_s3_destination;
 mod _verified_access_log_s3_destination_options;
 
 mod _verified_access_logs;
+
+mod _verified_access_sse_specification_request;
+
+mod _verified_access_sse_specification_response;
 
 mod _verified_access_trust_provider;
 

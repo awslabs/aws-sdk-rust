@@ -13,23 +13,23 @@ pub fn ser_create_security_profile_input(
         }
         object_2.finish();
     }
-    if let Some(var_5) = &input.description {
-        object.key("Description").string(var_5.as_str());
-    }
-    if let Some(var_6) = &input.permissions {
-        let mut array_7 = object.key("Permissions").start_array();
-        for item_8 in var_6 {
+    if let Some(var_5) = &input.applications {
+        let mut array_6 = object.key("Applications").start_array();
+        for item_7 in var_5 {
             {
-                array_7.value().string(item_8.as_str());
+                #[allow(unused_mut)]
+                let mut object_8 = array_6.value().start_object();
+                crate::protocol_serde::shape_application::ser_application(&mut object_8, item_7)?;
+                object_8.finish();
             }
         }
-        array_7.finish();
+        array_6.finish();
     }
-    if let Some(var_9) = &input.security_profile_name {
-        object.key("SecurityProfileName").string(var_9.as_str());
+    if let Some(var_9) = &input.description {
+        object.key("Description").string(var_9.as_str());
     }
-    if let Some(var_10) = &input.tag_restricted_resources {
-        let mut array_11 = object.key("TagRestrictedResources").start_array();
+    if let Some(var_10) = &input.permissions {
+        let mut array_11 = object.key("Permissions").start_array();
         for item_12 in var_10 {
             {
                 array_11.value().string(item_12.as_str());
@@ -37,15 +37,27 @@ pub fn ser_create_security_profile_input(
         }
         array_11.finish();
     }
-    if let Some(var_13) = &input.tags {
-        #[allow(unused_mut)]
-        let mut object_14 = object.key("Tags").start_object();
-        for (key_15, value_16) in var_13 {
+    if let Some(var_13) = &input.security_profile_name {
+        object.key("SecurityProfileName").string(var_13.as_str());
+    }
+    if let Some(var_14) = &input.tag_restricted_resources {
+        let mut array_15 = object.key("TagRestrictedResources").start_array();
+        for item_16 in var_14 {
             {
-                object_14.key(key_15.as_str()).string(value_16.as_str());
+                array_15.value().string(item_16.as_str());
             }
         }
-        object_14.finish();
+        array_15.finish();
+    }
+    if let Some(var_17) = &input.tags {
+        #[allow(unused_mut)]
+        let mut object_18 = object.key("Tags").start_object();
+        for (key_19, value_20) in var_17 {
+            {
+                object_18.key(key_19.as_str()).string(value_20.as_str());
+            }
+        }
+        object_18.finish();
     }
     Ok(())
 }

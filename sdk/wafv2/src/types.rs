@@ -57,6 +57,10 @@ pub use crate::types::_text_transformation_type::TextTransformationType;
 
 pub use crate::types::_field_to_match::FieldToMatch;
 
+pub use crate::types::_ja3_fingerprint::Ja3Fingerprint;
+
+pub use crate::types::_fallback_behavior::FallbackBehavior;
+
 pub use crate::types::_header_order::HeaderOrder;
 
 pub use crate::types::_oversize_handling::OversizeHandling;
@@ -170,8 +174,6 @@ pub use crate::types::_rate_limit_cookie::RateLimitCookie;
 pub use crate::types::_rate_limit_header::RateLimitHeader;
 
 pub use crate::types::_forwarded_ip_config::ForwardedIpConfig;
-
-pub use crate::types::_fallback_behavior::FallbackBehavior;
 
 pub use crate::types::_rate_based_statement_aggregate_key_type::RateBasedStatementAggregateKeyType;
 
@@ -414,6 +416,8 @@ mod _ip_set_forwarded_ip_config;
 mod _ip_set_reference_statement;
 
 mod _ip_set_summary;
+
+mod _ja3_fingerprint;
 
 mod _json_body;
 

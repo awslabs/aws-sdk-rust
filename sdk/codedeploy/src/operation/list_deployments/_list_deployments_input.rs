@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDeploymentsInput {
-    /// <p>The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account.</p> <note>
+    /// <p>The name of an CodeDeploy application associated with the user or Amazon Web Services account.</p> <note>
     /// <p>If <code>applicationName</code> is specified, then <code>deploymentGroupName</code> must be specified. If it is not specified, then <code>deploymentGroupName</code> must not be specified. </p>
     /// </note>
     pub application_name: ::std::option::Option<::std::string::String>,
@@ -30,7 +30,7 @@ pub struct ListDeploymentsInput {
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListDeploymentsInput {
-    /// <p>The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account.</p> <note>
+    /// <p>The name of an CodeDeploy application associated with the user or Amazon Web Services account.</p> <note>
     /// <p>If <code>applicationName</code> is specified, then <code>deploymentGroupName</code> must be specified. If it is not specified, then <code>deploymentGroupName</code> must not be specified. </p>
     /// </note>
     pub fn application_name(&self) -> ::std::option::Option<&str> {
@@ -86,21 +86,21 @@ pub struct ListDeploymentsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListDeploymentsInputBuilder {
-    /// <p>The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account.</p> <note>
+    /// <p>The name of an CodeDeploy application associated with the user or Amazon Web Services account.</p> <note>
     /// <p>If <code>applicationName</code> is specified, then <code>deploymentGroupName</code> must be specified. If it is not specified, then <code>deploymentGroupName</code> must not be specified. </p>
     /// </note>
     pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account.</p> <note>
+    /// <p>The name of an CodeDeploy application associated with the user or Amazon Web Services account.</p> <note>
     /// <p>If <code>applicationName</code> is specified, then <code>deploymentGroupName</code> must be specified. If it is not specified, then <code>deploymentGroupName</code> must not be specified. </p>
     /// </note>
     pub fn set_application_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_name = input;
         self
     }
-    /// <p>The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account.</p> <note>
+    /// <p>The name of an CodeDeploy application associated with the user or Amazon Web Services account.</p> <note>
     /// <p>If <code>applicationName</code> is specified, then <code>deploymentGroupName</code> must be specified. If it is not specified, then <code>deploymentGroupName</code> must not be specified. </p>
     /// </note>
     pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {

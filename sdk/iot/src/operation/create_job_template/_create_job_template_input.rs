@@ -7,12 +7,9 @@ pub struct CreateJobTemplateInput {
     pub job_template_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the job to use as the basis for the job template.</p>
     pub job_arn: ::std::option::Option<::std::string::String>,
-    /// <p>An S3 link to the job document to use in the template. Required if you don't specify a value for <code>document</code>.</p> <note>
-    /// <p>If the job document resides in an S3 bucket, you must use a placeholder link when specifying the document.</p>
-    /// <p>The placeholder link is of the following form:</p>
-    /// <p> <code>${aws:iot:s3-presigned-url:https://s3.amazonaws.com/<i>bucket</i>/<i>key</i>}</code> </p>
-    /// <p>where <i>bucket</i> is your bucket name and <i>key</i> is the object in the bucket to which you are linking.</p>
-    /// </note>
+    /// <p>An S3 link, or S3 object URL, to the job document. The link is an Amazon S3 object URL and is required if you don't specify a value for <code>document</code>.</p>
+    /// <p>For example, <code>--document-source https://s3.<i>region-code</i>.amazonaws.com/example-firmware/device-firmware.1.0</code> </p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-bucket-intro.html">Methods for accessing a bucket</a>.</p>
     pub document_source: ::std::option::Option<::std::string::String>,
     /// <p>The job document. Required if you don't specify a value for <code>documentSource</code>.</p>
     pub document: ::std::option::Option<::std::string::String>,
@@ -45,12 +42,9 @@ impl CreateJobTemplateInput {
     pub fn job_arn(&self) -> ::std::option::Option<&str> {
         self.job_arn.as_deref()
     }
-    /// <p>An S3 link to the job document to use in the template. Required if you don't specify a value for <code>document</code>.</p> <note>
-    /// <p>If the job document resides in an S3 bucket, you must use a placeholder link when specifying the document.</p>
-    /// <p>The placeholder link is of the following form:</p>
-    /// <p> <code>${aws:iot:s3-presigned-url:https://s3.amazonaws.com/<i>bucket</i>/<i>key</i>}</code> </p>
-    /// <p>where <i>bucket</i> is your bucket name and <i>key</i> is the object in the bucket to which you are linking.</p>
-    /// </note>
+    /// <p>An S3 link, or S3 object URL, to the job document. The link is an Amazon S3 object URL and is required if you don't specify a value for <code>document</code>.</p>
+    /// <p>For example, <code>--document-source https://s3.<i>region-code</i>.amazonaws.com/example-firmware/device-firmware.1.0</code> </p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-bucket-intro.html">Methods for accessing a bucket</a>.</p>
     pub fn document_source(&self) -> ::std::option::Option<&str> {
         self.document_source.as_deref()
     }
@@ -150,32 +144,23 @@ impl CreateJobTemplateInputBuilder {
     pub fn get_job_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.job_arn
     }
-    /// <p>An S3 link to the job document to use in the template. Required if you don't specify a value for <code>document</code>.</p> <note>
-    /// <p>If the job document resides in an S3 bucket, you must use a placeholder link when specifying the document.</p>
-    /// <p>The placeholder link is of the following form:</p>
-    /// <p> <code>${aws:iot:s3-presigned-url:https://s3.amazonaws.com/<i>bucket</i>/<i>key</i>}</code> </p>
-    /// <p>where <i>bucket</i> is your bucket name and <i>key</i> is the object in the bucket to which you are linking.</p>
-    /// </note>
+    /// <p>An S3 link, or S3 object URL, to the job document. The link is an Amazon S3 object URL and is required if you don't specify a value for <code>document</code>.</p>
+    /// <p>For example, <code>--document-source https://s3.<i>region-code</i>.amazonaws.com/example-firmware/device-firmware.1.0</code> </p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-bucket-intro.html">Methods for accessing a bucket</a>.</p>
     pub fn document_source(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.document_source = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>An S3 link to the job document to use in the template. Required if you don't specify a value for <code>document</code>.</p> <note>
-    /// <p>If the job document resides in an S3 bucket, you must use a placeholder link when specifying the document.</p>
-    /// <p>The placeholder link is of the following form:</p>
-    /// <p> <code>${aws:iot:s3-presigned-url:https://s3.amazonaws.com/<i>bucket</i>/<i>key</i>}</code> </p>
-    /// <p>where <i>bucket</i> is your bucket name and <i>key</i> is the object in the bucket to which you are linking.</p>
-    /// </note>
+    /// <p>An S3 link, or S3 object URL, to the job document. The link is an Amazon S3 object URL and is required if you don't specify a value for <code>document</code>.</p>
+    /// <p>For example, <code>--document-source https://s3.<i>region-code</i>.amazonaws.com/example-firmware/device-firmware.1.0</code> </p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-bucket-intro.html">Methods for accessing a bucket</a>.</p>
     pub fn set_document_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.document_source = input;
         self
     }
-    /// <p>An S3 link to the job document to use in the template. Required if you don't specify a value for <code>document</code>.</p> <note>
-    /// <p>If the job document resides in an S3 bucket, you must use a placeholder link when specifying the document.</p>
-    /// <p>The placeholder link is of the following form:</p>
-    /// <p> <code>${aws:iot:s3-presigned-url:https://s3.amazonaws.com/<i>bucket</i>/<i>key</i>}</code> </p>
-    /// <p>where <i>bucket</i> is your bucket name and <i>key</i> is the object in the bucket to which you are linking.</p>
-    /// </note>
+    /// <p>An S3 link, or S3 object URL, to the job document. The link is an Amazon S3 object URL and is required if you don't specify a value for <code>document</code>.</p>
+    /// <p>For example, <code>--document-source https://s3.<i>region-code</i>.amazonaws.com/example-firmware/device-firmware.1.0</code> </p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-bucket-intro.html">Methods for accessing a bucket</a>.</p>
     pub fn get_document_source(&self) -> &::std::option::Option<::std::string::String> {
         &self.document_source
     }
