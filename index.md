@@ -168,6 +168,8 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | Amazon Appflow | [aws-sdk-appflow](https://crates.io/crates/aws-sdk-appflow) ([docs](https://docs.rs/aws-sdk-appflow)) |
 | Amazon Athena | [aws-sdk-athena](https://crates.io/crates/aws-sdk-athena) ([docs](https://docs.rs/aws-sdk-athena)) |
 | Amazon Augmented AI Runtime | [aws-sdk-sagemakera2iruntime](https://crates.io/crates/aws-sdk-sagemakera2iruntime) ([docs](https://docs.rs/aws-sdk-sagemakera2iruntime)) |
+| Amazon Bedrock | [aws-sdk-bedrock](https://crates.io/crates/aws-sdk-bedrock) ([docs](https://docs.rs/aws-sdk-bedrock)) |
+| Amazon Bedrock Runtime | [aws-sdk-bedrockruntime](https://crates.io/crates/aws-sdk-bedrockruntime) ([docs](https://docs.rs/aws-sdk-bedrockruntime)) |
 | Amazon Chime | [aws-sdk-chime](https://crates.io/crates/aws-sdk-chime) ([docs](https://docs.rs/aws-sdk-chime)) |
 | Amazon Chime SDK Identity | [aws-sdk-chimesdkidentity](https://crates.io/crates/aws-sdk-chimesdkidentity) ([docs](https://docs.rs/aws-sdk-chimesdkidentity)) |
 | Amazon Chime SDK Media Pipelines | [aws-sdk-chimesdkmediapipelines](https://crates.io/crates/aws-sdk-chimesdkmediapipelines) ([docs](https://docs.rs/aws-sdk-chimesdkmediapipelines)) |
