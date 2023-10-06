@@ -135,3 +135,5 @@ impl Client {
 pub mod customize;
 
 mod invoke_model;
+
+mod invoke_model_with_response_stream;

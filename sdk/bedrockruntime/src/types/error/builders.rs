@@ -7,6 +7,8 @@ pub use crate::types::error::_model_not_ready_exception::ModelNotReadyExceptionB
 
 pub use crate::types::error::_validation_exception::ValidationExceptionBuilder;
 
+pub use crate::types::error::_model_stream_error_exception::ModelStreamErrorExceptionBuilder;
+
 pub use crate::types::error::_internal_server_exception::InternalServerExceptionBuilder;
 
 pub use crate::types::error::_throttling_exception::ThrottlingExceptionBuilder;

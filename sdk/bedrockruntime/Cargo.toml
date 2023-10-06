@@ -33,8 +33,13 @@ version = "0.56.1"
 path = "../aws-smithy-client"
 version = "0.56.1"
 
+[dependencies.aws-smithy-eventstream]
+path = "../aws-smithy-eventstream"
+version = "0.56.1"
+
 [dependencies.aws-smithy-http]
 path = "../aws-smithy-http"
+features = ["event-stream"]
 version = "0.56.1"
 
 [dependencies.aws-smithy-json]
@@ -77,6 +82,10 @@ version = "0.56.1"
 [dev-dependencies.aws-credential-types]
 path = "../aws-credential-types"
 features = ["test-util"]
+version = "0.56.1"
+
+[dev-dependencies.aws-smithy-http]
+path = "../aws-smithy-http"
 version = "0.56.1"
 
 [dev-dependencies.tokio]

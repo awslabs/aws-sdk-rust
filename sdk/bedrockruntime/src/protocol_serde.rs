@@ -27,6 +27,10 @@ pub(crate) mod shape_invoke_model;
 
 pub(crate) mod shape_invoke_model_input;
 
+pub(crate) mod shape_invoke_model_with_response_stream;
+
+pub(crate) mod shape_invoke_model_with_response_stream_input;
+
 pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
     if data.is_empty() {
         b"{}"
@@ -41,9 +45,13 @@ pub(crate) mod shape_internal_server_exception;
 
 pub(crate) mod shape_invoke_model_output;
 
+pub(crate) mod shape_invoke_model_with_response_stream_output;
+
 pub(crate) mod shape_model_error_exception;
 
 pub(crate) mod shape_model_not_ready_exception;
+
+pub(crate) mod shape_model_stream_error_exception;
 
 pub(crate) mod shape_model_timeout_exception;
 
@@ -54,3 +62,12 @@ pub(crate) mod shape_service_quota_exceeded_exception;
 pub(crate) mod shape_throttling_exception;
 
 pub(crate) mod shape_validation_exception;
+
+pub fn parse_event_stream_error_metadata(
+    payload: &::bytes::Bytes,
+) -> Result<::aws_smithy_types::error::metadata::Builder, ::aws_smithy_json::deserialize::error::DeserializeError> {
+    // Note: HeaderMap::new() doesn't allocate
+    crate::json_errors::parse_error_metadata(payload, &::http::HeaderMap::new())
+}
+
+pub(crate) mod shape_payload_part;

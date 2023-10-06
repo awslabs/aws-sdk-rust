@@ -162,14 +162,16 @@ pub mod operation;
 /// Primitives such as `Blob` or `DateTime` used by other types.
 pub mod primitives;
 
+/// Data structures used by operation inputs/outputs.
+pub mod types;
+
 pub(crate) mod protocol_serde;
 
 mod serialization_settings;
 
-/// Data structures used by operation inputs/outputs.
-pub mod types;
-
 mod endpoint_lib;
+
+mod event_stream_serde;
 
 mod json_errors;
 
