@@ -902,6 +902,11 @@ impl ConfigOverrideRuntimePlugin {
 
         crate::config::set_connector(&mut resolver);
         crate::config::set_endpoint_resolver(&mut resolver);
+        resolver
+            .config_mut()
+            .load::<::aws_types::region::Region>()
+            .cloned()
+            .map(|r| resolver.config_mut().store_put(::aws_types::region::SigningRegion::from(r)));
         match (
             resolver.config_mut().load::<::aws_credential_types::cache::CredentialsCache>().cloned(),
             resolver
@@ -917,7 +922,13 @@ impl ConfigOverrideRuntimePlugin {
                 panic!("also specify `.credentials_provider` when overriding credentials cache for the operation");
             }
             (::std::option::Option::Some(credentials_cache), ::std::option::Option::Some(credentials_provider)) => {
-                resolver.config_mut().store_put(credentials_cache.create_cache(credentials_provider));
+                let credentials_cache = credentials_cache.create_cache(credentials_provider);
+                resolver.runtime_components_mut().push_identity_resolver(
+                    ::aws_runtime::auth::sigv4::SCHEME_ID,
+                    ::aws_smithy_runtime_api::client::identity::SharedIdentityResolver::new(
+                        ::aws_runtime::identity::credentials::CredentialsIdentityResolver::new(credentials_cache),
+                    ),
+                );
             }
         }
 

@@ -31,7 +31,7 @@ anyhow = "1.0.70"
 pin-project = "1.0.12"
 aws-config= { version = "0.56.1", path = "../../../sdk/aws-config" }
 aws-endpoint= { version = "0.56.1", path = "../../../sdk/aws-endpoint" }
-aws-sdk-s3= { version = "0.32.0", path = "../../../sdk/s3" }
+aws-sdk-s3= { version = "0.33.0", path = "../../../sdk/s3" }
 aws-smithy-client= { version = "0.56.1", path = "../../../sdk/aws-smithy-client", features = ["test-util"] }
 aws-smithy-http= { version = "0.56.1", path = "../../../sdk/aws-smithy-http", features = ["rt-tokio"] }
 aws-smithy-types= { version = "0.56.1", path = "../../../sdk/aws-smithy-types" }

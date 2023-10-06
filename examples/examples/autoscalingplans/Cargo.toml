@@ -7,7 +7,7 @@ edition = "2021"
 publish = false
 
 [dependencies]
-aws-sdk-autoscalingplans= { version = "0.32.0", path = "../../../sdk/autoscalingplans" }
+aws-sdk-autoscalingplans= { version = "0.33.0", path = "../../../sdk/autoscalingplans" }
 aws-config= { version = "0.56.1", path = "../../../sdk/aws-config" }
 aws-types= { version = "0.56.1", path = "../../../sdk/aws-types" }
 

@@ -8,7 +8,7 @@ publish = false
 
 [dependencies]
 aws-config= { version = "0.56.1", path = "../../../sdk/aws-config" }
-aws-sdk-textract= { version = "0.32.0", path = "../../../sdk/textract" }
+aws-sdk-textract= { version = "0.33.0", path = "../../../sdk/textract" }
 
 [dependencies.tokio]
 version = "1.27"

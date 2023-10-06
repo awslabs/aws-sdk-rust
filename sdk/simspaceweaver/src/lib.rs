@@ -33,7 +33,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = "0.56.1"
-//! aws-sdk-simspaceweaver = "0.10.0"
+//! aws-sdk-simspaceweaver = "0.11.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
