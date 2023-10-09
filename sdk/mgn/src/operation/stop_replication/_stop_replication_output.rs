@@ -29,6 +29,8 @@ pub struct StopReplicationOutput {
     pub user_provided_id: ::std::option::Option<::std::string::String>,
     /// <p>Source server fqdn for action framework.</p>
     pub fqdn_for_action_framework: ::std::option::Option<::std::string::String>,
+    /// <p>Source Server connector action.</p>
+    pub connector_action: ::std::option::Option<crate::types::SourceServerConnectorAction>,
     _request_id: Option<String>,
 }
 impl StopReplicationOutput {
@@ -84,6 +86,10 @@ impl StopReplicationOutput {
     pub fn fqdn_for_action_framework(&self) -> ::std::option::Option<&str> {
         self.fqdn_for_action_framework.as_deref()
     }
+    /// <p>Source Server connector action.</p>
+    pub fn connector_action(&self) -> ::std::option::Option<&crate::types::SourceServerConnectorAction> {
+        self.connector_action.as_ref()
+    }
 }
 impl ::std::fmt::Debug for StopReplicationOutput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -101,6 +107,7 @@ impl ::std::fmt::Debug for StopReplicationOutput {
         formatter.field("application_id", &self.application_id);
         formatter.field("user_provided_id", &self.user_provided_id);
         formatter.field("fqdn_for_action_framework", &self.fqdn_for_action_framework);
+        formatter.field("connector_action", &self.connector_action);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
@@ -134,6 +141,7 @@ pub struct StopReplicationOutputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) user_provided_id: ::std::option::Option<::std::string::String>,
     pub(crate) fqdn_for_action_framework: ::std::option::Option<::std::string::String>,
+    pub(crate) connector_action: ::std::option::Option<crate::types::SourceServerConnectorAction>,
     _request_id: Option<String>,
 }
 impl StopReplicationOutputBuilder {
@@ -325,6 +333,20 @@ impl StopReplicationOutputBuilder {
     pub fn get_fqdn_for_action_framework(&self) -> &::std::option::Option<::std::string::String> {
         &self.fqdn_for_action_framework
     }
+    /// <p>Source Server connector action.</p>
+    pub fn connector_action(mut self, input: crate::types::SourceServerConnectorAction) -> Self {
+        self.connector_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Source Server connector action.</p>
+    pub fn set_connector_action(mut self, input: ::std::option::Option<crate::types::SourceServerConnectorAction>) -> Self {
+        self.connector_action = input;
+        self
+    }
+    /// <p>Source Server connector action.</p>
+    pub fn get_connector_action(&self) -> &::std::option::Option<crate::types::SourceServerConnectorAction> {
+        &self.connector_action
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -350,6 +372,7 @@ impl StopReplicationOutputBuilder {
             application_id: self.application_id,
             user_provided_id: self.user_provided_id,
             fqdn_for_action_framework: self.fqdn_for_action_framework,
+            connector_action: self.connector_action,
             _request_id: self._request_id,
         }
     }
@@ -370,6 +393,7 @@ impl ::std::fmt::Debug for StopReplicationOutputBuilder {
         formatter.field("application_id", &self.application_id);
         formatter.field("user_provided_id", &self.user_provided_id);
         formatter.field("fqdn_for_action_framework", &self.fqdn_for_action_framework);
+        formatter.field("connector_action", &self.connector_action);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }

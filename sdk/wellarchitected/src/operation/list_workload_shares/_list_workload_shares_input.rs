@@ -6,7 +6,7 @@
 pub struct ListWorkloadSharesInput {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     pub workload_id: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload is shared.</p>
+    /// <p>The Amazon Web Services account ID, organization ID, or organizational unit (OU) ID with which the workload is shared.</p>
     pub shared_with_prefix: ::std::option::Option<::std::string::String>,
     /// <p>The token to use to retrieve the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -20,7 +20,7 @@ impl ListWorkloadSharesInput {
     pub fn workload_id(&self) -> ::std::option::Option<&str> {
         self.workload_id.as_deref()
     }
-    /// <p>The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload is shared.</p>
+    /// <p>The Amazon Web Services account ID, organization ID, or organizational unit (OU) ID with which the workload is shared.</p>
     pub fn shared_with_prefix(&self) -> ::std::option::Option<&str> {
         self.shared_with_prefix.as_deref()
     }
@@ -69,17 +69,17 @@ impl ListWorkloadSharesInputBuilder {
     pub fn get_workload_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.workload_id
     }
-    /// <p>The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload is shared.</p>
+    /// <p>The Amazon Web Services account ID, organization ID, or organizational unit (OU) ID with which the workload is shared.</p>
     pub fn shared_with_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.shared_with_prefix = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload is shared.</p>
+    /// <p>The Amazon Web Services account ID, organization ID, or organizational unit (OU) ID with which the workload is shared.</p>
     pub fn set_shared_with_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.shared_with_prefix = input;
         self
     }
-    /// <p>The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload is shared.</p>
+    /// <p>The Amazon Web Services account ID, organization ID, or organizational unit (OU) ID with which the workload is shared.</p>
     pub fn get_shared_with_prefix(&self) -> &::std::option::Option<::std::string::String> {
         &self.shared_with_prefix
     }

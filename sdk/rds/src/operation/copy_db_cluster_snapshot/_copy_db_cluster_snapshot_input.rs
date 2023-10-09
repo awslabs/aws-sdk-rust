@@ -41,7 +41,7 @@ pub struct CopyDbClusterSnapshotInput {
     /// <p>If you are using an Amazon Web Services SDK tool or the CLI, you can specify <code>SourceRegion</code> (or <code>--source-region</code> for the CLI) instead of specifying <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code> autogenerates a presigned URL that is a valid request for the operation that can run in the source Amazon Web Services Region.</p>
     /// </note>
     pub pre_signed_url: ::std::option::Option<::std::string::String>,
-    /// <p>A value that indicates whether to copy all tags from the source DB cluster snapshot to the target DB cluster snapshot. By default, tags are not copied.</p>
+    /// <p>Specifies whether to copy all tags from the source DB cluster snapshot to the target DB cluster snapshot. By default, tags are not copied.</p>
     pub copy_tags: ::std::option::Option<bool>,
     /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -92,7 +92,7 @@ impl CopyDbClusterSnapshotInput {
     pub fn pre_signed_url(&self) -> ::std::option::Option<&str> {
         self.pre_signed_url.as_deref()
     }
-    /// <p>A value that indicates whether to copy all tags from the source DB cluster snapshot to the target DB cluster snapshot. By default, tags are not copied.</p>
+    /// <p>Specifies whether to copy all tags from the source DB cluster snapshot to the target DB cluster snapshot. By default, tags are not copied.</p>
     pub fn copy_tags(&self) -> ::std::option::Option<bool> {
         self.copy_tags
     }
@@ -263,17 +263,17 @@ impl CopyDbClusterSnapshotInputBuilder {
     pub fn get_pre_signed_url(&self) -> &::std::option::Option<::std::string::String> {
         &self.pre_signed_url
     }
-    /// <p>A value that indicates whether to copy all tags from the source DB cluster snapshot to the target DB cluster snapshot. By default, tags are not copied.</p>
+    /// <p>Specifies whether to copy all tags from the source DB cluster snapshot to the target DB cluster snapshot. By default, tags are not copied.</p>
     pub fn copy_tags(mut self, input: bool) -> Self {
         self.copy_tags = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A value that indicates whether to copy all tags from the source DB cluster snapshot to the target DB cluster snapshot. By default, tags are not copied.</p>
+    /// <p>Specifies whether to copy all tags from the source DB cluster snapshot to the target DB cluster snapshot. By default, tags are not copied.</p>
     pub fn set_copy_tags(mut self, input: ::std::option::Option<bool>) -> Self {
         self.copy_tags = input;
         self
     }
-    /// <p>A value that indicates whether to copy all tags from the source DB cluster snapshot to the target DB cluster snapshot. By default, tags are not copied.</p>
+    /// <p>Specifies whether to copy all tags from the source DB cluster snapshot to the target DB cluster snapshot. By default, tags are not copied.</p>
     pub fn get_copy_tags(&self) -> &::std::option::Option<bool> {
         &self.copy_tags
     }

@@ -22,7 +22,7 @@ impl ListFileSharesInputBuilder {
 }
 /// Fluent builder constructing a request to `ListFileShares`.
 ///
-/// <p>Gets a list of the file shares for a specific S3 File Gateway, or the list of file shares that belong to the calling user account. This operation is only supported for S3 File Gateways.</p>
+/// <p>Gets a list of the file shares for a specific S3 File Gateway, or the list of file shares that belong to the calling Amazon Web Services account. This operation is only supported for S3 File Gateways.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListFileSharesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -15,11 +15,11 @@ pub struct CreateDbProxyInput {
     pub vpc_subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>One or more VPC security group IDs to associate with the new proxy.</p>
     pub vpc_security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>A Boolean parameter that specifies whether Transport Layer Security (TLS) encryption is required for connections to the proxy. By enabling this setting, you can enforce encrypted TLS connections to the proxy.</p>
+    /// <p>Specifies whether Transport Layer Security (TLS) encryption is required for connections to the proxy. By enabling this setting, you can enforce encrypted TLS connections to the proxy.</p>
     pub require_tls: ::std::option::Option<bool>,
     /// <p>The number of seconds that a connection to the proxy can be inactive before the proxy disconnects it. You can set this value higher or lower than the connection timeout limit for the associated database.</p>
     pub idle_client_timeout: ::std::option::Option<i32>,
-    /// <p>Whether the proxy includes detailed information about SQL statements in its logs. This information helps you to debug issues involving SQL behavior or the performance and scalability of the proxy connections. The debug information includes the text of SQL statements that you submit through the proxy. Thus, only enable this setting when needed for debugging, and only when you have security measures in place to safeguard any sensitive information that appears in the logs.</p>
+    /// <p>Specifies whether the proxy includes detailed information about SQL statements in its logs. This information helps you to debug issues involving SQL behavior or the performance and scalability of the proxy connections. The debug information includes the text of SQL statements that you submit through the proxy. Thus, only enable this setting when needed for debugging, and only when you have security measures in place to safeguard any sensitive information that appears in the logs.</p>
     pub debug_logging: ::std::option::Option<bool>,
     /// <p>An optional set of key-value pairs to associate arbitrary data of your choosing with the proxy.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -49,7 +49,7 @@ impl CreateDbProxyInput {
     pub fn vpc_security_group_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.vpc_security_group_ids.as_deref()
     }
-    /// <p>A Boolean parameter that specifies whether Transport Layer Security (TLS) encryption is required for connections to the proxy. By enabling this setting, you can enforce encrypted TLS connections to the proxy.</p>
+    /// <p>Specifies whether Transport Layer Security (TLS) encryption is required for connections to the proxy. By enabling this setting, you can enforce encrypted TLS connections to the proxy.</p>
     pub fn require_tls(&self) -> ::std::option::Option<bool> {
         self.require_tls
     }
@@ -57,7 +57,7 @@ impl CreateDbProxyInput {
     pub fn idle_client_timeout(&self) -> ::std::option::Option<i32> {
         self.idle_client_timeout
     }
-    /// <p>Whether the proxy includes detailed information about SQL statements in its logs. This information helps you to debug issues involving SQL behavior or the performance and scalability of the proxy connections. The debug information includes the text of SQL statements that you submit through the proxy. Thus, only enable this setting when needed for debugging, and only when you have security measures in place to safeguard any sensitive information that appears in the logs.</p>
+    /// <p>Specifies whether the proxy includes detailed information about SQL statements in its logs. This information helps you to debug issues involving SQL behavior or the performance and scalability of the proxy connections. The debug information includes the text of SQL statements that you submit through the proxy. Thus, only enable this setting when needed for debugging, and only when you have security measures in place to safeguard any sensitive information that appears in the logs.</p>
     pub fn debug_logging(&self) -> ::std::option::Option<bool> {
         self.debug_logging
     }
@@ -191,17 +191,17 @@ impl CreateDbProxyInputBuilder {
     pub fn get_vpc_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.vpc_security_group_ids
     }
-    /// <p>A Boolean parameter that specifies whether Transport Layer Security (TLS) encryption is required for connections to the proxy. By enabling this setting, you can enforce encrypted TLS connections to the proxy.</p>
+    /// <p>Specifies whether Transport Layer Security (TLS) encryption is required for connections to the proxy. By enabling this setting, you can enforce encrypted TLS connections to the proxy.</p>
     pub fn require_tls(mut self, input: bool) -> Self {
         self.require_tls = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A Boolean parameter that specifies whether Transport Layer Security (TLS) encryption is required for connections to the proxy. By enabling this setting, you can enforce encrypted TLS connections to the proxy.</p>
+    /// <p>Specifies whether Transport Layer Security (TLS) encryption is required for connections to the proxy. By enabling this setting, you can enforce encrypted TLS connections to the proxy.</p>
     pub fn set_require_tls(mut self, input: ::std::option::Option<bool>) -> Self {
         self.require_tls = input;
         self
     }
-    /// <p>A Boolean parameter that specifies whether Transport Layer Security (TLS) encryption is required for connections to the proxy. By enabling this setting, you can enforce encrypted TLS connections to the proxy.</p>
+    /// <p>Specifies whether Transport Layer Security (TLS) encryption is required for connections to the proxy. By enabling this setting, you can enforce encrypted TLS connections to the proxy.</p>
     pub fn get_require_tls(&self) -> &::std::option::Option<bool> {
         &self.require_tls
     }
@@ -219,17 +219,17 @@ impl CreateDbProxyInputBuilder {
     pub fn get_idle_client_timeout(&self) -> &::std::option::Option<i32> {
         &self.idle_client_timeout
     }
-    /// <p>Whether the proxy includes detailed information about SQL statements in its logs. This information helps you to debug issues involving SQL behavior or the performance and scalability of the proxy connections. The debug information includes the text of SQL statements that you submit through the proxy. Thus, only enable this setting when needed for debugging, and only when you have security measures in place to safeguard any sensitive information that appears in the logs.</p>
+    /// <p>Specifies whether the proxy includes detailed information about SQL statements in its logs. This information helps you to debug issues involving SQL behavior or the performance and scalability of the proxy connections. The debug information includes the text of SQL statements that you submit through the proxy. Thus, only enable this setting when needed for debugging, and only when you have security measures in place to safeguard any sensitive information that appears in the logs.</p>
     pub fn debug_logging(mut self, input: bool) -> Self {
         self.debug_logging = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Whether the proxy includes detailed information about SQL statements in its logs. This information helps you to debug issues involving SQL behavior or the performance and scalability of the proxy connections. The debug information includes the text of SQL statements that you submit through the proxy. Thus, only enable this setting when needed for debugging, and only when you have security measures in place to safeguard any sensitive information that appears in the logs.</p>
+    /// <p>Specifies whether the proxy includes detailed information about SQL statements in its logs. This information helps you to debug issues involving SQL behavior or the performance and scalability of the proxy connections. The debug information includes the text of SQL statements that you submit through the proxy. Thus, only enable this setting when needed for debugging, and only when you have security measures in place to safeguard any sensitive information that appears in the logs.</p>
     pub fn set_debug_logging(mut self, input: ::std::option::Option<bool>) -> Self {
         self.debug_logging = input;
         self
     }
-    /// <p>Whether the proxy includes detailed information about SQL statements in its logs. This information helps you to debug issues involving SQL behavior or the performance and scalability of the proxy connections. The debug information includes the text of SQL statements that you submit through the proxy. Thus, only enable this setting when needed for debugging, and only when you have security measures in place to safeguard any sensitive information that appears in the logs.</p>
+    /// <p>Specifies whether the proxy includes detailed information about SQL statements in its logs. This information helps you to debug issues involving SQL behavior or the performance and scalability of the proxy connections. The debug information includes the text of SQL statements that you submit through the proxy. Thus, only enable this setting when needed for debugging, and only when you have security measures in place to safeguard any sensitive information that appears in the logs.</p>
     pub fn get_debug_logging(&self) -> &::std::option::Option<bool> {
         &self.debug_logging
     }

@@ -17,6 +17,8 @@ pub struct UpdateTemplateInput {
     /// <p>The definition of a template.</p>
     /// <p>A definition is the data model of all features in a Dashboard, Template, or Analysis.</p>
     pub definition: ::std::option::Option<crate::types::TemplateVersionDefinition>,
+    /// <p>The option to relax the validation needed to update a template with definition objects. This skips the validation step for specific errors.</p>
+    pub validation_strategy: ::std::option::Option<crate::types::ValidationStrategy>,
 }
 impl UpdateTemplateInput {
     /// <p>The ID of the Amazon Web Services account that contains the template that you're updating.</p>
@@ -45,6 +47,10 @@ impl UpdateTemplateInput {
     pub fn definition(&self) -> ::std::option::Option<&crate::types::TemplateVersionDefinition> {
         self.definition.as_ref()
     }
+    /// <p>The option to relax the validation needed to update a template with definition objects. This skips the validation step for specific errors.</p>
+    pub fn validation_strategy(&self) -> ::std::option::Option<&crate::types::ValidationStrategy> {
+        self.validation_strategy.as_ref()
+    }
 }
 impl UpdateTemplateInput {
     /// Creates a new builder-style object to manufacture [`UpdateTemplateInput`](crate::operation::update_template::UpdateTemplateInput).
@@ -63,6 +69,7 @@ pub struct UpdateTemplateInputBuilder {
     pub(crate) version_description: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) definition: ::std::option::Option<crate::types::TemplateVersionDefinition>,
+    pub(crate) validation_strategy: ::std::option::Option<crate::types::ValidationStrategy>,
 }
 impl UpdateTemplateInputBuilder {
     /// <p>The ID of the Amazon Web Services account that contains the template that you're updating.</p>
@@ -155,6 +162,20 @@ impl UpdateTemplateInputBuilder {
     pub fn get_definition(&self) -> &::std::option::Option<crate::types::TemplateVersionDefinition> {
         &self.definition
     }
+    /// <p>The option to relax the validation needed to update a template with definition objects. This skips the validation step for specific errors.</p>
+    pub fn validation_strategy(mut self, input: crate::types::ValidationStrategy) -> Self {
+        self.validation_strategy = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The option to relax the validation needed to update a template with definition objects. This skips the validation step for specific errors.</p>
+    pub fn set_validation_strategy(mut self, input: ::std::option::Option<crate::types::ValidationStrategy>) -> Self {
+        self.validation_strategy = input;
+        self
+    }
+    /// <p>The option to relax the validation needed to update a template with definition objects. This skips the validation step for specific errors.</p>
+    pub fn get_validation_strategy(&self) -> &::std::option::Option<crate::types::ValidationStrategy> {
+        &self.validation_strategy
+    }
     /// Consumes the builder and constructs a [`UpdateTemplateInput`](crate::operation::update_template::UpdateTemplateInput).
     pub fn build(
         self,
@@ -166,6 +187,7 @@ impl UpdateTemplateInputBuilder {
             version_description: self.version_description,
             name: self.name,
             definition: self.definition,
+            validation_strategy: self.validation_strategy,
         })
     }
 }

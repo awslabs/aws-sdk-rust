@@ -14,6 +14,7 @@ impl super::Client {
     ///   - [`content(Option<Blob>)`](crate::operation::get_hosted_configuration_version::GetHostedConfigurationVersionOutput::content): <p>The content of the configuration or the configuration data.</p>
     ///   - [`content_type(Option<String>)`](crate::operation::get_hosted_configuration_version::GetHostedConfigurationVersionOutput::content_type): <p>A standard MIME type describing the format of the configuration content. For more information, see <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.</p>
     ///   - [`version_label(Option<String>)`](crate::operation::get_hosted_configuration_version::GetHostedConfigurationVersionOutput::version_label): <p>A user-defined label for an AppConfig hosted configuration version.</p>
+    ///   - [`kms_key_arn(Option<String>)`](crate::operation::get_hosted_configuration_version::GetHostedConfigurationVersionOutput::kms_key_arn): <p>The Amazon Resource Name of the Key Management Service key that was used to encrypt this specific version of the configuration data in the AppConfig hosted configuration store.</p>
     /// - On failure, responds with [`SdkError<GetHostedConfigurationVersionError>`](crate::operation::get_hosted_configuration_version::GetHostedConfigurationVersionError)
     pub fn get_hosted_configuration_version(
         &self,

@@ -8,7 +8,7 @@ pub struct DownloadDbLogFilePortionOutput {
     pub log_file_data: ::std::option::Option<::std::string::String>,
     /// <p>A pagination token that can be used in a later <code>DownloadDBLogFilePortion</code> request.</p>
     pub marker: ::std::option::Option<::std::string::String>,
-    /// <p>Boolean value that if true, indicates there is more data to be downloaded.</p>
+    /// <p>A Boolean value that, if true, indicates there is more data to be downloaded.</p>
     pub additional_data_pending: bool,
     _request_id: Option<String>,
 }
@@ -21,7 +21,7 @@ impl DownloadDbLogFilePortionOutput {
     pub fn marker(&self) -> ::std::option::Option<&str> {
         self.marker.as_deref()
     }
-    /// <p>Boolean value that if true, indicates there is more data to be downloaded.</p>
+    /// <p>A Boolean value that, if true, indicates there is more data to be downloaded.</p>
     pub fn additional_data_pending(&self) -> bool {
         self.additional_data_pending
     }
@@ -76,17 +76,17 @@ impl DownloadDbLogFilePortionOutputBuilder {
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
         &self.marker
     }
-    /// <p>Boolean value that if true, indicates there is more data to be downloaded.</p>
+    /// <p>A Boolean value that, if true, indicates there is more data to be downloaded.</p>
     pub fn additional_data_pending(mut self, input: bool) -> Self {
         self.additional_data_pending = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Boolean value that if true, indicates there is more data to be downloaded.</p>
+    /// <p>A Boolean value that, if true, indicates there is more data to be downloaded.</p>
     pub fn set_additional_data_pending(mut self, input: ::std::option::Option<bool>) -> Self {
         self.additional_data_pending = input;
         self
     }
-    /// <p>Boolean value that if true, indicates there is more data to be downloaded.</p>
+    /// <p>A Boolean value that, if true, indicates there is more data to be downloaded.</p>
     pub fn get_additional_data_pending(&self) -> &::std::option::Option<bool> {
         &self.additional_data_pending
     }

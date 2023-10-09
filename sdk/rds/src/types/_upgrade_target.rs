@@ -10,19 +10,19 @@ pub struct UpgradeTarget {
     pub engine_version: ::std::option::Option<::std::string::String>,
     /// <p>The version of the database engine that a DB instance can be upgraded to.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>A value that indicates whether the target version is applied to any source DB instances that have <code>AutoMinorVersionUpgrade</code> set to true.</p>
+    /// <p>Indicates whether the target version is applied to any source DB instances that have <code>AutoMinorVersionUpgrade</code> set to true.</p>
     pub auto_upgrade: bool,
-    /// <p>A value that indicates whether upgrading to the target version requires upgrading the major version of the database engine.</p>
+    /// <p>Indicates whether upgrading to the target version requires upgrading the major version of the database engine.</p>
     pub is_major_version_upgrade: bool,
     /// <p>A list of the supported DB engine modes for the target engine version.</p>
     pub supported_engine_modes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>A value that indicates whether you can use Aurora parallel query with the target engine version.</p>
+    /// <p>Indicates whether you can use Aurora parallel query with the target engine version.</p>
     pub supports_parallel_query: ::std::option::Option<bool>,
-    /// <p>A value that indicates whether you can use Aurora global databases with the target engine version.</p>
+    /// <p>Indicates whether you can use Aurora global databases with the target engine version.</p>
     pub supports_global_databases: ::std::option::Option<bool>,
-    /// <p>A value that indicates whether you can use Babelfish for Aurora PostgreSQL with the target engine version.</p>
+    /// <p>Indicates whether you can use Babelfish for Aurora PostgreSQL with the target engine version.</p>
     pub supports_babelfish: ::std::option::Option<bool>,
-    /// <p>A value that indicates whether the target engine version supports forwarding write operations from reader DB instances to the writer DB instance in the DB cluster. By default, write operations aren't allowed on reader DB instances.</p>
+    /// <p>Indicates whether the target engine version supports forwarding write operations from reader DB instances to the writer DB instance in the DB cluster. By default, write operations aren't allowed on reader DB instances.</p>
     /// <p>Valid for: Aurora DB clusters only</p>
     pub supports_local_write_forwarding: ::std::option::Option<bool>,
 }
@@ -39,11 +39,11 @@ impl UpgradeTarget {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>A value that indicates whether the target version is applied to any source DB instances that have <code>AutoMinorVersionUpgrade</code> set to true.</p>
+    /// <p>Indicates whether the target version is applied to any source DB instances that have <code>AutoMinorVersionUpgrade</code> set to true.</p>
     pub fn auto_upgrade(&self) -> bool {
         self.auto_upgrade
     }
-    /// <p>A value that indicates whether upgrading to the target version requires upgrading the major version of the database engine.</p>
+    /// <p>Indicates whether upgrading to the target version requires upgrading the major version of the database engine.</p>
     pub fn is_major_version_upgrade(&self) -> bool {
         self.is_major_version_upgrade
     }
@@ -51,19 +51,19 @@ impl UpgradeTarget {
     pub fn supported_engine_modes(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.supported_engine_modes.as_deref()
     }
-    /// <p>A value that indicates whether you can use Aurora parallel query with the target engine version.</p>
+    /// <p>Indicates whether you can use Aurora parallel query with the target engine version.</p>
     pub fn supports_parallel_query(&self) -> ::std::option::Option<bool> {
         self.supports_parallel_query
     }
-    /// <p>A value that indicates whether you can use Aurora global databases with the target engine version.</p>
+    /// <p>Indicates whether you can use Aurora global databases with the target engine version.</p>
     pub fn supports_global_databases(&self) -> ::std::option::Option<bool> {
         self.supports_global_databases
     }
-    /// <p>A value that indicates whether you can use Babelfish for Aurora PostgreSQL with the target engine version.</p>
+    /// <p>Indicates whether you can use Babelfish for Aurora PostgreSQL with the target engine version.</p>
     pub fn supports_babelfish(&self) -> ::std::option::Option<bool> {
         self.supports_babelfish
     }
-    /// <p>A value that indicates whether the target engine version supports forwarding write operations from reader DB instances to the writer DB instance in the DB cluster. By default, write operations aren't allowed on reader DB instances.</p>
+    /// <p>Indicates whether the target engine version supports forwarding write operations from reader DB instances to the writer DB instance in the DB cluster. By default, write operations aren't allowed on reader DB instances.</p>
     /// <p>Valid for: Aurora DB clusters only</p>
     pub fn supports_local_write_forwarding(&self) -> ::std::option::Option<bool> {
         self.supports_local_write_forwarding
@@ -134,31 +134,31 @@ impl UpgradeTargetBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
-    /// <p>A value that indicates whether the target version is applied to any source DB instances that have <code>AutoMinorVersionUpgrade</code> set to true.</p>
+    /// <p>Indicates whether the target version is applied to any source DB instances that have <code>AutoMinorVersionUpgrade</code> set to true.</p>
     pub fn auto_upgrade(mut self, input: bool) -> Self {
         self.auto_upgrade = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A value that indicates whether the target version is applied to any source DB instances that have <code>AutoMinorVersionUpgrade</code> set to true.</p>
+    /// <p>Indicates whether the target version is applied to any source DB instances that have <code>AutoMinorVersionUpgrade</code> set to true.</p>
     pub fn set_auto_upgrade(mut self, input: ::std::option::Option<bool>) -> Self {
         self.auto_upgrade = input;
         self
     }
-    /// <p>A value that indicates whether the target version is applied to any source DB instances that have <code>AutoMinorVersionUpgrade</code> set to true.</p>
+    /// <p>Indicates whether the target version is applied to any source DB instances that have <code>AutoMinorVersionUpgrade</code> set to true.</p>
     pub fn get_auto_upgrade(&self) -> &::std::option::Option<bool> {
         &self.auto_upgrade
     }
-    /// <p>A value that indicates whether upgrading to the target version requires upgrading the major version of the database engine.</p>
+    /// <p>Indicates whether upgrading to the target version requires upgrading the major version of the database engine.</p>
     pub fn is_major_version_upgrade(mut self, input: bool) -> Self {
         self.is_major_version_upgrade = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A value that indicates whether upgrading to the target version requires upgrading the major version of the database engine.</p>
+    /// <p>Indicates whether upgrading to the target version requires upgrading the major version of the database engine.</p>
     pub fn set_is_major_version_upgrade(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_major_version_upgrade = input;
         self
     }
-    /// <p>A value that indicates whether upgrading to the target version requires upgrading the major version of the database engine.</p>
+    /// <p>Indicates whether upgrading to the target version requires upgrading the major version of the database engine.</p>
     pub fn get_is_major_version_upgrade(&self) -> &::std::option::Option<bool> {
         &self.is_major_version_upgrade
     }
@@ -182,61 +182,61 @@ impl UpgradeTargetBuilder {
     pub fn get_supported_engine_modes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.supported_engine_modes
     }
-    /// <p>A value that indicates whether you can use Aurora parallel query with the target engine version.</p>
+    /// <p>Indicates whether you can use Aurora parallel query with the target engine version.</p>
     pub fn supports_parallel_query(mut self, input: bool) -> Self {
         self.supports_parallel_query = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A value that indicates whether you can use Aurora parallel query with the target engine version.</p>
+    /// <p>Indicates whether you can use Aurora parallel query with the target engine version.</p>
     pub fn set_supports_parallel_query(mut self, input: ::std::option::Option<bool>) -> Self {
         self.supports_parallel_query = input;
         self
     }
-    /// <p>A value that indicates whether you can use Aurora parallel query with the target engine version.</p>
+    /// <p>Indicates whether you can use Aurora parallel query with the target engine version.</p>
     pub fn get_supports_parallel_query(&self) -> &::std::option::Option<bool> {
         &self.supports_parallel_query
     }
-    /// <p>A value that indicates whether you can use Aurora global databases with the target engine version.</p>
+    /// <p>Indicates whether you can use Aurora global databases with the target engine version.</p>
     pub fn supports_global_databases(mut self, input: bool) -> Self {
         self.supports_global_databases = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A value that indicates whether you can use Aurora global databases with the target engine version.</p>
+    /// <p>Indicates whether you can use Aurora global databases with the target engine version.</p>
     pub fn set_supports_global_databases(mut self, input: ::std::option::Option<bool>) -> Self {
         self.supports_global_databases = input;
         self
     }
-    /// <p>A value that indicates whether you can use Aurora global databases with the target engine version.</p>
+    /// <p>Indicates whether you can use Aurora global databases with the target engine version.</p>
     pub fn get_supports_global_databases(&self) -> &::std::option::Option<bool> {
         &self.supports_global_databases
     }
-    /// <p>A value that indicates whether you can use Babelfish for Aurora PostgreSQL with the target engine version.</p>
+    /// <p>Indicates whether you can use Babelfish for Aurora PostgreSQL with the target engine version.</p>
     pub fn supports_babelfish(mut self, input: bool) -> Self {
         self.supports_babelfish = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A value that indicates whether you can use Babelfish for Aurora PostgreSQL with the target engine version.</p>
+    /// <p>Indicates whether you can use Babelfish for Aurora PostgreSQL with the target engine version.</p>
     pub fn set_supports_babelfish(mut self, input: ::std::option::Option<bool>) -> Self {
         self.supports_babelfish = input;
         self
     }
-    /// <p>A value that indicates whether you can use Babelfish for Aurora PostgreSQL with the target engine version.</p>
+    /// <p>Indicates whether you can use Babelfish for Aurora PostgreSQL with the target engine version.</p>
     pub fn get_supports_babelfish(&self) -> &::std::option::Option<bool> {
         &self.supports_babelfish
     }
-    /// <p>A value that indicates whether the target engine version supports forwarding write operations from reader DB instances to the writer DB instance in the DB cluster. By default, write operations aren't allowed on reader DB instances.</p>
+    /// <p>Indicates whether the target engine version supports forwarding write operations from reader DB instances to the writer DB instance in the DB cluster. By default, write operations aren't allowed on reader DB instances.</p>
     /// <p>Valid for: Aurora DB clusters only</p>
     pub fn supports_local_write_forwarding(mut self, input: bool) -> Self {
         self.supports_local_write_forwarding = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A value that indicates whether the target engine version supports forwarding write operations from reader DB instances to the writer DB instance in the DB cluster. By default, write operations aren't allowed on reader DB instances.</p>
+    /// <p>Indicates whether the target engine version supports forwarding write operations from reader DB instances to the writer DB instance in the DB cluster. By default, write operations aren't allowed on reader DB instances.</p>
     /// <p>Valid for: Aurora DB clusters only</p>
     pub fn set_supports_local_write_forwarding(mut self, input: ::std::option::Option<bool>) -> Self {
         self.supports_local_write_forwarding = input;
         self
     }
-    /// <p>A value that indicates whether the target engine version supports forwarding write operations from reader DB instances to the writer DB instance in the DB cluster. By default, write operations aren't allowed on reader DB instances.</p>
+    /// <p>Indicates whether the target engine version supports forwarding write operations from reader DB instances to the writer DB instance in the DB cluster. By default, write operations aren't allowed on reader DB instances.</p>
     /// <p>Valid for: Aurora DB clusters only</p>
     pub fn get_supports_local_write_forwarding(&self) -> &::std::option::Option<bool> {
         &self.supports_local_write_forwarding

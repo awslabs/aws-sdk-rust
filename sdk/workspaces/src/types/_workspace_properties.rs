@@ -24,6 +24,8 @@ pub struct WorkspaceProperties {
     /// </ul>
     /// </note>
     pub protocols: ::std::option::Option<::std::vec::Vec<crate::types::Protocol>>,
+    /// <p>The name of the operating system.</p>
+    pub operating_system_name: ::std::option::Option<crate::types::OperatingSystemName>,
 }
 impl WorkspaceProperties {
     /// <p>The running mode. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/running-mode.html">Manage the WorkSpace Running Mode</a>.</p> <note>
@@ -58,6 +60,10 @@ impl WorkspaceProperties {
     pub fn protocols(&self) -> ::std::option::Option<&[crate::types::Protocol]> {
         self.protocols.as_deref()
     }
+    /// <p>The name of the operating system.</p>
+    pub fn operating_system_name(&self) -> ::std::option::Option<&crate::types::OperatingSystemName> {
+        self.operating_system_name.as_ref()
+    }
 }
 impl WorkspaceProperties {
     /// Creates a new builder-style object to manufacture [`WorkspaceProperties`](crate::types::WorkspaceProperties).
@@ -76,6 +82,7 @@ pub struct WorkspacePropertiesBuilder {
     pub(crate) user_volume_size_gib: ::std::option::Option<i32>,
     pub(crate) compute_type_name: ::std::option::Option<crate::types::Compute>,
     pub(crate) protocols: ::std::option::Option<::std::vec::Vec<crate::types::Protocol>>,
+    pub(crate) operating_system_name: ::std::option::Option<crate::types::OperatingSystemName>,
 }
 impl WorkspacePropertiesBuilder {
     /// <p>The running mode. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/running-mode.html">Manage the WorkSpace Running Mode</a>.</p> <note>
@@ -192,6 +199,20 @@ impl WorkspacePropertiesBuilder {
     pub fn get_protocols(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Protocol>> {
         &self.protocols
     }
+    /// <p>The name of the operating system.</p>
+    pub fn operating_system_name(mut self, input: crate::types::OperatingSystemName) -> Self {
+        self.operating_system_name = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The name of the operating system.</p>
+    pub fn set_operating_system_name(mut self, input: ::std::option::Option<crate::types::OperatingSystemName>) -> Self {
+        self.operating_system_name = input;
+        self
+    }
+    /// <p>The name of the operating system.</p>
+    pub fn get_operating_system_name(&self) -> &::std::option::Option<crate::types::OperatingSystemName> {
+        &self.operating_system_name
+    }
     /// Consumes the builder and constructs a [`WorkspaceProperties`](crate::types::WorkspaceProperties).
     pub fn build(self) -> crate::types::WorkspaceProperties {
         crate::types::WorkspaceProperties {
@@ -201,6 +222,7 @@ impl WorkspacePropertiesBuilder {
             user_volume_size_gib: self.user_volume_size_gib,
             compute_type_name: self.compute_type_name,
             protocols: self.protocols,
+            operating_system_name: self.operating_system_name,
         }
     }
 }

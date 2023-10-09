@@ -31,6 +31,9 @@ where
                                     .transpose()?,
                             );
                         }
+                        "DetailsDocument" => {
+                            builder = builder.set_details_document(Some(::aws_smithy_json::deserialize::token::expect_document(tokens)?));
+                        }
                         "ErrorDetailList" => {
                             builder = builder.set_error_detail_list(crate::protocol_serde::shape_error_detail_list::de_error_detail_list(tokens)?);
                         }

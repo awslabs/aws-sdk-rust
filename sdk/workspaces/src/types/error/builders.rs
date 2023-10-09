@@ -25,4 +25,14 @@ pub use crate::types::error::_operation_in_progress_exception::OperationInProgre
 
 pub use crate::types::error::_resource_already_exists_exception::ResourceAlreadyExistsExceptionBuilder;
 
+pub use crate::types::error::_resource_in_use_exception::ResourceInUseExceptionBuilder;
+
+pub use crate::types::error::_incompatible_applications_exception::IncompatibleApplicationsExceptionBuilder;
+
 pub use crate::types::error::_resource_creation_failed_exception::ResourceCreationFailedExceptionBuilder;
+
+pub use crate::types::error::_operating_system_not_compatible_exception::OperatingSystemNotCompatibleExceptionBuilder;
+
+pub use crate::types::error::_compute_not_compatible_exception::ComputeNotCompatibleExceptionBuilder;
+
+pub use crate::types::error::_application_not_supported_exception::ApplicationNotSupportedExceptionBuilder;

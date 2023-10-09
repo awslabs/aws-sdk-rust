@@ -135,6 +135,10 @@ pub use crate::types::_data_color_palette::DataColorPalette;
 
 pub use crate::types::_template_alias::TemplateAlias;
 
+pub use crate::types::_validation_strategy::ValidationStrategy;
+
+pub use crate::types::_validation_strategy_mode::ValidationStrategyMode;
+
 pub use crate::types::_template_version_definition::TemplateVersionDefinition;
 
 pub use crate::types::_analysis_defaults::AnalysisDefaults;
@@ -1326,6 +1330,8 @@ pub use crate::types::_s3_parameters::S3Parameters;
 pub use crate::types::_manifest_file_location::ManifestFileLocation;
 
 pub use crate::types::_redshift_parameters::RedshiftParameters;
+
+pub use crate::types::_redshift_iam_parameters::RedshiftIamParameters;
 
 pub use crate::types::_rds_parameters::RdsParameters;
 
@@ -3083,6 +3089,8 @@ mod _range_ends_label_type;
 
 mod _rds_parameters;
 
+mod _redshift_iam_parameters;
+
 mod _redshift_parameters;
 
 mod _reference_line;
@@ -3606,6 +3614,10 @@ mod _url_target_configuration;
 mod _user;
 
 mod _user_role;
+
+mod _validation_strategy;
+
+mod _validation_strategy_mode;
 
 mod _value_when_unset_option;
 

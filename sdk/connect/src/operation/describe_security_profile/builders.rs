@@ -22,7 +22,6 @@ impl DescribeSecurityProfileInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeSecurityProfile`.
 ///
-/// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
 /// <p>Gets basic information about the security profle.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeSecurityProfileFluentBuilder {

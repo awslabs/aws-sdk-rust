@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LaunchTemplateTagSpecificationRequest {
     /// <p>The type of resource to tag.</p>
-    /// <p>The <code>Valid Values</code> are all the resource types that can be tagged. However, when creating a launch template, you can specify tags for the following resource types only: <code>instance</code> | <code>volume</code> | <code>elastic-gpu</code> | <code>network-interface</code> | <code>spot-instances-request</code> </p>
+    /// <p>Valid Values lists all resource types for Amazon EC2 that can be tagged. When you create a launch template, you can specify tags for the following resource types only: <code>instance</code> | <code>volume</code> | <code>elastic-gpu</code> | <code>network-interface</code> | <code>spot-instances-request</code>. If the instance does include the resource type that you specify, the instance launch fails. For example, not all instance types include an Elastic GPU.</p>
     /// <p>To tag a resource after it has been created, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
     pub resource_type: ::std::option::Option<crate::types::ResourceType>,
     /// <p>The tags to apply to the resource.</p>
@@ -13,7 +13,7 @@ pub struct LaunchTemplateTagSpecificationRequest {
 }
 impl LaunchTemplateTagSpecificationRequest {
     /// <p>The type of resource to tag.</p>
-    /// <p>The <code>Valid Values</code> are all the resource types that can be tagged. However, when creating a launch template, you can specify tags for the following resource types only: <code>instance</code> | <code>volume</code> | <code>elastic-gpu</code> | <code>network-interface</code> | <code>spot-instances-request</code> </p>
+    /// <p>Valid Values lists all resource types for Amazon EC2 that can be tagged. When you create a launch template, you can specify tags for the following resource types only: <code>instance</code> | <code>volume</code> | <code>elastic-gpu</code> | <code>network-interface</code> | <code>spot-instances-request</code>. If the instance does include the resource type that you specify, the instance launch fails. For example, not all instance types include an Elastic GPU.</p>
     /// <p>To tag a resource after it has been created, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
     pub fn resource_type(&self) -> ::std::option::Option<&crate::types::ResourceType> {
         self.resource_type.as_ref()
@@ -39,21 +39,21 @@ pub struct LaunchTemplateTagSpecificationRequestBuilder {
 }
 impl LaunchTemplateTagSpecificationRequestBuilder {
     /// <p>The type of resource to tag.</p>
-    /// <p>The <code>Valid Values</code> are all the resource types that can be tagged. However, when creating a launch template, you can specify tags for the following resource types only: <code>instance</code> | <code>volume</code> | <code>elastic-gpu</code> | <code>network-interface</code> | <code>spot-instances-request</code> </p>
+    /// <p>Valid Values lists all resource types for Amazon EC2 that can be tagged. When you create a launch template, you can specify tags for the following resource types only: <code>instance</code> | <code>volume</code> | <code>elastic-gpu</code> | <code>network-interface</code> | <code>spot-instances-request</code>. If the instance does include the resource type that you specify, the instance launch fails. For example, not all instance types include an Elastic GPU.</p>
     /// <p>To tag a resource after it has been created, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
     pub fn resource_type(mut self, input: crate::types::ResourceType) -> Self {
         self.resource_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of resource to tag.</p>
-    /// <p>The <code>Valid Values</code> are all the resource types that can be tagged. However, when creating a launch template, you can specify tags for the following resource types only: <code>instance</code> | <code>volume</code> | <code>elastic-gpu</code> | <code>network-interface</code> | <code>spot-instances-request</code> </p>
+    /// <p>Valid Values lists all resource types for Amazon EC2 that can be tagged. When you create a launch template, you can specify tags for the following resource types only: <code>instance</code> | <code>volume</code> | <code>elastic-gpu</code> | <code>network-interface</code> | <code>spot-instances-request</code>. If the instance does include the resource type that you specify, the instance launch fails. For example, not all instance types include an Elastic GPU.</p>
     /// <p>To tag a resource after it has been created, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
         self.resource_type = input;
         self
     }
     /// <p>The type of resource to tag.</p>
-    /// <p>The <code>Valid Values</code> are all the resource types that can be tagged. However, when creating a launch template, you can specify tags for the following resource types only: <code>instance</code> | <code>volume</code> | <code>elastic-gpu</code> | <code>network-interface</code> | <code>spot-instances-request</code> </p>
+    /// <p>Valid Values lists all resource types for Amazon EC2 that can be tagged. When you create a launch template, you can specify tags for the following resource types only: <code>instance</code> | <code>volume</code> | <code>elastic-gpu</code> | <code>network-interface</code> | <code>spot-instances-request</code>. If the instance does include the resource type that you specify, the instance launch fails. For example, not all instance types include an Elastic GPU.</p>
     /// <p>To tag a resource after it has been created, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
         &self.resource_type

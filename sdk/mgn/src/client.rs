@@ -160,6 +160,8 @@ mod change_server_life_cycle_state;
 
 mod create_application;
 
+mod create_connector;
+
 mod create_launch_configuration_template;
 
 mod create_replication_configuration_template;
@@ -195,6 +197,8 @@ mod create_wave;
 pub mod customize;
 
 mod delete_application;
+
+mod delete_connector;
 
 mod delete_job;
 
@@ -235,6 +239,8 @@ mod get_replication_configuration;
 mod initialize_service;
 
 mod list_applications;
+
+mod list_connectors;
 
 mod list_export_errors;
 
@@ -294,6 +300,8 @@ mod untag_resource;
 
 mod update_application;
 
+mod update_connector;
+
 mod update_launch_configuration;
 
 mod update_launch_configuration_template;
@@ -301,6 +309,8 @@ mod update_launch_configuration_template;
 mod update_replication_configuration;
 
 mod update_replication_configuration_template;
+
+mod update_source_server;
 
 mod update_source_server_replication_type;
 

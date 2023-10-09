@@ -1206,6 +1206,39 @@ impl From<crate::operation::restore_volume_from_snapshot::RestoreVolumeFromSnaps
         }
     }
 }
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::start_misconfigured_state_recovery::StartMisconfiguredStateRecoveryError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<crate::operation::start_misconfigured_state_recovery::StartMisconfiguredStateRecoveryError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::start_misconfigured_state_recovery::StartMisconfiguredStateRecoveryError> for Error {
+    fn from(err: crate::operation::start_misconfigured_state_recovery::StartMisconfiguredStateRecoveryError) -> Self {
+        match err {
+            crate::operation::start_misconfigured_state_recovery::StartMisconfiguredStateRecoveryError::BadRequest(inner) => Error::BadRequest(inner),
+            crate::operation::start_misconfigured_state_recovery::StartMisconfiguredStateRecoveryError::FileSystemNotFound(inner) => {
+                Error::FileSystemNotFound(inner)
+            }
+            crate::operation::start_misconfigured_state_recovery::StartMisconfiguredStateRecoveryError::InternalServerError(inner) => {
+                Error::InternalServerError(inner)
+            }
+            crate::operation::start_misconfigured_state_recovery::StartMisconfiguredStateRecoveryError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::tag_resource::TagResourceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

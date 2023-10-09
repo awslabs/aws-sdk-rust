@@ -204,17 +204,17 @@ impl ListEntitiesFluentBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Filters the returned set of entities based on their owner. The default is <code>SELF</code>. To list entities shared with you through AWS Resource Access Manager (AWS RAM), set to <code>SHARED</code>. Entities shared through the AWS Marketplace Catalog API <code>PutResourcePolicy</code> operation can't be discovered through the <code>SHARED</code> parameter.</p>
     pub fn ownership_type(mut self, input: crate::types::OwnershipType) -> Self {
         self.inner = self.inner.ownership_type(input);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Filters the returned set of entities based on their owner. The default is <code>SELF</code>. To list entities shared with you through AWS Resource Access Manager (AWS RAM), set to <code>SHARED</code>. Entities shared through the AWS Marketplace Catalog API <code>PutResourcePolicy</code> operation can't be discovered through the <code>SHARED</code> parameter.</p>
     pub fn set_ownership_type(mut self, input: ::std::option::Option<crate::types::OwnershipType>) -> Self {
         self.inner = self.inner.set_ownership_type(input);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Filters the returned set of entities based on their owner. The default is <code>SELF</code>. To list entities shared with you through AWS Resource Access Manager (AWS RAM), set to <code>SHARED</code>. Entities shared through the AWS Marketplace Catalog API <code>PutResourcePolicy</code> operation can't be discovered through the <code>SHARED</code> parameter.</p>
     pub fn get_ownership_type(&self) -> &::std::option::Option<crate::types::OwnershipType> {
         self.inner.get_ownership_type()
     }

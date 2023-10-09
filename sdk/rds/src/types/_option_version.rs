@@ -6,7 +6,7 @@
 pub struct OptionVersion {
     /// <p>The version of the option.</p>
     pub version: ::std::option::Option<::std::string::String>,
-    /// <p>True if the version is the default version of the option, and otherwise false.</p>
+    /// <p>Indicates whether the version is the default version of the option.</p>
     pub is_default: bool,
 }
 impl OptionVersion {
@@ -14,7 +14,7 @@ impl OptionVersion {
     pub fn version(&self) -> ::std::option::Option<&str> {
         self.version.as_deref()
     }
-    /// <p>True if the version is the default version of the option, and otherwise false.</p>
+    /// <p>Indicates whether the version is the default version of the option.</p>
     pub fn is_default(&self) -> bool {
         self.is_default
     }
@@ -48,17 +48,17 @@ impl OptionVersionBuilder {
     pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.version
     }
-    /// <p>True if the version is the default version of the option, and otherwise false.</p>
+    /// <p>Indicates whether the version is the default version of the option.</p>
     pub fn is_default(mut self, input: bool) -> Self {
         self.is_default = ::std::option::Option::Some(input);
         self
     }
-    /// <p>True if the version is the default version of the option, and otherwise false.</p>
+    /// <p>Indicates whether the version is the default version of the option.</p>
     pub fn set_is_default(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_default = input;
         self
     }
-    /// <p>True if the version is the default version of the option, and otherwise false.</p>
+    /// <p>Indicates whether the version is the default version of the option.</p>
     pub fn get_is_default(&self) -> &::std::option::Option<bool> {
         &self.is_default
     }

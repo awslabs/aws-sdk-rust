@@ -165,4 +165,18 @@ impl ListHostedZonesFluentBuilder {
     pub fn get_delegation_set_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_delegation_set_id()
     }
+    /// <p> (Optional) Specifies if the hosted zone is private. </p>
+    pub fn hosted_zone_type(mut self, input: crate::types::HostedZoneType) -> Self {
+        self.inner = self.inner.hosted_zone_type(input);
+        self
+    }
+    /// <p> (Optional) Specifies if the hosted zone is private. </p>
+    pub fn set_hosted_zone_type(mut self, input: ::std::option::Option<crate::types::HostedZoneType>) -> Self {
+        self.inner = self.inner.set_hosted_zone_type(input);
+        self
+    }
+    /// <p> (Optional) Specifies if the hosted zone is private. </p>
+    pub fn get_hosted_zone_type(&self) -> &::std::option::Option<crate::types::HostedZoneType> {
+        self.inner.get_hosted_zone_type()
+    }
 }

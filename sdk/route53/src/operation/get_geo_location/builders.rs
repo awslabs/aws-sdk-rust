@@ -159,16 +159,19 @@ impl GetGeoLocationFluentBuilder {
         self.inner.get_continent_code()
     }
     /// <p>Amazon Route 53 uses the two-letter country codes that are specified in <a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO standard 3166-1 alpha-2</a>.</p>
+    /// <p>Route 53 also supports the contry code <b>UA</b> forr Ukraine.</p>
     pub fn country_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.country_code(input.into());
         self
     }
     /// <p>Amazon Route 53 uses the two-letter country codes that are specified in <a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO standard 3166-1 alpha-2</a>.</p>
+    /// <p>Route 53 also supports the contry code <b>UA</b> forr Ukraine.</p>
     pub fn set_country_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_country_code(input);
         self
     }
     /// <p>Amazon Route 53 uses the two-letter country codes that are specified in <a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO standard 3166-1 alpha-2</a>.</p>
+    /// <p>Route 53 also supports the contry code <b>UA</b> forr Ukraine.</p>
     pub fn get_country_code(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_country_code()
     }

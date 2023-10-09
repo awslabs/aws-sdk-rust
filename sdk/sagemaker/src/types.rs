@@ -165,6 +165,12 @@ pub use crate::types::_transform_instance_type::TransformInstanceType;
 
 pub use crate::types::_model_package_container_definition::ModelPackageContainerDefinition;
 
+pub use crate::types::_additional_s3_data_source::AdditionalS3DataSource;
+
+pub use crate::types::_compression_type::CompressionType;
+
+pub use crate::types::_additional_s3_data_source_data_type::AdditionalS3DataSourceDataType;
+
 pub use crate::types::_model_input::ModelInput;
 
 pub use crate::types::_model_approval_status::ModelApprovalStatus;
@@ -326,8 +332,6 @@ pub use crate::types::_assembly_type::AssemblyType;
 pub use crate::types::_transform_input::TransformInput;
 
 pub use crate::types::_split_type::SplitType;
-
-pub use crate::types::_compression_type::CompressionType;
 
 pub use crate::types::_transform_data_source::TransformDataSource;
 
@@ -1540,6 +1544,10 @@ mod _action_status;
 mod _action_summary;
 
 mod _additional_inference_specification_definition;
+
+mod _additional_s3_data_source;
+
+mod _additional_s3_data_source_data_type;
 
 mod _agent_version;
 

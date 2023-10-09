@@ -42,8 +42,14 @@ pub fn ser_create_template_input(
         }
         array_11.finish();
     }
-    if let Some(var_14) = &input.version_description {
-        object.key("VersionDescription").string(var_14.as_str());
+    if let Some(var_14) = &input.validation_strategy {
+        #[allow(unused_mut)]
+        let mut object_15 = object.key("ValidationStrategy").start_object();
+        crate::protocol_serde::shape_validation_strategy::ser_validation_strategy(&mut object_15, var_14)?;
+        object_15.finish();
+    }
+    if let Some(var_16) = &input.version_description {
+        object.key("VersionDescription").string(var_16.as_str());
     }
     Ok(())
 }

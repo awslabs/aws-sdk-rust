@@ -419,7 +419,13 @@ pub use crate::types::_metric_filter_v2::MetricFilterV2;
 
 pub use crate::types::_threshold_v2::ThresholdV2;
 
+pub use crate::types::_metric_interval::MetricInterval;
+
+pub use crate::types::_interval_period::IntervalPeriod;
+
 pub use crate::types::_filter_v2::FilterV2;
+
+pub use crate::types::_interval_details::IntervalDetails;
 
 pub use crate::types::_historical_metric_result::HistoricalMetricResult;
 
@@ -779,6 +785,10 @@ mod _integration_association_summary;
 
 mod _integration_type;
 
+mod _interval_details;
+
+mod _interval_period;
+
 mod _invisible_field_info;
 
 mod _kinesis_firehose_config;
@@ -802,6 +812,8 @@ mod _media_concurrency;
 mod _metric_data_v2;
 
 mod _metric_filter_v2;
+
+mod _metric_interval;
 
 mod _metric_result_v2;
 

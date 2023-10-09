@@ -3,6 +3,8 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeVodSourceOutput {
+    /// <p>The ad break opportunities within the VOD source.</p>
+    pub ad_break_opportunities: ::std::option::Option<::std::vec::Vec<crate::types::AdBreakOpportunity>>,
     /// <p>The ARN of the VOD source.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp that indicates when the VOD source was created.</p>
@@ -20,6 +22,10 @@ pub struct DescribeVodSourceOutput {
     _request_id: Option<String>,
 }
 impl DescribeVodSourceOutput {
+    /// <p>The ad break opportunities within the VOD source.</p>
+    pub fn ad_break_opportunities(&self) -> ::std::option::Option<&[crate::types::AdBreakOpportunity]> {
+        self.ad_break_opportunities.as_deref()
+    }
     /// <p>The ARN of the VOD source.</p>
     pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
@@ -65,6 +71,7 @@ impl DescribeVodSourceOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeVodSourceOutputBuilder {
+    pub(crate) ad_break_opportunities: ::std::option::Option<::std::vec::Vec<crate::types::AdBreakOpportunity>>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) http_package_configurations: ::std::option::Option<::std::vec::Vec<crate::types::HttpPackageConfiguration>>,
@@ -75,6 +82,26 @@ pub struct DescribeVodSourceOutputBuilder {
     _request_id: Option<String>,
 }
 impl DescribeVodSourceOutputBuilder {
+    /// Appends an item to `ad_break_opportunities`.
+    ///
+    /// To override the contents of this collection use [`set_ad_break_opportunities`](Self::set_ad_break_opportunities).
+    ///
+    /// <p>The ad break opportunities within the VOD source.</p>
+    pub fn ad_break_opportunities(mut self, input: crate::types::AdBreakOpportunity) -> Self {
+        let mut v = self.ad_break_opportunities.unwrap_or_default();
+        v.push(input);
+        self.ad_break_opportunities = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The ad break opportunities within the VOD source.</p>
+    pub fn set_ad_break_opportunities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AdBreakOpportunity>>) -> Self {
+        self.ad_break_opportunities = input;
+        self
+    }
+    /// <p>The ad break opportunities within the VOD source.</p>
+    pub fn get_ad_break_opportunities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AdBreakOpportunity>> {
+        &self.ad_break_opportunities
+    }
     /// <p>The ARN of the VOD source.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -197,6 +224,7 @@ impl DescribeVodSourceOutputBuilder {
     /// Consumes the builder and constructs a [`DescribeVodSourceOutput`](crate::operation::describe_vod_source::DescribeVodSourceOutput).
     pub fn build(self) -> crate::operation::describe_vod_source::DescribeVodSourceOutput {
         crate::operation::describe_vod_source::DescribeVodSourceOutput {
+            ad_break_opportunities: self.ad_break_opportunities,
             arn: self.arn,
             creation_time: self.creation_time,
             http_package_configurations: self.http_package_configurations,

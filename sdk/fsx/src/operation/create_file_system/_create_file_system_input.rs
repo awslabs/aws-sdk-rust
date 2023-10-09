@@ -53,7 +53,7 @@ pub struct CreateFileSystemInput {
     /// <ul>
     /// <li> <p> <code>AutoImportPolicy</code> </p> </li>
     /// <li> <p> <code>ExportPath</code> </p> </li>
-    /// <li> <p> <code>ImportedChunkSize</code> </p> </li>
+    /// <li> <p> <code>ImportedFileChunkSize</code> </p> </li>
     /// <li> <p> <code>ImportPath</code> </p> </li>
     /// </ul>
     /// </note>
@@ -140,7 +140,7 @@ impl CreateFileSystemInput {
     /// <ul>
     /// <li> <p> <code>AutoImportPolicy</code> </p> </li>
     /// <li> <p> <code>ExportPath</code> </p> </li>
-    /// <li> <p> <code>ImportedChunkSize</code> </p> </li>
+    /// <li> <p> <code>ImportedFileChunkSize</code> </p> </li>
     /// <li> <p> <code>ImportPath</code> </p> </li>
     /// </ul>
     /// </note>
@@ -420,7 +420,7 @@ impl CreateFileSystemInputBuilder {
     /// <ul>
     /// <li> <p> <code>AutoImportPolicy</code> </p> </li>
     /// <li> <p> <code>ExportPath</code> </p> </li>
-    /// <li> <p> <code>ImportedChunkSize</code> </p> </li>
+    /// <li> <p> <code>ImportedFileChunkSize</code> </p> </li>
     /// <li> <p> <code>ImportPath</code> </p> </li>
     /// </ul>
     /// </note>
@@ -433,7 +433,7 @@ impl CreateFileSystemInputBuilder {
     /// <ul>
     /// <li> <p> <code>AutoImportPolicy</code> </p> </li>
     /// <li> <p> <code>ExportPath</code> </p> </li>
-    /// <li> <p> <code>ImportedChunkSize</code> </p> </li>
+    /// <li> <p> <code>ImportedFileChunkSize</code> </p> </li>
     /// <li> <p> <code>ImportPath</code> </p> </li>
     /// </ul>
     /// </note>
@@ -446,7 +446,7 @@ impl CreateFileSystemInputBuilder {
     /// <ul>
     /// <li> <p> <code>AutoImportPolicy</code> </p> </li>
     /// <li> <p> <code>ExportPath</code> </p> </li>
-    /// <li> <p> <code>ImportedChunkSize</code> </p> </li>
+    /// <li> <p> <code>ImportedFileChunkSize</code> </p> </li>
     /// <li> <p> <code>ImportPath</code> </p> </li>
     /// </ul>
     /// </note>

@@ -18,6 +18,9 @@ pub fn ser_filter_list_configuration(
     if let Some(var_5) = &input.select_all_options {
         object.key("SelectAllOptions").string(var_5.as_str());
     }
+    if let Some(var_6) = &input.null_option {
+        object.key("NullOption").string(var_6.as_str());
+    }
     Ok(())
 }
 
@@ -50,6 +53,13 @@ where
                             builder = builder.set_select_all_options(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| crate::types::CategoryFilterSelectAllOptions::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "NullOption" => {
+                            builder = builder.set_null_option(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::FilterNullOption::from(u.as_ref())))
                                     .transpose()?,
                             );
                         }

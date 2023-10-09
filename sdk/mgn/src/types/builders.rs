@@ -11,6 +11,8 @@ pub use crate::types::_validation_exception_field::ValidationExceptionFieldBuild
 
 pub use crate::types::_vcenter_client::VcenterClientBuilder;
 
+pub use crate::types::_source_server_connector_action::SourceServerConnectorActionBuilder;
+
 pub use crate::types::_source_properties::SourcePropertiesBuilder;
 
 pub use crate::types::_os::OsBuilder;
@@ -124,6 +126,12 @@ pub use crate::types::_export_task::ExportTaskBuilder;
 pub use crate::types::_export_task_summary::ExportTaskSummaryBuilder;
 
 pub use crate::types::_list_exports_request_filters::ListExportsRequestFiltersBuilder;
+
+pub use crate::types::_connector::ConnectorBuilder;
+
+pub use crate::types::_connector_ssm_command_config::ConnectorSsmCommandConfigBuilder;
+
+pub use crate::types::_list_connectors_request_filters::ListConnectorsRequestFiltersBuilder;
 
 pub use crate::types::_application_aggregated_status::ApplicationAggregatedStatusBuilder;
 

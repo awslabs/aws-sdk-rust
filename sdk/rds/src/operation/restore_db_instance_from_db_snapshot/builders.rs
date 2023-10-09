@@ -264,27 +264,27 @@ impl RestoreDBInstanceFromDBSnapshotFluentBuilder {
     pub fn get_db_subnet_group_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_db_subnet_group_name()
     }
-    /// <p>A value that indicates whether the DB instance is a Multi-AZ deployment.</p>
+    /// <p>Specifies whether the DB instance is a Multi-AZ deployment.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
     /// <p>Constraint: You can't specify the <code>AvailabilityZone</code> parameter if the DB instance is a Multi-AZ deployment.</p>
     pub fn multi_az(mut self, input: bool) -> Self {
         self.inner = self.inner.multi_az(input);
         self
     }
-    /// <p>A value that indicates whether the DB instance is a Multi-AZ deployment.</p>
+    /// <p>Specifies whether the DB instance is a Multi-AZ deployment.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
     /// <p>Constraint: You can't specify the <code>AvailabilityZone</code> parameter if the DB instance is a Multi-AZ deployment.</p>
     pub fn set_multi_az(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_multi_az(input);
         self
     }
-    /// <p>A value that indicates whether the DB instance is a Multi-AZ deployment.</p>
+    /// <p>Specifies whether the DB instance is a Multi-AZ deployment.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
     /// <p>Constraint: You can't specify the <code>AvailabilityZone</code> parameter if the DB instance is a Multi-AZ deployment.</p>
     pub fn get_multi_az(&self) -> &::std::option::Option<bool> {
         self.inner.get_multi_az()
     }
-    /// <p>A value that indicates whether the DB instance is publicly accessible.</p>
+    /// <p>Specifies whether the DB instance is publicly accessible.</p>
     /// <p>When the DB instance is publicly accessible, its Domain Name System (DNS) endpoint resolves to the private IP address from within the DB instance's virtual private cloud (VPC). It resolves to the public IP address from outside of the DB instance's VPC. Access to the DB instance is ultimately controlled by the security group it uses. That public access is not permitted if the security group assigned to the DB instance doesn't permit it.</p>
     /// <p>When the DB instance isn't publicly accessible, it is an internal DB instance with a DNS name that resolves to a private IP address.</p>
     /// <p>For more information, see <code>CreateDBInstance</code>.</p>
@@ -292,7 +292,7 @@ impl RestoreDBInstanceFromDBSnapshotFluentBuilder {
         self.inner = self.inner.publicly_accessible(input);
         self
     }
-    /// <p>A value that indicates whether the DB instance is publicly accessible.</p>
+    /// <p>Specifies whether the DB instance is publicly accessible.</p>
     /// <p>When the DB instance is publicly accessible, its Domain Name System (DNS) endpoint resolves to the private IP address from within the DB instance's virtual private cloud (VPC). It resolves to the public IP address from outside of the DB instance's VPC. Access to the DB instance is ultimately controlled by the security group it uses. That public access is not permitted if the security group assigned to the DB instance doesn't permit it.</p>
     /// <p>When the DB instance isn't publicly accessible, it is an internal DB instance with a DNS name that resolves to a private IP address.</p>
     /// <p>For more information, see <code>CreateDBInstance</code>.</p>
@@ -300,26 +300,26 @@ impl RestoreDBInstanceFromDBSnapshotFluentBuilder {
         self.inner = self.inner.set_publicly_accessible(input);
         self
     }
-    /// <p>A value that indicates whether the DB instance is publicly accessible.</p>
+    /// <p>Specifies whether the DB instance is publicly accessible.</p>
     /// <p>When the DB instance is publicly accessible, its Domain Name System (DNS) endpoint resolves to the private IP address from within the DB instance's virtual private cloud (VPC). It resolves to the public IP address from outside of the DB instance's VPC. Access to the DB instance is ultimately controlled by the security group it uses. That public access is not permitted if the security group assigned to the DB instance doesn't permit it.</p>
     /// <p>When the DB instance isn't publicly accessible, it is an internal DB instance with a DNS name that resolves to a private IP address.</p>
     /// <p>For more information, see <code>CreateDBInstance</code>.</p>
     pub fn get_publicly_accessible(&self) -> &::std::option::Option<bool> {
         self.inner.get_publicly_accessible()
     }
-    /// <p>A value that indicates whether minor version upgrades are applied automatically to the DB instance during the maintenance window.</p>
+    /// <p>Specifies whether to automatically apply minor version upgrades to the DB instance during the maintenance window.</p>
     /// <p>If you restore an RDS Custom DB instance, you must disable this parameter.</p>
     pub fn auto_minor_version_upgrade(mut self, input: bool) -> Self {
         self.inner = self.inner.auto_minor_version_upgrade(input);
         self
     }
-    /// <p>A value that indicates whether minor version upgrades are applied automatically to the DB instance during the maintenance window.</p>
+    /// <p>Specifies whether to automatically apply minor version upgrades to the DB instance during the maintenance window.</p>
     /// <p>If you restore an RDS Custom DB instance, you must disable this parameter.</p>
     pub fn set_auto_minor_version_upgrade(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_auto_minor_version_upgrade(input);
         self
     }
-    /// <p>A value that indicates whether minor version upgrades are applied automatically to the DB instance during the maintenance window.</p>
+    /// <p>Specifies whether to automatically apply minor version upgrades to the DB instance during the maintenance window.</p>
     /// <p>If you restore an RDS Custom DB instance, you must disable this parameter.</p>
     pub fn get_auto_minor_version_upgrade(&self) -> &::std::option::Option<bool> {
         self.inner.get_auto_minor_version_upgrade()
@@ -327,7 +327,7 @@ impl RestoreDBInstanceFromDBSnapshotFluentBuilder {
     /// <p>License model information for the restored DB instance.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
     /// <p>Default: Same as source.</p>
-    /// <p>Valid values: <code>license-included</code> | <code>bring-your-own-license</code> | <code>general-public-license</code> </p>
+    /// <p>Valid Values: <code>license-included</code> | <code>bring-your-own-license</code> | <code>general-public-license</code> </p>
     pub fn license_model(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.license_model(input.into());
         self
@@ -335,7 +335,7 @@ impl RestoreDBInstanceFromDBSnapshotFluentBuilder {
     /// <p>License model information for the restored DB instance.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
     /// <p>Default: Same as source.</p>
-    /// <p>Valid values: <code>license-included</code> | <code>bring-your-own-license</code> | <code>general-public-license</code> </p>
+    /// <p>Valid Values: <code>license-included</code> | <code>bring-your-own-license</code> | <code>general-public-license</code> </p>
     pub fn set_license_model(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_license_model(input);
         self
@@ -343,7 +343,7 @@ impl RestoreDBInstanceFromDBSnapshotFluentBuilder {
     /// <p>License model information for the restored DB instance.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
     /// <p>Default: Same as source.</p>
-    /// <p>Valid values: <code>license-included</code> | <code>bring-your-own-license</code> | <code>general-public-license</code> </p>
+    /// <p>Valid Values: <code>license-included</code> | <code>bring-your-own-license</code> | <code>general-public-license</code> </p>
     pub fn get_license_model(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_license_model()
     }
@@ -488,7 +488,7 @@ impl RestoreDBInstanceFromDBSnapshotFluentBuilder {
         self.inner.get_tags()
     }
     /// <p>Specifies the storage type to be associated with the DB instance.</p>
-    /// <p>Valid values: <code>gp2 | gp3 | io1 | standard</code> </p>
+    /// <p>Valid Values: <code>gp2 | gp3 | io1 | standard</code> </p>
     /// <p>If you specify <code>io1</code> or <code>gp3</code>, you must also include a value for the <code>Iops</code> parameter.</p>
     /// <p>Default: <code>io1</code> if the <code>Iops</code> parameter is specified, otherwise <code>gp2</code> </p>
     pub fn storage_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -496,7 +496,7 @@ impl RestoreDBInstanceFromDBSnapshotFluentBuilder {
         self
     }
     /// <p>Specifies the storage type to be associated with the DB instance.</p>
-    /// <p>Valid values: <code>gp2 | gp3 | io1 | standard</code> </p>
+    /// <p>Valid Values: <code>gp2 | gp3 | io1 | standard</code> </p>
     /// <p>If you specify <code>io1</code> or <code>gp3</code>, you must also include a value for the <code>Iops</code> parameter.</p>
     /// <p>Default: <code>io1</code> if the <code>Iops</code> parameter is specified, otherwise <code>gp2</code> </p>
     pub fn set_storage_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -504,7 +504,7 @@ impl RestoreDBInstanceFromDBSnapshotFluentBuilder {
         self
     }
     /// <p>Specifies the storage type to be associated with the DB instance.</p>
-    /// <p>Valid values: <code>gp2 | gp3 | io1 | standard</code> </p>
+    /// <p>Valid Values: <code>gp2 | gp3 | io1 | standard</code> </p>
     /// <p>If you specify <code>io1</code> or <code>gp3</code>, you must also include a value for the <code>Iops</code> parameter.</p>
     /// <p>Default: <code>io1</code> if the <code>Iops</code> parameter is specified, otherwise <code>gp2</code> </p>
     pub fn get_storage_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -648,6 +648,9 @@ impl RestoreDBInstanceFromDBSnapshotFluentBuilder {
     }
     /// <p>The ARN for the Secrets Manager secret with the credentials for the user joining the domain.</p>
     /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Can't be longer than 64 characters.</p> </li>
+    /// </ul>
     /// <p>Example: <code>arn:aws:secretsmanager:region:account-number:secret:myselfmanagedADtestsecret-123456</code> </p>
     pub fn domain_auth_secret_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.domain_auth_secret_arn(input.into());
@@ -655,6 +658,9 @@ impl RestoreDBInstanceFromDBSnapshotFluentBuilder {
     }
     /// <p>The ARN for the Secrets Manager secret with the credentials for the user joining the domain.</p>
     /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Can't be longer than 64 characters.</p> </li>
+    /// </ul>
     /// <p>Example: <code>arn:aws:secretsmanager:region:account-number:secret:myselfmanagedADtestsecret-123456</code> </p>
     pub fn set_domain_auth_secret_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_domain_auth_secret_arn(input);
@@ -662,6 +668,9 @@ impl RestoreDBInstanceFromDBSnapshotFluentBuilder {
     }
     /// <p>The ARN for the Secrets Manager secret with the credentials for the user joining the domain.</p>
     /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Can't be longer than 64 characters.</p> </li>
+    /// </ul>
     /// <p>Example: <code>arn:aws:secretsmanager:region:account-number:secret:myselfmanagedADtestsecret-123456</code> </p>
     pub fn get_domain_auth_secret_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_domain_auth_secret_arn()
@@ -699,21 +708,21 @@ impl RestoreDBInstanceFromDBSnapshotFluentBuilder {
     pub fn get_domain_dns_ips(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_domain_dns_ips()
     }
-    /// <p>A value that indicates whether to copy all tags from the restored DB instance to snapshots of the DB instance.</p>
+    /// <p>Specifies whether to copy all tags from the restored DB instance to snapshots of the DB instance.</p>
     /// <p>In most cases, tags aren't copied by default. However, when you restore a DB instance from a DB snapshot, RDS checks whether you specify new tags. If yes, the new tags are added to the restored DB instance. If there are no new tags, RDS looks for the tags from the source DB instance for the DB snapshot, and then adds those tags to the restored DB instance.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.CopyTags"> Copying tags to DB instance snapshots</a> in the <i>Amazon RDS User Guide</i>.</p>
     pub fn copy_tags_to_snapshot(mut self, input: bool) -> Self {
         self.inner = self.inner.copy_tags_to_snapshot(input);
         self
     }
-    /// <p>A value that indicates whether to copy all tags from the restored DB instance to snapshots of the DB instance.</p>
+    /// <p>Specifies whether to copy all tags from the restored DB instance to snapshots of the DB instance.</p>
     /// <p>In most cases, tags aren't copied by default. However, when you restore a DB instance from a DB snapshot, RDS checks whether you specify new tags. If yes, the new tags are added to the restored DB instance. If there are no new tags, RDS looks for the tags from the source DB instance for the DB snapshot, and then adds those tags to the restored DB instance.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.CopyTags"> Copying tags to DB instance snapshots</a> in the <i>Amazon RDS User Guide</i>.</p>
     pub fn set_copy_tags_to_snapshot(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_copy_tags_to_snapshot(input);
         self
     }
-    /// <p>A value that indicates whether to copy all tags from the restored DB instance to snapshots of the DB instance.</p>
+    /// <p>Specifies whether to copy all tags from the restored DB instance to snapshots of the DB instance.</p>
     /// <p>In most cases, tags aren't copied by default. However, when you restore a DB instance from a DB snapshot, RDS checks whether you specify new tags. If yes, the new tags are added to the restored DB instance. If there are no new tags, RDS looks for the tags from the source DB instance for the DB snapshot, and then adds those tags to the restored DB instance.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.CopyTags"> Copying tags to DB instance snapshots</a> in the <i>Amazon RDS User Guide</i>.</p>
     pub fn get_copy_tags_to_snapshot(&self) -> &::std::option::Option<bool> {
@@ -736,21 +745,21 @@ impl RestoreDBInstanceFromDBSnapshotFluentBuilder {
     pub fn get_domain_iam_role_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_domain_iam_role_name()
     }
-    /// <p>A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts. By default, mapping is disabled.</p>
+    /// <p>Specifies whether to enable mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts. By default, mapping is disabled.</p>
     /// <p>For more information about IAM database authentication, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS User Guide.</i> </p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
     pub fn enable_iam_database_authentication(mut self, input: bool) -> Self {
         self.inner = self.inner.enable_iam_database_authentication(input);
         self
     }
-    /// <p>A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts. By default, mapping is disabled.</p>
+    /// <p>Specifies whether to enable mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts. By default, mapping is disabled.</p>
     /// <p>For more information about IAM database authentication, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS User Guide.</i> </p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
     pub fn set_enable_iam_database_authentication(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_enable_iam_database_authentication(input);
         self
     }
-    /// <p>A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts. By default, mapping is disabled.</p>
+    /// <p>Specifies whether to enable mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts. By default, mapping is disabled.</p>
     /// <p>For more information about IAM database authentication, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS User Guide.</i> </p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
     pub fn get_enable_iam_database_authentication(&self) -> &::std::option::Option<bool> {
@@ -798,19 +807,19 @@ impl RestoreDBInstanceFromDBSnapshotFluentBuilder {
     pub fn get_processor_features(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProcessorFeature>> {
         self.inner.get_processor_features()
     }
-    /// <p>A value that indicates whether the DB instance class of the DB instance uses its default processor features.</p>
+    /// <p>Specifies whether the DB instance class of the DB instance uses its default processor features.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
     pub fn use_default_processor_features(mut self, input: bool) -> Self {
         self.inner = self.inner.use_default_processor_features(input);
         self
     }
-    /// <p>A value that indicates whether the DB instance class of the DB instance uses its default processor features.</p>
+    /// <p>Specifies whether the DB instance class of the DB instance uses its default processor features.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
     pub fn set_use_default_processor_features(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_use_default_processor_features(input);
         self
     }
-    /// <p>A value that indicates whether the DB instance class of the DB instance uses its default processor features.</p>
+    /// <p>Specifies whether the DB instance class of the DB instance uses its default processor features.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
     pub fn get_use_default_processor_features(&self) -> &::std::option::Option<bool> {
         self.inner.get_use_default_processor_features()
@@ -856,21 +865,21 @@ impl RestoreDBInstanceFromDBSnapshotFluentBuilder {
     pub fn get_db_parameter_group_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_db_parameter_group_name()
     }
-    /// <p>A value that indicates whether the DB instance has deletion protection enabled. The database can't be deleted when deletion protection is enabled. By default, deletion protection isn't enabled. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html"> Deleting a DB Instance</a>.</p>
+    /// <p>Specifies whether to enable deletion protection for the DB instance. The database can't be deleted when deletion protection is enabled. By default, deletion protection isn't enabled. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html"> Deleting a DB Instance</a>.</p>
     pub fn deletion_protection(mut self, input: bool) -> Self {
         self.inner = self.inner.deletion_protection(input);
         self
     }
-    /// <p>A value that indicates whether the DB instance has deletion protection enabled. The database can't be deleted when deletion protection is enabled. By default, deletion protection isn't enabled. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html"> Deleting a DB Instance</a>.</p>
+    /// <p>Specifies whether to enable deletion protection for the DB instance. The database can't be deleted when deletion protection is enabled. By default, deletion protection isn't enabled. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html"> Deleting a DB Instance</a>.</p>
     pub fn set_deletion_protection(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_deletion_protection(input);
         self
     }
-    /// <p>A value that indicates whether the DB instance has deletion protection enabled. The database can't be deleted when deletion protection is enabled. By default, deletion protection isn't enabled. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html"> Deleting a DB Instance</a>.</p>
+    /// <p>Specifies whether to enable deletion protection for the DB instance. The database can't be deleted when deletion protection is enabled. By default, deletion protection isn't enabled. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html"> Deleting a DB Instance</a>.</p>
     pub fn get_deletion_protection(&self) -> &::std::option::Option<bool> {
         self.inner.get_deletion_protection()
     }
-    /// <p>A value that indicates whether to enable a customer-owned IP address (CoIP) for an RDS on Outposts DB instance.</p>
+    /// <p>Specifies whether to enable a customer-owned IP address (CoIP) for an RDS on Outposts DB instance.</p>
     /// <p>A <i>CoIP</i> provides local or external connectivity to resources in your Outpost subnets through your on-premises network. For some use cases, a CoIP can provide lower latency for connections to the DB instance from outside of its virtual private cloud (VPC) on your local network.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
     /// <p>For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
@@ -879,7 +888,7 @@ impl RestoreDBInstanceFromDBSnapshotFluentBuilder {
         self.inner = self.inner.enable_customer_owned_ip(input);
         self
     }
-    /// <p>A value that indicates whether to enable a customer-owned IP address (CoIP) for an RDS on Outposts DB instance.</p>
+    /// <p>Specifies whether to enable a customer-owned IP address (CoIP) for an RDS on Outposts DB instance.</p>
     /// <p>A <i>CoIP</i> provides local or external connectivity to resources in your Outpost subnets through your on-premises network. For some use cases, a CoIP can provide lower latency for connections to the DB instance from outside of its virtual private cloud (VPC) on your local network.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
     /// <p>For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
@@ -888,7 +897,7 @@ impl RestoreDBInstanceFromDBSnapshotFluentBuilder {
         self.inner = self.inner.set_enable_customer_owned_ip(input);
         self
     }
-    /// <p>A value that indicates whether to enable a customer-owned IP address (CoIP) for an RDS on Outposts DB instance.</p>
+    /// <p>Specifies whether to enable a customer-owned IP address (CoIP) for an RDS on Outposts DB instance.</p>
     /// <p>A <i>CoIP</i> provides local or external connectivity to resources in your Outpost subnets through your on-premises network. For some use cases, a CoIP can provide lower latency for connections to the DB instance from outside of its virtual private cloud (VPC) on your local network.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
     /// <p>For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
@@ -952,7 +961,7 @@ impl RestoreDBInstanceFromDBSnapshotFluentBuilder {
         self.inner.get_backup_target()
     }
     /// <p>The network type of the DB instance.</p>
-    /// <p>Valid values:</p>
+    /// <p>Valid Values:</p>
     /// <ul>
     /// <li> <p> <code>IPV4</code> </p> </li>
     /// <li> <p> <code>DUAL</code> </p> </li>
@@ -964,7 +973,7 @@ impl RestoreDBInstanceFromDBSnapshotFluentBuilder {
         self
     }
     /// <p>The network type of the DB instance.</p>
-    /// <p>Valid values:</p>
+    /// <p>Valid Values:</p>
     /// <ul>
     /// <li> <p> <code>IPV4</code> </p> </li>
     /// <li> <p> <code>DUAL</code> </p> </li>
@@ -976,7 +985,7 @@ impl RestoreDBInstanceFromDBSnapshotFluentBuilder {
         self
     }
     /// <p>The network type of the DB instance.</p>
-    /// <p>Valid values:</p>
+    /// <p>Valid Values:</p>
     /// <ul>
     /// <li> <p> <code>IPV4</code> </p> </li>
     /// <li> <p> <code>DUAL</code> </p> </li>

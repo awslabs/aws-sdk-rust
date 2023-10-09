@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDevicePositionsOutput {
-    /// <p>Contains details about each device's last known position. These details includes the device ID, the time when the position was sampled on the device, the time that the service received the update, and the most recent coordinates.</p>
+    /// <p>Contains details about each device's last known position.</p>
     pub entries: ::std::option::Option<::std::vec::Vec<crate::types::ListDevicePositionsResponseEntry>>,
     /// <p>A pagination token indicating there are additional pages available. You can use the token in a following request to fetch the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListDevicePositionsOutput {
-    /// <p>Contains details about each device's last known position. These details includes the device ID, the time when the position was sampled on the device, the time that the service received the update, and the most recent coordinates.</p>
+    /// <p>Contains details about each device's last known position.</p>
     pub fn entries(&self) -> ::std::option::Option<&[crate::types::ListDevicePositionsResponseEntry]> {
         self.entries.as_deref()
     }
@@ -44,19 +44,19 @@ impl ListDevicePositionsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_entries`](Self::set_entries).
     ///
-    /// <p>Contains details about each device's last known position. These details includes the device ID, the time when the position was sampled on the device, the time that the service received the update, and the most recent coordinates.</p>
+    /// <p>Contains details about each device's last known position.</p>
     pub fn entries(mut self, input: crate::types::ListDevicePositionsResponseEntry) -> Self {
         let mut v = self.entries.unwrap_or_default();
         v.push(input);
         self.entries = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Contains details about each device's last known position. These details includes the device ID, the time when the position was sampled on the device, the time that the service received the update, and the most recent coordinates.</p>
+    /// <p>Contains details about each device's last known position.</p>
     pub fn set_entries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ListDevicePositionsResponseEntry>>) -> Self {
         self.entries = input;
         self
     }
-    /// <p>Contains details about each device's last known position. These details includes the device ID, the time when the position was sampled on the device, the time that the service received the update, and the most recent coordinates.</p>
+    /// <p>Contains details about each device's last known position.</p>
     pub fn get_entries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ListDevicePositionsResponseEntry>> {
         &self.entries
     }

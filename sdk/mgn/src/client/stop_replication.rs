@@ -19,6 +19,7 @@ impl super::Client {
     ///   - [`application_id(Option<String>)`](crate::operation::stop_replication::StopReplicationOutput::application_id): <p>Source server application ID.</p>
     ///   - [`user_provided_id(Option<String>)`](crate::operation::stop_replication::StopReplicationOutput::user_provided_id): <p>Source server user provided ID.</p>
     ///   - [`fqdn_for_action_framework(Option<String>)`](crate::operation::stop_replication::StopReplicationOutput::fqdn_for_action_framework): <p>Source server fqdn for action framework.</p>
+    ///   - [`connector_action(Option<SourceServerConnectorAction>)`](crate::operation::stop_replication::StopReplicationOutput::connector_action): <p>Source Server connector action.</p>
     /// - On failure, responds with [`SdkError<StopReplicationError>`](crate::operation::stop_replication::StopReplicationError)
     pub fn stop_replication(&self) -> crate::operation::stop_replication::builders::StopReplicationFluentBuilder {
         crate::operation::stop_replication::builders::StopReplicationFluentBuilder::new(self.handle.clone())

@@ -42,6 +42,8 @@ pub struct InputTemplate {
     pub timecode_source: ::std::option::Option<crate::types::InputTimecodeSource>,
     /// Specify the timecode that you want the service to use for this input's initial frame. To use this setting, you must set the Timecode source setting, located under the input settings, to Specified start. For more information about timecodes, see https://docs.aws.amazon.com/console/mediaconvert/timecode.
     pub timecode_start: ::std::option::Option<::std::string::String>,
+    /// Contains an array of video overlays.
+    pub video_overlays: ::std::option::Option<::std::vec::Vec<crate::types::VideoOverlay>>,
     /// Input video selectors contain the video settings for the input. Each of your inputs can have up to one video selector.
     pub video_selector: ::std::option::Option<crate::types::VideoSelector>,
 }
@@ -124,6 +126,10 @@ impl InputTemplate {
     pub fn timecode_start(&self) -> ::std::option::Option<&str> {
         self.timecode_start.as_deref()
     }
+    /// Contains an array of video overlays.
+    pub fn video_overlays(&self) -> ::std::option::Option<&[crate::types::VideoOverlay]> {
+        self.video_overlays.as_deref()
+    }
     /// Input video selectors contain the video settings for the input. Each of your inputs can have up to one video selector.
     pub fn video_selector(&self) -> ::std::option::Option<&crate::types::VideoSelector> {
         self.video_selector.as_ref()
@@ -159,6 +165,7 @@ pub struct InputTemplateBuilder {
     pub(crate) psi_control: ::std::option::Option<crate::types::InputPsiControl>,
     pub(crate) timecode_source: ::std::option::Option<crate::types::InputTimecodeSource>,
     pub(crate) timecode_start: ::std::option::Option<::std::string::String>,
+    pub(crate) video_overlays: ::std::option::Option<::std::vec::Vec<crate::types::VideoOverlay>>,
     pub(crate) video_selector: ::std::option::Option<crate::types::VideoSelector>,
 }
 impl InputTemplateBuilder {
@@ -463,6 +470,26 @@ impl InputTemplateBuilder {
     pub fn get_timecode_start(&self) -> &::std::option::Option<::std::string::String> {
         &self.timecode_start
     }
+    /// Appends an item to `video_overlays`.
+    ///
+    /// To override the contents of this collection use [`set_video_overlays`](Self::set_video_overlays).
+    ///
+    /// Contains an array of video overlays.
+    pub fn video_overlays(mut self, input: crate::types::VideoOverlay) -> Self {
+        let mut v = self.video_overlays.unwrap_or_default();
+        v.push(input);
+        self.video_overlays = ::std::option::Option::Some(v);
+        self
+    }
+    /// Contains an array of video overlays.
+    pub fn set_video_overlays(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VideoOverlay>>) -> Self {
+        self.video_overlays = input;
+        self
+    }
+    /// Contains an array of video overlays.
+    pub fn get_video_overlays(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VideoOverlay>> {
+        &self.video_overlays
+    }
     /// Input video selectors contain the video settings for the input. Each of your inputs can have up to one video selector.
     pub fn video_selector(mut self, input: crate::types::VideoSelector) -> Self {
         self.video_selector = ::std::option::Option::Some(input);
@@ -499,6 +526,7 @@ impl InputTemplateBuilder {
             psi_control: self.psi_control,
             timecode_source: self.timecode_source,
             timecode_start: self.timecode_start,
+            video_overlays: self.video_overlays,
             video_selector: self.video_selector,
         }
     }

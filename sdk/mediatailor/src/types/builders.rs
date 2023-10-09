@@ -3,6 +3,8 @@ pub use crate::types::_vod_source::VodSourceBuilder;
 
 pub use crate::types::_http_package_configuration::HttpPackageConfigurationBuilder;
 
+pub use crate::types::_ad_break_opportunity::AdBreakOpportunityBuilder;
+
 pub use crate::types::_source_location::SourceLocationBuilder;
 
 pub use crate::types::_segment_delivery_configuration::SegmentDeliveryConfigurationBuilder;

@@ -22,7 +22,7 @@ impl DescribeGatewayInformationInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeGatewayInformation`.
 ///
-/// <p>Returns metadata about a gateway such as its name, network interfaces, configured time zone, and the state (whether the gateway is running or not). To specify which gateway to describe, use the Amazon Resource Name (ARN) of the gateway in your request.</p>
+/// <p>Returns metadata about a gateway such as its name, network interfaces, time zone, status, and software version. To specify which gateway to describe, use the Amazon Resource Name (ARN) of the gateway in your request.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeGatewayInformationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

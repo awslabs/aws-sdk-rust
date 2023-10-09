@@ -69,6 +69,12 @@ pub fn ser_training_specification(
         }
         array_19.finish();
     }
+    if let Some(var_22) = &input.additional_s3_data_source {
+        #[allow(unused_mut)]
+        let mut object_23 = object.key("AdditionalS3DataSource").start_object();
+        crate::protocol_serde::shape_additional_s3_data_source::ser_additional_s3_data_source(&mut object_23, var_22)?;
+        object_23.finish();
+    }
     Ok(())
 }
 
@@ -126,6 +132,11 @@ where
                         "SupportedTuningJobObjectiveMetrics" => {
                             builder = builder.set_supported_tuning_job_objective_metrics(
                                 crate::protocol_serde::shape_hyper_parameter_tuning_job_objectives::de_hyper_parameter_tuning_job_objectives(tokens)?,
+                            );
+                        }
+                        "AdditionalS3DataSource" => {
+                            builder = builder.set_additional_s3_data_source(
+                                crate::protocol_serde::shape_additional_s3_data_source::de_additional_s3_data_source(tokens)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

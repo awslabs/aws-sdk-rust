@@ -25,13 +25,31 @@ pub use crate::types::error::_operation_in_progress_exception::OperationInProgre
 
 pub use crate::types::error::_resource_already_exists_exception::ResourceAlreadyExistsException;
 
+pub use crate::types::error::_resource_in_use_exception::ResourceInUseException;
+
+pub use crate::types::error::_incompatible_applications_exception::IncompatibleApplicationsException;
+
 pub use crate::types::error::_resource_creation_failed_exception::ResourceCreationFailedException;
 
+pub use crate::types::error::_operating_system_not_compatible_exception::OperatingSystemNotCompatibleException;
+
+pub use crate::types::error::_compute_not_compatible_exception::ComputeNotCompatibleException;
+
+pub use crate::types::error::_application_not_supported_exception::ApplicationNotSupportedException;
+
 mod _access_denied_exception;
+
+mod _application_not_supported_exception;
+
+mod _compute_not_compatible_exception;
+
+mod _incompatible_applications_exception;
 
 mod _invalid_parameter_values_exception;
 
 mod _invalid_resource_state_exception;
+
+mod _operating_system_not_compatible_exception;
 
 mod _operation_in_progress_exception;
 
@@ -42,6 +60,8 @@ mod _resource_already_exists_exception;
 mod _resource_associated_exception;
 
 mod _resource_creation_failed_exception;
+
+mod _resource_in_use_exception;
 
 mod _resource_limit_exceeded_exception;
 

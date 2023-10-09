@@ -172,6 +172,9 @@ pub(crate) fn de_get_read_set_metadata(
                             .transpose()?,
                     );
                 }
+                "etag" => {
+                    builder = builder.set_etag(crate::protocol_serde::shape_e_tag::de_e_tag(tokens)?);
+                }
                 "fileType" => {
                     builder = builder.set_file_type(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

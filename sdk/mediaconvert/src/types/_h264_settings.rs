@@ -16,6 +16,8 @@ pub struct H264Settings {
     pub codec_profile: ::std::option::Option<crate::types::H264CodecProfile>,
     /// Specify whether to allow the number of B-frames in your output GOP structure to vary or not depending on your input video content. To improve the subjective video quality of your output that has high-motion content: Leave blank or keep the default value Adaptive. MediaConvert will use fewer B-frames for high-motion video content than low-motion content. The maximum number of B- frames is limited by the value that you choose for B-frames between reference frames. To use the same number B-frames for all types of content: Choose Static.
     pub dynamic_sub_gop: ::std::option::Option<crate::types::H264DynamicSubGop>,
+    /// Optionally include or suppress markers at the end of your output that signal the end of the video stream. To include end of stream markers: Leave blank or keep the default value, Include. To not include end of stream markers: Choose Suppress. This is useful when your output will be inserted into another stream.
+    pub end_of_stream_markers: ::std::option::Option<crate::types::H264EndOfStreamMarkers>,
     /// Entropy encoding mode. Use CABAC (must be in Main or High profile) or CAVLC.
     pub entropy_encoding: ::std::option::Option<crate::types::H264EntropyEncoding>,
     /// The video encoding method for your MPEG-4 AVC output. Keep the default value, PAFF, to have MediaConvert use PAFF encoding for interlaced outputs. Choose Force field to disable PAFF encoding and create separate interlaced fields. Choose MBAFF to disable PAFF and have MediaConvert use MBAFF encoding for interlaced outputs.
@@ -113,6 +115,10 @@ impl H264Settings {
     /// Specify whether to allow the number of B-frames in your output GOP structure to vary or not depending on your input video content. To improve the subjective video quality of your output that has high-motion content: Leave blank or keep the default value Adaptive. MediaConvert will use fewer B-frames for high-motion video content than low-motion content. The maximum number of B- frames is limited by the value that you choose for B-frames between reference frames. To use the same number B-frames for all types of content: Choose Static.
     pub fn dynamic_sub_gop(&self) -> ::std::option::Option<&crate::types::H264DynamicSubGop> {
         self.dynamic_sub_gop.as_ref()
+    }
+    /// Optionally include or suppress markers at the end of your output that signal the end of the video stream. To include end of stream markers: Leave blank or keep the default value, Include. To not include end of stream markers: Choose Suppress. This is useful when your output will be inserted into another stream.
+    pub fn end_of_stream_markers(&self) -> ::std::option::Option<&crate::types::H264EndOfStreamMarkers> {
+        self.end_of_stream_markers.as_ref()
     }
     /// Entropy encoding mode. Use CABAC (must be in Main or High profile) or CAVLC.
     pub fn entropy_encoding(&self) -> ::std::option::Option<&crate::types::H264EntropyEncoding> {
@@ -276,6 +282,7 @@ pub struct H264SettingsBuilder {
     pub(crate) codec_level: ::std::option::Option<crate::types::H264CodecLevel>,
     pub(crate) codec_profile: ::std::option::Option<crate::types::H264CodecProfile>,
     pub(crate) dynamic_sub_gop: ::std::option::Option<crate::types::H264DynamicSubGop>,
+    pub(crate) end_of_stream_markers: ::std::option::Option<crate::types::H264EndOfStreamMarkers>,
     pub(crate) entropy_encoding: ::std::option::Option<crate::types::H264EntropyEncoding>,
     pub(crate) field_encoding: ::std::option::Option<crate::types::H264FieldEncoding>,
     pub(crate) flicker_adaptive_quantization: ::std::option::Option<crate::types::H264FlickerAdaptiveQuantization>,
@@ -397,6 +404,20 @@ impl H264SettingsBuilder {
     /// Specify whether to allow the number of B-frames in your output GOP structure to vary or not depending on your input video content. To improve the subjective video quality of your output that has high-motion content: Leave blank or keep the default value Adaptive. MediaConvert will use fewer B-frames for high-motion video content than low-motion content. The maximum number of B- frames is limited by the value that you choose for B-frames between reference frames. To use the same number B-frames for all types of content: Choose Static.
     pub fn get_dynamic_sub_gop(&self) -> &::std::option::Option<crate::types::H264DynamicSubGop> {
         &self.dynamic_sub_gop
+    }
+    /// Optionally include or suppress markers at the end of your output that signal the end of the video stream. To include end of stream markers: Leave blank or keep the default value, Include. To not include end of stream markers: Choose Suppress. This is useful when your output will be inserted into another stream.
+    pub fn end_of_stream_markers(mut self, input: crate::types::H264EndOfStreamMarkers) -> Self {
+        self.end_of_stream_markers = ::std::option::Option::Some(input);
+        self
+    }
+    /// Optionally include or suppress markers at the end of your output that signal the end of the video stream. To include end of stream markers: Leave blank or keep the default value, Include. To not include end of stream markers: Choose Suppress. This is useful when your output will be inserted into another stream.
+    pub fn set_end_of_stream_markers(mut self, input: ::std::option::Option<crate::types::H264EndOfStreamMarkers>) -> Self {
+        self.end_of_stream_markers = input;
+        self
+    }
+    /// Optionally include or suppress markers at the end of your output that signal the end of the video stream. To include end of stream markers: Leave blank or keep the default value, Include. To not include end of stream markers: Choose Suppress. This is useful when your output will be inserted into another stream.
+    pub fn get_end_of_stream_markers(&self) -> &::std::option::Option<crate::types::H264EndOfStreamMarkers> {
+        &self.end_of_stream_markers
     }
     /// Entropy encoding mode. Use CABAC (must be in Main or High profile) or CAVLC.
     pub fn entropy_encoding(mut self, input: crate::types::H264EntropyEncoding) -> Self {
@@ -911,6 +932,7 @@ impl H264SettingsBuilder {
             codec_level: self.codec_level,
             codec_profile: self.codec_profile,
             dynamic_sub_gop: self.dynamic_sub_gop,
+            end_of_stream_markers: self.end_of_stream_markers,
             entropy_encoding: self.entropy_encoding,
             field_encoding: self.field_encoding,
             flicker_adaptive_quantization: self.flicker_adaptive_quantization,

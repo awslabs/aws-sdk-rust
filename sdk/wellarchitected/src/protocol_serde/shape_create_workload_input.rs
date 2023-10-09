@@ -96,18 +96,27 @@ pub fn ser_create_workload_input(
     if let Some(var_31) = &input.review_owner {
         object.key("ReviewOwner").string(var_31.as_str());
     }
-    if let Some(var_32) = &input.tags {
-        #[allow(unused_mut)]
-        let mut object_33 = object.key("Tags").start_object();
-        for (key_34, value_35) in var_32 {
+    if let Some(var_32) = &input.review_template_arns {
+        let mut array_33 = object.key("ReviewTemplateArns").start_array();
+        for item_34 in var_32 {
             {
-                object_33.key(key_34.as_str()).string(value_35.as_str());
+                array_33.value().string(item_34.as_str());
             }
         }
-        object_33.finish();
+        array_33.finish();
     }
-    if let Some(var_36) = &input.workload_name {
-        object.key("WorkloadName").string(var_36.as_str());
+    if let Some(var_35) = &input.tags {
+        #[allow(unused_mut)]
+        let mut object_36 = object.key("Tags").start_object();
+        for (key_37, value_38) in var_35 {
+            {
+                object_36.key(key_37.as_str()).string(value_38.as_str());
+            }
+        }
+        object_36.finish();
+    }
+    if let Some(var_39) = &input.workload_name {
+        object.key("WorkloadName").string(var_39.as_str());
     }
     Ok(())
 }

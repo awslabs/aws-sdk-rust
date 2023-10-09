@@ -200,6 +200,9 @@ pub fn ser_aws_rds_db_cluster_details(
             .key("IamDatabaseAuthenticationEnabled")
             .boolean(input.iam_database_authentication_enabled);
     }
+    if input.auto_minor_version_upgrade {
+        object.key("AutoMinorVersionUpgrade").boolean(input.auto_minor_version_upgrade);
+    }
     Ok(())
 }
 
@@ -425,6 +428,10 @@ where
                         "IamDatabaseAuthenticationEnabled" => {
                             builder = builder
                                 .set_iam_database_authentication_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
+                        "AutoMinorVersionUpgrade" => {
+                            builder =
+                                builder.set_auto_minor_version_upgrade(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -8,7 +8,7 @@ pub struct ListHealthChecksInput {
     /// <p>For the value of <code>marker</code>, specify the value of <code>NextMarker</code> from the previous response, which is the ID of the first health check that Amazon Route 53 will return if you submit another request.</p>
     /// <p>If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, there are no more health checks to get.</p>
     pub marker: ::std::option::Option<::std::string::String>,
-    /// <p>The maximum number of health checks that you want <code>ListHealthChecks</code> to return in response to the current request. Amazon Route 53 returns a maximum of 100 items. If you set <code>MaxItems</code> to a value greater than 100, Route 53 returns only the first 100 health checks. </p>
+    /// <p>The maximum number of health checks that you want <code>ListHealthChecks</code> to return in response to the current request. Amazon Route 53 returns a maximum of 1000 items. If you set <code>MaxItems</code> to a value greater than 1000, Route 53 returns only the first 1000 health checks. </p>
     pub max_items: ::std::option::Option<i32>,
 }
 impl ListHealthChecksInput {
@@ -18,7 +18,7 @@ impl ListHealthChecksInput {
     pub fn marker(&self) -> ::std::option::Option<&str> {
         self.marker.as_deref()
     }
-    /// <p>The maximum number of health checks that you want <code>ListHealthChecks</code> to return in response to the current request. Amazon Route 53 returns a maximum of 100 items. If you set <code>MaxItems</code> to a value greater than 100, Route 53 returns only the first 100 health checks. </p>
+    /// <p>The maximum number of health checks that you want <code>ListHealthChecks</code> to return in response to the current request. Amazon Route 53 returns a maximum of 1000 items. If you set <code>MaxItems</code> to a value greater than 1000, Route 53 returns only the first 1000 health checks. </p>
     pub fn max_items(&self) -> ::std::option::Option<i32> {
         self.max_items
     }
@@ -58,17 +58,17 @@ impl ListHealthChecksInputBuilder {
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
         &self.marker
     }
-    /// <p>The maximum number of health checks that you want <code>ListHealthChecks</code> to return in response to the current request. Amazon Route 53 returns a maximum of 100 items. If you set <code>MaxItems</code> to a value greater than 100, Route 53 returns only the first 100 health checks. </p>
+    /// <p>The maximum number of health checks that you want <code>ListHealthChecks</code> to return in response to the current request. Amazon Route 53 returns a maximum of 1000 items. If you set <code>MaxItems</code> to a value greater than 1000, Route 53 returns only the first 1000 health checks. </p>
     pub fn max_items(mut self, input: i32) -> Self {
         self.max_items = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The maximum number of health checks that you want <code>ListHealthChecks</code> to return in response to the current request. Amazon Route 53 returns a maximum of 100 items. If you set <code>MaxItems</code> to a value greater than 100, Route 53 returns only the first 100 health checks. </p>
+    /// <p>The maximum number of health checks that you want <code>ListHealthChecks</code> to return in response to the current request. Amazon Route 53 returns a maximum of 1000 items. If you set <code>MaxItems</code> to a value greater than 1000, Route 53 returns only the first 1000 health checks. </p>
     pub fn set_max_items(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_items = input;
         self
     }
-    /// <p>The maximum number of health checks that you want <code>ListHealthChecks</code> to return in response to the current request. Amazon Route 53 returns a maximum of 100 items. If you set <code>MaxItems</code> to a value greater than 100, Route 53 returns only the first 100 health checks. </p>
+    /// <p>The maximum number of health checks that you want <code>ListHealthChecks</code> to return in response to the current request. Amazon Route 53 returns a maximum of 1000 items. If you set <code>MaxItems</code> to a value greater than 1000, Route 53 returns only the first 1000 health checks. </p>
     pub fn get_max_items(&self) -> &::std::option::Option<i32> {
         &self.max_items
     }

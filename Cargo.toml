@@ -1,11 +1,11 @@
 [workspace]
 exclude = [
-    "examples/cross_service",
     "examples/examples",
-    "examples/test-utils",
+    "examples/cross_service",
     "examples/webassembly",
-    "tests/no-default-features",
-    "tests/webassembly"
+    "examples/test-utils",
+    "tests/webassembly",
+    "tests/no-default-features"
 ]
 members = [
     "sdk/accessanalyzer",
@@ -126,6 +126,7 @@ members = [
     "sdk/dataexchange",
     "sdk/datapipeline",
     "sdk/datasync",
+    "sdk/datazone",
     "sdk/dax",
     "sdk/detective",
     "sdk/devicefarm",

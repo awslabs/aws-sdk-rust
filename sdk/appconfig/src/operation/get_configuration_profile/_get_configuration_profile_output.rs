@@ -21,6 +21,10 @@ pub struct GetConfigurationProfileOutput {
     /// <p> <code>AWS.AppConfig.FeatureFlags</code> </p>
     /// <p> <code>AWS.Freeform</code> </p>
     pub r#type: ::std::option::Option<::std::string::String>,
+    /// <p>The Amazon Resource Name of the Key Management Service key to encrypt new configuration data versions in the AppConfig hosted configuration store. This attribute is only used for <code>hosted</code> configuration types. To encrypt data managed in other configuration stores, see the documentation for how to specify an KMS key for that particular service.</p>
+    pub kms_key_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The Key Management Service key identifier (key ID, key alias, or key ARN) provided when the resource was created or updated.</p>
+    pub kms_key_identifier: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetConfigurationProfileOutput {
@@ -58,6 +62,14 @@ impl GetConfigurationProfileOutput {
     pub fn r#type(&self) -> ::std::option::Option<&str> {
         self.r#type.as_deref()
     }
+    /// <p>The Amazon Resource Name of the Key Management Service key to encrypt new configuration data versions in the AppConfig hosted configuration store. This attribute is only used for <code>hosted</code> configuration types. To encrypt data managed in other configuration stores, see the documentation for how to specify an KMS key for that particular service.</p>
+    pub fn kms_key_arn(&self) -> ::std::option::Option<&str> {
+        self.kms_key_arn.as_deref()
+    }
+    /// <p>The Key Management Service key identifier (key ID, key alias, or key ARN) provided when the resource was created or updated.</p>
+    pub fn kms_key_identifier(&self) -> ::std::option::Option<&str> {
+        self.kms_key_identifier.as_deref()
+    }
 }
 impl ::aws_http::request_id::RequestId for GetConfigurationProfileOutput {
     fn request_id(&self) -> Option<&str> {
@@ -83,6 +95,8 @@ pub struct GetConfigurationProfileOutputBuilder {
     pub(crate) retrieval_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) validators: ::std::option::Option<::std::vec::Vec<crate::types::Validator>>,
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
+    pub(crate) kms_key_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) kms_key_identifier: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetConfigurationProfileOutputBuilder {
@@ -210,6 +224,34 @@ impl GetConfigurationProfileOutputBuilder {
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.r#type
     }
+    /// <p>The Amazon Resource Name of the Key Management Service key to encrypt new configuration data versions in the AppConfig hosted configuration store. This attribute is only used for <code>hosted</code> configuration types. To encrypt data managed in other configuration stores, see the documentation for how to specify an KMS key for that particular service.</p>
+    pub fn kms_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.kms_key_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name of the Key Management Service key to encrypt new configuration data versions in the AppConfig hosted configuration store. This attribute is only used for <code>hosted</code> configuration types. To encrypt data managed in other configuration stores, see the documentation for how to specify an KMS key for that particular service.</p>
+    pub fn set_kms_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.kms_key_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name of the Key Management Service key to encrypt new configuration data versions in the AppConfig hosted configuration store. This attribute is only used for <code>hosted</code> configuration types. To encrypt data managed in other configuration stores, see the documentation for how to specify an KMS key for that particular service.</p>
+    pub fn get_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_arn
+    }
+    /// <p>The Key Management Service key identifier (key ID, key alias, or key ARN) provided when the resource was created or updated.</p>
+    pub fn kms_key_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.kms_key_identifier = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Key Management Service key identifier (key ID, key alias, or key ARN) provided when the resource was created or updated.</p>
+    pub fn set_kms_key_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.kms_key_identifier = input;
+        self
+    }
+    /// <p>The Key Management Service key identifier (key ID, key alias, or key ARN) provided when the resource was created or updated.</p>
+    pub fn get_kms_key_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_identifier
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -230,6 +272,8 @@ impl GetConfigurationProfileOutputBuilder {
             retrieval_role_arn: self.retrieval_role_arn,
             validators: self.validators,
             r#type: self.r#type,
+            kms_key_arn: self.kms_key_arn,
+            kms_key_identifier: self.kms_key_identifier,
             _request_id: self._request_id,
         }
     }

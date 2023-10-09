@@ -295,6 +295,8 @@ pub use crate::types::_h265_framerate_control::H265FramerateControl;
 
 pub use crate::types::_h265_flicker_adaptive_quantization::H265FlickerAdaptiveQuantization;
 
+pub use crate::types::_h265_end_of_stream_markers::H265EndOfStreamMarkers;
+
 pub use crate::types::_h265_dynamic_sub_gop::H265DynamicSubGop;
 
 pub use crate::types::_h265_codec_profile::H265CodecProfile;
@@ -354,6 +356,8 @@ pub use crate::types::_h264_flicker_adaptive_quantization::H264FlickerAdaptiveQu
 pub use crate::types::_h264_field_encoding::H264FieldEncoding;
 
 pub use crate::types::_h264_entropy_encoding::H264EntropyEncoding;
+
+pub use crate::types::_h264_end_of_stream_markers::H264EndOfStreamMarkers;
 
 pub use crate::types::_h264_dynamic_sub_gop::H264DynamicSubGop;
 
@@ -1029,7 +1033,13 @@ pub use crate::types::_color_space::ColorSpace;
 
 pub use crate::types::_alpha_behavior::AlphaBehavior;
 
+pub use crate::types::_video_overlay::VideoOverlay;
+
+pub use crate::types::_video_overlay_input::VideoOverlayInput;
+
 pub use crate::types::_input_timecode_source::InputTimecodeSource;
+
+pub use crate::types::_video_overlay_input_clipping::VideoOverlayInputClipping;
 
 pub use crate::types::_input_psi_control::InputPsiControl;
 
@@ -1645,6 +1655,8 @@ mod _h264_codec_profile;
 
 mod _h264_dynamic_sub_gop;
 
+mod _h264_end_of_stream_markers;
+
 mod _h264_entropy_encoding;
 
 mod _h264_field_encoding;
@@ -1698,6 +1710,8 @@ mod _h265_codec_level;
 mod _h265_codec_profile;
 
 mod _h265_dynamic_sub_gop;
+
+mod _h265_end_of_stream_markers;
 
 mod _h265_flicker_adaptive_quantization;
 
@@ -2246,6 +2260,12 @@ mod _video_codec_settings;
 mod _video_description;
 
 mod _video_detail;
+
+mod _video_overlay;
+
+mod _video_overlay_input;
+
+mod _video_overlay_input_clipping;
 
 mod _video_preprocessor;
 

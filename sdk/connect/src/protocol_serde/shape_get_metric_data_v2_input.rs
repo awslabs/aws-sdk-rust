@@ -29,34 +29,40 @@ pub fn ser_get_metric_data_v2_input(
         }
         array_7.finish();
     }
-    if let Some(var_9) = &input.max_results {
+    if let Some(var_9) = &input.interval {
+        #[allow(unused_mut)]
+        let mut object_10 = object.key("Interval").start_object();
+        crate::protocol_serde::shape_interval_details::ser_interval_details(&mut object_10, var_9)?;
+        object_10.finish();
+    }
+    if let Some(var_11) = &input.max_results {
         object.key("MaxResults").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_9).into()),
+            ::aws_smithy_types::Number::NegInt((*var_11).into()),
         );
     }
-    if let Some(var_10) = &input.metrics {
-        let mut array_11 = object.key("Metrics").start_array();
-        for item_12 in var_10 {
+    if let Some(var_12) = &input.metrics {
+        let mut array_13 = object.key("Metrics").start_array();
+        for item_14 in var_12 {
             {
                 #[allow(unused_mut)]
-                let mut object_13 = array_11.value().start_object();
-                crate::protocol_serde::shape_metric_v2::ser_metric_v2(&mut object_13, item_12)?;
-                object_13.finish();
+                let mut object_15 = array_13.value().start_object();
+                crate::protocol_serde::shape_metric_v2::ser_metric_v2(&mut object_15, item_14)?;
+                object_15.finish();
             }
         }
-        array_11.finish();
+        array_13.finish();
     }
-    if let Some(var_14) = &input.next_token {
-        object.key("NextToken").string(var_14.as_str());
+    if let Some(var_16) = &input.next_token {
+        object.key("NextToken").string(var_16.as_str());
     }
-    if let Some(var_15) = &input.resource_arn {
-        object.key("ResourceArn").string(var_15.as_str());
+    if let Some(var_17) = &input.resource_arn {
+        object.key("ResourceArn").string(var_17.as_str());
     }
-    if let Some(var_16) = &input.start_time {
+    if let Some(var_18) = &input.start_time {
         object
             .key("StartTime")
-            .date_time(var_16, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
+            .date_time(var_18, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     Ok(())
 }

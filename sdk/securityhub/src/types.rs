@@ -149,6 +149,66 @@ pub use crate::types::_resource::Resource;
 
 pub use crate::types::_resource_details::ResourceDetails;
 
+pub use crate::types::_aws_msk_cluster_details::AwsMskClusterDetails;
+
+pub use crate::types::_aws_msk_cluster_cluster_info_details::AwsMskClusterClusterInfoDetails;
+
+pub use crate::types::_aws_msk_cluster_cluster_info_client_authentication_details::AwsMskClusterClusterInfoClientAuthenticationDetails;
+
+pub use crate::types::_aws_msk_cluster_cluster_info_client_authentication_tls_details::AwsMskClusterClusterInfoClientAuthenticationTlsDetails;
+
+pub use crate::types::_aws_msk_cluster_cluster_info_client_authentication_unauthenticated_details::AwsMskClusterClusterInfoClientAuthenticationUnauthenticatedDetails;
+
+pub use crate::types::_aws_msk_cluster_cluster_info_client_authentication_sasl_details::AwsMskClusterClusterInfoClientAuthenticationSaslDetails;
+
+pub use crate::types::_aws_msk_cluster_cluster_info_client_authentication_sasl_scram_details::AwsMskClusterClusterInfoClientAuthenticationSaslScramDetails;
+
+pub use crate::types::_aws_msk_cluster_cluster_info_client_authentication_sasl_iam_details::AwsMskClusterClusterInfoClientAuthenticationSaslIamDetails;
+
+pub use crate::types::_aws_msk_cluster_cluster_info_encryption_info_details::AwsMskClusterClusterInfoEncryptionInfoDetails;
+
+pub use crate::types::_aws_msk_cluster_cluster_info_encryption_info_encryption_at_rest_details::AwsMskClusterClusterInfoEncryptionInfoEncryptionAtRestDetails;
+
+pub use crate::types::_aws_msk_cluster_cluster_info_encryption_info_encryption_in_transit_details::AwsMskClusterClusterInfoEncryptionInfoEncryptionInTransitDetails;
+
+pub use crate::types::_aws_route53_hosted_zone_details::AwsRoute53HostedZoneDetails;
+
+pub use crate::types::_aws_route53_query_logging_config_details::AwsRoute53QueryLoggingConfigDetails;
+
+pub use crate::types::_cloud_watch_logs_log_group_arn_config_details::CloudWatchLogsLogGroupArnConfigDetails;
+
+pub use crate::types::_aws_route53_hosted_zone_vpc_details::AwsRoute53HostedZoneVpcDetails;
+
+pub use crate::types::_aws_route53_hosted_zone_object_details::AwsRoute53HostedZoneObjectDetails;
+
+pub use crate::types::_aws_route53_hosted_zone_config_details::AwsRoute53HostedZoneConfigDetails;
+
+pub use crate::types::_aws_dms_replication_instance_details::AwsDmsReplicationInstanceDetails;
+
+pub use crate::types::_aws_dms_replication_instance_vpc_security_groups_details::AwsDmsReplicationInstanceVpcSecurityGroupsDetails;
+
+pub use crate::types::_aws_dms_replication_instance_replication_subnet_group_details::AwsDmsReplicationInstanceReplicationSubnetGroupDetails;
+
+pub use crate::types::_aws_dms_replication_task_details::AwsDmsReplicationTaskDetails;
+
+pub use crate::types::_aws_events_endpoint_details::AwsEventsEndpointDetails;
+
+pub use crate::types::_aws_events_endpoint_routing_config_details::AwsEventsEndpointRoutingConfigDetails;
+
+pub use crate::types::_aws_events_endpoint_routing_config_failover_config_details::AwsEventsEndpointRoutingConfigFailoverConfigDetails;
+
+pub use crate::types::_aws_events_endpoint_routing_config_failover_config_secondary_details::AwsEventsEndpointRoutingConfigFailoverConfigSecondaryDetails;
+
+pub use crate::types::_aws_events_endpoint_routing_config_failover_config_primary_details::AwsEventsEndpointRoutingConfigFailoverConfigPrimaryDetails;
+
+pub use crate::types::_aws_events_endpoint_replication_config_details::AwsEventsEndpointReplicationConfigDetails;
+
+pub use crate::types::_aws_events_endpoint_event_buses_details::AwsEventsEndpointEventBusesDetails;
+
+pub use crate::types::_aws_dms_endpoint_details::AwsDmsEndpointDetails;
+
+pub use crate::types::_aws_events_eventbus_details::AwsEventsEventbusDetails;
+
 pub use crate::types::_aws_athena_work_group_details::AwsAthenaWorkGroupDetails;
 
 pub use crate::types::_aws_athena_work_group_configuration_details::AwsAthenaWorkGroupConfigurationDetails;
@@ -1509,6 +1569,16 @@ mod _aws_code_build_project_vpc_config;
 
 mod _aws_cors_configuration;
 
+mod _aws_dms_endpoint_details;
+
+mod _aws_dms_replication_instance_details;
+
+mod _aws_dms_replication_instance_replication_subnet_group_details;
+
+mod _aws_dms_replication_instance_vpc_security_groups_details;
+
+mod _aws_dms_replication_task_details;
+
 mod _aws_dynamo_db_table_attribute_definition;
 
 mod _aws_dynamo_db_table_billing_mode_summary;
@@ -1871,6 +1941,22 @@ mod _aws_elbv2_load_balancer_details;
 
 mod _aws_event_schemas_registry_details;
 
+mod _aws_events_endpoint_details;
+
+mod _aws_events_endpoint_event_buses_details;
+
+mod _aws_events_endpoint_replication_config_details;
+
+mod _aws_events_endpoint_routing_config_details;
+
+mod _aws_events_endpoint_routing_config_failover_config_details;
+
+mod _aws_events_endpoint_routing_config_failover_config_primary_details;
+
+mod _aws_events_endpoint_routing_config_failover_config_secondary_details;
+
+mod _aws_events_eventbus_details;
+
 mod _aws_guard_duty_detector_data_sources_cloud_trail_details;
 
 mod _aws_guard_duty_detector_data_sources_details;
@@ -1954,6 +2040,28 @@ mod _aws_lambda_function_vpc_config;
 mod _aws_lambda_layer_version_details;
 
 mod _aws_mount_point;
+
+mod _aws_msk_cluster_cluster_info_client_authentication_details;
+
+mod _aws_msk_cluster_cluster_info_client_authentication_sasl_details;
+
+mod _aws_msk_cluster_cluster_info_client_authentication_sasl_iam_details;
+
+mod _aws_msk_cluster_cluster_info_client_authentication_sasl_scram_details;
+
+mod _aws_msk_cluster_cluster_info_client_authentication_tls_details;
+
+mod _aws_msk_cluster_cluster_info_client_authentication_unauthenticated_details;
+
+mod _aws_msk_cluster_cluster_info_details;
+
+mod _aws_msk_cluster_cluster_info_encryption_info_details;
+
+mod _aws_msk_cluster_cluster_info_encryption_info_encryption_at_rest_details;
+
+mod _aws_msk_cluster_cluster_info_encryption_info_encryption_in_transit_details;
+
+mod _aws_msk_cluster_details;
 
 mod _aws_network_firewall_firewall_details;
 
@@ -2068,6 +2176,16 @@ mod _aws_redshift_cluster_resize_info;
 mod _aws_redshift_cluster_restore_status;
 
 mod _aws_redshift_cluster_vpc_security_group;
+
+mod _aws_route53_hosted_zone_config_details;
+
+mod _aws_route53_hosted_zone_details;
+
+mod _aws_route53_hosted_zone_object_details;
+
+mod _aws_route53_hosted_zone_vpc_details;
+
+mod _aws_route53_query_logging_config_details;
 
 mod _aws_s3_account_public_access_block_details;
 
@@ -2254,6 +2372,8 @@ mod _city;
 mod _classification_result;
 
 mod _classification_status;
+
+mod _cloud_watch_logs_log_group_arn_config_details;
 
 mod _code_vulnerabilities_file_path;
 

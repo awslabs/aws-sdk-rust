@@ -17,6 +17,8 @@ pub struct GetHostedConfigurationVersionOutput {
     pub content_type: ::std::option::Option<::std::string::String>,
     /// <p>A user-defined label for an AppConfig hosted configuration version.</p>
     pub version_label: ::std::option::Option<::std::string::String>,
+    /// <p>The Amazon Resource Name of the Key Management Service key that was used to encrypt this specific version of the configuration data in the AppConfig hosted configuration store.</p>
+    pub kms_key_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetHostedConfigurationVersionOutput {
@@ -48,6 +50,10 @@ impl GetHostedConfigurationVersionOutput {
     pub fn version_label(&self) -> ::std::option::Option<&str> {
         self.version_label.as_deref()
     }
+    /// <p>The Amazon Resource Name of the Key Management Service key that was used to encrypt this specific version of the configuration data in the AppConfig hosted configuration store.</p>
+    pub fn kms_key_arn(&self) -> ::std::option::Option<&str> {
+        self.kms_key_arn.as_deref()
+    }
 }
 impl ::std::fmt::Debug for GetHostedConfigurationVersionOutput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -59,6 +65,7 @@ impl ::std::fmt::Debug for GetHostedConfigurationVersionOutput {
         formatter.field("content", &"*** Sensitive Data Redacted ***");
         formatter.field("content_type", &self.content_type);
         formatter.field("version_label", &self.version_label);
+        formatter.field("kms_key_arn", &self.kms_key_arn);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
@@ -86,6 +93,7 @@ pub struct GetHostedConfigurationVersionOutputBuilder {
     pub(crate) content: ::std::option::Option<::aws_smithy_types::Blob>,
     pub(crate) content_type: ::std::option::Option<::std::string::String>,
     pub(crate) version_label: ::std::option::Option<::std::string::String>,
+    pub(crate) kms_key_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetHostedConfigurationVersionOutputBuilder {
@@ -187,6 +195,20 @@ impl GetHostedConfigurationVersionOutputBuilder {
     pub fn get_version_label(&self) -> &::std::option::Option<::std::string::String> {
         &self.version_label
     }
+    /// <p>The Amazon Resource Name of the Key Management Service key that was used to encrypt this specific version of the configuration data in the AppConfig hosted configuration store.</p>
+    pub fn kms_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.kms_key_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name of the Key Management Service key that was used to encrypt this specific version of the configuration data in the AppConfig hosted configuration store.</p>
+    pub fn set_kms_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.kms_key_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name of the Key Management Service key that was used to encrypt this specific version of the configuration data in the AppConfig hosted configuration store.</p>
+    pub fn get_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_arn
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -206,6 +228,7 @@ impl GetHostedConfigurationVersionOutputBuilder {
             content: self.content,
             content_type: self.content_type,
             version_label: self.version_label,
+            kms_key_arn: self.kms_key_arn,
             _request_id: self._request_id,
         }
     }
@@ -220,6 +243,7 @@ impl ::std::fmt::Debug for GetHostedConfigurationVersionOutputBuilder {
         formatter.field("content", &"*** Sensitive Data Redacted ***");
         formatter.field("content_type", &self.content_type);
         formatter.field("version_label", &self.version_label);
+        formatter.field("kms_key_arn", &self.kms_key_arn);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }

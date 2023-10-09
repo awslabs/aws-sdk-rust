@@ -6,7 +6,7 @@
 pub struct ResetDbClusterParameterGroupInput {
     /// <p>The name of the DB cluster parameter group to reset.</p>
     pub db_cluster_parameter_group_name: ::std::option::Option<::std::string::String>,
-    /// <p>A value that indicates whether to reset all parameters in the DB cluster parameter group to their default values. You can't use this parameter if there is a list of parameter names specified for the <code>Parameters</code> parameter.</p>
+    /// <p>Specifies whether to reset all parameters in the DB cluster parameter group to their default values. You can't use this parameter if there is a list of parameter names specified for the <code>Parameters</code> parameter.</p>
     pub reset_all_parameters: ::std::option::Option<bool>,
     /// <p>A list of parameter names in the DB cluster parameter group to reset to the default values. You can't use this parameter if the <code>ResetAllParameters</code> parameter is enabled.</p>
     pub parameters: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>,
@@ -16,7 +16,7 @@ impl ResetDbClusterParameterGroupInput {
     pub fn db_cluster_parameter_group_name(&self) -> ::std::option::Option<&str> {
         self.db_cluster_parameter_group_name.as_deref()
     }
-    /// <p>A value that indicates whether to reset all parameters in the DB cluster parameter group to their default values. You can't use this parameter if there is a list of parameter names specified for the <code>Parameters</code> parameter.</p>
+    /// <p>Specifies whether to reset all parameters in the DB cluster parameter group to their default values. You can't use this parameter if there is a list of parameter names specified for the <code>Parameters</code> parameter.</p>
     pub fn reset_all_parameters(&self) -> ::std::option::Option<bool> {
         self.reset_all_parameters
     }
@@ -55,17 +55,17 @@ impl ResetDbClusterParameterGroupInputBuilder {
     pub fn get_db_cluster_parameter_group_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.db_cluster_parameter_group_name
     }
-    /// <p>A value that indicates whether to reset all parameters in the DB cluster parameter group to their default values. You can't use this parameter if there is a list of parameter names specified for the <code>Parameters</code> parameter.</p>
+    /// <p>Specifies whether to reset all parameters in the DB cluster parameter group to their default values. You can't use this parameter if there is a list of parameter names specified for the <code>Parameters</code> parameter.</p>
     pub fn reset_all_parameters(mut self, input: bool) -> Self {
         self.reset_all_parameters = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A value that indicates whether to reset all parameters in the DB cluster parameter group to their default values. You can't use this parameter if there is a list of parameter names specified for the <code>Parameters</code> parameter.</p>
+    /// <p>Specifies whether to reset all parameters in the DB cluster parameter group to their default values. You can't use this parameter if there is a list of parameter names specified for the <code>Parameters</code> parameter.</p>
     pub fn set_reset_all_parameters(mut self, input: ::std::option::Option<bool>) -> Self {
         self.reset_all_parameters = input;
         self
     }
-    /// <p>A value that indicates whether to reset all parameters in the DB cluster parameter group to their default values. You can't use this parameter if there is a list of parameter names specified for the <code>Parameters</code> parameter.</p>
+    /// <p>Specifies whether to reset all parameters in the DB cluster parameter group to their default values. You can't use this parameter if there is a list of parameter names specified for the <code>Parameters</code> parameter.</p>
     pub fn get_reset_all_parameters(&self) -> &::std::option::Option<bool> {
         &self.reset_all_parameters
     }

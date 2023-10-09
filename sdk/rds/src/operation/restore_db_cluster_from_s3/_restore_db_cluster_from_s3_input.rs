@@ -85,17 +85,17 @@ pub struct RestoreDbClusterFromS3Input {
     pub preferred_maintenance_window: ::std::option::Option<::std::string::String>,
     /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    /// <p>A value that indicates whether the restored DB cluster is encrypted.</p>
+    /// <p>Specifies whether the restored DB cluster is encrypted.</p>
     pub storage_encrypted: ::std::option::Option<bool>,
     /// <p>The Amazon Web Services KMS key identifier for an encrypted DB cluster.</p>
     /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. To use a KMS key in a different Amazon Web Services account, specify the key ARN or alias ARN.</p>
     /// <p>If the StorageEncrypted parameter is enabled, and you do not specify a value for the <code>KmsKeyId</code> parameter, then Amazon RDS will use your default KMS key. There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.</p>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
-    /// <p>A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts. By default, mapping isn't enabled.</p>
+    /// <p>Specifies whether to enable mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts. By default, mapping isn't enabled.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database Authentication</a> in the <i>Amazon Aurora User Guide</i>.</p>
     pub enable_iam_database_authentication: ::std::option::Option<bool>,
     /// <p>The identifier for the database engine that was backed up to create the files stored in the Amazon S3 bucket.</p>
-    /// <p>Valid values: <code>mysql</code> </p>
+    /// <p>Valid Values: <code>mysql</code> </p>
     pub source_engine: ::std::option::Option<::std::string::String>,
     /// <p>The version of the database that the backup files were created from.</p>
     /// <p>MySQL versions 5.7 and 8.0 are supported.</p>
@@ -121,9 +121,9 @@ pub struct RestoreDbClusterFromS3Input {
     /// <p>Possible values are <code>audit</code>, <code>error</code>, <code>general</code>, and <code>slowquery</code>.</p>
     /// <p>For more information about exporting CloudWatch Logs for Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User Guide</i>.</p>
     pub enable_cloudwatch_logs_exports: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>A value that indicates whether the DB cluster has deletion protection enabled. The database can't be deleted when deletion protection is enabled. By default, deletion protection isn't enabled.</p>
+    /// <p>Specifies whether to enable deletion protection for the DB cluster. The database can't be deleted when deletion protection is enabled. By default, deletion protection isn't enabled.</p>
     pub deletion_protection: ::std::option::Option<bool>,
-    /// <p>A value that indicates whether to copy all tags from the restored DB cluster to snapshots of the restored DB cluster. The default is not to copy them.</p>
+    /// <p>Specifies whether to copy all tags from the restored DB cluster to snapshots of the restored DB cluster. The default is not to copy them.</p>
     pub copy_tags_to_snapshot: ::std::option::Option<bool>,
     /// <p>Specify the Active Directory directory ID to restore the DB cluster in. The domain must be created prior to this operation.</p>
     /// <p>For Amazon Aurora DB clusters, Amazon RDS can use Kerberos Authentication to authenticate users that connect to the DB cluster. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/kerberos-authentication.html">Kerberos Authentication</a> in the <i>Amazon Aurora User Guide</i>.</p>
@@ -134,7 +134,7 @@ pub struct RestoreDbClusterFromS3Input {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html">Using Amazon Aurora Serverless v2</a> in the <i>Amazon Aurora User Guide</i>.</p>
     pub serverless_v2_scaling_configuration: ::std::option::Option<crate::types::ServerlessV2ScalingConfiguration>,
     /// <p>The network type of the DB cluster.</p>
-    /// <p>Valid values:</p>
+    /// <p>Valid Values:</p>
     /// <ul>
     /// <li> <p> <code>IPV4</code> </p> </li>
     /// <li> <p> <code>DUAL</code> </p> </li>
@@ -142,7 +142,7 @@ pub struct RestoreDbClusterFromS3Input {
     /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i> </p>
     pub network_type: ::std::option::Option<::std::string::String>,
-    /// <p>A value that indicates whether to manage the master user password with Amazon Web Services Secrets Manager.</p>
+    /// <p>Specifies whether to manage the master user password with Amazon Web Services Secrets Manager.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon Aurora User Guide.</i> </p>
     /// <p>Constraints:</p>
     /// <ul>
@@ -156,7 +156,7 @@ pub struct RestoreDbClusterFromS3Input {
     /// <p>There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.</p>
     pub master_user_secret_kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the storage type to be associated with the DB cluster.</p>
-    /// <p>Valid values: <code>aurora</code>, <code>aurora-iopt1</code> </p>
+    /// <p>Valid Values: <code>aurora</code>, <code>aurora-iopt1</code> </p>
     /// <p>Default: <code>aurora</code> </p>
     /// <p>Valid for: Aurora DB clusters only</p>
     pub storage_type: ::std::option::Option<::std::string::String>,
@@ -278,7 +278,7 @@ impl RestoreDbClusterFromS3Input {
     pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
-    /// <p>A value that indicates whether the restored DB cluster is encrypted.</p>
+    /// <p>Specifies whether the restored DB cluster is encrypted.</p>
     pub fn storage_encrypted(&self) -> ::std::option::Option<bool> {
         self.storage_encrypted
     }
@@ -288,13 +288,13 @@ impl RestoreDbClusterFromS3Input {
     pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
-    /// <p>A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts. By default, mapping isn't enabled.</p>
+    /// <p>Specifies whether to enable mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts. By default, mapping isn't enabled.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database Authentication</a> in the <i>Amazon Aurora User Guide</i>.</p>
     pub fn enable_iam_database_authentication(&self) -> ::std::option::Option<bool> {
         self.enable_iam_database_authentication
     }
     /// <p>The identifier for the database engine that was backed up to create the files stored in the Amazon S3 bucket.</p>
-    /// <p>Valid values: <code>mysql</code> </p>
+    /// <p>Valid Values: <code>mysql</code> </p>
     pub fn source_engine(&self) -> ::std::option::Option<&str> {
         self.source_engine.as_deref()
     }
@@ -334,11 +334,11 @@ impl RestoreDbClusterFromS3Input {
     pub fn enable_cloudwatch_logs_exports(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.enable_cloudwatch_logs_exports.as_deref()
     }
-    /// <p>A value that indicates whether the DB cluster has deletion protection enabled. The database can't be deleted when deletion protection is enabled. By default, deletion protection isn't enabled.</p>
+    /// <p>Specifies whether to enable deletion protection for the DB cluster. The database can't be deleted when deletion protection is enabled. By default, deletion protection isn't enabled.</p>
     pub fn deletion_protection(&self) -> ::std::option::Option<bool> {
         self.deletion_protection
     }
-    /// <p>A value that indicates whether to copy all tags from the restored DB cluster to snapshots of the restored DB cluster. The default is not to copy them.</p>
+    /// <p>Specifies whether to copy all tags from the restored DB cluster to snapshots of the restored DB cluster. The default is not to copy them.</p>
     pub fn copy_tags_to_snapshot(&self) -> ::std::option::Option<bool> {
         self.copy_tags_to_snapshot
     }
@@ -357,7 +357,7 @@ impl RestoreDbClusterFromS3Input {
         self.serverless_v2_scaling_configuration.as_ref()
     }
     /// <p>The network type of the DB cluster.</p>
-    /// <p>Valid values:</p>
+    /// <p>Valid Values:</p>
     /// <ul>
     /// <li> <p> <code>IPV4</code> </p> </li>
     /// <li> <p> <code>DUAL</code> </p> </li>
@@ -367,7 +367,7 @@ impl RestoreDbClusterFromS3Input {
     pub fn network_type(&self) -> ::std::option::Option<&str> {
         self.network_type.as_deref()
     }
-    /// <p>A value that indicates whether to manage the master user password with Amazon Web Services Secrets Manager.</p>
+    /// <p>Specifies whether to manage the master user password with Amazon Web Services Secrets Manager.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon Aurora User Guide.</i> </p>
     /// <p>Constraints:</p>
     /// <ul>
@@ -385,7 +385,7 @@ impl RestoreDbClusterFromS3Input {
         self.master_user_secret_kms_key_id.as_deref()
     }
     /// <p>Specifies the storage type to be associated with the DB cluster.</p>
-    /// <p>Valid values: <code>aurora</code>, <code>aurora-iopt1</code> </p>
+    /// <p>Valid Values: <code>aurora</code>, <code>aurora-iopt1</code> </p>
     /// <p>Default: <code>aurora</code> </p>
     /// <p>Valid for: Aurora DB clusters only</p>
     pub fn storage_type(&self) -> ::std::option::Option<&str> {
@@ -841,17 +841,17 @@ impl RestoreDbClusterFromS3InputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }
-    /// <p>A value that indicates whether the restored DB cluster is encrypted.</p>
+    /// <p>Specifies whether the restored DB cluster is encrypted.</p>
     pub fn storage_encrypted(mut self, input: bool) -> Self {
         self.storage_encrypted = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A value that indicates whether the restored DB cluster is encrypted.</p>
+    /// <p>Specifies whether the restored DB cluster is encrypted.</p>
     pub fn set_storage_encrypted(mut self, input: ::std::option::Option<bool>) -> Self {
         self.storage_encrypted = input;
         self
     }
-    /// <p>A value that indicates whether the restored DB cluster is encrypted.</p>
+    /// <p>Specifies whether the restored DB cluster is encrypted.</p>
     pub fn get_storage_encrypted(&self) -> &::std::option::Option<bool> {
         &self.storage_encrypted
     }
@@ -875,37 +875,37 @@ impl RestoreDbClusterFromS3InputBuilder {
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.kms_key_id
     }
-    /// <p>A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts. By default, mapping isn't enabled.</p>
+    /// <p>Specifies whether to enable mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts. By default, mapping isn't enabled.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database Authentication</a> in the <i>Amazon Aurora User Guide</i>.</p>
     pub fn enable_iam_database_authentication(mut self, input: bool) -> Self {
         self.enable_iam_database_authentication = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts. By default, mapping isn't enabled.</p>
+    /// <p>Specifies whether to enable mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts. By default, mapping isn't enabled.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database Authentication</a> in the <i>Amazon Aurora User Guide</i>.</p>
     pub fn set_enable_iam_database_authentication(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enable_iam_database_authentication = input;
         self
     }
-    /// <p>A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts. By default, mapping isn't enabled.</p>
+    /// <p>Specifies whether to enable mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts. By default, mapping isn't enabled.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database Authentication</a> in the <i>Amazon Aurora User Guide</i>.</p>
     pub fn get_enable_iam_database_authentication(&self) -> &::std::option::Option<bool> {
         &self.enable_iam_database_authentication
     }
     /// <p>The identifier for the database engine that was backed up to create the files stored in the Amazon S3 bucket.</p>
-    /// <p>Valid values: <code>mysql</code> </p>
+    /// <p>Valid Values: <code>mysql</code> </p>
     pub fn source_engine(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_engine = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier for the database engine that was backed up to create the files stored in the Amazon S3 bucket.</p>
-    /// <p>Valid values: <code>mysql</code> </p>
+    /// <p>Valid Values: <code>mysql</code> </p>
     pub fn set_source_engine(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_engine = input;
         self
     }
     /// <p>The identifier for the database engine that was backed up to create the files stored in the Amazon S3 bucket.</p>
-    /// <p>Valid values: <code>mysql</code> </p>
+    /// <p>Valid Values: <code>mysql</code> </p>
     pub fn get_source_engine(&self) -> &::std::option::Option<::std::string::String> {
         &self.source_engine
     }
@@ -1035,31 +1035,31 @@ impl RestoreDbClusterFromS3InputBuilder {
     pub fn get_enable_cloudwatch_logs_exports(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.enable_cloudwatch_logs_exports
     }
-    /// <p>A value that indicates whether the DB cluster has deletion protection enabled. The database can't be deleted when deletion protection is enabled. By default, deletion protection isn't enabled.</p>
+    /// <p>Specifies whether to enable deletion protection for the DB cluster. The database can't be deleted when deletion protection is enabled. By default, deletion protection isn't enabled.</p>
     pub fn deletion_protection(mut self, input: bool) -> Self {
         self.deletion_protection = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A value that indicates whether the DB cluster has deletion protection enabled. The database can't be deleted when deletion protection is enabled. By default, deletion protection isn't enabled.</p>
+    /// <p>Specifies whether to enable deletion protection for the DB cluster. The database can't be deleted when deletion protection is enabled. By default, deletion protection isn't enabled.</p>
     pub fn set_deletion_protection(mut self, input: ::std::option::Option<bool>) -> Self {
         self.deletion_protection = input;
         self
     }
-    /// <p>A value that indicates whether the DB cluster has deletion protection enabled. The database can't be deleted when deletion protection is enabled. By default, deletion protection isn't enabled.</p>
+    /// <p>Specifies whether to enable deletion protection for the DB cluster. The database can't be deleted when deletion protection is enabled. By default, deletion protection isn't enabled.</p>
     pub fn get_deletion_protection(&self) -> &::std::option::Option<bool> {
         &self.deletion_protection
     }
-    /// <p>A value that indicates whether to copy all tags from the restored DB cluster to snapshots of the restored DB cluster. The default is not to copy them.</p>
+    /// <p>Specifies whether to copy all tags from the restored DB cluster to snapshots of the restored DB cluster. The default is not to copy them.</p>
     pub fn copy_tags_to_snapshot(mut self, input: bool) -> Self {
         self.copy_tags_to_snapshot = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A value that indicates whether to copy all tags from the restored DB cluster to snapshots of the restored DB cluster. The default is not to copy them.</p>
+    /// <p>Specifies whether to copy all tags from the restored DB cluster to snapshots of the restored DB cluster. The default is not to copy them.</p>
     pub fn set_copy_tags_to_snapshot(mut self, input: ::std::option::Option<bool>) -> Self {
         self.copy_tags_to_snapshot = input;
         self
     }
-    /// <p>A value that indicates whether to copy all tags from the restored DB cluster to snapshots of the restored DB cluster. The default is not to copy them.</p>
+    /// <p>Specifies whether to copy all tags from the restored DB cluster to snapshots of the restored DB cluster. The default is not to copy them.</p>
     pub fn get_copy_tags_to_snapshot(&self) -> &::std::option::Option<bool> {
         &self.copy_tags_to_snapshot
     }
@@ -1112,7 +1112,7 @@ impl RestoreDbClusterFromS3InputBuilder {
         &self.serverless_v2_scaling_configuration
     }
     /// <p>The network type of the DB cluster.</p>
-    /// <p>Valid values:</p>
+    /// <p>Valid Values:</p>
     /// <ul>
     /// <li> <p> <code>IPV4</code> </p> </li>
     /// <li> <p> <code>DUAL</code> </p> </li>
@@ -1124,7 +1124,7 @@ impl RestoreDbClusterFromS3InputBuilder {
         self
     }
     /// <p>The network type of the DB cluster.</p>
-    /// <p>Valid values:</p>
+    /// <p>Valid Values:</p>
     /// <ul>
     /// <li> <p> <code>IPV4</code> </p> </li>
     /// <li> <p> <code>DUAL</code> </p> </li>
@@ -1136,7 +1136,7 @@ impl RestoreDbClusterFromS3InputBuilder {
         self
     }
     /// <p>The network type of the DB cluster.</p>
-    /// <p>Valid values:</p>
+    /// <p>Valid Values:</p>
     /// <ul>
     /// <li> <p> <code>IPV4</code> </p> </li>
     /// <li> <p> <code>DUAL</code> </p> </li>
@@ -1146,7 +1146,7 @@ impl RestoreDbClusterFromS3InputBuilder {
     pub fn get_network_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.network_type
     }
-    /// <p>A value that indicates whether to manage the master user password with Amazon Web Services Secrets Manager.</p>
+    /// <p>Specifies whether to manage the master user password with Amazon Web Services Secrets Manager.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon Aurora User Guide.</i> </p>
     /// <p>Constraints:</p>
     /// <ul>
@@ -1156,7 +1156,7 @@ impl RestoreDbClusterFromS3InputBuilder {
         self.manage_master_user_password = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A value that indicates whether to manage the master user password with Amazon Web Services Secrets Manager.</p>
+    /// <p>Specifies whether to manage the master user password with Amazon Web Services Secrets Manager.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon Aurora User Guide.</i> </p>
     /// <p>Constraints:</p>
     /// <ul>
@@ -1166,7 +1166,7 @@ impl RestoreDbClusterFromS3InputBuilder {
         self.manage_master_user_password = input;
         self
     }
-    /// <p>A value that indicates whether to manage the master user password with Amazon Web Services Secrets Manager.</p>
+    /// <p>Specifies whether to manage the master user password with Amazon Web Services Secrets Manager.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon Aurora User Guide.</i> </p>
     /// <p>Constraints:</p>
     /// <ul>
@@ -1202,7 +1202,7 @@ impl RestoreDbClusterFromS3InputBuilder {
         &self.master_user_secret_kms_key_id
     }
     /// <p>Specifies the storage type to be associated with the DB cluster.</p>
-    /// <p>Valid values: <code>aurora</code>, <code>aurora-iopt1</code> </p>
+    /// <p>Valid Values: <code>aurora</code>, <code>aurora-iopt1</code> </p>
     /// <p>Default: <code>aurora</code> </p>
     /// <p>Valid for: Aurora DB clusters only</p>
     pub fn storage_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -1210,7 +1210,7 @@ impl RestoreDbClusterFromS3InputBuilder {
         self
     }
     /// <p>Specifies the storage type to be associated with the DB cluster.</p>
-    /// <p>Valid values: <code>aurora</code>, <code>aurora-iopt1</code> </p>
+    /// <p>Valid Values: <code>aurora</code>, <code>aurora-iopt1</code> </p>
     /// <p>Default: <code>aurora</code> </p>
     /// <p>Valid for: Aurora DB clusters only</p>
     pub fn set_storage_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -1218,7 +1218,7 @@ impl RestoreDbClusterFromS3InputBuilder {
         self
     }
     /// <p>Specifies the storage type to be associated with the DB cluster.</p>
-    /// <p>Valid values: <code>aurora</code>, <code>aurora-iopt1</code> </p>
+    /// <p>Valid Values: <code>aurora</code>, <code>aurora-iopt1</code> </p>
     /// <p>Default: <code>aurora</code> </p>
     /// <p>Valid for: Aurora DB clusters only</p>
     pub fn get_storage_type(&self) -> &::std::option::Option<::std::string::String> {

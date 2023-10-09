@@ -11,7 +11,7 @@ impl super::Client {
     /// - On success, responds with [`DownloadDbLogFilePortionOutput`](crate::operation::download_db_log_file_portion::DownloadDbLogFilePortionOutput) with field(s):
     ///   - [`log_file_data(Option<String>)`](crate::operation::download_db_log_file_portion::DownloadDbLogFilePortionOutput::log_file_data): <p>Entries from the specified log file.</p>
     ///   - [`marker(Option<String>)`](crate::operation::download_db_log_file_portion::DownloadDbLogFilePortionOutput::marker): <p>A pagination token that can be used in a later <code>DownloadDBLogFilePortion</code> request.</p>
-    ///   - [`additional_data_pending(bool)`](crate::operation::download_db_log_file_portion::DownloadDbLogFilePortionOutput::additional_data_pending): <p>Boolean value that if true, indicates there is more data to be downloaded.</p>
+    ///   - [`additional_data_pending(bool)`](crate::operation::download_db_log_file_portion::DownloadDbLogFilePortionOutput::additional_data_pending): <p>A Boolean value that, if true, indicates there is more data to be downloaded.</p>
     /// - On failure, responds with [`SdkError<DownloadDBLogFilePortionError>`](crate::operation::download_db_log_file_portion::DownloadDBLogFilePortionError)
     pub fn download_db_log_file_portion(&self) -> crate::operation::download_db_log_file_portion::builders::DownloadDBLogFilePortionFluentBuilder {
         crate::operation::download_db_log_file_portion::builders::DownloadDBLogFilePortionFluentBuilder::new(self.handle.clone())

@@ -202,6 +202,7 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | Amazon Connect Service | [aws-sdk-connect](https://crates.io/crates/aws-sdk-connect) ([docs](https://docs.rs/aws-sdk-connect)) |
 | Amazon Connect Wisdom Service | [aws-sdk-wisdom](https://crates.io/crates/aws-sdk-wisdom) ([docs](https://docs.rs/aws-sdk-wisdom)) |
 | Amazon Data Lifecycle Manager | [aws-sdk-dlm](https://crates.io/crates/aws-sdk-dlm) ([docs](https://docs.rs/aws-sdk-dlm)) |
+| Amazon DataZone | [aws-sdk-datazone](https://crates.io/crates/aws-sdk-datazone) ([docs](https://docs.rs/aws-sdk-datazone)) |
 | Amazon Detective | [aws-sdk-detective](https://crates.io/crates/aws-sdk-detective) ([docs](https://docs.rs/aws-sdk-detective)) |
 | Amazon DevOps Guru | [aws-sdk-devopsguru](https://crates.io/crates/aws-sdk-devopsguru) ([docs](https://docs.rs/aws-sdk-devopsguru)) |
 | Amazon DocumentDB Elastic Clusters | [aws-sdk-docdbelastic](https://crates.io/crates/aws-sdk-docdbelastic) ([docs](https://docs.rs/aws-sdk-docdbelastic)) |

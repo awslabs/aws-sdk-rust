@@ -11,6 +11,8 @@ pub struct ListDevicePositionsInput {
     /// <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page.</p>
     /// <p>Default value: <code>null</code> </p>
     pub next_token: ::std::option::Option<::std::string::String>,
+    /// <p>The geomerty used to filter device positions.</p>
+    pub filter_geometry: ::std::option::Option<crate::types::TrackingFilterGeometry>,
 }
 impl ListDevicePositionsInput {
     /// <p>The tracker resource containing the requested devices.</p>
@@ -27,6 +29,10 @@ impl ListDevicePositionsInput {
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
+    /// <p>The geomerty used to filter device positions.</p>
+    pub fn filter_geometry(&self) -> ::std::option::Option<&crate::types::TrackingFilterGeometry> {
+        self.filter_geometry.as_ref()
+    }
 }
 impl ListDevicePositionsInput {
     /// Creates a new builder-style object to manufacture [`ListDevicePositionsInput`](crate::operation::list_device_positions::ListDevicePositionsInput).
@@ -42,6 +48,7 @@ pub struct ListDevicePositionsInputBuilder {
     pub(crate) tracker_name: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
+    pub(crate) filter_geometry: ::std::option::Option<crate::types::TrackingFilterGeometry>,
 }
 impl ListDevicePositionsInputBuilder {
     /// <p>The tracker resource containing the requested devices.</p>
@@ -92,6 +99,20 @@ impl ListDevicePositionsInputBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
+    /// <p>The geomerty used to filter device positions.</p>
+    pub fn filter_geometry(mut self, input: crate::types::TrackingFilterGeometry) -> Self {
+        self.filter_geometry = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The geomerty used to filter device positions.</p>
+    pub fn set_filter_geometry(mut self, input: ::std::option::Option<crate::types::TrackingFilterGeometry>) -> Self {
+        self.filter_geometry = input;
+        self
+    }
+    /// <p>The geomerty used to filter device positions.</p>
+    pub fn get_filter_geometry(&self) -> &::std::option::Option<crate::types::TrackingFilterGeometry> {
+        &self.filter_geometry
+    }
     /// Consumes the builder and constructs a [`ListDevicePositionsInput`](crate::operation::list_device_positions::ListDevicePositionsInput).
     pub fn build(
         self,
@@ -101,6 +122,7 @@ impl ListDevicePositionsInputBuilder {
             tracker_name: self.tracker_name,
             max_results: self.max_results,
             next_token: self.next_token,
+            filter_geometry: self.filter_geometry,
         })
     }
 }

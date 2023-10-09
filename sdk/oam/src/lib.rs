@@ -15,9 +15,9 @@
 //! **Please Note: The SDK is currently in Developer Preview and is intended strictly for
 //! feedback purposes only. Do not use this SDK for production workloads.**
 //!
-//! Use Amazon CloudWatch Observability Access Manager to create and manage links between source accounts and monitoring accounts by using _CloudWatch cross-account observability_. With CloudWatch cross-account observability, you can monitor and troubleshoot applications that span multiple accounts within a Region. Seamlessly search, visualize, and analyze your metrics, logs, and traces in any of the linked accounts without account boundaries.
+//! Use Amazon CloudWatch Observability Access Manager to create and manage links between source accounts and monitoring accounts by using _CloudWatch cross-account observability_. With CloudWatch cross-account observability, you can monitor and troubleshoot applications that span multiple accounts within a Region. Seamlessly search, visualize, and analyze your metrics, logs, traces, and Application Insights applications in any of the linked accounts without account boundaries.
 //!
-//! Set up one or more Amazon Web Services accounts as _monitoring accounts_ and link them with multiple _source accounts_. A monitoring account is a central Amazon Web Services account that can view and interact with observability data generated from source accounts. A source account is an individual Amazon Web Services account that generates observability data for the resources that reside in it. Source accounts share their observability data with the monitoring account. The shared observability data can include metrics in Amazon CloudWatch, logs in Amazon CloudWatch Logs, and traces in X-Ray.
+//! Set up one or more Amazon Web Services accounts as _monitoring accounts_ and link them with multiple _source accounts_. A monitoring account is a central Amazon Web Services account that can view and interact with observability data generated from source accounts. A source account is an individual Amazon Web Services account that generates observability data for the resources that reside in it. Source accounts share their observability data with the monitoring account. The shared observability data can include metrics in Amazon CloudWatch, logs in Amazon CloudWatch Logs, traces in X-Ray, and applications in Amazon CloudWatch Application Insights.
 //!
 //! ## Getting Started
 //!
@@ -31,7 +31,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = "0.56.1"
-//! aws-sdk-oam = "0.11.0"
+//! aws-sdk-oam = "0.11.1"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

@@ -40,7 +40,7 @@ pub struct RestoreDbClusterToPointInTimeInput {
     /// <p>Example: <code>2015-03-07T23:45:00Z</code> </p>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub restore_to_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>A value that indicates whether to restore the DB cluster to the latest restorable backup time. By default, the DB cluster isn't restored to the latest restorable backup time.</p>
+    /// <p>Specifies whether to restore the DB cluster to the latest restorable backup time. By default, the DB cluster isn't restored to the latest restorable backup time.</p>
     /// <p>Constraints: Can't be specified if <code>RestoreToTime</code> parameter is provided.</p>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub use_latest_restorable_time: ::std::option::Option<bool>,
@@ -73,7 +73,7 @@ pub struct RestoreDbClusterToPointInTimeInput {
     /// <p>If <code>DBClusterIdentifier</code> refers to a DB cluster that isn't encrypted, then the restore request is rejected.</p>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
-    /// <p>A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts. By default, mapping isn't enabled.</p>
+    /// <p>Specifies whether to enable mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts. By default, mapping isn't enabled.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database Authentication</a> in the <i>Amazon Aurora User Guide</i>.</p>
     /// <p>Valid for: Aurora DB clusters only</p>
     pub enable_iam_database_authentication: ::std::option::Option<bool>,
@@ -109,17 +109,17 @@ pub struct RestoreDbClusterToPointInTimeInput {
     /// </ul>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub db_cluster_parameter_group_name: ::std::option::Option<::std::string::String>,
-    /// <p>A value that indicates whether the DB cluster has deletion protection enabled. The database can't be deleted when deletion protection is enabled. By default, deletion protection isn't enabled.</p>
+    /// <p>Specifies whether to enable deletion protection for the DB cluster. The database can't be deleted when deletion protection is enabled. By default, deletion protection isn't enabled.</p>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub deletion_protection: ::std::option::Option<bool>,
-    /// <p>A value that indicates whether to copy all tags from the restored DB cluster to snapshots of the restored DB cluster. The default is not to copy them.</p>
+    /// <p>Specifies whether to copy all tags from the restored DB cluster to snapshots of the restored DB cluster. The default is not to copy them.</p>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub copy_tags_to_snapshot: ::std::option::Option<bool>,
-    /// <p>Specify the Active Directory directory ID to restore the DB cluster in. The domain must be created prior to this operation.</p>
+    /// <p>The Active Directory directory ID to restore the DB cluster in. The domain must be created prior to this operation.</p>
     /// <p>For Amazon Aurora DB clusters, Amazon RDS can use Kerberos Authentication to authenticate users that connect to the DB cluster. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/kerberos-authentication.html">Kerberos Authentication</a> in the <i>Amazon Aurora User Guide</i>.</p>
     /// <p>Valid for: Aurora DB clusters only</p>
     pub domain: ::std::option::Option<::std::string::String>,
-    /// <p>Specify the name of the IAM role to be used when making API calls to the Directory Service.</p>
+    /// <p>The name of the IAM role to be used when making API calls to the Directory Service.</p>
     /// <p>Valid for: Aurora DB clusters only</p>
     pub domain_iam_role_name: ::std::option::Option<::std::string::String>,
     /// <p>For DB clusters in <code>serverless</code> DB engine mode, the scaling properties of the DB cluster.</p>
@@ -134,11 +134,11 @@ pub struct RestoreDbClusterToPointInTimeInput {
     pub db_cluster_instance_class: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the storage type to be associated with the DB cluster.</p>
     /// <p>When specified for a Multi-AZ DB cluster, a value for the <code>Iops</code> parameter is required.</p>
-    /// <p>Valid values: <code>aurora</code>, <code>aurora-iopt1</code> (Aurora DB clusters); <code>io1</code> (Multi-AZ DB clusters)</p>
+    /// <p>Valid Values: <code>aurora</code>, <code>aurora-iopt1</code> (Aurora DB clusters); <code>io1</code> (Multi-AZ DB clusters)</p>
     /// <p>Default: <code>aurora</code> (Aurora DB clusters); <code>io1</code> (Multi-AZ DB clusters)</p>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub storage_type: ::std::option::Option<::std::string::String>,
-    /// <p>A value that indicates whether the DB cluster is publicly accessible.</p>
+    /// <p>Specifies whether the DB cluster is publicly accessible.</p>
     /// <p>When the DB cluster is publicly accessible, its Domain Name System (DNS) endpoint resolves to the private IP address from within the DB cluster's virtual private cloud (VPC). It resolves to the public IP address from outside of the DB cluster's VPC. Access to the DB cluster is ultimately controlled by the security group it uses. That public access is not permitted if the security group assigned to the DB cluster doesn't permit it.</p>
     /// <p>When the DB cluster isn't publicly accessible, it is an internal DB cluster with a DNS name that resolves to a private IP address.</p>
     /// <p>Default: The default behavior varies depending on whether <code>DBSubnetGroupName</code> is specified.</p>
@@ -163,7 +163,7 @@ pub struct RestoreDbClusterToPointInTimeInput {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html">Using Amazon Aurora Serverless v2</a> in the <i>Amazon Aurora User Guide</i>.</p>
     pub serverless_v2_scaling_configuration: ::std::option::Option<crate::types::ServerlessV2ScalingConfiguration>,
     /// <p>The network type of the DB cluster.</p>
-    /// <p>Valid values:</p>
+    /// <p>Valid Values:</p>
     /// <ul>
     /// <li> <p> <code>IPV4</code> </p> </li>
     /// <li> <p> <code>DUAL</code> </p> </li>
@@ -220,7 +220,7 @@ impl RestoreDbClusterToPointInTimeInput {
     pub fn restore_to_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.restore_to_time.as_ref()
     }
-    /// <p>A value that indicates whether to restore the DB cluster to the latest restorable backup time. By default, the DB cluster isn't restored to the latest restorable backup time.</p>
+    /// <p>Specifies whether to restore the DB cluster to the latest restorable backup time. By default, the DB cluster isn't restored to the latest restorable backup time.</p>
     /// <p>Constraints: Can't be specified if <code>RestoreToTime</code> parameter is provided.</p>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn use_latest_restorable_time(&self) -> ::std::option::Option<bool> {
@@ -267,7 +267,7 @@ impl RestoreDbClusterToPointInTimeInput {
     pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
-    /// <p>A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts. By default, mapping isn't enabled.</p>
+    /// <p>Specifies whether to enable mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts. By default, mapping isn't enabled.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database Authentication</a> in the <i>Amazon Aurora User Guide</i>.</p>
     /// <p>Valid for: Aurora DB clusters only</p>
     pub fn enable_iam_database_authentication(&self) -> ::std::option::Option<bool> {
@@ -311,23 +311,23 @@ impl RestoreDbClusterToPointInTimeInput {
     pub fn db_cluster_parameter_group_name(&self) -> ::std::option::Option<&str> {
         self.db_cluster_parameter_group_name.as_deref()
     }
-    /// <p>A value that indicates whether the DB cluster has deletion protection enabled. The database can't be deleted when deletion protection is enabled. By default, deletion protection isn't enabled.</p>
+    /// <p>Specifies whether to enable deletion protection for the DB cluster. The database can't be deleted when deletion protection is enabled. By default, deletion protection isn't enabled.</p>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn deletion_protection(&self) -> ::std::option::Option<bool> {
         self.deletion_protection
     }
-    /// <p>A value that indicates whether to copy all tags from the restored DB cluster to snapshots of the restored DB cluster. The default is not to copy them.</p>
+    /// <p>Specifies whether to copy all tags from the restored DB cluster to snapshots of the restored DB cluster. The default is not to copy them.</p>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn copy_tags_to_snapshot(&self) -> ::std::option::Option<bool> {
         self.copy_tags_to_snapshot
     }
-    /// <p>Specify the Active Directory directory ID to restore the DB cluster in. The domain must be created prior to this operation.</p>
+    /// <p>The Active Directory directory ID to restore the DB cluster in. The domain must be created prior to this operation.</p>
     /// <p>For Amazon Aurora DB clusters, Amazon RDS can use Kerberos Authentication to authenticate users that connect to the DB cluster. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/kerberos-authentication.html">Kerberos Authentication</a> in the <i>Amazon Aurora User Guide</i>.</p>
     /// <p>Valid for: Aurora DB clusters only</p>
     pub fn domain(&self) -> ::std::option::Option<&str> {
         self.domain.as_deref()
     }
-    /// <p>Specify the name of the IAM role to be used when making API calls to the Directory Service.</p>
+    /// <p>The name of the IAM role to be used when making API calls to the Directory Service.</p>
     /// <p>Valid for: Aurora DB clusters only</p>
     pub fn domain_iam_role_name(&self) -> ::std::option::Option<&str> {
         self.domain_iam_role_name.as_deref()
@@ -350,13 +350,13 @@ impl RestoreDbClusterToPointInTimeInput {
     }
     /// <p>Specifies the storage type to be associated with the DB cluster.</p>
     /// <p>When specified for a Multi-AZ DB cluster, a value for the <code>Iops</code> parameter is required.</p>
-    /// <p>Valid values: <code>aurora</code>, <code>aurora-iopt1</code> (Aurora DB clusters); <code>io1</code> (Multi-AZ DB clusters)</p>
+    /// <p>Valid Values: <code>aurora</code>, <code>aurora-iopt1</code> (Aurora DB clusters); <code>io1</code> (Multi-AZ DB clusters)</p>
     /// <p>Default: <code>aurora</code> (Aurora DB clusters); <code>io1</code> (Multi-AZ DB clusters)</p>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn storage_type(&self) -> ::std::option::Option<&str> {
         self.storage_type.as_deref()
     }
-    /// <p>A value that indicates whether the DB cluster is publicly accessible.</p>
+    /// <p>Specifies whether the DB cluster is publicly accessible.</p>
     /// <p>When the DB cluster is publicly accessible, its Domain Name System (DNS) endpoint resolves to the private IP address from within the DB cluster's virtual private cloud (VPC). It resolves to the public IP address from outside of the DB cluster's VPC. Access to the DB cluster is ultimately controlled by the security group it uses. That public access is not permitted if the security group assigned to the DB cluster doesn't permit it.</p>
     /// <p>When the DB cluster isn't publicly accessible, it is an internal DB cluster with a DNS name that resolves to a private IP address.</p>
     /// <p>Default: The default behavior varies depending on whether <code>DBSubnetGroupName</code> is specified.</p>
@@ -387,7 +387,7 @@ impl RestoreDbClusterToPointInTimeInput {
         self.serverless_v2_scaling_configuration.as_ref()
     }
     /// <p>The network type of the DB cluster.</p>
-    /// <p>Valid values:</p>
+    /// <p>Valid Values:</p>
     /// <ul>
     /// <li> <p> <code>IPV4</code> </p> </li>
     /// <li> <p> <code>DUAL</code> </p> </li>
@@ -584,21 +584,21 @@ impl RestoreDbClusterToPointInTimeInputBuilder {
     pub fn get_restore_to_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.restore_to_time
     }
-    /// <p>A value that indicates whether to restore the DB cluster to the latest restorable backup time. By default, the DB cluster isn't restored to the latest restorable backup time.</p>
+    /// <p>Specifies whether to restore the DB cluster to the latest restorable backup time. By default, the DB cluster isn't restored to the latest restorable backup time.</p>
     /// <p>Constraints: Can't be specified if <code>RestoreToTime</code> parameter is provided.</p>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn use_latest_restorable_time(mut self, input: bool) -> Self {
         self.use_latest_restorable_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A value that indicates whether to restore the DB cluster to the latest restorable backup time. By default, the DB cluster isn't restored to the latest restorable backup time.</p>
+    /// <p>Specifies whether to restore the DB cluster to the latest restorable backup time. By default, the DB cluster isn't restored to the latest restorable backup time.</p>
     /// <p>Constraints: Can't be specified if <code>RestoreToTime</code> parameter is provided.</p>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn set_use_latest_restorable_time(mut self, input: ::std::option::Option<bool>) -> Self {
         self.use_latest_restorable_time = input;
         self
     }
-    /// <p>A value that indicates whether to restore the DB cluster to the latest restorable backup time. By default, the DB cluster isn't restored to the latest restorable backup time.</p>
+    /// <p>Specifies whether to restore the DB cluster to the latest restorable backup time. By default, the DB cluster isn't restored to the latest restorable backup time.</p>
     /// <p>Constraints: Can't be specified if <code>RestoreToTime</code> parameter is provided.</p>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn get_use_latest_restorable_time(&self) -> &::std::option::Option<bool> {
@@ -751,21 +751,21 @@ impl RestoreDbClusterToPointInTimeInputBuilder {
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.kms_key_id
     }
-    /// <p>A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts. By default, mapping isn't enabled.</p>
+    /// <p>Specifies whether to enable mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts. By default, mapping isn't enabled.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database Authentication</a> in the <i>Amazon Aurora User Guide</i>.</p>
     /// <p>Valid for: Aurora DB clusters only</p>
     pub fn enable_iam_database_authentication(mut self, input: bool) -> Self {
         self.enable_iam_database_authentication = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts. By default, mapping isn't enabled.</p>
+    /// <p>Specifies whether to enable mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts. By default, mapping isn't enabled.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database Authentication</a> in the <i>Amazon Aurora User Guide</i>.</p>
     /// <p>Valid for: Aurora DB clusters only</p>
     pub fn set_enable_iam_database_authentication(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enable_iam_database_authentication = input;
         self
     }
-    /// <p>A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts. By default, mapping isn't enabled.</p>
+    /// <p>Specifies whether to enable mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts. By default, mapping isn't enabled.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database Authentication</a> in the <i>Amazon Aurora User Guide</i>.</p>
     /// <p>Valid for: Aurora DB clusters only</p>
     pub fn get_enable_iam_database_authentication(&self) -> &::std::option::Option<bool> {
@@ -897,73 +897,73 @@ impl RestoreDbClusterToPointInTimeInputBuilder {
     pub fn get_db_cluster_parameter_group_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.db_cluster_parameter_group_name
     }
-    /// <p>A value that indicates whether the DB cluster has deletion protection enabled. The database can't be deleted when deletion protection is enabled. By default, deletion protection isn't enabled.</p>
+    /// <p>Specifies whether to enable deletion protection for the DB cluster. The database can't be deleted when deletion protection is enabled. By default, deletion protection isn't enabled.</p>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn deletion_protection(mut self, input: bool) -> Self {
         self.deletion_protection = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A value that indicates whether the DB cluster has deletion protection enabled. The database can't be deleted when deletion protection is enabled. By default, deletion protection isn't enabled.</p>
+    /// <p>Specifies whether to enable deletion protection for the DB cluster. The database can't be deleted when deletion protection is enabled. By default, deletion protection isn't enabled.</p>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn set_deletion_protection(mut self, input: ::std::option::Option<bool>) -> Self {
         self.deletion_protection = input;
         self
     }
-    /// <p>A value that indicates whether the DB cluster has deletion protection enabled. The database can't be deleted when deletion protection is enabled. By default, deletion protection isn't enabled.</p>
+    /// <p>Specifies whether to enable deletion protection for the DB cluster. The database can't be deleted when deletion protection is enabled. By default, deletion protection isn't enabled.</p>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn get_deletion_protection(&self) -> &::std::option::Option<bool> {
         &self.deletion_protection
     }
-    /// <p>A value that indicates whether to copy all tags from the restored DB cluster to snapshots of the restored DB cluster. The default is not to copy them.</p>
+    /// <p>Specifies whether to copy all tags from the restored DB cluster to snapshots of the restored DB cluster. The default is not to copy them.</p>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn copy_tags_to_snapshot(mut self, input: bool) -> Self {
         self.copy_tags_to_snapshot = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A value that indicates whether to copy all tags from the restored DB cluster to snapshots of the restored DB cluster. The default is not to copy them.</p>
+    /// <p>Specifies whether to copy all tags from the restored DB cluster to snapshots of the restored DB cluster. The default is not to copy them.</p>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn set_copy_tags_to_snapshot(mut self, input: ::std::option::Option<bool>) -> Self {
         self.copy_tags_to_snapshot = input;
         self
     }
-    /// <p>A value that indicates whether to copy all tags from the restored DB cluster to snapshots of the restored DB cluster. The default is not to copy them.</p>
+    /// <p>Specifies whether to copy all tags from the restored DB cluster to snapshots of the restored DB cluster. The default is not to copy them.</p>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn get_copy_tags_to_snapshot(&self) -> &::std::option::Option<bool> {
         &self.copy_tags_to_snapshot
     }
-    /// <p>Specify the Active Directory directory ID to restore the DB cluster in. The domain must be created prior to this operation.</p>
+    /// <p>The Active Directory directory ID to restore the DB cluster in. The domain must be created prior to this operation.</p>
     /// <p>For Amazon Aurora DB clusters, Amazon RDS can use Kerberos Authentication to authenticate users that connect to the DB cluster. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/kerberos-authentication.html">Kerberos Authentication</a> in the <i>Amazon Aurora User Guide</i>.</p>
     /// <p>Valid for: Aurora DB clusters only</p>
     pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Specify the Active Directory directory ID to restore the DB cluster in. The domain must be created prior to this operation.</p>
+    /// <p>The Active Directory directory ID to restore the DB cluster in. The domain must be created prior to this operation.</p>
     /// <p>For Amazon Aurora DB clusters, Amazon RDS can use Kerberos Authentication to authenticate users that connect to the DB cluster. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/kerberos-authentication.html">Kerberos Authentication</a> in the <i>Amazon Aurora User Guide</i>.</p>
     /// <p>Valid for: Aurora DB clusters only</p>
     pub fn set_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain = input;
         self
     }
-    /// <p>Specify the Active Directory directory ID to restore the DB cluster in. The domain must be created prior to this operation.</p>
+    /// <p>The Active Directory directory ID to restore the DB cluster in. The domain must be created prior to this operation.</p>
     /// <p>For Amazon Aurora DB clusters, Amazon RDS can use Kerberos Authentication to authenticate users that connect to the DB cluster. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/kerberos-authentication.html">Kerberos Authentication</a> in the <i>Amazon Aurora User Guide</i>.</p>
     /// <p>Valid for: Aurora DB clusters only</p>
     pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
         &self.domain
     }
-    /// <p>Specify the name of the IAM role to be used when making API calls to the Directory Service.</p>
+    /// <p>The name of the IAM role to be used when making API calls to the Directory Service.</p>
     /// <p>Valid for: Aurora DB clusters only</p>
     pub fn domain_iam_role_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_iam_role_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Specify the name of the IAM role to be used when making API calls to the Directory Service.</p>
+    /// <p>The name of the IAM role to be used when making API calls to the Directory Service.</p>
     /// <p>Valid for: Aurora DB clusters only</p>
     pub fn set_domain_iam_role_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain_iam_role_name = input;
         self
     }
-    /// <p>Specify the name of the IAM role to be used when making API calls to the Directory Service.</p>
+    /// <p>The name of the IAM role to be used when making API calls to the Directory Service.</p>
     /// <p>Valid for: Aurora DB clusters only</p>
     pub fn get_domain_iam_role_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.domain_iam_role_name
@@ -1024,7 +1024,7 @@ impl RestoreDbClusterToPointInTimeInputBuilder {
     }
     /// <p>Specifies the storage type to be associated with the DB cluster.</p>
     /// <p>When specified for a Multi-AZ DB cluster, a value for the <code>Iops</code> parameter is required.</p>
-    /// <p>Valid values: <code>aurora</code>, <code>aurora-iopt1</code> (Aurora DB clusters); <code>io1</code> (Multi-AZ DB clusters)</p>
+    /// <p>Valid Values: <code>aurora</code>, <code>aurora-iopt1</code> (Aurora DB clusters); <code>io1</code> (Multi-AZ DB clusters)</p>
     /// <p>Default: <code>aurora</code> (Aurora DB clusters); <code>io1</code> (Multi-AZ DB clusters)</p>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn storage_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -1033,7 +1033,7 @@ impl RestoreDbClusterToPointInTimeInputBuilder {
     }
     /// <p>Specifies the storage type to be associated with the DB cluster.</p>
     /// <p>When specified for a Multi-AZ DB cluster, a value for the <code>Iops</code> parameter is required.</p>
-    /// <p>Valid values: <code>aurora</code>, <code>aurora-iopt1</code> (Aurora DB clusters); <code>io1</code> (Multi-AZ DB clusters)</p>
+    /// <p>Valid Values: <code>aurora</code>, <code>aurora-iopt1</code> (Aurora DB clusters); <code>io1</code> (Multi-AZ DB clusters)</p>
     /// <p>Default: <code>aurora</code> (Aurora DB clusters); <code>io1</code> (Multi-AZ DB clusters)</p>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn set_storage_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -1042,13 +1042,13 @@ impl RestoreDbClusterToPointInTimeInputBuilder {
     }
     /// <p>Specifies the storage type to be associated with the DB cluster.</p>
     /// <p>When specified for a Multi-AZ DB cluster, a value for the <code>Iops</code> parameter is required.</p>
-    /// <p>Valid values: <code>aurora</code>, <code>aurora-iopt1</code> (Aurora DB clusters); <code>io1</code> (Multi-AZ DB clusters)</p>
+    /// <p>Valid Values: <code>aurora</code>, <code>aurora-iopt1</code> (Aurora DB clusters); <code>io1</code> (Multi-AZ DB clusters)</p>
     /// <p>Default: <code>aurora</code> (Aurora DB clusters); <code>io1</code> (Multi-AZ DB clusters)</p>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn get_storage_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.storage_type
     }
-    /// <p>A value that indicates whether the DB cluster is publicly accessible.</p>
+    /// <p>Specifies whether the DB cluster is publicly accessible.</p>
     /// <p>When the DB cluster is publicly accessible, its Domain Name System (DNS) endpoint resolves to the private IP address from within the DB cluster's virtual private cloud (VPC). It resolves to the public IP address from outside of the DB cluster's VPC. Access to the DB cluster is ultimately controlled by the security group it uses. That public access is not permitted if the security group assigned to the DB cluster doesn't permit it.</p>
     /// <p>When the DB cluster isn't publicly accessible, it is an internal DB cluster with a DNS name that resolves to a private IP address.</p>
     /// <p>Default: The default behavior varies depending on whether <code>DBSubnetGroupName</code> is specified.</p>
@@ -1067,7 +1067,7 @@ impl RestoreDbClusterToPointInTimeInputBuilder {
         self.publicly_accessible = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A value that indicates whether the DB cluster is publicly accessible.</p>
+    /// <p>Specifies whether the DB cluster is publicly accessible.</p>
     /// <p>When the DB cluster is publicly accessible, its Domain Name System (DNS) endpoint resolves to the private IP address from within the DB cluster's virtual private cloud (VPC). It resolves to the public IP address from outside of the DB cluster's VPC. Access to the DB cluster is ultimately controlled by the security group it uses. That public access is not permitted if the security group assigned to the DB cluster doesn't permit it.</p>
     /// <p>When the DB cluster isn't publicly accessible, it is an internal DB cluster with a DNS name that resolves to a private IP address.</p>
     /// <p>Default: The default behavior varies depending on whether <code>DBSubnetGroupName</code> is specified.</p>
@@ -1086,7 +1086,7 @@ impl RestoreDbClusterToPointInTimeInputBuilder {
         self.publicly_accessible = input;
         self
     }
-    /// <p>A value that indicates whether the DB cluster is publicly accessible.</p>
+    /// <p>Specifies whether the DB cluster is publicly accessible.</p>
     /// <p>When the DB cluster is publicly accessible, its Domain Name System (DNS) endpoint resolves to the private IP address from within the DB cluster's virtual private cloud (VPC). It resolves to the public IP address from outside of the DB cluster's VPC. Access to the DB cluster is ultimately controlled by the security group it uses. That public access is not permitted if the security group assigned to the DB cluster doesn't permit it.</p>
     /// <p>When the DB cluster isn't publicly accessible, it is an internal DB cluster with a DNS name that resolves to a private IP address.</p>
     /// <p>Default: The default behavior varies depending on whether <code>DBSubnetGroupName</code> is specified.</p>
@@ -1145,7 +1145,7 @@ impl RestoreDbClusterToPointInTimeInputBuilder {
         &self.serverless_v2_scaling_configuration
     }
     /// <p>The network type of the DB cluster.</p>
-    /// <p>Valid values:</p>
+    /// <p>Valid Values:</p>
     /// <ul>
     /// <li> <p> <code>IPV4</code> </p> </li>
     /// <li> <p> <code>DUAL</code> </p> </li>
@@ -1158,7 +1158,7 @@ impl RestoreDbClusterToPointInTimeInputBuilder {
         self
     }
     /// <p>The network type of the DB cluster.</p>
-    /// <p>Valid values:</p>
+    /// <p>Valid Values:</p>
     /// <ul>
     /// <li> <p> <code>IPV4</code> </p> </li>
     /// <li> <p> <code>DUAL</code> </p> </li>
@@ -1171,7 +1171,7 @@ impl RestoreDbClusterToPointInTimeInputBuilder {
         self
     }
     /// <p>The network type of the DB cluster.</p>
-    /// <p>Valid values:</p>
+    /// <p>Valid Values:</p>
     /// <ul>
     /// <li> <p> <code>IPV4</code> </p> </li>
     /// <li> <p> <code>DUAL</code> </p> </li>

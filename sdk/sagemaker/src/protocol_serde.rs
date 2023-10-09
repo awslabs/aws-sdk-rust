@@ -1861,6 +1861,8 @@ pub(crate) mod shape_workteams;
 
 pub(crate) mod shape_action_summary;
 
+pub(crate) mod shape_additional_s3_data_source;
+
 pub(crate) mod shape_agent_version;
 
 pub(crate) mod shape_algorithm_status_item_list;

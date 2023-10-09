@@ -127,6 +127,7 @@ impl CreateHealthCheckFluentBuilder {
     /// <li> <p>If you send a <code>CreateHealthCheck</code> request with the same <code>CallerReference</code> as an existing health check but with different settings, Route 53 returns a <code>HealthCheckAlreadyExists</code> error.</p> </li>
     /// <li> <p>If you send a <code>CreateHealthCheck</code> request with a unique <code>CallerReference</code> but settings identical to an existing health check, Route 53 creates the health check.</p> </li>
     /// </ul>
+    /// <p> Route 53 does not store the <code>CallerReference</code> for a deleted health check indefinitely. The <code>CallerReference</code> for a deleted health check will be deleted after a number of days.</p>
     pub fn caller_reference(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.caller_reference(input.into());
         self
@@ -138,6 +139,7 @@ impl CreateHealthCheckFluentBuilder {
     /// <li> <p>If you send a <code>CreateHealthCheck</code> request with the same <code>CallerReference</code> as an existing health check but with different settings, Route 53 returns a <code>HealthCheckAlreadyExists</code> error.</p> </li>
     /// <li> <p>If you send a <code>CreateHealthCheck</code> request with a unique <code>CallerReference</code> but settings identical to an existing health check, Route 53 creates the health check.</p> </li>
     /// </ul>
+    /// <p> Route 53 does not store the <code>CallerReference</code> for a deleted health check indefinitely. The <code>CallerReference</code> for a deleted health check will be deleted after a number of days.</p>
     pub fn set_caller_reference(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_caller_reference(input);
         self
@@ -149,6 +151,7 @@ impl CreateHealthCheckFluentBuilder {
     /// <li> <p>If you send a <code>CreateHealthCheck</code> request with the same <code>CallerReference</code> as an existing health check but with different settings, Route 53 returns a <code>HealthCheckAlreadyExists</code> error.</p> </li>
     /// <li> <p>If you send a <code>CreateHealthCheck</code> request with a unique <code>CallerReference</code> but settings identical to an existing health check, Route 53 creates the health check.</p> </li>
     /// </ul>
+    /// <p> Route 53 does not store the <code>CallerReference</code> for a deleted health check indefinitely. The <code>CallerReference</code> for a deleted health check will be deleted after a number of days.</p>
     pub fn get_caller_reference(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_caller_reference()
     }

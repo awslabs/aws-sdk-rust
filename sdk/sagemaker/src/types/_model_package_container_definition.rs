@@ -27,6 +27,8 @@ pub struct ModelPackageContainerDefinition {
     pub framework_version: ::std::option::Option<::std::string::String>,
     /// <p>The name of a pre-trained machine learning benchmarked by Amazon SageMaker Inference Recommender model that matches your model. You can find a list of benchmarked models by calling <code>ListModelMetadata</code>.</p>
     pub nearest_model_name: ::std::option::Option<::std::string::String>,
+    /// <p>The additional data source that is used during inference in the Docker container for your model package.</p>
+    pub additional_s3_data_source: ::std::option::Option<crate::types::AdditionalS3DataSource>,
 }
 impl ModelPackageContainerDefinition {
     /// <p>The DNS host name for the Docker container.</p>
@@ -72,6 +74,10 @@ impl ModelPackageContainerDefinition {
     pub fn nearest_model_name(&self) -> ::std::option::Option<&str> {
         self.nearest_model_name.as_deref()
     }
+    /// <p>The additional data source that is used during inference in the Docker container for your model package.</p>
+    pub fn additional_s3_data_source(&self) -> ::std::option::Option<&crate::types::AdditionalS3DataSource> {
+        self.additional_s3_data_source.as_ref()
+    }
 }
 impl ModelPackageContainerDefinition {
     /// Creates a new builder-style object to manufacture [`ModelPackageContainerDefinition`](crate::types::ModelPackageContainerDefinition).
@@ -94,6 +100,7 @@ pub struct ModelPackageContainerDefinitionBuilder {
     pub(crate) framework: ::std::option::Option<::std::string::String>,
     pub(crate) framework_version: ::std::option::Option<::std::string::String>,
     pub(crate) nearest_model_name: ::std::option::Option<::std::string::String>,
+    pub(crate) additional_s3_data_source: ::std::option::Option<crate::types::AdditionalS3DataSource>,
 }
 impl ModelPackageContainerDefinitionBuilder {
     /// <p>The DNS host name for the Docker container.</p>
@@ -254,6 +261,20 @@ impl ModelPackageContainerDefinitionBuilder {
     pub fn get_nearest_model_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.nearest_model_name
     }
+    /// <p>The additional data source that is used during inference in the Docker container for your model package.</p>
+    pub fn additional_s3_data_source(mut self, input: crate::types::AdditionalS3DataSource) -> Self {
+        self.additional_s3_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The additional data source that is used during inference in the Docker container for your model package.</p>
+    pub fn set_additional_s3_data_source(mut self, input: ::std::option::Option<crate::types::AdditionalS3DataSource>) -> Self {
+        self.additional_s3_data_source = input;
+        self
+    }
+    /// <p>The additional data source that is used during inference in the Docker container for your model package.</p>
+    pub fn get_additional_s3_data_source(&self) -> &::std::option::Option<crate::types::AdditionalS3DataSource> {
+        &self.additional_s3_data_source
+    }
     /// Consumes the builder and constructs a [`ModelPackageContainerDefinition`](crate::types::ModelPackageContainerDefinition).
     pub fn build(self) -> crate::types::ModelPackageContainerDefinition {
         crate::types::ModelPackageContainerDefinition {
@@ -267,6 +288,7 @@ impl ModelPackageContainerDefinitionBuilder {
             framework: self.framework,
             framework_version: self.framework_version,
             nearest_model_name: self.nearest_model_name,
+            additional_s3_data_source: self.additional_s3_data_source,
         }
     }
 }

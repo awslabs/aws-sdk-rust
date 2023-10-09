@@ -14,7 +14,7 @@ pub struct OptionGroupOption {
     pub major_engine_version: ::std::option::Option<::std::string::String>,
     /// <p>The minimum required engine version for the option to be applied.</p>
     pub minimum_required_minor_engine_version: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies whether the option requires a port.</p>
+    /// <p>Indicates whether the option requires a port.</p>
     pub port_required: bool,
     /// <p>If the option requires a port, specifies the default port for the option.</p>
     pub default_port: ::std::option::Option<i32>,
@@ -36,7 +36,7 @@ pub struct OptionGroupOption {
     pub option_group_option_settings: ::std::option::Option<::std::vec::Vec<crate::types::OptionGroupOptionSetting>>,
     /// <p>The versions that are available for the option.</p>
     pub option_group_option_versions: ::std::option::Option<::std::vec::Vec<crate::types::OptionVersion>>,
-    /// <p>Specifies whether the option can be copied across Amazon Web Services accounts.</p>
+    /// <p>Indicates whether the option can be copied across Amazon Web Services accounts.</p>
     pub copyable_cross_account: ::std::option::Option<bool>,
 }
 impl OptionGroupOption {
@@ -60,7 +60,7 @@ impl OptionGroupOption {
     pub fn minimum_required_minor_engine_version(&self) -> ::std::option::Option<&str> {
         self.minimum_required_minor_engine_version.as_deref()
     }
-    /// <p>Specifies whether the option requires a port.</p>
+    /// <p>Indicates whether the option requires a port.</p>
     pub fn port_required(&self) -> bool {
         self.port_required
     }
@@ -104,7 +104,7 @@ impl OptionGroupOption {
     pub fn option_group_option_versions(&self) -> ::std::option::Option<&[crate::types::OptionVersion]> {
         self.option_group_option_versions.as_deref()
     }
-    /// <p>Specifies whether the option can be copied across Amazon Web Services accounts.</p>
+    /// <p>Indicates whether the option can be copied across Amazon Web Services accounts.</p>
     pub fn copyable_cross_account(&self) -> ::std::option::Option<bool> {
         self.copyable_cross_account
     }
@@ -209,17 +209,17 @@ impl OptionGroupOptionBuilder {
     pub fn get_minimum_required_minor_engine_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.minimum_required_minor_engine_version
     }
-    /// <p>Specifies whether the option requires a port.</p>
+    /// <p>Indicates whether the option requires a port.</p>
     pub fn port_required(mut self, input: bool) -> Self {
         self.port_required = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies whether the option requires a port.</p>
+    /// <p>Indicates whether the option requires a port.</p>
     pub fn set_port_required(mut self, input: ::std::option::Option<bool>) -> Self {
         self.port_required = input;
         self
     }
-    /// <p>Specifies whether the option requires a port.</p>
+    /// <p>Indicates whether the option requires a port.</p>
     pub fn get_port_required(&self) -> &::std::option::Option<bool> {
         &self.port_required
     }
@@ -387,17 +387,17 @@ impl OptionGroupOptionBuilder {
     pub fn get_option_group_option_versions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OptionVersion>> {
         &self.option_group_option_versions
     }
-    /// <p>Specifies whether the option can be copied across Amazon Web Services accounts.</p>
+    /// <p>Indicates whether the option can be copied across Amazon Web Services accounts.</p>
     pub fn copyable_cross_account(mut self, input: bool) -> Self {
         self.copyable_cross_account = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies whether the option can be copied across Amazon Web Services accounts.</p>
+    /// <p>Indicates whether the option can be copied across Amazon Web Services accounts.</p>
     pub fn set_copyable_cross_account(mut self, input: ::std::option::Option<bool>) -> Self {
         self.copyable_cross_account = input;
         self
     }
-    /// <p>Specifies whether the option can be copied across Amazon Web Services accounts.</p>
+    /// <p>Indicates whether the option can be copied across Amazon Web Services accounts.</p>
     pub fn get_copyable_cross_account(&self) -> &::std::option::Option<bool> {
         &self.copyable_cross_account
     }

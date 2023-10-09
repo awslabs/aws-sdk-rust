@@ -26,7 +26,7 @@ pub struct WorkspaceImage {
     pub owner_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The updates (if any) that are available for the specified image.</p>
     pub updates: ::std::option::Option<crate::types::UpdateResult>,
-    /// <p>The details of the error returned for the image.</p>
+    /// <p>Additional details of the error returned for the image, including the possible causes of the errors and troubleshooting information.</p>
     pub error_details: ::std::option::Option<::std::vec::Vec<crate::types::ErrorDetails>>,
 }
 impl WorkspaceImage {
@@ -74,7 +74,7 @@ impl WorkspaceImage {
     pub fn updates(&self) -> ::std::option::Option<&crate::types::UpdateResult> {
         self.updates.as_ref()
     }
-    /// <p>The details of the error returned for the image.</p>
+    /// <p>Additional details of the error returned for the image, including the possible causes of the errors and troubleshooting information.</p>
     pub fn error_details(&self) -> ::std::option::Option<&[crate::types::ErrorDetails]> {
         self.error_details.as_deref()
     }
@@ -262,19 +262,19 @@ impl WorkspaceImageBuilder {
     ///
     /// To override the contents of this collection use [`set_error_details`](Self::set_error_details).
     ///
-    /// <p>The details of the error returned for the image.</p>
+    /// <p>Additional details of the error returned for the image, including the possible causes of the errors and troubleshooting information.</p>
     pub fn error_details(mut self, input: crate::types::ErrorDetails) -> Self {
         let mut v = self.error_details.unwrap_or_default();
         v.push(input);
         self.error_details = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The details of the error returned for the image.</p>
+    /// <p>Additional details of the error returned for the image, including the possible causes of the errors and troubleshooting information.</p>
     pub fn set_error_details(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ErrorDetails>>) -> Self {
         self.error_details = input;
         self
     }
-    /// <p>The details of the error returned for the image.</p>
+    /// <p>Additional details of the error returned for the image, including the possible causes of the errors and troubleshooting information.</p>
     pub fn get_error_details(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ErrorDetails>> {
         &self.error_details
     }

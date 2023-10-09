@@ -22,7 +22,6 @@ impl ListSecurityProfilePermissionsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListSecurityProfilePermissions`.
 ///
-/// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
 /// <p>Lists the permissions granted to a security profile.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListSecurityProfilePermissionsFluentBuilder {

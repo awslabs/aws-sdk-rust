@@ -12,7 +12,7 @@ pub struct ValidStorageOptions {
     pub provisioned_iops: ::std::option::Option<::std::vec::Vec<crate::types::Range>>,
     /// <p>The valid range of Provisioned IOPS to gibibytes of storage multiplier. For example, 3-10, which means that provisioned IOPS can be between 3 and 10 times storage.</p>
     pub iops_to_storage_ratio: ::std::option::Option<::std::vec::Vec<crate::types::DoubleRange>>,
-    /// <p>Whether or not Amazon RDS can automatically scale storage for DB instances that use the new instance class.</p>
+    /// <p>Indicates whether or not Amazon RDS can automatically scale storage for DB instances that use the new instance class.</p>
     pub supports_storage_autoscaling: bool,
     /// <p>The valid range of provisioned storage throughput. For example, 500-4,000 mebibytes per second (MiBps).</p>
     pub provisioned_storage_throughput: ::std::option::Option<::std::vec::Vec<crate::types::Range>>,
@@ -36,7 +36,7 @@ impl ValidStorageOptions {
     pub fn iops_to_storage_ratio(&self) -> ::std::option::Option<&[crate::types::DoubleRange]> {
         self.iops_to_storage_ratio.as_deref()
     }
-    /// <p>Whether or not Amazon RDS can automatically scale storage for DB instances that use the new instance class.</p>
+    /// <p>Indicates whether or not Amazon RDS can automatically scale storage for DB instances that use the new instance class.</p>
     pub fn supports_storage_autoscaling(&self) -> bool {
         self.supports_storage_autoscaling
     }
@@ -143,17 +143,17 @@ impl ValidStorageOptionsBuilder {
     pub fn get_iops_to_storage_ratio(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DoubleRange>> {
         &self.iops_to_storage_ratio
     }
-    /// <p>Whether or not Amazon RDS can automatically scale storage for DB instances that use the new instance class.</p>
+    /// <p>Indicates whether or not Amazon RDS can automatically scale storage for DB instances that use the new instance class.</p>
     pub fn supports_storage_autoscaling(mut self, input: bool) -> Self {
         self.supports_storage_autoscaling = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Whether or not Amazon RDS can automatically scale storage for DB instances that use the new instance class.</p>
+    /// <p>Indicates whether or not Amazon RDS can automatically scale storage for DB instances that use the new instance class.</p>
     pub fn set_supports_storage_autoscaling(mut self, input: ::std::option::Option<bool>) -> Self {
         self.supports_storage_autoscaling = input;
         self
     }
-    /// <p>Whether or not Amazon RDS can automatically scale storage for DB instances that use the new instance class.</p>
+    /// <p>Indicates whether or not Amazon RDS can automatically scale storage for DB instances that use the new instance class.</p>
     pub fn get_supports_storage_autoscaling(&self) -> &::std::option::Option<bool> {
         &self.supports_storage_autoscaling
     }

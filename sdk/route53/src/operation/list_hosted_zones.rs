@@ -203,6 +203,11 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for ListHostedZ
                         query.push_kv("delegationsetid", &::aws_smithy_http::query::fmt_string(&inner_3));
                     }
                 }
+                if let ::std::option::Option::Some(inner_4) = &_input.hosted_zone_type {
+                    {
+                        query.push_kv("hostedzonetype", &::aws_smithy_http::query::fmt_string(&inner_4));
+                    }
+                }
                 ::std::result::Result::Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]

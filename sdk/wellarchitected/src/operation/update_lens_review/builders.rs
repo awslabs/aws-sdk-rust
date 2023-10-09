@@ -148,16 +148,19 @@ impl UpdateLensReviewFluentBuilder {
         self.inner.get_lens_alias()
     }
     /// <p>The notes associated with the workload.</p>
+    /// <p>For a review template, these are the notes that will be associated with the workload when the template is applied.</p>
     pub fn lens_notes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.lens_notes(input.into());
         self
     }
     /// <p>The notes associated with the workload.</p>
+    /// <p>For a review template, these are the notes that will be associated with the workload when the template is applied.</p>
     pub fn set_lens_notes(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_lens_notes(input);
         self
     }
     /// <p>The notes associated with the workload.</p>
+    /// <p>For a review template, these are the notes that will be associated with the workload when the template is applied.</p>
     pub fn get_lens_notes(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_lens_notes()
     }
@@ -166,11 +169,13 @@ impl UpdateLensReviewFluentBuilder {
     /// To override the contents of this collection use [`set_pillar_notes`](Self::set_pillar_notes).
     ///
     /// <p>List of pillar notes of a lens review in a workload.</p>
+    /// <p>For a review template, these are the notes that will be associated with the workload when the template is applied.</p>
     pub fn pillar_notes(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.pillar_notes(k.into(), v.into());
         self
     }
     /// <p>List of pillar notes of a lens review in a workload.</p>
+    /// <p>For a review template, these are the notes that will be associated with the workload when the template is applied.</p>
     pub fn set_pillar_notes(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -179,6 +184,7 @@ impl UpdateLensReviewFluentBuilder {
         self
     }
     /// <p>List of pillar notes of a lens review in a workload.</p>
+    /// <p>For a review template, these are the notes that will be associated with the workload when the template is applied.</p>
     pub fn get_pillar_notes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_pillar_notes()
     }

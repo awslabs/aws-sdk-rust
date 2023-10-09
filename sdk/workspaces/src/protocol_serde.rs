@@ -27,6 +27,8 @@ pub(crate) mod shape_associate_connection_alias;
 
 pub(crate) mod shape_associate_ip_groups;
 
+pub(crate) mod shape_associate_workspace_application;
+
 pub(crate) mod shape_authorize_ip_rules;
 
 pub(crate) mod shape_copy_workspace_image;
@@ -63,11 +65,19 @@ pub(crate) mod shape_delete_workspace_bundle;
 
 pub(crate) mod shape_delete_workspace_image;
 
+pub(crate) mod shape_deploy_workspace_applications;
+
 pub(crate) mod shape_deregister_workspace_directory;
 
 pub(crate) mod shape_describe_account;
 
 pub(crate) mod shape_describe_account_modifications;
+
+pub(crate) mod shape_describe_application_associations;
+
+pub(crate) mod shape_describe_applications;
+
+pub(crate) mod shape_describe_bundle_associations;
 
 pub(crate) mod shape_describe_client_branding;
 
@@ -79,9 +89,13 @@ pub(crate) mod shape_describe_connection_alias_permissions;
 
 pub(crate) mod shape_describe_connection_aliases;
 
+pub(crate) mod shape_describe_image_associations;
+
 pub(crate) mod shape_describe_ip_groups;
 
 pub(crate) mod shape_describe_tags;
+
+pub(crate) mod shape_describe_workspace_associations;
 
 pub(crate) mod shape_describe_workspace_bundles;
 
@@ -100,6 +114,8 @@ pub(crate) mod shape_describe_workspaces_connection_status;
 pub(crate) mod shape_disassociate_connection_alias;
 
 pub(crate) mod shape_disassociate_ip_groups;
+
+pub(crate) mod shape_disassociate_workspace_application;
 
 pub(crate) mod shape_import_client_branding;
 
@@ -163,11 +179,17 @@ pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
 
 pub(crate) mod shape_access_denied_exception;
 
+pub(crate) mod shape_application_not_supported_exception;
+
 pub(crate) mod shape_associate_connection_alias_input;
 
 pub(crate) mod shape_associate_ip_groups_input;
 
+pub(crate) mod shape_associate_workspace_application_input;
+
 pub(crate) mod shape_authorize_ip_rules_input;
+
+pub(crate) mod shape_compute_not_compatible_exception;
 
 pub(crate) mod shape_copy_workspace_image_input;
 
@@ -203,9 +225,17 @@ pub(crate) mod shape_delete_workspace_bundle_input;
 
 pub(crate) mod shape_delete_workspace_image_input;
 
+pub(crate) mod shape_deploy_workspace_applications_input;
+
 pub(crate) mod shape_deregister_workspace_directory_input;
 
 pub(crate) mod shape_describe_account_modifications_input;
+
+pub(crate) mod shape_describe_application_associations_input;
+
+pub(crate) mod shape_describe_applications_input;
+
+pub(crate) mod shape_describe_bundle_associations_input;
 
 pub(crate) mod shape_describe_client_branding_input;
 
@@ -217,9 +247,13 @@ pub(crate) mod shape_describe_connection_alias_permissions_input;
 
 pub(crate) mod shape_describe_connection_aliases_input;
 
+pub(crate) mod shape_describe_image_associations_input;
+
 pub(crate) mod shape_describe_ip_groups_input;
 
 pub(crate) mod shape_describe_tags_input;
+
+pub(crate) mod shape_describe_workspace_associations_input;
 
 pub(crate) mod shape_describe_workspace_bundles_input;
 
@@ -239,9 +273,13 @@ pub(crate) mod shape_disassociate_connection_alias_input;
 
 pub(crate) mod shape_disassociate_ip_groups_input;
 
+pub(crate) mod shape_disassociate_workspace_application_input;
+
 pub(crate) mod shape_import_client_branding_input;
 
 pub(crate) mod shape_import_workspace_image_input;
+
+pub(crate) mod shape_incompatible_applications_exception;
 
 pub(crate) mod shape_invalid_parameter_values_exception;
 
@@ -269,6 +307,8 @@ pub(crate) mod shape_modify_workspace_properties_input;
 
 pub(crate) mod shape_modify_workspace_state_input;
 
+pub(crate) mod shape_operating_system_not_compatible_exception;
+
 pub(crate) mod shape_operation_in_progress_exception;
 
 pub(crate) mod shape_operation_not_supported_exception;
@@ -284,6 +324,8 @@ pub(crate) mod shape_resource_already_exists_exception;
 pub(crate) mod shape_resource_associated_exception;
 
 pub(crate) mod shape_resource_creation_failed_exception;
+
+pub(crate) mod shape_resource_in_use_exception;
 
 pub(crate) mod shape_resource_limit_exceeded_exception;
 
@@ -319,7 +361,11 @@ pub(crate) mod shape_workspaces_default_role_not_found_exception;
 
 pub(crate) mod shape_account_modification_list;
 
+pub(crate) mod shape_application_resource_association_list;
+
 pub(crate) mod shape_bundle_list;
+
+pub(crate) mod shape_bundle_resource_association_list;
 
 pub(crate) mod shape_certificate_based_auth_properties;
 
@@ -361,6 +407,8 @@ pub(crate) mod shape_failed_terminate_workspace_requests;
 
 pub(crate) mod shape_image_permissions;
 
+pub(crate) mod shape_image_resource_association_list;
+
 pub(crate) mod shape_ios_client_branding_attributes;
 
 pub(crate) mod shape_ios_import_client_branding_attributes;
@@ -397,6 +445,10 @@ pub(crate) mod shape_terminate_request;
 
 pub(crate) mod shape_user_storage;
 
+pub(crate) mod shape_work_space_application_deployment;
+
+pub(crate) mod shape_work_space_application_list;
+
 pub(crate) mod shape_workspace_access_properties;
 
 pub(crate) mod shape_workspace_bundle;
@@ -413,9 +465,19 @@ pub(crate) mod shape_workspace_properties;
 
 pub(crate) mod shape_workspace_request;
 
+pub(crate) mod shape_workspace_resource_association;
+
+pub(crate) mod shape_workspace_resource_association_list;
+
 pub(crate) mod shape_workspaces_ip_groups_list;
 
 pub(crate) mod shape_account_modification;
+
+pub(crate) mod shape_application_resource_association;
+
+pub(crate) mod shape_association_state_reason;
+
+pub(crate) mod shape_bundle_resource_association;
 
 pub(crate) mod shape_client_properties_result;
 
@@ -431,11 +493,15 @@ pub(crate) mod shape_failed_workspace_change_request;
 
 pub(crate) mod shape_image_permission;
 
+pub(crate) mod shape_image_resource_association;
+
 pub(crate) mod shape_login_message;
 
 pub(crate) mod shape_pending_create_standby_workspaces_request;
 
 pub(crate) mod shape_snapshot;
+
+pub(crate) mod shape_work_space_application;
 
 pub(crate) mod shape_workspace;
 
@@ -446,6 +512,8 @@ pub(crate) mod shape_workspace_directory;
 pub(crate) mod shape_workspace_image;
 
 pub(crate) mod shape_workspaces_ip_group;
+
+pub(crate) mod shape_compute_list;
 
 pub(crate) mod shape_connection_alias_association_list;
 
@@ -460,6 +528,8 @@ pub(crate) mod shape_ip_group_id_list;
 pub(crate) mod shape_ip_rule_list;
 
 pub(crate) mod shape_modification_state_list;
+
+pub(crate) mod shape_operating_system_name_list;
 
 pub(crate) mod shape_related_workspaces;
 

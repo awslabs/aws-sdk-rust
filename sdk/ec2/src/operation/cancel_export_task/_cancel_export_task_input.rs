@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CancelExportTaskInput {
-    /// <p>The ID of the export task. This is the ID returned by <code>CreateInstanceExportTask</code>.</p>
+    /// <p>The ID of the export task. This is the ID returned by the <code>CreateInstanceExportTask</code> and <code>ExportImage</code> operations.</p>
     pub export_task_id: ::std::option::Option<::std::string::String>,
 }
 impl CancelExportTaskInput {
-    /// <p>The ID of the export task. This is the ID returned by <code>CreateInstanceExportTask</code>.</p>
+    /// <p>The ID of the export task. This is the ID returned by the <code>CreateInstanceExportTask</code> and <code>ExportImage</code> operations.</p>
     pub fn export_task_id(&self) -> ::std::option::Option<&str> {
         self.export_task_id.as_deref()
     }
@@ -26,17 +26,17 @@ pub struct CancelExportTaskInputBuilder {
     pub(crate) export_task_id: ::std::option::Option<::std::string::String>,
 }
 impl CancelExportTaskInputBuilder {
-    /// <p>The ID of the export task. This is the ID returned by <code>CreateInstanceExportTask</code>.</p>
+    /// <p>The ID of the export task. This is the ID returned by the <code>CreateInstanceExportTask</code> and <code>ExportImage</code> operations.</p>
     pub fn export_task_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.export_task_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the export task. This is the ID returned by <code>CreateInstanceExportTask</code>.</p>
+    /// <p>The ID of the export task. This is the ID returned by the <code>CreateInstanceExportTask</code> and <code>ExportImage</code> operations.</p>
     pub fn set_export_task_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.export_task_id = input;
         self
     }
-    /// <p>The ID of the export task. This is the ID returned by <code>CreateInstanceExportTask</code>.</p>
+    /// <p>The ID of the export task. This is the ID returned by the <code>CreateInstanceExportTask</code> and <code>ExportImage</code> operations.</p>
     pub fn get_export_task_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.export_task_id
     }

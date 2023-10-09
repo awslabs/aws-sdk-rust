@@ -7,6 +7,8 @@ pub use crate::types::_list_device_positions_response_entry::ListDevicePositions
 
 pub use crate::types::_positional_accuracy::PositionalAccuracy;
 
+pub use crate::types::_tracking_filter_geometry::TrackingFilterGeometry;
+
 pub use crate::types::_device_position::DevicePosition;
 
 pub use crate::types::_batch_update_device_position_error::BatchUpdateDevicePositionError;
@@ -222,6 +224,8 @@ mod _status;
 mod _step;
 
 mod _time_zone;
+
+mod _tracking_filter_geometry;
 
 mod _travel_mode;
 

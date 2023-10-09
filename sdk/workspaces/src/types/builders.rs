@@ -39,6 +39,10 @@ pub use crate::types::_default_import_client_branding_attributes::DefaultImportC
 
 pub use crate::types::_ios_import_client_branding_attributes::IosImportClientBrandingAttributesBuilder;
 
+pub use crate::types::_workspace_resource_association::WorkspaceResourceAssociationBuilder;
+
+pub use crate::types::_association_state_reason::AssociationStateReasonBuilder;
+
 pub use crate::types::_snapshot::SnapshotBuilder;
 
 pub use crate::types::_workspace_connection_status::WorkspaceConnectionStatusBuilder;
@@ -73,6 +77,8 @@ pub use crate::types::_root_storage::RootStorageBuilder;
 
 pub use crate::types::_workspaces_ip_group::WorkspacesIpGroupBuilder;
 
+pub use crate::types::_image_resource_association::ImageResourceAssociationBuilder;
+
 pub use crate::types::_connection_alias::ConnectionAliasBuilder;
 
 pub use crate::types::_connection_alias_association::ConnectionAliasAssociationBuilder;
@@ -81,7 +87,15 @@ pub use crate::types::_connect_client_add_in::ConnectClientAddInBuilder;
 
 pub use crate::types::_client_properties_result::ClientPropertiesResultBuilder;
 
+pub use crate::types::_bundle_resource_association::BundleResourceAssociationBuilder;
+
+pub use crate::types::_work_space_application::WorkSpaceApplicationBuilder;
+
+pub use crate::types::_application_resource_association::ApplicationResourceAssociationBuilder;
+
 pub use crate::types::_account_modification::AccountModificationBuilder;
+
+pub use crate::types::_work_space_application_deployment::WorkSpaceApplicationDeploymentBuilder;
 
 pub use crate::types::_failed_create_workspace_request::FailedCreateWorkspaceRequestBuilder;
 

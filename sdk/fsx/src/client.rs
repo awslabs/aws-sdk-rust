@@ -242,6 +242,8 @@ mod release_file_system_nfs_v3_locks;
 
 mod restore_volume_from_snapshot;
 
+mod start_misconfigured_state_recovery;
+
 mod tag_resource;
 
 mod untag_resource;

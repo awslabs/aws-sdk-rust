@@ -23,7 +23,7 @@ impl GetMetricDataV2InputBuilder {
 /// Fluent builder constructing a request to `GetMetricDataV2`.
 ///
 /// <p>Gets metric data from the specified Amazon Connect instance. </p>
-/// <p> <code>GetMetricDataV2</code> offers more features than <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_GetMetricData.html">GetMetricData</a>, the previous version of this API. It has new metrics, offers filtering at a metric level, and offers the ability to filter and group data by channels, queues, routing profiles, agents, and agent hierarchy levels. It can retrieve historical data for the last 35 days, in 24-hour intervals.</p>
+/// <p> <code>GetMetricDataV2</code> offers more features than <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_GetMetricData.html">GetMetricData</a>, the previous version of this API. It has new metrics, offers filtering at a metric level, and offers the ability to filter and group data by channels, queues, routing profiles, agents, and agent hierarchy levels. It can retrieve historical data for the last 3 months, at varying intervals. </p>
 /// <p>For a description of the historical metrics that are supported by <code>GetMetricDataV2</code> and <code>GetMetricData</code>, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html">Historical metrics definitions</a> in the <i>Amazon Connect Administrator's Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetMetricDataV2FluentBuilder {
@@ -132,36 +132,83 @@ impl GetMetricDataV2FluentBuilder {
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_resource_arn()
     }
-    /// <p>The timestamp, in UNIX Epoch time format, at which to start the reporting interval for the retrieval of historical metrics data. The time must be before the end time timestamp. The time range between the start and end time must be less than 24 hours. The start time cannot be earlier than 35 days before the time of the request. Historical metrics are available for 35 days.</p>
+    /// <p>The timestamp, in UNIX Epoch time format, at which to start the reporting interval for the retrieval of historical metrics data. The time must be before the end time timestamp. The start and end time depends on the <code>IntervalPeriod</code> selected. By default the time range between start and end time is 35 days. Historical metrics are available for 3 months.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.start_time(input);
         self
     }
-    /// <p>The timestamp, in UNIX Epoch time format, at which to start the reporting interval for the retrieval of historical metrics data. The time must be before the end time timestamp. The time range between the start and end time must be less than 24 hours. The start time cannot be earlier than 35 days before the time of the request. Historical metrics are available for 35 days.</p>
+    /// <p>The timestamp, in UNIX Epoch time format, at which to start the reporting interval for the retrieval of historical metrics data. The time must be before the end time timestamp. The start and end time depends on the <code>IntervalPeriod</code> selected. By default the time range between start and end time is 35 days. Historical metrics are available for 3 months.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_start_time(input);
         self
     }
-    /// <p>The timestamp, in UNIX Epoch time format, at which to start the reporting interval for the retrieval of historical metrics data. The time must be before the end time timestamp. The time range between the start and end time must be less than 24 hours. The start time cannot be earlier than 35 days before the time of the request. Historical metrics are available for 35 days.</p>
+    /// <p>The timestamp, in UNIX Epoch time format, at which to start the reporting interval for the retrieval of historical metrics data. The time must be before the end time timestamp. The start and end time depends on the <code>IntervalPeriod</code> selected. By default the time range between start and end time is 35 days. Historical metrics are available for 3 months.</p>
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_start_time()
     }
     /// <p>The timestamp, in UNIX Epoch time format, at which to end the reporting interval for the retrieval of historical metrics data. The time must be later than the start time timestamp. It cannot be later than the current timestamp.</p>
-    /// <p>The time range between the start and end time must be less than 24 hours.</p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.end_time(input);
         self
     }
     /// <p>The timestamp, in UNIX Epoch time format, at which to end the reporting interval for the retrieval of historical metrics data. The time must be later than the start time timestamp. It cannot be later than the current timestamp.</p>
-    /// <p>The time range between the start and end time must be less than 24 hours.</p>
     pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_end_time(input);
         self
     }
     /// <p>The timestamp, in UNIX Epoch time format, at which to end the reporting interval for the retrieval of historical metrics data. The time must be later than the start time timestamp. It cannot be later than the current timestamp.</p>
-    /// <p>The time range between the start and end time must be less than 24 hours.</p>
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_end_time()
+    }
+    /// <p>The interval period and timezone to apply to returned metrics.</p>
+    /// <ul>
+    /// <li> <p> <code>IntervalPeriod</code>: An aggregated grouping applied to request metrics. Valid <code>IntervalPeriod</code> values are: <code>FIFTEEN_MIN</code> | <code>THIRTY_MIN</code> | <code>HOUR</code> | <code>DAY</code> | <code>WEEK</code> | <code>TOTAL</code>. </p> <p>For example, if <code>IntervalPeriod</code> is selected <code>THIRTY_MIN</code>, <code>StartTime</code> and <code>EndTime</code> differs by 1 day, then Amazon Connect returns 48 results in the response. Each result is aggregated by the THIRTY_MIN period. By default Amazon Connect aggregates results based on the <code>TOTAL</code> interval period. </p> <p>The following list describes restrictions on <code>StartTime</code> and <code>EndTime</code> based on which <code>IntervalPeriod</code> is requested. </p>
+    /// <ul>
+    /// <li> <p> <code>FIFTEEN_MIN</code>: The difference between <code>StartTime</code> and <code>EndTime</code> must be less than 3 days.</p> </li>
+    /// <li> <p> <code>THIRTY_MIN</code>: The difference between <code>StartTime</code> and <code>EndTime</code> must be less than 3 days.</p> </li>
+    /// <li> <p> <code>HOUR</code>: The difference between <code>StartTime</code> and <code>EndTime</code> must be less than 3 days.</p> </li>
+    /// <li> <p> <code>DAY</code>: The difference between <code>StartTime</code> and <code>EndTime</code> must be less than 35 days.</p> </li>
+    /// <li> <p> <code>WEEK</code>: The difference between <code>StartTime</code> and <code>EndTime</code> must be less than 35 days.</p> </li>
+    /// <li> <p> <code>TOTAL</code>: The difference between <code>StartTime</code> and <code>EndTime</code> must be less than 35 days.</p> </li>
+    /// </ul> </li>
+    /// <li> <p> <code>TimeZone</code>: The timezone applied to requested metrics.</p> </li>
+    /// </ul>
+    pub fn interval(mut self, input: crate::types::IntervalDetails) -> Self {
+        self.inner = self.inner.interval(input);
+        self
+    }
+    /// <p>The interval period and timezone to apply to returned metrics.</p>
+    /// <ul>
+    /// <li> <p> <code>IntervalPeriod</code>: An aggregated grouping applied to request metrics. Valid <code>IntervalPeriod</code> values are: <code>FIFTEEN_MIN</code> | <code>THIRTY_MIN</code> | <code>HOUR</code> | <code>DAY</code> | <code>WEEK</code> | <code>TOTAL</code>. </p> <p>For example, if <code>IntervalPeriod</code> is selected <code>THIRTY_MIN</code>, <code>StartTime</code> and <code>EndTime</code> differs by 1 day, then Amazon Connect returns 48 results in the response. Each result is aggregated by the THIRTY_MIN period. By default Amazon Connect aggregates results based on the <code>TOTAL</code> interval period. </p> <p>The following list describes restrictions on <code>StartTime</code> and <code>EndTime</code> based on which <code>IntervalPeriod</code> is requested. </p>
+    /// <ul>
+    /// <li> <p> <code>FIFTEEN_MIN</code>: The difference between <code>StartTime</code> and <code>EndTime</code> must be less than 3 days.</p> </li>
+    /// <li> <p> <code>THIRTY_MIN</code>: The difference between <code>StartTime</code> and <code>EndTime</code> must be less than 3 days.</p> </li>
+    /// <li> <p> <code>HOUR</code>: The difference between <code>StartTime</code> and <code>EndTime</code> must be less than 3 days.</p> </li>
+    /// <li> <p> <code>DAY</code>: The difference between <code>StartTime</code> and <code>EndTime</code> must be less than 35 days.</p> </li>
+    /// <li> <p> <code>WEEK</code>: The difference between <code>StartTime</code> and <code>EndTime</code> must be less than 35 days.</p> </li>
+    /// <li> <p> <code>TOTAL</code>: The difference between <code>StartTime</code> and <code>EndTime</code> must be less than 35 days.</p> </li>
+    /// </ul> </li>
+    /// <li> <p> <code>TimeZone</code>: The timezone applied to requested metrics.</p> </li>
+    /// </ul>
+    pub fn set_interval(mut self, input: ::std::option::Option<crate::types::IntervalDetails>) -> Self {
+        self.inner = self.inner.set_interval(input);
+        self
+    }
+    /// <p>The interval period and timezone to apply to returned metrics.</p>
+    /// <ul>
+    /// <li> <p> <code>IntervalPeriod</code>: An aggregated grouping applied to request metrics. Valid <code>IntervalPeriod</code> values are: <code>FIFTEEN_MIN</code> | <code>THIRTY_MIN</code> | <code>HOUR</code> | <code>DAY</code> | <code>WEEK</code> | <code>TOTAL</code>. </p> <p>For example, if <code>IntervalPeriod</code> is selected <code>THIRTY_MIN</code>, <code>StartTime</code> and <code>EndTime</code> differs by 1 day, then Amazon Connect returns 48 results in the response. Each result is aggregated by the THIRTY_MIN period. By default Amazon Connect aggregates results based on the <code>TOTAL</code> interval period. </p> <p>The following list describes restrictions on <code>StartTime</code> and <code>EndTime</code> based on which <code>IntervalPeriod</code> is requested. </p>
+    /// <ul>
+    /// <li> <p> <code>FIFTEEN_MIN</code>: The difference between <code>StartTime</code> and <code>EndTime</code> must be less than 3 days.</p> </li>
+    /// <li> <p> <code>THIRTY_MIN</code>: The difference between <code>StartTime</code> and <code>EndTime</code> must be less than 3 days.</p> </li>
+    /// <li> <p> <code>HOUR</code>: The difference between <code>StartTime</code> and <code>EndTime</code> must be less than 3 days.</p> </li>
+    /// <li> <p> <code>DAY</code>: The difference between <code>StartTime</code> and <code>EndTime</code> must be less than 35 days.</p> </li>
+    /// <li> <p> <code>WEEK</code>: The difference between <code>StartTime</code> and <code>EndTime</code> must be less than 35 days.</p> </li>
+    /// <li> <p> <code>TOTAL</code>: The difference between <code>StartTime</code> and <code>EndTime</code> must be less than 35 days.</p> </li>
+    /// </ul> </li>
+    /// <li> <p> <code>TimeZone</code>: The timezone applied to requested metrics.</p> </li>
+    /// </ul>
+    pub fn get_interval(&self) -> &::std::option::Option<crate::types::IntervalDetails> {
+        self.inner.get_interval()
     }
     /// Appends an item to `Filters`.
     ///
@@ -257,6 +304,13 @@ impl GetMetricDataV2FluentBuilder {
     /// <p>The metrics to retrieve. Specify the name, groupings, and filters for each metric. The following historical metrics are available. For a description of each metric, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html">Historical metrics definitions</a> in the <i>Amazon Connect Administrator's Guide</i>.</p>
     /// <dl>
     /// <dt>
+    /// ABANDONMENT_RATE
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Percent</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// </dd>
+    /// <dt>
     /// AGENT_ADHERENT_TIME
     /// </dt>
     /// <dd>
@@ -270,6 +324,14 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Count</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy </p>
+    /// </dd>
+    /// <dt>
+    /// AGENT_NON_RESPONSE_WITHOUT_CUSTOMER_ABANDONS
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Count</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>Data for this metric is available starting from October 1, 2023 0:00:00 GMT.</p>
     /// </dd>
     /// <dt>
     /// AGENT_OCCUPANCY
@@ -316,15 +378,9 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Seconds</p>
     /// <p>Valid metric filter key: <code>INITIATION_METHOD</code>. For now, this metric only supports the following as <code>INITIATION_METHOD</code>: <code>INBOUND</code> | <code>OUTBOUND</code> | <code>CALLBACK</code> | <code>API</code> </p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
-    /// </dd>
-    /// <dt>
-    /// AVG_AGENT_CONNECTING_TIME
-    /// </dt>
-    /// <dd>
-    /// <p>Unit: Seconds</p>
-    /// <p>Valid metric filter key: <code>INITIATION_METHOD</code>. For now, this metric only supports the following as <code>INITIATION_METHOD</code>: <code>INBOUND</code> | <code>OUTBOUND</code> | <code>CALLBACK</code> | <code>API</code> </p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p> <note>
+    /// <p>The <code>Negate</code> key in Metric Level Filters is not applicable for this metric.</p>
+    /// </note>
     /// </dd>
     /// <dt>
     /// AVG_CONTACT_DURATION
@@ -367,6 +423,13 @@ impl GetMetricDataV2FluentBuilder {
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature</p> <note>
     /// <p>Feature is a valid filter but not a valid grouping.</p>
     /// </note>
+    /// </dd>
+    /// <dt>
+    /// AVG_HOLD_TIME_ALL_CONTACTS
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Seconds</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
     /// </dd>
     /// <dt>
     /// AVG_HOLDS
@@ -425,6 +488,13 @@ impl GetMetricDataV2FluentBuilder {
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Feature</p> <note>
     /// <p>Feature is a valid filter but not a valid grouping.</p>
     /// </note>
+    /// </dd>
+    /// <dt>
+    /// AVG_RESOLUTION_TIME
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Seconds</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile</p>
     /// </dd>
     /// <dt>
     /// AVG_TALK_TIME
@@ -490,6 +560,14 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Count</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// </dd>
+    /// <dt>
+    /// CONTACTS_RESOLVED_IN_X
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Count</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile</p>
+    /// <p>Threshold: For <code>ThresholdValue</code> enter any whole number from 1 to 604800 (inclusive), in seconds. For <code>Comparison</code>, you must enter <code>LT</code> (for "Less than").</p>
     /// </dd>
     /// <dt>
     /// CONTACTS_TRANSFERRED_OUT
@@ -569,6 +647,13 @@ impl GetMetricDataV2FluentBuilder {
     /// <p>The metrics to retrieve. Specify the name, groupings, and filters for each metric. The following historical metrics are available. For a description of each metric, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html">Historical metrics definitions</a> in the <i>Amazon Connect Administrator's Guide</i>.</p>
     /// <dl>
     /// <dt>
+    /// ABANDONMENT_RATE
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Percent</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// </dd>
+    /// <dt>
     /// AGENT_ADHERENT_TIME
     /// </dt>
     /// <dd>
@@ -582,6 +667,14 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Count</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy </p>
+    /// </dd>
+    /// <dt>
+    /// AGENT_NON_RESPONSE_WITHOUT_CUSTOMER_ABANDONS
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Count</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>Data for this metric is available starting from October 1, 2023 0:00:00 GMT.</p>
     /// </dd>
     /// <dt>
     /// AGENT_OCCUPANCY
@@ -628,15 +721,9 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Seconds</p>
     /// <p>Valid metric filter key: <code>INITIATION_METHOD</code>. For now, this metric only supports the following as <code>INITIATION_METHOD</code>: <code>INBOUND</code> | <code>OUTBOUND</code> | <code>CALLBACK</code> | <code>API</code> </p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
-    /// </dd>
-    /// <dt>
-    /// AVG_AGENT_CONNECTING_TIME
-    /// </dt>
-    /// <dd>
-    /// <p>Unit: Seconds</p>
-    /// <p>Valid metric filter key: <code>INITIATION_METHOD</code>. For now, this metric only supports the following as <code>INITIATION_METHOD</code>: <code>INBOUND</code> | <code>OUTBOUND</code> | <code>CALLBACK</code> | <code>API</code> </p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p> <note>
+    /// <p>The <code>Negate</code> key in Metric Level Filters is not applicable for this metric.</p>
+    /// </note>
     /// </dd>
     /// <dt>
     /// AVG_CONTACT_DURATION
@@ -679,6 +766,13 @@ impl GetMetricDataV2FluentBuilder {
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature</p> <note>
     /// <p>Feature is a valid filter but not a valid grouping.</p>
     /// </note>
+    /// </dd>
+    /// <dt>
+    /// AVG_HOLD_TIME_ALL_CONTACTS
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Seconds</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
     /// </dd>
     /// <dt>
     /// AVG_HOLDS
@@ -737,6 +831,13 @@ impl GetMetricDataV2FluentBuilder {
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Feature</p> <note>
     /// <p>Feature is a valid filter but not a valid grouping.</p>
     /// </note>
+    /// </dd>
+    /// <dt>
+    /// AVG_RESOLUTION_TIME
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Seconds</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile</p>
     /// </dd>
     /// <dt>
     /// AVG_TALK_TIME
@@ -802,6 +903,14 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Count</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// </dd>
+    /// <dt>
+    /// CONTACTS_RESOLVED_IN_X
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Count</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile</p>
+    /// <p>Threshold: For <code>ThresholdValue</code> enter any whole number from 1 to 604800 (inclusive), in seconds. For <code>Comparison</code>, you must enter <code>LT</code> (for "Less than").</p>
     /// </dd>
     /// <dt>
     /// CONTACTS_TRANSFERRED_OUT
@@ -881,6 +990,13 @@ impl GetMetricDataV2FluentBuilder {
     /// <p>The metrics to retrieve. Specify the name, groupings, and filters for each metric. The following historical metrics are available. For a description of each metric, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html">Historical metrics definitions</a> in the <i>Amazon Connect Administrator's Guide</i>.</p>
     /// <dl>
     /// <dt>
+    /// ABANDONMENT_RATE
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Percent</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// </dd>
+    /// <dt>
     /// AGENT_ADHERENT_TIME
     /// </dt>
     /// <dd>
@@ -894,6 +1010,14 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Count</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy </p>
+    /// </dd>
+    /// <dt>
+    /// AGENT_NON_RESPONSE_WITHOUT_CUSTOMER_ABANDONS
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Count</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>Data for this metric is available starting from October 1, 2023 0:00:00 GMT.</p>
     /// </dd>
     /// <dt>
     /// AGENT_OCCUPANCY
@@ -940,15 +1064,9 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Seconds</p>
     /// <p>Valid metric filter key: <code>INITIATION_METHOD</code>. For now, this metric only supports the following as <code>INITIATION_METHOD</code>: <code>INBOUND</code> | <code>OUTBOUND</code> | <code>CALLBACK</code> | <code>API</code> </p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
-    /// </dd>
-    /// <dt>
-    /// AVG_AGENT_CONNECTING_TIME
-    /// </dt>
-    /// <dd>
-    /// <p>Unit: Seconds</p>
-    /// <p>Valid metric filter key: <code>INITIATION_METHOD</code>. For now, this metric only supports the following as <code>INITIATION_METHOD</code>: <code>INBOUND</code> | <code>OUTBOUND</code> | <code>CALLBACK</code> | <code>API</code> </p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p> <note>
+    /// <p>The <code>Negate</code> key in Metric Level Filters is not applicable for this metric.</p>
+    /// </note>
     /// </dd>
     /// <dt>
     /// AVG_CONTACT_DURATION
@@ -991,6 +1109,13 @@ impl GetMetricDataV2FluentBuilder {
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature</p> <note>
     /// <p>Feature is a valid filter but not a valid grouping.</p>
     /// </note>
+    /// </dd>
+    /// <dt>
+    /// AVG_HOLD_TIME_ALL_CONTACTS
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Seconds</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
     /// </dd>
     /// <dt>
     /// AVG_HOLDS
@@ -1049,6 +1174,13 @@ impl GetMetricDataV2FluentBuilder {
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Feature</p> <note>
     /// <p>Feature is a valid filter but not a valid grouping.</p>
     /// </note>
+    /// </dd>
+    /// <dt>
+    /// AVG_RESOLUTION_TIME
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Seconds</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile</p>
     /// </dd>
     /// <dt>
     /// AVG_TALK_TIME
@@ -1114,6 +1246,14 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Count</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// </dd>
+    /// <dt>
+    /// CONTACTS_RESOLVED_IN_X
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Count</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile</p>
+    /// <p>Threshold: For <code>ThresholdValue</code> enter any whole number from 1 to 604800 (inclusive), in seconds. For <code>Comparison</code>, you must enter <code>LT</code> (for "Less than").</p>
     /// </dd>
     /// <dt>
     /// CONTACTS_TRANSFERRED_OUT

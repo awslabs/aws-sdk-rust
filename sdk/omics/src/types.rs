@@ -103,6 +103,10 @@ pub use crate::types::_read_set_batch_error::ReadSetBatchError;
 
 pub use crate::types::_read_set_list_item::ReadSetListItem;
 
+pub use crate::types::_e_tag::ETag;
+
+pub use crate::types::_e_tag_algorithm::ETagAlgorithm;
+
 pub use crate::types::_creation_type::CreationType;
 
 pub use crate::types::_sequence_information::SequenceInformation;
@@ -224,6 +228,10 @@ mod _annotation_type;
 mod _complete_read_set_upload_part_list_item;
 
 mod _creation_type;
+
+mod _e_tag;
+
+mod _e_tag_algorithm;
 
 mod _encryption_type;
 

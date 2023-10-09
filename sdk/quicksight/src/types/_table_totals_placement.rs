@@ -12,6 +12,7 @@
 /// ```text
 /// # let tabletotalsplacement = unimplemented!();
 /// match tabletotalsplacement {
+///     TableTotalsPlacement::Auto => { /* ... */ },
 ///     TableTotalsPlacement::End => { /* ... */ },
 ///     TableTotalsPlacement::Start => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -42,6 +43,8 @@
 )]
 pub enum TableTotalsPlacement {
     #[allow(missing_docs)] // documentation missing in model
+    Auto,
+    #[allow(missing_docs)] // documentation missing in model
     End,
     #[allow(missing_docs)] // documentation missing in model
     Start,
@@ -51,6 +54,7 @@ pub enum TableTotalsPlacement {
 impl ::std::convert::From<&str> for TableTotalsPlacement {
     fn from(s: &str) -> Self {
         match s {
+            "AUTO" => TableTotalsPlacement::Auto,
             "END" => TableTotalsPlacement::End,
             "START" => TableTotalsPlacement::Start,
             other => TableTotalsPlacement::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
@@ -68,6 +72,7 @@ impl TableTotalsPlacement {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            TableTotalsPlacement::Auto => "AUTO",
             TableTotalsPlacement::End => "END",
             TableTotalsPlacement::Start => "START",
             TableTotalsPlacement::Unknown(value) => value.as_str(),
@@ -75,7 +80,7 @@ impl TableTotalsPlacement {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["END", "START"]
+        &["AUTO", "END", "START"]
     }
 }
 impl ::std::convert::AsRef<str> for TableTotalsPlacement {

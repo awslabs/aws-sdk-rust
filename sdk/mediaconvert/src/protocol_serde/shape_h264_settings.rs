@@ -27,161 +27,164 @@ pub fn ser_h264_settings(
     if let Some(var_7) = &input.dynamic_sub_gop {
         object.key("dynamicSubGop").string(var_7.as_str());
     }
-    if let Some(var_8) = &input.entropy_encoding {
-        object.key("entropyEncoding").string(var_8.as_str());
+    if let Some(var_8) = &input.end_of_stream_markers {
+        object.key("endOfStreamMarkers").string(var_8.as_str());
     }
-    if let Some(var_9) = &input.field_encoding {
-        object.key("fieldEncoding").string(var_9.as_str());
+    if let Some(var_9) = &input.entropy_encoding {
+        object.key("entropyEncoding").string(var_9.as_str());
     }
-    if let Some(var_10) = &input.flicker_adaptive_quantization {
-        object.key("flickerAdaptiveQuantization").string(var_10.as_str());
+    if let Some(var_10) = &input.field_encoding {
+        object.key("fieldEncoding").string(var_10.as_str());
     }
-    if let Some(var_11) = &input.framerate_control {
-        object.key("framerateControl").string(var_11.as_str());
+    if let Some(var_11) = &input.flicker_adaptive_quantization {
+        object.key("flickerAdaptiveQuantization").string(var_11.as_str());
     }
-    if let Some(var_12) = &input.framerate_conversion_algorithm {
-        object.key("framerateConversionAlgorithm").string(var_12.as_str());
+    if let Some(var_12) = &input.framerate_control {
+        object.key("framerateControl").string(var_12.as_str());
     }
-    if let Some(var_13) = &input.framerate_denominator {
+    if let Some(var_13) = &input.framerate_conversion_algorithm {
+        object.key("framerateConversionAlgorithm").string(var_13.as_str());
+    }
+    if let Some(var_14) = &input.framerate_denominator {
         object.key("framerateDenominator").number(
-            #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_13).into()),
-        );
-    }
-    if let Some(var_14) = &input.framerate_numerator {
-        object.key("framerateNumerator").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((*var_14).into()),
         );
     }
-    if let Some(var_15) = &input.gop_b_reference {
-        object.key("gopBReference").string(var_15.as_str());
+    if let Some(var_15) = &input.framerate_numerator {
+        object.key("framerateNumerator").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_15).into()),
+        );
     }
-    if let Some(var_16) = &input.gop_closed_cadence {
+    if let Some(var_16) = &input.gop_b_reference {
+        object.key("gopBReference").string(var_16.as_str());
+    }
+    if let Some(var_17) = &input.gop_closed_cadence {
         object.key("gopClosedCadence").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_16).into()),
+            ::aws_smithy_types::Number::NegInt((*var_17).into()),
         );
     }
-    if let Some(var_17) = &input.gop_size {
+    if let Some(var_18) = &input.gop_size {
         object.key("gopSize").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::Float((*var_17).into()),
+            ::aws_smithy_types::Number::Float((*var_18).into()),
         );
     }
-    if let Some(var_18) = &input.gop_size_units {
-        object.key("gopSizeUnits").string(var_18.as_str());
+    if let Some(var_19) = &input.gop_size_units {
+        object.key("gopSizeUnits").string(var_19.as_str());
     }
-    if let Some(var_19) = &input.hrd_buffer_final_fill_percentage {
+    if let Some(var_20) = &input.hrd_buffer_final_fill_percentage {
         object.key("hrdBufferFinalFillPercentage").number(
-            #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_19).into()),
-        );
-    }
-    if let Some(var_20) = &input.hrd_buffer_initial_fill_percentage {
-        object.key("hrdBufferInitialFillPercentage").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((*var_20).into()),
         );
     }
-    if let Some(var_21) = &input.hrd_buffer_size {
-        object.key("hrdBufferSize").number(
+    if let Some(var_21) = &input.hrd_buffer_initial_fill_percentage {
+        object.key("hrdBufferInitialFillPercentage").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((*var_21).into()),
         );
     }
-    if let Some(var_22) = &input.interlace_mode {
-        object.key("interlaceMode").string(var_22.as_str());
-    }
-    if let Some(var_23) = &input.max_bitrate {
-        object.key("maxBitrate").number(
+    if let Some(var_22) = &input.hrd_buffer_size {
+        object.key("hrdBufferSize").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_23).into()),
+            ::aws_smithy_types::Number::NegInt((*var_22).into()),
         );
     }
-    if let Some(var_24) = &input.min_i_interval {
-        object.key("minIInterval").number(
+    if let Some(var_23) = &input.interlace_mode {
+        object.key("interlaceMode").string(var_23.as_str());
+    }
+    if let Some(var_24) = &input.max_bitrate {
+        object.key("maxBitrate").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((*var_24).into()),
         );
     }
-    if let Some(var_25) = &input.number_b_frames_between_reference_frames {
-        object.key("numberBFramesBetweenReferenceFrames").number(
+    if let Some(var_25) = &input.min_i_interval {
+        object.key("minIInterval").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((*var_25).into()),
         );
     }
-    if let Some(var_26) = &input.number_reference_frames {
-        object.key("numberReferenceFrames").number(
+    if let Some(var_26) = &input.number_b_frames_between_reference_frames {
+        object.key("numberBFramesBetweenReferenceFrames").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((*var_26).into()),
         );
     }
-    if let Some(var_27) = &input.par_control {
-        object.key("parControl").string(var_27.as_str());
-    }
-    if let Some(var_28) = &input.par_denominator {
-        object.key("parDenominator").number(
+    if let Some(var_27) = &input.number_reference_frames {
+        object.key("numberReferenceFrames").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_28).into()),
+            ::aws_smithy_types::Number::NegInt((*var_27).into()),
         );
     }
-    if let Some(var_29) = &input.par_numerator {
-        object.key("parNumerator").number(
+    if let Some(var_28) = &input.par_control {
+        object.key("parControl").string(var_28.as_str());
+    }
+    if let Some(var_29) = &input.par_denominator {
+        object.key("parDenominator").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((*var_29).into()),
         );
     }
-    if let Some(var_30) = &input.quality_tuning_level {
-        object.key("qualityTuningLevel").string(var_30.as_str());
+    if let Some(var_30) = &input.par_numerator {
+        object.key("parNumerator").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_30).into()),
+        );
     }
-    if let Some(var_31) = &input.qvbr_settings {
+    if let Some(var_31) = &input.quality_tuning_level {
+        object.key("qualityTuningLevel").string(var_31.as_str());
+    }
+    if let Some(var_32) = &input.qvbr_settings {
         #[allow(unused_mut)]
-        let mut object_32 = object.key("qvbrSettings").start_object();
-        crate::protocol_serde::shape_h264_qvbr_settings::ser_h264_qvbr_settings(&mut object_32, var_31)?;
-        object_32.finish();
+        let mut object_33 = object.key("qvbrSettings").start_object();
+        crate::protocol_serde::shape_h264_qvbr_settings::ser_h264_qvbr_settings(&mut object_33, var_32)?;
+        object_33.finish();
     }
-    if let Some(var_33) = &input.rate_control_mode {
-        object.key("rateControlMode").string(var_33.as_str());
+    if let Some(var_34) = &input.rate_control_mode {
+        object.key("rateControlMode").string(var_34.as_str());
     }
-    if let Some(var_34) = &input.repeat_pps {
-        object.key("repeatPps").string(var_34.as_str());
+    if let Some(var_35) = &input.repeat_pps {
+        object.key("repeatPps").string(var_35.as_str());
     }
-    if let Some(var_35) = &input.scan_type_conversion_mode {
-        object.key("scanTypeConversionMode").string(var_35.as_str());
+    if let Some(var_36) = &input.scan_type_conversion_mode {
+        object.key("scanTypeConversionMode").string(var_36.as_str());
     }
-    if let Some(var_36) = &input.scene_change_detect {
-        object.key("sceneChangeDetect").string(var_36.as_str());
+    if let Some(var_37) = &input.scene_change_detect {
+        object.key("sceneChangeDetect").string(var_37.as_str());
     }
-    if let Some(var_37) = &input.slices {
+    if let Some(var_38) = &input.slices {
         object.key("slices").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_37).into()),
+            ::aws_smithy_types::Number::NegInt((*var_38).into()),
         );
     }
-    if let Some(var_38) = &input.slow_pal {
-        object.key("slowPal").string(var_38.as_str());
+    if let Some(var_39) = &input.slow_pal {
+        object.key("slowPal").string(var_39.as_str());
     }
-    if let Some(var_39) = &input.softness {
+    if let Some(var_40) = &input.softness {
         object.key("softness").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_39).into()),
+            ::aws_smithy_types::Number::NegInt((*var_40).into()),
         );
     }
-    if let Some(var_40) = &input.spatial_adaptive_quantization {
-        object.key("spatialAdaptiveQuantization").string(var_40.as_str());
+    if let Some(var_41) = &input.spatial_adaptive_quantization {
+        object.key("spatialAdaptiveQuantization").string(var_41.as_str());
     }
-    if let Some(var_41) = &input.syntax {
-        object.key("syntax").string(var_41.as_str());
+    if let Some(var_42) = &input.syntax {
+        object.key("syntax").string(var_42.as_str());
     }
-    if let Some(var_42) = &input.telecine {
-        object.key("telecine").string(var_42.as_str());
+    if let Some(var_43) = &input.telecine {
+        object.key("telecine").string(var_43.as_str());
     }
-    if let Some(var_43) = &input.temporal_adaptive_quantization {
-        object.key("temporalAdaptiveQuantization").string(var_43.as_str());
+    if let Some(var_44) = &input.temporal_adaptive_quantization {
+        object.key("temporalAdaptiveQuantization").string(var_44.as_str());
     }
-    if let Some(var_44) = &input.unregistered_sei_timecode {
-        object.key("unregisteredSeiTimecode").string(var_44.as_str());
+    if let Some(var_45) = &input.unregistered_sei_timecode {
+        object.key("unregisteredSeiTimecode").string(var_45.as_str());
     }
     Ok(())
 }
@@ -238,6 +241,13 @@ where
                             builder = builder.set_dynamic_sub_gop(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| crate::types::H264DynamicSubGop::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "endOfStreamMarkers" => {
+                            builder = builder.set_end_of_stream_markers(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::H264EndOfStreamMarkers::from(u.as_ref())))
                                     .transpose()?,
                             );
                         }

@@ -28,6 +28,7 @@ impl PutSinkPolicyInputBuilder {
 /// <li> <p> <b>Metrics</b> - Specify with <code>AWS::CloudWatch::Metric</code> </p> </li>
 /// <li> <p> <b>Log groups</b> - Specify with <code>AWS::Logs::LogGroup</code> </p> </li>
 /// <li> <p> <b>Traces</b> - Specify with <code>AWS::XRay::Trace</code> </p> </li>
+/// <li> <p> <b>Application Insights - Applications</b> - Specify with <code>AWS::ApplicationInsights::Application</code> </p> </li>
 /// </ul>
 /// <p>See the examples in this section to see how to specify permitted source accounts and data types.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

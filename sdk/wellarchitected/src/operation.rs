@@ -22,6 +22,12 @@ pub mod create_profile;
 /// Types for the `CreateProfileShare` operation.
 pub mod create_profile_share;
 
+/// Types for the `CreateReviewTemplate` operation.
+pub mod create_review_template;
+
+/// Types for the `CreateTemplateShare` operation.
+pub mod create_template_share;
+
 /// Types for the `CreateWorkload` operation.
 pub mod create_workload;
 
@@ -39,6 +45,12 @@ pub mod delete_profile;
 
 /// Types for the `DeleteProfileShare` operation.
 pub mod delete_profile_share;
+
+/// Types for the `DeleteReviewTemplate` operation.
+pub mod delete_review_template;
+
+/// Types for the `DeleteTemplateShare` operation.
+pub mod delete_template_share;
 
 /// Types for the `DeleteWorkload` operation.
 pub mod delete_workload;
@@ -82,6 +94,15 @@ pub mod get_profile;
 /// Types for the `GetProfileTemplate` operation.
 pub mod get_profile_template;
 
+/// Types for the `GetReviewTemplate` operation.
+pub mod get_review_template;
+
+/// Types for the `GetReviewTemplateAnswer` operation.
+pub mod get_review_template_answer;
+
+/// Types for the `GetReviewTemplateLensReview` operation.
+pub mod get_review_template_lens_review;
+
 /// Types for the `GetWorkload` operation.
 pub mod get_workload;
 
@@ -124,11 +145,20 @@ pub mod list_profile_shares;
 /// Types for the `ListProfiles` operation.
 pub mod list_profiles;
 
+/// Types for the `ListReviewTemplateAnswers` operation.
+pub mod list_review_template_answers;
+
+/// Types for the `ListReviewTemplates` operation.
+pub mod list_review_templates;
+
 /// Types for the `ListShareInvitations` operation.
 pub mod list_share_invitations;
 
 /// Types for the `ListTagsForResource` operation.
 pub mod list_tags_for_resource;
+
+/// Types for the `ListTemplateShares` operation.
+pub mod list_template_shares;
 
 /// Types for the `ListWorkloadShares` operation.
 pub mod list_workload_shares;
@@ -154,6 +184,15 @@ pub mod update_lens_review;
 /// Types for the `UpdateProfile` operation.
 pub mod update_profile;
 
+/// Types for the `UpdateReviewTemplate` operation.
+pub mod update_review_template;
+
+/// Types for the `UpdateReviewTemplateAnswer` operation.
+pub mod update_review_template_answer;
+
+/// Types for the `UpdateReviewTemplateLensReview` operation.
+pub mod update_review_template_lens_review;
+
 /// Types for the `UpdateShareInvitation` operation.
 pub mod update_share_invitation;
 
@@ -168,3 +207,6 @@ pub mod upgrade_lens_review;
 
 /// Types for the `UpgradeProfileVersion` operation.
 pub mod upgrade_profile_version;
+
+/// Types for the `UpgradeReviewTemplateLensReview` operation.
+pub mod upgrade_review_template_lens_review;

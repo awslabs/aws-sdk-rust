@@ -31,27 +31,19 @@ pub use crate::types::_share_resource_type::ShareResourceType;
 
 pub use crate::types::_share_invitation_action::ShareInvitationAction;
 
-pub use crate::types::_profile::Profile;
+pub use crate::types::_review_template_lens_review::ReviewTemplateLensReview;
 
-pub use crate::types::_profile_question::ProfileQuestion;
+pub use crate::types::_question::Question;
 
-pub use crate::types::_profile_choice::ProfileChoice;
-
-pub use crate::types::_profile_question_update::ProfileQuestionUpdate;
-
-pub use crate::types::_lens_review::LensReview;
-
-pub use crate::types::_pillar_review_summary::PillarReviewSummary;
+pub use crate::types::_review_template_pillar_review_summary::ReviewTemplatePillarReviewSummary;
 
 pub use crate::types::_lens_status::LensStatus;
 
-pub use crate::types::_discovery_integration_status::DiscoveryIntegrationStatus;
-
-pub use crate::types::_organization_sharing_status::OrganizationSharingStatus;
-
-pub use crate::types::_answer::Answer;
+pub use crate::types::_review_template_answer::ReviewTemplateAnswer;
 
 pub use crate::types::_answer_reason::AnswerReason;
+
+pub use crate::types::_review_template_answer_status::ReviewTemplateAnswerStatus;
 
 pub use crate::types::_choice_answer::ChoiceAnswer;
 
@@ -69,11 +61,43 @@ pub use crate::types::_additional_resource_type::AdditionalResourceType;
 
 pub use crate::types::_choice_update::ChoiceUpdate;
 
+pub use crate::types::_review_template::ReviewTemplate;
+
+pub use crate::types::_review_template_update_status::ReviewTemplateUpdateStatus;
+
+pub use crate::types::_profile::Profile;
+
+pub use crate::types::_profile_question::ProfileQuestion;
+
+pub use crate::types::_profile_choice::ProfileChoice;
+
+pub use crate::types::_profile_question_update::ProfileQuestionUpdate;
+
+pub use crate::types::_lens_review::LensReview;
+
+pub use crate::types::_pillar_review_summary::PillarReviewSummary;
+
+pub use crate::types::_discovery_integration_status::DiscoveryIntegrationStatus;
+
+pub use crate::types::_organization_sharing_status::OrganizationSharingStatus;
+
+pub use crate::types::_answer::Answer;
+
 pub use crate::types::_workload_share_summary::WorkloadShareSummary;
 
 pub use crate::types::_workload_summary::WorkloadSummary;
 
+pub use crate::types::_template_share_summary::TemplateShareSummary;
+
 pub use crate::types::_share_invitation_summary::ShareInvitationSummary;
+
+pub use crate::types::_review_template_summary::ReviewTemplateSummary;
+
+pub use crate::types::_review_template_answer_summary::ReviewTemplateAnswerSummary;
+
+pub use crate::types::_question_type::QuestionType;
+
+pub use crate::types::_choice_answer_summary::ChoiceAnswerSummary;
 
 pub use crate::types::_profile_share_summary::ProfileShareSummary;
 
@@ -120,10 +144,6 @@ pub use crate::types::_check_detail::CheckDetail;
 pub use crate::types::_check_failure_reason::CheckFailureReason;
 
 pub use crate::types::_answer_summary::AnswerSummary;
-
-pub use crate::types::_question_type::QuestionType;
-
-pub use crate::types::_choice_answer_summary::ChoiceAnswerSummary;
 
 pub use crate::types::_import_lens_status::ImportLensStatus;
 
@@ -277,6 +297,8 @@ mod _profile_template_choice;
 
 mod _profile_template_question;
 
+mod _question;
+
 mod _question_difference;
 
 mod _question_metric;
@@ -286,6 +308,22 @@ mod _question_priority;
 mod _question_type;
 
 mod _report_format;
+
+mod _review_template;
+
+mod _review_template_answer;
+
+mod _review_template_answer_status;
+
+mod _review_template_answer_summary;
+
+mod _review_template_lens_review;
+
+mod _review_template_pillar_review_summary;
+
+mod _review_template_summary;
+
+mod _review_template_update_status;
 
 mod _risk;
 
@@ -298,6 +336,8 @@ mod _share_invitation_summary;
 mod _share_resource_type;
 
 mod _share_status;
+
+mod _template_share_summary;
 
 mod _trusted_advisor_integration_status;
 

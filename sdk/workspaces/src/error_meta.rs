@@ -5,10 +5,18 @@
 pub enum Error {
     /// <p>The user is not authorized to access a resource.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
+    /// <p>The specified application is not supported.</p>
+    ApplicationNotSupportedException(crate::types::error::ApplicationNotSupportedException),
+    /// <p>The compute type of the WorkSpace is not compatible with the application.</p>
+    ComputeNotCompatibleException(crate::types::error::ComputeNotCompatibleException),
+    /// <p>The specified application is not compatible with the resource.</p>
+    IncompatibleApplicationsException(crate::types::error::IncompatibleApplicationsException),
     /// <p>One or more parameter values are not valid.</p>
     InvalidParameterValuesException(crate::types::error::InvalidParameterValuesException),
     /// <p>The state of the resource is not valid for this operation.</p>
     InvalidResourceStateException(crate::types::error::InvalidResourceStateException),
+    /// <p>The operating system of the WorkSpace is not compatible with the application.</p>
+    OperatingSystemNotCompatibleException(crate::types::error::OperatingSystemNotCompatibleException),
     /// <p>The properties of this WorkSpace are currently being modified. Try again in a moment.</p>
     OperationInProgressException(crate::types::error::OperationInProgressException),
     /// <p>This operation is not supported.</p>
@@ -19,6 +27,8 @@ pub enum Error {
     ResourceAssociatedException(crate::types::error::ResourceAssociatedException),
     /// <p>The resource could not be created.</p>
     ResourceCreationFailedException(crate::types::error::ResourceCreationFailedException),
+    /// <p>The specified resource is currently in use.</p>
+    ResourceInUseException(crate::types::error::ResourceInUseException),
     /// <p>Your resource limits have been exceeded.</p>
     ResourceLimitExceededException(crate::types::error::ResourceLimitExceededException),
     /// <p>The resource could not be found.</p>
@@ -38,13 +48,18 @@ impl ::std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
             Error::AccessDeniedException(inner) => inner.fmt(f),
+            Error::ApplicationNotSupportedException(inner) => inner.fmt(f),
+            Error::ComputeNotCompatibleException(inner) => inner.fmt(f),
+            Error::IncompatibleApplicationsException(inner) => inner.fmt(f),
             Error::InvalidParameterValuesException(inner) => inner.fmt(f),
             Error::InvalidResourceStateException(inner) => inner.fmt(f),
+            Error::OperatingSystemNotCompatibleException(inner) => inner.fmt(f),
             Error::OperationInProgressException(inner) => inner.fmt(f),
             Error::OperationNotSupportedException(inner) => inner.fmt(f),
             Error::ResourceAlreadyExistsException(inner) => inner.fmt(f),
             Error::ResourceAssociatedException(inner) => inner.fmt(f),
             Error::ResourceCreationFailedException(inner) => inner.fmt(f),
+            Error::ResourceInUseException(inner) => inner.fmt(f),
             Error::ResourceLimitExceededException(inner) => inner.fmt(f),
             Error::ResourceNotFoundException(inner) => inner.fmt(f),
             Error::ResourceUnavailableException(inner) => inner.fmt(f),
@@ -132,6 +147,61 @@ impl From<crate::operation::associate_ip_groups::AssociateIpGroupsError> for Err
                 Error::ResourceNotFoundException(inner)
             }
             crate::operation::associate_ip_groups::AssociateIpGroupsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::associate_workspace_application::AssociateWorkspaceApplicationError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<crate::operation::associate_workspace_application::AssociateWorkspaceApplicationError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::associate_workspace_application::AssociateWorkspaceApplicationError> for Error {
+    fn from(err: crate::operation::associate_workspace_application::AssociateWorkspaceApplicationError) -> Self {
+        match err {
+            crate::operation::associate_workspace_application::AssociateWorkspaceApplicationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::associate_workspace_application::AssociateWorkspaceApplicationError::ApplicationNotSupportedException(inner) => {
+                Error::ApplicationNotSupportedException(inner)
+            }
+            crate::operation::associate_workspace_application::AssociateWorkspaceApplicationError::ComputeNotCompatibleException(inner) => {
+                Error::ComputeNotCompatibleException(inner)
+            }
+            crate::operation::associate_workspace_application::AssociateWorkspaceApplicationError::IncompatibleApplicationsException(inner) => {
+                Error::IncompatibleApplicationsException(inner)
+            }
+            crate::operation::associate_workspace_application::AssociateWorkspaceApplicationError::InvalidParameterValuesException(inner) => {
+                Error::InvalidParameterValuesException(inner)
+            }
+            crate::operation::associate_workspace_application::AssociateWorkspaceApplicationError::OperatingSystemNotCompatibleException(inner) => {
+                Error::OperatingSystemNotCompatibleException(inner)
+            }
+            crate::operation::associate_workspace_application::AssociateWorkspaceApplicationError::OperationNotSupportedException(inner) => {
+                Error::OperationNotSupportedException(inner)
+            }
+            crate::operation::associate_workspace_application::AssociateWorkspaceApplicationError::ResourceAlreadyExistsException(inner) => {
+                Error::ResourceAlreadyExistsException(inner)
+            }
+            crate::operation::associate_workspace_application::AssociateWorkspaceApplicationError::ResourceInUseException(inner) => {
+                Error::ResourceInUseException(inner)
+            }
+            crate::operation::associate_workspace_application::AssociateWorkspaceApplicationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::associate_workspace_application::AssociateWorkspaceApplicationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -768,6 +838,47 @@ impl From<crate::operation::delete_workspace_image::DeleteWorkspaceImageError> f
         }
     }
 }
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::deploy_workspace_applications::DeployWorkspaceApplicationsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::deploy_workspace_applications::DeployWorkspaceApplicationsError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::deploy_workspace_applications::DeployWorkspaceApplicationsError> for Error {
+    fn from(err: crate::operation::deploy_workspace_applications::DeployWorkspaceApplicationsError) -> Self {
+        match err {
+            crate::operation::deploy_workspace_applications::DeployWorkspaceApplicationsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::deploy_workspace_applications::DeployWorkspaceApplicationsError::IncompatibleApplicationsException(inner) => {
+                Error::IncompatibleApplicationsException(inner)
+            }
+            crate::operation::deploy_workspace_applications::DeployWorkspaceApplicationsError::InvalidParameterValuesException(inner) => {
+                Error::InvalidParameterValuesException(inner)
+            }
+            crate::operation::deploy_workspace_applications::DeployWorkspaceApplicationsError::OperationNotSupportedException(inner) => {
+                Error::OperationNotSupportedException(inner)
+            }
+            crate::operation::deploy_workspace_applications::DeployWorkspaceApplicationsError::ResourceInUseException(inner) => {
+                Error::ResourceInUseException(inner)
+            }
+            crate::operation::deploy_workspace_applications::DeployWorkspaceApplicationsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::deploy_workspace_applications::DeployWorkspaceApplicationsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::deregister_workspace_directory::DeregisterWorkspaceDirectoryError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -857,6 +968,112 @@ impl From<crate::operation::describe_account_modifications::DescribeAccountModif
                 Error::AccessDeniedException(inner)
             }
             crate::operation::describe_account_modifications::DescribeAccountModificationsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::describe_application_associations::DescribeApplicationAssociationsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<crate::operation::describe_application_associations::DescribeApplicationAssociationsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_application_associations::DescribeApplicationAssociationsError> for Error {
+    fn from(err: crate::operation::describe_application_associations::DescribeApplicationAssociationsError) -> Self {
+        match err {
+            crate::operation::describe_application_associations::DescribeApplicationAssociationsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::describe_application_associations::DescribeApplicationAssociationsError::InvalidParameterValuesException(inner) => {
+                Error::InvalidParameterValuesException(inner)
+            }
+            crate::operation::describe_application_associations::DescribeApplicationAssociationsError::OperationNotSupportedException(inner) => {
+                Error::OperationNotSupportedException(inner)
+            }
+            crate::operation::describe_application_associations::DescribeApplicationAssociationsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::describe_application_associations::DescribeApplicationAssociationsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::describe_applications::DescribeApplicationsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::describe_applications::DescribeApplicationsError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_applications::DescribeApplicationsError> for Error {
+    fn from(err: crate::operation::describe_applications::DescribeApplicationsError) -> Self {
+        match err {
+            crate::operation::describe_applications::DescribeApplicationsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::describe_applications::DescribeApplicationsError::InvalidParameterValuesException(inner) => {
+                Error::InvalidParameterValuesException(inner)
+            }
+            crate::operation::describe_applications::DescribeApplicationsError::OperationNotSupportedException(inner) => {
+                Error::OperationNotSupportedException(inner)
+            }
+            crate::operation::describe_applications::DescribeApplicationsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::describe_applications::DescribeApplicationsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::describe_bundle_associations::DescribeBundleAssociationsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::describe_bundle_associations::DescribeBundleAssociationsError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_bundle_associations::DescribeBundleAssociationsError> for Error {
+    fn from(err: crate::operation::describe_bundle_associations::DescribeBundleAssociationsError) -> Self {
+        match err {
+            crate::operation::describe_bundle_associations::DescribeBundleAssociationsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::describe_bundle_associations::DescribeBundleAssociationsError::InvalidParameterValuesException(inner) => {
+                Error::InvalidParameterValuesException(inner)
+            }
+            crate::operation::describe_bundle_associations::DescribeBundleAssociationsError::OperationNotSupportedException(inner) => {
+                Error::OperationNotSupportedException(inner)
+            }
+            crate::operation::describe_bundle_associations::DescribeBundleAssociationsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::describe_bundle_associations::DescribeBundleAssociationsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1030,6 +1247,41 @@ impl From<crate::operation::describe_connection_alias_permissions::DescribeConne
         }
     }
 }
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::describe_image_associations::DescribeImageAssociationsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::describe_image_associations::DescribeImageAssociationsError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_image_associations::DescribeImageAssociationsError> for Error {
+    fn from(err: crate::operation::describe_image_associations::DescribeImageAssociationsError) -> Self {
+        match err {
+            crate::operation::describe_image_associations::DescribeImageAssociationsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::describe_image_associations::DescribeImageAssociationsError::InvalidParameterValuesException(inner) => {
+                Error::InvalidParameterValuesException(inner)
+            }
+            crate::operation::describe_image_associations::DescribeImageAssociationsError::OperationNotSupportedException(inner) => {
+                Error::OperationNotSupportedException(inner)
+            }
+            crate::operation::describe_image_associations::DescribeImageAssociationsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::describe_image_associations::DescribeImageAssociationsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::describe_ip_groups::DescribeIpGroupsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1078,6 +1330,43 @@ impl From<crate::operation::describe_tags::DescribeTagsError> for Error {
         match err {
             crate::operation::describe_tags::DescribeTagsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::describe_tags::DescribeTagsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::describe_workspace_associations::DescribeWorkspaceAssociationsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<crate::operation::describe_workspace_associations::DescribeWorkspaceAssociationsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_workspace_associations::DescribeWorkspaceAssociationsError> for Error {
+    fn from(err: crate::operation::describe_workspace_associations::DescribeWorkspaceAssociationsError) -> Self {
+        match err {
+            crate::operation::describe_workspace_associations::DescribeWorkspaceAssociationsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::describe_workspace_associations::DescribeWorkspaceAssociationsError::InvalidParameterValuesException(inner) => {
+                Error::InvalidParameterValuesException(inner)
+            }
+            crate::operation::describe_workspace_associations::DescribeWorkspaceAssociationsError::OperationNotSupportedException(inner) => {
+                Error::OperationNotSupportedException(inner)
+            }
+            crate::operation::describe_workspace_associations::DescribeWorkspaceAssociationsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::describe_workspace_associations::DescribeWorkspaceAssociationsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1358,6 +1647,47 @@ impl From<crate::operation::disassociate_ip_groups::DisassociateIpGroupsError> f
                 Error::ResourceNotFoundException(inner)
             }
             crate::operation::disassociate_ip_groups::DisassociateIpGroupsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::disassociate_workspace_application::DisassociateWorkspaceApplicationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<crate::operation::disassociate_workspace_application::DisassociateWorkspaceApplicationError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::disassociate_workspace_application::DisassociateWorkspaceApplicationError> for Error {
+    fn from(err: crate::operation::disassociate_workspace_application::DisassociateWorkspaceApplicationError) -> Self {
+        match err {
+            crate::operation::disassociate_workspace_application::DisassociateWorkspaceApplicationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::disassociate_workspace_application::DisassociateWorkspaceApplicationError::InvalidParameterValuesException(inner) => {
+                Error::InvalidParameterValuesException(inner)
+            }
+            crate::operation::disassociate_workspace_application::DisassociateWorkspaceApplicationError::OperationNotSupportedException(inner) => {
+                Error::OperationNotSupportedException(inner)
+            }
+            crate::operation::disassociate_workspace_application::DisassociateWorkspaceApplicationError::ResourceInUseException(inner) => {
+                Error::ResourceInUseException(inner)
+            }
+            crate::operation::disassociate_workspace_application::DisassociateWorkspaceApplicationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::disassociate_workspace_application::DisassociateWorkspaceApplicationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2249,13 +2579,18 @@ impl ::std::error::Error for Error {
     fn source(&self) -> std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
             Error::AccessDeniedException(inner) => inner.source(),
+            Error::ApplicationNotSupportedException(inner) => inner.source(),
+            Error::ComputeNotCompatibleException(inner) => inner.source(),
+            Error::IncompatibleApplicationsException(inner) => inner.source(),
             Error::InvalidParameterValuesException(inner) => inner.source(),
             Error::InvalidResourceStateException(inner) => inner.source(),
+            Error::OperatingSystemNotCompatibleException(inner) => inner.source(),
             Error::OperationInProgressException(inner) => inner.source(),
             Error::OperationNotSupportedException(inner) => inner.source(),
             Error::ResourceAlreadyExistsException(inner) => inner.source(),
             Error::ResourceAssociatedException(inner) => inner.source(),
             Error::ResourceCreationFailedException(inner) => inner.source(),
+            Error::ResourceInUseException(inner) => inner.source(),
             Error::ResourceLimitExceededException(inner) => inner.source(),
             Error::ResourceNotFoundException(inner) => inner.source(),
             Error::ResourceUnavailableException(inner) => inner.source(),
@@ -2270,13 +2605,18 @@ impl ::aws_http::request_id::RequestId for Error {
     fn request_id(&self) -> Option<&str> {
         match self {
             Self::AccessDeniedException(e) => e.request_id(),
+            Self::ApplicationNotSupportedException(e) => e.request_id(),
+            Self::ComputeNotCompatibleException(e) => e.request_id(),
+            Self::IncompatibleApplicationsException(e) => e.request_id(),
             Self::InvalidParameterValuesException(e) => e.request_id(),
             Self::InvalidResourceStateException(e) => e.request_id(),
+            Self::OperatingSystemNotCompatibleException(e) => e.request_id(),
             Self::OperationInProgressException(e) => e.request_id(),
             Self::OperationNotSupportedException(e) => e.request_id(),
             Self::ResourceAlreadyExistsException(e) => e.request_id(),
             Self::ResourceAssociatedException(e) => e.request_id(),
             Self::ResourceCreationFailedException(e) => e.request_id(),
+            Self::ResourceInUseException(e) => e.request_id(),
             Self::ResourceLimitExceededException(e) => e.request_id(),
             Self::ResourceNotFoundException(e) => e.request_id(),
             Self::ResourceUnavailableException(e) => e.request_id(),

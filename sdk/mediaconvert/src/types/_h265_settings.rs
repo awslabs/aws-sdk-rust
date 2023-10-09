@@ -18,6 +18,8 @@ pub struct H265Settings {
     pub codec_profile: ::std::option::Option<crate::types::H265CodecProfile>,
     /// Specify whether to allow the number of B-frames in your output GOP structure to vary or not depending on your input video content. To improve the subjective video quality of your output that has high-motion content: Leave blank or keep the default value Adaptive. MediaConvert will use fewer B-frames for high-motion video content than low-motion content. The maximum number of B- frames is limited by the value that you choose for B-frames between reference frames. To use the same number B-frames for all types of content: Choose Static.
     pub dynamic_sub_gop: ::std::option::Option<crate::types::H265DynamicSubGop>,
+    /// Optionally include or suppress markers at the end of your output that signal the end of the video stream. To include end of stream markers: Leave blank or keep the default value, Include. To not include end of stream markers: Choose Suppress. This is useful when your output will be inserted into another stream.
+    pub end_of_stream_markers: ::std::option::Option<crate::types::H265EndOfStreamMarkers>,
     /// Enable this setting to have the encoder reduce I-frame pop. I-frame pop appears as a visual flicker that can arise when the encoder saves bits by copying some macroblocks many times from frame to frame, and then refreshes them at the I-frame. When you enable this setting, the encoder updates these macroblocks slightly more often to smooth out the flicker. This setting is disabled by default. Related setting: In addition to enabling this setting, you must also set adaptiveQuantization to a value other than Off.
     pub flicker_adaptive_quantization: ::std::option::Option<crate::types::H265FlickerAdaptiveQuantization>,
     /// Use the Framerate setting to specify the frame rate for this output. If you want to keep the same frame rate as the input video, choose Follow source. If you want to do frame rate conversion, choose a frame rate from the dropdown list or choose Custom. The framerates shown in the dropdown list are decimal approximations of fractions. If you choose Custom, specify your frame rate as a fraction.
@@ -117,6 +119,10 @@ impl H265Settings {
     /// Specify whether to allow the number of B-frames in your output GOP structure to vary or not depending on your input video content. To improve the subjective video quality of your output that has high-motion content: Leave blank or keep the default value Adaptive. MediaConvert will use fewer B-frames for high-motion video content than low-motion content. The maximum number of B- frames is limited by the value that you choose for B-frames between reference frames. To use the same number B-frames for all types of content: Choose Static.
     pub fn dynamic_sub_gop(&self) -> ::std::option::Option<&crate::types::H265DynamicSubGop> {
         self.dynamic_sub_gop.as_ref()
+    }
+    /// Optionally include or suppress markers at the end of your output that signal the end of the video stream. To include end of stream markers: Leave blank or keep the default value, Include. To not include end of stream markers: Choose Suppress. This is useful when your output will be inserted into another stream.
+    pub fn end_of_stream_markers(&self) -> ::std::option::Option<&crate::types::H265EndOfStreamMarkers> {
+        self.end_of_stream_markers.as_ref()
     }
     /// Enable this setting to have the encoder reduce I-frame pop. I-frame pop appears as a visual flicker that can arise when the encoder saves bits by copying some macroblocks many times from frame to frame, and then refreshes them at the I-frame. When you enable this setting, the encoder updates these macroblocks slightly more often to smooth out the flicker. This setting is disabled by default. Related setting: In addition to enabling this setting, you must also set adaptiveQuantization to a value other than Off.
     pub fn flicker_adaptive_quantization(&self) -> ::std::option::Option<&crate::types::H265FlickerAdaptiveQuantization> {
@@ -277,6 +283,7 @@ pub struct H265SettingsBuilder {
     pub(crate) codec_level: ::std::option::Option<crate::types::H265CodecLevel>,
     pub(crate) codec_profile: ::std::option::Option<crate::types::H265CodecProfile>,
     pub(crate) dynamic_sub_gop: ::std::option::Option<crate::types::H265DynamicSubGop>,
+    pub(crate) end_of_stream_markers: ::std::option::Option<crate::types::H265EndOfStreamMarkers>,
     pub(crate) flicker_adaptive_quantization: ::std::option::Option<crate::types::H265FlickerAdaptiveQuantization>,
     pub(crate) framerate_control: ::std::option::Option<crate::types::H265FramerateControl>,
     pub(crate) framerate_conversion_algorithm: ::std::option::Option<crate::types::H265FramerateConversionAlgorithm>,
@@ -411,6 +418,20 @@ impl H265SettingsBuilder {
     /// Specify whether to allow the number of B-frames in your output GOP structure to vary or not depending on your input video content. To improve the subjective video quality of your output that has high-motion content: Leave blank or keep the default value Adaptive. MediaConvert will use fewer B-frames for high-motion video content than low-motion content. The maximum number of B- frames is limited by the value that you choose for B-frames between reference frames. To use the same number B-frames for all types of content: Choose Static.
     pub fn get_dynamic_sub_gop(&self) -> &::std::option::Option<crate::types::H265DynamicSubGop> {
         &self.dynamic_sub_gop
+    }
+    /// Optionally include or suppress markers at the end of your output that signal the end of the video stream. To include end of stream markers: Leave blank or keep the default value, Include. To not include end of stream markers: Choose Suppress. This is useful when your output will be inserted into another stream.
+    pub fn end_of_stream_markers(mut self, input: crate::types::H265EndOfStreamMarkers) -> Self {
+        self.end_of_stream_markers = ::std::option::Option::Some(input);
+        self
+    }
+    /// Optionally include or suppress markers at the end of your output that signal the end of the video stream. To include end of stream markers: Leave blank or keep the default value, Include. To not include end of stream markers: Choose Suppress. This is useful when your output will be inserted into another stream.
+    pub fn set_end_of_stream_markers(mut self, input: ::std::option::Option<crate::types::H265EndOfStreamMarkers>) -> Self {
+        self.end_of_stream_markers = input;
+        self
+    }
+    /// Optionally include or suppress markers at the end of your output that signal the end of the video stream. To include end of stream markers: Leave blank or keep the default value, Include. To not include end of stream markers: Choose Suppress. This is useful when your output will be inserted into another stream.
+    pub fn get_end_of_stream_markers(&self) -> &::std::option::Option<crate::types::H265EndOfStreamMarkers> {
+        &self.end_of_stream_markers
     }
     /// Enable this setting to have the encoder reduce I-frame pop. I-frame pop appears as a visual flicker that can arise when the encoder saves bits by copying some macroblocks many times from frame to frame, and then refreshes them at the I-frame. When you enable this setting, the encoder updates these macroblocks slightly more often to smooth out the flicker. This setting is disabled by default. Related setting: In addition to enabling this setting, you must also set adaptiveQuantization to a value other than Off.
     pub fn flicker_adaptive_quantization(mut self, input: crate::types::H265FlickerAdaptiveQuantization) -> Self {
@@ -912,6 +933,7 @@ impl H265SettingsBuilder {
             codec_level: self.codec_level,
             codec_profile: self.codec_profile,
             dynamic_sub_gop: self.dynamic_sub_gop,
+            end_of_stream_markers: self.end_of_stream_markers,
             flicker_adaptive_quantization: self.flicker_adaptive_quantization,
             framerate_control: self.framerate_control,
             framerate_conversion_algorithm: self.framerate_conversion_algorithm,

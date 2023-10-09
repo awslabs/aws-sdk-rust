@@ -5,6 +5,8 @@ pub use crate::types::_http_package_configuration::HttpPackageConfiguration;
 
 pub use crate::types::_type_::Type;
 
+pub use crate::types::_ad_break_opportunity::AdBreakOpportunity;
+
 pub use crate::types::_source_location::SourceLocation;
 
 pub use crate::types::_segment_delivery_configuration::SegmentDeliveryConfiguration;
@@ -122,6 +124,8 @@ mod _access_configuration;
 mod _access_type;
 
 mod _ad_break;
+
+mod _ad_break_opportunity;
 
 mod _ad_marker_passthrough;
 

@@ -47,6 +47,8 @@ pub struct DescribeGatewayInformationOutput {
     pub supported_gateway_capacities: ::std::option::Option<::std::vec::Vec<crate::types::GatewayCapacity>>,
     /// <p>A unique identifier for the specific instance of the host platform running the gateway. This value is only available for certain host environments, and its format depends on the host environment type.</p>
     pub host_environment_id: ::std::option::Option<::std::string::String>,
+    /// <p>The version number of the software running on the gateway appliance.</p>
+    pub software_version: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeGatewayInformationOutput {
@@ -135,6 +137,10 @@ impl DescribeGatewayInformationOutput {
     pub fn host_environment_id(&self) -> ::std::option::Option<&str> {
         self.host_environment_id.as_deref()
     }
+    /// <p>The version number of the software running on the gateway appliance.</p>
+    pub fn software_version(&self) -> ::std::option::Option<&str> {
+        self.software_version.as_deref()
+    }
 }
 impl ::aws_http::request_id::RequestId for DescribeGatewayInformationOutput {
     fn request_id(&self) -> Option<&str> {
@@ -173,6 +179,7 @@ pub struct DescribeGatewayInformationOutputBuilder {
     pub(crate) gateway_capacity: ::std::option::Option<crate::types::GatewayCapacity>,
     pub(crate) supported_gateway_capacities: ::std::option::Option<::std::vec::Vec<crate::types::GatewayCapacity>>,
     pub(crate) host_environment_id: ::std::option::Option<::std::string::String>,
+    pub(crate) software_version: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeGatewayInformationOutputBuilder {
@@ -491,6 +498,20 @@ impl DescribeGatewayInformationOutputBuilder {
     pub fn get_host_environment_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.host_environment_id
     }
+    /// <p>The version number of the software running on the gateway appliance.</p>
+    pub fn software_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.software_version = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The version number of the software running on the gateway appliance.</p>
+    pub fn set_software_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.software_version = input;
+        self
+    }
+    /// <p>The version number of the software running on the gateway appliance.</p>
+    pub fn get_software_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.software_version
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -524,6 +545,7 @@ impl DescribeGatewayInformationOutputBuilder {
             gateway_capacity: self.gateway_capacity,
             supported_gateway_capacities: self.supported_gateway_capacities,
             host_environment_id: self.host_environment_id,
+            software_version: self.software_version,
             _request_id: self._request_id,
         }
     }

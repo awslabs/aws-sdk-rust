@@ -22,7 +22,8 @@ impl ListShareInvitationsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListShareInvitations`.
 ///
-/// <p>List the workload invitations.</p>
+/// <p>List the share invitations.</p>
+/// <p> <code>WorkloadNamePrefix</code>, <code>LensNamePrefix</code>, <code>ProfileNamePrefix</code>, and <code>TemplateNamePrefix</code> are mutually exclusive. Use the parameter that matches your <code>ShareResourceType</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListShareInvitationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -186,18 +187,32 @@ impl ListShareInvitationsFluentBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }
-    /// <p>Profile name prefix.</p>
+    /// <p>An optional string added to the beginning of each profile name returned in the results.</p>
     pub fn profile_name_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.profile_name_prefix(input.into());
         self
     }
-    /// <p>Profile name prefix.</p>
+    /// <p>An optional string added to the beginning of each profile name returned in the results.</p>
     pub fn set_profile_name_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_profile_name_prefix(input);
         self
     }
-    /// <p>Profile name prefix.</p>
+    /// <p>An optional string added to the beginning of each profile name returned in the results.</p>
     pub fn get_profile_name_prefix(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_profile_name_prefix()
+    }
+    /// <p>An optional string added to the beginning of each review template name returned in the results.</p>
+    pub fn template_name_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.template_name_prefix(input.into());
+        self
+    }
+    /// <p>An optional string added to the beginning of each review template name returned in the results.</p>
+    pub fn set_template_name_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_template_name_prefix(input);
+        self
+    }
+    /// <p>An optional string added to the beginning of each review template name returned in the results.</p>
+    pub fn get_template_name_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_template_name_prefix()
     }
 }

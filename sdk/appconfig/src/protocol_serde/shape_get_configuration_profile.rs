@@ -127,6 +127,20 @@ pub(crate) fn de_get_configuration_profile(
                             .transpose()?,
                     );
                 }
+                "KmsKeyArn" => {
+                    builder = builder.set_kms_key_arn(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                "KmsKeyIdentifier" => {
+                    builder = builder.set_kms_key_identifier(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 "LocationUri" => {
                     builder = builder.set_location_uri(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

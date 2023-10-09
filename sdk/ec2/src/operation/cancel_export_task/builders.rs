@@ -110,17 +110,17 @@ impl CancelExportTaskFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The ID of the export task. This is the ID returned by <code>CreateInstanceExportTask</code>.</p>
+    /// <p>The ID of the export task. This is the ID returned by the <code>CreateInstanceExportTask</code> and <code>ExportImage</code> operations.</p>
     pub fn export_task_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.export_task_id(input.into());
         self
     }
-    /// <p>The ID of the export task. This is the ID returned by <code>CreateInstanceExportTask</code>.</p>
+    /// <p>The ID of the export task. This is the ID returned by the <code>CreateInstanceExportTask</code> and <code>ExportImage</code> operations.</p>
     pub fn set_export_task_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_export_task_id(input);
         self
     }
-    /// <p>The ID of the export task. This is the ID returned by <code>CreateInstanceExportTask</code>.</p>
+    /// <p>The ID of the export task. This is the ID returned by the <code>CreateInstanceExportTask</code> and <code>ExportImage</code> operations.</p>
     pub fn get_export_task_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_export_task_id()
     }

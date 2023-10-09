@@ -285,7 +285,11 @@ pub use crate::types::_metric_filter_v2::MetricFilterV2Builder;
 
 pub use crate::types::_threshold_v2::ThresholdV2Builder;
 
+pub use crate::types::_metric_interval::MetricIntervalBuilder;
+
 pub use crate::types::_filter_v2::FilterV2Builder;
+
+pub use crate::types::_interval_details::IntervalDetailsBuilder;
 
 pub use crate::types::_historical_metric_result::HistoricalMetricResultBuilder;
 

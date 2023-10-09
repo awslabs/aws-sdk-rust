@@ -117,11 +117,23 @@ pub fn ser_input_template(
     if let Some(var_38) = &input.timecode_start {
         object.key("timecodeStart").string(var_38.as_str());
     }
-    if let Some(var_39) = &input.video_selector {
+    if let Some(var_39) = &input.video_overlays {
+        let mut array_40 = object.key("videoOverlays").start_array();
+        for item_41 in var_39 {
+            {
+                #[allow(unused_mut)]
+                let mut object_42 = array_40.value().start_object();
+                crate::protocol_serde::shape_video_overlay::ser_video_overlay(&mut object_42, item_41)?;
+                object_42.finish();
+            }
+        }
+        array_40.finish();
+    }
+    if let Some(var_43) = &input.video_selector {
         #[allow(unused_mut)]
-        let mut object_40 = object.key("videoSelector").start_object();
-        crate::protocol_serde::shape_video_selector::ser_video_selector(&mut object_40, var_39)?;
-        object_40.finish();
+        let mut object_44 = object.key("videoSelector").start_object();
+        crate::protocol_serde::shape_video_selector::ser_video_selector(&mut object_44, var_43)?;
+        object_44.finish();
     }
     Ok(())
 }
@@ -250,6 +262,10 @@ where
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
                             );
+                        }
+                        "videoOverlays" => {
+                            builder =
+                                builder.set_video_overlays(crate::protocol_serde::shape___list_of_video_overlay::de___list_of_video_overlay(tokens)?);
                         }
                         "videoSelector" => {
                             builder = builder.set_video_selector(crate::protocol_serde::shape_video_selector::de_video_selector(tokens)?);

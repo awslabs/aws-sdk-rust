@@ -111,19 +111,19 @@ impl DescribeEventCategoriesFluentBuilder {
         self
     }
     /// <p>The type of source that is generating the events. For RDS Proxy events, specify <code>db-proxy</code>.</p>
-    /// <p>Valid values: <code>db-instance</code> | <code>db-cluster</code> | <code>db-parameter-group</code> | <code>db-security-group</code> | <code>db-snapshot</code> | <code>db-cluster-snapshot</code> | <code>db-proxy</code> </p>
+    /// <p>Valid Values: <code>db-instance</code> | <code>db-cluster</code> | <code>db-parameter-group</code> | <code>db-security-group</code> | <code>db-snapshot</code> | <code>db-cluster-snapshot</code> | <code>db-proxy</code> </p>
     pub fn source_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_type(input.into());
         self
     }
     /// <p>The type of source that is generating the events. For RDS Proxy events, specify <code>db-proxy</code>.</p>
-    /// <p>Valid values: <code>db-instance</code> | <code>db-cluster</code> | <code>db-parameter-group</code> | <code>db-security-group</code> | <code>db-snapshot</code> | <code>db-cluster-snapshot</code> | <code>db-proxy</code> </p>
+    /// <p>Valid Values: <code>db-instance</code> | <code>db-cluster</code> | <code>db-parameter-group</code> | <code>db-security-group</code> | <code>db-snapshot</code> | <code>db-cluster-snapshot</code> | <code>db-proxy</code> </p>
     pub fn set_source_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_type(input);
         self
     }
     /// <p>The type of source that is generating the events. For RDS Proxy events, specify <code>db-proxy</code>.</p>
-    /// <p>Valid values: <code>db-instance</code> | <code>db-cluster</code> | <code>db-parameter-group</code> | <code>db-security-group</code> | <code>db-snapshot</code> | <code>db-cluster-snapshot</code> | <code>db-proxy</code> </p>
+    /// <p>Valid Values: <code>db-instance</code> | <code>db-cluster</code> | <code>db-parameter-group</code> | <code>db-security-group</code> | <code>db-snapshot</code> | <code>db-cluster-snapshot</code> | <code>db-proxy</code> </p>
     pub fn get_source_type(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_source_type()
     }

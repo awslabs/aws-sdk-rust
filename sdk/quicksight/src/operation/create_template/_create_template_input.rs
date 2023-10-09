@@ -23,6 +23,8 @@ pub struct CreateTemplateInput {
     /// <p>A definition is the data model of all features in a Dashboard, Template, or Analysis.</p>
     /// <p>Either a <code>SourceEntity</code> or a <code>Definition</code> must be provided in order for the request to be valid.</p>
     pub definition: ::std::option::Option<crate::types::TemplateVersionDefinition>,
+    /// <p>TThe option to relax the validation needed to create a template with definition objects. This skips the validation step for specific errors.</p>
+    pub validation_strategy: ::std::option::Option<crate::types::ValidationStrategy>,
 }
 impl CreateTemplateInput {
     /// <p>The ID for the Amazon Web Services account that the group is in. You use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
@@ -61,6 +63,10 @@ impl CreateTemplateInput {
     pub fn definition(&self) -> ::std::option::Option<&crate::types::TemplateVersionDefinition> {
         self.definition.as_ref()
     }
+    /// <p>TThe option to relax the validation needed to create a template with definition objects. This skips the validation step for specific errors.</p>
+    pub fn validation_strategy(&self) -> ::std::option::Option<&crate::types::ValidationStrategy> {
+        self.validation_strategy.as_ref()
+    }
 }
 impl CreateTemplateInput {
     /// Creates a new builder-style object to manufacture [`CreateTemplateInput`](crate::operation::create_template::CreateTemplateInput).
@@ -81,6 +87,7 @@ pub struct CreateTemplateInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) version_description: ::std::option::Option<::std::string::String>,
     pub(crate) definition: ::std::option::Option<crate::types::TemplateVersionDefinition>,
+    pub(crate) validation_strategy: ::std::option::Option<crate::types::ValidationStrategy>,
 }
 impl CreateTemplateInputBuilder {
     /// <p>The ID for the Amazon Web Services account that the group is in. You use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
@@ -219,6 +226,20 @@ impl CreateTemplateInputBuilder {
     pub fn get_definition(&self) -> &::std::option::Option<crate::types::TemplateVersionDefinition> {
         &self.definition
     }
+    /// <p>TThe option to relax the validation needed to create a template with definition objects. This skips the validation step for specific errors.</p>
+    pub fn validation_strategy(mut self, input: crate::types::ValidationStrategy) -> Self {
+        self.validation_strategy = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>TThe option to relax the validation needed to create a template with definition objects. This skips the validation step for specific errors.</p>
+    pub fn set_validation_strategy(mut self, input: ::std::option::Option<crate::types::ValidationStrategy>) -> Self {
+        self.validation_strategy = input;
+        self
+    }
+    /// <p>TThe option to relax the validation needed to create a template with definition objects. This skips the validation step for specific errors.</p>
+    pub fn get_validation_strategy(&self) -> &::std::option::Option<crate::types::ValidationStrategy> {
+        &self.validation_strategy
+    }
     /// Consumes the builder and constructs a [`CreateTemplateInput`](crate::operation::create_template::CreateTemplateInput).
     pub fn build(
         self,
@@ -232,6 +253,7 @@ impl CreateTemplateInputBuilder {
             tags: self.tags,
             version_description: self.version_description,
             definition: self.definition,
+            validation_strategy: self.validation_strategy,
         })
     }
 }

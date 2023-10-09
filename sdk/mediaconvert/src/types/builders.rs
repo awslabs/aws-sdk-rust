@@ -277,6 +277,12 @@ pub use crate::types::_input_template::InputTemplateBuilder;
 
 pub use crate::types::_video_selector::VideoSelectorBuilder;
 
+pub use crate::types::_video_overlay::VideoOverlayBuilder;
+
+pub use crate::types::_video_overlay_input::VideoOverlayInputBuilder;
+
+pub use crate::types::_video_overlay_input_clipping::VideoOverlayInputClippingBuilder;
+
 pub use crate::types::_input_clipping::InputClippingBuilder;
 
 pub use crate::types::_caption_selector::CaptionSelectorBuilder;

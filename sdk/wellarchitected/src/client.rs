@@ -162,6 +162,10 @@ mod create_profile;
 
 mod create_profile_share;
 
+mod create_review_template;
+
+mod create_template_share;
+
 mod create_workload;
 
 mod create_workload_share;
@@ -202,6 +206,10 @@ mod delete_profile;
 
 mod delete_profile_share;
 
+mod delete_review_template;
+
+mod delete_template_share;
+
 mod delete_workload;
 
 mod delete_workload_share;
@@ -229,6 +237,12 @@ mod get_milestone;
 mod get_profile;
 
 mod get_profile_template;
+
+mod get_review_template;
+
+mod get_review_template_answer;
+
+mod get_review_template_lens_review;
 
 mod get_workload;
 
@@ -258,9 +272,15 @@ mod list_profile_shares;
 
 mod list_profiles;
 
+mod list_review_template_answers;
+
+mod list_review_templates;
+
 mod list_share_invitations;
 
 mod list_tags_for_resource;
+
+mod list_template_shares;
 
 mod list_workload_shares;
 
@@ -278,6 +298,12 @@ mod update_lens_review;
 
 mod update_profile;
 
+mod update_review_template;
+
+mod update_review_template_answer;
+
+mod update_review_template_lens_review;
+
 mod update_share_invitation;
 
 mod update_workload;
@@ -287,3 +313,5 @@ mod update_workload_share;
 mod upgrade_lens_review;
 
 mod upgrade_profile_version;
+
+mod upgrade_review_template_lens_review;

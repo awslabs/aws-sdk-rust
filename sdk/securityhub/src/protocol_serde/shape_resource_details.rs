@@ -571,6 +571,48 @@ pub fn ser_resource_details(
         crate::protocol_serde::shape_aws_athena_work_group_details::ser_aws_athena_work_group_details(&mut object_182, var_181)?;
         object_182.finish();
     }
+    if let Some(var_183) = &input.aws_events_eventbus {
+        #[allow(unused_mut)]
+        let mut object_184 = object.key("AwsEventsEventbus").start_object();
+        crate::protocol_serde::shape_aws_events_eventbus_details::ser_aws_events_eventbus_details(&mut object_184, var_183)?;
+        object_184.finish();
+    }
+    if let Some(var_185) = &input.aws_dms_endpoint {
+        #[allow(unused_mut)]
+        let mut object_186 = object.key("AwsDmsEndpoint").start_object();
+        crate::protocol_serde::shape_aws_dms_endpoint_details::ser_aws_dms_endpoint_details(&mut object_186, var_185)?;
+        object_186.finish();
+    }
+    if let Some(var_187) = &input.aws_events_endpoint {
+        #[allow(unused_mut)]
+        let mut object_188 = object.key("AwsEventsEndpoint").start_object();
+        crate::protocol_serde::shape_aws_events_endpoint_details::ser_aws_events_endpoint_details(&mut object_188, var_187)?;
+        object_188.finish();
+    }
+    if let Some(var_189) = &input.aws_dms_replication_task {
+        #[allow(unused_mut)]
+        let mut object_190 = object.key("AwsDmsReplicationTask").start_object();
+        crate::protocol_serde::shape_aws_dms_replication_task_details::ser_aws_dms_replication_task_details(&mut object_190, var_189)?;
+        object_190.finish();
+    }
+    if let Some(var_191) = &input.aws_dms_replication_instance {
+        #[allow(unused_mut)]
+        let mut object_192 = object.key("AwsDmsReplicationInstance").start_object();
+        crate::protocol_serde::shape_aws_dms_replication_instance_details::ser_aws_dms_replication_instance_details(&mut object_192, var_191)?;
+        object_192.finish();
+    }
+    if let Some(var_193) = &input.aws_route53_hosted_zone {
+        #[allow(unused_mut)]
+        let mut object_194 = object.key("AwsRoute53HostedZone").start_object();
+        crate::protocol_serde::shape_aws_route53_hosted_zone_details::ser_aws_route53_hosted_zone_details(&mut object_194, var_193)?;
+        object_194.finish();
+    }
+    if let Some(var_195) = &input.aws_msk_cluster {
+        #[allow(unused_mut)]
+        let mut object_196 = object.key("AwsMskCluster").start_object();
+        crate::protocol_serde::shape_aws_msk_cluster_details::ser_aws_msk_cluster_details(&mut object_196, var_195)?;
+        object_196.finish();
+    }
     Ok(())
 }
 
@@ -1022,6 +1064,40 @@ where
                             builder = builder.set_aws_athena_work_group(
                                 crate::protocol_serde::shape_aws_athena_work_group_details::de_aws_athena_work_group_details(tokens)?,
                             );
+                        }
+                        "AwsEventsEventbus" => {
+                            builder = builder.set_aws_events_eventbus(
+                                crate::protocol_serde::shape_aws_events_eventbus_details::de_aws_events_eventbus_details(tokens)?,
+                            );
+                        }
+                        "AwsDmsEndpoint" => {
+                            builder = builder.set_aws_dms_endpoint(
+                                crate::protocol_serde::shape_aws_dms_endpoint_details::de_aws_dms_endpoint_details(tokens)?,
+                            );
+                        }
+                        "AwsEventsEndpoint" => {
+                            builder = builder.set_aws_events_endpoint(
+                                crate::protocol_serde::shape_aws_events_endpoint_details::de_aws_events_endpoint_details(tokens)?,
+                            );
+                        }
+                        "AwsDmsReplicationTask" => {
+                            builder = builder.set_aws_dms_replication_task(
+                                crate::protocol_serde::shape_aws_dms_replication_task_details::de_aws_dms_replication_task_details(tokens)?,
+                            );
+                        }
+                        "AwsDmsReplicationInstance" => {
+                            builder = builder.set_aws_dms_replication_instance(
+                                crate::protocol_serde::shape_aws_dms_replication_instance_details::de_aws_dms_replication_instance_details(tokens)?,
+                            );
+                        }
+                        "AwsRoute53HostedZone" => {
+                            builder = builder.set_aws_route53_hosted_zone(
+                                crate::protocol_serde::shape_aws_route53_hosted_zone_details::de_aws_route53_hosted_zone_details(tokens)?,
+                            );
+                        }
+                        "AwsMskCluster" => {
+                            builder = builder
+                                .set_aws_msk_cluster(crate::protocol_serde::shape_aws_msk_cluster_details::de_aws_msk_cluster_details(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

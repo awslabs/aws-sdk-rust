@@ -191,6 +191,20 @@ pub struct ResourceDetails {
     pub aws_step_function_state_machine: ::std::option::Option<crate::types::AwsStepFunctionStateMachineDetails>,
     /// <p> Provides information about an Amazon Athena workgroup. A workgroup helps you separate users, teams, applications, or workloads. It also helps you set limits on data processing and track costs. </p>
     pub aws_athena_work_group: ::std::option::Option<crate::types::AwsAthenaWorkGroupDetails>,
+    /// <p> Provides details about Amazon EventBridge event bus for an endpoint. An event bus is a router that receives events and delivers them to zero or more destinations, or targets.</p>
+    pub aws_events_eventbus: ::std::option::Option<crate::types::AwsEventsEventbusDetails>,
+    /// <p> Provides details about an Database Migration Service (DMS) endpoint. An endpoint provides connection, data store type, and location information about your data store.</p>
+    pub aws_dms_endpoint: ::std::option::Option<crate::types::AwsDmsEndpointDetails>,
+    /// <p> Provides details about an Amazon EventBridge global endpoint. The endpoint can improve your application’s availability by making it Regional-fault tolerant.</p>
+    pub aws_events_endpoint: ::std::option::Option<crate::types::AwsEventsEndpointDetails>,
+    /// <p> Provides details about an DMS replication task. A replication task moves a set of data from the source endpoint to the target endpoint.</p>
+    pub aws_dms_replication_task: ::std::option::Option<crate::types::AwsDmsReplicationTaskDetails>,
+    /// <p> Provides details about an DMS replication instance. DMS uses a replication instance to connect to your source data store, read the source data, and format the data for consumption by the target data store.</p>
+    pub aws_dms_replication_instance: ::std::option::Option<crate::types::AwsDmsReplicationInstanceDetails>,
+    /// <p> Provides details about an Amazon Route&nbsp;53 hosted zone, including the four name servers assigned to the hosted zone. A hosted zone represents a collection of records that can be managed together, belonging to a single parent domain name.</p>
+    pub aws_route53_hosted_zone: ::std::option::Option<crate::types::AwsRoute53HostedZoneDetails>,
+    /// <p> Provides details about an Amazon Managed Streaming for Apache Kafka (Amazon MSK) cluster.</p>
+    pub aws_msk_cluster: ::std::option::Option<crate::types::AwsMskClusterDetails>,
 }
 impl ResourceDetails {
     /// <p>Details for an autoscaling group.</p>
@@ -557,6 +571,34 @@ impl ResourceDetails {
     pub fn aws_athena_work_group(&self) -> ::std::option::Option<&crate::types::AwsAthenaWorkGroupDetails> {
         self.aws_athena_work_group.as_ref()
     }
+    /// <p> Provides details about Amazon EventBridge event bus for an endpoint. An event bus is a router that receives events and delivers them to zero or more destinations, or targets.</p>
+    pub fn aws_events_eventbus(&self) -> ::std::option::Option<&crate::types::AwsEventsEventbusDetails> {
+        self.aws_events_eventbus.as_ref()
+    }
+    /// <p> Provides details about an Database Migration Service (DMS) endpoint. An endpoint provides connection, data store type, and location information about your data store.</p>
+    pub fn aws_dms_endpoint(&self) -> ::std::option::Option<&crate::types::AwsDmsEndpointDetails> {
+        self.aws_dms_endpoint.as_ref()
+    }
+    /// <p> Provides details about an Amazon EventBridge global endpoint. The endpoint can improve your application’s availability by making it Regional-fault tolerant.</p>
+    pub fn aws_events_endpoint(&self) -> ::std::option::Option<&crate::types::AwsEventsEndpointDetails> {
+        self.aws_events_endpoint.as_ref()
+    }
+    /// <p> Provides details about an DMS replication task. A replication task moves a set of data from the source endpoint to the target endpoint.</p>
+    pub fn aws_dms_replication_task(&self) -> ::std::option::Option<&crate::types::AwsDmsReplicationTaskDetails> {
+        self.aws_dms_replication_task.as_ref()
+    }
+    /// <p> Provides details about an DMS replication instance. DMS uses a replication instance to connect to your source data store, read the source data, and format the data for consumption by the target data store.</p>
+    pub fn aws_dms_replication_instance(&self) -> ::std::option::Option<&crate::types::AwsDmsReplicationInstanceDetails> {
+        self.aws_dms_replication_instance.as_ref()
+    }
+    /// <p> Provides details about an Amazon Route&nbsp;53 hosted zone, including the four name servers assigned to the hosted zone. A hosted zone represents a collection of records that can be managed together, belonging to a single parent domain name.</p>
+    pub fn aws_route53_hosted_zone(&self) -> ::std::option::Option<&crate::types::AwsRoute53HostedZoneDetails> {
+        self.aws_route53_hosted_zone.as_ref()
+    }
+    /// <p> Provides details about an Amazon Managed Streaming for Apache Kafka (Amazon MSK) cluster.</p>
+    pub fn aws_msk_cluster(&self) -> ::std::option::Option<&crate::types::AwsMskClusterDetails> {
+        self.aws_msk_cluster.as_ref()
+    }
 }
 impl ResourceDetails {
     /// Creates a new builder-style object to manufacture [`ResourceDetails`](crate::types::ResourceDetails).
@@ -659,6 +701,13 @@ pub struct ResourceDetailsBuilder {
     pub(crate) aws_guard_duty_detector: ::std::option::Option<crate::types::AwsGuardDutyDetectorDetails>,
     pub(crate) aws_step_function_state_machine: ::std::option::Option<crate::types::AwsStepFunctionStateMachineDetails>,
     pub(crate) aws_athena_work_group: ::std::option::Option<crate::types::AwsAthenaWorkGroupDetails>,
+    pub(crate) aws_events_eventbus: ::std::option::Option<crate::types::AwsEventsEventbusDetails>,
+    pub(crate) aws_dms_endpoint: ::std::option::Option<crate::types::AwsDmsEndpointDetails>,
+    pub(crate) aws_events_endpoint: ::std::option::Option<crate::types::AwsEventsEndpointDetails>,
+    pub(crate) aws_dms_replication_task: ::std::option::Option<crate::types::AwsDmsReplicationTaskDetails>,
+    pub(crate) aws_dms_replication_instance: ::std::option::Option<crate::types::AwsDmsReplicationInstanceDetails>,
+    pub(crate) aws_route53_hosted_zone: ::std::option::Option<crate::types::AwsRoute53HostedZoneDetails>,
+    pub(crate) aws_msk_cluster: ::std::option::Option<crate::types::AwsMskClusterDetails>,
 }
 impl ResourceDetailsBuilder {
     /// <p>Details for an autoscaling group.</p>
@@ -1957,6 +2006,104 @@ impl ResourceDetailsBuilder {
     pub fn get_aws_athena_work_group(&self) -> &::std::option::Option<crate::types::AwsAthenaWorkGroupDetails> {
         &self.aws_athena_work_group
     }
+    /// <p> Provides details about Amazon EventBridge event bus for an endpoint. An event bus is a router that receives events and delivers them to zero or more destinations, or targets.</p>
+    pub fn aws_events_eventbus(mut self, input: crate::types::AwsEventsEventbusDetails) -> Self {
+        self.aws_events_eventbus = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p> Provides details about Amazon EventBridge event bus for an endpoint. An event bus is a router that receives events and delivers them to zero or more destinations, or targets.</p>
+    pub fn set_aws_events_eventbus(mut self, input: ::std::option::Option<crate::types::AwsEventsEventbusDetails>) -> Self {
+        self.aws_events_eventbus = input;
+        self
+    }
+    /// <p> Provides details about Amazon EventBridge event bus for an endpoint. An event bus is a router that receives events and delivers them to zero or more destinations, or targets.</p>
+    pub fn get_aws_events_eventbus(&self) -> &::std::option::Option<crate::types::AwsEventsEventbusDetails> {
+        &self.aws_events_eventbus
+    }
+    /// <p> Provides details about an Database Migration Service (DMS) endpoint. An endpoint provides connection, data store type, and location information about your data store.</p>
+    pub fn aws_dms_endpoint(mut self, input: crate::types::AwsDmsEndpointDetails) -> Self {
+        self.aws_dms_endpoint = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p> Provides details about an Database Migration Service (DMS) endpoint. An endpoint provides connection, data store type, and location information about your data store.</p>
+    pub fn set_aws_dms_endpoint(mut self, input: ::std::option::Option<crate::types::AwsDmsEndpointDetails>) -> Self {
+        self.aws_dms_endpoint = input;
+        self
+    }
+    /// <p> Provides details about an Database Migration Service (DMS) endpoint. An endpoint provides connection, data store type, and location information about your data store.</p>
+    pub fn get_aws_dms_endpoint(&self) -> &::std::option::Option<crate::types::AwsDmsEndpointDetails> {
+        &self.aws_dms_endpoint
+    }
+    /// <p> Provides details about an Amazon EventBridge global endpoint. The endpoint can improve your application’s availability by making it Regional-fault tolerant.</p>
+    pub fn aws_events_endpoint(mut self, input: crate::types::AwsEventsEndpointDetails) -> Self {
+        self.aws_events_endpoint = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p> Provides details about an Amazon EventBridge global endpoint. The endpoint can improve your application’s availability by making it Regional-fault tolerant.</p>
+    pub fn set_aws_events_endpoint(mut self, input: ::std::option::Option<crate::types::AwsEventsEndpointDetails>) -> Self {
+        self.aws_events_endpoint = input;
+        self
+    }
+    /// <p> Provides details about an Amazon EventBridge global endpoint. The endpoint can improve your application’s availability by making it Regional-fault tolerant.</p>
+    pub fn get_aws_events_endpoint(&self) -> &::std::option::Option<crate::types::AwsEventsEndpointDetails> {
+        &self.aws_events_endpoint
+    }
+    /// <p> Provides details about an DMS replication task. A replication task moves a set of data from the source endpoint to the target endpoint.</p>
+    pub fn aws_dms_replication_task(mut self, input: crate::types::AwsDmsReplicationTaskDetails) -> Self {
+        self.aws_dms_replication_task = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p> Provides details about an DMS replication task. A replication task moves a set of data from the source endpoint to the target endpoint.</p>
+    pub fn set_aws_dms_replication_task(mut self, input: ::std::option::Option<crate::types::AwsDmsReplicationTaskDetails>) -> Self {
+        self.aws_dms_replication_task = input;
+        self
+    }
+    /// <p> Provides details about an DMS replication task. A replication task moves a set of data from the source endpoint to the target endpoint.</p>
+    pub fn get_aws_dms_replication_task(&self) -> &::std::option::Option<crate::types::AwsDmsReplicationTaskDetails> {
+        &self.aws_dms_replication_task
+    }
+    /// <p> Provides details about an DMS replication instance. DMS uses a replication instance to connect to your source data store, read the source data, and format the data for consumption by the target data store.</p>
+    pub fn aws_dms_replication_instance(mut self, input: crate::types::AwsDmsReplicationInstanceDetails) -> Self {
+        self.aws_dms_replication_instance = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p> Provides details about an DMS replication instance. DMS uses a replication instance to connect to your source data store, read the source data, and format the data for consumption by the target data store.</p>
+    pub fn set_aws_dms_replication_instance(mut self, input: ::std::option::Option<crate::types::AwsDmsReplicationInstanceDetails>) -> Self {
+        self.aws_dms_replication_instance = input;
+        self
+    }
+    /// <p> Provides details about an DMS replication instance. DMS uses a replication instance to connect to your source data store, read the source data, and format the data for consumption by the target data store.</p>
+    pub fn get_aws_dms_replication_instance(&self) -> &::std::option::Option<crate::types::AwsDmsReplicationInstanceDetails> {
+        &self.aws_dms_replication_instance
+    }
+    /// <p> Provides details about an Amazon Route&nbsp;53 hosted zone, including the four name servers assigned to the hosted zone. A hosted zone represents a collection of records that can be managed together, belonging to a single parent domain name.</p>
+    pub fn aws_route53_hosted_zone(mut self, input: crate::types::AwsRoute53HostedZoneDetails) -> Self {
+        self.aws_route53_hosted_zone = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p> Provides details about an Amazon Route&nbsp;53 hosted zone, including the four name servers assigned to the hosted zone. A hosted zone represents a collection of records that can be managed together, belonging to a single parent domain name.</p>
+    pub fn set_aws_route53_hosted_zone(mut self, input: ::std::option::Option<crate::types::AwsRoute53HostedZoneDetails>) -> Self {
+        self.aws_route53_hosted_zone = input;
+        self
+    }
+    /// <p> Provides details about an Amazon Route&nbsp;53 hosted zone, including the four name servers assigned to the hosted zone. A hosted zone represents a collection of records that can be managed together, belonging to a single parent domain name.</p>
+    pub fn get_aws_route53_hosted_zone(&self) -> &::std::option::Option<crate::types::AwsRoute53HostedZoneDetails> {
+        &self.aws_route53_hosted_zone
+    }
+    /// <p> Provides details about an Amazon Managed Streaming for Apache Kafka (Amazon MSK) cluster.</p>
+    pub fn aws_msk_cluster(mut self, input: crate::types::AwsMskClusterDetails) -> Self {
+        self.aws_msk_cluster = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p> Provides details about an Amazon Managed Streaming for Apache Kafka (Amazon MSK) cluster.</p>
+    pub fn set_aws_msk_cluster(mut self, input: ::std::option::Option<crate::types::AwsMskClusterDetails>) -> Self {
+        self.aws_msk_cluster = input;
+        self
+    }
+    /// <p> Provides details about an Amazon Managed Streaming for Apache Kafka (Amazon MSK) cluster.</p>
+    pub fn get_aws_msk_cluster(&self) -> &::std::option::Option<crate::types::AwsMskClusterDetails> {
+        &self.aws_msk_cluster
+    }
     /// Consumes the builder and constructs a [`ResourceDetails`](crate::types::ResourceDetails).
     pub fn build(self) -> crate::types::ResourceDetails {
         crate::types::ResourceDetails {
@@ -2050,6 +2197,13 @@ impl ResourceDetailsBuilder {
             aws_guard_duty_detector: self.aws_guard_duty_detector,
             aws_step_function_state_machine: self.aws_step_function_state_machine,
             aws_athena_work_group: self.aws_athena_work_group,
+            aws_events_eventbus: self.aws_events_eventbus,
+            aws_dms_endpoint: self.aws_dms_endpoint,
+            aws_events_endpoint: self.aws_events_endpoint,
+            aws_dms_replication_task: self.aws_dms_replication_task,
+            aws_dms_replication_instance: self.aws_dms_replication_instance,
+            aws_route53_hosted_zone: self.aws_route53_hosted_zone,
+            aws_msk_cluster: self.aws_msk_cluster,
         }
     }
 }

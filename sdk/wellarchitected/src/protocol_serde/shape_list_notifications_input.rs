@@ -12,8 +12,11 @@ pub fn ser_list_notifications_input(
     if let Some(var_2) = &input.next_token {
         object.key("NextToken").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.workload_id {
-        object.key("WorkloadId").string(var_3.as_str());
+    if let Some(var_3) = &input.resource_arn {
+        object.key("ResourceArn").string(var_3.as_str());
+    }
+    if let Some(var_4) = &input.workload_id {
+        object.key("WorkloadId").string(var_4.as_str());
     }
     Ok(())
 }

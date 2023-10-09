@@ -13,6 +13,8 @@ pub struct DescribeEntityOutput {
     pub last_modified_date: ::std::option::Option<::std::string::String>,
     /// <p>This stringified JSON object includes the details of the entity.</p>
     pub details: ::std::option::Option<::std::string::String>,
+    /// <p>The JSON value of the details specific to the entity.</p>
+    pub details_document: ::std::option::Option<::aws_smithy_types::Document>,
     _request_id: Option<String>,
 }
 impl DescribeEntityOutput {
@@ -36,6 +38,10 @@ impl DescribeEntityOutput {
     pub fn details(&self) -> ::std::option::Option<&str> {
         self.details.as_deref()
     }
+    /// <p>The JSON value of the details specific to the entity.</p>
+    pub fn details_document(&self) -> ::std::option::Option<&::aws_smithy_types::Document> {
+        self.details_document.as_ref()
+    }
 }
 impl ::aws_http::request_id::RequestId for DescribeEntityOutput {
     fn request_id(&self) -> Option<&str> {
@@ -58,6 +64,7 @@ pub struct DescribeEntityOutputBuilder {
     pub(crate) entity_arn: ::std::option::Option<::std::string::String>,
     pub(crate) last_modified_date: ::std::option::Option<::std::string::String>,
     pub(crate) details: ::std::option::Option<::std::string::String>,
+    pub(crate) details_document: ::std::option::Option<::aws_smithy_types::Document>,
     _request_id: Option<String>,
 }
 impl DescribeEntityOutputBuilder {
@@ -131,6 +138,20 @@ impl DescribeEntityOutputBuilder {
     pub fn get_details(&self) -> &::std::option::Option<::std::string::String> {
         &self.details
     }
+    /// <p>The JSON value of the details specific to the entity.</p>
+    pub fn details_document(mut self, input: ::aws_smithy_types::Document) -> Self {
+        self.details_document = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The JSON value of the details specific to the entity.</p>
+    pub fn set_details_document(mut self, input: ::std::option::Option<::aws_smithy_types::Document>) -> Self {
+        self.details_document = input;
+        self
+    }
+    /// <p>The JSON value of the details specific to the entity.</p>
+    pub fn get_details_document(&self) -> &::std::option::Option<::aws_smithy_types::Document> {
+        &self.details_document
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -148,6 +169,7 @@ impl DescribeEntityOutputBuilder {
             entity_arn: self.entity_arn,
             last_modified_date: self.last_modified_date,
             details: self.details,
+            details_document: self.details_document,
             _request_id: self._request_id,
         }
     }

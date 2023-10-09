@@ -159,6 +159,13 @@ pub(crate) fn de_describe_geofence_collection(
                             .transpose()?,
                     );
                 }
+                "GeofenceCount" => {
+                    builder = builder.set_geofence_count(
+                        ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                            .map(i32::try_from)
+                            .transpose()?,
+                    );
+                }
                 "KmsKeyId" => {
                     builder = builder.set_kms_key_id(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

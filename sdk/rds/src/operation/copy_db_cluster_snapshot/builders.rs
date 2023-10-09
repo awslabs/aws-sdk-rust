@@ -264,17 +264,17 @@ impl CopyDBClusterSnapshotFluentBuilder {
     pub fn get_pre_signed_url(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_pre_signed_url()
     }
-    /// <p>A value that indicates whether to copy all tags from the source DB cluster snapshot to the target DB cluster snapshot. By default, tags are not copied.</p>
+    /// <p>Specifies whether to copy all tags from the source DB cluster snapshot to the target DB cluster snapshot. By default, tags are not copied.</p>
     pub fn copy_tags(mut self, input: bool) -> Self {
         self.inner = self.inner.copy_tags(input);
         self
     }
-    /// <p>A value that indicates whether to copy all tags from the source DB cluster snapshot to the target DB cluster snapshot. By default, tags are not copied.</p>
+    /// <p>Specifies whether to copy all tags from the source DB cluster snapshot to the target DB cluster snapshot. By default, tags are not copied.</p>
     pub fn set_copy_tags(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_copy_tags(input);
         self
     }
-    /// <p>A value that indicates whether to copy all tags from the source DB cluster snapshot to the target DB cluster snapshot. By default, tags are not copied.</p>
+    /// <p>Specifies whether to copy all tags from the source DB cluster snapshot to the target DB cluster snapshot. By default, tags are not copied.</p>
     pub fn get_copy_tags(&self) -> &::std::option::Option<bool> {
         self.inner.get_copy_tags()
     }

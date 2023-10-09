@@ -18,9 +18,9 @@ pub struct OptionSetting {
     pub data_type: ::std::option::Option<::std::string::String>,
     /// <p>The allowed values of the option setting.</p>
     pub allowed_values: ::std::option::Option<::std::string::String>,
-    /// <p>A Boolean value that, when true, indicates the option setting can be modified from the default.</p>
+    /// <p>Indicates whether the option setting can be modified from the default.</p>
     pub is_modifiable: bool,
-    /// <p>Indicates if the option setting is part of a collection.</p>
+    /// <p>Indicates whether the option setting is part of a collection.</p>
     pub is_collection: bool,
 }
 impl OptionSetting {
@@ -52,11 +52,11 @@ impl OptionSetting {
     pub fn allowed_values(&self) -> ::std::option::Option<&str> {
         self.allowed_values.as_deref()
     }
-    /// <p>A Boolean value that, when true, indicates the option setting can be modified from the default.</p>
+    /// <p>Indicates whether the option setting can be modified from the default.</p>
     pub fn is_modifiable(&self) -> bool {
         self.is_modifiable
     }
-    /// <p>Indicates if the option setting is part of a collection.</p>
+    /// <p>Indicates whether the option setting is part of a collection.</p>
     pub fn is_collection(&self) -> bool {
         self.is_collection
     }
@@ -181,31 +181,31 @@ impl OptionSettingBuilder {
     pub fn get_allowed_values(&self) -> &::std::option::Option<::std::string::String> {
         &self.allowed_values
     }
-    /// <p>A Boolean value that, when true, indicates the option setting can be modified from the default.</p>
+    /// <p>Indicates whether the option setting can be modified from the default.</p>
     pub fn is_modifiable(mut self, input: bool) -> Self {
         self.is_modifiable = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A Boolean value that, when true, indicates the option setting can be modified from the default.</p>
+    /// <p>Indicates whether the option setting can be modified from the default.</p>
     pub fn set_is_modifiable(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_modifiable = input;
         self
     }
-    /// <p>A Boolean value that, when true, indicates the option setting can be modified from the default.</p>
+    /// <p>Indicates whether the option setting can be modified from the default.</p>
     pub fn get_is_modifiable(&self) -> &::std::option::Option<bool> {
         &self.is_modifiable
     }
-    /// <p>Indicates if the option setting is part of a collection.</p>
+    /// <p>Indicates whether the option setting is part of a collection.</p>
     pub fn is_collection(mut self, input: bool) -> Self {
         self.is_collection = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates if the option setting is part of a collection.</p>
+    /// <p>Indicates whether the option setting is part of a collection.</p>
     pub fn set_is_collection(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_collection = input;
         self
     }
-    /// <p>Indicates if the option setting is part of a collection.</p>
+    /// <p>Indicates whether the option setting is part of a collection.</p>
     pub fn get_is_collection(&self) -> &::std::option::Option<bool> {
         &self.is_collection
     }

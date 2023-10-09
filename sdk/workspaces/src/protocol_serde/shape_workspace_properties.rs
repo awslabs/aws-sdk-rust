@@ -36,6 +36,9 @@ pub fn ser_workspace_properties(
         }
         array_7.finish();
     }
+    if let Some(var_9) = &input.operating_system_name {
+        object.key("OperatingSystemName").string(var_9.as_str());
+    }
     Ok(())
 }
 
@@ -91,6 +94,13 @@ where
                         }
                         "Protocols" => {
                             builder = builder.set_protocols(crate::protocol_serde::shape_protocol_list::de_protocol_list(tokens)?);
+                        }
+                        "OperatingSystemName" => {
+                            builder = builder.set_operating_system_name(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::OperatingSystemName::from(u.as_ref())))
+                                    .transpose()?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

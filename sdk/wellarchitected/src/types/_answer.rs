@@ -36,6 +36,7 @@ pub struct Answer {
     /// <p>The risk for a given workload, lens review, pillar, or question.</p>
     pub risk: ::std::option::Option<crate::types::Risk>,
     /// <p>The notes associated with the workload.</p>
+    /// <p>For a review template, these are the notes that will be associated with the workload when the template is applied.</p>
     pub notes: ::std::option::Option<::std::string::String>,
     /// <p>The reason why the question is not applicable to your workload.</p>
     pub reason: ::std::option::Option<crate::types::AnswerReason>,
@@ -97,6 +98,7 @@ impl Answer {
         self.risk.as_ref()
     }
     /// <p>The notes associated with the workload.</p>
+    /// <p>For a review template, these are the notes that will be associated with the workload when the template is applied.</p>
     pub fn notes(&self) -> ::std::option::Option<&str> {
         self.notes.as_deref()
     }
@@ -340,16 +342,19 @@ impl AnswerBuilder {
         &self.risk
     }
     /// <p>The notes associated with the workload.</p>
+    /// <p>For a review template, these are the notes that will be associated with the workload when the template is applied.</p>
     pub fn notes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.notes = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The notes associated with the workload.</p>
+    /// <p>For a review template, these are the notes that will be associated with the workload when the template is applied.</p>
     pub fn set_notes(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.notes = input;
         self
     }
     /// <p>The notes associated with the workload.</p>
+    /// <p>For a review template, these are the notes that will be associated with the workload when the template is applied.</p>
     pub fn get_notes(&self) -> &::std::option::Option<::std::string::String> {
         &self.notes
     }

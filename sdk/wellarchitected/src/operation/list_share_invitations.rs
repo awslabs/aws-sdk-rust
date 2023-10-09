@@ -225,6 +225,11 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for ListShareIn
                         query.push_kv("ProfileNamePrefix", &::aws_smithy_http::query::fmt_string(&inner_6));
                     }
                 }
+                if let ::std::option::Option::Some(inner_7) = &_input.template_name_prefix {
+                    {
+                        query.push_kv("TemplateNamePrefix", &::aws_smithy_http::query::fmt_string(&inner_7));
+                    }
+                }
                 ::std::result::Result::Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]

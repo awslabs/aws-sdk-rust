@@ -15,6 +15,8 @@ pub struct UpdateConfigurationProfileInput {
     pub retrieval_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of methods for validating the configuration.</p>
     pub validators: ::std::option::Option<::std::vec::Vec<crate::types::Validator>>,
+    /// <p>The identifier for a Key Management Service key to encrypt new configuration data versions in the AppConfig hosted configuration store. This attribute is only used for <code>hosted</code> configuration types. The identifier can be an KMS key ID, alias, or the Amazon Resource Name (ARN) of the key ID or alias. To encrypt data managed in other configuration stores, see the documentation for how to specify an KMS key for that particular service.</p>
+    pub kms_key_identifier: ::std::option::Option<::std::string::String>,
 }
 impl UpdateConfigurationProfileInput {
     /// <p>The application ID.</p>
@@ -41,6 +43,10 @@ impl UpdateConfigurationProfileInput {
     pub fn validators(&self) -> ::std::option::Option<&[crate::types::Validator]> {
         self.validators.as_deref()
     }
+    /// <p>The identifier for a Key Management Service key to encrypt new configuration data versions in the AppConfig hosted configuration store. This attribute is only used for <code>hosted</code> configuration types. The identifier can be an KMS key ID, alias, or the Amazon Resource Name (ARN) of the key ID or alias. To encrypt data managed in other configuration stores, see the documentation for how to specify an KMS key for that particular service.</p>
+    pub fn kms_key_identifier(&self) -> ::std::option::Option<&str> {
+        self.kms_key_identifier.as_deref()
+    }
 }
 impl UpdateConfigurationProfileInput {
     /// Creates a new builder-style object to manufacture [`UpdateConfigurationProfileInput`](crate::operation::update_configuration_profile::UpdateConfigurationProfileInput).
@@ -59,6 +65,7 @@ pub struct UpdateConfigurationProfileInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) retrieval_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) validators: ::std::option::Option<::std::vec::Vec<crate::types::Validator>>,
+    pub(crate) kms_key_identifier: ::std::option::Option<::std::string::String>,
 }
 impl UpdateConfigurationProfileInputBuilder {
     /// <p>The application ID.</p>
@@ -151,6 +158,20 @@ impl UpdateConfigurationProfileInputBuilder {
     pub fn get_validators(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Validator>> {
         &self.validators
     }
+    /// <p>The identifier for a Key Management Service key to encrypt new configuration data versions in the AppConfig hosted configuration store. This attribute is only used for <code>hosted</code> configuration types. The identifier can be an KMS key ID, alias, or the Amazon Resource Name (ARN) of the key ID or alias. To encrypt data managed in other configuration stores, see the documentation for how to specify an KMS key for that particular service.</p>
+    pub fn kms_key_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.kms_key_identifier = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The identifier for a Key Management Service key to encrypt new configuration data versions in the AppConfig hosted configuration store. This attribute is only used for <code>hosted</code> configuration types. The identifier can be an KMS key ID, alias, or the Amazon Resource Name (ARN) of the key ID or alias. To encrypt data managed in other configuration stores, see the documentation for how to specify an KMS key for that particular service.</p>
+    pub fn set_kms_key_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.kms_key_identifier = input;
+        self
+    }
+    /// <p>The identifier for a Key Management Service key to encrypt new configuration data versions in the AppConfig hosted configuration store. This attribute is only used for <code>hosted</code> configuration types. The identifier can be an KMS key ID, alias, or the Amazon Resource Name (ARN) of the key ID or alias. To encrypt data managed in other configuration stores, see the documentation for how to specify an KMS key for that particular service.</p>
+    pub fn get_kms_key_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_identifier
+    }
     /// Consumes the builder and constructs a [`UpdateConfigurationProfileInput`](crate::operation::update_configuration_profile::UpdateConfigurationProfileInput).
     pub fn build(
         self,
@@ -165,6 +186,7 @@ impl UpdateConfigurationProfileInputBuilder {
             description: self.description,
             retrieval_role_arn: self.retrieval_role_arn,
             validators: self.validators,
+            kms_key_identifier: self.kms_key_identifier,
         })
     }
 }

@@ -25,6 +25,9 @@ pub struct UpdateTrackerInput {
     /// <p>You do not need enable this feature to get <code>ENTER</code> and <code>EXIT</code> events for geofences with this tracker. Those events are always sent to EventBridge.</p>
     /// </note>
     pub event_bridge_enabled: ::std::option::Option<bool>,
+    /// <p>Enables <code>GeospatialQueries</code> for a tracker that uses a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">Amazon Web Services KMS customer managed key</a>.</p>
+    /// <p>This parameter is only used if you are using a KMS customer managed key.</p>
+    pub kms_key_enable_geospatial_queries: ::std::option::Option<bool>,
 }
 impl UpdateTrackerInput {
     /// <p>The name of the tracker resource to update.</p>
@@ -61,6 +64,11 @@ impl UpdateTrackerInput {
     pub fn event_bridge_enabled(&self) -> ::std::option::Option<bool> {
         self.event_bridge_enabled
     }
+    /// <p>Enables <code>GeospatialQueries</code> for a tracker that uses a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">Amazon Web Services KMS customer managed key</a>.</p>
+    /// <p>This parameter is only used if you are using a KMS customer managed key.</p>
+    pub fn kms_key_enable_geospatial_queries(&self) -> ::std::option::Option<bool> {
+        self.kms_key_enable_geospatial_queries
+    }
 }
 impl UpdateTrackerInput {
     /// Creates a new builder-style object to manufacture [`UpdateTrackerInput`](crate::operation::update_tracker::UpdateTrackerInput).
@@ -79,6 +87,7 @@ pub struct UpdateTrackerInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) position_filtering: ::std::option::Option<crate::types::PositionFiltering>,
     pub(crate) event_bridge_enabled: ::std::option::Option<bool>,
+    pub(crate) kms_key_enable_geospatial_queries: ::std::option::Option<bool>,
 }
 impl UpdateTrackerInputBuilder {
     /// <p>The name of the tracker resource to update.</p>
@@ -195,6 +204,23 @@ impl UpdateTrackerInputBuilder {
     pub fn get_event_bridge_enabled(&self) -> &::std::option::Option<bool> {
         &self.event_bridge_enabled
     }
+    /// <p>Enables <code>GeospatialQueries</code> for a tracker that uses a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">Amazon Web Services KMS customer managed key</a>.</p>
+    /// <p>This parameter is only used if you are using a KMS customer managed key.</p>
+    pub fn kms_key_enable_geospatial_queries(mut self, input: bool) -> Self {
+        self.kms_key_enable_geospatial_queries = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Enables <code>GeospatialQueries</code> for a tracker that uses a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">Amazon Web Services KMS customer managed key</a>.</p>
+    /// <p>This parameter is only used if you are using a KMS customer managed key.</p>
+    pub fn set_kms_key_enable_geospatial_queries(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.kms_key_enable_geospatial_queries = input;
+        self
+    }
+    /// <p>Enables <code>GeospatialQueries</code> for a tracker that uses a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">Amazon Web Services KMS customer managed key</a>.</p>
+    /// <p>This parameter is only used if you are using a KMS customer managed key.</p>
+    pub fn get_kms_key_enable_geospatial_queries(&self) -> &::std::option::Option<bool> {
+        &self.kms_key_enable_geospatial_queries
+    }
     /// Consumes the builder and constructs a [`UpdateTrackerInput`](crate::operation::update_tracker::UpdateTrackerInput).
     pub fn build(
         self,
@@ -206,6 +232,7 @@ impl UpdateTrackerInputBuilder {
             description: self.description,
             position_filtering: self.position_filtering,
             event_bridge_enabled: self.event_bridge_enabled,
+            kms_key_enable_geospatial_queries: self.kms_key_enable_geospatial_queries,
         })
     }
 }

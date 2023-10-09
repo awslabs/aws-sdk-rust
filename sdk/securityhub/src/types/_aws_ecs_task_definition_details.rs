@@ -51,6 +51,8 @@ pub struct AwsEcsTaskDefinitionDetails {
     pub task_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The data volume definitions for the task.</p>
     pub volumes: ::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskDefinitionVolumesDetails>>,
+    /// <p> The status of the task definition. </p>
+    pub status: ::std::option::Option<::std::string::String>,
 }
 impl AwsEcsTaskDefinitionDetails {
     /// <p>The container definitions that describe the containers that make up the task.</p>
@@ -128,6 +130,10 @@ impl AwsEcsTaskDefinitionDetails {
     pub fn volumes(&self) -> ::std::option::Option<&[crate::types::AwsEcsTaskDefinitionVolumesDetails]> {
         self.volumes.as_deref()
     }
+    /// <p> The status of the task definition. </p>
+    pub fn status(&self) -> ::std::option::Option<&str> {
+        self.status.as_deref()
+    }
 }
 impl AwsEcsTaskDefinitionDetails {
     /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionDetails`](crate::types::AwsEcsTaskDefinitionDetails).
@@ -154,6 +160,7 @@ pub struct AwsEcsTaskDefinitionDetailsBuilder {
     pub(crate) requires_compatibilities: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) task_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) volumes: ::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskDefinitionVolumesDetails>>,
+    pub(crate) status: ::std::option::Option<::std::string::String>,
 }
 impl AwsEcsTaskDefinitionDetailsBuilder {
     /// Appends an item to `container_definitions`.
@@ -454,6 +461,20 @@ impl AwsEcsTaskDefinitionDetailsBuilder {
     pub fn get_volumes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskDefinitionVolumesDetails>> {
         &self.volumes
     }
+    /// <p> The status of the task definition. </p>
+    pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.status = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p> The status of the task definition. </p>
+    pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.status = input;
+        self
+    }
+    /// <p> The status of the task definition. </p>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
+    }
     /// Consumes the builder and constructs a [`AwsEcsTaskDefinitionDetails`](crate::types::AwsEcsTaskDefinitionDetails).
     pub fn build(self) -> crate::types::AwsEcsTaskDefinitionDetails {
         crate::types::AwsEcsTaskDefinitionDetails {
@@ -471,6 +492,7 @@ impl AwsEcsTaskDefinitionDetailsBuilder {
             requires_compatibilities: self.requires_compatibilities,
             task_role_arn: self.task_role_arn,
             volumes: self.volumes,
+            status: self.status,
         }
     }
 }

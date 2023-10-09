@@ -48,7 +48,9 @@ pub struct ImportImageInput {
     pub tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
     /// <p>The usage operation value. For more information, see <a href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmie_prereqs.html#prerequisites">Licensing options</a> in the <i>VM Import/Export User Guide</i>.</p>
     pub usage_operation: ::std::option::Option<::std::string::String>,
-    /// <p>The boot mode of the virtual machine.</p>
+    /// <p>The boot mode of the virtual machine.</p> <note>
+    /// <p>The <code>uefi-preferred</code> boot mode isn't supported for importing images. For more information, see <a href="https://docs.aws.amazon.com/vm-import/latest/userguide/prerequisites.html#vmimport-boot-modes">Boot modes</a> in the <i>VM Import/Export User Guide</i>.</p>
+    /// </note>
     pub boot_mode: ::std::option::Option<crate::types::BootModeValues>,
 }
 impl ImportImageInput {
@@ -127,7 +129,9 @@ impl ImportImageInput {
     pub fn usage_operation(&self) -> ::std::option::Option<&str> {
         self.usage_operation.as_deref()
     }
-    /// <p>The boot mode of the virtual machine.</p>
+    /// <p>The boot mode of the virtual machine.</p> <note>
+    /// <p>The <code>uefi-preferred</code> boot mode isn't supported for importing images. For more information, see <a href="https://docs.aws.amazon.com/vm-import/latest/userguide/prerequisites.html#vmimport-boot-modes">Boot modes</a> in the <i>VM Import/Export User Guide</i>.</p>
+    /// </note>
     pub fn boot_mode(&self) -> ::std::option::Option<&crate::types::BootModeValues> {
         self.boot_mode.as_ref()
     }
@@ -437,17 +441,23 @@ impl ImportImageInputBuilder {
     pub fn get_usage_operation(&self) -> &::std::option::Option<::std::string::String> {
         &self.usage_operation
     }
-    /// <p>The boot mode of the virtual machine.</p>
+    /// <p>The boot mode of the virtual machine.</p> <note>
+    /// <p>The <code>uefi-preferred</code> boot mode isn't supported for importing images. For more information, see <a href="https://docs.aws.amazon.com/vm-import/latest/userguide/prerequisites.html#vmimport-boot-modes">Boot modes</a> in the <i>VM Import/Export User Guide</i>.</p>
+    /// </note>
     pub fn boot_mode(mut self, input: crate::types::BootModeValues) -> Self {
         self.boot_mode = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The boot mode of the virtual machine.</p>
+    /// <p>The boot mode of the virtual machine.</p> <note>
+    /// <p>The <code>uefi-preferred</code> boot mode isn't supported for importing images. For more information, see <a href="https://docs.aws.amazon.com/vm-import/latest/userguide/prerequisites.html#vmimport-boot-modes">Boot modes</a> in the <i>VM Import/Export User Guide</i>.</p>
+    /// </note>
     pub fn set_boot_mode(mut self, input: ::std::option::Option<crate::types::BootModeValues>) -> Self {
         self.boot_mode = input;
         self
     }
-    /// <p>The boot mode of the virtual machine.</p>
+    /// <p>The boot mode of the virtual machine.</p> <note>
+    /// <p>The <code>uefi-preferred</code> boot mode isn't supported for importing images. For more information, see <a href="https://docs.aws.amazon.com/vm-import/latest/userguide/prerequisites.html#vmimport-boot-modes">Boot modes</a> in the <i>VM Import/Export User Guide</i>.</p>
+    /// </note>
     pub fn get_boot_mode(&self) -> &::std::option::Option<crate::types::BootModeValues> {
         &self.boot_mode
     }

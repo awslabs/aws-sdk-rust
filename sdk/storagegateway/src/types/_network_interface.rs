@@ -2,7 +2,7 @@
 
 /// <p>Describes a gateway's network interface.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct NetworkInterface {
     /// <p>The Internet Protocol version 4 (IPv4) address of the interface.</p>
     pub ipv4_address: ::std::option::Option<::std::string::String>,
@@ -29,6 +29,15 @@ impl NetworkInterface {
         self.ipv6_address.as_deref()
     }
 }
+impl ::std::fmt::Debug for NetworkInterface {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("NetworkInterface");
+        formatter.field("ipv4_address", &"*** Sensitive Data Redacted ***");
+        formatter.field("mac_address", &"*** Sensitive Data Redacted ***");
+        formatter.field("ipv6_address", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl NetworkInterface {
     /// Creates a new builder-style object to manufacture [`NetworkInterface`](crate::types::NetworkInterface).
     pub fn builder() -> crate::types::builders::NetworkInterfaceBuilder {
@@ -38,7 +47,7 @@ impl NetworkInterface {
 
 /// A builder for [`NetworkInterface`](crate::types::NetworkInterface).
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct NetworkInterfaceBuilder {
     pub(crate) ipv4_address: ::std::option::Option<::std::string::String>,
     pub(crate) mac_address: ::std::option::Option<::std::string::String>,
@@ -100,5 +109,14 @@ impl NetworkInterfaceBuilder {
             mac_address: self.mac_address,
             ipv6_address: self.ipv6_address,
         }
+    }
+}
+impl ::std::fmt::Debug for NetworkInterfaceBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("NetworkInterfaceBuilder");
+        formatter.field("ipv4_address", &"*** Sensitive Data Redacted ***");
+        formatter.field("mac_address", &"*** Sensitive Data Redacted ***");
+        formatter.field("ipv6_address", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

@@ -8,7 +8,7 @@ pub struct ShareInvitationSummary {
     pub share_invitation_id: ::std::option::Option<::std::string::String>,
     /// <p>An Amazon Web Services account ID.</p>
     pub shared_by: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload, lens, or profile is shared.</p>
+    /// <p>The Amazon Web Services account ID, organization ID, or organizational unit (OU) ID with which the workload, lens, profile, or review template is shared.</p>
     pub shared_with: ::std::option::Option<::std::string::String>,
     /// <p>Permission granted on a share request.</p>
     pub permission_type: ::std::option::Option<crate::types::PermissionType>,
@@ -27,6 +27,10 @@ pub struct ShareInvitationSummary {
     pub profile_name: ::std::option::Option<::std::string::String>,
     /// <p>The profile ARN.</p>
     pub profile_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The name of the review template.</p>
+    pub template_name: ::std::option::Option<::std::string::String>,
+    /// <p>The review template ARN.</p>
+    pub template_arn: ::std::option::Option<::std::string::String>,
 }
 impl ShareInvitationSummary {
     /// <p>The ID assigned to the share invitation.</p>
@@ -37,7 +41,7 @@ impl ShareInvitationSummary {
     pub fn shared_by(&self) -> ::std::option::Option<&str> {
         self.shared_by.as_deref()
     }
-    /// <p>The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload, lens, or profile is shared.</p>
+    /// <p>The Amazon Web Services account ID, organization ID, or organizational unit (OU) ID with which the workload, lens, profile, or review template is shared.</p>
     pub fn shared_with(&self) -> ::std::option::Option<&str> {
         self.shared_with.as_deref()
     }
@@ -74,6 +78,14 @@ impl ShareInvitationSummary {
     pub fn profile_arn(&self) -> ::std::option::Option<&str> {
         self.profile_arn.as_deref()
     }
+    /// <p>The name of the review template.</p>
+    pub fn template_name(&self) -> ::std::option::Option<&str> {
+        self.template_name.as_deref()
+    }
+    /// <p>The review template ARN.</p>
+    pub fn template_arn(&self) -> ::std::option::Option<&str> {
+        self.template_arn.as_deref()
+    }
 }
 impl ShareInvitationSummary {
     /// Creates a new builder-style object to manufacture [`ShareInvitationSummary`](crate::types::ShareInvitationSummary).
@@ -97,6 +109,8 @@ pub struct ShareInvitationSummaryBuilder {
     pub(crate) lens_arn: ::std::option::Option<::std::string::String>,
     pub(crate) profile_name: ::std::option::Option<::std::string::String>,
     pub(crate) profile_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) template_name: ::std::option::Option<::std::string::String>,
+    pub(crate) template_arn: ::std::option::Option<::std::string::String>,
 }
 impl ShareInvitationSummaryBuilder {
     /// <p>The ID assigned to the share invitation.</p>
@@ -127,17 +141,17 @@ impl ShareInvitationSummaryBuilder {
     pub fn get_shared_by(&self) -> &::std::option::Option<::std::string::String> {
         &self.shared_by
     }
-    /// <p>The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload, lens, or profile is shared.</p>
+    /// <p>The Amazon Web Services account ID, organization ID, or organizational unit (OU) ID with which the workload, lens, profile, or review template is shared.</p>
     pub fn shared_with(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.shared_with = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload, lens, or profile is shared.</p>
+    /// <p>The Amazon Web Services account ID, organization ID, or organizational unit (OU) ID with which the workload, lens, profile, or review template is shared.</p>
     pub fn set_shared_with(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.shared_with = input;
         self
     }
-    /// <p>The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload, lens, or profile is shared.</p>
+    /// <p>The Amazon Web Services account ID, organization ID, or organizational unit (OU) ID with which the workload, lens, profile, or review template is shared.</p>
     pub fn get_shared_with(&self) -> &::std::option::Option<::std::string::String> {
         &self.shared_with
     }
@@ -256,6 +270,34 @@ impl ShareInvitationSummaryBuilder {
     pub fn get_profile_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.profile_arn
     }
+    /// <p>The name of the review template.</p>
+    pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.template_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the review template.</p>
+    pub fn set_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.template_name = input;
+        self
+    }
+    /// <p>The name of the review template.</p>
+    pub fn get_template_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_name
+    }
+    /// <p>The review template ARN.</p>
+    pub fn template_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.template_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The review template ARN.</p>
+    pub fn set_template_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.template_arn = input;
+        self
+    }
+    /// <p>The review template ARN.</p>
+    pub fn get_template_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_arn
+    }
     /// Consumes the builder and constructs a [`ShareInvitationSummary`](crate::types::ShareInvitationSummary).
     pub fn build(self) -> crate::types::ShareInvitationSummary {
         crate::types::ShareInvitationSummary {
@@ -270,6 +312,8 @@ impl ShareInvitationSummaryBuilder {
             lens_arn: self.lens_arn,
             profile_name: self.profile_name,
             profile_arn: self.profile_arn,
+            template_name: self.template_name,
+            template_arn: self.template_arn,
         }
     }
 }

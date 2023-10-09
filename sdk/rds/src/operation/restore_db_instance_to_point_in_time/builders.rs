@@ -915,19 +915,19 @@ impl RestoreDBInstanceToPointInTimeFluentBuilder {
     pub fn get_processor_features(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProcessorFeature>> {
         self.inner.get_processor_features()
     }
-    /// <p>A value that indicates whether the DB instance class of the DB instance uses its default processor features.</p>
+    /// <p>Specifies whether the DB instance class of the DB instance uses its default processor features.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
     pub fn use_default_processor_features(mut self, input: bool) -> Self {
         self.inner = self.inner.use_default_processor_features(input);
         self
     }
-    /// <p>A value that indicates whether the DB instance class of the DB instance uses its default processor features.</p>
+    /// <p>Specifies whether the DB instance class of the DB instance uses its default processor features.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
     pub fn set_use_default_processor_features(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_use_default_processor_features(input);
         self
     }
-    /// <p>A value that indicates whether the DB instance class of the DB instance uses its default processor features.</p>
+    /// <p>Specifies whether the DB instance class of the DB instance uses its default processor features.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
     pub fn get_use_default_processor_features(&self) -> &::std::option::Option<bool> {
         self.inner.get_use_default_processor_features()

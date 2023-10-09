@@ -47,7 +47,7 @@ pub struct DbSnapshot {
     pub storage_type: ::std::option::Option<::std::string::String>,
     /// <p>The ARN from the key store with which to associate the instance for TDE encryption.</p>
     pub tde_credential_arn: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies whether the DB snapshot is encrypted.</p>
+    /// <p>Indicates whether the DB snapshot is encrypted.</p>
     pub encrypted: bool,
     /// <p>If <code>Encrypted</code> is true, the Amazon Web Services KMS key identifier for the encrypted DB snapshot.</p>
     /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
@@ -56,7 +56,7 @@ pub struct DbSnapshot {
     pub db_snapshot_arn: ::std::option::Option<::std::string::String>,
     /// <p>The time zone of the DB snapshot. In most cases, the <code>Timezone</code> element is empty. <code>Timezone</code> content appears only for snapshots taken from Microsoft SQL Server DB instances that were created with a time zone specified.</p>
     pub timezone: ::std::option::Option<::std::string::String>,
-    /// <p>True if mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts is enabled, and otherwise false.</p>
+    /// <p>Indicates whether mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts is enabled.</p>
     pub iam_database_authentication_enabled: bool,
     /// <p>The number of CPU cores and the number of threads per core for the DB instance class of the DB instance when the DB snapshot was created.</p>
     pub processor_features: ::std::option::Option<::std::vec::Vec<crate::types::ProcessorFeature>>,
@@ -161,7 +161,7 @@ impl DbSnapshot {
     pub fn tde_credential_arn(&self) -> ::std::option::Option<&str> {
         self.tde_credential_arn.as_deref()
     }
-    /// <p>Specifies whether the DB snapshot is encrypted.</p>
+    /// <p>Indicates whether the DB snapshot is encrypted.</p>
     pub fn encrypted(&self) -> bool {
         self.encrypted
     }
@@ -178,7 +178,7 @@ impl DbSnapshot {
     pub fn timezone(&self) -> ::std::option::Option<&str> {
         self.timezone.as_deref()
     }
-    /// <p>True if mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts is enabled, and otherwise false.</p>
+    /// <p>Indicates whether mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts is enabled.</p>
     pub fn iam_database_authentication_enabled(&self) -> bool {
         self.iam_database_authentication_enabled
     }
@@ -557,17 +557,17 @@ impl DbSnapshotBuilder {
     pub fn get_tde_credential_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.tde_credential_arn
     }
-    /// <p>Specifies whether the DB snapshot is encrypted.</p>
+    /// <p>Indicates whether the DB snapshot is encrypted.</p>
     pub fn encrypted(mut self, input: bool) -> Self {
         self.encrypted = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies whether the DB snapshot is encrypted.</p>
+    /// <p>Indicates whether the DB snapshot is encrypted.</p>
     pub fn set_encrypted(mut self, input: ::std::option::Option<bool>) -> Self {
         self.encrypted = input;
         self
     }
-    /// <p>Specifies whether the DB snapshot is encrypted.</p>
+    /// <p>Indicates whether the DB snapshot is encrypted.</p>
     pub fn get_encrypted(&self) -> &::std::option::Option<bool> {
         &self.encrypted
     }
@@ -616,17 +616,17 @@ impl DbSnapshotBuilder {
     pub fn get_timezone(&self) -> &::std::option::Option<::std::string::String> {
         &self.timezone
     }
-    /// <p>True if mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts is enabled, and otherwise false.</p>
+    /// <p>Indicates whether mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts is enabled.</p>
     pub fn iam_database_authentication_enabled(mut self, input: bool) -> Self {
         self.iam_database_authentication_enabled = ::std::option::Option::Some(input);
         self
     }
-    /// <p>True if mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts is enabled, and otherwise false.</p>
+    /// <p>Indicates whether mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts is enabled.</p>
     pub fn set_iam_database_authentication_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.iam_database_authentication_enabled = input;
         self
     }
-    /// <p>True if mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts is enabled, and otherwise false.</p>
+    /// <p>Indicates whether mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts is enabled.</p>
     pub fn get_iam_database_authentication_enabled(&self) -> &::std::option::Option<bool> {
         &self.iam_database_authentication_enabled
     }

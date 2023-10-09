@@ -20,6 +20,8 @@ pub struct TrainingSpecification {
     pub training_channels: ::std::option::Option<::std::vec::Vec<crate::types::ChannelSpecification>>,
     /// <p>A list of the metrics that the algorithm emits that can be used as the objective metric in a hyperparameter tuning job.</p>
     pub supported_tuning_job_objective_metrics: ::std::option::Option<::std::vec::Vec<crate::types::HyperParameterTuningJobObjective>>,
+    /// <p>The additional data source used during the training job.</p>
+    pub additional_s3_data_source: ::std::option::Option<crate::types::AdditionalS3DataSource>,
 }
 impl TrainingSpecification {
     /// <p>The Amazon ECR registry path of the Docker image that contains the training algorithm.</p>
@@ -54,6 +56,10 @@ impl TrainingSpecification {
     pub fn supported_tuning_job_objective_metrics(&self) -> ::std::option::Option<&[crate::types::HyperParameterTuningJobObjective]> {
         self.supported_tuning_job_objective_metrics.as_deref()
     }
+    /// <p>The additional data source used during the training job.</p>
+    pub fn additional_s3_data_source(&self) -> ::std::option::Option<&crate::types::AdditionalS3DataSource> {
+        self.additional_s3_data_source.as_ref()
+    }
 }
 impl TrainingSpecification {
     /// Creates a new builder-style object to manufacture [`TrainingSpecification`](crate::types::TrainingSpecification).
@@ -74,6 +80,7 @@ pub struct TrainingSpecificationBuilder {
     pub(crate) metric_definitions: ::std::option::Option<::std::vec::Vec<crate::types::MetricDefinition>>,
     pub(crate) training_channels: ::std::option::Option<::std::vec::Vec<crate::types::ChannelSpecification>>,
     pub(crate) supported_tuning_job_objective_metrics: ::std::option::Option<::std::vec::Vec<crate::types::HyperParameterTuningJobObjective>>,
+    pub(crate) additional_s3_data_source: ::std::option::Option<crate::types::AdditionalS3DataSource>,
 }
 impl TrainingSpecificationBuilder {
     /// <p>The Amazon ECR registry path of the Docker image that contains the training algorithm.</p>
@@ -229,6 +236,20 @@ impl TrainingSpecificationBuilder {
     ) -> &::std::option::Option<::std::vec::Vec<crate::types::HyperParameterTuningJobObjective>> {
         &self.supported_tuning_job_objective_metrics
     }
+    /// <p>The additional data source used during the training job.</p>
+    pub fn additional_s3_data_source(mut self, input: crate::types::AdditionalS3DataSource) -> Self {
+        self.additional_s3_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The additional data source used during the training job.</p>
+    pub fn set_additional_s3_data_source(mut self, input: ::std::option::Option<crate::types::AdditionalS3DataSource>) -> Self {
+        self.additional_s3_data_source = input;
+        self
+    }
+    /// <p>The additional data source used during the training job.</p>
+    pub fn get_additional_s3_data_source(&self) -> &::std::option::Option<crate::types::AdditionalS3DataSource> {
+        &self.additional_s3_data_source
+    }
     /// Consumes the builder and constructs a [`TrainingSpecification`](crate::types::TrainingSpecification).
     pub fn build(self) -> crate::types::TrainingSpecification {
         crate::types::TrainingSpecification {
@@ -240,6 +261,7 @@ impl TrainingSpecificationBuilder {
             metric_definitions: self.metric_definitions,
             training_channels: self.training_channels,
             supported_tuning_job_objective_metrics: self.supported_tuning_job_objective_metrics,
+            additional_s3_data_source: self.additional_s3_data_source,
         }
     }
 }

@@ -9,6 +9,10 @@ pub struct ListNotificationsInput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return for this request.</p>
     pub max_results: ::std::option::Option<i32>,
+    /// <p>The ARN for the related resource for the notification.</p> <note>
+    /// <p>Only one of <code>WorkloadID</code> or <code>ResourceARN</code> should be specified.</p>
+    /// </note>
+    pub resource_arn: ::std::option::Option<::std::string::String>,
 }
 impl ListNotificationsInput {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
@@ -22,6 +26,12 @@ impl ListNotificationsInput {
     /// <p>The maximum number of results to return for this request.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
+    }
+    /// <p>The ARN for the related resource for the notification.</p> <note>
+    /// <p>Only one of <code>WorkloadID</code> or <code>ResourceARN</code> should be specified.</p>
+    /// </note>
+    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
+        self.resource_arn.as_deref()
     }
 }
 impl ListNotificationsInput {
@@ -38,6 +48,7 @@ pub struct ListNotificationsInputBuilder {
     pub(crate) workload_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
+    pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
 }
 impl ListNotificationsInputBuilder {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
@@ -82,6 +93,26 @@ impl ListNotificationsInputBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
+    /// <p>The ARN for the related resource for the notification.</p> <note>
+    /// <p>Only one of <code>WorkloadID</code> or <code>ResourceARN</code> should be specified.</p>
+    /// </note>
+    pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.resource_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ARN for the related resource for the notification.</p> <note>
+    /// <p>Only one of <code>WorkloadID</code> or <code>ResourceARN</code> should be specified.</p>
+    /// </note>
+    pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.resource_arn = input;
+        self
+    }
+    /// <p>The ARN for the related resource for the notification.</p> <note>
+    /// <p>Only one of <code>WorkloadID</code> or <code>ResourceARN</code> should be specified.</p>
+    /// </note>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
+    }
     /// Consumes the builder and constructs a [`ListNotificationsInput`](crate::operation::list_notifications::ListNotificationsInput).
     pub fn build(
         self,
@@ -90,6 +121,7 @@ impl ListNotificationsInputBuilder {
             workload_id: self.workload_id,
             next_token: self.next_token,
             max_results: self.max_results,
+            resource_arn: self.resource_arn,
         })
     }
 }

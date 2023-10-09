@@ -108,6 +108,9 @@ where
                                     .transpose()?,
                             );
                         }
+                        "etag" => {
+                            builder = builder.set_etag(crate::protocol_serde::shape_e_tag::de_e_tag(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

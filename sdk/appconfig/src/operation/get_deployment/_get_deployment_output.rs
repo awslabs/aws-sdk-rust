@@ -43,7 +43,7 @@ pub struct GetDeploymentOutput {
     pub applied_extensions: ::std::option::Option<::std::vec::Vec<crate::types::AppliedExtension>>,
     /// <p>The Amazon Resource Name of the Key Management Service key used to encrypt configuration data. You can encrypt secrets stored in Secrets Manager, Amazon Simple Storage Service (Amazon S3) objects encrypted with SSE-KMS, or secure string parameters stored in Amazon Web Services Systems Manager Parameter Store. </p>
     pub kms_key_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The KMS key identifier (key ID, key alias, or key ARN). AppConfig uses this ID to encrypt the configuration data using a customer managed key. </p>
+    /// <p>The Key Management Service key identifier (key ID, key alias, or key ARN) provided when the resource was created or updated.</p>
     pub kms_key_identifier: ::std::option::Option<::std::string::String>,
     /// <p>A user-defined label for an AppConfig hosted configuration version.</p>
     pub version_label: ::std::option::Option<::std::string::String>,
@@ -130,7 +130,7 @@ impl GetDeploymentOutput {
     pub fn kms_key_arn(&self) -> ::std::option::Option<&str> {
         self.kms_key_arn.as_deref()
     }
-    /// <p>The KMS key identifier (key ID, key alias, or key ARN). AppConfig uses this ID to encrypt the configuration data using a customer managed key. </p>
+    /// <p>The Key Management Service key identifier (key ID, key alias, or key ARN) provided when the resource was created or updated.</p>
     pub fn kms_key_identifier(&self) -> ::std::option::Option<&str> {
         self.kms_key_identifier.as_deref()
     }
@@ -472,17 +472,17 @@ impl GetDeploymentOutputBuilder {
     pub fn get_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.kms_key_arn
     }
-    /// <p>The KMS key identifier (key ID, key alias, or key ARN). AppConfig uses this ID to encrypt the configuration data using a customer managed key. </p>
+    /// <p>The Key Management Service key identifier (key ID, key alias, or key ARN) provided when the resource was created or updated.</p>
     pub fn kms_key_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key_identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The KMS key identifier (key ID, key alias, or key ARN). AppConfig uses this ID to encrypt the configuration data using a customer managed key. </p>
+    /// <p>The Key Management Service key identifier (key ID, key alias, or key ARN) provided when the resource was created or updated.</p>
     pub fn set_kms_key_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_identifier = input;
         self
     }
-    /// <p>The KMS key identifier (key ID, key alias, or key ARN). AppConfig uses this ID to encrypt the configuration data using a customer managed key. </p>
+    /// <p>The Key Management Service key identifier (key ID, key alias, or key ARN) provided when the resource was created or updated.</p>
     pub fn get_kms_key_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.kms_key_identifier
     }

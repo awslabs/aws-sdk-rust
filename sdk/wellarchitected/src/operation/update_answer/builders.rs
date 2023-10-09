@@ -204,16 +204,19 @@ impl UpdateAnswerFluentBuilder {
         self.inner.get_choice_updates()
     }
     /// <p>The notes associated with the workload.</p>
+    /// <p>For a review template, these are the notes that will be associated with the workload when the template is applied.</p>
     pub fn notes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.notes(input.into());
         self
     }
     /// <p>The notes associated with the workload.</p>
+    /// <p>For a review template, these are the notes that will be associated with the workload when the template is applied.</p>
     pub fn set_notes(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_notes(input);
         self
     }
     /// <p>The notes associated with the workload.</p>
+    /// <p>For a review template, these are the notes that will be associated with the workload when the template is applied.</p>
     pub fn get_notes(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_notes()
     }

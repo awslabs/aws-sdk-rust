@@ -6,7 +6,7 @@
 pub struct SftpConnectorConfig {
     /// <p>The identifier for the secret (in Amazon Web Services Secrets Manager) that contains the SFTP user's private key, password, or both. The identifier can be either the Amazon Resource Name (ARN) or the name of the secret.</p>
     pub user_secret_id: ::std::option::Option<::std::string::String>,
-    /// <p>The public portion of the host key, or keys, that are used to authenticate the user to the external server to which you are connecting. You can use the <code>ssh-keyscan</code> command against the SFTP server to retrieve the necessary key.</p>
+    /// <p>The public portion of the host key, or keys, that are used to identify the external server to which you are connecting. You can use the <code>ssh-keyscan</code> command against the SFTP server to retrieve the necessary key.</p>
     /// <p>The three standard SSH public key format elements are <code>
     /// <key type></key></code>, <code></code>, and an optional <code>
     /// <comment></comment></code>, with spaces between each element. Specify only the <code>
@@ -14,8 +14,10 @@ pub struct SftpConnectorConfig {
     /// <comment></comment></code> portion of the key.</p>
     /// <p>For the trusted host key, Transfer Family accepts RSA and ECDSA keys.</p>
     /// <ul>
-    /// <li> <p>For RSA keys, the key type is <code>ssh-rsa</code>.</p> </li>
-    /// <li> <p>For ECDSA keys, the key type is either <code>ecdsa-sha2-nistp256</code>, <code>ecdsa-sha2-nistp384</code>, or <code>ecdsa-sha2-nistp521</code>, depending on the size of the key you generated.</p> </li>
+    /// <li> <p>For RSA keys, the <code>
+    /// <key type></key></code> string is <code>ssh-rsa</code>.</p> </li>
+    /// <li> <p>For ECDSA keys, the <code>
+    /// <key type></key></code> string is either <code>ecdsa-sha2-nistp256</code>, <code>ecdsa-sha2-nistp384</code>, or <code>ecdsa-sha2-nistp521</code>, depending on the size of the key you generated.</p> </li>
     /// </ul>
     pub trusted_host_keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -24,7 +26,7 @@ impl SftpConnectorConfig {
     pub fn user_secret_id(&self) -> ::std::option::Option<&str> {
         self.user_secret_id.as_deref()
     }
-    /// <p>The public portion of the host key, or keys, that are used to authenticate the user to the external server to which you are connecting. You can use the <code>ssh-keyscan</code> command against the SFTP server to retrieve the necessary key.</p>
+    /// <p>The public portion of the host key, or keys, that are used to identify the external server to which you are connecting. You can use the <code>ssh-keyscan</code> command against the SFTP server to retrieve the necessary key.</p>
     /// <p>The three standard SSH public key format elements are <code>
     /// <key type></key></code>, <code></code>, and an optional <code>
     /// <comment></comment></code>, with spaces between each element. Specify only the <code>
@@ -32,8 +34,10 @@ impl SftpConnectorConfig {
     /// <comment></comment></code> portion of the key.</p>
     /// <p>For the trusted host key, Transfer Family accepts RSA and ECDSA keys.</p>
     /// <ul>
-    /// <li> <p>For RSA keys, the key type is <code>ssh-rsa</code>.</p> </li>
-    /// <li> <p>For ECDSA keys, the key type is either <code>ecdsa-sha2-nistp256</code>, <code>ecdsa-sha2-nistp384</code>, or <code>ecdsa-sha2-nistp521</code>, depending on the size of the key you generated.</p> </li>
+    /// <li> <p>For RSA keys, the <code>
+    /// <key type></key></code> string is <code>ssh-rsa</code>.</p> </li>
+    /// <li> <p>For ECDSA keys, the <code>
+    /// <key type></key></code> string is either <code>ecdsa-sha2-nistp256</code>, <code>ecdsa-sha2-nistp384</code>, or <code>ecdsa-sha2-nistp521</code>, depending on the size of the key you generated.</p> </li>
     /// </ul>
     pub fn trusted_host_keys(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.trusted_host_keys.as_deref()
@@ -72,7 +76,7 @@ impl SftpConnectorConfigBuilder {
     ///
     /// To override the contents of this collection use [`set_trusted_host_keys`](Self::set_trusted_host_keys).
     ///
-    /// <p>The public portion of the host key, or keys, that are used to authenticate the user to the external server to which you are connecting. You can use the <code>ssh-keyscan</code> command against the SFTP server to retrieve the necessary key.</p>
+    /// <p>The public portion of the host key, or keys, that are used to identify the external server to which you are connecting. You can use the <code>ssh-keyscan</code> command against the SFTP server to retrieve the necessary key.</p>
     /// <p>The three standard SSH public key format elements are <code>
     /// <key type></key></code>, <code></code>, and an optional <code>
     /// <comment></comment></code>, with spaces between each element. Specify only the <code>
@@ -80,8 +84,10 @@ impl SftpConnectorConfigBuilder {
     /// <comment></comment></code> portion of the key.</p>
     /// <p>For the trusted host key, Transfer Family accepts RSA and ECDSA keys.</p>
     /// <ul>
-    /// <li> <p>For RSA keys, the key type is <code>ssh-rsa</code>.</p> </li>
-    /// <li> <p>For ECDSA keys, the key type is either <code>ecdsa-sha2-nistp256</code>, <code>ecdsa-sha2-nistp384</code>, or <code>ecdsa-sha2-nistp521</code>, depending on the size of the key you generated.</p> </li>
+    /// <li> <p>For RSA keys, the <code>
+    /// <key type></key></code> string is <code>ssh-rsa</code>.</p> </li>
+    /// <li> <p>For ECDSA keys, the <code>
+    /// <key type></key></code> string is either <code>ecdsa-sha2-nistp256</code>, <code>ecdsa-sha2-nistp384</code>, or <code>ecdsa-sha2-nistp521</code>, depending on the size of the key you generated.</p> </li>
     /// </ul>
     pub fn trusted_host_keys(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.trusted_host_keys.unwrap_or_default();
@@ -89,7 +95,7 @@ impl SftpConnectorConfigBuilder {
         self.trusted_host_keys = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The public portion of the host key, or keys, that are used to authenticate the user to the external server to which you are connecting. You can use the <code>ssh-keyscan</code> command against the SFTP server to retrieve the necessary key.</p>
+    /// <p>The public portion of the host key, or keys, that are used to identify the external server to which you are connecting. You can use the <code>ssh-keyscan</code> command against the SFTP server to retrieve the necessary key.</p>
     /// <p>The three standard SSH public key format elements are <code>
     /// <key type></key></code>, <code></code>, and an optional <code>
     /// <comment></comment></code>, with spaces between each element. Specify only the <code>
@@ -97,14 +103,16 @@ impl SftpConnectorConfigBuilder {
     /// <comment></comment></code> portion of the key.</p>
     /// <p>For the trusted host key, Transfer Family accepts RSA and ECDSA keys.</p>
     /// <ul>
-    /// <li> <p>For RSA keys, the key type is <code>ssh-rsa</code>.</p> </li>
-    /// <li> <p>For ECDSA keys, the key type is either <code>ecdsa-sha2-nistp256</code>, <code>ecdsa-sha2-nistp384</code>, or <code>ecdsa-sha2-nistp521</code>, depending on the size of the key you generated.</p> </li>
+    /// <li> <p>For RSA keys, the <code>
+    /// <key type></key></code> string is <code>ssh-rsa</code>.</p> </li>
+    /// <li> <p>For ECDSA keys, the <code>
+    /// <key type></key></code> string is either <code>ecdsa-sha2-nistp256</code>, <code>ecdsa-sha2-nistp384</code>, or <code>ecdsa-sha2-nistp521</code>, depending on the size of the key you generated.</p> </li>
     /// </ul>
     pub fn set_trusted_host_keys(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.trusted_host_keys = input;
         self
     }
-    /// <p>The public portion of the host key, or keys, that are used to authenticate the user to the external server to which you are connecting. You can use the <code>ssh-keyscan</code> command against the SFTP server to retrieve the necessary key.</p>
+    /// <p>The public portion of the host key, or keys, that are used to identify the external server to which you are connecting. You can use the <code>ssh-keyscan</code> command against the SFTP server to retrieve the necessary key.</p>
     /// <p>The three standard SSH public key format elements are <code>
     /// <key type></key></code>, <code></code>, and an optional <code>
     /// <comment></comment></code>, with spaces between each element. Specify only the <code>
@@ -112,8 +120,10 @@ impl SftpConnectorConfigBuilder {
     /// <comment></comment></code> portion of the key.</p>
     /// <p>For the trusted host key, Transfer Family accepts RSA and ECDSA keys.</p>
     /// <ul>
-    /// <li> <p>For RSA keys, the key type is <code>ssh-rsa</code>.</p> </li>
-    /// <li> <p>For ECDSA keys, the key type is either <code>ecdsa-sha2-nistp256</code>, <code>ecdsa-sha2-nistp384</code>, or <code>ecdsa-sha2-nistp521</code>, depending on the size of the key you generated.</p> </li>
+    /// <li> <p>For RSA keys, the <code>
+    /// <key type></key></code> string is <code>ssh-rsa</code>.</p> </li>
+    /// <li> <p>For ECDSA keys, the <code>
+    /// <key type></key></code> string is either <code>ecdsa-sha2-nistp256</code>, <code>ecdsa-sha2-nistp384</code>, or <code>ecdsa-sha2-nistp521</code>, depending on the size of the key you generated.</p> </li>
     /// </ul>
     pub fn get_trusted_host_keys(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.trusted_host_keys

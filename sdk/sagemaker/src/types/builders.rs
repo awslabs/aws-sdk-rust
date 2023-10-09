@@ -127,6 +127,8 @@ pub use crate::types::_additional_inference_specification_definition::Additional
 
 pub use crate::types::_model_package_container_definition::ModelPackageContainerDefinitionBuilder;
 
+pub use crate::types::_additional_s3_data_source::AdditionalS3DataSourceBuilder;
+
 pub use crate::types::_model_input::ModelInputBuilder;
 
 pub use crate::types::_shadow_mode_config::ShadowModeConfigBuilder;

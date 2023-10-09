@@ -274,7 +274,8 @@ impl StartExportTaskFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_export_only`](Self::set_export_only).
     ///
-    /// <p>The data to be exported from the snapshot or cluster. If this parameter is not provided, all of the data is exported. Valid values are the following:</p>
+    /// <p>The data to be exported from the snapshot or cluster. If this parameter isn't provided, all of the data is exported.</p>
+    /// <p>Valid Values:</p>
     /// <ul>
     /// <li> <p> <code>database</code> - Export all the data from a specified database.</p> </li>
     /// <li> <p> <code>database.table</code> <i>table-name</i> - Export a table of the snapshot or cluster. This format is valid only for RDS for MySQL, RDS for MariaDB, and Aurora MySQL.</p> </li>
@@ -285,7 +286,8 @@ impl StartExportTaskFluentBuilder {
         self.inner = self.inner.export_only(input.into());
         self
     }
-    /// <p>The data to be exported from the snapshot or cluster. If this parameter is not provided, all of the data is exported. Valid values are the following:</p>
+    /// <p>The data to be exported from the snapshot or cluster. If this parameter isn't provided, all of the data is exported.</p>
+    /// <p>Valid Values:</p>
     /// <ul>
     /// <li> <p> <code>database</code> - Export all the data from a specified database.</p> </li>
     /// <li> <p> <code>database.table</code> <i>table-name</i> - Export a table of the snapshot or cluster. This format is valid only for RDS for MySQL, RDS for MariaDB, and Aurora MySQL.</p> </li>
@@ -296,7 +298,8 @@ impl StartExportTaskFluentBuilder {
         self.inner = self.inner.set_export_only(input);
         self
     }
-    /// <p>The data to be exported from the snapshot or cluster. If this parameter is not provided, all of the data is exported. Valid values are the following:</p>
+    /// <p>The data to be exported from the snapshot or cluster. If this parameter isn't provided, all of the data is exported.</p>
+    /// <p>Valid Values:</p>
     /// <ul>
     /// <li> <p> <code>database</code> - Export all the data from a specified database.</p> </li>
     /// <li> <p> <code>database.table</code> <i>table-name</i> - Export a table of the snapshot or cluster. This format is valid only for RDS for MySQL, RDS for MariaDB, and Aurora MySQL.</p> </li>

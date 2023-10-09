@@ -730,7 +730,7 @@ impl CreateDBInstanceFluentBuilder {
     /// <p>Constraints:</p>
     /// <ul>
     /// <li> <p>Can't be specified if <code>ManageMasterUserPassword</code> is turned on.</p> </li>
-    /// <li> <p>Can include any printable ASCII character except "/", """, or "@".</p> </li>
+    /// <li> <p>Can include any printable ASCII character except "/", """, or "@". For RDS for Oracle, can't include the "&amp;" (ampersand) or the "'" (single quotes) character.</p> </li>
     /// </ul>
     /// <p>Length Constraints:</p>
     /// <ul>
@@ -749,7 +749,7 @@ impl CreateDBInstanceFluentBuilder {
     /// <p>Constraints:</p>
     /// <ul>
     /// <li> <p>Can't be specified if <code>ManageMasterUserPassword</code> is turned on.</p> </li>
-    /// <li> <p>Can include any printable ASCII character except "/", """, or "@".</p> </li>
+    /// <li> <p>Can include any printable ASCII character except "/", """, or "@". For RDS for Oracle, can't include the "&amp;" (ampersand) or the "'" (single quotes) character.</p> </li>
     /// </ul>
     /// <p>Length Constraints:</p>
     /// <ul>
@@ -768,7 +768,7 @@ impl CreateDBInstanceFluentBuilder {
     /// <p>Constraints:</p>
     /// <ul>
     /// <li> <p>Can't be specified if <code>ManageMasterUserPassword</code> is turned on.</p> </li>
-    /// <li> <p>Can include any printable ASCII character except "/", """, or "@".</p> </li>
+    /// <li> <p>Can include any printable ASCII character except "/", """, or "@". For RDS for Oracle, can't include the "&amp;" (ampersand) or the "'" (single quotes) character.</p> </li>
     /// </ul>
     /// <p>Length Constraints:</p>
     /// <ul>

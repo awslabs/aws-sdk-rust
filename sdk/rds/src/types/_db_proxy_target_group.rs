@@ -11,7 +11,7 @@ pub struct DbProxyTargetGroup {
     pub target_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) representing the target group.</p>
     pub target_group_arn: ::std::option::Option<::std::string::String>,
-    /// <p>Whether this target group is the first one used for connection requests by the associated proxy. Because each proxy is currently associated with a single target group, currently this setting is always <code>true</code>.</p>
+    /// <p>Indicates whether this target group is the first one used for connection requests by the associated proxy. Because each proxy is currently associated with a single target group, currently this setting is always <code>true</code>.</p>
     pub is_default: bool,
     /// <p>The current status of this target group. A status of <code>available</code> means the target group is correctly associated with a database. Other values indicate that you must wait for the target group to be ready, or take some action to resolve an issue.</p>
     pub status: ::std::option::Option<::std::string::String>,
@@ -35,7 +35,7 @@ impl DbProxyTargetGroup {
     pub fn target_group_arn(&self) -> ::std::option::Option<&str> {
         self.target_group_arn.as_deref()
     }
-    /// <p>Whether this target group is the first one used for connection requests by the associated proxy. Because each proxy is currently associated with a single target group, currently this setting is always <code>true</code>.</p>
+    /// <p>Indicates whether this target group is the first one used for connection requests by the associated proxy. Because each proxy is currently associated with a single target group, currently this setting is always <code>true</code>.</p>
     pub fn is_default(&self) -> bool {
         self.is_default
     }
@@ -119,17 +119,17 @@ impl DbProxyTargetGroupBuilder {
     pub fn get_target_group_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.target_group_arn
     }
-    /// <p>Whether this target group is the first one used for connection requests by the associated proxy. Because each proxy is currently associated with a single target group, currently this setting is always <code>true</code>.</p>
+    /// <p>Indicates whether this target group is the first one used for connection requests by the associated proxy. Because each proxy is currently associated with a single target group, currently this setting is always <code>true</code>.</p>
     pub fn is_default(mut self, input: bool) -> Self {
         self.is_default = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Whether this target group is the first one used for connection requests by the associated proxy. Because each proxy is currently associated with a single target group, currently this setting is always <code>true</code>.</p>
+    /// <p>Indicates whether this target group is the first one used for connection requests by the associated proxy. Because each proxy is currently associated with a single target group, currently this setting is always <code>true</code>.</p>
     pub fn set_is_default(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_default = input;
         self
     }
-    /// <p>Whether this target group is the first one used for connection requests by the associated proxy. Because each proxy is currently associated with a single target group, currently this setting is always <code>true</code>.</p>
+    /// <p>Indicates whether this target group is the first one used for connection requests by the associated proxy. Because each proxy is currently associated with a single target group, currently this setting is always <code>true</code>.</p>
     pub fn get_is_default(&self) -> &::std::option::Option<bool> {
         &self.is_default
     }

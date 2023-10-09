@@ -43,6 +43,12 @@ pub fn ser_model_package_container_definition(
     if let Some(var_14) = &input.nearest_model_name {
         object.key("NearestModelName").string(var_14.as_str());
     }
+    if let Some(var_15) = &input.additional_s3_data_source {
+        #[allow(unused_mut)]
+        let mut object_16 = object.key("AdditionalS3DataSource").start_object();
+        crate::protocol_serde::shape_additional_s3_data_source::ser_additional_s3_data_source(&mut object_16, var_15)?;
+        object_16.finish();
+    }
     Ok(())
 }
 
@@ -121,6 +127,11 @@ where
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
+                            );
+                        }
+                        "AdditionalS3DataSource" => {
+                            builder = builder.set_additional_s3_data_source(
+                                crate::protocol_serde::shape_additional_s3_data_source::de_additional_s3_data_source(tokens)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -144,17 +144,35 @@ impl DescribeDBClusterParametersFluentBuilder {
     pub fn get_db_cluster_parameter_group_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_db_cluster_parameter_group_name()
     }
-    /// <p>A value that indicates to return only parameters for a specific source. Parameter sources can be <code>engine</code>, <code>service</code>, or <code>customer</code>.</p>
+    /// <p>A specific source to return parameters for.</p>
+    /// <p>Valid Values:</p>
+    /// <ul>
+    /// <li> <p> <code>customer</code> </p> </li>
+    /// <li> <p> <code>engine</code> </p> </li>
+    /// <li> <p> <code>service</code> </p> </li>
+    /// </ul>
     pub fn source(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source(input.into());
         self
     }
-    /// <p>A value that indicates to return only parameters for a specific source. Parameter sources can be <code>engine</code>, <code>service</code>, or <code>customer</code>.</p>
+    /// <p>A specific source to return parameters for.</p>
+    /// <p>Valid Values:</p>
+    /// <ul>
+    /// <li> <p> <code>customer</code> </p> </li>
+    /// <li> <p> <code>engine</code> </p> </li>
+    /// <li> <p> <code>service</code> </p> </li>
+    /// </ul>
     pub fn set_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source(input);
         self
     }
-    /// <p>A value that indicates to return only parameters for a specific source. Parameter sources can be <code>engine</code>, <code>service</code>, or <code>customer</code>.</p>
+    /// <p>A specific source to return parameters for.</p>
+    /// <p>Valid Values:</p>
+    /// <ul>
+    /// <li> <p> <code>customer</code> </p> </li>
+    /// <li> <p> <code>engine</code> </p> </li>
+    /// <li> <p> <code>service</code> </p> </li>
+    /// </ul>
     pub fn get_source(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_source()
     }

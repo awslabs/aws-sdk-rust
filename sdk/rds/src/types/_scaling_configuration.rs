@@ -15,7 +15,7 @@ pub struct ScalingConfiguration {
     /// <p>For Aurora PostgreSQL, valid capacity values are <code>2</code>, <code>4</code>, <code>8</code>, <code>16</code>, <code>32</code>, <code>64</code>, <code>192</code>, and <code>384</code>.</p>
     /// <p>The maximum capacity must be greater than or equal to the minimum capacity.</p>
     pub max_capacity: ::std::option::Option<i32>,
-    /// <p>A value that indicates whether to allow or disallow automatic pause for an Aurora DB cluster in <code>serverless</code> DB engine mode. A DB cluster can be paused only when it's idle (it has no connections).</p> <note>
+    /// <p>Indicates whether to allow or disallow automatic pause for an Aurora DB cluster in <code>serverless</code> DB engine mode. A DB cluster can be paused only when it's idle (it has no connections).</p> <note>
     /// <p>If a DB cluster is paused for more than seven days, the DB cluster might be backed up with a snapshot. In this case, the DB cluster is restored when there is a request to connect to it.</p>
     /// </note>
     pub auto_pause: ::std::option::Option<bool>,
@@ -48,7 +48,7 @@ impl ScalingConfiguration {
     pub fn max_capacity(&self) -> ::std::option::Option<i32> {
         self.max_capacity
     }
-    /// <p>A value that indicates whether to allow or disallow automatic pause for an Aurora DB cluster in <code>serverless</code> DB engine mode. A DB cluster can be paused only when it's idle (it has no connections).</p> <note>
+    /// <p>Indicates whether to allow or disallow automatic pause for an Aurora DB cluster in <code>serverless</code> DB engine mode. A DB cluster can be paused only when it's idle (it has no connections).</p> <note>
     /// <p>If a DB cluster is paused for more than seven days, the DB cluster might be backed up with a snapshot. In this case, the DB cluster is restored when there is a request to connect to it.</p>
     /// </note>
     pub fn auto_pause(&self) -> ::std::option::Option<bool> {
@@ -139,21 +139,21 @@ impl ScalingConfigurationBuilder {
     pub fn get_max_capacity(&self) -> &::std::option::Option<i32> {
         &self.max_capacity
     }
-    /// <p>A value that indicates whether to allow or disallow automatic pause for an Aurora DB cluster in <code>serverless</code> DB engine mode. A DB cluster can be paused only when it's idle (it has no connections).</p> <note>
+    /// <p>Indicates whether to allow or disallow automatic pause for an Aurora DB cluster in <code>serverless</code> DB engine mode. A DB cluster can be paused only when it's idle (it has no connections).</p> <note>
     /// <p>If a DB cluster is paused for more than seven days, the DB cluster might be backed up with a snapshot. In this case, the DB cluster is restored when there is a request to connect to it.</p>
     /// </note>
     pub fn auto_pause(mut self, input: bool) -> Self {
         self.auto_pause = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A value that indicates whether to allow or disallow automatic pause for an Aurora DB cluster in <code>serverless</code> DB engine mode. A DB cluster can be paused only when it's idle (it has no connections).</p> <note>
+    /// <p>Indicates whether to allow or disallow automatic pause for an Aurora DB cluster in <code>serverless</code> DB engine mode. A DB cluster can be paused only when it's idle (it has no connections).</p> <note>
     /// <p>If a DB cluster is paused for more than seven days, the DB cluster might be backed up with a snapshot. In this case, the DB cluster is restored when there is a request to connect to it.</p>
     /// </note>
     pub fn set_auto_pause(mut self, input: ::std::option::Option<bool>) -> Self {
         self.auto_pause = input;
         self
     }
-    /// <p>A value that indicates whether to allow or disallow automatic pause for an Aurora DB cluster in <code>serverless</code> DB engine mode. A DB cluster can be paused only when it's idle (it has no connections).</p> <note>
+    /// <p>Indicates whether to allow or disallow automatic pause for an Aurora DB cluster in <code>serverless</code> DB engine mode. A DB cluster can be paused only when it's idle (it has no connections).</p> <note>
     /// <p>If a DB cluster is paused for more than seven days, the DB cluster might be backed up with a snapshot. In this case, the DB cluster is restored when there is a request to connect to it.</p>
     /// </note>
     pub fn get_auto_pause(&self) -> &::std::option::Option<bool> {

@@ -170,6 +170,13 @@ pub fn de_create_hosted_configuration_version_http_response(
                 )
             })?,
         );
+        output = output.set_kms_key_arn(
+            crate::protocol_serde::shape_create_hosted_configuration_version_output::de_kms_key_arn_header(_response_headers).map_err(|_| {
+                crate::operation::create_hosted_configuration_version::CreateHostedConfigurationVersionError::unhandled(
+                    "Failed to parse KmsKeyArn from header `KmsKeyArn",
+                )
+            })?,
+        );
         output = output.set_version_label(
             crate::protocol_serde::shape_create_hosted_configuration_version_output::de_version_label_header(_response_headers).map_err(|_| {
                 crate::operation::create_hosted_configuration_version::CreateHostedConfigurationVersionError::unhandled(

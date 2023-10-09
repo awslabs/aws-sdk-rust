@@ -10,7 +10,7 @@ pub struct DeleteDbClusterInput {
     /// <li> <p>Must match an existing DBClusterIdentifier.</p> </li>
     /// </ul>
     pub db_cluster_identifier: ::std::option::Option<::std::string::String>,
-    /// <p>A value that indicates whether to skip the creation of a final DB cluster snapshot before the DB cluster is deleted. If skip is specified, no DB cluster snapshot is created. If skip isn't specified, a DB cluster snapshot is created before the DB cluster is deleted. By default, skip isn't specified, and the DB cluster snapshot is created. By default, this parameter is disabled.</p> <note>
+    /// <p>Specifies whether to skip the creation of a final DB cluster snapshot before the DB cluster is deleted. If skip is specified, no DB cluster snapshot is created. If skip isn't specified, a DB cluster snapshot is created before the DB cluster is deleted. By default, skip isn't specified, and the DB cluster snapshot is created. By default, this parameter is disabled.</p> <note>
     /// <p>You must specify a <code>FinalDBSnapshotIdentifier</code> parameter if <code>SkipFinalSnapshot</code> is disabled.</p>
     /// </note>
     pub skip_final_snapshot: ::std::option::Option<bool>,
@@ -24,7 +24,7 @@ pub struct DeleteDbClusterInput {
     /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
     /// </ul>
     pub final_db_snapshot_identifier: ::std::option::Option<::std::string::String>,
-    /// <p>A value that indicates whether to remove automated backups immediately after the DB cluster is deleted. This parameter isn't case-sensitive. The default is to remove automated backups immediately after the DB cluster is deleted.</p>
+    /// <p>Specifies whether to remove automated backups immediately after the DB cluster is deleted. This parameter isn't case-sensitive. The default is to remove automated backups immediately after the DB cluster is deleted.</p>
     pub delete_automated_backups: ::std::option::Option<bool>,
 }
 impl DeleteDbClusterInput {
@@ -36,7 +36,7 @@ impl DeleteDbClusterInput {
     pub fn db_cluster_identifier(&self) -> ::std::option::Option<&str> {
         self.db_cluster_identifier.as_deref()
     }
-    /// <p>A value that indicates whether to skip the creation of a final DB cluster snapshot before the DB cluster is deleted. If skip is specified, no DB cluster snapshot is created. If skip isn't specified, a DB cluster snapshot is created before the DB cluster is deleted. By default, skip isn't specified, and the DB cluster snapshot is created. By default, this parameter is disabled.</p> <note>
+    /// <p>Specifies whether to skip the creation of a final DB cluster snapshot before the DB cluster is deleted. If skip is specified, no DB cluster snapshot is created. If skip isn't specified, a DB cluster snapshot is created before the DB cluster is deleted. By default, skip isn't specified, and the DB cluster snapshot is created. By default, this parameter is disabled.</p> <note>
     /// <p>You must specify a <code>FinalDBSnapshotIdentifier</code> parameter if <code>SkipFinalSnapshot</code> is disabled.</p>
     /// </note>
     pub fn skip_final_snapshot(&self) -> ::std::option::Option<bool> {
@@ -54,7 +54,7 @@ impl DeleteDbClusterInput {
     pub fn final_db_snapshot_identifier(&self) -> ::std::option::Option<&str> {
         self.final_db_snapshot_identifier.as_deref()
     }
-    /// <p>A value that indicates whether to remove automated backups immediately after the DB cluster is deleted. This parameter isn't case-sensitive. The default is to remove automated backups immediately after the DB cluster is deleted.</p>
+    /// <p>Specifies whether to remove automated backups immediately after the DB cluster is deleted. This parameter isn't case-sensitive. The default is to remove automated backups immediately after the DB cluster is deleted.</p>
     pub fn delete_automated_backups(&self) -> ::std::option::Option<bool> {
         self.delete_automated_backups
     }
@@ -102,21 +102,21 @@ impl DeleteDbClusterInputBuilder {
     pub fn get_db_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.db_cluster_identifier
     }
-    /// <p>A value that indicates whether to skip the creation of a final DB cluster snapshot before the DB cluster is deleted. If skip is specified, no DB cluster snapshot is created. If skip isn't specified, a DB cluster snapshot is created before the DB cluster is deleted. By default, skip isn't specified, and the DB cluster snapshot is created. By default, this parameter is disabled.</p> <note>
+    /// <p>Specifies whether to skip the creation of a final DB cluster snapshot before the DB cluster is deleted. If skip is specified, no DB cluster snapshot is created. If skip isn't specified, a DB cluster snapshot is created before the DB cluster is deleted. By default, skip isn't specified, and the DB cluster snapshot is created. By default, this parameter is disabled.</p> <note>
     /// <p>You must specify a <code>FinalDBSnapshotIdentifier</code> parameter if <code>SkipFinalSnapshot</code> is disabled.</p>
     /// </note>
     pub fn skip_final_snapshot(mut self, input: bool) -> Self {
         self.skip_final_snapshot = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A value that indicates whether to skip the creation of a final DB cluster snapshot before the DB cluster is deleted. If skip is specified, no DB cluster snapshot is created. If skip isn't specified, a DB cluster snapshot is created before the DB cluster is deleted. By default, skip isn't specified, and the DB cluster snapshot is created. By default, this parameter is disabled.</p> <note>
+    /// <p>Specifies whether to skip the creation of a final DB cluster snapshot before the DB cluster is deleted. If skip is specified, no DB cluster snapshot is created. If skip isn't specified, a DB cluster snapshot is created before the DB cluster is deleted. By default, skip isn't specified, and the DB cluster snapshot is created. By default, this parameter is disabled.</p> <note>
     /// <p>You must specify a <code>FinalDBSnapshotIdentifier</code> parameter if <code>SkipFinalSnapshot</code> is disabled.</p>
     /// </note>
     pub fn set_skip_final_snapshot(mut self, input: ::std::option::Option<bool>) -> Self {
         self.skip_final_snapshot = input;
         self
     }
-    /// <p>A value that indicates whether to skip the creation of a final DB cluster snapshot before the DB cluster is deleted. If skip is specified, no DB cluster snapshot is created. If skip isn't specified, a DB cluster snapshot is created before the DB cluster is deleted. By default, skip isn't specified, and the DB cluster snapshot is created. By default, this parameter is disabled.</p> <note>
+    /// <p>Specifies whether to skip the creation of a final DB cluster snapshot before the DB cluster is deleted. If skip is specified, no DB cluster snapshot is created. If skip isn't specified, a DB cluster snapshot is created before the DB cluster is deleted. By default, skip isn't specified, and the DB cluster snapshot is created. By default, this parameter is disabled.</p> <note>
     /// <p>You must specify a <code>FinalDBSnapshotIdentifier</code> parameter if <code>SkipFinalSnapshot</code> is disabled.</p>
     /// </note>
     pub fn get_skip_final_snapshot(&self) -> &::std::option::Option<bool> {
@@ -160,17 +160,17 @@ impl DeleteDbClusterInputBuilder {
     pub fn get_final_db_snapshot_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.final_db_snapshot_identifier
     }
-    /// <p>A value that indicates whether to remove automated backups immediately after the DB cluster is deleted. This parameter isn't case-sensitive. The default is to remove automated backups immediately after the DB cluster is deleted.</p>
+    /// <p>Specifies whether to remove automated backups immediately after the DB cluster is deleted. This parameter isn't case-sensitive. The default is to remove automated backups immediately after the DB cluster is deleted.</p>
     pub fn delete_automated_backups(mut self, input: bool) -> Self {
         self.delete_automated_backups = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A value that indicates whether to remove automated backups immediately after the DB cluster is deleted. This parameter isn't case-sensitive. The default is to remove automated backups immediately after the DB cluster is deleted.</p>
+    /// <p>Specifies whether to remove automated backups immediately after the DB cluster is deleted. This parameter isn't case-sensitive. The default is to remove automated backups immediately after the DB cluster is deleted.</p>
     pub fn set_delete_automated_backups(mut self, input: ::std::option::Option<bool>) -> Self {
         self.delete_automated_backups = input;
         self
     }
-    /// <p>A value that indicates whether to remove automated backups immediately after the DB cluster is deleted. This parameter isn't case-sensitive. The default is to remove automated backups immediately after the DB cluster is deleted.</p>
+    /// <p>Specifies whether to remove automated backups immediately after the DB cluster is deleted. This parameter isn't case-sensitive. The default is to remove automated backups immediately after the DB cluster is deleted.</p>
     pub fn get_delete_automated_backups(&self) -> &::std::option::Option<bool> {
         &self.delete_automated_backups
     }

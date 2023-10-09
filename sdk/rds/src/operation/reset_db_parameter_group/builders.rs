@@ -136,17 +136,17 @@ impl ResetDBParameterGroupFluentBuilder {
     pub fn get_db_parameter_group_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_db_parameter_group_name()
     }
-    /// <p>A value that indicates whether to reset all parameters in the DB parameter group to default values. By default, all parameters in the DB parameter group are reset to default values.</p>
+    /// <p>Specifies whether to reset all parameters in the DB parameter group to default values. By default, all parameters in the DB parameter group are reset to default values.</p>
     pub fn reset_all_parameters(mut self, input: bool) -> Self {
         self.inner = self.inner.reset_all_parameters(input);
         self
     }
-    /// <p>A value that indicates whether to reset all parameters in the DB parameter group to default values. By default, all parameters in the DB parameter group are reset to default values.</p>
+    /// <p>Specifies whether to reset all parameters in the DB parameter group to default values. By default, all parameters in the DB parameter group are reset to default values.</p>
     pub fn set_reset_all_parameters(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_reset_all_parameters(input);
         self
     }
-    /// <p>A value that indicates whether to reset all parameters in the DB parameter group to default values. By default, all parameters in the DB parameter group are reset to default values.</p>
+    /// <p>Specifies whether to reset all parameters in the DB parameter group to default values. By default, all parameters in the DB parameter group are reset to default values.</p>
     pub fn get_reset_all_parameters(&self) -> &::std::option::Option<bool> {
         self.inner.get_reset_all_parameters()
     }

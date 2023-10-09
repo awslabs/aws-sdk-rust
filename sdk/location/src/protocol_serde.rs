@@ -327,6 +327,8 @@ pub(crate) mod shape_search_place_index_for_text_summary;
 
 pub(crate) mod shape_tag_map;
 
+pub(crate) mod shape_tracking_filter_geometry;
+
 pub(crate) mod shape_validation_exception_field_list;
 
 pub(crate) mod shape_api_key_action_list;

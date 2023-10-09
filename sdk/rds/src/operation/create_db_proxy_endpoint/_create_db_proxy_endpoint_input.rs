@@ -11,7 +11,7 @@ pub struct CreateDbProxyEndpointInput {
     pub vpc_subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The VPC security group IDs for the DB proxy endpoint that you create. You can specify a different set of security group IDs than for the original DB proxy. The default is the default security group for the VPC.</p>
     pub vpc_security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>A value that indicates whether the DB proxy endpoint can be used for read/write or read-only operations. The default is <code>READ_WRITE</code>. The only role that proxies for RDS for Microsoft SQL Server support is <code>READ_WRITE</code>.</p>
+    /// <p>The role of the DB proxy endpoint. The role determines whether the endpoint can be used for read/write or only read operations. The default is <code>READ_WRITE</code>. The only role that proxies for RDS for Microsoft SQL Server support is <code>READ_WRITE</code>.</p>
     pub target_role: ::std::option::Option<crate::types::DbProxyEndpointTargetRole>,
     /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -33,7 +33,7 @@ impl CreateDbProxyEndpointInput {
     pub fn vpc_security_group_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.vpc_security_group_ids.as_deref()
     }
-    /// <p>A value that indicates whether the DB proxy endpoint can be used for read/write or read-only operations. The default is <code>READ_WRITE</code>. The only role that proxies for RDS for Microsoft SQL Server support is <code>READ_WRITE</code>.</p>
+    /// <p>The role of the DB proxy endpoint. The role determines whether the endpoint can be used for read/write or only read operations. The default is <code>READ_WRITE</code>. The only role that proxies for RDS for Microsoft SQL Server support is <code>READ_WRITE</code>.</p>
     pub fn target_role(&self) -> ::std::option::Option<&crate::types::DbProxyEndpointTargetRole> {
         self.target_role.as_ref()
     }
@@ -129,17 +129,17 @@ impl CreateDbProxyEndpointInputBuilder {
     pub fn get_vpc_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.vpc_security_group_ids
     }
-    /// <p>A value that indicates whether the DB proxy endpoint can be used for read/write or read-only operations. The default is <code>READ_WRITE</code>. The only role that proxies for RDS for Microsoft SQL Server support is <code>READ_WRITE</code>.</p>
+    /// <p>The role of the DB proxy endpoint. The role determines whether the endpoint can be used for read/write or only read operations. The default is <code>READ_WRITE</code>. The only role that proxies for RDS for Microsoft SQL Server support is <code>READ_WRITE</code>.</p>
     pub fn target_role(mut self, input: crate::types::DbProxyEndpointTargetRole) -> Self {
         self.target_role = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A value that indicates whether the DB proxy endpoint can be used for read/write or read-only operations. The default is <code>READ_WRITE</code>. The only role that proxies for RDS for Microsoft SQL Server support is <code>READ_WRITE</code>.</p>
+    /// <p>The role of the DB proxy endpoint. The role determines whether the endpoint can be used for read/write or only read operations. The default is <code>READ_WRITE</code>. The only role that proxies for RDS for Microsoft SQL Server support is <code>READ_WRITE</code>.</p>
     pub fn set_target_role(mut self, input: ::std::option::Option<crate::types::DbProxyEndpointTargetRole>) -> Self {
         self.target_role = input;
         self
     }
-    /// <p>A value that indicates whether the DB proxy endpoint can be used for read/write or read-only operations. The default is <code>READ_WRITE</code>. The only role that proxies for RDS for Microsoft SQL Server support is <code>READ_WRITE</code>.</p>
+    /// <p>The role of the DB proxy endpoint. The role determines whether the endpoint can be used for read/write or only read operations. The default is <code>READ_WRITE</code>. The only role that proxies for RDS for Microsoft SQL Server support is <code>READ_WRITE</code>.</p>
     pub fn get_target_role(&self) -> &::std::option::Option<crate::types::DbProxyEndpointTargetRole> {
         &self.target_role
     }

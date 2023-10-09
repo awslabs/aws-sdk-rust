@@ -23,9 +23,9 @@ pub struct BacktrackDbClusterInput {
     /// </ul>
     /// <p>Example: <code>2017-07-08T18:00Z</code> </p>
     pub backtrack_to: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>A value that indicates whether to force the DB cluster to backtrack when binary logging is enabled. Otherwise, an error occurs when binary logging is enabled.</p>
+    /// <p>Specifies whether to force the DB cluster to backtrack when binary logging is enabled. Otherwise, an error occurs when binary logging is enabled.</p>
     pub force: ::std::option::Option<bool>,
-    /// <p>A value that indicates whether to backtrack the DB cluster to the earliest possible backtrack time when <i>BacktrackTo</i> is set to a timestamp earlier than the earliest backtrack time. When this parameter is disabled and <i>BacktrackTo</i> is set to a timestamp earlier than the earliest backtrack time, an error occurs.</p>
+    /// <p>Specifies whether to backtrack the DB cluster to the earliest possible backtrack time when <i>BacktrackTo</i> is set to a timestamp earlier than the earliest backtrack time. When this parameter is disabled and <i>BacktrackTo</i> is set to a timestamp earlier than the earliest backtrack time, an error occurs.</p>
     pub use_earliest_time_on_point_in_time_unavailable: ::std::option::Option<bool>,
 }
 impl BacktrackDbClusterInput {
@@ -52,11 +52,11 @@ impl BacktrackDbClusterInput {
     pub fn backtrack_to(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.backtrack_to.as_ref()
     }
-    /// <p>A value that indicates whether to force the DB cluster to backtrack when binary logging is enabled. Otherwise, an error occurs when binary logging is enabled.</p>
+    /// <p>Specifies whether to force the DB cluster to backtrack when binary logging is enabled. Otherwise, an error occurs when binary logging is enabled.</p>
     pub fn force(&self) -> ::std::option::Option<bool> {
         self.force
     }
-    /// <p>A value that indicates whether to backtrack the DB cluster to the earliest possible backtrack time when <i>BacktrackTo</i> is set to a timestamp earlier than the earliest backtrack time. When this parameter is disabled and <i>BacktrackTo</i> is set to a timestamp earlier than the earliest backtrack time, an error occurs.</p>
+    /// <p>Specifies whether to backtrack the DB cluster to the earliest possible backtrack time when <i>BacktrackTo</i> is set to a timestamp earlier than the earliest backtrack time. When this parameter is disabled and <i>BacktrackTo</i> is set to a timestamp earlier than the earliest backtrack time, an error occurs.</p>
     pub fn use_earliest_time_on_point_in_time_unavailable(&self) -> ::std::option::Option<bool> {
         self.use_earliest_time_on_point_in_time_unavailable
     }
@@ -151,31 +151,31 @@ impl BacktrackDbClusterInputBuilder {
     pub fn get_backtrack_to(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.backtrack_to
     }
-    /// <p>A value that indicates whether to force the DB cluster to backtrack when binary logging is enabled. Otherwise, an error occurs when binary logging is enabled.</p>
+    /// <p>Specifies whether to force the DB cluster to backtrack when binary logging is enabled. Otherwise, an error occurs when binary logging is enabled.</p>
     pub fn force(mut self, input: bool) -> Self {
         self.force = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A value that indicates whether to force the DB cluster to backtrack when binary logging is enabled. Otherwise, an error occurs when binary logging is enabled.</p>
+    /// <p>Specifies whether to force the DB cluster to backtrack when binary logging is enabled. Otherwise, an error occurs when binary logging is enabled.</p>
     pub fn set_force(mut self, input: ::std::option::Option<bool>) -> Self {
         self.force = input;
         self
     }
-    /// <p>A value that indicates whether to force the DB cluster to backtrack when binary logging is enabled. Otherwise, an error occurs when binary logging is enabled.</p>
+    /// <p>Specifies whether to force the DB cluster to backtrack when binary logging is enabled. Otherwise, an error occurs when binary logging is enabled.</p>
     pub fn get_force(&self) -> &::std::option::Option<bool> {
         &self.force
     }
-    /// <p>A value that indicates whether to backtrack the DB cluster to the earliest possible backtrack time when <i>BacktrackTo</i> is set to a timestamp earlier than the earliest backtrack time. When this parameter is disabled and <i>BacktrackTo</i> is set to a timestamp earlier than the earliest backtrack time, an error occurs.</p>
+    /// <p>Specifies whether to backtrack the DB cluster to the earliest possible backtrack time when <i>BacktrackTo</i> is set to a timestamp earlier than the earliest backtrack time. When this parameter is disabled and <i>BacktrackTo</i> is set to a timestamp earlier than the earliest backtrack time, an error occurs.</p>
     pub fn use_earliest_time_on_point_in_time_unavailable(mut self, input: bool) -> Self {
         self.use_earliest_time_on_point_in_time_unavailable = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A value that indicates whether to backtrack the DB cluster to the earliest possible backtrack time when <i>BacktrackTo</i> is set to a timestamp earlier than the earliest backtrack time. When this parameter is disabled and <i>BacktrackTo</i> is set to a timestamp earlier than the earliest backtrack time, an error occurs.</p>
+    /// <p>Specifies whether to backtrack the DB cluster to the earliest possible backtrack time when <i>BacktrackTo</i> is set to a timestamp earlier than the earliest backtrack time. When this parameter is disabled and <i>BacktrackTo</i> is set to a timestamp earlier than the earliest backtrack time, an error occurs.</p>
     pub fn set_use_earliest_time_on_point_in_time_unavailable(mut self, input: ::std::option::Option<bool>) -> Self {
         self.use_earliest_time_on_point_in_time_unavailable = input;
         self
     }
-    /// <p>A value that indicates whether to backtrack the DB cluster to the earliest possible backtrack time when <i>BacktrackTo</i> is set to a timestamp earlier than the earliest backtrack time. When this parameter is disabled and <i>BacktrackTo</i> is set to a timestamp earlier than the earliest backtrack time, an error occurs.</p>
+    /// <p>Specifies whether to backtrack the DB cluster to the earliest possible backtrack time when <i>BacktrackTo</i> is set to a timestamp earlier than the earliest backtrack time. When this parameter is disabled and <i>BacktrackTo</i> is set to a timestamp earlier than the earliest backtrack time, an error occurs.</p>
     pub fn get_use_earliest_time_on_point_in_time_unavailable(&self) -> &::std::option::Option<bool> {
         &self.use_earliest_time_on_point_in_time_unavailable
     }

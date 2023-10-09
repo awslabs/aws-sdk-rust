@@ -5,13 +5,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Parameter {
-    /// <p>Specifies the name of the parameter.</p>
+    /// <p>The name of the parameter.</p>
     pub parameter_name: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies the value of the parameter.</p>
+    /// <p>The value of the parameter.</p>
     pub parameter_value: ::std::option::Option<::std::string::String>,
     /// <p>Provides a description of the parameter.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>Indicates the source of the parameter value.</p>
+    /// <p>The source of the parameter value.</p>
     pub source: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the engine specific parameters type.</p>
     pub apply_type: ::std::option::Option<::std::string::String>,
@@ -29,11 +29,11 @@ pub struct Parameter {
     pub supported_engine_modes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl Parameter {
-    /// <p>Specifies the name of the parameter.</p>
+    /// <p>The name of the parameter.</p>
     pub fn parameter_name(&self) -> ::std::option::Option<&str> {
         self.parameter_name.as_deref()
     }
-    /// <p>Specifies the value of the parameter.</p>
+    /// <p>The value of the parameter.</p>
     pub fn parameter_value(&self) -> ::std::option::Option<&str> {
         self.parameter_value.as_deref()
     }
@@ -41,7 +41,7 @@ impl Parameter {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>Indicates the source of the parameter value.</p>
+    /// <p>The source of the parameter value.</p>
     pub fn source(&self) -> ::std::option::Option<&str> {
         self.source.as_deref()
     }
@@ -98,31 +98,31 @@ pub struct ParameterBuilder {
     pub(crate) supported_engine_modes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ParameterBuilder {
-    /// <p>Specifies the name of the parameter.</p>
+    /// <p>The name of the parameter.</p>
     pub fn parameter_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parameter_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Specifies the name of the parameter.</p>
+    /// <p>The name of the parameter.</p>
     pub fn set_parameter_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.parameter_name = input;
         self
     }
-    /// <p>Specifies the name of the parameter.</p>
+    /// <p>The name of the parameter.</p>
     pub fn get_parameter_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.parameter_name
     }
-    /// <p>Specifies the value of the parameter.</p>
+    /// <p>The value of the parameter.</p>
     pub fn parameter_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parameter_value = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Specifies the value of the parameter.</p>
+    /// <p>The value of the parameter.</p>
     pub fn set_parameter_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.parameter_value = input;
         self
     }
-    /// <p>Specifies the value of the parameter.</p>
+    /// <p>The value of the parameter.</p>
     pub fn get_parameter_value(&self) -> &::std::option::Option<::std::string::String> {
         &self.parameter_value
     }
@@ -140,17 +140,17 @@ impl ParameterBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
-    /// <p>Indicates the source of the parameter value.</p>
+    /// <p>The source of the parameter value.</p>
     pub fn source(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Indicates the source of the parameter value.</p>
+    /// <p>The source of the parameter value.</p>
     pub fn set_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source = input;
         self
     }
-    /// <p>Indicates the source of the parameter value.</p>
+    /// <p>The source of the parameter value.</p>
     pub fn get_source(&self) -> &::std::option::Option<::std::string::String> {
         &self.source
     }

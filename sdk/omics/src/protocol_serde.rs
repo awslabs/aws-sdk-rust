@@ -321,6 +321,8 @@ pub(crate) mod shape_annotation_store_version_items;
 
 pub(crate) mod shape_complete_read_set_upload_part_list_item;
 
+pub(crate) mod shape_e_tag;
+
 pub(crate) mod shape_export_read_set;
 
 pub(crate) mod shape_export_read_set_detail_list;

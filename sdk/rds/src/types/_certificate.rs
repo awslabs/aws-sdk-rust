@@ -17,7 +17,7 @@ pub struct Certificate {
     pub valid_till: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Amazon Resource Name (ARN) for the certificate.</p>
     pub certificate_arn: ::std::option::Option<::std::string::String>,
-    /// <p>Whether there is an override for the default certificate identifier.</p>
+    /// <p>Indicates whether there is an override for the default certificate identifier.</p>
     pub customer_override: ::std::option::Option<bool>,
     /// <p>If there is an override for the default certificate identifier, when the override expires.</p>
     pub customer_override_valid_till: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -47,7 +47,7 @@ impl Certificate {
     pub fn certificate_arn(&self) -> ::std::option::Option<&str> {
         self.certificate_arn.as_deref()
     }
-    /// <p>Whether there is an override for the default certificate identifier.</p>
+    /// <p>Indicates whether there is an override for the default certificate identifier.</p>
     pub fn customer_override(&self) -> ::std::option::Option<bool> {
         self.customer_override
     }
@@ -161,17 +161,17 @@ impl CertificateBuilder {
     pub fn get_certificate_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.certificate_arn
     }
-    /// <p>Whether there is an override for the default certificate identifier.</p>
+    /// <p>Indicates whether there is an override for the default certificate identifier.</p>
     pub fn customer_override(mut self, input: bool) -> Self {
         self.customer_override = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Whether there is an override for the default certificate identifier.</p>
+    /// <p>Indicates whether there is an override for the default certificate identifier.</p>
     pub fn set_customer_override(mut self, input: ::std::option::Option<bool>) -> Self {
         self.customer_override = input;
         self
     }
-    /// <p>Whether there is an override for the default certificate identifier.</p>
+    /// <p>Indicates whether there is an override for the default certificate identifier.</p>
     pub fn get_customer_override(&self) -> &::std::option::Option<bool> {
         &self.customer_override
     }

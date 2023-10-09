@@ -17,6 +17,8 @@ pub use crate::types::_validation_exception_reason::ValidationExceptionReason;
 
 pub use crate::types::_vcenter_client::VcenterClient;
 
+pub use crate::types::_source_server_connector_action::SourceServerConnectorAction;
+
 pub use crate::types::_replication_type::ReplicationType;
 
 pub use crate::types::_source_properties::SourceProperties;
@@ -191,6 +193,12 @@ pub use crate::types::_export_status::ExportStatus;
 
 pub use crate::types::_list_exports_request_filters::ListExportsRequestFilters;
 
+pub use crate::types::_connector::Connector;
+
+pub use crate::types::_connector_ssm_command_config::ConnectorSsmCommandConfig;
+
+pub use crate::types::_list_connectors_request_filters::ListConnectorsRequestFilters;
+
 pub use crate::types::_application_aggregated_status::ApplicationAggregatedStatus;
 
 pub use crate::types::_application_progress_status::ApplicationProgressStatus;
@@ -218,6 +226,10 @@ mod _boot_mode;
 mod _change_server_life_cycle_state_source_server_lifecycle;
 
 mod _change_server_life_cycle_state_source_server_lifecycle_state;
+
+mod _connector;
+
+mod _connector_ssm_command_config;
 
 mod _cpu;
 
@@ -329,6 +341,8 @@ mod _life_cycle_state;
 
 mod _list_applications_request_filters;
 
+mod _list_connectors_request_filters;
+
 mod _list_exports_request_filters;
 
 mod _list_imports_request_filters;
@@ -374,6 +388,8 @@ mod _source_server;
 mod _source_server_action_document;
 
 mod _source_server_actions_request_filters;
+
+mod _source_server_connector_action;
 
 mod _ssm_document;
 

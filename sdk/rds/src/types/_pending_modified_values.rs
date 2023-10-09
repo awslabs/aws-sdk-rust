@@ -14,7 +14,7 @@ pub struct PendingModifiedValues {
     pub port: ::std::option::Option<i32>,
     /// <p>The number of days for which automated backups are retained.</p>
     pub backup_retention_period: ::std::option::Option<i32>,
-    /// <p>A value that indicates that the Single-AZ DB instance will change to a Multi-AZ deployment.</p>
+    /// <p>Indicates whether the Single-AZ DB instance will change to a Multi-AZ deployment.</p>
     pub multi_az: ::std::option::Option<bool>,
     /// <p>The database engine version.</p>
     pub engine_version: ::std::option::Option<::std::string::String>,
@@ -36,7 +36,7 @@ pub struct PendingModifiedValues {
     pub pending_cloudwatch_logs_exports: ::std::option::Option<crate::types::PendingCloudwatchLogsExports>,
     /// <p>The number of CPU cores and the number of threads per core for the DB instance class of the DB instance.</p>
     pub processor_features: ::std::option::Option<::std::vec::Vec<crate::types::ProcessorFeature>>,
-    /// <p>Whether mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts is enabled.</p>
+    /// <p>Indicates whether mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts is enabled.</p>
     pub iam_database_authentication_enabled: ::std::option::Option<bool>,
     /// <p>The automation mode of the RDS Custom DB instance: <code>full</code> or <code>all-paused</code>. If <code>full</code>, the DB instance automates monitoring and instance recovery. If <code>all-paused</code>, the instance pauses automation for the duration set by <code>--resume-full-automation-mode-minutes</code>.</p>
     pub automation_mode: ::std::option::Option<crate::types::AutomationMode>,
@@ -68,7 +68,7 @@ impl PendingModifiedValues {
     pub fn backup_retention_period(&self) -> ::std::option::Option<i32> {
         self.backup_retention_period
     }
-    /// <p>A value that indicates that the Single-AZ DB instance will change to a Multi-AZ deployment.</p>
+    /// <p>Indicates whether the Single-AZ DB instance will change to a Multi-AZ deployment.</p>
     pub fn multi_az(&self) -> ::std::option::Option<bool> {
         self.multi_az
     }
@@ -110,7 +110,7 @@ impl PendingModifiedValues {
     pub fn processor_features(&self) -> ::std::option::Option<&[crate::types::ProcessorFeature]> {
         self.processor_features.as_deref()
     }
-    /// <p>Whether mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts is enabled.</p>
+    /// <p>Indicates whether mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts is enabled.</p>
     pub fn iam_database_authentication_enabled(&self) -> ::std::option::Option<bool> {
         self.iam_database_authentication_enabled
     }
@@ -234,17 +234,17 @@ impl PendingModifiedValuesBuilder {
     pub fn get_backup_retention_period(&self) -> &::std::option::Option<i32> {
         &self.backup_retention_period
     }
-    /// <p>A value that indicates that the Single-AZ DB instance will change to a Multi-AZ deployment.</p>
+    /// <p>Indicates whether the Single-AZ DB instance will change to a Multi-AZ deployment.</p>
     pub fn multi_az(mut self, input: bool) -> Self {
         self.multi_az = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A value that indicates that the Single-AZ DB instance will change to a Multi-AZ deployment.</p>
+    /// <p>Indicates whether the Single-AZ DB instance will change to a Multi-AZ deployment.</p>
     pub fn set_multi_az(mut self, input: ::std::option::Option<bool>) -> Self {
         self.multi_az = input;
         self
     }
-    /// <p>A value that indicates that the Single-AZ DB instance will change to a Multi-AZ deployment.</p>
+    /// <p>Indicates whether the Single-AZ DB instance will change to a Multi-AZ deployment.</p>
     pub fn get_multi_az(&self) -> &::std::option::Option<bool> {
         &self.multi_az
     }
@@ -386,17 +386,17 @@ impl PendingModifiedValuesBuilder {
     pub fn get_processor_features(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProcessorFeature>> {
         &self.processor_features
     }
-    /// <p>Whether mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts is enabled.</p>
+    /// <p>Indicates whether mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts is enabled.</p>
     pub fn iam_database_authentication_enabled(mut self, input: bool) -> Self {
         self.iam_database_authentication_enabled = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Whether mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts is enabled.</p>
+    /// <p>Indicates whether mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts is enabled.</p>
     pub fn set_iam_database_authentication_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.iam_database_authentication_enabled = input;
         self
     }
-    /// <p>Whether mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts is enabled.</p>
+    /// <p>Indicates whether mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts is enabled.</p>
     pub fn get_iam_database_authentication_enabled(&self) -> &::std::option::Option<bool> {
         &self.iam_database_authentication_enabled
     }

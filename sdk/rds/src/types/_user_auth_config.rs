@@ -12,7 +12,7 @@ pub struct UserAuthConfig {
     pub auth_scheme: ::std::option::Option<crate::types::AuthScheme>,
     /// <p>The Amazon Resource Name (ARN) representing the secret that the proxy uses to authenticate to the RDS DB instance or Aurora DB cluster. These secrets are stored within Amazon Secrets Manager.</p>
     pub secret_arn: ::std::option::Option<::std::string::String>,
-    /// <p>Whether to require or disallow Amazon Web Services Identity and Access Management (IAM) authentication for connections to the proxy. The <code>ENABLED</code> value is valid only for proxies with RDS for Microsoft SQL Server.</p>
+    /// <p>A value that indicates whether to require or disallow Amazon Web Services Identity and Access Management (IAM) authentication for connections to the proxy. The <code>ENABLED</code> value is valid only for proxies with RDS for Microsoft SQL Server.</p>
     pub iam_auth: ::std::option::Option<crate::types::IamAuthMode>,
     /// <p>The type of authentication the proxy uses for connections from clients.</p>
     pub client_password_auth_type: ::std::option::Option<crate::types::ClientPasswordAuthType>,
@@ -34,7 +34,7 @@ impl UserAuthConfig {
     pub fn secret_arn(&self) -> ::std::option::Option<&str> {
         self.secret_arn.as_deref()
     }
-    /// <p>Whether to require or disallow Amazon Web Services Identity and Access Management (IAM) authentication for connections to the proxy. The <code>ENABLED</code> value is valid only for proxies with RDS for Microsoft SQL Server.</p>
+    /// <p>A value that indicates whether to require or disallow Amazon Web Services Identity and Access Management (IAM) authentication for connections to the proxy. The <code>ENABLED</code> value is valid only for proxies with RDS for Microsoft SQL Server.</p>
     pub fn iam_auth(&self) -> ::std::option::Option<&crate::types::IamAuthMode> {
         self.iam_auth.as_ref()
     }
@@ -118,17 +118,17 @@ impl UserAuthConfigBuilder {
     pub fn get_secret_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.secret_arn
     }
-    /// <p>Whether to require or disallow Amazon Web Services Identity and Access Management (IAM) authentication for connections to the proxy. The <code>ENABLED</code> value is valid only for proxies with RDS for Microsoft SQL Server.</p>
+    /// <p>A value that indicates whether to require or disallow Amazon Web Services Identity and Access Management (IAM) authentication for connections to the proxy. The <code>ENABLED</code> value is valid only for proxies with RDS for Microsoft SQL Server.</p>
     pub fn iam_auth(mut self, input: crate::types::IamAuthMode) -> Self {
         self.iam_auth = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Whether to require or disallow Amazon Web Services Identity and Access Management (IAM) authentication for connections to the proxy. The <code>ENABLED</code> value is valid only for proxies with RDS for Microsoft SQL Server.</p>
+    /// <p>A value that indicates whether to require or disallow Amazon Web Services Identity and Access Management (IAM) authentication for connections to the proxy. The <code>ENABLED</code> value is valid only for proxies with RDS for Microsoft SQL Server.</p>
     pub fn set_iam_auth(mut self, input: ::std::option::Option<crate::types::IamAuthMode>) -> Self {
         self.iam_auth = input;
         self
     }
-    /// <p>Whether to require or disallow Amazon Web Services Identity and Access Management (IAM) authentication for connections to the proxy. The <code>ENABLED</code> value is valid only for proxies with RDS for Microsoft SQL Server.</p>
+    /// <p>A value that indicates whether to require or disallow Amazon Web Services Identity and Access Management (IAM) authentication for connections to the proxy. The <code>ENABLED</code> value is valid only for proxies with RDS for Microsoft SQL Server.</p>
     pub fn get_iam_auth(&self) -> &::std::option::Option<crate::types::IamAuthMode> {
         &self.iam_auth
     }

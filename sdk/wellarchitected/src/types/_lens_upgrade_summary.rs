@@ -20,6 +20,11 @@ pub struct LensUpgradeSummary {
     pub current_lens_version: ::std::option::Option<::std::string::String>,
     /// <p>The latest version of the lens.</p>
     pub latest_lens_version: ::std::option::Option<::std::string::String>,
+    /// <p> <code>ResourceArn</code> of the lens being upgraded</p>
+    pub resource_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The name of the workload.</p>
+    /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
+    pub resource_name: ::std::option::Option<::std::string::String>,
 }
 impl LensUpgradeSummary {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
@@ -50,6 +55,15 @@ impl LensUpgradeSummary {
     pub fn latest_lens_version(&self) -> ::std::option::Option<&str> {
         self.latest_lens_version.as_deref()
     }
+    /// <p> <code>ResourceArn</code> of the lens being upgraded</p>
+    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The name of the workload.</p>
+    /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
+    pub fn resource_name(&self) -> ::std::option::Option<&str> {
+        self.resource_name.as_deref()
+    }
 }
 impl LensUpgradeSummary {
     /// Creates a new builder-style object to manufacture [`LensUpgradeSummary`](crate::types::LensUpgradeSummary).
@@ -68,6 +82,8 @@ pub struct LensUpgradeSummaryBuilder {
     pub(crate) lens_arn: ::std::option::Option<::std::string::String>,
     pub(crate) current_lens_version: ::std::option::Option<::std::string::String>,
     pub(crate) latest_lens_version: ::std::option::Option<::std::string::String>,
+    pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) resource_name: ::std::option::Option<::std::string::String>,
 }
 impl LensUpgradeSummaryBuilder {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
@@ -166,6 +182,37 @@ impl LensUpgradeSummaryBuilder {
     pub fn get_latest_lens_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.latest_lens_version
     }
+    /// <p> <code>ResourceArn</code> of the lens being upgraded</p>
+    pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.resource_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p> <code>ResourceArn</code> of the lens being upgraded</p>
+    pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.resource_arn = input;
+        self
+    }
+    /// <p> <code>ResourceArn</code> of the lens being upgraded</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
+    }
+    /// <p>The name of the workload.</p>
+    /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
+    pub fn resource_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.resource_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the workload.</p>
+    /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
+    pub fn set_resource_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.resource_name = input;
+        self
+    }
+    /// <p>The name of the workload.</p>
+    /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
+    pub fn get_resource_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_name
+    }
     /// Consumes the builder and constructs a [`LensUpgradeSummary`](crate::types::LensUpgradeSummary).
     pub fn build(self) -> crate::types::LensUpgradeSummary {
         crate::types::LensUpgradeSummary {
@@ -175,6 +222,8 @@ impl LensUpgradeSummaryBuilder {
             lens_arn: self.lens_arn,
             current_lens_version: self.current_lens_version,
             latest_lens_version: self.latest_lens_version,
+            resource_arn: self.resource_arn,
+            resource_name: self.resource_name,
         }
     }
 }

@@ -43,6 +43,10 @@ pub(crate) fn de_describe_vod_source(
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                "AdBreakOpportunities" => {
+                    builder =
+                        builder.set_ad_break_opportunities(crate::protocol_serde::shape_ad_break_opportunities::de_ad_break_opportunities(tokens)?);
+                }
                 "Arn" => {
                     builder = builder.set_arn(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

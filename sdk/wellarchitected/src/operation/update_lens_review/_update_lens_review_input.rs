@@ -12,8 +12,10 @@ pub struct UpdateLensReviewInput {
     /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     pub lens_alias: ::std::option::Option<::std::string::String>,
     /// <p>The notes associated with the workload.</p>
+    /// <p>For a review template, these are the notes that will be associated with the workload when the template is applied.</p>
     pub lens_notes: ::std::option::Option<::std::string::String>,
     /// <p>List of pillar notes of a lens review in a workload.</p>
+    /// <p>For a review template, these are the notes that will be associated with the workload when the template is applied.</p>
     pub pillar_notes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl UpdateLensReviewInput {
@@ -29,10 +31,12 @@ impl UpdateLensReviewInput {
         self.lens_alias.as_deref()
     }
     /// <p>The notes associated with the workload.</p>
+    /// <p>For a review template, these are the notes that will be associated with the workload when the template is applied.</p>
     pub fn lens_notes(&self) -> ::std::option::Option<&str> {
         self.lens_notes.as_deref()
     }
     /// <p>List of pillar notes of a lens review in a workload.</p>
+    /// <p>For a review template, these are the notes that will be associated with the workload when the template is applied.</p>
     pub fn pillar_notes(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.pillar_notes.as_ref()
     }
@@ -92,16 +96,19 @@ impl UpdateLensReviewInputBuilder {
         &self.lens_alias
     }
     /// <p>The notes associated with the workload.</p>
+    /// <p>For a review template, these are the notes that will be associated with the workload when the template is applied.</p>
     pub fn lens_notes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.lens_notes = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The notes associated with the workload.</p>
+    /// <p>For a review template, these are the notes that will be associated with the workload when the template is applied.</p>
     pub fn set_lens_notes(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.lens_notes = input;
         self
     }
     /// <p>The notes associated with the workload.</p>
+    /// <p>For a review template, these are the notes that will be associated with the workload when the template is applied.</p>
     pub fn get_lens_notes(&self) -> &::std::option::Option<::std::string::String> {
         &self.lens_notes
     }
@@ -110,6 +117,7 @@ impl UpdateLensReviewInputBuilder {
     /// To override the contents of this collection use [`set_pillar_notes`](Self::set_pillar_notes).
     ///
     /// <p>List of pillar notes of a lens review in a workload.</p>
+    /// <p>For a review template, these are the notes that will be associated with the workload when the template is applied.</p>
     pub fn pillar_notes(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.pillar_notes.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
@@ -117,6 +125,7 @@ impl UpdateLensReviewInputBuilder {
         self
     }
     /// <p>List of pillar notes of a lens review in a workload.</p>
+    /// <p>For a review template, these are the notes that will be associated with the workload when the template is applied.</p>
     pub fn set_pillar_notes(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -125,6 +134,7 @@ impl UpdateLensReviewInputBuilder {
         self
     }
     /// <p>List of pillar notes of a lens review in a workload.</p>
+    /// <p>For a review template, these are the notes that will be associated with the workload when the template is applied.</p>
     pub fn get_pillar_notes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.pillar_notes
     }

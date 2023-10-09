@@ -7,7 +7,8 @@ pub struct UpdateContactFlowContentInput {
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the flow.</p>
     pub contact_flow_id: ::std::option::Option<::std::string::String>,
-    /// <p>The JSON string that represents flow's content. For an example, see <a href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language-example.html">Example contact flow in Amazon Connect Flow language</a>. </p>
+    /// <p>The JSON string that represents the content of the flow. For an example, see <a href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language-example.html">Example contact flow in Amazon Connect Flow language</a>. </p>
+    /// <p>Length Constraints: Minimum length of 1. Maximum length of 256000.</p>
     pub content: ::std::option::Option<::std::string::String>,
 }
 impl UpdateContactFlowContentInput {
@@ -19,7 +20,8 @@ impl UpdateContactFlowContentInput {
     pub fn contact_flow_id(&self) -> ::std::option::Option<&str> {
         self.contact_flow_id.as_deref()
     }
-    /// <p>The JSON string that represents flow's content. For an example, see <a href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language-example.html">Example contact flow in Amazon Connect Flow language</a>. </p>
+    /// <p>The JSON string that represents the content of the flow. For an example, see <a href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language-example.html">Example contact flow in Amazon Connect Flow language</a>. </p>
+    /// <p>Length Constraints: Minimum length of 1. Maximum length of 256000.</p>
     pub fn content(&self) -> ::std::option::Option<&str> {
         self.content.as_deref()
     }
@@ -68,17 +70,20 @@ impl UpdateContactFlowContentInputBuilder {
     pub fn get_contact_flow_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.contact_flow_id
     }
-    /// <p>The JSON string that represents flow's content. For an example, see <a href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language-example.html">Example contact flow in Amazon Connect Flow language</a>. </p>
+    /// <p>The JSON string that represents the content of the flow. For an example, see <a href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language-example.html">Example contact flow in Amazon Connect Flow language</a>. </p>
+    /// <p>Length Constraints: Minimum length of 1. Maximum length of 256000.</p>
     pub fn content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The JSON string that represents flow's content. For an example, see <a href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language-example.html">Example contact flow in Amazon Connect Flow language</a>. </p>
+    /// <p>The JSON string that represents the content of the flow. For an example, see <a href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language-example.html">Example contact flow in Amazon Connect Flow language</a>. </p>
+    /// <p>Length Constraints: Minimum length of 1. Maximum length of 256000.</p>
     pub fn set_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content = input;
         self
     }
-    /// <p>The JSON string that represents flow's content. For an example, see <a href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language-example.html">Example contact flow in Amazon Connect Flow language</a>. </p>
+    /// <p>The JSON string that represents the content of the flow. For an example, see <a href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language-example.html">Example contact flow in Amazon Connect Flow language</a>. </p>
+    /// <p>Length Constraints: Minimum length of 1. Maximum length of 256000.</p>
     pub fn get_content(&self) -> &::std::option::Option<::std::string::String> {
         &self.content
     }

@@ -15,6 +15,9 @@ pub fn ser_metric_filter_v2(
         }
         array_3.finish();
     }
+    if input.negate {
+        object.key("Negate").boolean(input.negate);
+    }
     Ok(())
 }
 
@@ -44,6 +47,9 @@ where
                             builder = builder.set_metric_filter_values(
                                 crate::protocol_serde::shape_metric_filter_value_list::de_metric_filter_value_list(tokens)?,
                             );
+                        }
+                        "Negate" => {
+                            builder = builder.set_negate(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

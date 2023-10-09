@@ -89,6 +89,8 @@ pub(crate) mod shape_release_file_system_nfs_v3_locks;
 
 pub(crate) mod shape_restore_volume_from_snapshot;
 
+pub(crate) mod shape_start_misconfigured_state_recovery;
+
 pub(crate) mod shape_tag_resource;
 
 pub(crate) mod shape_untag_resource;
@@ -242,6 +244,8 @@ pub(crate) mod shape_service_limit_exceeded;
 pub(crate) mod shape_snapshot_not_found;
 
 pub(crate) mod shape_source_backup_unavailable;
+
+pub(crate) mod shape_start_misconfigured_state_recovery_input;
 
 pub(crate) mod shape_storage_virtual_machine_not_found;
 

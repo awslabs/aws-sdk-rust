@@ -7,10 +7,10 @@ pub struct ApplyPendingMaintenanceActionInput {
     /// <p>The RDS Amazon Resource Name (ARN) of the resource that the pending maintenance action applies to. For information about creating an ARN, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing"> Constructing an RDS Amazon Resource Name (ARN)</a>.</p>
     pub resource_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The pending maintenance action to apply to this resource.</p>
-    /// <p>Valid values: <code>system-update</code>, <code>db-upgrade</code>, <code>hardware-maintenance</code>, <code>ca-certificate-rotation</code> </p>
+    /// <p>Valid Values: <code>system-update</code>, <code>db-upgrade</code>, <code>hardware-maintenance</code>, <code>ca-certificate-rotation</code> </p>
     pub apply_action: ::std::option::Option<::std::string::String>,
     /// <p>A value that specifies the type of opt-in request, or undoes an opt-in request. An opt-in request of type <code>immediate</code> can't be undone.</p>
-    /// <p>Valid values:</p>
+    /// <p>Valid Values:</p>
     /// <ul>
     /// <li> <p> <code>immediate</code> - Apply the maintenance action immediately.</p> </li>
     /// <li> <p> <code>next-maintenance</code> - Apply the maintenance action during the next maintenance window for the resource.</p> </li>
@@ -24,12 +24,12 @@ impl ApplyPendingMaintenanceActionInput {
         self.resource_identifier.as_deref()
     }
     /// <p>The pending maintenance action to apply to this resource.</p>
-    /// <p>Valid values: <code>system-update</code>, <code>db-upgrade</code>, <code>hardware-maintenance</code>, <code>ca-certificate-rotation</code> </p>
+    /// <p>Valid Values: <code>system-update</code>, <code>db-upgrade</code>, <code>hardware-maintenance</code>, <code>ca-certificate-rotation</code> </p>
     pub fn apply_action(&self) -> ::std::option::Option<&str> {
         self.apply_action.as_deref()
     }
     /// <p>A value that specifies the type of opt-in request, or undoes an opt-in request. An opt-in request of type <code>immediate</code> can't be undone.</p>
-    /// <p>Valid values:</p>
+    /// <p>Valid Values:</p>
     /// <ul>
     /// <li> <p> <code>immediate</code> - Apply the maintenance action immediately.</p> </li>
     /// <li> <p> <code>next-maintenance</code> - Apply the maintenance action during the next maintenance window for the resource.</p> </li>
@@ -70,24 +70,24 @@ impl ApplyPendingMaintenanceActionInputBuilder {
         &self.resource_identifier
     }
     /// <p>The pending maintenance action to apply to this resource.</p>
-    /// <p>Valid values: <code>system-update</code>, <code>db-upgrade</code>, <code>hardware-maintenance</code>, <code>ca-certificate-rotation</code> </p>
+    /// <p>Valid Values: <code>system-update</code>, <code>db-upgrade</code>, <code>hardware-maintenance</code>, <code>ca-certificate-rotation</code> </p>
     pub fn apply_action(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.apply_action = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The pending maintenance action to apply to this resource.</p>
-    /// <p>Valid values: <code>system-update</code>, <code>db-upgrade</code>, <code>hardware-maintenance</code>, <code>ca-certificate-rotation</code> </p>
+    /// <p>Valid Values: <code>system-update</code>, <code>db-upgrade</code>, <code>hardware-maintenance</code>, <code>ca-certificate-rotation</code> </p>
     pub fn set_apply_action(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.apply_action = input;
         self
     }
     /// <p>The pending maintenance action to apply to this resource.</p>
-    /// <p>Valid values: <code>system-update</code>, <code>db-upgrade</code>, <code>hardware-maintenance</code>, <code>ca-certificate-rotation</code> </p>
+    /// <p>Valid Values: <code>system-update</code>, <code>db-upgrade</code>, <code>hardware-maintenance</code>, <code>ca-certificate-rotation</code> </p>
     pub fn get_apply_action(&self) -> &::std::option::Option<::std::string::String> {
         &self.apply_action
     }
     /// <p>A value that specifies the type of opt-in request, or undoes an opt-in request. An opt-in request of type <code>immediate</code> can't be undone.</p>
-    /// <p>Valid values:</p>
+    /// <p>Valid Values:</p>
     /// <ul>
     /// <li> <p> <code>immediate</code> - Apply the maintenance action immediately.</p> </li>
     /// <li> <p> <code>next-maintenance</code> - Apply the maintenance action during the next maintenance window for the resource.</p> </li>
@@ -98,7 +98,7 @@ impl ApplyPendingMaintenanceActionInputBuilder {
         self
     }
     /// <p>A value that specifies the type of opt-in request, or undoes an opt-in request. An opt-in request of type <code>immediate</code> can't be undone.</p>
-    /// <p>Valid values:</p>
+    /// <p>Valid Values:</p>
     /// <ul>
     /// <li> <p> <code>immediate</code> - Apply the maintenance action immediately.</p> </li>
     /// <li> <p> <code>next-maintenance</code> - Apply the maintenance action during the next maintenance window for the resource.</p> </li>
@@ -109,7 +109,7 @@ impl ApplyPendingMaintenanceActionInputBuilder {
         self
     }
     /// <p>A value that specifies the type of opt-in request, or undoes an opt-in request. An opt-in request of type <code>immediate</code> can't be undone.</p>
-    /// <p>Valid values:</p>
+    /// <p>Valid Values:</p>
     /// <ul>
     /// <li> <p> <code>immediate</code> - Apply the maintenance action immediately.</p> </li>
     /// <li> <p> <code>next-maintenance</code> - Apply the maintenance action during the next maintenance window for the resource.</p> </li>

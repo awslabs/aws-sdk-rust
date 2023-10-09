@@ -4,17 +4,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IpRange {
-    /// <p>Specifies the status of the IP range. Status can be "authorizing", "authorized", "revoking", and "revoked".</p>
+    /// <p>The status of the IP range. Status can be "authorizing", "authorized", "revoking", and "revoked".</p>
     pub status: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies the IP range.</p>
+    /// <p>The IP range.</p>
     pub cidrip: ::std::option::Option<::std::string::String>,
 }
 impl IpRange {
-    /// <p>Specifies the status of the IP range. Status can be "authorizing", "authorized", "revoking", and "revoked".</p>
+    /// <p>The status of the IP range. Status can be "authorizing", "authorized", "revoking", and "revoked".</p>
     pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
     }
-    /// <p>Specifies the IP range.</p>
+    /// <p>The IP range.</p>
     pub fn cidrip(&self) -> ::std::option::Option<&str> {
         self.cidrip.as_deref()
     }
@@ -34,31 +34,31 @@ pub struct IpRangeBuilder {
     pub(crate) cidrip: ::std::option::Option<::std::string::String>,
 }
 impl IpRangeBuilder {
-    /// <p>Specifies the status of the IP range. Status can be "authorizing", "authorized", "revoking", and "revoked".</p>
+    /// <p>The status of the IP range. Status can be "authorizing", "authorized", "revoking", and "revoked".</p>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Specifies the status of the IP range. Status can be "authorizing", "authorized", "revoking", and "revoked".</p>
+    /// <p>The status of the IP range. Status can be "authorizing", "authorized", "revoking", and "revoked".</p>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
     }
-    /// <p>Specifies the status of the IP range. Status can be "authorizing", "authorized", "revoking", and "revoked".</p>
+    /// <p>The status of the IP range. Status can be "authorizing", "authorized", "revoking", and "revoked".</p>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.status
     }
-    /// <p>Specifies the IP range.</p>
+    /// <p>The IP range.</p>
     pub fn cidrip(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cidrip = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Specifies the IP range.</p>
+    /// <p>The IP range.</p>
     pub fn set_cidrip(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cidrip = input;
         self
     }
-    /// <p>Specifies the IP range.</p>
+    /// <p>The IP range.</p>
     pub fn get_cidrip(&self) -> &::std::option::Option<::std::string::String> {
         &self.cidrip
     }

@@ -127,7 +127,7 @@ pub struct DbCluster {
     pub tag_list: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The status of write forwarding for a secondary cluster in an Aurora global database.</p>
     pub global_write_forwarding_status: ::std::option::Option<crate::types::WriteForwardingStatus>,
-    /// <p>Specifies whether write forwarding is enabled for a secondary cluster in an Aurora global database. Because write forwarding takes time to enable, check the value of <code>GlobalWriteForwardingStatus</code> to confirm that the request has completed before using the write forwarding feature for this cluster.</p>
+    /// <p>Indicates whether write forwarding is enabled for a secondary cluster in an Aurora global database. Because write forwarding takes time to enable, check the value of <code>GlobalWriteForwardingStatus</code> to confirm that the request has completed before using the write forwarding feature for this cluster.</p>
     pub global_write_forwarding_requested: ::std::option::Option<bool>,
     /// <p>Information about pending changes to the DB cluster. This information is returned only when there are pending changes. Specific changes are identified by subelements.</p>
     pub pending_modified_values: ::std::option::Option<crate::types::ClusterPendingModifiedValues>,
@@ -188,7 +188,7 @@ pub struct DbCluster {
     /// <p>The next time you can modify the DB cluster to use the <code>aurora-iopt1</code> storage type.</p>
     /// <p>This setting is only for Aurora DB clusters.</p>
     pub io_optimized_next_allowed_modification_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>Specifies whether an Aurora DB cluster has in-cluster write forwarding enabled, not enabled, requested, or is in the process of enabling it.</p>
+    /// <p>Indicates whether an Aurora DB cluster has in-cluster write forwarding enabled, not enabled, requested, or is in the process of enabling it.</p>
     pub local_write_forwarding_status: ::std::option::Option<crate::types::LocalWriteForwardingStatus>,
     /// <p>The Amazon Resource Name (ARN) of the recovery point in Amazon Web Services Backup.</p>
     pub aws_backup_recovery_point_arn: ::std::option::Option<::std::string::String>,
@@ -423,7 +423,7 @@ impl DbCluster {
     pub fn global_write_forwarding_status(&self) -> ::std::option::Option<&crate::types::WriteForwardingStatus> {
         self.global_write_forwarding_status.as_ref()
     }
-    /// <p>Specifies whether write forwarding is enabled for a secondary cluster in an Aurora global database. Because write forwarding takes time to enable, check the value of <code>GlobalWriteForwardingStatus</code> to confirm that the request has completed before using the write forwarding feature for this cluster.</p>
+    /// <p>Indicates whether write forwarding is enabled for a secondary cluster in an Aurora global database. Because write forwarding takes time to enable, check the value of <code>GlobalWriteForwardingStatus</code> to confirm that the request has completed before using the write forwarding feature for this cluster.</p>
     pub fn global_write_forwarding_requested(&self) -> ::std::option::Option<bool> {
         self.global_write_forwarding_requested
     }
@@ -518,7 +518,7 @@ impl DbCluster {
     pub fn io_optimized_next_allowed_modification_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.io_optimized_next_allowed_modification_time.as_ref()
     }
-    /// <p>Specifies whether an Aurora DB cluster has in-cluster write forwarding enabled, not enabled, requested, or is in the process of enabling it.</p>
+    /// <p>Indicates whether an Aurora DB cluster has in-cluster write forwarding enabled, not enabled, requested, or is in the process of enabling it.</p>
     pub fn local_write_forwarding_status(&self) -> ::std::option::Option<&crate::types::LocalWriteForwardingStatus> {
         self.local_write_forwarding_status.as_ref()
     }
@@ -1474,17 +1474,17 @@ impl DbClusterBuilder {
     pub fn get_global_write_forwarding_status(&self) -> &::std::option::Option<crate::types::WriteForwardingStatus> {
         &self.global_write_forwarding_status
     }
-    /// <p>Specifies whether write forwarding is enabled for a secondary cluster in an Aurora global database. Because write forwarding takes time to enable, check the value of <code>GlobalWriteForwardingStatus</code> to confirm that the request has completed before using the write forwarding feature for this cluster.</p>
+    /// <p>Indicates whether write forwarding is enabled for a secondary cluster in an Aurora global database. Because write forwarding takes time to enable, check the value of <code>GlobalWriteForwardingStatus</code> to confirm that the request has completed before using the write forwarding feature for this cluster.</p>
     pub fn global_write_forwarding_requested(mut self, input: bool) -> Self {
         self.global_write_forwarding_requested = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies whether write forwarding is enabled for a secondary cluster in an Aurora global database. Because write forwarding takes time to enable, check the value of <code>GlobalWriteForwardingStatus</code> to confirm that the request has completed before using the write forwarding feature for this cluster.</p>
+    /// <p>Indicates whether write forwarding is enabled for a secondary cluster in an Aurora global database. Because write forwarding takes time to enable, check the value of <code>GlobalWriteForwardingStatus</code> to confirm that the request has completed before using the write forwarding feature for this cluster.</p>
     pub fn set_global_write_forwarding_requested(mut self, input: ::std::option::Option<bool>) -> Self {
         self.global_write_forwarding_requested = input;
         self
     }
-    /// <p>Specifies whether write forwarding is enabled for a secondary cluster in an Aurora global database. Because write forwarding takes time to enable, check the value of <code>GlobalWriteForwardingStatus</code> to confirm that the request has completed before using the write forwarding feature for this cluster.</p>
+    /// <p>Indicates whether write forwarding is enabled for a secondary cluster in an Aurora global database. Because write forwarding takes time to enable, check the value of <code>GlobalWriteForwardingStatus</code> to confirm that the request has completed before using the write forwarding feature for this cluster.</p>
     pub fn get_global_write_forwarding_requested(&self) -> &::std::option::Option<bool> {
         &self.global_write_forwarding_requested
     }
@@ -1796,17 +1796,17 @@ impl DbClusterBuilder {
     pub fn get_io_optimized_next_allowed_modification_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.io_optimized_next_allowed_modification_time
     }
-    /// <p>Specifies whether an Aurora DB cluster has in-cluster write forwarding enabled, not enabled, requested, or is in the process of enabling it.</p>
+    /// <p>Indicates whether an Aurora DB cluster has in-cluster write forwarding enabled, not enabled, requested, or is in the process of enabling it.</p>
     pub fn local_write_forwarding_status(mut self, input: crate::types::LocalWriteForwardingStatus) -> Self {
         self.local_write_forwarding_status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies whether an Aurora DB cluster has in-cluster write forwarding enabled, not enabled, requested, or is in the process of enabling it.</p>
+    /// <p>Indicates whether an Aurora DB cluster has in-cluster write forwarding enabled, not enabled, requested, or is in the process of enabling it.</p>
     pub fn set_local_write_forwarding_status(mut self, input: ::std::option::Option<crate::types::LocalWriteForwardingStatus>) -> Self {
         self.local_write_forwarding_status = input;
         self
     }
-    /// <p>Specifies whether an Aurora DB cluster has in-cluster write forwarding enabled, not enabled, requested, or is in the process of enabling it.</p>
+    /// <p>Indicates whether an Aurora DB cluster has in-cluster write forwarding enabled, not enabled, requested, or is in the process of enabling it.</p>
     pub fn get_local_write_forwarding_status(&self) -> &::std::option::Option<crate::types::LocalWriteForwardingStatus> {
         &self.local_write_forwarding_status
     }

@@ -10,6 +10,8 @@ pub struct ChangeSummary {
     pub entity: ::std::option::Option<crate::types::Entity>,
     /// <p>This object contains details specific to the change type of the requested change.</p>
     pub details: ::std::option::Option<::std::string::String>,
+    /// <p>The JSON value of the details specific to the change type of the requested change.</p>
+    pub details_document: ::std::option::Option<::aws_smithy_types::Document>,
     /// <p>An array of <code>ErrorDetail</code> objects associated with the change.</p>
     pub error_detail_list: ::std::option::Option<::std::vec::Vec<crate::types::ErrorDetail>>,
     /// <p>Optional name for the change.</p>
@@ -27,6 +29,10 @@ impl ChangeSummary {
     /// <p>This object contains details specific to the change type of the requested change.</p>
     pub fn details(&self) -> ::std::option::Option<&str> {
         self.details.as_deref()
+    }
+    /// <p>The JSON value of the details specific to the change type of the requested change.</p>
+    pub fn details_document(&self) -> ::std::option::Option<&::aws_smithy_types::Document> {
+        self.details_document.as_ref()
     }
     /// <p>An array of <code>ErrorDetail</code> objects associated with the change.</p>
     pub fn error_detail_list(&self) -> ::std::option::Option<&[crate::types::ErrorDetail]> {
@@ -51,6 +57,7 @@ pub struct ChangeSummaryBuilder {
     pub(crate) change_type: ::std::option::Option<::std::string::String>,
     pub(crate) entity: ::std::option::Option<crate::types::Entity>,
     pub(crate) details: ::std::option::Option<::std::string::String>,
+    pub(crate) details_document: ::std::option::Option<::aws_smithy_types::Document>,
     pub(crate) error_detail_list: ::std::option::Option<::std::vec::Vec<crate::types::ErrorDetail>>,
     pub(crate) change_name: ::std::option::Option<::std::string::String>,
 }
@@ -97,6 +104,20 @@ impl ChangeSummaryBuilder {
     pub fn get_details(&self) -> &::std::option::Option<::std::string::String> {
         &self.details
     }
+    /// <p>The JSON value of the details specific to the change type of the requested change.</p>
+    pub fn details_document(mut self, input: ::aws_smithy_types::Document) -> Self {
+        self.details_document = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The JSON value of the details specific to the change type of the requested change.</p>
+    pub fn set_details_document(mut self, input: ::std::option::Option<::aws_smithy_types::Document>) -> Self {
+        self.details_document = input;
+        self
+    }
+    /// <p>The JSON value of the details specific to the change type of the requested change.</p>
+    pub fn get_details_document(&self) -> &::std::option::Option<::aws_smithy_types::Document> {
+        &self.details_document
+    }
     /// Appends an item to `error_detail_list`.
     ///
     /// To override the contents of this collection use [`set_error_detail_list`](Self::set_error_detail_list).
@@ -137,6 +158,7 @@ impl ChangeSummaryBuilder {
             change_type: self.change_type,
             entity: self.entity,
             details: self.details,
+            details_document: self.details_document,
             error_detail_list: self.error_detail_list,
             change_name: self.change_name,
         }

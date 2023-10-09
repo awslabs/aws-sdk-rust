@@ -37,7 +37,7 @@ impl ChangeResourceRecordSetsInputBuilder {
 /// <ul>
 /// <li> <p> <code>CREATE</code>: Creates a resource record set that has the specified values.</p> </li>
 /// <li> <p> <code>DELETE</code>: Deletes an existing resource record set that has the specified values.</p> </li>
-/// <li> <p> <code>UPSERT</code>: If a resource set exists Route 53 updates it with the values in the request. </p> </li>
+/// <li> <p> <code>UPSERT</code>: If a resource set doesn't exist, Route 53 creates it. If a resource set exists Route 53 updates it with the values in the request. </p> </li>
 /// </ul>
 /// <p> <b>Syntaxes for Creating, Updating, and Deleting Resource Record Sets</b> </p>
 /// <p>The syntax for a request depends on the type of resource record set that you want to create, delete, or update, such as weighted, alias, or failover. The XML elements in your request must appear in the order listed in the syntax. </p>

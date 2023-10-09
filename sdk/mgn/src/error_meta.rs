@@ -228,6 +228,33 @@ impl From<crate::operation::create_application::CreateApplicationError> for Erro
         }
     }
 }
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::create_connector::CreateConnectorError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::create_connector::CreateConnectorError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::create_connector::CreateConnectorError> for Error {
+    fn from(err: crate::operation::create_connector::CreateConnectorError) -> Self {
+        match err {
+            crate::operation::create_connector::CreateConnectorError::UninitializedAccountException(inner) => {
+                Error::UninitializedAccountException(inner)
+            }
+            crate::operation::create_connector::CreateConnectorError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_connector::CreateConnectorError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::create_launch_configuration_template::CreateLaunchConfigurationTemplateError, R>>
     for Error
 where
@@ -353,6 +380,34 @@ impl From<crate::operation::delete_application::DeleteApplicationError> for Erro
                 Error::UninitializedAccountException(inner)
             }
             crate::operation::delete_application::DeleteApplicationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::delete_connector::DeleteConnectorError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::delete_connector::DeleteConnectorError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_connector::DeleteConnectorError> for Error {
+    fn from(err: crate::operation::delete_connector::DeleteConnectorError) -> Self {
+        match err {
+            crate::operation::delete_connector::DeleteConnectorError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_connector::DeleteConnectorError::UninitializedAccountException(inner) => {
+                Error::UninitializedAccountException(inner)
+            }
+            crate::operation::delete_connector::DeleteConnectorError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_connector::DeleteConnectorError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -956,6 +1011,33 @@ impl From<crate::operation::list_applications::ListApplicationsError> for Error 
                 Error::UninitializedAccountException(inner)
             }
             crate::operation::list_applications::ListApplicationsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_connectors::ListConnectorsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_connectors::ListConnectorsError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_connectors::ListConnectorsError> for Error {
+    fn from(err: crate::operation::list_connectors::ListConnectorsError) -> Self {
+        match err {
+            crate::operation::list_connectors::ListConnectorsError::UninitializedAccountException(inner) => {
+                Error::UninitializedAccountException(inner)
+            }
+            crate::operation::list_connectors::ListConnectorsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_connectors::ListConnectorsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1791,6 +1873,34 @@ impl From<crate::operation::update_application::UpdateApplicationError> for Erro
         }
     }
 }
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::update_connector::UpdateConnectorError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::update_connector::UpdateConnectorError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::update_connector::UpdateConnectorError> for Error {
+    fn from(err: crate::operation::update_connector::UpdateConnectorError) -> Self {
+        match err {
+            crate::operation::update_connector::UpdateConnectorError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_connector::UpdateConnectorError::UninitializedAccountException(inner) => {
+                Error::UninitializedAccountException(inner)
+            }
+            crate::operation::update_connector::UpdateConnectorError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_connector::UpdateConnectorError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::update_launch_configuration::UpdateLaunchConfigurationError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1942,6 +2052,36 @@ impl From<crate::operation::update_replication_configuration_template::UpdateRep
             crate::operation::update_replication_configuration_template::UpdateReplicationConfigurationTemplateError::UninitializedAccountException(inner) => Error::UninitializedAccountException(inner),
             crate::operation::update_replication_configuration_template::UpdateReplicationConfigurationTemplateError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::update_replication_configuration_template::UpdateReplicationConfigurationTemplateError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::update_source_server::UpdateSourceServerError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::update_source_server::UpdateSourceServerError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::update_source_server::UpdateSourceServerError> for Error {
+    fn from(err: crate::operation::update_source_server::UpdateSourceServerError) -> Self {
+        match err {
+            crate::operation::update_source_server::UpdateSourceServerError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::update_source_server::UpdateSourceServerError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_source_server::UpdateSourceServerError::UninitializedAccountException(inner) => {
+                Error::UninitializedAccountException(inner)
+            }
+            crate::operation::update_source_server::UpdateSourceServerError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

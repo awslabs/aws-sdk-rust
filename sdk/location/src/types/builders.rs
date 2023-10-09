@@ -5,6 +5,8 @@ pub use crate::types::_list_device_positions_response_entry::ListDevicePositions
 
 pub use crate::types::_positional_accuracy::PositionalAccuracyBuilder;
 
+pub use crate::types::_tracking_filter_geometry::TrackingFilterGeometryBuilder;
+
 pub use crate::types::_device_position::DevicePositionBuilder;
 
 pub use crate::types::_batch_update_device_position_error::BatchUpdateDevicePositionErrorBuilder;

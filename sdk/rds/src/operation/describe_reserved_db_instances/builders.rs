@@ -206,17 +206,17 @@ impl DescribeReservedDBInstancesFluentBuilder {
     pub fn get_offering_type(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_offering_type()
     }
-    /// <p>A value that indicates whether to show only those reservations that support Multi-AZ.</p>
+    /// <p>Specifies whether to show only those reservations that support Multi-AZ.</p>
     pub fn multi_az(mut self, input: bool) -> Self {
         self.inner = self.inner.multi_az(input);
         self
     }
-    /// <p>A value that indicates whether to show only those reservations that support Multi-AZ.</p>
+    /// <p>Specifies whether to show only those reservations that support Multi-AZ.</p>
     pub fn set_multi_az(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_multi_az(input);
         self
     }
-    /// <p>A value that indicates whether to show only those reservations that support Multi-AZ.</p>
+    /// <p>Specifies whether to show only those reservations that support Multi-AZ.</p>
     pub fn get_multi_az(&self) -> &::std::option::Option<bool> {
         self.inner.get_multi_az()
     }

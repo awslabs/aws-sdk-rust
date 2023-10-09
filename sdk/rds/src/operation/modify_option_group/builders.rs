@@ -163,17 +163,17 @@ impl ModifyOptionGroupFluentBuilder {
     pub fn get_options_to_remove(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_options_to_remove()
     }
-    /// <p>A value that indicates whether to apply the change immediately or during the next maintenance window for each instance associated with the option group.</p>
+    /// <p>Specifies whether to apply the change immediately or during the next maintenance window for each instance associated with the option group.</p>
     pub fn apply_immediately(mut self, input: bool) -> Self {
         self.inner = self.inner.apply_immediately(input);
         self
     }
-    /// <p>A value that indicates whether to apply the change immediately or during the next maintenance window for each instance associated with the option group.</p>
+    /// <p>Specifies whether to apply the change immediately or during the next maintenance window for each instance associated with the option group.</p>
     pub fn set_apply_immediately(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_apply_immediately(input);
         self
     }
-    /// <p>A value that indicates whether to apply the change immediately or during the next maintenance window for each instance associated with the option group.</p>
+    /// <p>Specifies whether to apply the change immediately or during the next maintenance window for each instance associated with the option group.</p>
     pub fn get_apply_immediately(&self) -> &::std::option::Option<bool> {
         self.inner.get_apply_immediately()
     }

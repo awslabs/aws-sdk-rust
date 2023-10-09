@@ -224,4 +224,21 @@ impl UpdateTrackerFluentBuilder {
     pub fn get_event_bridge_enabled(&self) -> &::std::option::Option<bool> {
         self.inner.get_event_bridge_enabled()
     }
+    /// <p>Enables <code>GeospatialQueries</code> for a tracker that uses a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">Amazon Web Services KMS customer managed key</a>.</p>
+    /// <p>This parameter is only used if you are using a KMS customer managed key.</p>
+    pub fn kms_key_enable_geospatial_queries(mut self, input: bool) -> Self {
+        self.inner = self.inner.kms_key_enable_geospatial_queries(input);
+        self
+    }
+    /// <p>Enables <code>GeospatialQueries</code> for a tracker that uses a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">Amazon Web Services KMS customer managed key</a>.</p>
+    /// <p>This parameter is only used if you are using a KMS customer managed key.</p>
+    pub fn set_kms_key_enable_geospatial_queries(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_kms_key_enable_geospatial_queries(input);
+        self
+    }
+    /// <p>Enables <code>GeospatialQueries</code> for a tracker that uses a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">Amazon Web Services KMS customer managed key</a>.</p>
+    /// <p>This parameter is only used if you are using a KMS customer managed key.</p>
+    pub fn get_kms_key_enable_geospatial_queries(&self) -> &::std::option::Option<bool> {
+        self.inner.get_kms_key_enable_geospatial_queries()
+    }
 }

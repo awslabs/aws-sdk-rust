@@ -30,155 +30,158 @@ pub fn ser_h265_settings(
     if let Some(var_8) = &input.dynamic_sub_gop {
         object.key("dynamicSubGop").string(var_8.as_str());
     }
-    if let Some(var_9) = &input.flicker_adaptive_quantization {
-        object.key("flickerAdaptiveQuantization").string(var_9.as_str());
+    if let Some(var_9) = &input.end_of_stream_markers {
+        object.key("endOfStreamMarkers").string(var_9.as_str());
     }
-    if let Some(var_10) = &input.framerate_control {
-        object.key("framerateControl").string(var_10.as_str());
+    if let Some(var_10) = &input.flicker_adaptive_quantization {
+        object.key("flickerAdaptiveQuantization").string(var_10.as_str());
     }
-    if let Some(var_11) = &input.framerate_conversion_algorithm {
-        object.key("framerateConversionAlgorithm").string(var_11.as_str());
+    if let Some(var_11) = &input.framerate_control {
+        object.key("framerateControl").string(var_11.as_str());
     }
-    if let Some(var_12) = &input.framerate_denominator {
+    if let Some(var_12) = &input.framerate_conversion_algorithm {
+        object.key("framerateConversionAlgorithm").string(var_12.as_str());
+    }
+    if let Some(var_13) = &input.framerate_denominator {
         object.key("framerateDenominator").number(
-            #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_12).into()),
-        );
-    }
-    if let Some(var_13) = &input.framerate_numerator {
-        object.key("framerateNumerator").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((*var_13).into()),
         );
     }
-    if let Some(var_14) = &input.gop_b_reference {
-        object.key("gopBReference").string(var_14.as_str());
+    if let Some(var_14) = &input.framerate_numerator {
+        object.key("framerateNumerator").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_14).into()),
+        );
     }
-    if let Some(var_15) = &input.gop_closed_cadence {
+    if let Some(var_15) = &input.gop_b_reference {
+        object.key("gopBReference").string(var_15.as_str());
+    }
+    if let Some(var_16) = &input.gop_closed_cadence {
         object.key("gopClosedCadence").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_15).into()),
+            ::aws_smithy_types::Number::NegInt((*var_16).into()),
         );
     }
-    if let Some(var_16) = &input.gop_size {
+    if let Some(var_17) = &input.gop_size {
         object.key("gopSize").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::Float((*var_16).into()),
+            ::aws_smithy_types::Number::Float((*var_17).into()),
         );
     }
-    if let Some(var_17) = &input.gop_size_units {
-        object.key("gopSizeUnits").string(var_17.as_str());
+    if let Some(var_18) = &input.gop_size_units {
+        object.key("gopSizeUnits").string(var_18.as_str());
     }
-    if let Some(var_18) = &input.hrd_buffer_final_fill_percentage {
+    if let Some(var_19) = &input.hrd_buffer_final_fill_percentage {
         object.key("hrdBufferFinalFillPercentage").number(
-            #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_18).into()),
-        );
-    }
-    if let Some(var_19) = &input.hrd_buffer_initial_fill_percentage {
-        object.key("hrdBufferInitialFillPercentage").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((*var_19).into()),
         );
     }
-    if let Some(var_20) = &input.hrd_buffer_size {
-        object.key("hrdBufferSize").number(
+    if let Some(var_20) = &input.hrd_buffer_initial_fill_percentage {
+        object.key("hrdBufferInitialFillPercentage").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((*var_20).into()),
         );
     }
-    if let Some(var_21) = &input.interlace_mode {
-        object.key("interlaceMode").string(var_21.as_str());
-    }
-    if let Some(var_22) = &input.max_bitrate {
-        object.key("maxBitrate").number(
+    if let Some(var_21) = &input.hrd_buffer_size {
+        object.key("hrdBufferSize").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_22).into()),
+            ::aws_smithy_types::Number::NegInt((*var_21).into()),
         );
     }
-    if let Some(var_23) = &input.min_i_interval {
-        object.key("minIInterval").number(
+    if let Some(var_22) = &input.interlace_mode {
+        object.key("interlaceMode").string(var_22.as_str());
+    }
+    if let Some(var_23) = &input.max_bitrate {
+        object.key("maxBitrate").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((*var_23).into()),
         );
     }
-    if let Some(var_24) = &input.number_b_frames_between_reference_frames {
-        object.key("numberBFramesBetweenReferenceFrames").number(
+    if let Some(var_24) = &input.min_i_interval {
+        object.key("minIInterval").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((*var_24).into()),
         );
     }
-    if let Some(var_25) = &input.number_reference_frames {
-        object.key("numberReferenceFrames").number(
+    if let Some(var_25) = &input.number_b_frames_between_reference_frames {
+        object.key("numberBFramesBetweenReferenceFrames").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((*var_25).into()),
         );
     }
-    if let Some(var_26) = &input.par_control {
-        object.key("parControl").string(var_26.as_str());
-    }
-    if let Some(var_27) = &input.par_denominator {
-        object.key("parDenominator").number(
+    if let Some(var_26) = &input.number_reference_frames {
+        object.key("numberReferenceFrames").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_27).into()),
+            ::aws_smithy_types::Number::NegInt((*var_26).into()),
         );
     }
-    if let Some(var_28) = &input.par_numerator {
-        object.key("parNumerator").number(
+    if let Some(var_27) = &input.par_control {
+        object.key("parControl").string(var_27.as_str());
+    }
+    if let Some(var_28) = &input.par_denominator {
+        object.key("parDenominator").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((*var_28).into()),
         );
     }
-    if let Some(var_29) = &input.quality_tuning_level {
-        object.key("qualityTuningLevel").string(var_29.as_str());
-    }
-    if let Some(var_30) = &input.qvbr_settings {
-        #[allow(unused_mut)]
-        let mut object_31 = object.key("qvbrSettings").start_object();
-        crate::protocol_serde::shape_h265_qvbr_settings::ser_h265_qvbr_settings(&mut object_31, var_30)?;
-        object_31.finish();
-    }
-    if let Some(var_32) = &input.rate_control_mode {
-        object.key("rateControlMode").string(var_32.as_str());
-    }
-    if let Some(var_33) = &input.sample_adaptive_offset_filter_mode {
-        object.key("sampleAdaptiveOffsetFilterMode").string(var_33.as_str());
-    }
-    if let Some(var_34) = &input.scan_type_conversion_mode {
-        object.key("scanTypeConversionMode").string(var_34.as_str());
-    }
-    if let Some(var_35) = &input.scene_change_detect {
-        object.key("sceneChangeDetect").string(var_35.as_str());
-    }
-    if let Some(var_36) = &input.slices {
-        object.key("slices").number(
+    if let Some(var_29) = &input.par_numerator {
+        object.key("parNumerator").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_36).into()),
+            ::aws_smithy_types::Number::NegInt((*var_29).into()),
         );
     }
-    if let Some(var_37) = &input.slow_pal {
-        object.key("slowPal").string(var_37.as_str());
+    if let Some(var_30) = &input.quality_tuning_level {
+        object.key("qualityTuningLevel").string(var_30.as_str());
     }
-    if let Some(var_38) = &input.spatial_adaptive_quantization {
-        object.key("spatialAdaptiveQuantization").string(var_38.as_str());
+    if let Some(var_31) = &input.qvbr_settings {
+        #[allow(unused_mut)]
+        let mut object_32 = object.key("qvbrSettings").start_object();
+        crate::protocol_serde::shape_h265_qvbr_settings::ser_h265_qvbr_settings(&mut object_32, var_31)?;
+        object_32.finish();
     }
-    if let Some(var_39) = &input.telecine {
-        object.key("telecine").string(var_39.as_str());
+    if let Some(var_33) = &input.rate_control_mode {
+        object.key("rateControlMode").string(var_33.as_str());
     }
-    if let Some(var_40) = &input.temporal_adaptive_quantization {
-        object.key("temporalAdaptiveQuantization").string(var_40.as_str());
+    if let Some(var_34) = &input.sample_adaptive_offset_filter_mode {
+        object.key("sampleAdaptiveOffsetFilterMode").string(var_34.as_str());
     }
-    if let Some(var_41) = &input.temporal_ids {
-        object.key("temporalIds").string(var_41.as_str());
+    if let Some(var_35) = &input.scan_type_conversion_mode {
+        object.key("scanTypeConversionMode").string(var_35.as_str());
     }
-    if let Some(var_42) = &input.tiles {
-        object.key("tiles").string(var_42.as_str());
+    if let Some(var_36) = &input.scene_change_detect {
+        object.key("sceneChangeDetect").string(var_36.as_str());
     }
-    if let Some(var_43) = &input.unregistered_sei_timecode {
-        object.key("unregisteredSeiTimecode").string(var_43.as_str());
+    if let Some(var_37) = &input.slices {
+        object.key("slices").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_37).into()),
+        );
     }
-    if let Some(var_44) = &input.write_mp4_packaging_type {
-        object.key("writeMp4PackagingType").string(var_44.as_str());
+    if let Some(var_38) = &input.slow_pal {
+        object.key("slowPal").string(var_38.as_str());
+    }
+    if let Some(var_39) = &input.spatial_adaptive_quantization {
+        object.key("spatialAdaptiveQuantization").string(var_39.as_str());
+    }
+    if let Some(var_40) = &input.telecine {
+        object.key("telecine").string(var_40.as_str());
+    }
+    if let Some(var_41) = &input.temporal_adaptive_quantization {
+        object.key("temporalAdaptiveQuantization").string(var_41.as_str());
+    }
+    if let Some(var_42) = &input.temporal_ids {
+        object.key("temporalIds").string(var_42.as_str());
+    }
+    if let Some(var_43) = &input.tiles {
+        object.key("tiles").string(var_43.as_str());
+    }
+    if let Some(var_44) = &input.unregistered_sei_timecode {
+        object.key("unregisteredSeiTimecode").string(var_44.as_str());
+    }
+    if let Some(var_45) = &input.write_mp4_packaging_type {
+        object.key("writeMp4PackagingType").string(var_45.as_str());
     }
     Ok(())
 }
@@ -242,6 +245,13 @@ where
                             builder = builder.set_dynamic_sub_gop(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| crate::types::H265DynamicSubGop::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "endOfStreamMarkers" => {
+                            builder = builder.set_end_of_stream_markers(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::H265EndOfStreamMarkers::from(u.as_ref())))
                                     .transpose()?,
                             );
                         }

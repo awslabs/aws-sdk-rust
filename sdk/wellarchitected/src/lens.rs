@@ -129,8 +129,38 @@ pub(crate) fn reflens_list_profiles_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_review_template_answers_output_next_token(
+    input: &crate::operation::list_review_template_answers::ListReviewTemplateAnswersOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_review_templates_output_next_token(
+    input: &crate::operation::list_review_templates::ListReviewTemplatesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_share_invitations_output_next_token(
     input: &crate::operation::list_share_invitations::ListShareInvitationsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_template_shares_output_next_token(
+    input: &crate::operation::list_template_shares::ListTemplateSharesOutput,
 ) -> ::std::option::Option<&::std::string::String> {
     let input = match &input.next_token {
         ::std::option::Option::None => return ::std::option::Option::None,

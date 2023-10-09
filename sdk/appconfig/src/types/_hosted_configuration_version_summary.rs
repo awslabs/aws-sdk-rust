@@ -16,6 +16,8 @@ pub struct HostedConfigurationVersionSummary {
     pub content_type: ::std::option::Option<::std::string::String>,
     /// <p>A user-defined label for an AppConfig hosted configuration version.</p>
     pub version_label: ::std::option::Option<::std::string::String>,
+    /// <p>The Amazon Resource Name of the Key Management Service key that was used to encrypt this specific version of the configuration data in the AppConfig hosted configuration store.</p>
+    pub kms_key_arn: ::std::option::Option<::std::string::String>,
 }
 impl HostedConfigurationVersionSummary {
     /// <p>The application ID.</p>
@@ -42,6 +44,10 @@ impl HostedConfigurationVersionSummary {
     pub fn version_label(&self) -> ::std::option::Option<&str> {
         self.version_label.as_deref()
     }
+    /// <p>The Amazon Resource Name of the Key Management Service key that was used to encrypt this specific version of the configuration data in the AppConfig hosted configuration store.</p>
+    pub fn kms_key_arn(&self) -> ::std::option::Option<&str> {
+        self.kms_key_arn.as_deref()
+    }
 }
 impl HostedConfigurationVersionSummary {
     /// Creates a new builder-style object to manufacture [`HostedConfigurationVersionSummary`](crate::types::HostedConfigurationVersionSummary).
@@ -60,6 +66,7 @@ pub struct HostedConfigurationVersionSummaryBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) content_type: ::std::option::Option<::std::string::String>,
     pub(crate) version_label: ::std::option::Option<::std::string::String>,
+    pub(crate) kms_key_arn: ::std::option::Option<::std::string::String>,
 }
 impl HostedConfigurationVersionSummaryBuilder {
     /// <p>The application ID.</p>
@@ -146,6 +153,20 @@ impl HostedConfigurationVersionSummaryBuilder {
     pub fn get_version_label(&self) -> &::std::option::Option<::std::string::String> {
         &self.version_label
     }
+    /// <p>The Amazon Resource Name of the Key Management Service key that was used to encrypt this specific version of the configuration data in the AppConfig hosted configuration store.</p>
+    pub fn kms_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.kms_key_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name of the Key Management Service key that was used to encrypt this specific version of the configuration data in the AppConfig hosted configuration store.</p>
+    pub fn set_kms_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.kms_key_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name of the Key Management Service key that was used to encrypt this specific version of the configuration data in the AppConfig hosted configuration store.</p>
+    pub fn get_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_arn
+    }
     /// Consumes the builder and constructs a [`HostedConfigurationVersionSummary`](crate::types::HostedConfigurationVersionSummary).
     pub fn build(self) -> crate::types::HostedConfigurationVersionSummary {
         crate::types::HostedConfigurationVersionSummary {
@@ -155,6 +176,7 @@ impl HostedConfigurationVersionSummaryBuilder {
             description: self.description,
             content_type: self.content_type,
             version_label: self.version_label,
+            kms_key_arn: self.kms_key_arn,
         }
     }
 }

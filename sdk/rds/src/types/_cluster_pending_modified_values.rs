@@ -10,7 +10,7 @@ pub struct ClusterPendingModifiedValues {
     pub db_cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The master credentials for the DB cluster.</p>
     pub master_user_password: ::std::option::Option<::std::string::String>,
-    /// <p>A value that indicates whether mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts is enabled.</p>
+    /// <p>Indicates whether mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts is enabled.</p>
     pub iam_database_authentication_enabled: ::std::option::Option<bool>,
     /// <p>The database engine version.</p>
     pub engine_version: ::std::option::Option<::std::string::String>,
@@ -36,7 +36,7 @@ impl ClusterPendingModifiedValues {
     pub fn master_user_password(&self) -> ::std::option::Option<&str> {
         self.master_user_password.as_deref()
     }
-    /// <p>A value that indicates whether mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts is enabled.</p>
+    /// <p>Indicates whether mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts is enabled.</p>
     pub fn iam_database_authentication_enabled(&self) -> ::std::option::Option<bool> {
         self.iam_database_authentication_enabled
     }
@@ -125,17 +125,17 @@ impl ClusterPendingModifiedValuesBuilder {
     pub fn get_master_user_password(&self) -> &::std::option::Option<::std::string::String> {
         &self.master_user_password
     }
-    /// <p>A value that indicates whether mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts is enabled.</p>
+    /// <p>Indicates whether mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts is enabled.</p>
     pub fn iam_database_authentication_enabled(mut self, input: bool) -> Self {
         self.iam_database_authentication_enabled = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A value that indicates whether mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts is enabled.</p>
+    /// <p>Indicates whether mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts is enabled.</p>
     pub fn set_iam_database_authentication_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.iam_database_authentication_enabled = input;
         self
     }
-    /// <p>A value that indicates whether mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts is enabled.</p>
+    /// <p>Indicates whether mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts is enabled.</p>
     pub fn get_iam_database_authentication_enabled(&self) -> &::std::option::Option<bool> {
         &self.iam_database_authentication_enabled
     }

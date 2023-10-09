@@ -6,6 +6,8 @@
 pub struct MetricResultV2 {
     /// <p>The dimension for the metrics.</p>
     pub dimensions: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>The interval period with the start and end time for the metrics.</p>
+    pub metric_interval: ::std::option::Option<crate::types::MetricInterval>,
     /// <p>The set of metrics.</p>
     pub collections: ::std::option::Option<::std::vec::Vec<crate::types::MetricDataV2>>,
 }
@@ -13,6 +15,10 @@ impl MetricResultV2 {
     /// <p>The dimension for the metrics.</p>
     pub fn dimensions(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.dimensions.as_ref()
+    }
+    /// <p>The interval period with the start and end time for the metrics.</p>
+    pub fn metric_interval(&self) -> ::std::option::Option<&crate::types::MetricInterval> {
+        self.metric_interval.as_ref()
     }
     /// <p>The set of metrics.</p>
     pub fn collections(&self) -> ::std::option::Option<&[crate::types::MetricDataV2]> {
@@ -31,6 +37,7 @@ impl MetricResultV2 {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MetricResultV2Builder {
     pub(crate) dimensions: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) metric_interval: ::std::option::Option<crate::types::MetricInterval>,
     pub(crate) collections: ::std::option::Option<::std::vec::Vec<crate::types::MetricDataV2>>,
 }
 impl MetricResultV2Builder {
@@ -53,6 +60,20 @@ impl MetricResultV2Builder {
     /// <p>The dimension for the metrics.</p>
     pub fn get_dimensions(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.dimensions
+    }
+    /// <p>The interval period with the start and end time for the metrics.</p>
+    pub fn metric_interval(mut self, input: crate::types::MetricInterval) -> Self {
+        self.metric_interval = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The interval period with the start and end time for the metrics.</p>
+    pub fn set_metric_interval(mut self, input: ::std::option::Option<crate::types::MetricInterval>) -> Self {
+        self.metric_interval = input;
+        self
+    }
+    /// <p>The interval period with the start and end time for the metrics.</p>
+    pub fn get_metric_interval(&self) -> &::std::option::Option<crate::types::MetricInterval> {
+        &self.metric_interval
     }
     /// Appends an item to `collections`.
     ///
@@ -78,6 +99,7 @@ impl MetricResultV2Builder {
     pub fn build(self) -> crate::types::MetricResultV2 {
         crate::types::MetricResultV2 {
             dimensions: self.dimensions,
+            metric_interval: self.metric_interval,
             collections: self.collections,
         }
     }

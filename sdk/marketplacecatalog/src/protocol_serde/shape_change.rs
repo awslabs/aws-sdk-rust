@@ -27,8 +27,11 @@ pub fn ser_change(
     if let Some(var_8) = &input.details {
         object.key("Details").string(var_8.as_str());
     }
-    if let Some(var_9) = &input.change_name {
-        object.key("ChangeName").string(var_9.as_str());
+    if let Some(var_9) = &input.details_document {
+        object.key("DetailsDocument").document(var_9);
+    }
+    if let Some(var_10) = &input.change_name {
+        object.key("ChangeName").string(var_10.as_str());
     }
     Ok(())
 }

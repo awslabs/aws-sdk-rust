@@ -107,6 +107,8 @@ pub struct AwsRdsDbClusterDetails {
     pub db_cluster_members: ::std::option::Option<::std::vec::Vec<crate::types::AwsRdsDbClusterMember>>,
     /// <p>Whether the mapping of IAM accounts to database accounts is enabled.</p>
     pub iam_database_authentication_enabled: bool,
+    /// <p> Indicates if minor version upgrades are automatically applied to the cluster.</p>
+    pub auto_minor_version_upgrade: bool,
 }
 impl AwsRdsDbClusterDetails {
     /// <p>For all database engines except Aurora, specifies the allocated storage size in gibibytes (GiB).</p>
@@ -286,6 +288,10 @@ impl AwsRdsDbClusterDetails {
     pub fn iam_database_authentication_enabled(&self) -> bool {
         self.iam_database_authentication_enabled
     }
+    /// <p> Indicates if minor version upgrades are automatically applied to the cluster.</p>
+    pub fn auto_minor_version_upgrade(&self) -> bool {
+        self.auto_minor_version_upgrade
+    }
 }
 impl AwsRdsDbClusterDetails {
     /// Creates a new builder-style object to manufacture [`AwsRdsDbClusterDetails`](crate::types::AwsRdsDbClusterDetails).
@@ -335,6 +341,7 @@ pub struct AwsRdsDbClusterDetailsBuilder {
     pub(crate) db_cluster_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) db_cluster_members: ::std::option::Option<::std::vec::Vec<crate::types::AwsRdsDbClusterMember>>,
     pub(crate) iam_database_authentication_enabled: ::std::option::Option<bool>,
+    pub(crate) auto_minor_version_upgrade: ::std::option::Option<bool>,
 }
 impl AwsRdsDbClusterDetailsBuilder {
     /// <p>For all database engines except Aurora, specifies the allocated storage size in gibibytes (GiB).</p>
@@ -1001,6 +1008,20 @@ impl AwsRdsDbClusterDetailsBuilder {
     pub fn get_iam_database_authentication_enabled(&self) -> &::std::option::Option<bool> {
         &self.iam_database_authentication_enabled
     }
+    /// <p> Indicates if minor version upgrades are automatically applied to the cluster.</p>
+    pub fn auto_minor_version_upgrade(mut self, input: bool) -> Self {
+        self.auto_minor_version_upgrade = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p> Indicates if minor version upgrades are automatically applied to the cluster.</p>
+    pub fn set_auto_minor_version_upgrade(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.auto_minor_version_upgrade = input;
+        self
+    }
+    /// <p> Indicates if minor version upgrades are automatically applied to the cluster.</p>
+    pub fn get_auto_minor_version_upgrade(&self) -> &::std::option::Option<bool> {
+        &self.auto_minor_version_upgrade
+    }
     /// Consumes the builder and constructs a [`AwsRdsDbClusterDetails`](crate::types::AwsRdsDbClusterDetails).
     pub fn build(self) -> crate::types::AwsRdsDbClusterDetails {
         crate::types::AwsRdsDbClusterDetails {
@@ -1041,6 +1062,7 @@ impl AwsRdsDbClusterDetailsBuilder {
             db_cluster_identifier: self.db_cluster_identifier,
             db_cluster_members: self.db_cluster_members,
             iam_database_authentication_enabled: self.iam_database_authentication_enabled.unwrap_or_default(),
+            auto_minor_version_upgrade: self.auto_minor_version_upgrade.unwrap_or_default(),
         }
     }
 }

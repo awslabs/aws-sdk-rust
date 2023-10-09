@@ -27,11 +27,11 @@ pub struct DbClusterAutomatedBackup {
     /// <li> <p> <code>retained</code> - Automated backups for deleted clusters.</p> </li>
     /// </ul>
     pub status: ::std::option::Option<::std::string::String>,
-    /// <p>True if mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts is enabled, and otherwise false.</p>
+    /// <p>Indicates whether mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts is enabled.</p>
     pub iam_database_authentication_enabled: bool,
     /// <p>The time when the DB cluster was created, in Universal Coordinated Time (UTC).</p>
     pub cluster_create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>Specifies whether the source DB cluster is encrypted.</p>
+    /// <p>Indicates whether the source DB cluster is encrypted.</p>
     pub storage_encrypted: bool,
     /// <p>For all database engines except Amazon Aurora, <code>AllocatedStorage</code> specifies the allocated storage size in gibibytes (GiB). For Aurora, <code>AllocatedStorage</code> always returns 1, because Aurora DB cluster storage size isn't fixed, but instead automatically adjusts as needed.</p>
     pub allocated_storage: i32,
@@ -105,7 +105,7 @@ impl DbClusterAutomatedBackup {
     pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
     }
-    /// <p>True if mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts is enabled, and otherwise false.</p>
+    /// <p>Indicates whether mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts is enabled.</p>
     pub fn iam_database_authentication_enabled(&self) -> bool {
         self.iam_database_authentication_enabled
     }
@@ -113,7 +113,7 @@ impl DbClusterAutomatedBackup {
     pub fn cluster_create_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.cluster_create_time.as_ref()
     }
-    /// <p>Specifies whether the source DB cluster is encrypted.</p>
+    /// <p>Indicates whether the source DB cluster is encrypted.</p>
     pub fn storage_encrypted(&self) -> bool {
         self.storage_encrypted
     }
@@ -353,17 +353,17 @@ impl DbClusterAutomatedBackupBuilder {
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.status
     }
-    /// <p>True if mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts is enabled, and otherwise false.</p>
+    /// <p>Indicates whether mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts is enabled.</p>
     pub fn iam_database_authentication_enabled(mut self, input: bool) -> Self {
         self.iam_database_authentication_enabled = ::std::option::Option::Some(input);
         self
     }
-    /// <p>True if mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts is enabled, and otherwise false.</p>
+    /// <p>Indicates whether mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts is enabled.</p>
     pub fn set_iam_database_authentication_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.iam_database_authentication_enabled = input;
         self
     }
-    /// <p>True if mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts is enabled, and otherwise false.</p>
+    /// <p>Indicates whether mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts is enabled.</p>
     pub fn get_iam_database_authentication_enabled(&self) -> &::std::option::Option<bool> {
         &self.iam_database_authentication_enabled
     }
@@ -381,17 +381,17 @@ impl DbClusterAutomatedBackupBuilder {
     pub fn get_cluster_create_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.cluster_create_time
     }
-    /// <p>Specifies whether the source DB cluster is encrypted.</p>
+    /// <p>Indicates whether the source DB cluster is encrypted.</p>
     pub fn storage_encrypted(mut self, input: bool) -> Self {
         self.storage_encrypted = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies whether the source DB cluster is encrypted.</p>
+    /// <p>Indicates whether the source DB cluster is encrypted.</p>
     pub fn set_storage_encrypted(mut self, input: ::std::option::Option<bool>) -> Self {
         self.storage_encrypted = input;
         self
     }
-    /// <p>Specifies whether the source DB cluster is encrypted.</p>
+    /// <p>Indicates whether the source DB cluster is encrypted.</p>
     pub fn get_storage_encrypted(&self) -> &::std::option::Option<bool> {
         &self.storage_encrypted
     }

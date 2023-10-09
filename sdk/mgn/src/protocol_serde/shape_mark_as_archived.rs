@@ -118,6 +118,11 @@ pub(crate) fn de_mark_as_archived(
                             .transpose()?,
                     );
                 }
+                "connectorAction" => {
+                    builder = builder.set_connector_action(
+                        crate::protocol_serde::shape_source_server_connector_action::de_source_server_connector_action(tokens)?,
+                    );
+                }
                 "dataReplicationInfo" => {
                     builder =
                         builder.set_data_replication_info(crate::protocol_serde::shape_data_replication_info::de_data_replication_info(tokens)?);

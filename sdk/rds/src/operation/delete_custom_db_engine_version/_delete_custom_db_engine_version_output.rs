@@ -30,7 +30,7 @@ pub struct DeleteCustomDbEngineVersionOutput {
     pub supported_timezones: ::std::option::Option<::std::vec::Vec<crate::types::Timezone>>,
     /// <p>The types of logs that the database engine has available for export to CloudWatch Logs.</p>
     pub exportable_log_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>A value that indicates whether the engine version supports exporting the log types specified by ExportableLogTypes to CloudWatch Logs.</p>
+    /// <p>Indicates whether the engine version supports exporting the log types specified by ExportableLogTypes to CloudWatch Logs.</p>
     pub supports_log_exports_to_cloudwatch_logs: bool,
     /// <p>Indicates whether the database engine version supports read replicas.</p>
     pub supports_read_replica: bool,
@@ -50,9 +50,9 @@ pub struct DeleteCustomDbEngineVersionOutput {
     pub supported_feature_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The status of the DB engine version, either <code>available</code> or <code>deprecated</code>.</p>
     pub status: ::std::option::Option<::std::string::String>,
-    /// <p>A value that indicates whether you can use Aurora parallel query with a specific DB engine version.</p>
+    /// <p>Indicates whether you can use Aurora parallel query with a specific DB engine version.</p>
     pub supports_parallel_query: bool,
-    /// <p>A value that indicates whether you can use Aurora global databases with a specific DB engine version.</p>
+    /// <p>Indicates whether you can use Aurora global databases with a specific DB engine version.</p>
     pub supports_global_databases: bool,
     /// <p>The major engine version of the CEV.</p>
     pub major_engine_version: ::std::option::Option<::std::string::String>,
@@ -68,16 +68,16 @@ pub struct DeleteCustomDbEngineVersionOutput {
     pub create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
     pub tag_list: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    /// <p>A value that indicates whether the engine version supports Babelfish for Aurora PostgreSQL.</p>
+    /// <p>Indicates whether the engine version supports Babelfish for Aurora PostgreSQL.</p>
     pub supports_babelfish: bool,
     /// <p>JSON string that lists the installation files and parameters that RDS Custom uses to create a custom engine version (CEV). RDS Custom applies the patches in the order in which they're listed in the manifest. You can set the Oracle home, Oracle base, and UNIX/Linux user and group using the installation parameters. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.preparing.html#custom-cev.preparing.manifest.fields">JSON fields in the CEV manifest</a> in the <i>Amazon RDS User Guide</i>. </p>
     pub custom_db_engine_version_manifest: ::std::option::Option<::std::string::String>,
-    /// <p>A value that indicates whether the engine version supports rotating the server certificate without rebooting the DB instance.</p>
+    /// <p>Indicates whether the engine version supports rotating the server certificate without rebooting the DB instance.</p>
     pub supports_certificate_rotation_without_restart: ::std::option::Option<bool>,
     /// <p>A list of the supported CA certificate identifiers.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
     pub supported_ca_certificate_identifiers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>A value that indicates whether the DB engine version supports forwarding write operations from reader DB instances to the writer DB instance in the DB cluster. By default, write operations aren't allowed on reader DB instances.</p>
+    /// <p>Indicates whether the DB engine version supports forwarding write operations from reader DB instances to the writer DB instance in the DB cluster. By default, write operations aren't allowed on reader DB instances.</p>
     /// <p>Valid for: Aurora DB clusters only</p>
     pub supports_local_write_forwarding: ::std::option::Option<bool>,
     _request_id: Option<String>,
@@ -135,7 +135,7 @@ impl DeleteCustomDbEngineVersionOutput {
     pub fn exportable_log_types(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.exportable_log_types.as_deref()
     }
-    /// <p>A value that indicates whether the engine version supports exporting the log types specified by ExportableLogTypes to CloudWatch Logs.</p>
+    /// <p>Indicates whether the engine version supports exporting the log types specified by ExportableLogTypes to CloudWatch Logs.</p>
     pub fn supports_log_exports_to_cloudwatch_logs(&self) -> bool {
         self.supports_log_exports_to_cloudwatch_logs
     }
@@ -165,11 +165,11 @@ impl DeleteCustomDbEngineVersionOutput {
     pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
     }
-    /// <p>A value that indicates whether you can use Aurora parallel query with a specific DB engine version.</p>
+    /// <p>Indicates whether you can use Aurora parallel query with a specific DB engine version.</p>
     pub fn supports_parallel_query(&self) -> bool {
         self.supports_parallel_query
     }
-    /// <p>A value that indicates whether you can use Aurora global databases with a specific DB engine version.</p>
+    /// <p>Indicates whether you can use Aurora global databases with a specific DB engine version.</p>
     pub fn supports_global_databases(&self) -> bool {
         self.supports_global_databases
     }
@@ -201,7 +201,7 @@ impl DeleteCustomDbEngineVersionOutput {
     pub fn tag_list(&self) -> ::std::option::Option<&[crate::types::Tag]> {
         self.tag_list.as_deref()
     }
-    /// <p>A value that indicates whether the engine version supports Babelfish for Aurora PostgreSQL.</p>
+    /// <p>Indicates whether the engine version supports Babelfish for Aurora PostgreSQL.</p>
     pub fn supports_babelfish(&self) -> bool {
         self.supports_babelfish
     }
@@ -209,7 +209,7 @@ impl DeleteCustomDbEngineVersionOutput {
     pub fn custom_db_engine_version_manifest(&self) -> ::std::option::Option<&str> {
         self.custom_db_engine_version_manifest.as_deref()
     }
-    /// <p>A value that indicates whether the engine version supports rotating the server certificate without rebooting the DB instance.</p>
+    /// <p>Indicates whether the engine version supports rotating the server certificate without rebooting the DB instance.</p>
     pub fn supports_certificate_rotation_without_restart(&self) -> ::std::option::Option<bool> {
         self.supports_certificate_rotation_without_restart
     }
@@ -218,7 +218,7 @@ impl DeleteCustomDbEngineVersionOutput {
     pub fn supported_ca_certificate_identifiers(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.supported_ca_certificate_identifiers.as_deref()
     }
-    /// <p>A value that indicates whether the DB engine version supports forwarding write operations from reader DB instances to the writer DB instance in the DB cluster. By default, write operations aren't allowed on reader DB instances.</p>
+    /// <p>Indicates whether the DB engine version supports forwarding write operations from reader DB instances to the writer DB instance in the DB cluster. By default, write operations aren't allowed on reader DB instances.</p>
     /// <p>Valid for: Aurora DB clusters only</p>
     pub fn supports_local_write_forwarding(&self) -> ::std::option::Option<bool> {
         self.supports_local_write_forwarding
@@ -487,17 +487,17 @@ impl DeleteCustomDbEngineVersionOutputBuilder {
     pub fn get_exportable_log_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.exportable_log_types
     }
-    /// <p>A value that indicates whether the engine version supports exporting the log types specified by ExportableLogTypes to CloudWatch Logs.</p>
+    /// <p>Indicates whether the engine version supports exporting the log types specified by ExportableLogTypes to CloudWatch Logs.</p>
     pub fn supports_log_exports_to_cloudwatch_logs(mut self, input: bool) -> Self {
         self.supports_log_exports_to_cloudwatch_logs = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A value that indicates whether the engine version supports exporting the log types specified by ExportableLogTypes to CloudWatch Logs.</p>
+    /// <p>Indicates whether the engine version supports exporting the log types specified by ExportableLogTypes to CloudWatch Logs.</p>
     pub fn set_supports_log_exports_to_cloudwatch_logs(mut self, input: ::std::option::Option<bool>) -> Self {
         self.supports_log_exports_to_cloudwatch_logs = input;
         self
     }
-    /// <p>A value that indicates whether the engine version supports exporting the log types specified by ExportableLogTypes to CloudWatch Logs.</p>
+    /// <p>Indicates whether the engine version supports exporting the log types specified by ExportableLogTypes to CloudWatch Logs.</p>
     pub fn get_supports_log_exports_to_cloudwatch_logs(&self) -> &::std::option::Option<bool> {
         &self.supports_log_exports_to_cloudwatch_logs
     }
@@ -599,31 +599,31 @@ impl DeleteCustomDbEngineVersionOutputBuilder {
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.status
     }
-    /// <p>A value that indicates whether you can use Aurora parallel query with a specific DB engine version.</p>
+    /// <p>Indicates whether you can use Aurora parallel query with a specific DB engine version.</p>
     pub fn supports_parallel_query(mut self, input: bool) -> Self {
         self.supports_parallel_query = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A value that indicates whether you can use Aurora parallel query with a specific DB engine version.</p>
+    /// <p>Indicates whether you can use Aurora parallel query with a specific DB engine version.</p>
     pub fn set_supports_parallel_query(mut self, input: ::std::option::Option<bool>) -> Self {
         self.supports_parallel_query = input;
         self
     }
-    /// <p>A value that indicates whether you can use Aurora parallel query with a specific DB engine version.</p>
+    /// <p>Indicates whether you can use Aurora parallel query with a specific DB engine version.</p>
     pub fn get_supports_parallel_query(&self) -> &::std::option::Option<bool> {
         &self.supports_parallel_query
     }
-    /// <p>A value that indicates whether you can use Aurora global databases with a specific DB engine version.</p>
+    /// <p>Indicates whether you can use Aurora global databases with a specific DB engine version.</p>
     pub fn supports_global_databases(mut self, input: bool) -> Self {
         self.supports_global_databases = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A value that indicates whether you can use Aurora global databases with a specific DB engine version.</p>
+    /// <p>Indicates whether you can use Aurora global databases with a specific DB engine version.</p>
     pub fn set_supports_global_databases(mut self, input: ::std::option::Option<bool>) -> Self {
         self.supports_global_databases = input;
         self
     }
-    /// <p>A value that indicates whether you can use Aurora global databases with a specific DB engine version.</p>
+    /// <p>Indicates whether you can use Aurora global databases with a specific DB engine version.</p>
     pub fn get_supports_global_databases(&self) -> &::std::option::Option<bool> {
         &self.supports_global_databases
     }
@@ -731,17 +731,17 @@ impl DeleteCustomDbEngineVersionOutputBuilder {
     pub fn get_tag_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tag_list
     }
-    /// <p>A value that indicates whether the engine version supports Babelfish for Aurora PostgreSQL.</p>
+    /// <p>Indicates whether the engine version supports Babelfish for Aurora PostgreSQL.</p>
     pub fn supports_babelfish(mut self, input: bool) -> Self {
         self.supports_babelfish = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A value that indicates whether the engine version supports Babelfish for Aurora PostgreSQL.</p>
+    /// <p>Indicates whether the engine version supports Babelfish for Aurora PostgreSQL.</p>
     pub fn set_supports_babelfish(mut self, input: ::std::option::Option<bool>) -> Self {
         self.supports_babelfish = input;
         self
     }
-    /// <p>A value that indicates whether the engine version supports Babelfish for Aurora PostgreSQL.</p>
+    /// <p>Indicates whether the engine version supports Babelfish for Aurora PostgreSQL.</p>
     pub fn get_supports_babelfish(&self) -> &::std::option::Option<bool> {
         &self.supports_babelfish
     }
@@ -759,17 +759,17 @@ impl DeleteCustomDbEngineVersionOutputBuilder {
     pub fn get_custom_db_engine_version_manifest(&self) -> &::std::option::Option<::std::string::String> {
         &self.custom_db_engine_version_manifest
     }
-    /// <p>A value that indicates whether the engine version supports rotating the server certificate without rebooting the DB instance.</p>
+    /// <p>Indicates whether the engine version supports rotating the server certificate without rebooting the DB instance.</p>
     pub fn supports_certificate_rotation_without_restart(mut self, input: bool) -> Self {
         self.supports_certificate_rotation_without_restart = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A value that indicates whether the engine version supports rotating the server certificate without rebooting the DB instance.</p>
+    /// <p>Indicates whether the engine version supports rotating the server certificate without rebooting the DB instance.</p>
     pub fn set_supports_certificate_rotation_without_restart(mut self, input: ::std::option::Option<bool>) -> Self {
         self.supports_certificate_rotation_without_restart = input;
         self
     }
-    /// <p>A value that indicates whether the engine version supports rotating the server certificate without rebooting the DB instance.</p>
+    /// <p>Indicates whether the engine version supports rotating the server certificate without rebooting the DB instance.</p>
     pub fn get_supports_certificate_rotation_without_restart(&self) -> &::std::option::Option<bool> {
         &self.supports_certificate_rotation_without_restart
     }
@@ -796,19 +796,19 @@ impl DeleteCustomDbEngineVersionOutputBuilder {
     pub fn get_supported_ca_certificate_identifiers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.supported_ca_certificate_identifiers
     }
-    /// <p>A value that indicates whether the DB engine version supports forwarding write operations from reader DB instances to the writer DB instance in the DB cluster. By default, write operations aren't allowed on reader DB instances.</p>
+    /// <p>Indicates whether the DB engine version supports forwarding write operations from reader DB instances to the writer DB instance in the DB cluster. By default, write operations aren't allowed on reader DB instances.</p>
     /// <p>Valid for: Aurora DB clusters only</p>
     pub fn supports_local_write_forwarding(mut self, input: bool) -> Self {
         self.supports_local_write_forwarding = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A value that indicates whether the DB engine version supports forwarding write operations from reader DB instances to the writer DB instance in the DB cluster. By default, write operations aren't allowed on reader DB instances.</p>
+    /// <p>Indicates whether the DB engine version supports forwarding write operations from reader DB instances to the writer DB instance in the DB cluster. By default, write operations aren't allowed on reader DB instances.</p>
     /// <p>Valid for: Aurora DB clusters only</p>
     pub fn set_supports_local_write_forwarding(mut self, input: ::std::option::Option<bool>) -> Self {
         self.supports_local_write_forwarding = input;
         self
     }
-    /// <p>A value that indicates whether the DB engine version supports forwarding write operations from reader DB instances to the writer DB instance in the DB cluster. By default, write operations aren't allowed on reader DB instances.</p>
+    /// <p>Indicates whether the DB engine version supports forwarding write operations from reader DB instances to the writer DB instance in the DB cluster. By default, write operations aren't allowed on reader DB instances.</p>
     /// <p>Valid for: Aurora DB clusters only</p>
     pub fn get_supports_local_write_forwarding(&self) -> &::std::option::Option<bool> {
         &self.supports_local_write_forwarding

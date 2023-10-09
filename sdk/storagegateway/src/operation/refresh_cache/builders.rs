@@ -28,7 +28,6 @@ impl RefreshCacheInputBuilder {
 /// <p>Throttle limit: This API is asynchronous, so the gateway will accept no more than two refreshes at any time. We recommend using the refresh-complete CloudWatch event notification before issuing additional requests. For more information, see <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/monitoring-file-gateway.html#get-notification">Getting notified about file operations</a> in the <i>Storage Gateway User Guide</i>.</p> <important>
 /// <ul>
 /// <li> <p>Wait at least 60 seconds between consecutive RefreshCache API requests.</p> </li>
-/// <li> <p>RefreshCache does not evict cache entries if invoked consecutively within 60 seconds of a previous RefreshCache request.</p> </li>
 /// <li> <p>If you invoke the RefreshCache API when two requests are already being processed, any new request will cause an <code>InvalidGatewayRequestException</code> error because too many requests were sent to the server.</p> </li>
 /// </ul>
 /// </important> <note>

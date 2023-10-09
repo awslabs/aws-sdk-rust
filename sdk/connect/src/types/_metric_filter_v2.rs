@@ -11,6 +11,8 @@ pub struct MetricFilterV2 {
     /// <p>Valid metric filter values for <code>INITIATION_METHOD</code>: <code>INBOUND</code> | <code>OUTBOUND</code> | <code>TRANSFER</code> | <code>QUEUE_TRANSFER</code> | <code>CALLBACK</code> | <code>API</code> </p>
     /// <p>Valid metric filter values for <code>DISCONNECT_REASON</code>: <code>CUSTOMER_DISCONNECT</code> | <code>AGENT_DISCONNECT</code> | <code>THIRD_PARTY_DISCONNECT</code> | <code>TELECOM_PROBLEM</code> | <code>BARGED</code> | <code>CONTACT_FLOW_DISCONNECT</code> | <code>OTHER</code> | <code>EXPIRED</code> | <code>API</code> </p>
     pub metric_filter_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The flag to use to filter on requested metric filter values or to not filter on requested metric filter values. By default the negate is <code>false</code>, which indicates to filter on the requested metric filter. </p>
+    pub negate: bool,
 }
 impl MetricFilterV2 {
     /// <p>The key to use for filtering data. </p>
@@ -23,6 +25,10 @@ impl MetricFilterV2 {
     /// <p>Valid metric filter values for <code>DISCONNECT_REASON</code>: <code>CUSTOMER_DISCONNECT</code> | <code>AGENT_DISCONNECT</code> | <code>THIRD_PARTY_DISCONNECT</code> | <code>TELECOM_PROBLEM</code> | <code>BARGED</code> | <code>CONTACT_FLOW_DISCONNECT</code> | <code>OTHER</code> | <code>EXPIRED</code> | <code>API</code> </p>
     pub fn metric_filter_values(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.metric_filter_values.as_deref()
+    }
+    /// <p>The flag to use to filter on requested metric filter values or to not filter on requested metric filter values. By default the negate is <code>false</code>, which indicates to filter on the requested metric filter. </p>
+    pub fn negate(&self) -> bool {
+        self.negate
     }
 }
 impl MetricFilterV2 {
@@ -38,6 +44,7 @@ impl MetricFilterV2 {
 pub struct MetricFilterV2Builder {
     pub(crate) metric_filter_key: ::std::option::Option<::std::string::String>,
     pub(crate) metric_filter_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) negate: ::std::option::Option<bool>,
 }
 impl MetricFilterV2Builder {
     /// <p>The key to use for filtering data. </p>
@@ -83,11 +90,26 @@ impl MetricFilterV2Builder {
     pub fn get_metric_filter_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.metric_filter_values
     }
+    /// <p>The flag to use to filter on requested metric filter values or to not filter on requested metric filter values. By default the negate is <code>false</code>, which indicates to filter on the requested metric filter. </p>
+    pub fn negate(mut self, input: bool) -> Self {
+        self.negate = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The flag to use to filter on requested metric filter values or to not filter on requested metric filter values. By default the negate is <code>false</code>, which indicates to filter on the requested metric filter. </p>
+    pub fn set_negate(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.negate = input;
+        self
+    }
+    /// <p>The flag to use to filter on requested metric filter values or to not filter on requested metric filter values. By default the negate is <code>false</code>, which indicates to filter on the requested metric filter. </p>
+    pub fn get_negate(&self) -> &::std::option::Option<bool> {
+        &self.negate
+    }
     /// Consumes the builder and constructs a [`MetricFilterV2`](crate::types::MetricFilterV2).
     pub fn build(self) -> crate::types::MetricFilterV2 {
         crate::types::MetricFilterV2 {
             metric_filter_key: self.metric_filter_key,
             metric_filter_values: self.metric_filter_values,
+            negate: self.negate.unwrap_or_default(),
         }
     }
 }

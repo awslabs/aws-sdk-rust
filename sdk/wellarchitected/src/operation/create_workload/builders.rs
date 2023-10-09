@@ -28,6 +28,13 @@ impl CreateWorkloadInputBuilder {
 /// <p>Either <code>AwsRegions</code>, <code>NonAwsRegions</code>, or both must be specified when creating a workload.</p>
 /// <p>You also must specify <code>ReviewOwner</code>, even though the parameter is listed as not being required in the following section. </p>
 /// </important>
+/// <p>When creating a workload using a review template, you must have the following IAM permissions:</p>
+/// <ul>
+/// <li> <p> <code>wellarchitected:GetReviewTemplate</code> </p> </li>
+/// <li> <p> <code>wellarchitected:GetReviewTemplateAnswer</code> </p> </li>
+/// <li> <p> <code>wellarchitected:ListReviewTemplateAnswers</code> </p> </li>
+/// <li> <p> <code>wellarchitected:GetReviewTemplateLensReview</code> </p> </li>
+/// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateWorkloadFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -383,30 +390,36 @@ impl CreateWorkloadFluentBuilder {
     /// To override the contents of this collection use [`set_lenses`](Self::set_lenses).
     ///
     /// <p>The list of lenses associated with the workload. Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
+    /// <p>If a review template that specifies lenses is applied to the workload, those lenses are applied to the workload in addition to these lenses.</p>
     pub fn lenses(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.lenses(input.into());
         self
     }
     /// <p>The list of lenses associated with the workload. Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
+    /// <p>If a review template that specifies lenses is applied to the workload, those lenses are applied to the workload in addition to these lenses.</p>
     pub fn set_lenses(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_lenses(input);
         self
     }
     /// <p>The list of lenses associated with the workload. Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
+    /// <p>If a review template that specifies lenses is applied to the workload, those lenses are applied to the workload in addition to these lenses.</p>
     pub fn get_lenses(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_lenses()
     }
     /// <p>The notes associated with the workload.</p>
+    /// <p>For a review template, these are the notes that will be associated with the workload when the template is applied.</p>
     pub fn notes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.notes(input.into());
         self
     }
     /// <p>The notes associated with the workload.</p>
+    /// <p>For a review template, these are the notes that will be associated with the workload when the template is applied.</p>
     pub fn set_notes(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_notes(input);
         self
     }
     /// <p>The notes associated with the workload.</p>
+    /// <p>For a review template, these are the notes that will be associated with the workload when the template is applied.</p>
     pub fn get_notes(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_notes()
     }
@@ -500,5 +513,23 @@ impl CreateWorkloadFluentBuilder {
     /// <p>The list of profile ARNs associated with the workload.</p>
     pub fn get_profile_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_profile_arns()
+    }
+    /// Appends an item to `ReviewTemplateArns`.
+    ///
+    /// To override the contents of this collection use [`set_review_template_arns`](Self::set_review_template_arns).
+    ///
+    /// <p>The list of review template ARNs to associate with the workload.</p>
+    pub fn review_template_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.review_template_arns(input.into());
+        self
+    }
+    /// <p>The list of review template ARNs to associate with the workload.</p>
+    pub fn set_review_template_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.inner = self.inner.set_review_template_arns(input);
+        self
+    }
+    /// <p>The list of review template ARNs to associate with the workload.</p>
+    pub fn get_review_template_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_review_template_arns()
     }
 }

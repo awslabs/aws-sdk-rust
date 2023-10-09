@@ -18,6 +18,12 @@ pub fn ser_redshift_parameters(
     if let Some(var_3) = &input.cluster_id {
         object.key("ClusterId").string(var_3.as_str());
     }
+    if let Some(var_4) = &input.iam_parameters {
+        #[allow(unused_mut)]
+        let mut object_5 = object.key("IAMParameters").start_object();
+        crate::protocol_serde::shape_redshift_iam_parameters::ser_redshift_iam_parameters(&mut object_5, var_4)?;
+        object_5.finish();
+    }
     Ok(())
 }
 
@@ -63,6 +69,10 @@ where
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
                             );
+                        }
+                        "IAMParameters" => {
+                            builder =
+                                builder.set_iam_parameters(crate::protocol_serde::shape_redshift_iam_parameters::de_redshift_iam_parameters(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

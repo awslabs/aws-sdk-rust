@@ -10,7 +10,7 @@ pub struct SourceRegion {
     pub endpoint: ::std::option::Option<::std::string::String>,
     /// <p>The status of the source Amazon Web Services Region.</p>
     pub status: ::std::option::Option<::std::string::String>,
-    /// <p>Whether the source Amazon Web Services Region supports replicating automated backups to the current Amazon Web Services Region.</p>
+    /// <p>Indicates whether the source Amazon Web Services Region supports replicating automated backups to the current Amazon Web Services Region.</p>
     pub supports_db_instance_automated_backups_replication: bool,
 }
 impl SourceRegion {
@@ -26,7 +26,7 @@ impl SourceRegion {
     pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
     }
-    /// <p>Whether the source Amazon Web Services Region supports replicating automated backups to the current Amazon Web Services Region.</p>
+    /// <p>Indicates whether the source Amazon Web Services Region supports replicating automated backups to the current Amazon Web Services Region.</p>
     pub fn supports_db_instance_automated_backups_replication(&self) -> bool {
         self.supports_db_instance_automated_backups_replication
     }
@@ -90,17 +90,17 @@ impl SourceRegionBuilder {
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.status
     }
-    /// <p>Whether the source Amazon Web Services Region supports replicating automated backups to the current Amazon Web Services Region.</p>
+    /// <p>Indicates whether the source Amazon Web Services Region supports replicating automated backups to the current Amazon Web Services Region.</p>
     pub fn supports_db_instance_automated_backups_replication(mut self, input: bool) -> Self {
         self.supports_db_instance_automated_backups_replication = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Whether the source Amazon Web Services Region supports replicating automated backups to the current Amazon Web Services Region.</p>
+    /// <p>Indicates whether the source Amazon Web Services Region supports replicating automated backups to the current Amazon Web Services Region.</p>
     pub fn set_supports_db_instance_automated_backups_replication(mut self, input: ::std::option::Option<bool>) -> Self {
         self.supports_db_instance_automated_backups_replication = input;
         self
     }
-    /// <p>Whether the source Amazon Web Services Region supports replicating automated backups to the current Amazon Web Services Region.</p>
+    /// <p>Indicates whether the source Amazon Web Services Region supports replicating automated backups to the current Amazon Web Services Region.</p>
     pub fn get_supports_db_instance_automated_backups_replication(&self) -> &::std::option::Option<bool> {
         &self.supports_db_instance_automated_backups_replication
     }

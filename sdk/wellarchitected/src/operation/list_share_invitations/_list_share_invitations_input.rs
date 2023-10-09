@@ -14,8 +14,10 @@ pub struct ListShareInvitationsInput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return for this request.</p>
     pub max_results: ::std::option::Option<i32>,
-    /// <p>Profile name prefix.</p>
+    /// <p>An optional string added to the beginning of each profile name returned in the results.</p>
     pub profile_name_prefix: ::std::option::Option<::std::string::String>,
+    /// <p>An optional string added to the beginning of each review template name returned in the results.</p>
+    pub template_name_prefix: ::std::option::Option<::std::string::String>,
 }
 impl ListShareInvitationsInput {
     /// <p>An optional string added to the beginning of each workload name returned in the results.</p>
@@ -38,9 +40,13 @@ impl ListShareInvitationsInput {
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
-    /// <p>Profile name prefix.</p>
+    /// <p>An optional string added to the beginning of each profile name returned in the results.</p>
     pub fn profile_name_prefix(&self) -> ::std::option::Option<&str> {
         self.profile_name_prefix.as_deref()
+    }
+    /// <p>An optional string added to the beginning of each review template name returned in the results.</p>
+    pub fn template_name_prefix(&self) -> ::std::option::Option<&str> {
+        self.template_name_prefix.as_deref()
     }
 }
 impl ListShareInvitationsInput {
@@ -60,6 +66,7 @@ pub struct ListShareInvitationsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) profile_name_prefix: ::std::option::Option<::std::string::String>,
+    pub(crate) template_name_prefix: ::std::option::Option<::std::string::String>,
 }
 impl ListShareInvitationsInputBuilder {
     /// <p>An optional string added to the beginning of each workload name returned in the results.</p>
@@ -132,19 +139,33 @@ impl ListShareInvitationsInputBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
-    /// <p>Profile name prefix.</p>
+    /// <p>An optional string added to the beginning of each profile name returned in the results.</p>
     pub fn profile_name_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.profile_name_prefix = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Profile name prefix.</p>
+    /// <p>An optional string added to the beginning of each profile name returned in the results.</p>
     pub fn set_profile_name_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.profile_name_prefix = input;
         self
     }
-    /// <p>Profile name prefix.</p>
+    /// <p>An optional string added to the beginning of each profile name returned in the results.</p>
     pub fn get_profile_name_prefix(&self) -> &::std::option::Option<::std::string::String> {
         &self.profile_name_prefix
+    }
+    /// <p>An optional string added to the beginning of each review template name returned in the results.</p>
+    pub fn template_name_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.template_name_prefix = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>An optional string added to the beginning of each review template name returned in the results.</p>
+    pub fn set_template_name_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.template_name_prefix = input;
+        self
+    }
+    /// <p>An optional string added to the beginning of each review template name returned in the results.</p>
+    pub fn get_template_name_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_name_prefix
     }
     /// Consumes the builder and constructs a [`ListShareInvitationsInput`](crate::operation::list_share_invitations::ListShareInvitationsInput).
     pub fn build(
@@ -158,6 +179,7 @@ impl ListShareInvitationsInputBuilder {
             next_token: self.next_token,
             max_results: self.max_results,
             profile_name_prefix: self.profile_name_prefix,
+            template_name_prefix: self.template_name_prefix,
         })
     }
 }

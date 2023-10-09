@@ -100,6 +100,9 @@ pub mod release_file_system_nfs_v3_locks;
 /// Types for the `RestoreVolumeFromSnapshot` operation.
 pub mod restore_volume_from_snapshot;
 
+/// Types for the `StartMisconfiguredStateRecovery` operation.
+pub mod start_misconfigured_state_recovery;
+
 /// Types for the `TagResource` operation.
 pub mod tag_resource;
 

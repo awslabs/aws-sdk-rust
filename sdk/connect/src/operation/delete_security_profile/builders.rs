@@ -22,7 +22,6 @@ impl DeleteSecurityProfileInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteSecurityProfile`.
 ///
-/// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
 /// <p>Deletes a security profile.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteSecurityProfileFluentBuilder {

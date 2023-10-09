@@ -22,6 +22,7 @@ pub struct LensReview {
     /// <p>The date and time recorded.</p>
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The notes associated with the workload.</p>
+    /// <p>For a review template, these are the notes that will be associated with the workload when the template is applied.</p>
     pub notes: ::std::option::Option<::std::string::String>,
     /// <p>A map from risk names to the count of how many questions have that rating.</p>
     pub risk_counts: ::std::option::Option<::std::collections::HashMap<crate::types::Risk, i32>>,
@@ -65,6 +66,7 @@ impl LensReview {
         self.updated_at.as_ref()
     }
     /// <p>The notes associated with the workload.</p>
+    /// <p>For a review template, these are the notes that will be associated with the workload when the template is applied.</p>
     pub fn notes(&self) -> ::std::option::Option<&str> {
         self.notes.as_deref()
     }
@@ -224,16 +226,19 @@ impl LensReviewBuilder {
         &self.updated_at
     }
     /// <p>The notes associated with the workload.</p>
+    /// <p>For a review template, these are the notes that will be associated with the workload when the template is applied.</p>
     pub fn notes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.notes = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The notes associated with the workload.</p>
+    /// <p>For a review template, these are the notes that will be associated with the workload when the template is applied.</p>
     pub fn set_notes(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.notes = input;
         self
     }
     /// <p>The notes associated with the workload.</p>
+    /// <p>For a review template, these are the notes that will be associated with the workload when the template is applied.</p>
     pub fn get_notes(&self) -> &::std::option::Option<::std::string::String> {
         &self.notes
     }

@@ -19,7 +19,7 @@ pub struct DescribeReservedDbInstancesOfferingsInput {
     /// <p>The offering type filter value. Specify this parameter to show only the available offerings matching the specified offering type.</p>
     /// <p>Valid Values: <code>"Partial Upfront" | "All Upfront" | "No Upfront" </code> </p>
     pub offering_type: ::std::option::Option<::std::string::String>,
-    /// <p>A value that indicates whether to show only those reservations that support Multi-AZ.</p>
+    /// <p>Specifies whether to show only those reservations that support Multi-AZ.</p>
     pub multi_az: ::std::option::Option<bool>,
     /// <p>This parameter isn't currently supported.</p>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
@@ -56,7 +56,7 @@ impl DescribeReservedDbInstancesOfferingsInput {
     pub fn offering_type(&self) -> ::std::option::Option<&str> {
         self.offering_type.as_deref()
     }
-    /// <p>A value that indicates whether to show only those reservations that support Multi-AZ.</p>
+    /// <p>Specifies whether to show only those reservations that support Multi-AZ.</p>
     pub fn multi_az(&self) -> ::std::option::Option<bool> {
         self.multi_az
     }
@@ -182,17 +182,17 @@ impl DescribeReservedDbInstancesOfferingsInputBuilder {
     pub fn get_offering_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.offering_type
     }
-    /// <p>A value that indicates whether to show only those reservations that support Multi-AZ.</p>
+    /// <p>Specifies whether to show only those reservations that support Multi-AZ.</p>
     pub fn multi_az(mut self, input: bool) -> Self {
         self.multi_az = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A value that indicates whether to show only those reservations that support Multi-AZ.</p>
+    /// <p>Specifies whether to show only those reservations that support Multi-AZ.</p>
     pub fn set_multi_az(mut self, input: ::std::option::Option<bool>) -> Self {
         self.multi_az = input;
         self
     }
-    /// <p>A value that indicates whether to show only those reservations that support Multi-AZ.</p>
+    /// <p>Specifies whether to show only those reservations that support Multi-AZ.</p>
     pub fn get_multi_az(&self) -> &::std::option::Option<bool> {
         &self.multi_az
     }

@@ -16,6 +16,7 @@ pub struct WorkloadSummary {
     /// <p>The date and time recorded.</p>
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The list of lenses associated with the workload. Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
+    /// <p>If a review template that specifies lenses is applied to the workload, those lenses are applied to the workload in addition to these lenses.</p>
     pub lenses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A map from risk names to the count of how many questions have that rating.</p>
     pub risk_counts: ::std::option::Option<::std::collections::HashMap<crate::types::Risk, i32>>,
@@ -49,6 +50,7 @@ impl WorkloadSummary {
         self.updated_at.as_ref()
     }
     /// <p>The list of lenses associated with the workload. Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
+    /// <p>If a review template that specifies lenses is applied to the workload, those lenses are applied to the workload in addition to these lenses.</p>
     pub fn lenses(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.lenses.as_deref()
     }
@@ -170,6 +172,7 @@ impl WorkloadSummaryBuilder {
     /// To override the contents of this collection use [`set_lenses`](Self::set_lenses).
     ///
     /// <p>The list of lenses associated with the workload. Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
+    /// <p>If a review template that specifies lenses is applied to the workload, those lenses are applied to the workload in addition to these lenses.</p>
     pub fn lenses(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.lenses.unwrap_or_default();
         v.push(input.into());
@@ -177,11 +180,13 @@ impl WorkloadSummaryBuilder {
         self
     }
     /// <p>The list of lenses associated with the workload. Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
+    /// <p>If a review template that specifies lenses is applied to the workload, those lenses are applied to the workload in addition to these lenses.</p>
     pub fn set_lenses(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.lenses = input;
         self
     }
     /// <p>The list of lenses associated with the workload. Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
+    /// <p>If a review template that specifies lenses is applied to the workload, those lenses are applied to the workload in addition to these lenses.</p>
     pub fn get_lenses(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.lenses
     }

@@ -19,6 +19,7 @@ impl super::Client {
     ///   - [`application_id(Option<String>)`](crate::operation::disconnect_from_service::DisconnectFromServiceOutput::application_id): <p>Source server application ID.</p>
     ///   - [`user_provided_id(Option<String>)`](crate::operation::disconnect_from_service::DisconnectFromServiceOutput::user_provided_id): <p>Source server user provided ID.</p>
     ///   - [`fqdn_for_action_framework(Option<String>)`](crate::operation::disconnect_from_service::DisconnectFromServiceOutput::fqdn_for_action_framework): <p>Source server fqdn for action framework.</p>
+    ///   - [`connector_action(Option<SourceServerConnectorAction>)`](crate::operation::disconnect_from_service::DisconnectFromServiceOutput::connector_action): <p>Source Server connector action.</p>
     /// - On failure, responds with [`SdkError<DisconnectFromServiceError>`](crate::operation::disconnect_from_service::DisconnectFromServiceError)
     pub fn disconnect_from_service(&self) -> crate::operation::disconnect_from_service::builders::DisconnectFromServiceFluentBuilder {
         crate::operation::disconnect_from_service::builders::DisconnectFromServiceFluentBuilder::new(self.handle.clone())

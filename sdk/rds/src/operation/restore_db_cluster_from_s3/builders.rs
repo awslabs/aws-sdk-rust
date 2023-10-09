@@ -509,17 +509,17 @@ impl RestoreDBClusterFromS3FluentBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         self.inner.get_tags()
     }
-    /// <p>A value that indicates whether the restored DB cluster is encrypted.</p>
+    /// <p>Specifies whether the restored DB cluster is encrypted.</p>
     pub fn storage_encrypted(mut self, input: bool) -> Self {
         self.inner = self.inner.storage_encrypted(input);
         self
     }
-    /// <p>A value that indicates whether the restored DB cluster is encrypted.</p>
+    /// <p>Specifies whether the restored DB cluster is encrypted.</p>
     pub fn set_storage_encrypted(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_storage_encrypted(input);
         self
     }
-    /// <p>A value that indicates whether the restored DB cluster is encrypted.</p>
+    /// <p>Specifies whether the restored DB cluster is encrypted.</p>
     pub fn get_storage_encrypted(&self) -> &::std::option::Option<bool> {
         self.inner.get_storage_encrypted()
     }
@@ -543,37 +543,37 @@ impl RestoreDBClusterFromS3FluentBuilder {
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_kms_key_id()
     }
-    /// <p>A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts. By default, mapping isn't enabled.</p>
+    /// <p>Specifies whether to enable mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts. By default, mapping isn't enabled.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database Authentication</a> in the <i>Amazon Aurora User Guide</i>.</p>
     pub fn enable_iam_database_authentication(mut self, input: bool) -> Self {
         self.inner = self.inner.enable_iam_database_authentication(input);
         self
     }
-    /// <p>A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts. By default, mapping isn't enabled.</p>
+    /// <p>Specifies whether to enable mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts. By default, mapping isn't enabled.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database Authentication</a> in the <i>Amazon Aurora User Guide</i>.</p>
     pub fn set_enable_iam_database_authentication(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_enable_iam_database_authentication(input);
         self
     }
-    /// <p>A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts. By default, mapping isn't enabled.</p>
+    /// <p>Specifies whether to enable mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts. By default, mapping isn't enabled.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database Authentication</a> in the <i>Amazon Aurora User Guide</i>.</p>
     pub fn get_enable_iam_database_authentication(&self) -> &::std::option::Option<bool> {
         self.inner.get_enable_iam_database_authentication()
     }
     /// <p>The identifier for the database engine that was backed up to create the files stored in the Amazon S3 bucket.</p>
-    /// <p>Valid values: <code>mysql</code> </p>
+    /// <p>Valid Values: <code>mysql</code> </p>
     pub fn source_engine(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_engine(input.into());
         self
     }
     /// <p>The identifier for the database engine that was backed up to create the files stored in the Amazon S3 bucket.</p>
-    /// <p>Valid values: <code>mysql</code> </p>
+    /// <p>Valid Values: <code>mysql</code> </p>
     pub fn set_source_engine(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_engine(input);
         self
     }
     /// <p>The identifier for the database engine that was backed up to create the files stored in the Amazon S3 bucket.</p>
-    /// <p>Valid values: <code>mysql</code> </p>
+    /// <p>Valid Values: <code>mysql</code> </p>
     pub fn get_source_engine(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_source_engine()
     }
@@ -701,31 +701,31 @@ impl RestoreDBClusterFromS3FluentBuilder {
     pub fn get_enable_cloudwatch_logs_exports(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_enable_cloudwatch_logs_exports()
     }
-    /// <p>A value that indicates whether the DB cluster has deletion protection enabled. The database can't be deleted when deletion protection is enabled. By default, deletion protection isn't enabled.</p>
+    /// <p>Specifies whether to enable deletion protection for the DB cluster. The database can't be deleted when deletion protection is enabled. By default, deletion protection isn't enabled.</p>
     pub fn deletion_protection(mut self, input: bool) -> Self {
         self.inner = self.inner.deletion_protection(input);
         self
     }
-    /// <p>A value that indicates whether the DB cluster has deletion protection enabled. The database can't be deleted when deletion protection is enabled. By default, deletion protection isn't enabled.</p>
+    /// <p>Specifies whether to enable deletion protection for the DB cluster. The database can't be deleted when deletion protection is enabled. By default, deletion protection isn't enabled.</p>
     pub fn set_deletion_protection(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_deletion_protection(input);
         self
     }
-    /// <p>A value that indicates whether the DB cluster has deletion protection enabled. The database can't be deleted when deletion protection is enabled. By default, deletion protection isn't enabled.</p>
+    /// <p>Specifies whether to enable deletion protection for the DB cluster. The database can't be deleted when deletion protection is enabled. By default, deletion protection isn't enabled.</p>
     pub fn get_deletion_protection(&self) -> &::std::option::Option<bool> {
         self.inner.get_deletion_protection()
     }
-    /// <p>A value that indicates whether to copy all tags from the restored DB cluster to snapshots of the restored DB cluster. The default is not to copy them.</p>
+    /// <p>Specifies whether to copy all tags from the restored DB cluster to snapshots of the restored DB cluster. The default is not to copy them.</p>
     pub fn copy_tags_to_snapshot(mut self, input: bool) -> Self {
         self.inner = self.inner.copy_tags_to_snapshot(input);
         self
     }
-    /// <p>A value that indicates whether to copy all tags from the restored DB cluster to snapshots of the restored DB cluster. The default is not to copy them.</p>
+    /// <p>Specifies whether to copy all tags from the restored DB cluster to snapshots of the restored DB cluster. The default is not to copy them.</p>
     pub fn set_copy_tags_to_snapshot(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_copy_tags_to_snapshot(input);
         self
     }
-    /// <p>A value that indicates whether to copy all tags from the restored DB cluster to snapshots of the restored DB cluster. The default is not to copy them.</p>
+    /// <p>Specifies whether to copy all tags from the restored DB cluster to snapshots of the restored DB cluster. The default is not to copy them.</p>
     pub fn get_copy_tags_to_snapshot(&self) -> &::std::option::Option<bool> {
         self.inner.get_copy_tags_to_snapshot()
     }
@@ -778,7 +778,7 @@ impl RestoreDBClusterFromS3FluentBuilder {
         self.inner.get_serverless_v2_scaling_configuration()
     }
     /// <p>The network type of the DB cluster.</p>
-    /// <p>Valid values:</p>
+    /// <p>Valid Values:</p>
     /// <ul>
     /// <li> <p> <code>IPV4</code> </p> </li>
     /// <li> <p> <code>DUAL</code> </p> </li>
@@ -790,7 +790,7 @@ impl RestoreDBClusterFromS3FluentBuilder {
         self
     }
     /// <p>The network type of the DB cluster.</p>
-    /// <p>Valid values:</p>
+    /// <p>Valid Values:</p>
     /// <ul>
     /// <li> <p> <code>IPV4</code> </p> </li>
     /// <li> <p> <code>DUAL</code> </p> </li>
@@ -802,7 +802,7 @@ impl RestoreDBClusterFromS3FluentBuilder {
         self
     }
     /// <p>The network type of the DB cluster.</p>
-    /// <p>Valid values:</p>
+    /// <p>Valid Values:</p>
     /// <ul>
     /// <li> <p> <code>IPV4</code> </p> </li>
     /// <li> <p> <code>DUAL</code> </p> </li>
@@ -812,7 +812,7 @@ impl RestoreDBClusterFromS3FluentBuilder {
     pub fn get_network_type(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_network_type()
     }
-    /// <p>A value that indicates whether to manage the master user password with Amazon Web Services Secrets Manager.</p>
+    /// <p>Specifies whether to manage the master user password with Amazon Web Services Secrets Manager.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon Aurora User Guide.</i> </p>
     /// <p>Constraints:</p>
     /// <ul>
@@ -822,7 +822,7 @@ impl RestoreDBClusterFromS3FluentBuilder {
         self.inner = self.inner.manage_master_user_password(input);
         self
     }
-    /// <p>A value that indicates whether to manage the master user password with Amazon Web Services Secrets Manager.</p>
+    /// <p>Specifies whether to manage the master user password with Amazon Web Services Secrets Manager.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon Aurora User Guide.</i> </p>
     /// <p>Constraints:</p>
     /// <ul>
@@ -832,7 +832,7 @@ impl RestoreDBClusterFromS3FluentBuilder {
         self.inner = self.inner.set_manage_master_user_password(input);
         self
     }
-    /// <p>A value that indicates whether to manage the master user password with Amazon Web Services Secrets Manager.</p>
+    /// <p>Specifies whether to manage the master user password with Amazon Web Services Secrets Manager.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon Aurora User Guide.</i> </p>
     /// <p>Constraints:</p>
     /// <ul>
@@ -868,7 +868,7 @@ impl RestoreDBClusterFromS3FluentBuilder {
         self.inner.get_master_user_secret_kms_key_id()
     }
     /// <p>Specifies the storage type to be associated with the DB cluster.</p>
-    /// <p>Valid values: <code>aurora</code>, <code>aurora-iopt1</code> </p>
+    /// <p>Valid Values: <code>aurora</code>, <code>aurora-iopt1</code> </p>
     /// <p>Default: <code>aurora</code> </p>
     /// <p>Valid for: Aurora DB clusters only</p>
     pub fn storage_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -876,7 +876,7 @@ impl RestoreDBClusterFromS3FluentBuilder {
         self
     }
     /// <p>Specifies the storage type to be associated with the DB cluster.</p>
-    /// <p>Valid values: <code>aurora</code>, <code>aurora-iopt1</code> </p>
+    /// <p>Valid Values: <code>aurora</code>, <code>aurora-iopt1</code> </p>
     /// <p>Default: <code>aurora</code> </p>
     /// <p>Valid for: Aurora DB clusters only</p>
     pub fn set_storage_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -884,7 +884,7 @@ impl RestoreDBClusterFromS3FluentBuilder {
         self
     }
     /// <p>Specifies the storage type to be associated with the DB cluster.</p>
-    /// <p>Valid values: <code>aurora</code>, <code>aurora-iopt1</code> </p>
+    /// <p>Valid Values: <code>aurora</code>, <code>aurora-iopt1</code> </p>
     /// <p>Default: <code>aurora</code> </p>
     /// <p>Valid for: Aurora DB clusters only</p>
     pub fn get_storage_type(&self) -> &::std::option::Option<::std::string::String> {

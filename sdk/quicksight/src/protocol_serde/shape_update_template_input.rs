@@ -18,8 +18,14 @@ pub fn ser_update_template_input(
         crate::protocol_serde::shape_template_source_entity::ser_template_source_entity(&mut object_5, var_4)?;
         object_5.finish();
     }
-    if let Some(var_6) = &input.version_description {
-        object.key("VersionDescription").string(var_6.as_str());
+    if let Some(var_6) = &input.validation_strategy {
+        #[allow(unused_mut)]
+        let mut object_7 = object.key("ValidationStrategy").start_object();
+        crate::protocol_serde::shape_validation_strategy::ser_validation_strategy(&mut object_7, var_6)?;
+        object_7.finish();
+    }
+    if let Some(var_8) = &input.version_description {
+        object.key("VersionDescription").string(var_8.as_str());
     }
     Ok(())
 }

@@ -32,6 +32,8 @@ pub struct ReadSetListItem {
     pub status_message: ::std::option::Option<::std::string::String>,
     /// <p> The creation type of the read set. </p>
     pub creation_type: ::std::option::Option<crate::types::CreationType>,
+    /// <p> The entity tag (ETag) is a hash of the object representing its semantic content. </p>
+    pub etag: ::std::option::Option<crate::types::ETag>,
 }
 impl ReadSetListItem {
     /// <p>The read set's ID.</p>
@@ -90,6 +92,10 @@ impl ReadSetListItem {
     pub fn creation_type(&self) -> ::std::option::Option<&crate::types::CreationType> {
         self.creation_type.as_ref()
     }
+    /// <p> The entity tag (ETag) is a hash of the object representing its semantic content. </p>
+    pub fn etag(&self) -> ::std::option::Option<&crate::types::ETag> {
+        self.etag.as_ref()
+    }
 }
 impl ReadSetListItem {
     /// Creates a new builder-style object to manufacture [`ReadSetListItem`](crate::types::ReadSetListItem).
@@ -116,6 +122,7 @@ pub struct ReadSetListItemBuilder {
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) status_message: ::std::option::Option<::std::string::String>,
     pub(crate) creation_type: ::std::option::Option<crate::types::CreationType>,
+    pub(crate) etag: ::std::option::Option<crate::types::ETag>,
 }
 impl ReadSetListItemBuilder {
     /// <p>The read set's ID.</p>
@@ -314,6 +321,20 @@ impl ReadSetListItemBuilder {
     pub fn get_creation_type(&self) -> &::std::option::Option<crate::types::CreationType> {
         &self.creation_type
     }
+    /// <p> The entity tag (ETag) is a hash of the object representing its semantic content. </p>
+    pub fn etag(mut self, input: crate::types::ETag) -> Self {
+        self.etag = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p> The entity tag (ETag) is a hash of the object representing its semantic content. </p>
+    pub fn set_etag(mut self, input: ::std::option::Option<crate::types::ETag>) -> Self {
+        self.etag = input;
+        self
+    }
+    /// <p> The entity tag (ETag) is a hash of the object representing its semantic content. </p>
+    pub fn get_etag(&self) -> &::std::option::Option<crate::types::ETag> {
+        &self.etag
+    }
     /// Consumes the builder and constructs a [`ReadSetListItem`](crate::types::ReadSetListItem).
     pub fn build(self) -> crate::types::ReadSetListItem {
         crate::types::ReadSetListItem {
@@ -331,6 +352,7 @@ impl ReadSetListItemBuilder {
             creation_time: self.creation_time,
             status_message: self.status_message,
             creation_type: self.creation_type,
+            etag: self.etag,
         }
     }
 }

@@ -12,8 +12,6 @@ pub struct JobTemplateSettings {
     pub esam: ::std::option::Option<crate::types::EsamSettings>,
     /// If your source content has EIA-608 Line 21 Data Services, enable this feature to specify what MediaConvert does with the Extended Data Services (XDS) packets. You can choose to pass through XDS packets, or remove them from the output. For more information about XDS, see EIA-608 Line Data Services, section 9.5.1.5 05h Content Advisory.
     pub extended_data_services: ::std::option::Option<crate::types::ExtendedDataServices>,
-    /// Specifies which input metadata to use for the default "Follow input" option for the following settings: resolution, frame rate, and pixel aspect ratio. In the simplest case, specify which input is used based on its index in the job. For example if you specify 3, then the fourth input will be used from each input. If the job does not have a fourth input, then the first input will be used. If no followInputIndex is specified, then 0 will be chosen automatically.
-    pub follow_input_index: ::std::option::Option<i32>,
     /// Use Inputs to define the source file used in the transcode job. There can only be one input in a job template. Using the API, you can include multiple inputs when referencing a job template.
     pub inputs: ::std::option::Option<::std::vec::Vec<crate::types::InputTemplate>>,
     /// Use these settings only when you use Kantar watermarking. Specify the values that MediaConvert uses to generate and place Kantar watermarks in your output audio. These settings apply to every output in your job. In addition to specifying these values, you also need to store your Kantar credentials in AWS Secrets Manager. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/kantar-watermarking.html.
@@ -47,10 +45,6 @@ impl JobTemplateSettings {
     /// If your source content has EIA-608 Line 21 Data Services, enable this feature to specify what MediaConvert does with the Extended Data Services (XDS) packets. You can choose to pass through XDS packets, or remove them from the output. For more information about XDS, see EIA-608 Line Data Services, section 9.5.1.5 05h Content Advisory.
     pub fn extended_data_services(&self) -> ::std::option::Option<&crate::types::ExtendedDataServices> {
         self.extended_data_services.as_ref()
-    }
-    /// Specifies which input metadata to use for the default "Follow input" option for the following settings: resolution, frame rate, and pixel aspect ratio. In the simplest case, specify which input is used based on its index in the job. For example if you specify 3, then the fourth input will be used from each input. If the job does not have a fourth input, then the first input will be used. If no followInputIndex is specified, then 0 will be chosen automatically.
-    pub fn follow_input_index(&self) -> ::std::option::Option<i32> {
-        self.follow_input_index
     }
     /// Use Inputs to define the source file used in the transcode job. There can only be one input in a job template. Using the API, you can include multiple inputs when referencing a job template.
     pub fn inputs(&self) -> ::std::option::Option<&[crate::types::InputTemplate]> {
@@ -100,7 +94,6 @@ pub struct JobTemplateSettingsBuilder {
     pub(crate) avail_blanking: ::std::option::Option<crate::types::AvailBlanking>,
     pub(crate) esam: ::std::option::Option<crate::types::EsamSettings>,
     pub(crate) extended_data_services: ::std::option::Option<crate::types::ExtendedDataServices>,
-    pub(crate) follow_input_index: ::std::option::Option<i32>,
     pub(crate) inputs: ::std::option::Option<::std::vec::Vec<crate::types::InputTemplate>>,
     pub(crate) kantar_watermark: ::std::option::Option<crate::types::KantarWatermarkSettings>,
     pub(crate) motion_image_inserter: ::std::option::Option<crate::types::MotionImageInserter>,
@@ -166,20 +159,6 @@ impl JobTemplateSettingsBuilder {
     /// If your source content has EIA-608 Line 21 Data Services, enable this feature to specify what MediaConvert does with the Extended Data Services (XDS) packets. You can choose to pass through XDS packets, or remove them from the output. For more information about XDS, see EIA-608 Line Data Services, section 9.5.1.5 05h Content Advisory.
     pub fn get_extended_data_services(&self) -> &::std::option::Option<crate::types::ExtendedDataServices> {
         &self.extended_data_services
-    }
-    /// Specifies which input metadata to use for the default "Follow input" option for the following settings: resolution, frame rate, and pixel aspect ratio. In the simplest case, specify which input is used based on its index in the job. For example if you specify 3, then the fourth input will be used from each input. If the job does not have a fourth input, then the first input will be used. If no followInputIndex is specified, then 0 will be chosen automatically.
-    pub fn follow_input_index(mut self, input: i32) -> Self {
-        self.follow_input_index = ::std::option::Option::Some(input);
-        self
-    }
-    /// Specifies which input metadata to use for the default "Follow input" option for the following settings: resolution, frame rate, and pixel aspect ratio. In the simplest case, specify which input is used based on its index in the job. For example if you specify 3, then the fourth input will be used from each input. If the job does not have a fourth input, then the first input will be used. If no followInputIndex is specified, then 0 will be chosen automatically.
-    pub fn set_follow_input_index(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.follow_input_index = input;
-        self
-    }
-    /// Specifies which input metadata to use for the default "Follow input" option for the following settings: resolution, frame rate, and pixel aspect ratio. In the simplest case, specify which input is used based on its index in the job. For example if you specify 3, then the fourth input will be used from each input. If the job does not have a fourth input, then the first input will be used. If no followInputIndex is specified, then 0 will be chosen automatically.
-    pub fn get_follow_input_index(&self) -> &::std::option::Option<i32> {
-        &self.follow_input_index
     }
     /// Appends an item to `inputs`.
     ///
@@ -312,7 +291,6 @@ impl JobTemplateSettingsBuilder {
             avail_blanking: self.avail_blanking,
             esam: self.esam,
             extended_data_services: self.extended_data_services,
-            follow_input_index: self.follow_input_index,
             inputs: self.inputs,
             kantar_watermark: self.kantar_watermark,
             motion_image_inserter: self.motion_image_inserter,

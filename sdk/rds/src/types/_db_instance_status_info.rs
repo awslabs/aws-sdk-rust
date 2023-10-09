@@ -6,9 +6,9 @@
 pub struct DbInstanceStatusInfo {
     /// <p>This value is currently "read replication."</p>
     pub status_type: ::std::option::Option<::std::string::String>,
-    /// <p>Boolean value that is true if the instance is operating normally, or false if the instance is in an error state.</p>
+    /// <p>A Boolean value that is true if the instance is operating normally, or false if the instance is in an error state.</p>
     pub normal: bool,
-    /// <p>Status of the DB instance. For a StatusType of read replica, the values can be replicating, replication stop point set, replication stop point reached, error, stopped, or terminated.</p>
+    /// <p>The status of the DB instance. For a StatusType of read replica, the values can be replicating, replication stop point set, replication stop point reached, error, stopped, or terminated.</p>
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>Details of the error if there is an error for the instance. If the instance isn't in an error state, this value is blank.</p>
     pub message: ::std::option::Option<::std::string::String>,
@@ -18,11 +18,11 @@ impl DbInstanceStatusInfo {
     pub fn status_type(&self) -> ::std::option::Option<&str> {
         self.status_type.as_deref()
     }
-    /// <p>Boolean value that is true if the instance is operating normally, or false if the instance is in an error state.</p>
+    /// <p>A Boolean value that is true if the instance is operating normally, or false if the instance is in an error state.</p>
     pub fn normal(&self) -> bool {
         self.normal
     }
-    /// <p>Status of the DB instance. For a StatusType of read replica, the values can be replicating, replication stop point set, replication stop point reached, error, stopped, or terminated.</p>
+    /// <p>The status of the DB instance. For a StatusType of read replica, the values can be replicating, replication stop point set, replication stop point reached, error, stopped, or terminated.</p>
     pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
     }
@@ -62,31 +62,31 @@ impl DbInstanceStatusInfoBuilder {
     pub fn get_status_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.status_type
     }
-    /// <p>Boolean value that is true if the instance is operating normally, or false if the instance is in an error state.</p>
+    /// <p>A Boolean value that is true if the instance is operating normally, or false if the instance is in an error state.</p>
     pub fn normal(mut self, input: bool) -> Self {
         self.normal = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Boolean value that is true if the instance is operating normally, or false if the instance is in an error state.</p>
+    /// <p>A Boolean value that is true if the instance is operating normally, or false if the instance is in an error state.</p>
     pub fn set_normal(mut self, input: ::std::option::Option<bool>) -> Self {
         self.normal = input;
         self
     }
-    /// <p>Boolean value that is true if the instance is operating normally, or false if the instance is in an error state.</p>
+    /// <p>A Boolean value that is true if the instance is operating normally, or false if the instance is in an error state.</p>
     pub fn get_normal(&self) -> &::std::option::Option<bool> {
         &self.normal
     }
-    /// <p>Status of the DB instance. For a StatusType of read replica, the values can be replicating, replication stop point set, replication stop point reached, error, stopped, or terminated.</p>
+    /// <p>The status of the DB instance. For a StatusType of read replica, the values can be replicating, replication stop point set, replication stop point reached, error, stopped, or terminated.</p>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Status of the DB instance. For a StatusType of read replica, the values can be replicating, replication stop point set, replication stop point reached, error, stopped, or terminated.</p>
+    /// <p>The status of the DB instance. For a StatusType of read replica, the values can be replicating, replication stop point set, replication stop point reached, error, stopped, or terminated.</p>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
     }
-    /// <p>Status of the DB instance. For a StatusType of read replica, the values can be replicating, replication stop point set, replication stop point reached, error, stopped, or terminated.</p>
+    /// <p>The status of the DB instance. For a StatusType of read replica, the values can be replicating, replication stop point set, replication stop point reached, error, stopped, or terminated.</p>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.status
     }

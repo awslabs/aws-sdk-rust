@@ -6,7 +6,7 @@
 pub struct DbClusterMember {
     /// <p>Specifies the instance identifier for this member of the DB cluster.</p>
     pub db_instance_identifier: ::std::option::Option<::std::string::String>,
-    /// <p>Value that is <code>true</code> if the cluster member is the primary instance for the DB cluster and <code>false</code> otherwise.</p>
+    /// <p>Indicates whether the cluster member is the primary DB instance for the DB cluster.</p>
     pub is_cluster_writer: bool,
     /// <p>Specifies the status of the DB cluster parameter group for this member of the DB cluster.</p>
     pub db_cluster_parameter_group_status: ::std::option::Option<::std::string::String>,
@@ -18,7 +18,7 @@ impl DbClusterMember {
     pub fn db_instance_identifier(&self) -> ::std::option::Option<&str> {
         self.db_instance_identifier.as_deref()
     }
-    /// <p>Value that is <code>true</code> if the cluster member is the primary instance for the DB cluster and <code>false</code> otherwise.</p>
+    /// <p>Indicates whether the cluster member is the primary DB instance for the DB cluster.</p>
     pub fn is_cluster_writer(&self) -> bool {
         self.is_cluster_writer
     }
@@ -62,17 +62,17 @@ impl DbClusterMemberBuilder {
     pub fn get_db_instance_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.db_instance_identifier
     }
-    /// <p>Value that is <code>true</code> if the cluster member is the primary instance for the DB cluster and <code>false</code> otherwise.</p>
+    /// <p>Indicates whether the cluster member is the primary DB instance for the DB cluster.</p>
     pub fn is_cluster_writer(mut self, input: bool) -> Self {
         self.is_cluster_writer = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Value that is <code>true</code> if the cluster member is the primary instance for the DB cluster and <code>false</code> otherwise.</p>
+    /// <p>Indicates whether the cluster member is the primary DB instance for the DB cluster.</p>
     pub fn set_is_cluster_writer(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_cluster_writer = input;
         self
     }
-    /// <p>Value that is <code>true</code> if the cluster member is the primary instance for the DB cluster and <code>false</code> otherwise.</p>
+    /// <p>Indicates whether the cluster member is the primary DB instance for the DB cluster.</p>
     pub fn get_is_cluster_writer(&self) -> &::std::option::Option<bool> {
         &self.is_cluster_writer
     }

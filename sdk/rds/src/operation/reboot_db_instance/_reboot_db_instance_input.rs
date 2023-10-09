@@ -10,7 +10,7 @@ pub struct RebootDbInstanceInput {
     /// <li> <p>Must match the identifier of an existing DBInstance.</p> </li>
     /// </ul>
     pub db_instance_identifier: ::std::option::Option<::std::string::String>,
-    /// <p>A value that indicates whether the reboot is conducted through a Multi-AZ failover.</p>
+    /// <p>Specifies whether the reboot is conducted through a Multi-AZ failover.</p>
     /// <p>Constraint: You can't enable force failover if the instance isn't configured for Multi-AZ.</p>
     pub force_failover: ::std::option::Option<bool>,
 }
@@ -23,7 +23,7 @@ impl RebootDbInstanceInput {
     pub fn db_instance_identifier(&self) -> ::std::option::Option<&str> {
         self.db_instance_identifier.as_deref()
     }
-    /// <p>A value that indicates whether the reboot is conducted through a Multi-AZ failover.</p>
+    /// <p>Specifies whether the reboot is conducted through a Multi-AZ failover.</p>
     /// <p>Constraint: You can't enable force failover if the instance isn't configured for Multi-AZ.</p>
     pub fn force_failover(&self) -> ::std::option::Option<bool> {
         self.force_failover
@@ -70,19 +70,19 @@ impl RebootDbInstanceInputBuilder {
     pub fn get_db_instance_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.db_instance_identifier
     }
-    /// <p>A value that indicates whether the reboot is conducted through a Multi-AZ failover.</p>
+    /// <p>Specifies whether the reboot is conducted through a Multi-AZ failover.</p>
     /// <p>Constraint: You can't enable force failover if the instance isn't configured for Multi-AZ.</p>
     pub fn force_failover(mut self, input: bool) -> Self {
         self.force_failover = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A value that indicates whether the reboot is conducted through a Multi-AZ failover.</p>
+    /// <p>Specifies whether the reboot is conducted through a Multi-AZ failover.</p>
     /// <p>Constraint: You can't enable force failover if the instance isn't configured for Multi-AZ.</p>
     pub fn set_force_failover(mut self, input: ::std::option::Option<bool>) -> Self {
         self.force_failover = input;
         self
     }
-    /// <p>A value that indicates whether the reboot is conducted through a Multi-AZ failover.</p>
+    /// <p>Specifies whether the reboot is conducted through a Multi-AZ failover.</p>
     /// <p>Constraint: You can't enable force failover if the instance isn't configured for Multi-AZ.</p>
     pub fn get_force_failover(&self) -> &::std::option::Option<bool> {
         &self.force_failover

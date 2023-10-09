@@ -8,7 +8,7 @@ pub struct ListLensSharesInput {
     /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>. </p>
     /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     pub lens_alias: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the lens is shared.</p>
+    /// <p>The Amazon Web Services account ID, organization ID, or organizational unit (OU) ID with which the lens is shared.</p>
     pub shared_with_prefix: ::std::option::Option<::std::string::String>,
     /// <p>The token to use to retrieve the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -25,7 +25,7 @@ impl ListLensSharesInput {
     pub fn lens_alias(&self) -> ::std::option::Option<&str> {
         self.lens_alias.as_deref()
     }
-    /// <p>The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the lens is shared.</p>
+    /// <p>The Amazon Web Services account ID, organization ID, or organizational unit (OU) ID with which the lens is shared.</p>
     pub fn shared_with_prefix(&self) -> ::std::option::Option<&str> {
         self.shared_with_prefix.as_deref()
     }
@@ -83,17 +83,17 @@ impl ListLensSharesInputBuilder {
     pub fn get_lens_alias(&self) -> &::std::option::Option<::std::string::String> {
         &self.lens_alias
     }
-    /// <p>The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the lens is shared.</p>
+    /// <p>The Amazon Web Services account ID, organization ID, or organizational unit (OU) ID with which the lens is shared.</p>
     pub fn shared_with_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.shared_with_prefix = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the lens is shared.</p>
+    /// <p>The Amazon Web Services account ID, organization ID, or organizational unit (OU) ID with which the lens is shared.</p>
     pub fn set_shared_with_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.shared_with_prefix = input;
         self
     }
-    /// <p>The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the lens is shared.</p>
+    /// <p>The Amazon Web Services account ID, organization ID, or organizational unit (OU) ID with which the lens is shared.</p>
     pub fn get_shared_with_prefix(&self) -> &::std::option::Option<::std::string::String> {
         &self.shared_with_prefix
     }

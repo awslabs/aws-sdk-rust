@@ -44,11 +44,11 @@ pub struct DescribeDbSnapshotsInput {
     pub max_records: ::std::option::Option<i32>,
     /// <p>An optional pagination token provided by a previous <code>DescribeDBSnapshots</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub marker: ::std::option::Option<::std::string::String>,
-    /// <p>A value that indicates whether to include shared manual DB cluster snapshots from other Amazon Web Services accounts that this Amazon Web Services account has been given permission to copy or restore. By default, these snapshots are not included.</p>
+    /// <p>Specifies whether to include shared manual DB cluster snapshots from other Amazon Web Services accounts that this Amazon Web Services account has been given permission to copy or restore. By default, these snapshots are not included.</p>
     /// <p>You can give an Amazon Web Services account permission to restore a manual DB snapshot from another Amazon Web Services account by using the <code>ModifyDBSnapshotAttribute</code> API action.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
     pub include_shared: ::std::option::Option<bool>,
-    /// <p>A value that indicates whether to include manual DB cluster snapshots that are public and can be copied or restored by any Amazon Web Services account. By default, the public snapshots are not included.</p>
+    /// <p>Specifies whether to include manual DB cluster snapshots that are public and can be copied or restored by any Amazon Web Services account. By default, the public snapshots are not included.</p>
     /// <p>You can share a manual DB snapshot as public by using the <code>ModifyDBSnapshotAttribute</code> API.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
     pub include_public: ::std::option::Option<bool>,
@@ -108,13 +108,13 @@ impl DescribeDbSnapshotsInput {
     pub fn marker(&self) -> ::std::option::Option<&str> {
         self.marker.as_deref()
     }
-    /// <p>A value that indicates whether to include shared manual DB cluster snapshots from other Amazon Web Services accounts that this Amazon Web Services account has been given permission to copy or restore. By default, these snapshots are not included.</p>
+    /// <p>Specifies whether to include shared manual DB cluster snapshots from other Amazon Web Services accounts that this Amazon Web Services account has been given permission to copy or restore. By default, these snapshots are not included.</p>
     /// <p>You can give an Amazon Web Services account permission to restore a manual DB snapshot from another Amazon Web Services account by using the <code>ModifyDBSnapshotAttribute</code> API action.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
     pub fn include_shared(&self) -> ::std::option::Option<bool> {
         self.include_shared
     }
-    /// <p>A value that indicates whether to include manual DB cluster snapshots that are public and can be copied or restored by any Amazon Web Services account. By default, the public snapshots are not included.</p>
+    /// <p>Specifies whether to include manual DB cluster snapshots that are public and can be copied or restored by any Amazon Web Services account. By default, the public snapshots are not included.</p>
     /// <p>You can share a manual DB snapshot as public by using the <code>ModifyDBSnapshotAttribute</code> API.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
     pub fn include_public(&self) -> ::std::option::Option<bool> {
@@ -321,41 +321,41 @@ impl DescribeDbSnapshotsInputBuilder {
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
         &self.marker
     }
-    /// <p>A value that indicates whether to include shared manual DB cluster snapshots from other Amazon Web Services accounts that this Amazon Web Services account has been given permission to copy or restore. By default, these snapshots are not included.</p>
+    /// <p>Specifies whether to include shared manual DB cluster snapshots from other Amazon Web Services accounts that this Amazon Web Services account has been given permission to copy or restore. By default, these snapshots are not included.</p>
     /// <p>You can give an Amazon Web Services account permission to restore a manual DB snapshot from another Amazon Web Services account by using the <code>ModifyDBSnapshotAttribute</code> API action.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
     pub fn include_shared(mut self, input: bool) -> Self {
         self.include_shared = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A value that indicates whether to include shared manual DB cluster snapshots from other Amazon Web Services accounts that this Amazon Web Services account has been given permission to copy or restore. By default, these snapshots are not included.</p>
+    /// <p>Specifies whether to include shared manual DB cluster snapshots from other Amazon Web Services accounts that this Amazon Web Services account has been given permission to copy or restore. By default, these snapshots are not included.</p>
     /// <p>You can give an Amazon Web Services account permission to restore a manual DB snapshot from another Amazon Web Services account by using the <code>ModifyDBSnapshotAttribute</code> API action.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
     pub fn set_include_shared(mut self, input: ::std::option::Option<bool>) -> Self {
         self.include_shared = input;
         self
     }
-    /// <p>A value that indicates whether to include shared manual DB cluster snapshots from other Amazon Web Services accounts that this Amazon Web Services account has been given permission to copy or restore. By default, these snapshots are not included.</p>
+    /// <p>Specifies whether to include shared manual DB cluster snapshots from other Amazon Web Services accounts that this Amazon Web Services account has been given permission to copy or restore. By default, these snapshots are not included.</p>
     /// <p>You can give an Amazon Web Services account permission to restore a manual DB snapshot from another Amazon Web Services account by using the <code>ModifyDBSnapshotAttribute</code> API action.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
     pub fn get_include_shared(&self) -> &::std::option::Option<bool> {
         &self.include_shared
     }
-    /// <p>A value that indicates whether to include manual DB cluster snapshots that are public and can be copied or restored by any Amazon Web Services account. By default, the public snapshots are not included.</p>
+    /// <p>Specifies whether to include manual DB cluster snapshots that are public and can be copied or restored by any Amazon Web Services account. By default, the public snapshots are not included.</p>
     /// <p>You can share a manual DB snapshot as public by using the <code>ModifyDBSnapshotAttribute</code> API.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
     pub fn include_public(mut self, input: bool) -> Self {
         self.include_public = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A value that indicates whether to include manual DB cluster snapshots that are public and can be copied or restored by any Amazon Web Services account. By default, the public snapshots are not included.</p>
+    /// <p>Specifies whether to include manual DB cluster snapshots that are public and can be copied or restored by any Amazon Web Services account. By default, the public snapshots are not included.</p>
     /// <p>You can share a manual DB snapshot as public by using the <code>ModifyDBSnapshotAttribute</code> API.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
     pub fn set_include_public(mut self, input: ::std::option::Option<bool>) -> Self {
         self.include_public = input;
         self
     }
-    /// <p>A value that indicates whether to include manual DB cluster snapshots that are public and can be copied or restored by any Amazon Web Services account. By default, the public snapshots are not included.</p>
+    /// <p>Specifies whether to include manual DB cluster snapshots that are public and can be copied or restored by any Amazon Web Services account. By default, the public snapshots are not included.</p>
     /// <p>You can share a manual DB snapshot as public by using the <code>ModifyDBSnapshotAttribute</code> API.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
     pub fn get_include_public(&self) -> &::std::option::Option<bool> {

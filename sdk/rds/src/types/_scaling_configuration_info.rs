@@ -9,7 +9,7 @@ pub struct ScalingConfigurationInfo {
     pub min_capacity: ::std::option::Option<i32>,
     /// <p>The maximum capacity for an Aurora DB cluster in <code>serverless</code> DB engine mode.</p>
     pub max_capacity: ::std::option::Option<i32>,
-    /// <p>A value that indicates whether automatic pause is allowed for the Aurora DB cluster in <code>serverless</code> DB engine mode.</p>
+    /// <p>Indicates whether automatic pause is allowed for the Aurora DB cluster in <code>serverless</code> DB engine mode.</p>
     /// <p>When the value is set to false for an Aurora Serverless v1 DB cluster, the DB cluster automatically resumes.</p>
     pub auto_pause: ::std::option::Option<bool>,
     /// <p>The remaining amount of time, in seconds, before the Aurora DB cluster in <code>serverless</code> mode is paused. A DB cluster can be paused only when it's idle (it has no connections).</p>
@@ -30,7 +30,7 @@ impl ScalingConfigurationInfo {
     pub fn max_capacity(&self) -> ::std::option::Option<i32> {
         self.max_capacity
     }
-    /// <p>A value that indicates whether automatic pause is allowed for the Aurora DB cluster in <code>serverless</code> DB engine mode.</p>
+    /// <p>Indicates whether automatic pause is allowed for the Aurora DB cluster in <code>serverless</code> DB engine mode.</p>
     /// <p>When the value is set to false for an Aurora Serverless v1 DB cluster, the DB cluster automatically resumes.</p>
     pub fn auto_pause(&self) -> ::std::option::Option<bool> {
         self.auto_pause
@@ -97,19 +97,19 @@ impl ScalingConfigurationInfoBuilder {
     pub fn get_max_capacity(&self) -> &::std::option::Option<i32> {
         &self.max_capacity
     }
-    /// <p>A value that indicates whether automatic pause is allowed for the Aurora DB cluster in <code>serverless</code> DB engine mode.</p>
+    /// <p>Indicates whether automatic pause is allowed for the Aurora DB cluster in <code>serverless</code> DB engine mode.</p>
     /// <p>When the value is set to false for an Aurora Serverless v1 DB cluster, the DB cluster automatically resumes.</p>
     pub fn auto_pause(mut self, input: bool) -> Self {
         self.auto_pause = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A value that indicates whether automatic pause is allowed for the Aurora DB cluster in <code>serverless</code> DB engine mode.</p>
+    /// <p>Indicates whether automatic pause is allowed for the Aurora DB cluster in <code>serverless</code> DB engine mode.</p>
     /// <p>When the value is set to false for an Aurora Serverless v1 DB cluster, the DB cluster automatically resumes.</p>
     pub fn set_auto_pause(mut self, input: ::std::option::Option<bool>) -> Self {
         self.auto_pause = input;
         self
     }
-    /// <p>A value that indicates whether automatic pause is allowed for the Aurora DB cluster in <code>serverless</code> DB engine mode.</p>
+    /// <p>Indicates whether automatic pause is allowed for the Aurora DB cluster in <code>serverless</code> DB engine mode.</p>
     /// <p>When the value is set to false for an Aurora Serverless v1 DB cluster, the DB cluster automatically resumes.</p>
     pub fn get_auto_pause(&self) -> &::std::option::Option<bool> {
         &self.auto_pause

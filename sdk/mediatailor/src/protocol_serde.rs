@@ -192,6 +192,8 @@ pub(crate) mod shape_access_configuration;
 
 pub(crate) mod shape_ad_break;
 
+pub(crate) mod shape_ad_break_opportunities;
+
 pub(crate) mod shape_avail_suppression;
 
 pub(crate) mod shape_bumper;
@@ -244,6 +246,8 @@ pub(crate) mod shape_update_program_schedule_configuration;
 
 #[allow(non_snake_case)]
 pub(crate) mod shape___list_of_avail_matching_criteria;
+
+pub(crate) mod shape_ad_break_opportunity;
 
 pub(crate) mod shape_ad_marker_passthrough;
 

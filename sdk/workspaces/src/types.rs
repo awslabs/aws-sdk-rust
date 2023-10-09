@@ -23,6 +23,8 @@ pub use crate::types::_target_workspace_state::TargetWorkspaceState;
 
 pub use crate::types::_workspace_properties::WorkspaceProperties;
 
+pub use crate::types::_operating_system_name::OperatingSystemName;
+
 pub use crate::types::_protocol::Protocol;
 
 pub use crate::types::_compute::Compute;
@@ -68,6 +70,16 @@ pub use crate::types::_ios_client_branding_attributes::IosClientBrandingAttribut
 pub use crate::types::_default_import_client_branding_attributes::DefaultImportClientBrandingAttributes;
 
 pub use crate::types::_ios_import_client_branding_attributes::IosImportClientBrandingAttributes;
+
+pub use crate::types::_workspace_resource_association::WorkspaceResourceAssociation;
+
+pub use crate::types::_association_state_reason::AssociationStateReason;
+
+pub use crate::types::_association_error_code::AssociationErrorCode;
+
+pub use crate::types::_association_state::AssociationState;
+
+pub use crate::types::_work_space_associated_resource_type::WorkSpaceAssociatedResourceType;
 
 pub use crate::types::_snapshot::Snapshot;
 
@@ -131,6 +143,10 @@ pub use crate::types::_root_storage::RootStorage;
 
 pub use crate::types::_workspaces_ip_group::WorkspacesIpGroup;
 
+pub use crate::types::_image_resource_association::ImageResourceAssociation;
+
+pub use crate::types::_image_associated_resource_type::ImageAssociatedResourceType;
+
 pub use crate::types::_connection_alias::ConnectionAlias;
 
 pub use crate::types::_connection_alias_association::ConnectionAliasAssociation;
@@ -143,11 +159,27 @@ pub use crate::types::_connect_client_add_in::ConnectClientAddIn;
 
 pub use crate::types::_client_properties_result::ClientPropertiesResult;
 
+pub use crate::types::_bundle_resource_association::BundleResourceAssociation;
+
+pub use crate::types::_bundle_associated_resource_type::BundleAssociatedResourceType;
+
+pub use crate::types::_work_space_application::WorkSpaceApplication;
+
+pub use crate::types::_work_space_application_state::WorkSpaceApplicationState;
+
+pub use crate::types::_work_space_application_license_type::WorkSpaceApplicationLicenseType;
+
+pub use crate::types::_application_resource_association::ApplicationResourceAssociation;
+
+pub use crate::types::_application_associated_resource_type::ApplicationAssociatedResourceType;
+
 pub use crate::types::_account_modification::AccountModification;
 
 pub use crate::types::_dedicated_tenancy_support_result_enum::DedicatedTenancySupportResultEnum;
 
 pub use crate::types::_dedicated_tenancy_modification_state_enum::DedicatedTenancyModificationStateEnum;
+
+pub use crate::types::_work_space_application_deployment::WorkSpaceApplicationDeployment;
 
 pub use crate::types::_client_device_type::ClientDeviceType;
 
@@ -167,7 +199,21 @@ mod _account_modification;
 
 mod _application;
 
+mod _application_associated_resource_type;
+
+mod _application_resource_association;
+
+mod _association_error_code;
+
+mod _association_state;
+
+mod _association_state_reason;
+
 mod _association_status;
+
+mod _bundle_associated_resource_type;
+
+mod _bundle_resource_association;
 
 mod _bundle_type;
 
@@ -221,7 +267,11 @@ mod _failed_create_workspace_request;
 
 mod _failed_workspace_change_request;
 
+mod _image_associated_resource_type;
+
 mod _image_permission;
+
+mod _image_resource_association;
 
 mod _image_type;
 
@@ -240,6 +290,8 @@ mod _modification_state;
 mod _modification_state_enum;
 
 mod _operating_system;
+
+mod _operating_system_name;
 
 mod _operating_system_type;
 
@@ -287,6 +339,16 @@ mod _update_result;
 
 mod _user_storage;
 
+mod _work_space_application;
+
+mod _work_space_application_deployment;
+
+mod _work_space_application_license_type;
+
+mod _work_space_application_state;
+
+mod _work_space_associated_resource_type;
+
 mod _workspace;
 
 mod _workspace_access_properties;
@@ -318,6 +380,8 @@ mod _workspace_image_state;
 mod _workspace_properties;
 
 mod _workspace_request;
+
+mod _workspace_resource_association;
 
 mod _workspace_state;
 

@@ -12,6 +12,7 @@
 /// ```text
 /// # let resourcetype = unimplemented!();
 /// match resourcetype {
+///     ResourceType::AwsApplicationinsightsApplication => { /* ... */ },
 ///     ResourceType::AwsCloudwatchMetric => { /* ... */ },
 ///     ResourceType::AwsLogsLoggroup => { /* ... */ },
 ///     ResourceType::AwsXrayTrace => { /* ... */ },
@@ -43,6 +44,8 @@
 )]
 pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
+    AwsApplicationinsightsApplication,
+    #[allow(missing_docs)] // documentation missing in model
     AwsCloudwatchMetric,
     #[allow(missing_docs)] // documentation missing in model
     AwsLogsLoggroup,
@@ -54,6 +57,7 @@ pub enum ResourceType {
 impl ::std::convert::From<&str> for ResourceType {
     fn from(s: &str) -> Self {
         match s {
+            "AWS::ApplicationInsights::Application" => ResourceType::AwsApplicationinsightsApplication,
             "AWS::CloudWatch::Metric" => ResourceType::AwsCloudwatchMetric,
             "AWS::Logs::LogGroup" => ResourceType::AwsLogsLoggroup,
             "AWS::XRay::Trace" => ResourceType::AwsXrayTrace,
@@ -72,6 +76,7 @@ impl ResourceType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            ResourceType::AwsApplicationinsightsApplication => "AWS::ApplicationInsights::Application",
             ResourceType::AwsCloudwatchMetric => "AWS::CloudWatch::Metric",
             ResourceType::AwsLogsLoggroup => "AWS::Logs::LogGroup",
             ResourceType::AwsXrayTrace => "AWS::XRay::Trace",
@@ -80,7 +85,12 @@ impl ResourceType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AWS::CloudWatch::Metric", "AWS::Logs::LogGroup", "AWS::XRay::Trace"]
+        &[
+            "AWS::ApplicationInsights::Application",
+            "AWS::CloudWatch::Metric",
+            "AWS::Logs::LogGroup",
+            "AWS::XRay::Trace",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for ResourceType {

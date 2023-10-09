@@ -34,7 +34,7 @@ pub struct DescribeOrderableDbInstanceOptionsInput {
     /// <p>Omit this parameter to show the available offerings in the specified Amazon Web Services Region.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
     pub availability_zone_group: ::std::option::Option<::std::string::String>,
-    /// <p>A value that indicates whether to show only VPC or non-VPC offerings. RDS Custom supports only VPC offerings.</p>
+    /// <p>Specifies whether to show only VPC or non-VPC offerings. RDS Custom supports only VPC offerings.</p>
     /// <p>RDS Custom supports only VPC offerings. If you describe non-VPC offerings for RDS Custom, the output shows VPC offerings.</p>
     pub vpc: ::std::option::Option<bool>,
     /// <p>This parameter isn't currently supported.</p>
@@ -87,7 +87,7 @@ impl DescribeOrderableDbInstanceOptionsInput {
     pub fn availability_zone_group(&self) -> ::std::option::Option<&str> {
         self.availability_zone_group.as_deref()
     }
-    /// <p>A value that indicates whether to show only VPC or non-VPC offerings. RDS Custom supports only VPC offerings.</p>
+    /// <p>Specifies whether to show only VPC or non-VPC offerings. RDS Custom supports only VPC offerings.</p>
     /// <p>RDS Custom supports only VPC offerings. If you describe non-VPC offerings for RDS Custom, the output shows VPC offerings.</p>
     pub fn vpc(&self) -> ::std::option::Option<bool> {
         self.vpc
@@ -259,19 +259,19 @@ impl DescribeOrderableDbInstanceOptionsInputBuilder {
     pub fn get_availability_zone_group(&self) -> &::std::option::Option<::std::string::String> {
         &self.availability_zone_group
     }
-    /// <p>A value that indicates whether to show only VPC or non-VPC offerings. RDS Custom supports only VPC offerings.</p>
+    /// <p>Specifies whether to show only VPC or non-VPC offerings. RDS Custom supports only VPC offerings.</p>
     /// <p>RDS Custom supports only VPC offerings. If you describe non-VPC offerings for RDS Custom, the output shows VPC offerings.</p>
     pub fn vpc(mut self, input: bool) -> Self {
         self.vpc = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A value that indicates whether to show only VPC or non-VPC offerings. RDS Custom supports only VPC offerings.</p>
+    /// <p>Specifies whether to show only VPC or non-VPC offerings. RDS Custom supports only VPC offerings.</p>
     /// <p>RDS Custom supports only VPC offerings. If you describe non-VPC offerings for RDS Custom, the output shows VPC offerings.</p>
     pub fn set_vpc(mut self, input: ::std::option::Option<bool>) -> Self {
         self.vpc = input;
         self
     }
-    /// <p>A value that indicates whether to show only VPC or non-VPC offerings. RDS Custom supports only VPC offerings.</p>
+    /// <p>Specifies whether to show only VPC or non-VPC offerings. RDS Custom supports only VPC offerings.</p>
     /// <p>RDS Custom supports only VPC offerings. If you describe non-VPC offerings for RDS Custom, the output shows VPC offerings.</p>
     pub fn get_vpc(&self) -> &::std::option::Option<bool> {
         &self.vpc

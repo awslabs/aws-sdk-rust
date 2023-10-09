@@ -83,6 +83,8 @@ pub use crate::types::_data_color_palette::DataColorPaletteBuilder;
 
 pub use crate::types::_template_alias::TemplateAliasBuilder;
 
+pub use crate::types::_validation_strategy::ValidationStrategyBuilder;
+
 pub use crate::types::_template_version_definition::TemplateVersionDefinitionBuilder;
 
 pub use crate::types::_analysis_defaults::AnalysisDefaultsBuilder;
@@ -1050,6 +1052,8 @@ pub use crate::types::_s3_parameters::S3ParametersBuilder;
 pub use crate::types::_manifest_file_location::ManifestFileLocationBuilder;
 
 pub use crate::types::_redshift_parameters::RedshiftParametersBuilder;
+
+pub use crate::types::_redshift_iam_parameters::RedshiftIamParametersBuilder;
 
 pub use crate::types::_rds_parameters::RdsParametersBuilder;
 

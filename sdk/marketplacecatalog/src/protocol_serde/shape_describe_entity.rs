@@ -148,6 +148,9 @@ pub(crate) fn de_describe_entity(
                             .transpose()?,
                     );
                 }
+                "DetailsDocument" => {
+                    builder = builder.set_details_document(Some(::aws_smithy_json::deserialize::token::expect_document(tokens)?));
+                }
                 "EntityArn" => {
                     builder = builder.set_entity_arn(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

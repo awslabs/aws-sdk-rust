@@ -25,7 +25,7 @@ pub struct DbProxyEndpoint {
     pub created_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A value that indicates whether the DB proxy endpoint can be used for read/write or read-only operations.</p>
     pub target_role: ::std::option::Option<crate::types::DbProxyEndpointTargetRole>,
-    /// <p>A value that indicates whether this endpoint is the default endpoint for the associated DB proxy. Default DB proxy endpoints always have read/write capability. Other endpoints that you associate with the DB proxy can be either read/write or read-only.</p>
+    /// <p>Indicates whether this endpoint is the default endpoint for the associated DB proxy. Default DB proxy endpoints always have read/write capability. Other endpoints that you associate with the DB proxy can be either read/write or read-only.</p>
     pub is_default: bool,
 }
 impl DbProxyEndpoint {
@@ -69,7 +69,7 @@ impl DbProxyEndpoint {
     pub fn target_role(&self) -> ::std::option::Option<&crate::types::DbProxyEndpointTargetRole> {
         self.target_role.as_ref()
     }
-    /// <p>A value that indicates whether this endpoint is the default endpoint for the associated DB proxy. Default DB proxy endpoints always have read/write capability. Other endpoints that you associate with the DB proxy can be either read/write or read-only.</p>
+    /// <p>Indicates whether this endpoint is the default endpoint for the associated DB proxy. Default DB proxy endpoints always have read/write capability. Other endpoints that you associate with the DB proxy can be either read/write or read-only.</p>
     pub fn is_default(&self) -> bool {
         self.is_default
     }
@@ -250,17 +250,17 @@ impl DbProxyEndpointBuilder {
     pub fn get_target_role(&self) -> &::std::option::Option<crate::types::DbProxyEndpointTargetRole> {
         &self.target_role
     }
-    /// <p>A value that indicates whether this endpoint is the default endpoint for the associated DB proxy. Default DB proxy endpoints always have read/write capability. Other endpoints that you associate with the DB proxy can be either read/write or read-only.</p>
+    /// <p>Indicates whether this endpoint is the default endpoint for the associated DB proxy. Default DB proxy endpoints always have read/write capability. Other endpoints that you associate with the DB proxy can be either read/write or read-only.</p>
     pub fn is_default(mut self, input: bool) -> Self {
         self.is_default = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A value that indicates whether this endpoint is the default endpoint for the associated DB proxy. Default DB proxy endpoints always have read/write capability. Other endpoints that you associate with the DB proxy can be either read/write or read-only.</p>
+    /// <p>Indicates whether this endpoint is the default endpoint for the associated DB proxy. Default DB proxy endpoints always have read/write capability. Other endpoints that you associate with the DB proxy can be either read/write or read-only.</p>
     pub fn set_is_default(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_default = input;
         self
     }
-    /// <p>A value that indicates whether this endpoint is the default endpoint for the associated DB proxy. Default DB proxy endpoints always have read/write capability. Other endpoints that you associate with the DB proxy can be either read/write or read-only.</p>
+    /// <p>Indicates whether this endpoint is the default endpoint for the associated DB proxy. Default DB proxy endpoints always have read/write capability. Other endpoints that you associate with the DB proxy can be either read/write or read-only.</p>
     pub fn get_is_default(&self) -> &::std::option::Option<bool> {
         &self.is_default
     }

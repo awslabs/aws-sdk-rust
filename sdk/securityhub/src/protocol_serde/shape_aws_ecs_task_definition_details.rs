@@ -96,6 +96,9 @@ pub fn ser_aws_ecs_task_definition_details(
         }
         array_27.finish();
     }
+    if let Some(var_30) = &input.status {
+        object.key("Status").string(var_30.as_str());
+    }
     Ok(())
 }
 
@@ -197,6 +200,13 @@ where
                         "Volumes" => {
                             builder = builder.set_volumes(
                                 crate::protocol_serde::shape_aws_ecs_task_definition_volumes_list::de_aws_ecs_task_definition_volumes_list(tokens)?,
+                            );
+                        }
+                        "Status" => {
+                            builder = builder.set_status(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

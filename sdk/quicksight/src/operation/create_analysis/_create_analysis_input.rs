@@ -25,6 +25,8 @@ pub struct CreateAnalysisInput {
     /// <p>A definition is the data model of all features in a Dashboard, Template, or Analysis.</p>
     /// <p>Either a <code>SourceEntity</code> or a <code>Definition</code> must be provided in order for the request to be valid.</p>
     pub definition: ::std::option::Option<crate::types::AnalysisDefinition>,
+    /// <p>The option to relax the validation needed to create an analysis with definition objects. This skips the validation step for specific errors.</p>
+    pub validation_strategy: ::std::option::Option<crate::types::ValidationStrategy>,
 }
 impl CreateAnalysisInput {
     /// <p>The ID of the Amazon Web Services account where you are creating an analysis.</p>
@@ -67,6 +69,10 @@ impl CreateAnalysisInput {
     pub fn definition(&self) -> ::std::option::Option<&crate::types::AnalysisDefinition> {
         self.definition.as_ref()
     }
+    /// <p>The option to relax the validation needed to create an analysis with definition objects. This skips the validation step for specific errors.</p>
+    pub fn validation_strategy(&self) -> ::std::option::Option<&crate::types::ValidationStrategy> {
+        self.validation_strategy.as_ref()
+    }
 }
 impl CreateAnalysisInput {
     /// Creates a new builder-style object to manufacture [`CreateAnalysisInput`](crate::operation::create_analysis::CreateAnalysisInput).
@@ -88,6 +94,7 @@ pub struct CreateAnalysisInputBuilder {
     pub(crate) theme_arn: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) definition: ::std::option::Option<crate::types::AnalysisDefinition>,
+    pub(crate) validation_strategy: ::std::option::Option<crate::types::ValidationStrategy>,
 }
 impl CreateAnalysisInputBuilder {
     /// <p>The ID of the Amazon Web Services account where you are creating an analysis.</p>
@@ -240,6 +247,20 @@ impl CreateAnalysisInputBuilder {
     pub fn get_definition(&self) -> &::std::option::Option<crate::types::AnalysisDefinition> {
         &self.definition
     }
+    /// <p>The option to relax the validation needed to create an analysis with definition objects. This skips the validation step for specific errors.</p>
+    pub fn validation_strategy(mut self, input: crate::types::ValidationStrategy) -> Self {
+        self.validation_strategy = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The option to relax the validation needed to create an analysis with definition objects. This skips the validation step for specific errors.</p>
+    pub fn set_validation_strategy(mut self, input: ::std::option::Option<crate::types::ValidationStrategy>) -> Self {
+        self.validation_strategy = input;
+        self
+    }
+    /// <p>The option to relax the validation needed to create an analysis with definition objects. This skips the validation step for specific errors.</p>
+    pub fn get_validation_strategy(&self) -> &::std::option::Option<crate::types::ValidationStrategy> {
+        &self.validation_strategy
+    }
     /// Consumes the builder and constructs a [`CreateAnalysisInput`](crate::operation::create_analysis::CreateAnalysisInput).
     pub fn build(
         self,
@@ -254,6 +275,7 @@ impl CreateAnalysisInputBuilder {
             theme_arn: self.theme_arn,
             tags: self.tags,
             definition: self.definition,
+            validation_strategy: self.validation_strategy,
         })
     }
 }

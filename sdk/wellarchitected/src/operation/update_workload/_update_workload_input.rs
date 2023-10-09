@@ -63,6 +63,7 @@ pub struct UpdateWorkloadInput {
     /// <p>The industry for the workload.</p>
     pub industry: ::std::option::Option<::std::string::String>,
     /// <p>The notes associated with the workload.</p>
+    /// <p>For a review template, these are the notes that will be associated with the workload when the template is applied.</p>
     pub notes: ::std::option::Option<::std::string::String>,
     /// <p>The improvement status for a workload.</p>
     pub improvement_status: ::std::option::Option<crate::types::WorkloadImprovementStatus>,
@@ -157,6 +158,7 @@ impl UpdateWorkloadInput {
         self.industry.as_deref()
     }
     /// <p>The notes associated with the workload.</p>
+    /// <p>For a review template, these are the notes that will be associated with the workload when the template is applied.</p>
     pub fn notes(&self) -> ::std::option::Option<&str> {
         self.notes.as_deref()
     }
@@ -506,16 +508,19 @@ impl UpdateWorkloadInputBuilder {
         &self.industry
     }
     /// <p>The notes associated with the workload.</p>
+    /// <p>For a review template, these are the notes that will be associated with the workload when the template is applied.</p>
     pub fn notes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.notes = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The notes associated with the workload.</p>
+    /// <p>For a review template, these are the notes that will be associated with the workload when the template is applied.</p>
     pub fn set_notes(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.notes = input;
         self
     }
     /// <p>The notes associated with the workload.</p>
+    /// <p>For a review template, these are the notes that will be associated with the workload when the template is applied.</p>
     pub fn get_notes(&self) -> &::std::option::Option<::std::string::String> {
         &self.notes
     }

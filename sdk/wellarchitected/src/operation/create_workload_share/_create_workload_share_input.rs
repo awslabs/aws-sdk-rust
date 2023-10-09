@@ -6,7 +6,7 @@
 pub struct CreateWorkloadShareInput {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     pub workload_id: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload, lens, or profile is shared.</p>
+    /// <p>The Amazon Web Services account ID, organization ID, or organizational unit (OU) ID with which the workload, lens, profile, or review template is shared.</p>
     pub shared_with: ::std::option::Option<::std::string::String>,
     /// <p>Permission granted on a share request.</p>
     pub permission_type: ::std::option::Option<crate::types::PermissionType>,
@@ -21,7 +21,7 @@ impl CreateWorkloadShareInput {
     pub fn workload_id(&self) -> ::std::option::Option<&str> {
         self.workload_id.as_deref()
     }
-    /// <p>The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload, lens, or profile is shared.</p>
+    /// <p>The Amazon Web Services account ID, organization ID, or organizational unit (OU) ID with which the workload, lens, profile, or review template is shared.</p>
     pub fn shared_with(&self) -> ::std::option::Option<&str> {
         self.shared_with.as_deref()
     }
@@ -68,17 +68,17 @@ impl CreateWorkloadShareInputBuilder {
     pub fn get_workload_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.workload_id
     }
-    /// <p>The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload, lens, or profile is shared.</p>
+    /// <p>The Amazon Web Services account ID, organization ID, or organizational unit (OU) ID with which the workload, lens, profile, or review template is shared.</p>
     pub fn shared_with(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.shared_with = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload, lens, or profile is shared.</p>
+    /// <p>The Amazon Web Services account ID, organization ID, or organizational unit (OU) ID with which the workload, lens, profile, or review template is shared.</p>
     pub fn set_shared_with(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.shared_with = input;
         self
     }
-    /// <p>The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload, lens, or profile is shared.</p>
+    /// <p>The Amazon Web Services account ID, organization ID, or organizational unit (OU) ID with which the workload, lens, profile, or review template is shared.</p>
     pub fn get_shared_with(&self) -> &::std::option::Option<::std::string::String> {
         &self.shared_with
     }

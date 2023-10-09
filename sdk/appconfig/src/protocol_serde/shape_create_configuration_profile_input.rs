@@ -6,39 +6,42 @@ pub fn ser_create_configuration_profile_input(
     if let Some(var_1) = &input.description {
         object.key("Description").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.location_uri {
-        object.key("LocationUri").string(var_2.as_str());
+    if let Some(var_2) = &input.kms_key_identifier {
+        object.key("KmsKeyIdentifier").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.name {
-        object.key("Name").string(var_3.as_str());
+    if let Some(var_3) = &input.location_uri {
+        object.key("LocationUri").string(var_3.as_str());
     }
-    if let Some(var_4) = &input.retrieval_role_arn {
-        object.key("RetrievalRoleArn").string(var_4.as_str());
+    if let Some(var_4) = &input.name {
+        object.key("Name").string(var_4.as_str());
     }
-    if let Some(var_5) = &input.tags {
+    if let Some(var_5) = &input.retrieval_role_arn {
+        object.key("RetrievalRoleArn").string(var_5.as_str());
+    }
+    if let Some(var_6) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_6 = object.key("Tags").start_object();
-        for (key_7, value_8) in var_5 {
+        let mut object_7 = object.key("Tags").start_object();
+        for (key_8, value_9) in var_6 {
             {
-                object_6.key(key_7.as_str()).string(value_8.as_str());
+                object_7.key(key_8.as_str()).string(value_9.as_str());
             }
         }
-        object_6.finish();
+        object_7.finish();
     }
-    if let Some(var_9) = &input.r#type {
-        object.key("Type").string(var_9.as_str());
+    if let Some(var_10) = &input.r#type {
+        object.key("Type").string(var_10.as_str());
     }
-    if let Some(var_10) = &input.validators {
-        let mut array_11 = object.key("Validators").start_array();
-        for item_12 in var_10 {
+    if let Some(var_11) = &input.validators {
+        let mut array_12 = object.key("Validators").start_array();
+        for item_13 in var_11 {
             {
                 #[allow(unused_mut)]
-                let mut object_13 = array_11.value().start_object();
-                crate::protocol_serde::shape_validator::ser_validator(&mut object_13, item_12)?;
-                object_13.finish();
+                let mut object_14 = array_12.value().start_object();
+                crate::protocol_serde::shape_validator::ser_validator(&mut object_14, item_13)?;
+                object_14.finish();
             }
         }
-        array_11.finish();
+        array_12.finish();
     }
     Ok(())
 }

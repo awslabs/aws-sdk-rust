@@ -25,7 +25,7 @@ pub struct OrderableDbInstanceOption {
     pub vpc: bool,
     /// <p>Indicates whether a DB instance supports encrypted storage.</p>
     pub supports_storage_encryption: bool,
-    /// <p>Indicates the storage type for a DB instance.</p>
+    /// <p>The storage type for a DB instance.</p>
     pub storage_type: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether a DB instance supports provisioned IOPS.</p>
     pub supports_iops: bool,
@@ -33,7 +33,7 @@ pub struct OrderableDbInstanceOption {
     pub supports_enhanced_monitoring: bool,
     /// <p>Indicates whether a DB instance supports IAM database authentication.</p>
     pub supports_iam_database_authentication: bool,
-    /// <p>True if a DB instance supports Performance Insights, otherwise false.</p>
+    /// <p>Indicates whether a DB instance supports Performance Insights.</p>
     pub supports_performance_insights: bool,
     /// <p>Minimum storage size for a DB instance.</p>
     pub min_storage_size: ::std::option::Option<i32>,
@@ -51,18 +51,18 @@ pub struct OrderableDbInstanceOption {
     pub available_processor_features: ::std::option::Option<::std::vec::Vec<crate::types::AvailableProcessorFeature>>,
     /// <p>A list of the supported DB engine modes.</p>
     pub supported_engine_modes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>Whether Amazon RDS can automatically scale storage for DB instances that use the specified DB instance class.</p>
+    /// <p>Indicates whether Amazon RDS can automatically scale storage for DB instances that use the specified DB instance class.</p>
     pub supports_storage_autoscaling: ::std::option::Option<bool>,
-    /// <p>Whether a DB instance supports Kerberos Authentication.</p>
+    /// <p>Indicates whether a DB instance supports Kerberos Authentication.</p>
     pub supports_kerberos_authentication: ::std::option::Option<bool>,
-    /// <p>Whether a DB instance supports RDS on Outposts.</p>
+    /// <p>Indicates whether a DB instance supports RDS on Outposts.</p>
     /// <p>For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide.</i> </p>
     pub outpost_capable: bool,
     /// <p>The list of supported modes for Database Activity Streams. Aurora PostgreSQL returns the value <code>[sync, async]</code>. Aurora MySQL and RDS for Oracle return <code>[async]</code> only. If Database Activity Streams isn't supported, the return value is an empty list.</p>
     pub supported_activity_stream_modes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>A value that indicates whether you can use Aurora global databases with a specific combination of other DB engine attributes.</p>
+    /// <p>Indicates whether you can use Aurora global databases with a specific combination of other DB engine attributes.</p>
     pub supports_global_databases: bool,
-    /// <p>Whether DB instances can be configured as a Multi-AZ DB cluster.</p>
+    /// <p>Indicates whether DB instances can be configured as a Multi-AZ DB cluster.</p>
     /// <p>For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html"> Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide.</i> </p>
     pub supports_clusters: bool,
     /// <p>The network types supported by the DB instance (<code>IPV4</code> or <code>DUAL</code>).</p>
@@ -121,7 +121,7 @@ impl OrderableDbInstanceOption {
     pub fn supports_storage_encryption(&self) -> bool {
         self.supports_storage_encryption
     }
-    /// <p>Indicates the storage type for a DB instance.</p>
+    /// <p>The storage type for a DB instance.</p>
     pub fn storage_type(&self) -> ::std::option::Option<&str> {
         self.storage_type.as_deref()
     }
@@ -137,7 +137,7 @@ impl OrderableDbInstanceOption {
     pub fn supports_iam_database_authentication(&self) -> bool {
         self.supports_iam_database_authentication
     }
-    /// <p>True if a DB instance supports Performance Insights, otherwise false.</p>
+    /// <p>Indicates whether a DB instance supports Performance Insights.</p>
     pub fn supports_performance_insights(&self) -> bool {
         self.supports_performance_insights
     }
@@ -173,15 +173,15 @@ impl OrderableDbInstanceOption {
     pub fn supported_engine_modes(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.supported_engine_modes.as_deref()
     }
-    /// <p>Whether Amazon RDS can automatically scale storage for DB instances that use the specified DB instance class.</p>
+    /// <p>Indicates whether Amazon RDS can automatically scale storage for DB instances that use the specified DB instance class.</p>
     pub fn supports_storage_autoscaling(&self) -> ::std::option::Option<bool> {
         self.supports_storage_autoscaling
     }
-    /// <p>Whether a DB instance supports Kerberos Authentication.</p>
+    /// <p>Indicates whether a DB instance supports Kerberos Authentication.</p>
     pub fn supports_kerberos_authentication(&self) -> ::std::option::Option<bool> {
         self.supports_kerberos_authentication
     }
-    /// <p>Whether a DB instance supports RDS on Outposts.</p>
+    /// <p>Indicates whether a DB instance supports RDS on Outposts.</p>
     /// <p>For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide.</i> </p>
     pub fn outpost_capable(&self) -> bool {
         self.outpost_capable
@@ -190,11 +190,11 @@ impl OrderableDbInstanceOption {
     pub fn supported_activity_stream_modes(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.supported_activity_stream_modes.as_deref()
     }
-    /// <p>A value that indicates whether you can use Aurora global databases with a specific combination of other DB engine attributes.</p>
+    /// <p>Indicates whether you can use Aurora global databases with a specific combination of other DB engine attributes.</p>
     pub fn supports_global_databases(&self) -> bool {
         self.supports_global_databases
     }
-    /// <p>Whether DB instances can be configured as a Multi-AZ DB cluster.</p>
+    /// <p>Indicates whether DB instances can be configured as a Multi-AZ DB cluster.</p>
     /// <p>For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html"> Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide.</i> </p>
     pub fn supports_clusters(&self) -> bool {
         self.supports_clusters
@@ -420,17 +420,17 @@ impl OrderableDbInstanceOptionBuilder {
     pub fn get_supports_storage_encryption(&self) -> &::std::option::Option<bool> {
         &self.supports_storage_encryption
     }
-    /// <p>Indicates the storage type for a DB instance.</p>
+    /// <p>The storage type for a DB instance.</p>
     pub fn storage_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.storage_type = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Indicates the storage type for a DB instance.</p>
+    /// <p>The storage type for a DB instance.</p>
     pub fn set_storage_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.storage_type = input;
         self
     }
-    /// <p>Indicates the storage type for a DB instance.</p>
+    /// <p>The storage type for a DB instance.</p>
     pub fn get_storage_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.storage_type
     }
@@ -476,17 +476,17 @@ impl OrderableDbInstanceOptionBuilder {
     pub fn get_supports_iam_database_authentication(&self) -> &::std::option::Option<bool> {
         &self.supports_iam_database_authentication
     }
-    /// <p>True if a DB instance supports Performance Insights, otherwise false.</p>
+    /// <p>Indicates whether a DB instance supports Performance Insights.</p>
     pub fn supports_performance_insights(mut self, input: bool) -> Self {
         self.supports_performance_insights = ::std::option::Option::Some(input);
         self
     }
-    /// <p>True if a DB instance supports Performance Insights, otherwise false.</p>
+    /// <p>Indicates whether a DB instance supports Performance Insights.</p>
     pub fn set_supports_performance_insights(mut self, input: ::std::option::Option<bool>) -> Self {
         self.supports_performance_insights = input;
         self
     }
-    /// <p>True if a DB instance supports Performance Insights, otherwise false.</p>
+    /// <p>Indicates whether a DB instance supports Performance Insights.</p>
     pub fn get_supports_performance_insights(&self) -> &::std::option::Option<bool> {
         &self.supports_performance_insights
     }
@@ -617,47 +617,47 @@ impl OrderableDbInstanceOptionBuilder {
     pub fn get_supported_engine_modes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.supported_engine_modes
     }
-    /// <p>Whether Amazon RDS can automatically scale storage for DB instances that use the specified DB instance class.</p>
+    /// <p>Indicates whether Amazon RDS can automatically scale storage for DB instances that use the specified DB instance class.</p>
     pub fn supports_storage_autoscaling(mut self, input: bool) -> Self {
         self.supports_storage_autoscaling = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Whether Amazon RDS can automatically scale storage for DB instances that use the specified DB instance class.</p>
+    /// <p>Indicates whether Amazon RDS can automatically scale storage for DB instances that use the specified DB instance class.</p>
     pub fn set_supports_storage_autoscaling(mut self, input: ::std::option::Option<bool>) -> Self {
         self.supports_storage_autoscaling = input;
         self
     }
-    /// <p>Whether Amazon RDS can automatically scale storage for DB instances that use the specified DB instance class.</p>
+    /// <p>Indicates whether Amazon RDS can automatically scale storage for DB instances that use the specified DB instance class.</p>
     pub fn get_supports_storage_autoscaling(&self) -> &::std::option::Option<bool> {
         &self.supports_storage_autoscaling
     }
-    /// <p>Whether a DB instance supports Kerberos Authentication.</p>
+    /// <p>Indicates whether a DB instance supports Kerberos Authentication.</p>
     pub fn supports_kerberos_authentication(mut self, input: bool) -> Self {
         self.supports_kerberos_authentication = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Whether a DB instance supports Kerberos Authentication.</p>
+    /// <p>Indicates whether a DB instance supports Kerberos Authentication.</p>
     pub fn set_supports_kerberos_authentication(mut self, input: ::std::option::Option<bool>) -> Self {
         self.supports_kerberos_authentication = input;
         self
     }
-    /// <p>Whether a DB instance supports Kerberos Authentication.</p>
+    /// <p>Indicates whether a DB instance supports Kerberos Authentication.</p>
     pub fn get_supports_kerberos_authentication(&self) -> &::std::option::Option<bool> {
         &self.supports_kerberos_authentication
     }
-    /// <p>Whether a DB instance supports RDS on Outposts.</p>
+    /// <p>Indicates whether a DB instance supports RDS on Outposts.</p>
     /// <p>For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide.</i> </p>
     pub fn outpost_capable(mut self, input: bool) -> Self {
         self.outpost_capable = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Whether a DB instance supports RDS on Outposts.</p>
+    /// <p>Indicates whether a DB instance supports RDS on Outposts.</p>
     /// <p>For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide.</i> </p>
     pub fn set_outpost_capable(mut self, input: ::std::option::Option<bool>) -> Self {
         self.outpost_capable = input;
         self
     }
-    /// <p>Whether a DB instance supports RDS on Outposts.</p>
+    /// <p>Indicates whether a DB instance supports RDS on Outposts.</p>
     /// <p>For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide.</i> </p>
     pub fn get_outpost_capable(&self) -> &::std::option::Option<bool> {
         &self.outpost_capable
@@ -682,33 +682,33 @@ impl OrderableDbInstanceOptionBuilder {
     pub fn get_supported_activity_stream_modes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.supported_activity_stream_modes
     }
-    /// <p>A value that indicates whether you can use Aurora global databases with a specific combination of other DB engine attributes.</p>
+    /// <p>Indicates whether you can use Aurora global databases with a specific combination of other DB engine attributes.</p>
     pub fn supports_global_databases(mut self, input: bool) -> Self {
         self.supports_global_databases = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A value that indicates whether you can use Aurora global databases with a specific combination of other DB engine attributes.</p>
+    /// <p>Indicates whether you can use Aurora global databases with a specific combination of other DB engine attributes.</p>
     pub fn set_supports_global_databases(mut self, input: ::std::option::Option<bool>) -> Self {
         self.supports_global_databases = input;
         self
     }
-    /// <p>A value that indicates whether you can use Aurora global databases with a specific combination of other DB engine attributes.</p>
+    /// <p>Indicates whether you can use Aurora global databases with a specific combination of other DB engine attributes.</p>
     pub fn get_supports_global_databases(&self) -> &::std::option::Option<bool> {
         &self.supports_global_databases
     }
-    /// <p>Whether DB instances can be configured as a Multi-AZ DB cluster.</p>
+    /// <p>Indicates whether DB instances can be configured as a Multi-AZ DB cluster.</p>
     /// <p>For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html"> Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide.</i> </p>
     pub fn supports_clusters(mut self, input: bool) -> Self {
         self.supports_clusters = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Whether DB instances can be configured as a Multi-AZ DB cluster.</p>
+    /// <p>Indicates whether DB instances can be configured as a Multi-AZ DB cluster.</p>
     /// <p>For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html"> Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide.</i> </p>
     pub fn set_supports_clusters(mut self, input: ::std::option::Option<bool>) -> Self {
         self.supports_clusters = input;
         self
     }
-    /// <p>Whether DB instances can be configured as a Multi-AZ DB cluster.</p>
+    /// <p>Indicates whether DB instances can be configured as a Multi-AZ DB cluster.</p>
     /// <p>For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html"> Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide.</i> </p>
     pub fn get_supports_clusters(&self) -> &::std::option::Option<bool> {
         &self.supports_clusters

@@ -22,7 +22,7 @@ impl PutResourcePolicyInputBuilder {
 }
 /// Fluent builder constructing a request to `PutResourcePolicy`.
 ///
-/// <p>Attaches a resource-based policy to an Entity. Examples of an entity include: <code>AmiProduct</code> and <code>ContainerProduct</code>.</p>
+/// <p>Attaches a resource-based policy to an entity. Examples of an entity include: <code>AmiProduct</code> and <code>ContainerProduct</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutResourcePolicyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -110,17 +110,17 @@ impl PutResourcePolicyFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Entity resource you want to associate with a resource policy. </p>
+    /// <p>The Amazon Resource Name (ARN) of the entity resource you want to associate with a resource policy.</p>
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_arn(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Entity resource you want to associate with a resource policy. </p>
+    /// <p>The Amazon Resource Name (ARN) of the entity resource you want to associate with a resource policy.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_arn(input);
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Entity resource you want to associate with a resource policy. </p>
+    /// <p>The Amazon Resource Name (ARN) of the entity resource you want to associate with a resource policy.</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_resource_arn()
     }

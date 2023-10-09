@@ -256,4 +256,18 @@ impl CreateAnalysisFluentBuilder {
     pub fn get_definition(&self) -> &::std::option::Option<crate::types::AnalysisDefinition> {
         self.inner.get_definition()
     }
+    /// <p>The option to relax the validation needed to create an analysis with definition objects. This skips the validation step for specific errors.</p>
+    pub fn validation_strategy(mut self, input: crate::types::ValidationStrategy) -> Self {
+        self.inner = self.inner.validation_strategy(input);
+        self
+    }
+    /// <p>The option to relax the validation needed to create an analysis with definition objects. This skips the validation step for specific errors.</p>
+    pub fn set_validation_strategy(mut self, input: ::std::option::Option<crate::types::ValidationStrategy>) -> Self {
+        self.inner = self.inner.set_validation_strategy(input);
+        self
+    }
+    /// <p>The option to relax the validation needed to create an analysis with definition objects. This skips the validation step for specific errors.</p>
+    pub fn get_validation_strategy(&self) -> &::std::option::Option<crate::types::ValidationStrategy> {
+        self.inner.get_validation_strategy()
+    }
 }

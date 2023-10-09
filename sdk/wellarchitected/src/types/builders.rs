@@ -11,6 +11,24 @@ pub use crate::types::_workload_discovery_config::WorkloadDiscoveryConfigBuilder
 
 pub use crate::types::_share_invitation::ShareInvitationBuilder;
 
+pub use crate::types::_review_template_lens_review::ReviewTemplateLensReviewBuilder;
+
+pub use crate::types::_review_template_pillar_review_summary::ReviewTemplatePillarReviewSummaryBuilder;
+
+pub use crate::types::_review_template_answer::ReviewTemplateAnswerBuilder;
+
+pub use crate::types::_choice_answer::ChoiceAnswerBuilder;
+
+pub use crate::types::_choice::ChoiceBuilder;
+
+pub use crate::types::_additional_resources::AdditionalResourcesBuilder;
+
+pub use crate::types::_choice_content::ChoiceContentBuilder;
+
+pub use crate::types::_choice_update::ChoiceUpdateBuilder;
+
+pub use crate::types::_review_template::ReviewTemplateBuilder;
+
 pub use crate::types::_profile::ProfileBuilder;
 
 pub use crate::types::_profile_question::ProfileQuestionBuilder;
@@ -25,21 +43,19 @@ pub use crate::types::_pillar_review_summary::PillarReviewSummaryBuilder;
 
 pub use crate::types::_answer::AnswerBuilder;
 
-pub use crate::types::_choice_answer::ChoiceAnswerBuilder;
-
-pub use crate::types::_choice::ChoiceBuilder;
-
-pub use crate::types::_additional_resources::AdditionalResourcesBuilder;
-
-pub use crate::types::_choice_content::ChoiceContentBuilder;
-
-pub use crate::types::_choice_update::ChoiceUpdateBuilder;
-
 pub use crate::types::_workload_share_summary::WorkloadShareSummaryBuilder;
 
 pub use crate::types::_workload_summary::WorkloadSummaryBuilder;
 
+pub use crate::types::_template_share_summary::TemplateShareSummaryBuilder;
+
 pub use crate::types::_share_invitation_summary::ShareInvitationSummaryBuilder;
+
+pub use crate::types::_review_template_summary::ReviewTemplateSummaryBuilder;
+
+pub use crate::types::_review_template_answer_summary::ReviewTemplateAnswerSummaryBuilder;
+
+pub use crate::types::_choice_answer_summary::ChoiceAnswerSummaryBuilder;
 
 pub use crate::types::_profile_share_summary::ProfileShareSummaryBuilder;
 
@@ -68,8 +84,6 @@ pub use crate::types::_check_summary::CheckSummaryBuilder;
 pub use crate::types::_check_detail::CheckDetailBuilder;
 
 pub use crate::types::_answer_summary::AnswerSummaryBuilder;
-
-pub use crate::types::_choice_answer_summary::ChoiceAnswerSummaryBuilder;
 
 pub use crate::types::_profile_template::ProfileTemplateBuilder;
 

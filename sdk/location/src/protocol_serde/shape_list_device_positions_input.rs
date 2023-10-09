@@ -3,14 +3,20 @@ pub fn ser_list_device_positions_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_device_positions::ListDevicePositionsInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.max_results {
+    if let Some(var_1) = &input.filter_geometry {
+        #[allow(unused_mut)]
+        let mut object_2 = object.key("FilterGeometry").start_object();
+        crate::protocol_serde::shape_tracking_filter_geometry::ser_tracking_filter_geometry(&mut object_2, var_1)?;
+        object_2.finish();
+    }
+    if let Some(var_3) = &input.max_results {
         object.key("MaxResults").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_1).into()),
+            ::aws_smithy_types::Number::NegInt((*var_3).into()),
         );
     }
-    if let Some(var_2) = &input.next_token {
-        object.key("NextToken").string(var_2.as_str());
+    if let Some(var_4) = &input.next_token {
+        object.key("NextToken").string(var_4.as_str());
     }
     Ok(())
 }

@@ -11,6 +11,7 @@ impl super::Client {
     ///   - [`entity_arn(Option<String>)`](crate::operation::describe_entity::DescribeEntityOutput::entity_arn): <p>The ARN associated to the unique identifier for the entity referenced in this request.</p>
     ///   - [`last_modified_date(Option<String>)`](crate::operation::describe_entity::DescribeEntityOutput::last_modified_date): <p>The last modified date of the entity, in ISO 8601 format (2018-02-27T13:45:22Z).</p>
     ///   - [`details(Option<String>)`](crate::operation::describe_entity::DescribeEntityOutput::details): <p>This stringified JSON object includes the details of the entity.</p>
+    ///   - [`details_document(Option<Document>)`](crate::operation::describe_entity::DescribeEntityOutput::details_document): <p>The JSON value of the details specific to the entity.</p>
     /// - On failure, responds with [`SdkError<DescribeEntityError>`](crate::operation::describe_entity::DescribeEntityError)
     pub fn describe_entity(&self) -> crate::operation::describe_entity::builders::DescribeEntityFluentBuilder {
         crate::operation::describe_entity::builders::DescribeEntityFluentBuilder::new(self.handle.clone())

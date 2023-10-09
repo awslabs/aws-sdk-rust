@@ -8,9 +8,9 @@ pub struct GlobalClusterMember {
     pub db_cluster_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for each read-only secondary cluster associated with the global cluster.</p>
     pub readers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>Specifies whether the Aurora DB cluster is the primary cluster (that is, has read-write capability) for the global cluster with which it is associated.</p>
+    /// <p>Indicates whether the Aurora DB cluster is the primary cluster (that is, has read-write capability) for the global cluster with which it is associated.</p>
     pub is_writer: bool,
-    /// <p>Specifies whether a secondary cluster in the global cluster has write forwarding enabled, not enabled, or is in the process of enabling it.</p>
+    /// <p>The status of write forwarding for a secondary cluster in the global cluster.</p>
     pub global_write_forwarding_status: ::std::option::Option<crate::types::WriteForwardingStatus>,
     /// <p>The status of synchronization of each Aurora DB cluster in the global cluster.</p>
     pub synchronization_status: ::std::option::Option<crate::types::GlobalClusterMemberSynchronizationStatus>,
@@ -24,11 +24,11 @@ impl GlobalClusterMember {
     pub fn readers(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.readers.as_deref()
     }
-    /// <p>Specifies whether the Aurora DB cluster is the primary cluster (that is, has read-write capability) for the global cluster with which it is associated.</p>
+    /// <p>Indicates whether the Aurora DB cluster is the primary cluster (that is, has read-write capability) for the global cluster with which it is associated.</p>
     pub fn is_writer(&self) -> bool {
         self.is_writer
     }
-    /// <p>Specifies whether a secondary cluster in the global cluster has write forwarding enabled, not enabled, or is in the process of enabling it.</p>
+    /// <p>The status of write forwarding for a secondary cluster in the global cluster.</p>
     pub fn global_write_forwarding_status(&self) -> ::std::option::Option<&crate::types::WriteForwardingStatus> {
         self.global_write_forwarding_status.as_ref()
     }
@@ -89,31 +89,31 @@ impl GlobalClusterMemberBuilder {
     pub fn get_readers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.readers
     }
-    /// <p>Specifies whether the Aurora DB cluster is the primary cluster (that is, has read-write capability) for the global cluster with which it is associated.</p>
+    /// <p>Indicates whether the Aurora DB cluster is the primary cluster (that is, has read-write capability) for the global cluster with which it is associated.</p>
     pub fn is_writer(mut self, input: bool) -> Self {
         self.is_writer = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies whether the Aurora DB cluster is the primary cluster (that is, has read-write capability) for the global cluster with which it is associated.</p>
+    /// <p>Indicates whether the Aurora DB cluster is the primary cluster (that is, has read-write capability) for the global cluster with which it is associated.</p>
     pub fn set_is_writer(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_writer = input;
         self
     }
-    /// <p>Specifies whether the Aurora DB cluster is the primary cluster (that is, has read-write capability) for the global cluster with which it is associated.</p>
+    /// <p>Indicates whether the Aurora DB cluster is the primary cluster (that is, has read-write capability) for the global cluster with which it is associated.</p>
     pub fn get_is_writer(&self) -> &::std::option::Option<bool> {
         &self.is_writer
     }
-    /// <p>Specifies whether a secondary cluster in the global cluster has write forwarding enabled, not enabled, or is in the process of enabling it.</p>
+    /// <p>The status of write forwarding for a secondary cluster in the global cluster.</p>
     pub fn global_write_forwarding_status(mut self, input: crate::types::WriteForwardingStatus) -> Self {
         self.global_write_forwarding_status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies whether a secondary cluster in the global cluster has write forwarding enabled, not enabled, or is in the process of enabling it.</p>
+    /// <p>The status of write forwarding for a secondary cluster in the global cluster.</p>
     pub fn set_global_write_forwarding_status(mut self, input: ::std::option::Option<crate::types::WriteForwardingStatus>) -> Self {
         self.global_write_forwarding_status = input;
         self
     }
-    /// <p>Specifies whether a secondary cluster in the global cluster has write forwarding enabled, not enabled, or is in the process of enabling it.</p>
+    /// <p>The status of write forwarding for a secondary cluster in the global cluster.</p>
     pub fn get_global_write_forwarding_status(&self) -> &::std::option::Option<crate::types::WriteForwardingStatus> {
         &self.global_write_forwarding_status
     }

@@ -26,6 +26,8 @@ pub struct DescribeGeofenceCollectionOutput {
     pub create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp for when the geofence collection was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
     pub update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The number of geofences in the geofence collection.</p>
+    pub geofence_count: ::std::option::Option<i32>,
     _request_id: Option<String>,
 }
 impl DescribeGeofenceCollectionOutput {
@@ -70,6 +72,10 @@ impl DescribeGeofenceCollectionOutput {
     pub fn update_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.update_time.as_ref()
     }
+    /// <p>The number of geofences in the geofence collection.</p>
+    pub fn geofence_count(&self) -> ::std::option::Option<i32> {
+        self.geofence_count
+    }
 }
 impl ::aws_http::request_id::RequestId for DescribeGeofenceCollectionOutput {
     fn request_id(&self) -> Option<&str> {
@@ -96,6 +102,7 @@ pub struct DescribeGeofenceCollectionOutputBuilder {
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) geofence_count: ::std::option::Option<i32>,
     _request_id: Option<String>,
 }
 impl DescribeGeofenceCollectionOutputBuilder {
@@ -246,6 +253,20 @@ impl DescribeGeofenceCollectionOutputBuilder {
     pub fn get_update_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.update_time
     }
+    /// <p>The number of geofences in the geofence collection.</p>
+    pub fn geofence_count(mut self, input: i32) -> Self {
+        self.geofence_count = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The number of geofences in the geofence collection.</p>
+    pub fn set_geofence_count(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.geofence_count = input;
+        self
+    }
+    /// <p>The number of geofences in the geofence collection.</p>
+    pub fn get_geofence_count(&self) -> &::std::option::Option<i32> {
+        &self.geofence_count
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -267,6 +288,7 @@ impl DescribeGeofenceCollectionOutputBuilder {
             tags: self.tags,
             create_time: self.create_time,
             update_time: self.update_time,
+            geofence_count: self.geofence_count,
             _request_id: self._request_id,
         }
     }

@@ -35,6 +35,8 @@ pub struct CreateDashboardInput {
     /// <p>A definition is the data model of all features in a Dashboard, Template, or Analysis.</p>
     /// <p>Either a <code>SourceEntity</code> or a <code>Definition</code> must be provided in order for the request to be valid.</p>
     pub definition: ::std::option::Option<crate::types::DashboardVersionDefinition>,
+    /// <p>The option to relax the validation needed to create a dashboard with definition objects. This option skips the validation step for specific errors.</p>
+    pub validation_strategy: ::std::option::Option<crate::types::ValidationStrategy>,
 }
 impl CreateDashboardInput {
     /// <p>The ID of the Amazon Web Services account where you want to create the dashboard.</p>
@@ -91,6 +93,10 @@ impl CreateDashboardInput {
     pub fn definition(&self) -> ::std::option::Option<&crate::types::DashboardVersionDefinition> {
         self.definition.as_ref()
     }
+    /// <p>The option to relax the validation needed to create a dashboard with definition objects. This option skips the validation step for specific errors.</p>
+    pub fn validation_strategy(&self) -> ::std::option::Option<&crate::types::ValidationStrategy> {
+        self.validation_strategy.as_ref()
+    }
 }
 impl CreateDashboardInput {
     /// Creates a new builder-style object to manufacture [`CreateDashboardInput`](crate::operation::create_dashboard::CreateDashboardInput).
@@ -114,6 +120,7 @@ pub struct CreateDashboardInputBuilder {
     pub(crate) dashboard_publish_options: ::std::option::Option<crate::types::DashboardPublishOptions>,
     pub(crate) theme_arn: ::std::option::Option<::std::string::String>,
     pub(crate) definition: ::std::option::Option<crate::types::DashboardVersionDefinition>,
+    pub(crate) validation_strategy: ::std::option::Option<crate::types::ValidationStrategy>,
 }
 impl CreateDashboardInputBuilder {
     /// <p>The ID of the Amazon Web Services account where you want to create the dashboard.</p>
@@ -312,6 +319,20 @@ impl CreateDashboardInputBuilder {
     pub fn get_definition(&self) -> &::std::option::Option<crate::types::DashboardVersionDefinition> {
         &self.definition
     }
+    /// <p>The option to relax the validation needed to create a dashboard with definition objects. This option skips the validation step for specific errors.</p>
+    pub fn validation_strategy(mut self, input: crate::types::ValidationStrategy) -> Self {
+        self.validation_strategy = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The option to relax the validation needed to create a dashboard with definition objects. This option skips the validation step for specific errors.</p>
+    pub fn set_validation_strategy(mut self, input: ::std::option::Option<crate::types::ValidationStrategy>) -> Self {
+        self.validation_strategy = input;
+        self
+    }
+    /// <p>The option to relax the validation needed to create a dashboard with definition objects. This option skips the validation step for specific errors.</p>
+    pub fn get_validation_strategy(&self) -> &::std::option::Option<crate::types::ValidationStrategy> {
+        &self.validation_strategy
+    }
     /// Consumes the builder and constructs a [`CreateDashboardInput`](crate::operation::create_dashboard::CreateDashboardInput).
     pub fn build(
         self,
@@ -328,6 +349,7 @@ impl CreateDashboardInputBuilder {
             dashboard_publish_options: self.dashboard_publish_options,
             theme_arn: self.theme_arn,
             definition: self.definition,
+            validation_strategy: self.validation_strategy,
         })
     }
 }

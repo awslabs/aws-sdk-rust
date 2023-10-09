@@ -140,19 +140,19 @@ impl RebootDBInstanceFluentBuilder {
     pub fn get_db_instance_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_db_instance_identifier()
     }
-    /// <p>A value that indicates whether the reboot is conducted through a Multi-AZ failover.</p>
+    /// <p>Specifies whether the reboot is conducted through a Multi-AZ failover.</p>
     /// <p>Constraint: You can't enable force failover if the instance isn't configured for Multi-AZ.</p>
     pub fn force_failover(mut self, input: bool) -> Self {
         self.inner = self.inner.force_failover(input);
         self
     }
-    /// <p>A value that indicates whether the reboot is conducted through a Multi-AZ failover.</p>
+    /// <p>Specifies whether the reboot is conducted through a Multi-AZ failover.</p>
     /// <p>Constraint: You can't enable force failover if the instance isn't configured for Multi-AZ.</p>
     pub fn set_force_failover(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_force_failover(input);
         self
     }
-    /// <p>A value that indicates whether the reboot is conducted through a Multi-AZ failover.</p>
+    /// <p>Specifies whether the reboot is conducted through a Multi-AZ failover.</p>
     /// <p>Constraint: You can't enable force failover if the instance isn't configured for Multi-AZ.</p>
     pub fn get_force_failover(&self) -> &::std::option::Option<bool> {
         self.inner.get_force_failover()

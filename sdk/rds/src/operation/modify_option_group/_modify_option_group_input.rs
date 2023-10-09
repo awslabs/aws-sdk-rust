@@ -11,7 +11,7 @@ pub struct ModifyOptionGroupInput {
     pub options_to_include: ::std::option::Option<::std::vec::Vec<crate::types::OptionConfiguration>>,
     /// <p>Options in this list are removed from the option group.</p>
     pub options_to_remove: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>A value that indicates whether to apply the change immediately or during the next maintenance window for each instance associated with the option group.</p>
+    /// <p>Specifies whether to apply the change immediately or during the next maintenance window for each instance associated with the option group.</p>
     pub apply_immediately: ::std::option::Option<bool>,
 }
 impl ModifyOptionGroupInput {
@@ -28,7 +28,7 @@ impl ModifyOptionGroupInput {
     pub fn options_to_remove(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.options_to_remove.as_deref()
     }
-    /// <p>A value that indicates whether to apply the change immediately or during the next maintenance window for each instance associated with the option group.</p>
+    /// <p>Specifies whether to apply the change immediately or during the next maintenance window for each instance associated with the option group.</p>
     pub fn apply_immediately(&self) -> ::std::option::Option<bool> {
         self.apply_immediately
     }
@@ -107,17 +107,17 @@ impl ModifyOptionGroupInputBuilder {
     pub fn get_options_to_remove(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.options_to_remove
     }
-    /// <p>A value that indicates whether to apply the change immediately or during the next maintenance window for each instance associated with the option group.</p>
+    /// <p>Specifies whether to apply the change immediately or during the next maintenance window for each instance associated with the option group.</p>
     pub fn apply_immediately(mut self, input: bool) -> Self {
         self.apply_immediately = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A value that indicates whether to apply the change immediately or during the next maintenance window for each instance associated with the option group.</p>
+    /// <p>Specifies whether to apply the change immediately or during the next maintenance window for each instance associated with the option group.</p>
     pub fn set_apply_immediately(mut self, input: ::std::option::Option<bool>) -> Self {
         self.apply_immediately = input;
         self
     }
-    /// <p>A value that indicates whether to apply the change immediately or during the next maintenance window for each instance associated with the option group.</p>
+    /// <p>Specifies whether to apply the change immediately or during the next maintenance window for each instance associated with the option group.</p>
     pub fn get_apply_immediately(&self) -> &::std::option::Option<bool> {
         &self.apply_immediately
     }

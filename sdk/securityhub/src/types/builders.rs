@@ -111,6 +111,66 @@ pub use crate::types::_resource::ResourceBuilder;
 
 pub use crate::types::_resource_details::ResourceDetailsBuilder;
 
+pub use crate::types::_aws_msk_cluster_details::AwsMskClusterDetailsBuilder;
+
+pub use crate::types::_aws_msk_cluster_cluster_info_details::AwsMskClusterClusterInfoDetailsBuilder;
+
+pub use crate::types::_aws_msk_cluster_cluster_info_client_authentication_details::AwsMskClusterClusterInfoClientAuthenticationDetailsBuilder;
+
+pub use crate::types::_aws_msk_cluster_cluster_info_client_authentication_tls_details::AwsMskClusterClusterInfoClientAuthenticationTlsDetailsBuilder;
+
+pub use crate::types::_aws_msk_cluster_cluster_info_client_authentication_unauthenticated_details::AwsMskClusterClusterInfoClientAuthenticationUnauthenticatedDetailsBuilder;
+
+pub use crate::types::_aws_msk_cluster_cluster_info_client_authentication_sasl_details::AwsMskClusterClusterInfoClientAuthenticationSaslDetailsBuilder;
+
+pub use crate::types::_aws_msk_cluster_cluster_info_client_authentication_sasl_scram_details::AwsMskClusterClusterInfoClientAuthenticationSaslScramDetailsBuilder;
+
+pub use crate::types::_aws_msk_cluster_cluster_info_client_authentication_sasl_iam_details::AwsMskClusterClusterInfoClientAuthenticationSaslIamDetailsBuilder;
+
+pub use crate::types::_aws_msk_cluster_cluster_info_encryption_info_details::AwsMskClusterClusterInfoEncryptionInfoDetailsBuilder;
+
+pub use crate::types::_aws_msk_cluster_cluster_info_encryption_info_encryption_at_rest_details::AwsMskClusterClusterInfoEncryptionInfoEncryptionAtRestDetailsBuilder;
+
+pub use crate::types::_aws_msk_cluster_cluster_info_encryption_info_encryption_in_transit_details::AwsMskClusterClusterInfoEncryptionInfoEncryptionInTransitDetailsBuilder;
+
+pub use crate::types::_aws_route53_hosted_zone_details::AwsRoute53HostedZoneDetailsBuilder;
+
+pub use crate::types::_aws_route53_query_logging_config_details::AwsRoute53QueryLoggingConfigDetailsBuilder;
+
+pub use crate::types::_cloud_watch_logs_log_group_arn_config_details::CloudWatchLogsLogGroupArnConfigDetailsBuilder;
+
+pub use crate::types::_aws_route53_hosted_zone_vpc_details::AwsRoute53HostedZoneVpcDetailsBuilder;
+
+pub use crate::types::_aws_route53_hosted_zone_object_details::AwsRoute53HostedZoneObjectDetailsBuilder;
+
+pub use crate::types::_aws_route53_hosted_zone_config_details::AwsRoute53HostedZoneConfigDetailsBuilder;
+
+pub use crate::types::_aws_dms_replication_instance_details::AwsDmsReplicationInstanceDetailsBuilder;
+
+pub use crate::types::_aws_dms_replication_instance_vpc_security_groups_details::AwsDmsReplicationInstanceVpcSecurityGroupsDetailsBuilder;
+
+pub use crate::types::_aws_dms_replication_instance_replication_subnet_group_details::AwsDmsReplicationInstanceReplicationSubnetGroupDetailsBuilder;
+
+pub use crate::types::_aws_dms_replication_task_details::AwsDmsReplicationTaskDetailsBuilder;
+
+pub use crate::types::_aws_events_endpoint_details::AwsEventsEndpointDetailsBuilder;
+
+pub use crate::types::_aws_events_endpoint_routing_config_details::AwsEventsEndpointRoutingConfigDetailsBuilder;
+
+pub use crate::types::_aws_events_endpoint_routing_config_failover_config_details::AwsEventsEndpointRoutingConfigFailoverConfigDetailsBuilder;
+
+pub use crate::types::_aws_events_endpoint_routing_config_failover_config_secondary_details::AwsEventsEndpointRoutingConfigFailoverConfigSecondaryDetailsBuilder;
+
+pub use crate::types::_aws_events_endpoint_routing_config_failover_config_primary_details::AwsEventsEndpointRoutingConfigFailoverConfigPrimaryDetailsBuilder;
+
+pub use crate::types::_aws_events_endpoint_replication_config_details::AwsEventsEndpointReplicationConfigDetailsBuilder;
+
+pub use crate::types::_aws_events_endpoint_event_buses_details::AwsEventsEndpointEventBusesDetailsBuilder;
+
+pub use crate::types::_aws_dms_endpoint_details::AwsDmsEndpointDetailsBuilder;
+
+pub use crate::types::_aws_events_eventbus_details::AwsEventsEventbusDetailsBuilder;
+
 pub use crate::types::_aws_athena_work_group_details::AwsAthenaWorkGroupDetailsBuilder;
 
 pub use crate::types::_aws_athena_work_group_configuration_details::AwsAthenaWorkGroupConfigurationDetailsBuilder;

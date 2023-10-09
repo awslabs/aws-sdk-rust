@@ -12,6 +12,8 @@ pub struct RedshiftParameters {
     pub database: ::std::option::Option<::std::string::String>,
     /// <p>Cluster ID. This field can be blank if the <code>Host</code> and <code>Port</code> are provided.</p>
     pub cluster_id: ::std::option::Option<::std::string::String>,
+    /// <p>An optional parameter that uses IAM authentication to grant Amazon QuickSight access to your cluster. This parameter can be used instead of <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DataSourceCredentials.html">DataSourceCredentials</a>.</p>
+    pub iam_parameters: ::std::option::Option<crate::types::RedshiftIamParameters>,
 }
 impl RedshiftParameters {
     /// <p>Host. This field can be blank if <code>ClusterId</code> is provided.</p>
@@ -30,6 +32,10 @@ impl RedshiftParameters {
     pub fn cluster_id(&self) -> ::std::option::Option<&str> {
         self.cluster_id.as_deref()
     }
+    /// <p>An optional parameter that uses IAM authentication to grant Amazon QuickSight access to your cluster. This parameter can be used instead of <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DataSourceCredentials.html">DataSourceCredentials</a>.</p>
+    pub fn iam_parameters(&self) -> ::std::option::Option<&crate::types::RedshiftIamParameters> {
+        self.iam_parameters.as_ref()
+    }
 }
 impl RedshiftParameters {
     /// Creates a new builder-style object to manufacture [`RedshiftParameters`](crate::types::RedshiftParameters).
@@ -46,6 +52,7 @@ pub struct RedshiftParametersBuilder {
     pub(crate) port: ::std::option::Option<i32>,
     pub(crate) database: ::std::option::Option<::std::string::String>,
     pub(crate) cluster_id: ::std::option::Option<::std::string::String>,
+    pub(crate) iam_parameters: ::std::option::Option<crate::types::RedshiftIamParameters>,
 }
 impl RedshiftParametersBuilder {
     /// <p>Host. This field can be blank if <code>ClusterId</code> is provided.</p>
@@ -104,6 +111,20 @@ impl RedshiftParametersBuilder {
     pub fn get_cluster_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.cluster_id
     }
+    /// <p>An optional parameter that uses IAM authentication to grant Amazon QuickSight access to your cluster. This parameter can be used instead of <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DataSourceCredentials.html">DataSourceCredentials</a>.</p>
+    pub fn iam_parameters(mut self, input: crate::types::RedshiftIamParameters) -> Self {
+        self.iam_parameters = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>An optional parameter that uses IAM authentication to grant Amazon QuickSight access to your cluster. This parameter can be used instead of <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DataSourceCredentials.html">DataSourceCredentials</a>.</p>
+    pub fn set_iam_parameters(mut self, input: ::std::option::Option<crate::types::RedshiftIamParameters>) -> Self {
+        self.iam_parameters = input;
+        self
+    }
+    /// <p>An optional parameter that uses IAM authentication to grant Amazon QuickSight access to your cluster. This parameter can be used instead of <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DataSourceCredentials.html">DataSourceCredentials</a>.</p>
+    pub fn get_iam_parameters(&self) -> &::std::option::Option<crate::types::RedshiftIamParameters> {
+        &self.iam_parameters
+    }
     /// Consumes the builder and constructs a [`RedshiftParameters`](crate::types::RedshiftParameters).
     pub fn build(self) -> crate::types::RedshiftParameters {
         crate::types::RedshiftParameters {
@@ -111,6 +132,7 @@ impl RedshiftParametersBuilder {
             port: self.port.unwrap_or_default(),
             database: self.database,
             cluster_id: self.cluster_id,
+            iam_parameters: self.iam_parameters,
         }
     }
 }

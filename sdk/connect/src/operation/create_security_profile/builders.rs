@@ -22,7 +22,6 @@ impl CreateSecurityProfileInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateSecurityProfile`.
 ///
-/// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
 /// <p>Creates a security profile.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateSecurityProfileFluentBuilder {

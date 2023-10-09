@@ -23,7 +23,7 @@ impl TagResourceInputBuilder {
 /// Fluent builder constructing a request to `TagResource`.
 ///
 /// <p>Adds one or more tags to the specified resource.</p> <note>
-/// <p>The WorkloadArn parameter can be a workload ARN, a custom lens ARN, or a profile ARN.</p>
+/// <p>The WorkloadArn parameter can be a workload ARN, a custom lens ARN, a profile ARN, or review template ARN.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct TagResourceFluentBuilder {

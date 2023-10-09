@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListProfilesInput {
-    /// <p>Prefix for profile name.</p>
+    /// <p>An optional string added to the beginning of each profile name returned in the results.</p>
     pub profile_name_prefix: ::std::option::Option<::std::string::String>,
     /// <p>Profile owner type.</p>
     pub profile_owner_type: ::std::option::Option<crate::types::ProfileOwnerType>,
@@ -13,7 +13,7 @@ pub struct ListProfilesInput {
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListProfilesInput {
-    /// <p>Prefix for profile name.</p>
+    /// <p>An optional string added to the beginning of each profile name returned in the results.</p>
     pub fn profile_name_prefix(&self) -> ::std::option::Option<&str> {
         self.profile_name_prefix.as_deref()
     }
@@ -47,17 +47,17 @@ pub struct ListProfilesInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
 }
 impl ListProfilesInputBuilder {
-    /// <p>Prefix for profile name.</p>
+    /// <p>An optional string added to the beginning of each profile name returned in the results.</p>
     pub fn profile_name_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.profile_name_prefix = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Prefix for profile name.</p>
+    /// <p>An optional string added to the beginning of each profile name returned in the results.</p>
     pub fn set_profile_name_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.profile_name_prefix = input;
         self
     }
-    /// <p>Prefix for profile name.</p>
+    /// <p>An optional string added to the beginning of each profile name returned in the results.</p>
     pub fn get_profile_name_prefix(&self) -> &::std::option::Option<::std::string::String> {
         &self.profile_name_prefix
     }

@@ -14,9 +14,9 @@ pub struct OptionGroupOptionSetting {
     pub apply_type: ::std::option::Option<::std::string::String>,
     /// <p>Indicates the acceptable values for the option group option.</p>
     pub allowed_values: ::std::option::Option<::std::string::String>,
-    /// <p>Boolean value where true indicates that this option group option can be changed from the default value.</p>
+    /// <p>Indicates whether this option group option can be changed from the default value.</p>
     pub is_modifiable: bool,
-    /// <p>Boolean value where true indicates that a value must be specified for this option setting of the option group option.</p>
+    /// <p>Indicates whether a value must be specified for this option setting of the option group option.</p>
     pub is_required: bool,
     /// <p>The minimum DB engine version required for the corresponding allowed value for this option setting.</p>
     pub minimum_engine_version_per_allowed_value: ::std::option::Option<::std::vec::Vec<crate::types::MinimumEngineVersionPerAllowedValue>>,
@@ -42,11 +42,11 @@ impl OptionGroupOptionSetting {
     pub fn allowed_values(&self) -> ::std::option::Option<&str> {
         self.allowed_values.as_deref()
     }
-    /// <p>Boolean value where true indicates that this option group option can be changed from the default value.</p>
+    /// <p>Indicates whether this option group option can be changed from the default value.</p>
     pub fn is_modifiable(&self) -> bool {
         self.is_modifiable
     }
-    /// <p>Boolean value where true indicates that a value must be specified for this option setting of the option group option.</p>
+    /// <p>Indicates whether a value must be specified for this option setting of the option group option.</p>
     pub fn is_required(&self) -> bool {
         self.is_required
     }
@@ -146,31 +146,31 @@ impl OptionGroupOptionSettingBuilder {
     pub fn get_allowed_values(&self) -> &::std::option::Option<::std::string::String> {
         &self.allowed_values
     }
-    /// <p>Boolean value where true indicates that this option group option can be changed from the default value.</p>
+    /// <p>Indicates whether this option group option can be changed from the default value.</p>
     pub fn is_modifiable(mut self, input: bool) -> Self {
         self.is_modifiable = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Boolean value where true indicates that this option group option can be changed from the default value.</p>
+    /// <p>Indicates whether this option group option can be changed from the default value.</p>
     pub fn set_is_modifiable(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_modifiable = input;
         self
     }
-    /// <p>Boolean value where true indicates that this option group option can be changed from the default value.</p>
+    /// <p>Indicates whether this option group option can be changed from the default value.</p>
     pub fn get_is_modifiable(&self) -> &::std::option::Option<bool> {
         &self.is_modifiable
     }
-    /// <p>Boolean value where true indicates that a value must be specified for this option setting of the option group option.</p>
+    /// <p>Indicates whether a value must be specified for this option setting of the option group option.</p>
     pub fn is_required(mut self, input: bool) -> Self {
         self.is_required = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Boolean value where true indicates that a value must be specified for this option setting of the option group option.</p>
+    /// <p>Indicates whether a value must be specified for this option setting of the option group option.</p>
     pub fn set_is_required(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_required = input;
         self
     }
-    /// <p>Boolean value where true indicates that a value must be specified for this option setting of the option group option.</p>
+    /// <p>Indicates whether a value must be specified for this option setting of the option group option.</p>
     pub fn get_is_required(&self) -> &::std::option::Option<bool> {
         &self.is_required
     }

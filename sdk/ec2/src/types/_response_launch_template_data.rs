@@ -43,7 +43,10 @@ pub struct ResponseLaunchTemplateData {
     pub tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::LaunchTemplateTagSpecification>>,
     /// <p>The elastic GPU specification.</p>
     pub elastic_gpu_specifications: ::std::option::Option<::std::vec::Vec<crate::types::ElasticGpuSpecificationResponse>>,
-    /// <p> The elastic inference accelerator for the instance. </p>
+    /// <p>An elastic inference accelerator to associate with the instance. Elastic inference accelerators are a resource you can attach to your Amazon EC2 instances to accelerate your Deep Learning (DL) inference workloads.</p>
+    /// <p>You cannot specify accelerators from different generations in the same request.</p> <note>
+    /// <p>Starting April 15, 2023, Amazon Web Services will not onboard new customers to Amazon Elastic Inference (EI), and will help current customers migrate their workloads to options that offer better price and performance. After April 15, 2023, new customers will not be able to launch instances with Amazon EI accelerators in Amazon SageMaker, Amazon ECS, or Amazon EC2. However, customers who have used Amazon EI at least once during the past 30-day period are considered current customers and will be able to continue using the service.</p>
+    /// </note>
     pub elastic_inference_accelerators: ::std::option::Option<::std::vec::Vec<crate::types::LaunchTemplateElasticInferenceAcceleratorResponse>>,
     /// <p>The security group IDs.</p>
     pub security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -147,7 +150,10 @@ impl ResponseLaunchTemplateData {
     pub fn elastic_gpu_specifications(&self) -> ::std::option::Option<&[crate::types::ElasticGpuSpecificationResponse]> {
         self.elastic_gpu_specifications.as_deref()
     }
-    /// <p> The elastic inference accelerator for the instance. </p>
+    /// <p>An elastic inference accelerator to associate with the instance. Elastic inference accelerators are a resource you can attach to your Amazon EC2 instances to accelerate your Deep Learning (DL) inference workloads.</p>
+    /// <p>You cannot specify accelerators from different generations in the same request.</p> <note>
+    /// <p>Starting April 15, 2023, Amazon Web Services will not onboard new customers to Amazon Elastic Inference (EI), and will help current customers migrate their workloads to options that offer better price and performance. After April 15, 2023, new customers will not be able to launch instances with Amazon EI accelerators in Amazon SageMaker, Amazon ECS, or Amazon EC2. However, customers who have used Amazon EI at least once during the past 30-day period are considered current customers and will be able to continue using the service.</p>
+    /// </note>
     pub fn elastic_inference_accelerators(&self) -> ::std::option::Option<&[crate::types::LaunchTemplateElasticInferenceAcceleratorResponse]> {
         self.elastic_inference_accelerators.as_deref()
     }
@@ -575,14 +581,20 @@ impl ResponseLaunchTemplateDataBuilder {
     ///
     /// To override the contents of this collection use [`set_elastic_inference_accelerators`](Self::set_elastic_inference_accelerators).
     ///
-    /// <p> The elastic inference accelerator for the instance. </p>
+    /// <p>An elastic inference accelerator to associate with the instance. Elastic inference accelerators are a resource you can attach to your Amazon EC2 instances to accelerate your Deep Learning (DL) inference workloads.</p>
+    /// <p>You cannot specify accelerators from different generations in the same request.</p> <note>
+    /// <p>Starting April 15, 2023, Amazon Web Services will not onboard new customers to Amazon Elastic Inference (EI), and will help current customers migrate their workloads to options that offer better price and performance. After April 15, 2023, new customers will not be able to launch instances with Amazon EI accelerators in Amazon SageMaker, Amazon ECS, or Amazon EC2. However, customers who have used Amazon EI at least once during the past 30-day period are considered current customers and will be able to continue using the service.</p>
+    /// </note>
     pub fn elastic_inference_accelerators(mut self, input: crate::types::LaunchTemplateElasticInferenceAcceleratorResponse) -> Self {
         let mut v = self.elastic_inference_accelerators.unwrap_or_default();
         v.push(input);
         self.elastic_inference_accelerators = ::std::option::Option::Some(v);
         self
     }
-    /// <p> The elastic inference accelerator for the instance. </p>
+    /// <p>An elastic inference accelerator to associate with the instance. Elastic inference accelerators are a resource you can attach to your Amazon EC2 instances to accelerate your Deep Learning (DL) inference workloads.</p>
+    /// <p>You cannot specify accelerators from different generations in the same request.</p> <note>
+    /// <p>Starting April 15, 2023, Amazon Web Services will not onboard new customers to Amazon Elastic Inference (EI), and will help current customers migrate their workloads to options that offer better price and performance. After April 15, 2023, new customers will not be able to launch instances with Amazon EI accelerators in Amazon SageMaker, Amazon ECS, or Amazon EC2. However, customers who have used Amazon EI at least once during the past 30-day period are considered current customers and will be able to continue using the service.</p>
+    /// </note>
     pub fn set_elastic_inference_accelerators(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::LaunchTemplateElasticInferenceAcceleratorResponse>>,
@@ -590,7 +602,10 @@ impl ResponseLaunchTemplateDataBuilder {
         self.elastic_inference_accelerators = input;
         self
     }
-    /// <p> The elastic inference accelerator for the instance. </p>
+    /// <p>An elastic inference accelerator to associate with the instance. Elastic inference accelerators are a resource you can attach to your Amazon EC2 instances to accelerate your Deep Learning (DL) inference workloads.</p>
+    /// <p>You cannot specify accelerators from different generations in the same request.</p> <note>
+    /// <p>Starting April 15, 2023, Amazon Web Services will not onboard new customers to Amazon Elastic Inference (EI), and will help current customers migrate their workloads to options that offer better price and performance. After April 15, 2023, new customers will not be able to launch instances with Amazon EI accelerators in Amazon SageMaker, Amazon ECS, or Amazon EC2. However, customers who have used Amazon EI at least once during the past 30-day period are considered current customers and will be able to continue using the service.</p>
+    /// </note>
     pub fn get_elastic_inference_accelerators(
         &self,
     ) -> &::std::option::Option<::std::vec::Vec<crate::types::LaunchTemplateElasticInferenceAcceleratorResponse>> {

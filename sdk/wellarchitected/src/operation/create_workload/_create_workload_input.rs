@@ -58,8 +58,10 @@ pub struct CreateWorkloadInput {
     /// <p>The industry for the workload.</p>
     pub industry: ::std::option::Option<::std::string::String>,
     /// <p>The list of lenses associated with the workload. Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
+    /// <p>If a review template that specifies lenses is applied to the workload, those lenses are applied to the workload in addition to these lenses.</p>
     pub lenses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The notes associated with the workload.</p>
+    /// <p>For a review template, these are the notes that will be associated with the workload when the template is applied.</p>
     pub notes: ::std::option::Option<::std::string::String>,
     /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
     /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p> <important>
@@ -74,6 +76,8 @@ pub struct CreateWorkloadInput {
     pub applications: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The list of profile ARNs associated with the workload.</p>
     pub profile_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The list of review template ARNs to associate with the workload.</p>
+    pub review_template_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl CreateWorkloadInput {
     /// <p>The name of the workload.</p>
@@ -152,10 +156,12 @@ impl CreateWorkloadInput {
         self.industry.as_deref()
     }
     /// <p>The list of lenses associated with the workload. Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
+    /// <p>If a review template that specifies lenses is applied to the workload, those lenses are applied to the workload in addition to these lenses.</p>
     pub fn lenses(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.lenses.as_deref()
     }
     /// <p>The notes associated with the workload.</p>
+    /// <p>For a review template, these are the notes that will be associated with the workload when the template is applied.</p>
     pub fn notes(&self) -> ::std::option::Option<&str> {
         self.notes.as_deref()
     }
@@ -181,6 +187,10 @@ impl CreateWorkloadInput {
     /// <p>The list of profile ARNs associated with the workload.</p>
     pub fn profile_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.profile_arns.as_deref()
+    }
+    /// <p>The list of review template ARNs to associate with the workload.</p>
+    pub fn review_template_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
+        self.review_template_arns.as_deref()
     }
 }
 impl CreateWorkloadInput {
@@ -212,6 +222,7 @@ pub struct CreateWorkloadInputBuilder {
     pub(crate) discovery_config: ::std::option::Option<crate::types::WorkloadDiscoveryConfig>,
     pub(crate) applications: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) profile_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) review_template_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl CreateWorkloadInputBuilder {
     /// <p>The name of the workload.</p>
@@ -490,6 +501,7 @@ impl CreateWorkloadInputBuilder {
     /// To override the contents of this collection use [`set_lenses`](Self::set_lenses).
     ///
     /// <p>The list of lenses associated with the workload. Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
+    /// <p>If a review template that specifies lenses is applied to the workload, those lenses are applied to the workload in addition to these lenses.</p>
     pub fn lenses(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.lenses.unwrap_or_default();
         v.push(input.into());
@@ -497,25 +509,30 @@ impl CreateWorkloadInputBuilder {
         self
     }
     /// <p>The list of lenses associated with the workload. Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
+    /// <p>If a review template that specifies lenses is applied to the workload, those lenses are applied to the workload in addition to these lenses.</p>
     pub fn set_lenses(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.lenses = input;
         self
     }
     /// <p>The list of lenses associated with the workload. Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
+    /// <p>If a review template that specifies lenses is applied to the workload, those lenses are applied to the workload in addition to these lenses.</p>
     pub fn get_lenses(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.lenses
     }
     /// <p>The notes associated with the workload.</p>
+    /// <p>For a review template, these are the notes that will be associated with the workload when the template is applied.</p>
     pub fn notes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.notes = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The notes associated with the workload.</p>
+    /// <p>For a review template, these are the notes that will be associated with the workload when the template is applied.</p>
     pub fn set_notes(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.notes = input;
         self
     }
     /// <p>The notes associated with the workload.</p>
+    /// <p>For a review template, these are the notes that will be associated with the workload when the template is applied.</p>
     pub fn get_notes(&self) -> &::std::option::Option<::std::string::String> {
         &self.notes
     }
@@ -616,6 +633,26 @@ impl CreateWorkloadInputBuilder {
     pub fn get_profile_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.profile_arns
     }
+    /// Appends an item to `review_template_arns`.
+    ///
+    /// To override the contents of this collection use [`set_review_template_arns`](Self::set_review_template_arns).
+    ///
+    /// <p>The list of review template ARNs to associate with the workload.</p>
+    pub fn review_template_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.review_template_arns.unwrap_or_default();
+        v.push(input.into());
+        self.review_template_arns = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The list of review template ARNs to associate with the workload.</p>
+    pub fn set_review_template_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.review_template_arns = input;
+        self
+    }
+    /// <p>The list of review template ARNs to associate with the workload.</p>
+    pub fn get_review_template_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.review_template_arns
+    }
     /// Consumes the builder and constructs a [`CreateWorkloadInput`](crate::operation::create_workload::CreateWorkloadInput).
     pub fn build(
         self,
@@ -639,6 +676,7 @@ impl CreateWorkloadInputBuilder {
             discovery_config: self.discovery_config,
             applications: self.applications,
             profile_arns: self.profile_arns,
+            review_template_arns: self.review_template_arns,
         })
     }
 }

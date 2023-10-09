@@ -63,6 +63,8 @@ pub use crate::types::_read_set_batch_error::ReadSetBatchErrorBuilder;
 
 pub use crate::types::_read_set_list_item::ReadSetListItemBuilder;
 
+pub use crate::types::_e_tag::ETagBuilder;
+
 pub use crate::types::_sequence_information::SequenceInformationBuilder;
 
 pub use crate::types::_read_set_filter::ReadSetFilterBuilder;

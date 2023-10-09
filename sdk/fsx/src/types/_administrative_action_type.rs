@@ -16,6 +16,7 @@
 ///     AdministrativeActionType::FileSystemAliasDisassociation => { /* ... */ },
 ///     AdministrativeActionType::FileSystemUpdate => { /* ... */ },
 ///     AdministrativeActionType::IopsOptimization => { /* ... */ },
+///     AdministrativeActionType::MisconfiguredStateRecovery => { /* ... */ },
 ///     AdministrativeActionType::ReleaseNfsV3Locks => { /* ... */ },
 ///     AdministrativeActionType::SnapshotUpdate => { /* ... */ },
 ///     AdministrativeActionType::StorageOptimization => { /* ... */ },
@@ -168,6 +169,8 @@ pub enum AdministrativeActionType {
     #[allow(missing_docs)] // documentation missing in model
     IopsOptimization,
     #[allow(missing_docs)] // documentation missing in model
+    MisconfiguredStateRecovery,
+    #[allow(missing_docs)] // documentation missing in model
     ReleaseNfsV3Locks,
     #[allow(missing_docs)] // documentation missing in model
     SnapshotUpdate,
@@ -191,6 +194,7 @@ impl ::std::convert::From<&str> for AdministrativeActionType {
             "FILE_SYSTEM_ALIAS_DISASSOCIATION" => AdministrativeActionType::FileSystemAliasDisassociation,
             "FILE_SYSTEM_UPDATE" => AdministrativeActionType::FileSystemUpdate,
             "IOPS_OPTIMIZATION" => AdministrativeActionType::IopsOptimization,
+            "MISCONFIGURED_STATE_RECOVERY" => AdministrativeActionType::MisconfiguredStateRecovery,
             "RELEASE_NFS_V3_LOCKS" => AdministrativeActionType::ReleaseNfsV3Locks,
             "SNAPSHOT_UPDATE" => AdministrativeActionType::SnapshotUpdate,
             "STORAGE_OPTIMIZATION" => AdministrativeActionType::StorageOptimization,
@@ -217,6 +221,7 @@ impl AdministrativeActionType {
             AdministrativeActionType::FileSystemAliasDisassociation => "FILE_SYSTEM_ALIAS_DISASSOCIATION",
             AdministrativeActionType::FileSystemUpdate => "FILE_SYSTEM_UPDATE",
             AdministrativeActionType::IopsOptimization => "IOPS_OPTIMIZATION",
+            AdministrativeActionType::MisconfiguredStateRecovery => "MISCONFIGURED_STATE_RECOVERY",
             AdministrativeActionType::ReleaseNfsV3Locks => "RELEASE_NFS_V3_LOCKS",
             AdministrativeActionType::SnapshotUpdate => "SNAPSHOT_UPDATE",
             AdministrativeActionType::StorageOptimization => "STORAGE_OPTIMIZATION",
@@ -234,6 +239,7 @@ impl AdministrativeActionType {
             "FILE_SYSTEM_ALIAS_DISASSOCIATION",
             "FILE_SYSTEM_UPDATE",
             "IOPS_OPTIMIZATION",
+            "MISCONFIGURED_STATE_RECOVERY",
             "RELEASE_NFS_V3_LOCKS",
             "SNAPSHOT_UPDATE",
             "STORAGE_OPTIMIZATION",

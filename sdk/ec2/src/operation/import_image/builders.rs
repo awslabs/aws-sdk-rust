@@ -386,17 +386,23 @@ impl ImportImageFluentBuilder {
     pub fn get_usage_operation(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_usage_operation()
     }
-    /// <p>The boot mode of the virtual machine.</p>
+    /// <p>The boot mode of the virtual machine.</p> <note>
+    /// <p>The <code>uefi-preferred</code> boot mode isn't supported for importing images. For more information, see <a href="https://docs.aws.amazon.com/vm-import/latest/userguide/prerequisites.html#vmimport-boot-modes">Boot modes</a> in the <i>VM Import/Export User Guide</i>.</p>
+    /// </note>
     pub fn boot_mode(mut self, input: crate::types::BootModeValues) -> Self {
         self.inner = self.inner.boot_mode(input);
         self
     }
-    /// <p>The boot mode of the virtual machine.</p>
+    /// <p>The boot mode of the virtual machine.</p> <note>
+    /// <p>The <code>uefi-preferred</code> boot mode isn't supported for importing images. For more information, see <a href="https://docs.aws.amazon.com/vm-import/latest/userguide/prerequisites.html#vmimport-boot-modes">Boot modes</a> in the <i>VM Import/Export User Guide</i>.</p>
+    /// </note>
     pub fn set_boot_mode(mut self, input: ::std::option::Option<crate::types::BootModeValues>) -> Self {
         self.inner = self.inner.set_boot_mode(input);
         self
     }
-    /// <p>The boot mode of the virtual machine.</p>
+    /// <p>The boot mode of the virtual machine.</p> <note>
+    /// <p>The <code>uefi-preferred</code> boot mode isn't supported for importing images. For more information, see <a href="https://docs.aws.amazon.com/vm-import/latest/userguide/prerequisites.html#vmimport-boot-modes">Boot modes</a> in the <i>VM Import/Export User Guide</i>.</p>
+    /// </note>
     pub fn get_boot_mode(&self) -> &::std::option::Option<crate::types::BootModeValues> {
         self.inner.get_boot_mode()
     }

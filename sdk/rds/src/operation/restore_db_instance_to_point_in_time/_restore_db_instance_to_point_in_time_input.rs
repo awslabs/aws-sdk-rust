@@ -182,7 +182,7 @@ pub struct RestoreDbInstanceToPointInTimeInput {
     /// <p>The number of CPU cores and the number of threads per core for the DB instance class of the DB instance.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
     pub processor_features: ::std::option::Option<::std::vec::Vec<crate::types::ProcessorFeature>>,
-    /// <p>A value that indicates whether the DB instance class of the DB instance uses its default processor features.</p>
+    /// <p>Specifies whether the DB instance class of the DB instance uses its default processor features.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
     pub use_default_processor_features: ::std::option::Option<bool>,
     /// <p>The name of the DB parameter group to associate with this DB instance.</p>
@@ -484,7 +484,7 @@ impl RestoreDbInstanceToPointInTimeInput {
     pub fn processor_features(&self) -> ::std::option::Option<&[crate::types::ProcessorFeature]> {
         self.processor_features.as_deref()
     }
-    /// <p>A value that indicates whether the DB instance class of the DB instance uses its default processor features.</p>
+    /// <p>Specifies whether the DB instance class of the DB instance uses its default processor features.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
     pub fn use_default_processor_features(&self) -> ::std::option::Option<bool> {
         self.use_default_processor_features
@@ -1437,19 +1437,19 @@ impl RestoreDbInstanceToPointInTimeInputBuilder {
     pub fn get_processor_features(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProcessorFeature>> {
         &self.processor_features
     }
-    /// <p>A value that indicates whether the DB instance class of the DB instance uses its default processor features.</p>
+    /// <p>Specifies whether the DB instance class of the DB instance uses its default processor features.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
     pub fn use_default_processor_features(mut self, input: bool) -> Self {
         self.use_default_processor_features = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A value that indicates whether the DB instance class of the DB instance uses its default processor features.</p>
+    /// <p>Specifies whether the DB instance class of the DB instance uses its default processor features.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
     pub fn set_use_default_processor_features(mut self, input: ::std::option::Option<bool>) -> Self {
         self.use_default_processor_features = input;
         self
     }
-    /// <p>A value that indicates whether the DB instance class of the DB instance uses its default processor features.</p>
+    /// <p>Specifies whether the DB instance class of the DB instance uses its default processor features.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
     pub fn get_use_default_processor_features(&self) -> &::std::option::Option<bool> {
         &self.use_default_processor_features

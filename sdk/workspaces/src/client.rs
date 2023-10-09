@@ -152,6 +152,8 @@ mod associate_connection_alias;
 
 mod associate_ip_groups;
 
+mod associate_workspace_application;
+
 mod authorize_ip_rules;
 
 mod copy_workspace_image;
@@ -216,11 +218,19 @@ mod delete_workspace_bundle;
 
 mod delete_workspace_image;
 
+mod deploy_workspace_applications;
+
 mod deregister_workspace_directory;
 
 mod describe_account;
 
 mod describe_account_modifications;
+
+mod describe_application_associations;
+
+mod describe_applications;
+
+mod describe_bundle_associations;
 
 mod describe_client_branding;
 
@@ -232,9 +242,13 @@ mod describe_connection_alias_permissions;
 
 mod describe_connection_aliases;
 
+mod describe_image_associations;
+
 mod describe_ip_groups;
 
 mod describe_tags;
+
+mod describe_workspace_associations;
 
 mod describe_workspace_bundles;
 
@@ -253,6 +267,8 @@ mod describe_workspaces_connection_status;
 mod disassociate_connection_alias;
 
 mod disassociate_ip_groups;
+
+mod disassociate_workspace_application;
 
 mod import_client_branding;
 

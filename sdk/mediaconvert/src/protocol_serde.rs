@@ -301,6 +301,8 @@ pub(crate) mod shape_remix_settings;
 
 pub(crate) mod shape_video_codec_settings;
 
+pub(crate) mod shape_video_overlay;
+
 pub(crate) mod shape_video_preprocessor;
 
 pub(crate) mod shape_video_selector;
@@ -413,6 +415,8 @@ pub(crate) mod shape_ttml_destination_settings;
 
 pub(crate) mod shape_vc3_settings;
 
+pub(crate) mod shape_video_overlay_input;
+
 pub(crate) mod shape_vorbis_settings;
 
 pub(crate) mod shape_vp8_settings;
@@ -436,6 +440,9 @@ pub(crate) mod shape___list_of_input_clipping;
 
 #[allow(non_snake_case)]
 pub(crate) mod shape___list_of_output;
+
+#[allow(non_snake_case)]
+pub(crate) mod shape___list_of_video_overlay;
 
 #[allow(non_snake_case)]
 pub(crate) mod shape___map_of_audio_selector;
@@ -514,6 +521,8 @@ pub(crate) mod shape_teletext_source_settings;
 
 pub(crate) mod shape_track_source_settings;
 
+pub(crate) mod shape_video_overlay_input_clipping;
+
 pub(crate) mod shape_webvtt_hls_source_settings;
 
 pub(crate) mod shape_xavc4k_intra_cbg_profile_settings;
@@ -588,6 +597,9 @@ pub(crate) mod shape___list_of_teletext_page_type;
 pub(crate) mod shape_s3_destination_access_control;
 
 pub(crate) mod shape_s3_encryption_settings;
+
+#[allow(non_snake_case)]
+pub(crate) mod shape___list_of_video_overlay_input_clipping;
 
 #[allow(non_snake_case)]
 pub(crate) mod shape___list_of__double_min_negative60_max6;

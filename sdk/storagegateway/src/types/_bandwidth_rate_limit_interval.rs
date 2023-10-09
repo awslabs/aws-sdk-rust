@@ -16,7 +16,10 @@ pub struct BandwidthRateLimitInterval {
     pub end_minute_of_hour: ::std::option::Option<i32>,
     /// <p> The days of the week component of the bandwidth rate limit interval, represented as ordinal numbers from 0 to 6, where 0 represents Sunday and 6 represents Saturday. </p>
     pub days_of_week: ::std::option::Option<::std::vec::Vec<i32>>,
-    /// <p> The average upload rate limit component of the bandwidth rate limit interval, in bits per second. This field does not appear in the response if the upload rate limit is not set. </p>
+    /// <p> The average upload rate limit component of the bandwidth rate limit interval, in bits per second. This field does not appear in the response if the upload rate limit is not set. </p> <note>
+    /// <p>For Tape Gateway and Volume Gateway, the minimum value is <code>51200</code>.</p>
+    /// <p>For S3 File Gateway and FSx File Gateway, the minimum value is <code>104857600</code>.</p>
+    /// </note>
     pub average_upload_rate_limit_in_bits_per_sec: ::std::option::Option<i64>,
     /// <p> The average download rate limit component of the bandwidth rate limit interval, in bits per second. This field does not appear in the response if the download rate limit is not set. </p>
     pub average_download_rate_limit_in_bits_per_sec: ::std::option::Option<i64>,
@@ -44,7 +47,10 @@ impl BandwidthRateLimitInterval {
     pub fn days_of_week(&self) -> ::std::option::Option<&[i32]> {
         self.days_of_week.as_deref()
     }
-    /// <p> The average upload rate limit component of the bandwidth rate limit interval, in bits per second. This field does not appear in the response if the upload rate limit is not set. </p>
+    /// <p> The average upload rate limit component of the bandwidth rate limit interval, in bits per second. This field does not appear in the response if the upload rate limit is not set. </p> <note>
+    /// <p>For Tape Gateway and Volume Gateway, the minimum value is <code>51200</code>.</p>
+    /// <p>For S3 File Gateway and FSx File Gateway, the minimum value is <code>104857600</code>.</p>
+    /// </note>
     pub fn average_upload_rate_limit_in_bits_per_sec(&self) -> ::std::option::Option<i64> {
         self.average_upload_rate_limit_in_bits_per_sec
     }
@@ -155,17 +161,26 @@ impl BandwidthRateLimitIntervalBuilder {
     pub fn get_days_of_week(&self) -> &::std::option::Option<::std::vec::Vec<i32>> {
         &self.days_of_week
     }
-    /// <p> The average upload rate limit component of the bandwidth rate limit interval, in bits per second. This field does not appear in the response if the upload rate limit is not set. </p>
+    /// <p> The average upload rate limit component of the bandwidth rate limit interval, in bits per second. This field does not appear in the response if the upload rate limit is not set. </p> <note>
+    /// <p>For Tape Gateway and Volume Gateway, the minimum value is <code>51200</code>.</p>
+    /// <p>For S3 File Gateway and FSx File Gateway, the minimum value is <code>104857600</code>.</p>
+    /// </note>
     pub fn average_upload_rate_limit_in_bits_per_sec(mut self, input: i64) -> Self {
         self.average_upload_rate_limit_in_bits_per_sec = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The average upload rate limit component of the bandwidth rate limit interval, in bits per second. This field does not appear in the response if the upload rate limit is not set. </p>
+    /// <p> The average upload rate limit component of the bandwidth rate limit interval, in bits per second. This field does not appear in the response if the upload rate limit is not set. </p> <note>
+    /// <p>For Tape Gateway and Volume Gateway, the minimum value is <code>51200</code>.</p>
+    /// <p>For S3 File Gateway and FSx File Gateway, the minimum value is <code>104857600</code>.</p>
+    /// </note>
     pub fn set_average_upload_rate_limit_in_bits_per_sec(mut self, input: ::std::option::Option<i64>) -> Self {
         self.average_upload_rate_limit_in_bits_per_sec = input;
         self
     }
-    /// <p> The average upload rate limit component of the bandwidth rate limit interval, in bits per second. This field does not appear in the response if the upload rate limit is not set. </p>
+    /// <p> The average upload rate limit component of the bandwidth rate limit interval, in bits per second. This field does not appear in the response if the upload rate limit is not set. </p> <note>
+    /// <p>For Tape Gateway and Volume Gateway, the minimum value is <code>51200</code>.</p>
+    /// <p>For S3 File Gateway and FSx File Gateway, the minimum value is <code>104857600</code>.</p>
+    /// </note>
     pub fn get_average_upload_rate_limit_in_bits_per_sec(&self) -> &::std::option::Option<i64> {
         &self.average_upload_rate_limit_in_bits_per_sec
     }

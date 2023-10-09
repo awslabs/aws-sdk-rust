@@ -6,17 +6,26 @@
 pub struct ConnectionPoolConfiguration {
     /// <p>The maximum size of the connection pool for each target in a target group. The value is expressed as a percentage of the <code>max_connections</code> setting for the RDS DB instance or Aurora DB cluster used by the target group.</p>
     /// <p>If you specify <code>MaxIdleConnectionsPercent</code>, then you must also include a value for this parameter.</p>
-    /// <p>Default: 10 for RDS for Microsoft SQL Server, and 100 for all other engines</p>
-    /// <p>Constraints: Must be between 1 and 100.</p>
+    /// <p>Default: <code>10</code> for RDS for Microsoft SQL Server, and <code>100</code> for all other engines</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must be between 1 and 100.</p> </li>
+    /// </ul>
     pub max_connections_percent: ::std::option::Option<i32>,
-    /// <p>Controls how actively the proxy closes idle database connections in the connection pool. The value is expressed as a percentage of the <code>max_connections</code> setting for the RDS DB instance or Aurora DB cluster used by the target group. With a high value, the proxy leaves a high percentage of idle database connections open. A low value causes the proxy to close more idle connections and return them to the database.</p>
+    /// <p>A value that controls how actively the proxy closes idle database connections in the connection pool. The value is expressed as a percentage of the <code>max_connections</code> setting for the RDS DB instance or Aurora DB cluster used by the target group. With a high value, the proxy leaves a high percentage of idle database connections open. A low value causes the proxy to close more idle connections and return them to the database.</p>
     /// <p>If you specify this parameter, then you must also include a value for <code>MaxConnectionsPercent</code>.</p>
-    /// <p>Default: The default value is half of the value of <code>MaxConnectionsPercent</code>. For example, if <code>MaxConnectionsPercent</code> is 80, then the default value of <code>MaxIdleConnectionsPercent</code> is 40. If the value of <code>MaxConnectionsPercent</code> isn't specified, then for SQL Server, <code>MaxIdleConnectionsPercent</code> is 5, and for all other engines, the default is 50.</p>
-    /// <p>Constraints: Must be between 0 and the value of <code>MaxConnectionsPercent</code>.</p>
+    /// <p>Default: The default value is half of the value of <code>MaxConnectionsPercent</code>. For example, if <code>MaxConnectionsPercent</code> is 80, then the default value of <code>MaxIdleConnectionsPercent</code> is 40. If the value of <code>MaxConnectionsPercent</code> isn't specified, then for SQL Server, <code>MaxIdleConnectionsPercent</code> is <code>5</code>, and for all other engines, the default is <code>50</code>.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must be between 0 and the value of <code>MaxConnectionsPercent</code>.</p> </li>
+    /// </ul>
     pub max_idle_connections_percent: ::std::option::Option<i32>,
-    /// <p>The number of seconds for a proxy to wait for a connection to become available in the connection pool. Only applies when the proxy has opened its maximum number of connections and all connections are busy with client sessions.</p>
-    /// <p>Default: 120</p>
-    /// <p>Constraints: between 1 and 3600, or 0 representing unlimited</p>
+    /// <p>The number of seconds for a proxy to wait for a connection to become available in the connection pool. This setting only applies when the proxy has opened its maximum number of connections and all connections are busy with client sessions. For an unlimited wait time, specify <code>0</code>.</p>
+    /// <p>Default: <code>120</code> </p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must be between 0 and 3600.</p> </li>
+    /// </ul>
     pub connection_borrow_timeout: ::std::option::Option<i32>,
     /// <p>Each item in the list represents a class of SQL operations that normally cause all later statements in a session using a proxy to be pinned to the same underlying database connection. Including an item in the list exempts that class of SQL operations from the pinning behavior.</p>
     /// <p>Default: no session pinning filters</p>
@@ -28,21 +37,30 @@ pub struct ConnectionPoolConfiguration {
 impl ConnectionPoolConfiguration {
     /// <p>The maximum size of the connection pool for each target in a target group. The value is expressed as a percentage of the <code>max_connections</code> setting for the RDS DB instance or Aurora DB cluster used by the target group.</p>
     /// <p>If you specify <code>MaxIdleConnectionsPercent</code>, then you must also include a value for this parameter.</p>
-    /// <p>Default: 10 for RDS for Microsoft SQL Server, and 100 for all other engines</p>
-    /// <p>Constraints: Must be between 1 and 100.</p>
+    /// <p>Default: <code>10</code> for RDS for Microsoft SQL Server, and <code>100</code> for all other engines</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must be between 1 and 100.</p> </li>
+    /// </ul>
     pub fn max_connections_percent(&self) -> ::std::option::Option<i32> {
         self.max_connections_percent
     }
-    /// <p>Controls how actively the proxy closes idle database connections in the connection pool. The value is expressed as a percentage of the <code>max_connections</code> setting for the RDS DB instance or Aurora DB cluster used by the target group. With a high value, the proxy leaves a high percentage of idle database connections open. A low value causes the proxy to close more idle connections and return them to the database.</p>
+    /// <p>A value that controls how actively the proxy closes idle database connections in the connection pool. The value is expressed as a percentage of the <code>max_connections</code> setting for the RDS DB instance or Aurora DB cluster used by the target group. With a high value, the proxy leaves a high percentage of idle database connections open. A low value causes the proxy to close more idle connections and return them to the database.</p>
     /// <p>If you specify this parameter, then you must also include a value for <code>MaxConnectionsPercent</code>.</p>
-    /// <p>Default: The default value is half of the value of <code>MaxConnectionsPercent</code>. For example, if <code>MaxConnectionsPercent</code> is 80, then the default value of <code>MaxIdleConnectionsPercent</code> is 40. If the value of <code>MaxConnectionsPercent</code> isn't specified, then for SQL Server, <code>MaxIdleConnectionsPercent</code> is 5, and for all other engines, the default is 50.</p>
-    /// <p>Constraints: Must be between 0 and the value of <code>MaxConnectionsPercent</code>.</p>
+    /// <p>Default: The default value is half of the value of <code>MaxConnectionsPercent</code>. For example, if <code>MaxConnectionsPercent</code> is 80, then the default value of <code>MaxIdleConnectionsPercent</code> is 40. If the value of <code>MaxConnectionsPercent</code> isn't specified, then for SQL Server, <code>MaxIdleConnectionsPercent</code> is <code>5</code>, and for all other engines, the default is <code>50</code>.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must be between 0 and the value of <code>MaxConnectionsPercent</code>.</p> </li>
+    /// </ul>
     pub fn max_idle_connections_percent(&self) -> ::std::option::Option<i32> {
         self.max_idle_connections_percent
     }
-    /// <p>The number of seconds for a proxy to wait for a connection to become available in the connection pool. Only applies when the proxy has opened its maximum number of connections and all connections are busy with client sessions.</p>
-    /// <p>Default: 120</p>
-    /// <p>Constraints: between 1 and 3600, or 0 representing unlimited</p>
+    /// <p>The number of seconds for a proxy to wait for a connection to become available in the connection pool. This setting only applies when the proxy has opened its maximum number of connections and all connections are busy with client sessions. For an unlimited wait time, specify <code>0</code>.</p>
+    /// <p>Default: <code>120</code> </p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must be between 0 and 3600.</p> </li>
+    /// </ul>
     pub fn connection_borrow_timeout(&self) -> ::std::option::Option<i32> {
         self.connection_borrow_timeout
     }
@@ -77,67 +95,94 @@ pub struct ConnectionPoolConfigurationBuilder {
 impl ConnectionPoolConfigurationBuilder {
     /// <p>The maximum size of the connection pool for each target in a target group. The value is expressed as a percentage of the <code>max_connections</code> setting for the RDS DB instance or Aurora DB cluster used by the target group.</p>
     /// <p>If you specify <code>MaxIdleConnectionsPercent</code>, then you must also include a value for this parameter.</p>
-    /// <p>Default: 10 for RDS for Microsoft SQL Server, and 100 for all other engines</p>
-    /// <p>Constraints: Must be between 1 and 100.</p>
+    /// <p>Default: <code>10</code> for RDS for Microsoft SQL Server, and <code>100</code> for all other engines</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must be between 1 and 100.</p> </li>
+    /// </ul>
     pub fn max_connections_percent(mut self, input: i32) -> Self {
         self.max_connections_percent = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum size of the connection pool for each target in a target group. The value is expressed as a percentage of the <code>max_connections</code> setting for the RDS DB instance or Aurora DB cluster used by the target group.</p>
     /// <p>If you specify <code>MaxIdleConnectionsPercent</code>, then you must also include a value for this parameter.</p>
-    /// <p>Default: 10 for RDS for Microsoft SQL Server, and 100 for all other engines</p>
-    /// <p>Constraints: Must be between 1 and 100.</p>
+    /// <p>Default: <code>10</code> for RDS for Microsoft SQL Server, and <code>100</code> for all other engines</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must be between 1 and 100.</p> </li>
+    /// </ul>
     pub fn set_max_connections_percent(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_connections_percent = input;
         self
     }
     /// <p>The maximum size of the connection pool for each target in a target group. The value is expressed as a percentage of the <code>max_connections</code> setting for the RDS DB instance or Aurora DB cluster used by the target group.</p>
     /// <p>If you specify <code>MaxIdleConnectionsPercent</code>, then you must also include a value for this parameter.</p>
-    /// <p>Default: 10 for RDS for Microsoft SQL Server, and 100 for all other engines</p>
-    /// <p>Constraints: Must be between 1 and 100.</p>
+    /// <p>Default: <code>10</code> for RDS for Microsoft SQL Server, and <code>100</code> for all other engines</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must be between 1 and 100.</p> </li>
+    /// </ul>
     pub fn get_max_connections_percent(&self) -> &::std::option::Option<i32> {
         &self.max_connections_percent
     }
-    /// <p>Controls how actively the proxy closes idle database connections in the connection pool. The value is expressed as a percentage of the <code>max_connections</code> setting for the RDS DB instance or Aurora DB cluster used by the target group. With a high value, the proxy leaves a high percentage of idle database connections open. A low value causes the proxy to close more idle connections and return them to the database.</p>
+    /// <p>A value that controls how actively the proxy closes idle database connections in the connection pool. The value is expressed as a percentage of the <code>max_connections</code> setting for the RDS DB instance or Aurora DB cluster used by the target group. With a high value, the proxy leaves a high percentage of idle database connections open. A low value causes the proxy to close more idle connections and return them to the database.</p>
     /// <p>If you specify this parameter, then you must also include a value for <code>MaxConnectionsPercent</code>.</p>
-    /// <p>Default: The default value is half of the value of <code>MaxConnectionsPercent</code>. For example, if <code>MaxConnectionsPercent</code> is 80, then the default value of <code>MaxIdleConnectionsPercent</code> is 40. If the value of <code>MaxConnectionsPercent</code> isn't specified, then for SQL Server, <code>MaxIdleConnectionsPercent</code> is 5, and for all other engines, the default is 50.</p>
-    /// <p>Constraints: Must be between 0 and the value of <code>MaxConnectionsPercent</code>.</p>
+    /// <p>Default: The default value is half of the value of <code>MaxConnectionsPercent</code>. For example, if <code>MaxConnectionsPercent</code> is 80, then the default value of <code>MaxIdleConnectionsPercent</code> is 40. If the value of <code>MaxConnectionsPercent</code> isn't specified, then for SQL Server, <code>MaxIdleConnectionsPercent</code> is <code>5</code>, and for all other engines, the default is <code>50</code>.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must be between 0 and the value of <code>MaxConnectionsPercent</code>.</p> </li>
+    /// </ul>
     pub fn max_idle_connections_percent(mut self, input: i32) -> Self {
         self.max_idle_connections_percent = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Controls how actively the proxy closes idle database connections in the connection pool. The value is expressed as a percentage of the <code>max_connections</code> setting for the RDS DB instance or Aurora DB cluster used by the target group. With a high value, the proxy leaves a high percentage of idle database connections open. A low value causes the proxy to close more idle connections and return them to the database.</p>
+    /// <p>A value that controls how actively the proxy closes idle database connections in the connection pool. The value is expressed as a percentage of the <code>max_connections</code> setting for the RDS DB instance or Aurora DB cluster used by the target group. With a high value, the proxy leaves a high percentage of idle database connections open. A low value causes the proxy to close more idle connections and return them to the database.</p>
     /// <p>If you specify this parameter, then you must also include a value for <code>MaxConnectionsPercent</code>.</p>
-    /// <p>Default: The default value is half of the value of <code>MaxConnectionsPercent</code>. For example, if <code>MaxConnectionsPercent</code> is 80, then the default value of <code>MaxIdleConnectionsPercent</code> is 40. If the value of <code>MaxConnectionsPercent</code> isn't specified, then for SQL Server, <code>MaxIdleConnectionsPercent</code> is 5, and for all other engines, the default is 50.</p>
-    /// <p>Constraints: Must be between 0 and the value of <code>MaxConnectionsPercent</code>.</p>
+    /// <p>Default: The default value is half of the value of <code>MaxConnectionsPercent</code>. For example, if <code>MaxConnectionsPercent</code> is 80, then the default value of <code>MaxIdleConnectionsPercent</code> is 40. If the value of <code>MaxConnectionsPercent</code> isn't specified, then for SQL Server, <code>MaxIdleConnectionsPercent</code> is <code>5</code>, and for all other engines, the default is <code>50</code>.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must be between 0 and the value of <code>MaxConnectionsPercent</code>.</p> </li>
+    /// </ul>
     pub fn set_max_idle_connections_percent(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_idle_connections_percent = input;
         self
     }
-    /// <p>Controls how actively the proxy closes idle database connections in the connection pool. The value is expressed as a percentage of the <code>max_connections</code> setting for the RDS DB instance or Aurora DB cluster used by the target group. With a high value, the proxy leaves a high percentage of idle database connections open. A low value causes the proxy to close more idle connections and return them to the database.</p>
+    /// <p>A value that controls how actively the proxy closes idle database connections in the connection pool. The value is expressed as a percentage of the <code>max_connections</code> setting for the RDS DB instance or Aurora DB cluster used by the target group. With a high value, the proxy leaves a high percentage of idle database connections open. A low value causes the proxy to close more idle connections and return them to the database.</p>
     /// <p>If you specify this parameter, then you must also include a value for <code>MaxConnectionsPercent</code>.</p>
-    /// <p>Default: The default value is half of the value of <code>MaxConnectionsPercent</code>. For example, if <code>MaxConnectionsPercent</code> is 80, then the default value of <code>MaxIdleConnectionsPercent</code> is 40. If the value of <code>MaxConnectionsPercent</code> isn't specified, then for SQL Server, <code>MaxIdleConnectionsPercent</code> is 5, and for all other engines, the default is 50.</p>
-    /// <p>Constraints: Must be between 0 and the value of <code>MaxConnectionsPercent</code>.</p>
+    /// <p>Default: The default value is half of the value of <code>MaxConnectionsPercent</code>. For example, if <code>MaxConnectionsPercent</code> is 80, then the default value of <code>MaxIdleConnectionsPercent</code> is 40. If the value of <code>MaxConnectionsPercent</code> isn't specified, then for SQL Server, <code>MaxIdleConnectionsPercent</code> is <code>5</code>, and for all other engines, the default is <code>50</code>.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must be between 0 and the value of <code>MaxConnectionsPercent</code>.</p> </li>
+    /// </ul>
     pub fn get_max_idle_connections_percent(&self) -> &::std::option::Option<i32> {
         &self.max_idle_connections_percent
     }
-    /// <p>The number of seconds for a proxy to wait for a connection to become available in the connection pool. Only applies when the proxy has opened its maximum number of connections and all connections are busy with client sessions.</p>
-    /// <p>Default: 120</p>
-    /// <p>Constraints: between 1 and 3600, or 0 representing unlimited</p>
+    /// <p>The number of seconds for a proxy to wait for a connection to become available in the connection pool. This setting only applies when the proxy has opened its maximum number of connections and all connections are busy with client sessions. For an unlimited wait time, specify <code>0</code>.</p>
+    /// <p>Default: <code>120</code> </p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must be between 0 and 3600.</p> </li>
+    /// </ul>
     pub fn connection_borrow_timeout(mut self, input: i32) -> Self {
         self.connection_borrow_timeout = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of seconds for a proxy to wait for a connection to become available in the connection pool. Only applies when the proxy has opened its maximum number of connections and all connections are busy with client sessions.</p>
-    /// <p>Default: 120</p>
-    /// <p>Constraints: between 1 and 3600, or 0 representing unlimited</p>
+    /// <p>The number of seconds for a proxy to wait for a connection to become available in the connection pool. This setting only applies when the proxy has opened its maximum number of connections and all connections are busy with client sessions. For an unlimited wait time, specify <code>0</code>.</p>
+    /// <p>Default: <code>120</code> </p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must be between 0 and 3600.</p> </li>
+    /// </ul>
     pub fn set_connection_borrow_timeout(mut self, input: ::std::option::Option<i32>) -> Self {
         self.connection_borrow_timeout = input;
         self
     }
-    /// <p>The number of seconds for a proxy to wait for a connection to become available in the connection pool. Only applies when the proxy has opened its maximum number of connections and all connections are busy with client sessions.</p>
-    /// <p>Default: 120</p>
-    /// <p>Constraints: between 1 and 3600, or 0 representing unlimited</p>
+    /// <p>The number of seconds for a proxy to wait for a connection to become available in the connection pool. This setting only applies when the proxy has opened its maximum number of connections and all connections are busy with client sessions. For an unlimited wait time, specify <code>0</code>.</p>
+    /// <p>Default: <code>120</code> </p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must be between 0 and 3600.</p> </li>
+    /// </ul>
     pub fn get_connection_borrow_timeout(&self) -> &::std::option::Option<i32> {
         &self.connection_borrow_timeout
     }

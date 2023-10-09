@@ -575,6 +575,12 @@ pub(crate) mod shape_aws_cloud_watch_alarm_details;
 
 pub(crate) mod shape_aws_code_build_project_details;
 
+pub(crate) mod shape_aws_dms_endpoint_details;
+
+pub(crate) mod shape_aws_dms_replication_instance_details;
+
+pub(crate) mod shape_aws_dms_replication_task_details;
+
 pub(crate) mod shape_aws_dynamo_db_table_details;
 
 pub(crate) mod shape_aws_ec2_eip_details;
@@ -633,6 +639,10 @@ pub(crate) mod shape_aws_elbv2_load_balancer_details;
 
 pub(crate) mod shape_aws_event_schemas_registry_details;
 
+pub(crate) mod shape_aws_events_endpoint_details;
+
+pub(crate) mod shape_aws_events_eventbus_details;
+
 pub(crate) mod shape_aws_guard_duty_detector_details;
 
 pub(crate) mod shape_aws_iam_access_key_details;
@@ -652,6 +662,8 @@ pub(crate) mod shape_aws_kms_key_details;
 pub(crate) mod shape_aws_lambda_function_details;
 
 pub(crate) mod shape_aws_lambda_layer_version_details;
+
+pub(crate) mod shape_aws_msk_cluster_details;
 
 pub(crate) mod shape_aws_network_firewall_firewall_details;
 
@@ -674,6 +686,8 @@ pub(crate) mod shape_aws_rds_db_snapshot_details;
 pub(crate) mod shape_aws_rds_event_subscription_details;
 
 pub(crate) mod shape_aws_redshift_cluster_details;
+
+pub(crate) mod shape_aws_route53_hosted_zone_details;
 
 pub(crate) mod shape_aws_s3_account_public_access_block_details;
 
@@ -843,6 +857,10 @@ pub(crate) mod shape_aws_code_build_project_vpc_config;
 
 pub(crate) mod shape_aws_cors_configuration;
 
+pub(crate) mod shape_aws_dms_replication_instance_replication_subnet_group_details;
+
+pub(crate) mod shape_aws_dms_replication_instance_vpc_security_groups_details;
+
 pub(crate) mod shape_aws_dynamo_db_table_attribute_definition;
 
 pub(crate) mod shape_aws_dynamo_db_table_billing_mode_summary;
@@ -981,6 +999,12 @@ pub(crate) mod shape_aws_elb_load_balancer_source_security_group;
 
 pub(crate) mod shape_aws_elbv2_load_balancer_attribute;
 
+pub(crate) mod shape_aws_events_endpoint_event_buses_details;
+
+pub(crate) mod shape_aws_events_endpoint_replication_config_details;
+
+pub(crate) mod shape_aws_events_endpoint_routing_config_details;
+
 pub(crate) mod shape_aws_guard_duty_detector_data_sources_details;
 
 pub(crate) mod shape_aws_guard_duty_detector_features_details;
@@ -1016,6 +1040,8 @@ pub(crate) mod shape_aws_lambda_function_tracing_config;
 pub(crate) mod shape_aws_lambda_function_vpc_config;
 
 pub(crate) mod shape_aws_mount_point;
+
+pub(crate) mod shape_aws_msk_cluster_cluster_info_details;
 
 pub(crate) mod shape_aws_network_firewall_firewall_subnet_mappings_details;
 
@@ -1094,6 +1120,12 @@ pub(crate) mod shape_aws_redshift_cluster_resize_info;
 pub(crate) mod shape_aws_redshift_cluster_restore_status;
 
 pub(crate) mod shape_aws_redshift_cluster_vpc_security_group;
+
+pub(crate) mod shape_aws_route53_hosted_zone_object_details;
+
+pub(crate) mod shape_aws_route53_hosted_zone_vpc_details;
+
+pub(crate) mod shape_aws_route53_query_logging_config_details;
 
 pub(crate) mod shape_aws_s3_bucket_bucket_lifecycle_configuration_details;
 
@@ -1341,6 +1373,8 @@ pub(crate) mod shape_aws_elb_load_balancer_cross_zone_load_balancing;
 
 pub(crate) mod shape_aws_elb_load_balancer_listener;
 
+pub(crate) mod shape_aws_events_endpoint_routing_config_failover_config_details;
+
 pub(crate) mod shape_aws_guard_duty_detector_data_sources_cloud_trail_details;
 
 pub(crate) mod shape_aws_guard_duty_detector_data_sources_dns_logs_details;
@@ -1361,6 +1395,10 @@ pub(crate) mod shape_aws_iam_instance_profile_role;
 
 pub(crate) mod shape_aws_lambda_function_environment_error;
 
+pub(crate) mod shape_aws_msk_cluster_cluster_info_client_authentication_details;
+
+pub(crate) mod shape_aws_msk_cluster_cluster_info_encryption_info_details;
+
 pub(crate) mod shape_aws_open_search_service_domain_cluster_config_zone_awareness_config_details;
 
 pub(crate) mod shape_aws_open_search_service_domain_log_publishing_option;
@@ -1372,6 +1410,8 @@ pub(crate) mod shape_aws_rds_db_subnet_group_subnet;
 pub(crate) mod shape_aws_rds_pending_cloud_watch_logs_exports;
 
 pub(crate) mod shape_aws_redshift_cluster_cluster_parameter_status;
+
+pub(crate) mod shape_aws_route53_hosted_zone_config_details;
 
 pub(crate) mod shape_aws_s3_bucket_bucket_lifecycle_configuration_rules_details;
 
@@ -1404,6 +1444,8 @@ pub(crate) mod shape_aws_wafv2_action_block_details;
 pub(crate) mod shape_aws_wafv2_rules_action_details;
 
 pub(crate) mod shape_aws_wafv2_web_acl_captcha_config_immunity_time_property_details;
+
+pub(crate) mod shape_cloud_watch_logs_log_group_arn_config_details;
 
 pub(crate) mod shape_custom_data_identifiers_detections;
 
@@ -1478,6 +1520,8 @@ pub(crate) mod shape_aws_cloud_front_distribution_origin_s3_origin_config;
 pub(crate) mod shape_aws_cloud_watch_alarm_dimensions_list;
 
 pub(crate) mod shape_aws_code_build_project_artifacts_list;
+
+pub(crate) mod shape_aws_dms_replication_instance_vpc_security_groups_list;
 
 pub(crate) mod shape_aws_dynamo_db_table_attribute_definition_list;
 
@@ -1591,6 +1635,12 @@ pub(crate) mod shape_aws_elb_load_balancer_listener_descriptions;
 
 pub(crate) mod shape_aws_elbv2_load_balancer_attributes;
 
+pub(crate) mod shape_aws_events_endpoint_event_buses_list;
+
+pub(crate) mod shape_aws_events_endpoint_routing_config_failover_config_primary_details;
+
+pub(crate) mod shape_aws_events_endpoint_routing_config_failover_config_secondary_details;
+
 pub(crate) mod shape_aws_guard_duty_detector_data_sources_kubernetes_audit_logs_details;
 
 pub(crate) mod shape_aws_guard_duty_detector_data_sources_malware_protection_scan_ec2_instance_with_findings_details;
@@ -1612,6 +1662,16 @@ pub(crate) mod shape_aws_iam_user_policy_list;
 pub(crate) mod shape_aws_lambda_function_layer_list;
 
 pub(crate) mod shape_aws_mount_point_list;
+
+pub(crate) mod shape_aws_msk_cluster_cluster_info_client_authentication_sasl_details;
+
+pub(crate) mod shape_aws_msk_cluster_cluster_info_client_authentication_tls_details;
+
+pub(crate) mod shape_aws_msk_cluster_cluster_info_client_authentication_unauthenticated_details;
+
+pub(crate) mod shape_aws_msk_cluster_cluster_info_encryption_info_encryption_at_rest_details;
+
+pub(crate) mod shape_aws_msk_cluster_cluster_info_encryption_info_encryption_in_transit_details;
 
 pub(crate) mod shape_aws_network_firewall_firewall_subnet_mappings_list;
 
@@ -1654,6 +1714,10 @@ pub(crate) mod shape_aws_redshift_cluster_deferred_maintenance_windows;
 pub(crate) mod shape_aws_redshift_cluster_iam_roles;
 
 pub(crate) mod shape_aws_redshift_cluster_vpc_security_groups;
+
+pub(crate) mod shape_aws_route53_hosted_zone_name_servers_list;
+
+pub(crate) mod shape_aws_route53_hosted_zone_vpcs_list;
 
 pub(crate) mod shape_aws_s3_bucket_bucket_lifecycle_configuration_rules_abort_incomplete_multipart_upload_details;
 
@@ -1774,6 +1838,10 @@ pub(crate) mod shape_aws_elb_lb_cookie_stickiness_policies;
 pub(crate) mod shape_aws_elb_load_balancer_additional_attribute_list;
 
 pub(crate) mod shape_aws_guard_duty_detector_data_sources_malware_protection_scan_ec2_instance_with_findings_ebs_volumes_details;
+
+pub(crate) mod shape_aws_msk_cluster_cluster_info_client_authentication_sasl_iam_details;
+
+pub(crate) mod shape_aws_msk_cluster_cluster_info_client_authentication_sasl_scram_details;
 
 pub(crate) mod shape_aws_rds_db_subnet_group_subnets;
 

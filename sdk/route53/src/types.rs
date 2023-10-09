@@ -69,6 +69,8 @@ pub use crate::types::_hosted_zone_summary::HostedZoneSummary;
 
 pub use crate::types::_hosted_zone_owner::HostedZoneOwner;
 
+pub use crate::types::_hosted_zone_type::HostedZoneType;
+
 pub use crate::types::_geo_location_details::GeoLocationDetails;
 
 pub use crate::types::_location_summary::LocationSummary;
@@ -180,6 +182,8 @@ mod _hosted_zone_limit_type;
 mod _hosted_zone_owner;
 
 mod _hosted_zone_summary;
+
+mod _hosted_zone_type;
 
 mod _insufficient_data_health_status;
 

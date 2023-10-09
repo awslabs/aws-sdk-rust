@@ -82,6 +82,11 @@ where
                                     .transpose()?,
                             );
                         }
+                        "connectorAction" => {
+                            builder = builder.set_connector_action(
+                                crate::protocol_serde::shape_source_server_connector_action::de_source_server_connector_action(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

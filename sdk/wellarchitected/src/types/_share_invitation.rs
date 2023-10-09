@@ -19,6 +19,8 @@ pub struct ShareInvitation {
     pub lens_arn: ::std::option::Option<::std::string::String>,
     /// <p>The profile ARN.</p>
     pub profile_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The review template ARN.</p>
+    pub template_arn: ::std::option::Option<::std::string::String>,
 }
 impl ShareInvitation {
     /// <p>The ID assigned to the share invitation.</p>
@@ -48,6 +50,10 @@ impl ShareInvitation {
     pub fn profile_arn(&self) -> ::std::option::Option<&str> {
         self.profile_arn.as_deref()
     }
+    /// <p>The review template ARN.</p>
+    pub fn template_arn(&self) -> ::std::option::Option<&str> {
+        self.template_arn.as_deref()
+    }
 }
 impl ShareInvitation {
     /// Creates a new builder-style object to manufacture [`ShareInvitation`](crate::types::ShareInvitation).
@@ -66,6 +72,7 @@ pub struct ShareInvitationBuilder {
     pub(crate) lens_alias: ::std::option::Option<::std::string::String>,
     pub(crate) lens_arn: ::std::option::Option<::std::string::String>,
     pub(crate) profile_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) template_arn: ::std::option::Option<::std::string::String>,
 }
 impl ShareInvitationBuilder {
     /// <p>The ID assigned to the share invitation.</p>
@@ -161,6 +168,20 @@ impl ShareInvitationBuilder {
     pub fn get_profile_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.profile_arn
     }
+    /// <p>The review template ARN.</p>
+    pub fn template_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.template_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The review template ARN.</p>
+    pub fn set_template_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.template_arn = input;
+        self
+    }
+    /// <p>The review template ARN.</p>
+    pub fn get_template_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_arn
+    }
     /// Consumes the builder and constructs a [`ShareInvitation`](crate::types::ShareInvitation).
     pub fn build(self) -> crate::types::ShareInvitation {
         crate::types::ShareInvitation {
@@ -170,6 +191,7 @@ impl ShareInvitationBuilder {
             lens_alias: self.lens_alias,
             lens_arn: self.lens_arn,
             profile_arn: self.profile_arn,
+            template_arn: self.template_arn,
         }
     }
 }

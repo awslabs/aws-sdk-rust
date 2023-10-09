@@ -833,6 +833,8 @@ pub(crate) mod shape_instance_summary_list;
 
 pub(crate) mod shape_integration_association_summary_list;
 
+pub(crate) mod shape_interval_details;
+
 pub(crate) mod shape_lex_bot;
 
 pub(crate) mod shape_lex_bot_config_list;
@@ -1236,6 +1238,8 @@ pub(crate) mod shape_hierarchy_path_reference;
 pub(crate) mod shape_historical_metric_data_collections;
 
 pub(crate) mod shape_metric_data_collections_v2;
+
+pub(crate) mod shape_metric_interval;
 
 pub(crate) mod shape_notification_recipient_type;
 

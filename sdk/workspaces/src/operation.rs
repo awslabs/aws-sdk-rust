@@ -7,6 +7,9 @@ pub mod associate_connection_alias;
 /// Types for the `AssociateIpGroups` operation.
 pub mod associate_ip_groups;
 
+/// Types for the `AssociateWorkspaceApplication` operation.
+pub mod associate_workspace_application;
+
 /// Types for the `AuthorizeIpRules` operation.
 pub mod authorize_ip_rules;
 
@@ -61,6 +64,9 @@ pub mod delete_workspace_bundle;
 /// Types for the `DeleteWorkspaceImage` operation.
 pub mod delete_workspace_image;
 
+/// Types for the `DeployWorkspaceApplications` operation.
+pub mod deploy_workspace_applications;
+
 /// Types for the `DeregisterWorkspaceDirectory` operation.
 pub mod deregister_workspace_directory;
 
@@ -69,6 +75,15 @@ pub mod describe_account;
 
 /// Types for the `DescribeAccountModifications` operation.
 pub mod describe_account_modifications;
+
+/// Types for the `DescribeApplicationAssociations` operation.
+pub mod describe_application_associations;
+
+/// Types for the `DescribeApplications` operation.
+pub mod describe_applications;
+
+/// Types for the `DescribeBundleAssociations` operation.
+pub mod describe_bundle_associations;
 
 /// Types for the `DescribeClientBranding` operation.
 pub mod describe_client_branding;
@@ -85,11 +100,17 @@ pub mod describe_connection_alias_permissions;
 /// Types for the `DescribeConnectionAliases` operation.
 pub mod describe_connection_aliases;
 
+/// Types for the `DescribeImageAssociations` operation.
+pub mod describe_image_associations;
+
 /// Types for the `DescribeIpGroups` operation.
 pub mod describe_ip_groups;
 
 /// Types for the `DescribeTags` operation.
 pub mod describe_tags;
+
+/// Types for the `DescribeWorkspaceAssociations` operation.
+pub mod describe_workspace_associations;
 
 /// Types for the `DescribeWorkspaceBundles` operation.
 pub mod describe_workspace_bundles;
@@ -117,6 +138,9 @@ pub mod disassociate_connection_alias;
 
 /// Types for the `DisassociateIpGroups` operation.
 pub mod disassociate_ip_groups;
+
+/// Types for the `DisassociateWorkspaceApplication` operation.
+pub mod disassociate_workspace_application;
 
 /// Types for the `ImportClientBranding` operation.
 pub mod import_client_branding;

@@ -246,19 +246,19 @@ impl DescribeOrderableDBInstanceOptionsFluentBuilder {
     pub fn get_availability_zone_group(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_availability_zone_group()
     }
-    /// <p>A value that indicates whether to show only VPC or non-VPC offerings. RDS Custom supports only VPC offerings.</p>
+    /// <p>Specifies whether to show only VPC or non-VPC offerings. RDS Custom supports only VPC offerings.</p>
     /// <p>RDS Custom supports only VPC offerings. If you describe non-VPC offerings for RDS Custom, the output shows VPC offerings.</p>
     pub fn vpc(mut self, input: bool) -> Self {
         self.inner = self.inner.vpc(input);
         self
     }
-    /// <p>A value that indicates whether to show only VPC or non-VPC offerings. RDS Custom supports only VPC offerings.</p>
+    /// <p>Specifies whether to show only VPC or non-VPC offerings. RDS Custom supports only VPC offerings.</p>
     /// <p>RDS Custom supports only VPC offerings. If you describe non-VPC offerings for RDS Custom, the output shows VPC offerings.</p>
     pub fn set_vpc(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_vpc(input);
         self
     }
-    /// <p>A value that indicates whether to show only VPC or non-VPC offerings. RDS Custom supports only VPC offerings.</p>
+    /// <p>Specifies whether to show only VPC or non-VPC offerings. RDS Custom supports only VPC offerings.</p>
     /// <p>RDS Custom supports only VPC offerings. If you describe non-VPC offerings for RDS Custom, the output shows VPC offerings.</p>
     pub fn get_vpc(&self) -> &::std::option::Option<bool> {
         self.inner.get_vpc()

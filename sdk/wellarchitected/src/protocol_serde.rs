@@ -37,6 +37,10 @@ pub(crate) mod shape_create_profile;
 
 pub(crate) mod shape_create_profile_share;
 
+pub(crate) mod shape_create_review_template;
+
+pub(crate) mod shape_create_template_share;
+
 pub(crate) mod shape_create_workload;
 
 pub(crate) mod shape_create_workload_share;
@@ -48,6 +52,10 @@ pub(crate) mod shape_delete_lens_share;
 pub(crate) mod shape_delete_profile;
 
 pub(crate) mod shape_delete_profile_share;
+
+pub(crate) mod shape_delete_review_template;
+
+pub(crate) mod shape_delete_template_share;
 
 pub(crate) mod shape_delete_workload;
 
@@ -77,6 +85,12 @@ pub(crate) mod shape_get_profile;
 
 pub(crate) mod shape_get_profile_template;
 
+pub(crate) mod shape_get_review_template;
+
+pub(crate) mod shape_get_review_template_answer;
+
+pub(crate) mod shape_get_review_template_lens_review;
+
 pub(crate) mod shape_get_workload;
 
 pub(crate) mod shape_import_lens;
@@ -105,9 +119,15 @@ pub(crate) mod shape_list_profile_shares;
 
 pub(crate) mod shape_list_profiles;
 
+pub(crate) mod shape_list_review_template_answers;
+
+pub(crate) mod shape_list_review_templates;
+
 pub(crate) mod shape_list_share_invitations;
 
 pub(crate) mod shape_list_tags_for_resource;
+
+pub(crate) mod shape_list_template_shares;
 
 pub(crate) mod shape_list_workload_shares;
 
@@ -125,6 +145,12 @@ pub(crate) mod shape_update_lens_review;
 
 pub(crate) mod shape_update_profile;
 
+pub(crate) mod shape_update_review_template;
+
+pub(crate) mod shape_update_review_template_answer;
+
+pub(crate) mod shape_update_review_template_lens_review;
+
 pub(crate) mod shape_update_share_invitation;
 
 pub(crate) mod shape_update_workload;
@@ -134,6 +160,8 @@ pub(crate) mod shape_update_workload_share;
 pub(crate) mod shape_upgrade_lens_review;
 
 pub(crate) mod shape_upgrade_profile_version;
+
+pub(crate) mod shape_upgrade_review_template_lens_review;
 
 pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
     if data.is_empty() {
@@ -160,6 +188,10 @@ pub(crate) mod shape_create_milestone_input;
 pub(crate) mod shape_create_profile_input;
 
 pub(crate) mod shape_create_profile_share_input;
+
+pub(crate) mod shape_create_review_template_input;
+
+pub(crate) mod shape_create_template_share_input;
 
 pub(crate) mod shape_create_workload_input;
 
@@ -199,6 +231,12 @@ pub(crate) mod shape_update_lens_review_input;
 
 pub(crate) mod shape_update_profile_input;
 
+pub(crate) mod shape_update_review_template_answer_input;
+
+pub(crate) mod shape_update_review_template_input;
+
+pub(crate) mod shape_update_review_template_lens_review_input;
+
 pub(crate) mod shape_update_share_invitation_input;
 
 pub(crate) mod shape_update_workload_input;
@@ -208,6 +246,8 @@ pub(crate) mod shape_update_workload_share_input;
 pub(crate) mod shape_upgrade_lens_review_input;
 
 pub(crate) mod shape_upgrade_profile_version_input;
+
+pub(crate) mod shape_upgrade_review_template_lens_review_input;
 
 pub(crate) mod shape_validation_exception;
 
@@ -255,11 +295,23 @@ pub(crate) mod shape_profile_summaries;
 
 pub(crate) mod shape_profile_template;
 
+pub(crate) mod shape_review_template;
+
+pub(crate) mod shape_review_template_answer;
+
+pub(crate) mod shape_review_template_answer_summaries;
+
+pub(crate) mod shape_review_template_lens_review;
+
+pub(crate) mod shape_review_templates;
+
 pub(crate) mod shape_share_invitation;
 
 pub(crate) mod shape_share_invitation_summaries;
 
 pub(crate) mod shape_tag_map;
+
+pub(crate) mod shape_template_share_summaries;
 
 pub(crate) mod shape_validation_exception_field_list;
 
@@ -311,6 +363,16 @@ pub(crate) mod shape_profile_share_summary;
 
 pub(crate) mod shape_profile_summary;
 
+pub(crate) mod shape_question_counts;
+
+pub(crate) mod shape_review_template_answer_summary;
+
+pub(crate) mod shape_review_template_lenses;
+
+pub(crate) mod shape_review_template_pillar_review_summaries;
+
+pub(crate) mod shape_review_template_summary;
+
 pub(crate) mod shape_risk_counts;
 
 pub(crate) mod shape_selected_choices;
@@ -318,6 +380,8 @@ pub(crate) mod shape_selected_choices;
 pub(crate) mod shape_share_invitation_summary;
 
 pub(crate) mod shape_template_questions;
+
+pub(crate) mod shape_template_share_summary;
 
 pub(crate) mod shape_validation_exception_field;
 
@@ -360,6 +424,8 @@ pub(crate) mod shape_pillar_review_summary;
 pub(crate) mod shape_profile_question;
 
 pub(crate) mod shape_profile_template_question;
+
+pub(crate) mod shape_review_template_pillar_review_summary;
 
 pub(crate) mod shape_workload_profile;
 

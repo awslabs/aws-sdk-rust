@@ -141,11 +141,23 @@ pub fn ser_input(
         crate::protocol_serde::shape_input_video_generator::ser_input_video_generator(&mut object_46, var_45)?;
         object_46.finish();
     }
-    if let Some(var_47) = &input.video_selector {
+    if let Some(var_47) = &input.video_overlays {
+        let mut array_48 = object.key("videoOverlays").start_array();
+        for item_49 in var_47 {
+            {
+                #[allow(unused_mut)]
+                let mut object_50 = array_48.value().start_object();
+                crate::protocol_serde::shape_video_overlay::ser_video_overlay(&mut object_50, item_49)?;
+                object_50.finish();
+            }
+        }
+        array_48.finish();
+    }
+    if let Some(var_51) = &input.video_selector {
         #[allow(unused_mut)]
-        let mut object_48 = object.key("videoSelector").start_object();
-        crate::protocol_serde::shape_video_selector::ser_video_selector(&mut object_48, var_47)?;
-        object_48.finish();
+        let mut object_52 = object.key("videoSelector").start_object();
+        crate::protocol_serde::shape_video_selector::ser_video_selector(&mut object_52, var_51)?;
+        object_52.finish();
     }
     Ok(())
 }
@@ -296,6 +308,10 @@ where
                             "videoGenerator" => {
                                 builder = builder
                                     .set_video_generator(crate::protocol_serde::shape_input_video_generator::de_input_video_generator(tokens)?);
+                            }
+                            "videoOverlays" => {
+                                builder = builder
+                                    .set_video_overlays(crate::protocol_serde::shape___list_of_video_overlay::de___list_of_video_overlay(tokens)?);
                             }
                             "videoSelector" => {
                                 builder = builder.set_video_selector(crate::protocol_serde::shape_video_selector::de_video_selector(tokens)?);

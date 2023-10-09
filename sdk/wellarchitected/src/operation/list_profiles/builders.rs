@@ -116,17 +116,17 @@ impl ListProfilesFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_profiles::paginator::ListProfilesPaginator {
         crate::operation::list_profiles::paginator::ListProfilesPaginator::new(self.handle, self.inner)
     }
-    /// <p>Prefix for profile name.</p>
+    /// <p>An optional string added to the beginning of each profile name returned in the results.</p>
     pub fn profile_name_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.profile_name_prefix(input.into());
         self
     }
-    /// <p>Prefix for profile name.</p>
+    /// <p>An optional string added to the beginning of each profile name returned in the results.</p>
     pub fn set_profile_name_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_profile_name_prefix(input);
         self
     }
-    /// <p>Prefix for profile name.</p>
+    /// <p>An optional string added to the beginning of each profile name returned in the results.</p>
     pub fn get_profile_name_prefix(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_profile_name_prefix()
     }

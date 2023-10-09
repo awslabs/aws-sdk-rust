@@ -253,6 +253,78 @@ impl From<crate::operation::create_profile_share::CreateProfileShareError> for E
         }
     }
 }
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::create_review_template::CreateReviewTemplateError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::create_review_template::CreateReviewTemplateError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::create_review_template::CreateReviewTemplateError> for Error {
+    fn from(err: crate::operation::create_review_template::CreateReviewTemplateError) -> Self {
+        match err {
+            crate::operation::create_review_template::CreateReviewTemplateError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_review_template::CreateReviewTemplateError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_review_template::CreateReviewTemplateError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::create_review_template::CreateReviewTemplateError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::create_review_template::CreateReviewTemplateError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_review_template::CreateReviewTemplateError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_review_template::CreateReviewTemplateError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_review_template::CreateReviewTemplateError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::create_template_share::CreateTemplateShareError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::create_template_share::CreateTemplateShareError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::create_template_share::CreateTemplateShareError> for Error {
+    fn from(err: crate::operation::create_template_share::CreateTemplateShareError) -> Self {
+        match err {
+            crate::operation::create_template_share::CreateTemplateShareError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_template_share::CreateTemplateShareError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_template_share::CreateTemplateShareError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::create_template_share::CreateTemplateShareError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::create_template_share::CreateTemplateShareError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_template_share::CreateTemplateShareError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_template_share::CreateTemplateShareError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_template_share::CreateTemplateShareError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::create_workload::CreateWorkloadError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -436,6 +508,72 @@ impl From<crate::operation::delete_profile_share::DeleteProfileShareError> for E
             crate::operation::delete_profile_share::DeleteProfileShareError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::delete_profile_share::DeleteProfileShareError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::delete_profile_share::DeleteProfileShareError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::delete_review_template::DeleteReviewTemplateError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::delete_review_template::DeleteReviewTemplateError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_review_template::DeleteReviewTemplateError> for Error {
+    fn from(err: crate::operation::delete_review_template::DeleteReviewTemplateError) -> Self {
+        match err {
+            crate::operation::delete_review_template::DeleteReviewTemplateError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_review_template::DeleteReviewTemplateError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_review_template::DeleteReviewTemplateError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::delete_review_template::DeleteReviewTemplateError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_review_template::DeleteReviewTemplateError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_review_template::DeleteReviewTemplateError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_review_template::DeleteReviewTemplateError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::delete_template_share::DeleteTemplateShareError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::delete_template_share::DeleteTemplateShareError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_template_share::DeleteTemplateShareError> for Error {
+    fn from(err: crate::operation::delete_template_share::DeleteTemplateShareError) -> Self {
+        match err {
+            crate::operation::delete_template_share::DeleteTemplateShareError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_template_share::DeleteTemplateShareError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_template_share::DeleteTemplateShareError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::delete_template_share::DeleteTemplateShareError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_template_share::DeleteTemplateShareError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_template_share::DeleteTemplateShareError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_template_share::DeleteTemplateShareError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -865,6 +1003,114 @@ impl From<crate::operation::get_profile_template::GetProfileTemplateError> for E
         }
     }
 }
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_review_template::GetReviewTemplateError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::get_review_template::GetReviewTemplateError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_review_template::GetReviewTemplateError> for Error {
+    fn from(err: crate::operation::get_review_template::GetReviewTemplateError) -> Self {
+        match err {
+            crate::operation::get_review_template::GetReviewTemplateError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_review_template::GetReviewTemplateError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_review_template::GetReviewTemplateError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_review_template::GetReviewTemplateError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_review_template::GetReviewTemplateError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_review_template::GetReviewTemplateError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_review_template_answer::GetReviewTemplateAnswerError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::get_review_template_answer::GetReviewTemplateAnswerError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_review_template_answer::GetReviewTemplateAnswerError> for Error {
+    fn from(err: crate::operation::get_review_template_answer::GetReviewTemplateAnswerError) -> Self {
+        match err {
+            crate::operation::get_review_template_answer::GetReviewTemplateAnswerError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_review_template_answer::GetReviewTemplateAnswerError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_review_template_answer::GetReviewTemplateAnswerError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_review_template_answer::GetReviewTemplateAnswerError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::get_review_template_answer::GetReviewTemplateAnswerError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::get_review_template_answer::GetReviewTemplateAnswerError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_review_template_lens_review::GetReviewTemplateLensReviewError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<crate::operation::get_review_template_lens_review::GetReviewTemplateLensReviewError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_review_template_lens_review::GetReviewTemplateLensReviewError> for Error {
+    fn from(err: crate::operation::get_review_template_lens_review::GetReviewTemplateLensReviewError) -> Self {
+        match err {
+            crate::operation::get_review_template_lens_review::GetReviewTemplateLensReviewError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_review_template_lens_review::GetReviewTemplateLensReviewError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_review_template_lens_review::GetReviewTemplateLensReviewError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_review_template_lens_review::GetReviewTemplateLensReviewError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::get_review_template_lens_review::GetReviewTemplateLensReviewError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::get_review_template_lens_review::GetReviewTemplateLensReviewError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_workload::GetWorkloadError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1277,6 +1523,73 @@ impl From<crate::operation::list_profile_shares::ListProfileSharesError> for Err
         }
     }
 }
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_review_template_answers::ListReviewTemplateAnswersError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_review_template_answers::ListReviewTemplateAnswersError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_review_template_answers::ListReviewTemplateAnswersError> for Error {
+    fn from(err: crate::operation::list_review_template_answers::ListReviewTemplateAnswersError) -> Self {
+        match err {
+            crate::operation::list_review_template_answers::ListReviewTemplateAnswersError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_review_template_answers::ListReviewTemplateAnswersError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_review_template_answers::ListReviewTemplateAnswersError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_review_template_answers::ListReviewTemplateAnswersError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_review_template_answers::ListReviewTemplateAnswersError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_review_template_answers::ListReviewTemplateAnswersError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_review_templates::ListReviewTemplatesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_review_templates::ListReviewTemplatesError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_review_templates::ListReviewTemplatesError> for Error {
+    fn from(err: crate::operation::list_review_templates::ListReviewTemplatesError) -> Self {
+        match err {
+            crate::operation::list_review_templates::ListReviewTemplatesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_review_templates::ListReviewTemplatesError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_review_templates::ListReviewTemplatesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_review_templates::ListReviewTemplatesError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_review_templates::ListReviewTemplatesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_share_invitations::ListShareInvitationsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1332,6 +1645,36 @@ impl From<crate::operation::list_tags_for_resource::ListTagsForResourceError> fo
                 Error::ResourceNotFoundException(inner)
             }
             crate::operation::list_tags_for_resource::ListTagsForResourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_template_shares::ListTemplateSharesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_template_shares::ListTemplateSharesError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_template_shares::ListTemplateSharesError> for Error {
+    fn from(err: crate::operation::list_template_shares::ListTemplateSharesError) -> Self {
+        match err {
+            crate::operation::list_template_shares::ListTemplateSharesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_template_shares::ListTemplateSharesError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_template_shares::ListTemplateSharesError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_template_shares::ListTemplateSharesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_template_shares::ListTemplateSharesError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_template_shares::ListTemplateSharesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1559,6 +1902,124 @@ impl From<crate::operation::update_profile::UpdateProfileError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::update_review_template::UpdateReviewTemplateError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::update_review_template::UpdateReviewTemplateError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::update_review_template::UpdateReviewTemplateError> for Error {
+    fn from(err: crate::operation::update_review_template::UpdateReviewTemplateError) -> Self {
+        match err {
+            crate::operation::update_review_template::UpdateReviewTemplateError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_review_template::UpdateReviewTemplateError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::update_review_template::UpdateReviewTemplateError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::update_review_template::UpdateReviewTemplateError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_review_template::UpdateReviewTemplateError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_review_template::UpdateReviewTemplateError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_review_template::UpdateReviewTemplateError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::update_review_template_answer::UpdateReviewTemplateAnswerError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::update_review_template_answer::UpdateReviewTemplateAnswerError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::update_review_template_answer::UpdateReviewTemplateAnswerError> for Error {
+    fn from(err: crate::operation::update_review_template_answer::UpdateReviewTemplateAnswerError) -> Self {
+        match err {
+            crate::operation::update_review_template_answer::UpdateReviewTemplateAnswerError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::update_review_template_answer::UpdateReviewTemplateAnswerError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::update_review_template_answer::UpdateReviewTemplateAnswerError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::update_review_template_answer::UpdateReviewTemplateAnswerError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_review_template_answer::UpdateReviewTemplateAnswerError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::update_review_template_answer::UpdateReviewTemplateAnswerError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::update_review_template_answer::UpdateReviewTemplateAnswerError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::update_review_template_lens_review::UpdateReviewTemplateLensReviewError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<crate::operation::update_review_template_lens_review::UpdateReviewTemplateLensReviewError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::update_review_template_lens_review::UpdateReviewTemplateLensReviewError> for Error {
+    fn from(err: crate::operation::update_review_template_lens_review::UpdateReviewTemplateLensReviewError) -> Self {
+        match err {
+            crate::operation::update_review_template_lens_review::UpdateReviewTemplateLensReviewError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::update_review_template_lens_review::UpdateReviewTemplateLensReviewError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::update_review_template_lens_review::UpdateReviewTemplateLensReviewError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::update_review_template_lens_review::UpdateReviewTemplateLensReviewError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_review_template_lens_review::UpdateReviewTemplateLensReviewError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::update_review_template_lens_review::UpdateReviewTemplateLensReviewError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::update_review_template_lens_review::UpdateReviewTemplateLensReviewError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::update_share_invitation::UpdateShareInvitationError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1719,6 +2180,50 @@ impl From<crate::operation::upgrade_profile_version::UpgradeProfileVersionError>
             crate::operation::upgrade_profile_version::UpgradeProfileVersionError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::upgrade_profile_version::UpgradeProfileVersionError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::upgrade_profile_version::UpgradeProfileVersionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::upgrade_review_template_lens_review::UpgradeReviewTemplateLensReviewError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<crate::operation::upgrade_review_template_lens_review::UpgradeReviewTemplateLensReviewError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::upgrade_review_template_lens_review::UpgradeReviewTemplateLensReviewError> for Error {
+    fn from(err: crate::operation::upgrade_review_template_lens_review::UpgradeReviewTemplateLensReviewError) -> Self {
+        match err {
+            crate::operation::upgrade_review_template_lens_review::UpgradeReviewTemplateLensReviewError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::upgrade_review_template_lens_review::UpgradeReviewTemplateLensReviewError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::upgrade_review_template_lens_review::UpgradeReviewTemplateLensReviewError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::upgrade_review_template_lens_review::UpgradeReviewTemplateLensReviewError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::upgrade_review_template_lens_review::UpgradeReviewTemplateLensReviewError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::upgrade_review_template_lens_review::UpgradeReviewTemplateLensReviewError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::upgrade_review_template_lens_review::UpgradeReviewTemplateLensReviewError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

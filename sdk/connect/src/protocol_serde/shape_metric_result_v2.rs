@@ -17,6 +17,9 @@ where
                         "Dimensions" => {
                             builder = builder.set_dimensions(crate::protocol_serde::shape_dimensions_v2_map::de_dimensions_v2_map(tokens)?);
                         }
+                        "MetricInterval" => {
+                            builder = builder.set_metric_interval(crate::protocol_serde::shape_metric_interval::de_metric_interval(tokens)?);
+                        }
                         "Collections" => {
                             builder = builder.set_collections(
                                 crate::protocol_serde::shape_metric_data_collections_v2::de_metric_data_collections_v2(tokens)?,

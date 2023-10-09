@@ -27,5 +27,11 @@ pub fn ser_update_analysis_input(
     if let Some(var_8) = &input.theme_arn {
         object.key("ThemeArn").string(var_8.as_str());
     }
+    if let Some(var_9) = &input.validation_strategy {
+        #[allow(unused_mut)]
+        let mut object_10 = object.key("ValidationStrategy").start_object();
+        crate::protocol_serde::shape_validation_strategy::ser_validation_strategy(&mut object_10, var_9)?;
+        object_10.finish();
+    }
     Ok(())
 }

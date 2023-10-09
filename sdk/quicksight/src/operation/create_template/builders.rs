@@ -243,4 +243,18 @@ impl CreateTemplateFluentBuilder {
     pub fn get_definition(&self) -> &::std::option::Option<crate::types::TemplateVersionDefinition> {
         self.inner.get_definition()
     }
+    /// <p>TThe option to relax the validation needed to create a template with definition objects. This skips the validation step for specific errors.</p>
+    pub fn validation_strategy(mut self, input: crate::types::ValidationStrategy) -> Self {
+        self.inner = self.inner.validation_strategy(input);
+        self
+    }
+    /// <p>TThe option to relax the validation needed to create a template with definition objects. This skips the validation step for specific errors.</p>
+    pub fn set_validation_strategy(mut self, input: ::std::option::Option<crate::types::ValidationStrategy>) -> Self {
+        self.inner = self.inner.set_validation_strategy(input);
+        self
+    }
+    /// <p>TThe option to relax the validation needed to create a template with definition objects. This skips the validation step for specific errors.</p>
+    pub fn get_validation_strategy(&self) -> &::std::option::Option<crate::types::ValidationStrategy> {
+        self.inner.get_validation_strategy()
+    }
 }

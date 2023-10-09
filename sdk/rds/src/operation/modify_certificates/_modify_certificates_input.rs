@@ -6,7 +6,7 @@ pub struct ModifyCertificatesInput {
     /// <p>The new default certificate identifier to override the current one with.</p>
     /// <p>To determine the valid values, use the <code>describe-certificates</code> CLI command or the <code>DescribeCertificates</code> API operation.</p>
     pub certificate_identifier: ::std::option::Option<::std::string::String>,
-    /// <p>A value that indicates whether to remove the override for the default certificate. If the override is removed, the default certificate is the system default.</p>
+    /// <p>Specifies whether to remove the override for the default certificate. If the override is removed, the default certificate is the system default.</p>
     pub remove_customer_override: ::std::option::Option<bool>,
 }
 impl ModifyCertificatesInput {
@@ -15,7 +15,7 @@ impl ModifyCertificatesInput {
     pub fn certificate_identifier(&self) -> ::std::option::Option<&str> {
         self.certificate_identifier.as_deref()
     }
-    /// <p>A value that indicates whether to remove the override for the default certificate. If the override is removed, the default certificate is the system default.</p>
+    /// <p>Specifies whether to remove the override for the default certificate. If the override is removed, the default certificate is the system default.</p>
     pub fn remove_customer_override(&self) -> ::std::option::Option<bool> {
         self.remove_customer_override
     }
@@ -52,17 +52,17 @@ impl ModifyCertificatesInputBuilder {
     pub fn get_certificate_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.certificate_identifier
     }
-    /// <p>A value that indicates whether to remove the override for the default certificate. If the override is removed, the default certificate is the system default.</p>
+    /// <p>Specifies whether to remove the override for the default certificate. If the override is removed, the default certificate is the system default.</p>
     pub fn remove_customer_override(mut self, input: bool) -> Self {
         self.remove_customer_override = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A value that indicates whether to remove the override for the default certificate. If the override is removed, the default certificate is the system default.</p>
+    /// <p>Specifies whether to remove the override for the default certificate. If the override is removed, the default certificate is the system default.</p>
     pub fn set_remove_customer_override(mut self, input: ::std::option::Option<bool>) -> Self {
         self.remove_customer_override = input;
         self
     }
-    /// <p>A value that indicates whether to remove the override for the default certificate. If the override is removed, the default certificate is the system default.</p>
+    /// <p>Specifies whether to remove the override for the default certificate. If the override is removed, the default certificate is the system default.</p>
     pub fn get_remove_customer_override(&self) -> &::std::option::Option<bool> {
         &self.remove_customer_override
     }

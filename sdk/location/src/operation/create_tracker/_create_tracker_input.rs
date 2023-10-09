@@ -46,6 +46,12 @@ pub struct CreateTrackerInput {
     /// <p>You do not need enable this feature to get <code>ENTER</code> and <code>EXIT</code> events for geofences with this tracker. Those events are always sent to EventBridge.</p>
     /// </note>
     pub event_bridge_enabled: ::std::option::Option<bool>,
+    /// <p>Enables <code>GeospatialQueries</code> for a tracker that uses a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">Amazon Web Services KMS customer managed key</a>.</p>
+    /// <p>This parameter is only used if you are using a KMS customer managed key.</p> <note>
+    /// <p>If you wish to encrypt your data using your own KMS customer managed key, then the Bounding Polygon Queries feature will be disabled by default. This is because by using this feature, a representation of your device positions will not be encrypted using the your KMS managed key. The exact device position, however; is still encrypted using your managed key.</p>
+    /// <p>You can choose to opt-in to the Bounding Polygon Quseries feature. This is done by setting the <code>KmsKeyEnableGeospatialQueries</code> parameter to true when creating or updating a Tracker.</p>
+    /// </note>
+    pub kms_key_enable_geospatial_queries: ::std::option::Option<bool>,
 }
 impl CreateTrackerInput {
     /// <p>The name for the tracker resource.</p>
@@ -107,6 +113,14 @@ impl CreateTrackerInput {
     pub fn event_bridge_enabled(&self) -> ::std::option::Option<bool> {
         self.event_bridge_enabled
     }
+    /// <p>Enables <code>GeospatialQueries</code> for a tracker that uses a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">Amazon Web Services KMS customer managed key</a>.</p>
+    /// <p>This parameter is only used if you are using a KMS customer managed key.</p> <note>
+    /// <p>If you wish to encrypt your data using your own KMS customer managed key, then the Bounding Polygon Queries feature will be disabled by default. This is because by using this feature, a representation of your device positions will not be encrypted using the your KMS managed key. The exact device position, however; is still encrypted using your managed key.</p>
+    /// <p>You can choose to opt-in to the Bounding Polygon Quseries feature. This is done by setting the <code>KmsKeyEnableGeospatialQueries</code> parameter to true when creating or updating a Tracker.</p>
+    /// </note>
+    pub fn kms_key_enable_geospatial_queries(&self) -> ::std::option::Option<bool> {
+        self.kms_key_enable_geospatial_queries
+    }
 }
 impl CreateTrackerInput {
     /// Creates a new builder-style object to manufacture [`CreateTrackerInput`](crate::operation::create_tracker::CreateTrackerInput).
@@ -127,6 +141,7 @@ pub struct CreateTrackerInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) position_filtering: ::std::option::Option<crate::types::PositionFiltering>,
     pub(crate) event_bridge_enabled: ::std::option::Option<bool>,
+    pub(crate) kms_key_enable_geospatial_queries: ::std::option::Option<bool>,
 }
 impl CreateTrackerInputBuilder {
     /// <p>The name for the tracker resource.</p>
@@ -328,6 +343,32 @@ impl CreateTrackerInputBuilder {
     pub fn get_event_bridge_enabled(&self) -> &::std::option::Option<bool> {
         &self.event_bridge_enabled
     }
+    /// <p>Enables <code>GeospatialQueries</code> for a tracker that uses a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">Amazon Web Services KMS customer managed key</a>.</p>
+    /// <p>This parameter is only used if you are using a KMS customer managed key.</p> <note>
+    /// <p>If you wish to encrypt your data using your own KMS customer managed key, then the Bounding Polygon Queries feature will be disabled by default. This is because by using this feature, a representation of your device positions will not be encrypted using the your KMS managed key. The exact device position, however; is still encrypted using your managed key.</p>
+    /// <p>You can choose to opt-in to the Bounding Polygon Quseries feature. This is done by setting the <code>KmsKeyEnableGeospatialQueries</code> parameter to true when creating or updating a Tracker.</p>
+    /// </note>
+    pub fn kms_key_enable_geospatial_queries(mut self, input: bool) -> Self {
+        self.kms_key_enable_geospatial_queries = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Enables <code>GeospatialQueries</code> for a tracker that uses a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">Amazon Web Services KMS customer managed key</a>.</p>
+    /// <p>This parameter is only used if you are using a KMS customer managed key.</p> <note>
+    /// <p>If you wish to encrypt your data using your own KMS customer managed key, then the Bounding Polygon Queries feature will be disabled by default. This is because by using this feature, a representation of your device positions will not be encrypted using the your KMS managed key. The exact device position, however; is still encrypted using your managed key.</p>
+    /// <p>You can choose to opt-in to the Bounding Polygon Quseries feature. This is done by setting the <code>KmsKeyEnableGeospatialQueries</code> parameter to true when creating or updating a Tracker.</p>
+    /// </note>
+    pub fn set_kms_key_enable_geospatial_queries(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.kms_key_enable_geospatial_queries = input;
+        self
+    }
+    /// <p>Enables <code>GeospatialQueries</code> for a tracker that uses a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">Amazon Web Services KMS customer managed key</a>.</p>
+    /// <p>This parameter is only used if you are using a KMS customer managed key.</p> <note>
+    /// <p>If you wish to encrypt your data using your own KMS customer managed key, then the Bounding Polygon Queries feature will be disabled by default. This is because by using this feature, a representation of your device positions will not be encrypted using the your KMS managed key. The exact device position, however; is still encrypted using your managed key.</p>
+    /// <p>You can choose to opt-in to the Bounding Polygon Quseries feature. This is done by setting the <code>KmsKeyEnableGeospatialQueries</code> parameter to true when creating or updating a Tracker.</p>
+    /// </note>
+    pub fn get_kms_key_enable_geospatial_queries(&self) -> &::std::option::Option<bool> {
+        &self.kms_key_enable_geospatial_queries
+    }
     /// Consumes the builder and constructs a [`CreateTrackerInput`](crate::operation::create_tracker::CreateTrackerInput).
     pub fn build(
         self,
@@ -341,6 +382,7 @@ impl CreateTrackerInputBuilder {
             tags: self.tags,
             position_filtering: self.position_filtering,
             event_bridge_enabled: self.event_bridge_enabled,
+            kms_key_enable_geospatial_queries: self.kms_key_enable_geospatial_queries,
         })
     }
 }

@@ -35,6 +35,8 @@ pub(crate) mod shape_change_server_life_cycle_state;
 
 pub(crate) mod shape_create_application;
 
+pub(crate) mod shape_create_connector;
+
 pub(crate) mod shape_create_launch_configuration_template;
 
 pub(crate) mod shape_create_replication_configuration_template;
@@ -42,6 +44,8 @@ pub(crate) mod shape_create_replication_configuration_template;
 pub(crate) mod shape_create_wave;
 
 pub(crate) mod shape_delete_application;
+
+pub(crate) mod shape_delete_connector;
 
 pub(crate) mod shape_delete_job;
 
@@ -82,6 +86,8 @@ pub(crate) mod shape_get_replication_configuration;
 pub(crate) mod shape_initialize_service;
 
 pub(crate) mod shape_list_applications;
+
+pub(crate) mod shape_list_connectors;
 
 pub(crate) mod shape_list_export_errors;
 
@@ -141,6 +147,8 @@ pub(crate) mod shape_untag_resource;
 
 pub(crate) mod shape_update_application;
 
+pub(crate) mod shape_update_connector;
+
 pub(crate) mod shape_update_launch_configuration;
 
 pub(crate) mod shape_update_launch_configuration_template;
@@ -148,6 +156,8 @@ pub(crate) mod shape_update_launch_configuration_template;
 pub(crate) mod shape_update_replication_configuration;
 
 pub(crate) mod shape_update_replication_configuration_template;
+
+pub(crate) mod shape_update_source_server;
 
 pub(crate) mod shape_update_source_server_replication_type;
 
@@ -177,6 +187,8 @@ pub(crate) mod shape_conflict_exception;
 
 pub(crate) mod shape_create_application_input;
 
+pub(crate) mod shape_create_connector_input;
+
 pub(crate) mod shape_create_launch_configuration_template_input;
 
 pub(crate) mod shape_create_replication_configuration_template_input;
@@ -184,6 +196,8 @@ pub(crate) mod shape_create_replication_configuration_template_input;
 pub(crate) mod shape_create_wave_input;
 
 pub(crate) mod shape_delete_application_input;
+
+pub(crate) mod shape_delete_connector_input;
 
 pub(crate) mod shape_delete_job_input;
 
@@ -222,6 +236,8 @@ pub(crate) mod shape_get_replication_configuration_input;
 pub(crate) mod shape_internal_server_exception;
 
 pub(crate) mod shape_list_applications_input;
+
+pub(crate) mod shape_list_connectors_input;
 
 pub(crate) mod shape_list_export_errors_input;
 
@@ -285,6 +301,8 @@ pub(crate) mod shape_uninitialized_account_exception;
 
 pub(crate) mod shape_update_application_input;
 
+pub(crate) mod shape_update_connector_input;
+
 pub(crate) mod shape_update_launch_configuration_input;
 
 pub(crate) mod shape_update_launch_configuration_template_input;
@@ -292,6 +310,8 @@ pub(crate) mod shape_update_launch_configuration_template_input;
 pub(crate) mod shape_update_replication_configuration_input;
 
 pub(crate) mod shape_update_replication_configuration_template_input;
+
+pub(crate) mod shape_update_source_server_input;
 
 pub(crate) mod shape_update_source_server_replication_type_input;
 
@@ -306,6 +326,10 @@ pub(crate) mod shape_applications_list;
 pub(crate) mod shape_change_server_life_cycle_state_source_server_lifecycle;
 
 pub(crate) mod shape_conflict_exception_errors;
+
+pub(crate) mod shape_connector_ssm_command_config;
+
+pub(crate) mod shape_connectors_list;
 
 pub(crate) mod shape_data_replication_info;
 
@@ -343,6 +367,8 @@ pub(crate) mod shape_life_cycle;
 
 pub(crate) mod shape_list_applications_request_filters;
 
+pub(crate) mod shape_list_connectors_request_filters;
+
 pub(crate) mod shape_list_exports_request_filters;
 
 pub(crate) mod shape_list_imports_request_filters;
@@ -369,6 +395,8 @@ pub(crate) mod shape_source_server_action_documents;
 
 pub(crate) mod shape_source_server_actions_request_filters;
 
+pub(crate) mod shape_source_server_connector_action;
+
 pub(crate) mod shape_source_servers_list;
 
 pub(crate) mod shape_ssm_document_external_parameters;
@@ -394,6 +422,8 @@ pub(crate) mod shape_wave_aggregated_status;
 pub(crate) mod shape_waves_list;
 
 pub(crate) mod shape_application;
+
+pub(crate) mod shape_connector;
 
 pub(crate) mod shape_cpus;
 

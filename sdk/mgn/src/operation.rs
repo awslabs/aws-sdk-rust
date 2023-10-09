@@ -19,6 +19,9 @@ pub mod change_server_life_cycle_state;
 /// Types for the `CreateApplication` operation.
 pub mod create_application;
 
+/// Types for the `CreateConnector` operation.
+pub mod create_connector;
+
 /// Types for the `CreateLaunchConfigurationTemplate` operation.
 pub mod create_launch_configuration_template;
 
@@ -30,6 +33,9 @@ pub mod create_wave;
 
 /// Types for the `DeleteApplication` operation.
 pub mod delete_application;
+
+/// Types for the `DeleteConnector` operation.
+pub mod delete_connector;
 
 /// Types for the `DeleteJob` operation.
 pub mod delete_job;
@@ -90,6 +96,9 @@ pub mod initialize_service;
 
 /// Types for the `ListApplications` operation.
 pub mod list_applications;
+
+/// Types for the `ListConnectors` operation.
+pub mod list_connectors;
 
 /// Types for the `ListExportErrors` operation.
 pub mod list_export_errors;
@@ -178,6 +187,9 @@ pub mod untag_resource;
 /// Types for the `UpdateApplication` operation.
 pub mod update_application;
 
+/// Types for the `UpdateConnector` operation.
+pub mod update_connector;
+
 /// Types for the `UpdateLaunchConfiguration` operation.
 pub mod update_launch_configuration;
 
@@ -189,6 +201,9 @@ pub mod update_replication_configuration;
 
 /// Types for the `UpdateReplicationConfigurationTemplate` operation.
 pub mod update_replication_configuration_template;
+
+/// Types for the `UpdateSourceServer` operation.
+pub mod update_source_server;
 
 /// Types for the `UpdateSourceServerReplicationType` operation.
 pub mod update_source_server_replication_type;

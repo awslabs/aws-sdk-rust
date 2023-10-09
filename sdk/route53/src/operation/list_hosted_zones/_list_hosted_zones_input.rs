@@ -12,6 +12,8 @@ pub struct ListHostedZonesInput {
     pub max_items: ::std::option::Option<i32>,
     /// <p>If you're using reusable delegation sets and you want to list all of the hosted zones that are associated with a reusable delegation set, specify the ID of that reusable delegation set. </p>
     pub delegation_set_id: ::std::option::Option<::std::string::String>,
+    /// <p> (Optional) Specifies if the hosted zone is private. </p>
+    pub hosted_zone_type: ::std::option::Option<crate::types::HostedZoneType>,
 }
 impl ListHostedZonesInput {
     /// <p>If the value of <code>IsTruncated</code> in the previous response was <code>true</code>, you have more hosted zones. To get more hosted zones, submit another <code>ListHostedZones</code> request. </p>
@@ -28,6 +30,10 @@ impl ListHostedZonesInput {
     pub fn delegation_set_id(&self) -> ::std::option::Option<&str> {
         self.delegation_set_id.as_deref()
     }
+    /// <p> (Optional) Specifies if the hosted zone is private. </p>
+    pub fn hosted_zone_type(&self) -> ::std::option::Option<&crate::types::HostedZoneType> {
+        self.hosted_zone_type.as_ref()
+    }
 }
 impl ListHostedZonesInput {
     /// Creates a new builder-style object to manufacture [`ListHostedZonesInput`](crate::operation::list_hosted_zones::ListHostedZonesInput).
@@ -43,6 +49,7 @@ pub struct ListHostedZonesInputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     pub(crate) max_items: ::std::option::Option<i32>,
     pub(crate) delegation_set_id: ::std::option::Option<::std::string::String>,
+    pub(crate) hosted_zone_type: ::std::option::Option<crate::types::HostedZoneType>,
 }
 impl ListHostedZonesInputBuilder {
     /// <p>If the value of <code>IsTruncated</code> in the previous response was <code>true</code>, you have more hosted zones. To get more hosted zones, submit another <code>ListHostedZones</code> request. </p>
@@ -93,6 +100,20 @@ impl ListHostedZonesInputBuilder {
     pub fn get_delegation_set_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.delegation_set_id
     }
+    /// <p> (Optional) Specifies if the hosted zone is private. </p>
+    pub fn hosted_zone_type(mut self, input: crate::types::HostedZoneType) -> Self {
+        self.hosted_zone_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p> (Optional) Specifies if the hosted zone is private. </p>
+    pub fn set_hosted_zone_type(mut self, input: ::std::option::Option<crate::types::HostedZoneType>) -> Self {
+        self.hosted_zone_type = input;
+        self
+    }
+    /// <p> (Optional) Specifies if the hosted zone is private. </p>
+    pub fn get_hosted_zone_type(&self) -> &::std::option::Option<crate::types::HostedZoneType> {
+        &self.hosted_zone_type
+    }
     /// Consumes the builder and constructs a [`ListHostedZonesInput`](crate::operation::list_hosted_zones::ListHostedZonesInput).
     pub fn build(
         self,
@@ -101,6 +122,7 @@ impl ListHostedZonesInputBuilder {
             marker: self.marker,
             max_items: self.max_items,
             delegation_set_id: self.delegation_set_id,
+            hosted_zone_type: self.hosted_zone_type,
         })
     }
 }

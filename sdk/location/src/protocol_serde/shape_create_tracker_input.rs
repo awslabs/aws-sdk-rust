@@ -9,30 +9,33 @@ pub fn ser_create_tracker_input(
     if let Some(var_2) = &input.event_bridge_enabled {
         object.key("EventBridgeEnabled").boolean(*var_2);
     }
-    if let Some(var_3) = &input.kms_key_id {
-        object.key("KmsKeyId").string(var_3.as_str());
+    if let Some(var_3) = &input.kms_key_enable_geospatial_queries {
+        object.key("KmsKeyEnableGeospatialQueries").boolean(*var_3);
     }
-    if let Some(var_4) = &input.position_filtering {
-        object.key("PositionFiltering").string(var_4.as_str());
+    if let Some(var_4) = &input.kms_key_id {
+        object.key("KmsKeyId").string(var_4.as_str());
     }
-    if let Some(var_5) = &input.pricing_plan {
-        object.key("PricingPlan").string(var_5.as_str());
+    if let Some(var_5) = &input.position_filtering {
+        object.key("PositionFiltering").string(var_5.as_str());
     }
-    if let Some(var_6) = &input.pricing_plan_data_source {
-        object.key("PricingPlanDataSource").string(var_6.as_str());
+    if let Some(var_6) = &input.pricing_plan {
+        object.key("PricingPlan").string(var_6.as_str());
     }
-    if let Some(var_7) = &input.tags {
+    if let Some(var_7) = &input.pricing_plan_data_source {
+        object.key("PricingPlanDataSource").string(var_7.as_str());
+    }
+    if let Some(var_8) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_8 = object.key("Tags").start_object();
-        for (key_9, value_10) in var_7 {
+        let mut object_9 = object.key("Tags").start_object();
+        for (key_10, value_11) in var_8 {
             {
-                object_8.key(key_9.as_str()).string(value_10.as_str());
+                object_9.key(key_10.as_str()).string(value_11.as_str());
             }
         }
-        object_8.finish();
+        object_9.finish();
     }
-    if let Some(var_11) = &input.tracker_name {
-        object.key("TrackerName").string(var_11.as_str());
+    if let Some(var_12) = &input.tracker_name {
+        object.key("TrackerName").string(var_12.as_str());
     }
     Ok(())
 }

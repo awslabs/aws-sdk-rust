@@ -239,17 +239,17 @@ impl CopyDBSnapshotFluentBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         self.inner.get_tags()
     }
-    /// <p>A value that indicates whether to copy all tags from the source DB snapshot to the target DB snapshot. By default, tags aren't copied.</p>
+    /// <p>Specifies whether to copy all tags from the source DB snapshot to the target DB snapshot. By default, tags aren't copied.</p>
     pub fn copy_tags(mut self, input: bool) -> Self {
         self.inner = self.inner.copy_tags(input);
         self
     }
-    /// <p>A value that indicates whether to copy all tags from the source DB snapshot to the target DB snapshot. By default, tags aren't copied.</p>
+    /// <p>Specifies whether to copy all tags from the source DB snapshot to the target DB snapshot. By default, tags aren't copied.</p>
     pub fn set_copy_tags(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_copy_tags(input);
         self
     }
-    /// <p>A value that indicates whether to copy all tags from the source DB snapshot to the target DB snapshot. By default, tags aren't copied.</p>
+    /// <p>Specifies whether to copy all tags from the source DB snapshot to the target DB snapshot. By default, tags aren't copied.</p>
     pub fn get_copy_tags(&self) -> &::std::option::Option<bool> {
         self.inner.get_copy_tags()
     }
@@ -334,17 +334,17 @@ impl CopyDBSnapshotFluentBuilder {
     pub fn get_target_custom_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_target_custom_availability_zone()
     }
-    /// <p>A value that indicates whether to copy the DB option group associated with the source DB snapshot to the target Amazon Web Services account and associate with the target DB snapshot. The associated option group can be copied only with cross-account snapshot copy calls.</p>
+    /// <p>Specifies whether to copy the DB option group associated with the source DB snapshot to the target Amazon Web Services account and associate with the target DB snapshot. The associated option group can be copied only with cross-account snapshot copy calls.</p>
     pub fn copy_option_group(mut self, input: bool) -> Self {
         self.inner = self.inner.copy_option_group(input);
         self
     }
-    /// <p>A value that indicates whether to copy the DB option group associated with the source DB snapshot to the target Amazon Web Services account and associate with the target DB snapshot. The associated option group can be copied only with cross-account snapshot copy calls.</p>
+    /// <p>Specifies whether to copy the DB option group associated with the source DB snapshot to the target Amazon Web Services account and associate with the target DB snapshot. The associated option group can be copied only with cross-account snapshot copy calls.</p>
     pub fn set_copy_option_group(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_copy_option_group(input);
         self
     }
-    /// <p>A value that indicates whether to copy the DB option group associated with the source DB snapshot to the target Amazon Web Services account and associate with the target DB snapshot. The associated option group can be copied only with cross-account snapshot copy calls.</p>
+    /// <p>Specifies whether to copy the DB option group associated with the source DB snapshot to the target Amazon Web Services account and associate with the target DB snapshot. The associated option group can be copied only with cross-account snapshot copy calls.</p>
     pub fn get_copy_option_group(&self) -> &::std::option::Option<bool> {
         self.inner.get_copy_option_group()
     }

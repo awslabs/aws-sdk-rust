@@ -57,8 +57,14 @@ pub fn ser_create_dashboard_input(
     if let Some(var_18) = &input.theme_arn {
         object.key("ThemeArn").string(var_18.as_str());
     }
-    if let Some(var_19) = &input.version_description {
-        object.key("VersionDescription").string(var_19.as_str());
+    if let Some(var_19) = &input.validation_strategy {
+        #[allow(unused_mut)]
+        let mut object_20 = object.key("ValidationStrategy").start_object();
+        crate::protocol_serde::shape_validation_strategy::ser_validation_strategy(&mut object_20, var_19)?;
+        object_20.finish();
+    }
+    if let Some(var_21) = &input.version_description {
+        object.key("VersionDescription").string(var_21.as_str());
     }
     Ok(())
 }

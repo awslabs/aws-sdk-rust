@@ -22,7 +22,9 @@ pub struct OnDemandOptionsRequest {
     /// <p>Supported only for fleets of type <code>instant</code>.</p>
     /// <p>At least one of the following must be specified: <code>SingleAvailabilityZone</code> | <code>SingleInstanceType</code> </p>
     pub min_target_capacity: ::std::option::Option<i32>,
-    /// <p>The maximum amount per hour for On-Demand Instances that you're willing to pay.</p>
+    /// <p>The maximum amount per hour for On-Demand Instances that you're willing to pay.</p> <note>
+    /// <p>If your fleet includes T instances that are configured as <code>unlimited</code>, and if their average CPU usage exceeds the baseline utilization, you will incur a charge for surplus credits. The <code>MaxTotalPrice</code> does not account for surplus credits, and, if you use surplus credits, your final cost might be higher than what you specified for <code>MaxTotalPrice</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances-unlimited-mode-concepts.html#unlimited-mode-surplus-credits">Surplus credits can incur charges</a> in the <i>EC2 User Guide</i>.</p>
+    /// </note>
     pub max_total_price: ::std::option::Option<::std::string::String>,
 }
 impl OnDemandOptionsRequest {
@@ -54,7 +56,9 @@ impl OnDemandOptionsRequest {
     pub fn min_target_capacity(&self) -> ::std::option::Option<i32> {
         self.min_target_capacity
     }
-    /// <p>The maximum amount per hour for On-Demand Instances that you're willing to pay.</p>
+    /// <p>The maximum amount per hour for On-Demand Instances that you're willing to pay.</p> <note>
+    /// <p>If your fleet includes T instances that are configured as <code>unlimited</code>, and if their average CPU usage exceeds the baseline utilization, you will incur a charge for surplus credits. The <code>MaxTotalPrice</code> does not account for surplus credits, and, if you use surplus credits, your final cost might be higher than what you specified for <code>MaxTotalPrice</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances-unlimited-mode-concepts.html#unlimited-mode-surplus-credits">Surplus credits can incur charges</a> in the <i>EC2 User Guide</i>.</p>
+    /// </note>
     pub fn max_total_price(&self) -> ::std::option::Option<&str> {
         self.max_total_price.as_deref()
     }
@@ -172,17 +176,23 @@ impl OnDemandOptionsRequestBuilder {
     pub fn get_min_target_capacity(&self) -> &::std::option::Option<i32> {
         &self.min_target_capacity
     }
-    /// <p>The maximum amount per hour for On-Demand Instances that you're willing to pay.</p>
+    /// <p>The maximum amount per hour for On-Demand Instances that you're willing to pay.</p> <note>
+    /// <p>If your fleet includes T instances that are configured as <code>unlimited</code>, and if their average CPU usage exceeds the baseline utilization, you will incur a charge for surplus credits. The <code>MaxTotalPrice</code> does not account for surplus credits, and, if you use surplus credits, your final cost might be higher than what you specified for <code>MaxTotalPrice</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances-unlimited-mode-concepts.html#unlimited-mode-surplus-credits">Surplus credits can incur charges</a> in the <i>EC2 User Guide</i>.</p>
+    /// </note>
     pub fn max_total_price(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.max_total_price = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The maximum amount per hour for On-Demand Instances that you're willing to pay.</p>
+    /// <p>The maximum amount per hour for On-Demand Instances that you're willing to pay.</p> <note>
+    /// <p>If your fleet includes T instances that are configured as <code>unlimited</code>, and if their average CPU usage exceeds the baseline utilization, you will incur a charge for surplus credits. The <code>MaxTotalPrice</code> does not account for surplus credits, and, if you use surplus credits, your final cost might be higher than what you specified for <code>MaxTotalPrice</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances-unlimited-mode-concepts.html#unlimited-mode-surplus-credits">Surplus credits can incur charges</a> in the <i>EC2 User Guide</i>.</p>
+    /// </note>
     pub fn set_max_total_price(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.max_total_price = input;
         self
     }
-    /// <p>The maximum amount per hour for On-Demand Instances that you're willing to pay.</p>
+    /// <p>The maximum amount per hour for On-Demand Instances that you're willing to pay.</p> <note>
+    /// <p>If your fleet includes T instances that are configured as <code>unlimited</code>, and if their average CPU usage exceeds the baseline utilization, you will incur a charge for surplus credits. The <code>MaxTotalPrice</code> does not account for surplus credits, and, if you use surplus credits, your final cost might be higher than what you specified for <code>MaxTotalPrice</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances-unlimited-mode-concepts.html#unlimited-mode-surplus-credits">Surplus credits can incur charges</a> in the <i>EC2 User Guide</i>.</p>
+    /// </note>
     pub fn get_max_total_price(&self) -> &::std::option::Option<::std::string::String> {
         &self.max_total_price
     }

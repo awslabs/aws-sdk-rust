@@ -22,7 +22,7 @@ impl DescribeDbEngineVersionsInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeDBEngineVersions`.
 ///
-/// <p>Returns a list of the available DB engines.</p>
+/// <p>Describes the properties of specific versions of DB engines.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeDBEngineVersionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -116,7 +116,7 @@ impl DescribeDBEngineVersionsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::describe_db_engine_versions::paginator::DescribeDbEngineVersionsPaginator {
         crate::operation::describe_db_engine_versions::paginator::DescribeDbEngineVersionsPaginator::new(self.handle, self.inner)
     }
-    /// <p>The database engine to return.</p>
+    /// <p>The database engine to return version details for.</p>
     /// <p>Valid Values:</p>
     /// <ul>
     /// <li> <p> <code>aurora-mysql</code> </p> </li>
@@ -138,7 +138,7 @@ impl DescribeDBEngineVersionsFluentBuilder {
         self.inner = self.inner.engine(input.into());
         self
     }
-    /// <p>The database engine to return.</p>
+    /// <p>The database engine to return version details for.</p>
     /// <p>Valid Values:</p>
     /// <ul>
     /// <li> <p> <code>aurora-mysql</code> </p> </li>
@@ -160,7 +160,7 @@ impl DescribeDBEngineVersionsFluentBuilder {
         self.inner = self.inner.set_engine(input);
         self
     }
-    /// <p>The database engine to return.</p>
+    /// <p>The database engine to return version details for.</p>
     /// <p>Valid Values:</p>
     /// <ul>
     /// <li> <p> <code>aurora-mysql</code> </p> </li>
@@ -181,19 +181,19 @@ impl DescribeDBEngineVersionsFluentBuilder {
     pub fn get_engine(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_engine()
     }
-    /// <p>The database engine version to return.</p>
+    /// <p>A specific database engine version to return details for.</p>
     /// <p>Example: <code>5.1.49</code> </p>
     pub fn engine_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.engine_version(input.into());
         self
     }
-    /// <p>The database engine version to return.</p>
+    /// <p>A specific database engine version to return details for.</p>
     /// <p>Example: <code>5.1.49</code> </p>
     pub fn set_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_engine_version(input);
         self
     }
-    /// <p>The database engine version to return.</p>
+    /// <p>A specific database engine version to return details for.</p>
     /// <p>Example: <code>5.1.49</code> </p>
     pub fn get_engine_version(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_engine_version()
@@ -201,7 +201,7 @@ impl DescribeDBEngineVersionsFluentBuilder {
     /// <p>The name of a specific DB parameter group family to return details for.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>If supplied, must match an existing DBParameterGroupFamily.</p> </li>
+    /// <li> <p>If supplied, must match an existing DB parameter group family.</p> </li>
     /// </ul>
     pub fn db_parameter_group_family(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_parameter_group_family(input.into());
@@ -210,7 +210,7 @@ impl DescribeDBEngineVersionsFluentBuilder {
     /// <p>The name of a specific DB parameter group family to return details for.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>If supplied, must match an existing DBParameterGroupFamily.</p> </li>
+    /// <li> <p>If supplied, must match an existing DB parameter group family.</p> </li>
     /// </ul>
     pub fn set_db_parameter_group_family(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_db_parameter_group_family(input);
@@ -219,7 +219,7 @@ impl DescribeDBEngineVersionsFluentBuilder {
     /// <p>The name of a specific DB parameter group family to return details for.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>If supplied, must match an existing DBParameterGroupFamily.</p> </li>
+    /// <li> <p>If supplied, must match an existing DB parameter group family.</p> </li>
     /// </ul>
     pub fn get_db_parameter_group_family(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_db_parameter_group_family()
@@ -333,71 +333,71 @@ impl DescribeDBEngineVersionsFluentBuilder {
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_marker()
     }
-    /// <p>A value that indicates whether only the default version of the specified engine or engine and major version combination is returned.</p>
+    /// <p>Specifies whether to return only the default version of the specified engine or the engine and major version combination.</p>
     pub fn default_only(mut self, input: bool) -> Self {
         self.inner = self.inner.default_only(input);
         self
     }
-    /// <p>A value that indicates whether only the default version of the specified engine or engine and major version combination is returned.</p>
+    /// <p>Specifies whether to return only the default version of the specified engine or the engine and major version combination.</p>
     pub fn set_default_only(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_default_only(input);
         self
     }
-    /// <p>A value that indicates whether only the default version of the specified engine or engine and major version combination is returned.</p>
+    /// <p>Specifies whether to return only the default version of the specified engine or the engine and major version combination.</p>
     pub fn get_default_only(&self) -> &::std::option::Option<bool> {
         self.inner.get_default_only()
     }
-    /// <p>A value that indicates whether to list the supported character sets for each engine version.</p>
+    /// <p>Specifies whether to list the supported character sets for each engine version.</p>
     /// <p>If this parameter is enabled and the requested engine supports the <code>CharacterSetName</code> parameter for <code>CreateDBInstance</code>, the response includes a list of supported character sets for each engine version.</p>
-    /// <p>For RDS Custom, the default is not to list supported character sets. If you set <code>ListSupportedCharacterSets</code> to <code>true</code>, RDS Custom returns no results.</p>
+    /// <p>For RDS Custom, the default is not to list supported character sets. If you enable this parameter, RDS Custom returns no results.</p>
     pub fn list_supported_character_sets(mut self, input: bool) -> Self {
         self.inner = self.inner.list_supported_character_sets(input);
         self
     }
-    /// <p>A value that indicates whether to list the supported character sets for each engine version.</p>
+    /// <p>Specifies whether to list the supported character sets for each engine version.</p>
     /// <p>If this parameter is enabled and the requested engine supports the <code>CharacterSetName</code> parameter for <code>CreateDBInstance</code>, the response includes a list of supported character sets for each engine version.</p>
-    /// <p>For RDS Custom, the default is not to list supported character sets. If you set <code>ListSupportedCharacterSets</code> to <code>true</code>, RDS Custom returns no results.</p>
+    /// <p>For RDS Custom, the default is not to list supported character sets. If you enable this parameter, RDS Custom returns no results.</p>
     pub fn set_list_supported_character_sets(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_list_supported_character_sets(input);
         self
     }
-    /// <p>A value that indicates whether to list the supported character sets for each engine version.</p>
+    /// <p>Specifies whether to list the supported character sets for each engine version.</p>
     /// <p>If this parameter is enabled and the requested engine supports the <code>CharacterSetName</code> parameter for <code>CreateDBInstance</code>, the response includes a list of supported character sets for each engine version.</p>
-    /// <p>For RDS Custom, the default is not to list supported character sets. If you set <code>ListSupportedCharacterSets</code> to <code>true</code>, RDS Custom returns no results.</p>
+    /// <p>For RDS Custom, the default is not to list supported character sets. If you enable this parameter, RDS Custom returns no results.</p>
     pub fn get_list_supported_character_sets(&self) -> &::std::option::Option<bool> {
         self.inner.get_list_supported_character_sets()
     }
-    /// <p>A value that indicates whether to list the supported time zones for each engine version.</p>
+    /// <p>Specifies whether to list the supported time zones for each engine version.</p>
     /// <p>If this parameter is enabled and the requested engine supports the <code>TimeZone</code> parameter for <code>CreateDBInstance</code>, the response includes a list of supported time zones for each engine version.</p>
-    /// <p>For RDS Custom, the default is not to list supported time zones. If you set <code>ListSupportedTimezones</code> to <code>true</code>, RDS Custom returns no results.</p>
+    /// <p>For RDS Custom, the default is not to list supported time zones. If you enable this parameter, RDS Custom returns no results.</p>
     pub fn list_supported_timezones(mut self, input: bool) -> Self {
         self.inner = self.inner.list_supported_timezones(input);
         self
     }
-    /// <p>A value that indicates whether to list the supported time zones for each engine version.</p>
+    /// <p>Specifies whether to list the supported time zones for each engine version.</p>
     /// <p>If this parameter is enabled and the requested engine supports the <code>TimeZone</code> parameter for <code>CreateDBInstance</code>, the response includes a list of supported time zones for each engine version.</p>
-    /// <p>For RDS Custom, the default is not to list supported time zones. If you set <code>ListSupportedTimezones</code> to <code>true</code>, RDS Custom returns no results.</p>
+    /// <p>For RDS Custom, the default is not to list supported time zones. If you enable this parameter, RDS Custom returns no results.</p>
     pub fn set_list_supported_timezones(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_list_supported_timezones(input);
         self
     }
-    /// <p>A value that indicates whether to list the supported time zones for each engine version.</p>
+    /// <p>Specifies whether to list the supported time zones for each engine version.</p>
     /// <p>If this parameter is enabled and the requested engine supports the <code>TimeZone</code> parameter for <code>CreateDBInstance</code>, the response includes a list of supported time zones for each engine version.</p>
-    /// <p>For RDS Custom, the default is not to list supported time zones. If you set <code>ListSupportedTimezones</code> to <code>true</code>, RDS Custom returns no results.</p>
+    /// <p>For RDS Custom, the default is not to list supported time zones. If you enable this parameter, RDS Custom returns no results.</p>
     pub fn get_list_supported_timezones(&self) -> &::std::option::Option<bool> {
         self.inner.get_list_supported_timezones()
     }
-    /// <p>A value that indicates whether to include engine versions that aren't available in the list. The default is to list only available engine versions.</p>
+    /// <p>Specifies whether to also list the engine versions that aren't available. The default is to list only available engine versions.</p>
     pub fn include_all(mut self, input: bool) -> Self {
         self.inner = self.inner.include_all(input);
         self
     }
-    /// <p>A value that indicates whether to include engine versions that aren't available in the list. The default is to list only available engine versions.</p>
+    /// <p>Specifies whether to also list the engine versions that aren't available. The default is to list only available engine versions.</p>
     pub fn set_include_all(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_include_all(input);
         self
     }
-    /// <p>A value that indicates whether to include engine versions that aren't available in the list. The default is to list only available engine versions.</p>
+    /// <p>Specifies whether to also list the engine versions that aren't available. The default is to list only available engine versions.</p>
     pub fn get_include_all(&self) -> &::std::option::Option<bool> {
         self.inner.get_include_all()
     }

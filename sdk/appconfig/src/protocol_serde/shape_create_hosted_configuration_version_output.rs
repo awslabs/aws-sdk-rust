@@ -36,6 +36,13 @@ pub(crate) fn de_description_header(
     ::aws_smithy_http::header::one_or_none(headers)
 }
 
+pub(crate) fn de_kms_key_arn_header(
+    header_map: &::http::HeaderMap,
+) -> std::result::Result<::std::option::Option<::std::string::String>, ::aws_smithy_http::header::ParseError> {
+    let headers = header_map.get_all("KmsKeyArn").iter();
+    ::aws_smithy_http::header::one_or_none(headers)
+}
+
 pub(crate) fn de_version_label_header(
     header_map: &::http::HeaderMap,
 ) -> std::result::Result<::std::option::Option<::std::string::String>, ::aws_smithy_http::header::ParseError> {

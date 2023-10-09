@@ -18,6 +18,8 @@ pub struct UpdateAnalysisInput {
     /// <p>The definition of an analysis.</p>
     /// <p>A definition is the data model of all features in a Dashboard, Template, or Analysis.</p>
     pub definition: ::std::option::Option<crate::types::AnalysisDefinition>,
+    /// <p>The option to relax the validation needed to update an analysis with definition objects. This skips the validation step for specific errors.</p>
+    pub validation_strategy: ::std::option::Option<crate::types::ValidationStrategy>,
 }
 impl UpdateAnalysisInput {
     /// <p>The ID of the Amazon Web Services account that contains the analysis that you're updating.</p>
@@ -49,6 +51,10 @@ impl UpdateAnalysisInput {
     pub fn definition(&self) -> ::std::option::Option<&crate::types::AnalysisDefinition> {
         self.definition.as_ref()
     }
+    /// <p>The option to relax the validation needed to update an analysis with definition objects. This skips the validation step for specific errors.</p>
+    pub fn validation_strategy(&self) -> ::std::option::Option<&crate::types::ValidationStrategy> {
+        self.validation_strategy.as_ref()
+    }
 }
 impl UpdateAnalysisInput {
     /// Creates a new builder-style object to manufacture [`UpdateAnalysisInput`](crate::operation::update_analysis::UpdateAnalysisInput).
@@ -68,6 +74,7 @@ pub struct UpdateAnalysisInputBuilder {
     pub(crate) source_entity: ::std::option::Option<crate::types::AnalysisSourceEntity>,
     pub(crate) theme_arn: ::std::option::Option<::std::string::String>,
     pub(crate) definition: ::std::option::Option<crate::types::AnalysisDefinition>,
+    pub(crate) validation_strategy: ::std::option::Option<crate::types::ValidationStrategy>,
 }
 impl UpdateAnalysisInputBuilder {
     /// <p>The ID of the Amazon Web Services account that contains the analysis that you're updating.</p>
@@ -171,6 +178,20 @@ impl UpdateAnalysisInputBuilder {
     pub fn get_definition(&self) -> &::std::option::Option<crate::types::AnalysisDefinition> {
         &self.definition
     }
+    /// <p>The option to relax the validation needed to update an analysis with definition objects. This skips the validation step for specific errors.</p>
+    pub fn validation_strategy(mut self, input: crate::types::ValidationStrategy) -> Self {
+        self.validation_strategy = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The option to relax the validation needed to update an analysis with definition objects. This skips the validation step for specific errors.</p>
+    pub fn set_validation_strategy(mut self, input: ::std::option::Option<crate::types::ValidationStrategy>) -> Self {
+        self.validation_strategy = input;
+        self
+    }
+    /// <p>The option to relax the validation needed to update an analysis with definition objects. This skips the validation step for specific errors.</p>
+    pub fn get_validation_strategy(&self) -> &::std::option::Option<crate::types::ValidationStrategy> {
+        &self.validation_strategy
+    }
     /// Consumes the builder and constructs a [`UpdateAnalysisInput`](crate::operation::update_analysis::UpdateAnalysisInput).
     pub fn build(
         self,
@@ -183,6 +204,7 @@ impl UpdateAnalysisInputBuilder {
             source_entity: self.source_entity,
             theme_arn: self.theme_arn,
             definition: self.definition,
+            validation_strategy: self.validation_strategy,
         })
     }
 }

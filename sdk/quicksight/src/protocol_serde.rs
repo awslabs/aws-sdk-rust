@@ -719,6 +719,8 @@ pub(crate) mod shape_user;
 
 pub(crate) mod shape_user_list;
 
+pub(crate) mod shape_validation_strategy;
+
 pub(crate) mod shape_vpc_connection;
 
 pub(crate) mod shape_vpc_connection_properties;
@@ -1137,6 +1139,8 @@ pub(crate) mod shape_parameter_control;
 
 pub(crate) mod shape_project_operation;
 
+pub(crate) mod shape_redshift_iam_parameters;
+
 pub(crate) mod shape_registered_user_console_feature_configurations;
 
 pub(crate) mod shape_registered_user_dashboard_feature_configurations;
@@ -1458,6 +1462,8 @@ pub(crate) mod shape_combo_chart_configuration;
 pub(crate) mod shape_custom_colors_list;
 
 pub(crate) mod shape_custom_content_configuration;
+
+pub(crate) mod shape_database_group_list;
 
 pub(crate) mod shape_date_time_picker_control_display_options;
 

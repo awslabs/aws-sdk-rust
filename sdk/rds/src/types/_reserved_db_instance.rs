@@ -26,7 +26,7 @@ pub struct ReservedDbInstance {
     pub product_description: ::std::option::Option<::std::string::String>,
     /// <p>The offering type of this reserved DB instance.</p>
     pub offering_type: ::std::option::Option<::std::string::String>,
-    /// <p>Indicates if the reservation applies to Multi-AZ deployments.</p>
+    /// <p>Indicates whether the reservation applies to Multi-AZ deployments.</p>
     pub multi_az: bool,
     /// <p>The state of the reserved DB instance.</p>
     pub state: ::std::option::Option<::std::string::String>,
@@ -84,7 +84,7 @@ impl ReservedDbInstance {
     pub fn offering_type(&self) -> ::std::option::Option<&str> {
         self.offering_type.as_deref()
     }
-    /// <p>Indicates if the reservation applies to Multi-AZ deployments.</p>
+    /// <p>Indicates whether the reservation applies to Multi-AZ deployments.</p>
     pub fn multi_az(&self) -> bool {
         self.multi_az
     }
@@ -290,17 +290,17 @@ impl ReservedDbInstanceBuilder {
     pub fn get_offering_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.offering_type
     }
-    /// <p>Indicates if the reservation applies to Multi-AZ deployments.</p>
+    /// <p>Indicates whether the reservation applies to Multi-AZ deployments.</p>
     pub fn multi_az(mut self, input: bool) -> Self {
         self.multi_az = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates if the reservation applies to Multi-AZ deployments.</p>
+    /// <p>Indicates whether the reservation applies to Multi-AZ deployments.</p>
     pub fn set_multi_az(mut self, input: ::std::option::Option<bool>) -> Self {
         self.multi_az = input;
         self
     }
-    /// <p>Indicates if the reservation applies to Multi-AZ deployments.</p>
+    /// <p>Indicates whether the reservation applies to Multi-AZ deployments.</p>
     pub fn get_multi_az(&self) -> &::std::option::Option<bool> {
         &self.multi_az
     }
