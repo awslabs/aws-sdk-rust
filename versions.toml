@@ -1,4 +1,4 @@
-smithy_rs_revision = 'af8474aadd71c2114586953b24b7c9aee3832978'
+smithy_rs_revision = '1297c8c7d3d382ac8c65dad9a2502c56b3311150'
 aws_doc_sdk_examples_revision = 'dc64af92d9c1780e628ab8b9f665e0490dfad6c8'
 
 [manual_interventions]
@@ -2288,6 +2288,10 @@ source_hash = 'dee08c00def8c2f4b739fa03330c35ddcdd10ef2a3009d3cb70bc90a51796497'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = 'c465ec640d900e5c4c5e409be245c7c66c40f142819556b4759403c9b887eaaf'
+
+[release]
+tag = 'release-2023-10-26'
+
 [release.crates]
 aws-sdk-accessanalyzer = '0.34.0'
 aws-sdk-account = '0.34.0'
