@@ -127,14 +127,12 @@
                 "RegistrationLimit": {
                     "target": "com.amazonaws.ssm#RegistrationLimit",
                     "traits": {
-                        "smithy.api#default": 0,
                         "smithy.api#documentation": "<p>The maximum number of managed nodes that can be registered using this activation.</p>"
                     }
                 },
                 "RegistrationsCount": {
                     "target": "com.amazonaws.ssm#RegistrationsCount",
                     "traits": {
-                        "smithy.api#default": 0,
                         "smithy.api#documentation": "<p>The number of managed nodes already registered with this activation.</p>"
                     }
                 },
@@ -453,6 +451,9 @@
                 },
                 {
                     "target": "com.amazonaws.ssm#DeleteMaintenanceWindow"
+                },
+                {
+                    "target": "com.amazonaws.ssm#DeleteOpsItem"
                 },
                 {
                     "target": "com.amazonaws.ssm#DeleteOpsMetadata"
@@ -827,7 +828,7 @@
                     "name": "ssm"
                 },
                 "aws.protocols#awsJson1_1": {},
-                "smithy.api#documentation": "<p>Amazon Web Services Systems Manager is the operations hub for your Amazon Web Services applications and resources and a secure\n   end-to-end management solution for hybrid cloud environments that enables safe and secure\n   operations at scale.</p>\n         <p>This reference is intended to be used with the <a href=\"https://docs.aws.amazon.com/systems-manager/latest/userguide/\">Amazon Web Services Systems Manager User Guide</a>. To get started, see <a href=\"https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-setting-up.html\">Setting up Amazon Web Services Systems Manager</a>.</p>\n         <p class=\"title\">\n            <b>Related resources</b>\n         </p>\n         <ul>\n            <li>\n               <p>For information about each of the capabilities that comprise Systems Manager, see <a href=\"https://docs.aws.amazon.com/systems-manager/latest/userguide/what-is-systems-manager.html#systems-manager-capabilities\">Systems Manager capabilities</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>\n            </li>\n            <li>\n               <p>For details about predefined runbooks for Automation, a capability of Amazon Web Services Systems Manager, see the\n       <i>\n                     <a href=\"https://docs.aws.amazon.com/systems-manager-automation-runbooks/latest/userguide/automation-runbook-reference.html\">Systems Manager Automation runbook reference</a>\n                  </i>.</p>\n            </li>\n            <li>\n               <p>For information about AppConfig, a capability of Systems Manager, see the <i>\n                     <a href=\"https://docs.aws.amazon.com/appconfig/latest/userguide/\">AppConfig User Guide</a>\n                  </i>\n     and the <i>\n                     <a href=\"https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/\">AppConfig\n       API Reference</a>\n                  </i>.</p>\n            </li>\n            <li>\n               <p>For information about Incident Manager, a capability of Systems Manager, see the <i>\n                     <a href=\"https://docs.aws.amazon.com/incident-manager/latest/userguide/\">Systems Manager Incident Manager User\n       Guide</a>\n                  </i> and the <i>\n                     <a href=\"https://docs.aws.amazon.com/incident-manager/latest/APIReference/\">Systems Manager Incident Manager API\n     Reference</a>\n                  </i>.</p>\n            </li>\n         </ul>",
+                "smithy.api#documentation": "<p>Amazon Web Services Systems Manager is the operations hub for your Amazon Web Services applications and resources and a secure\n   end-to-end management solution for hybrid cloud environments that enables safe and secure\n   operations at scale.</p>\n         <p>This reference is intended to be used with the <a href=\"https://docs.aws.amazon.com/systems-manager/latest/userguide/\">Amazon Web Services Systems Manager User Guide</a>. To get started, see <a href=\"https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-setting-up.html\">Setting up Amazon Web Services Systems Manager</a>.</p>\n         <p class=\"title\">\n            <b>Related resources</b>\n         </p>\n         <ul>\n            <li>\n               <p>For information about each of the capabilities that comprise Systems Manager, see <a href=\"https://docs.aws.amazon.com/systems-manager-automation-runbooks/latest/userguide/systems-manager-capabilities.html\">Systems Manager capabilities</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>\n            </li>\n            <li>\n               <p>For details about predefined runbooks for Automation, a capability of Amazon Web Services Systems Manager, see the\n       <i>\n                     <a href=\"https://docs.aws.amazon.com/systems-manager-automation-runbooks/latest/userguide/automation-runbook-reference.html\">Systems Manager Automation runbook reference</a>\n                  </i>.</p>\n            </li>\n            <li>\n               <p>For information about AppConfig, a capability of Systems Manager, see the <i>\n                     <a href=\"https://docs.aws.amazon.com/appconfig/latest/userguide/\">AppConfig User Guide</a>\n                  </i>\n     and the <i>\n                     <a href=\"https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/\">AppConfig\n       API Reference</a>\n                  </i>.</p>\n            </li>\n            <li>\n               <p>For information about Incident Manager, a capability of Systems Manager, see the <i>\n                     <a href=\"https://docs.aws.amazon.com/incident-manager/latest/userguide/\">Systems Manager Incident Manager User\n       Guide</a>\n                  </i> and the <i>\n                     <a href=\"https://docs.aws.amazon.com/incident-manager/latest/APIReference/\">Systems Manager Incident Manager API\n     Reference</a>\n                  </i>.</p>\n            </li>\n         </ul>",
                 "smithy.api#title": "Amazon Simple Systems Manager (SSM)",
                 "smithy.api#xmlNamespace": {
                     "uri": "http://ssm.amazonaws.com/doc/2014-11-06/"
@@ -874,7 +875,6 @@
                                     ]
                                 }
                             ],
-                            "type": "tree",
                             "rules": [
                                 {
                                     "conditions": [
@@ -917,7 +917,8 @@
                                     },
                                     "type": "endpoint"
                                 }
-                            ]
+                            ],
+                            "type": "tree"
                         },
                         {
                             "conditions": [
@@ -930,7 +931,6 @@
                                     ]
                                 }
                             ],
-                            "type": "tree",
                             "rules": [
                                 {
                                     "conditions": [
@@ -944,7 +944,6 @@
                                             "assign": "PartitionResult"
                                         }
                                     ],
-                                    "type": "tree",
                                     "rules": [
                                         {
                                             "conditions": [
@@ -967,7 +966,6 @@
                                                     ]
                                                 }
                                             ],
-                                            "type": "tree",
                                             "rules": [
                                                 {
                                                     "conditions": [
@@ -1002,7 +1000,6 @@
                                                             ]
                                                         }
                                                     ],
-                                                    "type": "tree",
                                                     "rules": [
                                                         {
                                                             "conditions": [],
@@ -1013,14 +1010,16 @@
                                                             },
                                                             "type": "endpoint"
                                                         }
-                                                    ]
+                                                    ],
+                                                    "type": "tree"
                                                 },
                                                 {
                                                     "conditions": [],
                                                     "error": "FIPS and DualStack are enabled, but this partition does not support one or both",
                                                     "type": "error"
                                                 }
-                                            ]
+                                            ],
+                                            "type": "tree"
                                         },
                                         {
                                             "conditions": [
@@ -1034,14 +1033,12 @@
                                                     ]
                                                 }
                                             ],
-                                            "type": "tree",
                                             "rules": [
                                                 {
                                                     "conditions": [
                                                         {
                                                             "fn": "booleanEquals",
                                                             "argv": [
-                                                                true,
                                                                 {
                                                                     "fn": "getAttr",
                                                                     "argv": [
@@ -1050,18 +1047,17 @@
                                                                         },
                                                                         "supportsFIPS"
                                                                     ]
-                                                                }
+                                                                },
+                                                                true
                                                             ]
                                                         }
                                                     ],
-                                                    "type": "tree",
                                                     "rules": [
                                                         {
                                                             "conditions": [
                                                                 {
                                                                     "fn": "stringEquals",
                                                                     "argv": [
-                                                                        "aws-us-gov",
                                                                         {
                                                                             "fn": "getAttr",
                                                                             "argv": [
@@ -1070,7 +1066,8 @@
                                                                                 },
                                                                                 "name"
                                                                             ]
-                                                                        }
+                                                                        },
+                                                                        "aws-us-gov"
                                                                     ]
                                                                 }
                                                             ],
@@ -1090,14 +1087,16 @@
                                                             },
                                                             "type": "endpoint"
                                                         }
-                                                    ]
+                                                    ],
+                                                    "type": "tree"
                                                 },
                                                 {
                                                     "conditions": [],
                                                     "error": "FIPS is enabled but this partition does not support FIPS",
                                                     "type": "error"
                                                 }
-                                            ]
+                                            ],
+                                            "type": "tree"
                                         },
                                         {
                                             "conditions": [
@@ -1111,7 +1110,6 @@
                                                     ]
                                                 }
                                             ],
-                                            "type": "tree",
                                             "rules": [
                                                 {
                                                     "conditions": [
@@ -1131,7 +1129,6 @@
                                                             ]
                                                         }
                                                     ],
-                                                    "type": "tree",
                                                     "rules": [
                                                         {
                                                             "conditions": [],
@@ -1142,14 +1139,16 @@
                                                             },
                                                             "type": "endpoint"
                                                         }
-                                                    ]
+                                                    ],
+                                                    "type": "tree"
                                                 },
                                                 {
                                                     "conditions": [],
                                                     "error": "DualStack is enabled but this partition does not support DualStack",
                                                     "type": "error"
                                                 }
-                                            ]
+                                            ],
+                                            "type": "tree"
                                         },
                                         {
                                             "conditions": [],
@@ -1160,9 +1159,11 @@
                                             },
                                             "type": "endpoint"
                                         }
-                                    ]
+                                    ],
+                                    "type": "tree"
                                 }
-                            ]
+                            ],
+                            "type": "tree"
                         },
                         {
                             "conditions": [],
@@ -1880,6 +1881,9 @@
                     "target": "com.amazonaws.ssm#InternalServerError"
                 },
                 {
+                    "target": "com.amazonaws.ssm#OpsItemConflictException"
+                },
+                {
                     "target": "com.amazonaws.ssm#OpsItemInvalidParameterException"
                 },
                 {
@@ -2024,7 +2028,6 @@
                 "ScheduleOffset": {
                     "target": "com.amazonaws.ssm#ScheduleOffset",
                     "traits": {
-                        "smithy.api#default": null,
                         "smithy.api#documentation": "<p>Number of days to wait after the scheduled day to run an association.</p>"
                     }
                 },
@@ -2237,7 +2240,6 @@
                 "ScheduleOffset": {
                     "target": "com.amazonaws.ssm#ScheduleOffset",
                     "traits": {
-                        "smithy.api#default": null,
                         "smithy.api#documentation": "<p>Number of days to wait after the scheduled day to run an association.</p>"
                     }
                 },
@@ -3002,7 +3004,6 @@
                 "ScheduleOffset": {
                     "target": "com.amazonaws.ssm#ScheduleOffset",
                     "traits": {
-                        "smithy.api#default": null,
                         "smithy.api#documentation": "<p>Number of days to wait after the scheduled day to run an association.</p>"
                     }
                 },
@@ -4559,7 +4560,6 @@
                 "TimeoutSeconds": {
                     "target": "com.amazonaws.ssm#TimeoutSeconds",
                     "traits": {
-                        "smithy.api#default": 0,
                         "smithy.api#documentation": "<p>The <code>TimeoutSeconds</code> value specified for a command.</p>"
                     }
                 },
@@ -4839,7 +4839,6 @@
         "com.amazonaws.ssm#CommandMaxResults": {
             "type": "integer",
             "traits": {
-                "smithy.api#default": 0,
                 "smithy.api#range": {
                     "min": 1,
                     "max": 50
@@ -5628,7 +5627,6 @@
                 "RegistrationLimit": {
                     "target": "com.amazonaws.ssm#RegistrationLimit",
                     "traits": {
-                        "smithy.api#default": null,
                         "smithy.api#documentation": "<p>Specify the maximum number of managed nodes you want to register. The default value is\n    <code>1</code>.</p>"
                     }
                 },
@@ -5911,7 +5909,6 @@
                 "ScheduleOffset": {
                     "target": "com.amazonaws.ssm#ScheduleOffset",
                     "traits": {
-                        "smithy.api#default": null,
                         "smithy.api#documentation": "<p>Number of days to wait after the scheduled day to run an association.</p>"
                     }
                 },
@@ -6053,7 +6050,6 @@
                 "ScheduleOffset": {
                     "target": "com.amazonaws.ssm#ScheduleOffset",
                     "traits": {
-                        "smithy.api#default": null,
                         "smithy.api#documentation": "<p>Number of days to wait after the scheduled day to run an association. For example, if you\n   specified a cron schedule of <code>cron(0 0 ? * THU#2 *)</code>, you could specify an offset of 3\n   to run the association each Sunday after the second Thursday of the month. For more information\n   about cron schedules for associations, see <a href=\"https://docs.aws.amazon.com/systems-manager/latest/userguide/reference-cron-and-rate-expressions.html\">Reference: Cron\n    and rate expressions for Systems Manager</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. </p>\n         <note>\n            <p>To use offsets, you must specify the <code>ApplyOnlyAtCronInterval</code> parameter. This\n    option tells the system not to run an association immediately after you create it. </p>\n         </note>"
                     }
                 },
@@ -6274,14 +6270,12 @@
                 "ScheduleOffset": {
                     "target": "com.amazonaws.ssm#MaintenanceWindowOffset",
                     "traits": {
-                        "smithy.api#default": null,
                         "smithy.api#documentation": "<p>The number of days to wait after the date and time specified by a cron expression before\n   running the maintenance window.</p>\n         <p>For example, the following cron expression schedules a maintenance window to run on the\n   third Tuesday of every month at 11:30 PM.</p>\n         <p>\n            <code>cron(30 23 ? * TUE#3 *)</code>\n         </p>\n         <p>If the schedule offset is <code>2</code>, the maintenance window won't run until two days\n   later.</p>"
                     }
                 },
                 "Duration": {
                     "target": "com.amazonaws.ssm#MaintenanceWindowDurationHours",
                     "traits": {
-                        "smithy.api#default": 0,
                         "smithy.api#documentation": "<p>The duration of the maintenance window in hours.</p>",
                         "smithy.api#required": {}
                     }
@@ -6369,14 +6363,14 @@
                 "Description": {
                     "target": "com.amazonaws.ssm#OpsItemDescription",
                     "traits": {
-                        "smithy.api#documentation": "<p>User-defined text that contains information about the OpsItem, in Markdown format.\n  </p>\n         <note>\n            <p>Provide enough information so that users viewing this OpsItem for the first time \n    understand the issue. </p>\n         </note>",
+                        "smithy.api#documentation": "<p>User-defined text that contains information about the OpsItem, in Markdown format. </p>\n         <note>\n            <p>Provide enough information so that users viewing this OpsItem for the first time understand\n    the issue. </p>\n         </note>",
                         "smithy.api#required": {}
                     }
                 },
                 "OpsItemType": {
                     "target": "com.amazonaws.ssm#OpsItemType",
                     "traits": {
-                        "smithy.api#documentation": "<p>The type of OpsItem to create. Systems Manager supports the following types of OpsItems:</p>\n         <ul>\n            <li>\n               <p>\n                  <code>/aws/issue</code>\n               </p>\n               <p>This type of OpsItem is used for default OpsItems created by OpsCenter. </p>\n            </li>\n            <li>\n               <p>\n                  <code>/aws/changerequest</code>\n               </p>\n               <p>This type of OpsItem is used by Change Manager for reviewing and approving or rejecting change\n     requests. </p>\n            </li>\n            <li>\n               <p>\n                  <code>/aws/insight</code>\n               </p>\n               <p>This type of OpsItem is used by OpsCenter for aggregating and reporting on duplicate\n     OpsItems. </p>\n            </li>\n         </ul>"
+                        "smithy.api#documentation": "<p>The type of OpsItem to create. Systems Manager supports the following types of OpsItems:</p>\n         <ul>\n            <li>\n               <p>\n                  <code>/aws/issue</code>\n               </p>\n               <p>This type of OpsItem is used for default OpsItems created by OpsCenter. </p>\n            </li>\n            <li>\n               <p>\n                  <code>/aws/changerequest</code>\n               </p>\n               <p>This type of OpsItem is used by Change Manager for reviewing and approving or rejecting change\n     requests. </p>\n            </li>\n            <li>\n               <p>\n                  <code>/aws/insights</code>\n               </p>\n               <p>This type of OpsItem is used by OpsCenter for aggregating and reporting on duplicate\n     OpsItems. </p>\n            </li>\n         </ul>"
                     }
                 },
                 "OperationalData": {
@@ -7103,6 +7097,48 @@
                 "smithy.api#output": {}
             }
         },
+        "com.amazonaws.ssm#DeleteOpsItem": {
+            "type": "operation",
+            "input": {
+                "target": "com.amazonaws.ssm#DeleteOpsItemRequest"
+            },
+            "output": {
+                "target": "com.amazonaws.ssm#DeleteOpsItemResponse"
+            },
+            "errors": [
+                {
+                    "target": "com.amazonaws.ssm#InternalServerError"
+                },
+                {
+                    "target": "com.amazonaws.ssm#OpsItemInvalidParameterException"
+                }
+            ],
+            "traits": {
+                "smithy.api#documentation": "<p>Delete an OpsItem. You must have permission in Identity and Access Management (IAM) to\n   delete an OpsItem. </p>\n         <important>\n            <p>Note the following important information about this operation.</p>\n            <ul>\n               <li>\n                  <p>Deleting an OpsItem is irreversible. You can't restore a deleted OpsItem.</p>\n               </li>\n               <li>\n                  <p>This operation uses an <i>eventual consistency model</i>, which means the\n      system can take a few minutes to complete this operation. If you delete an OpsItem and\n      immediately call, for example, <a>GetOpsItem</a>, the deleted OpsItem might still\n      appear in the response. </p>\n               </li>\n               <li>\n                  <p>This operation is idempotent. The system doesn't throw an exception if you repeatedly\n      call this operation for the same OpsItem. If the first call is successful, all additional calls\n      return the same successful response as the first call.</p>\n               </li>\n               <li>\n                  <p>This operation doesn't support cross-account calls. A delegated administrator or\n      management account can't delete OpsItems in other accounts, even if OpsCenter has been set up for\n      cross-account administration. For more information about cross-account administration, see\n       <a href=\"https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-setting-up-cross-account.html\">Setting up\n       OpsCenter to centrally manage OpsItems across accounts</a> in the <i>Systems Manager User Guide</i>.</p>\n               </li>\n            </ul>\n         </important>"
+            }
+        },
+        "com.amazonaws.ssm#DeleteOpsItemRequest": {
+            "type": "structure",
+            "members": {
+                "OpsItemId": {
+                    "target": "com.amazonaws.ssm#OpsItemId",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The ID of the OpsItem that you want to delete.</p>",
+                        "smithy.api#required": {}
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#input": {}
+            }
+        },
+        "com.amazonaws.ssm#DeleteOpsItemResponse": {
+            "type": "structure",
+            "members": {},
+            "traits": {
+                "smithy.api#output": {}
+            }
+        },
         "com.amazonaws.ssm#DeleteOpsMetadata": {
             "type": "operation",
             "input": {
@@ -7735,7 +7771,6 @@
                 "MaxResults": {
                     "target": "com.amazonaws.ssm#MaxResults",
                     "traits": {
-                        "smithy.api#default": null,
                         "smithy.api#documentation": "<p>The maximum number of items to return for this call. The call also returns a token that you\n   can specify in a subsequent call to get the next set of results.</p>"
                     }
                 },
@@ -7857,7 +7892,6 @@
                 "MaxResults": {
                     "target": "com.amazonaws.ssm#MaxResults",
                     "traits": {
-                        "smithy.api#default": null,
                         "smithy.api#documentation": "<p>The maximum number of items to return for this call. The call also returns a token that you\n   can specify in a subsequent call to get the next set of results.</p>"
                     }
                 },
@@ -7940,7 +7974,6 @@
                 "MaxResults": {
                     "target": "com.amazonaws.ssm#MaxResults",
                     "traits": {
-                        "smithy.api#default": null,
                         "smithy.api#documentation": "<p>The maximum number of items to return for this call. The call also returns a token that you\n   can specify in a subsequent call to get the next set of results.</p>"
                     }
                 },
@@ -8065,7 +8098,6 @@
                 "MaxResults": {
                     "target": "com.amazonaws.ssm#MaxResults",
                     "traits": {
-                        "smithy.api#default": null,
                         "smithy.api#documentation": "<p>The maximum number of items to return for this call. The call also returns a token that you\n   can specify in a subsequent call to get the next set of results.</p>"
                     }
                 },
@@ -8160,7 +8192,6 @@
                 "MaxResults": {
                     "target": "com.amazonaws.ssm#MaxResults",
                     "traits": {
-                        "smithy.api#default": null,
                         "smithy.api#documentation": "<p>The maximum number of items to return for this call. The call also returns a token that you\n   can specify in a subsequent call to get the next set of results.</p>"
                     }
                 },
@@ -8231,7 +8262,6 @@
                 "MaxResults": {
                     "target": "com.amazonaws.ssm#PatchBaselineMaxResults",
                     "traits": {
-                        "smithy.api#default": null,
                         "smithy.api#documentation": "<p>The maximum number of patches to return (per page).</p>"
                     }
                 },
@@ -8338,7 +8368,6 @@
                 "MaxResults": {
                     "target": "com.amazonaws.ssm#DocumentPermissionMaxResults",
                     "traits": {
-                        "smithy.api#default": null,
                         "smithy.api#documentation": "<p>The maximum number of items to return for this call. The call also returns a token that you\n   can specify in a subsequent call to get the next set of results.</p>"
                     }
                 },
@@ -8462,7 +8491,6 @@
                 "MaxResults": {
                     "target": "com.amazonaws.ssm#EffectiveInstanceAssociationMaxResults",
                     "traits": {
-                        "smithy.api#default": null,
                         "smithy.api#documentation": "<p>The maximum number of items to return for this call. The call also returns a token that you\n   can specify in a subsequent call to get the next set of results.</p>"
                     }
                 },
@@ -8542,7 +8570,6 @@
                 "MaxResults": {
                     "target": "com.amazonaws.ssm#PatchBaselineMaxResults",
                     "traits": {
-                        "smithy.api#default": null,
                         "smithy.api#documentation": "<p>The maximum number of patches to return (per page).</p>"
                     }
                 },
@@ -8619,7 +8646,6 @@
                 "MaxResults": {
                     "target": "com.amazonaws.ssm#MaxResults",
                     "traits": {
-                        "smithy.api#default": null,
                         "smithy.api#documentation": "<p>The maximum number of items to return for this call. The call also returns a token that you\n   can specify in a subsequent call to get the next set of results.</p>"
                     }
                 },
@@ -8707,7 +8733,6 @@
                 "MaxResults": {
                     "target": "com.amazonaws.ssm#MaxResultsEC2Compatible",
                     "traits": {
-                        "smithy.api#default": null,
                         "smithy.api#documentation": "<p>The maximum number of items to return for this call. The call also returns a token that you\n   can specify in a subsequent call to get the next set of results. The default value is 10 items.\n  </p>"
                     }
                 },
@@ -8822,7 +8847,6 @@
                 "MaxResults": {
                     "target": "com.amazonaws.ssm#PatchComplianceMaxResults",
                     "traits": {
-                        "smithy.api#default": null,
                         "smithy.api#documentation": "<p>The maximum number of patches to return (per page).</p>"
                     }
                 }
@@ -8870,7 +8894,6 @@
                 "MaxResults": {
                     "target": "com.amazonaws.ssm#PatchComplianceMaxResults",
                     "traits": {
-                        "smithy.api#default": null,
                         "smithy.api#documentation": "<p>The maximum number of managed nodes to return (per page).</p>"
                     }
                 }
@@ -8956,7 +8979,6 @@
                 "MaxResults": {
                     "target": "com.amazonaws.ssm#PatchComplianceMaxResults",
                     "traits": {
-                        "smithy.api#default": null,
                         "smithy.api#documentation": "<p>The maximum number of patches to return (per page).</p>"
                     }
                 }
@@ -9032,7 +9054,6 @@
                 "MaxResults": {
                     "target": "com.amazonaws.ssm#MaxResults",
                     "traits": {
-                        "smithy.api#default": null,
                         "smithy.api#documentation": "<p>The maximum number of items to return for this call. The call also returns a token that you\n   can specify in a subsequent call to get the next set of results.</p>"
                     }
                 }
@@ -9113,7 +9134,6 @@
                 "MaxResults": {
                     "target": "com.amazonaws.ssm#MaintenanceWindowMaxResults",
                     "traits": {
-                        "smithy.api#default": null,
                         "smithy.api#documentation": "<p>The maximum number of items to return for this call. The call also returns a token that you\n   can specify in a subsequent call to get the next set of results.</p>"
                     }
                 },
@@ -9193,7 +9213,6 @@
                 "MaxResults": {
                     "target": "com.amazonaws.ssm#MaintenanceWindowMaxResults",
                     "traits": {
-                        "smithy.api#default": null,
                         "smithy.api#documentation": "<p>The maximum number of items to return for this call. The call also returns a token that you\n   can specify in a subsequent call to get the next set of results.</p>"
                     }
                 },
@@ -9270,7 +9289,6 @@
                 "MaxResults": {
                     "target": "com.amazonaws.ssm#MaintenanceWindowMaxResults",
                     "traits": {
-                        "smithy.api#default": null,
                         "smithy.api#documentation": "<p>The maximum number of items to return for this call. The call also returns a token that you\n   can specify in a subsequent call to get the next set of results.</p>"
                     }
                 },
@@ -9361,7 +9379,6 @@
                 "MaxResults": {
                     "target": "com.amazonaws.ssm#MaintenanceWindowSearchMaxResults",
                     "traits": {
-                        "smithy.api#default": null,
                         "smithy.api#documentation": "<p>The maximum number of items to return for this call. The call also returns a token that you\n   can specify in a subsequent call to get the next set of results.</p>"
                     }
                 },
@@ -9441,7 +9458,6 @@
                 "MaxResults": {
                     "target": "com.amazonaws.ssm#MaintenanceWindowMaxResults",
                     "traits": {
-                        "smithy.api#default": null,
                         "smithy.api#documentation": "<p>The maximum number of items to return for this call. The call also returns a token that you\n   can specify in a subsequent call to get the next set of results.</p>"
                     }
                 },
@@ -9521,7 +9537,6 @@
                 "MaxResults": {
                     "target": "com.amazonaws.ssm#MaintenanceWindowMaxResults",
                     "traits": {
-                        "smithy.api#default": null,
                         "smithy.api#documentation": "<p>The maximum number of items to return for this call. The call also returns a token that you\n   can specify in a subsequent call to get the next set of results.</p>"
                     }
                 },
@@ -9622,7 +9637,6 @@
                 "MaxResults": {
                     "target": "com.amazonaws.ssm#MaintenanceWindowSearchMaxResults",
                     "traits": {
-                        "smithy.api#default": null,
                         "smithy.api#documentation": "<p>The maximum number of items to return for this call. The call also returns a token that you\n   can specify in a subsequent call to get the next set of results.</p>"
                     }
                 },
@@ -9669,7 +9683,6 @@
                 "MaxResults": {
                     "target": "com.amazonaws.ssm#MaintenanceWindowMaxResults",
                     "traits": {
-                        "smithy.api#default": null,
                         "smithy.api#documentation": "<p>The maximum number of items to return for this call. The call also returns a token that you\n   can specify in a subsequent call to get the next set of results.</p>"
                     }
                 },
@@ -9825,7 +9838,6 @@
                 "MaxResults": {
                     "target": "com.amazonaws.ssm#MaxResults",
                     "traits": {
-                        "smithy.api#default": null,
                         "smithy.api#documentation": "<p>The maximum number of items to return for this call. The call also returns a token that you\n   can specify in a subsequent call to get the next set of results.</p>"
                     }
                 },
@@ -9895,7 +9907,6 @@
                 "MaxResults": {
                     "target": "com.amazonaws.ssm#PatchBaselineMaxResults",
                     "traits": {
-                        "smithy.api#default": null,
                         "smithy.api#documentation": "<p>The maximum number of patch baselines to return (per page).</p>"
                     }
                 },
@@ -10086,7 +10097,6 @@
                 "MaxResults": {
                     "target": "com.amazonaws.ssm#PatchBaselineMaxResults",
                     "traits": {
-                        "smithy.api#default": null,
                         "smithy.api#documentation": "<p>The maximum number of patch groups to return (per page).</p>"
                     }
                 },
@@ -10176,7 +10186,6 @@
                 "MaxResults": {
                     "target": "com.amazonaws.ssm#MaxResults",
                     "traits": {
-                        "smithy.api#default": null,
                         "smithy.api#documentation": "<p>The maximum number of items to return for this call. The call also returns a token that you\n   can specify in a subsequent call to get the next set of results.</p>"
                     }
                 },
@@ -10253,7 +10262,6 @@
                 "MaxResults": {
                     "target": "com.amazonaws.ssm#SessionMaxResults",
                     "traits": {
-                        "smithy.api#default": null,
                         "smithy.api#documentation": "<p>The maximum number of items to return for this call. The call also returns a token that you\n   can specify in a subsequent call to get the next set of results.</p>"
                     }
                 },
@@ -10308,6 +10316,9 @@
             "errors": [
                 {
                     "target": "com.amazonaws.ssm#InternalServerError"
+                },
+                {
+                    "target": "com.amazonaws.ssm#OpsItemConflictException"
                 },
                 {
                     "target": "com.amazonaws.ssm#OpsItemInvalidParameterException"
@@ -11030,7 +11041,6 @@
         "com.amazonaws.ssm#DocumentPermissionMaxResults": {
             "type": "integer",
             "traits": {
-                "smithy.api#default": 0,
                 "smithy.api#range": {
                     "min": 1,
                     "max": 200
@@ -11567,7 +11577,6 @@
         "com.amazonaws.ssm#EffectiveInstanceAssociationMaxResults": {
             "type": "integer",
             "traits": {
-                "smithy.api#default": 0,
                 "smithy.api#range": {
                     "min": 1,
                     "max": 5
@@ -12535,7 +12544,6 @@
                 "MaxResults": {
                     "target": "com.amazonaws.ssm#MaxResults",
                     "traits": {
-                        "smithy.api#default": null,
                         "smithy.api#documentation": "<p>The maximum number of items to return for this call. The call also returns a token that you\n   can specify in a subsequent call to get the next set of results.</p>"
                     }
                 }
@@ -12596,7 +12604,6 @@
         "com.amazonaws.ssm#GetInventorySchemaMaxResults": {
             "type": "integer",
             "traits": {
-                "smithy.api#default": 0,
                 "smithy.api#range": {
                     "min": 50,
                     "max": 200
@@ -12621,7 +12628,6 @@
                 "MaxResults": {
                     "target": "com.amazonaws.ssm#GetInventorySchemaMaxResults",
                     "traits": {
-                        "smithy.api#default": null,
                         "smithy.api#documentation": "<p>The maximum number of items to return for this call. The call also returns a token that you\n   can specify in a subsequent call to get the next set of results.</p>"
                     }
                 },
@@ -13096,7 +13102,6 @@
                 "ScheduleOffset": {
                     "target": "com.amazonaws.ssm#MaintenanceWindowOffset",
                     "traits": {
-                        "smithy.api#default": null,
                         "smithy.api#documentation": "<p>The number of days to wait to run a maintenance window after the scheduled cron expression\n   date and time.</p>"
                     }
                 },
@@ -13109,7 +13114,6 @@
                 "Duration": {
                     "target": "com.amazonaws.ssm#MaintenanceWindowDurationHours",
                     "traits": {
-                        "smithy.api#default": 0,
                         "smithy.api#documentation": "<p>The duration of the maintenance window in hours.</p>"
                     }
                 },
@@ -13382,7 +13386,6 @@
         "com.amazonaws.ssm#GetOpsMetadataMaxResults": {
             "type": "integer",
             "traits": {
-                "smithy.api#default": 0,
                 "smithy.api#range": {
                     "min": 1,
                     "max": 10
@@ -13402,7 +13405,6 @@
                 "MaxResults": {
                     "target": "com.amazonaws.ssm#GetOpsMetadataMaxResults",
                     "traits": {
-                        "smithy.api#default": null,
                         "smithy.api#documentation": "<p>The maximum number of items to return for this call. The call also returns a token that you\n   can specify in a subsequent call to get the next set of results.</p>"
                     }
                 },
@@ -13517,7 +13519,6 @@
                 "MaxResults": {
                     "target": "com.amazonaws.ssm#MaxResults",
                     "traits": {
-                        "smithy.api#default": null,
                         "smithy.api#documentation": "<p>The maximum number of items to return for this call. The call also returns a token that you\n   can specify in a subsequent call to get the next set of results.</p>"
                     }
                 }
@@ -13623,7 +13624,6 @@
                 "MaxResults": {
                     "target": "com.amazonaws.ssm#MaxResults",
                     "traits": {
-                        "smithy.api#default": null,
                         "smithy.api#documentation": "<p>The maximum number of items to return for this call. The call also returns a token that you\n   can specify in a subsequent call to get the next set of results.</p>"
                     }
                 },
@@ -13754,7 +13754,6 @@
         "com.amazonaws.ssm#GetParametersByPathMaxResults": {
             "type": "integer",
             "traits": {
-                "smithy.api#default": 0,
                 "smithy.api#range": {
                     "min": 1,
                     "max": 10
@@ -13794,7 +13793,6 @@
                 "MaxResults": {
                     "target": "com.amazonaws.ssm#GetParametersByPathMaxResults",
                     "traits": {
-                        "smithy.api#default": null,
                         "smithy.api#documentation": "<p>The maximum number of items to return for this call. The call also returns a token that you\n   can specify in a subsequent call to get the next set of results.</p>"
                     }
                 },
@@ -16851,7 +16849,6 @@
                 "MaxResults": {
                     "target": "com.amazonaws.ssm#MaxResults",
                     "traits": {
-                        "smithy.api#default": null,
                         "smithy.api#documentation": "<p>The maximum number of items to return for this call. The call also returns a token that you\n   can specify in a subsequent call to get the next set of results.</p>"
                     }
                 },
@@ -16924,7 +16921,6 @@
                 "MaxResults": {
                     "target": "com.amazonaws.ssm#MaxResults",
                     "traits": {
-                        "smithy.api#default": null,
                         "smithy.api#documentation": "<p>The maximum number of items to return for this call. The call also returns a token that you\n   can specify in a subsequent call to get the next set of results.</p>"
                     }
                 },
@@ -17012,7 +17008,6 @@
                 "MaxResults": {
                     "target": "com.amazonaws.ssm#CommandMaxResults",
                     "traits": {
-                        "smithy.api#default": null,
                         "smithy.api#documentation": "<p>(Optional) The maximum number of items to return for this call. The call also returns a\n   token that you can specify in a subsequent call to get the next set of results.</p>"
                     }
                 },
@@ -17113,7 +17108,6 @@
                 "MaxResults": {
                     "target": "com.amazonaws.ssm#CommandMaxResults",
                     "traits": {
-                        "smithy.api#default": null,
                         "smithy.api#documentation": "<p>(Optional) The maximum number of items to return for this call. The call also returns a\n   token that you can specify in a subsequent call to get the next set of results.</p>"
                     }
                 },
@@ -17219,7 +17213,6 @@
                 "MaxResults": {
                     "target": "com.amazonaws.ssm#MaxResults",
                     "traits": {
-                        "smithy.api#default": null,
                         "smithy.api#documentation": "<p>The maximum number of items to return for this call. The call also returns a token that you\n   can specify in a subsequent call to get the next set of results.</p>"
                     }
                 }
@@ -17295,7 +17288,6 @@
                 "MaxResults": {
                     "target": "com.amazonaws.ssm#MaxResults",
                     "traits": {
-                        "smithy.api#default": null,
                         "smithy.api#documentation": "<p>The maximum number of items to return for this call. Currently, you can specify null or 50.\n   The call also returns a token that you can specify in a subsequent call to get the next set of\n   results.</p>"
                     }
                 }
@@ -17382,7 +17374,6 @@
                 "MaxResults": {
                     "target": "com.amazonaws.ssm#MaxResults",
                     "traits": {
-                        "smithy.api#default": null,
                         "smithy.api#documentation": "<p>The maximum number of items to return for this call. The call also returns a token that you\n   can specify in a subsequent call to get the next set of results.</p>"
                     }
                 }
@@ -17471,7 +17462,6 @@
                 "MaxResults": {
                     "target": "com.amazonaws.ssm#MaxResults",
                     "traits": {
-                        "smithy.api#default": null,
                         "smithy.api#documentation": "<p>The maximum number of items to return for this call. The call also returns a token that you\n   can specify in a subsequent call to get the next set of results.</p>"
                     }
                 },
@@ -17553,7 +17543,6 @@
                 "MaxResults": {
                     "target": "com.amazonaws.ssm#MaxResults",
                     "traits": {
-                        "smithy.api#default": null,
                         "smithy.api#documentation": "<p>The maximum number of items to return for this call. The call also returns a token that you\n   can specify in a subsequent call to get the next set of results.</p>"
                     }
                 },
@@ -17649,7 +17638,6 @@
                 "MaxResults": {
                     "target": "com.amazonaws.ssm#MaxResults",
                     "traits": {
-                        "smithy.api#default": null,
                         "smithy.api#documentation": "<p>The maximum number of items to return for this call. The call also returns a token that you\n   can specify in a subsequent call to get the next set of results.</p>"
                     }
                 }
@@ -17887,7 +17875,6 @@
         "com.amazonaws.ssm#ListOpsMetadataMaxResults": {
             "type": "integer",
             "traits": {
-                "smithy.api#default": 0,
                 "smithy.api#range": {
                     "min": 1,
                     "max": 50
@@ -17906,7 +17893,6 @@
                 "MaxResults": {
                     "target": "com.amazonaws.ssm#ListOpsMetadataMaxResults",
                     "traits": {
-                        "smithy.api#default": null,
                         "smithy.api#documentation": "<p>The maximum number of items to return for this call. The call also returns a token that you\n   can specify in a subsequent call to get the next set of results.</p>"
                     }
                 },
@@ -17988,7 +17974,6 @@
                 "MaxResults": {
                     "target": "com.amazonaws.ssm#MaxResults",
                     "traits": {
-                        "smithy.api#default": null,
                         "smithy.api#documentation": "<p>The maximum number of items to return for this call. The call also returns a token that you\n   can specify in a subsequent call to get the next set of results.</p>"
                     }
                 }
@@ -18064,7 +18049,6 @@
                 "MaxResults": {
                     "target": "com.amazonaws.ssm#MaxResults",
                     "traits": {
-                        "smithy.api#default": null,
                         "smithy.api#documentation": "<p>The maximum number of items to return for this call. The call also returns a token that you\n   can specify in a subsequent call to get the next set of results.</p>"
                     }
                 }
@@ -18235,7 +18219,6 @@
         "com.amazonaws.ssm#MaintenanceWindowDurationHours": {
             "type": "integer",
             "traits": {
-                "smithy.api#default": 0,
                 "smithy.api#range": {
                     "min": 1,
                     "max": 24
@@ -18662,7 +18645,6 @@
                 "Duration": {
                     "target": "com.amazonaws.ssm#MaintenanceWindowDurationHours",
                     "traits": {
-                        "smithy.api#default": 0,
                         "smithy.api#documentation": "<p>The duration of the maintenance window in hours.</p>"
                     }
                 },
@@ -18688,7 +18670,6 @@
                 "ScheduleOffset": {
                     "target": "com.amazonaws.ssm#MaintenanceWindowOffset",
                     "traits": {
-                        "smithy.api#default": null,
                         "smithy.api#documentation": "<p>The number of days to wait to run a maintenance window after the scheduled cron expression\n   date and time.</p>"
                     }
                 },
@@ -18798,7 +18779,6 @@
         "com.amazonaws.ssm#MaintenanceWindowMaxResults": {
             "type": "integer",
             "traits": {
-                "smithy.api#default": 0,
                 "smithy.api#range": {
                     "min": 10,
                     "max": 100
@@ -18818,7 +18798,6 @@
         "com.amazonaws.ssm#MaintenanceWindowOffset": {
             "type": "integer",
             "traits": {
-                "smithy.api#default": 0,
                 "smithy.api#range": {
                     "min": 1,
                     "max": 6
@@ -18905,7 +18884,6 @@
                 "TimeoutSeconds": {
                     "target": "com.amazonaws.ssm#TimeoutSeconds",
                     "traits": {
-                        "smithy.api#default": null,
                         "smithy.api#documentation": "<p>If this time is reached and the command hasn't already started running, it doesn't\n   run.</p>"
                     }
                 }
@@ -18926,7 +18904,6 @@
         "com.amazonaws.ssm#MaintenanceWindowSearchMaxResults": {
             "type": "integer",
             "traits": {
-                "smithy.api#default": 0,
                 "smithy.api#range": {
                     "min": 1
                 }
@@ -19382,7 +19359,6 @@
         "com.amazonaws.ssm#MaxResults": {
             "type": "integer",
             "traits": {
-                "smithy.api#default": 0,
                 "smithy.api#range": {
                     "min": 1,
                     "max": 50
@@ -19392,7 +19368,6 @@
         "com.amazonaws.ssm#MaxResultsEC2Compatible": {
             "type": "integer",
             "traits": {
-                "smithy.api#default": 0,
                 "smithy.api#range": {
                     "min": 5,
                     "max": 50
@@ -20113,7 +20088,7 @@
                 "OpsItemType": {
                     "target": "com.amazonaws.ssm#OpsItemType",
                     "traits": {
-                        "smithy.api#documentation": "<p>The type of OpsItem. Systems Manager supports the following types of OpsItems:</p>\n         <ul>\n            <li>\n               <p>\n                  <code>/aws/issue</code>\n               </p>\n               <p>This type of OpsItem is used for default OpsItems created by OpsCenter. </p>\n            </li>\n            <li>\n               <p>\n                  <code>/aws/changerequest</code>\n               </p>\n               <p>This type of OpsItem is used by Change Manager for reviewing and approving or rejecting change\n     requests. </p>\n            </li>\n            <li>\n               <p>\n                  <code>/aws/insight</code>\n               </p>\n               <p>This type of OpsItem is used by OpsCenter for aggregating and reporting on duplicate\n     OpsItems. </p>\n            </li>\n         </ul>"
+                        "smithy.api#documentation": "<p>The type of OpsItem. Systems Manager supports the following types of OpsItems:</p>\n         <ul>\n            <li>\n               <p>\n                  <code>/aws/issue</code>\n               </p>\n               <p>This type of OpsItem is used for default OpsItems created by OpsCenter. </p>\n            </li>\n            <li>\n               <p>\n                  <code>/aws/changerequest</code>\n               </p>\n               <p>This type of OpsItem is used by Change Manager for reviewing and approving or rejecting change\n     requests. </p>\n            </li>\n            <li>\n               <p>\n                  <code>/aws/insights</code>\n               </p>\n               <p>This type of OpsItem is used by OpsCenter for aggregating and reporting on duplicate\n     OpsItems. </p>\n            </li>\n         </ul>"
                     }
                 },
                 "CreatedTime": {
@@ -20300,6 +20275,22 @@
                     "max": 64
                 },
                 "smithy.api#pattern": "^(?!\\s*$).+$"
+            }
+        },
+        "com.amazonaws.ssm#OpsItemConflictException": {
+            "type": "structure",
+            "members": {
+                "Message": {
+                    "target": "com.amazonaws.ssm#String"
+                }
+            },
+            "traits": {
+                "aws.protocols#awsQueryError": {
+                    "code": "OpsItemConflictException",
+                    "httpResponseCode": 409
+                },
+                "smithy.api#documentation": "<p>The specified OpsItem is in the process of being deleted.</p>",
+                "smithy.api#error": "client"
             }
         },
         "com.amazonaws.ssm#OpsItemDataKey": {
@@ -21313,7 +21304,7 @@
                 "OpsItemType": {
                     "target": "com.amazonaws.ssm#OpsItemType",
                     "traits": {
-                        "smithy.api#documentation": "<p>The type of OpsItem. Systems Manager supports the following types of OpsItems:</p>\n         <ul>\n            <li>\n               <p>\n                  <code>/aws/issue</code>\n               </p>\n               <p>This type of OpsItem is used for default OpsItems created by OpsCenter. </p>\n            </li>\n            <li>\n               <p>\n                  <code>/aws/changerequest</code>\n               </p>\n               <p>This type of OpsItem is used by Change Manager for reviewing and approving or rejecting change\n     requests. </p>\n            </li>\n            <li>\n               <p>\n                  <code>/aws/insight</code>\n               </p>\n               <p>This type of OpsItem is used by OpsCenter for aggregating and reporting on duplicate\n     OpsItems. </p>\n            </li>\n         </ul>"
+                        "smithy.api#documentation": "<p>The type of OpsItem. Systems Manager supports the following types of OpsItems:</p>\n         <ul>\n            <li>\n               <p>\n                  <code>/aws/issue</code>\n               </p>\n               <p>This type of OpsItem is used for default OpsItems created by OpsCenter. </p>\n            </li>\n            <li>\n               <p>\n                  <code>/aws/changerequest</code>\n               </p>\n               <p>This type of OpsItem is used by Change Manager for reviewing and approving or rejecting change\n     requests. </p>\n            </li>\n            <li>\n               <p>\n                  <code>/aws/insights</code>\n               </p>\n               <p>This type of OpsItem is used by OpsCenter for aggregating and reporting on duplicate\n     OpsItems. </p>\n            </li>\n         </ul>"
                     }
                 },
                 "ActualStartTime": {
@@ -22589,7 +22580,6 @@
         "com.amazonaws.ssm#PatchBaselineMaxResults": {
             "type": "integer",
             "traits": {
-                "smithy.api#default": 0,
                 "smithy.api#range": {
                     "min": 1,
                     "max": 100
@@ -22773,7 +22763,6 @@
         "com.amazonaws.ssm#PatchComplianceMaxResults": {
             "type": "integer",
             "traits": {
-                "smithy.api#default": 0,
                 "smithy.api#range": {
                     "min": 10,
                     "max": 100
@@ -24467,7 +24456,6 @@
         "com.amazonaws.ssm#RegistrationLimit": {
             "type": "integer",
             "traits": {
-                "smithy.api#default": 0,
                 "smithy.api#range": {
                     "min": 1,
                     "max": 1000
@@ -24525,7 +24513,6 @@
         "com.amazonaws.ssm#RegistrationsCount": {
             "type": "integer",
             "traits": {
-                "smithy.api#default": 0,
                 "smithy.api#range": {
                     "min": 1,
                     "max": 1000
@@ -25806,7 +25793,6 @@
         "com.amazonaws.ssm#ScheduleOffset": {
             "type": "integer",
             "traits": {
-                "smithy.api#default": 0,
                 "smithy.api#range": {
                     "min": 1,
                     "max": 6
@@ -25996,7 +25982,6 @@
                 "TimeoutSeconds": {
                     "target": "com.amazonaws.ssm#TimeoutSeconds",
                     "traits": {
-                        "smithy.api#default": null,
                         "smithy.api#documentation": "<p>If this time is reached and the command hasn't already started running, it won't run.</p>"
                     }
                 },
@@ -26422,7 +26407,6 @@
         "com.amazonaws.ssm#SessionMaxResults": {
             "type": "integer",
             "traits": {
-                "smithy.api#default": 0,
                 "smithy.api#range": {
                     "min": 1,
                     "max": 200
@@ -27781,7 +27765,6 @@
         "com.amazonaws.ssm#TimeoutSeconds": {
             "type": "integer",
             "traits": {
-                "smithy.api#default": 0,
                 "smithy.api#range": {
                     "min": 30,
                     "max": 2592000
@@ -28207,7 +28190,6 @@
                 "ScheduleOffset": {
                     "target": "com.amazonaws.ssm#ScheduleOffset",
                     "traits": {
-                        "smithy.api#default": null,
                         "smithy.api#documentation": "<p>Number of days to wait after the scheduled day to run an association. For example, if you\n   specified a cron schedule of <code>cron(0 0 ? * THU#2 *)</code>, you could specify an offset of 3\n   to run the association each Sunday after the second Thursday of the month. For more information\n   about cron schedules for associations, see <a href=\"https://docs.aws.amazon.com/systems-manager/latest/userguide/reference-cron-and-rate-expressions.html\">Reference: Cron\n    and rate expressions for Systems Manager</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. </p>\n         <note>\n            <p>To use offsets, you must specify the <code>ApplyOnlyAtCronInterval</code> parameter. This\n    option tells the system not to run an association immediately after you create it. </p>\n         </note>"
                     }
                 },
@@ -28622,14 +28604,12 @@
                 "ScheduleOffset": {
                     "target": "com.amazonaws.ssm#MaintenanceWindowOffset",
                     "traits": {
-                        "smithy.api#default": null,
                         "smithy.api#documentation": "<p>The number of days to wait after the date and time specified by a cron expression before\n   running the maintenance window.</p>\n         <p>For example, the following cron expression schedules a maintenance window to run the third\n   Tuesday of every month at 11:30 PM.</p>\n         <p>\n            <code>cron(30 23 ? * TUE#3 *)</code>\n         </p>\n         <p>If the schedule offset is <code>2</code>, the maintenance window won't run until two days\n   later.</p>"
                     }
                 },
                 "Duration": {
                     "target": "com.amazonaws.ssm#MaintenanceWindowDurationHours",
                     "traits": {
-                        "smithy.api#default": null,
                         "smithy.api#documentation": "<p>The duration of the maintenance window in hours.</p>"
                     }
                 },
@@ -28714,14 +28694,12 @@
                 "ScheduleOffset": {
                     "target": "com.amazonaws.ssm#MaintenanceWindowOffset",
                     "traits": {
-                        "smithy.api#default": null,
                         "smithy.api#documentation": "<p>The number of days to wait to run a maintenance window after the scheduled cron expression\n   date and time.</p>"
                     }
                 },
                 "Duration": {
                     "target": "com.amazonaws.ssm#MaintenanceWindowDurationHours",
                     "traits": {
-                        "smithy.api#default": 0,
                         "smithy.api#documentation": "<p>The duration of the maintenance window in hours.</p>"
                     }
                 },
@@ -29161,6 +29139,9 @@
                 },
                 {
                     "target": "com.amazonaws.ssm#OpsItemAlreadyExistsException"
+                },
+                {
+                    "target": "com.amazonaws.ssm#OpsItemConflictException"
                 },
                 {
                     "target": "com.amazonaws.ssm#OpsItemInvalidParameterException"
