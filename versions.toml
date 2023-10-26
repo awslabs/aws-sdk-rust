@@ -2,7 +2,7 @@ smithy_rs_revision = '562d1787b5a08b2de7ab1cd78d2c885cb8d612aa'
 aws_doc_sdk_examples_revision = 'dc64af92d9c1780e628ab8b9f665e0490dfad6c8'
 
 [manual_interventions]
-crates_to_remove = ['gamesparks']
+crates_to_remove = ['aws-sdk-gamesparks']
 [crates.aws-config]
 category = 'AwsRuntime'
 version = '0.56.1'
