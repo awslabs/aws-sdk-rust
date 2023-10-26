@@ -25,13 +25,13 @@ pub struct DbInstance {
     /// </note>
     pub endpoint: ::std::option::Option<crate::types::Endpoint>,
     /// <p>The amount of storage in gibibytes (GiB) allocated for the DB instance.</p>
-    pub allocated_storage: i32,
+    pub allocated_storage: ::std::option::Option<i32>,
     /// <p>The date and time when the DB instance was created.</p>
     pub instance_create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The daily time range during which automated backups are created if automated backups are enabled, as determined by the <code>BackupRetentionPeriod</code>.</p>
     pub preferred_backup_window: ::std::option::Option<::std::string::String>,
     /// <p>The number of days for which automatic DB snapshots are retained.</p>
-    pub backup_retention_period: i32,
+    pub backup_retention_period: ::std::option::Option<i32>,
     /// <p>A list of DB security group elements containing <code>DBSecurityGroup.Name</code> and <code>DBSecurityGroup.Status</code> subelements.</p>
     pub db_security_groups: ::std::option::Option<::std::vec::Vec<crate::types::DbSecurityGroupMembership>>,
     /// <p>The list of Amazon EC2 VPC security groups that the DB instance belongs to.</p>
@@ -49,11 +49,11 @@ pub struct DbInstance {
     /// <p>The latest time to which a database in this DB instance can be restored with point-in-time restore.</p>
     pub latest_restorable_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Indicates whether the DB instance is a Multi-AZ deployment. This setting doesn't apply to RDS Custom DB instances.</p>
-    pub multi_az: bool,
+    pub multi_az: ::std::option::Option<bool>,
     /// <p>The version of the database engine.</p>
     pub engine_version: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether minor version patches are applied automatically.</p>
-    pub auto_minor_version_upgrade: bool,
+    pub auto_minor_version_upgrade: ::std::option::Option<bool>,
     /// <p>The identifier of the source DB instance if this DB instance is a read replica.</p>
     pub read_replica_source_db_instance_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The identifiers of the read replicas associated with this DB instance.</p>
@@ -82,7 +82,7 @@ pub struct DbInstance {
     /// <p>When the DB cluster is publicly accessible, its Domain Name System (DNS) endpoint resolves to the private IP address from within the DB cluster's virtual private cloud (VPC). It resolves to the public IP address from outside of the DB cluster's VPC. Access to the DB cluster is ultimately controlled by the security group it uses. That public access isn't permitted if the security group assigned to the DB cluster doesn't permit it.</p>
     /// <p>When the DB instance isn't publicly accessible, it is an internal DB instance with a DNS name that resolves to a private IP address.</p>
     /// <p>For more information, see <code>CreateDBInstance</code>.</p>
-    pub publicly_accessible: bool,
+    pub publicly_accessible: ::std::option::Option<bool>,
     /// <p>The status of a read replica. If the DB instance isn't a read replica, the value is blank.</p>
     pub status_infos: ::std::option::Option<::std::vec::Vec<crate::types::DbInstanceStatusInfo>>,
     /// <p>The storage type associated with the DB instance.</p>
@@ -90,11 +90,11 @@ pub struct DbInstance {
     /// <p>The ARN from the key store with which the instance is associated for TDE encryption.</p>
     pub tde_credential_arn: ::std::option::Option<::std::string::String>,
     /// <p>The port that the DB instance listens on. If the DB instance is part of a DB cluster, this can be a different port than the DB cluster port.</p>
-    pub db_instance_port: i32,
+    pub db_instance_port: ::std::option::Option<i32>,
     /// <p>If the DB instance is a member of a DB cluster, indicates the name of the DB cluster that the DB instance is a member of.</p>
     pub db_cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the DB instance is encrypted.</p>
-    pub storage_encrypted: bool,
+    pub storage_encrypted: ::std::option::Option<bool>,
     /// <p>If <code>StorageEncrypted</code> is enabled, the Amazon Web Services KMS key identifier for the encrypted DB instance.</p>
     /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
@@ -107,7 +107,7 @@ pub struct DbInstance {
     pub domain_memberships: ::std::option::Option<::std::vec::Vec<crate::types::DomainMembership>>,
     /// <p>Indicates whether tags are copied from the DB instance to snapshots of the DB instance.</p>
     /// <p>This setting doesn't apply to Amazon Aurora DB instances. Copying tags to snapshots is managed by the DB cluster. Setting this value for an Aurora DB instance has no effect on the DB cluster setting. For more information, see <code>DBCluster</code>.</p>
-    pub copy_tags_to_snapshot: bool,
+    pub copy_tags_to_snapshot: ::std::option::Option<bool>,
     /// <p>The interval, in seconds, between points when Enhanced Monitoring metrics are collected for the DB instance.</p>
     pub monitoring_interval: ::std::option::Option<i32>,
     /// <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch Logs log stream that receives the Enhanced Monitoring metrics data for the DB instance.</p>
@@ -122,7 +122,7 @@ pub struct DbInstance {
     pub timezone: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts is enabled for the DB instance.</p>
     /// <p>For a list of engine versions that support IAM database authentication, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RDS_Fea_Regions_DB-eng.Feature.IamDatabaseAuthentication.html">IAM database authentication</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.Aurora_Fea_Regions_DB-eng.Feature.IAMdbauth.html">IAM database authentication in Aurora</a> in the <i>Amazon Aurora User Guide</i>.</p>
-    pub iam_database_authentication_enabled: bool,
+    pub iam_database_authentication_enabled: ::std::option::Option<bool>,
     /// <p>Indicates whether Performance Insights is enabled for the DB instance.</p>
     pub performance_insights_enabled: ::std::option::Option<bool>,
     /// <p>The Amazon Web Services KMS key identifier for encryption of Performance Insights data.</p>
@@ -143,7 +143,7 @@ pub struct DbInstance {
     /// <p>The number of CPU cores and the number of threads per core for the DB instance class of the DB instance.</p>
     pub processor_features: ::std::option::Option<::std::vec::Vec<crate::types::ProcessorFeature>>,
     /// <p>Indicates whether the DB instance has deletion protection enabled. The database can't be deleted when deletion protection is enabled. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html"> Deleting a DB Instance</a>.</p>
-    pub deletion_protection: bool,
+    pub deletion_protection: ::std::option::Option<bool>,
     /// <p>The Amazon Web Services Identity and Access Management (IAM) roles associated with the DB instance.</p>
     pub associated_roles: ::std::option::Option<::std::vec::Vec<crate::types::DbInstanceRole>>,
     /// <p>The listener connection endpoint for SQL Server Always On.</p>
@@ -206,6 +206,10 @@ pub struct DbInstance {
     pub read_replica_source_db_cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The progress of the storage optimization operation as a percentage.</p>
     pub percent_progress: ::std::option::Option<::std::string::String>,
+    /// <p>Indicates whether the DB instance has a dedicated log volume (DLV) enabled.</p>
+    pub dedicated_log_volume: ::std::option::Option<bool>,
+    /// <p>Indicates whether an upgrade is recommended for the storage file system configuration on the DB instance. To migrate to the preferred configuration, you can either create a blue/green deployment, or create a read replica from the DB instance. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.UpgradeFileSystem">Upgrading the storage file system for a DB instance</a>.</p>
+    pub is_storage_config_upgrade_available: ::std::option::Option<bool>,
 }
 impl DbInstance {
     /// <p>The user-supplied database identifier. This identifier is the unique key that identifies a DB instance.</p>
@@ -244,7 +248,7 @@ impl DbInstance {
         self.endpoint.as_ref()
     }
     /// <p>The amount of storage in gibibytes (GiB) allocated for the DB instance.</p>
-    pub fn allocated_storage(&self) -> i32 {
+    pub fn allocated_storage(&self) -> ::std::option::Option<i32> {
         self.allocated_storage
     }
     /// <p>The date and time when the DB instance was created.</p>
@@ -256,7 +260,7 @@ impl DbInstance {
         self.preferred_backup_window.as_deref()
     }
     /// <p>The number of days for which automatic DB snapshots are retained.</p>
-    pub fn backup_retention_period(&self) -> i32 {
+    pub fn backup_retention_period(&self) -> ::std::option::Option<i32> {
         self.backup_retention_period
     }
     /// <p>A list of DB security group elements containing <code>DBSecurityGroup.Name</code> and <code>DBSecurityGroup.Status</code> subelements.</p>
@@ -292,7 +296,7 @@ impl DbInstance {
         self.latest_restorable_time.as_ref()
     }
     /// <p>Indicates whether the DB instance is a Multi-AZ deployment. This setting doesn't apply to RDS Custom DB instances.</p>
-    pub fn multi_az(&self) -> bool {
+    pub fn multi_az(&self) -> ::std::option::Option<bool> {
         self.multi_az
     }
     /// <p>The version of the database engine.</p>
@@ -300,7 +304,7 @@ impl DbInstance {
         self.engine_version.as_deref()
     }
     /// <p>Indicates whether minor version patches are applied automatically.</p>
-    pub fn auto_minor_version_upgrade(&self) -> bool {
+    pub fn auto_minor_version_upgrade(&self) -> ::std::option::Option<bool> {
         self.auto_minor_version_upgrade
     }
     /// <p>The identifier of the source DB instance if this DB instance is a read replica.</p>
@@ -351,7 +355,7 @@ impl DbInstance {
     /// <p>When the DB cluster is publicly accessible, its Domain Name System (DNS) endpoint resolves to the private IP address from within the DB cluster's virtual private cloud (VPC). It resolves to the public IP address from outside of the DB cluster's VPC. Access to the DB cluster is ultimately controlled by the security group it uses. That public access isn't permitted if the security group assigned to the DB cluster doesn't permit it.</p>
     /// <p>When the DB instance isn't publicly accessible, it is an internal DB instance with a DNS name that resolves to a private IP address.</p>
     /// <p>For more information, see <code>CreateDBInstance</code>.</p>
-    pub fn publicly_accessible(&self) -> bool {
+    pub fn publicly_accessible(&self) -> ::std::option::Option<bool> {
         self.publicly_accessible
     }
     /// <p>The status of a read replica. If the DB instance isn't a read replica, the value is blank.</p>
@@ -367,7 +371,7 @@ impl DbInstance {
         self.tde_credential_arn.as_deref()
     }
     /// <p>The port that the DB instance listens on. If the DB instance is part of a DB cluster, this can be a different port than the DB cluster port.</p>
-    pub fn db_instance_port(&self) -> i32 {
+    pub fn db_instance_port(&self) -> ::std::option::Option<i32> {
         self.db_instance_port
     }
     /// <p>If the DB instance is a member of a DB cluster, indicates the name of the DB cluster that the DB instance is a member of.</p>
@@ -375,7 +379,7 @@ impl DbInstance {
         self.db_cluster_identifier.as_deref()
     }
     /// <p>Indicates whether the DB instance is encrypted.</p>
-    pub fn storage_encrypted(&self) -> bool {
+    pub fn storage_encrypted(&self) -> ::std::option::Option<bool> {
         self.storage_encrypted
     }
     /// <p>If <code>StorageEncrypted</code> is enabled, the Amazon Web Services KMS key identifier for the encrypted DB instance.</p>
@@ -398,7 +402,7 @@ impl DbInstance {
     }
     /// <p>Indicates whether tags are copied from the DB instance to snapshots of the DB instance.</p>
     /// <p>This setting doesn't apply to Amazon Aurora DB instances. Copying tags to snapshots is managed by the DB cluster. Setting this value for an Aurora DB instance has no effect on the DB cluster setting. For more information, see <code>DBCluster</code>.</p>
-    pub fn copy_tags_to_snapshot(&self) -> bool {
+    pub fn copy_tags_to_snapshot(&self) -> ::std::option::Option<bool> {
         self.copy_tags_to_snapshot
     }
     /// <p>The interval, in seconds, between points when Enhanced Monitoring metrics are collected for the DB instance.</p>
@@ -427,7 +431,7 @@ impl DbInstance {
     }
     /// <p>Indicates whether mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts is enabled for the DB instance.</p>
     /// <p>For a list of engine versions that support IAM database authentication, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RDS_Fea_Regions_DB-eng.Feature.IamDatabaseAuthentication.html">IAM database authentication</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.Aurora_Fea_Regions_DB-eng.Feature.IAMdbauth.html">IAM database authentication in Aurora</a> in the <i>Amazon Aurora User Guide</i>.</p>
-    pub fn iam_database_authentication_enabled(&self) -> bool {
+    pub fn iam_database_authentication_enabled(&self) -> ::std::option::Option<bool> {
         self.iam_database_authentication_enabled
     }
     /// <p>Indicates whether Performance Insights is enabled for the DB instance.</p>
@@ -460,7 +464,7 @@ impl DbInstance {
         self.processor_features.as_deref()
     }
     /// <p>Indicates whether the DB instance has deletion protection enabled. The database can't be deleted when deletion protection is enabled. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html"> Deleting a DB Instance</a>.</p>
-    pub fn deletion_protection(&self) -> bool {
+    pub fn deletion_protection(&self) -> ::std::option::Option<bool> {
         self.deletion_protection
     }
     /// <p>The Amazon Web Services Identity and Access Management (IAM) roles associated with the DB instance.</p>
@@ -573,6 +577,14 @@ impl DbInstance {
     pub fn percent_progress(&self) -> ::std::option::Option<&str> {
         self.percent_progress.as_deref()
     }
+    /// <p>Indicates whether the DB instance has a dedicated log volume (DLV) enabled.</p>
+    pub fn dedicated_log_volume(&self) -> ::std::option::Option<bool> {
+        self.dedicated_log_volume
+    }
+    /// <p>Indicates whether an upgrade is recommended for the storage file system configuration on the DB instance. To migrate to the preferred configuration, you can either create a blue/green deployment, or create a read replica from the DB instance. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.UpgradeFileSystem">Upgrading the storage file system for a DB instance</a>.</p>
+    pub fn is_storage_config_upgrade_available(&self) -> ::std::option::Option<bool> {
+        self.is_storage_config_upgrade_available
+    }
 }
 impl DbInstance {
     /// Creates a new builder-style object to manufacture [`DbInstance`](crate::types::DbInstance).
@@ -668,6 +680,8 @@ pub struct DbInstanceBuilder {
     pub(crate) certificate_details: ::std::option::Option<crate::types::CertificateDetails>,
     pub(crate) read_replica_source_db_cluster_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) percent_progress: ::std::option::Option<::std::string::String>,
+    pub(crate) dedicated_log_volume: ::std::option::Option<bool>,
+    pub(crate) is_storage_config_upgrade_available: ::std::option::Option<bool>,
 }
 impl DbInstanceBuilder {
     /// <p>The user-supplied database identifier. This identifier is the unique key that identifies a DB instance.</p>
@@ -2012,6 +2026,34 @@ impl DbInstanceBuilder {
     pub fn get_percent_progress(&self) -> &::std::option::Option<::std::string::String> {
         &self.percent_progress
     }
+    /// <p>Indicates whether the DB instance has a dedicated log volume (DLV) enabled.</p>
+    pub fn dedicated_log_volume(mut self, input: bool) -> Self {
+        self.dedicated_log_volume = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether the DB instance has a dedicated log volume (DLV) enabled.</p>
+    pub fn set_dedicated_log_volume(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.dedicated_log_volume = input;
+        self
+    }
+    /// <p>Indicates whether the DB instance has a dedicated log volume (DLV) enabled.</p>
+    pub fn get_dedicated_log_volume(&self) -> &::std::option::Option<bool> {
+        &self.dedicated_log_volume
+    }
+    /// <p>Indicates whether an upgrade is recommended for the storage file system configuration on the DB instance. To migrate to the preferred configuration, you can either create a blue/green deployment, or create a read replica from the DB instance. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.UpgradeFileSystem">Upgrading the storage file system for a DB instance</a>.</p>
+    pub fn is_storage_config_upgrade_available(mut self, input: bool) -> Self {
+        self.is_storage_config_upgrade_available = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether an upgrade is recommended for the storage file system configuration on the DB instance. To migrate to the preferred configuration, you can either create a blue/green deployment, or create a read replica from the DB instance. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.UpgradeFileSystem">Upgrading the storage file system for a DB instance</a>.</p>
+    pub fn set_is_storage_config_upgrade_available(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.is_storage_config_upgrade_available = input;
+        self
+    }
+    /// <p>Indicates whether an upgrade is recommended for the storage file system configuration on the DB instance. To migrate to the preferred configuration, you can either create a blue/green deployment, or create a read replica from the DB instance. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.UpgradeFileSystem">Upgrading the storage file system for a DB instance</a>.</p>
+    pub fn get_is_storage_config_upgrade_available(&self) -> &::std::option::Option<bool> {
+        &self.is_storage_config_upgrade_available
+    }
     /// Consumes the builder and constructs a [`DbInstance`](crate::types::DbInstance).
     pub fn build(self) -> crate::types::DbInstance {
         crate::types::DbInstance {
@@ -2023,10 +2065,10 @@ impl DbInstanceBuilder {
             master_username: self.master_username,
             db_name: self.db_name,
             endpoint: self.endpoint,
-            allocated_storage: self.allocated_storage.unwrap_or_default(),
+            allocated_storage: self.allocated_storage,
             instance_create_time: self.instance_create_time,
             preferred_backup_window: self.preferred_backup_window,
-            backup_retention_period: self.backup_retention_period.unwrap_or_default(),
+            backup_retention_period: self.backup_retention_period,
             db_security_groups: self.db_security_groups,
             vpc_security_groups: self.vpc_security_groups,
             db_parameter_groups: self.db_parameter_groups,
@@ -2035,9 +2077,9 @@ impl DbInstanceBuilder {
             preferred_maintenance_window: self.preferred_maintenance_window,
             pending_modified_values: self.pending_modified_values,
             latest_restorable_time: self.latest_restorable_time,
-            multi_az: self.multi_az.unwrap_or_default(),
+            multi_az: self.multi_az,
             engine_version: self.engine_version,
-            auto_minor_version_upgrade: self.auto_minor_version_upgrade.unwrap_or_default(),
+            auto_minor_version_upgrade: self.auto_minor_version_upgrade,
             read_replica_source_db_instance_identifier: self.read_replica_source_db_instance_identifier,
             read_replica_db_instance_identifiers: self.read_replica_db_instance_identifiers,
             read_replica_db_cluster_identifiers: self.read_replica_db_cluster_identifiers,
@@ -2048,31 +2090,31 @@ impl DbInstanceBuilder {
             character_set_name: self.character_set_name,
             nchar_character_set_name: self.nchar_character_set_name,
             secondary_availability_zone: self.secondary_availability_zone,
-            publicly_accessible: self.publicly_accessible.unwrap_or_default(),
+            publicly_accessible: self.publicly_accessible,
             status_infos: self.status_infos,
             storage_type: self.storage_type,
             tde_credential_arn: self.tde_credential_arn,
-            db_instance_port: self.db_instance_port.unwrap_or_default(),
+            db_instance_port: self.db_instance_port,
             db_cluster_identifier: self.db_cluster_identifier,
-            storage_encrypted: self.storage_encrypted.unwrap_or_default(),
+            storage_encrypted: self.storage_encrypted,
             kms_key_id: self.kms_key_id,
             dbi_resource_id: self.dbi_resource_id,
             ca_certificate_identifier: self.ca_certificate_identifier,
             domain_memberships: self.domain_memberships,
-            copy_tags_to_snapshot: self.copy_tags_to_snapshot.unwrap_or_default(),
+            copy_tags_to_snapshot: self.copy_tags_to_snapshot,
             monitoring_interval: self.monitoring_interval,
             enhanced_monitoring_resource_arn: self.enhanced_monitoring_resource_arn,
             monitoring_role_arn: self.monitoring_role_arn,
             promotion_tier: self.promotion_tier,
             db_instance_arn: self.db_instance_arn,
             timezone: self.timezone,
-            iam_database_authentication_enabled: self.iam_database_authentication_enabled.unwrap_or_default(),
+            iam_database_authentication_enabled: self.iam_database_authentication_enabled,
             performance_insights_enabled: self.performance_insights_enabled,
             performance_insights_kms_key_id: self.performance_insights_kms_key_id,
             performance_insights_retention_period: self.performance_insights_retention_period,
             enabled_cloudwatch_logs_exports: self.enabled_cloudwatch_logs_exports,
             processor_features: self.processor_features,
-            deletion_protection: self.deletion_protection.unwrap_or_default(),
+            deletion_protection: self.deletion_protection,
             associated_roles: self.associated_roles,
             listener_endpoint: self.listener_endpoint,
             max_allocated_storage: self.max_allocated_storage,
@@ -2097,6 +2139,8 @@ impl DbInstanceBuilder {
             certificate_details: self.certificate_details,
             read_replica_source_db_cluster_identifier: self.read_replica_source_db_cluster_identifier,
             percent_progress: self.percent_progress,
+            dedicated_log_volume: self.dedicated_log_volume,
+            is_storage_config_upgrade_available: self.is_storage_config_upgrade_available,
         }
     }
 }

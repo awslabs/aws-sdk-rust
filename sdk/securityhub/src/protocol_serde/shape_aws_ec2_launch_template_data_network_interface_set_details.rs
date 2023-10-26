@@ -3,122 +3,122 @@ pub fn ser_aws_ec2_launch_template_data_network_interface_set_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsEc2LaunchTemplateDataNetworkInterfaceSetDetails,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if input.associate_carrier_ip_address {
-        object.key("AssociateCarrierIpAddress").boolean(input.associate_carrier_ip_address);
+    if let Some(var_1) = &input.associate_carrier_ip_address {
+        object.key("AssociateCarrierIpAddress").boolean(*var_1);
     }
-    if input.associate_public_ip_address {
-        object.key("AssociatePublicIpAddress").boolean(input.associate_public_ip_address);
+    if let Some(var_2) = &input.associate_public_ip_address {
+        object.key("AssociatePublicIpAddress").boolean(*var_2);
     }
-    if input.delete_on_termination {
-        object.key("DeleteOnTermination").boolean(input.delete_on_termination);
+    if let Some(var_3) = &input.delete_on_termination {
+        object.key("DeleteOnTermination").boolean(*var_3);
     }
-    if let Some(var_1) = &input.description {
-        object.key("Description").string(var_1.as_str());
+    if let Some(var_4) = &input.description {
+        object.key("Description").string(var_4.as_str());
     }
-    if input.device_index != 0 {
+    if let Some(var_5) = &input.device_index {
         object.key("DeviceIndex").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.device_index).into()),
+            ::aws_smithy_types::Number::NegInt((*var_5).into()),
         );
     }
-    if let Some(var_2) = &input.groups {
-        let mut array_3 = object.key("Groups").start_array();
-        for item_4 in var_2 {
-            {
-                array_3.value().string(item_4.as_str());
-            }
-        }
-        array_3.finish();
-    }
-    if let Some(var_5) = &input.interface_type {
-        object.key("InterfaceType").string(var_5.as_str());
-    }
-    if input.ipv4_prefix_count != 0 {
-        object.key("Ipv4PrefixCount").number(
-            #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.ipv4_prefix_count).into()),
-        );
-    }
-    if let Some(var_6) = &input.ipv4_prefixes {
-        let mut array_7 = object.key("Ipv4Prefixes").start_array();
+    if let Some(var_6) = &input.groups {
+        let mut array_7 = object.key("Groups").start_array();
         for item_8 in var_6 {
             {
-                #[allow(unused_mut)]
-                let mut object_9 = array_7.value().start_object();
-                crate::protocol_serde::shape_aws_ec2_launch_template_data_network_interface_set_ipv4_prefixes_details::ser_aws_ec2_launch_template_data_network_interface_set_ipv4_prefixes_details(&mut object_9, item_8)?;
-                object_9.finish();
+                array_7.value().string(item_8.as_str());
             }
         }
         array_7.finish();
     }
-    if input.ipv6_address_count != 0 {
+    if let Some(var_9) = &input.interface_type {
+        object.key("InterfaceType").string(var_9.as_str());
+    }
+    if let Some(var_10) = &input.ipv4_prefix_count {
+        object.key("Ipv4PrefixCount").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_10).into()),
+        );
+    }
+    if let Some(var_11) = &input.ipv4_prefixes {
+        let mut array_12 = object.key("Ipv4Prefixes").start_array();
+        for item_13 in var_11 {
+            {
+                #[allow(unused_mut)]
+                let mut object_14 = array_12.value().start_object();
+                crate::protocol_serde::shape_aws_ec2_launch_template_data_network_interface_set_ipv4_prefixes_details::ser_aws_ec2_launch_template_data_network_interface_set_ipv4_prefixes_details(&mut object_14, item_13)?;
+                object_14.finish();
+            }
+        }
+        array_12.finish();
+    }
+    if let Some(var_15) = &input.ipv6_address_count {
         object.key("Ipv6AddressCount").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.ipv6_address_count).into()),
+            ::aws_smithy_types::Number::NegInt((*var_15).into()),
         );
     }
-    if let Some(var_10) = &input.ipv6_addresses {
-        let mut array_11 = object.key("Ipv6Addresses").start_array();
-        for item_12 in var_10 {
+    if let Some(var_16) = &input.ipv6_addresses {
+        let mut array_17 = object.key("Ipv6Addresses").start_array();
+        for item_18 in var_16 {
             {
                 #[allow(unused_mut)]
-                let mut object_13 = array_11.value().start_object();
-                crate::protocol_serde::shape_aws_ec2_launch_template_data_network_interface_set_ipv6_addresses_details::ser_aws_ec2_launch_template_data_network_interface_set_ipv6_addresses_details(&mut object_13, item_12)?;
-                object_13.finish();
+                let mut object_19 = array_17.value().start_object();
+                crate::protocol_serde::shape_aws_ec2_launch_template_data_network_interface_set_ipv6_addresses_details::ser_aws_ec2_launch_template_data_network_interface_set_ipv6_addresses_details(&mut object_19, item_18)?;
+                object_19.finish();
             }
         }
-        array_11.finish();
+        array_17.finish();
     }
-    if input.ipv6_prefix_count != 0 {
+    if let Some(var_20) = &input.ipv6_prefix_count {
         object.key("Ipv6PrefixCount").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.ipv6_prefix_count).into()),
+            ::aws_smithy_types::Number::NegInt((*var_20).into()),
         );
     }
-    if let Some(var_14) = &input.ipv6_prefixes {
-        let mut array_15 = object.key("Ipv6Prefixes").start_array();
-        for item_16 in var_14 {
+    if let Some(var_21) = &input.ipv6_prefixes {
+        let mut array_22 = object.key("Ipv6Prefixes").start_array();
+        for item_23 in var_21 {
             {
                 #[allow(unused_mut)]
-                let mut object_17 = array_15.value().start_object();
-                crate::protocol_serde::shape_aws_ec2_launch_template_data_network_interface_set_ipv6_prefixes_details::ser_aws_ec2_launch_template_data_network_interface_set_ipv6_prefixes_details(&mut object_17, item_16)?;
-                object_17.finish();
+                let mut object_24 = array_22.value().start_object();
+                crate::protocol_serde::shape_aws_ec2_launch_template_data_network_interface_set_ipv6_prefixes_details::ser_aws_ec2_launch_template_data_network_interface_set_ipv6_prefixes_details(&mut object_24, item_23)?;
+                object_24.finish();
             }
         }
-        array_15.finish();
+        array_22.finish();
     }
-    if input.network_card_index != 0 {
+    if let Some(var_25) = &input.network_card_index {
         object.key("NetworkCardIndex").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.network_card_index).into()),
+            ::aws_smithy_types::Number::NegInt((*var_25).into()),
         );
     }
-    if let Some(var_18) = &input.network_interface_id {
-        object.key("NetworkInterfaceId").string(var_18.as_str());
+    if let Some(var_26) = &input.network_interface_id {
+        object.key("NetworkInterfaceId").string(var_26.as_str());
     }
-    if let Some(var_19) = &input.private_ip_address {
-        object.key("PrivateIpAddress").string(var_19.as_str());
+    if let Some(var_27) = &input.private_ip_address {
+        object.key("PrivateIpAddress").string(var_27.as_str());
     }
-    if let Some(var_20) = &input.private_ip_addresses {
-        let mut array_21 = object.key("PrivateIpAddresses").start_array();
-        for item_22 in var_20 {
+    if let Some(var_28) = &input.private_ip_addresses {
+        let mut array_29 = object.key("PrivateIpAddresses").start_array();
+        for item_30 in var_28 {
             {
                 #[allow(unused_mut)]
-                let mut object_23 = array_21.value().start_object();
-                crate::protocol_serde::shape_aws_ec2_launch_template_data_network_interface_set_private_ip_addresses_details::ser_aws_ec2_launch_template_data_network_interface_set_private_ip_addresses_details(&mut object_23, item_22)?;
-                object_23.finish();
+                let mut object_31 = array_29.value().start_object();
+                crate::protocol_serde::shape_aws_ec2_launch_template_data_network_interface_set_private_ip_addresses_details::ser_aws_ec2_launch_template_data_network_interface_set_private_ip_addresses_details(&mut object_31, item_30)?;
+                object_31.finish();
             }
         }
-        array_21.finish();
+        array_29.finish();
     }
-    if input.secondary_private_ip_address_count != 0 {
+    if let Some(var_32) = &input.secondary_private_ip_address_count {
         object.key("SecondaryPrivateIpAddressCount").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.secondary_private_ip_address_count).into()),
+            ::aws_smithy_types::Number::NegInt((*var_32).into()),
         );
     }
-    if let Some(var_24) = &input.subnet_id {
-        object.key("SubnetId").string(var_24.as_str());
+    if let Some(var_33) = &input.subnet_id {
+        object.key("SubnetId").string(var_33.as_str());
     }
     Ok(())
 }

@@ -9,7 +9,7 @@ pub struct ScanThreatName {
     /// <p>Severity of threat identified as part of the malware scan.</p>
     pub severity: ::std::option::Option<::std::string::String>,
     /// <p>Total number of files infected with given threat.</p>
-    pub item_count: i32,
+    pub item_count: ::std::option::Option<i32>,
     /// <p>List of infected files in EBS volume with details.</p>
     pub file_paths: ::std::option::Option<::std::vec::Vec<crate::types::ScanFilePath>>,
 }
@@ -23,7 +23,7 @@ impl ScanThreatName {
         self.severity.as_deref()
     }
     /// <p>Total number of files infected with given threat.</p>
-    pub fn item_count(&self) -> i32 {
+    pub fn item_count(&self) -> ::std::option::Option<i32> {
         self.item_count
     }
     /// <p>List of infected files in EBS volume with details.</p>
@@ -115,7 +115,7 @@ impl ScanThreatNameBuilder {
         crate::types::ScanThreatName {
             name: self.name,
             severity: self.severity,
-            item_count: self.item_count.unwrap_or_default(),
+            item_count: self.item_count,
             file_paths: self.file_paths,
         }
     }

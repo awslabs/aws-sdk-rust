@@ -34,11 +34,11 @@ pub struct AwsApiGatewayV2StageDetails {
     /// <p>Information about settings for logging access for the stage.</p>
     pub access_log_settings: ::std::option::Option<crate::types::AwsApiGatewayAccessLogSettings>,
     /// <p>Indicates whether updates to an API automatically trigger a new deployment.</p>
-    pub auto_deploy: bool,
+    pub auto_deploy: ::std::option::Option<bool>,
     /// <p>The status of the last deployment of a stage. Supported only if the stage has automatic deployment enabled.</p>
     pub last_deployment_status_message: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the stage is managed by API Gateway.</p>
-    pub api_gateway_managed: bool,
+    pub api_gateway_managed: ::std::option::Option<bool>,
 }
 impl AwsApiGatewayV2StageDetails {
     /// <p>The identifier of a client certificate for a stage. Supported only for WebSocket API calls.</p>
@@ -91,7 +91,7 @@ impl AwsApiGatewayV2StageDetails {
         self.access_log_settings.as_ref()
     }
     /// <p>Indicates whether updates to an API automatically trigger a new deployment.</p>
-    pub fn auto_deploy(&self) -> bool {
+    pub fn auto_deploy(&self) -> ::std::option::Option<bool> {
         self.auto_deploy
     }
     /// <p>The status of the last deployment of a stage. Supported only if the stage has automatic deployment enabled.</p>
@@ -99,7 +99,7 @@ impl AwsApiGatewayV2StageDetails {
         self.last_deployment_status_message.as_deref()
     }
     /// <p>Indicates whether the stage is managed by API Gateway.</p>
-    pub fn api_gateway_managed(&self) -> bool {
+    pub fn api_gateway_managed(&self) -> ::std::option::Option<bool> {
         self.api_gateway_managed
     }
 }
@@ -364,9 +364,9 @@ impl AwsApiGatewayV2StageDetailsBuilder {
             stage_name: self.stage_name,
             stage_variables: self.stage_variables,
             access_log_settings: self.access_log_settings,
-            auto_deploy: self.auto_deploy.unwrap_or_default(),
+            auto_deploy: self.auto_deploy,
             last_deployment_status_message: self.last_deployment_status_message,
-            api_gateway_managed: self.api_gateway_managed.unwrap_or_default(),
+            api_gateway_managed: self.api_gateway_managed,
         }
     }
 }

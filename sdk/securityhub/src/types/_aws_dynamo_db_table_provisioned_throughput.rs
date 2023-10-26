@@ -11,11 +11,11 @@ pub struct AwsDynamoDbTableProvisionedThroughput {
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     pub last_increase_date_time: ::std::option::Option<::std::string::String>,
     /// <p>The number of times during the current UTC calendar day that the provisioned throughput was decreased.</p>
-    pub number_of_decreases_today: i32,
+    pub number_of_decreases_today: ::std::option::Option<i32>,
     /// <p>The maximum number of strongly consistent reads consumed per second before DynamoDB returns a <code>ThrottlingException</code>.</p>
-    pub read_capacity_units: i32,
+    pub read_capacity_units: ::std::option::Option<i32>,
     /// <p>The maximum number of writes consumed per second before DynamoDB returns a <code>ThrottlingException</code>.</p>
-    pub write_capacity_units: i32,
+    pub write_capacity_units: ::std::option::Option<i32>,
 }
 impl AwsDynamoDbTableProvisionedThroughput {
     /// <p>Indicates when the provisioned throughput was last decreased.</p>
@@ -29,15 +29,15 @@ impl AwsDynamoDbTableProvisionedThroughput {
         self.last_increase_date_time.as_deref()
     }
     /// <p>The number of times during the current UTC calendar day that the provisioned throughput was decreased.</p>
-    pub fn number_of_decreases_today(&self) -> i32 {
+    pub fn number_of_decreases_today(&self) -> ::std::option::Option<i32> {
         self.number_of_decreases_today
     }
     /// <p>The maximum number of strongly consistent reads consumed per second before DynamoDB returns a <code>ThrottlingException</code>.</p>
-    pub fn read_capacity_units(&self) -> i32 {
+    pub fn read_capacity_units(&self) -> ::std::option::Option<i32> {
         self.read_capacity_units
     }
     /// <p>The maximum number of writes consumed per second before DynamoDB returns a <code>ThrottlingException</code>.</p>
-    pub fn write_capacity_units(&self) -> i32 {
+    pub fn write_capacity_units(&self) -> ::std::option::Option<i32> {
         self.write_capacity_units
     }
 }
@@ -140,9 +140,9 @@ impl AwsDynamoDbTableProvisionedThroughputBuilder {
         crate::types::AwsDynamoDbTableProvisionedThroughput {
             last_decrease_date_time: self.last_decrease_date_time,
             last_increase_date_time: self.last_increase_date_time,
-            number_of_decreases_today: self.number_of_decreases_today.unwrap_or_default(),
-            read_capacity_units: self.read_capacity_units.unwrap_or_default(),
-            write_capacity_units: self.write_capacity_units.unwrap_or_default(),
+            number_of_decreases_today: self.number_of_decreases_today,
+            read_capacity_units: self.read_capacity_units,
+            write_capacity_units: self.write_capacity_units,
         }
     }
 }

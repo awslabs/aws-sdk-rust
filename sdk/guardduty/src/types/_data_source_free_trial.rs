@@ -5,11 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataSourceFreeTrial {
     /// <p>A value that specifies the number of days left to use each enabled data source.</p>
-    pub free_trial_days_remaining: i32,
+    pub free_trial_days_remaining: ::std::option::Option<i32>,
 }
 impl DataSourceFreeTrial {
     /// <p>A value that specifies the number of days left to use each enabled data source.</p>
-    pub fn free_trial_days_remaining(&self) -> i32 {
+    pub fn free_trial_days_remaining(&self) -> ::std::option::Option<i32> {
         self.free_trial_days_remaining
     }
 }
@@ -44,7 +44,7 @@ impl DataSourceFreeTrialBuilder {
     /// Consumes the builder and constructs a [`DataSourceFreeTrial`](crate::types::DataSourceFreeTrial).
     pub fn build(self) -> crate::types::DataSourceFreeTrial {
         crate::types::DataSourceFreeTrial {
-            free_trial_days_remaining: self.free_trial_days_remaining.unwrap_or_default(),
+            free_trial_days_remaining: self.free_trial_days_remaining,
         }
     }
 }

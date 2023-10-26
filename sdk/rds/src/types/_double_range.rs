@@ -5,17 +5,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DoubleRange {
     /// <p>The minimum value in the range.</p>
-    pub from: f64,
+    pub from: ::std::option::Option<f64>,
     /// <p>The maximum value in the range.</p>
-    pub to: f64,
+    pub to: ::std::option::Option<f64>,
 }
 impl DoubleRange {
     /// <p>The minimum value in the range.</p>
-    pub fn from(&self) -> f64 {
+    pub fn from(&self) -> ::std::option::Option<f64> {
         self.from
     }
     /// <p>The maximum value in the range.</p>
-    pub fn to(&self) -> f64 {
+    pub fn to(&self) -> ::std::option::Option<f64> {
         self.to
     }
 }
@@ -65,8 +65,8 @@ impl DoubleRangeBuilder {
     /// Consumes the builder and constructs a [`DoubleRange`](crate::types::DoubleRange).
     pub fn build(self) -> crate::types::DoubleRange {
         crate::types::DoubleRange {
-            from: self.from.unwrap_or_default(),
-            to: self.to.unwrap_or_default(),
+            from: self.from,
+            to: self.to,
         }
     }
 }

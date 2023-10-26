@@ -7,7 +7,7 @@ pub struct UpdateTrafficDistributionInput {
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The distribution of traffic between the instance and its replica(s).</p>
     pub telephony_config: ::std::option::Option<crate::types::TelephonyConfig>,
-    /// <p>The distribution of allowing signing in to the instance and its replica(s).</p>
+    /// <p>The distribution that determines which Amazon Web Services Regions should be used to sign in agents in to both the instance and its replica(s).</p>
     pub sign_in_config: ::std::option::Option<crate::types::SignInConfig>,
     /// <p>The distribution of agents between the instance and its replica(s).</p>
     pub agent_config: ::std::option::Option<crate::types::AgentConfig>,
@@ -21,7 +21,7 @@ impl UpdateTrafficDistributionInput {
     pub fn telephony_config(&self) -> ::std::option::Option<&crate::types::TelephonyConfig> {
         self.telephony_config.as_ref()
     }
-    /// <p>The distribution of allowing signing in to the instance and its replica(s).</p>
+    /// <p>The distribution that determines which Amazon Web Services Regions should be used to sign in agents in to both the instance and its replica(s).</p>
     pub fn sign_in_config(&self) -> ::std::option::Option<&crate::types::SignInConfig> {
         self.sign_in_config.as_ref()
     }
@@ -75,17 +75,17 @@ impl UpdateTrafficDistributionInputBuilder {
     pub fn get_telephony_config(&self) -> &::std::option::Option<crate::types::TelephonyConfig> {
         &self.telephony_config
     }
-    /// <p>The distribution of allowing signing in to the instance and its replica(s).</p>
+    /// <p>The distribution that determines which Amazon Web Services Regions should be used to sign in agents in to both the instance and its replica(s).</p>
     pub fn sign_in_config(mut self, input: crate::types::SignInConfig) -> Self {
         self.sign_in_config = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The distribution of allowing signing in to the instance and its replica(s).</p>
+    /// <p>The distribution that determines which Amazon Web Services Regions should be used to sign in agents in to both the instance and its replica(s).</p>
     pub fn set_sign_in_config(mut self, input: ::std::option::Option<crate::types::SignInConfig>) -> Self {
         self.sign_in_config = input;
         self
     }
-    /// <p>The distribution of allowing signing in to the instance and its replica(s).</p>
+    /// <p>The distribution that determines which Amazon Web Services Regions should be used to sign in agents in to both the instance and its replica(s).</p>
     pub fn get_sign_in_config(&self) -> &::std::option::Option<crate::types::SignInConfig> {
         &self.sign_in_config
     }

@@ -6,53 +6,53 @@ pub fn ser_patch_summary(
     if let Some(var_1) = &input.id {
         object.key("Id").string(var_1.as_str());
     }
-    if input.installed_count != 0 {
+    if let Some(var_2) = &input.installed_count {
         object.key("InstalledCount").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.installed_count).into()),
+            ::aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
-    if input.missing_count != 0 {
+    if let Some(var_3) = &input.missing_count {
         object.key("MissingCount").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.missing_count).into()),
+            ::aws_smithy_types::Number::NegInt((*var_3).into()),
         );
     }
-    if input.failed_count != 0 {
+    if let Some(var_4) = &input.failed_count {
         object.key("FailedCount").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.failed_count).into()),
+            ::aws_smithy_types::Number::NegInt((*var_4).into()),
         );
     }
-    if input.installed_other_count != 0 {
+    if let Some(var_5) = &input.installed_other_count {
         object.key("InstalledOtherCount").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.installed_other_count).into()),
+            ::aws_smithy_types::Number::NegInt((*var_5).into()),
         );
     }
-    if input.installed_rejected_count != 0 {
+    if let Some(var_6) = &input.installed_rejected_count {
         object.key("InstalledRejectedCount").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.installed_rejected_count).into()),
+            ::aws_smithy_types::Number::NegInt((*var_6).into()),
         );
     }
-    if input.installed_pending_reboot != 0 {
+    if let Some(var_7) = &input.installed_pending_reboot {
         object.key("InstalledPendingReboot").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.installed_pending_reboot).into()),
+            ::aws_smithy_types::Number::NegInt((*var_7).into()),
         );
     }
-    if let Some(var_2) = &input.operation_start_time {
-        object.key("OperationStartTime").string(var_2.as_str());
+    if let Some(var_8) = &input.operation_start_time {
+        object.key("OperationStartTime").string(var_8.as_str());
     }
-    if let Some(var_3) = &input.operation_end_time {
-        object.key("OperationEndTime").string(var_3.as_str());
+    if let Some(var_9) = &input.operation_end_time {
+        object.key("OperationEndTime").string(var_9.as_str());
     }
-    if let Some(var_4) = &input.reboot_option {
-        object.key("RebootOption").string(var_4.as_str());
+    if let Some(var_10) = &input.reboot_option {
+        object.key("RebootOption").string(var_10.as_str());
     }
-    if let Some(var_5) = &input.operation {
-        object.key("Operation").string(var_5.as_str());
+    if let Some(var_11) = &input.operation {
+        object.key("Operation").string(var_11.as_str());
     }
     Ok(())
 }

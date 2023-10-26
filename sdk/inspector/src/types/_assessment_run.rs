@@ -14,7 +14,7 @@ pub struct AssessmentRun {
     /// <p>The state of the assessment run.</p>
     pub state: ::std::option::Option<crate::types::AssessmentRunState>,
     /// <p>The duration of the assessment run.</p>
-    pub duration_in_seconds: i32,
+    pub duration_in_seconds: ::std::option::Option<i32>,
     /// <p>The rules packages selected for the assessment run.</p>
     pub rules_package_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The user-defined attributes that are assigned to every generated finding.</p>
@@ -54,7 +54,7 @@ impl AssessmentRun {
         self.state.as_ref()
     }
     /// <p>The duration of the assessment run.</p>
-    pub fn duration_in_seconds(&self) -> i32 {
+    pub fn duration_in_seconds(&self) -> ::std::option::Option<i32> {
         self.duration_in_seconds
     }
     /// <p>The rules packages selected for the assessment run.</p>
@@ -373,7 +373,7 @@ impl AssessmentRunBuilder {
             name: self.name,
             assessment_template_arn: self.assessment_template_arn,
             state: self.state,
-            duration_in_seconds: self.duration_in_seconds.unwrap_or_default(),
+            duration_in_seconds: self.duration_in_seconds,
             rules_package_arns: self.rules_package_arns,
             user_attributes_for_findings: self.user_attributes_for_findings,
             created_at: self.created_at,

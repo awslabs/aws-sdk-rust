@@ -7,7 +7,7 @@ pub struct DeviceSelectionConfig {
     /// <p>Type of device subsets to deploy to the current stage.</p>
     pub device_subset_type: ::std::option::Option<crate::types::DeviceSubsetType>,
     /// <p>Percentage of devices in the fleet to deploy to the current stage.</p>
-    pub percentage: i32,
+    pub percentage: ::std::option::Option<i32>,
     /// <p>List of devices chosen to deploy.</p>
     pub device_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A filter to select devices with names containing this name.</p>
@@ -19,7 +19,7 @@ impl DeviceSelectionConfig {
         self.device_subset_type.as_ref()
     }
     /// <p>Percentage of devices in the fleet to deploy to the current stage.</p>
-    pub fn percentage(&self) -> i32 {
+    pub fn percentage(&self) -> ::std::option::Option<i32> {
         self.percentage
     }
     /// <p>List of devices chosen to deploy.</p>
@@ -114,7 +114,7 @@ impl DeviceSelectionConfigBuilder {
     pub fn build(self) -> crate::types::DeviceSelectionConfig {
         crate::types::DeviceSelectionConfig {
             device_subset_type: self.device_subset_type,
-            percentage: self.percentage.unwrap_or_default(),
+            percentage: self.percentage,
             device_names: self.device_names,
             device_name_contains: self.device_name_contains,
         }

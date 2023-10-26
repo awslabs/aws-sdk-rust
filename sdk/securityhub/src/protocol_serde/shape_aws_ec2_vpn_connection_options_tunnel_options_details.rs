@@ -3,119 +3,119 @@ pub fn ser_aws_ec2_vpn_connection_options_tunnel_options_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsEc2VpnConnectionOptionsTunnelOptionsDetails,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if input.dpd_timeout_seconds != 0 {
+    if let Some(var_1) = &input.dpd_timeout_seconds {
         object.key("DpdTimeoutSeconds").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.dpd_timeout_seconds).into()),
+            ::aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if let Some(var_1) = &input.ike_versions {
-        let mut array_2 = object.key("IkeVersions").start_array();
-        for item_3 in var_1 {
+    if let Some(var_2) = &input.ike_versions {
+        let mut array_3 = object.key("IkeVersions").start_array();
+        for item_4 in var_2 {
             {
-                array_2.value().string(item_3.as_str());
+                array_3.value().string(item_4.as_str());
             }
         }
-        array_2.finish();
+        array_3.finish();
     }
-    if let Some(var_4) = &input.outside_ip_address {
-        object.key("OutsideIpAddress").string(var_4.as_str());
+    if let Some(var_5) = &input.outside_ip_address {
+        object.key("OutsideIpAddress").string(var_5.as_str());
     }
-    if let Some(var_5) = &input.phase1_dh_group_numbers {
-        let mut array_6 = object.key("Phase1DhGroupNumbers").start_array();
-        for item_7 in var_5 {
+    if let Some(var_6) = &input.phase1_dh_group_numbers {
+        let mut array_7 = object.key("Phase1DhGroupNumbers").start_array();
+        for item_8 in var_6 {
             {
-                array_6.value().number(
+                array_7.value().number(
                     #[allow(clippy::useless_conversion)]
-                    ::aws_smithy_types::Number::NegInt((*item_7).into()),
+                    ::aws_smithy_types::Number::NegInt((*item_8).into()),
                 );
             }
         }
-        array_6.finish();
+        array_7.finish();
     }
-    if let Some(var_8) = &input.phase1_encryption_algorithms {
-        let mut array_9 = object.key("Phase1EncryptionAlgorithms").start_array();
-        for item_10 in var_8 {
+    if let Some(var_9) = &input.phase1_encryption_algorithms {
+        let mut array_10 = object.key("Phase1EncryptionAlgorithms").start_array();
+        for item_11 in var_9 {
             {
-                array_9.value().string(item_10.as_str());
+                array_10.value().string(item_11.as_str());
             }
         }
-        array_9.finish();
+        array_10.finish();
     }
-    if let Some(var_11) = &input.phase1_integrity_algorithms {
-        let mut array_12 = object.key("Phase1IntegrityAlgorithms").start_array();
-        for item_13 in var_11 {
+    if let Some(var_12) = &input.phase1_integrity_algorithms {
+        let mut array_13 = object.key("Phase1IntegrityAlgorithms").start_array();
+        for item_14 in var_12 {
             {
-                array_12.value().string(item_13.as_str());
+                array_13.value().string(item_14.as_str());
             }
         }
-        array_12.finish();
+        array_13.finish();
     }
-    if input.phase1_lifetime_seconds != 0 {
+    if let Some(var_15) = &input.phase1_lifetime_seconds {
         object.key("Phase1LifetimeSeconds").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.phase1_lifetime_seconds).into()),
+            ::aws_smithy_types::Number::NegInt((*var_15).into()),
         );
     }
-    if let Some(var_14) = &input.phase2_dh_group_numbers {
-        let mut array_15 = object.key("Phase2DhGroupNumbers").start_array();
-        for item_16 in var_14 {
+    if let Some(var_16) = &input.phase2_dh_group_numbers {
+        let mut array_17 = object.key("Phase2DhGroupNumbers").start_array();
+        for item_18 in var_16 {
             {
-                array_15.value().number(
+                array_17.value().number(
                     #[allow(clippy::useless_conversion)]
-                    ::aws_smithy_types::Number::NegInt((*item_16).into()),
+                    ::aws_smithy_types::Number::NegInt((*item_18).into()),
                 );
             }
         }
-        array_15.finish();
+        array_17.finish();
     }
-    if let Some(var_17) = &input.phase2_encryption_algorithms {
-        let mut array_18 = object.key("Phase2EncryptionAlgorithms").start_array();
-        for item_19 in var_17 {
+    if let Some(var_19) = &input.phase2_encryption_algorithms {
+        let mut array_20 = object.key("Phase2EncryptionAlgorithms").start_array();
+        for item_21 in var_19 {
             {
-                array_18.value().string(item_19.as_str());
+                array_20.value().string(item_21.as_str());
             }
         }
-        array_18.finish();
+        array_20.finish();
     }
-    if let Some(var_20) = &input.phase2_integrity_algorithms {
-        let mut array_21 = object.key("Phase2IntegrityAlgorithms").start_array();
-        for item_22 in var_20 {
+    if let Some(var_22) = &input.phase2_integrity_algorithms {
+        let mut array_23 = object.key("Phase2IntegrityAlgorithms").start_array();
+        for item_24 in var_22 {
             {
-                array_21.value().string(item_22.as_str());
+                array_23.value().string(item_24.as_str());
             }
         }
-        array_21.finish();
+        array_23.finish();
     }
-    if input.phase2_lifetime_seconds != 0 {
+    if let Some(var_25) = &input.phase2_lifetime_seconds {
         object.key("Phase2LifetimeSeconds").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.phase2_lifetime_seconds).into()),
+            ::aws_smithy_types::Number::NegInt((*var_25).into()),
         );
     }
-    if let Some(var_23) = &input.pre_shared_key {
-        object.key("PreSharedKey").string(var_23.as_str());
+    if let Some(var_26) = &input.pre_shared_key {
+        object.key("PreSharedKey").string(var_26.as_str());
     }
-    if input.rekey_fuzz_percentage != 0 {
+    if let Some(var_27) = &input.rekey_fuzz_percentage {
         object.key("RekeyFuzzPercentage").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.rekey_fuzz_percentage).into()),
+            ::aws_smithy_types::Number::NegInt((*var_27).into()),
         );
     }
-    if input.rekey_margin_time_seconds != 0 {
+    if let Some(var_28) = &input.rekey_margin_time_seconds {
         object.key("RekeyMarginTimeSeconds").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.rekey_margin_time_seconds).into()),
+            ::aws_smithy_types::Number::NegInt((*var_28).into()),
         );
     }
-    if input.replay_window_size != 0 {
+    if let Some(var_29) = &input.replay_window_size {
         object.key("ReplayWindowSize").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.replay_window_size).into()),
+            ::aws_smithy_types::Number::NegInt((*var_29).into()),
         );
     }
-    if let Some(var_24) = &input.tunnel_inside_cidr {
-        object.key("TunnelInsideCidr").string(var_24.as_str());
+    if let Some(var_30) = &input.tunnel_inside_cidr {
+        object.key("TunnelInsideCidr").string(var_30.as_str());
     }
     Ok(())
 }

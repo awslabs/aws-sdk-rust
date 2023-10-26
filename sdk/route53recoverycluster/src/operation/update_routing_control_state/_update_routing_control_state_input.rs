@@ -5,7 +5,7 @@
 pub struct UpdateRoutingControlStateInput {
     /// <p>The Amazon Resource Name (ARN) for the routing control that you want to update the state for.</p>
     pub routing_control_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The state of the routing control. You can set the value to be On or Off.</p>
+    /// <p>The state of the routing control. You can set the value to ON or OFF.</p>
     pub routing_control_state: ::std::option::Option<crate::types::RoutingControlState>,
     /// <p>The Amazon Resource Names (ARNs) for the safety rules that you want to override when you're updating the state of a routing control. You can override one safety rule or multiple safety rules by including one or more ARNs, separated by commas.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/routing-control.override-safety-rule.html"> Override safety rules to reroute traffic</a> in the Amazon Route 53 Application Recovery Controller Developer Guide.</p>
@@ -16,7 +16,7 @@ impl UpdateRoutingControlStateInput {
     pub fn routing_control_arn(&self) -> ::std::option::Option<&str> {
         self.routing_control_arn.as_deref()
     }
-    /// <p>The state of the routing control. You can set the value to be On or Off.</p>
+    /// <p>The state of the routing control. You can set the value to ON or OFF.</p>
     pub fn routing_control_state(&self) -> ::std::option::Option<&crate::types::RoutingControlState> {
         self.routing_control_state.as_ref()
     }
@@ -56,17 +56,17 @@ impl UpdateRoutingControlStateInputBuilder {
     pub fn get_routing_control_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.routing_control_arn
     }
-    /// <p>The state of the routing control. You can set the value to be On or Off.</p>
+    /// <p>The state of the routing control. You can set the value to ON or OFF.</p>
     pub fn routing_control_state(mut self, input: crate::types::RoutingControlState) -> Self {
         self.routing_control_state = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The state of the routing control. You can set the value to be On or Off.</p>
+    /// <p>The state of the routing control. You can set the value to ON or OFF.</p>
     pub fn set_routing_control_state(mut self, input: ::std::option::Option<crate::types::RoutingControlState>) -> Self {
         self.routing_control_state = input;
         self
     }
-    /// <p>The state of the routing control. You can set the value to be On or Off.</p>
+    /// <p>The state of the routing control. You can set the value to ON or OFF.</p>
     pub fn get_routing_control_state(&self) -> &::std::option::Option<crate::types::RoutingControlState> {
         &self.routing_control_state
     }

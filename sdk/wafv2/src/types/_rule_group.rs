@@ -11,7 +11,7 @@ pub struct RuleGroup {
     /// <p>The web ACL capacity units (WCUs) required for this rule group.</p>
     /// <p>When you create your own rule group, you define this, and you cannot change it after creation. When you add or modify the rules in a rule group, WAF enforces this limit. You can check the capacity for a set of rules using <code>CheckCapacity</code>.</p>
     /// <p>WAF uses WCUs to calculate and control the operating resources that are used to run your rules, rule groups, and web ACLs. WAF calculates capacity differently for each rule type, to reflect the relative cost of each rule. Simple rules that cost little to run use fewer WCUs than more complex rules that use more processing power. Rule group capacity is fixed at creation, which helps users plan their web ACL WCU usage when they use a rule group. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/aws-waf-capacity-units.html">WAF web ACL capacity units (WCU)</a> in the <i>WAF Developer Guide</i>. </p>
-    pub capacity: i64,
+    pub capacity: ::std::option::Option<i64>,
     /// <p>The Amazon Resource Name (ARN) of the entity.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>A description of the rule group that helps with identification. </p>
@@ -53,7 +53,7 @@ impl RuleGroup {
     /// <p>The web ACL capacity units (WCUs) required for this rule group.</p>
     /// <p>When you create your own rule group, you define this, and you cannot change it after creation. When you add or modify the rules in a rule group, WAF enforces this limit. You can check the capacity for a set of rules using <code>CheckCapacity</code>.</p>
     /// <p>WAF uses WCUs to calculate and control the operating resources that are used to run your rules, rule groups, and web ACLs. WAF calculates capacity differently for each rule type, to reflect the relative cost of each rule. Simple rules that cost little to run use fewer WCUs than more complex rules that use more processing power. Rule group capacity is fixed at creation, which helps users plan their web ACL WCU usage when they use a rule group. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/aws-waf-capacity-units.html">WAF web ACL capacity units (WCU)</a> in the <i>WAF Developer Guide</i>. </p>
-    pub fn capacity(&self) -> i64 {
+    pub fn capacity(&self) -> ::std::option::Option<i64> {
         self.capacity
     }
     /// <p>The Amazon Resource Name (ARN) of the entity.</p>
@@ -357,7 +357,7 @@ impl RuleGroupBuilder {
         crate::types::RuleGroup {
             name: self.name,
             id: self.id,
-            capacity: self.capacity.unwrap_or_default(),
+            capacity: self.capacity,
             arn: self.arn,
             description: self.description,
             rules: self.rules,

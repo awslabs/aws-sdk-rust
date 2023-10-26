@@ -5,11 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsSecretsManagerSecretRotationRules {
     /// <p>The number of days after the previous rotation to rotate the secret.</p>
-    pub automatically_after_days: i32,
+    pub automatically_after_days: ::std::option::Option<i32>,
 }
 impl AwsSecretsManagerSecretRotationRules {
     /// <p>The number of days after the previous rotation to rotate the secret.</p>
-    pub fn automatically_after_days(&self) -> i32 {
+    pub fn automatically_after_days(&self) -> ::std::option::Option<i32> {
         self.automatically_after_days
     }
 }
@@ -44,7 +44,7 @@ impl AwsSecretsManagerSecretRotationRulesBuilder {
     /// Consumes the builder and constructs a [`AwsSecretsManagerSecretRotationRules`](crate::types::AwsSecretsManagerSecretRotationRules).
     pub fn build(self) -> crate::types::AwsSecretsManagerSecretRotationRules {
         crate::types::AwsSecretsManagerSecretRotationRules {
-            automatically_after_days: self.automatically_after_days.unwrap_or_default(),
+            automatically_after_days: self.automatically_after_days,
         }
     }
 }

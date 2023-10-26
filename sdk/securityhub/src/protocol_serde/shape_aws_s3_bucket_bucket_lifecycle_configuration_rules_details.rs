@@ -12,59 +12,59 @@ pub fn ser_aws_s3_bucket_bucket_lifecycle_configuration_rules_details(
     if let Some(var_3) = &input.expiration_date {
         object.key("ExpirationDate").string(var_3.as_str());
     }
-    if input.expiration_in_days != 0 {
+    if let Some(var_4) = &input.expiration_in_days {
         object.key("ExpirationInDays").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.expiration_in_days).into()),
+            ::aws_smithy_types::Number::NegInt((*var_4).into()),
         );
     }
-    if input.expired_object_delete_marker {
-        object.key("ExpiredObjectDeleteMarker").boolean(input.expired_object_delete_marker);
+    if let Some(var_5) = &input.expired_object_delete_marker {
+        object.key("ExpiredObjectDeleteMarker").boolean(*var_5);
     }
-    if let Some(var_4) = &input.filter {
+    if let Some(var_6) = &input.filter {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("Filter").start_object();
-        crate::protocol_serde::shape_aws_s3_bucket_bucket_lifecycle_configuration_rules_filter_details::ser_aws_s3_bucket_bucket_lifecycle_configuration_rules_filter_details(&mut object_5, var_4)?;
-        object_5.finish();
+        let mut object_7 = object.key("Filter").start_object();
+        crate::protocol_serde::shape_aws_s3_bucket_bucket_lifecycle_configuration_rules_filter_details::ser_aws_s3_bucket_bucket_lifecycle_configuration_rules_filter_details(&mut object_7, var_6)?;
+        object_7.finish();
     }
-    if let Some(var_6) = &input.id {
-        object.key("ID").string(var_6.as_str());
+    if let Some(var_8) = &input.id {
+        object.key("ID").string(var_8.as_str());
     }
-    if input.noncurrent_version_expiration_in_days != 0 {
+    if let Some(var_9) = &input.noncurrent_version_expiration_in_days {
         object.key("NoncurrentVersionExpirationInDays").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.noncurrent_version_expiration_in_days).into()),
+            ::aws_smithy_types::Number::NegInt((*var_9).into()),
         );
     }
-    if let Some(var_7) = &input.noncurrent_version_transitions {
-        let mut array_8 = object.key("NoncurrentVersionTransitions").start_array();
-        for item_9 in var_7 {
+    if let Some(var_10) = &input.noncurrent_version_transitions {
+        let mut array_11 = object.key("NoncurrentVersionTransitions").start_array();
+        for item_12 in var_10 {
             {
                 #[allow(unused_mut)]
-                let mut object_10 = array_8.value().start_object();
-                crate::protocol_serde::shape_aws_s3_bucket_bucket_lifecycle_configuration_rules_noncurrent_version_transitions_details::ser_aws_s3_bucket_bucket_lifecycle_configuration_rules_noncurrent_version_transitions_details(&mut object_10, item_9)?;
-                object_10.finish();
+                let mut object_13 = array_11.value().start_object();
+                crate::protocol_serde::shape_aws_s3_bucket_bucket_lifecycle_configuration_rules_noncurrent_version_transitions_details::ser_aws_s3_bucket_bucket_lifecycle_configuration_rules_noncurrent_version_transitions_details(&mut object_13, item_12)?;
+                object_13.finish();
             }
         }
-        array_8.finish();
+        array_11.finish();
     }
-    if let Some(var_11) = &input.prefix {
-        object.key("Prefix").string(var_11.as_str());
+    if let Some(var_14) = &input.prefix {
+        object.key("Prefix").string(var_14.as_str());
     }
-    if let Some(var_12) = &input.status {
-        object.key("Status").string(var_12.as_str());
+    if let Some(var_15) = &input.status {
+        object.key("Status").string(var_15.as_str());
     }
-    if let Some(var_13) = &input.transitions {
-        let mut array_14 = object.key("Transitions").start_array();
-        for item_15 in var_13 {
+    if let Some(var_16) = &input.transitions {
+        let mut array_17 = object.key("Transitions").start_array();
+        for item_18 in var_16 {
             {
                 #[allow(unused_mut)]
-                let mut object_16 = array_14.value().start_object();
-                crate::protocol_serde::shape_aws_s3_bucket_bucket_lifecycle_configuration_rules_transitions_details::ser_aws_s3_bucket_bucket_lifecycle_configuration_rules_transitions_details(&mut object_16, item_15)?;
-                object_16.finish();
+                let mut object_19 = array_17.value().start_object();
+                crate::protocol_serde::shape_aws_s3_bucket_bucket_lifecycle_configuration_rules_transitions_details::ser_aws_s3_bucket_bucket_lifecycle_configuration_rules_transitions_details(&mut object_19, item_18)?;
+                object_19.finish();
             }
         }
-        array_14.finish();
+        array_17.finish();
     }
     Ok(())
 }

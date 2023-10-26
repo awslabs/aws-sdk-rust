@@ -7,7 +7,7 @@ pub struct CustomDataIdentifiersResult {
     /// <p>The list of detected instances of sensitive data.</p>
     pub detections: ::std::option::Option<::std::vec::Vec<crate::types::CustomDataIdentifiersDetections>>,
     /// <p>The total number of occurrences of sensitive data.</p>
-    pub total_count: i64,
+    pub total_count: ::std::option::Option<i64>,
 }
 impl CustomDataIdentifiersResult {
     /// <p>The list of detected instances of sensitive data.</p>
@@ -15,7 +15,7 @@ impl CustomDataIdentifiersResult {
         self.detections.as_deref()
     }
     /// <p>The total number of occurrences of sensitive data.</p>
-    pub fn total_count(&self) -> i64 {
+    pub fn total_count(&self) -> ::std::option::Option<i64> {
         self.total_count
     }
 }
@@ -72,7 +72,7 @@ impl CustomDataIdentifiersResultBuilder {
     pub fn build(self) -> crate::types::CustomDataIdentifiersResult {
         crate::types::CustomDataIdentifiersResult {
             detections: self.detections,
-            total_count: self.total_count.unwrap_or_default(),
+            total_count: self.total_count,
         }
     }
 }

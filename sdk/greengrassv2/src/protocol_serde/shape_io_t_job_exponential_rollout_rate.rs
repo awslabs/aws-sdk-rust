@@ -3,23 +3,23 @@ pub fn ser_io_t_job_exponential_rollout_rate(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::IoTJobExponentialRolloutRate,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    {
+    if let Some(var_1) = &input.base_rate_per_minute {
         object.key("baseRatePerMinute").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.base_rate_per_minute).into()),
+            ::aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    {
+    if let Some(var_2) = &input.increment_factor {
         object.key("incrementFactor").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::Float((input.increment_factor).into()),
+            ::aws_smithy_types::Number::Float((*var_2).into()),
         );
     }
-    if let Some(var_1) = &input.rate_increase_criteria {
+    if let Some(var_3) = &input.rate_increase_criteria {
         #[allow(unused_mut)]
-        let mut object_2 = object.key("rateIncreaseCriteria").start_object();
-        crate::protocol_serde::shape_io_t_job_rate_increase_criteria::ser_io_t_job_rate_increase_criteria(&mut object_2, var_1)?;
-        object_2.finish();
+        let mut object_4 = object.key("rateIncreaseCriteria").start_object();
+        crate::protocol_serde::shape_io_t_job_rate_increase_criteria::ser_io_t_job_rate_increase_criteria(&mut object_4, var_3)?;
+        object_4.finish();
     }
     Ok(())
 }

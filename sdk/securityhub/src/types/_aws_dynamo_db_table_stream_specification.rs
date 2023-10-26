@@ -5,13 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsDynamoDbTableStreamSpecification {
     /// <p>Indicates whether DynamoDB Streams is enabled on the table.</p>
-    pub stream_enabled: bool,
+    pub stream_enabled: ::std::option::Option<bool>,
     /// <p>Determines the information that is written to the table.</p>
     pub stream_view_type: ::std::option::Option<::std::string::String>,
 }
 impl AwsDynamoDbTableStreamSpecification {
     /// <p>Indicates whether DynamoDB Streams is enabled on the table.</p>
-    pub fn stream_enabled(&self) -> bool {
+    pub fn stream_enabled(&self) -> ::std::option::Option<bool> {
         self.stream_enabled
     }
     /// <p>Determines the information that is written to the table.</p>
@@ -65,7 +65,7 @@ impl AwsDynamoDbTableStreamSpecificationBuilder {
     /// Consumes the builder and constructs a [`AwsDynamoDbTableStreamSpecification`](crate::types::AwsDynamoDbTableStreamSpecification).
     pub fn build(self) -> crate::types::AwsDynamoDbTableStreamSpecification {
         crate::types::AwsDynamoDbTableStreamSpecification {
-            stream_enabled: self.stream_enabled.unwrap_or_default(),
+            stream_enabled: self.stream_enabled,
             stream_view_type: self.stream_view_type,
         }
     }

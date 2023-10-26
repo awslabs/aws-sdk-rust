@@ -3,10 +3,10 @@ pub fn ser_shuffle_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ShuffleConfig,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    {
+    if let Some(var_1) = &input.seed {
         object.key("Seed").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.seed).into()),
+            ::aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
     Ok(())

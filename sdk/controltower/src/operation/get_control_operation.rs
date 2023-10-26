@@ -256,7 +256,7 @@ pub type GetControlOperationErrorKind = GetControlOperationError;
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum GetControlOperationError {
-    /// <p>User does not have sufficient access to perform this action. </p>
+    /// <p>User does not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>Unexpected error during processing of request.</p>
     InternalServerException(crate::types::error::InternalServerException),

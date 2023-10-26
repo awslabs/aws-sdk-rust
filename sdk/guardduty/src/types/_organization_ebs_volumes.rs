@@ -5,11 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OrganizationEbsVolumes {
     /// <p>Whether scanning EBS volumes should be auto-enabled for new members joining the organization.</p>
-    pub auto_enable: bool,
+    pub auto_enable: ::std::option::Option<bool>,
 }
 impl OrganizationEbsVolumes {
     /// <p>Whether scanning EBS volumes should be auto-enabled for new members joining the organization.</p>
-    pub fn auto_enable(&self) -> bool {
+    pub fn auto_enable(&self) -> ::std::option::Option<bool> {
         self.auto_enable
     }
 }
@@ -44,7 +44,7 @@ impl OrganizationEbsVolumesBuilder {
     /// Consumes the builder and constructs a [`OrganizationEbsVolumes`](crate::types::OrganizationEbsVolumes).
     pub fn build(self) -> crate::types::OrganizationEbsVolumes {
         crate::types::OrganizationEbsVolumes {
-            auto_enable: self.auto_enable.unwrap_or_default(),
+            auto_enable: self.auto_enable,
         }
     }
 }

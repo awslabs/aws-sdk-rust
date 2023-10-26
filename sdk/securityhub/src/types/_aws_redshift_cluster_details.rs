@@ -5,9 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsRedshiftClusterDetails {
     /// <p>Indicates whether major version upgrades are applied automatically to the cluster during the maintenance window.</p>
-    pub allow_version_upgrade: bool,
+    pub allow_version_upgrade: ::std::option::Option<bool>,
     /// <p>The number of days that automatic cluster snapshots are retained.</p>
-    pub automated_snapshot_retention_period: i32,
+    pub automated_snapshot_retention_period: ::std::option::Option<i32>,
     /// <p>The name of the Availability Zone in which the cluster is located.</p>
     pub availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>The availability status of the cluster for queries. Possible values are the following:</p>
@@ -54,11 +54,11 @@ pub struct AwsRedshiftClusterDetails {
     /// <p>The number of nodes that you can use the elastic resize method to resize the cluster to.</p>
     pub elastic_resize_number_of_node_options: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the data in the cluster is encrypted at rest.</p>
-    pub encrypted: bool,
+    pub encrypted: ::std::option::Option<bool>,
     /// <p>The connection endpoint.</p>
     pub endpoint: ::std::option::Option<crate::types::AwsRedshiftClusterEndpoint>,
     /// <p>Indicates whether to create the cluster with enhanced VPC routing enabled.</p>
-    pub enhanced_vpc_routing: bool,
+    pub enhanced_vpc_routing: ::std::option::Option<bool>,
     /// <p>Indicates when the next snapshot is expected to be taken. The cluster must have a valid snapshot schedule and have backups enabled.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     pub expected_next_snapshot_schedule_time: ::std::option::Option<::std::string::String>,
@@ -77,7 +77,7 @@ pub struct AwsRedshiftClusterDetails {
     /// <p>If the value is <code>-1</code>, the snapshot is retained indefinitely.</p>
     /// <p>This setting doesn't change the retention period of existing snapshots.</p>
     /// <p>Valid values: Either <code>-1</code> or an integer between 1 and 3,653</p>
-    pub manual_snapshot_retention_period: i32,
+    pub manual_snapshot_retention_period: ::std::option::Option<i32>,
     /// <p>The master user name for the cluster. This name is used to connect to the database that is specified in as the value of <code>DBName</code>.</p>
     pub master_username: ::std::option::Option<::std::string::String>,
     /// <p>Indicates the start of the next maintenance window.</p>
@@ -86,7 +86,7 @@ pub struct AwsRedshiftClusterDetails {
     /// <p>The node type for the nodes in the cluster.</p>
     pub node_type: ::std::option::Option<::std::string::String>,
     /// <p>The number of compute nodes in the cluster.</p>
-    pub number_of_nodes: i32,
+    pub number_of_nodes: ::std::option::Option<i32>,
     /// <p>A list of cluster operations that are waiting to start.</p>
     pub pending_actions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of changes to the cluster that are currently pending.</p>
@@ -99,7 +99,7 @@ pub struct AwsRedshiftClusterDetails {
     /// <p>For example, <code>sun:09:32-sun:10:02</code> </p>
     pub preferred_maintenance_window: ::std::option::Option<::std::string::String>,
     /// <p>Whether the cluster can be accessed from a public network.</p>
-    pub publicly_accessible: bool,
+    pub publicly_accessible: ::std::option::Option<bool>,
     /// <p>Information about the resize operation for the cluster.</p>
     pub resize_info: ::std::option::Option<crate::types::AwsRedshiftClusterResizeInfo>,
     /// <p>Information about the status of a cluster restore action. Only applies to a cluster that was created by restoring a snapshot.</p>
@@ -118,11 +118,11 @@ pub struct AwsRedshiftClusterDetails {
 }
 impl AwsRedshiftClusterDetails {
     /// <p>Indicates whether major version upgrades are applied automatically to the cluster during the maintenance window.</p>
-    pub fn allow_version_upgrade(&self) -> bool {
+    pub fn allow_version_upgrade(&self) -> ::std::option::Option<bool> {
         self.allow_version_upgrade
     }
     /// <p>The number of days that automatic cluster snapshots are retained.</p>
-    pub fn automated_snapshot_retention_period(&self) -> i32 {
+    pub fn automated_snapshot_retention_period(&self) -> ::std::option::Option<i32> {
         self.automated_snapshot_retention_period
     }
     /// <p>The name of the Availability Zone in which the cluster is located.</p>
@@ -205,7 +205,7 @@ impl AwsRedshiftClusterDetails {
         self.elastic_resize_number_of_node_options.as_deref()
     }
     /// <p>Indicates whether the data in the cluster is encrypted at rest.</p>
-    pub fn encrypted(&self) -> bool {
+    pub fn encrypted(&self) -> ::std::option::Option<bool> {
         self.encrypted
     }
     /// <p>The connection endpoint.</p>
@@ -213,7 +213,7 @@ impl AwsRedshiftClusterDetails {
         self.endpoint.as_ref()
     }
     /// <p>Indicates whether to create the cluster with enhanced VPC routing enabled.</p>
-    pub fn enhanced_vpc_routing(&self) -> bool {
+    pub fn enhanced_vpc_routing(&self) -> ::std::option::Option<bool> {
         self.enhanced_vpc_routing
     }
     /// <p>Indicates when the next snapshot is expected to be taken. The cluster must have a valid snapshot schedule and have backups enabled.</p>
@@ -246,7 +246,7 @@ impl AwsRedshiftClusterDetails {
     /// <p>If the value is <code>-1</code>, the snapshot is retained indefinitely.</p>
     /// <p>This setting doesn't change the retention period of existing snapshots.</p>
     /// <p>Valid values: Either <code>-1</code> or an integer between 1 and 3,653</p>
-    pub fn manual_snapshot_retention_period(&self) -> i32 {
+    pub fn manual_snapshot_retention_period(&self) -> ::std::option::Option<i32> {
         self.manual_snapshot_retention_period
     }
     /// <p>The master user name for the cluster. This name is used to connect to the database that is specified in as the value of <code>DBName</code>.</p>
@@ -263,7 +263,7 @@ impl AwsRedshiftClusterDetails {
         self.node_type.as_deref()
     }
     /// <p>The number of compute nodes in the cluster.</p>
-    pub fn number_of_nodes(&self) -> i32 {
+    pub fn number_of_nodes(&self) -> ::std::option::Option<i32> {
         self.number_of_nodes
     }
     /// <p>A list of cluster operations that are waiting to start.</p>
@@ -284,7 +284,7 @@ impl AwsRedshiftClusterDetails {
         self.preferred_maintenance_window.as_deref()
     }
     /// <p>Whether the cluster can be accessed from a public network.</p>
-    pub fn publicly_accessible(&self) -> bool {
+    pub fn publicly_accessible(&self) -> ::std::option::Option<bool> {
         self.publicly_accessible
     }
     /// <p>Information about the resize operation for the cluster.</p>
@@ -1121,8 +1121,8 @@ impl AwsRedshiftClusterDetailsBuilder {
     /// Consumes the builder and constructs a [`AwsRedshiftClusterDetails`](crate::types::AwsRedshiftClusterDetails).
     pub fn build(self) -> crate::types::AwsRedshiftClusterDetails {
         crate::types::AwsRedshiftClusterDetails {
-            allow_version_upgrade: self.allow_version_upgrade.unwrap_or_default(),
-            automated_snapshot_retention_period: self.automated_snapshot_retention_period.unwrap_or_default(),
+            allow_version_upgrade: self.allow_version_upgrade,
+            automated_snapshot_retention_period: self.automated_snapshot_retention_period,
             availability_zone: self.availability_zone,
             cluster_availability_status: self.cluster_availability_status,
             cluster_create_time: self.cluster_create_time,
@@ -1140,24 +1140,24 @@ impl AwsRedshiftClusterDetailsBuilder {
             deferred_maintenance_windows: self.deferred_maintenance_windows,
             elastic_ip_status: self.elastic_ip_status,
             elastic_resize_number_of_node_options: self.elastic_resize_number_of_node_options,
-            encrypted: self.encrypted.unwrap_or_default(),
+            encrypted: self.encrypted,
             endpoint: self.endpoint,
-            enhanced_vpc_routing: self.enhanced_vpc_routing.unwrap_or_default(),
+            enhanced_vpc_routing: self.enhanced_vpc_routing,
             expected_next_snapshot_schedule_time: self.expected_next_snapshot_schedule_time,
             expected_next_snapshot_schedule_time_status: self.expected_next_snapshot_schedule_time_status,
             hsm_status: self.hsm_status,
             iam_roles: self.iam_roles,
             kms_key_id: self.kms_key_id,
             maintenance_track_name: self.maintenance_track_name,
-            manual_snapshot_retention_period: self.manual_snapshot_retention_period.unwrap_or_default(),
+            manual_snapshot_retention_period: self.manual_snapshot_retention_period,
             master_username: self.master_username,
             next_maintenance_window_start_time: self.next_maintenance_window_start_time,
             node_type: self.node_type,
-            number_of_nodes: self.number_of_nodes.unwrap_or_default(),
+            number_of_nodes: self.number_of_nodes,
             pending_actions: self.pending_actions,
             pending_modified_values: self.pending_modified_values,
             preferred_maintenance_window: self.preferred_maintenance_window,
-            publicly_accessible: self.publicly_accessible.unwrap_or_default(),
+            publicly_accessible: self.publicly_accessible,
             resize_info: self.resize_info,
             restore_status: self.restore_status,
             snapshot_schedule_identifier: self.snapshot_schedule_identifier,

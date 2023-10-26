@@ -9,7 +9,7 @@ pub struct StatelessRule {
     /// <p>Indicates the order in which to run this rule relative to all of the rules that are defined for a stateless rule group. Network Firewall evaluates the rules in a rule group starting with the lowest priority setting. You must ensure that the priority settings are unique for the rule group. </p>
     /// <p>Each stateless rule group uses exactly one <code>StatelessRulesAndCustomActions</code> object, and each <code>StatelessRulesAndCustomActions</code> contains exactly one <code>StatelessRules</code> object. To ensure unique priority settings for your rule groups, set unique priorities for the stateless rules that you define inside any single <code>StatelessRules</code> object.</p>
     /// <p>You can change the priority settings of your rules at any time. To make it easier to insert rules later, number them so there's a wide range in between, for example use 100, 200, and so on. </p>
-    pub priority: i32,
+    pub priority: ::std::option::Option<i32>,
 }
 impl StatelessRule {
     /// <p>Defines the stateless 5-tuple packet inspection criteria and the action to take on a packet that matches the criteria. </p>
@@ -19,7 +19,7 @@ impl StatelessRule {
     /// <p>Indicates the order in which to run this rule relative to all of the rules that are defined for a stateless rule group. Network Firewall evaluates the rules in a rule group starting with the lowest priority setting. You must ensure that the priority settings are unique for the rule group. </p>
     /// <p>Each stateless rule group uses exactly one <code>StatelessRulesAndCustomActions</code> object, and each <code>StatelessRulesAndCustomActions</code> contains exactly one <code>StatelessRules</code> object. To ensure unique priority settings for your rule groups, set unique priorities for the stateless rules that you define inside any single <code>StatelessRules</code> object.</p>
     /// <p>You can change the priority settings of your rules at any time. To make it easier to insert rules later, number them so there's a wide range in between, for example use 100, 200, and so on. </p>
-    pub fn priority(&self) -> i32 {
+    pub fn priority(&self) -> ::std::option::Option<i32> {
         self.priority
     }
 }
@@ -76,7 +76,7 @@ impl StatelessRuleBuilder {
     pub fn build(self) -> crate::types::StatelessRule {
         crate::types::StatelessRule {
             rule_definition: self.rule_definition,
-            priority: self.priority.unwrap_or_default(),
+            priority: self.priority,
         }
     }
 }

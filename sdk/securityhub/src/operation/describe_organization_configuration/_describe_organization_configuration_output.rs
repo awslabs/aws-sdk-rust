@@ -5,9 +5,9 @@
 pub struct DescribeOrganizationConfigurationOutput {
     /// <p>Whether to automatically enable Security Hub for new accounts in the organization.</p>
     /// <p>If set to <code>true</code>, then Security Hub is enabled for new accounts. If set to false, then new accounts are not added automatically.</p>
-    pub auto_enable: bool,
+    pub auto_enable: ::std::option::Option<bool>,
     /// <p>Whether the maximum number of allowed member accounts are already associated with the Security Hub administrator account.</p>
-    pub member_account_limit_reached: bool,
+    pub member_account_limit_reached: ::std::option::Option<bool>,
     /// <p>Whether to automatically enable Security Hub <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards-enable-disable.html">default standards</a> for new member accounts in the organization.</p>
     /// <p>The default value of this parameter is equal to <code>DEFAULT</code>.</p>
     /// <p>If equal to <code>DEFAULT</code>, then Security Hub default standards are automatically enabled for new member accounts. If equal to <code>NONE</code>, then default standards are not automatically enabled for new member accounts.</p>
@@ -17,11 +17,11 @@ pub struct DescribeOrganizationConfigurationOutput {
 impl DescribeOrganizationConfigurationOutput {
     /// <p>Whether to automatically enable Security Hub for new accounts in the organization.</p>
     /// <p>If set to <code>true</code>, then Security Hub is enabled for new accounts. If set to false, then new accounts are not added automatically.</p>
-    pub fn auto_enable(&self) -> bool {
+    pub fn auto_enable(&self) -> ::std::option::Option<bool> {
         self.auto_enable
     }
     /// <p>Whether the maximum number of allowed member accounts are already associated with the Security Hub administrator account.</p>
-    pub fn member_account_limit_reached(&self) -> bool {
+    pub fn member_account_limit_reached(&self) -> ::std::option::Option<bool> {
         self.member_account_limit_reached
     }
     /// <p>Whether to automatically enable Security Hub <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards-enable-disable.html">default standards</a> for new member accounts in the organization.</p>
@@ -116,8 +116,8 @@ impl DescribeOrganizationConfigurationOutputBuilder {
     /// Consumes the builder and constructs a [`DescribeOrganizationConfigurationOutput`](crate::operation::describe_organization_configuration::DescribeOrganizationConfigurationOutput).
     pub fn build(self) -> crate::operation::describe_organization_configuration::DescribeOrganizationConfigurationOutput {
         crate::operation::describe_organization_configuration::DescribeOrganizationConfigurationOutput {
-            auto_enable: self.auto_enable.unwrap_or_default(),
-            member_account_limit_reached: self.member_account_limit_reached.unwrap_or_default(),
+            auto_enable: self.auto_enable,
+            member_account_limit_reached: self.member_account_limit_reached,
             auto_enable_standards: self.auto_enable_standards,
             _request_id: self._request_id,
         }

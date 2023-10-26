@@ -3,11 +3,11 @@ pub fn ser_aws_iam_access_key_session_context_attributes(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsIamAccessKeySessionContextAttributes,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if input.mfa_authenticated {
-        object.key("MfaAuthenticated").boolean(input.mfa_authenticated);
+    if let Some(var_1) = &input.mfa_authenticated {
+        object.key("MfaAuthenticated").boolean(*var_1);
     }
-    if let Some(var_1) = &input.creation_date {
-        object.key("CreationDate").string(var_1.as_str());
+    if let Some(var_2) = &input.creation_date {
+        object.key("CreationDate").string(var_2.as_str());
     }
     Ok(())
 }

@@ -21,6 +21,8 @@ pub struct UpdateLaunchConfigurationOutput {
     pub licensing: ::std::option::Option<crate::types::Licensing>,
     /// <p>Whether we want to activate post-launch actions for the Source Server.</p>
     pub post_launch_enabled: ::std::option::Option<bool>,
+    /// <p>Launch into existing instance properties.</p>
+    pub launch_into_instance_properties: ::std::option::Option<crate::types::LaunchIntoInstanceProperties>,
     _request_id: Option<String>,
 }
 impl UpdateLaunchConfigurationOutput {
@@ -60,6 +62,10 @@ impl UpdateLaunchConfigurationOutput {
     pub fn post_launch_enabled(&self) -> ::std::option::Option<bool> {
         self.post_launch_enabled
     }
+    /// <p>Launch into existing instance properties.</p>
+    pub fn launch_into_instance_properties(&self) -> ::std::option::Option<&crate::types::LaunchIntoInstanceProperties> {
+        self.launch_into_instance_properties.as_ref()
+    }
 }
 impl ::aws_http::request_id::RequestId for UpdateLaunchConfigurationOutput {
     fn request_id(&self) -> Option<&str> {
@@ -86,6 +92,7 @@ pub struct UpdateLaunchConfigurationOutputBuilder {
     pub(crate) copy_tags: ::std::option::Option<bool>,
     pub(crate) licensing: ::std::option::Option<crate::types::Licensing>,
     pub(crate) post_launch_enabled: ::std::option::Option<bool>,
+    pub(crate) launch_into_instance_properties: ::std::option::Option<crate::types::LaunchIntoInstanceProperties>,
     _request_id: Option<String>,
 }
 impl UpdateLaunchConfigurationOutputBuilder {
@@ -218,6 +225,20 @@ impl UpdateLaunchConfigurationOutputBuilder {
     pub fn get_post_launch_enabled(&self) -> &::std::option::Option<bool> {
         &self.post_launch_enabled
     }
+    /// <p>Launch into existing instance properties.</p>
+    pub fn launch_into_instance_properties(mut self, input: crate::types::LaunchIntoInstanceProperties) -> Self {
+        self.launch_into_instance_properties = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Launch into existing instance properties.</p>
+    pub fn set_launch_into_instance_properties(mut self, input: ::std::option::Option<crate::types::LaunchIntoInstanceProperties>) -> Self {
+        self.launch_into_instance_properties = input;
+        self
+    }
+    /// <p>Launch into existing instance properties.</p>
+    pub fn get_launch_into_instance_properties(&self) -> &::std::option::Option<crate::types::LaunchIntoInstanceProperties> {
+        &self.launch_into_instance_properties
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -239,6 +260,7 @@ impl UpdateLaunchConfigurationOutputBuilder {
             copy_tags: self.copy_tags,
             licensing: self.licensing,
             post_launch_enabled: self.post_launch_enabled,
+            launch_into_instance_properties: self.launch_into_instance_properties,
             _request_id: self._request_id,
         }
     }

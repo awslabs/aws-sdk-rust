@@ -40,5 +40,14 @@ pub fn ser_create_project_version_input(
     if let Some(var_13) = &input.kms_key_id {
         object.key("KmsKeyId").string(var_13.as_str());
     }
+    if let Some(var_14) = &input.version_description {
+        object.key("VersionDescription").string(var_14.as_str());
+    }
+    if let Some(var_15) = &input.feature_config {
+        #[allow(unused_mut)]
+        let mut object_16 = object.key("FeatureConfig").start_object();
+        crate::protocol_serde::shape_customization_feature_config::ser_customization_feature_config(&mut object_16, var_15)?;
+        object_16.finish();
+    }
     Ok(())
 }

@@ -13,7 +13,7 @@ pub struct AwsAmazonMqBrokerLdapServerMetadataDetails {
     /// <p> The LDAP search filter used to find roles within the <code>roleBase</code>. </p>
     pub role_search_matching: ::std::option::Option<::std::string::String>,
     /// <p> The directory search scope for the role. If set to <code>true</code>, the scope is to search the entire subtree. </p>
-    pub role_search_subtree: bool,
+    pub role_search_subtree: ::std::option::Option<bool>,
     /// <p> A username for the service account, which is an account in your LDAP server that has access to initiate a connection. </p>
     pub service_account_username: ::std::option::Option<::std::string::String>,
     /// <p> Selects a particular subtree of the directory information tree (DIT) to search for user entries. </p>
@@ -23,7 +23,7 @@ pub struct AwsAmazonMqBrokerLdapServerMetadataDetails {
     /// <p> The LDAP search filter used to find users within the <code>userBase</code>. </p>
     pub user_search_matching: ::std::option::Option<::std::string::String>,
     /// <p> The directory search scope for the user. If set to true, the scope is to search the entire subtree. </p>
-    pub user_search_subtree: bool,
+    pub user_search_subtree: ::std::option::Option<bool>,
 }
 impl AwsAmazonMqBrokerLdapServerMetadataDetails {
     /// <p> Specifies the location of the LDAP server, such as Amazon Web Services Directory Service for Microsoft Active Directory. </p>
@@ -43,7 +43,7 @@ impl AwsAmazonMqBrokerLdapServerMetadataDetails {
         self.role_search_matching.as_deref()
     }
     /// <p> The directory search scope for the role. If set to <code>true</code>, the scope is to search the entire subtree. </p>
-    pub fn role_search_subtree(&self) -> bool {
+    pub fn role_search_subtree(&self) -> ::std::option::Option<bool> {
         self.role_search_subtree
     }
     /// <p> A username for the service account, which is an account in your LDAP server that has access to initiate a connection. </p>
@@ -63,7 +63,7 @@ impl AwsAmazonMqBrokerLdapServerMetadataDetails {
         self.user_search_matching.as_deref()
     }
     /// <p> The directory search scope for the user. If set to true, the scope is to search the entire subtree. </p>
-    pub fn user_search_subtree(&self) -> bool {
+    pub fn user_search_subtree(&self) -> ::std::option::Option<bool> {
         self.user_search_subtree
     }
 }
@@ -243,12 +243,12 @@ impl AwsAmazonMqBrokerLdapServerMetadataDetailsBuilder {
             role_base: self.role_base,
             role_name: self.role_name,
             role_search_matching: self.role_search_matching,
-            role_search_subtree: self.role_search_subtree.unwrap_or_default(),
+            role_search_subtree: self.role_search_subtree,
             service_account_username: self.service_account_username,
             user_base: self.user_base,
             user_role_name: self.user_role_name,
             user_search_matching: self.user_search_matching,
-            user_search_subtree: self.user_search_subtree.unwrap_or_default(),
+            user_search_subtree: self.user_search_subtree,
         }
     }
 }

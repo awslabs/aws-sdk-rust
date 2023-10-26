@@ -6,10 +6,10 @@ pub fn ser_update_policy(
     if let Some(var_1) = &input.terminate_jobs_on_update {
         object.key("terminateJobsOnUpdate").boolean(*var_1);
     }
-    if input.job_execution_timeout_minutes != 0 {
+    if let Some(var_2) = &input.job_execution_timeout_minutes {
         object.key("jobExecutionTimeoutMinutes").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.job_execution_timeout_minutes).into()),
+            ::aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
     Ok(())

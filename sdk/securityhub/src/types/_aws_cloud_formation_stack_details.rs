@@ -11,11 +11,11 @@ pub struct AwsCloudFormationStackDetails {
     /// <p>A user-defined description associated with the stack. </p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Boolean to enable or disable rollback on stack creation failures. </p>
-    pub disable_rollback: bool,
+    pub disable_rollback: ::std::option::Option<bool>,
     /// <p>Information about whether a stack's actual configuration differs, or has drifted, from its expected configuration, as defined in the stack template and any values specified as template parameters. </p>
     pub drift_information: ::std::option::Option<crate::types::AwsCloudFormationStackDriftInformationDetails>,
     /// <p>Whether termination protection is enabled for the stack. </p>
-    pub enable_termination_protection: bool,
+    pub enable_termination_protection: ::std::option::Option<bool>,
     /// <p>The time the nested stack was last updated. This field will only be returned if the stack has been updated at least once.</p>
     pub last_updated_time: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Names (ARNs) of the Amazon SNS topic to which stack-related events are published. </p>
@@ -33,7 +33,7 @@ pub struct AwsCloudFormationStackDetails {
     /// <p>Success or failure message associated with the stack status. </p>
     pub stack_status_reason: ::std::option::Option<::std::string::String>,
     /// <p>The length of time, in minutes, that CloudFormation waits for the nested stack to reach the <code>CREATE_COMPLETE</code> state. </p>
-    pub timeout_in_minutes: i32,
+    pub timeout_in_minutes: ::std::option::Option<i32>,
 }
 impl AwsCloudFormationStackDetails {
     /// <p>The capabilities allowed in the stack. </p>
@@ -49,7 +49,7 @@ impl AwsCloudFormationStackDetails {
         self.description.as_deref()
     }
     /// <p>Boolean to enable or disable rollback on stack creation failures. </p>
-    pub fn disable_rollback(&self) -> bool {
+    pub fn disable_rollback(&self) -> ::std::option::Option<bool> {
         self.disable_rollback
     }
     /// <p>Information about whether a stack's actual configuration differs, or has drifted, from its expected configuration, as defined in the stack template and any values specified as template parameters. </p>
@@ -57,7 +57,7 @@ impl AwsCloudFormationStackDetails {
         self.drift_information.as_ref()
     }
     /// <p>Whether termination protection is enabled for the stack. </p>
-    pub fn enable_termination_protection(&self) -> bool {
+    pub fn enable_termination_protection(&self) -> ::std::option::Option<bool> {
         self.enable_termination_protection
     }
     /// <p>The time the nested stack was last updated. This field will only be returned if the stack has been updated at least once.</p>
@@ -93,7 +93,7 @@ impl AwsCloudFormationStackDetails {
         self.stack_status_reason.as_deref()
     }
     /// <p>The length of time, in minutes, that CloudFormation waits for the nested stack to reach the <code>CREATE_COMPLETE</code> state. </p>
-    pub fn timeout_in_minutes(&self) -> i32 {
+    pub fn timeout_in_minutes(&self) -> ::std::option::Option<i32> {
         self.timeout_in_minutes
     }
 }
@@ -359,9 +359,9 @@ impl AwsCloudFormationStackDetailsBuilder {
             capabilities: self.capabilities,
             creation_time: self.creation_time,
             description: self.description,
-            disable_rollback: self.disable_rollback.unwrap_or_default(),
+            disable_rollback: self.disable_rollback,
             drift_information: self.drift_information,
-            enable_termination_protection: self.enable_termination_protection.unwrap_or_default(),
+            enable_termination_protection: self.enable_termination_protection,
             last_updated_time: self.last_updated_time,
             notification_arns: self.notification_arns,
             outputs: self.outputs,
@@ -370,7 +370,7 @@ impl AwsCloudFormationStackDetailsBuilder {
             stack_name: self.stack_name,
             stack_status: self.stack_status,
             stack_status_reason: self.stack_status_reason,
-            timeout_in_minutes: self.timeout_in_minutes.unwrap_or_default(),
+            timeout_in_minutes: self.timeout_in_minutes,
         }
     }
 }

@@ -5,13 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RecurringCharge {
     /// <p>The amount charged per the period of time specified by the recurring charge frequency.</p>
-    pub recurring_charge_amount: f64,
+    pub recurring_charge_amount: ::std::option::Option<f64>,
     /// <p>The frequency at which the recurring charge amount is applied.</p>
     pub recurring_charge_frequency: ::std::option::Option<::std::string::String>,
 }
 impl RecurringCharge {
     /// <p>The amount charged per the period of time specified by the recurring charge frequency.</p>
-    pub fn recurring_charge_amount(&self) -> f64 {
+    pub fn recurring_charge_amount(&self) -> ::std::option::Option<f64> {
         self.recurring_charge_amount
     }
     /// <p>The frequency at which the recurring charge amount is applied.</p>
@@ -65,7 +65,7 @@ impl RecurringChargeBuilder {
     /// Consumes the builder and constructs a [`RecurringCharge`](crate::types::RecurringCharge).
     pub fn build(self) -> crate::types::RecurringCharge {
         crate::types::RecurringCharge {
-            recurring_charge_amount: self.recurring_charge_amount.unwrap_or_default(),
+            recurring_charge_amount: self.recurring_charge_amount,
             recurring_charge_frequency: self.recurring_charge_frequency,
         }
     }

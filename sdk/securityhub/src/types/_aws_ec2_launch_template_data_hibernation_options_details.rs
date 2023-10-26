@@ -5,11 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEc2LaunchTemplateDataHibernationOptionsDetails {
     /// <p> If you set this parameter to <code>true</code>, the instance is enabled for hibernation. </p>
-    pub configured: bool,
+    pub configured: ::std::option::Option<bool>,
 }
 impl AwsEc2LaunchTemplateDataHibernationOptionsDetails {
     /// <p> If you set this parameter to <code>true</code>, the instance is enabled for hibernation. </p>
-    pub fn configured(&self) -> bool {
+    pub fn configured(&self) -> ::std::option::Option<bool> {
         self.configured
     }
 }
@@ -43,8 +43,6 @@ impl AwsEc2LaunchTemplateDataHibernationOptionsDetailsBuilder {
     }
     /// Consumes the builder and constructs a [`AwsEc2LaunchTemplateDataHibernationOptionsDetails`](crate::types::AwsEc2LaunchTemplateDataHibernationOptionsDetails).
     pub fn build(self) -> crate::types::AwsEc2LaunchTemplateDataHibernationOptionsDetails {
-        crate::types::AwsEc2LaunchTemplateDataHibernationOptionsDetails {
-            configured: self.configured.unwrap_or_default(),
-        }
+        crate::types::AwsEc2LaunchTemplateDataHibernationOptionsDetails { configured: self.configured }
     }
 }

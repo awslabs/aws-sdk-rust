@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`milestone_number(i32)`](crate::operation::get_lens_review::builders::GetLensReviewFluentBuilder::milestone_number) / [`set_milestone_number(Option<i32>)`](crate::operation::get_lens_review::builders::GetLensReviewFluentBuilder::set_milestone_number): <p>The milestone number.</p>  <p>A workload can have a maximum of 100 milestones.</p>
     /// - On success, responds with [`GetLensReviewOutput`](crate::operation::get_lens_review::GetLensReviewOutput) with field(s):
     ///   - [`workload_id(Option<String>)`](crate::operation::get_lens_review::GetLensReviewOutput::workload_id): <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-    ///   - [`milestone_number(i32)`](crate::operation::get_lens_review::GetLensReviewOutput::milestone_number): <p>The milestone number.</p>  <p>A workload can have a maximum of 100 milestones.</p>
+    ///   - [`milestone_number(Option<i32>)`](crate::operation::get_lens_review::GetLensReviewOutput::milestone_number): <p>The milestone number.</p>  <p>A workload can have a maximum of 100 milestones.</p>
     ///   - [`lens_review(Option<LensReview>)`](crate::operation::get_lens_review::GetLensReviewOutput::lens_review): <p>A lens review of a question.</p>
     /// - On failure, responds with [`SdkError<GetLensReviewError>`](crate::operation::get_lens_review::GetLensReviewError)
     pub fn get_lens_review(&self) -> crate::operation::get_lens_review::builders::GetLensReviewFluentBuilder {

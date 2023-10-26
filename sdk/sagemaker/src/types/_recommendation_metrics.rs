@@ -5,13 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RecommendationMetrics {
     /// <p>Defines the cost per hour for the instance. </p>
-    pub cost_per_hour: f32,
+    pub cost_per_hour: ::std::option::Option<f32>,
     /// <p>Defines the cost per inference for the instance .</p>
-    pub cost_per_inference: f32,
+    pub cost_per_inference: ::std::option::Option<f32>,
     /// <p>The expected maximum number of requests per minute for the instance.</p>
-    pub max_invocations: i32,
+    pub max_invocations: ::std::option::Option<i32>,
     /// <p>The expected model latency at maximum invocation per minute for the instance.</p>
-    pub model_latency: i32,
+    pub model_latency: ::std::option::Option<i32>,
     /// <p>The expected CPU utilization at maximum invocations per minute for the instance.</p>
     /// <p> <code>NaN</code> indicates that the value is not available.</p>
     pub cpu_utilization: ::std::option::Option<f32>,
@@ -24,19 +24,19 @@ pub struct RecommendationMetrics {
 }
 impl RecommendationMetrics {
     /// <p>Defines the cost per hour for the instance. </p>
-    pub fn cost_per_hour(&self) -> f32 {
+    pub fn cost_per_hour(&self) -> ::std::option::Option<f32> {
         self.cost_per_hour
     }
     /// <p>Defines the cost per inference for the instance .</p>
-    pub fn cost_per_inference(&self) -> f32 {
+    pub fn cost_per_inference(&self) -> ::std::option::Option<f32> {
         self.cost_per_inference
     }
     /// <p>The expected maximum number of requests per minute for the instance.</p>
-    pub fn max_invocations(&self) -> i32 {
+    pub fn max_invocations(&self) -> ::std::option::Option<i32> {
         self.max_invocations
     }
     /// <p>The expected model latency at maximum invocation per minute for the instance.</p>
-    pub fn model_latency(&self) -> i32 {
+    pub fn model_latency(&self) -> ::std::option::Option<i32> {
         self.model_latency
     }
     /// <p>The expected CPU utilization at maximum invocations per minute for the instance.</p>
@@ -185,10 +185,10 @@ impl RecommendationMetricsBuilder {
     /// Consumes the builder and constructs a [`RecommendationMetrics`](crate::types::RecommendationMetrics).
     pub fn build(self) -> crate::types::RecommendationMetrics {
         crate::types::RecommendationMetrics {
-            cost_per_hour: self.cost_per_hour.unwrap_or_default(),
-            cost_per_inference: self.cost_per_inference.unwrap_or_default(),
-            max_invocations: self.max_invocations.unwrap_or_default(),
-            model_latency: self.model_latency.unwrap_or_default(),
+            cost_per_hour: self.cost_per_hour,
+            cost_per_inference: self.cost_per_inference,
+            max_invocations: self.max_invocations,
+            model_latency: self.model_latency,
             cpu_utilization: self.cpu_utilization,
             memory_utilization: self.memory_utilization,
             model_setup_time: self.model_setup_time,

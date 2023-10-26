@@ -25,6 +25,8 @@ pub fn parse_http_error_metadata(
 
 pub(crate) mod shape_associate_configuration_items_to_application;
 
+pub(crate) mod shape_batch_delete_agents;
+
 pub(crate) mod shape_batch_delete_import_data;
 
 pub(crate) mod shape_create_application;
@@ -36,6 +38,8 @@ pub(crate) mod shape_delete_applications;
 pub(crate) mod shape_delete_tags;
 
 pub(crate) mod shape_describe_agents;
+
+pub(crate) mod shape_describe_batch_delete_configuration_task;
 
 pub(crate) mod shape_describe_configurations;
 
@@ -58,6 +62,8 @@ pub(crate) mod shape_get_discovery_summary;
 pub(crate) mod shape_list_configurations;
 
 pub(crate) mod shape_list_server_neighbors;
+
+pub(crate) mod shape_start_batch_delete_configuration_task;
 
 pub(crate) mod shape_start_continuous_export;
 
@@ -85,6 +91,8 @@ pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
 
 pub(crate) mod shape_authorization_error_exception;
 
+pub(crate) mod shape_batch_delete_agents_input;
+
 pub(crate) mod shape_batch_delete_import_data_input;
 
 pub(crate) mod shape_conflict_error_exception;
@@ -98,6 +106,8 @@ pub(crate) mod shape_delete_applications_input;
 pub(crate) mod shape_delete_tags_input;
 
 pub(crate) mod shape_describe_agents_input;
+
+pub(crate) mod shape_describe_batch_delete_configuration_task_input;
 
 pub(crate) mod shape_describe_configurations_input;
 
@@ -119,6 +129,8 @@ pub(crate) mod shape_invalid_parameter_exception;
 
 pub(crate) mod shape_invalid_parameter_value_exception;
 
+pub(crate) mod shape_limit_exceeded_exception;
+
 pub(crate) mod shape_list_configurations_input;
 
 pub(crate) mod shape_list_server_neighbors_input;
@@ -130,6 +142,8 @@ pub(crate) mod shape_resource_in_use_exception;
 pub(crate) mod shape_resource_not_found_exception;
 
 pub(crate) mod shape_server_internal_error_exception;
+
+pub(crate) mod shape_start_batch_delete_configuration_task_input;
 
 pub(crate) mod shape_start_data_collection_by_agent_ids_input;
 
@@ -147,6 +161,10 @@ pub(crate) mod shape_agent_configuration_status_list;
 
 pub(crate) mod shape_agents_info;
 
+pub(crate) mod shape_batch_delete_agent_errors;
+
+pub(crate) mod shape_batch_delete_configuration_task;
+
 pub(crate) mod shape_batch_delete_import_data_error_list;
 
 pub(crate) mod shape_configuration_tag_set;
@@ -162,6 +180,8 @@ pub(crate) mod shape_customer_agentless_collector_info;
 pub(crate) mod shape_customer_connector_info;
 
 pub(crate) mod shape_customer_me_collector_info;
+
+pub(crate) mod shape_delete_agent;
 
 pub(crate) mod shape_describe_configurations_attributes;
 
@@ -193,13 +213,19 @@ pub(crate) mod shape_agent_configuration_status;
 
 pub(crate) mod shape_agent_info;
 
+pub(crate) mod shape_batch_delete_agent_error;
+
 pub(crate) mod shape_batch_delete_import_data_error;
 
 pub(crate) mod shape_configuration;
 
+pub(crate) mod shape_configuration_id_list;
+
 pub(crate) mod shape_configuration_tag;
 
 pub(crate) mod shape_continuous_export_description;
+
+pub(crate) mod shape_deletion_warnings_list;
 
 pub(crate) mod shape_describe_configurations_attribute;
 
@@ -207,9 +233,15 @@ pub(crate) mod shape_ec2_recommendations_export_preferences;
 
 pub(crate) mod shape_export_info;
 
+pub(crate) mod shape_failed_configuration_list;
+
 pub(crate) mod shape_neighbor_connection_detail;
 
 pub(crate) mod shape_agent_network_info_list;
+
+pub(crate) mod shape_deletion_warning;
+
+pub(crate) mod shape_failed_configuration;
 
 pub(crate) mod shape_reserved_instance_options;
 

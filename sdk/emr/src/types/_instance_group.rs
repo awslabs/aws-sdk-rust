@@ -28,11 +28,11 @@ pub struct InstanceGroup {
     /// <p>The list of configurations supplied for an Amazon EMR cluster instance group. You can specify a separate configuration for each instance group (master, core, and task).</p>
     pub configurations: ::std::option::Option<::std::vec::Vec<crate::types::Configuration>>,
     /// <p>The version number of the requested configuration specification for this instance group.</p>
-    pub configurations_version: i64,
+    pub configurations_version: ::std::option::Option<i64>,
     /// <p>A list of configurations that were successfully applied for an instance group last time.</p>
     pub last_successfully_applied_configurations: ::std::option::Option<::std::vec::Vec<crate::types::Configuration>>,
     /// <p>The version number of a configuration specification that was successfully applied for an instance group last time. </p>
-    pub last_successfully_applied_configurations_version: i64,
+    pub last_successfully_applied_configurations_version: ::std::option::Option<i64>,
     /// <p>The EBS block devices that are mapped to this instance group.</p>
     pub ebs_block_devices: ::std::option::Option<::std::vec::Vec<crate::types::EbsBlockDevice>>,
     /// <p>If the instance group is EBS-optimized. An Amazon EBS-optimized instance uses an optimized configuration stack and provides additional, dedicated capacity for Amazon EBS I/O.</p>
@@ -89,7 +89,7 @@ impl InstanceGroup {
         self.configurations.as_deref()
     }
     /// <p>The version number of the requested configuration specification for this instance group.</p>
-    pub fn configurations_version(&self) -> i64 {
+    pub fn configurations_version(&self) -> ::std::option::Option<i64> {
         self.configurations_version
     }
     /// <p>A list of configurations that were successfully applied for an instance group last time.</p>
@@ -97,7 +97,7 @@ impl InstanceGroup {
         self.last_successfully_applied_configurations.as_deref()
     }
     /// <p>The version number of a configuration specification that was successfully applied for an instance group last time. </p>
-    pub fn last_successfully_applied_configurations_version(&self) -> i64 {
+    pub fn last_successfully_applied_configurations_version(&self) -> ::std::option::Option<i64> {
         self.last_successfully_applied_configurations_version
     }
     /// <p>The EBS block devices that are mapped to this instance group.</p>
@@ -447,9 +447,9 @@ impl InstanceGroupBuilder {
             running_instance_count: self.running_instance_count,
             status: self.status,
             configurations: self.configurations,
-            configurations_version: self.configurations_version.unwrap_or_default(),
+            configurations_version: self.configurations_version,
             last_successfully_applied_configurations: self.last_successfully_applied_configurations,
-            last_successfully_applied_configurations_version: self.last_successfully_applied_configurations_version.unwrap_or_default(),
+            last_successfully_applied_configurations_version: self.last_successfully_applied_configurations_version,
             ebs_block_devices: self.ebs_block_devices,
             ebs_optimized: self.ebs_optimized,
             shrink_policy: self.shrink_policy,

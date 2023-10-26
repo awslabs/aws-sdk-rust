@@ -22,6 +22,9 @@ impl ListProjectPoliciesInputBuilder {
 }
 /// Fluent builder constructing a request to `ListProjectPolicies`.
 ///
+/// <note>
+/// <p>This operation applies only to Amazon Rekognition Custom Labels.</p>
+/// </note>
 /// <p>Gets a list of the project policies attached to a project.</p>
 /// <p>To attach a project policy to a project, call <code>PutProjectPolicy</code>. To remove a project policy from a project, call <code>DeleteProjectPolicy</code>.</p>
 /// <p>This operation requires permissions to perform the <code>rekognition:ListProjectPolicies</code> action.</p>

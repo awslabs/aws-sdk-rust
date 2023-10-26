@@ -3,16 +3,16 @@ pub fn ser_port_range_from_to(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PortRangeFromTo,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if input.from != 0 {
+    if let Some(var_1) = &input.from {
         object.key("From").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.from).into()),
+            ::aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if input.to != 0 {
+    if let Some(var_2) = &input.to {
         object.key("To").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.to).into()),
+            ::aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
     Ok(())

@@ -60,7 +60,7 @@ impl ::std::fmt::Debug for CreateCalculatedAttributeDefinitionInput {
         formatter.field("domain_name", &self.domain_name);
         formatter.field("calculated_attribute_name", &self.calculated_attribute_name);
         formatter.field("display_name", &self.display_name);
-        formatter.field("description", &self.description);
+        formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("attribute_details", &"*** Sensitive Data Redacted ***");
         formatter.field("conditions", &"*** Sensitive Data Redacted ***");
         formatter.field("statistic", &"*** Sensitive Data Redacted ***");
@@ -234,7 +234,7 @@ impl ::std::fmt::Debug for CreateCalculatedAttributeDefinitionInputBuilder {
         formatter.field("domain_name", &self.domain_name);
         formatter.field("calculated_attribute_name", &self.calculated_attribute_name);
         formatter.field("display_name", &self.display_name);
-        formatter.field("description", &self.description);
+        formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("attribute_details", &"*** Sensitive Data Redacted ***");
         formatter.field("conditions", &"*** Sensitive Data Redacted ***");
         formatter.field("statistic", &"*** Sensitive Data Redacted ***");

@@ -9,6 +9,8 @@ pub struct StartAssessmentInput {
     pub s3bucket_for_report_data: ::std::option::Option<::std::string::String>,
     /// <p>List of criteria for assessment.</p>
     pub assessment_targets: ::std::option::Option<::std::vec::Vec<crate::types::AssessmentTarget>>,
+    /// The data source type of an assessment to be started.
+    pub assessment_data_source_type: ::std::option::Option<crate::types::AssessmentDataSourceType>,
 }
 impl StartAssessmentInput {
     /// <p> The S3 bucket used by the collectors to send analysis data to the service. The bucket name must begin with <code>migrationhub-strategy-</code>. </p>
@@ -22,6 +24,10 @@ impl StartAssessmentInput {
     /// <p>List of criteria for assessment.</p>
     pub fn assessment_targets(&self) -> ::std::option::Option<&[crate::types::AssessmentTarget]> {
         self.assessment_targets.as_deref()
+    }
+    /// The data source type of an assessment to be started.
+    pub fn assessment_data_source_type(&self) -> ::std::option::Option<&crate::types::AssessmentDataSourceType> {
+        self.assessment_data_source_type.as_ref()
     }
 }
 impl StartAssessmentInput {
@@ -38,6 +44,7 @@ pub struct StartAssessmentInputBuilder {
     pub(crate) s3bucket_for_analysis_data: ::std::option::Option<::std::string::String>,
     pub(crate) s3bucket_for_report_data: ::std::option::Option<::std::string::String>,
     pub(crate) assessment_targets: ::std::option::Option<::std::vec::Vec<crate::types::AssessmentTarget>>,
+    pub(crate) assessment_data_source_type: ::std::option::Option<crate::types::AssessmentDataSourceType>,
 }
 impl StartAssessmentInputBuilder {
     /// <p> The S3 bucket used by the collectors to send analysis data to the service. The bucket name must begin with <code>migrationhub-strategy-</code>. </p>
@@ -88,6 +95,20 @@ impl StartAssessmentInputBuilder {
     pub fn get_assessment_targets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssessmentTarget>> {
         &self.assessment_targets
     }
+    /// The data source type of an assessment to be started.
+    pub fn assessment_data_source_type(mut self, input: crate::types::AssessmentDataSourceType) -> Self {
+        self.assessment_data_source_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// The data source type of an assessment to be started.
+    pub fn set_assessment_data_source_type(mut self, input: ::std::option::Option<crate::types::AssessmentDataSourceType>) -> Self {
+        self.assessment_data_source_type = input;
+        self
+    }
+    /// The data source type of an assessment to be started.
+    pub fn get_assessment_data_source_type(&self) -> &::std::option::Option<crate::types::AssessmentDataSourceType> {
+        &self.assessment_data_source_type
+    }
     /// Consumes the builder and constructs a [`StartAssessmentInput`](crate::operation::start_assessment::StartAssessmentInput).
     pub fn build(
         self,
@@ -96,6 +117,7 @@ impl StartAssessmentInputBuilder {
             s3bucket_for_analysis_data: self.s3bucket_for_analysis_data,
             s3bucket_for_report_data: self.s3bucket_for_report_data,
             assessment_targets: self.assessment_targets,
+            assessment_data_source_type: self.assessment_data_source_type,
         })
     }
 }

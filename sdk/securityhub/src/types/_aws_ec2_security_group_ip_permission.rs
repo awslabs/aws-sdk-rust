@@ -12,10 +12,10 @@ pub struct AwsEc2SecurityGroupIpPermission {
     pub ip_protocol: ::std::option::Option<::std::string::String>,
     /// <p>The start of the port range for the TCP and UDP protocols, or an ICMP/ICMPv6 type number.</p>
     /// <p>A value of -1 indicates all ICMP/ICMPv6 types. If you specify all ICMP/ICMPv6 types, you must specify all codes. </p>
-    pub from_port: i32,
+    pub from_port: ::std::option::Option<i32>,
     /// <p>The end of the port range for the TCP and UDP protocols, or an ICMP/ICMPv6 code.</p>
     /// <p>A value of <code>-1</code> indicates all ICMP/ICMPv6 codes. If you specify all ICMP/ICMPv6 types, you must specify all codes.</p>
-    pub to_port: i32,
+    pub to_port: ::std::option::Option<i32>,
     /// <p>The security group and Amazon Web Services account ID pairs.</p>
     pub user_id_group_pairs: ::std::option::Option<::std::vec::Vec<crate::types::AwsEc2SecurityGroupUserIdGroupPair>>,
     /// <p>The IPv4 ranges.</p>
@@ -36,12 +36,12 @@ impl AwsEc2SecurityGroupIpPermission {
     }
     /// <p>The start of the port range for the TCP and UDP protocols, or an ICMP/ICMPv6 type number.</p>
     /// <p>A value of -1 indicates all ICMP/ICMPv6 types. If you specify all ICMP/ICMPv6 types, you must specify all codes. </p>
-    pub fn from_port(&self) -> i32 {
+    pub fn from_port(&self) -> ::std::option::Option<i32> {
         self.from_port
     }
     /// <p>The end of the port range for the TCP and UDP protocols, or an ICMP/ICMPv6 code.</p>
     /// <p>A value of <code>-1</code> indicates all ICMP/ICMPv6 codes. If you specify all ICMP/ICMPv6 types, you must specify all codes.</p>
-    pub fn to_port(&self) -> i32 {
+    pub fn to_port(&self) -> ::std::option::Option<i32> {
         self.to_port
     }
     /// <p>The security group and Amazon Web Services account ID pairs.</p>
@@ -228,8 +228,8 @@ impl AwsEc2SecurityGroupIpPermissionBuilder {
     pub fn build(self) -> crate::types::AwsEc2SecurityGroupIpPermission {
         crate::types::AwsEc2SecurityGroupIpPermission {
             ip_protocol: self.ip_protocol,
-            from_port: self.from_port.unwrap_or_default(),
-            to_port: self.to_port.unwrap_or_default(),
+            from_port: self.from_port,
+            to_port: self.to_port,
             user_id_group_pairs: self.user_id_group_pairs,
             ip_ranges: self.ip_ranges,
             ipv6_ranges: self.ipv6_ranges,

@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CustomDataIdentifiersDetections {
     /// <p>The total number of occurrences of sensitive data that were detected.</p>
-    pub count: i64,
+    pub count: ::std::option::Option<i64>,
     /// <p>The ARN of the custom identifier that was used to detect the sensitive data.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>he name of the custom identifier that detected the sensitive data.</p>
@@ -15,7 +15,7 @@ pub struct CustomDataIdentifiersDetections {
 }
 impl CustomDataIdentifiersDetections {
     /// <p>The total number of occurrences of sensitive data that were detected.</p>
-    pub fn count(&self) -> i64 {
+    pub fn count(&self) -> ::std::option::Option<i64> {
         self.count
     }
     /// <p>The ARN of the custom identifier that was used to detect the sensitive data.</p>
@@ -107,7 +107,7 @@ impl CustomDataIdentifiersDetectionsBuilder {
     /// Consumes the builder and constructs a [`CustomDataIdentifiersDetections`](crate::types::CustomDataIdentifiersDetections).
     pub fn build(self) -> crate::types::CustomDataIdentifiersDetections {
         crate::types::CustomDataIdentifiersDetections {
-            count: self.count.unwrap_or_default(),
+            count: self.count,
             arn: self.arn,
             name: self.name,
             occurrences: self.occurrences,

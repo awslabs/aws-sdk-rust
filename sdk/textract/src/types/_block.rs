@@ -28,6 +28,19 @@ pub struct Block {
     /// <li> <p> <i>QUERY</i> - A question asked during the call of AnalyzeDocument. Contains an alias and an ID that attaches it to its answer.</p> </li>
     /// <li> <p> <i>QUERY_RESULT</i> - A response to a question asked during the call of analyze document. Comes with an alias and ID for ease of locating in a response. Also contains location and confidence score.</p> </li>
     /// </ul>
+    /// <p>The following BlockTypes are only returned for Amazon Textract Layout.</p>
+    /// <ul>
+    /// <li> <p> <code>LAYOUT_TITLE</code> - The main title of the document.</p> </li>
+    /// <li> <p> <code>LAYOUT_HEADER</code> - Text located in the top margin of the document.</p> </li>
+    /// <li> <p> <code>LAYOUT_FOOTER</code> - Text located in the bottom margin of the document.</p> </li>
+    /// <li> <p> <code>LAYOUT_SECTION_HEADER</code> - The titles of sections within a document.</p> </li>
+    /// <li> <p> <code>LAYOUT_PAGE_NUMBER</code> - The page number of the documents.</p> </li>
+    /// <li> <p> <code>LAYOUT_LIST</code> - Any information grouped together in list form. </p> </li>
+    /// <li> <p> <code>LAYOUT_FIGURE</code> - Indicates the location of an image in a document.</p> </li>
+    /// <li> <p> <code>LAYOUT_TABLE</code> - Indicates the location of a table in the document.</p> </li>
+    /// <li> <p> <code>LAYOUT_KEY_VALUE</code> - Indicates the location of form key-values in a document.</p> </li>
+    /// <li> <p> <code>LAYOUT_TEXT</code> - Text that is present typically as a part of paragraphs in documents.</p> </li>
+    /// </ul>
     pub block_type: ::std::option::Option<crate::types::BlockType>,
     /// <p>The confidence score that Amazon Textract has in the accuracy of the recognized text and the accuracy of the geometry points around the recognized text.</p>
     pub confidence: ::std::option::Option<f32>,
@@ -96,6 +109,19 @@ impl Block {
     /// <li> <p> <i>SIGNATURE</i> - The location and confidence score of a signature detected on a document page. Can be returned as part of a Key-Value pair or a detected cell.</p> </li>
     /// <li> <p> <i>QUERY</i> - A question asked during the call of AnalyzeDocument. Contains an alias and an ID that attaches it to its answer.</p> </li>
     /// <li> <p> <i>QUERY_RESULT</i> - A response to a question asked during the call of analyze document. Comes with an alias and ID for ease of locating in a response. Also contains location and confidence score.</p> </li>
+    /// </ul>
+    /// <p>The following BlockTypes are only returned for Amazon Textract Layout.</p>
+    /// <ul>
+    /// <li> <p> <code>LAYOUT_TITLE</code> - The main title of the document.</p> </li>
+    /// <li> <p> <code>LAYOUT_HEADER</code> - Text located in the top margin of the document.</p> </li>
+    /// <li> <p> <code>LAYOUT_FOOTER</code> - Text located in the bottom margin of the document.</p> </li>
+    /// <li> <p> <code>LAYOUT_SECTION_HEADER</code> - The titles of sections within a document.</p> </li>
+    /// <li> <p> <code>LAYOUT_PAGE_NUMBER</code> - The page number of the documents.</p> </li>
+    /// <li> <p> <code>LAYOUT_LIST</code> - Any information grouped together in list form. </p> </li>
+    /// <li> <p> <code>LAYOUT_FIGURE</code> - Indicates the location of an image in a document.</p> </li>
+    /// <li> <p> <code>LAYOUT_TABLE</code> - Indicates the location of a table in the document.</p> </li>
+    /// <li> <p> <code>LAYOUT_KEY_VALUE</code> - Indicates the location of form key-values in a document.</p> </li>
+    /// <li> <p> <code>LAYOUT_TEXT</code> - Text that is present typically as a part of paragraphs in documents.</p> </li>
     /// </ul>
     pub fn block_type(&self) -> ::std::option::Option<&crate::types::BlockType> {
         self.block_type.as_ref()
@@ -223,6 +249,19 @@ impl BlockBuilder {
     /// <li> <p> <i>QUERY</i> - A question asked during the call of AnalyzeDocument. Contains an alias and an ID that attaches it to its answer.</p> </li>
     /// <li> <p> <i>QUERY_RESULT</i> - A response to a question asked during the call of analyze document. Comes with an alias and ID for ease of locating in a response. Also contains location and confidence score.</p> </li>
     /// </ul>
+    /// <p>The following BlockTypes are only returned for Amazon Textract Layout.</p>
+    /// <ul>
+    /// <li> <p> <code>LAYOUT_TITLE</code> - The main title of the document.</p> </li>
+    /// <li> <p> <code>LAYOUT_HEADER</code> - Text located in the top margin of the document.</p> </li>
+    /// <li> <p> <code>LAYOUT_FOOTER</code> - Text located in the bottom margin of the document.</p> </li>
+    /// <li> <p> <code>LAYOUT_SECTION_HEADER</code> - The titles of sections within a document.</p> </li>
+    /// <li> <p> <code>LAYOUT_PAGE_NUMBER</code> - The page number of the documents.</p> </li>
+    /// <li> <p> <code>LAYOUT_LIST</code> - Any information grouped together in list form. </p> </li>
+    /// <li> <p> <code>LAYOUT_FIGURE</code> - Indicates the location of an image in a document.</p> </li>
+    /// <li> <p> <code>LAYOUT_TABLE</code> - Indicates the location of a table in the document.</p> </li>
+    /// <li> <p> <code>LAYOUT_KEY_VALUE</code> - Indicates the location of form key-values in a document.</p> </li>
+    /// <li> <p> <code>LAYOUT_TEXT</code> - Text that is present typically as a part of paragraphs in documents.</p> </li>
+    /// </ul>
     pub fn block_type(mut self, input: crate::types::BlockType) -> Self {
         self.block_type = ::std::option::Option::Some(input);
         self
@@ -249,6 +288,19 @@ impl BlockBuilder {
     /// <li> <p> <i>QUERY</i> - A question asked during the call of AnalyzeDocument. Contains an alias and an ID that attaches it to its answer.</p> </li>
     /// <li> <p> <i>QUERY_RESULT</i> - A response to a question asked during the call of analyze document. Comes with an alias and ID for ease of locating in a response. Also contains location and confidence score.</p> </li>
     /// </ul>
+    /// <p>The following BlockTypes are only returned for Amazon Textract Layout.</p>
+    /// <ul>
+    /// <li> <p> <code>LAYOUT_TITLE</code> - The main title of the document.</p> </li>
+    /// <li> <p> <code>LAYOUT_HEADER</code> - Text located in the top margin of the document.</p> </li>
+    /// <li> <p> <code>LAYOUT_FOOTER</code> - Text located in the bottom margin of the document.</p> </li>
+    /// <li> <p> <code>LAYOUT_SECTION_HEADER</code> - The titles of sections within a document.</p> </li>
+    /// <li> <p> <code>LAYOUT_PAGE_NUMBER</code> - The page number of the documents.</p> </li>
+    /// <li> <p> <code>LAYOUT_LIST</code> - Any information grouped together in list form. </p> </li>
+    /// <li> <p> <code>LAYOUT_FIGURE</code> - Indicates the location of an image in a document.</p> </li>
+    /// <li> <p> <code>LAYOUT_TABLE</code> - Indicates the location of a table in the document.</p> </li>
+    /// <li> <p> <code>LAYOUT_KEY_VALUE</code> - Indicates the location of form key-values in a document.</p> </li>
+    /// <li> <p> <code>LAYOUT_TEXT</code> - Text that is present typically as a part of paragraphs in documents.</p> </li>
+    /// </ul>
     pub fn set_block_type(mut self, input: ::std::option::Option<crate::types::BlockType>) -> Self {
         self.block_type = input;
         self
@@ -274,6 +326,19 @@ impl BlockBuilder {
     /// <li> <p> <i>SIGNATURE</i> - The location and confidence score of a signature detected on a document page. Can be returned as part of a Key-Value pair or a detected cell.</p> </li>
     /// <li> <p> <i>QUERY</i> - A question asked during the call of AnalyzeDocument. Contains an alias and an ID that attaches it to its answer.</p> </li>
     /// <li> <p> <i>QUERY_RESULT</i> - A response to a question asked during the call of analyze document. Comes with an alias and ID for ease of locating in a response. Also contains location and confidence score.</p> </li>
+    /// </ul>
+    /// <p>The following BlockTypes are only returned for Amazon Textract Layout.</p>
+    /// <ul>
+    /// <li> <p> <code>LAYOUT_TITLE</code> - The main title of the document.</p> </li>
+    /// <li> <p> <code>LAYOUT_HEADER</code> - Text located in the top margin of the document.</p> </li>
+    /// <li> <p> <code>LAYOUT_FOOTER</code> - Text located in the bottom margin of the document.</p> </li>
+    /// <li> <p> <code>LAYOUT_SECTION_HEADER</code> - The titles of sections within a document.</p> </li>
+    /// <li> <p> <code>LAYOUT_PAGE_NUMBER</code> - The page number of the documents.</p> </li>
+    /// <li> <p> <code>LAYOUT_LIST</code> - Any information grouped together in list form. </p> </li>
+    /// <li> <p> <code>LAYOUT_FIGURE</code> - Indicates the location of an image in a document.</p> </li>
+    /// <li> <p> <code>LAYOUT_TABLE</code> - Indicates the location of a table in the document.</p> </li>
+    /// <li> <p> <code>LAYOUT_KEY_VALUE</code> - Indicates the location of form key-values in a document.</p> </li>
+    /// <li> <p> <code>LAYOUT_TEXT</code> - Text that is present typically as a part of paragraphs in documents.</p> </li>
     /// </ul>
     pub fn get_block_type(&self) -> &::std::option::Option<crate::types::BlockType> {
         &self.block_type

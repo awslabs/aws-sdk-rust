@@ -3,23 +3,23 @@ pub fn ser_aws_amazon_mq_broker_logs_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsAmazonMqBrokerLogsDetails,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if input.audit {
-        object.key("Audit").boolean(input.audit);
+    if let Some(var_1) = &input.audit {
+        object.key("Audit").boolean(*var_1);
     }
-    if input.general {
-        object.key("General").boolean(input.general);
+    if let Some(var_2) = &input.general {
+        object.key("General").boolean(*var_2);
     }
-    if let Some(var_1) = &input.audit_log_group {
-        object.key("AuditLogGroup").string(var_1.as_str());
+    if let Some(var_3) = &input.audit_log_group {
+        object.key("AuditLogGroup").string(var_3.as_str());
     }
-    if let Some(var_2) = &input.general_log_group {
-        object.key("GeneralLogGroup").string(var_2.as_str());
+    if let Some(var_4) = &input.general_log_group {
+        object.key("GeneralLogGroup").string(var_4.as_str());
     }
-    if let Some(var_3) = &input.pending {
+    if let Some(var_5) = &input.pending {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("Pending").start_object();
-        crate::protocol_serde::shape_aws_amazon_mq_broker_logs_pending_details::ser_aws_amazon_mq_broker_logs_pending_details(&mut object_4, var_3)?;
-        object_4.finish();
+        let mut object_6 = object.key("Pending").start_object();
+        crate::protocol_serde::shape_aws_amazon_mq_broker_logs_pending_details::ser_aws_amazon_mq_broker_logs_pending_details(&mut object_6, var_5)?;
+        object_6.finish();
     }
     Ok(())
 }

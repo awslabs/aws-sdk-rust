@@ -8,7 +8,7 @@ pub struct AwsS3BucketBucketLifecycleConfigurationRulesTransitionsDetails {
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     pub date: ::std::option::Option<::std::string::String>,
     /// <p>The number of days after which to transition the object to the specified storage class. If you provide <code>Days</code>, you cannot provide <code>Date</code>.</p>
-    pub days: i32,
+    pub days: ::std::option::Option<i32>,
     /// <p>The storage class to transition the object to. Valid values are as follows:</p>
     /// <ul>
     /// <li> <p> <code>DEEP_ARCHIVE</code> </p> </li>
@@ -26,7 +26,7 @@ impl AwsS3BucketBucketLifecycleConfigurationRulesTransitionsDetails {
         self.date.as_deref()
     }
     /// <p>The number of days after which to transition the object to the specified storage class. If you provide <code>Days</code>, you cannot provide <code>Date</code>.</p>
-    pub fn days(&self) -> i32 {
+    pub fn days(&self) -> ::std::option::Option<i32> {
         self.days
     }
     /// <p>The storage class to transition the object to. Valid values are as follows:</p>
@@ -127,7 +127,7 @@ impl AwsS3BucketBucketLifecycleConfigurationRulesTransitionsDetailsBuilder {
     pub fn build(self) -> crate::types::AwsS3BucketBucketLifecycleConfigurationRulesTransitionsDetails {
         crate::types::AwsS3BucketBucketLifecycleConfigurationRulesTransitionsDetails {
             date: self.date,
-            days: self.days.unwrap_or_default(),
+            days: self.days,
             storage_class: self.storage_class,
         }
     }

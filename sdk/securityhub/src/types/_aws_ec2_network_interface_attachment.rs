@@ -10,9 +10,9 @@ pub struct AwsEc2NetworkInterfaceAttachment {
     /// <p>The identifier of the network interface attachment</p>
     pub attachment_id: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the network interface is deleted when the instance is terminated.</p>
-    pub delete_on_termination: bool,
+    pub delete_on_termination: ::std::option::Option<bool>,
     /// <p>The device index of the network interface attachment on the instance.</p>
-    pub device_index: i32,
+    pub device_index: ::std::option::Option<i32>,
     /// <p>The ID of the instance.</p>
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account ID of the owner of the instance.</p>
@@ -32,11 +32,11 @@ impl AwsEc2NetworkInterfaceAttachment {
         self.attachment_id.as_deref()
     }
     /// <p>Indicates whether the network interface is deleted when the instance is terminated.</p>
-    pub fn delete_on_termination(&self) -> bool {
+    pub fn delete_on_termination(&self) -> ::std::option::Option<bool> {
         self.delete_on_termination
     }
     /// <p>The device index of the network interface attachment on the instance.</p>
-    pub fn device_index(&self) -> i32 {
+    pub fn device_index(&self) -> ::std::option::Option<i32> {
         self.device_index
     }
     /// <p>The ID of the instance.</p>
@@ -182,8 +182,8 @@ impl AwsEc2NetworkInterfaceAttachmentBuilder {
         crate::types::AwsEc2NetworkInterfaceAttachment {
             attach_time: self.attach_time,
             attachment_id: self.attachment_id,
-            delete_on_termination: self.delete_on_termination.unwrap_or_default(),
-            device_index: self.device_index.unwrap_or_default(),
+            delete_on_termination: self.delete_on_termination,
+            device_index: self.device_index,
             instance_id: self.instance_id,
             instance_owner_id: self.instance_owner_id,
             status: self.status,

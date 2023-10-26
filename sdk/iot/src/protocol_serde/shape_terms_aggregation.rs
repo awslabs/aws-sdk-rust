@@ -3,10 +3,10 @@ pub fn ser_terms_aggregation(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TermsAggregation,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if input.max_buckets != 0 {
+    if let Some(var_1) = &input.max_buckets {
         object.key("maxBuckets").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.max_buckets).into()),
+            ::aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
     Ok(())

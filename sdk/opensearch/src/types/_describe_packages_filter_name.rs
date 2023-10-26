@@ -12,9 +12,11 @@
 /// ```text
 /// # let describepackagesfiltername = unimplemented!();
 /// match describepackagesfiltername {
+///     DescribePackagesFilterName::EngineVersion => { /* ... */ },
 ///     DescribePackagesFilterName::PackageId => { /* ... */ },
 ///     DescribePackagesFilterName::PackageName => { /* ... */ },
 ///     DescribePackagesFilterName::PackageStatus => { /* ... */ },
+///     DescribePackagesFilterName::PackageType => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -43,20 +45,26 @@
 )]
 pub enum DescribePackagesFilterName {
     #[allow(missing_docs)] // documentation missing in model
+    EngineVersion,
+    #[allow(missing_docs)] // documentation missing in model
     PackageId,
     #[allow(missing_docs)] // documentation missing in model
     PackageName,
     #[allow(missing_docs)] // documentation missing in model
     PackageStatus,
+    #[allow(missing_docs)] // documentation missing in model
+    PackageType,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
 impl ::std::convert::From<&str> for DescribePackagesFilterName {
     fn from(s: &str) -> Self {
         match s {
+            "EngineVersion" => DescribePackagesFilterName::EngineVersion,
             "PackageID" => DescribePackagesFilterName::PackageId,
             "PackageName" => DescribePackagesFilterName::PackageName,
             "PackageStatus" => DescribePackagesFilterName::PackageStatus,
+            "PackageType" => DescribePackagesFilterName::PackageType,
             other => DescribePackagesFilterName::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -72,15 +80,17 @@ impl DescribePackagesFilterName {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            DescribePackagesFilterName::EngineVersion => "EngineVersion",
             DescribePackagesFilterName::PackageId => "PackageID",
             DescribePackagesFilterName::PackageName => "PackageName",
             DescribePackagesFilterName::PackageStatus => "PackageStatus",
+            DescribePackagesFilterName::PackageType => "PackageType",
             DescribePackagesFilterName::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["PackageID", "PackageName", "PackageStatus"]
+        &["EngineVersion", "PackageID", "PackageName", "PackageStatus", "PackageType"]
     }
 }
 impl ::std::convert::AsRef<str> for DescribePackagesFilterName {

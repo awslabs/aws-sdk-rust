@@ -9,7 +9,7 @@ pub struct Finding {
     /// <p>The ARN of the finding.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The confidence score for the finding.</p>
-    pub confidence: f64,
+    pub confidence: ::std::option::Option<f64>,
     /// <p>The time and date when the finding was created.</p>
     pub created_at: ::std::option::Option<::std::string::String>,
     /// <p>The description of the finding.</p>
@@ -27,7 +27,7 @@ pub struct Finding {
     /// <p>Contains additional information about the generated finding.</p>
     pub service: ::std::option::Option<crate::types::Service>,
     /// <p>The severity of the finding.</p>
-    pub severity: f64,
+    pub severity: ::std::option::Option<f64>,
     /// <p>The title of the finding.</p>
     pub title: ::std::option::Option<::std::string::String>,
     /// <p>The type of finding.</p>
@@ -45,7 +45,7 @@ impl Finding {
         self.arn.as_deref()
     }
     /// <p>The confidence score for the finding.</p>
-    pub fn confidence(&self) -> f64 {
+    pub fn confidence(&self) -> ::std::option::Option<f64> {
         self.confidence
     }
     /// <p>The time and date when the finding was created.</p>
@@ -81,7 +81,7 @@ impl Finding {
         self.service.as_ref()
     }
     /// <p>The severity of the finding.</p>
-    pub fn severity(&self) -> f64 {
+    pub fn severity(&self) -> ::std::option::Option<f64> {
         self.severity
     }
     /// <p>The title of the finding.</p>
@@ -340,7 +340,7 @@ impl FindingBuilder {
         crate::types::Finding {
             account_id: self.account_id,
             arn: self.arn,
-            confidence: self.confidence.unwrap_or_default(),
+            confidence: self.confidence,
             created_at: self.created_at,
             description: self.description,
             id: self.id,
@@ -349,7 +349,7 @@ impl FindingBuilder {
             resource: self.resource,
             schema_version: self.schema_version,
             service: self.service,
-            severity: self.severity.unwrap_or_default(),
+            severity: self.severity,
             title: self.title,
             r#type: self.r#type,
             updated_at: self.updated_at,

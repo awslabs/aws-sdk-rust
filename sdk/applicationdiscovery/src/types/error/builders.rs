@@ -16,3 +16,5 @@ pub use crate::types::error::_resource_in_use_exception::ResourceInUseExceptionB
 pub use crate::types::error::_operation_not_permitted_exception::OperationNotPermittedExceptionBuilder;
 
 pub use crate::types::error::_conflict_error_exception::ConflictErrorExceptionBuilder;
+
+pub use crate::types::error::_limit_exceeded_exception::LimitExceededExceptionBuilder;

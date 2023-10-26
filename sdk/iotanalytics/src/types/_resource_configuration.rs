@@ -7,7 +7,7 @@ pub struct ResourceConfiguration {
     /// <p>The type of the compute resource used to execute the <code>containerAction</code>. Possible values are: <code>ACU_1</code> (vCPU=4, memory=16 GiB) or <code>ACU_2</code> (vCPU=8, memory=32 GiB).</p>
     pub compute_type: ::std::option::Option<crate::types::ComputeType>,
     /// <p>The size, in GB, of the persistent storage available to the resource instance used to execute the <code>containerAction</code> (min: 1, max: 50).</p>
-    pub volume_size_in_gb: i32,
+    pub volume_size_in_gb: ::std::option::Option<i32>,
 }
 impl ResourceConfiguration {
     /// <p>The type of the compute resource used to execute the <code>containerAction</code>. Possible values are: <code>ACU_1</code> (vCPU=4, memory=16 GiB) or <code>ACU_2</code> (vCPU=8, memory=32 GiB).</p>
@@ -15,7 +15,7 @@ impl ResourceConfiguration {
         self.compute_type.as_ref()
     }
     /// <p>The size, in GB, of the persistent storage available to the resource instance used to execute the <code>containerAction</code> (min: 1, max: 50).</p>
-    pub fn volume_size_in_gb(&self) -> i32 {
+    pub fn volume_size_in_gb(&self) -> ::std::option::Option<i32> {
         self.volume_size_in_gb
     }
 }
@@ -66,7 +66,7 @@ impl ResourceConfigurationBuilder {
     pub fn build(self) -> crate::types::ResourceConfiguration {
         crate::types::ResourceConfiguration {
             compute_type: self.compute_type,
-            volume_size_in_gb: self.volume_size_in_gb.unwrap_or_default(),
+            volume_size_in_gb: self.volume_size_in_gb,
         }
     }
 }

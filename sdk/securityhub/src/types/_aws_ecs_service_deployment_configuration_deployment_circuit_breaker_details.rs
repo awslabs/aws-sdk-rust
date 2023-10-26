@@ -5,17 +5,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails {
     /// <p>Whether to enable the deployment circuit breaker logic for the service.</p>
-    pub enable: bool,
+    pub enable: ::std::option::Option<bool>,
     /// <p>Whether to roll back the service if a service deployment fails. If rollback is enabled, when a service deployment fails, the service is rolled back to the last deployment that completed successfully.</p>
-    pub rollback: bool,
+    pub rollback: ::std::option::Option<bool>,
 }
 impl AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails {
     /// <p>Whether to enable the deployment circuit breaker logic for the service.</p>
-    pub fn enable(&self) -> bool {
+    pub fn enable(&self) -> ::std::option::Option<bool> {
         self.enable
     }
     /// <p>Whether to roll back the service if a service deployment fails. If rollback is enabled, when a service deployment fails, the service is rolled back to the last deployment that completed successfully.</p>
-    pub fn rollback(&self) -> bool {
+    pub fn rollback(&self) -> ::std::option::Option<bool> {
         self.rollback
     }
 }
@@ -65,8 +65,8 @@ impl AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetailsBuilder 
     /// Consumes the builder and constructs a [`AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails`](crate::types::AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails).
     pub fn build(self) -> crate::types::AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails {
         crate::types::AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails {
-            enable: self.enable.unwrap_or_default(),
-            rollback: self.rollback.unwrap_or_default(),
+            enable: self.enable,
+            rollback: self.rollback,
         }
     }
 }

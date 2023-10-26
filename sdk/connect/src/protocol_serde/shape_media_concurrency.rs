@@ -6,17 +6,17 @@ pub fn ser_media_concurrency(
     if let Some(var_1) = &input.channel {
         object.key("Channel").string(var_1.as_str());
     }
-    {
+    if let Some(var_2) = &input.concurrency {
         object.key("Concurrency").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.concurrency).into()),
+            ::aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
-    if let Some(var_2) = &input.cross_channel_behavior {
+    if let Some(var_3) = &input.cross_channel_behavior {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("CrossChannelBehavior").start_object();
-        crate::protocol_serde::shape_cross_channel_behavior::ser_cross_channel_behavior(&mut object_3, var_2)?;
-        object_3.finish();
+        let mut object_4 = object.key("CrossChannelBehavior").start_object();
+        crate::protocol_serde::shape_cross_channel_behavior::ser_cross_channel_behavior(&mut object_4, var_3)?;
+        object_4.finish();
     }
     Ok(())
 }

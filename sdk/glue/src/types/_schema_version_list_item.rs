@@ -9,7 +9,7 @@ pub struct SchemaVersionListItem {
     /// <p>The unique identifier of the schema version.</p>
     pub schema_version_id: ::std::option::Option<::std::string::String>,
     /// <p>The version number of the schema.</p>
-    pub version_number: i64,
+    pub version_number: ::std::option::Option<i64>,
     /// <p>The status of the schema version.</p>
     pub status: ::std::option::Option<crate::types::SchemaVersionStatus>,
     /// <p>The date and time the schema version was created.</p>
@@ -25,7 +25,7 @@ impl SchemaVersionListItem {
         self.schema_version_id.as_deref()
     }
     /// <p>The version number of the schema.</p>
-    pub fn version_number(&self) -> i64 {
+    pub fn version_number(&self) -> ::std::option::Option<i64> {
         self.version_number
     }
     /// <p>The status of the schema version.</p>
@@ -130,7 +130,7 @@ impl SchemaVersionListItemBuilder {
         crate::types::SchemaVersionListItem {
             schema_arn: self.schema_arn,
             schema_version_id: self.schema_version_id,
-            version_number: self.version_number.unwrap_or_default(),
+            version_number: self.version_number,
             status: self.status,
             created_time: self.created_time,
         }

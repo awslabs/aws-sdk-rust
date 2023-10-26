@@ -19,7 +19,7 @@ pub struct Parameter {
     /// <p>Specifies how to apply the WLM configuration parameter. Some properties can be applied dynamically, while other properties require that any associated clusters be rebooted for the configuration changes to be applied. For more information about parameters and parameter groups, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
     pub apply_type: ::std::option::Option<crate::types::ParameterApplyType>,
     /// <p>If <code>true</code>, the parameter can be modified. Some parameters have security or operational implications that prevent them from being changed. </p>
-    pub is_modifiable: bool,
+    pub is_modifiable: ::std::option::Option<bool>,
     /// <p>The earliest engine version to which the parameter can apply.</p>
     pub minimum_engine_version: ::std::option::Option<::std::string::String>,
 }
@@ -53,7 +53,7 @@ impl Parameter {
         self.apply_type.as_ref()
     }
     /// <p>If <code>true</code>, the parameter can be modified. Some parameters have security or operational implications that prevent them from being changed. </p>
-    pub fn is_modifiable(&self) -> bool {
+    pub fn is_modifiable(&self) -> ::std::option::Option<bool> {
         self.is_modifiable
     }
     /// <p>The earliest engine version to which the parameter can apply.</p>
@@ -219,7 +219,7 @@ impl ParameterBuilder {
             data_type: self.data_type,
             allowed_values: self.allowed_values,
             apply_type: self.apply_type,
-            is_modifiable: self.is_modifiable.unwrap_or_default(),
+            is_modifiable: self.is_modifiable,
             minimum_engine_version: self.minimum_engine_version,
         }
     }

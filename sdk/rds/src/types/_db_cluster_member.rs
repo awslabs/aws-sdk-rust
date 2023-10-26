@@ -7,7 +7,7 @@ pub struct DbClusterMember {
     /// <p>Specifies the instance identifier for this member of the DB cluster.</p>
     pub db_instance_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the cluster member is the primary DB instance for the DB cluster.</p>
-    pub is_cluster_writer: bool,
+    pub is_cluster_writer: ::std::option::Option<bool>,
     /// <p>Specifies the status of the DB cluster parameter group for this member of the DB cluster.</p>
     pub db_cluster_parameter_group_status: ::std::option::Option<::std::string::String>,
     /// <p>A value that specifies the order in which an Aurora Replica is promoted to the primary instance after a failure of the existing primary instance. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.FaultTolerance"> Fault Tolerance for an Aurora DB Cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
@@ -19,7 +19,7 @@ impl DbClusterMember {
         self.db_instance_identifier.as_deref()
     }
     /// <p>Indicates whether the cluster member is the primary DB instance for the DB cluster.</p>
-    pub fn is_cluster_writer(&self) -> bool {
+    pub fn is_cluster_writer(&self) -> ::std::option::Option<bool> {
         self.is_cluster_writer
     }
     /// <p>Specifies the status of the DB cluster parameter group for this member of the DB cluster.</p>
@@ -108,7 +108,7 @@ impl DbClusterMemberBuilder {
     pub fn build(self) -> crate::types::DbClusterMember {
         crate::types::DbClusterMember {
             db_instance_identifier: self.db_instance_identifier,
-            is_cluster_writer: self.is_cluster_writer.unwrap_or_default(),
+            is_cluster_writer: self.is_cluster_writer,
             db_cluster_parameter_group_status: self.db_cluster_parameter_group_status,
             promotion_tier: self.promotion_tier,
         }

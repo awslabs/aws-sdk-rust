@@ -73,44 +73,42 @@ pub fn ser_hyper_parameter_training_job_definition(
         crate::protocol_serde::shape_stopping_condition::ser_stopping_condition(&mut object_24, var_23)?;
         object_24.finish();
     }
-    if input.enable_network_isolation {
-        object.key("EnableNetworkIsolation").boolean(input.enable_network_isolation);
+    if let Some(var_25) = &input.enable_network_isolation {
+        object.key("EnableNetworkIsolation").boolean(*var_25);
     }
-    if input.enable_inter_container_traffic_encryption {
-        object
-            .key("EnableInterContainerTrafficEncryption")
-            .boolean(input.enable_inter_container_traffic_encryption);
+    if let Some(var_26) = &input.enable_inter_container_traffic_encryption {
+        object.key("EnableInterContainerTrafficEncryption").boolean(*var_26);
     }
-    if input.enable_managed_spot_training {
-        object.key("EnableManagedSpotTraining").boolean(input.enable_managed_spot_training);
+    if let Some(var_27) = &input.enable_managed_spot_training {
+        object.key("EnableManagedSpotTraining").boolean(*var_27);
     }
-    if let Some(var_25) = &input.checkpoint_config {
+    if let Some(var_28) = &input.checkpoint_config {
         #[allow(unused_mut)]
-        let mut object_26 = object.key("CheckpointConfig").start_object();
-        crate::protocol_serde::shape_checkpoint_config::ser_checkpoint_config(&mut object_26, var_25)?;
-        object_26.finish();
+        let mut object_29 = object.key("CheckpointConfig").start_object();
+        crate::protocol_serde::shape_checkpoint_config::ser_checkpoint_config(&mut object_29, var_28)?;
+        object_29.finish();
     }
-    if let Some(var_27) = &input.retry_strategy {
+    if let Some(var_30) = &input.retry_strategy {
         #[allow(unused_mut)]
-        let mut object_28 = object.key("RetryStrategy").start_object();
-        crate::protocol_serde::shape_retry_strategy::ser_retry_strategy(&mut object_28, var_27)?;
-        object_28.finish();
+        let mut object_31 = object.key("RetryStrategy").start_object();
+        crate::protocol_serde::shape_retry_strategy::ser_retry_strategy(&mut object_31, var_30)?;
+        object_31.finish();
     }
-    if let Some(var_29) = &input.hyper_parameter_tuning_resource_config {
+    if let Some(var_32) = &input.hyper_parameter_tuning_resource_config {
         #[allow(unused_mut)]
-        let mut object_30 = object.key("HyperParameterTuningResourceConfig").start_object();
-        crate::protocol_serde::shape_hyper_parameter_tuning_resource_config::ser_hyper_parameter_tuning_resource_config(&mut object_30, var_29)?;
-        object_30.finish();
+        let mut object_33 = object.key("HyperParameterTuningResourceConfig").start_object();
+        crate::protocol_serde::shape_hyper_parameter_tuning_resource_config::ser_hyper_parameter_tuning_resource_config(&mut object_33, var_32)?;
+        object_33.finish();
     }
-    if let Some(var_31) = &input.environment {
+    if let Some(var_34) = &input.environment {
         #[allow(unused_mut)]
-        let mut object_32 = object.key("Environment").start_object();
-        for (key_33, value_34) in var_31 {
+        let mut object_35 = object.key("Environment").start_object();
+        for (key_36, value_37) in var_34 {
             {
-                object_32.key(key_33.as_str()).string(value_34.as_str());
+                object_35.key(key_36.as_str()).string(value_37.as_str());
             }
         }
-        object_32.finish();
+        object_35.finish();
     }
     Ok(())
 }

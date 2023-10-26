@@ -1120,6 +1120,9 @@ pub mod disable_fast_launch;
 /// Types for the `DisableFastSnapshotRestores` operation.
 pub mod disable_fast_snapshot_restores;
 
+/// Types for the `DisableImage` operation.
+pub mod disable_image;
+
 /// Types for the `DisableImageBlockPublicAccess` operation.
 pub mod disable_image_block_public_access;
 
@@ -1200,6 +1203,9 @@ pub mod enable_fast_launch;
 
 /// Types for the `EnableFastSnapshotRestores` operation.
 pub mod enable_fast_snapshot_restores;
+
+/// Types for the `EnableImage` operation.
+pub mod enable_image;
 
 /// Types for the `EnableImageBlockPublicAccess` operation.
 pub mod enable_image_block_public_access;

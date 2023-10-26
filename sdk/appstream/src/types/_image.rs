@@ -17,7 +17,7 @@ pub struct Image {
     /// <p>Indicates whether the image is public or private.</p>
     pub visibility: ::std::option::Option<crate::types::VisibilityType>,
     /// <p>Indicates whether an image builder can be launched from this image.</p>
-    pub image_builder_supported: bool,
+    pub image_builder_supported: ::std::option::Option<bool>,
     /// <p>The name of the image builder that was used to create the private image. If the image is shared, this value is null.</p>
     pub image_builder_name: ::std::option::Option<::std::string::String>,
     /// <p>The operating system platform of the image.</p>
@@ -65,7 +65,7 @@ impl Image {
         self.visibility.as_ref()
     }
     /// <p>Indicates whether an image builder can be launched from this image.</p>
-    pub fn image_builder_supported(&self) -> bool {
+    pub fn image_builder_supported(&self) -> ::std::option::Option<bool> {
         self.image_builder_supported
     }
     /// <p>The name of the image builder that was used to create the private image. If the image is shared, this value is null.</p>
@@ -398,7 +398,7 @@ impl ImageBuilder {
             display_name: self.display_name,
             state: self.state,
             visibility: self.visibility,
-            image_builder_supported: self.image_builder_supported.unwrap_or_default(),
+            image_builder_supported: self.image_builder_supported,
             image_builder_name: self.image_builder_name,
             platform: self.platform,
             description: self.description,

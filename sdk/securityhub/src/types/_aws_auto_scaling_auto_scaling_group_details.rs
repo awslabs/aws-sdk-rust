@@ -11,7 +11,7 @@ pub struct AwsAutoScalingAutoScalingGroupDetails {
     /// <p>The service to use for the health checks. Valid values are <code>EC2</code> or <code>ELB</code>.</p>
     pub health_check_type: ::std::option::Option<::std::string::String>,
     /// <p>The amount of time, in seconds, that Amazon EC2 Auto Scaling waits before it checks the health status of an EC2 instance that has come into service.</p>
-    pub health_check_grace_period: i32,
+    pub health_check_grace_period: ::std::option::Option<i32>,
     /// <p>Indicates when the auto scaling group was created.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     pub created_time: ::std::option::Option<::std::string::String>,
@@ -22,7 +22,7 @@ pub struct AwsAutoScalingAutoScalingGroupDetails {
     /// <p>The launch template to use.</p>
     pub launch_template: ::std::option::Option<crate::types::AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecification>,
     /// <p>Indicates whether capacity rebalancing is enabled. </p>
-    pub capacity_rebalance: bool,
+    pub capacity_rebalance: ::std::option::Option<bool>,
 }
 impl AwsAutoScalingAutoScalingGroupDetails {
     /// <p>The name of the launch configuration.</p>
@@ -38,7 +38,7 @@ impl AwsAutoScalingAutoScalingGroupDetails {
         self.health_check_type.as_deref()
     }
     /// <p>The amount of time, in seconds, that Amazon EC2 Auto Scaling waits before it checks the health status of an EC2 instance that has come into service.</p>
-    pub fn health_check_grace_period(&self) -> i32 {
+    pub fn health_check_grace_period(&self) -> ::std::option::Option<i32> {
         self.health_check_grace_period
     }
     /// <p>Indicates when the auto scaling group was created.</p>
@@ -59,7 +59,7 @@ impl AwsAutoScalingAutoScalingGroupDetails {
         self.launch_template.as_ref()
     }
     /// <p>Indicates whether capacity rebalancing is enabled. </p>
-    pub fn capacity_rebalance(&self) -> bool {
+    pub fn capacity_rebalance(&self) -> ::std::option::Option<bool> {
         self.capacity_rebalance
     }
 }
@@ -245,12 +245,12 @@ impl AwsAutoScalingAutoScalingGroupDetailsBuilder {
             launch_configuration_name: self.launch_configuration_name,
             load_balancer_names: self.load_balancer_names,
             health_check_type: self.health_check_type,
-            health_check_grace_period: self.health_check_grace_period.unwrap_or_default(),
+            health_check_grace_period: self.health_check_grace_period,
             created_time: self.created_time,
             mixed_instances_policy: self.mixed_instances_policy,
             availability_zones: self.availability_zones,
             launch_template: self.launch_template,
-            capacity_rebalance: self.capacity_rebalance.unwrap_or_default(),
+            capacity_rebalance: self.capacity_rebalance,
         }
     }
 }

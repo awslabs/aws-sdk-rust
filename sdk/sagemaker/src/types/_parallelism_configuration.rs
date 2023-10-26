@@ -5,11 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ParallelismConfiguration {
     /// <p>The max number of steps that can be executed in parallel. </p>
-    pub max_parallel_execution_steps: i32,
+    pub max_parallel_execution_steps: ::std::option::Option<i32>,
 }
 impl ParallelismConfiguration {
     /// <p>The max number of steps that can be executed in parallel. </p>
-    pub fn max_parallel_execution_steps(&self) -> i32 {
+    pub fn max_parallel_execution_steps(&self) -> ::std::option::Option<i32> {
         self.max_parallel_execution_steps
     }
 }
@@ -44,7 +44,7 @@ impl ParallelismConfigurationBuilder {
     /// Consumes the builder and constructs a [`ParallelismConfiguration`](crate::types::ParallelismConfiguration).
     pub fn build(self) -> crate::types::ParallelismConfiguration {
         crate::types::ParallelismConfiguration {
-            max_parallel_execution_steps: self.max_parallel_execution_steps.unwrap_or_default(),
+            max_parallel_execution_steps: self.max_parallel_execution_steps,
         }
     }
 }

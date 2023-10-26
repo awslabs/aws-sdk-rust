@@ -7,7 +7,7 @@ pub struct AwsWafv2CustomResponseDetails {
     /// <p> References the response body that you want WAF to return to the web request client. You can define a custom response for a rule action or a default web ACL action that is set to block. </p>
     pub custom_response_body_key: ::std::option::Option<::std::string::String>,
     /// <p> The HTTP status code to return to the client. For a list of status codes that you can use in your custom responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/customizing-the-response-status-codes.html">Supported status codes for custom response</a> in the <i>WAF Developer Guide.</i> </p>
-    pub response_code: i32,
+    pub response_code: ::std::option::Option<i32>,
     /// <p> The HTTP headers to use in the response. </p>
     pub response_headers: ::std::option::Option<::std::vec::Vec<crate::types::AwsWafv2CustomHttpHeader>>,
 }
@@ -17,7 +17,7 @@ impl AwsWafv2CustomResponseDetails {
         self.custom_response_body_key.as_deref()
     }
     /// <p> The HTTP status code to return to the client. For a list of status codes that you can use in your custom responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/customizing-the-response-status-codes.html">Supported status codes for custom response</a> in the <i>WAF Developer Guide.</i> </p>
-    pub fn response_code(&self) -> i32 {
+    pub fn response_code(&self) -> ::std::option::Option<i32> {
         self.response_code
     }
     /// <p> The HTTP headers to use in the response. </p>
@@ -93,7 +93,7 @@ impl AwsWafv2CustomResponseDetailsBuilder {
     pub fn build(self) -> crate::types::AwsWafv2CustomResponseDetails {
         crate::types::AwsWafv2CustomResponseDetails {
             custom_response_body_key: self.custom_response_body_key,
-            response_code: self.response_code.unwrap_or_default(),
+            response_code: self.response_code,
             response_headers: self.response_headers,
         }
     }

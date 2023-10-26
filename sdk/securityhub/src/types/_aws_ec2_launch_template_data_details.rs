@@ -13,11 +13,11 @@ pub struct AwsEc2LaunchTemplateDataDetails {
     /// <p> Specifies the credit option for CPU usage of a T2, T3, or T3a instance. </p>
     pub credit_specification: ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataCreditSpecificationDetails>,
     /// <p> Indicates whether to enable the instance for stop protection. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html#Using_StopProtection">Enable stop protection</a> in the <i>Amazon EC2 User Guide</i>. </p>
-    pub disable_api_stop: bool,
+    pub disable_api_stop: ::std::option::Option<bool>,
     /// <p> If you set this parameter to <code>true</code>, you can't terminate the instance using the Amazon EC2 console, CLI, or API. If set to <code>true</code>, you can. </p>
-    pub disable_api_termination: bool,
+    pub disable_api_termination: ::std::option::Option<bool>,
     /// <p> Indicates whether the instance is optimized for Amazon EBS I/O. </p>
-    pub ebs_optimized: bool,
+    pub ebs_optimized: ::std::option::Option<bool>,
     /// <p> Provides details about Elastic Graphics accelerators to associate with the instance. </p>
     pub elastic_gpu_specification_set:
         ::std::option::Option<::std::vec::Vec<crate::types::AwsEc2LaunchTemplateDataElasticGpuSpecificationSetDetails>>,
@@ -87,15 +87,15 @@ impl AwsEc2LaunchTemplateDataDetails {
         self.credit_specification.as_ref()
     }
     /// <p> Indicates whether to enable the instance for stop protection. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html#Using_StopProtection">Enable stop protection</a> in the <i>Amazon EC2 User Guide</i>. </p>
-    pub fn disable_api_stop(&self) -> bool {
+    pub fn disable_api_stop(&self) -> ::std::option::Option<bool> {
         self.disable_api_stop
     }
     /// <p> If you set this parameter to <code>true</code>, you can't terminate the instance using the Amazon EC2 console, CLI, or API. If set to <code>true</code>, you can. </p>
-    pub fn disable_api_termination(&self) -> bool {
+    pub fn disable_api_termination(&self) -> ::std::option::Option<bool> {
         self.disable_api_termination
     }
     /// <p> Indicates whether the instance is optimized for Amazon EBS I/O. </p>
-    pub fn ebs_optimized(&self) -> bool {
+    pub fn ebs_optimized(&self) -> ::std::option::Option<bool> {
         self.ebs_optimized
     }
     /// <p> Provides details about Elastic Graphics accelerators to associate with the instance. </p>
@@ -748,9 +748,9 @@ impl AwsEc2LaunchTemplateDataDetailsBuilder {
             capacity_reservation_specification: self.capacity_reservation_specification,
             cpu_options: self.cpu_options,
             credit_specification: self.credit_specification,
-            disable_api_stop: self.disable_api_stop.unwrap_or_default(),
-            disable_api_termination: self.disable_api_termination.unwrap_or_default(),
-            ebs_optimized: self.ebs_optimized.unwrap_or_default(),
+            disable_api_stop: self.disable_api_stop,
+            disable_api_termination: self.disable_api_termination,
+            ebs_optimized: self.ebs_optimized,
             elastic_gpu_specification_set: self.elastic_gpu_specification_set,
             elastic_inference_accelerator_set: self.elastic_inference_accelerator_set,
             enclave_options: self.enclave_options,

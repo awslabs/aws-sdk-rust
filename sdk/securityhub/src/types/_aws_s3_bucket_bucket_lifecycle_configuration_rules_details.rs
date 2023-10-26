@@ -11,16 +11,16 @@ pub struct AwsS3BucketBucketLifecycleConfigurationRulesDetails {
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     pub expiration_date: ::std::option::Option<::std::string::String>,
     /// <p>The length in days of the lifetime for objects that are subject to the rule.</p>
-    pub expiration_in_days: i32,
+    pub expiration_in_days: ::std::option::Option<i32>,
     /// <p>Whether Amazon S3 removes a delete marker that has no noncurrent versions. If set to <code>true</code>, the delete marker is expired. If set to <code>false</code>, the policy takes no action.</p>
     /// <p>If you provide <code>ExpiredObjectDeleteMarker</code>, you cannot provide <code>ExpirationInDays</code> or <code>ExpirationDate</code>.</p>
-    pub expired_object_delete_marker: bool,
+    pub expired_object_delete_marker: ::std::option::Option<bool>,
     /// <p>Identifies the objects that a rule applies to.</p>
     pub filter: ::std::option::Option<crate::types::AwsS3BucketBucketLifecycleConfigurationRulesFilterDetails>,
     /// <p>The unique identifier of the rule.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The number of days that an object is noncurrent before Amazon S3 can perform the associated action.</p>
-    pub noncurrent_version_expiration_in_days: i32,
+    pub noncurrent_version_expiration_in_days: ::std::option::Option<i32>,
     /// <p>Transition rules that describe when noncurrent objects transition to a specified storage class.</p>
     pub noncurrent_version_transitions:
         ::std::option::Option<::std::vec::Vec<crate::types::AwsS3BucketBucketLifecycleConfigurationRulesNoncurrentVersionTransitionsDetails>>,
@@ -44,12 +44,12 @@ impl AwsS3BucketBucketLifecycleConfigurationRulesDetails {
         self.expiration_date.as_deref()
     }
     /// <p>The length in days of the lifetime for objects that are subject to the rule.</p>
-    pub fn expiration_in_days(&self) -> i32 {
+    pub fn expiration_in_days(&self) -> ::std::option::Option<i32> {
         self.expiration_in_days
     }
     /// <p>Whether Amazon S3 removes a delete marker that has no noncurrent versions. If set to <code>true</code>, the delete marker is expired. If set to <code>false</code>, the policy takes no action.</p>
     /// <p>If you provide <code>ExpiredObjectDeleteMarker</code>, you cannot provide <code>ExpirationInDays</code> or <code>ExpirationDate</code>.</p>
-    pub fn expired_object_delete_marker(&self) -> bool {
+    pub fn expired_object_delete_marker(&self) -> ::std::option::Option<bool> {
         self.expired_object_delete_marker
     }
     /// <p>Identifies the objects that a rule applies to.</p>
@@ -61,7 +61,7 @@ impl AwsS3BucketBucketLifecycleConfigurationRulesDetails {
         self.id.as_deref()
     }
     /// <p>The number of days that an object is noncurrent before Amazon S3 can perform the associated action.</p>
-    pub fn noncurrent_version_expiration_in_days(&self) -> i32 {
+    pub fn noncurrent_version_expiration_in_days(&self) -> ::std::option::Option<i32> {
         self.noncurrent_version_expiration_in_days
     }
     /// <p>Transition rules that describe when noncurrent objects transition to a specified storage class.</p>
@@ -307,11 +307,11 @@ impl AwsS3BucketBucketLifecycleConfigurationRulesDetailsBuilder {
         crate::types::AwsS3BucketBucketLifecycleConfigurationRulesDetails {
             abort_incomplete_multipart_upload: self.abort_incomplete_multipart_upload,
             expiration_date: self.expiration_date,
-            expiration_in_days: self.expiration_in_days.unwrap_or_default(),
-            expired_object_delete_marker: self.expired_object_delete_marker.unwrap_or_default(),
+            expiration_in_days: self.expiration_in_days,
+            expired_object_delete_marker: self.expired_object_delete_marker,
             filter: self.filter,
             id: self.id,
-            noncurrent_version_expiration_in_days: self.noncurrent_version_expiration_in_days.unwrap_or_default(),
+            noncurrent_version_expiration_in_days: self.noncurrent_version_expiration_in_days,
             noncurrent_version_transitions: self.noncurrent_version_transitions,
             prefix: self.prefix,
             status: self.status,

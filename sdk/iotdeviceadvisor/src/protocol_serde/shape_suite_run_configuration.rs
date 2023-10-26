@@ -60,8 +60,8 @@ pub fn ser_suite_run_configuration(
         }
         array_4.finish();
     }
-    if input.parallel_run {
-        object.key("parallelRun").boolean(input.parallel_run);
+    if let Some(var_6) = &input.parallel_run {
+        object.key("parallelRun").boolean(*var_6);
     }
     Ok(())
 }

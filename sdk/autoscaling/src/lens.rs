@@ -19,8 +19,38 @@ pub(crate) fn reflens_describe_auto_scaling_instances_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_describe_instance_refreshes_output_next_token(
+    input: &crate::operation::describe_instance_refreshes::DescribeInstanceRefreshesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_describe_launch_configurations_output_next_token(
     input: &crate::operation::describe_launch_configurations::DescribeLaunchConfigurationsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_describe_load_balancer_target_groups_output_next_token(
+    input: &crate::operation::describe_load_balancer_target_groups::DescribeLoadBalancerTargetGroupsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_describe_load_balancers_output_next_token(
+    input: &crate::operation::describe_load_balancers::DescribeLoadBalancersOutput,
 ) -> ::std::option::Option<&::std::string::String> {
     let input = match &input.next_token {
         ::std::option::Option::None => return ::std::option::Option::None,

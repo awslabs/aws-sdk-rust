@@ -5,26 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsApiGatewayMethodSettings {
     /// <p>Indicates whether CloudWatch metrics are enabled for the method. </p>
-    pub metrics_enabled: bool,
+    pub metrics_enabled: ::std::option::Option<bool>,
     /// <p>The logging level for this method. The logging level affects the log entries that are pushed to CloudWatch Logs.</p>
     /// <p>If the logging level is <code>ERROR</code>, then the logs only include error-level entries.</p>
     /// <p>If the logging level is <code>INFO</code>, then the logs include both <code>ERROR</code> events and extra informational events.</p>
     /// <p>Valid values: <code>OFF</code> | <code>ERROR</code> | <code>INFO</code> </p>
     pub logging_level: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether data trace logging is enabled for the method. Data trace logging affects the log entries that are pushed to CloudWatch Logs.</p>
-    pub data_trace_enabled: bool,
+    pub data_trace_enabled: ::std::option::Option<bool>,
     /// <p>The throttling burst limit for the method.</p>
-    pub throttling_burst_limit: i32,
+    pub throttling_burst_limit: ::std::option::Option<i32>,
     /// <p>The throttling rate limit for the method.</p>
-    pub throttling_rate_limit: f64,
+    pub throttling_rate_limit: ::std::option::Option<f64>,
     /// <p>Indicates whether responses are cached and returned for requests. For responses to be cached, a cache cluster must be enabled on the stage.</p>
-    pub caching_enabled: bool,
+    pub caching_enabled: ::std::option::Option<bool>,
     /// <p>Specifies the time to live (TTL), in seconds, for cached responses. The higher the TTL, the longer the response is cached.</p>
-    pub cache_ttl_in_seconds: i32,
+    pub cache_ttl_in_seconds: ::std::option::Option<i32>,
     /// <p>Indicates whether the cached responses are encrypted. </p>
-    pub cache_data_encrypted: bool,
+    pub cache_data_encrypted: ::std::option::Option<bool>,
     /// <p>Indicates whether authorization is required for a cache invalidation request.</p>
-    pub require_authorization_for_cache_control: bool,
+    pub require_authorization_for_cache_control: ::std::option::Option<bool>,
     /// <p>Indicates how to handle unauthorized requests for cache invalidation.</p>
     /// <p>Valid values: <code>FAIL_WITH_403</code> | <code>SUCCEED_WITH_RESPONSE_HEADER</code> | <code>SUCCEED_WITHOUT_RESPONSE_HEADER</code> </p>
     pub unauthorized_cache_control_header_strategy: ::std::option::Option<::std::string::String>,
@@ -37,7 +37,7 @@ pub struct AwsApiGatewayMethodSettings {
 }
 impl AwsApiGatewayMethodSettings {
     /// <p>Indicates whether CloudWatch metrics are enabled for the method. </p>
-    pub fn metrics_enabled(&self) -> bool {
+    pub fn metrics_enabled(&self) -> ::std::option::Option<bool> {
         self.metrics_enabled
     }
     /// <p>The logging level for this method. The logging level affects the log entries that are pushed to CloudWatch Logs.</p>
@@ -48,31 +48,31 @@ impl AwsApiGatewayMethodSettings {
         self.logging_level.as_deref()
     }
     /// <p>Indicates whether data trace logging is enabled for the method. Data trace logging affects the log entries that are pushed to CloudWatch Logs.</p>
-    pub fn data_trace_enabled(&self) -> bool {
+    pub fn data_trace_enabled(&self) -> ::std::option::Option<bool> {
         self.data_trace_enabled
     }
     /// <p>The throttling burst limit for the method.</p>
-    pub fn throttling_burst_limit(&self) -> i32 {
+    pub fn throttling_burst_limit(&self) -> ::std::option::Option<i32> {
         self.throttling_burst_limit
     }
     /// <p>The throttling rate limit for the method.</p>
-    pub fn throttling_rate_limit(&self) -> f64 {
+    pub fn throttling_rate_limit(&self) -> ::std::option::Option<f64> {
         self.throttling_rate_limit
     }
     /// <p>Indicates whether responses are cached and returned for requests. For responses to be cached, a cache cluster must be enabled on the stage.</p>
-    pub fn caching_enabled(&self) -> bool {
+    pub fn caching_enabled(&self) -> ::std::option::Option<bool> {
         self.caching_enabled
     }
     /// <p>Specifies the time to live (TTL), in seconds, for cached responses. The higher the TTL, the longer the response is cached.</p>
-    pub fn cache_ttl_in_seconds(&self) -> i32 {
+    pub fn cache_ttl_in_seconds(&self) -> ::std::option::Option<i32> {
         self.cache_ttl_in_seconds
     }
     /// <p>Indicates whether the cached responses are encrypted. </p>
-    pub fn cache_data_encrypted(&self) -> bool {
+    pub fn cache_data_encrypted(&self) -> ::std::option::Option<bool> {
         self.cache_data_encrypted
     }
     /// <p>Indicates whether authorization is required for a cache invalidation request.</p>
-    pub fn require_authorization_for_cache_control(&self) -> bool {
+    pub fn require_authorization_for_cache_control(&self) -> ::std::option::Option<bool> {
         self.require_authorization_for_cache_control
     }
     /// <p>Indicates how to handle unauthorized requests for cache invalidation.</p>
@@ -305,15 +305,15 @@ impl AwsApiGatewayMethodSettingsBuilder {
     /// Consumes the builder and constructs a [`AwsApiGatewayMethodSettings`](crate::types::AwsApiGatewayMethodSettings).
     pub fn build(self) -> crate::types::AwsApiGatewayMethodSettings {
         crate::types::AwsApiGatewayMethodSettings {
-            metrics_enabled: self.metrics_enabled.unwrap_or_default(),
+            metrics_enabled: self.metrics_enabled,
             logging_level: self.logging_level,
-            data_trace_enabled: self.data_trace_enabled.unwrap_or_default(),
-            throttling_burst_limit: self.throttling_burst_limit.unwrap_or_default(),
-            throttling_rate_limit: self.throttling_rate_limit.unwrap_or_default(),
-            caching_enabled: self.caching_enabled.unwrap_or_default(),
-            cache_ttl_in_seconds: self.cache_ttl_in_seconds.unwrap_or_default(),
-            cache_data_encrypted: self.cache_data_encrypted.unwrap_or_default(),
-            require_authorization_for_cache_control: self.require_authorization_for_cache_control.unwrap_or_default(),
+            data_trace_enabled: self.data_trace_enabled,
+            throttling_burst_limit: self.throttling_burst_limit,
+            throttling_rate_limit: self.throttling_rate_limit,
+            caching_enabled: self.caching_enabled,
+            cache_ttl_in_seconds: self.cache_ttl_in_seconds,
+            cache_data_encrypted: self.cache_data_encrypted,
+            require_authorization_for_cache_control: self.require_authorization_for_cache_control,
             unauthorized_cache_control_header_strategy: self.unauthorized_cache_control_header_strategy,
             http_method: self.http_method,
             resource_path: self.resource_path,

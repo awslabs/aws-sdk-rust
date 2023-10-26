@@ -3,20 +3,14 @@ pub fn ser_vpc_info_peering_options_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::VpcInfoPeeringOptionsDetails,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if input.allow_dns_resolution_from_remote_vpc {
-        object
-            .key("AllowDnsResolutionFromRemoteVpc")
-            .boolean(input.allow_dns_resolution_from_remote_vpc);
+    if let Some(var_1) = &input.allow_dns_resolution_from_remote_vpc {
+        object.key("AllowDnsResolutionFromRemoteVpc").boolean(*var_1);
     }
-    if input.allow_egress_from_local_classic_link_to_remote_vpc {
-        object
-            .key("AllowEgressFromLocalClassicLinkToRemoteVpc")
-            .boolean(input.allow_egress_from_local_classic_link_to_remote_vpc);
+    if let Some(var_2) = &input.allow_egress_from_local_classic_link_to_remote_vpc {
+        object.key("AllowEgressFromLocalClassicLinkToRemoteVpc").boolean(*var_2);
     }
-    if input.allow_egress_from_local_vpc_to_remote_classic_link {
-        object
-            .key("AllowEgressFromLocalVpcToRemoteClassicLink")
-            .boolean(input.allow_egress_from_local_vpc_to_remote_classic_link);
+    if let Some(var_3) = &input.allow_egress_from_local_vpc_to_remote_classic_link {
+        object.key("AllowEgressFromLocalVpcToRemoteClassicLink").boolean(*var_3);
     }
     Ok(())
 }

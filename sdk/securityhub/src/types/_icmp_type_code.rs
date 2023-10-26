@@ -5,17 +5,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IcmpTypeCode {
     /// <p>The ICMP code for which to deny or allow access. To deny or allow all codes, use the value <code>-1</code>.</p>
-    pub code: i32,
+    pub code: ::std::option::Option<i32>,
     /// <p>The ICMP type for which to deny or allow access. To deny or allow all types, use the value <code>-1</code>.</p>
-    pub r#type: i32,
+    pub r#type: ::std::option::Option<i32>,
 }
 impl IcmpTypeCode {
     /// <p>The ICMP code for which to deny or allow access. To deny or allow all codes, use the value <code>-1</code>.</p>
-    pub fn code(&self) -> i32 {
+    pub fn code(&self) -> ::std::option::Option<i32> {
         self.code
     }
     /// <p>The ICMP type for which to deny or allow access. To deny or allow all types, use the value <code>-1</code>.</p>
-    pub fn r#type(&self) -> i32 {
+    pub fn r#type(&self) -> ::std::option::Option<i32> {
         self.r#type
     }
 }
@@ -65,8 +65,8 @@ impl IcmpTypeCodeBuilder {
     /// Consumes the builder and constructs a [`IcmpTypeCode`](crate::types::IcmpTypeCode).
     pub fn build(self) -> crate::types::IcmpTypeCode {
         crate::types::IcmpTypeCode {
-            code: self.code.unwrap_or_default(),
-            r#type: self.r#type.unwrap_or_default(),
+            code: self.code,
+            r#type: self.r#type,
         }
     }
 }

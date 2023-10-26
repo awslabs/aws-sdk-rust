@@ -7,9 +7,9 @@ pub struct DescribeDbLogFilesDetails {
     /// <p>The name of the log file for the specified DB instance.</p>
     pub log_file_name: ::std::option::Option<::std::string::String>,
     /// <p>A POSIX timestamp when the last log entry was written.</p>
-    pub last_written: i64,
+    pub last_written: ::std::option::Option<i64>,
     /// <p>The size, in bytes, of the log file for the specified DB instance.</p>
-    pub size: i64,
+    pub size: ::std::option::Option<i64>,
 }
 impl DescribeDbLogFilesDetails {
     /// <p>The name of the log file for the specified DB instance.</p>
@@ -17,11 +17,11 @@ impl DescribeDbLogFilesDetails {
         self.log_file_name.as_deref()
     }
     /// <p>A POSIX timestamp when the last log entry was written.</p>
-    pub fn last_written(&self) -> i64 {
+    pub fn last_written(&self) -> ::std::option::Option<i64> {
         self.last_written
     }
     /// <p>The size, in bytes, of the log file for the specified DB instance.</p>
-    pub fn size(&self) -> i64 {
+    pub fn size(&self) -> ::std::option::Option<i64> {
         self.size
     }
 }
@@ -87,8 +87,8 @@ impl DescribeDbLogFilesDetailsBuilder {
     pub fn build(self) -> crate::types::DescribeDbLogFilesDetails {
         crate::types::DescribeDbLogFilesDetails {
             log_file_name: self.log_file_name,
-            last_written: self.last_written.unwrap_or_default(),
-            size: self.size.unwrap_or_default(),
+            last_written: self.last_written,
+            size: self.size,
         }
     }
 }

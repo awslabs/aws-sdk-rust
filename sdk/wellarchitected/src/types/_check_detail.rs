@@ -26,7 +26,7 @@ pub struct CheckDetail {
     /// <p>An Amazon Web Services account ID.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>Count of flagged resources associated to the check.</p>
-    pub flagged_resources: i32,
+    pub flagged_resources: ::std::option::Option<i32>,
     /// <p>Reason associated to the check.</p>
     pub reason: ::std::option::Option<crate::types::CheckFailureReason>,
     /// <p>The date and time recorded.</p>
@@ -75,7 +75,7 @@ impl CheckDetail {
         self.account_id.as_deref()
     }
     /// <p>Count of flagged resources associated to the check.</p>
-    pub fn flagged_resources(&self) -> i32 {
+    pub fn flagged_resources(&self) -> ::std::option::Option<i32> {
         self.flagged_resources
     }
     /// <p>Reason associated to the check.</p>
@@ -311,7 +311,7 @@ impl CheckDetailBuilder {
             choice_id: self.choice_id,
             status: self.status,
             account_id: self.account_id,
-            flagged_resources: self.flagged_resources.unwrap_or_default(),
+            flagged_resources: self.flagged_resources,
             reason: self.reason,
             updated_at: self.updated_at,
         }

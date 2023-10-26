@@ -7,7 +7,7 @@ pub struct AutoMlSecurityConfig {
     /// <p>The key used to encrypt stored data.</p>
     pub volume_kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>Whether to use traffic encryption between the container layers.</p>
-    pub enable_inter_container_traffic_encryption: bool,
+    pub enable_inter_container_traffic_encryption: ::std::option::Option<bool>,
     /// <p>The VPC configuration.</p>
     pub vpc_config: ::std::option::Option<crate::types::VpcConfig>,
 }
@@ -17,7 +17,7 @@ impl AutoMlSecurityConfig {
         self.volume_kms_key_id.as_deref()
     }
     /// <p>Whether to use traffic encryption between the container layers.</p>
-    pub fn enable_inter_container_traffic_encryption(&self) -> bool {
+    pub fn enable_inter_container_traffic_encryption(&self) -> ::std::option::Option<bool> {
         self.enable_inter_container_traffic_encryption
     }
     /// <p>The VPC configuration.</p>
@@ -87,7 +87,7 @@ impl AutoMlSecurityConfigBuilder {
     pub fn build(self) -> crate::types::AutoMlSecurityConfig {
         crate::types::AutoMlSecurityConfig {
             volume_kms_key_id: self.volume_kms_key_id,
-            enable_inter_container_traffic_encryption: self.enable_inter_container_traffic_encryption.unwrap_or_default(),
+            enable_inter_container_traffic_encryption: self.enable_inter_container_traffic_encryption,
             vpc_config: self.vpc_config,
         }
     }

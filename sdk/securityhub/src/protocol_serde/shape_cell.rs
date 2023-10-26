@@ -3,23 +3,23 @@ pub fn ser_cell(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Cell,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if input.column != 0 {
+    if let Some(var_1) = &input.column {
         object.key("Column").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.column).into()),
+            ::aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if input.row != 0 {
+    if let Some(var_2) = &input.row {
         object.key("Row").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.row).into()),
+            ::aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
-    if let Some(var_1) = &input.column_name {
-        object.key("ColumnName").string(var_1.as_str());
+    if let Some(var_3) = &input.column_name {
+        object.key("ColumnName").string(var_3.as_str());
     }
-    if let Some(var_2) = &input.cell_reference {
-        object.key("CellReference").string(var_2.as_str());
+    if let Some(var_4) = &input.cell_reference {
+        object.key("CellReference").string(var_4.as_str());
     }
     Ok(())
 }

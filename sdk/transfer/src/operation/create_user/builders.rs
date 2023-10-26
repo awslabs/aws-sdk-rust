@@ -112,7 +112,7 @@ impl CreateUserFluentBuilder {
     }
     /// <p>The landing directory (folder) for a user when they log in to the server using the client.</p>
     /// <p>A <code>HomeDirectory</code> example is <code>/bucket_name/home/mydirectory</code>.</p> <note>
-    /// <p>The <code>HomeDirectory</code> parameter is only used if <code>HomeDirectoryType</code> is set to <code>LOGICAL</code>.</p>
+    /// <p>The <code>HomeDirectory</code> parameter is only used if <code>HomeDirectoryType</code> is set to <code>PATH</code>.</p>
     /// </note>
     pub fn home_directory(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.home_directory(input.into());
@@ -120,7 +120,7 @@ impl CreateUserFluentBuilder {
     }
     /// <p>The landing directory (folder) for a user when they log in to the server using the client.</p>
     /// <p>A <code>HomeDirectory</code> example is <code>/bucket_name/home/mydirectory</code>.</p> <note>
-    /// <p>The <code>HomeDirectory</code> parameter is only used if <code>HomeDirectoryType</code> is set to <code>LOGICAL</code>.</p>
+    /// <p>The <code>HomeDirectory</code> parameter is only used if <code>HomeDirectoryType</code> is set to <code>PATH</code>.</p>
     /// </note>
     pub fn set_home_directory(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_home_directory(input);
@@ -128,7 +128,7 @@ impl CreateUserFluentBuilder {
     }
     /// <p>The landing directory (folder) for a user when they log in to the server using the client.</p>
     /// <p>A <code>HomeDirectory</code> example is <code>/bucket_name/home/mydirectory</code>.</p> <note>
-    /// <p>The <code>HomeDirectory</code> parameter is only used if <code>HomeDirectoryType</code> is set to <code>LOGICAL</code>.</p>
+    /// <p>The <code>HomeDirectory</code> parameter is only used if <code>HomeDirectoryType</code> is set to <code>PATH</code>.</p>
     /// </note>
     pub fn get_home_directory(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_home_directory()

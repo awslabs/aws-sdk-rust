@@ -9,7 +9,7 @@ pub struct GlobalClusterMember {
     /// <p>The Amazon Resource Name (ARN) for each read-only secondary cluster associated with the Aurora global cluster.</p>
     pub readers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p> Specifies whether the Amazon DocumentDB cluster is the primary cluster (that is, has read-write capability) for the Amazon DocumentDB global cluster with which it is associated. </p>
-    pub is_writer: bool,
+    pub is_writer: ::std::option::Option<bool>,
 }
 impl GlobalClusterMember {
     /// <p>The Amazon Resource Name (ARN) for each Amazon DocumentDB cluster.</p>
@@ -21,7 +21,7 @@ impl GlobalClusterMember {
         self.readers.as_deref()
     }
     /// <p> Specifies whether the Amazon DocumentDB cluster is the primary cluster (that is, has read-write capability) for the Amazon DocumentDB global cluster with which it is associated. </p>
-    pub fn is_writer(&self) -> bool {
+    pub fn is_writer(&self) -> ::std::option::Option<bool> {
         self.is_writer
     }
 }
@@ -94,7 +94,7 @@ impl GlobalClusterMemberBuilder {
         crate::types::GlobalClusterMember {
             db_cluster_arn: self.db_cluster_arn,
             readers: self.readers,
-            is_writer: self.is_writer.unwrap_or_default(),
+            is_writer: self.is_writer,
         }
     }
 }

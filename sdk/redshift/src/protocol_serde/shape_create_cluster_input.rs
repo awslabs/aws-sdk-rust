@@ -211,6 +211,16 @@ pub fn ser_create_cluster_input_input(
     if let Some(var_80) = &input.load_sample_data {
         scope_79.string(var_80);
     }
+    #[allow(unused_mut)]
+    let mut scope_81 = writer.prefix("ManageMasterPassword");
+    if let Some(var_82) = &input.manage_master_password {
+        scope_81.boolean(*var_82);
+    }
+    #[allow(unused_mut)]
+    let mut scope_83 = writer.prefix("MasterPasswordSecretKmsKeyId");
+    if let Some(var_84) = &input.master_password_secret_kms_key_id {
+        scope_83.string(var_84);
+    }
     writer.finish();
     Ok(::aws_smithy_http::body::SdkBody::from(out))
 }

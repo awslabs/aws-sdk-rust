@@ -3,26 +3,26 @@ pub fn ser_aws_ec2_vpn_connection_vgw_telemetry_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsEc2VpnConnectionVgwTelemetryDetails,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if input.accepted_route_count != 0 {
+    if let Some(var_1) = &input.accepted_route_count {
         object.key("AcceptedRouteCount").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.accepted_route_count).into()),
+            ::aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if let Some(var_1) = &input.certificate_arn {
-        object.key("CertificateArn").string(var_1.as_str());
+    if let Some(var_2) = &input.certificate_arn {
+        object.key("CertificateArn").string(var_2.as_str());
     }
-    if let Some(var_2) = &input.last_status_change {
-        object.key("LastStatusChange").string(var_2.as_str());
+    if let Some(var_3) = &input.last_status_change {
+        object.key("LastStatusChange").string(var_3.as_str());
     }
-    if let Some(var_3) = &input.outside_ip_address {
-        object.key("OutsideIpAddress").string(var_3.as_str());
+    if let Some(var_4) = &input.outside_ip_address {
+        object.key("OutsideIpAddress").string(var_4.as_str());
     }
-    if let Some(var_4) = &input.status {
-        object.key("Status").string(var_4.as_str());
+    if let Some(var_5) = &input.status {
+        object.key("Status").string(var_5.as_str());
     }
-    if let Some(var_5) = &input.status_message {
-        object.key("StatusMessage").string(var_5.as_str());
+    if let Some(var_6) = &input.status_message {
+        object.key("StatusMessage").string(var_6.as_str());
     }
     Ok(())
 }

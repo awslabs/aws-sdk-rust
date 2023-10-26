@@ -9,6 +9,8 @@ pub struct GetPoliciesStatsOutput {
     pub security_policy_stats: ::std::option::Option<crate::types::SecurityPolicyStats>,
     /// <p>Information about the security configurations in your account.</p>
     pub security_config_stats: ::std::option::Option<crate::types::SecurityConfigStats>,
+    /// <p>Information about the lifecycle policies in your account.</p>
+    pub lifecycle_policy_stats: ::std::option::Option<crate::types::LifecyclePolicyStats>,
     /// <p>The total number of OpenSearch Serverless security policies and configurations in your account.</p>
     pub total_policy_count: ::std::option::Option<i64>,
     _request_id: Option<String>,
@@ -25,6 +27,10 @@ impl GetPoliciesStatsOutput {
     /// <p>Information about the security configurations in your account.</p>
     pub fn security_config_stats(&self) -> ::std::option::Option<&crate::types::SecurityConfigStats> {
         self.security_config_stats.as_ref()
+    }
+    /// <p>Information about the lifecycle policies in your account.</p>
+    pub fn lifecycle_policy_stats(&self) -> ::std::option::Option<&crate::types::LifecyclePolicyStats> {
+        self.lifecycle_policy_stats.as_ref()
     }
     /// <p>The total number of OpenSearch Serverless security policies and configurations in your account.</p>
     pub fn total_policy_count(&self) -> ::std::option::Option<i64> {
@@ -50,6 +56,7 @@ pub struct GetPoliciesStatsOutputBuilder {
     pub(crate) access_policy_stats: ::std::option::Option<crate::types::AccessPolicyStats>,
     pub(crate) security_policy_stats: ::std::option::Option<crate::types::SecurityPolicyStats>,
     pub(crate) security_config_stats: ::std::option::Option<crate::types::SecurityConfigStats>,
+    pub(crate) lifecycle_policy_stats: ::std::option::Option<crate::types::LifecyclePolicyStats>,
     pub(crate) total_policy_count: ::std::option::Option<i64>,
     _request_id: Option<String>,
 }
@@ -96,6 +103,20 @@ impl GetPoliciesStatsOutputBuilder {
     pub fn get_security_config_stats(&self) -> &::std::option::Option<crate::types::SecurityConfigStats> {
         &self.security_config_stats
     }
+    /// <p>Information about the lifecycle policies in your account.</p>
+    pub fn lifecycle_policy_stats(mut self, input: crate::types::LifecyclePolicyStats) -> Self {
+        self.lifecycle_policy_stats = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Information about the lifecycle policies in your account.</p>
+    pub fn set_lifecycle_policy_stats(mut self, input: ::std::option::Option<crate::types::LifecyclePolicyStats>) -> Self {
+        self.lifecycle_policy_stats = input;
+        self
+    }
+    /// <p>Information about the lifecycle policies in your account.</p>
+    pub fn get_lifecycle_policy_stats(&self) -> &::std::option::Option<crate::types::LifecyclePolicyStats> {
+        &self.lifecycle_policy_stats
+    }
     /// <p>The total number of OpenSearch Serverless security policies and configurations in your account.</p>
     pub fn total_policy_count(mut self, input: i64) -> Self {
         self.total_policy_count = ::std::option::Option::Some(input);
@@ -125,6 +146,7 @@ impl GetPoliciesStatsOutputBuilder {
             access_policy_stats: self.access_policy_stats,
             security_policy_stats: self.security_policy_stats,
             security_config_stats: self.security_config_stats,
+            lifecycle_policy_stats: self.lifecycle_policy_stats,
             total_policy_count: self.total_policy_count,
             _request_id: self._request_id,
         }

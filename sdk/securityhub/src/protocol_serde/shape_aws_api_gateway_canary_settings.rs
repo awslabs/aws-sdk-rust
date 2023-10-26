@@ -3,27 +3,27 @@ pub fn ser_aws_api_gateway_canary_settings(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsApiGatewayCanarySettings,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if input.percent_traffic != 0.0 {
+    if let Some(var_1) = &input.percent_traffic {
         object.key("PercentTraffic").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::Float((input.percent_traffic).into()),
+            ::aws_smithy_types::Number::Float((*var_1).into()),
         );
     }
-    if let Some(var_1) = &input.deployment_id {
-        object.key("DeploymentId").string(var_1.as_str());
+    if let Some(var_2) = &input.deployment_id {
+        object.key("DeploymentId").string(var_2.as_str());
     }
-    if let Some(var_2) = &input.stage_variable_overrides {
+    if let Some(var_3) = &input.stage_variable_overrides {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("StageVariableOverrides").start_object();
-        for (key_4, value_5) in var_2 {
+        let mut object_4 = object.key("StageVariableOverrides").start_object();
+        for (key_5, value_6) in var_3 {
             {
-                object_3.key(key_4.as_str()).string(value_5.as_str());
+                object_4.key(key_5.as_str()).string(value_6.as_str());
             }
         }
-        object_3.finish();
+        object_4.finish();
     }
-    if input.use_stage_cache {
-        object.key("UseStageCache").boolean(input.use_stage_cache);
+    if let Some(var_7) = &input.use_stage_cache {
+        object.key("UseStageCache").boolean(*var_7);
     }
     Ok(())
 }

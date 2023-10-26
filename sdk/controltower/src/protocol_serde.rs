@@ -29,6 +29,8 @@ pub(crate) mod shape_enable_control;
 
 pub(crate) mod shape_get_control_operation;
 
+pub(crate) mod shape_get_enabled_control;
+
 pub(crate) mod shape_list_enabled_controls;
 
 pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
@@ -49,6 +51,8 @@ pub(crate) mod shape_enable_control_input;
 
 pub(crate) mod shape_get_control_operation_input;
 
+pub(crate) mod shape_get_enabled_control_input;
+
 pub(crate) mod shape_internal_server_exception;
 
 pub(crate) mod shape_list_enabled_controls_input;
@@ -63,6 +67,16 @@ pub(crate) mod shape_validation_exception;
 
 pub(crate) mod shape_control_operation;
 
+pub(crate) mod shape_enabled_control_details;
+
 pub(crate) mod shape_enabled_controls;
 
+pub(crate) mod shape_drift_status_summary;
+
 pub(crate) mod shape_enabled_control_summary;
+
+pub(crate) mod shape_enablement_status_summary;
+
+pub(crate) mod shape_target_regions;
+
+pub(crate) mod shape_region;

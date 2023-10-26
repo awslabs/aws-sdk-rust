@@ -9,6 +9,12 @@ pub fn ser_data_path_value(
     if let Some(var_2) = &input.field_value {
         object.key("FieldValue").string(var_2.as_str());
     }
+    if let Some(var_3) = &input.data_path_type {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("DataPathType").start_object();
+        crate::protocol_serde::shape_data_path_type::ser_data_path_type(&mut object_4, var_3)?;
+        object_4.finish();
+    }
     Ok(())
 }
 
@@ -40,6 +46,9 @@ where
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
                             );
+                        }
+                        "DataPathType" => {
+                            builder = builder.set_data_path_type(crate::protocol_serde::shape_data_path_type::de_data_path_type(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

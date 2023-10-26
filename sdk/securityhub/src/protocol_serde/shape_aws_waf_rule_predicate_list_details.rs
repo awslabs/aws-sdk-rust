@@ -6,11 +6,11 @@ pub fn ser_aws_waf_rule_predicate_list_details(
     if let Some(var_1) = &input.data_id {
         object.key("DataId").string(var_1.as_str());
     }
-    if input.negated {
-        object.key("Negated").boolean(input.negated);
+    if let Some(var_2) = &input.negated {
+        object.key("Negated").boolean(*var_2);
     }
-    if let Some(var_2) = &input.r#type {
-        object.key("Type").string(var_2.as_str());
+    if let Some(var_3) = &input.r#type {
+        object.key("Type").string(var_3.as_str());
     }
     Ok(())
 }

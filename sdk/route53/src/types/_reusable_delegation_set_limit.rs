@@ -7,7 +7,7 @@ pub struct ReusableDelegationSetLimit {
     /// <p>The limit that you requested: <code>MAX_ZONES_BY_REUSABLE_DELEGATION_SET</code>, the maximum number of hosted zones that you can associate with the specified reusable delegation set.</p>
     pub r#type: ::std::option::Option<crate::types::ReusableDelegationSetLimitType>,
     /// <p>The current value for the <code>MAX_ZONES_BY_REUSABLE_DELEGATION_SET</code> limit.</p>
-    pub value: i64,
+    pub value: ::std::option::Option<i64>,
 }
 impl ReusableDelegationSetLimit {
     /// <p>The limit that you requested: <code>MAX_ZONES_BY_REUSABLE_DELEGATION_SET</code>, the maximum number of hosted zones that you can associate with the specified reusable delegation set.</p>
@@ -15,7 +15,7 @@ impl ReusableDelegationSetLimit {
         self.r#type.as_ref()
     }
     /// <p>The current value for the <code>MAX_ZONES_BY_REUSABLE_DELEGATION_SET</code> limit.</p>
-    pub fn value(&self) -> i64 {
+    pub fn value(&self) -> ::std::option::Option<i64> {
         self.value
     }
 }
@@ -66,7 +66,7 @@ impl ReusableDelegationSetLimitBuilder {
     pub fn build(self) -> crate::types::ReusableDelegationSetLimit {
         crate::types::ReusableDelegationSetLimit {
             r#type: self.r#type,
-            value: self.value.unwrap_or_default(),
+            value: self.value,
         }
     }
 }

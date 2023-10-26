@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetControlOperationOutput {
-    /// <p></p>
+    /// <p>An operation performed by the control.</p>
     pub control_operation: ::std::option::Option<crate::types::ControlOperation>,
     _request_id: Option<String>,
 }
 impl GetControlOperationOutput {
-    /// <p></p>
+    /// <p>An operation performed by the control.</p>
     pub fn control_operation(&self) -> ::std::option::Option<&crate::types::ControlOperation> {
         self.control_operation.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct GetControlOperationOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetControlOperationOutputBuilder {
-    /// <p></p>
+    /// <p>An operation performed by the control.</p>
     pub fn control_operation(mut self, input: crate::types::ControlOperation) -> Self {
         self.control_operation = ::std::option::Option::Some(input);
         self
     }
-    /// <p></p>
+    /// <p>An operation performed by the control.</p>
     pub fn set_control_operation(mut self, input: ::std::option::Option<crate::types::ControlOperation>) -> Self {
         self.control_operation = input;
         self
     }
-    /// <p></p>
+    /// <p>An operation performed by the control.</p>
     pub fn get_control_operation(&self) -> &::std::option::Option<crate::types::ControlOperation> {
         &self.control_operation
     }

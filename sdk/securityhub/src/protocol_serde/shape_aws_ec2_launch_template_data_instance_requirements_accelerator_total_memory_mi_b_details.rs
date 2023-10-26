@@ -3,16 +3,16 @@ pub fn ser_aws_ec2_launch_template_data_instance_requirements_accelerator_total_
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsAcceleratorTotalMemoryMiBDetails,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if input.max != 0 {
+    if let Some(var_1) = &input.max {
         object.key("Max").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.max).into()),
+            ::aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if input.min != 0 {
+    if let Some(var_2) = &input.min {
         object.key("Min").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.min).into()),
+            ::aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
     Ok(())

@@ -922,6 +922,8 @@ mod disable_fast_launch;
 
 mod disable_fast_snapshot_restores;
 
+mod disable_image;
+
 mod disable_image_block_public_access;
 
 mod disable_image_deprecation;
@@ -975,6 +977,8 @@ mod enable_ebs_encryption_by_default;
 mod enable_fast_launch;
 
 mod enable_fast_snapshot_restores;
+
+mod enable_image;
 
 mod enable_image_block_public_access;
 

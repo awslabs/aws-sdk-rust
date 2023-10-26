@@ -13,21 +13,21 @@ pub struct ReservedDbInstance {
     /// <p>The time the reservation started.</p>
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The duration of the reservation in seconds.</p>
-    pub duration: i32,
+    pub duration: ::std::option::Option<i32>,
     /// <p>The fixed price charged for this reserved DB instance.</p>
-    pub fixed_price: f64,
+    pub fixed_price: ::std::option::Option<f64>,
     /// <p>The hourly price charged for this reserved DB instance.</p>
-    pub usage_price: f64,
+    pub usage_price: ::std::option::Option<f64>,
     /// <p>The currency code for the reserved DB instance.</p>
     pub currency_code: ::std::option::Option<::std::string::String>,
     /// <p>The number of reserved DB instances.</p>
-    pub db_instance_count: i32,
+    pub db_instance_count: ::std::option::Option<i32>,
     /// <p>The description of the reserved DB instance.</p>
     pub product_description: ::std::option::Option<::std::string::String>,
     /// <p>The offering type of this reserved DB instance.</p>
     pub offering_type: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the reservation applies to Multi-AZ deployments.</p>
-    pub multi_az: bool,
+    pub multi_az: ::std::option::Option<bool>,
     /// <p>The state of the reserved DB instance.</p>
     pub state: ::std::option::Option<::std::string::String>,
     /// <p>The recurring price charged to run this reserved DB instance.</p>
@@ -57,15 +57,15 @@ impl ReservedDbInstance {
         self.start_time.as_ref()
     }
     /// <p>The duration of the reservation in seconds.</p>
-    pub fn duration(&self) -> i32 {
+    pub fn duration(&self) -> ::std::option::Option<i32> {
         self.duration
     }
     /// <p>The fixed price charged for this reserved DB instance.</p>
-    pub fn fixed_price(&self) -> f64 {
+    pub fn fixed_price(&self) -> ::std::option::Option<f64> {
         self.fixed_price
     }
     /// <p>The hourly price charged for this reserved DB instance.</p>
-    pub fn usage_price(&self) -> f64 {
+    pub fn usage_price(&self) -> ::std::option::Option<f64> {
         self.usage_price
     }
     /// <p>The currency code for the reserved DB instance.</p>
@@ -73,7 +73,7 @@ impl ReservedDbInstance {
         self.currency_code.as_deref()
     }
     /// <p>The number of reserved DB instances.</p>
-    pub fn db_instance_count(&self) -> i32 {
+    pub fn db_instance_count(&self) -> ::std::option::Option<i32> {
         self.db_instance_count
     }
     /// <p>The description of the reserved DB instance.</p>
@@ -85,7 +85,7 @@ impl ReservedDbInstance {
         self.offering_type.as_deref()
     }
     /// <p>Indicates whether the reservation applies to Multi-AZ deployments.</p>
-    pub fn multi_az(&self) -> bool {
+    pub fn multi_az(&self) -> ::std::option::Option<bool> {
         self.multi_az
     }
     /// <p>The state of the reserved DB instance.</p>
@@ -379,14 +379,14 @@ impl ReservedDbInstanceBuilder {
             reserved_db_instances_offering_id: self.reserved_db_instances_offering_id,
             db_instance_class: self.db_instance_class,
             start_time: self.start_time,
-            duration: self.duration.unwrap_or_default(),
-            fixed_price: self.fixed_price.unwrap_or_default(),
-            usage_price: self.usage_price.unwrap_or_default(),
+            duration: self.duration,
+            fixed_price: self.fixed_price,
+            usage_price: self.usage_price,
             currency_code: self.currency_code,
-            db_instance_count: self.db_instance_count.unwrap_or_default(),
+            db_instance_count: self.db_instance_count,
             product_description: self.product_description,
             offering_type: self.offering_type,
-            multi_az: self.multi_az.unwrap_or_default(),
+            multi_az: self.multi_az,
             state: self.state,
             recurring_charges: self.recurring_charges,
             reserved_db_instance_arn: self.reserved_db_instance_arn,

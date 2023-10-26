@@ -3,22 +3,22 @@ pub fn ser_range(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Range,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if input.start != 0 {
+    if let Some(var_1) = &input.start {
         object.key("Start").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.start).into()),
+            ::aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if input.end != 0 {
+    if let Some(var_2) = &input.end {
         object.key("End").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.end).into()),
+            ::aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
-    if input.start_column != 0 {
+    if let Some(var_3) = &input.start_column {
         object.key("StartColumn").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.start_column).into()),
+            ::aws_smithy_types::Number::NegInt((*var_3).into()),
         );
     }
     Ok(())

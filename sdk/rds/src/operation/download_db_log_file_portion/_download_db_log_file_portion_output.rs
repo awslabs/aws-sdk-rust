@@ -9,7 +9,7 @@ pub struct DownloadDbLogFilePortionOutput {
     /// <p>A pagination token that can be used in a later <code>DownloadDBLogFilePortion</code> request.</p>
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>A Boolean value that, if true, indicates there is more data to be downloaded.</p>
-    pub additional_data_pending: bool,
+    pub additional_data_pending: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }
 impl DownloadDbLogFilePortionOutput {
@@ -22,7 +22,7 @@ impl DownloadDbLogFilePortionOutput {
         self.marker.as_deref()
     }
     /// <p>A Boolean value that, if true, indicates there is more data to be downloaded.</p>
-    pub fn additional_data_pending(&self) -> bool {
+    pub fn additional_data_pending(&self) -> ::std::option::Option<bool> {
         self.additional_data_pending
     }
 }
@@ -104,7 +104,7 @@ impl DownloadDbLogFilePortionOutputBuilder {
         crate::operation::download_db_log_file_portion::DownloadDbLogFilePortionOutput {
             log_file_data: self.log_file_data,
             marker: self.marker,
-            additional_data_pending: self.additional_data_pending.unwrap_or_default(),
+            additional_data_pending: self.additional_data_pending,
             _request_id: self._request_id,
         }
     }

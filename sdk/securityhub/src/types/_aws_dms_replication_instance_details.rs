@@ -5,9 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsDmsReplicationInstanceDetails {
     /// <p> The amount of storage (in gigabytes) that is allocated for the replication instance. </p>
-    pub allocated_storage: i32,
+    pub allocated_storage: ::std::option::Option<i32>,
     /// <p> Indicates whether minor engine upgrades are applied automatically to the replication instance during the maintenance window. </p>
-    pub auto_minor_version_upgrade: bool,
+    pub auto_minor_version_upgrade: ::std::option::Option<bool>,
     /// <p> The Availability Zone that the replication instance is created in. The default value is a random, system-chosen Availability Zone in the endpoint's Amazon Web Services Region, such as <code>us-east-1d</code>.</p>
     pub availability_zone: ::std::option::Option<::std::string::String>,
     /// <p> The engine version number of the replication instance. If an engine version number is not specified when a replication instance is created, the default is the latest engine version available. </p>
@@ -15,11 +15,11 @@ pub struct AwsDmsReplicationInstanceDetails {
     /// <p> An KMS key identifier that is used to encrypt the data on the replication instance. If you don't specify a value for the <code>KmsKeyId</code> parameter, DMS uses your default encryption key. KMS creates the default encryption key for your Amazon Web Services account. Your Amazon Web Services account has a different default encryption key for each Amazon Web Services Region.</p>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p> Specifies whether the replication instance is deployed across multiple Availability Zones (AZs). You can't set the <code>AvailabilityZone</code> parameter if the <code>MultiAZ</code> parameter is set to <code>true</code>.</p>
-    pub multi_az: bool,
+    pub multi_az: ::std::option::Option<bool>,
     /// <p> The maintenance window times for the replication instance. Upgrades to the replication instance are performed during this time.</p>
     pub preferred_maintenance_window: ::std::option::Option<::std::string::String>,
     /// <p> Specifies the accessibility options for the replication instance. A value of <code>true</code> represents an instance with a public IP address. A value of <code>false</code> represents an instance with a private IP address. The default value is <code>true</code>.</p>
-    pub publicly_accessible: bool,
+    pub publicly_accessible: ::std::option::Option<bool>,
     /// <p> The compute and memory capacity of the replication instance as defined for the specified replication instance class. </p>
     pub replication_instance_class: ::std::option::Option<::std::string::String>,
     /// <p> The replication instance identifier.</p>
@@ -31,11 +31,11 @@ pub struct AwsDmsReplicationInstanceDetails {
 }
 impl AwsDmsReplicationInstanceDetails {
     /// <p> The amount of storage (in gigabytes) that is allocated for the replication instance. </p>
-    pub fn allocated_storage(&self) -> i32 {
+    pub fn allocated_storage(&self) -> ::std::option::Option<i32> {
         self.allocated_storage
     }
     /// <p> Indicates whether minor engine upgrades are applied automatically to the replication instance during the maintenance window. </p>
-    pub fn auto_minor_version_upgrade(&self) -> bool {
+    pub fn auto_minor_version_upgrade(&self) -> ::std::option::Option<bool> {
         self.auto_minor_version_upgrade
     }
     /// <p> The Availability Zone that the replication instance is created in. The default value is a random, system-chosen Availability Zone in the endpoint's Amazon Web Services Region, such as <code>us-east-1d</code>.</p>
@@ -51,7 +51,7 @@ impl AwsDmsReplicationInstanceDetails {
         self.kms_key_id.as_deref()
     }
     /// <p> Specifies whether the replication instance is deployed across multiple Availability Zones (AZs). You can't set the <code>AvailabilityZone</code> parameter if the <code>MultiAZ</code> parameter is set to <code>true</code>.</p>
-    pub fn multi_az(&self) -> bool {
+    pub fn multi_az(&self) -> ::std::option::Option<bool> {
         self.multi_az
     }
     /// <p> The maintenance window times for the replication instance. Upgrades to the replication instance are performed during this time.</p>
@@ -59,7 +59,7 @@ impl AwsDmsReplicationInstanceDetails {
         self.preferred_maintenance_window.as_deref()
     }
     /// <p> Specifies the accessibility options for the replication instance. A value of <code>true</code> represents an instance with a public IP address. A value of <code>false</code> represents an instance with a private IP address. The default value is <code>true</code>.</p>
-    pub fn publicly_accessible(&self) -> bool {
+    pub fn publicly_accessible(&self) -> ::std::option::Option<bool> {
         self.publicly_accessible
     }
     /// <p> The compute and memory capacity of the replication instance as defined for the specified replication instance class. </p>
@@ -289,14 +289,14 @@ impl AwsDmsReplicationInstanceDetailsBuilder {
     /// Consumes the builder and constructs a [`AwsDmsReplicationInstanceDetails`](crate::types::AwsDmsReplicationInstanceDetails).
     pub fn build(self) -> crate::types::AwsDmsReplicationInstanceDetails {
         crate::types::AwsDmsReplicationInstanceDetails {
-            allocated_storage: self.allocated_storage.unwrap_or_default(),
-            auto_minor_version_upgrade: self.auto_minor_version_upgrade.unwrap_or_default(),
+            allocated_storage: self.allocated_storage,
+            auto_minor_version_upgrade: self.auto_minor_version_upgrade,
             availability_zone: self.availability_zone,
             engine_version: self.engine_version,
             kms_key_id: self.kms_key_id,
-            multi_az: self.multi_az.unwrap_or_default(),
+            multi_az: self.multi_az,
             preferred_maintenance_window: self.preferred_maintenance_window,
-            publicly_accessible: self.publicly_accessible.unwrap_or_default(),
+            publicly_accessible: self.publicly_accessible,
             replication_instance_class: self.replication_instance_class,
             replication_instance_identifier: self.replication_instance_identifier,
             replication_subnet_group: self.replication_subnet_group,

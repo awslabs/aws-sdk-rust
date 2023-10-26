@@ -12,7 +12,7 @@ impl super::Client {
     ///   - [`schema_name(Option<String>)`](crate::operation::put_schema_version_metadata::PutSchemaVersionMetadataOutput::schema_name): <p>The name for the schema.</p>
     ///   - [`registry_name(Option<String>)`](crate::operation::put_schema_version_metadata::PutSchemaVersionMetadataOutput::registry_name): <p>The name for the registry.</p>
     ///   - [`latest_version(bool)`](crate::operation::put_schema_version_metadata::PutSchemaVersionMetadataOutput::latest_version): <p>The latest version of the schema.</p>
-    ///   - [`version_number(i64)`](crate::operation::put_schema_version_metadata::PutSchemaVersionMetadataOutput::version_number): <p>The version number of the schema.</p>
+    ///   - [`version_number(Option<i64>)`](crate::operation::put_schema_version_metadata::PutSchemaVersionMetadataOutput::version_number): <p>The version number of the schema.</p>
     ///   - [`schema_version_id(Option<String>)`](crate::operation::put_schema_version_metadata::PutSchemaVersionMetadataOutput::schema_version_id): <p>The unique version ID of the schema version.</p>
     ///   - [`metadata_key(Option<String>)`](crate::operation::put_schema_version_metadata::PutSchemaVersionMetadataOutput::metadata_key): <p>The metadata key.</p>
     ///   - [`metadata_value(Option<String>)`](crate::operation::put_schema_version_metadata::PutSchemaVersionMetadataOutput::metadata_value): <p>The value of the metadata key.</p>

@@ -10,7 +10,7 @@ pub struct MediaConcurrency {
     /// <p>Valid Range for <code>VOICE</code>: Minimum value of 1. Maximum value of 1.</p>
     /// <p>Valid Range for <code>CHAT</code>: Minimum value of 1. Maximum value of 10.</p>
     /// <p>Valid Range for <code>TASK</code>: Minimum value of 1. Maximum value of 10.</p>
-    pub concurrency: i32,
+    pub concurrency: ::std::option::Option<i32>,
     /// <p>Defines the cross-channel routing behavior for each channel that is enabled for this Routing Profile. For example, this allows you to offer an agent a different contact from another channel when they are currently working with a contact from a Voice channel.</p>
     pub cross_channel_behavior: ::std::option::Option<crate::types::CrossChannelBehavior>,
 }
@@ -23,7 +23,7 @@ impl MediaConcurrency {
     /// <p>Valid Range for <code>VOICE</code>: Minimum value of 1. Maximum value of 1.</p>
     /// <p>Valid Range for <code>CHAT</code>: Minimum value of 1. Maximum value of 10.</p>
     /// <p>Valid Range for <code>TASK</code>: Minimum value of 1. Maximum value of 10.</p>
-    pub fn concurrency(&self) -> i32 {
+    pub fn concurrency(&self) -> ::std::option::Option<i32> {
         self.concurrency
     }
     /// <p>Defines the cross-channel routing behavior for each channel that is enabled for this Routing Profile. For example, this allows you to offer an agent a different contact from another channel when they are currently working with a contact from a Voice channel.</p>
@@ -102,7 +102,7 @@ impl MediaConcurrencyBuilder {
     pub fn build(self) -> crate::types::MediaConcurrency {
         crate::types::MediaConcurrency {
             channel: self.channel,
-            concurrency: self.concurrency.unwrap_or_default(),
+            concurrency: self.concurrency,
             cross_channel_behavior: self.cross_channel_behavior,
         }
     }

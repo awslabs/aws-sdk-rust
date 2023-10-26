@@ -26,7 +26,7 @@ pub struct JobFlowDetail {
     pub supported_products: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Indicates whether the cluster is visible to IAM principals in the Amazon Web Services account associated with the cluster. When <code>true</code>, IAM principals in the Amazon Web Services account can perform Amazon EMR cluster actions that their IAM policies allow. When <code>false</code>, only the IAM principal that created the cluster and the Amazon Web Services account root user can perform Amazon EMR actions, regardless of IAM permissions policies attached to other IAM principals.</p>
     /// <p>The default value is <code>true</code> if a value is not provided when creating a cluster using the Amazon EMR API <code>RunJobFlow</code> command, the CLI <a href="https://docs.aws.amazon.com/cli/latest/reference/emr/create-cluster.html">create-cluster</a> command, or the Amazon Web Services Management Console.</p>
-    pub visible_to_all_users: bool,
+    pub visible_to_all_users: ::std::option::Option<bool>,
     /// <p>The IAM role that was specified when the job flow was launched. The Amazon EC2 instances of the job flow assume this role.</p>
     pub job_flow_role: ::std::option::Option<::std::string::String>,
     /// <p>The IAM role that is assumed by the Amazon EMR service to access Amazon Web Services resources on your behalf.</p>
@@ -79,7 +79,7 @@ impl JobFlowDetail {
     }
     /// <p>Indicates whether the cluster is visible to IAM principals in the Amazon Web Services account associated with the cluster. When <code>true</code>, IAM principals in the Amazon Web Services account can perform Amazon EMR cluster actions that their IAM policies allow. When <code>false</code>, only the IAM principal that created the cluster and the Amazon Web Services account root user can perform Amazon EMR actions, regardless of IAM permissions policies attached to other IAM principals.</p>
     /// <p>The default value is <code>true</code> if a value is not provided when creating a cluster using the Amazon EMR API <code>RunJobFlow</code> command, the CLI <a href="https://docs.aws.amazon.com/cli/latest/reference/emr/create-cluster.html">create-cluster</a> command, or the Amazon Web Services Management Console.</p>
-    pub fn visible_to_all_users(&self) -> bool {
+    pub fn visible_to_all_users(&self) -> ::std::option::Option<bool> {
         self.visible_to_all_users
     }
     /// <p>The IAM role that was specified when the job flow was launched. The Amazon EC2 instances of the job flow assume this role.</p>
@@ -371,7 +371,7 @@ impl JobFlowDetailBuilder {
             steps: self.steps,
             bootstrap_actions: self.bootstrap_actions,
             supported_products: self.supported_products,
-            visible_to_all_users: self.visible_to_all_users.unwrap_or_default(),
+            visible_to_all_users: self.visible_to_all_users,
             job_flow_role: self.job_flow_role,
             service_role: self.service_role,
             auto_scaling_role: self.auto_scaling_role,

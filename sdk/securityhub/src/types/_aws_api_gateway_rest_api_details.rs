@@ -20,7 +20,7 @@ pub struct AwsApiGatewayRestApiDetails {
     /// <p>The minimum size in bytes of a payload before compression is enabled.</p>
     /// <p>If <code>null</code>, then compression is disabled.</p>
     /// <p>If 0, then all payloads are compressed.</p>
-    pub minimum_compression_size: i32,
+    pub minimum_compression_size: ::std::option::Option<i32>,
     /// <p>The source of the API key for metering requests according to a usage plan.</p>
     /// <p> <code>HEADER</code> indicates whether to read the API key from the X-API-Key header of a request.</p>
     /// <p> <code>AUTHORIZER</code> indicates whether to read the API key from the <code>UsageIdentifierKey</code> from a custom authorizer.</p>
@@ -57,7 +57,7 @@ impl AwsApiGatewayRestApiDetails {
     /// <p>The minimum size in bytes of a payload before compression is enabled.</p>
     /// <p>If <code>null</code>, then compression is disabled.</p>
     /// <p>If 0, then all payloads are compressed.</p>
-    pub fn minimum_compression_size(&self) -> i32 {
+    pub fn minimum_compression_size(&self) -> ::std::option::Option<i32> {
         self.minimum_compression_size
     }
     /// <p>The source of the API key for metering requests according to a usage plan.</p>
@@ -249,7 +249,7 @@ impl AwsApiGatewayRestApiDetailsBuilder {
             created_date: self.created_date,
             version: self.version,
             binary_media_types: self.binary_media_types,
-            minimum_compression_size: self.minimum_compression_size.unwrap_or_default(),
+            minimum_compression_size: self.minimum_compression_size,
             api_key_source: self.api_key_source,
             endpoint_configuration: self.endpoint_configuration,
         }

@@ -266,6 +266,16 @@ pub fn ser_create_db_instance_read_replica_input_input(
     if let Some(var_99) = &input.source_db_cluster_identifier {
         scope_98.string(var_99);
     }
+    #[allow(unused_mut)]
+    let mut scope_100 = writer.prefix("DedicatedLogVolume");
+    if let Some(var_101) = &input.dedicated_log_volume {
+        scope_100.boolean(*var_101);
+    }
+    #[allow(unused_mut)]
+    let mut scope_102 = writer.prefix("UpgradeStorageConfig");
+    if let Some(var_103) = &input.upgrade_storage_config {
+        scope_102.boolean(*var_103);
+    }
     writer.finish();
     Ok(::aws_smithy_http::body::SdkBody::from(out))
 }

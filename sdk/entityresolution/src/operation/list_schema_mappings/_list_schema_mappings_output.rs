@@ -5,7 +5,7 @@
 pub struct ListSchemaMappingsOutput {
     /// <p>A list of <code>SchemaMappingSummary</code> objects, each of which contain the fields <code>SchemaName</code>, <code>SchemaArn</code>, <code>CreatedAt</code>, <code>UpdatedAt</code>.</p>
     pub schema_list: ::std::option::Option<::std::vec::Vec<crate::types::SchemaMappingSummary>>,
-    /// <p>The pagination token from the previous <code>ListDomains</code> API call.</p>
+    /// <p>The pagination token from the previous API call.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -14,7 +14,7 @@ impl ListSchemaMappingsOutput {
     pub fn schema_list(&self) -> ::std::option::Option<&[crate::types::SchemaMappingSummary]> {
         self.schema_list.as_deref()
     }
-    /// <p>The pagination token from the previous <code>ListDomains</code> API call.</p>
+    /// <p>The pagination token from the previous API call.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -60,17 +60,17 @@ impl ListSchemaMappingsOutputBuilder {
     pub fn get_schema_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SchemaMappingSummary>> {
         &self.schema_list
     }
-    /// <p>The pagination token from the previous <code>ListDomains</code> API call.</p>
+    /// <p>The pagination token from the previous API call.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The pagination token from the previous <code>ListDomains</code> API call.</p>
+    /// <p>The pagination token from the previous API call.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>The pagination token from the previous <code>ListDomains</code> API call.</p>
+    /// <p>The pagination token from the previous API call.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

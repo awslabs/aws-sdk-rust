@@ -27,279 +27,277 @@ pub fn ser_aws_rds_db_instance_details(
     if let Some(var_8) = &input.db_instance_class {
         object.key("DBInstanceClass").string(var_8.as_str());
     }
-    if input.db_instance_port != 0 {
+    if let Some(var_9) = &input.db_instance_port {
         object.key("DbInstancePort").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.db_instance_port).into()),
+            ::aws_smithy_types::Number::NegInt((*var_9).into()),
         );
     }
-    if let Some(var_9) = &input.dbi_resource_id {
-        object.key("DbiResourceId").string(var_9.as_str());
+    if let Some(var_10) = &input.dbi_resource_id {
+        object.key("DbiResourceId").string(var_10.as_str());
     }
-    if let Some(var_10) = &input.db_name {
-        object.key("DBName").string(var_10.as_str());
+    if let Some(var_11) = &input.db_name {
+        object.key("DBName").string(var_11.as_str());
     }
-    if input.deletion_protection {
-        object.key("DeletionProtection").boolean(input.deletion_protection);
+    if let Some(var_12) = &input.deletion_protection {
+        object.key("DeletionProtection").boolean(*var_12);
     }
-    if let Some(var_11) = &input.endpoint {
+    if let Some(var_13) = &input.endpoint {
         #[allow(unused_mut)]
-        let mut object_12 = object.key("Endpoint").start_object();
-        crate::protocol_serde::shape_aws_rds_db_instance_endpoint::ser_aws_rds_db_instance_endpoint(&mut object_12, var_11)?;
-        object_12.finish();
+        let mut object_14 = object.key("Endpoint").start_object();
+        crate::protocol_serde::shape_aws_rds_db_instance_endpoint::ser_aws_rds_db_instance_endpoint(&mut object_14, var_13)?;
+        object_14.finish();
     }
-    if let Some(var_13) = &input.engine {
-        object.key("Engine").string(var_13.as_str());
+    if let Some(var_15) = &input.engine {
+        object.key("Engine").string(var_15.as_str());
     }
-    if let Some(var_14) = &input.engine_version {
-        object.key("EngineVersion").string(var_14.as_str());
+    if let Some(var_16) = &input.engine_version {
+        object.key("EngineVersion").string(var_16.as_str());
     }
-    if input.iam_database_authentication_enabled {
-        object
-            .key("IAMDatabaseAuthenticationEnabled")
-            .boolean(input.iam_database_authentication_enabled);
+    if let Some(var_17) = &input.iam_database_authentication_enabled {
+        object.key("IAMDatabaseAuthenticationEnabled").boolean(*var_17);
     }
-    if let Some(var_15) = &input.instance_create_time {
-        object.key("InstanceCreateTime").string(var_15.as_str());
+    if let Some(var_18) = &input.instance_create_time {
+        object.key("InstanceCreateTime").string(var_18.as_str());
     }
-    if let Some(var_16) = &input.kms_key_id {
-        object.key("KmsKeyId").string(var_16.as_str());
+    if let Some(var_19) = &input.kms_key_id {
+        object.key("KmsKeyId").string(var_19.as_str());
     }
-    if input.publicly_accessible {
-        object.key("PubliclyAccessible").boolean(input.publicly_accessible);
+    if let Some(var_20) = &input.publicly_accessible {
+        object.key("PubliclyAccessible").boolean(*var_20);
     }
-    if input.storage_encrypted {
-        object.key("StorageEncrypted").boolean(input.storage_encrypted);
+    if let Some(var_21) = &input.storage_encrypted {
+        object.key("StorageEncrypted").boolean(*var_21);
     }
-    if let Some(var_17) = &input.tde_credential_arn {
-        object.key("TdeCredentialArn").string(var_17.as_str());
+    if let Some(var_22) = &input.tde_credential_arn {
+        object.key("TdeCredentialArn").string(var_22.as_str());
     }
-    if let Some(var_18) = &input.vpc_security_groups {
-        let mut array_19 = object.key("VpcSecurityGroups").start_array();
-        for item_20 in var_18 {
+    if let Some(var_23) = &input.vpc_security_groups {
+        let mut array_24 = object.key("VpcSecurityGroups").start_array();
+        for item_25 in var_23 {
             {
                 #[allow(unused_mut)]
-                let mut object_21 = array_19.value().start_object();
+                let mut object_26 = array_24.value().start_object();
                 crate::protocol_serde::shape_aws_rds_db_instance_vpc_security_group::ser_aws_rds_db_instance_vpc_security_group(
-                    &mut object_21,
-                    item_20,
+                    &mut object_26,
+                    item_25,
                 )?;
-                object_21.finish();
+                object_26.finish();
             }
         }
-        array_19.finish();
+        array_24.finish();
     }
-    if input.multi_az {
-        object.key("MultiAz").boolean(input.multi_az);
+    if let Some(var_27) = &input.multi_az {
+        object.key("MultiAz").boolean(*var_27);
     }
-    if let Some(var_22) = &input.enhanced_monitoring_resource_arn {
-        object.key("EnhancedMonitoringResourceArn").string(var_22.as_str());
+    if let Some(var_28) = &input.enhanced_monitoring_resource_arn {
+        object.key("EnhancedMonitoringResourceArn").string(var_28.as_str());
     }
-    if let Some(var_23) = &input.db_instance_status {
-        object.key("DbInstanceStatus").string(var_23.as_str());
+    if let Some(var_29) = &input.db_instance_status {
+        object.key("DbInstanceStatus").string(var_29.as_str());
     }
-    if let Some(var_24) = &input.master_username {
-        object.key("MasterUsername").string(var_24.as_str());
+    if let Some(var_30) = &input.master_username {
+        object.key("MasterUsername").string(var_30.as_str());
     }
-    if input.allocated_storage != 0 {
+    if let Some(var_31) = &input.allocated_storage {
         object.key("AllocatedStorage").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.allocated_storage).into()),
+            ::aws_smithy_types::Number::NegInt((*var_31).into()),
         );
     }
-    if let Some(var_25) = &input.preferred_backup_window {
-        object.key("PreferredBackupWindow").string(var_25.as_str());
+    if let Some(var_32) = &input.preferred_backup_window {
+        object.key("PreferredBackupWindow").string(var_32.as_str());
     }
-    if input.backup_retention_period != 0 {
+    if let Some(var_33) = &input.backup_retention_period {
         object.key("BackupRetentionPeriod").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.backup_retention_period).into()),
+            ::aws_smithy_types::Number::NegInt((*var_33).into()),
         );
     }
-    if let Some(var_26) = &input.db_security_groups {
-        let mut array_27 = object.key("DbSecurityGroups").start_array();
-        for item_28 in var_26 {
+    if let Some(var_34) = &input.db_security_groups {
+        let mut array_35 = object.key("DbSecurityGroups").start_array();
+        for item_36 in var_34 {
             {
-                array_27.value().string(item_28.as_str());
+                array_35.value().string(item_36.as_str());
             }
         }
-        array_27.finish();
+        array_35.finish();
     }
-    if let Some(var_29) = &input.db_parameter_groups {
-        let mut array_30 = object.key("DbParameterGroups").start_array();
-        for item_31 in var_29 {
+    if let Some(var_37) = &input.db_parameter_groups {
+        let mut array_38 = object.key("DbParameterGroups").start_array();
+        for item_39 in var_37 {
             {
                 #[allow(unused_mut)]
-                let mut object_32 = array_30.value().start_object();
-                crate::protocol_serde::shape_aws_rds_db_parameter_group::ser_aws_rds_db_parameter_group(&mut object_32, item_31)?;
-                object_32.finish();
+                let mut object_40 = array_38.value().start_object();
+                crate::protocol_serde::shape_aws_rds_db_parameter_group::ser_aws_rds_db_parameter_group(&mut object_40, item_39)?;
+                object_40.finish();
             }
         }
-        array_30.finish();
+        array_38.finish();
     }
-    if let Some(var_33) = &input.availability_zone {
-        object.key("AvailabilityZone").string(var_33.as_str());
+    if let Some(var_41) = &input.availability_zone {
+        object.key("AvailabilityZone").string(var_41.as_str());
     }
-    if let Some(var_34) = &input.db_subnet_group {
+    if let Some(var_42) = &input.db_subnet_group {
         #[allow(unused_mut)]
-        let mut object_35 = object.key("DbSubnetGroup").start_object();
-        crate::protocol_serde::shape_aws_rds_db_subnet_group::ser_aws_rds_db_subnet_group(&mut object_35, var_34)?;
-        object_35.finish();
+        let mut object_43 = object.key("DbSubnetGroup").start_object();
+        crate::protocol_serde::shape_aws_rds_db_subnet_group::ser_aws_rds_db_subnet_group(&mut object_43, var_42)?;
+        object_43.finish();
     }
-    if let Some(var_36) = &input.preferred_maintenance_window {
-        object.key("PreferredMaintenanceWindow").string(var_36.as_str());
+    if let Some(var_44) = &input.preferred_maintenance_window {
+        object.key("PreferredMaintenanceWindow").string(var_44.as_str());
     }
-    if let Some(var_37) = &input.pending_modified_values {
+    if let Some(var_45) = &input.pending_modified_values {
         #[allow(unused_mut)]
-        let mut object_38 = object.key("PendingModifiedValues").start_object();
-        crate::protocol_serde::shape_aws_rds_db_pending_modified_values::ser_aws_rds_db_pending_modified_values(&mut object_38, var_37)?;
-        object_38.finish();
+        let mut object_46 = object.key("PendingModifiedValues").start_object();
+        crate::protocol_serde::shape_aws_rds_db_pending_modified_values::ser_aws_rds_db_pending_modified_values(&mut object_46, var_45)?;
+        object_46.finish();
     }
-    if let Some(var_39) = &input.latest_restorable_time {
-        object.key("LatestRestorableTime").string(var_39.as_str());
+    if let Some(var_47) = &input.latest_restorable_time {
+        object.key("LatestRestorableTime").string(var_47.as_str());
     }
-    if input.auto_minor_version_upgrade {
-        object.key("AutoMinorVersionUpgrade").boolean(input.auto_minor_version_upgrade);
+    if let Some(var_48) = &input.auto_minor_version_upgrade {
+        object.key("AutoMinorVersionUpgrade").boolean(*var_48);
     }
-    if let Some(var_40) = &input.read_replica_source_db_instance_identifier {
-        object.key("ReadReplicaSourceDBInstanceIdentifier").string(var_40.as_str());
+    if let Some(var_49) = &input.read_replica_source_db_instance_identifier {
+        object.key("ReadReplicaSourceDBInstanceIdentifier").string(var_49.as_str());
     }
-    if let Some(var_41) = &input.read_replica_db_instance_identifiers {
-        let mut array_42 = object.key("ReadReplicaDBInstanceIdentifiers").start_array();
-        for item_43 in var_41 {
+    if let Some(var_50) = &input.read_replica_db_instance_identifiers {
+        let mut array_51 = object.key("ReadReplicaDBInstanceIdentifiers").start_array();
+        for item_52 in var_50 {
             {
-                array_42.value().string(item_43.as_str());
+                array_51.value().string(item_52.as_str());
             }
         }
-        array_42.finish();
+        array_51.finish();
     }
-    if let Some(var_44) = &input.read_replica_db_cluster_identifiers {
-        let mut array_45 = object.key("ReadReplicaDBClusterIdentifiers").start_array();
-        for item_46 in var_44 {
+    if let Some(var_53) = &input.read_replica_db_cluster_identifiers {
+        let mut array_54 = object.key("ReadReplicaDBClusterIdentifiers").start_array();
+        for item_55 in var_53 {
             {
-                array_45.value().string(item_46.as_str());
+                array_54.value().string(item_55.as_str());
             }
         }
-        array_45.finish();
+        array_54.finish();
     }
-    if let Some(var_47) = &input.license_model {
-        object.key("LicenseModel").string(var_47.as_str());
+    if let Some(var_56) = &input.license_model {
+        object.key("LicenseModel").string(var_56.as_str());
     }
-    if input.iops != 0 {
+    if let Some(var_57) = &input.iops {
         object.key("Iops").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.iops).into()),
+            ::aws_smithy_types::Number::NegInt((*var_57).into()),
         );
     }
-    if let Some(var_48) = &input.option_group_memberships {
-        let mut array_49 = object.key("OptionGroupMemberships").start_array();
-        for item_50 in var_48 {
+    if let Some(var_58) = &input.option_group_memberships {
+        let mut array_59 = object.key("OptionGroupMemberships").start_array();
+        for item_60 in var_58 {
             {
                 #[allow(unused_mut)]
-                let mut object_51 = array_49.value().start_object();
-                crate::protocol_serde::shape_aws_rds_db_option_group_membership::ser_aws_rds_db_option_group_membership(&mut object_51, item_50)?;
-                object_51.finish();
+                let mut object_61 = array_59.value().start_object();
+                crate::protocol_serde::shape_aws_rds_db_option_group_membership::ser_aws_rds_db_option_group_membership(&mut object_61, item_60)?;
+                object_61.finish();
             }
         }
-        array_49.finish();
+        array_59.finish();
     }
-    if let Some(var_52) = &input.character_set_name {
-        object.key("CharacterSetName").string(var_52.as_str());
+    if let Some(var_62) = &input.character_set_name {
+        object.key("CharacterSetName").string(var_62.as_str());
     }
-    if let Some(var_53) = &input.secondary_availability_zone {
-        object.key("SecondaryAvailabilityZone").string(var_53.as_str());
+    if let Some(var_63) = &input.secondary_availability_zone {
+        object.key("SecondaryAvailabilityZone").string(var_63.as_str());
     }
-    if let Some(var_54) = &input.status_infos {
-        let mut array_55 = object.key("StatusInfos").start_array();
-        for item_56 in var_54 {
+    if let Some(var_64) = &input.status_infos {
+        let mut array_65 = object.key("StatusInfos").start_array();
+        for item_66 in var_64 {
             {
                 #[allow(unused_mut)]
-                let mut object_57 = array_55.value().start_object();
-                crate::protocol_serde::shape_aws_rds_db_status_info::ser_aws_rds_db_status_info(&mut object_57, item_56)?;
-                object_57.finish();
+                let mut object_67 = array_65.value().start_object();
+                crate::protocol_serde::shape_aws_rds_db_status_info::ser_aws_rds_db_status_info(&mut object_67, item_66)?;
+                object_67.finish();
             }
         }
-        array_55.finish();
+        array_65.finish();
     }
-    if let Some(var_58) = &input.storage_type {
-        object.key("StorageType").string(var_58.as_str());
+    if let Some(var_68) = &input.storage_type {
+        object.key("StorageType").string(var_68.as_str());
     }
-    if let Some(var_59) = &input.domain_memberships {
-        let mut array_60 = object.key("DomainMemberships").start_array();
-        for item_61 in var_59 {
-            {
-                #[allow(unused_mut)]
-                let mut object_62 = array_60.value().start_object();
-                crate::protocol_serde::shape_aws_rds_db_domain_membership::ser_aws_rds_db_domain_membership(&mut object_62, item_61)?;
-                object_62.finish();
-            }
-        }
-        array_60.finish();
-    }
-    if input.copy_tags_to_snapshot {
-        object.key("CopyTagsToSnapshot").boolean(input.copy_tags_to_snapshot);
-    }
-    if input.monitoring_interval != 0 {
-        object.key("MonitoringInterval").number(
-            #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.monitoring_interval).into()),
-        );
-    }
-    if let Some(var_63) = &input.monitoring_role_arn {
-        object.key("MonitoringRoleArn").string(var_63.as_str());
-    }
-    if input.promotion_tier != 0 {
-        object.key("PromotionTier").number(
-            #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.promotion_tier).into()),
-        );
-    }
-    if let Some(var_64) = &input.timezone {
-        object.key("Timezone").string(var_64.as_str());
-    }
-    if input.performance_insights_enabled {
-        object.key("PerformanceInsightsEnabled").boolean(input.performance_insights_enabled);
-    }
-    if let Some(var_65) = &input.performance_insights_kms_key_id {
-        object.key("PerformanceInsightsKmsKeyId").string(var_65.as_str());
-    }
-    if input.performance_insights_retention_period != 0 {
-        object.key("PerformanceInsightsRetentionPeriod").number(
-            #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.performance_insights_retention_period).into()),
-        );
-    }
-    if let Some(var_66) = &input.enabled_cloud_watch_logs_exports {
-        let mut array_67 = object.key("EnabledCloudWatchLogsExports").start_array();
-        for item_68 in var_66 {
-            {
-                array_67.value().string(item_68.as_str());
-            }
-        }
-        array_67.finish();
-    }
-    if let Some(var_69) = &input.processor_features {
-        let mut array_70 = object.key("ProcessorFeatures").start_array();
+    if let Some(var_69) = &input.domain_memberships {
+        let mut array_70 = object.key("DomainMemberships").start_array();
         for item_71 in var_69 {
             {
                 #[allow(unused_mut)]
                 let mut object_72 = array_70.value().start_object();
-                crate::protocol_serde::shape_aws_rds_db_processor_feature::ser_aws_rds_db_processor_feature(&mut object_72, item_71)?;
+                crate::protocol_serde::shape_aws_rds_db_domain_membership::ser_aws_rds_db_domain_membership(&mut object_72, item_71)?;
                 object_72.finish();
             }
         }
         array_70.finish();
     }
-    if let Some(var_73) = &input.listener_endpoint {
-        #[allow(unused_mut)]
-        let mut object_74 = object.key("ListenerEndpoint").start_object();
-        crate::protocol_serde::shape_aws_rds_db_instance_endpoint::ser_aws_rds_db_instance_endpoint(&mut object_74, var_73)?;
-        object_74.finish();
+    if let Some(var_73) = &input.copy_tags_to_snapshot {
+        object.key("CopyTagsToSnapshot").boolean(*var_73);
     }
-    if input.max_allocated_storage != 0 {
+    if let Some(var_74) = &input.monitoring_interval {
+        object.key("MonitoringInterval").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_74).into()),
+        );
+    }
+    if let Some(var_75) = &input.monitoring_role_arn {
+        object.key("MonitoringRoleArn").string(var_75.as_str());
+    }
+    if let Some(var_76) = &input.promotion_tier {
+        object.key("PromotionTier").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_76).into()),
+        );
+    }
+    if let Some(var_77) = &input.timezone {
+        object.key("Timezone").string(var_77.as_str());
+    }
+    if let Some(var_78) = &input.performance_insights_enabled {
+        object.key("PerformanceInsightsEnabled").boolean(*var_78);
+    }
+    if let Some(var_79) = &input.performance_insights_kms_key_id {
+        object.key("PerformanceInsightsKmsKeyId").string(var_79.as_str());
+    }
+    if let Some(var_80) = &input.performance_insights_retention_period {
+        object.key("PerformanceInsightsRetentionPeriod").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_80).into()),
+        );
+    }
+    if let Some(var_81) = &input.enabled_cloud_watch_logs_exports {
+        let mut array_82 = object.key("EnabledCloudWatchLogsExports").start_array();
+        for item_83 in var_81 {
+            {
+                array_82.value().string(item_83.as_str());
+            }
+        }
+        array_82.finish();
+    }
+    if let Some(var_84) = &input.processor_features {
+        let mut array_85 = object.key("ProcessorFeatures").start_array();
+        for item_86 in var_84 {
+            {
+                #[allow(unused_mut)]
+                let mut object_87 = array_85.value().start_object();
+                crate::protocol_serde::shape_aws_rds_db_processor_feature::ser_aws_rds_db_processor_feature(&mut object_87, item_86)?;
+                object_87.finish();
+            }
+        }
+        array_85.finish();
+    }
+    if let Some(var_88) = &input.listener_endpoint {
+        #[allow(unused_mut)]
+        let mut object_89 = object.key("ListenerEndpoint").start_object();
+        crate::protocol_serde::shape_aws_rds_db_instance_endpoint::ser_aws_rds_db_instance_endpoint(&mut object_89, var_88)?;
+        object_89.finish();
+    }
+    if let Some(var_90) = &input.max_allocated_storage {
         object.key("MaxAllocatedStorage").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.max_allocated_storage).into()),
+            ::aws_smithy_types::Number::NegInt((*var_90).into()),
         );
     }
     Ok(())

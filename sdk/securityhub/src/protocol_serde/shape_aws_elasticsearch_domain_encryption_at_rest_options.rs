@@ -3,11 +3,11 @@ pub fn ser_aws_elasticsearch_domain_encryption_at_rest_options(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsElasticsearchDomainEncryptionAtRestOptions,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if input.enabled {
-        object.key("Enabled").boolean(input.enabled);
+    if let Some(var_1) = &input.enabled {
+        object.key("Enabled").boolean(*var_1);
     }
-    if let Some(var_1) = &input.kms_key_id {
-        object.key("KmsKeyId").string(var_1.as_str());
+    if let Some(var_2) = &input.kms_key_id {
+        object.key("KmsKeyId").string(var_2.as_str());
     }
     Ok(())
 }

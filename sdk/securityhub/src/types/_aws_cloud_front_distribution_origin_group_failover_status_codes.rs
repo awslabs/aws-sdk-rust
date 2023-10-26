@@ -7,7 +7,7 @@ pub struct AwsCloudFrontDistributionOriginGroupFailoverStatusCodes {
     /// <p>The list of status code values that can cause a failover to the next origin.</p>
     pub items: ::std::option::Option<::std::vec::Vec<i32>>,
     /// <p>The number of status codes that can cause a failover.</p>
-    pub quantity: i32,
+    pub quantity: ::std::option::Option<i32>,
 }
 impl AwsCloudFrontDistributionOriginGroupFailoverStatusCodes {
     /// <p>The list of status code values that can cause a failover to the next origin.</p>
@@ -15,7 +15,7 @@ impl AwsCloudFrontDistributionOriginGroupFailoverStatusCodes {
         self.items.as_deref()
     }
     /// <p>The number of status codes that can cause a failover.</p>
-    pub fn quantity(&self) -> i32 {
+    pub fn quantity(&self) -> ::std::option::Option<i32> {
         self.quantity
     }
 }
@@ -72,7 +72,7 @@ impl AwsCloudFrontDistributionOriginGroupFailoverStatusCodesBuilder {
     pub fn build(self) -> crate::types::AwsCloudFrontDistributionOriginGroupFailoverStatusCodes {
         crate::types::AwsCloudFrontDistributionOriginGroupFailoverStatusCodes {
             items: self.items,
-            quantity: self.quantity.unwrap_or_default(),
+            quantity: self.quantity,
         }
     }
 }

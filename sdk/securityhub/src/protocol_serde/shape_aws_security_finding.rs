@@ -54,202 +54,202 @@ pub fn ser_aws_security_finding(
         crate::protocol_serde::shape_severity::ser_severity(&mut object_17, var_16)?;
         object_17.finish();
     }
-    if input.confidence != 0 {
+    if let Some(var_18) = &input.confidence {
         object.key("Confidence").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.confidence).into()),
+            ::aws_smithy_types::Number::NegInt((*var_18).into()),
         );
     }
-    if input.criticality != 0 {
+    if let Some(var_19) = &input.criticality {
         object.key("Criticality").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.criticality).into()),
+            ::aws_smithy_types::Number::NegInt((*var_19).into()),
         );
     }
-    if let Some(var_18) = &input.title {
-        object.key("Title").string(var_18.as_str());
+    if let Some(var_20) = &input.title {
+        object.key("Title").string(var_20.as_str());
     }
-    if let Some(var_19) = &input.description {
-        object.key("Description").string(var_19.as_str());
+    if let Some(var_21) = &input.description {
+        object.key("Description").string(var_21.as_str());
     }
-    if let Some(var_20) = &input.remediation {
+    if let Some(var_22) = &input.remediation {
         #[allow(unused_mut)]
-        let mut object_21 = object.key("Remediation").start_object();
-        crate::protocol_serde::shape_remediation::ser_remediation(&mut object_21, var_20)?;
-        object_21.finish();
+        let mut object_23 = object.key("Remediation").start_object();
+        crate::protocol_serde::shape_remediation::ser_remediation(&mut object_23, var_22)?;
+        object_23.finish();
     }
-    if let Some(var_22) = &input.source_url {
-        object.key("SourceUrl").string(var_22.as_str());
+    if let Some(var_24) = &input.source_url {
+        object.key("SourceUrl").string(var_24.as_str());
     }
-    if let Some(var_23) = &input.product_fields {
+    if let Some(var_25) = &input.product_fields {
         #[allow(unused_mut)]
-        let mut object_24 = object.key("ProductFields").start_object();
-        for (key_25, value_26) in var_23 {
+        let mut object_26 = object.key("ProductFields").start_object();
+        for (key_27, value_28) in var_25 {
             {
-                object_24.key(key_25.as_str()).string(value_26.as_str());
+                object_26.key(key_27.as_str()).string(value_28.as_str());
             }
         }
-        object_24.finish();
+        object_26.finish();
     }
-    if let Some(var_27) = &input.user_defined_fields {
+    if let Some(var_29) = &input.user_defined_fields {
         #[allow(unused_mut)]
-        let mut object_28 = object.key("UserDefinedFields").start_object();
-        for (key_29, value_30) in var_27 {
+        let mut object_30 = object.key("UserDefinedFields").start_object();
+        for (key_31, value_32) in var_29 {
             {
-                object_28.key(key_29.as_str()).string(value_30.as_str());
+                object_30.key(key_31.as_str()).string(value_32.as_str());
             }
         }
-        object_28.finish();
+        object_30.finish();
     }
-    if let Some(var_31) = &input.malware {
-        let mut array_32 = object.key("Malware").start_array();
-        for item_33 in var_31 {
-            {
-                #[allow(unused_mut)]
-                let mut object_34 = array_32.value().start_object();
-                crate::protocol_serde::shape_malware::ser_malware(&mut object_34, item_33)?;
-                object_34.finish();
-            }
-        }
-        array_32.finish();
-    }
-    if let Some(var_35) = &input.network {
-        #[allow(unused_mut)]
-        let mut object_36 = object.key("Network").start_object();
-        crate::protocol_serde::shape_network::ser_network(&mut object_36, var_35)?;
-        object_36.finish();
-    }
-    if let Some(var_37) = &input.network_path {
-        let mut array_38 = object.key("NetworkPath").start_array();
-        for item_39 in var_37 {
+    if let Some(var_33) = &input.malware {
+        let mut array_34 = object.key("Malware").start_array();
+        for item_35 in var_33 {
             {
                 #[allow(unused_mut)]
-                let mut object_40 = array_38.value().start_object();
-                crate::protocol_serde::shape_network_path_component::ser_network_path_component(&mut object_40, item_39)?;
-                object_40.finish();
+                let mut object_36 = array_34.value().start_object();
+                crate::protocol_serde::shape_malware::ser_malware(&mut object_36, item_35)?;
+                object_36.finish();
             }
         }
-        array_38.finish();
+        array_34.finish();
     }
-    if let Some(var_41) = &input.process {
+    if let Some(var_37) = &input.network {
         #[allow(unused_mut)]
-        let mut object_42 = object.key("Process").start_object();
-        crate::protocol_serde::shape_process_details::ser_process_details(&mut object_42, var_41)?;
-        object_42.finish();
+        let mut object_38 = object.key("Network").start_object();
+        crate::protocol_serde::shape_network::ser_network(&mut object_38, var_37)?;
+        object_38.finish();
     }
-    if let Some(var_43) = &input.threats {
-        let mut array_44 = object.key("Threats").start_array();
-        for item_45 in var_43 {
+    if let Some(var_39) = &input.network_path {
+        let mut array_40 = object.key("NetworkPath").start_array();
+        for item_41 in var_39 {
             {
                 #[allow(unused_mut)]
-                let mut object_46 = array_44.value().start_object();
-                crate::protocol_serde::shape_threat::ser_threat(&mut object_46, item_45)?;
-                object_46.finish();
+                let mut object_42 = array_40.value().start_object();
+                crate::protocol_serde::shape_network_path_component::ser_network_path_component(&mut object_42, item_41)?;
+                object_42.finish();
             }
         }
-        array_44.finish();
+        array_40.finish();
     }
-    if let Some(var_47) = &input.threat_intel_indicators {
-        let mut array_48 = object.key("ThreatIntelIndicators").start_array();
-        for item_49 in var_47 {
+    if let Some(var_43) = &input.process {
+        #[allow(unused_mut)]
+        let mut object_44 = object.key("Process").start_object();
+        crate::protocol_serde::shape_process_details::ser_process_details(&mut object_44, var_43)?;
+        object_44.finish();
+    }
+    if let Some(var_45) = &input.threats {
+        let mut array_46 = object.key("Threats").start_array();
+        for item_47 in var_45 {
             {
                 #[allow(unused_mut)]
-                let mut object_50 = array_48.value().start_object();
-                crate::protocol_serde::shape_threat_intel_indicator::ser_threat_intel_indicator(&mut object_50, item_49)?;
-                object_50.finish();
+                let mut object_48 = array_46.value().start_object();
+                crate::protocol_serde::shape_threat::ser_threat(&mut object_48, item_47)?;
+                object_48.finish();
             }
         }
-        array_48.finish();
+        array_46.finish();
     }
-    if let Some(var_51) = &input.resources {
-        let mut array_52 = object.key("Resources").start_array();
-        for item_53 in var_51 {
+    if let Some(var_49) = &input.threat_intel_indicators {
+        let mut array_50 = object.key("ThreatIntelIndicators").start_array();
+        for item_51 in var_49 {
             {
                 #[allow(unused_mut)]
-                let mut object_54 = array_52.value().start_object();
-                crate::protocol_serde::shape_resource::ser_resource(&mut object_54, item_53)?;
-                object_54.finish();
+                let mut object_52 = array_50.value().start_object();
+                crate::protocol_serde::shape_threat_intel_indicator::ser_threat_intel_indicator(&mut object_52, item_51)?;
+                object_52.finish();
             }
         }
-        array_52.finish();
+        array_50.finish();
     }
-    if let Some(var_55) = &input.compliance {
-        #[allow(unused_mut)]
-        let mut object_56 = object.key("Compliance").start_object();
-        crate::protocol_serde::shape_compliance::ser_compliance(&mut object_56, var_55)?;
-        object_56.finish();
-    }
-    if let Some(var_57) = &input.verification_state {
-        object.key("VerificationState").string(var_57.as_str());
-    }
-    if let Some(var_58) = &input.workflow_state {
-        object.key("WorkflowState").string(var_58.as_str());
-    }
-    if let Some(var_59) = &input.workflow {
-        #[allow(unused_mut)]
-        let mut object_60 = object.key("Workflow").start_object();
-        crate::protocol_serde::shape_workflow::ser_workflow(&mut object_60, var_59)?;
-        object_60.finish();
-    }
-    if let Some(var_61) = &input.record_state {
-        object.key("RecordState").string(var_61.as_str());
-    }
-    if let Some(var_62) = &input.related_findings {
-        let mut array_63 = object.key("RelatedFindings").start_array();
-        for item_64 in var_62 {
+    if let Some(var_53) = &input.resources {
+        let mut array_54 = object.key("Resources").start_array();
+        for item_55 in var_53 {
             {
                 #[allow(unused_mut)]
-                let mut object_65 = array_63.value().start_object();
-                crate::protocol_serde::shape_related_finding::ser_related_finding(&mut object_65, item_64)?;
-                object_65.finish();
+                let mut object_56 = array_54.value().start_object();
+                crate::protocol_serde::shape_resource::ser_resource(&mut object_56, item_55)?;
+                object_56.finish();
             }
         }
-        array_63.finish();
+        array_54.finish();
     }
-    if let Some(var_66) = &input.note {
+    if let Some(var_57) = &input.compliance {
         #[allow(unused_mut)]
-        let mut object_67 = object.key("Note").start_object();
-        crate::protocol_serde::shape_note::ser_note(&mut object_67, var_66)?;
-        object_67.finish();
+        let mut object_58 = object.key("Compliance").start_object();
+        crate::protocol_serde::shape_compliance::ser_compliance(&mut object_58, var_57)?;
+        object_58.finish();
     }
-    if let Some(var_68) = &input.vulnerabilities {
-        let mut array_69 = object.key("Vulnerabilities").start_array();
-        for item_70 in var_68 {
+    if let Some(var_59) = &input.verification_state {
+        object.key("VerificationState").string(var_59.as_str());
+    }
+    if let Some(var_60) = &input.workflow_state {
+        object.key("WorkflowState").string(var_60.as_str());
+    }
+    if let Some(var_61) = &input.workflow {
+        #[allow(unused_mut)]
+        let mut object_62 = object.key("Workflow").start_object();
+        crate::protocol_serde::shape_workflow::ser_workflow(&mut object_62, var_61)?;
+        object_62.finish();
+    }
+    if let Some(var_63) = &input.record_state {
+        object.key("RecordState").string(var_63.as_str());
+    }
+    if let Some(var_64) = &input.related_findings {
+        let mut array_65 = object.key("RelatedFindings").start_array();
+        for item_66 in var_64 {
             {
                 #[allow(unused_mut)]
-                let mut object_71 = array_69.value().start_object();
-                crate::protocol_serde::shape_vulnerability::ser_vulnerability(&mut object_71, item_70)?;
-                object_71.finish();
+                let mut object_67 = array_65.value().start_object();
+                crate::protocol_serde::shape_related_finding::ser_related_finding(&mut object_67, item_66)?;
+                object_67.finish();
             }
         }
-        array_69.finish();
+        array_65.finish();
     }
-    if let Some(var_72) = &input.patch_summary {
+    if let Some(var_68) = &input.note {
         #[allow(unused_mut)]
-        let mut object_73 = object.key("PatchSummary").start_object();
-        crate::protocol_serde::shape_patch_summary::ser_patch_summary(&mut object_73, var_72)?;
-        object_73.finish();
+        let mut object_69 = object.key("Note").start_object();
+        crate::protocol_serde::shape_note::ser_note(&mut object_69, var_68)?;
+        object_69.finish();
     }
-    if let Some(var_74) = &input.action {
+    if let Some(var_70) = &input.vulnerabilities {
+        let mut array_71 = object.key("Vulnerabilities").start_array();
+        for item_72 in var_70 {
+            {
+                #[allow(unused_mut)]
+                let mut object_73 = array_71.value().start_object();
+                crate::protocol_serde::shape_vulnerability::ser_vulnerability(&mut object_73, item_72)?;
+                object_73.finish();
+            }
+        }
+        array_71.finish();
+    }
+    if let Some(var_74) = &input.patch_summary {
         #[allow(unused_mut)]
-        let mut object_75 = object.key("Action").start_object();
-        crate::protocol_serde::shape_action::ser_action(&mut object_75, var_74)?;
+        let mut object_75 = object.key("PatchSummary").start_object();
+        crate::protocol_serde::shape_patch_summary::ser_patch_summary(&mut object_75, var_74)?;
         object_75.finish();
     }
-    if let Some(var_76) = &input.finding_provider_fields {
+    if let Some(var_76) = &input.action {
         #[allow(unused_mut)]
-        let mut object_77 = object.key("FindingProviderFields").start_object();
-        crate::protocol_serde::shape_finding_provider_fields::ser_finding_provider_fields(&mut object_77, var_76)?;
+        let mut object_77 = object.key("Action").start_object();
+        crate::protocol_serde::shape_action::ser_action(&mut object_77, var_76)?;
         object_77.finish();
     }
-    if input.sample {
-        object.key("Sample").boolean(input.sample);
-    }
-    if let Some(var_78) = &input.generator_details {
+    if let Some(var_78) = &input.finding_provider_fields {
         #[allow(unused_mut)]
-        let mut object_79 = object.key("GeneratorDetails").start_object();
-        crate::protocol_serde::shape_generator_details::ser_generator_details(&mut object_79, var_78)?;
+        let mut object_79 = object.key("FindingProviderFields").start_object();
+        crate::protocol_serde::shape_finding_provider_fields::ser_finding_provider_fields(&mut object_79, var_78)?;
         object_79.finish();
+    }
+    if let Some(var_80) = &input.sample {
+        object.key("Sample").boolean(*var_80);
+    }
+    if let Some(var_81) = &input.generator_details {
+        #[allow(unused_mut)]
+        let mut object_82 = object.key("GeneratorDetails").start_object();
+        crate::protocol_serde::shape_generator_details::ser_generator_details(&mut object_82, var_81)?;
+        object_82.finish();
     }
     Ok(())
 }

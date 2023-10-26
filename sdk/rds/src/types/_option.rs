@@ -9,9 +9,9 @@ pub struct Option {
     /// <p>The description of the option.</p>
     pub option_description: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether this option is persistent.</p>
-    pub persistent: bool,
+    pub persistent: ::std::option::Option<bool>,
     /// <p>Indicates whether this option is permanent.</p>
-    pub permanent: bool,
+    pub permanent: ::std::option::Option<bool>,
     /// <p>If required, the port configured for this option to use.</p>
     pub port: ::std::option::Option<i32>,
     /// <p>The version of the option.</p>
@@ -33,11 +33,11 @@ impl Option {
         self.option_description.as_deref()
     }
     /// <p>Indicates whether this option is persistent.</p>
-    pub fn persistent(&self) -> bool {
+    pub fn persistent(&self) -> ::std::option::Option<bool> {
         self.persistent
     }
     /// <p>Indicates whether this option is permanent.</p>
-    pub fn permanent(&self) -> bool {
+    pub fn permanent(&self) -> ::std::option::Option<bool> {
         self.permanent
     }
     /// <p>If required, the port configured for this option to use.</p>
@@ -238,8 +238,8 @@ impl OptionBuilder {
         crate::types::Option {
             option_name: self.option_name,
             option_description: self.option_description,
-            persistent: self.persistent.unwrap_or_default(),
-            permanent: self.permanent.unwrap_or_default(),
+            persistent: self.persistent,
+            permanent: self.permanent,
             port: self.port,
             option_version: self.option_version,
             option_settings: self.option_settings,

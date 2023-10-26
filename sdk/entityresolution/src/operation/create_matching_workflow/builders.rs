@@ -110,17 +110,17 @@ impl CreateMatchingWorkflowFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name of the workflow. There cannot be multiple <code>DataIntegrationWorkflows</code> with the same name.</p>
+    /// <p>The name of the workflow. There can't be multiple <code>MatchingWorkflows</code> with the same name.</p>
     pub fn workflow_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.workflow_name(input.into());
         self
     }
-    /// <p>The name of the workflow. There cannot be multiple <code>DataIntegrationWorkflows</code> with the same name.</p>
+    /// <p>The name of the workflow. There can't be multiple <code>MatchingWorkflows</code> with the same name.</p>
     pub fn set_workflow_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_workflow_name(input);
         self
     }
-    /// <p>The name of the workflow. There cannot be multiple <code>DataIntegrationWorkflows</code> with the same name.</p>
+    /// <p>The name of the workflow. There can't be multiple <code>MatchingWorkflows</code> with the same name.</p>
     pub fn get_workflow_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_workflow_name()
     }

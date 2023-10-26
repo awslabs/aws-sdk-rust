@@ -11,7 +11,7 @@ pub struct RawMetricData {
     /// <p>The metric step (epoch). </p>
     pub step: ::std::option::Option<i32>,
     /// <p>The metric value.</p>
-    pub value: f64,
+    pub value: ::std::option::Option<f64>,
 }
 impl RawMetricData {
     /// <p>The name of the metric.</p>
@@ -27,7 +27,7 @@ impl RawMetricData {
         self.step
     }
     /// <p>The metric value.</p>
-    pub fn value(&self) -> f64 {
+    pub fn value(&self) -> ::std::option::Option<f64> {
         self.value
     }
 }
@@ -110,7 +110,7 @@ impl RawMetricDataBuilder {
             metric_name: self.metric_name,
             timestamp: self.timestamp,
             step: self.step,
-            value: self.value.unwrap_or_default(),
+            value: self.value,
         }
     }
 }

@@ -4,6 +4,9 @@ pub use ::aws_http::request_id::RequestId;
 /// Types for the `AssociateConfigurationItemsToApplication` operation.
 pub mod associate_configuration_items_to_application;
 
+/// Types for the `BatchDeleteAgents` operation.
+pub mod batch_delete_agents;
+
 /// Types for the `BatchDeleteImportData` operation.
 pub mod batch_delete_import_data;
 
@@ -21,6 +24,9 @@ pub mod delete_tags;
 
 /// Types for the `DescribeAgents` operation.
 pub mod describe_agents;
+
+/// Types for the `DescribeBatchDeleteConfigurationTask` operation.
+pub mod describe_batch_delete_configuration_task;
 
 /// Types for the `DescribeConfigurations` operation.
 pub mod describe_configurations;
@@ -54,6 +60,9 @@ pub mod list_configurations;
 
 /// Types for the `ListServerNeighbors` operation.
 pub mod list_server_neighbors;
+
+/// Types for the `StartBatchDeleteConfigurationTask` operation.
+pub mod start_batch_delete_configuration_task;
 
 /// Types for the `StartContinuousExport` operation.
 pub mod start_continuous_export;

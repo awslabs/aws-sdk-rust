@@ -9,17 +9,17 @@ pub fn ser_aws_ec2_instance_metadata_options(
     if let Some(var_2) = &input.http_protocol_ipv6 {
         object.key("HttpProtocolIpv6").string(var_2.as_str());
     }
-    if input.http_put_response_hop_limit != 0 {
+    if let Some(var_3) = &input.http_put_response_hop_limit {
         object.key("HttpPutResponseHopLimit").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.http_put_response_hop_limit).into()),
+            ::aws_smithy_types::Number::NegInt((*var_3).into()),
         );
     }
-    if let Some(var_3) = &input.http_tokens {
-        object.key("HttpTokens").string(var_3.as_str());
+    if let Some(var_4) = &input.http_tokens {
+        object.key("HttpTokens").string(var_4.as_str());
     }
-    if let Some(var_4) = &input.instance_metadata_tags {
-        object.key("InstanceMetadataTags").string(var_4.as_str());
+    if let Some(var_5) = &input.instance_metadata_tags {
+        object.key("InstanceMetadataTags").string(var_5.as_str());
     }
     Ok(())
 }

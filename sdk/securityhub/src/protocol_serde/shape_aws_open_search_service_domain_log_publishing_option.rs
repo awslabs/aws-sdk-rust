@@ -6,8 +6,8 @@ pub fn ser_aws_open_search_service_domain_log_publishing_option(
     if let Some(var_1) = &input.cloud_watch_logs_log_group_arn {
         object.key("CloudWatchLogsLogGroupArn").string(var_1.as_str());
     }
-    if input.enabled {
-        object.key("Enabled").boolean(input.enabled);
+    if let Some(var_2) = &input.enabled {
+        object.key("Enabled").boolean(*var_2);
     }
     Ok(())
 }

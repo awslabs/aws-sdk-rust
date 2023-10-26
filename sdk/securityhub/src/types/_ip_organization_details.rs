@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IpOrganizationDetails {
     /// <p>The Autonomous System Number (ASN) of the internet provider</p>
-    pub asn: i32,
+    pub asn: ::std::option::Option<i32>,
     /// <p>The name of the organization that registered the ASN.</p>
     pub asn_org: ::std::option::Option<::std::string::String>,
     /// <p>The ISP information for the internet provider.</p>
@@ -15,7 +15,7 @@ pub struct IpOrganizationDetails {
 }
 impl IpOrganizationDetails {
     /// <p>The Autonomous System Number (ASN) of the internet provider</p>
-    pub fn asn(&self) -> i32 {
+    pub fn asn(&self) -> ::std::option::Option<i32> {
         self.asn
     }
     /// <p>The name of the organization that registered the ASN.</p>
@@ -107,7 +107,7 @@ impl IpOrganizationDetailsBuilder {
     /// Consumes the builder and constructs a [`IpOrganizationDetails`](crate::types::IpOrganizationDetails).
     pub fn build(self) -> crate::types::IpOrganizationDetails {
         crate::types::IpOrganizationDetails {
-            asn: self.asn.unwrap_or_default(),
+            asn: self.asn,
             asn_org: self.asn_org,
             isp: self.isp,
             org: self.org,

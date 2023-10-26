@@ -7,7 +7,7 @@ pub struct UpdatePolicy {
     /// <p>Specifies whether jobs are automatically terminated when the computer environment infrastructure is updated. The default value is <code>false</code>.</p>
     pub terminate_jobs_on_update: ::std::option::Option<bool>,
     /// <p>Specifies the job timeout (in minutes) when the compute environment infrastructure is updated. The default value is 30.</p>
-    pub job_execution_timeout_minutes: i64,
+    pub job_execution_timeout_minutes: ::std::option::Option<i64>,
 }
 impl UpdatePolicy {
     /// <p>Specifies whether jobs are automatically terminated when the computer environment infrastructure is updated. The default value is <code>false</code>.</p>
@@ -15,7 +15,7 @@ impl UpdatePolicy {
         self.terminate_jobs_on_update
     }
     /// <p>Specifies the job timeout (in minutes) when the compute environment infrastructure is updated. The default value is 30.</p>
-    pub fn job_execution_timeout_minutes(&self) -> i64 {
+    pub fn job_execution_timeout_minutes(&self) -> ::std::option::Option<i64> {
         self.job_execution_timeout_minutes
     }
 }
@@ -66,7 +66,7 @@ impl UpdatePolicyBuilder {
     pub fn build(self) -> crate::types::UpdatePolicy {
         crate::types::UpdatePolicy {
             terminate_jobs_on_update: self.terminate_jobs_on_update,
-            job_execution_timeout_minutes: self.job_execution_timeout_minutes.unwrap_or_default(),
+            job_execution_timeout_minutes: self.job_execution_timeout_minutes,
         }
     }
 }

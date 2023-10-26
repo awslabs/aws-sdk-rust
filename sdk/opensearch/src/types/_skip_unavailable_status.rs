@@ -35,16 +35,16 @@
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
-/// <p>Status of SkipUnavailable param for outbound connection.</p>
+/// <p>The status of <code>SkipUnavailable</code> setting for the outbound connection.</p>
 /// <ul>
 /// <li>
 /// <p>
-/// <b>ENABLED</b> - The SkipUnavailable param is enabled
+/// <b>ENABLED</b> - The <code>SkipUnavailable</code> setting is enabled
 /// for the connection.</p>
 /// </li>
 /// <li>
 /// <p>
-/// <b>DISABLED</b> - The SkipUnavailable param is disabled
+/// <b>DISABLED</b> - The <code>SkipUnavailable</code> setting is disabled
 /// for the connection.</p>
 /// </li>
 /// </ul>

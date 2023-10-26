@@ -13,6 +13,7 @@
 /// # let tunnelprotocol = unimplemented!();
 /// match tunnelprotocol {
 ///     TunnelProtocol::Gre => { /* ... */ },
+///     TunnelProtocol::NoEncap => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -42,6 +43,8 @@
 pub enum TunnelProtocol {
     #[allow(missing_docs)] // documentation missing in model
     Gre,
+    #[allow(missing_docs)] // documentation missing in model
+    NoEncap,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
@@ -49,6 +52,7 @@ impl ::std::convert::From<&str> for TunnelProtocol {
     fn from(s: &str) -> Self {
         match s {
             "GRE" => TunnelProtocol::Gre,
+            "NO_ENCAP" => TunnelProtocol::NoEncap,
             other => TunnelProtocol::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -65,12 +69,13 @@ impl TunnelProtocol {
     pub fn as_str(&self) -> &str {
         match self {
             TunnelProtocol::Gre => "GRE",
+            TunnelProtocol::NoEncap => "NO_ENCAP",
             TunnelProtocol::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["GRE"]
+        &["GRE", "NO_ENCAP"]
     }
 }
 impl ::std::convert::AsRef<str> for TunnelProtocol {

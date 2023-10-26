@@ -37,6 +37,8 @@ pub struct CreateDashboardInput {
     pub definition: ::std::option::Option<crate::types::DashboardVersionDefinition>,
     /// <p>The option to relax the validation needed to create a dashboard with definition objects. This option skips the validation step for specific errors.</p>
     pub validation_strategy: ::std::option::Option<crate::types::ValidationStrategy>,
+    /// <p>When you create the dashboard, Amazon QuickSight adds the dashboard to these folders.</p>
+    pub folder_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl CreateDashboardInput {
     /// <p>The ID of the Amazon Web Services account where you want to create the dashboard.</p>
@@ -97,6 +99,10 @@ impl CreateDashboardInput {
     pub fn validation_strategy(&self) -> ::std::option::Option<&crate::types::ValidationStrategy> {
         self.validation_strategy.as_ref()
     }
+    /// <p>When you create the dashboard, Amazon QuickSight adds the dashboard to these folders.</p>
+    pub fn folder_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
+        self.folder_arns.as_deref()
+    }
 }
 impl CreateDashboardInput {
     /// Creates a new builder-style object to manufacture [`CreateDashboardInput`](crate::operation::create_dashboard::CreateDashboardInput).
@@ -121,6 +127,7 @@ pub struct CreateDashboardInputBuilder {
     pub(crate) theme_arn: ::std::option::Option<::std::string::String>,
     pub(crate) definition: ::std::option::Option<crate::types::DashboardVersionDefinition>,
     pub(crate) validation_strategy: ::std::option::Option<crate::types::ValidationStrategy>,
+    pub(crate) folder_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl CreateDashboardInputBuilder {
     /// <p>The ID of the Amazon Web Services account where you want to create the dashboard.</p>
@@ -333,6 +340,26 @@ impl CreateDashboardInputBuilder {
     pub fn get_validation_strategy(&self) -> &::std::option::Option<crate::types::ValidationStrategy> {
         &self.validation_strategy
     }
+    /// Appends an item to `folder_arns`.
+    ///
+    /// To override the contents of this collection use [`set_folder_arns`](Self::set_folder_arns).
+    ///
+    /// <p>When you create the dashboard, Amazon QuickSight adds the dashboard to these folders.</p>
+    pub fn folder_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.folder_arns.unwrap_or_default();
+        v.push(input.into());
+        self.folder_arns = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>When you create the dashboard, Amazon QuickSight adds the dashboard to these folders.</p>
+    pub fn set_folder_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.folder_arns = input;
+        self
+    }
+    /// <p>When you create the dashboard, Amazon QuickSight adds the dashboard to these folders.</p>
+    pub fn get_folder_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.folder_arns
+    }
     /// Consumes the builder and constructs a [`CreateDashboardInput`](crate::operation::create_dashboard::CreateDashboardInput).
     pub fn build(
         self,
@@ -350,6 +377,7 @@ impl CreateDashboardInputBuilder {
             theme_arn: self.theme_arn,
             definition: self.definition,
             validation_strategy: self.validation_strategy,
+            folder_arns: self.folder_arns,
         })
     }
 }

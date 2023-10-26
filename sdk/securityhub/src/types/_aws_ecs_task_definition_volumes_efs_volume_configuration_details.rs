@@ -13,7 +13,7 @@ pub struct AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationDetails {
     /// <p>Whether to enable encryption for Amazon EFS data in transit between the Amazon ECS host and the Amazon EFS server. </p>
     pub transit_encryption: ::std::option::Option<::std::string::String>,
     /// <p>The port to use when sending encrypted data between the Amazon ECS host and the Amazon EFS server.</p>
-    pub transit_encryption_port: i32,
+    pub transit_encryption_port: ::std::option::Option<i32>,
 }
 impl AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationDetails {
     /// <p>The authorization configuration details for the Amazon EFS file system.</p>
@@ -35,7 +35,7 @@ impl AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationDetails {
         self.transit_encryption.as_deref()
     }
     /// <p>The port to use when sending encrypted data between the Amazon ECS host and the Amazon EFS server.</p>
-    pub fn transit_encryption_port(&self) -> i32 {
+    pub fn transit_encryption_port(&self) -> ::std::option::Option<i32> {
         self.transit_encryption_port
     }
 }
@@ -139,7 +139,7 @@ impl AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationDetailsBuilder {
             filesystem_id: self.filesystem_id,
             root_directory: self.root_directory,
             transit_encryption: self.transit_encryption,
-            transit_encryption_port: self.transit_encryption_port.unwrap_or_default(),
+            transit_encryption_port: self.transit_encryption_port,
         }
     }
 }

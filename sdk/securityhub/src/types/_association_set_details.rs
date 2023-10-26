@@ -9,7 +9,7 @@ pub struct AssociationSetDetails {
     /// <p> The ID of the internet gateway or virtual private gateway. </p>
     pub gateway_id: ::std::option::Option<::std::string::String>,
     /// <p> Indicates whether this is the main route table. </p>
-    pub main: bool,
+    pub main: ::std::option::Option<bool>,
     /// <p> The ID of the association. </p>
     pub route_table_association_id: ::std::option::Option<::std::string::String>,
     /// <p> The ID of the route table. </p>
@@ -27,7 +27,7 @@ impl AssociationSetDetails {
         self.gateway_id.as_deref()
     }
     /// <p> Indicates whether this is the main route table. </p>
-    pub fn main(&self) -> bool {
+    pub fn main(&self) -> ::std::option::Option<bool> {
         self.main
     }
     /// <p> The ID of the association. </p>
@@ -151,7 +151,7 @@ impl AssociationSetDetailsBuilder {
         crate::types::AssociationSetDetails {
             association_state: self.association_state,
             gateway_id: self.gateway_id,
-            main: self.main.unwrap_or_default(),
+            main: self.main,
             route_table_association_id: self.route_table_association_id,
             route_table_id: self.route_table_id,
             subnet_id: self.subnet_id,

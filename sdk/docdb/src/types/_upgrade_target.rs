@@ -11,9 +11,9 @@ pub struct UpgradeTarget {
     /// <p>The version of the database engine that an instance can be upgraded to.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A value that indicates whether the target version is applied to any source DB instances that have <code>AutoMinorVersionUpgrade</code> set to <code>true</code>.</p>
-    pub auto_upgrade: bool,
+    pub auto_upgrade: ::std::option::Option<bool>,
     /// <p>A value that indicates whether a database engine is upgraded to a major version.</p>
-    pub is_major_version_upgrade: bool,
+    pub is_major_version_upgrade: ::std::option::Option<bool>,
 }
 impl UpgradeTarget {
     /// <p>The name of the upgrade target database engine.</p>
@@ -29,11 +29,11 @@ impl UpgradeTarget {
         self.description.as_deref()
     }
     /// <p>A value that indicates whether the target version is applied to any source DB instances that have <code>AutoMinorVersionUpgrade</code> set to <code>true</code>.</p>
-    pub fn auto_upgrade(&self) -> bool {
+    pub fn auto_upgrade(&self) -> ::std::option::Option<bool> {
         self.auto_upgrade
     }
     /// <p>A value that indicates whether a database engine is upgraded to a major version.</p>
-    pub fn is_major_version_upgrade(&self) -> bool {
+    pub fn is_major_version_upgrade(&self) -> ::std::option::Option<bool> {
         self.is_major_version_upgrade
     }
 }
@@ -131,8 +131,8 @@ impl UpgradeTargetBuilder {
             engine: self.engine,
             engine_version: self.engine_version,
             description: self.description,
-            auto_upgrade: self.auto_upgrade.unwrap_or_default(),
-            is_major_version_upgrade: self.is_major_version_upgrade.unwrap_or_default(),
+            auto_upgrade: self.auto_upgrade,
+            is_major_version_upgrade: self.is_major_version_upgrade,
         }
     }
 }

@@ -5,11 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetails {
     /// <p>he number of Availability Zones that the domain uses. Valid values are 2 and 3. The default is 2.</p>
-    pub availability_zone_count: i32,
+    pub availability_zone_count: ::std::option::Option<i32>,
 }
 impl AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetails {
     /// <p>he number of Availability Zones that the domain uses. Valid values are 2 and 3. The default is 2.</p>
-    pub fn availability_zone_count(&self) -> i32 {
+    pub fn availability_zone_count(&self) -> ::std::option::Option<i32> {
         self.availability_zone_count
     }
 }
@@ -44,7 +44,7 @@ impl AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetailsB
     /// Consumes the builder and constructs a [`AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetails`](crate::types::AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetails).
     pub fn build(self) -> crate::types::AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetails {
         crate::types::AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetails {
-            availability_zone_count: self.availability_zone_count.unwrap_or_default(),
+            availability_zone_count: self.availability_zone_count,
         }
     }
 }

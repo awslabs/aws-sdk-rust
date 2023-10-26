@@ -234,7 +234,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for DeleteTrack
             .downcast_ref::<DeleteTrackerInput>()
             .ok_or("failed to downcast to DeleteTrackerInput")?;
 
-        let endpoint_prefix = ::aws_smithy_http::endpoint::EndpointPrefix::new("tracking.").map_err(|err| {
+        let endpoint_prefix = ::aws_smithy_http::endpoint::EndpointPrefix::new("cp.tracking.").map_err(|err| {
             ::aws_smithy_runtime_api::client::interceptors::error::ContextAttachedError::new("endpoint prefix could not be built", err)
         })?;
         cfg.interceptor_state().store_put(endpoint_prefix);

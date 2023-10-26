@@ -7,7 +7,7 @@ pub struct AwsCodeBuildProjectArtifactsDetails {
     /// <p>An identifier for the artifact definition.</p>
     pub artifact_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether to disable encryption on the artifact. Only valid when <code>Type</code> is <code>S3</code>.</p>
-    pub encryption_disabled: bool,
+    pub encryption_disabled: ::std::option::Option<bool>,
     /// <p>Only used when <code>Type</code> is <code>S3</code>. The name of the S3 bucket where the artifact is located.</p>
     pub location: ::std::option::Option<::std::string::String>,
     /// <p>Only used when Type is S3. The name of the artifact. Used with <code>NamepaceType</code> and <code>Path</code> to determine the pattern for storing the artifact.</p>
@@ -15,7 +15,7 @@ pub struct AwsCodeBuildProjectArtifactsDetails {
     /// <p>Only used when <code>Type</code> is <code>S3</code>. The value to use for the namespace. Used with <code>Name</code> and <code>Path</code> to determine the pattern for storing the artifact.</p>
     pub namespace_type: ::std::option::Option<::std::string::String>,
     /// <p>Whether the name specified in the buildspec file overrides the artifact name.</p>
-    pub override_artifact_name: bool,
+    pub override_artifact_name: ::std::option::Option<bool>,
     /// <p>Only used when <code>Type</code> is <code>S3</code>. The type of output artifact to create.</p>
     pub packaging: ::std::option::Option<::std::string::String>,
     /// <p>Only used when <code>Type</code> is <code>S3</code>. The path to the artifact. Used with <code>Name</code> and <code>NamespaceType</code> to determine the pattern for storing the artifact.</p>
@@ -29,7 +29,7 @@ impl AwsCodeBuildProjectArtifactsDetails {
         self.artifact_identifier.as_deref()
     }
     /// <p>Indicates whether to disable encryption on the artifact. Only valid when <code>Type</code> is <code>S3</code>.</p>
-    pub fn encryption_disabled(&self) -> bool {
+    pub fn encryption_disabled(&self) -> ::std::option::Option<bool> {
         self.encryption_disabled
     }
     /// <p>Only used when <code>Type</code> is <code>S3</code>. The name of the S3 bucket where the artifact is located.</p>
@@ -45,7 +45,7 @@ impl AwsCodeBuildProjectArtifactsDetails {
         self.namespace_type.as_deref()
     }
     /// <p>Whether the name specified in the buildspec file overrides the artifact name.</p>
-    pub fn override_artifact_name(&self) -> bool {
+    pub fn override_artifact_name(&self) -> ::std::option::Option<bool> {
         self.override_artifact_name
     }
     /// <p>Only used when <code>Type</code> is <code>S3</code>. The type of output artifact to create.</p>
@@ -213,11 +213,11 @@ impl AwsCodeBuildProjectArtifactsDetailsBuilder {
     pub fn build(self) -> crate::types::AwsCodeBuildProjectArtifactsDetails {
         crate::types::AwsCodeBuildProjectArtifactsDetails {
             artifact_identifier: self.artifact_identifier,
-            encryption_disabled: self.encryption_disabled.unwrap_or_default(),
+            encryption_disabled: self.encryption_disabled,
             location: self.location,
             name: self.name,
             namespace_type: self.namespace_type,
-            override_artifact_name: self.override_artifact_name.unwrap_or_default(),
+            override_artifact_name: self.override_artifact_name,
             packaging: self.packaging,
             path: self.path,
             r#type: self.r#type,

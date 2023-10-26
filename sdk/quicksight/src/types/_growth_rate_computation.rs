@@ -13,7 +13,7 @@ pub struct GrowthRateComputation {
     /// <p>The value field that is used in a computation.</p>
     pub value: ::std::option::Option<crate::types::MeasureField>,
     /// <p>The period size setup of a growth rate computation.</p>
-    pub period_size: i32,
+    pub period_size: ::std::option::Option<i32>,
 }
 impl GrowthRateComputation {
     /// <p>The ID for a computation.</p>
@@ -33,7 +33,7 @@ impl GrowthRateComputation {
         self.value.as_ref()
     }
     /// <p>The period size setup of a growth rate computation.</p>
-    pub fn period_size(&self) -> i32 {
+    pub fn period_size(&self) -> ::std::option::Option<i32> {
         self.period_size
     }
 }
@@ -132,7 +132,7 @@ impl GrowthRateComputationBuilder {
             name: self.name,
             time: self.time,
             value: self.value,
-            period_size: self.period_size.unwrap_or_default(),
+            period_size: self.period_size,
         }
     }
 }

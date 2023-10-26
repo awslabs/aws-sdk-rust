@@ -23,6 +23,10 @@ pub struct CreateBlueGreenDeploymentInput {
     pub target_db_cluster_parameter_group_name: ::std::option::Option<::std::string::String>,
     /// <p>Tags to assign to the blue/green deployment.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    /// <p>Specify the DB instance class for the databases in the green environment.</p>
+    pub target_db_instance_class: ::std::option::Option<::std::string::String>,
+    /// <p>Whether to upgrade the storage file system configuration on the green database. This option migrates the green DB instance from the older 32-bit file system to the preferred configuration. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.UpgradeFileSystem">Upgrading the storage file system for a DB instance</a>.</p>
+    pub upgrade_target_storage_config: ::std::option::Option<bool>,
 }
 impl CreateBlueGreenDeploymentInput {
     /// <p>The name of the blue/green deployment.</p>
@@ -57,6 +61,14 @@ impl CreateBlueGreenDeploymentInput {
     pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
+    /// <p>Specify the DB instance class for the databases in the green environment.</p>
+    pub fn target_db_instance_class(&self) -> ::std::option::Option<&str> {
+        self.target_db_instance_class.as_deref()
+    }
+    /// <p>Whether to upgrade the storage file system configuration on the green database. This option migrates the green DB instance from the older 32-bit file system to the preferred configuration. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.UpgradeFileSystem">Upgrading the storage file system for a DB instance</a>.</p>
+    pub fn upgrade_target_storage_config(&self) -> ::std::option::Option<bool> {
+        self.upgrade_target_storage_config
+    }
 }
 impl CreateBlueGreenDeploymentInput {
     /// Creates a new builder-style object to manufacture [`CreateBlueGreenDeploymentInput`](crate::operation::create_blue_green_deployment::CreateBlueGreenDeploymentInput).
@@ -75,6 +87,8 @@ pub struct CreateBlueGreenDeploymentInputBuilder {
     pub(crate) target_db_parameter_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) target_db_cluster_parameter_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) target_db_instance_class: ::std::option::Option<::std::string::String>,
+    pub(crate) upgrade_target_storage_config: ::std::option::Option<bool>,
 }
 impl CreateBlueGreenDeploymentInputBuilder {
     /// <p>The name of the blue/green deployment.</p>
@@ -191,6 +205,34 @@ impl CreateBlueGreenDeploymentInputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }
+    /// <p>Specify the DB instance class for the databases in the green environment.</p>
+    pub fn target_db_instance_class(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.target_db_instance_class = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Specify the DB instance class for the databases in the green environment.</p>
+    pub fn set_target_db_instance_class(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.target_db_instance_class = input;
+        self
+    }
+    /// <p>Specify the DB instance class for the databases in the green environment.</p>
+    pub fn get_target_db_instance_class(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_db_instance_class
+    }
+    /// <p>Whether to upgrade the storage file system configuration on the green database. This option migrates the green DB instance from the older 32-bit file system to the preferred configuration. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.UpgradeFileSystem">Upgrading the storage file system for a DB instance</a>.</p>
+    pub fn upgrade_target_storage_config(mut self, input: bool) -> Self {
+        self.upgrade_target_storage_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Whether to upgrade the storage file system configuration on the green database. This option migrates the green DB instance from the older 32-bit file system to the preferred configuration. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.UpgradeFileSystem">Upgrading the storage file system for a DB instance</a>.</p>
+    pub fn set_upgrade_target_storage_config(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.upgrade_target_storage_config = input;
+        self
+    }
+    /// <p>Whether to upgrade the storage file system configuration on the green database. This option migrates the green DB instance from the older 32-bit file system to the preferred configuration. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.UpgradeFileSystem">Upgrading the storage file system for a DB instance</a>.</p>
+    pub fn get_upgrade_target_storage_config(&self) -> &::std::option::Option<bool> {
+        &self.upgrade_target_storage_config
+    }
     /// Consumes the builder and constructs a [`CreateBlueGreenDeploymentInput`](crate::operation::create_blue_green_deployment::CreateBlueGreenDeploymentInput).
     pub fn build(
         self,
@@ -205,6 +247,8 @@ impl CreateBlueGreenDeploymentInputBuilder {
             target_db_parameter_group_name: self.target_db_parameter_group_name,
             target_db_cluster_parameter_group_name: self.target_db_cluster_parameter_group_name,
             tags: self.tags,
+            target_db_instance_class: self.target_db_instance_class,
+            upgrade_target_storage_config: self.upgrade_target_storage_config,
         })
     }
 }

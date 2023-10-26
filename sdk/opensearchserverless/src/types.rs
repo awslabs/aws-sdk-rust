@@ -23,6 +23,12 @@ pub use crate::types::_security_config_detail::SecurityConfigDetail;
 
 pub use crate::types::_saml_config_options::SamlConfigOptions;
 
+pub use crate::types::_lifecycle_policy_summary::LifecyclePolicySummary;
+
+pub use crate::types::_lifecycle_policy_type::LifecyclePolicyType;
+
+pub use crate::types::_lifecycle_policy_detail::LifecyclePolicyDetail;
+
 pub use crate::types::_collection_summary::CollectionSummary;
 
 pub use crate::types::_collection_status::CollectionStatus;
@@ -51,6 +57,8 @@ pub use crate::types::_account_settings_detail::AccountSettingsDetail;
 
 pub use crate::types::_capacity_limits::CapacityLimits;
 
+pub use crate::types::_lifecycle_policy_stats::LifecyclePolicyStats;
+
 pub use crate::types::_security_config_stats::SecurityConfigStats;
 
 pub use crate::types::_security_policy_stats::SecurityPolicyStats;
@@ -60,6 +68,18 @@ pub use crate::types::_access_policy_stats::AccessPolicyStats;
 pub use crate::types::_vpc_endpoint_error_detail::VpcEndpointErrorDetail;
 
 pub use crate::types::_vpc_endpoint_detail::VpcEndpointDetail;
+
+pub use crate::types::_lifecycle_policy_error_detail::LifecyclePolicyErrorDetail;
+
+pub use crate::types::_lifecycle_policy_identifier::LifecyclePolicyIdentifier;
+
+pub use crate::types::_effective_lifecycle_policy_error_detail::EffectiveLifecyclePolicyErrorDetail;
+
+pub use crate::types::_effective_lifecycle_policy_detail::EffectiveLifecyclePolicyDetail;
+
+pub use crate::types::_resource_type::ResourceType;
+
+pub use crate::types::_lifecycle_policy_resource_identifier::LifecyclePolicyResourceIdentifier;
 
 pub use crate::types::_collection_error_detail::CollectionErrorDetail;
 
@@ -96,6 +116,26 @@ mod _create_vpc_endpoint_detail;
 mod _delete_collection_detail;
 
 mod _delete_vpc_endpoint_detail;
+
+mod _effective_lifecycle_policy_detail;
+
+mod _effective_lifecycle_policy_error_detail;
+
+mod _lifecycle_policy_detail;
+
+mod _lifecycle_policy_error_detail;
+
+mod _lifecycle_policy_identifier;
+
+mod _lifecycle_policy_resource_identifier;
+
+mod _lifecycle_policy_stats;
+
+mod _lifecycle_policy_summary;
+
+mod _lifecycle_policy_type;
+
+mod _resource_type;
 
 mod _saml_config_options;
 

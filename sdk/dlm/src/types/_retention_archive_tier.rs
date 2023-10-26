@@ -9,19 +9,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RetentionArchiveTier {
     /// <p>The maximum number of snapshots to retain in the archive storage tier for each volume. The count must ensure that each snapshot remains in the archive tier for at least 90 days. For example, if the schedule creates snapshots every 30 days, you must specify a count of 3 or more to ensure that each snapshot is archived for at least 90 days.</p>
-    pub count: i32,
+    pub count: ::std::option::Option<i32>,
     /// <p>Specifies the period of time to retain snapshots in the archive tier. After this period expires, the snapshot is permanently deleted.</p>
-    pub interval: i32,
+    pub interval: ::std::option::Option<i32>,
     /// <p>The unit of time in which to measure the <b>Interval</b>. For example, to retain a snapshots in the archive tier for 6 months, specify <code>Interval=6</code> and <code>IntervalUnit=MONTHS</code>.</p>
     pub interval_unit: ::std::option::Option<crate::types::RetentionIntervalUnitValues>,
 }
 impl RetentionArchiveTier {
     /// <p>The maximum number of snapshots to retain in the archive storage tier for each volume. The count must ensure that each snapshot remains in the archive tier for at least 90 days. For example, if the schedule creates snapshots every 30 days, you must specify a count of 3 or more to ensure that each snapshot is archived for at least 90 days.</p>
-    pub fn count(&self) -> i32 {
+    pub fn count(&self) -> ::std::option::Option<i32> {
         self.count
     }
     /// <p>Specifies the period of time to retain snapshots in the archive tier. After this period expires, the snapshot is permanently deleted.</p>
-    pub fn interval(&self) -> i32 {
+    pub fn interval(&self) -> ::std::option::Option<i32> {
         self.interval
     }
     /// <p>The unit of time in which to measure the <b>Interval</b>. For example, to retain a snapshots in the archive tier for 6 months, specify <code>Interval=6</code> and <code>IntervalUnit=MONTHS</code>.</p>
@@ -90,8 +90,8 @@ impl RetentionArchiveTierBuilder {
     /// Consumes the builder and constructs a [`RetentionArchiveTier`](crate::types::RetentionArchiveTier).
     pub fn build(self) -> crate::types::RetentionArchiveTier {
         crate::types::RetentionArchiveTier {
-            count: self.count.unwrap_or_default(),
-            interval: self.interval.unwrap_or_default(),
+            count: self.count,
+            interval: self.interval,
             interval_unit: self.interval_unit,
         }
     }

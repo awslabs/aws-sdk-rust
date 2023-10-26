@@ -15,11 +15,11 @@ pub fn ser_aws_redshift_cluster_logging_status(
     if let Some(var_4) = &input.last_successful_delivery_time {
         object.key("LastSuccessfulDeliveryTime").string(var_4.as_str());
     }
-    if input.logging_enabled {
-        object.key("LoggingEnabled").boolean(input.logging_enabled);
+    if let Some(var_5) = &input.logging_enabled {
+        object.key("LoggingEnabled").boolean(*var_5);
     }
-    if let Some(var_5) = &input.s3_key_prefix {
-        object.key("S3KeyPrefix").string(var_5.as_str());
+    if let Some(var_6) = &input.s3_key_prefix {
+        object.key("S3KeyPrefix").string(var_6.as_str());
     }
     Ok(())
 }

@@ -15,10 +15,10 @@ pub fn ser_io_t_job_abort_criteria(
             ::aws_smithy_types::Number::Float((input.threshold_percentage).into()),
         );
     }
-    {
+    if let Some(var_3) = &input.min_number_of_executed_things {
         object.key("minNumberOfExecutedThings").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.min_number_of_executed_things).into()),
+            ::aws_smithy_types::Number::NegInt((*var_3).into()),
         );
     }
     Ok(())

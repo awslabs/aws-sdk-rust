@@ -205,6 +205,13 @@ pub(crate) fn de_get_run(
                             .transpose()?,
                     );
                 }
+                "failureReason" => {
+                    builder = builder.set_failure_reason(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 "id" => {
                     builder = builder.set_id(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -218,6 +225,9 @@ pub(crate) fn de_get_run(
                             .map(|s| s.to_unescaped().map(|u| crate::types::RunLogLevel::from(u.as_ref())))
                             .transpose()?,
                     );
+                }
+                "logLocation" => {
+                    builder = builder.set_log_location(crate::protocol_serde::shape_run_log_location::de_run_log_location(tokens)?);
                 }
                 "name" => {
                     builder = builder.set_name(

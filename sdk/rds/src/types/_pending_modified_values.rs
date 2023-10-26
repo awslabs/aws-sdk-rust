@@ -46,6 +46,8 @@ pub struct PendingModifiedValues {
     pub storage_throughput: ::std::option::Option<i32>,
     /// <p>The database engine of the DB instance.</p>
     pub engine: ::std::option::Option<::std::string::String>,
+    /// <p>Indicates whether the DB instance has a dedicated log volume (DLV) enabled.&gt;</p>
+    pub dedicated_log_volume: ::std::option::Option<bool>,
 }
 impl PendingModifiedValues {
     /// <p>The name of the compute and memory capacity class for the DB instance.</p>
@@ -130,6 +132,10 @@ impl PendingModifiedValues {
     pub fn engine(&self) -> ::std::option::Option<&str> {
         self.engine.as_deref()
     }
+    /// <p>Indicates whether the DB instance has a dedicated log volume (DLV) enabled.&gt;</p>
+    pub fn dedicated_log_volume(&self) -> ::std::option::Option<bool> {
+        self.dedicated_log_volume
+    }
 }
 impl PendingModifiedValues {
     /// Creates a new builder-style object to manufacture [`PendingModifiedValues`](crate::types::PendingModifiedValues).
@@ -162,6 +168,7 @@ pub struct PendingModifiedValuesBuilder {
     pub(crate) resume_full_automation_mode_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) storage_throughput: ::std::option::Option<i32>,
     pub(crate) engine: ::std::option::Option<::std::string::String>,
+    pub(crate) dedicated_log_volume: ::std::option::Option<bool>,
 }
 impl PendingModifiedValuesBuilder {
     /// <p>The name of the compute and memory capacity class for the DB instance.</p>
@@ -456,6 +463,20 @@ impl PendingModifiedValuesBuilder {
     pub fn get_engine(&self) -> &::std::option::Option<::std::string::String> {
         &self.engine
     }
+    /// <p>Indicates whether the DB instance has a dedicated log volume (DLV) enabled.&gt;</p>
+    pub fn dedicated_log_volume(mut self, input: bool) -> Self {
+        self.dedicated_log_volume = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether the DB instance has a dedicated log volume (DLV) enabled.&gt;</p>
+    pub fn set_dedicated_log_volume(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.dedicated_log_volume = input;
+        self
+    }
+    /// <p>Indicates whether the DB instance has a dedicated log volume (DLV) enabled.&gt;</p>
+    pub fn get_dedicated_log_volume(&self) -> &::std::option::Option<bool> {
+        &self.dedicated_log_volume
+    }
     /// Consumes the builder and constructs a [`PendingModifiedValues`](crate::types::PendingModifiedValues).
     pub fn build(self) -> crate::types::PendingModifiedValues {
         crate::types::PendingModifiedValues {
@@ -479,6 +500,7 @@ impl PendingModifiedValuesBuilder {
             resume_full_automation_mode_time: self.resume_full_automation_mode_time,
             storage_throughput: self.storage_throughput,
             engine: self.engine,
+            dedicated_log_volume: self.dedicated_log_volume,
         }
     }
 }

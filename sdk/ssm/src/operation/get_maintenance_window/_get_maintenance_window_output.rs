@@ -22,7 +22,7 @@ pub struct GetMaintenanceWindowOutput {
     /// <p>The next time the maintenance window will actually run, taking into account any specified times for the maintenance window to become active or inactive.</p>
     pub next_execution_time: ::std::option::Option<::std::string::String>,
     /// <p>The duration of the maintenance window in hours.</p>
-    pub duration: i32,
+    pub duration: ::std::option::Option<i32>,
     /// <p>The number of hours before the end of the maintenance window that Amazon Web Services Systems Manager stops scheduling new tasks for execution.</p>
     pub cutoff: i32,
     /// <p>Whether targets must be registered with the maintenance window before tasks can be defined for those targets.</p>
@@ -73,7 +73,7 @@ impl GetMaintenanceWindowOutput {
         self.next_execution_time.as_deref()
     }
     /// <p>The duration of the maintenance window in hours.</p>
-    pub fn duration(&self) -> i32 {
+    pub fn duration(&self) -> ::std::option::Option<i32> {
         self.duration
     }
     /// <p>The number of hours before the end of the maintenance window that Amazon Web Services Systems Manager stops scheduling new tasks for execution.</p>
@@ -384,7 +384,7 @@ impl GetMaintenanceWindowOutputBuilder {
             schedule_timezone: self.schedule_timezone,
             schedule_offset: self.schedule_offset,
             next_execution_time: self.next_execution_time,
-            duration: self.duration.unwrap_or_default(),
+            duration: self.duration,
             cutoff: self.cutoff.unwrap_or_default(),
             allow_unassociated_targets: self.allow_unassociated_targets.unwrap_or_default(),
             enabled: self.enabled.unwrap_or_default(),

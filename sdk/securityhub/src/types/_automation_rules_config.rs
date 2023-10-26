@@ -9,13 +9,13 @@ pub struct AutomationRulesConfig {
     /// <p> Whether the rule is active after it is created. If this parameter is equal to <code>ENABLED</code>, Security Hub starts applying the rule to findings and finding updates after the rule is created. </p>
     pub rule_status: ::std::option::Option<crate::types::RuleStatus>,
     /// <p> An integer ranging from 1 to 1000 that represents the order in which the rule action is applied to findings. Security Hub applies rules with lower values for this parameter first. </p>
-    pub rule_order: i32,
+    pub rule_order: ::std::option::Option<i32>,
     /// <p> The name of the rule. </p>
     pub rule_name: ::std::option::Option<::std::string::String>,
     /// <p> A description of the rule. </p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether a rule is the last to be applied with respect to a finding that matches the rule criteria. This is useful when a finding matches the criteria for multiple rules, and each rule has different actions. If a rule is terminal, Security Hub applies the rule action to a finding that matches the rule criteria and doesn't evaluate other rules for the finding. By default, a rule isn't terminal. </p>
-    pub is_terminal: bool,
+    pub is_terminal: ::std::option::Option<bool>,
     /// <p> A set of <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-findings-format.html">Amazon Web Services Security Finding Format</a> finding field attributes and corresponding expected values that Security Hub uses to filter findings. If a rule is enabled and a finding matches the conditions specified in this parameter, Security Hub applies the rule action to the finding. </p>
     pub criteria: ::std::option::Option<crate::types::AutomationRulesFindingFilters>,
     /// <p> One or more actions to update finding fields if a finding matches the defined criteria of the rule. </p>
@@ -39,7 +39,7 @@ impl AutomationRulesConfig {
         self.rule_status.as_ref()
     }
     /// <p> An integer ranging from 1 to 1000 that represents the order in which the rule action is applied to findings. Security Hub applies rules with lower values for this parameter first. </p>
-    pub fn rule_order(&self) -> i32 {
+    pub fn rule_order(&self) -> ::std::option::Option<i32> {
         self.rule_order
     }
     /// <p> The name of the rule. </p>
@@ -51,7 +51,7 @@ impl AutomationRulesConfig {
         self.description.as_deref()
     }
     /// <p>Specifies whether a rule is the last to be applied with respect to a finding that matches the rule criteria. This is useful when a finding matches the criteria for multiple rules, and each rule has different actions. If a rule is terminal, Security Hub applies the rule action to a finding that matches the rule criteria and doesn't evaluate other rules for the finding. By default, a rule isn't terminal. </p>
-    pub fn is_terminal(&self) -> bool {
+    pub fn is_terminal(&self) -> ::std::option::Option<bool> {
         self.is_terminal
     }
     /// <p> A set of <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-findings-format.html">Amazon Web Services Security Finding Format</a> finding field attributes and corresponding expected values that Security Hub uses to filter findings. If a rule is enabled and a finding matches the conditions specified in this parameter, Security Hub applies the rule action to the finding. </p>
@@ -272,10 +272,10 @@ impl AutomationRulesConfigBuilder {
         crate::types::AutomationRulesConfig {
             rule_arn: self.rule_arn,
             rule_status: self.rule_status,
-            rule_order: self.rule_order.unwrap_or_default(),
+            rule_order: self.rule_order,
             rule_name: self.rule_name,
             description: self.description,
-            is_terminal: self.is_terminal.unwrap_or_default(),
+            is_terminal: self.is_terminal,
             criteria: self.criteria,
             actions: self.actions,
             created_at: self.created_at,

@@ -700,4 +700,32 @@ impl RestoreFromClusterSnapshotFluentBuilder {
     pub fn get_encrypted(&self) -> &::std::option::Option<bool> {
         self.inner.get_encrypted()
     }
+    /// <p>If <code>true</code>, Amazon Redshift uses Secrets Manager to manage the restored cluster's admin credentials. If <code>ManageMasterPassword</code> is false or not set, Amazon Redshift uses the admin credentials the cluster had at the time the snapshot was taken.</p>
+    pub fn manage_master_password(mut self, input: bool) -> Self {
+        self.inner = self.inner.manage_master_password(input);
+        self
+    }
+    /// <p>If <code>true</code>, Amazon Redshift uses Secrets Manager to manage the restored cluster's admin credentials. If <code>ManageMasterPassword</code> is false or not set, Amazon Redshift uses the admin credentials the cluster had at the time the snapshot was taken.</p>
+    pub fn set_manage_master_password(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_manage_master_password(input);
+        self
+    }
+    /// <p>If <code>true</code>, Amazon Redshift uses Secrets Manager to manage the restored cluster's admin credentials. If <code>ManageMasterPassword</code> is false or not set, Amazon Redshift uses the admin credentials the cluster had at the time the snapshot was taken.</p>
+    pub fn get_manage_master_password(&self) -> &::std::option::Option<bool> {
+        self.inner.get_manage_master_password()
+    }
+    /// <p>The ID of the Key Management Service (KMS) key used to encrypt and store the cluster's admin credentials secret. You can only use this parameter if <code>ManageMasterPassword</code> is true.</p>
+    pub fn master_password_secret_kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.master_password_secret_kms_key_id(input.into());
+        self
+    }
+    /// <p>The ID of the Key Management Service (KMS) key used to encrypt and store the cluster's admin credentials secret. You can only use this parameter if <code>ManageMasterPassword</code> is true.</p>
+    pub fn set_master_password_secret_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_master_password_secret_kms_key_id(input);
+        self
+    }
+    /// <p>The ID of the Key Management Service (KMS) key used to encrypt and store the cluster's admin credentials secret. You can only use this parameter if <code>ManageMasterPassword</code> is true.</p>
+    pub fn get_master_password_secret_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_master_password_secret_kms_key_id()
+    }
 }

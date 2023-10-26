@@ -10,7 +10,7 @@ pub struct FindingHistoryRecord {
     /// <p>A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. </p>
     pub update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> Identifies whether the event marks the creation of a new finding. A value of <code>True</code> means that the finding is newly created. A value of <code>False</code> means that the finding isn’t newly created. </p>
-    pub finding_created: bool,
+    pub finding_created: ::std::option::Option<bool>,
     /// <p> Identifies the source of the event that changed the finding. For example, an integrated Amazon Web Service or third-party partner integration may call <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchImportFindings.html"> <code>BatchImportFindings</code> </a>, or an Security Hub customer may call <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchUpdateFindings.html"> <code>BatchUpdateFindings</code> </a>. </p>
     pub update_source: ::std::option::Option<crate::types::FindingHistoryUpdateSource>,
     /// <p> An array of objects that provides details about the finding change event, including the Amazon Web Services Security Finding Format (ASFF) field that changed, the value of the field before the change, and the value of the field after the change. </p>
@@ -29,7 +29,7 @@ impl FindingHistoryRecord {
         self.update_time.as_ref()
     }
     /// <p> Identifies whether the event marks the creation of a new finding. A value of <code>True</code> means that the finding is newly created. A value of <code>False</code> means that the finding isn’t newly created. </p>
-    pub fn finding_created(&self) -> bool {
+    pub fn finding_created(&self) -> ::std::option::Option<bool> {
         self.finding_created
     }
     /// <p> Identifies the source of the event that changed the finding. For example, an integrated Amazon Web Service or third-party partner integration may call <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchImportFindings.html"> <code>BatchImportFindings</code> </a>, or an Security Hub customer may call <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchUpdateFindings.html"> <code>BatchUpdateFindings</code> </a>. </p>
@@ -162,7 +162,7 @@ impl FindingHistoryRecordBuilder {
         crate::types::FindingHistoryRecord {
             finding_identifier: self.finding_identifier,
             update_time: self.update_time,
-            finding_created: self.finding_created.unwrap_or_default(),
+            finding_created: self.finding_created,
             update_source: self.update_source,
             updates: self.updates,
             next_token: self.next_token,

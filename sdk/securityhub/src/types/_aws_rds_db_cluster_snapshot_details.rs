@@ -12,11 +12,11 @@ pub struct AwsRdsDbClusterSnapshotDetails {
     /// <p>The name of the database engine that you want to use for this DB instance.</p>
     pub engine: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the allocated storage size in gibibytes (GiB).</p>
-    pub allocated_storage: i32,
+    pub allocated_storage: ::std::option::Option<i32>,
     /// <p>The status of this DB cluster snapshot.</p>
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>The port number on which the DB instances in the DB cluster accept connections.</p>
-    pub port: i32,
+    pub port: ::std::option::Option<i32>,
     /// <p>The VPC ID that is associated with the DB cluster snapshot.</p>
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>Indicates when the DB cluster was created, in Universal Coordinated Time (UTC).</p>
@@ -31,9 +31,9 @@ pub struct AwsRdsDbClusterSnapshotDetails {
     /// <p>The type of DB cluster snapshot.</p>
     pub snapshot_type: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the percentage of the estimated data that has been transferred.</p>
-    pub percent_progress: i32,
+    pub percent_progress: ::std::option::Option<i32>,
     /// <p>Whether the DB cluster is encrypted.</p>
-    pub storage_encrypted: bool,
+    pub storage_encrypted: ::std::option::Option<bool>,
     /// <p>The ARN of the KMS master key that is used to encrypt the database instances in the DB cluster.</p>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The DB cluster identifier.</p>
@@ -41,7 +41,7 @@ pub struct AwsRdsDbClusterSnapshotDetails {
     /// <p>The identifier of the DB cluster snapshot.</p>
     pub db_cluster_snapshot_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Whether mapping of IAM accounts to database accounts is enabled.</p>
-    pub iam_database_authentication_enabled: bool,
+    pub iam_database_authentication_enabled: ::std::option::Option<bool>,
     /// <p> Contains the name and values of a manual DB cluster snapshot attribute. </p>
     pub db_cluster_snapshot_attributes: ::std::option::Option<::std::vec::Vec<crate::types::AwsRdsDbClusterSnapshotDbClusterSnapshotAttribute>>,
 }
@@ -60,7 +60,7 @@ impl AwsRdsDbClusterSnapshotDetails {
         self.engine.as_deref()
     }
     /// <p>Specifies the allocated storage size in gibibytes (GiB).</p>
-    pub fn allocated_storage(&self) -> i32 {
+    pub fn allocated_storage(&self) -> ::std::option::Option<i32> {
         self.allocated_storage
     }
     /// <p>The status of this DB cluster snapshot.</p>
@@ -68,7 +68,7 @@ impl AwsRdsDbClusterSnapshotDetails {
         self.status.as_deref()
     }
     /// <p>The port number on which the DB instances in the DB cluster accept connections.</p>
-    pub fn port(&self) -> i32 {
+    pub fn port(&self) -> ::std::option::Option<i32> {
         self.port
     }
     /// <p>The VPC ID that is associated with the DB cluster snapshot.</p>
@@ -97,11 +97,11 @@ impl AwsRdsDbClusterSnapshotDetails {
         self.snapshot_type.as_deref()
     }
     /// <p>Specifies the percentage of the estimated data that has been transferred.</p>
-    pub fn percent_progress(&self) -> i32 {
+    pub fn percent_progress(&self) -> ::std::option::Option<i32> {
         self.percent_progress
     }
     /// <p>Whether the DB cluster is encrypted.</p>
-    pub fn storage_encrypted(&self) -> bool {
+    pub fn storage_encrypted(&self) -> ::std::option::Option<bool> {
         self.storage_encrypted
     }
     /// <p>The ARN of the KMS master key that is used to encrypt the database instances in the DB cluster.</p>
@@ -117,7 +117,7 @@ impl AwsRdsDbClusterSnapshotDetails {
         self.db_cluster_snapshot_identifier.as_deref()
     }
     /// <p>Whether mapping of IAM accounts to database accounts is enabled.</p>
-    pub fn iam_database_authentication_enabled(&self) -> bool {
+    pub fn iam_database_authentication_enabled(&self) -> ::std::option::Option<bool> {
         self.iam_database_authentication_enabled
     }
     /// <p> Contains the name and values of a manual DB cluster snapshot attribute. </p>
@@ -453,21 +453,21 @@ impl AwsRdsDbClusterSnapshotDetailsBuilder {
             availability_zones: self.availability_zones,
             snapshot_create_time: self.snapshot_create_time,
             engine: self.engine,
-            allocated_storage: self.allocated_storage.unwrap_or_default(),
+            allocated_storage: self.allocated_storage,
             status: self.status,
-            port: self.port.unwrap_or_default(),
+            port: self.port,
             vpc_id: self.vpc_id,
             cluster_create_time: self.cluster_create_time,
             master_username: self.master_username,
             engine_version: self.engine_version,
             license_model: self.license_model,
             snapshot_type: self.snapshot_type,
-            percent_progress: self.percent_progress.unwrap_or_default(),
-            storage_encrypted: self.storage_encrypted.unwrap_or_default(),
+            percent_progress: self.percent_progress,
+            storage_encrypted: self.storage_encrypted,
             kms_key_id: self.kms_key_id,
             db_cluster_identifier: self.db_cluster_identifier,
             db_cluster_snapshot_identifier: self.db_cluster_snapshot_identifier,
-            iam_database_authentication_enabled: self.iam_database_authentication_enabled.unwrap_or_default(),
+            iam_database_authentication_enabled: self.iam_database_authentication_enabled,
             db_cluster_snapshot_attributes: self.db_cluster_snapshot_attributes,
         }
     }

@@ -6,10 +6,10 @@ pub fn ser_spark_parameters(
     if let Some(var_1) = &input.host {
         object.key("Host").string(var_1.as_str());
     }
-    {
+    if let Some(var_2) = &input.port {
         object.key("Port").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.port).into()),
+            ::aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
     Ok(())

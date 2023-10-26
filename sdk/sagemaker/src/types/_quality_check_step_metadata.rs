@@ -21,9 +21,9 @@ pub struct QualityCheckStepMetadata {
     /// <p>The Amazon Resource Name (ARN) of the Quality check processing job that was run by this step execution.</p>
     pub check_job_arn: ::std::option::Option<::std::string::String>,
     /// <p>This flag indicates if the drift check against the previous baseline will be skipped or not. If it is set to <code>False</code>, the previous baseline of the configured check type must be available.</p>
-    pub skip_check: bool,
+    pub skip_check: ::std::option::Option<bool>,
     /// <p>This flag indicates if a newly calculated baseline can be accessed through step properties <code>BaselineUsedForDriftCheckConstraints</code> and <code>BaselineUsedForDriftCheckStatistics</code>. If it is set to <code>False</code>, the previous baseline of the configured check type must also be available. These can be accessed through the <code>BaselineUsedForDriftCheckConstraints</code> and <code> BaselineUsedForDriftCheckStatistics</code> properties. </p>
-    pub register_new_baseline: bool,
+    pub register_new_baseline: ::std::option::Option<bool>,
 }
 impl QualityCheckStepMetadata {
     /// <p>The type of the Quality check step.</p>
@@ -59,11 +59,11 @@ impl QualityCheckStepMetadata {
         self.check_job_arn.as_deref()
     }
     /// <p>This flag indicates if the drift check against the previous baseline will be skipped or not. If it is set to <code>False</code>, the previous baseline of the configured check type must be available.</p>
-    pub fn skip_check(&self) -> bool {
+    pub fn skip_check(&self) -> ::std::option::Option<bool> {
         self.skip_check
     }
     /// <p>This flag indicates if a newly calculated baseline can be accessed through step properties <code>BaselineUsedForDriftCheckConstraints</code> and <code>BaselineUsedForDriftCheckStatistics</code>. If it is set to <code>False</code>, the previous baseline of the configured check type must also be available. These can be accessed through the <code>BaselineUsedForDriftCheckConstraints</code> and <code> BaselineUsedForDriftCheckStatistics</code> properties. </p>
-    pub fn register_new_baseline(&self) -> bool {
+    pub fn register_new_baseline(&self) -> ::std::option::Option<bool> {
         self.register_new_baseline
     }
 }
@@ -241,8 +241,8 @@ impl QualityCheckStepMetadataBuilder {
             model_package_group_name: self.model_package_group_name,
             violation_report: self.violation_report,
             check_job_arn: self.check_job_arn,
-            skip_check: self.skip_check.unwrap_or_default(),
-            register_new_baseline: self.register_new_baseline.unwrap_or_default(),
+            skip_check: self.skip_check,
+            register_new_baseline: self.register_new_baseline,
         }
     }
 }

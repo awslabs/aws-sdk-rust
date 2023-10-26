@@ -33,7 +33,7 @@ pub struct DbCluster {
     /// <p>If a failover occurs, and the Read Replica that you are connected to is promoted to be the primary instance, your connection is dropped. To continue sending your read workload to other Read Replicas in the cluster, you can then reconnect to the reader endpoint.</p>
     pub reader_endpoint: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether the DB cluster has instances in multiple Availability Zones.</p>
-    pub multi_az: bool,
+    pub multi_az: ::std::option::Option<bool>,
     /// <p>Provides the name of the database engine to be used for this DB cluster.</p>
     pub engine: ::std::option::Option<::std::string::String>,
     /// <p>Indicates the database engine version.</p>
@@ -61,7 +61,7 @@ pub struct DbCluster {
     /// <p>Specifies the ID that Amazon Route 53 assigns when you create a hosted zone.</p>
     pub hosted_zone_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether the DB cluster is encrypted.</p>
-    pub storage_encrypted: bool,
+    pub storage_encrypted: ::std::option::Option<bool>,
     /// <p>If <code>StorageEncrypted</code> is true, the Amazon KMS key identifier for the encrypted DB cluster.</p>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Region-unique, immutable identifier for the DB cluster. This identifier is found in Amazon CloudTrail log entries whenever the Amazon KMS key for the DB cluster is accessed.</p>
@@ -71,7 +71,7 @@ pub struct DbCluster {
     /// <p>Provides a list of the Amazon Identity and Access Management (IAM) roles that are associated with the DB cluster. IAM roles that are associated with a DB cluster grant permission for the DB cluster to access other Amazon services on your behalf.</p>
     pub associated_roles: ::std::option::Option<::std::vec::Vec<crate::types::DbClusterRole>>,
     /// <p>True if mapping of Amazon Identity and Access Management (IAM) accounts to database accounts is enabled, and otherwise false.</p>
-    pub iam_database_authentication_enabled: bool,
+    pub iam_database_authentication_enabled: ::std::option::Option<bool>,
     /// <p>Identifies the clone group to which the DB cluster is associated.</p>
     pub clone_group_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the time when the DB cluster was created, in Universal Coordinated Time (UTC).</p>
@@ -149,7 +149,7 @@ impl DbCluster {
         self.reader_endpoint.as_deref()
     }
     /// <p>Specifies whether the DB cluster has instances in multiple Availability Zones.</p>
-    pub fn multi_az(&self) -> bool {
+    pub fn multi_az(&self) -> ::std::option::Option<bool> {
         self.multi_az
     }
     /// <p>Provides the name of the database engine to be used for this DB cluster.</p>
@@ -205,7 +205,7 @@ impl DbCluster {
         self.hosted_zone_id.as_deref()
     }
     /// <p>Specifies whether the DB cluster is encrypted.</p>
-    pub fn storage_encrypted(&self) -> bool {
+    pub fn storage_encrypted(&self) -> ::std::option::Option<bool> {
         self.storage_encrypted
     }
     /// <p>If <code>StorageEncrypted</code> is true, the Amazon KMS key identifier for the encrypted DB cluster.</p>
@@ -225,7 +225,7 @@ impl DbCluster {
         self.associated_roles.as_deref()
     }
     /// <p>True if mapping of Amazon Identity and Access Management (IAM) accounts to database accounts is enabled, and otherwise false.</p>
-    pub fn iam_database_authentication_enabled(&self) -> bool {
+    pub fn iam_database_authentication_enabled(&self) -> ::std::option::Option<bool> {
         self.iam_database_authentication_enabled
     }
     /// <p>Identifies the clone group to which the DB cluster is associated.</p>
@@ -998,7 +998,7 @@ impl DbClusterBuilder {
             earliest_restorable_time: self.earliest_restorable_time,
             endpoint: self.endpoint,
             reader_endpoint: self.reader_endpoint,
-            multi_az: self.multi_az.unwrap_or_default(),
+            multi_az: self.multi_az,
             engine: self.engine,
             engine_version: self.engine_version,
             latest_restorable_time: self.latest_restorable_time,
@@ -1012,12 +1012,12 @@ impl DbClusterBuilder {
             db_cluster_members: self.db_cluster_members,
             vpc_security_groups: self.vpc_security_groups,
             hosted_zone_id: self.hosted_zone_id,
-            storage_encrypted: self.storage_encrypted.unwrap_or_default(),
+            storage_encrypted: self.storage_encrypted,
             kms_key_id: self.kms_key_id,
             db_cluster_resource_id: self.db_cluster_resource_id,
             db_cluster_arn: self.db_cluster_arn,
             associated_roles: self.associated_roles,
-            iam_database_authentication_enabled: self.iam_database_authentication_enabled.unwrap_or_default(),
+            iam_database_authentication_enabled: self.iam_database_authentication_enabled,
             clone_group_id: self.clone_group_id,
             cluster_create_time: self.cluster_create_time,
             copy_tags_to_snapshot: self.copy_tags_to_snapshot,

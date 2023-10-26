@@ -18,23 +18,23 @@ pub struct OrderableDbInstanceOption {
     /// <p>A list of Availability Zones for a DB instance.</p>
     pub availability_zones: ::std::option::Option<::std::vec::Vec<crate::types::AvailabilityZone>>,
     /// <p>Indicates whether a DB instance is Multi-AZ capable.</p>
-    pub multi_az_capable: bool,
+    pub multi_az_capable: ::std::option::Option<bool>,
     /// <p>Indicates whether a DB instance can have a read replica.</p>
-    pub read_replica_capable: bool,
+    pub read_replica_capable: ::std::option::Option<bool>,
     /// <p>Indicates whether a DB instance is in a VPC.</p>
-    pub vpc: bool,
+    pub vpc: ::std::option::Option<bool>,
     /// <p>Indicates whether a DB instance supports encrypted storage.</p>
-    pub supports_storage_encryption: bool,
+    pub supports_storage_encryption: ::std::option::Option<bool>,
     /// <p>The storage type for a DB instance.</p>
     pub storage_type: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether a DB instance supports provisioned IOPS.</p>
-    pub supports_iops: bool,
+    pub supports_iops: ::std::option::Option<bool>,
     /// <p>Indicates whether a DB instance supports Enhanced Monitoring at intervals from 1 to 60 seconds.</p>
-    pub supports_enhanced_monitoring: bool,
+    pub supports_enhanced_monitoring: ::std::option::Option<bool>,
     /// <p>Indicates whether a DB instance supports IAM database authentication.</p>
-    pub supports_iam_database_authentication: bool,
+    pub supports_iam_database_authentication: ::std::option::Option<bool>,
     /// <p>Indicates whether a DB instance supports Performance Insights.</p>
-    pub supports_performance_insights: bool,
+    pub supports_performance_insights: ::std::option::Option<bool>,
     /// <p>Minimum storage size for a DB instance.</p>
     pub min_storage_size: ::std::option::Option<i32>,
     /// <p>Maximum storage size for a DB instance.</p>
@@ -57,20 +57,20 @@ pub struct OrderableDbInstanceOption {
     pub supports_kerberos_authentication: ::std::option::Option<bool>,
     /// <p>Indicates whether a DB instance supports RDS on Outposts.</p>
     /// <p>For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide.</i> </p>
-    pub outpost_capable: bool,
+    pub outpost_capable: ::std::option::Option<bool>,
     /// <p>The list of supported modes for Database Activity Streams. Aurora PostgreSQL returns the value <code>[sync, async]</code>. Aurora MySQL and RDS for Oracle return <code>[async]</code> only. If Database Activity Streams isn't supported, the return value is an empty list.</p>
     pub supported_activity_stream_modes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Indicates whether you can use Aurora global databases with a specific combination of other DB engine attributes.</p>
-    pub supports_global_databases: bool,
+    pub supports_global_databases: ::std::option::Option<bool>,
     /// <p>Indicates whether DB instances can be configured as a Multi-AZ DB cluster.</p>
     /// <p>For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html"> Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide.</i> </p>
-    pub supports_clusters: bool,
+    pub supports_clusters: ::std::option::Option<bool>,
     /// <p>The network types supported by the DB instance (<code>IPV4</code> or <code>DUAL</code>).</p>
     /// <p>A DB instance can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i> </p>
     pub supported_network_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Indicates whether a DB instance supports storage throughput.</p>
-    pub supports_storage_throughput: bool,
+    pub supports_storage_throughput: ::std::option::Option<bool>,
     /// <p>Minimum storage throughput for a DB instance.</p>
     pub min_storage_throughput_per_db_instance: ::std::option::Option<i32>,
     /// <p>Maximum storage throughput for a DB instance.</p>
@@ -79,6 +79,8 @@ pub struct OrderableDbInstanceOption {
     pub min_storage_throughput_per_iops: ::std::option::Option<f64>,
     /// <p>Maximum storage throughput to provisioned IOPS ratio for a DB instance.</p>
     pub max_storage_throughput_per_iops: ::std::option::Option<f64>,
+    /// <p>Indicates whether a DB instance supports using a dedicated log volume (DLV).</p>
+    pub supports_dedicated_log_volume: ::std::option::Option<bool>,
 }
 impl OrderableDbInstanceOption {
     /// <p>The engine type of a DB instance.</p>
@@ -106,19 +108,19 @@ impl OrderableDbInstanceOption {
         self.availability_zones.as_deref()
     }
     /// <p>Indicates whether a DB instance is Multi-AZ capable.</p>
-    pub fn multi_az_capable(&self) -> bool {
+    pub fn multi_az_capable(&self) -> ::std::option::Option<bool> {
         self.multi_az_capable
     }
     /// <p>Indicates whether a DB instance can have a read replica.</p>
-    pub fn read_replica_capable(&self) -> bool {
+    pub fn read_replica_capable(&self) -> ::std::option::Option<bool> {
         self.read_replica_capable
     }
     /// <p>Indicates whether a DB instance is in a VPC.</p>
-    pub fn vpc(&self) -> bool {
+    pub fn vpc(&self) -> ::std::option::Option<bool> {
         self.vpc
     }
     /// <p>Indicates whether a DB instance supports encrypted storage.</p>
-    pub fn supports_storage_encryption(&self) -> bool {
+    pub fn supports_storage_encryption(&self) -> ::std::option::Option<bool> {
         self.supports_storage_encryption
     }
     /// <p>The storage type for a DB instance.</p>
@@ -126,19 +128,19 @@ impl OrderableDbInstanceOption {
         self.storage_type.as_deref()
     }
     /// <p>Indicates whether a DB instance supports provisioned IOPS.</p>
-    pub fn supports_iops(&self) -> bool {
+    pub fn supports_iops(&self) -> ::std::option::Option<bool> {
         self.supports_iops
     }
     /// <p>Indicates whether a DB instance supports Enhanced Monitoring at intervals from 1 to 60 seconds.</p>
-    pub fn supports_enhanced_monitoring(&self) -> bool {
+    pub fn supports_enhanced_monitoring(&self) -> ::std::option::Option<bool> {
         self.supports_enhanced_monitoring
     }
     /// <p>Indicates whether a DB instance supports IAM database authentication.</p>
-    pub fn supports_iam_database_authentication(&self) -> bool {
+    pub fn supports_iam_database_authentication(&self) -> ::std::option::Option<bool> {
         self.supports_iam_database_authentication
     }
     /// <p>Indicates whether a DB instance supports Performance Insights.</p>
-    pub fn supports_performance_insights(&self) -> bool {
+    pub fn supports_performance_insights(&self) -> ::std::option::Option<bool> {
         self.supports_performance_insights
     }
     /// <p>Minimum storage size for a DB instance.</p>
@@ -183,7 +185,7 @@ impl OrderableDbInstanceOption {
     }
     /// <p>Indicates whether a DB instance supports RDS on Outposts.</p>
     /// <p>For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide.</i> </p>
-    pub fn outpost_capable(&self) -> bool {
+    pub fn outpost_capable(&self) -> ::std::option::Option<bool> {
         self.outpost_capable
     }
     /// <p>The list of supported modes for Database Activity Streams. Aurora PostgreSQL returns the value <code>[sync, async]</code>. Aurora MySQL and RDS for Oracle return <code>[async]</code> only. If Database Activity Streams isn't supported, the return value is an empty list.</p>
@@ -191,12 +193,12 @@ impl OrderableDbInstanceOption {
         self.supported_activity_stream_modes.as_deref()
     }
     /// <p>Indicates whether you can use Aurora global databases with a specific combination of other DB engine attributes.</p>
-    pub fn supports_global_databases(&self) -> bool {
+    pub fn supports_global_databases(&self) -> ::std::option::Option<bool> {
         self.supports_global_databases
     }
     /// <p>Indicates whether DB instances can be configured as a Multi-AZ DB cluster.</p>
     /// <p>For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html"> Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide.</i> </p>
-    pub fn supports_clusters(&self) -> bool {
+    pub fn supports_clusters(&self) -> ::std::option::Option<bool> {
         self.supports_clusters
     }
     /// <p>The network types supported by the DB instance (<code>IPV4</code> or <code>DUAL</code>).</p>
@@ -206,7 +208,7 @@ impl OrderableDbInstanceOption {
         self.supported_network_types.as_deref()
     }
     /// <p>Indicates whether a DB instance supports storage throughput.</p>
-    pub fn supports_storage_throughput(&self) -> bool {
+    pub fn supports_storage_throughput(&self) -> ::std::option::Option<bool> {
         self.supports_storage_throughput
     }
     /// <p>Minimum storage throughput for a DB instance.</p>
@@ -224,6 +226,10 @@ impl OrderableDbInstanceOption {
     /// <p>Maximum storage throughput to provisioned IOPS ratio for a DB instance.</p>
     pub fn max_storage_throughput_per_iops(&self) -> ::std::option::Option<f64> {
         self.max_storage_throughput_per_iops
+    }
+    /// <p>Indicates whether a DB instance supports using a dedicated log volume (DLV).</p>
+    pub fn supports_dedicated_log_volume(&self) -> ::std::option::Option<bool> {
+        self.supports_dedicated_log_volume
     }
 }
 impl OrderableDbInstanceOption {
@@ -272,6 +278,7 @@ pub struct OrderableDbInstanceOptionBuilder {
     pub(crate) max_storage_throughput_per_db_instance: ::std::option::Option<i32>,
     pub(crate) min_storage_throughput_per_iops: ::std::option::Option<f64>,
     pub(crate) max_storage_throughput_per_iops: ::std::option::Option<f64>,
+    pub(crate) supports_dedicated_log_volume: ::std::option::Option<bool>,
 }
 impl OrderableDbInstanceOptionBuilder {
     /// <p>The engine type of a DB instance.</p>
@@ -809,6 +816,20 @@ impl OrderableDbInstanceOptionBuilder {
     pub fn get_max_storage_throughput_per_iops(&self) -> &::std::option::Option<f64> {
         &self.max_storage_throughput_per_iops
     }
+    /// <p>Indicates whether a DB instance supports using a dedicated log volume (DLV).</p>
+    pub fn supports_dedicated_log_volume(mut self, input: bool) -> Self {
+        self.supports_dedicated_log_volume = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether a DB instance supports using a dedicated log volume (DLV).</p>
+    pub fn set_supports_dedicated_log_volume(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.supports_dedicated_log_volume = input;
+        self
+    }
+    /// <p>Indicates whether a DB instance supports using a dedicated log volume (DLV).</p>
+    pub fn get_supports_dedicated_log_volume(&self) -> &::std::option::Option<bool> {
+        &self.supports_dedicated_log_volume
+    }
     /// Consumes the builder and constructs a [`OrderableDbInstanceOption`](crate::types::OrderableDbInstanceOption).
     pub fn build(self) -> crate::types::OrderableDbInstanceOption {
         crate::types::OrderableDbInstanceOption {
@@ -818,15 +839,15 @@ impl OrderableDbInstanceOptionBuilder {
             license_model: self.license_model,
             availability_zone_group: self.availability_zone_group,
             availability_zones: self.availability_zones,
-            multi_az_capable: self.multi_az_capable.unwrap_or_default(),
-            read_replica_capable: self.read_replica_capable.unwrap_or_default(),
-            vpc: self.vpc.unwrap_or_default(),
-            supports_storage_encryption: self.supports_storage_encryption.unwrap_or_default(),
+            multi_az_capable: self.multi_az_capable,
+            read_replica_capable: self.read_replica_capable,
+            vpc: self.vpc,
+            supports_storage_encryption: self.supports_storage_encryption,
             storage_type: self.storage_type,
-            supports_iops: self.supports_iops.unwrap_or_default(),
-            supports_enhanced_monitoring: self.supports_enhanced_monitoring.unwrap_or_default(),
-            supports_iam_database_authentication: self.supports_iam_database_authentication.unwrap_or_default(),
-            supports_performance_insights: self.supports_performance_insights.unwrap_or_default(),
+            supports_iops: self.supports_iops,
+            supports_enhanced_monitoring: self.supports_enhanced_monitoring,
+            supports_iam_database_authentication: self.supports_iam_database_authentication,
+            supports_performance_insights: self.supports_performance_insights,
             min_storage_size: self.min_storage_size,
             max_storage_size: self.max_storage_size,
             min_iops_per_db_instance: self.min_iops_per_db_instance,
@@ -837,16 +858,17 @@ impl OrderableDbInstanceOptionBuilder {
             supported_engine_modes: self.supported_engine_modes,
             supports_storage_autoscaling: self.supports_storage_autoscaling,
             supports_kerberos_authentication: self.supports_kerberos_authentication,
-            outpost_capable: self.outpost_capable.unwrap_or_default(),
+            outpost_capable: self.outpost_capable,
             supported_activity_stream_modes: self.supported_activity_stream_modes,
-            supports_global_databases: self.supports_global_databases.unwrap_or_default(),
-            supports_clusters: self.supports_clusters.unwrap_or_default(),
+            supports_global_databases: self.supports_global_databases,
+            supports_clusters: self.supports_clusters,
             supported_network_types: self.supported_network_types,
-            supports_storage_throughput: self.supports_storage_throughput.unwrap_or_default(),
+            supports_storage_throughput: self.supports_storage_throughput,
             min_storage_throughput_per_db_instance: self.min_storage_throughput_per_db_instance,
             max_storage_throughput_per_db_instance: self.max_storage_throughput_per_db_instance,
             min_storage_throughput_per_iops: self.min_storage_throughput_per_iops,
             max_storage_throughput_per_iops: self.max_storage_throughput_per_iops,
+            supports_dedicated_log_volume: self.supports_dedicated_log_volume,
         }
     }
 }

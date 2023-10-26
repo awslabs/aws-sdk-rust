@@ -3,19 +3,19 @@ pub fn ser_aws_s3_bucket_object_lock_configuration_rule_default_retention_detail
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsS3BucketObjectLockConfigurationRuleDefaultRetentionDetails,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if input.days != 0 {
+    if let Some(var_1) = &input.days {
         object.key("Days").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.days).into()),
+            ::aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if let Some(var_1) = &input.mode {
-        object.key("Mode").string(var_1.as_str());
+    if let Some(var_2) = &input.mode {
+        object.key("Mode").string(var_2.as_str());
     }
-    if input.years != 0 {
+    if let Some(var_3) = &input.years {
         object.key("Years").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.years).into()),
+            ::aws_smithy_types::Number::NegInt((*var_3).into()),
         );
     }
     Ok(())

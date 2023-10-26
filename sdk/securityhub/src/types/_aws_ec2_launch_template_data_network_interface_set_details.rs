@@ -5,33 +5,33 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEc2LaunchTemplateDataNetworkInterfaceSetDetails {
     /// <p> Indicates whether to associate a Carrier IP address with eth0 for a new network interface. You use this option when you launch an instance in a Wavelength Zone and want to associate a Carrier IP address with the network interface. For more information, see <a href="https://docs.aws.amazon.com/wavelength/latest/developerguide/how-wavelengths-work.html#provider-owned-ip">Carrier IP address</a> in the <i>Wavelength Developer Guide</i>. </p>
-    pub associate_carrier_ip_address: bool,
+    pub associate_carrier_ip_address: ::std::option::Option<bool>,
     /// <p> Associates a public IPv4 address with eth0 for a new network interface. </p>
-    pub associate_public_ip_address: bool,
+    pub associate_public_ip_address: ::std::option::Option<bool>,
     /// <p> Indicates whether the network interface is deleted when the instance is terminated. </p>
-    pub delete_on_termination: bool,
+    pub delete_on_termination: ::std::option::Option<bool>,
     /// <p> A description for the network interface. </p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p> The device index for the network interface attachment. </p>
-    pub device_index: i32,
+    pub device_index: ::std::option::Option<i32>,
     /// <p> The IDs of one or more security groups. </p>
     pub groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p> The type of network interface. </p>
     pub interface_type: ::std::option::Option<::std::string::String>,
     /// <p> The number of IPv4 prefixes to be automatically assigned to the network interface. You cannot use this option if you use the <code>Ipv4Prefixes</code> option. </p>
-    pub ipv4_prefix_count: i32,
+    pub ipv4_prefix_count: ::std::option::Option<i32>,
     /// <p> One or more IPv4 prefixes to be assigned to the network interface. You cannot use this option if you use the <code>Ipv4PrefixCount</code> option. </p>
     pub ipv4_prefixes: ::std::option::Option<::std::vec::Vec<crate::types::AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv4PrefixesDetails>>,
     /// <p> The number of IPv6 addresses to assign to a network interface. Amazon EC2 automatically selects the IPv6 addresses from the subnet range. You can't use this option if you use <code>Ipv6Addresses</code>. </p>
-    pub ipv6_address_count: i32,
+    pub ipv6_address_count: ::std::option::Option<i32>,
     /// <p> One or more specific IPv6 addresses from the IPv6 CIDR block range of your subnet. You can't use this option if you use <code>Ipv6AddressCount</code>. </p>
     pub ipv6_addresses: ::std::option::Option<::std::vec::Vec<crate::types::AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6AddressesDetails>>,
     /// <p> The number of IPv6 prefixes to be automatically assigned to the network interface. You cannot use this option if you use the <code>Ipv6Prefix</code> option. </p>
-    pub ipv6_prefix_count: i32,
+    pub ipv6_prefix_count: ::std::option::Option<i32>,
     /// <p> One or more IPv6 prefixes to be assigned to the network interface. You cannot use this option if you use the <code>Ipv6PrefixCount</code> option. </p>
     pub ipv6_prefixes: ::std::option::Option<::std::vec::Vec<crate::types::AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6PrefixesDetails>>,
     /// <p> The index of the network card. Some instance types support multiple network cards. The primary network interface must be assigned to network card index <code>0</code>. The default is network card index <code>0</code>. </p>
-    pub network_card_index: i32,
+    pub network_card_index: ::std::option::Option<i32>,
     /// <p> The ID of the network interface. </p>
     pub network_interface_id: ::std::option::Option<::std::string::String>,
     /// <p> The primary private IPv4 address of the network interface. </p>
@@ -40,21 +40,21 @@ pub struct AwsEc2LaunchTemplateDataNetworkInterfaceSetDetails {
     pub private_ip_addresses:
         ::std::option::Option<::std::vec::Vec<crate::types::AwsEc2LaunchTemplateDataNetworkInterfaceSetPrivateIpAddressesDetails>>,
     /// <p> The number of secondary private IPv4 addresses to assign to a network interface. </p>
-    pub secondary_private_ip_address_count: i32,
+    pub secondary_private_ip_address_count: ::std::option::Option<i32>,
     /// <p> The ID of the subnet for the network interface. </p>
     pub subnet_id: ::std::option::Option<::std::string::String>,
 }
 impl AwsEc2LaunchTemplateDataNetworkInterfaceSetDetails {
     /// <p> Indicates whether to associate a Carrier IP address with eth0 for a new network interface. You use this option when you launch an instance in a Wavelength Zone and want to associate a Carrier IP address with the network interface. For more information, see <a href="https://docs.aws.amazon.com/wavelength/latest/developerguide/how-wavelengths-work.html#provider-owned-ip">Carrier IP address</a> in the <i>Wavelength Developer Guide</i>. </p>
-    pub fn associate_carrier_ip_address(&self) -> bool {
+    pub fn associate_carrier_ip_address(&self) -> ::std::option::Option<bool> {
         self.associate_carrier_ip_address
     }
     /// <p> Associates a public IPv4 address with eth0 for a new network interface. </p>
-    pub fn associate_public_ip_address(&self) -> bool {
+    pub fn associate_public_ip_address(&self) -> ::std::option::Option<bool> {
         self.associate_public_ip_address
     }
     /// <p> Indicates whether the network interface is deleted when the instance is terminated. </p>
-    pub fn delete_on_termination(&self) -> bool {
+    pub fn delete_on_termination(&self) -> ::std::option::Option<bool> {
         self.delete_on_termination
     }
     /// <p> A description for the network interface. </p>
@@ -62,7 +62,7 @@ impl AwsEc2LaunchTemplateDataNetworkInterfaceSetDetails {
         self.description.as_deref()
     }
     /// <p> The device index for the network interface attachment. </p>
-    pub fn device_index(&self) -> i32 {
+    pub fn device_index(&self) -> ::std::option::Option<i32> {
         self.device_index
     }
     /// <p> The IDs of one or more security groups. </p>
@@ -74,7 +74,7 @@ impl AwsEc2LaunchTemplateDataNetworkInterfaceSetDetails {
         self.interface_type.as_deref()
     }
     /// <p> The number of IPv4 prefixes to be automatically assigned to the network interface. You cannot use this option if you use the <code>Ipv4Prefixes</code> option. </p>
-    pub fn ipv4_prefix_count(&self) -> i32 {
+    pub fn ipv4_prefix_count(&self) -> ::std::option::Option<i32> {
         self.ipv4_prefix_count
     }
     /// <p> One or more IPv4 prefixes to be assigned to the network interface. You cannot use this option if you use the <code>Ipv4PrefixCount</code> option. </p>
@@ -82,7 +82,7 @@ impl AwsEc2LaunchTemplateDataNetworkInterfaceSetDetails {
         self.ipv4_prefixes.as_deref()
     }
     /// <p> The number of IPv6 addresses to assign to a network interface. Amazon EC2 automatically selects the IPv6 addresses from the subnet range. You can't use this option if you use <code>Ipv6Addresses</code>. </p>
-    pub fn ipv6_address_count(&self) -> i32 {
+    pub fn ipv6_address_count(&self) -> ::std::option::Option<i32> {
         self.ipv6_address_count
     }
     /// <p> One or more specific IPv6 addresses from the IPv6 CIDR block range of your subnet. You can't use this option if you use <code>Ipv6AddressCount</code>. </p>
@@ -90,7 +90,7 @@ impl AwsEc2LaunchTemplateDataNetworkInterfaceSetDetails {
         self.ipv6_addresses.as_deref()
     }
     /// <p> The number of IPv6 prefixes to be automatically assigned to the network interface. You cannot use this option if you use the <code>Ipv6Prefix</code> option. </p>
-    pub fn ipv6_prefix_count(&self) -> i32 {
+    pub fn ipv6_prefix_count(&self) -> ::std::option::Option<i32> {
         self.ipv6_prefix_count
     }
     /// <p> One or more IPv6 prefixes to be assigned to the network interface. You cannot use this option if you use the <code>Ipv6PrefixCount</code> option. </p>
@@ -98,7 +98,7 @@ impl AwsEc2LaunchTemplateDataNetworkInterfaceSetDetails {
         self.ipv6_prefixes.as_deref()
     }
     /// <p> The index of the network card. Some instance types support multiple network cards. The primary network interface must be assigned to network card index <code>0</code>. The default is network card index <code>0</code>. </p>
-    pub fn network_card_index(&self) -> i32 {
+    pub fn network_card_index(&self) -> ::std::option::Option<i32> {
         self.network_card_index
     }
     /// <p> The ID of the network interface. </p>
@@ -116,7 +116,7 @@ impl AwsEc2LaunchTemplateDataNetworkInterfaceSetDetails {
         self.private_ip_addresses.as_deref()
     }
     /// <p> The number of secondary private IPv4 addresses to assign to a network interface. </p>
-    pub fn secondary_private_ip_address_count(&self) -> i32 {
+    pub fn secondary_private_ip_address_count(&self) -> ::std::option::Option<i32> {
         self.secondary_private_ip_address_count
     }
     /// <p> The ID of the subnet for the network interface. </p>
@@ -476,24 +476,24 @@ impl AwsEc2LaunchTemplateDataNetworkInterfaceSetDetailsBuilder {
     /// Consumes the builder and constructs a [`AwsEc2LaunchTemplateDataNetworkInterfaceSetDetails`](crate::types::AwsEc2LaunchTemplateDataNetworkInterfaceSetDetails).
     pub fn build(self) -> crate::types::AwsEc2LaunchTemplateDataNetworkInterfaceSetDetails {
         crate::types::AwsEc2LaunchTemplateDataNetworkInterfaceSetDetails {
-            associate_carrier_ip_address: self.associate_carrier_ip_address.unwrap_or_default(),
-            associate_public_ip_address: self.associate_public_ip_address.unwrap_or_default(),
-            delete_on_termination: self.delete_on_termination.unwrap_or_default(),
+            associate_carrier_ip_address: self.associate_carrier_ip_address,
+            associate_public_ip_address: self.associate_public_ip_address,
+            delete_on_termination: self.delete_on_termination,
             description: self.description,
-            device_index: self.device_index.unwrap_or_default(),
+            device_index: self.device_index,
             groups: self.groups,
             interface_type: self.interface_type,
-            ipv4_prefix_count: self.ipv4_prefix_count.unwrap_or_default(),
+            ipv4_prefix_count: self.ipv4_prefix_count,
             ipv4_prefixes: self.ipv4_prefixes,
-            ipv6_address_count: self.ipv6_address_count.unwrap_or_default(),
+            ipv6_address_count: self.ipv6_address_count,
             ipv6_addresses: self.ipv6_addresses,
-            ipv6_prefix_count: self.ipv6_prefix_count.unwrap_or_default(),
+            ipv6_prefix_count: self.ipv6_prefix_count,
             ipv6_prefixes: self.ipv6_prefixes,
-            network_card_index: self.network_card_index.unwrap_or_default(),
+            network_card_index: self.network_card_index,
             network_interface_id: self.network_interface_id,
             private_ip_address: self.private_ip_address,
             private_ip_addresses: self.private_ip_addresses,
-            secondary_private_ip_address_count: self.secondary_private_ip_address_count.unwrap_or_default(),
+            secondary_private_ip_address_count: self.secondary_private_ip_address_count,
             subnet_id: self.subnet_id,
         }
     }

@@ -5,17 +5,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEc2LaunchTemplateDataInstanceRequirementsNetworkInterfaceCountDetails {
     /// <p> The maximum number of network interfaces. </p>
-    pub max: i32,
+    pub max: ::std::option::Option<i32>,
     /// <p> The minimum number of network interfaces. </p>
-    pub min: i32,
+    pub min: ::std::option::Option<i32>,
 }
 impl AwsEc2LaunchTemplateDataInstanceRequirementsNetworkInterfaceCountDetails {
     /// <p> The maximum number of network interfaces. </p>
-    pub fn max(&self) -> i32 {
+    pub fn max(&self) -> ::std::option::Option<i32> {
         self.max
     }
     /// <p> The minimum number of network interfaces. </p>
-    pub fn min(&self) -> i32 {
+    pub fn min(&self) -> ::std::option::Option<i32> {
         self.min
     }
 }
@@ -65,8 +65,8 @@ impl AwsEc2LaunchTemplateDataInstanceRequirementsNetworkInterfaceCountDetailsBui
     /// Consumes the builder and constructs a [`AwsEc2LaunchTemplateDataInstanceRequirementsNetworkInterfaceCountDetails`](crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsNetworkInterfaceCountDetails).
     pub fn build(self) -> crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsNetworkInterfaceCountDetails {
         crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsNetworkInterfaceCountDetails {
-            max: self.max.unwrap_or_default(),
-            min: self.min.unwrap_or_default(),
+            max: self.max,
+            min: self.min,
         }
     }
 }

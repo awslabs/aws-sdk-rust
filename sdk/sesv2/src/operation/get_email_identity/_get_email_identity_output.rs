@@ -31,6 +31,8 @@ pub struct GetEmailIdentityOutput {
     /// <li> <p> <code>NOT_STARTED</code> – The verification process hasn't been initiated for the identity.</p> </li>
     /// </ul>
     pub verification_status: ::std::option::Option<crate::types::VerificationStatus>,
+    /// <p>An object that contains additional information about the verification status for the identity.</p>
+    pub verification_info: ::std::option::Option<crate::types::VerificationInfo>,
     _request_id: Option<String>,
 }
 impl GetEmailIdentityOutput {
@@ -79,6 +81,10 @@ impl GetEmailIdentityOutput {
     pub fn verification_status(&self) -> ::std::option::Option<&crate::types::VerificationStatus> {
         self.verification_status.as_ref()
     }
+    /// <p>An object that contains additional information about the verification status for the identity.</p>
+    pub fn verification_info(&self) -> ::std::option::Option<&crate::types::VerificationInfo> {
+        self.verification_info.as_ref()
+    }
 }
 impl ::aws_http::request_id::RequestId for GetEmailIdentityOutput {
     fn request_id(&self) -> Option<&str> {
@@ -105,6 +111,7 @@ pub struct GetEmailIdentityOutputBuilder {
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) configuration_set_name: ::std::option::Option<::std::string::String>,
     pub(crate) verification_status: ::std::option::Option<crate::types::VerificationStatus>,
+    pub(crate) verification_info: ::std::option::Option<crate::types::VerificationInfo>,
     _request_id: Option<String>,
 }
 impl GetEmailIdentityOutputBuilder {
@@ -273,6 +280,20 @@ impl GetEmailIdentityOutputBuilder {
     pub fn get_verification_status(&self) -> &::std::option::Option<crate::types::VerificationStatus> {
         &self.verification_status
     }
+    /// <p>An object that contains additional information about the verification status for the identity.</p>
+    pub fn verification_info(mut self, input: crate::types::VerificationInfo) -> Self {
+        self.verification_info = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>An object that contains additional information about the verification status for the identity.</p>
+    pub fn set_verification_info(mut self, input: ::std::option::Option<crate::types::VerificationInfo>) -> Self {
+        self.verification_info = input;
+        self
+    }
+    /// <p>An object that contains additional information about the verification status for the identity.</p>
+    pub fn get_verification_info(&self) -> &::std::option::Option<crate::types::VerificationInfo> {
+        &self.verification_info
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -294,6 +315,7 @@ impl GetEmailIdentityOutputBuilder {
             tags: self.tags,
             configuration_set_name: self.configuration_set_name,
             verification_status: self.verification_status,
+            verification_info: self.verification_info,
             _request_id: self._request_id,
         }
     }

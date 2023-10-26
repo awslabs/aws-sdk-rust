@@ -9,9 +9,9 @@ pub struct LoginAttribute {
     /// <p>Indicates the application name used to attempt log in.</p>
     pub application: ::std::option::Option<::std::string::String>,
     /// <p>Represents the sum of failed (unsuccessful) login attempts made to establish a connection to the database instance.</p>
-    pub failed_login_attempts: i32,
+    pub failed_login_attempts: ::std::option::Option<i32>,
     /// <p>Represents the sum of successful connections (a correct combination of login attributes) made to the database instance by the actor.</p>
-    pub successful_login_attempts: i32,
+    pub successful_login_attempts: ::std::option::Option<i32>,
 }
 impl LoginAttribute {
     /// <p>Indicates the user name which attempted to log in.</p>
@@ -23,11 +23,11 @@ impl LoginAttribute {
         self.application.as_deref()
     }
     /// <p>Represents the sum of failed (unsuccessful) login attempts made to establish a connection to the database instance.</p>
-    pub fn failed_login_attempts(&self) -> i32 {
+    pub fn failed_login_attempts(&self) -> ::std::option::Option<i32> {
         self.failed_login_attempts
     }
     /// <p>Represents the sum of successful connections (a correct combination of login attributes) made to the database instance by the actor.</p>
-    pub fn successful_login_attempts(&self) -> i32 {
+    pub fn successful_login_attempts(&self) -> ::std::option::Option<i32> {
         self.successful_login_attempts
     }
 }
@@ -109,8 +109,8 @@ impl LoginAttributeBuilder {
         crate::types::LoginAttribute {
             user: self.user,
             application: self.application,
-            failed_login_attempts: self.failed_login_attempts.unwrap_or_default(),
-            successful_login_attempts: self.successful_login_attempts.unwrap_or_default(),
+            failed_login_attempts: self.failed_login_attempts,
+            successful_login_attempts: self.successful_login_attempts,
         }
     }
 }

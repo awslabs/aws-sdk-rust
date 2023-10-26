@@ -3,10 +3,10 @@ pub fn ser_retry_strategy(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RetryStrategy,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    {
+    if let Some(var_1) = &input.maximum_retry_attempts {
         object.key("MaximumRetryAttempts").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.maximum_retry_attempts).into()),
+            ::aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
     Ok(())

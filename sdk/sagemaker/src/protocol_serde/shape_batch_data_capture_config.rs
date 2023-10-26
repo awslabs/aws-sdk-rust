@@ -9,8 +9,8 @@ pub fn ser_batch_data_capture_config(
     if let Some(var_2) = &input.kms_key_id {
         object.key("KmsKeyId").string(var_2.as_str());
     }
-    if input.generate_inference_id {
-        object.key("GenerateInferenceId").boolean(input.generate_inference_id);
+    if let Some(var_3) = &input.generate_inference_id {
+        object.key("GenerateInferenceId").boolean(*var_3);
     }
     Ok(())
 }

@@ -5,11 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OrganizationKubernetesAuditLogsConfigurationResult {
     /// <p>Whether Kubernetes audit logs data source should be auto-enabled for new members joining the organization.</p>
-    pub auto_enable: bool,
+    pub auto_enable: ::std::option::Option<bool>,
 }
 impl OrganizationKubernetesAuditLogsConfigurationResult {
     /// <p>Whether Kubernetes audit logs data source should be auto-enabled for new members joining the organization.</p>
-    pub fn auto_enable(&self) -> bool {
+    pub fn auto_enable(&self) -> ::std::option::Option<bool> {
         self.auto_enable
     }
 }
@@ -44,7 +44,7 @@ impl OrganizationKubernetesAuditLogsConfigurationResultBuilder {
     /// Consumes the builder and constructs a [`OrganizationKubernetesAuditLogsConfigurationResult`](crate::types::OrganizationKubernetesAuditLogsConfigurationResult).
     pub fn build(self) -> crate::types::OrganizationKubernetesAuditLogsConfigurationResult {
         crate::types::OrganizationKubernetesAuditLogsConfigurationResult {
-            auto_enable: self.auto_enable.unwrap_or_default(),
+            auto_enable: self.auto_enable,
         }
     }
 }

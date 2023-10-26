@@ -182,4 +182,6 @@ mod enable_control;
 
 mod get_control_operation;
 
+mod get_enabled_control;
+
 mod list_enabled_controls;

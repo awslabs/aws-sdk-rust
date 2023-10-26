@@ -1020,6 +1020,42 @@ impl From<crate::operation::get_compatible_versions::GetCompatibleVersionsError>
         }
     }
 }
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_domain_maintenance_status::GetDomainMaintenanceStatusError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::get_domain_maintenance_status::GetDomainMaintenanceStatusError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_domain_maintenance_status::GetDomainMaintenanceStatusError> for Error {
+    fn from(err: crate::operation::get_domain_maintenance_status::GetDomainMaintenanceStatusError) -> Self {
+        match err {
+            crate::operation::get_domain_maintenance_status::GetDomainMaintenanceStatusError::BaseException(inner) => Error::BaseException(inner),
+            crate::operation::get_domain_maintenance_status::GetDomainMaintenanceStatusError::DisabledOperationException(inner) => {
+                Error::DisabledOperationException(inner)
+            }
+            crate::operation::get_domain_maintenance_status::GetDomainMaintenanceStatusError::InternalException(inner) => {
+                Error::InternalException(inner)
+            }
+            crate::operation::get_domain_maintenance_status::GetDomainMaintenanceStatusError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_domain_maintenance_status::GetDomainMaintenanceStatusError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::get_domain_maintenance_status::GetDomainMaintenanceStatusError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_package_version_history::GetPackageVersionHistoryError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1113,6 +1149,38 @@ impl From<crate::operation::get_upgrade_status::GetUpgradeStatusError> for Error
             crate::operation::get_upgrade_status::GetUpgradeStatusError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::get_upgrade_status::GetUpgradeStatusError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_upgrade_status::GetUpgradeStatusError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_domain_maintenances::ListDomainMaintenancesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_domain_maintenances::ListDomainMaintenancesError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_domain_maintenances::ListDomainMaintenancesError> for Error {
+    fn from(err: crate::operation::list_domain_maintenances::ListDomainMaintenancesError) -> Self {
+        match err {
+            crate::operation::list_domain_maintenances::ListDomainMaintenancesError::BaseException(inner) => Error::BaseException(inner),
+            crate::operation::list_domain_maintenances::ListDomainMaintenancesError::DisabledOperationException(inner) => {
+                Error::DisabledOperationException(inner)
+            }
+            crate::operation::list_domain_maintenances::ListDomainMaintenancesError::InternalException(inner) => Error::InternalException(inner),
+            crate::operation::list_domain_maintenances::ListDomainMaintenancesError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_domain_maintenances::ListDomainMaintenancesError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_domain_maintenances::ListDomainMaintenancesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1544,6 +1612,38 @@ impl From<crate::operation::revoke_vpc_endpoint_access::RevokeVpcEndpointAccessE
                 Error::ValidationException(inner)
             }
             crate::operation::revoke_vpc_endpoint_access::RevokeVpcEndpointAccessError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::start_domain_maintenance::StartDomainMaintenanceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::start_domain_maintenance::StartDomainMaintenanceError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::start_domain_maintenance::StartDomainMaintenanceError> for Error {
+    fn from(err: crate::operation::start_domain_maintenance::StartDomainMaintenanceError) -> Self {
+        match err {
+            crate::operation::start_domain_maintenance::StartDomainMaintenanceError::BaseException(inner) => Error::BaseException(inner),
+            crate::operation::start_domain_maintenance::StartDomainMaintenanceError::DisabledOperationException(inner) => {
+                Error::DisabledOperationException(inner)
+            }
+            crate::operation::start_domain_maintenance::StartDomainMaintenanceError::InternalException(inner) => Error::InternalException(inner),
+            crate::operation::start_domain_maintenance::StartDomainMaintenanceError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::start_domain_maintenance::StartDomainMaintenanceError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::start_domain_maintenance::StartDomainMaintenanceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

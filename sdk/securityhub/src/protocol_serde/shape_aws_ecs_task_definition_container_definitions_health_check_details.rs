@@ -12,28 +12,28 @@ pub fn ser_aws_ecs_task_definition_container_definitions_health_check_details(
         }
         array_2.finish();
     }
-    if input.interval != 0 {
+    if let Some(var_4) = &input.interval {
         object.key("Interval").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.interval).into()),
+            ::aws_smithy_types::Number::NegInt((*var_4).into()),
         );
     }
-    if input.retries != 0 {
+    if let Some(var_5) = &input.retries {
         object.key("Retries").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.retries).into()),
+            ::aws_smithy_types::Number::NegInt((*var_5).into()),
         );
     }
-    if input.start_period != 0 {
+    if let Some(var_6) = &input.start_period {
         object.key("StartPeriod").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.start_period).into()),
+            ::aws_smithy_types::Number::NegInt((*var_6).into()),
         );
     }
-    if input.timeout != 0 {
+    if let Some(var_7) = &input.timeout {
         object.key("Timeout").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.timeout).into()),
+            ::aws_smithy_types::Number::NegInt((*var_7).into()),
         );
     }
     Ok(())

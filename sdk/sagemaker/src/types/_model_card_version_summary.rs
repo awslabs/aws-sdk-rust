@@ -17,7 +17,7 @@ pub struct ModelCardVersionSummary {
     /// </ul>
     pub model_card_status: ::std::option::Option<crate::types::ModelCardStatus>,
     /// <p>A version of the model card.</p>
-    pub model_card_version: i32,
+    pub model_card_version: ::std::option::Option<i32>,
     /// <p>The date and time that the model card version was created.</p>
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time date and time that the model card version was last modified.</p>
@@ -43,7 +43,7 @@ impl ModelCardVersionSummary {
         self.model_card_status.as_ref()
     }
     /// <p>A version of the model card.</p>
-    pub fn model_card_version(&self) -> i32 {
+    pub fn model_card_version(&self) -> ::std::option::Option<i32> {
         self.model_card_version
     }
     /// <p>The date and time that the model card version was created.</p>
@@ -182,7 +182,7 @@ impl ModelCardVersionSummaryBuilder {
             model_card_name: self.model_card_name,
             model_card_arn: self.model_card_arn,
             model_card_status: self.model_card_status,
-            model_card_version: self.model_card_version.unwrap_or_default(),
+            model_card_version: self.model_card_version,
             creation_time: self.creation_time,
             last_modified_time: self.last_modified_time,
         }

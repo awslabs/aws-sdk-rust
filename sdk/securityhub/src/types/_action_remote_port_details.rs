@@ -5,13 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ActionRemotePortDetails {
     /// <p>The number of the port.</p>
-    pub port: i32,
+    pub port: ::std::option::Option<i32>,
     /// <p>The port name of the remote connection.</p>
     pub port_name: ::std::option::Option<::std::string::String>,
 }
 impl ActionRemotePortDetails {
     /// <p>The number of the port.</p>
-    pub fn port(&self) -> i32 {
+    pub fn port(&self) -> ::std::option::Option<i32> {
         self.port
     }
     /// <p>The port name of the remote connection.</p>
@@ -65,7 +65,7 @@ impl ActionRemotePortDetailsBuilder {
     /// Consumes the builder and constructs a [`ActionRemotePortDetails`](crate::types::ActionRemotePortDetails).
     pub fn build(self) -> crate::types::ActionRemotePortDetails {
         crate::types::ActionRemotePortDetails {
-            port: self.port.unwrap_or_default(),
+            port: self.port,
             port_name: self.port_name,
         }
     }

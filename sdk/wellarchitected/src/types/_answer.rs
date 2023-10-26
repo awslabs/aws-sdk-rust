@@ -32,7 +32,7 @@ pub struct Answer {
     /// <p>A list of selected choices to a question in your workload.</p>
     pub choice_answers: ::std::option::Option<::std::vec::Vec<crate::types::ChoiceAnswer>>,
     /// <p>Defines whether this question is applicable to a lens review.</p>
-    pub is_applicable: bool,
+    pub is_applicable: ::std::option::Option<bool>,
     /// <p>The risk for a given workload, lens review, pillar, or question.</p>
     pub risk: ::std::option::Option<crate::types::Risk>,
     /// <p>The notes associated with the workload.</p>
@@ -90,7 +90,7 @@ impl Answer {
         self.choice_answers.as_deref()
     }
     /// <p>Defines whether this question is applicable to a lens review.</p>
-    pub fn is_applicable(&self) -> bool {
+    pub fn is_applicable(&self) -> ::std::option::Option<bool> {
         self.is_applicable
     }
     /// <p>The risk for a given workload, lens review, pillar, or question.</p>
@@ -385,7 +385,7 @@ impl AnswerBuilder {
             choices: self.choices,
             selected_choices: self.selected_choices,
             choice_answers: self.choice_answers,
-            is_applicable: self.is_applicable.unwrap_or_default(),
+            is_applicable: self.is_applicable,
             risk: self.risk,
             notes: self.notes,
             reason: self.reason,

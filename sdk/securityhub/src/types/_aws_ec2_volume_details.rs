@@ -10,9 +10,9 @@ pub struct AwsEc2VolumeDetails {
     /// <p>The device name for the volume that is attached to the instance. </p>
     pub device_name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether the volume is encrypted.</p>
-    pub encrypted: bool,
+    pub encrypted: ::std::option::Option<bool>,
     /// <p>The size of the volume, in GiBs.</p>
-    pub size: i32,
+    pub size: ::std::option::Option<i32>,
     /// <p>The snapshot from which the volume was created.</p>
     pub snapshot_id: ::std::option::Option<::std::string::String>,
     /// <p>The volume state. Valid values are as follows:</p>
@@ -47,11 +47,11 @@ impl AwsEc2VolumeDetails {
         self.device_name.as_deref()
     }
     /// <p>Specifies whether the volume is encrypted.</p>
-    pub fn encrypted(&self) -> bool {
+    pub fn encrypted(&self) -> ::std::option::Option<bool> {
         self.encrypted
     }
     /// <p>The size of the volume, in GiBs.</p>
-    pub fn size(&self) -> i32 {
+    pub fn size(&self) -> ::std::option::Option<i32> {
         self.size
     }
     /// <p>The snapshot from which the volume was created.</p>
@@ -307,8 +307,8 @@ impl AwsEc2VolumeDetailsBuilder {
         crate::types::AwsEc2VolumeDetails {
             create_time: self.create_time,
             device_name: self.device_name,
-            encrypted: self.encrypted.unwrap_or_default(),
-            size: self.size.unwrap_or_default(),
+            encrypted: self.encrypted,
+            size: self.size,
             snapshot_id: self.snapshot_id,
             status: self.status,
             kms_key_id: self.kms_key_id,

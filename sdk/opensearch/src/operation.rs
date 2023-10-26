@@ -94,6 +94,9 @@ pub mod dissociate_package;
 /// Types for the `GetCompatibleVersions` operation.
 pub mod get_compatible_versions;
 
+/// Types for the `GetDomainMaintenanceStatus` operation.
+pub mod get_domain_maintenance_status;
+
 /// Types for the `GetPackageVersionHistory` operation.
 pub mod get_package_version_history;
 
@@ -102,6 +105,9 @@ pub mod get_upgrade_history;
 
 /// Types for the `GetUpgradeStatus` operation.
 pub mod get_upgrade_status;
+
+/// Types for the `ListDomainMaintenances` operation.
+pub mod list_domain_maintenances;
 
 /// Types for the `ListDomainNames` operation.
 pub mod list_domain_names;
@@ -144,6 +150,9 @@ pub mod remove_tags;
 
 /// Types for the `RevokeVpcEndpointAccess` operation.
 pub mod revoke_vpc_endpoint_access;
+
+/// Types for the `StartDomainMaintenance` operation.
+pub mod start_domain_maintenance;
 
 /// Types for the `StartServiceSoftwareUpdate` operation.
 pub mod start_service_software_update;

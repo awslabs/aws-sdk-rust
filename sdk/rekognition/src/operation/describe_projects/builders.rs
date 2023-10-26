@@ -22,7 +22,7 @@ impl DescribeProjectsInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeProjects`.
 ///
-/// <p>Gets information about your Amazon Rekognition Custom Labels projects. </p>
+/// <p>Gets information about your Rekognition projects.</p>
 /// <p>This operation requires permissions to perform the <code>rekognition:DescribeProjects</code> action.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeProjectsFluentBuilder {
@@ -117,17 +117,17 @@ impl DescribeProjectsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::describe_projects::paginator::DescribeProjectsPaginator {
         crate::operation::describe_projects::paginator::DescribeProjectsPaginator::new(self.handle, self.inner)
     }
-    /// <p>If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
+    /// <p>If the previous response was incomplete (because there is more results to retrieve), Rekognition returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// <p>If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
+    /// <p>If the previous response was incomplete (because there is more results to retrieve), Rekognition returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// <p>If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
+    /// <p>If the previous response was incomplete (because there is more results to retrieve), Rekognition returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }
@@ -149,18 +149,36 @@ impl DescribeProjectsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_project_names`](Self::set_project_names).
     ///
-    /// <p>A list of the projects that you want Amazon Rekognition Custom Labels to describe. If you don't specify a value, the response includes descriptions for all the projects in your AWS account.</p>
+    /// <p>A list of the projects that you want Rekognition to describe. If you don't specify a value, the response includes descriptions for all the projects in your AWS account.</p>
     pub fn project_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.project_names(input.into());
         self
     }
-    /// <p>A list of the projects that you want Amazon Rekognition Custom Labels to describe. If you don't specify a value, the response includes descriptions for all the projects in your AWS account.</p>
+    /// <p>A list of the projects that you want Rekognition to describe. If you don't specify a value, the response includes descriptions for all the projects in your AWS account.</p>
     pub fn set_project_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_project_names(input);
         self
     }
-    /// <p>A list of the projects that you want Amazon Rekognition Custom Labels to describe. If you don't specify a value, the response includes descriptions for all the projects in your AWS account.</p>
+    /// <p>A list of the projects that you want Rekognition to describe. If you don't specify a value, the response includes descriptions for all the projects in your AWS account.</p>
     pub fn get_project_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_project_names()
+    }
+    /// Appends an item to `Features`.
+    ///
+    /// To override the contents of this collection use [`set_features`](Self::set_features).
+    ///
+    /// <p>Specifies the type of customization to filter projects by. If no value is specified, CUSTOM_LABELS is used as a default.</p>
+    pub fn features(mut self, input: crate::types::CustomizationFeature) -> Self {
+        self.inner = self.inner.features(input);
+        self
+    }
+    /// <p>Specifies the type of customization to filter projects by. If no value is specified, CUSTOM_LABELS is used as a default.</p>
+    pub fn set_features(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CustomizationFeature>>) -> Self {
+        self.inner = self.inner.set_features(input);
+        self
+    }
+    /// <p>Specifies the type of customization to filter projects by. If no value is specified, CUSTOM_LABELS is used as a default.</p>
+    pub fn get_features(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomizationFeature>> {
+        self.inner.get_features()
     }
 }

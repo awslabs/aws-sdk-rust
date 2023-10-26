@@ -7,11 +7,11 @@ pub struct SelectionCriteria {
     /// <p>A container for the delimiter of the selection criteria being used.</p>
     pub delimiter: ::std::option::Option<::std::string::String>,
     /// <p>The max depth of the selection criteria</p>
-    pub max_depth: i32,
+    pub max_depth: ::std::option::Option<i32>,
     /// <p>The minimum number of storage bytes percentage whose metrics will be selected.</p> <note>
     /// <p>You must choose a value greater than or equal to <code>1.0</code>.</p>
     /// </note>
-    pub min_storage_bytes_percentage: f64,
+    pub min_storage_bytes_percentage: ::std::option::Option<f64>,
 }
 impl SelectionCriteria {
     /// <p>A container for the delimiter of the selection criteria being used.</p>
@@ -19,13 +19,13 @@ impl SelectionCriteria {
         self.delimiter.as_deref()
     }
     /// <p>The max depth of the selection criteria</p>
-    pub fn max_depth(&self) -> i32 {
+    pub fn max_depth(&self) -> ::std::option::Option<i32> {
         self.max_depth
     }
     /// <p>The minimum number of storage bytes percentage whose metrics will be selected.</p> <note>
     /// <p>You must choose a value greater than or equal to <code>1.0</code>.</p>
     /// </note>
-    pub fn min_storage_bytes_percentage(&self) -> f64 {
+    pub fn min_storage_bytes_percentage(&self) -> ::std::option::Option<f64> {
         self.min_storage_bytes_percentage
     }
 }
@@ -97,8 +97,8 @@ impl SelectionCriteriaBuilder {
     pub fn build(self) -> crate::types::SelectionCriteria {
         crate::types::SelectionCriteria {
             delimiter: self.delimiter,
-            max_depth: self.max_depth.unwrap_or_default(),
-            min_storage_bytes_percentage: self.min_storage_bytes_percentage.unwrap_or_default(),
+            max_depth: self.max_depth,
+            min_storage_bytes_percentage: self.min_storage_bytes_percentage,
         }
     }
 }

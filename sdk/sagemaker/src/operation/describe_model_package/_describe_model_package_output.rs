@@ -26,7 +26,7 @@ pub struct DescribeModelPackageOutput {
     /// <p>Details about the current status of the model package.</p>
     pub model_package_status_details: ::std::option::Option<crate::types::ModelPackageStatusDetails>,
     /// <p>Whether the model package is certified for listing on Amazon Web Services Marketplace.</p>
-    pub certify_for_marketplace: bool,
+    pub certify_for_marketplace: ::std::option::Option<bool>,
     /// <p>The approval status of the model package.</p>
     pub model_approval_status: ::std::option::Option<crate::types::ModelApprovalStatus>,
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
@@ -103,7 +103,7 @@ impl DescribeModelPackageOutput {
         self.model_package_status_details.as_ref()
     }
     /// <p>Whether the model package is certified for listing on Amazon Web Services Marketplace.</p>
-    pub fn certify_for_marketplace(&self) -> bool {
+    pub fn certify_for_marketplace(&self) -> ::std::option::Option<bool> {
         self.certify_for_marketplace
     }
     /// <p>The approval status of the model package.</p>
@@ -621,7 +621,7 @@ impl DescribeModelPackageOutputBuilder {
             validation_specification: self.validation_specification,
             model_package_status: self.model_package_status,
             model_package_status_details: self.model_package_status_details,
-            certify_for_marketplace: self.certify_for_marketplace.unwrap_or_default(),
+            certify_for_marketplace: self.certify_for_marketplace,
             model_approval_status: self.model_approval_status,
             created_by: self.created_by,
             metadata_properties: self.metadata_properties,

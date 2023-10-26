@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataCaptureConfig {
     /// <p>Whether data capture should be enabled or disabled (defaults to enabled).</p>
-    pub enable_capture: bool,
+    pub enable_capture: ::std::option::Option<bool>,
     /// <p>The percentage of requests SageMaker will capture. A lower value is recommended for Endpoints with high traffic.</p>
     pub initial_sampling_percentage: ::std::option::Option<i32>,
     /// <p>The Amazon S3 location used to capture the data.</p>
@@ -26,7 +26,7 @@ pub struct DataCaptureConfig {
 }
 impl DataCaptureConfig {
     /// <p>Whether data capture should be enabled or disabled (defaults to enabled).</p>
-    pub fn enable_capture(&self) -> bool {
+    pub fn enable_capture(&self) -> ::std::option::Option<bool> {
         self.enable_capture
     }
     /// <p>The percentage of requests SageMaker will capture. A lower value is recommended for Endpoints with high traffic.</p>
@@ -190,7 +190,7 @@ impl DataCaptureConfigBuilder {
     /// Consumes the builder and constructs a [`DataCaptureConfig`](crate::types::DataCaptureConfig).
     pub fn build(self) -> crate::types::DataCaptureConfig {
         crate::types::DataCaptureConfig {
-            enable_capture: self.enable_capture.unwrap_or_default(),
+            enable_capture: self.enable_capture,
             initial_sampling_percentage: self.initial_sampling_percentage,
             destination_s3_uri: self.destination_s3_uri,
             kms_key_id: self.kms_key_id,

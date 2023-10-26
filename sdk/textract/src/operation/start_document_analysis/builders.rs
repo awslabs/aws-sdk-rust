@@ -229,4 +229,18 @@ impl StartDocumentAnalysisFluentBuilder {
     pub fn get_queries_config(&self) -> &::std::option::Option<crate::types::QueriesConfig> {
         self.inner.get_queries_config()
     }
+    /// <p>Specifies the adapter to be used when analyzing a document.</p>
+    pub fn adapters_config(mut self, input: crate::types::AdaptersConfig) -> Self {
+        self.inner = self.inner.adapters_config(input);
+        self
+    }
+    /// <p>Specifies the adapter to be used when analyzing a document.</p>
+    pub fn set_adapters_config(mut self, input: ::std::option::Option<crate::types::AdaptersConfig>) -> Self {
+        self.inner = self.inner.set_adapters_config(input);
+        self
+    }
+    /// <p>Specifies the adapter to be used when analyzing a document.</p>
+    pub fn get_adapters_config(&self) -> &::std::option::Option<crate::types::AdaptersConfig> {
+        self.inner.get_adapters_config()
+    }
 }

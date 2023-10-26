@@ -6,38 +6,38 @@ pub fn ser_hyper_parameter_tuning_resource_config(
     if let Some(var_1) = &input.instance_type {
         object.key("InstanceType").string(var_1.as_str());
     }
-    if input.instance_count != 0 {
+    if let Some(var_2) = &input.instance_count {
         object.key("InstanceCount").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.instance_count).into()),
+            ::aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
-    if input.volume_size_in_gb != 0 {
+    if let Some(var_3) = &input.volume_size_in_gb {
         object.key("VolumeSizeInGB").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.volume_size_in_gb).into()),
+            ::aws_smithy_types::Number::NegInt((*var_3).into()),
         );
     }
-    if let Some(var_2) = &input.volume_kms_key_id {
-        object.key("VolumeKmsKeyId").string(var_2.as_str());
+    if let Some(var_4) = &input.volume_kms_key_id {
+        object.key("VolumeKmsKeyId").string(var_4.as_str());
     }
-    if let Some(var_3) = &input.allocation_strategy {
-        object.key("AllocationStrategy").string(var_3.as_str());
+    if let Some(var_5) = &input.allocation_strategy {
+        object.key("AllocationStrategy").string(var_5.as_str());
     }
-    if let Some(var_4) = &input.instance_configs {
-        let mut array_5 = object.key("InstanceConfigs").start_array();
-        for item_6 in var_4 {
+    if let Some(var_6) = &input.instance_configs {
+        let mut array_7 = object.key("InstanceConfigs").start_array();
+        for item_8 in var_6 {
             {
                 #[allow(unused_mut)]
-                let mut object_7 = array_5.value().start_object();
+                let mut object_9 = array_7.value().start_object();
                 crate::protocol_serde::shape_hyper_parameter_tuning_instance_config::ser_hyper_parameter_tuning_instance_config(
-                    &mut object_7,
-                    item_6,
+                    &mut object_9,
+                    item_8,
                 )?;
-                object_7.finish();
+                object_9.finish();
             }
         }
-        array_5.finish();
+        array_7.finish();
     }
     Ok(())
 }

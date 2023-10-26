@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsNetworkFirewallFirewallDetails {
     /// <p>Whether the firewall is protected from deletion. If set to <code>true</code>, then the firewall cannot be deleted.</p>
-    pub delete_protection: bool,
+    pub delete_protection: ::std::option::Option<bool>,
     /// <p>A description of the firewall.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the firewall.</p>
@@ -17,9 +17,9 @@ pub struct AwsNetworkFirewallFirewallDetails {
     /// <p>The ARN of the firewall policy.</p>
     pub firewall_policy_arn: ::std::option::Option<::std::string::String>,
     /// <p>Whether the firewall is protected from a change to the firewall policy. If set to <code>true</code>, you cannot associate a different policy with the firewall.</p>
-    pub firewall_policy_change_protection: bool,
+    pub firewall_policy_change_protection: ::std::option::Option<bool>,
     /// <p>Whether the firewall is protected from a change to the subnet associations. If set to <code>true</code>, you cannot map different subnets to the firewall.</p>
-    pub subnet_change_protection: bool,
+    pub subnet_change_protection: ::std::option::Option<bool>,
     /// <p>The public subnets that Network Firewall uses for the firewall. Each subnet must belong to a different Availability Zone.</p>
     pub subnet_mappings: ::std::option::Option<::std::vec::Vec<crate::types::AwsNetworkFirewallFirewallSubnetMappingsDetails>>,
     /// <p>The identifier of the VPC where the firewall is used.</p>
@@ -27,7 +27,7 @@ pub struct AwsNetworkFirewallFirewallDetails {
 }
 impl AwsNetworkFirewallFirewallDetails {
     /// <p>Whether the firewall is protected from deletion. If set to <code>true</code>, then the firewall cannot be deleted.</p>
-    pub fn delete_protection(&self) -> bool {
+    pub fn delete_protection(&self) -> ::std::option::Option<bool> {
         self.delete_protection
     }
     /// <p>A description of the firewall.</p>
@@ -51,11 +51,11 @@ impl AwsNetworkFirewallFirewallDetails {
         self.firewall_policy_arn.as_deref()
     }
     /// <p>Whether the firewall is protected from a change to the firewall policy. If set to <code>true</code>, you cannot associate a different policy with the firewall.</p>
-    pub fn firewall_policy_change_protection(&self) -> bool {
+    pub fn firewall_policy_change_protection(&self) -> ::std::option::Option<bool> {
         self.firewall_policy_change_protection
     }
     /// <p>Whether the firewall is protected from a change to the subnet associations. If set to <code>true</code>, you cannot map different subnets to the firewall.</p>
-    pub fn subnet_change_protection(&self) -> bool {
+    pub fn subnet_change_protection(&self) -> ::std::option::Option<bool> {
         self.subnet_change_protection
     }
     /// <p>The public subnets that Network Firewall uses for the firewall. Each subnet must belong to a different Availability Zone.</p>
@@ -242,14 +242,14 @@ impl AwsNetworkFirewallFirewallDetailsBuilder {
     /// Consumes the builder and constructs a [`AwsNetworkFirewallFirewallDetails`](crate::types::AwsNetworkFirewallFirewallDetails).
     pub fn build(self) -> crate::types::AwsNetworkFirewallFirewallDetails {
         crate::types::AwsNetworkFirewallFirewallDetails {
-            delete_protection: self.delete_protection.unwrap_or_default(),
+            delete_protection: self.delete_protection,
             description: self.description,
             firewall_arn: self.firewall_arn,
             firewall_id: self.firewall_id,
             firewall_name: self.firewall_name,
             firewall_policy_arn: self.firewall_policy_arn,
-            firewall_policy_change_protection: self.firewall_policy_change_protection.unwrap_or_default(),
-            subnet_change_protection: self.subnet_change_protection.unwrap_or_default(),
+            firewall_policy_change_protection: self.firewall_policy_change_protection,
+            subnet_change_protection: self.subnet_change_protection,
             subnet_mappings: self.subnet_mappings,
             vpc_id: self.vpc_id,
         }

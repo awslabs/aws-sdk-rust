@@ -29,6 +29,7 @@
 ///     SchemaAttributeType::Phone => { /* ... */ },
 ///     SchemaAttributeType::PhoneCountrycode => { /* ... */ },
 ///     SchemaAttributeType::PhoneNumber => { /* ... */ },
+///     SchemaAttributeType::ProviderId => { /* ... */ },
 ///     SchemaAttributeType::String => { /* ... */ },
 ///     SchemaAttributeType::UniqueId => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -93,6 +94,8 @@ pub enum SchemaAttributeType {
     #[allow(missing_docs)] // documentation missing in model
     PhoneNumber,
     #[allow(missing_docs)] // documentation missing in model
+    ProviderId,
+    #[allow(missing_docs)] // documentation missing in model
     String,
     #[allow(missing_docs)] // documentation missing in model
     UniqueId,
@@ -119,6 +122,7 @@ impl ::std::convert::From<&str> for SchemaAttributeType {
             "PHONE" => SchemaAttributeType::Phone,
             "PHONE_COUNTRYCODE" => SchemaAttributeType::PhoneCountrycode,
             "PHONE_NUMBER" => SchemaAttributeType::PhoneNumber,
+            "PROVIDER_ID" => SchemaAttributeType::ProviderId,
             "STRING" => SchemaAttributeType::String,
             "UNIQUE_ID" => SchemaAttributeType::UniqueId,
             other => SchemaAttributeType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
@@ -153,6 +157,7 @@ impl SchemaAttributeType {
             SchemaAttributeType::Phone => "PHONE",
             SchemaAttributeType::PhoneCountrycode => "PHONE_COUNTRYCODE",
             SchemaAttributeType::PhoneNumber => "PHONE_NUMBER",
+            SchemaAttributeType::ProviderId => "PROVIDER_ID",
             SchemaAttributeType::String => "STRING",
             SchemaAttributeType::UniqueId => "UNIQUE_ID",
             SchemaAttributeType::Unknown(value) => value.as_str(),
@@ -178,6 +183,7 @@ impl SchemaAttributeType {
             "PHONE",
             "PHONE_COUNTRYCODE",
             "PHONE_NUMBER",
+            "PROVIDER_ID",
             "STRING",
             "UNIQUE_ID",
         ]

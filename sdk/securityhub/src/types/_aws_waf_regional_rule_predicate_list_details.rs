@@ -7,7 +7,7 @@ pub struct AwsWafRegionalRulePredicateListDetails {
     /// <p>A unique identifier for a predicate in a rule, such as <code>ByteMatchSetId</code> or <code>IPSetId</code>. </p>
     pub data_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies if you want WAF to allow, block, or count requests based on the settings in the <code>ByteMatchSet</code>, <code>IPSet</code>, <code>SqlInjectionMatchSet</code>, <code>XssMatchSet</code>, <code>RegexMatchSet</code>, <code>GeoMatchSet</code>, or <code>SizeConstraintSet</code>. </p>
-    pub negated: bool,
+    pub negated: ::std::option::Option<bool>,
     /// <p>The type of predicate in a rule, such as <code>ByteMatch</code> or <code>IPSet</code>. </p>
     pub r#type: ::std::option::Option<::std::string::String>,
 }
@@ -17,7 +17,7 @@ impl AwsWafRegionalRulePredicateListDetails {
         self.data_id.as_deref()
     }
     /// <p>Specifies if you want WAF to allow, block, or count requests based on the settings in the <code>ByteMatchSet</code>, <code>IPSet</code>, <code>SqlInjectionMatchSet</code>, <code>XssMatchSet</code>, <code>RegexMatchSet</code>, <code>GeoMatchSet</code>, or <code>SizeConstraintSet</code>. </p>
-    pub fn negated(&self) -> bool {
+    pub fn negated(&self) -> ::std::option::Option<bool> {
         self.negated
     }
     /// <p>The type of predicate in a rule, such as <code>ByteMatch</code> or <code>IPSet</code>. </p>
@@ -87,7 +87,7 @@ impl AwsWafRegionalRulePredicateListDetailsBuilder {
     pub fn build(self) -> crate::types::AwsWafRegionalRulePredicateListDetails {
         crate::types::AwsWafRegionalRulePredicateListDetails {
             data_id: self.data_id,
-            negated: self.negated.unwrap_or_default(),
+            negated: self.negated,
             r#type: self.r#type,
         }
     }

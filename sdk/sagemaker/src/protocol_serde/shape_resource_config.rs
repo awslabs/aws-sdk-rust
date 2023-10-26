@@ -6,37 +6,37 @@ pub fn ser_resource_config(
     if let Some(var_1) = &input.instance_type {
         object.key("InstanceType").string(var_1.as_str());
     }
-    if input.instance_count != 0 {
+    if let Some(var_2) = &input.instance_count {
         object.key("InstanceCount").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.instance_count).into()),
+            ::aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
-    {
+    if let Some(var_3) = &input.volume_size_in_gb {
         object.key("VolumeSizeInGB").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.volume_size_in_gb).into()),
+            ::aws_smithy_types::Number::NegInt((*var_3).into()),
         );
     }
-    if let Some(var_2) = &input.volume_kms_key_id {
-        object.key("VolumeKmsKeyId").string(var_2.as_str());
+    if let Some(var_4) = &input.volume_kms_key_id {
+        object.key("VolumeKmsKeyId").string(var_4.as_str());
     }
-    if let Some(var_3) = &input.instance_groups {
-        let mut array_4 = object.key("InstanceGroups").start_array();
-        for item_5 in var_3 {
+    if let Some(var_5) = &input.instance_groups {
+        let mut array_6 = object.key("InstanceGroups").start_array();
+        for item_7 in var_5 {
             {
                 #[allow(unused_mut)]
-                let mut object_6 = array_4.value().start_object();
-                crate::protocol_serde::shape_instance_group::ser_instance_group(&mut object_6, item_5)?;
-                object_6.finish();
+                let mut object_8 = array_6.value().start_object();
+                crate::protocol_serde::shape_instance_group::ser_instance_group(&mut object_8, item_7)?;
+                object_8.finish();
             }
         }
-        array_4.finish();
+        array_6.finish();
     }
-    if let Some(var_7) = &input.keep_alive_period_in_seconds {
+    if let Some(var_9) = &input.keep_alive_period_in_seconds {
         object.key("KeepAlivePeriodInSeconds").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_7).into()),
+            ::aws_smithy_types::Number::NegInt((*var_9).into()),
         );
     }
     Ok(())

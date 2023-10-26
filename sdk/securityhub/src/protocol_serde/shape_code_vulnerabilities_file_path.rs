@@ -3,22 +3,22 @@ pub fn ser_code_vulnerabilities_file_path(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CodeVulnerabilitiesFilePath,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if input.end_line != 0 {
+    if let Some(var_1) = &input.end_line {
         object.key("EndLine").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.end_line).into()),
+            ::aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if let Some(var_1) = &input.file_name {
-        object.key("FileName").string(var_1.as_str());
+    if let Some(var_2) = &input.file_name {
+        object.key("FileName").string(var_2.as_str());
     }
-    if let Some(var_2) = &input.file_path {
-        object.key("FilePath").string(var_2.as_str());
+    if let Some(var_3) = &input.file_path {
+        object.key("FilePath").string(var_3.as_str());
     }
-    if input.start_line != 0 {
+    if let Some(var_4) = &input.start_line {
         object.key("StartLine").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.start_line).into()),
+            ::aws_smithy_types::Number::NegInt((*var_4).into()),
         );
     }
     Ok(())

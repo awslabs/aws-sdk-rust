@@ -30,9 +30,9 @@ pub struct AwsCodeBuildProjectSource {
     /// </ul>
     pub location: ::std::option::Option<::std::string::String>,
     /// <p>Information about the Git clone depth for the build project.</p>
-    pub git_clone_depth: i32,
+    pub git_clone_depth: ::std::option::Option<i32>,
     /// <p>Whether to ignore SSL warnings while connecting to the project source code.</p>
-    pub insecure_ssl: bool,
+    pub insecure_ssl: ::std::option::Option<bool>,
 }
 impl AwsCodeBuildProjectSource {
     /// <p>The type of repository that contains the source code to be built. Valid values are:</p>
@@ -65,11 +65,11 @@ impl AwsCodeBuildProjectSource {
         self.location.as_deref()
     }
     /// <p>Information about the Git clone depth for the build project.</p>
-    pub fn git_clone_depth(&self) -> i32 {
+    pub fn git_clone_depth(&self) -> ::std::option::Option<i32> {
         self.git_clone_depth
     }
     /// <p>Whether to ignore SSL warnings while connecting to the project source code.</p>
-    pub fn insecure_ssl(&self) -> bool {
+    pub fn insecure_ssl(&self) -> ::std::option::Option<bool> {
         self.insecure_ssl
     }
 }
@@ -214,8 +214,8 @@ impl AwsCodeBuildProjectSourceBuilder {
         crate::types::AwsCodeBuildProjectSource {
             r#type: self.r#type,
             location: self.location,
-            git_clone_depth: self.git_clone_depth.unwrap_or_default(),
-            insecure_ssl: self.insecure_ssl.unwrap_or_default(),
+            git_clone_depth: self.git_clone_depth,
+            insecure_ssl: self.insecure_ssl,
         }
     }
 }

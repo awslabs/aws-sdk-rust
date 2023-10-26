@@ -6,10 +6,10 @@ pub fn ser_line_item_request(
     if let Some(var_1) = &input.catalog_item_id {
         object.key("CatalogItemId").string(var_1.as_str());
     }
-    if input.quantity != 0 {
+    if let Some(var_2) = &input.quantity {
         object.key("Quantity").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.quantity).into()),
+            ::aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
     Ok(())

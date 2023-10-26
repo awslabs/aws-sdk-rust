@@ -21,8 +21,8 @@ pub fn ser_aws_ecs_container_details(
         }
         array_4.finish();
     }
-    if input.privileged {
-        object.key("Privileged").boolean(input.privileged);
+    if let Some(var_7) = &input.privileged {
+        object.key("Privileged").boolean(*var_7);
     }
     Ok(())
 }

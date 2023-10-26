@@ -253,7 +253,7 @@ pub type EnableControlErrorKind = EnableControlError;
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum EnableControlError {
-    /// <p>User does not have sufficient access to perform this action. </p>
+    /// <p>User does not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>Updating or deleting a resource can cause an inconsistent state.</p>
     ConflictException(crate::types::error::ConflictException),
@@ -261,7 +261,7 @@ pub enum EnableControlError {
     InternalServerException(crate::types::error::InternalServerException),
     /// <p>Request references a resource which does not exist.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
-    /// <p>Request would cause a service quota to be exceeded. The limit is 10 concurrent operations. </p>
+    /// <p>Request would cause a service quota to be exceeded. The limit is 10 concurrent operations.</p>
     ServiceQuotaExceededException(crate::types::error::ServiceQuotaExceededException),
     /// <p> Request was denied due to request throttling.</p>
     ThrottlingException(crate::types::error::ThrottlingException),

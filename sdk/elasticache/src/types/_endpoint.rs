@@ -7,7 +7,7 @@ pub struct Endpoint {
     /// <p>The DNS hostname of the cache node.</p>
     pub address: ::std::option::Option<::std::string::String>,
     /// <p>The port number that the cache engine is listening on.</p>
-    pub port: i32,
+    pub port: ::std::option::Option<i32>,
 }
 impl Endpoint {
     /// <p>The DNS hostname of the cache node.</p>
@@ -15,7 +15,7 @@ impl Endpoint {
         self.address.as_deref()
     }
     /// <p>The port number that the cache engine is listening on.</p>
-    pub fn port(&self) -> i32 {
+    pub fn port(&self) -> ::std::option::Option<i32> {
         self.port
     }
 }
@@ -66,7 +66,7 @@ impl EndpointBuilder {
     pub fn build(self) -> crate::types::Endpoint {
         crate::types::Endpoint {
             address: self.address,
-            port: self.port.unwrap_or_default(),
+            port: self.port,
         }
     }
 }

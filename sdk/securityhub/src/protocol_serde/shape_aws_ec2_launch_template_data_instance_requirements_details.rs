@@ -111,32 +111,32 @@ pub fn ser_aws_ec2_launch_template_data_instance_requirements_details(
         crate::protocol_serde::shape_aws_ec2_launch_template_data_instance_requirements_network_interface_count_details::ser_aws_ec2_launch_template_data_instance_requirements_network_interface_count_details(&mut object_36, var_35)?;
         object_36.finish();
     }
-    if input.on_demand_max_price_percentage_over_lowest_price != 0 {
+    if let Some(var_37) = &input.on_demand_max_price_percentage_over_lowest_price {
         object.key("OnDemandMaxPricePercentageOverLowestPrice").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.on_demand_max_price_percentage_over_lowest_price).into()),
+            ::aws_smithy_types::Number::NegInt((*var_37).into()),
         );
     }
-    if input.require_hibernate_support {
-        object.key("RequireHibernateSupport").boolean(input.require_hibernate_support);
+    if let Some(var_38) = &input.require_hibernate_support {
+        object.key("RequireHibernateSupport").boolean(*var_38);
     }
-    if input.spot_max_price_percentage_over_lowest_price != 0 {
+    if let Some(var_39) = &input.spot_max_price_percentage_over_lowest_price {
         object.key("SpotMaxPricePercentageOverLowestPrice").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.spot_max_price_percentage_over_lowest_price).into()),
+            ::aws_smithy_types::Number::NegInt((*var_39).into()),
         );
     }
-    if let Some(var_37) = &input.total_local_storage_gb {
+    if let Some(var_40) = &input.total_local_storage_gb {
         #[allow(unused_mut)]
-        let mut object_38 = object.key("TotalLocalStorageGB").start_object();
-        crate::protocol_serde::shape_aws_ec2_launch_template_data_instance_requirements_total_local_storage_gb_details::ser_aws_ec2_launch_template_data_instance_requirements_total_local_storage_gb_details(&mut object_38, var_37)?;
-        object_38.finish();
+        let mut object_41 = object.key("TotalLocalStorageGB").start_object();
+        crate::protocol_serde::shape_aws_ec2_launch_template_data_instance_requirements_total_local_storage_gb_details::ser_aws_ec2_launch_template_data_instance_requirements_total_local_storage_gb_details(&mut object_41, var_40)?;
+        object_41.finish();
     }
-    if let Some(var_39) = &input.v_cpu_count {
+    if let Some(var_42) = &input.v_cpu_count {
         #[allow(unused_mut)]
-        let mut object_40 = object.key("VCpuCount").start_object();
-        crate::protocol_serde::shape_aws_ec2_launch_template_data_instance_requirements_v_cpu_count_details::ser_aws_ec2_launch_template_data_instance_requirements_v_cpu_count_details(&mut object_40, var_39)?;
-        object_40.finish();
+        let mut object_43 = object.key("VCpuCount").start_object();
+        crate::protocol_serde::shape_aws_ec2_launch_template_data_instance_requirements_v_cpu_count_details::ser_aws_ec2_launch_template_data_instance_requirements_v_cpu_count_details(&mut object_43, var_42)?;
+        object_43.finish();
     }
     Ok(())
 }

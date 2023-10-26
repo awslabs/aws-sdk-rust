@@ -82,7 +82,7 @@ pub struct CacheCluster {
     /// <p>A list of cache nodes that are members of the cluster.</p>
     pub cache_nodes: ::std::option::Option<::std::vec::Vec<crate::types::CacheNode>>,
     /// <p>&nbsp;If you are running Redis engine version 6.0 or later, set this parameter to yes if you want to opt-in to the next auto minor version upgrade campaign. This parameter is disabled for previous versions.&nbsp; </p>
-    pub auto_minor_version_upgrade: bool,
+    pub auto_minor_version_upgrade: ::std::option::Option<bool>,
     /// <p>A list of VPC Security Groups associated with the cluster.</p>
     pub security_groups: ::std::option::Option<::std::vec::Vec<crate::types::SecurityGroupMembership>>,
     /// <p>The replication group to which this cluster belongs. If this field is empty, the cluster is not associated with any replication group.</p>
@@ -111,7 +111,7 @@ pub struct CacheCluster {
     /// <p>The ARN (Amazon Resource Name) of the cache cluster.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>A boolean value indicating whether log delivery is enabled for the replication group.</p>
-    pub replication_group_log_delivery_enabled: bool,
+    pub replication_group_log_delivery_enabled: ::std::option::Option<bool>,
     /// <p>Returns the destination, format and type of the logs.</p>
     pub log_delivery_configurations: ::std::option::Option<::std::vec::Vec<crate::types::LogDeliveryConfiguration>>,
     /// <p>Must be either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6 is supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
@@ -236,7 +236,7 @@ impl CacheCluster {
         self.cache_nodes.as_deref()
     }
     /// <p>&nbsp;If you are running Redis engine version 6.0 or later, set this parameter to yes if you want to opt-in to the next auto minor version upgrade campaign. This parameter is disabled for previous versions.&nbsp; </p>
-    pub fn auto_minor_version_upgrade(&self) -> bool {
+    pub fn auto_minor_version_upgrade(&self) -> ::std::option::Option<bool> {
         self.auto_minor_version_upgrade
     }
     /// <p>A list of VPC Security Groups associated with the cluster.</p>
@@ -285,7 +285,7 @@ impl CacheCluster {
         self.arn.as_deref()
     }
     /// <p>A boolean value indicating whether log delivery is enabled for the replication group.</p>
-    pub fn replication_group_log_delivery_enabled(&self) -> bool {
+    pub fn replication_group_log_delivery_enabled(&self) -> ::std::option::Option<bool> {
         self.replication_group_log_delivery_enabled
     }
     /// <p>Returns the destination, format and type of the logs.</p>
@@ -1008,7 +1008,7 @@ impl CacheClusterBuilder {
             cache_parameter_group: self.cache_parameter_group,
             cache_subnet_group_name: self.cache_subnet_group_name,
             cache_nodes: self.cache_nodes,
-            auto_minor_version_upgrade: self.auto_minor_version_upgrade.unwrap_or_default(),
+            auto_minor_version_upgrade: self.auto_minor_version_upgrade,
             security_groups: self.security_groups,
             replication_group_id: self.replication_group_id,
             snapshot_retention_limit: self.snapshot_retention_limit,
@@ -1018,7 +1018,7 @@ impl CacheClusterBuilder {
             transit_encryption_enabled: self.transit_encryption_enabled,
             at_rest_encryption_enabled: self.at_rest_encryption_enabled,
             arn: self.arn,
-            replication_group_log_delivery_enabled: self.replication_group_log_delivery_enabled.unwrap_or_default(),
+            replication_group_log_delivery_enabled: self.replication_group_log_delivery_enabled,
             log_delivery_configurations: self.log_delivery_configurations,
             network_type: self.network_type,
             ip_discovery: self.ip_discovery,

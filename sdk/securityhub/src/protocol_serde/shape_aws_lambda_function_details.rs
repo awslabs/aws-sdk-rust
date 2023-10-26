@@ -51,53 +51,53 @@ pub fn ser_aws_lambda_function_details(
     if let Some(var_16) = &input.master_arn {
         object.key("MasterArn").string(var_16.as_str());
     }
-    if input.memory_size != 0 {
+    if let Some(var_17) = &input.memory_size {
         object.key("MemorySize").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.memory_size).into()),
+            ::aws_smithy_types::Number::NegInt((*var_17).into()),
         );
     }
-    if let Some(var_17) = &input.revision_id {
-        object.key("RevisionId").string(var_17.as_str());
+    if let Some(var_18) = &input.revision_id {
+        object.key("RevisionId").string(var_18.as_str());
     }
-    if let Some(var_18) = &input.role {
-        object.key("Role").string(var_18.as_str());
+    if let Some(var_19) = &input.role {
+        object.key("Role").string(var_19.as_str());
     }
-    if let Some(var_19) = &input.runtime {
-        object.key("Runtime").string(var_19.as_str());
+    if let Some(var_20) = &input.runtime {
+        object.key("Runtime").string(var_20.as_str());
     }
-    if input.timeout != 0 {
+    if let Some(var_21) = &input.timeout {
         object.key("Timeout").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.timeout).into()),
+            ::aws_smithy_types::Number::NegInt((*var_21).into()),
         );
     }
-    if let Some(var_20) = &input.tracing_config {
+    if let Some(var_22) = &input.tracing_config {
         #[allow(unused_mut)]
-        let mut object_21 = object.key("TracingConfig").start_object();
-        crate::protocol_serde::shape_aws_lambda_function_tracing_config::ser_aws_lambda_function_tracing_config(&mut object_21, var_20)?;
-        object_21.finish();
-    }
-    if let Some(var_22) = &input.vpc_config {
-        #[allow(unused_mut)]
-        let mut object_23 = object.key("VpcConfig").start_object();
-        crate::protocol_serde::shape_aws_lambda_function_vpc_config::ser_aws_lambda_function_vpc_config(&mut object_23, var_22)?;
+        let mut object_23 = object.key("TracingConfig").start_object();
+        crate::protocol_serde::shape_aws_lambda_function_tracing_config::ser_aws_lambda_function_tracing_config(&mut object_23, var_22)?;
         object_23.finish();
     }
-    if let Some(var_24) = &input.version {
-        object.key("Version").string(var_24.as_str());
+    if let Some(var_24) = &input.vpc_config {
+        #[allow(unused_mut)]
+        let mut object_25 = object.key("VpcConfig").start_object();
+        crate::protocol_serde::shape_aws_lambda_function_vpc_config::ser_aws_lambda_function_vpc_config(&mut object_25, var_24)?;
+        object_25.finish();
     }
-    if let Some(var_25) = &input.architectures {
-        let mut array_26 = object.key("Architectures").start_array();
-        for item_27 in var_25 {
+    if let Some(var_26) = &input.version {
+        object.key("Version").string(var_26.as_str());
+    }
+    if let Some(var_27) = &input.architectures {
+        let mut array_28 = object.key("Architectures").start_array();
+        for item_29 in var_27 {
             {
-                array_26.value().string(item_27.as_str());
+                array_28.value().string(item_29.as_str());
             }
         }
-        array_26.finish();
+        array_28.finish();
     }
-    if let Some(var_28) = &input.package_type {
-        object.key("PackageType").string(var_28.as_str());
+    if let Some(var_30) = &input.package_type {
+        object.key("PackageType").string(var_30.as_str());
     }
     Ok(())
 }

@@ -9,35 +9,35 @@ pub fn ser_channel_specification(
     if let Some(var_2) = &input.description {
         object.key("Description").string(var_2.as_str());
     }
-    if input.is_required {
-        object.key("IsRequired").boolean(input.is_required);
+    if let Some(var_3) = &input.is_required {
+        object.key("IsRequired").boolean(*var_3);
     }
-    if let Some(var_3) = &input.supported_content_types {
-        let mut array_4 = object.key("SupportedContentTypes").start_array();
-        for item_5 in var_3 {
+    if let Some(var_4) = &input.supported_content_types {
+        let mut array_5 = object.key("SupportedContentTypes").start_array();
+        for item_6 in var_4 {
             {
-                array_4.value().string(item_5.as_str());
+                array_5.value().string(item_6.as_str());
             }
         }
-        array_4.finish();
+        array_5.finish();
     }
-    if let Some(var_6) = &input.supported_compression_types {
-        let mut array_7 = object.key("SupportedCompressionTypes").start_array();
-        for item_8 in var_6 {
+    if let Some(var_7) = &input.supported_compression_types {
+        let mut array_8 = object.key("SupportedCompressionTypes").start_array();
+        for item_9 in var_7 {
             {
-                array_7.value().string(item_8.as_str());
+                array_8.value().string(item_9.as_str());
             }
         }
-        array_7.finish();
+        array_8.finish();
     }
-    if let Some(var_9) = &input.supported_input_modes {
-        let mut array_10 = object.key("SupportedInputModes").start_array();
-        for item_11 in var_9 {
+    if let Some(var_10) = &input.supported_input_modes {
+        let mut array_11 = object.key("SupportedInputModes").start_array();
+        for item_12 in var_10 {
             {
-                array_10.value().string(item_11.as_str());
+                array_11.value().string(item_12.as_str());
             }
         }
-        array_10.finish();
+        array_11.finish();
     }
     Ok(())
 }

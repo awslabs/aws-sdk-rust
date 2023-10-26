@@ -3,26 +3,26 @@ pub fn ser_recommendation_job_stopping_conditions(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RecommendationJobStoppingConditions,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if input.max_invocations != 0 {
+    if let Some(var_1) = &input.max_invocations {
         object.key("MaxInvocations").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.max_invocations).into()),
+            ::aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if let Some(var_1) = &input.model_latency_thresholds {
-        let mut array_2 = object.key("ModelLatencyThresholds").start_array();
-        for item_3 in var_1 {
+    if let Some(var_2) = &input.model_latency_thresholds {
+        let mut array_3 = object.key("ModelLatencyThresholds").start_array();
+        for item_4 in var_2 {
             {
                 #[allow(unused_mut)]
-                let mut object_4 = array_2.value().start_object();
-                crate::protocol_serde::shape_model_latency_threshold::ser_model_latency_threshold(&mut object_4, item_3)?;
-                object_4.finish();
+                let mut object_5 = array_3.value().start_object();
+                crate::protocol_serde::shape_model_latency_threshold::ser_model_latency_threshold(&mut object_5, item_4)?;
+                object_5.finish();
             }
         }
-        array_2.finish();
+        array_3.finish();
     }
-    if let Some(var_5) = &input.flat_invocations {
-        object.key("FlatInvocations").string(var_5.as_str());
+    if let Some(var_6) = &input.flat_invocations {
+        object.key("FlatInvocations").string(var_6.as_str());
     }
     Ok(())
 }

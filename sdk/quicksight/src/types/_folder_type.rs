@@ -12,6 +12,7 @@
 /// ```text
 /// # let foldertype = unimplemented!();
 /// match foldertype {
+///     FolderType::Restricted => { /* ... */ },
 ///     FolderType::Shared => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -41,6 +42,8 @@
 )]
 pub enum FolderType {
     #[allow(missing_docs)] // documentation missing in model
+    Restricted,
+    #[allow(missing_docs)] // documentation missing in model
     Shared,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
@@ -48,6 +51,7 @@ pub enum FolderType {
 impl ::std::convert::From<&str> for FolderType {
     fn from(s: &str) -> Self {
         match s {
+            "RESTRICTED" => FolderType::Restricted,
             "SHARED" => FolderType::Shared,
             other => FolderType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
@@ -64,13 +68,14 @@ impl FolderType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            FolderType::Restricted => "RESTRICTED",
             FolderType::Shared => "SHARED",
             FolderType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["SHARED"]
+        &["RESTRICTED", "SHARED"]
     }
 }
 impl ::std::convert::AsRef<str> for FolderType {

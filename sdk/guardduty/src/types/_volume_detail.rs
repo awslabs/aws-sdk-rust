@@ -11,7 +11,7 @@ pub struct VolumeDetail {
     /// <p>The device name for the EBS volume.</p>
     pub device_name: ::std::option::Option<::std::string::String>,
     /// <p>EBS volume size in GB.</p>
-    pub volume_size_in_gb: i32,
+    pub volume_size_in_gb: ::std::option::Option<i32>,
     /// <p>EBS volume encryption type.</p>
     pub encryption_type: ::std::option::Option<::std::string::String>,
     /// <p>Snapshot Arn of the EBS volume.</p>
@@ -33,7 +33,7 @@ impl VolumeDetail {
         self.device_name.as_deref()
     }
     /// <p>EBS volume size in GB.</p>
-    pub fn volume_size_in_gb(&self) -> i32 {
+    pub fn volume_size_in_gb(&self) -> ::std::option::Option<i32> {
         self.volume_size_in_gb
     }
     /// <p>EBS volume encryption type.</p>
@@ -173,7 +173,7 @@ impl VolumeDetailBuilder {
             volume_arn: self.volume_arn,
             volume_type: self.volume_type,
             device_name: self.device_name,
-            volume_size_in_gb: self.volume_size_in_gb.unwrap_or_default(),
+            volume_size_in_gb: self.volume_size_in_gb,
             encryption_type: self.encryption_type,
             snapshot_arn: self.snapshot_arn,
             kms_key_arn: self.kms_key_arn,

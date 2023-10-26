@@ -6,11 +6,11 @@ pub fn ser_aws_app_sync_graph_ql_api_log_config_details(
     if let Some(var_1) = &input.cloud_watch_logs_role_arn {
         object.key("CloudWatchLogsRoleArn").string(var_1.as_str());
     }
-    if input.exclude_verbose_content {
-        object.key("ExcludeVerboseContent").boolean(input.exclude_verbose_content);
+    if let Some(var_2) = &input.exclude_verbose_content {
+        object.key("ExcludeVerboseContent").boolean(*var_2);
     }
-    if let Some(var_2) = &input.field_log_level {
-        object.key("FieldLogLevel").string(var_2.as_str());
+    if let Some(var_3) = &input.field_log_level {
+        object.key("FieldLogLevel").string(var_3.as_str());
     }
     Ok(())
 }

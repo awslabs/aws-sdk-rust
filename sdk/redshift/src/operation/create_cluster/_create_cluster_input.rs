@@ -2,7 +2,7 @@
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateClusterInput {
     /// <p>The name of the first database to be created when the cluster is created.</p>
     /// <p>To create additional databases after the cluster is created, connect to the cluster with a SQL client and use SQL commands to create a database. For more information, go to <a href="https://docs.aws.amazon.com/redshift/latest/dg/t_creating_database.html">Create a Database</a> in the Amazon Redshift Database Developer Guide. </p>
@@ -47,6 +47,7 @@ pub struct CreateClusterInput {
     /// </ul>
     pub master_username: ::std::option::Option<::std::string::String>,
     /// <p>The password associated with the admin user account for the cluster that is being created.</p>
+    /// <p>You can't use <code>MasterUserPassword</code> if <code>ManageMasterPassword</code> is <code>true</code>.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li> <p>Must be between 8 and 64 characters in length.</p> </li>
@@ -150,6 +151,10 @@ pub struct CreateClusterInput {
     pub default_iam_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>A flag that specifies whether to load sample data once the cluster is created.</p>
     pub load_sample_data: ::std::option::Option<::std::string::String>,
+    /// <p>If <code>true</code>, Amazon Redshift uses Secrets Manager to manage this cluster's admin credentials. You can't use <code>MasterUserPassword</code> if <code>ManageMasterPassword</code> is true. If <code>ManageMasterPassword</code> is false or not set, Amazon Redshift uses <code>MasterUserPassword</code> for the admin user account's password. </p>
+    pub manage_master_password: ::std::option::Option<bool>,
+    /// <p>The ID of the Key Management Service (KMS) key used to encrypt and store the cluster's admin credentials secret. You can only use this parameter if <code>ManageMasterPassword</code> is true.</p>
+    pub master_password_secret_kms_key_id: ::std::option::Option<::std::string::String>,
 }
 impl CreateClusterInput {
     /// <p>The name of the first database to be created when the cluster is created.</p>
@@ -205,6 +210,7 @@ impl CreateClusterInput {
         self.master_username.as_deref()
     }
     /// <p>The password associated with the admin user account for the cluster that is being created.</p>
+    /// <p>You can't use <code>MasterUserPassword</code> if <code>ManageMasterPassword</code> is <code>true</code>.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li> <p>Must be between 8 and 64 characters in length.</p> </li>
@@ -366,6 +372,56 @@ impl CreateClusterInput {
     pub fn load_sample_data(&self) -> ::std::option::Option<&str> {
         self.load_sample_data.as_deref()
     }
+    /// <p>If <code>true</code>, Amazon Redshift uses Secrets Manager to manage this cluster's admin credentials. You can't use <code>MasterUserPassword</code> if <code>ManageMasterPassword</code> is true. If <code>ManageMasterPassword</code> is false or not set, Amazon Redshift uses <code>MasterUserPassword</code> for the admin user account's password. </p>
+    pub fn manage_master_password(&self) -> ::std::option::Option<bool> {
+        self.manage_master_password
+    }
+    /// <p>The ID of the Key Management Service (KMS) key used to encrypt and store the cluster's admin credentials secret. You can only use this parameter if <code>ManageMasterPassword</code> is true.</p>
+    pub fn master_password_secret_kms_key_id(&self) -> ::std::option::Option<&str> {
+        self.master_password_secret_kms_key_id.as_deref()
+    }
+}
+impl ::std::fmt::Debug for CreateClusterInput {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateClusterInput");
+        formatter.field("db_name", &self.db_name);
+        formatter.field("cluster_identifier", &self.cluster_identifier);
+        formatter.field("cluster_type", &self.cluster_type);
+        formatter.field("node_type", &self.node_type);
+        formatter.field("master_username", &self.master_username);
+        formatter.field("master_user_password", &"*** Sensitive Data Redacted ***");
+        formatter.field("cluster_security_groups", &self.cluster_security_groups);
+        formatter.field("vpc_security_group_ids", &self.vpc_security_group_ids);
+        formatter.field("cluster_subnet_group_name", &self.cluster_subnet_group_name);
+        formatter.field("availability_zone", &self.availability_zone);
+        formatter.field("preferred_maintenance_window", &self.preferred_maintenance_window);
+        formatter.field("cluster_parameter_group_name", &self.cluster_parameter_group_name);
+        formatter.field("automated_snapshot_retention_period", &self.automated_snapshot_retention_period);
+        formatter.field("manual_snapshot_retention_period", &self.manual_snapshot_retention_period);
+        formatter.field("port", &self.port);
+        formatter.field("cluster_version", &self.cluster_version);
+        formatter.field("allow_version_upgrade", &self.allow_version_upgrade);
+        formatter.field("number_of_nodes", &self.number_of_nodes);
+        formatter.field("publicly_accessible", &self.publicly_accessible);
+        formatter.field("encrypted", &self.encrypted);
+        formatter.field("hsm_client_certificate_identifier", &self.hsm_client_certificate_identifier);
+        formatter.field("hsm_configuration_identifier", &self.hsm_configuration_identifier);
+        formatter.field("elastic_ip", &self.elastic_ip);
+        formatter.field("tags", &self.tags);
+        formatter.field("kms_key_id", &self.kms_key_id);
+        formatter.field("enhanced_vpc_routing", &self.enhanced_vpc_routing);
+        formatter.field("additional_info", &self.additional_info);
+        formatter.field("iam_roles", &self.iam_roles);
+        formatter.field("maintenance_track_name", &self.maintenance_track_name);
+        formatter.field("snapshot_schedule_identifier", &self.snapshot_schedule_identifier);
+        formatter.field("availability_zone_relocation", &self.availability_zone_relocation);
+        formatter.field("aqua_configuration_status", &self.aqua_configuration_status);
+        formatter.field("default_iam_role_arn", &self.default_iam_role_arn);
+        formatter.field("load_sample_data", &self.load_sample_data);
+        formatter.field("manage_master_password", &self.manage_master_password);
+        formatter.field("master_password_secret_kms_key_id", &self.master_password_secret_kms_key_id);
+        formatter.finish()
+    }
 }
 impl CreateClusterInput {
     /// Creates a new builder-style object to manufacture [`CreateClusterInput`](crate::operation::create_cluster::CreateClusterInput).
@@ -376,7 +432,7 @@ impl CreateClusterInput {
 
 /// A builder for [`CreateClusterInput`](crate::operation::create_cluster::CreateClusterInput).
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct CreateClusterInputBuilder {
     pub(crate) db_name: ::std::option::Option<::std::string::String>,
     pub(crate) cluster_identifier: ::std::option::Option<::std::string::String>,
@@ -412,6 +468,8 @@ pub struct CreateClusterInputBuilder {
     pub(crate) aqua_configuration_status: ::std::option::Option<crate::types::AquaConfigurationStatus>,
     pub(crate) default_iam_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) load_sample_data: ::std::option::Option<::std::string::String>,
+    pub(crate) manage_master_password: ::std::option::Option<bool>,
+    pub(crate) master_password_secret_kms_key_id: ::std::option::Option<::std::string::String>,
 }
 impl CreateClusterInputBuilder {
     /// <p>The name of the first database to be created when the cluster is created.</p>
@@ -581,6 +639,7 @@ impl CreateClusterInputBuilder {
         &self.master_username
     }
     /// <p>The password associated with the admin user account for the cluster that is being created.</p>
+    /// <p>You can't use <code>MasterUserPassword</code> if <code>ManageMasterPassword</code> is <code>true</code>.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li> <p>Must be between 8 and 64 characters in length.</p> </li>
@@ -594,6 +653,7 @@ impl CreateClusterInputBuilder {
         self
     }
     /// <p>The password associated with the admin user account for the cluster that is being created.</p>
+    /// <p>You can't use <code>MasterUserPassword</code> if <code>ManageMasterPassword</code> is <code>true</code>.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li> <p>Must be between 8 and 64 characters in length.</p> </li>
@@ -607,6 +667,7 @@ impl CreateClusterInputBuilder {
         self
     }
     /// <p>The password associated with the admin user account for the cluster that is being created.</p>
+    /// <p>You can't use <code>MasterUserPassword</code> if <code>ManageMasterPassword</code> is <code>true</code>.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li> <p>Must be between 8 and 64 characters in length.</p> </li>
@@ -1148,6 +1209,34 @@ impl CreateClusterInputBuilder {
     pub fn get_load_sample_data(&self) -> &::std::option::Option<::std::string::String> {
         &self.load_sample_data
     }
+    /// <p>If <code>true</code>, Amazon Redshift uses Secrets Manager to manage this cluster's admin credentials. You can't use <code>MasterUserPassword</code> if <code>ManageMasterPassword</code> is true. If <code>ManageMasterPassword</code> is false or not set, Amazon Redshift uses <code>MasterUserPassword</code> for the admin user account's password. </p>
+    pub fn manage_master_password(mut self, input: bool) -> Self {
+        self.manage_master_password = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>If <code>true</code>, Amazon Redshift uses Secrets Manager to manage this cluster's admin credentials. You can't use <code>MasterUserPassword</code> if <code>ManageMasterPassword</code> is true. If <code>ManageMasterPassword</code> is false or not set, Amazon Redshift uses <code>MasterUserPassword</code> for the admin user account's password. </p>
+    pub fn set_manage_master_password(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.manage_master_password = input;
+        self
+    }
+    /// <p>If <code>true</code>, Amazon Redshift uses Secrets Manager to manage this cluster's admin credentials. You can't use <code>MasterUserPassword</code> if <code>ManageMasterPassword</code> is true. If <code>ManageMasterPassword</code> is false or not set, Amazon Redshift uses <code>MasterUserPassword</code> for the admin user account's password. </p>
+    pub fn get_manage_master_password(&self) -> &::std::option::Option<bool> {
+        &self.manage_master_password
+    }
+    /// <p>The ID of the Key Management Service (KMS) key used to encrypt and store the cluster's admin credentials secret. You can only use this parameter if <code>ManageMasterPassword</code> is true.</p>
+    pub fn master_password_secret_kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.master_password_secret_kms_key_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the Key Management Service (KMS) key used to encrypt and store the cluster's admin credentials secret. You can only use this parameter if <code>ManageMasterPassword</code> is true.</p>
+    pub fn set_master_password_secret_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.master_password_secret_kms_key_id = input;
+        self
+    }
+    /// <p>The ID of the Key Management Service (KMS) key used to encrypt and store the cluster's admin credentials secret. You can only use this parameter if <code>ManageMasterPassword</code> is true.</p>
+    pub fn get_master_password_secret_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.master_password_secret_kms_key_id
+    }
     /// Consumes the builder and constructs a [`CreateClusterInput`](crate::operation::create_cluster::CreateClusterInput).
     pub fn build(
         self,
@@ -1187,6 +1276,50 @@ impl CreateClusterInputBuilder {
             aqua_configuration_status: self.aqua_configuration_status,
             default_iam_role_arn: self.default_iam_role_arn,
             load_sample_data: self.load_sample_data,
+            manage_master_password: self.manage_master_password,
+            master_password_secret_kms_key_id: self.master_password_secret_kms_key_id,
         })
+    }
+}
+impl ::std::fmt::Debug for CreateClusterInputBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateClusterInputBuilder");
+        formatter.field("db_name", &self.db_name);
+        formatter.field("cluster_identifier", &self.cluster_identifier);
+        formatter.field("cluster_type", &self.cluster_type);
+        formatter.field("node_type", &self.node_type);
+        formatter.field("master_username", &self.master_username);
+        formatter.field("master_user_password", &"*** Sensitive Data Redacted ***");
+        formatter.field("cluster_security_groups", &self.cluster_security_groups);
+        formatter.field("vpc_security_group_ids", &self.vpc_security_group_ids);
+        formatter.field("cluster_subnet_group_name", &self.cluster_subnet_group_name);
+        formatter.field("availability_zone", &self.availability_zone);
+        formatter.field("preferred_maintenance_window", &self.preferred_maintenance_window);
+        formatter.field("cluster_parameter_group_name", &self.cluster_parameter_group_name);
+        formatter.field("automated_snapshot_retention_period", &self.automated_snapshot_retention_period);
+        formatter.field("manual_snapshot_retention_period", &self.manual_snapshot_retention_period);
+        formatter.field("port", &self.port);
+        formatter.field("cluster_version", &self.cluster_version);
+        formatter.field("allow_version_upgrade", &self.allow_version_upgrade);
+        formatter.field("number_of_nodes", &self.number_of_nodes);
+        formatter.field("publicly_accessible", &self.publicly_accessible);
+        formatter.field("encrypted", &self.encrypted);
+        formatter.field("hsm_client_certificate_identifier", &self.hsm_client_certificate_identifier);
+        formatter.field("hsm_configuration_identifier", &self.hsm_configuration_identifier);
+        formatter.field("elastic_ip", &self.elastic_ip);
+        formatter.field("tags", &self.tags);
+        formatter.field("kms_key_id", &self.kms_key_id);
+        formatter.field("enhanced_vpc_routing", &self.enhanced_vpc_routing);
+        formatter.field("additional_info", &self.additional_info);
+        formatter.field("iam_roles", &self.iam_roles);
+        formatter.field("maintenance_track_name", &self.maintenance_track_name);
+        formatter.field("snapshot_schedule_identifier", &self.snapshot_schedule_identifier);
+        formatter.field("availability_zone_relocation", &self.availability_zone_relocation);
+        formatter.field("aqua_configuration_status", &self.aqua_configuration_status);
+        formatter.field("default_iam_role_arn", &self.default_iam_role_arn);
+        formatter.field("load_sample_data", &self.load_sample_data);
+        formatter.field("manage_master_password", &self.manage_master_password);
+        formatter.field("master_password_secret_kms_key_id", &self.master_password_secret_kms_key_id);
+        formatter.finish()
     }
 }

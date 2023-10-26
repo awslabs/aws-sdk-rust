@@ -15,10 +15,10 @@ pub fn ser_aws_ecs_task_definition_container_definitions_linux_parameters_tmpfs_
         }
         array_3.finish();
     }
-    if input.size != 0 {
+    if let Some(var_5) = &input.size {
         object.key("Size").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.size).into()),
+            ::aws_smithy_types::Number::NegInt((*var_5).into()),
         );
     }
     Ok(())

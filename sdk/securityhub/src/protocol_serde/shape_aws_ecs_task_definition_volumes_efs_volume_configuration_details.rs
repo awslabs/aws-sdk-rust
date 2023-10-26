@@ -18,10 +18,10 @@ pub fn ser_aws_ecs_task_definition_volumes_efs_volume_configuration_details(
     if let Some(var_5) = &input.transit_encryption {
         object.key("TransitEncryption").string(var_5.as_str());
     }
-    if input.transit_encryption_port != 0 {
+    if let Some(var_6) = &input.transit_encryption_port {
         object.key("TransitEncryptionPort").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.transit_encryption_port).into()),
+            ::aws_smithy_types::Number::NegInt((*var_6).into()),
         );
     }
     Ok(())

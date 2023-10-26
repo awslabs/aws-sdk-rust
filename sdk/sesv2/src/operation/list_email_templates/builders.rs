@@ -132,19 +132,19 @@ impl ListEmailTemplatesFluentBuilder {
         self.inner.get_next_token()
     }
     /// <p>The number of results to show in a single call to <code>ListEmailTemplates</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
-    /// <p>The value you specify has to be at least 1, and can be no more than 10.</p>
+    /// <p>The value you specify has to be at least 1, and can be no more than 100.</p>
     pub fn page_size(mut self, input: i32) -> Self {
         self.inner = self.inner.page_size(input);
         self
     }
     /// <p>The number of results to show in a single call to <code>ListEmailTemplates</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
-    /// <p>The value you specify has to be at least 1, and can be no more than 10.</p>
+    /// <p>The value you specify has to be at least 1, and can be no more than 100.</p>
     pub fn set_page_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_page_size(input);
         self
     }
     /// <p>The number of results to show in a single call to <code>ListEmailTemplates</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
-    /// <p>The value you specify has to be at least 1, and can be no more than 10.</p>
+    /// <p>The value you specify has to be at least 1, and can be no more than 100.</p>
     pub fn get_page_size(&self) -> &::std::option::Option<i32> {
         self.inner.get_page_size()
     }

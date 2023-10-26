@@ -7,10 +7,10 @@ pub struct ClusterSnapshotCopyStatus {
     /// <p>The destination region that snapshots are automatically copied to when cross-region snapshot copy is enabled.</p>
     pub destination_region: ::std::option::Option<::std::string::String>,
     /// <p>The number of days that automated snapshots are retained in the destination region after they are copied from a source region.</p>
-    pub retention_period: i64,
+    pub retention_period: ::std::option::Option<i64>,
     /// <p>The number of days that automated snapshots are retained in the destination region after they are copied from a source region. If the value is -1, the manual snapshot is retained indefinitely. </p>
     /// <p>The value must be either -1 or an integer between 1 and 3,653.</p>
-    pub manual_snapshot_retention_period: i32,
+    pub manual_snapshot_retention_period: ::std::option::Option<i32>,
     /// <p>The name of the snapshot copy grant.</p>
     pub snapshot_copy_grant_name: ::std::option::Option<::std::string::String>,
 }
@@ -20,12 +20,12 @@ impl ClusterSnapshotCopyStatus {
         self.destination_region.as_deref()
     }
     /// <p>The number of days that automated snapshots are retained in the destination region after they are copied from a source region.</p>
-    pub fn retention_period(&self) -> i64 {
+    pub fn retention_period(&self) -> ::std::option::Option<i64> {
         self.retention_period
     }
     /// <p>The number of days that automated snapshots are retained in the destination region after they are copied from a source region. If the value is -1, the manual snapshot is retained indefinitely. </p>
     /// <p>The value must be either -1 or an integer between 1 and 3,653.</p>
-    pub fn manual_snapshot_retention_period(&self) -> i32 {
+    pub fn manual_snapshot_retention_period(&self) -> ::std::option::Option<i32> {
         self.manual_snapshot_retention_period
     }
     /// <p>The name of the snapshot copy grant.</p>
@@ -113,8 +113,8 @@ impl ClusterSnapshotCopyStatusBuilder {
     pub fn build(self) -> crate::types::ClusterSnapshotCopyStatus {
         crate::types::ClusterSnapshotCopyStatus {
             destination_region: self.destination_region,
-            retention_period: self.retention_period.unwrap_or_default(),
-            manual_snapshot_retention_period: self.manual_snapshot_retention_period.unwrap_or_default(),
+            retention_period: self.retention_period,
+            manual_snapshot_retention_period: self.manual_snapshot_retention_period,
             snapshot_copy_grant_name: self.snapshot_copy_grant_name,
         }
     }

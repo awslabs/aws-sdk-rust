@@ -3,8 +3,8 @@ pub fn ser_kubernetes_audit_logs_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::KubernetesAuditLogsConfiguration,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    {
-        object.key("enable").boolean(input.enable);
+    if let Some(var_1) = &input.enable {
+        object.key("enable").boolean(*var_1);
     }
     Ok(())
 }

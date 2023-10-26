@@ -3,11 +3,11 @@ pub fn ser_model_deploy_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ModelDeployConfig,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if input.auto_generate_endpoint_name {
-        object.key("AutoGenerateEndpointName").boolean(input.auto_generate_endpoint_name);
+    if let Some(var_1) = &input.auto_generate_endpoint_name {
+        object.key("AutoGenerateEndpointName").boolean(*var_1);
     }
-    if let Some(var_1) = &input.endpoint_name {
-        object.key("EndpointName").string(var_1.as_str());
+    if let Some(var_2) = &input.endpoint_name {
+        object.key("EndpointName").string(var_2.as_str());
     }
     Ok(())
 }

@@ -10,7 +10,7 @@ pub struct RetryStageExecutionInput {
     pub stage_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the pipeline execution in the failed stage to be retried. Use the <code>GetPipelineState</code> action to retrieve the current pipelineExecutionId of the failed stage</p>
     pub pipeline_execution_id: ::std::option::Option<::std::string::String>,
-    /// <p>The scope of the retry attempt. Currently, the only supported value is FAILED_ACTIONS.</p>
+    /// <p>The scope of the retry attempt.</p>
     pub retry_mode: ::std::option::Option<crate::types::StageRetryMode>,
 }
 impl RetryStageExecutionInput {
@@ -26,7 +26,7 @@ impl RetryStageExecutionInput {
     pub fn pipeline_execution_id(&self) -> ::std::option::Option<&str> {
         self.pipeline_execution_id.as_deref()
     }
-    /// <p>The scope of the retry attempt. Currently, the only supported value is FAILED_ACTIONS.</p>
+    /// <p>The scope of the retry attempt.</p>
     pub fn retry_mode(&self) -> ::std::option::Option<&crate::types::StageRetryMode> {
         self.retry_mode.as_ref()
     }
@@ -90,17 +90,17 @@ impl RetryStageExecutionInputBuilder {
     pub fn get_pipeline_execution_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.pipeline_execution_id
     }
-    /// <p>The scope of the retry attempt. Currently, the only supported value is FAILED_ACTIONS.</p>
+    /// <p>The scope of the retry attempt.</p>
     pub fn retry_mode(mut self, input: crate::types::StageRetryMode) -> Self {
         self.retry_mode = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The scope of the retry attempt. Currently, the only supported value is FAILED_ACTIONS.</p>
+    /// <p>The scope of the retry attempt.</p>
     pub fn set_retry_mode(mut self, input: ::std::option::Option<crate::types::StageRetryMode>) -> Self {
         self.retry_mode = input;
         self
     }
-    /// <p>The scope of the retry attempt. Currently, the only supported value is FAILED_ACTIONS.</p>
+    /// <p>The scope of the retry attempt.</p>
     pub fn get_retry_mode(&self) -> &::std::option::Option<crate::types::StageRetryMode> {
         &self.retry_mode
     }

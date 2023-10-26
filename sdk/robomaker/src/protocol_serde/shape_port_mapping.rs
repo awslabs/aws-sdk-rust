@@ -3,16 +3,16 @@ pub fn ser_port_mapping(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PortMapping,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    {
+    if let Some(var_1) = &input.job_port {
         object.key("jobPort").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.job_port).into()),
+            ::aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    {
+    if let Some(var_2) = &input.application_port {
         object.key("applicationPort").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.application_port).into()),
+            ::aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
     if input.enable_on_public_ip {

@@ -264,6 +264,8 @@ pub enum UpdateOpsItemError {
     OpsItemAccessDeniedException(crate::types::error::OpsItemAccessDeniedException),
     /// <p>The OpsItem already exists.</p>
     OpsItemAlreadyExistsException(crate::types::error::OpsItemAlreadyExistsException),
+    /// <p>The specified OpsItem is in the process of being deleted.</p>
+    OpsItemConflictException(crate::types::error::OpsItemConflictException),
     /// <p>A specified parameter argument isn't valid. Verify the available arguments and try again.</p>
     OpsItemInvalidParameterException(crate::types::error::OpsItemInvalidParameterException),
     /// <p>The request caused OpsItems to exceed one or more quotas.</p>
@@ -291,6 +293,7 @@ impl ::std::fmt::Display for UpdateOpsItemError {
             Self::InternalServerError(_inner) => _inner.fmt(f),
             Self::OpsItemAccessDeniedException(_inner) => _inner.fmt(f),
             Self::OpsItemAlreadyExistsException(_inner) => _inner.fmt(f),
+            Self::OpsItemConflictException(_inner) => _inner.fmt(f),
             Self::OpsItemInvalidParameterException(_inner) => _inner.fmt(f),
             Self::OpsItemLimitExceededException(_inner) => _inner.fmt(f),
             Self::OpsItemNotFoundException(_inner) => _inner.fmt(f),
@@ -304,6 +307,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for UpdateOpsItem
             Self::InternalServerError(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::OpsItemAccessDeniedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::OpsItemAlreadyExistsException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::OpsItemConflictException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::OpsItemInvalidParameterException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::OpsItemLimitExceededException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::OpsItemNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
@@ -346,6 +350,7 @@ impl UpdateOpsItemError {
             Self::InternalServerError(e) => e.meta(),
             Self::OpsItemAccessDeniedException(e) => e.meta(),
             Self::OpsItemAlreadyExistsException(e) => e.meta(),
+            Self::OpsItemConflictException(e) => e.meta(),
             Self::OpsItemInvalidParameterException(e) => e.meta(),
             Self::OpsItemLimitExceededException(e) => e.meta(),
             Self::OpsItemNotFoundException(e) => e.meta(),
@@ -363,6 +368,10 @@ impl UpdateOpsItemError {
     /// Returns `true` if the error kind is `UpdateOpsItemError::OpsItemAlreadyExistsException`.
     pub fn is_ops_item_already_exists_exception(&self) -> bool {
         matches!(self, Self::OpsItemAlreadyExistsException(_))
+    }
+    /// Returns `true` if the error kind is `UpdateOpsItemError::OpsItemConflictException`.
+    pub fn is_ops_item_conflict_exception(&self) -> bool {
+        matches!(self, Self::OpsItemConflictException(_))
     }
     /// Returns `true` if the error kind is `UpdateOpsItemError::OpsItemInvalidParameterException`.
     pub fn is_ops_item_invalid_parameter_exception(&self) -> bool {
@@ -383,6 +392,7 @@ impl ::std::error::Error for UpdateOpsItemError {
             Self::InternalServerError(_inner) => ::std::option::Option::Some(_inner),
             Self::OpsItemAccessDeniedException(_inner) => ::std::option::Option::Some(_inner),
             Self::OpsItemAlreadyExistsException(_inner) => ::std::option::Option::Some(_inner),
+            Self::OpsItemConflictException(_inner) => ::std::option::Option::Some(_inner),
             Self::OpsItemInvalidParameterException(_inner) => ::std::option::Option::Some(_inner),
             Self::OpsItemLimitExceededException(_inner) => ::std::option::Option::Some(_inner),
             Self::OpsItemNotFoundException(_inner) => ::std::option::Option::Some(_inner),

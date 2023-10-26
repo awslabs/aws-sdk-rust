@@ -246,7 +246,8 @@ impl ModifyClusterFluentBuilder {
     pub fn get_vpc_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_vpc_security_group_ids()
     }
-    /// <p>The new password for the cluster admin user. This change is asynchronously applied as soon as possible. Between the time of the request and the completion of the request, the <code>MasterUserPassword</code> element exists in the <code>PendingModifiedValues</code> element of the operation response. </p> <note>
+    /// <p>The new password for the cluster admin user. This change is asynchronously applied as soon as possible. Between the time of the request and the completion of the request, the <code>MasterUserPassword</code> element exists in the <code>PendingModifiedValues</code> element of the operation response. </p>
+    /// <p>You can't use <code>MasterUserPassword</code> if <code>ManageMasterPassword</code> is <code>true</code>.</p> <note>
     /// <p>Operations never return the password, so this operation provides a way to regain access to the admin user account for a cluster if the password is lost.</p>
     /// </note>
     /// <p>Default: Uses existing setting.</p>
@@ -262,7 +263,8 @@ impl ModifyClusterFluentBuilder {
         self.inner = self.inner.master_user_password(input.into());
         self
     }
-    /// <p>The new password for the cluster admin user. This change is asynchronously applied as soon as possible. Between the time of the request and the completion of the request, the <code>MasterUserPassword</code> element exists in the <code>PendingModifiedValues</code> element of the operation response. </p> <note>
+    /// <p>The new password for the cluster admin user. This change is asynchronously applied as soon as possible. Between the time of the request and the completion of the request, the <code>MasterUserPassword</code> element exists in the <code>PendingModifiedValues</code> element of the operation response. </p>
+    /// <p>You can't use <code>MasterUserPassword</code> if <code>ManageMasterPassword</code> is <code>true</code>.</p> <note>
     /// <p>Operations never return the password, so this operation provides a way to regain access to the admin user account for a cluster if the password is lost.</p>
     /// </note>
     /// <p>Default: Uses existing setting.</p>
@@ -278,7 +280,8 @@ impl ModifyClusterFluentBuilder {
         self.inner = self.inner.set_master_user_password(input);
         self
     }
-    /// <p>The new password for the cluster admin user. This change is asynchronously applied as soon as possible. Between the time of the request and the completion of the request, the <code>MasterUserPassword</code> element exists in the <code>PendingModifiedValues</code> element of the operation response. </p> <note>
+    /// <p>The new password for the cluster admin user. This change is asynchronously applied as soon as possible. Between the time of the request and the completion of the request, the <code>MasterUserPassword</code> element exists in the <code>PendingModifiedValues</code> element of the operation response. </p>
+    /// <p>You can't use <code>MasterUserPassword</code> if <code>ManageMasterPassword</code> is <code>true</code>.</p> <note>
     /// <p>Operations never return the password, so this operation provides a way to regain access to the admin user account for a cluster if the password is lost.</p>
     /// </note>
     /// <p>Default: Uses existing setting.</p>
@@ -631,5 +634,33 @@ impl ModifyClusterFluentBuilder {
     /// <p>The option to change the port of an Amazon Redshift cluster.</p>
     pub fn get_port(&self) -> &::std::option::Option<i32> {
         self.inner.get_port()
+    }
+    /// <p>If <code>true</code>, Amazon Redshift uses Secrets Manager to manage this cluster's admin credentials. You can't use <code>MasterUserPassword</code> if <code>ManageMasterPassword</code> is true. If <code>ManageMasterPassword</code> is false or not set, Amazon Redshift uses <code>MasterUserPassword</code> for the admin user account's password. </p>
+    pub fn manage_master_password(mut self, input: bool) -> Self {
+        self.inner = self.inner.manage_master_password(input);
+        self
+    }
+    /// <p>If <code>true</code>, Amazon Redshift uses Secrets Manager to manage this cluster's admin credentials. You can't use <code>MasterUserPassword</code> if <code>ManageMasterPassword</code> is true. If <code>ManageMasterPassword</code> is false or not set, Amazon Redshift uses <code>MasterUserPassword</code> for the admin user account's password. </p>
+    pub fn set_manage_master_password(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_manage_master_password(input);
+        self
+    }
+    /// <p>If <code>true</code>, Amazon Redshift uses Secrets Manager to manage this cluster's admin credentials. You can't use <code>MasterUserPassword</code> if <code>ManageMasterPassword</code> is true. If <code>ManageMasterPassword</code> is false or not set, Amazon Redshift uses <code>MasterUserPassword</code> for the admin user account's password. </p>
+    pub fn get_manage_master_password(&self) -> &::std::option::Option<bool> {
+        self.inner.get_manage_master_password()
+    }
+    /// <p>The ID of the Key Management Service (KMS) key used to encrypt and store the cluster's admin credentials secret. You can only use this parameter if <code>ManageMasterPassword</code> is true.</p>
+    pub fn master_password_secret_kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.master_password_secret_kms_key_id(input.into());
+        self
+    }
+    /// <p>The ID of the Key Management Service (KMS) key used to encrypt and store the cluster's admin credentials secret. You can only use this parameter if <code>ManageMasterPassword</code> is true.</p>
+    pub fn set_master_password_secret_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_master_password_secret_kms_key_id(input);
+        self
+    }
+    /// <p>The ID of the Key Management Service (KMS) key used to encrypt and store the cluster's admin credentials secret. You can only use this parameter if <code>ManageMasterPassword</code> is true.</p>
+    pub fn get_master_password_secret_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_master_password_secret_kms_key_id()
     }
 }

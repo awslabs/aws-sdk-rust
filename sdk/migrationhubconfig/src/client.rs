@@ -178,6 +178,8 @@ mod create_home_region_control;
 /// ```
 pub mod customize;
 
+mod delete_home_region_control;
+
 mod describe_home_region_controls;
 
 mod get_home_region;

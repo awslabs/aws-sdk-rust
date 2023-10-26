@@ -6,7 +6,7 @@ pub struct PutConformancePackInput {
     /// <p>The unique name of the conformance pack you want to deploy.</p>
     pub conformance_pack_name: ::std::option::Option<::std::string::String>,
     /// <p>The location of the file containing the template body (<code>s3://bucketname/prefix</code>). The uri must point to a conformance pack template (max size: 300 KB) that is located in an Amazon S3 bucket in the same Region as the conformance pack. </p> <note>
-    /// <p>You must have access to read Amazon S3 bucket.</p>
+    /// <p>You must have access to read Amazon S3 bucket. In addition, in order to ensure a successful deployment, the template object must not be in an <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-class-intro.html">archived storage class</a> if this parameter is passed.</p>
     /// </note>
     pub template_s3_uri: ::std::option::Option<::std::string::String>,
     /// <p>A string containing the full conformance pack template body. The structure containing the template body has a minimum length of 1 byte and a maximum length of 51,200 bytes.</p> <note>
@@ -32,7 +32,7 @@ impl PutConformancePackInput {
         self.conformance_pack_name.as_deref()
     }
     /// <p>The location of the file containing the template body (<code>s3://bucketname/prefix</code>). The uri must point to a conformance pack template (max size: 300 KB) that is located in an Amazon S3 bucket in the same Region as the conformance pack. </p> <note>
-    /// <p>You must have access to read Amazon S3 bucket.</p>
+    /// <p>You must have access to read Amazon S3 bucket. In addition, in order to ensure a successful deployment, the template object must not be in an <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-class-intro.html">archived storage class</a> if this parameter is passed.</p>
     /// </note>
     pub fn template_s3_uri(&self) -> ::std::option::Option<&str> {
         self.template_s3_uri.as_deref()
@@ -99,21 +99,21 @@ impl PutConformancePackInputBuilder {
         &self.conformance_pack_name
     }
     /// <p>The location of the file containing the template body (<code>s3://bucketname/prefix</code>). The uri must point to a conformance pack template (max size: 300 KB) that is located in an Amazon S3 bucket in the same Region as the conformance pack. </p> <note>
-    /// <p>You must have access to read Amazon S3 bucket.</p>
+    /// <p>You must have access to read Amazon S3 bucket. In addition, in order to ensure a successful deployment, the template object must not be in an <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-class-intro.html">archived storage class</a> if this parameter is passed.</p>
     /// </note>
     pub fn template_s3_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_s3_uri = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The location of the file containing the template body (<code>s3://bucketname/prefix</code>). The uri must point to a conformance pack template (max size: 300 KB) that is located in an Amazon S3 bucket in the same Region as the conformance pack. </p> <note>
-    /// <p>You must have access to read Amazon S3 bucket.</p>
+    /// <p>You must have access to read Amazon S3 bucket. In addition, in order to ensure a successful deployment, the template object must not be in an <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-class-intro.html">archived storage class</a> if this parameter is passed.</p>
     /// </note>
     pub fn set_template_s3_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.template_s3_uri = input;
         self
     }
     /// <p>The location of the file containing the template body (<code>s3://bucketname/prefix</code>). The uri must point to a conformance pack template (max size: 300 KB) that is located in an Amazon S3 bucket in the same Region as the conformance pack. </p> <note>
-    /// <p>You must have access to read Amazon S3 bucket.</p>
+    /// <p>You must have access to read Amazon S3 bucket. In addition, in order to ensure a successful deployment, the template object must not be in an <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-class-intro.html">archived storage class</a> if this parameter is passed.</p>
     /// </note>
     pub fn get_template_s3_uri(&self) -> &::std::option::Option<::std::string::String> {
         &self.template_s3_uri

@@ -7,7 +7,7 @@ pub struct AwsEc2NetworkAclEntry {
     /// <p>The IPV4 network range for which to deny or allow access.</p>
     pub cidr_block: ::std::option::Option<::std::string::String>,
     /// <p>Whether the rule is an egress rule. An egress rule is a rule that applies to traffic that leaves the subnet.</p>
-    pub egress: bool,
+    pub egress: ::std::option::Option<bool>,
     /// <p>The Internet Control Message Protocol (ICMP) type and code for which to deny or allow access.</p>
     pub icmp_type_code: ::std::option::Option<crate::types::IcmpTypeCode>,
     /// <p>The IPV6 network range for which to deny or allow access.</p>
@@ -19,7 +19,7 @@ pub struct AwsEc2NetworkAclEntry {
     /// <p>Whether the rule is used to allow access or deny access.</p>
     pub rule_action: ::std::option::Option<::std::string::String>,
     /// <p>The rule number. The rules are processed in order by their number.</p>
-    pub rule_number: i32,
+    pub rule_number: ::std::option::Option<i32>,
 }
 impl AwsEc2NetworkAclEntry {
     /// <p>The IPV4 network range for which to deny or allow access.</p>
@@ -27,7 +27,7 @@ impl AwsEc2NetworkAclEntry {
         self.cidr_block.as_deref()
     }
     /// <p>Whether the rule is an egress rule. An egress rule is a rule that applies to traffic that leaves the subnet.</p>
-    pub fn egress(&self) -> bool {
+    pub fn egress(&self) -> ::std::option::Option<bool> {
         self.egress
     }
     /// <p>The Internet Control Message Protocol (ICMP) type and code for which to deny or allow access.</p>
@@ -51,7 +51,7 @@ impl AwsEc2NetworkAclEntry {
         self.rule_action.as_deref()
     }
     /// <p>The rule number. The rules are processed in order by their number.</p>
-    pub fn rule_number(&self) -> i32 {
+    pub fn rule_number(&self) -> ::std::option::Option<i32> {
         self.rule_number
     }
 }
@@ -192,13 +192,13 @@ impl AwsEc2NetworkAclEntryBuilder {
     pub fn build(self) -> crate::types::AwsEc2NetworkAclEntry {
         crate::types::AwsEc2NetworkAclEntry {
             cidr_block: self.cidr_block,
-            egress: self.egress.unwrap_or_default(),
+            egress: self.egress,
             icmp_type_code: self.icmp_type_code,
             ipv6_cidr_block: self.ipv6_cidr_block,
             port_range: self.port_range,
             protocol: self.protocol,
             rule_action: self.rule_action,
-            rule_number: self.rule_number.unwrap_or_default(),
+            rule_number: self.rule_number,
         }
     }
 }

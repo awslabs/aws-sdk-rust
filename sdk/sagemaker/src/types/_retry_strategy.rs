@@ -5,11 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RetryStrategy {
     /// <p>The number of times to retry the job. When the job is retried, it's <code>SecondaryStatus</code> is changed to <code>STARTING</code>.</p>
-    pub maximum_retry_attempts: i32,
+    pub maximum_retry_attempts: ::std::option::Option<i32>,
 }
 impl RetryStrategy {
     /// <p>The number of times to retry the job. When the job is retried, it's <code>SecondaryStatus</code> is changed to <code>STARTING</code>.</p>
-    pub fn maximum_retry_attempts(&self) -> i32 {
+    pub fn maximum_retry_attempts(&self) -> ::std::option::Option<i32> {
         self.maximum_retry_attempts
     }
 }
@@ -44,7 +44,7 @@ impl RetryStrategyBuilder {
     /// Consumes the builder and constructs a [`RetryStrategy`](crate::types::RetryStrategy).
     pub fn build(self) -> crate::types::RetryStrategy {
         crate::types::RetryStrategy {
-            maximum_retry_attempts: self.maximum_retry_attempts.unwrap_or_default(),
+            maximum_retry_attempts: self.maximum_retry_attempts,
         }
     }
 }

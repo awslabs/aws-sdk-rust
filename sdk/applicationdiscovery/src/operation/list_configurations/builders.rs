@@ -110,6 +110,12 @@ impl ListConfigurationsFluentBuilder {
         self.config_override = config_override;
         self
     }
+    /// Create a paginator for this request
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::list_configurations::paginator::ListConfigurationsPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(self) -> crate::operation::list_configurations::paginator::ListConfigurationsPaginator {
+        crate::operation::list_configurations::paginator::ListConfigurationsPaginator::new(self.handle, self.inner)
+    }
     /// <p>A valid configuration identified by Application Discovery Service. </p>
     pub fn configuration_type(mut self, input: crate::types::ConfigurationItemType) -> Self {
         self.inner = self.inner.configuration_type(input);

@@ -6,6 +6,7 @@ pub struct SetSubnetsOutput {
     /// <p>Information about the subnets.</p>
     pub availability_zones: ::std::option::Option<::std::vec::Vec<crate::types::AvailabilityZone>>,
     /// <p>[Network Load Balancers] The IP address type.</p>
+    /// <p>[Gateway Load Balancers] The IP address type.</p>
     pub ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
     _request_id: Option<String>,
 }
@@ -15,6 +16,7 @@ impl SetSubnetsOutput {
         self.availability_zones.as_deref()
     }
     /// <p>[Network Load Balancers] The IP address type.</p>
+    /// <p>[Gateway Load Balancers] The IP address type.</p>
     pub fn ip_address_type(&self) -> ::std::option::Option<&crate::types::IpAddressType> {
         self.ip_address_type.as_ref()
     }
@@ -61,16 +63,19 @@ impl SetSubnetsOutputBuilder {
         &self.availability_zones
     }
     /// <p>[Network Load Balancers] The IP address type.</p>
+    /// <p>[Gateway Load Balancers] The IP address type.</p>
     pub fn ip_address_type(mut self, input: crate::types::IpAddressType) -> Self {
         self.ip_address_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>[Network Load Balancers] The IP address type.</p>
+    /// <p>[Gateway Load Balancers] The IP address type.</p>
     pub fn set_ip_address_type(mut self, input: ::std::option::Option<crate::types::IpAddressType>) -> Self {
         self.ip_address_type = input;
         self
     }
     /// <p>[Network Load Balancers] The IP address type.</p>
+    /// <p>[Gateway Load Balancers] The IP address type.</p>
     pub fn get_ip_address_type(&self) -> &::std::option::Option<crate::types::IpAddressType> {
         &self.ip_address_type
     }

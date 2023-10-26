@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsRedshiftClusterPendingModifiedValues {
     /// <p>The pending or in-progress change to the automated snapshot retention period.</p>
-    pub automated_snapshot_retention_period: i32,
+    pub automated_snapshot_retention_period: ::std::option::Option<i32>,
     /// <p>The pending or in-progress change to the identifier for the cluster.</p>
     pub cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The pending or in-progress change to the cluster type.</p>
@@ -15,7 +15,7 @@ pub struct AwsRedshiftClusterPendingModifiedValues {
     /// <p>The encryption type for a cluster.</p>
     pub encryption_type: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether to create the cluster with enhanced VPC routing enabled.</p>
-    pub enhanced_vpc_routing: bool,
+    pub enhanced_vpc_routing: ::std::option::Option<bool>,
     /// <p>The name of the maintenance track that the cluster changes to during the next maintenance window.</p>
     pub maintenance_track_name: ::std::option::Option<::std::string::String>,
     /// <p>The pending or in-progress change to the master user password for the cluster.</p>
@@ -23,13 +23,13 @@ pub struct AwsRedshiftClusterPendingModifiedValues {
     /// <p>The pending or in-progress change to the cluster's node type.</p>
     pub node_type: ::std::option::Option<::std::string::String>,
     /// <p>The pending or in-progress change to the number of nodes in the cluster.</p>
-    pub number_of_nodes: i32,
+    pub number_of_nodes: ::std::option::Option<i32>,
     /// <p>The pending or in-progress change to whether the cluster can be connected to from the public network.</p>
-    pub publicly_accessible: bool,
+    pub publicly_accessible: ::std::option::Option<bool>,
 }
 impl AwsRedshiftClusterPendingModifiedValues {
     /// <p>The pending or in-progress change to the automated snapshot retention period.</p>
-    pub fn automated_snapshot_retention_period(&self) -> i32 {
+    pub fn automated_snapshot_retention_period(&self) -> ::std::option::Option<i32> {
         self.automated_snapshot_retention_period
     }
     /// <p>The pending or in-progress change to the identifier for the cluster.</p>
@@ -49,7 +49,7 @@ impl AwsRedshiftClusterPendingModifiedValues {
         self.encryption_type.as_deref()
     }
     /// <p>Indicates whether to create the cluster with enhanced VPC routing enabled.</p>
-    pub fn enhanced_vpc_routing(&self) -> bool {
+    pub fn enhanced_vpc_routing(&self) -> ::std::option::Option<bool> {
         self.enhanced_vpc_routing
     }
     /// <p>The name of the maintenance track that the cluster changes to during the next maintenance window.</p>
@@ -65,11 +65,11 @@ impl AwsRedshiftClusterPendingModifiedValues {
         self.node_type.as_deref()
     }
     /// <p>The pending or in-progress change to the number of nodes in the cluster.</p>
-    pub fn number_of_nodes(&self) -> i32 {
+    pub fn number_of_nodes(&self) -> ::std::option::Option<i32> {
         self.number_of_nodes
     }
     /// <p>The pending or in-progress change to whether the cluster can be connected to from the public network.</p>
-    pub fn publicly_accessible(&self) -> bool {
+    pub fn publicly_accessible(&self) -> ::std::option::Option<bool> {
         self.publicly_accessible
     }
 }
@@ -254,17 +254,17 @@ impl AwsRedshiftClusterPendingModifiedValuesBuilder {
     /// Consumes the builder and constructs a [`AwsRedshiftClusterPendingModifiedValues`](crate::types::AwsRedshiftClusterPendingModifiedValues).
     pub fn build(self) -> crate::types::AwsRedshiftClusterPendingModifiedValues {
         crate::types::AwsRedshiftClusterPendingModifiedValues {
-            automated_snapshot_retention_period: self.automated_snapshot_retention_period.unwrap_or_default(),
+            automated_snapshot_retention_period: self.automated_snapshot_retention_period,
             cluster_identifier: self.cluster_identifier,
             cluster_type: self.cluster_type,
             cluster_version: self.cluster_version,
             encryption_type: self.encryption_type,
-            enhanced_vpc_routing: self.enhanced_vpc_routing.unwrap_or_default(),
+            enhanced_vpc_routing: self.enhanced_vpc_routing,
             maintenance_track_name: self.maintenance_track_name,
             master_user_password: self.master_user_password,
             node_type: self.node_type,
-            number_of_nodes: self.number_of_nodes.unwrap_or_default(),
-            publicly_accessible: self.publicly_accessible.unwrap_or_default(),
+            number_of_nodes: self.number_of_nodes,
+            publicly_accessible: self.publicly_accessible,
         }
     }
 }

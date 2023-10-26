@@ -10,6 +10,9 @@ pub fn ser_kms_key(
         crate::types::KmsKey::KmsAliasArn(inner) => {
             object_11.key("kmsAliasArn").string(inner.as_str());
         }
+        crate::types::KmsKey::KmsAliasName(inner) => {
+            object_11.key("kmsAliasName").string(inner.as_str());
+        }
         crate::types::KmsKey::Unknown => return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant("KmsKey")),
     }
     Ok(())
@@ -41,6 +44,12 @@ where
                                 .unwrap_or_default(),
                         )),
                         "kmsAliasArn" => Some(crate::types::KmsKey::KmsAliasArn(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?
+                                .unwrap_or_default(),
+                        )),
+                        "kmsAliasName" => Some(crate::types::KmsKey::KmsAliasName(
                             ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                 .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                 .transpose()?

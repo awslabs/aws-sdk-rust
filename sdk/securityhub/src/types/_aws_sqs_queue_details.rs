@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsSqsQueueDetails {
     /// <p>The length of time, in seconds, for which Amazon SQS can reuse a data key to encrypt or decrypt messages before calling KMS again.</p>
-    pub kms_data_key_reuse_period_seconds: i32,
+    pub kms_data_key_reuse_period_seconds: ::std::option::Option<i32>,
     /// <p>The ID of an Amazon Web Services managed key for Amazon SQS or a custom KMS key.</p>
     pub kms_master_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the new queue.</p>
@@ -15,7 +15,7 @@ pub struct AwsSqsQueueDetails {
 }
 impl AwsSqsQueueDetails {
     /// <p>The length of time, in seconds, for which Amazon SQS can reuse a data key to encrypt or decrypt messages before calling KMS again.</p>
-    pub fn kms_data_key_reuse_period_seconds(&self) -> i32 {
+    pub fn kms_data_key_reuse_period_seconds(&self) -> ::std::option::Option<i32> {
         self.kms_data_key_reuse_period_seconds
     }
     /// <p>The ID of an Amazon Web Services managed key for Amazon SQS or a custom KMS key.</p>
@@ -107,7 +107,7 @@ impl AwsSqsQueueDetailsBuilder {
     /// Consumes the builder and constructs a [`AwsSqsQueueDetails`](crate::types::AwsSqsQueueDetails).
     pub fn build(self) -> crate::types::AwsSqsQueueDetails {
         crate::types::AwsSqsQueueDetails {
-            kms_data_key_reuse_period_seconds: self.kms_data_key_reuse_period_seconds.unwrap_or_default(),
+            kms_data_key_reuse_period_seconds: self.kms_data_key_reuse_period_seconds,
             kms_master_key_id: self.kms_master_key_id,
             queue_name: self.queue_name,
             dead_letter_target_arn: self.dead_letter_target_arn,

@@ -20,13 +20,13 @@ pub struct DbInstance {
     /// <p>Specifies the connection endpoint.</p>
     pub endpoint: ::std::option::Option<crate::types::Endpoint>,
     /// <p>Not supported by Neptune.</p>
-    pub allocated_storage: i32,
+    pub allocated_storage: ::std::option::Option<i32>,
     /// <p>Provides the date and time the DB instance was created.</p>
     pub instance_create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> Specifies the daily time range during which automated backups are created if automated backups are enabled, as determined by the <code>BackupRetentionPeriod</code>.</p>
     pub preferred_backup_window: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the number of days for which automatic DB snapshots are retained.</p>
-    pub backup_retention_period: i32,
+    pub backup_retention_period: ::std::option::Option<i32>,
     /// <p> Provides List of DB security group elements containing only <code>DBSecurityGroup.Name</code> and <code>DBSecurityGroup.Status</code> subelements.</p>
     pub db_security_groups: ::std::option::Option<::std::vec::Vec<crate::types::DbSecurityGroupMembership>>,
     /// <p>Provides a list of VPC security group elements that the DB instance belongs to.</p>
@@ -44,11 +44,11 @@ pub struct DbInstance {
     /// <p>Specifies the latest time to which a database can be restored with point-in-time restore.</p>
     pub latest_restorable_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Specifies if the DB instance is a Multi-AZ deployment.</p>
-    pub multi_az: bool,
+    pub multi_az: ::std::option::Option<bool>,
     /// <p>Indicates the database engine version.</p>
     pub engine_version: ::std::option::Option<::std::string::String>,
     /// <p>Indicates that minor version patches are applied automatically.</p>
-    pub auto_minor_version_upgrade: bool,
+    pub auto_minor_version_upgrade: ::std::option::Option<bool>,
     /// <p>Contains the identifier of the source DB instance if this DB instance is a Read Replica.</p>
     pub read_replica_source_db_instance_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Contains one or more identifiers of the Read Replicas associated with this DB instance.</p>
@@ -67,7 +67,7 @@ pub struct DbInstance {
     pub secondary_availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>This flag should no longer be used.</p>
     #[deprecated]
-    pub publicly_accessible: bool,
+    pub publicly_accessible: ::std::option::Option<bool>,
     /// <p>The status of a Read Replica. If the instance is not a Read Replica, this is blank.</p>
     pub status_infos: ::std::option::Option<::std::vec::Vec<crate::types::DbInstanceStatusInfo>>,
     /// <p>Specifies the storage type associated with DB instance.</p>
@@ -75,11 +75,11 @@ pub struct DbInstance {
     /// <p>The ARN from the key store with which the instance is associated for TDE encryption.</p>
     pub tde_credential_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the port that the DB instance listens on. If the DB instance is part of a DB cluster, this can be a different port than the DB cluster port.</p>
-    pub db_instance_port: i32,
+    pub db_instance_port: ::std::option::Option<i32>,
     /// <p>If the DB instance is a member of a DB cluster, contains the name of the DB cluster that the DB instance is a member of.</p>
     pub db_cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Not supported: The encryption for DB instances is managed by the DB cluster.</p>
-    pub storage_encrypted: bool,
+    pub storage_encrypted: ::std::option::Option<bool>,
     /// <p> Not supported: The encryption for DB instances is managed by the DB cluster.</p>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Region-unique, immutable identifier for the DB instance. This identifier is found in Amazon CloudTrail log entries whenever the Amazon KMS key for the DB instance is accessed.</p>
@@ -89,7 +89,7 @@ pub struct DbInstance {
     /// <p>Not supported</p>
     pub domain_memberships: ::std::option::Option<::std::vec::Vec<crate::types::DomainMembership>>,
     /// <p>Specifies whether tags are copied from the DB instance to snapshots of the DB instance.</p>
-    pub copy_tags_to_snapshot: bool,
+    pub copy_tags_to_snapshot: ::std::option::Option<bool>,
     /// <p>The interval, in seconds, between points when Enhanced Monitoring metrics are collected for the DB instance.</p>
     pub monitoring_interval: ::std::option::Option<i32>,
     /// <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch Logs log stream that receives the Enhanced Monitoring metrics data for the DB instance.</p>
@@ -103,7 +103,7 @@ pub struct DbInstance {
     /// <p>Not supported.</p>
     pub timezone: ::std::option::Option<::std::string::String>,
     /// <p>True if Amazon Identity and Access Management (IAM) authentication is enabled, and otherwise false.</p>
-    pub iam_database_authentication_enabled: bool,
+    pub iam_database_authentication_enabled: ::std::option::Option<bool>,
     /// <p> <i>(Not supported by Neptune)</i> </p>
     pub performance_insights_enabled: ::std::option::Option<bool>,
     /// <p> <i>(Not supported by Neptune)</i> </p>
@@ -143,7 +143,7 @@ impl DbInstance {
         self.endpoint.as_ref()
     }
     /// <p>Not supported by Neptune.</p>
-    pub fn allocated_storage(&self) -> i32 {
+    pub fn allocated_storage(&self) -> ::std::option::Option<i32> {
         self.allocated_storage
     }
     /// <p>Provides the date and time the DB instance was created.</p>
@@ -155,7 +155,7 @@ impl DbInstance {
         self.preferred_backup_window.as_deref()
     }
     /// <p>Specifies the number of days for which automatic DB snapshots are retained.</p>
-    pub fn backup_retention_period(&self) -> i32 {
+    pub fn backup_retention_period(&self) -> ::std::option::Option<i32> {
         self.backup_retention_period
     }
     /// <p> Provides List of DB security group elements containing only <code>DBSecurityGroup.Name</code> and <code>DBSecurityGroup.Status</code> subelements.</p>
@@ -191,7 +191,7 @@ impl DbInstance {
         self.latest_restorable_time.as_ref()
     }
     /// <p>Specifies if the DB instance is a Multi-AZ deployment.</p>
-    pub fn multi_az(&self) -> bool {
+    pub fn multi_az(&self) -> ::std::option::Option<bool> {
         self.multi_az
     }
     /// <p>Indicates the database engine version.</p>
@@ -199,7 +199,7 @@ impl DbInstance {
         self.engine_version.as_deref()
     }
     /// <p>Indicates that minor version patches are applied automatically.</p>
-    pub fn auto_minor_version_upgrade(&self) -> bool {
+    pub fn auto_minor_version_upgrade(&self) -> ::std::option::Option<bool> {
         self.auto_minor_version_upgrade
     }
     /// <p>Contains the identifier of the source DB instance if this DB instance is a Read Replica.</p>
@@ -236,7 +236,7 @@ impl DbInstance {
     }
     /// <p>This flag should no longer be used.</p>
     #[deprecated]
-    pub fn publicly_accessible(&self) -> bool {
+    pub fn publicly_accessible(&self) -> ::std::option::Option<bool> {
         self.publicly_accessible
     }
     /// <p>The status of a Read Replica. If the instance is not a Read Replica, this is blank.</p>
@@ -252,7 +252,7 @@ impl DbInstance {
         self.tde_credential_arn.as_deref()
     }
     /// <p>Specifies the port that the DB instance listens on. If the DB instance is part of a DB cluster, this can be a different port than the DB cluster port.</p>
-    pub fn db_instance_port(&self) -> i32 {
+    pub fn db_instance_port(&self) -> ::std::option::Option<i32> {
         self.db_instance_port
     }
     /// <p>If the DB instance is a member of a DB cluster, contains the name of the DB cluster that the DB instance is a member of.</p>
@@ -260,7 +260,7 @@ impl DbInstance {
         self.db_cluster_identifier.as_deref()
     }
     /// <p>Not supported: The encryption for DB instances is managed by the DB cluster.</p>
-    pub fn storage_encrypted(&self) -> bool {
+    pub fn storage_encrypted(&self) -> ::std::option::Option<bool> {
         self.storage_encrypted
     }
     /// <p> Not supported: The encryption for DB instances is managed by the DB cluster.</p>
@@ -280,7 +280,7 @@ impl DbInstance {
         self.domain_memberships.as_deref()
     }
     /// <p>Specifies whether tags are copied from the DB instance to snapshots of the DB instance.</p>
-    pub fn copy_tags_to_snapshot(&self) -> bool {
+    pub fn copy_tags_to_snapshot(&self) -> ::std::option::Option<bool> {
         self.copy_tags_to_snapshot
     }
     /// <p>The interval, in seconds, between points when Enhanced Monitoring metrics are collected for the DB instance.</p>
@@ -308,7 +308,7 @@ impl DbInstance {
         self.timezone.as_deref()
     }
     /// <p>True if Amazon Identity and Access Management (IAM) authentication is enabled, and otherwise false.</p>
-    pub fn iam_database_authentication_enabled(&self) -> bool {
+    pub fn iam_database_authentication_enabled(&self) -> ::std::option::Option<bool> {
         self.iam_database_authentication_enabled
     }
     /// <p> <i>(Not supported by Neptune)</i> </p>
@@ -1203,10 +1203,10 @@ impl DbInstanceBuilder {
             master_username: self.master_username,
             db_name: self.db_name,
             endpoint: self.endpoint,
-            allocated_storage: self.allocated_storage.unwrap_or_default(),
+            allocated_storage: self.allocated_storage,
             instance_create_time: self.instance_create_time,
             preferred_backup_window: self.preferred_backup_window,
-            backup_retention_period: self.backup_retention_period.unwrap_or_default(),
+            backup_retention_period: self.backup_retention_period,
             db_security_groups: self.db_security_groups,
             vpc_security_groups: self.vpc_security_groups,
             db_parameter_groups: self.db_parameter_groups,
@@ -1215,9 +1215,9 @@ impl DbInstanceBuilder {
             preferred_maintenance_window: self.preferred_maintenance_window,
             pending_modified_values: self.pending_modified_values,
             latest_restorable_time: self.latest_restorable_time,
-            multi_az: self.multi_az.unwrap_or_default(),
+            multi_az: self.multi_az,
             engine_version: self.engine_version,
-            auto_minor_version_upgrade: self.auto_minor_version_upgrade.unwrap_or_default(),
+            auto_minor_version_upgrade: self.auto_minor_version_upgrade,
             read_replica_source_db_instance_identifier: self.read_replica_source_db_instance_identifier,
             read_replica_db_instance_identifiers: self.read_replica_db_instance_identifiers,
             read_replica_db_cluster_identifiers: self.read_replica_db_cluster_identifiers,
@@ -1226,25 +1226,25 @@ impl DbInstanceBuilder {
             option_group_memberships: self.option_group_memberships,
             character_set_name: self.character_set_name,
             secondary_availability_zone: self.secondary_availability_zone,
-            publicly_accessible: self.publicly_accessible.unwrap_or_default(),
+            publicly_accessible: self.publicly_accessible,
             status_infos: self.status_infos,
             storage_type: self.storage_type,
             tde_credential_arn: self.tde_credential_arn,
-            db_instance_port: self.db_instance_port.unwrap_or_default(),
+            db_instance_port: self.db_instance_port,
             db_cluster_identifier: self.db_cluster_identifier,
-            storage_encrypted: self.storage_encrypted.unwrap_or_default(),
+            storage_encrypted: self.storage_encrypted,
             kms_key_id: self.kms_key_id,
             dbi_resource_id: self.dbi_resource_id,
             ca_certificate_identifier: self.ca_certificate_identifier,
             domain_memberships: self.domain_memberships,
-            copy_tags_to_snapshot: self.copy_tags_to_snapshot.unwrap_or_default(),
+            copy_tags_to_snapshot: self.copy_tags_to_snapshot,
             monitoring_interval: self.monitoring_interval,
             enhanced_monitoring_resource_arn: self.enhanced_monitoring_resource_arn,
             monitoring_role_arn: self.monitoring_role_arn,
             promotion_tier: self.promotion_tier,
             db_instance_arn: self.db_instance_arn,
             timezone: self.timezone,
-            iam_database_authentication_enabled: self.iam_database_authentication_enabled.unwrap_or_default(),
+            iam_database_authentication_enabled: self.iam_database_authentication_enabled,
             performance_insights_enabled: self.performance_insights_enabled,
             performance_insights_kms_key_id: self.performance_insights_kms_key_id,
             enabled_cloudwatch_logs_exports: self.enabled_cloudwatch_logs_exports,

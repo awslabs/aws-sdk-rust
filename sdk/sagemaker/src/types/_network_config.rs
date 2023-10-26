@@ -5,19 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NetworkConfig {
     /// <p>Whether to encrypt all communications between distributed processing jobs. Choose <code>True</code> to encrypt communications. Encryption provides greater security for distributed processing jobs, but the processing might take longer.</p>
-    pub enable_inter_container_traffic_encryption: bool,
+    pub enable_inter_container_traffic_encryption: ::std::option::Option<bool>,
     /// <p>Whether to allow inbound and outbound network calls to and from the containers used for the processing job.</p>
-    pub enable_network_isolation: bool,
+    pub enable_network_isolation: ::std::option::Option<bool>,
     /// <p>Specifies a VPC that your training jobs and hosted models have access to. Control access to and from your training and model containers by configuring the VPC. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/host-vpc.html">Protect Endpoints by Using an Amazon Virtual Private Cloud</a> and <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect Training Jobs by Using an Amazon Virtual Private Cloud</a>. </p>
     pub vpc_config: ::std::option::Option<crate::types::VpcConfig>,
 }
 impl NetworkConfig {
     /// <p>Whether to encrypt all communications between distributed processing jobs. Choose <code>True</code> to encrypt communications. Encryption provides greater security for distributed processing jobs, but the processing might take longer.</p>
-    pub fn enable_inter_container_traffic_encryption(&self) -> bool {
+    pub fn enable_inter_container_traffic_encryption(&self) -> ::std::option::Option<bool> {
         self.enable_inter_container_traffic_encryption
     }
     /// <p>Whether to allow inbound and outbound network calls to and from the containers used for the processing job.</p>
-    pub fn enable_network_isolation(&self) -> bool {
+    pub fn enable_network_isolation(&self) -> ::std::option::Option<bool> {
         self.enable_network_isolation
     }
     /// <p>Specifies a VPC that your training jobs and hosted models have access to. Control access to and from your training and model containers by configuring the VPC. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/host-vpc.html">Protect Endpoints by Using an Amazon Virtual Private Cloud</a> and <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect Training Jobs by Using an Amazon Virtual Private Cloud</a>. </p>
@@ -86,8 +86,8 @@ impl NetworkConfigBuilder {
     /// Consumes the builder and constructs a [`NetworkConfig`](crate::types::NetworkConfig).
     pub fn build(self) -> crate::types::NetworkConfig {
         crate::types::NetworkConfig {
-            enable_inter_container_traffic_encryption: self.enable_inter_container_traffic_encryption.unwrap_or_default(),
-            enable_network_isolation: self.enable_network_isolation.unwrap_or_default(),
+            enable_inter_container_traffic_encryption: self.enable_inter_container_traffic_encryption,
+            enable_network_isolation: self.enable_network_isolation,
             vpc_config: self.vpc_config,
         }
     }

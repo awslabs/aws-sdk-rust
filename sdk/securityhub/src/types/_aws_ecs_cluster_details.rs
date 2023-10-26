@@ -7,7 +7,7 @@ pub struct AwsEcsClusterDetails {
     /// <p>The Amazon Resource Name (ARN) that identifies the cluster. </p>
     pub cluster_arn: ::std::option::Option<::std::string::String>,
     /// <p>The number of services that are running on the cluster in an <code>ACTIVE</code> state. You can view these services with the Amazon ECS <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListServices.html"> <code>ListServices</code> </a> API operation. </p>
-    pub active_services_count: i32,
+    pub active_services_count: ::std::option::Option<i32>,
     /// <p>The short name of one or more capacity providers to associate with the cluster.</p>
     pub capacity_providers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The setting to use to create the cluster. Specifically used to configure whether to enable CloudWatch Container Insights for the cluster.</p>
@@ -19,9 +19,9 @@ pub struct AwsEcsClusterDetails {
     /// <p>A name that you use to identify your cluster. </p>
     pub cluster_name: ::std::option::Option<::std::string::String>,
     /// <p>The number of container instances registered into the cluster. This includes container instances in both <code>ACTIVE</code> and <code>DRAINING</code> status. </p>
-    pub registered_container_instances_count: i32,
+    pub registered_container_instances_count: ::std::option::Option<i32>,
     /// <p>The number of tasks in the cluster that are in the <code>RUNNING</code> state. </p>
-    pub running_tasks_count: i32,
+    pub running_tasks_count: ::std::option::Option<i32>,
     /// <p>The status of the cluster. </p>
     pub status: ::std::option::Option<::std::string::String>,
 }
@@ -31,7 +31,7 @@ impl AwsEcsClusterDetails {
         self.cluster_arn.as_deref()
     }
     /// <p>The number of services that are running on the cluster in an <code>ACTIVE</code> state. You can view these services with the Amazon ECS <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListServices.html"> <code>ListServices</code> </a> API operation. </p>
-    pub fn active_services_count(&self) -> i32 {
+    pub fn active_services_count(&self) -> ::std::option::Option<i32> {
         self.active_services_count
     }
     /// <p>The short name of one or more capacity providers to associate with the cluster.</p>
@@ -55,11 +55,11 @@ impl AwsEcsClusterDetails {
         self.cluster_name.as_deref()
     }
     /// <p>The number of container instances registered into the cluster. This includes container instances in both <code>ACTIVE</code> and <code>DRAINING</code> status. </p>
-    pub fn registered_container_instances_count(&self) -> i32 {
+    pub fn registered_container_instances_count(&self) -> ::std::option::Option<i32> {
         self.registered_container_instances_count
     }
     /// <p>The number of tasks in the cluster that are in the <code>RUNNING</code> state. </p>
-    pub fn running_tasks_count(&self) -> i32 {
+    pub fn running_tasks_count(&self) -> ::std::option::Option<i32> {
         self.running_tasks_count
     }
     /// <p>The status of the cluster. </p>
@@ -258,14 +258,14 @@ impl AwsEcsClusterDetailsBuilder {
     pub fn build(self) -> crate::types::AwsEcsClusterDetails {
         crate::types::AwsEcsClusterDetails {
             cluster_arn: self.cluster_arn,
-            active_services_count: self.active_services_count.unwrap_or_default(),
+            active_services_count: self.active_services_count,
             capacity_providers: self.capacity_providers,
             cluster_settings: self.cluster_settings,
             configuration: self.configuration,
             default_capacity_provider_strategy: self.default_capacity_provider_strategy,
             cluster_name: self.cluster_name,
-            registered_container_instances_count: self.registered_container_instances_count.unwrap_or_default(),
-            running_tasks_count: self.running_tasks_count.unwrap_or_default(),
+            registered_container_instances_count: self.registered_container_instances_count,
+            running_tasks_count: self.running_tasks_count,
             status: self.status,
         }
     }

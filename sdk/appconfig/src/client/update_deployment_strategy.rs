@@ -15,7 +15,7 @@ impl super::Client {
     ///   - [`description(Option<String>)`](crate::operation::update_deployment_strategy::UpdateDeploymentStrategyOutput::description): <p>The description of the deployment strategy.</p>
     ///   - [`deployment_duration_in_minutes(i32)`](crate::operation::update_deployment_strategy::UpdateDeploymentStrategyOutput::deployment_duration_in_minutes): <p>Total amount of time the deployment lasted.</p>
     ///   - [`growth_type(Option<GrowthType>)`](crate::operation::update_deployment_strategy::UpdateDeploymentStrategyOutput::growth_type): <p>The algorithm used to define how percentage grew over time.</p>
-    ///   - [`growth_factor(f32)`](crate::operation::update_deployment_strategy::UpdateDeploymentStrategyOutput::growth_factor): <p>The percentage of targets that received a deployed configuration during each interval.</p>
+    ///   - [`growth_factor(Option<f32>)`](crate::operation::update_deployment_strategy::UpdateDeploymentStrategyOutput::growth_factor): <p>The percentage of targets that received a deployed configuration during each interval.</p>
     ///   - [`final_bake_time_in_minutes(i32)`](crate::operation::update_deployment_strategy::UpdateDeploymentStrategyOutput::final_bake_time_in_minutes): <p>The amount of time that AppConfig monitored for alarms before considering the deployment to be complete and no longer eligible for automatic rollback.</p>
     ///   - [`replicate_to(Option<ReplicateTo>)`](crate::operation::update_deployment_strategy::UpdateDeploymentStrategyOutput::replicate_to): <p>Save the deployment strategy to a Systems Manager (SSM) document.</p>
     /// - On failure, responds with [`SdkError<UpdateDeploymentStrategyError>`](crate::operation::update_deployment_strategy::UpdateDeploymentStrategyError)

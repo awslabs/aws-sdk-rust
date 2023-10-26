@@ -3,8 +3,8 @@ pub fn ser_aws_open_search_service_domain_node_to_node_encryption_options_detail
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsOpenSearchServiceDomainNodeToNodeEncryptionOptionsDetails,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if input.enabled {
-        object.key("Enabled").boolean(input.enabled);
+    if let Some(var_1) = &input.enabled {
+        object.key("Enabled").boolean(*var_1);
     }
     Ok(())
 }

@@ -8,6 +8,16 @@ pub struct PipelineSummary {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The version number of the pipeline.</p>
     pub version: ::std::option::Option<i32>,
+    /// <p>CodePipeline provides the following pipeline types, which differ in characteristics and price, so that you can tailor your pipeline features and cost to the needs of your applications.</p>
+    /// <ul>
+    /// <li> <p>V1 type pipelines have a JSON structure that contains standard pipeline, stage, and action-level parameters.</p> </li>
+    /// <li> <p>V2 type pipelines have the same structure as a V1 type, along with additional parameters for release safety and trigger configuration.</p> </li>
+    /// </ul> <important>
+    /// <p>Including V2 parameters, such as triggers on Git tags, in the pipeline JSON when creating or updating a pipeline will result in the pipeline having the V2 type of pipeline and the associated costs.</p>
+    /// </important>
+    /// <p>For information about pricing for CodePipeline, see <a href="https://aws.amazon.com/codepipeline/pricing/">Pricing</a>.</p>
+    /// <p> For information about which type of pipeline to choose, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-types-planning.html">What type of pipeline is right for me?</a>.</p>
+    pub pipeline_type: ::std::option::Option<crate::types::PipelineType>,
     /// <p>The date and time the pipeline was created, in timestamp format.</p>
     pub created: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time of the last update to the pipeline, in timestamp format.</p>
@@ -21,6 +31,18 @@ impl PipelineSummary {
     /// <p>The version number of the pipeline.</p>
     pub fn version(&self) -> ::std::option::Option<i32> {
         self.version
+    }
+    /// <p>CodePipeline provides the following pipeline types, which differ in characteristics and price, so that you can tailor your pipeline features and cost to the needs of your applications.</p>
+    /// <ul>
+    /// <li> <p>V1 type pipelines have a JSON structure that contains standard pipeline, stage, and action-level parameters.</p> </li>
+    /// <li> <p>V2 type pipelines have the same structure as a V1 type, along with additional parameters for release safety and trigger configuration.</p> </li>
+    /// </ul> <important>
+    /// <p>Including V2 parameters, such as triggers on Git tags, in the pipeline JSON when creating or updating a pipeline will result in the pipeline having the V2 type of pipeline and the associated costs.</p>
+    /// </important>
+    /// <p>For information about pricing for CodePipeline, see <a href="https://aws.amazon.com/codepipeline/pricing/">Pricing</a>.</p>
+    /// <p> For information about which type of pipeline to choose, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-types-planning.html">What type of pipeline is right for me?</a>.</p>
+    pub fn pipeline_type(&self) -> ::std::option::Option<&crate::types::PipelineType> {
+        self.pipeline_type.as_ref()
     }
     /// <p>The date and time the pipeline was created, in timestamp format.</p>
     pub fn created(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -44,6 +66,7 @@ impl PipelineSummary {
 pub struct PipelineSummaryBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) version: ::std::option::Option<i32>,
+    pub(crate) pipeline_type: ::std::option::Option<crate::types::PipelineType>,
     pub(crate) created: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
@@ -75,6 +98,44 @@ impl PipelineSummaryBuilder {
     /// <p>The version number of the pipeline.</p>
     pub fn get_version(&self) -> &::std::option::Option<i32> {
         &self.version
+    }
+    /// <p>CodePipeline provides the following pipeline types, which differ in characteristics and price, so that you can tailor your pipeline features and cost to the needs of your applications.</p>
+    /// <ul>
+    /// <li> <p>V1 type pipelines have a JSON structure that contains standard pipeline, stage, and action-level parameters.</p> </li>
+    /// <li> <p>V2 type pipelines have the same structure as a V1 type, along with additional parameters for release safety and trigger configuration.</p> </li>
+    /// </ul> <important>
+    /// <p>Including V2 parameters, such as triggers on Git tags, in the pipeline JSON when creating or updating a pipeline will result in the pipeline having the V2 type of pipeline and the associated costs.</p>
+    /// </important>
+    /// <p>For information about pricing for CodePipeline, see <a href="https://aws.amazon.com/codepipeline/pricing/">Pricing</a>.</p>
+    /// <p> For information about which type of pipeline to choose, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-types-planning.html">What type of pipeline is right for me?</a>.</p>
+    pub fn pipeline_type(mut self, input: crate::types::PipelineType) -> Self {
+        self.pipeline_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>CodePipeline provides the following pipeline types, which differ in characteristics and price, so that you can tailor your pipeline features and cost to the needs of your applications.</p>
+    /// <ul>
+    /// <li> <p>V1 type pipelines have a JSON structure that contains standard pipeline, stage, and action-level parameters.</p> </li>
+    /// <li> <p>V2 type pipelines have the same structure as a V1 type, along with additional parameters for release safety and trigger configuration.</p> </li>
+    /// </ul> <important>
+    /// <p>Including V2 parameters, such as triggers on Git tags, in the pipeline JSON when creating or updating a pipeline will result in the pipeline having the V2 type of pipeline and the associated costs.</p>
+    /// </important>
+    /// <p>For information about pricing for CodePipeline, see <a href="https://aws.amazon.com/codepipeline/pricing/">Pricing</a>.</p>
+    /// <p> For information about which type of pipeline to choose, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-types-planning.html">What type of pipeline is right for me?</a>.</p>
+    pub fn set_pipeline_type(mut self, input: ::std::option::Option<crate::types::PipelineType>) -> Self {
+        self.pipeline_type = input;
+        self
+    }
+    /// <p>CodePipeline provides the following pipeline types, which differ in characteristics and price, so that you can tailor your pipeline features and cost to the needs of your applications.</p>
+    /// <ul>
+    /// <li> <p>V1 type pipelines have a JSON structure that contains standard pipeline, stage, and action-level parameters.</p> </li>
+    /// <li> <p>V2 type pipelines have the same structure as a V1 type, along with additional parameters for release safety and trigger configuration.</p> </li>
+    /// </ul> <important>
+    /// <p>Including V2 parameters, such as triggers on Git tags, in the pipeline JSON when creating or updating a pipeline will result in the pipeline having the V2 type of pipeline and the associated costs.</p>
+    /// </important>
+    /// <p>For information about pricing for CodePipeline, see <a href="https://aws.amazon.com/codepipeline/pricing/">Pricing</a>.</p>
+    /// <p> For information about which type of pipeline to choose, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-types-planning.html">What type of pipeline is right for me?</a>.</p>
+    pub fn get_pipeline_type(&self) -> &::std::option::Option<crate::types::PipelineType> {
+        &self.pipeline_type
     }
     /// <p>The date and time the pipeline was created, in timestamp format.</p>
     pub fn created(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -109,6 +170,7 @@ impl PipelineSummaryBuilder {
         crate::types::PipelineSummary {
             name: self.name,
             version: self.version,
+            pipeline_type: self.pipeline_type,
             created: self.created,
             updated: self.updated,
         }

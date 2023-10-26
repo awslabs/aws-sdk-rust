@@ -3,17 +3,17 @@ pub fn ser_files_limit(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::FilesLimit,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    {
+    if let Some(var_1) = &input.max_files {
         object.key("MaxFiles").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.max_files).into()),
+            ::aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if let Some(var_1) = &input.ordered_by {
-        object.key("OrderedBy").string(var_1.as_str());
+    if let Some(var_2) = &input.ordered_by {
+        object.key("OrderedBy").string(var_2.as_str());
     }
-    if let Some(var_2) = &input.order {
-        object.key("Order").string(var_2.as_str());
+    if let Some(var_3) = &input.order {
+        object.key("Order").string(var_3.as_str());
     }
     Ok(())
 }

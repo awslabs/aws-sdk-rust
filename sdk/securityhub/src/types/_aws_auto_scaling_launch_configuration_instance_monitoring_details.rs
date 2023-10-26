@@ -6,12 +6,12 @@
 pub struct AwsAutoScalingLaunchConfigurationInstanceMonitoringDetails {
     /// <p>If set to <code>true</code>, then instances in the group launch with detailed monitoring.</p>
     /// <p>If set to <code>false</code>, then instances in the group launch with basic monitoring.</p>
-    pub enabled: bool,
+    pub enabled: ::std::option::Option<bool>,
 }
 impl AwsAutoScalingLaunchConfigurationInstanceMonitoringDetails {
     /// <p>If set to <code>true</code>, then instances in the group launch with detailed monitoring.</p>
     /// <p>If set to <code>false</code>, then instances in the group launch with basic monitoring.</p>
-    pub fn enabled(&self) -> bool {
+    pub fn enabled(&self) -> ::std::option::Option<bool> {
         self.enabled
     }
 }
@@ -48,8 +48,6 @@ impl AwsAutoScalingLaunchConfigurationInstanceMonitoringDetailsBuilder {
     }
     /// Consumes the builder and constructs a [`AwsAutoScalingLaunchConfigurationInstanceMonitoringDetails`](crate::types::AwsAutoScalingLaunchConfigurationInstanceMonitoringDetails).
     pub fn build(self) -> crate::types::AwsAutoScalingLaunchConfigurationInstanceMonitoringDetails {
-        crate::types::AwsAutoScalingLaunchConfigurationInstanceMonitoringDetails {
-            enabled: self.enabled.unwrap_or_default(),
-        }
+        crate::types::AwsAutoScalingLaunchConfigurationInstanceMonitoringDetails { enabled: self.enabled }
     }
 }

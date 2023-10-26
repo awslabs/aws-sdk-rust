@@ -15,27 +15,30 @@ pub fn ser_create_launch_configuration_template_input(
     if let Some(var_4) = &input.launch_disposition {
         object.key("launchDisposition").string(var_4.as_str());
     }
-    if let Some(var_5) = &input.licensing {
-        #[allow(unused_mut)]
-        let mut object_6 = object.key("licensing").start_object();
-        crate::protocol_serde::shape_licensing::ser_licensing(&mut object_6, var_5)?;
-        object_6.finish();
+    if let Some(var_5) = &input.launch_into_source_instance {
+        object.key("launchIntoSourceInstance").boolean(*var_5);
     }
-    if let Some(var_7) = &input.post_launch_enabled {
-        object.key("postLaunchEnabled").boolean(*var_7);
-    }
-    if let Some(var_8) = &input.tags {
+    if let Some(var_6) = &input.licensing {
         #[allow(unused_mut)]
-        let mut object_9 = object.key("tags").start_object();
-        for (key_10, value_11) in var_8 {
+        let mut object_7 = object.key("licensing").start_object();
+        crate::protocol_serde::shape_licensing::ser_licensing(&mut object_7, var_6)?;
+        object_7.finish();
+    }
+    if let Some(var_8) = &input.post_launch_enabled {
+        object.key("postLaunchEnabled").boolean(*var_8);
+    }
+    if let Some(var_9) = &input.tags {
+        #[allow(unused_mut)]
+        let mut object_10 = object.key("tags").start_object();
+        for (key_11, value_12) in var_9 {
             {
-                object_9.key(key_10.as_str()).string(value_11.as_str());
+                object_10.key(key_11.as_str()).string(value_12.as_str());
             }
         }
-        object_9.finish();
+        object_10.finish();
     }
-    if let Some(var_12) = &input.target_instance_type_right_sizing_method {
-        object.key("targetInstanceTypeRightSizingMethod").string(var_12.as_str());
+    if let Some(var_13) = &input.target_instance_type_right_sizing_method {
+        object.key("targetInstanceTypeRightSizingMethod").string(var_13.as_str());
     }
     Ok(())
 }

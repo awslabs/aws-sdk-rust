@@ -15,7 +15,7 @@ pub struct AwsEc2LaunchTemplateDataPlacementDetails {
     /// <p> The Amazon Resource Name (ARN) of the host resource group in which to launch the instances. </p>
     pub host_resource_group_arn: ::std::option::Option<::std::string::String>,
     /// <p> The number of the partition the instance should launch in. </p>
-    pub partition_number: i32,
+    pub partition_number: ::std::option::Option<i32>,
     /// <p> Reserved for future use. </p>
     pub spread_domain: ::std::option::Option<::std::string::String>,
     /// <p> The tenancy of the instance (if the instance is running in a VPC). An instance with a tenancy of dedicated runs on single-tenant hardware. </p>
@@ -43,7 +43,7 @@ impl AwsEc2LaunchTemplateDataPlacementDetails {
         self.host_resource_group_arn.as_deref()
     }
     /// <p> The number of the partition the instance should launch in. </p>
-    pub fn partition_number(&self) -> i32 {
+    pub fn partition_number(&self) -> ::std::option::Option<i32> {
         self.partition_number
     }
     /// <p> Reserved for future use. </p>
@@ -196,7 +196,7 @@ impl AwsEc2LaunchTemplateDataPlacementDetailsBuilder {
             group_name: self.group_name,
             host_id: self.host_id,
             host_resource_group_arn: self.host_resource_group_arn,
-            partition_number: self.partition_number.unwrap_or_default(),
+            partition_number: self.partition_number,
             spread_domain: self.spread_domain,
             tenancy: self.tenancy,
         }

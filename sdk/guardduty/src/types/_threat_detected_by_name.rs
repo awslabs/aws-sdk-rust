@@ -5,25 +5,25 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ThreatDetectedByName {
     /// <p>Total number of infected files identified.</p>
-    pub item_count: i32,
+    pub item_count: ::std::option::Option<i32>,
     /// <p>Total number of unique threats by name identified, as part of the malware scan.</p>
-    pub unique_threat_name_count: i32,
+    pub unique_threat_name_count: ::std::option::Option<i32>,
     /// <p>Flag to determine if the finding contains every single infected file-path and/or every threat.</p>
-    pub shortened: bool,
+    pub shortened: ::std::option::Option<bool>,
     /// <p>List of identified threats with details, organized by threat name.</p>
     pub threat_names: ::std::option::Option<::std::vec::Vec<crate::types::ScanThreatName>>,
 }
 impl ThreatDetectedByName {
     /// <p>Total number of infected files identified.</p>
-    pub fn item_count(&self) -> i32 {
+    pub fn item_count(&self) -> ::std::option::Option<i32> {
         self.item_count
     }
     /// <p>Total number of unique threats by name identified, as part of the malware scan.</p>
-    pub fn unique_threat_name_count(&self) -> i32 {
+    pub fn unique_threat_name_count(&self) -> ::std::option::Option<i32> {
         self.unique_threat_name_count
     }
     /// <p>Flag to determine if the finding contains every single infected file-path and/or every threat.</p>
-    pub fn shortened(&self) -> bool {
+    pub fn shortened(&self) -> ::std::option::Option<bool> {
         self.shortened
     }
     /// <p>List of identified threats with details, organized by threat name.</p>
@@ -113,9 +113,9 @@ impl ThreatDetectedByNameBuilder {
     /// Consumes the builder and constructs a [`ThreatDetectedByName`](crate::types::ThreatDetectedByName).
     pub fn build(self) -> crate::types::ThreatDetectedByName {
         crate::types::ThreatDetectedByName {
-            item_count: self.item_count.unwrap_or_default(),
-            unique_threat_name_count: self.unique_threat_name_count.unwrap_or_default(),
-            shortened: self.shortened.unwrap_or_default(),
+            item_count: self.item_count,
+            unique_threat_name_count: self.unique_threat_name_count,
+            shortened: self.shortened,
             threat_names: self.threat_names,
         }
     }

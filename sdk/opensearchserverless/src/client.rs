@@ -59,13 +59,13 @@ pub(crate) struct Handle {
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`CreateSecurityPolicy`](crate::operation::create_security_policy) operation has
-/// a [`Client::create_security_policy`], function which returns a builder for that operation.
+/// For example, the [`CreateLifecyclePolicy`](crate::operation::create_lifecycle_policy) operation has
+/// a [`Client::create_lifecycle_policy`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.create_security_policy()
+/// let result = client.create_lifecycle_policy()
 ///     .r#type("example")
 ///     .send()
 ///     .await;
@@ -150,11 +150,17 @@ impl Client {
 
 mod batch_get_collection;
 
+mod batch_get_effective_lifecycle_policy;
+
+mod batch_get_lifecycle_policy;
+
 mod batch_get_vpc_endpoint;
 
 mod create_access_policy;
 
 mod create_collection;
+
+mod create_lifecycle_policy;
 
 mod create_security_config;
 
@@ -194,6 +200,8 @@ mod delete_access_policy;
 
 mod delete_collection;
 
+mod delete_lifecycle_policy;
+
 mod delete_security_config;
 
 mod delete_security_policy;
@@ -214,6 +222,8 @@ mod list_access_policies;
 
 mod list_collections;
 
+mod list_lifecycle_policies;
+
 mod list_security_configs;
 
 mod list_security_policies;
@@ -231,6 +241,8 @@ mod update_access_policy;
 mod update_account_settings;
 
 mod update_collection;
+
+mod update_lifecycle_policy;
 
 mod update_security_config;
 

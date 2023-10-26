@@ -3,16 +3,16 @@ pub fn ser_rule_group_source_stateless_rule_match_attributes_destination_ports(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RuleGroupSourceStatelessRuleMatchAttributesDestinationPorts,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if input.from_port != 0 {
+    if let Some(var_1) = &input.from_port {
         object.key("FromPort").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.from_port).into()),
+            ::aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if input.to_port != 0 {
+    if let Some(var_2) = &input.to_port {
         object.key("ToPort").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.to_port).into()),
+            ::aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
     Ok(())

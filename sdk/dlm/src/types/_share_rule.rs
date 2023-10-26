@@ -7,7 +7,7 @@ pub struct ShareRule {
     /// <p>The IDs of the Amazon Web Services accounts with which to share the snapshots.</p>
     pub target_accounts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The period after which snapshots that are shared with other Amazon Web Services accounts are automatically unshared.</p>
-    pub unshare_interval: i32,
+    pub unshare_interval: ::std::option::Option<i32>,
     /// <p>The unit of time for the automatic unsharing interval.</p>
     pub unshare_interval_unit: ::std::option::Option<crate::types::RetentionIntervalUnitValues>,
 }
@@ -17,7 +17,7 @@ impl ShareRule {
         self.target_accounts.as_deref()
     }
     /// <p>The period after which snapshots that are shared with other Amazon Web Services accounts are automatically unshared.</p>
-    pub fn unshare_interval(&self) -> i32 {
+    pub fn unshare_interval(&self) -> ::std::option::Option<i32> {
         self.unshare_interval
     }
     /// <p>The unit of time for the automatic unsharing interval.</p>
@@ -93,7 +93,7 @@ impl ShareRuleBuilder {
     pub fn build(self) -> crate::types::ShareRule {
         crate::types::ShareRule {
             target_accounts: self.target_accounts,
-            unshare_interval: self.unshare_interval.unwrap_or_default(),
+            unshare_interval: self.unshare_interval,
             unshare_interval_unit: self.unshare_interval_unit,
         }
     }

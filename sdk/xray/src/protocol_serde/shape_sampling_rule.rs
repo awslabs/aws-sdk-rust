@@ -12,10 +12,10 @@ pub fn ser_sampling_rule(
     if let Some(var_3) = &input.resource_arn {
         object.key("ResourceARN").string(var_3.as_str());
     }
-    {
+    if let Some(var_4) = &input.priority {
         object.key("Priority").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.priority).into()),
+            ::aws_smithy_types::Number::NegInt((*var_4).into()),
         );
     }
     {
@@ -30,36 +30,36 @@ pub fn ser_sampling_rule(
             ::aws_smithy_types::Number::NegInt((input.reservoir_size).into()),
         );
     }
-    if let Some(var_4) = &input.service_name {
-        object.key("ServiceName").string(var_4.as_str());
+    if let Some(var_5) = &input.service_name {
+        object.key("ServiceName").string(var_5.as_str());
     }
-    if let Some(var_5) = &input.service_type {
-        object.key("ServiceType").string(var_5.as_str());
+    if let Some(var_6) = &input.service_type {
+        object.key("ServiceType").string(var_6.as_str());
     }
-    if let Some(var_6) = &input.host {
-        object.key("Host").string(var_6.as_str());
+    if let Some(var_7) = &input.host {
+        object.key("Host").string(var_7.as_str());
     }
-    if let Some(var_7) = &input.http_method {
-        object.key("HTTPMethod").string(var_7.as_str());
+    if let Some(var_8) = &input.http_method {
+        object.key("HTTPMethod").string(var_8.as_str());
     }
-    if let Some(var_8) = &input.url_path {
-        object.key("URLPath").string(var_8.as_str());
+    if let Some(var_9) = &input.url_path {
+        object.key("URLPath").string(var_9.as_str());
     }
-    {
+    if let Some(var_10) = &input.version {
         object.key("Version").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.version).into()),
+            ::aws_smithy_types::Number::NegInt((*var_10).into()),
         );
     }
-    if let Some(var_9) = &input.attributes {
+    if let Some(var_11) = &input.attributes {
         #[allow(unused_mut)]
-        let mut object_10 = object.key("Attributes").start_object();
-        for (key_11, value_12) in var_9 {
+        let mut object_12 = object.key("Attributes").start_object();
+        for (key_13, value_14) in var_11 {
             {
-                object_10.key(key_11.as_str()).string(value_12.as_str());
+                object_12.key(key_13.as_str()).string(value_14.as_str());
             }
         }
-        object_10.finish();
+        object_12.finish();
     }
     Ok(())
 }

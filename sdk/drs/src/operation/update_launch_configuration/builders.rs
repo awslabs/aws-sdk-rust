@@ -225,4 +225,18 @@ impl UpdateLaunchConfigurationFluentBuilder {
     pub fn get_post_launch_enabled(&self) -> &::std::option::Option<bool> {
         self.inner.get_post_launch_enabled()
     }
+    /// <p>Launch into existing instance properties.</p>
+    pub fn launch_into_instance_properties(mut self, input: crate::types::LaunchIntoInstanceProperties) -> Self {
+        self.inner = self.inner.launch_into_instance_properties(input);
+        self
+    }
+    /// <p>Launch into existing instance properties.</p>
+    pub fn set_launch_into_instance_properties(mut self, input: ::std::option::Option<crate::types::LaunchIntoInstanceProperties>) -> Self {
+        self.inner = self.inner.set_launch_into_instance_properties(input);
+        self
+    }
+    /// <p>Launch into existing instance properties.</p>
+    pub fn get_launch_into_instance_properties(&self) -> &::std::option::Option<crate::types::LaunchIntoInstanceProperties> {
+        self.inner.get_launch_into_instance_properties()
+    }
 }

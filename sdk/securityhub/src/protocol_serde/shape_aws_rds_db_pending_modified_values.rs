@@ -6,71 +6,71 @@ pub fn ser_aws_rds_db_pending_modified_values(
     if let Some(var_1) = &input.db_instance_class {
         object.key("DbInstanceClass").string(var_1.as_str());
     }
-    if input.allocated_storage != 0 {
+    if let Some(var_2) = &input.allocated_storage {
         object.key("AllocatedStorage").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.allocated_storage).into()),
+            ::aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
-    if let Some(var_2) = &input.master_user_password {
-        object.key("MasterUserPassword").string(var_2.as_str());
+    if let Some(var_3) = &input.master_user_password {
+        object.key("MasterUserPassword").string(var_3.as_str());
     }
-    if input.port != 0 {
+    if let Some(var_4) = &input.port {
         object.key("Port").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.port).into()),
+            ::aws_smithy_types::Number::NegInt((*var_4).into()),
         );
     }
-    if input.backup_retention_period != 0 {
+    if let Some(var_5) = &input.backup_retention_period {
         object.key("BackupRetentionPeriod").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.backup_retention_period).into()),
+            ::aws_smithy_types::Number::NegInt((*var_5).into()),
         );
     }
-    if input.multi_az {
-        object.key("MultiAZ").boolean(input.multi_az);
+    if let Some(var_6) = &input.multi_az {
+        object.key("MultiAZ").boolean(*var_6);
     }
-    if let Some(var_3) = &input.engine_version {
-        object.key("EngineVersion").string(var_3.as_str());
+    if let Some(var_7) = &input.engine_version {
+        object.key("EngineVersion").string(var_7.as_str());
     }
-    if let Some(var_4) = &input.license_model {
-        object.key("LicenseModel").string(var_4.as_str());
+    if let Some(var_8) = &input.license_model {
+        object.key("LicenseModel").string(var_8.as_str());
     }
-    if input.iops != 0 {
+    if let Some(var_9) = &input.iops {
         object.key("Iops").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.iops).into()),
+            ::aws_smithy_types::Number::NegInt((*var_9).into()),
         );
     }
-    if let Some(var_5) = &input.db_instance_identifier {
-        object.key("DbInstanceIdentifier").string(var_5.as_str());
+    if let Some(var_10) = &input.db_instance_identifier {
+        object.key("DbInstanceIdentifier").string(var_10.as_str());
     }
-    if let Some(var_6) = &input.storage_type {
-        object.key("StorageType").string(var_6.as_str());
+    if let Some(var_11) = &input.storage_type {
+        object.key("StorageType").string(var_11.as_str());
     }
-    if let Some(var_7) = &input.ca_certificate_identifier {
-        object.key("CaCertificateIdentifier").string(var_7.as_str());
+    if let Some(var_12) = &input.ca_certificate_identifier {
+        object.key("CaCertificateIdentifier").string(var_12.as_str());
     }
-    if let Some(var_8) = &input.db_subnet_group_name {
-        object.key("DbSubnetGroupName").string(var_8.as_str());
+    if let Some(var_13) = &input.db_subnet_group_name {
+        object.key("DbSubnetGroupName").string(var_13.as_str());
     }
-    if let Some(var_9) = &input.pending_cloud_watch_logs_exports {
+    if let Some(var_14) = &input.pending_cloud_watch_logs_exports {
         #[allow(unused_mut)]
-        let mut object_10 = object.key("PendingCloudWatchLogsExports").start_object();
-        crate::protocol_serde::shape_aws_rds_pending_cloud_watch_logs_exports::ser_aws_rds_pending_cloud_watch_logs_exports(&mut object_10, var_9)?;
-        object_10.finish();
+        let mut object_15 = object.key("PendingCloudWatchLogsExports").start_object();
+        crate::protocol_serde::shape_aws_rds_pending_cloud_watch_logs_exports::ser_aws_rds_pending_cloud_watch_logs_exports(&mut object_15, var_14)?;
+        object_15.finish();
     }
-    if let Some(var_11) = &input.processor_features {
-        let mut array_12 = object.key("ProcessorFeatures").start_array();
-        for item_13 in var_11 {
+    if let Some(var_16) = &input.processor_features {
+        let mut array_17 = object.key("ProcessorFeatures").start_array();
+        for item_18 in var_16 {
             {
                 #[allow(unused_mut)]
-                let mut object_14 = array_12.value().start_object();
-                crate::protocol_serde::shape_aws_rds_db_processor_feature::ser_aws_rds_db_processor_feature(&mut object_14, item_13)?;
-                object_14.finish();
+                let mut object_19 = array_17.value().start_object();
+                crate::protocol_serde::shape_aws_rds_db_processor_feature::ser_aws_rds_db_processor_feature(&mut object_19, item_18)?;
+                object_19.finish();
             }
         }
-        array_12.finish();
+        array_17.finish();
     }
     Ok(())
 }

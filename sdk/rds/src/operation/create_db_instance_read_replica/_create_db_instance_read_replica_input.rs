@@ -233,6 +233,10 @@ pub struct CreateDbInstanceReadReplicaInput {
     /// <li> <p>The source DB cluster must be in the same Amazon Web Services Region as the read replica. Cross-Region replication isn't supported.</p> </li>
     /// </ul>
     pub source_db_cluster_identifier: ::std::option::Option<::std::string::String>,
+    /// <p>Indicates whether the DB instance has a dedicated log volume (DLV) enabled.</p>
+    pub dedicated_log_volume: ::std::option::Option<bool>,
+    /// <p>Whether to upgrade the storage file system configuration on the read replica. This option migrates the read replica from the old storage file system layout to the preferred layout.</p>
+    pub upgrade_storage_config: ::std::option::Option<bool>,
 }
 impl CreateDbInstanceReadReplicaInput {
     /// <p>The DB instance identifier of the read replica. This identifier is the unique key that identifies a DB instance. This parameter is stored as a lowercase string.</p>
@@ -549,6 +553,14 @@ impl CreateDbInstanceReadReplicaInput {
     pub fn source_db_cluster_identifier(&self) -> ::std::option::Option<&str> {
         self.source_db_cluster_identifier.as_deref()
     }
+    /// <p>Indicates whether the DB instance has a dedicated log volume (DLV) enabled.</p>
+    pub fn dedicated_log_volume(&self) -> ::std::option::Option<bool> {
+        self.dedicated_log_volume
+    }
+    /// <p>Whether to upgrade the storage file system configuration on the read replica. This option migrates the read replica from the old storage file system layout to the preferred layout.</p>
+    pub fn upgrade_storage_config(&self) -> ::std::option::Option<bool> {
+        self.upgrade_storage_config
+    }
 }
 impl CreateDbInstanceReadReplicaInput {
     /// Creates a new builder-style object to manufacture [`CreateDbInstanceReadReplicaInput`](crate::operation::create_db_instance_read_replica::CreateDbInstanceReadReplicaInput).
@@ -603,6 +615,8 @@ pub struct CreateDbInstanceReadReplicaInputBuilder {
     pub(crate) enable_customer_owned_ip: ::std::option::Option<bool>,
     pub(crate) allocated_storage: ::std::option::Option<i32>,
     pub(crate) source_db_cluster_identifier: ::std::option::Option<::std::string::String>,
+    pub(crate) dedicated_log_volume: ::std::option::Option<bool>,
+    pub(crate) upgrade_storage_config: ::std::option::Option<bool>,
 }
 impl CreateDbInstanceReadReplicaInputBuilder {
     /// <p>The DB instance identifier of the read replica. This identifier is the unique key that identifies a DB instance. This parameter is stored as a lowercase string.</p>
@@ -1661,6 +1675,34 @@ impl CreateDbInstanceReadReplicaInputBuilder {
     pub fn get_source_db_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.source_db_cluster_identifier
     }
+    /// <p>Indicates whether the DB instance has a dedicated log volume (DLV) enabled.</p>
+    pub fn dedicated_log_volume(mut self, input: bool) -> Self {
+        self.dedicated_log_volume = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether the DB instance has a dedicated log volume (DLV) enabled.</p>
+    pub fn set_dedicated_log_volume(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.dedicated_log_volume = input;
+        self
+    }
+    /// <p>Indicates whether the DB instance has a dedicated log volume (DLV) enabled.</p>
+    pub fn get_dedicated_log_volume(&self) -> &::std::option::Option<bool> {
+        &self.dedicated_log_volume
+    }
+    /// <p>Whether to upgrade the storage file system configuration on the read replica. This option migrates the read replica from the old storage file system layout to the preferred layout.</p>
+    pub fn upgrade_storage_config(mut self, input: bool) -> Self {
+        self.upgrade_storage_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Whether to upgrade the storage file system configuration on the read replica. This option migrates the read replica from the old storage file system layout to the preferred layout.</p>
+    pub fn set_upgrade_storage_config(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.upgrade_storage_config = input;
+        self
+    }
+    /// <p>Whether to upgrade the storage file system configuration on the read replica. This option migrates the read replica from the old storage file system layout to the preferred layout.</p>
+    pub fn get_upgrade_storage_config(&self) -> &::std::option::Option<bool> {
+        &self.upgrade_storage_config
+    }
     /// Consumes the builder and constructs a [`CreateDbInstanceReadReplicaInput`](crate::operation::create_db_instance_read_replica::CreateDbInstanceReadReplicaInput).
     pub fn build(
         self,
@@ -1711,6 +1753,8 @@ impl CreateDbInstanceReadReplicaInputBuilder {
             enable_customer_owned_ip: self.enable_customer_owned_ip,
             allocated_storage: self.allocated_storage,
             source_db_cluster_identifier: self.source_db_cluster_identifier,
+            dedicated_log_volume: self.dedicated_log_volume,
+            upgrade_storage_config: self.upgrade_storage_config,
         })
     }
 }

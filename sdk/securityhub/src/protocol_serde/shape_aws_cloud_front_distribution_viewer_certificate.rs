@@ -12,17 +12,17 @@ pub fn ser_aws_cloud_front_distribution_viewer_certificate(
     if let Some(var_3) = &input.certificate_source {
         object.key("CertificateSource").string(var_3.as_str());
     }
-    if input.cloud_front_default_certificate {
-        object.key("CloudFrontDefaultCertificate").boolean(input.cloud_front_default_certificate);
+    if let Some(var_4) = &input.cloud_front_default_certificate {
+        object.key("CloudFrontDefaultCertificate").boolean(*var_4);
     }
-    if let Some(var_4) = &input.iam_certificate_id {
-        object.key("IamCertificateId").string(var_4.as_str());
+    if let Some(var_5) = &input.iam_certificate_id {
+        object.key("IamCertificateId").string(var_5.as_str());
     }
-    if let Some(var_5) = &input.minimum_protocol_version {
-        object.key("MinimumProtocolVersion").string(var_5.as_str());
+    if let Some(var_6) = &input.minimum_protocol_version {
+        object.key("MinimumProtocolVersion").string(var_6.as_str());
     }
-    if let Some(var_6) = &input.ssl_support_method {
-        object.key("SslSupportMethod").string(var_6.as_str());
+    if let Some(var_7) = &input.ssl_support_method {
+        object.key("SslSupportMethod").string(var_7.as_str());
     }
     Ok(())
 }

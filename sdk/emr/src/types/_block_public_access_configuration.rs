@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BlockPublicAccessConfiguration {
     /// <p>Indicates whether Amazon EMR block public access is enabled (<code>true</code>) or disabled (<code>false</code>). By default, the value is <code>false</code> for accounts that have created Amazon EMR clusters before July 2019. For accounts created after this, the default is <code>true</code>.</p>
-    pub block_public_security_group_rules: bool,
+    pub block_public_security_group_rules: ::std::option::Option<bool>,
     /// <p>Specifies ports and port ranges that are permitted to have security group rules that allow inbound traffic from all public sources. For example, if Port 23 (Telnet) is specified for <code>PermittedPublicSecurityGroupRuleRanges</code>, Amazon EMR allows cluster creation if a security group associated with the cluster has a rule that allows inbound traffic on Port 23 from IPv4 0.0.0.0/0 or IPv6 port ::/0 as the source.</p>
     /// <p>By default, Port 22, which is used for SSH access to the cluster Amazon EC2 instances, is in the list of <code>PermittedPublicSecurityGroupRuleRanges</code>.</p>
     pub permitted_public_security_group_rule_ranges: ::std::option::Option<::std::vec::Vec<crate::types::PortRange>>,
@@ -18,7 +18,7 @@ pub struct BlockPublicAccessConfiguration {
 }
 impl BlockPublicAccessConfiguration {
     /// <p>Indicates whether Amazon EMR block public access is enabled (<code>true</code>) or disabled (<code>false</code>). By default, the value is <code>false</code> for accounts that have created Amazon EMR clusters before July 2019. For accounts created after this, the default is <code>true</code>.</p>
-    pub fn block_public_security_group_rules(&self) -> bool {
+    pub fn block_public_security_group_rules(&self) -> ::std::option::Option<bool> {
         self.block_public_security_group_rules
     }
     /// <p>Specifies ports and port ranges that are permitted to have security group rules that allow inbound traffic from all public sources. For example, if Port 23 (Telnet) is specified for <code>PermittedPublicSecurityGroupRuleRanges</code>, Amazon EMR allows cluster creation if a security group associated with the cluster has a rule that allows inbound traffic on Port 23 from IPv4 0.0.0.0/0 or IPv6 port ::/0 as the source.</p>
@@ -151,7 +151,7 @@ impl BlockPublicAccessConfigurationBuilder {
     /// Consumes the builder and constructs a [`BlockPublicAccessConfiguration`](crate::types::BlockPublicAccessConfiguration).
     pub fn build(self) -> crate::types::BlockPublicAccessConfiguration {
         crate::types::BlockPublicAccessConfiguration {
-            block_public_security_group_rules: self.block_public_security_group_rules.unwrap_or_default(),
+            block_public_security_group_rules: self.block_public_security_group_rules,
             permitted_public_security_group_rule_ranges: self.permitted_public_security_group_rule_ranges,
             classification: self.classification,
             configurations: self.configurations,

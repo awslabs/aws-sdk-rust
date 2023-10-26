@@ -4,12 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteWorkteamOutput {
     /// <p>Returns <code>true</code> if the work team was successfully deleted; otherwise, returns <code>false</code>.</p>
-    pub success: bool,
+    pub success: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }
 impl DeleteWorkteamOutput {
     /// <p>Returns <code>true</code> if the work team was successfully deleted; otherwise, returns <code>false</code>.</p>
-    pub fn success(&self) -> bool {
+    pub fn success(&self) -> ::std::option::Option<bool> {
         self.success
     }
 }
@@ -59,7 +59,7 @@ impl DeleteWorkteamOutputBuilder {
     /// Consumes the builder and constructs a [`DeleteWorkteamOutput`](crate::operation::delete_workteam::DeleteWorkteamOutput).
     pub fn build(self) -> crate::operation::delete_workteam::DeleteWorkteamOutput {
         crate::operation::delete_workteam::DeleteWorkteamOutput {
-            success: self.success.unwrap_or_default(),
+            success: self.success,
             _request_id: self._request_id,
         }
     }

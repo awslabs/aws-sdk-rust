@@ -5,13 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HyperParameterTuningJobCompletionDetails {
     /// <p>The number of training jobs launched by a tuning job that are not improving (1% or less) as measured by model performance evaluated against an objective function.</p>
-    pub number_of_training_jobs_objective_not_improving: i32,
+    pub number_of_training_jobs_objective_not_improving: ::std::option::Option<i32>,
     /// <p>The time in timestamp format that AMT detected model convergence, as defined by a lack of significant improvement over time based on criteria developed over a wide range of diverse benchmarking tests.</p>
     pub convergence_detected_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl HyperParameterTuningJobCompletionDetails {
     /// <p>The number of training jobs launched by a tuning job that are not improving (1% or less) as measured by model performance evaluated against an objective function.</p>
-    pub fn number_of_training_jobs_objective_not_improving(&self) -> i32 {
+    pub fn number_of_training_jobs_objective_not_improving(&self) -> ::std::option::Option<i32> {
         self.number_of_training_jobs_objective_not_improving
     }
     /// <p>The time in timestamp format that AMT detected model convergence, as defined by a lack of significant improvement over time based on criteria developed over a wide range of diverse benchmarking tests.</p>
@@ -65,7 +65,7 @@ impl HyperParameterTuningJobCompletionDetailsBuilder {
     /// Consumes the builder and constructs a [`HyperParameterTuningJobCompletionDetails`](crate::types::HyperParameterTuningJobCompletionDetails).
     pub fn build(self) -> crate::types::HyperParameterTuningJobCompletionDetails {
         crate::types::HyperParameterTuningJobCompletionDetails {
-            number_of_training_jobs_objective_not_improving: self.number_of_training_jobs_objective_not_improving.unwrap_or_default(),
+            number_of_training_jobs_objective_not_improving: self.number_of_training_jobs_objective_not_improving,
             convergence_detected_time: self.convergence_detected_time,
         }
     }

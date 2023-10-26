@@ -63,7 +63,7 @@ pub struct Command {
     /// <p>Amazon CloudWatch Logs information where you want Amazon Web Services Systems Manager to send the command output.</p>
     pub cloud_watch_output_config: ::std::option::Option<crate::types::CloudWatchOutputConfig>,
     /// <p>The <code>TimeoutSeconds</code> value specified for a command.</p>
-    pub timeout_seconds: i32,
+    pub timeout_seconds: ::std::option::Option<i32>,
     /// <p>The details for the CloudWatch alarm applied to your command.</p>
     pub alarm_configuration: ::std::option::Option<crate::types::AlarmConfiguration>,
     /// <p>The CloudWatch alarm that was invoked by the command.</p>
@@ -175,7 +175,7 @@ impl Command {
         self.cloud_watch_output_config.as_ref()
     }
     /// <p>The <code>TimeoutSeconds</code> value specified for a command.</p>
-    pub fn timeout_seconds(&self) -> i32 {
+    pub fn timeout_seconds(&self) -> ::std::option::Option<i32> {
         self.timeout_seconds
     }
     /// <p>The details for the CloudWatch alarm applied to your command.</p>
@@ -713,7 +713,7 @@ impl CommandBuilder {
             service_role: self.service_role,
             notification_config: self.notification_config,
             cloud_watch_output_config: self.cloud_watch_output_config,
-            timeout_seconds: self.timeout_seconds.unwrap_or_default(),
+            timeout_seconds: self.timeout_seconds,
             alarm_configuration: self.alarm_configuration,
             triggered_alarms: self.triggered_alarms,
         }

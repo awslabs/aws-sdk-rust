@@ -15,17 +15,17 @@ pub fn ser_aws_wafv2_rules_details(
     if let Some(var_4) = &input.override_action {
         object.key("OverrideAction").string(var_4.as_str());
     }
-    if input.priority != 0 {
+    if let Some(var_5) = &input.priority {
         object.key("Priority").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.priority).into()),
+            ::aws_smithy_types::Number::NegInt((*var_5).into()),
         );
     }
-    if let Some(var_5) = &input.visibility_config {
+    if let Some(var_6) = &input.visibility_config {
         #[allow(unused_mut)]
-        let mut object_6 = object.key("VisibilityConfig").start_object();
-        crate::protocol_serde::shape_aws_wafv2_visibility_config_details::ser_aws_wafv2_visibility_config_details(&mut object_6, var_5)?;
-        object_6.finish();
+        let mut object_7 = object.key("VisibilityConfig").start_object();
+        crate::protocol_serde::shape_aws_wafv2_visibility_config_details::ser_aws_wafv2_visibility_config_details(&mut object_7, var_6)?;
+        object_7.finish();
     }
     Ok(())
 }

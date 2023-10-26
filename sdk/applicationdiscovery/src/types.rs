@@ -27,6 +27,8 @@ pub use crate::types::_export_data_format::ExportDataFormat;
 
 pub use crate::types::_data_source::DataSource;
 
+pub use crate::types::_deletion_configuration_item_type::DeletionConfigurationItemType;
+
 pub use crate::types::_neighbor_connection_detail::NeighborConnectionDetail;
 
 pub use crate::types::_order_by_element::OrderByElement;
@@ -61,6 +63,14 @@ pub use crate::types::_continuous_export_description::ContinuousExportDescriptio
 
 pub use crate::types::_continuous_export_status::ContinuousExportStatus;
 
+pub use crate::types::_batch_delete_configuration_task::BatchDeleteConfigurationTask;
+
+pub use crate::types::_deletion_warning::DeletionWarning;
+
+pub use crate::types::_failed_configuration::FailedConfiguration;
+
+pub use crate::types::_batch_delete_configuration_task_status::BatchDeleteConfigurationTaskStatus;
+
 pub use crate::types::_agent_info::AgentInfo;
 
 pub use crate::types::_agent_status::AgentStatus;
@@ -73,6 +83,12 @@ pub use crate::types::_batch_delete_import_data_error::BatchDeleteImportDataErro
 
 pub use crate::types::_batch_delete_import_data_error_code::BatchDeleteImportDataErrorCode;
 
+pub use crate::types::_batch_delete_agent_error::BatchDeleteAgentError;
+
+pub use crate::types::_delete_agent_error_code::DeleteAgentErrorCode;
+
+pub use crate::types::_delete_agent::DeleteAgent;
+
 mod _agent_configuration_status;
 
 mod _agent_info;
@@ -80,6 +96,12 @@ mod _agent_info;
 mod _agent_network_info;
 
 mod _agent_status;
+
+mod _batch_delete_agent_error;
+
+mod _batch_delete_configuration_task;
+
+mod _batch_delete_configuration_task_status;
 
 mod _batch_delete_import_data_error;
 
@@ -103,6 +125,14 @@ mod _customer_me_collector_info;
 
 mod _data_source;
 
+mod _delete_agent;
+
+mod _delete_agent_error_code;
+
+mod _deletion_configuration_item_type;
+
+mod _deletion_warning;
+
 mod _ec2_recommendations_export_preferences;
 
 mod _export_data_format;
@@ -114,6 +144,8 @@ mod _export_info;
 mod _export_preferences;
 
 mod _export_status;
+
+mod _failed_configuration;
 
 mod _filter;
 

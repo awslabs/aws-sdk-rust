@@ -35,6 +35,24 @@ pub fn de_disassociate_ops_item_related_item_http_error(
             }
             tmp
         }),
+        "OpsItemConflictException" => {
+            crate::operation::disassociate_ops_item_related_item::DisassociateOpsItemRelatedItemError::OpsItemConflictException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::OpsItemConflictExceptionBuilder::default();
+                    output =
+                        crate::protocol_serde::shape_ops_item_conflict_exception::de_ops_item_conflict_exception_json_err(_response_body, output)
+                            .map_err(crate::operation::disassociate_ops_item_related_item::DisassociateOpsItemRelatedItemError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         "OpsItemInvalidParameterException" => {
             crate::operation::disassociate_ops_item_related_item::DisassociateOpsItemRelatedItemError::OpsItemInvalidParameterException({
                 #[allow(unused_mut)]

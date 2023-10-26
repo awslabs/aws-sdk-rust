@@ -7,7 +7,7 @@ pub struct AgentVersion {
     /// <p>Version of the agent.</p>
     pub version: ::std::option::Option<::std::string::String>,
     /// <p>The number of Edge Manager agents.</p>
-    pub agent_count: i64,
+    pub agent_count: ::std::option::Option<i64>,
 }
 impl AgentVersion {
     /// <p>Version of the agent.</p>
@@ -15,7 +15,7 @@ impl AgentVersion {
         self.version.as_deref()
     }
     /// <p>The number of Edge Manager agents.</p>
-    pub fn agent_count(&self) -> i64 {
+    pub fn agent_count(&self) -> ::std::option::Option<i64> {
         self.agent_count
     }
 }
@@ -66,7 +66,7 @@ impl AgentVersionBuilder {
     pub fn build(self) -> crate::types::AgentVersion {
         crate::types::AgentVersion {
             version: self.version,
-            agent_count: self.agent_count.unwrap_or_default(),
+            agent_count: self.agent_count,
         }
     }
 }

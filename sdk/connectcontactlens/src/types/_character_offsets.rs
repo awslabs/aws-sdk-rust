@@ -5,17 +5,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CharacterOffsets {
     /// <p>The beginning of the issue.</p>
-    pub begin_offset_char: i32,
+    pub begin_offset_char: ::std::option::Option<i32>,
     /// <p>The end of the issue.</p>
-    pub end_offset_char: i32,
+    pub end_offset_char: ::std::option::Option<i32>,
 }
 impl CharacterOffsets {
     /// <p>The beginning of the issue.</p>
-    pub fn begin_offset_char(&self) -> i32 {
+    pub fn begin_offset_char(&self) -> ::std::option::Option<i32> {
         self.begin_offset_char
     }
     /// <p>The end of the issue.</p>
-    pub fn end_offset_char(&self) -> i32 {
+    pub fn end_offset_char(&self) -> ::std::option::Option<i32> {
         self.end_offset_char
     }
 }
@@ -65,8 +65,8 @@ impl CharacterOffsetsBuilder {
     /// Consumes the builder and constructs a [`CharacterOffsets`](crate::types::CharacterOffsets).
     pub fn build(self) -> crate::types::CharacterOffsets {
         crate::types::CharacterOffsets {
-            begin_offset_char: self.begin_offset_char.unwrap_or_default(),
-            end_offset_char: self.end_offset_char.unwrap_or_default(),
+            begin_offset_char: self.begin_offset_char,
+            end_offset_char: self.end_offset_char,
         }
     }
 }

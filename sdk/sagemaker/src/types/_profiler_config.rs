@@ -11,7 +11,7 @@ pub struct ProfilerConfig {
     /// <p>Configuration information for capturing framework metrics. Available key strings for different profiling options are <code>DetailedProfilingConfig</code>, <code>PythonProfilingConfig</code>, and <code>DataLoaderProfilingConfig</code>. The following codes are configuration structures for the <code>ProfilingParameters</code> parameter. To learn more about how to configure the <code>ProfilingParameters</code> parameter, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/debugger-createtrainingjob-api.html">Use the SageMaker and Debugger Configuration API Operations to Create, Update, and Debug Your Training Job</a>. </p>
     pub profiling_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Configuration to turn off Amazon SageMaker Debugger's system monitoring and profiling functionality. To turn it off, set to <code>True</code>.</p>
-    pub disable_profiler: bool,
+    pub disable_profiler: ::std::option::Option<bool>,
 }
 impl ProfilerConfig {
     /// <p>Path to Amazon S3 storage location for system and framework metrics.</p>
@@ -27,7 +27,7 @@ impl ProfilerConfig {
         self.profiling_parameters.as_ref()
     }
     /// <p>Configuration to turn off Amazon SageMaker Debugger's system monitoring and profiling functionality. To turn it off, set to <code>True</code>.</p>
-    pub fn disable_profiler(&self) -> bool {
+    pub fn disable_profiler(&self) -> ::std::option::Option<bool> {
         self.disable_profiler
     }
 }
@@ -123,7 +123,7 @@ impl ProfilerConfigBuilder {
             s3_output_path: self.s3_output_path,
             profiling_interval_in_milliseconds: self.profiling_interval_in_milliseconds,
             profiling_parameters: self.profiling_parameters,
-            disable_profiler: self.disable_profiler.unwrap_or_default(),
+            disable_profiler: self.disable_profiler,
         }
     }
 }

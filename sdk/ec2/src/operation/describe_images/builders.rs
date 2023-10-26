@@ -182,6 +182,7 @@ impl DescribeImagesFluentBuilder {
     /// <li> <p> <code>ramdisk-id</code> - The RAM disk ID.</p> </li>
     /// <li> <p> <code>root-device-name</code> - The device name of the root device volume (for example, <code>/dev/sda1</code>).</p> </li>
     /// <li> <p> <code>root-device-type</code> - The type of the root device volume (<code>ebs</code> | <code>instance-store</code>).</p> </li>
+    /// <li> <p> <code>source-instance-id</code> - The ID of the instance that the AMI was created from if the AMI was created using CreateImage. This filter is applicable only if the AMI was created using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">CreateImage</a>.</p> </li>
     /// <li> <p> <code>state</code> - The state of the image (<code>available</code> | <code>pending</code> | <code>failed</code>).</p> </li>
     /// <li> <p> <code>state-reason-code</code> - The reason code for the state change.</p> </li>
     /// <li> <p> <code>state-reason-message</code> - The message for the state change.</p> </li>
@@ -227,6 +228,7 @@ impl DescribeImagesFluentBuilder {
     /// <li> <p> <code>ramdisk-id</code> - The RAM disk ID.</p> </li>
     /// <li> <p> <code>root-device-name</code> - The device name of the root device volume (for example, <code>/dev/sda1</code>).</p> </li>
     /// <li> <p> <code>root-device-type</code> - The type of the root device volume (<code>ebs</code> | <code>instance-store</code>).</p> </li>
+    /// <li> <p> <code>source-instance-id</code> - The ID of the instance that the AMI was created from if the AMI was created using CreateImage. This filter is applicable only if the AMI was created using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">CreateImage</a>.</p> </li>
     /// <li> <p> <code>state</code> - The state of the image (<code>available</code> | <code>pending</code> | <code>failed</code>).</p> </li>
     /// <li> <p> <code>state-reason-code</code> - The reason code for the state change.</p> </li>
     /// <li> <p> <code>state-reason-message</code> - The message for the state change.</p> </li>
@@ -272,6 +274,7 @@ impl DescribeImagesFluentBuilder {
     /// <li> <p> <code>ramdisk-id</code> - The RAM disk ID.</p> </li>
     /// <li> <p> <code>root-device-name</code> - The device name of the root device volume (for example, <code>/dev/sda1</code>).</p> </li>
     /// <li> <p> <code>root-device-type</code> - The type of the root device volume (<code>ebs</code> | <code>instance-store</code>).</p> </li>
+    /// <li> <p> <code>source-instance-id</code> - The ID of the instance that the AMI was created from if the AMI was created using CreateImage. This filter is applicable only if the AMI was created using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">CreateImage</a>.</p> </li>
     /// <li> <p> <code>state</code> - The state of the image (<code>available</code> | <code>pending</code> | <code>failed</code>).</p> </li>
     /// <li> <p> <code>state-reason-code</code> - The reason code for the state change.</p> </li>
     /// <li> <p> <code>state-reason-message</code> - The message for the state change.</p> </li>
@@ -350,6 +353,23 @@ impl DescribeImagesFluentBuilder {
     /// </note>
     pub fn get_include_deprecated(&self) -> &::std::option::Option<bool> {
         self.inner.get_include_deprecated()
+    }
+    /// <p>Specifies whether to include disabled AMIs.</p>
+    /// <p>Default: No disabled AMIs are included in the response.</p>
+    pub fn include_disabled(mut self, input: bool) -> Self {
+        self.inner = self.inner.include_disabled(input);
+        self
+    }
+    /// <p>Specifies whether to include disabled AMIs.</p>
+    /// <p>Default: No disabled AMIs are included in the response.</p>
+    pub fn set_include_disabled(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_include_disabled(input);
+        self
+    }
+    /// <p>Specifies whether to include disabled AMIs.</p>
+    /// <p>Default: No disabled AMIs are included in the response.</p>
+    pub fn get_include_disabled(&self) -> &::std::option::Option<bool> {
+        self.inner.get_include_disabled()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {

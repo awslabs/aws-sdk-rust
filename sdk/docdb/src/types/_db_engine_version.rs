@@ -19,7 +19,7 @@ pub struct DbEngineVersion {
     /// <p>The types of logs that the database engine has available for export to Amazon CloudWatch Logs.</p>
     pub exportable_log_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A value that indicates whether the engine version supports exporting the log types specified by <code>ExportableLogTypes</code> to CloudWatch Logs.</p>
-    pub supports_log_exports_to_cloudwatch_logs: bool,
+    pub supports_log_exports_to_cloudwatch_logs: ::std::option::Option<bool>,
 }
 impl DbEngineVersion {
     /// <p>The name of the database engine.</p>
@@ -51,7 +51,7 @@ impl DbEngineVersion {
         self.exportable_log_types.as_deref()
     }
     /// <p>A value that indicates whether the engine version supports exporting the log types specified by <code>ExportableLogTypes</code> to CloudWatch Logs.</p>
-    pub fn supports_log_exports_to_cloudwatch_logs(&self) -> bool {
+    pub fn supports_log_exports_to_cloudwatch_logs(&self) -> ::std::option::Option<bool> {
         self.supports_log_exports_to_cloudwatch_logs
     }
 }
@@ -210,7 +210,7 @@ impl DbEngineVersionBuilder {
             db_engine_version_description: self.db_engine_version_description,
             valid_upgrade_target: self.valid_upgrade_target,
             exportable_log_types: self.exportable_log_types,
-            supports_log_exports_to_cloudwatch_logs: self.supports_log_exports_to_cloudwatch_logs.unwrap_or_default(),
+            supports_log_exports_to_cloudwatch_logs: self.supports_log_exports_to_cloudwatch_logs,
         }
     }
 }

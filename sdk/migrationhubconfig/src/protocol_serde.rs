@@ -25,6 +25,8 @@ pub fn parse_http_error_metadata(
 
 pub(crate) mod shape_create_home_region_control;
 
+pub(crate) mod shape_delete_home_region_control;
+
 pub(crate) mod shape_describe_home_region_controls;
 
 pub(crate) mod shape_get_home_region;
@@ -40,6 +42,8 @@ pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
 pub(crate) mod shape_access_denied_exception;
 
 pub(crate) mod shape_create_home_region_control_input;
+
+pub(crate) mod shape_delete_home_region_control_input;
 
 pub(crate) mod shape_describe_home_region_controls_input;
 

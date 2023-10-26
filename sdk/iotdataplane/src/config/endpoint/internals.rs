@@ -61,7 +61,7 @@ pub(super) fn resolve_endpoint(
                 }
             }
             if (*use_fips) == (true) {
-                if (true) == (partition_result.supports_fips()) {
+                if (partition_result.supports_fips()) == (true) {
                     if (region) == ("ca-central-1") {
                         return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
                             .url("https://data.iot-fips.ca-central-1.amazonaws.com".to_string())

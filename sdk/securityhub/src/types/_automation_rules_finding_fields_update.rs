@@ -11,9 +11,9 @@ pub struct AutomationRulesFindingFieldsUpdate {
     /// <p> The rule action updates the <code>VerificationState</code> field of a finding. </p>
     pub verification_state: ::std::option::Option<crate::types::VerificationState>,
     /// <p> The rule action updates the <code>Confidence</code> field of a finding. </p>
-    pub confidence: i32,
+    pub confidence: ::std::option::Option<i32>,
     /// <p> The rule action updates the <code>Criticality</code> field of a finding. </p>
-    pub criticality: i32,
+    pub criticality: ::std::option::Option<i32>,
     /// <p> The rule action updates the <code>Types</code> field of a finding. </p>
     pub types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p> The rule action updates the <code>UserDefinedFields</code> field of a finding. </p>
@@ -37,11 +37,11 @@ impl AutomationRulesFindingFieldsUpdate {
         self.verification_state.as_ref()
     }
     /// <p> The rule action updates the <code>Confidence</code> field of a finding. </p>
-    pub fn confidence(&self) -> i32 {
+    pub fn confidence(&self) -> ::std::option::Option<i32> {
         self.confidence
     }
     /// <p> The rule action updates the <code>Criticality</code> field of a finding. </p>
-    pub fn criticality(&self) -> i32 {
+    pub fn criticality(&self) -> ::std::option::Option<i32> {
         self.criticality
     }
     /// <p> The rule action updates the <code>Types</code> field of a finding. </p>
@@ -240,8 +240,8 @@ impl AutomationRulesFindingFieldsUpdateBuilder {
             note: self.note,
             severity: self.severity,
             verification_state: self.verification_state,
-            confidence: self.confidence.unwrap_or_default(),
-            criticality: self.criticality.unwrap_or_default(),
+            confidence: self.confidence,
+            criticality: self.criticality,
             types: self.types,
             user_defined_fields: self.user_defined_fields,
             workflow: self.workflow,

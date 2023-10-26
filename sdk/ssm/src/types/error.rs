@@ -27,6 +27,8 @@ pub use crate::types::error::_ops_item_limit_exceeded_exception::OpsItemLimitExc
 
 pub use crate::types::error::_ops_item_invalid_parameter_exception::OpsItemInvalidParameterException;
 
+pub use crate::types::error::_ops_item_conflict_exception::OpsItemConflictException;
+
 pub use crate::types::error::_ops_item_already_exists_exception::OpsItemAlreadyExistsException;
 
 pub use crate::types::error::_ops_item_access_denied_exception::OpsItemAccessDeniedException;
@@ -422,6 +424,8 @@ mod _max_document_size_exceeded;
 mod _ops_item_access_denied_exception;
 
 mod _ops_item_already_exists_exception;
+
+mod _ops_item_conflict_exception;
 
 mod _ops_item_invalid_parameter_exception;
 

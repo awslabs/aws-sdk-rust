@@ -30,20 +30,20 @@ pub fn ser_aws_dms_endpoint_details(
     if let Some(var_9) = &input.kms_key_id {
         object.key("KmsKeyId").string(var_9.as_str());
     }
-    if input.port != 0 {
+    if let Some(var_10) = &input.port {
         object.key("Port").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.port).into()),
+            ::aws_smithy_types::Number::NegInt((*var_10).into()),
         );
     }
-    if let Some(var_10) = &input.server_name {
-        object.key("ServerName").string(var_10.as_str());
+    if let Some(var_11) = &input.server_name {
+        object.key("ServerName").string(var_11.as_str());
     }
-    if let Some(var_11) = &input.ssl_mode {
-        object.key("SslMode").string(var_11.as_str());
+    if let Some(var_12) = &input.ssl_mode {
+        object.key("SslMode").string(var_12.as_str());
     }
-    if let Some(var_12) = &input.username {
-        object.key("Username").string(var_12.as_str());
+    if let Some(var_13) = &input.username {
+        object.key("Username").string(var_13.as_str());
     }
     Ok(())
 }

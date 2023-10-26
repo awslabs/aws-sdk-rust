@@ -25,9 +25,9 @@ pub struct DomainStatus {
     /// <p>The instance type that is being used to process search requests.</p>
     pub search_instance_type: ::std::option::Option<::std::string::String>,
     /// <p>The number of partitions across which the search index is spread.</p>
-    pub search_partition_count: i32,
+    pub search_partition_count: ::std::option::Option<i32>,
     /// <p>The number of search instances that are available to process search requests.</p>
-    pub search_instance_count: i32,
+    pub search_instance_count: ::std::option::Option<i32>,
     #[allow(missing_docs)] // documentation missing in model
     pub limits: ::std::option::Option<crate::types::Limits>,
 }
@@ -73,11 +73,11 @@ impl DomainStatus {
         self.search_instance_type.as_deref()
     }
     /// <p>The number of partitions across which the search index is spread.</p>
-    pub fn search_partition_count(&self) -> i32 {
+    pub fn search_partition_count(&self) -> ::std::option::Option<i32> {
         self.search_partition_count
     }
     /// <p>The number of search instances that are available to process search requests.</p>
-    pub fn search_instance_count(&self) -> i32 {
+    pub fn search_instance_count(&self) -> ::std::option::Option<i32> {
         self.search_instance_count
     }
     #[allow(missing_docs)] // documentation missing in model
@@ -306,8 +306,8 @@ impl DomainStatusBuilder {
             requires_index_documents: self.requires_index_documents,
             processing: self.processing,
             search_instance_type: self.search_instance_type,
-            search_partition_count: self.search_partition_count.unwrap_or_default(),
-            search_instance_count: self.search_instance_count.unwrap_or_default(),
+            search_partition_count: self.search_partition_count,
+            search_instance_count: self.search_instance_count,
             limits: self.limits,
         }
     }

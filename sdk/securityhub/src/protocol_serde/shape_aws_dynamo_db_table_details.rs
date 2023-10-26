@@ -45,98 +45,98 @@ pub fn ser_aws_dynamo_db_table_details(
     if let Some(var_12) = &input.global_table_version {
         object.key("GlobalTableVersion").string(var_12.as_str());
     }
-    if input.item_count != 0 {
+    if let Some(var_13) = &input.item_count {
         object.key("ItemCount").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.item_count).into()),
+            ::aws_smithy_types::Number::NegInt((*var_13).into()),
         );
     }
-    if let Some(var_13) = &input.key_schema {
-        let mut array_14 = object.key("KeySchema").start_array();
-        for item_15 in var_13 {
+    if let Some(var_14) = &input.key_schema {
+        let mut array_15 = object.key("KeySchema").start_array();
+        for item_16 in var_14 {
             {
                 #[allow(unused_mut)]
-                let mut object_16 = array_14.value().start_object();
-                crate::protocol_serde::shape_aws_dynamo_db_table_key_schema::ser_aws_dynamo_db_table_key_schema(&mut object_16, item_15)?;
-                object_16.finish();
+                let mut object_17 = array_15.value().start_object();
+                crate::protocol_serde::shape_aws_dynamo_db_table_key_schema::ser_aws_dynamo_db_table_key_schema(&mut object_17, item_16)?;
+                object_17.finish();
             }
         }
-        array_14.finish();
+        array_15.finish();
     }
-    if let Some(var_17) = &input.latest_stream_arn {
-        object.key("LatestStreamArn").string(var_17.as_str());
+    if let Some(var_18) = &input.latest_stream_arn {
+        object.key("LatestStreamArn").string(var_18.as_str());
     }
-    if let Some(var_18) = &input.latest_stream_label {
-        object.key("LatestStreamLabel").string(var_18.as_str());
+    if let Some(var_19) = &input.latest_stream_label {
+        object.key("LatestStreamLabel").string(var_19.as_str());
     }
-    if let Some(var_19) = &input.local_secondary_indexes {
-        let mut array_20 = object.key("LocalSecondaryIndexes").start_array();
-        for item_21 in var_19 {
+    if let Some(var_20) = &input.local_secondary_indexes {
+        let mut array_21 = object.key("LocalSecondaryIndexes").start_array();
+        for item_22 in var_20 {
             {
                 #[allow(unused_mut)]
-                let mut object_22 = array_20.value().start_object();
+                let mut object_23 = array_21.value().start_object();
                 crate::protocol_serde::shape_aws_dynamo_db_table_local_secondary_index::ser_aws_dynamo_db_table_local_secondary_index(
-                    &mut object_22,
-                    item_21,
+                    &mut object_23,
+                    item_22,
                 )?;
-                object_22.finish();
+                object_23.finish();
             }
         }
-        array_20.finish();
+        array_21.finish();
     }
-    if let Some(var_23) = &input.provisioned_throughput {
+    if let Some(var_24) = &input.provisioned_throughput {
         #[allow(unused_mut)]
-        let mut object_24 = object.key("ProvisionedThroughput").start_object();
+        let mut object_25 = object.key("ProvisionedThroughput").start_object();
         crate::protocol_serde::shape_aws_dynamo_db_table_provisioned_throughput::ser_aws_dynamo_db_table_provisioned_throughput(
-            &mut object_24,
-            var_23,
+            &mut object_25,
+            var_24,
         )?;
-        object_24.finish();
+        object_25.finish();
     }
-    if let Some(var_25) = &input.replicas {
-        let mut array_26 = object.key("Replicas").start_array();
-        for item_27 in var_25 {
+    if let Some(var_26) = &input.replicas {
+        let mut array_27 = object.key("Replicas").start_array();
+        for item_28 in var_26 {
             {
                 #[allow(unused_mut)]
-                let mut object_28 = array_26.value().start_object();
-                crate::protocol_serde::shape_aws_dynamo_db_table_replica::ser_aws_dynamo_db_table_replica(&mut object_28, item_27)?;
-                object_28.finish();
+                let mut object_29 = array_27.value().start_object();
+                crate::protocol_serde::shape_aws_dynamo_db_table_replica::ser_aws_dynamo_db_table_replica(&mut object_29, item_28)?;
+                object_29.finish();
             }
         }
-        array_26.finish();
+        array_27.finish();
     }
-    if let Some(var_29) = &input.restore_summary {
+    if let Some(var_30) = &input.restore_summary {
         #[allow(unused_mut)]
-        let mut object_30 = object.key("RestoreSummary").start_object();
-        crate::protocol_serde::shape_aws_dynamo_db_table_restore_summary::ser_aws_dynamo_db_table_restore_summary(&mut object_30, var_29)?;
-        object_30.finish();
+        let mut object_31 = object.key("RestoreSummary").start_object();
+        crate::protocol_serde::shape_aws_dynamo_db_table_restore_summary::ser_aws_dynamo_db_table_restore_summary(&mut object_31, var_30)?;
+        object_31.finish();
     }
-    if let Some(var_31) = &input.sse_description {
+    if let Some(var_32) = &input.sse_description {
         #[allow(unused_mut)]
-        let mut object_32 = object.key("SseDescription").start_object();
-        crate::protocol_serde::shape_aws_dynamo_db_table_sse_description::ser_aws_dynamo_db_table_sse_description(&mut object_32, var_31)?;
-        object_32.finish();
+        let mut object_33 = object.key("SseDescription").start_object();
+        crate::protocol_serde::shape_aws_dynamo_db_table_sse_description::ser_aws_dynamo_db_table_sse_description(&mut object_33, var_32)?;
+        object_33.finish();
     }
-    if let Some(var_33) = &input.stream_specification {
+    if let Some(var_34) = &input.stream_specification {
         #[allow(unused_mut)]
-        let mut object_34 = object.key("StreamSpecification").start_object();
-        crate::protocol_serde::shape_aws_dynamo_db_table_stream_specification::ser_aws_dynamo_db_table_stream_specification(&mut object_34, var_33)?;
-        object_34.finish();
+        let mut object_35 = object.key("StreamSpecification").start_object();
+        crate::protocol_serde::shape_aws_dynamo_db_table_stream_specification::ser_aws_dynamo_db_table_stream_specification(&mut object_35, var_34)?;
+        object_35.finish();
     }
-    if let Some(var_35) = &input.table_id {
-        object.key("TableId").string(var_35.as_str());
+    if let Some(var_36) = &input.table_id {
+        object.key("TableId").string(var_36.as_str());
     }
-    if let Some(var_36) = &input.table_name {
-        object.key("TableName").string(var_36.as_str());
+    if let Some(var_37) = &input.table_name {
+        object.key("TableName").string(var_37.as_str());
     }
-    if input.table_size_bytes != 0 {
+    if let Some(var_38) = &input.table_size_bytes {
         object.key("TableSizeBytes").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.table_size_bytes).into()),
+            ::aws_smithy_types::Number::NegInt((*var_38).into()),
         );
     }
-    if let Some(var_37) = &input.table_status {
-        object.key("TableStatus").string(var_37.as_str());
+    if let Some(var_39) = &input.table_status {
+        object.key("TableStatus").string(var_39.as_str());
     }
     Ok(())
 }

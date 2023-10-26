@@ -3,14 +3,14 @@ pub fn ser_aws_s3_bucket_bucket_lifecycle_configuration_rules_noncurrent_version
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsS3BucketBucketLifecycleConfigurationRulesNoncurrentVersionTransitionsDetails,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if input.days != 0 {
+    if let Some(var_1) = &input.days {
         object.key("Days").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.days).into()),
+            ::aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if let Some(var_1) = &input.storage_class {
-        object.key("StorageClass").string(var_1.as_str());
+    if let Some(var_2) = &input.storage_class {
+        object.key("StorageClass").string(var_2.as_str());
     }
     Ok(())
 }

@@ -5,35 +5,35 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LabelCounters {
     /// <p>The total number of objects labeled.</p>
-    pub total_labeled: i32,
+    pub total_labeled: ::std::option::Option<i32>,
     /// <p>The total number of objects labeled by a human worker.</p>
-    pub human_labeled: i32,
+    pub human_labeled: ::std::option::Option<i32>,
     /// <p>The total number of objects labeled by automated data labeling.</p>
-    pub machine_labeled: i32,
+    pub machine_labeled: ::std::option::Option<i32>,
     /// <p>The total number of objects that could not be labeled due to an error.</p>
-    pub failed_non_retryable_error: i32,
+    pub failed_non_retryable_error: ::std::option::Option<i32>,
     /// <p>The total number of objects not yet labeled.</p>
-    pub unlabeled: i32,
+    pub unlabeled: ::std::option::Option<i32>,
 }
 impl LabelCounters {
     /// <p>The total number of objects labeled.</p>
-    pub fn total_labeled(&self) -> i32 {
+    pub fn total_labeled(&self) -> ::std::option::Option<i32> {
         self.total_labeled
     }
     /// <p>The total number of objects labeled by a human worker.</p>
-    pub fn human_labeled(&self) -> i32 {
+    pub fn human_labeled(&self) -> ::std::option::Option<i32> {
         self.human_labeled
     }
     /// <p>The total number of objects labeled by automated data labeling.</p>
-    pub fn machine_labeled(&self) -> i32 {
+    pub fn machine_labeled(&self) -> ::std::option::Option<i32> {
         self.machine_labeled
     }
     /// <p>The total number of objects that could not be labeled due to an error.</p>
-    pub fn failed_non_retryable_error(&self) -> i32 {
+    pub fn failed_non_retryable_error(&self) -> ::std::option::Option<i32> {
         self.failed_non_retryable_error
     }
     /// <p>The total number of objects not yet labeled.</p>
-    pub fn unlabeled(&self) -> i32 {
+    pub fn unlabeled(&self) -> ::std::option::Option<i32> {
         self.unlabeled
     }
 }
@@ -128,11 +128,11 @@ impl LabelCountersBuilder {
     /// Consumes the builder and constructs a [`LabelCounters`](crate::types::LabelCounters).
     pub fn build(self) -> crate::types::LabelCounters {
         crate::types::LabelCounters {
-            total_labeled: self.total_labeled.unwrap_or_default(),
-            human_labeled: self.human_labeled.unwrap_or_default(),
-            machine_labeled: self.machine_labeled.unwrap_or_default(),
-            failed_non_retryable_error: self.failed_non_retryable_error.unwrap_or_default(),
-            unlabeled: self.unlabeled.unwrap_or_default(),
+            total_labeled: self.total_labeled,
+            human_labeled: self.human_labeled,
+            machine_labeled: self.machine_labeled,
+            failed_non_retryable_error: self.failed_non_retryable_error,
+            unlabeled: self.unlabeled,
         }
     }
 }

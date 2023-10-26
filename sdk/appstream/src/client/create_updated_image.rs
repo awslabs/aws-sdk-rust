@@ -11,7 +11,7 @@ impl super::Client {
     ///   - [`dry_run(bool)`](crate::operation::create_updated_image::builders::CreateUpdatedImageFluentBuilder::dry_run) / [`set_dry_run(Option<bool>)`](crate::operation::create_updated_image::builders::CreateUpdatedImageFluentBuilder::set_dry_run): <p>Indicates whether to display the status of image update availability before AppStream 2.0 initiates the process of creating a new updated image. If this value is set to <code>true</code>, AppStream 2.0 displays whether image updates are available. If this value is set to <code>false</code>, AppStream 2.0 initiates the process of creating a new updated image without displaying whether image updates are available.</p>
     /// - On success, responds with [`CreateUpdatedImageOutput`](crate::operation::create_updated_image::CreateUpdatedImageOutput) with field(s):
     ///   - [`image(Option<Image>)`](crate::operation::create_updated_image::CreateUpdatedImageOutput::image): <p>Describes an image.</p>
-    ///   - [`can_update_image(bool)`](crate::operation::create_updated_image::CreateUpdatedImageOutput::can_update_image): <p>Indicates whether a new image can be created.</p>
+    ///   - [`can_update_image(Option<bool>)`](crate::operation::create_updated_image::CreateUpdatedImageOutput::can_update_image): <p>Indicates whether a new image can be created.</p>
     /// - On failure, responds with [`SdkError<CreateUpdatedImageError>`](crate::operation::create_updated_image::CreateUpdatedImageError)
     pub fn create_updated_image(&self) -> crate::operation::create_updated_image::builders::CreateUpdatedImageFluentBuilder {
         crate::operation::create_updated_image::builders::CreateUpdatedImageFluentBuilder::new(self.handle.clone())

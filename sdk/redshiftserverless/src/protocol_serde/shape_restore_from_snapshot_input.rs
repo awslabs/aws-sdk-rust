@@ -18,5 +18,11 @@ pub fn ser_restore_from_snapshot_input(
     if let Some(var_5) = &input.owner_account {
         object.key("ownerAccount").string(var_5.as_str());
     }
+    if let Some(var_6) = &input.manage_admin_password {
+        object.key("manageAdminPassword").boolean(*var_6);
+    }
+    if let Some(var_7) = &input.admin_password_secret_kms_key_id {
+        object.key("adminPasswordSecretKmsKeyId").string(var_7.as_str());
+    }
     Ok(())
 }

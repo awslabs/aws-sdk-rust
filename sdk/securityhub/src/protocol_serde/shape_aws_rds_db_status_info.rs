@@ -6,14 +6,14 @@ pub fn ser_aws_rds_db_status_info(
     if let Some(var_1) = &input.status_type {
         object.key("StatusType").string(var_1.as_str());
     }
-    if input.normal {
-        object.key("Normal").boolean(input.normal);
+    if let Some(var_2) = &input.normal {
+        object.key("Normal").boolean(*var_2);
     }
-    if let Some(var_2) = &input.status {
-        object.key("Status").string(var_2.as_str());
+    if let Some(var_3) = &input.status {
+        object.key("Status").string(var_3.as_str());
     }
-    if let Some(var_3) = &input.message {
-        object.key("Message").string(var_3.as_str());
+    if let Some(var_4) = &input.message {
+        object.key("Message").string(var_4.as_str());
     }
     Ok(())
 }

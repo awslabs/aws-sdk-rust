@@ -11,14 +11,14 @@ pub struct HealthCheck {
     /// <p>The total length of the HTTP ping target must be 1024 16-bit Unicode characters or less.</p>
     pub target: ::std::option::Option<::std::string::String>,
     /// <p>The approximate interval, in seconds, between health checks of an individual instance.</p>
-    pub interval: i32,
+    pub interval: ::std::option::Option<i32>,
     /// <p>The amount of time, in seconds, during which no response means a failed health check.</p>
     /// <p>This value must be less than the <code>Interval</code> value.</p>
-    pub timeout: i32,
+    pub timeout: ::std::option::Option<i32>,
     /// <p>The number of consecutive health check failures required before moving the instance to the <code>Unhealthy</code> state.</p>
-    pub unhealthy_threshold: i32,
+    pub unhealthy_threshold: ::std::option::Option<i32>,
     /// <p>The number of consecutive health checks successes required before moving the instance to the <code>Healthy</code> state.</p>
-    pub healthy_threshold: i32,
+    pub healthy_threshold: ::std::option::Option<i32>,
 }
 impl HealthCheck {
     /// <p>The instance being checked. The protocol is either TCP, HTTP, HTTPS, or SSL. The range of valid ports is one (1) through 65535.</p>
@@ -30,20 +30,20 @@ impl HealthCheck {
         self.target.as_deref()
     }
     /// <p>The approximate interval, in seconds, between health checks of an individual instance.</p>
-    pub fn interval(&self) -> i32 {
+    pub fn interval(&self) -> ::std::option::Option<i32> {
         self.interval
     }
     /// <p>The amount of time, in seconds, during which no response means a failed health check.</p>
     /// <p>This value must be less than the <code>Interval</code> value.</p>
-    pub fn timeout(&self) -> i32 {
+    pub fn timeout(&self) -> ::std::option::Option<i32> {
         self.timeout
     }
     /// <p>The number of consecutive health check failures required before moving the instance to the <code>Unhealthy</code> state.</p>
-    pub fn unhealthy_threshold(&self) -> i32 {
+    pub fn unhealthy_threshold(&self) -> ::std::option::Option<i32> {
         self.unhealthy_threshold
     }
     /// <p>The number of consecutive health checks successes required before moving the instance to the <code>Healthy</code> state.</p>
-    pub fn healthy_threshold(&self) -> i32 {
+    pub fn healthy_threshold(&self) -> ::std::option::Option<i32> {
         self.healthy_threshold
     }
 }
@@ -154,10 +154,10 @@ impl HealthCheckBuilder {
     pub fn build(self) -> crate::types::HealthCheck {
         crate::types::HealthCheck {
             target: self.target,
-            interval: self.interval.unwrap_or_default(),
-            timeout: self.timeout.unwrap_or_default(),
-            unhealthy_threshold: self.unhealthy_threshold.unwrap_or_default(),
-            healthy_threshold: self.healthy_threshold.unwrap_or_default(),
+            interval: self.interval,
+            timeout: self.timeout,
+            unhealthy_threshold: self.unhealthy_threshold,
+            healthy_threshold: self.healthy_threshold,
         }
     }
 }

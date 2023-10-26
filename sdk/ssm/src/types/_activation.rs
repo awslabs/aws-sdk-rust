@@ -13,9 +13,9 @@ pub struct Activation {
     /// <p>The Identity and Access Management (IAM) role to assign to the managed node.</p>
     pub iam_role: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of managed nodes that can be registered using this activation.</p>
-    pub registration_limit: i32,
+    pub registration_limit: ::std::option::Option<i32>,
     /// <p>The number of managed nodes already registered with this activation.</p>
-    pub registrations_count: i32,
+    pub registrations_count: ::std::option::Option<i32>,
     /// <p>The date when this activation can no longer be used to register managed nodes.</p>
     pub expiration_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Whether or not the activation is expired.</p>
@@ -43,11 +43,11 @@ impl Activation {
         self.iam_role.as_deref()
     }
     /// <p>The maximum number of managed nodes that can be registered using this activation.</p>
-    pub fn registration_limit(&self) -> i32 {
+    pub fn registration_limit(&self) -> ::std::option::Option<i32> {
         self.registration_limit
     }
     /// <p>The number of managed nodes already registered with this activation.</p>
-    pub fn registrations_count(&self) -> i32 {
+    pub fn registrations_count(&self) -> ::std::option::Option<i32> {
         self.registrations_count
     }
     /// <p>The date when this activation can no longer be used to register managed nodes.</p>
@@ -243,8 +243,8 @@ impl ActivationBuilder {
             description: self.description,
             default_instance_name: self.default_instance_name,
             iam_role: self.iam_role,
-            registration_limit: self.registration_limit.unwrap_or_default(),
-            registrations_count: self.registrations_count.unwrap_or_default(),
+            registration_limit: self.registration_limit,
+            registrations_count: self.registrations_count,
             expiration_date: self.expiration_date,
             expired: self.expired.unwrap_or_default(),
             created_date: self.created_date,

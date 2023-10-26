@@ -7,9 +7,9 @@ pub struct ClassificationResult {
     /// <p>The type of content that the finding applies to.</p>
     pub mime_type: ::std::option::Option<::std::string::String>,
     /// <p>The total size in bytes of the affected data.</p>
-    pub size_classified: i64,
+    pub size_classified: ::std::option::Option<i64>,
     /// <p>Indicates whether there are additional occurrences of sensitive data that are not included in the finding. This occurs when the number of occurrences exceeds the maximum that can be included.</p>
-    pub additional_occurrences: bool,
+    pub additional_occurrences: ::std::option::Option<bool>,
     /// <p>The current status of the sensitive data detection.</p>
     pub status: ::std::option::Option<crate::types::ClassificationStatus>,
     /// <p>Provides details about sensitive data that was identified based on built-in configuration.</p>
@@ -23,11 +23,11 @@ impl ClassificationResult {
         self.mime_type.as_deref()
     }
     /// <p>The total size in bytes of the affected data.</p>
-    pub fn size_classified(&self) -> i64 {
+    pub fn size_classified(&self) -> ::std::option::Option<i64> {
         self.size_classified
     }
     /// <p>Indicates whether there are additional occurrences of sensitive data that are not included in the finding. This occurs when the number of occurrences exceeds the maximum that can be included.</p>
-    pub fn additional_occurrences(&self) -> bool {
+    pub fn additional_occurrences(&self) -> ::std::option::Option<bool> {
         self.additional_occurrences
     }
     /// <p>The current status of the sensitive data detection.</p>
@@ -156,8 +156,8 @@ impl ClassificationResultBuilder {
     pub fn build(self) -> crate::types::ClassificationResult {
         crate::types::ClassificationResult {
             mime_type: self.mime_type,
-            size_classified: self.size_classified.unwrap_or_default(),
-            additional_occurrences: self.additional_occurrences.unwrap_or_default(),
+            size_classified: self.size_classified,
+            additional_occurrences: self.additional_occurrences,
             status: self.status,
             sensitive_data: self.sensitive_data,
             custom_data_identifiers: self.custom_data_identifiers,

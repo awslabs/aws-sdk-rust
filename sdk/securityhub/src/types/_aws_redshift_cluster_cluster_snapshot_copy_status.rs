@@ -9,9 +9,9 @@ pub struct AwsRedshiftClusterClusterSnapshotCopyStatus {
     /// <p>The number of days that manual snapshots are retained in the destination Region after they are copied from a source Region.</p>
     /// <p>If the value is <code>-1</code>, then the manual snapshot is retained indefinitely.</p>
     /// <p>Valid values: Either <code>-1</code> or an integer between 1 and 3,653</p>
-    pub manual_snapshot_retention_period: i32,
+    pub manual_snapshot_retention_period: ::std::option::Option<i32>,
     /// <p>The number of days to retain automated snapshots in the destination Region after they are copied from a source Region.</p>
-    pub retention_period: i32,
+    pub retention_period: ::std::option::Option<i32>,
     /// <p>The name of the snapshot copy grant.</p>
     pub snapshot_copy_grant_name: ::std::option::Option<::std::string::String>,
 }
@@ -23,11 +23,11 @@ impl AwsRedshiftClusterClusterSnapshotCopyStatus {
     /// <p>The number of days that manual snapshots are retained in the destination Region after they are copied from a source Region.</p>
     /// <p>If the value is <code>-1</code>, then the manual snapshot is retained indefinitely.</p>
     /// <p>Valid values: Either <code>-1</code> or an integer between 1 and 3,653</p>
-    pub fn manual_snapshot_retention_period(&self) -> i32 {
+    pub fn manual_snapshot_retention_period(&self) -> ::std::option::Option<i32> {
         self.manual_snapshot_retention_period
     }
     /// <p>The number of days to retain automated snapshots in the destination Region after they are copied from a source Region.</p>
-    pub fn retention_period(&self) -> i32 {
+    pub fn retention_period(&self) -> ::std::option::Option<i32> {
         self.retention_period
     }
     /// <p>The name of the snapshot copy grant.</p>
@@ -118,8 +118,8 @@ impl AwsRedshiftClusterClusterSnapshotCopyStatusBuilder {
     pub fn build(self) -> crate::types::AwsRedshiftClusterClusterSnapshotCopyStatus {
         crate::types::AwsRedshiftClusterClusterSnapshotCopyStatus {
             destination_region: self.destination_region,
-            manual_snapshot_retention_period: self.manual_snapshot_retention_period.unwrap_or_default(),
-            retention_period: self.retention_period.unwrap_or_default(),
+            manual_snapshot_retention_period: self.manual_snapshot_retention_period,
+            retention_period: self.retention_period,
             snapshot_copy_grant_name: self.snapshot_copy_grant_name,
         }
     }

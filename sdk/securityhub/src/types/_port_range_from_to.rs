@@ -5,17 +5,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PortRangeFromTo {
     /// <p>The first port in the port range.</p>
-    pub from: i32,
+    pub from: ::std::option::Option<i32>,
     /// <p>The last port in the port range.</p>
-    pub to: i32,
+    pub to: ::std::option::Option<i32>,
 }
 impl PortRangeFromTo {
     /// <p>The first port in the port range.</p>
-    pub fn from(&self) -> i32 {
+    pub fn from(&self) -> ::std::option::Option<i32> {
         self.from
     }
     /// <p>The last port in the port range.</p>
-    pub fn to(&self) -> i32 {
+    pub fn to(&self) -> ::std::option::Option<i32> {
         self.to
     }
 }
@@ -65,8 +65,8 @@ impl PortRangeFromToBuilder {
     /// Consumes the builder and constructs a [`PortRangeFromTo`](crate::types::PortRangeFromTo).
     pub fn build(self) -> crate::types::PortRangeFromTo {
         crate::types::PortRangeFromTo {
-            from: self.from.unwrap_or_default(),
-            to: self.to.unwrap_or_default(),
+            from: self.from,
+            to: self.to,
         }
     }
 }

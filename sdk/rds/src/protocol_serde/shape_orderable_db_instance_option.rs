@@ -494,6 +494,21 @@ pub fn de_orderable_db_instance_option(
                 builder = builder.set_max_storage_throughput_per_iops(var_35);
             }
             ,
+            s if s.matches("SupportsDedicatedLogVolume") /* SupportsDedicatedLogVolume com.amazonaws.rds#OrderableDBInstanceOption$SupportsDedicatedLogVolume */ =>  {
+                let var_36 =
+                    Some(
+                         {
+                            <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_supports_dedicated_log_volume(var_36);
+            }
+            ,
             _ => {}
         }
     }

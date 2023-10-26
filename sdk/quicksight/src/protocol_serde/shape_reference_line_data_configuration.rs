@@ -18,6 +18,9 @@ pub fn ser_reference_line_data_configuration(
     if let Some(var_5) = &input.axis_binding {
         object.key("AxisBinding").string(var_5.as_str());
     }
+    if let Some(var_6) = &input.series_type {
+        object.key("SeriesType").string(var_6.as_str());
+    }
     Ok(())
 }
 
@@ -51,6 +54,13 @@ where
                                 builder = builder.set_axis_binding(
                                     ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                         .map(|s| s.to_unescaped().map(|u| crate::types::AxisBinding::from(u.as_ref())))
+                                        .transpose()?,
+                                );
+                            }
+                            "SeriesType" => {
+                                builder = builder.set_series_type(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| crate::types::ReferenceLineSeriesType::from(u.as_ref())))
                                         .transpose()?,
                                 );
                             }

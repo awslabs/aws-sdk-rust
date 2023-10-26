@@ -14,6 +14,7 @@
 /// match imagestate {
 ///     ImageState::Available => { /* ... */ },
 ///     ImageState::Deregistered => { /* ... */ },
+///     ImageState::Disabled => { /* ... */ },
 ///     ImageState::Error => { /* ... */ },
 ///     ImageState::Failed => { /* ... */ },
 ///     ImageState::Invalid => { /* ... */ },
@@ -51,6 +52,8 @@ pub enum ImageState {
     #[allow(missing_docs)] // documentation missing in model
     Deregistered,
     #[allow(missing_docs)] // documentation missing in model
+    Disabled,
+    #[allow(missing_docs)] // documentation missing in model
     Error,
     #[allow(missing_docs)] // documentation missing in model
     Failed,
@@ -68,6 +71,7 @@ impl ::std::convert::From<&str> for ImageState {
         match s {
             "available" => ImageState::Available,
             "deregistered" => ImageState::Deregistered,
+            "disabled" => ImageState::Disabled,
             "error" => ImageState::Error,
             "failed" => ImageState::Failed,
             "invalid" => ImageState::Invalid,
@@ -90,6 +94,7 @@ impl ImageState {
         match self {
             ImageState::Available => "available",
             ImageState::Deregistered => "deregistered",
+            ImageState::Disabled => "disabled",
             ImageState::Error => "error",
             ImageState::Failed => "failed",
             ImageState::Invalid => "invalid",
@@ -100,7 +105,16 @@ impl ImageState {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["available", "deregistered", "error", "failed", "invalid", "pending", "transient"]
+        &[
+            "available",
+            "deregistered",
+            "disabled",
+            "error",
+            "failed",
+            "invalid",
+            "pending",
+            "transient",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for ImageState {

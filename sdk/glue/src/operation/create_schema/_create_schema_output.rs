@@ -18,11 +18,11 @@ pub struct CreateSchemaOutput {
     /// <p>The schema compatibility mode.</p>
     pub compatibility: ::std::option::Option<crate::types::Compatibility>,
     /// <p>The version number of the checkpoint (the last time the compatibility mode was changed).</p>
-    pub schema_checkpoint: i64,
+    pub schema_checkpoint: ::std::option::Option<i64>,
     /// <p>The latest version of the schema associated with the returned schema definition.</p>
-    pub latest_schema_version: i64,
+    pub latest_schema_version: ::std::option::Option<i64>,
     /// <p>The next version of the schema associated with the returned schema definition.</p>
-    pub next_schema_version: i64,
+    pub next_schema_version: ::std::option::Option<i64>,
     /// <p>The status of the schema. </p>
     pub schema_status: ::std::option::Option<crate::types::SchemaStatus>,
     /// <p>The tags for the schema.</p>
@@ -63,15 +63,15 @@ impl CreateSchemaOutput {
         self.compatibility.as_ref()
     }
     /// <p>The version number of the checkpoint (the last time the compatibility mode was changed).</p>
-    pub fn schema_checkpoint(&self) -> i64 {
+    pub fn schema_checkpoint(&self) -> ::std::option::Option<i64> {
         self.schema_checkpoint
     }
     /// <p>The latest version of the schema associated with the returned schema definition.</p>
-    pub fn latest_schema_version(&self) -> i64 {
+    pub fn latest_schema_version(&self) -> ::std::option::Option<i64> {
         self.latest_schema_version
     }
     /// <p>The next version of the schema associated with the returned schema definition.</p>
-    pub fn next_schema_version(&self) -> i64 {
+    pub fn next_schema_version(&self) -> ::std::option::Option<i64> {
         self.next_schema_version
     }
     /// <p>The status of the schema. </p>
@@ -345,9 +345,9 @@ impl CreateSchemaOutputBuilder {
             description: self.description,
             data_format: self.data_format,
             compatibility: self.compatibility,
-            schema_checkpoint: self.schema_checkpoint.unwrap_or_default(),
-            latest_schema_version: self.latest_schema_version.unwrap_or_default(),
-            next_schema_version: self.next_schema_version.unwrap_or_default(),
+            schema_checkpoint: self.schema_checkpoint,
+            latest_schema_version: self.latest_schema_version,
+            next_schema_version: self.next_schema_version,
             schema_status: self.schema_status,
             tags: self.tags,
             schema_version_id: self.schema_version_id,

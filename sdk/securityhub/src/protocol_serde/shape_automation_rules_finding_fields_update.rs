@@ -18,54 +18,54 @@ pub fn ser_automation_rules_finding_fields_update(
     if let Some(var_5) = &input.verification_state {
         object.key("VerificationState").string(var_5.as_str());
     }
-    if input.confidence != 0 {
+    if let Some(var_6) = &input.confidence {
         object.key("Confidence").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.confidence).into()),
+            ::aws_smithy_types::Number::NegInt((*var_6).into()),
         );
     }
-    if input.criticality != 0 {
+    if let Some(var_7) = &input.criticality {
         object.key("Criticality").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.criticality).into()),
+            ::aws_smithy_types::Number::NegInt((*var_7).into()),
         );
     }
-    if let Some(var_6) = &input.types {
-        let mut array_7 = object.key("Types").start_array();
-        for item_8 in var_6 {
+    if let Some(var_8) = &input.types {
+        let mut array_9 = object.key("Types").start_array();
+        for item_10 in var_8 {
             {
-                array_7.value().string(item_8.as_str());
+                array_9.value().string(item_10.as_str());
             }
         }
-        array_7.finish();
+        array_9.finish();
     }
-    if let Some(var_9) = &input.user_defined_fields {
+    if let Some(var_11) = &input.user_defined_fields {
         #[allow(unused_mut)]
-        let mut object_10 = object.key("UserDefinedFields").start_object();
-        for (key_11, value_12) in var_9 {
+        let mut object_12 = object.key("UserDefinedFields").start_object();
+        for (key_13, value_14) in var_11 {
             {
-                object_10.key(key_11.as_str()).string(value_12.as_str());
+                object_12.key(key_13.as_str()).string(value_14.as_str());
             }
         }
-        object_10.finish();
+        object_12.finish();
     }
-    if let Some(var_13) = &input.workflow {
+    if let Some(var_15) = &input.workflow {
         #[allow(unused_mut)]
-        let mut object_14 = object.key("Workflow").start_object();
-        crate::protocol_serde::shape_workflow_update::ser_workflow_update(&mut object_14, var_13)?;
-        object_14.finish();
+        let mut object_16 = object.key("Workflow").start_object();
+        crate::protocol_serde::shape_workflow_update::ser_workflow_update(&mut object_16, var_15)?;
+        object_16.finish();
     }
-    if let Some(var_15) = &input.related_findings {
-        let mut array_16 = object.key("RelatedFindings").start_array();
-        for item_17 in var_15 {
+    if let Some(var_17) = &input.related_findings {
+        let mut array_18 = object.key("RelatedFindings").start_array();
+        for item_19 in var_17 {
             {
                 #[allow(unused_mut)]
-                let mut object_18 = array_16.value().start_object();
-                crate::protocol_serde::shape_related_finding::ser_related_finding(&mut object_18, item_17)?;
-                object_18.finish();
+                let mut object_20 = array_18.value().start_object();
+                crate::protocol_serde::shape_related_finding::ser_related_finding(&mut object_20, item_19)?;
+                object_20.finish();
             }
         }
-        array_16.finish();
+        array_18.finish();
     }
     Ok(())
 }

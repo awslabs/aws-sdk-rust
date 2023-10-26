@@ -3,26 +3,26 @@ pub fn ser_aws_elb_load_balancer_listener(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsElbLoadBalancerListener,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if input.instance_port != 0 {
+    if let Some(var_1) = &input.instance_port {
         object.key("InstancePort").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.instance_port).into()),
+            ::aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if let Some(var_1) = &input.instance_protocol {
-        object.key("InstanceProtocol").string(var_1.as_str());
+    if let Some(var_2) = &input.instance_protocol {
+        object.key("InstanceProtocol").string(var_2.as_str());
     }
-    if input.load_balancer_port != 0 {
+    if let Some(var_3) = &input.load_balancer_port {
         object.key("LoadBalancerPort").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.load_balancer_port).into()),
+            ::aws_smithy_types::Number::NegInt((*var_3).into()),
         );
     }
-    if let Some(var_2) = &input.protocol {
-        object.key("Protocol").string(var_2.as_str());
+    if let Some(var_4) = &input.protocol {
+        object.key("Protocol").string(var_4.as_str());
     }
-    if let Some(var_3) = &input.ssl_certificate_id {
-        object.key("SslCertificateId").string(var_3.as_str());
+    if let Some(var_5) = &input.ssl_certificate_id {
+        object.key("SslCertificateId").string(var_5.as_str());
     }
     Ok(())
 }

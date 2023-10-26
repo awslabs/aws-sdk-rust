@@ -12,6 +12,8 @@ pub struct SchemaMappingSummary {
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp of when the <code>SchemaMapping</code> was last updated.</p>
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>Specifies whether the schema mapping has been applied to a workflow.</p>
+    pub has_workflows: ::std::option::Option<bool>,
 }
 impl SchemaMappingSummary {
     /// <p>The name of the schema.</p>
@@ -30,6 +32,10 @@ impl SchemaMappingSummary {
     pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
+    /// <p>Specifies whether the schema mapping has been applied to a workflow.</p>
+    pub fn has_workflows(&self) -> ::std::option::Option<bool> {
+        self.has_workflows
+    }
 }
 impl SchemaMappingSummary {
     /// Creates a new builder-style object to manufacture [`SchemaMappingSummary`](crate::types::SchemaMappingSummary).
@@ -46,6 +52,7 @@ pub struct SchemaMappingSummaryBuilder {
     pub(crate) schema_arn: ::std::option::Option<::std::string::String>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) has_workflows: ::std::option::Option<bool>,
 }
 impl SchemaMappingSummaryBuilder {
     /// <p>The name of the schema.</p>
@@ -104,6 +111,20 @@ impl SchemaMappingSummaryBuilder {
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.updated_at
     }
+    /// <p>Specifies whether the schema mapping has been applied to a workflow.</p>
+    pub fn has_workflows(mut self, input: bool) -> Self {
+        self.has_workflows = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether the schema mapping has been applied to a workflow.</p>
+    pub fn set_has_workflows(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.has_workflows = input;
+        self
+    }
+    /// <p>Specifies whether the schema mapping has been applied to a workflow.</p>
+    pub fn get_has_workflows(&self) -> &::std::option::Option<bool> {
+        &self.has_workflows
+    }
     /// Consumes the builder and constructs a [`SchemaMappingSummary`](crate::types::SchemaMappingSummary).
     pub fn build(self) -> crate::types::SchemaMappingSummary {
         crate::types::SchemaMappingSummary {
@@ -111,6 +132,7 @@ impl SchemaMappingSummaryBuilder {
             schema_arn: self.schema_arn,
             created_at: self.created_at,
             updated_at: self.updated_at,
+            has_workflows: self.has_workflows,
         }
     }
 }

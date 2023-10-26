@@ -11,11 +11,11 @@ pub struct ProcessDetails {
     /// <p>The <code>SHA256</code> hash of the process executable.</p>
     pub executable_sha256: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the child process.</p>
-    pub namespace_pid: i32,
+    pub namespace_pid: ::std::option::Option<i32>,
     /// <p>The present working directory of the process.</p>
     pub pwd: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the process.</p>
-    pub pid: i32,
+    pub pid: ::std::option::Option<i32>,
     /// <p>The time when the process started. This is in UTC format.</p>
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The unique ID assigned to the process by GuardDuty.</p>
@@ -25,9 +25,9 @@ pub struct ProcessDetails {
     /// <p>The user that executed the process.</p>
     pub user: ::std::option::Option<::std::string::String>,
     /// <p>The unique ID of the user that executed the process.</p>
-    pub user_id: i32,
+    pub user_id: ::std::option::Option<i32>,
     /// <p>The effective user ID of the user that executed the process.</p>
-    pub euid: i32,
+    pub euid: ::std::option::Option<i32>,
     /// <p>Information about the process's lineage.</p>
     pub lineage: ::std::option::Option<::std::vec::Vec<crate::types::LineageObject>>,
 }
@@ -45,7 +45,7 @@ impl ProcessDetails {
         self.executable_sha256.as_deref()
     }
     /// <p>The ID of the child process.</p>
-    pub fn namespace_pid(&self) -> i32 {
+    pub fn namespace_pid(&self) -> ::std::option::Option<i32> {
         self.namespace_pid
     }
     /// <p>The present working directory of the process.</p>
@@ -53,7 +53,7 @@ impl ProcessDetails {
         self.pwd.as_deref()
     }
     /// <p>The ID of the process.</p>
-    pub fn pid(&self) -> i32 {
+    pub fn pid(&self) -> ::std::option::Option<i32> {
         self.pid
     }
     /// <p>The time when the process started. This is in UTC format.</p>
@@ -73,11 +73,11 @@ impl ProcessDetails {
         self.user.as_deref()
     }
     /// <p>The unique ID of the user that executed the process.</p>
-    pub fn user_id(&self) -> i32 {
+    pub fn user_id(&self) -> ::std::option::Option<i32> {
         self.user_id
     }
     /// <p>The effective user ID of the user that executed the process.</p>
-    pub fn euid(&self) -> i32 {
+    pub fn euid(&self) -> ::std::option::Option<i32> {
         self.euid
     }
     /// <p>Information about the process's lineage.</p>
@@ -305,15 +305,15 @@ impl ProcessDetailsBuilder {
             name: self.name,
             executable_path: self.executable_path,
             executable_sha256: self.executable_sha256,
-            namespace_pid: self.namespace_pid.unwrap_or_default(),
+            namespace_pid: self.namespace_pid,
             pwd: self.pwd,
-            pid: self.pid.unwrap_or_default(),
+            pid: self.pid,
             start_time: self.start_time,
             uuid: self.uuid,
             parent_uuid: self.parent_uuid,
             user: self.user,
-            user_id: self.user_id.unwrap_or_default(),
-            euid: self.euid.unwrap_or_default(),
+            user_id: self.user_id,
+            euid: self.euid,
             lineage: self.lineage,
         }
     }

@@ -18,7 +18,7 @@ pub struct RelativeAggregationDuration {
     /// <li> <p> <code>Days</code> - 3</p> </li>
     /// <li> <p> <code>Weeks</code> - 1/2</p> </li>
     /// </ul>
-    pub time_value: i32,
+    pub time_value: ::std::option::Option<i32>,
 }
 impl RelativeAggregationDuration {
     /// <p>The type of time period that the <code>timeValue</code> field represents. </p>
@@ -31,7 +31,7 @@ impl RelativeAggregationDuration {
     /// <li> <p> <code>Days</code> - 3</p> </li>
     /// <li> <p> <code>Weeks</code> - 1/2</p> </li>
     /// </ul>
-    pub fn time_value(&self) -> i32 {
+    pub fn time_value(&self) -> ::std::option::Option<i32> {
         self.time_value
     }
 }
@@ -97,7 +97,7 @@ impl RelativeAggregationDurationBuilder {
     pub fn build(self) -> crate::types::RelativeAggregationDuration {
         crate::types::RelativeAggregationDuration {
             time_dimension: self.time_dimension,
-            time_value: self.time_value.unwrap_or_default(),
+            time_value: self.time_value,
         }
     }
 }

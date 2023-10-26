@@ -28,13 +28,13 @@ pub struct DbClusterAutomatedBackup {
     /// </ul>
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts is enabled.</p>
-    pub iam_database_authentication_enabled: bool,
+    pub iam_database_authentication_enabled: ::std::option::Option<bool>,
     /// <p>The time when the DB cluster was created, in Universal Coordinated Time (UTC).</p>
     pub cluster_create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Indicates whether the source DB cluster is encrypted.</p>
-    pub storage_encrypted: bool,
+    pub storage_encrypted: ::std::option::Option<bool>,
     /// <p>For all database engines except Amazon Aurora, <code>AllocatedStorage</code> specifies the allocated storage size in gibibytes (GiB). For Aurora, <code>AllocatedStorage</code> always returns 1, because Aurora DB cluster storage size isn't fixed, but instead automatically adjusts as needed.</p>
-    pub allocated_storage: i32,
+    pub allocated_storage: ::std::option::Option<i32>,
     /// <p>The version of the database engine for the automated backup.</p>
     pub engine_version: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the source DB cluster.</p>
@@ -48,7 +48,7 @@ pub struct DbClusterAutomatedBackup {
     /// <p>The port number that the automated backup used for connections.</p>
     /// <p>Default: Inherits from the source DB cluster</p>
     /// <p>Valid Values: <code>1150-65535</code> </p>
-    pub port: i32,
+    pub port: ::std::option::Option<i32>,
     /// <p>The Amazon Web Services KMS key ID for an automated backup.</p>
     /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
@@ -106,7 +106,7 @@ impl DbClusterAutomatedBackup {
         self.status.as_deref()
     }
     /// <p>Indicates whether mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts is enabled.</p>
-    pub fn iam_database_authentication_enabled(&self) -> bool {
+    pub fn iam_database_authentication_enabled(&self) -> ::std::option::Option<bool> {
         self.iam_database_authentication_enabled
     }
     /// <p>The time when the DB cluster was created, in Universal Coordinated Time (UTC).</p>
@@ -114,11 +114,11 @@ impl DbClusterAutomatedBackup {
         self.cluster_create_time.as_ref()
     }
     /// <p>Indicates whether the source DB cluster is encrypted.</p>
-    pub fn storage_encrypted(&self) -> bool {
+    pub fn storage_encrypted(&self) -> ::std::option::Option<bool> {
         self.storage_encrypted
     }
     /// <p>For all database engines except Amazon Aurora, <code>AllocatedStorage</code> specifies the allocated storage size in gibibytes (GiB). For Aurora, <code>AllocatedStorage</code> always returns 1, because Aurora DB cluster storage size isn't fixed, but instead automatically adjusts as needed.</p>
-    pub fn allocated_storage(&self) -> i32 {
+    pub fn allocated_storage(&self) -> ::std::option::Option<i32> {
         self.allocated_storage
     }
     /// <p>The version of the database engine for the automated backup.</p>
@@ -144,7 +144,7 @@ impl DbClusterAutomatedBackup {
     /// <p>The port number that the automated backup used for connections.</p>
     /// <p>Default: Inherits from the source DB cluster</p>
     /// <p>Valid Values: <code>1150-65535</code> </p>
-    pub fn port(&self) -> i32 {
+    pub fn port(&self) -> ::std::option::Option<i32> {
         self.port
     }
     /// <p>The Amazon Web Services KMS key ID for an automated backup.</p>
@@ -583,16 +583,16 @@ impl DbClusterAutomatedBackupBuilder {
             region: self.region,
             license_model: self.license_model,
             status: self.status,
-            iam_database_authentication_enabled: self.iam_database_authentication_enabled.unwrap_or_default(),
+            iam_database_authentication_enabled: self.iam_database_authentication_enabled,
             cluster_create_time: self.cluster_create_time,
-            storage_encrypted: self.storage_encrypted.unwrap_or_default(),
-            allocated_storage: self.allocated_storage.unwrap_or_default(),
+            storage_encrypted: self.storage_encrypted,
+            allocated_storage: self.allocated_storage,
             engine_version: self.engine_version,
             db_cluster_arn: self.db_cluster_arn,
             backup_retention_period: self.backup_retention_period,
             engine_mode: self.engine_mode,
             availability_zones: self.availability_zones,
-            port: self.port.unwrap_or_default(),
+            port: self.port,
             kms_key_id: self.kms_key_id,
             storage_type: self.storage_type,
             iops: self.iops,

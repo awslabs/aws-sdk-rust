@@ -6,10 +6,10 @@ pub fn ser_resource_configuration(
     if let Some(var_1) = &input.compute_type {
         object.key("computeType").string(var_1.as_str());
     }
-    {
+    if let Some(var_2) = &input.volume_size_in_gb {
         object.key("volumeSizeInGB").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.volume_size_in_gb).into()),
+            ::aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
     Ok(())

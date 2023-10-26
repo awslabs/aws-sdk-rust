@@ -24,6 +24,8 @@ pub struct LaunchConfigurationTemplate {
     pub export_bucket_arn: ::std::option::Option<::std::string::String>,
     /// <p>Post-launch actions activated.</p>
     pub post_launch_enabled: ::std::option::Option<bool>,
+    /// <p>DRS will set the 'launch into instance ID' of any source server when performing a drill, recovery or failback to the previous region or availability zone, using the instance ID of the source instance.</p>
+    pub launch_into_source_instance: ::std::option::Option<bool>,
 }
 impl LaunchConfigurationTemplate {
     /// <p>ID of the Launch Configuration Template.</p>
@@ -66,6 +68,10 @@ impl LaunchConfigurationTemplate {
     pub fn post_launch_enabled(&self) -> ::std::option::Option<bool> {
         self.post_launch_enabled
     }
+    /// <p>DRS will set the 'launch into instance ID' of any source server when performing a drill, recovery or failback to the previous region or availability zone, using the instance ID of the source instance.</p>
+    pub fn launch_into_source_instance(&self) -> ::std::option::Option<bool> {
+        self.launch_into_source_instance
+    }
 }
 impl ::std::fmt::Debug for LaunchConfigurationTemplate {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -80,6 +86,7 @@ impl ::std::fmt::Debug for LaunchConfigurationTemplate {
         formatter.field("licensing", &self.licensing);
         formatter.field("export_bucket_arn", &self.export_bucket_arn);
         formatter.field("post_launch_enabled", &self.post_launch_enabled);
+        formatter.field("launch_into_source_instance", &self.launch_into_source_instance);
         formatter.finish()
     }
 }
@@ -104,6 +111,7 @@ pub struct LaunchConfigurationTemplateBuilder {
     pub(crate) licensing: ::std::option::Option<crate::types::Licensing>,
     pub(crate) export_bucket_arn: ::std::option::Option<::std::string::String>,
     pub(crate) post_launch_enabled: ::std::option::Option<bool>,
+    pub(crate) launch_into_source_instance: ::std::option::Option<bool>,
 }
 impl LaunchConfigurationTemplateBuilder {
     /// <p>ID of the Launch Configuration Template.</p>
@@ -255,6 +263,20 @@ impl LaunchConfigurationTemplateBuilder {
     pub fn get_post_launch_enabled(&self) -> &::std::option::Option<bool> {
         &self.post_launch_enabled
     }
+    /// <p>DRS will set the 'launch into instance ID' of any source server when performing a drill, recovery or failback to the previous region or availability zone, using the instance ID of the source instance.</p>
+    pub fn launch_into_source_instance(mut self, input: bool) -> Self {
+        self.launch_into_source_instance = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>DRS will set the 'launch into instance ID' of any source server when performing a drill, recovery or failback to the previous region or availability zone, using the instance ID of the source instance.</p>
+    pub fn set_launch_into_source_instance(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.launch_into_source_instance = input;
+        self
+    }
+    /// <p>DRS will set the 'launch into instance ID' of any source server when performing a drill, recovery or failback to the previous region or availability zone, using the instance ID of the source instance.</p>
+    pub fn get_launch_into_source_instance(&self) -> &::std::option::Option<bool> {
+        &self.launch_into_source_instance
+    }
     /// Consumes the builder and constructs a [`LaunchConfigurationTemplate`](crate::types::LaunchConfigurationTemplate).
     pub fn build(self) -> crate::types::LaunchConfigurationTemplate {
         crate::types::LaunchConfigurationTemplate {
@@ -268,6 +290,7 @@ impl LaunchConfigurationTemplateBuilder {
             licensing: self.licensing,
             export_bucket_arn: self.export_bucket_arn,
             post_launch_enabled: self.post_launch_enabled,
+            launch_into_source_instance: self.launch_into_source_instance,
         }
     }
 }
@@ -284,6 +307,7 @@ impl ::std::fmt::Debug for LaunchConfigurationTemplateBuilder {
         formatter.field("licensing", &self.licensing);
         formatter.field("export_bucket_arn", &self.export_bucket_arn);
         formatter.field("post_launch_enabled", &self.post_launch_enabled);
+        formatter.field("launch_into_source_instance", &self.launch_into_source_instance);
         formatter.finish()
     }
 }

@@ -197,15 +197,23 @@ pub use crate::types::_document_attribute_value_count_pair::DocumentAttributeVal
 
 pub use crate::types::_query_result_item::QueryResultItemBuilder;
 
+pub use crate::types::_collapsed_result_detail::CollapsedResultDetailBuilder;
+
+pub use crate::types::_expanded_result_item::ExpandedResultItemBuilder;
+
 pub use crate::types::_table_excerpt::TableExcerptBuilder;
 
 pub use crate::types::_table_row::TableRowBuilder;
 
 pub use crate::types::_table_cell::TableCellBuilder;
 
-pub use crate::types::_spell_correction_configuration::SpellCorrectionConfigurationBuilder;
+pub use crate::types::_collapse_configuration::CollapseConfigurationBuilder;
+
+pub use crate::types::_expand_configuration::ExpandConfigurationBuilder;
 
 pub use crate::types::_sorting_configuration::SortingConfigurationBuilder;
+
+pub use crate::types::_spell_correction_configuration::SpellCorrectionConfigurationBuilder;
 
 pub use crate::types::_facet::FacetBuilder;
 

@@ -66,6 +66,37 @@ impl From<crate::operation::batch_get_token_balance::BatchGetTokenBalanceError> 
         }
     }
 }
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_asset_contract::GetAssetContractError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::get_asset_contract::GetAssetContractError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_asset_contract::GetAssetContractError> for Error {
+    fn from(err: crate::operation::get_asset_contract::GetAssetContractError) -> Self {
+        match err {
+            crate::operation::get_asset_contract::GetAssetContractError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_asset_contract::GetAssetContractError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_asset_contract::GetAssetContractError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_asset_contract::GetAssetContractError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::get_asset_contract::GetAssetContractError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_asset_contract::GetAssetContractError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_asset_contract::GetAssetContractError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_token_balance::GetTokenBalanceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -125,6 +156,36 @@ impl From<crate::operation::get_transaction::GetTransactionError> for Error {
             crate::operation::get_transaction::GetTransactionError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::get_transaction::GetTransactionError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_transaction::GetTransactionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_asset_contracts::ListAssetContractsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_asset_contracts::ListAssetContractsError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_asset_contracts::ListAssetContractsError> for Error {
+    fn from(err: crate::operation::list_asset_contracts::ListAssetContractsError) -> Self {
+        match err {
+            crate::operation::list_asset_contracts::ListAssetContractsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_asset_contracts::ListAssetContractsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_asset_contracts::ListAssetContractsError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::list_asset_contracts::ListAssetContractsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_asset_contracts::ListAssetContractsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_asset_contracts::ListAssetContractsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

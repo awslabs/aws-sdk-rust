@@ -21,70 +21,70 @@ pub fn ser_condition(
         }
         array_5.finish();
     }
-    if input.gt != 0 {
+    if let Some(var_7) = &input.gt {
         object.key("gt").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.gt).into()),
+            ::aws_smithy_types::Number::NegInt((*var_7).into()),
         );
     }
-    if input.gte != 0 {
+    if let Some(var_8) = &input.gte {
         object.key("gte").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.gte).into()),
+            ::aws_smithy_types::Number::NegInt((*var_8).into()),
         );
     }
-    if input.lt != 0 {
+    if let Some(var_9) = &input.lt {
         object.key("lt").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.lt).into()),
+            ::aws_smithy_types::Number::NegInt((*var_9).into()),
         );
     }
-    if input.lte != 0 {
+    if let Some(var_10) = &input.lte {
         object.key("lte").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.lte).into()),
+            ::aws_smithy_types::Number::NegInt((*var_10).into()),
         );
     }
-    if let Some(var_7) = &input.equals {
-        let mut array_8 = object.key("equals").start_array();
-        for item_9 in var_7 {
+    if let Some(var_11) = &input.equals {
+        let mut array_12 = object.key("equals").start_array();
+        for item_13 in var_11 {
             {
-                array_8.value().string(item_9.as_str());
+                array_12.value().string(item_13.as_str());
             }
         }
-        array_8.finish();
+        array_12.finish();
     }
-    if let Some(var_10) = &input.not_equals {
-        let mut array_11 = object.key("notEquals").start_array();
-        for item_12 in var_10 {
+    if let Some(var_14) = &input.not_equals {
+        let mut array_15 = object.key("notEquals").start_array();
+        for item_16 in var_14 {
             {
-                array_11.value().string(item_12.as_str());
+                array_15.value().string(item_16.as_str());
             }
         }
-        array_11.finish();
+        array_15.finish();
     }
-    if input.greater_than != 0 {
+    if let Some(var_17) = &input.greater_than {
         object.key("greaterThan").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.greater_than).into()),
+            ::aws_smithy_types::Number::NegInt((*var_17).into()),
         );
     }
-    if input.greater_than_or_equal != 0 {
+    if let Some(var_18) = &input.greater_than_or_equal {
         object.key("greaterThanOrEqual").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.greater_than_or_equal).into()),
+            ::aws_smithy_types::Number::NegInt((*var_18).into()),
         );
     }
-    if input.less_than != 0 {
+    if let Some(var_19) = &input.less_than {
         object.key("lessThan").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.less_than).into()),
+            ::aws_smithy_types::Number::NegInt((*var_19).into()),
         );
     }
-    if input.less_than_or_equal != 0 {
+    if let Some(var_20) = &input.less_than_or_equal {
         object.key("lessThanOrEqual").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.less_than_or_equal).into()),
+            ::aws_smithy_types::Number::NegInt((*var_20).into()),
         );
     }
     Ok(())

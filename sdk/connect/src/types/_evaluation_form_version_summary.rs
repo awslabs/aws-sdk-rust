@@ -9,7 +9,7 @@ pub struct EvaluationFormVersionSummary {
     /// <p>The unique identifier for the evaluation form.</p>
     pub evaluation_form_id: ::std::option::Option<::std::string::String>,
     /// <p>A version of the evaluation form.</p>
-    pub evaluation_form_version: ::std::option::Option<i32>,
+    pub evaluation_form_version: i32,
     /// <p>The flag indicating whether the evaluation form is locked for changes.</p>
     pub locked: bool,
     /// <p>The status of the evaluation form.</p>
@@ -33,7 +33,7 @@ impl EvaluationFormVersionSummary {
         self.evaluation_form_id.as_deref()
     }
     /// <p>A version of the evaluation form.</p>
-    pub fn evaluation_form_version(&self) -> ::std::option::Option<i32> {
+    pub fn evaluation_form_version(&self) -> i32 {
         self.evaluation_form_version
     }
     /// <p>The flag indicating whether the evaluation form is locked for changes.</p>
@@ -214,7 +214,7 @@ impl EvaluationFormVersionSummaryBuilder {
         crate::types::EvaluationFormVersionSummary {
             evaluation_form_arn: self.evaluation_form_arn,
             evaluation_form_id: self.evaluation_form_id,
-            evaluation_form_version: self.evaluation_form_version,
+            evaluation_form_version: self.evaluation_form_version.unwrap_or_default(),
             locked: self.locked.unwrap_or_default(),
             status: self.status,
             created_time: self.created_time,

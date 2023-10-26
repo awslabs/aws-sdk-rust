@@ -11,7 +11,7 @@ pub struct User {
     /// </note>
     pub user_name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether the user in the user pool is enabled.</p>
-    pub enabled: bool,
+    pub enabled: ::std::option::Option<bool>,
     /// <p>The status of the user in the user pool. The status can be one of the following:</p>
     /// <ul>
     /// <li> <p>UNCONFIRMED – The user is created but not confirmed.</p> </li>
@@ -42,7 +42,7 @@ impl User {
         self.user_name.as_deref()
     }
     /// <p>Specifies whether the user in the user pool is enabled.</p>
-    pub fn enabled(&self) -> bool {
+    pub fn enabled(&self) -> ::std::option::Option<bool> {
         self.enabled
     }
     /// <p>The status of the user in the user pool. The status can be one of the following:</p>
@@ -252,7 +252,7 @@ impl UserBuilder {
         crate::types::User {
             arn: self.arn,
             user_name: self.user_name,
-            enabled: self.enabled.unwrap_or_default(),
+            enabled: self.enabled,
             status: self.status,
             first_name: self.first_name,
             last_name: self.last_name,

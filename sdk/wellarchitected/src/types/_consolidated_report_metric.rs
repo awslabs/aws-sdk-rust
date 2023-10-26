@@ -20,7 +20,7 @@ pub struct ConsolidatedReportMetric {
     /// <p>The metrics for the lenses in the workload.</p>
     pub lenses: ::std::option::Option<::std::vec::Vec<crate::types::LensMetric>>,
     /// <p>The total number of lenses applied to the workload.</p>
-    pub lenses_applied_count: i32,
+    pub lenses_applied_count: ::std::option::Option<i32>,
 }
 impl ConsolidatedReportMetric {
     /// <p>The metric type of a metric in the consolidated report. Currently only WORKLOAD metric types are supported.</p>
@@ -53,7 +53,7 @@ impl ConsolidatedReportMetric {
         self.lenses.as_deref()
     }
     /// <p>The total number of lenses applied to the workload.</p>
-    pub fn lenses_applied_count(&self) -> i32 {
+    pub fn lenses_applied_count(&self) -> ::std::option::Option<i32> {
         self.lenses_applied_count
     }
 }
@@ -215,7 +215,7 @@ impl ConsolidatedReportMetricBuilder {
             workload_arn: self.workload_arn,
             updated_at: self.updated_at,
             lenses: self.lenses,
-            lenses_applied_count: self.lenses_applied_count.unwrap_or_default(),
+            lenses_applied_count: self.lenses_applied_count,
         }
     }
 }

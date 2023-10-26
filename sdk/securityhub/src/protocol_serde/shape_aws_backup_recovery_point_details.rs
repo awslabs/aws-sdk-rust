@@ -3,80 +3,80 @@ pub fn ser_aws_backup_recovery_point_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsBackupRecoveryPointDetails,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if input.backup_size_in_bytes != 0 {
+    if let Some(var_1) = &input.backup_size_in_bytes {
         object.key("BackupSizeInBytes").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.backup_size_in_bytes).into()),
+            ::aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if let Some(var_1) = &input.backup_vault_arn {
-        object.key("BackupVaultArn").string(var_1.as_str());
+    if let Some(var_2) = &input.backup_vault_arn {
+        object.key("BackupVaultArn").string(var_2.as_str());
     }
-    if let Some(var_2) = &input.backup_vault_name {
-        object.key("BackupVaultName").string(var_2.as_str());
+    if let Some(var_3) = &input.backup_vault_name {
+        object.key("BackupVaultName").string(var_3.as_str());
     }
-    if let Some(var_3) = &input.calculated_lifecycle {
+    if let Some(var_4) = &input.calculated_lifecycle {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("CalculatedLifecycle").start_object();
-        crate::protocol_serde::shape_aws_backup_recovery_point_calculated_lifecycle_details::ser_aws_backup_recovery_point_calculated_lifecycle_details(&mut object_4, var_3)?;
-        object_4.finish();
+        let mut object_5 = object.key("CalculatedLifecycle").start_object();
+        crate::protocol_serde::shape_aws_backup_recovery_point_calculated_lifecycle_details::ser_aws_backup_recovery_point_calculated_lifecycle_details(&mut object_5, var_4)?;
+        object_5.finish();
     }
-    if let Some(var_5) = &input.completion_date {
-        object.key("CompletionDate").string(var_5.as_str());
+    if let Some(var_6) = &input.completion_date {
+        object.key("CompletionDate").string(var_6.as_str());
     }
-    if let Some(var_6) = &input.created_by {
+    if let Some(var_7) = &input.created_by {
         #[allow(unused_mut)]
-        let mut object_7 = object.key("CreatedBy").start_object();
+        let mut object_8 = object.key("CreatedBy").start_object();
         crate::protocol_serde::shape_aws_backup_recovery_point_created_by_details::ser_aws_backup_recovery_point_created_by_details(
-            &mut object_7,
-            var_6,
+            &mut object_8,
+            var_7,
         )?;
-        object_7.finish();
+        object_8.finish();
     }
-    if let Some(var_8) = &input.creation_date {
-        object.key("CreationDate").string(var_8.as_str());
+    if let Some(var_9) = &input.creation_date {
+        object.key("CreationDate").string(var_9.as_str());
     }
-    if let Some(var_9) = &input.encryption_key_arn {
-        object.key("EncryptionKeyArn").string(var_9.as_str());
+    if let Some(var_10) = &input.encryption_key_arn {
+        object.key("EncryptionKeyArn").string(var_10.as_str());
     }
-    if let Some(var_10) = &input.iam_role_arn {
-        object.key("IamRoleArn").string(var_10.as_str());
+    if let Some(var_11) = &input.iam_role_arn {
+        object.key("IamRoleArn").string(var_11.as_str());
     }
-    if input.is_encrypted {
-        object.key("IsEncrypted").boolean(input.is_encrypted);
+    if let Some(var_12) = &input.is_encrypted {
+        object.key("IsEncrypted").boolean(*var_12);
     }
-    if let Some(var_11) = &input.last_restore_time {
-        object.key("LastRestoreTime").string(var_11.as_str());
+    if let Some(var_13) = &input.last_restore_time {
+        object.key("LastRestoreTime").string(var_13.as_str());
     }
-    if let Some(var_12) = &input.lifecycle {
+    if let Some(var_14) = &input.lifecycle {
         #[allow(unused_mut)]
-        let mut object_13 = object.key("Lifecycle").start_object();
+        let mut object_15 = object.key("Lifecycle").start_object();
         crate::protocol_serde::shape_aws_backup_recovery_point_lifecycle_details::ser_aws_backup_recovery_point_lifecycle_details(
-            &mut object_13,
-            var_12,
+            &mut object_15,
+            var_14,
         )?;
-        object_13.finish();
+        object_15.finish();
     }
-    if let Some(var_14) = &input.recovery_point_arn {
-        object.key("RecoveryPointArn").string(var_14.as_str());
+    if let Some(var_16) = &input.recovery_point_arn {
+        object.key("RecoveryPointArn").string(var_16.as_str());
     }
-    if let Some(var_15) = &input.resource_arn {
-        object.key("ResourceArn").string(var_15.as_str());
+    if let Some(var_17) = &input.resource_arn {
+        object.key("ResourceArn").string(var_17.as_str());
     }
-    if let Some(var_16) = &input.resource_type {
-        object.key("ResourceType").string(var_16.as_str());
+    if let Some(var_18) = &input.resource_type {
+        object.key("ResourceType").string(var_18.as_str());
     }
-    if let Some(var_17) = &input.source_backup_vault_arn {
-        object.key("SourceBackupVaultArn").string(var_17.as_str());
+    if let Some(var_19) = &input.source_backup_vault_arn {
+        object.key("SourceBackupVaultArn").string(var_19.as_str());
     }
-    if let Some(var_18) = &input.status {
-        object.key("Status").string(var_18.as_str());
+    if let Some(var_20) = &input.status {
+        object.key("Status").string(var_20.as_str());
     }
-    if let Some(var_19) = &input.status_message {
-        object.key("StatusMessage").string(var_19.as_str());
+    if let Some(var_21) = &input.status_message {
+        object.key("StatusMessage").string(var_21.as_str());
     }
-    if let Some(var_20) = &input.storage_class {
-        object.key("StorageClass").string(var_20.as_str());
+    if let Some(var_22) = &input.storage_class {
+        object.key("StorageClass").string(var_22.as_str());
     }
     Ok(())
 }

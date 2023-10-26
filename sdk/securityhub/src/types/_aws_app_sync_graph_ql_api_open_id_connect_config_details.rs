@@ -5,17 +5,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsAppSyncGraphQlApiOpenIdConnectConfigDetails {
     /// <p> The number of milliseconds that a token is valid after being authenticated. </p>
-    pub auth_tt_l: i64,
+    pub auth_tt_l: ::std::option::Option<i64>,
     /// <p> The client identifier of the relying party at the OpenID identity provider. This identifier is typically obtained when the relying party is registered with the OpenID identity provider. You can specify a regular expression so that AppSync can validate against multiple client identifiers at a time. </p>
     pub client_id: ::std::option::Option<::std::string::String>,
     /// <p> The number of milliseconds that a token is valid after it's issued to a user. </p>
-    pub iat_tt_l: i64,
+    pub iat_tt_l: ::std::option::Option<i64>,
     /// <p> The issuer for the OIDC configuration. The issuer returned by discovery must exactly match the value of <code>iss</code> in the ID token. </p>
     pub issuer: ::std::option::Option<::std::string::String>,
 }
 impl AwsAppSyncGraphQlApiOpenIdConnectConfigDetails {
     /// <p> The number of milliseconds that a token is valid after being authenticated. </p>
-    pub fn auth_tt_l(&self) -> i64 {
+    pub fn auth_tt_l(&self) -> ::std::option::Option<i64> {
         self.auth_tt_l
     }
     /// <p> The client identifier of the relying party at the OpenID identity provider. This identifier is typically obtained when the relying party is registered with the OpenID identity provider. You can specify a regular expression so that AppSync can validate against multiple client identifiers at a time. </p>
@@ -23,7 +23,7 @@ impl AwsAppSyncGraphQlApiOpenIdConnectConfigDetails {
         self.client_id.as_deref()
     }
     /// <p> The number of milliseconds that a token is valid after it's issued to a user. </p>
-    pub fn iat_tt_l(&self) -> i64 {
+    pub fn iat_tt_l(&self) -> ::std::option::Option<i64> {
         self.iat_tt_l
     }
     /// <p> The issuer for the OIDC configuration. The issuer returned by discovery must exactly match the value of <code>iss</code> in the ID token. </p>
@@ -107,9 +107,9 @@ impl AwsAppSyncGraphQlApiOpenIdConnectConfigDetailsBuilder {
     /// Consumes the builder and constructs a [`AwsAppSyncGraphQlApiOpenIdConnectConfigDetails`](crate::types::AwsAppSyncGraphQlApiOpenIdConnectConfigDetails).
     pub fn build(self) -> crate::types::AwsAppSyncGraphQlApiOpenIdConnectConfigDetails {
         crate::types::AwsAppSyncGraphQlApiOpenIdConnectConfigDetails {
-            auth_tt_l: self.auth_tt_l.unwrap_or_default(),
+            auth_tt_l: self.auth_tt_l,
             client_id: self.client_id,
-            iat_tt_l: self.iat_tt_l.unwrap_or_default(),
+            iat_tt_l: self.iat_tt_l,
             issuer: self.issuer,
         }
     }

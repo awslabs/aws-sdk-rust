@@ -7,7 +7,7 @@ pub struct AwsElasticsearchDomainLogPublishingOptionsLogConfig {
     /// <p>The ARN of the CloudWatch Logs group to publish the logs to.</p>
     pub cloud_watch_logs_log_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>Whether the log publishing is enabled.</p>
-    pub enabled: bool,
+    pub enabled: ::std::option::Option<bool>,
 }
 impl AwsElasticsearchDomainLogPublishingOptionsLogConfig {
     /// <p>The ARN of the CloudWatch Logs group to publish the logs to.</p>
@@ -15,7 +15,7 @@ impl AwsElasticsearchDomainLogPublishingOptionsLogConfig {
         self.cloud_watch_logs_log_group_arn.as_deref()
     }
     /// <p>Whether the log publishing is enabled.</p>
-    pub fn enabled(&self) -> bool {
+    pub fn enabled(&self) -> ::std::option::Option<bool> {
         self.enabled
     }
 }
@@ -66,7 +66,7 @@ impl AwsElasticsearchDomainLogPublishingOptionsLogConfigBuilder {
     pub fn build(self) -> crate::types::AwsElasticsearchDomainLogPublishingOptionsLogConfig {
         crate::types::AwsElasticsearchDomainLogPublishingOptionsLogConfig {
             cloud_watch_logs_log_group_arn: self.cloud_watch_logs_log_group_arn,
-            enabled: self.enabled.unwrap_or_default(),
+            enabled: self.enabled,
         }
     }
 }

@@ -9,19 +9,19 @@ pub struct AwsCloudTrailTrailDetails {
     /// <p>The ARN of the role that the CloudWatch Events endpoint assumes when it writes to the log group.</p>
     pub cloud_watch_logs_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the trail has custom event selectors.</p>
-    pub has_custom_event_selectors: bool,
+    pub has_custom_event_selectors: ::std::option::Option<bool>,
     /// <p>The Region where the trail was created.</p>
     pub home_region: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the trail publishes events from global services such as IAM to the log files.</p>
-    pub include_global_service_events: bool,
+    pub include_global_service_events: ::std::option::Option<bool>,
     /// <p>Indicates whether the trail applies only to the current Region or to all Regions.</p>
-    pub is_multi_region_trail: bool,
+    pub is_multi_region_trail: ::std::option::Option<bool>,
     /// <p>Whether the trail is created for all accounts in an organization in Organizations, or only for the current Amazon Web Services account.</p>
-    pub is_organization_trail: bool,
+    pub is_organization_trail: ::std::option::Option<bool>,
     /// <p>The KMS key ID to use to encrypt the logs.</p>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether CloudTrail log file validation is enabled.</p>
-    pub log_file_validation_enabled: bool,
+    pub log_file_validation_enabled: ::std::option::Option<bool>,
     /// <p>The name of the trail.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the S3 bucket where the log files are published.</p>
@@ -45,7 +45,7 @@ impl AwsCloudTrailTrailDetails {
         self.cloud_watch_logs_role_arn.as_deref()
     }
     /// <p>Indicates whether the trail has custom event selectors.</p>
-    pub fn has_custom_event_selectors(&self) -> bool {
+    pub fn has_custom_event_selectors(&self) -> ::std::option::Option<bool> {
         self.has_custom_event_selectors
     }
     /// <p>The Region where the trail was created.</p>
@@ -53,15 +53,15 @@ impl AwsCloudTrailTrailDetails {
         self.home_region.as_deref()
     }
     /// <p>Indicates whether the trail publishes events from global services such as IAM to the log files.</p>
-    pub fn include_global_service_events(&self) -> bool {
+    pub fn include_global_service_events(&self) -> ::std::option::Option<bool> {
         self.include_global_service_events
     }
     /// <p>Indicates whether the trail applies only to the current Region or to all Regions.</p>
-    pub fn is_multi_region_trail(&self) -> bool {
+    pub fn is_multi_region_trail(&self) -> ::std::option::Option<bool> {
         self.is_multi_region_trail
     }
     /// <p>Whether the trail is created for all accounts in an organization in Organizations, or only for the current Amazon Web Services account.</p>
-    pub fn is_organization_trail(&self) -> bool {
+    pub fn is_organization_trail(&self) -> ::std::option::Option<bool> {
         self.is_organization_trail
     }
     /// <p>The KMS key ID to use to encrypt the logs.</p>
@@ -69,7 +69,7 @@ impl AwsCloudTrailTrailDetails {
         self.kms_key_id.as_deref()
     }
     /// <p>Indicates whether CloudTrail log file validation is enabled.</p>
-    pub fn log_file_validation_enabled(&self) -> bool {
+    pub fn log_file_validation_enabled(&self) -> ::std::option::Option<bool> {
         self.log_file_validation_enabled
     }
     /// <p>The name of the trail.</p>
@@ -340,13 +340,13 @@ impl AwsCloudTrailTrailDetailsBuilder {
         crate::types::AwsCloudTrailTrailDetails {
             cloud_watch_logs_log_group_arn: self.cloud_watch_logs_log_group_arn,
             cloud_watch_logs_role_arn: self.cloud_watch_logs_role_arn,
-            has_custom_event_selectors: self.has_custom_event_selectors.unwrap_or_default(),
+            has_custom_event_selectors: self.has_custom_event_selectors,
             home_region: self.home_region,
-            include_global_service_events: self.include_global_service_events.unwrap_or_default(),
-            is_multi_region_trail: self.is_multi_region_trail.unwrap_or_default(),
-            is_organization_trail: self.is_organization_trail.unwrap_or_default(),
+            include_global_service_events: self.include_global_service_events,
+            is_multi_region_trail: self.is_multi_region_trail,
+            is_organization_trail: self.is_organization_trail,
             kms_key_id: self.kms_key_id,
-            log_file_validation_enabled: self.log_file_validation_enabled.unwrap_or_default(),
+            log_file_validation_enabled: self.log_file_validation_enabled,
             name: self.name,
             s3_bucket_name: self.s3_bucket_name,
             s3_key_prefix: self.s3_key_prefix,

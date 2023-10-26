@@ -5,13 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEc2VpcEndpointServiceDetails {
     /// <p>Whether requests from other Amazon Web Services accounts to create an endpoint to the service must first be accepted.</p>
-    pub acceptance_required: bool,
+    pub acceptance_required: ::std::option::Option<bool>,
     /// <p>The Availability Zones where the service is available.</p>
     pub availability_zones: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The DNS names for the service.</p>
     pub base_endpoint_dns_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Whether the service manages its VPC endpoints.</p>
-    pub manages_vpc_endpoints: bool,
+    pub manages_vpc_endpoints: ::std::option::Option<bool>,
     /// <p>The ARNs of the Gateway Load Balancers for the service.</p>
     pub gateway_load_balancer_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The ARNs of the Network Load Balancers for the service.</p>
@@ -36,7 +36,7 @@ pub struct AwsEc2VpcEndpointServiceDetails {
 }
 impl AwsEc2VpcEndpointServiceDetails {
     /// <p>Whether requests from other Amazon Web Services accounts to create an endpoint to the service must first be accepted.</p>
-    pub fn acceptance_required(&self) -> bool {
+    pub fn acceptance_required(&self) -> ::std::option::Option<bool> {
         self.acceptance_required
     }
     /// <p>The Availability Zones where the service is available.</p>
@@ -48,7 +48,7 @@ impl AwsEc2VpcEndpointServiceDetails {
         self.base_endpoint_dns_names.as_deref()
     }
     /// <p>Whether the service manages its VPC endpoints.</p>
-    pub fn manages_vpc_endpoints(&self) -> bool {
+    pub fn manages_vpc_endpoints(&self) -> ::std::option::Option<bool> {
         self.manages_vpc_endpoints
     }
     /// <p>The ARNs of the Gateway Load Balancers for the service.</p>
@@ -322,10 +322,10 @@ impl AwsEc2VpcEndpointServiceDetailsBuilder {
     /// Consumes the builder and constructs a [`AwsEc2VpcEndpointServiceDetails`](crate::types::AwsEc2VpcEndpointServiceDetails).
     pub fn build(self) -> crate::types::AwsEc2VpcEndpointServiceDetails {
         crate::types::AwsEc2VpcEndpointServiceDetails {
-            acceptance_required: self.acceptance_required.unwrap_or_default(),
+            acceptance_required: self.acceptance_required,
             availability_zones: self.availability_zones,
             base_endpoint_dns_names: self.base_endpoint_dns_names,
-            manages_vpc_endpoints: self.manages_vpc_endpoints.unwrap_or_default(),
+            manages_vpc_endpoints: self.manages_vpc_endpoints,
             gateway_load_balancer_arns: self.gateway_load_balancer_arns,
             network_load_balancer_arns: self.network_load_balancer_arns,
             private_dns_name: self.private_dns_name,

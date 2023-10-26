@@ -7,7 +7,7 @@ pub struct DetectAnomalyResult {
     /// <p>The source of the image that was analyzed. <code>direct</code> means that the images was supplied from the local computer. No other values are supported.</p>
     pub source: ::std::option::Option<crate::types::ImageSource>,
     /// <p>True if Amazon Lookout for Vision classifies the image as containing an anomaly, otherwise false.</p>
-    pub is_anomalous: bool,
+    pub is_anomalous: ::std::option::Option<bool>,
     /// <p>The confidence that Lookout for Vision has in the accuracy of the classification in <code>IsAnomalous</code>.</p>
     pub confidence: ::std::option::Option<f32>,
     /// <p>If the model is an image segmentation model, <code>Anomalies</code> contains a list of anomaly types found in the image. There is one entry for each type of anomaly found (even if multiple instances of an anomaly type exist on the image). The first element in the list is always an anomaly type representing the image background ('background') and shouldn't be considered an anomaly. Amazon Lookout for Vision automatically add the background anomaly type to the response, and you don't need to declare a background anomaly type in your dataset.</p>
@@ -25,7 +25,7 @@ impl DetectAnomalyResult {
         self.source.as_ref()
     }
     /// <p>True if Amazon Lookout for Vision classifies the image as containing an anomaly, otherwise false.</p>
-    pub fn is_anomalous(&self) -> bool {
+    pub fn is_anomalous(&self) -> ::std::option::Option<bool> {
         self.is_anomalous
     }
     /// <p>The confidence that Lookout for Vision has in the accuracy of the classification in <code>IsAnomalous</code>.</p>
@@ -155,7 +155,7 @@ impl DetectAnomalyResultBuilder {
     pub fn build(self) -> crate::types::DetectAnomalyResult {
         crate::types::DetectAnomalyResult {
             source: self.source,
-            is_anomalous: self.is_anomalous.unwrap_or_default(),
+            is_anomalous: self.is_anomalous,
             confidence: self.confidence,
             anomalies: self.anomalies,
             anomaly_mask: self.anomaly_mask,

@@ -423,8 +423,8 @@ pub(super) fn resolve_endpoint(
                 }
             }
             if (*use_fips) == (true) {
-                if (true) == (partition_result.supports_fips()) {
-                    if ("aws-us-gov") == (partition_result.name()) {
+                if (partition_result.supports_fips()) == (true) {
+                    if (partition_result.name()) == ("aws-us-gov") {
                         return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
                             .url({
                                 let mut out = String::new();

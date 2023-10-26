@@ -33,6 +33,8 @@ pub struct CreateDataSetInput {
     pub data_set_usage_configuration: ::std::option::Option<crate::types::DataSetUsageConfiguration>,
     /// <p>The parameter declarations of the dataset.</p>
     pub dataset_parameters: ::std::option::Option<::std::vec::Vec<crate::types::DatasetParameter>>,
+    /// <p>When you create the dataset, Amazon QuickSight adds the dataset to these folders.</p>
+    pub folder_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl CreateDataSetInput {
     /// <p>The Amazon Web Services account ID.</p>
@@ -95,6 +97,10 @@ impl CreateDataSetInput {
     pub fn dataset_parameters(&self) -> ::std::option::Option<&[crate::types::DatasetParameter]> {
         self.dataset_parameters.as_deref()
     }
+    /// <p>When you create the dataset, Amazon QuickSight adds the dataset to these folders.</p>
+    pub fn folder_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
+        self.folder_arns.as_deref()
+    }
 }
 impl CreateDataSetInput {
     /// Creates a new builder-style object to manufacture [`CreateDataSetInput`](crate::operation::create_data_set::CreateDataSetInput).
@@ -122,6 +128,7 @@ pub struct CreateDataSetInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) data_set_usage_configuration: ::std::option::Option<crate::types::DataSetUsageConfiguration>,
     pub(crate) dataset_parameters: ::std::option::Option<::std::vec::Vec<crate::types::DatasetParameter>>,
+    pub(crate) folder_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl CreateDataSetInputBuilder {
     /// <p>The Amazon Web Services account ID.</p>
@@ -397,6 +404,26 @@ impl CreateDataSetInputBuilder {
     pub fn get_dataset_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DatasetParameter>> {
         &self.dataset_parameters
     }
+    /// Appends an item to `folder_arns`.
+    ///
+    /// To override the contents of this collection use [`set_folder_arns`](Self::set_folder_arns).
+    ///
+    /// <p>When you create the dataset, Amazon QuickSight adds the dataset to these folders.</p>
+    pub fn folder_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.folder_arns.unwrap_or_default();
+        v.push(input.into());
+        self.folder_arns = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>When you create the dataset, Amazon QuickSight adds the dataset to these folders.</p>
+    pub fn set_folder_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.folder_arns = input;
+        self
+    }
+    /// <p>When you create the dataset, Amazon QuickSight adds the dataset to these folders.</p>
+    pub fn get_folder_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.folder_arns
+    }
     /// Consumes the builder and constructs a [`CreateDataSetInput`](crate::operation::create_data_set::CreateDataSetInput).
     pub fn build(
         self,
@@ -417,6 +444,7 @@ impl CreateDataSetInputBuilder {
             tags: self.tags,
             data_set_usage_configuration: self.data_set_usage_configuration,
             dataset_parameters: self.dataset_parameters,
+            folder_arns: self.folder_arns,
         })
     }
 }

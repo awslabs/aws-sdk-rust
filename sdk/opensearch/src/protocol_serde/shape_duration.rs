@@ -3,14 +3,14 @@ pub fn ser_duration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Duration,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if input.value != 0 {
+    if let Some(var_1) = &input.value {
         object.key("Value").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.value).into()),
+            ::aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if let Some(var_1) = &input.unit {
-        object.key("Unit").string(var_1.as_str());
+    if let Some(var_2) = &input.unit {
+        object.key("Unit").string(var_2.as_str());
     }
     Ok(())
 }

@@ -9,53 +9,62 @@ pub fn ser_create_analysis_input(
         crate::protocol_serde::shape_analysis_definition::ser_analysis_definition(&mut object_2, var_1)?;
         object_2.finish();
     }
-    if let Some(var_3) = &input.name {
-        object.key("Name").string(var_3.as_str());
-    }
-    if let Some(var_4) = &input.parameters {
-        #[allow(unused_mut)]
-        let mut object_5 = object.key("Parameters").start_object();
-        crate::protocol_serde::shape_parameters::ser_parameters(&mut object_5, var_4)?;
-        object_5.finish();
-    }
-    if let Some(var_6) = &input.permissions {
-        let mut array_7 = object.key("Permissions").start_array();
-        for item_8 in var_6 {
+    if let Some(var_3) = &input.folder_arns {
+        let mut array_4 = object.key("FolderArns").start_array();
+        for item_5 in var_3 {
             {
-                #[allow(unused_mut)]
-                let mut object_9 = array_7.value().start_object();
-                crate::protocol_serde::shape_resource_permission::ser_resource_permission(&mut object_9, item_8)?;
-                object_9.finish();
+                array_4.value().string(item_5.as_str());
             }
         }
-        array_7.finish();
+        array_4.finish();
     }
-    if let Some(var_10) = &input.source_entity {
+    if let Some(var_6) = &input.name {
+        object.key("Name").string(var_6.as_str());
+    }
+    if let Some(var_7) = &input.parameters {
         #[allow(unused_mut)]
-        let mut object_11 = object.key("SourceEntity").start_object();
-        crate::protocol_serde::shape_analysis_source_entity::ser_analysis_source_entity(&mut object_11, var_10)?;
-        object_11.finish();
+        let mut object_8 = object.key("Parameters").start_object();
+        crate::protocol_serde::shape_parameters::ser_parameters(&mut object_8, var_7)?;
+        object_8.finish();
     }
-    if let Some(var_12) = &input.tags {
-        let mut array_13 = object.key("Tags").start_array();
-        for item_14 in var_12 {
+    if let Some(var_9) = &input.permissions {
+        let mut array_10 = object.key("Permissions").start_array();
+        for item_11 in var_9 {
             {
                 #[allow(unused_mut)]
-                let mut object_15 = array_13.value().start_object();
-                crate::protocol_serde::shape_tag::ser_tag(&mut object_15, item_14)?;
-                object_15.finish();
+                let mut object_12 = array_10.value().start_object();
+                crate::protocol_serde::shape_resource_permission::ser_resource_permission(&mut object_12, item_11)?;
+                object_12.finish();
             }
         }
-        array_13.finish();
+        array_10.finish();
     }
-    if let Some(var_16) = &input.theme_arn {
-        object.key("ThemeArn").string(var_16.as_str());
-    }
-    if let Some(var_17) = &input.validation_strategy {
+    if let Some(var_13) = &input.source_entity {
         #[allow(unused_mut)]
-        let mut object_18 = object.key("ValidationStrategy").start_object();
-        crate::protocol_serde::shape_validation_strategy::ser_validation_strategy(&mut object_18, var_17)?;
-        object_18.finish();
+        let mut object_14 = object.key("SourceEntity").start_object();
+        crate::protocol_serde::shape_analysis_source_entity::ser_analysis_source_entity(&mut object_14, var_13)?;
+        object_14.finish();
+    }
+    if let Some(var_15) = &input.tags {
+        let mut array_16 = object.key("Tags").start_array();
+        for item_17 in var_15 {
+            {
+                #[allow(unused_mut)]
+                let mut object_18 = array_16.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_18, item_17)?;
+                object_18.finish();
+            }
+        }
+        array_16.finish();
+    }
+    if let Some(var_19) = &input.theme_arn {
+        object.key("ThemeArn").string(var_19.as_str());
+    }
+    if let Some(var_20) = &input.validation_strategy {
+        #[allow(unused_mut)]
+        let mut object_21 = object.key("ValidationStrategy").start_object();
+        crate::protocol_serde::shape_validation_strategy::ser_validation_strategy(&mut object_21, var_20)?;
+        object_21.finish();
     }
     Ok(())
 }

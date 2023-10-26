@@ -5,11 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct KubernetesAuditLogsConfiguration {
     /// <p>The status of Kubernetes audit logs as a data source.</p>
-    pub enable: bool,
+    pub enable: ::std::option::Option<bool>,
 }
 impl KubernetesAuditLogsConfiguration {
     /// <p>The status of Kubernetes audit logs as a data source.</p>
-    pub fn enable(&self) -> bool {
+    pub fn enable(&self) -> ::std::option::Option<bool> {
         self.enable
     }
 }
@@ -43,8 +43,6 @@ impl KubernetesAuditLogsConfigurationBuilder {
     }
     /// Consumes the builder and constructs a [`KubernetesAuditLogsConfiguration`](crate::types::KubernetesAuditLogsConfiguration).
     pub fn build(self) -> crate::types::KubernetesAuditLogsConfiguration {
-        crate::types::KubernetesAuditLogsConfiguration {
-            enable: self.enable.unwrap_or_default(),
-        }
+        crate::types::KubernetesAuditLogsConfiguration { enable: self.enable }
     }
 }

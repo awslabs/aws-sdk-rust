@@ -17,9 +17,7 @@ pub struct BaseConfigurationItem {
     /// <li> <p>ResourceNotRecorded – The resource was discovered but its configuration was not recorded since the recorder excludes the recording of resources of this type</p> </li>
     /// <li> <p>ResourceDeleted – The resource was deleted</p> </li>
     /// <li> <p>ResourceDeletedNotRecorded – The resource was deleted but its configuration was not recorded since the recorder excludes the recording of resources of this type</p> </li>
-    /// </ul> <note>
-    /// <p>The CIs do not incur any cost.</p>
-    /// </note>
+    /// </ul>
     pub configuration_item_status: ::std::option::Option<crate::types::ConfigurationItemStatus>,
     /// <p>An identifier that indicates the ordering of the configuration items of a resource.</p>
     pub configuration_state_id: ::std::option::Option<::std::string::String>,
@@ -62,9 +60,7 @@ impl BaseConfigurationItem {
     /// <li> <p>ResourceNotRecorded – The resource was discovered but its configuration was not recorded since the recorder excludes the recording of resources of this type</p> </li>
     /// <li> <p>ResourceDeleted – The resource was deleted</p> </li>
     /// <li> <p>ResourceDeletedNotRecorded – The resource was deleted but its configuration was not recorded since the recorder excludes the recording of resources of this type</p> </li>
-    /// </ul> <note>
-    /// <p>The CIs do not incur any cost.</p>
-    /// </note>
+    /// </ul>
     pub fn configuration_item_status(&self) -> ::std::option::Option<&crate::types::ConfigurationItemStatus> {
         self.configuration_item_status.as_ref()
     }
@@ -185,9 +181,7 @@ impl BaseConfigurationItemBuilder {
     /// <li> <p>ResourceNotRecorded – The resource was discovered but its configuration was not recorded since the recorder excludes the recording of resources of this type</p> </li>
     /// <li> <p>ResourceDeleted – The resource was deleted</p> </li>
     /// <li> <p>ResourceDeletedNotRecorded – The resource was deleted but its configuration was not recorded since the recorder excludes the recording of resources of this type</p> </li>
-    /// </ul> <note>
-    /// <p>The CIs do not incur any cost.</p>
-    /// </note>
+    /// </ul>
     pub fn configuration_item_status(mut self, input: crate::types::ConfigurationItemStatus) -> Self {
         self.configuration_item_status = ::std::option::Option::Some(input);
         self
@@ -199,9 +193,7 @@ impl BaseConfigurationItemBuilder {
     /// <li> <p>ResourceNotRecorded – The resource was discovered but its configuration was not recorded since the recorder excludes the recording of resources of this type</p> </li>
     /// <li> <p>ResourceDeleted – The resource was deleted</p> </li>
     /// <li> <p>ResourceDeletedNotRecorded – The resource was deleted but its configuration was not recorded since the recorder excludes the recording of resources of this type</p> </li>
-    /// </ul> <note>
-    /// <p>The CIs do not incur any cost.</p>
-    /// </note>
+    /// </ul>
     pub fn set_configuration_item_status(mut self, input: ::std::option::Option<crate::types::ConfigurationItemStatus>) -> Self {
         self.configuration_item_status = input;
         self
@@ -213,9 +205,7 @@ impl BaseConfigurationItemBuilder {
     /// <li> <p>ResourceNotRecorded – The resource was discovered but its configuration was not recorded since the recorder excludes the recording of resources of this type</p> </li>
     /// <li> <p>ResourceDeleted – The resource was deleted</p> </li>
     /// <li> <p>ResourceDeletedNotRecorded – The resource was deleted but its configuration was not recorded since the recorder excludes the recording of resources of this type</p> </li>
-    /// </ul> <note>
-    /// <p>The CIs do not incur any cost.</p>
-    /// </note>
+    /// </ul>
     pub fn get_configuration_item_status(&self) -> &::std::option::Option<crate::types::ConfigurationItemStatus> {
         &self.configuration_item_status
     }

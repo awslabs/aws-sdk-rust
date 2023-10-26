@@ -3,20 +3,20 @@ pub fn ser_aws_rds_db_cluster_member(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsRdsDbClusterMember,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if input.is_cluster_writer {
-        object.key("IsClusterWriter").boolean(input.is_cluster_writer);
+    if let Some(var_1) = &input.is_cluster_writer {
+        object.key("IsClusterWriter").boolean(*var_1);
     }
-    if input.promotion_tier != 0 {
+    if let Some(var_2) = &input.promotion_tier {
         object.key("PromotionTier").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.promotion_tier).into()),
+            ::aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
-    if let Some(var_1) = &input.db_instance_identifier {
-        object.key("DbInstanceIdentifier").string(var_1.as_str());
+    if let Some(var_3) = &input.db_instance_identifier {
+        object.key("DbInstanceIdentifier").string(var_3.as_str());
     }
-    if let Some(var_2) = &input.db_cluster_parameter_group_status {
-        object.key("DbClusterParameterGroupStatus").string(var_2.as_str());
+    if let Some(var_4) = &input.db_cluster_parameter_group_status {
+        object.key("DbClusterParameterGroupStatus").string(var_4.as_str());
     }
     Ok(())
 }

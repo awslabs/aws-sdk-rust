@@ -30,5 +30,11 @@ pub fn ser_analyze_document_input(
         crate::protocol_serde::shape_queries_config::ser_queries_config(&mut object_9, var_8)?;
         object_9.finish();
     }
+    if let Some(var_10) = &input.adapters_config {
+        #[allow(unused_mut)]
+        let mut object_11 = object.key("AdaptersConfig").start_object();
+        crate::protocol_serde::shape_adapters_config::ser_adapters_config(&mut object_11, var_10)?;
+        object_11.finish();
+    }
     Ok(())
 }

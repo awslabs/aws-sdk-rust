@@ -7,7 +7,7 @@ pub struct Cipher {
     /// <p>The name of the cipher.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The priority of the cipher.</p>
-    pub priority: i32,
+    pub priority: ::std::option::Option<i32>,
 }
 impl Cipher {
     /// <p>The name of the cipher.</p>
@@ -15,7 +15,7 @@ impl Cipher {
         self.name.as_deref()
     }
     /// <p>The priority of the cipher.</p>
-    pub fn priority(&self) -> i32 {
+    pub fn priority(&self) -> ::std::option::Option<i32> {
         self.priority
     }
 }
@@ -66,7 +66,7 @@ impl CipherBuilder {
     pub fn build(self) -> crate::types::Cipher {
         crate::types::Cipher {
             name: self.name,
-            priority: self.priority.unwrap_or_default(),
+            priority: self.priority,
         }
     }
 }

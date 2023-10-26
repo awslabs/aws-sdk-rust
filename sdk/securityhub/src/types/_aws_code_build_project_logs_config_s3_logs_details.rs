@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsCodeBuildProjectLogsConfigS3LogsDetails {
     /// <p>Whether to disable encryption of the S3 build log output.</p>
-    pub encryption_disabled: bool,
+    pub encryption_disabled: ::std::option::Option<bool>,
     /// <p>The ARN of the S3 bucket and the path prefix for S3 logs.</p>
     pub location: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the S3 build logs.</p>
@@ -13,7 +13,7 @@ pub struct AwsCodeBuildProjectLogsConfigS3LogsDetails {
 }
 impl AwsCodeBuildProjectLogsConfigS3LogsDetails {
     /// <p>Whether to disable encryption of the S3 build log output.</p>
-    pub fn encryption_disabled(&self) -> bool {
+    pub fn encryption_disabled(&self) -> ::std::option::Option<bool> {
         self.encryption_disabled
     }
     /// <p>The ARN of the S3 bucket and the path prefix for S3 logs.</p>
@@ -86,7 +86,7 @@ impl AwsCodeBuildProjectLogsConfigS3LogsDetailsBuilder {
     /// Consumes the builder and constructs a [`AwsCodeBuildProjectLogsConfigS3LogsDetails`](crate::types::AwsCodeBuildProjectLogsConfigS3LogsDetails).
     pub fn build(self) -> crate::types::AwsCodeBuildProjectLogsConfigS3LogsDetails {
         crate::types::AwsCodeBuildProjectLogsConfigS3LogsDetails {
-            encryption_disabled: self.encryption_disabled.unwrap_or_default(),
+            encryption_disabled: self.encryption_disabled,
             location: self.location,
             status: self.status,
         }

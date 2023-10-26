@@ -5,11 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsOpenSearchServiceDomainNodeToNodeEncryptionOptionsDetails {
     /// <p>Whether node-to-node encryption is enabled.</p>
-    pub enabled: bool,
+    pub enabled: ::std::option::Option<bool>,
 }
 impl AwsOpenSearchServiceDomainNodeToNodeEncryptionOptionsDetails {
     /// <p>Whether node-to-node encryption is enabled.</p>
-    pub fn enabled(&self) -> bool {
+    pub fn enabled(&self) -> ::std::option::Option<bool> {
         self.enabled
     }
 }
@@ -43,8 +43,6 @@ impl AwsOpenSearchServiceDomainNodeToNodeEncryptionOptionsDetailsBuilder {
     }
     /// Consumes the builder and constructs a [`AwsOpenSearchServiceDomainNodeToNodeEncryptionOptionsDetails`](crate::types::AwsOpenSearchServiceDomainNodeToNodeEncryptionOptionsDetails).
     pub fn build(self) -> crate::types::AwsOpenSearchServiceDomainNodeToNodeEncryptionOptionsDetails {
-        crate::types::AwsOpenSearchServiceDomainNodeToNodeEncryptionOptionsDetails {
-            enabled: self.enabled.unwrap_or_default(),
-        }
+        crate::types::AwsOpenSearchServiceDomainNodeToNodeEncryptionOptionsDetails { enabled: self.enabled }
     }
 }

@@ -3,18 +3,14 @@ pub fn ser_aws_ec2_launch_template_data_private_dns_name_options_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsEc2LaunchTemplateDataPrivateDnsNameOptionsDetails,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if input.enable_resource_name_dns_aaaa_record {
-        object
-            .key("EnableResourceNameDnsAAAARecord")
-            .boolean(input.enable_resource_name_dns_aaaa_record);
+    if let Some(var_1) = &input.enable_resource_name_dns_aaaa_record {
+        object.key("EnableResourceNameDnsAAAARecord").boolean(*var_1);
     }
-    if input.enable_resource_name_dns_a_record {
-        object
-            .key("EnableResourceNameDnsARecord")
-            .boolean(input.enable_resource_name_dns_a_record);
+    if let Some(var_2) = &input.enable_resource_name_dns_a_record {
+        object.key("EnableResourceNameDnsARecord").boolean(*var_2);
     }
-    if let Some(var_1) = &input.hostname_type {
-        object.key("HostnameType").string(var_1.as_str());
+    if let Some(var_3) = &input.hostname_type {
+        object.key("HostnameType").string(var_3.as_str());
     }
     Ok(())
 }

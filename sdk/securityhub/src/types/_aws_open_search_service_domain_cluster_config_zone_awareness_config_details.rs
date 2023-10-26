@@ -5,11 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsOpenSearchServiceDomainClusterConfigZoneAwarenessConfigDetails {
     /// <p>The number of Availability Zones that the domain uses. Valid values are <code>2</code> or <code>3</code>. The default is <code>2</code>.</p>
-    pub availability_zone_count: i32,
+    pub availability_zone_count: ::std::option::Option<i32>,
 }
 impl AwsOpenSearchServiceDomainClusterConfigZoneAwarenessConfigDetails {
     /// <p>The number of Availability Zones that the domain uses. Valid values are <code>2</code> or <code>3</code>. The default is <code>2</code>.</p>
-    pub fn availability_zone_count(&self) -> i32 {
+    pub fn availability_zone_count(&self) -> ::std::option::Option<i32> {
         self.availability_zone_count
     }
 }
@@ -44,7 +44,7 @@ impl AwsOpenSearchServiceDomainClusterConfigZoneAwarenessConfigDetailsBuilder {
     /// Consumes the builder and constructs a [`AwsOpenSearchServiceDomainClusterConfigZoneAwarenessConfigDetails`](crate::types::AwsOpenSearchServiceDomainClusterConfigZoneAwarenessConfigDetails).
     pub fn build(self) -> crate::types::AwsOpenSearchServiceDomainClusterConfigZoneAwarenessConfigDetails {
         crate::types::AwsOpenSearchServiceDomainClusterConfigZoneAwarenessConfigDetails {
-            availability_zone_count: self.availability_zone_count.unwrap_or_default(),
+            availability_zone_count: self.availability_zone_count,
         }
     }
 }

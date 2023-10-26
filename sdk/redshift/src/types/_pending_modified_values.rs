@@ -2,7 +2,7 @@
 
 /// <p>Describes cluster attributes that are in a pending state. A change to one or more the attributes was requested and is in progress or will be applied.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct PendingModifiedValues {
     /// <p>The pending or in-progress change of the admin user password for the cluster.</p>
     pub master_user_password: ::std::option::Option<::std::string::String>,
@@ -77,6 +77,23 @@ impl PendingModifiedValues {
         self.encryption_type.as_deref()
     }
 }
+impl ::std::fmt::Debug for PendingModifiedValues {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("PendingModifiedValues");
+        formatter.field("master_user_password", &"*** Sensitive Data Redacted ***");
+        formatter.field("node_type", &self.node_type);
+        formatter.field("number_of_nodes", &self.number_of_nodes);
+        formatter.field("cluster_type", &self.cluster_type);
+        formatter.field("cluster_version", &self.cluster_version);
+        formatter.field("automated_snapshot_retention_period", &self.automated_snapshot_retention_period);
+        formatter.field("cluster_identifier", &self.cluster_identifier);
+        formatter.field("publicly_accessible", &self.publicly_accessible);
+        formatter.field("enhanced_vpc_routing", &self.enhanced_vpc_routing);
+        formatter.field("maintenance_track_name", &self.maintenance_track_name);
+        formatter.field("encryption_type", &self.encryption_type);
+        formatter.finish()
+    }
+}
 impl PendingModifiedValues {
     /// Creates a new builder-style object to manufacture [`PendingModifiedValues`](crate::types::PendingModifiedValues).
     pub fn builder() -> crate::types::builders::PendingModifiedValuesBuilder {
@@ -86,7 +103,7 @@ impl PendingModifiedValues {
 
 /// A builder for [`PendingModifiedValues`](crate::types::PendingModifiedValues).
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct PendingModifiedValuesBuilder {
     pub(crate) master_user_password: ::std::option::Option<::std::string::String>,
     pub(crate) node_type: ::std::option::Option<::std::string::String>,
@@ -276,5 +293,22 @@ impl PendingModifiedValuesBuilder {
             maintenance_track_name: self.maintenance_track_name,
             encryption_type: self.encryption_type,
         }
+    }
+}
+impl ::std::fmt::Debug for PendingModifiedValuesBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("PendingModifiedValuesBuilder");
+        formatter.field("master_user_password", &"*** Sensitive Data Redacted ***");
+        formatter.field("node_type", &self.node_type);
+        formatter.field("number_of_nodes", &self.number_of_nodes);
+        formatter.field("cluster_type", &self.cluster_type);
+        formatter.field("cluster_version", &self.cluster_version);
+        formatter.field("automated_snapshot_retention_period", &self.automated_snapshot_retention_period);
+        formatter.field("cluster_identifier", &self.cluster_identifier);
+        formatter.field("publicly_accessible", &self.publicly_accessible);
+        formatter.field("enhanced_vpc_routing", &self.enhanced_vpc_routing);
+        formatter.field("maintenance_track_name", &self.maintenance_track_name);
+        formatter.field("encryption_type", &self.encryption_type);
+        formatter.finish()
     }
 }

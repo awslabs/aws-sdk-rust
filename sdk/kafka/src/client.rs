@@ -158,6 +158,8 @@ mod create_cluster_v2;
 
 mod create_configuration;
 
+mod create_replicator;
+
 mod create_vpc_connection;
 
 /// Operation customization and supporting types.
@@ -194,6 +196,8 @@ mod delete_cluster_policy;
 
 mod delete_configuration;
 
+mod delete_replicator;
+
 mod delete_vpc_connection;
 
 mod describe_cluster;
@@ -207,6 +211,8 @@ mod describe_cluster_v2;
 mod describe_configuration;
 
 mod describe_configuration_revision;
+
+mod describe_replicator;
 
 mod describe_vpc_connection;
 
@@ -233,6 +239,8 @@ mod list_configurations;
 mod list_kafka_versions;
 
 mod list_nodes;
+
+mod list_replicators;
 
 mod list_scram_secrets;
 
@@ -265,6 +273,8 @@ mod update_configuration;
 mod update_connectivity;
 
 mod update_monitoring;
+
+mod update_replication_info;
 
 mod update_security;
 

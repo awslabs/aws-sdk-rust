@@ -19,6 +19,8 @@ pub struct UpdateLaunchConfigurationTemplateInput {
     pub export_bucket_arn: ::std::option::Option<::std::string::String>,
     /// <p>Whether we want to activate post-launch actions.</p>
     pub post_launch_enabled: ::std::option::Option<bool>,
+    /// <p>DRS will set the 'launch into instance ID' of any source server when performing a drill, recovery or failback to the previous region or availability zone, using the instance ID of the source instance.</p>
+    pub launch_into_source_instance: ::std::option::Option<bool>,
 }
 impl UpdateLaunchConfigurationTemplateInput {
     /// <p>Launch Configuration Template ID.</p>
@@ -53,6 +55,10 @@ impl UpdateLaunchConfigurationTemplateInput {
     pub fn post_launch_enabled(&self) -> ::std::option::Option<bool> {
         self.post_launch_enabled
     }
+    /// <p>DRS will set the 'launch into instance ID' of any source server when performing a drill, recovery or failback to the previous region or availability zone, using the instance ID of the source instance.</p>
+    pub fn launch_into_source_instance(&self) -> ::std::option::Option<bool> {
+        self.launch_into_source_instance
+    }
 }
 impl UpdateLaunchConfigurationTemplateInput {
     /// Creates a new builder-style object to manufacture [`UpdateLaunchConfigurationTemplateInput`](crate::operation::update_launch_configuration_template::UpdateLaunchConfigurationTemplateInput).
@@ -73,6 +79,7 @@ pub struct UpdateLaunchConfigurationTemplateInputBuilder {
     pub(crate) licensing: ::std::option::Option<crate::types::Licensing>,
     pub(crate) export_bucket_arn: ::std::option::Option<::std::string::String>,
     pub(crate) post_launch_enabled: ::std::option::Option<bool>,
+    pub(crate) launch_into_source_instance: ::std::option::Option<bool>,
 }
 impl UpdateLaunchConfigurationTemplateInputBuilder {
     /// <p>Launch Configuration Template ID.</p>
@@ -190,6 +197,20 @@ impl UpdateLaunchConfigurationTemplateInputBuilder {
     pub fn get_post_launch_enabled(&self) -> &::std::option::Option<bool> {
         &self.post_launch_enabled
     }
+    /// <p>DRS will set the 'launch into instance ID' of any source server when performing a drill, recovery or failback to the previous region or availability zone, using the instance ID of the source instance.</p>
+    pub fn launch_into_source_instance(mut self, input: bool) -> Self {
+        self.launch_into_source_instance = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>DRS will set the 'launch into instance ID' of any source server when performing a drill, recovery or failback to the previous region or availability zone, using the instance ID of the source instance.</p>
+    pub fn set_launch_into_source_instance(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.launch_into_source_instance = input;
+        self
+    }
+    /// <p>DRS will set the 'launch into instance ID' of any source server when performing a drill, recovery or failback to the previous region or availability zone, using the instance ID of the source instance.</p>
+    pub fn get_launch_into_source_instance(&self) -> &::std::option::Option<bool> {
+        &self.launch_into_source_instance
+    }
     /// Consumes the builder and constructs a [`UpdateLaunchConfigurationTemplateInput`](crate::operation::update_launch_configuration_template::UpdateLaunchConfigurationTemplateInput).
     pub fn build(
         self,
@@ -207,6 +228,7 @@ impl UpdateLaunchConfigurationTemplateInputBuilder {
                 licensing: self.licensing,
                 export_bucket_arn: self.export_bucket_arn,
                 post_launch_enabled: self.post_launch_enabled,
+                launch_into_source_instance: self.launch_into_source_instance,
             },
         )
     }

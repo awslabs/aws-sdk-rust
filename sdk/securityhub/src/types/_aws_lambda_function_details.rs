@@ -26,7 +26,7 @@ pub struct AwsLambdaFunctionDetails {
     /// <p>For Lambda@Edge functions, the ARN of the master function.</p>
     pub master_arn: ::std::option::Option<::std::string::String>,
     /// <p>The memory that is allocated to the function.</p>
-    pub memory_size: i32,
+    pub memory_size: ::std::option::Option<i32>,
     /// <p>The latest updated revision of the function or alias.</p>
     pub revision_id: ::std::option::Option<::std::string::String>,
     /// <p>The function's execution role.</p>
@@ -34,7 +34,7 @@ pub struct AwsLambdaFunctionDetails {
     /// <p>The runtime environment for the Lambda function.</p>
     pub runtime: ::std::option::Option<::std::string::String>,
     /// <p>The amount of time that Lambda allows a function to run before stopping it.</p>
-    pub timeout: i32,
+    pub timeout: ::std::option::Option<i32>,
     /// <p>The function's X-Ray tracing configuration.</p>
     pub tracing_config: ::std::option::Option<crate::types::AwsLambdaFunctionTracingConfig>,
     /// <p>The function's networking configuration.</p>
@@ -89,7 +89,7 @@ impl AwsLambdaFunctionDetails {
         self.master_arn.as_deref()
     }
     /// <p>The memory that is allocated to the function.</p>
-    pub fn memory_size(&self) -> i32 {
+    pub fn memory_size(&self) -> ::std::option::Option<i32> {
         self.memory_size
     }
     /// <p>The latest updated revision of the function or alias.</p>
@@ -105,7 +105,7 @@ impl AwsLambdaFunctionDetails {
         self.runtime.as_deref()
     }
     /// <p>The amount of time that Lambda allows a function to run before stopping it.</p>
-    pub fn timeout(&self) -> i32 {
+    pub fn timeout(&self) -> ::std::option::Option<i32> {
         self.timeout
     }
     /// <p>The function's X-Ray tracing configuration.</p>
@@ -470,11 +470,11 @@ impl AwsLambdaFunctionDetailsBuilder {
             last_modified: self.last_modified,
             layers: self.layers,
             master_arn: self.master_arn,
-            memory_size: self.memory_size.unwrap_or_default(),
+            memory_size: self.memory_size,
             revision_id: self.revision_id,
             role: self.role,
             runtime: self.runtime,
-            timeout: self.timeout.unwrap_or_default(),
+            timeout: self.timeout,
             tracing_config: self.tracing_config,
             vpc_config: self.vpc_config,
             version: self.version,

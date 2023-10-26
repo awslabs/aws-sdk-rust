@@ -6,17 +6,17 @@ pub fn ser_aws_ecs_service_load_balancers_details(
     if let Some(var_1) = &input.container_name {
         object.key("ContainerName").string(var_1.as_str());
     }
-    if input.container_port != 0 {
+    if let Some(var_2) = &input.container_port {
         object.key("ContainerPort").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.container_port).into()),
+            ::aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
-    if let Some(var_2) = &input.load_balancer_name {
-        object.key("LoadBalancerName").string(var_2.as_str());
+    if let Some(var_3) = &input.load_balancer_name {
+        object.key("LoadBalancerName").string(var_3.as_str());
     }
-    if let Some(var_3) = &input.target_group_arn {
-        object.key("TargetGroupArn").string(var_3.as_str());
+    if let Some(var_4) = &input.target_group_arn {
+        object.key("TargetGroupArn").string(var_4.as_str());
     }
     Ok(())
 }

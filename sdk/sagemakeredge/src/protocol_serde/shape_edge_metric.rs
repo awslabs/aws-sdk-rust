@@ -9,16 +9,16 @@ pub fn ser_edge_metric(
     if let Some(var_2) = &input.metric_name {
         object.key("MetricName").string(var_2.as_str());
     }
-    if input.value != 0.0 {
+    if let Some(var_3) = &input.value {
         object.key("Value").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::Float((input.value).into()),
+            ::aws_smithy_types::Number::Float((*var_3).into()),
         );
     }
-    if let Some(var_3) = &input.timestamp {
+    if let Some(var_4) = &input.timestamp {
         object
             .key("Timestamp")
-            .date_time(var_3, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
+            .date_time(var_4, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     Ok(())
 }

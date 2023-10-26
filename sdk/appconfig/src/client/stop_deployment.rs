@@ -18,11 +18,11 @@ impl super::Client {
     ///   - [`description(Option<String>)`](crate::operation::stop_deployment::StopDeploymentOutput::description): <p>The description of the deployment.</p>
     ///   - [`deployment_duration_in_minutes(i32)`](crate::operation::stop_deployment::StopDeploymentOutput::deployment_duration_in_minutes): <p>Total amount of time the deployment lasted.</p>
     ///   - [`growth_type(Option<GrowthType>)`](crate::operation::stop_deployment::StopDeploymentOutput::growth_type): <p>The algorithm used to define how percentage grew over time.</p>
-    ///   - [`growth_factor(f32)`](crate::operation::stop_deployment::StopDeploymentOutput::growth_factor): <p>The percentage of targets to receive a deployed configuration during each interval.</p>
+    ///   - [`growth_factor(Option<f32>)`](crate::operation::stop_deployment::StopDeploymentOutput::growth_factor): <p>The percentage of targets to receive a deployed configuration during each interval.</p>
     ///   - [`final_bake_time_in_minutes(i32)`](crate::operation::stop_deployment::StopDeploymentOutput::final_bake_time_in_minutes): <p>The amount of time that AppConfig monitored for alarms before considering the deployment to be complete and no longer eligible for automatic rollback.</p>
     ///   - [`state(Option<DeploymentState>)`](crate::operation::stop_deployment::StopDeploymentOutput::state): <p>The state of the deployment.</p>
     ///   - [`event_log(Option<Vec<DeploymentEvent>>)`](crate::operation::stop_deployment::StopDeploymentOutput::event_log): <p>A list containing all events related to a deployment. The most recent events are displayed first.</p>
-    ///   - [`percentage_complete(f32)`](crate::operation::stop_deployment::StopDeploymentOutput::percentage_complete): <p>The percentage of targets for which the deployment is available.</p>
+    ///   - [`percentage_complete(Option<f32>)`](crate::operation::stop_deployment::StopDeploymentOutput::percentage_complete): <p>The percentage of targets for which the deployment is available.</p>
     ///   - [`started_at(Option<DateTime>)`](crate::operation::stop_deployment::StopDeploymentOutput::started_at): <p>The time the deployment started.</p>
     ///   - [`completed_at(Option<DateTime>)`](crate::operation::stop_deployment::StopDeploymentOutput::completed_at): <p>The time the deployment completed. </p>
     ///   - [`applied_extensions(Option<Vec<AppliedExtension>>)`](crate::operation::stop_deployment::StopDeploymentOutput::applied_extensions): <p>A list of extensions that were processed as part of the deployment. The extensions that were previously associated to the configuration profile, environment, or the application when <code>StartDeployment</code> was called.</p>

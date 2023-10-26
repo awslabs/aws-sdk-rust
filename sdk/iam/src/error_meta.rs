@@ -1749,9 +1749,6 @@ where
 impl From<crate::operation::get_access_key_last_used::GetAccessKeyLastUsedError> for Error {
     fn from(err: crate::operation::get_access_key_last_used::GetAccessKeyLastUsedError) -> Self {
         match err {
-            crate::operation::get_access_key_last_used::GetAccessKeyLastUsedError::NoSuchEntityException(inner) => {
-                Error::NoSuchEntityException(inner)
-            }
             crate::operation::get_access_key_last_used::GetAccessKeyLastUsedError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }

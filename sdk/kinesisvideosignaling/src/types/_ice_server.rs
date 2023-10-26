@@ -11,7 +11,7 @@ pub struct IceServer {
     /// <p>A password to login to the ICE server.</p>
     pub password: ::std::option::Option<::std::string::String>,
     /// <p>The period of time, in seconds, during which the username and password are valid.</p>
-    pub ttl: i32,
+    pub ttl: ::std::option::Option<i32>,
 }
 impl IceServer {
     /// <p>An array of URIs, in the form specified in the <a href="https://tools.ietf.org/html/draft-petithuguenin-behave-turn-uris-03">I-D.petithuguenin-behave-turn-uris</a> spec. These URIs provide the different addresses and/or protocols that can be used to reach the TURN server.</p>
@@ -27,7 +27,7 @@ impl IceServer {
         self.password.as_deref()
     }
     /// <p>The period of time, in seconds, during which the username and password are valid.</p>
-    pub fn ttl(&self) -> i32 {
+    pub fn ttl(&self) -> ::std::option::Option<i32> {
         self.ttl
     }
 }
@@ -116,7 +116,7 @@ impl IceServerBuilder {
             uris: self.uris,
             username: self.username,
             password: self.password,
-            ttl: self.ttl.unwrap_or_default(),
+            ttl: self.ttl,
         }
     }
 }

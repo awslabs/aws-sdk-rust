@@ -83,7 +83,7 @@ pub struct Snapshot {
     /// <p>The Amazon Virtual Private Cloud identifier (VPC ID) of the cache subnet group for the source cluster.</p>
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>&nbsp;If you are running Redis engine version 6.0 or later, set this parameter to yes if you want to opt-in to the next auto minor version upgrade campaign. This parameter is disabled for previous versions.&nbsp; </p>
-    pub auto_minor_version_upgrade: bool,
+    pub auto_minor_version_upgrade: ::std::option::Option<bool>,
     /// <p>For an automatic snapshot, the number of days for which ElastiCache retains the snapshot before deleting it.</p>
     /// <p>For manual snapshots, this field reflects the <code>SnapshotRetentionLimit</code> for the source cluster when the snapshot was created. This field is otherwise ignored: Manual snapshots do not expire, and can only be deleted using the <code>DeleteSnapshot</code> operation. </p>
     /// <p> <b>Important</b> If the value of SnapshotRetentionLimit is set to zero (0), backups are turned off.</p>
@@ -221,7 +221,7 @@ impl Snapshot {
         self.vpc_id.as_deref()
     }
     /// <p>&nbsp;If you are running Redis engine version 6.0 or later, set this parameter to yes if you want to opt-in to the next auto minor version upgrade campaign. This parameter is disabled for previous versions.&nbsp; </p>
-    pub fn auto_minor_version_upgrade(&self) -> bool {
+    pub fn auto_minor_version_upgrade(&self) -> ::std::option::Option<bool> {
         self.auto_minor_version_upgrade
     }
     /// <p>For an automatic snapshot, the number of days for which ElastiCache retains the snapshot before deleting it.</p>
@@ -846,7 +846,7 @@ impl SnapshotBuilder {
             cache_parameter_group_name: self.cache_parameter_group_name,
             cache_subnet_group_name: self.cache_subnet_group_name,
             vpc_id: self.vpc_id,
-            auto_minor_version_upgrade: self.auto_minor_version_upgrade.unwrap_or_default(),
+            auto_minor_version_upgrade: self.auto_minor_version_upgrade,
             snapshot_retention_limit: self.snapshot_retention_limit,
             snapshot_window: self.snapshot_window,
             num_node_groups: self.num_node_groups,

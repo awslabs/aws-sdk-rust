@@ -16,7 +16,7 @@ pub struct AwsDynamoDbTableDetails {
     /// <p>The version of global tables being used.</p>
     pub global_table_version: ::std::option::Option<::std::string::String>,
     /// <p>The number of items in the table.</p>
-    pub item_count: i32,
+    pub item_count: ::std::option::Option<i32>,
     /// <p>The primary key structure for the table.</p>
     pub key_schema: ::std::option::Option<::std::vec::Vec<crate::types::AwsDynamoDbTableKeySchema>>,
     /// <p>The ARN of the latest stream for the table.</p>
@@ -40,7 +40,7 @@ pub struct AwsDynamoDbTableDetails {
     /// <p>The name of the table.</p>
     pub table_name: ::std::option::Option<::std::string::String>,
     /// <p>The total size of the table in bytes.</p>
-    pub table_size_bytes: i64,
+    pub table_size_bytes: ::std::option::Option<i64>,
     /// <p>The current status of the table. Valid values are as follows:</p>
     /// <ul>
     /// <li> <p> <code>ACTIVE</code> </p> </li>
@@ -76,7 +76,7 @@ impl AwsDynamoDbTableDetails {
         self.global_table_version.as_deref()
     }
     /// <p>The number of items in the table.</p>
-    pub fn item_count(&self) -> i32 {
+    pub fn item_count(&self) -> ::std::option::Option<i32> {
         self.item_count
     }
     /// <p>The primary key structure for the table.</p>
@@ -124,7 +124,7 @@ impl AwsDynamoDbTableDetails {
         self.table_name.as_deref()
     }
     /// <p>The total size of the table in bytes.</p>
-    pub fn table_size_bytes(&self) -> i64 {
+    pub fn table_size_bytes(&self) -> ::std::option::Option<i64> {
         self.table_size_bytes
     }
     /// <p>The current status of the table. Valid values are as follows:</p>
@@ -516,7 +516,7 @@ impl AwsDynamoDbTableDetailsBuilder {
             creation_date_time: self.creation_date_time,
             global_secondary_indexes: self.global_secondary_indexes,
             global_table_version: self.global_table_version,
-            item_count: self.item_count.unwrap_or_default(),
+            item_count: self.item_count,
             key_schema: self.key_schema,
             latest_stream_arn: self.latest_stream_arn,
             latest_stream_label: self.latest_stream_label,
@@ -528,7 +528,7 @@ impl AwsDynamoDbTableDetailsBuilder {
             stream_specification: self.stream_specification,
             table_id: self.table_id,
             table_name: self.table_name,
-            table_size_bytes: self.table_size_bytes.unwrap_or_default(),
+            table_size_bytes: self.table_size_bytes,
             table_status: self.table_status,
         }
     }

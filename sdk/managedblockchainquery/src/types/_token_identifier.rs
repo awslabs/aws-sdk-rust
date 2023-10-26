@@ -10,7 +10,9 @@ pub struct TokenIdentifier {
     pub network: ::std::option::Option<crate::types::QueryNetwork>,
     /// <p>This is the token's contract address.</p>
     pub contract_address: ::std::option::Option<::std::string::String>,
-    /// <p>The unique identifier of the token.</p>
+    /// <p>The unique identifier of the token.</p> <note>
+    /// <p>You must specify this container with <code>btc</code> for the native BTC token, and <code>eth</code> for the native ETH token. For all other token types you must specify the <code>tokenId</code> in the 64 character hexadecimal <code>tokenid</code> format.</p>
+    /// </note>
     pub token_id: ::std::option::Option<::std::string::String>,
 }
 impl TokenIdentifier {
@@ -22,7 +24,9 @@ impl TokenIdentifier {
     pub fn contract_address(&self) -> ::std::option::Option<&str> {
         self.contract_address.as_deref()
     }
-    /// <p>The unique identifier of the token.</p>
+    /// <p>The unique identifier of the token.</p> <note>
+    /// <p>You must specify this container with <code>btc</code> for the native BTC token, and <code>eth</code> for the native ETH token. For all other token types you must specify the <code>tokenId</code> in the 64 character hexadecimal <code>tokenid</code> format.</p>
+    /// </note>
     pub fn token_id(&self) -> ::std::option::Option<&str> {
         self.token_id.as_deref()
     }
@@ -71,17 +75,23 @@ impl TokenIdentifierBuilder {
     pub fn get_contract_address(&self) -> &::std::option::Option<::std::string::String> {
         &self.contract_address
     }
-    /// <p>The unique identifier of the token.</p>
+    /// <p>The unique identifier of the token.</p> <note>
+    /// <p>You must specify this container with <code>btc</code> for the native BTC token, and <code>eth</code> for the native ETH token. For all other token types you must specify the <code>tokenId</code> in the 64 character hexadecimal <code>tokenid</code> format.</p>
+    /// </note>
     pub fn token_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.token_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier of the token.</p>
+    /// <p>The unique identifier of the token.</p> <note>
+    /// <p>You must specify this container with <code>btc</code> for the native BTC token, and <code>eth</code> for the native ETH token. For all other token types you must specify the <code>tokenId</code> in the 64 character hexadecimal <code>tokenid</code> format.</p>
+    /// </note>
     pub fn set_token_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.token_id = input;
         self
     }
-    /// <p>The unique identifier of the token.</p>
+    /// <p>The unique identifier of the token.</p> <note>
+    /// <p>You must specify this container with <code>btc</code> for the native BTC token, and <code>eth</code> for the native ETH token. For all other token types you must specify the <code>tokenId</code> in the 64 character hexadecimal <code>tokenid</code> format.</p>
+    /// </note>
     pub fn get_token_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.token_id
     }

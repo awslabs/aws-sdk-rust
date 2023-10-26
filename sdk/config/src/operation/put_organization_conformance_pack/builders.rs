@@ -131,21 +131,21 @@ impl PutOrganizationConformancePackFluentBuilder {
         self.inner.get_organization_conformance_pack_name()
     }
     /// <p>Location of file containing the template body. The uri must point to the conformance pack template (max size: 300 KB).</p> <note>
-    /// <p>You must have access to read Amazon S3 bucket.</p>
+    /// <p>You must have access to read Amazon S3 bucket. In addition, in order to ensure a successful deployment, the template object must not be in an <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-class-intro.html">archived storage class</a> if this parameter is passed.</p>
     /// </note>
     pub fn template_s3_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.template_s3_uri(input.into());
         self
     }
     /// <p>Location of file containing the template body. The uri must point to the conformance pack template (max size: 300 KB).</p> <note>
-    /// <p>You must have access to read Amazon S3 bucket.</p>
+    /// <p>You must have access to read Amazon S3 bucket. In addition, in order to ensure a successful deployment, the template object must not be in an <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-class-intro.html">archived storage class</a> if this parameter is passed.</p>
     /// </note>
     pub fn set_template_s3_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_template_s3_uri(input);
         self
     }
     /// <p>Location of file containing the template body. The uri must point to the conformance pack template (max size: 300 KB).</p> <note>
-    /// <p>You must have access to read Amazon S3 bucket.</p>
+    /// <p>You must have access to read Amazon S3 bucket. In addition, in order to ensure a successful deployment, the template object must not be in an <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-class-intro.html">archived storage class</a> if this parameter is passed.</p>
     /// </note>
     pub fn get_template_s3_uri(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_template_s3_uri()

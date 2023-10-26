@@ -6,71 +6,71 @@ pub fn ser_aws_ec2_security_group_ip_permission(
     if let Some(var_1) = &input.ip_protocol {
         object.key("IpProtocol").string(var_1.as_str());
     }
-    if input.from_port != 0 {
+    if let Some(var_2) = &input.from_port {
         object.key("FromPort").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.from_port).into()),
+            ::aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
-    if input.to_port != 0 {
+    if let Some(var_3) = &input.to_port {
         object.key("ToPort").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.to_port).into()),
+            ::aws_smithy_types::Number::NegInt((*var_3).into()),
         );
     }
-    if let Some(var_2) = &input.user_id_group_pairs {
-        let mut array_3 = object.key("UserIdGroupPairs").start_array();
-        for item_4 in var_2 {
+    if let Some(var_4) = &input.user_id_group_pairs {
+        let mut array_5 = object.key("UserIdGroupPairs").start_array();
+        for item_6 in var_4 {
             {
                 #[allow(unused_mut)]
-                let mut object_5 = array_3.value().start_object();
+                let mut object_7 = array_5.value().start_object();
                 crate::protocol_serde::shape_aws_ec2_security_group_user_id_group_pair::ser_aws_ec2_security_group_user_id_group_pair(
-                    &mut object_5,
-                    item_4,
+                    &mut object_7,
+                    item_6,
                 )?;
-                object_5.finish();
+                object_7.finish();
             }
         }
-        array_3.finish();
+        array_5.finish();
     }
-    if let Some(var_6) = &input.ip_ranges {
-        let mut array_7 = object.key("IpRanges").start_array();
-        for item_8 in var_6 {
+    if let Some(var_8) = &input.ip_ranges {
+        let mut array_9 = object.key("IpRanges").start_array();
+        for item_10 in var_8 {
             {
                 #[allow(unused_mut)]
-                let mut object_9 = array_7.value().start_object();
-                crate::protocol_serde::shape_aws_ec2_security_group_ip_range::ser_aws_ec2_security_group_ip_range(&mut object_9, item_8)?;
-                object_9.finish();
+                let mut object_11 = array_9.value().start_object();
+                crate::protocol_serde::shape_aws_ec2_security_group_ip_range::ser_aws_ec2_security_group_ip_range(&mut object_11, item_10)?;
+                object_11.finish();
             }
         }
-        array_7.finish();
+        array_9.finish();
     }
-    if let Some(var_10) = &input.ipv6_ranges {
-        let mut array_11 = object.key("Ipv6Ranges").start_array();
-        for item_12 in var_10 {
+    if let Some(var_12) = &input.ipv6_ranges {
+        let mut array_13 = object.key("Ipv6Ranges").start_array();
+        for item_14 in var_12 {
             {
                 #[allow(unused_mut)]
-                let mut object_13 = array_11.value().start_object();
-                crate::protocol_serde::shape_aws_ec2_security_group_ipv6_range::ser_aws_ec2_security_group_ipv6_range(&mut object_13, item_12)?;
-                object_13.finish();
+                let mut object_15 = array_13.value().start_object();
+                crate::protocol_serde::shape_aws_ec2_security_group_ipv6_range::ser_aws_ec2_security_group_ipv6_range(&mut object_15, item_14)?;
+                object_15.finish();
             }
         }
-        array_11.finish();
+        array_13.finish();
     }
-    if let Some(var_14) = &input.prefix_list_ids {
-        let mut array_15 = object.key("PrefixListIds").start_array();
-        for item_16 in var_14 {
+    if let Some(var_16) = &input.prefix_list_ids {
+        let mut array_17 = object.key("PrefixListIds").start_array();
+        for item_18 in var_16 {
             {
                 #[allow(unused_mut)]
-                let mut object_17 = array_15.value().start_object();
+                let mut object_19 = array_17.value().start_object();
                 crate::protocol_serde::shape_aws_ec2_security_group_prefix_list_id::ser_aws_ec2_security_group_prefix_list_id(
-                    &mut object_17,
-                    item_16,
+                    &mut object_19,
+                    item_18,
                 )?;
-                object_17.finish();
+                object_19.finish();
             }
         }
-        array_15.finish();
+        array_17.finish();
     }
     Ok(())
 }

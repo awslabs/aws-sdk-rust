@@ -5,7 +5,7 @@
 pub struct ListMatchingWorkflowsOutput {
     /// <p>A list of <code>MatchingWorkflowSummary</code> objects, each of which contain the fields <code>WorkflowName</code>, <code>WorkflowArn</code>, <code>CreatedAt</code>, and <code>UpdatedAt</code>.</p>
     pub workflow_summaries: ::std::option::Option<::std::vec::Vec<crate::types::MatchingWorkflowSummary>>,
-    /// <p>The pagination token from the previous <code>ListSchemaMappings</code> API call.</p>
+    /// <p>The pagination token from the previous API call.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -14,7 +14,7 @@ impl ListMatchingWorkflowsOutput {
     pub fn workflow_summaries(&self) -> ::std::option::Option<&[crate::types::MatchingWorkflowSummary]> {
         self.workflow_summaries.as_deref()
     }
-    /// <p>The pagination token from the previous <code>ListSchemaMappings</code> API call.</p>
+    /// <p>The pagination token from the previous API call.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -60,17 +60,17 @@ impl ListMatchingWorkflowsOutputBuilder {
     pub fn get_workflow_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MatchingWorkflowSummary>> {
         &self.workflow_summaries
     }
-    /// <p>The pagination token from the previous <code>ListSchemaMappings</code> API call.</p>
+    /// <p>The pagination token from the previous API call.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The pagination token from the previous <code>ListSchemaMappings</code> API call.</p>
+    /// <p>The pagination token from the previous API call.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>The pagination token from the previous <code>ListSchemaMappings</code> API call.</p>
+    /// <p>The pagination token from the previous API call.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

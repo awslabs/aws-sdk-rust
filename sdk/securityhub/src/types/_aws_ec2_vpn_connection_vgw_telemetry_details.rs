@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEc2VpnConnectionVgwTelemetryDetails {
     /// <p>The number of accepted routes.</p>
-    pub accepted_route_count: i32,
+    pub accepted_route_count: ::std::option::Option<i32>,
     /// <p>The ARN of the VPN tunnel endpoint certificate.</p>
     pub certificate_arn: ::std::option::Option<::std::string::String>,
     /// <p>The date and time of the last change in status.</p>
@@ -20,7 +20,7 @@ pub struct AwsEc2VpnConnectionVgwTelemetryDetails {
 }
 impl AwsEc2VpnConnectionVgwTelemetryDetails {
     /// <p>The number of accepted routes.</p>
-    pub fn accepted_route_count(&self) -> i32 {
+    pub fn accepted_route_count(&self) -> ::std::option::Option<i32> {
         self.accepted_route_count
     }
     /// <p>The ARN of the VPN tunnel endpoint certificate.</p>
@@ -154,7 +154,7 @@ impl AwsEc2VpnConnectionVgwTelemetryDetailsBuilder {
     /// Consumes the builder and constructs a [`AwsEc2VpnConnectionVgwTelemetryDetails`](crate::types::AwsEc2VpnConnectionVgwTelemetryDetails).
     pub fn build(self) -> crate::types::AwsEc2VpnConnectionVgwTelemetryDetails {
         crate::types::AwsEc2VpnConnectionVgwTelemetryDetails {
-            accepted_route_count: self.accepted_route_count.unwrap_or_default(),
+            accepted_route_count: self.accepted_route_count,
             certificate_arn: self.certificate_arn,
             last_status_change: self.last_status_change,
             outside_ip_address: self.outside_ip_address,

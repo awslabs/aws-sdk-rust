@@ -6533,6 +6533,53 @@ impl From<crate::operation::update_phone_number::UpdatePhoneNumberError> for Err
         }
     }
 }
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::update_phone_number_metadata::UpdatePhoneNumberMetadataError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::update_phone_number_metadata::UpdatePhoneNumberMetadataError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::update_phone_number_metadata::UpdatePhoneNumberMetadataError> for Error {
+    fn from(err: crate::operation::update_phone_number_metadata::UpdatePhoneNumberMetadataError) -> Self {
+        match err {
+            crate::operation::update_phone_number_metadata::UpdatePhoneNumberMetadataError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::update_phone_number_metadata::UpdatePhoneNumberMetadataError::IdempotencyException(inner) => {
+                Error::IdempotencyException(inner)
+            }
+            crate::operation::update_phone_number_metadata::UpdatePhoneNumberMetadataError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::update_phone_number_metadata::UpdatePhoneNumberMetadataError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::update_phone_number_metadata::UpdatePhoneNumberMetadataError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::update_phone_number_metadata::UpdatePhoneNumberMetadataError::ResourceInUseException(inner) => {
+                Error::ResourceInUseException(inner)
+            }
+            crate::operation::update_phone_number_metadata::UpdatePhoneNumberMetadataError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_phone_number_metadata::UpdatePhoneNumberMetadataError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::update_phone_number_metadata::UpdatePhoneNumberMetadataError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::update_prompt::UpdatePromptError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

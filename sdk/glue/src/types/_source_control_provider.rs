@@ -13,7 +13,9 @@
 /// # let sourcecontrolprovider = unimplemented!();
 /// match sourcecontrolprovider {
 ///     SourceControlProvider::AwsCodeCommit => { /* ... */ },
+///     SourceControlProvider::Bitbucket => { /* ... */ },
 ///     SourceControlProvider::Github => { /* ... */ },
+///     SourceControlProvider::Gitlab => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -44,7 +46,11 @@ pub enum SourceControlProvider {
     #[allow(missing_docs)] // documentation missing in model
     AwsCodeCommit,
     #[allow(missing_docs)] // documentation missing in model
+    Bitbucket,
+    #[allow(missing_docs)] // documentation missing in model
     Github,
+    #[allow(missing_docs)] // documentation missing in model
+    Gitlab,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
@@ -52,7 +58,9 @@ impl ::std::convert::From<&str> for SourceControlProvider {
     fn from(s: &str) -> Self {
         match s {
             "AWS_CODE_COMMIT" => SourceControlProvider::AwsCodeCommit,
+            "BITBUCKET" => SourceControlProvider::Bitbucket,
             "GITHUB" => SourceControlProvider::Github,
+            "GITLAB" => SourceControlProvider::Gitlab,
             other => SourceControlProvider::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -69,13 +77,15 @@ impl SourceControlProvider {
     pub fn as_str(&self) -> &str {
         match self {
             SourceControlProvider::AwsCodeCommit => "AWS_CODE_COMMIT",
+            SourceControlProvider::Bitbucket => "BITBUCKET",
             SourceControlProvider::Github => "GITHUB",
+            SourceControlProvider::Gitlab => "GITLAB",
             SourceControlProvider::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AWS_CODE_COMMIT", "GITHUB"]
+        &["AWS_CODE_COMMIT", "BITBUCKET", "GITHUB", "GITLAB"]
     }
 }
 impl ::std::convert::AsRef<str> for SourceControlProvider {

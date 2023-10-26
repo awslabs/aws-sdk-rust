@@ -3,20 +3,20 @@ pub fn ser_ip_organization_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::IpOrganizationDetails,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if input.asn != 0 {
+    if let Some(var_1) = &input.asn {
         object.key("Asn").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.asn).into()),
+            ::aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if let Some(var_1) = &input.asn_org {
-        object.key("AsnOrg").string(var_1.as_str());
+    if let Some(var_2) = &input.asn_org {
+        object.key("AsnOrg").string(var_2.as_str());
     }
-    if let Some(var_2) = &input.isp {
-        object.key("Isp").string(var_2.as_str());
+    if let Some(var_3) = &input.isp {
+        object.key("Isp").string(var_3.as_str());
     }
-    if let Some(var_3) = &input.org {
-        object.key("Org").string(var_3.as_str());
+    if let Some(var_4) = &input.org {
+        object.key("Org").string(var_4.as_str());
     }
     Ok(())
 }

@@ -24,7 +24,7 @@ pub struct TabularJobConfig {
     /// <p>The <code>HYPERPARAMETER_TUNING</code> (HPO) mode uses the best hyperparameters to train the best version of a model. HPO automatically selects an algorithm for the type of problem you want to solve. Then HPO finds the best hyperparameters according to your objective metric. See <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-algorithm-support">Autopilot algorithm support</a> for a list of algorithms supported by <code>HYPERPARAMETER_TUNING</code> mode.</p>
     pub mode: ::std::option::Option<crate::types::AutoMlMode>,
     /// <p>Generates possible candidates without training the models. A model candidate is a combination of data preprocessors, algorithms, and algorithm parameter settings.</p>
-    pub generate_candidate_definitions_only: bool,
+    pub generate_candidate_definitions_only: ::std::option::Option<bool>,
     /// <p>The type of supervised learning problem available for the model candidates of the AutoML job V2. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-datasets-problem-types.html#autopilot-problem-types"> Amazon SageMaker Autopilot problem types</a>.</p> <note>
     /// <p>You must either specify the type of supervised learning problem in <code>ProblemType</code> and provide the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJobV2.html#sagemaker-CreateAutoMLJobV2-request-AutoMLJobObjective">AutoMLJobObjective</a> metric, or none at all.</p>
     /// </note>
@@ -65,7 +65,7 @@ impl TabularJobConfig {
         self.mode.as_ref()
     }
     /// <p>Generates possible candidates without training the models. A model candidate is a combination of data preprocessors, algorithms, and algorithm parameter settings.</p>
-    pub fn generate_candidate_definitions_only(&self) -> bool {
+    pub fn generate_candidate_definitions_only(&self) -> ::std::option::Option<bool> {
         self.generate_candidate_definitions_only
     }
     /// <p>The type of supervised learning problem available for the model candidates of the AutoML job V2. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-datasets-problem-types.html#autopilot-problem-types"> Amazon SageMaker Autopilot problem types</a>.</p> <note>
@@ -270,7 +270,7 @@ impl TabularJobConfigBuilder {
             completion_criteria: self.completion_criteria,
             feature_specification_s3_uri: self.feature_specification_s3_uri,
             mode: self.mode,
-            generate_candidate_definitions_only: self.generate_candidate_definitions_only.unwrap_or_default(),
+            generate_candidate_definitions_only: self.generate_candidate_definitions_only,
             problem_type: self.problem_type,
             target_attribute_name: self.target_attribute_name,
             sample_weight_attribute_name: self.sample_weight_attribute_name,

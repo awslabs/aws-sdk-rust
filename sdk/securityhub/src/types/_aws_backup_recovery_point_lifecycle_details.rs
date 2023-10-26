@@ -5,17 +5,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsBackupRecoveryPointLifecycleDetails {
     /// <p>Specifies the number of days after creation that a recovery point is deleted. Must be greater than 90 days plus <code>MoveToColdStorageAfterDays</code>. </p>
-    pub delete_after_days: i64,
+    pub delete_after_days: ::std::option::Option<i64>,
     /// <p>Specifies the number of days after creation that a recovery point is moved to cold storage. </p>
-    pub move_to_cold_storage_after_days: i64,
+    pub move_to_cold_storage_after_days: ::std::option::Option<i64>,
 }
 impl AwsBackupRecoveryPointLifecycleDetails {
     /// <p>Specifies the number of days after creation that a recovery point is deleted. Must be greater than 90 days plus <code>MoveToColdStorageAfterDays</code>. </p>
-    pub fn delete_after_days(&self) -> i64 {
+    pub fn delete_after_days(&self) -> ::std::option::Option<i64> {
         self.delete_after_days
     }
     /// <p>Specifies the number of days after creation that a recovery point is moved to cold storage. </p>
-    pub fn move_to_cold_storage_after_days(&self) -> i64 {
+    pub fn move_to_cold_storage_after_days(&self) -> ::std::option::Option<i64> {
         self.move_to_cold_storage_after_days
     }
 }
@@ -65,8 +65,8 @@ impl AwsBackupRecoveryPointLifecycleDetailsBuilder {
     /// Consumes the builder and constructs a [`AwsBackupRecoveryPointLifecycleDetails`](crate::types::AwsBackupRecoveryPointLifecycleDetails).
     pub fn build(self) -> crate::types::AwsBackupRecoveryPointLifecycleDetails {
         crate::types::AwsBackupRecoveryPointLifecycleDetails {
-            delete_after_days: self.delete_after_days.unwrap_or_default(),
-            move_to_cold_storage_after_days: self.move_to_cold_storage_after_days.unwrap_or_default(),
+            delete_after_days: self.delete_after_days,
+            move_to_cold_storage_after_days: self.move_to_cold_storage_after_days,
         }
     }
 }

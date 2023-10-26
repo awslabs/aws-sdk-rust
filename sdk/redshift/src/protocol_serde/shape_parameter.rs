@@ -41,13 +41,13 @@ pub fn ser_parameter(
     }
     #[allow(unused_mut)]
     let mut scope_15 = writer.prefix("IsModifiable");
-    if input.is_modifiable {
-        scope_15.boolean(input.is_modifiable);
+    if let Some(var_16) = &input.is_modifiable {
+        scope_15.boolean(*var_16);
     }
     #[allow(unused_mut)]
-    let mut scope_16 = writer.prefix("MinimumEngineVersion");
-    if let Some(var_17) = &input.minimum_engine_version {
-        scope_16.string(var_17);
+    let mut scope_17 = writer.prefix("MinimumEngineVersion");
+    if let Some(var_18) = &input.minimum_engine_version {
+        scope_17.string(var_18);
     }
     Ok(())
 }
@@ -60,19 +60,6 @@ pub fn de_parameter(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("ParameterName") /* ParameterName com.amazonaws.redshift#Parameter$ParameterName */ =>  {
-                let var_18 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_parameter_name(var_18);
-            }
-            ,
-            s if s.matches("ParameterValue") /* ParameterValue com.amazonaws.redshift#Parameter$ParameterValue */ =>  {
                 let var_19 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -82,10 +69,10 @@ pub fn de_parameter(
                         ?
                     )
                 ;
-                builder = builder.set_parameter_value(var_19);
+                builder = builder.set_parameter_name(var_19);
             }
             ,
-            s if s.matches("Description") /* Description com.amazonaws.redshift#Parameter$Description */ =>  {
+            s if s.matches("ParameterValue") /* ParameterValue com.amazonaws.redshift#Parameter$ParameterValue */ =>  {
                 let var_20 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -95,10 +82,10 @@ pub fn de_parameter(
                         ?
                     )
                 ;
-                builder = builder.set_description(var_20);
+                builder = builder.set_parameter_value(var_20);
             }
             ,
-            s if s.matches("Source") /* Source com.amazonaws.redshift#Parameter$Source */ =>  {
+            s if s.matches("Description") /* Description com.amazonaws.redshift#Parameter$Description */ =>  {
                 let var_21 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -108,10 +95,10 @@ pub fn de_parameter(
                         ?
                     )
                 ;
-                builder = builder.set_source(var_21);
+                builder = builder.set_description(var_21);
             }
             ,
-            s if s.matches("DataType") /* DataType com.amazonaws.redshift#Parameter$DataType */ =>  {
+            s if s.matches("Source") /* Source com.amazonaws.redshift#Parameter$Source */ =>  {
                 let var_22 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -121,10 +108,10 @@ pub fn de_parameter(
                         ?
                     )
                 ;
-                builder = builder.set_data_type(var_22);
+                builder = builder.set_source(var_22);
             }
             ,
-            s if s.matches("AllowedValues") /* AllowedValues com.amazonaws.redshift#Parameter$AllowedValues */ =>  {
+            s if s.matches("DataType") /* DataType com.amazonaws.redshift#Parameter$DataType */ =>  {
                 let var_23 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -134,11 +121,24 @@ pub fn de_parameter(
                         ?
                     )
                 ;
-                builder = builder.set_allowed_values(var_23);
+                builder = builder.set_data_type(var_23);
+            }
+            ,
+            s if s.matches("AllowedValues") /* AllowedValues com.amazonaws.redshift#Parameter$AllowedValues */ =>  {
+                let var_24 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_allowed_values(var_24);
             }
             ,
             s if s.matches("ApplyType") /* ApplyType com.amazonaws.redshift#Parameter$ApplyType */ =>  {
-                let var_24 =
+                let var_25 =
                     Some(
                         Result::<crate::types::ParameterApplyType, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::ParameterApplyType::from(
@@ -148,11 +148,11 @@ pub fn de_parameter(
                         ?
                     )
                 ;
-                builder = builder.set_apply_type(var_24);
+                builder = builder.set_apply_type(var_25);
             }
             ,
             s if s.matches("IsModifiable") /* IsModifiable com.amazonaws.redshift#Parameter$IsModifiable */ =>  {
-                let var_25 =
+                let var_26 =
                     Some(
                          {
                             <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -163,11 +163,11 @@ pub fn de_parameter(
                         ?
                     )
                 ;
-                builder = builder.set_is_modifiable(var_25);
+                builder = builder.set_is_modifiable(var_26);
             }
             ,
             s if s.matches("MinimumEngineVersion") /* MinimumEngineVersion com.amazonaws.redshift#Parameter$MinimumEngineVersion */ =>  {
-                let var_26 =
+                let var_27 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -176,7 +176,7 @@ pub fn de_parameter(
                         ?
                     )
                 ;
-                builder = builder.set_minimum_engine_version(var_26);
+                builder = builder.set_minimum_engine_version(var_27);
             }
             ,
             _ => {}

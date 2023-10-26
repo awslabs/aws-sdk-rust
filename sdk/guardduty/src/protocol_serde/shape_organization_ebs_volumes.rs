@@ -3,8 +3,8 @@ pub fn ser_organization_ebs_volumes(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::OrganizationEbsVolumes,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if input.auto_enable {
-        object.key("autoEnable").boolean(input.auto_enable);
+    if let Some(var_1) = &input.auto_enable {
+        object.key("autoEnable").boolean(*var_1);
     }
     Ok(())
 }

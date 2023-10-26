@@ -7,7 +7,7 @@ pub struct SparkParameters {
     /// <p>Host.</p>
     pub host: ::std::option::Option<::std::string::String>,
     /// <p>Port.</p>
-    pub port: i32,
+    pub port: ::std::option::Option<i32>,
 }
 impl SparkParameters {
     /// <p>Host.</p>
@@ -15,7 +15,7 @@ impl SparkParameters {
         self.host.as_deref()
     }
     /// <p>Port.</p>
-    pub fn port(&self) -> i32 {
+    pub fn port(&self) -> ::std::option::Option<i32> {
         self.port
     }
 }
@@ -66,7 +66,7 @@ impl SparkParametersBuilder {
     pub fn build(self) -> crate::types::SparkParameters {
         crate::types::SparkParameters {
             host: self.host,
-            port: self.port.unwrap_or_default(),
+            port: self.port,
         }
     }
 }

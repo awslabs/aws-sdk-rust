@@ -23,6 +23,7 @@ impl CancelGremlinQueryInputBuilder {
 /// Fluent builder constructing a request to `CancelGremlinQuery`.
 ///
 /// <p>Cancels a Gremlin query. See <a href="https://docs.aws.amazon.com/neptune/latest/userguide/gremlin-api-status-cancel.html">Gremlin query cancellation</a> for more information.</p>
+/// <p>When invoking this operation in a Neptune cluster that has IAM authentication enabled, the IAM user or role making the request must have a policy attached that allows the <a href="https://docs.aws.amazon.com/neptune/latest/userguide/iam-dp-actions.html#cancelquery">neptune-db:CancelQuery</a> IAM action in that cluster.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CancelGremlinQueryFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

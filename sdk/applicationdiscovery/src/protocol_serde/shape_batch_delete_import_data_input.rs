@@ -12,5 +12,8 @@ pub fn ser_batch_delete_import_data_input(
         }
         array_2.finish();
     }
+    if let Some(var_4) = &input.delete_history {
+        object.key("deleteHistory").boolean(*var_4);
+    }
     Ok(())
 }

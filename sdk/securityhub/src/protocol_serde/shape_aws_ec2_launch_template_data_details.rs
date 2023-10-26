@@ -36,164 +36,155 @@ pub fn ser_aws_ec2_launch_template_data_details(
         crate::protocol_serde::shape_aws_ec2_launch_template_data_credit_specification_details::ser_aws_ec2_launch_template_data_credit_specification_details(&mut object_10, var_9)?;
         object_10.finish();
     }
-    if input.disable_api_stop {
-        object.key("DisableApiStop").boolean(input.disable_api_stop);
+    if let Some(var_11) = &input.disable_api_stop {
+        object.key("DisableApiStop").boolean(*var_11);
     }
-    if input.disable_api_termination {
-        object.key("DisableApiTermination").boolean(input.disable_api_termination);
+    if let Some(var_12) = &input.disable_api_termination {
+        object.key("DisableApiTermination").boolean(*var_12);
     }
-    if input.ebs_optimized {
-        object.key("EbsOptimized").boolean(input.ebs_optimized);
+    if let Some(var_13) = &input.ebs_optimized {
+        object.key("EbsOptimized").boolean(*var_13);
     }
-    if let Some(var_11) = &input.elastic_gpu_specification_set {
-        let mut array_12 = object.key("ElasticGpuSpecificationSet").start_array();
-        for item_13 in var_11 {
+    if let Some(var_14) = &input.elastic_gpu_specification_set {
+        let mut array_15 = object.key("ElasticGpuSpecificationSet").start_array();
+        for item_16 in var_14 {
             {
                 #[allow(unused_mut)]
-                let mut object_14 = array_12.value().start_object();
-                crate::protocol_serde::shape_aws_ec2_launch_template_data_elastic_gpu_specification_set_details::ser_aws_ec2_launch_template_data_elastic_gpu_specification_set_details(&mut object_14, item_13)?;
-                object_14.finish();
+                let mut object_17 = array_15.value().start_object();
+                crate::protocol_serde::shape_aws_ec2_launch_template_data_elastic_gpu_specification_set_details::ser_aws_ec2_launch_template_data_elastic_gpu_specification_set_details(&mut object_17, item_16)?;
+                object_17.finish();
             }
         }
-        array_12.finish();
+        array_15.finish();
     }
-    if let Some(var_15) = &input.elastic_inference_accelerator_set {
-        let mut array_16 = object.key("ElasticInferenceAcceleratorSet").start_array();
-        for item_17 in var_15 {
+    if let Some(var_18) = &input.elastic_inference_accelerator_set {
+        let mut array_19 = object.key("ElasticInferenceAcceleratorSet").start_array();
+        for item_20 in var_18 {
             {
                 #[allow(unused_mut)]
-                let mut object_18 = array_16.value().start_object();
-                crate::protocol_serde::shape_aws_ec2_launch_template_data_elastic_inference_accelerator_set_details::ser_aws_ec2_launch_template_data_elastic_inference_accelerator_set_details(&mut object_18, item_17)?;
-                object_18.finish();
+                let mut object_21 = array_19.value().start_object();
+                crate::protocol_serde::shape_aws_ec2_launch_template_data_elastic_inference_accelerator_set_details::ser_aws_ec2_launch_template_data_elastic_inference_accelerator_set_details(&mut object_21, item_20)?;
+                object_21.finish();
             }
         }
-        array_16.finish();
+        array_19.finish();
     }
-    if let Some(var_19) = &input.enclave_options {
+    if let Some(var_22) = &input.enclave_options {
         #[allow(unused_mut)]
-        let mut object_20 = object.key("EnclaveOptions").start_object();
+        let mut object_23 = object.key("EnclaveOptions").start_object();
         crate::protocol_serde::shape_aws_ec2_launch_template_data_enclave_options_details::ser_aws_ec2_launch_template_data_enclave_options_details(
-            &mut object_20,
-            var_19,
+            &mut object_23,
+            var_22,
         )?;
-        object_20.finish();
+        object_23.finish();
     }
-    if let Some(var_21) = &input.hibernation_options {
+    if let Some(var_24) = &input.hibernation_options {
         #[allow(unused_mut)]
-        let mut object_22 = object.key("HibernationOptions").start_object();
-        crate::protocol_serde::shape_aws_ec2_launch_template_data_hibernation_options_details::ser_aws_ec2_launch_template_data_hibernation_options_details(&mut object_22, var_21)?;
-        object_22.finish();
+        let mut object_25 = object.key("HibernationOptions").start_object();
+        crate::protocol_serde::shape_aws_ec2_launch_template_data_hibernation_options_details::ser_aws_ec2_launch_template_data_hibernation_options_details(&mut object_25, var_24)?;
+        object_25.finish();
     }
-    if let Some(var_23) = &input.iam_instance_profile {
+    if let Some(var_26) = &input.iam_instance_profile {
         #[allow(unused_mut)]
-        let mut object_24 = object.key("IamInstanceProfile").start_object();
-        crate::protocol_serde::shape_aws_ec2_launch_template_data_iam_instance_profile_details::ser_aws_ec2_launch_template_data_iam_instance_profile_details(&mut object_24, var_23)?;
-        object_24.finish();
+        let mut object_27 = object.key("IamInstanceProfile").start_object();
+        crate::protocol_serde::shape_aws_ec2_launch_template_data_iam_instance_profile_details::ser_aws_ec2_launch_template_data_iam_instance_profile_details(&mut object_27, var_26)?;
+        object_27.finish();
     }
-    if let Some(var_25) = &input.image_id {
-        object.key("ImageId").string(var_25.as_str());
+    if let Some(var_28) = &input.image_id {
+        object.key("ImageId").string(var_28.as_str());
     }
-    if let Some(var_26) = &input.instance_initiated_shutdown_behavior {
-        object.key("InstanceInitiatedShutdownBehavior").string(var_26.as_str());
+    if let Some(var_29) = &input.instance_initiated_shutdown_behavior {
+        object.key("InstanceInitiatedShutdownBehavior").string(var_29.as_str());
     }
-    if let Some(var_27) = &input.instance_market_options {
+    if let Some(var_30) = &input.instance_market_options {
         #[allow(unused_mut)]
-        let mut object_28 = object.key("InstanceMarketOptions").start_object();
-        crate::protocol_serde::shape_aws_ec2_launch_template_data_instance_market_options_details::ser_aws_ec2_launch_template_data_instance_market_options_details(&mut object_28, var_27)?;
-        object_28.finish();
+        let mut object_31 = object.key("InstanceMarketOptions").start_object();
+        crate::protocol_serde::shape_aws_ec2_launch_template_data_instance_market_options_details::ser_aws_ec2_launch_template_data_instance_market_options_details(&mut object_31, var_30)?;
+        object_31.finish();
     }
-    if let Some(var_29) = &input.instance_requirements {
+    if let Some(var_32) = &input.instance_requirements {
         #[allow(unused_mut)]
-        let mut object_30 = object.key("InstanceRequirements").start_object();
-        crate::protocol_serde::shape_aws_ec2_launch_template_data_instance_requirements_details::ser_aws_ec2_launch_template_data_instance_requirements_details(&mut object_30, var_29)?;
-        object_30.finish();
+        let mut object_33 = object.key("InstanceRequirements").start_object();
+        crate::protocol_serde::shape_aws_ec2_launch_template_data_instance_requirements_details::ser_aws_ec2_launch_template_data_instance_requirements_details(&mut object_33, var_32)?;
+        object_33.finish();
     }
-    if let Some(var_31) = &input.instance_type {
-        object.key("InstanceType").string(var_31.as_str());
+    if let Some(var_34) = &input.instance_type {
+        object.key("InstanceType").string(var_34.as_str());
     }
-    if let Some(var_32) = &input.kernel_id {
-        object.key("KernelId").string(var_32.as_str());
+    if let Some(var_35) = &input.kernel_id {
+        object.key("KernelId").string(var_35.as_str());
     }
-    if let Some(var_33) = &input.key_name {
-        object.key("KeyName").string(var_33.as_str());
+    if let Some(var_36) = &input.key_name {
+        object.key("KeyName").string(var_36.as_str());
     }
-    if let Some(var_34) = &input.license_set {
-        let mut array_35 = object.key("LicenseSet").start_array();
-        for item_36 in var_34 {
+    if let Some(var_37) = &input.license_set {
+        let mut array_38 = object.key("LicenseSet").start_array();
+        for item_39 in var_37 {
             {
                 #[allow(unused_mut)]
-                let mut object_37 = array_35.value().start_object();
+                let mut object_40 = array_38.value().start_object();
                 crate::protocol_serde::shape_aws_ec2_launch_template_data_license_set_details::ser_aws_ec2_launch_template_data_license_set_details(
-                    &mut object_37,
-                    item_36,
+                    &mut object_40,
+                    item_39,
                 )?;
-                object_37.finish();
+                object_40.finish();
             }
         }
-        array_35.finish();
+        array_38.finish();
     }
-    if let Some(var_38) = &input.maintenance_options {
+    if let Some(var_41) = &input.maintenance_options {
         #[allow(unused_mut)]
-        let mut object_39 = object.key("MaintenanceOptions").start_object();
-        crate::protocol_serde::shape_aws_ec2_launch_template_data_maintenance_options_details::ser_aws_ec2_launch_template_data_maintenance_options_details(&mut object_39, var_38)?;
-        object_39.finish();
+        let mut object_42 = object.key("MaintenanceOptions").start_object();
+        crate::protocol_serde::shape_aws_ec2_launch_template_data_maintenance_options_details::ser_aws_ec2_launch_template_data_maintenance_options_details(&mut object_42, var_41)?;
+        object_42.finish();
     }
-    if let Some(var_40) = &input.metadata_options {
+    if let Some(var_43) = &input.metadata_options {
         #[allow(unused_mut)]
-        let mut object_41 = object.key("MetadataOptions").start_object();
-        crate::protocol_serde::shape_aws_ec2_launch_template_data_metadata_options_details::ser_aws_ec2_launch_template_data_metadata_options_details(&mut object_41, var_40)?;
-        object_41.finish();
+        let mut object_44 = object.key("MetadataOptions").start_object();
+        crate::protocol_serde::shape_aws_ec2_launch_template_data_metadata_options_details::ser_aws_ec2_launch_template_data_metadata_options_details(&mut object_44, var_43)?;
+        object_44.finish();
     }
-    if let Some(var_42) = &input.monitoring {
+    if let Some(var_45) = &input.monitoring {
         #[allow(unused_mut)]
-        let mut object_43 = object.key("Monitoring").start_object();
+        let mut object_46 = object.key("Monitoring").start_object();
         crate::protocol_serde::shape_aws_ec2_launch_template_data_monitoring_details::ser_aws_ec2_launch_template_data_monitoring_details(
-            &mut object_43,
-            var_42,
+            &mut object_46,
+            var_45,
         )?;
-        object_43.finish();
+        object_46.finish();
     }
-    if let Some(var_44) = &input.network_interface_set {
-        let mut array_45 = object.key("NetworkInterfaceSet").start_array();
-        for item_46 in var_44 {
+    if let Some(var_47) = &input.network_interface_set {
+        let mut array_48 = object.key("NetworkInterfaceSet").start_array();
+        for item_49 in var_47 {
             {
                 #[allow(unused_mut)]
-                let mut object_47 = array_45.value().start_object();
-                crate::protocol_serde::shape_aws_ec2_launch_template_data_network_interface_set_details::ser_aws_ec2_launch_template_data_network_interface_set_details(&mut object_47, item_46)?;
-                object_47.finish();
+                let mut object_50 = array_48.value().start_object();
+                crate::protocol_serde::shape_aws_ec2_launch_template_data_network_interface_set_details::ser_aws_ec2_launch_template_data_network_interface_set_details(&mut object_50, item_49)?;
+                object_50.finish();
             }
         }
-        array_45.finish();
+        array_48.finish();
     }
-    if let Some(var_48) = &input.placement {
+    if let Some(var_51) = &input.placement {
         #[allow(unused_mut)]
-        let mut object_49 = object.key("Placement").start_object();
+        let mut object_52 = object.key("Placement").start_object();
         crate::protocol_serde::shape_aws_ec2_launch_template_data_placement_details::ser_aws_ec2_launch_template_data_placement_details(
-            &mut object_49,
-            var_48,
+            &mut object_52,
+            var_51,
         )?;
-        object_49.finish();
+        object_52.finish();
     }
-    if let Some(var_50) = &input.private_dns_name_options {
+    if let Some(var_53) = &input.private_dns_name_options {
         #[allow(unused_mut)]
-        let mut object_51 = object.key("PrivateDnsNameOptions").start_object();
-        crate::protocol_serde::shape_aws_ec2_launch_template_data_private_dns_name_options_details::ser_aws_ec2_launch_template_data_private_dns_name_options_details(&mut object_51, var_50)?;
-        object_51.finish();
+        let mut object_54 = object.key("PrivateDnsNameOptions").start_object();
+        crate::protocol_serde::shape_aws_ec2_launch_template_data_private_dns_name_options_details::ser_aws_ec2_launch_template_data_private_dns_name_options_details(&mut object_54, var_53)?;
+        object_54.finish();
     }
-    if let Some(var_52) = &input.ram_disk_id {
-        object.key("RamDiskId").string(var_52.as_str());
+    if let Some(var_55) = &input.ram_disk_id {
+        object.key("RamDiskId").string(var_55.as_str());
     }
-    if let Some(var_53) = &input.security_group_id_set {
-        let mut array_54 = object.key("SecurityGroupIdSet").start_array();
-        for item_55 in var_53 {
-            {
-                array_54.value().string(item_55.as_str());
-            }
-        }
-        array_54.finish();
-    }
-    if let Some(var_56) = &input.security_group_set {
-        let mut array_57 = object.key("SecurityGroupSet").start_array();
+    if let Some(var_56) = &input.security_group_id_set {
+        let mut array_57 = object.key("SecurityGroupIdSet").start_array();
         for item_58 in var_56 {
             {
                 array_57.value().string(item_58.as_str());
@@ -201,8 +192,17 @@ pub fn ser_aws_ec2_launch_template_data_details(
         }
         array_57.finish();
     }
-    if let Some(var_59) = &input.user_data {
-        object.key("UserData").string(var_59.as_str());
+    if let Some(var_59) = &input.security_group_set {
+        let mut array_60 = object.key("SecurityGroupSet").start_array();
+        for item_61 in var_59 {
+            {
+                array_60.value().string(item_61.as_str());
+            }
+        }
+        array_60.finish();
+    }
+    if let Some(var_62) = &input.user_data {
+        object.key("UserData").string(var_62.as_str());
     }
     Ok(())
 }

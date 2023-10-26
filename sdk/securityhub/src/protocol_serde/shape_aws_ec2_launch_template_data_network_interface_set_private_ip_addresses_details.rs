@@ -3,11 +3,11 @@ pub fn ser_aws_ec2_launch_template_data_network_interface_set_private_ip_address
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsEc2LaunchTemplateDataNetworkInterfaceSetPrivateIpAddressesDetails,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if input.primary {
-        object.key("Primary").boolean(input.primary);
+    if let Some(var_1) = &input.primary {
+        object.key("Primary").boolean(*var_1);
     }
-    if let Some(var_1) = &input.private_ip_address {
-        object.key("PrivateIpAddress").string(var_1.as_str());
+    if let Some(var_2) = &input.private_ip_address {
+        object.key("PrivateIpAddress").string(var_2.as_str());
     }
     Ok(())
 }

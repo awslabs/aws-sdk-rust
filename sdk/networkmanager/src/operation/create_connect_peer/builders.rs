@@ -216,4 +216,18 @@ impl CreateConnectPeerFluentBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }
+    /// <p>The subnet ARN for the Connect peer.</p>
+    pub fn subnet_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.subnet_arn(input.into());
+        self
+    }
+    /// <p>The subnet ARN for the Connect peer.</p>
+    pub fn set_subnet_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_subnet_arn(input);
+        self
+    }
+    /// <p>The subnet ARN for the Connect peer.</p>
+    pub fn get_subnet_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_subnet_arn()
+    }
 }

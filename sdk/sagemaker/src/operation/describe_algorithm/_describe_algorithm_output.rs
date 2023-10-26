@@ -24,7 +24,7 @@ pub struct DescribeAlgorithmOutput {
     /// <p>The product identifier of the algorithm.</p>
     pub product_id: ::std::option::Option<::std::string::String>,
     /// <p>Whether the algorithm is certified to be listed in Amazon Web Services Marketplace.</p>
-    pub certify_for_marketplace: bool,
+    pub certify_for_marketplace: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }
 impl DescribeAlgorithmOutput {
@@ -69,7 +69,7 @@ impl DescribeAlgorithmOutput {
         self.product_id.as_deref()
     }
     /// <p>Whether the algorithm is certified to be listed in Amazon Web Services Marketplace.</p>
-    pub fn certify_for_marketplace(&self) -> bool {
+    pub fn certify_for_marketplace(&self) -> ::std::option::Option<bool> {
         self.certify_for_marketplace
     }
 }
@@ -279,7 +279,7 @@ impl DescribeAlgorithmOutputBuilder {
             algorithm_status: self.algorithm_status,
             algorithm_status_details: self.algorithm_status_details,
             product_id: self.product_id,
-            certify_for_marketplace: self.certify_for_marketplace.unwrap_or_default(),
+            certify_for_marketplace: self.certify_for_marketplace,
             _request_id: self._request_id,
         }
     }

@@ -32,7 +32,7 @@ pub(super) fn resolve_endpoint(
         if let Some(partition_result) = partition_resolver.resolve_partition(region, _diagnostic_collector) {
             if (true) == (partition_result.supports_dual_stack()) {
                 if (*use_fips) == (true) {
-                    if (true) == (partition_result.supports_fips()) {
+                    if (partition_result.supports_fips()) == (true) {
                         return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
                             .url({
                                 let mut out = String::new();
@@ -64,7 +64,7 @@ pub(super) fn resolve_endpoint(
                     .build());
             }
             if (*use_fips) == (true) {
-                if (true) == (partition_result.supports_fips()) {
+                if (partition_result.supports_fips()) == (true) {
                     return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
                         .url({
                             let mut out = String::new();

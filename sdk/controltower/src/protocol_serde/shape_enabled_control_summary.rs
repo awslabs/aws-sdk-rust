@@ -21,6 +21,29 @@ where
                                     .transpose()?,
                             );
                         }
+                        "arn" => {
+                            builder = builder.set_arn(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "targetIdentifier" => {
+                            builder = builder.set_target_identifier(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "statusSummary" => {
+                            builder = builder.set_status_summary(
+                                crate::protocol_serde::shape_enablement_status_summary::de_enablement_status_summary(tokens)?,
+                            );
+                        }
+                        "driftStatusSummary" => {
+                            builder =
+                                builder.set_drift_status_summary(crate::protocol_serde::shape_drift_status_summary::de_drift_status_summary(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

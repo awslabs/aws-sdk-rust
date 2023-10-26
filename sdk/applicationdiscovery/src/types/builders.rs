@@ -35,6 +35,12 @@ pub use crate::types::_export_info::ExportInfoBuilder;
 
 pub use crate::types::_continuous_export_description::ContinuousExportDescriptionBuilder;
 
+pub use crate::types::_batch_delete_configuration_task::BatchDeleteConfigurationTaskBuilder;
+
+pub use crate::types::_deletion_warning::DeletionWarningBuilder;
+
+pub use crate::types::_failed_configuration::FailedConfigurationBuilder;
+
 pub use crate::types::_agent_info::AgentInfoBuilder;
 
 pub use crate::types::_agent_network_info::AgentNetworkInfoBuilder;
@@ -42,3 +48,7 @@ pub use crate::types::_agent_network_info::AgentNetworkInfoBuilder;
 pub use crate::types::_tag::TagBuilder;
 
 pub use crate::types::_batch_delete_import_data_error::BatchDeleteImportDataErrorBuilder;
+
+pub use crate::types::_batch_delete_agent_error::BatchDeleteAgentErrorBuilder;
+
+pub use crate::types::_delete_agent::DeleteAgentBuilder;

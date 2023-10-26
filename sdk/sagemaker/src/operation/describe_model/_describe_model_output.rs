@@ -20,7 +20,7 @@ pub struct DescribeModelOutput {
     /// <p>The Amazon Resource Name (ARN) of the model.</p>
     pub model_arn: ::std::option::Option<::std::string::String>,
     /// <p>If <code>True</code>, no inbound or outbound network calls can be made to or from the model container.</p>
-    pub enable_network_isolation: bool,
+    pub enable_network_isolation: ::std::option::Option<bool>,
     /// <p>A set of recommended deployment configurations for the model.</p>
     pub deployment_recommendation: ::std::option::Option<crate::types::DeploymentRecommendation>,
     _request_id: Option<String>,
@@ -59,7 +59,7 @@ impl DescribeModelOutput {
         self.model_arn.as_deref()
     }
     /// <p>If <code>True</code>, no inbound or outbound network calls can be made to or from the model container.</p>
-    pub fn enable_network_isolation(&self) -> bool {
+    pub fn enable_network_isolation(&self) -> ::std::option::Option<bool> {
         self.enable_network_isolation
     }
     /// <p>A set of recommended deployment configurations for the model.</p>
@@ -262,7 +262,7 @@ impl DescribeModelOutputBuilder {
             vpc_config: self.vpc_config,
             creation_time: self.creation_time,
             model_arn: self.model_arn,
-            enable_network_isolation: self.enable_network_isolation.unwrap_or_default(),
+            enable_network_isolation: self.enable_network_isolation,
             deployment_recommendation: self.deployment_recommendation,
             _request_id: self._request_id,
         }

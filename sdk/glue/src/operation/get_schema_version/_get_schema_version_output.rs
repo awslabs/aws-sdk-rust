@@ -12,7 +12,7 @@ pub struct GetSchemaVersionOutput {
     /// <p>The Amazon Resource Name (ARN) of the schema.</p>
     pub schema_arn: ::std::option::Option<::std::string::String>,
     /// <p>The version number of the schema.</p>
-    pub version_number: i64,
+    pub version_number: ::std::option::Option<i64>,
     /// <p>The status of the schema version. </p>
     pub status: ::std::option::Option<crate::types::SchemaVersionStatus>,
     /// <p>The date and time the schema version was created.</p>
@@ -37,7 +37,7 @@ impl GetSchemaVersionOutput {
         self.schema_arn.as_deref()
     }
     /// <p>The version number of the schema.</p>
-    pub fn version_number(&self) -> i64 {
+    pub fn version_number(&self) -> ::std::option::Option<i64> {
         self.version_number
     }
     /// <p>The status of the schema version. </p>
@@ -189,7 +189,7 @@ impl GetSchemaVersionOutputBuilder {
             schema_definition: self.schema_definition,
             data_format: self.data_format,
             schema_arn: self.schema_arn,
-            version_number: self.version_number.unwrap_or_default(),
+            version_number: self.version_number,
             status: self.status,
             created_time: self.created_time,
             _request_id: self._request_id,

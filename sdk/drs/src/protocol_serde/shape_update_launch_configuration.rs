@@ -200,6 +200,11 @@ pub(crate) fn de_update_launch_configuration(
                             .transpose()?,
                     );
                 }
+                "launchIntoInstanceProperties" => {
+                    builder = builder.set_launch_into_instance_properties(
+                        crate::protocol_serde::shape_launch_into_instance_properties::de_launch_into_instance_properties(tokens)?,
+                    );
+                }
                 "licensing" => {
                     builder = builder.set_licensing(crate::protocol_serde::shape_licensing::de_licensing(tokens)?);
                 }

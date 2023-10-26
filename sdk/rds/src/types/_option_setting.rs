@@ -19,9 +19,9 @@ pub struct OptionSetting {
     /// <p>The allowed values of the option setting.</p>
     pub allowed_values: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the option setting can be modified from the default.</p>
-    pub is_modifiable: bool,
+    pub is_modifiable: ::std::option::Option<bool>,
     /// <p>Indicates whether the option setting is part of a collection.</p>
-    pub is_collection: bool,
+    pub is_collection: ::std::option::Option<bool>,
 }
 impl OptionSetting {
     /// <p>The name of the option that has settings that you can set.</p>
@@ -53,11 +53,11 @@ impl OptionSetting {
         self.allowed_values.as_deref()
     }
     /// <p>Indicates whether the option setting can be modified from the default.</p>
-    pub fn is_modifiable(&self) -> bool {
+    pub fn is_modifiable(&self) -> ::std::option::Option<bool> {
         self.is_modifiable
     }
     /// <p>Indicates whether the option setting is part of a collection.</p>
-    pub fn is_collection(&self) -> bool {
+    pub fn is_collection(&self) -> ::std::option::Option<bool> {
         self.is_collection
     }
 }
@@ -219,8 +219,8 @@ impl OptionSettingBuilder {
             apply_type: self.apply_type,
             data_type: self.data_type,
             allowed_values: self.allowed_values,
-            is_modifiable: self.is_modifiable.unwrap_or_default(),
-            is_collection: self.is_collection.unwrap_or_default(),
+            is_modifiable: self.is_modifiable,
+            is_collection: self.is_collection,
         }
     }
 }

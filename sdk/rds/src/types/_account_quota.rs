@@ -29,9 +29,9 @@ pub struct AccountQuota {
     /// <p>The name of the Amazon RDS quota for this Amazon Web Services account.</p>
     pub account_quota_name: ::std::option::Option<::std::string::String>,
     /// <p>The amount currently used toward the quota maximum.</p>
-    pub used: i64,
+    pub used: ::std::option::Option<i64>,
     /// <p>The maximum allowed value for the quota.</p>
-    pub max: i64,
+    pub max: ::std::option::Option<i64>,
 }
 impl AccountQuota {
     /// <p>The name of the Amazon RDS quota for this Amazon Web Services account.</p>
@@ -39,11 +39,11 @@ impl AccountQuota {
         self.account_quota_name.as_deref()
     }
     /// <p>The amount currently used toward the quota maximum.</p>
-    pub fn used(&self) -> i64 {
+    pub fn used(&self) -> ::std::option::Option<i64> {
         self.used
     }
     /// <p>The maximum allowed value for the quota.</p>
-    pub fn max(&self) -> i64 {
+    pub fn max(&self) -> ::std::option::Option<i64> {
         self.max
     }
 }
@@ -109,8 +109,8 @@ impl AccountQuotaBuilder {
     pub fn build(self) -> crate::types::AccountQuota {
         crate::types::AccountQuota {
             account_quota_name: self.account_quota_name,
-            used: self.used.unwrap_or_default(),
-            max: self.max.unwrap_or_default(),
+            used: self.used,
+            max: self.max,
         }
     }
 }

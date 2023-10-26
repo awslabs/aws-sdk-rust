@@ -41,6 +41,16 @@ pub fn ser_create_blue_green_deployment_input_input(
         }
         list_14.finish();
     }
+    #[allow(unused_mut)]
+    let mut scope_16 = writer.prefix("TargetDBInstanceClass");
+    if let Some(var_17) = &input.target_db_instance_class {
+        scope_16.string(var_17);
+    }
+    #[allow(unused_mut)]
+    let mut scope_18 = writer.prefix("UpgradeTargetStorageConfig");
+    if let Some(var_19) = &input.upgrade_target_storage_config {
+        scope_18.boolean(*var_19);
+    }
     writer.finish();
     Ok(::aws_smithy_http::body::SdkBody::from(out))
 }

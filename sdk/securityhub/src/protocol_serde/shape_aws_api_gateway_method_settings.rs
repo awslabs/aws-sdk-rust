@@ -3,52 +3,50 @@ pub fn ser_aws_api_gateway_method_settings(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsApiGatewayMethodSettings,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if input.metrics_enabled {
-        object.key("MetricsEnabled").boolean(input.metrics_enabled);
+    if let Some(var_1) = &input.metrics_enabled {
+        object.key("MetricsEnabled").boolean(*var_1);
     }
-    if let Some(var_1) = &input.logging_level {
-        object.key("LoggingLevel").string(var_1.as_str());
+    if let Some(var_2) = &input.logging_level {
+        object.key("LoggingLevel").string(var_2.as_str());
     }
-    if input.data_trace_enabled {
-        object.key("DataTraceEnabled").boolean(input.data_trace_enabled);
+    if let Some(var_3) = &input.data_trace_enabled {
+        object.key("DataTraceEnabled").boolean(*var_3);
     }
-    if input.throttling_burst_limit != 0 {
+    if let Some(var_4) = &input.throttling_burst_limit {
         object.key("ThrottlingBurstLimit").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.throttling_burst_limit).into()),
+            ::aws_smithy_types::Number::NegInt((*var_4).into()),
         );
     }
-    if input.throttling_rate_limit != 0.0 {
+    if let Some(var_5) = &input.throttling_rate_limit {
         object.key("ThrottlingRateLimit").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::Float((input.throttling_rate_limit).into()),
+            ::aws_smithy_types::Number::Float((*var_5).into()),
         );
     }
-    if input.caching_enabled {
-        object.key("CachingEnabled").boolean(input.caching_enabled);
+    if let Some(var_6) = &input.caching_enabled {
+        object.key("CachingEnabled").boolean(*var_6);
     }
-    if input.cache_ttl_in_seconds != 0 {
+    if let Some(var_7) = &input.cache_ttl_in_seconds {
         object.key("CacheTtlInSeconds").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.cache_ttl_in_seconds).into()),
+            ::aws_smithy_types::Number::NegInt((*var_7).into()),
         );
     }
-    if input.cache_data_encrypted {
-        object.key("CacheDataEncrypted").boolean(input.cache_data_encrypted);
+    if let Some(var_8) = &input.cache_data_encrypted {
+        object.key("CacheDataEncrypted").boolean(*var_8);
     }
-    if input.require_authorization_for_cache_control {
-        object
-            .key("RequireAuthorizationForCacheControl")
-            .boolean(input.require_authorization_for_cache_control);
+    if let Some(var_9) = &input.require_authorization_for_cache_control {
+        object.key("RequireAuthorizationForCacheControl").boolean(*var_9);
     }
-    if let Some(var_2) = &input.unauthorized_cache_control_header_strategy {
-        object.key("UnauthorizedCacheControlHeaderStrategy").string(var_2.as_str());
+    if let Some(var_10) = &input.unauthorized_cache_control_header_strategy {
+        object.key("UnauthorizedCacheControlHeaderStrategy").string(var_10.as_str());
     }
-    if let Some(var_3) = &input.http_method {
-        object.key("HttpMethod").string(var_3.as_str());
+    if let Some(var_11) = &input.http_method {
+        object.key("HttpMethod").string(var_11.as_str());
     }
-    if let Some(var_4) = &input.resource_path {
-        object.key("ResourcePath").string(var_4.as_str());
+    if let Some(var_12) = &input.resource_path {
+        object.key("ResourcePath").string(var_12.as_str());
     }
     Ok(())
 }

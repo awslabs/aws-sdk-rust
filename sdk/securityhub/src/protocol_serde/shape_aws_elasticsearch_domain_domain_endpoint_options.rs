@@ -3,11 +3,11 @@ pub fn ser_aws_elasticsearch_domain_domain_endpoint_options(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsElasticsearchDomainDomainEndpointOptions,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if input.enforce_https {
-        object.key("EnforceHTTPS").boolean(input.enforce_https);
+    if let Some(var_1) = &input.enforce_https {
+        object.key("EnforceHTTPS").boolean(*var_1);
     }
-    if let Some(var_1) = &input.tls_security_policy {
-        object.key("TLSSecurityPolicy").string(var_1.as_str());
+    if let Some(var_2) = &input.tls_security_policy {
+        object.key("TLSSecurityPolicy").string(var_2.as_str());
     }
     Ok(())
 }

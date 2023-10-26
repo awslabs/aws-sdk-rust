@@ -7,7 +7,7 @@ pub struct OracleParameters {
     /// <p>An Oracle host.</p>
     pub host: ::std::option::Option<::std::string::String>,
     /// <p>The port.</p>
-    pub port: i32,
+    pub port: ::std::option::Option<i32>,
     /// <p>The database.</p>
     pub database: ::std::option::Option<::std::string::String>,
 }
@@ -17,7 +17,7 @@ impl OracleParameters {
         self.host.as_deref()
     }
     /// <p>The port.</p>
-    pub fn port(&self) -> i32 {
+    pub fn port(&self) -> ::std::option::Option<i32> {
         self.port
     }
     /// <p>The database.</p>
@@ -87,7 +87,7 @@ impl OracleParametersBuilder {
     pub fn build(self) -> crate::types::OracleParameters {
         crate::types::OracleParameters {
             host: self.host,
-            port: self.port.unwrap_or_default(),
+            port: self.port,
             database: self.database,
         }
     }

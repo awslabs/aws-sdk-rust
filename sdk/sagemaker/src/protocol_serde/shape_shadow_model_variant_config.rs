@@ -6,10 +6,10 @@ pub fn ser_shadow_model_variant_config(
     if let Some(var_1) = &input.shadow_model_variant_name {
         object.key("ShadowModelVariantName").string(var_1.as_str());
     }
-    {
+    if let Some(var_2) = &input.sampling_percentage {
         object.key("SamplingPercentage").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.sampling_percentage).into()),
+            ::aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
     Ok(())

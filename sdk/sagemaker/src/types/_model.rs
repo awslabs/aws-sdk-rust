@@ -21,7 +21,7 @@ pub struct Model {
     /// <p>The Amazon Resource Name (ARN) of the model.</p>
     pub model_arn: ::std::option::Option<::std::string::String>,
     /// <p>Isolates the model container. No inbound or outbound network calls can be made to or from the model container.</p>
-    pub enable_network_isolation: bool,
+    pub enable_network_isolation: ::std::option::Option<bool>,
     /// <p>A list of key-value pairs associated with the model. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>A set of recommended deployment configurations for the model.</p>
@@ -61,7 +61,7 @@ impl Model {
         self.model_arn.as_deref()
     }
     /// <p>Isolates the model container. No inbound or outbound network calls can be made to or from the model container.</p>
-    pub fn enable_network_isolation(&self) -> bool {
+    pub fn enable_network_isolation(&self) -> ::std::option::Option<bool> {
         self.enable_network_isolation
     }
     /// <p>A list of key-value pairs associated with the model. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
@@ -274,7 +274,7 @@ impl ModelBuilder {
             vpc_config: self.vpc_config,
             creation_time: self.creation_time,
             model_arn: self.model_arn,
-            enable_network_isolation: self.enable_network_isolation.unwrap_or_default(),
+            enable_network_isolation: self.enable_network_isolation,
             tags: self.tags,
             deployment_recommendation: self.deployment_recommendation,
         }

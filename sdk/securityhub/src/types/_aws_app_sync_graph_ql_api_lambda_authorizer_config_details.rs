@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsAppSyncGraphQlApiLambdaAuthorizerConfigDetails {
     /// <p> The number of seconds a response should be cached for. The default is 5 minutes (300 seconds). </p>
-    pub authorizer_result_ttl_in_seconds: i32,
+    pub authorizer_result_ttl_in_seconds: ::std::option::Option<i32>,
     /// <p> The Amazon Resource Name (ARN) of the Lambda function to be called for authorization. This can be a standard Lambda ARN, a version ARN (.../v3), or an alias ARN. </p>
     pub authorizer_uri: ::std::option::Option<::std::string::String>,
     /// <p> A regular expression for validation of tokens before the Lambda function is called. </p>
@@ -13,7 +13,7 @@ pub struct AwsAppSyncGraphQlApiLambdaAuthorizerConfigDetails {
 }
 impl AwsAppSyncGraphQlApiLambdaAuthorizerConfigDetails {
     /// <p> The number of seconds a response should be cached for. The default is 5 minutes (300 seconds). </p>
-    pub fn authorizer_result_ttl_in_seconds(&self) -> i32 {
+    pub fn authorizer_result_ttl_in_seconds(&self) -> ::std::option::Option<i32> {
         self.authorizer_result_ttl_in_seconds
     }
     /// <p> The Amazon Resource Name (ARN) of the Lambda function to be called for authorization. This can be a standard Lambda ARN, a version ARN (.../v3), or an alias ARN. </p>
@@ -86,7 +86,7 @@ impl AwsAppSyncGraphQlApiLambdaAuthorizerConfigDetailsBuilder {
     /// Consumes the builder and constructs a [`AwsAppSyncGraphQlApiLambdaAuthorizerConfigDetails`](crate::types::AwsAppSyncGraphQlApiLambdaAuthorizerConfigDetails).
     pub fn build(self) -> crate::types::AwsAppSyncGraphQlApiLambdaAuthorizerConfigDetails {
         crate::types::AwsAppSyncGraphQlApiLambdaAuthorizerConfigDetails {
-            authorizer_result_ttl_in_seconds: self.authorizer_result_ttl_in_seconds.unwrap_or_default(),
+            authorizer_result_ttl_in_seconds: self.authorizer_result_ttl_in_seconds,
             authorizer_uri: self.authorizer_uri,
             identity_validation_expression: self.identity_validation_expression,
         }

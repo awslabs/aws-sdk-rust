@@ -17,7 +17,7 @@ pub struct IoTJobAbortCriteria {
     /// <p>This parameter supports up to two digits after the decimal (for example, you can specify <code>10.9</code> or <code>10.99</code>, but not <code>10.999</code>).</p>
     pub threshold_percentage: f64,
     /// <p>The minimum number of things that receive the configuration before the job can cancel.</p>
-    pub min_number_of_executed_things: i32,
+    pub min_number_of_executed_things: ::std::option::Option<i32>,
 }
 impl IoTJobAbortCriteria {
     /// <p>The type of job deployment failure that can cancel a job.</p>
@@ -34,7 +34,7 @@ impl IoTJobAbortCriteria {
         self.threshold_percentage
     }
     /// <p>The minimum number of things that receive the configuration before the job can cancel.</p>
-    pub fn min_number_of_executed_things(&self) -> i32 {
+    pub fn min_number_of_executed_things(&self) -> ::std::option::Option<i32> {
         self.min_number_of_executed_things
     }
 }
@@ -120,7 +120,7 @@ impl IoTJobAbortCriteriaBuilder {
             failure_type: self.failure_type,
             action: self.action,
             threshold_percentage: self.threshold_percentage.unwrap_or_default(),
-            min_number_of_executed_things: self.min_number_of_executed_things.unwrap_or_default(),
+            min_number_of_executed_things: self.min_number_of_executed_things,
         }
     }
 }

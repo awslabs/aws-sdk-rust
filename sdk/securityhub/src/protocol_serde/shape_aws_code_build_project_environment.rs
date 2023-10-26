@@ -18,20 +18,20 @@ pub fn ser_aws_code_build_project_environment(
         }
         array_3.finish();
     }
-    if input.privileged_mode {
-        object.key("PrivilegedMode").boolean(input.privileged_mode);
+    if let Some(var_6) = &input.privileged_mode {
+        object.key("PrivilegedMode").boolean(*var_6);
     }
-    if let Some(var_6) = &input.image_pull_credentials_type {
-        object.key("ImagePullCredentialsType").string(var_6.as_str());
+    if let Some(var_7) = &input.image_pull_credentials_type {
+        object.key("ImagePullCredentialsType").string(var_7.as_str());
     }
-    if let Some(var_7) = &input.registry_credential {
+    if let Some(var_8) = &input.registry_credential {
         #[allow(unused_mut)]
-        let mut object_8 = object.key("RegistryCredential").start_object();
-        crate::protocol_serde::shape_aws_code_build_project_environment_registry_credential::ser_aws_code_build_project_environment_registry_credential(&mut object_8, var_7)?;
-        object_8.finish();
+        let mut object_9 = object.key("RegistryCredential").start_object();
+        crate::protocol_serde::shape_aws_code_build_project_environment_registry_credential::ser_aws_code_build_project_environment_registry_credential(&mut object_9, var_8)?;
+        object_9.finish();
     }
-    if let Some(var_9) = &input.r#type {
-        object.key("Type").string(var_9.as_str());
+    if let Some(var_10) = &input.r#type {
+        object.key("Type").string(var_10.as_str());
     }
     Ok(())
 }

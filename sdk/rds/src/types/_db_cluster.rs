@@ -68,7 +68,7 @@ pub struct DbCluster {
     /// <p>The ID that Amazon Route 53 assigns when you create a hosted zone.</p>
     pub hosted_zone_id: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the DB cluster is encrypted.</p>
-    pub storage_encrypted: bool,
+    pub storage_encrypted: ::std::option::Option<bool>,
     /// <p>If <code>StorageEncrypted</code> is enabled, the Amazon Web Services KMS key identifier for the encrypted DB cluster.</p>
     /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
@@ -147,7 +147,7 @@ pub struct DbCluster {
     pub publicly_accessible: ::std::option::Option<bool>,
     /// <p>Indicates whether minor version patches are applied automatically.</p>
     /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
-    pub auto_minor_version_upgrade: bool,
+    pub auto_minor_version_upgrade: ::std::option::Option<bool>,
     /// <p>The interval, in seconds, between points when Enhanced Monitoring metrics are collected for the DB cluster.</p>
     /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
     pub monitoring_interval: ::std::option::Option<i32>,
@@ -312,7 +312,7 @@ impl DbCluster {
         self.hosted_zone_id.as_deref()
     }
     /// <p>Indicates whether the DB cluster is encrypted.</p>
-    pub fn storage_encrypted(&self) -> bool {
+    pub fn storage_encrypted(&self) -> ::std::option::Option<bool> {
         self.storage_encrypted
     }
     /// <p>If <code>StorageEncrypted</code> is enabled, the Amazon Web Services KMS key identifier for the encrypted DB cluster.</p>
@@ -455,7 +455,7 @@ impl DbCluster {
     }
     /// <p>Indicates whether minor version patches are applied automatically.</p>
     /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
-    pub fn auto_minor_version_upgrade(&self) -> bool {
+    pub fn auto_minor_version_upgrade(&self) -> ::std::option::Option<bool> {
         self.auto_minor_version_upgrade
     }
     /// <p>The interval, in seconds, between points when Enhanced Monitoring metrics are collected for the DB cluster.</p>
@@ -1856,7 +1856,7 @@ impl DbClusterBuilder {
             db_cluster_members: self.db_cluster_members,
             vpc_security_groups: self.vpc_security_groups,
             hosted_zone_id: self.hosted_zone_id,
-            storage_encrypted: self.storage_encrypted.unwrap_or_default(),
+            storage_encrypted: self.storage_encrypted,
             kms_key_id: self.kms_key_id,
             db_cluster_resource_id: self.db_cluster_resource_id,
             db_cluster_arn: self.db_cluster_arn,
@@ -1888,7 +1888,7 @@ impl DbClusterBuilder {
             storage_type: self.storage_type,
             iops: self.iops,
             publicly_accessible: self.publicly_accessible,
-            auto_minor_version_upgrade: self.auto_minor_version_upgrade.unwrap_or_default(),
+            auto_minor_version_upgrade: self.auto_minor_version_upgrade,
             monitoring_interval: self.monitoring_interval,
             monitoring_role_arn: self.monitoring_role_arn,
             performance_insights_enabled: self.performance_insights_enabled,

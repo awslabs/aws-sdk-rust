@@ -273,6 +273,10 @@ pub use crate::types::_document_attribute_value_count_pair::DocumentAttributeVal
 
 pub use crate::types::_query_result_item::QueryResultItem;
 
+pub use crate::types::_collapsed_result_detail::CollapsedResultDetail;
+
+pub use crate::types::_expanded_result_item::ExpandedResultItem;
+
 pub use crate::types::_table_excerpt::TableExcerpt;
 
 pub use crate::types::_table_row::TableRow;
@@ -281,11 +285,17 @@ pub use crate::types::_table_cell::TableCell;
 
 pub use crate::types::_query_result_format::QueryResultFormat;
 
-pub use crate::types::_spell_correction_configuration::SpellCorrectionConfiguration;
+pub use crate::types::_collapse_configuration::CollapseConfiguration;
+
+pub use crate::types::_expand_configuration::ExpandConfiguration;
+
+pub use crate::types::_missing_attribute_key_strategy::MissingAttributeKeyStrategy;
 
 pub use crate::types::_sorting_configuration::SortingConfiguration;
 
 pub use crate::types::_sort_order::SortOrder;
+
+pub use crate::types::_spell_correction_configuration::SpellCorrectionConfiguration;
 
 pub use crate::types::_facet::Facet;
 
@@ -463,6 +473,10 @@ mod _capacity_units_configuration;
 
 mod _click_feedback;
 
+mod _collapse_configuration;
+
+mod _collapsed_result_detail;
+
 mod _column_configuration;
 
 mod _condition_operator;
@@ -571,6 +585,10 @@ mod _entity_type;
 
 mod _error_code;
 
+mod _expand_configuration;
+
+mod _expanded_result_item;
+
 mod _experience_configuration;
 
 mod _experience_endpoint;
@@ -660,6 +678,8 @@ mod _member_group;
 mod _member_user;
 
 mod _metric_type;
+
+mod _missing_attribute_key_strategy;
 
 mod _mode;
 

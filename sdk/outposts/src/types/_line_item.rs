@@ -9,7 +9,7 @@ pub struct LineItem {
     /// <p>The ID of the line item.</p>
     pub line_item_id: ::std::option::Option<::std::string::String>,
     /// <p>The quantity of the line item.</p>
-    pub quantity: i32,
+    pub quantity: ::std::option::Option<i32>,
     /// <p>The status of the line item.</p>
     pub status: ::std::option::Option<crate::types::LineItemStatus>,
     /// <p> Information about a line item shipment. </p>
@@ -31,7 +31,7 @@ impl LineItem {
         self.line_item_id.as_deref()
     }
     /// <p>The quantity of the line item.</p>
-    pub fn quantity(&self) -> i32 {
+    pub fn quantity(&self) -> ::std::option::Option<i32> {
         self.quantity
     }
     /// <p>The status of the line item.</p>
@@ -199,7 +199,7 @@ impl LineItemBuilder {
         crate::types::LineItem {
             catalog_item_id: self.catalog_item_id,
             line_item_id: self.line_item_id,
-            quantity: self.quantity.unwrap_or_default(),
+            quantity: self.quantity,
             status: self.status,
             shipment_information: self.shipment_information,
             asset_information_list: self.asset_information_list,

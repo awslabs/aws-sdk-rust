@@ -61,73 +61,82 @@ pub fn ser_create_data_set_input(
         }
         object_17.finish();
     }
-    if let Some(var_21) = &input.import_mode {
-        object.key("ImportMode").string(var_21.as_str());
-    }
-    if let Some(var_22) = &input.logical_table_map {
-        #[allow(unused_mut)]
-        let mut object_23 = object.key("LogicalTableMap").start_object();
-        for (key_24, value_25) in var_22 {
+    if let Some(var_21) = &input.folder_arns {
+        let mut array_22 = object.key("FolderArns").start_array();
+        for item_23 in var_21 {
             {
-                #[allow(unused_mut)]
-                let mut object_26 = object_23.key(key_24.as_str()).start_object();
-                crate::protocol_serde::shape_logical_table::ser_logical_table(&mut object_26, value_25)?;
-                object_26.finish();
+                array_22.value().string(item_23.as_str());
             }
         }
-        object_23.finish();
+        array_22.finish();
     }
-    if let Some(var_27) = &input.name {
-        object.key("Name").string(var_27.as_str());
+    if let Some(var_24) = &input.import_mode {
+        object.key("ImportMode").string(var_24.as_str());
     }
-    if let Some(var_28) = &input.permissions {
-        let mut array_29 = object.key("Permissions").start_array();
-        for item_30 in var_28 {
+    if let Some(var_25) = &input.logical_table_map {
+        #[allow(unused_mut)]
+        let mut object_26 = object.key("LogicalTableMap").start_object();
+        for (key_27, value_28) in var_25 {
             {
                 #[allow(unused_mut)]
-                let mut object_31 = array_29.value().start_object();
-                crate::protocol_serde::shape_resource_permission::ser_resource_permission(&mut object_31, item_30)?;
-                object_31.finish();
+                let mut object_29 = object_26.key(key_27.as_str()).start_object();
+                crate::protocol_serde::shape_logical_table::ser_logical_table(&mut object_29, value_28)?;
+                object_29.finish();
             }
         }
-        array_29.finish();
+        object_26.finish();
     }
-    if let Some(var_32) = &input.physical_table_map {
-        #[allow(unused_mut)]
-        let mut object_33 = object.key("PhysicalTableMap").start_object();
-        for (key_34, value_35) in var_32 {
+    if let Some(var_30) = &input.name {
+        object.key("Name").string(var_30.as_str());
+    }
+    if let Some(var_31) = &input.permissions {
+        let mut array_32 = object.key("Permissions").start_array();
+        for item_33 in var_31 {
             {
                 #[allow(unused_mut)]
-                let mut object_36 = object_33.key(key_34.as_str()).start_object();
-                crate::protocol_serde::shape_physical_table::ser_physical_table(&mut object_36, value_35)?;
-                object_36.finish();
+                let mut object_34 = array_32.value().start_object();
+                crate::protocol_serde::shape_resource_permission::ser_resource_permission(&mut object_34, item_33)?;
+                object_34.finish();
             }
         }
-        object_33.finish();
+        array_32.finish();
     }
-    if let Some(var_37) = &input.row_level_permission_data_set {
+    if let Some(var_35) = &input.physical_table_map {
         #[allow(unused_mut)]
-        let mut object_38 = object.key("RowLevelPermissionDataSet").start_object();
-        crate::protocol_serde::shape_row_level_permission_data_set::ser_row_level_permission_data_set(&mut object_38, var_37)?;
-        object_38.finish();
-    }
-    if let Some(var_39) = &input.row_level_permission_tag_configuration {
-        #[allow(unused_mut)]
-        let mut object_40 = object.key("RowLevelPermissionTagConfiguration").start_object();
-        crate::protocol_serde::shape_row_level_permission_tag_configuration::ser_row_level_permission_tag_configuration(&mut object_40, var_39)?;
-        object_40.finish();
-    }
-    if let Some(var_41) = &input.tags {
-        let mut array_42 = object.key("Tags").start_array();
-        for item_43 in var_41 {
+        let mut object_36 = object.key("PhysicalTableMap").start_object();
+        for (key_37, value_38) in var_35 {
             {
                 #[allow(unused_mut)]
-                let mut object_44 = array_42.value().start_object();
-                crate::protocol_serde::shape_tag::ser_tag(&mut object_44, item_43)?;
-                object_44.finish();
+                let mut object_39 = object_36.key(key_37.as_str()).start_object();
+                crate::protocol_serde::shape_physical_table::ser_physical_table(&mut object_39, value_38)?;
+                object_39.finish();
             }
         }
-        array_42.finish();
+        object_36.finish();
+    }
+    if let Some(var_40) = &input.row_level_permission_data_set {
+        #[allow(unused_mut)]
+        let mut object_41 = object.key("RowLevelPermissionDataSet").start_object();
+        crate::protocol_serde::shape_row_level_permission_data_set::ser_row_level_permission_data_set(&mut object_41, var_40)?;
+        object_41.finish();
+    }
+    if let Some(var_42) = &input.row_level_permission_tag_configuration {
+        #[allow(unused_mut)]
+        let mut object_43 = object.key("RowLevelPermissionTagConfiguration").start_object();
+        crate::protocol_serde::shape_row_level_permission_tag_configuration::ser_row_level_permission_tag_configuration(&mut object_43, var_42)?;
+        object_43.finish();
+    }
+    if let Some(var_44) = &input.tags {
+        let mut array_45 = object.key("Tags").start_array();
+        for item_46 in var_44 {
+            {
+                #[allow(unused_mut)]
+                let mut object_47 = array_45.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_47, item_46)?;
+                object_47.finish();
+            }
+        }
+        array_45.finish();
     }
     Ok(())
 }

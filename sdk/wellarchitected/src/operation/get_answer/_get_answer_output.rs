@@ -8,7 +8,7 @@ pub struct GetAnswerOutput {
     pub workload_id: ::std::option::Option<::std::string::String>,
     /// <p>The milestone number.</p>
     /// <p>A workload can have a maximum of 100 milestones.</p>
-    pub milestone_number: i32,
+    pub milestone_number: ::std::option::Option<i32>,
     /// <p>The alias of the lens.</p>
     /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p>
     /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>. </p>
@@ -27,7 +27,7 @@ impl GetAnswerOutput {
     }
     /// <p>The milestone number.</p>
     /// <p>A workload can have a maximum of 100 milestones.</p>
-    pub fn milestone_number(&self) -> i32 {
+    pub fn milestone_number(&self) -> ::std::option::Option<i32> {
         self.milestone_number
     }
     /// <p>The alias of the lens.</p>
@@ -165,7 +165,7 @@ impl GetAnswerOutputBuilder {
     pub fn build(self) -> crate::operation::get_answer::GetAnswerOutput {
         crate::operation::get_answer::GetAnswerOutput {
             workload_id: self.workload_id,
-            milestone_number: self.milestone_number.unwrap_or_default(),
+            milestone_number: self.milestone_number,
             lens_alias: self.lens_alias,
             lens_arn: self.lens_arn,
             answer: self.answer,

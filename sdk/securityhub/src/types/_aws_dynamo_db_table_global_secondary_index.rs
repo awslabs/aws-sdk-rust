@@ -5,13 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsDynamoDbTableGlobalSecondaryIndex {
     /// <p>Whether the index is currently backfilling.</p>
-    pub backfilling: bool,
+    pub backfilling: ::std::option::Option<bool>,
     /// <p>The ARN of the index.</p>
     pub index_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the index.</p>
     pub index_name: ::std::option::Option<::std::string::String>,
     /// <p>The total size in bytes of the index.</p>
-    pub index_size_bytes: i64,
+    pub index_size_bytes: ::std::option::Option<i64>,
     /// <p>The current status of the index.</p>
     /// <ul>
     /// <li> <p> <code>ACTIVE</code> </p> </li>
@@ -21,7 +21,7 @@ pub struct AwsDynamoDbTableGlobalSecondaryIndex {
     /// </ul>
     pub index_status: ::std::option::Option<::std::string::String>,
     /// <p>The number of items in the index.</p>
-    pub item_count: i32,
+    pub item_count: ::std::option::Option<i32>,
     /// <p>The key schema for the index.</p>
     pub key_schema: ::std::option::Option<::std::vec::Vec<crate::types::AwsDynamoDbTableKeySchema>>,
     /// <p>Attributes that are copied from the table into an index.</p>
@@ -31,7 +31,7 @@ pub struct AwsDynamoDbTableGlobalSecondaryIndex {
 }
 impl AwsDynamoDbTableGlobalSecondaryIndex {
     /// <p>Whether the index is currently backfilling.</p>
-    pub fn backfilling(&self) -> bool {
+    pub fn backfilling(&self) -> ::std::option::Option<bool> {
         self.backfilling
     }
     /// <p>The ARN of the index.</p>
@@ -43,7 +43,7 @@ impl AwsDynamoDbTableGlobalSecondaryIndex {
         self.index_name.as_deref()
     }
     /// <p>The total size in bytes of the index.</p>
-    pub fn index_size_bytes(&self) -> i64 {
+    pub fn index_size_bytes(&self) -> ::std::option::Option<i64> {
         self.index_size_bytes
     }
     /// <p>The current status of the index.</p>
@@ -57,7 +57,7 @@ impl AwsDynamoDbTableGlobalSecondaryIndex {
         self.index_status.as_deref()
     }
     /// <p>The number of items in the index.</p>
-    pub fn item_count(&self) -> i32 {
+    pub fn item_count(&self) -> ::std::option::Option<i32> {
         self.item_count
     }
     /// <p>The key schema for the index.</p>
@@ -248,12 +248,12 @@ impl AwsDynamoDbTableGlobalSecondaryIndexBuilder {
     /// Consumes the builder and constructs a [`AwsDynamoDbTableGlobalSecondaryIndex`](crate::types::AwsDynamoDbTableGlobalSecondaryIndex).
     pub fn build(self) -> crate::types::AwsDynamoDbTableGlobalSecondaryIndex {
         crate::types::AwsDynamoDbTableGlobalSecondaryIndex {
-            backfilling: self.backfilling.unwrap_or_default(),
+            backfilling: self.backfilling,
             index_arn: self.index_arn,
             index_name: self.index_name,
-            index_size_bytes: self.index_size_bytes.unwrap_or_default(),
+            index_size_bytes: self.index_size_bytes,
             index_status: self.index_status,
-            item_count: self.item_count.unwrap_or_default(),
+            item_count: self.item_count,
             key_schema: self.key_schema,
             projection: self.projection,
             provisioned_throughput: self.provisioned_throughput,

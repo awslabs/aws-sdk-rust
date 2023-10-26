@@ -13,7 +13,7 @@ pub struct UserStackAssociation {
     /// <p>The authentication type for the user.</p>
     pub authentication_type: ::std::option::Option<crate::types::AuthenticationType>,
     /// <p>Specifies whether a welcome email is sent to a user after the user is created in the user pool.</p>
-    pub send_email_notification: bool,
+    pub send_email_notification: ::std::option::Option<bool>,
 }
 impl UserStackAssociation {
     /// <p>The name of the stack that is associated with the user.</p>
@@ -31,7 +31,7 @@ impl UserStackAssociation {
         self.authentication_type.as_ref()
     }
     /// <p>Specifies whether a welcome email is sent to a user after the user is created in the user pool.</p>
-    pub fn send_email_notification(&self) -> bool {
+    pub fn send_email_notification(&self) -> ::std::option::Option<bool> {
         self.send_email_notification
     }
 }
@@ -130,7 +130,7 @@ impl UserStackAssociationBuilder {
             stack_name: self.stack_name,
             user_name: self.user_name,
             authentication_type: self.authentication_type,
-            send_email_notification: self.send_email_notification.unwrap_or_default(),
+            send_email_notification: self.send_email_notification,
         }
     }
 }

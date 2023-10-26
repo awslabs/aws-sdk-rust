@@ -3,47 +3,47 @@ pub fn ser_aws_open_search_service_domain_cluster_config_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsOpenSearchServiceDomainClusterConfigDetails,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if input.instance_count != 0 {
+    if let Some(var_1) = &input.instance_count {
         object.key("InstanceCount").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.instance_count).into()),
+            ::aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if input.warm_enabled {
-        object.key("WarmEnabled").boolean(input.warm_enabled);
+    if let Some(var_2) = &input.warm_enabled {
+        object.key("WarmEnabled").boolean(*var_2);
     }
-    if input.warm_count != 0 {
+    if let Some(var_3) = &input.warm_count {
         object.key("WarmCount").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.warm_count).into()),
+            ::aws_smithy_types::Number::NegInt((*var_3).into()),
         );
     }
-    if input.dedicated_master_enabled {
-        object.key("DedicatedMasterEnabled").boolean(input.dedicated_master_enabled);
+    if let Some(var_4) = &input.dedicated_master_enabled {
+        object.key("DedicatedMasterEnabled").boolean(*var_4);
     }
-    if let Some(var_1) = &input.zone_awareness_config {
+    if let Some(var_5) = &input.zone_awareness_config {
         #[allow(unused_mut)]
-        let mut object_2 = object.key("ZoneAwarenessConfig").start_object();
-        crate::protocol_serde::shape_aws_open_search_service_domain_cluster_config_zone_awareness_config_details::ser_aws_open_search_service_domain_cluster_config_zone_awareness_config_details(&mut object_2, var_1)?;
-        object_2.finish();
+        let mut object_6 = object.key("ZoneAwarenessConfig").start_object();
+        crate::protocol_serde::shape_aws_open_search_service_domain_cluster_config_zone_awareness_config_details::ser_aws_open_search_service_domain_cluster_config_zone_awareness_config_details(&mut object_6, var_5)?;
+        object_6.finish();
     }
-    if input.dedicated_master_count != 0 {
+    if let Some(var_7) = &input.dedicated_master_count {
         object.key("DedicatedMasterCount").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.dedicated_master_count).into()),
+            ::aws_smithy_types::Number::NegInt((*var_7).into()),
         );
     }
-    if let Some(var_3) = &input.instance_type {
-        object.key("InstanceType").string(var_3.as_str());
+    if let Some(var_8) = &input.instance_type {
+        object.key("InstanceType").string(var_8.as_str());
     }
-    if let Some(var_4) = &input.warm_type {
-        object.key("WarmType").string(var_4.as_str());
+    if let Some(var_9) = &input.warm_type {
+        object.key("WarmType").string(var_9.as_str());
     }
-    if input.zone_awareness_enabled {
-        object.key("ZoneAwarenessEnabled").boolean(input.zone_awareness_enabled);
+    if let Some(var_10) = &input.zone_awareness_enabled {
+        object.key("ZoneAwarenessEnabled").boolean(*var_10);
     }
-    if let Some(var_5) = &input.dedicated_master_type {
-        object.key("DedicatedMasterType").string(var_5.as_str());
+    if let Some(var_11) = &input.dedicated_master_type {
+        object.key("DedicatedMasterType").string(var_11.as_str());
     }
     Ok(())
 }

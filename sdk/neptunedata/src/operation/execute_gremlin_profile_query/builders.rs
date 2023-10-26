@@ -23,6 +23,8 @@ impl ExecuteGremlinProfileQueryInputBuilder {
 /// Fluent builder constructing a request to `ExecuteGremlinProfileQuery`.
 ///
 /// <p>Executes a Gremlin Profile query, which runs a specified traversal, collects various metrics about the run, and produces a profile report as output. See <a href="https://docs.aws.amazon.com/neptune/latest/userguide/gremlin-profile-api.html">Gremlin profile API in Neptune</a> for details.</p>
+/// <p>When invoking this operation in a Neptune cluster that has IAM authentication enabled, the IAM user or role making the request must have a policy attached that allows the <a href="https://docs.aws.amazon.com/neptune/latest/userguide/iam-dp-actions.html#readdataviaquery">neptune-db:ReadDataViaQuery</a> IAM action in that cluster.</p>
+/// <p>Note that the <a href="https://docs.aws.amazon.com/neptune/latest/userguide/iam-data-condition-keys.html#iam-neptune-condition-keys">neptune-db:QueryLanguage:Gremlin</a> IAM condition key can be used in the policy document to restrict the use of Gremlin queries (see <a href="https://docs.aws.amazon.com/neptune/latest/userguide/iam-data-condition-keys.html">Condition keys available in Neptune IAM data-access policy statements</a>).</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ExecuteGremlinProfileQueryFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -30,17 +30,20 @@ pub fn ser_create_connect_peer_input(
     if let Some(var_9) = &input.peer_address {
         object.key("PeerAddress").string(var_9.as_str());
     }
-    if let Some(var_10) = &input.tags {
-        let mut array_11 = object.key("Tags").start_array();
-        for item_12 in var_10 {
+    if let Some(var_10) = &input.subnet_arn {
+        object.key("SubnetArn").string(var_10.as_str());
+    }
+    if let Some(var_11) = &input.tags {
+        let mut array_12 = object.key("Tags").start_array();
+        for item_13 in var_11 {
             {
                 #[allow(unused_mut)]
-                let mut object_13 = array_11.value().start_object();
-                crate::protocol_serde::shape_tag::ser_tag(&mut object_13, item_12)?;
-                object_13.finish();
+                let mut object_14 = array_12.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_14, item_13)?;
+                object_14.finish();
             }
         }
-        array_11.finish();
+        array_12.finish();
     }
     Ok(())
 }

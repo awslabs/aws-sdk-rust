@@ -3,17 +3,17 @@ pub fn ser_aws_app_sync_graph_ql_api_lambda_authorizer_config_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsAppSyncGraphQlApiLambdaAuthorizerConfigDetails,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if input.authorizer_result_ttl_in_seconds != 0 {
+    if let Some(var_1) = &input.authorizer_result_ttl_in_seconds {
         object.key("AuthorizerResultTtlInSeconds").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.authorizer_result_ttl_in_seconds).into()),
+            ::aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if let Some(var_1) = &input.authorizer_uri {
-        object.key("AuthorizerUri").string(var_1.as_str());
+    if let Some(var_2) = &input.authorizer_uri {
+        object.key("AuthorizerUri").string(var_2.as_str());
     }
-    if let Some(var_2) = &input.identity_validation_expression {
-        object.key("IdentityValidationExpression").string(var_2.as_str());
+    if let Some(var_3) = &input.identity_validation_expression {
+        object.key("IdentityValidationExpression").string(var_3.as_str());
     }
     Ok(())
 }

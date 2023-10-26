@@ -5,14 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsRedshiftClusterResizeInfo {
     /// <p>Indicates whether the resize operation can be canceled.</p>
-    pub allow_cancel_resize: bool,
+    pub allow_cancel_resize: ::std::option::Option<bool>,
     /// <p>The type of resize operation.</p>
     /// <p>Valid values: <code>ClassicResize</code> </p>
     pub resize_type: ::std::option::Option<::std::string::String>,
 }
 impl AwsRedshiftClusterResizeInfo {
     /// <p>Indicates whether the resize operation can be canceled.</p>
-    pub fn allow_cancel_resize(&self) -> bool {
+    pub fn allow_cancel_resize(&self) -> ::std::option::Option<bool> {
         self.allow_cancel_resize
     }
     /// <p>The type of resize operation.</p>
@@ -70,7 +70,7 @@ impl AwsRedshiftClusterResizeInfoBuilder {
     /// Consumes the builder and constructs a [`AwsRedshiftClusterResizeInfo`](crate::types::AwsRedshiftClusterResizeInfo).
     pub fn build(self) -> crate::types::AwsRedshiftClusterResizeInfo {
         crate::types::AwsRedshiftClusterResizeInfo {
-            allow_cancel_resize: self.allow_cancel_resize.unwrap_or_default(),
+            allow_cancel_resize: self.allow_cancel_resize,
             resize_type: self.resize_type,
         }
     }

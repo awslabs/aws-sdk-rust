@@ -18,6 +18,7 @@
 ///     ResourceAttribute::Properties => { /* ... */ },
 ///     ResourceAttribute::Tags => { /* ... */ },
 ///     ResourceAttribute::UpdatePolicy => { /* ... */ },
+///     ResourceAttribute::UpdateReplacePolicy => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -57,6 +58,8 @@ pub enum ResourceAttribute {
     Tags,
     #[allow(missing_docs)] // documentation missing in model
     UpdatePolicy,
+    #[allow(missing_docs)] // documentation missing in model
+    UpdateReplacePolicy,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
@@ -69,6 +72,7 @@ impl ::std::convert::From<&str> for ResourceAttribute {
             "Properties" => ResourceAttribute::Properties,
             "Tags" => ResourceAttribute::Tags,
             "UpdatePolicy" => ResourceAttribute::UpdatePolicy,
+            "UpdateReplacePolicy" => ResourceAttribute::UpdateReplacePolicy,
             other => ResourceAttribute::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -90,12 +94,21 @@ impl ResourceAttribute {
             ResourceAttribute::Properties => "Properties",
             ResourceAttribute::Tags => "Tags",
             ResourceAttribute::UpdatePolicy => "UpdatePolicy",
+            ResourceAttribute::UpdateReplacePolicy => "UpdateReplacePolicy",
             ResourceAttribute::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CreationPolicy", "DeletionPolicy", "Metadata", "Properties", "Tags", "UpdatePolicy"]
+        &[
+            "CreationPolicy",
+            "DeletionPolicy",
+            "Metadata",
+            "Properties",
+            "Tags",
+            "UpdatePolicy",
+            "UpdateReplacePolicy",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for ResourceAttribute {

@@ -343,6 +343,8 @@ pub(crate) mod shape_capacity_units_configuration;
 
 pub(crate) mod shape_click_feedback;
 
+pub(crate) mod shape_collapse_configuration;
+
 pub(crate) mod shape_conflicting_items;
 
 pub(crate) mod shape_custom_document_enrichment_configuration;
@@ -495,6 +497,8 @@ pub(crate) mod shape_database_configuration;
 
 pub(crate) mod shape_document_attribute;
 
+pub(crate) mod shape_expand_configuration;
+
 pub(crate) mod shape_experience_endpoint;
 
 pub(crate) mod shape_experience_entities_summary;
@@ -610,6 +614,8 @@ pub(crate) mod shape_acl_configuration;
 pub(crate) mod shape_additional_result_attribute_list;
 
 pub(crate) mod shape_authentication_configuration;
+
+pub(crate) mod shape_collapsed_result_detail;
 
 pub(crate) mod shape_column_configuration;
 
@@ -749,6 +755,8 @@ pub(crate) mod shape_correction;
 
 pub(crate) mod shape_document_attribute_value_count_pair;
 
+pub(crate) mod shape_expanded_result_list;
+
 pub(crate) mod shape_highlight_list;
 
 pub(crate) mod shape_one_drive_user_list;
@@ -780,6 +788,8 @@ pub(crate) mod shape_additional_result_attribute_value;
 pub(crate) mod shape_document_attribute_key_list;
 
 pub(crate) mod shape_document_attribute_string_list_value;
+
+pub(crate) mod shape_expanded_result_item;
 
 pub(crate) mod shape_highlight;
 

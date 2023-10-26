@@ -46,6 +46,23 @@ where
                                     .transpose()?,
                             );
                         }
+                        "pipelineType" => {
+                            builder = builder.set_pipeline_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::PipelineType::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "triggers" => {
+                            builder = builder.set_triggers(
+                                crate::protocol_serde::shape_pipeline_trigger_declaration_list::de_pipeline_trigger_declaration_list(tokens)?,
+                            );
+                        }
+                        "variables" => {
+                            builder = builder.set_variables(
+                                crate::protocol_serde::shape_pipeline_variable_declaration_list::de_pipeline_variable_declaration_list(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
@@ -110,6 +127,33 @@ pub fn ser_pipeline_declaration(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((*var_14).into()),
         );
+    }
+    if let Some(var_15) = &input.pipeline_type {
+        object.key("pipelineType").string(var_15.as_str());
+    }
+    if let Some(var_16) = &input.triggers {
+        let mut array_17 = object.key("triggers").start_array();
+        for item_18 in var_16 {
+            {
+                #[allow(unused_mut)]
+                let mut object_19 = array_17.value().start_object();
+                crate::protocol_serde::shape_pipeline_trigger_declaration::ser_pipeline_trigger_declaration(&mut object_19, item_18)?;
+                object_19.finish();
+            }
+        }
+        array_17.finish();
+    }
+    if let Some(var_20) = &input.variables {
+        let mut array_21 = object.key("variables").start_array();
+        for item_22 in var_20 {
+            {
+                #[allow(unused_mut)]
+                let mut object_23 = array_21.value().start_object();
+                crate::protocol_serde::shape_pipeline_variable_declaration::ser_pipeline_variable_declaration(&mut object_23, item_22)?;
+                object_23.finish();
+            }
+        }
+        array_21.finish();
     }
     Ok(())
 }

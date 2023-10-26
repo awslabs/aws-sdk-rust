@@ -7,19 +7,19 @@ pub struct LineageObject {
     /// <p>The time when the process started. This is in UTC format.</p>
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The process ID of the child process.</p>
-    pub namespace_pid: i32,
+    pub namespace_pid: ::std::option::Option<i32>,
     /// <p>The user ID of the user that executed the process.</p>
-    pub user_id: i32,
+    pub user_id: ::std::option::Option<i32>,
     /// <p>The name of the process.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the process.</p>
-    pub pid: i32,
+    pub pid: ::std::option::Option<i32>,
     /// <p>The unique ID assigned to the process by GuardDuty.</p>
     pub uuid: ::std::option::Option<::std::string::String>,
     /// <p>The absolute path of the process executable file.</p>
     pub executable_path: ::std::option::Option<::std::string::String>,
     /// <p>The effective user ID that was used to execute the process.</p>
-    pub euid: i32,
+    pub euid: ::std::option::Option<i32>,
     /// <p>The unique ID of the parent process. This ID is assigned to the parent process by GuardDuty.</p>
     pub parent_uuid: ::std::option::Option<::std::string::String>,
 }
@@ -29,11 +29,11 @@ impl LineageObject {
         self.start_time.as_ref()
     }
     /// <p>The process ID of the child process.</p>
-    pub fn namespace_pid(&self) -> i32 {
+    pub fn namespace_pid(&self) -> ::std::option::Option<i32> {
         self.namespace_pid
     }
     /// <p>The user ID of the user that executed the process.</p>
-    pub fn user_id(&self) -> i32 {
+    pub fn user_id(&self) -> ::std::option::Option<i32> {
         self.user_id
     }
     /// <p>The name of the process.</p>
@@ -41,7 +41,7 @@ impl LineageObject {
         self.name.as_deref()
     }
     /// <p>The ID of the process.</p>
-    pub fn pid(&self) -> i32 {
+    pub fn pid(&self) -> ::std::option::Option<i32> {
         self.pid
     }
     /// <p>The unique ID assigned to the process by GuardDuty.</p>
@@ -53,7 +53,7 @@ impl LineageObject {
         self.executable_path.as_deref()
     }
     /// <p>The effective user ID that was used to execute the process.</p>
-    pub fn euid(&self) -> i32 {
+    pub fn euid(&self) -> ::std::option::Option<i32> {
         self.euid
     }
     /// <p>The unique ID of the parent process. This ID is assigned to the parent process by GuardDuty.</p>
@@ -213,13 +213,13 @@ impl LineageObjectBuilder {
     pub fn build(self) -> crate::types::LineageObject {
         crate::types::LineageObject {
             start_time: self.start_time,
-            namespace_pid: self.namespace_pid.unwrap_or_default(),
-            user_id: self.user_id.unwrap_or_default(),
+            namespace_pid: self.namespace_pid,
+            user_id: self.user_id,
             name: self.name,
-            pid: self.pid.unwrap_or_default(),
+            pid: self.pid,
             uuid: self.uuid,
             executable_path: self.executable_path,
-            euid: self.euid.unwrap_or_default(),
+            euid: self.euid,
             parent_uuid: self.parent_uuid,
         }
     }

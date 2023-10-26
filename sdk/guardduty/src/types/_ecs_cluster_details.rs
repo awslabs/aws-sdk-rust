@@ -11,11 +11,11 @@ pub struct EcsClusterDetails {
     /// <p>The status of the ECS cluster.</p>
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>The number of services that are running on the cluster in an ACTIVE state.</p>
-    pub active_services_count: i32,
+    pub active_services_count: ::std::option::Option<i32>,
     /// <p>The number of container instances registered into the cluster.</p>
-    pub registered_container_instances_count: i32,
+    pub registered_container_instances_count: ::std::option::Option<i32>,
     /// <p>The number of tasks in the cluster that are in the RUNNING state.</p>
-    pub running_tasks_count: i32,
+    pub running_tasks_count: ::std::option::Option<i32>,
     /// <p>The tags of the ECS Cluster.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>Contains information about the details of the ECS Task.</p>
@@ -35,15 +35,15 @@ impl EcsClusterDetails {
         self.status.as_deref()
     }
     /// <p>The number of services that are running on the cluster in an ACTIVE state.</p>
-    pub fn active_services_count(&self) -> i32 {
+    pub fn active_services_count(&self) -> ::std::option::Option<i32> {
         self.active_services_count
     }
     /// <p>The number of container instances registered into the cluster.</p>
-    pub fn registered_container_instances_count(&self) -> i32 {
+    pub fn registered_container_instances_count(&self) -> ::std::option::Option<i32> {
         self.registered_container_instances_count
     }
     /// <p>The number of tasks in the cluster that are in the RUNNING state.</p>
-    pub fn running_tasks_count(&self) -> i32 {
+    pub fn running_tasks_count(&self) -> ::std::option::Option<i32> {
         self.running_tasks_count
     }
     /// <p>The tags of the ECS Cluster.</p>
@@ -200,9 +200,9 @@ impl EcsClusterDetailsBuilder {
             name: self.name,
             arn: self.arn,
             status: self.status,
-            active_services_count: self.active_services_count.unwrap_or_default(),
-            registered_container_instances_count: self.registered_container_instances_count.unwrap_or_default(),
-            running_tasks_count: self.running_tasks_count.unwrap_or_default(),
+            active_services_count: self.active_services_count,
+            registered_container_instances_count: self.registered_container_instances_count,
+            running_tasks_count: self.running_tasks_count,
             tags: self.tags,
             task_details: self.task_details,
         }

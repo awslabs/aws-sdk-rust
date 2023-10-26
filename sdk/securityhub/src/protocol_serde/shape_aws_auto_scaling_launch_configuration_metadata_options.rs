@@ -6,14 +6,14 @@ pub fn ser_aws_auto_scaling_launch_configuration_metadata_options(
     if let Some(var_1) = &input.http_endpoint {
         object.key("HttpEndpoint").string(var_1.as_str());
     }
-    if input.http_put_response_hop_limit != 0 {
+    if let Some(var_2) = &input.http_put_response_hop_limit {
         object.key("HttpPutResponseHopLimit").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.http_put_response_hop_limit).into()),
+            ::aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
-    if let Some(var_2) = &input.http_tokens {
-        object.key("HttpTokens").string(var_2.as_str());
+    if let Some(var_3) = &input.http_tokens {
+        object.key("HttpTokens").string(var_3.as_str());
     }
     Ok(())
 }

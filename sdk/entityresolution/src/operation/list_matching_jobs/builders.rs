@@ -130,17 +130,17 @@ impl ListMatchingJobsFluentBuilder {
     pub fn get_workflow_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_workflow_name()
     }
-    /// <p>The pagination token from the previous <code>ListSchemaMappings</code> API call.</p>
+    /// <p>The pagination token from the previous API call.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// <p>The pagination token from the previous <code>ListSchemaMappings</code> API call.</p>
+    /// <p>The pagination token from the previous API call.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// <p>The pagination token from the previous <code>ListSchemaMappings</code> API call.</p>
+    /// <p>The pagination token from the previous API call.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }

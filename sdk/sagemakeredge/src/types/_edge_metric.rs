@@ -9,7 +9,7 @@ pub struct EdgeMetric {
     /// <p>Returns the name of the metric.</p>
     pub metric_name: ::std::option::Option<::std::string::String>,
     /// <p>Returns the value of the metric.</p>
-    pub value: f64,
+    pub value: ::std::option::Option<f64>,
     /// <p>Timestamp of when the metric was requested.</p>
     pub timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
@@ -23,7 +23,7 @@ impl EdgeMetric {
         self.metric_name.as_deref()
     }
     /// <p>Returns the value of the metric.</p>
-    pub fn value(&self) -> f64 {
+    pub fn value(&self) -> ::std::option::Option<f64> {
         self.value
     }
     /// <p>Timestamp of when the metric was requested.</p>
@@ -109,7 +109,7 @@ impl EdgeMetricBuilder {
         crate::types::EdgeMetric {
             dimension: self.dimension,
             metric_name: self.metric_name,
-            value: self.value.unwrap_or_default(),
+            value: self.value,
             timestamp: self.timestamp,
         }
     }

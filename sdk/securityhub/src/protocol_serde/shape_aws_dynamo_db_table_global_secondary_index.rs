@@ -3,56 +3,56 @@ pub fn ser_aws_dynamo_db_table_global_secondary_index(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsDynamoDbTableGlobalSecondaryIndex,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if input.backfilling {
-        object.key("Backfilling").boolean(input.backfilling);
+    if let Some(var_1) = &input.backfilling {
+        object.key("Backfilling").boolean(*var_1);
     }
-    if let Some(var_1) = &input.index_arn {
-        object.key("IndexArn").string(var_1.as_str());
+    if let Some(var_2) = &input.index_arn {
+        object.key("IndexArn").string(var_2.as_str());
     }
-    if let Some(var_2) = &input.index_name {
-        object.key("IndexName").string(var_2.as_str());
+    if let Some(var_3) = &input.index_name {
+        object.key("IndexName").string(var_3.as_str());
     }
-    if input.index_size_bytes != 0 {
+    if let Some(var_4) = &input.index_size_bytes {
         object.key("IndexSizeBytes").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.index_size_bytes).into()),
+            ::aws_smithy_types::Number::NegInt((*var_4).into()),
         );
     }
-    if let Some(var_3) = &input.index_status {
-        object.key("IndexStatus").string(var_3.as_str());
+    if let Some(var_5) = &input.index_status {
+        object.key("IndexStatus").string(var_5.as_str());
     }
-    if input.item_count != 0 {
+    if let Some(var_6) = &input.item_count {
         object.key("ItemCount").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.item_count).into()),
+            ::aws_smithy_types::Number::NegInt((*var_6).into()),
         );
     }
-    if let Some(var_4) = &input.key_schema {
-        let mut array_5 = object.key("KeySchema").start_array();
-        for item_6 in var_4 {
+    if let Some(var_7) = &input.key_schema {
+        let mut array_8 = object.key("KeySchema").start_array();
+        for item_9 in var_7 {
             {
                 #[allow(unused_mut)]
-                let mut object_7 = array_5.value().start_object();
-                crate::protocol_serde::shape_aws_dynamo_db_table_key_schema::ser_aws_dynamo_db_table_key_schema(&mut object_7, item_6)?;
-                object_7.finish();
+                let mut object_10 = array_8.value().start_object();
+                crate::protocol_serde::shape_aws_dynamo_db_table_key_schema::ser_aws_dynamo_db_table_key_schema(&mut object_10, item_9)?;
+                object_10.finish();
             }
         }
-        array_5.finish();
+        array_8.finish();
     }
-    if let Some(var_8) = &input.projection {
+    if let Some(var_11) = &input.projection {
         #[allow(unused_mut)]
-        let mut object_9 = object.key("Projection").start_object();
-        crate::protocol_serde::shape_aws_dynamo_db_table_projection::ser_aws_dynamo_db_table_projection(&mut object_9, var_8)?;
-        object_9.finish();
+        let mut object_12 = object.key("Projection").start_object();
+        crate::protocol_serde::shape_aws_dynamo_db_table_projection::ser_aws_dynamo_db_table_projection(&mut object_12, var_11)?;
+        object_12.finish();
     }
-    if let Some(var_10) = &input.provisioned_throughput {
+    if let Some(var_13) = &input.provisioned_throughput {
         #[allow(unused_mut)]
-        let mut object_11 = object.key("ProvisionedThroughput").start_object();
+        let mut object_14 = object.key("ProvisionedThroughput").start_object();
         crate::protocol_serde::shape_aws_dynamo_db_table_provisioned_throughput::ser_aws_dynamo_db_table_provisioned_throughput(
-            &mut object_11,
-            var_10,
+            &mut object_14,
+            var_13,
         )?;
-        object_11.finish();
+        object_14.finish();
     }
     Ok(())
 }

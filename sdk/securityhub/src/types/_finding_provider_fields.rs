@@ -6,10 +6,10 @@
 pub struct FindingProviderFields {
     /// <p>A finding's confidence. Confidence is defined as the likelihood that a finding accurately identifies the behavior or issue that it was intended to identify.</p>
     /// <p>Confidence is scored on a 0-100 basis using a ratio scale, where 0 means zero percent confidence and 100 means 100 percent confidence.</p>
-    pub confidence: i32,
+    pub confidence: ::std::option::Option<i32>,
     /// <p>The level of importance assigned to the resources associated with the finding.</p>
     /// <p>A score of 0 means that the underlying resources have no criticality, and a score of 100 is reserved for the most critical resources.</p>
-    pub criticality: i32,
+    pub criticality: ::std::option::Option<i32>,
     /// <p>A list of findings that are related to the current finding.</p>
     pub related_findings: ::std::option::Option<::std::vec::Vec<crate::types::RelatedFinding>>,
     /// <p>The severity of a finding.</p>
@@ -21,12 +21,12 @@ pub struct FindingProviderFields {
 impl FindingProviderFields {
     /// <p>A finding's confidence. Confidence is defined as the likelihood that a finding accurately identifies the behavior or issue that it was intended to identify.</p>
     /// <p>Confidence is scored on a 0-100 basis using a ratio scale, where 0 means zero percent confidence and 100 means 100 percent confidence.</p>
-    pub fn confidence(&self) -> i32 {
+    pub fn confidence(&self) -> ::std::option::Option<i32> {
         self.confidence
     }
     /// <p>The level of importance assigned to the resources associated with the finding.</p>
     /// <p>A score of 0 means that the underlying resources have no criticality, and a score of 100 is reserved for the most critical resources.</p>
-    pub fn criticality(&self) -> i32 {
+    pub fn criticality(&self) -> ::std::option::Option<i32> {
         self.criticality
     }
     /// <p>A list of findings that are related to the current finding.</p>
@@ -155,8 +155,8 @@ impl FindingProviderFieldsBuilder {
     /// Consumes the builder and constructs a [`FindingProviderFields`](crate::types::FindingProviderFields).
     pub fn build(self) -> crate::types::FindingProviderFields {
         crate::types::FindingProviderFields {
-            confidence: self.confidence.unwrap_or_default(),
-            criticality: self.criticality.unwrap_or_default(),
+            confidence: self.confidence,
+            criticality: self.criticality,
             related_findings: self.related_findings,
             severity: self.severity,
             types: self.types,

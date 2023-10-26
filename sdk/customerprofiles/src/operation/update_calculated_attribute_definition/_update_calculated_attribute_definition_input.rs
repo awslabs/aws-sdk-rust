@@ -42,7 +42,7 @@ impl ::std::fmt::Debug for UpdateCalculatedAttributeDefinitionInput {
         formatter.field("domain_name", &self.domain_name);
         formatter.field("calculated_attribute_name", &self.calculated_attribute_name);
         formatter.field("display_name", &self.display_name);
-        formatter.field("description", &self.description);
+        formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("conditions", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
@@ -159,7 +159,7 @@ impl ::std::fmt::Debug for UpdateCalculatedAttributeDefinitionInputBuilder {
         formatter.field("domain_name", &self.domain_name);
         formatter.field("calculated_attribute_name", &self.calculated_attribute_name);
         formatter.field("display_name", &self.display_name);
-        formatter.field("description", &self.description);
+        formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("conditions", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }

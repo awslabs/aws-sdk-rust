@@ -22,7 +22,7 @@ impl ListDicomImportJobsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListDICOMImportJobs`.
 ///
-/// <p>List import jobs created by this AWS account for a specific data store.</p>
+/// <p>List import jobs created for a specific data store.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListDICOMImportJobsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

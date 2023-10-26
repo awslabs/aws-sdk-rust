@@ -6,5 +6,11 @@ pub fn ser_create_project_input(
     if let Some(var_1) = &input.project_name {
         object.key("ProjectName").string(var_1.as_str());
     }
+    if let Some(var_2) = &input.feature {
+        object.key("Feature").string(var_2.as_str());
+    }
+    if let Some(var_3) = &input.auto_update {
+        object.key("AutoUpdate").string(var_3.as_str());
+    }
     Ok(())
 }

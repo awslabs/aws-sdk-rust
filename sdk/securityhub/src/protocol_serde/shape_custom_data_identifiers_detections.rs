@@ -3,23 +3,23 @@ pub fn ser_custom_data_identifiers_detections(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CustomDataIdentifiersDetections,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if input.count != 0 {
+    if let Some(var_1) = &input.count {
         object.key("Count").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.count).into()),
+            ::aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if let Some(var_1) = &input.arn {
-        object.key("Arn").string(var_1.as_str());
+    if let Some(var_2) = &input.arn {
+        object.key("Arn").string(var_2.as_str());
     }
-    if let Some(var_2) = &input.name {
-        object.key("Name").string(var_2.as_str());
+    if let Some(var_3) = &input.name {
+        object.key("Name").string(var_3.as_str());
     }
-    if let Some(var_3) = &input.occurrences {
+    if let Some(var_4) = &input.occurrences {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("Occurrences").start_object();
-        crate::protocol_serde::shape_occurrences::ser_occurrences(&mut object_4, var_3)?;
-        object_4.finish();
+        let mut object_5 = object.key("Occurrences").start_object();
+        crate::protocol_serde::shape_occurrences::ser_occurrences(&mut object_5, var_4)?;
+        object_5.finish();
     }
     Ok(())
 }

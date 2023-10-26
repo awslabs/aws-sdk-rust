@@ -5,13 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEc2LaunchTemplateDataNetworkInterfaceSetPrivateIpAddressesDetails {
     /// <p> Indicates whether the private IPv4 address is the primary private IPv4 address. Only one IPv4 address can be designated as primary. </p>
-    pub primary: bool,
+    pub primary: ::std::option::Option<bool>,
     /// <p> The private IPv4 address. </p>
     pub private_ip_address: ::std::option::Option<::std::string::String>,
 }
 impl AwsEc2LaunchTemplateDataNetworkInterfaceSetPrivateIpAddressesDetails {
     /// <p> Indicates whether the private IPv4 address is the primary private IPv4 address. Only one IPv4 address can be designated as primary. </p>
-    pub fn primary(&self) -> bool {
+    pub fn primary(&self) -> ::std::option::Option<bool> {
         self.primary
     }
     /// <p> The private IPv4 address. </p>
@@ -65,7 +65,7 @@ impl AwsEc2LaunchTemplateDataNetworkInterfaceSetPrivateIpAddressesDetailsBuilder
     /// Consumes the builder and constructs a [`AwsEc2LaunchTemplateDataNetworkInterfaceSetPrivateIpAddressesDetails`](crate::types::AwsEc2LaunchTemplateDataNetworkInterfaceSetPrivateIpAddressesDetails).
     pub fn build(self) -> crate::types::AwsEc2LaunchTemplateDataNetworkInterfaceSetPrivateIpAddressesDetails {
         crate::types::AwsEc2LaunchTemplateDataNetworkInterfaceSetPrivateIpAddressesDetails {
-            primary: self.primary.unwrap_or_default(),
+            primary: self.primary,
             private_ip_address: self.private_ip_address,
         }
     }

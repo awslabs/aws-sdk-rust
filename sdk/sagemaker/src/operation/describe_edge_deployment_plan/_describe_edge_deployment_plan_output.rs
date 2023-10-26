@@ -12,11 +12,11 @@ pub struct DescribeEdgeDeploymentPlanOutput {
     /// <p>The device fleet used for this edge deployment plan.</p>
     pub device_fleet_name: ::std::option::Option<::std::string::String>,
     /// <p>The number of edge devices with the successful deployment.</p>
-    pub edge_deployment_success: i32,
+    pub edge_deployment_success: ::std::option::Option<i32>,
     /// <p>The number of edge devices yet to pick up deployment, or in progress.</p>
-    pub edge_deployment_pending: i32,
+    pub edge_deployment_pending: ::std::option::Option<i32>,
     /// <p>The number of edge devices that failed the deployment.</p>
-    pub edge_deployment_failed: i32,
+    pub edge_deployment_failed: ::std::option::Option<i32>,
     /// <p>List of stages in the edge deployment plan.</p>
     pub stages: ::std::option::Option<::std::vec::Vec<crate::types::DeploymentStageStatusSummary>>,
     /// <p>Token to use when calling the next set of stages in the edge deployment plan.</p>
@@ -45,15 +45,15 @@ impl DescribeEdgeDeploymentPlanOutput {
         self.device_fleet_name.as_deref()
     }
     /// <p>The number of edge devices with the successful deployment.</p>
-    pub fn edge_deployment_success(&self) -> i32 {
+    pub fn edge_deployment_success(&self) -> ::std::option::Option<i32> {
         self.edge_deployment_success
     }
     /// <p>The number of edge devices yet to pick up deployment, or in progress.</p>
-    pub fn edge_deployment_pending(&self) -> i32 {
+    pub fn edge_deployment_pending(&self) -> ::std::option::Option<i32> {
         self.edge_deployment_pending
     }
     /// <p>The number of edge devices that failed the deployment.</p>
-    pub fn edge_deployment_failed(&self) -> i32 {
+    pub fn edge_deployment_failed(&self) -> ::std::option::Option<i32> {
         self.edge_deployment_failed
     }
     /// <p>List of stages in the edge deployment plan.</p>
@@ -285,9 +285,9 @@ impl DescribeEdgeDeploymentPlanOutputBuilder {
             edge_deployment_plan_name: self.edge_deployment_plan_name,
             model_configs: self.model_configs,
             device_fleet_name: self.device_fleet_name,
-            edge_deployment_success: self.edge_deployment_success.unwrap_or_default(),
-            edge_deployment_pending: self.edge_deployment_pending.unwrap_or_default(),
-            edge_deployment_failed: self.edge_deployment_failed.unwrap_or_default(),
+            edge_deployment_success: self.edge_deployment_success,
+            edge_deployment_pending: self.edge_deployment_pending,
+            edge_deployment_failed: self.edge_deployment_failed,
             stages: self.stages,
             next_token: self.next_token,
             creation_time: self.creation_time,

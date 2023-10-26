@@ -7,7 +7,7 @@ pub struct LineItemRequest {
     /// <p>The ID of the catalog item.</p>
     pub catalog_item_id: ::std::option::Option<::std::string::String>,
     /// <p>The quantity of a line item request.</p>
-    pub quantity: i32,
+    pub quantity: ::std::option::Option<i32>,
 }
 impl LineItemRequest {
     /// <p>The ID of the catalog item.</p>
@@ -15,7 +15,7 @@ impl LineItemRequest {
         self.catalog_item_id.as_deref()
     }
     /// <p>The quantity of a line item request.</p>
-    pub fn quantity(&self) -> i32 {
+    pub fn quantity(&self) -> ::std::option::Option<i32> {
         self.quantity
     }
 }
@@ -66,7 +66,7 @@ impl LineItemRequestBuilder {
     pub fn build(self) -> crate::types::LineItemRequest {
         crate::types::LineItemRequest {
             catalog_item_id: self.catalog_item_id,
-            quantity: self.quantity.unwrap_or_default(),
+            quantity: self.quantity,
         }
     }
 }

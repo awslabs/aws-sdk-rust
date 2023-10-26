@@ -24,7 +24,7 @@ pub struct Alarm {
     /// <p>The number of periods over which data is compared to the specified threshold.</p>
     pub evaluation_periods: ::std::option::Option<i32>,
     /// <p>The period, in seconds, over which the statistic is applied.</p>
-    pub period: i32,
+    pub period: ::std::option::Option<i32>,
     /// <p>The value against which the specified statistic is compared.</p>
     pub threshold: ::std::option::Option<f64>,
     /// <p>The number of data points that must not within the specified threshold to trigger the alarm.</p>
@@ -105,7 +105,7 @@ impl Alarm {
         self.evaluation_periods
     }
     /// <p>The period, in seconds, over which the statistic is applied.</p>
-    pub fn period(&self) -> i32 {
+    pub fn period(&self) -> ::std::option::Option<i32> {
         self.period
     }
     /// <p>The value against which the specified statistic is compared.</p>
@@ -570,7 +570,7 @@ impl AlarmBuilder {
             monitored_resource_info: self.monitored_resource_info,
             comparison_operator: self.comparison_operator,
             evaluation_periods: self.evaluation_periods,
-            period: self.period.unwrap_or_default(),
+            period: self.period,
             threshold: self.threshold,
             datapoints_to_alarm: self.datapoints_to_alarm,
             treat_missing_data: self.treat_missing_data,

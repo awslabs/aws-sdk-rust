@@ -17,6 +17,8 @@ pub enum Error {
     InternalServerError(crate::types::error::InternalServerError),
     /// <p>The provided image format is not supported. </p>
     InvalidImageFormatException(crate::types::error::InvalidImageFormatException),
+    /// <p>Indicates that a provided manifest file is empty or larger than the allowed limit.</p>
+    InvalidManifestException(crate::types::error::InvalidManifestException),
     /// <p>Pagination token in the request is not valid.</p>
     InvalidPaginationTokenException(crate::types::error::InvalidPaginationTokenException),
     /// <p>Input parameter violated a constraint. Validate your parameter before calling the API operation again.</p>
@@ -25,7 +27,7 @@ pub enum Error {
     InvalidPolicyRevisionIdException(crate::types::error::InvalidPolicyRevisionIdException),
     /// <p>Amazon Rekognition is unable to access the S3 object specified in the request.</p>
     InvalidS3ObjectException(crate::types::error::InvalidS3ObjectException),
-    /// <p>An Amazon Rekognition service limit was exceeded. For example, if you start too many Amazon Rekognition Video jobs concurrently, calls to start operations (<code>StartLabelDetection</code>, for example) will raise a <code>LimitExceededException</code> exception (HTTP status code: 400) until the number of concurrently running jobs is below the Amazon Rekognition service limit. </p>
+    /// <p>An Amazon Rekognition service limit was exceeded. For example, if you start too many jobs concurrently, subsequent calls to start operations (ex: <code>StartLabelDetection</code>) will raise a <code>LimitExceededException</code> exception (HTTP status code: 400) until the number of concurrently running jobs is below the Amazon Rekognition service limit. </p>
     LimitExceededException(crate::types::error::LimitExceededException),
     /// <p>The format of the project policy document that you supplied to <code>PutProjectPolicy</code> is incorrect. </p>
     MalformedPolicyDocumentException(crate::types::error::MalformedPolicyDocumentException),
@@ -61,6 +63,7 @@ impl ::std::fmt::Display for Error {
             Error::ImageTooLargeException(inner) => inner.fmt(f),
             Error::InternalServerError(inner) => inner.fmt(f),
             Error::InvalidImageFormatException(inner) => inner.fmt(f),
+            Error::InvalidManifestException(inner) => inner.fmt(f),
             Error::InvalidPaginationTokenException(inner) => inner.fmt(f),
             Error::InvalidParameterException(inner) => inner.fmt(f),
             Error::InvalidPolicyRevisionIdException(inner) => inner.fmt(f),
@@ -1071,6 +1074,12 @@ impl From<crate::operation::detect_moderation_labels::DetectModerationLabelsErro
             crate::operation::detect_moderation_labels::DetectModerationLabelsError::ProvisionedThroughputExceededException(inner) => {
                 Error::ProvisionedThroughputExceededException(inner)
             }
+            crate::operation::detect_moderation_labels::DetectModerationLabelsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::detect_moderation_labels::DetectModerationLabelsError::ResourceNotReadyException(inner) => {
+                Error::ResourceNotReadyException(inner)
+            }
             crate::operation::detect_moderation_labels::DetectModerationLabelsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::detect_moderation_labels::DetectModerationLabelsError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -1498,6 +1507,41 @@ impl From<crate::operation::get_label_detection::GetLabelDetectionError> for Err
         }
     }
 }
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_media_analysis_job::GetMediaAnalysisJobError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::get_media_analysis_job::GetMediaAnalysisJobError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_media_analysis_job::GetMediaAnalysisJobError> for Error {
+    fn from(err: crate::operation::get_media_analysis_job::GetMediaAnalysisJobError) -> Self {
+        match err {
+            crate::operation::get_media_analysis_job::GetMediaAnalysisJobError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_media_analysis_job::GetMediaAnalysisJobError::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::operation::get_media_analysis_job::GetMediaAnalysisJobError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::get_media_analysis_job::GetMediaAnalysisJobError::ProvisionedThroughputExceededException(inner) => {
+                Error::ProvisionedThroughputExceededException(inner)
+            }
+            crate::operation::get_media_analysis_job::GetMediaAnalysisJobError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_media_analysis_job::GetMediaAnalysisJobError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_media_analysis_job::GetMediaAnalysisJobError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_person_tracking::GetPersonTrackingError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1790,6 +1834,43 @@ impl From<crate::operation::list_faces::ListFacesError> for Error {
             crate::operation::list_faces::ListFacesError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::list_faces::ListFacesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_faces::ListFacesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_media_analysis_jobs::ListMediaAnalysisJobsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_media_analysis_jobs::ListMediaAnalysisJobsError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_media_analysis_jobs::ListMediaAnalysisJobsError> for Error {
+    fn from(err: crate::operation::list_media_analysis_jobs::ListMediaAnalysisJobsError) -> Self {
+        match err {
+            crate::operation::list_media_analysis_jobs::ListMediaAnalysisJobsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_media_analysis_jobs::ListMediaAnalysisJobsError::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::operation::list_media_analysis_jobs::ListMediaAnalysisJobsError::InvalidPaginationTokenException(inner) => {
+                Error::InvalidPaginationTokenException(inner)
+            }
+            crate::operation::list_media_analysis_jobs::ListMediaAnalysisJobsError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::list_media_analysis_jobs::ListMediaAnalysisJobsError::ProvisionedThroughputExceededException(inner) => {
+                Error::ProvisionedThroughputExceededException(inner)
+            }
+            crate::operation::list_media_analysis_jobs::ListMediaAnalysisJobsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_media_analysis_jobs::ListMediaAnalysisJobsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2375,6 +2456,58 @@ impl From<crate::operation::start_label_detection::StartLabelDetectionError> for
         }
     }
 }
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::start_media_analysis_job::StartMediaAnalysisJobError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::start_media_analysis_job::StartMediaAnalysisJobError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::start_media_analysis_job::StartMediaAnalysisJobError> for Error {
+    fn from(err: crate::operation::start_media_analysis_job::StartMediaAnalysisJobError) -> Self {
+        match err {
+            crate::operation::start_media_analysis_job::StartMediaAnalysisJobError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::start_media_analysis_job::StartMediaAnalysisJobError::IdempotentParameterMismatchException(inner) => {
+                Error::IdempotentParameterMismatchException(inner)
+            }
+            crate::operation::start_media_analysis_job::StartMediaAnalysisJobError::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::operation::start_media_analysis_job::StartMediaAnalysisJobError::InvalidManifestException(inner) => {
+                Error::InvalidManifestException(inner)
+            }
+            crate::operation::start_media_analysis_job::StartMediaAnalysisJobError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::start_media_analysis_job::StartMediaAnalysisJobError::InvalidS3ObjectException(inner) => {
+                Error::InvalidS3ObjectException(inner)
+            }
+            crate::operation::start_media_analysis_job::StartMediaAnalysisJobError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::operation::start_media_analysis_job::StartMediaAnalysisJobError::ProvisionedThroughputExceededException(inner) => {
+                Error::ProvisionedThroughputExceededException(inner)
+            }
+            crate::operation::start_media_analysis_job::StartMediaAnalysisJobError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::start_media_analysis_job::StartMediaAnalysisJobError::ResourceNotReadyException(inner) => {
+                Error::ResourceNotReadyException(inner)
+            }
+            crate::operation::start_media_analysis_job::StartMediaAnalysisJobError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::start_media_analysis_job::StartMediaAnalysisJobError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::start_person_tracking::StartPersonTrackingError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -2802,6 +2935,7 @@ impl ::std::error::Error for Error {
             Error::ImageTooLargeException(inner) => inner.source(),
             Error::InternalServerError(inner) => inner.source(),
             Error::InvalidImageFormatException(inner) => inner.source(),
+            Error::InvalidManifestException(inner) => inner.source(),
             Error::InvalidPaginationTokenException(inner) => inner.source(),
             Error::InvalidParameterException(inner) => inner.source(),
             Error::InvalidPolicyRevisionIdException(inner) => inner.source(),
@@ -2831,6 +2965,7 @@ impl ::aws_http::request_id::RequestId for Error {
             Self::ImageTooLargeException(e) => e.request_id(),
             Self::InternalServerError(e) => e.request_id(),
             Self::InvalidImageFormatException(e) => e.request_id(),
+            Self::InvalidManifestException(e) => e.request_id(),
             Self::InvalidPaginationTokenException(e) => e.request_id(),
             Self::InvalidParameterException(e) => e.request_id(),
             Self::InvalidPolicyRevisionIdException(e) => e.request_id(),

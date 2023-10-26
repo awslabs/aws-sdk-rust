@@ -12,11 +12,11 @@ pub fn ser_aws_auto_scaling_launch_configuration_block_device_mappings_details(
         crate::protocol_serde::shape_aws_auto_scaling_launch_configuration_block_device_mappings_ebs_details::ser_aws_auto_scaling_launch_configuration_block_device_mappings_ebs_details(&mut object_3, var_2)?;
         object_3.finish();
     }
-    if input.no_device {
-        object.key("NoDevice").boolean(input.no_device);
+    if let Some(var_4) = &input.no_device {
+        object.key("NoDevice").boolean(*var_4);
     }
-    if let Some(var_4) = &input.virtual_name {
-        object.key("VirtualName").string(var_4.as_str());
+    if let Some(var_5) = &input.virtual_name {
+        object.key("VirtualName").string(var_5.as_str());
     }
     Ok(())
 }

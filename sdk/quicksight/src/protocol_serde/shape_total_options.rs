@@ -21,6 +21,18 @@ pub fn ser_total_options(
         crate::protocol_serde::shape_table_cell_style::ser_table_cell_style(&mut object_6, var_5)?;
         object_6.finish();
     }
+    if let Some(var_7) = &input.total_aggregation_options {
+        let mut array_8 = object.key("TotalAggregationOptions").start_array();
+        for item_9 in var_7 {
+            {
+                #[allow(unused_mut)]
+                let mut object_10 = array_8.value().start_object();
+                crate::protocol_serde::shape_total_aggregation_option::ser_total_aggregation_option(&mut object_10, item_9)?;
+                object_10.finish();
+            }
+        }
+        array_8.finish();
+    }
     Ok(())
 }
 
@@ -69,6 +81,11 @@ where
                         }
                         "TotalCellStyle" => {
                             builder = builder.set_total_cell_style(crate::protocol_serde::shape_table_cell_style::de_table_cell_style(tokens)?);
+                        }
+                        "TotalAggregationOptions" => {
+                            builder = builder.set_total_aggregation_options(
+                                crate::protocol_serde::shape_total_aggregation_option_list::de_total_aggregation_option_list(tokens)?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

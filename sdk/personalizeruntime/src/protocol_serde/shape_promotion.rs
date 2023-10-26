@@ -6,24 +6,24 @@ pub fn ser_promotion(
     if let Some(var_1) = &input.name {
         object.key("name").string(var_1.as_str());
     }
-    if input.percent_promoted_items != 0 {
+    if let Some(var_2) = &input.percent_promoted_items {
         object.key("percentPromotedItems").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.percent_promoted_items).into()),
+            ::aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
-    if let Some(var_2) = &input.filter_arn {
-        object.key("filterArn").string(var_2.as_str());
+    if let Some(var_3) = &input.filter_arn {
+        object.key("filterArn").string(var_3.as_str());
     }
-    if let Some(var_3) = &input.filter_values {
+    if let Some(var_4) = &input.filter_values {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("filterValues").start_object();
-        for (key_5, value_6) in var_3 {
+        let mut object_5 = object.key("filterValues").start_object();
+        for (key_6, value_7) in var_4 {
             {
-                object_4.key(key_5.as_str()).string(value_6.as_str());
+                object_5.key(key_6.as_str()).string(value_7.as_str());
             }
         }
-        object_4.finish();
+        object_5.finish();
     }
     Ok(())
 }

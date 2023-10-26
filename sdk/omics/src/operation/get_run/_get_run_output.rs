@@ -53,6 +53,10 @@ pub struct GetRunOutput {
     pub accelerators: ::std::option::Option<crate::types::Accelerators>,
     /// <p>The run's retention mode.</p>
     pub retention_mode: ::std::option::Option<crate::types::RunRetentionMode>,
+    /// <p> The reason a run has failed. </p>
+    pub failure_reason: ::std::option::Option<::std::string::String>,
+    /// <p> The location of the run log. </p>
+    pub log_location: ::std::option::Option<crate::types::RunLogLocation>,
     _request_id: Option<String>,
 }
 impl GetRunOutput {
@@ -156,6 +160,14 @@ impl GetRunOutput {
     pub fn retention_mode(&self) -> ::std::option::Option<&crate::types::RunRetentionMode> {
         self.retention_mode.as_ref()
     }
+    /// <p> The reason a run has failed. </p>
+    pub fn failure_reason(&self) -> ::std::option::Option<&str> {
+        self.failure_reason.as_deref()
+    }
+    /// <p> The location of the run log. </p>
+    pub fn log_location(&self) -> ::std::option::Option<&crate::types::RunLogLocation> {
+        self.log_location.as_ref()
+    }
 }
 impl ::aws_http::request_id::RequestId for GetRunOutput {
     fn request_id(&self) -> Option<&str> {
@@ -198,6 +210,8 @@ pub struct GetRunOutputBuilder {
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) accelerators: ::std::option::Option<crate::types::Accelerators>,
     pub(crate) retention_mode: ::std::option::Option<crate::types::RunRetentionMode>,
+    pub(crate) failure_reason: ::std::option::Option<::std::string::String>,
+    pub(crate) log_location: ::std::option::Option<crate::types::RunLogLocation>,
     _request_id: Option<String>,
 }
 impl GetRunOutputBuilder {
@@ -570,6 +584,34 @@ impl GetRunOutputBuilder {
     pub fn get_retention_mode(&self) -> &::std::option::Option<crate::types::RunRetentionMode> {
         &self.retention_mode
     }
+    /// <p> The reason a run has failed. </p>
+    pub fn failure_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.failure_reason = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p> The reason a run has failed. </p>
+    pub fn set_failure_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.failure_reason = input;
+        self
+    }
+    /// <p> The reason a run has failed. </p>
+    pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.failure_reason
+    }
+    /// <p> The location of the run log. </p>
+    pub fn log_location(mut self, input: crate::types::RunLogLocation) -> Self {
+        self.log_location = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p> The location of the run log. </p>
+    pub fn set_log_location(mut self, input: ::std::option::Option<crate::types::RunLogLocation>) -> Self {
+        self.log_location = input;
+        self
+    }
+    /// <p> The location of the run log. </p>
+    pub fn get_log_location(&self) -> &::std::option::Option<crate::types::RunLogLocation> {
+        &self.log_location
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -607,6 +649,8 @@ impl GetRunOutputBuilder {
             tags: self.tags,
             accelerators: self.accelerators,
             retention_mode: self.retention_mode,
+            failure_reason: self.failure_reason,
+            log_location: self.log_location,
             _request_id: self._request_id,
         }
     }

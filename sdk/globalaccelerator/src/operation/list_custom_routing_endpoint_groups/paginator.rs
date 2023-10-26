@@ -27,6 +27,14 @@ impl ListCustomRoutingEndpointGroupsPaginator {
         self
     }
 
+    /// Create a flattened paginator
+    ///
+    /// This paginator automatically flattens results using `endpoint_groups`. Queries to the underlying service
+    /// are dispatched lazily.
+    pub fn items(self) -> crate::operation::list_custom_routing_endpoint_groups::paginator::ListCustomRoutingEndpointGroupsPaginatorItems {
+        crate::operation::list_custom_routing_endpoint_groups::paginator::ListCustomRoutingEndpointGroupsPaginatorItems(self)
+    }
+
     /// Stop paginating when the service returns the same pagination token twice in a row.
     ///
     /// Defaults to true.
@@ -100,6 +108,36 @@ impl ListCustomRoutingEndpointGroupsPaginator {
                     }
                 }
             })
+        })
+    }
+}
+
+/// Flattened paginator for `ListCustomRoutingEndpointGroupsPaginator`
+///
+/// This is created with [`.items()`](ListCustomRoutingEndpointGroupsPaginator::items)
+pub struct ListCustomRoutingEndpointGroupsPaginatorItems(ListCustomRoutingEndpointGroupsPaginator);
+
+impl ListCustomRoutingEndpointGroupsPaginatorItems {
+    /// Create the pagination stream
+    ///
+    /// _Note: No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next))._
+    ///
+    /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
+    pub fn send(
+        self,
+    ) -> impl ::tokio_stream::Stream<
+        Item = ::std::result::Result<
+            crate::types::CustomRoutingEndpointGroup,
+            ::aws_smithy_http::result::SdkError<
+                crate::operation::list_custom_routing_endpoint_groups::ListCustomRoutingEndpointGroupsError,
+                ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
+            >,
+        >,
+    > + ::std::marker::Unpin {
+        ::aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_list_custom_routing_endpoint_groups_output_endpoint_groups(page)
+                .unwrap_or_default()
+                .into_iter()
         })
     }
 }

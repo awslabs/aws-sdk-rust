@@ -19,7 +19,7 @@ pub struct DbInstance {
     /// <p> Specifies the daily time range during which automated backups are created if automated backups are enabled, as determined by the <code>BackupRetentionPeriod</code>. </p>
     pub preferred_backup_window: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the number of days for which automatic snapshots are retained.</p>
-    pub backup_retention_period: i32,
+    pub backup_retention_period: ::std::option::Option<i32>,
     /// <p>Provides a list of VPC security group elements that the instance belongs to.</p>
     pub vpc_security_groups: ::std::option::Option<::std::vec::Vec<crate::types::VpcSecurityGroupMembership>>,
     /// <p>Specifies the name of the Availability Zone that the instance is located in.</p>
@@ -35,15 +35,15 @@ pub struct DbInstance {
     /// <p>Indicates the database engine version.</p>
     pub engine_version: ::std::option::Option<::std::string::String>,
     /// <p>Does not apply. This parameter does not apply to Amazon DocumentDB. Amazon DocumentDB does not perform minor version upgrades regardless of the value set.</p>
-    pub auto_minor_version_upgrade: bool,
+    pub auto_minor_version_upgrade: ::std::option::Option<bool>,
     /// <p>Not supported. Amazon DocumentDB does not currently support public endpoints. The value of <code>PubliclyAccessible</code> is always <code>false</code>.</p>
-    pub publicly_accessible: bool,
+    pub publicly_accessible: ::std::option::Option<bool>,
     /// <p>The status of a read replica. If the instance is not a read replica, this is blank.</p>
     pub status_infos: ::std::option::Option<::std::vec::Vec<crate::types::DbInstanceStatusInfo>>,
     /// <p>Contains the name of the cluster that the instance is a member of if the instance is a member of a cluster.</p>
     pub db_cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether or not the instance is encrypted.</p>
-    pub storage_encrypted: bool,
+    pub storage_encrypted: ::std::option::Option<bool>,
     /// <p> If <code>StorageEncrypted</code> is <code>true</code>, the KMS key identifier for the encrypted instance. </p>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services Region-unique, immutable identifier for the instance. This identifier is found in CloudTrail log entries whenever the KMS key for the instance is accessed.</p>
@@ -89,7 +89,7 @@ impl DbInstance {
         self.preferred_backup_window.as_deref()
     }
     /// <p>Specifies the number of days for which automatic snapshots are retained.</p>
-    pub fn backup_retention_period(&self) -> i32 {
+    pub fn backup_retention_period(&self) -> ::std::option::Option<i32> {
         self.backup_retention_period
     }
     /// <p>Provides a list of VPC security group elements that the instance belongs to.</p>
@@ -121,11 +121,11 @@ impl DbInstance {
         self.engine_version.as_deref()
     }
     /// <p>Does not apply. This parameter does not apply to Amazon DocumentDB. Amazon DocumentDB does not perform minor version upgrades regardless of the value set.</p>
-    pub fn auto_minor_version_upgrade(&self) -> bool {
+    pub fn auto_minor_version_upgrade(&self) -> ::std::option::Option<bool> {
         self.auto_minor_version_upgrade
     }
     /// <p>Not supported. Amazon DocumentDB does not currently support public endpoints. The value of <code>PubliclyAccessible</code> is always <code>false</code>.</p>
-    pub fn publicly_accessible(&self) -> bool {
+    pub fn publicly_accessible(&self) -> ::std::option::Option<bool> {
         self.publicly_accessible
     }
     /// <p>The status of a read replica. If the instance is not a read replica, this is blank.</p>
@@ -137,7 +137,7 @@ impl DbInstance {
         self.db_cluster_identifier.as_deref()
     }
     /// <p>Specifies whether or not the instance is encrypted.</p>
-    pub fn storage_encrypted(&self) -> bool {
+    pub fn storage_encrypted(&self) -> ::std::option::Option<bool> {
         self.storage_encrypted
     }
     /// <p> If <code>StorageEncrypted</code> is <code>true</code>, the KMS key identifier for the encrypted instance. </p>
@@ -615,7 +615,7 @@ impl DbInstanceBuilder {
             endpoint: self.endpoint,
             instance_create_time: self.instance_create_time,
             preferred_backup_window: self.preferred_backup_window,
-            backup_retention_period: self.backup_retention_period.unwrap_or_default(),
+            backup_retention_period: self.backup_retention_period,
             vpc_security_groups: self.vpc_security_groups,
             availability_zone: self.availability_zone,
             db_subnet_group: self.db_subnet_group,
@@ -623,11 +623,11 @@ impl DbInstanceBuilder {
             pending_modified_values: self.pending_modified_values,
             latest_restorable_time: self.latest_restorable_time,
             engine_version: self.engine_version,
-            auto_minor_version_upgrade: self.auto_minor_version_upgrade.unwrap_or_default(),
-            publicly_accessible: self.publicly_accessible.unwrap_or_default(),
+            auto_minor_version_upgrade: self.auto_minor_version_upgrade,
+            publicly_accessible: self.publicly_accessible,
             status_infos: self.status_infos,
             db_cluster_identifier: self.db_cluster_identifier,
-            storage_encrypted: self.storage_encrypted.unwrap_or_default(),
+            storage_encrypted: self.storage_encrypted,
             kms_key_id: self.kms_key_id,
             dbi_resource_id: self.dbi_resource_id,
             ca_certificate_identifier: self.ca_certificate_identifier,

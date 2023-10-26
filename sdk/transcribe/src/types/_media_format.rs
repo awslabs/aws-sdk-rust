@@ -14,6 +14,7 @@
 /// match mediaformat {
 ///     MediaFormat::Amr => { /* ... */ },
 ///     MediaFormat::Flac => { /* ... */ },
+///     MediaFormat::M4A => { /* ... */ },
 ///     MediaFormat::Mp3 => { /* ... */ },
 ///     MediaFormat::Mp4 => { /* ... */ },
 ///     MediaFormat::Ogg => { /* ... */ },
@@ -51,6 +52,8 @@ pub enum MediaFormat {
     #[allow(missing_docs)] // documentation missing in model
     Flac,
     #[allow(missing_docs)] // documentation missing in model
+    M4A,
+    #[allow(missing_docs)] // documentation missing in model
     Mp3,
     #[allow(missing_docs)] // documentation missing in model
     Mp4,
@@ -68,6 +71,7 @@ impl ::std::convert::From<&str> for MediaFormat {
         match s {
             "amr" => MediaFormat::Amr,
             "flac" => MediaFormat::Flac,
+            "m4a" => MediaFormat::M4A,
             "mp3" => MediaFormat::Mp3,
             "mp4" => MediaFormat::Mp4,
             "ogg" => MediaFormat::Ogg,
@@ -90,6 +94,7 @@ impl MediaFormat {
         match self {
             MediaFormat::Amr => "amr",
             MediaFormat::Flac => "flac",
+            MediaFormat::M4A => "m4a",
             MediaFormat::Mp3 => "mp3",
             MediaFormat::Mp4 => "mp4",
             MediaFormat::Ogg => "ogg",
@@ -100,7 +105,7 @@ impl MediaFormat {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["amr", "flac", "mp3", "mp4", "ogg", "wav", "webm"]
+        &["amr", "flac", "m4a", "mp3", "mp4", "ogg", "wav", "webm"]
     }
 }
 impl ::std::convert::AsRef<str> for MediaFormat {

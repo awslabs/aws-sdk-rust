@@ -27,9 +27,9 @@ pub struct Scan {
     /// <p>The ID for the account that belongs to the scan.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>Represents total bytes that were scanned.</p>
-    pub total_bytes: i64,
+    pub total_bytes: ::std::option::Option<i64>,
     /// <p>Represents the number of files that were scanned.</p>
-    pub file_count: i64,
+    pub file_count: ::std::option::Option<i64>,
     /// <p>List of volumes that were attached to the original instance to be scanned.</p>
     pub attached_volumes: ::std::option::Option<::std::vec::Vec<crate::types::VolumeDetail>>,
     /// <p>Specifies the scan type that invoked the malware scan.</p>
@@ -81,11 +81,11 @@ impl Scan {
         self.account_id.as_deref()
     }
     /// <p>Represents total bytes that were scanned.</p>
-    pub fn total_bytes(&self) -> i64 {
+    pub fn total_bytes(&self) -> ::std::option::Option<i64> {
         self.total_bytes
     }
     /// <p>Represents the number of files that were scanned.</p>
-    pub fn file_count(&self) -> i64 {
+    pub fn file_count(&self) -> ::std::option::Option<i64> {
         self.file_count
     }
     /// <p>List of volumes that were attached to the original instance to be scanned.</p>
@@ -355,8 +355,8 @@ impl ScanBuilder {
             resource_details: self.resource_details,
             scan_result_details: self.scan_result_details,
             account_id: self.account_id,
-            total_bytes: self.total_bytes.unwrap_or_default(),
-            file_count: self.file_count.unwrap_or_default(),
+            total_bytes: self.total_bytes,
+            file_count: self.file_count,
             attached_volumes: self.attached_volumes,
             scan_type: self.scan_type,
         }

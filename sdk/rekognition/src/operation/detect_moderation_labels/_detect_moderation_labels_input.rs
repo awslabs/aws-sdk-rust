@@ -11,6 +11,8 @@ pub struct DetectModerationLabelsInput {
     pub min_confidence: ::std::option::Option<f32>,
     /// <p>Sets up the configuration for human evaluation, including the FlowDefinition the image will be sent to.</p>
     pub human_loop_config: ::std::option::Option<crate::types::HumanLoopConfig>,
+    /// <p>Identifier for the custom adapter. Expects the ProjectVersionArn as a value. Use the CreateProject or CreateProjectVersion APIs to create a custom adapter.</p>
+    pub project_version: ::std::option::Option<::std::string::String>,
 }
 impl DetectModerationLabelsInput {
     /// <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition operations, passing base64-encoded image bytes is not supported. </p>
@@ -27,6 +29,10 @@ impl DetectModerationLabelsInput {
     pub fn human_loop_config(&self) -> ::std::option::Option<&crate::types::HumanLoopConfig> {
         self.human_loop_config.as_ref()
     }
+    /// <p>Identifier for the custom adapter. Expects the ProjectVersionArn as a value. Use the CreateProject or CreateProjectVersion APIs to create a custom adapter.</p>
+    pub fn project_version(&self) -> ::std::option::Option<&str> {
+        self.project_version.as_deref()
+    }
 }
 impl DetectModerationLabelsInput {
     /// Creates a new builder-style object to manufacture [`DetectModerationLabelsInput`](crate::operation::detect_moderation_labels::DetectModerationLabelsInput).
@@ -42,6 +48,7 @@ pub struct DetectModerationLabelsInputBuilder {
     pub(crate) image: ::std::option::Option<crate::types::Image>,
     pub(crate) min_confidence: ::std::option::Option<f32>,
     pub(crate) human_loop_config: ::std::option::Option<crate::types::HumanLoopConfig>,
+    pub(crate) project_version: ::std::option::Option<::std::string::String>,
 }
 impl DetectModerationLabelsInputBuilder {
     /// <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition operations, passing base64-encoded image bytes is not supported. </p>
@@ -92,6 +99,20 @@ impl DetectModerationLabelsInputBuilder {
     pub fn get_human_loop_config(&self) -> &::std::option::Option<crate::types::HumanLoopConfig> {
         &self.human_loop_config
     }
+    /// <p>Identifier for the custom adapter. Expects the ProjectVersionArn as a value. Use the CreateProject or CreateProjectVersion APIs to create a custom adapter.</p>
+    pub fn project_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.project_version = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Identifier for the custom adapter. Expects the ProjectVersionArn as a value. Use the CreateProject or CreateProjectVersion APIs to create a custom adapter.</p>
+    pub fn set_project_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.project_version = input;
+        self
+    }
+    /// <p>Identifier for the custom adapter. Expects the ProjectVersionArn as a value. Use the CreateProject or CreateProjectVersion APIs to create a custom adapter.</p>
+    pub fn get_project_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.project_version
+    }
     /// Consumes the builder and constructs a [`DetectModerationLabelsInput`](crate::operation::detect_moderation_labels::DetectModerationLabelsInput).
     pub fn build(
         self,
@@ -101,6 +122,7 @@ impl DetectModerationLabelsInputBuilder {
             image: self.image,
             min_confidence: self.min_confidence,
             human_loop_config: self.human_loop_config,
+            project_version: self.project_version,
         })
     }
 }

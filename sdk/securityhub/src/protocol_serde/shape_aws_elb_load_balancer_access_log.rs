@@ -3,20 +3,20 @@ pub fn ser_aws_elb_load_balancer_access_log(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsElbLoadBalancerAccessLog,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if input.emit_interval != 0 {
+    if let Some(var_1) = &input.emit_interval {
         object.key("EmitInterval").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.emit_interval).into()),
+            ::aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if input.enabled {
-        object.key("Enabled").boolean(input.enabled);
+    if let Some(var_2) = &input.enabled {
+        object.key("Enabled").boolean(*var_2);
     }
-    if let Some(var_1) = &input.s3_bucket_name {
-        object.key("S3BucketName").string(var_1.as_str());
+    if let Some(var_3) = &input.s3_bucket_name {
+        object.key("S3BucketName").string(var_3.as_str());
     }
-    if let Some(var_2) = &input.s3_bucket_prefix {
-        object.key("S3BucketPrefix").string(var_2.as_str());
+    if let Some(var_4) = &input.s3_bucket_prefix {
+        object.key("S3BucketPrefix").string(var_4.as_str());
     }
     Ok(())
 }

@@ -18,7 +18,7 @@ pub struct Snapshot {
     /// </ul>
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>The port that the cluster is listening on.</p>
-    pub port: i32,
+    pub port: ::std::option::Option<i32>,
     /// <p>The Availability Zone in which the cluster was created.</p>
     pub availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>The time (UTC) when the cluster was originally created.</p>
@@ -34,33 +34,33 @@ pub struct Snapshot {
     /// <p>The node type of the nodes in the cluster.</p>
     pub node_type: ::std::option::Option<::std::string::String>,
     /// <p>The number of nodes in the cluster.</p>
-    pub number_of_nodes: i32,
+    pub number_of_nodes: ::std::option::Option<i32>,
     /// <p>The name of the database that was created when the cluster was created.</p>
     pub db_name: ::std::option::Option<::std::string::String>,
     /// <p>The VPC identifier of the cluster if the snapshot is from a cluster in a VPC. Otherwise, this field is not in the output.</p>
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>If <code>true</code>, the data in the snapshot is encrypted at rest.</p>
-    pub encrypted: bool,
+    pub encrypted: ::std::option::Option<bool>,
     /// <p>The Key Management Service (KMS) key ID of the encryption key that was used to encrypt data in the cluster from which the snapshot was taken.</p>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>A boolean that indicates whether the snapshot data is encrypted using the HSM keys of the source cluster. <code>true</code> indicates that the data is encrypted using HSM keys.</p>
-    pub encrypted_with_hsm: bool,
+    pub encrypted_with_hsm: ::std::option::Option<bool>,
     /// <p>A list of the Amazon Web Services accounts authorized to restore the snapshot. Returns <code>null</code> if no accounts are authorized. Visible only to the snapshot owner. </p>
     pub accounts_with_restore_access: ::std::option::Option<::std::vec::Vec<crate::types::AccountWithRestoreAccess>>,
     /// <p>For manual snapshots, the Amazon Web Services account used to create or copy the snapshot. For automatic snapshots, the owner of the cluster. The owner can perform all snapshot actions, such as sharing a manual snapshot.</p>
     pub owner_account: ::std::option::Option<::std::string::String>,
     /// <p>The size of the complete set of backup data that would be used to restore the cluster.</p>
-    pub total_backup_size_in_mega_bytes: f64,
+    pub total_backup_size_in_mega_bytes: ::std::option::Option<f64>,
     /// <p>The size of the incremental backup.</p>
-    pub actual_incremental_backup_size_in_mega_bytes: f64,
+    pub actual_incremental_backup_size_in_mega_bytes: ::std::option::Option<f64>,
     /// <p>The number of megabytes that have been transferred to the snapshot backup.</p>
-    pub backup_progress_in_mega_bytes: f64,
+    pub backup_progress_in_mega_bytes: ::std::option::Option<f64>,
     /// <p>The number of megabytes per second being transferred to the snapshot backup. Returns <code>0</code> for a completed backup. </p>
-    pub current_backup_rate_in_mega_bytes_per_second: f64,
+    pub current_backup_rate_in_mega_bytes_per_second: ::std::option::Option<f64>,
     /// <p>The estimate of the time remaining before the snapshot backup will complete. Returns <code>0</code> for a completed backup. </p>
-    pub estimated_seconds_to_completion: i64,
+    pub estimated_seconds_to_completion: ::std::option::Option<i64>,
     /// <p>The amount of time an in-progress snapshot backup has been running, or the amount of time it took a completed backup to finish.</p>
-    pub elapsed_time_in_seconds: i64,
+    pub elapsed_time_in_seconds: ::std::option::Option<i64>,
     /// <p>The source region from which the snapshot was copied.</p>
     pub source_region: ::std::option::Option<::std::string::String>,
     /// <p>The list of tags for the cluster snapshot.</p>
@@ -70,7 +70,7 @@ pub struct Snapshot {
     /// <p>An option that specifies whether to create the cluster with enhanced VPC routing enabled. To create a cluster that uses enhanced VPC routing, the cluster must be in a VPC. For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced VPC Routing</a> in the Amazon Redshift Cluster Management Guide.</p>
     /// <p>If this option is <code>true</code>, enhanced VPC routing is enabled. </p>
     /// <p>Default: false</p>
-    pub enhanced_vpc_routing: bool,
+    pub enhanced_vpc_routing: ::std::option::Option<bool>,
     /// <p>The name of the maintenance track for the snapshot.</p>
     pub maintenance_track_name: ::std::option::Option<::std::string::String>,
     /// <p>The number of days that a manual snapshot is retained. If the value is -1, the manual snapshot is retained indefinitely. </p>
@@ -80,6 +80,10 @@ pub struct Snapshot {
     pub manual_snapshot_remaining_days: ::std::option::Option<i32>,
     /// <p>A timestamp representing the start of the retention period for the snapshot.</p>
     pub snapshot_retention_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The Amazon Resource Name (ARN) for the cluster's admin user credentials secret.</p>
+    pub master_password_secret_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The ID of the Key Management Service (KMS) key used to encrypt and store the cluster's admin credentials secret.</p>
+    pub master_password_secret_kms_key_id: ::std::option::Option<::std::string::String>,
 }
 impl Snapshot {
     /// <p>The snapshot identifier that is provided in the request.</p>
@@ -104,7 +108,7 @@ impl Snapshot {
         self.status.as_deref()
     }
     /// <p>The port that the cluster is listening on.</p>
-    pub fn port(&self) -> i32 {
+    pub fn port(&self) -> ::std::option::Option<i32> {
         self.port
     }
     /// <p>The Availability Zone in which the cluster was created.</p>
@@ -136,7 +140,7 @@ impl Snapshot {
         self.node_type.as_deref()
     }
     /// <p>The number of nodes in the cluster.</p>
-    pub fn number_of_nodes(&self) -> i32 {
+    pub fn number_of_nodes(&self) -> ::std::option::Option<i32> {
         self.number_of_nodes
     }
     /// <p>The name of the database that was created when the cluster was created.</p>
@@ -148,7 +152,7 @@ impl Snapshot {
         self.vpc_id.as_deref()
     }
     /// <p>If <code>true</code>, the data in the snapshot is encrypted at rest.</p>
-    pub fn encrypted(&self) -> bool {
+    pub fn encrypted(&self) -> ::std::option::Option<bool> {
         self.encrypted
     }
     /// <p>The Key Management Service (KMS) key ID of the encryption key that was used to encrypt data in the cluster from which the snapshot was taken.</p>
@@ -156,7 +160,7 @@ impl Snapshot {
         self.kms_key_id.as_deref()
     }
     /// <p>A boolean that indicates whether the snapshot data is encrypted using the HSM keys of the source cluster. <code>true</code> indicates that the data is encrypted using HSM keys.</p>
-    pub fn encrypted_with_hsm(&self) -> bool {
+    pub fn encrypted_with_hsm(&self) -> ::std::option::Option<bool> {
         self.encrypted_with_hsm
     }
     /// <p>A list of the Amazon Web Services accounts authorized to restore the snapshot. Returns <code>null</code> if no accounts are authorized. Visible only to the snapshot owner. </p>
@@ -168,27 +172,27 @@ impl Snapshot {
         self.owner_account.as_deref()
     }
     /// <p>The size of the complete set of backup data that would be used to restore the cluster.</p>
-    pub fn total_backup_size_in_mega_bytes(&self) -> f64 {
+    pub fn total_backup_size_in_mega_bytes(&self) -> ::std::option::Option<f64> {
         self.total_backup_size_in_mega_bytes
     }
     /// <p>The size of the incremental backup.</p>
-    pub fn actual_incremental_backup_size_in_mega_bytes(&self) -> f64 {
+    pub fn actual_incremental_backup_size_in_mega_bytes(&self) -> ::std::option::Option<f64> {
         self.actual_incremental_backup_size_in_mega_bytes
     }
     /// <p>The number of megabytes that have been transferred to the snapshot backup.</p>
-    pub fn backup_progress_in_mega_bytes(&self) -> f64 {
+    pub fn backup_progress_in_mega_bytes(&self) -> ::std::option::Option<f64> {
         self.backup_progress_in_mega_bytes
     }
     /// <p>The number of megabytes per second being transferred to the snapshot backup. Returns <code>0</code> for a completed backup. </p>
-    pub fn current_backup_rate_in_mega_bytes_per_second(&self) -> f64 {
+    pub fn current_backup_rate_in_mega_bytes_per_second(&self) -> ::std::option::Option<f64> {
         self.current_backup_rate_in_mega_bytes_per_second
     }
     /// <p>The estimate of the time remaining before the snapshot backup will complete. Returns <code>0</code> for a completed backup. </p>
-    pub fn estimated_seconds_to_completion(&self) -> i64 {
+    pub fn estimated_seconds_to_completion(&self) -> ::std::option::Option<i64> {
         self.estimated_seconds_to_completion
     }
     /// <p>The amount of time an in-progress snapshot backup has been running, or the amount of time it took a completed backup to finish.</p>
-    pub fn elapsed_time_in_seconds(&self) -> i64 {
+    pub fn elapsed_time_in_seconds(&self) -> ::std::option::Option<i64> {
         self.elapsed_time_in_seconds
     }
     /// <p>The source region from which the snapshot was copied.</p>
@@ -206,7 +210,7 @@ impl Snapshot {
     /// <p>An option that specifies whether to create the cluster with enhanced VPC routing enabled. To create a cluster that uses enhanced VPC routing, the cluster must be in a VPC. For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced VPC Routing</a> in the Amazon Redshift Cluster Management Guide.</p>
     /// <p>If this option is <code>true</code>, enhanced VPC routing is enabled. </p>
     /// <p>Default: false</p>
-    pub fn enhanced_vpc_routing(&self) -> bool {
+    pub fn enhanced_vpc_routing(&self) -> ::std::option::Option<bool> {
         self.enhanced_vpc_routing
     }
     /// <p>The name of the maintenance track for the snapshot.</p>
@@ -225,6 +229,14 @@ impl Snapshot {
     /// <p>A timestamp representing the start of the retention period for the snapshot.</p>
     pub fn snapshot_retention_start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.snapshot_retention_start_time.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) for the cluster's admin user credentials secret.</p>
+    pub fn master_password_secret_arn(&self) -> ::std::option::Option<&str> {
+        self.master_password_secret_arn.as_deref()
+    }
+    /// <p>The ID of the Key Management Service (KMS) key used to encrypt and store the cluster's admin credentials secret.</p>
+    pub fn master_password_secret_kms_key_id(&self) -> ::std::option::Option<&str> {
+        self.master_password_secret_kms_key_id.as_deref()
     }
 }
 impl Snapshot {
@@ -272,6 +284,8 @@ pub struct SnapshotBuilder {
     pub(crate) manual_snapshot_retention_period: ::std::option::Option<i32>,
     pub(crate) manual_snapshot_remaining_days: ::std::option::Option<i32>,
     pub(crate) snapshot_retention_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) master_password_secret_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) master_password_secret_kms_key_id: ::std::option::Option<::std::string::String>,
 }
 impl SnapshotBuilder {
     /// <p>The snapshot identifier that is provided in the request.</p>
@@ -792,6 +806,34 @@ impl SnapshotBuilder {
     pub fn get_snapshot_retention_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.snapshot_retention_start_time
     }
+    /// <p>The Amazon Resource Name (ARN) for the cluster's admin user credentials secret.</p>
+    pub fn master_password_secret_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.master_password_secret_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) for the cluster's admin user credentials secret.</p>
+    pub fn set_master_password_secret_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.master_password_secret_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) for the cluster's admin user credentials secret.</p>
+    pub fn get_master_password_secret_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.master_password_secret_arn
+    }
+    /// <p>The ID of the Key Management Service (KMS) key used to encrypt and store the cluster's admin credentials secret.</p>
+    pub fn master_password_secret_kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.master_password_secret_kms_key_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the Key Management Service (KMS) key used to encrypt and store the cluster's admin credentials secret.</p>
+    pub fn set_master_password_secret_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.master_password_secret_kms_key_id = input;
+        self
+    }
+    /// <p>The ID of the Key Management Service (KMS) key used to encrypt and store the cluster's admin credentials secret.</p>
+    pub fn get_master_password_secret_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.master_password_secret_kms_key_id
+    }
     /// Consumes the builder and constructs a [`Snapshot`](crate::types::Snapshot).
     pub fn build(self) -> crate::types::Snapshot {
         crate::types::Snapshot {
@@ -799,7 +841,7 @@ impl SnapshotBuilder {
             cluster_identifier: self.cluster_identifier,
             snapshot_create_time: self.snapshot_create_time,
             status: self.status,
-            port: self.port.unwrap_or_default(),
+            port: self.port,
             availability_zone: self.availability_zone,
             cluster_create_time: self.cluster_create_time,
             master_username: self.master_username,
@@ -807,28 +849,30 @@ impl SnapshotBuilder {
             engine_full_version: self.engine_full_version,
             snapshot_type: self.snapshot_type,
             node_type: self.node_type,
-            number_of_nodes: self.number_of_nodes.unwrap_or_default(),
+            number_of_nodes: self.number_of_nodes,
             db_name: self.db_name,
             vpc_id: self.vpc_id,
-            encrypted: self.encrypted.unwrap_or_default(),
+            encrypted: self.encrypted,
             kms_key_id: self.kms_key_id,
-            encrypted_with_hsm: self.encrypted_with_hsm.unwrap_or_default(),
+            encrypted_with_hsm: self.encrypted_with_hsm,
             accounts_with_restore_access: self.accounts_with_restore_access,
             owner_account: self.owner_account,
-            total_backup_size_in_mega_bytes: self.total_backup_size_in_mega_bytes.unwrap_or_default(),
-            actual_incremental_backup_size_in_mega_bytes: self.actual_incremental_backup_size_in_mega_bytes.unwrap_or_default(),
-            backup_progress_in_mega_bytes: self.backup_progress_in_mega_bytes.unwrap_or_default(),
-            current_backup_rate_in_mega_bytes_per_second: self.current_backup_rate_in_mega_bytes_per_second.unwrap_or_default(),
-            estimated_seconds_to_completion: self.estimated_seconds_to_completion.unwrap_or_default(),
-            elapsed_time_in_seconds: self.elapsed_time_in_seconds.unwrap_or_default(),
+            total_backup_size_in_mega_bytes: self.total_backup_size_in_mega_bytes,
+            actual_incremental_backup_size_in_mega_bytes: self.actual_incremental_backup_size_in_mega_bytes,
+            backup_progress_in_mega_bytes: self.backup_progress_in_mega_bytes,
+            current_backup_rate_in_mega_bytes_per_second: self.current_backup_rate_in_mega_bytes_per_second,
+            estimated_seconds_to_completion: self.estimated_seconds_to_completion,
+            elapsed_time_in_seconds: self.elapsed_time_in_seconds,
             source_region: self.source_region,
             tags: self.tags,
             restorable_node_types: self.restorable_node_types,
-            enhanced_vpc_routing: self.enhanced_vpc_routing.unwrap_or_default(),
+            enhanced_vpc_routing: self.enhanced_vpc_routing,
             maintenance_track_name: self.maintenance_track_name,
             manual_snapshot_retention_period: self.manual_snapshot_retention_period,
             manual_snapshot_remaining_days: self.manual_snapshot_remaining_days,
             snapshot_retention_start_time: self.snapshot_retention_start_time,
+            master_password_secret_arn: self.master_password_secret_arn,
+            master_password_secret_kms_key_id: self.master_password_secret_kms_key_id,
         }
     }
 }

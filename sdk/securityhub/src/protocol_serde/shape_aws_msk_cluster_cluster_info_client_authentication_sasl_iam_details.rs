@@ -3,8 +3,8 @@ pub fn ser_aws_msk_cluster_cluster_info_client_authentication_sasl_iam_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsMskClusterClusterInfoClientAuthenticationSaslIamDetails,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if input.enabled {
-        object.key("Enabled").boolean(input.enabled);
+    if let Some(var_1) = &input.enabled {
+        object.key("Enabled").boolean(*var_1);
     }
     Ok(())
 }

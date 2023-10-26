@@ -15,9 +15,22 @@
 ///     ClusterIssueCode::AccessDenied => { /* ... */ },
 ///     ClusterIssueCode::ClusterUnreachable => { /* ... */ },
 ///     ClusterIssueCode::ConfigurationConflict => { /* ... */ },
+///     ClusterIssueCode::Ec2SecurityGroupNotFound => { /* ... */ },
+///     ClusterIssueCode::Ec2ServiceNotSubscribed => { /* ... */ },
+///     ClusterIssueCode::Ec2SubnetNotFound => { /* ... */ },
+///     ClusterIssueCode::IamRoleNotFound => { /* ... */ },
+///     ClusterIssueCode::InsufficientFreeAddresses => { /* ... */ },
 ///     ClusterIssueCode::InternalFailure => { /* ... */ },
+///     ClusterIssueCode::KmsGrantRevoked => { /* ... */ },
+///     ClusterIssueCode::KmsKeyDisabled => { /* ... */ },
+///     ClusterIssueCode::KmsKeyMarkedForDeletion => { /* ... */ },
+///     ClusterIssueCode::KmsKeyNotFound => { /* ... */ },
+///     ClusterIssueCode::Other => { /* ... */ },
 ///     ClusterIssueCode::ResourceLimitExceeded => { /* ... */ },
 ///     ClusterIssueCode::ResourceNotFound => { /* ... */ },
+///     ClusterIssueCode::StsRegionalEndpointDisabled => { /* ... */ },
+///     ClusterIssueCode::UnsupportedVersion => { /* ... */ },
+///     ClusterIssueCode::VpcNotFound => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -52,11 +65,37 @@ pub enum ClusterIssueCode {
     #[allow(missing_docs)] // documentation missing in model
     ConfigurationConflict,
     #[allow(missing_docs)] // documentation missing in model
+    Ec2SecurityGroupNotFound,
+    #[allow(missing_docs)] // documentation missing in model
+    Ec2ServiceNotSubscribed,
+    #[allow(missing_docs)] // documentation missing in model
+    Ec2SubnetNotFound,
+    #[allow(missing_docs)] // documentation missing in model
+    IamRoleNotFound,
+    #[allow(missing_docs)] // documentation missing in model
+    InsufficientFreeAddresses,
+    #[allow(missing_docs)] // documentation missing in model
     InternalFailure,
+    #[allow(missing_docs)] // documentation missing in model
+    KmsGrantRevoked,
+    #[allow(missing_docs)] // documentation missing in model
+    KmsKeyDisabled,
+    #[allow(missing_docs)] // documentation missing in model
+    KmsKeyMarkedForDeletion,
+    #[allow(missing_docs)] // documentation missing in model
+    KmsKeyNotFound,
+    #[allow(missing_docs)] // documentation missing in model
+    Other,
     #[allow(missing_docs)] // documentation missing in model
     ResourceLimitExceeded,
     #[allow(missing_docs)] // documentation missing in model
     ResourceNotFound,
+    #[allow(missing_docs)] // documentation missing in model
+    StsRegionalEndpointDisabled,
+    #[allow(missing_docs)] // documentation missing in model
+    UnsupportedVersion,
+    #[allow(missing_docs)] // documentation missing in model
+    VpcNotFound,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
@@ -66,9 +105,22 @@ impl ::std::convert::From<&str> for ClusterIssueCode {
             "AccessDenied" => ClusterIssueCode::AccessDenied,
             "ClusterUnreachable" => ClusterIssueCode::ClusterUnreachable,
             "ConfigurationConflict" => ClusterIssueCode::ConfigurationConflict,
+            "Ec2SecurityGroupNotFound" => ClusterIssueCode::Ec2SecurityGroupNotFound,
+            "Ec2ServiceNotSubscribed" => ClusterIssueCode::Ec2ServiceNotSubscribed,
+            "Ec2SubnetNotFound" => ClusterIssueCode::Ec2SubnetNotFound,
+            "IamRoleNotFound" => ClusterIssueCode::IamRoleNotFound,
+            "InsufficientFreeAddresses" => ClusterIssueCode::InsufficientFreeAddresses,
             "InternalFailure" => ClusterIssueCode::InternalFailure,
+            "KmsGrantRevoked" => ClusterIssueCode::KmsGrantRevoked,
+            "KmsKeyDisabled" => ClusterIssueCode::KmsKeyDisabled,
+            "KmsKeyMarkedForDeletion" => ClusterIssueCode::KmsKeyMarkedForDeletion,
+            "KmsKeyNotFound" => ClusterIssueCode::KmsKeyNotFound,
+            "Other" => ClusterIssueCode::Other,
             "ResourceLimitExceeded" => ClusterIssueCode::ResourceLimitExceeded,
             "ResourceNotFound" => ClusterIssueCode::ResourceNotFound,
+            "StsRegionalEndpointDisabled" => ClusterIssueCode::StsRegionalEndpointDisabled,
+            "UnsupportedVersion" => ClusterIssueCode::UnsupportedVersion,
+            "VpcNotFound" => ClusterIssueCode::VpcNotFound,
             other => ClusterIssueCode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -87,9 +139,22 @@ impl ClusterIssueCode {
             ClusterIssueCode::AccessDenied => "AccessDenied",
             ClusterIssueCode::ClusterUnreachable => "ClusterUnreachable",
             ClusterIssueCode::ConfigurationConflict => "ConfigurationConflict",
+            ClusterIssueCode::Ec2SecurityGroupNotFound => "Ec2SecurityGroupNotFound",
+            ClusterIssueCode::Ec2ServiceNotSubscribed => "Ec2ServiceNotSubscribed",
+            ClusterIssueCode::Ec2SubnetNotFound => "Ec2SubnetNotFound",
+            ClusterIssueCode::IamRoleNotFound => "IamRoleNotFound",
+            ClusterIssueCode::InsufficientFreeAddresses => "InsufficientFreeAddresses",
             ClusterIssueCode::InternalFailure => "InternalFailure",
+            ClusterIssueCode::KmsGrantRevoked => "KmsGrantRevoked",
+            ClusterIssueCode::KmsKeyDisabled => "KmsKeyDisabled",
+            ClusterIssueCode::KmsKeyMarkedForDeletion => "KmsKeyMarkedForDeletion",
+            ClusterIssueCode::KmsKeyNotFound => "KmsKeyNotFound",
+            ClusterIssueCode::Other => "Other",
             ClusterIssueCode::ResourceLimitExceeded => "ResourceLimitExceeded",
             ClusterIssueCode::ResourceNotFound => "ResourceNotFound",
+            ClusterIssueCode::StsRegionalEndpointDisabled => "StsRegionalEndpointDisabled",
+            ClusterIssueCode::UnsupportedVersion => "UnsupportedVersion",
+            ClusterIssueCode::VpcNotFound => "VpcNotFound",
             ClusterIssueCode::Unknown(value) => value.as_str(),
         }
     }
@@ -99,9 +164,22 @@ impl ClusterIssueCode {
             "AccessDenied",
             "ClusterUnreachable",
             "ConfigurationConflict",
+            "Ec2SecurityGroupNotFound",
+            "Ec2ServiceNotSubscribed",
+            "Ec2SubnetNotFound",
+            "IamRoleNotFound",
+            "InsufficientFreeAddresses",
             "InternalFailure",
+            "KmsGrantRevoked",
+            "KmsKeyDisabled",
+            "KmsKeyMarkedForDeletion",
+            "KmsKeyNotFound",
+            "Other",
             "ResourceLimitExceeded",
             "ResourceNotFound",
+            "StsRegionalEndpointDisabled",
+            "UnsupportedVersion",
+            "VpcNotFound",
         ]
     }
 }

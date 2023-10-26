@@ -139,6 +139,16 @@ pub(crate) fn reflens_list_faces_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_media_analysis_jobs_output_next_token(
+    input: &crate::operation::list_media_analysis_jobs::ListMediaAnalysisJobsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_project_policies_output_next_token(
     input: &crate::operation::list_project_policies::ListProjectPoliciesOutput,
 ) -> ::std::option::Option<&::std::string::String> {

@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEc2VpnConnectionOptionsTunnelOptionsDetails {
     /// <p>The number of seconds after which a Dead Peer Detection (DPD) timeout occurs.</p>
-    pub dpd_timeout_seconds: i32,
+    pub dpd_timeout_seconds: ::std::option::Option<i32>,
     /// <p>The Internet Key Exchange (IKE) versions that are permitted for the VPN tunnel.</p>
     pub ike_versions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The external IP address of the VPN tunnel.</p>
@@ -17,7 +17,7 @@ pub struct AwsEc2VpnConnectionOptionsTunnelOptionsDetails {
     /// <p>The permitted integrity algorithms for the VPN tunnel for phase 1 IKE negotiations.</p>
     pub phase1_integrity_algorithms: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The lifetime for phase 1 of the IKE negotiation, in seconds.</p>
-    pub phase1_lifetime_seconds: i32,
+    pub phase1_lifetime_seconds: ::std::option::Option<i32>,
     /// <p>The permitted Diffie-Hellman group numbers for the VPN tunnel for phase 2 IKE negotiations.</p>
     pub phase2_dh_group_numbers: ::std::option::Option<::std::vec::Vec<i32>>,
     /// <p>The permitted encryption algorithms for the VPN tunnel for phase 2 IKE negotiations.</p>
@@ -25,21 +25,21 @@ pub struct AwsEc2VpnConnectionOptionsTunnelOptionsDetails {
     /// <p>The permitted integrity algorithms for the VPN tunnel for phase 2 IKE negotiations.</p>
     pub phase2_integrity_algorithms: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The lifetime for phase 2 of the IKE negotiation, in seconds.</p>
-    pub phase2_lifetime_seconds: i32,
+    pub phase2_lifetime_seconds: ::std::option::Option<i32>,
     /// <p>The preshared key to establish initial authentication between the virtual private gateway and the customer gateway.</p>
     pub pre_shared_key: ::std::option::Option<::std::string::String>,
     /// <p>The percentage of the rekey window, which is determined by <code>RekeyMarginTimeSeconds</code> during which the rekey time is randomly selected.</p>
-    pub rekey_fuzz_percentage: i32,
+    pub rekey_fuzz_percentage: ::std::option::Option<i32>,
     /// <p>The margin time, in seconds, before the phase 2 lifetime expires, during which the Amazon Web Services side of the VPN connection performs an IKE rekey.</p>
-    pub rekey_margin_time_seconds: i32,
+    pub rekey_margin_time_seconds: ::std::option::Option<i32>,
     /// <p>The number of packets in an IKE replay window.</p>
-    pub replay_window_size: i32,
+    pub replay_window_size: ::std::option::Option<i32>,
     /// <p>The range of inside IPv4 addresses for the tunnel.</p>
     pub tunnel_inside_cidr: ::std::option::Option<::std::string::String>,
 }
 impl AwsEc2VpnConnectionOptionsTunnelOptionsDetails {
     /// <p>The number of seconds after which a Dead Peer Detection (DPD) timeout occurs.</p>
-    pub fn dpd_timeout_seconds(&self) -> i32 {
+    pub fn dpd_timeout_seconds(&self) -> ::std::option::Option<i32> {
         self.dpd_timeout_seconds
     }
     /// <p>The Internet Key Exchange (IKE) versions that are permitted for the VPN tunnel.</p>
@@ -63,7 +63,7 @@ impl AwsEc2VpnConnectionOptionsTunnelOptionsDetails {
         self.phase1_integrity_algorithms.as_deref()
     }
     /// <p>The lifetime for phase 1 of the IKE negotiation, in seconds.</p>
-    pub fn phase1_lifetime_seconds(&self) -> i32 {
+    pub fn phase1_lifetime_seconds(&self) -> ::std::option::Option<i32> {
         self.phase1_lifetime_seconds
     }
     /// <p>The permitted Diffie-Hellman group numbers for the VPN tunnel for phase 2 IKE negotiations.</p>
@@ -79,7 +79,7 @@ impl AwsEc2VpnConnectionOptionsTunnelOptionsDetails {
         self.phase2_integrity_algorithms.as_deref()
     }
     /// <p>The lifetime for phase 2 of the IKE negotiation, in seconds.</p>
-    pub fn phase2_lifetime_seconds(&self) -> i32 {
+    pub fn phase2_lifetime_seconds(&self) -> ::std::option::Option<i32> {
         self.phase2_lifetime_seconds
     }
     /// <p>The preshared key to establish initial authentication between the virtual private gateway and the customer gateway.</p>
@@ -87,15 +87,15 @@ impl AwsEc2VpnConnectionOptionsTunnelOptionsDetails {
         self.pre_shared_key.as_deref()
     }
     /// <p>The percentage of the rekey window, which is determined by <code>RekeyMarginTimeSeconds</code> during which the rekey time is randomly selected.</p>
-    pub fn rekey_fuzz_percentage(&self) -> i32 {
+    pub fn rekey_fuzz_percentage(&self) -> ::std::option::Option<i32> {
         self.rekey_fuzz_percentage
     }
     /// <p>The margin time, in seconds, before the phase 2 lifetime expires, during which the Amazon Web Services side of the VPN connection performs an IKE rekey.</p>
-    pub fn rekey_margin_time_seconds(&self) -> i32 {
+    pub fn rekey_margin_time_seconds(&self) -> ::std::option::Option<i32> {
         self.rekey_margin_time_seconds
     }
     /// <p>The number of packets in an IKE replay window.</p>
-    pub fn replay_window_size(&self) -> i32 {
+    pub fn replay_window_size(&self) -> ::std::option::Option<i32> {
         self.replay_window_size
     }
     /// <p>The range of inside IPv4 addresses for the tunnel.</p>
@@ -401,21 +401,21 @@ impl AwsEc2VpnConnectionOptionsTunnelOptionsDetailsBuilder {
     /// Consumes the builder and constructs a [`AwsEc2VpnConnectionOptionsTunnelOptionsDetails`](crate::types::AwsEc2VpnConnectionOptionsTunnelOptionsDetails).
     pub fn build(self) -> crate::types::AwsEc2VpnConnectionOptionsTunnelOptionsDetails {
         crate::types::AwsEc2VpnConnectionOptionsTunnelOptionsDetails {
-            dpd_timeout_seconds: self.dpd_timeout_seconds.unwrap_or_default(),
+            dpd_timeout_seconds: self.dpd_timeout_seconds,
             ike_versions: self.ike_versions,
             outside_ip_address: self.outside_ip_address,
             phase1_dh_group_numbers: self.phase1_dh_group_numbers,
             phase1_encryption_algorithms: self.phase1_encryption_algorithms,
             phase1_integrity_algorithms: self.phase1_integrity_algorithms,
-            phase1_lifetime_seconds: self.phase1_lifetime_seconds.unwrap_or_default(),
+            phase1_lifetime_seconds: self.phase1_lifetime_seconds,
             phase2_dh_group_numbers: self.phase2_dh_group_numbers,
             phase2_encryption_algorithms: self.phase2_encryption_algorithms,
             phase2_integrity_algorithms: self.phase2_integrity_algorithms,
-            phase2_lifetime_seconds: self.phase2_lifetime_seconds.unwrap_or_default(),
+            phase2_lifetime_seconds: self.phase2_lifetime_seconds,
             pre_shared_key: self.pre_shared_key,
-            rekey_fuzz_percentage: self.rekey_fuzz_percentage.unwrap_or_default(),
-            rekey_margin_time_seconds: self.rekey_margin_time_seconds.unwrap_or_default(),
-            replay_window_size: self.replay_window_size.unwrap_or_default(),
+            rekey_fuzz_percentage: self.rekey_fuzz_percentage,
+            rekey_margin_time_seconds: self.rekey_margin_time_seconds,
+            replay_window_size: self.replay_window_size,
             tunnel_inside_cidr: self.tunnel_inside_cidr,
         }
     }

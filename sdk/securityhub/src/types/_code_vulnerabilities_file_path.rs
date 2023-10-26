@@ -5,17 +5,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CodeVulnerabilitiesFilePath {
     /// <p> The line number of the last line of code in which the vulnerability is located. </p>
-    pub end_line: i32,
+    pub end_line: ::std::option::Option<i32>,
     /// <p> The name of the file in which the code vulnerability is located. </p>
     pub file_name: ::std::option::Option<::std::string::String>,
     /// <p> The file path to the code in which the vulnerability is located. </p>
     pub file_path: ::std::option::Option<::std::string::String>,
     /// <p> The line number of the first line of code in which the vulnerability is located. </p>
-    pub start_line: i32,
+    pub start_line: ::std::option::Option<i32>,
 }
 impl CodeVulnerabilitiesFilePath {
     /// <p> The line number of the last line of code in which the vulnerability is located. </p>
-    pub fn end_line(&self) -> i32 {
+    pub fn end_line(&self) -> ::std::option::Option<i32> {
         self.end_line
     }
     /// <p> The name of the file in which the code vulnerability is located. </p>
@@ -27,7 +27,7 @@ impl CodeVulnerabilitiesFilePath {
         self.file_path.as_deref()
     }
     /// <p> The line number of the first line of code in which the vulnerability is located. </p>
-    pub fn start_line(&self) -> i32 {
+    pub fn start_line(&self) -> ::std::option::Option<i32> {
         self.start_line
     }
 }
@@ -107,10 +107,10 @@ impl CodeVulnerabilitiesFilePathBuilder {
     /// Consumes the builder and constructs a [`CodeVulnerabilitiesFilePath`](crate::types::CodeVulnerabilitiesFilePath).
     pub fn build(self) -> crate::types::CodeVulnerabilitiesFilePath {
         crate::types::CodeVulnerabilitiesFilePath {
-            end_line: self.end_line.unwrap_or_default(),
+            end_line: self.end_line,
             file_name: self.file_name,
             file_path: self.file_path,
-            start_line: self.start_line.unwrap_or_default(),
+            start_line: self.start_line,
         }
     }
 }

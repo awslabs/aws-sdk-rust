@@ -214,6 +214,8 @@ pub struct RestoreDbInstanceFromDbSnapshotInput {
     /// <p>Be sure to allocate enough storage for your new DB instance so that the restore operation can succeed. You can also allocate additional storage for future growth.</p>
     /// </note>
     pub allocated_storage: ::std::option::Option<i32>,
+    /// <p>Specifies whether to enable a dedicated log volume (DLV) for the DB instance.</p>
+    pub dedicated_log_volume: ::std::option::Option<bool>,
 }
 impl RestoreDbInstanceFromDbSnapshotInput {
     /// <p>Name of the DB instance to create from the DB snapshot. This parameter isn't case-sensitive.</p>
@@ -504,6 +506,10 @@ impl RestoreDbInstanceFromDbSnapshotInput {
     pub fn allocated_storage(&self) -> ::std::option::Option<i32> {
         self.allocated_storage
     }
+    /// <p>Specifies whether to enable a dedicated log volume (DLV) for the DB instance.</p>
+    pub fn dedicated_log_volume(&self) -> ::std::option::Option<bool> {
+        self.dedicated_log_volume
+    }
 }
 impl RestoreDbInstanceFromDbSnapshotInput {
     /// Creates a new builder-style object to manufacture [`RestoreDbInstanceFromDbSnapshotInput`](crate::operation::restore_db_instance_from_db_snapshot::RestoreDbInstanceFromDbSnapshotInput).
@@ -555,6 +561,7 @@ pub struct RestoreDbInstanceFromDbSnapshotInputBuilder {
     pub(crate) storage_throughput: ::std::option::Option<i32>,
     pub(crate) db_cluster_snapshot_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) allocated_storage: ::std::option::Option<i32>,
+    pub(crate) dedicated_log_volume: ::std::option::Option<bool>,
 }
 impl RestoreDbInstanceFromDbSnapshotInputBuilder {
     /// <p>Name of the DB instance to create from the DB snapshot. This parameter isn't case-sensitive.</p>
@@ -1529,6 +1536,20 @@ impl RestoreDbInstanceFromDbSnapshotInputBuilder {
     pub fn get_allocated_storage(&self) -> &::std::option::Option<i32> {
         &self.allocated_storage
     }
+    /// <p>Specifies whether to enable a dedicated log volume (DLV) for the DB instance.</p>
+    pub fn dedicated_log_volume(mut self, input: bool) -> Self {
+        self.dedicated_log_volume = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether to enable a dedicated log volume (DLV) for the DB instance.</p>
+    pub fn set_dedicated_log_volume(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.dedicated_log_volume = input;
+        self
+    }
+    /// <p>Specifies whether to enable a dedicated log volume (DLV) for the DB instance.</p>
+    pub fn get_dedicated_log_volume(&self) -> &::std::option::Option<bool> {
+        &self.dedicated_log_volume
+    }
     /// Consumes the builder and constructs a [`RestoreDbInstanceFromDbSnapshotInput`](crate::operation::restore_db_instance_from_db_snapshot::RestoreDbInstanceFromDbSnapshotInput).
     pub fn build(
         self,
@@ -1577,6 +1598,7 @@ impl RestoreDbInstanceFromDbSnapshotInputBuilder {
                 storage_throughput: self.storage_throughput,
                 db_cluster_snapshot_identifier: self.db_cluster_snapshot_identifier,
                 allocated_storage: self.allocated_storage,
+                dedicated_log_volume: self.dedicated_log_volume,
             },
         )
     }

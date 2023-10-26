@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EnableLoggingOutput {
     /// <p> <code>true</code> if logging is on, <code>false</code> if logging is off.</p>
-    pub logging_enabled: bool,
+    pub logging_enabled: ::std::option::Option<bool>,
     /// <p>The name of the S3 bucket where the log files are stored.</p>
     pub bucket_name: ::std::option::Option<::std::string::String>,
     /// <p>The prefix applied to the log file names.</p>
@@ -24,7 +24,7 @@ pub struct EnableLoggingOutput {
 }
 impl EnableLoggingOutput {
     /// <p> <code>true</code> if logging is on, <code>false</code> if logging is off.</p>
-    pub fn logging_enabled(&self) -> bool {
+    pub fn logging_enabled(&self) -> ::std::option::Option<bool> {
         self.logging_enabled
     }
     /// <p>The name of the S3 bucket where the log files are stored.</p>
@@ -213,7 +213,7 @@ impl EnableLoggingOutputBuilder {
     /// Consumes the builder and constructs a [`EnableLoggingOutput`](crate::operation::enable_logging::EnableLoggingOutput).
     pub fn build(self) -> crate::operation::enable_logging::EnableLoggingOutput {
         crate::operation::enable_logging::EnableLoggingOutput {
-            logging_enabled: self.logging_enabled.unwrap_or_default(),
+            logging_enabled: self.logging_enabled,
             bucket_name: self.bucket_name,
             s3_key_prefix: self.s3_key_prefix,
             last_successful_delivery_time: self.last_successful_delivery_time,

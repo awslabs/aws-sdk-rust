@@ -1112,4 +1112,18 @@ impl RestoreDBInstanceFromS3FluentBuilder {
     pub fn get_master_user_secret_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_master_user_secret_kms_key_id()
     }
+    /// <p>Specifies whether to enable a dedicated log volume (DLV) for the DB instance.</p>
+    pub fn dedicated_log_volume(mut self, input: bool) -> Self {
+        self.inner = self.inner.dedicated_log_volume(input);
+        self
+    }
+    /// <p>Specifies whether to enable a dedicated log volume (DLV) for the DB instance.</p>
+    pub fn set_dedicated_log_volume(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_dedicated_log_volume(input);
+        self
+    }
+    /// <p>Specifies whether to enable a dedicated log volume (DLV) for the DB instance.</p>
+    pub fn get_dedicated_log_volume(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dedicated_log_volume()
+    }
 }

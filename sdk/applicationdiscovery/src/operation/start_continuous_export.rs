@@ -269,7 +269,7 @@ pub type StartContinuousExportErrorKind = StartContinuousExportError;
 pub enum StartContinuousExportError {
     /// <p>The user does not have permission to perform the action. Check the IAM policy associated with this user.</p>
     AuthorizationErrorException(crate::types::error::AuthorizationErrorException),
-    /// <p></p>
+    /// <p>Conflict error.</p>
     ConflictErrorException(crate::types::error::ConflictErrorException),
     /// <p>The home Region is not set. Set the home Region to continue.</p>
     HomeRegionNotSetException(crate::types::error::HomeRegionNotSetException),

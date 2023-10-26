@@ -5,11 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BooleanFilter {
     /// <p>The value of the boolean.</p>
-    pub value: bool,
+    pub value: ::std::option::Option<bool>,
 }
 impl BooleanFilter {
     /// <p>The value of the boolean.</p>
-    pub fn value(&self) -> bool {
+    pub fn value(&self) -> ::std::option::Option<bool> {
         self.value
     }
 }
@@ -43,8 +43,6 @@ impl BooleanFilterBuilder {
     }
     /// Consumes the builder and constructs a [`BooleanFilter`](crate::types::BooleanFilter).
     pub fn build(self) -> crate::types::BooleanFilter {
-        crate::types::BooleanFilter {
-            value: self.value.unwrap_or_default(),
-        }
+        crate::types::BooleanFilter { value: self.value }
     }
 }

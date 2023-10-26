@@ -6,14 +6,14 @@ pub fn ser_aws_s3_bucket_bucket_lifecycle_configuration_rules_transitions_detail
     if let Some(var_1) = &input.date {
         object.key("Date").string(var_1.as_str());
     }
-    if input.days != 0 {
+    if let Some(var_2) = &input.days {
         object.key("Days").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.days).into()),
+            ::aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
-    if let Some(var_2) = &input.storage_class {
-        object.key("StorageClass").string(var_2.as_str());
+    if let Some(var_3) = &input.storage_class {
+        object.key("StorageClass").string(var_3.as_str());
     }
     Ok(())
 }

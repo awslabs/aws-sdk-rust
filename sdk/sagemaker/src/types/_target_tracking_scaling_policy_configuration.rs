@@ -8,7 +8,7 @@ pub struct TargetTrackingScalingPolicyConfiguration {
     /// <p>An object containing information about a metric.</p>
     pub metric_specification: ::std::option::Option<crate::types::MetricSpecification>,
     /// <p>The recommended target value to specify for the metric when creating a scaling policy.</p>
-    pub target_value: f64,
+    pub target_value: ::std::option::Option<f64>,
 }
 impl TargetTrackingScalingPolicyConfiguration {
     /// <p>An object containing information about a metric.</p>
@@ -16,7 +16,7 @@ impl TargetTrackingScalingPolicyConfiguration {
         self.metric_specification.as_ref()
     }
     /// <p>The recommended target value to specify for the metric when creating a scaling policy.</p>
-    pub fn target_value(&self) -> f64 {
+    pub fn target_value(&self) -> ::std::option::Option<f64> {
         self.target_value
     }
 }
@@ -67,7 +67,7 @@ impl TargetTrackingScalingPolicyConfigurationBuilder {
     pub fn build(self) -> crate::types::TargetTrackingScalingPolicyConfiguration {
         crate::types::TargetTrackingScalingPolicyConfiguration {
             metric_specification: self.metric_specification,
-            target_value: self.target_value.unwrap_or_default(),
+            target_value: self.target_value,
         }
     }
 }

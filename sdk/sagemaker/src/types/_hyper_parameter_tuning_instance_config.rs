@@ -7,9 +7,9 @@ pub struct HyperParameterTuningInstanceConfig {
     /// <p>The instance type used for processing of hyperparameter optimization jobs. Choose from general purpose (no GPUs) instance types: ml.m5.xlarge, ml.m5.2xlarge, and ml.m5.4xlarge or compute optimized (no GPUs) instance types: ml.c5.xlarge and ml.c5.2xlarge. For more information about instance types, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebooks-available-instance-types.html">instance type descriptions</a>.</p>
     pub instance_type: ::std::option::Option<crate::types::TrainingInstanceType>,
     /// <p>The number of instances of the type specified by <code>InstanceType</code>. Choose an instance count larger than 1 for distributed training algorithms. See <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/data-parallel-use-api.html">Step 2: Launch a SageMaker Distributed Training Job Using the SageMaker Python SDK</a> for more information.</p>
-    pub instance_count: i32,
+    pub instance_count: ::std::option::Option<i32>,
     /// <p>The volume size in GB of the data to be processed for hyperparameter optimization (optional).</p>
-    pub volume_size_in_gb: i32,
+    pub volume_size_in_gb: ::std::option::Option<i32>,
 }
 impl HyperParameterTuningInstanceConfig {
     /// <p>The instance type used for processing of hyperparameter optimization jobs. Choose from general purpose (no GPUs) instance types: ml.m5.xlarge, ml.m5.2xlarge, and ml.m5.4xlarge or compute optimized (no GPUs) instance types: ml.c5.xlarge and ml.c5.2xlarge. For more information about instance types, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebooks-available-instance-types.html">instance type descriptions</a>.</p>
@@ -17,11 +17,11 @@ impl HyperParameterTuningInstanceConfig {
         self.instance_type.as_ref()
     }
     /// <p>The number of instances of the type specified by <code>InstanceType</code>. Choose an instance count larger than 1 for distributed training algorithms. See <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/data-parallel-use-api.html">Step 2: Launch a SageMaker Distributed Training Job Using the SageMaker Python SDK</a> for more information.</p>
-    pub fn instance_count(&self) -> i32 {
+    pub fn instance_count(&self) -> ::std::option::Option<i32> {
         self.instance_count
     }
     /// <p>The volume size in GB of the data to be processed for hyperparameter optimization (optional).</p>
-    pub fn volume_size_in_gb(&self) -> i32 {
+    pub fn volume_size_in_gb(&self) -> ::std::option::Option<i32> {
         self.volume_size_in_gb
     }
 }
@@ -87,8 +87,8 @@ impl HyperParameterTuningInstanceConfigBuilder {
     pub fn build(self) -> crate::types::HyperParameterTuningInstanceConfig {
         crate::types::HyperParameterTuningInstanceConfig {
             instance_type: self.instance_type,
-            instance_count: self.instance_count.unwrap_or_default(),
-            volume_size_in_gb: self.volume_size_in_gb.unwrap_or_default(),
+            instance_count: self.instance_count,
+            volume_size_in_gb: self.volume_size_in_gb,
         }
     }
 }

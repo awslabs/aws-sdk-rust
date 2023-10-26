@@ -5,17 +5,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEc2LaunchTemplateDataInstanceRequirementsMemoryMiBDetails {
     /// <p> The maximum amount of memory, in MiB. </p>
-    pub max: i32,
+    pub max: ::std::option::Option<i32>,
     /// <p> The minimum amount of memory, in MiB. </p>
-    pub min: i32,
+    pub min: ::std::option::Option<i32>,
 }
 impl AwsEc2LaunchTemplateDataInstanceRequirementsMemoryMiBDetails {
     /// <p> The maximum amount of memory, in MiB. </p>
-    pub fn max(&self) -> i32 {
+    pub fn max(&self) -> ::std::option::Option<i32> {
         self.max
     }
     /// <p> The minimum amount of memory, in MiB. </p>
-    pub fn min(&self) -> i32 {
+    pub fn min(&self) -> ::std::option::Option<i32> {
         self.min
     }
 }
@@ -65,8 +65,8 @@ impl AwsEc2LaunchTemplateDataInstanceRequirementsMemoryMiBDetailsBuilder {
     /// Consumes the builder and constructs a [`AwsEc2LaunchTemplateDataInstanceRequirementsMemoryMiBDetails`](crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsMemoryMiBDetails).
     pub fn build(self) -> crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsMemoryMiBDetails {
         crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsMemoryMiBDetails {
-            max: self.max.unwrap_or_default(),
-            min: self.min.unwrap_or_default(),
+            max: self.max,
+            min: self.min,
         }
     }
 }

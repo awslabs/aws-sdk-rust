@@ -3,20 +3,20 @@ pub fn ser_retention_archive_tier(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RetentionArchiveTier,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if input.count != 0 {
+    if let Some(var_1) = &input.count {
         object.key("Count").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.count).into()),
+            ::aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if input.interval != 0 {
+    if let Some(var_2) = &input.interval {
         object.key("Interval").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.interval).into()),
+            ::aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
-    if let Some(var_1) = &input.interval_unit {
-        object.key("IntervalUnit").string(var_1.as_str());
+    if let Some(var_3) = &input.interval_unit {
+        object.key("IntervalUnit").string(var_3.as_str());
     }
     Ok(())
 }

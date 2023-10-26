@@ -9,16 +9,16 @@ pub fn ser_aws_ecs_service_deployment_configuration_details(
         crate::protocol_serde::shape_aws_ecs_service_deployment_configuration_deployment_circuit_breaker_details::ser_aws_ecs_service_deployment_configuration_deployment_circuit_breaker_details(&mut object_2, var_1)?;
         object_2.finish();
     }
-    if input.maximum_percent != 0 {
+    if let Some(var_3) = &input.maximum_percent {
         object.key("MaximumPercent").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.maximum_percent).into()),
+            ::aws_smithy_types::Number::NegInt((*var_3).into()),
         );
     }
-    if input.minimum_healthy_percent != 0 {
+    if let Some(var_4) = &input.minimum_healthy_percent {
         object.key("MinimumHealthyPercent").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.minimum_healthy_percent).into()),
+            ::aws_smithy_types::Number::NegInt((*var_4).into()),
         );
     }
     Ok(())

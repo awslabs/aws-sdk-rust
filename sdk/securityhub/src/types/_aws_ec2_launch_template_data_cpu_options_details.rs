@@ -5,17 +5,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEc2LaunchTemplateDataCpuOptionsDetails {
     /// <p> The number of CPU cores for the instance. </p>
-    pub core_count: i32,
+    pub core_count: ::std::option::Option<i32>,
     /// <p> The number of threads per CPU core. A value of <code>1</code> disables multithreading for the instance, The default value is <code>2</code>. </p>
-    pub threads_per_core: i32,
+    pub threads_per_core: ::std::option::Option<i32>,
 }
 impl AwsEc2LaunchTemplateDataCpuOptionsDetails {
     /// <p> The number of CPU cores for the instance. </p>
-    pub fn core_count(&self) -> i32 {
+    pub fn core_count(&self) -> ::std::option::Option<i32> {
         self.core_count
     }
     /// <p> The number of threads per CPU core. A value of <code>1</code> disables multithreading for the instance, The default value is <code>2</code>. </p>
-    pub fn threads_per_core(&self) -> i32 {
+    pub fn threads_per_core(&self) -> ::std::option::Option<i32> {
         self.threads_per_core
     }
 }
@@ -65,8 +65,8 @@ impl AwsEc2LaunchTemplateDataCpuOptionsDetailsBuilder {
     /// Consumes the builder and constructs a [`AwsEc2LaunchTemplateDataCpuOptionsDetails`](crate::types::AwsEc2LaunchTemplateDataCpuOptionsDetails).
     pub fn build(self) -> crate::types::AwsEc2LaunchTemplateDataCpuOptionsDetails {
         crate::types::AwsEc2LaunchTemplateDataCpuOptionsDetails {
-            core_count: self.core_count.unwrap_or_default(),
-            threads_per_core: self.threads_per_core.unwrap_or_default(),
+            core_count: self.core_count,
+            threads_per_core: self.threads_per_core,
         }
     }
 }

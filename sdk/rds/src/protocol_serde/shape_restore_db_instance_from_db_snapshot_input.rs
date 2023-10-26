@@ -242,6 +242,11 @@ pub fn ser_restore_db_instance_from_db_snapshot_input_input(
             ::aws_smithy_types::Number::NegInt((*var_93).into()),
         );
     }
+    #[allow(unused_mut)]
+    let mut scope_94 = writer.prefix("DedicatedLogVolume");
+    if let Some(var_95) = &input.dedicated_log_volume {
+        scope_94.boolean(*var_95);
+    }
     writer.finish();
     Ok(::aws_smithy_http::body::SdkBody::from(out))
 }

@@ -7,7 +7,7 @@ pub struct OptionVersion {
     /// <p>The version of the option.</p>
     pub version: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the version is the default version of the option.</p>
-    pub is_default: bool,
+    pub is_default: ::std::option::Option<bool>,
 }
 impl OptionVersion {
     /// <p>The version of the option.</p>
@@ -15,7 +15,7 @@ impl OptionVersion {
         self.version.as_deref()
     }
     /// <p>Indicates whether the version is the default version of the option.</p>
-    pub fn is_default(&self) -> bool {
+    pub fn is_default(&self) -> ::std::option::Option<bool> {
         self.is_default
     }
 }
@@ -66,7 +66,7 @@ impl OptionVersionBuilder {
     pub fn build(self) -> crate::types::OptionVersion {
         crate::types::OptionVersion {
             version: self.version,
-            is_default: self.is_default.unwrap_or_default(),
+            is_default: self.is_default,
         }
     }
 }

@@ -9,7 +9,7 @@ pub struct AwsRdsEventSubscriptionDetails {
     /// <p>The identifier of the event notification subscription.</p>
     pub customer_aws_id: ::std::option::Option<::std::string::String>,
     /// <p>Whether the event notification subscription is enabled.</p>
-    pub enabled: bool,
+    pub enabled: ::std::option::Option<bool>,
     /// <p>The list of event categories for the event notification subscription.</p>
     pub event_categories_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The ARN of the event notification subscription.</p>
@@ -37,7 +37,7 @@ impl AwsRdsEventSubscriptionDetails {
         self.customer_aws_id.as_deref()
     }
     /// <p>Whether the event notification subscription is enabled.</p>
-    pub fn enabled(&self) -> bool {
+    pub fn enabled(&self) -> ::std::option::Option<bool> {
         self.enabled
     }
     /// <p>The list of event categories for the event notification subscription.</p>
@@ -257,7 +257,7 @@ impl AwsRdsEventSubscriptionDetailsBuilder {
         crate::types::AwsRdsEventSubscriptionDetails {
             cust_subscription_id: self.cust_subscription_id,
             customer_aws_id: self.customer_aws_id,
-            enabled: self.enabled.unwrap_or_default(),
+            enabled: self.enabled,
             event_categories_list: self.event_categories_list,
             event_subscription_arn: self.event_subscription_arn,
             sns_topic_arn: self.sns_topic_arn,

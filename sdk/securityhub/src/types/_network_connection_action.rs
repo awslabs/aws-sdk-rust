@@ -15,7 +15,7 @@ pub struct NetworkConnectionAction {
     /// <p>The protocol used to make the network connection request.</p>
     pub protocol: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the network connection attempt was blocked.</p>
-    pub blocked: bool,
+    pub blocked: ::std::option::Option<bool>,
 }
 impl NetworkConnectionAction {
     /// <p>The direction of the network connection request (<code>IN</code> or <code>OUT</code>).</p>
@@ -39,7 +39,7 @@ impl NetworkConnectionAction {
         self.protocol.as_deref()
     }
     /// <p>Indicates whether the network connection attempt was blocked.</p>
-    pub fn blocked(&self) -> bool {
+    pub fn blocked(&self) -> ::std::option::Option<bool> {
         self.blocked
     }
 }
@@ -154,7 +154,7 @@ impl NetworkConnectionActionBuilder {
             remote_port_details: self.remote_port_details,
             local_port_details: self.local_port_details,
             protocol: self.protocol,
-            blocked: self.blocked.unwrap_or_default(),
+            blocked: self.blocked,
         }
     }
 }

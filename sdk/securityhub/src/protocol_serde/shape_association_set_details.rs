@@ -12,17 +12,17 @@ pub fn ser_association_set_details(
     if let Some(var_3) = &input.gateway_id {
         object.key("GatewayId").string(var_3.as_str());
     }
-    if input.main {
-        object.key("Main").boolean(input.main);
+    if let Some(var_4) = &input.main {
+        object.key("Main").boolean(*var_4);
     }
-    if let Some(var_4) = &input.route_table_association_id {
-        object.key("RouteTableAssociationId").string(var_4.as_str());
+    if let Some(var_5) = &input.route_table_association_id {
+        object.key("RouteTableAssociationId").string(var_5.as_str());
     }
-    if let Some(var_5) = &input.route_table_id {
-        object.key("RouteTableId").string(var_5.as_str());
+    if let Some(var_6) = &input.route_table_id {
+        object.key("RouteTableId").string(var_6.as_str());
     }
-    if let Some(var_6) = &input.subnet_id {
-        object.key("SubnetId").string(var_6.as_str());
+    if let Some(var_7) = &input.subnet_id {
+        object.key("SubnetId").string(var_7.as_str());
     }
     Ok(())
 }

@@ -9472,6 +9472,29 @@ impl From<crate::operation::disable_fast_snapshot_restores::DisableFastSnapshotR
         }
     }
 }
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::disable_image::DisableImageError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::disable_image::DisableImageError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::disable_image::DisableImageError> for Error {
+    fn from(err: crate::operation::disable_image::DisableImageError) -> Self {
+        match err {
+            crate::operation::disable_image::DisableImageError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::disable_image_block_public_access::DisableImageBlockPublicAccessError, R>>
     for Error
 where
@@ -10204,6 +10227,29 @@ impl From<crate::operation::enable_fast_snapshot_restores::EnableFastSnapshotRes
     fn from(err: crate::operation::enable_fast_snapshot_restores::EnableFastSnapshotRestoresError) -> Self {
         match err {
             crate::operation::enable_fast_snapshot_restores::EnableFastSnapshotRestoresError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::enable_image::EnableImageError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::enable_image::EnableImageError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::enable_image::EnableImageError> for Error {
+    fn from(err: crate::operation::enable_image::EnableImageError) -> Self {
+        match err {
+            crate::operation::enable_image::EnableImageError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

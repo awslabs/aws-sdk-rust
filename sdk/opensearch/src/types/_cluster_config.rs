@@ -6,7 +6,7 @@
 pub struct ClusterConfig {
     /// <p>Instance type of data nodes in the cluster.</p>
     pub instance_type: ::std::option::Option<crate::types::OpenSearchPartitionInstanceType>,
-    /// <p>Number of dedicated master nodes in the cluster. This number must be greater than 1, otherwise you receive a validation exception.</p>
+    /// <p>Number of data nodes in the cluster. This number must be greater than 1, otherwise you receive a validation exception.</p>
     pub instance_count: ::std::option::Option<i32>,
     /// <p>Indicates whether dedicated master nodes are enabled for the cluster.<code>True</code> if the cluster will use a dedicated master node.<code>False</code> if the cluster will not.</p>
     pub dedicated_master_enabled: ::std::option::Option<bool>,
@@ -34,7 +34,7 @@ impl ClusterConfig {
     pub fn instance_type(&self) -> ::std::option::Option<&crate::types::OpenSearchPartitionInstanceType> {
         self.instance_type.as_ref()
     }
-    /// <p>Number of dedicated master nodes in the cluster. This number must be greater than 1, otherwise you receive a validation exception.</p>
+    /// <p>Number of data nodes in the cluster. This number must be greater than 1, otherwise you receive a validation exception.</p>
     pub fn instance_count(&self) -> ::std::option::Option<i32> {
         self.instance_count
     }
@@ -118,17 +118,17 @@ impl ClusterConfigBuilder {
     pub fn get_instance_type(&self) -> &::std::option::Option<crate::types::OpenSearchPartitionInstanceType> {
         &self.instance_type
     }
-    /// <p>Number of dedicated master nodes in the cluster. This number must be greater than 1, otherwise you receive a validation exception.</p>
+    /// <p>Number of data nodes in the cluster. This number must be greater than 1, otherwise you receive a validation exception.</p>
     pub fn instance_count(mut self, input: i32) -> Self {
         self.instance_count = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Number of dedicated master nodes in the cluster. This number must be greater than 1, otherwise you receive a validation exception.</p>
+    /// <p>Number of data nodes in the cluster. This number must be greater than 1, otherwise you receive a validation exception.</p>
     pub fn set_instance_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.instance_count = input;
         self
     }
-    /// <p>Number of dedicated master nodes in the cluster. This number must be greater than 1, otherwise you receive a validation exception.</p>
+    /// <p>Number of data nodes in the cluster. This number must be greater than 1, otherwise you receive a validation exception.</p>
     pub fn get_instance_count(&self) -> &::std::option::Option<i32> {
         &self.instance_count
     }

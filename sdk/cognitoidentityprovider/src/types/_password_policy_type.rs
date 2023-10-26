@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PasswordPolicyType {
     /// <p>The minimum length of the password in the policy that you have set. This value can't be less than 6.</p>
-    pub minimum_length: i32,
+    pub minimum_length: ::std::option::Option<i32>,
     /// <p>In the password policy that you have set, refers to whether you have required users to use at least one uppercase letter in their password.</p>
     pub require_uppercase: bool,
     /// <p>In the password policy that you have set, refers to whether you have required users to use at least one lowercase letter in their password.</p>
@@ -21,7 +21,7 @@ pub struct PasswordPolicyType {
 }
 impl PasswordPolicyType {
     /// <p>The minimum length of the password in the policy that you have set. This value can't be less than 6.</p>
-    pub fn minimum_length(&self) -> i32 {
+    pub fn minimum_length(&self) -> ::std::option::Option<i32> {
         self.minimum_length
     }
     /// <p>In the password policy that you have set, refers to whether you have required users to use at least one uppercase letter in their password.</p>
@@ -159,7 +159,7 @@ impl PasswordPolicyTypeBuilder {
     /// Consumes the builder and constructs a [`PasswordPolicyType`](crate::types::PasswordPolicyType).
     pub fn build(self) -> crate::types::PasswordPolicyType {
         crate::types::PasswordPolicyType {
-            minimum_length: self.minimum_length.unwrap_or_default(),
+            minimum_length: self.minimum_length,
             require_uppercase: self.require_uppercase.unwrap_or_default(),
             require_lowercase: self.require_lowercase.unwrap_or_default(),
             require_numbers: self.require_numbers.unwrap_or_default(),

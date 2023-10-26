@@ -3,16 +3,16 @@ pub fn ser_geo_location(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::GeoLocation,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if input.lon != 0.0 {
+    if let Some(var_1) = &input.lon {
         object.key("Lon").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::Float((input.lon).into()),
+            ::aws_smithy_types::Number::Float((*var_1).into()),
         );
     }
-    if input.lat != 0.0 {
+    if let Some(var_2) = &input.lat {
         object.key("Lat").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::Float((input.lat).into()),
+            ::aws_smithy_types::Number::Float((*var_2).into()),
         );
     }
     Ok(())

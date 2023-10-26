@@ -150,6 +150,8 @@ impl Client {
 
 mod associate_configuration_items_to_application;
 
+mod batch_delete_agents;
+
 mod batch_delete_import_data;
 
 mod create_application;
@@ -190,6 +192,8 @@ mod delete_tags;
 
 mod describe_agents;
 
+mod describe_batch_delete_configuration_task;
+
 mod describe_configurations;
 
 mod describe_continuous_exports;
@@ -211,6 +215,8 @@ mod get_discovery_summary;
 mod list_configurations;
 
 mod list_server_neighbors;
+
+mod start_batch_delete_configuration_task;
 
 mod start_continuous_export;
 

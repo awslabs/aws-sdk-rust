@@ -6,11 +6,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ShuffleConfig {
     /// <p>Determines the shuffling order in <code>ShuffleConfig</code> value.</p>
-    pub seed: i64,
+    pub seed: ::std::option::Option<i64>,
 }
 impl ShuffleConfig {
     /// <p>Determines the shuffling order in <code>ShuffleConfig</code> value.</p>
-    pub fn seed(&self) -> i64 {
+    pub fn seed(&self) -> ::std::option::Option<i64> {
         self.seed
     }
 }
@@ -44,8 +44,6 @@ impl ShuffleConfigBuilder {
     }
     /// Consumes the builder and constructs a [`ShuffleConfig`](crate::types::ShuffleConfig).
     pub fn build(self) -> crate::types::ShuffleConfig {
-        crate::types::ShuffleConfig {
-            seed: self.seed.unwrap_or_default(),
-        }
+        crate::types::ShuffleConfig { seed: self.seed }
     }
 }

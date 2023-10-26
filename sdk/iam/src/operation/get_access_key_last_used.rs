@@ -255,8 +255,6 @@ pub type GetAccessKeyLastUsedErrorKind = GetAccessKeyLastUsedError;
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum GetAccessKeyLastUsedError {
-    /// <p>The request was rejected because it referenced a resource entity that does not exist. The error message describes the resource.</p>
-    NoSuchEntityException(crate::types::error::NoSuchEntityException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(::aws_smithy_types::error::Unhandled),
 }
@@ -275,7 +273,6 @@ impl ::aws_smithy_http::result::CreateUnhandledError for GetAccessKeyLastUsedErr
 impl ::std::fmt::Display for GetAccessKeyLastUsedError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
-            Self::NoSuchEntityException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -283,7 +280,6 @@ impl ::std::fmt::Display for GetAccessKeyLastUsedError {
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for GetAccessKeyLastUsedError {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
-            Self::NoSuchEntityException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
         }
     }
@@ -320,19 +316,13 @@ impl GetAccessKeyLastUsedError {
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         match self {
-            Self::NoSuchEntityException(e) => e.meta(),
             Self::Unhandled(e) => e.meta(),
         }
-    }
-    /// Returns `true` if the error kind is `GetAccessKeyLastUsedError::NoSuchEntityException`.
-    pub fn is_no_such_entity_exception(&self) -> bool {
-        matches!(self, Self::NoSuchEntityException(_))
     }
 }
 impl ::std::error::Error for GetAccessKeyLastUsedError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
-            Self::NoSuchEntityException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(_inner),
         }
     }

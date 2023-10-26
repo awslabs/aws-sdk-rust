@@ -5,13 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEc2LaunchTemplateDataElasticInferenceAcceleratorSetDetails {
     /// <p> The number of Elastic Inference accelerators to attach to the instance. </p>
-    pub count: i32,
+    pub count: ::std::option::Option<i32>,
     /// <p> The type of Elastic Inference accelerator. </p>
     pub r#type: ::std::option::Option<::std::string::String>,
 }
 impl AwsEc2LaunchTemplateDataElasticInferenceAcceleratorSetDetails {
     /// <p> The number of Elastic Inference accelerators to attach to the instance. </p>
-    pub fn count(&self) -> i32 {
+    pub fn count(&self) -> ::std::option::Option<i32> {
         self.count
     }
     /// <p> The type of Elastic Inference accelerator. </p>
@@ -65,7 +65,7 @@ impl AwsEc2LaunchTemplateDataElasticInferenceAcceleratorSetDetailsBuilder {
     /// Consumes the builder and constructs a [`AwsEc2LaunchTemplateDataElasticInferenceAcceleratorSetDetails`](crate::types::AwsEc2LaunchTemplateDataElasticInferenceAcceleratorSetDetails).
     pub fn build(self) -> crate::types::AwsEc2LaunchTemplateDataElasticInferenceAcceleratorSetDetails {
         crate::types::AwsEc2LaunchTemplateDataElasticInferenceAcceleratorSetDetails {
-            count: self.count.unwrap_or_default(),
+            count: self.count,
             r#type: self.r#type,
         }
     }

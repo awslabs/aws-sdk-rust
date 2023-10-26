@@ -24,7 +24,7 @@ pub struct EventSubscription {
     /// <p>A list of event categories for the event notification subscription.</p>
     pub event_categories_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A Boolean value indicating if the subscription is enabled. True indicates the subscription is enabled.</p>
-    pub enabled: bool,
+    pub enabled: ::std::option::Option<bool>,
     /// <p>The Amazon Resource Name (ARN) for the event subscription.</p>
     pub event_subscription_arn: ::std::option::Option<::std::string::String>,
 }
@@ -65,7 +65,7 @@ impl EventSubscription {
         self.event_categories_list.as_deref()
     }
     /// <p>A Boolean value indicating if the subscription is enabled. True indicates the subscription is enabled.</p>
-    pub fn enabled(&self) -> bool {
+    pub fn enabled(&self) -> ::std::option::Option<bool> {
         self.enabled
     }
     /// <p>The Amazon Resource Name (ARN) for the event subscription.</p>
@@ -268,7 +268,7 @@ impl EventSubscriptionBuilder {
             source_type: self.source_type,
             source_ids_list: self.source_ids_list,
             event_categories_list: self.event_categories_list,
-            enabled: self.enabled.unwrap_or_default(),
+            enabled: self.enabled,
             event_subscription_arn: self.event_subscription_arn,
         }
     }

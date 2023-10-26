@@ -33,15 +33,15 @@ pub struct StackSetDriftDetectionDetails {
     /// <li> <p>Stack instances where the drift detection operation has failed.</p> </li>
     /// <li> <p>Stack instances currently being checked for drift.</p> </li>
     /// </ul>
-    pub total_stack_instances_count: i32,
+    pub total_stack_instances_count: ::std::option::Option<i32>,
     /// <p>The number of stack instances that have drifted from the expected template and parameter configuration of the stack set. A stack instance is considered to have drifted if one or more of the resources in the associated stack don't match their expected configuration.</p>
-    pub drifted_stack_instances_count: i32,
+    pub drifted_stack_instances_count: ::std::option::Option<i32>,
     /// <p>The number of stack instances which match the expected template and parameter configuration of the stack set.</p>
-    pub in_sync_stack_instances_count: i32,
+    pub in_sync_stack_instances_count: ::std::option::Option<i32>,
     /// <p>The number of stack instances that are currently being checked for drift.</p>
-    pub in_progress_stack_instances_count: i32,
+    pub in_progress_stack_instances_count: ::std::option::Option<i32>,
     /// <p>The number of stack instances for which the drift detection operation failed.</p>
-    pub failed_stack_instances_count: i32,
+    pub failed_stack_instances_count: ::std::option::Option<i32>,
 }
 impl StackSetDriftDetectionDetails {
     /// <p>Status of the stack set's actual configuration compared to its expected template and parameter configuration. A stack set is considered to have drifted if one or more of its stack instances have drifted from their expected template and parameter configuration.</p>
@@ -76,23 +76,23 @@ impl StackSetDriftDetectionDetails {
     /// <li> <p>Stack instances where the drift detection operation has failed.</p> </li>
     /// <li> <p>Stack instances currently being checked for drift.</p> </li>
     /// </ul>
-    pub fn total_stack_instances_count(&self) -> i32 {
+    pub fn total_stack_instances_count(&self) -> ::std::option::Option<i32> {
         self.total_stack_instances_count
     }
     /// <p>The number of stack instances that have drifted from the expected template and parameter configuration of the stack set. A stack instance is considered to have drifted if one or more of the resources in the associated stack don't match their expected configuration.</p>
-    pub fn drifted_stack_instances_count(&self) -> i32 {
+    pub fn drifted_stack_instances_count(&self) -> ::std::option::Option<i32> {
         self.drifted_stack_instances_count
     }
     /// <p>The number of stack instances which match the expected template and parameter configuration of the stack set.</p>
-    pub fn in_sync_stack_instances_count(&self) -> i32 {
+    pub fn in_sync_stack_instances_count(&self) -> ::std::option::Option<i32> {
         self.in_sync_stack_instances_count
     }
     /// <p>The number of stack instances that are currently being checked for drift.</p>
-    pub fn in_progress_stack_instances_count(&self) -> i32 {
+    pub fn in_progress_stack_instances_count(&self) -> ::std::option::Option<i32> {
         self.in_progress_stack_instances_count
     }
     /// <p>The number of stack instances for which the drift detection operation failed.</p>
-    pub fn failed_stack_instances_count(&self) -> i32 {
+    pub fn failed_stack_instances_count(&self) -> ::std::option::Option<i32> {
         self.failed_stack_instances_count
     }
 }
@@ -292,11 +292,11 @@ impl StackSetDriftDetectionDetailsBuilder {
             drift_status: self.drift_status,
             drift_detection_status: self.drift_detection_status,
             last_drift_check_timestamp: self.last_drift_check_timestamp,
-            total_stack_instances_count: self.total_stack_instances_count.unwrap_or_default(),
-            drifted_stack_instances_count: self.drifted_stack_instances_count.unwrap_or_default(),
-            in_sync_stack_instances_count: self.in_sync_stack_instances_count.unwrap_or_default(),
-            in_progress_stack_instances_count: self.in_progress_stack_instances_count.unwrap_or_default(),
-            failed_stack_instances_count: self.failed_stack_instances_count.unwrap_or_default(),
+            total_stack_instances_count: self.total_stack_instances_count,
+            drifted_stack_instances_count: self.drifted_stack_instances_count,
+            in_sync_stack_instances_count: self.in_sync_stack_instances_count,
+            in_progress_stack_instances_count: self.in_progress_stack_instances_count,
+            failed_stack_instances_count: self.failed_stack_instances_count,
         }
     }
 }

@@ -1062,6 +1062,36 @@ pub fn de_db_instance(
                 builder = builder.set_percent_progress(var_82);
             }
             ,
+            s if s.matches("DedicatedLogVolume") /* DedicatedLogVolume com.amazonaws.rds#DBInstance$DedicatedLogVolume */ =>  {
+                let var_83 =
+                    Some(
+                         {
+                            <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_dedicated_log_volume(var_83);
+            }
+            ,
+            s if s.matches("IsStorageConfigUpgradeAvailable") /* IsStorageConfigUpgradeAvailable com.amazonaws.rds#DBInstance$IsStorageConfigUpgradeAvailable */ =>  {
+                let var_84 =
+                    Some(
+                         {
+                            <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.rds#BooleanOptional`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_is_storage_config_upgrade_available(var_84);
+            }
+            ,
             _ => {}
         }
     }

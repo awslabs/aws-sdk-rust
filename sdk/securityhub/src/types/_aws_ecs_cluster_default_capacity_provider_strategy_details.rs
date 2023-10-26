@@ -5,15 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEcsClusterDefaultCapacityProviderStrategyDetails {
     /// <p>The minimum number of tasks to run on the specified capacity provider.</p>
-    pub base: i32,
+    pub base: ::std::option::Option<i32>,
     /// <p>The name of the capacity provider.</p>
     pub capacity_provider: ::std::option::Option<::std::string::String>,
     /// <p>The relative percentage of the total number of tasks launched that should use the capacity provider.</p>
-    pub weight: i32,
+    pub weight: ::std::option::Option<i32>,
 }
 impl AwsEcsClusterDefaultCapacityProviderStrategyDetails {
     /// <p>The minimum number of tasks to run on the specified capacity provider.</p>
-    pub fn base(&self) -> i32 {
+    pub fn base(&self) -> ::std::option::Option<i32> {
         self.base
     }
     /// <p>The name of the capacity provider.</p>
@@ -21,7 +21,7 @@ impl AwsEcsClusterDefaultCapacityProviderStrategyDetails {
         self.capacity_provider.as_deref()
     }
     /// <p>The relative percentage of the total number of tasks launched that should use the capacity provider.</p>
-    pub fn weight(&self) -> i32 {
+    pub fn weight(&self) -> ::std::option::Option<i32> {
         self.weight
     }
 }
@@ -86,9 +86,9 @@ impl AwsEcsClusterDefaultCapacityProviderStrategyDetailsBuilder {
     /// Consumes the builder and constructs a [`AwsEcsClusterDefaultCapacityProviderStrategyDetails`](crate::types::AwsEcsClusterDefaultCapacityProviderStrategyDetails).
     pub fn build(self) -> crate::types::AwsEcsClusterDefaultCapacityProviderStrategyDetails {
         crate::types::AwsEcsClusterDefaultCapacityProviderStrategyDetails {
-            base: self.base.unwrap_or_default(),
+            base: self.base,
             capacity_provider: self.capacity_provider,
-            weight: self.weight.unwrap_or_default(),
+            weight: self.weight,
         }
     }
 }

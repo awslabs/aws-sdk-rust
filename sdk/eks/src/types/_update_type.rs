@@ -20,6 +20,7 @@
 ///     UpdateType::EndpointAccessUpdate => { /* ... */ },
 ///     UpdateType::LoggingUpdate => { /* ... */ },
 ///     UpdateType::VersionUpdate => { /* ... */ },
+///     UpdateType::VpcConfigUpdate => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -63,6 +64,8 @@ pub enum UpdateType {
     LoggingUpdate,
     #[allow(missing_docs)] // documentation missing in model
     VersionUpdate,
+    #[allow(missing_docs)] // documentation missing in model
+    VpcConfigUpdate,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
@@ -77,6 +80,7 @@ impl ::std::convert::From<&str> for UpdateType {
             "EndpointAccessUpdate" => UpdateType::EndpointAccessUpdate,
             "LoggingUpdate" => UpdateType::LoggingUpdate,
             "VersionUpdate" => UpdateType::VersionUpdate,
+            "VpcConfigUpdate" => UpdateType::VpcConfigUpdate,
             other => UpdateType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -100,6 +104,7 @@ impl UpdateType {
             UpdateType::EndpointAccessUpdate => "EndpointAccessUpdate",
             UpdateType::LoggingUpdate => "LoggingUpdate",
             UpdateType::VersionUpdate => "VersionUpdate",
+            UpdateType::VpcConfigUpdate => "VpcConfigUpdate",
             UpdateType::Unknown(value) => value.as_str(),
         }
     }
@@ -114,6 +119,7 @@ impl UpdateType {
             "EndpointAccessUpdate",
             "LoggingUpdate",
             "VersionUpdate",
+            "VpcConfigUpdate",
         ]
     }
 }

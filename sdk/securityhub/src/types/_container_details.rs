@@ -18,7 +18,7 @@ pub struct ContainerDetails {
     /// <p>Provides information about the mounting of a volume in a container. </p>
     pub volume_mounts: ::std::option::Option<::std::vec::Vec<crate::types::VolumeMount>>,
     /// <p>When this parameter is <code>true</code>, the container is given elevated privileges on the host container instance (similar to the root user). </p>
-    pub privileged: bool,
+    pub privileged: ::std::option::Option<bool>,
 }
 impl ContainerDetails {
     /// <p>The runtime of the container. </p>
@@ -47,7 +47,7 @@ impl ContainerDetails {
         self.volume_mounts.as_deref()
     }
     /// <p>When this parameter is <code>true</code>, the container is given elevated privileges on the host container instance (similar to the root user). </p>
-    pub fn privileged(&self) -> bool {
+    pub fn privileged(&self) -> ::std::option::Option<bool> {
         self.privileged
     }
 }
@@ -187,7 +187,7 @@ impl ContainerDetailsBuilder {
             image_name: self.image_name,
             launched_at: self.launched_at,
             volume_mounts: self.volume_mounts,
-            privileged: self.privileged.unwrap_or_default(),
+            privileged: self.privileged,
         }
     }
 }

@@ -16,7 +16,7 @@ pub enum DataSourceParameters {
     AuroraPostgreSqlParameters(crate::types::AuroraPostgreSqlParameters),
     /// <p>The parameters for IoT Analytics.</p>
     AwsIotAnalyticsParameters(crate::types::AwsIotAnalyticsParameters),
-    /// <p>The required parameters that are needed to connect to a Databricks data source.</p>
+    /// <p>The parameters that are required to connect to a Databricks data source.</p>
     DatabricksParameters(crate::types::DatabricksParameters),
     /// <p>The parameters for Exasol.</p>
     ExasolParameters(crate::types::ExasolParameters),
@@ -46,8 +46,12 @@ pub enum DataSourceParameters {
     SparkParameters(crate::types::SparkParameters),
     /// <p>The parameters for SQL Server.</p>
     SqlServerParameters(crate::types::SqlServerParameters),
+    /// <p>The parameters that are required to connect to a Starburst data source.</p>
+    StarburstParameters(crate::types::StarburstParameters),
     /// <p>The parameters for Teradata.</p>
     TeradataParameters(crate::types::TeradataParameters),
+    /// <p>The parameters that are required to connect to a Trino data source.</p>
+    TrinoParameters(crate::types::TrinoParameters),
     /// <p>The parameters for Twitter.</p>
     TwitterParameters(crate::types::TwitterParameters),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
@@ -334,6 +338,19 @@ impl DataSourceParameters {
     pub fn is_sql_server_parameters(&self) -> bool {
         self.as_sql_server_parameters().is_ok()
     }
+    /// Tries to convert the enum instance into [`StarburstParameters`](crate::types::DataSourceParameters::StarburstParameters), extracting the inner [`StarburstParameters`](crate::types::StarburstParameters).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_starburst_parameters(&self) -> ::std::result::Result<&crate::types::StarburstParameters, &Self> {
+        if let DataSourceParameters::StarburstParameters(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`StarburstParameters`](crate::types::DataSourceParameters::StarburstParameters).
+    pub fn is_starburst_parameters(&self) -> bool {
+        self.as_starburst_parameters().is_ok()
+    }
     /// Tries to convert the enum instance into [`TeradataParameters`](crate::types::DataSourceParameters::TeradataParameters), extracting the inner [`TeradataParameters`](crate::types::TeradataParameters).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_teradata_parameters(&self) -> ::std::result::Result<&crate::types::TeradataParameters, &Self> {
@@ -346,6 +363,19 @@ impl DataSourceParameters {
     /// Returns true if this is a [`TeradataParameters`](crate::types::DataSourceParameters::TeradataParameters).
     pub fn is_teradata_parameters(&self) -> bool {
         self.as_teradata_parameters().is_ok()
+    }
+    /// Tries to convert the enum instance into [`TrinoParameters`](crate::types::DataSourceParameters::TrinoParameters), extracting the inner [`TrinoParameters`](crate::types::TrinoParameters).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_trino_parameters(&self) -> ::std::result::Result<&crate::types::TrinoParameters, &Self> {
+        if let DataSourceParameters::TrinoParameters(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`TrinoParameters`](crate::types::DataSourceParameters::TrinoParameters).
+    pub fn is_trino_parameters(&self) -> bool {
+        self.as_trino_parameters().is_ok()
     }
     /// Tries to convert the enum instance into [`TwitterParameters`](crate::types::DataSourceParameters::TwitterParameters), extracting the inner [`TwitterParameters`](crate::types::TwitterParameters).
     /// Returns `Err(&Self)` if it can't be converted.

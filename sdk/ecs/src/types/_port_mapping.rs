@@ -43,7 +43,7 @@ pub struct PortMapping {
     /// <li> <p>You can specify a maximum of 100 port ranges per container.</p> </li>
     /// <li> <p>You do not specify a <code>hostPortRange</code>. The value of the <code>hostPortRange</code> is set as follows:</p>
     /// <ul>
-    /// <li> <p>For containers in a task with the <code>awsvpc</code> network mode, the <code>hostPort</code> is set to the same value as the <code>containerPort</code>. This is a static mapping strategy.</p> </li>
+    /// <li> <p>For containers in a task with the <code>awsvpc</code> network mode, the <code>hostPortRange</code> is set to the same value as the <code>containerPortRange</code>. This is a static mapping strategy.</p> </li>
     /// <li> <p>For containers in a task with the <code>bridge</code> network mode, the Amazon ECS agent finds open host ports from the default ephemeral range and passes it to docker to bind them to the container ports.</p> </li>
     /// </ul> </li>
     /// <li> <p>The <code>containerPortRange</code> valid values are between 1 and 65535.</p> </li>
@@ -100,7 +100,7 @@ impl PortMapping {
     /// <li> <p>You can specify a maximum of 100 port ranges per container.</p> </li>
     /// <li> <p>You do not specify a <code>hostPortRange</code>. The value of the <code>hostPortRange</code> is set as follows:</p>
     /// <ul>
-    /// <li> <p>For containers in a task with the <code>awsvpc</code> network mode, the <code>hostPort</code> is set to the same value as the <code>containerPort</code>. This is a static mapping strategy.</p> </li>
+    /// <li> <p>For containers in a task with the <code>awsvpc</code> network mode, the <code>hostPortRange</code> is set to the same value as the <code>containerPortRange</code>. This is a static mapping strategy.</p> </li>
     /// <li> <p>For containers in a task with the <code>bridge</code> network mode, the Amazon ECS agent finds open host ports from the default ephemeral range and passes it to docker to bind them to the container ports.</p> </li>
     /// </ul> </li>
     /// <li> <p>The <code>containerPortRange</code> valid values are between 1 and 65535.</p> </li>
@@ -255,7 +255,7 @@ impl PortMappingBuilder {
     /// <li> <p>You can specify a maximum of 100 port ranges per container.</p> </li>
     /// <li> <p>You do not specify a <code>hostPortRange</code>. The value of the <code>hostPortRange</code> is set as follows:</p>
     /// <ul>
-    /// <li> <p>For containers in a task with the <code>awsvpc</code> network mode, the <code>hostPort</code> is set to the same value as the <code>containerPort</code>. This is a static mapping strategy.</p> </li>
+    /// <li> <p>For containers in a task with the <code>awsvpc</code> network mode, the <code>hostPortRange</code> is set to the same value as the <code>containerPortRange</code>. This is a static mapping strategy.</p> </li>
     /// <li> <p>For containers in a task with the <code>bridge</code> network mode, the Amazon ECS agent finds open host ports from the default ephemeral range and passes it to docker to bind them to the container ports.</p> </li>
     /// </ul> </li>
     /// <li> <p>The <code>containerPortRange</code> valid values are between 1 and 65535.</p> </li>
@@ -279,7 +279,7 @@ impl PortMappingBuilder {
     /// <li> <p>You can specify a maximum of 100 port ranges per container.</p> </li>
     /// <li> <p>You do not specify a <code>hostPortRange</code>. The value of the <code>hostPortRange</code> is set as follows:</p>
     /// <ul>
-    /// <li> <p>For containers in a task with the <code>awsvpc</code> network mode, the <code>hostPort</code> is set to the same value as the <code>containerPort</code>. This is a static mapping strategy.</p> </li>
+    /// <li> <p>For containers in a task with the <code>awsvpc</code> network mode, the <code>hostPortRange</code> is set to the same value as the <code>containerPortRange</code>. This is a static mapping strategy.</p> </li>
     /// <li> <p>For containers in a task with the <code>bridge</code> network mode, the Amazon ECS agent finds open host ports from the default ephemeral range and passes it to docker to bind them to the container ports.</p> </li>
     /// </ul> </li>
     /// <li> <p>The <code>containerPortRange</code> valid values are between 1 and 65535.</p> </li>
@@ -303,7 +303,7 @@ impl PortMappingBuilder {
     /// <li> <p>You can specify a maximum of 100 port ranges per container.</p> </li>
     /// <li> <p>You do not specify a <code>hostPortRange</code>. The value of the <code>hostPortRange</code> is set as follows:</p>
     /// <ul>
-    /// <li> <p>For containers in a task with the <code>awsvpc</code> network mode, the <code>hostPort</code> is set to the same value as the <code>containerPort</code>. This is a static mapping strategy.</p> </li>
+    /// <li> <p>For containers in a task with the <code>awsvpc</code> network mode, the <code>hostPortRange</code> is set to the same value as the <code>containerPortRange</code>. This is a static mapping strategy.</p> </li>
     /// <li> <p>For containers in a task with the <code>bridge</code> network mode, the Amazon ECS agent finds open host ports from the default ephemeral range and passes it to docker to bind them to the container ports.</p> </li>
     /// </ul> </li>
     /// <li> <p>The <code>containerPortRange</code> valid values are between 1 and 65535.</p> </li>

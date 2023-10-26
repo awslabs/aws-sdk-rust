@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEc2NetworkAclDetails {
     /// <p>Whether this is the default network ACL for the VPC.</p>
-    pub is_default: bool,
+    pub is_default: ::std::option::Option<bool>,
     /// <p>The identifier of the network ACL.</p>
     pub network_acl_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the Amazon Web Services account that owns the network ACL.</p>
@@ -19,7 +19,7 @@ pub struct AwsEc2NetworkAclDetails {
 }
 impl AwsEc2NetworkAclDetails {
     /// <p>Whether this is the default network ACL for the VPC.</p>
-    pub fn is_default(&self) -> bool {
+    pub fn is_default(&self) -> ::std::option::Option<bool> {
         self.is_default
     }
     /// <p>The identifier of the network ACL.</p>
@@ -161,7 +161,7 @@ impl AwsEc2NetworkAclDetailsBuilder {
     /// Consumes the builder and constructs a [`AwsEc2NetworkAclDetails`](crate::types::AwsEc2NetworkAclDetails).
     pub fn build(self) -> crate::types::AwsEc2NetworkAclDetails {
         crate::types::AwsEc2NetworkAclDetails {
-            is_default: self.is_default.unwrap_or_default(),
+            is_default: self.is_default,
             network_acl_id: self.network_acl_id,
             owner_id: self.owner_id,
             vpc_id: self.vpc_id,

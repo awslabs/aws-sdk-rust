@@ -26,7 +26,7 @@ pub struct DbProxyEndpoint {
     /// <p>A value that indicates whether the DB proxy endpoint can be used for read/write or read-only operations.</p>
     pub target_role: ::std::option::Option<crate::types::DbProxyEndpointTargetRole>,
     /// <p>Indicates whether this endpoint is the default endpoint for the associated DB proxy. Default DB proxy endpoints always have read/write capability. Other endpoints that you associate with the DB proxy can be either read/write or read-only.</p>
-    pub is_default: bool,
+    pub is_default: ::std::option::Option<bool>,
 }
 impl DbProxyEndpoint {
     /// <p>The name for the DB proxy endpoint. An identifier must begin with a letter and must contain only ASCII letters, digits, and hyphens; it can't end with a hyphen or contain two consecutive hyphens.</p>
@@ -70,7 +70,7 @@ impl DbProxyEndpoint {
         self.target_role.as_ref()
     }
     /// <p>Indicates whether this endpoint is the default endpoint for the associated DB proxy. Default DB proxy endpoints always have read/write capability. Other endpoints that you associate with the DB proxy can be either read/write or read-only.</p>
-    pub fn is_default(&self) -> bool {
+    pub fn is_default(&self) -> ::std::option::Option<bool> {
         self.is_default
     }
 }
@@ -277,7 +277,7 @@ impl DbProxyEndpointBuilder {
             endpoint: self.endpoint,
             created_date: self.created_date,
             target_role: self.target_role,
-            is_default: self.is_default.unwrap_or_default(),
+            is_default: self.is_default,
         }
     }
 }

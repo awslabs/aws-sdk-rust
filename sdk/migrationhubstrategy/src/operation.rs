@@ -31,6 +31,9 @@ pub mod get_server_details;
 /// Types for the `GetServerStrategies` operation.
 pub mod get_server_strategies;
 
+/// Types for the `ListAnalyzableServers` operation.
+pub mod list_analyzable_servers;
+
 /// Types for the `ListApplicationComponents` operation.
 pub mod list_application_components;
 

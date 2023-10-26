@@ -183,4 +183,32 @@ impl RestoreFromSnapshotFluentBuilder {
     pub fn get_owner_account(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_owner_account()
     }
+    /// <p>If <code>true</code>, Amazon Redshift uses Secrets Manager to manage the restored snapshot's admin credentials. If <code>MmanageAdminPassword</code> is false or not set, Amazon Redshift uses the admin credentials that the namespace or cluster had at the time the snapshot was taken.</p>
+    pub fn manage_admin_password(mut self, input: bool) -> Self {
+        self.inner = self.inner.manage_admin_password(input);
+        self
+    }
+    /// <p>If <code>true</code>, Amazon Redshift uses Secrets Manager to manage the restored snapshot's admin credentials. If <code>MmanageAdminPassword</code> is false or not set, Amazon Redshift uses the admin credentials that the namespace or cluster had at the time the snapshot was taken.</p>
+    pub fn set_manage_admin_password(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_manage_admin_password(input);
+        self
+    }
+    /// <p>If <code>true</code>, Amazon Redshift uses Secrets Manager to manage the restored snapshot's admin credentials. If <code>MmanageAdminPassword</code> is false or not set, Amazon Redshift uses the admin credentials that the namespace or cluster had at the time the snapshot was taken.</p>
+    pub fn get_manage_admin_password(&self) -> &::std::option::Option<bool> {
+        self.inner.get_manage_admin_password()
+    }
+    /// <p>The ID of the Key Management Service (KMS) key used to encrypt and store the namespace's admin credentials secret.</p>
+    pub fn admin_password_secret_kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.admin_password_secret_kms_key_id(input.into());
+        self
+    }
+    /// <p>The ID of the Key Management Service (KMS) key used to encrypt and store the namespace's admin credentials secret.</p>
+    pub fn set_admin_password_secret_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_admin_password_secret_kms_key_id(input);
+        self
+    }
+    /// <p>The ID of the Key Management Service (KMS) key used to encrypt and store the namespace's admin credentials secret.</p>
+    pub fn get_admin_password_secret_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_admin_password_secret_kms_key_id()
+    }
 }

@@ -117,11 +117,11 @@ pub struct DescribeTrainingJobOutput {
     /// <p>A collection of <code>MetricData</code> objects that specify the names, values, and dates and times that the training algorithm emitted to Amazon CloudWatch.</p>
     pub final_metric_data_list: ::std::option::Option<::std::vec::Vec<crate::types::MetricData>>,
     /// <p>If you want to allow inbound or outbound network calls, except for calls between peers within a training cluster for distributed training, choose <code>True</code>. If you enable network isolation for training jobs that are configured to use a VPC, SageMaker downloads and uploads customer data and model artifacts through the specified VPC, but the training container does not have network access.</p>
-    pub enable_network_isolation: bool,
+    pub enable_network_isolation: ::std::option::Option<bool>,
     /// <p>To encrypt all communications between ML compute instances in distributed training, choose <code>True</code>. Encryption provides greater security for distributed training, but training might take longer. How long it takes depends on the amount of communication between compute instances, especially if you use a deep learning algorithms in distributed training.</p>
-    pub enable_inter_container_traffic_encryption: bool,
+    pub enable_inter_container_traffic_encryption: ::std::option::Option<bool>,
     /// <p>A Boolean indicating whether managed spot training is enabled (<code>True</code>) or not (<code>False</code>).</p>
-    pub enable_managed_spot_training: bool,
+    pub enable_managed_spot_training: ::std::option::Option<bool>,
     /// <p>Contains information about the output location for managed spot training checkpoint data. </p>
     pub checkpoint_config: ::std::option::Option<crate::types::CheckpointConfig>,
     /// <p>The training time in seconds.</p>
@@ -322,15 +322,15 @@ impl DescribeTrainingJobOutput {
         self.final_metric_data_list.as_deref()
     }
     /// <p>If you want to allow inbound or outbound network calls, except for calls between peers within a training cluster for distributed training, choose <code>True</code>. If you enable network isolation for training jobs that are configured to use a VPC, SageMaker downloads and uploads customer data and model artifacts through the specified VPC, but the training container does not have network access.</p>
-    pub fn enable_network_isolation(&self) -> bool {
+    pub fn enable_network_isolation(&self) -> ::std::option::Option<bool> {
         self.enable_network_isolation
     }
     /// <p>To encrypt all communications between ML compute instances in distributed training, choose <code>True</code>. Encryption provides greater security for distributed training, but training might take longer. How long it takes depends on the amount of communication between compute instances, especially if you use a deep learning algorithms in distributed training.</p>
-    pub fn enable_inter_container_traffic_encryption(&self) -> bool {
+    pub fn enable_inter_container_traffic_encryption(&self) -> ::std::option::Option<bool> {
         self.enable_inter_container_traffic_encryption
     }
     /// <p>A Boolean indicating whether managed spot training is enabled (<code>True</code>) or not (<code>False</code>).</p>
-    pub fn enable_managed_spot_training(&self) -> bool {
+    pub fn enable_managed_spot_training(&self) -> ::std::option::Option<bool> {
         self.enable_managed_spot_training
     }
     /// <p>Contains information about the output location for managed spot training checkpoint data. </p>
@@ -1368,9 +1368,9 @@ impl DescribeTrainingJobOutputBuilder {
             last_modified_time: self.last_modified_time,
             secondary_status_transitions: self.secondary_status_transitions,
             final_metric_data_list: self.final_metric_data_list,
-            enable_network_isolation: self.enable_network_isolation.unwrap_or_default(),
-            enable_inter_container_traffic_encryption: self.enable_inter_container_traffic_encryption.unwrap_or_default(),
-            enable_managed_spot_training: self.enable_managed_spot_training.unwrap_or_default(),
+            enable_network_isolation: self.enable_network_isolation,
+            enable_inter_container_traffic_encryption: self.enable_inter_container_traffic_encryption,
+            enable_managed_spot_training: self.enable_managed_spot_training,
             checkpoint_config: self.checkpoint_config,
             training_time_in_seconds: self.training_time_in_seconds,
             billable_time_in_seconds: self.billable_time_in_seconds,

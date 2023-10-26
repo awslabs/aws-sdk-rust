@@ -3,20 +3,20 @@ pub fn ser_severity_update(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SeverityUpdate,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if input.normalized != 0 {
+    if let Some(var_1) = &input.normalized {
         object.key("Normalized").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.normalized).into()),
+            ::aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if input.product != 0.0 {
+    if let Some(var_2) = &input.product {
         object.key("Product").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::Float((input.product).into()),
+            ::aws_smithy_types::Number::Float((*var_2).into()),
         );
     }
-    if let Some(var_1) = &input.label {
-        object.key("Label").string(var_1.as_str());
+    if let Some(var_3) = &input.label {
+        object.key("Label").string(var_3.as_str());
     }
     Ok(())
 }

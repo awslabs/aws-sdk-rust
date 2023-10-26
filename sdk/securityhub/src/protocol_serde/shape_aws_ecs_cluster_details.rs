@@ -6,71 +6,71 @@ pub fn ser_aws_ecs_cluster_details(
     if let Some(var_1) = &input.cluster_arn {
         object.key("ClusterArn").string(var_1.as_str());
     }
-    if input.active_services_count != 0 {
+    if let Some(var_2) = &input.active_services_count {
         object.key("ActiveServicesCount").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.active_services_count).into()),
+            ::aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
-    if let Some(var_2) = &input.capacity_providers {
-        let mut array_3 = object.key("CapacityProviders").start_array();
-        for item_4 in var_2 {
+    if let Some(var_3) = &input.capacity_providers {
+        let mut array_4 = object.key("CapacityProviders").start_array();
+        for item_5 in var_3 {
             {
-                array_3.value().string(item_4.as_str());
+                array_4.value().string(item_5.as_str());
             }
         }
-        array_3.finish();
+        array_4.finish();
     }
-    if let Some(var_5) = &input.cluster_settings {
-        let mut array_6 = object.key("ClusterSettings").start_array();
-        for item_7 in var_5 {
+    if let Some(var_6) = &input.cluster_settings {
+        let mut array_7 = object.key("ClusterSettings").start_array();
+        for item_8 in var_6 {
             {
                 #[allow(unused_mut)]
-                let mut object_8 = array_6.value().start_object();
+                let mut object_9 = array_7.value().start_object();
                 crate::protocol_serde::shape_aws_ecs_cluster_cluster_settings_details::ser_aws_ecs_cluster_cluster_settings_details(
-                    &mut object_8,
-                    item_7,
+                    &mut object_9,
+                    item_8,
                 )?;
-                object_8.finish();
+                object_9.finish();
             }
         }
-        array_6.finish();
+        array_7.finish();
     }
-    if let Some(var_9) = &input.configuration {
+    if let Some(var_10) = &input.configuration {
         #[allow(unused_mut)]
-        let mut object_10 = object.key("Configuration").start_object();
-        crate::protocol_serde::shape_aws_ecs_cluster_configuration_details::ser_aws_ecs_cluster_configuration_details(&mut object_10, var_9)?;
-        object_10.finish();
+        let mut object_11 = object.key("Configuration").start_object();
+        crate::protocol_serde::shape_aws_ecs_cluster_configuration_details::ser_aws_ecs_cluster_configuration_details(&mut object_11, var_10)?;
+        object_11.finish();
     }
-    if let Some(var_11) = &input.default_capacity_provider_strategy {
-        let mut array_12 = object.key("DefaultCapacityProviderStrategy").start_array();
-        for item_13 in var_11 {
+    if let Some(var_12) = &input.default_capacity_provider_strategy {
+        let mut array_13 = object.key("DefaultCapacityProviderStrategy").start_array();
+        for item_14 in var_12 {
             {
                 #[allow(unused_mut)]
-                let mut object_14 = array_12.value().start_object();
-                crate::protocol_serde::shape_aws_ecs_cluster_default_capacity_provider_strategy_details::ser_aws_ecs_cluster_default_capacity_provider_strategy_details(&mut object_14, item_13)?;
-                object_14.finish();
+                let mut object_15 = array_13.value().start_object();
+                crate::protocol_serde::shape_aws_ecs_cluster_default_capacity_provider_strategy_details::ser_aws_ecs_cluster_default_capacity_provider_strategy_details(&mut object_15, item_14)?;
+                object_15.finish();
             }
         }
-        array_12.finish();
+        array_13.finish();
     }
-    if let Some(var_15) = &input.cluster_name {
-        object.key("ClusterName").string(var_15.as_str());
+    if let Some(var_16) = &input.cluster_name {
+        object.key("ClusterName").string(var_16.as_str());
     }
-    if input.registered_container_instances_count != 0 {
+    if let Some(var_17) = &input.registered_container_instances_count {
         object.key("RegisteredContainerInstancesCount").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.registered_container_instances_count).into()),
+            ::aws_smithy_types::Number::NegInt((*var_17).into()),
         );
     }
-    if input.running_tasks_count != 0 {
+    if let Some(var_18) = &input.running_tasks_count {
         object.key("RunningTasksCount").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.running_tasks_count).into()),
+            ::aws_smithy_types::Number::NegInt((*var_18).into()),
         );
     }
-    if let Some(var_16) = &input.status {
-        object.key("Status").string(var_16.as_str());
+    if let Some(var_19) = &input.status {
+        object.key("Status").string(var_19.as_str());
     }
     Ok(())
 }

@@ -3,22 +3,22 @@ pub fn ser_usd(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Usd,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if input.dollars != 0 {
+    if let Some(var_1) = &input.dollars {
         object.key("Dollars").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.dollars).into()),
+            ::aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if input.cents != 0 {
+    if let Some(var_2) = &input.cents {
         object.key("Cents").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.cents).into()),
+            ::aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
-    if input.tenth_fractions_of_a_cent != 0 {
+    if let Some(var_3) = &input.tenth_fractions_of_a_cent {
         object.key("TenthFractionsOfACent").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.tenth_fractions_of_a_cent).into()),
+            ::aws_smithy_types::Number::NegInt((*var_3).into()),
         );
     }
     Ok(())

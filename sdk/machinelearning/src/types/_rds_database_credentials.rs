@@ -2,7 +2,7 @@
 
 /// <p>The database credentials to connect to a database on an RDS DB instance.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RdsDatabaseCredentials {
     /// <p>The username to be used by Amazon ML to connect to database on an Amazon RDS instance. The username should have sufficient permissions to execute an <code>RDSSelectSqlQuery</code> query.</p>
     pub username: ::std::option::Option<::std::string::String>,
@@ -19,6 +19,14 @@ impl RdsDatabaseCredentials {
         self.password.as_deref()
     }
 }
+impl ::std::fmt::Debug for RdsDatabaseCredentials {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RdsDatabaseCredentials");
+        formatter.field("username", &self.username);
+        formatter.field("password", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl RdsDatabaseCredentials {
     /// Creates a new builder-style object to manufacture [`RdsDatabaseCredentials`](crate::types::RdsDatabaseCredentials).
     pub fn builder() -> crate::types::builders::RdsDatabaseCredentialsBuilder {
@@ -28,7 +36,7 @@ impl RdsDatabaseCredentials {
 
 /// A builder for [`RdsDatabaseCredentials`](crate::types::RdsDatabaseCredentials).
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct RdsDatabaseCredentialsBuilder {
     pub(crate) username: ::std::option::Option<::std::string::String>,
     pub(crate) password: ::std::option::Option<::std::string::String>,
@@ -68,5 +76,13 @@ impl RdsDatabaseCredentialsBuilder {
             username: self.username,
             password: self.password,
         }
+    }
+}
+impl ::std::fmt::Debug for RdsDatabaseCredentialsBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RdsDatabaseCredentialsBuilder");
+        formatter.field("username", &self.username);
+        formatter.field("password", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

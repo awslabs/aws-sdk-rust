@@ -403,6 +403,8 @@ pub struct ModifyDbInstanceInput {
     /// <li> <p>You can't convert the existing custom parameter or option group when it has options or parameters that are permanent or persistent. In this situation, the DB instance reverts to the default option and parameter group. To avoid reverting to the default, specify a new parameter group with <code>--db-parameter-group-name</code> and a new option group with <code>--option-group-name</code>.</p> </li>
     /// </ul>
     pub engine: ::std::option::Option<::std::string::String>,
+    /// <p>Indicates whether the DB instance has a dedicated log volume (DLV) enabled.</p>
+    pub dedicated_log_volume: ::std::option::Option<bool>,
 }
 impl ModifyDbInstanceInput {
     /// <p>The identifier of DB instance to modify. This value is stored as a lowercase string.</p>
@@ -920,6 +922,10 @@ impl ModifyDbInstanceInput {
     pub fn engine(&self) -> ::std::option::Option<&str> {
         self.engine.as_deref()
     }
+    /// <p>Indicates whether the DB instance has a dedicated log volume (DLV) enabled.</p>
+    pub fn dedicated_log_volume(&self) -> ::std::option::Option<bool> {
+        self.dedicated_log_volume
+    }
 }
 impl ModifyDbInstanceInput {
     /// Creates a new builder-style object to manufacture [`ModifyDbInstanceInput`](crate::operation::modify_db_instance::ModifyDbInstanceInput).
@@ -990,6 +996,7 @@ pub struct ModifyDbInstanceInputBuilder {
     pub(crate) rotate_master_user_password: ::std::option::Option<bool>,
     pub(crate) master_user_secret_kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) engine: ::std::option::Option<::std::string::String>,
+    pub(crate) dedicated_log_volume: ::std::option::Option<bool>,
 }
 impl ModifyDbInstanceInputBuilder {
     /// <p>The identifier of DB instance to modify. This value is stored as a lowercase string.</p>
@@ -2677,6 +2684,20 @@ impl ModifyDbInstanceInputBuilder {
     pub fn get_engine(&self) -> &::std::option::Option<::std::string::String> {
         &self.engine
     }
+    /// <p>Indicates whether the DB instance has a dedicated log volume (DLV) enabled.</p>
+    pub fn dedicated_log_volume(mut self, input: bool) -> Self {
+        self.dedicated_log_volume = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether the DB instance has a dedicated log volume (DLV) enabled.</p>
+    pub fn set_dedicated_log_volume(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.dedicated_log_volume = input;
+        self
+    }
+    /// <p>Indicates whether the DB instance has a dedicated log volume (DLV) enabled.</p>
+    pub fn get_dedicated_log_volume(&self) -> &::std::option::Option<bool> {
+        &self.dedicated_log_volume
+    }
     /// Consumes the builder and constructs a [`ModifyDbInstanceInput`](crate::operation::modify_db_instance::ModifyDbInstanceInput).
     pub fn build(
         self,
@@ -2740,6 +2761,7 @@ impl ModifyDbInstanceInputBuilder {
             rotate_master_user_password: self.rotate_master_user_password,
             master_user_secret_kms_key_id: self.master_user_secret_kms_key_id,
             engine: self.engine,
+            dedicated_log_volume: self.dedicated_log_volume,
         })
     }
 }

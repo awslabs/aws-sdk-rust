@@ -34,6 +34,45 @@ impl ::std::fmt::Display for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::create_id_mapping_workflow::CreateIdMappingWorkflowError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::create_id_mapping_workflow::CreateIdMappingWorkflowError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::create_id_mapping_workflow::CreateIdMappingWorkflowError> for Error {
+    fn from(err: crate::operation::create_id_mapping_workflow::CreateIdMappingWorkflowError) -> Self {
+        match err {
+            crate::operation::create_id_mapping_workflow::CreateIdMappingWorkflowError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::create_id_mapping_workflow::CreateIdMappingWorkflowError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_id_mapping_workflow::CreateIdMappingWorkflowError::ExceedsLimitException(inner) => {
+                Error::ExceedsLimitException(inner)
+            }
+            crate::operation::create_id_mapping_workflow::CreateIdMappingWorkflowError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::create_id_mapping_workflow::CreateIdMappingWorkflowError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::create_id_mapping_workflow::CreateIdMappingWorkflowError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::create_id_mapping_workflow::CreateIdMappingWorkflowError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::create_matching_workflow::CreateMatchingWorkflowError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -100,6 +139,41 @@ impl From<crate::operation::create_schema_mapping::CreateSchemaMappingError> for
         }
     }
 }
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::delete_id_mapping_workflow::DeleteIdMappingWorkflowError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::delete_id_mapping_workflow::DeleteIdMappingWorkflowError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_id_mapping_workflow::DeleteIdMappingWorkflowError> for Error {
+    fn from(err: crate::operation::delete_id_mapping_workflow::DeleteIdMappingWorkflowError) -> Self {
+        match err {
+            crate::operation::delete_id_mapping_workflow::DeleteIdMappingWorkflowError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::delete_id_mapping_workflow::DeleteIdMappingWorkflowError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::delete_id_mapping_workflow::DeleteIdMappingWorkflowError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::delete_id_mapping_workflow::DeleteIdMappingWorkflowError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::delete_id_mapping_workflow::DeleteIdMappingWorkflowError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::delete_matching_workflow::DeleteMatchingWorkflowError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -158,6 +232,66 @@ impl From<crate::operation::delete_schema_mapping::DeleteSchemaMappingError> for
             crate::operation::delete_schema_mapping::DeleteSchemaMappingError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::delete_schema_mapping::DeleteSchemaMappingError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::delete_schema_mapping::DeleteSchemaMappingError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_id_mapping_job::GetIdMappingJobError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::get_id_mapping_job::GetIdMappingJobError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_id_mapping_job::GetIdMappingJobError> for Error {
+    fn from(err: crate::operation::get_id_mapping_job::GetIdMappingJobError) -> Self {
+        match err {
+            crate::operation::get_id_mapping_job::GetIdMappingJobError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_id_mapping_job::GetIdMappingJobError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_id_mapping_job::GetIdMappingJobError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_id_mapping_job::GetIdMappingJobError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_id_mapping_job::GetIdMappingJobError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_id_mapping_job::GetIdMappingJobError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_id_mapping_workflow::GetIdMappingWorkflowError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::get_id_mapping_workflow::GetIdMappingWorkflowError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_id_mapping_workflow::GetIdMappingWorkflowError> for Error {
+    fn from(err: crate::operation::get_id_mapping_workflow::GetIdMappingWorkflowError) -> Self {
+        match err {
+            crate::operation::get_id_mapping_workflow::GetIdMappingWorkflowError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_id_mapping_workflow::GetIdMappingWorkflowError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_id_mapping_workflow::GetIdMappingWorkflowError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_id_mapping_workflow::GetIdMappingWorkflowError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_id_mapping_workflow::GetIdMappingWorkflowError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_id_mapping_workflow::GetIdMappingWorkflowError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -249,6 +383,36 @@ impl From<crate::operation::get_matching_workflow::GetMatchingWorkflowError> for
         }
     }
 }
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_provider_service::GetProviderServiceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::get_provider_service::GetProviderServiceError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_provider_service::GetProviderServiceError> for Error {
+    fn from(err: crate::operation::get_provider_service::GetProviderServiceError) -> Self {
+        match err {
+            crate::operation::get_provider_service::GetProviderServiceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_provider_service::GetProviderServiceError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_provider_service::GetProviderServiceError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_provider_service::GetProviderServiceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_provider_service::GetProviderServiceError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_provider_service::GetProviderServiceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_schema_mapping::GetSchemaMappingError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -274,6 +438,67 @@ impl From<crate::operation::get_schema_mapping::GetSchemaMappingError> for Error
             crate::operation::get_schema_mapping::GetSchemaMappingError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::get_schema_mapping::GetSchemaMappingError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_schema_mapping::GetSchemaMappingError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_id_mapping_jobs::ListIdMappingJobsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_id_mapping_jobs::ListIdMappingJobsError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_id_mapping_jobs::ListIdMappingJobsError> for Error {
+    fn from(err: crate::operation::list_id_mapping_jobs::ListIdMappingJobsError) -> Self {
+        match err {
+            crate::operation::list_id_mapping_jobs::ListIdMappingJobsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_id_mapping_jobs::ListIdMappingJobsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_id_mapping_jobs::ListIdMappingJobsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_id_mapping_jobs::ListIdMappingJobsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_id_mapping_jobs::ListIdMappingJobsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_id_mapping_jobs::ListIdMappingJobsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_id_mapping_workflows::ListIdMappingWorkflowsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_id_mapping_workflows::ListIdMappingWorkflowsError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_id_mapping_workflows::ListIdMappingWorkflowsError> for Error {
+    fn from(err: crate::operation::list_id_mapping_workflows::ListIdMappingWorkflowsError) -> Self {
+        match err {
+            crate::operation::list_id_mapping_workflows::ListIdMappingWorkflowsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_id_mapping_workflows::ListIdMappingWorkflowsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_id_mapping_workflows::ListIdMappingWorkflowsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_id_mapping_workflows::ListIdMappingWorkflowsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_id_mapping_workflows::ListIdMappingWorkflowsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -336,6 +561,35 @@ impl From<crate::operation::list_matching_workflows::ListMatchingWorkflowsError>
         }
     }
 }
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_provider_services::ListProviderServicesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_provider_services::ListProviderServicesError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_provider_services::ListProviderServicesError> for Error {
+    fn from(err: crate::operation::list_provider_services::ListProviderServicesError) -> Self {
+        match err {
+            crate::operation::list_provider_services::ListProviderServicesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_provider_services::ListProviderServicesError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_provider_services::ListProviderServicesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_provider_services::ListProviderServicesError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_provider_services::ListProviderServicesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_schema_mappings::ListSchemaMappingsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -390,6 +644,38 @@ impl From<crate::operation::list_tags_for_resource::ListTagsForResourceError> fo
             }
             crate::operation::list_tags_for_resource::ListTagsForResourceError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_tags_for_resource::ListTagsForResourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::start_id_mapping_job::StartIdMappingJobError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::start_id_mapping_job::StartIdMappingJobError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::start_id_mapping_job::StartIdMappingJobError> for Error {
+    fn from(err: crate::operation::start_id_mapping_job::StartIdMappingJobError) -> Self {
+        match err {
+            crate::operation::start_id_mapping_job::StartIdMappingJobError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::start_id_mapping_job::StartIdMappingJobError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::start_id_mapping_job::StartIdMappingJobError::ExceedsLimitException(inner) => Error::ExceedsLimitException(inner),
+            crate::operation::start_id_mapping_job::StartIdMappingJobError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::start_id_mapping_job::StartIdMappingJobError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::start_id_mapping_job::StartIdMappingJobError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::start_id_mapping_job::StartIdMappingJobError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::start_id_mapping_job::StartIdMappingJobError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -474,6 +760,44 @@ impl From<crate::operation::untag_resource::UntagResourceError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::update_id_mapping_workflow::UpdateIdMappingWorkflowError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::update_id_mapping_workflow::UpdateIdMappingWorkflowError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::update_id_mapping_workflow::UpdateIdMappingWorkflowError> for Error {
+    fn from(err: crate::operation::update_id_mapping_workflow::UpdateIdMappingWorkflowError) -> Self {
+        match err {
+            crate::operation::update_id_mapping_workflow::UpdateIdMappingWorkflowError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::update_id_mapping_workflow::UpdateIdMappingWorkflowError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::update_id_mapping_workflow::UpdateIdMappingWorkflowError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_id_mapping_workflow::UpdateIdMappingWorkflowError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::update_id_mapping_workflow::UpdateIdMappingWorkflowError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::update_id_mapping_workflow::UpdateIdMappingWorkflowError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::update_matching_workflow::UpdateMatchingWorkflowError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -505,6 +829,39 @@ impl From<crate::operation::update_matching_workflow::UpdateMatchingWorkflowErro
             crate::operation::update_matching_workflow::UpdateMatchingWorkflowError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::update_matching_workflow::UpdateMatchingWorkflowError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::update_matching_workflow::UpdateMatchingWorkflowError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::update_schema_mapping::UpdateSchemaMappingError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::update_schema_mapping::UpdateSchemaMappingError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::update_schema_mapping::UpdateSchemaMappingError> for Error {
+    fn from(err: crate::operation::update_schema_mapping::UpdateSchemaMappingError) -> Self {
+        match err {
+            crate::operation::update_schema_mapping::UpdateSchemaMappingError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_schema_mapping::UpdateSchemaMappingError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::update_schema_mapping::UpdateSchemaMappingError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::update_schema_mapping::UpdateSchemaMappingError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_schema_mapping::UpdateSchemaMappingError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_schema_mapping::UpdateSchemaMappingError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_schema_mapping::UpdateSchemaMappingError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

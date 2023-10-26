@@ -20,6 +20,8 @@ pub struct ConnectPeer {
     pub configuration: ::std::option::Option<crate::types::ConnectPeerConfiguration>,
     /// <p>The list of key-value tags associated with the Connect peer.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    /// <p>The subnet ARN for the Connect peer.</p>
+    pub subnet_arn: ::std::option::Option<::std::string::String>,
 }
 impl ConnectPeer {
     /// <p>The ID of a core network.</p>
@@ -54,6 +56,10 @@ impl ConnectPeer {
     pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
+    /// <p>The subnet ARN for the Connect peer.</p>
+    pub fn subnet_arn(&self) -> ::std::option::Option<&str> {
+        self.subnet_arn.as_deref()
+    }
 }
 impl ConnectPeer {
     /// Creates a new builder-style object to manufacture [`ConnectPeer`](crate::types::ConnectPeer).
@@ -74,6 +80,7 @@ pub struct ConnectPeerBuilder {
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) configuration: ::std::option::Option<crate::types::ConnectPeerConfiguration>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) subnet_arn: ::std::option::Option<::std::string::String>,
 }
 impl ConnectPeerBuilder {
     /// <p>The ID of a core network.</p>
@@ -194,6 +201,20 @@ impl ConnectPeerBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }
+    /// <p>The subnet ARN for the Connect peer.</p>
+    pub fn subnet_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.subnet_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The subnet ARN for the Connect peer.</p>
+    pub fn set_subnet_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.subnet_arn = input;
+        self
+    }
+    /// <p>The subnet ARN for the Connect peer.</p>
+    pub fn get_subnet_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subnet_arn
+    }
     /// Consumes the builder and constructs a [`ConnectPeer`](crate::types::ConnectPeer).
     pub fn build(self) -> crate::types::ConnectPeer {
         crate::types::ConnectPeer {
@@ -205,6 +226,7 @@ impl ConnectPeerBuilder {
             created_at: self.created_at,
             configuration: self.configuration,
             tags: self.tags,
+            subnet_arn: self.subnet_arn,
         }
     }
 }

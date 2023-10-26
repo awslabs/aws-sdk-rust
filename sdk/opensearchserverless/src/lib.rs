@@ -33,7 +33,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = "0.56.1"
-//! aws-sdk-opensearchserverless = "0.11.0"
+//! aws-sdk-opensearchserverless = "0.12.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
@@ -150,13 +150,13 @@ pub use config::Config;
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`CreateSecurityPolicy`](crate::operation::create_security_policy) operation has
-/// a [`Client::create_security_policy`], function which returns a builder for that operation.
+/// For example, the [`CreateLifecyclePolicy`](crate::operation::create_lifecycle_policy) operation has
+/// a [`Client::create_lifecycle_policy`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.create_security_policy()
+/// let result = client.create_lifecycle_policy()
 ///     .r#type("example")
 ///     .send()
 ///     .await;

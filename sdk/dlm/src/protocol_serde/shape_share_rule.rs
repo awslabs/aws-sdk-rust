@@ -12,14 +12,14 @@ pub fn ser_share_rule(
         }
         array_2.finish();
     }
-    if input.unshare_interval != 0 {
+    if let Some(var_4) = &input.unshare_interval {
         object.key("UnshareInterval").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.unshare_interval).into()),
+            ::aws_smithy_types::Number::NegInt((*var_4).into()),
         );
     }
-    if let Some(var_4) = &input.unshare_interval_unit {
-        object.key("UnshareIntervalUnit").string(var_4.as_str());
+    if let Some(var_5) = &input.unshare_interval_unit {
+        object.key("UnshareIntervalUnit").string(var_5.as_str());
     }
     Ok(())
 }

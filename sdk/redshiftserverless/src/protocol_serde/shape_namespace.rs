@@ -82,6 +82,20 @@ where
                                 ::aws_smithy_types::date_time::Format::DateTimeWithOffset,
                             )?);
                         }
+                        "adminPasswordSecretArn" => {
+                            builder = builder.set_admin_password_secret_arn(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "adminPasswordSecretKmsKeyId" => {
+                            builder = builder.set_admin_password_secret_kms_key_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

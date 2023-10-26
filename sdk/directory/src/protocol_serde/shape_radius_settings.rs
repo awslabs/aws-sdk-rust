@@ -12,16 +12,16 @@ pub fn ser_radius_settings(
         }
         array_2.finish();
     }
-    if input.radius_port != 0 {
+    if let Some(var_4) = &input.radius_port {
         object.key("RadiusPort").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.radius_port).into()),
+            ::aws_smithy_types::Number::NegInt((*var_4).into()),
         );
     }
-    if input.radius_timeout != 0 {
+    if let Some(var_5) = &input.radius_timeout {
         object.key("RadiusTimeout").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.radius_timeout).into()),
+            ::aws_smithy_types::Number::NegInt((*var_5).into()),
         );
     }
     if input.radius_retries != 0 {
@@ -30,14 +30,14 @@ pub fn ser_radius_settings(
             ::aws_smithy_types::Number::NegInt((input.radius_retries).into()),
         );
     }
-    if let Some(var_4) = &input.shared_secret {
-        object.key("SharedSecret").string(var_4.as_str());
+    if let Some(var_6) = &input.shared_secret {
+        object.key("SharedSecret").string(var_6.as_str());
     }
-    if let Some(var_5) = &input.authentication_protocol {
-        object.key("AuthenticationProtocol").string(var_5.as_str());
+    if let Some(var_7) = &input.authentication_protocol {
+        object.key("AuthenticationProtocol").string(var_7.as_str());
     }
-    if let Some(var_6) = &input.display_label {
-        object.key("DisplayLabel").string(var_6.as_str());
+    if let Some(var_8) = &input.display_label {
+        object.key("DisplayLabel").string(var_8.as_str());
     }
     if input.use_same_username {
         object.key("UseSameUsername").boolean(input.use_same_username);

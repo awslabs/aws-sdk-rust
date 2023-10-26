@@ -5,7 +5,7 @@
 pub struct ListMatchingJobsOutput {
     /// <p>A list of <code>JobSummary</code> objects, each of which contain the ID, status, start time, and end time of a job.</p>
     pub jobs: ::std::option::Option<::std::vec::Vec<crate::types::JobSummary>>,
-    /// <p>The pagination token from the previous <code>ListSchemaMappings</code> API call.</p>
+    /// <p>The pagination token from the previous API call.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -14,7 +14,7 @@ impl ListMatchingJobsOutput {
     pub fn jobs(&self) -> ::std::option::Option<&[crate::types::JobSummary]> {
         self.jobs.as_deref()
     }
-    /// <p>The pagination token from the previous <code>ListSchemaMappings</code> API call.</p>
+    /// <p>The pagination token from the previous API call.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -60,17 +60,17 @@ impl ListMatchingJobsOutputBuilder {
     pub fn get_jobs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::JobSummary>> {
         &self.jobs
     }
-    /// <p>The pagination token from the previous <code>ListSchemaMappings</code> API call.</p>
+    /// <p>The pagination token from the previous API call.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The pagination token from the previous <code>ListSchemaMappings</code> API call.</p>
+    /// <p>The pagination token from the previous API call.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>The pagination token from the previous <code>ListSchemaMappings</code> API call.</p>
+    /// <p>The pagination token from the previous API call.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

@@ -5,13 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Duration {
     /// <p>Integer to specify the value of a maintenance schedule duration.</p>
-    pub value: i64,
+    pub value: ::std::option::Option<i64>,
     /// <p>The unit of measurement for the duration of a maintenance schedule.</p>
     pub unit: ::std::option::Option<crate::types::TimeUnit>,
 }
 impl Duration {
     /// <p>Integer to specify the value of a maintenance schedule duration.</p>
-    pub fn value(&self) -> i64 {
+    pub fn value(&self) -> ::std::option::Option<i64> {
         self.value
     }
     /// <p>The unit of measurement for the duration of a maintenance schedule.</p>
@@ -65,7 +65,7 @@ impl DurationBuilder {
     /// Consumes the builder and constructs a [`Duration`](crate::types::Duration).
     pub fn build(self) -> crate::types::Duration {
         crate::types::Duration {
-            value: self.value.unwrap_or_default(),
+            value: self.value,
             unit: self.unit,
         }
     }

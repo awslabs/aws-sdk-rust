@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder takes no input, just [`send`](crate::operation::get_propertygraph_statistics::builders::GetPropertygraphStatisticsFluentBuilder::send) it.
     /// - On success, responds with [`GetPropertygraphStatisticsOutput`](crate::operation::get_propertygraph_statistics::GetPropertygraphStatisticsOutput) with field(s):
-    ///   - [`status(Option<String>)`](crate::operation::get_propertygraph_statistics::GetPropertygraphStatisticsOutput::status): <p>The HTTP return code of the request. If the request succeeded, the code is 200. See <a href="docs.aws.amazon.comneptune/latest/userguide/neptune-dfe-statistics.html#neptune-dfe-statistics-errors">Common error codes for DFE statistics request</a> for a list of common errors.</p>
+    ///   - [`status(Option<String>)`](crate::operation::get_propertygraph_statistics::GetPropertygraphStatisticsOutput::status): <p>The HTTP return code of the request. If the request succeeded, the code is 200. See <a href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-dfe-statistics.html#neptune-dfe-statistics-errors">Common error codes for DFE statistics request</a> for a list of common errors.</p>
     ///   - [`payload(Option<Statistics>)`](crate::operation::get_propertygraph_statistics::GetPropertygraphStatisticsOutput::payload): <p>Statistics for property-graph data.</p>
     /// - On failure, responds with [`SdkError<GetPropertygraphStatisticsError>`](crate::operation::get_propertygraph_statistics::GetPropertygraphStatisticsError)
     pub fn get_propertygraph_statistics(&self) -> crate::operation::get_propertygraph_statistics::builders::GetPropertygraphStatisticsFluentBuilder {

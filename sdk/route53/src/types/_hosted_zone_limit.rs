@@ -11,7 +11,7 @@ pub struct HostedZoneLimit {
     /// </ul>
     pub r#type: ::std::option::Option<crate::types::HostedZoneLimitType>,
     /// <p>The current value for the limit that is specified by <code>Type</code>.</p>
-    pub value: i64,
+    pub value: ::std::option::Option<i64>,
 }
 impl HostedZoneLimit {
     /// <p>The limit that you requested. Valid values include the following:</p>
@@ -23,7 +23,7 @@ impl HostedZoneLimit {
         self.r#type.as_ref()
     }
     /// <p>The current value for the limit that is specified by <code>Type</code>.</p>
-    pub fn value(&self) -> i64 {
+    pub fn value(&self) -> ::std::option::Option<i64> {
         self.value
     }
 }
@@ -86,7 +86,7 @@ impl HostedZoneLimitBuilder {
     pub fn build(self) -> crate::types::HostedZoneLimit {
         crate::types::HostedZoneLimit {
             r#type: self.r#type,
-            value: self.value.unwrap_or_default(),
+            value: self.value,
         }
     }
 }

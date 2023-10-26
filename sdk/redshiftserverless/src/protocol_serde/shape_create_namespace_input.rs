@@ -51,5 +51,11 @@ pub fn ser_create_namespace_input(
         }
         array_14.finish();
     }
+    if let Some(var_17) = &input.manage_admin_password {
+        object.key("manageAdminPassword").boolean(*var_17);
+    }
+    if let Some(var_18) = &input.admin_password_secret_kms_key_id {
+        object.key("adminPasswordSecretKmsKeyId").string(var_18.as_str());
+    }
     Ok(())
 }

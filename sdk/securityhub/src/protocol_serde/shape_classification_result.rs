@@ -6,38 +6,38 @@ pub fn ser_classification_result(
     if let Some(var_1) = &input.mime_type {
         object.key("MimeType").string(var_1.as_str());
     }
-    if input.size_classified != 0 {
+    if let Some(var_2) = &input.size_classified {
         object.key("SizeClassified").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.size_classified).into()),
+            ::aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
-    if input.additional_occurrences {
-        object.key("AdditionalOccurrences").boolean(input.additional_occurrences);
+    if let Some(var_3) = &input.additional_occurrences {
+        object.key("AdditionalOccurrences").boolean(*var_3);
     }
-    if let Some(var_2) = &input.status {
+    if let Some(var_4) = &input.status {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("Status").start_object();
-        crate::protocol_serde::shape_classification_status::ser_classification_status(&mut object_3, var_2)?;
-        object_3.finish();
+        let mut object_5 = object.key("Status").start_object();
+        crate::protocol_serde::shape_classification_status::ser_classification_status(&mut object_5, var_4)?;
+        object_5.finish();
     }
-    if let Some(var_4) = &input.sensitive_data {
-        let mut array_5 = object.key("SensitiveData").start_array();
-        for item_6 in var_4 {
+    if let Some(var_6) = &input.sensitive_data {
+        let mut array_7 = object.key("SensitiveData").start_array();
+        for item_8 in var_6 {
             {
                 #[allow(unused_mut)]
-                let mut object_7 = array_5.value().start_object();
-                crate::protocol_serde::shape_sensitive_data_result::ser_sensitive_data_result(&mut object_7, item_6)?;
-                object_7.finish();
+                let mut object_9 = array_7.value().start_object();
+                crate::protocol_serde::shape_sensitive_data_result::ser_sensitive_data_result(&mut object_9, item_8)?;
+                object_9.finish();
             }
         }
-        array_5.finish();
+        array_7.finish();
     }
-    if let Some(var_8) = &input.custom_data_identifiers {
+    if let Some(var_10) = &input.custom_data_identifiers {
         #[allow(unused_mut)]
-        let mut object_9 = object.key("CustomDataIdentifiers").start_object();
-        crate::protocol_serde::shape_custom_data_identifiers_result::ser_custom_data_identifiers_result(&mut object_9, var_8)?;
-        object_9.finish();
+        let mut object_11 = object.key("CustomDataIdentifiers").start_object();
+        crate::protocol_serde::shape_custom_data_identifiers_result::ser_custom_data_identifiers_result(&mut object_11, var_10)?;
+        object_11.finish();
     }
     Ok(())
 }

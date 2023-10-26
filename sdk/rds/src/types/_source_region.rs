@@ -11,7 +11,7 @@ pub struct SourceRegion {
     /// <p>The status of the source Amazon Web Services Region.</p>
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the source Amazon Web Services Region supports replicating automated backups to the current Amazon Web Services Region.</p>
-    pub supports_db_instance_automated_backups_replication: bool,
+    pub supports_db_instance_automated_backups_replication: ::std::option::Option<bool>,
 }
 impl SourceRegion {
     /// <p>The name of the source Amazon Web Services Region.</p>
@@ -27,7 +27,7 @@ impl SourceRegion {
         self.status.as_deref()
     }
     /// <p>Indicates whether the source Amazon Web Services Region supports replicating automated backups to the current Amazon Web Services Region.</p>
-    pub fn supports_db_instance_automated_backups_replication(&self) -> bool {
+    pub fn supports_db_instance_automated_backups_replication(&self) -> ::std::option::Option<bool> {
         self.supports_db_instance_automated_backups_replication
     }
 }
@@ -110,7 +110,7 @@ impl SourceRegionBuilder {
             region_name: self.region_name,
             endpoint: self.endpoint,
             status: self.status,
-            supports_db_instance_automated_backups_replication: self.supports_db_instance_automated_backups_replication.unwrap_or_default(),
+            supports_db_instance_automated_backups_replication: self.supports_db_instance_automated_backups_replication,
         }
     }
 }

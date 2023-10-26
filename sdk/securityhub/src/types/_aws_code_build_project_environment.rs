@@ -9,7 +9,7 @@ pub struct AwsCodeBuildProjectEnvironment {
     /// <p>A set of environment variables to make available to builds for the build project.</p>
     pub environment_variables: ::std::option::Option<::std::vec::Vec<crate::types::AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetails>>,
     /// <p>Whether to allow the Docker daemon to run inside a Docker container. Set to <code>true</code> if the build project is used to build Docker images.</p>
-    pub privileged_mode: bool,
+    pub privileged_mode: ::std::option::Option<bool>,
     /// <p>The type of credentials CodeBuild uses to pull images in your build.</p>
     /// <p>Valid values:</p>
     /// <ul>
@@ -37,7 +37,7 @@ impl AwsCodeBuildProjectEnvironment {
         self.environment_variables.as_deref()
     }
     /// <p>Whether to allow the Docker daemon to run inside a Docker container. Set to <code>true</code> if the build project is used to build Docker images.</p>
-    pub fn privileged_mode(&self) -> bool {
+    pub fn privileged_mode(&self) -> ::std::option::Option<bool> {
         self.privileged_mode
     }
     /// <p>The type of credentials CodeBuild uses to pull images in your build.</p>
@@ -212,7 +212,7 @@ impl AwsCodeBuildProjectEnvironmentBuilder {
         crate::types::AwsCodeBuildProjectEnvironment {
             certificate: self.certificate,
             environment_variables: self.environment_variables,
-            privileged_mode: self.privileged_mode.unwrap_or_default(),
+            privileged_mode: self.privileged_mode,
             image_pull_credentials_type: self.image_pull_credentials_type,
             registry_credential: self.registry_credential,
             r#type: self.r#type,

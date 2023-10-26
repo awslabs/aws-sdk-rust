@@ -27,6 +27,8 @@ pub struct CreateAnalysisInput {
     pub definition: ::std::option::Option<crate::types::AnalysisDefinition>,
     /// <p>The option to relax the validation needed to create an analysis with definition objects. This skips the validation step for specific errors.</p>
     pub validation_strategy: ::std::option::Option<crate::types::ValidationStrategy>,
+    /// <p>When you create the analysis, Amazon QuickSight adds the analysis to these folders.</p>
+    pub folder_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl CreateAnalysisInput {
     /// <p>The ID of the Amazon Web Services account where you are creating an analysis.</p>
@@ -73,6 +75,10 @@ impl CreateAnalysisInput {
     pub fn validation_strategy(&self) -> ::std::option::Option<&crate::types::ValidationStrategy> {
         self.validation_strategy.as_ref()
     }
+    /// <p>When you create the analysis, Amazon QuickSight adds the analysis to these folders.</p>
+    pub fn folder_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
+        self.folder_arns.as_deref()
+    }
 }
 impl CreateAnalysisInput {
     /// Creates a new builder-style object to manufacture [`CreateAnalysisInput`](crate::operation::create_analysis::CreateAnalysisInput).
@@ -95,6 +101,7 @@ pub struct CreateAnalysisInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) definition: ::std::option::Option<crate::types::AnalysisDefinition>,
     pub(crate) validation_strategy: ::std::option::Option<crate::types::ValidationStrategy>,
+    pub(crate) folder_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl CreateAnalysisInputBuilder {
     /// <p>The ID of the Amazon Web Services account where you are creating an analysis.</p>
@@ -261,6 +268,26 @@ impl CreateAnalysisInputBuilder {
     pub fn get_validation_strategy(&self) -> &::std::option::Option<crate::types::ValidationStrategy> {
         &self.validation_strategy
     }
+    /// Appends an item to `folder_arns`.
+    ///
+    /// To override the contents of this collection use [`set_folder_arns`](Self::set_folder_arns).
+    ///
+    /// <p>When you create the analysis, Amazon QuickSight adds the analysis to these folders.</p>
+    pub fn folder_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.folder_arns.unwrap_or_default();
+        v.push(input.into());
+        self.folder_arns = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>When you create the analysis, Amazon QuickSight adds the analysis to these folders.</p>
+    pub fn set_folder_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.folder_arns = input;
+        self
+    }
+    /// <p>When you create the analysis, Amazon QuickSight adds the analysis to these folders.</p>
+    pub fn get_folder_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.folder_arns
+    }
     /// Consumes the builder and constructs a [`CreateAnalysisInput`](crate::operation::create_analysis::CreateAnalysisInput).
     pub fn build(
         self,
@@ -276,6 +303,7 @@ impl CreateAnalysisInputBuilder {
             tags: self.tags,
             definition: self.definition,
             validation_strategy: self.validation_strategy,
+            folder_arns: self.folder_arns,
         })
     }
 }

@@ -196,6 +196,8 @@ mod get_server_details;
 
 mod get_server_strategies;
 
+mod list_analyzable_servers;
+
 mod list_application_components;
 
 mod list_collectors;

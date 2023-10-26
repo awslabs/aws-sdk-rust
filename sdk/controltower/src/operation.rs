@@ -10,5 +10,8 @@ pub mod enable_control;
 /// Types for the `GetControlOperation` operation.
 pub mod get_control_operation;
 
+/// Types for the `GetEnabledControl` operation.
+pub mod get_enabled_control;
+
 /// Types for the `ListEnabledControls` operation.
 pub mod list_enabled_controls;

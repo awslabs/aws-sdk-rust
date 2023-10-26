@@ -79,6 +79,16 @@ pub(crate) fn reflens_get_upgrade_history_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_domain_maintenances_output_next_token(
+    input: &crate::operation::list_domain_maintenances::ListDomainMaintenancesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_domains_for_package_output_next_token(
     input: &crate::operation::list_domains_for_package::ListDomainsForPackageOutput,
 ) -> ::std::option::Option<&::std::string::String> {

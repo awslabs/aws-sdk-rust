@@ -6,19 +6,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeprecateRule {
     /// <p>If the schedule has a count-based retention rule, this parameter specifies the number of oldest AMIs to deprecate. The count must be less than or equal to the schedule's retention count, and it can't be greater than 1000.</p>
-    pub count: i32,
+    pub count: ::std::option::Option<i32>,
     /// <p>If the schedule has an age-based retention rule, this parameter specifies the period after which to deprecate AMIs created by the schedule. The period must be less than or equal to the schedule's retention period, and it can't be greater than 10 years. This is equivalent to 120 months, 520 weeks, or 3650 days.</p>
-    pub interval: i32,
+    pub interval: ::std::option::Option<i32>,
     /// <p>The unit of time in which to measure the <b>Interval</b>.</p>
     pub interval_unit: ::std::option::Option<crate::types::RetentionIntervalUnitValues>,
 }
 impl DeprecateRule {
     /// <p>If the schedule has a count-based retention rule, this parameter specifies the number of oldest AMIs to deprecate. The count must be less than or equal to the schedule's retention count, and it can't be greater than 1000.</p>
-    pub fn count(&self) -> i32 {
+    pub fn count(&self) -> ::std::option::Option<i32> {
         self.count
     }
     /// <p>If the schedule has an age-based retention rule, this parameter specifies the period after which to deprecate AMIs created by the schedule. The period must be less than or equal to the schedule's retention period, and it can't be greater than 10 years. This is equivalent to 120 months, 520 weeks, or 3650 days.</p>
-    pub fn interval(&self) -> i32 {
+    pub fn interval(&self) -> ::std::option::Option<i32> {
         self.interval
     }
     /// <p>The unit of time in which to measure the <b>Interval</b>.</p>
@@ -87,8 +87,8 @@ impl DeprecateRuleBuilder {
     /// Consumes the builder and constructs a [`DeprecateRule`](crate::types::DeprecateRule).
     pub fn build(self) -> crate::types::DeprecateRule {
         crate::types::DeprecateRule {
-            count: self.count.unwrap_or_default(),
-            interval: self.interval.unwrap_or_default(),
+            count: self.count,
+            interval: self.interval,
             interval_unit: self.interval_unit,
         }
     }

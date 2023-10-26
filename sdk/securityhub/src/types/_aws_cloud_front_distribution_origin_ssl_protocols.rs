@@ -7,7 +7,7 @@ pub struct AwsCloudFrontDistributionOriginSslProtocols {
     /// <p>A list that contains allowed SSL/TLS protocols for this distribution. </p>
     pub items: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The number of SSL/TLS protocols that you want to allow CloudFront to use when establishing an HTTPS connection with this origin. </p>
-    pub quantity: i32,
+    pub quantity: ::std::option::Option<i32>,
 }
 impl AwsCloudFrontDistributionOriginSslProtocols {
     /// <p>A list that contains allowed SSL/TLS protocols for this distribution. </p>
@@ -15,7 +15,7 @@ impl AwsCloudFrontDistributionOriginSslProtocols {
         self.items.as_deref()
     }
     /// <p>The number of SSL/TLS protocols that you want to allow CloudFront to use when establishing an HTTPS connection with this origin. </p>
-    pub fn quantity(&self) -> i32 {
+    pub fn quantity(&self) -> ::std::option::Option<i32> {
         self.quantity
     }
 }
@@ -72,7 +72,7 @@ impl AwsCloudFrontDistributionOriginSslProtocolsBuilder {
     pub fn build(self) -> crate::types::AwsCloudFrontDistributionOriginSslProtocols {
         crate::types::AwsCloudFrontDistributionOriginSslProtocols {
             items: self.items,
-            quantity: self.quantity.unwrap_or_default(),
+            quantity: self.quantity,
         }
     }
 }

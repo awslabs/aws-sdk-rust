@@ -9,8 +9,8 @@ pub fn ser_dns_request_action(
     if let Some(var_2) = &input.protocol {
         object.key("Protocol").string(var_2.as_str());
     }
-    if input.blocked {
-        object.key("Blocked").boolean(input.blocked);
+    if let Some(var_3) = &input.blocked {
+        object.key("Blocked").boolean(*var_3);
     }
     Ok(())
 }

@@ -66,7 +66,7 @@ impl ::std::fmt::Debug for UpdateCalculatedAttributeDefinitionOutput {
         let mut formatter = f.debug_struct("UpdateCalculatedAttributeDefinitionOutput");
         formatter.field("calculated_attribute_name", &self.calculated_attribute_name);
         formatter.field("display_name", &self.display_name);
-        formatter.field("description", &self.description);
+        formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("created_at", &self.created_at);
         formatter.field("last_updated_at", &self.last_updated_at);
         formatter.field("statistic", &"*** Sensitive Data Redacted ***");
@@ -267,7 +267,7 @@ impl ::std::fmt::Debug for UpdateCalculatedAttributeDefinitionOutputBuilder {
         let mut formatter = f.debug_struct("UpdateCalculatedAttributeDefinitionOutputBuilder");
         formatter.field("calculated_attribute_name", &self.calculated_attribute_name);
         formatter.field("display_name", &self.display_name);
-        formatter.field("description", &self.description);
+        formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("created_at", &self.created_at);
         formatter.field("last_updated_at", &self.last_updated_at);
         formatter.field("statistic", &"*** Sensitive Data Redacted ***");

@@ -32,11 +32,11 @@ pub struct HyperParameterTrainingJobDefinition {
     /// <p>Specifies a limit to how long a model hyperparameter training job can run. It also specifies how long a managed spot training job has to complete. When the job reaches the time limit, SageMaker ends the training job. Use this API to cap model training costs.</p>
     pub stopping_condition: ::std::option::Option<crate::types::StoppingCondition>,
     /// <p>Isolates the training container. No inbound or outbound network calls can be made, except for calls between peers within a training cluster for distributed training. If network isolation is used for training jobs that are configured to use a VPC, SageMaker downloads and uploads customer data and model artifacts through the specified VPC, but the training container does not have network access.</p>
-    pub enable_network_isolation: bool,
+    pub enable_network_isolation: ::std::option::Option<bool>,
     /// <p>To encrypt all communications between ML compute instances in distributed training, choose <code>True</code>. Encryption provides greater security for distributed training, but training might take longer. How long it takes depends on the amount of communication between compute instances, especially if you use a deep learning algorithm in distributed training.</p>
-    pub enable_inter_container_traffic_encryption: bool,
+    pub enable_inter_container_traffic_encryption: ::std::option::Option<bool>,
     /// <p>A Boolean indicating whether managed spot training is enabled (<code>True</code>) or not (<code>False</code>).</p>
-    pub enable_managed_spot_training: bool,
+    pub enable_managed_spot_training: ::std::option::Option<bool>,
     /// <p>Contains information about the output location for managed spot training checkpoint data. </p>
     pub checkpoint_config: ::std::option::Option<crate::types::CheckpointConfig>,
     /// <p>The number of times to retry the job when the job fails due to an <code>InternalServerError</code>.</p>
@@ -99,15 +99,15 @@ impl HyperParameterTrainingJobDefinition {
         self.stopping_condition.as_ref()
     }
     /// <p>Isolates the training container. No inbound or outbound network calls can be made, except for calls between peers within a training cluster for distributed training. If network isolation is used for training jobs that are configured to use a VPC, SageMaker downloads and uploads customer data and model artifacts through the specified VPC, but the training container does not have network access.</p>
-    pub fn enable_network_isolation(&self) -> bool {
+    pub fn enable_network_isolation(&self) -> ::std::option::Option<bool> {
         self.enable_network_isolation
     }
     /// <p>To encrypt all communications between ML compute instances in distributed training, choose <code>True</code>. Encryption provides greater security for distributed training, but training might take longer. How long it takes depends on the amount of communication between compute instances, especially if you use a deep learning algorithm in distributed training.</p>
-    pub fn enable_inter_container_traffic_encryption(&self) -> bool {
+    pub fn enable_inter_container_traffic_encryption(&self) -> ::std::option::Option<bool> {
         self.enable_inter_container_traffic_encryption
     }
     /// <p>A Boolean indicating whether managed spot training is enabled (<code>True</code>) or not (<code>False</code>).</p>
-    pub fn enable_managed_spot_training(&self) -> bool {
+    pub fn enable_managed_spot_training(&self) -> ::std::option::Option<bool> {
         self.enable_managed_spot_training
     }
     /// <p>Contains information about the output location for managed spot training checkpoint data. </p>
@@ -478,9 +478,9 @@ impl HyperParameterTrainingJobDefinitionBuilder {
             output_data_config: self.output_data_config,
             resource_config: self.resource_config,
             stopping_condition: self.stopping_condition,
-            enable_network_isolation: self.enable_network_isolation.unwrap_or_default(),
-            enable_inter_container_traffic_encryption: self.enable_inter_container_traffic_encryption.unwrap_or_default(),
-            enable_managed_spot_training: self.enable_managed_spot_training.unwrap_or_default(),
+            enable_network_isolation: self.enable_network_isolation,
+            enable_inter_container_traffic_encryption: self.enable_inter_container_traffic_encryption,
+            enable_managed_spot_training: self.enable_managed_spot_training,
             checkpoint_config: self.checkpoint_config,
             retry_strategy: self.retry_strategy,
             hyper_parameter_tuning_resource_config: self.hyper_parameter_tuning_resource_config,

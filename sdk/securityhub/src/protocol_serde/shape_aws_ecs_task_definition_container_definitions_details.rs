@@ -12,285 +12,285 @@ pub fn ser_aws_ecs_task_definition_container_definitions_details(
         }
         array_2.finish();
     }
-    if input.cpu != 0 {
+    if let Some(var_4) = &input.cpu {
         object.key("Cpu").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.cpu).into()),
+            ::aws_smithy_types::Number::NegInt((*var_4).into()),
         );
     }
-    if let Some(var_4) = &input.depends_on {
-        let mut array_5 = object.key("DependsOn").start_array();
-        for item_6 in var_4 {
+    if let Some(var_5) = &input.depends_on {
+        let mut array_6 = object.key("DependsOn").start_array();
+        for item_7 in var_5 {
             {
                 #[allow(unused_mut)]
-                let mut object_7 = array_5.value().start_object();
-                crate::protocol_serde::shape_aws_ecs_task_definition_container_definitions_depends_on_details::ser_aws_ecs_task_definition_container_definitions_depends_on_details(&mut object_7, item_6)?;
-                object_7.finish();
+                let mut object_8 = array_6.value().start_object();
+                crate::protocol_serde::shape_aws_ecs_task_definition_container_definitions_depends_on_details::ser_aws_ecs_task_definition_container_definitions_depends_on_details(&mut object_8, item_7)?;
+                object_8.finish();
             }
         }
-        array_5.finish();
+        array_6.finish();
     }
-    if input.disable_networking {
-        object.key("DisableNetworking").boolean(input.disable_networking);
+    if let Some(var_9) = &input.disable_networking {
+        object.key("DisableNetworking").boolean(*var_9);
     }
-    if let Some(var_8) = &input.dns_search_domains {
-        let mut array_9 = object.key("DnsSearchDomains").start_array();
-        for item_10 in var_8 {
+    if let Some(var_10) = &input.dns_search_domains {
+        let mut array_11 = object.key("DnsSearchDomains").start_array();
+        for item_12 in var_10 {
             {
-                array_9.value().string(item_10.as_str());
+                array_11.value().string(item_12.as_str());
             }
         }
-        array_9.finish();
+        array_11.finish();
     }
-    if let Some(var_11) = &input.dns_servers {
-        let mut array_12 = object.key("DnsServers").start_array();
-        for item_13 in var_11 {
+    if let Some(var_13) = &input.dns_servers {
+        let mut array_14 = object.key("DnsServers").start_array();
+        for item_15 in var_13 {
             {
-                array_12.value().string(item_13.as_str());
+                array_14.value().string(item_15.as_str());
             }
         }
-        array_12.finish();
+        array_14.finish();
     }
-    if let Some(var_14) = &input.docker_labels {
+    if let Some(var_16) = &input.docker_labels {
         #[allow(unused_mut)]
-        let mut object_15 = object.key("DockerLabels").start_object();
-        for (key_16, value_17) in var_14 {
+        let mut object_17 = object.key("DockerLabels").start_object();
+        for (key_18, value_19) in var_16 {
             {
-                object_15.key(key_16.as_str()).string(value_17.as_str());
+                object_17.key(key_18.as_str()).string(value_19.as_str());
             }
         }
-        object_15.finish();
+        object_17.finish();
     }
-    if let Some(var_18) = &input.docker_security_options {
-        let mut array_19 = object.key("DockerSecurityOptions").start_array();
-        for item_20 in var_18 {
+    if let Some(var_20) = &input.docker_security_options {
+        let mut array_21 = object.key("DockerSecurityOptions").start_array();
+        for item_22 in var_20 {
             {
-                array_19.value().string(item_20.as_str());
+                array_21.value().string(item_22.as_str());
             }
         }
-        array_19.finish();
+        array_21.finish();
     }
-    if let Some(var_21) = &input.entry_point {
-        let mut array_22 = object.key("EntryPoint").start_array();
-        for item_23 in var_21 {
+    if let Some(var_23) = &input.entry_point {
+        let mut array_24 = object.key("EntryPoint").start_array();
+        for item_25 in var_23 {
             {
-                array_22.value().string(item_23.as_str());
+                array_24.value().string(item_25.as_str());
             }
         }
-        array_22.finish();
+        array_24.finish();
     }
-    if let Some(var_24) = &input.environment {
-        let mut array_25 = object.key("Environment").start_array();
-        for item_26 in var_24 {
+    if let Some(var_26) = &input.environment {
+        let mut array_27 = object.key("Environment").start_array();
+        for item_28 in var_26 {
             {
                 #[allow(unused_mut)]
-                let mut object_27 = array_25.value().start_object();
-                crate::protocol_serde::shape_aws_ecs_task_definition_container_definitions_environment_details::ser_aws_ecs_task_definition_container_definitions_environment_details(&mut object_27, item_26)?;
-                object_27.finish();
+                let mut object_29 = array_27.value().start_object();
+                crate::protocol_serde::shape_aws_ecs_task_definition_container_definitions_environment_details::ser_aws_ecs_task_definition_container_definitions_environment_details(&mut object_29, item_28)?;
+                object_29.finish();
             }
         }
-        array_25.finish();
+        array_27.finish();
     }
-    if let Some(var_28) = &input.environment_files {
-        let mut array_29 = object.key("EnvironmentFiles").start_array();
-        for item_30 in var_28 {
+    if let Some(var_30) = &input.environment_files {
+        let mut array_31 = object.key("EnvironmentFiles").start_array();
+        for item_32 in var_30 {
             {
                 #[allow(unused_mut)]
-                let mut object_31 = array_29.value().start_object();
-                crate::protocol_serde::shape_aws_ecs_task_definition_container_definitions_environment_files_details::ser_aws_ecs_task_definition_container_definitions_environment_files_details(&mut object_31, item_30)?;
-                object_31.finish();
+                let mut object_33 = array_31.value().start_object();
+                crate::protocol_serde::shape_aws_ecs_task_definition_container_definitions_environment_files_details::ser_aws_ecs_task_definition_container_definitions_environment_files_details(&mut object_33, item_32)?;
+                object_33.finish();
             }
         }
-        array_29.finish();
+        array_31.finish();
     }
-    if input.essential {
-        object.key("Essential").boolean(input.essential);
+    if let Some(var_34) = &input.essential {
+        object.key("Essential").boolean(*var_34);
     }
-    if let Some(var_32) = &input.extra_hosts {
-        let mut array_33 = object.key("ExtraHosts").start_array();
-        for item_34 in var_32 {
+    if let Some(var_35) = &input.extra_hosts {
+        let mut array_36 = object.key("ExtraHosts").start_array();
+        for item_37 in var_35 {
             {
                 #[allow(unused_mut)]
-                let mut object_35 = array_33.value().start_object();
-                crate::protocol_serde::shape_aws_ecs_task_definition_container_definitions_extra_hosts_details::ser_aws_ecs_task_definition_container_definitions_extra_hosts_details(&mut object_35, item_34)?;
-                object_35.finish();
+                let mut object_38 = array_36.value().start_object();
+                crate::protocol_serde::shape_aws_ecs_task_definition_container_definitions_extra_hosts_details::ser_aws_ecs_task_definition_container_definitions_extra_hosts_details(&mut object_38, item_37)?;
+                object_38.finish();
             }
         }
-        array_33.finish();
+        array_36.finish();
     }
-    if let Some(var_36) = &input.firelens_configuration {
+    if let Some(var_39) = &input.firelens_configuration {
         #[allow(unused_mut)]
-        let mut object_37 = object.key("FirelensConfiguration").start_object();
-        crate::protocol_serde::shape_aws_ecs_task_definition_container_definitions_firelens_configuration_details::ser_aws_ecs_task_definition_container_definitions_firelens_configuration_details(&mut object_37, var_36)?;
-        object_37.finish();
+        let mut object_40 = object.key("FirelensConfiguration").start_object();
+        crate::protocol_serde::shape_aws_ecs_task_definition_container_definitions_firelens_configuration_details::ser_aws_ecs_task_definition_container_definitions_firelens_configuration_details(&mut object_40, var_39)?;
+        object_40.finish();
     }
-    if let Some(var_38) = &input.health_check {
+    if let Some(var_41) = &input.health_check {
         #[allow(unused_mut)]
-        let mut object_39 = object.key("HealthCheck").start_object();
-        crate::protocol_serde::shape_aws_ecs_task_definition_container_definitions_health_check_details::ser_aws_ecs_task_definition_container_definitions_health_check_details(&mut object_39, var_38)?;
-        object_39.finish();
+        let mut object_42 = object.key("HealthCheck").start_object();
+        crate::protocol_serde::shape_aws_ecs_task_definition_container_definitions_health_check_details::ser_aws_ecs_task_definition_container_definitions_health_check_details(&mut object_42, var_41)?;
+        object_42.finish();
     }
-    if let Some(var_40) = &input.hostname {
-        object.key("Hostname").string(var_40.as_str());
+    if let Some(var_43) = &input.hostname {
+        object.key("Hostname").string(var_43.as_str());
     }
-    if let Some(var_41) = &input.image {
-        object.key("Image").string(var_41.as_str());
+    if let Some(var_44) = &input.image {
+        object.key("Image").string(var_44.as_str());
     }
-    if input.interactive {
-        object.key("Interactive").boolean(input.interactive);
+    if let Some(var_45) = &input.interactive {
+        object.key("Interactive").boolean(*var_45);
     }
-    if let Some(var_42) = &input.links {
-        let mut array_43 = object.key("Links").start_array();
-        for item_44 in var_42 {
+    if let Some(var_46) = &input.links {
+        let mut array_47 = object.key("Links").start_array();
+        for item_48 in var_46 {
             {
-                array_43.value().string(item_44.as_str());
+                array_47.value().string(item_48.as_str());
             }
         }
-        array_43.finish();
+        array_47.finish();
     }
-    if let Some(var_45) = &input.linux_parameters {
+    if let Some(var_49) = &input.linux_parameters {
         #[allow(unused_mut)]
-        let mut object_46 = object.key("LinuxParameters").start_object();
-        crate::protocol_serde::shape_aws_ecs_task_definition_container_definitions_linux_parameters_details::ser_aws_ecs_task_definition_container_definitions_linux_parameters_details(&mut object_46, var_45)?;
-        object_46.finish();
+        let mut object_50 = object.key("LinuxParameters").start_object();
+        crate::protocol_serde::shape_aws_ecs_task_definition_container_definitions_linux_parameters_details::ser_aws_ecs_task_definition_container_definitions_linux_parameters_details(&mut object_50, var_49)?;
+        object_50.finish();
     }
-    if let Some(var_47) = &input.log_configuration {
+    if let Some(var_51) = &input.log_configuration {
         #[allow(unused_mut)]
-        let mut object_48 = object.key("LogConfiguration").start_object();
-        crate::protocol_serde::shape_aws_ecs_task_definition_container_definitions_log_configuration_details::ser_aws_ecs_task_definition_container_definitions_log_configuration_details(&mut object_48, var_47)?;
-        object_48.finish();
+        let mut object_52 = object.key("LogConfiguration").start_object();
+        crate::protocol_serde::shape_aws_ecs_task_definition_container_definitions_log_configuration_details::ser_aws_ecs_task_definition_container_definitions_log_configuration_details(&mut object_52, var_51)?;
+        object_52.finish();
     }
-    if input.memory != 0 {
+    if let Some(var_53) = &input.memory {
         object.key("Memory").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.memory).into()),
+            ::aws_smithy_types::Number::NegInt((*var_53).into()),
         );
     }
-    if input.memory_reservation != 0 {
+    if let Some(var_54) = &input.memory_reservation {
         object.key("MemoryReservation").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.memory_reservation).into()),
+            ::aws_smithy_types::Number::NegInt((*var_54).into()),
         );
     }
-    if let Some(var_49) = &input.mount_points {
-        let mut array_50 = object.key("MountPoints").start_array();
-        for item_51 in var_49 {
+    if let Some(var_55) = &input.mount_points {
+        let mut array_56 = object.key("MountPoints").start_array();
+        for item_57 in var_55 {
             {
                 #[allow(unused_mut)]
-                let mut object_52 = array_50.value().start_object();
-                crate::protocol_serde::shape_aws_ecs_task_definition_container_definitions_mount_points_details::ser_aws_ecs_task_definition_container_definitions_mount_points_details(&mut object_52, item_51)?;
-                object_52.finish();
+                let mut object_58 = array_56.value().start_object();
+                crate::protocol_serde::shape_aws_ecs_task_definition_container_definitions_mount_points_details::ser_aws_ecs_task_definition_container_definitions_mount_points_details(&mut object_58, item_57)?;
+                object_58.finish();
             }
         }
-        array_50.finish();
+        array_56.finish();
     }
-    if let Some(var_53) = &input.name {
-        object.key("Name").string(var_53.as_str());
+    if let Some(var_59) = &input.name {
+        object.key("Name").string(var_59.as_str());
     }
-    if let Some(var_54) = &input.port_mappings {
-        let mut array_55 = object.key("PortMappings").start_array();
-        for item_56 in var_54 {
-            {
-                #[allow(unused_mut)]
-                let mut object_57 = array_55.value().start_object();
-                crate::protocol_serde::shape_aws_ecs_task_definition_container_definitions_port_mappings_details::ser_aws_ecs_task_definition_container_definitions_port_mappings_details(&mut object_57, item_56)?;
-                object_57.finish();
-            }
-        }
-        array_55.finish();
-    }
-    if input.privileged {
-        object.key("Privileged").boolean(input.privileged);
-    }
-    if input.pseudo_terminal {
-        object.key("PseudoTerminal").boolean(input.pseudo_terminal);
-    }
-    if input.readonly_root_filesystem {
-        object.key("ReadonlyRootFilesystem").boolean(input.readonly_root_filesystem);
-    }
-    if let Some(var_58) = &input.repository_credentials {
-        #[allow(unused_mut)]
-        let mut object_59 = object.key("RepositoryCredentials").start_object();
-        crate::protocol_serde::shape_aws_ecs_task_definition_container_definitions_repository_credentials_details::ser_aws_ecs_task_definition_container_definitions_repository_credentials_details(&mut object_59, var_58)?;
-        object_59.finish();
-    }
-    if let Some(var_60) = &input.resource_requirements {
-        let mut array_61 = object.key("ResourceRequirements").start_array();
+    if let Some(var_60) = &input.port_mappings {
+        let mut array_61 = object.key("PortMappings").start_array();
         for item_62 in var_60 {
             {
                 #[allow(unused_mut)]
                 let mut object_63 = array_61.value().start_object();
-                crate::protocol_serde::shape_aws_ecs_task_definition_container_definitions_resource_requirements_details::ser_aws_ecs_task_definition_container_definitions_resource_requirements_details(&mut object_63, item_62)?;
+                crate::protocol_serde::shape_aws_ecs_task_definition_container_definitions_port_mappings_details::ser_aws_ecs_task_definition_container_definitions_port_mappings_details(&mut object_63, item_62)?;
                 object_63.finish();
             }
         }
         array_61.finish();
     }
-    if let Some(var_64) = &input.secrets {
-        let mut array_65 = object.key("Secrets").start_array();
-        for item_66 in var_64 {
+    if let Some(var_64) = &input.privileged {
+        object.key("Privileged").boolean(*var_64);
+    }
+    if let Some(var_65) = &input.pseudo_terminal {
+        object.key("PseudoTerminal").boolean(*var_65);
+    }
+    if let Some(var_66) = &input.readonly_root_filesystem {
+        object.key("ReadonlyRootFilesystem").boolean(*var_66);
+    }
+    if let Some(var_67) = &input.repository_credentials {
+        #[allow(unused_mut)]
+        let mut object_68 = object.key("RepositoryCredentials").start_object();
+        crate::protocol_serde::shape_aws_ecs_task_definition_container_definitions_repository_credentials_details::ser_aws_ecs_task_definition_container_definitions_repository_credentials_details(&mut object_68, var_67)?;
+        object_68.finish();
+    }
+    if let Some(var_69) = &input.resource_requirements {
+        let mut array_70 = object.key("ResourceRequirements").start_array();
+        for item_71 in var_69 {
             {
                 #[allow(unused_mut)]
-                let mut object_67 = array_65.value().start_object();
-                crate::protocol_serde::shape_aws_ecs_task_definition_container_definitions_secrets_details::ser_aws_ecs_task_definition_container_definitions_secrets_details(&mut object_67, item_66)?;
-                object_67.finish();
+                let mut object_72 = array_70.value().start_object();
+                crate::protocol_serde::shape_aws_ecs_task_definition_container_definitions_resource_requirements_details::ser_aws_ecs_task_definition_container_definitions_resource_requirements_details(&mut object_72, item_71)?;
+                object_72.finish();
             }
         }
-        array_65.finish();
+        array_70.finish();
     }
-    if input.start_timeout != 0 {
+    if let Some(var_73) = &input.secrets {
+        let mut array_74 = object.key("Secrets").start_array();
+        for item_75 in var_73 {
+            {
+                #[allow(unused_mut)]
+                let mut object_76 = array_74.value().start_object();
+                crate::protocol_serde::shape_aws_ecs_task_definition_container_definitions_secrets_details::ser_aws_ecs_task_definition_container_definitions_secrets_details(&mut object_76, item_75)?;
+                object_76.finish();
+            }
+        }
+        array_74.finish();
+    }
+    if let Some(var_77) = &input.start_timeout {
         object.key("StartTimeout").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.start_timeout).into()),
+            ::aws_smithy_types::Number::NegInt((*var_77).into()),
         );
     }
-    if input.stop_timeout != 0 {
+    if let Some(var_78) = &input.stop_timeout {
         object.key("StopTimeout").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.stop_timeout).into()),
+            ::aws_smithy_types::Number::NegInt((*var_78).into()),
         );
     }
-    if let Some(var_68) = &input.system_controls {
-        let mut array_69 = object.key("SystemControls").start_array();
-        for item_70 in var_68 {
+    if let Some(var_79) = &input.system_controls {
+        let mut array_80 = object.key("SystemControls").start_array();
+        for item_81 in var_79 {
             {
                 #[allow(unused_mut)]
-                let mut object_71 = array_69.value().start_object();
-                crate::protocol_serde::shape_aws_ecs_task_definition_container_definitions_system_controls_details::ser_aws_ecs_task_definition_container_definitions_system_controls_details(&mut object_71, item_70)?;
-                object_71.finish();
+                let mut object_82 = array_80.value().start_object();
+                crate::protocol_serde::shape_aws_ecs_task_definition_container_definitions_system_controls_details::ser_aws_ecs_task_definition_container_definitions_system_controls_details(&mut object_82, item_81)?;
+                object_82.finish();
             }
         }
-        array_69.finish();
+        array_80.finish();
     }
-    if let Some(var_72) = &input.ulimits {
-        let mut array_73 = object.key("Ulimits").start_array();
-        for item_74 in var_72 {
+    if let Some(var_83) = &input.ulimits {
+        let mut array_84 = object.key("Ulimits").start_array();
+        for item_85 in var_83 {
             {
                 #[allow(unused_mut)]
-                let mut object_75 = array_73.value().start_object();
-                crate::protocol_serde::shape_aws_ecs_task_definition_container_definitions_ulimits_details::ser_aws_ecs_task_definition_container_definitions_ulimits_details(&mut object_75, item_74)?;
-                object_75.finish();
+                let mut object_86 = array_84.value().start_object();
+                crate::protocol_serde::shape_aws_ecs_task_definition_container_definitions_ulimits_details::ser_aws_ecs_task_definition_container_definitions_ulimits_details(&mut object_86, item_85)?;
+                object_86.finish();
             }
         }
-        array_73.finish();
+        array_84.finish();
     }
-    if let Some(var_76) = &input.user {
-        object.key("User").string(var_76.as_str());
+    if let Some(var_87) = &input.user {
+        object.key("User").string(var_87.as_str());
     }
-    if let Some(var_77) = &input.volumes_from {
-        let mut array_78 = object.key("VolumesFrom").start_array();
-        for item_79 in var_77 {
+    if let Some(var_88) = &input.volumes_from {
+        let mut array_89 = object.key("VolumesFrom").start_array();
+        for item_90 in var_88 {
             {
                 #[allow(unused_mut)]
-                let mut object_80 = array_78.value().start_object();
-                crate::protocol_serde::shape_aws_ecs_task_definition_container_definitions_volumes_from_details::ser_aws_ecs_task_definition_container_definitions_volumes_from_details(&mut object_80, item_79)?;
-                object_80.finish();
+                let mut object_91 = array_89.value().start_object();
+                crate::protocol_serde::shape_aws_ecs_task_definition_container_definitions_volumes_from_details::ser_aws_ecs_task_definition_container_definitions_volumes_from_details(&mut object_91, item_90)?;
+                object_91.finish();
             }
         }
-        array_78.finish();
+        array_89.finish();
     }
-    if let Some(var_81) = &input.working_directory {
-        object.key("WorkingDirectory").string(var_81.as_str());
+    if let Some(var_92) = &input.working_directory {
+        object.key("WorkingDirectory").string(var_92.as_str());
     }
     Ok(())
 }

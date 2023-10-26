@@ -3,71 +3,71 @@ pub fn ser_aws_ec2_vpc_endpoint_service_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsEc2VpcEndpointServiceDetails,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if input.acceptance_required {
-        object.key("AcceptanceRequired").boolean(input.acceptance_required);
+    if let Some(var_1) = &input.acceptance_required {
+        object.key("AcceptanceRequired").boolean(*var_1);
     }
-    if let Some(var_1) = &input.availability_zones {
-        let mut array_2 = object.key("AvailabilityZones").start_array();
-        for item_3 in var_1 {
+    if let Some(var_2) = &input.availability_zones {
+        let mut array_3 = object.key("AvailabilityZones").start_array();
+        for item_4 in var_2 {
             {
-                array_2.value().string(item_3.as_str());
+                array_3.value().string(item_4.as_str());
             }
         }
-        array_2.finish();
+        array_3.finish();
     }
-    if let Some(var_4) = &input.base_endpoint_dns_names {
-        let mut array_5 = object.key("BaseEndpointDnsNames").start_array();
-        for item_6 in var_4 {
+    if let Some(var_5) = &input.base_endpoint_dns_names {
+        let mut array_6 = object.key("BaseEndpointDnsNames").start_array();
+        for item_7 in var_5 {
             {
-                array_5.value().string(item_6.as_str());
+                array_6.value().string(item_7.as_str());
             }
         }
-        array_5.finish();
+        array_6.finish();
     }
-    if input.manages_vpc_endpoints {
-        object.key("ManagesVpcEndpoints").boolean(input.manages_vpc_endpoints);
+    if let Some(var_8) = &input.manages_vpc_endpoints {
+        object.key("ManagesVpcEndpoints").boolean(*var_8);
     }
-    if let Some(var_7) = &input.gateway_load_balancer_arns {
-        let mut array_8 = object.key("GatewayLoadBalancerArns").start_array();
-        for item_9 in var_7 {
+    if let Some(var_9) = &input.gateway_load_balancer_arns {
+        let mut array_10 = object.key("GatewayLoadBalancerArns").start_array();
+        for item_11 in var_9 {
             {
-                array_8.value().string(item_9.as_str());
+                array_10.value().string(item_11.as_str());
             }
         }
-        array_8.finish();
+        array_10.finish();
     }
-    if let Some(var_10) = &input.network_load_balancer_arns {
-        let mut array_11 = object.key("NetworkLoadBalancerArns").start_array();
-        for item_12 in var_10 {
+    if let Some(var_12) = &input.network_load_balancer_arns {
+        let mut array_13 = object.key("NetworkLoadBalancerArns").start_array();
+        for item_14 in var_12 {
             {
-                array_11.value().string(item_12.as_str());
+                array_13.value().string(item_14.as_str());
             }
         }
-        array_11.finish();
+        array_13.finish();
     }
-    if let Some(var_13) = &input.private_dns_name {
-        object.key("PrivateDnsName").string(var_13.as_str());
+    if let Some(var_15) = &input.private_dns_name {
+        object.key("PrivateDnsName").string(var_15.as_str());
     }
-    if let Some(var_14) = &input.service_id {
-        object.key("ServiceId").string(var_14.as_str());
+    if let Some(var_16) = &input.service_id {
+        object.key("ServiceId").string(var_16.as_str());
     }
-    if let Some(var_15) = &input.service_name {
-        object.key("ServiceName").string(var_15.as_str());
+    if let Some(var_17) = &input.service_name {
+        object.key("ServiceName").string(var_17.as_str());
     }
-    if let Some(var_16) = &input.service_state {
-        object.key("ServiceState").string(var_16.as_str());
+    if let Some(var_18) = &input.service_state {
+        object.key("ServiceState").string(var_18.as_str());
     }
-    if let Some(var_17) = &input.service_type {
-        let mut array_18 = object.key("ServiceType").start_array();
-        for item_19 in var_17 {
+    if let Some(var_19) = &input.service_type {
+        let mut array_20 = object.key("ServiceType").start_array();
+        for item_21 in var_19 {
             {
                 #[allow(unused_mut)]
-                let mut object_20 = array_18.value().start_object();
-                crate::protocol_serde::shape_aws_ec2_vpc_endpoint_service_service_type_details::ser_aws_ec2_vpc_endpoint_service_service_type_details(&mut object_20, item_19)?;
-                object_20.finish();
+                let mut object_22 = array_20.value().start_object();
+                crate::protocol_serde::shape_aws_ec2_vpc_endpoint_service_service_type_details::ser_aws_ec2_vpc_endpoint_service_service_type_details(&mut object_22, item_21)?;
+                object_22.finish();
             }
         }
-        array_18.finish();
+        array_20.finish();
     }
     Ok(())
 }

@@ -7,7 +7,7 @@ pub struct FreeTrialFeatureConfigurationResult {
     /// <p>The name of the feature for which the free trial is configured.</p>
     pub name: ::std::option::Option<crate::types::FreeTrialFeatureResult>,
     /// <p>The number of the remaining free trial days for the feature.</p>
-    pub free_trial_days_remaining: i32,
+    pub free_trial_days_remaining: ::std::option::Option<i32>,
 }
 impl FreeTrialFeatureConfigurationResult {
     /// <p>The name of the feature for which the free trial is configured.</p>
@@ -15,7 +15,7 @@ impl FreeTrialFeatureConfigurationResult {
         self.name.as_ref()
     }
     /// <p>The number of the remaining free trial days for the feature.</p>
-    pub fn free_trial_days_remaining(&self) -> i32 {
+    pub fn free_trial_days_remaining(&self) -> ::std::option::Option<i32> {
         self.free_trial_days_remaining
     }
 }
@@ -66,7 +66,7 @@ impl FreeTrialFeatureConfigurationResultBuilder {
     pub fn build(self) -> crate::types::FreeTrialFeatureConfigurationResult {
         crate::types::FreeTrialFeatureConfigurationResult {
             name: self.name,
-            free_trial_days_remaining: self.free_trial_days_remaining.unwrap_or_default(),
+            free_trial_days_remaining: self.free_trial_days_remaining,
         }
     }
 }

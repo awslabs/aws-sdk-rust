@@ -1191,4 +1191,18 @@ impl RestoreDBInstanceToPointInTimeFluentBuilder {
     pub fn get_allocated_storage(&self) -> &::std::option::Option<i32> {
         self.inner.get_allocated_storage()
     }
+    /// <p>Specifies whether to enable a dedicated log volume (DLV) for the DB instance.</p>
+    pub fn dedicated_log_volume(mut self, input: bool) -> Self {
+        self.inner = self.inner.dedicated_log_volume(input);
+        self
+    }
+    /// <p>Specifies whether to enable a dedicated log volume (DLV) for the DB instance.</p>
+    pub fn set_dedicated_log_volume(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_dedicated_log_volume(input);
+        self
+    }
+    /// <p>Specifies whether to enable a dedicated log volume (DLV) for the DB instance.</p>
+    pub fn get_dedicated_log_volume(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dedicated_log_volume()
+    }
 }

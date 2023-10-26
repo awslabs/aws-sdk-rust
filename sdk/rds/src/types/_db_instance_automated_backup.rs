@@ -15,7 +15,7 @@ pub struct DbInstanceAutomatedBackup {
     /// <p>The earliest and latest time a DB instance can be restored to.</p>
     pub restore_window: ::std::option::Option<crate::types::RestoreWindow>,
     /// <p>The allocated storage size for the the automated backup in gibibytes (GiB).</p>
-    pub allocated_storage: i32,
+    pub allocated_storage: ::std::option::Option<i32>,
     /// <p>A list of status information for an automated backup:</p>
     /// <ul>
     /// <li> <p> <code>active</code> - Automated backups for current instances.</p> </li>
@@ -26,7 +26,7 @@ pub struct DbInstanceAutomatedBackup {
     /// <p>The port number that the automated backup used for connections.</p>
     /// <p>Default: Inherits from the source DB instance</p>
     /// <p>Valid Values: <code>1150-65535</code> </p>
-    pub port: i32,
+    pub port: ::std::option::Option<i32>,
     /// <p>The Availability Zone that the automated backup was created in. For information on Amazon Web Services Regions and Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions and Availability Zones</a>.</p>
     pub availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>The VPC ID associated with the DB instance.</p>
@@ -48,7 +48,7 @@ pub struct DbInstanceAutomatedBackup {
     /// <p>The ARN from the key store with which the automated backup is associated for TDE encryption.</p>
     pub tde_credential_arn: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the automated backup is encrypted.</p>
-    pub encrypted: bool,
+    pub encrypted: ::std::option::Option<bool>,
     /// <p>The storage type associated with the automated backup.</p>
     pub storage_type: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services KMS key ID for an automated backup.</p>
@@ -57,7 +57,7 @@ pub struct DbInstanceAutomatedBackup {
     /// <p>The time zone of the automated backup. In most cases, the <code>Timezone</code> element is empty. <code>Timezone</code> content appears only for Microsoft SQL Server DB instances that were created with a time zone specified.</p>
     pub timezone: ::std::option::Option<::std::string::String>,
     /// <p>True if mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts is enabled, and otherwise false.</p>
-    pub iam_database_authentication_enabled: bool,
+    pub iam_database_authentication_enabled: ::std::option::Option<bool>,
     /// <p>The retention period for the automated backups.</p>
     pub backup_retention_period: ::std::option::Option<i32>,
     /// <p>The Amazon Resource Name (ARN) for the replicated automated backups.</p>
@@ -70,6 +70,8 @@ pub struct DbInstanceAutomatedBackup {
     pub storage_throughput: ::std::option::Option<i32>,
     /// <p>The Amazon Resource Name (ARN) of the recovery point in Amazon Web Services Backup.</p>
     pub aws_backup_recovery_point_arn: ::std::option::Option<::std::string::String>,
+    /// <p>Indicates whether the DB instance has a dedicated log volume (DLV) enabled.</p>
+    pub dedicated_log_volume: ::std::option::Option<bool>,
 }
 impl DbInstanceAutomatedBackup {
     /// <p>The Amazon Resource Name (ARN) for the automated backups.</p>
@@ -93,7 +95,7 @@ impl DbInstanceAutomatedBackup {
         self.restore_window.as_ref()
     }
     /// <p>The allocated storage size for the the automated backup in gibibytes (GiB).</p>
-    pub fn allocated_storage(&self) -> i32 {
+    pub fn allocated_storage(&self) -> ::std::option::Option<i32> {
         self.allocated_storage
     }
     /// <p>A list of status information for an automated backup:</p>
@@ -108,7 +110,7 @@ impl DbInstanceAutomatedBackup {
     /// <p>The port number that the automated backup used for connections.</p>
     /// <p>Default: Inherits from the source DB instance</p>
     /// <p>Valid Values: <code>1150-65535</code> </p>
-    pub fn port(&self) -> i32 {
+    pub fn port(&self) -> ::std::option::Option<i32> {
         self.port
     }
     /// <p>The Availability Zone that the automated backup was created in. For information on Amazon Web Services Regions and Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions and Availability Zones</a>.</p>
@@ -152,7 +154,7 @@ impl DbInstanceAutomatedBackup {
         self.tde_credential_arn.as_deref()
     }
     /// <p>Indicates whether the automated backup is encrypted.</p>
-    pub fn encrypted(&self) -> bool {
+    pub fn encrypted(&self) -> ::std::option::Option<bool> {
         self.encrypted
     }
     /// <p>The storage type associated with the automated backup.</p>
@@ -169,7 +171,7 @@ impl DbInstanceAutomatedBackup {
         self.timezone.as_deref()
     }
     /// <p>True if mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts is enabled, and otherwise false.</p>
-    pub fn iam_database_authentication_enabled(&self) -> bool {
+    pub fn iam_database_authentication_enabled(&self) -> ::std::option::Option<bool> {
         self.iam_database_authentication_enabled
     }
     /// <p>The retention period for the automated backups.</p>
@@ -195,6 +197,10 @@ impl DbInstanceAutomatedBackup {
     /// <p>The Amazon Resource Name (ARN) of the recovery point in Amazon Web Services Backup.</p>
     pub fn aws_backup_recovery_point_arn(&self) -> ::std::option::Option<&str> {
         self.aws_backup_recovery_point_arn.as_deref()
+    }
+    /// <p>Indicates whether the DB instance has a dedicated log volume (DLV) enabled.</p>
+    pub fn dedicated_log_volume(&self) -> ::std::option::Option<bool> {
+        self.dedicated_log_volume
     }
 }
 impl DbInstanceAutomatedBackup {
@@ -238,6 +244,7 @@ pub struct DbInstanceAutomatedBackupBuilder {
     pub(crate) backup_target: ::std::option::Option<::std::string::String>,
     pub(crate) storage_throughput: ::std::option::Option<i32>,
     pub(crate) aws_backup_recovery_point_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) dedicated_log_volume: ::std::option::Option<bool>,
 }
 impl DbInstanceAutomatedBackupBuilder {
     /// <p>The Amazon Resource Name (ARN) for the automated backups.</p>
@@ -681,6 +688,20 @@ impl DbInstanceAutomatedBackupBuilder {
     pub fn get_aws_backup_recovery_point_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.aws_backup_recovery_point_arn
     }
+    /// <p>Indicates whether the DB instance has a dedicated log volume (DLV) enabled.</p>
+    pub fn dedicated_log_volume(mut self, input: bool) -> Self {
+        self.dedicated_log_volume = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether the DB instance has a dedicated log volume (DLV) enabled.</p>
+    pub fn set_dedicated_log_volume(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.dedicated_log_volume = input;
+        self
+    }
+    /// <p>Indicates whether the DB instance has a dedicated log volume (DLV) enabled.</p>
+    pub fn get_dedicated_log_volume(&self) -> &::std::option::Option<bool> {
+        &self.dedicated_log_volume
+    }
     /// Consumes the builder and constructs a [`DbInstanceAutomatedBackup`](crate::types::DbInstanceAutomatedBackup).
     pub fn build(self) -> crate::types::DbInstanceAutomatedBackup {
         crate::types::DbInstanceAutomatedBackup {
@@ -689,9 +710,9 @@ impl DbInstanceAutomatedBackupBuilder {
             region: self.region,
             db_instance_identifier: self.db_instance_identifier,
             restore_window: self.restore_window,
-            allocated_storage: self.allocated_storage.unwrap_or_default(),
+            allocated_storage: self.allocated_storage,
             status: self.status,
-            port: self.port.unwrap_or_default(),
+            port: self.port,
             availability_zone: self.availability_zone,
             vpc_id: self.vpc_id,
             instance_create_time: self.instance_create_time,
@@ -702,17 +723,18 @@ impl DbInstanceAutomatedBackupBuilder {
             iops: self.iops,
             option_group_name: self.option_group_name,
             tde_credential_arn: self.tde_credential_arn,
-            encrypted: self.encrypted.unwrap_or_default(),
+            encrypted: self.encrypted,
             storage_type: self.storage_type,
             kms_key_id: self.kms_key_id,
             timezone: self.timezone,
-            iam_database_authentication_enabled: self.iam_database_authentication_enabled.unwrap_or_default(),
+            iam_database_authentication_enabled: self.iam_database_authentication_enabled,
             backup_retention_period: self.backup_retention_period,
             db_instance_automated_backups_arn: self.db_instance_automated_backups_arn,
             db_instance_automated_backups_replications: self.db_instance_automated_backups_replications,
             backup_target: self.backup_target,
             storage_throughput: self.storage_throughput,
             aws_backup_recovery_point_arn: self.aws_backup_recovery_point_arn,
+            dedicated_log_volume: self.dedicated_log_volume,
         }
     }
 }

@@ -3,11 +3,11 @@ pub fn ser_aws_ecs_task_definition_container_definitions_volumes_from_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsEcsTaskDefinitionContainerDefinitionsVolumesFromDetails,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if input.read_only {
-        object.key("ReadOnly").boolean(input.read_only);
+    if let Some(var_1) = &input.read_only {
+        object.key("ReadOnly").boolean(*var_1);
     }
-    if let Some(var_1) = &input.source_container {
-        object.key("SourceContainer").string(var_1.as_str());
+    if let Some(var_2) = &input.source_container {
+        object.key("SourceContainer").string(var_2.as_str());
     }
     Ok(())
 }

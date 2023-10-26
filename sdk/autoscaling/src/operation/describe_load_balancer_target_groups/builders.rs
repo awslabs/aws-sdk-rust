@@ -118,6 +118,12 @@ impl DescribeLoadBalancerTargetGroupsFluentBuilder {
         self.config_override = config_override;
         self
     }
+    /// Create a paginator for this request
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::describe_load_balancer_target_groups::paginator::DescribeLoadBalancerTargetGroupsPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(self) -> crate::operation::describe_load_balancer_target_groups::paginator::DescribeLoadBalancerTargetGroupsPaginator {
+        crate::operation::describe_load_balancer_target_groups::paginator::DescribeLoadBalancerTargetGroupsPaginator::new(self.handle, self.inner)
+    }
     /// <p>The name of the Auto Scaling group.</p>
     pub fn auto_scaling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.auto_scaling_group_name(input.into());

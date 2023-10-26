@@ -15,10 +15,10 @@ pub fn ser_custom_data_identifiers_result(
         }
         array_2.finish();
     }
-    if input.total_count != 0 {
+    if let Some(var_5) = &input.total_count {
         object.key("TotalCount").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.total_count).into()),
+            ::aws_smithy_types::Number::NegInt((*var_5).into()),
         );
     }
     Ok(())

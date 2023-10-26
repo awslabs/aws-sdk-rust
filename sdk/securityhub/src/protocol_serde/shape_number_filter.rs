@@ -3,22 +3,22 @@ pub fn ser_number_filter(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::NumberFilter,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if input.gte != 0.0 {
+    if let Some(var_1) = &input.gte {
         object.key("Gte").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::Float((input.gte).into()),
+            ::aws_smithy_types::Number::Float((*var_1).into()),
         );
     }
-    if input.lte != 0.0 {
+    if let Some(var_2) = &input.lte {
         object.key("Lte").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::Float((input.lte).into()),
+            ::aws_smithy_types::Number::Float((*var_2).into()),
         );
     }
-    if input.eq != 0.0 {
+    if let Some(var_3) = &input.eq {
         object.key("Eq").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::Float((input.eq).into()),
+            ::aws_smithy_types::Number::Float((*var_3).into()),
         );
     }
     Ok(())

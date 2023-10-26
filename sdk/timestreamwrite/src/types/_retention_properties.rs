@@ -5,17 +5,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RetentionProperties {
     /// <p>The duration for which data must be stored in the memory store. </p>
-    pub memory_store_retention_period_in_hours: i64,
+    pub memory_store_retention_period_in_hours: ::std::option::Option<i64>,
     /// <p>The duration for which data must be stored in the magnetic store. </p>
-    pub magnetic_store_retention_period_in_days: i64,
+    pub magnetic_store_retention_period_in_days: ::std::option::Option<i64>,
 }
 impl RetentionProperties {
     /// <p>The duration for which data must be stored in the memory store. </p>
-    pub fn memory_store_retention_period_in_hours(&self) -> i64 {
+    pub fn memory_store_retention_period_in_hours(&self) -> ::std::option::Option<i64> {
         self.memory_store_retention_period_in_hours
     }
     /// <p>The duration for which data must be stored in the magnetic store. </p>
-    pub fn magnetic_store_retention_period_in_days(&self) -> i64 {
+    pub fn magnetic_store_retention_period_in_days(&self) -> ::std::option::Option<i64> {
         self.magnetic_store_retention_period_in_days
     }
 }
@@ -65,8 +65,8 @@ impl RetentionPropertiesBuilder {
     /// Consumes the builder and constructs a [`RetentionProperties`](crate::types::RetentionProperties).
     pub fn build(self) -> crate::types::RetentionProperties {
         crate::types::RetentionProperties {
-            memory_store_retention_period_in_hours: self.memory_store_retention_period_in_hours.unwrap_or_default(),
-            magnetic_store_retention_period_in_days: self.magnetic_store_retention_period_in_days.unwrap_or_default(),
+            memory_store_retention_period_in_hours: self.memory_store_retention_period_in_hours,
+            magnetic_store_retention_period_in_days: self.magnetic_store_retention_period_in_days,
         }
     }
 }

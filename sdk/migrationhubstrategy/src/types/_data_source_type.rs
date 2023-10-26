@@ -15,6 +15,7 @@
 ///     DataSourceType::Ads => { /* ... */ },
 ///     DataSourceType::Import => { /* ... */ },
 ///     DataSourceType::Mpa => { /* ... */ },
+///     DataSourceType::MhsrCollector => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -48,6 +49,8 @@ pub enum DataSourceType {
     Import,
     #[allow(missing_docs)] // documentation missing in model
     Mpa,
+    #[allow(missing_docs)] // documentation missing in model
+    MhsrCollector,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
@@ -57,6 +60,7 @@ impl ::std::convert::From<&str> for DataSourceType {
             "ApplicationDiscoveryService" => DataSourceType::Ads,
             "Import" => DataSourceType::Import,
             "MPA" => DataSourceType::Mpa,
+            "StrategyRecommendationsApplicationDataCollector" => DataSourceType::MhsrCollector,
             other => DataSourceType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -75,12 +79,18 @@ impl DataSourceType {
             DataSourceType::Ads => "ApplicationDiscoveryService",
             DataSourceType::Import => "Import",
             DataSourceType::Mpa => "MPA",
+            DataSourceType::MhsrCollector => "StrategyRecommendationsApplicationDataCollector",
             DataSourceType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ApplicationDiscoveryService", "Import", "MPA"]
+        &[
+            "ApplicationDiscoveryService",
+            "Import",
+            "MPA",
+            "StrategyRecommendationsApplicationDataCollector",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for DataSourceType {

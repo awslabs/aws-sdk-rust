@@ -15,7 +15,7 @@ pub struct KubernetesApiCallAction {
     /// <p>Contains information about the remote IP address of the connection.</p>
     pub remote_ip_details: ::std::option::Option<crate::types::RemoteIpDetails>,
     /// <p>The resulting HTTP response code of the Kubernetes API call action.</p>
-    pub status_code: i32,
+    pub status_code: ::std::option::Option<i32>,
     /// <p>Parameters related to the Kubernetes API call action.</p>
     pub parameters: ::std::option::Option<::std::string::String>,
 }
@@ -41,7 +41,7 @@ impl KubernetesApiCallAction {
         self.remote_ip_details.as_ref()
     }
     /// <p>The resulting HTTP response code of the Kubernetes API call action.</p>
-    pub fn status_code(&self) -> i32 {
+    pub fn status_code(&self) -> ::std::option::Option<i32> {
         self.status_code
     }
     /// <p>Parameters related to the Kubernetes API call action.</p>
@@ -181,7 +181,7 @@ impl KubernetesApiCallActionBuilder {
             source_ips: self.source_ips,
             user_agent: self.user_agent,
             remote_ip_details: self.remote_ip_details,
-            status_code: self.status_code.unwrap_or_default(),
+            status_code: self.status_code,
             parameters: self.parameters,
         }
     }

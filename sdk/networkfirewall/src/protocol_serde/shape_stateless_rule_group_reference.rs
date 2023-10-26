@@ -6,10 +6,10 @@ pub fn ser_stateless_rule_group_reference(
     if let Some(var_1) = &input.resource_arn {
         object.key("ResourceArn").string(var_1.as_str());
     }
-    {
+    if let Some(var_2) = &input.priority {
         object.key("Priority").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.priority).into()),
+            ::aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
     Ok(())

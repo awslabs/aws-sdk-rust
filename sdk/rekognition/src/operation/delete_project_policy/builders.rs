@@ -22,6 +22,9 @@ impl DeleteProjectPolicyInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteProjectPolicy`.
 ///
+/// <note>
+/// <p>This operation applies only to Amazon Rekognition Custom Labels.</p>
+/// </note>
 /// <p>Deletes an existing project policy.</p>
 /// <p>To get a list of project policies attached to a project, call <code>ListProjectPolicies</code>. To attach a project policy to a project, call <code>PutProjectPolicy</code>.</p>
 /// <p>This operation requires permissions to perform the <code>rekognition:DeleteProjectPolicy</code> action.</p>

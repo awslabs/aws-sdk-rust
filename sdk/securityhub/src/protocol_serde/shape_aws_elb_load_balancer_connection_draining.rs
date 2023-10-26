@@ -3,13 +3,13 @@ pub fn ser_aws_elb_load_balancer_connection_draining(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsElbLoadBalancerConnectionDraining,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if input.enabled {
-        object.key("Enabled").boolean(input.enabled);
+    if let Some(var_1) = &input.enabled {
+        object.key("Enabled").boolean(*var_1);
     }
-    if input.timeout != 0 {
+    if let Some(var_2) = &input.timeout {
         object.key("Timeout").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.timeout).into()),
+            ::aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
     Ok(())

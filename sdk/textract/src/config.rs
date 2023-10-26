@@ -39,6 +39,15 @@ impl Config {
             runtime_plugins: self.runtime_plugins.clone(),
         }
     }
+    /// Returns a copy of the idempotency token provider.
+    /// If a random token provider was configured,
+    /// a newly-randomized token provider will be returned.
+    pub fn idempotency_token_provider(&self) -> crate::idempotency_token::IdempotencyTokenProvider {
+        self.config
+            .load::<crate::idempotency_token::IdempotencyTokenProvider>()
+            .expect("the idempotency provider should be set")
+            .clone()
+    }
     /// Return the [`SharedHttpConnector`](::aws_smithy_runtime_api::client::connectors::SharedHttpConnector) to use when making requests, if any.
     pub fn http_connector(&self) -> Option<::aws_smithy_runtime_api::client::connectors::SharedHttpConnector> {
         self.runtime_components.http_connector()
@@ -132,6 +141,22 @@ impl Builder {
     /// Constructs a config builder.
     pub fn new() -> Self {
         Self::default()
+    }
+    /// Sets the idempotency token provider to use for service calls that require tokens.
+    pub fn idempotency_token_provider(
+        mut self,
+        idempotency_token_provider: impl ::std::convert::Into<crate::idempotency_token::IdempotencyTokenProvider>,
+    ) -> Self {
+        self.set_idempotency_token_provider(::std::option::Option::Some(idempotency_token_provider.into()));
+        self
+    }
+    /// Sets the idempotency token provider to use for service calls that require tokens.
+    pub fn set_idempotency_token_provider(
+        &mut self,
+        idempotency_token_provider: ::std::option::Option<crate::idempotency_token::IdempotencyTokenProvider>,
+    ) -> &mut Self {
+        self.config.store_or_unset(idempotency_token_provider);
+        self
     }
     /// Sets the HTTP connector to use when making requests.
     ///
@@ -671,6 +696,7 @@ impl Builder {
     #[allow(unused_mut)]
     /// Apply test defaults to the builder
     pub fn set_test_defaults(&mut self) -> &mut Self {
+        self.set_idempotency_token_provider(Some("00000000-0000-4000-8000-000000000000".into()));
         self.set_time_source(::std::option::Option::Some(::aws_smithy_async::time::SharedTimeSource::new(
             ::aws_smithy_async::time::StaticTimeSource::new(::std::time::UNIX_EPOCH + ::std::time::Duration::from_secs(1234567890)),
         )));
@@ -691,6 +717,9 @@ impl Builder {
     pub fn build(mut self) -> Config {
         let mut layer = self.config;
         let mut resolver = ::aws_smithy_runtime::client::config_override::Resolver::initial(&mut layer, &mut self.runtime_components);
+        if !resolver.is_set::<crate::idempotency_token::IdempotencyTokenProvider>() {
+            resolver.config_mut().store_put(crate::idempotency_token::default_provider());
+        }
         crate::config::set_connector(&mut resolver);
         crate::config::set_endpoint_resolver(&mut resolver);
         if layer.load::<::aws_smithy_types::retry::RetryConfig>().is_none() {

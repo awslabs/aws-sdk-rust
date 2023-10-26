@@ -227,6 +227,41 @@ impl From<crate::operation::create_configuration::CreateConfigurationError> for 
         }
     }
 }
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::create_replicator::CreateReplicatorError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::create_replicator::CreateReplicatorError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::create_replicator::CreateReplicatorError> for Error {
+    fn from(err: crate::operation::create_replicator::CreateReplicatorError) -> Self {
+        match err {
+            crate::operation::create_replicator::CreateReplicatorError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::create_replicator::CreateReplicatorError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_replicator::CreateReplicatorError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::create_replicator::CreateReplicatorError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::create_replicator::CreateReplicatorError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::create_replicator::CreateReplicatorError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::create_replicator::CreateReplicatorError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::create_replicator::CreateReplicatorError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::create_replicator::CreateReplicatorError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::create_vpc_connection::CreateVpcConnectionError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -344,6 +379,40 @@ impl From<crate::operation::delete_configuration::DeleteConfigurationError> for 
             }
             crate::operation::delete_configuration::DeleteConfigurationError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::delete_configuration::DeleteConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::delete_replicator::DeleteReplicatorError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::delete_replicator::DeleteReplicatorError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_replicator::DeleteReplicatorError> for Error {
+    fn from(err: crate::operation::delete_replicator::DeleteReplicatorError) -> Self {
+        match err {
+            crate::operation::delete_replicator::DeleteReplicatorError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::delete_replicator::DeleteReplicatorError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::delete_replicator::DeleteReplicatorError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::delete_replicator::DeleteReplicatorError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::delete_replicator::DeleteReplicatorError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::delete_replicator::DeleteReplicatorError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::delete_replicator::DeleteReplicatorError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::delete_replicator::DeleteReplicatorError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -589,6 +658,40 @@ impl From<crate::operation::describe_configuration_revision::DescribeConfigurati
                 Error::UnauthorizedException(inner)
             }
             crate::operation::describe_configuration_revision::DescribeConfigurationRevisionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::describe_replicator::DescribeReplicatorError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::describe_replicator::DescribeReplicatorError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_replicator::DescribeReplicatorError> for Error {
+    fn from(err: crate::operation::describe_replicator::DescribeReplicatorError) -> Self {
+        match err {
+            crate::operation::describe_replicator::DescribeReplicatorError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::describe_replicator::DescribeReplicatorError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::describe_replicator::DescribeReplicatorError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::describe_replicator::DescribeReplicatorError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::describe_replicator::DescribeReplicatorError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::describe_replicator::DescribeReplicatorError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::describe_replicator::DescribeReplicatorError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::describe_replicator::DescribeReplicatorError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1021,6 +1124,38 @@ impl From<crate::operation::list_nodes::ListNodesError> for Error {
             crate::operation::list_nodes::ListNodesError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
             crate::operation::list_nodes::ListNodesError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::list_nodes::ListNodesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_replicators::ListReplicatorsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_replicators::ListReplicatorsError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_replicators::ListReplicatorsError> for Error {
+    fn from(err: crate::operation::list_replicators::ListReplicatorsError) -> Self {
+        match err {
+            crate::operation::list_replicators::ListReplicatorsError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::list_replicators::ListReplicatorsError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::list_replicators::ListReplicatorsError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::list_replicators::ListReplicatorsError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::list_replicators::ListReplicatorsError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::list_replicators::ListReplicatorsError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::list_replicators::ListReplicatorsError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::list_replicators::ListReplicatorsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1544,6 +1679,44 @@ impl From<crate::operation::update_monitoring::UpdateMonitoringError> for Error 
             }
             crate::operation::update_monitoring::UpdateMonitoringError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
             crate::operation::update_monitoring::UpdateMonitoringError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::update_replication_info::UpdateReplicationInfoError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::update_replication_info::UpdateReplicationInfoError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::update_replication_info::UpdateReplicationInfoError> for Error {
+    fn from(err: crate::operation::update_replication_info::UpdateReplicationInfoError) -> Self {
+        match err {
+            crate::operation::update_replication_info::UpdateReplicationInfoError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::update_replication_info::UpdateReplicationInfoError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::update_replication_info::UpdateReplicationInfoError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::update_replication_info::UpdateReplicationInfoError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::update_replication_info::UpdateReplicationInfoError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::update_replication_info::UpdateReplicationInfoError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::update_replication_info::UpdateReplicationInfoError::UnauthorizedException(inner) => {
+                Error::UnauthorizedException(inner)
+            }
+            crate::operation::update_replication_info::UpdateReplicationInfoError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

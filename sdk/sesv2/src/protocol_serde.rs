@@ -477,6 +477,8 @@ pub(crate) mod shape_vdm_attributes;
 
 pub(crate) mod shape_vdm_options;
 
+pub(crate) mod shape_verification_info;
+
 pub(crate) mod shape_additional_contact_email_addresses;
 
 pub(crate) mod shape_blacklist_entries;
@@ -548,6 +550,8 @@ pub(crate) mod shape_replacement_email_content;
 pub(crate) mod shape_review_details;
 
 pub(crate) mod shape_sns_destination;
+
+pub(crate) mod shape_soa_record;
 
 pub(crate) mod shape_suppressed_destination_attributes;
 

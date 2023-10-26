@@ -197,6 +197,12 @@ pub use crate::types::_metric_dimension_name::MetricDimensionName;
 
 pub use crate::types::_export_destination::ExportDestination;
 
+pub use crate::types::_verification_info::VerificationInfo;
+
+pub use crate::types::_soa_record::SoaRecord;
+
+pub use crate::types::_verification_error::VerificationError;
+
 pub use crate::types::_mail_from_attributes::MailFromAttributes;
 
 pub use crate::types::_mail_from_domain_status::MailFromDomainStatus;
@@ -469,6 +475,8 @@ mod _sending_options;
 
 mod _sns_destination;
 
+mod _soa_record;
+
 mod _subscription_status;
 
 mod _suppressed_destination;
@@ -504,6 +512,10 @@ mod _tracking_options;
 mod _vdm_attributes;
 
 mod _vdm_options;
+
+mod _verification_error;
+
+mod _verification_info;
 
 mod _verification_status;
 

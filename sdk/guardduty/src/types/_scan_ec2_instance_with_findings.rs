@@ -5,11 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ScanEc2InstanceWithFindings {
     /// <p>Describes the configuration for scanning EBS volumes as data source.</p>
-    pub ebs_volumes: bool,
+    pub ebs_volumes: ::std::option::Option<bool>,
 }
 impl ScanEc2InstanceWithFindings {
     /// <p>Describes the configuration for scanning EBS volumes as data source.</p>
-    pub fn ebs_volumes(&self) -> bool {
+    pub fn ebs_volumes(&self) -> ::std::option::Option<bool> {
         self.ebs_volumes
     }
 }
@@ -44,7 +44,7 @@ impl ScanEc2InstanceWithFindingsBuilder {
     /// Consumes the builder and constructs a [`ScanEc2InstanceWithFindings`](crate::types::ScanEc2InstanceWithFindings).
     pub fn build(self) -> crate::types::ScanEc2InstanceWithFindings {
         crate::types::ScanEc2InstanceWithFindings {
-            ebs_volumes: self.ebs_volumes.unwrap_or_default(),
+            ebs_volumes: self.ebs_volumes,
         }
     }
 }

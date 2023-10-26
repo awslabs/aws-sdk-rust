@@ -4,13 +4,37 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EnabledControlSummary {
-    /// <p>The ARN of the control. Only <b>Strongly recommended</b> and <b>Elective</b> controls are permitted, with the exception of the <b>Region deny</b> guardrail.</p>
+    /// <p>The ARN of the control. Only <b>Strongly recommended</b> and <b>Elective</b> controls are permitted, with the exception of the <b>Region deny</b> control. For information on how to find the <code>controlIdentifier</code>, see <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the overview page</a>.</p>
     pub control_identifier: ::std::option::Option<::std::string::String>,
+    /// <p> The ARN of the enabled control. </p>
+    pub arn: ::std::option::Option<::std::string::String>,
+    /// <p> The ARN of the organizational unit. </p>
+    pub target_identifier: ::std::option::Option<::std::string::String>,
+    #[allow(missing_docs)] // documentation missing in model
+    pub status_summary: ::std::option::Option<crate::types::EnablementStatusSummary>,
+    /// <p> The drift status of the enabled control. </p>
+    pub drift_status_summary: ::std::option::Option<crate::types::DriftStatusSummary>,
 }
 impl EnabledControlSummary {
-    /// <p>The ARN of the control. Only <b>Strongly recommended</b> and <b>Elective</b> controls are permitted, with the exception of the <b>Region deny</b> guardrail.</p>
+    /// <p>The ARN of the control. Only <b>Strongly recommended</b> and <b>Elective</b> controls are permitted, with the exception of the <b>Region deny</b> control. For information on how to find the <code>controlIdentifier</code>, see <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the overview page</a>.</p>
     pub fn control_identifier(&self) -> ::std::option::Option<&str> {
         self.control_identifier.as_deref()
+    }
+    /// <p> The ARN of the enabled control. </p>
+    pub fn arn(&self) -> ::std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p> The ARN of the organizational unit. </p>
+    pub fn target_identifier(&self) -> ::std::option::Option<&str> {
+        self.target_identifier.as_deref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn status_summary(&self) -> ::std::option::Option<&crate::types::EnablementStatusSummary> {
+        self.status_summary.as_ref()
+    }
+    /// <p> The drift status of the enabled control. </p>
+    pub fn drift_status_summary(&self) -> ::std::option::Option<&crate::types::DriftStatusSummary> {
+        self.drift_status_summary.as_ref()
     }
 }
 impl EnabledControlSummary {
@@ -25,26 +49,90 @@ impl EnabledControlSummary {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EnabledControlSummaryBuilder {
     pub(crate) control_identifier: ::std::option::Option<::std::string::String>,
+    pub(crate) arn: ::std::option::Option<::std::string::String>,
+    pub(crate) target_identifier: ::std::option::Option<::std::string::String>,
+    pub(crate) status_summary: ::std::option::Option<crate::types::EnablementStatusSummary>,
+    pub(crate) drift_status_summary: ::std::option::Option<crate::types::DriftStatusSummary>,
 }
 impl EnabledControlSummaryBuilder {
-    /// <p>The ARN of the control. Only <b>Strongly recommended</b> and <b>Elective</b> controls are permitted, with the exception of the <b>Region deny</b> guardrail.</p>
+    /// <p>The ARN of the control. Only <b>Strongly recommended</b> and <b>Elective</b> controls are permitted, with the exception of the <b>Region deny</b> control. For information on how to find the <code>controlIdentifier</code>, see <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the overview page</a>.</p>
     pub fn control_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.control_identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the control. Only <b>Strongly recommended</b> and <b>Elective</b> controls are permitted, with the exception of the <b>Region deny</b> guardrail.</p>
+    /// <p>The ARN of the control. Only <b>Strongly recommended</b> and <b>Elective</b> controls are permitted, with the exception of the <b>Region deny</b> control. For information on how to find the <code>controlIdentifier</code>, see <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the overview page</a>.</p>
     pub fn set_control_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.control_identifier = input;
         self
     }
-    /// <p>The ARN of the control. Only <b>Strongly recommended</b> and <b>Elective</b> controls are permitted, with the exception of the <b>Region deny</b> guardrail.</p>
+    /// <p>The ARN of the control. Only <b>Strongly recommended</b> and <b>Elective</b> controls are permitted, with the exception of the <b>Region deny</b> control. For information on how to find the <code>controlIdentifier</code>, see <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the overview page</a>.</p>
     pub fn get_control_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.control_identifier
+    }
+    /// <p> The ARN of the enabled control. </p>
+    pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p> The ARN of the enabled control. </p>
+    pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.arn = input;
+        self
+    }
+    /// <p> The ARN of the enabled control. </p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
+    /// <p> The ARN of the organizational unit. </p>
+    pub fn target_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.target_identifier = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p> The ARN of the organizational unit. </p>
+    pub fn set_target_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.target_identifier = input;
+        self
+    }
+    /// <p> The ARN of the organizational unit. </p>
+    pub fn get_target_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_identifier
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn status_summary(mut self, input: crate::types::EnablementStatusSummary) -> Self {
+        self.status_summary = ::std::option::Option::Some(input);
+        self
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn set_status_summary(mut self, input: ::std::option::Option<crate::types::EnablementStatusSummary>) -> Self {
+        self.status_summary = input;
+        self
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_status_summary(&self) -> &::std::option::Option<crate::types::EnablementStatusSummary> {
+        &self.status_summary
+    }
+    /// <p> The drift status of the enabled control. </p>
+    pub fn drift_status_summary(mut self, input: crate::types::DriftStatusSummary) -> Self {
+        self.drift_status_summary = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p> The drift status of the enabled control. </p>
+    pub fn set_drift_status_summary(mut self, input: ::std::option::Option<crate::types::DriftStatusSummary>) -> Self {
+        self.drift_status_summary = input;
+        self
+    }
+    /// <p> The drift status of the enabled control. </p>
+    pub fn get_drift_status_summary(&self) -> &::std::option::Option<crate::types::DriftStatusSummary> {
+        &self.drift_status_summary
     }
     /// Consumes the builder and constructs a [`EnabledControlSummary`](crate::types::EnabledControlSummary).
     pub fn build(self) -> crate::types::EnabledControlSummary {
         crate::types::EnabledControlSummary {
             control_identifier: self.control_identifier,
+            arn: self.arn,
+            target_identifier: self.target_identifier,
+            status_summary: self.status_summary,
+            drift_status_summary: self.drift_status_summary,
         }
     }
 }

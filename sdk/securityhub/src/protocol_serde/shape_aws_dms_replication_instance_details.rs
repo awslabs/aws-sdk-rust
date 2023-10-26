@@ -3,56 +3,56 @@ pub fn ser_aws_dms_replication_instance_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsDmsReplicationInstanceDetails,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if input.allocated_storage != 0 {
+    if let Some(var_1) = &input.allocated_storage {
         object.key("AllocatedStorage").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.allocated_storage).into()),
+            ::aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if input.auto_minor_version_upgrade {
-        object.key("AutoMinorVersionUpgrade").boolean(input.auto_minor_version_upgrade);
+    if let Some(var_2) = &input.auto_minor_version_upgrade {
+        object.key("AutoMinorVersionUpgrade").boolean(*var_2);
     }
-    if let Some(var_1) = &input.availability_zone {
-        object.key("AvailabilityZone").string(var_1.as_str());
+    if let Some(var_3) = &input.availability_zone {
+        object.key("AvailabilityZone").string(var_3.as_str());
     }
-    if let Some(var_2) = &input.engine_version {
-        object.key("EngineVersion").string(var_2.as_str());
+    if let Some(var_4) = &input.engine_version {
+        object.key("EngineVersion").string(var_4.as_str());
     }
-    if let Some(var_3) = &input.kms_key_id {
-        object.key("KmsKeyId").string(var_3.as_str());
+    if let Some(var_5) = &input.kms_key_id {
+        object.key("KmsKeyId").string(var_5.as_str());
     }
-    if input.multi_az {
-        object.key("MultiAZ").boolean(input.multi_az);
+    if let Some(var_6) = &input.multi_az {
+        object.key("MultiAZ").boolean(*var_6);
     }
-    if let Some(var_4) = &input.preferred_maintenance_window {
-        object.key("PreferredMaintenanceWindow").string(var_4.as_str());
+    if let Some(var_7) = &input.preferred_maintenance_window {
+        object.key("PreferredMaintenanceWindow").string(var_7.as_str());
     }
-    if input.publicly_accessible {
-        object.key("PubliclyAccessible").boolean(input.publicly_accessible);
+    if let Some(var_8) = &input.publicly_accessible {
+        object.key("PubliclyAccessible").boolean(*var_8);
     }
-    if let Some(var_5) = &input.replication_instance_class {
-        object.key("ReplicationInstanceClass").string(var_5.as_str());
+    if let Some(var_9) = &input.replication_instance_class {
+        object.key("ReplicationInstanceClass").string(var_9.as_str());
     }
-    if let Some(var_6) = &input.replication_instance_identifier {
-        object.key("ReplicationInstanceIdentifier").string(var_6.as_str());
+    if let Some(var_10) = &input.replication_instance_identifier {
+        object.key("ReplicationInstanceIdentifier").string(var_10.as_str());
     }
-    if let Some(var_7) = &input.replication_subnet_group {
+    if let Some(var_11) = &input.replication_subnet_group {
         #[allow(unused_mut)]
-        let mut object_8 = object.key("ReplicationSubnetGroup").start_object();
-        crate::protocol_serde::shape_aws_dms_replication_instance_replication_subnet_group_details::ser_aws_dms_replication_instance_replication_subnet_group_details(&mut object_8, var_7)?;
-        object_8.finish();
+        let mut object_12 = object.key("ReplicationSubnetGroup").start_object();
+        crate::protocol_serde::shape_aws_dms_replication_instance_replication_subnet_group_details::ser_aws_dms_replication_instance_replication_subnet_group_details(&mut object_12, var_11)?;
+        object_12.finish();
     }
-    if let Some(var_9) = &input.vpc_security_groups {
-        let mut array_10 = object.key("VpcSecurityGroups").start_array();
-        for item_11 in var_9 {
+    if let Some(var_13) = &input.vpc_security_groups {
+        let mut array_14 = object.key("VpcSecurityGroups").start_array();
+        for item_15 in var_13 {
             {
                 #[allow(unused_mut)]
-                let mut object_12 = array_10.value().start_object();
-                crate::protocol_serde::shape_aws_dms_replication_instance_vpc_security_groups_details::ser_aws_dms_replication_instance_vpc_security_groups_details(&mut object_12, item_11)?;
-                object_12.finish();
+                let mut object_16 = array_14.value().start_object();
+                crate::protocol_serde::shape_aws_dms_replication_instance_vpc_security_groups_details::ser_aws_dms_replication_instance_vpc_security_groups_details(&mut object_16, item_15)?;
+                object_16.finish();
             }
         }
-        array_10.finish();
+        array_14.finish();
     }
     Ok(())
 }

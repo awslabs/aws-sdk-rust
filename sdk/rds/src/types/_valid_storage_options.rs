@@ -13,7 +13,7 @@ pub struct ValidStorageOptions {
     /// <p>The valid range of Provisioned IOPS to gibibytes of storage multiplier. For example, 3-10, which means that provisioned IOPS can be between 3 and 10 times storage.</p>
     pub iops_to_storage_ratio: ::std::option::Option<::std::vec::Vec<crate::types::DoubleRange>>,
     /// <p>Indicates whether or not Amazon RDS can automatically scale storage for DB instances that use the new instance class.</p>
-    pub supports_storage_autoscaling: bool,
+    pub supports_storage_autoscaling: ::std::option::Option<bool>,
     /// <p>The valid range of provisioned storage throughput. For example, 500-4,000 mebibytes per second (MiBps).</p>
     pub provisioned_storage_throughput: ::std::option::Option<::std::vec::Vec<crate::types::Range>>,
     /// <p>The valid range of storage throughput to provisioned IOPS ratios. For example, 0-0.25.</p>
@@ -37,7 +37,7 @@ impl ValidStorageOptions {
         self.iops_to_storage_ratio.as_deref()
     }
     /// <p>Indicates whether or not Amazon RDS can automatically scale storage for DB instances that use the new instance class.</p>
-    pub fn supports_storage_autoscaling(&self) -> bool {
+    pub fn supports_storage_autoscaling(&self) -> ::std::option::Option<bool> {
         self.supports_storage_autoscaling
     }
     /// <p>The valid range of provisioned storage throughput. For example, 500-4,000 mebibytes per second (MiBps).</p>
@@ -204,7 +204,7 @@ impl ValidStorageOptionsBuilder {
             storage_size: self.storage_size,
             provisioned_iops: self.provisioned_iops,
             iops_to_storage_ratio: self.iops_to_storage_ratio,
-            supports_storage_autoscaling: self.supports_storage_autoscaling.unwrap_or_default(),
+            supports_storage_autoscaling: self.supports_storage_autoscaling,
             provisioned_storage_throughput: self.provisioned_storage_throughput,
             storage_throughput_to_iops_ratio: self.storage_throughput_to_iops_ratio,
         }

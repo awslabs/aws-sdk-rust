@@ -23,6 +23,7 @@ impl GetPropertygraphSummaryInputBuilder {
 /// Fluent builder constructing a request to `GetPropertygraphSummary`.
 ///
 /// <p>Gets a graph summary for a property graph.</p>
+/// <p>When invoking this operation in a Neptune cluster that has IAM authentication enabled, the IAM user or role making the request must have a policy attached that allows the <a href="https://docs.aws.amazon.com/neptune/latest/userguide/iam-dp-actions.html#getgraphsummary">neptune-db:GetGraphSummary</a> IAM action in that cluster.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetPropertygraphSummaryFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -1515,6 +1515,8 @@ pub(crate) mod shape_disable_fast_snapshot_restores;
 
 pub(crate) mod shape_disable_fast_snapshot_restores_input;
 
+pub(crate) mod shape_disable_image;
+
 pub(crate) mod shape_disable_image_block_public_access;
 
 pub(crate) mod shape_disable_image_block_public_access_input;
@@ -1522,6 +1524,8 @@ pub(crate) mod shape_disable_image_block_public_access_input;
 pub(crate) mod shape_disable_image_deprecation;
 
 pub(crate) mod shape_disable_image_deprecation_input;
+
+pub(crate) mod shape_disable_image_input;
 
 pub(crate) mod shape_disable_ipam_organization_admin_account;
 
@@ -1623,6 +1627,8 @@ pub(crate) mod shape_enable_fast_snapshot_restores;
 
 pub(crate) mod shape_enable_fast_snapshot_restores_input;
 
+pub(crate) mod shape_enable_image;
+
 pub(crate) mod shape_enable_image_block_public_access;
 
 pub(crate) mod shape_enable_image_block_public_access_input;
@@ -1630,6 +1636,8 @@ pub(crate) mod shape_enable_image_block_public_access_input;
 pub(crate) mod shape_enable_image_deprecation;
 
 pub(crate) mod shape_enable_image_deprecation_input;
+
+pub(crate) mod shape_enable_image_input;
 
 pub(crate) mod shape_enable_ipam_organization_admin_account;
 

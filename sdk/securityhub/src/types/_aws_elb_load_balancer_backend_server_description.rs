@@ -5,13 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsElbLoadBalancerBackendServerDescription {
     /// <p>The port on which the EC2 instance is listening.</p>
-    pub instance_port: i32,
+    pub instance_port: ::std::option::Option<i32>,
     /// <p>The names of the policies that are enabled for the EC2 instance.</p>
     pub policy_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl AwsElbLoadBalancerBackendServerDescription {
     /// <p>The port on which the EC2 instance is listening.</p>
-    pub fn instance_port(&self) -> i32 {
+    pub fn instance_port(&self) -> ::std::option::Option<i32> {
         self.instance_port
     }
     /// <p>The names of the policies that are enabled for the EC2 instance.</p>
@@ -71,7 +71,7 @@ impl AwsElbLoadBalancerBackendServerDescriptionBuilder {
     /// Consumes the builder and constructs a [`AwsElbLoadBalancerBackendServerDescription`](crate::types::AwsElbLoadBalancerBackendServerDescription).
     pub fn build(self) -> crate::types::AwsElbLoadBalancerBackendServerDescription {
         crate::types::AwsElbLoadBalancerBackendServerDescription {
-            instance_port: self.instance_port.unwrap_or_default(),
+            instance_port: self.instance_port,
             policy_names: self.policy_names,
         }
     }

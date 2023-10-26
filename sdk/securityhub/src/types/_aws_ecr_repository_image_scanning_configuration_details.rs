@@ -5,11 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEcrRepositoryImageScanningConfigurationDetails {
     /// <p>Whether to scan images after they are pushed to a repository.</p>
-    pub scan_on_push: bool,
+    pub scan_on_push: ::std::option::Option<bool>,
 }
 impl AwsEcrRepositoryImageScanningConfigurationDetails {
     /// <p>Whether to scan images after they are pushed to a repository.</p>
-    pub fn scan_on_push(&self) -> bool {
+    pub fn scan_on_push(&self) -> ::std::option::Option<bool> {
         self.scan_on_push
     }
 }
@@ -44,7 +44,7 @@ impl AwsEcrRepositoryImageScanningConfigurationDetailsBuilder {
     /// Consumes the builder and constructs a [`AwsEcrRepositoryImageScanningConfigurationDetails`](crate::types::AwsEcrRepositoryImageScanningConfigurationDetails).
     pub fn build(self) -> crate::types::AwsEcrRepositoryImageScanningConfigurationDetails {
         crate::types::AwsEcrRepositoryImageScanningConfigurationDetails {
-            scan_on_push: self.scan_on_push.unwrap_or_default(),
+            scan_on_push: self.scan_on_push,
         }
     }
 }

@@ -7,7 +7,7 @@ pub struct Endpoint {
     /// <p>The DNS address of the Cluster.</p>
     pub address: ::std::option::Option<::std::string::String>,
     /// <p>The port that the database engine is listening on.</p>
-    pub port: i32,
+    pub port: ::std::option::Option<i32>,
     /// <p>Describes a connection endpoint.</p>
     pub vpc_endpoints: ::std::option::Option<::std::vec::Vec<crate::types::VpcEndpoint>>,
 }
@@ -17,7 +17,7 @@ impl Endpoint {
         self.address.as_deref()
     }
     /// <p>The port that the database engine is listening on.</p>
-    pub fn port(&self) -> i32 {
+    pub fn port(&self) -> ::std::option::Option<i32> {
         self.port
     }
     /// <p>Describes a connection endpoint.</p>
@@ -93,7 +93,7 @@ impl EndpointBuilder {
     pub fn build(self) -> crate::types::Endpoint {
         crate::types::Endpoint {
             address: self.address,
-            port: self.port.unwrap_or_default(),
+            port: self.port,
             vpc_endpoints: self.vpc_endpoints,
         }
     }

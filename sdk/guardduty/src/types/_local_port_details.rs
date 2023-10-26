@@ -5,13 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LocalPortDetails {
     /// <p>The port number of the local connection.</p>
-    pub port: i32,
+    pub port: ::std::option::Option<i32>,
     /// <p>The port name of the local connection.</p>
     pub port_name: ::std::option::Option<::std::string::String>,
 }
 impl LocalPortDetails {
     /// <p>The port number of the local connection.</p>
-    pub fn port(&self) -> i32 {
+    pub fn port(&self) -> ::std::option::Option<i32> {
         self.port
     }
     /// <p>The port name of the local connection.</p>
@@ -65,7 +65,7 @@ impl LocalPortDetailsBuilder {
     /// Consumes the builder and constructs a [`LocalPortDetails`](crate::types::LocalPortDetails).
     pub fn build(self) -> crate::types::LocalPortDetails {
         crate::types::LocalPortDetails {
-            port: self.port.unwrap_or_default(),
+            port: self.port,
             port_name: self.port_name,
         }
     }

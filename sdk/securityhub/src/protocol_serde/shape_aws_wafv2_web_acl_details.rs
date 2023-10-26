@@ -9,50 +9,50 @@ pub fn ser_aws_wafv2_web_acl_details(
     if let Some(var_2) = &input.arn {
         object.key("Arn").string(var_2.as_str());
     }
-    if input.managedby_firewall_manager {
-        object.key("ManagedbyFirewallManager").boolean(input.managedby_firewall_manager);
+    if let Some(var_3) = &input.managedby_firewall_manager {
+        object.key("ManagedbyFirewallManager").boolean(*var_3);
     }
-    if let Some(var_3) = &input.id {
-        object.key("Id").string(var_3.as_str());
+    if let Some(var_4) = &input.id {
+        object.key("Id").string(var_4.as_str());
     }
-    if input.capacity != 0 {
+    if let Some(var_5) = &input.capacity {
         object.key("Capacity").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.capacity).into()),
+            ::aws_smithy_types::Number::NegInt((*var_5).into()),
         );
     }
-    if let Some(var_4) = &input.captcha_config {
+    if let Some(var_6) = &input.captcha_config {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("CaptchaConfig").start_object();
-        crate::protocol_serde::shape_aws_wafv2_web_acl_captcha_config_details::ser_aws_wafv2_web_acl_captcha_config_details(&mut object_5, var_4)?;
-        object_5.finish();
-    }
-    if let Some(var_6) = &input.default_action {
-        #[allow(unused_mut)]
-        let mut object_7 = object.key("DefaultAction").start_object();
-        crate::protocol_serde::shape_aws_wafv2_web_acl_action_details::ser_aws_wafv2_web_acl_action_details(&mut object_7, var_6)?;
+        let mut object_7 = object.key("CaptchaConfig").start_object();
+        crate::protocol_serde::shape_aws_wafv2_web_acl_captcha_config_details::ser_aws_wafv2_web_acl_captcha_config_details(&mut object_7, var_6)?;
         object_7.finish();
     }
-    if let Some(var_8) = &input.description {
-        object.key("Description").string(var_8.as_str());
+    if let Some(var_8) = &input.default_action {
+        #[allow(unused_mut)]
+        let mut object_9 = object.key("DefaultAction").start_object();
+        crate::protocol_serde::shape_aws_wafv2_web_acl_action_details::ser_aws_wafv2_web_acl_action_details(&mut object_9, var_8)?;
+        object_9.finish();
     }
-    if let Some(var_9) = &input.rules {
-        let mut array_10 = object.key("Rules").start_array();
-        for item_11 in var_9 {
+    if let Some(var_10) = &input.description {
+        object.key("Description").string(var_10.as_str());
+    }
+    if let Some(var_11) = &input.rules {
+        let mut array_12 = object.key("Rules").start_array();
+        for item_13 in var_11 {
             {
                 #[allow(unused_mut)]
-                let mut object_12 = array_10.value().start_object();
-                crate::protocol_serde::shape_aws_wafv2_rules_details::ser_aws_wafv2_rules_details(&mut object_12, item_11)?;
-                object_12.finish();
+                let mut object_14 = array_12.value().start_object();
+                crate::protocol_serde::shape_aws_wafv2_rules_details::ser_aws_wafv2_rules_details(&mut object_14, item_13)?;
+                object_14.finish();
             }
         }
-        array_10.finish();
+        array_12.finish();
     }
-    if let Some(var_13) = &input.visibility_config {
+    if let Some(var_15) = &input.visibility_config {
         #[allow(unused_mut)]
-        let mut object_14 = object.key("VisibilityConfig").start_object();
-        crate::protocol_serde::shape_aws_wafv2_visibility_config_details::ser_aws_wafv2_visibility_config_details(&mut object_14, var_13)?;
-        object_14.finish();
+        let mut object_16 = object.key("VisibilityConfig").start_object();
+        crate::protocol_serde::shape_aws_wafv2_visibility_config_details::ser_aws_wafv2_visibility_config_details(&mut object_16, var_15)?;
+        object_16.finish();
     }
     Ok(())
 }

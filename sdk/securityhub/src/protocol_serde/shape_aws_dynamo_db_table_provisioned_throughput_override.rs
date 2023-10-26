@@ -3,10 +3,10 @@ pub fn ser_aws_dynamo_db_table_provisioned_throughput_override(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsDynamoDbTableProvisionedThroughputOverride,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if input.read_capacity_units != 0 {
+    if let Some(var_1) = &input.read_capacity_units {
         object.key("ReadCapacityUnits").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.read_capacity_units).into()),
+            ::aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
     Ok(())

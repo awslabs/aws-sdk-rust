@@ -16,7 +16,7 @@ pub struct ConfigureShard {
     /// </ul> </li>
     /// <li> <p>Redis (cluster mode enabled): 0 (though you will not be able to failover to a replica if your primary node fails)</p> </li>
     /// </ul>
-    pub new_replica_count: i32,
+    pub new_replica_count: ::std::option::Option<i32>,
     /// <p>A list of <code>PreferredAvailabilityZone</code> strings that specify which availability zones the replication group's nodes are to be in. The nummber of <code>PreferredAvailabilityZone</code> values must equal the value of <code>NewReplicaCount</code> plus 1 to account for the primary node. If this member of <code>ReplicaConfiguration</code> is omitted, ElastiCache for Redis selects the availability zone for each of the replicas.</p>
     pub preferred_availability_zones: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The outpost ARNs in which the cache cluster is created.</p>
@@ -37,7 +37,7 @@ impl ConfigureShard {
     /// </ul> </li>
     /// <li> <p>Redis (cluster mode enabled): 0 (though you will not be able to failover to a replica if your primary node fails)</p> </li>
     /// </ul>
-    pub fn new_replica_count(&self) -> i32 {
+    pub fn new_replica_count(&self) -> ::std::option::Option<i32> {
         self.new_replica_count
     }
     /// <p>A list of <code>PreferredAvailabilityZone</code> strings that specify which availability zones the replication group's nodes are to be in. The nummber of <code>PreferredAvailabilityZone</code> values must equal the value of <code>NewReplicaCount</code> plus 1 to account for the primary node. If this member of <code>ReplicaConfiguration</code> is omitted, ElastiCache for Redis selects the availability zone for each of the replicas.</p>
@@ -165,7 +165,7 @@ impl ConfigureShardBuilder {
     pub fn build(self) -> crate::types::ConfigureShard {
         crate::types::ConfigureShard {
             node_group_id: self.node_group_id,
-            new_replica_count: self.new_replica_count.unwrap_or_default(),
+            new_replica_count: self.new_replica_count,
             preferred_availability_zones: self.preferred_availability_zones,
             preferred_outpost_arns: self.preferred_outpost_arns,
         }

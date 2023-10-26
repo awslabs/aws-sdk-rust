@@ -267,7 +267,7 @@ pub enum UpdateDatasetEntriesError {
     InternalServerError(crate::types::error::InternalServerError),
     /// <p>Input parameter violated a constraint. Validate your parameter before calling the API operation again.</p>
     InvalidParameterException(crate::types::error::InvalidParameterException),
-    /// <p>An Amazon Rekognition service limit was exceeded. For example, if you start too many Amazon Rekognition Video jobs concurrently, calls to start operations (<code>StartLabelDetection</code>, for example) will raise a <code>LimitExceededException</code> exception (HTTP status code: 400) until the number of concurrently running jobs is below the Amazon Rekognition service limit. </p>
+    /// <p>An Amazon Rekognition service limit was exceeded. For example, if you start too many jobs concurrently, subsequent calls to start operations (ex: <code>StartLabelDetection</code>) will raise a <code>LimitExceededException</code> exception (HTTP status code: 400) until the number of concurrently running jobs is below the Amazon Rekognition service limit. </p>
     LimitExceededException(crate::types::error::LimitExceededException),
     /// <p>The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon Rekognition.</p>
     ProvisionedThroughputExceededException(crate::types::error::ProvisionedThroughputExceededException),

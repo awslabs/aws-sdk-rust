@@ -17,6 +17,8 @@ pub use crate::types::error::_operation_not_permitted_exception::OperationNotPer
 
 pub use crate::types::error::_conflict_error_exception::ConflictErrorException;
 
+pub use crate::types::error::_limit_exceeded_exception::LimitExceededException;
+
 mod _authorization_error_exception;
 
 mod _conflict_error_exception;
@@ -26,6 +28,8 @@ mod _home_region_not_set_exception;
 mod _invalid_parameter_exception;
 
 mod _invalid_parameter_value_exception;
+
+mod _limit_exceeded_exception;
 
 mod _operation_not_permitted_exception;
 

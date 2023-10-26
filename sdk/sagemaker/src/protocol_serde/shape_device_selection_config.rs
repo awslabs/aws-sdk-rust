@@ -6,23 +6,23 @@ pub fn ser_device_selection_config(
     if let Some(var_1) = &input.device_subset_type {
         object.key("DeviceSubsetType").string(var_1.as_str());
     }
-    if input.percentage != 0 {
+    if let Some(var_2) = &input.percentage {
         object.key("Percentage").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.percentage).into()),
+            ::aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
-    if let Some(var_2) = &input.device_names {
-        let mut array_3 = object.key("DeviceNames").start_array();
-        for item_4 in var_2 {
+    if let Some(var_3) = &input.device_names {
+        let mut array_4 = object.key("DeviceNames").start_array();
+        for item_5 in var_3 {
             {
-                array_3.value().string(item_4.as_str());
+                array_4.value().string(item_5.as_str());
             }
         }
-        array_3.finish();
+        array_4.finish();
     }
-    if let Some(var_5) = &input.device_name_contains {
-        object.key("DeviceNameContains").string(var_5.as_str());
+    if let Some(var_6) = &input.device_name_contains {
+        object.key("DeviceNameContains").string(var_6.as_str());
     }
     Ok(())
 }

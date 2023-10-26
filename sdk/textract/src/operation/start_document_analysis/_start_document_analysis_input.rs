@@ -19,6 +19,8 @@ pub struct StartDocumentAnalysisInput {
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p></p>
     pub queries_config: ::std::option::Option<crate::types::QueriesConfig>,
+    /// <p>Specifies the adapter to be used when analyzing a document.</p>
+    pub adapters_config: ::std::option::Option<crate::types::AdaptersConfig>,
 }
 impl StartDocumentAnalysisInput {
     /// <p>The location of the document to be processed.</p>
@@ -53,6 +55,10 @@ impl StartDocumentAnalysisInput {
     pub fn queries_config(&self) -> ::std::option::Option<&crate::types::QueriesConfig> {
         self.queries_config.as_ref()
     }
+    /// <p>Specifies the adapter to be used when analyzing a document.</p>
+    pub fn adapters_config(&self) -> ::std::option::Option<&crate::types::AdaptersConfig> {
+        self.adapters_config.as_ref()
+    }
 }
 impl StartDocumentAnalysisInput {
     /// Creates a new builder-style object to manufacture [`StartDocumentAnalysisInput`](crate::operation::start_document_analysis::StartDocumentAnalysisInput).
@@ -73,6 +79,7 @@ pub struct StartDocumentAnalysisInputBuilder {
     pub(crate) output_config: ::std::option::Option<crate::types::OutputConfig>,
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) queries_config: ::std::option::Option<crate::types::QueriesConfig>,
+    pub(crate) adapters_config: ::std::option::Option<crate::types::AdaptersConfig>,
 }
 impl StartDocumentAnalysisInputBuilder {
     /// <p>The location of the document to be processed.</p>
@@ -193,6 +200,20 @@ impl StartDocumentAnalysisInputBuilder {
     pub fn get_queries_config(&self) -> &::std::option::Option<crate::types::QueriesConfig> {
         &self.queries_config
     }
+    /// <p>Specifies the adapter to be used when analyzing a document.</p>
+    pub fn adapters_config(mut self, input: crate::types::AdaptersConfig) -> Self {
+        self.adapters_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the adapter to be used when analyzing a document.</p>
+    pub fn set_adapters_config(mut self, input: ::std::option::Option<crate::types::AdaptersConfig>) -> Self {
+        self.adapters_config = input;
+        self
+    }
+    /// <p>Specifies the adapter to be used when analyzing a document.</p>
+    pub fn get_adapters_config(&self) -> &::std::option::Option<crate::types::AdaptersConfig> {
+        &self.adapters_config
+    }
     /// Consumes the builder and constructs a [`StartDocumentAnalysisInput`](crate::operation::start_document_analysis::StartDocumentAnalysisInput).
     pub fn build(
         self,
@@ -207,6 +228,7 @@ impl StartDocumentAnalysisInputBuilder {
             output_config: self.output_config,
             kms_key_id: self.kms_key_id,
             queries_config: self.queries_config,
+            adapters_config: self.adapters_config,
         })
     }
 }

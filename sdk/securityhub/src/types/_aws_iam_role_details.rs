@@ -22,7 +22,7 @@ pub struct AwsIamRoleDetails {
     /// <p>The list of inline policies that are embedded in the role.</p>
     pub role_policy_list: ::std::option::Option<::std::vec::Vec<crate::types::AwsIamRolePolicy>>,
     /// <p>The maximum session duration (in seconds) that you want to set for the specified role.</p>
-    pub max_session_duration: i32,
+    pub max_session_duration: ::std::option::Option<i32>,
     /// <p>The path to the role.</p>
     pub path: ::std::option::Option<::std::string::String>,
 }
@@ -61,7 +61,7 @@ impl AwsIamRoleDetails {
         self.role_policy_list.as_deref()
     }
     /// <p>The maximum session duration (in seconds) that you want to set for the specified role.</p>
-    pub fn max_session_duration(&self) -> i32 {
+    pub fn max_session_duration(&self) -> ::std::option::Option<i32> {
         self.max_session_duration
     }
     /// <p>The path to the role.</p>
@@ -264,7 +264,7 @@ impl AwsIamRoleDetailsBuilder {
             role_id: self.role_id,
             role_name: self.role_name,
             role_policy_list: self.role_policy_list,
-            max_session_duration: self.max_session_duration.unwrap_or_default(),
+            max_session_duration: self.max_session_duration,
             path: self.path,
         }
     }

@@ -7,11 +7,11 @@ pub struct EdgeDeploymentStatus {
     /// <p>The general status of the current stage.</p>
     pub stage_status: ::std::option::Option<crate::types::StageStatus>,
     /// <p>The number of edge devices with the successful deployment in the current stage.</p>
-    pub edge_deployment_success_in_stage: i32,
+    pub edge_deployment_success_in_stage: ::std::option::Option<i32>,
     /// <p>The number of edge devices yet to pick up the deployment in current stage, or in progress.</p>
-    pub edge_deployment_pending_in_stage: i32,
+    pub edge_deployment_pending_in_stage: ::std::option::Option<i32>,
     /// <p>The number of edge devices that failed the deployment in current stage.</p>
-    pub edge_deployment_failed_in_stage: i32,
+    pub edge_deployment_failed_in_stage: ::std::option::Option<i32>,
     /// <p>A detailed message about deployment status in current stage.</p>
     pub edge_deployment_status_message: ::std::option::Option<::std::string::String>,
     /// <p>The time when the deployment API started.</p>
@@ -23,15 +23,15 @@ impl EdgeDeploymentStatus {
         self.stage_status.as_ref()
     }
     /// <p>The number of edge devices with the successful deployment in the current stage.</p>
-    pub fn edge_deployment_success_in_stage(&self) -> i32 {
+    pub fn edge_deployment_success_in_stage(&self) -> ::std::option::Option<i32> {
         self.edge_deployment_success_in_stage
     }
     /// <p>The number of edge devices yet to pick up the deployment in current stage, or in progress.</p>
-    pub fn edge_deployment_pending_in_stage(&self) -> i32 {
+    pub fn edge_deployment_pending_in_stage(&self) -> ::std::option::Option<i32> {
         self.edge_deployment_pending_in_stage
     }
     /// <p>The number of edge devices that failed the deployment in current stage.</p>
-    pub fn edge_deployment_failed_in_stage(&self) -> i32 {
+    pub fn edge_deployment_failed_in_stage(&self) -> ::std::option::Option<i32> {
         self.edge_deployment_failed_in_stage
     }
     /// <p>A detailed message about deployment status in current stage.</p>
@@ -150,9 +150,9 @@ impl EdgeDeploymentStatusBuilder {
     pub fn build(self) -> crate::types::EdgeDeploymentStatus {
         crate::types::EdgeDeploymentStatus {
             stage_status: self.stage_status,
-            edge_deployment_success_in_stage: self.edge_deployment_success_in_stage.unwrap_or_default(),
-            edge_deployment_pending_in_stage: self.edge_deployment_pending_in_stage.unwrap_or_default(),
-            edge_deployment_failed_in_stage: self.edge_deployment_failed_in_stage.unwrap_or_default(),
+            edge_deployment_success_in_stage: self.edge_deployment_success_in_stage,
+            edge_deployment_pending_in_stage: self.edge_deployment_pending_in_stage,
+            edge_deployment_failed_in_stage: self.edge_deployment_failed_in_stage,
             edge_deployment_status_message: self.edge_deployment_status_message,
             edge_deployment_stage_start_time: self.edge_deployment_stage_start_time,
         }

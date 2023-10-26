@@ -7,7 +7,7 @@ pub struct AwsAutoScalingLaunchConfigurationMetadataOptions {
     /// <p>Enables or disables the HTTP metadata endpoint on your instances. By default, the metadata endpoint is enabled.</p>
     pub http_endpoint: ::std::option::Option<::std::string::String>,
     /// <p>The HTTP <code>PUT</code> response hop limit for instance metadata requests. The larger the number, the further instance metadata requests can travel.</p>
-    pub http_put_response_hop_limit: i32,
+    pub http_put_response_hop_limit: ::std::option::Option<i32>,
     /// <p>Indicates whether token usage is <code>required</code> or <code>optional</code> for metadata requests. By default, token usage is <code>optional</code>.</p>
     pub http_tokens: ::std::option::Option<::std::string::String>,
 }
@@ -17,7 +17,7 @@ impl AwsAutoScalingLaunchConfigurationMetadataOptions {
         self.http_endpoint.as_deref()
     }
     /// <p>The HTTP <code>PUT</code> response hop limit for instance metadata requests. The larger the number, the further instance metadata requests can travel.</p>
-    pub fn http_put_response_hop_limit(&self) -> i32 {
+    pub fn http_put_response_hop_limit(&self) -> ::std::option::Option<i32> {
         self.http_put_response_hop_limit
     }
     /// <p>Indicates whether token usage is <code>required</code> or <code>optional</code> for metadata requests. By default, token usage is <code>optional</code>.</p>
@@ -87,7 +87,7 @@ impl AwsAutoScalingLaunchConfigurationMetadataOptionsBuilder {
     pub fn build(self) -> crate::types::AwsAutoScalingLaunchConfigurationMetadataOptions {
         crate::types::AwsAutoScalingLaunchConfigurationMetadataOptions {
             http_endpoint: self.http_endpoint,
-            http_put_response_hop_limit: self.http_put_response_hop_limit.unwrap_or_default(),
+            http_put_response_hop_limit: self.http_put_response_hop_limit,
             http_tokens: self.http_tokens,
         }
     }

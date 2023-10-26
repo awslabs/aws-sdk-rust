@@ -6,7 +6,7 @@ pub struct RegisterSchemaVersionOutput {
     /// <p>The unique ID that represents the version of this schema.</p>
     pub schema_version_id: ::std::option::Option<::std::string::String>,
     /// <p>The version of this schema (for sync flow only, in case this is the first version).</p>
-    pub version_number: i64,
+    pub version_number: ::std::option::Option<i64>,
     /// <p>The status of the schema version.</p>
     pub status: ::std::option::Option<crate::types::SchemaVersionStatus>,
     _request_id: Option<String>,
@@ -17,7 +17,7 @@ impl RegisterSchemaVersionOutput {
         self.schema_version_id.as_deref()
     }
     /// <p>The version of this schema (for sync flow only, in case this is the first version).</p>
-    pub fn version_number(&self) -> i64 {
+    pub fn version_number(&self) -> ::std::option::Option<i64> {
         self.version_number
     }
     /// <p>The status of the schema version.</p>
@@ -102,7 +102,7 @@ impl RegisterSchemaVersionOutputBuilder {
     pub fn build(self) -> crate::operation::register_schema_version::RegisterSchemaVersionOutput {
         crate::operation::register_schema_version::RegisterSchemaVersionOutput {
             schema_version_id: self.schema_version_id,
-            version_number: self.version_number.unwrap_or_default(),
+            version_number: self.version_number,
             status: self.status,
             _request_id: self._request_id,
         }

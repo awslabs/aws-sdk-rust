@@ -5,13 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PortProbeAction {
     /// <p>Indicates whether EC2 blocked the port probe to the instance, such as with an ACL.</p>
-    pub blocked: bool,
+    pub blocked: ::std::option::Option<bool>,
     /// <p>A list of objects related to port probe details.</p>
     pub port_probe_details: ::std::option::Option<::std::vec::Vec<crate::types::PortProbeDetail>>,
 }
 impl PortProbeAction {
     /// <p>Indicates whether EC2 blocked the port probe to the instance, such as with an ACL.</p>
-    pub fn blocked(&self) -> bool {
+    pub fn blocked(&self) -> ::std::option::Option<bool> {
         self.blocked
     }
     /// <p>A list of objects related to port probe details.</p>
@@ -71,7 +71,7 @@ impl PortProbeActionBuilder {
     /// Consumes the builder and constructs a [`PortProbeAction`](crate::types::PortProbeAction).
     pub fn build(self) -> crate::types::PortProbeAction {
         crate::types::PortProbeAction {
-            blocked: self.blocked.unwrap_or_default(),
+            blocked: self.blocked,
             port_probe_details: self.port_probe_details,
         }
     }

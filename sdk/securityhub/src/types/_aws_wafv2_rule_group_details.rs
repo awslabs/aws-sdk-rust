@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsWafv2RuleGroupDetails {
     /// <p> The web ACL capacity units (WCUs) required for this rule group. </p>
-    pub capacity: i64,
+    pub capacity: ::std::option::Option<i64>,
     /// <p> A description of the rule group that helps with identification. </p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p> A unique identifier for the rule group. </p>
@@ -23,7 +23,7 @@ pub struct AwsWafv2RuleGroupDetails {
 }
 impl AwsWafv2RuleGroupDetails {
     /// <p> The web ACL capacity units (WCUs) required for this rule group. </p>
-    pub fn capacity(&self) -> i64 {
+    pub fn capacity(&self) -> ::std::option::Option<i64> {
         self.capacity
     }
     /// <p> A description of the rule group that helps with identification. </p>
@@ -197,7 +197,7 @@ impl AwsWafv2RuleGroupDetailsBuilder {
     /// Consumes the builder and constructs a [`AwsWafv2RuleGroupDetails`](crate::types::AwsWafv2RuleGroupDetails).
     pub fn build(self) -> crate::types::AwsWafv2RuleGroupDetails {
         crate::types::AwsWafv2RuleGroupDetails {
-            capacity: self.capacity.unwrap_or_default(),
+            capacity: self.capacity,
             description: self.description,
             id: self.id,
             name: self.name,

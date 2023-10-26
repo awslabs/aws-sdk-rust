@@ -8,7 +8,7 @@ pub struct DescribeModelCardOutput {
     /// <p>The name of the model card.</p>
     pub model_card_name: ::std::option::Option<::std::string::String>,
     /// <p>The version of the model card.</p>
-    pub model_card_version: i32,
+    pub model_card_version: ::std::option::Option<i32>,
     /// <p>The content of the model card.</p>
     pub content: ::std::option::Option<::std::string::String>,
     /// <p>The approval status of the model card within your organization. Different organizations might have different criteria for model card review and approval.</p>
@@ -51,7 +51,7 @@ impl DescribeModelCardOutput {
         self.model_card_name.as_deref()
     }
     /// <p>The version of the model card.</p>
-    pub fn model_card_version(&self) -> i32 {
+    pub fn model_card_version(&self) -> ::std::option::Option<i32> {
         self.model_card_version
     }
     /// <p>The content of the model card.</p>
@@ -359,7 +359,7 @@ impl DescribeModelCardOutputBuilder {
         crate::operation::describe_model_card::DescribeModelCardOutput {
             model_card_arn: self.model_card_arn,
             model_card_name: self.model_card_name,
-            model_card_version: self.model_card_version.unwrap_or_default(),
+            model_card_version: self.model_card_version,
             content: self.content,
             model_card_status: self.model_card_status,
             security_config: self.security_config,

@@ -3,19 +3,17 @@ pub fn ser_monitoring_network_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::MonitoringNetworkConfig,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if input.enable_inter_container_traffic_encryption {
-        object
-            .key("EnableInterContainerTrafficEncryption")
-            .boolean(input.enable_inter_container_traffic_encryption);
+    if let Some(var_1) = &input.enable_inter_container_traffic_encryption {
+        object.key("EnableInterContainerTrafficEncryption").boolean(*var_1);
     }
-    if input.enable_network_isolation {
-        object.key("EnableNetworkIsolation").boolean(input.enable_network_isolation);
+    if let Some(var_2) = &input.enable_network_isolation {
+        object.key("EnableNetworkIsolation").boolean(*var_2);
     }
-    if let Some(var_1) = &input.vpc_config {
+    if let Some(var_3) = &input.vpc_config {
         #[allow(unused_mut)]
-        let mut object_2 = object.key("VpcConfig").start_object();
-        crate::protocol_serde::shape_vpc_config::ser_vpc_config(&mut object_2, var_1)?;
-        object_2.finish();
+        let mut object_4 = object.key("VpcConfig").start_object();
+        crate::protocol_serde::shape_vpc_config::ser_vpc_config(&mut object_4, var_3)?;
+        object_4.finish();
     }
     Ok(())
 }

@@ -18,9 +18,9 @@ impl super::Client {
     ///   - [`description(Option<String>)`](crate::operation::create_schema::CreateSchemaOutput::description): <p>A description of the schema if specified when created.</p>
     ///   - [`data_format(Option<DataFormat>)`](crate::operation::create_schema::CreateSchemaOutput::data_format): <p>The data format of the schema definition. Currently <code>AVRO</code>, <code>JSON</code> and <code>PROTOBUF</code> are supported.</p>
     ///   - [`compatibility(Option<Compatibility>)`](crate::operation::create_schema::CreateSchemaOutput::compatibility): <p>The schema compatibility mode.</p>
-    ///   - [`schema_checkpoint(i64)`](crate::operation::create_schema::CreateSchemaOutput::schema_checkpoint): <p>The version number of the checkpoint (the last time the compatibility mode was changed).</p>
-    ///   - [`latest_schema_version(i64)`](crate::operation::create_schema::CreateSchemaOutput::latest_schema_version): <p>The latest version of the schema associated with the returned schema definition.</p>
-    ///   - [`next_schema_version(i64)`](crate::operation::create_schema::CreateSchemaOutput::next_schema_version): <p>The next version of the schema associated with the returned schema definition.</p>
+    ///   - [`schema_checkpoint(Option<i64>)`](crate::operation::create_schema::CreateSchemaOutput::schema_checkpoint): <p>The version number of the checkpoint (the last time the compatibility mode was changed).</p>
+    ///   - [`latest_schema_version(Option<i64>)`](crate::operation::create_schema::CreateSchemaOutput::latest_schema_version): <p>The latest version of the schema associated with the returned schema definition.</p>
+    ///   - [`next_schema_version(Option<i64>)`](crate::operation::create_schema::CreateSchemaOutput::next_schema_version): <p>The next version of the schema associated with the returned schema definition.</p>
     ///   - [`schema_status(Option<SchemaStatus>)`](crate::operation::create_schema::CreateSchemaOutput::schema_status): <p>The status of the schema. </p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::create_schema::CreateSchemaOutput::tags): <p>The tags for the schema.</p>
     ///   - [`schema_version_id(Option<String>)`](crate::operation::create_schema::CreateSchemaOutput::schema_version_id): <p>The unique identifier of the first schema version.</p>

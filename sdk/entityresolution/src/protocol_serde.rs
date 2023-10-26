@@ -23,13 +23,21 @@ pub fn parse_http_error_metadata(
     crate::json_errors::parse_error_metadata(response_body, response_headers)
 }
 
+pub(crate) mod shape_create_id_mapping_workflow;
+
 pub(crate) mod shape_create_matching_workflow;
 
 pub(crate) mod shape_create_schema_mapping;
 
+pub(crate) mod shape_delete_id_mapping_workflow;
+
 pub(crate) mod shape_delete_matching_workflow;
 
 pub(crate) mod shape_delete_schema_mapping;
+
+pub(crate) mod shape_get_id_mapping_job;
+
+pub(crate) mod shape_get_id_mapping_workflow;
 
 pub(crate) mod shape_get_match_id;
 
@@ -37,15 +45,25 @@ pub(crate) mod shape_get_matching_job;
 
 pub(crate) mod shape_get_matching_workflow;
 
+pub(crate) mod shape_get_provider_service;
+
 pub(crate) mod shape_get_schema_mapping;
+
+pub(crate) mod shape_list_id_mapping_jobs;
+
+pub(crate) mod shape_list_id_mapping_workflows;
 
 pub(crate) mod shape_list_matching_jobs;
 
 pub(crate) mod shape_list_matching_workflows;
 
+pub(crate) mod shape_list_provider_services;
+
 pub(crate) mod shape_list_schema_mappings;
 
 pub(crate) mod shape_list_tags_for_resource;
+
+pub(crate) mod shape_start_id_mapping_job;
 
 pub(crate) mod shape_start_matching_job;
 
@@ -53,7 +71,11 @@ pub(crate) mod shape_tag_resource;
 
 pub(crate) mod shape_untag_resource;
 
+pub(crate) mod shape_update_id_mapping_workflow;
+
 pub(crate) mod shape_update_matching_workflow;
+
+pub(crate) mod shape_update_schema_mapping;
 
 pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
     if data.is_empty() {
@@ -66,6 +88,8 @@ pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
 pub(crate) mod shape_access_denied_exception;
 
 pub(crate) mod shape_conflict_exception;
+
+pub(crate) mod shape_create_id_mapping_workflow_input;
 
 pub(crate) mod shape_create_matching_workflow_input;
 
@@ -83,11 +107,29 @@ pub(crate) mod shape_tag_resource_input;
 
 pub(crate) mod shape_throttling_exception;
 
+pub(crate) mod shape_update_id_mapping_workflow_input;
+
 pub(crate) mod shape_update_matching_workflow_input;
+
+pub(crate) mod shape_update_schema_mapping_input;
 
 pub(crate) mod shape_validation_exception;
 
 pub(crate) mod shape_error_details;
+
+pub(crate) mod shape_id_mapping_job_metrics;
+
+pub(crate) mod shape_id_mapping_techniques;
+
+pub(crate) mod shape_id_mapping_workflow_input_source;
+
+pub(crate) mod shape_id_mapping_workflow_input_source_config;
+
+pub(crate) mod shape_id_mapping_workflow_list;
+
+pub(crate) mod shape_id_mapping_workflow_output_source;
+
+pub(crate) mod shape_id_mapping_workflow_output_source_config;
 
 pub(crate) mod shape_incremental_run_config;
 
@@ -105,6 +147,12 @@ pub(crate) mod shape_output_source;
 
 pub(crate) mod shape_output_source_config;
 
+pub(crate) mod shape_provider_endpoint_configuration;
+
+pub(crate) mod shape_provider_intermediate_data_access_configuration;
+
+pub(crate) mod shape_provider_service_list;
+
 pub(crate) mod shape_resolution_techniques;
 
 pub(crate) mod shape_schema_input_attribute;
@@ -115,15 +163,29 @@ pub(crate) mod shape_schema_mapping_list;
 
 pub(crate) mod shape_tag_map;
 
+pub(crate) mod shape_aws_account_id_list;
+
+pub(crate) mod shape_id_mapping_workflow_summary;
+
 pub(crate) mod shape_job_summary;
 
 pub(crate) mod shape_matching_workflow_summary;
 
 pub(crate) mod shape_output_attribute;
 
+pub(crate) mod shape_provider_marketplace_configuration;
+
+pub(crate) mod shape_provider_properties;
+
+pub(crate) mod shape_provider_service_summary;
+
+pub(crate) mod shape_required_bucket_actions_list;
+
 pub(crate) mod shape_rule_based_properties;
 
 pub(crate) mod shape_schema_mapping_summary;
+
+pub(crate) mod shape_intermediate_source_configuration;
 
 pub(crate) mod shape_output_attributes;
 

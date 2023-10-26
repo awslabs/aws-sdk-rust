@@ -22,8 +22,8 @@ impl SetSubnetsInputBuilder {
 }
 /// Fluent builder constructing a request to `SetSubnets`.
 ///
-/// <p>Enables the Availability Zones for the specified public subnets for the specified Application Load Balancer or Network Load Balancer. The specified subnets replace the previously enabled subnets.</p>
-/// <p>When you specify subnets for a Network Load Balancer, you must include all subnets that were enabled previously, with their existing configurations, plus any additional subnets.</p>
+/// <p>Enables the Availability Zones for the specified public subnets for the specified Application Load Balancer, Network Load Balancer or Gateway Load Balancer. The specified subnets replace the previously enabled subnets.</p>
+/// <p>When you specify subnets for a Network Load Balancer, or Gateway Load Balancer you must include all subnets that were enabled previously, with their existing configurations, plus any additional subnets.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SetSubnetsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -134,6 +134,7 @@ impl SetSubnetsFluentBuilder {
     /// <p>[Application Load Balancers on Outposts] You must specify one Outpost subnet.</p>
     /// <p>[Application Load Balancers on Local Zones] You can specify subnets from one or more Local Zones.</p>
     /// <p>[Network Load Balancers] You can specify subnets from one or more Availability Zones.</p>
+    /// <p>[Gateway Load Balancers] You can specify subnets from one or more Availability Zones.</p>
     pub fn subnets(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.subnets(input.into());
         self
@@ -143,6 +144,7 @@ impl SetSubnetsFluentBuilder {
     /// <p>[Application Load Balancers on Outposts] You must specify one Outpost subnet.</p>
     /// <p>[Application Load Balancers on Local Zones] You can specify subnets from one or more Local Zones.</p>
     /// <p>[Network Load Balancers] You can specify subnets from one or more Availability Zones.</p>
+    /// <p>[Gateway Load Balancers] You can specify subnets from one or more Availability Zones.</p>
     pub fn set_subnets(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_subnets(input);
         self
@@ -152,6 +154,7 @@ impl SetSubnetsFluentBuilder {
     /// <p>[Application Load Balancers on Outposts] You must specify one Outpost subnet.</p>
     /// <p>[Application Load Balancers on Local Zones] You can specify subnets from one or more Local Zones.</p>
     /// <p>[Network Load Balancers] You can specify subnets from one or more Availability Zones.</p>
+    /// <p>[Gateway Load Balancers] You can specify subnets from one or more Availability Zones.</p>
     pub fn get_subnets(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_subnets()
     }
@@ -164,6 +167,7 @@ impl SetSubnetsFluentBuilder {
     /// <p>[Application Load Balancers on Outposts] You must specify one Outpost subnet.</p>
     /// <p>[Application Load Balancers on Local Zones] You can specify subnets from one or more Local Zones.</p>
     /// <p>[Network Load Balancers] You can specify subnets from one or more Availability Zones. You can specify one Elastic IP address per subnet if you need static IP addresses for your internet-facing load balancer. For internal load balancers, you can specify one private IP address per subnet from the IPv4 range of the subnet. For internet-facing load balancer, you can specify one IPv6 address per subnet.</p>
+    /// <p>[Gateway Load Balancers] You can specify subnets from one or more Availability Zones.</p>
     pub fn subnet_mappings(mut self, input: crate::types::SubnetMapping) -> Self {
         self.inner = self.inner.subnet_mappings(input);
         self
@@ -173,6 +177,7 @@ impl SetSubnetsFluentBuilder {
     /// <p>[Application Load Balancers on Outposts] You must specify one Outpost subnet.</p>
     /// <p>[Application Load Balancers on Local Zones] You can specify subnets from one or more Local Zones.</p>
     /// <p>[Network Load Balancers] You can specify subnets from one or more Availability Zones. You can specify one Elastic IP address per subnet if you need static IP addresses for your internet-facing load balancer. For internal load balancers, you can specify one private IP address per subnet from the IPv4 range of the subnet. For internet-facing load balancer, you can specify one IPv6 address per subnet.</p>
+    /// <p>[Gateway Load Balancers] You can specify subnets from one or more Availability Zones.</p>
     pub fn set_subnet_mappings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SubnetMapping>>) -> Self {
         self.inner = self.inner.set_subnet_mappings(input);
         self
@@ -182,20 +187,24 @@ impl SetSubnetsFluentBuilder {
     /// <p>[Application Load Balancers on Outposts] You must specify one Outpost subnet.</p>
     /// <p>[Application Load Balancers on Local Zones] You can specify subnets from one or more Local Zones.</p>
     /// <p>[Network Load Balancers] You can specify subnets from one or more Availability Zones. You can specify one Elastic IP address per subnet if you need static IP addresses for your internet-facing load balancer. For internal load balancers, you can specify one private IP address per subnet from the IPv4 range of the subnet. For internet-facing load balancer, you can specify one IPv6 address per subnet.</p>
+    /// <p>[Gateway Load Balancers] You can specify subnets from one or more Availability Zones.</p>
     pub fn get_subnet_mappings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SubnetMapping>> {
         self.inner.get_subnet_mappings()
     }
     /// <p>[Network Load Balancers] The type of IP addresses used by the subnets for your load balancer. The possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). You can’t specify <code>dualstack</code> for a load balancer with a UDP or TCP_UDP listener.</p>
+    /// <p>[Gateway Load Balancers] The type of IP addresses used by the subnets for your load balancer. The possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses).</p>
     pub fn ip_address_type(mut self, input: crate::types::IpAddressType) -> Self {
         self.inner = self.inner.ip_address_type(input);
         self
     }
     /// <p>[Network Load Balancers] The type of IP addresses used by the subnets for your load balancer. The possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). You can’t specify <code>dualstack</code> for a load balancer with a UDP or TCP_UDP listener.</p>
+    /// <p>[Gateway Load Balancers] The type of IP addresses used by the subnets for your load balancer. The possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses).</p>
     pub fn set_ip_address_type(mut self, input: ::std::option::Option<crate::types::IpAddressType>) -> Self {
         self.inner = self.inner.set_ip_address_type(input);
         self
     }
     /// <p>[Network Load Balancers] The type of IP addresses used by the subnets for your load balancer. The possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). You can’t specify <code>dualstack</code> for a load balancer with a UDP or TCP_UDP listener.</p>
+    /// <p>[Gateway Load Balancers] The type of IP addresses used by the subnets for your load balancer. The possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses).</p>
     pub fn get_ip_address_type(&self) -> &::std::option::Option<crate::types::IpAddressType> {
         self.inner.get_ip_address_type()
     }

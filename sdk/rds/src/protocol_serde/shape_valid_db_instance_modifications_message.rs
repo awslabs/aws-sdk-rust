@@ -26,6 +26,21 @@ pub fn de_valid_db_instance_modifications_message(
                 builder = builder.set_valid_processor_features(var_2);
             }
             ,
+            s if s.matches("SupportsDedicatedLogVolume") /* SupportsDedicatedLogVolume com.amazonaws.rds#ValidDBInstanceModificationsMessage$SupportsDedicatedLogVolume */ =>  {
+                let var_3 =
+                    Some(
+                         {
+                            <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_supports_dedicated_log_volume(var_3);
+            }
+            ,
             _ => {}
         }
     }

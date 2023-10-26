@@ -9,11 +9,11 @@ pub struct ReservedDbInstancesOffering {
     /// <p>The DB instance class for the reserved DB instance.</p>
     pub db_instance_class: ::std::option::Option<::std::string::String>,
     /// <p>The duration of the offering in seconds.</p>
-    pub duration: i32,
+    pub duration: ::std::option::Option<i32>,
     /// <p>The fixed price charged for this offering.</p>
-    pub fixed_price: f64,
+    pub fixed_price: ::std::option::Option<f64>,
     /// <p>The hourly price charged for this offering.</p>
-    pub usage_price: f64,
+    pub usage_price: ::std::option::Option<f64>,
     /// <p>The currency code for the reserved DB instance offering.</p>
     pub currency_code: ::std::option::Option<::std::string::String>,
     /// <p>The database engine used by the offering.</p>
@@ -21,7 +21,7 @@ pub struct ReservedDbInstancesOffering {
     /// <p>The offering type.</p>
     pub offering_type: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the offering applies to Multi-AZ deployments.</p>
-    pub multi_az: bool,
+    pub multi_az: ::std::option::Option<bool>,
     /// <p>The recurring price charged to run this reserved DB instance.</p>
     pub recurring_charges: ::std::option::Option<::std::vec::Vec<crate::types::RecurringCharge>>,
 }
@@ -35,15 +35,15 @@ impl ReservedDbInstancesOffering {
         self.db_instance_class.as_deref()
     }
     /// <p>The duration of the offering in seconds.</p>
-    pub fn duration(&self) -> i32 {
+    pub fn duration(&self) -> ::std::option::Option<i32> {
         self.duration
     }
     /// <p>The fixed price charged for this offering.</p>
-    pub fn fixed_price(&self) -> f64 {
+    pub fn fixed_price(&self) -> ::std::option::Option<f64> {
         self.fixed_price
     }
     /// <p>The hourly price charged for this offering.</p>
-    pub fn usage_price(&self) -> f64 {
+    pub fn usage_price(&self) -> ::std::option::Option<f64> {
         self.usage_price
     }
     /// <p>The currency code for the reserved DB instance offering.</p>
@@ -59,7 +59,7 @@ impl ReservedDbInstancesOffering {
         self.offering_type.as_deref()
     }
     /// <p>Indicates whether the offering applies to Multi-AZ deployments.</p>
-    pub fn multi_az(&self) -> bool {
+    pub fn multi_az(&self) -> ::std::option::Option<bool> {
         self.multi_az
     }
     /// <p>The recurring price charged to run this reserved DB instance.</p>
@@ -241,13 +241,13 @@ impl ReservedDbInstancesOfferingBuilder {
         crate::types::ReservedDbInstancesOffering {
             reserved_db_instances_offering_id: self.reserved_db_instances_offering_id,
             db_instance_class: self.db_instance_class,
-            duration: self.duration.unwrap_or_default(),
-            fixed_price: self.fixed_price.unwrap_or_default(),
-            usage_price: self.usage_price.unwrap_or_default(),
+            duration: self.duration,
+            fixed_price: self.fixed_price,
+            usage_price: self.usage_price,
             currency_code: self.currency_code,
             product_description: self.product_description,
             offering_type: self.offering_type,
-            multi_az: self.multi_az.unwrap_or_default(),
+            multi_az: self.multi_az,
             recurring_charges: self.recurring_charges,
         }
     }

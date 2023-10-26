@@ -9,38 +9,38 @@ pub fn ser_update_automation_rules_request_item(
     if let Some(var_2) = &input.rule_status {
         object.key("RuleStatus").string(var_2.as_str());
     }
-    if input.rule_order != 0 {
+    if let Some(var_3) = &input.rule_order {
         object.key("RuleOrder").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.rule_order).into()),
+            ::aws_smithy_types::Number::NegInt((*var_3).into()),
         );
     }
-    if let Some(var_3) = &input.description {
-        object.key("Description").string(var_3.as_str());
+    if let Some(var_4) = &input.description {
+        object.key("Description").string(var_4.as_str());
     }
-    if let Some(var_4) = &input.rule_name {
-        object.key("RuleName").string(var_4.as_str());
+    if let Some(var_5) = &input.rule_name {
+        object.key("RuleName").string(var_5.as_str());
     }
-    if input.is_terminal {
-        object.key("IsTerminal").boolean(input.is_terminal);
+    if let Some(var_6) = &input.is_terminal {
+        object.key("IsTerminal").boolean(*var_6);
     }
-    if let Some(var_5) = &input.criteria {
+    if let Some(var_7) = &input.criteria {
         #[allow(unused_mut)]
-        let mut object_6 = object.key("Criteria").start_object();
-        crate::protocol_serde::shape_automation_rules_finding_filters::ser_automation_rules_finding_filters(&mut object_6, var_5)?;
-        object_6.finish();
+        let mut object_8 = object.key("Criteria").start_object();
+        crate::protocol_serde::shape_automation_rules_finding_filters::ser_automation_rules_finding_filters(&mut object_8, var_7)?;
+        object_8.finish();
     }
-    if let Some(var_7) = &input.actions {
-        let mut array_8 = object.key("Actions").start_array();
-        for item_9 in var_7 {
+    if let Some(var_9) = &input.actions {
+        let mut array_10 = object.key("Actions").start_array();
+        for item_11 in var_9 {
             {
                 #[allow(unused_mut)]
-                let mut object_10 = array_8.value().start_object();
-                crate::protocol_serde::shape_automation_rules_action::ser_automation_rules_action(&mut object_10, item_9)?;
-                object_10.finish();
+                let mut object_12 = array_10.value().start_object();
+                crate::protocol_serde::shape_automation_rules_action::ser_automation_rules_action(&mut object_12, item_11)?;
+                object_12.finish();
             }
         }
-        array_8.finish();
+        array_10.finish();
     }
     Ok(())
 }

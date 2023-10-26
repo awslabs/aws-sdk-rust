@@ -26,6 +26,9 @@ impl RetrieveInputBuilder {
 /// <li> <p>Override boosting at the index level</p> </li>
 /// <li> <p>Filter based on document fields or attributes</p> </li>
 /// <li> <p>Filter based on the user or their group access to documents</p> </li>
+/// <li> <p>View the confidence score bucket for a retrieved passage result. The confidence bucket provides a relative ranking that indicates how confident Amazon Kendra is that the response is relevant to the query.</p> <note>
+/// <p>Confidence score buckets are currently available only for English.</p>
+/// </note> </li>
 /// </ul>
 /// <p>You can also include certain fields in the response that might provide useful additional information.</p>
 /// <p>The <code>Retrieve</code> API shares the number of <a href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_CapacityUnitsConfiguration.html">query capacity units</a> that you set for your index. For more information on what's included in a single capacity unit and the default base capacity for an index, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/adjusting-capacity.html">Adjusting capacity</a>.</p>

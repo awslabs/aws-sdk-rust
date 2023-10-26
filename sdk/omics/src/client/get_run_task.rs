@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetRunTask`](crate::operation::get_run_task::builders::GetRunTaskFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::get_run_task::builders::GetRunTaskFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_run_task::builders::GetRunTaskFluentBuilder::set_id): <p>The task's ID.</p>
+    ///   - [`id(impl Into<String>)`](crate::operation::get_run_task::builders::GetRunTaskFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_run_task::builders::GetRunTaskFluentBuilder::set_id): <p>The workflow run ID.</p>
     ///   - [`task_id(impl Into<String>)`](crate::operation::get_run_task::builders::GetRunTaskFluentBuilder::task_id) / [`set_task_id(Option<String>)`](crate::operation::get_run_task::builders::GetRunTaskFluentBuilder::set_task_id): <p>The task's ID.</p>
     /// - On success, responds with [`GetRunTaskOutput`](crate::operation::get_run_task::GetRunTaskOutput) with field(s):
     ///   - [`task_id(Option<String>)`](crate::operation::get_run_task::GetRunTaskOutput::task_id): <p>The task's ID.</p>
@@ -18,6 +18,7 @@ impl super::Client {
     ///   - [`log_stream(Option<String>)`](crate::operation::get_run_task::GetRunTaskOutput::log_stream): <p>The task's log stream.</p>
     ///   - [`gpus(Option<i32>)`](crate::operation::get_run_task::GetRunTaskOutput::gpus): <p> The number of Graphics Processing Units (GPU) specified in the task. </p>
     ///   - [`instance_type(Option<String>)`](crate::operation::get_run_task::GetRunTaskOutput::instance_type): <p> The instance type for a task. </p>
+    ///   - [`failure_reason(Option<String>)`](crate::operation::get_run_task::GetRunTaskOutput::failure_reason): <p> The reason a task has failed. </p>
     /// - On failure, responds with [`SdkError<GetRunTaskError>`](crate::operation::get_run_task::GetRunTaskError)
     pub fn get_run_task(&self) -> crate::operation::get_run_task::builders::GetRunTaskFluentBuilder {
         crate::operation::get_run_task::builders::GetRunTaskFluentBuilder::new(self.handle.clone())

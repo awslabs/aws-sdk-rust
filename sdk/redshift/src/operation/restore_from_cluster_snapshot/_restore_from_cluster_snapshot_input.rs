@@ -108,6 +108,10 @@ pub struct RestoreFromClusterSnapshotInput {
     pub target_reserved_node_offering_id: ::std::option::Option<::std::string::String>,
     /// <p>Enables support for restoring an unencrypted snapshot to a cluster encrypted with Key Management Service (KMS) and a customer managed key.</p>
     pub encrypted: ::std::option::Option<bool>,
+    /// <p>If <code>true</code>, Amazon Redshift uses Secrets Manager to manage the restored cluster's admin credentials. If <code>ManageMasterPassword</code> is false or not set, Amazon Redshift uses the admin credentials the cluster had at the time the snapshot was taken.</p>
+    pub manage_master_password: ::std::option::Option<bool>,
+    /// <p>The ID of the Key Management Service (KMS) key used to encrypt and store the cluster's admin credentials secret. You can only use this parameter if <code>ManageMasterPassword</code> is true.</p>
+    pub master_password_secret_kms_key_id: ::std::option::Option<::std::string::String>,
 }
 impl RestoreFromClusterSnapshotInput {
     /// <p>The identifier of the cluster that will be created from restoring the snapshot.</p>
@@ -280,6 +284,14 @@ impl RestoreFromClusterSnapshotInput {
     pub fn encrypted(&self) -> ::std::option::Option<bool> {
         self.encrypted
     }
+    /// <p>If <code>true</code>, Amazon Redshift uses Secrets Manager to manage the restored cluster's admin credentials. If <code>ManageMasterPassword</code> is false or not set, Amazon Redshift uses the admin credentials the cluster had at the time the snapshot was taken.</p>
+    pub fn manage_master_password(&self) -> ::std::option::Option<bool> {
+        self.manage_master_password
+    }
+    /// <p>The ID of the Key Management Service (KMS) key used to encrypt and store the cluster's admin credentials secret. You can only use this parameter if <code>ManageMasterPassword</code> is true.</p>
+    pub fn master_password_secret_kms_key_id(&self) -> ::std::option::Option<&str> {
+        self.master_password_secret_kms_key_id.as_deref()
+    }
 }
 impl RestoreFromClusterSnapshotInput {
     /// Creates a new builder-style object to manufacture [`RestoreFromClusterSnapshotInput`](crate::operation::restore_from_cluster_snapshot::RestoreFromClusterSnapshotInput).
@@ -325,6 +337,8 @@ pub struct RestoreFromClusterSnapshotInputBuilder {
     pub(crate) reserved_node_id: ::std::option::Option<::std::string::String>,
     pub(crate) target_reserved_node_offering_id: ::std::option::Option<::std::string::String>,
     pub(crate) encrypted: ::std::option::Option<bool>,
+    pub(crate) manage_master_password: ::std::option::Option<bool>,
+    pub(crate) master_password_secret_kms_key_id: ::std::option::Option<::std::string::String>,
 }
 impl RestoreFromClusterSnapshotInputBuilder {
     /// <p>The identifier of the cluster that will be created from restoring the snapshot.</p>
@@ -921,6 +935,34 @@ impl RestoreFromClusterSnapshotInputBuilder {
     pub fn get_encrypted(&self) -> &::std::option::Option<bool> {
         &self.encrypted
     }
+    /// <p>If <code>true</code>, Amazon Redshift uses Secrets Manager to manage the restored cluster's admin credentials. If <code>ManageMasterPassword</code> is false or not set, Amazon Redshift uses the admin credentials the cluster had at the time the snapshot was taken.</p>
+    pub fn manage_master_password(mut self, input: bool) -> Self {
+        self.manage_master_password = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>If <code>true</code>, Amazon Redshift uses Secrets Manager to manage the restored cluster's admin credentials. If <code>ManageMasterPassword</code> is false or not set, Amazon Redshift uses the admin credentials the cluster had at the time the snapshot was taken.</p>
+    pub fn set_manage_master_password(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.manage_master_password = input;
+        self
+    }
+    /// <p>If <code>true</code>, Amazon Redshift uses Secrets Manager to manage the restored cluster's admin credentials. If <code>ManageMasterPassword</code> is false or not set, Amazon Redshift uses the admin credentials the cluster had at the time the snapshot was taken.</p>
+    pub fn get_manage_master_password(&self) -> &::std::option::Option<bool> {
+        &self.manage_master_password
+    }
+    /// <p>The ID of the Key Management Service (KMS) key used to encrypt and store the cluster's admin credentials secret. You can only use this parameter if <code>ManageMasterPassword</code> is true.</p>
+    pub fn master_password_secret_kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.master_password_secret_kms_key_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the Key Management Service (KMS) key used to encrypt and store the cluster's admin credentials secret. You can only use this parameter if <code>ManageMasterPassword</code> is true.</p>
+    pub fn set_master_password_secret_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.master_password_secret_kms_key_id = input;
+        self
+    }
+    /// <p>The ID of the Key Management Service (KMS) key used to encrypt and store the cluster's admin credentials secret. You can only use this parameter if <code>ManageMasterPassword</code> is true.</p>
+    pub fn get_master_password_secret_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.master_password_secret_kms_key_id
+    }
     /// Consumes the builder and constructs a [`RestoreFromClusterSnapshotInput`](crate::operation::restore_from_cluster_snapshot::RestoreFromClusterSnapshotInput).
     pub fn build(
         self,
@@ -962,6 +1004,8 @@ impl RestoreFromClusterSnapshotInputBuilder {
             reserved_node_id: self.reserved_node_id,
             target_reserved_node_offering_id: self.target_reserved_node_offering_id,
             encrypted: self.encrypted,
+            manage_master_password: self.manage_master_password,
+            master_password_secret_kms_key_id: self.master_password_secret_kms_key_id,
         })
     }
 }

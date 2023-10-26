@@ -7,7 +7,7 @@ pub struct Segment {
     /// <p>The zero-based index number of the segment. For example, if the total number of segments is 4, <code>SegmentNumber</code> values range from 0 through 3.</p>
     pub segment_number: i32,
     /// <p>The total number of segments.</p>
-    pub total_segments: i32,
+    pub total_segments: ::std::option::Option<i32>,
 }
 impl Segment {
     /// <p>The zero-based index number of the segment. For example, if the total number of segments is 4, <code>SegmentNumber</code> values range from 0 through 3.</p>
@@ -15,7 +15,7 @@ impl Segment {
         self.segment_number
     }
     /// <p>The total number of segments.</p>
-    pub fn total_segments(&self) -> i32 {
+    pub fn total_segments(&self) -> ::std::option::Option<i32> {
         self.total_segments
     }
 }
@@ -66,7 +66,7 @@ impl SegmentBuilder {
     pub fn build(self) -> crate::types::Segment {
         crate::types::Segment {
             segment_number: self.segment_number.unwrap_or_default(),
-            total_segments: self.total_segments.unwrap_or_default(),
+            total_segments: self.total_segments,
         }
     }
 }

@@ -6,26 +6,26 @@ pub fn ser_aws_open_search_service_domain_service_software_options_details(
     if let Some(var_1) = &input.automated_update_date {
         object.key("AutomatedUpdateDate").string(var_1.as_str());
     }
-    if input.cancellable {
-        object.key("Cancellable").boolean(input.cancellable);
+    if let Some(var_2) = &input.cancellable {
+        object.key("Cancellable").boolean(*var_2);
     }
-    if let Some(var_2) = &input.current_version {
-        object.key("CurrentVersion").string(var_2.as_str());
+    if let Some(var_3) = &input.current_version {
+        object.key("CurrentVersion").string(var_3.as_str());
     }
-    if let Some(var_3) = &input.description {
-        object.key("Description").string(var_3.as_str());
+    if let Some(var_4) = &input.description {
+        object.key("Description").string(var_4.as_str());
     }
-    if let Some(var_4) = &input.new_version {
-        object.key("NewVersion").string(var_4.as_str());
+    if let Some(var_5) = &input.new_version {
+        object.key("NewVersion").string(var_5.as_str());
     }
-    if input.update_available {
-        object.key("UpdateAvailable").boolean(input.update_available);
+    if let Some(var_6) = &input.update_available {
+        object.key("UpdateAvailable").boolean(*var_6);
     }
-    if let Some(var_5) = &input.update_status {
-        object.key("UpdateStatus").string(var_5.as_str());
+    if let Some(var_7) = &input.update_status {
+        object.key("UpdateStatus").string(var_7.as_str());
     }
-    if input.optional_deployment {
-        object.key("OptionalDeployment").boolean(input.optional_deployment);
+    if let Some(var_8) = &input.optional_deployment {
+        object.key("OptionalDeployment").boolean(*var_8);
     }
     Ok(())
 }

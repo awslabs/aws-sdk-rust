@@ -3,10 +3,10 @@ pub fn ser_aws_s3_bucket_bucket_lifecycle_configuration_rules_abort_incomplete_m
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsS3BucketBucketLifecycleConfigurationRulesAbortIncompleteMultipartUploadDetails,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if input.days_after_initiation != 0 {
+    if let Some(var_1) = &input.days_after_initiation {
         object.key("DaysAfterInitiation").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.days_after_initiation).into()),
+            ::aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
     Ok(())

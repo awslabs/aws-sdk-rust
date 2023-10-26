@@ -21,8 +21,8 @@ pub fn ser_aws_eks_cluster_resources_vpc_config_details(
         }
         array_5.finish();
     }
-    if input.endpoint_public_access {
-        object.key("EndpointPublicAccess").boolean(input.endpoint_public_access);
+    if let Some(var_7) = &input.endpoint_public_access {
+        object.key("EndpointPublicAccess").boolean(*var_7);
     }
     Ok(())
 }

@@ -13,7 +13,7 @@ pub struct BatchPutMetricsError {
     /// </ul>
     pub code: ::std::option::Option<crate::types::PutMetricsErrorCode>,
     /// <p>An index that corresponds to the metric in the request.</p>
-    pub metric_index: i32,
+    pub metric_index: ::std::option::Option<i32>,
 }
 impl BatchPutMetricsError {
     /// <p>The error code of an error that occured when attempting to put metrics.</p>
@@ -27,7 +27,7 @@ impl BatchPutMetricsError {
         self.code.as_ref()
     }
     /// <p>An index that corresponds to the metric in the request.</p>
-    pub fn metric_index(&self) -> i32 {
+    pub fn metric_index(&self) -> ::std::option::Option<i32> {
         self.metric_index
     }
 }
@@ -96,7 +96,7 @@ impl BatchPutMetricsErrorBuilder {
     pub fn build(self) -> crate::types::BatchPutMetricsError {
         crate::types::BatchPutMetricsError {
             code: self.code,
-            metric_index: self.metric_index.unwrap_or_default(),
+            metric_index: self.metric_index,
         }
     }
 }

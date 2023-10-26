@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SensitiveDataDetections {
     /// <p>The total number of occurrences of sensitive data that were detected.</p>
-    pub count: i64,
+    pub count: ::std::option::Option<i64>,
     /// <p>The type of sensitive data that was detected. For example, the type might indicate that the data is an email address.</p>
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>Details about the sensitive data that was detected.</p>
@@ -13,7 +13,7 @@ pub struct SensitiveDataDetections {
 }
 impl SensitiveDataDetections {
     /// <p>The total number of occurrences of sensitive data that were detected.</p>
-    pub fn count(&self) -> i64 {
+    pub fn count(&self) -> ::std::option::Option<i64> {
         self.count
     }
     /// <p>The type of sensitive data that was detected. For example, the type might indicate that the data is an email address.</p>
@@ -86,7 +86,7 @@ impl SensitiveDataDetectionsBuilder {
     /// Consumes the builder and constructs a [`SensitiveDataDetections`](crate::types::SensitiveDataDetections).
     pub fn build(self) -> crate::types::SensitiveDataDetections {
         crate::types::SensitiveDataDetections {
-            count: self.count.unwrap_or_default(),
+            count: self.count,
             r#type: self.r#type,
             occurrences: self.occurrences,
         }

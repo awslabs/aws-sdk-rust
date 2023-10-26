@@ -136,6 +136,9 @@ pub(crate) fn de_get_schema_mapping(
                             .transpose()?,
                     );
                 }
+                "hasWorkflows" => {
+                    builder = builder.set_has_workflows(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                }
                 "mappedInputFields" => {
                     builder =
                         builder.set_mapped_input_fields(crate::protocol_serde::shape_schema_input_attributes::de_schema_input_attributes(tokens)?);

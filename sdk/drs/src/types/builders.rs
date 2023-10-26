@@ -5,6 +5,8 @@ pub use crate::types::_pit_policy_rule::PitPolicyRuleBuilder;
 
 pub use crate::types::_replication_configuration_replicated_disk::ReplicationConfigurationReplicatedDiskBuilder;
 
+pub use crate::types::_launch_into_instance_properties::LaunchIntoInstancePropertiesBuilder;
+
 pub use crate::types::_licensing::LicensingBuilder;
 
 pub use crate::types::_source_server::SourceServerBuilder;

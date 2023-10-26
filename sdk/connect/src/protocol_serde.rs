@@ -391,6 +391,8 @@ pub(crate) mod shape_update_participant_role_config;
 
 pub(crate) mod shape_update_phone_number;
 
+pub(crate) mod shape_update_phone_number_metadata;
+
 pub(crate) mod shape_update_prompt;
 
 pub(crate) mod shape_update_queue_hours_of_operation;
@@ -672,6 +674,8 @@ pub(crate) mod shape_update_instance_storage_config_input;
 pub(crate) mod shape_update_participant_role_config_input;
 
 pub(crate) mod shape_update_phone_number_input;
+
+pub(crate) mod shape_update_phone_number_metadata_input;
 
 pub(crate) mod shape_update_prompt_input;
 

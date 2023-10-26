@@ -10,6 +10,8 @@ pub struct PackageVersionHistory {
     pub commit_message: ::std::option::Option<::std::string::String>,
     /// <p>The date and time when the package was created.</p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>Additional information about plugin properties if the package is a <code>ZIP-PLUGIN</code> package.</p>
+    pub plugin_properties: ::std::option::Option<crate::types::PluginProperties>,
 }
 impl PackageVersionHistory {
     /// <p>The package version.</p>
@@ -23,6 +25,10 @@ impl PackageVersionHistory {
     /// <p>The date and time when the package was created.</p>
     pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
+    }
+    /// <p>Additional information about plugin properties if the package is a <code>ZIP-PLUGIN</code> package.</p>
+    pub fn plugin_properties(&self) -> ::std::option::Option<&crate::types::PluginProperties> {
+        self.plugin_properties.as_ref()
     }
 }
 impl PackageVersionHistory {
@@ -39,6 +45,7 @@ pub struct PackageVersionHistoryBuilder {
     pub(crate) package_version: ::std::option::Option<::std::string::String>,
     pub(crate) commit_message: ::std::option::Option<::std::string::String>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) plugin_properties: ::std::option::Option<crate::types::PluginProperties>,
 }
 impl PackageVersionHistoryBuilder {
     /// <p>The package version.</p>
@@ -83,12 +90,27 @@ impl PackageVersionHistoryBuilder {
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.created_at
     }
+    /// <p>Additional information about plugin properties if the package is a <code>ZIP-PLUGIN</code> package.</p>
+    pub fn plugin_properties(mut self, input: crate::types::PluginProperties) -> Self {
+        self.plugin_properties = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Additional information about plugin properties if the package is a <code>ZIP-PLUGIN</code> package.</p>
+    pub fn set_plugin_properties(mut self, input: ::std::option::Option<crate::types::PluginProperties>) -> Self {
+        self.plugin_properties = input;
+        self
+    }
+    /// <p>Additional information about plugin properties if the package is a <code>ZIP-PLUGIN</code> package.</p>
+    pub fn get_plugin_properties(&self) -> &::std::option::Option<crate::types::PluginProperties> {
+        &self.plugin_properties
+    }
     /// Consumes the builder and constructs a [`PackageVersionHistory`](crate::types::PackageVersionHistory).
     pub fn build(self) -> crate::types::PackageVersionHistory {
         crate::types::PackageVersionHistory {
             package_version: self.package_version,
             commit_message: self.commit_message,
             created_at: self.created_at,
+            plugin_properties: self.plugin_properties,
         }
     }
 }

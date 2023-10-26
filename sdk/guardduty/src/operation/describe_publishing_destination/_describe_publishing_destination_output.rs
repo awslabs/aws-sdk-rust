@@ -10,7 +10,7 @@ pub struct DescribePublishingDestinationOutput {
     /// <p>The status of the publishing destination.</p>
     pub status: ::std::option::Option<crate::types::PublishingStatus>,
     /// <p>The time, in epoch millisecond format, at which GuardDuty was first unable to publish findings to the destination.</p>
-    pub publishing_failure_start_timestamp: i64,
+    pub publishing_failure_start_timestamp: ::std::option::Option<i64>,
     /// <p>A <code>DestinationProperties</code> object that includes the <code>DestinationArn</code> and <code>KmsKeyArn</code> of the publishing destination.</p>
     pub destination_properties: ::std::option::Option<crate::types::DestinationProperties>,
     _request_id: Option<String>,
@@ -29,7 +29,7 @@ impl DescribePublishingDestinationOutput {
         self.status.as_ref()
     }
     /// <p>The time, in epoch millisecond format, at which GuardDuty was first unable to publish findings to the destination.</p>
-    pub fn publishing_failure_start_timestamp(&self) -> i64 {
+    pub fn publishing_failure_start_timestamp(&self) -> ::std::option::Option<i64> {
         self.publishing_failure_start_timestamp
     }
     /// <p>A <code>DestinationProperties</code> object that includes the <code>DestinationArn</code> and <code>KmsKeyArn</code> of the publishing destination.</p>
@@ -146,7 +146,7 @@ impl DescribePublishingDestinationOutputBuilder {
             destination_id: self.destination_id,
             destination_type: self.destination_type,
             status: self.status,
-            publishing_failure_start_timestamp: self.publishing_failure_start_timestamp.unwrap_or_default(),
+            publishing_failure_start_timestamp: self.publishing_failure_start_timestamp,
             destination_properties: self.destination_properties,
             _request_id: self._request_id,
         }

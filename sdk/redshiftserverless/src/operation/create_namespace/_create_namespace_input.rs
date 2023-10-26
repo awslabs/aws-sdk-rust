@@ -8,6 +8,7 @@ pub struct CreateNamespaceInput {
     /// <p>The username of the administrator for the first database created in the namespace.</p>
     pub admin_username: ::std::option::Option<::std::string::String>,
     /// <p>The password of the administrator for the first database created in the namespace.</p>
+    /// <p>You can't use <code>adminUserPassword</code> if <code>manageAdminPassword</code> is true. </p>
     pub admin_user_password: ::std::option::Option<::std::string::String>,
     /// <p>The name of the first database created in the namespace.</p>
     pub db_name: ::std::option::Option<::std::string::String>,
@@ -21,6 +22,10 @@ pub struct CreateNamespaceInput {
     pub log_exports: ::std::option::Option<::std::vec::Vec<crate::types::LogExport>>,
     /// <p>A list of tag instances.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    /// <p>If <code>true</code>, Amazon Redshift uses Secrets Manager to manage the namespace's admin credentials. You can't use <code>adminUserPassword</code> if <code>manageAdminPassword</code> is true. If <code>manageAdminPassword</code> is false or not set, Amazon Redshift uses <code>adminUserPassword</code> for the admin user account's password. </p>
+    pub manage_admin_password: ::std::option::Option<bool>,
+    /// <p>The ID of the Key Management Service (KMS) key used to encrypt and store the namespace's admin credentials secret. You can only use this parameter if <code>manageAdminPassword</code> is true.</p>
+    pub admin_password_secret_kms_key_id: ::std::option::Option<::std::string::String>,
 }
 impl CreateNamespaceInput {
     /// <p>The name of the namespace.</p>
@@ -32,6 +37,7 @@ impl CreateNamespaceInput {
         self.admin_username.as_deref()
     }
     /// <p>The password of the administrator for the first database created in the namespace.</p>
+    /// <p>You can't use <code>adminUserPassword</code> if <code>manageAdminPassword</code> is true. </p>
     pub fn admin_user_password(&self) -> ::std::option::Option<&str> {
         self.admin_user_password.as_deref()
     }
@@ -59,6 +65,14 @@ impl CreateNamespaceInput {
     pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
+    /// <p>If <code>true</code>, Amazon Redshift uses Secrets Manager to manage the namespace's admin credentials. You can't use <code>adminUserPassword</code> if <code>manageAdminPassword</code> is true. If <code>manageAdminPassword</code> is false or not set, Amazon Redshift uses <code>adminUserPassword</code> for the admin user account's password. </p>
+    pub fn manage_admin_password(&self) -> ::std::option::Option<bool> {
+        self.manage_admin_password
+    }
+    /// <p>The ID of the Key Management Service (KMS) key used to encrypt and store the namespace's admin credentials secret. You can only use this parameter if <code>manageAdminPassword</code> is true.</p>
+    pub fn admin_password_secret_kms_key_id(&self) -> ::std::option::Option<&str> {
+        self.admin_password_secret_kms_key_id.as_deref()
+    }
 }
 impl ::std::fmt::Debug for CreateNamespaceInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -72,6 +86,8 @@ impl ::std::fmt::Debug for CreateNamespaceInput {
         formatter.field("iam_roles", &self.iam_roles);
         formatter.field("log_exports", &self.log_exports);
         formatter.field("tags", &self.tags);
+        formatter.field("manage_admin_password", &self.manage_admin_password);
+        formatter.field("admin_password_secret_kms_key_id", &self.admin_password_secret_kms_key_id);
         formatter.finish()
     }
 }
@@ -95,6 +111,8 @@ pub struct CreateNamespaceInputBuilder {
     pub(crate) iam_roles: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) log_exports: ::std::option::Option<::std::vec::Vec<crate::types::LogExport>>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) manage_admin_password: ::std::option::Option<bool>,
+    pub(crate) admin_password_secret_kms_key_id: ::std::option::Option<::std::string::String>,
 }
 impl CreateNamespaceInputBuilder {
     /// <p>The name of the namespace.</p>
@@ -126,16 +144,19 @@ impl CreateNamespaceInputBuilder {
         &self.admin_username
     }
     /// <p>The password of the administrator for the first database created in the namespace.</p>
+    /// <p>You can't use <code>adminUserPassword</code> if <code>manageAdminPassword</code> is true. </p>
     pub fn admin_user_password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.admin_user_password = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The password of the administrator for the first database created in the namespace.</p>
+    /// <p>You can't use <code>adminUserPassword</code> if <code>manageAdminPassword</code> is true. </p>
     pub fn set_admin_user_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.admin_user_password = input;
         self
     }
     /// <p>The password of the administrator for the first database created in the namespace.</p>
+    /// <p>You can't use <code>adminUserPassword</code> if <code>manageAdminPassword</code> is true. </p>
     pub fn get_admin_user_password(&self) -> &::std::option::Option<::std::string::String> {
         &self.admin_user_password
     }
@@ -241,6 +262,34 @@ impl CreateNamespaceInputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }
+    /// <p>If <code>true</code>, Amazon Redshift uses Secrets Manager to manage the namespace's admin credentials. You can't use <code>adminUserPassword</code> if <code>manageAdminPassword</code> is true. If <code>manageAdminPassword</code> is false or not set, Amazon Redshift uses <code>adminUserPassword</code> for the admin user account's password. </p>
+    pub fn manage_admin_password(mut self, input: bool) -> Self {
+        self.manage_admin_password = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>If <code>true</code>, Amazon Redshift uses Secrets Manager to manage the namespace's admin credentials. You can't use <code>adminUserPassword</code> if <code>manageAdminPassword</code> is true. If <code>manageAdminPassword</code> is false or not set, Amazon Redshift uses <code>adminUserPassword</code> for the admin user account's password. </p>
+    pub fn set_manage_admin_password(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.manage_admin_password = input;
+        self
+    }
+    /// <p>If <code>true</code>, Amazon Redshift uses Secrets Manager to manage the namespace's admin credentials. You can't use <code>adminUserPassword</code> if <code>manageAdminPassword</code> is true. If <code>manageAdminPassword</code> is false or not set, Amazon Redshift uses <code>adminUserPassword</code> for the admin user account's password. </p>
+    pub fn get_manage_admin_password(&self) -> &::std::option::Option<bool> {
+        &self.manage_admin_password
+    }
+    /// <p>The ID of the Key Management Service (KMS) key used to encrypt and store the namespace's admin credentials secret. You can only use this parameter if <code>manageAdminPassword</code> is true.</p>
+    pub fn admin_password_secret_kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.admin_password_secret_kms_key_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the Key Management Service (KMS) key used to encrypt and store the namespace's admin credentials secret. You can only use this parameter if <code>manageAdminPassword</code> is true.</p>
+    pub fn set_admin_password_secret_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.admin_password_secret_kms_key_id = input;
+        self
+    }
+    /// <p>The ID of the Key Management Service (KMS) key used to encrypt and store the namespace's admin credentials secret. You can only use this parameter if <code>manageAdminPassword</code> is true.</p>
+    pub fn get_admin_password_secret_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.admin_password_secret_kms_key_id
+    }
     /// Consumes the builder and constructs a [`CreateNamespaceInput`](crate::operation::create_namespace::CreateNamespaceInput).
     pub fn build(
         self,
@@ -255,6 +304,8 @@ impl CreateNamespaceInputBuilder {
             iam_roles: self.iam_roles,
             log_exports: self.log_exports,
             tags: self.tags,
+            manage_admin_password: self.manage_admin_password,
+            admin_password_secret_kms_key_id: self.admin_password_secret_kms_key_id,
         })
     }
 }
@@ -270,6 +321,8 @@ impl ::std::fmt::Debug for CreateNamespaceInputBuilder {
         formatter.field("iam_roles", &self.iam_roles);
         formatter.field("log_exports", &self.log_exports);
         formatter.field("tags", &self.tags);
+        formatter.field("manage_admin_password", &self.manage_admin_password);
+        formatter.field("admin_password_secret_kms_key_id", &self.admin_password_secret_kms_key_id);
         formatter.finish()
     }
 }

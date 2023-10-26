@@ -24,6 +24,7 @@
 ///     CapacityReservationInstancePlatform::RhelWithSqlServerWeb => { /* ... */ },
 ///     CapacityReservationInstancePlatform::RedHatEnterpriseLinux => { /* ... */ },
 ///     CapacityReservationInstancePlatform::SuseLinux => { /* ... */ },
+///     CapacityReservationInstancePlatform::UbuntuProLinux => { /* ... */ },
 ///     CapacityReservationInstancePlatform::Windows => { /* ... */ },
 ///     CapacityReservationInstancePlatform::WindowsWithSqlServer => { /* ... */ },
 ///     CapacityReservationInstancePlatform::WindowsWithSqlServerEnterprise => { /* ... */ },
@@ -81,6 +82,8 @@ pub enum CapacityReservationInstancePlatform {
     #[allow(missing_docs)] // documentation missing in model
     SuseLinux,
     #[allow(missing_docs)] // documentation missing in model
+    UbuntuProLinux,
+    #[allow(missing_docs)] // documentation missing in model
     Windows,
     #[allow(missing_docs)] // documentation missing in model
     WindowsWithSqlServer,
@@ -108,6 +111,7 @@ impl ::std::convert::From<&str> for CapacityReservationInstancePlatform {
             "RHEL with SQL Server Web" => CapacityReservationInstancePlatform::RhelWithSqlServerWeb,
             "Red Hat Enterprise Linux" => CapacityReservationInstancePlatform::RedHatEnterpriseLinux,
             "SUSE Linux" => CapacityReservationInstancePlatform::SuseLinux,
+            "Ubuntu Pro" => CapacityReservationInstancePlatform::UbuntuProLinux,
             "Windows" => CapacityReservationInstancePlatform::Windows,
             "Windows with SQL Server" => CapacityReservationInstancePlatform::WindowsWithSqlServer,
             "Windows with SQL Server Enterprise" => CapacityReservationInstancePlatform::WindowsWithSqlServerEnterprise,
@@ -140,6 +144,7 @@ impl CapacityReservationInstancePlatform {
             CapacityReservationInstancePlatform::RhelWithSqlServerWeb => "RHEL with SQL Server Web",
             CapacityReservationInstancePlatform::RedHatEnterpriseLinux => "Red Hat Enterprise Linux",
             CapacityReservationInstancePlatform::SuseLinux => "SUSE Linux",
+            CapacityReservationInstancePlatform::UbuntuProLinux => "Ubuntu Pro",
             CapacityReservationInstancePlatform::Windows => "Windows",
             CapacityReservationInstancePlatform::WindowsWithSqlServer => "Windows with SQL Server",
             CapacityReservationInstancePlatform::WindowsWithSqlServerEnterprise => "Windows with SQL Server Enterprise",
@@ -163,6 +168,7 @@ impl CapacityReservationInstancePlatform {
             "RHEL with SQL Server Web",
             "Red Hat Enterprise Linux",
             "SUSE Linux",
+            "Ubuntu Pro",
             "Windows",
             "Windows with SQL Server",
             "Windows with SQL Server Enterprise",

@@ -9,7 +9,7 @@ pub struct SentimentConfiguration {
     /// <p>The type of sentiment, <code>POSITIVE</code>, <code>NEGATIVE</code>, or <code>NEUTRAL</code>.</p>
     pub sentiment_type: ::std::option::Option<crate::types::SentimentType>,
     /// <p>Specifies the analysis interval.</p>
-    pub time_period: i32,
+    pub time_period: ::std::option::Option<i32>,
 }
 impl SentimentConfiguration {
     /// <p>The name of the rule in the sentiment configuration.</p>
@@ -21,7 +21,7 @@ impl SentimentConfiguration {
         self.sentiment_type.as_ref()
     }
     /// <p>Specifies the analysis interval.</p>
-    pub fn time_period(&self) -> i32 {
+    pub fn time_period(&self) -> ::std::option::Option<i32> {
         self.time_period
     }
 }
@@ -88,7 +88,7 @@ impl SentimentConfigurationBuilder {
         crate::types::SentimentConfiguration {
             rule_name: self.rule_name,
             sentiment_type: self.sentiment_type,
-            time_period: self.time_period.unwrap_or_default(),
+            time_period: self.time_period,
         }
     }
 }

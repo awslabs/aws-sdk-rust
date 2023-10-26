@@ -5,19 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEcsClusterConfigurationExecuteCommandConfigurationLogConfigurationDetails {
     /// <p>Whether to enable encryption on the CloudWatch logs.</p>
-    pub cloud_watch_encryption_enabled: bool,
+    pub cloud_watch_encryption_enabled: ::std::option::Option<bool>,
     /// <p>The name of the CloudWatch log group to send the logs to.</p>
     pub cloud_watch_log_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the S3 bucket to send logs to.</p>
     pub s3_bucket_name: ::std::option::Option<::std::string::String>,
     /// <p>Whether to encrypt the logs that are sent to the S3 bucket.</p>
-    pub s3_encryption_enabled: bool,
+    pub s3_encryption_enabled: ::std::option::Option<bool>,
     /// <p>Identifies the folder in the S3 bucket to send the logs to.</p>
     pub s3_key_prefix: ::std::option::Option<::std::string::String>,
 }
 impl AwsEcsClusterConfigurationExecuteCommandConfigurationLogConfigurationDetails {
     /// <p>Whether to enable encryption on the CloudWatch logs.</p>
-    pub fn cloud_watch_encryption_enabled(&self) -> bool {
+    pub fn cloud_watch_encryption_enabled(&self) -> ::std::option::Option<bool> {
         self.cloud_watch_encryption_enabled
     }
     /// <p>The name of the CloudWatch log group to send the logs to.</p>
@@ -29,7 +29,7 @@ impl AwsEcsClusterConfigurationExecuteCommandConfigurationLogConfigurationDetail
         self.s3_bucket_name.as_deref()
     }
     /// <p>Whether to encrypt the logs that are sent to the S3 bucket.</p>
-    pub fn s3_encryption_enabled(&self) -> bool {
+    pub fn s3_encryption_enabled(&self) -> ::std::option::Option<bool> {
         self.s3_encryption_enabled
     }
     /// <p>Identifies the folder in the S3 bucket to send the logs to.</p>
@@ -128,10 +128,10 @@ impl AwsEcsClusterConfigurationExecuteCommandConfigurationLogConfigurationDetail
     /// Consumes the builder and constructs a [`AwsEcsClusterConfigurationExecuteCommandConfigurationLogConfigurationDetails`](crate::types::AwsEcsClusterConfigurationExecuteCommandConfigurationLogConfigurationDetails).
     pub fn build(self) -> crate::types::AwsEcsClusterConfigurationExecuteCommandConfigurationLogConfigurationDetails {
         crate::types::AwsEcsClusterConfigurationExecuteCommandConfigurationLogConfigurationDetails {
-            cloud_watch_encryption_enabled: self.cloud_watch_encryption_enabled.unwrap_or_default(),
+            cloud_watch_encryption_enabled: self.cloud_watch_encryption_enabled,
             cloud_watch_log_group_name: self.cloud_watch_log_group_name,
             s3_bucket_name: self.s3_bucket_name,
-            s3_encryption_enabled: self.s3_encryption_enabled.unwrap_or_default(),
+            s3_encryption_enabled: self.s3_encryption_enabled,
             s3_key_prefix: self.s3_key_prefix,
         }
     }

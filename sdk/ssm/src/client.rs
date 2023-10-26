@@ -212,6 +212,8 @@ mod delete_inventory;
 
 mod delete_maintenance_window;
 
+mod delete_ops_item;
+
 mod delete_ops_metadata;
 
 mod delete_parameter;

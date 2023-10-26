@@ -8,7 +8,7 @@ pub struct GetLensReviewReportOutput {
     pub workload_id: ::std::option::Option<::std::string::String>,
     /// <p>The milestone number.</p>
     /// <p>A workload can have a maximum of 100 milestones.</p>
-    pub milestone_number: i32,
+    pub milestone_number: ::std::option::Option<i32>,
     /// <p>A report of a lens review.</p>
     pub lens_review_report: ::std::option::Option<crate::types::LensReviewReport>,
     _request_id: Option<String>,
@@ -20,7 +20,7 @@ impl GetLensReviewReportOutput {
     }
     /// <p>The milestone number.</p>
     /// <p>A workload can have a maximum of 100 milestones.</p>
-    pub fn milestone_number(&self) -> i32 {
+    pub fn milestone_number(&self) -> ::std::option::Option<i32> {
         self.milestone_number
     }
     /// <p>A report of a lens review.</p>
@@ -108,7 +108,7 @@ impl GetLensReviewReportOutputBuilder {
     pub fn build(self) -> crate::operation::get_lens_review_report::GetLensReviewReportOutput {
         crate::operation::get_lens_review_report::GetLensReviewReportOutput {
             workload_id: self.workload_id,
-            milestone_number: self.milestone_number.unwrap_or_default(),
+            milestone_number: self.milestone_number,
             lens_review_report: self.lens_review_report,
             _request_id: self._request_id,
         }

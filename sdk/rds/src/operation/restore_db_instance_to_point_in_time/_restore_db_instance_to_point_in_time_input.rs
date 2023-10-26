@@ -242,6 +242,8 @@ pub struct RestoreDbInstanceToPointInTimeInput {
     /// <p>Be sure to allocate enough storage for your new DB instance so that the restore operation can succeed. You can also allocate additional storage for future growth.</p>
     /// </note>
     pub allocated_storage: ::std::option::Option<i32>,
+    /// <p>Specifies whether to enable a dedicated log volume (DLV) for the DB instance.</p>
+    pub dedicated_log_volume: ::std::option::Option<bool>,
 }
 impl RestoreDbInstanceToPointInTimeInput {
     /// <p>The identifier of the source DB instance from which to restore.</p>
@@ -568,6 +570,10 @@ impl RestoreDbInstanceToPointInTimeInput {
     pub fn allocated_storage(&self) -> ::std::option::Option<i32> {
         self.allocated_storage
     }
+    /// <p>Specifies whether to enable a dedicated log volume (DLV) for the DB instance.</p>
+    pub fn dedicated_log_volume(&self) -> ::std::option::Option<bool> {
+        self.dedicated_log_volume
+    }
 }
 impl RestoreDbInstanceToPointInTimeInput {
     /// Creates a new builder-style object to manufacture [`RestoreDbInstanceToPointInTimeInput`](crate::operation::restore_db_instance_to_point_in_time::RestoreDbInstanceToPointInTimeInput).
@@ -623,6 +629,7 @@ pub struct RestoreDbInstanceToPointInTimeInputBuilder {
     pub(crate) network_type: ::std::option::Option<::std::string::String>,
     pub(crate) storage_throughput: ::std::option::Option<i32>,
     pub(crate) allocated_storage: ::std::option::Option<i32>,
+    pub(crate) dedicated_log_volume: ::std::option::Option<bool>,
 }
 impl RestoreDbInstanceToPointInTimeInputBuilder {
     /// <p>The identifier of the source DB instance from which to restore.</p>
@@ -1713,6 +1720,20 @@ impl RestoreDbInstanceToPointInTimeInputBuilder {
     pub fn get_allocated_storage(&self) -> &::std::option::Option<i32> {
         &self.allocated_storage
     }
+    /// <p>Specifies whether to enable a dedicated log volume (DLV) for the DB instance.</p>
+    pub fn dedicated_log_volume(mut self, input: bool) -> Self {
+        self.dedicated_log_volume = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether to enable a dedicated log volume (DLV) for the DB instance.</p>
+    pub fn set_dedicated_log_volume(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.dedicated_log_volume = input;
+        self
+    }
+    /// <p>Specifies whether to enable a dedicated log volume (DLV) for the DB instance.</p>
+    pub fn get_dedicated_log_volume(&self) -> &::std::option::Option<bool> {
+        &self.dedicated_log_volume
+    }
     /// Consumes the builder and constructs a [`RestoreDbInstanceToPointInTimeInput`](crate::operation::restore_db_instance_to_point_in_time::RestoreDbInstanceToPointInTimeInput).
     pub fn build(
         self,
@@ -1765,6 +1786,7 @@ impl RestoreDbInstanceToPointInTimeInputBuilder {
                 network_type: self.network_type,
                 storage_throughput: self.storage_throughput,
                 allocated_storage: self.allocated_storage,
+                dedicated_log_volume: self.dedicated_log_volume,
             },
         )
     }

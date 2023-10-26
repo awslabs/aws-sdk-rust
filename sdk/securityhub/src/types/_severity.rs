@@ -8,7 +8,7 @@
 pub struct Severity {
     /// <p>Deprecated. This attribute is being deprecated. Instead of providing <code>Product</code>, provide <code>Original</code>.</p>
     /// <p>The native severity as defined by the Amazon Web Services service or integrated partner product that generated the finding.</p>
-    pub product: f64,
+    pub product: ::std::option::Option<f64>,
     /// <p>The severity value of the finding. The allowed values are the following.</p>
     /// <ul>
     /// <li> <p> <code>INFORMATIONAL</code> - No issue was found.</p> </li>
@@ -35,14 +35,14 @@ pub struct Severity {
     /// <li> <p> <code>HIGH</code> - 70</p> </li>
     /// <li> <p> <code>CRITICAL</code> - 90</p> </li>
     /// </ul>
-    pub normalized: i32,
+    pub normalized: ::std::option::Option<i32>,
     /// <p>The native severity from the finding product that generated the finding.</p>
     pub original: ::std::option::Option<::std::string::String>,
 }
 impl Severity {
     /// <p>Deprecated. This attribute is being deprecated. Instead of providing <code>Product</code>, provide <code>Original</code>.</p>
     /// <p>The native severity as defined by the Amazon Web Services service or integrated partner product that generated the finding.</p>
-    pub fn product(&self) -> f64 {
+    pub fn product(&self) -> ::std::option::Option<f64> {
         self.product
     }
     /// <p>The severity value of the finding. The allowed values are the following.</p>
@@ -73,7 +73,7 @@ impl Severity {
     /// <li> <p> <code>HIGH</code> - 70</p> </li>
     /// <li> <p> <code>CRITICAL</code> - 90</p> </li>
     /// </ul>
-    pub fn normalized(&self) -> i32 {
+    pub fn normalized(&self) -> ::std::option::Option<i32> {
         self.normalized
     }
     /// <p>The native severity from the finding product that generated the finding.</p>
@@ -229,9 +229,9 @@ impl SeverityBuilder {
     /// Consumes the builder and constructs a [`Severity`](crate::types::Severity).
     pub fn build(self) -> crate::types::Severity {
         crate::types::Severity {
-            product: self.product.unwrap_or_default(),
+            product: self.product,
             label: self.label,
-            normalized: self.normalized.unwrap_or_default(),
+            normalized: self.normalized,
             original: self.original,
         }
     }

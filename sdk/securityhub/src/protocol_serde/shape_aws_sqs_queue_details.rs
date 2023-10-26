@@ -3,20 +3,20 @@ pub fn ser_aws_sqs_queue_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsSqsQueueDetails,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if input.kms_data_key_reuse_period_seconds != 0 {
+    if let Some(var_1) = &input.kms_data_key_reuse_period_seconds {
         object.key("KmsDataKeyReusePeriodSeconds").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.kms_data_key_reuse_period_seconds).into()),
+            ::aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if let Some(var_1) = &input.kms_master_key_id {
-        object.key("KmsMasterKeyId").string(var_1.as_str());
+    if let Some(var_2) = &input.kms_master_key_id {
+        object.key("KmsMasterKeyId").string(var_2.as_str());
     }
-    if let Some(var_2) = &input.queue_name {
-        object.key("QueueName").string(var_2.as_str());
+    if let Some(var_3) = &input.queue_name {
+        object.key("QueueName").string(var_3.as_str());
     }
-    if let Some(var_3) = &input.dead_letter_target_arn {
-        object.key("DeadLetterTargetArn").string(var_3.as_str());
+    if let Some(var_4) = &input.dead_letter_target_arn {
+        object.key("DeadLetterTargetArn").string(var_4.as_str());
     }
     Ok(())
 }

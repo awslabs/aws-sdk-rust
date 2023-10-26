@@ -8,6 +8,8 @@ pub struct ResolutionTechniques {
     pub resolution_type: ::std::option::Option<crate::types::ResolutionType>,
     /// <p>An object which defines the list of matching rules to run and has a field <code>Rules</code>, which is a list of rule objects.</p>
     pub rule_based_properties: ::std::option::Option<crate::types::RuleBasedProperties>,
+    /// <p>The properties of the provider service.</p>
+    pub provider_properties: ::std::option::Option<crate::types::ProviderProperties>,
 }
 impl ResolutionTechniques {
     /// <p>The type of matching. There are two types of matching: <code>RULE_MATCHING</code> and <code>ML_MATCHING</code>.</p>
@@ -17,6 +19,10 @@ impl ResolutionTechniques {
     /// <p>An object which defines the list of matching rules to run and has a field <code>Rules</code>, which is a list of rule objects.</p>
     pub fn rule_based_properties(&self) -> ::std::option::Option<&crate::types::RuleBasedProperties> {
         self.rule_based_properties.as_ref()
+    }
+    /// <p>The properties of the provider service.</p>
+    pub fn provider_properties(&self) -> ::std::option::Option<&crate::types::ProviderProperties> {
+        self.provider_properties.as_ref()
     }
 }
 impl ResolutionTechniques {
@@ -32,6 +38,7 @@ impl ResolutionTechniques {
 pub struct ResolutionTechniquesBuilder {
     pub(crate) resolution_type: ::std::option::Option<crate::types::ResolutionType>,
     pub(crate) rule_based_properties: ::std::option::Option<crate::types::RuleBasedProperties>,
+    pub(crate) provider_properties: ::std::option::Option<crate::types::ProviderProperties>,
 }
 impl ResolutionTechniquesBuilder {
     /// <p>The type of matching. There are two types of matching: <code>RULE_MATCHING</code> and <code>ML_MATCHING</code>.</p>
@@ -62,11 +69,26 @@ impl ResolutionTechniquesBuilder {
     pub fn get_rule_based_properties(&self) -> &::std::option::Option<crate::types::RuleBasedProperties> {
         &self.rule_based_properties
     }
+    /// <p>The properties of the provider service.</p>
+    pub fn provider_properties(mut self, input: crate::types::ProviderProperties) -> Self {
+        self.provider_properties = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The properties of the provider service.</p>
+    pub fn set_provider_properties(mut self, input: ::std::option::Option<crate::types::ProviderProperties>) -> Self {
+        self.provider_properties = input;
+        self
+    }
+    /// <p>The properties of the provider service.</p>
+    pub fn get_provider_properties(&self) -> &::std::option::Option<crate::types::ProviderProperties> {
+        &self.provider_properties
+    }
     /// Consumes the builder and constructs a [`ResolutionTechniques`](crate::types::ResolutionTechniques).
     pub fn build(self) -> crate::types::ResolutionTechniques {
         crate::types::ResolutionTechniques {
             resolution_type: self.resolution_type,
             rule_based_properties: self.rule_based_properties,
+            provider_properties: self.provider_properties,
         }
     }
 }

@@ -19,7 +19,7 @@ pub struct AnswerSummary {
     /// <p>A list of selected choices to a question in your workload.</p>
     pub choice_answer_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ChoiceAnswerSummary>>,
     /// <p>Defines whether this question is applicable to a lens review.</p>
-    pub is_applicable: bool,
+    pub is_applicable: ::std::option::Option<bool>,
     /// <p>The risk for a given workload, lens review, pillar, or question.</p>
     pub risk: ::std::option::Option<crate::types::Risk>,
     /// <p>The reason why a choice is non-applicable to a question in your workload.</p>
@@ -55,7 +55,7 @@ impl AnswerSummary {
         self.choice_answer_summaries.as_deref()
     }
     /// <p>Defines whether this question is applicable to a lens review.</p>
-    pub fn is_applicable(&self) -> bool {
+    pub fn is_applicable(&self) -> ::std::option::Option<bool> {
         self.is_applicable
     }
     /// <p>The risk for a given workload, lens review, pillar, or question.</p>
@@ -267,7 +267,7 @@ impl AnswerSummaryBuilder {
             choices: self.choices,
             selected_choices: self.selected_choices,
             choice_answer_summaries: self.choice_answer_summaries,
-            is_applicable: self.is_applicable.unwrap_or_default(),
+            is_applicable: self.is_applicable,
             risk: self.risk,
             reason: self.reason,
             question_type: self.question_type,

@@ -3,16 +3,16 @@ pub fn ser_stopping_condition(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::StoppingCondition,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if input.max_runtime_in_seconds != 0 {
+    if let Some(var_1) = &input.max_runtime_in_seconds {
         object.key("MaxRuntimeInSeconds").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.max_runtime_in_seconds).into()),
+            ::aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if let Some(var_1) = &input.max_wait_time_in_seconds {
+    if let Some(var_2) = &input.max_wait_time_in_seconds {
         object.key("MaxWaitTimeInSeconds").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_1).into()),
+            ::aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
     Ok(())

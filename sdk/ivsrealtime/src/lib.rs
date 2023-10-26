@@ -70,7 +70,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = "0.56.1"
-//! aws-sdk-ivsrealtime = "0.9.0"
+//! aws-sdk-ivsrealtime = "0.10.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

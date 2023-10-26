@@ -22,7 +22,7 @@ impl UpdateDomainConfigInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateDomainConfig`.
 ///
-/// <p>Modifies the cluster configuration of the specified Amazon OpenSearch Service domain.sl</p>
+/// <p>Modifies the cluster configuration of the specified Amazon OpenSearch Service domain.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateDomainConfigFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

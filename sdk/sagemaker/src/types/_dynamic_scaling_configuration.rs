@@ -5,31 +5,31 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DynamicScalingConfiguration {
     /// <p>The recommended minimum capacity to specify for your autoscaling policy.</p>
-    pub min_capacity: i32,
+    pub min_capacity: ::std::option::Option<i32>,
     /// <p>The recommended maximum capacity to specify for your autoscaling policy.</p>
-    pub max_capacity: i32,
+    pub max_capacity: ::std::option::Option<i32>,
     /// <p>The recommended scale in cooldown time for your autoscaling policy.</p>
-    pub scale_in_cooldown: i32,
+    pub scale_in_cooldown: ::std::option::Option<i32>,
     /// <p>The recommended scale out cooldown time for your autoscaling policy.</p>
-    pub scale_out_cooldown: i32,
+    pub scale_out_cooldown: ::std::option::Option<i32>,
     /// <p>An object of the scaling policies for each metric.</p>
     pub scaling_policies: ::std::option::Option<::std::vec::Vec<crate::types::ScalingPolicy>>,
 }
 impl DynamicScalingConfiguration {
     /// <p>The recommended minimum capacity to specify for your autoscaling policy.</p>
-    pub fn min_capacity(&self) -> i32 {
+    pub fn min_capacity(&self) -> ::std::option::Option<i32> {
         self.min_capacity
     }
     /// <p>The recommended maximum capacity to specify for your autoscaling policy.</p>
-    pub fn max_capacity(&self) -> i32 {
+    pub fn max_capacity(&self) -> ::std::option::Option<i32> {
         self.max_capacity
     }
     /// <p>The recommended scale in cooldown time for your autoscaling policy.</p>
-    pub fn scale_in_cooldown(&self) -> i32 {
+    pub fn scale_in_cooldown(&self) -> ::std::option::Option<i32> {
         self.scale_in_cooldown
     }
     /// <p>The recommended scale out cooldown time for your autoscaling policy.</p>
-    pub fn scale_out_cooldown(&self) -> i32 {
+    pub fn scale_out_cooldown(&self) -> ::std::option::Option<i32> {
         self.scale_out_cooldown
     }
     /// <p>An object of the scaling policies for each metric.</p>
@@ -134,10 +134,10 @@ impl DynamicScalingConfigurationBuilder {
     /// Consumes the builder and constructs a [`DynamicScalingConfiguration`](crate::types::DynamicScalingConfiguration).
     pub fn build(self) -> crate::types::DynamicScalingConfiguration {
         crate::types::DynamicScalingConfiguration {
-            min_capacity: self.min_capacity.unwrap_or_default(),
-            max_capacity: self.max_capacity.unwrap_or_default(),
-            scale_in_cooldown: self.scale_in_cooldown.unwrap_or_default(),
-            scale_out_cooldown: self.scale_out_cooldown.unwrap_or_default(),
+            min_capacity: self.min_capacity,
+            max_capacity: self.max_capacity,
+            scale_in_cooldown: self.scale_in_cooldown,
+            scale_out_cooldown: self.scale_out_cooldown,
             scaling_policies: self.scaling_policies,
         }
     }

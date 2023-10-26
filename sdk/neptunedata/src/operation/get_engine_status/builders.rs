@@ -22,7 +22,8 @@ impl GetEngineStatusInputBuilder {
 }
 /// Fluent builder constructing a request to `GetEngineStatus`.
 ///
-/// <p>Check the status of the graph database on the host.</p>
+/// <p>Retrieves the status of the graph database on the host.</p>
+/// <p>When invoking this operation in a Neptune cluster that has IAM authentication enabled, the IAM user or role making the request must have a policy attached that allows the <a href="https://docs.aws.amazon.com/neptune/latest/userguide/iam-dp-actions.html#getenginestatus">neptune-db:GetEngineStatus</a> IAM action in that cluster.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetEngineStatusFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

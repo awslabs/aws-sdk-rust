@@ -6,20 +6,20 @@ pub fn ser_aws_ecs_service_service_registries_details(
     if let Some(var_1) = &input.container_name {
         object.key("ContainerName").string(var_1.as_str());
     }
-    if input.container_port != 0 {
+    if let Some(var_2) = &input.container_port {
         object.key("ContainerPort").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.container_port).into()),
+            ::aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
-    if input.port != 0 {
+    if let Some(var_3) = &input.port {
         object.key("Port").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.port).into()),
+            ::aws_smithy_types::Number::NegInt((*var_3).into()),
         );
     }
-    if let Some(var_2) = &input.registry_arn {
-        object.key("RegistryArn").string(var_2.as_str());
+    if let Some(var_4) = &input.registry_arn {
+        object.key("RegistryArn").string(var_4.as_str());
     }
     Ok(())
 }

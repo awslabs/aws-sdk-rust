@@ -5,17 +5,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InferenceMetrics {
     /// <p>The expected maximum number of requests per minute for the instance.</p>
-    pub max_invocations: i32,
+    pub max_invocations: ::std::option::Option<i32>,
     /// <p>The expected model latency at maximum invocations per minute for the instance.</p>
-    pub model_latency: i32,
+    pub model_latency: ::std::option::Option<i32>,
 }
 impl InferenceMetrics {
     /// <p>The expected maximum number of requests per minute for the instance.</p>
-    pub fn max_invocations(&self) -> i32 {
+    pub fn max_invocations(&self) -> ::std::option::Option<i32> {
         self.max_invocations
     }
     /// <p>The expected model latency at maximum invocations per minute for the instance.</p>
-    pub fn model_latency(&self) -> i32 {
+    pub fn model_latency(&self) -> ::std::option::Option<i32> {
         self.model_latency
     }
 }
@@ -65,8 +65,8 @@ impl InferenceMetricsBuilder {
     /// Consumes the builder and constructs a [`InferenceMetrics`](crate::types::InferenceMetrics).
     pub fn build(self) -> crate::types::InferenceMetrics {
         crate::types::InferenceMetrics {
-            max_invocations: self.max_invocations.unwrap_or_default(),
-            model_latency: self.model_latency.unwrap_or_default(),
+            max_invocations: self.max_invocations,
+            model_latency: self.model_latency,
         }
     }
 }

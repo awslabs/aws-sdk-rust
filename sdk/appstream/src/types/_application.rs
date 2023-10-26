@@ -15,7 +15,7 @@ pub struct Application {
     /// <p>The arguments that are passed to the application at launch.</p>
     pub launch_parameters: ::std::option::Option<::std::string::String>,
     /// <p>If there is a problem, the application can be disabled after image creation.</p>
-    pub enabled: bool,
+    pub enabled: ::std::option::Option<bool>,
     /// <p>Additional attributes that describe the application.</p>
     pub metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The working directory for the application.</p>
@@ -57,7 +57,7 @@ impl Application {
         self.launch_parameters.as_deref()
     }
     /// <p>If there is a problem, the application can be disabled after image creation.</p>
-    pub fn enabled(&self) -> bool {
+    pub fn enabled(&self) -> ::std::option::Option<bool> {
         self.enabled
     }
     /// <p>Additional attributes that describe the application.</p>
@@ -361,7 +361,7 @@ impl ApplicationBuilder {
             icon_url: self.icon_url,
             launch_path: self.launch_path,
             launch_parameters: self.launch_parameters,
-            enabled: self.enabled.unwrap_or_default(),
+            enabled: self.enabled,
             metadata: self.metadata,
             working_directory: self.working_directory,
             description: self.description,

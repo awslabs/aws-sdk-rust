@@ -22,9 +22,9 @@ impl ListTokenBalancesInputBuilder {
 }
 /// Fluent builder constructing a request to `ListTokenBalances`.
 ///
-/// <p>This action returns the following for a given a blockchain network:</p>
+/// <p>This action returns the following for a given blockchain network:</p>
 /// <ul>
-/// <li> <p>Lists all token balances owned by an address (either a contact address or a wallet address).</p> </li>
+/// <li> <p>Lists all token balances owned by an address (either a contract address or a wallet address).</p> </li>
 /// <li> <p>Lists all token balances for all tokens created by a contract.</p> </li>
 /// <li> <p>Lists all token balances for a given token.</p> </li>
 /// </ul> <note>
@@ -137,21 +137,21 @@ impl ListTokenBalancesFluentBuilder {
     pub fn get_owner_filter(&self) -> &::std::option::Option<crate::types::OwnerFilter> {
         self.inner.get_owner_filter()
     }
-    /// <p>The contract address or a token identifier on the blockchain network by which to filter the request. You must specify the contractAddress property of this container when listing tokens minted by a contract.</p> <note>
+    /// <p>The contract address or a token identifier on the blockchain network by which to filter the request. You must specify the <code>contractAddress</code> property of this container when listing tokens minted by a contract.</p> <note>
     /// <p>You must always specify the network property of this container when using this operation.</p>
     /// </note>
     pub fn token_filter(mut self, input: crate::types::TokenFilter) -> Self {
         self.inner = self.inner.token_filter(input);
         self
     }
-    /// <p>The contract address or a token identifier on the blockchain network by which to filter the request. You must specify the contractAddress property of this container when listing tokens minted by a contract.</p> <note>
+    /// <p>The contract address or a token identifier on the blockchain network by which to filter the request. You must specify the <code>contractAddress</code> property of this container when listing tokens minted by a contract.</p> <note>
     /// <p>You must always specify the network property of this container when using this operation.</p>
     /// </note>
     pub fn set_token_filter(mut self, input: ::std::option::Option<crate::types::TokenFilter>) -> Self {
         self.inner = self.inner.set_token_filter(input);
         self
     }
-    /// <p>The contract address or a token identifier on the blockchain network by which to filter the request. You must specify the contractAddress property of this container when listing tokens minted by a contract.</p> <note>
+    /// <p>The contract address or a token identifier on the blockchain network by which to filter the request. You must specify the <code>contractAddress</code> property of this container when listing tokens minted by a contract.</p> <note>
     /// <p>You must always specify the network property of this container when using this operation.</p>
     /// </note>
     pub fn get_token_filter(&self) -> &::std::option::Option<crate::types::TokenFilter> {

@@ -14,11 +14,11 @@ pub struct DbSnapshot {
     /// <p>Specifies the name of the database engine.</p>
     pub engine: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the allocated storage size in gibibytes (GiB).</p>
-    pub allocated_storage: i32,
+    pub allocated_storage: ::std::option::Option<i32>,
     /// <p>Specifies the status of this DB snapshot.</p>
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the port that the database engine was listening on at the time of the snapshot.</p>
-    pub port: i32,
+    pub port: ::std::option::Option<i32>,
     /// <p>Specifies the name of the Availability Zone the DB instance was located in at the time of the DB snapshot.</p>
     pub availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>Provides the VPC ID associated with the DB snapshot.</p>
@@ -38,7 +38,7 @@ pub struct DbSnapshot {
     /// <p>Provides the option group name for the DB snapshot.</p>
     pub option_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The percentage of the estimated data that has been transferred.</p>
-    pub percent_progress: i32,
+    pub percent_progress: ::std::option::Option<i32>,
     /// <p>The Amazon Web Services Region that the DB snapshot was created in or copied from.</p>
     pub source_region: ::std::option::Option<::std::string::String>,
     /// <p>The DB snapshot Amazon Resource Name (ARN) that the DB snapshot was copied from. It only has a value in the case of a cross-account or cross-Region copy.</p>
@@ -48,7 +48,7 @@ pub struct DbSnapshot {
     /// <p>The ARN from the key store with which to associate the instance for TDE encryption.</p>
     pub tde_credential_arn: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the DB snapshot is encrypted.</p>
-    pub encrypted: bool,
+    pub encrypted: ::std::option::Option<bool>,
     /// <p>If <code>Encrypted</code> is true, the Amazon Web Services KMS key identifier for the encrypted DB snapshot.</p>
     /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
@@ -57,7 +57,7 @@ pub struct DbSnapshot {
     /// <p>The time zone of the DB snapshot. In most cases, the <code>Timezone</code> element is empty. <code>Timezone</code> content appears only for snapshots taken from Microsoft SQL Server DB instances that were created with a time zone specified.</p>
     pub timezone: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts is enabled.</p>
-    pub iam_database_authentication_enabled: bool,
+    pub iam_database_authentication_enabled: ::std::option::Option<bool>,
     /// <p>The number of CPU cores and the number of threads per core for the DB instance class of the DB instance when the DB snapshot was created.</p>
     pub processor_features: ::std::option::Option<::std::vec::Vec<crate::types::ProcessorFeature>>,
     /// <p>The identifier for the source DB instance, which can't be changed and which is unique to an Amazon Web Services Region.</p>
@@ -75,6 +75,8 @@ pub struct DbSnapshot {
     pub storage_throughput: ::std::option::Option<i32>,
     /// <p>The Oracle system identifier (SID), which is the name of the Oracle database instance that manages your database files. The Oracle SID is also the name of your CDB.</p>
     pub db_system_id: ::std::option::Option<::std::string::String>,
+    /// <p>Indicates whether the DB instance has a dedicated log volume (DLV) enabled.</p>
+    pub dedicated_log_volume: ::std::option::Option<bool>,
 }
 impl DbSnapshot {
     /// <p>Specifies the identifier for the DB snapshot.</p>
@@ -94,7 +96,7 @@ impl DbSnapshot {
         self.engine.as_deref()
     }
     /// <p>Specifies the allocated storage size in gibibytes (GiB).</p>
-    pub fn allocated_storage(&self) -> i32 {
+    pub fn allocated_storage(&self) -> ::std::option::Option<i32> {
         self.allocated_storage
     }
     /// <p>Specifies the status of this DB snapshot.</p>
@@ -102,7 +104,7 @@ impl DbSnapshot {
         self.status.as_deref()
     }
     /// <p>Specifies the port that the database engine was listening on at the time of the snapshot.</p>
-    pub fn port(&self) -> i32 {
+    pub fn port(&self) -> ::std::option::Option<i32> {
         self.port
     }
     /// <p>Specifies the name of the Availability Zone the DB instance was located in at the time of the DB snapshot.</p>
@@ -142,7 +144,7 @@ impl DbSnapshot {
         self.option_group_name.as_deref()
     }
     /// <p>The percentage of the estimated data that has been transferred.</p>
-    pub fn percent_progress(&self) -> i32 {
+    pub fn percent_progress(&self) -> ::std::option::Option<i32> {
         self.percent_progress
     }
     /// <p>The Amazon Web Services Region that the DB snapshot was created in or copied from.</p>
@@ -162,7 +164,7 @@ impl DbSnapshot {
         self.tde_credential_arn.as_deref()
     }
     /// <p>Indicates whether the DB snapshot is encrypted.</p>
-    pub fn encrypted(&self) -> bool {
+    pub fn encrypted(&self) -> ::std::option::Option<bool> {
         self.encrypted
     }
     /// <p>If <code>Encrypted</code> is true, the Amazon Web Services KMS key identifier for the encrypted DB snapshot.</p>
@@ -179,7 +181,7 @@ impl DbSnapshot {
         self.timezone.as_deref()
     }
     /// <p>Indicates whether mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts is enabled.</p>
-    pub fn iam_database_authentication_enabled(&self) -> bool {
+    pub fn iam_database_authentication_enabled(&self) -> ::std::option::Option<bool> {
         self.iam_database_authentication_enabled
     }
     /// <p>The number of CPU cores and the number of threads per core for the DB instance class of the DB instance when the DB snapshot was created.</p>
@@ -214,6 +216,10 @@ impl DbSnapshot {
     /// <p>The Oracle system identifier (SID), which is the name of the Oracle database instance that manages your database files. The Oracle SID is also the name of your CDB.</p>
     pub fn db_system_id(&self) -> ::std::option::Option<&str> {
         self.db_system_id.as_deref()
+    }
+    /// <p>Indicates whether the DB instance has a dedicated log volume (DLV) enabled.</p>
+    pub fn dedicated_log_volume(&self) -> ::std::option::Option<bool> {
+        self.dedicated_log_volume
     }
 }
 impl DbSnapshot {
@@ -261,6 +267,7 @@ pub struct DbSnapshotBuilder {
     pub(crate) snapshot_target: ::std::option::Option<::std::string::String>,
     pub(crate) storage_throughput: ::std::option::Option<i32>,
     pub(crate) db_system_id: ::std::option::Option<::std::string::String>,
+    pub(crate) dedicated_log_volume: ::std::option::Option<bool>,
 }
 impl DbSnapshotBuilder {
     /// <p>Specifies the identifier for the DB snapshot.</p>
@@ -757,6 +764,20 @@ impl DbSnapshotBuilder {
     pub fn get_db_system_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.db_system_id
     }
+    /// <p>Indicates whether the DB instance has a dedicated log volume (DLV) enabled.</p>
+    pub fn dedicated_log_volume(mut self, input: bool) -> Self {
+        self.dedicated_log_volume = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether the DB instance has a dedicated log volume (DLV) enabled.</p>
+    pub fn set_dedicated_log_volume(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.dedicated_log_volume = input;
+        self
+    }
+    /// <p>Indicates whether the DB instance has a dedicated log volume (DLV) enabled.</p>
+    pub fn get_dedicated_log_volume(&self) -> &::std::option::Option<bool> {
+        &self.dedicated_log_volume
+    }
     /// Consumes the builder and constructs a [`DbSnapshot`](crate::types::DbSnapshot).
     pub fn build(self) -> crate::types::DbSnapshot {
         crate::types::DbSnapshot {
@@ -764,9 +785,9 @@ impl DbSnapshotBuilder {
             db_instance_identifier: self.db_instance_identifier,
             snapshot_create_time: self.snapshot_create_time,
             engine: self.engine,
-            allocated_storage: self.allocated_storage.unwrap_or_default(),
+            allocated_storage: self.allocated_storage,
             status: self.status,
-            port: self.port.unwrap_or_default(),
+            port: self.port,
             availability_zone: self.availability_zone,
             vpc_id: self.vpc_id,
             instance_create_time: self.instance_create_time,
@@ -776,16 +797,16 @@ impl DbSnapshotBuilder {
             snapshot_type: self.snapshot_type,
             iops: self.iops,
             option_group_name: self.option_group_name,
-            percent_progress: self.percent_progress.unwrap_or_default(),
+            percent_progress: self.percent_progress,
             source_region: self.source_region,
             source_db_snapshot_identifier: self.source_db_snapshot_identifier,
             storage_type: self.storage_type,
             tde_credential_arn: self.tde_credential_arn,
-            encrypted: self.encrypted.unwrap_or_default(),
+            encrypted: self.encrypted,
             kms_key_id: self.kms_key_id,
             db_snapshot_arn: self.db_snapshot_arn,
             timezone: self.timezone,
-            iam_database_authentication_enabled: self.iam_database_authentication_enabled.unwrap_or_default(),
+            iam_database_authentication_enabled: self.iam_database_authentication_enabled,
             processor_features: self.processor_features,
             dbi_resource_id: self.dbi_resource_id,
             tag_list: self.tag_list,
@@ -794,6 +815,7 @@ impl DbSnapshotBuilder {
             snapshot_target: self.snapshot_target,
             storage_throughput: self.storage_throughput,
             db_system_id: self.db_system_id,
+            dedicated_log_volume: self.dedicated_log_volume,
         }
     }
 }

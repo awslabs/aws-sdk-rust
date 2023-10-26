@@ -7,7 +7,7 @@ pub struct TwitterParameters {
     /// <p>Twitter query string.</p>
     pub query: ::std::option::Option<::std::string::String>,
     /// <p>Maximum number of rows to query Twitter.</p>
-    pub max_rows: i32,
+    pub max_rows: ::std::option::Option<i32>,
 }
 impl TwitterParameters {
     /// <p>Twitter query string.</p>
@@ -15,7 +15,7 @@ impl TwitterParameters {
         self.query.as_deref()
     }
     /// <p>Maximum number of rows to query Twitter.</p>
-    pub fn max_rows(&self) -> i32 {
+    pub fn max_rows(&self) -> ::std::option::Option<i32> {
         self.max_rows
     }
 }
@@ -66,7 +66,7 @@ impl TwitterParametersBuilder {
     pub fn build(self) -> crate::types::TwitterParameters {
         crate::types::TwitterParameters {
             query: self.query,
-            max_rows: self.max_rows.unwrap_or_default(),
+            max_rows: self.max_rows,
         }
     }
 }

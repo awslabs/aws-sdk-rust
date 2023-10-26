@@ -29,11 +29,11 @@ pub struct AwsRdsDbSnapshotDetails {
     /// </ul>
     pub engine: ::std::option::Option<::std::string::String>,
     /// <p>The amount of storage (in gigabytes) to be initially allocated for the database instance.</p>
-    pub allocated_storage: i32,
+    pub allocated_storage: ::std::option::Option<i32>,
     /// <p>The status of this DB snapshot.</p>
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>The port that the database engine was listening on at the time of the snapshot.</p>
-    pub port: i32,
+    pub port: ::std::option::Option<i32>,
     /// <p>Specifies the name of the Availability Zone in which the DB instance was located at the time of the DB snapshot.</p>
     pub availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>The VPC ID associated with the DB snapshot.</p>
@@ -49,11 +49,11 @@ pub struct AwsRdsDbSnapshotDetails {
     /// <p>The type of the DB snapshot.</p>
     pub snapshot_type: ::std::option::Option<::std::string::String>,
     /// <p>The provisioned IOPS (I/O operations per second) value of the DB instance at the time of the snapshot.</p>
-    pub iops: i32,
+    pub iops: ::std::option::Option<i32>,
     /// <p>The option group name for the DB snapshot.</p>
     pub option_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The percentage of the estimated data that has been transferred.</p>
-    pub percent_progress: i32,
+    pub percent_progress: ::std::option::Option<i32>,
     /// <p>The Amazon Web Services Region that the DB snapshot was created in or copied from.</p>
     pub source_region: ::std::option::Option<::std::string::String>,
     /// <p>The DB snapshot ARN that the DB snapshot was copied from.</p>
@@ -68,13 +68,13 @@ pub struct AwsRdsDbSnapshotDetails {
     /// <p>The ARN from the key store with which to associate the instance for TDE encryption.</p>
     pub tde_credential_arn: ::std::option::Option<::std::string::String>,
     /// <p>Whether the DB snapshot is encrypted.</p>
-    pub encrypted: bool,
+    pub encrypted: ::std::option::Option<bool>,
     /// <p>If <code>Encrypted</code> is <code>true</code>, the KMS key identifier for the encrypted DB snapshot.</p>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The time zone of the DB snapshot.</p>
     pub timezone: ::std::option::Option<::std::string::String>,
     /// <p>Whether mapping of IAM accounts to database accounts is enabled.</p>
-    pub iam_database_authentication_enabled: bool,
+    pub iam_database_authentication_enabled: ::std::option::Option<bool>,
     /// <p>The number of CPU cores and the number of threads per core for the DB instance class of the DB instance.</p>
     pub processor_features: ::std::option::Option<::std::vec::Vec<crate::types::AwsRdsDbProcessorFeature>>,
     /// <p>The identifier for the source DB instance.</p>
@@ -114,7 +114,7 @@ impl AwsRdsDbSnapshotDetails {
         self.engine.as_deref()
     }
     /// <p>The amount of storage (in gigabytes) to be initially allocated for the database instance.</p>
-    pub fn allocated_storage(&self) -> i32 {
+    pub fn allocated_storage(&self) -> ::std::option::Option<i32> {
         self.allocated_storage
     }
     /// <p>The status of this DB snapshot.</p>
@@ -122,7 +122,7 @@ impl AwsRdsDbSnapshotDetails {
         self.status.as_deref()
     }
     /// <p>The port that the database engine was listening on at the time of the snapshot.</p>
-    pub fn port(&self) -> i32 {
+    pub fn port(&self) -> ::std::option::Option<i32> {
         self.port
     }
     /// <p>Specifies the name of the Availability Zone in which the DB instance was located at the time of the DB snapshot.</p>
@@ -154,7 +154,7 @@ impl AwsRdsDbSnapshotDetails {
         self.snapshot_type.as_deref()
     }
     /// <p>The provisioned IOPS (I/O operations per second) value of the DB instance at the time of the snapshot.</p>
-    pub fn iops(&self) -> i32 {
+    pub fn iops(&self) -> ::std::option::Option<i32> {
         self.iops
     }
     /// <p>The option group name for the DB snapshot.</p>
@@ -162,7 +162,7 @@ impl AwsRdsDbSnapshotDetails {
         self.option_group_name.as_deref()
     }
     /// <p>The percentage of the estimated data that has been transferred.</p>
-    pub fn percent_progress(&self) -> i32 {
+    pub fn percent_progress(&self) -> ::std::option::Option<i32> {
         self.percent_progress
     }
     /// <p>The Amazon Web Services Region that the DB snapshot was created in or copied from.</p>
@@ -187,7 +187,7 @@ impl AwsRdsDbSnapshotDetails {
         self.tde_credential_arn.as_deref()
     }
     /// <p>Whether the DB snapshot is encrypted.</p>
-    pub fn encrypted(&self) -> bool {
+    pub fn encrypted(&self) -> ::std::option::Option<bool> {
         self.encrypted
     }
     /// <p>If <code>Encrypted</code> is <code>true</code>, the KMS key identifier for the encrypted DB snapshot.</p>
@@ -199,7 +199,7 @@ impl AwsRdsDbSnapshotDetails {
         self.timezone.as_deref()
     }
     /// <p>Whether mapping of IAM accounts to database accounts is enabled.</p>
-    pub fn iam_database_authentication_enabled(&self) -> bool {
+    pub fn iam_database_authentication_enabled(&self) -> ::std::option::Option<bool> {
         self.iam_database_authentication_enabled
     }
     /// <p>The number of CPU cores and the number of threads per core for the DB instance class of the DB instance.</p>
@@ -705,9 +705,9 @@ impl AwsRdsDbSnapshotDetailsBuilder {
             db_instance_identifier: self.db_instance_identifier,
             snapshot_create_time: self.snapshot_create_time,
             engine: self.engine,
-            allocated_storage: self.allocated_storage.unwrap_or_default(),
+            allocated_storage: self.allocated_storage,
             status: self.status,
-            port: self.port.unwrap_or_default(),
+            port: self.port,
             availability_zone: self.availability_zone,
             vpc_id: self.vpc_id,
             instance_create_time: self.instance_create_time,
@@ -715,17 +715,17 @@ impl AwsRdsDbSnapshotDetailsBuilder {
             engine_version: self.engine_version,
             license_model: self.license_model,
             snapshot_type: self.snapshot_type,
-            iops: self.iops.unwrap_or_default(),
+            iops: self.iops,
             option_group_name: self.option_group_name,
-            percent_progress: self.percent_progress.unwrap_or_default(),
+            percent_progress: self.percent_progress,
             source_region: self.source_region,
             source_db_snapshot_identifier: self.source_db_snapshot_identifier,
             storage_type: self.storage_type,
             tde_credential_arn: self.tde_credential_arn,
-            encrypted: self.encrypted.unwrap_or_default(),
+            encrypted: self.encrypted,
             kms_key_id: self.kms_key_id,
             timezone: self.timezone,
-            iam_database_authentication_enabled: self.iam_database_authentication_enabled.unwrap_or_default(),
+            iam_database_authentication_enabled: self.iam_database_authentication_enabled,
             processor_features: self.processor_features,
             dbi_resource_id: self.dbi_resource_id,
         }

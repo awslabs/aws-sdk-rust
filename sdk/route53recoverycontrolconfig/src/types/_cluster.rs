@@ -13,6 +13,8 @@ pub struct Cluster {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Deployment status of a resource. Status can be one of the following: PENDING, DEPLOYED, PENDING_DELETION.</p>
     pub status: ::std::option::Option<crate::types::Status>,
+    /// <p>The Amazon Web Services account ID of the cluster owner.</p>
+    pub owner: ::std::option::Option<::std::string::String>,
 }
 impl Cluster {
     /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
@@ -32,6 +34,10 @@ impl Cluster {
     pub fn status(&self) -> ::std::option::Option<&crate::types::Status> {
         self.status.as_ref()
     }
+    /// <p>The Amazon Web Services account ID of the cluster owner.</p>
+    pub fn owner(&self) -> ::std::option::Option<&str> {
+        self.owner.as_deref()
+    }
 }
 impl Cluster {
     /// Creates a new builder-style object to manufacture [`Cluster`](crate::types::Cluster).
@@ -48,6 +54,7 @@ pub struct ClusterBuilder {
     pub(crate) cluster_endpoints: ::std::option::Option<::std::vec::Vec<crate::types::ClusterEndpoint>>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::Status>,
+    pub(crate) owner: ::std::option::Option<::std::string::String>,
 }
 impl ClusterBuilder {
     /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
@@ -115,6 +122,20 @@ impl ClusterBuilder {
     pub fn get_status(&self) -> &::std::option::Option<crate::types::Status> {
         &self.status
     }
+    /// <p>The Amazon Web Services account ID of the cluster owner.</p>
+    pub fn owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.owner = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Web Services account ID of the cluster owner.</p>
+    pub fn set_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.owner = input;
+        self
+    }
+    /// <p>The Amazon Web Services account ID of the cluster owner.</p>
+    pub fn get_owner(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner
+    }
     /// Consumes the builder and constructs a [`Cluster`](crate::types::Cluster).
     pub fn build(self) -> crate::types::Cluster {
         crate::types::Cluster {
@@ -122,6 +143,7 @@ impl ClusterBuilder {
             cluster_endpoints: self.cluster_endpoints,
             name: self.name,
             status: self.status,
+            owner: self.owner,
         }
     }
 }

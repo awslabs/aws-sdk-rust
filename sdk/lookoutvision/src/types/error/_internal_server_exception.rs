@@ -7,12 +7,12 @@ pub struct InternalServerException {
     #[allow(missing_docs)] // documentation missing in model
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>The period of time, in seconds, before the operation can be retried.</p>
-    pub retry_after_seconds: i32,
+    pub retry_after_seconds: ::std::option::Option<i32>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
 impl InternalServerException {
     /// <p>The period of time, in seconds, before the operation can be retried.</p>
-    pub fn retry_after_seconds(&self) -> i32 {
+    pub fn retry_after_seconds(&self) -> ::std::option::Option<i32> {
         self.retry_after_seconds
     }
 }
@@ -104,7 +104,7 @@ impl InternalServerExceptionBuilder {
     pub fn build(self) -> crate::types::error::InternalServerException {
         crate::types::error::InternalServerException {
             message: self.message,
-            retry_after_seconds: self.retry_after_seconds.unwrap_or_default(),
+            retry_after_seconds: self.retry_after_seconds,
             meta: self.meta.unwrap_or_default(),
         }
     }

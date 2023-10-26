@@ -12,28 +12,28 @@ pub struct Condition {
     pub neq: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Represents a <i>greater than</i> condition to be applied to a single field when querying for findings.</p>
     #[deprecated]
-    pub gt: i32,
+    pub gt: ::std::option::Option<i32>,
     /// <p>Represents a <i>greater than or equal</i> condition to be applied to a single field when querying for findings.</p>
     #[deprecated]
-    pub gte: i32,
+    pub gte: ::std::option::Option<i32>,
     /// <p>Represents a <i>less than</i> condition to be applied to a single field when querying for findings.</p>
     #[deprecated]
-    pub lt: i32,
+    pub lt: ::std::option::Option<i32>,
     /// <p>Represents a <i>less than or equal</i> condition to be applied to a single field when querying for findings.</p>
     #[deprecated]
-    pub lte: i32,
+    pub lte: ::std::option::Option<i32>,
     /// <p>Represents an <i>equal</i> <b></b> condition to be applied to a single field when querying for findings.</p>
     pub equals: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Represents a <i>not equal</i> <b></b> condition to be applied to a single field when querying for findings.</p>
     pub not_equals: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Represents a <i>greater than</i> condition to be applied to a single field when querying for findings.</p>
-    pub greater_than: i64,
+    pub greater_than: ::std::option::Option<i64>,
     /// <p>Represents a <i>greater than or equal</i> condition to be applied to a single field when querying for findings.</p>
-    pub greater_than_or_equal: i64,
+    pub greater_than_or_equal: ::std::option::Option<i64>,
     /// <p>Represents a <i>less than</i> condition to be applied to a single field when querying for findings.</p>
-    pub less_than: i64,
+    pub less_than: ::std::option::Option<i64>,
     /// <p>Represents a <i>less than or equal</i> condition to be applied to a single field when querying for findings.</p>
-    pub less_than_or_equal: i64,
+    pub less_than_or_equal: ::std::option::Option<i64>,
 }
 impl Condition {
     /// <p>Represents the <i>equal</i> condition to be applied to a single field when querying for findings.</p>
@@ -48,22 +48,22 @@ impl Condition {
     }
     /// <p>Represents a <i>greater than</i> condition to be applied to a single field when querying for findings.</p>
     #[deprecated]
-    pub fn gt(&self) -> i32 {
+    pub fn gt(&self) -> ::std::option::Option<i32> {
         self.gt
     }
     /// <p>Represents a <i>greater than or equal</i> condition to be applied to a single field when querying for findings.</p>
     #[deprecated]
-    pub fn gte(&self) -> i32 {
+    pub fn gte(&self) -> ::std::option::Option<i32> {
         self.gte
     }
     /// <p>Represents a <i>less than</i> condition to be applied to a single field when querying for findings.</p>
     #[deprecated]
-    pub fn lt(&self) -> i32 {
+    pub fn lt(&self) -> ::std::option::Option<i32> {
         self.lt
     }
     /// <p>Represents a <i>less than or equal</i> condition to be applied to a single field when querying for findings.</p>
     #[deprecated]
-    pub fn lte(&self) -> i32 {
+    pub fn lte(&self) -> ::std::option::Option<i32> {
         self.lte
     }
     /// <p>Represents an <i>equal</i> <b></b> condition to be applied to a single field when querying for findings.</p>
@@ -75,19 +75,19 @@ impl Condition {
         self.not_equals.as_deref()
     }
     /// <p>Represents a <i>greater than</i> condition to be applied to a single field when querying for findings.</p>
-    pub fn greater_than(&self) -> i64 {
+    pub fn greater_than(&self) -> ::std::option::Option<i64> {
         self.greater_than
     }
     /// <p>Represents a <i>greater than or equal</i> condition to be applied to a single field when querying for findings.</p>
-    pub fn greater_than_or_equal(&self) -> i64 {
+    pub fn greater_than_or_equal(&self) -> ::std::option::Option<i64> {
         self.greater_than_or_equal
     }
     /// <p>Represents a <i>less than</i> condition to be applied to a single field when querying for findings.</p>
-    pub fn less_than(&self) -> i64 {
+    pub fn less_than(&self) -> ::std::option::Option<i64> {
         self.less_than
     }
     /// <p>Represents a <i>less than or equal</i> condition to be applied to a single field when querying for findings.</p>
-    pub fn less_than_or_equal(&self) -> i64 {
+    pub fn less_than_or_equal(&self) -> ::std::option::Option<i64> {
         self.less_than_or_equal
     }
 }
@@ -331,16 +331,16 @@ impl ConditionBuilder {
         crate::types::Condition {
             eq: self.eq,
             neq: self.neq,
-            gt: self.gt.unwrap_or_default(),
-            gte: self.gte.unwrap_or_default(),
-            lt: self.lt.unwrap_or_default(),
-            lte: self.lte.unwrap_or_default(),
+            gt: self.gt,
+            gte: self.gte,
+            lt: self.lt,
+            lte: self.lte,
             equals: self.equals,
             not_equals: self.not_equals,
-            greater_than: self.greater_than.unwrap_or_default(),
-            greater_than_or_equal: self.greater_than_or_equal.unwrap_or_default(),
-            less_than: self.less_than.unwrap_or_default(),
-            less_than_or_equal: self.less_than_or_equal.unwrap_or_default(),
+            greater_than: self.greater_than,
+            greater_than_or_equal: self.greater_than_or_equal,
+            less_than: self.less_than,
+            less_than_or_equal: self.less_than_or_equal,
         }
     }
 }

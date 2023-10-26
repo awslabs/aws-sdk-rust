@@ -41,13 +41,13 @@ pub struct ReservedCacheNode {
     /// <p>The time the reservation started.</p>
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The duration of the reservation in seconds.</p>
-    pub duration: i32,
+    pub duration: ::std::option::Option<i32>,
     /// <p>The fixed price charged for this reserved cache node.</p>
-    pub fixed_price: f64,
+    pub fixed_price: ::std::option::Option<f64>,
     /// <p>The hourly price charged for this reserved cache node.</p>
-    pub usage_price: f64,
+    pub usage_price: ::std::option::Option<f64>,
     /// <p>The number of cache nodes that have been reserved.</p>
-    pub cache_node_count: i32,
+    pub cache_node_count: ::std::option::Option<i32>,
     /// <p>The description of the reserved cache node.</p>
     pub product_description: ::std::option::Option<::std::string::String>,
     /// <p>The offering type of this reserved cache node.</p>
@@ -106,19 +106,19 @@ impl ReservedCacheNode {
         self.start_time.as_ref()
     }
     /// <p>The duration of the reservation in seconds.</p>
-    pub fn duration(&self) -> i32 {
+    pub fn duration(&self) -> ::std::option::Option<i32> {
         self.duration
     }
     /// <p>The fixed price charged for this reserved cache node.</p>
-    pub fn fixed_price(&self) -> f64 {
+    pub fn fixed_price(&self) -> ::std::option::Option<f64> {
         self.fixed_price
     }
     /// <p>The hourly price charged for this reserved cache node.</p>
-    pub fn usage_price(&self) -> f64 {
+    pub fn usage_price(&self) -> ::std::option::Option<f64> {
         self.usage_price
     }
     /// <p>The number of cache nodes that have been reserved.</p>
-    pub fn cache_node_count(&self) -> i32 {
+    pub fn cache_node_count(&self) -> ::std::option::Option<i32> {
         self.cache_node_count
     }
     /// <p>The description of the reserved cache node.</p>
@@ -451,10 +451,10 @@ impl ReservedCacheNodeBuilder {
             reserved_cache_nodes_offering_id: self.reserved_cache_nodes_offering_id,
             cache_node_type: self.cache_node_type,
             start_time: self.start_time,
-            duration: self.duration.unwrap_or_default(),
-            fixed_price: self.fixed_price.unwrap_or_default(),
-            usage_price: self.usage_price.unwrap_or_default(),
-            cache_node_count: self.cache_node_count.unwrap_or_default(),
+            duration: self.duration,
+            fixed_price: self.fixed_price,
+            usage_price: self.usage_price,
+            cache_node_count: self.cache_node_count,
             product_description: self.product_description,
             offering_type: self.offering_type,
             state: self.state,

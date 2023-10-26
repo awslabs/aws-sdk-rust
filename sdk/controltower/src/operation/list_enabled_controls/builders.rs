@@ -22,7 +22,7 @@ impl ListEnabledControlsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListEnabledControls`.
 ///
-/// <p>Lists the controls enabled by AWS Control Tower on the specified organizational unit and the accounts it contains.</p>
+/// <p>Lists the controls enabled by AWS Control Tower on the specified organizational unit and the accounts it contains. For usage examples, see <a href="https://docs.aws.amazon.com/controltower/latest/userguide/control-api-examples-short.html"> <i>the AWS Control Tower User Guide</i> </a> </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListEnabledControlsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -116,17 +116,17 @@ impl ListEnabledControlsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_enabled_controls::paginator::ListEnabledControlsPaginator {
         crate::operation::list_enabled_controls::paginator::ListEnabledControlsPaginator::new(self.handle, self.inner)
     }
-    /// <p>The ARN of the organizational unit.</p>
+    /// <p>The ARN of the organizational unit. For information on how to find the <code>targetIdentifier</code>, see <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the overview page</a>.</p>
     pub fn target_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.target_identifier(input.into());
         self
     }
-    /// <p>The ARN of the organizational unit.</p>
+    /// <p>The ARN of the organizational unit. For information on how to find the <code>targetIdentifier</code>, see <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the overview page</a>.</p>
     pub fn set_target_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_target_identifier(input);
         self
     }
-    /// <p>The ARN of the organizational unit.</p>
+    /// <p>The ARN of the organizational unit. For information on how to find the <code>targetIdentifier</code>, see <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the overview page</a>.</p>
     pub fn get_target_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_target_identifier()
     }

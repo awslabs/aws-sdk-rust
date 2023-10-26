@@ -7,7 +7,7 @@ pub struct Record {
     /// <p>The path, as a JSONPath expression, to the field in the record that contains the data. If the field name is longer than 20 characters, it is truncated. If the path is longer than 250 characters, it is truncated.</p>
     pub json_path: ::std::option::Option<::std::string::String>,
     /// <p>The record index, starting from 0, for the record that contains the data.</p>
-    pub record_index: i64,
+    pub record_index: ::std::option::Option<i64>,
 }
 impl Record {
     /// <p>The path, as a JSONPath expression, to the field in the record that contains the data. If the field name is longer than 20 characters, it is truncated. If the path is longer than 250 characters, it is truncated.</p>
@@ -15,7 +15,7 @@ impl Record {
         self.json_path.as_deref()
     }
     /// <p>The record index, starting from 0, for the record that contains the data.</p>
-    pub fn record_index(&self) -> i64 {
+    pub fn record_index(&self) -> ::std::option::Option<i64> {
         self.record_index
     }
 }
@@ -66,7 +66,7 @@ impl RecordBuilder {
     pub fn build(self) -> crate::types::Record {
         crate::types::Record {
             json_path: self.json_path,
-            record_index: self.record_index.unwrap_or_default(),
+            record_index: self.record_index,
         }
     }
 }

@@ -47,6 +47,8 @@ pub(crate) mod shape_describe_routing_control;
 
 pub(crate) mod shape_describe_safety_rule;
 
+pub(crate) mod shape_get_resource_policy;
+
 pub(crate) mod shape_list_associated_route53_health_checks;
 
 pub(crate) mod shape_list_clusters;

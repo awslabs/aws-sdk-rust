@@ -36,5 +36,11 @@ pub fn ser_update_namespace_input(
         }
         array_10.finish();
     }
+    if let Some(var_12) = &input.manage_admin_password {
+        object.key("manageAdminPassword").boolean(*var_12);
+    }
+    if let Some(var_13) = &input.admin_password_secret_kms_key_id {
+        object.key("adminPasswordSecretKmsKeyId").string(var_13.as_str());
+    }
     Ok(())
 }

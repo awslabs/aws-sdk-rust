@@ -7,7 +7,7 @@ pub struct AwsBackupBackupPlanRuleDetails {
     /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the Amazon Web Services account used to create them and the Amazon Web Services Region where they are created. They consist of letters, numbers, and hyphens. </p>
     pub target_backup_vault: ::std::option::Option<::std::string::String>,
     /// <p>A value in minutes after a backup is scheduled before a job will be canceled if it doesn't start successfully. </p>
-    pub start_window_minutes: i64,
+    pub start_window_minutes: ::std::option::Option<i64>,
     /// <p>A cron expression in UTC specifying when Backup initiates a backup job. </p>
     pub schedule_expression: ::std::option::Option<::std::string::String>,
     /// <p>A display name for a backup rule. Must contain 1 to 50 alphanumeric or '-_.' characters. </p>
@@ -15,9 +15,9 @@ pub struct AwsBackupBackupPlanRuleDetails {
     /// <p>Uniquely identifies a rule that is used to schedule the backup of a selection of resources. </p>
     pub rule_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether Backup creates continuous backups capable of point-in-time restore (PITR). </p>
-    pub enable_continuous_backup: bool,
+    pub enable_continuous_backup: ::std::option::Option<bool>,
     /// <p>A value in minutes after a backup job is successfully started before it must be completed, or it is canceled by Backup. </p>
-    pub completion_window_minutes: i64,
+    pub completion_window_minutes: ::std::option::Option<i64>,
     /// <p>An array of <code>CopyAction</code> objects, each of which contains details of the copy operation. </p>
     pub copy_actions: ::std::option::Option<::std::vec::Vec<crate::types::AwsBackupBackupPlanRuleCopyActionsDetails>>,
     /// <p>Defines when a protected resource is transitioned to cold storage and when it expires. Backup transitions and expires backups automatically according to the lifecycle that you define. If you do not specify a lifecycle, Backup applies the lifecycle policy of the source backup to the destination backup.</p>
@@ -30,7 +30,7 @@ impl AwsBackupBackupPlanRuleDetails {
         self.target_backup_vault.as_deref()
     }
     /// <p>A value in minutes after a backup is scheduled before a job will be canceled if it doesn't start successfully. </p>
-    pub fn start_window_minutes(&self) -> i64 {
+    pub fn start_window_minutes(&self) -> ::std::option::Option<i64> {
         self.start_window_minutes
     }
     /// <p>A cron expression in UTC specifying when Backup initiates a backup job. </p>
@@ -46,11 +46,11 @@ impl AwsBackupBackupPlanRuleDetails {
         self.rule_id.as_deref()
     }
     /// <p>Specifies whether Backup creates continuous backups capable of point-in-time restore (PITR). </p>
-    pub fn enable_continuous_backup(&self) -> bool {
+    pub fn enable_continuous_backup(&self) -> ::std::option::Option<bool> {
         self.enable_continuous_backup
     }
     /// <p>A value in minutes after a backup job is successfully started before it must be completed, or it is canceled by Backup. </p>
-    pub fn completion_window_minutes(&self) -> i64 {
+    pub fn completion_window_minutes(&self) -> ::std::option::Option<i64> {
         self.completion_window_minutes
     }
     /// <p>An array of <code>CopyAction</code> objects, each of which contains details of the copy operation. </p>
@@ -227,12 +227,12 @@ impl AwsBackupBackupPlanRuleDetailsBuilder {
     pub fn build(self) -> crate::types::AwsBackupBackupPlanRuleDetails {
         crate::types::AwsBackupBackupPlanRuleDetails {
             target_backup_vault: self.target_backup_vault,
-            start_window_minutes: self.start_window_minutes.unwrap_or_default(),
+            start_window_minutes: self.start_window_minutes,
             schedule_expression: self.schedule_expression,
             rule_name: self.rule_name,
             rule_id: self.rule_id,
-            enable_continuous_backup: self.enable_continuous_backup.unwrap_or_default(),
-            completion_window_minutes: self.completion_window_minutes.unwrap_or_default(),
+            enable_continuous_backup: self.enable_continuous_backup,
+            completion_window_minutes: self.completion_window_minutes,
             copy_actions: self.copy_actions,
             lifecycle: self.lifecycle,
         }

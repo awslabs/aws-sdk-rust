@@ -5,11 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OrganizationS3LogsConfigurationResult {
     /// <p>A value that describes whether S3 data event logs are automatically enabled for new members of the organization.</p>
-    pub auto_enable: bool,
+    pub auto_enable: ::std::option::Option<bool>,
 }
 impl OrganizationS3LogsConfigurationResult {
     /// <p>A value that describes whether S3 data event logs are automatically enabled for new members of the organization.</p>
-    pub fn auto_enable(&self) -> bool {
+    pub fn auto_enable(&self) -> ::std::option::Option<bool> {
         self.auto_enable
     }
 }
@@ -44,7 +44,7 @@ impl OrganizationS3LogsConfigurationResultBuilder {
     /// Consumes the builder and constructs a [`OrganizationS3LogsConfigurationResult`](crate::types::OrganizationS3LogsConfigurationResult).
     pub fn build(self) -> crate::types::OrganizationS3LogsConfigurationResult {
         crate::types::OrganizationS3LogsConfigurationResult {
-            auto_enable: self.auto_enable.unwrap_or_default(),
+            auto_enable: self.auto_enable,
         }
     }
 }

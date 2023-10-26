@@ -36,76 +36,61 @@ pub fn ser_aws_ecs_service_details(
         )?;
         object_9.finish();
     }
-    if input.desired_count != 0 {
+    if let Some(var_10) = &input.desired_count {
         object.key("DesiredCount").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.desired_count).into()),
+            ::aws_smithy_types::Number::NegInt((*var_10).into()),
         );
     }
-    if input.enable_ecs_managed_tags {
-        object.key("EnableEcsManagedTags").boolean(input.enable_ecs_managed_tags);
+    if let Some(var_11) = &input.enable_ecs_managed_tags {
+        object.key("EnableEcsManagedTags").boolean(*var_11);
     }
-    if input.enable_execute_command {
-        object.key("EnableExecuteCommand").boolean(input.enable_execute_command);
+    if let Some(var_12) = &input.enable_execute_command {
+        object.key("EnableExecuteCommand").boolean(*var_12);
     }
-    if input.health_check_grace_period_seconds != 0 {
+    if let Some(var_13) = &input.health_check_grace_period_seconds {
         object.key("HealthCheckGracePeriodSeconds").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.health_check_grace_period_seconds).into()),
+            ::aws_smithy_types::Number::NegInt((*var_13).into()),
         );
     }
-    if let Some(var_10) = &input.launch_type {
-        object.key("LaunchType").string(var_10.as_str());
+    if let Some(var_14) = &input.launch_type {
+        object.key("LaunchType").string(var_14.as_str());
     }
-    if let Some(var_11) = &input.load_balancers {
-        let mut array_12 = object.key("LoadBalancers").start_array();
-        for item_13 in var_11 {
+    if let Some(var_15) = &input.load_balancers {
+        let mut array_16 = object.key("LoadBalancers").start_array();
+        for item_17 in var_15 {
             {
                 #[allow(unused_mut)]
-                let mut object_14 = array_12.value().start_object();
+                let mut object_18 = array_16.value().start_object();
                 crate::protocol_serde::shape_aws_ecs_service_load_balancers_details::ser_aws_ecs_service_load_balancers_details(
-                    &mut object_14,
-                    item_13,
+                    &mut object_18,
+                    item_17,
                 )?;
-                object_14.finish();
+                object_18.finish();
             }
         }
-        array_12.finish();
+        array_16.finish();
     }
-    if let Some(var_15) = &input.name {
-        object.key("Name").string(var_15.as_str());
+    if let Some(var_19) = &input.name {
+        object.key("Name").string(var_19.as_str());
     }
-    if let Some(var_16) = &input.network_configuration {
+    if let Some(var_20) = &input.network_configuration {
         #[allow(unused_mut)]
-        let mut object_17 = object.key("NetworkConfiguration").start_object();
+        let mut object_21 = object.key("NetworkConfiguration").start_object();
         crate::protocol_serde::shape_aws_ecs_service_network_configuration_details::ser_aws_ecs_service_network_configuration_details(
-            &mut object_17,
-            var_16,
+            &mut object_21,
+            var_20,
         )?;
-        object_17.finish();
+        object_21.finish();
     }
-    if let Some(var_18) = &input.placement_constraints {
-        let mut array_19 = object.key("PlacementConstraints").start_array();
-        for item_20 in var_18 {
-            {
-                #[allow(unused_mut)]
-                let mut object_21 = array_19.value().start_object();
-                crate::protocol_serde::shape_aws_ecs_service_placement_constraints_details::ser_aws_ecs_service_placement_constraints_details(
-                    &mut object_21,
-                    item_20,
-                )?;
-                object_21.finish();
-            }
-        }
-        array_19.finish();
-    }
-    if let Some(var_22) = &input.placement_strategies {
-        let mut array_23 = object.key("PlacementStrategies").start_array();
+    if let Some(var_22) = &input.placement_constraints {
+        let mut array_23 = object.key("PlacementConstraints").start_array();
         for item_24 in var_22 {
             {
                 #[allow(unused_mut)]
                 let mut object_25 = array_23.value().start_object();
-                crate::protocol_serde::shape_aws_ecs_service_placement_strategies_details::ser_aws_ecs_service_placement_strategies_details(
+                crate::protocol_serde::shape_aws_ecs_service_placement_constraints_details::ser_aws_ecs_service_placement_constraints_details(
                     &mut object_25,
                     item_24,
                 )?;
@@ -114,41 +99,56 @@ pub fn ser_aws_ecs_service_details(
         }
         array_23.finish();
     }
-    if let Some(var_26) = &input.platform_version {
-        object.key("PlatformVersion").string(var_26.as_str());
-    }
-    if let Some(var_27) = &input.propagate_tags {
-        object.key("PropagateTags").string(var_27.as_str());
-    }
-    if let Some(var_28) = &input.role {
-        object.key("Role").string(var_28.as_str());
-    }
-    if let Some(var_29) = &input.scheduling_strategy {
-        object.key("SchedulingStrategy").string(var_29.as_str());
-    }
-    if let Some(var_30) = &input.service_arn {
-        object.key("ServiceArn").string(var_30.as_str());
-    }
-    if let Some(var_31) = &input.service_name {
-        object.key("ServiceName").string(var_31.as_str());
-    }
-    if let Some(var_32) = &input.service_registries {
-        let mut array_33 = object.key("ServiceRegistries").start_array();
-        for item_34 in var_32 {
+    if let Some(var_26) = &input.placement_strategies {
+        let mut array_27 = object.key("PlacementStrategies").start_array();
+        for item_28 in var_26 {
             {
                 #[allow(unused_mut)]
-                let mut object_35 = array_33.value().start_object();
-                crate::protocol_serde::shape_aws_ecs_service_service_registries_details::ser_aws_ecs_service_service_registries_details(
-                    &mut object_35,
-                    item_34,
+                let mut object_29 = array_27.value().start_object();
+                crate::protocol_serde::shape_aws_ecs_service_placement_strategies_details::ser_aws_ecs_service_placement_strategies_details(
+                    &mut object_29,
+                    item_28,
                 )?;
-                object_35.finish();
+                object_29.finish();
             }
         }
-        array_33.finish();
+        array_27.finish();
     }
-    if let Some(var_36) = &input.task_definition {
-        object.key("TaskDefinition").string(var_36.as_str());
+    if let Some(var_30) = &input.platform_version {
+        object.key("PlatformVersion").string(var_30.as_str());
+    }
+    if let Some(var_31) = &input.propagate_tags {
+        object.key("PropagateTags").string(var_31.as_str());
+    }
+    if let Some(var_32) = &input.role {
+        object.key("Role").string(var_32.as_str());
+    }
+    if let Some(var_33) = &input.scheduling_strategy {
+        object.key("SchedulingStrategy").string(var_33.as_str());
+    }
+    if let Some(var_34) = &input.service_arn {
+        object.key("ServiceArn").string(var_34.as_str());
+    }
+    if let Some(var_35) = &input.service_name {
+        object.key("ServiceName").string(var_35.as_str());
+    }
+    if let Some(var_36) = &input.service_registries {
+        let mut array_37 = object.key("ServiceRegistries").start_array();
+        for item_38 in var_36 {
+            {
+                #[allow(unused_mut)]
+                let mut object_39 = array_37.value().start_object();
+                crate::protocol_serde::shape_aws_ecs_service_service_registries_details::ser_aws_ecs_service_service_registries_details(
+                    &mut object_39,
+                    item_38,
+                )?;
+                object_39.finish();
+            }
+        }
+        array_37.finish();
+    }
+    if let Some(var_40) = &input.task_definition {
+        object.key("TaskDefinition").string(var_40.as_str());
     }
     Ok(())
 }

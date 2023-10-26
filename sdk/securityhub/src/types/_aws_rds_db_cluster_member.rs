@@ -5,9 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsRdsDbClusterMember {
     /// <p>Whether the cluster member is the primary instance for the DB cluster.</p>
-    pub is_cluster_writer: bool,
+    pub is_cluster_writer: ::std::option::Option<bool>,
     /// <p>Specifies the order in which an Aurora replica is promoted to the primary instance when the existing primary instance fails.</p>
-    pub promotion_tier: i32,
+    pub promotion_tier: ::std::option::Option<i32>,
     /// <p>The instance identifier for this member of the DB cluster.</p>
     pub db_instance_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The status of the DB cluster parameter group for this member of the DB cluster.</p>
@@ -15,11 +15,11 @@ pub struct AwsRdsDbClusterMember {
 }
 impl AwsRdsDbClusterMember {
     /// <p>Whether the cluster member is the primary instance for the DB cluster.</p>
-    pub fn is_cluster_writer(&self) -> bool {
+    pub fn is_cluster_writer(&self) -> ::std::option::Option<bool> {
         self.is_cluster_writer
     }
     /// <p>Specifies the order in which an Aurora replica is promoted to the primary instance when the existing primary instance fails.</p>
-    pub fn promotion_tier(&self) -> i32 {
+    pub fn promotion_tier(&self) -> ::std::option::Option<i32> {
         self.promotion_tier
     }
     /// <p>The instance identifier for this member of the DB cluster.</p>
@@ -107,8 +107,8 @@ impl AwsRdsDbClusterMemberBuilder {
     /// Consumes the builder and constructs a [`AwsRdsDbClusterMember`](crate::types::AwsRdsDbClusterMember).
     pub fn build(self) -> crate::types::AwsRdsDbClusterMember {
         crate::types::AwsRdsDbClusterMember {
-            is_cluster_writer: self.is_cluster_writer.unwrap_or_default(),
-            promotion_tier: self.promotion_tier.unwrap_or_default(),
+            is_cluster_writer: self.is_cluster_writer,
+            promotion_tier: self.promotion_tier,
             db_instance_identifier: self.db_instance_identifier,
             db_cluster_parameter_group_status: self.db_cluster_parameter_group_status,
         }

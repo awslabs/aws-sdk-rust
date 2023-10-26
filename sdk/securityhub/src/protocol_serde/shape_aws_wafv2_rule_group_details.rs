@@ -3,44 +3,44 @@ pub fn ser_aws_wafv2_rule_group_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsWafv2RuleGroupDetails,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if input.capacity != 0 {
+    if let Some(var_1) = &input.capacity {
         object.key("Capacity").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.capacity).into()),
+            ::aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if let Some(var_1) = &input.description {
-        object.key("Description").string(var_1.as_str());
+    if let Some(var_2) = &input.description {
+        object.key("Description").string(var_2.as_str());
     }
-    if let Some(var_2) = &input.id {
-        object.key("Id").string(var_2.as_str());
+    if let Some(var_3) = &input.id {
+        object.key("Id").string(var_3.as_str());
     }
-    if let Some(var_3) = &input.name {
-        object.key("Name").string(var_3.as_str());
+    if let Some(var_4) = &input.name {
+        object.key("Name").string(var_4.as_str());
     }
-    if let Some(var_4) = &input.arn {
-        object.key("Arn").string(var_4.as_str());
+    if let Some(var_5) = &input.arn {
+        object.key("Arn").string(var_5.as_str());
     }
-    if let Some(var_5) = &input.rules {
-        let mut array_6 = object.key("Rules").start_array();
-        for item_7 in var_5 {
+    if let Some(var_6) = &input.rules {
+        let mut array_7 = object.key("Rules").start_array();
+        for item_8 in var_6 {
             {
                 #[allow(unused_mut)]
-                let mut object_8 = array_6.value().start_object();
-                crate::protocol_serde::shape_aws_wafv2_rules_details::ser_aws_wafv2_rules_details(&mut object_8, item_7)?;
-                object_8.finish();
+                let mut object_9 = array_7.value().start_object();
+                crate::protocol_serde::shape_aws_wafv2_rules_details::ser_aws_wafv2_rules_details(&mut object_9, item_8)?;
+                object_9.finish();
             }
         }
-        array_6.finish();
+        array_7.finish();
     }
-    if let Some(var_9) = &input.scope {
-        object.key("Scope").string(var_9.as_str());
+    if let Some(var_10) = &input.scope {
+        object.key("Scope").string(var_10.as_str());
     }
-    if let Some(var_10) = &input.visibility_config {
+    if let Some(var_11) = &input.visibility_config {
         #[allow(unused_mut)]
-        let mut object_11 = object.key("VisibilityConfig").start_object();
-        crate::protocol_serde::shape_aws_wafv2_visibility_config_details::ser_aws_wafv2_visibility_config_details(&mut object_11, var_10)?;
-        object_11.finish();
+        let mut object_12 = object.key("VisibilityConfig").start_object();
+        crate::protocol_serde::shape_aws_wafv2_visibility_config_details::ser_aws_wafv2_visibility_config_details(&mut object_12, var_11)?;
+        object_12.finish();
     }
     Ok(())
 }

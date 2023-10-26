@@ -9,10 +9,10 @@ pub fn ser_player_latency(
     if let Some(var_2) = &input.region_identifier {
         object.key("RegionIdentifier").string(var_2.as_str());
     }
-    if input.latency_in_milliseconds != 0.0 {
+    if let Some(var_3) = &input.latency_in_milliseconds {
         object.key("LatencyInMilliseconds").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::Float((input.latency_in_milliseconds).into()),
+            ::aws_smithy_types::Number::Float((*var_3).into()),
         );
     }
     Ok(())

@@ -25,9 +25,9 @@ pub struct JobFlowInstancesDetail {
     /// <p>The Amazon EC2 Availability Zone for the cluster.</p>
     pub placement: ::std::option::Option<crate::types::PlacementType>,
     /// <p>Specifies whether the cluster should remain available after completing all steps.</p>
-    pub keep_job_flow_alive_when_no_steps: bool,
+    pub keep_job_flow_alive_when_no_steps: ::std::option::Option<bool>,
     /// <p>Specifies whether the Amazon EC2 instances in the cluster are protected from termination by API calls, user intervention, or in the event of a job-flow error.</p>
-    pub termination_protected: bool,
+    pub termination_protected: ::std::option::Option<bool>,
     /// <p>The Hadoop version for the cluster.</p>
     pub hadoop_version: ::std::option::Option<::std::string::String>,
 }
@@ -73,11 +73,11 @@ impl JobFlowInstancesDetail {
         self.placement.as_ref()
     }
     /// <p>Specifies whether the cluster should remain available after completing all steps.</p>
-    pub fn keep_job_flow_alive_when_no_steps(&self) -> bool {
+    pub fn keep_job_flow_alive_when_no_steps(&self) -> ::std::option::Option<bool> {
         self.keep_job_flow_alive_when_no_steps
     }
     /// <p>Specifies whether the Amazon EC2 instances in the cluster are protected from termination by API calls, user intervention, or in the event of a job-flow error.</p>
-    pub fn termination_protected(&self) -> bool {
+    pub fn termination_protected(&self) -> ::std::option::Option<bool> {
         self.termination_protected
     }
     /// <p>The Hadoop version for the cluster.</p>
@@ -312,8 +312,8 @@ impl JobFlowInstancesDetailBuilder {
             ec2_key_name: self.ec2_key_name,
             ec2_subnet_id: self.ec2_subnet_id,
             placement: self.placement,
-            keep_job_flow_alive_when_no_steps: self.keep_job_flow_alive_when_no_steps.unwrap_or_default(),
-            termination_protected: self.termination_protected.unwrap_or_default(),
+            keep_job_flow_alive_when_no_steps: self.keep_job_flow_alive_when_no_steps,
+            termination_protected: self.termination_protected,
             hadoop_version: self.hadoop_version,
         }
     }

@@ -3,17 +3,17 @@ pub fn ser_aws_s3_account_public_access_block_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsS3AccountPublicAccessBlockDetails,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if input.block_public_acls {
-        object.key("BlockPublicAcls").boolean(input.block_public_acls);
+    if let Some(var_1) = &input.block_public_acls {
+        object.key("BlockPublicAcls").boolean(*var_1);
     }
-    if input.block_public_policy {
-        object.key("BlockPublicPolicy").boolean(input.block_public_policy);
+    if let Some(var_2) = &input.block_public_policy {
+        object.key("BlockPublicPolicy").boolean(*var_2);
     }
-    if input.ignore_public_acls {
-        object.key("IgnorePublicAcls").boolean(input.ignore_public_acls);
+    if let Some(var_3) = &input.ignore_public_acls {
+        object.key("IgnorePublicAcls").boolean(*var_3);
     }
-    if input.restrict_public_buckets {
-        object.key("RestrictPublicBuckets").boolean(input.restrict_public_buckets);
+    if let Some(var_4) = &input.restrict_public_buckets {
+        object.key("RestrictPublicBuckets").boolean(*var_4);
     }
     Ok(())
 }

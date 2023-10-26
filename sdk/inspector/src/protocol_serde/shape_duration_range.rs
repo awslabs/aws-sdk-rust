@@ -3,16 +3,16 @@ pub fn ser_duration_range(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DurationRange,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if input.min_seconds != 0 {
+    if let Some(var_1) = &input.min_seconds {
         object.key("minSeconds").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.min_seconds).into()),
+            ::aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if input.max_seconds != 0 {
+    if let Some(var_2) = &input.max_seconds {
         object.key("maxSeconds").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.max_seconds).into()),
+            ::aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
     Ok(())

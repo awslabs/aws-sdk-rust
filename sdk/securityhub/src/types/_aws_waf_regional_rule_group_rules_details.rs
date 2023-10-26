@@ -7,7 +7,7 @@ pub struct AwsWafRegionalRuleGroupRulesDetails {
     /// <p>The action that WAF should take on a web request when it matches the criteria defined in the rule. </p>
     pub action: ::std::option::Option<crate::types::AwsWafRegionalRuleGroupRulesActionDetails>,
     /// <p>If you define more than one rule in a web ACL, WAF evaluates each request against the rules in order based on the value of <code>Priority</code>. </p>
-    pub priority: i32,
+    pub priority: ::std::option::Option<i32>,
     /// <p>The ID for a rule. </p>
     pub rule_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of rule in the rule group. </p>
@@ -19,7 +19,7 @@ impl AwsWafRegionalRuleGroupRulesDetails {
         self.action.as_ref()
     }
     /// <p>If you define more than one rule in a web ACL, WAF evaluates each request against the rules in order based on the value of <code>Priority</code>. </p>
-    pub fn priority(&self) -> i32 {
+    pub fn priority(&self) -> ::std::option::Option<i32> {
         self.priority
     }
     /// <p>The ID for a rule. </p>
@@ -108,7 +108,7 @@ impl AwsWafRegionalRuleGroupRulesDetailsBuilder {
     pub fn build(self) -> crate::types::AwsWafRegionalRuleGroupRulesDetails {
         crate::types::AwsWafRegionalRuleGroupRulesDetails {
             action: self.action,
-            priority: self.priority.unwrap_or_default(),
+            priority: self.priority,
             rule_id: self.rule_id,
             r#type: self.r#type,
         }

@@ -4,6 +4,9 @@ pub use ::aws_http::request_id::RequestId;
 /// Types for the `CreateHomeRegionControl` operation.
 pub mod create_home_region_control;
 
+/// Types for the `DeleteHomeRegionControl` operation.
+pub mod delete_home_region_control;
+
 /// Types for the `DescribeHomeRegionControls` operation.
 pub mod describe_home_region_controls;
 

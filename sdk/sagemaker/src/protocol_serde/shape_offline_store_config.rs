@@ -9,17 +9,17 @@ pub fn ser_offline_store_config(
         crate::protocol_serde::shape_s3_storage_config::ser_s3_storage_config(&mut object_2, var_1)?;
         object_2.finish();
     }
-    if input.disable_glue_table_creation {
-        object.key("DisableGlueTableCreation").boolean(input.disable_glue_table_creation);
+    if let Some(var_3) = &input.disable_glue_table_creation {
+        object.key("DisableGlueTableCreation").boolean(*var_3);
     }
-    if let Some(var_3) = &input.data_catalog_config {
+    if let Some(var_4) = &input.data_catalog_config {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("DataCatalogConfig").start_object();
-        crate::protocol_serde::shape_data_catalog_config::ser_data_catalog_config(&mut object_4, var_3)?;
-        object_4.finish();
+        let mut object_5 = object.key("DataCatalogConfig").start_object();
+        crate::protocol_serde::shape_data_catalog_config::ser_data_catalog_config(&mut object_5, var_4)?;
+        object_5.finish();
     }
-    if let Some(var_5) = &input.table_format {
-        object.key("TableFormat").string(var_5.as_str());
+    if let Some(var_6) = &input.table_format {
+        object.key("TableFormat").string(var_6.as_str());
     }
     Ok(())
 }

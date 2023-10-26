@@ -6,7 +6,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsNetworkFirewallRuleGroupDetails {
     /// <p>The maximum number of operating resources that this rule group can use.</p>
-    pub capacity: i32,
+    pub capacity: ::std::option::Option<i32>,
     /// <p>A description of the rule group.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Details about the rule group.</p>
@@ -22,7 +22,7 @@ pub struct AwsNetworkFirewallRuleGroupDetails {
 }
 impl AwsNetworkFirewallRuleGroupDetails {
     /// <p>The maximum number of operating resources that this rule group can use.</p>
-    pub fn capacity(&self) -> i32 {
+    pub fn capacity(&self) -> ::std::option::Option<i32> {
         self.capacity
     }
     /// <p>A description of the rule group.</p>
@@ -171,7 +171,7 @@ impl AwsNetworkFirewallRuleGroupDetailsBuilder {
     /// Consumes the builder and constructs a [`AwsNetworkFirewallRuleGroupDetails`](crate::types::AwsNetworkFirewallRuleGroupDetails).
     pub fn build(self) -> crate::types::AwsNetworkFirewallRuleGroupDetails {
         crate::types::AwsNetworkFirewallRuleGroupDetails {
-            capacity: self.capacity.unwrap_or_default(),
+            capacity: self.capacity,
             description: self.description,
             rule_group: self.rule_group,
             rule_group_arn: self.rule_group_arn,

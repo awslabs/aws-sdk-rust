@@ -17,7 +17,7 @@ pub struct DbClusterSnapshot {
     /// <p>Specifies the status of this cluster snapshot.</p>
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the port that the cluster was listening on at the time of the snapshot.</p>
-    pub port: i32,
+    pub port: ::std::option::Option<i32>,
     /// <p>Provides the virtual private cloud (VPC) ID that is associated with the cluster snapshot.</p>
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the time when the cluster was created, in Universal Coordinated Time (UTC).</p>
@@ -29,9 +29,9 @@ pub struct DbClusterSnapshot {
     /// <p>Provides the type of the cluster snapshot.</p>
     pub snapshot_type: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the percentage of the estimated data that has been transferred.</p>
-    pub percent_progress: i32,
+    pub percent_progress: ::std::option::Option<i32>,
     /// <p>Specifies whether the cluster snapshot is encrypted.</p>
-    pub storage_encrypted: bool,
+    pub storage_encrypted: ::std::option::Option<bool>,
     /// <p>If <code>StorageEncrypted</code> is <code>true</code>, the KMS key identifier for the encrypted cluster snapshot.</p>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the cluster snapshot.</p>
@@ -65,7 +65,7 @@ impl DbClusterSnapshot {
         self.status.as_deref()
     }
     /// <p>Specifies the port that the cluster was listening on at the time of the snapshot.</p>
-    pub fn port(&self) -> i32 {
+    pub fn port(&self) -> ::std::option::Option<i32> {
         self.port
     }
     /// <p>Provides the virtual private cloud (VPC) ID that is associated with the cluster snapshot.</p>
@@ -89,11 +89,11 @@ impl DbClusterSnapshot {
         self.snapshot_type.as_deref()
     }
     /// <p>Specifies the percentage of the estimated data that has been transferred.</p>
-    pub fn percent_progress(&self) -> i32 {
+    pub fn percent_progress(&self) -> ::std::option::Option<i32> {
         self.percent_progress
     }
     /// <p>Specifies whether the cluster snapshot is encrypted.</p>
-    pub fn storage_encrypted(&self) -> bool {
+    pub fn storage_encrypted(&self) -> ::std::option::Option<bool> {
         self.storage_encrypted
     }
     /// <p>If <code>StorageEncrypted</code> is <code>true</code>, the KMS key identifier for the encrypted cluster snapshot.</p>
@@ -392,14 +392,14 @@ impl DbClusterSnapshotBuilder {
             snapshot_create_time: self.snapshot_create_time,
             engine: self.engine,
             status: self.status,
-            port: self.port.unwrap_or_default(),
+            port: self.port,
             vpc_id: self.vpc_id,
             cluster_create_time: self.cluster_create_time,
             master_username: self.master_username,
             engine_version: self.engine_version,
             snapshot_type: self.snapshot_type,
-            percent_progress: self.percent_progress.unwrap_or_default(),
-            storage_encrypted: self.storage_encrypted.unwrap_or_default(),
+            percent_progress: self.percent_progress,
+            storage_encrypted: self.storage_encrypted,
             kms_key_id: self.kms_key_id,
             db_cluster_snapshot_arn: self.db_cluster_snapshot_arn,
             source_db_cluster_snapshot_arn: self.source_db_cluster_snapshot_arn,

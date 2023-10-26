@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateSchemaMappingInput {
-    /// <p>The name of the schema. There cannot be multiple <code>SchemaMappings</code> with the same name.</p>
+    /// <p>The name of the schema. There can't be multiple <code>SchemaMappings</code> with the same name.</p>
     pub schema_name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the schema.</p>
     pub description: ::std::option::Option<::std::string::String>,
@@ -13,7 +13,7 @@ pub struct CreateSchemaMappingInput {
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateSchemaMappingInput {
-    /// <p>The name of the schema. There cannot be multiple <code>SchemaMappings</code> with the same name.</p>
+    /// <p>The name of the schema. There can't be multiple <code>SchemaMappings</code> with the same name.</p>
     pub fn schema_name(&self) -> ::std::option::Option<&str> {
         self.schema_name.as_deref()
     }
@@ -47,17 +47,17 @@ pub struct CreateSchemaMappingInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateSchemaMappingInputBuilder {
-    /// <p>The name of the schema. There cannot be multiple <code>SchemaMappings</code> with the same name.</p>
+    /// <p>The name of the schema. There can't be multiple <code>SchemaMappings</code> with the same name.</p>
     pub fn schema_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schema_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the schema. There cannot be multiple <code>SchemaMappings</code> with the same name.</p>
+    /// <p>The name of the schema. There can't be multiple <code>SchemaMappings</code> with the same name.</p>
     pub fn set_schema_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.schema_name = input;
         self
     }
-    /// <p>The name of the schema. There cannot be multiple <code>SchemaMappings</code> with the same name.</p>
+    /// <p>The name of the schema. There can't be multiple <code>SchemaMappings</code> with the same name.</p>
     pub fn get_schema_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.schema_name
     }

@@ -12,7 +12,7 @@ pub struct Standard {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Whether the standard is enabled by default. When Security Hub is enabled from the console, if a standard is enabled by default, the check box for that standard is selected by default.</p>
     /// <p>When Security Hub is enabled using the <code>EnableSecurityHub</code> API operation, the standard is enabled by default unless <code>EnableDefaultStandards</code> is set to <code>false</code>.</p>
-    pub enabled_by_default: bool,
+    pub enabled_by_default: ::std::option::Option<bool>,
     /// <p>Provides details about the management of a standard. </p>
     pub standards_managed_by: ::std::option::Option<crate::types::StandardsManagedBy>,
 }
@@ -31,7 +31,7 @@ impl Standard {
     }
     /// <p>Whether the standard is enabled by default. When Security Hub is enabled from the console, if a standard is enabled by default, the check box for that standard is selected by default.</p>
     /// <p>When Security Hub is enabled using the <code>EnableSecurityHub</code> API operation, the standard is enabled by default unless <code>EnableDefaultStandards</code> is set to <code>false</code>.</p>
-    pub fn enabled_by_default(&self) -> bool {
+    pub fn enabled_by_default(&self) -> ::std::option::Option<bool> {
         self.enabled_by_default
     }
     /// <p>Provides details about the management of a standard. </p>
@@ -136,7 +136,7 @@ impl StandardBuilder {
             standards_arn: self.standards_arn,
             name: self.name,
             description: self.description,
-            enabled_by_default: self.enabled_by_default.unwrap_or_default(),
+            enabled_by_default: self.enabled_by_default,
             standards_managed_by: self.standards_managed_by,
         }
     }

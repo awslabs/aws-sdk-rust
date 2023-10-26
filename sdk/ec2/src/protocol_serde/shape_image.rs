@@ -396,6 +396,19 @@ pub fn de_image(decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder) -> Result
                 builder = builder.set_imds_support(var_30);
             }
             ,
+            s if s.matches("sourceInstanceId") /* SourceInstanceId com.amazonaws.ec2#Image$SourceInstanceId */ =>  {
+                let var_31 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_source_instance_id(var_31);
+            }
+            ,
             _ => {}
         }
     }

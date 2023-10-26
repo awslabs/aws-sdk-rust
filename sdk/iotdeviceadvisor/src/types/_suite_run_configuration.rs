@@ -9,7 +9,7 @@ pub struct SuiteRunConfiguration {
     /// <p>Sets test case list.</p>
     pub selected_test_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>TRUE if multiple test suites run in parallel.</p>
-    pub parallel_run: bool,
+    pub parallel_run: ::std::option::Option<bool>,
 }
 impl SuiteRunConfiguration {
     /// <p>Sets the primary device for the test suite run. This requires a thing ARN or a certificate ARN.</p>
@@ -21,7 +21,7 @@ impl SuiteRunConfiguration {
         self.selected_test_list.as_deref()
     }
     /// <p>TRUE if multiple test suites run in parallel.</p>
-    pub fn parallel_run(&self) -> bool {
+    pub fn parallel_run(&self) -> ::std::option::Option<bool> {
         self.parallel_run
     }
 }
@@ -94,7 +94,7 @@ impl SuiteRunConfigurationBuilder {
         crate::types::SuiteRunConfiguration {
             primary_device: self.primary_device,
             selected_test_list: self.selected_test_list,
-            parallel_run: self.parallel_run.unwrap_or_default(),
+            parallel_run: self.parallel_run,
         }
     }
 }

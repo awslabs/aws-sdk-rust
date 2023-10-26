@@ -5,17 +5,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DurationRange {
     /// <p>The minimum value of the duration range. Must be greater than zero.</p>
-    pub min_seconds: i32,
+    pub min_seconds: ::std::option::Option<i32>,
     /// <p>The maximum value of the duration range. Must be less than or equal to 604800 seconds (1 week).</p>
-    pub max_seconds: i32,
+    pub max_seconds: ::std::option::Option<i32>,
 }
 impl DurationRange {
     /// <p>The minimum value of the duration range. Must be greater than zero.</p>
-    pub fn min_seconds(&self) -> i32 {
+    pub fn min_seconds(&self) -> ::std::option::Option<i32> {
         self.min_seconds
     }
     /// <p>The maximum value of the duration range. Must be less than or equal to 604800 seconds (1 week).</p>
-    pub fn max_seconds(&self) -> i32 {
+    pub fn max_seconds(&self) -> ::std::option::Option<i32> {
         self.max_seconds
     }
 }
@@ -65,8 +65,8 @@ impl DurationRangeBuilder {
     /// Consumes the builder and constructs a [`DurationRange`](crate::types::DurationRange).
     pub fn build(self) -> crate::types::DurationRange {
         crate::types::DurationRange {
-            min_seconds: self.min_seconds.unwrap_or_default(),
-            max_seconds: self.max_seconds.unwrap_or_default(),
+            min_seconds: self.min_seconds,
+            max_seconds: self.max_seconds,
         }
     }
 }

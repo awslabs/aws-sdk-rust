@@ -33,7 +33,7 @@ pub struct DescribeIndexOutput {
     pub user_token_configurations: ::std::option::Option<::std::vec::Vec<crate::types::UserTokenConfiguration>>,
     /// <p>The user context policy for the Amazon Kendra index.</p>
     pub user_context_policy: ::std::option::Option<crate::types::UserContextPolicy>,
-    /// <p>Whether you have enabled the configuration for fetching access levels of groups and users from an IAM Identity Center (successor to Single Sign-On) identity source.</p>
+    /// <p>Whether you have enabled the configuration for fetching access levels of groups and users from an IAM Identity Center identity source.</p>
     pub user_group_resolution_configuration: ::std::option::Option<crate::types::UserGroupResolutionConfiguration>,
     _request_id: Option<String>,
 }
@@ -98,7 +98,7 @@ impl DescribeIndexOutput {
     pub fn user_context_policy(&self) -> ::std::option::Option<&crate::types::UserContextPolicy> {
         self.user_context_policy.as_ref()
     }
-    /// <p>Whether you have enabled the configuration for fetching access levels of groups and users from an IAM Identity Center (successor to Single Sign-On) identity source.</p>
+    /// <p>Whether you have enabled the configuration for fetching access levels of groups and users from an IAM Identity Center identity source.</p>
     pub fn user_group_resolution_configuration(&self) -> ::std::option::Option<&crate::types::UserGroupResolutionConfiguration> {
         self.user_group_resolution_configuration.as_ref()
     }
@@ -363,17 +363,17 @@ impl DescribeIndexOutputBuilder {
     pub fn get_user_context_policy(&self) -> &::std::option::Option<crate::types::UserContextPolicy> {
         &self.user_context_policy
     }
-    /// <p>Whether you have enabled the configuration for fetching access levels of groups and users from an IAM Identity Center (successor to Single Sign-On) identity source.</p>
+    /// <p>Whether you have enabled the configuration for fetching access levels of groups and users from an IAM Identity Center identity source.</p>
     pub fn user_group_resolution_configuration(mut self, input: crate::types::UserGroupResolutionConfiguration) -> Self {
         self.user_group_resolution_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Whether you have enabled the configuration for fetching access levels of groups and users from an IAM Identity Center (successor to Single Sign-On) identity source.</p>
+    /// <p>Whether you have enabled the configuration for fetching access levels of groups and users from an IAM Identity Center identity source.</p>
     pub fn set_user_group_resolution_configuration(mut self, input: ::std::option::Option<crate::types::UserGroupResolutionConfiguration>) -> Self {
         self.user_group_resolution_configuration = input;
         self
     }
-    /// <p>Whether you have enabled the configuration for fetching access levels of groups and users from an IAM Identity Center (successor to Single Sign-On) identity source.</p>
+    /// <p>Whether you have enabled the configuration for fetching access levels of groups and users from an IAM Identity Center identity source.</p>
     pub fn get_user_group_resolution_configuration(&self) -> &::std::option::Option<crate::types::UserGroupResolutionConfiguration> {
         &self.user_group_resolution_configuration
     }

@@ -7,7 +7,7 @@ pub struct Promotion {
     /// <p>The name of the promotion.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The percentage of recommended items to apply the promotion to.</p>
-    pub percent_promoted_items: i32,
+    pub percent_promoted_items: ::std::option::Option<i32>,
     /// <p>The Amazon Resource Name (ARN) of the filter used by the promotion. This filter defines the criteria for promoted items. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/promoting-items.html#promotion-filters">Promotion filters</a>.</p>
     pub filter_arn: ::std::option::Option<::std::string::String>,
     /// <p>The values to use when promoting items. For each placeholder parameter in your promotion's filter expression, provide the parameter name (in matching case) as a key and the filter value(s) as the corresponding value. Separate multiple values for one parameter with a comma. </p>
@@ -21,7 +21,7 @@ impl Promotion {
         self.name.as_deref()
     }
     /// <p>The percentage of recommended items to apply the promotion to.</p>
-    pub fn percent_promoted_items(&self) -> i32 {
+    pub fn percent_promoted_items(&self) -> ::std::option::Option<i32> {
         self.percent_promoted_items
     }
     /// <p>The Amazon Resource Name (ARN) of the filter used by the promotion. This filter defines the criteria for promoted items. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/promoting-items.html#promotion-filters">Promotion filters</a>.</p>
@@ -127,7 +127,7 @@ impl PromotionBuilder {
     pub fn build(self) -> crate::types::Promotion {
         crate::types::Promotion {
             name: self.name,
-            percent_promoted_items: self.percent_promoted_items.unwrap_or_default(),
+            percent_promoted_items: self.percent_promoted_items,
             filter_arn: self.filter_arn,
             filter_values: self.filter_values,
         }

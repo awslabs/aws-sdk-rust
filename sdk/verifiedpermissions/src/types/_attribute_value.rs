@@ -6,22 +6,22 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub enum AttributeValue {
-    /// <p>An attribute value of <a href="https://docs.cedarpolicy.com/syntax-datatypes.html#boolean">Boolean</a> type.</p>
+    /// <p>An attribute value of <a href="https://docs.cedarpolicy.com/policies/syntax-datatypes.html#boolean">Boolean</a> type.</p>
     /// <p>Example: <code>{"boolean": true}</code> </p>
     Boolean(bool),
     /// <p>An attribute value of type <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_EntityIdentifier.html">EntityIdentifier</a>.</p>
     /// <p>Example: <code>"entityIdentifier": { "entityId": "&lt;id&gt;", "entityType": "&lt;entity type&gt;"}</code> </p>
     EntityIdentifier(crate::types::EntityIdentifier),
-    /// <p>An attribute value of <a href="https://docs.cedarpolicy.com/syntax-datatypes.html#long">Long</a> type.</p>
+    /// <p>An attribute value of <a href="https://docs.cedarpolicy.com/policies/syntax-datatypes.html#long">Long</a> type.</p>
     /// <p>Example: <code>{"long": 0}</code> </p>
     Long(i64),
-    /// <p>An attribute value of <a href="https://docs.cedarpolicy.com/syntax-datatypes.html#record">Record</a> type.</p>
+    /// <p>An attribute value of <a href="https://docs.cedarpolicy.com/policies/syntax-datatypes.html#record">Record</a> type.</p>
     /// <p>Example: <code>{"record": { "keyName": {} } }</code> </p>
     Record(::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>),
-    /// <p>An attribute value of <a href="https://docs.cedarpolicy.com/syntax-datatypes.html#set">Set</a> type.</p>
+    /// <p>An attribute value of <a href="https://docs.cedarpolicy.com/policies/syntax-datatypes.html#set">Set</a> type.</p>
     /// <p>Example: <code>{"set": [ {} ] }</code> </p>
     Set(::std::vec::Vec<crate::types::AttributeValue>),
-    /// <p>An attribute value of <a href="https://docs.cedarpolicy.com/syntax-datatypes.html#string">String</a> type.</p>
+    /// <p>An attribute value of <a href="https://docs.cedarpolicy.com/policies/syntax-datatypes.html#string">String</a> type.</p>
     /// <p>Example: <code>{"string": "abc"}</code> </p>
     String(::std::string::String),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.

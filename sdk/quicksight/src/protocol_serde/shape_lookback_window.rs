@@ -60,14 +60,14 @@ pub fn ser_lookback_window(
     if let Some(var_1) = &input.column_name {
         object.key("ColumnName").string(var_1.as_str());
     }
-    {
+    if let Some(var_2) = &input.size {
         object.key("Size").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.size).into()),
+            ::aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
-    if let Some(var_2) = &input.size_unit {
-        object.key("SizeUnit").string(var_2.as_str());
+    if let Some(var_3) = &input.size_unit {
+        object.key("SizeUnit").string(var_3.as_str());
     }
     Ok(())
 }

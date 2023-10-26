@@ -19,7 +19,7 @@ pub struct PipelineExecutionStep {
     /// <p>If this pipeline execution step was cached, details on the cache hit.</p>
     pub cache_hit_result: ::std::option::Option<crate::types::CacheHitResult>,
     /// <p>The current attempt of the execution step. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-retry-policy.html">Retry Policy for SageMaker Pipelines steps</a>.</p>
-    pub attempt_count: i32,
+    pub attempt_count: ::std::option::Option<i32>,
     /// <p>The reason why the step failed execution. This is only returned if the step failed its execution.</p>
     pub failure_reason: ::std::option::Option<::std::string::String>,
     /// <p>Metadata to run the pipeline step.</p>
@@ -57,7 +57,7 @@ impl PipelineExecutionStep {
         self.cache_hit_result.as_ref()
     }
     /// <p>The current attempt of the execution step. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-retry-policy.html">Retry Policy for SageMaker Pipelines steps</a>.</p>
-    pub fn attempt_count(&self) -> i32 {
+    pub fn attempt_count(&self) -> ::std::option::Option<i32> {
         self.attempt_count
     }
     /// <p>The reason why the step failed execution. This is only returned if the step failed its execution.</p>
@@ -261,7 +261,7 @@ impl PipelineExecutionStepBuilder {
             end_time: self.end_time,
             step_status: self.step_status,
             cache_hit_result: self.cache_hit_result,
-            attempt_count: self.attempt_count.unwrap_or_default(),
+            attempt_count: self.attempt_count,
             failure_reason: self.failure_reason,
             metadata: self.metadata,
             selective_execution_result: self.selective_execution_result,

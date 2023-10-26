@@ -9,9 +9,9 @@ pub struct DataTransferProgress {
     /// <p>Describes the data transfer rate in MB's per second.</p>
     pub current_rate_in_mega_bytes_per_second: ::std::option::Option<f64>,
     /// <p>Describes the total amount of data to be transfered in megabytes.</p>
-    pub total_data_in_mega_bytes: i64,
+    pub total_data_in_mega_bytes: ::std::option::Option<i64>,
     /// <p>Describes the total amount of data that has been transfered in MB's.</p>
-    pub data_transferred_in_mega_bytes: i64,
+    pub data_transferred_in_mega_bytes: ::std::option::Option<i64>,
     /// <p>Describes the estimated number of seconds remaining to complete the transfer.</p>
     pub estimated_time_to_completion_in_seconds: ::std::option::Option<i64>,
     /// <p>Describes the number of seconds that have elapsed during the data transfer.</p>
@@ -27,11 +27,11 @@ impl DataTransferProgress {
         self.current_rate_in_mega_bytes_per_second
     }
     /// <p>Describes the total amount of data to be transfered in megabytes.</p>
-    pub fn total_data_in_mega_bytes(&self) -> i64 {
+    pub fn total_data_in_mega_bytes(&self) -> ::std::option::Option<i64> {
         self.total_data_in_mega_bytes
     }
     /// <p>Describes the total amount of data that has been transfered in MB's.</p>
-    pub fn data_transferred_in_mega_bytes(&self) -> i64 {
+    pub fn data_transferred_in_mega_bytes(&self) -> ::std::option::Option<i64> {
         self.data_transferred_in_mega_bytes
     }
     /// <p>Describes the estimated number of seconds remaining to complete the transfer.</p>
@@ -151,8 +151,8 @@ impl DataTransferProgressBuilder {
         crate::types::DataTransferProgress {
             status: self.status,
             current_rate_in_mega_bytes_per_second: self.current_rate_in_mega_bytes_per_second,
-            total_data_in_mega_bytes: self.total_data_in_mega_bytes.unwrap_or_default(),
-            data_transferred_in_mega_bytes: self.data_transferred_in_mega_bytes.unwrap_or_default(),
+            total_data_in_mega_bytes: self.total_data_in_mega_bytes,
+            data_transferred_in_mega_bytes: self.data_transferred_in_mega_bytes,
             estimated_time_to_completion_in_seconds: self.estimated_time_to_completion_in_seconds,
             elapsed_time_in_seconds: self.elapsed_time_in_seconds,
         }

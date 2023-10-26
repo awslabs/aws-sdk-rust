@@ -129,6 +129,10 @@ pub use crate::types::_export_metric::ExportMetricBuilder;
 
 pub use crate::types::_export_destination::ExportDestinationBuilder;
 
+pub use crate::types::_verification_info::VerificationInfoBuilder;
+
+pub use crate::types::_soa_record::SoaRecordBuilder;
+
 pub use crate::types::_mail_from_attributes::MailFromAttributesBuilder;
 
 pub use crate::types::_dkim_attributes::DkimAttributesBuilder;

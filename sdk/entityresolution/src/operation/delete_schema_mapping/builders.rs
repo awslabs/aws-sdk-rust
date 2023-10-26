@@ -22,7 +22,7 @@ impl DeleteSchemaMappingInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteSchemaMapping`.
 ///
-/// <p>Deletes the <code>SchemaMapping</code> with a given name. This operation will succeed even if a schema with the given name does not exist. This operation will fail if there is a <code>DataIntegrationWorkflow</code> object that references the <code>SchemaMapping</code> in the workflow's <code>InputSourceConfig</code>.</p>
+/// <p>Deletes the <code>SchemaMapping</code> with a given name. This operation will succeed even if a schema with the given name does not exist. This operation will fail if there is a <code>MatchingWorkflow</code> object that references the <code>SchemaMapping</code> in the workflow's <code>InputSourceConfig</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteSchemaMappingFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

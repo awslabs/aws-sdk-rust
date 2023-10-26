@@ -254,17 +254,17 @@ impl ExportTableToPointInTimeFluentBuilder {
     pub fn get_export_format(&self) -> &::std::option::Option<crate::types::ExportFormat> {
         self.inner.get_export_format()
     }
-    /// <p>Choice of whether to execute as a full export or incremental export. Valid values are <code>FULL_EXPORT</code> or <code>INCREMENTAL_EXPORT</code>. If <code>INCREMENTAL_EXPORT</code> is provided, the <code>IncrementalExportSpecification</code> must also be used.</p>
+    /// <p>Choice of whether to execute as a full export or incremental export. Valid values are FULL_EXPORT or INCREMENTAL_EXPORT. The default value is FULL_EXPORT. If INCREMENTAL_EXPORT is provided, the IncrementalExportSpecification must also be used.</p>
     pub fn export_type(mut self, input: crate::types::ExportType) -> Self {
         self.inner = self.inner.export_type(input);
         self
     }
-    /// <p>Choice of whether to execute as a full export or incremental export. Valid values are <code>FULL_EXPORT</code> or <code>INCREMENTAL_EXPORT</code>. If <code>INCREMENTAL_EXPORT</code> is provided, the <code>IncrementalExportSpecification</code> must also be used.</p>
+    /// <p>Choice of whether to execute as a full export or incremental export. Valid values are FULL_EXPORT or INCREMENTAL_EXPORT. The default value is FULL_EXPORT. If INCREMENTAL_EXPORT is provided, the IncrementalExportSpecification must also be used.</p>
     pub fn set_export_type(mut self, input: ::std::option::Option<crate::types::ExportType>) -> Self {
         self.inner = self.inner.set_export_type(input);
         self
     }
-    /// <p>Choice of whether to execute as a full export or incremental export. Valid values are <code>FULL_EXPORT</code> or <code>INCREMENTAL_EXPORT</code>. If <code>INCREMENTAL_EXPORT</code> is provided, the <code>IncrementalExportSpecification</code> must also be used.</p>
+    /// <p>Choice of whether to execute as a full export or incremental export. Valid values are FULL_EXPORT or INCREMENTAL_EXPORT. The default value is FULL_EXPORT. If INCREMENTAL_EXPORT is provided, the IncrementalExportSpecification must also be used.</p>
     pub fn get_export_type(&self) -> &::std::option::Option<crate::types::ExportType> {
         self.inner.get_export_type()
     }

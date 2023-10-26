@@ -12,14 +12,14 @@ pub fn ser_aws_ec2_launch_template_data_metadata_options_details(
     if let Some(var_3) = &input.http_tokens {
         object.key("HttpTokens").string(var_3.as_str());
     }
-    if input.http_put_response_hop_limit != 0 {
+    if let Some(var_4) = &input.http_put_response_hop_limit {
         object.key("HttpPutResponseHopLimit").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.http_put_response_hop_limit).into()),
+            ::aws_smithy_types::Number::NegInt((*var_4).into()),
         );
     }
-    if let Some(var_4) = &input.instance_metadata_tags {
-        object.key("InstanceMetadataTags").string(var_4.as_str());
+    if let Some(var_5) = &input.instance_metadata_tags {
+        object.key("InstanceMetadataTags").string(var_5.as_str());
     }
     Ok(())
 }

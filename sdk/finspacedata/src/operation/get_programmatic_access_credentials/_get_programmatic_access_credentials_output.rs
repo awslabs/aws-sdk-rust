@@ -7,7 +7,7 @@ pub struct GetProgrammaticAccessCredentialsOutput {
     /// <p>Returns the programmatic credentials.</p>
     pub credentials: ::std::option::Option<crate::types::Credentials>,
     /// <p>Returns the duration in which the credentials will remain valid.</p>
-    pub duration_in_minutes: i64,
+    pub duration_in_minutes: ::std::option::Option<i64>,
     _request_id: Option<String>,
 }
 impl GetProgrammaticAccessCredentialsOutput {
@@ -16,7 +16,7 @@ impl GetProgrammaticAccessCredentialsOutput {
         self.credentials.as_ref()
     }
     /// <p>Returns the duration in which the credentials will remain valid.</p>
-    pub fn duration_in_minutes(&self) -> i64 {
+    pub fn duration_in_minutes(&self) -> ::std::option::Option<i64> {
         self.duration_in_minutes
     }
 }
@@ -91,7 +91,7 @@ impl GetProgrammaticAccessCredentialsOutputBuilder {
     pub fn build(self) -> crate::operation::get_programmatic_access_credentials::GetProgrammaticAccessCredentialsOutput {
         crate::operation::get_programmatic_access_credentials::GetProgrammaticAccessCredentialsOutput {
             credentials: self.credentials,
-            duration_in_minutes: self.duration_in_minutes.unwrap_or_default(),
+            duration_in_minutes: self.duration_in_minutes,
             _request_id: self._request_id,
         }
     }

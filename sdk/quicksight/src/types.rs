@@ -517,6 +517,10 @@ pub use crate::types::_data_path_color::DataPathColor;
 
 pub use crate::types::_data_path_value::DataPathValue;
 
+pub use crate::types::_data_path_type::DataPathType;
+
+pub use crate::types::_pivot_table_data_path_type::PivotTableDataPathType;
+
 pub use crate::types::_radar_chart_series_settings::RadarChartSeriesSettings;
 
 pub use crate::types::_radar_chart_area_style_settings::RadarChartAreaStyleSettings;
@@ -728,6 +732,8 @@ pub use crate::types::_reference_line_style_configuration::ReferenceLineStyleCon
 pub use crate::types::_reference_line_pattern_type::ReferenceLinePatternType;
 
 pub use crate::types::_reference_line_data_configuration::ReferenceLineDataConfiguration;
+
+pub use crate::types::_reference_line_series_type::ReferenceLineSeriesType;
 
 pub use crate::types::_axis_binding::AxisBinding;
 
@@ -1089,6 +1095,12 @@ pub use crate::types::_pivot_table_total_options::PivotTableTotalOptions;
 
 pub use crate::types::_pivot_total_options::PivotTotalOptions;
 
+pub use crate::types::_total_aggregation_option::TotalAggregationOption;
+
+pub use crate::types::_total_aggregation_function::TotalAggregationFunction;
+
+pub use crate::types::_simple_total_aggregation_function::SimpleTotalAggregationFunction;
+
 pub use crate::types::_table_cell_style::TableCellStyle;
 
 pub use crate::types::_global_table_border_options::GlobalTableBorderOptions;
@@ -1306,6 +1318,12 @@ pub use crate::types::_data_source_credentials::DataSourceCredentials;
 pub use crate::types::_credential_pair::CredentialPair;
 
 pub use crate::types::_data_source_parameters::DataSourceParameters;
+
+pub use crate::types::_trino_parameters::TrinoParameters;
+
+pub use crate::types::_starburst_parameters::StarburstParameters;
+
+pub use crate::types::_starburst_product_type::StarburstProductType;
 
 pub use crate::types::_databricks_parameters::DatabricksParameters;
 
@@ -2293,6 +2311,8 @@ mod _data_path_label_type;
 
 mod _data_path_sort;
 
+mod _data_path_type;
+
 mod _data_path_value;
 
 mod _data_point_drill_up_down_option;
@@ -3011,6 +3031,8 @@ mod _pivot_table_configuration;
 
 mod _pivot_table_data_path_option;
 
+mod _pivot_table_data_path_type;
+
 mod _pivot_table_field_collapse_state;
 
 mod _pivot_table_field_collapse_state_option;
@@ -3108,6 +3130,8 @@ mod _reference_line_label_horizontal_position;
 mod _reference_line_label_vertical_position;
 
 mod _reference_line_pattern_type;
+
+mod _reference_line_series_type;
 
 mod _reference_line_static_data_configuration;
 
@@ -3289,6 +3313,8 @@ mod _simple_cluster_marker;
 
 mod _simple_numerical_aggregation_function;
 
+mod _simple_total_aggregation_function;
+
 mod _slider_control_display_options;
 
 mod _small_multiples_axis_placement;
@@ -3348,6 +3374,10 @@ mod _special_value;
 mod _sql_server_parameters;
 
 mod _ssl_properties;
+
+mod _starburst_parameters;
+
+mod _starburst_product_type;
 
 mod _state_persistence_configurations;
 
@@ -3577,6 +3607,10 @@ mod _topic_time_granularity;
 
 mod _total_aggregation_computation;
 
+mod _total_aggregation_function;
+
+mod _total_aggregation_option;
+
 mod _total_options;
 
 mod _transform_operation;
@@ -3592,6 +3626,8 @@ mod _tree_map_sort_configuration;
 mod _tree_map_visual;
 
 mod _trend_arrow_options;
+
+mod _trino_parameters;
 
 mod _twitter_parameters;
 

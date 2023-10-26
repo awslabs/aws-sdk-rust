@@ -31,7 +31,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = "0.56.1"
-//! aws-sdk-oam = "0.11.1"
+//! aws-sdk-oam = "0.12.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

@@ -3,44 +3,44 @@ pub fn ser_aws_redshift_cluster_pending_modified_values(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsRedshiftClusterPendingModifiedValues,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if input.automated_snapshot_retention_period != 0 {
+    if let Some(var_1) = &input.automated_snapshot_retention_period {
         object.key("AutomatedSnapshotRetentionPeriod").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.automated_snapshot_retention_period).into()),
+            ::aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if let Some(var_1) = &input.cluster_identifier {
-        object.key("ClusterIdentifier").string(var_1.as_str());
+    if let Some(var_2) = &input.cluster_identifier {
+        object.key("ClusterIdentifier").string(var_2.as_str());
     }
-    if let Some(var_2) = &input.cluster_type {
-        object.key("ClusterType").string(var_2.as_str());
+    if let Some(var_3) = &input.cluster_type {
+        object.key("ClusterType").string(var_3.as_str());
     }
-    if let Some(var_3) = &input.cluster_version {
-        object.key("ClusterVersion").string(var_3.as_str());
+    if let Some(var_4) = &input.cluster_version {
+        object.key("ClusterVersion").string(var_4.as_str());
     }
-    if let Some(var_4) = &input.encryption_type {
-        object.key("EncryptionType").string(var_4.as_str());
+    if let Some(var_5) = &input.encryption_type {
+        object.key("EncryptionType").string(var_5.as_str());
     }
-    if input.enhanced_vpc_routing {
-        object.key("EnhancedVpcRouting").boolean(input.enhanced_vpc_routing);
+    if let Some(var_6) = &input.enhanced_vpc_routing {
+        object.key("EnhancedVpcRouting").boolean(*var_6);
     }
-    if let Some(var_5) = &input.maintenance_track_name {
-        object.key("MaintenanceTrackName").string(var_5.as_str());
+    if let Some(var_7) = &input.maintenance_track_name {
+        object.key("MaintenanceTrackName").string(var_7.as_str());
     }
-    if let Some(var_6) = &input.master_user_password {
-        object.key("MasterUserPassword").string(var_6.as_str());
+    if let Some(var_8) = &input.master_user_password {
+        object.key("MasterUserPassword").string(var_8.as_str());
     }
-    if let Some(var_7) = &input.node_type {
-        object.key("NodeType").string(var_7.as_str());
+    if let Some(var_9) = &input.node_type {
+        object.key("NodeType").string(var_9.as_str());
     }
-    if input.number_of_nodes != 0 {
+    if let Some(var_10) = &input.number_of_nodes {
         object.key("NumberOfNodes").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.number_of_nodes).into()),
+            ::aws_smithy_types::Number::NegInt((*var_10).into()),
         );
     }
-    if input.publicly_accessible {
-        object.key("PubliclyAccessible").boolean(input.publicly_accessible);
+    if let Some(var_11) = &input.publicly_accessible {
+        object.key("PubliclyAccessible").boolean(*var_11);
     }
     Ok(())
 }

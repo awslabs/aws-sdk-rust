@@ -15,20 +15,20 @@ pub fn ser_aws_msk_cluster_cluster_info_details(
     if let Some(var_3) = &input.current_version {
         object.key("CurrentVersion").string(var_3.as_str());
     }
-    if input.number_of_broker_nodes != 0 {
+    if let Some(var_4) = &input.number_of_broker_nodes {
         object.key("NumberOfBrokerNodes").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.number_of_broker_nodes).into()),
+            ::aws_smithy_types::Number::NegInt((*var_4).into()),
         );
     }
-    if let Some(var_4) = &input.cluster_name {
-        object.key("ClusterName").string(var_4.as_str());
+    if let Some(var_5) = &input.cluster_name {
+        object.key("ClusterName").string(var_5.as_str());
     }
-    if let Some(var_5) = &input.client_authentication {
+    if let Some(var_6) = &input.client_authentication {
         #[allow(unused_mut)]
-        let mut object_6 = object.key("ClientAuthentication").start_object();
-        crate::protocol_serde::shape_aws_msk_cluster_cluster_info_client_authentication_details::ser_aws_msk_cluster_cluster_info_client_authentication_details(&mut object_6, var_5)?;
-        object_6.finish();
+        let mut object_7 = object.key("ClientAuthentication").start_object();
+        crate::protocol_serde::shape_aws_msk_cluster_cluster_info_client_authentication_details::ser_aws_msk_cluster_cluster_info_client_authentication_details(&mut object_7, var_6)?;
+        object_7.finish();
     }
     Ok(())
 }

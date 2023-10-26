@@ -7,13 +7,13 @@ pub struct AwsEcsTaskDefinitionContainerDefinitionsHealthCheckDetails {
     /// <p>The command that the container runs to determine whether it is healthy.</p>
     pub command: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The time period in seconds between each health check execution. The default value is 30 seconds.</p>
-    pub interval: i32,
+    pub interval: ::std::option::Option<i32>,
     /// <p>The number of times to retry a failed health check before the container is considered unhealthy. The default value is 3.</p>
-    pub retries: i32,
+    pub retries: ::std::option::Option<i32>,
     /// <p>The optional grace period in seconds that allows containers time to bootstrap before failed health checks count towards the maximum number of retries.</p>
-    pub start_period: i32,
+    pub start_period: ::std::option::Option<i32>,
     /// <p>The time period in seconds to wait for a health check to succeed before it is considered a failure. The default value is 5.</p>
-    pub timeout: i32,
+    pub timeout: ::std::option::Option<i32>,
 }
 impl AwsEcsTaskDefinitionContainerDefinitionsHealthCheckDetails {
     /// <p>The command that the container runs to determine whether it is healthy.</p>
@@ -21,19 +21,19 @@ impl AwsEcsTaskDefinitionContainerDefinitionsHealthCheckDetails {
         self.command.as_deref()
     }
     /// <p>The time period in seconds between each health check execution. The default value is 30 seconds.</p>
-    pub fn interval(&self) -> i32 {
+    pub fn interval(&self) -> ::std::option::Option<i32> {
         self.interval
     }
     /// <p>The number of times to retry a failed health check before the container is considered unhealthy. The default value is 3.</p>
-    pub fn retries(&self) -> i32 {
+    pub fn retries(&self) -> ::std::option::Option<i32> {
         self.retries
     }
     /// <p>The optional grace period in seconds that allows containers time to bootstrap before failed health checks count towards the maximum number of retries.</p>
-    pub fn start_period(&self) -> i32 {
+    pub fn start_period(&self) -> ::std::option::Option<i32> {
         self.start_period
     }
     /// <p>The time period in seconds to wait for a health check to succeed before it is considered a failure. The default value is 5.</p>
-    pub fn timeout(&self) -> i32 {
+    pub fn timeout(&self) -> ::std::option::Option<i32> {
         self.timeout
     }
 }
@@ -135,10 +135,10 @@ impl AwsEcsTaskDefinitionContainerDefinitionsHealthCheckDetailsBuilder {
     pub fn build(self) -> crate::types::AwsEcsTaskDefinitionContainerDefinitionsHealthCheckDetails {
         crate::types::AwsEcsTaskDefinitionContainerDefinitionsHealthCheckDetails {
             command: self.command,
-            interval: self.interval.unwrap_or_default(),
-            retries: self.retries.unwrap_or_default(),
-            start_period: self.start_period.unwrap_or_default(),
-            timeout: self.timeout.unwrap_or_default(),
+            interval: self.interval,
+            retries: self.retries,
+            start_period: self.start_period,
+            timeout: self.timeout,
         }
     }
 }

@@ -11,34 +11,34 @@ pub fn ser_health_check(
     }
     #[allow(unused_mut)]
     let mut scope_3 = writer.prefix("Interval");
-    {
+    if let Some(var_4) = &input.interval {
         scope_3.number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.interval).into()),
+            ::aws_smithy_types::Number::NegInt((*var_4).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_4 = writer.prefix("Timeout");
-    {
-        scope_4.number(
-            #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.timeout).into()),
-        );
-    }
-    #[allow(unused_mut)]
-    let mut scope_5 = writer.prefix("UnhealthyThreshold");
-    {
+    let mut scope_5 = writer.prefix("Timeout");
+    if let Some(var_6) = &input.timeout {
         scope_5.number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.unhealthy_threshold).into()),
+            ::aws_smithy_types::Number::NegInt((*var_6).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_6 = writer.prefix("HealthyThreshold");
-    {
-        scope_6.number(
+    let mut scope_7 = writer.prefix("UnhealthyThreshold");
+    if let Some(var_8) = &input.unhealthy_threshold {
+        scope_7.number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.healthy_threshold).into()),
+            ::aws_smithy_types::Number::NegInt((*var_8).into()),
+        );
+    }
+    #[allow(unused_mut)]
+    let mut scope_9 = writer.prefix("HealthyThreshold");
+    if let Some(var_10) = &input.healthy_threshold {
+        scope_9.number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_10).into()),
         );
     }
     Ok(())
@@ -52,7 +52,7 @@ pub fn de_health_check(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Target") /* Target com.amazonaws.elasticloadbalancing#HealthCheck$Target */ =>  {
-                let var_7 =
+                let var_11 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -61,11 +61,11 @@ pub fn de_health_check(
                         ?
                     )
                 ;
-                builder = builder.set_target(var_7);
+                builder = builder.set_target(var_11);
             }
             ,
             s if s.matches("Interval") /* Interval com.amazonaws.elasticloadbalancing#HealthCheck$Interval */ =>  {
-                let var_8 =
+                let var_12 =
                     Some(
                          {
                             <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -76,11 +76,11 @@ pub fn de_health_check(
                         ?
                     )
                 ;
-                builder = builder.set_interval(var_8);
+                builder = builder.set_interval(var_12);
             }
             ,
             s if s.matches("Timeout") /* Timeout com.amazonaws.elasticloadbalancing#HealthCheck$Timeout */ =>  {
-                let var_9 =
+                let var_13 =
                     Some(
                          {
                             <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -91,11 +91,11 @@ pub fn de_health_check(
                         ?
                     )
                 ;
-                builder = builder.set_timeout(var_9);
+                builder = builder.set_timeout(var_13);
             }
             ,
             s if s.matches("UnhealthyThreshold") /* UnhealthyThreshold com.amazonaws.elasticloadbalancing#HealthCheck$UnhealthyThreshold */ =>  {
-                let var_10 =
+                let var_14 =
                     Some(
                          {
                             <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -106,11 +106,11 @@ pub fn de_health_check(
                         ?
                     )
                 ;
-                builder = builder.set_unhealthy_threshold(var_10);
+                builder = builder.set_unhealthy_threshold(var_14);
             }
             ,
             s if s.matches("HealthyThreshold") /* HealthyThreshold com.amazonaws.elasticloadbalancing#HealthCheck$HealthyThreshold */ =>  {
-                let var_11 =
+                let var_15 =
                     Some(
                          {
                             <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -121,7 +121,7 @@ pub fn de_health_check(
                         ?
                     )
                 ;
-                builder = builder.set_healthy_threshold(var_11);
+                builder = builder.set_healthy_threshold(var_15);
             }
             ,
             _ => {}

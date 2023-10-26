@@ -18,16 +18,16 @@ pub fn ser_aws_kinesis_stream_details(
         )?;
         object_4.finish();
     }
-    if input.shard_count != 0 {
+    if let Some(var_5) = &input.shard_count {
         object.key("ShardCount").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.shard_count).into()),
+            ::aws_smithy_types::Number::NegInt((*var_5).into()),
         );
     }
-    if input.retention_period_hours != 0 {
+    if let Some(var_6) = &input.retention_period_hours {
         object.key("RetentionPeriodHours").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.retention_period_hours).into()),
+            ::aws_smithy_types::Number::NegInt((*var_6).into()),
         );
     }
     Ok(())

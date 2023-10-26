@@ -30,7 +30,7 @@ pub struct EventSubscription {
     /// <p>Values: ERROR, INFO</p>
     pub severity: ::std::option::Option<::std::string::String>,
     /// <p>A boolean value indicating whether the subscription is enabled; <code>true</code> indicates that the subscription is enabled.</p>
-    pub enabled: bool,
+    pub enabled: ::std::option::Option<bool>,
     /// <p>The list of tags for the event subscription.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
@@ -79,7 +79,7 @@ impl EventSubscription {
         self.severity.as_deref()
     }
     /// <p>A boolean value indicating whether the subscription is enabled; <code>true</code> indicates that the subscription is enabled.</p>
-    pub fn enabled(&self) -> bool {
+    pub fn enabled(&self) -> ::std::option::Option<bool> {
         self.enabled
     }
     /// <p>The list of tags for the event subscription.</p>
@@ -316,7 +316,7 @@ impl EventSubscriptionBuilder {
             source_ids_list: self.source_ids_list,
             event_categories_list: self.event_categories_list,
             severity: self.severity,
-            enabled: self.enabled.unwrap_or_default(),
+            enabled: self.enabled,
             tags: self.tags,
         }
     }

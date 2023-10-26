@@ -9,7 +9,7 @@ pub struct GlobalClusterMember {
     /// <p>The Amazon Resource Name (ARN) for each read-only secondary cluster associated with the global cluster.</p>
     pub readers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Indicates whether the Aurora DB cluster is the primary cluster (that is, has read-write capability) for the global cluster with which it is associated.</p>
-    pub is_writer: bool,
+    pub is_writer: ::std::option::Option<bool>,
     /// <p>The status of write forwarding for a secondary cluster in the global cluster.</p>
     pub global_write_forwarding_status: ::std::option::Option<crate::types::WriteForwardingStatus>,
     /// <p>The status of synchronization of each Aurora DB cluster in the global cluster.</p>
@@ -25,7 +25,7 @@ impl GlobalClusterMember {
         self.readers.as_deref()
     }
     /// <p>Indicates whether the Aurora DB cluster is the primary cluster (that is, has read-write capability) for the global cluster with which it is associated.</p>
-    pub fn is_writer(&self) -> bool {
+    pub fn is_writer(&self) -> ::std::option::Option<bool> {
         self.is_writer
     }
     /// <p>The status of write forwarding for a secondary cluster in the global cluster.</p>
@@ -136,7 +136,7 @@ impl GlobalClusterMemberBuilder {
         crate::types::GlobalClusterMember {
             db_cluster_arn: self.db_cluster_arn,
             readers: self.readers,
-            is_writer: self.is_writer.unwrap_or_default(),
+            is_writer: self.is_writer,
             global_write_forwarding_status: self.global_write_forwarding_status,
             synchronization_status: self.synchronization_status,
         }

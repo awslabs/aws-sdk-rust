@@ -41,13 +41,13 @@ pub fn ser_option_setting(
     }
     #[allow(unused_mut)]
     let mut scope_15 = writer.prefix("IsModifiable");
-    if input.is_modifiable {
-        scope_15.boolean(input.is_modifiable);
+    if let Some(var_16) = &input.is_modifiable {
+        scope_15.boolean(*var_16);
     }
     #[allow(unused_mut)]
-    let mut scope_16 = writer.prefix("IsCollection");
-    if input.is_collection {
-        scope_16.boolean(input.is_collection);
+    let mut scope_17 = writer.prefix("IsCollection");
+    if let Some(var_18) = &input.is_collection {
+        scope_17.boolean(*var_18);
     }
     Ok(())
 }
@@ -60,32 +60,6 @@ pub fn de_option_setting(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Name") /* Name com.amazonaws.rds#OptionSetting$Name */ =>  {
-                let var_17 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_name(var_17);
-            }
-            ,
-            s if s.matches("Value") /* Value com.amazonaws.rds#OptionSetting$Value */ =>  {
-                let var_18 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_value(var_18);
-            }
-            ,
-            s if s.matches("DefaultValue") /* DefaultValue com.amazonaws.rds#OptionSetting$DefaultValue */ =>  {
                 let var_19 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -95,10 +69,10 @@ pub fn de_option_setting(
                         ?
                     )
                 ;
-                builder = builder.set_default_value(var_19);
+                builder = builder.set_name(var_19);
             }
             ,
-            s if s.matches("Description") /* Description com.amazonaws.rds#OptionSetting$Description */ =>  {
+            s if s.matches("Value") /* Value com.amazonaws.rds#OptionSetting$Value */ =>  {
                 let var_20 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -108,10 +82,10 @@ pub fn de_option_setting(
                         ?
                     )
                 ;
-                builder = builder.set_description(var_20);
+                builder = builder.set_value(var_20);
             }
             ,
-            s if s.matches("ApplyType") /* ApplyType com.amazonaws.rds#OptionSetting$ApplyType */ =>  {
+            s if s.matches("DefaultValue") /* DefaultValue com.amazonaws.rds#OptionSetting$DefaultValue */ =>  {
                 let var_21 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -121,10 +95,10 @@ pub fn de_option_setting(
                         ?
                     )
                 ;
-                builder = builder.set_apply_type(var_21);
+                builder = builder.set_default_value(var_21);
             }
             ,
-            s if s.matches("DataType") /* DataType com.amazonaws.rds#OptionSetting$DataType */ =>  {
+            s if s.matches("Description") /* Description com.amazonaws.rds#OptionSetting$Description */ =>  {
                 let var_22 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -134,10 +108,10 @@ pub fn de_option_setting(
                         ?
                     )
                 ;
-                builder = builder.set_data_type(var_22);
+                builder = builder.set_description(var_22);
             }
             ,
-            s if s.matches("AllowedValues") /* AllowedValues com.amazonaws.rds#OptionSetting$AllowedValues */ =>  {
+            s if s.matches("ApplyType") /* ApplyType com.amazonaws.rds#OptionSetting$ApplyType */ =>  {
                 let var_23 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -147,11 +121,37 @@ pub fn de_option_setting(
                         ?
                     )
                 ;
-                builder = builder.set_allowed_values(var_23);
+                builder = builder.set_apply_type(var_23);
+            }
+            ,
+            s if s.matches("DataType") /* DataType com.amazonaws.rds#OptionSetting$DataType */ =>  {
+                let var_24 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_data_type(var_24);
+            }
+            ,
+            s if s.matches("AllowedValues") /* AllowedValues com.amazonaws.rds#OptionSetting$AllowedValues */ =>  {
+                let var_25 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_allowed_values(var_25);
             }
             ,
             s if s.matches("IsModifiable") /* IsModifiable com.amazonaws.rds#OptionSetting$IsModifiable */ =>  {
-                let var_24 =
+                let var_26 =
                     Some(
                          {
                             <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -162,11 +162,11 @@ pub fn de_option_setting(
                         ?
                     )
                 ;
-                builder = builder.set_is_modifiable(var_24);
+                builder = builder.set_is_modifiable(var_26);
             }
             ,
             s if s.matches("IsCollection") /* IsCollection com.amazonaws.rds#OptionSetting$IsCollection */ =>  {
-                let var_25 =
+                let var_27 =
                     Some(
                          {
                             <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -177,7 +177,7 @@ pub fn de_option_setting(
                         ?
                     )
                 ;
-                builder = builder.set_is_collection(var_25);
+                builder = builder.set_is_collection(var_27);
             }
             ,
             _ => {}

@@ -36,7 +36,7 @@ pub struct DescribeAutoMlJobOutput {
     /// <p>Returns the secondary status of the AutoML job.</p>
     pub auto_ml_job_secondary_status: ::std::option::Option<crate::types::AutoMlJobSecondaryStatus>,
     /// <p>Indicates whether the output for an AutoML job generates candidate definitions only.</p>
-    pub generate_candidate_definitions_only: bool,
+    pub generate_candidate_definitions_only: ::std::option::Option<bool>,
     /// <p>Returns information on the job's artifacts found in <code>AutoMLJobArtifacts</code>.</p>
     pub auto_ml_job_artifacts: ::std::option::Option<crate::types::AutoMlJobArtifacts>,
     /// <p>Contains <code>ProblemType</code>, <code>AutoMLJobObjective</code>, and <code>CompletionCriteria</code>. If you do not provide these values, they are inferred.</p>
@@ -113,7 +113,7 @@ impl DescribeAutoMlJobOutput {
         self.auto_ml_job_secondary_status.as_ref()
     }
     /// <p>Indicates whether the output for an AutoML job generates candidate definitions only.</p>
-    pub fn generate_candidate_definitions_only(&self) -> bool {
+    pub fn generate_candidate_definitions_only(&self) -> ::std::option::Option<bool> {
         self.generate_candidate_definitions_only
     }
     /// <p>Returns information on the job's artifacts found in <code>AutoMLJobArtifacts</code>.</p>
@@ -507,7 +507,7 @@ impl DescribeAutoMlJobOutputBuilder {
             best_candidate: self.best_candidate,
             auto_ml_job_status: self.auto_ml_job_status,
             auto_ml_job_secondary_status: self.auto_ml_job_secondary_status,
-            generate_candidate_definitions_only: self.generate_candidate_definitions_only.unwrap_or_default(),
+            generate_candidate_definitions_only: self.generate_candidate_definitions_only,
             auto_ml_job_artifacts: self.auto_ml_job_artifacts,
             resolved_attributes: self.resolved_attributes,
             model_deploy_config: self.model_deploy_config,

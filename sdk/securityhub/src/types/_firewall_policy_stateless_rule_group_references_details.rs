@@ -5,13 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FirewallPolicyStatelessRuleGroupReferencesDetails {
     /// <p>The order in which to run the stateless rule group.</p>
-    pub priority: i32,
+    pub priority: ::std::option::Option<i32>,
     /// <p>The ARN of the stateless rule group.</p>
     pub resource_arn: ::std::option::Option<::std::string::String>,
 }
 impl FirewallPolicyStatelessRuleGroupReferencesDetails {
     /// <p>The order in which to run the stateless rule group.</p>
-    pub fn priority(&self) -> i32 {
+    pub fn priority(&self) -> ::std::option::Option<i32> {
         self.priority
     }
     /// <p>The ARN of the stateless rule group.</p>
@@ -65,7 +65,7 @@ impl FirewallPolicyStatelessRuleGroupReferencesDetailsBuilder {
     /// Consumes the builder and constructs a [`FirewallPolicyStatelessRuleGroupReferencesDetails`](crate::types::FirewallPolicyStatelessRuleGroupReferencesDetails).
     pub fn build(self) -> crate::types::FirewallPolicyStatelessRuleGroupReferencesDetails {
         crate::types::FirewallPolicyStatelessRuleGroupReferencesDetails {
-            priority: self.priority.unwrap_or_default(),
+            priority: self.priority,
             resource_arn: self.resource_arn,
         }
     }

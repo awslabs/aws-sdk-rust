@@ -3,20 +3,20 @@ pub fn ser_aws_elb_load_balancer_backend_server_description(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsElbLoadBalancerBackendServerDescription,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if input.instance_port != 0 {
+    if let Some(var_1) = &input.instance_port {
         object.key("InstancePort").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.instance_port).into()),
+            ::aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if let Some(var_1) = &input.policy_names {
-        let mut array_2 = object.key("PolicyNames").start_array();
-        for item_3 in var_1 {
+    if let Some(var_2) = &input.policy_names {
+        let mut array_3 = object.key("PolicyNames").start_array();
+        for item_4 in var_2 {
             {
-                array_2.value().string(item_3.as_str());
+                array_3.value().string(item_4.as_str());
             }
         }
-        array_2.finish();
+        array_3.finish();
     }
     Ok(())
 }

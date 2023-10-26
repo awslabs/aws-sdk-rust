@@ -3,13 +3,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAccessPolicyInput {
-    /// <p>Tye type of policy. Currently the only supported value is <code>data</code>.</p>
+    /// <p>Tye type of policy. Currently, the only supported value is <code>data</code>.</p>
     pub r#type: ::std::option::Option<crate::types::AccessPolicyType>,
     /// <p>The name of the access policy.</p>
     pub name: ::std::option::Option<::std::string::String>,
 }
 impl GetAccessPolicyInput {
-    /// <p>Tye type of policy. Currently the only supported value is <code>data</code>.</p>
+    /// <p>Tye type of policy. Currently, the only supported value is <code>data</code>.</p>
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::AccessPolicyType> {
         self.r#type.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct GetAccessPolicyInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }
 impl GetAccessPolicyInputBuilder {
-    /// <p>Tye type of policy. Currently the only supported value is <code>data</code>.</p>
+    /// <p>Tye type of policy. Currently, the only supported value is <code>data</code>.</p>
     pub fn r#type(mut self, input: crate::types::AccessPolicyType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Tye type of policy. Currently the only supported value is <code>data</code>.</p>
+    /// <p>Tye type of policy. Currently, the only supported value is <code>data</code>.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::AccessPolicyType>) -> Self {
         self.r#type = input;
         self
     }
-    /// <p>Tye type of policy. Currently the only supported value is <code>data</code>.</p>
+    /// <p>Tye type of policy. Currently, the only supported value is <code>data</code>.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::AccessPolicyType> {
         &self.r#type
     }

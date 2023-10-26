@@ -7,7 +7,7 @@ pub struct AwsEcsTaskDefinitionContainerDefinitionsMountPointsDetails {
     /// <p>The path on the container to mount the host volume at.</p>
     pub container_path: ::std::option::Option<::std::string::String>,
     /// <p>Whether the container has read-only access to the volume.</p>
-    pub read_only: bool,
+    pub read_only: ::std::option::Option<bool>,
     /// <p>The name of the volume to mount. Must match the name of a volume listed in <code>VolumeDetails</code> for the task definition.</p>
     pub source_volume: ::std::option::Option<::std::string::String>,
 }
@@ -17,7 +17,7 @@ impl AwsEcsTaskDefinitionContainerDefinitionsMountPointsDetails {
         self.container_path.as_deref()
     }
     /// <p>Whether the container has read-only access to the volume.</p>
-    pub fn read_only(&self) -> bool {
+    pub fn read_only(&self) -> ::std::option::Option<bool> {
         self.read_only
     }
     /// <p>The name of the volume to mount. Must match the name of a volume listed in <code>VolumeDetails</code> for the task definition.</p>
@@ -87,7 +87,7 @@ impl AwsEcsTaskDefinitionContainerDefinitionsMountPointsDetailsBuilder {
     pub fn build(self) -> crate::types::AwsEcsTaskDefinitionContainerDefinitionsMountPointsDetails {
         crate::types::AwsEcsTaskDefinitionContainerDefinitionsMountPointsDetails {
             container_path: self.container_path,
-            read_only: self.read_only.unwrap_or_default(),
+            read_only: self.read_only,
             source_volume: self.source_volume,
         }
     }

@@ -13,7 +13,7 @@ pub struct CreateRule {
     /// <p>If the policy targets resources in an Amazon Web Services Region, then you must create snapshots in the same Region as the source resource. If the policy targets resources on an Outpost, then you can create snapshots on the same Outpost as the source resource, or in the Region of that Outpost.</p>
     pub location: ::std::option::Option<crate::types::LocationValues>,
     /// <p>The interval between snapshots. The supported values are 1, 2, 3, 4, 6, 8, 12, and 24.</p>
-    pub interval: i32,
+    pub interval: ::std::option::Option<i32>,
     /// <p>The interval unit.</p>
     pub interval_unit: ::std::option::Option<crate::types::IntervalUnitValues>,
     /// <p>The time, in UTC, to start the operation. The supported format is hh:mm.</p>
@@ -29,7 +29,7 @@ impl CreateRule {
         self.location.as_ref()
     }
     /// <p>The interval between snapshots. The supported values are 1, 2, 3, 4, 6, 8, 12, and 24.</p>
-    pub fn interval(&self) -> i32 {
+    pub fn interval(&self) -> ::std::option::Option<i32> {
         self.interval
     }
     /// <p>The interval unit.</p>
@@ -150,7 +150,7 @@ impl CreateRuleBuilder {
     pub fn build(self) -> crate::types::CreateRule {
         crate::types::CreateRule {
             location: self.location,
-            interval: self.interval.unwrap_or_default(),
+            interval: self.interval,
             interval_unit: self.interval_unit,
             times: self.times,
             cron_expression: self.cron_expression,

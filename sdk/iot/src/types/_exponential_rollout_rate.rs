@@ -8,7 +8,7 @@ pub struct ExponentialRolloutRate {
     pub base_rate_per_minute: ::std::option::Option<i32>,
     /// <p>The exponential factor to increase the rate of rollout for a job.</p>
     /// <p>Amazon Web Services IoT Core supports up to one digit after the decimal (for example, 1.5, but not 1.55).</p>
-    pub increment_factor: f64,
+    pub increment_factor: ::std::option::Option<f64>,
     /// <p>The criteria to initiate the increase in rate of rollout for a job.</p>
     pub rate_increase_criteria: ::std::option::Option<crate::types::RateIncreaseCriteria>,
 }
@@ -19,7 +19,7 @@ impl ExponentialRolloutRate {
     }
     /// <p>The exponential factor to increase the rate of rollout for a job.</p>
     /// <p>Amazon Web Services IoT Core supports up to one digit after the decimal (for example, 1.5, but not 1.55).</p>
-    pub fn increment_factor(&self) -> f64 {
+    pub fn increment_factor(&self) -> ::std::option::Option<f64> {
         self.increment_factor
     }
     /// <p>The criteria to initiate the increase in rate of rollout for a job.</p>
@@ -92,7 +92,7 @@ impl ExponentialRolloutRateBuilder {
     pub fn build(self) -> crate::types::ExponentialRolloutRate {
         crate::types::ExponentialRolloutRate {
             base_rate_per_minute: self.base_rate_per_minute,
-            increment_factor: self.increment_factor.unwrap_or_default(),
+            increment_factor: self.increment_factor,
             rate_increase_criteria: self.rate_increase_criteria,
         }
     }

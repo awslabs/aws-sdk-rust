@@ -12,6 +12,8 @@ pub struct RoutingControl {
     pub routing_control_arn: ::std::option::Option<::std::string::String>,
     /// <p>The deployment status of a routing control. Status can be one of the following: PENDING, DEPLOYED, PENDING_DELETION.</p>
     pub status: ::std::option::Option<crate::types::Status>,
+    /// <p>The Amazon Web Services account ID of the routing control owner.</p>
+    pub owner: ::std::option::Option<::std::string::String>,
 }
 impl RoutingControl {
     /// <p>The Amazon Resource Name (ARN) of the control panel that includes the routing control.</p>
@@ -30,6 +32,10 @@ impl RoutingControl {
     pub fn status(&self) -> ::std::option::Option<&crate::types::Status> {
         self.status.as_ref()
     }
+    /// <p>The Amazon Web Services account ID of the routing control owner.</p>
+    pub fn owner(&self) -> ::std::option::Option<&str> {
+        self.owner.as_deref()
+    }
 }
 impl RoutingControl {
     /// Creates a new builder-style object to manufacture [`RoutingControl`](crate::types::RoutingControl).
@@ -46,6 +52,7 @@ pub struct RoutingControlBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) routing_control_arn: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::Status>,
+    pub(crate) owner: ::std::option::Option<::std::string::String>,
 }
 impl RoutingControlBuilder {
     /// <p>The Amazon Resource Name (ARN) of the control panel that includes the routing control.</p>
@@ -104,6 +111,20 @@ impl RoutingControlBuilder {
     pub fn get_status(&self) -> &::std::option::Option<crate::types::Status> {
         &self.status
     }
+    /// <p>The Amazon Web Services account ID of the routing control owner.</p>
+    pub fn owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.owner = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Web Services account ID of the routing control owner.</p>
+    pub fn set_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.owner = input;
+        self
+    }
+    /// <p>The Amazon Web Services account ID of the routing control owner.</p>
+    pub fn get_owner(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner
+    }
     /// Consumes the builder and constructs a [`RoutingControl`](crate::types::RoutingControl).
     pub fn build(self) -> crate::types::RoutingControl {
         crate::types::RoutingControl {
@@ -111,6 +132,7 @@ impl RoutingControlBuilder {
             name: self.name,
             routing_control_arn: self.routing_control_arn,
             status: self.status,
+            owner: self.owner,
         }
     }
 }

@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails {
     /// <p>Whether to create the Docker volume automatically if it does not already exist.</p>
-    pub autoprovision: bool,
+    pub autoprovision: ::std::option::Option<bool>,
     /// <p>The Docker volume driver to use.</p>
     pub driver: ::std::option::Option<::std::string::String>,
     /// <p>A map of Docker driver-specific options that are passed through.</p>
@@ -17,7 +17,7 @@ pub struct AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails {
 }
 impl AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails {
     /// <p>Whether to create the Docker volume automatically if it does not already exist.</p>
-    pub fn autoprovision(&self) -> bool {
+    pub fn autoprovision(&self) -> ::std::option::Option<bool> {
         self.autoprovision
     }
     /// <p>The Docker volume driver to use.</p>
@@ -143,7 +143,7 @@ impl AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetailsBuilder {
     /// Consumes the builder and constructs a [`AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails`](crate::types::AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails).
     pub fn build(self) -> crate::types::AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails {
         crate::types::AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails {
-            autoprovision: self.autoprovision.unwrap_or_default(),
+            autoprovision: self.autoprovision,
             driver: self.driver,
             driver_opts: self.driver_opts,
             labels: self.labels,

@@ -7,7 +7,7 @@ impl super::Client {
     ///   - [`schema_definition(impl Into<String>)`](crate::operation::register_schema_version::builders::RegisterSchemaVersionFluentBuilder::schema_definition) / [`set_schema_definition(Option<String>)`](crate::operation::register_schema_version::builders::RegisterSchemaVersionFluentBuilder::set_schema_definition): <p>The schema definition using the <code>DataFormat</code> setting for the <code>SchemaName</code>.</p>
     /// - On success, responds with [`RegisterSchemaVersionOutput`](crate::operation::register_schema_version::RegisterSchemaVersionOutput) with field(s):
     ///   - [`schema_version_id(Option<String>)`](crate::operation::register_schema_version::RegisterSchemaVersionOutput::schema_version_id): <p>The unique ID that represents the version of this schema.</p>
-    ///   - [`version_number(i64)`](crate::operation::register_schema_version::RegisterSchemaVersionOutput::version_number): <p>The version of this schema (for sync flow only, in case this is the first version).</p>
+    ///   - [`version_number(Option<i64>)`](crate::operation::register_schema_version::RegisterSchemaVersionOutput::version_number): <p>The version of this schema (for sync flow only, in case this is the first version).</p>
     ///   - [`status(Option<SchemaVersionStatus>)`](crate::operation::register_schema_version::RegisterSchemaVersionOutput::status): <p>The status of the schema version.</p>
     /// - On failure, responds with [`SdkError<RegisterSchemaVersionError>`](crate::operation::register_schema_version::RegisterSchemaVersionError)
     pub fn register_schema_version(&self) -> crate::operation::register_schema_version::builders::RegisterSchemaVersionFluentBuilder {

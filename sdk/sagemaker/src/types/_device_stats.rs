@@ -5,17 +5,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeviceStats {
     /// <p>The number of devices connected with a heartbeat.</p>
-    pub connected_device_count: i64,
+    pub connected_device_count: ::std::option::Option<i64>,
     /// <p>The number of registered devices.</p>
-    pub registered_device_count: i64,
+    pub registered_device_count: ::std::option::Option<i64>,
 }
 impl DeviceStats {
     /// <p>The number of devices connected with a heartbeat.</p>
-    pub fn connected_device_count(&self) -> i64 {
+    pub fn connected_device_count(&self) -> ::std::option::Option<i64> {
         self.connected_device_count
     }
     /// <p>The number of registered devices.</p>
-    pub fn registered_device_count(&self) -> i64 {
+    pub fn registered_device_count(&self) -> ::std::option::Option<i64> {
         self.registered_device_count
     }
 }
@@ -65,8 +65,8 @@ impl DeviceStatsBuilder {
     /// Consumes the builder and constructs a [`DeviceStats`](crate::types::DeviceStats).
     pub fn build(self) -> crate::types::DeviceStats {
         crate::types::DeviceStats {
-            connected_device_count: self.connected_device_count.unwrap_or_default(),
-            registered_device_count: self.registered_device_count.unwrap_or_default(),
+            connected_device_count: self.connected_device_count,
+            registered_device_count: self.registered_device_count,
         }
     }
 }

@@ -12,8 +12,8 @@ pub fn ser_aws_dynamo_db_table_restore_summary(
     if let Some(var_3) = &input.restore_date_time {
         object.key("RestoreDateTime").string(var_3.as_str());
     }
-    if input.restore_in_progress {
-        object.key("RestoreInProgress").boolean(input.restore_in_progress);
+    if let Some(var_4) = &input.restore_in_progress {
+        object.key("RestoreInProgress").boolean(*var_4);
     }
     Ok(())
 }

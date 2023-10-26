@@ -6,16 +6,16 @@ pub fn ser_filter_condition(
     if let Some(var_1) = &input.equals_value {
         object.key("equalsValue").string(var_1.as_str());
     }
-    if input.greater_than != 0 {
+    if let Some(var_2) = &input.greater_than {
         object.key("greaterThan").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.greater_than).into()),
+            ::aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
-    if input.less_than != 0 {
+    if let Some(var_3) = &input.less_than {
         object.key("lessThan").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.less_than).into()),
+            ::aws_smithy_types::Number::NegInt((*var_3).into()),
         );
     }
     Ok(())

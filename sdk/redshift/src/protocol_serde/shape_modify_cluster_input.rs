@@ -154,6 +154,16 @@ pub fn ser_modify_cluster_input_input(
             ::aws_smithy_types::Number::NegInt((*var_56).into()),
         );
     }
+    #[allow(unused_mut)]
+    let mut scope_57 = writer.prefix("ManageMasterPassword");
+    if let Some(var_58) = &input.manage_master_password {
+        scope_57.boolean(*var_58);
+    }
+    #[allow(unused_mut)]
+    let mut scope_59 = writer.prefix("MasterPasswordSecretKmsKeyId");
+    if let Some(var_60) = &input.master_password_secret_kms_key_id {
+        scope_59.string(var_60);
+    }
     writer.finish();
     Ok(::aws_smithy_http::body::SdkBody::from(out))
 }

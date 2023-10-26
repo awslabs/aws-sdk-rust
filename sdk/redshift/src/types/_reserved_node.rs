@@ -13,15 +13,15 @@ pub struct ReservedNode {
     /// <p>The time the reservation started. You purchase a reserved node offering for a duration. This is the start time of that duration.</p>
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The duration of the node reservation in seconds.</p>
-    pub duration: i32,
+    pub duration: ::std::option::Option<i32>,
     /// <p>The fixed cost Amazon Redshift charges you for this reserved node.</p>
-    pub fixed_price: f64,
+    pub fixed_price: ::std::option::Option<f64>,
     /// <p>The hourly rate Amazon Redshift charges you for this reserved node.</p>
-    pub usage_price: f64,
+    pub usage_price: ::std::option::Option<f64>,
     /// <p>The currency code for the reserved cluster.</p>
     pub currency_code: ::std::option::Option<::std::string::String>,
     /// <p>The number of reserved compute nodes.</p>
-    pub node_count: i32,
+    pub node_count: ::std::option::Option<i32>,
     /// <p>The state of the reserved compute node.</p>
     /// <p>Possible Values:</p>
     /// <ul>
@@ -57,15 +57,15 @@ impl ReservedNode {
         self.start_time.as_ref()
     }
     /// <p>The duration of the node reservation in seconds.</p>
-    pub fn duration(&self) -> i32 {
+    pub fn duration(&self) -> ::std::option::Option<i32> {
         self.duration
     }
     /// <p>The fixed cost Amazon Redshift charges you for this reserved node.</p>
-    pub fn fixed_price(&self) -> f64 {
+    pub fn fixed_price(&self) -> ::std::option::Option<f64> {
         self.fixed_price
     }
     /// <p>The hourly rate Amazon Redshift charges you for this reserved node.</p>
-    pub fn usage_price(&self) -> f64 {
+    pub fn usage_price(&self) -> ::std::option::Option<f64> {
         self.usage_price
     }
     /// <p>The currency code for the reserved cluster.</p>
@@ -73,7 +73,7 @@ impl ReservedNode {
         self.currency_code.as_deref()
     }
     /// <p>The number of reserved compute nodes.</p>
-    pub fn node_count(&self) -> i32 {
+    pub fn node_count(&self) -> ::std::option::Option<i32> {
         self.node_count
     }
     /// <p>The state of the reserved compute node.</p>
@@ -346,11 +346,11 @@ impl ReservedNodeBuilder {
             reserved_node_offering_id: self.reserved_node_offering_id,
             node_type: self.node_type,
             start_time: self.start_time,
-            duration: self.duration.unwrap_or_default(),
-            fixed_price: self.fixed_price.unwrap_or_default(),
-            usage_price: self.usage_price.unwrap_or_default(),
+            duration: self.duration,
+            fixed_price: self.fixed_price,
+            usage_price: self.usage_price,
             currency_code: self.currency_code,
-            node_count: self.node_count.unwrap_or_default(),
+            node_count: self.node_count,
             state: self.state,
             offering_type: self.offering_type,
             recurring_charges: self.recurring_charges,

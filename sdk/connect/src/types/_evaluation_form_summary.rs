@@ -23,7 +23,7 @@ pub struct EvaluationFormSummary {
     /// <p> The Amazon Resource Name (ARN) of the user who last activated the evaluation form.</p>
     pub last_activated_by: ::std::option::Option<::std::string::String>,
     /// <p>The version number of the latest evaluation form version.</p>
-    pub latest_version: ::std::option::Option<i32>,
+    pub latest_version: i32,
     /// <p>The version of the active evaluation form version.</p>
     pub active_version: ::std::option::Option<i32>,
 }
@@ -65,7 +65,7 @@ impl EvaluationFormSummary {
         self.last_activated_by.as_deref()
     }
     /// <p>The version number of the latest evaluation form version.</p>
-    pub fn latest_version(&self) -> ::std::option::Option<i32> {
+    pub fn latest_version(&self) -> i32 {
         self.latest_version
     }
     /// <p>The version of the active evaluation form version.</p>
@@ -263,7 +263,7 @@ impl EvaluationFormSummaryBuilder {
             last_modified_by: self.last_modified_by,
             last_activated_time: self.last_activated_time,
             last_activated_by: self.last_activated_by,
-            latest_version: self.latest_version,
+            latest_version: self.latest_version.unwrap_or_default(),
             active_version: self.active_version,
         }
     }

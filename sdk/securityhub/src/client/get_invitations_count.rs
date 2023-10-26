@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder takes no input, just [`send`](crate::operation::get_invitations_count::builders::GetInvitationsCountFluentBuilder::send) it.
     /// - On success, responds with [`GetInvitationsCountOutput`](crate::operation::get_invitations_count::GetInvitationsCountOutput) with field(s):
-    ///   - [`invitations_count(i32)`](crate::operation::get_invitations_count::GetInvitationsCountOutput::invitations_count): <p>The number of all membership invitations sent to this Security Hub member account, not including the currently accepted invitation.</p>
+    ///   - [`invitations_count(Option<i32>)`](crate::operation::get_invitations_count::GetInvitationsCountOutput::invitations_count): <p>The number of all membership invitations sent to this Security Hub member account, not including the currently accepted invitation.</p>
     /// - On failure, responds with [`SdkError<GetInvitationsCountError>`](crate::operation::get_invitations_count::GetInvitationsCountError)
     pub fn get_invitations_count(&self) -> crate::operation::get_invitations_count::builders::GetInvitationsCountFluentBuilder {
         crate::operation::get_invitations_count::builders::GetInvitationsCountFluentBuilder::new(self.handle.clone())

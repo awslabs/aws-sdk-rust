@@ -55,22 +55,27 @@ pub fn ser_describe_images_input_input(
         scope_21.boolean(*var_22);
     }
     #[allow(unused_mut)]
-    let mut scope_23 = writer.prefix("DryRun");
-    if let Some(var_24) = &input.dry_run {
+    let mut scope_23 = writer.prefix("IncludeDisabled");
+    if let Some(var_24) = &input.include_disabled {
         scope_23.boolean(*var_24);
     }
     #[allow(unused_mut)]
-    let mut scope_25 = writer.prefix("MaxResults");
-    if let Some(var_26) = &input.max_results {
-        scope_25.number(
+    let mut scope_25 = writer.prefix("DryRun");
+    if let Some(var_26) = &input.dry_run {
+        scope_25.boolean(*var_26);
+    }
+    #[allow(unused_mut)]
+    let mut scope_27 = writer.prefix("MaxResults");
+    if let Some(var_28) = &input.max_results {
+        scope_27.number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_26).into()),
+            ::aws_smithy_types::Number::NegInt((*var_28).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_27 = writer.prefix("NextToken");
-    if let Some(var_28) = &input.next_token {
-        scope_27.string(var_28);
+    let mut scope_29 = writer.prefix("NextToken");
+    if let Some(var_30) = &input.next_token {
+        scope_29.string(var_30);
     }
     writer.finish();
     Ok(::aws_smithy_http::body::SdkBody::from(out))

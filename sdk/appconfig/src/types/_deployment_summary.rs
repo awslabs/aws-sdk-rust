@@ -15,13 +15,13 @@ pub struct DeploymentSummary {
     /// <p>The algorithm used to define how percentage grows over time.</p>
     pub growth_type: ::std::option::Option<crate::types::GrowthType>,
     /// <p>The percentage of targets to receive a deployed configuration during each interval.</p>
-    pub growth_factor: f32,
+    pub growth_factor: ::std::option::Option<f32>,
     /// <p>The amount of time that AppConfig monitors for alarms before considering the deployment to be complete and no longer eligible for automatic rollback.</p>
     pub final_bake_time_in_minutes: i32,
     /// <p>The state of the deployment.</p>
     pub state: ::std::option::Option<crate::types::DeploymentState>,
     /// <p>The percentage of targets for which the deployment is available.</p>
-    pub percentage_complete: f32,
+    pub percentage_complete: ::std::option::Option<f32>,
     /// <p>Time the deployment started.</p>
     pub started_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Time the deployment completed.</p>
@@ -51,7 +51,7 @@ impl DeploymentSummary {
         self.growth_type.as_ref()
     }
     /// <p>The percentage of targets to receive a deployed configuration during each interval.</p>
-    pub fn growth_factor(&self) -> f32 {
+    pub fn growth_factor(&self) -> ::std::option::Option<f32> {
         self.growth_factor
     }
     /// <p>The amount of time that AppConfig monitors for alarms before considering the deployment to be complete and no longer eligible for automatic rollback.</p>
@@ -63,7 +63,7 @@ impl DeploymentSummary {
         self.state.as_ref()
     }
     /// <p>The percentage of targets for which the deployment is available.</p>
-    pub fn percentage_complete(&self) -> f32 {
+    pub fn percentage_complete(&self) -> ::std::option::Option<f32> {
         self.percentage_complete
     }
     /// <p>Time the deployment started.</p>
@@ -280,10 +280,10 @@ impl DeploymentSummaryBuilder {
             configuration_version: self.configuration_version,
             deployment_duration_in_minutes: self.deployment_duration_in_minutes.unwrap_or_default(),
             growth_type: self.growth_type,
-            growth_factor: self.growth_factor.unwrap_or_default(),
+            growth_factor: self.growth_factor,
             final_bake_time_in_minutes: self.final_bake_time_in_minutes.unwrap_or_default(),
             state: self.state,
-            percentage_complete: self.percentage_complete.unwrap_or_default(),
+            percentage_complete: self.percentage_complete,
             started_at: self.started_at,
             completed_at: self.completed_at,
             version_label: self.version_label,

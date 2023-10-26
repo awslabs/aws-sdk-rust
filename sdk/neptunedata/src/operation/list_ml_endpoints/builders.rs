@@ -23,6 +23,7 @@ impl ListMlEndpointsInputBuilder {
 /// Fluent builder constructing a request to `ListMLEndpoints`.
 ///
 /// <p>Lists existing inference endpoints. See <a href="https://docs.aws.amazon.com/neptune/latest/userguide/machine-learning-api-endpoints.html">Managing inference endpoints using the endpoints command</a>.</p>
+/// <p>When invoking this operation in a Neptune cluster that has IAM authentication enabled, the IAM user or role making the request must have a policy attached that allows the <a href="https://docs.aws.amazon.com/neptune/latest/userguide/iam-dp-actions.html#listmlendpoints">neptune-db:ListMLEndpoints</a> IAM action in that cluster.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListMLEndpointsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

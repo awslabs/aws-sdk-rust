@@ -29,7 +29,19 @@ pub(crate) mod shape_analyze_expense;
 
 pub(crate) mod shape_analyze_id;
 
+pub(crate) mod shape_create_adapter;
+
+pub(crate) mod shape_create_adapter_version;
+
+pub(crate) mod shape_delete_adapter;
+
+pub(crate) mod shape_delete_adapter_version;
+
 pub(crate) mod shape_detect_document_text;
+
+pub(crate) mod shape_get_adapter;
+
+pub(crate) mod shape_get_adapter_version;
 
 pub(crate) mod shape_get_document_analysis;
 
@@ -41,6 +53,12 @@ pub(crate) mod shape_get_lending_analysis;
 
 pub(crate) mod shape_get_lending_analysis_summary;
 
+pub(crate) mod shape_list_adapter_versions;
+
+pub(crate) mod shape_list_adapters;
+
+pub(crate) mod shape_list_tags_for_resource;
+
 pub(crate) mod shape_start_document_analysis;
 
 pub(crate) mod shape_start_document_text_detection;
@@ -48,6 +66,12 @@ pub(crate) mod shape_start_document_text_detection;
 pub(crate) mod shape_start_expense_analysis;
 
 pub(crate) mod shape_start_lending_analysis;
+
+pub(crate) mod shape_tag_resource;
+
+pub(crate) mod shape_untag_resource;
+
+pub(crate) mod shape_update_adapter;
 
 pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
     if data.is_empty() {
@@ -67,9 +91,23 @@ pub(crate) mod shape_analyze_id_input;
 
 pub(crate) mod shape_bad_document_exception;
 
+pub(crate) mod shape_conflict_exception;
+
+pub(crate) mod shape_create_adapter_input;
+
+pub(crate) mod shape_create_adapter_version_input;
+
+pub(crate) mod shape_delete_adapter_input;
+
+pub(crate) mod shape_delete_adapter_version_input;
+
 pub(crate) mod shape_detect_document_text_input;
 
 pub(crate) mod shape_document_too_large_exception;
+
+pub(crate) mod shape_get_adapter_input;
+
+pub(crate) mod shape_get_adapter_version_input;
 
 pub(crate) mod shape_get_document_analysis_input;
 
@@ -97,7 +135,17 @@ pub(crate) mod shape_invalid_s3_object_exception;
 
 pub(crate) mod shape_limit_exceeded_exception;
 
+pub(crate) mod shape_list_adapter_versions_input;
+
+pub(crate) mod shape_list_adapters_input;
+
+pub(crate) mod shape_list_tags_for_resource_input;
+
 pub(crate) mod shape_provisioned_throughput_exceeded_exception;
+
+pub(crate) mod shape_resource_not_found_exception;
+
+pub(crate) mod shape_service_quota_exceeded_exception;
 
 pub(crate) mod shape_start_document_analysis_input;
 
@@ -107,9 +155,27 @@ pub(crate) mod shape_start_expense_analysis_input;
 
 pub(crate) mod shape_start_lending_analysis_input;
 
+pub(crate) mod shape_tag_resource_input;
+
 pub(crate) mod shape_throttling_exception;
 
 pub(crate) mod shape_unsupported_document_exception;
+
+pub(crate) mod shape_untag_resource_input;
+
+pub(crate) mod shape_update_adapter_input;
+
+pub(crate) mod shape_validation_exception;
+
+pub(crate) mod shape_adapter_list;
+
+pub(crate) mod shape_adapter_version_dataset_config;
+
+pub(crate) mod shape_adapter_version_evaluation_metrics;
+
+pub(crate) mod shape_adapter_version_list;
+
+pub(crate) mod shape_adapters_config;
 
 pub(crate) mod shape_block_list;
 
@@ -120,6 +186,8 @@ pub(crate) mod shape_document_location;
 pub(crate) mod shape_document_metadata;
 
 pub(crate) mod shape_expense_document_list;
+
+pub(crate) mod shape_feature_types;
 
 pub(crate) mod shape_human_loop_activation_output;
 
@@ -137,7 +205,17 @@ pub(crate) mod shape_output_config;
 
 pub(crate) mod shape_queries_config;
 
+pub(crate) mod shape_tag_map;
+
 pub(crate) mod shape_warnings;
+
+pub(crate) mod shape_adapter;
+
+pub(crate) mod shape_adapter_overview;
+
+pub(crate) mod shape_adapter_version_evaluation_metric;
+
+pub(crate) mod shape_adapter_version_overview;
 
 pub(crate) mod shape_block;
 
@@ -164,6 +242,8 @@ pub(crate) mod shape_warning;
 pub(crate) mod shape_document_group;
 
 pub(crate) mod shape_entity_types;
+
+pub(crate) mod shape_evaluation_metric;
 
 pub(crate) mod shape_expense_field_list;
 

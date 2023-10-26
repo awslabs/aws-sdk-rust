@@ -8,7 +8,7 @@ pub struct RdfGraphSummaryValueMap {
     pub version: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp, in ISO 8601 format, of the time at which Neptune last computed statistics.</p>
     pub last_statistics_computation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The graph summary of an RDF graph. See <a href="https://docs.aws.amazon.com/neptune-graph-summary.html#neptune-graph-summary-rdf-response">Graph summary response for an RDF graph</a>.</p>
+    /// <p>The graph summary of an RDF graph. See <a href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-graph-summary.html#neptune-graph-summary-rdf-response">Graph summary response for an RDF graph</a>.</p>
     pub graph_summary: ::std::option::Option<crate::types::RdfGraphSummary>,
 }
 impl RdfGraphSummaryValueMap {
@@ -20,7 +20,7 @@ impl RdfGraphSummaryValueMap {
     pub fn last_statistics_computation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_statistics_computation_time.as_ref()
     }
-    /// <p>The graph summary of an RDF graph. See <a href="https://docs.aws.amazon.com/neptune-graph-summary.html#neptune-graph-summary-rdf-response">Graph summary response for an RDF graph</a>.</p>
+    /// <p>The graph summary of an RDF graph. See <a href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-graph-summary.html#neptune-graph-summary-rdf-response">Graph summary response for an RDF graph</a>.</p>
     pub fn graph_summary(&self) -> ::std::option::Option<&crate::types::RdfGraphSummary> {
         self.graph_summary.as_ref()
     }
@@ -69,17 +69,17 @@ impl RdfGraphSummaryValueMapBuilder {
     pub fn get_last_statistics_computation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_statistics_computation_time
     }
-    /// <p>The graph summary of an RDF graph. See <a href="https://docs.aws.amazon.com/neptune-graph-summary.html#neptune-graph-summary-rdf-response">Graph summary response for an RDF graph</a>.</p>
+    /// <p>The graph summary of an RDF graph. See <a href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-graph-summary.html#neptune-graph-summary-rdf-response">Graph summary response for an RDF graph</a>.</p>
     pub fn graph_summary(mut self, input: crate::types::RdfGraphSummary) -> Self {
         self.graph_summary = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The graph summary of an RDF graph. See <a href="https://docs.aws.amazon.com/neptune-graph-summary.html#neptune-graph-summary-rdf-response">Graph summary response for an RDF graph</a>.</p>
+    /// <p>The graph summary of an RDF graph. See <a href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-graph-summary.html#neptune-graph-summary-rdf-response">Graph summary response for an RDF graph</a>.</p>
     pub fn set_graph_summary(mut self, input: ::std::option::Option<crate::types::RdfGraphSummary>) -> Self {
         self.graph_summary = input;
         self
     }
-    /// <p>The graph summary of an RDF graph. See <a href="https://docs.aws.amazon.com/neptune-graph-summary.html#neptune-graph-summary-rdf-response">Graph summary response for an RDF graph</a>.</p>
+    /// <p>The graph summary of an RDF graph. See <a href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-graph-summary.html#neptune-graph-summary-rdf-response">Graph summary response for an RDF graph</a>.</p>
     pub fn get_graph_summary(&self) -> &::std::option::Option<crate::types::RdfGraphSummary> {
         &self.graph_summary
     }

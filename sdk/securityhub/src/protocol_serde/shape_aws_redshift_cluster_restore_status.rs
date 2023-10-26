@@ -3,38 +3,38 @@ pub fn ser_aws_redshift_cluster_restore_status(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsRedshiftClusterRestoreStatus,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if input.current_restore_rate_in_mega_bytes_per_second != 0.0 {
+    if let Some(var_1) = &input.current_restore_rate_in_mega_bytes_per_second {
         object.key("CurrentRestoreRateInMegaBytesPerSecond").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::Float((input.current_restore_rate_in_mega_bytes_per_second).into()),
+            ::aws_smithy_types::Number::Float((*var_1).into()),
         );
     }
-    if input.elapsed_time_in_seconds != 0 {
+    if let Some(var_2) = &input.elapsed_time_in_seconds {
         object.key("ElapsedTimeInSeconds").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.elapsed_time_in_seconds).into()),
+            ::aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
-    if input.estimated_time_to_completion_in_seconds != 0 {
+    if let Some(var_3) = &input.estimated_time_to_completion_in_seconds {
         object.key("EstimatedTimeToCompletionInSeconds").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.estimated_time_to_completion_in_seconds).into()),
+            ::aws_smithy_types::Number::NegInt((*var_3).into()),
         );
     }
-    if input.progress_in_mega_bytes != 0 {
+    if let Some(var_4) = &input.progress_in_mega_bytes {
         object.key("ProgressInMegaBytes").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.progress_in_mega_bytes).into()),
+            ::aws_smithy_types::Number::NegInt((*var_4).into()),
         );
     }
-    if input.snapshot_size_in_mega_bytes != 0 {
+    if let Some(var_5) = &input.snapshot_size_in_mega_bytes {
         object.key("SnapshotSizeInMegaBytes").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.snapshot_size_in_mega_bytes).into()),
+            ::aws_smithy_types::Number::NegInt((*var_5).into()),
         );
     }
-    if let Some(var_1) = &input.status {
-        object.key("Status").string(var_1.as_str());
+    if let Some(var_6) = &input.status {
+        object.key("Status").string(var_6.as_str());
     }
     Ok(())
 }

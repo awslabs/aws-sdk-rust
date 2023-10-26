@@ -15,7 +15,7 @@ pub struct OrderableDbInstanceOption {
     /// <p>A list of Availability Zones for an instance.</p>
     pub availability_zones: ::std::option::Option<::std::vec::Vec<crate::types::AvailabilityZone>>,
     /// <p>Indicates whether an instance is in a virtual private cloud (VPC).</p>
-    pub vpc: bool,
+    pub vpc: ::std::option::Option<bool>,
 }
 impl OrderableDbInstanceOption {
     /// <p>The engine type of an instance.</p>
@@ -39,7 +39,7 @@ impl OrderableDbInstanceOption {
         self.availability_zones.as_deref()
     }
     /// <p>Indicates whether an instance is in a virtual private cloud (VPC).</p>
-    pub fn vpc(&self) -> bool {
+    pub fn vpc(&self) -> ::std::option::Option<bool> {
         self.vpc
     }
 }
@@ -160,7 +160,7 @@ impl OrderableDbInstanceOptionBuilder {
             db_instance_class: self.db_instance_class,
             license_model: self.license_model,
             availability_zones: self.availability_zones,
-            vpc: self.vpc.unwrap_or_default(),
+            vpc: self.vpc,
         }
     }
 }

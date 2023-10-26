@@ -22,8 +22,8 @@ impl DeleteProjectVersionInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteProjectVersion`.
 ///
-/// <p>Deletes an Amazon Rekognition Custom Labels model. </p>
-/// <p>You can't delete a model if it is running or if it is training. To check the status of a model, use the <code>Status</code> field returned from <code>DescribeProjectVersions</code>. To stop a running model call <code>StopProjectVersion</code>. If the model is training, wait until it finishes.</p>
+/// <p>Deletes a Rekognition project model or project version, like a Amazon Rekognition Custom Labels model or a custom adapter.</p>
+/// <p>You can't delete a project version if it is running or if it is training. To check the status of a project version, use the Status field returned from <code>DescribeProjectVersions</code>. To stop a project version call <code>StopProjectVersion</code>. If the project version is training, wait until it finishes.</p>
 /// <p>This operation requires permissions to perform the <code>rekognition:DeleteProjectVersion</code> action. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteProjectVersionFluentBuilder {
@@ -112,17 +112,17 @@ impl DeleteProjectVersionFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the model version that you want to delete.</p>
+    /// <p>The Amazon Resource Name (ARN) of the project version that you want to delete.</p>
     pub fn project_version_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.project_version_arn(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the model version that you want to delete.</p>
+    /// <p>The Amazon Resource Name (ARN) of the project version that you want to delete.</p>
     pub fn set_project_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_project_version_arn(input);
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the model version that you want to delete.</p>
+    /// <p>The Amazon Resource Name (ARN) of the project version that you want to delete.</p>
     pub fn get_project_version_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_project_version_arn()
     }

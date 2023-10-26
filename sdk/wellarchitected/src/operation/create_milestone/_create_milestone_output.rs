@@ -8,7 +8,7 @@ pub struct CreateMilestoneOutput {
     pub workload_id: ::std::option::Option<::std::string::String>,
     /// <p>The milestone number.</p>
     /// <p>A workload can have a maximum of 100 milestones.</p>
-    pub milestone_number: i32,
+    pub milestone_number: ::std::option::Option<i32>,
     _request_id: Option<String>,
 }
 impl CreateMilestoneOutput {
@@ -18,7 +18,7 @@ impl CreateMilestoneOutput {
     }
     /// <p>The milestone number.</p>
     /// <p>A workload can have a maximum of 100 milestones.</p>
-    pub fn milestone_number(&self) -> i32 {
+    pub fn milestone_number(&self) -> ::std::option::Option<i32> {
         self.milestone_number
     }
 }
@@ -87,7 +87,7 @@ impl CreateMilestoneOutputBuilder {
     pub fn build(self) -> crate::operation::create_milestone::CreateMilestoneOutput {
         crate::operation::create_milestone::CreateMilestoneOutput {
             workload_id: self.workload_id,
-            milestone_number: self.milestone_number.unwrap_or_default(),
+            milestone_number: self.milestone_number,
             _request_id: self._request_id,
         }
     }

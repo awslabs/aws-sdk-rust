@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateMatchingWorkflowInput {
-    /// <p>The name of the workflow. There cannot be multiple <code>DataIntegrationWorkflows</code> with the same name.</p>
+    /// <p>The name of the workflow. There can't be multiple <code>MatchingWorkflows</code> with the same name.</p>
     pub workflow_name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the workflow.</p>
     pub description: ::std::option::Option<::std::string::String>,
@@ -21,7 +21,7 @@ pub struct CreateMatchingWorkflowInput {
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateMatchingWorkflowInput {
-    /// <p>The name of the workflow. There cannot be multiple <code>DataIntegrationWorkflows</code> with the same name.</p>
+    /// <p>The name of the workflow. There can't be multiple <code>MatchingWorkflows</code> with the same name.</p>
     pub fn workflow_name(&self) -> ::std::option::Option<&str> {
         self.workflow_name.as_deref()
     }
@@ -75,17 +75,17 @@ pub struct CreateMatchingWorkflowInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateMatchingWorkflowInputBuilder {
-    /// <p>The name of the workflow. There cannot be multiple <code>DataIntegrationWorkflows</code> with the same name.</p>
+    /// <p>The name of the workflow. There can't be multiple <code>MatchingWorkflows</code> with the same name.</p>
     pub fn workflow_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workflow_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the workflow. There cannot be multiple <code>DataIntegrationWorkflows</code> with the same name.</p>
+    /// <p>The name of the workflow. There can't be multiple <code>MatchingWorkflows</code> with the same name.</p>
     pub fn set_workflow_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.workflow_name = input;
         self
     }
-    /// <p>The name of the workflow. There cannot be multiple <code>DataIntegrationWorkflows</code> with the same name.</p>
+    /// <p>The name of the workflow. There can't be multiple <code>MatchingWorkflows</code> with the same name.</p>
     pub fn get_workflow_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.workflow_name
     }

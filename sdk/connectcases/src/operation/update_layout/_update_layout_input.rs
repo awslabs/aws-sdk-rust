@@ -9,7 +9,7 @@ pub struct UpdateLayoutInput {
     pub layout_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the layout. It must be unique per domain.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>Information about which fields will be present in the layout, the order of the fields, and a read-only attribute of the field. </p>
+    /// <p>Information about which fields will be present in the layout, the order of the fields.</p>
     pub content: ::std::option::Option<crate::types::LayoutContent>,
 }
 impl UpdateLayoutInput {
@@ -25,7 +25,7 @@ impl UpdateLayoutInput {
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>Information about which fields will be present in the layout, the order of the fields, and a read-only attribute of the field. </p>
+    /// <p>Information about which fields will be present in the layout, the order of the fields.</p>
     pub fn content(&self) -> ::std::option::Option<&crate::types::LayoutContent> {
         self.content.as_ref()
     }
@@ -89,17 +89,17 @@ impl UpdateLayoutInputBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>Information about which fields will be present in the layout, the order of the fields, and a read-only attribute of the field. </p>
+    /// <p>Information about which fields will be present in the layout, the order of the fields.</p>
     pub fn content(mut self, input: crate::types::LayoutContent) -> Self {
         self.content = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Information about which fields will be present in the layout, the order of the fields, and a read-only attribute of the field. </p>
+    /// <p>Information about which fields will be present in the layout, the order of the fields.</p>
     pub fn set_content(mut self, input: ::std::option::Option<crate::types::LayoutContent>) -> Self {
         self.content = input;
         self
     }
-    /// <p>Information about which fields will be present in the layout, the order of the fields, and a read-only attribute of the field. </p>
+    /// <p>Information about which fields will be present in the layout, the order of the fields.</p>
     pub fn get_content(&self) -> &::std::option::Option<crate::types::LayoutContent> {
         &self.content
     }

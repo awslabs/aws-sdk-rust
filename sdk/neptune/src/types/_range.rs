@@ -5,19 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Range {
     /// <p>The minimum value in the range.</p>
-    pub from: i32,
+    pub from: ::std::option::Option<i32>,
     /// <p>The maximum value in the range.</p>
-    pub to: i32,
+    pub to: ::std::option::Option<i32>,
     /// <p>The step value for the range. For example, if you have a range of 5,000 to 10,000, with a step value of 1,000, the valid values start at 5,000 and step up by 1,000. Even though 7,500 is within the range, it isn't a valid value for the range. The valid values are 5,000, 6,000, 7,000, 8,000...</p>
     pub step: ::std::option::Option<i32>,
 }
 impl Range {
     /// <p>The minimum value in the range.</p>
-    pub fn from(&self) -> i32 {
+    pub fn from(&self) -> ::std::option::Option<i32> {
         self.from
     }
     /// <p>The maximum value in the range.</p>
-    pub fn to(&self) -> i32 {
+    pub fn to(&self) -> ::std::option::Option<i32> {
         self.to
     }
     /// <p>The step value for the range. For example, if you have a range of 5,000 to 10,000, with a step value of 1,000, the valid values start at 5,000 and step up by 1,000. Even though 7,500 is within the range, it isn't a valid value for the range. The valid values are 5,000, 6,000, 7,000, 8,000...</p>
@@ -86,8 +86,8 @@ impl RangeBuilder {
     /// Consumes the builder and constructs a [`Range`](crate::types::Range).
     pub fn build(self) -> crate::types::Range {
         crate::types::Range {
-            from: self.from.unwrap_or_default(),
-            to: self.to.unwrap_or_default(),
+            from: self.from,
+            to: self.to,
             step: self.step,
         }
     }

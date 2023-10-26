@@ -9,7 +9,7 @@ pub struct RetentionConfiguration {
     /// <p>Number of days Config stores your historical information.</p> <note>
     /// <p>Currently, only applicable to the configuration item history.</p>
     /// </note>
-    pub retention_period_in_days: i32,
+    pub retention_period_in_days: ::std::option::Option<i32>,
 }
 impl RetentionConfiguration {
     /// <p>The name of the retention configuration object.</p>
@@ -19,7 +19,7 @@ impl RetentionConfiguration {
     /// <p>Number of days Config stores your historical information.</p> <note>
     /// <p>Currently, only applicable to the configuration item history.</p>
     /// </note>
-    pub fn retention_period_in_days(&self) -> i32 {
+    pub fn retention_period_in_days(&self) -> ::std::option::Option<i32> {
         self.retention_period_in_days
     }
 }
@@ -76,7 +76,7 @@ impl RetentionConfigurationBuilder {
     pub fn build(self) -> crate::types::RetentionConfiguration {
         crate::types::RetentionConfiguration {
             name: self.name,
-            retention_period_in_days: self.retention_period_in_days.unwrap_or_default(),
+            retention_period_in_days: self.retention_period_in_days,
         }
     }
 }

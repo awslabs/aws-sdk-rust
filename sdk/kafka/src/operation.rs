@@ -16,6 +16,9 @@ pub mod create_cluster_v2;
 /// Types for the `CreateConfiguration` operation.
 pub mod create_configuration;
 
+/// Types for the `CreateReplicator` operation.
+pub mod create_replicator;
+
 /// Types for the `CreateVpcConnection` operation.
 pub mod create_vpc_connection;
 
@@ -27,6 +30,9 @@ pub mod delete_cluster_policy;
 
 /// Types for the `DeleteConfiguration` operation.
 pub mod delete_configuration;
+
+/// Types for the `DeleteReplicator` operation.
+pub mod delete_replicator;
 
 /// Types for the `DeleteVpcConnection` operation.
 pub mod delete_vpc_connection;
@@ -48,6 +54,9 @@ pub mod describe_configuration;
 
 /// Types for the `DescribeConfigurationRevision` operation.
 pub mod describe_configuration_revision;
+
+/// Types for the `DescribeReplicator` operation.
+pub mod describe_replicator;
 
 /// Types for the `DescribeVpcConnection` operation.
 pub mod describe_vpc_connection;
@@ -87,6 +96,9 @@ pub mod list_kafka_versions;
 
 /// Types for the `ListNodes` operation.
 pub mod list_nodes;
+
+/// Types for the `ListReplicators` operation.
+pub mod list_replicators;
 
 /// Types for the `ListScramSecrets` operation.
 pub mod list_scram_secrets;
@@ -135,6 +147,9 @@ pub mod update_connectivity;
 
 /// Types for the `UpdateMonitoring` operation.
 pub mod update_monitoring;
+
+/// Types for the `UpdateReplicationInfo` operation.
+pub mod update_replication_info;
 
 /// Types for the `UpdateSecurity` operation.
 pub mod update_security;

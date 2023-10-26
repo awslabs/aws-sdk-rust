@@ -22,7 +22,7 @@ impl RetryStageExecutionInputBuilder {
 }
 /// Fluent builder constructing a request to `RetryStageExecution`.
 ///
-/// <p>Resumes the pipeline execution by retrying the last failed actions in a stage. You can retry a stage immediately if any of the actions in the stage fail. When you retry, all actions that are still in progress continue working, and failed actions are triggered again.</p>
+/// <p>You can retry a stage that has failed without having to run a pipeline again from the beginning. You do this by either retrying the failed actions in a stage or by retrying all actions in the stage starting from the first action in the stage. When you retry the failed actions in a stage, all actions that are still in progress continue working, and failed actions are triggered again. When you retry a failed stage from the first action in the stage, the stage cannot have any actions in progress. Before a stage can be retried, it must either have all actions failed or some actions failed and some succeeded.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RetryStageExecutionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -152,17 +152,17 @@ impl RetryStageExecutionFluentBuilder {
     pub fn get_pipeline_execution_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_pipeline_execution_id()
     }
-    /// <p>The scope of the retry attempt. Currently, the only supported value is FAILED_ACTIONS.</p>
+    /// <p>The scope of the retry attempt.</p>
     pub fn retry_mode(mut self, input: crate::types::StageRetryMode) -> Self {
         self.inner = self.inner.retry_mode(input);
         self
     }
-    /// <p>The scope of the retry attempt. Currently, the only supported value is FAILED_ACTIONS.</p>
+    /// <p>The scope of the retry attempt.</p>
     pub fn set_retry_mode(mut self, input: ::std::option::Option<crate::types::StageRetryMode>) -> Self {
         self.inner = self.inner.set_retry_mode(input);
         self
     }
-    /// <p>The scope of the retry attempt. Currently, the only supported value is FAILED_ACTIONS.</p>
+    /// <p>The scope of the retry attempt.</p>
     pub fn get_retry_mode(&self) -> &::std::option::Option<crate::types::StageRetryMode> {
         self.inner.get_retry_mode()
     }

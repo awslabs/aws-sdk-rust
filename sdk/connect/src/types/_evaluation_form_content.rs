@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EvaluationFormContent {
     /// <p>A version of the evaluation form.</p>
-    pub evaluation_form_version: ::std::option::Option<i32>,
+    pub evaluation_form_version: i32,
     /// <p>The unique identifier for the evaluation form.</p>
     pub evaluation_form_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the evaluation form resource.</p>
@@ -21,7 +21,7 @@ pub struct EvaluationFormContent {
 }
 impl EvaluationFormContent {
     /// <p>A version of the evaluation form.</p>
-    pub fn evaluation_form_version(&self) -> ::std::option::Option<i32> {
+    pub fn evaluation_form_version(&self) -> i32 {
         self.evaluation_form_version
     }
     /// <p>The unique identifier for the evaluation form.</p>
@@ -176,7 +176,7 @@ impl EvaluationFormContentBuilder {
     /// Consumes the builder and constructs a [`EvaluationFormContent`](crate::types::EvaluationFormContent).
     pub fn build(self) -> crate::types::EvaluationFormContent {
         crate::types::EvaluationFormContent {
-            evaluation_form_version: self.evaluation_form_version,
+            evaluation_form_version: self.evaluation_form_version.unwrap_or_default(),
             evaluation_form_id: self.evaluation_form_id,
             evaluation_form_arn: self.evaluation_form_arn,
             title: self.title,

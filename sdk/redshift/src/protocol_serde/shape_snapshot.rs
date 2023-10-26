@@ -468,6 +468,32 @@ pub fn de_snapshot(
                 builder = builder.set_snapshot_retention_start_time(var_34);
             }
             ,
+            s if s.matches("MasterPasswordSecretArn") /* MasterPasswordSecretArn com.amazonaws.redshift#Snapshot$MasterPasswordSecretArn */ =>  {
+                let var_35 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_master_password_secret_arn(var_35);
+            }
+            ,
+            s if s.matches("MasterPasswordSecretKmsKeyId") /* MasterPasswordSecretKmsKeyId com.amazonaws.redshift#Snapshot$MasterPasswordSecretKmsKeyId */ =>  {
+                let var_36 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_master_password_secret_kms_key_id(var_36);
+            }
+            ,
             _ => {}
         }
     }

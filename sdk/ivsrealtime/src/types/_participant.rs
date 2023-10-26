@@ -16,6 +16,18 @@ pub struct Participant {
     pub attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Whether the participant ever published to the stage session.</p>
     pub published: bool,
+    /// <p>The participant’s Internet Service Provider.</p>
+    pub isp_name: ::std::option::Option<::std::string::String>,
+    /// <p>The participant’s operating system.</p>
+    pub os_name: ::std::option::Option<::std::string::String>,
+    /// <p>The participant’s operating system version.</p>
+    pub os_version: ::std::option::Option<::std::string::String>,
+    /// <p>The participant’s browser.</p>
+    pub browser_name: ::std::option::Option<::std::string::String>,
+    /// <p>The participant’s browser version.</p>
+    pub browser_version: ::std::option::Option<::std::string::String>,
+    /// <p>The participant’s SDK version.</p>
+    pub sdk_version: ::std::option::Option<::std::string::String>,
 }
 impl Participant {
     /// <p>Unique identifier for this participant, assigned by IVS.</p>
@@ -42,6 +54,30 @@ impl Participant {
     pub fn published(&self) -> bool {
         self.published
     }
+    /// <p>The participant’s Internet Service Provider.</p>
+    pub fn isp_name(&self) -> ::std::option::Option<&str> {
+        self.isp_name.as_deref()
+    }
+    /// <p>The participant’s operating system.</p>
+    pub fn os_name(&self) -> ::std::option::Option<&str> {
+        self.os_name.as_deref()
+    }
+    /// <p>The participant’s operating system version.</p>
+    pub fn os_version(&self) -> ::std::option::Option<&str> {
+        self.os_version.as_deref()
+    }
+    /// <p>The participant’s browser.</p>
+    pub fn browser_name(&self) -> ::std::option::Option<&str> {
+        self.browser_name.as_deref()
+    }
+    /// <p>The participant’s browser version.</p>
+    pub fn browser_version(&self) -> ::std::option::Option<&str> {
+        self.browser_version.as_deref()
+    }
+    /// <p>The participant’s SDK version.</p>
+    pub fn sdk_version(&self) -> ::std::option::Option<&str> {
+        self.sdk_version.as_deref()
+    }
 }
 impl Participant {
     /// Creates a new builder-style object to manufacture [`Participant`](crate::types::Participant).
@@ -60,6 +96,12 @@ pub struct ParticipantBuilder {
     pub(crate) first_join_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) published: ::std::option::Option<bool>,
+    pub(crate) isp_name: ::std::option::Option<::std::string::String>,
+    pub(crate) os_name: ::std::option::Option<::std::string::String>,
+    pub(crate) os_version: ::std::option::Option<::std::string::String>,
+    pub(crate) browser_name: ::std::option::Option<::std::string::String>,
+    pub(crate) browser_version: ::std::option::Option<::std::string::String>,
+    pub(crate) sdk_version: ::std::option::Option<::std::string::String>,
 }
 impl ParticipantBuilder {
     /// <p>Unique identifier for this participant, assigned by IVS.</p>
@@ -152,6 +194,90 @@ impl ParticipantBuilder {
     pub fn get_published(&self) -> &::std::option::Option<bool> {
         &self.published
     }
+    /// <p>The participant’s Internet Service Provider.</p>
+    pub fn isp_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.isp_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The participant’s Internet Service Provider.</p>
+    pub fn set_isp_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.isp_name = input;
+        self
+    }
+    /// <p>The participant’s Internet Service Provider.</p>
+    pub fn get_isp_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.isp_name
+    }
+    /// <p>The participant’s operating system.</p>
+    pub fn os_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.os_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The participant’s operating system.</p>
+    pub fn set_os_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.os_name = input;
+        self
+    }
+    /// <p>The participant’s operating system.</p>
+    pub fn get_os_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.os_name
+    }
+    /// <p>The participant’s operating system version.</p>
+    pub fn os_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.os_version = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The participant’s operating system version.</p>
+    pub fn set_os_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.os_version = input;
+        self
+    }
+    /// <p>The participant’s operating system version.</p>
+    pub fn get_os_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.os_version
+    }
+    /// <p>The participant’s browser.</p>
+    pub fn browser_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.browser_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The participant’s browser.</p>
+    pub fn set_browser_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.browser_name = input;
+        self
+    }
+    /// <p>The participant’s browser.</p>
+    pub fn get_browser_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.browser_name
+    }
+    /// <p>The participant’s browser version.</p>
+    pub fn browser_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.browser_version = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The participant’s browser version.</p>
+    pub fn set_browser_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.browser_version = input;
+        self
+    }
+    /// <p>The participant’s browser version.</p>
+    pub fn get_browser_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.browser_version
+    }
+    /// <p>The participant’s SDK version.</p>
+    pub fn sdk_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.sdk_version = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The participant’s SDK version.</p>
+    pub fn set_sdk_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.sdk_version = input;
+        self
+    }
+    /// <p>The participant’s SDK version.</p>
+    pub fn get_sdk_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sdk_version
+    }
     /// Consumes the builder and constructs a [`Participant`](crate::types::Participant).
     pub fn build(self) -> crate::types::Participant {
         crate::types::Participant {
@@ -161,6 +287,12 @@ impl ParticipantBuilder {
             first_join_time: self.first_join_time,
             attributes: self.attributes,
             published: self.published.unwrap_or_default(),
+            isp_name: self.isp_name,
+            os_name: self.os_name,
+            os_version: self.os_version,
+            browser_name: self.browser_name,
+            browser_version: self.browser_version,
+            sdk_version: self.sdk_version,
         }
     }
 }

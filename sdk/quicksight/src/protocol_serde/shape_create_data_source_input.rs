@@ -18,47 +18,56 @@ pub fn ser_create_data_source_input(
         crate::protocol_serde::shape_data_source_parameters::ser_data_source_parameters(&mut object_5, var_4)?;
         object_5.finish();
     }
-    if let Some(var_6) = &input.name {
-        object.key("Name").string(var_6.as_str());
-    }
-    if let Some(var_7) = &input.permissions {
-        let mut array_8 = object.key("Permissions").start_array();
-        for item_9 in var_7 {
+    if let Some(var_6) = &input.folder_arns {
+        let mut array_7 = object.key("FolderArns").start_array();
+        for item_8 in var_6 {
             {
-                #[allow(unused_mut)]
-                let mut object_10 = array_8.value().start_object();
-                crate::protocol_serde::shape_resource_permission::ser_resource_permission(&mut object_10, item_9)?;
-                object_10.finish();
+                array_7.value().string(item_8.as_str());
             }
         }
-        array_8.finish();
+        array_7.finish();
     }
-    if let Some(var_11) = &input.ssl_properties {
-        #[allow(unused_mut)]
-        let mut object_12 = object.key("SslProperties").start_object();
-        crate::protocol_serde::shape_ssl_properties::ser_ssl_properties(&mut object_12, var_11)?;
-        object_12.finish();
+    if let Some(var_9) = &input.name {
+        object.key("Name").string(var_9.as_str());
     }
-    if let Some(var_13) = &input.tags {
-        let mut array_14 = object.key("Tags").start_array();
-        for item_15 in var_13 {
+    if let Some(var_10) = &input.permissions {
+        let mut array_11 = object.key("Permissions").start_array();
+        for item_12 in var_10 {
             {
                 #[allow(unused_mut)]
-                let mut object_16 = array_14.value().start_object();
-                crate::protocol_serde::shape_tag::ser_tag(&mut object_16, item_15)?;
-                object_16.finish();
+                let mut object_13 = array_11.value().start_object();
+                crate::protocol_serde::shape_resource_permission::ser_resource_permission(&mut object_13, item_12)?;
+                object_13.finish();
             }
         }
-        array_14.finish();
+        array_11.finish();
     }
-    if let Some(var_17) = &input.r#type {
-        object.key("Type").string(var_17.as_str());
-    }
-    if let Some(var_18) = &input.vpc_connection_properties {
+    if let Some(var_14) = &input.ssl_properties {
         #[allow(unused_mut)]
-        let mut object_19 = object.key("VpcConnectionProperties").start_object();
-        crate::protocol_serde::shape_vpc_connection_properties::ser_vpc_connection_properties(&mut object_19, var_18)?;
-        object_19.finish();
+        let mut object_15 = object.key("SslProperties").start_object();
+        crate::protocol_serde::shape_ssl_properties::ser_ssl_properties(&mut object_15, var_14)?;
+        object_15.finish();
+    }
+    if let Some(var_16) = &input.tags {
+        let mut array_17 = object.key("Tags").start_array();
+        for item_18 in var_16 {
+            {
+                #[allow(unused_mut)]
+                let mut object_19 = array_17.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_19, item_18)?;
+                object_19.finish();
+            }
+        }
+        array_17.finish();
+    }
+    if let Some(var_20) = &input.r#type {
+        object.key("Type").string(var_20.as_str());
+    }
+    if let Some(var_21) = &input.vpc_connection_properties {
+        #[allow(unused_mut)]
+        let mut object_22 = object.key("VpcConnectionProperties").start_object();
+        crate::protocol_serde::shape_vpc_connection_properties::ser_vpc_connection_properties(&mut object_22, var_21)?;
+        object_22.finish();
     }
     Ok(())
 }

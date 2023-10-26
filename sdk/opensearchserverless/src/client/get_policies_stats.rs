@@ -7,6 +7,7 @@ impl super::Client {
     ///   - [`access_policy_stats(Option<AccessPolicyStats>)`](crate::operation::get_policies_stats::GetPoliciesStatsOutput::access_policy_stats): <p>Information about the data access policies in your account.</p>
     ///   - [`security_policy_stats(Option<SecurityPolicyStats>)`](crate::operation::get_policies_stats::GetPoliciesStatsOutput::security_policy_stats): <p>Information about the security policies in your account.</p>
     ///   - [`security_config_stats(Option<SecurityConfigStats>)`](crate::operation::get_policies_stats::GetPoliciesStatsOutput::security_config_stats): <p>Information about the security configurations in your account.</p>
+    ///   - [`lifecycle_policy_stats(Option<LifecyclePolicyStats>)`](crate::operation::get_policies_stats::GetPoliciesStatsOutput::lifecycle_policy_stats): <p>Information about the lifecycle policies in your account.</p>
     ///   - [`total_policy_count(Option<i64>)`](crate::operation::get_policies_stats::GetPoliciesStatsOutput::total_policy_count): <p>The total number of OpenSearch Serverless security policies and configurations in your account.</p>
     /// - On failure, responds with [`SdkError<GetPoliciesStatsError>`](crate::operation::get_policies_stats::GetPoliciesStatsError)
     pub fn get_policies_stats(&self) -> crate::operation::get_policies_stats::builders::GetPoliciesStatsFluentBuilder {

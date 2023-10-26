@@ -3,8 +3,8 @@ pub fn ser_monitoring_csv_dataset_format(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::MonitoringCsvDatasetFormat,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if input.header {
-        object.key("Header").boolean(input.header);
+    if let Some(var_1) = &input.header {
+        object.key("Header").boolean(*var_1);
     }
     Ok(())
 }

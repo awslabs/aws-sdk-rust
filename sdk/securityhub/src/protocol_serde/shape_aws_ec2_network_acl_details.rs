@@ -3,41 +3,41 @@ pub fn ser_aws_ec2_network_acl_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsEc2NetworkAclDetails,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if input.is_default {
-        object.key("IsDefault").boolean(input.is_default);
+    if let Some(var_1) = &input.is_default {
+        object.key("IsDefault").boolean(*var_1);
     }
-    if let Some(var_1) = &input.network_acl_id {
-        object.key("NetworkAclId").string(var_1.as_str());
+    if let Some(var_2) = &input.network_acl_id {
+        object.key("NetworkAclId").string(var_2.as_str());
     }
-    if let Some(var_2) = &input.owner_id {
-        object.key("OwnerId").string(var_2.as_str());
+    if let Some(var_3) = &input.owner_id {
+        object.key("OwnerId").string(var_3.as_str());
     }
-    if let Some(var_3) = &input.vpc_id {
-        object.key("VpcId").string(var_3.as_str());
+    if let Some(var_4) = &input.vpc_id {
+        object.key("VpcId").string(var_4.as_str());
     }
-    if let Some(var_4) = &input.associations {
-        let mut array_5 = object.key("Associations").start_array();
-        for item_6 in var_4 {
+    if let Some(var_5) = &input.associations {
+        let mut array_6 = object.key("Associations").start_array();
+        for item_7 in var_5 {
             {
                 #[allow(unused_mut)]
-                let mut object_7 = array_5.value().start_object();
-                crate::protocol_serde::shape_aws_ec2_network_acl_association::ser_aws_ec2_network_acl_association(&mut object_7, item_6)?;
-                object_7.finish();
+                let mut object_8 = array_6.value().start_object();
+                crate::protocol_serde::shape_aws_ec2_network_acl_association::ser_aws_ec2_network_acl_association(&mut object_8, item_7)?;
+                object_8.finish();
             }
         }
-        array_5.finish();
+        array_6.finish();
     }
-    if let Some(var_8) = &input.entries {
-        let mut array_9 = object.key("Entries").start_array();
-        for item_10 in var_8 {
+    if let Some(var_9) = &input.entries {
+        let mut array_10 = object.key("Entries").start_array();
+        for item_11 in var_9 {
             {
                 #[allow(unused_mut)]
-                let mut object_11 = array_9.value().start_object();
-                crate::protocol_serde::shape_aws_ec2_network_acl_entry::ser_aws_ec2_network_acl_entry(&mut object_11, item_10)?;
-                object_11.finish();
+                let mut object_12 = array_10.value().start_object();
+                crate::protocol_serde::shape_aws_ec2_network_acl_entry::ser_aws_ec2_network_acl_entry(&mut object_12, item_11)?;
+                object_12.finish();
             }
         }
-        array_9.finish();
+        array_10.finish();
     }
     Ok(())
 }

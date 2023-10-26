@@ -117,6 +117,12 @@ impl DescribeTagsFluentBuilder {
         self.config_override = config_override;
         self
     }
+    /// Create a paginator for this request
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::describe_tags::paginator::DescribeTagsPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(self) -> crate::operation::describe_tags::paginator::DescribeTagsPaginator {
+        crate::operation::describe_tags::paginator::DescribeTagsPaginator::new(self.handle, self.inner)
+    }
     /// Appends an item to `filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).

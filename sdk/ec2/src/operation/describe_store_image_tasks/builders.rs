@@ -160,7 +160,9 @@ impl DescribeStoreImageTasksFluentBuilder {
     /// <ul>
     /// <li> <p> <code>task-state</code> - Returns tasks in a certain state (<code>InProgress</code> | <code>Completed</code> | <code>Failed</code>)</p> </li>
     /// <li> <p> <code>bucket</code> - Returns task information for tasks that targeted a specific bucket. For the filter value, specify the bucket name.</p> </li>
-    /// </ul>
+    /// </ul> <note>
+    /// <p>When you specify the <code>ImageIds</code> parameter, any filters that you specify are ignored. To use the filters, you must remove the <code>ImageIds</code> parameter.</p>
+    /// </note>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         self.inner = self.inner.filters(input);
         self
@@ -169,7 +171,9 @@ impl DescribeStoreImageTasksFluentBuilder {
     /// <ul>
     /// <li> <p> <code>task-state</code> - Returns tasks in a certain state (<code>InProgress</code> | <code>Completed</code> | <code>Failed</code>)</p> </li>
     /// <li> <p> <code>bucket</code> - Returns task information for tasks that targeted a specific bucket. For the filter value, specify the bucket name.</p> </li>
-    /// </ul>
+    /// </ul> <note>
+    /// <p>When you specify the <code>ImageIds</code> parameter, any filters that you specify are ignored. To use the filters, you must remove the <code>ImageIds</code> parameter.</p>
+    /// </note>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
@@ -178,7 +182,9 @@ impl DescribeStoreImageTasksFluentBuilder {
     /// <ul>
     /// <li> <p> <code>task-state</code> - Returns tasks in a certain state (<code>InProgress</code> | <code>Completed</code> | <code>Failed</code>)</p> </li>
     /// <li> <p> <code>bucket</code> - Returns task information for tasks that targeted a specific bucket. For the filter value, specify the bucket name.</p> </li>
-    /// </ul>
+    /// </ul> <note>
+    /// <p>When you specify the <code>ImageIds</code> parameter, any filters that you specify are ignored. To use the filters, you must remove the <code>ImageIds</code> parameter.</p>
+    /// </note>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         self.inner.get_filters()
     }
@@ -197,19 +203,19 @@ impl DescribeStoreImageTasksFluentBuilder {
         self.inner.get_next_token()
     }
     /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
-    /// <p>You cannot specify this parameter and the <code>ImageIDs</code> parameter in the same call.</p>
+    /// <p>You cannot specify this parameter and the <code>ImageIds</code> parameter in the same call.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
     /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
-    /// <p>You cannot specify this parameter and the <code>ImageIDs</code> parameter in the same call.</p>
+    /// <p>You cannot specify this parameter and the <code>ImageIds</code> parameter in the same call.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
     /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
-    /// <p>You cannot specify this parameter and the <code>ImageIDs</code> parameter in the same call.</p>
+    /// <p>You cannot specify this parameter and the <code>ImageIds</code> parameter in the same call.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }

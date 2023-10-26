@@ -5,11 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StackSetOperationStatusDetails {
     /// <p>The number of stack instances for which the StackSet operation failed.</p>
-    pub failed_stack_instances_count: i32,
+    pub failed_stack_instances_count: ::std::option::Option<i32>,
 }
 impl StackSetOperationStatusDetails {
     /// <p>The number of stack instances for which the StackSet operation failed.</p>
-    pub fn failed_stack_instances_count(&self) -> i32 {
+    pub fn failed_stack_instances_count(&self) -> ::std::option::Option<i32> {
         self.failed_stack_instances_count
     }
 }
@@ -44,7 +44,7 @@ impl StackSetOperationStatusDetailsBuilder {
     /// Consumes the builder and constructs a [`StackSetOperationStatusDetails`](crate::types::StackSetOperationStatusDetails).
     pub fn build(self) -> crate::types::StackSetOperationStatusDetails {
         crate::types::StackSetOperationStatusDetails {
-            failed_stack_instances_count: self.failed_stack_instances_count.unwrap_or_default(),
+            failed_stack_instances_count: self.failed_stack_instances_count,
         }
     }
 }

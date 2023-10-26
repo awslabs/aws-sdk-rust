@@ -15,7 +15,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateEvaluationFormOutput`](crate::operation::update_evaluation_form::UpdateEvaluationFormOutput) with field(s):
     ///   - [`evaluation_form_id(Option<String>)`](crate::operation::update_evaluation_form::UpdateEvaluationFormOutput::evaluation_form_id): <p>The unique identifier for the evaluation form.</p>
     ///   - [`evaluation_form_arn(Option<String>)`](crate::operation::update_evaluation_form::UpdateEvaluationFormOutput::evaluation_form_arn): <p>The Amazon Resource Name (ARN) for the contact evaluation resource.</p>
-    ///   - [`evaluation_form_version(Option<i32>)`](crate::operation::update_evaluation_form::UpdateEvaluationFormOutput::evaluation_form_version): <p>The version of the updated evaluation form resource.</p>
+    ///   - [`evaluation_form_version(i32)`](crate::operation::update_evaluation_form::UpdateEvaluationFormOutput::evaluation_form_version): <p>The version of the updated evaluation form resource.</p>
     /// - On failure, responds with [`SdkError<UpdateEvaluationFormError>`](crate::operation::update_evaluation_form::UpdateEvaluationFormError)
     pub fn update_evaluation_form(&self) -> crate::operation::update_evaluation_form::builders::UpdateEvaluationFormFluentBuilder {
         crate::operation::update_evaluation_form::builders::UpdateEvaluationFormFluentBuilder::new(self.handle.clone())

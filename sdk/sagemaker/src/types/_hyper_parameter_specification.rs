@@ -13,9 +13,9 @@ pub struct HyperParameterSpecification {
     /// <p>The allowed range for this hyperparameter.</p>
     pub range: ::std::option::Option<crate::types::ParameterRange>,
     /// <p>Indicates whether this hyperparameter is tunable in a hyperparameter tuning job.</p>
-    pub is_tunable: bool,
+    pub is_tunable: ::std::option::Option<bool>,
     /// <p>Indicates whether this hyperparameter is required.</p>
-    pub is_required: bool,
+    pub is_required: ::std::option::Option<bool>,
     /// <p>The default value for this hyperparameter. If a default value is specified, a hyperparameter cannot be required.</p>
     pub default_value: ::std::option::Option<::std::string::String>,
 }
@@ -37,11 +37,11 @@ impl HyperParameterSpecification {
         self.range.as_ref()
     }
     /// <p>Indicates whether this hyperparameter is tunable in a hyperparameter tuning job.</p>
-    pub fn is_tunable(&self) -> bool {
+    pub fn is_tunable(&self) -> ::std::option::Option<bool> {
         self.is_tunable
     }
     /// <p>Indicates whether this hyperparameter is required.</p>
-    pub fn is_required(&self) -> bool {
+    pub fn is_required(&self) -> ::std::option::Option<bool> {
         self.is_required
     }
     /// <p>The default value for this hyperparameter. If a default value is specified, a hyperparameter cannot be required.</p>
@@ -174,8 +174,8 @@ impl HyperParameterSpecificationBuilder {
             description: self.description,
             r#type: self.r#type,
             range: self.range,
-            is_tunable: self.is_tunable.unwrap_or_default(),
-            is_required: self.is_required.unwrap_or_default(),
+            is_tunable: self.is_tunable,
+            is_required: self.is_required,
             default_value: self.default_value,
         }
     }

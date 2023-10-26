@@ -4,11 +4,17 @@ pub use ::aws_http::request_id::RequestId;
 /// Types for the `BatchGetTokenBalance` operation.
 pub mod batch_get_token_balance;
 
+/// Types for the `GetAssetContract` operation.
+pub mod get_asset_contract;
+
 /// Types for the `GetTokenBalance` operation.
 pub mod get_token_balance;
 
 /// Types for the `GetTransaction` operation.
 pub mod get_transaction;
+
+/// Types for the `ListAssetContracts` operation.
+pub mod list_asset_contracts;
 
 /// Types for the `ListTokenBalances` operation.
 pub mod list_token_balances;

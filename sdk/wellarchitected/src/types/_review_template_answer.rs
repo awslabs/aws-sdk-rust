@@ -33,7 +33,7 @@ pub struct ReviewTemplateAnswer {
     /// <p>A list of selected choices to a question in your review template.</p>
     pub choice_answers: ::std::option::Option<::std::vec::Vec<crate::types::ChoiceAnswer>>,
     /// <p>Defines whether this question is applicable to a lens review.</p>
-    pub is_applicable: bool,
+    pub is_applicable: ::std::option::Option<bool>,
     /// <p>The status of whether or not this question has been answered.</p>
     pub answer_status: ::std::option::Option<crate::types::ReviewTemplateAnswerStatus>,
     /// <p>The notes associated with the workload.</p>
@@ -92,7 +92,7 @@ impl ReviewTemplateAnswer {
         self.choice_answers.as_deref()
     }
     /// <p>Defines whether this question is applicable to a lens review.</p>
-    pub fn is_applicable(&self) -> bool {
+    pub fn is_applicable(&self) -> ::std::option::Option<bool> {
         self.is_applicable
     }
     /// <p>The status of whether or not this question has been answered.</p>
@@ -390,7 +390,7 @@ impl ReviewTemplateAnswerBuilder {
             choices: self.choices,
             selected_choices: self.selected_choices,
             choice_answers: self.choice_answers,
-            is_applicable: self.is_applicable.unwrap_or_default(),
+            is_applicable: self.is_applicable,
             answer_status: self.answer_status,
             notes: self.notes,
             reason: self.reason,

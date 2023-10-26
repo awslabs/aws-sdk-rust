@@ -5,13 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsS3BucketBucketVersioningConfiguration {
     /// <p>Specifies whether MFA delete is currently enabled in the S3 bucket versioning configuration. If the S3 bucket was never configured with MFA delete, then this attribute is not included.</p>
-    pub is_mfa_delete_enabled: bool,
+    pub is_mfa_delete_enabled: ::std::option::Option<bool>,
     /// <p>The versioning status of the S3 bucket. Valid values are <code>Enabled</code> or <code>Suspended</code>.</p>
     pub status: ::std::option::Option<::std::string::String>,
 }
 impl AwsS3BucketBucketVersioningConfiguration {
     /// <p>Specifies whether MFA delete is currently enabled in the S3 bucket versioning configuration. If the S3 bucket was never configured with MFA delete, then this attribute is not included.</p>
-    pub fn is_mfa_delete_enabled(&self) -> bool {
+    pub fn is_mfa_delete_enabled(&self) -> ::std::option::Option<bool> {
         self.is_mfa_delete_enabled
     }
     /// <p>The versioning status of the S3 bucket. Valid values are <code>Enabled</code> or <code>Suspended</code>.</p>
@@ -65,7 +65,7 @@ impl AwsS3BucketBucketVersioningConfigurationBuilder {
     /// Consumes the builder and constructs a [`AwsS3BucketBucketVersioningConfiguration`](crate::types::AwsS3BucketBucketVersioningConfiguration).
     pub fn build(self) -> crate::types::AwsS3BucketBucketVersioningConfiguration {
         crate::types::AwsS3BucketBucketVersioningConfiguration {
-            is_mfa_delete_enabled: self.is_mfa_delete_enabled.unwrap_or_default(),
+            is_mfa_delete_enabled: self.is_mfa_delete_enabled,
             status: self.status,
         }
     }

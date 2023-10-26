@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEksClusterLoggingClusterLoggingDetails {
     /// <p>Whether the logging types that are listed in <code>Types</code> are enabled.</p>
-    pub enabled: bool,
+    pub enabled: ::std::option::Option<bool>,
     /// <p>A list of logging types. Valid values are as follows:</p>
     /// <ul>
     /// <li> <p> <code>api</code> </p> </li>
@@ -18,7 +18,7 @@ pub struct AwsEksClusterLoggingClusterLoggingDetails {
 }
 impl AwsEksClusterLoggingClusterLoggingDetails {
     /// <p>Whether the logging types that are listed in <code>Types</code> are enabled.</p>
-    pub fn enabled(&self) -> bool {
+    pub fn enabled(&self) -> ::std::option::Option<bool> {
         self.enabled
     }
     /// <p>A list of logging types. Valid values are as follows:</p>
@@ -106,7 +106,7 @@ impl AwsEksClusterLoggingClusterLoggingDetailsBuilder {
     /// Consumes the builder and constructs a [`AwsEksClusterLoggingClusterLoggingDetails`](crate::types::AwsEksClusterLoggingClusterLoggingDetails).
     pub fn build(self) -> crate::types::AwsEksClusterLoggingClusterLoggingDetails {
         crate::types::AwsEksClusterLoggingClusterLoggingDetails {
-            enabled: self.enabled.unwrap_or_default(),
+            enabled: self.enabled,
             types: self.types,
         }
     }

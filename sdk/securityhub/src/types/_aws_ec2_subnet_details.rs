@@ -5,19 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEc2SubnetDetails {
     /// <p>Whether to assign an IPV6 address to a network interface that is created in this subnet.</p>
-    pub assign_ipv6_address_on_creation: bool,
+    pub assign_ipv6_address_on_creation: ::std::option::Option<bool>,
     /// <p>The Availability Zone for the subnet.</p>
     pub availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the Availability Zone for the subnet.</p>
     pub availability_zone_id: ::std::option::Option<::std::string::String>,
     /// <p>The number of available IPV4 addresses in the subnet. Does not include addresses for stopped instances.</p>
-    pub available_ip_address_count: i32,
+    pub available_ip_address_count: ::std::option::Option<i32>,
     /// <p>The IPV4 CIDR block that is assigned to the subnet.</p>
     pub cidr_block: ::std::option::Option<::std::string::String>,
     /// <p>Whether this subnet is the default subnet for the Availability Zone.</p>
-    pub default_for_az: bool,
+    pub default_for_az: ::std::option::Option<bool>,
     /// <p>Whether instances in this subnet receive a public IP address.</p>
-    pub map_public_ip_on_launch: bool,
+    pub map_public_ip_on_launch: ::std::option::Option<bool>,
     /// <p>The identifier of the Amazon Web Services account that owns the subnet.</p>
     pub owner_id: ::std::option::Option<::std::string::String>,
     /// <p>The current state of the subnet. Valid values are <code>available</code> or <code>pending</code>.</p>
@@ -33,7 +33,7 @@ pub struct AwsEc2SubnetDetails {
 }
 impl AwsEc2SubnetDetails {
     /// <p>Whether to assign an IPV6 address to a network interface that is created in this subnet.</p>
-    pub fn assign_ipv6_address_on_creation(&self) -> bool {
+    pub fn assign_ipv6_address_on_creation(&self) -> ::std::option::Option<bool> {
         self.assign_ipv6_address_on_creation
     }
     /// <p>The Availability Zone for the subnet.</p>
@@ -45,7 +45,7 @@ impl AwsEc2SubnetDetails {
         self.availability_zone_id.as_deref()
     }
     /// <p>The number of available IPV4 addresses in the subnet. Does not include addresses for stopped instances.</p>
-    pub fn available_ip_address_count(&self) -> i32 {
+    pub fn available_ip_address_count(&self) -> ::std::option::Option<i32> {
         self.available_ip_address_count
     }
     /// <p>The IPV4 CIDR block that is assigned to the subnet.</p>
@@ -53,11 +53,11 @@ impl AwsEc2SubnetDetails {
         self.cidr_block.as_deref()
     }
     /// <p>Whether this subnet is the default subnet for the Availability Zone.</p>
-    pub fn default_for_az(&self) -> bool {
+    pub fn default_for_az(&self) -> ::std::option::Option<bool> {
         self.default_for_az
     }
     /// <p>Whether instances in this subnet receive a public IP address.</p>
-    pub fn map_public_ip_on_launch(&self) -> bool {
+    pub fn map_public_ip_on_launch(&self) -> ::std::option::Option<bool> {
         self.map_public_ip_on_launch
     }
     /// <p>The identifier of the Amazon Web Services account that owns the subnet.</p>
@@ -305,13 +305,13 @@ impl AwsEc2SubnetDetailsBuilder {
     /// Consumes the builder and constructs a [`AwsEc2SubnetDetails`](crate::types::AwsEc2SubnetDetails).
     pub fn build(self) -> crate::types::AwsEc2SubnetDetails {
         crate::types::AwsEc2SubnetDetails {
-            assign_ipv6_address_on_creation: self.assign_ipv6_address_on_creation.unwrap_or_default(),
+            assign_ipv6_address_on_creation: self.assign_ipv6_address_on_creation,
             availability_zone: self.availability_zone,
             availability_zone_id: self.availability_zone_id,
-            available_ip_address_count: self.available_ip_address_count.unwrap_or_default(),
+            available_ip_address_count: self.available_ip_address_count,
             cidr_block: self.cidr_block,
-            default_for_az: self.default_for_az.unwrap_or_default(),
-            map_public_ip_on_launch: self.map_public_ip_on_launch.unwrap_or_default(),
+            default_for_az: self.default_for_az,
+            map_public_ip_on_launch: self.map_public_ip_on_launch,
             owner_id: self.owner_id,
             state: self.state,
             subnet_arn: self.subnet_arn,

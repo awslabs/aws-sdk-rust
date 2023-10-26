@@ -5,11 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AutoTerminationPolicy {
     /// <p>Specifies the amount of idle time in seconds after which the cluster automatically terminates. You can specify a minimum of 60 seconds and a maximum of 604800 seconds (seven days).</p>
-    pub idle_timeout: i64,
+    pub idle_timeout: ::std::option::Option<i64>,
 }
 impl AutoTerminationPolicy {
     /// <p>Specifies the amount of idle time in seconds after which the cluster automatically terminates. You can specify a minimum of 60 seconds and a maximum of 604800 seconds (seven days).</p>
-    pub fn idle_timeout(&self) -> i64 {
+    pub fn idle_timeout(&self) -> ::std::option::Option<i64> {
         self.idle_timeout
     }
 }
@@ -44,7 +44,7 @@ impl AutoTerminationPolicyBuilder {
     /// Consumes the builder and constructs a [`AutoTerminationPolicy`](crate::types::AutoTerminationPolicy).
     pub fn build(self) -> crate::types::AutoTerminationPolicy {
         crate::types::AutoTerminationPolicy {
-            idle_timeout: self.idle_timeout.unwrap_or_default(),
+            idle_timeout: self.idle_timeout,
         }
     }
 }

@@ -12,7 +12,7 @@ pub struct RemoveSchemaVersionMetadataOutput {
     /// <p>The latest version of the schema.</p>
     pub latest_version: bool,
     /// <p>The version number of the schema.</p>
-    pub version_number: i64,
+    pub version_number: ::std::option::Option<i64>,
     /// <p>The version ID for the schema version.</p>
     pub schema_version_id: ::std::option::Option<::std::string::String>,
     /// <p>The metadata key.</p>
@@ -39,7 +39,7 @@ impl RemoveSchemaVersionMetadataOutput {
         self.latest_version
     }
     /// <p>The version number of the schema.</p>
-    pub fn version_number(&self) -> i64 {
+    pub fn version_number(&self) -> ::std::option::Option<i64> {
         self.version_number
     }
     /// <p>The version ID for the schema version.</p>
@@ -210,7 +210,7 @@ impl RemoveSchemaVersionMetadataOutputBuilder {
             schema_name: self.schema_name,
             registry_name: self.registry_name,
             latest_version: self.latest_version.unwrap_or_default(),
-            version_number: self.version_number.unwrap_or_default(),
+            version_number: self.version_number,
             schema_version_id: self.schema_version_id,
             metadata_key: self.metadata_key,
             metadata_value: self.metadata_value,

@@ -11,9 +11,9 @@ pub struct UpgradeTarget {
     /// <p>The version of the database engine that a DB instance can be upgraded to.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A value that indicates whether the target version is applied to any source DB instances that have AutoMinorVersionUpgrade set to true.</p>
-    pub auto_upgrade: bool,
+    pub auto_upgrade: ::std::option::Option<bool>,
     /// <p>A value that indicates whether a database engine is upgraded to a major version.</p>
-    pub is_major_version_upgrade: bool,
+    pub is_major_version_upgrade: ::std::option::Option<bool>,
     /// <p>A value that indicates whether you can use Neptune global databases with the target engine version.</p>
     pub supports_global_databases: ::std::option::Option<bool>,
 }
@@ -31,11 +31,11 @@ impl UpgradeTarget {
         self.description.as_deref()
     }
     /// <p>A value that indicates whether the target version is applied to any source DB instances that have AutoMinorVersionUpgrade set to true.</p>
-    pub fn auto_upgrade(&self) -> bool {
+    pub fn auto_upgrade(&self) -> ::std::option::Option<bool> {
         self.auto_upgrade
     }
     /// <p>A value that indicates whether a database engine is upgraded to a major version.</p>
-    pub fn is_major_version_upgrade(&self) -> bool {
+    pub fn is_major_version_upgrade(&self) -> ::std::option::Option<bool> {
         self.is_major_version_upgrade
     }
     /// <p>A value that indicates whether you can use Neptune global databases with the target engine version.</p>
@@ -152,8 +152,8 @@ impl UpgradeTargetBuilder {
             engine: self.engine,
             engine_version: self.engine_version,
             description: self.description,
-            auto_upgrade: self.auto_upgrade.unwrap_or_default(),
-            is_major_version_upgrade: self.is_major_version_upgrade.unwrap_or_default(),
+            auto_upgrade: self.auto_upgrade,
+            is_major_version_upgrade: self.is_major_version_upgrade,
             supports_global_databases: self.supports_global_databases,
         }
     }

@@ -3,11 +3,11 @@ pub fn ser_aws_dynamo_db_table_stream_specification(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsDynamoDbTableStreamSpecification,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if input.stream_enabled {
-        object.key("StreamEnabled").boolean(input.stream_enabled);
+    if let Some(var_1) = &input.stream_enabled {
+        object.key("StreamEnabled").boolean(*var_1);
     }
-    if let Some(var_1) = &input.stream_view_type {
-        object.key("StreamViewType").string(var_1.as_str());
+    if let Some(var_2) = &input.stream_view_type {
+        object.key("StreamViewType").string(var_2.as_str());
     }
     Ok(())
 }

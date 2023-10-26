@@ -5,17 +5,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEc2LaunchTemplateDataInstanceRequirementsAcceleratorCountDetails {
     /// <p> The maximum number of accelerators. If this parameter isn't specified, there's no maximum limit. To exclude accelerator-enabled instance types, set <code>Max</code> to <code>0</code>. </p>
-    pub max: i32,
+    pub max: ::std::option::Option<i32>,
     /// <p> The minimum number of accelerators. If this parameter isn't specified, there's no minimum limit. </p>
-    pub min: i32,
+    pub min: ::std::option::Option<i32>,
 }
 impl AwsEc2LaunchTemplateDataInstanceRequirementsAcceleratorCountDetails {
     /// <p> The maximum number of accelerators. If this parameter isn't specified, there's no maximum limit. To exclude accelerator-enabled instance types, set <code>Max</code> to <code>0</code>. </p>
-    pub fn max(&self) -> i32 {
+    pub fn max(&self) -> ::std::option::Option<i32> {
         self.max
     }
     /// <p> The minimum number of accelerators. If this parameter isn't specified, there's no minimum limit. </p>
-    pub fn min(&self) -> i32 {
+    pub fn min(&self) -> ::std::option::Option<i32> {
         self.min
     }
 }
@@ -65,8 +65,8 @@ impl AwsEc2LaunchTemplateDataInstanceRequirementsAcceleratorCountDetailsBuilder 
     /// Consumes the builder and constructs a [`AwsEc2LaunchTemplateDataInstanceRequirementsAcceleratorCountDetails`](crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsAcceleratorCountDetails).
     pub fn build(self) -> crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsAcceleratorCountDetails {
         crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsAcceleratorCountDetails {
-            max: self.max.unwrap_or_default(),
-            min: self.min.unwrap_or_default(),
+            max: self.max,
+            min: self.min,
         }
     }
 }

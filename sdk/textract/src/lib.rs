@@ -29,7 +29,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = "0.56.1"
-//! aws-sdk-textract = "0.33.0"
+//! aws-sdk-textract = "0.34.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
@@ -146,14 +146,14 @@ pub use config::Config;
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`GetDocumentAnalysis`](crate::operation::get_document_analysis) operation has
-/// a [`Client::get_document_analysis`], function which returns a builder for that operation.
+/// For example, the [`CreateAdapter`](crate::operation::create_adapter) operation has
+/// a [`Client::create_adapter`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.get_document_analysis()
-///     .job_id("example")
+/// let result = client.create_adapter()
+///     .adapter_name("example")
 ///     .send()
 ///     .await;
 /// ```
@@ -183,9 +183,15 @@ pub mod primitives;
 /// Data structures used by operation inputs/outputs.
 pub mod types;
 
+pub(crate) mod client_idempotency_token;
+
+mod idempotency_token;
+
 pub(crate) mod protocol_serde;
 
 mod serialization_settings;
+
+mod lens;
 
 mod endpoint_lib;
 

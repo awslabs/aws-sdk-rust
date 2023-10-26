@@ -5,11 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsStepFunctionStateMachineTracingConfigurationDetails {
     /// <p> When set to true, X-Ray tracing is enabled. </p>
-    pub enabled: bool,
+    pub enabled: ::std::option::Option<bool>,
 }
 impl AwsStepFunctionStateMachineTracingConfigurationDetails {
     /// <p> When set to true, X-Ray tracing is enabled. </p>
-    pub fn enabled(&self) -> bool {
+    pub fn enabled(&self) -> ::std::option::Option<bool> {
         self.enabled
     }
 }
@@ -43,8 +43,6 @@ impl AwsStepFunctionStateMachineTracingConfigurationDetailsBuilder {
     }
     /// Consumes the builder and constructs a [`AwsStepFunctionStateMachineTracingConfigurationDetails`](crate::types::AwsStepFunctionStateMachineTracingConfigurationDetails).
     pub fn build(self) -> crate::types::AwsStepFunctionStateMachineTracingConfigurationDetails {
-        crate::types::AwsStepFunctionStateMachineTracingConfigurationDetails {
-            enabled: self.enabled.unwrap_or_default(),
-        }
+        crate::types::AwsStepFunctionStateMachineTracingConfigurationDetails { enabled: self.enabled }
     }
 }

@@ -41,18 +41,18 @@ pub fn ser_parameter(
     }
     #[allow(unused_mut)]
     let mut scope_15 = writer.prefix("IsModifiable");
-    if input.is_modifiable {
-        scope_15.boolean(input.is_modifiable);
+    if let Some(var_16) = &input.is_modifiable {
+        scope_15.boolean(*var_16);
     }
     #[allow(unused_mut)]
-    let mut scope_16 = writer.prefix("MinimumEngineVersion");
-    if let Some(var_17) = &input.minimum_engine_version {
-        scope_16.string(var_17);
+    let mut scope_17 = writer.prefix("MinimumEngineVersion");
+    if let Some(var_18) = &input.minimum_engine_version {
+        scope_17.string(var_18);
     }
     #[allow(unused_mut)]
-    let mut scope_18 = writer.prefix("ApplyMethod");
-    if let Some(var_19) = &input.apply_method {
-        scope_18.string(var_19.as_str());
+    let mut scope_19 = writer.prefix("ApplyMethod");
+    if let Some(var_20) = &input.apply_method {
+        scope_19.string(var_20.as_str());
     }
     Ok(())
 }
@@ -65,19 +65,6 @@ pub fn de_parameter(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("ParameterName") /* ParameterName com.amazonaws.docdb#Parameter$ParameterName */ =>  {
-                let var_20 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_parameter_name(var_20);
-            }
-            ,
-            s if s.matches("ParameterValue") /* ParameterValue com.amazonaws.docdb#Parameter$ParameterValue */ =>  {
                 let var_21 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -87,10 +74,10 @@ pub fn de_parameter(
                         ?
                     )
                 ;
-                builder = builder.set_parameter_value(var_21);
+                builder = builder.set_parameter_name(var_21);
             }
             ,
-            s if s.matches("Description") /* Description com.amazonaws.docdb#Parameter$Description */ =>  {
+            s if s.matches("ParameterValue") /* ParameterValue com.amazonaws.docdb#Parameter$ParameterValue */ =>  {
                 let var_22 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -100,10 +87,10 @@ pub fn de_parameter(
                         ?
                     )
                 ;
-                builder = builder.set_description(var_22);
+                builder = builder.set_parameter_value(var_22);
             }
             ,
-            s if s.matches("Source") /* Source com.amazonaws.docdb#Parameter$Source */ =>  {
+            s if s.matches("Description") /* Description com.amazonaws.docdb#Parameter$Description */ =>  {
                 let var_23 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -113,10 +100,10 @@ pub fn de_parameter(
                         ?
                     )
                 ;
-                builder = builder.set_source(var_23);
+                builder = builder.set_description(var_23);
             }
             ,
-            s if s.matches("ApplyType") /* ApplyType com.amazonaws.docdb#Parameter$ApplyType */ =>  {
+            s if s.matches("Source") /* Source com.amazonaws.docdb#Parameter$Source */ =>  {
                 let var_24 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -126,10 +113,10 @@ pub fn de_parameter(
                         ?
                     )
                 ;
-                builder = builder.set_apply_type(var_24);
+                builder = builder.set_source(var_24);
             }
             ,
-            s if s.matches("DataType") /* DataType com.amazonaws.docdb#Parameter$DataType */ =>  {
+            s if s.matches("ApplyType") /* ApplyType com.amazonaws.docdb#Parameter$ApplyType */ =>  {
                 let var_25 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -139,10 +126,10 @@ pub fn de_parameter(
                         ?
                     )
                 ;
-                builder = builder.set_data_type(var_25);
+                builder = builder.set_apply_type(var_25);
             }
             ,
-            s if s.matches("AllowedValues") /* AllowedValues com.amazonaws.docdb#Parameter$AllowedValues */ =>  {
+            s if s.matches("DataType") /* DataType com.amazonaws.docdb#Parameter$DataType */ =>  {
                 let var_26 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -152,11 +139,24 @@ pub fn de_parameter(
                         ?
                     )
                 ;
-                builder = builder.set_allowed_values(var_26);
+                builder = builder.set_data_type(var_26);
+            }
+            ,
+            s if s.matches("AllowedValues") /* AllowedValues com.amazonaws.docdb#Parameter$AllowedValues */ =>  {
+                let var_27 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_allowed_values(var_27);
             }
             ,
             s if s.matches("IsModifiable") /* IsModifiable com.amazonaws.docdb#Parameter$IsModifiable */ =>  {
-                let var_27 =
+                let var_28 =
                     Some(
                          {
                             <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -167,11 +167,11 @@ pub fn de_parameter(
                         ?
                     )
                 ;
-                builder = builder.set_is_modifiable(var_27);
+                builder = builder.set_is_modifiable(var_28);
             }
             ,
             s if s.matches("MinimumEngineVersion") /* MinimumEngineVersion com.amazonaws.docdb#Parameter$MinimumEngineVersion */ =>  {
-                let var_28 =
+                let var_29 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -180,11 +180,11 @@ pub fn de_parameter(
                         ?
                     )
                 ;
-                builder = builder.set_minimum_engine_version(var_28);
+                builder = builder.set_minimum_engine_version(var_29);
             }
             ,
             s if s.matches("ApplyMethod") /* ApplyMethod com.amazonaws.docdb#Parameter$ApplyMethod */ =>  {
-                let var_29 =
+                let var_30 =
                     Some(
                         Result::<crate::types::ApplyMethod, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::ApplyMethod::from(
@@ -194,7 +194,7 @@ pub fn de_parameter(
                         ?
                     )
                 ;
-                builder = builder.set_apply_method(var_29);
+                builder = builder.set_apply_method(var_30);
             }
             ,
             _ => {}

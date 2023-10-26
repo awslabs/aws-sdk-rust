@@ -5,13 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ApplicationSettings {
     /// <p>Enables or disables persistent application settings for users during their streaming sessions. </p>
-    pub enabled: bool,
+    pub enabled: ::std::option::Option<bool>,
     /// <p>The path prefix for the S3 bucket where users’ persistent application settings are stored. You can allow the same persistent application settings to be used across multiple stacks by specifying the same settings group for each stack. </p>
     pub settings_group: ::std::option::Option<::std::string::String>,
 }
 impl ApplicationSettings {
     /// <p>Enables or disables persistent application settings for users during their streaming sessions. </p>
-    pub fn enabled(&self) -> bool {
+    pub fn enabled(&self) -> ::std::option::Option<bool> {
         self.enabled
     }
     /// <p>The path prefix for the S3 bucket where users’ persistent application settings are stored. You can allow the same persistent application settings to be used across multiple stacks by specifying the same settings group for each stack. </p>
@@ -65,7 +65,7 @@ impl ApplicationSettingsBuilder {
     /// Consumes the builder and constructs a [`ApplicationSettings`](crate::types::ApplicationSettings).
     pub fn build(self) -> crate::types::ApplicationSettings {
         crate::types::ApplicationSettings {
-            enabled: self.enabled.unwrap_or_default(),
+            enabled: self.enabled,
             settings_group: self.settings_group,
         }
     }

@@ -24,34 +24,32 @@ pub fn ser_algorithm_specification(
         }
         array_5.finish();
     }
-    if input.enable_sage_maker_metrics_time_series {
-        object
-            .key("EnableSageMakerMetricsTimeSeries")
-            .boolean(input.enable_sage_maker_metrics_time_series);
+    if let Some(var_8) = &input.enable_sage_maker_metrics_time_series {
+        object.key("EnableSageMakerMetricsTimeSeries").boolean(*var_8);
     }
-    if let Some(var_8) = &input.container_entrypoint {
-        let mut array_9 = object.key("ContainerEntrypoint").start_array();
-        for item_10 in var_8 {
+    if let Some(var_9) = &input.container_entrypoint {
+        let mut array_10 = object.key("ContainerEntrypoint").start_array();
+        for item_11 in var_9 {
             {
-                array_9.value().string(item_10.as_str());
+                array_10.value().string(item_11.as_str());
             }
         }
-        array_9.finish();
+        array_10.finish();
     }
-    if let Some(var_11) = &input.container_arguments {
-        let mut array_12 = object.key("ContainerArguments").start_array();
-        for item_13 in var_11 {
+    if let Some(var_12) = &input.container_arguments {
+        let mut array_13 = object.key("ContainerArguments").start_array();
+        for item_14 in var_12 {
             {
-                array_12.value().string(item_13.as_str());
+                array_13.value().string(item_14.as_str());
             }
         }
-        array_12.finish();
+        array_13.finish();
     }
-    if let Some(var_14) = &input.training_image_config {
+    if let Some(var_15) = &input.training_image_config {
         #[allow(unused_mut)]
-        let mut object_15 = object.key("TrainingImageConfig").start_object();
-        crate::protocol_serde::shape_training_image_config::ser_training_image_config(&mut object_15, var_14)?;
-        object_15.finish();
+        let mut object_16 = object.key("TrainingImageConfig").start_object();
+        crate::protocol_serde::shape_training_image_config::ser_training_image_config(&mut object_16, var_15)?;
+        object_16.finish();
     }
     Ok(())
 }

@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsAutoScalingLaunchConfigurationDetails {
     /// <p>For Auto Scaling groups that run in a VPC, specifies whether to assign a public IP address to the group's instances.</p>
-    pub associate_public_ip_address: bool,
+    pub associate_public_ip_address: ::std::option::Option<bool>,
     /// <p>Specifies the block devices for the instance.</p>
     pub block_device_mappings: ::std::option::Option<::std::vec::Vec<crate::types::AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails>>,
     /// <p>The identifier of a ClassicLink-enabled VPC that EC2-Classic instances are linked to.</p>
@@ -16,7 +16,7 @@ pub struct AwsAutoScalingLaunchConfigurationDetails {
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     pub created_time: ::std::option::Option<::std::string::String>,
     /// <p>Whether the launch configuration is optimized for Amazon EBS I/O.</p>
-    pub ebs_optimized: bool,
+    pub ebs_optimized: ::std::option::Option<bool>,
     /// <p>The name or the ARN of the instance profile associated with the IAM role for the instance. The instance profile contains the IAM role.</p>
     pub iam_instance_profile: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the Amazon Machine Image (AMI) that is used to launch EC2 instances.</p>
@@ -46,7 +46,7 @@ pub struct AwsAutoScalingLaunchConfigurationDetails {
 }
 impl AwsAutoScalingLaunchConfigurationDetails {
     /// <p>For Auto Scaling groups that run in a VPC, specifies whether to assign a public IP address to the group's instances.</p>
-    pub fn associate_public_ip_address(&self) -> bool {
+    pub fn associate_public_ip_address(&self) -> ::std::option::Option<bool> {
         self.associate_public_ip_address
     }
     /// <p>Specifies the block devices for the instance.</p>
@@ -67,7 +67,7 @@ impl AwsAutoScalingLaunchConfigurationDetails {
         self.created_time.as_deref()
     }
     /// <p>Whether the launch configuration is optimized for Amazon EBS I/O.</p>
-    pub fn ebs_optimized(&self) -> bool {
+    pub fn ebs_optimized(&self) -> ::std::option::Option<bool> {
         self.ebs_optimized
     }
     /// <p>The name or the ARN of the instance profile associated with the IAM role for the instance. The instance profile contains the IAM role.</p>
@@ -454,12 +454,12 @@ impl AwsAutoScalingLaunchConfigurationDetailsBuilder {
     /// Consumes the builder and constructs a [`AwsAutoScalingLaunchConfigurationDetails`](crate::types::AwsAutoScalingLaunchConfigurationDetails).
     pub fn build(self) -> crate::types::AwsAutoScalingLaunchConfigurationDetails {
         crate::types::AwsAutoScalingLaunchConfigurationDetails {
-            associate_public_ip_address: self.associate_public_ip_address.unwrap_or_default(),
+            associate_public_ip_address: self.associate_public_ip_address,
             block_device_mappings: self.block_device_mappings,
             classic_link_vpc_id: self.classic_link_vpc_id,
             classic_link_vpc_security_groups: self.classic_link_vpc_security_groups,
             created_time: self.created_time,
-            ebs_optimized: self.ebs_optimized.unwrap_or_default(),
+            ebs_optimized: self.ebs_optimized,
             iam_instance_profile: self.iam_instance_profile,
             image_id: self.image_id,
             instance_monitoring: self.instance_monitoring,

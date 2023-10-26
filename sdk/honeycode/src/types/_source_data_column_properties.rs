@@ -5,11 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SourceDataColumnProperties {
     /// <p>The index of the column in the input file.</p>
-    pub column_index: i32,
+    pub column_index: ::std::option::Option<i32>,
 }
 impl SourceDataColumnProperties {
     /// <p>The index of the column in the input file.</p>
-    pub fn column_index(&self) -> i32 {
+    pub fn column_index(&self) -> ::std::option::Option<i32> {
         self.column_index
     }
 }
@@ -44,7 +44,7 @@ impl SourceDataColumnPropertiesBuilder {
     /// Consumes the builder and constructs a [`SourceDataColumnProperties`](crate::types::SourceDataColumnProperties).
     pub fn build(self) -> crate::types::SourceDataColumnProperties {
         crate::types::SourceDataColumnProperties {
-            column_index: self.column_index.unwrap_or_default(),
+            column_index: self.column_index,
         }
     }
 }

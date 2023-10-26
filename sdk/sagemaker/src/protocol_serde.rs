@@ -2423,6 +2423,8 @@ pub(crate) mod shape_custom_images;
 
 pub(crate) mod shape_deployed_images;
 
+pub(crate) mod shape_direct_deploy_settings;
+
 pub(crate) mod shape_edge_deployment_status;
 
 pub(crate) mod shape_edge_model_summaries;
@@ -2468,6 +2470,8 @@ pub(crate) mod shape_integer_parameter_range;
 pub(crate) mod shape_integer_parameter_ranges;
 
 pub(crate) mod shape_json_content_types;
+
+pub(crate) mod shape_kendra_settings;
 
 pub(crate) mod shape_label_counters_for_workteam;
 

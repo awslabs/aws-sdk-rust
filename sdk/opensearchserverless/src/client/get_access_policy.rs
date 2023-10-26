@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetAccessPolicy`](crate::operation::get_access_policy::builders::GetAccessPolicyFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`r#type(AccessPolicyType)`](crate::operation::get_access_policy::builders::GetAccessPolicyFluentBuilder::type) / [`set_type(Option<AccessPolicyType>)`](crate::operation::get_access_policy::builders::GetAccessPolicyFluentBuilder::set_type): <p>Tye type of policy. Currently the only supported value is <code>data</code>.</p>
+    ///   - [`r#type(AccessPolicyType)`](crate::operation::get_access_policy::builders::GetAccessPolicyFluentBuilder::type) / [`set_type(Option<AccessPolicyType>)`](crate::operation::get_access_policy::builders::GetAccessPolicyFluentBuilder::set_type): <p>Tye type of policy. Currently, the only supported value is <code>data</code>.</p>
     ///   - [`name(impl Into<String>)`](crate::operation::get_access_policy::builders::GetAccessPolicyFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::get_access_policy::builders::GetAccessPolicyFluentBuilder::set_name): <p>The name of the access policy.</p>
     /// - On success, responds with [`GetAccessPolicyOutput`](crate::operation::get_access_policy::GetAccessPolicyOutput) with field(s):
     ///   - [`access_policy_detail(Option<AccessPolicyDetail>)`](crate::operation::get_access_policy::GetAccessPolicyOutput::access_policy_detail): <p>Details about the requested access policy.</p>

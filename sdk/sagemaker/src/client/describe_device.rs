@@ -15,7 +15,7 @@ impl super::Client {
     ///   - [`registration_time(Option<DateTime>)`](crate::operation::describe_device::DescribeDeviceOutput::registration_time): <p>The timestamp of the last registration or de-reregistration.</p>
     ///   - [`latest_heartbeat(Option<DateTime>)`](crate::operation::describe_device::DescribeDeviceOutput::latest_heartbeat): <p>The last heartbeat received from the device.</p>
     ///   - [`models(Option<Vec<EdgeModel>>)`](crate::operation::describe_device::DescribeDeviceOutput::models): <p>Models on the device.</p>
-    ///   - [`max_models(i32)`](crate::operation::describe_device::DescribeDeviceOutput::max_models): <p>The maximum number of models.</p>
+    ///   - [`max_models(Option<i32>)`](crate::operation::describe_device::DescribeDeviceOutput::max_models): <p>The maximum number of models.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_device::DescribeDeviceOutput::next_token): <p>The response from the last list when returning a list large enough to need tokening.</p>
     ///   - [`agent_version(Option<String>)`](crate::operation::describe_device::DescribeDeviceOutput::agent_version): <p>Edge Manager agent version.</p>
     /// - On failure, responds with [`SdkError<DescribeDeviceError>`](crate::operation::describe_device::DescribeDeviceError)

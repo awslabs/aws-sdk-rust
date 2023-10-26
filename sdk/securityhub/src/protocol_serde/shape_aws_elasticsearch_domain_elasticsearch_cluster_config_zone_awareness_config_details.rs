@@ -3,10 +3,10 @@ pub fn ser_aws_elasticsearch_domain_elasticsearch_cluster_config_zone_awareness_
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetails,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if input.availability_zone_count != 0 {
+    if let Some(var_1) = &input.availability_zone_count {
         object.key("AvailabilityZoneCount").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.availability_zone_count).into()),
+            ::aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
     Ok(())

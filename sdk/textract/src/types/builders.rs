@@ -7,9 +7,17 @@ pub use crate::types::_document_location::DocumentLocationBuilder;
 
 pub use crate::types::_s3_object::S3ObjectBuilder;
 
+pub use crate::types::_adapters_config::AdaptersConfigBuilder;
+
+pub use crate::types::_adapter::AdapterBuilder;
+
 pub use crate::types::_queries_config::QueriesConfigBuilder;
 
 pub use crate::types::_query::QueryBuilder;
+
+pub use crate::types::_adapter_version_overview::AdapterVersionOverviewBuilder;
+
+pub use crate::types::_adapter_overview::AdapterOverviewBuilder;
 
 pub use crate::types::_warning::WarningBuilder;
 
@@ -74,6 +82,12 @@ pub use crate::types::_lending_detection::LendingDetectionBuilder;
 pub use crate::types::_page_classification::PageClassificationBuilder;
 
 pub use crate::types::_prediction::PredictionBuilder;
+
+pub use crate::types::_adapter_version_evaluation_metric::AdapterVersionEvaluationMetricBuilder;
+
+pub use crate::types::_evaluation_metric::EvaluationMetricBuilder;
+
+pub use crate::types::_adapter_version_dataset_config::AdapterVersionDatasetConfigBuilder;
 
 pub use crate::types::_document::DocumentBuilder;
 

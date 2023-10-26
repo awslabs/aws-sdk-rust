@@ -20,7 +20,7 @@ pub struct UpdateMaintenanceWindowOutput {
     /// <p>The number of days to wait to run a maintenance window after the scheduled cron expression date and time.</p>
     pub schedule_offset: ::std::option::Option<i32>,
     /// <p>The duration of the maintenance window in hours.</p>
-    pub duration: i32,
+    pub duration: ::std::option::Option<i32>,
     /// <p>The number of hours before the end of the maintenance window that Amazon Web Services Systems Manager stops scheduling new tasks for execution.</p>
     pub cutoff: i32,
     /// <p>Whether targets must be registered with the maintenance window before tasks can be defined for those targets.</p>
@@ -63,7 +63,7 @@ impl UpdateMaintenanceWindowOutput {
         self.schedule_offset
     }
     /// <p>The duration of the maintenance window in hours.</p>
-    pub fn duration(&self) -> i32 {
+    pub fn duration(&self) -> ::std::option::Option<i32> {
         self.duration
     }
     /// <p>The number of hours before the end of the maintenance window that Amazon Web Services Systems Manager stops scheduling new tasks for execution.</p>
@@ -317,7 +317,7 @@ impl UpdateMaintenanceWindowOutputBuilder {
             schedule: self.schedule,
             schedule_timezone: self.schedule_timezone,
             schedule_offset: self.schedule_offset,
-            duration: self.duration.unwrap_or_default(),
+            duration: self.duration,
             cutoff: self.cutoff.unwrap_or_default(),
             allow_unassociated_targets: self.allow_unassociated_targets.unwrap_or_default(),
             enabled: self.enabled.unwrap_or_default(),

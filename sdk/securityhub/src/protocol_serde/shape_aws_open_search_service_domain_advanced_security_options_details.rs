@@ -3,17 +3,17 @@ pub fn ser_aws_open_search_service_domain_advanced_security_options_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsOpenSearchServiceDomainAdvancedSecurityOptionsDetails,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if input.enabled {
-        object.key("Enabled").boolean(input.enabled);
+    if let Some(var_1) = &input.enabled {
+        object.key("Enabled").boolean(*var_1);
     }
-    if input.internal_user_database_enabled {
-        object.key("InternalUserDatabaseEnabled").boolean(input.internal_user_database_enabled);
+    if let Some(var_2) = &input.internal_user_database_enabled {
+        object.key("InternalUserDatabaseEnabled").boolean(*var_2);
     }
-    if let Some(var_1) = &input.master_user_options {
+    if let Some(var_3) = &input.master_user_options {
         #[allow(unused_mut)]
-        let mut object_2 = object.key("MasterUserOptions").start_object();
-        crate::protocol_serde::shape_aws_open_search_service_domain_master_user_options_details::ser_aws_open_search_service_domain_master_user_options_details(&mut object_2, var_1)?;
-        object_2.finish();
+        let mut object_4 = object.key("MasterUserOptions").start_object();
+        crate::protocol_serde::shape_aws_open_search_service_domain_master_user_options_details::ser_aws_open_search_service_domain_master_user_options_details(&mut object_4, var_3)?;
+        object_4.finish();
     }
     Ok(())
 }

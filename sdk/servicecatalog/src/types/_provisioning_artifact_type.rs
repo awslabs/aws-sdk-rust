@@ -13,6 +13,7 @@
 /// # let provisioningartifacttype = unimplemented!();
 /// match provisioningartifacttype {
 ///     ProvisioningArtifactType::CloudFormationTemplate => { /* ... */ },
+///     ProvisioningArtifactType::External => { /* ... */ },
 ///     ProvisioningArtifactType::MarketplaceAmi => { /* ... */ },
 ///     ProvisioningArtifactType::MarketplaceCar => { /* ... */ },
 ///     ProvisioningArtifactType::TerraformCloud => { /* ... */ },
@@ -47,6 +48,8 @@ pub enum ProvisioningArtifactType {
     #[allow(missing_docs)] // documentation missing in model
     CloudFormationTemplate,
     #[allow(missing_docs)] // documentation missing in model
+    External,
+    #[allow(missing_docs)] // documentation missing in model
     MarketplaceAmi,
     #[allow(missing_docs)] // documentation missing in model
     MarketplaceCar,
@@ -61,6 +64,7 @@ impl ::std::convert::From<&str> for ProvisioningArtifactType {
     fn from(s: &str) -> Self {
         match s {
             "CLOUD_FORMATION_TEMPLATE" => ProvisioningArtifactType::CloudFormationTemplate,
+            "EXTERNAL" => ProvisioningArtifactType::External,
             "MARKETPLACE_AMI" => ProvisioningArtifactType::MarketplaceAmi,
             "MARKETPLACE_CAR" => ProvisioningArtifactType::MarketplaceCar,
             "TERRAFORM_CLOUD" => ProvisioningArtifactType::TerraformCloud,
@@ -81,6 +85,7 @@ impl ProvisioningArtifactType {
     pub fn as_str(&self) -> &str {
         match self {
             ProvisioningArtifactType::CloudFormationTemplate => "CLOUD_FORMATION_TEMPLATE",
+            ProvisioningArtifactType::External => "EXTERNAL",
             ProvisioningArtifactType::MarketplaceAmi => "MARKETPLACE_AMI",
             ProvisioningArtifactType::MarketplaceCar => "MARKETPLACE_CAR",
             ProvisioningArtifactType::TerraformCloud => "TERRAFORM_CLOUD",
@@ -92,6 +97,7 @@ impl ProvisioningArtifactType {
     pub const fn values() -> &'static [&'static str] {
         &[
             "CLOUD_FORMATION_TEMPLATE",
+            "EXTERNAL",
             "MARKETPLACE_AMI",
             "MARKETPLACE_CAR",
             "TERRAFORM_CLOUD",

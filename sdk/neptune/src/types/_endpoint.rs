@@ -8,7 +8,7 @@ pub struct Endpoint {
     /// <p>Specifies the DNS address of the DB instance.</p>
     pub address: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the port that the database engine is listening on.</p>
-    pub port: i32,
+    pub port: ::std::option::Option<i32>,
     /// <p>Specifies the ID that Amazon Route 53 assigns when you create a hosted zone.</p>
     pub hosted_zone_id: ::std::option::Option<::std::string::String>,
 }
@@ -18,7 +18,7 @@ impl Endpoint {
         self.address.as_deref()
     }
     /// <p>Specifies the port that the database engine is listening on.</p>
-    pub fn port(&self) -> i32 {
+    pub fn port(&self) -> ::std::option::Option<i32> {
         self.port
     }
     /// <p>Specifies the ID that Amazon Route 53 assigns when you create a hosted zone.</p>
@@ -88,7 +88,7 @@ impl EndpointBuilder {
     pub fn build(self) -> crate::types::Endpoint {
         crate::types::Endpoint {
             address: self.address,
-            port: self.port.unwrap_or_default(),
+            port: self.port,
             hosted_zone_id: self.hosted_zone_id,
         }
     }

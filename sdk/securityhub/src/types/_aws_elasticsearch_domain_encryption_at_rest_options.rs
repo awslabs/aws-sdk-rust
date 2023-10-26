@@ -5,13 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsElasticsearchDomainEncryptionAtRestOptions {
     /// <p>Whether encryption at rest is enabled.</p>
-    pub enabled: bool,
+    pub enabled: ::std::option::Option<bool>,
     /// <p>The KMS key ID. Takes the form <code>1a2a3a4-1a2a-3a4a-5a6a-1a2a3a4a5a6a</code>.</p>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
 }
 impl AwsElasticsearchDomainEncryptionAtRestOptions {
     /// <p>Whether encryption at rest is enabled.</p>
-    pub fn enabled(&self) -> bool {
+    pub fn enabled(&self) -> ::std::option::Option<bool> {
         self.enabled
     }
     /// <p>The KMS key ID. Takes the form <code>1a2a3a4-1a2a-3a4a-5a6a-1a2a3a4a5a6a</code>.</p>
@@ -65,7 +65,7 @@ impl AwsElasticsearchDomainEncryptionAtRestOptionsBuilder {
     /// Consumes the builder and constructs a [`AwsElasticsearchDomainEncryptionAtRestOptions`](crate::types::AwsElasticsearchDomainEncryptionAtRestOptions).
     pub fn build(self) -> crate::types::AwsElasticsearchDomainEncryptionAtRestOptions {
         crate::types::AwsElasticsearchDomainEncryptionAtRestOptions {
-            enabled: self.enabled.unwrap_or_default(),
+            enabled: self.enabled,
             kms_key_id: self.kms_key_id,
         }
     }

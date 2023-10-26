@@ -43,7 +43,7 @@ pub struct AwsSageMakerNotebookInstanceDetails {
     /// <p> The URL that you use to connect to the Jupyter notebook that is running in your notebook instance. </p>
     pub url: ::std::option::Option<::std::string::String>,
     /// <p> The size, in GB, of the ML storage volume to attach to the notebook instance. </p>
-    pub volume_size_in_gb: i32,
+    pub volume_size_in_gb: ::std::option::Option<i32>,
 }
 impl AwsSageMakerNotebookInstanceDetails {
     /// <p> A list of Amazon Elastic Inference instance types to associate with the notebook instance. Currently, only one instance type can be associated with a notebook instance. </p>
@@ -125,7 +125,7 @@ impl AwsSageMakerNotebookInstanceDetails {
         self.url.as_deref()
     }
     /// <p> The size, in GB, of the ML storage volume to attach to the notebook instance. </p>
-    pub fn volume_size_in_gb(&self) -> i32 {
+    pub fn volume_size_in_gb(&self) -> ::std::option::Option<i32> {
         self.volume_size_in_gb
     }
 }
@@ -491,7 +491,7 @@ impl AwsSageMakerNotebookInstanceDetailsBuilder {
             security_groups: self.security_groups,
             subnet_id: self.subnet_id,
             url: self.url,
-            volume_size_in_gb: self.volume_size_in_gb.unwrap_or_default(),
+            volume_size_in_gb: self.volume_size_in_gb,
         }
     }
 }

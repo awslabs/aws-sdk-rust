@@ -27,17 +27,17 @@ pub fn ser_top_bottom_movers_computation(
         crate::protocol_serde::shape_measure_field::ser_measure_field(&mut object_8, var_7)?;
         object_8.finish();
     }
-    if input.mover_size != 0 {
+    if let Some(var_9) = &input.mover_size {
         object.key("MoverSize").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.mover_size).into()),
+            ::aws_smithy_types::Number::NegInt((*var_9).into()),
         );
     }
-    if let Some(var_9) = &input.sort_order {
-        object.key("SortOrder").string(var_9.as_str());
+    if let Some(var_10) = &input.sort_order {
+        object.key("SortOrder").string(var_10.as_str());
     }
-    if let Some(var_10) = &input.r#type {
-        object.key("Type").string(var_10.as_str());
+    if let Some(var_11) = &input.r#type {
+        object.key("Type").string(var_11.as_str());
     }
     Ok(())
 }

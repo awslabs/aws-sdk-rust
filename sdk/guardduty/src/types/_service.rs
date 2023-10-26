@@ -9,9 +9,9 @@ pub struct Service {
     /// <p>An evidence object associated with the service.</p>
     pub evidence: ::std::option::Option<crate::types::Evidence>,
     /// <p>Indicates whether this finding is archived.</p>
-    pub archived: bool,
+    pub archived: ::std::option::Option<bool>,
     /// <p>The total count of the occurrences of this finding type.</p>
-    pub count: i32,
+    pub count: ::std::option::Option<i32>,
     /// <p>The detector ID for the GuardDuty service.</p>
     pub detector_id: ::std::option::Option<::std::string::String>,
     /// <p>The first-seen timestamp of the activity that prompted GuardDuty to generate this finding.</p>
@@ -43,11 +43,11 @@ impl Service {
         self.evidence.as_ref()
     }
     /// <p>Indicates whether this finding is archived.</p>
-    pub fn archived(&self) -> bool {
+    pub fn archived(&self) -> ::std::option::Option<bool> {
         self.archived
     }
     /// <p>The total count of the occurrences of this finding type.</p>
-    pub fn count(&self) -> i32 {
+    pub fn count(&self) -> ::std::option::Option<i32> {
         self.count
     }
     /// <p>The detector ID for the GuardDuty service.</p>
@@ -319,8 +319,8 @@ impl ServiceBuilder {
         crate::types::Service {
             action: self.action,
             evidence: self.evidence,
-            archived: self.archived.unwrap_or_default(),
-            count: self.count.unwrap_or_default(),
+            archived: self.archived,
+            count: self.count,
             detector_id: self.detector_id,
             event_first_seen: self.event_first_seen,
             event_last_seen: self.event_last_seen,

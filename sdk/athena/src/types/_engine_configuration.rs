@@ -7,7 +7,7 @@ pub struct EngineConfiguration {
     /// <p>The number of DPUs to use for the coordinator. A coordinator is a special executor that orchestrates processing work and manages other executors in a notebook session. The default is 1.</p>
     pub coordinator_dpu_size: ::std::option::Option<i32>,
     /// <p>The maximum number of DPUs that can run concurrently.</p>
-    pub max_concurrent_dpus: i32,
+    pub max_concurrent_dpus: ::std::option::Option<i32>,
     /// <p>The default number of DPUs to use for executors. An executor is the smallest unit of compute that a notebook session can request from Athena. The default is 1.</p>
     pub default_executor_dpu_size: ::std::option::Option<i32>,
     /// <p>Contains additional notebook engine <code>MAP
@@ -22,7 +22,7 @@ impl EngineConfiguration {
         self.coordinator_dpu_size
     }
     /// <p>The maximum number of DPUs that can run concurrently.</p>
-    pub fn max_concurrent_dpus(&self) -> i32 {
+    pub fn max_concurrent_dpus(&self) -> ::std::option::Option<i32> {
         self.max_concurrent_dpus
     }
     /// <p>The default number of DPUs to use for executors. An executor is the smallest unit of compute that a notebook session can request from Athena. The default is 1.</p>
@@ -160,7 +160,7 @@ impl EngineConfigurationBuilder {
     pub fn build(self) -> crate::types::EngineConfiguration {
         crate::types::EngineConfiguration {
             coordinator_dpu_size: self.coordinator_dpu_size,
-            max_concurrent_dpus: self.max_concurrent_dpus.unwrap_or_default(),
+            max_concurrent_dpus: self.max_concurrent_dpus,
             default_executor_dpu_size: self.default_executor_dpu_size,
             additional_configs: self.additional_configs,
             spark_properties: self.spark_properties,

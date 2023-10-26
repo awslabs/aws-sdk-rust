@@ -3,13 +3,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetRunTaskInput {
-    /// <p>The task's ID.</p>
+    /// <p>The workflow run ID.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The task's ID.</p>
     pub task_id: ::std::option::Option<::std::string::String>,
 }
 impl GetRunTaskInput {
-    /// <p>The task's ID.</p>
+    /// <p>The workflow run ID.</p>
     pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
@@ -33,17 +33,17 @@ pub struct GetRunTaskInputBuilder {
     pub(crate) task_id: ::std::option::Option<::std::string::String>,
 }
 impl GetRunTaskInputBuilder {
-    /// <p>The task's ID.</p>
+    /// <p>The workflow run ID.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The task's ID.</p>
+    /// <p>The workflow run ID.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
-    /// <p>The task's ID.</p>
+    /// <p>The workflow run ID.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }

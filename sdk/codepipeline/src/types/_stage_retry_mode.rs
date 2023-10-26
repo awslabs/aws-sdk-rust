@@ -12,6 +12,7 @@
 /// ```text
 /// # let stageretrymode = unimplemented!();
 /// match stageretrymode {
+///     StageRetryMode::AllActions => { /* ... */ },
 ///     StageRetryMode::FailedActions => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -41,6 +42,8 @@
 )]
 pub enum StageRetryMode {
     #[allow(missing_docs)] // documentation missing in model
+    AllActions,
+    #[allow(missing_docs)] // documentation missing in model
     FailedActions,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
@@ -48,6 +51,7 @@ pub enum StageRetryMode {
 impl ::std::convert::From<&str> for StageRetryMode {
     fn from(s: &str) -> Self {
         match s {
+            "ALL_ACTIONS" => StageRetryMode::AllActions,
             "FAILED_ACTIONS" => StageRetryMode::FailedActions,
             other => StageRetryMode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
@@ -64,13 +68,14 @@ impl StageRetryMode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            StageRetryMode::AllActions => "ALL_ACTIONS",
             StageRetryMode::FailedActions => "FAILED_ACTIONS",
             StageRetryMode::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["FAILED_ACTIONS"]
+        &["ALL_ACTIONS", "FAILED_ACTIONS"]
     }
 }
 impl ::std::convert::AsRef<str> for StageRetryMode {

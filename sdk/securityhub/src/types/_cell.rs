@@ -5,9 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Cell {
     /// <p>The column number of the column that contains the data. For a Microsoft Excel workbook, the column number corresponds to the alphabetical column identifiers. For example, a value of 1 for Column corresponds to the A column in the workbook.</p>
-    pub column: i64,
+    pub column: ::std::option::Option<i64>,
     /// <p>The row number of the row that contains the data.</p>
-    pub row: i64,
+    pub row: ::std::option::Option<i64>,
     /// <p>The name of the column that contains the data.</p>
     pub column_name: ::std::option::Option<::std::string::String>,
     /// <p>For a Microsoft Excel workbook, provides the location of the cell, as an absolute cell reference, that contains the data. For example, Sheet2!C5 for cell C5 on Sheet2.</p>
@@ -15,11 +15,11 @@ pub struct Cell {
 }
 impl Cell {
     /// <p>The column number of the column that contains the data. For a Microsoft Excel workbook, the column number corresponds to the alphabetical column identifiers. For example, a value of 1 for Column corresponds to the A column in the workbook.</p>
-    pub fn column(&self) -> i64 {
+    pub fn column(&self) -> ::std::option::Option<i64> {
         self.column
     }
     /// <p>The row number of the row that contains the data.</p>
-    pub fn row(&self) -> i64 {
+    pub fn row(&self) -> ::std::option::Option<i64> {
         self.row
     }
     /// <p>The name of the column that contains the data.</p>
@@ -107,8 +107,8 @@ impl CellBuilder {
     /// Consumes the builder and constructs a [`Cell`](crate::types::Cell).
     pub fn build(self) -> crate::types::Cell {
         crate::types::Cell {
-            column: self.column.unwrap_or_default(),
-            row: self.row.unwrap_or_default(),
+            column: self.column,
+            row: self.row,
             column_name: self.column_name,
             cell_reference: self.cell_reference,
         }

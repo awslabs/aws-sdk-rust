@@ -37,6 +37,20 @@ where
                         "Datasets" => {
                             builder = builder.set_datasets(crate::protocol_serde::shape_dataset_metadata_list::de_dataset_metadata_list(tokens)?);
                         }
+                        "Feature" => {
+                            builder = builder.set_feature(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CustomizationFeature::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "AutoUpdate" => {
+                            builder = builder.set_auto_update(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::ProjectAutoUpdate::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

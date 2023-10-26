@@ -22,7 +22,7 @@ impl DescribeCustomDomainAssociationsInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeCustomDomainAssociations`.
 ///
-/// <p>Contains information for custom domain associations for a cluster.</p>
+/// <p>Contains information about custom domain associations for a cluster.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeCustomDomainAssociationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -27,7 +27,7 @@ pub struct AwsEc2TransitGatewayDetails {
     /// <p>Indicates whether multicast is supported on the transit gateway. </p>
     pub multicast_support: ::std::option::Option<::std::string::String>,
     /// <p>A private Autonomous System Number (ASN) for the Amazon side of a BGP session. </p>
-    pub amazon_side_asn: i32,
+    pub amazon_side_asn: ::std::option::Option<i32>,
 }
 impl AwsEc2TransitGatewayDetails {
     /// <p>The ID of the transit gateway. </p>
@@ -75,7 +75,7 @@ impl AwsEc2TransitGatewayDetails {
         self.multicast_support.as_deref()
     }
     /// <p>A private Autonomous System Number (ASN) for the Amazon side of a BGP session. </p>
-    pub fn amazon_side_asn(&self) -> i32 {
+    pub fn amazon_side_asn(&self) -> ::std::option::Option<i32> {
         self.amazon_side_asn
     }
 }
@@ -292,7 +292,7 @@ impl AwsEc2TransitGatewayDetailsBuilder {
             vpn_ecmp_support: self.vpn_ecmp_support,
             dns_support: self.dns_support,
             multicast_support: self.multicast_support,
-            amazon_side_asn: self.amazon_side_asn.unwrap_or_default(),
+            amazon_side_asn: self.amazon_side_asn,
         }
     }
 }

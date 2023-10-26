@@ -3,14 +3,14 @@ pub fn ser_aws_code_build_project_logs_config_s3_logs_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsCodeBuildProjectLogsConfigS3LogsDetails,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if input.encryption_disabled {
-        object.key("EncryptionDisabled").boolean(input.encryption_disabled);
+    if let Some(var_1) = &input.encryption_disabled {
+        object.key("EncryptionDisabled").boolean(*var_1);
     }
-    if let Some(var_1) = &input.location {
-        object.key("Location").string(var_1.as_str());
+    if let Some(var_2) = &input.location {
+        object.key("Location").string(var_2.as_str());
     }
-    if let Some(var_2) = &input.status {
-        object.key("Status").string(var_2.as_str());
+    if let Some(var_3) = &input.status {
+        object.key("Status").string(var_3.as_str());
     }
     Ok(())
 }

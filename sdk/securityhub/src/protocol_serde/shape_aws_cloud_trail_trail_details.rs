@@ -9,44 +9,44 @@ pub fn ser_aws_cloud_trail_trail_details(
     if let Some(var_2) = &input.cloud_watch_logs_role_arn {
         object.key("CloudWatchLogsRoleArn").string(var_2.as_str());
     }
-    if input.has_custom_event_selectors {
-        object.key("HasCustomEventSelectors").boolean(input.has_custom_event_selectors);
+    if let Some(var_3) = &input.has_custom_event_selectors {
+        object.key("HasCustomEventSelectors").boolean(*var_3);
     }
-    if let Some(var_3) = &input.home_region {
-        object.key("HomeRegion").string(var_3.as_str());
+    if let Some(var_4) = &input.home_region {
+        object.key("HomeRegion").string(var_4.as_str());
     }
-    if input.include_global_service_events {
-        object.key("IncludeGlobalServiceEvents").boolean(input.include_global_service_events);
+    if let Some(var_5) = &input.include_global_service_events {
+        object.key("IncludeGlobalServiceEvents").boolean(*var_5);
     }
-    if input.is_multi_region_trail {
-        object.key("IsMultiRegionTrail").boolean(input.is_multi_region_trail);
+    if let Some(var_6) = &input.is_multi_region_trail {
+        object.key("IsMultiRegionTrail").boolean(*var_6);
     }
-    if input.is_organization_trail {
-        object.key("IsOrganizationTrail").boolean(input.is_organization_trail);
+    if let Some(var_7) = &input.is_organization_trail {
+        object.key("IsOrganizationTrail").boolean(*var_7);
     }
-    if let Some(var_4) = &input.kms_key_id {
-        object.key("KmsKeyId").string(var_4.as_str());
+    if let Some(var_8) = &input.kms_key_id {
+        object.key("KmsKeyId").string(var_8.as_str());
     }
-    if input.log_file_validation_enabled {
-        object.key("LogFileValidationEnabled").boolean(input.log_file_validation_enabled);
+    if let Some(var_9) = &input.log_file_validation_enabled {
+        object.key("LogFileValidationEnabled").boolean(*var_9);
     }
-    if let Some(var_5) = &input.name {
-        object.key("Name").string(var_5.as_str());
+    if let Some(var_10) = &input.name {
+        object.key("Name").string(var_10.as_str());
     }
-    if let Some(var_6) = &input.s3_bucket_name {
-        object.key("S3BucketName").string(var_6.as_str());
+    if let Some(var_11) = &input.s3_bucket_name {
+        object.key("S3BucketName").string(var_11.as_str());
     }
-    if let Some(var_7) = &input.s3_key_prefix {
-        object.key("S3KeyPrefix").string(var_7.as_str());
+    if let Some(var_12) = &input.s3_key_prefix {
+        object.key("S3KeyPrefix").string(var_12.as_str());
     }
-    if let Some(var_8) = &input.sns_topic_arn {
-        object.key("SnsTopicArn").string(var_8.as_str());
+    if let Some(var_13) = &input.sns_topic_arn {
+        object.key("SnsTopicArn").string(var_13.as_str());
     }
-    if let Some(var_9) = &input.sns_topic_name {
-        object.key("SnsTopicName").string(var_9.as_str());
+    if let Some(var_14) = &input.sns_topic_name {
+        object.key("SnsTopicName").string(var_14.as_str());
     }
-    if let Some(var_10) = &input.trail_arn {
-        object.key("TrailArn").string(var_10.as_str());
+    if let Some(var_15) = &input.trail_arn {
+        object.key("TrailArn").string(var_15.as_str());
     }
     Ok(())
 }

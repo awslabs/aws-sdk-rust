@@ -78,6 +78,11 @@ where
                         "TableExcerpt" => {
                             builder = builder.set_table_excerpt(crate::protocol_serde::shape_table_excerpt::de_table_excerpt(tokens)?);
                         }
+                        "CollapsedResultDetail" => {
+                            builder = builder.set_collapsed_result_detail(
+                                crate::protocol_serde::shape_collapsed_result_detail::de_collapsed_result_detail(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

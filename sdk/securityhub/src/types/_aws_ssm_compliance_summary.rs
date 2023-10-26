@@ -12,27 +12,27 @@ pub struct AwsSsmComplianceSummary {
     /// </ul>
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>For the patches that are compliant, the number that have a severity of <code>CRITICAL</code>.</p>
-    pub compliant_critical_count: i32,
+    pub compliant_critical_count: ::std::option::Option<i32>,
     /// <p>For the patches that are compliant, the number that have a severity of <code>HIGH</code>.</p>
-    pub compliant_high_count: i32,
+    pub compliant_high_count: ::std::option::Option<i32>,
     /// <p>For the patches that are compliant, the number that have a severity of <code>MEDIUM</code>.</p>
-    pub compliant_medium_count: i32,
+    pub compliant_medium_count: ::std::option::Option<i32>,
     /// <p>The type of execution that was used determine compliance.</p>
     pub execution_type: ::std::option::Option<::std::string::String>,
     /// <p>For the patch items that are noncompliant, the number of items that have a severity of <code>CRITICAL</code>.</p>
-    pub non_compliant_critical_count: i32,
+    pub non_compliant_critical_count: ::std::option::Option<i32>,
     /// <p>For the patches that are compliant, the number that have a severity of <code>INFORMATIONAL</code>.</p>
-    pub compliant_informational_count: i32,
+    pub compliant_informational_count: ::std::option::Option<i32>,
     /// <p>For the patches that are noncompliant, the number that have a severity of <code>INFORMATIONAL</code>.</p>
-    pub non_compliant_informational_count: i32,
+    pub non_compliant_informational_count: ::std::option::Option<i32>,
     /// <p>For the patches that are compliant, the number that have a severity of <code>UNSPECIFIED</code>.</p>
-    pub compliant_unspecified_count: i32,
+    pub compliant_unspecified_count: ::std::option::Option<i32>,
     /// <p>For the patches that are noncompliant, the number that have a severity of <code>LOW</code>.</p>
-    pub non_compliant_low_count: i32,
+    pub non_compliant_low_count: ::std::option::Option<i32>,
     /// <p>For the patches that are noncompliant, the number that have a severity of <code>HIGH</code>.</p>
-    pub non_compliant_high_count: i32,
+    pub non_compliant_high_count: ::std::option::Option<i32>,
     /// <p>For the patches that are compliant, the number that have a severity of <code>LOW</code>.</p>
-    pub compliant_low_count: i32,
+    pub compliant_low_count: ::std::option::Option<i32>,
     /// <p>The type of resource for which the compliance was determined. For <code>AwsSsmPatchCompliance</code>, <code>ComplianceType</code> is <code>Patch</code>. </p>
     pub compliance_type: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the patch baseline. The patch baseline lists the patches that are approved for installation.</p>
@@ -48,9 +48,9 @@ pub struct AwsSsmComplianceSummary {
     /// </ul>
     pub overall_severity: ::std::option::Option<::std::string::String>,
     /// <p>For the patches that are noncompliant, the number that have a severity of <code>MEDIUM</code>.</p>
-    pub non_compliant_medium_count: i32,
+    pub non_compliant_medium_count: ::std::option::Option<i32>,
     /// <p>For the patches that are noncompliant, the number that have a severity of <code>UNSPECIFIED</code>.</p>
-    pub non_compliant_unspecified_count: i32,
+    pub non_compliant_unspecified_count: ::std::option::Option<i32>,
     /// <p>The identifier of the patch group for which compliance was determined. A patch group uses tags to group EC2 instances that should have the same patch compliance.</p>
     pub patch_group: ::std::option::Option<::std::string::String>,
 }
@@ -65,15 +65,15 @@ impl AwsSsmComplianceSummary {
         self.status.as_deref()
     }
     /// <p>For the patches that are compliant, the number that have a severity of <code>CRITICAL</code>.</p>
-    pub fn compliant_critical_count(&self) -> i32 {
+    pub fn compliant_critical_count(&self) -> ::std::option::Option<i32> {
         self.compliant_critical_count
     }
     /// <p>For the patches that are compliant, the number that have a severity of <code>HIGH</code>.</p>
-    pub fn compliant_high_count(&self) -> i32 {
+    pub fn compliant_high_count(&self) -> ::std::option::Option<i32> {
         self.compliant_high_count
     }
     /// <p>For the patches that are compliant, the number that have a severity of <code>MEDIUM</code>.</p>
-    pub fn compliant_medium_count(&self) -> i32 {
+    pub fn compliant_medium_count(&self) -> ::std::option::Option<i32> {
         self.compliant_medium_count
     }
     /// <p>The type of execution that was used determine compliance.</p>
@@ -81,31 +81,31 @@ impl AwsSsmComplianceSummary {
         self.execution_type.as_deref()
     }
     /// <p>For the patch items that are noncompliant, the number of items that have a severity of <code>CRITICAL</code>.</p>
-    pub fn non_compliant_critical_count(&self) -> i32 {
+    pub fn non_compliant_critical_count(&self) -> ::std::option::Option<i32> {
         self.non_compliant_critical_count
     }
     /// <p>For the patches that are compliant, the number that have a severity of <code>INFORMATIONAL</code>.</p>
-    pub fn compliant_informational_count(&self) -> i32 {
+    pub fn compliant_informational_count(&self) -> ::std::option::Option<i32> {
         self.compliant_informational_count
     }
     /// <p>For the patches that are noncompliant, the number that have a severity of <code>INFORMATIONAL</code>.</p>
-    pub fn non_compliant_informational_count(&self) -> i32 {
+    pub fn non_compliant_informational_count(&self) -> ::std::option::Option<i32> {
         self.non_compliant_informational_count
     }
     /// <p>For the patches that are compliant, the number that have a severity of <code>UNSPECIFIED</code>.</p>
-    pub fn compliant_unspecified_count(&self) -> i32 {
+    pub fn compliant_unspecified_count(&self) -> ::std::option::Option<i32> {
         self.compliant_unspecified_count
     }
     /// <p>For the patches that are noncompliant, the number that have a severity of <code>LOW</code>.</p>
-    pub fn non_compliant_low_count(&self) -> i32 {
+    pub fn non_compliant_low_count(&self) -> ::std::option::Option<i32> {
         self.non_compliant_low_count
     }
     /// <p>For the patches that are noncompliant, the number that have a severity of <code>HIGH</code>.</p>
-    pub fn non_compliant_high_count(&self) -> i32 {
+    pub fn non_compliant_high_count(&self) -> ::std::option::Option<i32> {
         self.non_compliant_high_count
     }
     /// <p>For the patches that are compliant, the number that have a severity of <code>LOW</code>.</p>
-    pub fn compliant_low_count(&self) -> i32 {
+    pub fn compliant_low_count(&self) -> ::std::option::Option<i32> {
         self.compliant_low_count
     }
     /// <p>The type of resource for which the compliance was determined. For <code>AwsSsmPatchCompliance</code>, <code>ComplianceType</code> is <code>Patch</code>. </p>
@@ -129,11 +129,11 @@ impl AwsSsmComplianceSummary {
         self.overall_severity.as_deref()
     }
     /// <p>For the patches that are noncompliant, the number that have a severity of <code>MEDIUM</code>.</p>
-    pub fn non_compliant_medium_count(&self) -> i32 {
+    pub fn non_compliant_medium_count(&self) -> ::std::option::Option<i32> {
         self.non_compliant_medium_count
     }
     /// <p>For the patches that are noncompliant, the number that have a severity of <code>UNSPECIFIED</code>.</p>
-    pub fn non_compliant_unspecified_count(&self) -> i32 {
+    pub fn non_compliant_unspecified_count(&self) -> ::std::option::Option<i32> {
         self.non_compliant_unspecified_count
     }
     /// <p>The identifier of the patch group for which compliance was determined. A patch group uses tags to group EC2 instances that should have the same patch compliance.</p>
@@ -467,22 +467,22 @@ impl AwsSsmComplianceSummaryBuilder {
     pub fn build(self) -> crate::types::AwsSsmComplianceSummary {
         crate::types::AwsSsmComplianceSummary {
             status: self.status,
-            compliant_critical_count: self.compliant_critical_count.unwrap_or_default(),
-            compliant_high_count: self.compliant_high_count.unwrap_or_default(),
-            compliant_medium_count: self.compliant_medium_count.unwrap_or_default(),
+            compliant_critical_count: self.compliant_critical_count,
+            compliant_high_count: self.compliant_high_count,
+            compliant_medium_count: self.compliant_medium_count,
             execution_type: self.execution_type,
-            non_compliant_critical_count: self.non_compliant_critical_count.unwrap_or_default(),
-            compliant_informational_count: self.compliant_informational_count.unwrap_or_default(),
-            non_compliant_informational_count: self.non_compliant_informational_count.unwrap_or_default(),
-            compliant_unspecified_count: self.compliant_unspecified_count.unwrap_or_default(),
-            non_compliant_low_count: self.non_compliant_low_count.unwrap_or_default(),
-            non_compliant_high_count: self.non_compliant_high_count.unwrap_or_default(),
-            compliant_low_count: self.compliant_low_count.unwrap_or_default(),
+            non_compliant_critical_count: self.non_compliant_critical_count,
+            compliant_informational_count: self.compliant_informational_count,
+            non_compliant_informational_count: self.non_compliant_informational_count,
+            compliant_unspecified_count: self.compliant_unspecified_count,
+            non_compliant_low_count: self.non_compliant_low_count,
+            non_compliant_high_count: self.non_compliant_high_count,
+            compliant_low_count: self.compliant_low_count,
             compliance_type: self.compliance_type,
             patch_baseline_id: self.patch_baseline_id,
             overall_severity: self.overall_severity,
-            non_compliant_medium_count: self.non_compliant_medium_count.unwrap_or_default(),
-            non_compliant_unspecified_count: self.non_compliant_unspecified_count.unwrap_or_default(),
+            non_compliant_medium_count: self.non_compliant_medium_count,
+            non_compliant_unspecified_count: self.non_compliant_unspecified_count,
             patch_group: self.patch_group,
         }
     }

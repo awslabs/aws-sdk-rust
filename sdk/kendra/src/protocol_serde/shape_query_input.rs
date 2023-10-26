@@ -69,20 +69,38 @@ pub fn ser_query_input(
         crate::protocol_serde::shape_sorting_configuration::ser_sorting_configuration(&mut object_20, var_19)?;
         object_20.finish();
     }
-    if let Some(var_21) = &input.user_context {
-        #[allow(unused_mut)]
-        let mut object_22 = object.key("UserContext").start_object();
-        crate::protocol_serde::shape_user_context::ser_user_context(&mut object_22, var_21)?;
-        object_22.finish();
+    if let Some(var_21) = &input.sorting_configurations {
+        let mut array_22 = object.key("SortingConfigurations").start_array();
+        for item_23 in var_21 {
+            {
+                #[allow(unused_mut)]
+                let mut object_24 = array_22.value().start_object();
+                crate::protocol_serde::shape_sorting_configuration::ser_sorting_configuration(&mut object_24, item_23)?;
+                object_24.finish();
+            }
+        }
+        array_22.finish();
     }
-    if let Some(var_23) = &input.visitor_id {
-        object.key("VisitorId").string(var_23.as_str());
-    }
-    if let Some(var_24) = &input.spell_correction_configuration {
+    if let Some(var_25) = &input.user_context {
         #[allow(unused_mut)]
-        let mut object_25 = object.key("SpellCorrectionConfiguration").start_object();
-        crate::protocol_serde::shape_spell_correction_configuration::ser_spell_correction_configuration(&mut object_25, var_24)?;
-        object_25.finish();
+        let mut object_26 = object.key("UserContext").start_object();
+        crate::protocol_serde::shape_user_context::ser_user_context(&mut object_26, var_25)?;
+        object_26.finish();
+    }
+    if let Some(var_27) = &input.visitor_id {
+        object.key("VisitorId").string(var_27.as_str());
+    }
+    if let Some(var_28) = &input.spell_correction_configuration {
+        #[allow(unused_mut)]
+        let mut object_29 = object.key("SpellCorrectionConfiguration").start_object();
+        crate::protocol_serde::shape_spell_correction_configuration::ser_spell_correction_configuration(&mut object_29, var_28)?;
+        object_29.finish();
+    }
+    if let Some(var_30) = &input.collapse_configuration {
+        #[allow(unused_mut)]
+        let mut object_31 = object.key("CollapseConfiguration").start_object();
+        crate::protocol_serde::shape_collapse_configuration::ser_collapse_configuration(&mut object_31, var_30)?;
+        object_31.finish();
     }
     Ok(())
 }

@@ -26,6 +26,8 @@ impl GetSparqlStreamInputBuilder {
 /// <p>With the Neptune Streams feature, you can generate a complete sequence of change-log entries that record every change made to your graph data as it happens. <code>GetSparqlStream</code> lets you collect these change-log entries for an RDF graph.</p>
 /// <p>The Neptune streams feature needs to be enabled on your Neptune DBcluster. To enable streams, set the <a href="https://docs.aws.amazon.com/neptune/latest/userguide/parameters.html#parameters-db-cluster-parameters-neptune_streams">neptune_streams</a> DB cluster parameter to <code>1</code>.</p>
 /// <p>See <a href="https://docs.aws.amazon.com/neptune/latest/userguide/streams.html">Capturing graph changes in real time using Neptune streams</a>.</p>
+/// <p>When invoking this operation in a Neptune cluster that has IAM authentication enabled, the IAM user or role making the request must have a policy attached that allows the <a href="https://docs.aws.amazon.com/neptune/latest/userguide/iam-dp-actions.html#getstreamrecords">neptune-db:GetStreamRecords</a> IAM action in that cluster.</p>
+/// <p>Note that the <a href="https://docs.aws.amazon.com/neptune/latest/userguide/iam-data-condition-keys.html#iam-neptune-condition-keys">neptune-db:QueryLanguage:Sparql</a> IAM condition key can be used in the policy document to restrict the use of SPARQL queries (see <a href="https://docs.aws.amazon.com/neptune/latest/userguide/iam-data-condition-keys.html">Condition keys available in Neptune IAM data-access policy statements</a>).</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetSparqlStreamFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

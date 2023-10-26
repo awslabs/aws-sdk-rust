@@ -17,6 +17,8 @@ pub use crate::types::_replication_configuration_replicated_disk_staging_disk_ty
 
 pub use crate::types::_replication_configuration_default_large_staging_disk_type::ReplicationConfigurationDefaultLargeStagingDiskType;
 
+pub use crate::types::_launch_into_instance_properties::LaunchIntoInstanceProperties;
+
 pub use crate::types::_licensing::Licensing;
 
 pub use crate::types::_target_instance_type_right_sizing_method::TargetInstanceTypeRightSizingMethod;
@@ -276,6 +278,8 @@ mod _launch_actions_status;
 mod _launch_configuration_template;
 
 mod _launch_disposition;
+
+mod _launch_into_instance_properties;
 
 mod _launch_status;
 

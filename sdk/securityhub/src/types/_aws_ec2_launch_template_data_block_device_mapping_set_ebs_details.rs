@@ -5,33 +5,33 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEc2LaunchTemplateDataBlockDeviceMappingSetEbsDetails {
     /// <p> Indicates whether the EBS volume is deleted on instance termination. </p>
-    pub delete_on_termination: bool,
+    pub delete_on_termination: ::std::option::Option<bool>,
     /// <p> Indicates whether the EBS volume is encrypted. Encrypted volumes can only be attached to instances that support Amazon EBS encryption. If you're creating a volume from a snapshot, you can't specify an encryption value. </p>
-    pub encrypted: bool,
+    pub encrypted: ::std::option::Option<bool>,
     /// <p> The number of I/O operations per second (IOPS). </p>
-    pub iops: i32,
+    pub iops: ::std::option::Option<i32>,
     /// <p> The Amazon Resource Name (ARN) of the symmetric Key Management Service (KMS) customer managed key used for encryption. </p>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p> The ID of the EBS snapshot. </p>
     pub snapshot_id: ::std::option::Option<::std::string::String>,
     /// <p> The throughput to provision for a gp3 volume, with a maximum of 1,000 MiB/s. </p>
-    pub throughput: i32,
+    pub throughput: ::std::option::Option<i32>,
     /// <p> The size of the volume, in GiBs. You must specify either a snapshot ID or a volume size. </p>
-    pub volume_size: i32,
+    pub volume_size: ::std::option::Option<i32>,
     /// <p> The volume type. </p>
     pub volume_type: ::std::option::Option<::std::string::String>,
 }
 impl AwsEc2LaunchTemplateDataBlockDeviceMappingSetEbsDetails {
     /// <p> Indicates whether the EBS volume is deleted on instance termination. </p>
-    pub fn delete_on_termination(&self) -> bool {
+    pub fn delete_on_termination(&self) -> ::std::option::Option<bool> {
         self.delete_on_termination
     }
     /// <p> Indicates whether the EBS volume is encrypted. Encrypted volumes can only be attached to instances that support Amazon EBS encryption. If you're creating a volume from a snapshot, you can't specify an encryption value. </p>
-    pub fn encrypted(&self) -> bool {
+    pub fn encrypted(&self) -> ::std::option::Option<bool> {
         self.encrypted
     }
     /// <p> The number of I/O operations per second (IOPS). </p>
-    pub fn iops(&self) -> i32 {
+    pub fn iops(&self) -> ::std::option::Option<i32> {
         self.iops
     }
     /// <p> The Amazon Resource Name (ARN) of the symmetric Key Management Service (KMS) customer managed key used for encryption. </p>
@@ -43,11 +43,11 @@ impl AwsEc2LaunchTemplateDataBlockDeviceMappingSetEbsDetails {
         self.snapshot_id.as_deref()
     }
     /// <p> The throughput to provision for a gp3 volume, with a maximum of 1,000 MiB/s. </p>
-    pub fn throughput(&self) -> i32 {
+    pub fn throughput(&self) -> ::std::option::Option<i32> {
         self.throughput
     }
     /// <p> The size of the volume, in GiBs. You must specify either a snapshot ID or a volume size. </p>
-    pub fn volume_size(&self) -> i32 {
+    pub fn volume_size(&self) -> ::std::option::Option<i32> {
         self.volume_size
     }
     /// <p> The volume type. </p>
@@ -191,13 +191,13 @@ impl AwsEc2LaunchTemplateDataBlockDeviceMappingSetEbsDetailsBuilder {
     /// Consumes the builder and constructs a [`AwsEc2LaunchTemplateDataBlockDeviceMappingSetEbsDetails`](crate::types::AwsEc2LaunchTemplateDataBlockDeviceMappingSetEbsDetails).
     pub fn build(self) -> crate::types::AwsEc2LaunchTemplateDataBlockDeviceMappingSetEbsDetails {
         crate::types::AwsEc2LaunchTemplateDataBlockDeviceMappingSetEbsDetails {
-            delete_on_termination: self.delete_on_termination.unwrap_or_default(),
-            encrypted: self.encrypted.unwrap_or_default(),
-            iops: self.iops.unwrap_or_default(),
+            delete_on_termination: self.delete_on_termination,
+            encrypted: self.encrypted,
+            iops: self.iops,
             kms_key_id: self.kms_key_id,
             snapshot_id: self.snapshot_id,
-            throughput: self.throughput.unwrap_or_default(),
-            volume_size: self.volume_size.unwrap_or_default(),
+            throughput: self.throughput,
+            volume_size: self.volume_size,
             volume_type: self.volume_type,
         }
     }

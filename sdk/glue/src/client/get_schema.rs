@@ -12,9 +12,9 @@ impl super::Client {
     ///   - [`description(Option<String>)`](crate::operation::get_schema::GetSchemaOutput::description): <p>A description of schema if specified when created</p>
     ///   - [`data_format(Option<DataFormat>)`](crate::operation::get_schema::GetSchemaOutput::data_format): <p>The data format of the schema definition. Currently <code>AVRO</code>, <code>JSON</code> and <code>PROTOBUF</code> are supported.</p>
     ///   - [`compatibility(Option<Compatibility>)`](crate::operation::get_schema::GetSchemaOutput::compatibility): <p>The compatibility mode of the schema.</p>
-    ///   - [`schema_checkpoint(i64)`](crate::operation::get_schema::GetSchemaOutput::schema_checkpoint): <p>The version number of the checkpoint (the last time the compatibility mode was changed).</p>
-    ///   - [`latest_schema_version(i64)`](crate::operation::get_schema::GetSchemaOutput::latest_schema_version): <p>The latest version of the schema associated with the returned schema definition.</p>
-    ///   - [`next_schema_version(i64)`](crate::operation::get_schema::GetSchemaOutput::next_schema_version): <p>The next version of the schema associated with the returned schema definition.</p>
+    ///   - [`schema_checkpoint(Option<i64>)`](crate::operation::get_schema::GetSchemaOutput::schema_checkpoint): <p>The version number of the checkpoint (the last time the compatibility mode was changed).</p>
+    ///   - [`latest_schema_version(Option<i64>)`](crate::operation::get_schema::GetSchemaOutput::latest_schema_version): <p>The latest version of the schema associated with the returned schema definition.</p>
+    ///   - [`next_schema_version(Option<i64>)`](crate::operation::get_schema::GetSchemaOutput::next_schema_version): <p>The next version of the schema associated with the returned schema definition.</p>
     ///   - [`schema_status(Option<SchemaStatus>)`](crate::operation::get_schema::GetSchemaOutput::schema_status): <p>The status of the schema.</p>
     ///   - [`created_time(Option<String>)`](crate::operation::get_schema::GetSchemaOutput::created_time): <p>The date and time the schema was created.</p>
     ///   - [`updated_time(Option<String>)`](crate::operation::get_schema::GetSchemaOutput::updated_time): <p>The date and time the schema was updated.</p>

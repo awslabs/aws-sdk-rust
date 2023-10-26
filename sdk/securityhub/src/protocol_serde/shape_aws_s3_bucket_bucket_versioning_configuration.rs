@@ -3,11 +3,11 @@ pub fn ser_aws_s3_bucket_bucket_versioning_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsS3BucketBucketVersioningConfiguration,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if input.is_mfa_delete_enabled {
-        object.key("IsMfaDeleteEnabled").boolean(input.is_mfa_delete_enabled);
+    if let Some(var_1) = &input.is_mfa_delete_enabled {
+        object.key("IsMfaDeleteEnabled").boolean(*var_1);
     }
-    if let Some(var_1) = &input.status {
-        object.key("Status").string(var_1.as_str());
+    if let Some(var_2) = &input.status {
+        object.key("Status").string(var_2.as_str());
     }
     Ok(())
 }

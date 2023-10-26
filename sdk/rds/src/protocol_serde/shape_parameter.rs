@@ -41,29 +41,29 @@ pub fn ser_parameter(
     }
     #[allow(unused_mut)]
     let mut scope_15 = writer.prefix("IsModifiable");
-    if input.is_modifiable {
-        scope_15.boolean(input.is_modifiable);
+    if let Some(var_16) = &input.is_modifiable {
+        scope_15.boolean(*var_16);
     }
     #[allow(unused_mut)]
-    let mut scope_16 = writer.prefix("MinimumEngineVersion");
-    if let Some(var_17) = &input.minimum_engine_version {
-        scope_16.string(var_17);
+    let mut scope_17 = writer.prefix("MinimumEngineVersion");
+    if let Some(var_18) = &input.minimum_engine_version {
+        scope_17.string(var_18);
     }
     #[allow(unused_mut)]
-    let mut scope_18 = writer.prefix("ApplyMethod");
-    if let Some(var_19) = &input.apply_method {
-        scope_18.string(var_19.as_str());
+    let mut scope_19 = writer.prefix("ApplyMethod");
+    if let Some(var_20) = &input.apply_method {
+        scope_19.string(var_20.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_20 = writer.prefix("SupportedEngineModes");
-    if let Some(var_21) = &input.supported_engine_modes {
-        let mut list_23 = scope_20.start_list(false, None);
-        for item_22 in var_21 {
+    let mut scope_21 = writer.prefix("SupportedEngineModes");
+    if let Some(var_22) = &input.supported_engine_modes {
+        let mut list_24 = scope_21.start_list(false, None);
+        for item_23 in var_22 {
             #[allow(unused_mut)]
-            let mut entry_24 = list_23.entry();
-            entry_24.string(item_22);
+            let mut entry_25 = list_24.entry();
+            entry_25.string(item_23);
         }
-        list_23.finish();
+        list_24.finish();
     }
     Ok(())
 }
@@ -76,19 +76,6 @@ pub fn de_parameter(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("ParameterName") /* ParameterName com.amazonaws.rds#Parameter$ParameterName */ =>  {
-                let var_25 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_parameter_name(var_25);
-            }
-            ,
-            s if s.matches("ParameterValue") /* ParameterValue com.amazonaws.rds#Parameter$ParameterValue */ =>  {
                 let var_26 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -98,10 +85,10 @@ pub fn de_parameter(
                         ?
                     )
                 ;
-                builder = builder.set_parameter_value(var_26);
+                builder = builder.set_parameter_name(var_26);
             }
             ,
-            s if s.matches("Description") /* Description com.amazonaws.rds#Parameter$Description */ =>  {
+            s if s.matches("ParameterValue") /* ParameterValue com.amazonaws.rds#Parameter$ParameterValue */ =>  {
                 let var_27 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -111,10 +98,10 @@ pub fn de_parameter(
                         ?
                     )
                 ;
-                builder = builder.set_description(var_27);
+                builder = builder.set_parameter_value(var_27);
             }
             ,
-            s if s.matches("Source") /* Source com.amazonaws.rds#Parameter$Source */ =>  {
+            s if s.matches("Description") /* Description com.amazonaws.rds#Parameter$Description */ =>  {
                 let var_28 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -124,10 +111,10 @@ pub fn de_parameter(
                         ?
                     )
                 ;
-                builder = builder.set_source(var_28);
+                builder = builder.set_description(var_28);
             }
             ,
-            s if s.matches("ApplyType") /* ApplyType com.amazonaws.rds#Parameter$ApplyType */ =>  {
+            s if s.matches("Source") /* Source com.amazonaws.rds#Parameter$Source */ =>  {
                 let var_29 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -137,10 +124,10 @@ pub fn de_parameter(
                         ?
                     )
                 ;
-                builder = builder.set_apply_type(var_29);
+                builder = builder.set_source(var_29);
             }
             ,
-            s if s.matches("DataType") /* DataType com.amazonaws.rds#Parameter$DataType */ =>  {
+            s if s.matches("ApplyType") /* ApplyType com.amazonaws.rds#Parameter$ApplyType */ =>  {
                 let var_30 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -150,10 +137,10 @@ pub fn de_parameter(
                         ?
                     )
                 ;
-                builder = builder.set_data_type(var_30);
+                builder = builder.set_apply_type(var_30);
             }
             ,
-            s if s.matches("AllowedValues") /* AllowedValues com.amazonaws.rds#Parameter$AllowedValues */ =>  {
+            s if s.matches("DataType") /* DataType com.amazonaws.rds#Parameter$DataType */ =>  {
                 let var_31 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -163,11 +150,24 @@ pub fn de_parameter(
                         ?
                     )
                 ;
-                builder = builder.set_allowed_values(var_31);
+                builder = builder.set_data_type(var_31);
+            }
+            ,
+            s if s.matches("AllowedValues") /* AllowedValues com.amazonaws.rds#Parameter$AllowedValues */ =>  {
+                let var_32 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_allowed_values(var_32);
             }
             ,
             s if s.matches("IsModifiable") /* IsModifiable com.amazonaws.rds#Parameter$IsModifiable */ =>  {
-                let var_32 =
+                let var_33 =
                     Some(
                          {
                             <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -178,11 +178,11 @@ pub fn de_parameter(
                         ?
                     )
                 ;
-                builder = builder.set_is_modifiable(var_32);
+                builder = builder.set_is_modifiable(var_33);
             }
             ,
             s if s.matches("MinimumEngineVersion") /* MinimumEngineVersion com.amazonaws.rds#Parameter$MinimumEngineVersion */ =>  {
-                let var_33 =
+                let var_34 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -191,11 +191,11 @@ pub fn de_parameter(
                         ?
                     )
                 ;
-                builder = builder.set_minimum_engine_version(var_33);
+                builder = builder.set_minimum_engine_version(var_34);
             }
             ,
             s if s.matches("ApplyMethod") /* ApplyMethod com.amazonaws.rds#Parameter$ApplyMethod */ =>  {
-                let var_34 =
+                let var_35 =
                     Some(
                         Result::<crate::types::ApplyMethod, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::ApplyMethod::from(
@@ -205,17 +205,17 @@ pub fn de_parameter(
                         ?
                     )
                 ;
-                builder = builder.set_apply_method(var_34);
+                builder = builder.set_apply_method(var_35);
             }
             ,
             s if s.matches("SupportedEngineModes") /* SupportedEngineModes com.amazonaws.rds#Parameter$SupportedEngineModes */ =>  {
-                let var_35 =
+                let var_36 =
                     Some(
                         crate::protocol_serde::shape_engine_mode_list::de_engine_mode_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_supported_engine_modes(var_35);
+                builder = builder.set_supported_engine_modes(var_36);
             }
             ,
             _ => {}

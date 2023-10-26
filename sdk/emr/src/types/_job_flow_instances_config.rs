@@ -22,9 +22,9 @@ pub struct JobFlowInstancesConfig {
     /// <p>The Availability Zone in which the cluster runs.</p>
     pub placement: ::std::option::Option<crate::types::PlacementType>,
     /// <p>Specifies whether the cluster should remain available after completing all steps. Defaults to <code>true</code>. For more information about configuring cluster termination, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-termination.html">Control Cluster Termination</a> in the <i>EMR Management Guide</i>.</p>
-    pub keep_job_flow_alive_when_no_steps: bool,
+    pub keep_job_flow_alive_when_no_steps: ::std::option::Option<bool>,
     /// <p>Specifies whether to lock the cluster to prevent the Amazon EC2 instances from being terminated by API call, user intervention, or in the event of a job-flow error.</p>
-    pub termination_protected: bool,
+    pub termination_protected: ::std::option::Option<bool>,
     /// <p>Applies only to Amazon EMR release versions earlier than 4.0. The Hadoop version for the cluster. Valid inputs are "0.18" (no longer maintained), "0.20" (no longer maintained), "0.20.205" (no longer maintained), "1.0.3", "2.2.0", or "2.4.0". If you do not set this value, the default of 0.18 is used, unless the <code>AmiVersion</code> parameter is set in the RunJobFlow call, in which case the default version of Hadoop for that AMI version is used.</p>
     pub hadoop_version: ::std::option::Option<::std::string::String>,
     /// <p>Applies to clusters that use the uniform instance group configuration. To launch the cluster in Amazon Virtual Private Cloud (Amazon VPC), set this parameter to the identifier of the Amazon VPC subnet where you want the cluster to launch. If you do not specify this value and your account supports EC2-Classic, the cluster launches in EC2-Classic.</p>
@@ -77,11 +77,11 @@ impl JobFlowInstancesConfig {
         self.placement.as_ref()
     }
     /// <p>Specifies whether the cluster should remain available after completing all steps. Defaults to <code>true</code>. For more information about configuring cluster termination, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-termination.html">Control Cluster Termination</a> in the <i>EMR Management Guide</i>.</p>
-    pub fn keep_job_flow_alive_when_no_steps(&self) -> bool {
+    pub fn keep_job_flow_alive_when_no_steps(&self) -> ::std::option::Option<bool> {
         self.keep_job_flow_alive_when_no_steps
     }
     /// <p>Specifies whether to lock the cluster to prevent the Amazon EC2 instances from being terminated by API call, user intervention, or in the event of a job-flow error.</p>
-    pub fn termination_protected(&self) -> bool {
+    pub fn termination_protected(&self) -> ::std::option::Option<bool> {
         self.termination_protected
     }
     /// <p>Applies only to Amazon EMR release versions earlier than 4.0. The Hadoop version for the cluster. Valid inputs are "0.18" (no longer maintained), "0.20" (no longer maintained), "0.20.205" (no longer maintained), "1.0.3", "2.2.0", or "2.4.0". If you do not set this value, the default of 0.18 is used, unless the <code>AmiVersion</code> parameter is set in the RunJobFlow call, in which case the default version of Hadoop for that AMI version is used.</p>
@@ -442,8 +442,8 @@ impl JobFlowInstancesConfigBuilder {
             instance_fleets: self.instance_fleets,
             ec2_key_name: self.ec2_key_name,
             placement: self.placement,
-            keep_job_flow_alive_when_no_steps: self.keep_job_flow_alive_when_no_steps.unwrap_or_default(),
-            termination_protected: self.termination_protected.unwrap_or_default(),
+            keep_job_flow_alive_when_no_steps: self.keep_job_flow_alive_when_no_steps,
+            termination_protected: self.termination_protected,
             hadoop_version: self.hadoop_version,
             ec2_subnet_id: self.ec2_subnet_id,
             ec2_subnet_ids: self.ec2_subnet_ids,

@@ -25,11 +25,17 @@ pub fn parse_http_error_metadata(
 
 pub(crate) mod shape_batch_get_collection;
 
+pub(crate) mod shape_batch_get_effective_lifecycle_policy;
+
+pub(crate) mod shape_batch_get_lifecycle_policy;
+
 pub(crate) mod shape_batch_get_vpc_endpoint;
 
 pub(crate) mod shape_create_access_policy;
 
 pub(crate) mod shape_create_collection;
+
+pub(crate) mod shape_create_lifecycle_policy;
 
 pub(crate) mod shape_create_security_config;
 
@@ -40,6 +46,8 @@ pub(crate) mod shape_create_vpc_endpoint;
 pub(crate) mod shape_delete_access_policy;
 
 pub(crate) mod shape_delete_collection;
+
+pub(crate) mod shape_delete_lifecycle_policy;
 
 pub(crate) mod shape_delete_security_config;
 
@@ -61,6 +69,8 @@ pub(crate) mod shape_list_access_policies;
 
 pub(crate) mod shape_list_collections;
 
+pub(crate) mod shape_list_lifecycle_policies;
+
 pub(crate) mod shape_list_security_configs;
 
 pub(crate) mod shape_list_security_policies;
@@ -79,6 +89,8 @@ pub(crate) mod shape_update_account_settings;
 
 pub(crate) mod shape_update_collection;
 
+pub(crate) mod shape_update_lifecycle_policy;
+
 pub(crate) mod shape_update_security_config;
 
 pub(crate) mod shape_update_security_policy;
@@ -95,6 +107,10 @@ pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
 
 pub(crate) mod shape_batch_get_collection_input;
 
+pub(crate) mod shape_batch_get_effective_lifecycle_policy_input;
+
+pub(crate) mod shape_batch_get_lifecycle_policy_input;
+
 pub(crate) mod shape_batch_get_vpc_endpoint_input;
 
 pub(crate) mod shape_conflict_exception;
@@ -102,6 +118,8 @@ pub(crate) mod shape_conflict_exception;
 pub(crate) mod shape_create_access_policy_input;
 
 pub(crate) mod shape_create_collection_input;
+
+pub(crate) mod shape_create_lifecycle_policy_input;
 
 pub(crate) mod shape_create_security_config_input;
 
@@ -112,6 +130,8 @@ pub(crate) mod shape_create_vpc_endpoint_input;
 pub(crate) mod shape_delete_access_policy_input;
 
 pub(crate) mod shape_delete_collection_input;
+
+pub(crate) mod shape_delete_lifecycle_policy_input;
 
 pub(crate) mod shape_delete_security_config_input;
 
@@ -130,6 +150,8 @@ pub(crate) mod shape_internal_server_exception;
 pub(crate) mod shape_list_access_policies_input;
 
 pub(crate) mod shape_list_collections_input;
+
+pub(crate) mod shape_list_lifecycle_policies_input;
 
 pub(crate) mod shape_list_security_configs_input;
 
@@ -154,6 +176,8 @@ pub(crate) mod shape_update_access_policy_input;
 pub(crate) mod shape_update_account_settings_input;
 
 pub(crate) mod shape_update_collection_input;
+
+pub(crate) mod shape_update_lifecycle_policy_input;
 
 pub(crate) mod shape_update_security_config_input;
 
@@ -188,6 +212,24 @@ pub(crate) mod shape_create_vpc_endpoint_detail;
 pub(crate) mod shape_delete_collection_detail;
 
 pub(crate) mod shape_delete_vpc_endpoint_detail;
+
+pub(crate) mod shape_effective_lifecycle_policy_details;
+
+pub(crate) mod shape_effective_lifecycle_policy_error_details;
+
+pub(crate) mod shape_lifecycle_policy_detail;
+
+pub(crate) mod shape_lifecycle_policy_details;
+
+pub(crate) mod shape_lifecycle_policy_error_details;
+
+pub(crate) mod shape_lifecycle_policy_identifier;
+
+pub(crate) mod shape_lifecycle_policy_resource_identifier;
+
+pub(crate) mod shape_lifecycle_policy_stats;
+
+pub(crate) mod shape_lifecycle_policy_summaries;
 
 pub(crate) mod shape_saml_config_options;
 
@@ -226,6 +268,14 @@ pub(crate) mod shape_collection_detail;
 pub(crate) mod shape_collection_error_detail;
 
 pub(crate) mod shape_collection_summary;
+
+pub(crate) mod shape_effective_lifecycle_policy_detail;
+
+pub(crate) mod shape_effective_lifecycle_policy_error_detail;
+
+pub(crate) mod shape_lifecycle_policy_error_detail;
+
+pub(crate) mod shape_lifecycle_policy_summary;
 
 pub(crate) mod shape_security_config_summary;
 

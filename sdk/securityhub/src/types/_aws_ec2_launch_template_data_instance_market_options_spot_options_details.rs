@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetails {
     /// <p> Deprecated. </p>
-    pub block_duration_minutes: i32,
+    pub block_duration_minutes: ::std::option::Option<i32>,
     /// <p> The behavior when a Spot Instance is interrupted. </p>
     pub instance_interruption_behavior: ::std::option::Option<::std::string::String>,
     /// <p> The maximum hourly price you're willing to pay for the Spot Instances. </p>
@@ -17,7 +17,7 @@ pub struct AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetails {
 }
 impl AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetails {
     /// <p> Deprecated. </p>
-    pub fn block_duration_minutes(&self) -> i32 {
+    pub fn block_duration_minutes(&self) -> ::std::option::Option<i32> {
         self.block_duration_minutes
     }
     /// <p> The behavior when a Spot Instance is interrupted. </p>
@@ -128,7 +128,7 @@ impl AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetailsBuilder {
     /// Consumes the builder and constructs a [`AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetails`](crate::types::AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetails).
     pub fn build(self) -> crate::types::AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetails {
         crate::types::AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetails {
-            block_duration_minutes: self.block_duration_minutes.unwrap_or_default(),
+            block_duration_minutes: self.block_duration_minutes,
             instance_interruption_behavior: self.instance_interruption_behavior,
             max_price: self.max_price,
             spot_instance_type: self.spot_instance_type,

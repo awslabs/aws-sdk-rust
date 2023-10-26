@@ -13,7 +13,7 @@ pub struct KubernetesWorkloadDetails {
     /// <p>Kubernetes namespace that the workload is part of.</p>
     pub namespace: ::std::option::Option<::std::string::String>,
     /// <p>Whether the hostNetwork flag is enabled for the pods included in the workload.</p>
-    pub host_network: bool,
+    pub host_network: ::std::option::Option<bool>,
     /// <p>Containers running as part of the Kubernetes workload.</p>
     pub containers: ::std::option::Option<::std::vec::Vec<crate::types::Container>>,
     /// <p>Volumes used by the Kubernetes workload.</p>
@@ -37,7 +37,7 @@ impl KubernetesWorkloadDetails {
         self.namespace.as_deref()
     }
     /// <p>Whether the hostNetwork flag is enabled for the pods included in the workload.</p>
-    pub fn host_network(&self) -> bool {
+    pub fn host_network(&self) -> ::std::option::Option<bool> {
         self.host_network
     }
     /// <p>Containers running as part of the Kubernetes workload.</p>
@@ -186,7 +186,7 @@ impl KubernetesWorkloadDetailsBuilder {
             r#type: self.r#type,
             uid: self.uid,
             namespace: self.namespace,
-            host_network: self.host_network.unwrap_or_default(),
+            host_network: self.host_network,
             containers: self.containers,
             volumes: self.volumes,
         }

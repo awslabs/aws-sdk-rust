@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`name(Option<String>)`](crate::operation::get_filter::GetFilterOutput::name): <p>The name of the filter.</p>
     ///   - [`description(Option<String>)`](crate::operation::get_filter::GetFilterOutput::description): <p>The description of the filter.</p>
     ///   - [`action(Option<FilterAction>)`](crate::operation::get_filter::GetFilterOutput::action): <p>Specifies the action that is to be applied to the findings that match the filter.</p>
-    ///   - [`rank(i32)`](crate::operation::get_filter::GetFilterOutput::rank): <p>Specifies the position of the filter in the list of current filters. Also specifies the order in which this filter is applied to the findings.</p>
+    ///   - [`rank(Option<i32>)`](crate::operation::get_filter::GetFilterOutput::rank): <p>Specifies the position of the filter in the list of current filters. Also specifies the order in which this filter is applied to the findings.</p>
     ///   - [`finding_criteria(Option<FindingCriteria>)`](crate::operation::get_filter::GetFilterOutput::finding_criteria): <p>Represents the criteria to be used in the filter for querying findings.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::get_filter::GetFilterOutput::tags): <p>The tags of the filter resource.</p>
     /// - On failure, responds with [`SdkError<GetFilterError>`](crate::operation::get_filter::GetFilterError)

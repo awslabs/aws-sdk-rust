@@ -3,23 +3,23 @@ pub fn ser_aws_lambda_layer_version_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsLambdaLayerVersionDetails,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if input.version != 0 {
+    if let Some(var_1) = &input.version {
         object.key("Version").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.version).into()),
+            ::aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if let Some(var_1) = &input.compatible_runtimes {
-        let mut array_2 = object.key("CompatibleRuntimes").start_array();
-        for item_3 in var_1 {
+    if let Some(var_2) = &input.compatible_runtimes {
+        let mut array_3 = object.key("CompatibleRuntimes").start_array();
+        for item_4 in var_2 {
             {
-                array_2.value().string(item_3.as_str());
+                array_3.value().string(item_4.as_str());
             }
         }
-        array_2.finish();
+        array_3.finish();
     }
-    if let Some(var_4) = &input.created_date {
-        object.key("CreatedDate").string(var_4.as_str());
+    if let Some(var_5) = &input.created_date {
+        object.key("CreatedDate").string(var_5.as_str());
     }
     Ok(())
 }

@@ -6,7 +6,7 @@
 pub struct MilestoneSummary {
     /// <p>The milestone number.</p>
     /// <p>A workload can have a maximum of 100 milestones.</p>
-    pub milestone_number: i32,
+    pub milestone_number: ::std::option::Option<i32>,
     /// <p>The name of the milestone in a workload.</p>
     /// <p>Milestone names must be unique within a workload.</p>
     pub milestone_name: ::std::option::Option<::std::string::String>,
@@ -18,7 +18,7 @@ pub struct MilestoneSummary {
 impl MilestoneSummary {
     /// <p>The milestone number.</p>
     /// <p>A workload can have a maximum of 100 milestones.</p>
-    pub fn milestone_number(&self) -> i32 {
+    pub fn milestone_number(&self) -> ::std::option::Option<i32> {
         self.milestone_number
     }
     /// <p>The name of the milestone in a workload.</p>
@@ -117,7 +117,7 @@ impl MilestoneSummaryBuilder {
     /// Consumes the builder and constructs a [`MilestoneSummary`](crate::types::MilestoneSummary).
     pub fn build(self) -> crate::types::MilestoneSummary {
         crate::types::MilestoneSummary {
-            milestone_number: self.milestone_number.unwrap_or_default(),
+            milestone_number: self.milestone_number,
             milestone_name: self.milestone_name,
             recorded_at: self.recorded_at,
             workload_summary: self.workload_summary,

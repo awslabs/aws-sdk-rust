@@ -2,7 +2,7 @@
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ModifyClusterInput {
     /// <p>The unique identifier of the cluster to be modified.</p>
     /// <p>Example: <code>examplecluster</code> </p>
@@ -30,7 +30,8 @@ pub struct ModifyClusterInput {
     pub cluster_security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of virtual private cloud (VPC) security groups to be associated with the cluster. This change is asynchronously applied as soon as possible.</p>
     pub vpc_security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>The new password for the cluster admin user. This change is asynchronously applied as soon as possible. Between the time of the request and the completion of the request, the <code>MasterUserPassword</code> element exists in the <code>PendingModifiedValues</code> element of the operation response. </p> <note>
+    /// <p>The new password for the cluster admin user. This change is asynchronously applied as soon as possible. Between the time of the request and the completion of the request, the <code>MasterUserPassword</code> element exists in the <code>PendingModifiedValues</code> element of the operation response. </p>
+    /// <p>You can't use <code>MasterUserPassword</code> if <code>ManageMasterPassword</code> is <code>true</code>.</p> <note>
     /// <p>Operations never return the password, so this operation provides a way to regain access to the admin user account for a cluster if the password is lost.</p>
     /// </note>
     /// <p>Default: Uses existing setting.</p>
@@ -108,6 +109,10 @@ pub struct ModifyClusterInput {
     pub availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>The option to change the port of an Amazon Redshift cluster.</p>
     pub port: ::std::option::Option<i32>,
+    /// <p>If <code>true</code>, Amazon Redshift uses Secrets Manager to manage this cluster's admin credentials. You can't use <code>MasterUserPassword</code> if <code>ManageMasterPassword</code> is true. If <code>ManageMasterPassword</code> is false or not set, Amazon Redshift uses <code>MasterUserPassword</code> for the admin user account's password. </p>
+    pub manage_master_password: ::std::option::Option<bool>,
+    /// <p>The ID of the Key Management Service (KMS) key used to encrypt and store the cluster's admin credentials secret. You can only use this parameter if <code>ManageMasterPassword</code> is true.</p>
+    pub master_password_secret_kms_key_id: ::std::option::Option<::std::string::String>,
 }
 impl ModifyClusterInput {
     /// <p>The unique identifier of the cluster to be modified.</p>
@@ -148,7 +153,8 @@ impl ModifyClusterInput {
     pub fn vpc_security_group_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.vpc_security_group_ids.as_deref()
     }
-    /// <p>The new password for the cluster admin user. This change is asynchronously applied as soon as possible. Between the time of the request and the completion of the request, the <code>MasterUserPassword</code> element exists in the <code>PendingModifiedValues</code> element of the operation response. </p> <note>
+    /// <p>The new password for the cluster admin user. This change is asynchronously applied as soon as possible. Between the time of the request and the completion of the request, the <code>MasterUserPassword</code> element exists in the <code>PendingModifiedValues</code> element of the operation response. </p>
+    /// <p>You can't use <code>MasterUserPassword</code> if <code>ManageMasterPassword</code> is <code>true</code>.</p> <note>
     /// <p>Operations never return the password, so this operation provides a way to regain access to the admin user account for a cluster if the password is lost.</p>
     /// </note>
     /// <p>Default: Uses existing setting.</p>
@@ -264,6 +270,47 @@ impl ModifyClusterInput {
     pub fn port(&self) -> ::std::option::Option<i32> {
         self.port
     }
+    /// <p>If <code>true</code>, Amazon Redshift uses Secrets Manager to manage this cluster's admin credentials. You can't use <code>MasterUserPassword</code> if <code>ManageMasterPassword</code> is true. If <code>ManageMasterPassword</code> is false or not set, Amazon Redshift uses <code>MasterUserPassword</code> for the admin user account's password. </p>
+    pub fn manage_master_password(&self) -> ::std::option::Option<bool> {
+        self.manage_master_password
+    }
+    /// <p>The ID of the Key Management Service (KMS) key used to encrypt and store the cluster's admin credentials secret. You can only use this parameter if <code>ManageMasterPassword</code> is true.</p>
+    pub fn master_password_secret_kms_key_id(&self) -> ::std::option::Option<&str> {
+        self.master_password_secret_kms_key_id.as_deref()
+    }
+}
+impl ::std::fmt::Debug for ModifyClusterInput {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("ModifyClusterInput");
+        formatter.field("cluster_identifier", &self.cluster_identifier);
+        formatter.field("cluster_type", &self.cluster_type);
+        formatter.field("node_type", &self.node_type);
+        formatter.field("number_of_nodes", &self.number_of_nodes);
+        formatter.field("cluster_security_groups", &self.cluster_security_groups);
+        formatter.field("vpc_security_group_ids", &self.vpc_security_group_ids);
+        formatter.field("master_user_password", &"*** Sensitive Data Redacted ***");
+        formatter.field("cluster_parameter_group_name", &self.cluster_parameter_group_name);
+        formatter.field("automated_snapshot_retention_period", &self.automated_snapshot_retention_period);
+        formatter.field("manual_snapshot_retention_period", &self.manual_snapshot_retention_period);
+        formatter.field("preferred_maintenance_window", &self.preferred_maintenance_window);
+        formatter.field("cluster_version", &self.cluster_version);
+        formatter.field("allow_version_upgrade", &self.allow_version_upgrade);
+        formatter.field("hsm_client_certificate_identifier", &self.hsm_client_certificate_identifier);
+        formatter.field("hsm_configuration_identifier", &self.hsm_configuration_identifier);
+        formatter.field("new_cluster_identifier", &self.new_cluster_identifier);
+        formatter.field("publicly_accessible", &self.publicly_accessible);
+        formatter.field("elastic_ip", &self.elastic_ip);
+        formatter.field("enhanced_vpc_routing", &self.enhanced_vpc_routing);
+        formatter.field("maintenance_track_name", &self.maintenance_track_name);
+        formatter.field("encrypted", &self.encrypted);
+        formatter.field("kms_key_id", &self.kms_key_id);
+        formatter.field("availability_zone_relocation", &self.availability_zone_relocation);
+        formatter.field("availability_zone", &self.availability_zone);
+        formatter.field("port", &self.port);
+        formatter.field("manage_master_password", &self.manage_master_password);
+        formatter.field("master_password_secret_kms_key_id", &self.master_password_secret_kms_key_id);
+        formatter.finish()
+    }
 }
 impl ModifyClusterInput {
     /// Creates a new builder-style object to manufacture [`ModifyClusterInput`](crate::operation::modify_cluster::ModifyClusterInput).
@@ -274,7 +321,7 @@ impl ModifyClusterInput {
 
 /// A builder for [`ModifyClusterInput`](crate::operation::modify_cluster::ModifyClusterInput).
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct ModifyClusterInputBuilder {
     pub(crate) cluster_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) cluster_type: ::std::option::Option<::std::string::String>,
@@ -301,6 +348,8 @@ pub struct ModifyClusterInputBuilder {
     pub(crate) availability_zone_relocation: ::std::option::Option<bool>,
     pub(crate) availability_zone: ::std::option::Option<::std::string::String>,
     pub(crate) port: ::std::option::Option<i32>,
+    pub(crate) manage_master_password: ::std::option::Option<bool>,
+    pub(crate) master_password_secret_kms_key_id: ::std::option::Option<::std::string::String>,
 }
 impl ModifyClusterInputBuilder {
     /// <p>The unique identifier of the cluster to be modified.</p>
@@ -441,7 +490,8 @@ impl ModifyClusterInputBuilder {
     pub fn get_vpc_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.vpc_security_group_ids
     }
-    /// <p>The new password for the cluster admin user. This change is asynchronously applied as soon as possible. Between the time of the request and the completion of the request, the <code>MasterUserPassword</code> element exists in the <code>PendingModifiedValues</code> element of the operation response. </p> <note>
+    /// <p>The new password for the cluster admin user. This change is asynchronously applied as soon as possible. Between the time of the request and the completion of the request, the <code>MasterUserPassword</code> element exists in the <code>PendingModifiedValues</code> element of the operation response. </p>
+    /// <p>You can't use <code>MasterUserPassword</code> if <code>ManageMasterPassword</code> is <code>true</code>.</p> <note>
     /// <p>Operations never return the password, so this operation provides a way to regain access to the admin user account for a cluster if the password is lost.</p>
     /// </note>
     /// <p>Default: Uses existing setting.</p>
@@ -457,7 +507,8 @@ impl ModifyClusterInputBuilder {
         self.master_user_password = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The new password for the cluster admin user. This change is asynchronously applied as soon as possible. Between the time of the request and the completion of the request, the <code>MasterUserPassword</code> element exists in the <code>PendingModifiedValues</code> element of the operation response. </p> <note>
+    /// <p>The new password for the cluster admin user. This change is asynchronously applied as soon as possible. Between the time of the request and the completion of the request, the <code>MasterUserPassword</code> element exists in the <code>PendingModifiedValues</code> element of the operation response. </p>
+    /// <p>You can't use <code>MasterUserPassword</code> if <code>ManageMasterPassword</code> is <code>true</code>.</p> <note>
     /// <p>Operations never return the password, so this operation provides a way to regain access to the admin user account for a cluster if the password is lost.</p>
     /// </note>
     /// <p>Default: Uses existing setting.</p>
@@ -473,7 +524,8 @@ impl ModifyClusterInputBuilder {
         self.master_user_password = input;
         self
     }
-    /// <p>The new password for the cluster admin user. This change is asynchronously applied as soon as possible. Between the time of the request and the completion of the request, the <code>MasterUserPassword</code> element exists in the <code>PendingModifiedValues</code> element of the operation response. </p> <note>
+    /// <p>The new password for the cluster admin user. This change is asynchronously applied as soon as possible. Between the time of the request and the completion of the request, the <code>MasterUserPassword</code> element exists in the <code>PendingModifiedValues</code> element of the operation response. </p>
+    /// <p>You can't use <code>MasterUserPassword</code> if <code>ManageMasterPassword</code> is <code>true</code>.</p> <note>
     /// <p>Operations never return the password, so this operation provides a way to regain access to the admin user account for a cluster if the password is lost.</p>
     /// </note>
     /// <p>Default: Uses existing setting.</p>
@@ -827,6 +879,34 @@ impl ModifyClusterInputBuilder {
     pub fn get_port(&self) -> &::std::option::Option<i32> {
         &self.port
     }
+    /// <p>If <code>true</code>, Amazon Redshift uses Secrets Manager to manage this cluster's admin credentials. You can't use <code>MasterUserPassword</code> if <code>ManageMasterPassword</code> is true. If <code>ManageMasterPassword</code> is false or not set, Amazon Redshift uses <code>MasterUserPassword</code> for the admin user account's password. </p>
+    pub fn manage_master_password(mut self, input: bool) -> Self {
+        self.manage_master_password = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>If <code>true</code>, Amazon Redshift uses Secrets Manager to manage this cluster's admin credentials. You can't use <code>MasterUserPassword</code> if <code>ManageMasterPassword</code> is true. If <code>ManageMasterPassword</code> is false or not set, Amazon Redshift uses <code>MasterUserPassword</code> for the admin user account's password. </p>
+    pub fn set_manage_master_password(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.manage_master_password = input;
+        self
+    }
+    /// <p>If <code>true</code>, Amazon Redshift uses Secrets Manager to manage this cluster's admin credentials. You can't use <code>MasterUserPassword</code> if <code>ManageMasterPassword</code> is true. If <code>ManageMasterPassword</code> is false or not set, Amazon Redshift uses <code>MasterUserPassword</code> for the admin user account's password. </p>
+    pub fn get_manage_master_password(&self) -> &::std::option::Option<bool> {
+        &self.manage_master_password
+    }
+    /// <p>The ID of the Key Management Service (KMS) key used to encrypt and store the cluster's admin credentials secret. You can only use this parameter if <code>ManageMasterPassword</code> is true.</p>
+    pub fn master_password_secret_kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.master_password_secret_kms_key_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the Key Management Service (KMS) key used to encrypt and store the cluster's admin credentials secret. You can only use this parameter if <code>ManageMasterPassword</code> is true.</p>
+    pub fn set_master_password_secret_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.master_password_secret_kms_key_id = input;
+        self
+    }
+    /// <p>The ID of the Key Management Service (KMS) key used to encrypt and store the cluster's admin credentials secret. You can only use this parameter if <code>ManageMasterPassword</code> is true.</p>
+    pub fn get_master_password_secret_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.master_password_secret_kms_key_id
+    }
     /// Consumes the builder and constructs a [`ModifyClusterInput`](crate::operation::modify_cluster::ModifyClusterInput).
     pub fn build(
         self,
@@ -857,6 +937,41 @@ impl ModifyClusterInputBuilder {
             availability_zone_relocation: self.availability_zone_relocation,
             availability_zone: self.availability_zone,
             port: self.port,
+            manage_master_password: self.manage_master_password,
+            master_password_secret_kms_key_id: self.master_password_secret_kms_key_id,
         })
+    }
+}
+impl ::std::fmt::Debug for ModifyClusterInputBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("ModifyClusterInputBuilder");
+        formatter.field("cluster_identifier", &self.cluster_identifier);
+        formatter.field("cluster_type", &self.cluster_type);
+        formatter.field("node_type", &self.node_type);
+        formatter.field("number_of_nodes", &self.number_of_nodes);
+        formatter.field("cluster_security_groups", &self.cluster_security_groups);
+        formatter.field("vpc_security_group_ids", &self.vpc_security_group_ids);
+        formatter.field("master_user_password", &"*** Sensitive Data Redacted ***");
+        formatter.field("cluster_parameter_group_name", &self.cluster_parameter_group_name);
+        formatter.field("automated_snapshot_retention_period", &self.automated_snapshot_retention_period);
+        formatter.field("manual_snapshot_retention_period", &self.manual_snapshot_retention_period);
+        formatter.field("preferred_maintenance_window", &self.preferred_maintenance_window);
+        formatter.field("cluster_version", &self.cluster_version);
+        formatter.field("allow_version_upgrade", &self.allow_version_upgrade);
+        formatter.field("hsm_client_certificate_identifier", &self.hsm_client_certificate_identifier);
+        formatter.field("hsm_configuration_identifier", &self.hsm_configuration_identifier);
+        formatter.field("new_cluster_identifier", &self.new_cluster_identifier);
+        formatter.field("publicly_accessible", &self.publicly_accessible);
+        formatter.field("elastic_ip", &self.elastic_ip);
+        formatter.field("enhanced_vpc_routing", &self.enhanced_vpc_routing);
+        formatter.field("maintenance_track_name", &self.maintenance_track_name);
+        formatter.field("encrypted", &self.encrypted);
+        formatter.field("kms_key_id", &self.kms_key_id);
+        formatter.field("availability_zone_relocation", &self.availability_zone_relocation);
+        formatter.field("availability_zone", &self.availability_zone);
+        formatter.field("port", &self.port);
+        formatter.field("manage_master_password", &self.manage_master_password);
+        formatter.field("master_password_secret_kms_key_id", &self.master_password_secret_kms_key_id);
+        formatter.finish()
     }
 }

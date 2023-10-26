@@ -6,10 +6,10 @@ pub fn ser_twitter_parameters(
     if let Some(var_1) = &input.query {
         object.key("Query").string(var_1.as_str());
     }
-    {
+    if let Some(var_2) = &input.max_rows {
         object.key("MaxRows").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.max_rows).into()),
+            ::aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
     Ok(())

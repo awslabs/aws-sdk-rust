@@ -5,29 +5,29 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsCloudFrontDistributionOriginCustomOriginConfig {
     /// <p>The HTTP port that CloudFront uses to connect to the origin. </p>
-    pub http_port: i32,
+    pub http_port: ::std::option::Option<i32>,
     /// <p>The HTTPS port that CloudFront uses to connect to the origin. </p>
-    pub https_port: i32,
+    pub https_port: ::std::option::Option<i32>,
     /// <p>Specifies how long, in seconds, CloudFront persists its connection to the origin. </p>
-    pub origin_keepalive_timeout: i32,
+    pub origin_keepalive_timeout: ::std::option::Option<i32>,
     /// <p>Specifies the protocol (HTTP or HTTPS) that CloudFront uses to connect to the origin. </p>
     pub origin_protocol_policy: ::std::option::Option<::std::string::String>,
     /// <p>Specifies how long, in seconds, CloudFront waits for a response from the origin. </p>
-    pub origin_read_timeout: i32,
+    pub origin_read_timeout: ::std::option::Option<i32>,
     /// <p>Specifies the minimum SSL/TLS protocol that CloudFront uses when connecting to your origin over HTTPS. </p>
     pub origin_ssl_protocols: ::std::option::Option<crate::types::AwsCloudFrontDistributionOriginSslProtocols>,
 }
 impl AwsCloudFrontDistributionOriginCustomOriginConfig {
     /// <p>The HTTP port that CloudFront uses to connect to the origin. </p>
-    pub fn http_port(&self) -> i32 {
+    pub fn http_port(&self) -> ::std::option::Option<i32> {
         self.http_port
     }
     /// <p>The HTTPS port that CloudFront uses to connect to the origin. </p>
-    pub fn https_port(&self) -> i32 {
+    pub fn https_port(&self) -> ::std::option::Option<i32> {
         self.https_port
     }
     /// <p>Specifies how long, in seconds, CloudFront persists its connection to the origin. </p>
-    pub fn origin_keepalive_timeout(&self) -> i32 {
+    pub fn origin_keepalive_timeout(&self) -> ::std::option::Option<i32> {
         self.origin_keepalive_timeout
     }
     /// <p>Specifies the protocol (HTTP or HTTPS) that CloudFront uses to connect to the origin. </p>
@@ -35,7 +35,7 @@ impl AwsCloudFrontDistributionOriginCustomOriginConfig {
         self.origin_protocol_policy.as_deref()
     }
     /// <p>Specifies how long, in seconds, CloudFront waits for a response from the origin. </p>
-    pub fn origin_read_timeout(&self) -> i32 {
+    pub fn origin_read_timeout(&self) -> ::std::option::Option<i32> {
         self.origin_read_timeout
     }
     /// <p>Specifies the minimum SSL/TLS protocol that CloudFront uses when connecting to your origin over HTTPS. </p>
@@ -149,11 +149,11 @@ impl AwsCloudFrontDistributionOriginCustomOriginConfigBuilder {
     /// Consumes the builder and constructs a [`AwsCloudFrontDistributionOriginCustomOriginConfig`](crate::types::AwsCloudFrontDistributionOriginCustomOriginConfig).
     pub fn build(self) -> crate::types::AwsCloudFrontDistributionOriginCustomOriginConfig {
         crate::types::AwsCloudFrontDistributionOriginCustomOriginConfig {
-            http_port: self.http_port.unwrap_or_default(),
-            https_port: self.https_port.unwrap_or_default(),
-            origin_keepalive_timeout: self.origin_keepalive_timeout.unwrap_or_default(),
+            http_port: self.http_port,
+            https_port: self.https_port,
+            origin_keepalive_timeout: self.origin_keepalive_timeout,
             origin_protocol_policy: self.origin_protocol_policy,
-            origin_read_timeout: self.origin_read_timeout.unwrap_or_default(),
+            origin_read_timeout: self.origin_read_timeout,
             origin_ssl_protocols: self.origin_ssl_protocols,
         }
     }

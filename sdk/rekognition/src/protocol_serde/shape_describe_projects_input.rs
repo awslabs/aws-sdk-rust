@@ -21,5 +21,14 @@ pub fn ser_describe_projects_input(
         }
         array_4.finish();
     }
+    if let Some(var_6) = &input.features {
+        let mut array_7 = object.key("Features").start_array();
+        for item_8 in var_6 {
+            {
+                array_7.value().string(item_8.as_str());
+            }
+        }
+        array_7.finish();
+    }
     Ok(())
 }

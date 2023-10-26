@@ -70,6 +70,44 @@ impl From<crate::operation::create_home_region_control::CreateHomeRegionControlE
         }
     }
 }
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::delete_home_region_control::DeleteHomeRegionControlError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::delete_home_region_control::DeleteHomeRegionControlError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_home_region_control::DeleteHomeRegionControlError> for Error {
+    fn from(err: crate::operation::delete_home_region_control::DeleteHomeRegionControlError) -> Self {
+        match err {
+            crate::operation::delete_home_region_control::DeleteHomeRegionControlError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::delete_home_region_control::DeleteHomeRegionControlError::InternalServerError(inner) => {
+                Error::InternalServerError(inner)
+            }
+            crate::operation::delete_home_region_control::DeleteHomeRegionControlError::InvalidInputException(inner) => {
+                Error::InvalidInputException(inner)
+            }
+            crate::operation::delete_home_region_control::DeleteHomeRegionControlError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::delete_home_region_control::DeleteHomeRegionControlError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::delete_home_region_control::DeleteHomeRegionControlError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::describe_home_region_controls::DescribeHomeRegionControlsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

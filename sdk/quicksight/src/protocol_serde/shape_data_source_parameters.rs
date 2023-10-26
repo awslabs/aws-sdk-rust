@@ -142,6 +142,18 @@ pub fn ser_data_source_parameters(
             crate::protocol_serde::shape_databricks_parameters::ser_databricks_parameters(&mut object_23, inner)?;
             object_23.finish();
         }
+        crate::types::DataSourceParameters::StarburstParameters(inner) => {
+            #[allow(unused_mut)]
+            let mut object_24 = object_5.key("StarburstParameters").start_object();
+            crate::protocol_serde::shape_starburst_parameters::ser_starburst_parameters(&mut object_24, inner)?;
+            object_24.finish();
+        }
+        crate::types::DataSourceParameters::TrinoParameters(inner) => {
+            #[allow(unused_mut)]
+            let mut object_25 = object_5.key("TrinoParameters").start_object();
+            crate::protocol_serde::shape_trino_parameters::ser_trino_parameters(&mut object_25, inner)?;
+            object_25.finish();
+        }
         crate::types::DataSourceParameters::Unknown => {
             return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant(
                 "DataSourceParameters",
@@ -297,6 +309,16 @@ where
                         "DatabricksParameters" => Some(crate::types::DataSourceParameters::DatabricksParameters(
                             crate::protocol_serde::shape_databricks_parameters::de_databricks_parameters(tokens)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'DatabricksParameters' cannot be null")
+                            })?,
+                        )),
+                        "StarburstParameters" => Some(crate::types::DataSourceParameters::StarburstParameters(
+                            crate::protocol_serde::shape_starburst_parameters::de_starburst_parameters(tokens)?.ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'StarburstParameters' cannot be null")
+                            })?,
+                        )),
+                        "TrinoParameters" => Some(crate::types::DataSourceParameters::TrinoParameters(
+                            crate::protocol_serde::shape_trino_parameters::de_trino_parameters(tokens)?.ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'TrinoParameters' cannot be null")
                             })?,
                         )),
                         _ => {

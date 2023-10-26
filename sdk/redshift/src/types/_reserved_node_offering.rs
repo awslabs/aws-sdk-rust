@@ -9,11 +9,11 @@ pub struct ReservedNodeOffering {
     /// <p>The node type offered by the reserved node offering.</p>
     pub node_type: ::std::option::Option<::std::string::String>,
     /// <p>The duration, in seconds, for which the offering will reserve the node.</p>
-    pub duration: i32,
+    pub duration: ::std::option::Option<i32>,
     /// <p>The upfront fixed charge you will pay to purchase the specific reserved node offering.</p>
-    pub fixed_price: f64,
+    pub fixed_price: ::std::option::Option<f64>,
     /// <p>The rate you are charged for each hour the cluster that is using the offering is running.</p>
-    pub usage_price: f64,
+    pub usage_price: ::std::option::Option<f64>,
     /// <p>The currency code for the compute nodes offering.</p>
     pub currency_code: ::std::option::Option<::std::string::String>,
     /// <p>The anticipated utilization of the reserved node, as defined in the reserved node offering.</p>
@@ -33,15 +33,15 @@ impl ReservedNodeOffering {
         self.node_type.as_deref()
     }
     /// <p>The duration, in seconds, for which the offering will reserve the node.</p>
-    pub fn duration(&self) -> i32 {
+    pub fn duration(&self) -> ::std::option::Option<i32> {
         self.duration
     }
     /// <p>The upfront fixed charge you will pay to purchase the specific reserved node offering.</p>
-    pub fn fixed_price(&self) -> f64 {
+    pub fn fixed_price(&self) -> ::std::option::Option<f64> {
         self.fixed_price
     }
     /// <p>The rate you are charged for each hour the cluster that is using the offering is running.</p>
-    pub fn usage_price(&self) -> f64 {
+    pub fn usage_price(&self) -> ::std::option::Option<f64> {
         self.usage_price
     }
     /// <p>The currency code for the compute nodes offering.</p>
@@ -220,9 +220,9 @@ impl ReservedNodeOfferingBuilder {
         crate::types::ReservedNodeOffering {
             reserved_node_offering_id: self.reserved_node_offering_id,
             node_type: self.node_type,
-            duration: self.duration.unwrap_or_default(),
-            fixed_price: self.fixed_price.unwrap_or_default(),
-            usage_price: self.usage_price.unwrap_or_default(),
+            duration: self.duration,
+            fixed_price: self.fixed_price,
+            usage_price: self.usage_price,
             currency_code: self.currency_code,
             offering_type: self.offering_type,
             recurring_charges: self.recurring_charges,

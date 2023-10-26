@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CoverageFilterCriteria {
-    /// <p>The scan status code to filter on.</p>
+    /// <p>The scan status code to filter on. Valid values are: <code>ValidationException</code>, <code>InternalServerException</code>, <code>ResourceNotFoundException</code>, <code>BadRequestException</code>, and <code>ThrottlingException</code>.</p>
     pub scan_status_code: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>,
     /// <p>The scan status reason to filter on.</p>
     pub scan_status_reason: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>,
@@ -32,7 +32,7 @@ pub struct CoverageFilterCriteria {
     pub last_scanned_at: ::std::option::Option<::std::vec::Vec<crate::types::CoverageDateFilter>>,
 }
 impl CoverageFilterCriteria {
-    /// <p>The scan status code to filter on.</p>
+    /// <p>The scan status code to filter on. Valid values are: <code>ValidationException</code>, <code>InternalServerException</code>, <code>ResourceNotFoundException</code>, <code>BadRequestException</code>, and <code>ThrottlingException</code>.</p>
     pub fn scan_status_code(&self) -> ::std::option::Option<&[crate::types::CoverageStringFilter]> {
         self.scan_status_code.as_deref()
     }
@@ -115,19 +115,19 @@ impl CoverageFilterCriteriaBuilder {
     ///
     /// To override the contents of this collection use [`set_scan_status_code`](Self::set_scan_status_code).
     ///
-    /// <p>The scan status code to filter on.</p>
+    /// <p>The scan status code to filter on. Valid values are: <code>ValidationException</code>, <code>InternalServerException</code>, <code>ResourceNotFoundException</code>, <code>BadRequestException</code>, and <code>ThrottlingException</code>.</p>
     pub fn scan_status_code(mut self, input: crate::types::CoverageStringFilter) -> Self {
         let mut v = self.scan_status_code.unwrap_or_default();
         v.push(input);
         self.scan_status_code = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The scan status code to filter on.</p>
+    /// <p>The scan status code to filter on. Valid values are: <code>ValidationException</code>, <code>InternalServerException</code>, <code>ResourceNotFoundException</code>, <code>BadRequestException</code>, and <code>ThrottlingException</code>.</p>
     pub fn set_scan_status_code(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>) -> Self {
         self.scan_status_code = input;
         self
     }
-    /// <p>The scan status code to filter on.</p>
+    /// <p>The scan status code to filter on. Valid values are: <code>ValidationException</code>, <code>InternalServerException</code>, <code>ResourceNotFoundException</code>, <code>BadRequestException</code>, and <code>ThrottlingException</code>.</p>
     pub fn get_scan_status_code(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>> {
         &self.scan_status_code
     }

@@ -3,56 +3,56 @@ pub fn ser_aws_ec2_subnet_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsEc2SubnetDetails,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if input.assign_ipv6_address_on_creation {
-        object.key("AssignIpv6AddressOnCreation").boolean(input.assign_ipv6_address_on_creation);
+    if let Some(var_1) = &input.assign_ipv6_address_on_creation {
+        object.key("AssignIpv6AddressOnCreation").boolean(*var_1);
     }
-    if let Some(var_1) = &input.availability_zone {
-        object.key("AvailabilityZone").string(var_1.as_str());
+    if let Some(var_2) = &input.availability_zone {
+        object.key("AvailabilityZone").string(var_2.as_str());
     }
-    if let Some(var_2) = &input.availability_zone_id {
-        object.key("AvailabilityZoneId").string(var_2.as_str());
+    if let Some(var_3) = &input.availability_zone_id {
+        object.key("AvailabilityZoneId").string(var_3.as_str());
     }
-    if input.available_ip_address_count != 0 {
+    if let Some(var_4) = &input.available_ip_address_count {
         object.key("AvailableIpAddressCount").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.available_ip_address_count).into()),
+            ::aws_smithy_types::Number::NegInt((*var_4).into()),
         );
     }
-    if let Some(var_3) = &input.cidr_block {
-        object.key("CidrBlock").string(var_3.as_str());
+    if let Some(var_5) = &input.cidr_block {
+        object.key("CidrBlock").string(var_5.as_str());
     }
-    if input.default_for_az {
-        object.key("DefaultForAz").boolean(input.default_for_az);
+    if let Some(var_6) = &input.default_for_az {
+        object.key("DefaultForAz").boolean(*var_6);
     }
-    if input.map_public_ip_on_launch {
-        object.key("MapPublicIpOnLaunch").boolean(input.map_public_ip_on_launch);
+    if let Some(var_7) = &input.map_public_ip_on_launch {
+        object.key("MapPublicIpOnLaunch").boolean(*var_7);
     }
-    if let Some(var_4) = &input.owner_id {
-        object.key("OwnerId").string(var_4.as_str());
+    if let Some(var_8) = &input.owner_id {
+        object.key("OwnerId").string(var_8.as_str());
     }
-    if let Some(var_5) = &input.state {
-        object.key("State").string(var_5.as_str());
+    if let Some(var_9) = &input.state {
+        object.key("State").string(var_9.as_str());
     }
-    if let Some(var_6) = &input.subnet_arn {
-        object.key("SubnetArn").string(var_6.as_str());
+    if let Some(var_10) = &input.subnet_arn {
+        object.key("SubnetArn").string(var_10.as_str());
     }
-    if let Some(var_7) = &input.subnet_id {
-        object.key("SubnetId").string(var_7.as_str());
+    if let Some(var_11) = &input.subnet_id {
+        object.key("SubnetId").string(var_11.as_str());
     }
-    if let Some(var_8) = &input.vpc_id {
-        object.key("VpcId").string(var_8.as_str());
+    if let Some(var_12) = &input.vpc_id {
+        object.key("VpcId").string(var_12.as_str());
     }
-    if let Some(var_9) = &input.ipv6_cidr_block_association_set {
-        let mut array_10 = object.key("Ipv6CidrBlockAssociationSet").start_array();
-        for item_11 in var_9 {
+    if let Some(var_13) = &input.ipv6_cidr_block_association_set {
+        let mut array_14 = object.key("Ipv6CidrBlockAssociationSet").start_array();
+        for item_15 in var_13 {
             {
                 #[allow(unused_mut)]
-                let mut object_12 = array_10.value().start_object();
-                crate::protocol_serde::shape_ipv6_cidr_block_association::ser_ipv6_cidr_block_association(&mut object_12, item_11)?;
-                object_12.finish();
+                let mut object_16 = array_14.value().start_object();
+                crate::protocol_serde::shape_ipv6_cidr_block_association::ser_ipv6_cidr_block_association(&mut object_16, item_15)?;
+                object_16.finish();
             }
         }
-        array_10.finish();
+        array_14.finish();
     }
     Ok(())
 }

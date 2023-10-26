@@ -12,7 +12,7 @@ pub struct CacheParameterGroup {
     /// <p>The description for this cache parameter group.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the parameter group is associated with a Global datastore</p>
-    pub is_global: bool,
+    pub is_global: ::std::option::Option<bool>,
     /// <p>The ARN (Amazon Resource Name) of the cache parameter group.</p>
     pub arn: ::std::option::Option<::std::string::String>,
 }
@@ -31,7 +31,7 @@ impl CacheParameterGroup {
         self.description.as_deref()
     }
     /// <p>Indicates whether the parameter group is associated with a Global datastore</p>
-    pub fn is_global(&self) -> bool {
+    pub fn is_global(&self) -> ::std::option::Option<bool> {
         self.is_global
     }
     /// <p>The ARN (Amazon Resource Name) of the cache parameter group.</p>
@@ -136,7 +136,7 @@ impl CacheParameterGroupBuilder {
             cache_parameter_group_name: self.cache_parameter_group_name,
             cache_parameter_group_family: self.cache_parameter_group_family,
             description: self.description,
-            is_global: self.is_global.unwrap_or_default(),
+            is_global: self.is_global,
             arn: self.arn,
         }
     }

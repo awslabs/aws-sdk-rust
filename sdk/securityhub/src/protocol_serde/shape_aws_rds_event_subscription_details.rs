@@ -9,41 +9,41 @@ pub fn ser_aws_rds_event_subscription_details(
     if let Some(var_2) = &input.customer_aws_id {
         object.key("CustomerAwsId").string(var_2.as_str());
     }
-    if input.enabled {
-        object.key("Enabled").boolean(input.enabled);
+    if let Some(var_3) = &input.enabled {
+        object.key("Enabled").boolean(*var_3);
     }
-    if let Some(var_3) = &input.event_categories_list {
-        let mut array_4 = object.key("EventCategoriesList").start_array();
-        for item_5 in var_3 {
+    if let Some(var_4) = &input.event_categories_list {
+        let mut array_5 = object.key("EventCategoriesList").start_array();
+        for item_6 in var_4 {
             {
-                array_4.value().string(item_5.as_str());
+                array_5.value().string(item_6.as_str());
             }
         }
-        array_4.finish();
+        array_5.finish();
     }
-    if let Some(var_6) = &input.event_subscription_arn {
-        object.key("EventSubscriptionArn").string(var_6.as_str());
+    if let Some(var_7) = &input.event_subscription_arn {
+        object.key("EventSubscriptionArn").string(var_7.as_str());
     }
-    if let Some(var_7) = &input.sns_topic_arn {
-        object.key("SnsTopicArn").string(var_7.as_str());
+    if let Some(var_8) = &input.sns_topic_arn {
+        object.key("SnsTopicArn").string(var_8.as_str());
     }
-    if let Some(var_8) = &input.source_ids_list {
-        let mut array_9 = object.key("SourceIdsList").start_array();
-        for item_10 in var_8 {
+    if let Some(var_9) = &input.source_ids_list {
+        let mut array_10 = object.key("SourceIdsList").start_array();
+        for item_11 in var_9 {
             {
-                array_9.value().string(item_10.as_str());
+                array_10.value().string(item_11.as_str());
             }
         }
-        array_9.finish();
+        array_10.finish();
     }
-    if let Some(var_11) = &input.source_type {
-        object.key("SourceType").string(var_11.as_str());
+    if let Some(var_12) = &input.source_type {
+        object.key("SourceType").string(var_12.as_str());
     }
-    if let Some(var_12) = &input.status {
-        object.key("Status").string(var_12.as_str());
+    if let Some(var_13) = &input.status {
+        object.key("Status").string(var_13.as_str());
     }
-    if let Some(var_13) = &input.subscription_creation_time {
-        object.key("SubscriptionCreationTime").string(var_13.as_str());
+    if let Some(var_14) = &input.subscription_creation_time {
+        object.key("SubscriptionCreationTime").string(var_14.as_str());
     }
     Ok(())
 }

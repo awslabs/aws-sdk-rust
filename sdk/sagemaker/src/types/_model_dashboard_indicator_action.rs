@@ -5,11 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModelDashboardIndicatorAction {
     /// <p>Indicates whether the alert action is turned on.</p>
-    pub enabled: bool,
+    pub enabled: ::std::option::Option<bool>,
 }
 impl ModelDashboardIndicatorAction {
     /// <p>Indicates whether the alert action is turned on.</p>
-    pub fn enabled(&self) -> bool {
+    pub fn enabled(&self) -> ::std::option::Option<bool> {
         self.enabled
     }
 }
@@ -43,8 +43,6 @@ impl ModelDashboardIndicatorActionBuilder {
     }
     /// Consumes the builder and constructs a [`ModelDashboardIndicatorAction`](crate::types::ModelDashboardIndicatorAction).
     pub fn build(self) -> crate::types::ModelDashboardIndicatorAction {
-        crate::types::ModelDashboardIndicatorAction {
-            enabled: self.enabled.unwrap_or_default(),
-        }
+        crate::types::ModelDashboardIndicatorAction { enabled: self.enabled }
     }
 }

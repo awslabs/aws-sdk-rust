@@ -21,32 +21,32 @@ pub fn ser_network(
     if let Some(var_6) = &input.source_ip_v6 {
         object.key("SourceIpV6").string(var_6.as_str());
     }
-    if input.source_port != 0 {
+    if let Some(var_7) = &input.source_port {
         object.key("SourcePort").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.source_port).into()),
+            ::aws_smithy_types::Number::NegInt((*var_7).into()),
         );
     }
-    if let Some(var_7) = &input.source_domain {
-        object.key("SourceDomain").string(var_7.as_str());
+    if let Some(var_8) = &input.source_domain {
+        object.key("SourceDomain").string(var_8.as_str());
     }
-    if let Some(var_8) = &input.source_mac {
-        object.key("SourceMac").string(var_8.as_str());
+    if let Some(var_9) = &input.source_mac {
+        object.key("SourceMac").string(var_9.as_str());
     }
-    if let Some(var_9) = &input.destination_ip_v4 {
-        object.key("DestinationIpV4").string(var_9.as_str());
+    if let Some(var_10) = &input.destination_ip_v4 {
+        object.key("DestinationIpV4").string(var_10.as_str());
     }
-    if let Some(var_10) = &input.destination_ip_v6 {
-        object.key("DestinationIpV6").string(var_10.as_str());
+    if let Some(var_11) = &input.destination_ip_v6 {
+        object.key("DestinationIpV6").string(var_11.as_str());
     }
-    if input.destination_port != 0 {
+    if let Some(var_12) = &input.destination_port {
         object.key("DestinationPort").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.destination_port).into()),
+            ::aws_smithy_types::Number::NegInt((*var_12).into()),
         );
     }
-    if let Some(var_11) = &input.destination_domain {
-        object.key("DestinationDomain").string(var_11.as_str());
+    if let Some(var_13) = &input.destination_domain {
+        object.key("DestinationDomain").string(var_13.as_str());
     }
     Ok(())
 }

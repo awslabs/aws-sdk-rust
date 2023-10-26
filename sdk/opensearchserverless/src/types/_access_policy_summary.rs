@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AccessPolicySummary {
-    /// <p>The type of access policy. Currently the only available type is <code>data</code>.</p>
+    /// <p>The type of access policy. Currently, the only available type is <code>data</code>.</p>
     pub r#type: ::std::option::Option<crate::types::AccessPolicyType>,
     /// <p>The name of the access policy.</p>
     pub name: ::std::option::Option<::std::string::String>,
@@ -18,7 +18,7 @@ pub struct AccessPolicySummary {
     pub last_modified_date: ::std::option::Option<i64>,
 }
 impl AccessPolicySummary {
-    /// <p>The type of access policy. Currently the only available type is <code>data</code>.</p>
+    /// <p>The type of access policy. Currently, the only available type is <code>data</code>.</p>
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::AccessPolicyType> {
         self.r#type.as_ref()
     }
@@ -62,17 +62,17 @@ pub struct AccessPolicySummaryBuilder {
     pub(crate) last_modified_date: ::std::option::Option<i64>,
 }
 impl AccessPolicySummaryBuilder {
-    /// <p>The type of access policy. Currently the only available type is <code>data</code>.</p>
+    /// <p>The type of access policy. Currently, the only available type is <code>data</code>.</p>
     pub fn r#type(mut self, input: crate::types::AccessPolicyType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of access policy. Currently the only available type is <code>data</code>.</p>
+    /// <p>The type of access policy. Currently, the only available type is <code>data</code>.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::AccessPolicyType>) -> Self {
         self.r#type = input;
         self
     }
-    /// <p>The type of access policy. Currently the only available type is <code>data</code>.</p>
+    /// <p>The type of access policy. Currently, the only available type is <code>data</code>.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::AccessPolicyType> {
         &self.r#type
     }

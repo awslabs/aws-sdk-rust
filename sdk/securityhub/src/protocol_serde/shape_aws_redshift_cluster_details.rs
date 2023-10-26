@@ -3,248 +3,248 @@ pub fn ser_aws_redshift_cluster_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsRedshiftClusterDetails,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if input.allow_version_upgrade {
-        object.key("AllowVersionUpgrade").boolean(input.allow_version_upgrade);
+    if let Some(var_1) = &input.allow_version_upgrade {
+        object.key("AllowVersionUpgrade").boolean(*var_1);
     }
-    if input.automated_snapshot_retention_period != 0 {
+    if let Some(var_2) = &input.automated_snapshot_retention_period {
         object.key("AutomatedSnapshotRetentionPeriod").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.automated_snapshot_retention_period).into()),
+            ::aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
-    if let Some(var_1) = &input.availability_zone {
-        object.key("AvailabilityZone").string(var_1.as_str());
+    if let Some(var_3) = &input.availability_zone {
+        object.key("AvailabilityZone").string(var_3.as_str());
     }
-    if let Some(var_2) = &input.cluster_availability_status {
-        object.key("ClusterAvailabilityStatus").string(var_2.as_str());
+    if let Some(var_4) = &input.cluster_availability_status {
+        object.key("ClusterAvailabilityStatus").string(var_4.as_str());
     }
-    if let Some(var_3) = &input.cluster_create_time {
-        object.key("ClusterCreateTime").string(var_3.as_str());
+    if let Some(var_5) = &input.cluster_create_time {
+        object.key("ClusterCreateTime").string(var_5.as_str());
     }
-    if let Some(var_4) = &input.cluster_identifier {
-        object.key("ClusterIdentifier").string(var_4.as_str());
+    if let Some(var_6) = &input.cluster_identifier {
+        object.key("ClusterIdentifier").string(var_6.as_str());
     }
-    if let Some(var_5) = &input.cluster_nodes {
-        let mut array_6 = object.key("ClusterNodes").start_array();
-        for item_7 in var_5 {
+    if let Some(var_7) = &input.cluster_nodes {
+        let mut array_8 = object.key("ClusterNodes").start_array();
+        for item_9 in var_7 {
             {
                 #[allow(unused_mut)]
-                let mut object_8 = array_6.value().start_object();
-                crate::protocol_serde::shape_aws_redshift_cluster_cluster_node::ser_aws_redshift_cluster_cluster_node(&mut object_8, item_7)?;
-                object_8.finish();
+                let mut object_10 = array_8.value().start_object();
+                crate::protocol_serde::shape_aws_redshift_cluster_cluster_node::ser_aws_redshift_cluster_cluster_node(&mut object_10, item_9)?;
+                object_10.finish();
             }
         }
-        array_6.finish();
+        array_8.finish();
     }
-    if let Some(var_9) = &input.cluster_parameter_groups {
-        let mut array_10 = object.key("ClusterParameterGroups").start_array();
-        for item_11 in var_9 {
+    if let Some(var_11) = &input.cluster_parameter_groups {
+        let mut array_12 = object.key("ClusterParameterGroups").start_array();
+        for item_13 in var_11 {
             {
                 #[allow(unused_mut)]
-                let mut object_12 = array_10.value().start_object();
+                let mut object_14 = array_12.value().start_object();
                 crate::protocol_serde::shape_aws_redshift_cluster_cluster_parameter_group::ser_aws_redshift_cluster_cluster_parameter_group(
-                    &mut object_12,
-                    item_11,
+                    &mut object_14,
+                    item_13,
                 )?;
-                object_12.finish();
+                object_14.finish();
             }
         }
-        array_10.finish();
+        array_12.finish();
     }
-    if let Some(var_13) = &input.cluster_public_key {
-        object.key("ClusterPublicKey").string(var_13.as_str());
+    if let Some(var_15) = &input.cluster_public_key {
+        object.key("ClusterPublicKey").string(var_15.as_str());
     }
-    if let Some(var_14) = &input.cluster_revision_number {
-        object.key("ClusterRevisionNumber").string(var_14.as_str());
+    if let Some(var_16) = &input.cluster_revision_number {
+        object.key("ClusterRevisionNumber").string(var_16.as_str());
     }
-    if let Some(var_15) = &input.cluster_security_groups {
-        let mut array_16 = object.key("ClusterSecurityGroups").start_array();
-        for item_17 in var_15 {
+    if let Some(var_17) = &input.cluster_security_groups {
+        let mut array_18 = object.key("ClusterSecurityGroups").start_array();
+        for item_19 in var_17 {
             {
                 #[allow(unused_mut)]
-                let mut object_18 = array_16.value().start_object();
+                let mut object_20 = array_18.value().start_object();
                 crate::protocol_serde::shape_aws_redshift_cluster_cluster_security_group::ser_aws_redshift_cluster_cluster_security_group(
-                    &mut object_18,
-                    item_17,
+                    &mut object_20,
+                    item_19,
                 )?;
-                object_18.finish();
+                object_20.finish();
             }
         }
-        array_16.finish();
+        array_18.finish();
     }
-    if let Some(var_19) = &input.cluster_snapshot_copy_status {
+    if let Some(var_21) = &input.cluster_snapshot_copy_status {
         #[allow(unused_mut)]
-        let mut object_20 = object.key("ClusterSnapshotCopyStatus").start_object();
+        let mut object_22 = object.key("ClusterSnapshotCopyStatus").start_object();
         crate::protocol_serde::shape_aws_redshift_cluster_cluster_snapshot_copy_status::ser_aws_redshift_cluster_cluster_snapshot_copy_status(
-            &mut object_20,
-            var_19,
+            &mut object_22,
+            var_21,
         )?;
-        object_20.finish();
+        object_22.finish();
     }
-    if let Some(var_21) = &input.cluster_status {
-        object.key("ClusterStatus").string(var_21.as_str());
+    if let Some(var_23) = &input.cluster_status {
+        object.key("ClusterStatus").string(var_23.as_str());
     }
-    if let Some(var_22) = &input.cluster_subnet_group_name {
-        object.key("ClusterSubnetGroupName").string(var_22.as_str());
+    if let Some(var_24) = &input.cluster_subnet_group_name {
+        object.key("ClusterSubnetGroupName").string(var_24.as_str());
     }
-    if let Some(var_23) = &input.cluster_version {
-        object.key("ClusterVersion").string(var_23.as_str());
+    if let Some(var_25) = &input.cluster_version {
+        object.key("ClusterVersion").string(var_25.as_str());
     }
-    if let Some(var_24) = &input.db_name {
-        object.key("DBName").string(var_24.as_str());
+    if let Some(var_26) = &input.db_name {
+        object.key("DBName").string(var_26.as_str());
     }
-    if let Some(var_25) = &input.deferred_maintenance_windows {
-        let mut array_26 = object.key("DeferredMaintenanceWindows").start_array();
-        for item_27 in var_25 {
+    if let Some(var_27) = &input.deferred_maintenance_windows {
+        let mut array_28 = object.key("DeferredMaintenanceWindows").start_array();
+        for item_29 in var_27 {
             {
                 #[allow(unused_mut)]
-                let mut object_28 = array_26.value().start_object();
+                let mut object_30 = array_28.value().start_object();
                 crate::protocol_serde::shape_aws_redshift_cluster_deferred_maintenance_window::ser_aws_redshift_cluster_deferred_maintenance_window(
-                    &mut object_28,
-                    item_27,
+                    &mut object_30,
+                    item_29,
                 )?;
-                object_28.finish();
+                object_30.finish();
             }
         }
-        array_26.finish();
+        array_28.finish();
     }
-    if let Some(var_29) = &input.elastic_ip_status {
+    if let Some(var_31) = &input.elastic_ip_status {
         #[allow(unused_mut)]
-        let mut object_30 = object.key("ElasticIpStatus").start_object();
-        crate::protocol_serde::shape_aws_redshift_cluster_elastic_ip_status::ser_aws_redshift_cluster_elastic_ip_status(&mut object_30, var_29)?;
-        object_30.finish();
+        let mut object_32 = object.key("ElasticIpStatus").start_object();
+        crate::protocol_serde::shape_aws_redshift_cluster_elastic_ip_status::ser_aws_redshift_cluster_elastic_ip_status(&mut object_32, var_31)?;
+        object_32.finish();
     }
-    if let Some(var_31) = &input.elastic_resize_number_of_node_options {
-        object.key("ElasticResizeNumberOfNodeOptions").string(var_31.as_str());
+    if let Some(var_33) = &input.elastic_resize_number_of_node_options {
+        object.key("ElasticResizeNumberOfNodeOptions").string(var_33.as_str());
     }
-    if input.encrypted {
-        object.key("Encrypted").boolean(input.encrypted);
+    if let Some(var_34) = &input.encrypted {
+        object.key("Encrypted").boolean(*var_34);
     }
-    if let Some(var_32) = &input.endpoint {
+    if let Some(var_35) = &input.endpoint {
         #[allow(unused_mut)]
-        let mut object_33 = object.key("Endpoint").start_object();
-        crate::protocol_serde::shape_aws_redshift_cluster_endpoint::ser_aws_redshift_cluster_endpoint(&mut object_33, var_32)?;
-        object_33.finish();
+        let mut object_36 = object.key("Endpoint").start_object();
+        crate::protocol_serde::shape_aws_redshift_cluster_endpoint::ser_aws_redshift_cluster_endpoint(&mut object_36, var_35)?;
+        object_36.finish();
     }
-    if input.enhanced_vpc_routing {
-        object.key("EnhancedVpcRouting").boolean(input.enhanced_vpc_routing);
+    if let Some(var_37) = &input.enhanced_vpc_routing {
+        object.key("EnhancedVpcRouting").boolean(*var_37);
     }
-    if let Some(var_34) = &input.expected_next_snapshot_schedule_time {
-        object.key("ExpectedNextSnapshotScheduleTime").string(var_34.as_str());
+    if let Some(var_38) = &input.expected_next_snapshot_schedule_time {
+        object.key("ExpectedNextSnapshotScheduleTime").string(var_38.as_str());
     }
-    if let Some(var_35) = &input.expected_next_snapshot_schedule_time_status {
-        object.key("ExpectedNextSnapshotScheduleTimeStatus").string(var_35.as_str());
+    if let Some(var_39) = &input.expected_next_snapshot_schedule_time_status {
+        object.key("ExpectedNextSnapshotScheduleTimeStatus").string(var_39.as_str());
     }
-    if let Some(var_36) = &input.hsm_status {
+    if let Some(var_40) = &input.hsm_status {
         #[allow(unused_mut)]
-        let mut object_37 = object.key("HsmStatus").start_object();
-        crate::protocol_serde::shape_aws_redshift_cluster_hsm_status::ser_aws_redshift_cluster_hsm_status(&mut object_37, var_36)?;
-        object_37.finish();
+        let mut object_41 = object.key("HsmStatus").start_object();
+        crate::protocol_serde::shape_aws_redshift_cluster_hsm_status::ser_aws_redshift_cluster_hsm_status(&mut object_41, var_40)?;
+        object_41.finish();
     }
-    if let Some(var_38) = &input.iam_roles {
-        let mut array_39 = object.key("IamRoles").start_array();
-        for item_40 in var_38 {
+    if let Some(var_42) = &input.iam_roles {
+        let mut array_43 = object.key("IamRoles").start_array();
+        for item_44 in var_42 {
             {
                 #[allow(unused_mut)]
-                let mut object_41 = array_39.value().start_object();
-                crate::protocol_serde::shape_aws_redshift_cluster_iam_role::ser_aws_redshift_cluster_iam_role(&mut object_41, item_40)?;
-                object_41.finish();
+                let mut object_45 = array_43.value().start_object();
+                crate::protocol_serde::shape_aws_redshift_cluster_iam_role::ser_aws_redshift_cluster_iam_role(&mut object_45, item_44)?;
+                object_45.finish();
             }
         }
-        array_39.finish();
+        array_43.finish();
     }
-    if let Some(var_42) = &input.kms_key_id {
-        object.key("KmsKeyId").string(var_42.as_str());
+    if let Some(var_46) = &input.kms_key_id {
+        object.key("KmsKeyId").string(var_46.as_str());
     }
-    if let Some(var_43) = &input.maintenance_track_name {
-        object.key("MaintenanceTrackName").string(var_43.as_str());
+    if let Some(var_47) = &input.maintenance_track_name {
+        object.key("MaintenanceTrackName").string(var_47.as_str());
     }
-    if input.manual_snapshot_retention_period != 0 {
+    if let Some(var_48) = &input.manual_snapshot_retention_period {
         object.key("ManualSnapshotRetentionPeriod").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.manual_snapshot_retention_period).into()),
+            ::aws_smithy_types::Number::NegInt((*var_48).into()),
         );
     }
-    if let Some(var_44) = &input.master_username {
-        object.key("MasterUsername").string(var_44.as_str());
+    if let Some(var_49) = &input.master_username {
+        object.key("MasterUsername").string(var_49.as_str());
     }
-    if let Some(var_45) = &input.next_maintenance_window_start_time {
-        object.key("NextMaintenanceWindowStartTime").string(var_45.as_str());
+    if let Some(var_50) = &input.next_maintenance_window_start_time {
+        object.key("NextMaintenanceWindowStartTime").string(var_50.as_str());
     }
-    if let Some(var_46) = &input.node_type {
-        object.key("NodeType").string(var_46.as_str());
+    if let Some(var_51) = &input.node_type {
+        object.key("NodeType").string(var_51.as_str());
     }
-    if input.number_of_nodes != 0 {
+    if let Some(var_52) = &input.number_of_nodes {
         object.key("NumberOfNodes").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.number_of_nodes).into()),
+            ::aws_smithy_types::Number::NegInt((*var_52).into()),
         );
     }
-    if let Some(var_47) = &input.pending_actions {
-        let mut array_48 = object.key("PendingActions").start_array();
-        for item_49 in var_47 {
+    if let Some(var_53) = &input.pending_actions {
+        let mut array_54 = object.key("PendingActions").start_array();
+        for item_55 in var_53 {
             {
-                array_48.value().string(item_49.as_str());
+                array_54.value().string(item_55.as_str());
             }
         }
-        array_48.finish();
+        array_54.finish();
     }
-    if let Some(var_50) = &input.pending_modified_values {
+    if let Some(var_56) = &input.pending_modified_values {
         #[allow(unused_mut)]
-        let mut object_51 = object.key("PendingModifiedValues").start_object();
+        let mut object_57 = object.key("PendingModifiedValues").start_object();
         crate::protocol_serde::shape_aws_redshift_cluster_pending_modified_values::ser_aws_redshift_cluster_pending_modified_values(
-            &mut object_51,
-            var_50,
+            &mut object_57,
+            var_56,
         )?;
-        object_51.finish();
+        object_57.finish();
     }
-    if let Some(var_52) = &input.preferred_maintenance_window {
-        object.key("PreferredMaintenanceWindow").string(var_52.as_str());
+    if let Some(var_58) = &input.preferred_maintenance_window {
+        object.key("PreferredMaintenanceWindow").string(var_58.as_str());
     }
-    if input.publicly_accessible {
-        object.key("PubliclyAccessible").boolean(input.publicly_accessible);
+    if let Some(var_59) = &input.publicly_accessible {
+        object.key("PubliclyAccessible").boolean(*var_59);
     }
-    if let Some(var_53) = &input.resize_info {
+    if let Some(var_60) = &input.resize_info {
         #[allow(unused_mut)]
-        let mut object_54 = object.key("ResizeInfo").start_object();
-        crate::protocol_serde::shape_aws_redshift_cluster_resize_info::ser_aws_redshift_cluster_resize_info(&mut object_54, var_53)?;
-        object_54.finish();
+        let mut object_61 = object.key("ResizeInfo").start_object();
+        crate::protocol_serde::shape_aws_redshift_cluster_resize_info::ser_aws_redshift_cluster_resize_info(&mut object_61, var_60)?;
+        object_61.finish();
     }
-    if let Some(var_55) = &input.restore_status {
+    if let Some(var_62) = &input.restore_status {
         #[allow(unused_mut)]
-        let mut object_56 = object.key("RestoreStatus").start_object();
-        crate::protocol_serde::shape_aws_redshift_cluster_restore_status::ser_aws_redshift_cluster_restore_status(&mut object_56, var_55)?;
-        object_56.finish();
+        let mut object_63 = object.key("RestoreStatus").start_object();
+        crate::protocol_serde::shape_aws_redshift_cluster_restore_status::ser_aws_redshift_cluster_restore_status(&mut object_63, var_62)?;
+        object_63.finish();
     }
-    if let Some(var_57) = &input.snapshot_schedule_identifier {
-        object.key("SnapshotScheduleIdentifier").string(var_57.as_str());
+    if let Some(var_64) = &input.snapshot_schedule_identifier {
+        object.key("SnapshotScheduleIdentifier").string(var_64.as_str());
     }
-    if let Some(var_58) = &input.snapshot_schedule_state {
-        object.key("SnapshotScheduleState").string(var_58.as_str());
+    if let Some(var_65) = &input.snapshot_schedule_state {
+        object.key("SnapshotScheduleState").string(var_65.as_str());
     }
-    if let Some(var_59) = &input.vpc_id {
-        object.key("VpcId").string(var_59.as_str());
+    if let Some(var_66) = &input.vpc_id {
+        object.key("VpcId").string(var_66.as_str());
     }
-    if let Some(var_60) = &input.vpc_security_groups {
-        let mut array_61 = object.key("VpcSecurityGroups").start_array();
-        for item_62 in var_60 {
+    if let Some(var_67) = &input.vpc_security_groups {
+        let mut array_68 = object.key("VpcSecurityGroups").start_array();
+        for item_69 in var_67 {
             {
                 #[allow(unused_mut)]
-                let mut object_63 = array_61.value().start_object();
+                let mut object_70 = array_68.value().start_object();
                 crate::protocol_serde::shape_aws_redshift_cluster_vpc_security_group::ser_aws_redshift_cluster_vpc_security_group(
-                    &mut object_63,
-                    item_62,
+                    &mut object_70,
+                    item_69,
                 )?;
-                object_63.finish();
+                object_70.finish();
             }
         }
-        array_61.finish();
+        array_68.finish();
     }
-    if let Some(var_64) = &input.logging_status {
+    if let Some(var_71) = &input.logging_status {
         #[allow(unused_mut)]
-        let mut object_65 = object.key("LoggingStatus").start_object();
-        crate::protocol_serde::shape_aws_redshift_cluster_logging_status::ser_aws_redshift_cluster_logging_status(&mut object_65, var_64)?;
-        object_65.finish();
+        let mut object_72 = object.key("LoggingStatus").start_object();
+        crate::protocol_serde::shape_aws_redshift_cluster_logging_status::ser_aws_redshift_cluster_logging_status(&mut object_72, var_71)?;
+        object_72.finish();
     }
     Ok(())
 }

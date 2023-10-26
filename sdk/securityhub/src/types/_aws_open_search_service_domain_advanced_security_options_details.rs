@@ -5,19 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsOpenSearchServiceDomainAdvancedSecurityOptionsDetails {
     /// <p>Enables fine-grained access control. </p>
-    pub enabled: bool,
+    pub enabled: ::std::option::Option<bool>,
     /// <p>Enables the internal user database. </p>
-    pub internal_user_database_enabled: bool,
+    pub internal_user_database_enabled: ::std::option::Option<bool>,
     /// <p>Specifies information about the master user of the domain. </p>
     pub master_user_options: ::std::option::Option<crate::types::AwsOpenSearchServiceDomainMasterUserOptionsDetails>,
 }
 impl AwsOpenSearchServiceDomainAdvancedSecurityOptionsDetails {
     /// <p>Enables fine-grained access control. </p>
-    pub fn enabled(&self) -> bool {
+    pub fn enabled(&self) -> ::std::option::Option<bool> {
         self.enabled
     }
     /// <p>Enables the internal user database. </p>
-    pub fn internal_user_database_enabled(&self) -> bool {
+    pub fn internal_user_database_enabled(&self) -> ::std::option::Option<bool> {
         self.internal_user_database_enabled
     }
     /// <p>Specifies information about the master user of the domain. </p>
@@ -86,8 +86,8 @@ impl AwsOpenSearchServiceDomainAdvancedSecurityOptionsDetailsBuilder {
     /// Consumes the builder and constructs a [`AwsOpenSearchServiceDomainAdvancedSecurityOptionsDetails`](crate::types::AwsOpenSearchServiceDomainAdvancedSecurityOptionsDetails).
     pub fn build(self) -> crate::types::AwsOpenSearchServiceDomainAdvancedSecurityOptionsDetails {
         crate::types::AwsOpenSearchServiceDomainAdvancedSecurityOptionsDetails {
-            enabled: self.enabled.unwrap_or_default(),
-            internal_user_database_enabled: self.internal_user_database_enabled.unwrap_or_default(),
+            enabled: self.enabled,
+            internal_user_database_enabled: self.internal_user_database_enabled,
             master_user_options: self.master_user_options,
         }
     }

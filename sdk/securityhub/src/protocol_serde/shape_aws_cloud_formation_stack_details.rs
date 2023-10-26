@@ -18,67 +18,67 @@ pub fn ser_aws_cloud_formation_stack_details(
     if let Some(var_5) = &input.description {
         object.key("Description").string(var_5.as_str());
     }
-    if input.disable_rollback {
-        object.key("DisableRollback").boolean(input.disable_rollback);
+    if let Some(var_6) = &input.disable_rollback {
+        object.key("DisableRollback").boolean(*var_6);
     }
-    if let Some(var_6) = &input.drift_information {
+    if let Some(var_7) = &input.drift_information {
         #[allow(unused_mut)]
-        let mut object_7 = object.key("DriftInformation").start_object();
+        let mut object_8 = object.key("DriftInformation").start_object();
         crate::protocol_serde::shape_aws_cloud_formation_stack_drift_information_details::ser_aws_cloud_formation_stack_drift_information_details(
-            &mut object_7,
-            var_6,
+            &mut object_8,
+            var_7,
         )?;
-        object_7.finish();
+        object_8.finish();
     }
-    if input.enable_termination_protection {
-        object.key("EnableTerminationProtection").boolean(input.enable_termination_protection);
+    if let Some(var_9) = &input.enable_termination_protection {
+        object.key("EnableTerminationProtection").boolean(*var_9);
     }
-    if let Some(var_8) = &input.last_updated_time {
-        object.key("LastUpdatedTime").string(var_8.as_str());
+    if let Some(var_10) = &input.last_updated_time {
+        object.key("LastUpdatedTime").string(var_10.as_str());
     }
-    if let Some(var_9) = &input.notification_arns {
-        let mut array_10 = object.key("NotificationArns").start_array();
-        for item_11 in var_9 {
+    if let Some(var_11) = &input.notification_arns {
+        let mut array_12 = object.key("NotificationArns").start_array();
+        for item_13 in var_11 {
             {
-                array_10.value().string(item_11.as_str());
+                array_12.value().string(item_13.as_str());
             }
         }
-        array_10.finish();
+        array_12.finish();
     }
-    if let Some(var_12) = &input.outputs {
-        let mut array_13 = object.key("Outputs").start_array();
-        for item_14 in var_12 {
+    if let Some(var_14) = &input.outputs {
+        let mut array_15 = object.key("Outputs").start_array();
+        for item_16 in var_14 {
             {
                 #[allow(unused_mut)]
-                let mut object_15 = array_13.value().start_object();
+                let mut object_17 = array_15.value().start_object();
                 crate::protocol_serde::shape_aws_cloud_formation_stack_outputs_details::ser_aws_cloud_formation_stack_outputs_details(
-                    &mut object_15,
-                    item_14,
+                    &mut object_17,
+                    item_16,
                 )?;
-                object_15.finish();
+                object_17.finish();
             }
         }
-        array_13.finish();
+        array_15.finish();
     }
-    if let Some(var_16) = &input.role_arn {
-        object.key("RoleArn").string(var_16.as_str());
+    if let Some(var_18) = &input.role_arn {
+        object.key("RoleArn").string(var_18.as_str());
     }
-    if let Some(var_17) = &input.stack_id {
-        object.key("StackId").string(var_17.as_str());
+    if let Some(var_19) = &input.stack_id {
+        object.key("StackId").string(var_19.as_str());
     }
-    if let Some(var_18) = &input.stack_name {
-        object.key("StackName").string(var_18.as_str());
+    if let Some(var_20) = &input.stack_name {
+        object.key("StackName").string(var_20.as_str());
     }
-    if let Some(var_19) = &input.stack_status {
-        object.key("StackStatus").string(var_19.as_str());
+    if let Some(var_21) = &input.stack_status {
+        object.key("StackStatus").string(var_21.as_str());
     }
-    if let Some(var_20) = &input.stack_status_reason {
-        object.key("StackStatusReason").string(var_20.as_str());
+    if let Some(var_22) = &input.stack_status_reason {
+        object.key("StackStatusReason").string(var_22.as_str());
     }
-    if input.timeout_in_minutes != 0 {
+    if let Some(var_23) = &input.timeout_in_minutes {
         object.key("TimeoutInMinutes").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.timeout_in_minutes).into()),
+            ::aws_smithy_types::Number::NegInt((*var_23).into()),
         );
     }
     Ok(())

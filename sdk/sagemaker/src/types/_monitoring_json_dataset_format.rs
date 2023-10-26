@@ -5,11 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MonitoringJsonDatasetFormat {
     /// <p>Indicates if the file should be read as a JSON object per line. </p>
-    pub line: bool,
+    pub line: ::std::option::Option<bool>,
 }
 impl MonitoringJsonDatasetFormat {
     /// <p>Indicates if the file should be read as a JSON object per line. </p>
-    pub fn line(&self) -> bool {
+    pub fn line(&self) -> ::std::option::Option<bool> {
         self.line
     }
 }
@@ -43,8 +43,6 @@ impl MonitoringJsonDatasetFormatBuilder {
     }
     /// Consumes the builder and constructs a [`MonitoringJsonDatasetFormat`](crate::types::MonitoringJsonDatasetFormat).
     pub fn build(self) -> crate::types::MonitoringJsonDatasetFormat {
-        crate::types::MonitoringJsonDatasetFormat {
-            line: self.line.unwrap_or_default(),
-        }
+        crate::types::MonitoringJsonDatasetFormat { line: self.line }
     }
 }

@@ -7,7 +7,7 @@ pub struct SchemaVersionNumber {
     /// <p>The latest version available for the schema.</p>
     pub latest_version: bool,
     /// <p>The version number of the schema.</p>
-    pub version_number: i64,
+    pub version_number: ::std::option::Option<i64>,
 }
 impl SchemaVersionNumber {
     /// <p>The latest version available for the schema.</p>
@@ -15,7 +15,7 @@ impl SchemaVersionNumber {
         self.latest_version
     }
     /// <p>The version number of the schema.</p>
-    pub fn version_number(&self) -> i64 {
+    pub fn version_number(&self) -> ::std::option::Option<i64> {
         self.version_number
     }
 }
@@ -66,7 +66,7 @@ impl SchemaVersionNumberBuilder {
     pub fn build(self) -> crate::types::SchemaVersionNumber {
         crate::types::SchemaVersionNumber {
             latest_version: self.latest_version.unwrap_or_default(),
-            version_number: self.version_number.unwrap_or_default(),
+            version_number: self.version_number,
         }
     }
 }

@@ -3,11 +3,11 @@ pub fn ser_aws_msk_cluster_cluster_info_encryption_info_encryption_in_transit_de
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsMskClusterClusterInfoEncryptionInfoEncryptionInTransitDetails,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if input.in_cluster {
-        object.key("InCluster").boolean(input.in_cluster);
+    if let Some(var_1) = &input.in_cluster {
+        object.key("InCluster").boolean(*var_1);
     }
-    if let Some(var_1) = &input.client_broker {
-        object.key("ClientBroker").string(var_1.as_str());
+    if let Some(var_2) = &input.client_broker {
+        object.key("ClientBroker").string(var_2.as_str());
     }
     Ok(())
 }

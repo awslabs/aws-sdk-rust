@@ -6,50 +6,50 @@ pub fn ser_aws_backup_backup_plan_rule_details(
     if let Some(var_1) = &input.target_backup_vault {
         object.key("TargetBackupVault").string(var_1.as_str());
     }
-    if input.start_window_minutes != 0 {
+    if let Some(var_2) = &input.start_window_minutes {
         object.key("StartWindowMinutes").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.start_window_minutes).into()),
+            ::aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
-    if let Some(var_2) = &input.schedule_expression {
-        object.key("ScheduleExpression").string(var_2.as_str());
+    if let Some(var_3) = &input.schedule_expression {
+        object.key("ScheduleExpression").string(var_3.as_str());
     }
-    if let Some(var_3) = &input.rule_name {
-        object.key("RuleName").string(var_3.as_str());
+    if let Some(var_4) = &input.rule_name {
+        object.key("RuleName").string(var_4.as_str());
     }
-    if let Some(var_4) = &input.rule_id {
-        object.key("RuleId").string(var_4.as_str());
+    if let Some(var_5) = &input.rule_id {
+        object.key("RuleId").string(var_5.as_str());
     }
-    if input.enable_continuous_backup {
-        object.key("EnableContinuousBackup").boolean(input.enable_continuous_backup);
+    if let Some(var_6) = &input.enable_continuous_backup {
+        object.key("EnableContinuousBackup").boolean(*var_6);
     }
-    if input.completion_window_minutes != 0 {
+    if let Some(var_7) = &input.completion_window_minutes {
         object.key("CompletionWindowMinutes").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.completion_window_minutes).into()),
+            ::aws_smithy_types::Number::NegInt((*var_7).into()),
         );
     }
-    if let Some(var_5) = &input.copy_actions {
-        let mut array_6 = object.key("CopyActions").start_array();
-        for item_7 in var_5 {
+    if let Some(var_8) = &input.copy_actions {
+        let mut array_9 = object.key("CopyActions").start_array();
+        for item_10 in var_8 {
             {
                 #[allow(unused_mut)]
-                let mut object_8 = array_6.value().start_object();
+                let mut object_11 = array_9.value().start_object();
                 crate::protocol_serde::shape_aws_backup_backup_plan_rule_copy_actions_details::ser_aws_backup_backup_plan_rule_copy_actions_details(
-                    &mut object_8,
-                    item_7,
+                    &mut object_11,
+                    item_10,
                 )?;
-                object_8.finish();
+                object_11.finish();
             }
         }
-        array_6.finish();
+        array_9.finish();
     }
-    if let Some(var_9) = &input.lifecycle {
+    if let Some(var_12) = &input.lifecycle {
         #[allow(unused_mut)]
-        let mut object_10 = object.key("Lifecycle").start_object();
-        crate::protocol_serde::shape_aws_backup_backup_plan_lifecycle_details::ser_aws_backup_backup_plan_lifecycle_details(&mut object_10, var_9)?;
-        object_10.finish();
+        let mut object_13 = object.key("Lifecycle").start_object();
+        crate::protocol_serde::shape_aws_backup_backup_plan_lifecycle_details::ser_aws_backup_backup_plan_lifecycle_details(&mut object_13, var_12)?;
+        object_13.finish();
     }
     Ok(())
 }

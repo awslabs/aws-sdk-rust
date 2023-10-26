@@ -3,32 +3,32 @@ pub fn ser_aws_network_firewall_rule_group_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsNetworkFirewallRuleGroupDetails,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if input.capacity != 0 {
+    if let Some(var_1) = &input.capacity {
         object.key("Capacity").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.capacity).into()),
+            ::aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if let Some(var_1) = &input.description {
-        object.key("Description").string(var_1.as_str());
+    if let Some(var_2) = &input.description {
+        object.key("Description").string(var_2.as_str());
     }
-    if let Some(var_2) = &input.rule_group {
+    if let Some(var_3) = &input.rule_group {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("RuleGroup").start_object();
-        crate::protocol_serde::shape_rule_group_details::ser_rule_group_details(&mut object_3, var_2)?;
-        object_3.finish();
+        let mut object_4 = object.key("RuleGroup").start_object();
+        crate::protocol_serde::shape_rule_group_details::ser_rule_group_details(&mut object_4, var_3)?;
+        object_4.finish();
     }
-    if let Some(var_4) = &input.rule_group_arn {
-        object.key("RuleGroupArn").string(var_4.as_str());
+    if let Some(var_5) = &input.rule_group_arn {
+        object.key("RuleGroupArn").string(var_5.as_str());
     }
-    if let Some(var_5) = &input.rule_group_id {
-        object.key("RuleGroupId").string(var_5.as_str());
+    if let Some(var_6) = &input.rule_group_id {
+        object.key("RuleGroupId").string(var_6.as_str());
     }
-    if let Some(var_6) = &input.rule_group_name {
-        object.key("RuleGroupName").string(var_6.as_str());
+    if let Some(var_7) = &input.rule_group_name {
+        object.key("RuleGroupName").string(var_7.as_str());
     }
-    if let Some(var_7) = &input.r#type {
-        object.key("Type").string(var_7.as_str());
+    if let Some(var_8) = &input.r#type {
+        object.key("Type").string(var_8.as_str());
     }
     Ok(())
 }

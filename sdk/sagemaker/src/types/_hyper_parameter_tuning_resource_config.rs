@@ -9,12 +9,12 @@ pub struct HyperParameterTuningResourceConfig {
     /// <p>The instance type used to run hyperparameter optimization tuning jobs. See <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebooks-available-instance-types.html"> descriptions of instance types</a> for more information.</p>
     pub instance_type: ::std::option::Option<crate::types::TrainingInstanceType>,
     /// <p>The number of compute instances of type <code>InstanceType</code> to use. For <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/data-parallel-use-api.html">distributed training</a>, select a value greater than 1.</p>
-    pub instance_count: i32,
+    pub instance_count: ::std::option::Option<i32>,
     /// <p>The volume size in GB for the storage volume to be used in processing hyperparameter optimization jobs (optional). These volumes store model artifacts, incremental states and optionally, scratch space for training algorithms. Do not provide a value for this parameter if a value for <code>InstanceConfigs</code> is also specified.</p>
     /// <p>Some instance types have a fixed total local storage size. If you select one of these instances for training, <code>VolumeSizeInGB</code> cannot be greater than this total size. For a list of instance types with local instance storage and their sizes, see <a href="http://aws.amazon.com/releasenotes/host-instance-storage-volumes-table/">instance store volumes</a>.</p> <note>
     /// <p>SageMaker supports only the <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volume-types.html">General Purpose SSD (gp2)</a> storage volume type.</p>
     /// </note>
-    pub volume_size_in_gb: i32,
+    pub volume_size_in_gb: ::std::option::Option<i32>,
     /// <p>A key used by Amazon Web Services Key Management Service to encrypt data on the storage volume attached to the compute instances used to run the training job. You can use either of the following formats to specify a key.</p>
     /// <p>KMS Key ID:</p>
     /// <p> <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p>
@@ -35,14 +35,14 @@ impl HyperParameterTuningResourceConfig {
         self.instance_type.as_ref()
     }
     /// <p>The number of compute instances of type <code>InstanceType</code> to use. For <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/data-parallel-use-api.html">distributed training</a>, select a value greater than 1.</p>
-    pub fn instance_count(&self) -> i32 {
+    pub fn instance_count(&self) -> ::std::option::Option<i32> {
         self.instance_count
     }
     /// <p>The volume size in GB for the storage volume to be used in processing hyperparameter optimization jobs (optional). These volumes store model artifacts, incremental states and optionally, scratch space for training algorithms. Do not provide a value for this parameter if a value for <code>InstanceConfigs</code> is also specified.</p>
     /// <p>Some instance types have a fixed total local storage size. If you select one of these instances for training, <code>VolumeSizeInGB</code> cannot be greater than this total size. For a list of instance types with local instance storage and their sizes, see <a href="http://aws.amazon.com/releasenotes/host-instance-storage-volumes-table/">instance store volumes</a>.</p> <note>
     /// <p>SageMaker supports only the <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volume-types.html">General Purpose SSD (gp2)</a> storage volume type.</p>
     /// </note>
-    pub fn volume_size_in_gb(&self) -> i32 {
+    pub fn volume_size_in_gb(&self) -> ::std::option::Option<i32> {
         self.volume_size_in_gb
     }
     /// <p>A key used by Amazon Web Services Key Management Service to encrypt data on the storage volume attached to the compute instances used to run the training job. You can use either of the following formats to specify a key.</p>
@@ -208,8 +208,8 @@ impl HyperParameterTuningResourceConfigBuilder {
     pub fn build(self) -> crate::types::HyperParameterTuningResourceConfig {
         crate::types::HyperParameterTuningResourceConfig {
             instance_type: self.instance_type,
-            instance_count: self.instance_count.unwrap_or_default(),
-            volume_size_in_gb: self.volume_size_in_gb.unwrap_or_default(),
+            instance_count: self.instance_count,
+            volume_size_in_gb: self.volume_size_in_gb,
             volume_kms_key_id: self.volume_kms_key_id,
             allocation_strategy: self.allocation_strategy,
             instance_configs: self.instance_configs,

@@ -9,13 +9,16 @@ pub struct TimeEqualityFilter {
     /// <p>The column that the filter is applied to.</p>
     pub column: ::std::option::Option<crate::types::ColumnIdentifier>,
     /// <p>The value of a <code>TimeEquality</code> filter.</p>
-    /// <p>This field is mutually exclusive to <code>ParameterName</code>.</p>
+    /// <p>This field is mutually exclusive to <code>RollingDate</code> and <code>ParameterName</code>.</p>
     pub value: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The parameter whose value should be used for the filter value.</p>
-    /// <p>This field is mutually exclusive to <code>Value</code>.</p>
+    /// <p>This field is mutually exclusive to <code>Value</code> and <code>RollingDate</code>.</p>
     pub parameter_name: ::std::option::Option<::std::string::String>,
     /// <p>The level of time precision that is used to aggregate <code>DateTime</code> values.</p>
     pub time_granularity: ::std::option::Option<crate::types::TimeGranularity>,
+    /// <p>The rolling date input for the <code>TimeEquality</code> filter.</p>
+    /// <p>This field is mutually exclusive to <code>Value</code> and <code>ParameterName</code>.</p>
+    pub rolling_date: ::std::option::Option<crate::types::RollingDateConfiguration>,
 }
 impl TimeEqualityFilter {
     /// <p>An identifier that uniquely identifies a filter within a dashboard, analysis, or template.</p>
@@ -27,18 +30,23 @@ impl TimeEqualityFilter {
         self.column.as_ref()
     }
     /// <p>The value of a <code>TimeEquality</code> filter.</p>
-    /// <p>This field is mutually exclusive to <code>ParameterName</code>.</p>
+    /// <p>This field is mutually exclusive to <code>RollingDate</code> and <code>ParameterName</code>.</p>
     pub fn value(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.value.as_ref()
     }
     /// <p>The parameter whose value should be used for the filter value.</p>
-    /// <p>This field is mutually exclusive to <code>Value</code>.</p>
+    /// <p>This field is mutually exclusive to <code>Value</code> and <code>RollingDate</code>.</p>
     pub fn parameter_name(&self) -> ::std::option::Option<&str> {
         self.parameter_name.as_deref()
     }
     /// <p>The level of time precision that is used to aggregate <code>DateTime</code> values.</p>
     pub fn time_granularity(&self) -> ::std::option::Option<&crate::types::TimeGranularity> {
         self.time_granularity.as_ref()
+    }
+    /// <p>The rolling date input for the <code>TimeEquality</code> filter.</p>
+    /// <p>This field is mutually exclusive to <code>Value</code> and <code>ParameterName</code>.</p>
+    pub fn rolling_date(&self) -> ::std::option::Option<&crate::types::RollingDateConfiguration> {
+        self.rolling_date.as_ref()
     }
 }
 impl TimeEqualityFilter {
@@ -57,6 +65,7 @@ pub struct TimeEqualityFilterBuilder {
     pub(crate) value: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) parameter_name: ::std::option::Option<::std::string::String>,
     pub(crate) time_granularity: ::std::option::Option<crate::types::TimeGranularity>,
+    pub(crate) rolling_date: ::std::option::Option<crate::types::RollingDateConfiguration>,
 }
 impl TimeEqualityFilterBuilder {
     /// <p>An identifier that uniquely identifies a filter within a dashboard, analysis, or template.</p>
@@ -88,36 +97,36 @@ impl TimeEqualityFilterBuilder {
         &self.column
     }
     /// <p>The value of a <code>TimeEquality</code> filter.</p>
-    /// <p>This field is mutually exclusive to <code>ParameterName</code>.</p>
+    /// <p>This field is mutually exclusive to <code>RollingDate</code> and <code>ParameterName</code>.</p>
     pub fn value(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.value = ::std::option::Option::Some(input);
         self
     }
     /// <p>The value of a <code>TimeEquality</code> filter.</p>
-    /// <p>This field is mutually exclusive to <code>ParameterName</code>.</p>
+    /// <p>This field is mutually exclusive to <code>RollingDate</code> and <code>ParameterName</code>.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.value = input;
         self
     }
     /// <p>The value of a <code>TimeEquality</code> filter.</p>
-    /// <p>This field is mutually exclusive to <code>ParameterName</code>.</p>
+    /// <p>This field is mutually exclusive to <code>RollingDate</code> and <code>ParameterName</code>.</p>
     pub fn get_value(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.value
     }
     /// <p>The parameter whose value should be used for the filter value.</p>
-    /// <p>This field is mutually exclusive to <code>Value</code>.</p>
+    /// <p>This field is mutually exclusive to <code>Value</code> and <code>RollingDate</code>.</p>
     pub fn parameter_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parameter_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The parameter whose value should be used for the filter value.</p>
-    /// <p>This field is mutually exclusive to <code>Value</code>.</p>
+    /// <p>This field is mutually exclusive to <code>Value</code> and <code>RollingDate</code>.</p>
     pub fn set_parameter_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.parameter_name = input;
         self
     }
     /// <p>The parameter whose value should be used for the filter value.</p>
-    /// <p>This field is mutually exclusive to <code>Value</code>.</p>
+    /// <p>This field is mutually exclusive to <code>Value</code> and <code>RollingDate</code>.</p>
     pub fn get_parameter_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.parameter_name
     }
@@ -135,6 +144,23 @@ impl TimeEqualityFilterBuilder {
     pub fn get_time_granularity(&self) -> &::std::option::Option<crate::types::TimeGranularity> {
         &self.time_granularity
     }
+    /// <p>The rolling date input for the <code>TimeEquality</code> filter.</p>
+    /// <p>This field is mutually exclusive to <code>Value</code> and <code>ParameterName</code>.</p>
+    pub fn rolling_date(mut self, input: crate::types::RollingDateConfiguration) -> Self {
+        self.rolling_date = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The rolling date input for the <code>TimeEquality</code> filter.</p>
+    /// <p>This field is mutually exclusive to <code>Value</code> and <code>ParameterName</code>.</p>
+    pub fn set_rolling_date(mut self, input: ::std::option::Option<crate::types::RollingDateConfiguration>) -> Self {
+        self.rolling_date = input;
+        self
+    }
+    /// <p>The rolling date input for the <code>TimeEquality</code> filter.</p>
+    /// <p>This field is mutually exclusive to <code>Value</code> and <code>ParameterName</code>.</p>
+    pub fn get_rolling_date(&self) -> &::std::option::Option<crate::types::RollingDateConfiguration> {
+        &self.rolling_date
+    }
     /// Consumes the builder and constructs a [`TimeEqualityFilter`](crate::types::TimeEqualityFilter).
     pub fn build(self) -> crate::types::TimeEqualityFilter {
         crate::types::TimeEqualityFilter {
@@ -143,6 +169,7 @@ impl TimeEqualityFilterBuilder {
             value: self.value,
             parameter_name: self.parameter_name,
             time_granularity: self.time_granularity,
+            rolling_date: self.rolling_date,
         }
     }
 }

@@ -238,7 +238,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for UpdatePlace
             .downcast_ref::<UpdatePlaceIndexInput>()
             .ok_or("failed to downcast to UpdatePlaceIndexInput")?;
 
-        let endpoint_prefix = ::aws_smithy_http::endpoint::EndpointPrefix::new("places.").map_err(|err| {
+        let endpoint_prefix = ::aws_smithy_http::endpoint::EndpointPrefix::new("cp.places.").map_err(|err| {
             ::aws_smithy_runtime_api::client::interceptors::error::ContextAttachedError::new("endpoint prefix could not be built", err)
         })?;
         cfg.interceptor_state().store_put(endpoint_prefix);

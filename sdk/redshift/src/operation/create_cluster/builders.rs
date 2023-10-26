@@ -278,6 +278,7 @@ impl CreateClusterFluentBuilder {
         self.inner.get_master_username()
     }
     /// <p>The password associated with the admin user account for the cluster that is being created.</p>
+    /// <p>You can't use <code>MasterUserPassword</code> if <code>ManageMasterPassword</code> is <code>true</code>.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li> <p>Must be between 8 and 64 characters in length.</p> </li>
@@ -291,6 +292,7 @@ impl CreateClusterFluentBuilder {
         self
     }
     /// <p>The password associated with the admin user account for the cluster that is being created.</p>
+    /// <p>You can't use <code>MasterUserPassword</code> if <code>ManageMasterPassword</code> is <code>true</code>.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li> <p>Must be between 8 and 64 characters in length.</p> </li>
@@ -304,6 +306,7 @@ impl CreateClusterFluentBuilder {
         self
     }
     /// <p>The password associated with the admin user account for the cluster that is being created.</p>
+    /// <p>You can't use <code>MasterUserPassword</code> if <code>ManageMasterPassword</code> is <code>true</code>.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li> <p>Must be between 8 and 64 characters in length.</p> </li>
@@ -836,5 +839,33 @@ impl CreateClusterFluentBuilder {
     /// <p>A flag that specifies whether to load sample data once the cluster is created.</p>
     pub fn get_load_sample_data(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_load_sample_data()
+    }
+    /// <p>If <code>true</code>, Amazon Redshift uses Secrets Manager to manage this cluster's admin credentials. You can't use <code>MasterUserPassword</code> if <code>ManageMasterPassword</code> is true. If <code>ManageMasterPassword</code> is false or not set, Amazon Redshift uses <code>MasterUserPassword</code> for the admin user account's password. </p>
+    pub fn manage_master_password(mut self, input: bool) -> Self {
+        self.inner = self.inner.manage_master_password(input);
+        self
+    }
+    /// <p>If <code>true</code>, Amazon Redshift uses Secrets Manager to manage this cluster's admin credentials. You can't use <code>MasterUserPassword</code> if <code>ManageMasterPassword</code> is true. If <code>ManageMasterPassword</code> is false or not set, Amazon Redshift uses <code>MasterUserPassword</code> for the admin user account's password. </p>
+    pub fn set_manage_master_password(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_manage_master_password(input);
+        self
+    }
+    /// <p>If <code>true</code>, Amazon Redshift uses Secrets Manager to manage this cluster's admin credentials. You can't use <code>MasterUserPassword</code> if <code>ManageMasterPassword</code> is true. If <code>ManageMasterPassword</code> is false or not set, Amazon Redshift uses <code>MasterUserPassword</code> for the admin user account's password. </p>
+    pub fn get_manage_master_password(&self) -> &::std::option::Option<bool> {
+        self.inner.get_manage_master_password()
+    }
+    /// <p>The ID of the Key Management Service (KMS) key used to encrypt and store the cluster's admin credentials secret. You can only use this parameter if <code>ManageMasterPassword</code> is true.</p>
+    pub fn master_password_secret_kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.master_password_secret_kms_key_id(input.into());
+        self
+    }
+    /// <p>The ID of the Key Management Service (KMS) key used to encrypt and store the cluster's admin credentials secret. You can only use this parameter if <code>ManageMasterPassword</code> is true.</p>
+    pub fn set_master_password_secret_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_master_password_secret_kms_key_id(input);
+        self
+    }
+    /// <p>The ID of the Key Management Service (KMS) key used to encrypt and store the cluster's admin credentials secret. You can only use this parameter if <code>ManageMasterPassword</code> is true.</p>
+    pub fn get_master_password_secret_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_master_password_secret_kms_key_id()
     }
 }

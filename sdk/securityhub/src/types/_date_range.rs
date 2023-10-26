@@ -5,13 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DateRange {
     /// <p>A date range value for the date filter.</p>
-    pub value: i32,
+    pub value: ::std::option::Option<i32>,
     /// <p>A date range unit for the date filter.</p>
     pub unit: ::std::option::Option<crate::types::DateRangeUnit>,
 }
 impl DateRange {
     /// <p>A date range value for the date filter.</p>
-    pub fn value(&self) -> i32 {
+    pub fn value(&self) -> ::std::option::Option<i32> {
         self.value
     }
     /// <p>A date range unit for the date filter.</p>
@@ -65,7 +65,7 @@ impl DateRangeBuilder {
     /// Consumes the builder and constructs a [`DateRange`](crate::types::DateRange).
     pub fn build(self) -> crate::types::DateRange {
         crate::types::DateRange {
-            value: self.value.unwrap_or_default(),
+            value: self.value,
             unit: self.unit,
         }
     }

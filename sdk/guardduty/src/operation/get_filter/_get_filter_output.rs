@@ -10,7 +10,7 @@ pub struct GetFilterOutput {
     /// <p>Specifies the action that is to be applied to the findings that match the filter.</p>
     pub action: ::std::option::Option<crate::types::FilterAction>,
     /// <p>Specifies the position of the filter in the list of current filters. Also specifies the order in which this filter is applied to the findings.</p>
-    pub rank: i32,
+    pub rank: ::std::option::Option<i32>,
     /// <p>Represents the criteria to be used in the filter for querying findings.</p>
     pub finding_criteria: ::std::option::Option<crate::types::FindingCriteria>,
     /// <p>The tags of the filter resource.</p>
@@ -31,7 +31,7 @@ impl GetFilterOutput {
         self.action.as_ref()
     }
     /// <p>Specifies the position of the filter in the list of current filters. Also specifies the order in which this filter is applied to the findings.</p>
-    pub fn rank(&self) -> i32 {
+    pub fn rank(&self) -> ::std::option::Option<i32> {
         self.rank
     }
     /// <p>Represents the criteria to be used in the filter for querying findings.</p>
@@ -173,7 +173,7 @@ impl GetFilterOutputBuilder {
             name: self.name,
             description: self.description,
             action: self.action,
-            rank: self.rank.unwrap_or_default(),
+            rank: self.rank,
             finding_criteria: self.finding_criteria,
             tags: self.tags,
             _request_id: self._request_id,

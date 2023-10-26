@@ -3,16 +3,16 @@ pub fn ser_icmp_type_code(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::IcmpTypeCode,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if input.code != 0 {
+    if let Some(var_1) = &input.code {
         object.key("Code").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.code).into()),
+            ::aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if input.r#type != 0 {
+    if let Some(var_2) = &input.r#type {
         object.key("Type").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.r#type).into()),
+            ::aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
     Ok(())

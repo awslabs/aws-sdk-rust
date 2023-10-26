@@ -127,6 +127,8 @@ pub use crate::types::_run_retention_mode::RunRetentionMode;
 
 pub use crate::types::_run_log_level::RunLogLevel;
 
+pub use crate::types::_run_log_location::RunLogLocation;
+
 pub use crate::types::_run_export::RunExport;
 
 pub use crate::types::_task_list_item::TaskListItem;
@@ -340,6 +342,8 @@ mod _run_group_list_item;
 mod _run_list_item;
 
 mod _run_log_level;
+
+mod _run_log_location;
 
 mod _run_retention_mode;
 

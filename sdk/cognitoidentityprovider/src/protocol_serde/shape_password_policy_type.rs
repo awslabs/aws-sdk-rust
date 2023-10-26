@@ -3,10 +3,10 @@ pub fn ser_password_policy_type(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PasswordPolicyType,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if input.minimum_length != 0 {
+    if let Some(var_1) = &input.minimum_length {
         object.key("MinimumLength").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.minimum_length).into()),
+            ::aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
     if input.require_uppercase {

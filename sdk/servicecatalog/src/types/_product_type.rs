@@ -13,6 +13,7 @@
 /// # let producttype = unimplemented!();
 /// match producttype {
 ///     ProductType::CloudFormationTemplate => { /* ... */ },
+///     ProductType::External => { /* ... */ },
 ///     ProductType::Marketplace => { /* ... */ },
 ///     ProductType::TerraformCloud => { /* ... */ },
 ///     ProductType::TerraformOpenSource => { /* ... */ },
@@ -46,6 +47,8 @@ pub enum ProductType {
     #[allow(missing_docs)] // documentation missing in model
     CloudFormationTemplate,
     #[allow(missing_docs)] // documentation missing in model
+    External,
+    #[allow(missing_docs)] // documentation missing in model
     Marketplace,
     #[allow(missing_docs)] // documentation missing in model
     TerraformCloud,
@@ -58,6 +61,7 @@ impl ::std::convert::From<&str> for ProductType {
     fn from(s: &str) -> Self {
         match s {
             "CLOUD_FORMATION_TEMPLATE" => ProductType::CloudFormationTemplate,
+            "EXTERNAL" => ProductType::External,
             "MARKETPLACE" => ProductType::Marketplace,
             "TERRAFORM_CLOUD" => ProductType::TerraformCloud,
             "TERRAFORM_OPEN_SOURCE" => ProductType::TerraformOpenSource,
@@ -77,6 +81,7 @@ impl ProductType {
     pub fn as_str(&self) -> &str {
         match self {
             ProductType::CloudFormationTemplate => "CLOUD_FORMATION_TEMPLATE",
+            ProductType::External => "EXTERNAL",
             ProductType::Marketplace => "MARKETPLACE",
             ProductType::TerraformCloud => "TERRAFORM_CLOUD",
             ProductType::TerraformOpenSource => "TERRAFORM_OPEN_SOURCE",
@@ -85,7 +90,13 @@ impl ProductType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CLOUD_FORMATION_TEMPLATE", "MARKETPLACE", "TERRAFORM_CLOUD", "TERRAFORM_OPEN_SOURCE"]
+        &[
+            "CLOUD_FORMATION_TEMPLATE",
+            "EXTERNAL",
+            "MARKETPLACE",
+            "TERRAFORM_CLOUD",
+            "TERRAFORM_OPEN_SOURCE",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for ProductType {

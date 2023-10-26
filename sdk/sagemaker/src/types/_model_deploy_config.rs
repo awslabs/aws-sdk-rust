@@ -7,7 +7,7 @@ pub struct ModelDeployConfig {
     /// <p>Set to <code>True</code> to automatically generate an endpoint name for a one-click Autopilot model deployment; set to <code>False</code> otherwise. The default value is <code>False</code>.</p> <note>
     /// <p>If you set <code>AutoGenerateEndpointName</code> to <code>True</code>, do not specify the <code>EndpointName</code>; otherwise a 400 error is thrown.</p>
     /// </note>
-    pub auto_generate_endpoint_name: bool,
+    pub auto_generate_endpoint_name: ::std::option::Option<bool>,
     /// <p>Specifies the endpoint name to use for a one-click Autopilot model deployment if the endpoint name is not generated automatically.</p> <note>
     /// <p>Specify the <code>EndpointName</code> if and only if you set <code>AutoGenerateEndpointName</code> to <code>False</code>; otherwise a 400 error is thrown.</p>
     /// </note>
@@ -17,7 +17,7 @@ impl ModelDeployConfig {
     /// <p>Set to <code>True</code> to automatically generate an endpoint name for a one-click Autopilot model deployment; set to <code>False</code> otherwise. The default value is <code>False</code>.</p> <note>
     /// <p>If you set <code>AutoGenerateEndpointName</code> to <code>True</code>, do not specify the <code>EndpointName</code>; otherwise a 400 error is thrown.</p>
     /// </note>
-    pub fn auto_generate_endpoint_name(&self) -> bool {
+    pub fn auto_generate_endpoint_name(&self) -> ::std::option::Option<bool> {
         self.auto_generate_endpoint_name
     }
     /// <p>Specifies the endpoint name to use for a one-click Autopilot model deployment if the endpoint name is not generated automatically.</p> <note>
@@ -85,7 +85,7 @@ impl ModelDeployConfigBuilder {
     /// Consumes the builder and constructs a [`ModelDeployConfig`](crate::types::ModelDeployConfig).
     pub fn build(self) -> crate::types::ModelDeployConfig {
         crate::types::ModelDeployConfig {
-            auto_generate_endpoint_name: self.auto_generate_endpoint_name.unwrap_or_default(),
+            auto_generate_endpoint_name: self.auto_generate_endpoint_name,
             endpoint_name: self.endpoint_name,
         }
     }

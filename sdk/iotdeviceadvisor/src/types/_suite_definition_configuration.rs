@@ -9,9 +9,9 @@ pub struct SuiteDefinitionConfiguration {
     /// <p>Gets the devices configured.</p>
     pub devices: ::std::option::Option<::std::vec::Vec<crate::types::DeviceUnderTest>>,
     /// <p>Gets the tests intended for qualification in a suite.</p>
-    pub intended_for_qualification: bool,
+    pub intended_for_qualification: ::std::option::Option<bool>,
     /// <p>Verifies if the test suite is a long duration test.</p>
-    pub is_long_duration_test: bool,
+    pub is_long_duration_test: ::std::option::Option<bool>,
     /// <p>Gets the test suite root group. This is a required parameter. For updating or creating the latest qualification suite, if <code>intendedForQualification</code> is set to true, <code>rootGroup</code> can be an empty string. If <code>intendedForQualification</code> is false, <code>rootGroup</code> cannot be an empty string. If <code>rootGroup</code> is empty, and <code>intendedForQualification</code> is set to true, all the qualification tests are included, and the configuration is default.</p>
     /// <p> For a qualification suite, the minimum length is 0, and the maximum is 2048. For a non-qualification suite, the minimum length is 1, and the maximum is 2048. </p>
     pub root_group: ::std::option::Option<::std::string::String>,
@@ -30,11 +30,11 @@ impl SuiteDefinitionConfiguration {
         self.devices.as_deref()
     }
     /// <p>Gets the tests intended for qualification in a suite.</p>
-    pub fn intended_for_qualification(&self) -> bool {
+    pub fn intended_for_qualification(&self) -> ::std::option::Option<bool> {
         self.intended_for_qualification
     }
     /// <p>Verifies if the test suite is a long duration test.</p>
-    pub fn is_long_duration_test(&self) -> bool {
+    pub fn is_long_duration_test(&self) -> ::std::option::Option<bool> {
         self.is_long_duration_test
     }
     /// <p>Gets the test suite root group. This is a required parameter. For updating or creating the latest qualification suite, if <code>intendedForQualification</code> is set to true, <code>rootGroup</code> can be an empty string. If <code>intendedForQualification</code> is false, <code>rootGroup</code> cannot be an empty string. If <code>rootGroup</code> is empty, and <code>intendedForQualification</code> is set to true, all the qualification tests are included, and the configuration is default.</p>
@@ -183,8 +183,8 @@ impl SuiteDefinitionConfigurationBuilder {
         crate::types::SuiteDefinitionConfiguration {
             suite_definition_name: self.suite_definition_name,
             devices: self.devices,
-            intended_for_qualification: self.intended_for_qualification.unwrap_or_default(),
-            is_long_duration_test: self.is_long_duration_test.unwrap_or_default(),
+            intended_for_qualification: self.intended_for_qualification,
+            is_long_duration_test: self.is_long_duration_test,
             root_group: self.root_group,
             device_permission_role_arn: self.device_permission_role_arn,
             protocol: self.protocol,

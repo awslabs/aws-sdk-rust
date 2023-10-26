@@ -7,7 +7,7 @@ pub struct GetTraceSummariesInput {
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The end of the time frame for which to retrieve traces.</p>
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>A parameter to indicate whether to query trace summaries by TraceId or Event time.</p>
+    /// <p>A parameter to indicate whether to query trace summaries by TraceId, Event (trace update time), or Service (segment end time).</p>
     pub time_range_type: ::std::option::Option<crate::types::TimeRangeType>,
     /// <p>Set to <code>true</code> to get summaries for only a subset of available traces.</p>
     pub sampling: ::std::option::Option<bool>,
@@ -27,7 +27,7 @@ impl GetTraceSummariesInput {
     pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
-    /// <p>A parameter to indicate whether to query trace summaries by TraceId or Event time.</p>
+    /// <p>A parameter to indicate whether to query trace summaries by TraceId, Event (trace update time), or Service (segment end time).</p>
     pub fn time_range_type(&self) -> ::std::option::Option<&crate::types::TimeRangeType> {
         self.time_range_type.as_ref()
     }
@@ -96,17 +96,17 @@ impl GetTraceSummariesInputBuilder {
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.end_time
     }
-    /// <p>A parameter to indicate whether to query trace summaries by TraceId or Event time.</p>
+    /// <p>A parameter to indicate whether to query trace summaries by TraceId, Event (trace update time), or Service (segment end time).</p>
     pub fn time_range_type(mut self, input: crate::types::TimeRangeType) -> Self {
         self.time_range_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A parameter to indicate whether to query trace summaries by TraceId or Event time.</p>
+    /// <p>A parameter to indicate whether to query trace summaries by TraceId, Event (trace update time), or Service (segment end time).</p>
     pub fn set_time_range_type(mut self, input: ::std::option::Option<crate::types::TimeRangeType>) -> Self {
         self.time_range_type = input;
         self
     }
-    /// <p>A parameter to indicate whether to query trace summaries by TraceId or Event time.</p>
+    /// <p>A parameter to indicate whether to query trace summaries by TraceId, Event (trace update time), or Service (segment end time).</p>
     pub fn get_time_range_type(&self) -> &::std::option::Option<crate::types::TimeRangeType> {
         &self.time_range_type
     }

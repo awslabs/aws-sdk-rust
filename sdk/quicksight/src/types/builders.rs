@@ -383,6 +383,8 @@ pub use crate::types::_data_path_color::DataPathColorBuilder;
 
 pub use crate::types::_data_path_value::DataPathValueBuilder;
 
+pub use crate::types::_data_path_type::DataPathTypeBuilder;
+
 pub use crate::types::_radar_chart_series_settings::RadarChartSeriesSettingsBuilder;
 
 pub use crate::types::_radar_chart_area_style_settings::RadarChartAreaStyleSettingsBuilder;
@@ -851,6 +853,10 @@ pub use crate::types::_pivot_table_total_options::PivotTableTotalOptionsBuilder;
 
 pub use crate::types::_pivot_total_options::PivotTotalOptionsBuilder;
 
+pub use crate::types::_total_aggregation_option::TotalAggregationOptionBuilder;
+
+pub use crate::types::_total_aggregation_function::TotalAggregationFunctionBuilder;
+
 pub use crate::types::_table_cell_style::TableCellStyleBuilder;
 
 pub use crate::types::_global_table_border_options::GlobalTableBorderOptionsBuilder;
@@ -1028,6 +1034,10 @@ pub use crate::types::_vpc_connection_properties::VpcConnectionPropertiesBuilder
 pub use crate::types::_data_source_credentials::DataSourceCredentialsBuilder;
 
 pub use crate::types::_credential_pair::CredentialPairBuilder;
+
+pub use crate::types::_trino_parameters::TrinoParametersBuilder;
+
+pub use crate::types::_starburst_parameters::StarburstParametersBuilder;
 
 pub use crate::types::_databricks_parameters::DatabricksParametersBuilder;
 

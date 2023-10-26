@@ -18,20 +18,20 @@ pub fn ser_suite_definition_configuration(
         }
         array_3.finish();
     }
-    if input.intended_for_qualification {
-        object.key("intendedForQualification").boolean(input.intended_for_qualification);
+    if let Some(var_6) = &input.intended_for_qualification {
+        object.key("intendedForQualification").boolean(*var_6);
     }
-    if input.is_long_duration_test {
-        object.key("isLongDurationTest").boolean(input.is_long_duration_test);
+    if let Some(var_7) = &input.is_long_duration_test {
+        object.key("isLongDurationTest").boolean(*var_7);
     }
-    if let Some(var_6) = &input.root_group {
-        object.key("rootGroup").string(var_6.as_str());
+    if let Some(var_8) = &input.root_group {
+        object.key("rootGroup").string(var_8.as_str());
     }
-    if let Some(var_7) = &input.device_permission_role_arn {
-        object.key("devicePermissionRoleArn").string(var_7.as_str());
+    if let Some(var_9) = &input.device_permission_role_arn {
+        object.key("devicePermissionRoleArn").string(var_9.as_str());
     }
-    if let Some(var_8) = &input.protocol {
-        object.key("protocol").string(var_8.as_str());
+    if let Some(var_10) = &input.protocol {
+        object.key("protocol").string(var_10.as_str());
     }
     Ok(())
 }

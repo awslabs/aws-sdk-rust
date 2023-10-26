@@ -16,23 +16,23 @@ pub struct OrderableDbInstanceOption {
     /// <p>A list of Availability Zones for a DB instance.</p>
     pub availability_zones: ::std::option::Option<::std::vec::Vec<crate::types::AvailabilityZone>>,
     /// <p>Indicates whether a DB instance is Multi-AZ capable.</p>
-    pub multi_az_capable: bool,
+    pub multi_az_capable: ::std::option::Option<bool>,
     /// <p>Indicates whether a DB instance can have a Read Replica.</p>
-    pub read_replica_capable: bool,
+    pub read_replica_capable: ::std::option::Option<bool>,
     /// <p>Indicates whether a DB instance is in a VPC.</p>
-    pub vpc: bool,
+    pub vpc: ::std::option::Option<bool>,
     /// <p>Indicates whether a DB instance supports encrypted storage.</p>
-    pub supports_storage_encryption: bool,
+    pub supports_storage_encryption: ::std::option::Option<bool>,
     /// <p>Indicates the storage type for a DB instance.</p>
     pub storage_type: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether a DB instance supports provisioned IOPS.</p>
-    pub supports_iops: bool,
+    pub supports_iops: ::std::option::Option<bool>,
     /// <p>Indicates whether a DB instance supports Enhanced Monitoring at intervals from 1 to 60 seconds.</p>
-    pub supports_enhanced_monitoring: bool,
+    pub supports_enhanced_monitoring: ::std::option::Option<bool>,
     /// <p>Indicates whether a DB instance supports IAM database authentication.</p>
-    pub supports_iam_database_authentication: bool,
+    pub supports_iam_database_authentication: ::std::option::Option<bool>,
     /// <p> <i>(Not supported by Neptune)</i> </p>
-    pub supports_performance_insights: bool,
+    pub supports_performance_insights: ::std::option::Option<bool>,
     /// <p>Minimum storage size for a DB instance.</p>
     pub min_storage_size: ::std::option::Option<i32>,
     /// <p>Maximum storage size for a DB instance.</p>
@@ -46,7 +46,7 @@ pub struct OrderableDbInstanceOption {
     /// <p>Maximum provisioned IOPS per GiB for a DB instance.</p>
     pub max_iops_per_gib: ::std::option::Option<f64>,
     /// <p>A value that indicates whether you can use Neptune global databases with a specific combination of other DB engine attributes.</p>
-    pub supports_global_databases: bool,
+    pub supports_global_databases: ::std::option::Option<bool>,
 }
 impl OrderableDbInstanceOption {
     /// <p>The engine type of a DB instance.</p>
@@ -70,19 +70,19 @@ impl OrderableDbInstanceOption {
         self.availability_zones.as_deref()
     }
     /// <p>Indicates whether a DB instance is Multi-AZ capable.</p>
-    pub fn multi_az_capable(&self) -> bool {
+    pub fn multi_az_capable(&self) -> ::std::option::Option<bool> {
         self.multi_az_capable
     }
     /// <p>Indicates whether a DB instance can have a Read Replica.</p>
-    pub fn read_replica_capable(&self) -> bool {
+    pub fn read_replica_capable(&self) -> ::std::option::Option<bool> {
         self.read_replica_capable
     }
     /// <p>Indicates whether a DB instance is in a VPC.</p>
-    pub fn vpc(&self) -> bool {
+    pub fn vpc(&self) -> ::std::option::Option<bool> {
         self.vpc
     }
     /// <p>Indicates whether a DB instance supports encrypted storage.</p>
-    pub fn supports_storage_encryption(&self) -> bool {
+    pub fn supports_storage_encryption(&self) -> ::std::option::Option<bool> {
         self.supports_storage_encryption
     }
     /// <p>Indicates the storage type for a DB instance.</p>
@@ -90,19 +90,19 @@ impl OrderableDbInstanceOption {
         self.storage_type.as_deref()
     }
     /// <p>Indicates whether a DB instance supports provisioned IOPS.</p>
-    pub fn supports_iops(&self) -> bool {
+    pub fn supports_iops(&self) -> ::std::option::Option<bool> {
         self.supports_iops
     }
     /// <p>Indicates whether a DB instance supports Enhanced Monitoring at intervals from 1 to 60 seconds.</p>
-    pub fn supports_enhanced_monitoring(&self) -> bool {
+    pub fn supports_enhanced_monitoring(&self) -> ::std::option::Option<bool> {
         self.supports_enhanced_monitoring
     }
     /// <p>Indicates whether a DB instance supports IAM database authentication.</p>
-    pub fn supports_iam_database_authentication(&self) -> bool {
+    pub fn supports_iam_database_authentication(&self) -> ::std::option::Option<bool> {
         self.supports_iam_database_authentication
     }
     /// <p> <i>(Not supported by Neptune)</i> </p>
-    pub fn supports_performance_insights(&self) -> bool {
+    pub fn supports_performance_insights(&self) -> ::std::option::Option<bool> {
         self.supports_performance_insights
     }
     /// <p>Minimum storage size for a DB instance.</p>
@@ -130,7 +130,7 @@ impl OrderableDbInstanceOption {
         self.max_iops_per_gib
     }
     /// <p>A value that indicates whether you can use Neptune global databases with a specific combination of other DB engine attributes.</p>
-    pub fn supports_global_databases(&self) -> bool {
+    pub fn supports_global_databases(&self) -> ::std::option::Option<bool> {
         self.supports_global_databases
     }
 }
@@ -476,22 +476,22 @@ impl OrderableDbInstanceOptionBuilder {
             db_instance_class: self.db_instance_class,
             license_model: self.license_model,
             availability_zones: self.availability_zones,
-            multi_az_capable: self.multi_az_capable.unwrap_or_default(),
-            read_replica_capable: self.read_replica_capable.unwrap_or_default(),
-            vpc: self.vpc.unwrap_or_default(),
-            supports_storage_encryption: self.supports_storage_encryption.unwrap_or_default(),
+            multi_az_capable: self.multi_az_capable,
+            read_replica_capable: self.read_replica_capable,
+            vpc: self.vpc,
+            supports_storage_encryption: self.supports_storage_encryption,
             storage_type: self.storage_type,
-            supports_iops: self.supports_iops.unwrap_or_default(),
-            supports_enhanced_monitoring: self.supports_enhanced_monitoring.unwrap_or_default(),
-            supports_iam_database_authentication: self.supports_iam_database_authentication.unwrap_or_default(),
-            supports_performance_insights: self.supports_performance_insights.unwrap_or_default(),
+            supports_iops: self.supports_iops,
+            supports_enhanced_monitoring: self.supports_enhanced_monitoring,
+            supports_iam_database_authentication: self.supports_iam_database_authentication,
+            supports_performance_insights: self.supports_performance_insights,
             min_storage_size: self.min_storage_size,
             max_storage_size: self.max_storage_size,
             min_iops_per_db_instance: self.min_iops_per_db_instance,
             max_iops_per_db_instance: self.max_iops_per_db_instance,
             min_iops_per_gib: self.min_iops_per_gib,
             max_iops_per_gib: self.max_iops_per_gib,
-            supports_global_databases: self.supports_global_databases.unwrap_or_default(),
+            supports_global_databases: self.supports_global_databases,
         }
     }
 }

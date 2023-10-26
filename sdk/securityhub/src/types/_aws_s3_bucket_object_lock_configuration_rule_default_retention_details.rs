@@ -5,15 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsS3BucketObjectLockConfigurationRuleDefaultRetentionDetails {
     /// <p> The number of days that you want to specify for the default retention period. </p>
-    pub days: i32,
+    pub days: ::std::option::Option<i32>,
     /// <p> The default Object Lock retention mode you want to apply to new objects placed in the specified bucket. </p>
     pub mode: ::std::option::Option<::std::string::String>,
     /// <p> The number of years that you want to specify for the default retention period. </p>
-    pub years: i32,
+    pub years: ::std::option::Option<i32>,
 }
 impl AwsS3BucketObjectLockConfigurationRuleDefaultRetentionDetails {
     /// <p> The number of days that you want to specify for the default retention period. </p>
-    pub fn days(&self) -> i32 {
+    pub fn days(&self) -> ::std::option::Option<i32> {
         self.days
     }
     /// <p> The default Object Lock retention mode you want to apply to new objects placed in the specified bucket. </p>
@@ -21,7 +21,7 @@ impl AwsS3BucketObjectLockConfigurationRuleDefaultRetentionDetails {
         self.mode.as_deref()
     }
     /// <p> The number of years that you want to specify for the default retention period. </p>
-    pub fn years(&self) -> i32 {
+    pub fn years(&self) -> ::std::option::Option<i32> {
         self.years
     }
 }
@@ -86,9 +86,9 @@ impl AwsS3BucketObjectLockConfigurationRuleDefaultRetentionDetailsBuilder {
     /// Consumes the builder and constructs a [`AwsS3BucketObjectLockConfigurationRuleDefaultRetentionDetails`](crate::types::AwsS3BucketObjectLockConfigurationRuleDefaultRetentionDetails).
     pub fn build(self) -> crate::types::AwsS3BucketObjectLockConfigurationRuleDefaultRetentionDetails {
         crate::types::AwsS3BucketObjectLockConfigurationRuleDefaultRetentionDetails {
-            days: self.days.unwrap_or_default(),
+            days: self.days,
             mode: self.mode,
-            years: self.years.unwrap_or_default(),
+            years: self.years,
         }
     }
 }

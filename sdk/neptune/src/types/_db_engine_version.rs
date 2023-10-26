@@ -25,11 +25,11 @@ pub struct DbEngineVersion {
     /// <p>The types of logs that the database engine has available for export to CloudWatch Logs.</p>
     pub exportable_log_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A value that indicates whether the engine version supports exporting the log types specified by ExportableLogTypes to CloudWatch Logs.</p>
-    pub supports_log_exports_to_cloudwatch_logs: bool,
+    pub supports_log_exports_to_cloudwatch_logs: ::std::option::Option<bool>,
     /// <p>Indicates whether the database engine version supports read replicas.</p>
-    pub supports_read_replica: bool,
+    pub supports_read_replica: ::std::option::Option<bool>,
     /// <p>A value that indicates whether you can use Aurora global databases with a specific DB engine version.</p>
-    pub supports_global_databases: bool,
+    pub supports_global_databases: ::std::option::Option<bool>,
 }
 impl DbEngineVersion {
     /// <p>The name of the database engine.</p>
@@ -73,15 +73,15 @@ impl DbEngineVersion {
         self.exportable_log_types.as_deref()
     }
     /// <p>A value that indicates whether the engine version supports exporting the log types specified by ExportableLogTypes to CloudWatch Logs.</p>
-    pub fn supports_log_exports_to_cloudwatch_logs(&self) -> bool {
+    pub fn supports_log_exports_to_cloudwatch_logs(&self) -> ::std::option::Option<bool> {
         self.supports_log_exports_to_cloudwatch_logs
     }
     /// <p>Indicates whether the database engine version supports read replicas.</p>
-    pub fn supports_read_replica(&self) -> bool {
+    pub fn supports_read_replica(&self) -> ::std::option::Option<bool> {
         self.supports_read_replica
     }
     /// <p>A value that indicates whether you can use Aurora global databases with a specific DB engine version.</p>
-    pub fn supports_global_databases(&self) -> bool {
+    pub fn supports_global_databases(&self) -> ::std::option::Option<bool> {
         self.supports_global_databases
     }
 }
@@ -330,9 +330,9 @@ impl DbEngineVersionBuilder {
             valid_upgrade_target: self.valid_upgrade_target,
             supported_timezones: self.supported_timezones,
             exportable_log_types: self.exportable_log_types,
-            supports_log_exports_to_cloudwatch_logs: self.supports_log_exports_to_cloudwatch_logs.unwrap_or_default(),
-            supports_read_replica: self.supports_read_replica.unwrap_or_default(),
-            supports_global_databases: self.supports_global_databases.unwrap_or_default(),
+            supports_log_exports_to_cloudwatch_logs: self.supports_log_exports_to_cloudwatch_logs,
+            supports_read_replica: self.supports_read_replica,
+            supports_global_databases: self.supports_global_databases,
         }
     }
 }

@@ -52,10 +52,10 @@ pub struct Cluster {
     /// <p>The date and time that the cluster was created.</p>
     pub cluster_create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The number of days that automatic cluster snapshots are retained.</p>
-    pub automated_snapshot_retention_period: i32,
+    pub automated_snapshot_retention_period: ::std::option::Option<i32>,
     /// <p>The default number of days to retain a manual snapshot. If the value is -1, the snapshot is retained indefinitely. This setting doesn't change the retention period of existing snapshots.</p>
     /// <p>The value must be either -1 or an integer between 1 and 3,653.</p>
-    pub manual_snapshot_retention_period: i32,
+    pub manual_snapshot_retention_period: ::std::option::Option<i32>,
     /// <p>A list of cluster security group that are associated with the cluster. Each security group is represented by an element that contains <code>ClusterSecurityGroup.Name</code> and <code>ClusterSecurityGroup.Status</code> subelements. </p>
     /// <p>Cluster security groups are used when the cluster is not created in an Amazon Virtual Private Cloud (VPC). Clusters that are created in a VPC use VPC security groups, which are listed by the <b>VpcSecurityGroups</b> parameter. </p>
     pub cluster_security_groups: ::std::option::Option<::std::vec::Vec<crate::types::ClusterSecurityGroupMembership>>,
@@ -76,13 +76,13 @@ pub struct Cluster {
     /// <p>The version ID of the Amazon Redshift engine that is running on the cluster.</p>
     pub cluster_version: ::std::option::Option<::std::string::String>,
     /// <p>A boolean value that, if <code>true</code>, indicates that major version upgrades will be applied automatically to the cluster during the maintenance window. </p>
-    pub allow_version_upgrade: bool,
+    pub allow_version_upgrade: ::std::option::Option<bool>,
     /// <p>The number of compute nodes in the cluster.</p>
-    pub number_of_nodes: i32,
+    pub number_of_nodes: ::std::option::Option<i32>,
     /// <p>A boolean value that, if <code>true</code>, indicates that the cluster can be accessed from a public network.</p>
-    pub publicly_accessible: bool,
+    pub publicly_accessible: ::std::option::Option<bool>,
     /// <p>A boolean value that, if <code>true</code>, indicates that data in the cluster is encrypted at rest.</p>
-    pub encrypted: bool,
+    pub encrypted: ::std::option::Option<bool>,
     /// <p>A value that describes the status of a cluster restore action. This parameter returns null if the cluster was not created by restoring a snapshot.</p>
     pub restore_status: ::std::option::Option<crate::types::RestoreStatus>,
     /// <p></p>
@@ -107,7 +107,7 @@ pub struct Cluster {
     /// <p>An option that specifies whether to create the cluster with enhanced VPC routing enabled. To create a cluster that uses enhanced VPC routing, the cluster must be in a VPC. For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced VPC Routing</a> in the Amazon Redshift Cluster Management Guide.</p>
     /// <p>If this option is <code>true</code>, enhanced VPC routing is enabled. </p>
     /// <p>Default: false</p>
-    pub enhanced_vpc_routing: bool,
+    pub enhanced_vpc_routing: ::std::option::Option<bool>,
     /// <p>A list of Identity and Access Management (IAM) roles that can be used by the cluster to access other Amazon Web Services services.</p>
     pub iam_roles: ::std::option::Option<::std::vec::Vec<crate::types::ClusterIamRole>>,
     /// <p>Cluster operations that are waiting to be started.</p>
@@ -156,6 +156,10 @@ pub struct Cluster {
     pub custom_domain_certificate_arn: ::std::option::Option<::std::string::String>,
     /// <p>The expiration date for the certificate associated with the custom domain name.</p>
     pub custom_domain_certificate_expiry_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The Amazon Resource Name (ARN) for the cluster's admin user credentials secret.</p>
+    pub master_password_secret_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The ID of the Key Management Service (KMS) key used to encrypt and store the cluster's admin credentials secret.</p>
+    pub master_password_secret_kms_key_id: ::std::option::Option<::std::string::String>,
 }
 impl Cluster {
     /// <p>The unique identifier of the cluster.</p>
@@ -224,12 +228,12 @@ impl Cluster {
         self.cluster_create_time.as_ref()
     }
     /// <p>The number of days that automatic cluster snapshots are retained.</p>
-    pub fn automated_snapshot_retention_period(&self) -> i32 {
+    pub fn automated_snapshot_retention_period(&self) -> ::std::option::Option<i32> {
         self.automated_snapshot_retention_period
     }
     /// <p>The default number of days to retain a manual snapshot. If the value is -1, the snapshot is retained indefinitely. This setting doesn't change the retention period of existing snapshots.</p>
     /// <p>The value must be either -1 or an integer between 1 and 3,653.</p>
-    pub fn manual_snapshot_retention_period(&self) -> i32 {
+    pub fn manual_snapshot_retention_period(&self) -> ::std::option::Option<i32> {
         self.manual_snapshot_retention_period
     }
     /// <p>A list of cluster security group that are associated with the cluster. Each security group is represented by an element that contains <code>ClusterSecurityGroup.Name</code> and <code>ClusterSecurityGroup.Status</code> subelements. </p>
@@ -270,19 +274,19 @@ impl Cluster {
         self.cluster_version.as_deref()
     }
     /// <p>A boolean value that, if <code>true</code>, indicates that major version upgrades will be applied automatically to the cluster during the maintenance window. </p>
-    pub fn allow_version_upgrade(&self) -> bool {
+    pub fn allow_version_upgrade(&self) -> ::std::option::Option<bool> {
         self.allow_version_upgrade
     }
     /// <p>The number of compute nodes in the cluster.</p>
-    pub fn number_of_nodes(&self) -> i32 {
+    pub fn number_of_nodes(&self) -> ::std::option::Option<i32> {
         self.number_of_nodes
     }
     /// <p>A boolean value that, if <code>true</code>, indicates that the cluster can be accessed from a public network.</p>
-    pub fn publicly_accessible(&self) -> bool {
+    pub fn publicly_accessible(&self) -> ::std::option::Option<bool> {
         self.publicly_accessible
     }
     /// <p>A boolean value that, if <code>true</code>, indicates that data in the cluster is encrypted at rest.</p>
-    pub fn encrypted(&self) -> bool {
+    pub fn encrypted(&self) -> ::std::option::Option<bool> {
         self.encrypted
     }
     /// <p>A value that describes the status of a cluster restore action. This parameter returns null if the cluster was not created by restoring a snapshot.</p>
@@ -329,7 +333,7 @@ impl Cluster {
     /// <p>An option that specifies whether to create the cluster with enhanced VPC routing enabled. To create a cluster that uses enhanced VPC routing, the cluster must be in a VPC. For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced VPC Routing</a> in the Amazon Redshift Cluster Management Guide.</p>
     /// <p>If this option is <code>true</code>, enhanced VPC routing is enabled. </p>
     /// <p>Default: false</p>
-    pub fn enhanced_vpc_routing(&self) -> bool {
+    pub fn enhanced_vpc_routing(&self) -> ::std::option::Option<bool> {
         self.enhanced_vpc_routing
     }
     /// <p>A list of Identity and Access Management (IAM) roles that can be used by the cluster to access other Amazon Web Services services.</p>
@@ -420,6 +424,14 @@ impl Cluster {
     pub fn custom_domain_certificate_expiry_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.custom_domain_certificate_expiry_date.as_ref()
     }
+    /// <p>The Amazon Resource Name (ARN) for the cluster's admin user credentials secret.</p>
+    pub fn master_password_secret_arn(&self) -> ::std::option::Option<&str> {
+        self.master_password_secret_arn.as_deref()
+    }
+    /// <p>The ID of the Key Management Service (KMS) key used to encrypt and store the cluster's admin credentials secret.</p>
+    pub fn master_password_secret_kms_key_id(&self) -> ::std::option::Option<&str> {
+        self.master_password_secret_kms_key_id.as_deref()
+    }
 }
 impl Cluster {
     /// Creates a new builder-style object to manufacture [`Cluster`](crate::types::Cluster).
@@ -487,6 +499,8 @@ pub struct ClusterBuilder {
     pub(crate) custom_domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) custom_domain_certificate_arn: ::std::option::Option<::std::string::String>,
     pub(crate) custom_domain_certificate_expiry_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) master_password_secret_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) master_password_secret_kms_key_id: ::std::option::Option<::std::string::String>,
 }
 impl ClusterBuilder {
     /// <p>The unique identifier of the cluster.</p>
@@ -1439,6 +1453,34 @@ impl ClusterBuilder {
     pub fn get_custom_domain_certificate_expiry_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.custom_domain_certificate_expiry_date
     }
+    /// <p>The Amazon Resource Name (ARN) for the cluster's admin user credentials secret.</p>
+    pub fn master_password_secret_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.master_password_secret_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) for the cluster's admin user credentials secret.</p>
+    pub fn set_master_password_secret_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.master_password_secret_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) for the cluster's admin user credentials secret.</p>
+    pub fn get_master_password_secret_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.master_password_secret_arn
+    }
+    /// <p>The ID of the Key Management Service (KMS) key used to encrypt and store the cluster's admin credentials secret.</p>
+    pub fn master_password_secret_kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.master_password_secret_kms_key_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the Key Management Service (KMS) key used to encrypt and store the cluster's admin credentials secret.</p>
+    pub fn set_master_password_secret_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.master_password_secret_kms_key_id = input;
+        self
+    }
+    /// <p>The ID of the Key Management Service (KMS) key used to encrypt and store the cluster's admin credentials secret.</p>
+    pub fn get_master_password_secret_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.master_password_secret_kms_key_id
+    }
     /// Consumes the builder and constructs a [`Cluster`](crate::types::Cluster).
     pub fn build(self) -> crate::types::Cluster {
         crate::types::Cluster {
@@ -1451,8 +1493,8 @@ impl ClusterBuilder {
             db_name: self.db_name,
             endpoint: self.endpoint,
             cluster_create_time: self.cluster_create_time,
-            automated_snapshot_retention_period: self.automated_snapshot_retention_period.unwrap_or_default(),
-            manual_snapshot_retention_period: self.manual_snapshot_retention_period.unwrap_or_default(),
+            automated_snapshot_retention_period: self.automated_snapshot_retention_period,
+            manual_snapshot_retention_period: self.manual_snapshot_retention_period,
             cluster_security_groups: self.cluster_security_groups,
             vpc_security_groups: self.vpc_security_groups,
             cluster_parameter_groups: self.cluster_parameter_groups,
@@ -1462,10 +1504,10 @@ impl ClusterBuilder {
             preferred_maintenance_window: self.preferred_maintenance_window,
             pending_modified_values: self.pending_modified_values,
             cluster_version: self.cluster_version,
-            allow_version_upgrade: self.allow_version_upgrade.unwrap_or_default(),
-            number_of_nodes: self.number_of_nodes.unwrap_or_default(),
-            publicly_accessible: self.publicly_accessible.unwrap_or_default(),
-            encrypted: self.encrypted.unwrap_or_default(),
+            allow_version_upgrade: self.allow_version_upgrade,
+            number_of_nodes: self.number_of_nodes,
+            publicly_accessible: self.publicly_accessible,
+            encrypted: self.encrypted,
             restore_status: self.restore_status,
             data_transfer_progress: self.data_transfer_progress,
             hsm_status: self.hsm_status,
@@ -1476,7 +1518,7 @@ impl ClusterBuilder {
             cluster_revision_number: self.cluster_revision_number,
             tags: self.tags,
             kms_key_id: self.kms_key_id,
-            enhanced_vpc_routing: self.enhanced_vpc_routing.unwrap_or_default(),
+            enhanced_vpc_routing: self.enhanced_vpc_routing,
             iam_roles: self.iam_roles,
             pending_actions: self.pending_actions,
             maintenance_track_name: self.maintenance_track_name,
@@ -1497,6 +1539,8 @@ impl ClusterBuilder {
             custom_domain_name: self.custom_domain_name,
             custom_domain_certificate_arn: self.custom_domain_certificate_arn,
             custom_domain_certificate_expiry_date: self.custom_domain_certificate_expiry_date,
+            master_password_secret_arn: self.master_password_secret_arn,
+            master_password_secret_kms_key_id: self.master_password_secret_kms_key_id,
         }
     }
 }

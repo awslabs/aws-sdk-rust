@@ -15,6 +15,9 @@ pub fn ser_schema_input_attribute(
     if let Some(var_4) = &input.match_key {
         object.key("matchKey").string(var_4.as_str());
     }
+    if let Some(var_5) = &input.sub_type {
+        object.key("subType").string(var_5.as_str());
+    }
     Ok(())
 }
 
@@ -56,6 +59,13 @@ where
                         }
                         "matchKey" => {
                             builder = builder.set_match_key(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "subType" => {
+                            builder = builder.set_sub_type(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,

@@ -15,13 +15,13 @@ pub struct ReservedNodeExchangeStatus {
     /// <p>The source reserved-node type, for example ds2.xlarge.</p>
     pub source_reserved_node_type: ::std::option::Option<::std::string::String>,
     /// <p>The source reserved-node count in the cluster.</p>
-    pub source_reserved_node_count: i32,
+    pub source_reserved_node_count: ::std::option::Option<i32>,
     /// <p>The identifier of the target reserved node offering.</p>
     pub target_reserved_node_offering_id: ::std::option::Option<::std::string::String>,
     /// <p>The node type of the target reserved node, for example ra3.4xlarge.</p>
     pub target_reserved_node_type: ::std::option::Option<::std::string::String>,
     /// <p>The count of target reserved nodes in the cluster.</p>
-    pub target_reserved_node_count: i32,
+    pub target_reserved_node_count: ::std::option::Option<i32>,
 }
 impl ReservedNodeExchangeStatus {
     /// <p>The identifier of the reserved-node exchange request.</p>
@@ -45,7 +45,7 @@ impl ReservedNodeExchangeStatus {
         self.source_reserved_node_type.as_deref()
     }
     /// <p>The source reserved-node count in the cluster.</p>
-    pub fn source_reserved_node_count(&self) -> i32 {
+    pub fn source_reserved_node_count(&self) -> ::std::option::Option<i32> {
         self.source_reserved_node_count
     }
     /// <p>The identifier of the target reserved node offering.</p>
@@ -57,7 +57,7 @@ impl ReservedNodeExchangeStatus {
         self.target_reserved_node_type.as_deref()
     }
     /// <p>The count of target reserved nodes in the cluster.</p>
-    pub fn target_reserved_node_count(&self) -> i32 {
+    pub fn target_reserved_node_count(&self) -> ::std::option::Option<i32> {
         self.target_reserved_node_count
     }
 }
@@ -217,10 +217,10 @@ impl ReservedNodeExchangeStatusBuilder {
             request_time: self.request_time,
             source_reserved_node_id: self.source_reserved_node_id,
             source_reserved_node_type: self.source_reserved_node_type,
-            source_reserved_node_count: self.source_reserved_node_count.unwrap_or_default(),
+            source_reserved_node_count: self.source_reserved_node_count,
             target_reserved_node_offering_id: self.target_reserved_node_offering_id,
             target_reserved_node_type: self.target_reserved_node_type,
-            target_reserved_node_count: self.target_reserved_node_count.unwrap_or_default(),
+            target_reserved_node_count: self.target_reserved_node_count,
         }
     }
 }

@@ -5,19 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEcsTaskDefinitionContainerDefinitionsPortMappingsDetails {
     /// <p>The port number on the container that is bound to the user-specified or automatically assigned host port.</p>
-    pub container_port: i32,
+    pub container_port: ::std::option::Option<i32>,
     /// <p>The port number on the container instance to reserve for the container.</p>
-    pub host_port: i32,
+    pub host_port: ::std::option::Option<i32>,
     /// <p>The protocol used for the port mapping. The default is <code>tcp</code>.</p>
     pub protocol: ::std::option::Option<::std::string::String>,
 }
 impl AwsEcsTaskDefinitionContainerDefinitionsPortMappingsDetails {
     /// <p>The port number on the container that is bound to the user-specified or automatically assigned host port.</p>
-    pub fn container_port(&self) -> i32 {
+    pub fn container_port(&self) -> ::std::option::Option<i32> {
         self.container_port
     }
     /// <p>The port number on the container instance to reserve for the container.</p>
-    pub fn host_port(&self) -> i32 {
+    pub fn host_port(&self) -> ::std::option::Option<i32> {
         self.host_port
     }
     /// <p>The protocol used for the port mapping. The default is <code>tcp</code>.</p>
@@ -86,8 +86,8 @@ impl AwsEcsTaskDefinitionContainerDefinitionsPortMappingsDetailsBuilder {
     /// Consumes the builder and constructs a [`AwsEcsTaskDefinitionContainerDefinitionsPortMappingsDetails`](crate::types::AwsEcsTaskDefinitionContainerDefinitionsPortMappingsDetails).
     pub fn build(self) -> crate::types::AwsEcsTaskDefinitionContainerDefinitionsPortMappingsDetails {
         crate::types::AwsEcsTaskDefinitionContainerDefinitionsPortMappingsDetails {
-            container_port: self.container_port.unwrap_or_default(),
-            host_port: self.host_port.unwrap_or_default(),
+            container_port: self.container_port,
+            host_port: self.host_port,
             protocol: self.protocol,
         }
     }

@@ -6,11 +6,11 @@ pub fn ser_aws_ecs_task_definition_container_definitions_mount_points_details(
     if let Some(var_1) = &input.container_path {
         object.key("ContainerPath").string(var_1.as_str());
     }
-    if input.read_only {
-        object.key("ReadOnly").boolean(input.read_only);
+    if let Some(var_2) = &input.read_only {
+        object.key("ReadOnly").boolean(*var_2);
     }
-    if let Some(var_2) = &input.source_volume {
-        object.key("SourceVolume").string(var_2.as_str());
+    if let Some(var_3) = &input.source_volume {
+        object.key("SourceVolume").string(var_3.as_str());
     }
     Ok(())
 }

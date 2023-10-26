@@ -5,17 +5,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PointOfInterest {
     /// <p>The beginning offset in milliseconds where the category rule was detected.</p>
-    pub begin_offset_millis: i32,
+    pub begin_offset_millis: ::std::option::Option<i32>,
     /// <p>The ending offset in milliseconds where the category rule was detected.</p>
-    pub end_offset_millis: i32,
+    pub end_offset_millis: ::std::option::Option<i32>,
 }
 impl PointOfInterest {
     /// <p>The beginning offset in milliseconds where the category rule was detected.</p>
-    pub fn begin_offset_millis(&self) -> i32 {
+    pub fn begin_offset_millis(&self) -> ::std::option::Option<i32> {
         self.begin_offset_millis
     }
     /// <p>The ending offset in milliseconds where the category rule was detected.</p>
-    pub fn end_offset_millis(&self) -> i32 {
+    pub fn end_offset_millis(&self) -> ::std::option::Option<i32> {
         self.end_offset_millis
     }
 }
@@ -65,8 +65,8 @@ impl PointOfInterestBuilder {
     /// Consumes the builder and constructs a [`PointOfInterest`](crate::types::PointOfInterest).
     pub fn build(self) -> crate::types::PointOfInterest {
         crate::types::PointOfInterest {
-            begin_offset_millis: self.begin_offset_millis.unwrap_or_default(),
-            end_offset_millis: self.end_offset_millis.unwrap_or_default(),
+            begin_offset_millis: self.begin_offset_millis,
+            end_offset_millis: self.end_offset_millis,
         }
     }
 }

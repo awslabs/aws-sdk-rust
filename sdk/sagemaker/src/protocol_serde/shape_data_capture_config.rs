@@ -3,38 +3,38 @@ pub fn ser_data_capture_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DataCaptureConfig,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if input.enable_capture {
-        object.key("EnableCapture").boolean(input.enable_capture);
+    if let Some(var_1) = &input.enable_capture {
+        object.key("EnableCapture").boolean(*var_1);
     }
-    if let Some(var_1) = &input.initial_sampling_percentage {
+    if let Some(var_2) = &input.initial_sampling_percentage {
         object.key("InitialSamplingPercentage").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_1).into()),
+            ::aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
-    if let Some(var_2) = &input.destination_s3_uri {
-        object.key("DestinationS3Uri").string(var_2.as_str());
+    if let Some(var_3) = &input.destination_s3_uri {
+        object.key("DestinationS3Uri").string(var_3.as_str());
     }
-    if let Some(var_3) = &input.kms_key_id {
-        object.key("KmsKeyId").string(var_3.as_str());
+    if let Some(var_4) = &input.kms_key_id {
+        object.key("KmsKeyId").string(var_4.as_str());
     }
-    if let Some(var_4) = &input.capture_options {
-        let mut array_5 = object.key("CaptureOptions").start_array();
-        for item_6 in var_4 {
+    if let Some(var_5) = &input.capture_options {
+        let mut array_6 = object.key("CaptureOptions").start_array();
+        for item_7 in var_5 {
             {
                 #[allow(unused_mut)]
-                let mut object_7 = array_5.value().start_object();
-                crate::protocol_serde::shape_capture_option::ser_capture_option(&mut object_7, item_6)?;
-                object_7.finish();
+                let mut object_8 = array_6.value().start_object();
+                crate::protocol_serde::shape_capture_option::ser_capture_option(&mut object_8, item_7)?;
+                object_8.finish();
             }
         }
-        array_5.finish();
+        array_6.finish();
     }
-    if let Some(var_8) = &input.capture_content_type_header {
+    if let Some(var_9) = &input.capture_content_type_header {
         #[allow(unused_mut)]
-        let mut object_9 = object.key("CaptureContentTypeHeader").start_object();
-        crate::protocol_serde::shape_capture_content_type_header::ser_capture_content_type_header(&mut object_9, var_8)?;
-        object_9.finish();
+        let mut object_10 = object.key("CaptureContentTypeHeader").start_object();
+        crate::protocol_serde::shape_capture_content_type_header::ser_capture_content_type_header(&mut object_10, var_9)?;
+        object_10.finish();
     }
     Ok(())
 }

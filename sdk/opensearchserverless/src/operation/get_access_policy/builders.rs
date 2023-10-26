@@ -110,17 +110,17 @@ impl GetAccessPolicyFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>Tye type of policy. Currently the only supported value is <code>data</code>.</p>
+    /// <p>Tye type of policy. Currently, the only supported value is <code>data</code>.</p>
     pub fn r#type(mut self, input: crate::types::AccessPolicyType) -> Self {
         self.inner = self.inner.r#type(input);
         self
     }
-    /// <p>Tye type of policy. Currently the only supported value is <code>data</code>.</p>
+    /// <p>Tye type of policy. Currently, the only supported value is <code>data</code>.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::AccessPolicyType>) -> Self {
         self.inner = self.inner.set_type(input);
         self
     }
-    /// <p>Tye type of policy. Currently the only supported value is <code>data</code>.</p>
+    /// <p>Tye type of policy. Currently, the only supported value is <code>data</code>.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::AccessPolicyType> {
         self.inner.get_type()
     }

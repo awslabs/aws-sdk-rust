@@ -16,6 +16,8 @@
 ///     ProjectVersionStatus::CopyingFailed => { /* ... */ },
 ///     ProjectVersionStatus::CopyingInProgress => { /* ... */ },
 ///     ProjectVersionStatus::Deleting => { /* ... */ },
+///     ProjectVersionStatus::Deprecated => { /* ... */ },
+///     ProjectVersionStatus::Expired => { /* ... */ },
 ///     ProjectVersionStatus::Failed => { /* ... */ },
 ///     ProjectVersionStatus::Running => { /* ... */ },
 ///     ProjectVersionStatus::Starting => { /* ... */ },
@@ -60,6 +62,10 @@ pub enum ProjectVersionStatus {
     #[allow(missing_docs)] // documentation missing in model
     Deleting,
     #[allow(missing_docs)] // documentation missing in model
+    Deprecated,
+    #[allow(missing_docs)] // documentation missing in model
+    Expired,
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
     #[allow(missing_docs)] // documentation missing in model
     Running,
@@ -85,6 +91,8 @@ impl ::std::convert::From<&str> for ProjectVersionStatus {
             "COPYING_FAILED" => ProjectVersionStatus::CopyingFailed,
             "COPYING_IN_PROGRESS" => ProjectVersionStatus::CopyingInProgress,
             "DELETING" => ProjectVersionStatus::Deleting,
+            "DEPRECATED" => ProjectVersionStatus::Deprecated,
+            "EXPIRED" => ProjectVersionStatus::Expired,
             "FAILED" => ProjectVersionStatus::Failed,
             "RUNNING" => ProjectVersionStatus::Running,
             "STARTING" => ProjectVersionStatus::Starting,
@@ -112,6 +120,8 @@ impl ProjectVersionStatus {
             ProjectVersionStatus::CopyingFailed => "COPYING_FAILED",
             ProjectVersionStatus::CopyingInProgress => "COPYING_IN_PROGRESS",
             ProjectVersionStatus::Deleting => "DELETING",
+            ProjectVersionStatus::Deprecated => "DEPRECATED",
+            ProjectVersionStatus::Expired => "EXPIRED",
             ProjectVersionStatus::Failed => "FAILED",
             ProjectVersionStatus::Running => "RUNNING",
             ProjectVersionStatus::Starting => "STARTING",
@@ -130,6 +140,8 @@ impl ProjectVersionStatus {
             "COPYING_FAILED",
             "COPYING_IN_PROGRESS",
             "DELETING",
+            "DEPRECATED",
+            "EXPIRED",
             "FAILED",
             "RUNNING",
             "STARTING",

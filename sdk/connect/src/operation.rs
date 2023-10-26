@@ -553,6 +553,9 @@ pub mod update_participant_role_config;
 /// Types for the `UpdatePhoneNumber` operation.
 pub mod update_phone_number;
 
+/// Types for the `UpdatePhoneNumberMetadata` operation.
+pub mod update_phone_number_metadata;
+
 /// Types for the `UpdatePrompt` operation.
 pub mod update_prompt;
 

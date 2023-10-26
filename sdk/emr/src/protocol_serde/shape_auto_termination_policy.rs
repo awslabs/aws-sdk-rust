@@ -43,10 +43,10 @@ pub fn ser_auto_termination_policy(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AutoTerminationPolicy,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if input.idle_timeout != 0 {
+    if let Some(var_1) = &input.idle_timeout {
         object.key("IdleTimeout").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.idle_timeout).into()),
+            ::aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
     Ok(())

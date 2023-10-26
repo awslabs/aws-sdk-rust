@@ -20,7 +20,7 @@ pub struct DescribeDeviceOutput {
     /// <p>Models on the device.</p>
     pub models: ::std::option::Option<::std::vec::Vec<crate::types::EdgeModel>>,
     /// <p>The maximum number of models.</p>
-    pub max_models: i32,
+    pub max_models: ::std::option::Option<i32>,
     /// <p>The response from the last list when returning a list large enough to need tokening.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Edge Manager agent version.</p>
@@ -61,7 +61,7 @@ impl DescribeDeviceOutput {
         self.models.as_deref()
     }
     /// <p>The maximum number of models.</p>
-    pub fn max_models(&self) -> i32 {
+    pub fn max_models(&self) -> ::std::option::Option<i32> {
         self.max_models
     }
     /// <p>The response from the last list when returning a list large enough to need tokening.</p>
@@ -283,7 +283,7 @@ impl DescribeDeviceOutputBuilder {
             registration_time: self.registration_time,
             latest_heartbeat: self.latest_heartbeat,
             models: self.models,
-            max_models: self.max_models.unwrap_or_default(),
+            max_models: self.max_models,
             next_token: self.next_token,
             agent_version: self.agent_version,
             _request_id: self._request_id,

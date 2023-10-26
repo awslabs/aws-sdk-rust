@@ -11,9 +11,9 @@ pub struct SuiteDefinitionInformation {
     /// <p>Specifies the devices that are under test for the test suite.</p>
     pub default_devices: ::std::option::Option<::std::vec::Vec<crate::types::DeviceUnderTest>>,
     /// <p>Specifies if the test suite is intended for qualification.</p>
-    pub intended_for_qualification: bool,
+    pub intended_for_qualification: ::std::option::Option<bool>,
     /// <p>Verifies if the test suite is a long duration test.</p>
-    pub is_long_duration_test: bool,
+    pub is_long_duration_test: ::std::option::Option<bool>,
     /// <p>Gets the MQTT protocol that is configured in the suite definition.</p>
     pub protocol: ::std::option::Option<crate::types::Protocol>,
     /// <p>Date (in Unix epoch time) when the test suite was created.</p>
@@ -33,11 +33,11 @@ impl SuiteDefinitionInformation {
         self.default_devices.as_deref()
     }
     /// <p>Specifies if the test suite is intended for qualification.</p>
-    pub fn intended_for_qualification(&self) -> bool {
+    pub fn intended_for_qualification(&self) -> ::std::option::Option<bool> {
         self.intended_for_qualification
     }
     /// <p>Verifies if the test suite is a long duration test.</p>
-    pub fn is_long_duration_test(&self) -> bool {
+    pub fn is_long_duration_test(&self) -> ::std::option::Option<bool> {
         self.is_long_duration_test
     }
     /// <p>Gets the MQTT protocol that is configured in the suite definition.</p>
@@ -179,8 +179,8 @@ impl SuiteDefinitionInformationBuilder {
             suite_definition_id: self.suite_definition_id,
             suite_definition_name: self.suite_definition_name,
             default_devices: self.default_devices,
-            intended_for_qualification: self.intended_for_qualification.unwrap_or_default(),
-            is_long_duration_test: self.is_long_duration_test.unwrap_or_default(),
+            intended_for_qualification: self.intended_for_qualification,
+            is_long_duration_test: self.is_long_duration_test,
             protocol: self.protocol,
             created_at: self.created_at,
         }

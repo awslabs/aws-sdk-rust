@@ -89,6 +89,16 @@ pub(crate) fn reflens_list_nodes_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_replicators_output_next_token(
+    input: &crate::operation::list_replicators::ListReplicatorsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_scram_secrets_output_next_token(
     input: &crate::operation::list_scram_secrets::ListScramSecretsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -193,6 +203,16 @@ pub(crate) fn lens_list_nodes_output_node_info_list(
     input: crate::operation::list_nodes::ListNodesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::NodeInfo>> {
     let input = match input.node_info_list {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_replicators_output_replicators(
+    input: crate::operation::list_replicators::ListReplicatorsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ReplicatorSummary>> {
+    let input = match input.replicators {
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,
     };

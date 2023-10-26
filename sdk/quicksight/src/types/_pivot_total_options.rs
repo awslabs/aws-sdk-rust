@@ -18,6 +18,8 @@ pub struct PivotTotalOptions {
     pub value_cell_style: ::std::option::Option<crate::types::TableCellStyle>,
     /// <p>The cell styling options for the total of header cells.</p>
     pub metric_header_cell_style: ::std::option::Option<crate::types::TableCellStyle>,
+    /// <p>The total aggregation options for each value field.</p>
+    pub total_aggregation_options: ::std::option::Option<::std::vec::Vec<crate::types::TotalAggregationOption>>,
 }
 impl PivotTotalOptions {
     /// <p>The visibility configuration for the total cells.</p>
@@ -48,6 +50,10 @@ impl PivotTotalOptions {
     pub fn metric_header_cell_style(&self) -> ::std::option::Option<&crate::types::TableCellStyle> {
         self.metric_header_cell_style.as_ref()
     }
+    /// <p>The total aggregation options for each value field.</p>
+    pub fn total_aggregation_options(&self) -> ::std::option::Option<&[crate::types::TotalAggregationOption]> {
+        self.total_aggregation_options.as_deref()
+    }
 }
 impl PivotTotalOptions {
     /// Creates a new builder-style object to manufacture [`PivotTotalOptions`](crate::types::PivotTotalOptions).
@@ -67,6 +73,7 @@ pub struct PivotTotalOptionsBuilder {
     pub(crate) total_cell_style: ::std::option::Option<crate::types::TableCellStyle>,
     pub(crate) value_cell_style: ::std::option::Option<crate::types::TableCellStyle>,
     pub(crate) metric_header_cell_style: ::std::option::Option<crate::types::TableCellStyle>,
+    pub(crate) total_aggregation_options: ::std::option::Option<::std::vec::Vec<crate::types::TotalAggregationOption>>,
 }
 impl PivotTotalOptionsBuilder {
     /// <p>The visibility configuration for the total cells.</p>
@@ -167,6 +174,26 @@ impl PivotTotalOptionsBuilder {
     pub fn get_metric_header_cell_style(&self) -> &::std::option::Option<crate::types::TableCellStyle> {
         &self.metric_header_cell_style
     }
+    /// Appends an item to `total_aggregation_options`.
+    ///
+    /// To override the contents of this collection use [`set_total_aggregation_options`](Self::set_total_aggregation_options).
+    ///
+    /// <p>The total aggregation options for each value field.</p>
+    pub fn total_aggregation_options(mut self, input: crate::types::TotalAggregationOption) -> Self {
+        let mut v = self.total_aggregation_options.unwrap_or_default();
+        v.push(input);
+        self.total_aggregation_options = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The total aggregation options for each value field.</p>
+    pub fn set_total_aggregation_options(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TotalAggregationOption>>) -> Self {
+        self.total_aggregation_options = input;
+        self
+    }
+    /// <p>The total aggregation options for each value field.</p>
+    pub fn get_total_aggregation_options(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TotalAggregationOption>> {
+        &self.total_aggregation_options
+    }
     /// Consumes the builder and constructs a [`PivotTotalOptions`](crate::types::PivotTotalOptions).
     pub fn build(self) -> crate::types::PivotTotalOptions {
         crate::types::PivotTotalOptions {
@@ -177,6 +204,7 @@ impl PivotTotalOptionsBuilder {
             total_cell_style: self.total_cell_style,
             value_cell_style: self.value_cell_style,
             metric_header_cell_style: self.metric_header_cell_style,
+            total_aggregation_options: self.total_aggregation_options,
         }
     }
 }

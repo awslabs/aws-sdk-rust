@@ -67,6 +67,10 @@ where
                         "postLaunchEnabled" => {
                             builder = builder.set_post_launch_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
+                        "launchIntoSourceInstance" => {
+                            builder =
+                                builder.set_launch_into_source_instance(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

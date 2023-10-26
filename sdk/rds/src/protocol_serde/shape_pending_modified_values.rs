@@ -276,6 +276,21 @@ pub fn de_pending_modified_values(
                 builder = builder.set_engine(var_20);
             }
             ,
+            s if s.matches("DedicatedLogVolume") /* DedicatedLogVolume com.amazonaws.rds#PendingModifiedValues$DedicatedLogVolume */ =>  {
+                let var_21 =
+                    Some(
+                         {
+                            <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.rds#BooleanOptional`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_dedicated_log_volume(var_21);
+            }
+            ,
             _ => {}
         }
     }

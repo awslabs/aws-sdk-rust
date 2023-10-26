@@ -23,6 +23,8 @@ pub use crate::types::_schedule_at::ScheduleAt;
 
 pub use crate::types::_package_details::PackageDetails;
 
+pub use crate::types::_plugin_properties::PluginProperties;
+
 pub use crate::types::_error_details::ErrorDetails;
 
 pub use crate::types::_package_status::PackageStatus;
@@ -147,6 +149,8 @@ pub use crate::types::_service_software_options::ServiceSoftwareOptions;
 
 pub use crate::types::_deployment_status::DeploymentStatus;
 
+pub use crate::types::_maintenance_type::MaintenanceType;
+
 pub use crate::types::_inbound_connection::InboundConnection;
 
 pub use crate::types::_connection_mode::ConnectionMode;
@@ -176,6 +180,10 @@ pub use crate::types::_instance_type_details::InstanceTypeDetails;
 pub use crate::types::_domain_info::DomainInfo;
 
 pub use crate::types::_engine_type::EngineType;
+
+pub use crate::types::_domain_maintenance_details::DomainMaintenanceDetails;
+
+pub use crate::types::_maintenance_status::MaintenanceStatus;
 
 pub use crate::types::_upgrade_status::UpgradeStatus;
 
@@ -361,6 +369,8 @@ mod _domain_info;
 
 mod _domain_information_container;
 
+mod _domain_maintenance_details;
+
 mod _domain_nodes_status;
 
 mod _domain_package_details;
@@ -415,6 +425,10 @@ mod _log_publishing_options_status;
 
 mod _log_type;
 
+mod _maintenance_status;
+
+mod _maintenance_type;
+
 mod _master_node_status;
 
 mod _master_user_options;
@@ -458,6 +472,8 @@ mod _package_status;
 mod _package_type;
 
 mod _package_version_history;
+
+mod _plugin_properties;
 
 mod _principal_type;
 

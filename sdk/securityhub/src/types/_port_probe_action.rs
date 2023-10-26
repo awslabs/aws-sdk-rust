@@ -7,7 +7,7 @@ pub struct PortProbeAction {
     /// <p>Information about the ports affected by the port probe.</p>
     pub port_probe_details: ::std::option::Option<::std::vec::Vec<crate::types::PortProbeDetail>>,
     /// <p>Indicates whether the port probe was blocked.</p>
-    pub blocked: bool,
+    pub blocked: ::std::option::Option<bool>,
 }
 impl PortProbeAction {
     /// <p>Information about the ports affected by the port probe.</p>
@@ -15,7 +15,7 @@ impl PortProbeAction {
         self.port_probe_details.as_deref()
     }
     /// <p>Indicates whether the port probe was blocked.</p>
-    pub fn blocked(&self) -> bool {
+    pub fn blocked(&self) -> ::std::option::Option<bool> {
         self.blocked
     }
 }
@@ -72,7 +72,7 @@ impl PortProbeActionBuilder {
     pub fn build(self) -> crate::types::PortProbeAction {
         crate::types::PortProbeAction {
             port_probe_details: self.port_probe_details,
-            blocked: self.blocked.unwrap_or_default(),
+            blocked: self.blocked,
         }
     }
 }

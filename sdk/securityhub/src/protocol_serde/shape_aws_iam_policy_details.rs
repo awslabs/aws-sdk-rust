@@ -3,53 +3,53 @@ pub fn ser_aws_iam_policy_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsIamPolicyDetails,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if input.attachment_count != 0 {
+    if let Some(var_1) = &input.attachment_count {
         object.key("AttachmentCount").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.attachment_count).into()),
+            ::aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if let Some(var_1) = &input.create_date {
-        object.key("CreateDate").string(var_1.as_str());
+    if let Some(var_2) = &input.create_date {
+        object.key("CreateDate").string(var_2.as_str());
     }
-    if let Some(var_2) = &input.default_version_id {
-        object.key("DefaultVersionId").string(var_2.as_str());
+    if let Some(var_3) = &input.default_version_id {
+        object.key("DefaultVersionId").string(var_3.as_str());
     }
-    if let Some(var_3) = &input.description {
-        object.key("Description").string(var_3.as_str());
+    if let Some(var_4) = &input.description {
+        object.key("Description").string(var_4.as_str());
     }
-    if input.is_attachable {
-        object.key("IsAttachable").boolean(input.is_attachable);
+    if let Some(var_5) = &input.is_attachable {
+        object.key("IsAttachable").boolean(*var_5);
     }
-    if let Some(var_4) = &input.path {
-        object.key("Path").string(var_4.as_str());
+    if let Some(var_6) = &input.path {
+        object.key("Path").string(var_6.as_str());
     }
-    if input.permissions_boundary_usage_count != 0 {
+    if let Some(var_7) = &input.permissions_boundary_usage_count {
         object.key("PermissionsBoundaryUsageCount").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.permissions_boundary_usage_count).into()),
+            ::aws_smithy_types::Number::NegInt((*var_7).into()),
         );
     }
-    if let Some(var_5) = &input.policy_id {
-        object.key("PolicyId").string(var_5.as_str());
+    if let Some(var_8) = &input.policy_id {
+        object.key("PolicyId").string(var_8.as_str());
     }
-    if let Some(var_6) = &input.policy_name {
-        object.key("PolicyName").string(var_6.as_str());
+    if let Some(var_9) = &input.policy_name {
+        object.key("PolicyName").string(var_9.as_str());
     }
-    if let Some(var_7) = &input.policy_version_list {
-        let mut array_8 = object.key("PolicyVersionList").start_array();
-        for item_9 in var_7 {
+    if let Some(var_10) = &input.policy_version_list {
+        let mut array_11 = object.key("PolicyVersionList").start_array();
+        for item_12 in var_10 {
             {
                 #[allow(unused_mut)]
-                let mut object_10 = array_8.value().start_object();
-                crate::protocol_serde::shape_aws_iam_policy_version::ser_aws_iam_policy_version(&mut object_10, item_9)?;
-                object_10.finish();
+                let mut object_13 = array_11.value().start_object();
+                crate::protocol_serde::shape_aws_iam_policy_version::ser_aws_iam_policy_version(&mut object_13, item_12)?;
+                object_13.finish();
             }
         }
-        array_8.finish();
+        array_11.finish();
     }
-    if let Some(var_11) = &input.update_date {
-        object.key("UpdateDate").string(var_11.as_str());
+    if let Some(var_14) = &input.update_date {
+        object.key("UpdateDate").string(var_14.as_str());
     }
     Ok(())
 }

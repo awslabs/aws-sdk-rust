@@ -5,13 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CrossRegionCopyDeprecateRule {
     /// <p>The period after which to deprecate the cross-Region AMI copies. The period must be less than or equal to the cross-Region AMI copy retention period, and it can't be greater than 10 years. This is equivalent to 120 months, 520 weeks, or 3650 days.</p>
-    pub interval: i32,
+    pub interval: ::std::option::Option<i32>,
     /// <p>The unit of time in which to measure the <b>Interval</b>. For example, to deprecate a cross-Region AMI copy after 3 months, specify <code>Interval=3</code> and <code>IntervalUnit=MONTHS</code>.</p>
     pub interval_unit: ::std::option::Option<crate::types::RetentionIntervalUnitValues>,
 }
 impl CrossRegionCopyDeprecateRule {
     /// <p>The period after which to deprecate the cross-Region AMI copies. The period must be less than or equal to the cross-Region AMI copy retention period, and it can't be greater than 10 years. This is equivalent to 120 months, 520 weeks, or 3650 days.</p>
-    pub fn interval(&self) -> i32 {
+    pub fn interval(&self) -> ::std::option::Option<i32> {
         self.interval
     }
     /// <p>The unit of time in which to measure the <b>Interval</b>. For example, to deprecate a cross-Region AMI copy after 3 months, specify <code>Interval=3</code> and <code>IntervalUnit=MONTHS</code>.</p>
@@ -65,7 +65,7 @@ impl CrossRegionCopyDeprecateRuleBuilder {
     /// Consumes the builder and constructs a [`CrossRegionCopyDeprecateRule`](crate::types::CrossRegionCopyDeprecateRule).
     pub fn build(self) -> crate::types::CrossRegionCopyDeprecateRule {
         crate::types::CrossRegionCopyDeprecateRule {
-            interval: self.interval.unwrap_or_default(),
+            interval: self.interval,
             interval_unit: self.interval_unit,
         }
     }

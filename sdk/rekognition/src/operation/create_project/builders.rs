@@ -22,8 +22,7 @@ impl CreateProjectInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateProject`.
 ///
-/// <p>Creates a new Amazon Rekognition Custom Labels project. A project is a group of resources (datasets, model versions) that you use to create and manage Amazon Rekognition Custom Labels models. </p>
-/// <p>This operation requires permissions to perform the <code>rekognition:CreateProject</code> action.</p>
+/// <p>Creates a new Amazon Rekognition project. A project is a group of resources (datasets, model versions) that you use to create and manage a Amazon Rekognition Custom Labels Model or custom adapter. You can specify a feature to create the project with, if no feature is specified then Custom Labels is used by default. For adapters, you can also choose whether or not to have the project auto update by using the AutoUpdate argument. This operation requires permissions to perform the <code>rekognition:CreateProject</code> action.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateProjectFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -124,5 +123,33 @@ impl CreateProjectFluentBuilder {
     /// <p>The name of the project to create.</p>
     pub fn get_project_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_project_name()
+    }
+    /// <p>Specifies feature that is being customized. If no value is provided CUSTOM_LABELS is used as a default.</p>
+    pub fn feature(mut self, input: crate::types::CustomizationFeature) -> Self {
+        self.inner = self.inner.feature(input);
+        self
+    }
+    /// <p>Specifies feature that is being customized. If no value is provided CUSTOM_LABELS is used as a default.</p>
+    pub fn set_feature(mut self, input: ::std::option::Option<crate::types::CustomizationFeature>) -> Self {
+        self.inner = self.inner.set_feature(input);
+        self
+    }
+    /// <p>Specifies feature that is being customized. If no value is provided CUSTOM_LABELS is used as a default.</p>
+    pub fn get_feature(&self) -> &::std::option::Option<crate::types::CustomizationFeature> {
+        self.inner.get_feature()
+    }
+    /// <p>Specifies whether automatic retraining should be attempted for the versions of the project. Automatic retraining is done as a best effort. Required argument for Content Moderation. Applicable only to adapters.</p>
+    pub fn auto_update(mut self, input: crate::types::ProjectAutoUpdate) -> Self {
+        self.inner = self.inner.auto_update(input);
+        self
+    }
+    /// <p>Specifies whether automatic retraining should be attempted for the versions of the project. Automatic retraining is done as a best effort. Required argument for Content Moderation. Applicable only to adapters.</p>
+    pub fn set_auto_update(mut self, input: ::std::option::Option<crate::types::ProjectAutoUpdate>) -> Self {
+        self.inner = self.inner.set_auto_update(input);
+        self
+    }
+    /// <p>Specifies whether automatic retraining should be attempted for the versions of the project. Automatic retraining is done as a best effort. Required argument for Content Moderation. Applicable only to adapters.</p>
+    pub fn get_auto_update(&self) -> &::std::option::Option<crate::types::ProjectAutoUpdate> {
+        self.inner.get_auto_update()
     }
 }

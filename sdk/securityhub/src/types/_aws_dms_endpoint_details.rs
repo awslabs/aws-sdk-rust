@@ -23,7 +23,7 @@ pub struct AwsDmsEndpointDetails {
     /// <p> An DMS key identifier that is used to encrypt the connection parameters for the endpoint. If you don't specify a value for the <code>KmsKeyId</code> parameter, then DMS uses your default encryption key. KMS creates the default encryption key for your Amazon Web Services account. Your Amazon Web Services account has a different default encryption key for each Amazon Web Services Region.</p>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p> The port used to access the endpoint. </p>
-    pub port: i32,
+    pub port: ::std::option::Option<i32>,
     /// <p> The name of the server where the endpoint database resides.</p>
     pub server_name: ::std::option::Option<::std::string::String>,
     /// <p> The SSL mode used to connect to the endpoint. The default is none.</p>
@@ -69,7 +69,7 @@ impl AwsDmsEndpointDetails {
         self.kms_key_id.as_deref()
     }
     /// <p> The port used to access the endpoint. </p>
-    pub fn port(&self) -> i32 {
+    pub fn port(&self) -> ::std::option::Option<i32> {
         self.port
     }
     /// <p> The name of the server where the endpoint database resides.</p>
@@ -305,7 +305,7 @@ impl AwsDmsEndpointDetailsBuilder {
             external_id: self.external_id,
             extra_connection_attributes: self.extra_connection_attributes,
             kms_key_id: self.kms_key_id,
-            port: self.port.unwrap_or_default(),
+            port: self.port,
             server_name: self.server_name,
             ssl_mode: self.ssl_mode,
             username: self.username,

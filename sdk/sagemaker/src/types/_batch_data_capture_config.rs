@@ -16,7 +16,7 @@ pub struct BatchDataCaptureConfig {
     /// </ul>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>Flag that indicates whether to append inference id to the output.</p>
-    pub generate_inference_id: bool,
+    pub generate_inference_id: ::std::option::Option<bool>,
 }
 impl BatchDataCaptureConfig {
     /// <p>The Amazon S3 location being used to capture the data.</p>
@@ -35,7 +35,7 @@ impl BatchDataCaptureConfig {
         self.kms_key_id.as_deref()
     }
     /// <p>Flag that indicates whether to append inference id to the output.</p>
-    pub fn generate_inference_id(&self) -> bool {
+    pub fn generate_inference_id(&self) -> ::std::option::Option<bool> {
         self.generate_inference_id
     }
 }
@@ -123,7 +123,7 @@ impl BatchDataCaptureConfigBuilder {
         crate::types::BatchDataCaptureConfig {
             destination_s3_uri: self.destination_s3_uri,
             kms_key_id: self.kms_key_id,
-            generate_inference_id: self.generate_inference_id.unwrap_or_default(),
+            generate_inference_id: self.generate_inference_id,
         }
     }
 }

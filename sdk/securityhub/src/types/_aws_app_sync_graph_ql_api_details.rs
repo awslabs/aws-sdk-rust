@@ -15,7 +15,7 @@ pub struct AwsAppSyncGraphQlApiDetails {
     /// <p> Specifies the configuration for Lambda function authorization. </p>
     pub lambda_authorizer_config: ::std::option::Option<crate::types::AwsAppSyncGraphQlApiLambdaAuthorizerConfigDetails>,
     /// <p> Indicates whether to use X-Ray tracing for the GraphQL API. </p>
-    pub xray_enabled: bool,
+    pub xray_enabled: ::std::option::Option<bool>,
     /// <p> The Amazon Resource Name (ARN) of the API. </p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p> The Amazon Cognito user pools configuration. </p>
@@ -52,7 +52,7 @@ impl AwsAppSyncGraphQlApiDetails {
         self.lambda_authorizer_config.as_ref()
     }
     /// <p> Indicates whether to use X-Ray tracing for the GraphQL API. </p>
-    pub fn xray_enabled(&self) -> bool {
+    pub fn xray_enabled(&self) -> ::std::option::Option<bool> {
         self.xray_enabled
     }
     /// <p> The Amazon Resource Name (ARN) of the API. </p>
@@ -298,7 +298,7 @@ impl AwsAppSyncGraphQlApiDetailsBuilder {
             open_id_connect_config: self.open_id_connect_config,
             name: self.name,
             lambda_authorizer_config: self.lambda_authorizer_config,
-            xray_enabled: self.xray_enabled.unwrap_or_default(),
+            xray_enabled: self.xray_enabled,
             arn: self.arn,
             user_pool_config: self.user_pool_config,
             authentication_type: self.authentication_type,

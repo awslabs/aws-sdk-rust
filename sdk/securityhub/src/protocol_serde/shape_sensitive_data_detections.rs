@@ -3,20 +3,20 @@ pub fn ser_sensitive_data_detections(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SensitiveDataDetections,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if input.count != 0 {
+    if let Some(var_1) = &input.count {
         object.key("Count").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.count).into()),
+            ::aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if let Some(var_1) = &input.r#type {
-        object.key("Type").string(var_1.as_str());
+    if let Some(var_2) = &input.r#type {
+        object.key("Type").string(var_2.as_str());
     }
-    if let Some(var_2) = &input.occurrences {
+    if let Some(var_3) = &input.occurrences {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("Occurrences").start_object();
-        crate::protocol_serde::shape_occurrences::ser_occurrences(&mut object_3, var_2)?;
-        object_3.finish();
+        let mut object_4 = object.key("Occurrences").start_object();
+        crate::protocol_serde::shape_occurrences::ser_occurrences(&mut object_4, var_3)?;
+        object_4.finish();
     }
     Ok(())
 }

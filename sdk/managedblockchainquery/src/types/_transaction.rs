@@ -8,7 +8,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Transaction {
-    /// <p>The blockchain network where the transaction occured.</p>
+    /// <p>The blockchain network where the transaction occurred.</p>
     pub network: ::std::option::Option<crate::types::QueryNetwork>,
     /// <p>The block hash is a unique identifier for a block. It is a fixed-size string that is calculated by using the information in the block. The block hash is used to verify the integrity of the data in the block.</p>
     pub block_hash: ::std::option::Option<::std::string::String>,
@@ -48,7 +48,7 @@ pub struct Transaction {
     pub transaction_id: ::std::option::Option<::std::string::String>,
 }
 impl Transaction {
-    /// <p>The blockchain network where the transaction occured.</p>
+    /// <p>The blockchain network where the transaction occurred.</p>
     pub fn network(&self) -> ::std::option::Option<&crate::types::QueryNetwork> {
         self.network.as_ref()
     }
@@ -157,17 +157,17 @@ pub struct TransactionBuilder {
     pub(crate) transaction_id: ::std::option::Option<::std::string::String>,
 }
 impl TransactionBuilder {
-    /// <p>The blockchain network where the transaction occured.</p>
+    /// <p>The blockchain network where the transaction occurred.</p>
     pub fn network(mut self, input: crate::types::QueryNetwork) -> Self {
         self.network = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The blockchain network where the transaction occured.</p>
+    /// <p>The blockchain network where the transaction occurred.</p>
     pub fn set_network(mut self, input: ::std::option::Option<crate::types::QueryNetwork>) -> Self {
         self.network = input;
         self
     }
-    /// <p>The blockchain network where the transaction occured.</p>
+    /// <p>The blockchain network where the transaction occurred.</p>
     pub fn get_network(&self) -> &::std::option::Option<crate::types::QueryNetwork> {
         &self.network
     }

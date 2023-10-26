@@ -57,14 +57,14 @@ pub fn ser_aws_iam_role_details(
         }
         array_16.finish();
     }
-    if input.max_session_duration != 0 {
+    if let Some(var_19) = &input.max_session_duration {
         object.key("MaxSessionDuration").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.max_session_duration).into()),
+            ::aws_smithy_types::Number::NegInt((*var_19).into()),
         );
     }
-    if let Some(var_19) = &input.path {
-        object.key("Path").string(var_19.as_str());
+    if let Some(var_20) = &input.path {
+        object.key("Path").string(var_20.as_str());
     }
     Ok(())
 }

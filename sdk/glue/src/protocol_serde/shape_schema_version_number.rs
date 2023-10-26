@@ -6,10 +6,10 @@ pub fn ser_schema_version_number(
     if input.latest_version {
         object.key("LatestVersion").boolean(input.latest_version);
     }
-    if input.version_number != 0 {
+    if let Some(var_1) = &input.version_number {
         object.key("VersionNumber").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.version_number).into()),
+            ::aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
     Ok(())

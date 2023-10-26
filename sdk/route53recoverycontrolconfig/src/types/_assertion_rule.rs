@@ -18,6 +18,8 @@ pub struct AssertionRule {
     pub status: ::std::option::Option<crate::types::Status>,
     /// <p>An evaluation period, in milliseconds (ms), during which any request against the target routing controls will fail. This helps prevent "flapping" of state. The wait period is 5000 ms by default, but you can choose a custom value.</p>
     pub wait_period_ms: ::std::option::Option<i32>,
+    /// <p>The Amazon Web Services account ID of the assertion rule owner.</p>
+    pub owner: ::std::option::Option<::std::string::String>,
 }
 impl AssertionRule {
     /// <p>The routing controls that are part of transactions that are evaluated to determine if a request to change a routing control state is allowed. For example, you might include three routing controls, one for each of three Amazon Web Services Regions.</p>
@@ -48,6 +50,10 @@ impl AssertionRule {
     pub fn wait_period_ms(&self) -> ::std::option::Option<i32> {
         self.wait_period_ms
     }
+    /// <p>The Amazon Web Services account ID of the assertion rule owner.</p>
+    pub fn owner(&self) -> ::std::option::Option<&str> {
+        self.owner.as_deref()
+    }
 }
 impl AssertionRule {
     /// Creates a new builder-style object to manufacture [`AssertionRule`](crate::types::AssertionRule).
@@ -67,6 +73,7 @@ pub struct AssertionRuleBuilder {
     pub(crate) safety_rule_arn: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::Status>,
     pub(crate) wait_period_ms: ::std::option::Option<i32>,
+    pub(crate) owner: ::std::option::Option<::std::string::String>,
 }
 impl AssertionRuleBuilder {
     /// Appends an item to `asserted_controls`.
@@ -173,6 +180,20 @@ impl AssertionRuleBuilder {
     pub fn get_wait_period_ms(&self) -> &::std::option::Option<i32> {
         &self.wait_period_ms
     }
+    /// <p>The Amazon Web Services account ID of the assertion rule owner.</p>
+    pub fn owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.owner = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Web Services account ID of the assertion rule owner.</p>
+    pub fn set_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.owner = input;
+        self
+    }
+    /// <p>The Amazon Web Services account ID of the assertion rule owner.</p>
+    pub fn get_owner(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner
+    }
     /// Consumes the builder and constructs a [`AssertionRule`](crate::types::AssertionRule).
     pub fn build(self) -> crate::types::AssertionRule {
         crate::types::AssertionRule {
@@ -183,6 +204,7 @@ impl AssertionRuleBuilder {
             safety_rule_arn: self.safety_rule_arn,
             status: self.status,
             wait_period_ms: self.wait_period_ms,
+            owner: self.owner,
         }
     }
 }

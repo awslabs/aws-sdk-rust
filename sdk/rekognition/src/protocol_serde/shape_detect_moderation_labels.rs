@@ -151,6 +151,36 @@ pub fn de_detect_moderation_labels_http_error(
                 tmp
             })
         }
+        "ResourceNotFoundException" => crate::operation::detect_moderation_labels::DetectModerationLabelsError::ResourceNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
+                output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::detect_moderation_labels::DetectModerationLabelsError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ResourceNotReadyException" => crate::operation::detect_moderation_labels::DetectModerationLabelsError::ResourceNotReadyException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ResourceNotReadyExceptionBuilder::default();
+                output = crate::protocol_serde::shape_resource_not_ready_exception::de_resource_not_ready_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::detect_moderation_labels::DetectModerationLabelsError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "ThrottlingException" => crate::operation::detect_moderation_labels::DetectModerationLabelsError::ThrottlingException({
             #[allow(unused_mut)]
             let mut tmp = {
@@ -226,6 +256,13 @@ pub(crate) fn de_detect_moderation_labels(
                 "HumanLoopActivationOutput" => {
                     builder = builder.set_human_loop_activation_output(
                         crate::protocol_serde::shape_human_loop_activation_output::de_human_loop_activation_output(tokens)?,
+                    );
+                }
+                "ProjectVersion" => {
+                    builder = builder.set_project_version(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

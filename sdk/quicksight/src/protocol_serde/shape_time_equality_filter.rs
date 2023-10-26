@@ -23,6 +23,12 @@ pub fn ser_time_equality_filter(
     if let Some(var_6) = &input.time_granularity {
         object.key("TimeGranularity").string(var_6.as_str());
     }
+    if let Some(var_7) = &input.rolling_date {
+        #[allow(unused_mut)]
+        let mut object_8 = object.key("RollingDate").start_object();
+        crate::protocol_serde::shape_rolling_date_configuration::ser_rolling_date_configuration(&mut object_8, var_7)?;
+        object_8.finish();
+    }
     Ok(())
 }
 
@@ -69,6 +75,11 @@ where
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| crate::types::TimeGranularity::from(u.as_ref())))
                                     .transpose()?,
+                            );
+                        }
+                        "RollingDate" => {
+                            builder = builder.set_rolling_date(
+                                crate::protocol_serde::shape_rolling_date_configuration::de_rolling_date_configuration(tokens)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

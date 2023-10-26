@@ -9,7 +9,7 @@ pub struct PlayerLatency {
     /// <p>Name of the Region that is associated with the latency value.</p>
     pub region_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Amount of time that represents the time lag experienced by the player when connected to the specified Region.</p>
-    pub latency_in_milliseconds: f32,
+    pub latency_in_milliseconds: ::std::option::Option<f32>,
 }
 impl PlayerLatency {
     /// <p>A unique identifier for a player associated with the latency data.</p>
@@ -21,7 +21,7 @@ impl PlayerLatency {
         self.region_identifier.as_deref()
     }
     /// <p>Amount of time that represents the time lag experienced by the player when connected to the specified Region.</p>
-    pub fn latency_in_milliseconds(&self) -> f32 {
+    pub fn latency_in_milliseconds(&self) -> ::std::option::Option<f32> {
         self.latency_in_milliseconds
     }
 }
@@ -88,7 +88,7 @@ impl PlayerLatencyBuilder {
         crate::types::PlayerLatency {
             player_id: self.player_id,
             region_identifier: self.region_identifier,
-            latency_in_milliseconds: self.latency_in_milliseconds.unwrap_or_default(),
+            latency_in_milliseconds: self.latency_in_milliseconds,
         }
     }
 }

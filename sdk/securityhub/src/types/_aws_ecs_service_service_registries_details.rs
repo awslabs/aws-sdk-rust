@@ -11,9 +11,9 @@ pub struct AwsEcsServiceServiceRegistriesDetails {
     /// <p>The port value to use for the service discovery service.</p>
     /// <p>If the task definition uses the <code>bridge</code> or <code>host</code> network mode, you must specify <code>ContainerName</code> and <code>ContainerPort</code>.</p>
     /// <p>If the task definition uses the <code>awsvpc</code> network mode and a type SRV DNS record, you must specify either <code>ContainerName</code> and <code>ContainerPort</code>, or <code>Port</code> , but not both.</p>
-    pub container_port: i32,
+    pub container_port: ::std::option::Option<i32>,
     /// <p>The port value to use for a service discovery service that specifies an SRV record. This field can be used if both the <code>awsvpc</code>awsvpc network mode and SRV records are used.</p>
-    pub port: i32,
+    pub port: ::std::option::Option<i32>,
     /// <p>The ARN of the service registry.</p>
     pub registry_arn: ::std::option::Option<::std::string::String>,
 }
@@ -27,11 +27,11 @@ impl AwsEcsServiceServiceRegistriesDetails {
     /// <p>The port value to use for the service discovery service.</p>
     /// <p>If the task definition uses the <code>bridge</code> or <code>host</code> network mode, you must specify <code>ContainerName</code> and <code>ContainerPort</code>.</p>
     /// <p>If the task definition uses the <code>awsvpc</code> network mode and a type SRV DNS record, you must specify either <code>ContainerName</code> and <code>ContainerPort</code>, or <code>Port</code> , but not both.</p>
-    pub fn container_port(&self) -> i32 {
+    pub fn container_port(&self) -> ::std::option::Option<i32> {
         self.container_port
     }
     /// <p>The port value to use for a service discovery service that specifies an SRV record. This field can be used if both the <code>awsvpc</code>awsvpc network mode and SRV records are used.</p>
-    pub fn port(&self) -> i32 {
+    pub fn port(&self) -> ::std::option::Option<i32> {
         self.port
     }
     /// <p>The ARN of the service registry.</p>
@@ -128,8 +128,8 @@ impl AwsEcsServiceServiceRegistriesDetailsBuilder {
     pub fn build(self) -> crate::types::AwsEcsServiceServiceRegistriesDetails {
         crate::types::AwsEcsServiceServiceRegistriesDetails {
             container_name: self.container_name,
-            container_port: self.container_port.unwrap_or_default(),
-            port: self.port.unwrap_or_default(),
+            container_port: self.container_port,
+            port: self.port,
             registry_arn: self.registry_arn,
         }
     }

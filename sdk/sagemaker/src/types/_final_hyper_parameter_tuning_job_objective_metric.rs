@@ -9,7 +9,7 @@ pub struct FinalHyperParameterTuningJobObjectiveMetric {
     /// <p>The name of the objective metric. For SageMaker built-in algorithms, metrics are defined per algorithm. See the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/xgboost-tuning.html">metrics for XGBoost</a> as an example. You can also use a custom algorithm for training and define your own metrics. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics-variables.html">Define metrics and environment variables</a>.</p>
     pub metric_name: ::std::option::Option<::std::string::String>,
     /// <p>The value of the objective metric.</p>
-    pub value: f32,
+    pub value: ::std::option::Option<f32>,
 }
 impl FinalHyperParameterTuningJobObjectiveMetric {
     /// <p>Select if you want to minimize or maximize the objective metric during hyperparameter tuning. </p>
@@ -21,7 +21,7 @@ impl FinalHyperParameterTuningJobObjectiveMetric {
         self.metric_name.as_deref()
     }
     /// <p>The value of the objective metric.</p>
-    pub fn value(&self) -> f32 {
+    pub fn value(&self) -> ::std::option::Option<f32> {
         self.value
     }
 }
@@ -88,7 +88,7 @@ impl FinalHyperParameterTuningJobObjectiveMetricBuilder {
         crate::types::FinalHyperParameterTuningJobObjectiveMetric {
             r#type: self.r#type,
             metric_name: self.metric_name,
-            value: self.value.unwrap_or_default(),
+            value: self.value,
         }
     }
 }

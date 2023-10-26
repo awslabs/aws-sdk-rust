@@ -12,7 +12,7 @@ impl super::Client {
     ///   - [`schema_name(Option<String>)`](crate::operation::remove_schema_version_metadata::RemoveSchemaVersionMetadataOutput::schema_name): <p>The name of the schema.</p>
     ///   - [`registry_name(Option<String>)`](crate::operation::remove_schema_version_metadata::RemoveSchemaVersionMetadataOutput::registry_name): <p>The name of the registry.</p>
     ///   - [`latest_version(bool)`](crate::operation::remove_schema_version_metadata::RemoveSchemaVersionMetadataOutput::latest_version): <p>The latest version of the schema.</p>
-    ///   - [`version_number(i64)`](crate::operation::remove_schema_version_metadata::RemoveSchemaVersionMetadataOutput::version_number): <p>The version number of the schema.</p>
+    ///   - [`version_number(Option<i64>)`](crate::operation::remove_schema_version_metadata::RemoveSchemaVersionMetadataOutput::version_number): <p>The version number of the schema.</p>
     ///   - [`schema_version_id(Option<String>)`](crate::operation::remove_schema_version_metadata::RemoveSchemaVersionMetadataOutput::schema_version_id): <p>The version ID for the schema version.</p>
     ///   - [`metadata_key(Option<String>)`](crate::operation::remove_schema_version_metadata::RemoveSchemaVersionMetadataOutput::metadata_key): <p>The metadata key.</p>
     ///   - [`metadata_value(Option<String>)`](crate::operation::remove_schema_version_metadata::RemoveSchemaVersionMetadataOutput::metadata_value): <p>The value of the metadata key.</p>

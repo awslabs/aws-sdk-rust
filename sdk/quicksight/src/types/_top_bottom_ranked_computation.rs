@@ -13,7 +13,7 @@ pub struct TopBottomRankedComputation {
     /// <p>The value field that is used in a computation.</p>
     pub value: ::std::option::Option<crate::types::MeasureField>,
     /// <p>The result size of a top and bottom ranked computation.</p>
-    pub result_size: i32,
+    pub result_size: ::std::option::Option<i32>,
     /// <p>The computation type. Choose one of the following options:</p>
     /// <ul>
     /// <li> <p>TOP: A top ranked computation.</p> </li>
@@ -39,7 +39,7 @@ impl TopBottomRankedComputation {
         self.value.as_ref()
     }
     /// <p>The result size of a top and bottom ranked computation.</p>
-    pub fn result_size(&self) -> i32 {
+    pub fn result_size(&self) -> ::std::option::Option<i32> {
         self.result_size
     }
     /// <p>The computation type. Choose one of the following options:</p>
@@ -173,7 +173,7 @@ impl TopBottomRankedComputationBuilder {
             name: self.name,
             category: self.category,
             value: self.value,
-            result_size: self.result_size.unwrap_or_default(),
+            result_size: self.result_size,
             r#type: self.r#type,
         }
     }

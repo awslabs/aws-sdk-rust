@@ -5,11 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConnectionPoolConfigurationInfo {
     /// <p>The maximum size of the connection pool for each target in a target group. The value is expressed as a percentage of the <code>max_connections</code> setting for the RDS DB instance or Aurora DB cluster used by the target group.</p>
-    pub max_connections_percent: i32,
+    pub max_connections_percent: ::std::option::Option<i32>,
     /// <p>Controls how actively the proxy closes idle database connections in the connection pool. The value is expressed as a percentage of the <code>max_connections</code> setting for the RDS DB instance or Aurora DB cluster used by the target group. With a high value, the proxy leaves a high percentage of idle database connections open. A low value causes the proxy to close more idle connections and return them to the database.</p>
-    pub max_idle_connections_percent: i32,
+    pub max_idle_connections_percent: ::std::option::Option<i32>,
     /// <p>The number of seconds for a proxy to wait for a connection to become available in the connection pool. Only applies when the proxy has opened its maximum number of connections and all connections are busy with client sessions.</p>
-    pub connection_borrow_timeout: i32,
+    pub connection_borrow_timeout: ::std::option::Option<i32>,
     /// <p>Each item in the list represents a class of SQL operations that normally cause all later statements in a session using a proxy to be pinned to the same underlying database connection. Including an item in the list exempts that class of SQL operations from the pinning behavior. This setting is only supported for MySQL engine family databases. Currently, the only allowed value is <code>EXCLUDE_VARIABLE_SETS</code>.</p>
     pub session_pinning_filters: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>One or more SQL statements for the proxy to run when opening each new database connection. Typically used with <code>SET</code> statements to make sure that each connection has identical settings such as time zone and character set. This setting is empty by default. For multiple statements, use semicolons as the separator. You can also include multiple variables in a single <code>SET</code> statement, such as <code>SET x=1, y=2</code>.</p>
@@ -17,15 +17,15 @@ pub struct ConnectionPoolConfigurationInfo {
 }
 impl ConnectionPoolConfigurationInfo {
     /// <p>The maximum size of the connection pool for each target in a target group. The value is expressed as a percentage of the <code>max_connections</code> setting for the RDS DB instance or Aurora DB cluster used by the target group.</p>
-    pub fn max_connections_percent(&self) -> i32 {
+    pub fn max_connections_percent(&self) -> ::std::option::Option<i32> {
         self.max_connections_percent
     }
     /// <p>Controls how actively the proxy closes idle database connections in the connection pool. The value is expressed as a percentage of the <code>max_connections</code> setting for the RDS DB instance or Aurora DB cluster used by the target group. With a high value, the proxy leaves a high percentage of idle database connections open. A low value causes the proxy to close more idle connections and return them to the database.</p>
-    pub fn max_idle_connections_percent(&self) -> i32 {
+    pub fn max_idle_connections_percent(&self) -> ::std::option::Option<i32> {
         self.max_idle_connections_percent
     }
     /// <p>The number of seconds for a proxy to wait for a connection to become available in the connection pool. Only applies when the proxy has opened its maximum number of connections and all connections are busy with client sessions.</p>
-    pub fn connection_borrow_timeout(&self) -> i32 {
+    pub fn connection_borrow_timeout(&self) -> ::std::option::Option<i32> {
         self.connection_borrow_timeout
     }
     /// <p>Each item in the list represents a class of SQL operations that normally cause all later statements in a session using a proxy to be pinned to the same underlying database connection. Including an item in the list exempts that class of SQL operations from the pinning behavior. This setting is only supported for MySQL engine family databases. Currently, the only allowed value is <code>EXCLUDE_VARIABLE_SETS</code>.</p>
@@ -134,9 +134,9 @@ impl ConnectionPoolConfigurationInfoBuilder {
     /// Consumes the builder and constructs a [`ConnectionPoolConfigurationInfo`](crate::types::ConnectionPoolConfigurationInfo).
     pub fn build(self) -> crate::types::ConnectionPoolConfigurationInfo {
         crate::types::ConnectionPoolConfigurationInfo {
-            max_connections_percent: self.max_connections_percent.unwrap_or_default(),
-            max_idle_connections_percent: self.max_idle_connections_percent.unwrap_or_default(),
-            connection_borrow_timeout: self.connection_borrow_timeout.unwrap_or_default(),
+            max_connections_percent: self.max_connections_percent,
+            max_idle_connections_percent: self.max_idle_connections_percent,
+            connection_borrow_timeout: self.connection_borrow_timeout,
             session_pinning_filters: self.session_pinning_filters,
             init_query: self.init_query,
         }

@@ -3,19 +3,19 @@ pub fn ser_aws_ecs_task_definition_container_definitions_ulimits_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if input.hard_limit != 0 {
+    if let Some(var_1) = &input.hard_limit {
         object.key("HardLimit").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.hard_limit).into()),
+            ::aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if let Some(var_1) = &input.name {
-        object.key("Name").string(var_1.as_str());
+    if let Some(var_2) = &input.name {
+        object.key("Name").string(var_2.as_str());
     }
-    if input.soft_limit != 0 {
+    if let Some(var_3) = &input.soft_limit {
         object.key("SoftLimit").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.soft_limit).into()),
+            ::aws_smithy_types::Number::NegInt((*var_3).into()),
         );
     }
     Ok(())

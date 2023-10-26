@@ -27,6 +27,8 @@ pub use crate::types::error::_ops_item_limit_exceeded_exception::OpsItemLimitExc
 
 pub use crate::types::error::_ops_item_invalid_parameter_exception::OpsItemInvalidParameterExceptionBuilder;
 
+pub use crate::types::error::_ops_item_conflict_exception::OpsItemConflictExceptionBuilder;
+
 pub use crate::types::error::_ops_item_already_exists_exception::OpsItemAlreadyExistsExceptionBuilder;
 
 pub use crate::types::error::_ops_item_access_denied_exception::OpsItemAccessDeniedExceptionBuilder;

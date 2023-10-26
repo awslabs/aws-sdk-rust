@@ -53,10 +53,10 @@ pub fn ser_relative_aggregation_duration(
     if let Some(var_1) = &input.time_dimension {
         object.key("timeDimension").string(var_1.as_str());
     }
-    {
+    if let Some(var_2) = &input.time_value {
         object.key("timeValue").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.time_value).into()),
+            ::aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
     Ok(())

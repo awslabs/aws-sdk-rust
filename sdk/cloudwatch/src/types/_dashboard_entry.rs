@@ -11,7 +11,7 @@ pub struct DashboardEntry {
     /// <p>The time stamp of when the dashboard was last modified, either by an API call or through the console. This number is expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.</p>
     pub last_modified: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The size of the dashboard, in bytes.</p>
-    pub size: i64,
+    pub size: ::std::option::Option<i64>,
 }
 impl DashboardEntry {
     /// <p>The name of the dashboard.</p>
@@ -27,7 +27,7 @@ impl DashboardEntry {
         self.last_modified.as_ref()
     }
     /// <p>The size of the dashboard, in bytes.</p>
-    pub fn size(&self) -> i64 {
+    pub fn size(&self) -> ::std::option::Option<i64> {
         self.size
     }
 }
@@ -110,7 +110,7 @@ impl DashboardEntryBuilder {
             dashboard_name: self.dashboard_name,
             dashboard_arn: self.dashboard_arn,
             last_modified: self.last_modified,
-            size: self.size.unwrap_or_default(),
+            size: self.size,
         }
     }
 }

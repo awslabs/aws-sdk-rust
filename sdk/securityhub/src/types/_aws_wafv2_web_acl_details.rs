@@ -9,11 +9,11 @@ pub struct AwsWafv2WebAclDetails {
     /// <p> The Amazon Resource Name (ARN) of the web ACL that you want to associate with the resource. </p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p> Indicates whether this web ACL is managed by Firewall Manager. </p>
-    pub managedby_firewall_manager: bool,
+    pub managedby_firewall_manager: ::std::option::Option<bool>,
     /// <p> A unique identifier for the web ACL. </p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p> The web ACL capacity units (WCUs) currently being used by this web ACL. </p>
-    pub capacity: i64,
+    pub capacity: ::std::option::Option<i64>,
     /// <p> Specifies how WAF should handle CAPTCHA evaluations for rules that don't have their own <code>CaptchaConfig</code> settings. </p>
     pub captcha_config: ::std::option::Option<crate::types::AwsWafv2WebAclCaptchaConfigDetails>,
     /// <p> The action to perform if none of the Rules contained in the web ACL match. </p>
@@ -35,7 +35,7 @@ impl AwsWafv2WebAclDetails {
         self.arn.as_deref()
     }
     /// <p> Indicates whether this web ACL is managed by Firewall Manager. </p>
-    pub fn managedby_firewall_manager(&self) -> bool {
+    pub fn managedby_firewall_manager(&self) -> ::std::option::Option<bool> {
         self.managedby_firewall_manager
     }
     /// <p> A unique identifier for the web ACL. </p>
@@ -43,7 +43,7 @@ impl AwsWafv2WebAclDetails {
         self.id.as_deref()
     }
     /// <p> The web ACL capacity units (WCUs) currently being used by this web ACL. </p>
-    pub fn capacity(&self) -> i64 {
+    pub fn capacity(&self) -> ::std::option::Option<i64> {
         self.capacity
     }
     /// <p> Specifies how WAF should handle CAPTCHA evaluations for rules that don't have their own <code>CaptchaConfig</code> settings. </p>
@@ -241,9 +241,9 @@ impl AwsWafv2WebAclDetailsBuilder {
         crate::types::AwsWafv2WebAclDetails {
             name: self.name,
             arn: self.arn,
-            managedby_firewall_manager: self.managedby_firewall_manager.unwrap_or_default(),
+            managedby_firewall_manager: self.managedby_firewall_manager,
             id: self.id,
-            capacity: self.capacity.unwrap_or_default(),
+            capacity: self.capacity,
             captcha_config: self.captcha_config,
             default_action: self.default_action,
             description: self.description,

@@ -7,7 +7,7 @@ pub struct Cvss {
     /// <p>The version of CVSS for the CVSS score.</p>
     pub version: ::std::option::Option<::std::string::String>,
     /// <p>The base CVSS score.</p>
-    pub base_score: f64,
+    pub base_score: ::std::option::Option<f64>,
     /// <p>The base scoring vector for the CVSS score.</p>
     pub base_vector: ::std::option::Option<::std::string::String>,
     /// <p>The origin of the original CVSS score and vector.</p>
@@ -21,7 +21,7 @@ impl Cvss {
         self.version.as_deref()
     }
     /// <p>The base CVSS score.</p>
-    pub fn base_score(&self) -> f64 {
+    pub fn base_score(&self) -> ::std::option::Option<f64> {
         self.base_score
     }
     /// <p>The base scoring vector for the CVSS score.</p>
@@ -135,7 +135,7 @@ impl CvssBuilder {
     pub fn build(self) -> crate::types::Cvss {
         crate::types::Cvss {
             version: self.version,
-            base_score: self.base_score.unwrap_or_default(),
+            base_score: self.base_score,
             base_vector: self.base_vector,
             source: self.source,
             adjustments: self.adjustments,

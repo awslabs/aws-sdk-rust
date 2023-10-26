@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TrainingData {
-    /// <p>A Sagemaker GroundTruth manifest file that contains the training images (assets).</p>
+    /// <p>A manifest file that contains references to the training images and ground-truth annotations.</p>
     pub assets: ::std::option::Option<::std::vec::Vec<crate::types::Asset>>,
 }
 impl TrainingData {
-    /// <p>A Sagemaker GroundTruth manifest file that contains the training images (assets).</p>
+    /// <p>A manifest file that contains references to the training images and ground-truth annotations.</p>
     pub fn assets(&self) -> ::std::option::Option<&[crate::types::Asset]> {
         self.assets.as_deref()
     }
@@ -31,19 +31,19 @@ impl TrainingDataBuilder {
     ///
     /// To override the contents of this collection use [`set_assets`](Self::set_assets).
     ///
-    /// <p>A Sagemaker GroundTruth manifest file that contains the training images (assets).</p>
+    /// <p>A manifest file that contains references to the training images and ground-truth annotations.</p>
     pub fn assets(mut self, input: crate::types::Asset) -> Self {
         let mut v = self.assets.unwrap_or_default();
         v.push(input);
         self.assets = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A Sagemaker GroundTruth manifest file that contains the training images (assets).</p>
+    /// <p>A manifest file that contains references to the training images and ground-truth annotations.</p>
     pub fn set_assets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Asset>>) -> Self {
         self.assets = input;
         self
     }
-    /// <p>A Sagemaker GroundTruth manifest file that contains the training images (assets).</p>
+    /// <p>A manifest file that contains references to the training images and ground-truth annotations.</p>
     pub fn get_assets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Asset>> {
         &self.assets
     }

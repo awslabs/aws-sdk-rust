@@ -25,9 +25,13 @@ pub fn parse_http_error_metadata(
 
 pub(crate) mod shape_batch_get_token_balance;
 
+pub(crate) mod shape_get_asset_contract;
+
 pub(crate) mod shape_get_token_balance;
 
 pub(crate) mod shape_get_transaction;
+
+pub(crate) mod shape_list_asset_contracts;
 
 pub(crate) mod shape_list_token_balances;
 
@@ -47,11 +51,15 @@ pub(crate) mod shape_access_denied_exception;
 
 pub(crate) mod shape_batch_get_token_balance_input;
 
+pub(crate) mod shape_get_asset_contract_input;
+
 pub(crate) mod shape_get_token_balance_input;
 
 pub(crate) mod shape_get_transaction_input;
 
 pub(crate) mod shape_internal_server_exception;
+
+pub(crate) mod shape_list_asset_contracts_input;
 
 pub(crate) mod shape_list_token_balances_input;
 
@@ -67,6 +75,8 @@ pub(crate) mod shape_throttling_exception;
 
 pub(crate) mod shape_validation_exception;
 
+pub(crate) mod shape_asset_contract_list;
+
 pub(crate) mod shape_batch_get_token_balance_errors;
 
 pub(crate) mod shape_batch_get_token_balance_input_item;
@@ -74,6 +84,12 @@ pub(crate) mod shape_batch_get_token_balance_input_item;
 pub(crate) mod shape_batch_get_token_balance_output_list;
 
 pub(crate) mod shape_blockchain_instant;
+
+pub(crate) mod shape_contract_filter;
+
+pub(crate) mod shape_contract_identifier;
+
+pub(crate) mod shape_contract_metadata;
 
 pub(crate) mod shape_list_transactions_sort;
 
@@ -94,6 +110,8 @@ pub(crate) mod shape_transaction_event_list;
 pub(crate) mod shape_transaction_output_list;
 
 pub(crate) mod shape_validation_exception_field_list;
+
+pub(crate) mod shape_asset_contract;
 
 pub(crate) mod shape_batch_get_token_balance_error_item;
 

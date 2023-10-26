@@ -15,7 +15,7 @@ pub struct Listener {
     /// <p>If there is another listener with the same <code>InstancePort</code> whose <code>InstanceProtocol</code> is HTTP or TCP, the listener's <code>InstanceProtocol</code> must be HTTP or TCP.</p>
     pub instance_protocol: ::std::option::Option<::std::string::String>,
     /// <p>The port on which the instance is listening.</p>
-    pub instance_port: i32,
+    pub instance_port: ::std::option::Option<i32>,
     /// <p>The Amazon Resource Name (ARN) of the server certificate.</p>
     pub ssl_certificate_id: ::std::option::Option<::std::string::String>,
 }
@@ -36,7 +36,7 @@ impl Listener {
         self.instance_protocol.as_deref()
     }
     /// <p>The port on which the instance is listening.</p>
-    pub fn instance_port(&self) -> i32 {
+    pub fn instance_port(&self) -> ::std::option::Option<i32> {
         self.instance_port
     }
     /// <p>The Amazon Resource Name (ARN) of the server certificate.</p>
@@ -147,7 +147,7 @@ impl ListenerBuilder {
             protocol: self.protocol,
             load_balancer_port: self.load_balancer_port.unwrap_or_default(),
             instance_protocol: self.instance_protocol,
-            instance_port: self.instance_port.unwrap_or_default(),
+            instance_port: self.instance_port,
             ssl_certificate_id: self.ssl_certificate_id,
         }
     }

@@ -544,6 +544,8 @@ mod update_participant_role_config;
 
 mod update_phone_number;
 
+mod update_phone_number_metadata;
+
 mod update_prompt;
 
 mod update_queue_hours_of_operation;

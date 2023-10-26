@@ -13,9 +13,9 @@ pub struct ProfileTemplateQuestion {
     /// <p>The question choices.</p>
     pub question_choices: ::std::option::Option<::std::vec::Vec<crate::types::ProfileTemplateChoice>>,
     /// <p>The minimum number of choices selected.</p>
-    pub min_selected_choices: i32,
+    pub min_selected_choices: ::std::option::Option<i32>,
     /// <p>The maximum number of choices selected.</p>
-    pub max_selected_choices: i32,
+    pub max_selected_choices: ::std::option::Option<i32>,
 }
 impl ProfileTemplateQuestion {
     /// <p>The ID of the question.</p>
@@ -35,11 +35,11 @@ impl ProfileTemplateQuestion {
         self.question_choices.as_deref()
     }
     /// <p>The minimum number of choices selected.</p>
-    pub fn min_selected_choices(&self) -> i32 {
+    pub fn min_selected_choices(&self) -> ::std::option::Option<i32> {
         self.min_selected_choices
     }
     /// <p>The maximum number of choices selected.</p>
-    pub fn max_selected_choices(&self) -> i32 {
+    pub fn max_selected_choices(&self) -> ::std::option::Option<i32> {
         self.max_selected_choices
     }
 }
@@ -159,8 +159,8 @@ impl ProfileTemplateQuestionBuilder {
             question_title: self.question_title,
             question_description: self.question_description,
             question_choices: self.question_choices,
-            min_selected_choices: self.min_selected_choices.unwrap_or_default(),
-            max_selected_choices: self.max_selected_choices.unwrap_or_default(),
+            min_selected_choices: self.min_selected_choices,
+            max_selected_choices: self.max_selected_choices,
         }
     }
 }

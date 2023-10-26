@@ -9,10 +9,10 @@ pub fn ser_sentiment_configuration(
     if let Some(var_2) = &input.sentiment_type {
         object.key("SentimentType").string(var_2.as_str());
     }
-    {
+    if let Some(var_3) = &input.time_period {
         object.key("TimePeriod").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.time_period).into()),
+            ::aws_smithy_types::Number::NegInt((*var_3).into()),
         );
     }
     Ok(())

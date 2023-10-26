@@ -225,4 +225,18 @@ impl UpdateLaunchConfigurationTemplateFluentBuilder {
     pub fn get_post_launch_enabled(&self) -> &::std::option::Option<bool> {
         self.inner.get_post_launch_enabled()
     }
+    /// <p>DRS will set the 'launch into instance ID' of any source server when performing a drill, recovery or failback to the previous region or availability zone, using the instance ID of the source instance.</p>
+    pub fn launch_into_source_instance(mut self, input: bool) -> Self {
+        self.inner = self.inner.launch_into_source_instance(input);
+        self
+    }
+    /// <p>DRS will set the 'launch into instance ID' of any source server when performing a drill, recovery or failback to the previous region or availability zone, using the instance ID of the source instance.</p>
+    pub fn set_launch_into_source_instance(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_launch_into_source_instance(input);
+        self
+    }
+    /// <p>DRS will set the 'launch into instance ID' of any source server when performing a drill, recovery or failback to the previous region or availability zone, using the instance ID of the source instance.</p>
+    pub fn get_launch_into_source_instance(&self) -> &::std::option::Option<bool> {
+        self.inner.get_launch_into_source_instance()
+    }
 }

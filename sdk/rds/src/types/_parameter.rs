@@ -20,7 +20,7 @@ pub struct Parameter {
     /// <p>Specifies the valid range of values for the parameter.</p>
     pub allowed_values: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether (<code>true</code>) or not (<code>false</code>) the parameter can be modified. Some parameters have security or operational implications that prevent them from being changed.</p>
-    pub is_modifiable: bool,
+    pub is_modifiable: ::std::option::Option<bool>,
     /// <p>The earliest engine version to which the parameter can apply.</p>
     pub minimum_engine_version: ::std::option::Option<::std::string::String>,
     /// <p>Indicates when to apply parameter updates.</p>
@@ -58,7 +58,7 @@ impl Parameter {
         self.allowed_values.as_deref()
     }
     /// <p>Indicates whether (<code>true</code>) or not (<code>false</code>) the parameter can be modified. Some parameters have security or operational implications that prevent them from being changed.</p>
-    pub fn is_modifiable(&self) -> bool {
+    pub fn is_modifiable(&self) -> ::std::option::Option<bool> {
         self.is_modifiable
     }
     /// <p>The earliest engine version to which the parameter can apply.</p>
@@ -268,7 +268,7 @@ impl ParameterBuilder {
             apply_type: self.apply_type,
             data_type: self.data_type,
             allowed_values: self.allowed_values,
-            is_modifiable: self.is_modifiable.unwrap_or_default(),
+            is_modifiable: self.is_modifiable,
             minimum_engine_version: self.minimum_engine_version,
             apply_method: self.apply_method,
             supported_engine_modes: self.supported_engine_modes,

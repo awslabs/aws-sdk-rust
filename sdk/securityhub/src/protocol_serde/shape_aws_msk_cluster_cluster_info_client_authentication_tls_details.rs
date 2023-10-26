@@ -12,8 +12,8 @@ pub fn ser_aws_msk_cluster_cluster_info_client_authentication_tls_details(
         }
         array_2.finish();
     }
-    if input.enabled {
-        object.key("Enabled").boolean(input.enabled);
+    if let Some(var_4) = &input.enabled {
+        object.key("Enabled").boolean(*var_4);
     }
     Ok(())
 }

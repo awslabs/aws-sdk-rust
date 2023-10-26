@@ -22,6 +22,10 @@ pub struct PackageDetails {
     pub available_package_version: ::std::option::Option<::std::string::String>,
     /// <p>Additional information if the package is in an error state. Null otherwise.</p>
     pub error_details: ::std::option::Option<crate::types::ErrorDetails>,
+    /// <p>Version of OpenSearch or Elasticsearch, in the format Elasticsearch_X.Y or OpenSearch_X.Y. Defaults to the latest version of OpenSearch.</p>
+    pub engine_version: ::std::option::Option<::std::string::String>,
+    /// <p>If the package is a <code>ZIP-PLUGIN</code> package, additional information about plugin properties.</p>
+    pub available_plugin_properties: ::std::option::Option<crate::types::PluginProperties>,
 }
 impl PackageDetails {
     /// <p>The unique identifier of the package.</p>
@@ -60,6 +64,14 @@ impl PackageDetails {
     pub fn error_details(&self) -> ::std::option::Option<&crate::types::ErrorDetails> {
         self.error_details.as_ref()
     }
+    /// <p>Version of OpenSearch or Elasticsearch, in the format Elasticsearch_X.Y or OpenSearch_X.Y. Defaults to the latest version of OpenSearch.</p>
+    pub fn engine_version(&self) -> ::std::option::Option<&str> {
+        self.engine_version.as_deref()
+    }
+    /// <p>If the package is a <code>ZIP-PLUGIN</code> package, additional information about plugin properties.</p>
+    pub fn available_plugin_properties(&self) -> ::std::option::Option<&crate::types::PluginProperties> {
+        self.available_plugin_properties.as_ref()
+    }
 }
 impl PackageDetails {
     /// Creates a new builder-style object to manufacture [`PackageDetails`](crate::types::PackageDetails).
@@ -81,6 +93,8 @@ pub struct PackageDetailsBuilder {
     pub(crate) last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) available_package_version: ::std::option::Option<::std::string::String>,
     pub(crate) error_details: ::std::option::Option<crate::types::ErrorDetails>,
+    pub(crate) engine_version: ::std::option::Option<::std::string::String>,
+    pub(crate) available_plugin_properties: ::std::option::Option<crate::types::PluginProperties>,
 }
 impl PackageDetailsBuilder {
     /// <p>The unique identifier of the package.</p>
@@ -209,6 +223,34 @@ impl PackageDetailsBuilder {
     pub fn get_error_details(&self) -> &::std::option::Option<crate::types::ErrorDetails> {
         &self.error_details
     }
+    /// <p>Version of OpenSearch or Elasticsearch, in the format Elasticsearch_X.Y or OpenSearch_X.Y. Defaults to the latest version of OpenSearch.</p>
+    pub fn engine_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.engine_version = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Version of OpenSearch or Elasticsearch, in the format Elasticsearch_X.Y or OpenSearch_X.Y. Defaults to the latest version of OpenSearch.</p>
+    pub fn set_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.engine_version = input;
+        self
+    }
+    /// <p>Version of OpenSearch or Elasticsearch, in the format Elasticsearch_X.Y or OpenSearch_X.Y. Defaults to the latest version of OpenSearch.</p>
+    pub fn get_engine_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.engine_version
+    }
+    /// <p>If the package is a <code>ZIP-PLUGIN</code> package, additional information about plugin properties.</p>
+    pub fn available_plugin_properties(mut self, input: crate::types::PluginProperties) -> Self {
+        self.available_plugin_properties = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>If the package is a <code>ZIP-PLUGIN</code> package, additional information about plugin properties.</p>
+    pub fn set_available_plugin_properties(mut self, input: ::std::option::Option<crate::types::PluginProperties>) -> Self {
+        self.available_plugin_properties = input;
+        self
+    }
+    /// <p>If the package is a <code>ZIP-PLUGIN</code> package, additional information about plugin properties.</p>
+    pub fn get_available_plugin_properties(&self) -> &::std::option::Option<crate::types::PluginProperties> {
+        &self.available_plugin_properties
+    }
     /// Consumes the builder and constructs a [`PackageDetails`](crate::types::PackageDetails).
     pub fn build(self) -> crate::types::PackageDetails {
         crate::types::PackageDetails {
@@ -221,6 +263,8 @@ impl PackageDetailsBuilder {
             last_updated_at: self.last_updated_at,
             available_package_version: self.available_package_version,
             error_details: self.error_details,
+            engine_version: self.engine_version,
+            available_plugin_properties: self.available_plugin_properties,
         }
     }
 }

@@ -37,6 +37,14 @@ pub use crate::types::_start_technical_cue_detection_filter::StartTechnicalCueDe
 
 pub use crate::types::_black_frame::BlackFrameBuilder;
 
+pub use crate::types::_media_analysis_output_config::MediaAnalysisOutputConfigBuilder;
+
+pub use crate::types::_media_analysis_input::MediaAnalysisInputBuilder;
+
+pub use crate::types::_media_analysis_operations_config::MediaAnalysisOperationsConfigBuilder;
+
+pub use crate::types::_media_analysis_detect_moderation_labels_config::MediaAnalysisDetectModerationLabelsConfigBuilder;
+
 pub use crate::types::_label_detection_settings::LabelDetectionSettingsBuilder;
 
 pub use crate::types::_general_labels_settings::GeneralLabelsSettingsBuilder;
@@ -102,6 +110,14 @@ pub use crate::types::_user::UserBuilder;
 pub use crate::types::_stream_processor::StreamProcessorBuilder;
 
 pub use crate::types::_project_policy::ProjectPolicyBuilder;
+
+pub use crate::types::_media_analysis_job_description::MediaAnalysisJobDescriptionBuilder;
+
+pub use crate::types::_media_analysis_manifest_summary::MediaAnalysisManifestSummaryBuilder;
+
+pub use crate::types::_media_analysis_results::MediaAnalysisResultsBuilder;
+
+pub use crate::types::_media_analysis_job_failure_details::MediaAnalysisJobFailureDetailsBuilder;
 
 pub use crate::types::_dataset_label_description::DatasetLabelDescriptionBuilder;
 
@@ -224,6 +240,10 @@ pub use crate::types::_stream_processor_input::StreamProcessorInputBuilder;
 pub use crate::types::_kinesis_video_stream::KinesisVideoStreamBuilder;
 
 pub use crate::types::_project_version_description::ProjectVersionDescriptionBuilder;
+
+pub use crate::types::_customization_feature_config::CustomizationFeatureConfigBuilder;
+
+pub use crate::types::_customization_feature_content_moderation_config::CustomizationFeatureContentModerationConfigBuilder;
 
 pub use crate::types::_ground_truth_manifest::GroundTruthManifestBuilder;
 

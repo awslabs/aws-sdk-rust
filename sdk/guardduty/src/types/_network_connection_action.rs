@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NetworkConnectionAction {
     /// <p>Indicates whether EC2 blocked the network connection to your instance.</p>
-    pub blocked: bool,
+    pub blocked: ::std::option::Option<bool>,
     /// <p>The network connection direction.</p>
     pub connection_direction: ::std::option::Option<::std::string::String>,
     /// <p>The local port information of the connection.</p>
@@ -21,7 +21,7 @@ pub struct NetworkConnectionAction {
 }
 impl NetworkConnectionAction {
     /// <p>Indicates whether EC2 blocked the network connection to your instance.</p>
-    pub fn blocked(&self) -> bool {
+    pub fn blocked(&self) -> ::std::option::Option<bool> {
         self.blocked
     }
     /// <p>The network connection direction.</p>
@@ -170,7 +170,7 @@ impl NetworkConnectionActionBuilder {
     /// Consumes the builder and constructs a [`NetworkConnectionAction`](crate::types::NetworkConnectionAction).
     pub fn build(self) -> crate::types::NetworkConnectionAction {
         crate::types::NetworkConnectionAction {
-            blocked: self.blocked.unwrap_or_default(),
+            blocked: self.blocked,
             connection_direction: self.connection_direction,
             local_port_details: self.local_port_details,
             protocol: self.protocol,

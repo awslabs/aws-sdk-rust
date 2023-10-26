@@ -12,23 +12,29 @@ pub fn ser_update_launch_configuration_input(
     if let Some(var_3) = &input.launch_disposition {
         object.key("launchDisposition").string(var_3.as_str());
     }
-    if let Some(var_4) = &input.licensing {
+    if let Some(var_4) = &input.launch_into_instance_properties {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("licensing").start_object();
-        crate::protocol_serde::shape_licensing::ser_licensing(&mut object_5, var_4)?;
+        let mut object_5 = object.key("launchIntoInstanceProperties").start_object();
+        crate::protocol_serde::shape_launch_into_instance_properties::ser_launch_into_instance_properties(&mut object_5, var_4)?;
         object_5.finish();
     }
-    if let Some(var_6) = &input.name {
-        object.key("name").string(var_6.as_str());
+    if let Some(var_6) = &input.licensing {
+        #[allow(unused_mut)]
+        let mut object_7 = object.key("licensing").start_object();
+        crate::protocol_serde::shape_licensing::ser_licensing(&mut object_7, var_6)?;
+        object_7.finish();
     }
-    if let Some(var_7) = &input.post_launch_enabled {
-        object.key("postLaunchEnabled").boolean(*var_7);
+    if let Some(var_8) = &input.name {
+        object.key("name").string(var_8.as_str());
     }
-    if let Some(var_8) = &input.source_server_id {
-        object.key("sourceServerID").string(var_8.as_str());
+    if let Some(var_9) = &input.post_launch_enabled {
+        object.key("postLaunchEnabled").boolean(*var_9);
     }
-    if let Some(var_9) = &input.target_instance_type_right_sizing_method {
-        object.key("targetInstanceTypeRightSizingMethod").string(var_9.as_str());
+    if let Some(var_10) = &input.source_server_id {
+        object.key("sourceServerID").string(var_10.as_str());
+    }
+    if let Some(var_11) = &input.target_instance_type_right_sizing_method {
+        object.key("targetInstanceTypeRightSizingMethod").string(var_11.as_str());
     }
     Ok(())
 }

@@ -7,7 +7,7 @@ pub struct NodeConfigurationOption {
     /// <p>The node type, such as, "ds2.8xlarge".</p>
     pub node_type: ::std::option::Option<::std::string::String>,
     /// <p>The number of nodes.</p>
-    pub number_of_nodes: i32,
+    pub number_of_nodes: ::std::option::Option<i32>,
     /// <p>The estimated disk utilizaton percentage.</p>
     pub estimated_disk_utilization_percent: ::std::option::Option<f64>,
     /// <p>The category of the node configuration recommendation.</p>
@@ -19,7 +19,7 @@ impl NodeConfigurationOption {
         self.node_type.as_deref()
     }
     /// <p>The number of nodes.</p>
-    pub fn number_of_nodes(&self) -> i32 {
+    pub fn number_of_nodes(&self) -> ::std::option::Option<i32> {
         self.number_of_nodes
     }
     /// <p>The estimated disk utilizaton percentage.</p>
@@ -108,7 +108,7 @@ impl NodeConfigurationOptionBuilder {
     pub fn build(self) -> crate::types::NodeConfigurationOption {
         crate::types::NodeConfigurationOption {
             node_type: self.node_type,
-            number_of_nodes: self.number_of_nodes.unwrap_or_default(),
+            number_of_nodes: self.number_of_nodes,
             estimated_disk_utilization_percent: self.estimated_disk_utilization_percent,
             mode: self.mode,
         }

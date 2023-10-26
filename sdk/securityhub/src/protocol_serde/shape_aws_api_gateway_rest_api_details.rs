@@ -27,20 +27,20 @@ pub fn ser_aws_api_gateway_rest_api_details(
         }
         array_7.finish();
     }
-    if input.minimum_compression_size != 0 {
+    if let Some(var_9) = &input.minimum_compression_size {
         object.key("MinimumCompressionSize").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.minimum_compression_size).into()),
+            ::aws_smithy_types::Number::NegInt((*var_9).into()),
         );
     }
-    if let Some(var_9) = &input.api_key_source {
-        object.key("ApiKeySource").string(var_9.as_str());
+    if let Some(var_10) = &input.api_key_source {
+        object.key("ApiKeySource").string(var_10.as_str());
     }
-    if let Some(var_10) = &input.endpoint_configuration {
+    if let Some(var_11) = &input.endpoint_configuration {
         #[allow(unused_mut)]
-        let mut object_11 = object.key("EndpointConfiguration").start_object();
-        crate::protocol_serde::shape_aws_api_gateway_endpoint_configuration::ser_aws_api_gateway_endpoint_configuration(&mut object_11, var_10)?;
-        object_11.finish();
+        let mut object_12 = object.key("EndpointConfiguration").start_object();
+        crate::protocol_serde::shape_aws_api_gateway_endpoint_configuration::ser_aws_api_gateway_endpoint_configuration(&mut object_12, var_11)?;
+        object_12.finish();
     }
     Ok(())
 }

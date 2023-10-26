@@ -3,11 +3,11 @@ pub fn ser_aws_ecs_service_deployment_configuration_deployment_circuit_breaker_d
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if input.enable {
-        object.key("Enable").boolean(input.enable);
+    if let Some(var_1) = &input.enable {
+        object.key("Enable").boolean(*var_1);
     }
-    if input.rollback {
-        object.key("Rollback").boolean(input.rollback);
+    if let Some(var_2) = &input.rollback {
+        object.key("Rollback").boolean(*var_2);
     }
     Ok(())
 }

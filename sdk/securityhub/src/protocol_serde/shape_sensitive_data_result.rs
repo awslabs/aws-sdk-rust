@@ -18,10 +18,10 @@ pub fn ser_sensitive_data_result(
         }
         array_3.finish();
     }
-    if input.total_count != 0 {
+    if let Some(var_6) = &input.total_count {
         object.key("TotalCount").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.total_count).into()),
+            ::aws_smithy_types::Number::NegInt((*var_6).into()),
         );
     }
     Ok(())

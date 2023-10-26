@@ -24,16 +24,16 @@ pub fn ser_listener(
     }
     #[allow(unused_mut)]
     let mut scope_6 = writer.prefix("InstancePort");
-    {
+    if let Some(var_7) = &input.instance_port {
         scope_6.number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.instance_port).into()),
+            ::aws_smithy_types::Number::NegInt((*var_7).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_7 = writer.prefix("SSLCertificateId");
-    if let Some(var_8) = &input.ssl_certificate_id {
-        scope_7.string(var_8);
+    let mut scope_8 = writer.prefix("SSLCertificateId");
+    if let Some(var_9) = &input.ssl_certificate_id {
+        scope_8.string(var_9);
     }
     Ok(())
 }
@@ -46,7 +46,7 @@ pub fn de_listener(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Protocol") /* Protocol com.amazonaws.elasticloadbalancing#Listener$Protocol */ =>  {
-                let var_9 =
+                let var_10 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -55,11 +55,11 @@ pub fn de_listener(
                         ?
                     )
                 ;
-                builder = builder.set_protocol(var_9);
+                builder = builder.set_protocol(var_10);
             }
             ,
             s if s.matches("LoadBalancerPort") /* LoadBalancerPort com.amazonaws.elasticloadbalancing#Listener$LoadBalancerPort */ =>  {
-                let var_10 =
+                let var_11 =
                     Some(
                          {
                             <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -70,11 +70,11 @@ pub fn de_listener(
                         ?
                     )
                 ;
-                builder = builder.set_load_balancer_port(var_10);
+                builder = builder.set_load_balancer_port(var_11);
             }
             ,
             s if s.matches("InstanceProtocol") /* InstanceProtocol com.amazonaws.elasticloadbalancing#Listener$InstanceProtocol */ =>  {
-                let var_11 =
+                let var_12 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -83,11 +83,11 @@ pub fn de_listener(
                         ?
                     )
                 ;
-                builder = builder.set_instance_protocol(var_11);
+                builder = builder.set_instance_protocol(var_12);
             }
             ,
             s if s.matches("InstancePort") /* InstancePort com.amazonaws.elasticloadbalancing#Listener$InstancePort */ =>  {
-                let var_12 =
+                let var_13 =
                     Some(
                          {
                             <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -98,11 +98,11 @@ pub fn de_listener(
                         ?
                     )
                 ;
-                builder = builder.set_instance_port(var_12);
+                builder = builder.set_instance_port(var_13);
             }
             ,
             s if s.matches("SSLCertificateId") /* SSLCertificateId com.amazonaws.elasticloadbalancing#Listener$SSLCertificateId */ =>  {
-                let var_13 =
+                let var_14 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -111,7 +111,7 @@ pub fn de_listener(
                         ?
                     )
                 ;
-                builder = builder.set_ssl_certificate_id(var_13);
+                builder = builder.set_ssl_certificate_id(var_14);
             }
             ,
             _ => {}

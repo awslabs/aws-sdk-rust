@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsBackupRecoveryPointDetails {
     /// <p>The size, in bytes, of a backup. </p>
-    pub backup_size_in_bytes: i64,
+    pub backup_size_in_bytes: ::std::option::Option<i64>,
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a backup vault. </p>
     pub backup_vault_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the Amazon Web Services account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens. </p>
@@ -23,7 +23,7 @@ pub struct AwsBackupRecoveryPointDetails {
     /// <p>Specifies the IAM role ARN used to create the target recovery point </p>
     pub iam_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>A Boolean value that is returned as <code>TRUE</code> if the specified recovery point is encrypted, or <code>FALSE</code> if the recovery point is not encrypted. </p>
-    pub is_encrypted: bool,
+    pub is_encrypted: ::std::option::Option<bool>,
     /// <p>The date and time that a recovery point was last restored, in Unix format and UTC. The value of <code>LastRestoreTime</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM. </p>
     pub last_restore_time: ::std::option::Option<::std::string::String>,
     /// <p>The lifecycle defines when a protected resource is transitioned to cold storage and when it expires. Backup transitions and expires backups automatically according to the lifecycle that you define </p>
@@ -56,7 +56,7 @@ pub struct AwsBackupRecoveryPointDetails {
 }
 impl AwsBackupRecoveryPointDetails {
     /// <p>The size, in bytes, of a backup. </p>
-    pub fn backup_size_in_bytes(&self) -> i64 {
+    pub fn backup_size_in_bytes(&self) -> ::std::option::Option<i64> {
         self.backup_size_in_bytes
     }
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a backup vault. </p>
@@ -92,7 +92,7 @@ impl AwsBackupRecoveryPointDetails {
         self.iam_role_arn.as_deref()
     }
     /// <p>A Boolean value that is returned as <code>TRUE</code> if the specified recovery point is encrypted, or <code>FALSE</code> if the recovery point is not encrypted. </p>
-    pub fn is_encrypted(&self) -> bool {
+    pub fn is_encrypted(&self) -> ::std::option::Option<bool> {
         self.is_encrypted
     }
     /// <p>The date and time that a recovery point was last restored, in Unix format and UTC. The value of <code>LastRestoreTime</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM. </p>
@@ -477,7 +477,7 @@ impl AwsBackupRecoveryPointDetailsBuilder {
     /// Consumes the builder and constructs a [`AwsBackupRecoveryPointDetails`](crate::types::AwsBackupRecoveryPointDetails).
     pub fn build(self) -> crate::types::AwsBackupRecoveryPointDetails {
         crate::types::AwsBackupRecoveryPointDetails {
-            backup_size_in_bytes: self.backup_size_in_bytes.unwrap_or_default(),
+            backup_size_in_bytes: self.backup_size_in_bytes,
             backup_vault_arn: self.backup_vault_arn,
             backup_vault_name: self.backup_vault_name,
             calculated_lifecycle: self.calculated_lifecycle,
@@ -486,7 +486,7 @@ impl AwsBackupRecoveryPointDetailsBuilder {
             creation_date: self.creation_date,
             encryption_key_arn: self.encryption_key_arn,
             iam_role_arn: self.iam_role_arn,
-            is_encrypted: self.is_encrypted.unwrap_or_default(),
+            is_encrypted: self.is_encrypted,
             last_restore_time: self.last_restore_time,
             lifecycle: self.lifecycle,
             recovery_point_arn: self.recovery_point_arn,

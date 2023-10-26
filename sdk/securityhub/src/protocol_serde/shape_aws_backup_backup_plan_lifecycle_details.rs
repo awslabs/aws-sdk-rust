@@ -3,16 +3,16 @@ pub fn ser_aws_backup_backup_plan_lifecycle_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsBackupBackupPlanLifecycleDetails,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if input.delete_after_days != 0 {
+    if let Some(var_1) = &input.delete_after_days {
         object.key("DeleteAfterDays").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.delete_after_days).into()),
+            ::aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if input.move_to_cold_storage_after_days != 0 {
+    if let Some(var_2) = &input.move_to_cold_storage_after_days {
         object.key("MoveToColdStorageAfterDays").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.move_to_cold_storage_after_days).into()),
+            ::aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
     Ok(())

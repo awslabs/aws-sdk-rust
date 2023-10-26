@@ -40,6 +40,7 @@ pub struct ListFindingsInput {
     /// <li> <p>service.action.awsApiCallAction.remoteIpDetails.organization.asnOrg</p> </li>
     /// <li> <p>service.action.awsApiCallAction.serviceName</p> </li>
     /// <li> <p>service.action.dnsRequestAction.domain</p> </li>
+    /// <li> <p>service.action.dnsRequestAction.domainWithSuffix</p> </li>
     /// <li> <p>service.action.networkConnectionAction.blocked</p> </li>
     /// <li> <p>service.action.networkConnectionAction.connectionDirection</p> </li>
     /// <li> <p>service.action.networkConnectionAction.localPortDetails.port</p> </li>
@@ -104,6 +105,7 @@ impl ListFindingsInput {
     /// <li> <p>service.action.awsApiCallAction.remoteIpDetails.organization.asnOrg</p> </li>
     /// <li> <p>service.action.awsApiCallAction.serviceName</p> </li>
     /// <li> <p>service.action.dnsRequestAction.domain</p> </li>
+    /// <li> <p>service.action.dnsRequestAction.domainWithSuffix</p> </li>
     /// <li> <p>service.action.networkConnectionAction.blocked</p> </li>
     /// <li> <p>service.action.networkConnectionAction.connectionDirection</p> </li>
     /// <li> <p>service.action.networkConnectionAction.localPortDetails.port</p> </li>
@@ -203,6 +205,7 @@ impl ListFindingsInputBuilder {
     /// <li> <p>service.action.awsApiCallAction.remoteIpDetails.organization.asnOrg</p> </li>
     /// <li> <p>service.action.awsApiCallAction.serviceName</p> </li>
     /// <li> <p>service.action.dnsRequestAction.domain</p> </li>
+    /// <li> <p>service.action.dnsRequestAction.domainWithSuffix</p> </li>
     /// <li> <p>service.action.networkConnectionAction.blocked</p> </li>
     /// <li> <p>service.action.networkConnectionAction.connectionDirection</p> </li>
     /// <li> <p>service.action.networkConnectionAction.localPortDetails.port</p> </li>
@@ -258,6 +261,7 @@ impl ListFindingsInputBuilder {
     /// <li> <p>service.action.awsApiCallAction.remoteIpDetails.organization.asnOrg</p> </li>
     /// <li> <p>service.action.awsApiCallAction.serviceName</p> </li>
     /// <li> <p>service.action.dnsRequestAction.domain</p> </li>
+    /// <li> <p>service.action.dnsRequestAction.domainWithSuffix</p> </li>
     /// <li> <p>service.action.networkConnectionAction.blocked</p> </li>
     /// <li> <p>service.action.networkConnectionAction.connectionDirection</p> </li>
     /// <li> <p>service.action.networkConnectionAction.localPortDetails.port</p> </li>
@@ -313,6 +317,7 @@ impl ListFindingsInputBuilder {
     /// <li> <p>service.action.awsApiCallAction.remoteIpDetails.organization.asnOrg</p> </li>
     /// <li> <p>service.action.awsApiCallAction.serviceName</p> </li>
     /// <li> <p>service.action.dnsRequestAction.domain</p> </li>
+    /// <li> <p>service.action.dnsRequestAction.domainWithSuffix</p> </li>
     /// <li> <p>service.action.networkConnectionAction.blocked</p> </li>
     /// <li> <p>service.action.networkConnectionAction.connectionDirection</p> </li>
     /// <li> <p>service.action.networkConnectionAction.localPortDetails.port</p> </li>

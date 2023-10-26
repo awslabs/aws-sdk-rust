@@ -23,6 +23,7 @@ impl CancelOpenCypherQueryInputBuilder {
 /// Fluent builder constructing a request to `CancelOpenCypherQuery`.
 ///
 /// <p>Cancels a specified openCypher query. See <a href="https://docs.aws.amazon.com/neptune/latest/userguide/access-graph-opencypher-status.html">Neptune openCypher status endpoint</a> for more information.</p>
+/// <p>When invoking this operation in a Neptune cluster that has IAM authentication enabled, the IAM user or role making the request must have a policy attached that allows the <a href="https://docs.aws.amazon.com/neptune/latest/userguide/iam-dp-actions.html#cancelquery">neptune-db:CancelQuery</a> IAM action in that cluster.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CancelOpenCypherQueryFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

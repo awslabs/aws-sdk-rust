@@ -11,7 +11,7 @@ pub struct AssessmentTemplate {
     /// <p>The ARN of the assessment target that corresponds to this assessment template.</p>
     pub assessment_target_arn: ::std::option::Option<::std::string::String>,
     /// <p>The duration in seconds specified for this assessment template. The default value is 3600 seconds (one hour). The maximum value is 86400 seconds (one day).</p>
-    pub duration_in_seconds: i32,
+    pub duration_in_seconds: ::std::option::Option<i32>,
     /// <p>The rules packages that are specified for this assessment template.</p>
     pub rules_package_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The user-defined attributes that are assigned to every generated finding from the assessment run that uses this assessment template.</p>
@@ -37,7 +37,7 @@ impl AssessmentTemplate {
         self.assessment_target_arn.as_deref()
     }
     /// <p>The duration in seconds specified for this assessment template. The default value is 3600 seconds (one hour). The maximum value is 86400 seconds (one day).</p>
-    pub fn duration_in_seconds(&self) -> i32 {
+    pub fn duration_in_seconds(&self) -> ::std::option::Option<i32> {
         self.duration_in_seconds
     }
     /// <p>The rules packages that are specified for this assessment template.</p>
@@ -227,7 +227,7 @@ impl AssessmentTemplateBuilder {
             arn: self.arn,
             name: self.name,
             assessment_target_arn: self.assessment_target_arn,
-            duration_in_seconds: self.duration_in_seconds.unwrap_or_default(),
+            duration_in_seconds: self.duration_in_seconds,
             rules_package_arns: self.rules_package_arns,
             user_attributes_for_findings: self.user_attributes_for_findings,
             last_assessment_run_arn: self.last_assessment_run_arn,

@@ -7,11 +7,11 @@ pub struct AwsCorsConfiguration {
     /// <p>The allowed origins for CORS requests.</p>
     pub allow_origins: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Indicates whether the CORS request includes credentials.</p>
-    pub allow_credentials: bool,
+    pub allow_credentials: ::std::option::Option<bool>,
     /// <p>The exposed headers for CORS requests.</p>
     pub expose_headers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The number of seconds for which the browser caches preflight request results.</p>
-    pub max_age: i32,
+    pub max_age: ::std::option::Option<i32>,
     /// <p>The allowed methods for CORS requests.</p>
     pub allow_methods: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The allowed headers for CORS requests.</p>
@@ -23,7 +23,7 @@ impl AwsCorsConfiguration {
         self.allow_origins.as_deref()
     }
     /// <p>Indicates whether the CORS request includes credentials.</p>
-    pub fn allow_credentials(&self) -> bool {
+    pub fn allow_credentials(&self) -> ::std::option::Option<bool> {
         self.allow_credentials
     }
     /// <p>The exposed headers for CORS requests.</p>
@@ -31,7 +31,7 @@ impl AwsCorsConfiguration {
         self.expose_headers.as_deref()
     }
     /// <p>The number of seconds for which the browser caches preflight request results.</p>
-    pub fn max_age(&self) -> i32 {
+    pub fn max_age(&self) -> ::std::option::Option<i32> {
         self.max_age
     }
     /// <p>The allowed methods for CORS requests.</p>
@@ -174,9 +174,9 @@ impl AwsCorsConfigurationBuilder {
     pub fn build(self) -> crate::types::AwsCorsConfiguration {
         crate::types::AwsCorsConfiguration {
             allow_origins: self.allow_origins,
-            allow_credentials: self.allow_credentials.unwrap_or_default(),
+            allow_credentials: self.allow_credentials,
             expose_headers: self.expose_headers,
-            max_age: self.max_age.unwrap_or_default(),
+            max_age: self.max_age,
             allow_methods: self.allow_methods,
             allow_headers: self.allow_headers,
         }

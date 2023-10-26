@@ -5,11 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsDynamoDbTableProvisionedThroughputOverride {
     /// <p>The read capacity units for the replica.</p>
-    pub read_capacity_units: i32,
+    pub read_capacity_units: ::std::option::Option<i32>,
 }
 impl AwsDynamoDbTableProvisionedThroughputOverride {
     /// <p>The read capacity units for the replica.</p>
-    pub fn read_capacity_units(&self) -> i32 {
+    pub fn read_capacity_units(&self) -> ::std::option::Option<i32> {
         self.read_capacity_units
     }
 }
@@ -44,7 +44,7 @@ impl AwsDynamoDbTableProvisionedThroughputOverrideBuilder {
     /// Consumes the builder and constructs a [`AwsDynamoDbTableProvisionedThroughputOverride`](crate::types::AwsDynamoDbTableProvisionedThroughputOverride).
     pub fn build(self) -> crate::types::AwsDynamoDbTableProvisionedThroughputOverride {
         crate::types::AwsDynamoDbTableProvisionedThroughputOverride {
-            read_capacity_units: self.read_capacity_units.unwrap_or_default(),
+            read_capacity_units: self.read_capacity_units,
         }
     }
 }

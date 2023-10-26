@@ -29,9 +29,13 @@ pub use crate::types::_user_settings::UserSettings;
 
 pub use crate::types::_canvas_app_settings::CanvasAppSettings;
 
-pub use crate::types::_identity_provider_o_auth_setting::IdentityProviderOAuthSetting;
+pub use crate::types::_direct_deploy_settings::DirectDeploySettings;
 
 pub use crate::types::_feature_status::FeatureStatus;
+
+pub use crate::types::_kendra_settings::KendraSettings;
+
+pub use crate::types::_identity_provider_o_auth_setting::IdentityProviderOAuthSetting;
 
 pub use crate::types::_data_source_name::DataSourceName;
 
@@ -1899,6 +1903,8 @@ mod _device_subset_type;
 
 mod _device_summary;
 
+mod _direct_deploy_settings;
+
 mod _direct_internet_access;
 
 mod _direction;
@@ -2200,6 +2206,8 @@ mod _job_type;
 mod _join_source;
 
 mod _jupyter_server_app_settings;
+
+mod _kendra_settings;
 
 mod _kernel_gateway_app_settings;
 

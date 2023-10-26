@@ -21,5 +21,8 @@ pub fn ser_detect_moderation_labels_input(
         crate::protocol_serde::shape_human_loop_config::ser_human_loop_config(&mut object_5, var_4)?;
         object_5.finish();
     }
+    if let Some(var_6) = &input.project_version {
+        object.key("ProjectVersion").string(var_6.as_str());
+    }
     Ok(())
 }

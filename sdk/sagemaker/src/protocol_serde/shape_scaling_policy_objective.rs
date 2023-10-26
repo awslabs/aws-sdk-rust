@@ -50,16 +50,16 @@ pub fn ser_scaling_policy_objective(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ScalingPolicyObjective,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if input.min_invocations_per_minute != 0 {
+    if let Some(var_1) = &input.min_invocations_per_minute {
         object.key("MinInvocationsPerMinute").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.min_invocations_per_minute).into()),
+            ::aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if input.max_invocations_per_minute != 0 {
+    if let Some(var_2) = &input.max_invocations_per_minute {
         object.key("MaxInvocationsPerMinute").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.max_invocations_per_minute).into()),
+            ::aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
     Ok(())

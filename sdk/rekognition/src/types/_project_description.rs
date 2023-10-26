@@ -12,6 +12,10 @@ pub struct ProjectDescription {
     pub status: ::std::option::Option<crate::types::ProjectStatus>,
     /// <p> Information about the training and test datasets in the project. </p>
     pub datasets: ::std::option::Option<::std::vec::Vec<crate::types::DatasetMetadata>>,
+    /// <p>Specifies the project that is being customized.</p>
+    pub feature: ::std::option::Option<crate::types::CustomizationFeature>,
+    /// <p>Indicates whether automatic retraining will be attempted for the versions of the project. Applies only to adapters. </p>
+    pub auto_update: ::std::option::Option<crate::types::ProjectAutoUpdate>,
 }
 impl ProjectDescription {
     /// <p>The Amazon Resource Name (ARN) of the project.</p>
@@ -30,6 +34,14 @@ impl ProjectDescription {
     pub fn datasets(&self) -> ::std::option::Option<&[crate::types::DatasetMetadata]> {
         self.datasets.as_deref()
     }
+    /// <p>Specifies the project that is being customized.</p>
+    pub fn feature(&self) -> ::std::option::Option<&crate::types::CustomizationFeature> {
+        self.feature.as_ref()
+    }
+    /// <p>Indicates whether automatic retraining will be attempted for the versions of the project. Applies only to adapters. </p>
+    pub fn auto_update(&self) -> ::std::option::Option<&crate::types::ProjectAutoUpdate> {
+        self.auto_update.as_ref()
+    }
 }
 impl ProjectDescription {
     /// Creates a new builder-style object to manufacture [`ProjectDescription`](crate::types::ProjectDescription).
@@ -46,6 +58,8 @@ pub struct ProjectDescriptionBuilder {
     pub(crate) creation_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) status: ::std::option::Option<crate::types::ProjectStatus>,
     pub(crate) datasets: ::std::option::Option<::std::vec::Vec<crate::types::DatasetMetadata>>,
+    pub(crate) feature: ::std::option::Option<crate::types::CustomizationFeature>,
+    pub(crate) auto_update: ::std::option::Option<crate::types::ProjectAutoUpdate>,
 }
 impl ProjectDescriptionBuilder {
     /// <p>The Amazon Resource Name (ARN) of the project.</p>
@@ -110,6 +124,34 @@ impl ProjectDescriptionBuilder {
     pub fn get_datasets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DatasetMetadata>> {
         &self.datasets
     }
+    /// <p>Specifies the project that is being customized.</p>
+    pub fn feature(mut self, input: crate::types::CustomizationFeature) -> Self {
+        self.feature = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the project that is being customized.</p>
+    pub fn set_feature(mut self, input: ::std::option::Option<crate::types::CustomizationFeature>) -> Self {
+        self.feature = input;
+        self
+    }
+    /// <p>Specifies the project that is being customized.</p>
+    pub fn get_feature(&self) -> &::std::option::Option<crate::types::CustomizationFeature> {
+        &self.feature
+    }
+    /// <p>Indicates whether automatic retraining will be attempted for the versions of the project. Applies only to adapters. </p>
+    pub fn auto_update(mut self, input: crate::types::ProjectAutoUpdate) -> Self {
+        self.auto_update = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether automatic retraining will be attempted for the versions of the project. Applies only to adapters. </p>
+    pub fn set_auto_update(mut self, input: ::std::option::Option<crate::types::ProjectAutoUpdate>) -> Self {
+        self.auto_update = input;
+        self
+    }
+    /// <p>Indicates whether automatic retraining will be attempted for the versions of the project. Applies only to adapters. </p>
+    pub fn get_auto_update(&self) -> &::std::option::Option<crate::types::ProjectAutoUpdate> {
+        &self.auto_update
+    }
     /// Consumes the builder and constructs a [`ProjectDescription`](crate::types::ProjectDescription).
     pub fn build(self) -> crate::types::ProjectDescription {
         crate::types::ProjectDescription {
@@ -117,6 +159,8 @@ impl ProjectDescriptionBuilder {
             creation_timestamp: self.creation_timestamp,
             status: self.status,
             datasets: self.datasets,
+            feature: self.feature,
+            auto_update: self.auto_update,
         }
     }
 }

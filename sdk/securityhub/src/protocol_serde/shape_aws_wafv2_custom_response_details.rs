@@ -6,23 +6,23 @@ pub fn ser_aws_wafv2_custom_response_details(
     if let Some(var_1) = &input.custom_response_body_key {
         object.key("CustomResponseBodyKey").string(var_1.as_str());
     }
-    if input.response_code != 0 {
+    if let Some(var_2) = &input.response_code {
         object.key("ResponseCode").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.response_code).into()),
+            ::aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
-    if let Some(var_2) = &input.response_headers {
-        let mut array_3 = object.key("ResponseHeaders").start_array();
-        for item_4 in var_2 {
+    if let Some(var_3) = &input.response_headers {
+        let mut array_4 = object.key("ResponseHeaders").start_array();
+        for item_5 in var_3 {
             {
                 #[allow(unused_mut)]
-                let mut object_5 = array_3.value().start_object();
-                crate::protocol_serde::shape_aws_wafv2_custom_http_header::ser_aws_wafv2_custom_http_header(&mut object_5, item_4)?;
-                object_5.finish();
+                let mut object_6 = array_4.value().start_object();
+                crate::protocol_serde::shape_aws_wafv2_custom_http_header::ser_aws_wafv2_custom_http_header(&mut object_6, item_5)?;
+                object_6.finish();
             }
         }
-        array_3.finish();
+        array_4.finish();
     }
     Ok(())
 }

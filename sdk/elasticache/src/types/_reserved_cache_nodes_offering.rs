@@ -37,11 +37,11 @@ pub struct ReservedCacheNodesOffering {
     /// </ul>
     pub cache_node_type: ::std::option::Option<::std::string::String>,
     /// <p>The duration of the offering. in seconds.</p>
-    pub duration: i32,
+    pub duration: ::std::option::Option<i32>,
     /// <p>The fixed price charged for this offering.</p>
-    pub fixed_price: f64,
+    pub fixed_price: ::std::option::Option<f64>,
     /// <p>The hourly price charged for this offering.</p>
-    pub usage_price: f64,
+    pub usage_price: ::std::option::Option<f64>,
     /// <p>The cache engine used by the offering.</p>
     pub product_description: ::std::option::Option<::std::string::String>,
     /// <p>The offering type.</p>
@@ -87,15 +87,15 @@ impl ReservedCacheNodesOffering {
         self.cache_node_type.as_deref()
     }
     /// <p>The duration of the offering. in seconds.</p>
-    pub fn duration(&self) -> i32 {
+    pub fn duration(&self) -> ::std::option::Option<i32> {
         self.duration
     }
     /// <p>The fixed price charged for this offering.</p>
-    pub fn fixed_price(&self) -> f64 {
+    pub fn fixed_price(&self) -> ::std::option::Option<f64> {
         self.fixed_price
     }
     /// <p>The hourly price charged for this offering.</p>
-    pub fn usage_price(&self) -> f64 {
+    pub fn usage_price(&self) -> ::std::option::Option<f64> {
         self.usage_price
     }
     /// <p>The cache engine used by the offering.</p>
@@ -339,9 +339,9 @@ impl ReservedCacheNodesOfferingBuilder {
         crate::types::ReservedCacheNodesOffering {
             reserved_cache_nodes_offering_id: self.reserved_cache_nodes_offering_id,
             cache_node_type: self.cache_node_type,
-            duration: self.duration.unwrap_or_default(),
-            fixed_price: self.fixed_price.unwrap_or_default(),
-            usage_price: self.usage_price.unwrap_or_default(),
+            duration: self.duration,
+            fixed_price: self.fixed_price,
+            usage_price: self.usage_price,
             product_description: self.product_description,
             offering_type: self.offering_type,
             recurring_charges: self.recurring_charges,

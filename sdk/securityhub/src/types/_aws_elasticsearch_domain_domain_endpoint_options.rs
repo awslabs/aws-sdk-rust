@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsElasticsearchDomainDomainEndpointOptions {
     /// <p>Whether to require that all traffic to the domain arrive over HTTPS.</p>
-    pub enforce_https: bool,
+    pub enforce_https: ::std::option::Option<bool>,
     /// <p>The TLS security policy to apply to the HTTPS endpoint of the OpenSearch domain.</p>
     /// <p>Valid values:</p>
     /// <ul>
@@ -16,7 +16,7 @@ pub struct AwsElasticsearchDomainDomainEndpointOptions {
 }
 impl AwsElasticsearchDomainDomainEndpointOptions {
     /// <p>Whether to require that all traffic to the domain arrive over HTTPS.</p>
-    pub fn enforce_https(&self) -> bool {
+    pub fn enforce_https(&self) -> ::std::option::Option<bool> {
         self.enforce_https
     }
     /// <p>The TLS security policy to apply to the HTTPS endpoint of the OpenSearch domain.</p>
@@ -90,7 +90,7 @@ impl AwsElasticsearchDomainDomainEndpointOptionsBuilder {
     /// Consumes the builder and constructs a [`AwsElasticsearchDomainDomainEndpointOptions`](crate::types::AwsElasticsearchDomainDomainEndpointOptions).
     pub fn build(self) -> crate::types::AwsElasticsearchDomainDomainEndpointOptions {
         crate::types::AwsElasticsearchDomainDomainEndpointOptions {
-            enforce_https: self.enforce_https.unwrap_or_default(),
+            enforce_https: self.enforce_https,
             tls_security_policy: self.tls_security_policy,
         }
     }

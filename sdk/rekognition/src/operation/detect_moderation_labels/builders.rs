@@ -26,6 +26,7 @@ impl DetectModerationLabelsInputBuilder {
 /// <p>To filter images, use the labels returned by <code>DetectModerationLabels</code> to determine which types of content are appropriate.</p>
 /// <p>For information about moderation labels, see Detecting Unsafe Content in the Amazon Rekognition Developer Guide.</p>
 /// <p>You pass the input image either as base64-encoded image bytes or as a reference to an image in an Amazon S3 bucket. If you use the AWS CLI to call Amazon Rekognition operations, passing image bytes is not supported. The image must be either a PNG or JPEG formatted file. </p>
+/// <p>You can specify an adapter to use when retrieving label predictions by providing a <code>ProjectVersionArn</code> to the <code>ProjectVersion</code> argument.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DetectModerationLabelsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -160,5 +161,19 @@ impl DetectModerationLabelsFluentBuilder {
     /// <p>Sets up the configuration for human evaluation, including the FlowDefinition the image will be sent to.</p>
     pub fn get_human_loop_config(&self) -> &::std::option::Option<crate::types::HumanLoopConfig> {
         self.inner.get_human_loop_config()
+    }
+    /// <p>Identifier for the custom adapter. Expects the ProjectVersionArn as a value. Use the CreateProject or CreateProjectVersion APIs to create a custom adapter.</p>
+    pub fn project_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.project_version(input.into());
+        self
+    }
+    /// <p>Identifier for the custom adapter. Expects the ProjectVersionArn as a value. Use the CreateProject or CreateProjectVersion APIs to create a custom adapter.</p>
+    pub fn set_project_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_project_version(input);
+        self
+    }
+    /// <p>Identifier for the custom adapter. Expects the ProjectVersionArn as a value. Use the CreateProject or CreateProjectVersion APIs to create a custom adapter.</p>
+    pub fn get_project_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_project_version()
     }
 }

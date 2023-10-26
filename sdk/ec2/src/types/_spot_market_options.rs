@@ -18,7 +18,10 @@ pub struct SpotMarketOptions {
     /// <li> <p>For a one-time request, <code>ValidUntil</code> is not supported. The request remains active until all instances launch or you cancel the request.</p> </li>
     /// </ul>
     pub valid_until: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The behavior when a Spot Instance is interrupted. The default is <code>terminate</code>.</p>
+    /// <p>The behavior when a Spot Instance is interrupted.</p>
+    /// <p>If <code>Configured</code> (for <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_HibernationOptionsRequest.html"> <code>HibernationOptions</code> </a>) is set to <code>true</code>, the <code>InstanceInterruptionBehavior</code> parameter is automatically set to <code>hibernate</code>. If you set it to <code>stop</code> or <code>terminate</code>, you'll get an error.</p>
+    /// <p>If <code>Configured</code> (for <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_HibernationOptionsRequest.html"> <code>HibernationOptions</code> </a>) is set to <code>false</code> or <code>null</code>, the <code>InstanceInterruptionBehavior</code> parameter is automatically set to <code>terminate</code>. You can also set it to <code>stop</code> or <code>hibernate</code>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/interruption-behavior.html">Interruption behavior</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub instance_interruption_behavior: ::std::option::Option<crate::types::InstanceInterruptionBehavior>,
 }
 impl SpotMarketOptions {
@@ -44,7 +47,10 @@ impl SpotMarketOptions {
     pub fn valid_until(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.valid_until.as_ref()
     }
-    /// <p>The behavior when a Spot Instance is interrupted. The default is <code>terminate</code>.</p>
+    /// <p>The behavior when a Spot Instance is interrupted.</p>
+    /// <p>If <code>Configured</code> (for <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_HibernationOptionsRequest.html"> <code>HibernationOptions</code> </a>) is set to <code>true</code>, the <code>InstanceInterruptionBehavior</code> parameter is automatically set to <code>hibernate</code>. If you set it to <code>stop</code> or <code>terminate</code>, you'll get an error.</p>
+    /// <p>If <code>Configured</code> (for <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_HibernationOptionsRequest.html"> <code>HibernationOptions</code> </a>) is set to <code>false</code> or <code>null</code>, the <code>InstanceInterruptionBehavior</code> parameter is automatically set to <code>terminate</code>. You can also set it to <code>stop</code> or <code>hibernate</code>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/interruption-behavior.html">Interruption behavior</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn instance_interruption_behavior(&self) -> ::std::option::Option<&crate::types::InstanceInterruptionBehavior> {
         self.instance_interruption_behavior.as_ref()
     }
@@ -141,17 +147,26 @@ impl SpotMarketOptionsBuilder {
     pub fn get_valid_until(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.valid_until
     }
-    /// <p>The behavior when a Spot Instance is interrupted. The default is <code>terminate</code>.</p>
+    /// <p>The behavior when a Spot Instance is interrupted.</p>
+    /// <p>If <code>Configured</code> (for <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_HibernationOptionsRequest.html"> <code>HibernationOptions</code> </a>) is set to <code>true</code>, the <code>InstanceInterruptionBehavior</code> parameter is automatically set to <code>hibernate</code>. If you set it to <code>stop</code> or <code>terminate</code>, you'll get an error.</p>
+    /// <p>If <code>Configured</code> (for <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_HibernationOptionsRequest.html"> <code>HibernationOptions</code> </a>) is set to <code>false</code> or <code>null</code>, the <code>InstanceInterruptionBehavior</code> parameter is automatically set to <code>terminate</code>. You can also set it to <code>stop</code> or <code>hibernate</code>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/interruption-behavior.html">Interruption behavior</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn instance_interruption_behavior(mut self, input: crate::types::InstanceInterruptionBehavior) -> Self {
         self.instance_interruption_behavior = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The behavior when a Spot Instance is interrupted. The default is <code>terminate</code>.</p>
+    /// <p>The behavior when a Spot Instance is interrupted.</p>
+    /// <p>If <code>Configured</code> (for <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_HibernationOptionsRequest.html"> <code>HibernationOptions</code> </a>) is set to <code>true</code>, the <code>InstanceInterruptionBehavior</code> parameter is automatically set to <code>hibernate</code>. If you set it to <code>stop</code> or <code>terminate</code>, you'll get an error.</p>
+    /// <p>If <code>Configured</code> (for <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_HibernationOptionsRequest.html"> <code>HibernationOptions</code> </a>) is set to <code>false</code> or <code>null</code>, the <code>InstanceInterruptionBehavior</code> parameter is automatically set to <code>terminate</code>. You can also set it to <code>stop</code> or <code>hibernate</code>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/interruption-behavior.html">Interruption behavior</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn set_instance_interruption_behavior(mut self, input: ::std::option::Option<crate::types::InstanceInterruptionBehavior>) -> Self {
         self.instance_interruption_behavior = input;
         self
     }
-    /// <p>The behavior when a Spot Instance is interrupted. The default is <code>terminate</code>.</p>
+    /// <p>The behavior when a Spot Instance is interrupted.</p>
+    /// <p>If <code>Configured</code> (for <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_HibernationOptionsRequest.html"> <code>HibernationOptions</code> </a>) is set to <code>true</code>, the <code>InstanceInterruptionBehavior</code> parameter is automatically set to <code>hibernate</code>. If you set it to <code>stop</code> or <code>terminate</code>, you'll get an error.</p>
+    /// <p>If <code>Configured</code> (for <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_HibernationOptionsRequest.html"> <code>HibernationOptions</code> </a>) is set to <code>false</code> or <code>null</code>, the <code>InstanceInterruptionBehavior</code> parameter is automatically set to <code>terminate</code>. You can also set it to <code>stop</code> or <code>hibernate</code>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/interruption-behavior.html">Interruption behavior</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn get_instance_interruption_behavior(&self) -> &::std::option::Option<crate::types::InstanceInterruptionBehavior> {
         &self.instance_interruption_behavior
     }

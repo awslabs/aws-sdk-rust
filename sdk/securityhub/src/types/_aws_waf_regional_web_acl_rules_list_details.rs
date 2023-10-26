@@ -9,7 +9,7 @@ pub struct AwsWafRegionalWebAclRulesListDetails {
     /// <p>Overrides the rule evaluation result in the rule group. </p>
     pub override_action: ::std::option::Option<crate::types::AwsWafRegionalWebAclRulesListOverrideActionDetails>,
     /// <p>The order in which WAF evaluates the rules in a web ACL. </p>
-    pub priority: i32,
+    pub priority: ::std::option::Option<i32>,
     /// <p>The ID of an WAF Regional rule to associate with a web ACL. </p>
     pub rule_id: ::std::option::Option<::std::string::String>,
     /// <p>For actions that are associated with a rule, the action that WAF takes when a web request matches all conditions in a rule. </p>
@@ -25,7 +25,7 @@ impl AwsWafRegionalWebAclRulesListDetails {
         self.override_action.as_ref()
     }
     /// <p>The order in which WAF evaluates the rules in a web ACL. </p>
-    pub fn priority(&self) -> i32 {
+    pub fn priority(&self) -> ::std::option::Option<i32> {
         self.priority
     }
     /// <p>The ID of an WAF Regional rule to associate with a web ACL. </p>
@@ -130,7 +130,7 @@ impl AwsWafRegionalWebAclRulesListDetailsBuilder {
         crate::types::AwsWafRegionalWebAclRulesListDetails {
             action: self.action,
             override_action: self.override_action,
-            priority: self.priority.unwrap_or_default(),
+            priority: self.priority,
             rule_id: self.rule_id,
             r#type: self.r#type,
         }

@@ -5,13 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsS3BucketBucketLifecycleConfigurationRulesNoncurrentVersionTransitionsDetails {
     /// <p>The number of days that an object is noncurrent before Amazon S3 can perform the associated action.</p>
-    pub days: i32,
+    pub days: ::std::option::Option<i32>,
     /// <p>The class of storage to change the object to after the object is noncurrent for the specified number of days.</p>
     pub storage_class: ::std::option::Option<::std::string::String>,
 }
 impl AwsS3BucketBucketLifecycleConfigurationRulesNoncurrentVersionTransitionsDetails {
     /// <p>The number of days that an object is noncurrent before Amazon S3 can perform the associated action.</p>
-    pub fn days(&self) -> i32 {
+    pub fn days(&self) -> ::std::option::Option<i32> {
         self.days
     }
     /// <p>The class of storage to change the object to after the object is noncurrent for the specified number of days.</p>
@@ -65,7 +65,7 @@ impl AwsS3BucketBucketLifecycleConfigurationRulesNoncurrentVersionTransitionsDet
     /// Consumes the builder and constructs a [`AwsS3BucketBucketLifecycleConfigurationRulesNoncurrentVersionTransitionsDetails`](crate::types::AwsS3BucketBucketLifecycleConfigurationRulesNoncurrentVersionTransitionsDetails).
     pub fn build(self) -> crate::types::AwsS3BucketBucketLifecycleConfigurationRulesNoncurrentVersionTransitionsDetails {
         crate::types::AwsS3BucketBucketLifecycleConfigurationRulesNoncurrentVersionTransitionsDetails {
-            days: self.days.unwrap_or_default(),
+            days: self.days,
             storage_class: self.storage_class,
         }
     }

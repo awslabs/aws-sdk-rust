@@ -15,7 +15,7 @@ pub struct Network {
     /// <p>The source IPv6 address of network-related information about a finding.</p>
     pub source_ip_v6: ::std::option::Option<::std::string::String>,
     /// <p>The source port of network-related information about a finding.</p>
-    pub source_port: i32,
+    pub source_port: ::std::option::Option<i32>,
     /// <p>The source domain of network-related information about a finding.</p>
     pub source_domain: ::std::option::Option<::std::string::String>,
     /// <p>The source media access control (MAC) address of network-related information about a finding.</p>
@@ -25,7 +25,7 @@ pub struct Network {
     /// <p>The destination IPv6 address of network-related information about a finding.</p>
     pub destination_ip_v6: ::std::option::Option<::std::string::String>,
     /// <p>The destination port of network-related information about a finding.</p>
-    pub destination_port: i32,
+    pub destination_port: ::std::option::Option<i32>,
     /// <p>The destination domain of network-related information about a finding.</p>
     pub destination_domain: ::std::option::Option<::std::string::String>,
 }
@@ -51,7 +51,7 @@ impl Network {
         self.source_ip_v6.as_deref()
     }
     /// <p>The source port of network-related information about a finding.</p>
-    pub fn source_port(&self) -> i32 {
+    pub fn source_port(&self) -> ::std::option::Option<i32> {
         self.source_port
     }
     /// <p>The source domain of network-related information about a finding.</p>
@@ -71,7 +71,7 @@ impl Network {
         self.destination_ip_v6.as_deref()
     }
     /// <p>The destination port of network-related information about a finding.</p>
-    pub fn destination_port(&self) -> i32 {
+    pub fn destination_port(&self) -> ::std::option::Option<i32> {
         self.destination_port
     }
     /// <p>The destination domain of network-related information about a finding.</p>
@@ -280,12 +280,12 @@ impl NetworkBuilder {
             open_port_range: self.open_port_range,
             source_ip_v4: self.source_ip_v4,
             source_ip_v6: self.source_ip_v6,
-            source_port: self.source_port.unwrap_or_default(),
+            source_port: self.source_port,
             source_domain: self.source_domain,
             source_mac: self.source_mac,
             destination_ip_v4: self.destination_ip_v4,
             destination_ip_v6: self.destination_ip_v6,
-            destination_port: self.destination_port.unwrap_or_default(),
+            destination_port: self.destination_port,
             destination_domain: self.destination_domain,
         }
     }

@@ -5,11 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TermsAggregation {
     /// <p>The number of buckets to return in the response. Default to 10.</p>
-    pub max_buckets: i32,
+    pub max_buckets: ::std::option::Option<i32>,
 }
 impl TermsAggregation {
     /// <p>The number of buckets to return in the response. Default to 10.</p>
-    pub fn max_buckets(&self) -> i32 {
+    pub fn max_buckets(&self) -> ::std::option::Option<i32> {
         self.max_buckets
     }
 }
@@ -44,7 +44,7 @@ impl TermsAggregationBuilder {
     /// Consumes the builder and constructs a [`TermsAggregation`](crate::types::TermsAggregation).
     pub fn build(self) -> crate::types::TermsAggregation {
         crate::types::TermsAggregation {
-            max_buckets: self.max_buckets.unwrap_or_default(),
+            max_buckets: self.max_buckets,
         }
     }
 }

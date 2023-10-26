@@ -16,6 +16,8 @@ pub struct ControlPanel {
     pub routing_control_count: ::std::option::Option<i32>,
     /// <p>The deployment status of control panel. Status can be one of the following: PENDING, DEPLOYED, PENDING_DELETION.</p>
     pub status: ::std::option::Option<crate::types::Status>,
+    /// <p>The Amazon Web Services account ID of the control panel owner.</p>
+    pub owner: ::std::option::Option<::std::string::String>,
 }
 impl ControlPanel {
     /// <p>The Amazon Resource Name (ARN) of the cluster that includes the control panel.</p>
@@ -42,6 +44,10 @@ impl ControlPanel {
     pub fn status(&self) -> ::std::option::Option<&crate::types::Status> {
         self.status.as_ref()
     }
+    /// <p>The Amazon Web Services account ID of the control panel owner.</p>
+    pub fn owner(&self) -> ::std::option::Option<&str> {
+        self.owner.as_deref()
+    }
 }
 impl ControlPanel {
     /// Creates a new builder-style object to manufacture [`ControlPanel`](crate::types::ControlPanel).
@@ -60,6 +66,7 @@ pub struct ControlPanelBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) routing_control_count: ::std::option::Option<i32>,
     pub(crate) status: ::std::option::Option<crate::types::Status>,
+    pub(crate) owner: ::std::option::Option<::std::string::String>,
 }
 impl ControlPanelBuilder {
     /// <p>The Amazon Resource Name (ARN) of the cluster that includes the control panel.</p>
@@ -146,6 +153,20 @@ impl ControlPanelBuilder {
     pub fn get_status(&self) -> &::std::option::Option<crate::types::Status> {
         &self.status
     }
+    /// <p>The Amazon Web Services account ID of the control panel owner.</p>
+    pub fn owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.owner = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Web Services account ID of the control panel owner.</p>
+    pub fn set_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.owner = input;
+        self
+    }
+    /// <p>The Amazon Web Services account ID of the control panel owner.</p>
+    pub fn get_owner(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner
+    }
     /// Consumes the builder and constructs a [`ControlPanel`](crate::types::ControlPanel).
     pub fn build(self) -> crate::types::ControlPanel {
         crate::types::ControlPanel {
@@ -155,6 +176,7 @@ impl ControlPanelBuilder {
             name: self.name,
             routing_control_count: self.routing_control_count,
             status: self.status,
+            owner: self.owner,
         }
     }
 }

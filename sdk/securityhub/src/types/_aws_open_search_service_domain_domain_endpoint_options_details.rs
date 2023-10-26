@@ -7,9 +7,9 @@ pub struct AwsOpenSearchServiceDomainDomainEndpointOptionsDetails {
     /// <p>The ARN for the security certificate. The certificate is managed in ACM.</p>
     pub custom_endpoint_certificate_arn: ::std::option::Option<::std::string::String>,
     /// <p>Whether to enable a custom endpoint for the domain.</p>
-    pub custom_endpoint_enabled: bool,
+    pub custom_endpoint_enabled: ::std::option::Option<bool>,
     /// <p>Whether to require that all traffic to the domain arrive over HTTPS.</p>
-    pub enforce_https: bool,
+    pub enforce_https: ::std::option::Option<bool>,
     /// <p>The fully qualified URL for the custom endpoint.</p>
     pub custom_endpoint: ::std::option::Option<::std::string::String>,
     /// <p>The TLS security policy to apply to the HTTPS endpoint of the OpenSearch domain.</p>
@@ -21,11 +21,11 @@ impl AwsOpenSearchServiceDomainDomainEndpointOptionsDetails {
         self.custom_endpoint_certificate_arn.as_deref()
     }
     /// <p>Whether to enable a custom endpoint for the domain.</p>
-    pub fn custom_endpoint_enabled(&self) -> bool {
+    pub fn custom_endpoint_enabled(&self) -> ::std::option::Option<bool> {
         self.custom_endpoint_enabled
     }
     /// <p>Whether to require that all traffic to the domain arrive over HTTPS.</p>
-    pub fn enforce_https(&self) -> bool {
+    pub fn enforce_https(&self) -> ::std::option::Option<bool> {
         self.enforce_https
     }
     /// <p>The fully qualified URL for the custom endpoint.</p>
@@ -129,8 +129,8 @@ impl AwsOpenSearchServiceDomainDomainEndpointOptionsDetailsBuilder {
     pub fn build(self) -> crate::types::AwsOpenSearchServiceDomainDomainEndpointOptionsDetails {
         crate::types::AwsOpenSearchServiceDomainDomainEndpointOptionsDetails {
             custom_endpoint_certificate_arn: self.custom_endpoint_certificate_arn,
-            custom_endpoint_enabled: self.custom_endpoint_enabled.unwrap_or_default(),
-            enforce_https: self.enforce_https.unwrap_or_default(),
+            custom_endpoint_enabled: self.custom_endpoint_enabled,
+            enforce_https: self.enforce_https,
             custom_endpoint: self.custom_endpoint,
             tls_security_policy: self.tls_security_policy,
         }

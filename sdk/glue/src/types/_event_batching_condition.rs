@@ -5,13 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EventBatchingCondition {
     /// <p>Number of events that must be received from Amazon EventBridge before EventBridge event trigger fires.</p>
-    pub batch_size: i32,
+    pub batch_size: ::std::option::Option<i32>,
     /// <p>Window of time in seconds after which EventBridge event trigger fires. Window starts when first event is received.</p>
     pub batch_window: ::std::option::Option<i32>,
 }
 impl EventBatchingCondition {
     /// <p>Number of events that must be received from Amazon EventBridge before EventBridge event trigger fires.</p>
-    pub fn batch_size(&self) -> i32 {
+    pub fn batch_size(&self) -> ::std::option::Option<i32> {
         self.batch_size
     }
     /// <p>Window of time in seconds after which EventBridge event trigger fires. Window starts when first event is received.</p>
@@ -65,7 +65,7 @@ impl EventBatchingConditionBuilder {
     /// Consumes the builder and constructs a [`EventBatchingCondition`](crate::types::EventBatchingCondition).
     pub fn build(self) -> crate::types::EventBatchingCondition {
         crate::types::EventBatchingCondition {
-            batch_size: self.batch_size.unwrap_or_default(),
+            batch_size: self.batch_size,
             batch_window: self.batch_window,
         }
     }

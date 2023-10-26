@@ -156,17 +156,17 @@ impl UpdateLayoutFluentBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
-    /// <p>Information about which fields will be present in the layout, the order of the fields, and a read-only attribute of the field. </p>
+    /// <p>Information about which fields will be present in the layout, the order of the fields.</p>
     pub fn content(mut self, input: crate::types::LayoutContent) -> Self {
         self.inner = self.inner.content(input);
         self
     }
-    /// <p>Information about which fields will be present in the layout, the order of the fields, and a read-only attribute of the field. </p>
+    /// <p>Information about which fields will be present in the layout, the order of the fields.</p>
     pub fn set_content(mut self, input: ::std::option::Option<crate::types::LayoutContent>) -> Self {
         self.inner = self.inner.set_content(input);
         self
     }
-    /// <p>Information about which fields will be present in the layout, the order of the fields, and a read-only attribute of the field. </p>
+    /// <p>Information about which fields will be present in the layout, the order of the fields.</p>
     pub fn get_content(&self) -> &::std::option::Option<crate::types::LayoutContent> {
         self.inner.get_content()
     }

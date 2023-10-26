@@ -6,12 +6,14 @@ pub struct AnalyzeDocumentInput {
     /// <p>The input document as base64-encoded bytes or an Amazon S3 object. If you use the AWS CLI to call Amazon Textract operations, you can't pass image bytes. The document must be an image in JPEG, PNG, PDF, or TIFF format.</p>
     /// <p>If you're using an AWS SDK to call Amazon Textract, you might not need to base64-encode image bytes that are passed using the <code>Bytes</code> field. </p>
     pub document: ::std::option::Option<crate::types::Document>,
-    /// <p>A list of the types of analysis to perform. Add TABLES to the list to return information about the tables that are detected in the input document. Add FORMS to return detected form data. Add SIGNATURES to return the locations of detected signatures. Add LAYOUT to the list to return information about the layout of the document. To perform both forms and table analysis, add TABLES and FORMS to <code>FeatureTypes</code>. To detect signatures within the document and within form data and table data, add SIGNATURES to either TABLES or FORMS. All lines and words detected in the document are included in the response (including text that isn't related to the value of <code>FeatureTypes</code>). </p>
+    /// <p>A list of the types of analysis to perform. Add TABLES to the list to return information about the tables that are detected in the input document. Add FORMS to return detected form data. Add SIGNATURES to return the locations of detected signatures. Add LAYOUT to the list to return information about the layout of the document. All lines and words detected in the document are included in the response (including text that isn't related to the value of <code>FeatureTypes</code>). </p>
     pub feature_types: ::std::option::Option<::std::vec::Vec<crate::types::FeatureType>>,
     /// <p>Sets the configuration for the human in the loop workflow for analyzing documents.</p>
     pub human_loop_config: ::std::option::Option<crate::types::HumanLoopConfig>,
     /// <p>Contains Queries and the alias for those Queries, as determined by the input. </p>
     pub queries_config: ::std::option::Option<crate::types::QueriesConfig>,
+    /// <p>Specifies the adapter to be used when analyzing a document.</p>
+    pub adapters_config: ::std::option::Option<crate::types::AdaptersConfig>,
 }
 impl AnalyzeDocumentInput {
     /// <p>The input document as base64-encoded bytes or an Amazon S3 object. If you use the AWS CLI to call Amazon Textract operations, you can't pass image bytes. The document must be an image in JPEG, PNG, PDF, or TIFF format.</p>
@@ -19,7 +21,7 @@ impl AnalyzeDocumentInput {
     pub fn document(&self) -> ::std::option::Option<&crate::types::Document> {
         self.document.as_ref()
     }
-    /// <p>A list of the types of analysis to perform. Add TABLES to the list to return information about the tables that are detected in the input document. Add FORMS to return detected form data. Add SIGNATURES to return the locations of detected signatures. Add LAYOUT to the list to return information about the layout of the document. To perform both forms and table analysis, add TABLES and FORMS to <code>FeatureTypes</code>. To detect signatures within the document and within form data and table data, add SIGNATURES to either TABLES or FORMS. All lines and words detected in the document are included in the response (including text that isn't related to the value of <code>FeatureTypes</code>). </p>
+    /// <p>A list of the types of analysis to perform. Add TABLES to the list to return information about the tables that are detected in the input document. Add FORMS to return detected form data. Add SIGNATURES to return the locations of detected signatures. Add LAYOUT to the list to return information about the layout of the document. All lines and words detected in the document are included in the response (including text that isn't related to the value of <code>FeatureTypes</code>). </p>
     pub fn feature_types(&self) -> ::std::option::Option<&[crate::types::FeatureType]> {
         self.feature_types.as_deref()
     }
@@ -30,6 +32,10 @@ impl AnalyzeDocumentInput {
     /// <p>Contains Queries and the alias for those Queries, as determined by the input. </p>
     pub fn queries_config(&self) -> ::std::option::Option<&crate::types::QueriesConfig> {
         self.queries_config.as_ref()
+    }
+    /// <p>Specifies the adapter to be used when analyzing a document.</p>
+    pub fn adapters_config(&self) -> ::std::option::Option<&crate::types::AdaptersConfig> {
+        self.adapters_config.as_ref()
     }
 }
 impl AnalyzeDocumentInput {
@@ -47,6 +53,7 @@ pub struct AnalyzeDocumentInputBuilder {
     pub(crate) feature_types: ::std::option::Option<::std::vec::Vec<crate::types::FeatureType>>,
     pub(crate) human_loop_config: ::std::option::Option<crate::types::HumanLoopConfig>,
     pub(crate) queries_config: ::std::option::Option<crate::types::QueriesConfig>,
+    pub(crate) adapters_config: ::std::option::Option<crate::types::AdaptersConfig>,
 }
 impl AnalyzeDocumentInputBuilder {
     /// <p>The input document as base64-encoded bytes or an Amazon S3 object. If you use the AWS CLI to call Amazon Textract operations, you can't pass image bytes. The document must be an image in JPEG, PNG, PDF, or TIFF format.</p>
@@ -70,19 +77,19 @@ impl AnalyzeDocumentInputBuilder {
     ///
     /// To override the contents of this collection use [`set_feature_types`](Self::set_feature_types).
     ///
-    /// <p>A list of the types of analysis to perform. Add TABLES to the list to return information about the tables that are detected in the input document. Add FORMS to return detected form data. Add SIGNATURES to return the locations of detected signatures. Add LAYOUT to the list to return information about the layout of the document. To perform both forms and table analysis, add TABLES and FORMS to <code>FeatureTypes</code>. To detect signatures within the document and within form data and table data, add SIGNATURES to either TABLES or FORMS. All lines and words detected in the document are included in the response (including text that isn't related to the value of <code>FeatureTypes</code>). </p>
+    /// <p>A list of the types of analysis to perform. Add TABLES to the list to return information about the tables that are detected in the input document. Add FORMS to return detected form data. Add SIGNATURES to return the locations of detected signatures. Add LAYOUT to the list to return information about the layout of the document. All lines and words detected in the document are included in the response (including text that isn't related to the value of <code>FeatureTypes</code>). </p>
     pub fn feature_types(mut self, input: crate::types::FeatureType) -> Self {
         let mut v = self.feature_types.unwrap_or_default();
         v.push(input);
         self.feature_types = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of the types of analysis to perform. Add TABLES to the list to return information about the tables that are detected in the input document. Add FORMS to return detected form data. Add SIGNATURES to return the locations of detected signatures. Add LAYOUT to the list to return information about the layout of the document. To perform both forms and table analysis, add TABLES and FORMS to <code>FeatureTypes</code>. To detect signatures within the document and within form data and table data, add SIGNATURES to either TABLES or FORMS. All lines and words detected in the document are included in the response (including text that isn't related to the value of <code>FeatureTypes</code>). </p>
+    /// <p>A list of the types of analysis to perform. Add TABLES to the list to return information about the tables that are detected in the input document. Add FORMS to return detected form data. Add SIGNATURES to return the locations of detected signatures. Add LAYOUT to the list to return information about the layout of the document. All lines and words detected in the document are included in the response (including text that isn't related to the value of <code>FeatureTypes</code>). </p>
     pub fn set_feature_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FeatureType>>) -> Self {
         self.feature_types = input;
         self
     }
-    /// <p>A list of the types of analysis to perform. Add TABLES to the list to return information about the tables that are detected in the input document. Add FORMS to return detected form data. Add SIGNATURES to return the locations of detected signatures. Add LAYOUT to the list to return information about the layout of the document. To perform both forms and table analysis, add TABLES and FORMS to <code>FeatureTypes</code>. To detect signatures within the document and within form data and table data, add SIGNATURES to either TABLES or FORMS. All lines and words detected in the document are included in the response (including text that isn't related to the value of <code>FeatureTypes</code>). </p>
+    /// <p>A list of the types of analysis to perform. Add TABLES to the list to return information about the tables that are detected in the input document. Add FORMS to return detected form data. Add SIGNATURES to return the locations of detected signatures. Add LAYOUT to the list to return information about the layout of the document. All lines and words detected in the document are included in the response (including text that isn't related to the value of <code>FeatureTypes</code>). </p>
     pub fn get_feature_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FeatureType>> {
         &self.feature_types
     }
@@ -114,6 +121,20 @@ impl AnalyzeDocumentInputBuilder {
     pub fn get_queries_config(&self) -> &::std::option::Option<crate::types::QueriesConfig> {
         &self.queries_config
     }
+    /// <p>Specifies the adapter to be used when analyzing a document.</p>
+    pub fn adapters_config(mut self, input: crate::types::AdaptersConfig) -> Self {
+        self.adapters_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the adapter to be used when analyzing a document.</p>
+    pub fn set_adapters_config(mut self, input: ::std::option::Option<crate::types::AdaptersConfig>) -> Self {
+        self.adapters_config = input;
+        self
+    }
+    /// <p>Specifies the adapter to be used when analyzing a document.</p>
+    pub fn get_adapters_config(&self) -> &::std::option::Option<crate::types::AdaptersConfig> {
+        &self.adapters_config
+    }
     /// Consumes the builder and constructs a [`AnalyzeDocumentInput`](crate::operation::analyze_document::AnalyzeDocumentInput).
     pub fn build(
         self,
@@ -123,6 +144,7 @@ impl AnalyzeDocumentInputBuilder {
             feature_types: self.feature_types,
             human_loop_config: self.human_loop_config,
             queries_config: self.queries_config,
+            adapters_config: self.adapters_config,
         })
     }
 }

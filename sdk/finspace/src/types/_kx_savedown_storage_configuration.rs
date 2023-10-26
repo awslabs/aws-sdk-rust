@@ -10,7 +10,7 @@ pub struct KxSavedownStorageConfiguration {
     /// </ul>
     pub r#type: ::std::option::Option<crate::types::KxSavedownStorageType>,
     /// <p>The size of temporary storage in gibibytes.</p>
-    pub size: i32,
+    pub size: ::std::option::Option<i32>,
 }
 impl KxSavedownStorageConfiguration {
     /// <p>The type of writeable storage space for temporarily storing your savedown data. The valid values are:</p>
@@ -21,7 +21,7 @@ impl KxSavedownStorageConfiguration {
         self.r#type.as_ref()
     }
     /// <p>The size of temporary storage in gibibytes.</p>
-    pub fn size(&self) -> i32 {
+    pub fn size(&self) -> ::std::option::Option<i32> {
         self.size
     }
 }
@@ -81,7 +81,7 @@ impl KxSavedownStorageConfigurationBuilder {
     pub fn build(self) -> crate::types::KxSavedownStorageConfiguration {
         crate::types::KxSavedownStorageConfiguration {
             r#type: self.r#type,
-            size: self.size.unwrap_or_default(),
+            size: self.size,
         }
     }
 }

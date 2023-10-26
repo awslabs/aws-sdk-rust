@@ -18,6 +18,8 @@ pub struct ConnectPeerSummary {
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The list of key-value tags associated with the Connect peer summary.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    /// <p>The subnet ARN for the Connect peer summary.</p>
+    pub subnet_arn: ::std::option::Option<::std::string::String>,
 }
 impl ConnectPeerSummary {
     /// <p>The ID of a core network.</p>
@@ -48,6 +50,10 @@ impl ConnectPeerSummary {
     pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
+    /// <p>The subnet ARN for the Connect peer summary.</p>
+    pub fn subnet_arn(&self) -> ::std::option::Option<&str> {
+        self.subnet_arn.as_deref()
+    }
 }
 impl ConnectPeerSummary {
     /// Creates a new builder-style object to manufacture [`ConnectPeerSummary`](crate::types::ConnectPeerSummary).
@@ -67,6 +73,7 @@ pub struct ConnectPeerSummaryBuilder {
     pub(crate) connect_peer_state: ::std::option::Option<crate::types::ConnectPeerState>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) subnet_arn: ::std::option::Option<::std::string::String>,
 }
 impl ConnectPeerSummaryBuilder {
     /// <p>The ID of a core network.</p>
@@ -173,6 +180,20 @@ impl ConnectPeerSummaryBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }
+    /// <p>The subnet ARN for the Connect peer summary.</p>
+    pub fn subnet_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.subnet_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The subnet ARN for the Connect peer summary.</p>
+    pub fn set_subnet_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.subnet_arn = input;
+        self
+    }
+    /// <p>The subnet ARN for the Connect peer summary.</p>
+    pub fn get_subnet_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subnet_arn
+    }
     /// Consumes the builder and constructs a [`ConnectPeerSummary`](crate::types::ConnectPeerSummary).
     pub fn build(self) -> crate::types::ConnectPeerSummary {
         crate::types::ConnectPeerSummary {
@@ -183,6 +204,7 @@ impl ConnectPeerSummaryBuilder {
             connect_peer_state: self.connect_peer_state,
             created_at: self.created_at,
             tags: self.tags,
+            subnet_arn: self.subnet_arn,
         }
     }
 }

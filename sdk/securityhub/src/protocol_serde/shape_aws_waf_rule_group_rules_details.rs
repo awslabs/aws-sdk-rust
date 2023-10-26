@@ -9,17 +9,17 @@ pub fn ser_aws_waf_rule_group_rules_details(
         crate::protocol_serde::shape_aws_waf_rule_group_rules_action_details::ser_aws_waf_rule_group_rules_action_details(&mut object_2, var_1)?;
         object_2.finish();
     }
-    if input.priority != 0 {
+    if let Some(var_3) = &input.priority {
         object.key("Priority").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.priority).into()),
+            ::aws_smithy_types::Number::NegInt((*var_3).into()),
         );
     }
-    if let Some(var_3) = &input.rule_id {
-        object.key("RuleId").string(var_3.as_str());
+    if let Some(var_4) = &input.rule_id {
+        object.key("RuleId").string(var_4.as_str());
     }
-    if let Some(var_4) = &input.r#type {
-        object.key("Type").string(var_4.as_str());
+    if let Some(var_5) = &input.r#type {
+        object.key("Type").string(var_5.as_str());
     }
     Ok(())
 }

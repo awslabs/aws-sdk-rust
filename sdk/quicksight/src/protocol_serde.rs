@@ -1015,6 +1015,8 @@ pub(crate) mod shape_spark_parameters;
 
 pub(crate) mod shape_sql_server_parameters;
 
+pub(crate) mod shape_starburst_parameters;
+
 pub(crate) mod shape_string_dataset_parameter;
 
 pub(crate) mod shape_string_list;
@@ -1046,6 +1048,8 @@ pub(crate) mod shape_topic_refresh_schedule_summary;
 pub(crate) mod shape_topic_summary;
 
 pub(crate) mod shape_transform_operation;
+
+pub(crate) mod shape_trino_parameters;
 
 pub(crate) mod shape_twitter_parameters;
 
@@ -2071,6 +2075,8 @@ pub(crate) mod shape_top_bottom_ranked_computation;
 
 pub(crate) mod shape_total_aggregation_computation;
 
+pub(crate) mod shape_total_aggregation_option;
+
 pub(crate) mod shape_tree_map_aggregated_field_wells;
 
 pub(crate) mod shape_trend_arrow_options;
@@ -2235,6 +2241,8 @@ pub(crate) mod shape_time_range_drill_down_filter;
 
 pub(crate) mod shape_tooltip_item;
 
+pub(crate) mod shape_total_aggregation_function;
+
 pub(crate) mod shape_unaggregated_field;
 
 pub(crate) mod shape_visible_range_options;
@@ -2270,6 +2278,8 @@ pub(crate) mod shape_data_label_types;
 pub(crate) mod shape_data_path_color_list;
 
 pub(crate) mod shape_data_path_sort;
+
+pub(crate) mod shape_data_path_type;
 
 pub(crate) mod shape_destination_parameter_value_configuration;
 
@@ -2314,6 +2324,8 @@ pub(crate) mod shape_table_field_link_configuration;
 pub(crate) mod shape_table_field_option_list;
 
 pub(crate) mod shape_table_side_border_options;
+
+pub(crate) mod shape_total_aggregation_option_list;
 
 pub(crate) mod shape_visual_custom_action_operation_list;
 

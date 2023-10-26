@@ -9,7 +9,7 @@ pub struct HighestSeverityThreatDetails {
     /// <p>Threat name of the highest severity threat detected as part of the malware scan.</p>
     pub threat_name: ::std::option::Option<::std::string::String>,
     /// <p>Total number of infected files with the highest severity threat detected.</p>
-    pub count: i32,
+    pub count: ::std::option::Option<i32>,
 }
 impl HighestSeverityThreatDetails {
     /// <p>Severity level of the highest severity threat detected.</p>
@@ -21,7 +21,7 @@ impl HighestSeverityThreatDetails {
         self.threat_name.as_deref()
     }
     /// <p>Total number of infected files with the highest severity threat detected.</p>
-    pub fn count(&self) -> i32 {
+    pub fn count(&self) -> ::std::option::Option<i32> {
         self.count
     }
 }
@@ -88,7 +88,7 @@ impl HighestSeverityThreatDetailsBuilder {
         crate::types::HighestSeverityThreatDetails {
             severity: self.severity,
             threat_name: self.threat_name,
-            count: self.count.unwrap_or_default(),
+            count: self.count,
         }
     }
 }

@@ -15,11 +15,11 @@ pub fn ser_aws_step_function_state_machine_logging_configuration_details(
         }
         array_2.finish();
     }
-    if input.include_execution_data {
-        object.key("IncludeExecutionData").boolean(input.include_execution_data);
+    if let Some(var_5) = &input.include_execution_data {
+        object.key("IncludeExecutionData").boolean(*var_5);
     }
-    if let Some(var_5) = &input.level {
-        object.key("Level").string(var_5.as_str());
+    if let Some(var_6) = &input.level {
+        object.key("Level").string(var_6.as_str());
     }
     Ok(())
 }

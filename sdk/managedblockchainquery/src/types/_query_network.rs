@@ -13,7 +13,9 @@
 /// # let querynetwork = unimplemented!();
 /// match querynetwork {
 ///     QueryNetwork::BitcoinMainnet => { /* ... */ },
+///     QueryNetwork::BitcoinTestnet => { /* ... */ },
 ///     QueryNetwork::EthereumMainnet => { /* ... */ },
+///     QueryNetwork::EthereumSepoliaTestnet => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -43,8 +45,12 @@
 pub enum QueryNetwork {
     /// Bitcoin main network
     BitcoinMainnet,
+    /// Bitcoin test network
+    BitcoinTestnet,
     /// Ethereum main network
     EthereumMainnet,
+    /// SEPOLIA network (ethereum testnet)
+    EthereumSepoliaTestnet,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
@@ -52,7 +58,9 @@ impl ::std::convert::From<&str> for QueryNetwork {
     fn from(s: &str) -> Self {
         match s {
             "BITCOIN_MAINNET" => QueryNetwork::BitcoinMainnet,
+            "BITCOIN_TESTNET" => QueryNetwork::BitcoinTestnet,
             "ETHEREUM_MAINNET" => QueryNetwork::EthereumMainnet,
+            "ETHEREUM_SEPOLIA_TESTNET" => QueryNetwork::EthereumSepoliaTestnet,
             other => QueryNetwork::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -69,13 +77,15 @@ impl QueryNetwork {
     pub fn as_str(&self) -> &str {
         match self {
             QueryNetwork::BitcoinMainnet => "BITCOIN_MAINNET",
+            QueryNetwork::BitcoinTestnet => "BITCOIN_TESTNET",
             QueryNetwork::EthereumMainnet => "ETHEREUM_MAINNET",
+            QueryNetwork::EthereumSepoliaTestnet => "ETHEREUM_SEPOLIA_TESTNET",
             QueryNetwork::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["BITCOIN_MAINNET", "ETHEREUM_MAINNET"]
+        &["BITCOIN_MAINNET", "BITCOIN_TESTNET", "ETHEREUM_MAINNET", "ETHEREUM_SEPOLIA_TESTNET"]
     }
 }
 impl ::std::convert::AsRef<str> for QueryNetwork {

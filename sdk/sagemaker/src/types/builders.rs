@@ -27,6 +27,10 @@ pub use crate::types::_user_settings::UserSettingsBuilder;
 
 pub use crate::types::_canvas_app_settings::CanvasAppSettingsBuilder;
 
+pub use crate::types::_direct_deploy_settings::DirectDeploySettingsBuilder;
+
+pub use crate::types::_kendra_settings::KendraSettingsBuilder;
+
 pub use crate::types::_identity_provider_o_auth_setting::IdentityProviderOAuthSettingBuilder;
 
 pub use crate::types::_workspace_settings::WorkspaceSettingsBuilder;

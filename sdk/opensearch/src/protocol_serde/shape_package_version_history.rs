@@ -34,6 +34,9 @@ where
                                 ::aws_smithy_types::date_time::Format::EpochSeconds,
                             )?);
                         }
+                        "PluginProperties" => {
+                            builder = builder.set_plugin_properties(crate::protocol_serde::shape_plugin_properties::de_plugin_properties(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

@@ -14,6 +14,8 @@ pub struct TotalOptions {
     pub custom_label: ::std::option::Option<::std::string::String>,
     /// <p>Cell styling options for the total cells.</p>
     pub total_cell_style: ::std::option::Option<crate::types::TableCellStyle>,
+    /// <p>The total aggregation settings for each value field.</p>
+    pub total_aggregation_options: ::std::option::Option<::std::vec::Vec<crate::types::TotalAggregationOption>>,
 }
 impl TotalOptions {
     /// <p>The visibility configuration for the total cells.</p>
@@ -36,6 +38,10 @@ impl TotalOptions {
     pub fn total_cell_style(&self) -> ::std::option::Option<&crate::types::TableCellStyle> {
         self.total_cell_style.as_ref()
     }
+    /// <p>The total aggregation settings for each value field.</p>
+    pub fn total_aggregation_options(&self) -> ::std::option::Option<&[crate::types::TotalAggregationOption]> {
+        self.total_aggregation_options.as_deref()
+    }
 }
 impl TotalOptions {
     /// Creates a new builder-style object to manufacture [`TotalOptions`](crate::types::TotalOptions).
@@ -53,6 +59,7 @@ pub struct TotalOptionsBuilder {
     pub(crate) scroll_status: ::std::option::Option<crate::types::TableTotalsScrollStatus>,
     pub(crate) custom_label: ::std::option::Option<::std::string::String>,
     pub(crate) total_cell_style: ::std::option::Option<crate::types::TableCellStyle>,
+    pub(crate) total_aggregation_options: ::std::option::Option<::std::vec::Vec<crate::types::TotalAggregationOption>>,
 }
 impl TotalOptionsBuilder {
     /// <p>The visibility configuration for the total cells.</p>
@@ -125,6 +132,26 @@ impl TotalOptionsBuilder {
     pub fn get_total_cell_style(&self) -> &::std::option::Option<crate::types::TableCellStyle> {
         &self.total_cell_style
     }
+    /// Appends an item to `total_aggregation_options`.
+    ///
+    /// To override the contents of this collection use [`set_total_aggregation_options`](Self::set_total_aggregation_options).
+    ///
+    /// <p>The total aggregation settings for each value field.</p>
+    pub fn total_aggregation_options(mut self, input: crate::types::TotalAggregationOption) -> Self {
+        let mut v = self.total_aggregation_options.unwrap_or_default();
+        v.push(input);
+        self.total_aggregation_options = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The total aggregation settings for each value field.</p>
+    pub fn set_total_aggregation_options(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TotalAggregationOption>>) -> Self {
+        self.total_aggregation_options = input;
+        self
+    }
+    /// <p>The total aggregation settings for each value field.</p>
+    pub fn get_total_aggregation_options(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TotalAggregationOption>> {
+        &self.total_aggregation_options
+    }
     /// Consumes the builder and constructs a [`TotalOptions`](crate::types::TotalOptions).
     pub fn build(self) -> crate::types::TotalOptions {
         crate::types::TotalOptions {
@@ -133,6 +160,7 @@ impl TotalOptionsBuilder {
             scroll_status: self.scroll_status,
             custom_label: self.custom_label,
             total_cell_style: self.total_cell_style,
+            total_aggregation_options: self.total_aggregation_options,
         }
     }
 }

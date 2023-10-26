@@ -81,10 +81,10 @@ pub fn ser_aws_sage_maker_notebook_instance_details(
     if let Some(var_26) = &input.url {
         object.key("Url").string(var_26.as_str());
     }
-    if input.volume_size_in_gb != 0 {
+    if let Some(var_27) = &input.volume_size_in_gb {
         object.key("VolumeSizeInGB").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.volume_size_in_gb).into()),
+            ::aws_smithy_types::Number::NegInt((*var_27).into()),
         );
     }
     Ok(())

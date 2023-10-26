@@ -7,7 +7,7 @@ pub struct UnprocessedAutomationRule {
     /// <p> The Amazon Resource Name (ARN) for the unprocessed automation rule. </p>
     pub rule_arn: ::std::option::Option<::std::string::String>,
     /// <p> The error code associated with the unprocessed automation rule. </p>
-    pub error_code: i32,
+    pub error_code: ::std::option::Option<i32>,
     /// <p> An error message describing why a request didn't process a specific rule. </p>
     pub error_message: ::std::option::Option<::std::string::String>,
 }
@@ -17,7 +17,7 @@ impl UnprocessedAutomationRule {
         self.rule_arn.as_deref()
     }
     /// <p> The error code associated with the unprocessed automation rule. </p>
-    pub fn error_code(&self) -> i32 {
+    pub fn error_code(&self) -> ::std::option::Option<i32> {
         self.error_code
     }
     /// <p> An error message describing why a request didn't process a specific rule. </p>
@@ -87,7 +87,7 @@ impl UnprocessedAutomationRuleBuilder {
     pub fn build(self) -> crate::types::UnprocessedAutomationRule {
         crate::types::UnprocessedAutomationRule {
             rule_arn: self.rule_arn,
-            error_code: self.error_code.unwrap_or_default(),
+            error_code: self.error_code,
             error_message: self.error_message,
         }
     }

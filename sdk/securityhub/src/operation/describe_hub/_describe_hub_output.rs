@@ -9,7 +9,7 @@ pub struct DescribeHubOutput {
     pub subscribed_at: ::std::option::Option<::std::string::String>,
     /// <p>Whether to automatically enable new controls when they are added to standards that are enabled.</p>
     /// <p>If set to <code>true</code>, then new controls for enabled standards are enabled automatically. If set to <code>false</code>, then new controls are not enabled.</p>
-    pub auto_enable_controls: bool,
+    pub auto_enable_controls: ::std::option::Option<bool>,
     /// <p>Specifies whether the calling account has consolidated control findings turned on. If the value for this field is set to <code>SECURITY_CONTROL</code>, Security Hub generates a single finding for a control check even when the check applies to multiple enabled standards.</p>
     /// <p>If the value for this field is set to <code>STANDARD_CONTROL</code>, Security Hub generates separate findings for a control check when the check applies to multiple enabled standards.</p>
     /// <p>The value for this field in a member account matches the value in the administrator account. For accounts that aren't part of an organization, the default value of this field is <code>SECURITY_CONTROL</code> if you enabled Security Hub on or after February 23, 2023.</p>
@@ -27,7 +27,7 @@ impl DescribeHubOutput {
     }
     /// <p>Whether to automatically enable new controls when they are added to standards that are enabled.</p>
     /// <p>If set to <code>true</code>, then new controls for enabled standards are enabled automatically. If set to <code>false</code>, then new controls are not enabled.</p>
-    pub fn auto_enable_controls(&self) -> bool {
+    pub fn auto_enable_controls(&self) -> ::std::option::Option<bool> {
         self.auto_enable_controls
     }
     /// <p>Specifies whether the calling account has consolidated control findings turned on. If the value for this field is set to <code>SECURITY_CONTROL</code>, Security Hub generates a single finding for a control check even when the check applies to multiple enabled standards.</p>
@@ -139,7 +139,7 @@ impl DescribeHubOutputBuilder {
         crate::operation::describe_hub::DescribeHubOutput {
             hub_arn: self.hub_arn,
             subscribed_at: self.subscribed_at,
-            auto_enable_controls: self.auto_enable_controls.unwrap_or_default(),
+            auto_enable_controls: self.auto_enable_controls,
             control_finding_generator: self.control_finding_generator,
             _request_id: self._request_id,
         }

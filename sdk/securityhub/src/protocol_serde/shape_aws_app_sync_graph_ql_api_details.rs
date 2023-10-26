@@ -24,47 +24,47 @@ pub fn ser_aws_app_sync_graph_ql_api_details(
         crate::protocol_serde::shape_aws_app_sync_graph_ql_api_lambda_authorizer_config_details::ser_aws_app_sync_graph_ql_api_lambda_authorizer_config_details(&mut object_7, var_6)?;
         object_7.finish();
     }
-    if input.xray_enabled {
-        object.key("XrayEnabled").boolean(input.xray_enabled);
+    if let Some(var_8) = &input.xray_enabled {
+        object.key("XrayEnabled").boolean(*var_8);
     }
-    if let Some(var_8) = &input.arn {
-        object.key("Arn").string(var_8.as_str());
+    if let Some(var_9) = &input.arn {
+        object.key("Arn").string(var_9.as_str());
     }
-    if let Some(var_9) = &input.user_pool_config {
+    if let Some(var_10) = &input.user_pool_config {
         #[allow(unused_mut)]
-        let mut object_10 = object.key("UserPoolConfig").start_object();
+        let mut object_11 = object.key("UserPoolConfig").start_object();
         crate::protocol_serde::shape_aws_app_sync_graph_ql_api_user_pool_config_details::ser_aws_app_sync_graph_ql_api_user_pool_config_details(
-            &mut object_10,
-            var_9,
+            &mut object_11,
+            var_10,
         )?;
-        object_10.finish();
+        object_11.finish();
     }
-    if let Some(var_11) = &input.authentication_type {
-        object.key("AuthenticationType").string(var_11.as_str());
+    if let Some(var_12) = &input.authentication_type {
+        object.key("AuthenticationType").string(var_12.as_str());
     }
-    if let Some(var_12) = &input.log_config {
+    if let Some(var_13) = &input.log_config {
         #[allow(unused_mut)]
-        let mut object_13 = object.key("LogConfig").start_object();
+        let mut object_14 = object.key("LogConfig").start_object();
         crate::protocol_serde::shape_aws_app_sync_graph_ql_api_log_config_details::ser_aws_app_sync_graph_ql_api_log_config_details(
-            &mut object_13,
-            var_12,
+            &mut object_14,
+            var_13,
         )?;
-        object_13.finish();
+        object_14.finish();
     }
-    if let Some(var_14) = &input.additional_authentication_providers {
-        let mut array_15 = object.key("AdditionalAuthenticationProviders").start_array();
-        for item_16 in var_14 {
+    if let Some(var_15) = &input.additional_authentication_providers {
+        let mut array_16 = object.key("AdditionalAuthenticationProviders").start_array();
+        for item_17 in var_15 {
             {
                 #[allow(unused_mut)]
-                let mut object_17 = array_15.value().start_object();
-                crate::protocol_serde::shape_aws_app_sync_graph_ql_api_additional_authentication_providers_details::ser_aws_app_sync_graph_ql_api_additional_authentication_providers_details(&mut object_17, item_16)?;
-                object_17.finish();
+                let mut object_18 = array_16.value().start_object();
+                crate::protocol_serde::shape_aws_app_sync_graph_ql_api_additional_authentication_providers_details::ser_aws_app_sync_graph_ql_api_additional_authentication_providers_details(&mut object_18, item_17)?;
+                object_18.finish();
             }
         }
-        array_15.finish();
+        array_16.finish();
     }
-    if let Some(var_18) = &input.waf_web_acl_arn {
-        object.key("WafWebAclArn").string(var_18.as_str());
+    if let Some(var_19) = &input.waf_web_acl_arn {
+        object.key("WafWebAclArn").string(var_19.as_str());
     }
     Ok(())
 }

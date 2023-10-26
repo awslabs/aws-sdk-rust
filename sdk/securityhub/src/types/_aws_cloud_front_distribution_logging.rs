@@ -7,9 +7,9 @@ pub struct AwsCloudFrontDistributionLogging {
     /// <p>The S3 bucket to store the access logs in.</p>
     pub bucket: ::std::option::Option<::std::string::String>,
     /// <p>With this field, you can enable or disable the selected distribution.</p>
-    pub enabled: bool,
+    pub enabled: ::std::option::Option<bool>,
     /// <p>Specifies whether you want CloudFront to include cookies in access logs.</p>
-    pub include_cookies: bool,
+    pub include_cookies: ::std::option::Option<bool>,
     /// <p>An optional string that you want CloudFront to use as a prefix to the access log filenames for this distribution.</p>
     pub prefix: ::std::option::Option<::std::string::String>,
 }
@@ -19,11 +19,11 @@ impl AwsCloudFrontDistributionLogging {
         self.bucket.as_deref()
     }
     /// <p>With this field, you can enable or disable the selected distribution.</p>
-    pub fn enabled(&self) -> bool {
+    pub fn enabled(&self) -> ::std::option::Option<bool> {
         self.enabled
     }
     /// <p>Specifies whether you want CloudFront to include cookies in access logs.</p>
-    pub fn include_cookies(&self) -> bool {
+    pub fn include_cookies(&self) -> ::std::option::Option<bool> {
         self.include_cookies
     }
     /// <p>An optional string that you want CloudFront to use as a prefix to the access log filenames for this distribution.</p>
@@ -108,8 +108,8 @@ impl AwsCloudFrontDistributionLoggingBuilder {
     pub fn build(self) -> crate::types::AwsCloudFrontDistributionLogging {
         crate::types::AwsCloudFrontDistributionLogging {
             bucket: self.bucket,
-            enabled: self.enabled.unwrap_or_default(),
-            include_cookies: self.include_cookies.unwrap_or_default(),
+            enabled: self.enabled,
+            include_cookies: self.include_cookies,
             prefix: self.prefix,
         }
     }

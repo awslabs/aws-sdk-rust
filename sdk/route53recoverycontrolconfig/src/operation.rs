@@ -37,6 +37,9 @@ pub mod describe_routing_control;
 /// Types for the `DescribeSafetyRule` operation.
 pub mod describe_safety_rule;
 
+/// Types for the `GetResourcePolicy` operation.
+pub mod get_resource_policy;
+
 /// Types for the `ListAssociatedRoute53HealthChecks` operation.
 pub mod list_associated_route53_health_checks;
 

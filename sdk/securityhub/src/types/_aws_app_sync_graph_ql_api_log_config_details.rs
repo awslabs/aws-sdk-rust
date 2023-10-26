@@ -7,7 +7,7 @@ pub struct AwsAppSyncGraphQlApiLogConfigDetails {
     /// <p> The Amazon Resource Name (ARN) of the service role that AppSync assumes to publish to CloudWatch Logs in your account. </p>
     pub cloud_watch_logs_role_arn: ::std::option::Option<::std::string::String>,
     /// <p> Set to <code>TRUE</code> to exclude sections that contain information such as headers, context, and evaluated mapping templates, regardless of logging level. </p>
-    pub exclude_verbose_content: bool,
+    pub exclude_verbose_content: ::std::option::Option<bool>,
     /// <p> The field logging level. </p>
     pub field_log_level: ::std::option::Option<::std::string::String>,
 }
@@ -17,7 +17,7 @@ impl AwsAppSyncGraphQlApiLogConfigDetails {
         self.cloud_watch_logs_role_arn.as_deref()
     }
     /// <p> Set to <code>TRUE</code> to exclude sections that contain information such as headers, context, and evaluated mapping templates, regardless of logging level. </p>
-    pub fn exclude_verbose_content(&self) -> bool {
+    pub fn exclude_verbose_content(&self) -> ::std::option::Option<bool> {
         self.exclude_verbose_content
     }
     /// <p> The field logging level. </p>
@@ -87,7 +87,7 @@ impl AwsAppSyncGraphQlApiLogConfigDetailsBuilder {
     pub fn build(self) -> crate::types::AwsAppSyncGraphQlApiLogConfigDetails {
         crate::types::AwsAppSyncGraphQlApiLogConfigDetails {
             cloud_watch_logs_role_arn: self.cloud_watch_logs_role_arn,
-            exclude_verbose_content: self.exclude_verbose_content.unwrap_or_default(),
+            exclude_verbose_content: self.exclude_verbose_content,
             field_log_level: self.field_log_level,
         }
     }

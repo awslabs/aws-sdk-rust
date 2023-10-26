@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteProjectVersionInput {
-    /// <p>The Amazon Resource Name (ARN) of the model version that you want to delete.</p>
+    /// <p>The Amazon Resource Name (ARN) of the project version that you want to delete.</p>
     pub project_version_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteProjectVersionInput {
-    /// <p>The Amazon Resource Name (ARN) of the model version that you want to delete.</p>
+    /// <p>The Amazon Resource Name (ARN) of the project version that you want to delete.</p>
     pub fn project_version_arn(&self) -> ::std::option::Option<&str> {
         self.project_version_arn.as_deref()
     }
@@ -26,17 +26,17 @@ pub struct DeleteProjectVersionInputBuilder {
     pub(crate) project_version_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteProjectVersionInputBuilder {
-    /// <p>The Amazon Resource Name (ARN) of the model version that you want to delete.</p>
+    /// <p>The Amazon Resource Name (ARN) of the project version that you want to delete.</p>
     pub fn project_version_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_version_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the model version that you want to delete.</p>
+    /// <p>The Amazon Resource Name (ARN) of the project version that you want to delete.</p>
     pub fn set_project_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.project_version_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the model version that you want to delete.</p>
+    /// <p>The Amazon Resource Name (ARN) of the project version that you want to delete.</p>
     pub fn get_project_version_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.project_version_arn
     }

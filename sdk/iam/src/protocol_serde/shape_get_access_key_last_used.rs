@@ -13,30 +13,7 @@ pub fn de_get_access_key_last_used_http_error(
         .map_err(crate::operation::get_access_key_last_used::GetAccessKeyLastUsedError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
-    let error_code = match generic.code() {
-        Some(code) => code,
-        None => return Err(crate::operation::get_access_key_last_used::GetAccessKeyLastUsedError::unhandled(generic)),
-    };
-
-    let _error_message = generic.message().map(|msg| msg.to_owned());
-    Err(match error_code {
-        "NoSuchEntity" => crate::operation::get_access_key_last_used::GetAccessKeyLastUsedError::NoSuchEntityException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::NoSuchEntityExceptionBuilder::default();
-                output = crate::protocol_serde::shape_no_such_entity_exception::de_no_such_entity_exception_xml_err(_response_body, output)
-                    .map_err(crate::operation::get_access_key_last_used::GetAccessKeyLastUsedError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        _ => crate::operation::get_access_key_last_used::GetAccessKeyLastUsedError::generic(generic),
-    })
+    Err(crate::operation::get_access_key_last_used::GetAccessKeyLastUsedError::generic(generic))
 }
 
 #[allow(clippy::unnecessary_wraps)]

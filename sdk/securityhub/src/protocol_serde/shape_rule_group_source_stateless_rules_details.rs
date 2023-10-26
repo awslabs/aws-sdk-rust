@@ -3,20 +3,20 @@ pub fn ser_rule_group_source_stateless_rules_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RuleGroupSourceStatelessRulesDetails,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if input.priority != 0 {
+    if let Some(var_1) = &input.priority {
         object.key("Priority").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.priority).into()),
+            ::aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if let Some(var_1) = &input.rule_definition {
+    if let Some(var_2) = &input.rule_definition {
         #[allow(unused_mut)]
-        let mut object_2 = object.key("RuleDefinition").start_object();
+        let mut object_3 = object.key("RuleDefinition").start_object();
         crate::protocol_serde::shape_rule_group_source_stateless_rule_definition::ser_rule_group_source_stateless_rule_definition(
-            &mut object_2,
-            var_1,
+            &mut object_3,
+            var_2,
         )?;
-        object_2.finish();
+        object_3.finish();
     }
     Ok(())
 }

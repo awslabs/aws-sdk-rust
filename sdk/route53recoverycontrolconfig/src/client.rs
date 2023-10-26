@@ -200,6 +200,8 @@ mod describe_routing_control;
 
 mod describe_safety_rule;
 
+mod get_resource_policy;
+
 mod list_associated_route53_health_checks;
 
 mod list_clusters;

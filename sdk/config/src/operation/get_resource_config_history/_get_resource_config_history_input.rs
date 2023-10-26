@@ -8,9 +8,9 @@ pub struct GetResourceConfigHistoryInput {
     pub resource_type: ::std::option::Option<crate::types::ResourceType>,
     /// <p>The ID of the resource (for example., <code>sg-xxxxxx</code>).</p>
     pub resource_id: ::std::option::Option<::std::string::String>,
-    /// <p>The time stamp that indicates a later time. If not specified, current time is taken.</p>
+    /// <p>The chronologically latest time in the time range for which the history requested. If not specified, current time is taken.</p>
     pub later_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The time stamp that indicates an earlier time. If not specified, the action returns paginated results that contain configuration items that start when the first configuration item was recorded.</p>
+    /// <p>The chronologically earliest time in the time range for which the history requested. If not specified, the action returns paginated results that contain configuration items that start when the first configuration item was recorded.</p>
     pub earlier_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The chronological order for configuration items listed. By default, the results are listed in reverse chronological order.</p>
     pub chronological_order: ::std::option::Option<crate::types::ChronologicalOrder>,
@@ -28,11 +28,11 @@ impl GetResourceConfigHistoryInput {
     pub fn resource_id(&self) -> ::std::option::Option<&str> {
         self.resource_id.as_deref()
     }
-    /// <p>The time stamp that indicates a later time. If not specified, current time is taken.</p>
+    /// <p>The chronologically latest time in the time range for which the history requested. If not specified, current time is taken.</p>
     pub fn later_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.later_time.as_ref()
     }
-    /// <p>The time stamp that indicates an earlier time. If not specified, the action returns paginated results that contain configuration items that start when the first configuration item was recorded.</p>
+    /// <p>The chronologically earliest time in the time range for which the history requested. If not specified, the action returns paginated results that contain configuration items that start when the first configuration item was recorded.</p>
     pub fn earlier_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.earlier_time.as_ref()
     }
@@ -97,31 +97,31 @@ impl GetResourceConfigHistoryInputBuilder {
     pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_id
     }
-    /// <p>The time stamp that indicates a later time. If not specified, current time is taken.</p>
+    /// <p>The chronologically latest time in the time range for which the history requested. If not specified, current time is taken.</p>
     pub fn later_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.later_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The time stamp that indicates a later time. If not specified, current time is taken.</p>
+    /// <p>The chronologically latest time in the time range for which the history requested. If not specified, current time is taken.</p>
     pub fn set_later_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.later_time = input;
         self
     }
-    /// <p>The time stamp that indicates a later time. If not specified, current time is taken.</p>
+    /// <p>The chronologically latest time in the time range for which the history requested. If not specified, current time is taken.</p>
     pub fn get_later_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.later_time
     }
-    /// <p>The time stamp that indicates an earlier time. If not specified, the action returns paginated results that contain configuration items that start when the first configuration item was recorded.</p>
+    /// <p>The chronologically earliest time in the time range for which the history requested. If not specified, the action returns paginated results that contain configuration items that start when the first configuration item was recorded.</p>
     pub fn earlier_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.earlier_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The time stamp that indicates an earlier time. If not specified, the action returns paginated results that contain configuration items that start when the first configuration item was recorded.</p>
+    /// <p>The chronologically earliest time in the time range for which the history requested. If not specified, the action returns paginated results that contain configuration items that start when the first configuration item was recorded.</p>
     pub fn set_earlier_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.earlier_time = input;
         self
     }
-    /// <p>The time stamp that indicates an earlier time. If not specified, the action returns paginated results that contain configuration items that start when the first configuration item was recorded.</p>
+    /// <p>The chronologically earliest time in the time range for which the history requested. If not specified, the action returns paginated results that contain configuration items that start when the first configuration item was recorded.</p>
     pub fn get_earlier_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.earlier_time
     }

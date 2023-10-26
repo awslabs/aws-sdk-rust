@@ -6,29 +6,29 @@ pub fn ser_cvss(
     if let Some(var_1) = &input.version {
         object.key("Version").string(var_1.as_str());
     }
-    if input.base_score != 0.0 {
+    if let Some(var_2) = &input.base_score {
         object.key("BaseScore").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::Float((input.base_score).into()),
+            ::aws_smithy_types::Number::Float((*var_2).into()),
         );
     }
-    if let Some(var_2) = &input.base_vector {
-        object.key("BaseVector").string(var_2.as_str());
+    if let Some(var_3) = &input.base_vector {
+        object.key("BaseVector").string(var_3.as_str());
     }
-    if let Some(var_3) = &input.source {
-        object.key("Source").string(var_3.as_str());
+    if let Some(var_4) = &input.source {
+        object.key("Source").string(var_4.as_str());
     }
-    if let Some(var_4) = &input.adjustments {
-        let mut array_5 = object.key("Adjustments").start_array();
-        for item_6 in var_4 {
+    if let Some(var_5) = &input.adjustments {
+        let mut array_6 = object.key("Adjustments").start_array();
+        for item_7 in var_5 {
             {
                 #[allow(unused_mut)]
-                let mut object_7 = array_5.value().start_object();
-                crate::protocol_serde::shape_adjustment::ser_adjustment(&mut object_7, item_6)?;
-                object_7.finish();
+                let mut object_8 = array_6.value().start_object();
+                crate::protocol_serde::shape_adjustment::ser_adjustment(&mut object_8, item_7)?;
+                object_8.finish();
             }
         }
-        array_5.finish();
+        array_6.finish();
     }
     Ok(())
 }

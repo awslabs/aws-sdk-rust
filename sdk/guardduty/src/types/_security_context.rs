@@ -5,11 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SecurityContext {
     /// <p>Whether the container is privileged.</p>
-    pub privileged: bool,
+    pub privileged: ::std::option::Option<bool>,
 }
 impl SecurityContext {
     /// <p>Whether the container is privileged.</p>
-    pub fn privileged(&self) -> bool {
+    pub fn privileged(&self) -> ::std::option::Option<bool> {
         self.privileged
     }
 }
@@ -43,8 +43,6 @@ impl SecurityContextBuilder {
     }
     /// Consumes the builder and constructs a [`SecurityContext`](crate::types::SecurityContext).
     pub fn build(self) -> crate::types::SecurityContext {
-        crate::types::SecurityContext {
-            privileged: self.privileged.unwrap_or_default(),
-        }
+        crate::types::SecurityContext { privileged: self.privileged }
     }
 }

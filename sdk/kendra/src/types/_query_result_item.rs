@@ -30,6 +30,8 @@ pub struct QueryResultItem {
     pub feedback_token: ::std::option::Option<::std::string::String>,
     /// <p>An excerpt from a table within a document.</p>
     pub table_excerpt: ::std::option::Option<crate::types::TableExcerpt>,
+    /// <p>Provides details about a collapsed group of search results.</p>
+    pub collapsed_result_detail: ::std::option::Option<crate::types::CollapsedResultDetail>,
 }
 impl QueryResultItem {
     /// <p>The identifier for the query result.</p>
@@ -81,6 +83,10 @@ impl QueryResultItem {
     pub fn table_excerpt(&self) -> ::std::option::Option<&crate::types::TableExcerpt> {
         self.table_excerpt.as_ref()
     }
+    /// <p>Provides details about a collapsed group of search results.</p>
+    pub fn collapsed_result_detail(&self) -> ::std::option::Option<&crate::types::CollapsedResultDetail> {
+        self.collapsed_result_detail.as_ref()
+    }
 }
 impl QueryResultItem {
     /// Creates a new builder-style object to manufacture [`QueryResultItem`](crate::types::QueryResultItem).
@@ -105,6 +111,7 @@ pub struct QueryResultItemBuilder {
     pub(crate) score_attributes: ::std::option::Option<crate::types::ScoreAttributes>,
     pub(crate) feedback_token: ::std::option::Option<::std::string::String>,
     pub(crate) table_excerpt: ::std::option::Option<crate::types::TableExcerpt>,
+    pub(crate) collapsed_result_detail: ::std::option::Option<crate::types::CollapsedResultDetail>,
 }
 impl QueryResultItemBuilder {
     /// <p>The identifier for the query result.</p>
@@ -290,6 +297,20 @@ impl QueryResultItemBuilder {
     pub fn get_table_excerpt(&self) -> &::std::option::Option<crate::types::TableExcerpt> {
         &self.table_excerpt
     }
+    /// <p>Provides details about a collapsed group of search results.</p>
+    pub fn collapsed_result_detail(mut self, input: crate::types::CollapsedResultDetail) -> Self {
+        self.collapsed_result_detail = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Provides details about a collapsed group of search results.</p>
+    pub fn set_collapsed_result_detail(mut self, input: ::std::option::Option<crate::types::CollapsedResultDetail>) -> Self {
+        self.collapsed_result_detail = input;
+        self
+    }
+    /// <p>Provides details about a collapsed group of search results.</p>
+    pub fn get_collapsed_result_detail(&self) -> &::std::option::Option<crate::types::CollapsedResultDetail> {
+        &self.collapsed_result_detail
+    }
     /// Consumes the builder and constructs a [`QueryResultItem`](crate::types::QueryResultItem).
     pub fn build(self) -> crate::types::QueryResultItem {
         crate::types::QueryResultItem {
@@ -305,6 +326,7 @@ impl QueryResultItemBuilder {
             score_attributes: self.score_attributes,
             feedback_token: self.feedback_token,
             table_excerpt: self.table_excerpt,
+            collapsed_result_detail: self.collapsed_result_detail,
         }
     }
 }

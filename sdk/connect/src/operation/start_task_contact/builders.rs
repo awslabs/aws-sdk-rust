@@ -22,7 +22,23 @@ impl StartTaskContactInputBuilder {
 }
 /// Fluent builder constructing a request to `StartTaskContact`.
 ///
-/// <p>Initiates a flow to start a new task.</p>
+/// <p>Initiates a flow to start a new task contact. For more information about task contacts, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/tasks.html">Concepts: Tasks in Amazon Connect</a> in the <i>Amazon Connect Administrator Guide</i>. </p>
+/// <p>When using <code>PreviousContactId</code> and <code>RelatedContactId</code> input parameters, note the following:</p>
+/// <ul>
+/// <li> <p> <code>PreviousContactId</code> </p>
+/// <ul>
+/// <li> <p>Any updates to user-defined task contact attributes on any contact linked through the same <code>PreviousContactId</code> will affect every contact in the chain.</p> </li>
+/// <li> <p>There can be a maximum of 12 linked task contacts in a chain. That is, 12 task contacts can be created that share the same <code>PreviousContactId</code>.</p> </li>
+/// </ul> </li>
+/// <li> <p> <code>RelatedContactId</code> </p>
+/// <ul>
+/// <li> <p>Copies contact attributes from the related task contact to the new contact.</p> </li>
+/// <li> <p>Any update on attributes in a new task contact does not update attributes on previous contact.</p> </li>
+/// <li> <p>There’s no limit on the number of task contacts that can be created that use the same <code>RelatedContactId</code>.</p> </li>
+/// </ul> </li>
+/// </ul>
+/// <p>In addition, when calling StartTaskContact include only one of these parameters: <code>ContactFlowID</code>, <code>QuickConnectID</code>, or <code>TaskTemplateID</code>. Only one parameter is required as long as the task template has a flow configured to run it. If more than one parameter is specified, or only the <code>TaskTemplateID</code> is specified but it does not have a flow configured, the request returns an error because Amazon Connect cannot identify the unique flow to run when the task is created.</p>
+/// <p>A <code>ServiceQuotaExceededException</code> occurs when the number of open tasks exceeds the active tasks quota or there are already 12 tasks referencing the same <code>PreviousContactId</code>. For more information about service quotas for task contacts, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon Connect service quotas</a> in the <i>Amazon Connect Administrator Guide</i>. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartTaskContactFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -124,17 +140,17 @@ impl StartTaskContactFluentBuilder {
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_instance_id()
     }
-    /// <p>The identifier of the previous chat, voice, or task contact. </p>
+    /// <p>The identifier of the previous chat, voice, or task contact. Any updates to user-defined attributes to task contacts linked using the same <code>PreviousContactID</code> will affect every contact in the chain. There can be a maximum of 12 linked task contacts in a chain.</p>
     pub fn previous_contact_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.previous_contact_id(input.into());
         self
     }
-    /// <p>The identifier of the previous chat, voice, or task contact. </p>
+    /// <p>The identifier of the previous chat, voice, or task contact. Any updates to user-defined attributes to task contacts linked using the same <code>PreviousContactID</code> will affect every contact in the chain. There can be a maximum of 12 linked task contacts in a chain.</p>
     pub fn set_previous_contact_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_previous_contact_id(input);
         self
     }
-    /// <p>The identifier of the previous chat, voice, or task contact. </p>
+    /// <p>The identifier of the previous chat, voice, or task contact. Any updates to user-defined attributes to task contacts linked using the same <code>PreviousContactID</code> will affect every contact in the chain. There can be a maximum of 12 linked task contacts in a chain.</p>
     pub fn get_previous_contact_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_previous_contact_id()
     }
@@ -194,12 +210,12 @@ impl StartTaskContactFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_references`](Self::set_references).
     ///
-    /// <p>A formatted URL that is shown to an agent in the Contact Control Panel (CCP).</p>
+    /// <p>A formatted URL that is shown to an agent in the Contact Control Panel (CCP). Tasks can have the following reference types at the time of creation: <code>URL</code> | <code>NUMBER</code> | <code>STRING</code> | <code>DATE</code> | <code>EMAIL</code>. <code>ATTACHMENT</code> is not a supported reference type during task creation.</p>
     pub fn references(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::Reference) -> Self {
         self.inner = self.inner.references(k.into(), v);
         self
     }
-    /// <p>A formatted URL that is shown to an agent in the Contact Control Panel (CCP).</p>
+    /// <p>A formatted URL that is shown to an agent in the Contact Control Panel (CCP). Tasks can have the following reference types at the time of creation: <code>URL</code> | <code>NUMBER</code> | <code>STRING</code> | <code>DATE</code> | <code>EMAIL</code>. <code>ATTACHMENT</code> is not a supported reference type during task creation.</p>
     pub fn set_references(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Reference>>,
@@ -207,7 +223,7 @@ impl StartTaskContactFluentBuilder {
         self.inner = self.inner.set_references(input);
         self
     }
-    /// <p>A formatted URL that is shown to an agent in the Contact Control Panel (CCP).</p>
+    /// <p>A formatted URL that is shown to an agent in the Contact Control Panel (CCP). Tasks can have the following reference types at the time of creation: <code>URL</code> | <code>NUMBER</code> | <code>STRING</code> | <code>DATE</code> | <code>EMAIL</code>. <code>ATTACHMENT</code> is not a supported reference type during task creation.</p>
     pub fn get_references(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Reference>> {
         self.inner.get_references()
     }
@@ -253,45 +269,45 @@ impl StartTaskContactFluentBuilder {
     pub fn get_scheduled_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_scheduled_time()
     }
-    /// <p>A unique identifier for the task template.</p>
+    /// <p>A unique identifier for the task template. For more information about task templates, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/task-templates.html">Create task templates</a> in the <i>Amazon Connect Administrator Guide</i>. </p>
     pub fn task_template_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.task_template_id(input.into());
         self
     }
-    /// <p>A unique identifier for the task template.</p>
+    /// <p>A unique identifier for the task template. For more information about task templates, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/task-templates.html">Create task templates</a> in the <i>Amazon Connect Administrator Guide</i>. </p>
     pub fn set_task_template_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_task_template_id(input);
         self
     }
-    /// <p>A unique identifier for the task template.</p>
+    /// <p>A unique identifier for the task template. For more information about task templates, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/task-templates.html">Create task templates</a> in the <i>Amazon Connect Administrator Guide</i>. </p>
     pub fn get_task_template_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_task_template_id()
     }
-    /// <p>The identifier for the quick connect.</p>
+    /// <p>The identifier for the quick connect. Tasks that are created by using <code>QuickConnectId</code> will use the flow that is defined on agent or queue quick connect. For more information about quick connects, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/quick-connects.html">Create quick connects</a>.</p>
     pub fn quick_connect_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.quick_connect_id(input.into());
         self
     }
-    /// <p>The identifier for the quick connect.</p>
+    /// <p>The identifier for the quick connect. Tasks that are created by using <code>QuickConnectId</code> will use the flow that is defined on agent or queue quick connect. For more information about quick connects, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/quick-connects.html">Create quick connects</a>.</p>
     pub fn set_quick_connect_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_quick_connect_id(input);
         self
     }
-    /// <p>The identifier for the quick connect.</p>
+    /// <p>The identifier for the quick connect. Tasks that are created by using <code>QuickConnectId</code> will use the flow that is defined on agent or queue quick connect. For more information about quick connects, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/quick-connects.html">Create quick connects</a>.</p>
     pub fn get_quick_connect_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_quick_connect_id()
     }
-    /// <p>The contactId that is <a href="https://docs.aws.amazon.com/connect/latest/adminguide/tasks.html#linked-tasks">related</a> to this contact.</p>
+    /// <p>The contactId that is <a href="https://docs.aws.amazon.com/connect/latest/adminguide/tasks.html#linked-tasks">related</a> to this contact. Linking tasks together by using <code>RelatedContactID</code> copies over contact attributes from the related task contact to the new task contact. All updates to user-defined attributes in the new task contact are limited to the individual contact ID, unlike what happens when tasks are linked by using <code>PreviousContactID</code>. There are no limits to the number of contacts that can be linked by using <code>RelatedContactId</code>. </p>
     pub fn related_contact_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.related_contact_id(input.into());
         self
     }
-    /// <p>The contactId that is <a href="https://docs.aws.amazon.com/connect/latest/adminguide/tasks.html#linked-tasks">related</a> to this contact.</p>
+    /// <p>The contactId that is <a href="https://docs.aws.amazon.com/connect/latest/adminguide/tasks.html#linked-tasks">related</a> to this contact. Linking tasks together by using <code>RelatedContactID</code> copies over contact attributes from the related task contact to the new task contact. All updates to user-defined attributes in the new task contact are limited to the individual contact ID, unlike what happens when tasks are linked by using <code>PreviousContactID</code>. There are no limits to the number of contacts that can be linked by using <code>RelatedContactId</code>. </p>
     pub fn set_related_contact_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_related_contact_id(input);
         self
     }
-    /// <p>The contactId that is <a href="https://docs.aws.amazon.com/connect/latest/adminguide/tasks.html#linked-tasks">related</a> to this contact.</p>
+    /// <p>The contactId that is <a href="https://docs.aws.amazon.com/connect/latest/adminguide/tasks.html#linked-tasks">related</a> to this contact. Linking tasks together by using <code>RelatedContactID</code> copies over contact attributes from the related task contact to the new task contact. All updates to user-defined attributes in the new task contact are limited to the individual contact ID, unlike what happens when tasks are linked by using <code>PreviousContactID</code>. There are no limits to the number of contacts that can be linked by using <code>RelatedContactId</code>. </p>
     pub fn get_related_contact_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_related_contact_id()
     }

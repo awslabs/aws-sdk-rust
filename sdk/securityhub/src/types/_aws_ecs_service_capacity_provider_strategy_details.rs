@@ -6,18 +6,18 @@
 pub struct AwsEcsServiceCapacityProviderStrategyDetails {
     /// <p>The minimum number of tasks to run on the capacity provider. Only one strategy item can specify a value for <code>Base</code>.</p>
     /// <p>The value must be between 0 and 100000.</p>
-    pub base: i32,
+    pub base: ::std::option::Option<i32>,
     /// <p>The short name of the capacity provider.</p>
     pub capacity_provider: ::std::option::Option<::std::string::String>,
     /// <p>The relative percentage of the total number of tasks that should use the capacity provider.</p>
     /// <p>If no weight is specified, the default value is 0. At least one capacity provider must have a weight greater than 0.</p>
     /// <p>The value can be between 0 and 1000.</p>
-    pub weight: i32,
+    pub weight: ::std::option::Option<i32>,
 }
 impl AwsEcsServiceCapacityProviderStrategyDetails {
     /// <p>The minimum number of tasks to run on the capacity provider. Only one strategy item can specify a value for <code>Base</code>.</p>
     /// <p>The value must be between 0 and 100000.</p>
-    pub fn base(&self) -> i32 {
+    pub fn base(&self) -> ::std::option::Option<i32> {
         self.base
     }
     /// <p>The short name of the capacity provider.</p>
@@ -27,7 +27,7 @@ impl AwsEcsServiceCapacityProviderStrategyDetails {
     /// <p>The relative percentage of the total number of tasks that should use the capacity provider.</p>
     /// <p>If no weight is specified, the default value is 0. At least one capacity provider must have a weight greater than 0.</p>
     /// <p>The value can be between 0 and 1000.</p>
-    pub fn weight(&self) -> i32 {
+    pub fn weight(&self) -> ::std::option::Option<i32> {
         self.weight
     }
 }
@@ -101,9 +101,9 @@ impl AwsEcsServiceCapacityProviderStrategyDetailsBuilder {
     /// Consumes the builder and constructs a [`AwsEcsServiceCapacityProviderStrategyDetails`](crate::types::AwsEcsServiceCapacityProviderStrategyDetails).
     pub fn build(self) -> crate::types::AwsEcsServiceCapacityProviderStrategyDetails {
         crate::types::AwsEcsServiceCapacityProviderStrategyDetails {
-            base: self.base.unwrap_or_default(),
+            base: self.base,
             capacity_provider: self.capacity_provider,
-            weight: self.weight.unwrap_or_default(),
+            weight: self.weight,
         }
     }
 }

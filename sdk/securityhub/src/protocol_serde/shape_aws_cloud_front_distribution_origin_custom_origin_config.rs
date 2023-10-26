@@ -3,41 +3,41 @@ pub fn ser_aws_cloud_front_distribution_origin_custom_origin_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsCloudFrontDistributionOriginCustomOriginConfig,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if input.http_port != 0 {
+    if let Some(var_1) = &input.http_port {
         object.key("HttpPort").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.http_port).into()),
+            ::aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if input.https_port != 0 {
+    if let Some(var_2) = &input.https_port {
         object.key("HttpsPort").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.https_port).into()),
+            ::aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
-    if input.origin_keepalive_timeout != 0 {
+    if let Some(var_3) = &input.origin_keepalive_timeout {
         object.key("OriginKeepaliveTimeout").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.origin_keepalive_timeout).into()),
+            ::aws_smithy_types::Number::NegInt((*var_3).into()),
         );
     }
-    if let Some(var_1) = &input.origin_protocol_policy {
-        object.key("OriginProtocolPolicy").string(var_1.as_str());
+    if let Some(var_4) = &input.origin_protocol_policy {
+        object.key("OriginProtocolPolicy").string(var_4.as_str());
     }
-    if input.origin_read_timeout != 0 {
+    if let Some(var_5) = &input.origin_read_timeout {
         object.key("OriginReadTimeout").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.origin_read_timeout).into()),
+            ::aws_smithy_types::Number::NegInt((*var_5).into()),
         );
     }
-    if let Some(var_2) = &input.origin_ssl_protocols {
+    if let Some(var_6) = &input.origin_ssl_protocols {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("OriginSslProtocols").start_object();
+        let mut object_7 = object.key("OriginSslProtocols").start_object();
         crate::protocol_serde::shape_aws_cloud_front_distribution_origin_ssl_protocols::ser_aws_cloud_front_distribution_origin_ssl_protocols(
-            &mut object_3,
-            var_2,
+            &mut object_7,
+            var_6,
         )?;
-        object_3.finish();
+        object_7.finish();
     }
     Ok(())
 }

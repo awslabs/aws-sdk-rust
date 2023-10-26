@@ -6,8 +6,8 @@ pub fn ser_aws_amazon_mq_broker_encryption_options_details(
     if let Some(var_1) = &input.kms_key_id {
         object.key("KmsKeyId").string(var_1.as_str());
     }
-    if input.use_aws_owned_key {
-        object.key("UseAwsOwnedKey").boolean(input.use_aws_owned_key);
+    if let Some(var_2) = &input.use_aws_owned_key {
+        object.key("UseAwsOwnedKey").boolean(*var_2);
     }
     Ok(())
 }

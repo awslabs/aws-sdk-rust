@@ -10,7 +10,7 @@ impl super::Client {
     ///   - [`max_results(i32)`](crate::operation::list_lens_reviews::builders::ListLensReviewsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_lens_reviews::builders::ListLensReviewsFluentBuilder::set_max_results): <p>The maximum number of results to return for this request.</p>
     /// - On success, responds with [`ListLensReviewsOutput`](crate::operation::list_lens_reviews::ListLensReviewsOutput) with field(s):
     ///   - [`workload_id(Option<String>)`](crate::operation::list_lens_reviews::ListLensReviewsOutput::workload_id): <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-    ///   - [`milestone_number(i32)`](crate::operation::list_lens_reviews::ListLensReviewsOutput::milestone_number): <p>The milestone number.</p>  <p>A workload can have a maximum of 100 milestones.</p>
+    ///   - [`milestone_number(Option<i32>)`](crate::operation::list_lens_reviews::ListLensReviewsOutput::milestone_number): <p>The milestone number.</p>  <p>A workload can have a maximum of 100 milestones.</p>
     ///   - [`lens_review_summaries(Option<Vec<LensReviewSummary>>)`](crate::operation::list_lens_reviews::ListLensReviewsOutput::lens_review_summaries): <p>List of lens summaries of lens reviews of a workload.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_lens_reviews::ListLensReviewsOutput::next_token): <p>The token to use to retrieve the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListLensReviewsError>`](crate::operation::list_lens_reviews::ListLensReviewsError)

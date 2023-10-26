@@ -392,6 +392,21 @@ pub fn de_db_instance_automated_backup(
                 builder = builder.set_aws_backup_recovery_point_arn(var_29);
             }
             ,
+            s if s.matches("DedicatedLogVolume") /* DedicatedLogVolume com.amazonaws.rds#DBInstanceAutomatedBackup$DedicatedLogVolume */ =>  {
+                let var_30 =
+                    Some(
+                         {
+                            <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.rds#BooleanOptional`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_dedicated_log_volume(var_30);
+            }
+            ,
             _ => {}
         }
     }

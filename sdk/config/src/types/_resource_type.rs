@@ -14,6 +14,7 @@
 /// match resourcetype {
 ///     ResourceType::Certificate => { /* ... */ },
 ///     ResourceType::AcmpcaCertificateAuthority => { /* ... */ },
+///     ResourceType::ApsRuleGroupsNamespace => { /* ... */ },
 ///     ResourceType::AccessAnalyzerAnalyzer => { /* ... */ },
 ///     ResourceType::AmazonMqBroker => { /* ... */ },
 ///     ResourceType::AmplifyApp => { /* ... */ },
@@ -38,6 +39,7 @@
 ///     ResourceType::AppRunnerVpcConnector => { /* ... */ },
 ///     ResourceType::AppStreamApplication => { /* ... */ },
 ///     ResourceType::AppStreamDirectoryConfig => { /* ... */ },
+///     ResourceType::AppStreamStack => { /* ... */ },
 ///     ResourceType::AppSyncGraphQlApi => { /* ... */ },
 ///     ResourceType::AthenaDataCatalog => { /* ... */ },
 ///     ResourceType::AthenaPreparedStatement => { /* ... */ },
@@ -55,6 +57,7 @@
 ///     ResourceType::BackupReportPlan => { /* ... */ },
 ///     ResourceType::BatchComputeEnvironment => { /* ... */ },
 ///     ResourceType::BatchJobQueue => { /* ... */ },
+///     ResourceType::BatchSchedulingPolicy => { /* ... */ },
 ///     ResourceType::BudgetsBudgetsAction => { /* ... */ },
 ///     ResourceType::CassandraKeyspace => { /* ... */ },
 ///     ResourceType::Cloud9EnvironmentEc2 => { /* ... */ },
@@ -66,9 +69,11 @@
 ///     ResourceType::CloudWatchMetricStream => { /* ... */ },
 ///     ResourceType::CodeArtifactRepository => { /* ... */ },
 ///     ResourceType::Project => { /* ... */ },
+///     ResourceType::CodeBuildReportGroup => { /* ... */ },
 ///     ResourceType::CodeDeployApplication => { /* ... */ },
 ///     ResourceType::CodeDeployDeploymentConfig => { /* ... */ },
 ///     ResourceType::CodeDeployDeploymentGroup => { /* ... */ },
+///     ResourceType::CodeGuruProfilerProfilingGroup => { /* ... */ },
 ///     ResourceType::CodeGuruReviewerRepositoryAssociation => { /* ... */ },
 ///     ResourceType::Pipeline => { /* ... */ },
 ///     ResourceType::ConformancePackCompliance => { /* ... */ },
@@ -201,13 +206,16 @@
 ///     ResourceType::ImageBuilderDistributionConfiguration => { /* ... */ },
 ///     ResourceType::ImageBuilderImagePipeline => { /* ... */ },
 ///     ResourceType::ImageBuilderInfrastructureConfiguration => { /* ... */ },
+///     ResourceType::InspectorV2Filter => { /* ... */ },
 ///     ResourceType::IoTAccountAuditConfiguration => { /* ... */ },
 ///     ResourceType::IoTAuthorizer => { /* ... */ },
 ///     ResourceType::IoTCustomMetric => { /* ... */ },
 ///     ResourceType::IoTDimension => { /* ... */ },
 ///     ResourceType::IoTFleetMetric => { /* ... */ },
+///     ResourceType::IoTJobTemplate => { /* ... */ },
 ///     ResourceType::IoTMitigationAction => { /* ... */ },
 ///     ResourceType::IoTPolicy => { /* ... */ },
+///     ResourceType::IoTProvisioningTemplate => { /* ... */ },
 ///     ResourceType::IoTRoleAlias => { /* ... */ },
 ///     ResourceType::IoTScheduledAudit => { /* ... */ },
 ///     ResourceType::IoTSecurityProfile => { /* ... */ },
@@ -223,9 +231,12 @@
 ///     ResourceType::IoTSiteWiseGateway => { /* ... */ },
 ///     ResourceType::IoTSiteWisePortal => { /* ... */ },
 ///     ResourceType::IoTSiteWiseProject => { /* ... */ },
+///     ResourceType::IoTTwinMakerComponentType => { /* ... */ },
 ///     ResourceType::IoTTwinMakerEntity => { /* ... */ },
 ///     ResourceType::IoTTwinMakerScene => { /* ... */ },
 ///     ResourceType::IoTTwinMakerWorkspace => { /* ... */ },
+///     ResourceType::IoTWirelessFuotaTask => { /* ... */ },
+///     ResourceType::IoTWirelessMulticastGroup => { /* ... */ },
 ///     ResourceType::IoTWirelessServiceProfile => { /* ... */ },
 ///     ResourceType::Key => { /* ... */ },
 ///     ResourceType::KendraIndex => { /* ... */ },
@@ -245,9 +256,11 @@
 ///     ResourceType::LogsDestination => { /* ... */ },
 ///     ResourceType::LookoutMetricsAlert => { /* ... */ },
 ///     ResourceType::LookoutVisionProject => { /* ... */ },
+///     ResourceType::MskBatchScramSecret => { /* ... */ },
 ///     ResourceType::MskCluster => { /* ... */ },
 ///     ResourceType::MskConfiguration => { /* ... */ },
 ///     ResourceType::MediaConnectFlowEntitlement => { /* ... */ },
+///     ResourceType::MediaConnectFlowSource => { /* ... */ },
 ///     ResourceType::MediaConnectFlowVpcInterface => { /* ... */ },
 ///     ResourceType::MediaPackagePackagingConfiguration => { /* ... */ },
 ///     ResourceType::MediaPackagePackagingGroup => { /* ... */ },
@@ -265,6 +278,7 @@
 ///     ResourceType::OpenSearchDomain => { /* ... */ },
 ///     ResourceType::PanoramaPackage => { /* ... */ },
 ///     ResourceType::PersonalizeDataset => { /* ... */ },
+///     ResourceType::PersonalizeDatasetGroup => { /* ... */ },
 ///     ResourceType::PersonalizeSchema => { /* ... */ },
 ///     ResourceType::PersonalizeSolution => { /* ... */ },
 ///     ResourceType::PinpointApp => { /* ... */ },
@@ -309,6 +323,8 @@
 ///     ResourceType::Route53ResolverFirewallDomainList => { /* ... */ },
 ///     ResourceType::Route53ResolverFirewallRuleGroupAssociation => { /* ... */ },
 ///     ResourceType::Route53ResolverResolverEndpoint => { /* ... */ },
+///     ResourceType::Route53ResolverResolverQueryLoggingConfig => { /* ... */ },
+///     ResourceType::Route53ResolverResolverQueryLoggingConfigAssociation => { /* ... */ },
 ///     ResourceType::Route53ResolverResolverRule => { /* ... */ },
 ///     ResourceType::Route53ResolverResolverRuleAssociation => { /* ... */ },
 ///     ResourceType::S3AccessPoint => { /* ... */ },
@@ -330,6 +346,7 @@
 ///     ResourceType::SageMakerAppImageConfig => { /* ... */ },
 ///     ResourceType::SageMakerCodeRepository => { /* ... */ },
 ///     ResourceType::SageMakerDomain => { /* ... */ },
+///     ResourceType::SageMakerFeatureGroup => { /* ... */ },
 ///     ResourceType::SageMakerImage => { /* ... */ },
 ///     ResourceType::SageMakerModel => { /* ... */ },
 ///     ResourceType::SageMakerNotebookInstanceLifecycleConfig => { /* ... */ },
@@ -339,6 +356,7 @@
 ///     ResourceType::CloudFormationProvisionedProduct => { /* ... */ },
 ///     ResourceType::Portfolio => { /* ... */ },
 ///     ResourceType::ServiceDiscoveryHttpNamespace => { /* ... */ },
+///     ResourceType::ServiceDiscoveryInstance => { /* ... */ },
 ///     ResourceType::ServiceDiscoveryPublicDnsNamespace => { /* ... */ },
 ///     ResourceType::ServiceDiscoveryService => { /* ... */ },
 ///     ResourceType::Protection => { /* ... */ },
@@ -347,6 +365,7 @@
 ///     ResourceType::StepFunctionsActivity => { /* ... */ },
 ///     ResourceType::StepFunctionsStateMachine => { /* ... */ },
 ///     ResourceType::TransferAgreement => { /* ... */ },
+///     ResourceType::TransferCertificate => { /* ... */ },
 ///     ResourceType::TransferConnector => { /* ... */ },
 ///     ResourceType::TransferWorkflow => { /* ... */ },
 ///     ResourceType::RateBasedRule => { /* ... */ },
@@ -397,6 +416,8 @@ pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     AcmpcaCertificateAuthority,
     #[allow(missing_docs)] // documentation missing in model
+    ApsRuleGroupsNamespace,
+    #[allow(missing_docs)] // documentation missing in model
     AccessAnalyzerAnalyzer,
     #[allow(missing_docs)] // documentation missing in model
     AmazonMqBroker,
@@ -445,6 +466,8 @@ pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     AppStreamDirectoryConfig,
     #[allow(missing_docs)] // documentation missing in model
+    AppStreamStack,
+    #[allow(missing_docs)] // documentation missing in model
     AppSyncGraphQlApi,
     #[allow(missing_docs)] // documentation missing in model
     AthenaDataCatalog,
@@ -479,6 +502,8 @@ pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     BatchJobQueue,
     #[allow(missing_docs)] // documentation missing in model
+    BatchSchedulingPolicy,
+    #[allow(missing_docs)] // documentation missing in model
     BudgetsBudgetsAction,
     #[allow(missing_docs)] // documentation missing in model
     CassandraKeyspace,
@@ -501,11 +526,15 @@ pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     Project,
     #[allow(missing_docs)] // documentation missing in model
+    CodeBuildReportGroup,
+    #[allow(missing_docs)] // documentation missing in model
     CodeDeployApplication,
     #[allow(missing_docs)] // documentation missing in model
     CodeDeployDeploymentConfig,
     #[allow(missing_docs)] // documentation missing in model
     CodeDeployDeploymentGroup,
+    #[allow(missing_docs)] // documentation missing in model
+    CodeGuruProfilerProfilingGroup,
     #[allow(missing_docs)] // documentation missing in model
     CodeGuruReviewerRepositoryAssociation,
     #[allow(missing_docs)] // documentation missing in model
@@ -771,6 +800,8 @@ pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     ImageBuilderInfrastructureConfiguration,
     #[allow(missing_docs)] // documentation missing in model
+    InspectorV2Filter,
+    #[allow(missing_docs)] // documentation missing in model
     IoTAccountAuditConfiguration,
     #[allow(missing_docs)] // documentation missing in model
     IoTAuthorizer,
@@ -781,9 +812,13 @@ pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     IoTFleetMetric,
     #[allow(missing_docs)] // documentation missing in model
+    IoTJobTemplate,
+    #[allow(missing_docs)] // documentation missing in model
     IoTMitigationAction,
     #[allow(missing_docs)] // documentation missing in model
     IoTPolicy,
+    #[allow(missing_docs)] // documentation missing in model
+    IoTProvisioningTemplate,
     #[allow(missing_docs)] // documentation missing in model
     IoTRoleAlias,
     #[allow(missing_docs)] // documentation missing in model
@@ -815,11 +850,17 @@ pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     IoTSiteWiseProject,
     #[allow(missing_docs)] // documentation missing in model
+    IoTTwinMakerComponentType,
+    #[allow(missing_docs)] // documentation missing in model
     IoTTwinMakerEntity,
     #[allow(missing_docs)] // documentation missing in model
     IoTTwinMakerScene,
     #[allow(missing_docs)] // documentation missing in model
     IoTTwinMakerWorkspace,
+    #[allow(missing_docs)] // documentation missing in model
+    IoTWirelessFuotaTask,
+    #[allow(missing_docs)] // documentation missing in model
+    IoTWirelessMulticastGroup,
     #[allow(missing_docs)] // documentation missing in model
     IoTWirelessServiceProfile,
     #[allow(missing_docs)] // documentation missing in model
@@ -859,11 +900,15 @@ pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     LookoutVisionProject,
     #[allow(missing_docs)] // documentation missing in model
+    MskBatchScramSecret,
+    #[allow(missing_docs)] // documentation missing in model
     MskCluster,
     #[allow(missing_docs)] // documentation missing in model
     MskConfiguration,
     #[allow(missing_docs)] // documentation missing in model
     MediaConnectFlowEntitlement,
+    #[allow(missing_docs)] // documentation missing in model
+    MediaConnectFlowSource,
     #[allow(missing_docs)] // documentation missing in model
     MediaConnectFlowVpcInterface,
     #[allow(missing_docs)] // documentation missing in model
@@ -898,6 +943,8 @@ pub enum ResourceType {
     PanoramaPackage,
     #[allow(missing_docs)] // documentation missing in model
     PersonalizeDataset,
+    #[allow(missing_docs)] // documentation missing in model
+    PersonalizeDatasetGroup,
     #[allow(missing_docs)] // documentation missing in model
     PersonalizeSchema,
     #[allow(missing_docs)] // documentation missing in model
@@ -987,6 +1034,10 @@ pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     Route53ResolverResolverEndpoint,
     #[allow(missing_docs)] // documentation missing in model
+    Route53ResolverResolverQueryLoggingConfig,
+    #[allow(missing_docs)] // documentation missing in model
+    Route53ResolverResolverQueryLoggingConfigAssociation,
+    #[allow(missing_docs)] // documentation missing in model
     Route53ResolverResolverRule,
     #[allow(missing_docs)] // documentation missing in model
     Route53ResolverResolverRuleAssociation,
@@ -1029,6 +1080,8 @@ pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     SageMakerDomain,
     #[allow(missing_docs)] // documentation missing in model
+    SageMakerFeatureGroup,
+    #[allow(missing_docs)] // documentation missing in model
     SageMakerImage,
     #[allow(missing_docs)] // documentation missing in model
     SageMakerModel,
@@ -1047,6 +1100,8 @@ pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     ServiceDiscoveryHttpNamespace,
     #[allow(missing_docs)] // documentation missing in model
+    ServiceDiscoveryInstance,
+    #[allow(missing_docs)] // documentation missing in model
     ServiceDiscoveryPublicDnsNamespace,
     #[allow(missing_docs)] // documentation missing in model
     ServiceDiscoveryService,
@@ -1062,6 +1117,8 @@ pub enum ResourceType {
     StepFunctionsStateMachine,
     #[allow(missing_docs)] // documentation missing in model
     TransferAgreement,
+    #[allow(missing_docs)] // documentation missing in model
+    TransferCertificate,
     #[allow(missing_docs)] // documentation missing in model
     TransferConnector,
     #[allow(missing_docs)] // documentation missing in model
@@ -1106,6 +1163,7 @@ impl ::std::convert::From<&str> for ResourceType {
         match s {
             "AWS::ACM::Certificate" => ResourceType::Certificate,
             "AWS::ACMPCA::CertificateAuthority" => ResourceType::AcmpcaCertificateAuthority,
+            "AWS::APS::RuleGroupsNamespace" => ResourceType::ApsRuleGroupsNamespace,
             "AWS::AccessAnalyzer::Analyzer" => ResourceType::AccessAnalyzerAnalyzer,
             "AWS::AmazonMQ::Broker" => ResourceType::AmazonMqBroker,
             "AWS::Amplify::App" => ResourceType::AmplifyApp,
@@ -1130,6 +1188,7 @@ impl ::std::convert::From<&str> for ResourceType {
             "AWS::AppRunner::VpcConnector" => ResourceType::AppRunnerVpcConnector,
             "AWS::AppStream::Application" => ResourceType::AppStreamApplication,
             "AWS::AppStream::DirectoryConfig" => ResourceType::AppStreamDirectoryConfig,
+            "AWS::AppStream::Stack" => ResourceType::AppStreamStack,
             "AWS::AppSync::GraphQLApi" => ResourceType::AppSyncGraphQlApi,
             "AWS::Athena::DataCatalog" => ResourceType::AthenaDataCatalog,
             "AWS::Athena::PreparedStatement" => ResourceType::AthenaPreparedStatement,
@@ -1147,6 +1206,7 @@ impl ::std::convert::From<&str> for ResourceType {
             "AWS::Backup::ReportPlan" => ResourceType::BackupReportPlan,
             "AWS::Batch::ComputeEnvironment" => ResourceType::BatchComputeEnvironment,
             "AWS::Batch::JobQueue" => ResourceType::BatchJobQueue,
+            "AWS::Batch::SchedulingPolicy" => ResourceType::BatchSchedulingPolicy,
             "AWS::Budgets::BudgetsAction" => ResourceType::BudgetsBudgetsAction,
             "AWS::Cassandra::Keyspace" => ResourceType::CassandraKeyspace,
             "AWS::Cloud9::EnvironmentEC2" => ResourceType::Cloud9EnvironmentEc2,
@@ -1158,9 +1218,11 @@ impl ::std::convert::From<&str> for ResourceType {
             "AWS::CloudWatch::MetricStream" => ResourceType::CloudWatchMetricStream,
             "AWS::CodeArtifact::Repository" => ResourceType::CodeArtifactRepository,
             "AWS::CodeBuild::Project" => ResourceType::Project,
+            "AWS::CodeBuild::ReportGroup" => ResourceType::CodeBuildReportGroup,
             "AWS::CodeDeploy::Application" => ResourceType::CodeDeployApplication,
             "AWS::CodeDeploy::DeploymentConfig" => ResourceType::CodeDeployDeploymentConfig,
             "AWS::CodeDeploy::DeploymentGroup" => ResourceType::CodeDeployDeploymentGroup,
+            "AWS::CodeGuruProfiler::ProfilingGroup" => ResourceType::CodeGuruProfilerProfilingGroup,
             "AWS::CodeGuruReviewer::RepositoryAssociation" => ResourceType::CodeGuruReviewerRepositoryAssociation,
             "AWS::CodePipeline::Pipeline" => ResourceType::Pipeline,
             "AWS::Config::ConformancePackCompliance" => ResourceType::ConformancePackCompliance,
@@ -1293,13 +1355,16 @@ impl ::std::convert::From<&str> for ResourceType {
             "AWS::ImageBuilder::DistributionConfiguration" => ResourceType::ImageBuilderDistributionConfiguration,
             "AWS::ImageBuilder::ImagePipeline" => ResourceType::ImageBuilderImagePipeline,
             "AWS::ImageBuilder::InfrastructureConfiguration" => ResourceType::ImageBuilderInfrastructureConfiguration,
+            "AWS::InspectorV2::Filter" => ResourceType::InspectorV2Filter,
             "AWS::IoT::AccountAuditConfiguration" => ResourceType::IoTAccountAuditConfiguration,
             "AWS::IoT::Authorizer" => ResourceType::IoTAuthorizer,
             "AWS::IoT::CustomMetric" => ResourceType::IoTCustomMetric,
             "AWS::IoT::Dimension" => ResourceType::IoTDimension,
             "AWS::IoT::FleetMetric" => ResourceType::IoTFleetMetric,
+            "AWS::IoT::JobTemplate" => ResourceType::IoTJobTemplate,
             "AWS::IoT::MitigationAction" => ResourceType::IoTMitigationAction,
             "AWS::IoT::Policy" => ResourceType::IoTPolicy,
+            "AWS::IoT::ProvisioningTemplate" => ResourceType::IoTProvisioningTemplate,
             "AWS::IoT::RoleAlias" => ResourceType::IoTRoleAlias,
             "AWS::IoT::ScheduledAudit" => ResourceType::IoTScheduledAudit,
             "AWS::IoT::SecurityProfile" => ResourceType::IoTSecurityProfile,
@@ -1315,9 +1380,12 @@ impl ::std::convert::From<&str> for ResourceType {
             "AWS::IoTSiteWise::Gateway" => ResourceType::IoTSiteWiseGateway,
             "AWS::IoTSiteWise::Portal" => ResourceType::IoTSiteWisePortal,
             "AWS::IoTSiteWise::Project" => ResourceType::IoTSiteWiseProject,
+            "AWS::IoTTwinMaker::ComponentType" => ResourceType::IoTTwinMakerComponentType,
             "AWS::IoTTwinMaker::Entity" => ResourceType::IoTTwinMakerEntity,
             "AWS::IoTTwinMaker::Scene" => ResourceType::IoTTwinMakerScene,
             "AWS::IoTTwinMaker::Workspace" => ResourceType::IoTTwinMakerWorkspace,
+            "AWS::IoTWireless::FuotaTask" => ResourceType::IoTWirelessFuotaTask,
+            "AWS::IoTWireless::MulticastGroup" => ResourceType::IoTWirelessMulticastGroup,
             "AWS::IoTWireless::ServiceProfile" => ResourceType::IoTWirelessServiceProfile,
             "AWS::KMS::Key" => ResourceType::Key,
             "AWS::Kendra::Index" => ResourceType::KendraIndex,
@@ -1337,9 +1405,11 @@ impl ::std::convert::From<&str> for ResourceType {
             "AWS::Logs::Destination" => ResourceType::LogsDestination,
             "AWS::LookoutMetrics::Alert" => ResourceType::LookoutMetricsAlert,
             "AWS::LookoutVision::Project" => ResourceType::LookoutVisionProject,
+            "AWS::MSK::BatchScramSecret" => ResourceType::MskBatchScramSecret,
             "AWS::MSK::Cluster" => ResourceType::MskCluster,
             "AWS::MSK::Configuration" => ResourceType::MskConfiguration,
             "AWS::MediaConnect::FlowEntitlement" => ResourceType::MediaConnectFlowEntitlement,
+            "AWS::MediaConnect::FlowSource" => ResourceType::MediaConnectFlowSource,
             "AWS::MediaConnect::FlowVpcInterface" => ResourceType::MediaConnectFlowVpcInterface,
             "AWS::MediaPackage::PackagingConfiguration" => ResourceType::MediaPackagePackagingConfiguration,
             "AWS::MediaPackage::PackagingGroup" => ResourceType::MediaPackagePackagingGroup,
@@ -1357,6 +1427,7 @@ impl ::std::convert::From<&str> for ResourceType {
             "AWS::OpenSearch::Domain" => ResourceType::OpenSearchDomain,
             "AWS::Panorama::Package" => ResourceType::PanoramaPackage,
             "AWS::Personalize::Dataset" => ResourceType::PersonalizeDataset,
+            "AWS::Personalize::DatasetGroup" => ResourceType::PersonalizeDatasetGroup,
             "AWS::Personalize::Schema" => ResourceType::PersonalizeSchema,
             "AWS::Personalize::Solution" => ResourceType::PersonalizeSolution,
             "AWS::Pinpoint::App" => ResourceType::PinpointApp,
@@ -1401,6 +1472,8 @@ impl ::std::convert::From<&str> for ResourceType {
             "AWS::Route53Resolver::FirewallDomainList" => ResourceType::Route53ResolverFirewallDomainList,
             "AWS::Route53Resolver::FirewallRuleGroupAssociation" => ResourceType::Route53ResolverFirewallRuleGroupAssociation,
             "AWS::Route53Resolver::ResolverEndpoint" => ResourceType::Route53ResolverResolverEndpoint,
+            "AWS::Route53Resolver::ResolverQueryLoggingConfig" => ResourceType::Route53ResolverResolverQueryLoggingConfig,
+            "AWS::Route53Resolver::ResolverQueryLoggingConfigAssociation" => ResourceType::Route53ResolverResolverQueryLoggingConfigAssociation,
             "AWS::Route53Resolver::ResolverRule" => ResourceType::Route53ResolverResolverRule,
             "AWS::Route53Resolver::ResolverRuleAssociation" => ResourceType::Route53ResolverResolverRuleAssociation,
             "AWS::S3::AccessPoint" => ResourceType::S3AccessPoint,
@@ -1422,6 +1495,7 @@ impl ::std::convert::From<&str> for ResourceType {
             "AWS::SageMaker::AppImageConfig" => ResourceType::SageMakerAppImageConfig,
             "AWS::SageMaker::CodeRepository" => ResourceType::SageMakerCodeRepository,
             "AWS::SageMaker::Domain" => ResourceType::SageMakerDomain,
+            "AWS::SageMaker::FeatureGroup" => ResourceType::SageMakerFeatureGroup,
             "AWS::SageMaker::Image" => ResourceType::SageMakerImage,
             "AWS::SageMaker::Model" => ResourceType::SageMakerModel,
             "AWS::SageMaker::NotebookInstanceLifecycleConfig" => ResourceType::SageMakerNotebookInstanceLifecycleConfig,
@@ -1431,6 +1505,7 @@ impl ::std::convert::From<&str> for ResourceType {
             "AWS::ServiceCatalog::CloudFormationProvisionedProduct" => ResourceType::CloudFormationProvisionedProduct,
             "AWS::ServiceCatalog::Portfolio" => ResourceType::Portfolio,
             "AWS::ServiceDiscovery::HttpNamespace" => ResourceType::ServiceDiscoveryHttpNamespace,
+            "AWS::ServiceDiscovery::Instance" => ResourceType::ServiceDiscoveryInstance,
             "AWS::ServiceDiscovery::PublicDnsNamespace" => ResourceType::ServiceDiscoveryPublicDnsNamespace,
             "AWS::ServiceDiscovery::Service" => ResourceType::ServiceDiscoveryService,
             "AWS::Shield::Protection" => ResourceType::Protection,
@@ -1439,6 +1514,7 @@ impl ::std::convert::From<&str> for ResourceType {
             "AWS::StepFunctions::Activity" => ResourceType::StepFunctionsActivity,
             "AWS::StepFunctions::StateMachine" => ResourceType::StepFunctionsStateMachine,
             "AWS::Transfer::Agreement" => ResourceType::TransferAgreement,
+            "AWS::Transfer::Certificate" => ResourceType::TransferCertificate,
             "AWS::Transfer::Connector" => ResourceType::TransferConnector,
             "AWS::Transfer::Workflow" => ResourceType::TransferWorkflow,
             "AWS::WAF::RateBasedRule" => ResourceType::RateBasedRule,
@@ -1474,6 +1550,7 @@ impl ResourceType {
         match self {
             ResourceType::Certificate => "AWS::ACM::Certificate",
             ResourceType::AcmpcaCertificateAuthority => "AWS::ACMPCA::CertificateAuthority",
+            ResourceType::ApsRuleGroupsNamespace => "AWS::APS::RuleGroupsNamespace",
             ResourceType::AccessAnalyzerAnalyzer => "AWS::AccessAnalyzer::Analyzer",
             ResourceType::AmazonMqBroker => "AWS::AmazonMQ::Broker",
             ResourceType::AmplifyApp => "AWS::Amplify::App",
@@ -1498,6 +1575,7 @@ impl ResourceType {
             ResourceType::AppRunnerVpcConnector => "AWS::AppRunner::VpcConnector",
             ResourceType::AppStreamApplication => "AWS::AppStream::Application",
             ResourceType::AppStreamDirectoryConfig => "AWS::AppStream::DirectoryConfig",
+            ResourceType::AppStreamStack => "AWS::AppStream::Stack",
             ResourceType::AppSyncGraphQlApi => "AWS::AppSync::GraphQLApi",
             ResourceType::AthenaDataCatalog => "AWS::Athena::DataCatalog",
             ResourceType::AthenaPreparedStatement => "AWS::Athena::PreparedStatement",
@@ -1515,6 +1593,7 @@ impl ResourceType {
             ResourceType::BackupReportPlan => "AWS::Backup::ReportPlan",
             ResourceType::BatchComputeEnvironment => "AWS::Batch::ComputeEnvironment",
             ResourceType::BatchJobQueue => "AWS::Batch::JobQueue",
+            ResourceType::BatchSchedulingPolicy => "AWS::Batch::SchedulingPolicy",
             ResourceType::BudgetsBudgetsAction => "AWS::Budgets::BudgetsAction",
             ResourceType::CassandraKeyspace => "AWS::Cassandra::Keyspace",
             ResourceType::Cloud9EnvironmentEc2 => "AWS::Cloud9::EnvironmentEC2",
@@ -1526,9 +1605,11 @@ impl ResourceType {
             ResourceType::CloudWatchMetricStream => "AWS::CloudWatch::MetricStream",
             ResourceType::CodeArtifactRepository => "AWS::CodeArtifact::Repository",
             ResourceType::Project => "AWS::CodeBuild::Project",
+            ResourceType::CodeBuildReportGroup => "AWS::CodeBuild::ReportGroup",
             ResourceType::CodeDeployApplication => "AWS::CodeDeploy::Application",
             ResourceType::CodeDeployDeploymentConfig => "AWS::CodeDeploy::DeploymentConfig",
             ResourceType::CodeDeployDeploymentGroup => "AWS::CodeDeploy::DeploymentGroup",
+            ResourceType::CodeGuruProfilerProfilingGroup => "AWS::CodeGuruProfiler::ProfilingGroup",
             ResourceType::CodeGuruReviewerRepositoryAssociation => "AWS::CodeGuruReviewer::RepositoryAssociation",
             ResourceType::Pipeline => "AWS::CodePipeline::Pipeline",
             ResourceType::ConformancePackCompliance => "AWS::Config::ConformancePackCompliance",
@@ -1661,13 +1742,16 @@ impl ResourceType {
             ResourceType::ImageBuilderDistributionConfiguration => "AWS::ImageBuilder::DistributionConfiguration",
             ResourceType::ImageBuilderImagePipeline => "AWS::ImageBuilder::ImagePipeline",
             ResourceType::ImageBuilderInfrastructureConfiguration => "AWS::ImageBuilder::InfrastructureConfiguration",
+            ResourceType::InspectorV2Filter => "AWS::InspectorV2::Filter",
             ResourceType::IoTAccountAuditConfiguration => "AWS::IoT::AccountAuditConfiguration",
             ResourceType::IoTAuthorizer => "AWS::IoT::Authorizer",
             ResourceType::IoTCustomMetric => "AWS::IoT::CustomMetric",
             ResourceType::IoTDimension => "AWS::IoT::Dimension",
             ResourceType::IoTFleetMetric => "AWS::IoT::FleetMetric",
+            ResourceType::IoTJobTemplate => "AWS::IoT::JobTemplate",
             ResourceType::IoTMitigationAction => "AWS::IoT::MitigationAction",
             ResourceType::IoTPolicy => "AWS::IoT::Policy",
+            ResourceType::IoTProvisioningTemplate => "AWS::IoT::ProvisioningTemplate",
             ResourceType::IoTRoleAlias => "AWS::IoT::RoleAlias",
             ResourceType::IoTScheduledAudit => "AWS::IoT::ScheduledAudit",
             ResourceType::IoTSecurityProfile => "AWS::IoT::SecurityProfile",
@@ -1683,9 +1767,12 @@ impl ResourceType {
             ResourceType::IoTSiteWiseGateway => "AWS::IoTSiteWise::Gateway",
             ResourceType::IoTSiteWisePortal => "AWS::IoTSiteWise::Portal",
             ResourceType::IoTSiteWiseProject => "AWS::IoTSiteWise::Project",
+            ResourceType::IoTTwinMakerComponentType => "AWS::IoTTwinMaker::ComponentType",
             ResourceType::IoTTwinMakerEntity => "AWS::IoTTwinMaker::Entity",
             ResourceType::IoTTwinMakerScene => "AWS::IoTTwinMaker::Scene",
             ResourceType::IoTTwinMakerWorkspace => "AWS::IoTTwinMaker::Workspace",
+            ResourceType::IoTWirelessFuotaTask => "AWS::IoTWireless::FuotaTask",
+            ResourceType::IoTWirelessMulticastGroup => "AWS::IoTWireless::MulticastGroup",
             ResourceType::IoTWirelessServiceProfile => "AWS::IoTWireless::ServiceProfile",
             ResourceType::Key => "AWS::KMS::Key",
             ResourceType::KendraIndex => "AWS::Kendra::Index",
@@ -1705,9 +1792,11 @@ impl ResourceType {
             ResourceType::LogsDestination => "AWS::Logs::Destination",
             ResourceType::LookoutMetricsAlert => "AWS::LookoutMetrics::Alert",
             ResourceType::LookoutVisionProject => "AWS::LookoutVision::Project",
+            ResourceType::MskBatchScramSecret => "AWS::MSK::BatchScramSecret",
             ResourceType::MskCluster => "AWS::MSK::Cluster",
             ResourceType::MskConfiguration => "AWS::MSK::Configuration",
             ResourceType::MediaConnectFlowEntitlement => "AWS::MediaConnect::FlowEntitlement",
+            ResourceType::MediaConnectFlowSource => "AWS::MediaConnect::FlowSource",
             ResourceType::MediaConnectFlowVpcInterface => "AWS::MediaConnect::FlowVpcInterface",
             ResourceType::MediaPackagePackagingConfiguration => "AWS::MediaPackage::PackagingConfiguration",
             ResourceType::MediaPackagePackagingGroup => "AWS::MediaPackage::PackagingGroup",
@@ -1725,6 +1814,7 @@ impl ResourceType {
             ResourceType::OpenSearchDomain => "AWS::OpenSearch::Domain",
             ResourceType::PanoramaPackage => "AWS::Panorama::Package",
             ResourceType::PersonalizeDataset => "AWS::Personalize::Dataset",
+            ResourceType::PersonalizeDatasetGroup => "AWS::Personalize::DatasetGroup",
             ResourceType::PersonalizeSchema => "AWS::Personalize::Schema",
             ResourceType::PersonalizeSolution => "AWS::Personalize::Solution",
             ResourceType::PinpointApp => "AWS::Pinpoint::App",
@@ -1769,6 +1859,8 @@ impl ResourceType {
             ResourceType::Route53ResolverFirewallDomainList => "AWS::Route53Resolver::FirewallDomainList",
             ResourceType::Route53ResolverFirewallRuleGroupAssociation => "AWS::Route53Resolver::FirewallRuleGroupAssociation",
             ResourceType::Route53ResolverResolverEndpoint => "AWS::Route53Resolver::ResolverEndpoint",
+            ResourceType::Route53ResolverResolverQueryLoggingConfig => "AWS::Route53Resolver::ResolverQueryLoggingConfig",
+            ResourceType::Route53ResolverResolverQueryLoggingConfigAssociation => "AWS::Route53Resolver::ResolverQueryLoggingConfigAssociation",
             ResourceType::Route53ResolverResolverRule => "AWS::Route53Resolver::ResolverRule",
             ResourceType::Route53ResolverResolverRuleAssociation => "AWS::Route53Resolver::ResolverRuleAssociation",
             ResourceType::S3AccessPoint => "AWS::S3::AccessPoint",
@@ -1790,6 +1882,7 @@ impl ResourceType {
             ResourceType::SageMakerAppImageConfig => "AWS::SageMaker::AppImageConfig",
             ResourceType::SageMakerCodeRepository => "AWS::SageMaker::CodeRepository",
             ResourceType::SageMakerDomain => "AWS::SageMaker::Domain",
+            ResourceType::SageMakerFeatureGroup => "AWS::SageMaker::FeatureGroup",
             ResourceType::SageMakerImage => "AWS::SageMaker::Image",
             ResourceType::SageMakerModel => "AWS::SageMaker::Model",
             ResourceType::SageMakerNotebookInstanceLifecycleConfig => "AWS::SageMaker::NotebookInstanceLifecycleConfig",
@@ -1799,6 +1892,7 @@ impl ResourceType {
             ResourceType::CloudFormationProvisionedProduct => "AWS::ServiceCatalog::CloudFormationProvisionedProduct",
             ResourceType::Portfolio => "AWS::ServiceCatalog::Portfolio",
             ResourceType::ServiceDiscoveryHttpNamespace => "AWS::ServiceDiscovery::HttpNamespace",
+            ResourceType::ServiceDiscoveryInstance => "AWS::ServiceDiscovery::Instance",
             ResourceType::ServiceDiscoveryPublicDnsNamespace => "AWS::ServiceDiscovery::PublicDnsNamespace",
             ResourceType::ServiceDiscoveryService => "AWS::ServiceDiscovery::Service",
             ResourceType::Protection => "AWS::Shield::Protection",
@@ -1807,6 +1901,7 @@ impl ResourceType {
             ResourceType::StepFunctionsActivity => "AWS::StepFunctions::Activity",
             ResourceType::StepFunctionsStateMachine => "AWS::StepFunctions::StateMachine",
             ResourceType::TransferAgreement => "AWS::Transfer::Agreement",
+            ResourceType::TransferCertificate => "AWS::Transfer::Certificate",
             ResourceType::TransferConnector => "AWS::Transfer::Connector",
             ResourceType::TransferWorkflow => "AWS::Transfer::Workflow",
             ResourceType::RateBasedRule => "AWS::WAF::RateBasedRule",
@@ -1833,6 +1928,7 @@ impl ResourceType {
         &[
             "AWS::ACM::Certificate",
             "AWS::ACMPCA::CertificateAuthority",
+            "AWS::APS::RuleGroupsNamespace",
             "AWS::AccessAnalyzer::Analyzer",
             "AWS::AmazonMQ::Broker",
             "AWS::Amplify::App",
@@ -1857,6 +1953,7 @@ impl ResourceType {
             "AWS::AppRunner::VpcConnector",
             "AWS::AppStream::Application",
             "AWS::AppStream::DirectoryConfig",
+            "AWS::AppStream::Stack",
             "AWS::AppSync::GraphQLApi",
             "AWS::Athena::DataCatalog",
             "AWS::Athena::PreparedStatement",
@@ -1874,6 +1971,7 @@ impl ResourceType {
             "AWS::Backup::ReportPlan",
             "AWS::Batch::ComputeEnvironment",
             "AWS::Batch::JobQueue",
+            "AWS::Batch::SchedulingPolicy",
             "AWS::Budgets::BudgetsAction",
             "AWS::Cassandra::Keyspace",
             "AWS::Cloud9::EnvironmentEC2",
@@ -1885,9 +1983,11 @@ impl ResourceType {
             "AWS::CloudWatch::MetricStream",
             "AWS::CodeArtifact::Repository",
             "AWS::CodeBuild::Project",
+            "AWS::CodeBuild::ReportGroup",
             "AWS::CodeDeploy::Application",
             "AWS::CodeDeploy::DeploymentConfig",
             "AWS::CodeDeploy::DeploymentGroup",
+            "AWS::CodeGuruProfiler::ProfilingGroup",
             "AWS::CodeGuruReviewer::RepositoryAssociation",
             "AWS::CodePipeline::Pipeline",
             "AWS::Config::ConformancePackCompliance",
@@ -2020,13 +2120,16 @@ impl ResourceType {
             "AWS::ImageBuilder::DistributionConfiguration",
             "AWS::ImageBuilder::ImagePipeline",
             "AWS::ImageBuilder::InfrastructureConfiguration",
+            "AWS::InspectorV2::Filter",
             "AWS::IoT::AccountAuditConfiguration",
             "AWS::IoT::Authorizer",
             "AWS::IoT::CustomMetric",
             "AWS::IoT::Dimension",
             "AWS::IoT::FleetMetric",
+            "AWS::IoT::JobTemplate",
             "AWS::IoT::MitigationAction",
             "AWS::IoT::Policy",
+            "AWS::IoT::ProvisioningTemplate",
             "AWS::IoT::RoleAlias",
             "AWS::IoT::ScheduledAudit",
             "AWS::IoT::SecurityProfile",
@@ -2042,9 +2145,12 @@ impl ResourceType {
             "AWS::IoTSiteWise::Gateway",
             "AWS::IoTSiteWise::Portal",
             "AWS::IoTSiteWise::Project",
+            "AWS::IoTTwinMaker::ComponentType",
             "AWS::IoTTwinMaker::Entity",
             "AWS::IoTTwinMaker::Scene",
             "AWS::IoTTwinMaker::Workspace",
+            "AWS::IoTWireless::FuotaTask",
+            "AWS::IoTWireless::MulticastGroup",
             "AWS::IoTWireless::ServiceProfile",
             "AWS::KMS::Key",
             "AWS::Kendra::Index",
@@ -2064,9 +2170,11 @@ impl ResourceType {
             "AWS::Logs::Destination",
             "AWS::LookoutMetrics::Alert",
             "AWS::LookoutVision::Project",
+            "AWS::MSK::BatchScramSecret",
             "AWS::MSK::Cluster",
             "AWS::MSK::Configuration",
             "AWS::MediaConnect::FlowEntitlement",
+            "AWS::MediaConnect::FlowSource",
             "AWS::MediaConnect::FlowVpcInterface",
             "AWS::MediaPackage::PackagingConfiguration",
             "AWS::MediaPackage::PackagingGroup",
@@ -2084,6 +2192,7 @@ impl ResourceType {
             "AWS::OpenSearch::Domain",
             "AWS::Panorama::Package",
             "AWS::Personalize::Dataset",
+            "AWS::Personalize::DatasetGroup",
             "AWS::Personalize::Schema",
             "AWS::Personalize::Solution",
             "AWS::Pinpoint::App",
@@ -2128,6 +2237,8 @@ impl ResourceType {
             "AWS::Route53Resolver::FirewallDomainList",
             "AWS::Route53Resolver::FirewallRuleGroupAssociation",
             "AWS::Route53Resolver::ResolverEndpoint",
+            "AWS::Route53Resolver::ResolverQueryLoggingConfig",
+            "AWS::Route53Resolver::ResolverQueryLoggingConfigAssociation",
             "AWS::Route53Resolver::ResolverRule",
             "AWS::Route53Resolver::ResolverRuleAssociation",
             "AWS::S3::AccessPoint",
@@ -2149,6 +2260,7 @@ impl ResourceType {
             "AWS::SageMaker::AppImageConfig",
             "AWS::SageMaker::CodeRepository",
             "AWS::SageMaker::Domain",
+            "AWS::SageMaker::FeatureGroup",
             "AWS::SageMaker::Image",
             "AWS::SageMaker::Model",
             "AWS::SageMaker::NotebookInstanceLifecycleConfig",
@@ -2158,6 +2270,7 @@ impl ResourceType {
             "AWS::ServiceCatalog::CloudFormationProvisionedProduct",
             "AWS::ServiceCatalog::Portfolio",
             "AWS::ServiceDiscovery::HttpNamespace",
+            "AWS::ServiceDiscovery::Instance",
             "AWS::ServiceDiscovery::PublicDnsNamespace",
             "AWS::ServiceDiscovery::Service",
             "AWS::Shield::Protection",
@@ -2166,6 +2279,7 @@ impl ResourceType {
             "AWS::StepFunctions::Activity",
             "AWS::StepFunctions::StateMachine",
             "AWS::Transfer::Agreement",
+            "AWS::Transfer::Certificate",
             "AWS::Transfer::Connector",
             "AWS::Transfer::Workflow",
             "AWS::WAF::RateBasedRule",

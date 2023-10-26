@@ -5,11 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MonitoringCsvDatasetFormat {
     /// <p>Indicates if the CSV data has a header.</p>
-    pub header: bool,
+    pub header: ::std::option::Option<bool>,
 }
 impl MonitoringCsvDatasetFormat {
     /// <p>Indicates if the CSV data has a header.</p>
-    pub fn header(&self) -> bool {
+    pub fn header(&self) -> ::std::option::Option<bool> {
         self.header
     }
 }
@@ -43,8 +43,6 @@ impl MonitoringCsvDatasetFormatBuilder {
     }
     /// Consumes the builder and constructs a [`MonitoringCsvDatasetFormat`](crate::types::MonitoringCsvDatasetFormat).
     pub fn build(self) -> crate::types::MonitoringCsvDatasetFormat {
-        crate::types::MonitoringCsvDatasetFormat {
-            header: self.header.unwrap_or_default(),
-        }
+        crate::types::MonitoringCsvDatasetFormat { header: self.header }
     }
 }

@@ -7,11 +7,11 @@ pub struct AwsEcsTaskDefinitionContainerDefinitionsDetails {
     /// <p>The command that is passed to the container.</p>
     pub command: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The number of CPU units reserved for the container.</p>
-    pub cpu: i32,
+    pub cpu: ::std::option::Option<i32>,
     /// <p>The dependencies that are defined for container startup and shutdown.</p>
     pub depends_on: ::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetails>>,
     /// <p>Whether to disable networking within the container.</p>
-    pub disable_networking: bool,
+    pub disable_networking: ::std::option::Option<bool>,
     /// <p>A list of DNS search domains that are presented to the container.</p>
     pub dns_search_domains: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of DNS servers that are presented to the container.</p>
@@ -27,7 +27,7 @@ pub struct AwsEcsTaskDefinitionContainerDefinitionsDetails {
     /// <p>A list of files containing the environment variables to pass to a container.</p>
     pub environment_files: ::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskDefinitionContainerDefinitionsEnvironmentFilesDetails>>,
     /// <p>Whether the container is essential. All tasks must have at least one essential container.</p>
-    pub essential: bool,
+    pub essential: ::std::option::Option<bool>,
     /// <p>A list of hostnames and IP address mappings to append to the <b>/etc/hosts</b> file on the container.</p>
     pub extra_hosts: ::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskDefinitionContainerDefinitionsExtraHostsDetails>>,
     /// <p>The FireLens configuration for the container. Specifies and configures a log router for container logs.</p>
@@ -39,7 +39,7 @@ pub struct AwsEcsTaskDefinitionContainerDefinitionsDetails {
     /// <p>The image used to start the container.</p>
     pub image: ::std::option::Option<::std::string::String>,
     /// <p>If set to true, then containerized applications can be deployed that require <code>stdin</code> or a <code>tty</code> to be allocated.</p>
-    pub interactive: bool,
+    pub interactive: ::std::option::Option<bool>,
     /// <p>A list of links for the container in the form <code> <i>container_name</i>:<i>alias</i> </code>. Allows containers to communicate with each other without the need for port mappings.</p>
     pub links: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Linux-specific modifications that are applied to the container, such as Linux kernel capabilities.</p>
@@ -47,9 +47,9 @@ pub struct AwsEcsTaskDefinitionContainerDefinitionsDetails {
     /// <p>The log configuration specification for the container.</p>
     pub log_configuration: ::std::option::Option<crate::types::AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails>,
     /// <p>The amount (in MiB) of memory to present to the container. If the container attempts to exceed the memory specified here, the container is shut down. The total amount of memory reserved for all containers within a task must be lower than the task memory value, if one is specified.</p>
-    pub memory: i32,
+    pub memory: ::std::option::Option<i32>,
     /// <p>The soft limit (in MiB) of memory to reserve for the container.</p>
-    pub memory_reservation: i32,
+    pub memory_reservation: ::std::option::Option<i32>,
     /// <p>The mount points for the data volumes in the container.</p>
     pub mount_points: ::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskDefinitionContainerDefinitionsMountPointsDetails>>,
     /// <p>The name of the container.</p>
@@ -57,11 +57,11 @@ pub struct AwsEcsTaskDefinitionContainerDefinitionsDetails {
     /// <p>The list of port mappings for the container.</p>
     pub port_mappings: ::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskDefinitionContainerDefinitionsPortMappingsDetails>>,
     /// <p>Whether the container is given elevated privileges on the host container instance. The elevated privileges are similar to the root user.</p>
-    pub privileged: bool,
+    pub privileged: ::std::option::Option<bool>,
     /// <p>Whether to allocate a TTY to the container.</p>
-    pub pseudo_terminal: bool,
+    pub pseudo_terminal: ::std::option::Option<bool>,
     /// <p>Whether the container is given read-only access to its root file system.</p>
-    pub readonly_root_filesystem: bool,
+    pub readonly_root_filesystem: ::std::option::Option<bool>,
     /// <p>The private repository authentication credentials to use.</p>
     pub repository_credentials: ::std::option::Option<crate::types::AwsEcsTaskDefinitionContainerDefinitionsRepositoryCredentialsDetails>,
     /// <p>The type and amount of a resource to assign to a container. The only supported resource is a GPU.</p>
@@ -70,9 +70,9 @@ pub struct AwsEcsTaskDefinitionContainerDefinitionsDetails {
     /// <p>The secrets to pass to the container.</p>
     pub secrets: ::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskDefinitionContainerDefinitionsSecretsDetails>>,
     /// <p>The number of seconds to wait before giving up on resolving dependencies for a container. </p>
-    pub start_timeout: i32,
+    pub start_timeout: ::std::option::Option<i32>,
     /// <p>The number of seconds to wait before the container is stopped if it doesn't shut down normally on its own.</p>
-    pub stop_timeout: i32,
+    pub stop_timeout: ::std::option::Option<i32>,
     /// <p>A list of namespaced kernel parameters to set in the container.</p>
     pub system_controls: ::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskDefinitionContainerDefinitionsSystemControlsDetails>>,
     /// <p>A list of ulimits to set in the container. </p>
@@ -99,7 +99,7 @@ impl AwsEcsTaskDefinitionContainerDefinitionsDetails {
         self.command.as_deref()
     }
     /// <p>The number of CPU units reserved for the container.</p>
-    pub fn cpu(&self) -> i32 {
+    pub fn cpu(&self) -> ::std::option::Option<i32> {
         self.cpu
     }
     /// <p>The dependencies that are defined for container startup and shutdown.</p>
@@ -107,7 +107,7 @@ impl AwsEcsTaskDefinitionContainerDefinitionsDetails {
         self.depends_on.as_deref()
     }
     /// <p>Whether to disable networking within the container.</p>
-    pub fn disable_networking(&self) -> bool {
+    pub fn disable_networking(&self) -> ::std::option::Option<bool> {
         self.disable_networking
     }
     /// <p>A list of DNS search domains that are presented to the container.</p>
@@ -139,7 +139,7 @@ impl AwsEcsTaskDefinitionContainerDefinitionsDetails {
         self.environment_files.as_deref()
     }
     /// <p>Whether the container is essential. All tasks must have at least one essential container.</p>
-    pub fn essential(&self) -> bool {
+    pub fn essential(&self) -> ::std::option::Option<bool> {
         self.essential
     }
     /// <p>A list of hostnames and IP address mappings to append to the <b>/etc/hosts</b> file on the container.</p>
@@ -165,7 +165,7 @@ impl AwsEcsTaskDefinitionContainerDefinitionsDetails {
         self.image.as_deref()
     }
     /// <p>If set to true, then containerized applications can be deployed that require <code>stdin</code> or a <code>tty</code> to be allocated.</p>
-    pub fn interactive(&self) -> bool {
+    pub fn interactive(&self) -> ::std::option::Option<bool> {
         self.interactive
     }
     /// <p>A list of links for the container in the form <code> <i>container_name</i>:<i>alias</i> </code>. Allows containers to communicate with each other without the need for port mappings.</p>
@@ -181,11 +181,11 @@ impl AwsEcsTaskDefinitionContainerDefinitionsDetails {
         self.log_configuration.as_ref()
     }
     /// <p>The amount (in MiB) of memory to present to the container. If the container attempts to exceed the memory specified here, the container is shut down. The total amount of memory reserved for all containers within a task must be lower than the task memory value, if one is specified.</p>
-    pub fn memory(&self) -> i32 {
+    pub fn memory(&self) -> ::std::option::Option<i32> {
         self.memory
     }
     /// <p>The soft limit (in MiB) of memory to reserve for the container.</p>
-    pub fn memory_reservation(&self) -> i32 {
+    pub fn memory_reservation(&self) -> ::std::option::Option<i32> {
         self.memory_reservation
     }
     /// <p>The mount points for the data volumes in the container.</p>
@@ -201,15 +201,15 @@ impl AwsEcsTaskDefinitionContainerDefinitionsDetails {
         self.port_mappings.as_deref()
     }
     /// <p>Whether the container is given elevated privileges on the host container instance. The elevated privileges are similar to the root user.</p>
-    pub fn privileged(&self) -> bool {
+    pub fn privileged(&self) -> ::std::option::Option<bool> {
         self.privileged
     }
     /// <p>Whether to allocate a TTY to the container.</p>
-    pub fn pseudo_terminal(&self) -> bool {
+    pub fn pseudo_terminal(&self) -> ::std::option::Option<bool> {
         self.pseudo_terminal
     }
     /// <p>Whether the container is given read-only access to its root file system.</p>
-    pub fn readonly_root_filesystem(&self) -> bool {
+    pub fn readonly_root_filesystem(&self) -> ::std::option::Option<bool> {
         self.readonly_root_filesystem
     }
     /// <p>The private repository authentication credentials to use.</p>
@@ -229,11 +229,11 @@ impl AwsEcsTaskDefinitionContainerDefinitionsDetails {
         self.secrets.as_deref()
     }
     /// <p>The number of seconds to wait before giving up on resolving dependencies for a container. </p>
-    pub fn start_timeout(&self) -> i32 {
+    pub fn start_timeout(&self) -> ::std::option::Option<i32> {
         self.start_timeout
     }
     /// <p>The number of seconds to wait before the container is stopped if it doesn't shut down normally on its own.</p>
-    pub fn stop_timeout(&self) -> i32 {
+    pub fn stop_timeout(&self) -> ::std::option::Option<i32> {
         self.stop_timeout
     }
     /// <p>A list of namespaced kernel parameters to set in the container.</p>
@@ -1076,9 +1076,9 @@ impl AwsEcsTaskDefinitionContainerDefinitionsDetailsBuilder {
     pub fn build(self) -> crate::types::AwsEcsTaskDefinitionContainerDefinitionsDetails {
         crate::types::AwsEcsTaskDefinitionContainerDefinitionsDetails {
             command: self.command,
-            cpu: self.cpu.unwrap_or_default(),
+            cpu: self.cpu,
             depends_on: self.depends_on,
-            disable_networking: self.disable_networking.unwrap_or_default(),
+            disable_networking: self.disable_networking,
             dns_search_domains: self.dns_search_domains,
             dns_servers: self.dns_servers,
             docker_labels: self.docker_labels,
@@ -1086,29 +1086,29 @@ impl AwsEcsTaskDefinitionContainerDefinitionsDetailsBuilder {
             entry_point: self.entry_point,
             environment: self.environment,
             environment_files: self.environment_files,
-            essential: self.essential.unwrap_or_default(),
+            essential: self.essential,
             extra_hosts: self.extra_hosts,
             firelens_configuration: self.firelens_configuration,
             health_check: self.health_check,
             hostname: self.hostname,
             image: self.image,
-            interactive: self.interactive.unwrap_or_default(),
+            interactive: self.interactive,
             links: self.links,
             linux_parameters: self.linux_parameters,
             log_configuration: self.log_configuration,
-            memory: self.memory.unwrap_or_default(),
-            memory_reservation: self.memory_reservation.unwrap_or_default(),
+            memory: self.memory,
+            memory_reservation: self.memory_reservation,
             mount_points: self.mount_points,
             name: self.name,
             port_mappings: self.port_mappings,
-            privileged: self.privileged.unwrap_or_default(),
-            pseudo_terminal: self.pseudo_terminal.unwrap_or_default(),
-            readonly_root_filesystem: self.readonly_root_filesystem.unwrap_or_default(),
+            privileged: self.privileged,
+            pseudo_terminal: self.pseudo_terminal,
+            readonly_root_filesystem: self.readonly_root_filesystem,
             repository_credentials: self.repository_credentials,
             resource_requirements: self.resource_requirements,
             secrets: self.secrets,
-            start_timeout: self.start_timeout.unwrap_or_default(),
-            stop_timeout: self.stop_timeout.unwrap_or_default(),
+            start_timeout: self.start_timeout,
+            stop_timeout: self.stop_timeout,
             system_controls: self.system_controls,
             ulimits: self.ulimits,
             user: self.user,

@@ -13,6 +13,7 @@
 /// # let timerangetype = unimplemented!();
 /// match timerangetype {
 ///     TimeRangeType::Event => { /* ... */ },
+///     TimeRangeType::Service => { /* ... */ },
 ///     TimeRangeType::TraceId => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -44,6 +45,8 @@ pub enum TimeRangeType {
     #[allow(missing_docs)] // documentation missing in model
     Event,
     #[allow(missing_docs)] // documentation missing in model
+    Service,
+    #[allow(missing_docs)] // documentation missing in model
     TraceId,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
@@ -52,6 +55,7 @@ impl ::std::convert::From<&str> for TimeRangeType {
     fn from(s: &str) -> Self {
         match s {
             "Event" => TimeRangeType::Event,
+            "Service" => TimeRangeType::Service,
             "TraceId" => TimeRangeType::TraceId,
             other => TimeRangeType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
@@ -69,13 +73,14 @@ impl TimeRangeType {
     pub fn as_str(&self) -> &str {
         match self {
             TimeRangeType::Event => "Event",
+            TimeRangeType::Service => "Service",
             TimeRangeType::TraceId => "TraceId",
             TimeRangeType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Event", "TraceId"]
+        &["Event", "Service", "TraceId"]
     }
 }
 impl ::std::convert::AsRef<str> for TimeRangeType {

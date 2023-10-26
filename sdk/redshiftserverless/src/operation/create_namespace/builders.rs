@@ -139,16 +139,19 @@ impl CreateNamespaceFluentBuilder {
         self.inner.get_admin_username()
     }
     /// <p>The password of the administrator for the first database created in the namespace.</p>
+    /// <p>You can't use <code>adminUserPassword</code> if <code>manageAdminPassword</code> is true. </p>
     pub fn admin_user_password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.admin_user_password(input.into());
         self
     }
     /// <p>The password of the administrator for the first database created in the namespace.</p>
+    /// <p>You can't use <code>adminUserPassword</code> if <code>manageAdminPassword</code> is true. </p>
     pub fn set_admin_user_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_admin_user_password(input);
         self
     }
     /// <p>The password of the administrator for the first database created in the namespace.</p>
+    /// <p>You can't use <code>adminUserPassword</code> if <code>manageAdminPassword</code> is true. </p>
     pub fn get_admin_user_password(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_admin_user_password()
     }
@@ -247,5 +250,33 @@ impl CreateNamespaceFluentBuilder {
     /// <p>A list of tag instances.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         self.inner.get_tags()
+    }
+    /// <p>If <code>true</code>, Amazon Redshift uses Secrets Manager to manage the namespace's admin credentials. You can't use <code>adminUserPassword</code> if <code>manageAdminPassword</code> is true. If <code>manageAdminPassword</code> is false or not set, Amazon Redshift uses <code>adminUserPassword</code> for the admin user account's password. </p>
+    pub fn manage_admin_password(mut self, input: bool) -> Self {
+        self.inner = self.inner.manage_admin_password(input);
+        self
+    }
+    /// <p>If <code>true</code>, Amazon Redshift uses Secrets Manager to manage the namespace's admin credentials. You can't use <code>adminUserPassword</code> if <code>manageAdminPassword</code> is true. If <code>manageAdminPassword</code> is false or not set, Amazon Redshift uses <code>adminUserPassword</code> for the admin user account's password. </p>
+    pub fn set_manage_admin_password(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_manage_admin_password(input);
+        self
+    }
+    /// <p>If <code>true</code>, Amazon Redshift uses Secrets Manager to manage the namespace's admin credentials. You can't use <code>adminUserPassword</code> if <code>manageAdminPassword</code> is true. If <code>manageAdminPassword</code> is false or not set, Amazon Redshift uses <code>adminUserPassword</code> for the admin user account's password. </p>
+    pub fn get_manage_admin_password(&self) -> &::std::option::Option<bool> {
+        self.inner.get_manage_admin_password()
+    }
+    /// <p>The ID of the Key Management Service (KMS) key used to encrypt and store the namespace's admin credentials secret. You can only use this parameter if <code>manageAdminPassword</code> is true.</p>
+    pub fn admin_password_secret_kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.admin_password_secret_kms_key_id(input.into());
+        self
+    }
+    /// <p>The ID of the Key Management Service (KMS) key used to encrypt and store the namespace's admin credentials secret. You can only use this parameter if <code>manageAdminPassword</code> is true.</p>
+    pub fn set_admin_password_secret_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_admin_password_secret_kms_key_id(input);
+        self
+    }
+    /// <p>The ID of the Key Management Service (KMS) key used to encrypt and store the namespace's admin credentials secret. You can only use this parameter if <code>manageAdminPassword</code> is true.</p>
+    pub fn get_admin_password_secret_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_admin_password_secret_kms_key_id()
     }
 }

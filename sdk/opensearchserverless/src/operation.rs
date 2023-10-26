@@ -4,6 +4,12 @@ pub use ::aws_http::request_id::RequestId;
 /// Types for the `BatchGetCollection` operation.
 pub mod batch_get_collection;
 
+/// Types for the `BatchGetEffectiveLifecyclePolicy` operation.
+pub mod batch_get_effective_lifecycle_policy;
+
+/// Types for the `BatchGetLifecyclePolicy` operation.
+pub mod batch_get_lifecycle_policy;
+
 /// Types for the `BatchGetVpcEndpoint` operation.
 pub mod batch_get_vpc_endpoint;
 
@@ -12,6 +18,9 @@ pub mod create_access_policy;
 
 /// Types for the `CreateCollection` operation.
 pub mod create_collection;
+
+/// Types for the `CreateLifecyclePolicy` operation.
+pub mod create_lifecycle_policy;
 
 /// Types for the `CreateSecurityConfig` operation.
 pub mod create_security_config;
@@ -27,6 +36,9 @@ pub mod delete_access_policy;
 
 /// Types for the `DeleteCollection` operation.
 pub mod delete_collection;
+
+/// Types for the `DeleteLifecyclePolicy` operation.
+pub mod delete_lifecycle_policy;
 
 /// Types for the `DeleteSecurityConfig` operation.
 pub mod delete_security_config;
@@ -58,6 +70,9 @@ pub mod list_access_policies;
 /// Types for the `ListCollections` operation.
 pub mod list_collections;
 
+/// Types for the `ListLifecyclePolicies` operation.
+pub mod list_lifecycle_policies;
+
 /// Types for the `ListSecurityConfigs` operation.
 pub mod list_security_configs;
 
@@ -84,6 +99,9 @@ pub mod update_account_settings;
 
 /// Types for the `UpdateCollection` operation.
 pub mod update_collection;
+
+/// Types for the `UpdateLifecyclePolicy` operation.
+pub mod update_lifecycle_policy;
 
 /// Types for the `UpdateSecurityConfig` operation.
 pub mod update_security_config;

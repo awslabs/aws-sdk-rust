@@ -7,7 +7,7 @@ pub struct InstanceGroup {
     /// <p>Specifies the instance type of the instance group.</p>
     pub instance_type: ::std::option::Option<crate::types::TrainingInstanceType>,
     /// <p>Specifies the number of instances of the instance group.</p>
-    pub instance_count: i32,
+    pub instance_count: ::std::option::Option<i32>,
     /// <p>Specifies the name of the instance group.</p>
     pub instance_group_name: ::std::option::Option<::std::string::String>,
 }
@@ -17,7 +17,7 @@ impl InstanceGroup {
         self.instance_type.as_ref()
     }
     /// <p>Specifies the number of instances of the instance group.</p>
-    pub fn instance_count(&self) -> i32 {
+    pub fn instance_count(&self) -> ::std::option::Option<i32> {
         self.instance_count
     }
     /// <p>Specifies the name of the instance group.</p>
@@ -87,7 +87,7 @@ impl InstanceGroupBuilder {
     pub fn build(self) -> crate::types::InstanceGroup {
         crate::types::InstanceGroup {
             instance_type: self.instance_type,
-            instance_count: self.instance_count.unwrap_or_default(),
+            instance_count: self.instance_count,
             instance_group_name: self.instance_group_name,
         }
     }

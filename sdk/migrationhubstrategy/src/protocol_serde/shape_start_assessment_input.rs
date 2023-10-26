@@ -3,23 +3,26 @@ pub fn ser_start_assessment_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::start_assessment::StartAssessmentInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.assessment_targets {
-        let mut array_2 = object.key("assessmentTargets").start_array();
-        for item_3 in var_1 {
+    if let Some(var_1) = &input.assessment_data_source_type {
+        object.key("assessmentDataSourceType").string(var_1.as_str());
+    }
+    if let Some(var_2) = &input.assessment_targets {
+        let mut array_3 = object.key("assessmentTargets").start_array();
+        for item_4 in var_2 {
             {
                 #[allow(unused_mut)]
-                let mut object_4 = array_2.value().start_object();
-                crate::protocol_serde::shape_assessment_target::ser_assessment_target(&mut object_4, item_3)?;
-                object_4.finish();
+                let mut object_5 = array_3.value().start_object();
+                crate::protocol_serde::shape_assessment_target::ser_assessment_target(&mut object_5, item_4)?;
+                object_5.finish();
             }
         }
-        array_2.finish();
+        array_3.finish();
     }
-    if let Some(var_5) = &input.s3bucket_for_analysis_data {
-        object.key("s3bucketForAnalysisData").string(var_5.as_str());
+    if let Some(var_6) = &input.s3bucket_for_analysis_data {
+        object.key("s3bucketForAnalysisData").string(var_6.as_str());
     }
-    if let Some(var_6) = &input.s3bucket_for_report_data {
-        object.key("s3bucketForReportData").string(var_6.as_str());
+    if let Some(var_7) = &input.s3bucket_for_report_data {
+        object.key("s3bucketForReportData").string(var_7.as_str());
     }
     Ok(())
 }

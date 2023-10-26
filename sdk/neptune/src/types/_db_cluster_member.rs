@@ -7,7 +7,7 @@ pub struct DbClusterMember {
     /// <p>Specifies the instance identifier for this member of the DB cluster.</p>
     pub db_instance_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Value that is <code>true</code> if the cluster member is the primary instance for the DB cluster and <code>false</code> otherwise.</p>
-    pub is_cluster_writer: bool,
+    pub is_cluster_writer: ::std::option::Option<bool>,
     /// <p>Specifies the status of the DB cluster parameter group for this member of the DB cluster.</p>
     pub db_cluster_parameter_group_status: ::std::option::Option<::std::string::String>,
     /// <p>A value that specifies the order in which a Read Replica is promoted to the primary instance after a failure of the existing primary instance.</p>
@@ -19,7 +19,7 @@ impl DbClusterMember {
         self.db_instance_identifier.as_deref()
     }
     /// <p>Value that is <code>true</code> if the cluster member is the primary instance for the DB cluster and <code>false</code> otherwise.</p>
-    pub fn is_cluster_writer(&self) -> bool {
+    pub fn is_cluster_writer(&self) -> ::std::option::Option<bool> {
         self.is_cluster_writer
     }
     /// <p>Specifies the status of the DB cluster parameter group for this member of the DB cluster.</p>
@@ -108,7 +108,7 @@ impl DbClusterMemberBuilder {
     pub fn build(self) -> crate::types::DbClusterMember {
         crate::types::DbClusterMember {
             db_instance_identifier: self.db_instance_identifier,
-            is_cluster_writer: self.is_cluster_writer.unwrap_or_default(),
+            is_cluster_writer: self.is_cluster_writer,
             db_cluster_parameter_group_status: self.db_cluster_parameter_group_status,
             promotion_tier: self.promotion_tier,
         }

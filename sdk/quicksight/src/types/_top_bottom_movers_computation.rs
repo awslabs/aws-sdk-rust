@@ -15,7 +15,7 @@ pub struct TopBottomMoversComputation {
     /// <p>The value field that is used in a computation.</p>
     pub value: ::std::option::Option<crate::types::MeasureField>,
     /// <p>The mover size setup of the top and bottom movers computation.</p>
-    pub mover_size: i32,
+    pub mover_size: ::std::option::Option<i32>,
     /// <p>The sort order setup of the top and bottom movers computation.</p>
     pub sort_order: ::std::option::Option<crate::types::TopBottomSortOrder>,
     /// <p>The computation type. Choose from the following options:</p>
@@ -47,7 +47,7 @@ impl TopBottomMoversComputation {
         self.value.as_ref()
     }
     /// <p>The mover size setup of the top and bottom movers computation.</p>
-    pub fn mover_size(&self) -> i32 {
+    pub fn mover_size(&self) -> ::std::option::Option<i32> {
         self.mover_size
     }
     /// <p>The sort order setup of the top and bottom movers computation.</p>
@@ -216,7 +216,7 @@ impl TopBottomMoversComputationBuilder {
             time: self.time,
             category: self.category,
             value: self.value,
-            mover_size: self.mover_size.unwrap_or_default(),
+            mover_size: self.mover_size,
             sort_order: self.sort_order,
             r#type: self.r#type,
         }

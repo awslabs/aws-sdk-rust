@@ -21,7 +21,7 @@ pub struct Activity {
     /// <p>A friendly, more verbose description of the activity status.</p>
     pub status_message: ::std::option::Option<::std::string::String>,
     /// <p>A value between 0 and 100 that indicates the progress of the activity.</p>
-    pub progress: i32,
+    pub progress: ::std::option::Option<i32>,
     /// <p>The details about the activity.</p>
     pub details: ::std::option::Option<::std::string::String>,
     /// <p>The state of the Auto Scaling group, which is either <code>InService</code> or <code>Deleted</code>.</p>
@@ -63,7 +63,7 @@ impl Activity {
         self.status_message.as_deref()
     }
     /// <p>A value between 0 and 100 that indicates the progress of the activity.</p>
-    pub fn progress(&self) -> i32 {
+    pub fn progress(&self) -> ::std::option::Option<i32> {
         self.progress
     }
     /// <p>The details about the activity.</p>
@@ -283,7 +283,7 @@ impl ActivityBuilder {
             end_time: self.end_time,
             status_code: self.status_code,
             status_message: self.status_message,
-            progress: self.progress.unwrap_or_default(),
+            progress: self.progress,
             details: self.details,
             auto_scaling_group_state: self.auto_scaling_group_state,
             auto_scaling_group_arn: self.auto_scaling_group_arn,

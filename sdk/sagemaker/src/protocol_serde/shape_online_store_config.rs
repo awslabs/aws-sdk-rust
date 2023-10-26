@@ -9,17 +9,17 @@ pub fn ser_online_store_config(
         crate::protocol_serde::shape_online_store_security_config::ser_online_store_security_config(&mut object_2, var_1)?;
         object_2.finish();
     }
-    if input.enable_online_store {
-        object.key("EnableOnlineStore").boolean(input.enable_online_store);
+    if let Some(var_3) = &input.enable_online_store {
+        object.key("EnableOnlineStore").boolean(*var_3);
     }
-    if let Some(var_3) = &input.ttl_duration {
+    if let Some(var_4) = &input.ttl_duration {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("TtlDuration").start_object();
-        crate::protocol_serde::shape_ttl_duration::ser_ttl_duration(&mut object_4, var_3)?;
-        object_4.finish();
+        let mut object_5 = object.key("TtlDuration").start_object();
+        crate::protocol_serde::shape_ttl_duration::ser_ttl_duration(&mut object_5, var_4)?;
+        object_5.finish();
     }
-    if let Some(var_5) = &input.storage_type {
-        object.key("StorageType").string(var_5.as_str());
+    if let Some(var_6) = &input.storage_type {
+        object.key("StorageType").string(var_6.as_str());
     }
     Ok(())
 }

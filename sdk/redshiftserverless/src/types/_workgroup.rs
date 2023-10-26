@@ -32,6 +32,10 @@ pub struct Workgroup {
     pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The custom port to use when connecting to a workgroup. Valid port ranges are 5431-5455 and 8191-8215. The default is 5439.</p>
     pub port: ::std::option::Option<i32>,
+    /// <p>The Amazon Redshift Serverless version of your workgroup. For more information about Amazon Redshift Serverless versions, see<a href="https://docs.aws.amazon.com/redshift/latest/mgmt/cluster-versions.html">Cluster versions for Amazon Redshift</a>.</p>
+    pub workgroup_version: ::std::option::Option<::std::string::String>,
+    /// <p>The patch version of your Amazon Redshift Serverless workgroup. For more information about patch versions, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/cluster-versions.html">Cluster versions for Amazon Redshift</a>.</p>
+    pub patch_version: ::std::option::Option<::std::string::String>,
 }
 impl Workgroup {
     /// <p>The unique identifier of the workgroup.</p>
@@ -90,6 +94,14 @@ impl Workgroup {
     pub fn port(&self) -> ::std::option::Option<i32> {
         self.port
     }
+    /// <p>The Amazon Redshift Serverless version of your workgroup. For more information about Amazon Redshift Serverless versions, see<a href="https://docs.aws.amazon.com/redshift/latest/mgmt/cluster-versions.html">Cluster versions for Amazon Redshift</a>.</p>
+    pub fn workgroup_version(&self) -> ::std::option::Option<&str> {
+        self.workgroup_version.as_deref()
+    }
+    /// <p>The patch version of your Amazon Redshift Serverless workgroup. For more information about patch versions, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/cluster-versions.html">Cluster versions for Amazon Redshift</a>.</p>
+    pub fn patch_version(&self) -> ::std::option::Option<&str> {
+        self.patch_version.as_deref()
+    }
 }
 impl Workgroup {
     /// Creates a new builder-style object to manufacture [`Workgroup`](crate::types::Workgroup).
@@ -116,6 +128,8 @@ pub struct WorkgroupBuilder {
     pub(crate) publicly_accessible: ::std::option::Option<bool>,
     pub(crate) creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) port: ::std::option::Option<i32>,
+    pub(crate) workgroup_version: ::std::option::Option<::std::string::String>,
+    pub(crate) patch_version: ::std::option::Option<::std::string::String>,
 }
 impl WorkgroupBuilder {
     /// <p>The unique identifier of the workgroup.</p>
@@ -332,6 +346,34 @@ impl WorkgroupBuilder {
     pub fn get_port(&self) -> &::std::option::Option<i32> {
         &self.port
     }
+    /// <p>The Amazon Redshift Serverless version of your workgroup. For more information about Amazon Redshift Serverless versions, see<a href="https://docs.aws.amazon.com/redshift/latest/mgmt/cluster-versions.html">Cluster versions for Amazon Redshift</a>.</p>
+    pub fn workgroup_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.workgroup_version = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Redshift Serverless version of your workgroup. For more information about Amazon Redshift Serverless versions, see<a href="https://docs.aws.amazon.com/redshift/latest/mgmt/cluster-versions.html">Cluster versions for Amazon Redshift</a>.</p>
+    pub fn set_workgroup_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.workgroup_version = input;
+        self
+    }
+    /// <p>The Amazon Redshift Serverless version of your workgroup. For more information about Amazon Redshift Serverless versions, see<a href="https://docs.aws.amazon.com/redshift/latest/mgmt/cluster-versions.html">Cluster versions for Amazon Redshift</a>.</p>
+    pub fn get_workgroup_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workgroup_version
+    }
+    /// <p>The patch version of your Amazon Redshift Serverless workgroup. For more information about patch versions, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/cluster-versions.html">Cluster versions for Amazon Redshift</a>.</p>
+    pub fn patch_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.patch_version = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The patch version of your Amazon Redshift Serverless workgroup. For more information about patch versions, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/cluster-versions.html">Cluster versions for Amazon Redshift</a>.</p>
+    pub fn set_patch_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.patch_version = input;
+        self
+    }
+    /// <p>The patch version of your Amazon Redshift Serverless workgroup. For more information about patch versions, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/cluster-versions.html">Cluster versions for Amazon Redshift</a>.</p>
+    pub fn get_patch_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.patch_version
+    }
     /// Consumes the builder and constructs a [`Workgroup`](crate::types::Workgroup).
     pub fn build(self) -> crate::types::Workgroup {
         crate::types::Workgroup {
@@ -349,6 +391,8 @@ impl WorkgroupBuilder {
             publicly_accessible: self.publicly_accessible,
             creation_date: self.creation_date,
             port: self.port,
+            workgroup_version: self.workgroup_version,
+            patch_version: self.patch_version,
         }
     }
 }

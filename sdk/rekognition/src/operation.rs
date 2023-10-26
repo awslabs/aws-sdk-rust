@@ -115,6 +115,9 @@ pub mod get_face_search;
 /// Types for the `GetLabelDetection` operation.
 pub mod get_label_detection;
 
+/// Types for the `GetMediaAnalysisJob` operation.
+pub mod get_media_analysis_job;
+
 /// Types for the `GetPersonTracking` operation.
 pub mod get_person_tracking;
 
@@ -138,6 +141,9 @@ pub mod list_dataset_labels;
 
 /// Types for the `ListFaces` operation.
 pub mod list_faces;
+
+/// Types for the `ListMediaAnalysisJobs` operation.
+pub mod list_media_analysis_jobs;
 
 /// Types for the `ListProjectPolicies` operation.
 pub mod list_project_policies;
@@ -183,6 +189,9 @@ pub mod start_face_search;
 
 /// Types for the `StartLabelDetection` operation.
 pub mod start_label_detection;
+
+/// Types for the `StartMediaAnalysisJob` operation.
+pub mod start_media_analysis_job;
 
 /// Types for the `StartPersonTracking` operation.
 pub mod start_person_tracking;

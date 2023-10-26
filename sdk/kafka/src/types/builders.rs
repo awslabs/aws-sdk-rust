@@ -19,6 +19,10 @@ pub use crate::types::_iam::IamBuilder;
 
 pub use crate::types::_scram::ScramBuilder;
 
+pub use crate::types::_topic_replication_update::TopicReplicationUpdateBuilder;
+
+pub use crate::types::_consumer_group_replication_update::ConsumerGroupReplicationUpdateBuilder;
+
 pub use crate::types::_logging_info::LoggingInfoBuilder;
 
 pub use crate::types::_broker_logs::BrokerLogsBuilder;
@@ -60,6 +64,14 @@ pub use crate::types::_configuration_info::ConfigurationInfoBuilder;
 pub use crate::types::_broker_ebs_volume_info::BrokerEbsVolumeInfoBuilder;
 
 pub use crate::types::_vpc_connection::VpcConnectionBuilder;
+
+pub use crate::types::_replicator_summary::ReplicatorSummaryBuilder;
+
+pub use crate::types::_replication_info_summary::ReplicationInfoSummaryBuilder;
+
+pub use crate::types::_kafka_cluster_summary::KafkaClusterSummaryBuilder;
+
+pub use crate::types::_amazon_msk_cluster::AmazonMskClusterBuilder;
 
 pub use crate::types::_node_info::NodeInfoBuilder;
 
@@ -123,6 +135,18 @@ pub use crate::types::_client_vpc_connection::ClientVpcConnectionBuilder;
 
 pub use crate::types::_compatible_kafka_version::CompatibleKafkaVersionBuilder;
 
+pub use crate::types::_replication_state_info::ReplicationStateInfoBuilder;
+
+pub use crate::types::_replication_info_description::ReplicationInfoDescriptionBuilder;
+
+pub use crate::types::_topic_replication::TopicReplicationBuilder;
+
+pub use crate::types::_consumer_group_replication::ConsumerGroupReplicationBuilder;
+
+pub use crate::types::_kafka_cluster_description::KafkaClusterDescriptionBuilder;
+
+pub use crate::types::_kafka_cluster_client_vpc_config::KafkaClusterClientVpcConfigBuilder;
+
 pub use crate::types::_cluster_operation_v2::ClusterOperationV2Builder;
 
 pub use crate::types::_cluster_operation_v2_serverless::ClusterOperationV2ServerlessBuilder;
@@ -130,6 +154,10 @@ pub use crate::types::_cluster_operation_v2_serverless::ClusterOperationV2Server
 pub use crate::types::_vpc_connection_info_serverless::VpcConnectionInfoServerlessBuilder;
 
 pub use crate::types::_cluster_operation_v2_provisioned::ClusterOperationV2ProvisionedBuilder;
+
+pub use crate::types::_replication_info::ReplicationInfoBuilder;
+
+pub use crate::types::_kafka_cluster::KafkaClusterBuilder;
 
 pub use crate::types::_serverless_request::ServerlessRequestBuilder;
 

@@ -9,22 +9,22 @@ pub fn ser_aws_dynamo_db_table_provisioned_throughput(
     if let Some(var_2) = &input.last_increase_date_time {
         object.key("LastIncreaseDateTime").string(var_2.as_str());
     }
-    if input.number_of_decreases_today != 0 {
+    if let Some(var_3) = &input.number_of_decreases_today {
         object.key("NumberOfDecreasesToday").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.number_of_decreases_today).into()),
+            ::aws_smithy_types::Number::NegInt((*var_3).into()),
         );
     }
-    if input.read_capacity_units != 0 {
+    if let Some(var_4) = &input.read_capacity_units {
         object.key("ReadCapacityUnits").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.read_capacity_units).into()),
+            ::aws_smithy_types::Number::NegInt((*var_4).into()),
         );
     }
-    if input.write_capacity_units != 0 {
+    if let Some(var_5) = &input.write_capacity_units {
         object.key("WriteCapacityUnits").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.write_capacity_units).into()),
+            ::aws_smithy_types::Number::NegInt((*var_5).into()),
         );
     }
     Ok(())

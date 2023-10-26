@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataCaptureConfigSummary {
     /// <p>Whether data capture is enabled or disabled.</p>
-    pub enable_capture: bool,
+    pub enable_capture: ::std::option::Option<bool>,
     /// <p>Whether data capture is currently functional.</p>
     pub capture_status: ::std::option::Option<crate::types::CaptureStatus>,
     /// <p>The percentage of requests being captured by your Endpoint.</p>
@@ -17,7 +17,7 @@ pub struct DataCaptureConfigSummary {
 }
 impl DataCaptureConfigSummary {
     /// <p>Whether data capture is enabled or disabled.</p>
-    pub fn enable_capture(&self) -> bool {
+    pub fn enable_capture(&self) -> ::std::option::Option<bool> {
         self.enable_capture
     }
     /// <p>Whether data capture is currently functional.</p>
@@ -128,7 +128,7 @@ impl DataCaptureConfigSummaryBuilder {
     /// Consumes the builder and constructs a [`DataCaptureConfigSummary`](crate::types::DataCaptureConfigSummary).
     pub fn build(self) -> crate::types::DataCaptureConfigSummary {
         crate::types::DataCaptureConfigSummary {
-            enable_capture: self.enable_capture.unwrap_or_default(),
+            enable_capture: self.enable_capture,
             capture_status: self.capture_status,
             current_sampling_percentage: self.current_sampling_percentage,
             destination_s3_uri: self.destination_s3_uri,

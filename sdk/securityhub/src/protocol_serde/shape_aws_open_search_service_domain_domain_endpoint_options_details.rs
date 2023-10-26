@@ -6,17 +6,17 @@ pub fn ser_aws_open_search_service_domain_domain_endpoint_options_details(
     if let Some(var_1) = &input.custom_endpoint_certificate_arn {
         object.key("CustomEndpointCertificateArn").string(var_1.as_str());
     }
-    if input.custom_endpoint_enabled {
-        object.key("CustomEndpointEnabled").boolean(input.custom_endpoint_enabled);
+    if let Some(var_2) = &input.custom_endpoint_enabled {
+        object.key("CustomEndpointEnabled").boolean(*var_2);
     }
-    if input.enforce_https {
-        object.key("EnforceHTTPS").boolean(input.enforce_https);
+    if let Some(var_3) = &input.enforce_https {
+        object.key("EnforceHTTPS").boolean(*var_3);
     }
-    if let Some(var_2) = &input.custom_endpoint {
-        object.key("CustomEndpoint").string(var_2.as_str());
+    if let Some(var_4) = &input.custom_endpoint {
+        object.key("CustomEndpoint").string(var_4.as_str());
     }
-    if let Some(var_3) = &input.tls_security_policy {
-        object.key("TLSSecurityPolicy").string(var_3.as_str());
+    if let Some(var_5) = &input.tls_security_policy {
+        object.key("TLSSecurityPolicy").string(var_5.as_str());
     }
     Ok(())
 }

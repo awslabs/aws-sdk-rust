@@ -56,6 +56,69 @@ impl From<crate::operation::batch_get_collection::BatchGetCollectionError> for E
         }
     }
 }
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::batch_get_effective_lifecycle_policy::BatchGetEffectiveLifecyclePolicyError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<crate::operation::batch_get_effective_lifecycle_policy::BatchGetEffectiveLifecyclePolicyError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::batch_get_effective_lifecycle_policy::BatchGetEffectiveLifecyclePolicyError> for Error {
+    fn from(err: crate::operation::batch_get_effective_lifecycle_policy::BatchGetEffectiveLifecyclePolicyError) -> Self {
+        match err {
+            crate::operation::batch_get_effective_lifecycle_policy::BatchGetEffectiveLifecyclePolicyError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::batch_get_effective_lifecycle_policy::BatchGetEffectiveLifecyclePolicyError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::batch_get_effective_lifecycle_policy::BatchGetEffectiveLifecyclePolicyError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::batch_get_lifecycle_policy::BatchGetLifecyclePolicyError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::batch_get_lifecycle_policy::BatchGetLifecyclePolicyError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::batch_get_lifecycle_policy::BatchGetLifecyclePolicyError> for Error {
+    fn from(err: crate::operation::batch_get_lifecycle_policy::BatchGetLifecyclePolicyError) -> Self {
+        match err {
+            crate::operation::batch_get_lifecycle_policy::BatchGetLifecyclePolicyError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::batch_get_lifecycle_policy::BatchGetLifecyclePolicyError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::batch_get_lifecycle_policy::BatchGetLifecyclePolicyError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::batch_get_vpc_endpoint::BatchGetVpcEndpointError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -139,6 +202,37 @@ impl From<crate::operation::create_collection::CreateCollectionError> for Error 
             }
             crate::operation::create_collection::CreateCollectionError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::create_collection::CreateCollectionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::create_lifecycle_policy::CreateLifecyclePolicyError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::create_lifecycle_policy::CreateLifecyclePolicyError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::create_lifecycle_policy::CreateLifecyclePolicyError> for Error {
+    fn from(err: crate::operation::create_lifecycle_policy::CreateLifecyclePolicyError) -> Self {
+        match err {
+            crate::operation::create_lifecycle_policy::CreateLifecyclePolicyError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_lifecycle_policy::CreateLifecyclePolicyError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::create_lifecycle_policy::CreateLifecyclePolicyError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_lifecycle_policy::CreateLifecyclePolicyError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_lifecycle_policy::CreateLifecyclePolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -286,6 +380,37 @@ impl From<crate::operation::delete_collection::DeleteCollectionError> for Error 
             crate::operation::delete_collection::DeleteCollectionError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::delete_collection::DeleteCollectionError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::delete_collection::DeleteCollectionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::delete_lifecycle_policy::DeleteLifecyclePolicyError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::delete_lifecycle_policy::DeleteLifecyclePolicyError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_lifecycle_policy::DeleteLifecyclePolicyError> for Error {
+    fn from(err: crate::operation::delete_lifecycle_policy::DeleteLifecyclePolicyError) -> Self {
+        match err {
+            crate::operation::delete_lifecycle_policy::DeleteLifecyclePolicyError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_lifecycle_policy::DeleteLifecyclePolicyError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::delete_lifecycle_policy::DeleteLifecyclePolicyError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_lifecycle_policy::DeleteLifecyclePolicyError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_lifecycle_policy::DeleteLifecyclePolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -561,6 +686,33 @@ impl From<crate::operation::list_collections::ListCollectionsError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_lifecycle_policies::ListLifecyclePoliciesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_lifecycle_policies::ListLifecyclePoliciesError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_lifecycle_policies::ListLifecyclePoliciesError> for Error {
+    fn from(err: crate::operation::list_lifecycle_policies::ListLifecyclePoliciesError) -> Self {
+        match err {
+            crate::operation::list_lifecycle_policies::ListLifecyclePoliciesError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_lifecycle_policies::ListLifecyclePoliciesError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_lifecycle_policies::ListLifecyclePoliciesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_security_configs::ListSecurityConfigsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -804,6 +956,40 @@ impl From<crate::operation::update_collection::UpdateCollectionError> for Error 
             crate::operation::update_collection::UpdateCollectionError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::update_collection::UpdateCollectionError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::update_collection::UpdateCollectionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::update_lifecycle_policy::UpdateLifecyclePolicyError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::update_lifecycle_policy::UpdateLifecyclePolicyError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::update_lifecycle_policy::UpdateLifecyclePolicyError> for Error {
+    fn from(err: crate::operation::update_lifecycle_policy::UpdateLifecyclePolicyError) -> Self {
+        match err {
+            crate::operation::update_lifecycle_policy::UpdateLifecyclePolicyError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::update_lifecycle_policy::UpdateLifecyclePolicyError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::update_lifecycle_policy::UpdateLifecyclePolicyError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_lifecycle_policy::UpdateLifecyclePolicyError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::update_lifecycle_policy::UpdateLifecyclePolicyError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_lifecycle_policy::UpdateLifecyclePolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

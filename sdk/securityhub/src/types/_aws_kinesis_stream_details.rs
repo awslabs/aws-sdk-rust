@@ -11,9 +11,9 @@ pub struct AwsKinesisStreamDetails {
     /// <p>When specified, enables or updates server-side encryption using an KMS key for a specified stream. Removing this property from your stack template and updating your stack disables encryption. </p>
     pub stream_encryption: ::std::option::Option<crate::types::AwsKinesisStreamStreamEncryptionDetails>,
     /// <p>The number of shards that the stream uses. </p>
-    pub shard_count: i32,
+    pub shard_count: ::std::option::Option<i32>,
     /// <p>The number of hours for the data records that are stored in shards to remain accessible. </p>
-    pub retention_period_hours: i32,
+    pub retention_period_hours: ::std::option::Option<i32>,
 }
 impl AwsKinesisStreamDetails {
     /// <p>The name of the Kinesis stream. If you don't specify a name, CloudFront generates a unique physical ID and uses that ID for the stream name. </p>
@@ -29,11 +29,11 @@ impl AwsKinesisStreamDetails {
         self.stream_encryption.as_ref()
     }
     /// <p>The number of shards that the stream uses. </p>
-    pub fn shard_count(&self) -> i32 {
+    pub fn shard_count(&self) -> ::std::option::Option<i32> {
         self.shard_count
     }
     /// <p>The number of hours for the data records that are stored in shards to remain accessible. </p>
-    pub fn retention_period_hours(&self) -> i32 {
+    pub fn retention_period_hours(&self) -> ::std::option::Option<i32> {
         self.retention_period_hours
     }
 }
@@ -131,8 +131,8 @@ impl AwsKinesisStreamDetailsBuilder {
             name: self.name,
             arn: self.arn,
             stream_encryption: self.stream_encryption,
-            shard_count: self.shard_count.unwrap_or_default(),
-            retention_period_hours: self.retention_period_hours.unwrap_or_default(),
+            shard_count: self.shard_count,
+            retention_period_hours: self.retention_period_hours,
         }
     }
 }

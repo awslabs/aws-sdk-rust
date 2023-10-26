@@ -13,13 +13,13 @@ pub struct AwsEcsServiceDetails {
     /// <p>Contains the deployment controller type that the service uses.</p>
     pub deployment_controller: ::std::option::Option<crate::types::AwsEcsServiceDeploymentControllerDetails>,
     /// <p>The number of instantiations of the task definition to run on the service.</p>
-    pub desired_count: i32,
+    pub desired_count: ::std::option::Option<i32>,
     /// <p>Whether to enable Amazon ECS managed tags for the tasks in the service.</p>
-    pub enable_ecs_managed_tags: bool,
+    pub enable_ecs_managed_tags: ::std::option::Option<bool>,
     /// <p>Whether the execute command functionality is enabled for the service.</p>
-    pub enable_execute_command: bool,
+    pub enable_execute_command: ::std::option::Option<bool>,
     /// <p>After a task starts, the amount of time in seconds that the Amazon ECS service scheduler ignores unhealthy Elastic Load Balancing target health checks.</p>
-    pub health_check_grace_period_seconds: i32,
+    pub health_check_grace_period_seconds: ::std::option::Option<i32>,
     /// <p>The launch type that the service uses.</p>
     /// <p>Valid values: <code>EC2</code> | <code>FARGATE</code> | <code>EXTERNAL</code> </p>
     pub launch_type: ::std::option::Option<::std::string::String>,
@@ -73,19 +73,19 @@ impl AwsEcsServiceDetails {
         self.deployment_controller.as_ref()
     }
     /// <p>The number of instantiations of the task definition to run on the service.</p>
-    pub fn desired_count(&self) -> i32 {
+    pub fn desired_count(&self) -> ::std::option::Option<i32> {
         self.desired_count
     }
     /// <p>Whether to enable Amazon ECS managed tags for the tasks in the service.</p>
-    pub fn enable_ecs_managed_tags(&self) -> bool {
+    pub fn enable_ecs_managed_tags(&self) -> ::std::option::Option<bool> {
         self.enable_ecs_managed_tags
     }
     /// <p>Whether the execute command functionality is enabled for the service.</p>
-    pub fn enable_execute_command(&self) -> bool {
+    pub fn enable_execute_command(&self) -> ::std::option::Option<bool> {
         self.enable_execute_command
     }
     /// <p>After a task starts, the amount of time in seconds that the Amazon ECS service scheduler ignores unhealthy Elastic Load Balancing target health checks.</p>
-    pub fn health_check_grace_period_seconds(&self) -> i32 {
+    pub fn health_check_grace_period_seconds(&self) -> ::std::option::Option<i32> {
         self.health_check_grace_period_seconds
     }
     /// <p>The launch type that the service uses.</p>
@@ -563,10 +563,10 @@ impl AwsEcsServiceDetailsBuilder {
             cluster: self.cluster,
             deployment_configuration: self.deployment_configuration,
             deployment_controller: self.deployment_controller,
-            desired_count: self.desired_count.unwrap_or_default(),
-            enable_ecs_managed_tags: self.enable_ecs_managed_tags.unwrap_or_default(),
-            enable_execute_command: self.enable_execute_command.unwrap_or_default(),
-            health_check_grace_period_seconds: self.health_check_grace_period_seconds.unwrap_or_default(),
+            desired_count: self.desired_count,
+            enable_ecs_managed_tags: self.enable_ecs_managed_tags,
+            enable_execute_command: self.enable_execute_command,
+            health_check_grace_period_seconds: self.health_check_grace_period_seconds,
             launch_type: self.launch_type,
             load_balancers: self.load_balancers,
             name: self.name,

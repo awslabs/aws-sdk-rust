@@ -11,7 +11,7 @@ impl super::Client {
     ///   - [`schema_definition(Option<String>)`](crate::operation::get_schema_version::GetSchemaVersionOutput::schema_definition): <p>The schema definition for the schema ID.</p>
     ///   - [`data_format(Option<DataFormat>)`](crate::operation::get_schema_version::GetSchemaVersionOutput::data_format): <p>The data format of the schema definition. Currently <code>AVRO</code>, <code>JSON</code> and <code>PROTOBUF</code> are supported.</p>
     ///   - [`schema_arn(Option<String>)`](crate::operation::get_schema_version::GetSchemaVersionOutput::schema_arn): <p>The Amazon Resource Name (ARN) of the schema.</p>
-    ///   - [`version_number(i64)`](crate::operation::get_schema_version::GetSchemaVersionOutput::version_number): <p>The version number of the schema.</p>
+    ///   - [`version_number(Option<i64>)`](crate::operation::get_schema_version::GetSchemaVersionOutput::version_number): <p>The version number of the schema.</p>
     ///   - [`status(Option<SchemaVersionStatus>)`](crate::operation::get_schema_version::GetSchemaVersionOutput::status): <p>The status of the schema version. </p>
     ///   - [`created_time(Option<String>)`](crate::operation::get_schema_version::GetSchemaVersionOutput::created_time): <p>The date and time the schema version was created.</p>
     /// - On failure, responds with [`SdkError<GetSchemaVersionError>`](crate::operation::get_schema_version::GetSchemaVersionError)

@@ -17,7 +17,7 @@ pub struct DescribeModelCardExportJobOutput {
     /// <p>The name or Amazon Resource Name (ARN) of the model card that the model export job exports.</p>
     pub model_card_name: ::std::option::Option<::std::string::String>,
     /// <p>The version of the model card that the model export job exports.</p>
-    pub model_card_version: i32,
+    pub model_card_version: ::std::option::Option<i32>,
     /// <p>The export output details for the model card.</p>
     pub output_config: ::std::option::Option<crate::types::ModelCardExportOutputConfig>,
     /// <p>The date and time that the model export job was created.</p>
@@ -53,7 +53,7 @@ impl DescribeModelCardExportJobOutput {
         self.model_card_name.as_deref()
     }
     /// <p>The version of the model card that the model export job exports.</p>
-    pub fn model_card_version(&self) -> i32 {
+    pub fn model_card_version(&self) -> ::std::option::Option<i32> {
         self.model_card_version
     }
     /// <p>The export output details for the model card.</p>
@@ -277,7 +277,7 @@ impl DescribeModelCardExportJobOutputBuilder {
             model_card_export_job_arn: self.model_card_export_job_arn,
             status: self.status,
             model_card_name: self.model_card_name,
-            model_card_version: self.model_card_version.unwrap_or_default(),
+            model_card_version: self.model_card_version,
             output_config: self.output_config,
             created_at: self.created_at,
             last_modified_at: self.last_modified_at,

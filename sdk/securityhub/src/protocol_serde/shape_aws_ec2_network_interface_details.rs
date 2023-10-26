@@ -27,41 +27,41 @@ pub fn ser_aws_ec2_network_interface_details(
         }
         array_5.finish();
     }
-    if input.source_dest_check {
-        object.key("SourceDestCheck").boolean(input.source_dest_check);
+    if let Some(var_8) = &input.source_dest_check {
+        object.key("SourceDestCheck").boolean(*var_8);
     }
-    if let Some(var_8) = &input.ip_v6_addresses {
-        let mut array_9 = object.key("IpV6Addresses").start_array();
-        for item_10 in var_8 {
+    if let Some(var_9) = &input.ip_v6_addresses {
+        let mut array_10 = object.key("IpV6Addresses").start_array();
+        for item_11 in var_9 {
             {
                 #[allow(unused_mut)]
-                let mut object_11 = array_9.value().start_object();
+                let mut object_12 = array_10.value().start_object();
                 crate::protocol_serde::shape_aws_ec2_network_interface_ip_v6_address_detail::ser_aws_ec2_network_interface_ip_v6_address_detail(
-                    &mut object_11,
-                    item_10,
+                    &mut object_12,
+                    item_11,
                 )?;
-                object_11.finish();
+                object_12.finish();
             }
         }
-        array_9.finish();
+        array_10.finish();
     }
-    if let Some(var_12) = &input.private_ip_addresses {
-        let mut array_13 = object.key("PrivateIpAddresses").start_array();
-        for item_14 in var_12 {
+    if let Some(var_13) = &input.private_ip_addresses {
+        let mut array_14 = object.key("PrivateIpAddresses").start_array();
+        for item_15 in var_13 {
             {
                 #[allow(unused_mut)]
-                let mut object_15 = array_13.value().start_object();
-                crate::protocol_serde::shape_aws_ec2_network_interface_private_ip_address_detail::ser_aws_ec2_network_interface_private_ip_address_detail(&mut object_15, item_14)?;
-                object_15.finish();
+                let mut object_16 = array_14.value().start_object();
+                crate::protocol_serde::shape_aws_ec2_network_interface_private_ip_address_detail::ser_aws_ec2_network_interface_private_ip_address_detail(&mut object_16, item_15)?;
+                object_16.finish();
             }
         }
-        array_13.finish();
+        array_14.finish();
     }
-    if let Some(var_16) = &input.public_dns_name {
-        object.key("PublicDnsName").string(var_16.as_str());
+    if let Some(var_17) = &input.public_dns_name {
+        object.key("PublicDnsName").string(var_17.as_str());
     }
-    if let Some(var_17) = &input.public_ip {
-        object.key("PublicIp").string(var_17.as_str());
+    if let Some(var_18) = &input.public_ip {
+        object.key("PublicIp").string(var_18.as_str());
     }
     Ok(())
 }

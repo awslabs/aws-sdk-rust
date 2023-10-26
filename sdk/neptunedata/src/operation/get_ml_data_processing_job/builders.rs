@@ -23,6 +23,7 @@ impl GetMlDataProcessingJobInputBuilder {
 /// Fluent builder constructing a request to `GetMLDataProcessingJob`.
 ///
 /// <p>Retrieves information about a specified data processing job. See <a href="https://docs.aws.amazon.com/neptune/latest/userguide/machine-learning-api-dataprocessing.html">The <code>dataprocessing</code> command</a>.</p>
+/// <p>When invoking this operation in a Neptune cluster that has IAM authentication enabled, the IAM user or role making the request must have a policy attached that allows the <a href="https://docs.aws.amazon.com/neptune/latest/userguide/iam-dp-actions.html#getmldataprocessingjobstatus">neptune-db:neptune-db:GetMLDataProcessingJobStatus</a> IAM action in that cluster.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetMLDataProcessingJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

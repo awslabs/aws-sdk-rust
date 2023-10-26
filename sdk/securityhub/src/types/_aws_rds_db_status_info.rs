@@ -7,7 +7,7 @@ pub struct AwsRdsDbStatusInfo {
     /// <p>The type of status. For a read replica, the status type is read replication.</p>
     pub status_type: ::std::option::Option<::std::string::String>,
     /// <p>Whether the read replica instance is operating normally.</p>
-    pub normal: bool,
+    pub normal: ::std::option::Option<bool>,
     /// <p>The status of the read replica instance.</p>
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>If the read replica is currently in an error state, provides the error details.</p>
@@ -19,7 +19,7 @@ impl AwsRdsDbStatusInfo {
         self.status_type.as_deref()
     }
     /// <p>Whether the read replica instance is operating normally.</p>
-    pub fn normal(&self) -> bool {
+    pub fn normal(&self) -> ::std::option::Option<bool> {
         self.normal
     }
     /// <p>The status of the read replica instance.</p>
@@ -108,7 +108,7 @@ impl AwsRdsDbStatusInfoBuilder {
     pub fn build(self) -> crate::types::AwsRdsDbStatusInfo {
         crate::types::AwsRdsDbStatusInfo {
             status_type: self.status_type,
-            normal: self.normal.unwrap_or_default(),
+            normal: self.normal,
             status: self.status,
             message: self.message,
         }

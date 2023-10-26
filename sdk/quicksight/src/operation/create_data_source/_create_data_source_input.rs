@@ -24,6 +24,8 @@ pub struct CreateDataSourceInput {
     pub ssl_properties: ::std::option::Option<crate::types::SslProperties>,
     /// <p>Contains a map of the key-value pairs for the resource tag or tags assigned to the data source.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    /// <p>When you create the data source, Amazon QuickSight adds the data source to these folders.</p>
+    pub folder_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl CreateDataSourceInput {
     /// <p>The Amazon Web Services account ID.</p>
@@ -67,6 +69,10 @@ impl CreateDataSourceInput {
     pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
+    /// <p>When you create the data source, Amazon QuickSight adds the data source to these folders.</p>
+    pub fn folder_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
+        self.folder_arns.as_deref()
+    }
 }
 impl ::std::fmt::Debug for CreateDataSourceInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -81,6 +87,7 @@ impl ::std::fmt::Debug for CreateDataSourceInput {
         formatter.field("vpc_connection_properties", &self.vpc_connection_properties);
         formatter.field("ssl_properties", &self.ssl_properties);
         formatter.field("tags", &self.tags);
+        formatter.field("folder_arns", &self.folder_arns);
         formatter.finish()
     }
 }
@@ -105,6 +112,7 @@ pub struct CreateDataSourceInputBuilder {
     pub(crate) vpc_connection_properties: ::std::option::Option<crate::types::VpcConnectionProperties>,
     pub(crate) ssl_properties: ::std::option::Option<crate::types::SslProperties>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) folder_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl CreateDataSourceInputBuilder {
     /// <p>The Amazon Web Services account ID.</p>
@@ -262,6 +270,26 @@ impl CreateDataSourceInputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }
+    /// Appends an item to `folder_arns`.
+    ///
+    /// To override the contents of this collection use [`set_folder_arns`](Self::set_folder_arns).
+    ///
+    /// <p>When you create the data source, Amazon QuickSight adds the data source to these folders.</p>
+    pub fn folder_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.folder_arns.unwrap_or_default();
+        v.push(input.into());
+        self.folder_arns = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>When you create the data source, Amazon QuickSight adds the data source to these folders.</p>
+    pub fn set_folder_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.folder_arns = input;
+        self
+    }
+    /// <p>When you create the data source, Amazon QuickSight adds the data source to these folders.</p>
+    pub fn get_folder_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.folder_arns
+    }
     /// Consumes the builder and constructs a [`CreateDataSourceInput`](crate::operation::create_data_source::CreateDataSourceInput).
     pub fn build(
         self,
@@ -277,6 +305,7 @@ impl CreateDataSourceInputBuilder {
             vpc_connection_properties: self.vpc_connection_properties,
             ssl_properties: self.ssl_properties,
             tags: self.tags,
+            folder_arns: self.folder_arns,
         })
     }
 }
@@ -293,6 +322,7 @@ impl ::std::fmt::Debug for CreateDataSourceInputBuilder {
         formatter.field("vpc_connection_properties", &self.vpc_connection_properties);
         formatter.field("ssl_properties", &self.ssl_properties);
         formatter.field("tags", &self.tags);
+        formatter.field("folder_arns", &self.folder_arns);
         formatter.finish()
     }
 }

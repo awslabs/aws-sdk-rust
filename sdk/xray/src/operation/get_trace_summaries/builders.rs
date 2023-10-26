@@ -149,17 +149,17 @@ impl GetTraceSummariesFluentBuilder {
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_end_time()
     }
-    /// <p>A parameter to indicate whether to query trace summaries by TraceId or Event time.</p>
+    /// <p>A parameter to indicate whether to query trace summaries by TraceId, Event (trace update time), or Service (segment end time).</p>
     pub fn time_range_type(mut self, input: crate::types::TimeRangeType) -> Self {
         self.inner = self.inner.time_range_type(input);
         self
     }
-    /// <p>A parameter to indicate whether to query trace summaries by TraceId or Event time.</p>
+    /// <p>A parameter to indicate whether to query trace summaries by TraceId, Event (trace update time), or Service (segment end time).</p>
     pub fn set_time_range_type(mut self, input: ::std::option::Option<crate::types::TimeRangeType>) -> Self {
         self.inner = self.inner.set_time_range_type(input);
         self
     }
-    /// <p>A parameter to indicate whether to query trace summaries by TraceId or Event time.</p>
+    /// <p>A parameter to indicate whether to query trace summaries by TraceId, Event (trace update time), or Service (segment end time).</p>
     pub fn get_time_range_type(&self) -> &::std::option::Option<crate::types::TimeRangeType> {
         self.inner.get_time_range_type()
     }

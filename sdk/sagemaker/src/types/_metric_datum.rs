@@ -7,7 +7,7 @@ pub struct MetricDatum {
     /// <p>The name of the metric.</p>
     pub metric_name: ::std::option::Option<crate::types::AutoMlMetricEnum>,
     /// <p>The value of the metric.</p>
-    pub value: f32,
+    pub value: ::std::option::Option<f32>,
     /// <p>The dataset split from which the AutoML job produced the metric.</p>
     pub set: ::std::option::Option<crate::types::MetricSetSource>,
     /// <p>The name of the standard metric. </p> <note>
@@ -21,7 +21,7 @@ impl MetricDatum {
         self.metric_name.as_ref()
     }
     /// <p>The value of the metric.</p>
-    pub fn value(&self) -> f32 {
+    pub fn value(&self) -> ::std::option::Option<f32> {
         self.value
     }
     /// <p>The dataset split from which the AutoML job produced the metric.</p>
@@ -118,7 +118,7 @@ impl MetricDatumBuilder {
     pub fn build(self) -> crate::types::MetricDatum {
         crate::types::MetricDatum {
             metric_name: self.metric_name,
-            value: self.value.unwrap_or_default(),
+            value: self.value,
             set: self.set,
             standard_metric_name: self.standard_metric_name,
         }

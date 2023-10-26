@@ -9,10 +9,10 @@ pub fn ser_stateless_rule(
         crate::protocol_serde::shape_rule_definition::ser_rule_definition(&mut object_2, var_1)?;
         object_2.finish();
     }
-    {
+    if let Some(var_3) = &input.priority {
         object.key("Priority").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.priority).into()),
+            ::aws_smithy_types::Number::NegInt((*var_3).into()),
         );
     }
     Ok(())

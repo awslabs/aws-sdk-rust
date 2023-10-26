@@ -6,16 +6,14 @@ pub fn ser_auto_ml_security_config(
     if let Some(var_1) = &input.volume_kms_key_id {
         object.key("VolumeKmsKeyId").string(var_1.as_str());
     }
-    if input.enable_inter_container_traffic_encryption {
-        object
-            .key("EnableInterContainerTrafficEncryption")
-            .boolean(input.enable_inter_container_traffic_encryption);
+    if let Some(var_2) = &input.enable_inter_container_traffic_encryption {
+        object.key("EnableInterContainerTrafficEncryption").boolean(*var_2);
     }
-    if let Some(var_2) = &input.vpc_config {
+    if let Some(var_3) = &input.vpc_config {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("VpcConfig").start_object();
-        crate::protocol_serde::shape_vpc_config::ser_vpc_config(&mut object_3, var_2)?;
-        object_3.finish();
+        let mut object_4 = object.key("VpcConfig").start_object();
+        crate::protocol_serde::shape_vpc_config::ser_vpc_config(&mut object_4, var_3)?;
+        object_4.finish();
     }
     Ok(())
 }

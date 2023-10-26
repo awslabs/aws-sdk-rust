@@ -21,6 +21,8 @@ pub struct GatingRule {
     pub target_controls: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>An evaluation period, in milliseconds (ms), during which any request against the target routing controls will fail. This helps prevent "flapping" of state. The wait period is 5000 ms by default, but you can choose a custom value.</p>
     pub wait_period_ms: ::std::option::Option<i32>,
+    /// <p>The Amazon Web Services account ID of the gating rule owner.</p>
+    pub owner: ::std::option::Option<::std::string::String>,
 }
 impl GatingRule {
     /// <p>The Amazon Resource Name (ARN) of the control panel.</p>
@@ -55,6 +57,10 @@ impl GatingRule {
     pub fn wait_period_ms(&self) -> ::std::option::Option<i32> {
         self.wait_period_ms
     }
+    /// <p>The Amazon Web Services account ID of the gating rule owner.</p>
+    pub fn owner(&self) -> ::std::option::Option<&str> {
+        self.owner.as_deref()
+    }
 }
 impl GatingRule {
     /// Creates a new builder-style object to manufacture [`GatingRule`](crate::types::GatingRule).
@@ -75,6 +81,7 @@ pub struct GatingRuleBuilder {
     pub(crate) status: ::std::option::Option<crate::types::Status>,
     pub(crate) target_controls: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) wait_period_ms: ::std::option::Option<i32>,
+    pub(crate) owner: ::std::option::Option<::std::string::String>,
 }
 impl GatingRuleBuilder {
     /// <p>The Amazon Resource Name (ARN) of the control panel.</p>
@@ -201,6 +208,20 @@ impl GatingRuleBuilder {
     pub fn get_wait_period_ms(&self) -> &::std::option::Option<i32> {
         &self.wait_period_ms
     }
+    /// <p>The Amazon Web Services account ID of the gating rule owner.</p>
+    pub fn owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.owner = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Web Services account ID of the gating rule owner.</p>
+    pub fn set_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.owner = input;
+        self
+    }
+    /// <p>The Amazon Web Services account ID of the gating rule owner.</p>
+    pub fn get_owner(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner
+    }
     /// Consumes the builder and constructs a [`GatingRule`](crate::types::GatingRule).
     pub fn build(self) -> crate::types::GatingRule {
         crate::types::GatingRule {
@@ -212,6 +233,7 @@ impl GatingRuleBuilder {
             status: self.status,
             target_controls: self.target_controls,
             wait_period_ms: self.wait_period_ms,
+            owner: self.owner,
         }
     }
 }

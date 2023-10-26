@@ -38,7 +38,7 @@ pub struct Image {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether enhanced networking with ENA is enabled.</p>
     pub ena_support: ::std::option::Option<bool>,
-    /// <p>The hypervisor type of the image.</p>
+    /// <p>The hypervisor type of the image. Only <code>xen</code> is supported. <code>ovm</code> is not supported.</p>
     pub hypervisor: ::std::option::Option<crate::types::HypervisorType>,
     /// <p>The Amazon Web Services account alias (for example, <code>amazon</code>, <code>self</code>) or the Amazon Web Services account ID of the AMI owner.</p>
     pub image_owner_alias: ::std::option::Option<::std::string::String>,
@@ -64,6 +64,8 @@ pub struct Image {
     pub deprecation_time: ::std::option::Option<::std::string::String>,
     /// <p>If <code>v2.0</code>, it indicates that IMDSv2 is specified in the AMI. Instances launched from this AMI will have <code>HttpTokens</code> automatically set to <code>required</code> so that, by default, the instance requires that IMDSv2 is used when requesting instance metadata. In addition, <code>HttpPutResponseHopLimit</code> is set to <code>2</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration">Configure the AMI</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub imds_support: ::std::option::Option<crate::types::ImdsSupportValues>,
+    /// <p>The ID of the instance that the AMI was created from if the AMI was created using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">CreateImage</a>. This field only appears if the AMI was created using CreateImage.</p>
+    pub source_instance_id: ::std::option::Option<::std::string::String>,
 }
 impl Image {
     /// <p>The architecture of the image.</p>
@@ -134,7 +136,7 @@ impl Image {
     pub fn ena_support(&self) -> ::std::option::Option<bool> {
         self.ena_support
     }
-    /// <p>The hypervisor type of the image.</p>
+    /// <p>The hypervisor type of the image. Only <code>xen</code> is supported. <code>ovm</code> is not supported.</p>
     pub fn hypervisor(&self) -> ::std::option::Option<&crate::types::HypervisorType> {
         self.hypervisor.as_ref()
     }
@@ -186,6 +188,10 @@ impl Image {
     pub fn imds_support(&self) -> ::std::option::Option<&crate::types::ImdsSupportValues> {
         self.imds_support.as_ref()
     }
+    /// <p>The ID of the instance that the AMI was created from if the AMI was created using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">CreateImage</a>. This field only appears if the AMI was created using CreateImage.</p>
+    pub fn source_instance_id(&self) -> ::std::option::Option<&str> {
+        self.source_instance_id.as_deref()
+    }
 }
 impl Image {
     /// Creates a new builder-style object to manufacture [`Image`](crate::types::Image).
@@ -228,6 +234,7 @@ pub struct ImageBuilder {
     pub(crate) tpm_support: ::std::option::Option<crate::types::TpmSupportValues>,
     pub(crate) deprecation_time: ::std::option::Option<::std::string::String>,
     pub(crate) imds_support: ::std::option::Option<crate::types::ImdsSupportValues>,
+    pub(crate) source_instance_id: ::std::option::Option<::std::string::String>,
 }
 impl ImageBuilder {
     /// <p>The architecture of the image.</p>
@@ -480,17 +487,17 @@ impl ImageBuilder {
     pub fn get_ena_support(&self) -> &::std::option::Option<bool> {
         &self.ena_support
     }
-    /// <p>The hypervisor type of the image.</p>
+    /// <p>The hypervisor type of the image. Only <code>xen</code> is supported. <code>ovm</code> is not supported.</p>
     pub fn hypervisor(mut self, input: crate::types::HypervisorType) -> Self {
         self.hypervisor = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The hypervisor type of the image.</p>
+    /// <p>The hypervisor type of the image. Only <code>xen</code> is supported. <code>ovm</code> is not supported.</p>
     pub fn set_hypervisor(mut self, input: ::std::option::Option<crate::types::HypervisorType>) -> Self {
         self.hypervisor = input;
         self
     }
-    /// <p>The hypervisor type of the image.</p>
+    /// <p>The hypervisor type of the image. Only <code>xen</code> is supported. <code>ovm</code> is not supported.</p>
     pub fn get_hypervisor(&self) -> &::std::option::Option<crate::types::HypervisorType> {
         &self.hypervisor
     }
@@ -668,6 +675,20 @@ impl ImageBuilder {
     pub fn get_imds_support(&self) -> &::std::option::Option<crate::types::ImdsSupportValues> {
         &self.imds_support
     }
+    /// <p>The ID of the instance that the AMI was created from if the AMI was created using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">CreateImage</a>. This field only appears if the AMI was created using CreateImage.</p>
+    pub fn source_instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.source_instance_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the instance that the AMI was created from if the AMI was created using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">CreateImage</a>. This field only appears if the AMI was created using CreateImage.</p>
+    pub fn set_source_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.source_instance_id = input;
+        self
+    }
+    /// <p>The ID of the instance that the AMI was created from if the AMI was created using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">CreateImage</a>. This field only appears if the AMI was created using CreateImage.</p>
+    pub fn get_source_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_instance_id
+    }
     /// Consumes the builder and constructs a [`Image`](crate::types::Image).
     pub fn build(self) -> crate::types::Image {
         crate::types::Image {
@@ -701,6 +722,7 @@ impl ImageBuilder {
             tpm_support: self.tpm_support,
             deprecation_time: self.deprecation_time,
             imds_support: self.imds_support,
+            source_instance_id: self.source_instance_id,
         }
     }
 }

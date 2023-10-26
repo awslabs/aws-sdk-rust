@@ -61,7 +61,7 @@ pub(super) fn resolve_endpoint(
                 }
             }
             if (*use_fips) == (true) {
-                if (true) == (partition_result.supports_fips()) {
+                if (partition_result.supports_fips()) == (true) {
                     if (region) == ("us-gov-east-1") {
                         return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
                             .url("https://cloudtrail.us-gov-east-1.amazonaws.com".to_string())

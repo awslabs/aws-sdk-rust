@@ -22,7 +22,10 @@ impl SearchImageSetsInputBuilder {
 }
 /// Fluent builder constructing a request to `SearchImageSets`.
 ///
-/// <p>Search image sets based on defined input attributes.</p>
+/// <p>Search image sets based on defined input attributes.</p> <note>
+/// <p> <code>SearchImageSets</code> accepts a single search query parameter and returns a paginated response of all image sets that have the matching criteria. All range queries must be input as <code>(lowerBound, upperBound)</code>.</p>
+/// <p> <code>SearchImageSets</code> uses the <code>updatedAt</code> field for sorting in decreasing order from latest to oldest.</p>
+/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SearchImageSetsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

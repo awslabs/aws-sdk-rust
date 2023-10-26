@@ -3,14 +3,14 @@ pub fn ser_aws_elb_lb_cookie_stickiness_policy(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsElbLbCookieStickinessPolicy,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if input.cookie_expiration_period != 0 {
+    if let Some(var_1) = &input.cookie_expiration_period {
         object.key("CookieExpirationPeriod").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.cookie_expiration_period).into()),
+            ::aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if let Some(var_1) = &input.policy_name {
-        object.key("PolicyName").string(var_1.as_str());
+    if let Some(var_2) = &input.policy_name {
+        object.key("PolicyName").string(var_2.as_str());
     }
     Ok(())
 }

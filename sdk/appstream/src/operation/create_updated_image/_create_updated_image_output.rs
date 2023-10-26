@@ -6,7 +6,7 @@ pub struct CreateUpdatedImageOutput {
     /// <p>Describes an image.</p>
     pub image: ::std::option::Option<crate::types::Image>,
     /// <p>Indicates whether a new image can be created.</p>
-    pub can_update_image: bool,
+    pub can_update_image: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }
 impl CreateUpdatedImageOutput {
@@ -15,7 +15,7 @@ impl CreateUpdatedImageOutput {
         self.image.as_ref()
     }
     /// <p>Indicates whether a new image can be created.</p>
-    pub fn can_update_image(&self) -> bool {
+    pub fn can_update_image(&self) -> ::std::option::Option<bool> {
         self.can_update_image
     }
 }
@@ -81,7 +81,7 @@ impl CreateUpdatedImageOutputBuilder {
     pub fn build(self) -> crate::operation::create_updated_image::CreateUpdatedImageOutput {
         crate::operation::create_updated_image::CreateUpdatedImageOutput {
             image: self.image,
-            can_update_image: self.can_update_image.unwrap_or_default(),
+            can_update_image: self.can_update_image,
             _request_id: self._request_id,
         }
     }

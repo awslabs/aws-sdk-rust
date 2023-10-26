@@ -8,7 +8,7 @@ pub struct AwsKmsKeyDetails {
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>Indicates when the KMS key was created.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    pub creation_date: f64,
+    pub creation_date: ::std::option::Option<f64>,
     /// <p>The globally unique identifier for the KMS key.</p>
     pub key_id: ::std::option::Option<::std::string::String>,
     /// <p>The manager of the KMS key. KMS keys in your Amazon Web Services account are either customer managed or Amazon Web Services managed.</p>
@@ -30,7 +30,7 @@ pub struct AwsKmsKeyDetails {
     /// <p>A description of the KMS key.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Whether the key has key rotation enabled.</p>
-    pub key_rotation_status: bool,
+    pub key_rotation_status: ::std::option::Option<bool>,
 }
 impl AwsKmsKeyDetails {
     /// <p>The twelve-digit account ID of the Amazon Web Services account that owns the KMS key.</p>
@@ -39,7 +39,7 @@ impl AwsKmsKeyDetails {
     }
     /// <p>Indicates when the KMS key was created.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    pub fn creation_date(&self) -> f64 {
+    pub fn creation_date(&self) -> ::std::option::Option<f64> {
         self.creation_date
     }
     /// <p>The globally unique identifier for the KMS key.</p>
@@ -73,7 +73,7 @@ impl AwsKmsKeyDetails {
         self.description.as_deref()
     }
     /// <p>Whether the key has key rotation enabled.</p>
-    pub fn key_rotation_status(&self) -> bool {
+    pub fn key_rotation_status(&self) -> ::std::option::Option<bool> {
         self.key_rotation_status
     }
 }
@@ -247,13 +247,13 @@ impl AwsKmsKeyDetailsBuilder {
     pub fn build(self) -> crate::types::AwsKmsKeyDetails {
         crate::types::AwsKmsKeyDetails {
             aws_account_id: self.aws_account_id,
-            creation_date: self.creation_date.unwrap_or_default(),
+            creation_date: self.creation_date,
             key_id: self.key_id,
             key_manager: self.key_manager,
             key_state: self.key_state,
             origin: self.origin,
             description: self.description,
-            key_rotation_status: self.key_rotation_status.unwrap_or_default(),
+            key_rotation_status: self.key_rotation_status,
         }
     }
 }

@@ -17,7 +17,7 @@ pub struct ModifyEndpointAccessOutput {
     /// <p>The time (UTC) that the endpoint was created.</p>
     pub endpoint_create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The port number on which the cluster accepts incoming connections.</p>
-    pub port: i32,
+    pub port: ::std::option::Option<i32>,
     /// <p>The DNS address of the endpoint.</p>
     pub address: ::std::option::Option<::std::string::String>,
     /// <p>The security groups associated with the endpoint.</p>
@@ -52,7 +52,7 @@ impl ModifyEndpointAccessOutput {
         self.endpoint_create_time.as_ref()
     }
     /// <p>The port number on which the cluster accepts incoming connections.</p>
-    pub fn port(&self) -> i32 {
+    pub fn port(&self) -> ::std::option::Option<i32> {
         self.port
     }
     /// <p>The DNS address of the endpoint.</p>
@@ -261,7 +261,7 @@ impl ModifyEndpointAccessOutputBuilder {
             endpoint_status: self.endpoint_status,
             endpoint_name: self.endpoint_name,
             endpoint_create_time: self.endpoint_create_time,
-            port: self.port.unwrap_or_default(),
+            port: self.port,
             address: self.address,
             vpc_security_groups: self.vpc_security_groups,
             vpc_endpoint: self.vpc_endpoint,

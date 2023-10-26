@@ -53,7 +53,7 @@ pub struct DirectoryDescription {
     /// <p>Indicates if single sign-on is enabled for the directory. For more information, see <code>EnableSso</code> and <code>DisableSso</code>.</p>
     pub sso_enabled: bool,
     /// <p>The desired number of domain controllers in the directory if the directory is Microsoft AD.</p>
-    pub desired_number_of_domain_controllers: i32,
+    pub desired_number_of_domain_controllers: ::std::option::Option<i32>,
     /// <p>Describes the Managed Microsoft AD directory in the directory owner account.</p>
     pub owner_directory_description: ::std::option::Option<crate::types::OwnerDirectoryDescription>,
     /// <p>Lists the Regions where the directory has replicated.</p>
@@ -155,7 +155,7 @@ impl DirectoryDescription {
         self.sso_enabled
     }
     /// <p>The desired number of domain controllers in the directory if the directory is Microsoft AD.</p>
-    pub fn desired_number_of_domain_controllers(&self) -> i32 {
+    pub fn desired_number_of_domain_controllers(&self) -> ::std::option::Option<i32> {
         self.desired_number_of_domain_controllers
     }
     /// <p>Describes the Managed Microsoft AD directory in the directory owner account.</p>
@@ -649,7 +649,7 @@ impl DirectoryDescriptionBuilder {
             radius_status: self.radius_status,
             stage_reason: self.stage_reason,
             sso_enabled: self.sso_enabled.unwrap_or_default(),
-            desired_number_of_domain_controllers: self.desired_number_of_domain_controllers.unwrap_or_default(),
+            desired_number_of_domain_controllers: self.desired_number_of_domain_controllers,
             owner_directory_description: self.owner_directory_description,
             regions_info: self.regions_info,
             os_version: self.os_version,

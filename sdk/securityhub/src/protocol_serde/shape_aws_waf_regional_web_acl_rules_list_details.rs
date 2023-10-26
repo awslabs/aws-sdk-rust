@@ -18,17 +18,17 @@ pub fn ser_aws_waf_regional_web_acl_rules_list_details(
         crate::protocol_serde::shape_aws_waf_regional_web_acl_rules_list_override_action_details::ser_aws_waf_regional_web_acl_rules_list_override_action_details(&mut object_4, var_3)?;
         object_4.finish();
     }
-    if input.priority != 0 {
+    if let Some(var_5) = &input.priority {
         object.key("Priority").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.priority).into()),
+            ::aws_smithy_types::Number::NegInt((*var_5).into()),
         );
     }
-    if let Some(var_5) = &input.rule_id {
-        object.key("RuleId").string(var_5.as_str());
+    if let Some(var_6) = &input.rule_id {
+        object.key("RuleId").string(var_6.as_str());
     }
-    if let Some(var_6) = &input.r#type {
-        object.key("Type").string(var_6.as_str());
+    if let Some(var_7) = &input.r#type {
+        object.key("Type").string(var_7.as_str());
     }
     Ok(())
 }

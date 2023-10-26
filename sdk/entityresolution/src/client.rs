@@ -59,13 +59,13 @@ pub(crate) struct Handle {
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`CreateMatchingWorkflow`](crate::operation::create_matching_workflow) operation has
-/// a [`Client::create_matching_workflow`], function which returns a builder for that operation.
+/// For example, the [`CreateIdMappingWorkflow`](crate::operation::create_id_mapping_workflow) operation has
+/// a [`Client::create_id_mapping_workflow`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.create_matching_workflow()
+/// let result = client.create_id_mapping_workflow()
 ///     .workflow_name("example")
 ///     .send()
 ///     .await;
@@ -148,6 +148,8 @@ impl Client {
     }
 }
 
+mod create_id_mapping_workflow;
+
 mod create_matching_workflow;
 
 mod create_schema_mapping;
@@ -163,7 +165,7 @@ mod create_schema_mapping;
 /// # let client: aws_sdk_entityresolution::Client = unimplemented!();
 /// use ::http::header::{HeaderName, HeaderValue};
 ///
-/// let result = client.create_matching_workflow()
+/// let result = client.create_id_mapping_workflow()
 ///     .customize()
 ///     .await?
 ///     .mutate_request(|req| {
@@ -180,9 +182,15 @@ mod create_schema_mapping;
 /// ```
 pub mod customize;
 
+mod delete_id_mapping_workflow;
+
 mod delete_matching_workflow;
 
 mod delete_schema_mapping;
+
+mod get_id_mapping_job;
+
+mod get_id_mapping_workflow;
 
 mod get_match_id;
 
@@ -190,15 +198,25 @@ mod get_matching_job;
 
 mod get_matching_workflow;
 
+mod get_provider_service;
+
 mod get_schema_mapping;
+
+mod list_id_mapping_jobs;
+
+mod list_id_mapping_workflows;
 
 mod list_matching_jobs;
 
 mod list_matching_workflows;
 
+mod list_provider_services;
+
 mod list_schema_mappings;
 
 mod list_tags_for_resource;
+
+mod start_id_mapping_job;
 
 mod start_matching_job;
 
@@ -206,4 +224,8 @@ mod tag_resource;
 
 mod untag_resource;
 
+mod update_id_mapping_workflow;
+
 mod update_matching_workflow;
+
+mod update_schema_mapping;

@@ -7,17 +7,17 @@ pub struct PatchSummary {
     /// <p>The identifier of the compliance standard that was used to determine the patch compliance status.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The number of patches from the compliance standard that were installed successfully.</p>
-    pub installed_count: i32,
+    pub installed_count: ::std::option::Option<i32>,
     /// <p>The number of patches that are part of the compliance standard but are not installed. The count includes patches that failed to install.</p>
-    pub missing_count: i32,
+    pub missing_count: ::std::option::Option<i32>,
     /// <p>The number of patches from the compliance standard that failed to install.</p>
-    pub failed_count: i32,
+    pub failed_count: ::std::option::Option<i32>,
     /// <p>The number of installed patches that are not part of the compliance standard.</p>
-    pub installed_other_count: i32,
+    pub installed_other_count: ::std::option::Option<i32>,
     /// <p>The number of patches that are installed but are also on a list of patches that the customer rejected.</p>
-    pub installed_rejected_count: i32,
+    pub installed_rejected_count: ::std::option::Option<i32>,
     /// <p>The number of patches that were applied, but that require the instance to be rebooted in order to be marked as installed.</p>
-    pub installed_pending_reboot: i32,
+    pub installed_pending_reboot: ::std::option::Option<i32>,
     /// <p>Indicates when the operation started.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     pub operation_start_time: ::std::option::Option<::std::string::String>,
@@ -35,27 +35,27 @@ impl PatchSummary {
         self.id.as_deref()
     }
     /// <p>The number of patches from the compliance standard that were installed successfully.</p>
-    pub fn installed_count(&self) -> i32 {
+    pub fn installed_count(&self) -> ::std::option::Option<i32> {
         self.installed_count
     }
     /// <p>The number of patches that are part of the compliance standard but are not installed. The count includes patches that failed to install.</p>
-    pub fn missing_count(&self) -> i32 {
+    pub fn missing_count(&self) -> ::std::option::Option<i32> {
         self.missing_count
     }
     /// <p>The number of patches from the compliance standard that failed to install.</p>
-    pub fn failed_count(&self) -> i32 {
+    pub fn failed_count(&self) -> ::std::option::Option<i32> {
         self.failed_count
     }
     /// <p>The number of installed patches that are not part of the compliance standard.</p>
-    pub fn installed_other_count(&self) -> i32 {
+    pub fn installed_other_count(&self) -> ::std::option::Option<i32> {
         self.installed_other_count
     }
     /// <p>The number of patches that are installed but are also on a list of patches that the customer rejected.</p>
-    pub fn installed_rejected_count(&self) -> i32 {
+    pub fn installed_rejected_count(&self) -> ::std::option::Option<i32> {
         self.installed_rejected_count
     }
     /// <p>The number of patches that were applied, but that require the instance to be rebooted in order to be marked as installed.</p>
-    pub fn installed_pending_reboot(&self) -> i32 {
+    pub fn installed_pending_reboot(&self) -> ::std::option::Option<i32> {
         self.installed_pending_reboot
     }
     /// <p>Indicates when the operation started.</p>
@@ -265,12 +265,12 @@ impl PatchSummaryBuilder {
     pub fn build(self) -> crate::types::PatchSummary {
         crate::types::PatchSummary {
             id: self.id,
-            installed_count: self.installed_count.unwrap_or_default(),
-            missing_count: self.missing_count.unwrap_or_default(),
-            failed_count: self.failed_count.unwrap_or_default(),
-            installed_other_count: self.installed_other_count.unwrap_or_default(),
-            installed_rejected_count: self.installed_rejected_count.unwrap_or_default(),
-            installed_pending_reboot: self.installed_pending_reboot.unwrap_or_default(),
+            installed_count: self.installed_count,
+            missing_count: self.missing_count,
+            failed_count: self.failed_count,
+            installed_other_count: self.installed_other_count,
+            installed_rejected_count: self.installed_rejected_count,
+            installed_pending_reboot: self.installed_pending_reboot,
             operation_start_time: self.operation_start_time,
             operation_end_time: self.operation_end_time,
             reboot_option: self.reboot_option,

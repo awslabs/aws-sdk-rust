@@ -5,11 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsRdsDbClusterDetails {
     /// <p>For all database engines except Aurora, specifies the allocated storage size in gibibytes (GiB).</p>
-    pub allocated_storage: i32,
+    pub allocated_storage: ::std::option::Option<i32>,
     /// <p>A list of Availability Zones (AZs) where instances in the DB cluster can be created.</p>
     pub availability_zones: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The number of days for which automated backups are retained.</p>
-    pub backup_retention_period: i32,
+    pub backup_retention_period: ::std::option::Option<i32>,
     /// <p>The name of the database.</p>
     pub database_name: ::std::option::Option<::std::string::String>,
     /// <p>The current status of this DB cluster.</p>
@@ -21,7 +21,7 @@ pub struct AwsRdsDbClusterDetails {
     /// <p>A list of custom endpoints for the DB cluster.</p>
     pub custom_endpoints: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Whether the DB cluster has instances in multiple Availability Zones.</p>
-    pub multi_az: bool,
+    pub multi_az: ::std::option::Option<bool>,
     /// <p>The name of the database engine to use for this DB cluster. Valid values are as follows:</p>
     /// <ul>
     /// <li> <p> <code>aurora</code> </p> </li>
@@ -32,7 +32,7 @@ pub struct AwsRdsDbClusterDetails {
     /// <p>The version number of the database engine to use.</p>
     pub engine_version: ::std::option::Option<::std::string::String>,
     /// <p>The port number on which the DB instances in the DB cluster accept connections.</p>
-    pub port: i32,
+    pub port: ::std::option::Option<i32>,
     /// <p>The name of the master user for the DB cluster.</p>
     pub master_username: ::std::option::Option<::std::string::String>,
     /// <p>The range of time each day when automated backups are created, if automated backups are enabled.</p>
@@ -56,7 +56,7 @@ pub struct AwsRdsDbClusterDetails {
     /// <p>Specifies the identifier that Amazon Route 53 assigns when you create a hosted zone.</p>
     pub hosted_zone_id: ::std::option::Option<::std::string::String>,
     /// <p>Whether the DB cluster is encrypted.</p>
-    pub storage_encrypted: bool,
+    pub storage_encrypted: ::std::option::Option<bool>,
     /// <p>The ARN of the KMS master key that is used to encrypt the database instances in the DB cluster.</p>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the DB cluster. The identifier must be unique within each Amazon Web Services Region and is immutable.</p>
@@ -78,9 +78,9 @@ pub struct AwsRdsDbClusterDetails {
     /// </ul>
     pub engine_mode: ::std::option::Option<::std::string::String>,
     /// <p>Whether the DB cluster has deletion protection enabled.</p>
-    pub deletion_protection: bool,
+    pub deletion_protection: ::std::option::Option<bool>,
     /// <p>Whether the HTTP endpoint for an Aurora Serverless DB cluster is enabled.</p>
-    pub http_endpoint_enabled: bool,
+    pub http_endpoint_enabled: ::std::option::Option<bool>,
     /// <p>The status of the database activity stream. Valid values are as follows:</p>
     /// <ul>
     /// <li> <p> <code>started</code> </p> </li>
@@ -90,9 +90,9 @@ pub struct AwsRdsDbClusterDetails {
     /// </ul>
     pub activity_stream_status: ::std::option::Option<::std::string::String>,
     /// <p>Whether tags are copied from the DB cluster to snapshots of the DB cluster.</p>
-    pub copy_tags_to_snapshot: bool,
+    pub copy_tags_to_snapshot: ::std::option::Option<bool>,
     /// <p>Whether the DB cluster is a clone of a DB cluster owned by a different Amazon Web Services account.</p>
-    pub cross_account_clone: bool,
+    pub cross_account_clone: ::std::option::Option<bool>,
     /// <p>The Active Directory domain membership records that are associated with the DB cluster.</p>
     pub domain_memberships: ::std::option::Option<::std::vec::Vec<crate::types::AwsRdsDbDomainMembership>>,
     /// <p>The name of the DB cluster parameter group for the DB cluster.</p>
@@ -106,13 +106,13 @@ pub struct AwsRdsDbClusterDetails {
     /// <p>The list of instances that make up the DB cluster.</p>
     pub db_cluster_members: ::std::option::Option<::std::vec::Vec<crate::types::AwsRdsDbClusterMember>>,
     /// <p>Whether the mapping of IAM accounts to database accounts is enabled.</p>
-    pub iam_database_authentication_enabled: bool,
+    pub iam_database_authentication_enabled: ::std::option::Option<bool>,
     /// <p> Indicates if minor version upgrades are automatically applied to the cluster.</p>
-    pub auto_minor_version_upgrade: bool,
+    pub auto_minor_version_upgrade: ::std::option::Option<bool>,
 }
 impl AwsRdsDbClusterDetails {
     /// <p>For all database engines except Aurora, specifies the allocated storage size in gibibytes (GiB).</p>
-    pub fn allocated_storage(&self) -> i32 {
+    pub fn allocated_storage(&self) -> ::std::option::Option<i32> {
         self.allocated_storage
     }
     /// <p>A list of Availability Zones (AZs) where instances in the DB cluster can be created.</p>
@@ -120,7 +120,7 @@ impl AwsRdsDbClusterDetails {
         self.availability_zones.as_deref()
     }
     /// <p>The number of days for which automated backups are retained.</p>
-    pub fn backup_retention_period(&self) -> i32 {
+    pub fn backup_retention_period(&self) -> ::std::option::Option<i32> {
         self.backup_retention_period
     }
     /// <p>The name of the database.</p>
@@ -144,7 +144,7 @@ impl AwsRdsDbClusterDetails {
         self.custom_endpoints.as_deref()
     }
     /// <p>Whether the DB cluster has instances in multiple Availability Zones.</p>
-    pub fn multi_az(&self) -> bool {
+    pub fn multi_az(&self) -> ::std::option::Option<bool> {
         self.multi_az
     }
     /// <p>The name of the database engine to use for this DB cluster. Valid values are as follows:</p>
@@ -161,7 +161,7 @@ impl AwsRdsDbClusterDetails {
         self.engine_version.as_deref()
     }
     /// <p>The port number on which the DB instances in the DB cluster accept connections.</p>
-    pub fn port(&self) -> i32 {
+    pub fn port(&self) -> ::std::option::Option<i32> {
         self.port
     }
     /// <p>The name of the master user for the DB cluster.</p>
@@ -199,7 +199,7 @@ impl AwsRdsDbClusterDetails {
         self.hosted_zone_id.as_deref()
     }
     /// <p>Whether the DB cluster is encrypted.</p>
-    pub fn storage_encrypted(&self) -> bool {
+    pub fn storage_encrypted(&self) -> ::std::option::Option<bool> {
         self.storage_encrypted
     }
     /// <p>The ARN of the KMS master key that is used to encrypt the database instances in the DB cluster.</p>
@@ -235,11 +235,11 @@ impl AwsRdsDbClusterDetails {
         self.engine_mode.as_deref()
     }
     /// <p>Whether the DB cluster has deletion protection enabled.</p>
-    pub fn deletion_protection(&self) -> bool {
+    pub fn deletion_protection(&self) -> ::std::option::Option<bool> {
         self.deletion_protection
     }
     /// <p>Whether the HTTP endpoint for an Aurora Serverless DB cluster is enabled.</p>
-    pub fn http_endpoint_enabled(&self) -> bool {
+    pub fn http_endpoint_enabled(&self) -> ::std::option::Option<bool> {
         self.http_endpoint_enabled
     }
     /// <p>The status of the database activity stream. Valid values are as follows:</p>
@@ -253,11 +253,11 @@ impl AwsRdsDbClusterDetails {
         self.activity_stream_status.as_deref()
     }
     /// <p>Whether tags are copied from the DB cluster to snapshots of the DB cluster.</p>
-    pub fn copy_tags_to_snapshot(&self) -> bool {
+    pub fn copy_tags_to_snapshot(&self) -> ::std::option::Option<bool> {
         self.copy_tags_to_snapshot
     }
     /// <p>Whether the DB cluster is a clone of a DB cluster owned by a different Amazon Web Services account.</p>
-    pub fn cross_account_clone(&self) -> bool {
+    pub fn cross_account_clone(&self) -> ::std::option::Option<bool> {
         self.cross_account_clone
     }
     /// <p>The Active Directory domain membership records that are associated with the DB cluster.</p>
@@ -285,11 +285,11 @@ impl AwsRdsDbClusterDetails {
         self.db_cluster_members.as_deref()
     }
     /// <p>Whether the mapping of IAM accounts to database accounts is enabled.</p>
-    pub fn iam_database_authentication_enabled(&self) -> bool {
+    pub fn iam_database_authentication_enabled(&self) -> ::std::option::Option<bool> {
         self.iam_database_authentication_enabled
     }
     /// <p> Indicates if minor version upgrades are automatically applied to the cluster.</p>
-    pub fn auto_minor_version_upgrade(&self) -> bool {
+    pub fn auto_minor_version_upgrade(&self) -> ::std::option::Option<bool> {
         self.auto_minor_version_upgrade
     }
 }
@@ -1025,44 +1025,44 @@ impl AwsRdsDbClusterDetailsBuilder {
     /// Consumes the builder and constructs a [`AwsRdsDbClusterDetails`](crate::types::AwsRdsDbClusterDetails).
     pub fn build(self) -> crate::types::AwsRdsDbClusterDetails {
         crate::types::AwsRdsDbClusterDetails {
-            allocated_storage: self.allocated_storage.unwrap_or_default(),
+            allocated_storage: self.allocated_storage,
             availability_zones: self.availability_zones,
-            backup_retention_period: self.backup_retention_period.unwrap_or_default(),
+            backup_retention_period: self.backup_retention_period,
             database_name: self.database_name,
             status: self.status,
             endpoint: self.endpoint,
             reader_endpoint: self.reader_endpoint,
             custom_endpoints: self.custom_endpoints,
-            multi_az: self.multi_az.unwrap_or_default(),
+            multi_az: self.multi_az,
             engine: self.engine,
             engine_version: self.engine_version,
-            port: self.port.unwrap_or_default(),
+            port: self.port,
             master_username: self.master_username,
             preferred_backup_window: self.preferred_backup_window,
             preferred_maintenance_window: self.preferred_maintenance_window,
             read_replica_identifiers: self.read_replica_identifiers,
             vpc_security_groups: self.vpc_security_groups,
             hosted_zone_id: self.hosted_zone_id,
-            storage_encrypted: self.storage_encrypted.unwrap_or_default(),
+            storage_encrypted: self.storage_encrypted,
             kms_key_id: self.kms_key_id,
             db_cluster_resource_id: self.db_cluster_resource_id,
             associated_roles: self.associated_roles,
             cluster_create_time: self.cluster_create_time,
             enabled_cloud_watch_logs_exports: self.enabled_cloud_watch_logs_exports,
             engine_mode: self.engine_mode,
-            deletion_protection: self.deletion_protection.unwrap_or_default(),
-            http_endpoint_enabled: self.http_endpoint_enabled.unwrap_or_default(),
+            deletion_protection: self.deletion_protection,
+            http_endpoint_enabled: self.http_endpoint_enabled,
             activity_stream_status: self.activity_stream_status,
-            copy_tags_to_snapshot: self.copy_tags_to_snapshot.unwrap_or_default(),
-            cross_account_clone: self.cross_account_clone.unwrap_or_default(),
+            copy_tags_to_snapshot: self.copy_tags_to_snapshot,
+            cross_account_clone: self.cross_account_clone,
             domain_memberships: self.domain_memberships,
             db_cluster_parameter_group: self.db_cluster_parameter_group,
             db_subnet_group: self.db_subnet_group,
             db_cluster_option_group_memberships: self.db_cluster_option_group_memberships,
             db_cluster_identifier: self.db_cluster_identifier,
             db_cluster_members: self.db_cluster_members,
-            iam_database_authentication_enabled: self.iam_database_authentication_enabled.unwrap_or_default(),
-            auto_minor_version_upgrade: self.auto_minor_version_upgrade.unwrap_or_default(),
+            iam_database_authentication_enabled: self.iam_database_authentication_enabled,
+            auto_minor_version_upgrade: self.auto_minor_version_upgrade,
         }
     }
 }

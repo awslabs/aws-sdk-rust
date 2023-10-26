@@ -11,7 +11,7 @@ pub struct AwsCloudFrontDistributionViewerCertificate {
     /// <p>The source of the certificate identified by <code>Certificate</code>. Note that in CloudFront, this attribute is deprecated.</p>
     pub certificate_source: ::std::option::Option<::std::string::String>,
     /// <p>Whether the distribution uses the CloudFront domain name. If set to <code>false</code>, then you provide either <code>AcmCertificateArn</code> or <code>IamCertificateId</code>.</p>
-    pub cloud_front_default_certificate: bool,
+    pub cloud_front_default_certificate: ::std::option::Option<bool>,
     /// <p>The identifier of the IAM certificate. Used if the certificate is stored in IAM. If you provide <code>IamCertificateId</code>, then you also must provide <code>MinimumProtocolVersion</code> and <code>SslSupportMethod</code>.</p>
     pub iam_certificate_id: ::std::option::Option<::std::string::String>,
     /// <p>The security policy that CloudFront uses for HTTPS connections with viewers. If <code>SslSupportMethod</code> is <code>sni-only</code>, then <code>MinimumProtocolVersion</code> must be <code>TLSv1</code> or higher.</p>
@@ -33,7 +33,7 @@ impl AwsCloudFrontDistributionViewerCertificate {
         self.certificate_source.as_deref()
     }
     /// <p>Whether the distribution uses the CloudFront domain name. If set to <code>false</code>, then you provide either <code>AcmCertificateArn</code> or <code>IamCertificateId</code>.</p>
-    pub fn cloud_front_default_certificate(&self) -> bool {
+    pub fn cloud_front_default_certificate(&self) -> ::std::option::Option<bool> {
         self.cloud_front_default_certificate
     }
     /// <p>The identifier of the IAM certificate. Used if the certificate is stored in IAM. If you provide <code>IamCertificateId</code>, then you also must provide <code>MinimumProtocolVersion</code> and <code>SslSupportMethod</code>.</p>
@@ -173,7 +173,7 @@ impl AwsCloudFrontDistributionViewerCertificateBuilder {
             acm_certificate_arn: self.acm_certificate_arn,
             certificate: self.certificate,
             certificate_source: self.certificate_source,
-            cloud_front_default_certificate: self.cloud_front_default_certificate.unwrap_or_default(),
+            cloud_front_default_certificate: self.cloud_front_default_certificate,
             iam_certificate_id: self.iam_certificate_id,
             minimum_protocol_version: self.minimum_protocol_version,
             ssl_support_method: self.ssl_support_method,

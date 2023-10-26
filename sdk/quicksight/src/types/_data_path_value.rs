@@ -8,6 +8,8 @@ pub struct DataPathValue {
     pub field_id: ::std::option::Option<::std::string::String>,
     /// <p>The actual value of the field that needs to be sorted.</p>
     pub field_value: ::std::option::Option<::std::string::String>,
+    /// <p>The type configuration of the field.</p>
+    pub data_path_type: ::std::option::Option<crate::types::DataPathType>,
 }
 impl DataPathValue {
     /// <p>The field ID of the field that needs to be sorted.</p>
@@ -18,12 +20,17 @@ impl DataPathValue {
     pub fn field_value(&self) -> ::std::option::Option<&str> {
         self.field_value.as_deref()
     }
+    /// <p>The type configuration of the field.</p>
+    pub fn data_path_type(&self) -> ::std::option::Option<&crate::types::DataPathType> {
+        self.data_path_type.as_ref()
+    }
 }
 impl ::std::fmt::Debug for DataPathValue {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("DataPathValue");
         formatter.field("field_id", &self.field_id);
         formatter.field("field_value", &"*** Sensitive Data Redacted ***");
+        formatter.field("data_path_type", &self.data_path_type);
         formatter.finish()
     }
 }
@@ -40,6 +47,7 @@ impl DataPathValue {
 pub struct DataPathValueBuilder {
     pub(crate) field_id: ::std::option::Option<::std::string::String>,
     pub(crate) field_value: ::std::option::Option<::std::string::String>,
+    pub(crate) data_path_type: ::std::option::Option<crate::types::DataPathType>,
 }
 impl DataPathValueBuilder {
     /// <p>The field ID of the field that needs to be sorted.</p>
@@ -70,11 +78,26 @@ impl DataPathValueBuilder {
     pub fn get_field_value(&self) -> &::std::option::Option<::std::string::String> {
         &self.field_value
     }
+    /// <p>The type configuration of the field.</p>
+    pub fn data_path_type(mut self, input: crate::types::DataPathType) -> Self {
+        self.data_path_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The type configuration of the field.</p>
+    pub fn set_data_path_type(mut self, input: ::std::option::Option<crate::types::DataPathType>) -> Self {
+        self.data_path_type = input;
+        self
+    }
+    /// <p>The type configuration of the field.</p>
+    pub fn get_data_path_type(&self) -> &::std::option::Option<crate::types::DataPathType> {
+        &self.data_path_type
+    }
     /// Consumes the builder and constructs a [`DataPathValue`](crate::types::DataPathValue).
     pub fn build(self) -> crate::types::DataPathValue {
         crate::types::DataPathValue {
             field_id: self.field_id,
             field_value: self.field_value,
+            data_path_type: self.data_path_type,
         }
     }
 }
@@ -83,6 +106,7 @@ impl ::std::fmt::Debug for DataPathValueBuilder {
         let mut formatter = f.debug_struct("DataPathValueBuilder");
         formatter.field("field_id", &self.field_id);
         formatter.field("field_value", &"*** Sensitive Data Redacted ***");
+        formatter.field("data_path_type", &self.data_path_type);
         formatter.finish()
     }
 }

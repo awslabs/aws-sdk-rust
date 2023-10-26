@@ -5,11 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SlotMigration {
     /// <p>The percentage of the slot migration that is complete.</p>
-    pub progress_percentage: f64,
+    pub progress_percentage: ::std::option::Option<f64>,
 }
 impl SlotMigration {
     /// <p>The percentage of the slot migration that is complete.</p>
-    pub fn progress_percentage(&self) -> f64 {
+    pub fn progress_percentage(&self) -> ::std::option::Option<f64> {
         self.progress_percentage
     }
 }
@@ -44,7 +44,7 @@ impl SlotMigrationBuilder {
     /// Consumes the builder and constructs a [`SlotMigration`](crate::types::SlotMigration).
     pub fn build(self) -> crate::types::SlotMigration {
         crate::types::SlotMigration {
-            progress_percentage: self.progress_percentage.unwrap_or_default(),
+            progress_percentage: self.progress_percentage,
         }
     }
 }

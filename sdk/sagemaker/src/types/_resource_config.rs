@@ -15,14 +15,14 @@ pub struct ResourceConfig {
     /// </note>
     pub instance_type: ::std::option::Option<crate::types::TrainingInstanceType>,
     /// <p>The number of ML compute instances to use. For distributed training, provide a value greater than 1. </p>
-    pub instance_count: i32,
+    pub instance_count: ::std::option::Option<i32>,
     /// <p>The size of the ML storage volume that you want to provision. </p>
     /// <p>ML storage volumes store model artifacts and incremental states. Training algorithms might also use the ML storage volume for scratch space. If you want to store the training data in the ML storage volume, choose <code>File</code> as the <code>TrainingInputMode</code> in the algorithm specification. </p>
     /// <p>When using an ML instance with <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ssd-instance-store.html#nvme-ssd-volumes">NVMe SSD volumes</a>, SageMaker doesn't provision Amazon EBS General Purpose SSD (gp2) storage. Available storage is fixed to the NVMe-type instance's storage capacity. SageMaker configures storage paths for training datasets, checkpoints, model artifacts, and outputs to use the entire capacity of the instance storage. For example, ML instance families with the NVMe-type instance storage include <code>ml.p4d</code>, <code>ml.g4dn</code>, and <code>ml.g5</code>. </p>
     /// <p>When using an ML instance with the EBS-only storage option and without instance storage, you must define the size of EBS volume through <code>VolumeSizeInGB</code> in the <code>ResourceConfig</code> API. For example, ML instance families that use EBS volumes include <code>ml.c5</code> and <code>ml.p2</code>. </p>
     /// <p>To look up instance types and their instance storage types and volumes, see <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a>.</p>
     /// <p>To find the default local paths defined by the SageMaker training platform, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-train-storage.html">Amazon SageMaker Training Storage Folders for Training Datasets, Checkpoints, Model Artifacts, and Outputs</a>.</p>
-    pub volume_size_in_gb: i32,
+    pub volume_size_in_gb: ::std::option::Option<i32>,
     /// <p>The Amazon Web Services KMS key that SageMaker uses to encrypt data on the storage volume attached to the ML compute instance(s) that run the training job.</p> <note>
     /// <p>Certain Nitro-based instances include local storage, dependent on the instance type. Local storage volumes are encrypted using a hardware module on the instance. You can't request a <code>VolumeKmsKeyId</code> when using an instance type with local storage.</p>
     /// <p>For a list of instance types that support local instance storage, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html#instance-store-volumes">Instance Store Volumes</a>.</p>
@@ -53,7 +53,7 @@ impl ResourceConfig {
         self.instance_type.as_ref()
     }
     /// <p>The number of ML compute instances to use. For distributed training, provide a value greater than 1. </p>
-    pub fn instance_count(&self) -> i32 {
+    pub fn instance_count(&self) -> ::std::option::Option<i32> {
         self.instance_count
     }
     /// <p>The size of the ML storage volume that you want to provision. </p>
@@ -62,7 +62,7 @@ impl ResourceConfig {
     /// <p>When using an ML instance with the EBS-only storage option and without instance storage, you must define the size of EBS volume through <code>VolumeSizeInGB</code> in the <code>ResourceConfig</code> API. For example, ML instance families that use EBS volumes include <code>ml.c5</code> and <code>ml.p2</code>. </p>
     /// <p>To look up instance types and their instance storage types and volumes, see <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a>.</p>
     /// <p>To find the default local paths defined by the SageMaker training platform, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-train-storage.html">Amazon SageMaker Training Storage Folders for Training Datasets, Checkpoints, Model Artifacts, and Outputs</a>.</p>
-    pub fn volume_size_in_gb(&self) -> i32 {
+    pub fn volume_size_in_gb(&self) -> ::std::option::Option<i32> {
         self.volume_size_in_gb
     }
     /// <p>The Amazon Web Services KMS key that SageMaker uses to encrypt data on the storage volume attached to the ML compute instance(s) that run the training job.</p> <note>
@@ -266,8 +266,8 @@ impl ResourceConfigBuilder {
     pub fn build(self) -> crate::types::ResourceConfig {
         crate::types::ResourceConfig {
             instance_type: self.instance_type,
-            instance_count: self.instance_count.unwrap_or_default(),
-            volume_size_in_gb: self.volume_size_in_gb.unwrap_or_default(),
+            instance_count: self.instance_count,
+            volume_size_in_gb: self.volume_size_in_gb,
             volume_kms_key_id: self.volume_kms_key_id,
             instance_groups: self.instance_groups,
             keep_alive_period_in_seconds: self.keep_alive_period_in_seconds,

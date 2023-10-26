@@ -40,7 +40,7 @@ pub struct AlgorithmSpecification {
     /// </ul> </li>
     /// <li> <p>You specify at least one <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_MetricDefinition.html">MetricDefinition</a> </p> </li>
     /// </ul>
-    pub enable_sage_maker_metrics_time_series: bool,
+    pub enable_sage_maker_metrics_time_series: ::std::option::Option<bool>,
     /// <p>The <a href="https://docs.docker.com/engine/reference/builder/">entrypoint script for a Docker container</a> used to run a training job. This script takes precedence over the default train processing instructions. See <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-training-algo-dockerfile.html">How Amazon SageMaker Runs Your Training Image</a> for more information.</p>
     pub container_entrypoint: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The arguments for a container used to run a training job. See <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-training-algo-dockerfile.html">How Amazon SageMaker Runs Your Training Image</a> for additional information.</p>
@@ -92,7 +92,7 @@ impl AlgorithmSpecification {
     /// </ul> </li>
     /// <li> <p>You specify at least one <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_MetricDefinition.html">MetricDefinition</a> </p> </li>
     /// </ul>
-    pub fn enable_sage_maker_metrics_time_series(&self) -> bool {
+    pub fn enable_sage_maker_metrics_time_series(&self) -> ::std::option::Option<bool> {
         self.enable_sage_maker_metrics_time_series
     }
     /// <p>The <a href="https://docs.docker.com/engine/reference/builder/">entrypoint script for a Docker container</a> used to run a training job. This script takes precedence over the default train processing instructions. See <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-training-algo-dockerfile.html">How Amazon SageMaker Runs Your Training Image</a> for more information.</p>
@@ -344,7 +344,7 @@ impl AlgorithmSpecificationBuilder {
             algorithm_name: self.algorithm_name,
             training_input_mode: self.training_input_mode,
             metric_definitions: self.metric_definitions,
-            enable_sage_maker_metrics_time_series: self.enable_sage_maker_metrics_time_series.unwrap_or_default(),
+            enable_sage_maker_metrics_time_series: self.enable_sage_maker_metrics_time_series,
             container_entrypoint: self.container_entrypoint,
             container_arguments: self.container_arguments,
             training_image_config: self.training_image_config,

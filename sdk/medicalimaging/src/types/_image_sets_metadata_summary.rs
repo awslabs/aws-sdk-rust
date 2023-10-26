@@ -8,9 +8,9 @@ pub struct ImageSetsMetadataSummary {
     pub image_set_id: ::std::option::Option<::std::string::String>,
     /// <p>The image set version.</p>
     pub version: ::std::option::Option<i32>,
-    /// <p>The time an image set is created in AWS HealthImaging. Sample creation date is provided in <code>1985-04-12T23:20:50.52Z</code> format.</p>
+    /// <p>The time an image set is created. Sample creation date is provided in <code>1985-04-12T23:20:50.52Z</code> format.</p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The time when an image was last updated in AWS HealthImaging.</p>
+    /// <p>The time an image set was last updated.</p>
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The DICOM tags associated with the image set.</p>
     pub dicom_tags: ::std::option::Option<crate::types::DicomTags>,
@@ -24,11 +24,11 @@ impl ImageSetsMetadataSummary {
     pub fn version(&self) -> ::std::option::Option<i32> {
         self.version
     }
-    /// <p>The time an image set is created in AWS HealthImaging. Sample creation date is provided in <code>1985-04-12T23:20:50.52Z</code> format.</p>
+    /// <p>The time an image set is created. Sample creation date is provided in <code>1985-04-12T23:20:50.52Z</code> format.</p>
     pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
-    /// <p>The time when an image was last updated in AWS HealthImaging.</p>
+    /// <p>The time an image set was last updated.</p>
     pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
@@ -83,31 +83,31 @@ impl ImageSetsMetadataSummaryBuilder {
     pub fn get_version(&self) -> &::std::option::Option<i32> {
         &self.version
     }
-    /// <p>The time an image set is created in AWS HealthImaging. Sample creation date is provided in <code>1985-04-12T23:20:50.52Z</code> format.</p>
+    /// <p>The time an image set is created. Sample creation date is provided in <code>1985-04-12T23:20:50.52Z</code> format.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The time an image set is created in AWS HealthImaging. Sample creation date is provided in <code>1985-04-12T23:20:50.52Z</code> format.</p>
+    /// <p>The time an image set is created. Sample creation date is provided in <code>1985-04-12T23:20:50.52Z</code> format.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
-    /// <p>The time an image set is created in AWS HealthImaging. Sample creation date is provided in <code>1985-04-12T23:20:50.52Z</code> format.</p>
+    /// <p>The time an image set is created. Sample creation date is provided in <code>1985-04-12T23:20:50.52Z</code> format.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.created_at
     }
-    /// <p>The time when an image was last updated in AWS HealthImaging.</p>
+    /// <p>The time an image set was last updated.</p>
     pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.updated_at = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The time when an image was last updated in AWS HealthImaging.</p>
+    /// <p>The time an image set was last updated.</p>
     pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.updated_at = input;
         self
     }
-    /// <p>The time when an image was last updated in AWS HealthImaging.</p>
+    /// <p>The time an image set was last updated.</p>
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.updated_at
     }

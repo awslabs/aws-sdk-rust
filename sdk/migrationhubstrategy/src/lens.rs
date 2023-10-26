@@ -9,6 +9,16 @@ pub(crate) fn reflens_get_server_details_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_analyzable_servers_output_next_token(
+    input: &crate::operation::list_analyzable_servers::ListAnalyzableServersOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_application_components_output_next_token(
     input: &crate::operation::list_application_components::ListApplicationComponentsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -53,6 +63,16 @@ pub(crate) fn lens_get_server_details_output_associated_applications(
     input: crate::operation::get_server_details::GetServerDetailsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::AssociatedApplication>> {
     let input = match input.associated_applications {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_analyzable_servers_output_analyzable_servers(
+    input: crate::operation::list_analyzable_servers::ListAnalyzableServersOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::AnalyzableServerSummary>> {
+    let input = match input.analyzable_servers {
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,
     };

@@ -15,8 +15,8 @@ pub fn ser_port_probe_action(
         }
         array_2.finish();
     }
-    if input.blocked {
-        object.key("Blocked").boolean(input.blocked);
+    if let Some(var_5) = &input.blocked {
+        object.key("Blocked").boolean(*var_5);
     }
     Ok(())
 }

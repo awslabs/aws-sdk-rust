@@ -3,89 +3,89 @@ pub fn ser_aws_auto_scaling_launch_configuration_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsAutoScalingLaunchConfigurationDetails,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if input.associate_public_ip_address {
-        object.key("AssociatePublicIpAddress").boolean(input.associate_public_ip_address);
+    if let Some(var_1) = &input.associate_public_ip_address {
+        object.key("AssociatePublicIpAddress").boolean(*var_1);
     }
-    if let Some(var_1) = &input.block_device_mappings {
-        let mut array_2 = object.key("BlockDeviceMappings").start_array();
-        for item_3 in var_1 {
+    if let Some(var_2) = &input.block_device_mappings {
+        let mut array_3 = object.key("BlockDeviceMappings").start_array();
+        for item_4 in var_2 {
             {
                 #[allow(unused_mut)]
-                let mut object_4 = array_2.value().start_object();
-                crate::protocol_serde::shape_aws_auto_scaling_launch_configuration_block_device_mappings_details::ser_aws_auto_scaling_launch_configuration_block_device_mappings_details(&mut object_4, item_3)?;
-                object_4.finish();
+                let mut object_5 = array_3.value().start_object();
+                crate::protocol_serde::shape_aws_auto_scaling_launch_configuration_block_device_mappings_details::ser_aws_auto_scaling_launch_configuration_block_device_mappings_details(&mut object_5, item_4)?;
+                object_5.finish();
             }
         }
-        array_2.finish();
+        array_3.finish();
     }
-    if let Some(var_5) = &input.classic_link_vpc_id {
-        object.key("ClassicLinkVpcId").string(var_5.as_str());
+    if let Some(var_6) = &input.classic_link_vpc_id {
+        object.key("ClassicLinkVpcId").string(var_6.as_str());
     }
-    if let Some(var_6) = &input.classic_link_vpc_security_groups {
-        let mut array_7 = object.key("ClassicLinkVpcSecurityGroups").start_array();
-        for item_8 in var_6 {
+    if let Some(var_7) = &input.classic_link_vpc_security_groups {
+        let mut array_8 = object.key("ClassicLinkVpcSecurityGroups").start_array();
+        for item_9 in var_7 {
             {
-                array_7.value().string(item_8.as_str());
+                array_8.value().string(item_9.as_str());
             }
         }
-        array_7.finish();
+        array_8.finish();
     }
-    if let Some(var_9) = &input.created_time {
-        object.key("CreatedTime").string(var_9.as_str());
+    if let Some(var_10) = &input.created_time {
+        object.key("CreatedTime").string(var_10.as_str());
     }
-    if input.ebs_optimized {
-        object.key("EbsOptimized").boolean(input.ebs_optimized);
+    if let Some(var_11) = &input.ebs_optimized {
+        object.key("EbsOptimized").boolean(*var_11);
     }
-    if let Some(var_10) = &input.iam_instance_profile {
-        object.key("IamInstanceProfile").string(var_10.as_str());
+    if let Some(var_12) = &input.iam_instance_profile {
+        object.key("IamInstanceProfile").string(var_12.as_str());
     }
-    if let Some(var_11) = &input.image_id {
-        object.key("ImageId").string(var_11.as_str());
+    if let Some(var_13) = &input.image_id {
+        object.key("ImageId").string(var_13.as_str());
     }
-    if let Some(var_12) = &input.instance_monitoring {
+    if let Some(var_14) = &input.instance_monitoring {
         #[allow(unused_mut)]
-        let mut object_13 = object.key("InstanceMonitoring").start_object();
-        crate::protocol_serde::shape_aws_auto_scaling_launch_configuration_instance_monitoring_details::ser_aws_auto_scaling_launch_configuration_instance_monitoring_details(&mut object_13, var_12)?;
-        object_13.finish();
+        let mut object_15 = object.key("InstanceMonitoring").start_object();
+        crate::protocol_serde::shape_aws_auto_scaling_launch_configuration_instance_monitoring_details::ser_aws_auto_scaling_launch_configuration_instance_monitoring_details(&mut object_15, var_14)?;
+        object_15.finish();
     }
-    if let Some(var_14) = &input.instance_type {
-        object.key("InstanceType").string(var_14.as_str());
+    if let Some(var_16) = &input.instance_type {
+        object.key("InstanceType").string(var_16.as_str());
     }
-    if let Some(var_15) = &input.kernel_id {
-        object.key("KernelId").string(var_15.as_str());
+    if let Some(var_17) = &input.kernel_id {
+        object.key("KernelId").string(var_17.as_str());
     }
-    if let Some(var_16) = &input.key_name {
-        object.key("KeyName").string(var_16.as_str());
+    if let Some(var_18) = &input.key_name {
+        object.key("KeyName").string(var_18.as_str());
     }
-    if let Some(var_17) = &input.launch_configuration_name {
-        object.key("LaunchConfigurationName").string(var_17.as_str());
+    if let Some(var_19) = &input.launch_configuration_name {
+        object.key("LaunchConfigurationName").string(var_19.as_str());
     }
-    if let Some(var_18) = &input.placement_tenancy {
-        object.key("PlacementTenancy").string(var_18.as_str());
+    if let Some(var_20) = &input.placement_tenancy {
+        object.key("PlacementTenancy").string(var_20.as_str());
     }
-    if let Some(var_19) = &input.ramdisk_id {
-        object.key("RamdiskId").string(var_19.as_str());
+    if let Some(var_21) = &input.ramdisk_id {
+        object.key("RamdiskId").string(var_21.as_str());
     }
-    if let Some(var_20) = &input.security_groups {
-        let mut array_21 = object.key("SecurityGroups").start_array();
-        for item_22 in var_20 {
+    if let Some(var_22) = &input.security_groups {
+        let mut array_23 = object.key("SecurityGroups").start_array();
+        for item_24 in var_22 {
             {
-                array_21.value().string(item_22.as_str());
+                array_23.value().string(item_24.as_str());
             }
         }
-        array_21.finish();
+        array_23.finish();
     }
-    if let Some(var_23) = &input.spot_price {
-        object.key("SpotPrice").string(var_23.as_str());
+    if let Some(var_25) = &input.spot_price {
+        object.key("SpotPrice").string(var_25.as_str());
     }
-    if let Some(var_24) = &input.user_data {
-        object.key("UserData").string(var_24.as_str());
+    if let Some(var_26) = &input.user_data {
+        object.key("UserData").string(var_26.as_str());
     }
-    if let Some(var_25) = &input.metadata_options {
+    if let Some(var_27) = &input.metadata_options {
         #[allow(unused_mut)]
-        let mut object_26 = object.key("MetadataOptions").start_object();
-        crate::protocol_serde::shape_aws_auto_scaling_launch_configuration_metadata_options::ser_aws_auto_scaling_launch_configuration_metadata_options(&mut object_26, var_25)?;
-        object_26.finish();
+        let mut object_28 = object.key("MetadataOptions").start_object();
+        crate::protocol_serde::shape_aws_auto_scaling_launch_configuration_metadata_options::ser_aws_auto_scaling_launch_configuration_metadata_options(&mut object_28, var_27)?;
+        object_28.finish();
     }
     Ok(())
 }

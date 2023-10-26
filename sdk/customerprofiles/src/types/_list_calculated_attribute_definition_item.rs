@@ -2,7 +2,7 @@
 
 /// <p>The details of a single calculated attribute definition.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ListCalculatedAttributeDefinitionItem {
     /// <p>The unique name of the calculated attribute.</p>
     pub calculated_attribute_name: ::std::option::Option<::std::string::String>,
@@ -43,6 +43,18 @@ impl ListCalculatedAttributeDefinitionItem {
         self.tags.as_ref()
     }
 }
+impl ::std::fmt::Debug for ListCalculatedAttributeDefinitionItem {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("ListCalculatedAttributeDefinitionItem");
+        formatter.field("calculated_attribute_name", &self.calculated_attribute_name);
+        formatter.field("display_name", &self.display_name);
+        formatter.field("description", &"*** Sensitive Data Redacted ***");
+        formatter.field("created_at", &self.created_at);
+        formatter.field("last_updated_at", &self.last_updated_at);
+        formatter.field("tags", &self.tags);
+        formatter.finish()
+    }
+}
 impl ListCalculatedAttributeDefinitionItem {
     /// Creates a new builder-style object to manufacture [`ListCalculatedAttributeDefinitionItem`](crate::types::ListCalculatedAttributeDefinitionItem).
     pub fn builder() -> crate::types::builders::ListCalculatedAttributeDefinitionItemBuilder {
@@ -52,7 +64,7 @@ impl ListCalculatedAttributeDefinitionItem {
 
 /// A builder for [`ListCalculatedAttributeDefinitionItem`](crate::types::ListCalculatedAttributeDefinitionItem).
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct ListCalculatedAttributeDefinitionItemBuilder {
     pub(crate) calculated_attribute_name: ::std::option::Option<::std::string::String>,
     pub(crate) display_name: ::std::option::Option<::std::string::String>,
@@ -162,5 +174,17 @@ impl ListCalculatedAttributeDefinitionItemBuilder {
             last_updated_at: self.last_updated_at,
             tags: self.tags,
         }
+    }
+}
+impl ::std::fmt::Debug for ListCalculatedAttributeDefinitionItemBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("ListCalculatedAttributeDefinitionItemBuilder");
+        formatter.field("calculated_attribute_name", &self.calculated_attribute_name);
+        formatter.field("display_name", &self.display_name);
+        formatter.field("description", &"*** Sensitive Data Redacted ***");
+        formatter.field("created_at", &self.created_at);
+        formatter.field("last_updated_at", &self.last_updated_at);
+        formatter.field("tags", &self.tags);
+        formatter.finish()
     }
 }

@@ -11,7 +11,7 @@ pub struct RoutingProfileQueueConfigSummary {
     /// <p>The name of the queue.</p>
     pub queue_name: ::std::option::Option<::std::string::String>,
     /// <p>The order in which contacts are to be handled for the queue. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-routing-profiles-priority.html">Queues: priority and delay</a>.</p>
-    pub priority: i32,
+    pub priority: ::std::option::Option<i32>,
     /// <p>The delay, in seconds, that a contact should be in the queue before they are routed to an available agent. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-routing-profiles-priority.html">Queues: priority and delay</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
     pub delay: i32,
     /// <p>The channels this queue supports.</p>
@@ -31,7 +31,7 @@ impl RoutingProfileQueueConfigSummary {
         self.queue_name.as_deref()
     }
     /// <p>The order in which contacts are to be handled for the queue. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-routing-profiles-priority.html">Queues: priority and delay</a>.</p>
-    pub fn priority(&self) -> i32 {
+    pub fn priority(&self) -> ::std::option::Option<i32> {
         self.priority
     }
     /// <p>The delay, in seconds, that a contact should be in the queue before they are routed to an available agent. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-routing-profiles-priority.html">Queues: priority and delay</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
@@ -152,7 +152,7 @@ impl RoutingProfileQueueConfigSummaryBuilder {
             queue_id: self.queue_id,
             queue_arn: self.queue_arn,
             queue_name: self.queue_name,
-            priority: self.priority.unwrap_or_default(),
+            priority: self.priority,
             delay: self.delay.unwrap_or_default(),
             channel: self.channel,
         }

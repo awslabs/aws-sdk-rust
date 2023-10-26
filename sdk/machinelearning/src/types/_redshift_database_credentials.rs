@@ -2,7 +2,7 @@
 
 /// <p>Describes the database credentials for connecting to a database on an Amazon Redshift cluster.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RedshiftDatabaseCredentials {
     /// <p>A username to be used by Amazon Machine Learning (Amazon ML)to connect to a database on an Amazon Redshift cluster. The username should have sufficient permissions to execute the <code>RedshiftSelectSqlQuery</code> query. The username should be valid for an Amazon Redshift <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_CREATE_USER.html">USER</a>.</p>
     pub username: ::std::option::Option<::std::string::String>,
@@ -19,6 +19,14 @@ impl RedshiftDatabaseCredentials {
         self.password.as_deref()
     }
 }
+impl ::std::fmt::Debug for RedshiftDatabaseCredentials {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RedshiftDatabaseCredentials");
+        formatter.field("username", &self.username);
+        formatter.field("password", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl RedshiftDatabaseCredentials {
     /// Creates a new builder-style object to manufacture [`RedshiftDatabaseCredentials`](crate::types::RedshiftDatabaseCredentials).
     pub fn builder() -> crate::types::builders::RedshiftDatabaseCredentialsBuilder {
@@ -28,7 +36,7 @@ impl RedshiftDatabaseCredentials {
 
 /// A builder for [`RedshiftDatabaseCredentials`](crate::types::RedshiftDatabaseCredentials).
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct RedshiftDatabaseCredentialsBuilder {
     pub(crate) username: ::std::option::Option<::std::string::String>,
     pub(crate) password: ::std::option::Option<::std::string::String>,
@@ -68,5 +76,13 @@ impl RedshiftDatabaseCredentialsBuilder {
             username: self.username,
             password: self.password,
         }
+    }
+}
+impl ::std::fmt::Debug for RedshiftDatabaseCredentialsBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RedshiftDatabaseCredentialsBuilder");
+        formatter.field("username", &self.username);
+        formatter.field("password", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

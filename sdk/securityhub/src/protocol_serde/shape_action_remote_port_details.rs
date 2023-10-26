@@ -3,14 +3,14 @@ pub fn ser_action_remote_port_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ActionRemotePortDetails,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if input.port != 0 {
+    if let Some(var_1) = &input.port {
         object.key("Port").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.port).into()),
+            ::aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if let Some(var_1) = &input.port_name {
-        object.key("PortName").string(var_1.as_str());
+    if let Some(var_2) = &input.port_name {
+        object.key("PortName").string(var_2.as_str());
     }
     Ok(())
 }

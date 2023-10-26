@@ -7,7 +7,7 @@ pub struct AwsIamPolicyVersion {
     /// <p>The identifier of the policy version.</p>
     pub version_id: ::std::option::Option<::std::string::String>,
     /// <p>Whether the version is the default version.</p>
-    pub is_default_version: bool,
+    pub is_default_version: ::std::option::Option<bool>,
     /// <p>Indicates when the version was created.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     pub create_date: ::std::option::Option<::std::string::String>,
@@ -18,7 +18,7 @@ impl AwsIamPolicyVersion {
         self.version_id.as_deref()
     }
     /// <p>Whether the version is the default version.</p>
-    pub fn is_default_version(&self) -> bool {
+    pub fn is_default_version(&self) -> ::std::option::Option<bool> {
         self.is_default_version
     }
     /// <p>Indicates when the version was created.</p>
@@ -92,7 +92,7 @@ impl AwsIamPolicyVersionBuilder {
     pub fn build(self) -> crate::types::AwsIamPolicyVersion {
         crate::types::AwsIamPolicyVersion {
             version_id: self.version_id,
-            is_default_version: self.is_default_version.unwrap_or_default(),
+            is_default_version: self.is_default_version,
             create_date: self.create_date,
         }
     }

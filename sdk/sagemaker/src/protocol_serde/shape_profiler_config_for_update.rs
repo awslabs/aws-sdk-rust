@@ -22,8 +22,8 @@ pub fn ser_profiler_config_for_update(
         }
         object_4.finish();
     }
-    if input.disable_profiler {
-        object.key("DisableProfiler").boolean(input.disable_profiler);
+    if let Some(var_7) = &input.disable_profiler {
+        object.key("DisableProfiler").boolean(*var_7);
     }
     Ok(())
 }

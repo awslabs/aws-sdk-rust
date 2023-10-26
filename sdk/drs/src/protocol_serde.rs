@@ -273,6 +273,8 @@ pub(crate) mod shape_launch_configuration_template;
 
 pub(crate) mod shape_launch_configuration_templates;
 
+pub(crate) mod shape_launch_into_instance_properties;
+
 pub(crate) mod shape_licensing;
 
 pub(crate) mod shape_life_cycle;

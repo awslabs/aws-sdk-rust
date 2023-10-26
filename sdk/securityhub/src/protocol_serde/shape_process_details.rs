@@ -9,23 +9,23 @@ pub fn ser_process_details(
     if let Some(var_2) = &input.path {
         object.key("Path").string(var_2.as_str());
     }
-    if input.pid != 0 {
+    if let Some(var_3) = &input.pid {
         object.key("Pid").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.pid).into()),
+            ::aws_smithy_types::Number::NegInt((*var_3).into()),
         );
     }
-    if input.parent_pid != 0 {
+    if let Some(var_4) = &input.parent_pid {
         object.key("ParentPid").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.parent_pid).into()),
+            ::aws_smithy_types::Number::NegInt((*var_4).into()),
         );
     }
-    if let Some(var_3) = &input.launched_at {
-        object.key("LaunchedAt").string(var_3.as_str());
+    if let Some(var_5) = &input.launched_at {
+        object.key("LaunchedAt").string(var_5.as_str());
     }
-    if let Some(var_4) = &input.terminated_at {
-        object.key("TerminatedAt").string(var_4.as_str());
+    if let Some(var_6) = &input.terminated_at {
+        object.key("TerminatedAt").string(var_6.as_str());
     }
     Ok(())
 }

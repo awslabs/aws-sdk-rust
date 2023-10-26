@@ -5,13 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsOpenSearchServiceDomainEncryptionAtRestOptionsDetails {
     /// <p>Whether encryption at rest is enabled.</p>
-    pub enabled: bool,
+    pub enabled: ::std::option::Option<bool>,
     /// <p>The KMS key ID.</p>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
 }
 impl AwsOpenSearchServiceDomainEncryptionAtRestOptionsDetails {
     /// <p>Whether encryption at rest is enabled.</p>
-    pub fn enabled(&self) -> bool {
+    pub fn enabled(&self) -> ::std::option::Option<bool> {
         self.enabled
     }
     /// <p>The KMS key ID.</p>
@@ -65,7 +65,7 @@ impl AwsOpenSearchServiceDomainEncryptionAtRestOptionsDetailsBuilder {
     /// Consumes the builder and constructs a [`AwsOpenSearchServiceDomainEncryptionAtRestOptionsDetails`](crate::types::AwsOpenSearchServiceDomainEncryptionAtRestOptionsDetails).
     pub fn build(self) -> crate::types::AwsOpenSearchServiceDomainEncryptionAtRestOptionsDetails {
         crate::types::AwsOpenSearchServiceDomainEncryptionAtRestOptionsDetails {
-            enabled: self.enabled.unwrap_or_default(),
+            enabled: self.enabled,
             kms_key_id: self.kms_key_id,
         }
     }

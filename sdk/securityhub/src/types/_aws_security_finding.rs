@@ -46,10 +46,10 @@ pub struct AwsSecurityFinding {
     pub severity: ::std::option::Option<crate::types::Severity>,
     /// <p>A finding's confidence. Confidence is defined as the likelihood that a finding accurately identifies the behavior or issue that it was intended to identify.</p>
     /// <p>Confidence is scored on a 0-100 basis using a ratio scale, where 0 means zero percent confidence and 100 means 100 percent confidence.</p>
-    pub confidence: i32,
+    pub confidence: ::std::option::Option<i32>,
     /// <p>The level of importance assigned to the resources associated with the finding.</p>
     /// <p>A score of 0 means that the underlying resources have no criticality, and a score of 100 is reserved for the most critical resources.</p>
-    pub criticality: i32,
+    pub criticality: ::std::option::Option<i32>,
     /// <p>A finding's title.</p> <note>
     /// <p>In this release, <code>Title</code> is a required property.</p>
     /// </note>
@@ -104,7 +104,7 @@ pub struct AwsSecurityFinding {
     /// <p>In a <code>BatchImportFindings</code> request, finding providers use <code>FindingProviderFields</code> to provide and update their own values for confidence, criticality, related findings, severity, and types.</p>
     pub finding_provider_fields: ::std::option::Option<crate::types::FindingProviderFields>,
     /// <p>Indicates whether the finding is a sample finding.</p>
-    pub sample: bool,
+    pub sample: ::std::option::Option<bool>,
     /// <p>Provides metadata for the Amazon CodeGuru detector associated with a finding. This field pertains to findings that relate to Lambda functions. Amazon Inspector identifies policy violations and vulnerabilities in Lambda function code based on internal detectors developed in collaboration with Amazon CodeGuru. Security Hub receives those findings. </p>
     pub generator_details: ::std::option::Option<crate::types::GeneratorDetails>,
 }
@@ -177,12 +177,12 @@ impl AwsSecurityFinding {
     }
     /// <p>A finding's confidence. Confidence is defined as the likelihood that a finding accurately identifies the behavior or issue that it was intended to identify.</p>
     /// <p>Confidence is scored on a 0-100 basis using a ratio scale, where 0 means zero percent confidence and 100 means 100 percent confidence.</p>
-    pub fn confidence(&self) -> i32 {
+    pub fn confidence(&self) -> ::std::option::Option<i32> {
         self.confidence
     }
     /// <p>The level of importance assigned to the resources associated with the finding.</p>
     /// <p>A score of 0 means that the underlying resources have no criticality, and a score of 100 is reserved for the most critical resources.</p>
-    pub fn criticality(&self) -> i32 {
+    pub fn criticality(&self) -> ::std::option::Option<i32> {
         self.criticality
     }
     /// <p>A finding's title.</p> <note>
@@ -287,7 +287,7 @@ impl AwsSecurityFinding {
         self.finding_provider_fields.as_ref()
     }
     /// <p>Indicates whether the finding is a sample finding.</p>
-    pub fn sample(&self) -> bool {
+    pub fn sample(&self) -> ::std::option::Option<bool> {
         self.sample
     }
     /// <p>Provides metadata for the Amazon CodeGuru detector associated with a finding. This field pertains to findings that relate to Lambda functions. Amazon Inspector identifies policy violations and vulnerabilities in Lambda function code based on internal detectors developed in collaboration with Amazon CodeGuru. Security Hub receives those findings. </p>
@@ -1080,8 +1080,8 @@ impl AwsSecurityFindingBuilder {
             created_at: self.created_at,
             updated_at: self.updated_at,
             severity: self.severity,
-            confidence: self.confidence.unwrap_or_default(),
-            criticality: self.criticality.unwrap_or_default(),
+            confidence: self.confidence,
+            criticality: self.criticality,
             title: self.title,
             description: self.description,
             remediation: self.remediation,
@@ -1106,7 +1106,7 @@ impl AwsSecurityFindingBuilder {
             patch_summary: self.patch_summary,
             action: self.action,
             finding_provider_fields: self.finding_provider_fields,
-            sample: self.sample.unwrap_or_default(),
+            sample: self.sample,
             generator_details: self.generator_details,
         }
     }

@@ -7,7 +7,7 @@ pub struct PrestoParameters {
     /// <p>Host.</p>
     pub host: ::std::option::Option<::std::string::String>,
     /// <p>Port.</p>
-    pub port: i32,
+    pub port: ::std::option::Option<i32>,
     /// <p>Catalog.</p>
     pub catalog: ::std::option::Option<::std::string::String>,
 }
@@ -17,7 +17,7 @@ impl PrestoParameters {
         self.host.as_deref()
     }
     /// <p>Port.</p>
-    pub fn port(&self) -> i32 {
+    pub fn port(&self) -> ::std::option::Option<i32> {
         self.port
     }
     /// <p>Catalog.</p>
@@ -87,7 +87,7 @@ impl PrestoParametersBuilder {
     pub fn build(self) -> crate::types::PrestoParameters {
         crate::types::PrestoParameters {
             host: self.host,
-            port: self.port.unwrap_or_default(),
+            port: self.port,
             catalog: self.catalog,
         }
     }

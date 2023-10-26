@@ -55,6 +55,9 @@ pub mod delete_inventory;
 /// Types for the `DeleteMaintenanceWindow` operation.
 pub mod delete_maintenance_window;
 
+/// Types for the `DeleteOpsItem` operation.
+pub mod delete_ops_item;
+
 /// Types for the `DeleteOpsMetadata` operation.
 pub mod delete_ops_metadata;
 

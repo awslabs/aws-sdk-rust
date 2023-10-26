@@ -53,6 +53,14 @@ where
                             builder = builder
                                 .set_artifact_revisions(crate::protocol_serde::shape_artifact_revision_list::de_artifact_revision_list(tokens)?);
                         }
+                        "trigger" => {
+                            builder = builder.set_trigger(crate::protocol_serde::shape_execution_trigger::de_execution_trigger(tokens)?);
+                        }
+                        "variables" => {
+                            builder = builder.set_variables(
+                                crate::protocol_serde::shape_resolved_pipeline_variable_list::de_resolved_pipeline_variable_list(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

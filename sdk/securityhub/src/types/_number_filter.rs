@@ -5,23 +5,23 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NumberFilter {
     /// <p>The greater-than-equal condition to be applied to a single field when querying for findings. </p>
-    pub gte: f64,
+    pub gte: ::std::option::Option<f64>,
     /// <p>The less-than-equal condition to be applied to a single field when querying for findings. </p>
-    pub lte: f64,
+    pub lte: ::std::option::Option<f64>,
     /// <p>The equal-to condition to be applied to a single field when querying for findings.</p>
-    pub eq: f64,
+    pub eq: ::std::option::Option<f64>,
 }
 impl NumberFilter {
     /// <p>The greater-than-equal condition to be applied to a single field when querying for findings. </p>
-    pub fn gte(&self) -> f64 {
+    pub fn gte(&self) -> ::std::option::Option<f64> {
         self.gte
     }
     /// <p>The less-than-equal condition to be applied to a single field when querying for findings. </p>
-    pub fn lte(&self) -> f64 {
+    pub fn lte(&self) -> ::std::option::Option<f64> {
         self.lte
     }
     /// <p>The equal-to condition to be applied to a single field when querying for findings.</p>
-    pub fn eq(&self) -> f64 {
+    pub fn eq(&self) -> ::std::option::Option<f64> {
         self.eq
     }
 }
@@ -86,9 +86,9 @@ impl NumberFilterBuilder {
     /// Consumes the builder and constructs a [`NumberFilter`](crate::types::NumberFilter).
     pub fn build(self) -> crate::types::NumberFilter {
         crate::types::NumberFilter {
-            gte: self.gte.unwrap_or_default(),
-            lte: self.lte.unwrap_or_default(),
-            eq: self.eq.unwrap_or_default(),
+            gte: self.gte,
+            lte: self.lte,
+            eq: self.eq,
         }
     }
 }

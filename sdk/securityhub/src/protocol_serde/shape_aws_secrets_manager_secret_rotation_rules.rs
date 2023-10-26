@@ -3,10 +3,10 @@ pub fn ser_aws_secrets_manager_secret_rotation_rules(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsSecretsManagerSecretRotationRules,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if input.automatically_after_days != 0 {
+    if let Some(var_1) = &input.automatically_after_days {
         object.key("AutomaticallyAfterDays").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.automatically_after_days).into()),
+            ::aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
     Ok(())

@@ -3,16 +3,16 @@ pub fn ser_aws_ec2_launch_template_data_cpu_options_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsEc2LaunchTemplateDataCpuOptionsDetails,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if input.core_count != 0 {
+    if let Some(var_1) = &input.core_count {
         object.key("CoreCount").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.core_count).into()),
+            ::aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if input.threads_per_core != 0 {
+    if let Some(var_2) = &input.threads_per_core {
         object.key("ThreadsPerCore").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.threads_per_core).into()),
+            ::aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
     Ok(())

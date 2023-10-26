@@ -75,6 +75,8 @@ pub use crate::types::_source_code_repository::SourceCodeRepositoryBuilder;
 
 pub use crate::types::_database_config_detail::DatabaseConfigDetailBuilder;
 
+pub use crate::types::_analyzable_server_summary::AnalyzableServerSummaryBuilder;
+
 pub use crate::types::_server_strategy::ServerStrategyBuilder;
 
 pub use crate::types::_associated_application::AssociatedApplicationBuilder;

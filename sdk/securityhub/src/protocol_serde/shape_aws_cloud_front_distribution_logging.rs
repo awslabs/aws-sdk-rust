@@ -6,14 +6,14 @@ pub fn ser_aws_cloud_front_distribution_logging(
     if let Some(var_1) = &input.bucket {
         object.key("Bucket").string(var_1.as_str());
     }
-    if input.enabled {
-        object.key("Enabled").boolean(input.enabled);
+    if let Some(var_2) = &input.enabled {
+        object.key("Enabled").boolean(*var_2);
     }
-    if input.include_cookies {
-        object.key("IncludeCookies").boolean(input.include_cookies);
+    if let Some(var_3) = &input.include_cookies {
+        object.key("IncludeCookies").boolean(*var_3);
     }
-    if let Some(var_2) = &input.prefix {
-        object.key("Prefix").string(var_2.as_str());
+    if let Some(var_4) = &input.prefix {
+        object.key("Prefix").string(var_4.as_str());
     }
     Ok(())
 }

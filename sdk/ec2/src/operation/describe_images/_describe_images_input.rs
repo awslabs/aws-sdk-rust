@@ -37,6 +37,7 @@ pub struct DescribeImagesInput {
     /// <li> <p> <code>ramdisk-id</code> - The RAM disk ID.</p> </li>
     /// <li> <p> <code>root-device-name</code> - The device name of the root device volume (for example, <code>/dev/sda1</code>).</p> </li>
     /// <li> <p> <code>root-device-type</code> - The type of the root device volume (<code>ebs</code> | <code>instance-store</code>).</p> </li>
+    /// <li> <p> <code>source-instance-id</code> - The ID of the instance that the AMI was created from if the AMI was created using CreateImage. This filter is applicable only if the AMI was created using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">CreateImage</a>.</p> </li>
     /// <li> <p> <code>state</code> - The state of the image (<code>available</code> | <code>pending</code> | <code>failed</code>).</p> </li>
     /// <li> <p> <code>state-reason-code</code> - The reason code for the state change.</p> </li>
     /// <li> <p> <code>state-reason-message</code> - The message for the state change.</p> </li>
@@ -62,6 +63,9 @@ pub struct DescribeImagesInput {
     /// <p>If you are the AMI owner, all deprecated AMIs appear in the response regardless of what you specify for this parameter.</p>
     /// </note>
     pub include_deprecated: ::std::option::Option<bool>,
+    /// <p>Specifies whether to include disabled AMIs.</p>
+    /// <p>Default: No disabled AMIs are included in the response.</p>
+    pub include_disabled: ::std::option::Option<bool>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
@@ -106,6 +110,7 @@ impl DescribeImagesInput {
     /// <li> <p> <code>ramdisk-id</code> - The RAM disk ID.</p> </li>
     /// <li> <p> <code>root-device-name</code> - The device name of the root device volume (for example, <code>/dev/sda1</code>).</p> </li>
     /// <li> <p> <code>root-device-type</code> - The type of the root device volume (<code>ebs</code> | <code>instance-store</code>).</p> </li>
+    /// <li> <p> <code>source-instance-id</code> - The ID of the instance that the AMI was created from if the AMI was created using CreateImage. This filter is applicable only if the AMI was created using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">CreateImage</a>.</p> </li>
     /// <li> <p> <code>state</code> - The state of the image (<code>available</code> | <code>pending</code> | <code>failed</code>).</p> </li>
     /// <li> <p> <code>state-reason-code</code> - The reason code for the state change.</p> </li>
     /// <li> <p> <code>state-reason-message</code> - The message for the state change.</p> </li>
@@ -139,6 +144,11 @@ impl DescribeImagesInput {
     pub fn include_deprecated(&self) -> ::std::option::Option<bool> {
         self.include_deprecated
     }
+    /// <p>Specifies whether to include disabled AMIs.</p>
+    /// <p>Default: No disabled AMIs are included in the response.</p>
+    pub fn include_disabled(&self) -> ::std::option::Option<bool> {
+        self.include_disabled
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
         self.dry_run
@@ -168,6 +178,7 @@ pub struct DescribeImagesInputBuilder {
     pub(crate) image_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) owners: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) include_deprecated: ::std::option::Option<bool>,
+    pub(crate) include_disabled: ::std::option::Option<bool>,
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -239,6 +250,7 @@ impl DescribeImagesInputBuilder {
     /// <li> <p> <code>ramdisk-id</code> - The RAM disk ID.</p> </li>
     /// <li> <p> <code>root-device-name</code> - The device name of the root device volume (for example, <code>/dev/sda1</code>).</p> </li>
     /// <li> <p> <code>root-device-type</code> - The type of the root device volume (<code>ebs</code> | <code>instance-store</code>).</p> </li>
+    /// <li> <p> <code>source-instance-id</code> - The ID of the instance that the AMI was created from if the AMI was created using CreateImage. This filter is applicable only if the AMI was created using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">CreateImage</a>.</p> </li>
     /// <li> <p> <code>state</code> - The state of the image (<code>available</code> | <code>pending</code> | <code>failed</code>).</p> </li>
     /// <li> <p> <code>state-reason-code</code> - The reason code for the state change.</p> </li>
     /// <li> <p> <code>state-reason-message</code> - The message for the state change.</p> </li>
@@ -286,6 +298,7 @@ impl DescribeImagesInputBuilder {
     /// <li> <p> <code>ramdisk-id</code> - The RAM disk ID.</p> </li>
     /// <li> <p> <code>root-device-name</code> - The device name of the root device volume (for example, <code>/dev/sda1</code>).</p> </li>
     /// <li> <p> <code>root-device-type</code> - The type of the root device volume (<code>ebs</code> | <code>instance-store</code>).</p> </li>
+    /// <li> <p> <code>source-instance-id</code> - The ID of the instance that the AMI was created from if the AMI was created using CreateImage. This filter is applicable only if the AMI was created using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">CreateImage</a>.</p> </li>
     /// <li> <p> <code>state</code> - The state of the image (<code>available</code> | <code>pending</code> | <code>failed</code>).</p> </li>
     /// <li> <p> <code>state-reason-code</code> - The reason code for the state change.</p> </li>
     /// <li> <p> <code>state-reason-message</code> - The message for the state change.</p> </li>
@@ -331,6 +344,7 @@ impl DescribeImagesInputBuilder {
     /// <li> <p> <code>ramdisk-id</code> - The RAM disk ID.</p> </li>
     /// <li> <p> <code>root-device-name</code> - The device name of the root device volume (for example, <code>/dev/sda1</code>).</p> </li>
     /// <li> <p> <code>root-device-type</code> - The type of the root device volume (<code>ebs</code> | <code>instance-store</code>).</p> </li>
+    /// <li> <p> <code>source-instance-id</code> - The ID of the instance that the AMI was created from if the AMI was created using CreateImage. This filter is applicable only if the AMI was created using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">CreateImage</a>.</p> </li>
     /// <li> <p> <code>state</code> - The state of the image (<code>available</code> | <code>pending</code> | <code>failed</code>).</p> </li>
     /// <li> <p> <code>state-reason-code</code> - The reason code for the state change.</p> </li>
     /// <li> <p> <code>state-reason-message</code> - The message for the state change.</p> </li>
@@ -414,6 +428,23 @@ impl DescribeImagesInputBuilder {
     pub fn get_include_deprecated(&self) -> &::std::option::Option<bool> {
         &self.include_deprecated
     }
+    /// <p>Specifies whether to include disabled AMIs.</p>
+    /// <p>Default: No disabled AMIs are included in the response.</p>
+    pub fn include_disabled(mut self, input: bool) -> Self {
+        self.include_disabled = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether to include disabled AMIs.</p>
+    /// <p>Default: No disabled AMIs are included in the response.</p>
+    pub fn set_include_disabled(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.include_disabled = input;
+        self
+    }
+    /// <p>Specifies whether to include disabled AMIs.</p>
+    /// <p>Default: No disabled AMIs are included in the response.</p>
+    pub fn get_include_disabled(&self) -> &::std::option::Option<bool> {
+        &self.include_disabled
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.dry_run = ::std::option::Option::Some(input);
@@ -466,6 +497,7 @@ impl DescribeImagesInputBuilder {
             image_ids: self.image_ids,
             owners: self.owners,
             include_deprecated: self.include_deprecated,
+            include_disabled: self.include_disabled,
             dry_run: self.dry_run,
             max_results: self.max_results,
             next_token: self.next_token,

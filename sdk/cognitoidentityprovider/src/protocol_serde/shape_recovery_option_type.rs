@@ -3,14 +3,14 @@ pub fn ser_recovery_option_type(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RecoveryOptionType,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    {
+    if let Some(var_1) = &input.priority {
         object.key("Priority").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.priority).into()),
+            ::aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if let Some(var_1) = &input.name {
-        object.key("Name").string(var_1.as_str());
+    if let Some(var_2) = &input.name {
+        object.key("Name").string(var_2.as_str());
     }
     Ok(())
 }

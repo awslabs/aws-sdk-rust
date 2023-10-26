@@ -27,17 +27,17 @@ pub fn ser_aws_waf_web_acl_rule(
         crate::protocol_serde::shape_waf_override_action::ser_waf_override_action(&mut object_8, var_7)?;
         object_8.finish();
     }
-    if input.priority != 0 {
+    if let Some(var_9) = &input.priority {
         object.key("Priority").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.priority).into()),
+            ::aws_smithy_types::Number::NegInt((*var_9).into()),
         );
     }
-    if let Some(var_9) = &input.rule_id {
-        object.key("RuleId").string(var_9.as_str());
+    if let Some(var_10) = &input.rule_id {
+        object.key("RuleId").string(var_10.as_str());
     }
-    if let Some(var_10) = &input.r#type {
-        object.key("Type").string(var_10.as_str());
+    if let Some(var_11) = &input.r#type {
+        object.key("Type").string(var_11.as_str());
     }
     Ok(())
 }

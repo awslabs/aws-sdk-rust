@@ -180,6 +180,8 @@ pub enum Error {
     OpsItemAccessDeniedException(crate::types::error::OpsItemAccessDeniedException),
     /// <p>The OpsItem already exists.</p>
     OpsItemAlreadyExistsException(crate::types::error::OpsItemAlreadyExistsException),
+    /// <p>The specified OpsItem is in the process of being deleted.</p>
+    OpsItemConflictException(crate::types::error::OpsItemConflictException),
     /// <p>A specified parameter argument isn't valid. Verify the available arguments and try again.</p>
     OpsItemInvalidParameterException(crate::types::error::OpsItemInvalidParameterException),
     /// <p>The request caused OpsItems to exceed one or more quotas.</p>
@@ -361,6 +363,7 @@ impl ::std::fmt::Display for Error {
             Error::MaxDocumentSizeExceeded(inner) => inner.fmt(f),
             Error::OpsItemAccessDeniedException(inner) => inner.fmt(f),
             Error::OpsItemAlreadyExistsException(inner) => inner.fmt(f),
+            Error::OpsItemConflictException(inner) => inner.fmt(f),
             Error::OpsItemInvalidParameterException(inner) => inner.fmt(f),
             Error::OpsItemLimitExceededException(inner) => inner.fmt(f),
             Error::OpsItemNotFoundException(inner) => inner.fmt(f),
@@ -460,6 +463,9 @@ impl From<crate::operation::associate_ops_item_related_item::AssociateOpsItemRel
         match err {
             crate::operation::associate_ops_item_related_item::AssociateOpsItemRelatedItemError::InternalServerError(inner) => {
                 Error::InternalServerError(inner)
+            }
+            crate::operation::associate_ops_item_related_item::AssociateOpsItemRelatedItemError::OpsItemConflictException(inner) => {
+                Error::OpsItemConflictException(inner)
             }
             crate::operation::associate_ops_item_related_item::AssociateOpsItemRelatedItemError::OpsItemInvalidParameterException(inner) => {
                 Error::OpsItemInvalidParameterException(inner)
@@ -971,6 +977,33 @@ impl From<crate::operation::delete_maintenance_window::DeleteMaintenanceWindowEr
                 Error::InternalServerError(inner)
             }
             crate::operation::delete_maintenance_window::DeleteMaintenanceWindowError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::delete_ops_item::DeleteOpsItemError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::delete_ops_item::DeleteOpsItemError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_ops_item::DeleteOpsItemError> for Error {
+    fn from(err: crate::operation::delete_ops_item::DeleteOpsItemError) -> Self {
+        match err {
+            crate::operation::delete_ops_item::DeleteOpsItemError::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::operation::delete_ops_item::DeleteOpsItemError::OpsItemInvalidParameterException(inner) => {
+                Error::OpsItemInvalidParameterException(inner)
+            }
+            crate::operation::delete_ops_item::DeleteOpsItemError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2363,6 +2396,7 @@ impl From<crate::operation::disassociate_ops_item_related_item::DisassociateOpsI
     fn from(err: crate::operation::disassociate_ops_item_related_item::DisassociateOpsItemRelatedItemError) -> Self {
         match err {
             crate::operation::disassociate_ops_item_related_item::DisassociateOpsItemRelatedItemError::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::operation::disassociate_ops_item_related_item::DisassociateOpsItemRelatedItemError::OpsItemConflictException(inner) => Error::OpsItemConflictException(inner),
             crate::operation::disassociate_ops_item_related_item::DisassociateOpsItemRelatedItemError::OpsItemInvalidParameterException(inner) => Error::OpsItemInvalidParameterException(inner),
             crate::operation::disassociate_ops_item_related_item::DisassociateOpsItemRelatedItemError::OpsItemNotFoundException(inner) => Error::OpsItemNotFoundException(inner),
             crate::operation::disassociate_ops_item_related_item::DisassociateOpsItemRelatedItemError::OpsItemRelatedItemAssociationNotFoundException(inner) => Error::OpsItemRelatedItemAssociationNotFoundException(inner),
@@ -4631,6 +4665,7 @@ impl From<crate::operation::update_ops_item::UpdateOpsItemError> for Error {
             crate::operation::update_ops_item::UpdateOpsItemError::OpsItemAlreadyExistsException(inner) => {
                 Error::OpsItemAlreadyExistsException(inner)
             }
+            crate::operation::update_ops_item::UpdateOpsItemError::OpsItemConflictException(inner) => Error::OpsItemConflictException(inner),
             crate::operation::update_ops_item::UpdateOpsItemError::OpsItemInvalidParameterException(inner) => {
                 Error::OpsItemInvalidParameterException(inner)
             }
@@ -4851,6 +4886,7 @@ impl ::std::error::Error for Error {
             Error::MaxDocumentSizeExceeded(inner) => inner.source(),
             Error::OpsItemAccessDeniedException(inner) => inner.source(),
             Error::OpsItemAlreadyExistsException(inner) => inner.source(),
+            Error::OpsItemConflictException(inner) => inner.source(),
             Error::OpsItemInvalidParameterException(inner) => inner.source(),
             Error::OpsItemLimitExceededException(inner) => inner.source(),
             Error::OpsItemNotFoundException(inner) => inner.source(),
@@ -4986,6 +5022,7 @@ impl ::aws_http::request_id::RequestId for Error {
             Self::MaxDocumentSizeExceeded(e) => e.request_id(),
             Self::OpsItemAccessDeniedException(e) => e.request_id(),
             Self::OpsItemAlreadyExistsException(e) => e.request_id(),
+            Self::OpsItemConflictException(e) => e.request_id(),
             Self::OpsItemInvalidParameterException(e) => e.request_id(),
             Self::OpsItemLimitExceededException(e) => e.request_id(),
             Self::OpsItemNotFoundException(e) => e.request_id(),

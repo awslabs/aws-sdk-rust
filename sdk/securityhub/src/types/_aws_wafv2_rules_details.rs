@@ -11,7 +11,7 @@ pub struct AwsWafv2RulesDetails {
     /// <p> The action to use in the place of the action that results from the rule group evaluation. </p>
     pub override_action: ::std::option::Option<::std::string::String>,
     /// <p> If you define more than one Rule in a WebACL, WAF evaluates each request against the Rules in order based on the value of <code>Priority</code>. WAF processes rules with lower priority first. The priorities don't need to be consecutive, but they must all be different. </p>
-    pub priority: i32,
+    pub priority: ::std::option::Option<i32>,
     /// <p> Defines and enables Amazon CloudWatch metrics and web request sample collection. </p>
     pub visibility_config: ::std::option::Option<crate::types::AwsWafv2VisibilityConfigDetails>,
 }
@@ -29,7 +29,7 @@ impl AwsWafv2RulesDetails {
         self.override_action.as_deref()
     }
     /// <p> If you define more than one Rule in a WebACL, WAF evaluates each request against the Rules in order based on the value of <code>Priority</code>. WAF processes rules with lower priority first. The priorities don't need to be consecutive, but they must all be different. </p>
-    pub fn priority(&self) -> i32 {
+    pub fn priority(&self) -> ::std::option::Option<i32> {
         self.priority
     }
     /// <p> Defines and enables Amazon CloudWatch metrics and web request sample collection. </p>
@@ -131,7 +131,7 @@ impl AwsWafv2RulesDetailsBuilder {
             action: self.action,
             name: self.name,
             override_action: self.override_action,
-            priority: self.priority.unwrap_or_default(),
+            priority: self.priority,
             visibility_config: self.visibility_config,
         }
     }

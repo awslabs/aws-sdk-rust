@@ -7,7 +7,7 @@ pub struct AwsEc2VolumeAttachment {
     /// <p>The datetime when the attachment initiated.</p>
     pub attach_time: ::std::option::Option<::std::string::String>,
     /// <p>Whether the EBS volume is deleted when the EC2 instance is terminated.</p>
-    pub delete_on_termination: bool,
+    pub delete_on_termination: ::std::option::Option<bool>,
     /// <p>The identifier of the EC2 instance.</p>
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The attachment state of the volume. Valid values are as follows:</p>
@@ -26,7 +26,7 @@ impl AwsEc2VolumeAttachment {
         self.attach_time.as_deref()
     }
     /// <p>Whether the EBS volume is deleted when the EC2 instance is terminated.</p>
-    pub fn delete_on_termination(&self) -> bool {
+    pub fn delete_on_termination(&self) -> ::std::option::Option<bool> {
         self.delete_on_termination
     }
     /// <p>The identifier of the EC2 instance.</p>
@@ -143,7 +143,7 @@ impl AwsEc2VolumeAttachmentBuilder {
     pub fn build(self) -> crate::types::AwsEc2VolumeAttachment {
         crate::types::AwsEc2VolumeAttachment {
             attach_time: self.attach_time,
-            delete_on_termination: self.delete_on_termination.unwrap_or_default(),
+            delete_on_termination: self.delete_on_termination,
             instance_id: self.instance_id,
             status: self.status,
         }

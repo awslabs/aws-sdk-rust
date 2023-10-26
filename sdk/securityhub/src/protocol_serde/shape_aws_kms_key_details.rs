@@ -6,29 +6,29 @@ pub fn ser_aws_kms_key_details(
     if let Some(var_1) = &input.aws_account_id {
         object.key("AWSAccountId").string(var_1.as_str());
     }
-    if input.creation_date != 0.0 {
+    if let Some(var_2) = &input.creation_date {
         object.key("CreationDate").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::Float((input.creation_date).into()),
+            ::aws_smithy_types::Number::Float((*var_2).into()),
         );
     }
-    if let Some(var_2) = &input.key_id {
-        object.key("KeyId").string(var_2.as_str());
+    if let Some(var_3) = &input.key_id {
+        object.key("KeyId").string(var_3.as_str());
     }
-    if let Some(var_3) = &input.key_manager {
-        object.key("KeyManager").string(var_3.as_str());
+    if let Some(var_4) = &input.key_manager {
+        object.key("KeyManager").string(var_4.as_str());
     }
-    if let Some(var_4) = &input.key_state {
-        object.key("KeyState").string(var_4.as_str());
+    if let Some(var_5) = &input.key_state {
+        object.key("KeyState").string(var_5.as_str());
     }
-    if let Some(var_5) = &input.origin {
-        object.key("Origin").string(var_5.as_str());
+    if let Some(var_6) = &input.origin {
+        object.key("Origin").string(var_6.as_str());
     }
-    if let Some(var_6) = &input.description {
-        object.key("Description").string(var_6.as_str());
+    if let Some(var_7) = &input.description {
+        object.key("Description").string(var_7.as_str());
     }
-    if input.key_rotation_status {
-        object.key("KeyRotationStatus").boolean(input.key_rotation_status);
+    if let Some(var_8) = &input.key_rotation_status {
+        object.key("KeyRotationStatus").boolean(*var_8);
     }
     Ok(())
 }

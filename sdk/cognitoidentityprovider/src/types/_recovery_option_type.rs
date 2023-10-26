@@ -5,13 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RecoveryOptionType {
     /// <p>A positive integer specifying priority of a method with 1 being the highest priority.</p>
-    pub priority: i32,
+    pub priority: ::std::option::Option<i32>,
     /// <p>The recovery method for a user.</p>
     pub name: ::std::option::Option<crate::types::RecoveryOptionNameType>,
 }
 impl RecoveryOptionType {
     /// <p>A positive integer specifying priority of a method with 1 being the highest priority.</p>
-    pub fn priority(&self) -> i32 {
+    pub fn priority(&self) -> ::std::option::Option<i32> {
         self.priority
     }
     /// <p>The recovery method for a user.</p>
@@ -65,7 +65,7 @@ impl RecoveryOptionTypeBuilder {
     /// Consumes the builder and constructs a [`RecoveryOptionType`](crate::types::RecoveryOptionType).
     pub fn build(self) -> crate::types::RecoveryOptionType {
         crate::types::RecoveryOptionType {
-            priority: self.priority.unwrap_or_default(),
+            priority: self.priority,
             name: self.name,
         }
     }

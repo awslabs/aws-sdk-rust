@@ -43,6 +43,14 @@ pub use crate::types::_start_technical_cue_detection_filter::StartTechnicalCueDe
 
 pub use crate::types::_black_frame::BlackFrame;
 
+pub use crate::types::_media_analysis_output_config::MediaAnalysisOutputConfig;
+
+pub use crate::types::_media_analysis_input::MediaAnalysisInput;
+
+pub use crate::types::_media_analysis_operations_config::MediaAnalysisOperationsConfig;
+
+pub use crate::types::_media_analysis_detect_moderation_labels_config::MediaAnalysisDetectModerationLabelsConfig;
+
 pub use crate::types::_label_detection_settings::LabelDetectionSettings;
 
 pub use crate::types::_general_labels_settings::GeneralLabelsSettings;
@@ -130,6 +138,18 @@ pub use crate::types::_stream_processor::StreamProcessor;
 pub use crate::types::_stream_processor_status::StreamProcessorStatus;
 
 pub use crate::types::_project_policy::ProjectPolicy;
+
+pub use crate::types::_media_analysis_job_description::MediaAnalysisJobDescription;
+
+pub use crate::types::_media_analysis_manifest_summary::MediaAnalysisManifestSummary;
+
+pub use crate::types::_media_analysis_results::MediaAnalysisResults;
+
+pub use crate::types::_media_analysis_job_failure_details::MediaAnalysisJobFailureDetails;
+
+pub use crate::types::_media_analysis_job_failure_code::MediaAnalysisJobFailureCode;
+
+pub use crate::types::_media_analysis_job_status::MediaAnalysisJobStatus;
 
 pub use crate::types::_dataset_label_description::DatasetLabelDescription;
 
@@ -291,6 +311,12 @@ pub use crate::types::_kinesis_video_stream::KinesisVideoStream;
 
 pub use crate::types::_project_version_description::ProjectVersionDescription;
 
+pub use crate::types::_customization_feature_config::CustomizationFeatureConfig;
+
+pub use crate::types::_customization_feature_content_moderation_config::CustomizationFeatureContentModerationConfig;
+
+pub use crate::types::_customization_feature::CustomizationFeature;
+
 pub use crate::types::_ground_truth_manifest::GroundTruthManifest;
 
 pub use crate::types::_evaluation_result::EvaluationResult;
@@ -312,6 +338,8 @@ pub use crate::types::_training_data::TrainingData;
 pub use crate::types::_output_config::OutputConfig;
 
 pub use crate::types::_project_description::ProjectDescription;
+
+pub use crate::types::_project_auto_update::ProjectAutoUpdate;
 
 pub use crate::types::_dataset_metadata::DatasetMetadata;
 
@@ -398,6 +426,12 @@ mod _covers_body_part;
 mod _create_face_liveness_session_request_settings;
 
 mod _custom_label;
+
+mod _customization_feature;
+
+mod _customization_feature_config;
+
+mod _customization_feature_content_moderation_config;
 
 mod _dataset_changes;
 
@@ -537,6 +571,26 @@ mod _liveness_session_status;
 
 mod _matched_user;
 
+mod _media_analysis_detect_moderation_labels_config;
+
+mod _media_analysis_input;
+
+mod _media_analysis_job_description;
+
+mod _media_analysis_job_failure_code;
+
+mod _media_analysis_job_failure_details;
+
+mod _media_analysis_job_status;
+
+mod _media_analysis_manifest_summary;
+
+mod _media_analysis_operations_config;
+
+mod _media_analysis_output_config;
+
+mod _media_analysis_results;
+
 mod _moderation_label;
 
 mod _mouth_open;
@@ -562,6 +616,8 @@ mod _person_tracking_sort_by;
 mod _point;
 
 mod _pose;
+
+mod _project_auto_update;
 
 mod _project_description;
 

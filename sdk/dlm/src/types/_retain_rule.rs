@@ -13,19 +13,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RetainRule {
     /// <p>The number of snapshots to retain for each volume, up to a maximum of 1000. For example if you want to retain a maximum of three snapshots, specify <code>3</code>. When the fourth snapshot is created, the oldest retained snapshot is deleted, or it is moved to the archive tier if you have specified an <code>ArchiveRule</code>.</p>
-    pub count: i32,
+    pub count: ::std::option::Option<i32>,
     /// <p>The amount of time to retain each snapshot. The maximum is 100 years. This is equivalent to 1200 months, 5200 weeks, or 36500 days.</p>
-    pub interval: i32,
+    pub interval: ::std::option::Option<i32>,
     /// <p>The unit of time for time-based retention. For example, to retain snapshots for 3 months, specify <code>Interval=3</code> and <code>IntervalUnit=MONTHS</code>. Once the snapshot has been retained for 3 months, it is deleted, or it is moved to the archive tier if you have specified an <code>ArchiveRule</code>.</p>
     pub interval_unit: ::std::option::Option<crate::types::RetentionIntervalUnitValues>,
 }
 impl RetainRule {
     /// <p>The number of snapshots to retain for each volume, up to a maximum of 1000. For example if you want to retain a maximum of three snapshots, specify <code>3</code>. When the fourth snapshot is created, the oldest retained snapshot is deleted, or it is moved to the archive tier if you have specified an <code>ArchiveRule</code>.</p>
-    pub fn count(&self) -> i32 {
+    pub fn count(&self) -> ::std::option::Option<i32> {
         self.count
     }
     /// <p>The amount of time to retain each snapshot. The maximum is 100 years. This is equivalent to 1200 months, 5200 weeks, or 36500 days.</p>
-    pub fn interval(&self) -> i32 {
+    pub fn interval(&self) -> ::std::option::Option<i32> {
         self.interval
     }
     /// <p>The unit of time for time-based retention. For example, to retain snapshots for 3 months, specify <code>Interval=3</code> and <code>IntervalUnit=MONTHS</code>. Once the snapshot has been retained for 3 months, it is deleted, or it is moved to the archive tier if you have specified an <code>ArchiveRule</code>.</p>
@@ -94,8 +94,8 @@ impl RetainRuleBuilder {
     /// Consumes the builder and constructs a [`RetainRule`](crate::types::RetainRule).
     pub fn build(self) -> crate::types::RetainRule {
         crate::types::RetainRule {
-            count: self.count.unwrap_or_default(),
-            interval: self.interval.unwrap_or_default(),
+            count: self.count,
+            interval: self.interval,
             interval_unit: self.interval_unit,
         }
     }

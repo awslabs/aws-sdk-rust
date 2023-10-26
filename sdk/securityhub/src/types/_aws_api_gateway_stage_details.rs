@@ -13,7 +13,7 @@ pub struct AwsApiGatewayStageDetails {
     /// <p>A description of the stage.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether a cache cluster is enabled for the stage.</p>
-    pub cache_cluster_enabled: bool,
+    pub cache_cluster_enabled: ::std::option::Option<bool>,
     /// <p>If a cache cluster is enabled, the size of the cache cluster.</p>
     pub cache_cluster_size: ::std::option::Option<::std::string::String>,
     /// <p>If a cache cluster is enabled, the status of the cache cluster.</p>
@@ -36,7 +36,7 @@ pub struct AwsApiGatewayStageDetails {
     /// <p>Information about settings for canary deployment in the stage.</p>
     pub canary_settings: ::std::option::Option<crate::types::AwsApiGatewayCanarySettings>,
     /// <p>Indicates whether active tracing with X-Ray is enabled for the stage.</p>
-    pub tracing_enabled: bool,
+    pub tracing_enabled: ::std::option::Option<bool>,
     /// <p>Indicates when the stage was created.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     pub created_date: ::std::option::Option<::std::string::String>,
@@ -64,7 +64,7 @@ impl AwsApiGatewayStageDetails {
         self.description.as_deref()
     }
     /// <p>Indicates whether a cache cluster is enabled for the stage.</p>
-    pub fn cache_cluster_enabled(&self) -> bool {
+    pub fn cache_cluster_enabled(&self) -> ::std::option::Option<bool> {
         self.cache_cluster_enabled
     }
     /// <p>If a cache cluster is enabled, the size of the cache cluster.</p>
@@ -103,7 +103,7 @@ impl AwsApiGatewayStageDetails {
         self.canary_settings.as_ref()
     }
     /// <p>Indicates whether active tracing with X-Ray is enabled for the stage.</p>
-    pub fn tracing_enabled(&self) -> bool {
+    pub fn tracing_enabled(&self) -> ::std::option::Option<bool> {
         self.tracing_enabled
     }
     /// <p>Indicates when the stage was created.</p>
@@ -420,7 +420,7 @@ impl AwsApiGatewayStageDetailsBuilder {
             client_certificate_id: self.client_certificate_id,
             stage_name: self.stage_name,
             description: self.description,
-            cache_cluster_enabled: self.cache_cluster_enabled.unwrap_or_default(),
+            cache_cluster_enabled: self.cache_cluster_enabled,
             cache_cluster_size: self.cache_cluster_size,
             cache_cluster_status: self.cache_cluster_status,
             method_settings: self.method_settings,
@@ -428,7 +428,7 @@ impl AwsApiGatewayStageDetailsBuilder {
             documentation_version: self.documentation_version,
             access_log_settings: self.access_log_settings,
             canary_settings: self.canary_settings,
-            tracing_enabled: self.tracing_enabled.unwrap_or_default(),
+            tracing_enabled: self.tracing_enabled,
             created_date: self.created_date,
             last_updated_date: self.last_updated_date,
             web_acl_arn: self.web_acl_arn,

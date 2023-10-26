@@ -11,7 +11,7 @@ pub struct AwsEc2LaunchTemplateDataMetadataOptionsDetails {
     /// <p> The state of token usage for your instance metadata requests. </p>
     pub http_tokens: ::std::option::Option<::std::string::String>,
     /// <p> The desired HTTP PUT response hop limit for instance metadata requests. The larger the number, the further instance metadata requests can travel. </p>
-    pub http_put_response_hop_limit: i32,
+    pub http_put_response_hop_limit: ::std::option::Option<i32>,
     /// <p> When set to <code>enabled</code>, this parameter allows access to instance tags from the instance metadata. When set to <code>disabled</code>, it turns off access to instance tags from the instance metadata. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#work-with-tags-in-IMDS">Work with instance tags in instance metadata</a> in the <i>Amazon EC2 User Guide</i>. </p>
     pub instance_metadata_tags: ::std::option::Option<::std::string::String>,
 }
@@ -29,7 +29,7 @@ impl AwsEc2LaunchTemplateDataMetadataOptionsDetails {
         self.http_tokens.as_deref()
     }
     /// <p> The desired HTTP PUT response hop limit for instance metadata requests. The larger the number, the further instance metadata requests can travel. </p>
-    pub fn http_put_response_hop_limit(&self) -> i32 {
+    pub fn http_put_response_hop_limit(&self) -> ::std::option::Option<i32> {
         self.http_put_response_hop_limit
     }
     /// <p> When set to <code>enabled</code>, this parameter allows access to instance tags from the instance metadata. When set to <code>disabled</code>, it turns off access to instance tags from the instance metadata. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#work-with-tags-in-IMDS">Work with instance tags in instance metadata</a> in the <i>Amazon EC2 User Guide</i>. </p>
@@ -131,7 +131,7 @@ impl AwsEc2LaunchTemplateDataMetadataOptionsDetailsBuilder {
             http_endpoint: self.http_endpoint,
             http_protocol_ipv6: self.http_protocol_ipv6,
             http_tokens: self.http_tokens,
-            http_put_response_hop_limit: self.http_put_response_hop_limit.unwrap_or_default(),
+            http_put_response_hop_limit: self.http_put_response_hop_limit,
             instance_metadata_tags: self.instance_metadata_tags,
         }
     }

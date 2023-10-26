@@ -27,12 +27,18 @@ pub struct QueryInput {
     /// <p>Provides information that determines how the results of the query are sorted. You can set the field that Amazon Kendra should sort the results on, and specify whether the results should be sorted in ascending or descending order. In the case of ties in sorting the results, the results are sorted by relevance.</p>
     /// <p>If you don't provide sorting configuration, the results are sorted by the relevance that Amazon Kendra determines for the result.</p>
     pub sorting_configuration: ::std::option::Option<crate::types::SortingConfiguration>,
+    /// <p>Provides configuration information to determine how the results of a query are sorted.</p>
+    /// <p>You can set upto 3 fields that Amazon Kendra should sort the results on, and specify whether the results should be sorted in ascending or descending order. The sort field quota can be increased.</p>
+    /// <p>If you don't provide a sorting configuration, the results are sorted by the relevance that Amazon Kendra determines for the result. In the case of ties in sorting the results, the results are sorted by relevance. </p>
+    pub sorting_configurations: ::std::option::Option<::std::vec::Vec<crate::types::SortingConfiguration>>,
     /// <p>The user context token or user and group information.</p>
     pub user_context: ::std::option::Option<crate::types::UserContext>,
     /// <p>Provides an identifier for a specific user. The <code>VisitorId</code> should be a unique identifier, such as a GUID. Don't use personally identifiable information, such as the user's email address, as the <code>VisitorId</code>.</p>
     pub visitor_id: ::std::option::Option<::std::string::String>,
     /// <p>Enables suggested spell corrections for queries.</p>
     pub spell_correction_configuration: ::std::option::Option<crate::types::SpellCorrectionConfiguration>,
+    /// <p>Provides configuration to determine how to group results by document attribute value, and how to display them (collapsed or expanded) under a designated primary document for each group.</p>
+    pub collapse_configuration: ::std::option::Option<crate::types::CollapseConfiguration>,
 }
 impl QueryInput {
     /// <p>The identifier of the index for the search.</p>
@@ -79,6 +85,12 @@ impl QueryInput {
     pub fn sorting_configuration(&self) -> ::std::option::Option<&crate::types::SortingConfiguration> {
         self.sorting_configuration.as_ref()
     }
+    /// <p>Provides configuration information to determine how the results of a query are sorted.</p>
+    /// <p>You can set upto 3 fields that Amazon Kendra should sort the results on, and specify whether the results should be sorted in ascending or descending order. The sort field quota can be increased.</p>
+    /// <p>If you don't provide a sorting configuration, the results are sorted by the relevance that Amazon Kendra determines for the result. In the case of ties in sorting the results, the results are sorted by relevance. </p>
+    pub fn sorting_configurations(&self) -> ::std::option::Option<&[crate::types::SortingConfiguration]> {
+        self.sorting_configurations.as_deref()
+    }
     /// <p>The user context token or user and group information.</p>
     pub fn user_context(&self) -> ::std::option::Option<&crate::types::UserContext> {
         self.user_context.as_ref()
@@ -90,6 +102,10 @@ impl QueryInput {
     /// <p>Enables suggested spell corrections for queries.</p>
     pub fn spell_correction_configuration(&self) -> ::std::option::Option<&crate::types::SpellCorrectionConfiguration> {
         self.spell_correction_configuration.as_ref()
+    }
+    /// <p>Provides configuration to determine how to group results by document attribute value, and how to display them (collapsed or expanded) under a designated primary document for each group.</p>
+    pub fn collapse_configuration(&self) -> ::std::option::Option<&crate::types::CollapseConfiguration> {
+        self.collapse_configuration.as_ref()
     }
 }
 impl QueryInput {
@@ -113,9 +129,11 @@ pub struct QueryInputBuilder {
     pub(crate) page_number: ::std::option::Option<i32>,
     pub(crate) page_size: ::std::option::Option<i32>,
     pub(crate) sorting_configuration: ::std::option::Option<crate::types::SortingConfiguration>,
+    pub(crate) sorting_configurations: ::std::option::Option<::std::vec::Vec<crate::types::SortingConfiguration>>,
     pub(crate) user_context: ::std::option::Option<crate::types::UserContext>,
     pub(crate) visitor_id: ::std::option::Option<::std::string::String>,
     pub(crate) spell_correction_configuration: ::std::option::Option<crate::types::SpellCorrectionConfiguration>,
+    pub(crate) collapse_configuration: ::std::option::Option<crate::types::CollapseConfiguration>,
 }
 impl QueryInputBuilder {
     /// <p>The identifier of the index for the search.</p>
@@ -293,6 +311,32 @@ impl QueryInputBuilder {
     pub fn get_sorting_configuration(&self) -> &::std::option::Option<crate::types::SortingConfiguration> {
         &self.sorting_configuration
     }
+    /// Appends an item to `sorting_configurations`.
+    ///
+    /// To override the contents of this collection use [`set_sorting_configurations`](Self::set_sorting_configurations).
+    ///
+    /// <p>Provides configuration information to determine how the results of a query are sorted.</p>
+    /// <p>You can set upto 3 fields that Amazon Kendra should sort the results on, and specify whether the results should be sorted in ascending or descending order. The sort field quota can be increased.</p>
+    /// <p>If you don't provide a sorting configuration, the results are sorted by the relevance that Amazon Kendra determines for the result. In the case of ties in sorting the results, the results are sorted by relevance. </p>
+    pub fn sorting_configurations(mut self, input: crate::types::SortingConfiguration) -> Self {
+        let mut v = self.sorting_configurations.unwrap_or_default();
+        v.push(input);
+        self.sorting_configurations = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Provides configuration information to determine how the results of a query are sorted.</p>
+    /// <p>You can set upto 3 fields that Amazon Kendra should sort the results on, and specify whether the results should be sorted in ascending or descending order. The sort field quota can be increased.</p>
+    /// <p>If you don't provide a sorting configuration, the results are sorted by the relevance that Amazon Kendra determines for the result. In the case of ties in sorting the results, the results are sorted by relevance. </p>
+    pub fn set_sorting_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SortingConfiguration>>) -> Self {
+        self.sorting_configurations = input;
+        self
+    }
+    /// <p>Provides configuration information to determine how the results of a query are sorted.</p>
+    /// <p>You can set upto 3 fields that Amazon Kendra should sort the results on, and specify whether the results should be sorted in ascending or descending order. The sort field quota can be increased.</p>
+    /// <p>If you don't provide a sorting configuration, the results are sorted by the relevance that Amazon Kendra determines for the result. In the case of ties in sorting the results, the results are sorted by relevance. </p>
+    pub fn get_sorting_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SortingConfiguration>> {
+        &self.sorting_configurations
+    }
     /// <p>The user context token or user and group information.</p>
     pub fn user_context(mut self, input: crate::types::UserContext) -> Self {
         self.user_context = ::std::option::Option::Some(input);
@@ -335,6 +379,20 @@ impl QueryInputBuilder {
     pub fn get_spell_correction_configuration(&self) -> &::std::option::Option<crate::types::SpellCorrectionConfiguration> {
         &self.spell_correction_configuration
     }
+    /// <p>Provides configuration to determine how to group results by document attribute value, and how to display them (collapsed or expanded) under a designated primary document for each group.</p>
+    pub fn collapse_configuration(mut self, input: crate::types::CollapseConfiguration) -> Self {
+        self.collapse_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Provides configuration to determine how to group results by document attribute value, and how to display them (collapsed or expanded) under a designated primary document for each group.</p>
+    pub fn set_collapse_configuration(mut self, input: ::std::option::Option<crate::types::CollapseConfiguration>) -> Self {
+        self.collapse_configuration = input;
+        self
+    }
+    /// <p>Provides configuration to determine how to group results by document attribute value, and how to display them (collapsed or expanded) under a designated primary document for each group.</p>
+    pub fn get_collapse_configuration(&self) -> &::std::option::Option<crate::types::CollapseConfiguration> {
+        &self.collapse_configuration
+    }
     /// Consumes the builder and constructs a [`QueryInput`](crate::operation::query::QueryInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::query::QueryInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::query::QueryInput {
@@ -348,9 +406,11 @@ impl QueryInputBuilder {
             page_number: self.page_number,
             page_size: self.page_size,
             sorting_configuration: self.sorting_configuration,
+            sorting_configurations: self.sorting_configurations,
             user_context: self.user_context,
             visitor_id: self.visitor_id,
             spell_correction_configuration: self.spell_correction_configuration,
+            collapse_configuration: self.collapse_configuration,
         })
     }
 }

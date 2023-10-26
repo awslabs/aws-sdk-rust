@@ -225,4 +225,32 @@ impl CreateBlueGreenDeploymentFluentBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         self.inner.get_tags()
     }
+    /// <p>Specify the DB instance class for the databases in the green environment.</p>
+    pub fn target_db_instance_class(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.target_db_instance_class(input.into());
+        self
+    }
+    /// <p>Specify the DB instance class for the databases in the green environment.</p>
+    pub fn set_target_db_instance_class(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_target_db_instance_class(input);
+        self
+    }
+    /// <p>Specify the DB instance class for the databases in the green environment.</p>
+    pub fn get_target_db_instance_class(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_target_db_instance_class()
+    }
+    /// <p>Whether to upgrade the storage file system configuration on the green database. This option migrates the green DB instance from the older 32-bit file system to the preferred configuration. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.UpgradeFileSystem">Upgrading the storage file system for a DB instance</a>.</p>
+    pub fn upgrade_target_storage_config(mut self, input: bool) -> Self {
+        self.inner = self.inner.upgrade_target_storage_config(input);
+        self
+    }
+    /// <p>Whether to upgrade the storage file system configuration on the green database. This option migrates the green DB instance from the older 32-bit file system to the preferred configuration. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.UpgradeFileSystem">Upgrading the storage file system for a DB instance</a>.</p>
+    pub fn set_upgrade_target_storage_config(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_upgrade_target_storage_config(input);
+        self
+    }
+    /// <p>Whether to upgrade the storage file system configuration on the green database. This option migrates the green DB instance from the older 32-bit file system to the preferred configuration. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.UpgradeFileSystem">Upgrading the storage file system for a DB instance</a>.</p>
+    pub fn get_upgrade_target_storage_config(&self) -> &::std::option::Option<bool> {
+        self.inner.get_upgrade_target_storage_config()
+    }
 }

@@ -19,7 +19,15 @@ pub use crate::types::_token_filter::TokenFilterBuilder;
 
 pub use crate::types::_owner_filter::OwnerFilterBuilder;
 
+pub use crate::types::_asset_contract::AssetContractBuilder;
+
+pub use crate::types::_contract_identifier::ContractIdentifierBuilder;
+
+pub use crate::types::_contract_filter::ContractFilterBuilder;
+
 pub use crate::types::_transaction::TransactionBuilder;
+
+pub use crate::types::_contract_metadata::ContractMetadataBuilder;
 
 pub use crate::types::_batch_get_token_balance_error_item::BatchGetTokenBalanceErrorItemBuilder;
 

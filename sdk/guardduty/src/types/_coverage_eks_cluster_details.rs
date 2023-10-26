@@ -7,9 +7,9 @@ pub struct CoverageEksClusterDetails {
     /// <p>Name of the EKS cluster.</p>
     pub cluster_name: ::std::option::Option<::std::string::String>,
     /// <p>Represents the nodes within the EKS cluster that have a <code>HEALTHY</code> coverage status.</p>
-    pub covered_nodes: i64,
+    pub covered_nodes: ::std::option::Option<i64>,
     /// <p>Represents all the nodes within the EKS cluster in your account.</p>
-    pub compatible_nodes: i64,
+    pub compatible_nodes: ::std::option::Option<i64>,
     /// <p>Information about the installed EKS add-on.</p>
     pub addon_details: ::std::option::Option<crate::types::AddonDetails>,
     /// <p>Indicates how the Amazon EKS add-on GuardDuty agent is managed for this EKS cluster.</p>
@@ -23,11 +23,11 @@ impl CoverageEksClusterDetails {
         self.cluster_name.as_deref()
     }
     /// <p>Represents the nodes within the EKS cluster that have a <code>HEALTHY</code> coverage status.</p>
-    pub fn covered_nodes(&self) -> i64 {
+    pub fn covered_nodes(&self) -> ::std::option::Option<i64> {
         self.covered_nodes
     }
     /// <p>Represents all the nodes within the EKS cluster in your account.</p>
-    pub fn compatible_nodes(&self) -> i64 {
+    pub fn compatible_nodes(&self) -> ::std::option::Option<i64> {
         self.compatible_nodes
     }
     /// <p>Information about the installed EKS add-on.</p>
@@ -139,8 +139,8 @@ impl CoverageEksClusterDetailsBuilder {
     pub fn build(self) -> crate::types::CoverageEksClusterDetails {
         crate::types::CoverageEksClusterDetails {
             cluster_name: self.cluster_name,
-            covered_nodes: self.covered_nodes.unwrap_or_default(),
-            compatible_nodes: self.compatible_nodes.unwrap_or_default(),
+            covered_nodes: self.covered_nodes,
+            compatible_nodes: self.compatible_nodes,
             addon_details: self.addon_details,
             management_type: self.management_type,
         }

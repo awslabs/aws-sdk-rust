@@ -17,7 +17,7 @@ pub struct Parameter {
     /// <p>The valid range of values for the parameter.</p>
     pub allowed_values: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether (<code>true</code>) or not (<code>false</code>) the parameter can be modified. Some parameters have security or operational implications that prevent them from being changed.</p>
-    pub is_modifiable: bool,
+    pub is_modifiable: ::std::option::Option<bool>,
     /// <p>The earliest cache engine version to which the parameter can apply.</p>
     pub minimum_engine_version: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether a change to the parameter is applied immediately or requires a reboot for the change to be applied. You can force a reboot or wait until the next maintenance window's reboot. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.Rebooting.html">Rebooting a Cluster</a>.</p>
@@ -49,7 +49,7 @@ impl Parameter {
         self.allowed_values.as_deref()
     }
     /// <p>Indicates whether (<code>true</code>) or not (<code>false</code>) the parameter can be modified. Some parameters have security or operational implications that prevent them from being changed.</p>
-    pub fn is_modifiable(&self) -> bool {
+    pub fn is_modifiable(&self) -> ::std::option::Option<bool> {
         self.is_modifiable
     }
     /// <p>The earliest cache engine version to which the parameter can apply.</p>
@@ -218,7 +218,7 @@ impl ParameterBuilder {
             source: self.source,
             data_type: self.data_type,
             allowed_values: self.allowed_values,
-            is_modifiable: self.is_modifiable.unwrap_or_default(),
+            is_modifiable: self.is_modifiable,
             minimum_engine_version: self.minimum_engine_version,
             change_type: self.change_type,
         }

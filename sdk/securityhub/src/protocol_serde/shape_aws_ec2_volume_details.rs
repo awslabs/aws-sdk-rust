@@ -9,44 +9,44 @@ pub fn ser_aws_ec2_volume_details(
     if let Some(var_2) = &input.device_name {
         object.key("DeviceName").string(var_2.as_str());
     }
-    if input.encrypted {
-        object.key("Encrypted").boolean(input.encrypted);
+    if let Some(var_3) = &input.encrypted {
+        object.key("Encrypted").boolean(*var_3);
     }
-    if input.size != 0 {
+    if let Some(var_4) = &input.size {
         object.key("Size").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.size).into()),
+            ::aws_smithy_types::Number::NegInt((*var_4).into()),
         );
     }
-    if let Some(var_3) = &input.snapshot_id {
-        object.key("SnapshotId").string(var_3.as_str());
+    if let Some(var_5) = &input.snapshot_id {
+        object.key("SnapshotId").string(var_5.as_str());
     }
-    if let Some(var_4) = &input.status {
-        object.key("Status").string(var_4.as_str());
+    if let Some(var_6) = &input.status {
+        object.key("Status").string(var_6.as_str());
     }
-    if let Some(var_5) = &input.kms_key_id {
-        object.key("KmsKeyId").string(var_5.as_str());
+    if let Some(var_7) = &input.kms_key_id {
+        object.key("KmsKeyId").string(var_7.as_str());
     }
-    if let Some(var_6) = &input.attachments {
-        let mut array_7 = object.key("Attachments").start_array();
-        for item_8 in var_6 {
+    if let Some(var_8) = &input.attachments {
+        let mut array_9 = object.key("Attachments").start_array();
+        for item_10 in var_8 {
             {
                 #[allow(unused_mut)]
-                let mut object_9 = array_7.value().start_object();
-                crate::protocol_serde::shape_aws_ec2_volume_attachment::ser_aws_ec2_volume_attachment(&mut object_9, item_8)?;
-                object_9.finish();
+                let mut object_11 = array_9.value().start_object();
+                crate::protocol_serde::shape_aws_ec2_volume_attachment::ser_aws_ec2_volume_attachment(&mut object_11, item_10)?;
+                object_11.finish();
             }
         }
-        array_7.finish();
+        array_9.finish();
     }
-    if let Some(var_10) = &input.volume_id {
-        object.key("VolumeId").string(var_10.as_str());
+    if let Some(var_12) = &input.volume_id {
+        object.key("VolumeId").string(var_12.as_str());
     }
-    if let Some(var_11) = &input.volume_type {
-        object.key("VolumeType").string(var_11.as_str());
+    if let Some(var_13) = &input.volume_type {
+        object.key("VolumeType").string(var_13.as_str());
     }
-    if let Some(var_12) = &input.volume_scan_status {
-        object.key("VolumeScanStatus").string(var_12.as_str());
+    if let Some(var_14) = &input.volume_scan_status {
+        object.key("VolumeScanStatus").string(var_14.as_str());
     }
     Ok(())
 }

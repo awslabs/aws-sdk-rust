@@ -99,6 +99,8 @@ pub(crate) mod shape_get_face_search;
 
 pub(crate) mod shape_get_label_detection;
 
+pub(crate) mod shape_get_media_analysis_job;
+
 pub(crate) mod shape_get_person_tracking;
 
 pub(crate) mod shape_get_segment_detection;
@@ -114,6 +116,8 @@ pub(crate) mod shape_list_dataset_entries;
 pub(crate) mod shape_list_dataset_labels;
 
 pub(crate) mod shape_list_faces;
+
+pub(crate) mod shape_list_media_analysis_jobs;
 
 pub(crate) mod shape_list_project_policies;
 
@@ -144,6 +148,8 @@ pub(crate) mod shape_start_face_detection;
 pub(crate) mod shape_start_face_search;
 
 pub(crate) mod shape_start_label_detection;
+
+pub(crate) mod shape_start_media_analysis_job;
 
 pub(crate) mod shape_start_person_tracking;
 
@@ -255,6 +261,8 @@ pub(crate) mod shape_get_face_search_input;
 
 pub(crate) mod shape_get_label_detection_input;
 
+pub(crate) mod shape_get_media_analysis_job_input;
+
 pub(crate) mod shape_get_person_tracking_input;
 
 pub(crate) mod shape_get_segment_detection_input;
@@ -273,6 +281,8 @@ pub(crate) mod shape_internal_server_error;
 
 pub(crate) mod shape_invalid_image_format_exception;
 
+pub(crate) mod shape_invalid_manifest_exception;
+
 pub(crate) mod shape_invalid_pagination_token_exception;
 
 pub(crate) mod shape_invalid_parameter_exception;
@@ -290,6 +300,8 @@ pub(crate) mod shape_list_dataset_entries_input;
 pub(crate) mod shape_list_dataset_labels_input;
 
 pub(crate) mod shape_list_faces_input;
+
+pub(crate) mod shape_list_media_analysis_jobs_input;
 
 pub(crate) mod shape_list_project_policies_input;
 
@@ -336,6 +348,8 @@ pub(crate) mod shape_start_face_detection_input;
 pub(crate) mod shape_start_face_search_input;
 
 pub(crate) mod shape_start_label_detection_input;
+
+pub(crate) mod shape_start_media_analysis_job_input;
 
 pub(crate) mod shape_start_person_tracking_input;
 
@@ -393,6 +407,8 @@ pub(crate) mod shape_create_face_liveness_session_request_settings;
 
 pub(crate) mod shape_custom_labels;
 
+pub(crate) mod shape_customization_feature_config;
+
 pub(crate) mod shape_dataset_changes;
 
 pub(crate) mod shape_dataset_description;
@@ -444,6 +460,20 @@ pub(crate) mod shape_label_detection_settings;
 pub(crate) mod shape_label_detections;
 
 pub(crate) mod shape_labels;
+
+pub(crate) mod shape_media_analysis_input;
+
+pub(crate) mod shape_media_analysis_job_descriptions;
+
+pub(crate) mod shape_media_analysis_job_failure_details;
+
+pub(crate) mod shape_media_analysis_manifest_summary;
+
+pub(crate) mod shape_media_analysis_operations_config;
+
+pub(crate) mod shape_media_analysis_output_config;
+
+pub(crate) mod shape_media_analysis_results;
 
 pub(crate) mod shape_moderation_labels;
 
@@ -557,6 +587,8 @@ pub(crate) mod shape_content_moderation_detection;
 
 pub(crate) mod shape_custom_label;
 
+pub(crate) mod shape_customization_feature_content_moderation_config;
+
 pub(crate) mod shape_dataset_label_description;
 
 pub(crate) mod shape_dataset_stats;
@@ -606,6 +638,10 @@ pub(crate) mod shape_label;
 pub(crate) mod shape_label_detection;
 
 pub(crate) mod shape_liveness_output_config;
+
+pub(crate) mod shape_media_analysis_detect_moderation_labels_config;
+
+pub(crate) mod shape_media_analysis_job_description;
 
 pub(crate) mod shape_moderation_label;
 

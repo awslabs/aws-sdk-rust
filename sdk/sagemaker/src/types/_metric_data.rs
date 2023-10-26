@@ -7,7 +7,7 @@ pub struct MetricData {
     /// <p>The name of the metric.</p>
     pub metric_name: ::std::option::Option<::std::string::String>,
     /// <p>The value of the metric.</p>
-    pub value: f32,
+    pub value: ::std::option::Option<f32>,
     /// <p>The date and time that the algorithm emitted the metric.</p>
     pub timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
@@ -17,7 +17,7 @@ impl MetricData {
         self.metric_name.as_deref()
     }
     /// <p>The value of the metric.</p>
-    pub fn value(&self) -> f32 {
+    pub fn value(&self) -> ::std::option::Option<f32> {
         self.value
     }
     /// <p>The date and time that the algorithm emitted the metric.</p>
@@ -87,7 +87,7 @@ impl MetricDataBuilder {
     pub fn build(self) -> crate::types::MetricData {
         crate::types::MetricData {
             metric_name: self.metric_name,
-            value: self.value.unwrap_or_default(),
+            value: self.value,
             timestamp: self.timestamp,
         }
     }

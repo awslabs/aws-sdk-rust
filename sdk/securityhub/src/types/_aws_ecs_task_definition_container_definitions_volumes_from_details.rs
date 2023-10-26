@@ -5,13 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEcsTaskDefinitionContainerDefinitionsVolumesFromDetails {
     /// <p>Whether the container has read-only access to the volume.</p>
-    pub read_only: bool,
+    pub read_only: ::std::option::Option<bool>,
     /// <p>The name of another container within the same task definition from which to mount volumes.</p>
     pub source_container: ::std::option::Option<::std::string::String>,
 }
 impl AwsEcsTaskDefinitionContainerDefinitionsVolumesFromDetails {
     /// <p>Whether the container has read-only access to the volume.</p>
-    pub fn read_only(&self) -> bool {
+    pub fn read_only(&self) -> ::std::option::Option<bool> {
         self.read_only
     }
     /// <p>The name of another container within the same task definition from which to mount volumes.</p>
@@ -65,7 +65,7 @@ impl AwsEcsTaskDefinitionContainerDefinitionsVolumesFromDetailsBuilder {
     /// Consumes the builder and constructs a [`AwsEcsTaskDefinitionContainerDefinitionsVolumesFromDetails`](crate::types::AwsEcsTaskDefinitionContainerDefinitionsVolumesFromDetails).
     pub fn build(self) -> crate::types::AwsEcsTaskDefinitionContainerDefinitionsVolumesFromDetails {
         crate::types::AwsEcsTaskDefinitionContainerDefinitionsVolumesFromDetails {
-            read_only: self.read_only.unwrap_or_default(),
+            read_only: self.read_only,
             source_container: self.source_container,
         }
     }

@@ -5,11 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsWafv2WebAclCaptchaConfigImmunityTimePropertyDetails {
     /// <p> The amount of time, in seconds, that a CAPTCHA or challenge timestamp is considered valid by WAF. </p>
-    pub immunity_time: i64,
+    pub immunity_time: ::std::option::Option<i64>,
 }
 impl AwsWafv2WebAclCaptchaConfigImmunityTimePropertyDetails {
     /// <p> The amount of time, in seconds, that a CAPTCHA or challenge timestamp is considered valid by WAF. </p>
-    pub fn immunity_time(&self) -> i64 {
+    pub fn immunity_time(&self) -> ::std::option::Option<i64> {
         self.immunity_time
     }
 }
@@ -44,7 +44,7 @@ impl AwsWafv2WebAclCaptchaConfigImmunityTimePropertyDetailsBuilder {
     /// Consumes the builder and constructs a [`AwsWafv2WebAclCaptchaConfigImmunityTimePropertyDetails`](crate::types::AwsWafv2WebAclCaptchaConfigImmunityTimePropertyDetails).
     pub fn build(self) -> crate::types::AwsWafv2WebAclCaptchaConfigImmunityTimePropertyDetails {
         crate::types::AwsWafv2WebAclCaptchaConfigImmunityTimePropertyDetails {
-            immunity_time: self.immunity_time.unwrap_or_default(),
+            immunity_time: self.immunity_time,
         }
     }
 }

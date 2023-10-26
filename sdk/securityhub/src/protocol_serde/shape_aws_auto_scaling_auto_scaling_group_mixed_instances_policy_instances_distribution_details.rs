@@ -6,29 +6,29 @@ pub fn ser_aws_auto_scaling_auto_scaling_group_mixed_instances_policy_instances_
     if let Some(var_1) = &input.on_demand_allocation_strategy {
         object.key("OnDemandAllocationStrategy").string(var_1.as_str());
     }
-    if input.on_demand_base_capacity != 0 {
+    if let Some(var_2) = &input.on_demand_base_capacity {
         object.key("OnDemandBaseCapacity").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.on_demand_base_capacity).into()),
+            ::aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
-    if input.on_demand_percentage_above_base_capacity != 0 {
+    if let Some(var_3) = &input.on_demand_percentage_above_base_capacity {
         object.key("OnDemandPercentageAboveBaseCapacity").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.on_demand_percentage_above_base_capacity).into()),
+            ::aws_smithy_types::Number::NegInt((*var_3).into()),
         );
     }
-    if let Some(var_2) = &input.spot_allocation_strategy {
-        object.key("SpotAllocationStrategy").string(var_2.as_str());
+    if let Some(var_4) = &input.spot_allocation_strategy {
+        object.key("SpotAllocationStrategy").string(var_4.as_str());
     }
-    if input.spot_instance_pools != 0 {
+    if let Some(var_5) = &input.spot_instance_pools {
         object.key("SpotInstancePools").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.spot_instance_pools).into()),
+            ::aws_smithy_types::Number::NegInt((*var_5).into()),
         );
     }
-    if let Some(var_3) = &input.spot_max_price {
-        object.key("SpotMaxPrice").string(var_3.as_str());
+    if let Some(var_6) = &input.spot_max_price {
+        object.key("SpotMaxPrice").string(var_6.as_str());
     }
     Ok(())
 }

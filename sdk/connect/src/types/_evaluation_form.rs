@@ -7,7 +7,7 @@ pub struct EvaluationForm {
     /// <p>The unique identifier for the evaluation form.</p>
     pub evaluation_form_id: ::std::option::Option<::std::string::String>,
     /// <p>A version of the evaluation form.</p>
-    pub evaluation_form_version: ::std::option::Option<i32>,
+    pub evaluation_form_version: i32,
     /// <p>The flag indicating whether the evaluation form is locked for changes.</p>
     pub locked: bool,
     /// <p>The Amazon Resource Name (ARN) for the evaluation form resource.</p>
@@ -39,7 +39,7 @@ impl EvaluationForm {
         self.evaluation_form_id.as_deref()
     }
     /// <p>A version of the evaluation form.</p>
-    pub fn evaluation_form_version(&self) -> ::std::option::Option<i32> {
+    pub fn evaluation_form_version(&self) -> i32 {
         self.evaluation_form_version
     }
     /// <p>The flag indicating whether the evaluation form is locked for changes.</p>
@@ -330,7 +330,7 @@ impl EvaluationFormBuilder {
     pub fn build(self) -> crate::types::EvaluationForm {
         crate::types::EvaluationForm {
             evaluation_form_id: self.evaluation_form_id,
-            evaluation_form_version: self.evaluation_form_version,
+            evaluation_form_version: self.evaluation_form_version.unwrap_or_default(),
             locked: self.locked.unwrap_or_default(),
             evaluation_form_arn: self.evaluation_form_arn,
             title: self.title,

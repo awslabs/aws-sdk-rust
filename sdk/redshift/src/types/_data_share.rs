@@ -8,7 +8,7 @@ pub struct DataShare {
     /// <p>The Amazon Resource Name (ARN) of the producer.</p>
     pub producer_arn: ::std::option::Option<::std::string::String>,
     /// <p>A value that specifies whether the datashare can be shared to a publicly accessible cluster.</p>
-    pub allow_publicly_accessible_consumers: bool,
+    pub allow_publicly_accessible_consumers: ::std::option::Option<bool>,
     /// <p>A value that specifies when the datashare has an association between producer and data consumers.</p>
     pub data_share_associations: ::std::option::Option<::std::vec::Vec<crate::types::DataShareAssociation>>,
     /// <p>The identifier of a datashare to show its managing entity.</p>
@@ -24,7 +24,7 @@ impl DataShare {
         self.producer_arn.as_deref()
     }
     /// <p>A value that specifies whether the datashare can be shared to a publicly accessible cluster.</p>
-    pub fn allow_publicly_accessible_consumers(&self) -> bool {
+    pub fn allow_publicly_accessible_consumers(&self) -> ::std::option::Option<bool> {
         self.allow_publicly_accessible_consumers
     }
     /// <p>A value that specifies when the datashare has an association between producer and data consumers.</p>
@@ -135,7 +135,7 @@ impl DataShareBuilder {
         crate::types::DataShare {
             data_share_arn: self.data_share_arn,
             producer_arn: self.producer_arn,
-            allow_publicly_accessible_consumers: self.allow_publicly_accessible_consumers.unwrap_or_default(),
+            allow_publicly_accessible_consumers: self.allow_publicly_accessible_consumers,
             data_share_associations: self.data_share_associations,
             managed_by: self.managed_by,
         }

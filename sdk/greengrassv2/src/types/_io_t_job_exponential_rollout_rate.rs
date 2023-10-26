@@ -5,21 +5,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IoTJobExponentialRolloutRate {
     /// <p>The minimum number of devices that receive a pending job notification, per minute, when the job starts. This parameter defines the initial rollout rate of the job.</p>
-    pub base_rate_per_minute: i32,
+    pub base_rate_per_minute: ::std::option::Option<i32>,
     /// <p>The exponential factor to increase the rollout rate for the job.</p>
     /// <p>This parameter supports up to one digit after the decimal (for example, you can specify <code>1.5</code>, but not <code>1.55</code>).</p>
-    pub increment_factor: f64,
+    pub increment_factor: ::std::option::Option<f64>,
     /// <p>The criteria to increase the rollout rate for the job.</p>
     pub rate_increase_criteria: ::std::option::Option<crate::types::IoTJobRateIncreaseCriteria>,
 }
 impl IoTJobExponentialRolloutRate {
     /// <p>The minimum number of devices that receive a pending job notification, per minute, when the job starts. This parameter defines the initial rollout rate of the job.</p>
-    pub fn base_rate_per_minute(&self) -> i32 {
+    pub fn base_rate_per_minute(&self) -> ::std::option::Option<i32> {
         self.base_rate_per_minute
     }
     /// <p>The exponential factor to increase the rollout rate for the job.</p>
     /// <p>This parameter supports up to one digit after the decimal (for example, you can specify <code>1.5</code>, but not <code>1.55</code>).</p>
-    pub fn increment_factor(&self) -> f64 {
+    pub fn increment_factor(&self) -> ::std::option::Option<f64> {
         self.increment_factor
     }
     /// <p>The criteria to increase the rollout rate for the job.</p>
@@ -91,8 +91,8 @@ impl IoTJobExponentialRolloutRateBuilder {
     /// Consumes the builder and constructs a [`IoTJobExponentialRolloutRate`](crate::types::IoTJobExponentialRolloutRate).
     pub fn build(self) -> crate::types::IoTJobExponentialRolloutRate {
         crate::types::IoTJobExponentialRolloutRate {
-            base_rate_per_minute: self.base_rate_per_minute.unwrap_or_default(),
-            increment_factor: self.increment_factor.unwrap_or_default(),
+            base_rate_per_minute: self.base_rate_per_minute,
+            increment_factor: self.increment_factor,
             rate_increase_criteria: self.rate_increase_criteria,
         }
     }

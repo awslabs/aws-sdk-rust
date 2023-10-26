@@ -14,7 +14,7 @@ pub struct DbProxyTarget {
     /// <p>The identifier representing the target. It can be the instance identifier for an RDS DB instance, or the cluster identifier for an Aurora DB cluster.</p>
     pub rds_resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The port that the RDS Proxy uses to connect to the target RDS DB instance or Aurora DB cluster.</p>
-    pub port: i32,
+    pub port: ::std::option::Option<i32>,
     /// <p>Specifies the kind of database, such as an RDS DB instance or an Aurora DB cluster, that the target represents.</p>
     pub r#type: ::std::option::Option<crate::types::TargetType>,
     /// <p>A value that indicates whether the target of the proxy can be used for read/write or read-only operations.</p>
@@ -40,7 +40,7 @@ impl DbProxyTarget {
         self.rds_resource_id.as_deref()
     }
     /// <p>The port that the RDS Proxy uses to connect to the target RDS DB instance or Aurora DB cluster.</p>
-    pub fn port(&self) -> i32 {
+    pub fn port(&self) -> ::std::option::Option<i32> {
         self.port
     }
     /// <p>Specifies the kind of database, such as an RDS DB instance or an Aurora DB cluster, that the target represents.</p>
@@ -196,7 +196,7 @@ impl DbProxyTargetBuilder {
             endpoint: self.endpoint,
             tracked_cluster_id: self.tracked_cluster_id,
             rds_resource_id: self.rds_resource_id,
-            port: self.port.unwrap_or_default(),
+            port: self.port,
             r#type: self.r#type,
             role: self.role,
             target_health: self.target_health,

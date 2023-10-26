@@ -8,7 +8,7 @@ pub struct IncrementalExportSpecification {
     pub export_from_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Time in the past which provides the exclusive end range for the export table's data, counted in seconds from the start of the Unix epoch. The incremental export will reflect the table's state just prior to this point in time. If this is not provided, the latest time with data available will be used.</p>
     pub export_to_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>Choice of whether to output the previous item image prior to the start time of the incremental export. Valid values are <code>NEW_AND_OLD_IMAGES</code> and <code>NEW_IMAGES</code>.</p>
+    /// <p>The view type that was chosen for the export. Valid values are <code>NEW_AND_OLD_IMAGES</code> and <code>NEW_IMAGES</code>. The default value is <code>NEW_AND_OLD_IMAGES</code>.</p>
     pub export_view_type: ::std::option::Option<crate::types::ExportViewType>,
 }
 impl IncrementalExportSpecification {
@@ -20,7 +20,7 @@ impl IncrementalExportSpecification {
     pub fn export_to_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.export_to_time.as_ref()
     }
-    /// <p>Choice of whether to output the previous item image prior to the start time of the incremental export. Valid values are <code>NEW_AND_OLD_IMAGES</code> and <code>NEW_IMAGES</code>.</p>
+    /// <p>The view type that was chosen for the export. Valid values are <code>NEW_AND_OLD_IMAGES</code> and <code>NEW_IMAGES</code>. The default value is <code>NEW_AND_OLD_IMAGES</code>.</p>
     pub fn export_view_type(&self) -> ::std::option::Option<&crate::types::ExportViewType> {
         self.export_view_type.as_ref()
     }
@@ -69,17 +69,17 @@ impl IncrementalExportSpecificationBuilder {
     pub fn get_export_to_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.export_to_time
     }
-    /// <p>Choice of whether to output the previous item image prior to the start time of the incremental export. Valid values are <code>NEW_AND_OLD_IMAGES</code> and <code>NEW_IMAGES</code>.</p>
+    /// <p>The view type that was chosen for the export. Valid values are <code>NEW_AND_OLD_IMAGES</code> and <code>NEW_IMAGES</code>. The default value is <code>NEW_AND_OLD_IMAGES</code>.</p>
     pub fn export_view_type(mut self, input: crate::types::ExportViewType) -> Self {
         self.export_view_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Choice of whether to output the previous item image prior to the start time of the incremental export. Valid values are <code>NEW_AND_OLD_IMAGES</code> and <code>NEW_IMAGES</code>.</p>
+    /// <p>The view type that was chosen for the export. Valid values are <code>NEW_AND_OLD_IMAGES</code> and <code>NEW_IMAGES</code>. The default value is <code>NEW_AND_OLD_IMAGES</code>.</p>
     pub fn set_export_view_type(mut self, input: ::std::option::Option<crate::types::ExportViewType>) -> Self {
         self.export_view_type = input;
         self
     }
-    /// <p>Choice of whether to output the previous item image prior to the start time of the incremental export. Valid values are <code>NEW_AND_OLD_IMAGES</code> and <code>NEW_IMAGES</code>.</p>
+    /// <p>The view type that was chosen for the export. Valid values are <code>NEW_AND_OLD_IMAGES</code> and <code>NEW_IMAGES</code>. The default value is <code>NEW_AND_OLD_IMAGES</code>.</p>
     pub fn get_export_view_type(&self) -> &::std::option::Option<crate::types::ExportViewType> {
         &self.export_view_type
     }

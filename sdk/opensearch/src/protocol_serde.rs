@@ -85,11 +85,15 @@ pub(crate) mod shape_dissociate_package;
 
 pub(crate) mod shape_get_compatible_versions;
 
+pub(crate) mod shape_get_domain_maintenance_status;
+
 pub(crate) mod shape_get_package_version_history;
 
 pub(crate) mod shape_get_upgrade_history;
 
 pub(crate) mod shape_get_upgrade_status;
+
+pub(crate) mod shape_list_domain_maintenances;
 
 pub(crate) mod shape_list_domain_names;
 
@@ -118,6 +122,8 @@ pub(crate) mod shape_reject_inbound_connection;
 pub(crate) mod shape_remove_tags;
 
 pub(crate) mod shape_revoke_vpc_endpoint_access;
+
+pub(crate) mod shape_start_domain_maintenance;
 
 pub(crate) mod shape_start_service_software_update;
 
@@ -195,6 +201,8 @@ pub(crate) mod shape_revoke_vpc_endpoint_access_input;
 
 pub(crate) mod shape_slot_not_available_exception;
 
+pub(crate) mod shape_start_domain_maintenance_input;
+
 pub(crate) mod shape_start_service_software_update_input;
 
 pub(crate) mod shape_update_domain_config_input;
@@ -244,6 +252,8 @@ pub(crate) mod shape_domain_endpoint_options;
 pub(crate) mod shape_domain_info_list;
 
 pub(crate) mod shape_domain_information_container;
+
+pub(crate) mod shape_domain_maintenance_list;
 
 pub(crate) mod shape_domain_nodes_status_list;
 
@@ -365,6 +375,8 @@ pub(crate) mod shape_domain_endpoint_options_status;
 
 pub(crate) mod shape_domain_info;
 
+pub(crate) mod shape_domain_maintenance_details;
+
 pub(crate) mod shape_domain_nodes_status;
 
 pub(crate) mod shape_ebs_options_status;
@@ -396,6 +408,8 @@ pub(crate) mod shape_off_peak_window;
 pub(crate) mod shape_off_peak_window_options_status;
 
 pub(crate) mod shape_package_version_history;
+
+pub(crate) mod shape_plugin_properties;
 
 pub(crate) mod shape_reserved_instance;
 

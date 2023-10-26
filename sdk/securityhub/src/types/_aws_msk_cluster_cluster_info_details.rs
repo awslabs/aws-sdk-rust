@@ -9,7 +9,7 @@ pub struct AwsMskClusterClusterInfoDetails {
     /// <p> The current version of the MSK cluster.</p>
     pub current_version: ::std::option::Option<::std::string::String>,
     /// <p> The number of broker nodes in the cluster.</p>
-    pub number_of_broker_nodes: i32,
+    pub number_of_broker_nodes: ::std::option::Option<i32>,
     /// <p> The name of the cluster.</p>
     pub cluster_name: ::std::option::Option<::std::string::String>,
     /// <p> Provides information for different modes of client authentication.</p>
@@ -25,7 +25,7 @@ impl AwsMskClusterClusterInfoDetails {
         self.current_version.as_deref()
     }
     /// <p> The number of broker nodes in the cluster.</p>
-    pub fn number_of_broker_nodes(&self) -> i32 {
+    pub fn number_of_broker_nodes(&self) -> ::std::option::Option<i32> {
         self.number_of_broker_nodes
     }
     /// <p> The name of the cluster.</p>
@@ -133,7 +133,7 @@ impl AwsMskClusterClusterInfoDetailsBuilder {
         crate::types::AwsMskClusterClusterInfoDetails {
             encryption_info: self.encryption_info,
             current_version: self.current_version,
-            number_of_broker_nodes: self.number_of_broker_nodes.unwrap_or_default(),
+            number_of_broker_nodes: self.number_of_broker_nodes,
             cluster_name: self.cluster_name,
             client_authentication: self.client_authentication,
         }

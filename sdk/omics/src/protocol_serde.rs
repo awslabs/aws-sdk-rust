@@ -387,6 +387,8 @@ pub(crate) mod shape_run_group_list;
 
 pub(crate) mod shape_run_list;
 
+pub(crate) mod shape_run_log_location;
+
 pub(crate) mod shape_run_resource_digests;
 
 pub(crate) mod shape_sequence_information;

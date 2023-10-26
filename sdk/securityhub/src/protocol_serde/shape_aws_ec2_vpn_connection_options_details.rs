@@ -3,20 +3,20 @@ pub fn ser_aws_ec2_vpn_connection_options_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsEc2VpnConnectionOptionsDetails,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if input.static_routes_only {
-        object.key("StaticRoutesOnly").boolean(input.static_routes_only);
+    if let Some(var_1) = &input.static_routes_only {
+        object.key("StaticRoutesOnly").boolean(*var_1);
     }
-    if let Some(var_1) = &input.tunnel_options {
-        let mut array_2 = object.key("TunnelOptions").start_array();
-        for item_3 in var_1 {
+    if let Some(var_2) = &input.tunnel_options {
+        let mut array_3 = object.key("TunnelOptions").start_array();
+        for item_4 in var_2 {
             {
                 #[allow(unused_mut)]
-                let mut object_4 = array_2.value().start_object();
-                crate::protocol_serde::shape_aws_ec2_vpn_connection_options_tunnel_options_details::ser_aws_ec2_vpn_connection_options_tunnel_options_details(&mut object_4, item_3)?;
-                object_4.finish();
+                let mut object_5 = array_3.value().start_object();
+                crate::protocol_serde::shape_aws_ec2_vpn_connection_options_tunnel_options_details::ser_aws_ec2_vpn_connection_options_tunnel_options_details(&mut object_5, item_4)?;
+                object_5.finish();
             }
         }
-        array_2.finish();
+        array_3.finish();
     }
     Ok(())
 }

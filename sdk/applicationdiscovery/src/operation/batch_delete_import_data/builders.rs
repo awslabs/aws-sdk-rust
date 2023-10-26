@@ -129,4 +129,18 @@ impl BatchDeleteImportDataFluentBuilder {
     pub fn get_import_task_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_import_task_ids()
     }
+    /// <p> Set to <code>true</code> to remove the deleted import task from <code>DescribeImportTasks</code>. </p>
+    pub fn delete_history(mut self, input: bool) -> Self {
+        self.inner = self.inner.delete_history(input);
+        self
+    }
+    /// <p> Set to <code>true</code> to remove the deleted import task from <code>DescribeImportTasks</code>. </p>
+    pub fn set_delete_history(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_delete_history(input);
+        self
+    }
+    /// <p> Set to <code>true</code> to remove the deleted import task from <code>DescribeImportTasks</code>. </p>
+    pub fn get_delete_history(&self) -> &::std::option::Option<bool> {
+        self.inner.get_delete_history()
+    }
 }

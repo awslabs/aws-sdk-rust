@@ -4,20 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchImportFindingsOutput {
     /// <p>The number of findings that failed to import.</p>
-    pub failed_count: i32,
+    pub failed_count: ::std::option::Option<i32>,
     /// <p>The number of findings that were successfully imported.</p>
-    pub success_count: i32,
+    pub success_count: ::std::option::Option<i32>,
     /// <p>The list of findings that failed to import.</p>
     pub failed_findings: ::std::option::Option<::std::vec::Vec<crate::types::ImportFindingsError>>,
     _request_id: Option<String>,
 }
 impl BatchImportFindingsOutput {
     /// <p>The number of findings that failed to import.</p>
-    pub fn failed_count(&self) -> i32 {
+    pub fn failed_count(&self) -> ::std::option::Option<i32> {
         self.failed_count
     }
     /// <p>The number of findings that were successfully imported.</p>
-    pub fn success_count(&self) -> i32 {
+    pub fn success_count(&self) -> ::std::option::Option<i32> {
         self.success_count
     }
     /// <p>The list of findings that failed to import.</p>
@@ -107,8 +107,8 @@ impl BatchImportFindingsOutputBuilder {
     /// Consumes the builder and constructs a [`BatchImportFindingsOutput`](crate::operation::batch_import_findings::BatchImportFindingsOutput).
     pub fn build(self) -> crate::operation::batch_import_findings::BatchImportFindingsOutput {
         crate::operation::batch_import_findings::BatchImportFindingsOutput {
-            failed_count: self.failed_count.unwrap_or_default(),
-            success_count: self.success_count.unwrap_or_default(),
+            failed_count: self.failed_count,
+            success_count: self.success_count,
             failed_findings: self.failed_findings,
             _request_id: self._request_id,
         }

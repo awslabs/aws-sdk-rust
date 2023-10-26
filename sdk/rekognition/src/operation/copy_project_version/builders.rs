@@ -22,10 +22,14 @@ impl CopyProjectVersionInputBuilder {
 }
 /// Fluent builder constructing a request to `CopyProjectVersion`.
 ///
+/// <note>
+/// <p>This operation applies only to Amazon Rekognition Custom Labels.</p>
+/// </note>
 /// <p>Copies a version of an Amazon Rekognition Custom Labels model from a source project to a destination project. The source and destination projects can be in different AWS accounts but must be in the same AWS Region. You can't copy a model to another AWS service. </p>
 /// <p>To copy a model version to a different AWS account, you need to create a resource-based policy known as a <i>project policy</i>. You attach the project policy to the source project by calling <code>PutProjectPolicy</code>. The project policy gives permission to copy the model version from a trusting AWS account to a trusted account.</p>
 /// <p>For more information creating and attaching a project policy, see Attaching a project policy (SDK) in the <i>Amazon Rekognition Custom Labels Developer Guide</i>. </p>
 /// <p>If you are copying a model version to a project in the same AWS account, you don't need to create a project policy.</p> <note>
+/// <p>Copying project versions is supported only for Custom Labels models. </p>
 /// <p>To copy a model, the destination project, source project, and source model version must already exist.</p>
 /// </note>
 /// <p>Copying a model version takes a while to complete. To get the current status, call <code>DescribeProjectVersions</code> and check the value of <code>Status</code> in the <code>ProjectVersionDescription</code> object. The copy operation has finished when the value of <code>Status</code> is <code>COPYING_COMPLETED</code>.</p>

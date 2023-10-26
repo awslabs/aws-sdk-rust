@@ -13,9 +13,9 @@ impl super::Client {
     ///   - [`authorize_time(Option<DateTime>)`](crate::operation::authorize_endpoint_access::AuthorizeEndpointAccessOutput::authorize_time): <p>The time (UTC) when the authorization was created.</p>
     ///   - [`cluster_status(Option<String>)`](crate::operation::authorize_endpoint_access::AuthorizeEndpointAccessOutput::cluster_status): <p>The status of the cluster.</p>
     ///   - [`status(Option<AuthorizationStatus>)`](crate::operation::authorize_endpoint_access::AuthorizeEndpointAccessOutput::status): <p>The status of the authorization action.</p>
-    ///   - [`allowed_all_vp_cs(bool)`](crate::operation::authorize_endpoint_access::AuthorizeEndpointAccessOutput::allowed_all_vp_cs): <p>Indicates whether all VPCs in the grantee account are allowed access to the cluster.</p>
+    ///   - [`allowed_all_vp_cs(Option<bool>)`](crate::operation::authorize_endpoint_access::AuthorizeEndpointAccessOutput::allowed_all_vp_cs): <p>Indicates whether all VPCs in the grantee account are allowed access to the cluster.</p>
     ///   - [`allowed_vp_cs(Option<Vec<String>>)`](crate::operation::authorize_endpoint_access::AuthorizeEndpointAccessOutput::allowed_vp_cs): <p>The VPCs allowed access to the cluster.</p>
-    ///   - [`endpoint_count(i32)`](crate::operation::authorize_endpoint_access::AuthorizeEndpointAccessOutput::endpoint_count): <p>The number of Redshift-managed VPC endpoints created for the authorization.</p>
+    ///   - [`endpoint_count(Option<i32>)`](crate::operation::authorize_endpoint_access::AuthorizeEndpointAccessOutput::endpoint_count): <p>The number of Redshift-managed VPC endpoints created for the authorization.</p>
     /// - On failure, responds with [`SdkError<AuthorizeEndpointAccessError>`](crate::operation::authorize_endpoint_access::AuthorizeEndpointAccessError)
     pub fn authorize_endpoint_access(&self) -> crate::operation::authorize_endpoint_access::builders::AuthorizeEndpointAccessFluentBuilder {
         crate::operation::authorize_endpoint_access::builders::AuthorizeEndpointAccessFluentBuilder::new(self.handle.clone())

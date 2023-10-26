@@ -6,16 +6,16 @@ pub fn ser_hyper_parameter_tuning_instance_config(
     if let Some(var_1) = &input.instance_type {
         object.key("InstanceType").string(var_1.as_str());
     }
-    {
+    if let Some(var_2) = &input.instance_count {
         object.key("InstanceCount").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.instance_count).into()),
+            ::aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
-    {
+    if let Some(var_3) = &input.volume_size_in_gb {
         object.key("VolumeSizeInGB").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.volume_size_in_gb).into()),
+            ::aws_smithy_types::Number::NegInt((*var_3).into()),
         );
     }
     Ok(())

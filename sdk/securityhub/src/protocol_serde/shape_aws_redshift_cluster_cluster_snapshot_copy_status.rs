@@ -6,20 +6,20 @@ pub fn ser_aws_redshift_cluster_cluster_snapshot_copy_status(
     if let Some(var_1) = &input.destination_region {
         object.key("DestinationRegion").string(var_1.as_str());
     }
-    if input.manual_snapshot_retention_period != 0 {
+    if let Some(var_2) = &input.manual_snapshot_retention_period {
         object.key("ManualSnapshotRetentionPeriod").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.manual_snapshot_retention_period).into()),
+            ::aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
-    if input.retention_period != 0 {
+    if let Some(var_3) = &input.retention_period {
         object.key("RetentionPeriod").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.retention_period).into()),
+            ::aws_smithy_types::Number::NegInt((*var_3).into()),
         );
     }
-    if let Some(var_2) = &input.snapshot_copy_grant_name {
-        object.key("SnapshotCopyGrantName").string(var_2.as_str());
+    if let Some(var_4) = &input.snapshot_copy_grant_name {
+        object.key("SnapshotCopyGrantName").string(var_4.as_str());
     }
     Ok(())
 }

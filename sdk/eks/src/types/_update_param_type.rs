@@ -14,6 +14,7 @@
 /// match updateparamtype {
 ///     UpdateParamType::AddonVersion => { /* ... */ },
 ///     UpdateParamType::ClusterLogging => { /* ... */ },
+///     UpdateParamType::ConfigurationValues => { /* ... */ },
 ///     UpdateParamType::DesiredSize => { /* ... */ },
 ///     UpdateParamType::EncryptionConfig => { /* ... */ },
 ///     UpdateParamType::EndpointPrivateAccess => { /* ... */ },
@@ -31,7 +32,9 @@
 ///     UpdateParamType::PublicAccessCidrs => { /* ... */ },
 ///     UpdateParamType::ReleaseVersion => { /* ... */ },
 ///     UpdateParamType::ResolveConflicts => { /* ... */ },
+///     UpdateParamType::SecurityGroups => { /* ... */ },
 ///     UpdateParamType::ServiceAccountRoleArn => { /* ... */ },
+///     UpdateParamType::Subnets => { /* ... */ },
 ///     UpdateParamType::TaintsToAdd => { /* ... */ },
 ///     UpdateParamType::TaintsToRemove => { /* ... */ },
 ///     UpdateParamType::Version => { /* ... */ },
@@ -67,6 +70,8 @@ pub enum UpdateParamType {
     #[allow(missing_docs)] // documentation missing in model
     ClusterLogging,
     #[allow(missing_docs)] // documentation missing in model
+    ConfigurationValues,
+    #[allow(missing_docs)] // documentation missing in model
     DesiredSize,
     #[allow(missing_docs)] // documentation missing in model
     EncryptionConfig,
@@ -101,7 +106,11 @@ pub enum UpdateParamType {
     #[allow(missing_docs)] // documentation missing in model
     ResolveConflicts,
     #[allow(missing_docs)] // documentation missing in model
+    SecurityGroups,
+    #[allow(missing_docs)] // documentation missing in model
     ServiceAccountRoleArn,
+    #[allow(missing_docs)] // documentation missing in model
+    Subnets,
     #[allow(missing_docs)] // documentation missing in model
     TaintsToAdd,
     #[allow(missing_docs)] // documentation missing in model
@@ -116,6 +125,7 @@ impl ::std::convert::From<&str> for UpdateParamType {
         match s {
             "AddonVersion" => UpdateParamType::AddonVersion,
             "ClusterLogging" => UpdateParamType::ClusterLogging,
+            "ConfigurationValues" => UpdateParamType::ConfigurationValues,
             "DesiredSize" => UpdateParamType::DesiredSize,
             "EncryptionConfig" => UpdateParamType::EncryptionConfig,
             "EndpointPrivateAccess" => UpdateParamType::EndpointPrivateAccess,
@@ -133,7 +143,9 @@ impl ::std::convert::From<&str> for UpdateParamType {
             "PublicAccessCidrs" => UpdateParamType::PublicAccessCidrs,
             "ReleaseVersion" => UpdateParamType::ReleaseVersion,
             "ResolveConflicts" => UpdateParamType::ResolveConflicts,
+            "SecurityGroups" => UpdateParamType::SecurityGroups,
             "ServiceAccountRoleArn" => UpdateParamType::ServiceAccountRoleArn,
+            "Subnets" => UpdateParamType::Subnets,
             "TaintsToAdd" => UpdateParamType::TaintsToAdd,
             "TaintsToRemove" => UpdateParamType::TaintsToRemove,
             "Version" => UpdateParamType::Version,
@@ -154,6 +166,7 @@ impl UpdateParamType {
         match self {
             UpdateParamType::AddonVersion => "AddonVersion",
             UpdateParamType::ClusterLogging => "ClusterLogging",
+            UpdateParamType::ConfigurationValues => "ConfigurationValues",
             UpdateParamType::DesiredSize => "DesiredSize",
             UpdateParamType::EncryptionConfig => "EncryptionConfig",
             UpdateParamType::EndpointPrivateAccess => "EndpointPrivateAccess",
@@ -171,7 +184,9 @@ impl UpdateParamType {
             UpdateParamType::PublicAccessCidrs => "PublicAccessCidrs",
             UpdateParamType::ReleaseVersion => "ReleaseVersion",
             UpdateParamType::ResolveConflicts => "ResolveConflicts",
+            UpdateParamType::SecurityGroups => "SecurityGroups",
             UpdateParamType::ServiceAccountRoleArn => "ServiceAccountRoleArn",
+            UpdateParamType::Subnets => "Subnets",
             UpdateParamType::TaintsToAdd => "TaintsToAdd",
             UpdateParamType::TaintsToRemove => "TaintsToRemove",
             UpdateParamType::Version => "Version",
@@ -183,6 +198,7 @@ impl UpdateParamType {
         &[
             "AddonVersion",
             "ClusterLogging",
+            "ConfigurationValues",
             "DesiredSize",
             "EncryptionConfig",
             "EndpointPrivateAccess",
@@ -200,7 +216,9 @@ impl UpdateParamType {
             "PublicAccessCidrs",
             "ReleaseVersion",
             "ResolveConflicts",
+            "SecurityGroups",
             "ServiceAccountRoleArn",
+            "Subnets",
             "TaintsToAdd",
             "TaintsToRemove",
             "Version",

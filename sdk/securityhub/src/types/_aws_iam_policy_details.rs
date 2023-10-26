@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsIamPolicyDetails {
     /// <p>The number of users, groups, and roles that the policy is attached to.</p>
-    pub attachment_count: i32,
+    pub attachment_count: ::std::option::Option<i32>,
     /// <p>When the policy was created.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     pub create_date: ::std::option::Option<::std::string::String>,
@@ -14,11 +14,11 @@ pub struct AwsIamPolicyDetails {
     /// <p>A description of the policy.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Whether the policy can be attached to a user, group, or role.</p>
-    pub is_attachable: bool,
+    pub is_attachable: ::std::option::Option<bool>,
     /// <p>The path to the policy.</p>
     pub path: ::std::option::Option<::std::string::String>,
     /// <p>The number of users and roles that use the policy to set the permissions boundary.</p>
-    pub permissions_boundary_usage_count: i32,
+    pub permissions_boundary_usage_count: ::std::option::Option<i32>,
     /// <p>The unique identifier of the policy.</p>
     pub policy_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the policy.</p>
@@ -31,7 +31,7 @@ pub struct AwsIamPolicyDetails {
 }
 impl AwsIamPolicyDetails {
     /// <p>The number of users, groups, and roles that the policy is attached to.</p>
-    pub fn attachment_count(&self) -> i32 {
+    pub fn attachment_count(&self) -> ::std::option::Option<i32> {
         self.attachment_count
     }
     /// <p>When the policy was created.</p>
@@ -48,7 +48,7 @@ impl AwsIamPolicyDetails {
         self.description.as_deref()
     }
     /// <p>Whether the policy can be attached to a user, group, or role.</p>
-    pub fn is_attachable(&self) -> bool {
+    pub fn is_attachable(&self) -> ::std::option::Option<bool> {
         self.is_attachable
     }
     /// <p>The path to the policy.</p>
@@ -56,7 +56,7 @@ impl AwsIamPolicyDetails {
         self.path.as_deref()
     }
     /// <p>The number of users and roles that use the policy to set the permissions boundary.</p>
-    pub fn permissions_boundary_usage_count(&self) -> i32 {
+    pub fn permissions_boundary_usage_count(&self) -> ::std::option::Option<i32> {
         self.permissions_boundary_usage_count
     }
     /// <p>The unique identifier of the policy.</p>
@@ -270,13 +270,13 @@ impl AwsIamPolicyDetailsBuilder {
     /// Consumes the builder and constructs a [`AwsIamPolicyDetails`](crate::types::AwsIamPolicyDetails).
     pub fn build(self) -> crate::types::AwsIamPolicyDetails {
         crate::types::AwsIamPolicyDetails {
-            attachment_count: self.attachment_count.unwrap_or_default(),
+            attachment_count: self.attachment_count,
             create_date: self.create_date,
             default_version_id: self.default_version_id,
             description: self.description,
-            is_attachable: self.is_attachable.unwrap_or_default(),
+            is_attachable: self.is_attachable,
             path: self.path,
-            permissions_boundary_usage_count: self.permissions_boundary_usage_count.unwrap_or_default(),
+            permissions_boundary_usage_count: self.permissions_boundary_usage_count,
             policy_id: self.policy_id,
             policy_name: self.policy_name,
             policy_version_list: self.policy_version_list,

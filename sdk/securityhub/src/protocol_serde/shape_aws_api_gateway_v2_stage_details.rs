@@ -49,14 +49,14 @@ pub fn ser_aws_api_gateway_v2_stage_details(
         crate::protocol_serde::shape_aws_api_gateway_access_log_settings::ser_aws_api_gateway_access_log_settings(&mut object_16, var_15)?;
         object_16.finish();
     }
-    if input.auto_deploy {
-        object.key("AutoDeploy").boolean(input.auto_deploy);
+    if let Some(var_17) = &input.auto_deploy {
+        object.key("AutoDeploy").boolean(*var_17);
     }
-    if let Some(var_17) = &input.last_deployment_status_message {
-        object.key("LastDeploymentStatusMessage").string(var_17.as_str());
+    if let Some(var_18) = &input.last_deployment_status_message {
+        object.key("LastDeploymentStatusMessage").string(var_18.as_str());
     }
-    if input.api_gateway_managed {
-        object.key("ApiGatewayManaged").boolean(input.api_gateway_managed);
+    if let Some(var_19) = &input.api_gateway_managed {
+        object.key("ApiGatewayManaged").boolean(*var_19);
     }
     Ok(())
 }

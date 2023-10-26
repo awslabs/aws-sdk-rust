@@ -17,6 +17,10 @@ pub use crate::types::_security_config_detail::SecurityConfigDetailBuilder;
 
 pub use crate::types::_saml_config_options::SamlConfigOptionsBuilder;
 
+pub use crate::types::_lifecycle_policy_summary::LifecyclePolicySummaryBuilder;
+
+pub use crate::types::_lifecycle_policy_detail::LifecyclePolicyDetailBuilder;
+
 pub use crate::types::_collection_summary::CollectionSummaryBuilder;
 
 pub use crate::types::_collection_filters::CollectionFiltersBuilder;
@@ -39,6 +43,8 @@ pub use crate::types::_account_settings_detail::AccountSettingsDetailBuilder;
 
 pub use crate::types::_capacity_limits::CapacityLimitsBuilder;
 
+pub use crate::types::_lifecycle_policy_stats::LifecyclePolicyStatsBuilder;
+
 pub use crate::types::_security_config_stats::SecurityConfigStatsBuilder;
 
 pub use crate::types::_security_policy_stats::SecurityPolicyStatsBuilder;
@@ -48,6 +54,16 @@ pub use crate::types::_access_policy_stats::AccessPolicyStatsBuilder;
 pub use crate::types::_vpc_endpoint_error_detail::VpcEndpointErrorDetailBuilder;
 
 pub use crate::types::_vpc_endpoint_detail::VpcEndpointDetailBuilder;
+
+pub use crate::types::_lifecycle_policy_error_detail::LifecyclePolicyErrorDetailBuilder;
+
+pub use crate::types::_lifecycle_policy_identifier::LifecyclePolicyIdentifierBuilder;
+
+pub use crate::types::_effective_lifecycle_policy_error_detail::EffectiveLifecyclePolicyErrorDetailBuilder;
+
+pub use crate::types::_effective_lifecycle_policy_detail::EffectiveLifecyclePolicyDetailBuilder;
+
+pub use crate::types::_lifecycle_policy_resource_identifier::LifecyclePolicyResourceIdentifierBuilder;
 
 pub use crate::types::_collection_error_detail::CollectionErrorDetailBuilder;
 

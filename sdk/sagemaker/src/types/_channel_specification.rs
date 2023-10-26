@@ -9,7 +9,7 @@ pub struct ChannelSpecification {
     /// <p>A brief description of the channel.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the channel is required by the algorithm.</p>
-    pub is_required: bool,
+    pub is_required: ::std::option::Option<bool>,
     /// <p>The supported MIME types for the data.</p>
     pub supported_content_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The allowed compression types, if data compression is used.</p>
@@ -29,7 +29,7 @@ impl ChannelSpecification {
         self.description.as_deref()
     }
     /// <p>Indicates whether the channel is required by the algorithm.</p>
-    pub fn is_required(&self) -> bool {
+    pub fn is_required(&self) -> ::std::option::Option<bool> {
         self.is_required
     }
     /// <p>The supported MIME types for the data.</p>
@@ -179,7 +179,7 @@ impl ChannelSpecificationBuilder {
         crate::types::ChannelSpecification {
             name: self.name,
             description: self.description,
-            is_required: self.is_required.unwrap_or_default(),
+            is_required: self.is_required,
             supported_content_types: self.supported_content_types,
             supported_compression_types: self.supported_compression_types,
             supported_input_modes: self.supported_input_modes,

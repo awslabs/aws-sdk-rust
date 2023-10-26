@@ -13,6 +13,7 @@
 /// # let ec2platform = unimplemented!();
 /// match ec2platform {
 ///     Ec2Platform::Linux => { /* ... */ },
+///     Ec2Platform::Macos => { /* ... */ },
 ///     Ec2Platform::UnknownValue => { /* ... */ },
 ///     Ec2Platform::Windows => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -44,6 +45,8 @@
 pub enum Ec2Platform {
     #[allow(missing_docs)] // documentation missing in model
     Linux,
+    #[allow(missing_docs)] // documentation missing in model
+    Macos,
     /// _Note: `::Unknown` has been renamed to `::UnknownValue`._
     UnknownValue,
     #[allow(missing_docs)] // documentation missing in model
@@ -55,6 +58,7 @@ impl ::std::convert::From<&str> for Ec2Platform {
     fn from(s: &str) -> Self {
         match s {
             "LINUX" => Ec2Platform::Linux,
+            "MACOS" => Ec2Platform::Macos,
             "UNKNOWN" => Ec2Platform::UnknownValue,
             "WINDOWS" => Ec2Platform::Windows,
             other => Ec2Platform::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
@@ -73,6 +77,7 @@ impl Ec2Platform {
     pub fn as_str(&self) -> &str {
         match self {
             Ec2Platform::Linux => "LINUX",
+            Ec2Platform::Macos => "MACOS",
             Ec2Platform::UnknownValue => "UNKNOWN",
             Ec2Platform::Windows => "WINDOWS",
             Ec2Platform::Unknown(value) => value.as_str(),
@@ -80,7 +85,7 @@ impl Ec2Platform {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["LINUX", "UNKNOWN", "WINDOWS"]
+        &["LINUX", "MACOS", "UNKNOWN", "WINDOWS"]
     }
 }
 impl ::std::convert::AsRef<str> for Ec2Platform {

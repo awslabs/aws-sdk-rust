@@ -5,17 +5,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ScalingPolicyMetric {
     /// <p>The number of invocations sent to a model, normalized by <code>InstanceCount</code> in each ProductionVariant. <code>1/numberOfInstances</code> is sent as the value on each request, where <code>numberOfInstances</code> is the number of active instances for the ProductionVariant behind the endpoint at the time of the request.</p>
-    pub invocations_per_instance: i32,
+    pub invocations_per_instance: ::std::option::Option<i32>,
     /// <p>The interval of time taken by a model to respond as viewed from SageMaker. This interval includes the local communication times taken to send the request and to fetch the response from the container of a model and the time taken to complete the inference in the container.</p>
-    pub model_latency: i32,
+    pub model_latency: ::std::option::Option<i32>,
 }
 impl ScalingPolicyMetric {
     /// <p>The number of invocations sent to a model, normalized by <code>InstanceCount</code> in each ProductionVariant. <code>1/numberOfInstances</code> is sent as the value on each request, where <code>numberOfInstances</code> is the number of active instances for the ProductionVariant behind the endpoint at the time of the request.</p>
-    pub fn invocations_per_instance(&self) -> i32 {
+    pub fn invocations_per_instance(&self) -> ::std::option::Option<i32> {
         self.invocations_per_instance
     }
     /// <p>The interval of time taken by a model to respond as viewed from SageMaker. This interval includes the local communication times taken to send the request and to fetch the response from the container of a model and the time taken to complete the inference in the container.</p>
-    pub fn model_latency(&self) -> i32 {
+    pub fn model_latency(&self) -> ::std::option::Option<i32> {
         self.model_latency
     }
 }
@@ -65,8 +65,8 @@ impl ScalingPolicyMetricBuilder {
     /// Consumes the builder and constructs a [`ScalingPolicyMetric`](crate::types::ScalingPolicyMetric).
     pub fn build(self) -> crate::types::ScalingPolicyMetric {
         crate::types::ScalingPolicyMetric {
-            invocations_per_instance: self.invocations_per_instance.unwrap_or_default(),
-            model_latency: self.model_latency.unwrap_or_default(),
+            invocations_per_instance: self.invocations_per_instance,
+            model_latency: self.model_latency,
         }
     }
 }

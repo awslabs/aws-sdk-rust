@@ -6,9 +6,9 @@
 pub struct AwsElbLoadBalancerAccessLog {
     /// <p>The interval in minutes for publishing the access logs.</p>
     /// <p>You can publish access logs either every 5 minutes or every 60 minutes.</p>
-    pub emit_interval: i32,
+    pub emit_interval: ::std::option::Option<i32>,
     /// <p>Indicates whether access logs are enabled for the load balancer.</p>
-    pub enabled: bool,
+    pub enabled: ::std::option::Option<bool>,
     /// <p>The name of the S3 bucket where the access logs are stored.</p>
     pub s3_bucket_name: ::std::option::Option<::std::string::String>,
     /// <p>The logical hierarchy that was created for the S3 bucket.</p>
@@ -18,11 +18,11 @@ pub struct AwsElbLoadBalancerAccessLog {
 impl AwsElbLoadBalancerAccessLog {
     /// <p>The interval in minutes for publishing the access logs.</p>
     /// <p>You can publish access logs either every 5 minutes or every 60 minutes.</p>
-    pub fn emit_interval(&self) -> i32 {
+    pub fn emit_interval(&self) -> ::std::option::Option<i32> {
         self.emit_interval
     }
     /// <p>Indicates whether access logs are enabled for the load balancer.</p>
-    pub fn enabled(&self) -> bool {
+    pub fn enabled(&self) -> ::std::option::Option<bool> {
         self.enabled
     }
     /// <p>The name of the S3 bucket where the access logs are stored.</p>
@@ -117,8 +117,8 @@ impl AwsElbLoadBalancerAccessLogBuilder {
     /// Consumes the builder and constructs a [`AwsElbLoadBalancerAccessLog`](crate::types::AwsElbLoadBalancerAccessLog).
     pub fn build(self) -> crate::types::AwsElbLoadBalancerAccessLog {
         crate::types::AwsElbLoadBalancerAccessLog {
-            emit_interval: self.emit_interval.unwrap_or_default(),
-            enabled: self.enabled.unwrap_or_default(),
+            emit_interval: self.emit_interval,
+            enabled: self.enabled,
             s3_bucket_name: self.s3_bucket_name,
             s3_bucket_prefix: self.s3_bucket_prefix,
         }

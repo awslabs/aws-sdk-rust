@@ -7,7 +7,7 @@ pub struct AwsLambdaFunctionLayer {
     /// <p>The ARN of the function layer.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The size of the layer archive in bytes.</p>
-    pub code_size: i32,
+    pub code_size: ::std::option::Option<i32>,
 }
 impl AwsLambdaFunctionLayer {
     /// <p>The ARN of the function layer.</p>
@@ -15,7 +15,7 @@ impl AwsLambdaFunctionLayer {
         self.arn.as_deref()
     }
     /// <p>The size of the layer archive in bytes.</p>
-    pub fn code_size(&self) -> i32 {
+    pub fn code_size(&self) -> ::std::option::Option<i32> {
         self.code_size
     }
 }
@@ -66,7 +66,7 @@ impl AwsLambdaFunctionLayerBuilder {
     pub fn build(self) -> crate::types::AwsLambdaFunctionLayer {
         crate::types::AwsLambdaFunctionLayer {
             arn: self.arn,
-            code_size: self.code_size.unwrap_or_default(),
+            code_size: self.code_size,
         }
     }
 }

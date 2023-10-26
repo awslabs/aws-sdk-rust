@@ -11,7 +11,7 @@ pub struct ProcessingOutput {
     /// <p>Configuration for processing job outputs in Amazon SageMaker Feature Store. This processing output type is only supported when <code>AppManaged</code> is specified. </p>
     pub feature_store_output: ::std::option::Option<crate::types::ProcessingFeatureStoreOutput>,
     /// <p>When <code>True</code>, output operations such as data upload are managed natively by the processing job application. When <code>False</code> (default), output operations are managed by Amazon SageMaker.</p>
-    pub app_managed: bool,
+    pub app_managed: ::std::option::Option<bool>,
 }
 impl ProcessingOutput {
     /// <p>The name for the processing job output.</p>
@@ -27,7 +27,7 @@ impl ProcessingOutput {
         self.feature_store_output.as_ref()
     }
     /// <p>When <code>True</code>, output operations such as data upload are managed natively by the processing job application. When <code>False</code> (default), output operations are managed by Amazon SageMaker.</p>
-    pub fn app_managed(&self) -> bool {
+    pub fn app_managed(&self) -> ::std::option::Option<bool> {
         self.app_managed
     }
 }
@@ -110,7 +110,7 @@ impl ProcessingOutputBuilder {
             output_name: self.output_name,
             s3_output: self.s3_output,
             feature_store_output: self.feature_store_output,
-            app_managed: self.app_managed.unwrap_or_default(),
+            app_managed: self.app_managed,
         }
     }
 }

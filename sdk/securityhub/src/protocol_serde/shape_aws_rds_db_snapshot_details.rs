@@ -15,97 +15,95 @@ pub fn ser_aws_rds_db_snapshot_details(
     if let Some(var_4) = &input.engine {
         object.key("Engine").string(var_4.as_str());
     }
-    if input.allocated_storage != 0 {
+    if let Some(var_5) = &input.allocated_storage {
         object.key("AllocatedStorage").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.allocated_storage).into()),
+            ::aws_smithy_types::Number::NegInt((*var_5).into()),
         );
     }
-    if let Some(var_5) = &input.status {
-        object.key("Status").string(var_5.as_str());
+    if let Some(var_6) = &input.status {
+        object.key("Status").string(var_6.as_str());
     }
-    if input.port != 0 {
+    if let Some(var_7) = &input.port {
         object.key("Port").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.port).into()),
+            ::aws_smithy_types::Number::NegInt((*var_7).into()),
         );
     }
-    if let Some(var_6) = &input.availability_zone {
-        object.key("AvailabilityZone").string(var_6.as_str());
+    if let Some(var_8) = &input.availability_zone {
+        object.key("AvailabilityZone").string(var_8.as_str());
     }
-    if let Some(var_7) = &input.vpc_id {
-        object.key("VpcId").string(var_7.as_str());
+    if let Some(var_9) = &input.vpc_id {
+        object.key("VpcId").string(var_9.as_str());
     }
-    if let Some(var_8) = &input.instance_create_time {
-        object.key("InstanceCreateTime").string(var_8.as_str());
+    if let Some(var_10) = &input.instance_create_time {
+        object.key("InstanceCreateTime").string(var_10.as_str());
     }
-    if let Some(var_9) = &input.master_username {
-        object.key("MasterUsername").string(var_9.as_str());
+    if let Some(var_11) = &input.master_username {
+        object.key("MasterUsername").string(var_11.as_str());
     }
-    if let Some(var_10) = &input.engine_version {
-        object.key("EngineVersion").string(var_10.as_str());
+    if let Some(var_12) = &input.engine_version {
+        object.key("EngineVersion").string(var_12.as_str());
     }
-    if let Some(var_11) = &input.license_model {
-        object.key("LicenseModel").string(var_11.as_str());
+    if let Some(var_13) = &input.license_model {
+        object.key("LicenseModel").string(var_13.as_str());
     }
-    if let Some(var_12) = &input.snapshot_type {
-        object.key("SnapshotType").string(var_12.as_str());
+    if let Some(var_14) = &input.snapshot_type {
+        object.key("SnapshotType").string(var_14.as_str());
     }
-    if input.iops != 0 {
+    if let Some(var_15) = &input.iops {
         object.key("Iops").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.iops).into()),
+            ::aws_smithy_types::Number::NegInt((*var_15).into()),
         );
     }
-    if let Some(var_13) = &input.option_group_name {
-        object.key("OptionGroupName").string(var_13.as_str());
+    if let Some(var_16) = &input.option_group_name {
+        object.key("OptionGroupName").string(var_16.as_str());
     }
-    if input.percent_progress != 0 {
+    if let Some(var_17) = &input.percent_progress {
         object.key("PercentProgress").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.percent_progress).into()),
+            ::aws_smithy_types::Number::NegInt((*var_17).into()),
         );
     }
-    if let Some(var_14) = &input.source_region {
-        object.key("SourceRegion").string(var_14.as_str());
+    if let Some(var_18) = &input.source_region {
+        object.key("SourceRegion").string(var_18.as_str());
     }
-    if let Some(var_15) = &input.source_db_snapshot_identifier {
-        object.key("SourceDbSnapshotIdentifier").string(var_15.as_str());
+    if let Some(var_19) = &input.source_db_snapshot_identifier {
+        object.key("SourceDbSnapshotIdentifier").string(var_19.as_str());
     }
-    if let Some(var_16) = &input.storage_type {
-        object.key("StorageType").string(var_16.as_str());
+    if let Some(var_20) = &input.storage_type {
+        object.key("StorageType").string(var_20.as_str());
     }
-    if let Some(var_17) = &input.tde_credential_arn {
-        object.key("TdeCredentialArn").string(var_17.as_str());
+    if let Some(var_21) = &input.tde_credential_arn {
+        object.key("TdeCredentialArn").string(var_21.as_str());
     }
-    if input.encrypted {
-        object.key("Encrypted").boolean(input.encrypted);
+    if let Some(var_22) = &input.encrypted {
+        object.key("Encrypted").boolean(*var_22);
     }
-    if let Some(var_18) = &input.kms_key_id {
-        object.key("KmsKeyId").string(var_18.as_str());
+    if let Some(var_23) = &input.kms_key_id {
+        object.key("KmsKeyId").string(var_23.as_str());
     }
-    if let Some(var_19) = &input.timezone {
-        object.key("Timezone").string(var_19.as_str());
+    if let Some(var_24) = &input.timezone {
+        object.key("Timezone").string(var_24.as_str());
     }
-    if input.iam_database_authentication_enabled {
-        object
-            .key("IamDatabaseAuthenticationEnabled")
-            .boolean(input.iam_database_authentication_enabled);
+    if let Some(var_25) = &input.iam_database_authentication_enabled {
+        object.key("IamDatabaseAuthenticationEnabled").boolean(*var_25);
     }
-    if let Some(var_20) = &input.processor_features {
-        let mut array_21 = object.key("ProcessorFeatures").start_array();
-        for item_22 in var_20 {
+    if let Some(var_26) = &input.processor_features {
+        let mut array_27 = object.key("ProcessorFeatures").start_array();
+        for item_28 in var_26 {
             {
                 #[allow(unused_mut)]
-                let mut object_23 = array_21.value().start_object();
-                crate::protocol_serde::shape_aws_rds_db_processor_feature::ser_aws_rds_db_processor_feature(&mut object_23, item_22)?;
-                object_23.finish();
+                let mut object_29 = array_27.value().start_object();
+                crate::protocol_serde::shape_aws_rds_db_processor_feature::ser_aws_rds_db_processor_feature(&mut object_29, item_28)?;
+                object_29.finish();
             }
         }
-        array_21.finish();
+        array_27.finish();
     }
-    if let Some(var_24) = &input.dbi_resource_id {
-        object.key("DbiResourceId").string(var_24.as_str());
+    if let Some(var_30) = &input.dbi_resource_id {
+        object.key("DbiResourceId").string(var_30.as_str());
     }
     Ok(())
 }

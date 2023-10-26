@@ -202,6 +202,8 @@ pub struct RestoreDbInstanceFromS3Input {
     /// <p>If you don't specify <code>MasterUserSecretKmsKeyId</code>, then the <code>aws/secretsmanager</code> KMS key is used to encrypt the secret. If the secret is in a different Amazon Web Services account, then you can't use the <code>aws/secretsmanager</code> KMS key to encrypt the secret, and you must use a customer managed KMS key.</p>
     /// <p>There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.</p>
     pub master_user_secret_kms_key_id: ::std::option::Option<::std::string::String>,
+    /// <p>Specifies whether to enable a dedicated log volume (DLV) for the DB instance.</p>
+    pub dedicated_log_volume: ::std::option::Option<bool>,
 }
 impl RestoreDbInstanceFromS3Input {
     /// <p>The name of the database to create when the DB instance is created. Follow the naming rules specified in <code>CreateDBInstance</code>.</p>
@@ -499,6 +501,10 @@ impl RestoreDbInstanceFromS3Input {
     pub fn master_user_secret_kms_key_id(&self) -> ::std::option::Option<&str> {
         self.master_user_secret_kms_key_id.as_deref()
     }
+    /// <p>Specifies whether to enable a dedicated log volume (DLV) for the DB instance.</p>
+    pub fn dedicated_log_volume(&self) -> ::std::option::Option<bool> {
+        self.dedicated_log_volume
+    }
 }
 impl RestoreDbInstanceFromS3Input {
     /// Creates a new builder-style object to manufacture [`RestoreDbInstanceFromS3Input`](crate::operation::restore_db_instance_from_s3::RestoreDbInstanceFromS3Input).
@@ -559,6 +565,7 @@ pub struct RestoreDbInstanceFromS3InputBuilder {
     pub(crate) storage_throughput: ::std::option::Option<i32>,
     pub(crate) manage_master_user_password: ::std::option::Option<bool>,
     pub(crate) master_user_secret_kms_key_id: ::std::option::Option<::std::string::String>,
+    pub(crate) dedicated_log_volume: ::std::option::Option<bool>,
 }
 impl RestoreDbInstanceFromS3InputBuilder {
     /// <p>The name of the database to create when the DB instance is created. Follow the naming rules specified in <code>CreateDBInstance</code>.</p>
@@ -1572,6 +1579,20 @@ impl RestoreDbInstanceFromS3InputBuilder {
     pub fn get_master_user_secret_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.master_user_secret_kms_key_id
     }
+    /// <p>Specifies whether to enable a dedicated log volume (DLV) for the DB instance.</p>
+    pub fn dedicated_log_volume(mut self, input: bool) -> Self {
+        self.dedicated_log_volume = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether to enable a dedicated log volume (DLV) for the DB instance.</p>
+    pub fn set_dedicated_log_volume(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.dedicated_log_volume = input;
+        self
+    }
+    /// <p>Specifies whether to enable a dedicated log volume (DLV) for the DB instance.</p>
+    pub fn get_dedicated_log_volume(&self) -> &::std::option::Option<bool> {
+        &self.dedicated_log_volume
+    }
     /// Consumes the builder and constructs a [`RestoreDbInstanceFromS3Input`](crate::operation::restore_db_instance_from_s3::RestoreDbInstanceFromS3Input).
     pub fn build(
         self,
@@ -1628,6 +1649,7 @@ impl RestoreDbInstanceFromS3InputBuilder {
             storage_throughput: self.storage_throughput,
             manage_master_user_password: self.manage_master_user_password,
             master_user_secret_kms_key_id: self.master_user_secret_kms_key_id,
+            dedicated_log_volume: self.dedicated_log_volume,
         })
     }
 }

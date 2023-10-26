@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsLambdaLayerVersionDetails {
     /// <p>The version number.</p>
-    pub version: i64,
+    pub version: ::std::option::Option<i64>,
     /// <p>The layer's compatible runtimes. Maximum number of five items.</p>
     /// <p>Valid values: <code>nodejs10.x</code> | <code>nodejs12.x</code> | <code>java8</code> | <code>java11</code> | <code>python2.7</code> | <code>python3.6</code> | <code>python3.7</code> | <code>python3.8</code> | <code>dotnetcore1.0</code> | <code>dotnetcore2.1</code> | <code>go1.x</code> | <code>ruby2.5</code> | <code>provided</code> </p>
     pub compatible_runtimes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -15,7 +15,7 @@ pub struct AwsLambdaLayerVersionDetails {
 }
 impl AwsLambdaLayerVersionDetails {
     /// <p>The version number.</p>
-    pub fn version(&self) -> i64 {
+    pub fn version(&self) -> ::std::option::Option<i64> {
         self.version
     }
     /// <p>The layer's compatible runtimes. Maximum number of five items.</p>
@@ -102,7 +102,7 @@ impl AwsLambdaLayerVersionDetailsBuilder {
     /// Consumes the builder and constructs a [`AwsLambdaLayerVersionDetails`](crate::types::AwsLambdaLayerVersionDetails).
     pub fn build(self) -> crate::types::AwsLambdaLayerVersionDetails {
         crate::types::AwsLambdaLayerVersionDetails {
-            version: self.version.unwrap_or_default(),
+            version: self.version,
             compatible_runtimes: self.compatible_runtimes,
             created_date: self.created_date,
         }

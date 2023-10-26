@@ -13,7 +13,7 @@ pub struct Rule {
     /// <p>The actions. Each rule must include exactly one of the following types of actions: <code>forward</code>, <code>redirect</code>, or <code>fixed-response</code>, and it must be the last action to be performed.</p>
     pub actions: ::std::option::Option<::std::vec::Vec<crate::types::Action>>,
     /// <p>Indicates whether this is the default rule.</p>
-    pub is_default: bool,
+    pub is_default: ::std::option::Option<bool>,
 }
 impl Rule {
     /// <p>The Amazon Resource Name (ARN) of the rule.</p>
@@ -33,7 +33,7 @@ impl Rule {
         self.actions.as_deref()
     }
     /// <p>Indicates whether this is the default rule.</p>
-    pub fn is_default(&self) -> bool {
+    pub fn is_default(&self) -> ::std::option::Option<bool> {
         self.is_default
     }
 }
@@ -144,7 +144,7 @@ impl RuleBuilder {
             priority: self.priority,
             conditions: self.conditions,
             actions: self.actions,
-            is_default: self.is_default.unwrap_or_default(),
+            is_default: self.is_default,
         }
     }
 }

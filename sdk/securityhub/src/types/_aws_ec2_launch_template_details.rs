@@ -11,9 +11,9 @@ pub struct AwsEc2LaunchTemplateDetails {
     /// <p> The information to include in the launch template. </p>
     pub launch_template_data: ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataDetails>,
     /// <p> The default version of the launch template. </p>
-    pub default_version_number: i64,
+    pub default_version_number: ::std::option::Option<i64>,
     /// <p> The latest version of the launch template. </p>
-    pub latest_version_number: i64,
+    pub latest_version_number: ::std::option::Option<i64>,
 }
 impl AwsEc2LaunchTemplateDetails {
     /// <p> A name for the launch template. </p>
@@ -29,11 +29,11 @@ impl AwsEc2LaunchTemplateDetails {
         self.launch_template_data.as_ref()
     }
     /// <p> The default version of the launch template. </p>
-    pub fn default_version_number(&self) -> i64 {
+    pub fn default_version_number(&self) -> ::std::option::Option<i64> {
         self.default_version_number
     }
     /// <p> The latest version of the launch template. </p>
-    pub fn latest_version_number(&self) -> i64 {
+    pub fn latest_version_number(&self) -> ::std::option::Option<i64> {
         self.latest_version_number
     }
 }
@@ -131,8 +131,8 @@ impl AwsEc2LaunchTemplateDetailsBuilder {
             launch_template_name: self.launch_template_name,
             id: self.id,
             launch_template_data: self.launch_template_data,
-            default_version_number: self.default_version_number.unwrap_or_default(),
-            latest_version_number: self.latest_version_number.unwrap_or_default(),
+            default_version_number: self.default_version_number,
+            latest_version_number: self.latest_version_number,
         }
     }
 }

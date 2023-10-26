@@ -156,4 +156,18 @@ impl StartAssessmentFluentBuilder {
     pub fn get_assessment_targets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssessmentTarget>> {
         self.inner.get_assessment_targets()
     }
+    /// The data source type of an assessment to be started.
+    pub fn assessment_data_source_type(mut self, input: crate::types::AssessmentDataSourceType) -> Self {
+        self.inner = self.inner.assessment_data_source_type(input);
+        self
+    }
+    /// The data source type of an assessment to be started.
+    pub fn set_assessment_data_source_type(mut self, input: ::std::option::Option<crate::types::AssessmentDataSourceType>) -> Self {
+        self.inner = self.inner.set_assessment_data_source_type(input);
+        self
+    }
+    /// The data source type of an assessment to be started.
+    pub fn get_assessment_data_source_type(&self) -> &::std::option::Option<crate::types::AssessmentDataSourceType> {
+        self.inner.get_assessment_data_source_type()
+    }
 }

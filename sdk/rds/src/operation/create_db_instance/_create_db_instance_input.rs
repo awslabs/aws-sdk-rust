@@ -591,6 +591,8 @@ pub struct CreateDbInstanceInput {
     pub ca_certificate_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The Oracle system identifier (SID), which is the name of the Oracle database instance that manages your database files. In this context, the term "Oracle database instance" refers exclusively to the system global area (SGA) and Oracle background processes. If you don't specify a SID, the value defaults to <code>RDSCDB</code>. The Oracle SID is also the name of your CDB.</p>
     pub db_system_id: ::std::option::Option<::std::string::String>,
+    /// <p>Indicates whether the DB instance has a dedicated log volume (DLV) enabled.</p>
+    pub dedicated_log_volume: ::std::option::Option<bool>,
 }
 impl CreateDbInstanceInput {
     /// <p>The meaning of this parameter differs according to the database engine you use.</p>
@@ -1300,6 +1302,10 @@ impl CreateDbInstanceInput {
     pub fn db_system_id(&self) -> ::std::option::Option<&str> {
         self.db_system_id.as_deref()
     }
+    /// <p>Indicates whether the DB instance has a dedicated log volume (DLV) enabled.</p>
+    pub fn dedicated_log_volume(&self) -> ::std::option::Option<bool> {
+        self.dedicated_log_volume
+    }
 }
 impl CreateDbInstanceInput {
     /// Creates a new builder-style object to manufacture [`CreateDbInstanceInput`](crate::operation::create_db_instance::CreateDbInstanceInput).
@@ -1372,6 +1378,7 @@ pub struct CreateDbInstanceInputBuilder {
     pub(crate) master_user_secret_kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) ca_certificate_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) db_system_id: ::std::option::Option<::std::string::String>,
+    pub(crate) dedicated_log_volume: ::std::option::Option<bool>,
 }
 impl CreateDbInstanceInputBuilder {
     /// <p>The meaning of this parameter differs according to the database engine you use.</p>
@@ -3651,6 +3658,20 @@ impl CreateDbInstanceInputBuilder {
     pub fn get_db_system_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.db_system_id
     }
+    /// <p>Indicates whether the DB instance has a dedicated log volume (DLV) enabled.</p>
+    pub fn dedicated_log_volume(mut self, input: bool) -> Self {
+        self.dedicated_log_volume = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether the DB instance has a dedicated log volume (DLV) enabled.</p>
+    pub fn set_dedicated_log_volume(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.dedicated_log_volume = input;
+        self
+    }
+    /// <p>Indicates whether the DB instance has a dedicated log volume (DLV) enabled.</p>
+    pub fn get_dedicated_log_volume(&self) -> &::std::option::Option<bool> {
+        &self.dedicated_log_volume
+    }
     /// Consumes the builder and constructs a [`CreateDbInstanceInput`](crate::operation::create_db_instance::CreateDbInstanceInput).
     pub fn build(
         self,
@@ -3716,6 +3737,7 @@ impl CreateDbInstanceInputBuilder {
             master_user_secret_kms_key_id: self.master_user_secret_kms_key_id,
             ca_certificate_identifier: self.ca_certificate_identifier,
             db_system_id: self.db_system_id,
+            dedicated_log_volume: self.dedicated_log_volume,
         })
     }
 }

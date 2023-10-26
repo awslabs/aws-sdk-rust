@@ -18,11 +18,11 @@ pub struct DbClusterSnapshot {
     /// <p>Specifies the name of the database engine.</p>
     pub engine: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the allocated storage size in gibibytes (GiB).</p>
-    pub allocated_storage: i32,
+    pub allocated_storage: ::std::option::Option<i32>,
     /// <p>Specifies the status of this DB cluster snapshot.</p>
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the port that the DB cluster was listening on at the time of the snapshot.</p>
-    pub port: i32,
+    pub port: ::std::option::Option<i32>,
     /// <p>Provides the VPC ID associated with the DB cluster snapshot.</p>
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the time when the DB cluster was created, in Universal Coordinated Time (UTC).</p>
@@ -36,9 +36,9 @@ pub struct DbClusterSnapshot {
     /// <p>Provides the type of the DB cluster snapshot.</p>
     pub snapshot_type: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the percentage of the estimated data that has been transferred.</p>
-    pub percent_progress: i32,
+    pub percent_progress: ::std::option::Option<i32>,
     /// <p>Specifies whether the DB cluster snapshot is encrypted.</p>
-    pub storage_encrypted: bool,
+    pub storage_encrypted: ::std::option::Option<bool>,
     /// <p>If <code>StorageEncrypted</code> is true, the Amazon KMS key identifier for the encrypted DB cluster snapshot.</p>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the DB cluster snapshot.</p>
@@ -46,7 +46,7 @@ pub struct DbClusterSnapshot {
     /// <p>If the DB cluster snapshot was copied from a source DB cluster snapshot, the Amazon Resource Name (ARN) for the source DB cluster snapshot, otherwise, a null value.</p>
     pub source_db_cluster_snapshot_arn: ::std::option::Option<::std::string::String>,
     /// <p>True if mapping of Amazon Identity and Access Management (IAM) accounts to database accounts is enabled, and otherwise false.</p>
-    pub iam_database_authentication_enabled: bool,
+    pub iam_database_authentication_enabled: ::std::option::Option<bool>,
 }
 impl DbClusterSnapshot {
     /// <p>Provides the list of EC2 Availability Zones that instances in the DB cluster snapshot can be restored in.</p>
@@ -72,7 +72,7 @@ impl DbClusterSnapshot {
         self.engine.as_deref()
     }
     /// <p>Specifies the allocated storage size in gibibytes (GiB).</p>
-    pub fn allocated_storage(&self) -> i32 {
+    pub fn allocated_storage(&self) -> ::std::option::Option<i32> {
         self.allocated_storage
     }
     /// <p>Specifies the status of this DB cluster snapshot.</p>
@@ -80,7 +80,7 @@ impl DbClusterSnapshot {
         self.status.as_deref()
     }
     /// <p>Specifies the port that the DB cluster was listening on at the time of the snapshot.</p>
-    pub fn port(&self) -> i32 {
+    pub fn port(&self) -> ::std::option::Option<i32> {
         self.port
     }
     /// <p>Provides the VPC ID associated with the DB cluster snapshot.</p>
@@ -108,11 +108,11 @@ impl DbClusterSnapshot {
         self.snapshot_type.as_deref()
     }
     /// <p>Specifies the percentage of the estimated data that has been transferred.</p>
-    pub fn percent_progress(&self) -> i32 {
+    pub fn percent_progress(&self) -> ::std::option::Option<i32> {
         self.percent_progress
     }
     /// <p>Specifies whether the DB cluster snapshot is encrypted.</p>
-    pub fn storage_encrypted(&self) -> bool {
+    pub fn storage_encrypted(&self) -> ::std::option::Option<bool> {
         self.storage_encrypted
     }
     /// <p>If <code>StorageEncrypted</code> is true, the Amazon KMS key identifier for the encrypted DB cluster snapshot.</p>
@@ -128,7 +128,7 @@ impl DbClusterSnapshot {
         self.source_db_cluster_snapshot_arn.as_deref()
     }
     /// <p>True if mapping of Amazon Identity and Access Management (IAM) accounts to database accounts is enabled, and otherwise false.</p>
-    pub fn iam_database_authentication_enabled(&self) -> bool {
+    pub fn iam_database_authentication_enabled(&self) -> ::std::option::Option<bool> {
         self.iam_database_authentication_enabled
     }
 }
@@ -465,21 +465,21 @@ impl DbClusterSnapshotBuilder {
             db_cluster_identifier: self.db_cluster_identifier,
             snapshot_create_time: self.snapshot_create_time,
             engine: self.engine,
-            allocated_storage: self.allocated_storage.unwrap_or_default(),
+            allocated_storage: self.allocated_storage,
             status: self.status,
-            port: self.port.unwrap_or_default(),
+            port: self.port,
             vpc_id: self.vpc_id,
             cluster_create_time: self.cluster_create_time,
             master_username: self.master_username,
             engine_version: self.engine_version,
             license_model: self.license_model,
             snapshot_type: self.snapshot_type,
-            percent_progress: self.percent_progress.unwrap_or_default(),
-            storage_encrypted: self.storage_encrypted.unwrap_or_default(),
+            percent_progress: self.percent_progress,
+            storage_encrypted: self.storage_encrypted,
             kms_key_id: self.kms_key_id,
             db_cluster_snapshot_arn: self.db_cluster_snapshot_arn,
             source_db_cluster_snapshot_arn: self.source_db_cluster_snapshot_arn,
-            iam_database_authentication_enabled: self.iam_database_authentication_enabled.unwrap_or_default(),
+            iam_database_authentication_enabled: self.iam_database_authentication_enabled,
         }
     }
 }

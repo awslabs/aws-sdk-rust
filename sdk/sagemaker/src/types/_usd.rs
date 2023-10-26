@@ -5,23 +5,23 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Usd {
     /// <p>The whole number of dollars in the amount.</p>
-    pub dollars: i32,
+    pub dollars: ::std::option::Option<i32>,
     /// <p>The fractional portion, in cents, of the amount. </p>
-    pub cents: i32,
+    pub cents: ::std::option::Option<i32>,
     /// <p>Fractions of a cent, in tenths.</p>
-    pub tenth_fractions_of_a_cent: i32,
+    pub tenth_fractions_of_a_cent: ::std::option::Option<i32>,
 }
 impl Usd {
     /// <p>The whole number of dollars in the amount.</p>
-    pub fn dollars(&self) -> i32 {
+    pub fn dollars(&self) -> ::std::option::Option<i32> {
         self.dollars
     }
     /// <p>The fractional portion, in cents, of the amount. </p>
-    pub fn cents(&self) -> i32 {
+    pub fn cents(&self) -> ::std::option::Option<i32> {
         self.cents
     }
     /// <p>Fractions of a cent, in tenths.</p>
-    pub fn tenth_fractions_of_a_cent(&self) -> i32 {
+    pub fn tenth_fractions_of_a_cent(&self) -> ::std::option::Option<i32> {
         self.tenth_fractions_of_a_cent
     }
 }
@@ -86,9 +86,9 @@ impl UsdBuilder {
     /// Consumes the builder and constructs a [`Usd`](crate::types::Usd).
     pub fn build(self) -> crate::types::Usd {
         crate::types::Usd {
-            dollars: self.dollars.unwrap_or_default(),
-            cents: self.cents.unwrap_or_default(),
-            tenth_fractions_of_a_cent: self.tenth_fractions_of_a_cent.unwrap_or_default(),
+            dollars: self.dollars,
+            cents: self.cents,
+            tenth_fractions_of_a_cent: self.tenth_fractions_of_a_cent,
         }
     }
 }

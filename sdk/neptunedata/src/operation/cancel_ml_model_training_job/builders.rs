@@ -23,6 +23,7 @@ impl CancelMlModelTrainingJobInputBuilder {
 /// Fluent builder constructing a request to `CancelMLModelTrainingJob`.
 ///
 /// <p>Cancels a Neptune ML model training job. See <a href="https://docs.aws.amazon.com/neptune/latest/userguide/machine-learning-api-modeltraining.html">Model training using the <code>modeltraining</code> command</a>.</p>
+/// <p>When invoking this operation in a Neptune cluster that has IAM authentication enabled, the IAM user or role making the request must have a policy attached that allows the <a href="https://docs.aws.amazon.com/neptune/latest/userguide/iam-dp-actions.html#cancelmlmodeltrainingjob">neptune-db:CancelMLModelTrainingJob</a> IAM action in that cluster.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CancelMLModelTrainingJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

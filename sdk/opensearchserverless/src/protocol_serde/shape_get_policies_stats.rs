@@ -80,6 +80,10 @@ pub(crate) fn de_get_policies_stats(
                     builder =
                         builder.set_security_config_stats(crate::protocol_serde::shape_security_config_stats::de_security_config_stats(tokens)?);
                 }
+                "LifecyclePolicyStats" => {
+                    builder =
+                        builder.set_lifecycle_policy_stats(crate::protocol_serde::shape_lifecycle_policy_stats::de_lifecycle_policy_stats(tokens)?);
+                }
                 "TotalPolicyCount" => {
                     builder = builder.set_total_policy_count(
                         ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?

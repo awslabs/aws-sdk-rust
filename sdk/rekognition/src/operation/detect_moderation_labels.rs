@@ -283,6 +283,10 @@ pub enum DetectModerationLabelsError {
     InvalidS3ObjectException(crate::types::error::InvalidS3ObjectException),
     /// <p>The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon Rekognition.</p>
     ProvisionedThroughputExceededException(crate::types::error::ProvisionedThroughputExceededException),
+    /// <p>The resource specified in the request cannot be found.</p>
+    ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
+    /// <p>The requested resource isn't ready. For example, this exception occurs when you call <code>DetectCustomLabels</code> with a model version that isn't deployed. </p>
+    ResourceNotReadyException(crate::types::error::ResourceNotReadyException),
     /// <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::types::error::ThrottlingException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
@@ -311,6 +315,8 @@ impl ::std::fmt::Display for DetectModerationLabelsError {
             Self::InvalidParameterException(_inner) => _inner.fmt(f),
             Self::InvalidS3ObjectException(_inner) => _inner.fmt(f),
             Self::ProvisionedThroughputExceededException(_inner) => _inner.fmt(f),
+            Self::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            Self::ResourceNotReadyException(_inner) => _inner.fmt(f),
             Self::ThrottlingException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => _inner.fmt(f),
         }
@@ -327,6 +333,8 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for DetectModerat
             Self::InvalidParameterException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidS3ObjectException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ProvisionedThroughputExceededException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ResourceNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ResourceNotReadyException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ThrottlingException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
         }
@@ -372,6 +380,8 @@ impl DetectModerationLabelsError {
             Self::InvalidParameterException(e) => e.meta(),
             Self::InvalidS3ObjectException(e) => e.meta(),
             Self::ProvisionedThroughputExceededException(e) => e.meta(),
+            Self::ResourceNotFoundException(e) => e.meta(),
+            Self::ResourceNotReadyException(e) => e.meta(),
             Self::ThrottlingException(e) => e.meta(),
             Self::Unhandled(e) => e.meta(),
         }
@@ -408,6 +418,14 @@ impl DetectModerationLabelsError {
     pub fn is_provisioned_throughput_exceeded_exception(&self) -> bool {
         matches!(self, Self::ProvisionedThroughputExceededException(_))
     }
+    /// Returns `true` if the error kind is `DetectModerationLabelsError::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(self, Self::ResourceNotFoundException(_))
+    }
+    /// Returns `true` if the error kind is `DetectModerationLabelsError::ResourceNotReadyException`.
+    pub fn is_resource_not_ready_exception(&self) -> bool {
+        matches!(self, Self::ResourceNotReadyException(_))
+    }
     /// Returns `true` if the error kind is `DetectModerationLabelsError::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(self, Self::ThrottlingException(_))
@@ -424,6 +442,8 @@ impl ::std::error::Error for DetectModerationLabelsError {
             Self::InvalidParameterException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidS3ObjectException(_inner) => ::std::option::Option::Some(_inner),
             Self::ProvisionedThroughputExceededException(_inner) => ::std::option::Option::Some(_inner),
+            Self::ResourceNotFoundException(_inner) => ::std::option::Option::Some(_inner),
+            Self::ResourceNotReadyException(_inner) => ::std::option::Option::Some(_inner),
             Self::ThrottlingException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(_inner),
         }

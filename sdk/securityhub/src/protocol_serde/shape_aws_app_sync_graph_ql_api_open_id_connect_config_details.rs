@@ -3,23 +3,23 @@ pub fn ser_aws_app_sync_graph_ql_api_open_id_connect_config_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsAppSyncGraphQlApiOpenIdConnectConfigDetails,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if input.auth_tt_l != 0 {
+    if let Some(var_1) = &input.auth_tt_l {
         object.key("AuthTtL").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.auth_tt_l).into()),
+            ::aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if let Some(var_1) = &input.client_id {
-        object.key("ClientId").string(var_1.as_str());
+    if let Some(var_2) = &input.client_id {
+        object.key("ClientId").string(var_2.as_str());
     }
-    if input.iat_tt_l != 0 {
+    if let Some(var_3) = &input.iat_tt_l {
         object.key("IatTtL").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.iat_tt_l).into()),
+            ::aws_smithy_types::Number::NegInt((*var_3).into()),
         );
     }
-    if let Some(var_2) = &input.issuer {
-        object.key("Issuer").string(var_2.as_str());
+    if let Some(var_4) = &input.issuer {
+        object.key("Issuer").string(var_4.as_str());
     }
     Ok(())
 }

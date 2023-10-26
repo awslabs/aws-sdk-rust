@@ -3,17 +3,17 @@ pub fn ser_aws_eks_cluster_logging_cluster_logging_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsEksClusterLoggingClusterLoggingDetails,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if input.enabled {
-        object.key("Enabled").boolean(input.enabled);
+    if let Some(var_1) = &input.enabled {
+        object.key("Enabled").boolean(*var_1);
     }
-    if let Some(var_1) = &input.types {
-        let mut array_2 = object.key("Types").start_array();
-        for item_3 in var_1 {
+    if let Some(var_2) = &input.types {
+        let mut array_3 = object.key("Types").start_array();
+        for item_4 in var_2 {
             {
-                array_2.value().string(item_3.as_str());
+                array_3.value().string(item_4.as_str());
             }
         }
-        array_2.finish();
+        array_3.finish();
     }
     Ok(())
 }

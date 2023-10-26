@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListEnabledControlsInput {
-    /// <p>The ARN of the organizational unit.</p>
+    /// <p>The ARN of the organizational unit. For information on how to find the <code>targetIdentifier</code>, see <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the overview page</a>.</p>
     pub target_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The token to continue the list from a previous API call with the same parameters.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -11,7 +11,7 @@ pub struct ListEnabledControlsInput {
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListEnabledControlsInput {
-    /// <p>The ARN of the organizational unit.</p>
+    /// <p>The ARN of the organizational unit. For information on how to find the <code>targetIdentifier</code>, see <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the overview page</a>.</p>
     pub fn target_identifier(&self) -> ::std::option::Option<&str> {
         self.target_identifier.as_deref()
     }
@@ -40,17 +40,17 @@ pub struct ListEnabledControlsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
 }
 impl ListEnabledControlsInputBuilder {
-    /// <p>The ARN of the organizational unit.</p>
+    /// <p>The ARN of the organizational unit. For information on how to find the <code>targetIdentifier</code>, see <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the overview page</a>.</p>
     pub fn target_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the organizational unit.</p>
+    /// <p>The ARN of the organizational unit. For information on how to find the <code>targetIdentifier</code>, see <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the overview page</a>.</p>
     pub fn set_target_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_identifier = input;
         self
     }
-    /// <p>The ARN of the organizational unit.</p>
+    /// <p>The ARN of the organizational unit. For information on how to find the <code>targetIdentifier</code>, see <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the overview page</a>.</p>
     pub fn get_target_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.target_identifier
     }

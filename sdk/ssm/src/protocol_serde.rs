@@ -59,6 +59,8 @@ pub(crate) mod shape_delete_inventory;
 
 pub(crate) mod shape_delete_maintenance_window;
 
+pub(crate) mod shape_delete_ops_item;
+
 pub(crate) mod shape_delete_ops_metadata;
 
 pub(crate) mod shape_delete_parameter;
@@ -373,6 +375,8 @@ pub(crate) mod shape_delete_inventory_input;
 
 pub(crate) mod shape_delete_maintenance_window_input;
 
+pub(crate) mod shape_delete_ops_item_input;
+
 pub(crate) mod shape_delete_ops_metadata_input;
 
 pub(crate) mod shape_delete_parameter_input;
@@ -682,6 +686,8 @@ pub(crate) mod shape_modify_document_permission_input;
 pub(crate) mod shape_ops_item_access_denied_exception;
 
 pub(crate) mod shape_ops_item_already_exists_exception;
+
+pub(crate) mod shape_ops_item_conflict_exception;
 
 pub(crate) mod shape_ops_item_invalid_parameter_exception;
 

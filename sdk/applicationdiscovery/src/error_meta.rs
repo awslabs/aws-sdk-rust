@@ -5,7 +5,7 @@
 pub enum Error {
     /// <p>The user does not have permission to perform the action. Check the IAM policy associated with this user.</p>
     AuthorizationErrorException(crate::types::error::AuthorizationErrorException),
-    /// <p></p>
+    /// <p>Conflict error.</p>
     ConflictErrorException(crate::types::error::ConflictErrorException),
     /// <p>The home Region is not set. Set the home Region to continue.</p>
     HomeRegionNotSetException(crate::types::error::HomeRegionNotSetException),
@@ -13,6 +13,8 @@ pub enum Error {
     InvalidParameterException(crate::types::error::InvalidParameterException),
     /// <p>The value of one or more parameters are either invalid or out of range. Verify the parameter values and try again.</p>
     InvalidParameterValueException(crate::types::error::InvalidParameterValueException),
+    /// <p> The limit of 200 configuration IDs per request has been exceeded. </p>
+    LimitExceededException(crate::types::error::LimitExceededException),
     /// <p>This operation is not permitted.</p>
     OperationNotPermittedException(crate::types::error::OperationNotPermittedException),
     /// <p>This issue occurs when the same <code>clientRequestToken</code> is used with the <code>StartImportTask</code> action, but with different parameters. For example, you use the same request token but have two different import URLs, you can encounter this issue. If the import tasks are meant to be different, use a different <code>clientRequestToken</code>, and try again.</p>
@@ -32,6 +34,7 @@ impl ::std::fmt::Display for Error {
             Error::HomeRegionNotSetException(inner) => inner.fmt(f),
             Error::InvalidParameterException(inner) => inner.fmt(f),
             Error::InvalidParameterValueException(inner) => inner.fmt(f),
+            Error::LimitExceededException(inner) => inner.fmt(f),
             Error::OperationNotPermittedException(inner) => inner.fmt(f),
             Error::ResourceInUseException(inner) => inner.fmt(f),
             Error::ResourceNotFoundException(inner) => inner.fmt(f),
@@ -76,6 +79,41 @@ impl From<crate::operation::associate_configuration_items_to_application::Associ
             crate::operation::associate_configuration_items_to_application::AssociateConfigurationItemsToApplicationError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
             crate::operation::associate_configuration_items_to_application::AssociateConfigurationItemsToApplicationError::ServerInternalErrorException(inner) => Error::ServerInternalErrorException(inner),
             crate::operation::associate_configuration_items_to_application::AssociateConfigurationItemsToApplicationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::batch_delete_agents::BatchDeleteAgentsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::batch_delete_agents::BatchDeleteAgentsError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::batch_delete_agents::BatchDeleteAgentsError> for Error {
+    fn from(err: crate::operation::batch_delete_agents::BatchDeleteAgentsError) -> Self {
+        match err {
+            crate::operation::batch_delete_agents::BatchDeleteAgentsError::AuthorizationErrorException(inner) => {
+                Error::AuthorizationErrorException(inner)
+            }
+            crate::operation::batch_delete_agents::BatchDeleteAgentsError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::batch_delete_agents::BatchDeleteAgentsError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::batch_delete_agents::BatchDeleteAgentsError::ServerInternalErrorException(inner) => {
+                Error::ServerInternalErrorException(inner)
+            }
+            crate::operation::batch_delete_agents::BatchDeleteAgentsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -274,6 +312,51 @@ impl From<crate::operation::describe_agents::DescribeAgentsError> for Error {
             }
             crate::operation::describe_agents::DescribeAgentsError::ServerInternalErrorException(inner) => Error::ServerInternalErrorException(inner),
             crate::operation::describe_agents::DescribeAgentsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_batch_delete_configuration_task::DescribeBatchDeleteConfigurationTaskError, R>,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_batch_delete_configuration_task::DescribeBatchDeleteConfigurationTaskError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_batch_delete_configuration_task::DescribeBatchDeleteConfigurationTaskError> for Error {
+    fn from(err: crate::operation::describe_batch_delete_configuration_task::DescribeBatchDeleteConfigurationTaskError) -> Self {
+        match err {
+            crate::operation::describe_batch_delete_configuration_task::DescribeBatchDeleteConfigurationTaskError::AuthorizationErrorException(
+                inner,
+            ) => Error::AuthorizationErrorException(inner),
+            crate::operation::describe_batch_delete_configuration_task::DescribeBatchDeleteConfigurationTaskError::HomeRegionNotSetException(
+                inner,
+            ) => Error::HomeRegionNotSetException(inner),
+            crate::operation::describe_batch_delete_configuration_task::DescribeBatchDeleteConfigurationTaskError::InvalidParameterValueException(
+                inner,
+            ) => Error::InvalidParameterValueException(inner),
+            crate::operation::describe_batch_delete_configuration_task::DescribeBatchDeleteConfigurationTaskError::ServerInternalErrorException(
+                inner,
+            ) => Error::ServerInternalErrorException(inner),
+            crate::operation::describe_batch_delete_configuration_task::DescribeBatchDeleteConfigurationTaskError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
@@ -704,6 +787,52 @@ impl From<crate::operation::list_server_neighbors::ListServerNeighborsError> for
         }
     }
 }
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::start_batch_delete_configuration_task::StartBatchDeleteConfigurationTaskError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<crate::operation::start_batch_delete_configuration_task::StartBatchDeleteConfigurationTaskError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::start_batch_delete_configuration_task::StartBatchDeleteConfigurationTaskError> for Error {
+    fn from(err: crate::operation::start_batch_delete_configuration_task::StartBatchDeleteConfigurationTaskError) -> Self {
+        match err {
+            crate::operation::start_batch_delete_configuration_task::StartBatchDeleteConfigurationTaskError::AuthorizationErrorException(inner) => {
+                Error::AuthorizationErrorException(inner)
+            }
+            crate::operation::start_batch_delete_configuration_task::StartBatchDeleteConfigurationTaskError::HomeRegionNotSetException(inner) => {
+                Error::HomeRegionNotSetException(inner)
+            }
+            crate::operation::start_batch_delete_configuration_task::StartBatchDeleteConfigurationTaskError::InvalidParameterValueException(
+                inner,
+            ) => Error::InvalidParameterValueException(inner),
+            crate::operation::start_batch_delete_configuration_task::StartBatchDeleteConfigurationTaskError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::operation::start_batch_delete_configuration_task::StartBatchDeleteConfigurationTaskError::OperationNotPermittedException(
+                inner,
+            ) => Error::OperationNotPermittedException(inner),
+            crate::operation::start_batch_delete_configuration_task::StartBatchDeleteConfigurationTaskError::ServerInternalErrorException(inner) => {
+                Error::ServerInternalErrorException(inner)
+            }
+            crate::operation::start_batch_delete_configuration_task::StartBatchDeleteConfigurationTaskError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
 impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::start_continuous_export::StartContinuousExportError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -993,6 +1122,7 @@ impl ::std::error::Error for Error {
             Error::HomeRegionNotSetException(inner) => inner.source(),
             Error::InvalidParameterException(inner) => inner.source(),
             Error::InvalidParameterValueException(inner) => inner.source(),
+            Error::LimitExceededException(inner) => inner.source(),
             Error::OperationNotPermittedException(inner) => inner.source(),
             Error::ResourceInUseException(inner) => inner.source(),
             Error::ResourceNotFoundException(inner) => inner.source(),
@@ -1009,6 +1139,7 @@ impl ::aws_http::request_id::RequestId for Error {
             Self::HomeRegionNotSetException(e) => e.request_id(),
             Self::InvalidParameterException(e) => e.request_id(),
             Self::InvalidParameterValueException(e) => e.request_id(),
+            Self::LimitExceededException(e) => e.request_id(),
             Self::OperationNotPermittedException(e) => e.request_id(),
             Self::ResourceInUseException(e) => e.request_id(),
             Self::ResourceNotFoundException(e) => e.request_id(),

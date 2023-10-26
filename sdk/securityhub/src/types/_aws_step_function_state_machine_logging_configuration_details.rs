@@ -7,7 +7,7 @@ pub struct AwsStepFunctionStateMachineLoggingConfigurationDetails {
     /// <p> An array of objects that describes where your execution history events will be logged. </p>
     pub destinations: ::std::option::Option<::std::vec::Vec<crate::types::AwsStepFunctionStateMachineLoggingConfigurationDestinationsDetails>>,
     /// <p> Determines whether execution data is included in your log. When set to false, data is excluded. </p>
-    pub include_execution_data: bool,
+    pub include_execution_data: ::std::option::Option<bool>,
     /// <p> Defines which category of execution history events are logged. </p>
     pub level: ::std::option::Option<::std::string::String>,
 }
@@ -17,7 +17,7 @@ impl AwsStepFunctionStateMachineLoggingConfigurationDetails {
         self.destinations.as_deref()
     }
     /// <p> Determines whether execution data is included in your log. When set to false, data is excluded. </p>
-    pub fn include_execution_data(&self) -> bool {
+    pub fn include_execution_data(&self) -> ::std::option::Option<bool> {
         self.include_execution_data
     }
     /// <p> Defines which category of execution history events are logged. </p>
@@ -98,7 +98,7 @@ impl AwsStepFunctionStateMachineLoggingConfigurationDetailsBuilder {
     pub fn build(self) -> crate::types::AwsStepFunctionStateMachineLoggingConfigurationDetails {
         crate::types::AwsStepFunctionStateMachineLoggingConfigurationDetails {
             destinations: self.destinations,
-            include_execution_data: self.include_execution_data.unwrap_or_default(),
+            include_execution_data: self.include_execution_data,
             level: self.level,
         }
     }

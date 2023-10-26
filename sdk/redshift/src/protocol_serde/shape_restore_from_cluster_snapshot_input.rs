@@ -200,6 +200,16 @@ pub fn ser_restore_from_cluster_snapshot_input_input(
     if let Some(var_75) = &input.encrypted {
         scope_74.boolean(*var_75);
     }
+    #[allow(unused_mut)]
+    let mut scope_76 = writer.prefix("ManageMasterPassword");
+    if let Some(var_77) = &input.manage_master_password {
+        scope_76.boolean(*var_77);
+    }
+    #[allow(unused_mut)]
+    let mut scope_78 = writer.prefix("MasterPasswordSecretKmsKeyId");
+    if let Some(var_79) = &input.master_password_secret_kms_key_id {
+        scope_78.string(var_79);
+    }
     writer.finish();
     Ok(::aws_smithy_http::body::SdkBody::from(out))
 }

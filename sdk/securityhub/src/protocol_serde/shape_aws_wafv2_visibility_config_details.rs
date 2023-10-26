@@ -3,14 +3,14 @@ pub fn ser_aws_wafv2_visibility_config_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsWafv2VisibilityConfigDetails,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if input.cloud_watch_metrics_enabled {
-        object.key("CloudWatchMetricsEnabled").boolean(input.cloud_watch_metrics_enabled);
+    if let Some(var_1) = &input.cloud_watch_metrics_enabled {
+        object.key("CloudWatchMetricsEnabled").boolean(*var_1);
     }
-    if let Some(var_1) = &input.metric_name {
-        object.key("MetricName").string(var_1.as_str());
+    if let Some(var_2) = &input.metric_name {
+        object.key("MetricName").string(var_2.as_str());
     }
-    if input.sampled_requests_enabled {
-        object.key("SampledRequestsEnabled").boolean(input.sampled_requests_enabled);
+    if let Some(var_3) = &input.sampled_requests_enabled {
+        object.key("SampledRequestsEnabled").boolean(*var_3);
     }
     Ok(())
 }

@@ -11,12 +11,14 @@ pub struct DescribeStoreImageTasksInput {
     /// <ul>
     /// <li> <p> <code>task-state</code> - Returns tasks in a certain state (<code>InProgress</code> | <code>Completed</code> | <code>Failed</code>)</p> </li>
     /// <li> <p> <code>bucket</code> - Returns task information for tasks that targeted a specific bucket. For the filter value, specify the bucket name.</p> </li>
-    /// </ul>
+    /// </ul> <note>
+    /// <p>When you specify the <code>ImageIds</code> parameter, any filters that you specify are ignored. To use the filters, you must remove the <code>ImageIds</code> parameter.</p>
+    /// </note>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     /// <p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
-    /// <p>You cannot specify this parameter and the <code>ImageIDs</code> parameter in the same call.</p>
+    /// <p>You cannot specify this parameter and the <code>ImageIds</code> parameter in the same call.</p>
     pub max_results: ::std::option::Option<i32>,
 }
 impl DescribeStoreImageTasksInput {
@@ -32,7 +34,9 @@ impl DescribeStoreImageTasksInput {
     /// <ul>
     /// <li> <p> <code>task-state</code> - Returns tasks in a certain state (<code>InProgress</code> | <code>Completed</code> | <code>Failed</code>)</p> </li>
     /// <li> <p> <code>bucket</code> - Returns task information for tasks that targeted a specific bucket. For the filter value, specify the bucket name.</p> </li>
-    /// </ul>
+    /// </ul> <note>
+    /// <p>When you specify the <code>ImageIds</code> parameter, any filters that you specify are ignored. To use the filters, you must remove the <code>ImageIds</code> parameter.</p>
+    /// </note>
     pub fn filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
         self.filters.as_deref()
     }
@@ -41,7 +45,7 @@ impl DescribeStoreImageTasksInput {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
-    /// <p>You cannot specify this parameter and the <code>ImageIDs</code> parameter in the same call.</p>
+    /// <p>You cannot specify this parameter and the <code>ImageIds</code> parameter in the same call.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
@@ -106,7 +110,9 @@ impl DescribeStoreImageTasksInputBuilder {
     /// <ul>
     /// <li> <p> <code>task-state</code> - Returns tasks in a certain state (<code>InProgress</code> | <code>Completed</code> | <code>Failed</code>)</p> </li>
     /// <li> <p> <code>bucket</code> - Returns task information for tasks that targeted a specific bucket. For the filter value, specify the bucket name.</p> </li>
-    /// </ul>
+    /// </ul> <note>
+    /// <p>When you specify the <code>ImageIds</code> parameter, any filters that you specify are ignored. To use the filters, you must remove the <code>ImageIds</code> parameter.</p>
+    /// </note>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
         v.push(input);
@@ -117,7 +123,9 @@ impl DescribeStoreImageTasksInputBuilder {
     /// <ul>
     /// <li> <p> <code>task-state</code> - Returns tasks in a certain state (<code>InProgress</code> | <code>Completed</code> | <code>Failed</code>)</p> </li>
     /// <li> <p> <code>bucket</code> - Returns task information for tasks that targeted a specific bucket. For the filter value, specify the bucket name.</p> </li>
-    /// </ul>
+    /// </ul> <note>
+    /// <p>When you specify the <code>ImageIds</code> parameter, any filters that you specify are ignored. To use the filters, you must remove the <code>ImageIds</code> parameter.</p>
+    /// </note>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
@@ -126,7 +134,9 @@ impl DescribeStoreImageTasksInputBuilder {
     /// <ul>
     /// <li> <p> <code>task-state</code> - Returns tasks in a certain state (<code>InProgress</code> | <code>Completed</code> | <code>Failed</code>)</p> </li>
     /// <li> <p> <code>bucket</code> - Returns task information for tasks that targeted a specific bucket. For the filter value, specify the bucket name.</p> </li>
-    /// </ul>
+    /// </ul> <note>
+    /// <p>When you specify the <code>ImageIds</code> parameter, any filters that you specify are ignored. To use the filters, you must remove the <code>ImageIds</code> parameter.</p>
+    /// </note>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         &self.filters
     }
@@ -145,19 +155,19 @@ impl DescribeStoreImageTasksInputBuilder {
         &self.next_token
     }
     /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
-    /// <p>You cannot specify this parameter and the <code>ImageIDs</code> parameter in the same call.</p>
+    /// <p>You cannot specify this parameter and the <code>ImageIds</code> parameter in the same call.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
-    /// <p>You cannot specify this parameter and the <code>ImageIDs</code> parameter in the same call.</p>
+    /// <p>You cannot specify this parameter and the <code>ImageIds</code> parameter in the same call.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }
     /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
-    /// <p>You cannot specify this parameter and the <code>ImageIDs</code> parameter in the same call.</p>
+    /// <p>You cannot specify this parameter and the <code>ImageIds</code> parameter in the same call.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }

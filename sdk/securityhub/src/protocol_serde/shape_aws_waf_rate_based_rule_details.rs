@@ -12,29 +12,29 @@ pub fn ser_aws_waf_rate_based_rule_details(
     if let Some(var_3) = &input.rate_key {
         object.key("RateKey").string(var_3.as_str());
     }
-    if input.rate_limit != 0 {
+    if let Some(var_4) = &input.rate_limit {
         object.key("RateLimit").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.rate_limit).into()),
+            ::aws_smithy_types::Number::NegInt((*var_4).into()),
         );
     }
-    if let Some(var_4) = &input.rule_id {
-        object.key("RuleId").string(var_4.as_str());
+    if let Some(var_5) = &input.rule_id {
+        object.key("RuleId").string(var_5.as_str());
     }
-    if let Some(var_5) = &input.match_predicates {
-        let mut array_6 = object.key("MatchPredicates").start_array();
-        for item_7 in var_5 {
+    if let Some(var_6) = &input.match_predicates {
+        let mut array_7 = object.key("MatchPredicates").start_array();
+        for item_8 in var_6 {
             {
                 #[allow(unused_mut)]
-                let mut object_8 = array_6.value().start_object();
+                let mut object_9 = array_7.value().start_object();
                 crate::protocol_serde::shape_aws_waf_rate_based_rule_match_predicate::ser_aws_waf_rate_based_rule_match_predicate(
-                    &mut object_8,
-                    item_7,
+                    &mut object_9,
+                    item_8,
                 )?;
-                object_8.finish();
+                object_9.finish();
             }
         }
-        array_6.finish();
+        array_7.finish();
     }
     Ok(())
 }

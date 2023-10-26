@@ -21,14 +21,14 @@ pub fn ser_top_bottom_ranked_computation(
         crate::protocol_serde::shape_measure_field::ser_measure_field(&mut object_6, var_5)?;
         object_6.finish();
     }
-    if input.result_size != 0 {
+    if let Some(var_7) = &input.result_size {
         object.key("ResultSize").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.result_size).into()),
+            ::aws_smithy_types::Number::NegInt((*var_7).into()),
         );
     }
-    if let Some(var_7) = &input.r#type {
-        object.key("Type").string(var_7.as_str());
+    if let Some(var_8) = &input.r#type {
+        object.key("Type").string(var_8.as_str());
     }
     Ok(())
 }

@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsCloudWatchAlarmDetails {
     /// <p>Indicates whether actions should be executed during any changes to the alarm state. </p>
-    pub actions_enabled: bool,
+    pub actions_enabled: ::std::option::Option<bool>,
     /// <p>The list of actions, specified as Amazon Resource Names (ARNs) to execute when this alarm transitions into an <code>ALARM</code> state from any other state. </p>
     pub alarm_actions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The ARN of the alarm. </p>
@@ -19,13 +19,13 @@ pub struct AwsCloudWatchAlarmDetails {
     /// <p>The arithmetic operation to use when comparing the specified statistic and threshold. The specified statistic value is used as the first operand. </p>
     pub comparison_operator: ::std::option::Option<::std::string::String>,
     /// <p>The number of datapoints that must be breaching to trigger the alarm. </p>
-    pub datapoints_to_alarm: i32,
+    pub datapoints_to_alarm: ::std::option::Option<i32>,
     /// <p>The dimensions for the metric associated with the alarm. </p>
     pub dimensions: ::std::option::Option<::std::vec::Vec<crate::types::AwsCloudWatchAlarmDimensionsDetails>>,
     /// <p>Used only for alarms based on percentiles. If <code>ignore</code>, the alarm state does not change during periods with too few data points to be statistically significant. If <code>evaluate</code> or this parameter is not used, the alarm is always evaluated and possibly changes state no matter how many data points are available. </p>
     pub evaluate_low_sample_count_percentile: ::std::option::Option<::std::string::String>,
     /// <p>The number of periods over which data is compared to the specified threshold. </p>
-    pub evaluation_periods: i32,
+    pub evaluation_periods: ::std::option::Option<i32>,
     /// <p>The percentile statistic for the metric associated with the alarm. </p>
     pub extended_statistic: ::std::option::Option<::std::string::String>,
     /// <p>The actions to execute when this alarm transitions to the <code>INSUFFICIENT_DATA</code> state from any other state. Each action is specified as an ARN. </p>
@@ -37,13 +37,13 @@ pub struct AwsCloudWatchAlarmDetails {
     /// <p>The actions to execute when this alarm transitions to the <code>OK</code> state from any other state. Each action is specified as an ARN. </p>
     pub ok_actions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The period, in seconds, over which the statistic is applied. This is required for an alarm based on a metric. </p>
-    pub period: i32,
+    pub period: ::std::option::Option<i32>,
     /// <p>The statistic for the metric associated with the alarm, other than percentile. For percentile statistics, use <code>ExtendedStatistic</code>.</p>
     /// <p>For an alarm based on a metric, you must specify either <code>Statistic</code> or <code>ExtendedStatistic</code> but not both.</p>
     /// <p>For an alarm based on a math expression, you can't specify <code>Statistic</code>. Instead, you use <code>Metrics</code>.</p>
     pub statistic: ::std::option::Option<::std::string::String>,
     /// <p>The value to compare with the specified statistic. </p>
-    pub threshold: f64,
+    pub threshold: ::std::option::Option<f64>,
     /// <p>n an alarm based on an anomaly detection model, this is the ID of the <code>ANOMALY_DETECTION_BAND</code> function used as the threshold for the alarm. </p>
     pub threshold_metric_id: ::std::option::Option<::std::string::String>,
     /// <p>Sets how this alarm is to handle missing data points. </p>
@@ -53,7 +53,7 @@ pub struct AwsCloudWatchAlarmDetails {
 }
 impl AwsCloudWatchAlarmDetails {
     /// <p>Indicates whether actions should be executed during any changes to the alarm state. </p>
-    pub fn actions_enabled(&self) -> bool {
+    pub fn actions_enabled(&self) -> ::std::option::Option<bool> {
         self.actions_enabled
     }
     /// <p>The list of actions, specified as Amazon Resource Names (ARNs) to execute when this alarm transitions into an <code>ALARM</code> state from any other state. </p>
@@ -81,7 +81,7 @@ impl AwsCloudWatchAlarmDetails {
         self.comparison_operator.as_deref()
     }
     /// <p>The number of datapoints that must be breaching to trigger the alarm. </p>
-    pub fn datapoints_to_alarm(&self) -> i32 {
+    pub fn datapoints_to_alarm(&self) -> ::std::option::Option<i32> {
         self.datapoints_to_alarm
     }
     /// <p>The dimensions for the metric associated with the alarm. </p>
@@ -93,7 +93,7 @@ impl AwsCloudWatchAlarmDetails {
         self.evaluate_low_sample_count_percentile.as_deref()
     }
     /// <p>The number of periods over which data is compared to the specified threshold. </p>
-    pub fn evaluation_periods(&self) -> i32 {
+    pub fn evaluation_periods(&self) -> ::std::option::Option<i32> {
         self.evaluation_periods
     }
     /// <p>The percentile statistic for the metric associated with the alarm. </p>
@@ -117,7 +117,7 @@ impl AwsCloudWatchAlarmDetails {
         self.ok_actions.as_deref()
     }
     /// <p>The period, in seconds, over which the statistic is applied. This is required for an alarm based on a metric. </p>
-    pub fn period(&self) -> i32 {
+    pub fn period(&self) -> ::std::option::Option<i32> {
         self.period
     }
     /// <p>The statistic for the metric associated with the alarm, other than percentile. For percentile statistics, use <code>ExtendedStatistic</code>.</p>
@@ -127,7 +127,7 @@ impl AwsCloudWatchAlarmDetails {
         self.statistic.as_deref()
     }
     /// <p>The value to compare with the specified statistic. </p>
-    pub fn threshold(&self) -> f64 {
+    pub fn threshold(&self) -> ::std::option::Option<f64> {
         self.threshold
     }
     /// <p>n an alarm based on an anomaly detection model, this is the ID of the <code>ANOMALY_DETECTION_BAND</code> function used as the threshold for the alarm. </p>
@@ -519,25 +519,25 @@ impl AwsCloudWatchAlarmDetailsBuilder {
     /// Consumes the builder and constructs a [`AwsCloudWatchAlarmDetails`](crate::types::AwsCloudWatchAlarmDetails).
     pub fn build(self) -> crate::types::AwsCloudWatchAlarmDetails {
         crate::types::AwsCloudWatchAlarmDetails {
-            actions_enabled: self.actions_enabled.unwrap_or_default(),
+            actions_enabled: self.actions_enabled,
             alarm_actions: self.alarm_actions,
             alarm_arn: self.alarm_arn,
             alarm_configuration_updated_timestamp: self.alarm_configuration_updated_timestamp,
             alarm_description: self.alarm_description,
             alarm_name: self.alarm_name,
             comparison_operator: self.comparison_operator,
-            datapoints_to_alarm: self.datapoints_to_alarm.unwrap_or_default(),
+            datapoints_to_alarm: self.datapoints_to_alarm,
             dimensions: self.dimensions,
             evaluate_low_sample_count_percentile: self.evaluate_low_sample_count_percentile,
-            evaluation_periods: self.evaluation_periods.unwrap_or_default(),
+            evaluation_periods: self.evaluation_periods,
             extended_statistic: self.extended_statistic,
             insufficient_data_actions: self.insufficient_data_actions,
             metric_name: self.metric_name,
             namespace: self.namespace,
             ok_actions: self.ok_actions,
-            period: self.period.unwrap_or_default(),
+            period: self.period,
             statistic: self.statistic,
-            threshold: self.threshold.unwrap_or_default(),
+            threshold: self.threshold,
             threshold_metric_id: self.threshold_metric_id,
             treat_missing_data: self.treat_missing_data,
             unit: self.unit,

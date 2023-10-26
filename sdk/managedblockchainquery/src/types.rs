@@ -31,9 +31,19 @@ pub use crate::types::_token_filter::TokenFilter;
 
 pub use crate::types::_owner_filter::OwnerFilter;
 
+pub use crate::types::_asset_contract::AssetContract;
+
+pub use crate::types::_query_token_standard::QueryTokenStandard;
+
+pub use crate::types::_contract_identifier::ContractIdentifier;
+
+pub use crate::types::_contract_filter::ContractFilter;
+
 pub use crate::types::_transaction::Transaction;
 
 pub use crate::types::_query_transaction_status::QueryTransactionStatus;
+
+pub use crate::types::_contract_metadata::ContractMetadata;
 
 pub use crate::types::_batch_get_token_balance_error_item::BatchGetTokenBalanceErrorItem;
 
@@ -43,6 +53,8 @@ pub use crate::types::_batch_get_token_balance_output_item::BatchGetTokenBalance
 
 pub use crate::types::_batch_get_token_balance_input_item::BatchGetTokenBalanceInputItem;
 
+mod _asset_contract;
+
 mod _batch_get_token_balance_error_item;
 
 mod _batch_get_token_balance_input_item;
@@ -50,6 +62,12 @@ mod _batch_get_token_balance_input_item;
 mod _batch_get_token_balance_output_item;
 
 mod _blockchain_instant;
+
+mod _contract_filter;
+
+mod _contract_identifier;
+
+mod _contract_metadata;
 
 mod _error_type;
 
@@ -62,6 +80,8 @@ mod _owner_filter;
 mod _owner_identifier;
 
 mod _query_network;
+
+mod _query_token_standard;
 
 mod _query_transaction_event_type;
 

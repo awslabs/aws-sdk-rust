@@ -110,17 +110,17 @@ impl CreateSchemaMappingFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name of the schema. There cannot be multiple <code>SchemaMappings</code> with the same name.</p>
+    /// <p>The name of the schema. There can't be multiple <code>SchemaMappings</code> with the same name.</p>
     pub fn schema_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.schema_name(input.into());
         self
     }
-    /// <p>The name of the schema. There cannot be multiple <code>SchemaMappings</code> with the same name.</p>
+    /// <p>The name of the schema. There can't be multiple <code>SchemaMappings</code> with the same name.</p>
     pub fn set_schema_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_schema_name(input);
         self
     }
-    /// <p>The name of the schema. There cannot be multiple <code>SchemaMappings</code> with the same name.</p>
+    /// <p>The name of the schema. There can't be multiple <code>SchemaMappings</code> with the same name.</p>
     pub fn get_schema_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_schema_name()
     }

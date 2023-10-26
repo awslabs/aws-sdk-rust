@@ -3,19 +3,19 @@ pub fn ser_aws_ecs_service_capacity_provider_strategy_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsEcsServiceCapacityProviderStrategyDetails,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if input.base != 0 {
+    if let Some(var_1) = &input.base {
         object.key("Base").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.base).into()),
+            ::aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if let Some(var_1) = &input.capacity_provider {
-        object.key("CapacityProvider").string(var_1.as_str());
+    if let Some(var_2) = &input.capacity_provider {
+        object.key("CapacityProvider").string(var_2.as_str());
     }
-    if input.weight != 0 {
+    if let Some(var_3) = &input.weight {
         object.key("Weight").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.weight).into()),
+            ::aws_smithy_types::Number::NegInt((*var_3).into()),
         );
     }
     Ok(())

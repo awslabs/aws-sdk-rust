@@ -75,6 +75,8 @@ pub use crate::types::_file_information::FileInformationBuilder;
 
 pub use crate::types::_run_list_item::RunListItemBuilder;
 
+pub use crate::types::_run_log_location::RunLogLocationBuilder;
+
 pub use crate::types::_task_list_item::TaskListItemBuilder;
 
 pub use crate::types::_run_group_list_item::RunGroupListItemBuilder;

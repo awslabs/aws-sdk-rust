@@ -11,7 +11,7 @@ pub struct SamplingRule {
     /// <p>Matches the ARN of the Amazon Web Services resource on which the service runs.</p>
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>The priority of the sampling rule.</p>
-    pub priority: i32,
+    pub priority: ::std::option::Option<i32>,
     /// <p>The percentage of matching requests to instrument, after the reservoir is exhausted.</p>
     pub fixed_rate: f64,
     /// <p>A fixed number of matching requests to instrument per second, prior to applying the fixed rate. The reservoir is not used directly by services, but applies to all services using the rule collectively.</p>
@@ -27,7 +27,7 @@ pub struct SamplingRule {
     /// <p>Matches the path from a request URL.</p>
     pub url_path: ::std::option::Option<::std::string::String>,
     /// <p>The version of the sampling rule format (<code>1</code>).</p>
-    pub version: i32,
+    pub version: ::std::option::Option<i32>,
     /// <p>Matches attributes derived from the request.</p>
     pub attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
@@ -45,7 +45,7 @@ impl SamplingRule {
         self.resource_arn.as_deref()
     }
     /// <p>The priority of the sampling rule.</p>
-    pub fn priority(&self) -> i32 {
+    pub fn priority(&self) -> ::std::option::Option<i32> {
         self.priority
     }
     /// <p>The percentage of matching requests to instrument, after the reservoir is exhausted.</p>
@@ -77,7 +77,7 @@ impl SamplingRule {
         self.url_path.as_deref()
     }
     /// <p>The version of the sampling rule format (<code>1</code>).</p>
-    pub fn version(&self) -> i32 {
+    pub fn version(&self) -> ::std::option::Option<i32> {
         self.version
     }
     /// <p>Matches attributes derived from the request.</p>
@@ -305,7 +305,7 @@ impl SamplingRuleBuilder {
             rule_name: self.rule_name,
             rule_arn: self.rule_arn,
             resource_arn: self.resource_arn,
-            priority: self.priority.unwrap_or_default(),
+            priority: self.priority,
             fixed_rate: self.fixed_rate.unwrap_or_default(),
             reservoir_size: self.reservoir_size.unwrap_or_default(),
             service_name: self.service_name,
@@ -313,7 +313,7 @@ impl SamplingRuleBuilder {
             host: self.host,
             http_method: self.http_method,
             url_path: self.url_path,
-            version: self.version.unwrap_or_default(),
+            version: self.version,
             attributes: self.attributes,
         }
     }

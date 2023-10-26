@@ -17,11 +17,11 @@ pub struct RevokeEndpointAccessOutput {
     /// <p>The status of the authorization action.</p>
     pub status: ::std::option::Option<crate::types::AuthorizationStatus>,
     /// <p>Indicates whether all VPCs in the grantee account are allowed access to the cluster.</p>
-    pub allowed_all_vp_cs: bool,
+    pub allowed_all_vp_cs: ::std::option::Option<bool>,
     /// <p>The VPCs allowed access to the cluster.</p>
     pub allowed_vp_cs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The number of Redshift-managed VPC endpoints created for the authorization.</p>
-    pub endpoint_count: i32,
+    pub endpoint_count: ::std::option::Option<i32>,
     _request_id: Option<String>,
 }
 impl RevokeEndpointAccessOutput {
@@ -50,7 +50,7 @@ impl RevokeEndpointAccessOutput {
         self.status.as_ref()
     }
     /// <p>Indicates whether all VPCs in the grantee account are allowed access to the cluster.</p>
-    pub fn allowed_all_vp_cs(&self) -> bool {
+    pub fn allowed_all_vp_cs(&self) -> ::std::option::Option<bool> {
         self.allowed_all_vp_cs
     }
     /// <p>The VPCs allowed access to the cluster.</p>
@@ -58,7 +58,7 @@ impl RevokeEndpointAccessOutput {
         self.allowed_vp_cs.as_deref()
     }
     /// <p>The number of Redshift-managed VPC endpoints created for the authorization.</p>
-    pub fn endpoint_count(&self) -> i32 {
+    pub fn endpoint_count(&self) -> ::std::option::Option<i32> {
         self.endpoint_count
     }
 }
@@ -240,9 +240,9 @@ impl RevokeEndpointAccessOutputBuilder {
             authorize_time: self.authorize_time,
             cluster_status: self.cluster_status,
             status: self.status,
-            allowed_all_vp_cs: self.allowed_all_vp_cs.unwrap_or_default(),
+            allowed_all_vp_cs: self.allowed_all_vp_cs,
             allowed_vp_cs: self.allowed_vp_cs,
-            endpoint_count: self.endpoint_count.unwrap_or_default(),
+            endpoint_count: self.endpoint_count,
             _request_id: self._request_id,
         }
     }

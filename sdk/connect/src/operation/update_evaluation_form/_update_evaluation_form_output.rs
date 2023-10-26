@@ -8,7 +8,7 @@ pub struct UpdateEvaluationFormOutput {
     /// <p>The Amazon Resource Name (ARN) for the contact evaluation resource.</p>
     pub evaluation_form_arn: ::std::option::Option<::std::string::String>,
     /// <p>The version of the updated evaluation form resource.</p>
-    pub evaluation_form_version: ::std::option::Option<i32>,
+    pub evaluation_form_version: i32,
     _request_id: Option<String>,
 }
 impl UpdateEvaluationFormOutput {
@@ -21,7 +21,7 @@ impl UpdateEvaluationFormOutput {
         self.evaluation_form_arn.as_deref()
     }
     /// <p>The version of the updated evaluation form resource.</p>
-    pub fn evaluation_form_version(&self) -> ::std::option::Option<i32> {
+    pub fn evaluation_form_version(&self) -> i32 {
         self.evaluation_form_version
     }
 }
@@ -103,7 +103,7 @@ impl UpdateEvaluationFormOutputBuilder {
         crate::operation::update_evaluation_form::UpdateEvaluationFormOutput {
             evaluation_form_id: self.evaluation_form_id,
             evaluation_form_arn: self.evaluation_form_arn,
-            evaluation_form_version: self.evaluation_form_version,
+            evaluation_form_version: self.evaluation_form_version.unwrap_or_default(),
             _request_id: self._request_id,
         }
     }

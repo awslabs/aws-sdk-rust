@@ -5,11 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProcessingStoppingCondition {
     /// <p>Specifies the maximum runtime in seconds.</p>
-    pub max_runtime_in_seconds: i32,
+    pub max_runtime_in_seconds: ::std::option::Option<i32>,
 }
 impl ProcessingStoppingCondition {
     /// <p>Specifies the maximum runtime in seconds.</p>
-    pub fn max_runtime_in_seconds(&self) -> i32 {
+    pub fn max_runtime_in_seconds(&self) -> ::std::option::Option<i32> {
         self.max_runtime_in_seconds
     }
 }
@@ -44,7 +44,7 @@ impl ProcessingStoppingConditionBuilder {
     /// Consumes the builder and constructs a [`ProcessingStoppingCondition`](crate::types::ProcessingStoppingCondition).
     pub fn build(self) -> crate::types::ProcessingStoppingCondition {
         crate::types::ProcessingStoppingCondition {
-            max_runtime_in_seconds: self.max_runtime_in_seconds.unwrap_or_default(),
+            max_runtime_in_seconds: self.max_runtime_in_seconds,
         }
     }
 }

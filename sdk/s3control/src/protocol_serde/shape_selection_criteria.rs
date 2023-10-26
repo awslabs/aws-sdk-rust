@@ -9,13 +9,13 @@ pub fn ser_selection_criteria(
         let mut inner_writer = scope.start_el("Delimiter").finish();
         inner_writer.data(var_1.as_str());
     }
-    if input.max_depth != 0 {
+    if let Some(var_2) = &input.max_depth {
         let mut inner_writer = scope.start_el("MaxDepth").finish();
-        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(input.max_depth).encode());
+        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(*var_2).encode());
     }
-    if input.min_storage_bytes_percentage != 0.0 {
+    if let Some(var_3) = &input.min_storage_bytes_percentage {
         let mut inner_writer = scope.start_el("MinStorageBytesPercentage").finish();
-        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(input.min_storage_bytes_percentage).encode());
+        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(*var_3).encode());
     }
     scope.finish();
     Ok(())
@@ -29,7 +29,7 @@ pub fn de_selection_criteria(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Delimiter") /* Delimiter com.amazonaws.s3control#SelectionCriteria$Delimiter */ =>  {
-                let var_2 =
+                let var_4 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -38,11 +38,11 @@ pub fn de_selection_criteria(
                         ?
                     )
                 ;
-                builder = builder.set_delimiter(var_2);
+                builder = builder.set_delimiter(var_4);
             }
             ,
             s if s.matches("MaxDepth") /* MaxDepth com.amazonaws.s3control#SelectionCriteria$MaxDepth */ =>  {
-                let var_3 =
+                let var_5 =
                     Some(
                          {
                             <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -53,11 +53,11 @@ pub fn de_selection_criteria(
                         ?
                     )
                 ;
-                builder = builder.set_max_depth(var_3);
+                builder = builder.set_max_depth(var_5);
             }
             ,
             s if s.matches("MinStorageBytesPercentage") /* MinStorageBytesPercentage com.amazonaws.s3control#SelectionCriteria$MinStorageBytesPercentage */ =>  {
-                let var_4 =
+                let var_6 =
                     Some(
                          {
                             <f64 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -68,7 +68,7 @@ pub fn de_selection_criteria(
                         ?
                     )
                 ;
-                builder = builder.set_min_storage_bytes_percentage(var_4);
+                builder = builder.set_min_storage_bytes_percentage(var_6);
             }
             ,
             _ => {}

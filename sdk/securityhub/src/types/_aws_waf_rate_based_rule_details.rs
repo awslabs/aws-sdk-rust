@@ -11,7 +11,7 @@ pub struct AwsWafRateBasedRuleDetails {
     /// <p>The field that WAF uses to determine whether requests are likely arriving from single source and are subject to rate monitoring.</p>
     pub rate_key: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of requests that have an identical value for the field specified in <code>RateKey</code> that are allowed within a five-minute period. If the number of requests exceeds <code>RateLimit</code> and the other predicates specified in the rule are met, WAF triggers the action for the rule.</p>
-    pub rate_limit: i64,
+    pub rate_limit: ::std::option::Option<i64>,
     /// <p>The unique identifier for the rate-based rule.</p>
     pub rule_id: ::std::option::Option<::std::string::String>,
     /// <p>The predicates to include in the rate-based rule.</p>
@@ -31,7 +31,7 @@ impl AwsWafRateBasedRuleDetails {
         self.rate_key.as_deref()
     }
     /// <p>The maximum number of requests that have an identical value for the field specified in <code>RateKey</code> that are allowed within a five-minute period. If the number of requests exceeds <code>RateLimit</code> and the other predicates specified in the rule are met, WAF triggers the action for the rule.</p>
-    pub fn rate_limit(&self) -> i64 {
+    pub fn rate_limit(&self) -> ::std::option::Option<i64> {
         self.rate_limit
     }
     /// <p>The unique identifier for the rate-based rule.</p>
@@ -158,7 +158,7 @@ impl AwsWafRateBasedRuleDetailsBuilder {
             metric_name: self.metric_name,
             name: self.name,
             rate_key: self.rate_key,
-            rate_limit: self.rate_limit.unwrap_or_default(),
+            rate_limit: self.rate_limit,
             rule_id: self.rule_id,
             match_predicates: self.match_predicates,
         }

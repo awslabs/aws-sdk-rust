@@ -12,7 +12,7 @@ pub struct StartActivityStreamOutput {
     /// <p>The mode of the database activity stream.</p>
     pub mode: ::std::option::Option<crate::types::ActivityStreamMode>,
     /// <p>Indicates whether or not the database activity stream will start as soon as possible, regardless of the maintenance window for the database.</p>
-    pub apply_immediately: bool,
+    pub apply_immediately: ::std::option::Option<bool>,
     /// <p>Indicates whether engine-native audit fields are included in the database activity stream.</p>
     pub engine_native_audit_fields_included: ::std::option::Option<bool>,
     _request_id: Option<String>,
@@ -35,7 +35,7 @@ impl StartActivityStreamOutput {
         self.mode.as_ref()
     }
     /// <p>Indicates whether or not the database activity stream will start as soon as possible, regardless of the maintenance window for the database.</p>
-    pub fn apply_immediately(&self) -> bool {
+    pub fn apply_immediately(&self) -> ::std::option::Option<bool> {
         self.apply_immediately
     }
     /// <p>Indicates whether engine-native audit fields are included in the database activity stream.</p>
@@ -168,7 +168,7 @@ impl StartActivityStreamOutputBuilder {
             kinesis_stream_name: self.kinesis_stream_name,
             status: self.status,
             mode: self.mode,
-            apply_immediately: self.apply_immediately.unwrap_or_default(),
+            apply_immediately: self.apply_immediately,
             engine_native_audit_fields_included: self.engine_native_audit_fields_included,
             _request_id: self._request_id,
         }

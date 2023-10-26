@@ -22,7 +22,7 @@ impl CreateFilterInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateFilter`.
 ///
-/// <p>Creates a filter resource using specified filter criteria.</p>
+/// <p>Creates a filter resource using specified filter criteria. When the filter action is set to <code>SUPPRESS</code> this action creates a suppression rule.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateFilterFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -14,7 +14,7 @@ pub struct AccountLimit {
     /// </ul>
     pub r#type: ::std::option::Option<crate::types::AccountLimitType>,
     /// <p>The current value for the limit that is specified by <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AccountLimit.html#Route53-Type-AccountLimit-Type">Type</a>.</p>
-    pub value: i64,
+    pub value: ::std::option::Option<i64>,
 }
 impl AccountLimit {
     /// <p>The limit that you requested. Valid values include the following:</p>
@@ -29,7 +29,7 @@ impl AccountLimit {
         self.r#type.as_ref()
     }
     /// <p>The current value for the limit that is specified by <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AccountLimit.html#Route53-Type-AccountLimit-Type">Type</a>.</p>
-    pub fn value(&self) -> i64 {
+    pub fn value(&self) -> ::std::option::Option<i64> {
         self.value
     }
 }
@@ -101,7 +101,7 @@ impl AccountLimitBuilder {
     pub fn build(self) -> crate::types::AccountLimit {
         crate::types::AccountLimit {
             r#type: self.r#type,
-            value: self.value.unwrap_or_default(),
+            value: self.value,
         }
     }
 }

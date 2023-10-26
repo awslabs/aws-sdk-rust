@@ -5,19 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PortMapping {
     /// <p>The port number on the simulation job instance to use as a remote connection point. </p>
-    pub job_port: i32,
+    pub job_port: ::std::option::Option<i32>,
     /// <p>The port number on the application.</p>
-    pub application_port: i32,
+    pub application_port: ::std::option::Option<i32>,
     /// <p>A Boolean indicating whether to enable this port mapping on public IP.</p>
     pub enable_on_public_ip: bool,
 }
 impl PortMapping {
     /// <p>The port number on the simulation job instance to use as a remote connection point. </p>
-    pub fn job_port(&self) -> i32 {
+    pub fn job_port(&self) -> ::std::option::Option<i32> {
         self.job_port
     }
     /// <p>The port number on the application.</p>
-    pub fn application_port(&self) -> i32 {
+    pub fn application_port(&self) -> ::std::option::Option<i32> {
         self.application_port
     }
     /// <p>A Boolean indicating whether to enable this port mapping on public IP.</p>
@@ -86,8 +86,8 @@ impl PortMappingBuilder {
     /// Consumes the builder and constructs a [`PortMapping`](crate::types::PortMapping).
     pub fn build(self) -> crate::types::PortMapping {
         crate::types::PortMapping {
-            job_port: self.job_port.unwrap_or_default(),
-            application_port: self.application_port.unwrap_or_default(),
+            job_port: self.job_port,
+            application_port: self.application_port,
             enable_on_public_ip: self.enable_on_public_ip.unwrap_or_default(),
         }
     }

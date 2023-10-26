@@ -7,7 +7,7 @@ pub struct AwsRedshiftClusterEndpoint {
     /// <p>The DNS address of the cluster.</p>
     pub address: ::std::option::Option<::std::string::String>,
     /// <p>The port that the database engine listens on.</p>
-    pub port: i32,
+    pub port: ::std::option::Option<i32>,
 }
 impl AwsRedshiftClusterEndpoint {
     /// <p>The DNS address of the cluster.</p>
@@ -15,7 +15,7 @@ impl AwsRedshiftClusterEndpoint {
         self.address.as_deref()
     }
     /// <p>The port that the database engine listens on.</p>
-    pub fn port(&self) -> i32 {
+    pub fn port(&self) -> ::std::option::Option<i32> {
         self.port
     }
 }
@@ -66,7 +66,7 @@ impl AwsRedshiftClusterEndpointBuilder {
     pub fn build(self) -> crate::types::AwsRedshiftClusterEndpoint {
         crate::types::AwsRedshiftClusterEndpoint {
             address: self.address,
-            port: self.port.unwrap_or_default(),
+            port: self.port,
         }
     }
 }

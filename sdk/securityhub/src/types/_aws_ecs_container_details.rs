@@ -11,7 +11,7 @@ pub struct AwsEcsContainerDetails {
     /// <p>The mount points for data volumes in your container. </p>
     pub mount_points: ::std::option::Option<::std::vec::Vec<crate::types::AwsMountPoint>>,
     /// <p>When this parameter is true, the container is given elevated privileges on the host container instance (similar to the root user). </p>
-    pub privileged: bool,
+    pub privileged: ::std::option::Option<bool>,
 }
 impl AwsEcsContainerDetails {
     /// <p>The name of the container. </p>
@@ -27,7 +27,7 @@ impl AwsEcsContainerDetails {
         self.mount_points.as_deref()
     }
     /// <p>When this parameter is true, the container is given elevated privileges on the host container instance (similar to the root user). </p>
-    pub fn privileged(&self) -> bool {
+    pub fn privileged(&self) -> ::std::option::Option<bool> {
         self.privileged
     }
 }
@@ -116,7 +116,7 @@ impl AwsEcsContainerDetailsBuilder {
             name: self.name,
             image: self.image,
             mount_points: self.mount_points,
-            privileged: self.privileged.unwrap_or_default(),
+            privileged: self.privileged,
         }
     }
 }

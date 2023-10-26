@@ -18,73 +18,71 @@ pub fn ser_aws_rds_db_cluster_snapshot_details(
     if let Some(var_5) = &input.engine {
         object.key("Engine").string(var_5.as_str());
     }
-    if input.allocated_storage != 0 {
+    if let Some(var_6) = &input.allocated_storage {
         object.key("AllocatedStorage").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.allocated_storage).into()),
+            ::aws_smithy_types::Number::NegInt((*var_6).into()),
         );
     }
-    if let Some(var_6) = &input.status {
-        object.key("Status").string(var_6.as_str());
+    if let Some(var_7) = &input.status {
+        object.key("Status").string(var_7.as_str());
     }
-    if input.port != 0 {
+    if let Some(var_8) = &input.port {
         object.key("Port").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.port).into()),
+            ::aws_smithy_types::Number::NegInt((*var_8).into()),
         );
     }
-    if let Some(var_7) = &input.vpc_id {
-        object.key("VpcId").string(var_7.as_str());
+    if let Some(var_9) = &input.vpc_id {
+        object.key("VpcId").string(var_9.as_str());
     }
-    if let Some(var_8) = &input.cluster_create_time {
-        object.key("ClusterCreateTime").string(var_8.as_str());
+    if let Some(var_10) = &input.cluster_create_time {
+        object.key("ClusterCreateTime").string(var_10.as_str());
     }
-    if let Some(var_9) = &input.master_username {
-        object.key("MasterUsername").string(var_9.as_str());
+    if let Some(var_11) = &input.master_username {
+        object.key("MasterUsername").string(var_11.as_str());
     }
-    if let Some(var_10) = &input.engine_version {
-        object.key("EngineVersion").string(var_10.as_str());
+    if let Some(var_12) = &input.engine_version {
+        object.key("EngineVersion").string(var_12.as_str());
     }
-    if let Some(var_11) = &input.license_model {
-        object.key("LicenseModel").string(var_11.as_str());
+    if let Some(var_13) = &input.license_model {
+        object.key("LicenseModel").string(var_13.as_str());
     }
-    if let Some(var_12) = &input.snapshot_type {
-        object.key("SnapshotType").string(var_12.as_str());
+    if let Some(var_14) = &input.snapshot_type {
+        object.key("SnapshotType").string(var_14.as_str());
     }
-    if input.percent_progress != 0 {
+    if let Some(var_15) = &input.percent_progress {
         object.key("PercentProgress").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.percent_progress).into()),
+            ::aws_smithy_types::Number::NegInt((*var_15).into()),
         );
     }
-    if input.storage_encrypted {
-        object.key("StorageEncrypted").boolean(input.storage_encrypted);
+    if let Some(var_16) = &input.storage_encrypted {
+        object.key("StorageEncrypted").boolean(*var_16);
     }
-    if let Some(var_13) = &input.kms_key_id {
-        object.key("KmsKeyId").string(var_13.as_str());
+    if let Some(var_17) = &input.kms_key_id {
+        object.key("KmsKeyId").string(var_17.as_str());
     }
-    if let Some(var_14) = &input.db_cluster_identifier {
-        object.key("DbClusterIdentifier").string(var_14.as_str());
+    if let Some(var_18) = &input.db_cluster_identifier {
+        object.key("DbClusterIdentifier").string(var_18.as_str());
     }
-    if let Some(var_15) = &input.db_cluster_snapshot_identifier {
-        object.key("DbClusterSnapshotIdentifier").string(var_15.as_str());
+    if let Some(var_19) = &input.db_cluster_snapshot_identifier {
+        object.key("DbClusterSnapshotIdentifier").string(var_19.as_str());
     }
-    if input.iam_database_authentication_enabled {
-        object
-            .key("IamDatabaseAuthenticationEnabled")
-            .boolean(input.iam_database_authentication_enabled);
+    if let Some(var_20) = &input.iam_database_authentication_enabled {
+        object.key("IamDatabaseAuthenticationEnabled").boolean(*var_20);
     }
-    if let Some(var_16) = &input.db_cluster_snapshot_attributes {
-        let mut array_17 = object.key("DbClusterSnapshotAttributes").start_array();
-        for item_18 in var_16 {
+    if let Some(var_21) = &input.db_cluster_snapshot_attributes {
+        let mut array_22 = object.key("DbClusterSnapshotAttributes").start_array();
+        for item_23 in var_21 {
             {
                 #[allow(unused_mut)]
-                let mut object_19 = array_17.value().start_object();
-                crate::protocol_serde::shape_aws_rds_db_cluster_snapshot_db_cluster_snapshot_attribute::ser_aws_rds_db_cluster_snapshot_db_cluster_snapshot_attribute(&mut object_19, item_18)?;
-                object_19.finish();
+                let mut object_24 = array_22.value().start_object();
+                crate::protocol_serde::shape_aws_rds_db_cluster_snapshot_db_cluster_snapshot_attribute::ser_aws_rds_db_cluster_snapshot_db_cluster_snapshot_attribute(&mut object_24, item_23)?;
+                object_24.finish();
             }
         }
-        array_17.finish();
+        array_22.finish();
     }
     Ok(())
 }

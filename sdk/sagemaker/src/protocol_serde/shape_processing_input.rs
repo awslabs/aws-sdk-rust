@@ -6,20 +6,20 @@ pub fn ser_processing_input(
     if let Some(var_1) = &input.input_name {
         object.key("InputName").string(var_1.as_str());
     }
-    if input.app_managed {
-        object.key("AppManaged").boolean(input.app_managed);
+    if let Some(var_2) = &input.app_managed {
+        object.key("AppManaged").boolean(*var_2);
     }
-    if let Some(var_2) = &input.s3_input {
+    if let Some(var_3) = &input.s3_input {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("S3Input").start_object();
-        crate::protocol_serde::shape_processing_s3_input::ser_processing_s3_input(&mut object_3, var_2)?;
-        object_3.finish();
+        let mut object_4 = object.key("S3Input").start_object();
+        crate::protocol_serde::shape_processing_s3_input::ser_processing_s3_input(&mut object_4, var_3)?;
+        object_4.finish();
     }
-    if let Some(var_4) = &input.dataset_definition {
+    if let Some(var_5) = &input.dataset_definition {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("DatasetDefinition").start_object();
-        crate::protocol_serde::shape_dataset_definition::ser_dataset_definition(&mut object_5, var_4)?;
-        object_5.finish();
+        let mut object_6 = object.key("DatasetDefinition").start_object();
+        crate::protocol_serde::shape_dataset_definition::ser_dataset_definition(&mut object_6, var_5)?;
+        object_6.finish();
     }
     Ok(())
 }

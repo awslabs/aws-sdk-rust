@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeDomainsInput {
-    /// <p>Array of OpenSearch Service domain names that you want information about. If you don't specify any domains, OpenSearch Service returns information about all domains owned by the account.</p>
+    /// <p>Array of OpenSearch Service domain names that you want information about. You must specify at least one domain name.</p>
     pub domain_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DescribeDomainsInput {
-    /// <p>Array of OpenSearch Service domain names that you want information about. If you don't specify any domains, OpenSearch Service returns information about all domains owned by the account.</p>
+    /// <p>Array of OpenSearch Service domain names that you want information about. You must specify at least one domain name.</p>
     pub fn domain_names(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.domain_names.as_deref()
     }
@@ -31,19 +31,19 @@ impl DescribeDomainsInputBuilder {
     ///
     /// To override the contents of this collection use [`set_domain_names`](Self::set_domain_names).
     ///
-    /// <p>Array of OpenSearch Service domain names that you want information about. If you don't specify any domains, OpenSearch Service returns information about all domains owned by the account.</p>
+    /// <p>Array of OpenSearch Service domain names that you want information about. You must specify at least one domain name.</p>
     pub fn domain_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.domain_names.unwrap_or_default();
         v.push(input.into());
         self.domain_names = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Array of OpenSearch Service domain names that you want information about. If you don't specify any domains, OpenSearch Service returns information about all domains owned by the account.</p>
+    /// <p>Array of OpenSearch Service domain names that you want information about. You must specify at least one domain name.</p>
     pub fn set_domain_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.domain_names = input;
         self
     }
-    /// <p>Array of OpenSearch Service domain names that you want information about. If you don't specify any domains, OpenSearch Service returns information about all domains owned by the account.</p>
+    /// <p>Array of OpenSearch Service domain names that you want information about. You must specify at least one domain name.</p>
     pub fn get_domain_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.domain_names
     }

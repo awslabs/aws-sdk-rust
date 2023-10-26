@@ -9,7 +9,7 @@ pub struct DnsRequestAction {
     /// <p>The protocol that was used for the DNS request.</p>
     pub protocol: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the DNS request was blocked.</p>
-    pub blocked: bool,
+    pub blocked: ::std::option::Option<bool>,
 }
 impl DnsRequestAction {
     /// <p>The DNS domain that is associated with the DNS request.</p>
@@ -21,7 +21,7 @@ impl DnsRequestAction {
         self.protocol.as_deref()
     }
     /// <p>Indicates whether the DNS request was blocked.</p>
-    pub fn blocked(&self) -> bool {
+    pub fn blocked(&self) -> ::std::option::Option<bool> {
         self.blocked
     }
 }
@@ -88,7 +88,7 @@ impl DnsRequestActionBuilder {
         crate::types::DnsRequestAction {
             domain: self.domain,
             protocol: self.protocol,
-            blocked: self.blocked.unwrap_or_default(),
+            blocked: self.blocked,
         }
     }
 }

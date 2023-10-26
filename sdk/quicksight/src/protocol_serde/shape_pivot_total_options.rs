@@ -33,6 +33,18 @@ pub fn ser_pivot_total_options(
         crate::protocol_serde::shape_table_cell_style::ser_table_cell_style(&mut object_10, var_9)?;
         object_10.finish();
     }
+    if let Some(var_11) = &input.total_aggregation_options {
+        let mut array_12 = object.key("TotalAggregationOptions").start_array();
+        for item_13 in var_11 {
+            {
+                #[allow(unused_mut)]
+                let mut object_14 = array_12.value().start_object();
+                crate::protocol_serde::shape_total_aggregation_option::ser_total_aggregation_option(&mut object_14, item_13)?;
+                object_14.finish();
+            }
+        }
+        array_12.finish();
+    }
     Ok(())
 }
 
@@ -88,6 +100,11 @@ where
                         "MetricHeaderCellStyle" => {
                             builder =
                                 builder.set_metric_header_cell_style(crate::protocol_serde::shape_table_cell_style::de_table_cell_style(tokens)?);
+                        }
+                        "TotalAggregationOptions" => {
+                            builder = builder.set_total_aggregation_options(
+                                crate::protocol_serde::shape_total_aggregation_option_list::de_total_aggregation_option_list(tokens)?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

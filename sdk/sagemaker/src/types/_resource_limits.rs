@@ -7,7 +7,7 @@ pub struct ResourceLimits {
     /// <p>The maximum number of training jobs that a hyperparameter tuning job can launch.</p>
     pub max_number_of_training_jobs: ::std::option::Option<i32>,
     /// <p>The maximum number of concurrent training jobs that a hyperparameter tuning job can launch.</p>
-    pub max_parallel_training_jobs: i32,
+    pub max_parallel_training_jobs: ::std::option::Option<i32>,
     /// <p>The maximum time in seconds that a hyperparameter tuning job can run.</p>
     pub max_runtime_in_seconds: ::std::option::Option<i32>,
 }
@@ -17,7 +17,7 @@ impl ResourceLimits {
         self.max_number_of_training_jobs
     }
     /// <p>The maximum number of concurrent training jobs that a hyperparameter tuning job can launch.</p>
-    pub fn max_parallel_training_jobs(&self) -> i32 {
+    pub fn max_parallel_training_jobs(&self) -> ::std::option::Option<i32> {
         self.max_parallel_training_jobs
     }
     /// <p>The maximum time in seconds that a hyperparameter tuning job can run.</p>
@@ -87,7 +87,7 @@ impl ResourceLimitsBuilder {
     pub fn build(self) -> crate::types::ResourceLimits {
         crate::types::ResourceLimits {
             max_number_of_training_jobs: self.max_number_of_training_jobs,
-            max_parallel_training_jobs: self.max_parallel_training_jobs.unwrap_or_default(),
+            max_parallel_training_jobs: self.max_parallel_training_jobs,
             max_runtime_in_seconds: self.max_runtime_in_seconds,
         }
     }

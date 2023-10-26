@@ -178,9 +178,13 @@ mod batch_get_token_balance;
 /// ```
 pub mod customize;
 
+mod get_asset_contract;
+
 mod get_token_balance;
 
 mod get_transaction;
+
+mod list_asset_contracts;
 
 mod list_token_balances;
 

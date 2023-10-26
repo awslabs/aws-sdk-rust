@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetTokenBalanceInput {
-    /// <p>An array of <code>GetTokenBalanceInput</code> objects whose balance is being requested.</p>
+    /// <p>An array of <code>BatchGetTokenBalanceInputItem</code> objects whose balance is being requested.</p>
     pub get_token_balance_inputs: ::std::option::Option<::std::vec::Vec<crate::types::BatchGetTokenBalanceInputItem>>,
 }
 impl BatchGetTokenBalanceInput {
-    /// <p>An array of <code>GetTokenBalanceInput</code> objects whose balance is being requested.</p>
+    /// <p>An array of <code>BatchGetTokenBalanceInputItem</code> objects whose balance is being requested.</p>
     pub fn get_token_balance_inputs(&self) -> ::std::option::Option<&[crate::types::BatchGetTokenBalanceInputItem]> {
         self.get_token_balance_inputs.as_deref()
     }
@@ -30,14 +30,14 @@ impl BatchGetTokenBalanceInputBuilder {
     ///
     /// To override the contents of this collection use [`set_get_token_balance_inputs`](Self::set_get_token_balance_inputs).
     ///
-    /// <p>An array of <code>GetTokenBalanceInput</code> objects whose balance is being requested.</p>
+    /// <p>An array of <code>BatchGetTokenBalanceInputItem</code> objects whose balance is being requested.</p>
     pub fn get_token_balance_inputs(mut self, input: crate::types::BatchGetTokenBalanceInputItem) -> Self {
         let mut v = self.get_token_balance_inputs.unwrap_or_default();
         v.push(input);
         self.get_token_balance_inputs = ::std::option::Option::Some(v);
         self
     }
-    /// <p>An array of <code>GetTokenBalanceInput</code> objects whose balance is being requested.</p>
+    /// <p>An array of <code>BatchGetTokenBalanceInputItem</code> objects whose balance is being requested.</p>
     pub fn set_get_token_balance_inputs(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::BatchGetTokenBalanceInputItem>>,
@@ -45,7 +45,7 @@ impl BatchGetTokenBalanceInputBuilder {
         self.get_token_balance_inputs = input;
         self
     }
-    /// <p>An array of <code>GetTokenBalanceInput</code> objects whose balance is being requested.</p>
+    /// <p>An array of <code>BatchGetTokenBalanceInputItem</code> objects whose balance is being requested.</p>
     pub fn get_get_token_balance_inputs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchGetTokenBalanceInputItem>> {
         &self.get_token_balance_inputs
     }

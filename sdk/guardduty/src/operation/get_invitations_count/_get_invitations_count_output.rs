@@ -4,12 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetInvitationsCountOutput {
     /// <p>The number of received invitations.</p>
-    pub invitations_count: i32,
+    pub invitations_count: ::std::option::Option<i32>,
     _request_id: Option<String>,
 }
 impl GetInvitationsCountOutput {
     /// <p>The number of received invitations.</p>
-    pub fn invitations_count(&self) -> i32 {
+    pub fn invitations_count(&self) -> ::std::option::Option<i32> {
         self.invitations_count
     }
 }
@@ -59,7 +59,7 @@ impl GetInvitationsCountOutputBuilder {
     /// Consumes the builder and constructs a [`GetInvitationsCountOutput`](crate::operation::get_invitations_count::GetInvitationsCountOutput).
     pub fn build(self) -> crate::operation::get_invitations_count::GetInvitationsCountOutput {
         crate::operation::get_invitations_count::GetInvitationsCountOutput {
-            invitations_count: self.invitations_count.unwrap_or_default(),
+            invitations_count: self.invitations_count,
             _request_id: self._request_id,
         }
     }

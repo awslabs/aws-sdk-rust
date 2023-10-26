@@ -5,17 +5,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEc2LaunchTemplateDataInstanceRequirementsMemoryGiBPerVCpuDetails {
     /// <p> The maximum amount of memory per vCPU, in GiB. If this parameter is omitted, there's no maximum limit. </p>
-    pub max: f64,
+    pub max: ::std::option::Option<f64>,
     /// <p> The minimum amount of memory per vCPU, in GiB. If this parameter is omitted, there's no maximum limit. </p>
-    pub min: f64,
+    pub min: ::std::option::Option<f64>,
 }
 impl AwsEc2LaunchTemplateDataInstanceRequirementsMemoryGiBPerVCpuDetails {
     /// <p> The maximum amount of memory per vCPU, in GiB. If this parameter is omitted, there's no maximum limit. </p>
-    pub fn max(&self) -> f64 {
+    pub fn max(&self) -> ::std::option::Option<f64> {
         self.max
     }
     /// <p> The minimum amount of memory per vCPU, in GiB. If this parameter is omitted, there's no maximum limit. </p>
-    pub fn min(&self) -> f64 {
+    pub fn min(&self) -> ::std::option::Option<f64> {
         self.min
     }
 }
@@ -65,8 +65,8 @@ impl AwsEc2LaunchTemplateDataInstanceRequirementsMemoryGiBPerVCpuDetailsBuilder 
     /// Consumes the builder and constructs a [`AwsEc2LaunchTemplateDataInstanceRequirementsMemoryGiBPerVCpuDetails`](crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsMemoryGiBPerVCpuDetails).
     pub fn build(self) -> crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsMemoryGiBPerVCpuDetails {
         crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsMemoryGiBPerVCpuDetails {
-            max: self.max.unwrap_or_default(),
-            min: self.min.unwrap_or_default(),
+            max: self.max,
+            min: self.min,
         }
     }
 }

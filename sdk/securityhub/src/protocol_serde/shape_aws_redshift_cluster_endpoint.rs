@@ -6,10 +6,10 @@ pub fn ser_aws_redshift_cluster_endpoint(
     if let Some(var_1) = &input.address {
         object.key("Address").string(var_1.as_str());
     }
-    if input.port != 0 {
+    if let Some(var_2) = &input.port {
         object.key("Port").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.port).into()),
+            ::aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
     Ok(())

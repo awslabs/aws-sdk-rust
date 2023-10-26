@@ -14,7 +14,7 @@ pub struct TokenBalance {
     /// <p>This time will only be recorded up to the second.</p>
     /// </note>
     pub at_blockchain_instant: ::std::option::Option<crate::types::BlockchainInstant>,
-    /// <p>The <code>timestamp</code> of the last transaction at which the balance for the token in the wallet was updated.</p>
+    /// <p>The <code>Timestamp</code> of the last transaction at which the balance for the token in the wallet was updated.</p>
     pub last_updated_time: ::std::option::Option<crate::types::BlockchainInstant>,
 }
 impl TokenBalance {
@@ -36,7 +36,7 @@ impl TokenBalance {
     pub fn at_blockchain_instant(&self) -> ::std::option::Option<&crate::types::BlockchainInstant> {
         self.at_blockchain_instant.as_ref()
     }
-    /// <p>The <code>timestamp</code> of the last transaction at which the balance for the token in the wallet was updated.</p>
+    /// <p>The <code>Timestamp</code> of the last transaction at which the balance for the token in the wallet was updated.</p>
     pub fn last_updated_time(&self) -> ::std::option::Option<&crate::types::BlockchainInstant> {
         self.last_updated_time.as_ref()
     }
@@ -121,17 +121,17 @@ impl TokenBalanceBuilder {
     pub fn get_at_blockchain_instant(&self) -> &::std::option::Option<crate::types::BlockchainInstant> {
         &self.at_blockchain_instant
     }
-    /// <p>The <code>timestamp</code> of the last transaction at which the balance for the token in the wallet was updated.</p>
+    /// <p>The <code>Timestamp</code> of the last transaction at which the balance for the token in the wallet was updated.</p>
     pub fn last_updated_time(mut self, input: crate::types::BlockchainInstant) -> Self {
         self.last_updated_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The <code>timestamp</code> of the last transaction at which the balance for the token in the wallet was updated.</p>
+    /// <p>The <code>Timestamp</code> of the last transaction at which the balance for the token in the wallet was updated.</p>
     pub fn set_last_updated_time(mut self, input: ::std::option::Option<crate::types::BlockchainInstant>) -> Self {
         self.last_updated_time = input;
         self
     }
-    /// <p>The <code>timestamp</code> of the last transaction at which the balance for the token in the wallet was updated.</p>
+    /// <p>The <code>Timestamp</code> of the last transaction at which the balance for the token in the wallet was updated.</p>
     pub fn get_last_updated_time(&self) -> &::std::option::Option<crate::types::BlockchainInstant> {
         &self.last_updated_time
     }

@@ -7,7 +7,7 @@ pub struct Schedule {
     /// <p>The name of the schedule.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Copy all user-defined tags on a source volume to snapshots of the volume created by this policy.</p>
-    pub copy_tags: bool,
+    pub copy_tags: ::std::option::Option<bool>,
     /// <p>The tags to apply to policy-created resources. These user-defined tags are in addition to the Amazon Web Services-added lifecycle tags.</p>
     pub tags_to_add: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p> <b>[AMI policies and snapshot policies that target instances only]</b> A collection of key/value pairs with values determined dynamically when the policy is executed. Keys may be any valid Amazon EC2 tag key. Values must be in one of the two following formats: <code>$(instance-id)</code> or <code>$(timestamp)</code>. Variable tags are only valid for EBS Snapshot Management – Instance policies.</p>
@@ -36,7 +36,7 @@ impl Schedule {
         self.name.as_deref()
     }
     /// <p>Copy all user-defined tags on a source volume to snapshots of the volume created by this policy.</p>
-    pub fn copy_tags(&self) -> bool {
+    pub fn copy_tags(&self) -> ::std::option::Option<bool> {
         self.copy_tags
     }
     /// <p>The tags to apply to policy-created resources. These user-defined tags are in addition to the Amazon Web Services-added lifecycle tags.</p>
@@ -294,7 +294,7 @@ impl ScheduleBuilder {
     pub fn build(self) -> crate::types::Schedule {
         crate::types::Schedule {
             name: self.name,
-            copy_tags: self.copy_tags.unwrap_or_default(),
+            copy_tags: self.copy_tags,
             tags_to_add: self.tags_to_add,
             variable_tags: self.variable_tags,
             create_rule: self.create_rule,

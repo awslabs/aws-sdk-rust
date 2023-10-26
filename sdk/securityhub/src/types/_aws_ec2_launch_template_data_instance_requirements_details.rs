@@ -40,13 +40,13 @@ pub struct AwsEc2LaunchTemplateDataInstanceRequirementsDetails {
     /// <p> The price protection threshold for On-Demand Instances. This is the maximum you'll pay for an On-Demand Instance, expressed as a percentage above the least expensive current generation M, C, or R instance type with your specified attributes. When Amazon EC2 selects instance types with your attributes, it excludes instance types priced above your threshold.</p>
     /// <p>The parameter accepts an integer, which Amazon EC2 interprets as a percentage.</p>
     /// <p>A high value, such as <code>999999</code>, turns off price protection.</p>
-    pub on_demand_max_price_percentage_over_lowest_price: i32,
+    pub on_demand_max_price_percentage_over_lowest_price: ::std::option::Option<i32>,
     /// <p> Indicates whether instance types must support hibernation for On-Demand Instances. </p>
-    pub require_hibernate_support: bool,
+    pub require_hibernate_support: ::std::option::Option<bool>,
     /// <p> The price protection threshold for Spot Instances. This is the maximum you'll pay for a Spot Instance, expressed as a percentage above the least expensive current generation M, C, or R instance type with your specified attributes. When Amazon EC2 selects instance types with your attributes, it excludes instance types priced above your threshold. </p>
     /// <p>The parameter accepts an integer, which Amazon EC2 interprets as a percentage.</p>
     /// <p>A high value, such as <code>999999</code>, turns off price protection.</p>
-    pub spot_max_price_percentage_over_lowest_price: i32,
+    pub spot_max_price_percentage_over_lowest_price: ::std::option::Option<i32>,
     /// <p> The minimum and maximum amount of total local storage, in GB. </p>
     pub total_local_storage_gb: ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsTotalLocalStorageGbDetails>,
     /// <p> The minimum and maximum number of vCPUs. </p>
@@ -126,17 +126,17 @@ impl AwsEc2LaunchTemplateDataInstanceRequirementsDetails {
     /// <p> The price protection threshold for On-Demand Instances. This is the maximum you'll pay for an On-Demand Instance, expressed as a percentage above the least expensive current generation M, C, or R instance type with your specified attributes. When Amazon EC2 selects instance types with your attributes, it excludes instance types priced above your threshold.</p>
     /// <p>The parameter accepts an integer, which Amazon EC2 interprets as a percentage.</p>
     /// <p>A high value, such as <code>999999</code>, turns off price protection.</p>
-    pub fn on_demand_max_price_percentage_over_lowest_price(&self) -> i32 {
+    pub fn on_demand_max_price_percentage_over_lowest_price(&self) -> ::std::option::Option<i32> {
         self.on_demand_max_price_percentage_over_lowest_price
     }
     /// <p> Indicates whether instance types must support hibernation for On-Demand Instances. </p>
-    pub fn require_hibernate_support(&self) -> bool {
+    pub fn require_hibernate_support(&self) -> ::std::option::Option<bool> {
         self.require_hibernate_support
     }
     /// <p> The price protection threshold for Spot Instances. This is the maximum you'll pay for a Spot Instance, expressed as a percentage above the least expensive current generation M, C, or R instance type with your specified attributes. When Amazon EC2 selects instance types with your attributes, it excludes instance types priced above your threshold. </p>
     /// <p>The parameter accepts an integer, which Amazon EC2 interprets as a percentage.</p>
     /// <p>A high value, such as <code>999999</code>, turns off price protection.</p>
-    pub fn spot_max_price_percentage_over_lowest_price(&self) -> i32 {
+    pub fn spot_max_price_percentage_over_lowest_price(&self) -> ::std::option::Option<i32> {
         self.spot_max_price_percentage_over_lowest_price
     }
     /// <p> The minimum and maximum amount of total local storage, in GB. </p>
@@ -593,9 +593,9 @@ impl AwsEc2LaunchTemplateDataInstanceRequirementsDetailsBuilder {
             memory_gi_b_per_v_cpu: self.memory_gi_b_per_v_cpu,
             memory_mi_b: self.memory_mi_b,
             network_interface_count: self.network_interface_count,
-            on_demand_max_price_percentage_over_lowest_price: self.on_demand_max_price_percentage_over_lowest_price.unwrap_or_default(),
-            require_hibernate_support: self.require_hibernate_support.unwrap_or_default(),
-            spot_max_price_percentage_over_lowest_price: self.spot_max_price_percentage_over_lowest_price.unwrap_or_default(),
+            on_demand_max_price_percentage_over_lowest_price: self.on_demand_max_price_percentage_over_lowest_price,
+            require_hibernate_support: self.require_hibernate_support,
+            spot_max_price_percentage_over_lowest_price: self.spot_max_price_percentage_over_lowest_price,
             total_local_storage_gb: self.total_local_storage_gb,
             v_cpu_count: self.v_cpu_count,
         }

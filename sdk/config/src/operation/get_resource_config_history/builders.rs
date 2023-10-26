@@ -22,6 +22,9 @@ impl GetResourceConfigHistoryInputBuilder {
 }
 /// Fluent builder constructing a request to `GetResourceConfigHistory`.
 ///
+/// <important>
+/// <p>For accurate reporting on the compliance status, you must record the <code>AWS::Config::ResourceCompliance</code> resource type. For more information, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/select-resources.html">Selecting Which Resources Config Records</a>.</p>
+/// </important>
 /// <p>Returns a list of <code>ConfigurationItems</code> for the specified resource. The list contains details about each state of the resource during the specified time interval. If you specified a retention period to retain your <code>ConfigurationItems</code> between a minimum of 30 days and a maximum of 7 years (2557 days), Config returns the <code>ConfigurationItems</code> for the specified retention period. </p>
 /// <p>The response is paginated. By default, Config returns a limit of 10 configuration items per page. You can customize this number with the <code>limit</code> parameter. The response includes a <code>nextToken</code> string. To get the next page of results, run the request again and specify the string for the <code>nextToken</code> parameter.</p> <note>
 /// <p>Each call to the API is limited to span a duration of seven days. It is likely that the number of records returned is smaller than the specified <code>limit</code>. In such cases, you can make another call, using the <code>nextToken</code>.</p>
@@ -147,31 +150,31 @@ impl GetResourceConfigHistoryFluentBuilder {
     pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_resource_id()
     }
-    /// <p>The time stamp that indicates a later time. If not specified, current time is taken.</p>
+    /// <p>The chronologically latest time in the time range for which the history requested. If not specified, current time is taken.</p>
     pub fn later_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.later_time(input);
         self
     }
-    /// <p>The time stamp that indicates a later time. If not specified, current time is taken.</p>
+    /// <p>The chronologically latest time in the time range for which the history requested. If not specified, current time is taken.</p>
     pub fn set_later_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_later_time(input);
         self
     }
-    /// <p>The time stamp that indicates a later time. If not specified, current time is taken.</p>
+    /// <p>The chronologically latest time in the time range for which the history requested. If not specified, current time is taken.</p>
     pub fn get_later_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_later_time()
     }
-    /// <p>The time stamp that indicates an earlier time. If not specified, the action returns paginated results that contain configuration items that start when the first configuration item was recorded.</p>
+    /// <p>The chronologically earliest time in the time range for which the history requested. If not specified, the action returns paginated results that contain configuration items that start when the first configuration item was recorded.</p>
     pub fn earlier_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.earlier_time(input);
         self
     }
-    /// <p>The time stamp that indicates an earlier time. If not specified, the action returns paginated results that contain configuration items that start when the first configuration item was recorded.</p>
+    /// <p>The chronologically earliest time in the time range for which the history requested. If not specified, the action returns paginated results that contain configuration items that start when the first configuration item was recorded.</p>
     pub fn set_earlier_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_earlier_time(input);
         self
     }
-    /// <p>The time stamp that indicates an earlier time. If not specified, the action returns paginated results that contain configuration items that start when the first configuration item was recorded.</p>
+    /// <p>The chronologically earliest time in the time range for which the history requested. If not specified, the action returns paginated results that contain configuration items that start when the first configuration item was recorded.</p>
     pub fn get_earlier_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_earlier_time()
     }

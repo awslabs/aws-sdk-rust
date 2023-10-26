@@ -30,50 +30,50 @@ pub fn ser_training_specification(
         }
         array_8.finish();
     }
-    if input.supports_distributed_training {
-        object.key("SupportsDistributedTraining").boolean(input.supports_distributed_training);
+    if let Some(var_10) = &input.supports_distributed_training {
+        object.key("SupportsDistributedTraining").boolean(*var_10);
     }
-    if let Some(var_10) = &input.metric_definitions {
-        let mut array_11 = object.key("MetricDefinitions").start_array();
-        for item_12 in var_10 {
+    if let Some(var_11) = &input.metric_definitions {
+        let mut array_12 = object.key("MetricDefinitions").start_array();
+        for item_13 in var_11 {
             {
                 #[allow(unused_mut)]
-                let mut object_13 = array_11.value().start_object();
-                crate::protocol_serde::shape_metric_definition::ser_metric_definition(&mut object_13, item_12)?;
-                object_13.finish();
+                let mut object_14 = array_12.value().start_object();
+                crate::protocol_serde::shape_metric_definition::ser_metric_definition(&mut object_14, item_13)?;
+                object_14.finish();
             }
         }
-        array_11.finish();
+        array_12.finish();
     }
-    if let Some(var_14) = &input.training_channels {
-        let mut array_15 = object.key("TrainingChannels").start_array();
-        for item_16 in var_14 {
+    if let Some(var_15) = &input.training_channels {
+        let mut array_16 = object.key("TrainingChannels").start_array();
+        for item_17 in var_15 {
             {
                 #[allow(unused_mut)]
-                let mut object_17 = array_15.value().start_object();
-                crate::protocol_serde::shape_channel_specification::ser_channel_specification(&mut object_17, item_16)?;
-                object_17.finish();
+                let mut object_18 = array_16.value().start_object();
+                crate::protocol_serde::shape_channel_specification::ser_channel_specification(&mut object_18, item_17)?;
+                object_18.finish();
             }
         }
-        array_15.finish();
+        array_16.finish();
     }
-    if let Some(var_18) = &input.supported_tuning_job_objective_metrics {
-        let mut array_19 = object.key("SupportedTuningJobObjectiveMetrics").start_array();
-        for item_20 in var_18 {
+    if let Some(var_19) = &input.supported_tuning_job_objective_metrics {
+        let mut array_20 = object.key("SupportedTuningJobObjectiveMetrics").start_array();
+        for item_21 in var_19 {
             {
                 #[allow(unused_mut)]
-                let mut object_21 = array_19.value().start_object();
-                crate::protocol_serde::shape_hyper_parameter_tuning_job_objective::ser_hyper_parameter_tuning_job_objective(&mut object_21, item_20)?;
-                object_21.finish();
+                let mut object_22 = array_20.value().start_object();
+                crate::protocol_serde::shape_hyper_parameter_tuning_job_objective::ser_hyper_parameter_tuning_job_objective(&mut object_22, item_21)?;
+                object_22.finish();
             }
         }
-        array_19.finish();
+        array_20.finish();
     }
-    if let Some(var_22) = &input.additional_s3_data_source {
+    if let Some(var_23) = &input.additional_s3_data_source {
         #[allow(unused_mut)]
-        let mut object_23 = object.key("AdditionalS3DataSource").start_object();
-        crate::protocol_serde::shape_additional_s3_data_source::ser_additional_s3_data_source(&mut object_23, var_22)?;
-        object_23.finish();
+        let mut object_24 = object.key("AdditionalS3DataSource").start_object();
+        crate::protocol_serde::shape_additional_s3_data_source::ser_additional_s3_data_source(&mut object_24, var_23)?;
+        object_24.finish();
     }
     Ok(())
 }

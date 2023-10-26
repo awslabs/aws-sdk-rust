@@ -5,9 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FastRestoreRule {
     /// <p>The number of snapshots to be enabled with fast snapshot restore.</p>
-    pub count: i32,
+    pub count: ::std::option::Option<i32>,
     /// <p>The amount of time to enable fast snapshot restore. The maximum is 100 years. This is equivalent to 1200 months, 5200 weeks, or 36500 days.</p>
-    pub interval: i32,
+    pub interval: ::std::option::Option<i32>,
     /// <p>The unit of time for enabling fast snapshot restore.</p>
     pub interval_unit: ::std::option::Option<crate::types::RetentionIntervalUnitValues>,
     /// <p>The Availability Zones in which to enable fast snapshot restore.</p>
@@ -15,11 +15,11 @@ pub struct FastRestoreRule {
 }
 impl FastRestoreRule {
     /// <p>The number of snapshots to be enabled with fast snapshot restore.</p>
-    pub fn count(&self) -> i32 {
+    pub fn count(&self) -> ::std::option::Option<i32> {
         self.count
     }
     /// <p>The amount of time to enable fast snapshot restore. The maximum is 100 years. This is equivalent to 1200 months, 5200 weeks, or 36500 days.</p>
-    pub fn interval(&self) -> i32 {
+    pub fn interval(&self) -> ::std::option::Option<i32> {
         self.interval
     }
     /// <p>The unit of time for enabling fast snapshot restore.</p>
@@ -113,8 +113,8 @@ impl FastRestoreRuleBuilder {
     /// Consumes the builder and constructs a [`FastRestoreRule`](crate::types::FastRestoreRule).
     pub fn build(self) -> crate::types::FastRestoreRule {
         crate::types::FastRestoreRule {
-            count: self.count.unwrap_or_default(),
-            interval: self.interval.unwrap_or_default(),
+            count: self.count,
+            interval: self.interval,
             interval_unit: self.interval_unit,
             availability_zones: self.availability_zones,
         }

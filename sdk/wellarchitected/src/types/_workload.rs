@@ -31,7 +31,7 @@ pub struct Workload {
     pub review_restriction_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Flag indicating whether the workload owner has acknowledged that the <i>Review owner</i> field is required.</p>
     /// <p>If a <b>Review owner</b> is not added to the workload within 60 days of acknowledgement, access to the workload is restricted until an owner is added.</p>
-    pub is_review_owner_update_acknowledged: bool,
+    pub is_review_owner_update_acknowledged: ::std::option::Option<bool>,
     /// <p>The industry type for the workload.</p>
     /// <p>If specified, must be one of the following:</p>
     /// <ul>
@@ -145,7 +145,7 @@ impl Workload {
     }
     /// <p>Flag indicating whether the workload owner has acknowledged that the <i>Review owner</i> field is required.</p>
     /// <p>If a <b>Review owner</b> is not added to the workload within 60 days of acknowledgement, access to the workload is restricted until an owner is added.</p>
-    pub fn is_review_owner_update_acknowledged(&self) -> bool {
+    pub fn is_review_owner_update_acknowledged(&self) -> ::std::option::Option<bool> {
         self.is_review_owner_update_acknowledged
     }
     /// <p>The industry type for the workload.</p>
@@ -832,7 +832,7 @@ impl WorkloadBuilder {
             architectural_design: self.architectural_design,
             review_owner: self.review_owner,
             review_restriction_date: self.review_restriction_date,
-            is_review_owner_update_acknowledged: self.is_review_owner_update_acknowledged.unwrap_or_default(),
+            is_review_owner_update_acknowledged: self.is_review_owner_update_acknowledged,
             industry_type: self.industry_type,
             industry: self.industry,
             notes: self.notes,

@@ -5,10 +5,12 @@
 pub struct DetectModerationLabelsOutput {
     /// <p>Array of detected Moderation labels and the time, in milliseconds from the start of the video, they were detected.</p>
     pub moderation_labels: ::std::option::Option<::std::vec::Vec<crate::types::ModerationLabel>>,
-    /// <p>Version number of the moderation detection model that was used to detect unsafe content.</p>
+    /// <p>Version number of the base moderation detection model that was used to detect unsafe content.</p>
     pub moderation_model_version: ::std::option::Option<::std::string::String>,
     /// <p>Shows the results of the human in the loop evaluation.</p>
     pub human_loop_activation_output: ::std::option::Option<crate::types::HumanLoopActivationOutput>,
+    /// <p>Identifier of the custom adapter that was used during inference. If during inference the adapter was EXPIRED, then the parameter will not be returned, indicating that a base moderation detection project version was used.</p>
+    pub project_version: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DetectModerationLabelsOutput {
@@ -16,13 +18,17 @@ impl DetectModerationLabelsOutput {
     pub fn moderation_labels(&self) -> ::std::option::Option<&[crate::types::ModerationLabel]> {
         self.moderation_labels.as_deref()
     }
-    /// <p>Version number of the moderation detection model that was used to detect unsafe content.</p>
+    /// <p>Version number of the base moderation detection model that was used to detect unsafe content.</p>
     pub fn moderation_model_version(&self) -> ::std::option::Option<&str> {
         self.moderation_model_version.as_deref()
     }
     /// <p>Shows the results of the human in the loop evaluation.</p>
     pub fn human_loop_activation_output(&self) -> ::std::option::Option<&crate::types::HumanLoopActivationOutput> {
         self.human_loop_activation_output.as_ref()
+    }
+    /// <p>Identifier of the custom adapter that was used during inference. If during inference the adapter was EXPIRED, then the parameter will not be returned, indicating that a base moderation detection project version was used.</p>
+    pub fn project_version(&self) -> ::std::option::Option<&str> {
+        self.project_version.as_deref()
     }
 }
 impl ::aws_http::request_id::RequestId for DetectModerationLabelsOutput {
@@ -44,6 +50,7 @@ pub struct DetectModerationLabelsOutputBuilder {
     pub(crate) moderation_labels: ::std::option::Option<::std::vec::Vec<crate::types::ModerationLabel>>,
     pub(crate) moderation_model_version: ::std::option::Option<::std::string::String>,
     pub(crate) human_loop_activation_output: ::std::option::Option<crate::types::HumanLoopActivationOutput>,
+    pub(crate) project_version: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DetectModerationLabelsOutputBuilder {
@@ -67,17 +74,17 @@ impl DetectModerationLabelsOutputBuilder {
     pub fn get_moderation_labels(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ModerationLabel>> {
         &self.moderation_labels
     }
-    /// <p>Version number of the moderation detection model that was used to detect unsafe content.</p>
+    /// <p>Version number of the base moderation detection model that was used to detect unsafe content.</p>
     pub fn moderation_model_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.moderation_model_version = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Version number of the moderation detection model that was used to detect unsafe content.</p>
+    /// <p>Version number of the base moderation detection model that was used to detect unsafe content.</p>
     pub fn set_moderation_model_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.moderation_model_version = input;
         self
     }
-    /// <p>Version number of the moderation detection model that was used to detect unsafe content.</p>
+    /// <p>Version number of the base moderation detection model that was used to detect unsafe content.</p>
     pub fn get_moderation_model_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.moderation_model_version
     }
@@ -95,6 +102,20 @@ impl DetectModerationLabelsOutputBuilder {
     pub fn get_human_loop_activation_output(&self) -> &::std::option::Option<crate::types::HumanLoopActivationOutput> {
         &self.human_loop_activation_output
     }
+    /// <p>Identifier of the custom adapter that was used during inference. If during inference the adapter was EXPIRED, then the parameter will not be returned, indicating that a base moderation detection project version was used.</p>
+    pub fn project_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.project_version = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Identifier of the custom adapter that was used during inference. If during inference the adapter was EXPIRED, then the parameter will not be returned, indicating that a base moderation detection project version was used.</p>
+    pub fn set_project_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.project_version = input;
+        self
+    }
+    /// <p>Identifier of the custom adapter that was used during inference. If during inference the adapter was EXPIRED, then the parameter will not be returned, indicating that a base moderation detection project version was used.</p>
+    pub fn get_project_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.project_version
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -110,6 +131,7 @@ impl DetectModerationLabelsOutputBuilder {
             moderation_labels: self.moderation_labels,
             moderation_model_version: self.moderation_model_version,
             human_loop_activation_output: self.human_loop_activation_output,
+            project_version: self.project_version,
             _request_id: self._request_id,
         }
     }

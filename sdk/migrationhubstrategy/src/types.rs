@@ -23,6 +23,8 @@ pub use crate::types::_output_format::OutputFormat;
 
 pub use crate::types::_data_source_type::DataSourceType;
 
+pub use crate::types::_assessment_data_source_type::AssessmentDataSourceType;
+
 pub use crate::types::_assessment_target::AssessmentTarget;
 
 pub use crate::types::_condition::Condition;
@@ -161,6 +163,8 @@ pub use crate::types::_database_config_detail::DatabaseConfigDetail;
 
 pub use crate::types::_application_component_criteria::ApplicationComponentCriteria;
 
+pub use crate::types::_analyzable_server_summary::AnalyzableServerSummary;
+
 pub use crate::types::_server_strategy::ServerStrategy;
 
 pub use crate::types::_strategy_recommendation::StrategyRecommendation;
@@ -193,6 +197,8 @@ mod _analysis_status_union;
 
 mod _analysis_type;
 
+mod _analyzable_server_summary;
+
 mod _analyzer_name_union;
 
 mod _antipattern_report_result;
@@ -220,6 +226,8 @@ mod _application_component_summary;
 mod _application_mode;
 
 mod _application_preferences;
+
+mod _assessment_data_source_type;
 
 mod _assessment_status;
 

@@ -11,7 +11,7 @@ pub struct AwsEc2NetworkInterfaceDetails {
     /// <p>Security groups for the network interface.</p>
     pub security_groups: ::std::option::Option<::std::vec::Vec<crate::types::AwsEc2NetworkInterfaceSecurityGroup>>,
     /// <p>Indicates whether traffic to or from the instance is validated.</p>
-    pub source_dest_check: bool,
+    pub source_dest_check: ::std::option::Option<bool>,
     /// <p>The IPv6 addresses associated with the network interface.</p>
     pub ip_v6_addresses: ::std::option::Option<::std::vec::Vec<crate::types::AwsEc2NetworkInterfaceIpV6AddressDetail>>,
     /// <p>The private IPv4 addresses associated with the network interface.</p>
@@ -35,7 +35,7 @@ impl AwsEc2NetworkInterfaceDetails {
         self.security_groups.as_deref()
     }
     /// <p>Indicates whether traffic to or from the instance is validated.</p>
-    pub fn source_dest_check(&self) -> bool {
+    pub fn source_dest_check(&self) -> ::std::option::Option<bool> {
         self.source_dest_check
     }
     /// <p>The IPv6 addresses associated with the network interface.</p>
@@ -218,7 +218,7 @@ impl AwsEc2NetworkInterfaceDetailsBuilder {
             attachment: self.attachment,
             network_interface_id: self.network_interface_id,
             security_groups: self.security_groups,
-            source_dest_check: self.source_dest_check.unwrap_or_default(),
+            source_dest_check: self.source_dest_check,
             ip_v6_addresses: self.ip_v6_addresses,
             private_ip_addresses: self.private_ip_addresses,
             public_dns_name: self.public_dns_name,

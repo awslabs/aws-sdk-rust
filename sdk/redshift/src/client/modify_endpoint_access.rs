@@ -12,7 +12,7 @@ impl super::Client {
     ///   - [`endpoint_status(Option<String>)`](crate::operation::modify_endpoint_access::ModifyEndpointAccessOutput::endpoint_status): <p>The status of the endpoint.</p>
     ///   - [`endpoint_name(Option<String>)`](crate::operation::modify_endpoint_access::ModifyEndpointAccessOutput::endpoint_name): <p>The name of the endpoint.</p>
     ///   - [`endpoint_create_time(Option<DateTime>)`](crate::operation::modify_endpoint_access::ModifyEndpointAccessOutput::endpoint_create_time): <p>The time (UTC) that the endpoint was created.</p>
-    ///   - [`port(i32)`](crate::operation::modify_endpoint_access::ModifyEndpointAccessOutput::port): <p>The port number on which the cluster accepts incoming connections.</p>
+    ///   - [`port(Option<i32>)`](crate::operation::modify_endpoint_access::ModifyEndpointAccessOutput::port): <p>The port number on which the cluster accepts incoming connections.</p>
     ///   - [`address(Option<String>)`](crate::operation::modify_endpoint_access::ModifyEndpointAccessOutput::address): <p>The DNS address of the endpoint.</p>
     ///   - [`vpc_security_groups(Option<Vec<VpcSecurityGroupMembership>>)`](crate::operation::modify_endpoint_access::ModifyEndpointAccessOutput::vpc_security_groups): <p>The security groups associated with the endpoint.</p>
     ///   - [`vpc_endpoint(Option<VpcEndpoint>)`](crate::operation::modify_endpoint_access::ModifyEndpointAccessOutput::vpc_endpoint): <p>The connection endpoint for connecting to an Amazon Redshift cluster through the proxy.</p>

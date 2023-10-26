@@ -14,7 +14,7 @@ pub struct GetDeploymentStrategyOutput {
     /// <p>The algorithm used to define how percentage grew over time.</p>
     pub growth_type: ::std::option::Option<crate::types::GrowthType>,
     /// <p>The percentage of targets that received a deployed configuration during each interval.</p>
-    pub growth_factor: f32,
+    pub growth_factor: ::std::option::Option<f32>,
     /// <p>The amount of time that AppConfig monitored for alarms before considering the deployment to be complete and no longer eligible for automatic rollback.</p>
     pub final_bake_time_in_minutes: i32,
     /// <p>Save the deployment strategy to a Systems Manager (SSM) document.</p>
@@ -43,7 +43,7 @@ impl GetDeploymentStrategyOutput {
         self.growth_type.as_ref()
     }
     /// <p>The percentage of targets that received a deployed configuration during each interval.</p>
-    pub fn growth_factor(&self) -> f32 {
+    pub fn growth_factor(&self) -> ::std::option::Option<f32> {
         self.growth_factor
     }
     /// <p>The amount of time that AppConfig monitored for alarms before considering the deployment to be complete and no longer eligible for automatic rollback.</p>
@@ -211,7 +211,7 @@ impl GetDeploymentStrategyOutputBuilder {
             description: self.description,
             deployment_duration_in_minutes: self.deployment_duration_in_minutes.unwrap_or_default(),
             growth_type: self.growth_type,
-            growth_factor: self.growth_factor.unwrap_or_default(),
+            growth_factor: self.growth_factor,
             final_bake_time_in_minutes: self.final_bake_time_in_minutes.unwrap_or_default(),
             replicate_to: self.replicate_to,
             _request_id: self._request_id,

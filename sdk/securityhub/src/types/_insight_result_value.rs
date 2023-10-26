@@ -7,7 +7,7 @@ pub struct InsightResultValue {
     /// <p>The value of the attribute that the findings are grouped by for the insight whose results are returned by the <code>GetInsightResults</code> operation.</p>
     pub group_by_attribute_value: ::std::option::Option<::std::string::String>,
     /// <p>The number of findings returned for each <code>GroupByAttributeValue</code>.</p>
-    pub count: i32,
+    pub count: ::std::option::Option<i32>,
 }
 impl InsightResultValue {
     /// <p>The value of the attribute that the findings are grouped by for the insight whose results are returned by the <code>GetInsightResults</code> operation.</p>
@@ -15,7 +15,7 @@ impl InsightResultValue {
         self.group_by_attribute_value.as_deref()
     }
     /// <p>The number of findings returned for each <code>GroupByAttributeValue</code>.</p>
-    pub fn count(&self) -> i32 {
+    pub fn count(&self) -> ::std::option::Option<i32> {
         self.count
     }
 }
@@ -66,7 +66,7 @@ impl InsightResultValueBuilder {
     pub fn build(self) -> crate::types::InsightResultValue {
         crate::types::InsightResultValue {
             group_by_attribute_value: self.group_by_attribute_value,
-            count: self.count.unwrap_or_default(),
+            count: self.count,
         }
     }
 }

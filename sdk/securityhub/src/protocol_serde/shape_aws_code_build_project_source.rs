@@ -9,14 +9,14 @@ pub fn ser_aws_code_build_project_source(
     if let Some(var_2) = &input.location {
         object.key("Location").string(var_2.as_str());
     }
-    if input.git_clone_depth != 0 {
+    if let Some(var_3) = &input.git_clone_depth {
         object.key("GitCloneDepth").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.git_clone_depth).into()),
+            ::aws_smithy_types::Number::NegInt((*var_3).into()),
         );
     }
-    if input.insecure_ssl {
-        object.key("InsecureSsl").boolean(input.insecure_ssl);
+    if let Some(var_4) = &input.insecure_ssl {
+        object.key("InsecureSsl").boolean(*var_4);
     }
     Ok(())
 }

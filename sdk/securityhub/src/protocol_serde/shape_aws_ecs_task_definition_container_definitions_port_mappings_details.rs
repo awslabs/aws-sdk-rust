@@ -3,20 +3,20 @@ pub fn ser_aws_ecs_task_definition_container_definitions_port_mappings_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsEcsTaskDefinitionContainerDefinitionsPortMappingsDetails,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if input.container_port != 0 {
+    if let Some(var_1) = &input.container_port {
         object.key("ContainerPort").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.container_port).into()),
+            ::aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if input.host_port != 0 {
+    if let Some(var_2) = &input.host_port {
         object.key("HostPort").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.host_port).into()),
+            ::aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
-    if let Some(var_1) = &input.protocol {
-        object.key("Protocol").string(var_1.as_str());
+    if let Some(var_3) = &input.protocol {
+        object.key("Protocol").string(var_3.as_str());
     }
     Ok(())
 }

@@ -15,7 +15,7 @@ pub struct AwsRedshiftClusterLoggingStatus {
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     pub last_successful_delivery_time: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether logging is enabled.</p>
-    pub logging_enabled: bool,
+    pub logging_enabled: ::std::option::Option<bool>,
     /// <p>Provides the prefix applied to the log file names.</p>
     pub s3_key_prefix: ::std::option::Option<::std::string::String>,
 }
@@ -39,7 +39,7 @@ impl AwsRedshiftClusterLoggingStatus {
         self.last_successful_delivery_time.as_deref()
     }
     /// <p>Indicates whether logging is enabled.</p>
-    pub fn logging_enabled(&self) -> bool {
+    pub fn logging_enabled(&self) -> ::std::option::Option<bool> {
         self.logging_enabled
     }
     /// <p>Provides the prefix applied to the log file names.</p>
@@ -163,7 +163,7 @@ impl AwsRedshiftClusterLoggingStatusBuilder {
             last_failure_message: self.last_failure_message,
             last_failure_time: self.last_failure_time,
             last_successful_delivery_time: self.last_successful_delivery_time,
-            logging_enabled: self.logging_enabled.unwrap_or_default(),
+            logging_enabled: self.logging_enabled,
             s3_key_prefix: self.s3_key_prefix,
         }
     }

@@ -5,17 +5,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ScalingPolicyObjective {
     /// <p>The minimum number of expected requests to your endpoint per minute.</p>
-    pub min_invocations_per_minute: i32,
+    pub min_invocations_per_minute: ::std::option::Option<i32>,
     /// <p>The maximum number of expected requests to your endpoint per minute.</p>
-    pub max_invocations_per_minute: i32,
+    pub max_invocations_per_minute: ::std::option::Option<i32>,
 }
 impl ScalingPolicyObjective {
     /// <p>The minimum number of expected requests to your endpoint per minute.</p>
-    pub fn min_invocations_per_minute(&self) -> i32 {
+    pub fn min_invocations_per_minute(&self) -> ::std::option::Option<i32> {
         self.min_invocations_per_minute
     }
     /// <p>The maximum number of expected requests to your endpoint per minute.</p>
-    pub fn max_invocations_per_minute(&self) -> i32 {
+    pub fn max_invocations_per_minute(&self) -> ::std::option::Option<i32> {
         self.max_invocations_per_minute
     }
 }
@@ -65,8 +65,8 @@ impl ScalingPolicyObjectiveBuilder {
     /// Consumes the builder and constructs a [`ScalingPolicyObjective`](crate::types::ScalingPolicyObjective).
     pub fn build(self) -> crate::types::ScalingPolicyObjective {
         crate::types::ScalingPolicyObjective {
-            min_invocations_per_minute: self.min_invocations_per_minute.unwrap_or_default(),
-            max_invocations_per_minute: self.max_invocations_per_minute.unwrap_or_default(),
+            min_invocations_per_minute: self.min_invocations_per_minute,
+            max_invocations_per_minute: self.max_invocations_per_minute,
         }
     }
 }

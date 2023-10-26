@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum Error {
-    /// <p>User does not have sufficient access to perform this action. </p>
+    /// <p>User does not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>Updating or deleting a resource can cause an inconsistent state.</p>
     ConflictException(crate::types::error::ConflictException),
@@ -11,7 +11,7 @@ pub enum Error {
     InternalServerException(crate::types::error::InternalServerException),
     /// <p>Request references a resource which does not exist.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
-    /// <p>Request would cause a service quota to be exceeded. The limit is 10 concurrent operations. </p>
+    /// <p>Request would cause a service quota to be exceeded. The limit is 10 concurrent operations.</p>
     ServiceQuotaExceededException(crate::types::error::ServiceQuotaExceededException),
     /// <p> Request was denied due to request throttling.</p>
     ThrottlingException(crate::types::error::ThrottlingException),
@@ -125,6 +125,36 @@ impl From<crate::operation::get_control_operation::GetControlOperationError> for
             crate::operation::get_control_operation::GetControlOperationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::get_control_operation::GetControlOperationError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_control_operation::GetControlOperationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_enabled_control::GetEnabledControlError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::get_enabled_control::GetEnabledControlError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_enabled_control::GetEnabledControlError> for Error {
+    fn from(err: crate::operation::get_enabled_control::GetEnabledControlError) -> Self {
+        match err {
+            crate::operation::get_enabled_control::GetEnabledControlError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_enabled_control::GetEnabledControlError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_enabled_control::GetEnabledControlError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_enabled_control::GetEnabledControlError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_enabled_control::GetEnabledControlError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_enabled_control::GetEnabledControlError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

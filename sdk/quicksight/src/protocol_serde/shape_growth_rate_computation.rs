@@ -21,10 +21,10 @@ pub fn ser_growth_rate_computation(
         crate::protocol_serde::shape_measure_field::ser_measure_field(&mut object_6, var_5)?;
         object_6.finish();
     }
-    if input.period_size != 0 {
+    if let Some(var_7) = &input.period_size {
         object.key("PeriodSize").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.period_size).into()),
+            ::aws_smithy_types::Number::NegInt((*var_7).into()),
         );
     }
     Ok(())

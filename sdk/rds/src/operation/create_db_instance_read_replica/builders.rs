@@ -1160,4 +1160,32 @@ impl CreateDBInstanceReadReplicaFluentBuilder {
     pub fn get_source_db_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_source_db_cluster_identifier()
     }
+    /// <p>Indicates whether the DB instance has a dedicated log volume (DLV) enabled.</p>
+    pub fn dedicated_log_volume(mut self, input: bool) -> Self {
+        self.inner = self.inner.dedicated_log_volume(input);
+        self
+    }
+    /// <p>Indicates whether the DB instance has a dedicated log volume (DLV) enabled.</p>
+    pub fn set_dedicated_log_volume(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_dedicated_log_volume(input);
+        self
+    }
+    /// <p>Indicates whether the DB instance has a dedicated log volume (DLV) enabled.</p>
+    pub fn get_dedicated_log_volume(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dedicated_log_volume()
+    }
+    /// <p>Whether to upgrade the storage file system configuration on the read replica. This option migrates the read replica from the old storage file system layout to the preferred layout.</p>
+    pub fn upgrade_storage_config(mut self, input: bool) -> Self {
+        self.inner = self.inner.upgrade_storage_config(input);
+        self
+    }
+    /// <p>Whether to upgrade the storage file system configuration on the read replica. This option migrates the read replica from the old storage file system layout to the preferred layout.</p>
+    pub fn set_upgrade_storage_config(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_upgrade_storage_config(input);
+        self
+    }
+    /// <p>Whether to upgrade the storage file system configuration on the read replica. This option migrates the read replica from the old storage file system layout to the preferred layout.</p>
+    pub fn get_upgrade_storage_config(&self) -> &::std::option::Option<bool> {
+        self.inner.get_upgrade_storage_config()
+    }
 }

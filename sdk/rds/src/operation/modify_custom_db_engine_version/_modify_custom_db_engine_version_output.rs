@@ -31,9 +31,9 @@ pub struct ModifyCustomDbEngineVersionOutput {
     /// <p>The types of logs that the database engine has available for export to CloudWatch Logs.</p>
     pub exportable_log_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Indicates whether the engine version supports exporting the log types specified by ExportableLogTypes to CloudWatch Logs.</p>
-    pub supports_log_exports_to_cloudwatch_logs: bool,
+    pub supports_log_exports_to_cloudwatch_logs: ::std::option::Option<bool>,
     /// <p>Indicates whether the database engine version supports read replicas.</p>
-    pub supports_read_replica: bool,
+    pub supports_read_replica: ::std::option::Option<bool>,
     /// <p>A list of the supported DB engine modes.</p>
     pub supported_engine_modes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of features supported by the DB engine.</p>
@@ -51,9 +51,9 @@ pub struct ModifyCustomDbEngineVersionOutput {
     /// <p>The status of the DB engine version, either <code>available</code> or <code>deprecated</code>.</p>
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether you can use Aurora parallel query with a specific DB engine version.</p>
-    pub supports_parallel_query: bool,
+    pub supports_parallel_query: ::std::option::Option<bool>,
     /// <p>Indicates whether you can use Aurora global databases with a specific DB engine version.</p>
-    pub supports_global_databases: bool,
+    pub supports_global_databases: ::std::option::Option<bool>,
     /// <p>The major engine version of the CEV.</p>
     pub major_engine_version: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Amazon S3 bucket that contains your database installation files.</p>
@@ -69,7 +69,7 @@ pub struct ModifyCustomDbEngineVersionOutput {
     /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
     pub tag_list: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>Indicates whether the engine version supports Babelfish for Aurora PostgreSQL.</p>
-    pub supports_babelfish: bool,
+    pub supports_babelfish: ::std::option::Option<bool>,
     /// <p>JSON string that lists the installation files and parameters that RDS Custom uses to create a custom engine version (CEV). RDS Custom applies the patches in the order in which they're listed in the manifest. You can set the Oracle home, Oracle base, and UNIX/Linux user and group using the installation parameters. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.preparing.html#custom-cev.preparing.manifest.fields">JSON fields in the CEV manifest</a> in the <i>Amazon RDS User Guide</i>. </p>
     pub custom_db_engine_version_manifest: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the engine version supports rotating the server certificate without rebooting the DB instance.</p>
@@ -136,11 +136,11 @@ impl ModifyCustomDbEngineVersionOutput {
         self.exportable_log_types.as_deref()
     }
     /// <p>Indicates whether the engine version supports exporting the log types specified by ExportableLogTypes to CloudWatch Logs.</p>
-    pub fn supports_log_exports_to_cloudwatch_logs(&self) -> bool {
+    pub fn supports_log_exports_to_cloudwatch_logs(&self) -> ::std::option::Option<bool> {
         self.supports_log_exports_to_cloudwatch_logs
     }
     /// <p>Indicates whether the database engine version supports read replicas.</p>
-    pub fn supports_read_replica(&self) -> bool {
+    pub fn supports_read_replica(&self) -> ::std::option::Option<bool> {
         self.supports_read_replica
     }
     /// <p>A list of the supported DB engine modes.</p>
@@ -166,11 +166,11 @@ impl ModifyCustomDbEngineVersionOutput {
         self.status.as_deref()
     }
     /// <p>Indicates whether you can use Aurora parallel query with a specific DB engine version.</p>
-    pub fn supports_parallel_query(&self) -> bool {
+    pub fn supports_parallel_query(&self) -> ::std::option::Option<bool> {
         self.supports_parallel_query
     }
     /// <p>Indicates whether you can use Aurora global databases with a specific DB engine version.</p>
-    pub fn supports_global_databases(&self) -> bool {
+    pub fn supports_global_databases(&self) -> ::std::option::Option<bool> {
         self.supports_global_databases
     }
     /// <p>The major engine version of the CEV.</p>
@@ -202,7 +202,7 @@ impl ModifyCustomDbEngineVersionOutput {
         self.tag_list.as_deref()
     }
     /// <p>Indicates whether the engine version supports Babelfish for Aurora PostgreSQL.</p>
-    pub fn supports_babelfish(&self) -> bool {
+    pub fn supports_babelfish(&self) -> ::std::option::Option<bool> {
         self.supports_babelfish
     }
     /// <p>JSON string that lists the installation files and parameters that RDS Custom uses to create a custom engine version (CEV). RDS Custom applies the patches in the order in which they're listed in the manifest. You can set the Oracle home, Oracle base, and UNIX/Linux user and group using the installation parameters. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.preparing.html#custom-cev.preparing.manifest.fields">JSON fields in the CEV manifest</a> in the <i>Amazon RDS User Guide</i>. </p>
@@ -838,13 +838,13 @@ impl ModifyCustomDbEngineVersionOutputBuilder {
             valid_upgrade_target: self.valid_upgrade_target,
             supported_timezones: self.supported_timezones,
             exportable_log_types: self.exportable_log_types,
-            supports_log_exports_to_cloudwatch_logs: self.supports_log_exports_to_cloudwatch_logs.unwrap_or_default(),
-            supports_read_replica: self.supports_read_replica.unwrap_or_default(),
+            supports_log_exports_to_cloudwatch_logs: self.supports_log_exports_to_cloudwatch_logs,
+            supports_read_replica: self.supports_read_replica,
             supported_engine_modes: self.supported_engine_modes,
             supported_feature_names: self.supported_feature_names,
             status: self.status,
-            supports_parallel_query: self.supports_parallel_query.unwrap_or_default(),
-            supports_global_databases: self.supports_global_databases.unwrap_or_default(),
+            supports_parallel_query: self.supports_parallel_query,
+            supports_global_databases: self.supports_global_databases,
             major_engine_version: self.major_engine_version,
             database_installation_files_s3_bucket_name: self.database_installation_files_s3_bucket_name,
             database_installation_files_s3_prefix: self.database_installation_files_s3_prefix,
@@ -852,7 +852,7 @@ impl ModifyCustomDbEngineVersionOutputBuilder {
             kms_key_id: self.kms_key_id,
             create_time: self.create_time,
             tag_list: self.tag_list,
-            supports_babelfish: self.supports_babelfish.unwrap_or_default(),
+            supports_babelfish: self.supports_babelfish,
             custom_db_engine_version_manifest: self.custom_db_engine_version_manifest,
             supports_certificate_rotation_without_restart: self.supports_certificate_rotation_without_restart,
             supported_ca_certificate_identifiers: self.supported_ca_certificate_identifiers,

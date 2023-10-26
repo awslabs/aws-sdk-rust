@@ -25,6 +25,10 @@ where
                             builder = builder
                                 .set_rule_based_properties(crate::protocol_serde::shape_rule_based_properties::de_rule_based_properties(tokens)?);
                         }
+                        "providerProperties" => {
+                            builder =
+                                builder.set_provider_properties(crate::protocol_serde::shape_provider_properties::de_provider_properties(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
@@ -55,6 +59,12 @@ pub fn ser_resolution_techniques(
         let mut object_3 = object.key("ruleBasedProperties").start_object();
         crate::protocol_serde::shape_rule_based_properties::ser_rule_based_properties(&mut object_3, var_2)?;
         object_3.finish();
+    }
+    if let Some(var_4) = &input.provider_properties {
+        #[allow(unused_mut)]
+        let mut object_5 = object.key("providerProperties").start_object();
+        crate::protocol_serde::shape_provider_properties::ser_provider_properties(&mut object_5, var_4)?;
+        object_5.finish();
     }
     Ok(())
 }

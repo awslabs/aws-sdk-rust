@@ -252,6 +252,8 @@ mod get_face_search;
 
 mod get_label_detection;
 
+mod get_media_analysis_job;
+
 mod get_person_tracking;
 
 mod get_segment_detection;
@@ -267,6 +269,8 @@ mod list_dataset_entries;
 mod list_dataset_labels;
 
 mod list_faces;
+
+mod list_media_analysis_jobs;
 
 mod list_project_policies;
 
@@ -297,6 +301,8 @@ mod start_face_detection;
 mod start_face_search;
 
 mod start_label_detection;
+
+mod start_media_analysis_job;
 
 mod start_person_tracking;
 

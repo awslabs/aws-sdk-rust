@@ -3,20 +3,20 @@ pub fn ser_aws_ecs_cluster_configuration_execute_command_configuration_log_confi
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsEcsClusterConfigurationExecuteCommandConfigurationLogConfigurationDetails,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if input.cloud_watch_encryption_enabled {
-        object.key("CloudWatchEncryptionEnabled").boolean(input.cloud_watch_encryption_enabled);
+    if let Some(var_1) = &input.cloud_watch_encryption_enabled {
+        object.key("CloudWatchEncryptionEnabled").boolean(*var_1);
     }
-    if let Some(var_1) = &input.cloud_watch_log_group_name {
-        object.key("CloudWatchLogGroupName").string(var_1.as_str());
+    if let Some(var_2) = &input.cloud_watch_log_group_name {
+        object.key("CloudWatchLogGroupName").string(var_2.as_str());
     }
-    if let Some(var_2) = &input.s3_bucket_name {
-        object.key("S3BucketName").string(var_2.as_str());
+    if let Some(var_3) = &input.s3_bucket_name {
+        object.key("S3BucketName").string(var_3.as_str());
     }
-    if input.s3_encryption_enabled {
-        object.key("S3EncryptionEnabled").boolean(input.s3_encryption_enabled);
+    if let Some(var_4) = &input.s3_encryption_enabled {
+        object.key("S3EncryptionEnabled").boolean(*var_4);
     }
-    if let Some(var_3) = &input.s3_key_prefix {
-        object.key("S3KeyPrefix").string(var_3.as_str());
+    if let Some(var_5) = &input.s3_key_prefix {
+        object.key("S3KeyPrefix").string(var_5.as_str());
     }
     Ok(())
 }

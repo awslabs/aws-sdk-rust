@@ -3,31 +3,31 @@ pub fn ser_aws_elb_load_balancer_health_check(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsElbLoadBalancerHealthCheck,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if input.healthy_threshold != 0 {
+    if let Some(var_1) = &input.healthy_threshold {
         object.key("HealthyThreshold").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.healthy_threshold).into()),
+            ::aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if input.interval != 0 {
+    if let Some(var_2) = &input.interval {
         object.key("Interval").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.interval).into()),
+            ::aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
-    if let Some(var_1) = &input.target {
-        object.key("Target").string(var_1.as_str());
+    if let Some(var_3) = &input.target {
+        object.key("Target").string(var_3.as_str());
     }
-    if input.timeout != 0 {
+    if let Some(var_4) = &input.timeout {
         object.key("Timeout").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.timeout).into()),
+            ::aws_smithy_types::Number::NegInt((*var_4).into()),
         );
     }
-    if input.unhealthy_threshold != 0 {
+    if let Some(var_5) = &input.unhealthy_threshold {
         object.key("UnhealthyThreshold").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.unhealthy_threshold).into()),
+            ::aws_smithy_types::Number::NegInt((*var_5).into()),
         );
     }
     Ok(())

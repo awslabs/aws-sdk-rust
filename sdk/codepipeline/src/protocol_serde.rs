@@ -303,6 +303,8 @@ pub(crate) mod shape_pipeline_list;
 
 pub(crate) mod shape_pipeline_metadata;
 
+pub(crate) mod shape_pipeline_variable;
+
 pub(crate) mod shape_stage_state_list;
 
 pub(crate) mod shape_tag;
@@ -341,6 +343,8 @@ pub(crate) mod shape_artifact_store;
 
 pub(crate) mod shape_artifact_store_map;
 
+pub(crate) mod shape_execution_trigger;
+
 pub(crate) mod shape_job;
 
 pub(crate) mod shape_job_data;
@@ -350,6 +354,16 @@ pub(crate) mod shape_pipeline_execution_summary;
 pub(crate) mod shape_pipeline_stage_declaration_list;
 
 pub(crate) mod shape_pipeline_summary;
+
+pub(crate) mod shape_pipeline_trigger_declaration;
+
+pub(crate) mod shape_pipeline_trigger_declaration_list;
+
+pub(crate) mod shape_pipeline_variable_declaration;
+
+pub(crate) mod shape_pipeline_variable_declaration_list;
+
+pub(crate) mod shape_resolved_pipeline_variable_list;
 
 pub(crate) mod shape_stage_declaration;
 
@@ -385,11 +399,13 @@ pub(crate) mod shape_blocker_declaration;
 
 pub(crate) mod shape_encryption_key;
 
-pub(crate) mod shape_execution_trigger;
-
 pub(crate) mod shape_executor_configuration;
 
+pub(crate) mod shape_git_configuration;
+
 pub(crate) mod shape_pipeline_context;
+
+pub(crate) mod shape_resolved_pipeline_variable;
 
 pub(crate) mod shape_source_revision_list;
 
@@ -412,6 +428,8 @@ pub(crate) mod shape_action_state;
 pub(crate) mod shape_artifact;
 
 pub(crate) mod shape_artifact_detail_list;
+
+pub(crate) mod shape_git_push_filter;
 
 pub(crate) mod shape_input_artifact;
 
@@ -439,6 +457,10 @@ pub(crate) mod shape_artifact_detail;
 
 pub(crate) mod shape_artifact_location;
 
+pub(crate) mod shape_git_push_filter_list;
+
+pub(crate) mod shape_git_tag_filter_criteria;
+
 pub(crate) mod shape_polling_account_list;
 
 pub(crate) mod shape_polling_service_principal_list;
@@ -452,3 +474,5 @@ pub(crate) mod shape_output_artifact_list;
 pub(crate) mod shape_s3_artifact_location;
 
 pub(crate) mod shape_s3_location;
+
+pub(crate) mod shape_git_tag_pattern_list;

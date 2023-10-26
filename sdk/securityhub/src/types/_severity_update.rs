@@ -13,9 +13,9 @@ pub struct SeverityUpdate {
     /// <li> <p>70–89 - <code>HIGH</code> </p> </li>
     /// <li> <p>90–100 - <code>CRITICAL</code> </p> </li>
     /// </ul>
-    pub normalized: i32,
+    pub normalized: ::std::option::Option<i32>,
     /// <p>The native severity as defined by the Amazon Web Services service or integrated partner product that generated the finding.</p>
-    pub product: f64,
+    pub product: ::std::option::Option<f64>,
     /// <p>The severity value of the finding. The allowed values are the following.</p>
     /// <ul>
     /// <li> <p> <code>INFORMATIONAL</code> - No issue was found.</p> </li>
@@ -36,11 +36,11 @@ impl SeverityUpdate {
     /// <li> <p>70–89 - <code>HIGH</code> </p> </li>
     /// <li> <p>90–100 - <code>CRITICAL</code> </p> </li>
     /// </ul>
-    pub fn normalized(&self) -> i32 {
+    pub fn normalized(&self) -> ::std::option::Option<i32> {
         self.normalized
     }
     /// <p>The native severity as defined by the Amazon Web Services service or integrated partner product that generated the finding.</p>
-    pub fn product(&self) -> f64 {
+    pub fn product(&self) -> ::std::option::Option<f64> {
         self.product
     }
     /// <p>The severity value of the finding. The allowed values are the following.</p>
@@ -161,8 +161,8 @@ impl SeverityUpdateBuilder {
     /// Consumes the builder and constructs a [`SeverityUpdate`](crate::types::SeverityUpdate).
     pub fn build(self) -> crate::types::SeverityUpdate {
         crate::types::SeverityUpdate {
-            normalized: self.normalized.unwrap_or_default(),
-            product: self.product.unwrap_or_default(),
+            normalized: self.normalized,
+            product: self.product,
             label: self.label,
         }
     }

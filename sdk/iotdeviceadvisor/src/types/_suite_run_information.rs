@@ -22,9 +22,9 @@ pub struct SuiteRunInformation {
     /// <p>Status of the suite run.</p>
     pub status: ::std::option::Option<crate::types::SuiteRunStatus>,
     /// <p>Number of test cases that passed in the suite run.</p>
-    pub passed: i32,
+    pub passed: ::std::option::Option<i32>,
     /// <p>Number of test cases that failed in the suite run.</p>
-    pub failed: i32,
+    pub failed: ::std::option::Option<i32>,
 }
 impl SuiteRunInformation {
     /// <p>Suite definition ID of the suite run.</p>
@@ -60,11 +60,11 @@ impl SuiteRunInformation {
         self.status.as_ref()
     }
     /// <p>Number of test cases that passed in the suite run.</p>
-    pub fn passed(&self) -> i32 {
+    pub fn passed(&self) -> ::std::option::Option<i32> {
         self.passed
     }
     /// <p>Number of test cases that failed in the suite run.</p>
-    pub fn failed(&self) -> i32 {
+    pub fn failed(&self) -> ::std::option::Option<i32> {
         self.failed
     }
 }
@@ -242,8 +242,8 @@ impl SuiteRunInformationBuilder {
             started_at: self.started_at,
             end_at: self.end_at,
             status: self.status,
-            passed: self.passed.unwrap_or_default(),
-            failed: self.failed.unwrap_or_default(),
+            passed: self.passed,
+            failed: self.failed,
         }
     }
 }

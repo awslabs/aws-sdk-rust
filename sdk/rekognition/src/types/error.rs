@@ -23,6 +23,10 @@ pub use crate::types::error::_invalid_s3_object_exception::InvalidS3ObjectExcept
 
 pub use crate::types::error::_idempotent_parameter_mismatch_exception::IdempotentParameterMismatchException;
 
+pub use crate::types::error::_resource_not_ready_exception::ResourceNotReadyException;
+
+pub use crate::types::error::_invalid_manifest_exception::InvalidManifestException;
+
 pub use crate::types::error::_invalid_image_format_exception::InvalidImageFormatException;
 
 pub use crate::types::error::_image_too_large_exception::ImageTooLargeException;
@@ -34,8 +38,6 @@ pub use crate::types::error::_malformed_policy_document_exception::MalformedPoli
 pub use crate::types::error::_invalid_policy_revision_id_exception::InvalidPolicyRevisionIdException;
 
 pub use crate::types::error::_invalid_pagination_token_exception::InvalidPaginationTokenException;
-
-pub use crate::types::error::_resource_not_ready_exception::ResourceNotReadyException;
 
 pub use crate::types::error::_session_not_found_exception::SessionNotFoundException;
 
@@ -56,6 +58,8 @@ mod _image_too_large_exception;
 mod _internal_server_error;
 
 mod _invalid_image_format_exception;
+
+mod _invalid_manifest_exception;
 
 mod _invalid_pagination_token_exception;
 

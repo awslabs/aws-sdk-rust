@@ -6,95 +6,95 @@ pub fn ser_aws_amazon_mq_broker_details(
     if let Some(var_1) = &input.authentication_strategy {
         object.key("AuthenticationStrategy").string(var_1.as_str());
     }
-    if input.auto_minor_version_upgrade {
-        object.key("AutoMinorVersionUpgrade").boolean(input.auto_minor_version_upgrade);
+    if let Some(var_2) = &input.auto_minor_version_upgrade {
+        object.key("AutoMinorVersionUpgrade").boolean(*var_2);
     }
-    if let Some(var_2) = &input.broker_arn {
-        object.key("BrokerArn").string(var_2.as_str());
+    if let Some(var_3) = &input.broker_arn {
+        object.key("BrokerArn").string(var_3.as_str());
     }
-    if let Some(var_3) = &input.broker_name {
-        object.key("BrokerName").string(var_3.as_str());
+    if let Some(var_4) = &input.broker_name {
+        object.key("BrokerName").string(var_4.as_str());
     }
-    if let Some(var_4) = &input.deployment_mode {
-        object.key("DeploymentMode").string(var_4.as_str());
+    if let Some(var_5) = &input.deployment_mode {
+        object.key("DeploymentMode").string(var_5.as_str());
     }
-    if let Some(var_5) = &input.encryption_options {
+    if let Some(var_6) = &input.encryption_options {
         #[allow(unused_mut)]
-        let mut object_6 = object.key("EncryptionOptions").start_object();
+        let mut object_7 = object.key("EncryptionOptions").start_object();
         crate::protocol_serde::shape_aws_amazon_mq_broker_encryption_options_details::ser_aws_amazon_mq_broker_encryption_options_details(
-            &mut object_6,
-            var_5,
+            &mut object_7,
+            var_6,
         )?;
-        object_6.finish();
+        object_7.finish();
     }
-    if let Some(var_7) = &input.engine_type {
-        object.key("EngineType").string(var_7.as_str());
+    if let Some(var_8) = &input.engine_type {
+        object.key("EngineType").string(var_8.as_str());
     }
-    if let Some(var_8) = &input.engine_version {
-        object.key("EngineVersion").string(var_8.as_str());
+    if let Some(var_9) = &input.engine_version {
+        object.key("EngineVersion").string(var_9.as_str());
     }
-    if let Some(var_9) = &input.host_instance_type {
-        object.key("HostInstanceType").string(var_9.as_str());
+    if let Some(var_10) = &input.host_instance_type {
+        object.key("HostInstanceType").string(var_10.as_str());
     }
-    if let Some(var_10) = &input.broker_id {
-        object.key("BrokerId").string(var_10.as_str());
+    if let Some(var_11) = &input.broker_id {
+        object.key("BrokerId").string(var_11.as_str());
     }
-    if let Some(var_11) = &input.ldap_server_metadata {
+    if let Some(var_12) = &input.ldap_server_metadata {
         #[allow(unused_mut)]
-        let mut object_12 = object.key("LdapServerMetadata").start_object();
+        let mut object_13 = object.key("LdapServerMetadata").start_object();
         crate::protocol_serde::shape_aws_amazon_mq_broker_ldap_server_metadata_details::ser_aws_amazon_mq_broker_ldap_server_metadata_details(
-            &mut object_12,
-            var_11,
+            &mut object_13,
+            var_12,
         )?;
-        object_12.finish();
+        object_13.finish();
     }
-    if let Some(var_13) = &input.logs {
+    if let Some(var_14) = &input.logs {
         #[allow(unused_mut)]
-        let mut object_14 = object.key("Logs").start_object();
-        crate::protocol_serde::shape_aws_amazon_mq_broker_logs_details::ser_aws_amazon_mq_broker_logs_details(&mut object_14, var_13)?;
-        object_14.finish();
+        let mut object_15 = object.key("Logs").start_object();
+        crate::protocol_serde::shape_aws_amazon_mq_broker_logs_details::ser_aws_amazon_mq_broker_logs_details(&mut object_15, var_14)?;
+        object_15.finish();
     }
-    if let Some(var_15) = &input.maintenance_window_start_time {
+    if let Some(var_16) = &input.maintenance_window_start_time {
         #[allow(unused_mut)]
-        let mut object_16 = object.key("MaintenanceWindowStartTime").start_object();
-        crate::protocol_serde::shape_aws_amazon_mq_broker_maintenance_window_start_time_details::ser_aws_amazon_mq_broker_maintenance_window_start_time_details(&mut object_16, var_15)?;
-        object_16.finish();
+        let mut object_17 = object.key("MaintenanceWindowStartTime").start_object();
+        crate::protocol_serde::shape_aws_amazon_mq_broker_maintenance_window_start_time_details::ser_aws_amazon_mq_broker_maintenance_window_start_time_details(&mut object_17, var_16)?;
+        object_17.finish();
     }
-    if input.publicly_accessible {
-        object.key("PubliclyAccessible").boolean(input.publicly_accessible);
+    if let Some(var_18) = &input.publicly_accessible {
+        object.key("PubliclyAccessible").boolean(*var_18);
     }
-    if let Some(var_17) = &input.security_groups {
-        let mut array_18 = object.key("SecurityGroups").start_array();
-        for item_19 in var_17 {
+    if let Some(var_19) = &input.security_groups {
+        let mut array_20 = object.key("SecurityGroups").start_array();
+        for item_21 in var_19 {
             {
-                array_18.value().string(item_19.as_str());
+                array_20.value().string(item_21.as_str());
             }
         }
-        array_18.finish();
+        array_20.finish();
     }
-    if let Some(var_20) = &input.storage_type {
-        object.key("StorageType").string(var_20.as_str());
+    if let Some(var_22) = &input.storage_type {
+        object.key("StorageType").string(var_22.as_str());
     }
-    if let Some(var_21) = &input.subnet_ids {
-        let mut array_22 = object.key("SubnetIds").start_array();
-        for item_23 in var_21 {
+    if let Some(var_23) = &input.subnet_ids {
+        let mut array_24 = object.key("SubnetIds").start_array();
+        for item_25 in var_23 {
             {
-                array_22.value().string(item_23.as_str());
+                array_24.value().string(item_25.as_str());
             }
         }
-        array_22.finish();
+        array_24.finish();
     }
-    if let Some(var_24) = &input.users {
-        let mut array_25 = object.key("Users").start_array();
-        for item_26 in var_24 {
+    if let Some(var_26) = &input.users {
+        let mut array_27 = object.key("Users").start_array();
+        for item_28 in var_26 {
             {
                 #[allow(unused_mut)]
-                let mut object_27 = array_25.value().start_object();
-                crate::protocol_serde::shape_aws_amazon_mq_broker_users_details::ser_aws_amazon_mq_broker_users_details(&mut object_27, item_26)?;
-                object_27.finish();
+                let mut object_29 = array_27.value().start_object();
+                crate::protocol_serde::shape_aws_amazon_mq_broker_users_details::ser_aws_amazon_mq_broker_users_details(&mut object_29, item_28)?;
+                object_29.finish();
             }
         }
-        array_25.finish();
+        array_27.finish();
     }
     Ok(())
 }

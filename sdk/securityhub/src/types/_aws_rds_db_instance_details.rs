@@ -15,7 +15,7 @@ pub struct AwsRdsDbInstanceDetails {
     /// <p>Contains the name of the compute and memory capacity class of the DB instance.</p>
     pub db_instance_class: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the port that the DB instance listens on. If the DB instance is part of a DB cluster, this can be a different port than the DB cluster port.</p>
-    pub db_instance_port: i32,
+    pub db_instance_port: ::std::option::Option<i32>,
     /// <p>The Amazon Web Services Region-unique, immutable identifier for the DB instance. This identifier is found in CloudTrail log entries whenever the KMS key for the DB instance is accessed. </p>
     pub dbi_resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The meaning of this parameter differs according to the database engine you use.</p>
@@ -26,7 +26,7 @@ pub struct AwsRdsDbInstanceDetails {
     pub db_name: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the DB instance has deletion protection enabled.</p>
     /// <p>When deletion protection is enabled, the database cannot be deleted.</p>
-    pub deletion_protection: bool,
+    pub deletion_protection: ::std::option::Option<bool>,
     /// <p>Specifies the connection endpoint.</p>
     pub endpoint: ::std::option::Option<crate::types::AwsRdsDbInstanceEndpoint>,
     /// <p>Provides the name of the database engine to use for this DB instance.</p>
@@ -40,7 +40,7 @@ pub struct AwsRdsDbInstanceDetails {
     /// <li> <p>For MySQL 5.7, minor version 5.7.16 or higher</p> </li>
     /// <li> <p>Aurora 5.6 or higher</p> </li>
     /// </ul>
-    pub iam_database_authentication_enabled: bool,
+    pub iam_database_authentication_enabled: ::std::option::Option<bool>,
     /// <p>Indicates when the DB instance was created.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     pub instance_create_time: ::std::option::Option<::std::string::String>,
@@ -49,15 +49,15 @@ pub struct AwsRdsDbInstanceDetails {
     /// <p>Specifies the accessibility options for the DB instance.</p>
     /// <p>A value of true specifies an Internet-facing instance with a publicly resolvable DNS name, which resolves to a public IP address.</p>
     /// <p>A value of false specifies an internal instance with a DNS name that resolves to a private IP address. </p>
-    pub publicly_accessible: bool,
+    pub publicly_accessible: ::std::option::Option<bool>,
     /// <p>Specifies whether the DB instance is encrypted.</p>
-    pub storage_encrypted: bool,
+    pub storage_encrypted: ::std::option::Option<bool>,
     /// <p>The ARN from the key store with which the instance is associated for TDE encryption.</p>
     pub tde_credential_arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of VPC security groups that the DB instance belongs to.</p>
     pub vpc_security_groups: ::std::option::Option<::std::vec::Vec<crate::types::AwsRdsDbInstanceVpcSecurityGroup>>,
     /// <p>Whether the DB instance is a multiple Availability Zone deployment.</p>
-    pub multi_az: bool,
+    pub multi_az: ::std::option::Option<bool>,
     /// <p>The ARN of the CloudWatch Logs log stream that receives the enhanced monitoring metrics data for the DB instance.</p>
     pub enhanced_monitoring_resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the DB instance.</p>
@@ -65,12 +65,12 @@ pub struct AwsRdsDbInstanceDetails {
     /// <p>The master user name of the DB instance.</p>
     pub master_username: ::std::option::Option<::std::string::String>,
     /// <p>The amount of storage (in gigabytes) to initially allocate for the DB instance.</p>
-    pub allocated_storage: i32,
+    pub allocated_storage: ::std::option::Option<i32>,
     /// <p>The range of time each day when automated backups are created, if automated backups are enabled.</p>
     /// <p>Uses the format <code>HH:MM-HH:MM</code>. For example, <code>04:52-05:22</code>.</p>
     pub preferred_backup_window: ::std::option::Option<::std::string::String>,
     /// <p>The number of days for which to retain automated backups.</p>
-    pub backup_retention_period: i32,
+    pub backup_retention_period: ::std::option::Option<i32>,
     /// <p>A list of the DB security groups to assign to the DB instance.</p>
     pub db_security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of the DB parameter groups to assign to the DB instance.</p>
@@ -96,7 +96,7 @@ pub struct AwsRdsDbInstanceDetails {
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     pub latest_restorable_time: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether minor version patches are applied automatically.</p>
-    pub auto_minor_version_upgrade: bool,
+    pub auto_minor_version_upgrade: ::std::option::Option<bool>,
     /// <p>If this DB instance is a read replica, contains the identifier of the source DB instance.</p>
     pub read_replica_source_db_instance_identifier: ::std::option::Option<::std::string::String>,
     /// <p>List of identifiers of the read replicas associated with this DB instance.</p>
@@ -106,7 +106,7 @@ pub struct AwsRdsDbInstanceDetails {
     /// <p>License model information for this DB instance.</p>
     pub license_model: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the provisioned IOPS (I/O operations per second) for this DB instance.</p>
-    pub iops: i32,
+    pub iops: ::std::option::Option<i32>,
     /// <p>The list of option group memberships for this DB instance.</p>
     pub option_group_memberships: ::std::option::Option<::std::vec::Vec<crate::types::AwsRdsDbOptionGroupMembership>>,
     /// <p>The name of the character set that this DB instance is associated with.</p>
@@ -120,21 +120,21 @@ pub struct AwsRdsDbInstanceDetails {
     /// <p>The Active Directory domain membership records associated with the DB instance.</p>
     pub domain_memberships: ::std::option::Option<::std::vec::Vec<crate::types::AwsRdsDbDomainMembership>>,
     /// <p>Whether to copy resource tags to snapshots of the DB instance.</p>
-    pub copy_tags_to_snapshot: bool,
+    pub copy_tags_to_snapshot: ::std::option::Option<bool>,
     /// <p>The interval, in seconds, between points when enhanced monitoring metrics are collected for the DB instance.</p>
-    pub monitoring_interval: i32,
+    pub monitoring_interval: ::std::option::Option<i32>,
     /// <p>The ARN for the IAM role that permits Amazon RDS to send enhanced monitoring metrics to CloudWatch Logs.</p>
     pub monitoring_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The order in which to promote an Aurora replica to the primary instance after a failure of the existing primary instance.</p>
-    pub promotion_tier: i32,
+    pub promotion_tier: ::std::option::Option<i32>,
     /// <p>The time zone of the DB instance.</p>
     pub timezone: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether Performance Insights is enabled for the DB instance.</p>
-    pub performance_insights_enabled: bool,
+    pub performance_insights_enabled: ::std::option::Option<bool>,
     /// <p>The identifier of the KMS key used to encrypt the Performance Insights data.</p>
     pub performance_insights_kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The number of days to retain Performance Insights data.</p>
-    pub performance_insights_retention_period: i32,
+    pub performance_insights_retention_period: ::std::option::Option<i32>,
     /// <p>A list of log types that this DB instance is configured to export to CloudWatch Logs.</p>
     pub enabled_cloud_watch_logs_exports: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The number of CPU cores and the number of threads per core for the DB instance class of the DB instance.</p>
@@ -142,7 +142,7 @@ pub struct AwsRdsDbInstanceDetails {
     /// <p>Specifies the connection endpoint.</p>
     pub listener_endpoint: ::std::option::Option<crate::types::AwsRdsDbInstanceEndpoint>,
     /// <p>The upper limit to which Amazon RDS can automatically scale the storage of the DB instance.</p>
-    pub max_allocated_storage: i32,
+    pub max_allocated_storage: ::std::option::Option<i32>,
 }
 impl AwsRdsDbInstanceDetails {
     /// <p>The IAM roles associated with the DB instance.</p>
@@ -166,7 +166,7 @@ impl AwsRdsDbInstanceDetails {
         self.db_instance_class.as_deref()
     }
     /// <p>Specifies the port that the DB instance listens on. If the DB instance is part of a DB cluster, this can be a different port than the DB cluster port.</p>
-    pub fn db_instance_port(&self) -> i32 {
+    pub fn db_instance_port(&self) -> ::std::option::Option<i32> {
         self.db_instance_port
     }
     /// <p>The Amazon Web Services Region-unique, immutable identifier for the DB instance. This identifier is found in CloudTrail log entries whenever the KMS key for the DB instance is accessed. </p>
@@ -183,7 +183,7 @@ impl AwsRdsDbInstanceDetails {
     }
     /// <p>Indicates whether the DB instance has deletion protection enabled.</p>
     /// <p>When deletion protection is enabled, the database cannot be deleted.</p>
-    pub fn deletion_protection(&self) -> bool {
+    pub fn deletion_protection(&self) -> ::std::option::Option<bool> {
         self.deletion_protection
     }
     /// <p>Specifies the connection endpoint.</p>
@@ -205,7 +205,7 @@ impl AwsRdsDbInstanceDetails {
     /// <li> <p>For MySQL 5.7, minor version 5.7.16 or higher</p> </li>
     /// <li> <p>Aurora 5.6 or higher</p> </li>
     /// </ul>
-    pub fn iam_database_authentication_enabled(&self) -> bool {
+    pub fn iam_database_authentication_enabled(&self) -> ::std::option::Option<bool> {
         self.iam_database_authentication_enabled
     }
     /// <p>Indicates when the DB instance was created.</p>
@@ -220,11 +220,11 @@ impl AwsRdsDbInstanceDetails {
     /// <p>Specifies the accessibility options for the DB instance.</p>
     /// <p>A value of true specifies an Internet-facing instance with a publicly resolvable DNS name, which resolves to a public IP address.</p>
     /// <p>A value of false specifies an internal instance with a DNS name that resolves to a private IP address. </p>
-    pub fn publicly_accessible(&self) -> bool {
+    pub fn publicly_accessible(&self) -> ::std::option::Option<bool> {
         self.publicly_accessible
     }
     /// <p>Specifies whether the DB instance is encrypted.</p>
-    pub fn storage_encrypted(&self) -> bool {
+    pub fn storage_encrypted(&self) -> ::std::option::Option<bool> {
         self.storage_encrypted
     }
     /// <p>The ARN from the key store with which the instance is associated for TDE encryption.</p>
@@ -236,7 +236,7 @@ impl AwsRdsDbInstanceDetails {
         self.vpc_security_groups.as_deref()
     }
     /// <p>Whether the DB instance is a multiple Availability Zone deployment.</p>
-    pub fn multi_az(&self) -> bool {
+    pub fn multi_az(&self) -> ::std::option::Option<bool> {
         self.multi_az
     }
     /// <p>The ARN of the CloudWatch Logs log stream that receives the enhanced monitoring metrics data for the DB instance.</p>
@@ -252,7 +252,7 @@ impl AwsRdsDbInstanceDetails {
         self.master_username.as_deref()
     }
     /// <p>The amount of storage (in gigabytes) to initially allocate for the DB instance.</p>
-    pub fn allocated_storage(&self) -> i32 {
+    pub fn allocated_storage(&self) -> ::std::option::Option<i32> {
         self.allocated_storage
     }
     /// <p>The range of time each day when automated backups are created, if automated backups are enabled.</p>
@@ -261,7 +261,7 @@ impl AwsRdsDbInstanceDetails {
         self.preferred_backup_window.as_deref()
     }
     /// <p>The number of days for which to retain automated backups.</p>
-    pub fn backup_retention_period(&self) -> i32 {
+    pub fn backup_retention_period(&self) -> ::std::option::Option<i32> {
         self.backup_retention_period
     }
     /// <p>A list of the DB security groups to assign to the DB instance.</p>
@@ -303,7 +303,7 @@ impl AwsRdsDbInstanceDetails {
         self.latest_restorable_time.as_deref()
     }
     /// <p>Indicates whether minor version patches are applied automatically.</p>
-    pub fn auto_minor_version_upgrade(&self) -> bool {
+    pub fn auto_minor_version_upgrade(&self) -> ::std::option::Option<bool> {
         self.auto_minor_version_upgrade
     }
     /// <p>If this DB instance is a read replica, contains the identifier of the source DB instance.</p>
@@ -323,7 +323,7 @@ impl AwsRdsDbInstanceDetails {
         self.license_model.as_deref()
     }
     /// <p>Specifies the provisioned IOPS (I/O operations per second) for this DB instance.</p>
-    pub fn iops(&self) -> i32 {
+    pub fn iops(&self) -> ::std::option::Option<i32> {
         self.iops
     }
     /// <p>The list of option group memberships for this DB instance.</p>
@@ -351,11 +351,11 @@ impl AwsRdsDbInstanceDetails {
         self.domain_memberships.as_deref()
     }
     /// <p>Whether to copy resource tags to snapshots of the DB instance.</p>
-    pub fn copy_tags_to_snapshot(&self) -> bool {
+    pub fn copy_tags_to_snapshot(&self) -> ::std::option::Option<bool> {
         self.copy_tags_to_snapshot
     }
     /// <p>The interval, in seconds, between points when enhanced monitoring metrics are collected for the DB instance.</p>
-    pub fn monitoring_interval(&self) -> i32 {
+    pub fn monitoring_interval(&self) -> ::std::option::Option<i32> {
         self.monitoring_interval
     }
     /// <p>The ARN for the IAM role that permits Amazon RDS to send enhanced monitoring metrics to CloudWatch Logs.</p>
@@ -363,7 +363,7 @@ impl AwsRdsDbInstanceDetails {
         self.monitoring_role_arn.as_deref()
     }
     /// <p>The order in which to promote an Aurora replica to the primary instance after a failure of the existing primary instance.</p>
-    pub fn promotion_tier(&self) -> i32 {
+    pub fn promotion_tier(&self) -> ::std::option::Option<i32> {
         self.promotion_tier
     }
     /// <p>The time zone of the DB instance.</p>
@@ -371,7 +371,7 @@ impl AwsRdsDbInstanceDetails {
         self.timezone.as_deref()
     }
     /// <p>Indicates whether Performance Insights is enabled for the DB instance.</p>
-    pub fn performance_insights_enabled(&self) -> bool {
+    pub fn performance_insights_enabled(&self) -> ::std::option::Option<bool> {
         self.performance_insights_enabled
     }
     /// <p>The identifier of the KMS key used to encrypt the Performance Insights data.</p>
@@ -379,7 +379,7 @@ impl AwsRdsDbInstanceDetails {
         self.performance_insights_kms_key_id.as_deref()
     }
     /// <p>The number of days to retain Performance Insights data.</p>
-    pub fn performance_insights_retention_period(&self) -> i32 {
+    pub fn performance_insights_retention_period(&self) -> ::std::option::Option<i32> {
         self.performance_insights_retention_period
     }
     /// <p>A list of log types that this DB instance is configured to export to CloudWatch Logs.</p>
@@ -395,7 +395,7 @@ impl AwsRdsDbInstanceDetails {
         self.listener_endpoint.as_ref()
     }
     /// <p>The upper limit to which Amazon RDS can automatically scale the storage of the DB instance.</p>
-    pub fn max_allocated_storage(&self) -> i32 {
+    pub fn max_allocated_storage(&self) -> ::std::option::Option<i32> {
         self.max_allocated_storage
     }
 }
@@ -1419,27 +1419,27 @@ impl AwsRdsDbInstanceDetailsBuilder {
             db_cluster_identifier: self.db_cluster_identifier,
             db_instance_identifier: self.db_instance_identifier,
             db_instance_class: self.db_instance_class,
-            db_instance_port: self.db_instance_port.unwrap_or_default(),
+            db_instance_port: self.db_instance_port,
             dbi_resource_id: self.dbi_resource_id,
             db_name: self.db_name,
-            deletion_protection: self.deletion_protection.unwrap_or_default(),
+            deletion_protection: self.deletion_protection,
             endpoint: self.endpoint,
             engine: self.engine,
             engine_version: self.engine_version,
-            iam_database_authentication_enabled: self.iam_database_authentication_enabled.unwrap_or_default(),
+            iam_database_authentication_enabled: self.iam_database_authentication_enabled,
             instance_create_time: self.instance_create_time,
             kms_key_id: self.kms_key_id,
-            publicly_accessible: self.publicly_accessible.unwrap_or_default(),
-            storage_encrypted: self.storage_encrypted.unwrap_or_default(),
+            publicly_accessible: self.publicly_accessible,
+            storage_encrypted: self.storage_encrypted,
             tde_credential_arn: self.tde_credential_arn,
             vpc_security_groups: self.vpc_security_groups,
-            multi_az: self.multi_az.unwrap_or_default(),
+            multi_az: self.multi_az,
             enhanced_monitoring_resource_arn: self.enhanced_monitoring_resource_arn,
             db_instance_status: self.db_instance_status,
             master_username: self.master_username,
-            allocated_storage: self.allocated_storage.unwrap_or_default(),
+            allocated_storage: self.allocated_storage,
             preferred_backup_window: self.preferred_backup_window,
-            backup_retention_period: self.backup_retention_period.unwrap_or_default(),
+            backup_retention_period: self.backup_retention_period,
             db_security_groups: self.db_security_groups,
             db_parameter_groups: self.db_parameter_groups,
             availability_zone: self.availability_zone,
@@ -1447,30 +1447,30 @@ impl AwsRdsDbInstanceDetailsBuilder {
             preferred_maintenance_window: self.preferred_maintenance_window,
             pending_modified_values: self.pending_modified_values,
             latest_restorable_time: self.latest_restorable_time,
-            auto_minor_version_upgrade: self.auto_minor_version_upgrade.unwrap_or_default(),
+            auto_minor_version_upgrade: self.auto_minor_version_upgrade,
             read_replica_source_db_instance_identifier: self.read_replica_source_db_instance_identifier,
             read_replica_db_instance_identifiers: self.read_replica_db_instance_identifiers,
             read_replica_db_cluster_identifiers: self.read_replica_db_cluster_identifiers,
             license_model: self.license_model,
-            iops: self.iops.unwrap_or_default(),
+            iops: self.iops,
             option_group_memberships: self.option_group_memberships,
             character_set_name: self.character_set_name,
             secondary_availability_zone: self.secondary_availability_zone,
             status_infos: self.status_infos,
             storage_type: self.storage_type,
             domain_memberships: self.domain_memberships,
-            copy_tags_to_snapshot: self.copy_tags_to_snapshot.unwrap_or_default(),
-            monitoring_interval: self.monitoring_interval.unwrap_or_default(),
+            copy_tags_to_snapshot: self.copy_tags_to_snapshot,
+            monitoring_interval: self.monitoring_interval,
             monitoring_role_arn: self.monitoring_role_arn,
-            promotion_tier: self.promotion_tier.unwrap_or_default(),
+            promotion_tier: self.promotion_tier,
             timezone: self.timezone,
-            performance_insights_enabled: self.performance_insights_enabled.unwrap_or_default(),
+            performance_insights_enabled: self.performance_insights_enabled,
             performance_insights_kms_key_id: self.performance_insights_kms_key_id,
-            performance_insights_retention_period: self.performance_insights_retention_period.unwrap_or_default(),
+            performance_insights_retention_period: self.performance_insights_retention_period,
             enabled_cloud_watch_logs_exports: self.enabled_cloud_watch_logs_exports,
             processor_features: self.processor_features,
             listener_endpoint: self.listener_endpoint,
-            max_allocated_storage: self.max_allocated_storage.unwrap_or_default(),
+            max_allocated_storage: self.max_allocated_storage,
         }
     }
 }

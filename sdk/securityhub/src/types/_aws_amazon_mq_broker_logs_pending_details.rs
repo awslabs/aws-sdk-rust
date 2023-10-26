@@ -5,17 +5,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsAmazonMqBrokerLogsPendingDetails {
     /// <p> Activates audit logging. Every user management action made using JMX or the ActiveMQ Web Console is logged. Doesn't apply to RabbitMQ brokers. </p>
-    pub audit: bool,
+    pub audit: ::std::option::Option<bool>,
     /// <p> Activates general logging. </p>
-    pub general: bool,
+    pub general: ::std::option::Option<bool>,
 }
 impl AwsAmazonMqBrokerLogsPendingDetails {
     /// <p> Activates audit logging. Every user management action made using JMX or the ActiveMQ Web Console is logged. Doesn't apply to RabbitMQ brokers. </p>
-    pub fn audit(&self) -> bool {
+    pub fn audit(&self) -> ::std::option::Option<bool> {
         self.audit
     }
     /// <p> Activates general logging. </p>
-    pub fn general(&self) -> bool {
+    pub fn general(&self) -> ::std::option::Option<bool> {
         self.general
     }
 }
@@ -65,8 +65,8 @@ impl AwsAmazonMqBrokerLogsPendingDetailsBuilder {
     /// Consumes the builder and constructs a [`AwsAmazonMqBrokerLogsPendingDetails`](crate::types::AwsAmazonMqBrokerLogsPendingDetails).
     pub fn build(self) -> crate::types::AwsAmazonMqBrokerLogsPendingDetails {
         crate::types::AwsAmazonMqBrokerLogsPendingDetails {
-            audit: self.audit.unwrap_or_default(),
-            general: self.general.unwrap_or_default(),
+            audit: self.audit,
+            general: self.general,
         }
     }
 }

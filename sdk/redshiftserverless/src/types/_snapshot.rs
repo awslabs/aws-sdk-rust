@@ -44,6 +44,10 @@ pub struct Snapshot {
     pub accounts_with_restore_access: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>All of the Amazon Web Services accounts that have access to restore a snapshot to a provisioned cluster.</p>
     pub accounts_with_provisioned_restore_access: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The Amazon Resource Name (ARN) for the namespace's admin user credentials secret.</p>
+    pub admin_password_secret_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The ID of the Key Management Service (KMS) key used to encrypt and store the namespace's admin credentials secret.</p>
+    pub admin_password_secret_kms_key_id: ::std::option::Option<::std::string::String>,
 }
 impl Snapshot {
     /// <p>The name of the namepsace.</p>
@@ -126,6 +130,14 @@ impl Snapshot {
     pub fn accounts_with_provisioned_restore_access(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.accounts_with_provisioned_restore_access.as_deref()
     }
+    /// <p>The Amazon Resource Name (ARN) for the namespace's admin user credentials secret.</p>
+    pub fn admin_password_secret_arn(&self) -> ::std::option::Option<&str> {
+        self.admin_password_secret_arn.as_deref()
+    }
+    /// <p>The ID of the Key Management Service (KMS) key used to encrypt and store the namespace's admin credentials secret.</p>
+    pub fn admin_password_secret_kms_key_id(&self) -> ::std::option::Option<&str> {
+        self.admin_password_secret_kms_key_id.as_deref()
+    }
 }
 impl Snapshot {
     /// Creates a new builder-style object to manufacture [`Snapshot`](crate::types::Snapshot).
@@ -158,6 +170,8 @@ pub struct SnapshotBuilder {
     pub(crate) snapshot_arn: ::std::option::Option<::std::string::String>,
     pub(crate) accounts_with_restore_access: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) accounts_with_provisioned_restore_access: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) admin_password_secret_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) admin_password_secret_kms_key_id: ::std::option::Option<::std::string::String>,
 }
 impl SnapshotBuilder {
     /// <p>The name of the namepsace.</p>
@@ -452,6 +466,34 @@ impl SnapshotBuilder {
     pub fn get_accounts_with_provisioned_restore_access(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.accounts_with_provisioned_restore_access
     }
+    /// <p>The Amazon Resource Name (ARN) for the namespace's admin user credentials secret.</p>
+    pub fn admin_password_secret_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.admin_password_secret_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) for the namespace's admin user credentials secret.</p>
+    pub fn set_admin_password_secret_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.admin_password_secret_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) for the namespace's admin user credentials secret.</p>
+    pub fn get_admin_password_secret_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.admin_password_secret_arn
+    }
+    /// <p>The ID of the Key Management Service (KMS) key used to encrypt and store the namespace's admin credentials secret.</p>
+    pub fn admin_password_secret_kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.admin_password_secret_kms_key_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the Key Management Service (KMS) key used to encrypt and store the namespace's admin credentials secret.</p>
+    pub fn set_admin_password_secret_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.admin_password_secret_kms_key_id = input;
+        self
+    }
+    /// <p>The ID of the Key Management Service (KMS) key used to encrypt and store the namespace's admin credentials secret.</p>
+    pub fn get_admin_password_secret_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.admin_password_secret_kms_key_id
+    }
     /// Consumes the builder and constructs a [`Snapshot`](crate::types::Snapshot).
     pub fn build(self) -> crate::types::Snapshot {
         crate::types::Snapshot {
@@ -475,6 +517,8 @@ impl SnapshotBuilder {
             snapshot_arn: self.snapshot_arn,
             accounts_with_restore_access: self.accounts_with_restore_access,
             accounts_with_provisioned_restore_access: self.accounts_with_provisioned_restore_access,
+            admin_password_secret_arn: self.admin_password_secret_arn,
+            admin_password_secret_kms_key_id: self.admin_password_secret_kms_key_id,
         }
     }
 }

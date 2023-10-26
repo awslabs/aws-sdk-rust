@@ -7,7 +7,7 @@ pub struct ExasolParameters {
     /// <p>The hostname or IP address of the Exasol data source.</p>
     pub host: ::std::option::Option<::std::string::String>,
     /// <p>The port for the Exasol data source.</p>
-    pub port: i32,
+    pub port: ::std::option::Option<i32>,
 }
 impl ExasolParameters {
     /// <p>The hostname or IP address of the Exasol data source.</p>
@@ -15,7 +15,7 @@ impl ExasolParameters {
         self.host.as_deref()
     }
     /// <p>The port for the Exasol data source.</p>
-    pub fn port(&self) -> i32 {
+    pub fn port(&self) -> ::std::option::Option<i32> {
         self.port
     }
 }
@@ -66,7 +66,7 @@ impl ExasolParametersBuilder {
     pub fn build(self) -> crate::types::ExasolParameters {
         crate::types::ExasolParameters {
             host: self.host,
-            port: self.port.unwrap_or_default(),
+            port: self.port,
         }
     }
 }

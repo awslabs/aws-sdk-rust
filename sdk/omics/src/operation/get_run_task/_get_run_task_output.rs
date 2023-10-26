@@ -27,6 +27,8 @@ pub struct GetRunTaskOutput {
     pub gpus: ::std::option::Option<i32>,
     /// <p> The instance type for a task. </p>
     pub instance_type: ::std::option::Option<::std::string::String>,
+    /// <p> The reason a task has failed. </p>
+    pub failure_reason: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetRunTaskOutput {
@@ -78,6 +80,10 @@ impl GetRunTaskOutput {
     pub fn instance_type(&self) -> ::std::option::Option<&str> {
         self.instance_type.as_deref()
     }
+    /// <p> The reason a task has failed. </p>
+    pub fn failure_reason(&self) -> ::std::option::Option<&str> {
+        self.failure_reason.as_deref()
+    }
 }
 impl ::aws_http::request_id::RequestId for GetRunTaskOutput {
     fn request_id(&self) -> Option<&str> {
@@ -107,6 +113,7 @@ pub struct GetRunTaskOutputBuilder {
     pub(crate) log_stream: ::std::option::Option<::std::string::String>,
     pub(crate) gpus: ::std::option::Option<i32>,
     pub(crate) instance_type: ::std::option::Option<::std::string::String>,
+    pub(crate) failure_reason: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetRunTaskOutputBuilder {
@@ -278,6 +285,20 @@ impl GetRunTaskOutputBuilder {
     pub fn get_instance_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.instance_type
     }
+    /// <p> The reason a task has failed. </p>
+    pub fn failure_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.failure_reason = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p> The reason a task has failed. </p>
+    pub fn set_failure_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.failure_reason = input;
+        self
+    }
+    /// <p> The reason a task has failed. </p>
+    pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.failure_reason
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -302,6 +323,7 @@ impl GetRunTaskOutputBuilder {
             log_stream: self.log_stream,
             gpus: self.gpus,
             instance_type: self.instance_type,
+            failure_reason: self.failure_reason,
             _request_id: self._request_id,
         }
     }

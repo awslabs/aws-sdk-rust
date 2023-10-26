@@ -5,18 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsApiGatewayCanarySettings {
     /// <p>The percentage of traffic that is diverted to a canary deployment.</p>
-    pub percent_traffic: f64,
+    pub percent_traffic: ::std::option::Option<f64>,
     /// <p>The deployment identifier for the canary deployment.</p>
     pub deployment_id: ::std::option::Option<::std::string::String>,
     /// <p>Stage variables that are overridden in the canary release deployment. The variables include new stage variables that are introduced in the canary.</p>
     /// <p>Each variable is represented as a string-to-string map between the stage variable name and the variable value.</p>
     pub stage_variable_overrides: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Indicates whether the canary deployment uses the stage cache.</p>
-    pub use_stage_cache: bool,
+    pub use_stage_cache: ::std::option::Option<bool>,
 }
 impl AwsApiGatewayCanarySettings {
     /// <p>The percentage of traffic that is diverted to a canary deployment.</p>
-    pub fn percent_traffic(&self) -> f64 {
+    pub fn percent_traffic(&self) -> ::std::option::Option<f64> {
         self.percent_traffic
     }
     /// <p>The deployment identifier for the canary deployment.</p>
@@ -29,7 +29,7 @@ impl AwsApiGatewayCanarySettings {
         self.stage_variable_overrides.as_ref()
     }
     /// <p>Indicates whether the canary deployment uses the stage cache.</p>
-    pub fn use_stage_cache(&self) -> bool {
+    pub fn use_stage_cache(&self) -> ::std::option::Option<bool> {
         self.use_stage_cache
     }
 }
@@ -125,10 +125,10 @@ impl AwsApiGatewayCanarySettingsBuilder {
     /// Consumes the builder and constructs a [`AwsApiGatewayCanarySettings`](crate::types::AwsApiGatewayCanarySettings).
     pub fn build(self) -> crate::types::AwsApiGatewayCanarySettings {
         crate::types::AwsApiGatewayCanarySettings {
-            percent_traffic: self.percent_traffic.unwrap_or_default(),
+            percent_traffic: self.percent_traffic,
             deployment_id: self.deployment_id,
             stage_variable_overrides: self.stage_variable_overrides,
-            use_stage_cache: self.use_stage_cache.unwrap_or_default(),
+            use_stage_cache: self.use_stage_cache,
         }
     }
 }

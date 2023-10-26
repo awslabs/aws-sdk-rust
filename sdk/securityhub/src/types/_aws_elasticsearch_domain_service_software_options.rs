@@ -7,7 +7,7 @@ pub struct AwsElasticsearchDomainServiceSoftwareOptions {
     /// <p>The epoch time when the deployment window closes for required updates. After this time, Amazon OpenSearch Service schedules the software upgrade automatically.</p>
     pub automated_update_date: ::std::option::Option<::std::string::String>,
     /// <p>Whether a request to update the domain can be canceled.</p>
-    pub cancellable: bool,
+    pub cancellable: ::std::option::Option<bool>,
     /// <p>The version of the service software that is currently installed on the domain.</p>
     pub current_version: ::std::option::Option<::std::string::String>,
     /// <p>A more detailed description of the service software status.</p>
@@ -15,7 +15,7 @@ pub struct AwsElasticsearchDomainServiceSoftwareOptions {
     /// <p>The most recent version of the service software.</p>
     pub new_version: ::std::option::Option<::std::string::String>,
     /// <p>Whether a service software update is available for the domain.</p>
-    pub update_available: bool,
+    pub update_available: ::std::option::Option<bool>,
     /// <p>The status of the service software update. Valid values are as follows:</p>
     /// <ul>
     /// <li> <p> <code>COMPLETED</code> </p> </li>
@@ -32,7 +32,7 @@ impl AwsElasticsearchDomainServiceSoftwareOptions {
         self.automated_update_date.as_deref()
     }
     /// <p>Whether a request to update the domain can be canceled.</p>
-    pub fn cancellable(&self) -> bool {
+    pub fn cancellable(&self) -> ::std::option::Option<bool> {
         self.cancellable
     }
     /// <p>The version of the service software that is currently installed on the domain.</p>
@@ -48,7 +48,7 @@ impl AwsElasticsearchDomainServiceSoftwareOptions {
         self.new_version.as_deref()
     }
     /// <p>Whether a service software update is available for the domain.</p>
-    pub fn update_available(&self) -> bool {
+    pub fn update_available(&self) -> ::std::option::Option<bool> {
         self.update_available
     }
     /// <p>The status of the service software update. Valid values are as follows:</p>
@@ -206,11 +206,11 @@ impl AwsElasticsearchDomainServiceSoftwareOptionsBuilder {
     pub fn build(self) -> crate::types::AwsElasticsearchDomainServiceSoftwareOptions {
         crate::types::AwsElasticsearchDomainServiceSoftwareOptions {
             automated_update_date: self.automated_update_date,
-            cancellable: self.cancellable.unwrap_or_default(),
+            cancellable: self.cancellable,
             current_version: self.current_version,
             description: self.description,
             new_version: self.new_version,
-            update_available: self.update_available.unwrap_or_default(),
+            update_available: self.update_available,
             update_status: self.update_status,
         }
     }

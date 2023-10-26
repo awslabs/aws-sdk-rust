@@ -9,7 +9,7 @@ pub struct SensitiveDataResult {
     /// <p>The list of detected instances of sensitive data.</p>
     pub detections: ::std::option::Option<::std::vec::Vec<crate::types::SensitiveDataDetections>>,
     /// <p>The total number of occurrences of sensitive data.</p>
-    pub total_count: i64,
+    pub total_count: ::std::option::Option<i64>,
 }
 impl SensitiveDataResult {
     /// <p>The category of sensitive data that was detected. For example, the category can indicate that the sensitive data involved credentials, financial information, or personal information.</p>
@@ -21,7 +21,7 @@ impl SensitiveDataResult {
         self.detections.as_deref()
     }
     /// <p>The total number of occurrences of sensitive data.</p>
-    pub fn total_count(&self) -> i64 {
+    pub fn total_count(&self) -> ::std::option::Option<i64> {
         self.total_count
     }
 }
@@ -94,7 +94,7 @@ impl SensitiveDataResultBuilder {
         crate::types::SensitiveDataResult {
             category: self.category,
             detections: self.detections,
-            total_count: self.total_count.unwrap_or_default(),
+            total_count: self.total_count,
         }
     }
 }

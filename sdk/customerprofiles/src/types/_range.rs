@@ -5,13 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Range {
     /// <p>The amount of time of the specified unit.</p>
-    pub value: i32,
+    pub value: ::std::option::Option<i32>,
     /// <p>The unit of time.</p>
     pub unit: ::std::option::Option<crate::types::Unit>,
 }
 impl Range {
     /// <p>The amount of time of the specified unit.</p>
-    pub fn value(&self) -> i32 {
+    pub fn value(&self) -> ::std::option::Option<i32> {
         self.value
     }
     /// <p>The unit of time.</p>
@@ -65,7 +65,7 @@ impl RangeBuilder {
     /// Consumes the builder and constructs a [`Range`](crate::types::Range).
     pub fn build(self) -> crate::types::Range {
         crate::types::Range {
-            value: self.value.unwrap_or_default(),
+            value: self.value,
             unit: self.unit,
         }
     }

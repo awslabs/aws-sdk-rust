@@ -15,16 +15,16 @@ pub fn ser_aws_ec2_launch_template_details(
         crate::protocol_serde::shape_aws_ec2_launch_template_data_details::ser_aws_ec2_launch_template_data_details(&mut object_4, var_3)?;
         object_4.finish();
     }
-    if input.default_version_number != 0 {
+    if let Some(var_5) = &input.default_version_number {
         object.key("DefaultVersionNumber").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.default_version_number).into()),
+            ::aws_smithy_types::Number::NegInt((*var_5).into()),
         );
     }
-    if input.latest_version_number != 0 {
+    if let Some(var_6) = &input.latest_version_number {
         object.key("LatestVersionNumber").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.latest_version_number).into()),
+            ::aws_smithy_types::Number::NegInt((*var_6).into()),
         );
     }
     Ok(())

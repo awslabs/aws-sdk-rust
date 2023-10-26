@@ -9,7 +9,7 @@ pub struct AwsEc2InstanceMetadataOptions {
     /// <p>Enables or disables the IPv6 endpoint for the instance metadata service. </p>
     pub http_protocol_ipv6: ::std::option::Option<::std::string::String>,
     /// <p>The desired HTTP PUT response hop limit for instance metadata requests. The larger the number, the further instance metadata requests can travel. </p>
-    pub http_put_response_hop_limit: i32,
+    pub http_put_response_hop_limit: ::std::option::Option<i32>,
     /// <p>The state of token usage for your instance metadata requests. </p>
     pub http_tokens: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether to allow access to instance tags from the instance metadata. </p>
@@ -25,7 +25,7 @@ impl AwsEc2InstanceMetadataOptions {
         self.http_protocol_ipv6.as_deref()
     }
     /// <p>The desired HTTP PUT response hop limit for instance metadata requests. The larger the number, the further instance metadata requests can travel. </p>
-    pub fn http_put_response_hop_limit(&self) -> i32 {
+    pub fn http_put_response_hop_limit(&self) -> ::std::option::Option<i32> {
         self.http_put_response_hop_limit
     }
     /// <p>The state of token usage for your instance metadata requests. </p>
@@ -130,7 +130,7 @@ impl AwsEc2InstanceMetadataOptionsBuilder {
         crate::types::AwsEc2InstanceMetadataOptions {
             http_endpoint: self.http_endpoint,
             http_protocol_ipv6: self.http_protocol_ipv6,
-            http_put_response_hop_limit: self.http_put_response_hop_limit.unwrap_or_default(),
+            http_put_response_hop_limit: self.http_put_response_hop_limit,
             http_tokens: self.http_tokens,
             instance_metadata_tags: self.instance_metadata_tags,
         }

@@ -3,18 +3,18 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeProjectVersionsOutput {
-    /// <p>A list of model descriptions. The list is sorted by the creation date and time of the model versions, latest to earliest.</p>
+    /// <p>A list of project version descriptions. The list is sorted by the creation date and time of the project versions, latest to earliest.</p>
     pub project_version_descriptions: ::std::option::Option<::std::vec::Vec<crate::types::ProjectVersionDescription>>,
-    /// <p>If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
+    /// <p>If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeProjectVersionsOutput {
-    /// <p>A list of model descriptions. The list is sorted by the creation date and time of the model versions, latest to earliest.</p>
+    /// <p>A list of project version descriptions. The list is sorted by the creation date and time of the project versions, latest to earliest.</p>
     pub fn project_version_descriptions(&self) -> ::std::option::Option<&[crate::types::ProjectVersionDescription]> {
         self.project_version_descriptions.as_deref()
     }
-    /// <p>If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
+    /// <p>If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -44,14 +44,14 @@ impl DescribeProjectVersionsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_project_version_descriptions`](Self::set_project_version_descriptions).
     ///
-    /// <p>A list of model descriptions. The list is sorted by the creation date and time of the model versions, latest to earliest.</p>
+    /// <p>A list of project version descriptions. The list is sorted by the creation date and time of the project versions, latest to earliest.</p>
     pub fn project_version_descriptions(mut self, input: crate::types::ProjectVersionDescription) -> Self {
         let mut v = self.project_version_descriptions.unwrap_or_default();
         v.push(input);
         self.project_version_descriptions = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of model descriptions. The list is sorted by the creation date and time of the model versions, latest to earliest.</p>
+    /// <p>A list of project version descriptions. The list is sorted by the creation date and time of the project versions, latest to earliest.</p>
     pub fn set_project_version_descriptions(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::ProjectVersionDescription>>,
@@ -59,21 +59,21 @@ impl DescribeProjectVersionsOutputBuilder {
         self.project_version_descriptions = input;
         self
     }
-    /// <p>A list of model descriptions. The list is sorted by the creation date and time of the model versions, latest to earliest.</p>
+    /// <p>A list of project version descriptions. The list is sorted by the creation date and time of the project versions, latest to earliest.</p>
     pub fn get_project_version_descriptions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProjectVersionDescription>> {
         &self.project_version_descriptions
     }
-    /// <p>If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
+    /// <p>If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
+    /// <p>If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
+    /// <p>If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

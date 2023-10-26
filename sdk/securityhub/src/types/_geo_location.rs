@@ -5,17 +5,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GeoLocation {
     /// <p>The longitude of the location.</p>
-    pub lon: f64,
+    pub lon: ::std::option::Option<f64>,
     /// <p>The latitude of the location.</p>
-    pub lat: f64,
+    pub lat: ::std::option::Option<f64>,
 }
 impl GeoLocation {
     /// <p>The longitude of the location.</p>
-    pub fn lon(&self) -> f64 {
+    pub fn lon(&self) -> ::std::option::Option<f64> {
         self.lon
     }
     /// <p>The latitude of the location.</p>
-    pub fn lat(&self) -> f64 {
+    pub fn lat(&self) -> ::std::option::Option<f64> {
         self.lat
     }
 }
@@ -65,8 +65,8 @@ impl GeoLocationBuilder {
     /// Consumes the builder and constructs a [`GeoLocation`](crate::types::GeoLocation).
     pub fn build(self) -> crate::types::GeoLocation {
         crate::types::GeoLocation {
-            lon: self.lon.unwrap_or_default(),
-            lat: self.lat.unwrap_or_default(),
+            lon: self.lon,
+            lat: self.lat,
         }
     }
 }

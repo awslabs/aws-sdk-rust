@@ -22,7 +22,7 @@ impl BatchGetTokenBalanceInputBuilder {
 }
 /// Fluent builder constructing a request to `BatchGetTokenBalance`.
 ///
-/// <p>Gets the token balance for a batch of tokens by using the <code>GetTokenBalance</code> action for every token in the request.</p> <note>
+/// <p>Gets the token balance for a batch of tokens by using the <code>BatchGetTokenBalance</code> action for every token in the request.</p> <note>
 /// <p>Only the native tokens BTC,ETH, and the ERC-20, ERC-721, and ERC 1155 token standards are supported.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -116,12 +116,12 @@ impl BatchGetTokenBalanceFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_get_token_balance_inputs`](Self::set_get_token_balance_inputs).
     ///
-    /// <p>An array of <code>GetTokenBalanceInput</code> objects whose balance is being requested.</p>
+    /// <p>An array of <code>BatchGetTokenBalanceInputItem</code> objects whose balance is being requested.</p>
     pub fn get_token_balance_inputs(mut self, input: crate::types::BatchGetTokenBalanceInputItem) -> Self {
         self.inner = self.inner.get_token_balance_inputs(input);
         self
     }
-    /// <p>An array of <code>GetTokenBalanceInput</code> objects whose balance is being requested.</p>
+    /// <p>An array of <code>BatchGetTokenBalanceInputItem</code> objects whose balance is being requested.</p>
     pub fn set_get_token_balance_inputs(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::BatchGetTokenBalanceInputItem>>,
@@ -129,7 +129,7 @@ impl BatchGetTokenBalanceFluentBuilder {
         self.inner = self.inner.set_get_token_balance_inputs(input);
         self
     }
-    /// <p>An array of <code>GetTokenBalanceInput</code> objects whose balance is being requested.</p>
+    /// <p>An array of <code>BatchGetTokenBalanceInputItem</code> objects whose balance is being requested.</p>
     pub fn get_get_token_balance_inputs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchGetTokenBalanceInputItem>> {
         self.inner.get_get_token_balance_inputs()
     }

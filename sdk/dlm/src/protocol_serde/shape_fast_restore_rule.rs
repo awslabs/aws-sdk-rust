@@ -3,29 +3,29 @@ pub fn ser_fast_restore_rule(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::FastRestoreRule,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if input.count != 0 {
+    if let Some(var_1) = &input.count {
         object.key("Count").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.count).into()),
+            ::aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if input.interval != 0 {
+    if let Some(var_2) = &input.interval {
         object.key("Interval").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.interval).into()),
+            ::aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
-    if let Some(var_1) = &input.interval_unit {
-        object.key("IntervalUnit").string(var_1.as_str());
+    if let Some(var_3) = &input.interval_unit {
+        object.key("IntervalUnit").string(var_3.as_str());
     }
-    if let Some(var_2) = &input.availability_zones {
-        let mut array_3 = object.key("AvailabilityZones").start_array();
-        for item_4 in var_2 {
+    if let Some(var_4) = &input.availability_zones {
+        let mut array_5 = object.key("AvailabilityZones").start_array();
+        for item_6 in var_4 {
             {
-                array_3.value().string(item_4.as_str());
+                array_5.value().string(item_6.as_str());
             }
         }
-        array_3.finish();
+        array_5.finish();
     }
     Ok(())
 }

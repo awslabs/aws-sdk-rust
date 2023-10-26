@@ -12,6 +12,8 @@ pub struct MatchingWorkflowSummary {
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp of when the workflow was last updated.</p>
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The method that has been specified for data matching, either using matching provided by Entity Resolution or through a provider service.</p>
+    pub resolution_type: ::std::option::Option<crate::types::ResolutionType>,
 }
 impl MatchingWorkflowSummary {
     /// <p>The name of the workflow.</p>
@@ -30,6 +32,10 @@ impl MatchingWorkflowSummary {
     pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
+    /// <p>The method that has been specified for data matching, either using matching provided by Entity Resolution or through a provider service.</p>
+    pub fn resolution_type(&self) -> ::std::option::Option<&crate::types::ResolutionType> {
+        self.resolution_type.as_ref()
+    }
 }
 impl MatchingWorkflowSummary {
     /// Creates a new builder-style object to manufacture [`MatchingWorkflowSummary`](crate::types::MatchingWorkflowSummary).
@@ -46,6 +52,7 @@ pub struct MatchingWorkflowSummaryBuilder {
     pub(crate) workflow_arn: ::std::option::Option<::std::string::String>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) resolution_type: ::std::option::Option<crate::types::ResolutionType>,
 }
 impl MatchingWorkflowSummaryBuilder {
     /// <p>The name of the workflow.</p>
@@ -104,6 +111,20 @@ impl MatchingWorkflowSummaryBuilder {
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.updated_at
     }
+    /// <p>The method that has been specified for data matching, either using matching provided by Entity Resolution or through a provider service.</p>
+    pub fn resolution_type(mut self, input: crate::types::ResolutionType) -> Self {
+        self.resolution_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The method that has been specified for data matching, either using matching provided by Entity Resolution or through a provider service.</p>
+    pub fn set_resolution_type(mut self, input: ::std::option::Option<crate::types::ResolutionType>) -> Self {
+        self.resolution_type = input;
+        self
+    }
+    /// <p>The method that has been specified for data matching, either using matching provided by Entity Resolution or through a provider service.</p>
+    pub fn get_resolution_type(&self) -> &::std::option::Option<crate::types::ResolutionType> {
+        &self.resolution_type
+    }
     /// Consumes the builder and constructs a [`MatchingWorkflowSummary`](crate::types::MatchingWorkflowSummary).
     pub fn build(self) -> crate::types::MatchingWorkflowSummary {
         crate::types::MatchingWorkflowSummary {
@@ -111,6 +132,7 @@ impl MatchingWorkflowSummaryBuilder {
             workflow_arn: self.workflow_arn,
             created_at: self.created_at,
             updated_at: self.updated_at,
+            resolution_type: self.resolution_type,
         }
     }
 }

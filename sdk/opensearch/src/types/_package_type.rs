@@ -13,6 +13,7 @@
 /// # let packagetype = unimplemented!();
 /// match packagetype {
 ///     PackageType::TxtDictionary => { /* ... */ },
+///     PackageType::ZipPlugin => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -42,6 +43,8 @@
 pub enum PackageType {
     #[allow(missing_docs)] // documentation missing in model
     TxtDictionary,
+    #[allow(missing_docs)] // documentation missing in model
+    ZipPlugin,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
@@ -49,6 +52,7 @@ impl ::std::convert::From<&str> for PackageType {
     fn from(s: &str) -> Self {
         match s {
             "TXT-DICTIONARY" => PackageType::TxtDictionary,
+            "ZIP-PLUGIN" => PackageType::ZipPlugin,
             other => PackageType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -65,12 +69,13 @@ impl PackageType {
     pub fn as_str(&self) -> &str {
         match self {
             PackageType::TxtDictionary => "TXT-DICTIONARY",
+            PackageType::ZipPlugin => "ZIP-PLUGIN",
             PackageType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["TXT-DICTIONARY"]
+        &["TXT-DICTIONARY", "ZIP-PLUGIN"]
     }
 }
 impl ::std::convert::AsRef<str> for PackageType {

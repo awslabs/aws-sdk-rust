@@ -10,7 +10,7 @@ pub struct AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails {
     pub ebs: ::std::option::Option<crate::types::AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails>,
     /// <p>Whether to suppress the device that is included in the block device mapping of the Amazon Machine Image (AMI).</p>
     /// <p>If <code>NoDevice</code> is <code>true</code>, then you cannot specify <code>Ebs</code>.&gt;</p>
-    pub no_device: bool,
+    pub no_device: ::std::option::Option<bool>,
     /// <p>The name of the virtual device (for example, <code>ephemeral0</code>).</p>
     /// <p>You can provide either <code>VirtualName</code> or <code>Ebs</code>, but not both.</p>
     pub virtual_name: ::std::option::Option<::std::string::String>,
@@ -26,7 +26,7 @@ impl AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails {
     }
     /// <p>Whether to suppress the device that is included in the block device mapping of the Amazon Machine Image (AMI).</p>
     /// <p>If <code>NoDevice</code> is <code>true</code>, then you cannot specify <code>Ebs</code>.&gt;</p>
-    pub fn no_device(&self) -> bool {
+    pub fn no_device(&self) -> ::std::option::Option<bool> {
         self.no_device
     }
     /// <p>The name of the virtual device (for example, <code>ephemeral0</code>).</p>
@@ -119,7 +119,7 @@ impl AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetailsBuilder {
         crate::types::AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails {
             device_name: self.device_name,
             ebs: self.ebs,
-            no_device: self.no_device.unwrap_or_default(),
+            no_device: self.no_device,
             virtual_name: self.virtual_name,
         }
     }

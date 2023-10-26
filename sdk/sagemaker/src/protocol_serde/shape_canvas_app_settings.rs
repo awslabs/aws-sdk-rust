@@ -33,6 +33,18 @@ pub fn ser_canvas_app_settings(
         }
         array_8.finish();
     }
+    if let Some(var_11) = &input.kendra_settings {
+        #[allow(unused_mut)]
+        let mut object_12 = object.key("KendraSettings").start_object();
+        crate::protocol_serde::shape_kendra_settings::ser_kendra_settings(&mut object_12, var_11)?;
+        object_12.finish();
+    }
+    if let Some(var_13) = &input.direct_deploy_settings {
+        #[allow(unused_mut)]
+        let mut object_14 = object.key("DirectDeploySettings").start_object();
+        crate::protocol_serde::shape_direct_deploy_settings::ser_direct_deploy_settings(&mut object_14, var_13)?;
+        object_14.finish();
+    }
     Ok(())
 }
 
@@ -68,6 +80,13 @@ where
                             builder = builder.set_identity_provider_o_auth_settings(
                                 crate::protocol_serde::shape_identity_provider_o_auth_settings::de_identity_provider_o_auth_settings(tokens)?,
                             );
+                        }
+                        "KendraSettings" => {
+                            builder = builder.set_kendra_settings(crate::protocol_serde::shape_kendra_settings::de_kendra_settings(tokens)?);
+                        }
+                        "DirectDeploySettings" => {
+                            builder = builder
+                                .set_direct_deploy_settings(crate::protocol_serde::shape_direct_deploy_settings::de_direct_deploy_settings(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

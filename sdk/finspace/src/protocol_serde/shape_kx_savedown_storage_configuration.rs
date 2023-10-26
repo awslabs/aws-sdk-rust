@@ -53,10 +53,10 @@ pub fn ser_kx_savedown_storage_configuration(
     if let Some(var_1) = &input.r#type {
         object.key("type").string(var_1.as_str());
     }
-    {
+    if let Some(var_2) = &input.size {
         object.key("size").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.size).into()),
+            ::aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
     Ok(())

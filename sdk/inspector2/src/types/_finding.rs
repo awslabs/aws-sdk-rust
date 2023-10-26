@@ -8,7 +8,7 @@ pub struct Finding {
     pub finding_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account ID associated with the finding.</p>
     pub aws_account_id: ::std::option::Option<::std::string::String>,
-    /// <p>The type of the finding.</p>
+    /// <p>The type of the finding. The <code>type</code> value determines the valid values for <code>resource</code> in your request. For more information, see <a href="https://docs.aws.amazon.com/inspector/latest/user/findings-types.html">Finding types</a> in the Amazon Inspector user guide.</p>
     pub r#type: ::std::option::Option<crate::types::FindingType>,
     /// <p>The description of the finding.</p>
     pub description: ::std::option::Option<::std::string::String>,
@@ -16,7 +16,7 @@ pub struct Finding {
     pub title: ::std::option::Option<::std::string::String>,
     /// <p>An object that contains the details about how to remediate a finding.</p>
     pub remediation: ::std::option::Option<crate::types::Remediation>,
-    /// <p>The severity of the finding.</p>
+    /// <p>The severity of the finding. <code>UNTRIAGED</code> applies to <code>PACKAGE_VULNERABILITY</code> type findings that the vendor has not assigned a severity yet. For more information, see <a href="https://docs.aws.amazon.com/inspector/latest/user/findings-understanding-severity.html">Severity levels for findings</a> in the Amazon Inspector user guide.</p>
     pub severity: ::std::option::Option<crate::types::Severity>,
     /// <p>The date and time that the finding was first observed.</p>
     pub first_observed_at: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -26,7 +26,7 @@ pub struct Finding {
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The status of the finding.</p>
     pub status: ::std::option::Option<crate::types::FindingStatus>,
-    /// <p>Contains information on the resources involved in a finding.</p>
+    /// <p>Contains information on the resources involved in a finding. The <code>resource</code> value determines the valid values for <code>type</code> in your request. For more information, see <a href="https://docs.aws.amazon.com/inspector/latest/user/findings-types.html">Finding types</a> in the Amazon Inspector user guide.</p>
     pub resources: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>,
     /// <p>The Amazon Inspector score given to the finding.</p>
     pub inspector_score: ::std::option::Option<f64>,
@@ -56,7 +56,7 @@ impl Finding {
     pub fn aws_account_id(&self) -> ::std::option::Option<&str> {
         self.aws_account_id.as_deref()
     }
-    /// <p>The type of the finding.</p>
+    /// <p>The type of the finding. The <code>type</code> value determines the valid values for <code>resource</code> in your request. For more information, see <a href="https://docs.aws.amazon.com/inspector/latest/user/findings-types.html">Finding types</a> in the Amazon Inspector user guide.</p>
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::FindingType> {
         self.r#type.as_ref()
     }
@@ -72,7 +72,7 @@ impl Finding {
     pub fn remediation(&self) -> ::std::option::Option<&crate::types::Remediation> {
         self.remediation.as_ref()
     }
-    /// <p>The severity of the finding.</p>
+    /// <p>The severity of the finding. <code>UNTRIAGED</code> applies to <code>PACKAGE_VULNERABILITY</code> type findings that the vendor has not assigned a severity yet. For more information, see <a href="https://docs.aws.amazon.com/inspector/latest/user/findings-understanding-severity.html">Severity levels for findings</a> in the Amazon Inspector user guide.</p>
     pub fn severity(&self) -> ::std::option::Option<&crate::types::Severity> {
         self.severity.as_ref()
     }
@@ -92,7 +92,7 @@ impl Finding {
     pub fn status(&self) -> ::std::option::Option<&crate::types::FindingStatus> {
         self.status.as_ref()
     }
-    /// <p>Contains information on the resources involved in a finding.</p>
+    /// <p>Contains information on the resources involved in a finding. The <code>resource</code> value determines the valid values for <code>type</code> in your request. For more information, see <a href="https://docs.aws.amazon.com/inspector/latest/user/findings-types.html">Finding types</a> in the Amazon Inspector user guide.</p>
     pub fn resources(&self) -> ::std::option::Option<&[crate::types::Resource]> {
         self.resources.as_deref()
     }
@@ -195,17 +195,17 @@ impl FindingBuilder {
     pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.aws_account_id
     }
-    /// <p>The type of the finding.</p>
+    /// <p>The type of the finding. The <code>type</code> value determines the valid values for <code>resource</code> in your request. For more information, see <a href="https://docs.aws.amazon.com/inspector/latest/user/findings-types.html">Finding types</a> in the Amazon Inspector user guide.</p>
     pub fn r#type(mut self, input: crate::types::FindingType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of the finding.</p>
+    /// <p>The type of the finding. The <code>type</code> value determines the valid values for <code>resource</code> in your request. For more information, see <a href="https://docs.aws.amazon.com/inspector/latest/user/findings-types.html">Finding types</a> in the Amazon Inspector user guide.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::FindingType>) -> Self {
         self.r#type = input;
         self
     }
-    /// <p>The type of the finding.</p>
+    /// <p>The type of the finding. The <code>type</code> value determines the valid values for <code>resource</code> in your request. For more information, see <a href="https://docs.aws.amazon.com/inspector/latest/user/findings-types.html">Finding types</a> in the Amazon Inspector user guide.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::FindingType> {
         &self.r#type
     }
@@ -251,17 +251,17 @@ impl FindingBuilder {
     pub fn get_remediation(&self) -> &::std::option::Option<crate::types::Remediation> {
         &self.remediation
     }
-    /// <p>The severity of the finding.</p>
+    /// <p>The severity of the finding. <code>UNTRIAGED</code> applies to <code>PACKAGE_VULNERABILITY</code> type findings that the vendor has not assigned a severity yet. For more information, see <a href="https://docs.aws.amazon.com/inspector/latest/user/findings-understanding-severity.html">Severity levels for findings</a> in the Amazon Inspector user guide.</p>
     pub fn severity(mut self, input: crate::types::Severity) -> Self {
         self.severity = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The severity of the finding.</p>
+    /// <p>The severity of the finding. <code>UNTRIAGED</code> applies to <code>PACKAGE_VULNERABILITY</code> type findings that the vendor has not assigned a severity yet. For more information, see <a href="https://docs.aws.amazon.com/inspector/latest/user/findings-understanding-severity.html">Severity levels for findings</a> in the Amazon Inspector user guide.</p>
     pub fn set_severity(mut self, input: ::std::option::Option<crate::types::Severity>) -> Self {
         self.severity = input;
         self
     }
-    /// <p>The severity of the finding.</p>
+    /// <p>The severity of the finding. <code>UNTRIAGED</code> applies to <code>PACKAGE_VULNERABILITY</code> type findings that the vendor has not assigned a severity yet. For more information, see <a href="https://docs.aws.amazon.com/inspector/latest/user/findings-understanding-severity.html">Severity levels for findings</a> in the Amazon Inspector user guide.</p>
     pub fn get_severity(&self) -> &::std::option::Option<crate::types::Severity> {
         &self.severity
     }
@@ -325,19 +325,19 @@ impl FindingBuilder {
     ///
     /// To override the contents of this collection use [`set_resources`](Self::set_resources).
     ///
-    /// <p>Contains information on the resources involved in a finding.</p>
+    /// <p>Contains information on the resources involved in a finding. The <code>resource</code> value determines the valid values for <code>type</code> in your request. For more information, see <a href="https://docs.aws.amazon.com/inspector/latest/user/findings-types.html">Finding types</a> in the Amazon Inspector user guide.</p>
     pub fn resources(mut self, input: crate::types::Resource) -> Self {
         let mut v = self.resources.unwrap_or_default();
         v.push(input);
         self.resources = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Contains information on the resources involved in a finding.</p>
+    /// <p>Contains information on the resources involved in a finding. The <code>resource</code> value determines the valid values for <code>type</code> in your request. For more information, see <a href="https://docs.aws.amazon.com/inspector/latest/user/findings-types.html">Finding types</a> in the Amazon Inspector user guide.</p>
     pub fn set_resources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>) -> Self {
         self.resources = input;
         self
     }
-    /// <p>Contains information on the resources involved in a finding.</p>
+    /// <p>Contains information on the resources involved in a finding. The <code>resource</code> value determines the valid values for <code>type</code> in your request. For more information, see <a href="https://docs.aws.amazon.com/inspector/latest/user/findings-types.html">Finding types</a> in the Amazon Inspector user guide.</p>
     pub fn get_resources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Resource>> {
         &self.resources
     }

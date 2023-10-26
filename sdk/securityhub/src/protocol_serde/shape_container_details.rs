@@ -30,8 +30,8 @@ pub fn ser_container_details(
         }
         array_7.finish();
     }
-    if input.privileged {
-        object.key("Privileged").boolean(input.privileged);
+    if let Some(var_10) = &input.privileged {
+        object.key("Privileged").boolean(*var_10);
     }
     Ok(())
 }

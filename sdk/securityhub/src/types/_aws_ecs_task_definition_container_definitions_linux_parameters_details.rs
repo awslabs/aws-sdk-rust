@@ -9,13 +9,13 @@ pub struct AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDetails {
     /// <p>The host devices to expose to the container.</p>
     pub devices: ::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetails>>,
     /// <p>Whether to run an <code>init</code> process inside the container that forwards signals and reaps processes. </p>
-    pub init_process_enabled: bool,
+    pub init_process_enabled: ::std::option::Option<bool>,
     /// <p>The total amount of swap memory (in MiB) that a container can use.</p>
-    pub max_swap: i32,
+    pub max_swap: ::std::option::Option<i32>,
     /// <p>The value for the size (in MiB) of the <b>/dev/shm</b> volume.</p>
-    pub shared_memory_size: i32,
+    pub shared_memory_size: ::std::option::Option<i32>,
     /// <p>Configures the container's memory swappiness behavior. Determines how aggressively pages are swapped. The higher the value, the more aggressive the swappiness. The default is 60.</p>
-    pub swappiness: i32,
+    pub swappiness: ::std::option::Option<i32>,
     /// <p>The container path, mount options, and size (in MiB) of the tmpfs mount.</p>
     pub tmpfs: ::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersTmpfsDetails>>,
 }
@@ -29,19 +29,19 @@ impl AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDetails {
         self.devices.as_deref()
     }
     /// <p>Whether to run an <code>init</code> process inside the container that forwards signals and reaps processes. </p>
-    pub fn init_process_enabled(&self) -> bool {
+    pub fn init_process_enabled(&self) -> ::std::option::Option<bool> {
         self.init_process_enabled
     }
     /// <p>The total amount of swap memory (in MiB) that a container can use.</p>
-    pub fn max_swap(&self) -> i32 {
+    pub fn max_swap(&self) -> ::std::option::Option<i32> {
         self.max_swap
     }
     /// <p>The value for the size (in MiB) of the <b>/dev/shm</b> volume.</p>
-    pub fn shared_memory_size(&self) -> i32 {
+    pub fn shared_memory_size(&self) -> ::std::option::Option<i32> {
         self.shared_memory_size
     }
     /// <p>Configures the container's memory swappiness behavior. Determines how aggressively pages are swapped. The higher the value, the more aggressive the swappiness. The default is 60.</p>
-    pub fn swappiness(&self) -> i32 {
+    pub fn swappiness(&self) -> ::std::option::Option<i32> {
         self.swappiness
     }
     /// <p>The container path, mount options, and size (in MiB) of the tmpfs mount.</p>
@@ -199,10 +199,10 @@ impl AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDetailsBuilder {
         crate::types::AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDetails {
             capabilities: self.capabilities,
             devices: self.devices,
-            init_process_enabled: self.init_process_enabled.unwrap_or_default(),
-            max_swap: self.max_swap.unwrap_or_default(),
-            shared_memory_size: self.shared_memory_size.unwrap_or_default(),
-            swappiness: self.swappiness.unwrap_or_default(),
+            init_process_enabled: self.init_process_enabled,
+            max_swap: self.max_swap,
+            shared_memory_size: self.shared_memory_size,
+            swappiness: self.swappiness,
             tmpfs: self.tmpfs,
         }
     }

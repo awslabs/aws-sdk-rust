@@ -22,7 +22,7 @@ impl ListDatastoresInputBuilder {
 }
 /// Fluent builder constructing a request to `ListDatastores`.
 ///
-/// <p>List data stores created by this AWS account.</p>
+/// <p>List data stores.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListDatastoresFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

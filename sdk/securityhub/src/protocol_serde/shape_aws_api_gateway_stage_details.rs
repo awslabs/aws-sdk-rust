@@ -15,63 +15,63 @@ pub fn ser_aws_api_gateway_stage_details(
     if let Some(var_4) = &input.description {
         object.key("Description").string(var_4.as_str());
     }
-    if input.cache_cluster_enabled {
-        object.key("CacheClusterEnabled").boolean(input.cache_cluster_enabled);
+    if let Some(var_5) = &input.cache_cluster_enabled {
+        object.key("CacheClusterEnabled").boolean(*var_5);
     }
-    if let Some(var_5) = &input.cache_cluster_size {
-        object.key("CacheClusterSize").string(var_5.as_str());
+    if let Some(var_6) = &input.cache_cluster_size {
+        object.key("CacheClusterSize").string(var_6.as_str());
     }
-    if let Some(var_6) = &input.cache_cluster_status {
-        object.key("CacheClusterStatus").string(var_6.as_str());
+    if let Some(var_7) = &input.cache_cluster_status {
+        object.key("CacheClusterStatus").string(var_7.as_str());
     }
-    if let Some(var_7) = &input.method_settings {
-        let mut array_8 = object.key("MethodSettings").start_array();
-        for item_9 in var_7 {
+    if let Some(var_8) = &input.method_settings {
+        let mut array_9 = object.key("MethodSettings").start_array();
+        for item_10 in var_8 {
             {
                 #[allow(unused_mut)]
-                let mut object_10 = array_8.value().start_object();
-                crate::protocol_serde::shape_aws_api_gateway_method_settings::ser_aws_api_gateway_method_settings(&mut object_10, item_9)?;
-                object_10.finish();
+                let mut object_11 = array_9.value().start_object();
+                crate::protocol_serde::shape_aws_api_gateway_method_settings::ser_aws_api_gateway_method_settings(&mut object_11, item_10)?;
+                object_11.finish();
             }
         }
-        array_8.finish();
+        array_9.finish();
     }
-    if let Some(var_11) = &input.variables {
+    if let Some(var_12) = &input.variables {
         #[allow(unused_mut)]
-        let mut object_12 = object.key("Variables").start_object();
-        for (key_13, value_14) in var_11 {
+        let mut object_13 = object.key("Variables").start_object();
+        for (key_14, value_15) in var_12 {
             {
-                object_12.key(key_13.as_str()).string(value_14.as_str());
+                object_13.key(key_14.as_str()).string(value_15.as_str());
             }
         }
-        object_12.finish();
+        object_13.finish();
     }
-    if let Some(var_15) = &input.documentation_version {
-        object.key("DocumentationVersion").string(var_15.as_str());
+    if let Some(var_16) = &input.documentation_version {
+        object.key("DocumentationVersion").string(var_16.as_str());
     }
-    if let Some(var_16) = &input.access_log_settings {
+    if let Some(var_17) = &input.access_log_settings {
         #[allow(unused_mut)]
-        let mut object_17 = object.key("AccessLogSettings").start_object();
-        crate::protocol_serde::shape_aws_api_gateway_access_log_settings::ser_aws_api_gateway_access_log_settings(&mut object_17, var_16)?;
-        object_17.finish();
+        let mut object_18 = object.key("AccessLogSettings").start_object();
+        crate::protocol_serde::shape_aws_api_gateway_access_log_settings::ser_aws_api_gateway_access_log_settings(&mut object_18, var_17)?;
+        object_18.finish();
     }
-    if let Some(var_18) = &input.canary_settings {
+    if let Some(var_19) = &input.canary_settings {
         #[allow(unused_mut)]
-        let mut object_19 = object.key("CanarySettings").start_object();
-        crate::protocol_serde::shape_aws_api_gateway_canary_settings::ser_aws_api_gateway_canary_settings(&mut object_19, var_18)?;
-        object_19.finish();
+        let mut object_20 = object.key("CanarySettings").start_object();
+        crate::protocol_serde::shape_aws_api_gateway_canary_settings::ser_aws_api_gateway_canary_settings(&mut object_20, var_19)?;
+        object_20.finish();
     }
-    if input.tracing_enabled {
-        object.key("TracingEnabled").boolean(input.tracing_enabled);
+    if let Some(var_21) = &input.tracing_enabled {
+        object.key("TracingEnabled").boolean(*var_21);
     }
-    if let Some(var_20) = &input.created_date {
-        object.key("CreatedDate").string(var_20.as_str());
+    if let Some(var_22) = &input.created_date {
+        object.key("CreatedDate").string(var_22.as_str());
     }
-    if let Some(var_21) = &input.last_updated_date {
-        object.key("LastUpdatedDate").string(var_21.as_str());
+    if let Some(var_23) = &input.last_updated_date {
+        object.key("LastUpdatedDate").string(var_23.as_str());
     }
-    if let Some(var_22) = &input.web_acl_arn {
-        object.key("WebAclArn").string(var_22.as_str());
+    if let Some(var_24) = &input.web_acl_arn {
+        object.key("WebAclArn").string(var_24.as_str());
     }
     Ok(())
 }

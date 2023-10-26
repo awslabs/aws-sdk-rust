@@ -25,6 +25,10 @@ pub struct PipelineExecution {
     pub status_summary: ::std::option::Option<::std::string::String>,
     /// <p>A list of <code>ArtifactRevision</code> objects included in a pipeline execution.</p>
     pub artifact_revisions: ::std::option::Option<::std::vec::Vec<crate::types::ArtifactRevision>>,
+    /// <p>The interaction or event that started a pipeline execution.</p>
+    pub trigger: ::std::option::Option<crate::types::ExecutionTrigger>,
+    /// <p>A list of pipeline variables used for the pipeline execution.</p>
+    pub variables: ::std::option::Option<::std::vec::Vec<crate::types::ResolvedPipelineVariable>>,
 }
 impl PipelineExecution {
     /// <p>The name of the pipeline with the specified pipeline execution.</p>
@@ -60,6 +64,14 @@ impl PipelineExecution {
     pub fn artifact_revisions(&self) -> ::std::option::Option<&[crate::types::ArtifactRevision]> {
         self.artifact_revisions.as_deref()
     }
+    /// <p>The interaction or event that started a pipeline execution.</p>
+    pub fn trigger(&self) -> ::std::option::Option<&crate::types::ExecutionTrigger> {
+        self.trigger.as_ref()
+    }
+    /// <p>A list of pipeline variables used for the pipeline execution.</p>
+    pub fn variables(&self) -> ::std::option::Option<&[crate::types::ResolvedPipelineVariable]> {
+        self.variables.as_deref()
+    }
 }
 impl PipelineExecution {
     /// Creates a new builder-style object to manufacture [`PipelineExecution`](crate::types::PipelineExecution).
@@ -78,6 +90,8 @@ pub struct PipelineExecutionBuilder {
     pub(crate) status: ::std::option::Option<crate::types::PipelineExecutionStatus>,
     pub(crate) status_summary: ::std::option::Option<::std::string::String>,
     pub(crate) artifact_revisions: ::std::option::Option<::std::vec::Vec<crate::types::ArtifactRevision>>,
+    pub(crate) trigger: ::std::option::Option<crate::types::ExecutionTrigger>,
+    pub(crate) variables: ::std::option::Option<::std::vec::Vec<crate::types::ResolvedPipelineVariable>>,
 }
 impl PipelineExecutionBuilder {
     /// <p>The name of the pipeline with the specified pipeline execution.</p>
@@ -197,6 +211,40 @@ impl PipelineExecutionBuilder {
     pub fn get_artifact_revisions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ArtifactRevision>> {
         &self.artifact_revisions
     }
+    /// <p>The interaction or event that started a pipeline execution.</p>
+    pub fn trigger(mut self, input: crate::types::ExecutionTrigger) -> Self {
+        self.trigger = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The interaction or event that started a pipeline execution.</p>
+    pub fn set_trigger(mut self, input: ::std::option::Option<crate::types::ExecutionTrigger>) -> Self {
+        self.trigger = input;
+        self
+    }
+    /// <p>The interaction or event that started a pipeline execution.</p>
+    pub fn get_trigger(&self) -> &::std::option::Option<crate::types::ExecutionTrigger> {
+        &self.trigger
+    }
+    /// Appends an item to `variables`.
+    ///
+    /// To override the contents of this collection use [`set_variables`](Self::set_variables).
+    ///
+    /// <p>A list of pipeline variables used for the pipeline execution.</p>
+    pub fn variables(mut self, input: crate::types::ResolvedPipelineVariable) -> Self {
+        let mut v = self.variables.unwrap_or_default();
+        v.push(input);
+        self.variables = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of pipeline variables used for the pipeline execution.</p>
+    pub fn set_variables(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResolvedPipelineVariable>>) -> Self {
+        self.variables = input;
+        self
+    }
+    /// <p>A list of pipeline variables used for the pipeline execution.</p>
+    pub fn get_variables(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResolvedPipelineVariable>> {
+        &self.variables
+    }
     /// Consumes the builder and constructs a [`PipelineExecution`](crate::types::PipelineExecution).
     pub fn build(self) -> crate::types::PipelineExecution {
         crate::types::PipelineExecution {
@@ -206,6 +254,8 @@ impl PipelineExecutionBuilder {
             status: self.status,
             status_summary: self.status_summary,
             artifact_revisions: self.artifact_revisions,
+            trigger: self.trigger,
+            variables: self.variables,
         }
     }
 }

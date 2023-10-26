@@ -5,14 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsElbLoadBalancerListener {
     /// <p>The port on which the instance is listening.</p>
-    pub instance_port: i32,
+    pub instance_port: ::std::option::Option<i32>,
     /// <p>The protocol to use to route traffic to instances.</p>
     /// <p>Valid values: <code>HTTP</code> | <code>HTTPS</code> | <code>TCP</code> | <code>SSL</code> </p>
     pub instance_protocol: ::std::option::Option<::std::string::String>,
     /// <p>The port on which the load balancer is listening.</p>
     /// <p>On EC2-VPC, you can specify any port from the range 1-65535.</p>
     /// <p>On EC2-Classic, you can specify any port from the following list: 25, 80, 443, 465, 587, 1024-65535.</p>
-    pub load_balancer_port: i32,
+    pub load_balancer_port: ::std::option::Option<i32>,
     /// <p>The load balancer transport protocol to use for routing.</p>
     /// <p>Valid values: <code>HTTP</code> | <code>HTTPS</code> | <code>TCP</code> | <code>SSL</code> </p>
     pub protocol: ::std::option::Option<::std::string::String>,
@@ -21,7 +21,7 @@ pub struct AwsElbLoadBalancerListener {
 }
 impl AwsElbLoadBalancerListener {
     /// <p>The port on which the instance is listening.</p>
-    pub fn instance_port(&self) -> i32 {
+    pub fn instance_port(&self) -> ::std::option::Option<i32> {
         self.instance_port
     }
     /// <p>The protocol to use to route traffic to instances.</p>
@@ -32,7 +32,7 @@ impl AwsElbLoadBalancerListener {
     /// <p>The port on which the load balancer is listening.</p>
     /// <p>On EC2-VPC, you can specify any port from the range 1-65535.</p>
     /// <p>On EC2-Classic, you can specify any port from the following list: 25, 80, 443, 465, 587, 1024-65535.</p>
-    pub fn load_balancer_port(&self) -> i32 {
+    pub fn load_balancer_port(&self) -> ::std::option::Option<i32> {
         self.load_balancer_port
     }
     /// <p>The load balancer transport protocol to use for routing.</p>
@@ -148,9 +148,9 @@ impl AwsElbLoadBalancerListenerBuilder {
     /// Consumes the builder and constructs a [`AwsElbLoadBalancerListener`](crate::types::AwsElbLoadBalancerListener).
     pub fn build(self) -> crate::types::AwsElbLoadBalancerListener {
         crate::types::AwsElbLoadBalancerListener {
-            instance_port: self.instance_port.unwrap_or_default(),
+            instance_port: self.instance_port,
             instance_protocol: self.instance_protocol,
-            load_balancer_port: self.load_balancer_port.unwrap_or_default(),
+            load_balancer_port: self.load_balancer_port,
             protocol: self.protocol,
             ssl_certificate_id: self.ssl_certificate_id,
         }

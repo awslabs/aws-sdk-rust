@@ -460,6 +460,21 @@ pub fn de_db_snapshot(
                 builder = builder.set_db_system_id(var_34);
             }
             ,
+            s if s.matches("DedicatedLogVolume") /* DedicatedLogVolume com.amazonaws.rds#DBSnapshot$DedicatedLogVolume */ =>  {
+                let var_35 =
+                    Some(
+                         {
+                            <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_dedicated_log_volume(var_35);
+            }
+            ,
             _ => {}
         }
     }

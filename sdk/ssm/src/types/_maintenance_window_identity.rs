@@ -13,7 +13,7 @@ pub struct MaintenanceWindowIdentity {
     /// <p>Indicates whether the maintenance window is enabled.</p>
     pub enabled: bool,
     /// <p>The duration of the maintenance window in hours.</p>
-    pub duration: i32,
+    pub duration: ::std::option::Option<i32>,
     /// <p>The number of hours before the end of the maintenance window that Amazon Web Services Systems Manager stops scheduling new tasks for execution.</p>
     pub cutoff: i32,
     /// <p>The schedule of the maintenance window in the form of a cron or rate expression.</p>
@@ -47,7 +47,7 @@ impl MaintenanceWindowIdentity {
         self.enabled
     }
     /// <p>The duration of the maintenance window in hours.</p>
-    pub fn duration(&self) -> i32 {
+    pub fn duration(&self) -> ::std::option::Option<i32> {
         self.duration
     }
     /// <p>The number of hours before the end of the maintenance window that Amazon Web Services Systems Manager stops scheduling new tasks for execution.</p>
@@ -297,7 +297,7 @@ impl MaintenanceWindowIdentityBuilder {
             name: self.name,
             description: self.description,
             enabled: self.enabled.unwrap_or_default(),
-            duration: self.duration.unwrap_or_default(),
+            duration: self.duration,
             cutoff: self.cutoff.unwrap_or_default(),
             schedule: self.schedule,
             schedule_timezone: self.schedule_timezone,

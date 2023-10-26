@@ -59,14 +59,14 @@ pub(crate) struct Handle {
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`GetDocumentAnalysis`](crate::operation::get_document_analysis) operation has
-/// a [`Client::get_document_analysis`], function which returns a builder for that operation.
+/// For example, the [`CreateAdapter`](crate::operation::create_adapter) operation has
+/// a [`Client::create_adapter`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.get_document_analysis()
-///     .job_id("example")
+/// let result = client.create_adapter()
+///     .adapter_name("example")
 ///     .send()
 ///     .await;
 /// ```
@@ -154,6 +154,10 @@ mod analyze_expense;
 
 mod analyze_id;
 
+mod create_adapter;
+
+mod create_adapter_version;
+
 /// Operation customization and supporting types.
 ///
 /// The underlying HTTP requests made during an operation can be customized
@@ -182,7 +186,15 @@ mod analyze_id;
 /// ```
 pub mod customize;
 
+mod delete_adapter;
+
+mod delete_adapter_version;
+
 mod detect_document_text;
+
+mod get_adapter;
+
+mod get_adapter_version;
 
 mod get_document_analysis;
 
@@ -194,6 +206,12 @@ mod get_lending_analysis;
 
 mod get_lending_analysis_summary;
 
+mod list_adapter_versions;
+
+mod list_adapters;
+
+mod list_tags_for_resource;
+
 mod start_document_analysis;
 
 mod start_document_text_detection;
@@ -201,3 +219,9 @@ mod start_document_text_detection;
 mod start_expense_analysis;
 
 mod start_lending_analysis;
+
+mod tag_resource;
+
+mod untag_resource;
+
+mod update_adapter;

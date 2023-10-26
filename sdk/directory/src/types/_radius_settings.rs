@@ -7,9 +7,9 @@ pub struct RadiusSettings {
     /// <p>An array of strings that contains the fully qualified domain name (FQDN) or IP addresses of the RADIUS server endpoints, or the FQDN or IP addresses of your RADIUS server load balancer.</p>
     pub radius_servers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The port that your RADIUS server is using for communications. Your self-managed network must allow inbound traffic over this port from the Directory Service servers.</p>
-    pub radius_port: i32,
+    pub radius_port: ::std::option::Option<i32>,
     /// <p>The amount of time, in seconds, to wait for the RADIUS server to respond.</p>
-    pub radius_timeout: i32,
+    pub radius_timeout: ::std::option::Option<i32>,
     /// <p>The maximum number of times that communication with the RADIUS server is attempted.</p>
     pub radius_retries: i32,
     /// <p>Required for enabling RADIUS on the directory.</p>
@@ -27,11 +27,11 @@ impl RadiusSettings {
         self.radius_servers.as_deref()
     }
     /// <p>The port that your RADIUS server is using for communications. Your self-managed network must allow inbound traffic over this port from the Directory Service servers.</p>
-    pub fn radius_port(&self) -> i32 {
+    pub fn radius_port(&self) -> ::std::option::Option<i32> {
         self.radius_port
     }
     /// <p>The amount of time, in seconds, to wait for the RADIUS server to respond.</p>
-    pub fn radius_timeout(&self) -> i32 {
+    pub fn radius_timeout(&self) -> ::std::option::Option<i32> {
         self.radius_timeout
     }
     /// <p>The maximum number of times that communication with the RADIUS server is attempted.</p>
@@ -212,8 +212,8 @@ impl RadiusSettingsBuilder {
     pub fn build(self) -> crate::types::RadiusSettings {
         crate::types::RadiusSettings {
             radius_servers: self.radius_servers,
-            radius_port: self.radius_port.unwrap_or_default(),
-            radius_timeout: self.radius_timeout.unwrap_or_default(),
+            radius_port: self.radius_port,
+            radius_timeout: self.radius_timeout,
             radius_retries: self.radius_retries.unwrap_or_default(),
             shared_secret: self.shared_secret,
             authentication_protocol: self.authentication_protocol,

@@ -15,7 +15,7 @@ pub struct OptionGroup {
     /// <p>Indicates what options are available in the option group.</p>
     pub options: ::std::option::Option<::std::vec::Vec<crate::types::Option>>,
     /// <p>Indicates whether this option group can be applied to both VPC and non-VPC instances. The value <code>true</code> indicates the option group can be applied to both VPC and non-VPC instances.</p>
-    pub allows_vpc_and_non_vpc_instance_memberships: bool,
+    pub allows_vpc_and_non_vpc_instance_memberships: ::std::option::Option<bool>,
     /// <p>If <b>AllowsVpcAndNonVpcInstanceMemberships</b> is <code>false</code>, this field is blank. If <b>AllowsVpcAndNonVpcInstanceMemberships</b> is <code>true</code> and this field is blank, then this option group can be applied to both VPC and non-VPC instances. If this field contains a value, then this option group can only be applied to instances that are in the VPC indicated by this field.</p>
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the Amazon Resource Name (ARN) for the option group.</p>
@@ -49,7 +49,7 @@ impl OptionGroup {
         self.options.as_deref()
     }
     /// <p>Indicates whether this option group can be applied to both VPC and non-VPC instances. The value <code>true</code> indicates the option group can be applied to both VPC and non-VPC instances.</p>
-    pub fn allows_vpc_and_non_vpc_instance_memberships(&self) -> bool {
+    pub fn allows_vpc_and_non_vpc_instance_memberships(&self) -> ::std::option::Option<bool> {
         self.allows_vpc_and_non_vpc_instance_memberships
     }
     /// <p>If <b>AllowsVpcAndNonVpcInstanceMemberships</b> is <code>false</code>, this field is blank. If <b>AllowsVpcAndNonVpcInstanceMemberships</b> is <code>true</code> and this field is blank, then this option group can be applied to both VPC and non-VPC instances. If this field contains a value, then this option group can only be applied to instances that are in the VPC indicated by this field.</p>
@@ -265,7 +265,7 @@ impl OptionGroupBuilder {
             engine_name: self.engine_name,
             major_engine_version: self.major_engine_version,
             options: self.options,
-            allows_vpc_and_non_vpc_instance_memberships: self.allows_vpc_and_non_vpc_instance_memberships.unwrap_or_default(),
+            allows_vpc_and_non_vpc_instance_memberships: self.allows_vpc_and_non_vpc_instance_memberships,
             vpc_id: self.vpc_id,
             option_group_arn: self.option_group_arn,
             source_option_group: self.source_option_group,

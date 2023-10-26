@@ -3,44 +3,44 @@ pub fn ser_finding_provider_fields(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::FindingProviderFields,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if input.confidence != 0 {
+    if let Some(var_1) = &input.confidence {
         object.key("Confidence").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.confidence).into()),
+            ::aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if input.criticality != 0 {
+    if let Some(var_2) = &input.criticality {
         object.key("Criticality").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.criticality).into()),
+            ::aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
-    if let Some(var_1) = &input.related_findings {
-        let mut array_2 = object.key("RelatedFindings").start_array();
-        for item_3 in var_1 {
+    if let Some(var_3) = &input.related_findings {
+        let mut array_4 = object.key("RelatedFindings").start_array();
+        for item_5 in var_3 {
             {
                 #[allow(unused_mut)]
-                let mut object_4 = array_2.value().start_object();
-                crate::protocol_serde::shape_related_finding::ser_related_finding(&mut object_4, item_3)?;
-                object_4.finish();
+                let mut object_6 = array_4.value().start_object();
+                crate::protocol_serde::shape_related_finding::ser_related_finding(&mut object_6, item_5)?;
+                object_6.finish();
             }
         }
-        array_2.finish();
+        array_4.finish();
     }
-    if let Some(var_5) = &input.severity {
+    if let Some(var_7) = &input.severity {
         #[allow(unused_mut)]
-        let mut object_6 = object.key("Severity").start_object();
-        crate::protocol_serde::shape_finding_provider_severity::ser_finding_provider_severity(&mut object_6, var_5)?;
-        object_6.finish();
+        let mut object_8 = object.key("Severity").start_object();
+        crate::protocol_serde::shape_finding_provider_severity::ser_finding_provider_severity(&mut object_8, var_7)?;
+        object_8.finish();
     }
-    if let Some(var_7) = &input.types {
-        let mut array_8 = object.key("Types").start_array();
-        for item_9 in var_7 {
+    if let Some(var_9) = &input.types {
+        let mut array_10 = object.key("Types").start_array();
+        for item_11 in var_9 {
             {
-                array_8.value().string(item_9.as_str());
+                array_10.value().string(item_11.as_str());
             }
         }
-        array_8.finish();
+        array_10.finish();
     }
     Ok(())
 }

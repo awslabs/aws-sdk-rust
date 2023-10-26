@@ -3,29 +3,29 @@ pub fn ser_aws_auto_scaling_launch_configuration_block_device_mappings_ebs_detai
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if input.delete_on_termination {
-        object.key("DeleteOnTermination").boolean(input.delete_on_termination);
+    if let Some(var_1) = &input.delete_on_termination {
+        object.key("DeleteOnTermination").boolean(*var_1);
     }
-    if input.encrypted {
-        object.key("Encrypted").boolean(input.encrypted);
+    if let Some(var_2) = &input.encrypted {
+        object.key("Encrypted").boolean(*var_2);
     }
-    if input.iops != 0 {
+    if let Some(var_3) = &input.iops {
         object.key("Iops").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.iops).into()),
+            ::aws_smithy_types::Number::NegInt((*var_3).into()),
         );
     }
-    if let Some(var_1) = &input.snapshot_id {
-        object.key("SnapshotId").string(var_1.as_str());
+    if let Some(var_4) = &input.snapshot_id {
+        object.key("SnapshotId").string(var_4.as_str());
     }
-    if input.volume_size != 0 {
+    if let Some(var_5) = &input.volume_size {
         object.key("VolumeSize").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.volume_size).into()),
+            ::aws_smithy_types::Number::NegInt((*var_5).into()),
         );
     }
-    if let Some(var_2) = &input.volume_type {
-        object.key("VolumeType").string(var_2.as_str());
+    if let Some(var_6) = &input.volume_type {
+        object.key("VolumeType").string(var_6.as_str());
     }
     Ok(())
 }

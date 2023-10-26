@@ -14,6 +14,10 @@ pub struct RestoreFromSnapshotInput {
     pub snapshot_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account that owns the snapshot.</p>
     pub owner_account: ::std::option::Option<::std::string::String>,
+    /// <p>If <code>true</code>, Amazon Redshift uses Secrets Manager to manage the restored snapshot's admin credentials. If <code>MmanageAdminPassword</code> is false or not set, Amazon Redshift uses the admin credentials that the namespace or cluster had at the time the snapshot was taken.</p>
+    pub manage_admin_password: ::std::option::Option<bool>,
+    /// <p>The ID of the Key Management Service (KMS) key used to encrypt and store the namespace's admin credentials secret.</p>
+    pub admin_password_secret_kms_key_id: ::std::option::Option<::std::string::String>,
 }
 impl RestoreFromSnapshotInput {
     /// <p>The name of the namespace to restore the snapshot to.</p>
@@ -37,6 +41,14 @@ impl RestoreFromSnapshotInput {
     pub fn owner_account(&self) -> ::std::option::Option<&str> {
         self.owner_account.as_deref()
     }
+    /// <p>If <code>true</code>, Amazon Redshift uses Secrets Manager to manage the restored snapshot's admin credentials. If <code>MmanageAdminPassword</code> is false or not set, Amazon Redshift uses the admin credentials that the namespace or cluster had at the time the snapshot was taken.</p>
+    pub fn manage_admin_password(&self) -> ::std::option::Option<bool> {
+        self.manage_admin_password
+    }
+    /// <p>The ID of the Key Management Service (KMS) key used to encrypt and store the namespace's admin credentials secret.</p>
+    pub fn admin_password_secret_kms_key_id(&self) -> ::std::option::Option<&str> {
+        self.admin_password_secret_kms_key_id.as_deref()
+    }
 }
 impl RestoreFromSnapshotInput {
     /// Creates a new builder-style object to manufacture [`RestoreFromSnapshotInput`](crate::operation::restore_from_snapshot::RestoreFromSnapshotInput).
@@ -54,6 +66,8 @@ pub struct RestoreFromSnapshotInputBuilder {
     pub(crate) snapshot_name: ::std::option::Option<::std::string::String>,
     pub(crate) snapshot_arn: ::std::option::Option<::std::string::String>,
     pub(crate) owner_account: ::std::option::Option<::std::string::String>,
+    pub(crate) manage_admin_password: ::std::option::Option<bool>,
+    pub(crate) admin_password_secret_kms_key_id: ::std::option::Option<::std::string::String>,
 }
 impl RestoreFromSnapshotInputBuilder {
     /// <p>The name of the namespace to restore the snapshot to.</p>
@@ -129,6 +143,34 @@ impl RestoreFromSnapshotInputBuilder {
     pub fn get_owner_account(&self) -> &::std::option::Option<::std::string::String> {
         &self.owner_account
     }
+    /// <p>If <code>true</code>, Amazon Redshift uses Secrets Manager to manage the restored snapshot's admin credentials. If <code>MmanageAdminPassword</code> is false or not set, Amazon Redshift uses the admin credentials that the namespace or cluster had at the time the snapshot was taken.</p>
+    pub fn manage_admin_password(mut self, input: bool) -> Self {
+        self.manage_admin_password = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>If <code>true</code>, Amazon Redshift uses Secrets Manager to manage the restored snapshot's admin credentials. If <code>MmanageAdminPassword</code> is false or not set, Amazon Redshift uses the admin credentials that the namespace or cluster had at the time the snapshot was taken.</p>
+    pub fn set_manage_admin_password(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.manage_admin_password = input;
+        self
+    }
+    /// <p>If <code>true</code>, Amazon Redshift uses Secrets Manager to manage the restored snapshot's admin credentials. If <code>MmanageAdminPassword</code> is false or not set, Amazon Redshift uses the admin credentials that the namespace or cluster had at the time the snapshot was taken.</p>
+    pub fn get_manage_admin_password(&self) -> &::std::option::Option<bool> {
+        &self.manage_admin_password
+    }
+    /// <p>The ID of the Key Management Service (KMS) key used to encrypt and store the namespace's admin credentials secret.</p>
+    pub fn admin_password_secret_kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.admin_password_secret_kms_key_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the Key Management Service (KMS) key used to encrypt and store the namespace's admin credentials secret.</p>
+    pub fn set_admin_password_secret_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.admin_password_secret_kms_key_id = input;
+        self
+    }
+    /// <p>The ID of the Key Management Service (KMS) key used to encrypt and store the namespace's admin credentials secret.</p>
+    pub fn get_admin_password_secret_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.admin_password_secret_kms_key_id
+    }
     /// Consumes the builder and constructs a [`RestoreFromSnapshotInput`](crate::operation::restore_from_snapshot::RestoreFromSnapshotInput).
     pub fn build(
         self,
@@ -140,6 +182,8 @@ impl RestoreFromSnapshotInputBuilder {
             snapshot_name: self.snapshot_name,
             snapshot_arn: self.snapshot_arn,
             owner_account: self.owner_account,
+            manage_admin_password: self.manage_admin_password,
+            admin_password_secret_kms_key_id: self.admin_password_secret_kms_key_id,
         })
     }
 }

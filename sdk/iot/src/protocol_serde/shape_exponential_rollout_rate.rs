@@ -9,17 +9,17 @@ pub fn ser_exponential_rollout_rate(
             ::aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    {
+    if let Some(var_2) = &input.increment_factor {
         object.key("incrementFactor").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::Float((input.increment_factor).into()),
+            ::aws_smithy_types::Number::Float((*var_2).into()),
         );
     }
-    if let Some(var_2) = &input.rate_increase_criteria {
+    if let Some(var_3) = &input.rate_increase_criteria {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("rateIncreaseCriteria").start_object();
-        crate::protocol_serde::shape_rate_increase_criteria::ser_rate_increase_criteria(&mut object_3, var_2)?;
-        object_3.finish();
+        let mut object_4 = object.key("rateIncreaseCriteria").start_object();
+        crate::protocol_serde::shape_rate_increase_criteria::ser_rate_increase_criteria(&mut object_4, var_3)?;
+        object_4.finish();
     }
     Ok(())
 }

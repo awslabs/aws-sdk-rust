@@ -5,23 +5,23 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ObjectiveStatusCounters {
     /// <p>The number of training jobs whose final objective metric was evaluated by the hyperparameter tuning job and used in the hyperparameter tuning process.</p>
-    pub succeeded: i32,
+    pub succeeded: ::std::option::Option<i32>,
     /// <p>The number of training jobs that are in progress and pending evaluation of their final objective metric.</p>
-    pub pending: i32,
+    pub pending: ::std::option::Option<i32>,
     /// <p>The number of training jobs whose final objective metric was not evaluated and used in the hyperparameter tuning process. This typically occurs when the training job failed or did not emit an objective metric.</p>
-    pub failed: i32,
+    pub failed: ::std::option::Option<i32>,
 }
 impl ObjectiveStatusCounters {
     /// <p>The number of training jobs whose final objective metric was evaluated by the hyperparameter tuning job and used in the hyperparameter tuning process.</p>
-    pub fn succeeded(&self) -> i32 {
+    pub fn succeeded(&self) -> ::std::option::Option<i32> {
         self.succeeded
     }
     /// <p>The number of training jobs that are in progress and pending evaluation of their final objective metric.</p>
-    pub fn pending(&self) -> i32 {
+    pub fn pending(&self) -> ::std::option::Option<i32> {
         self.pending
     }
     /// <p>The number of training jobs whose final objective metric was not evaluated and used in the hyperparameter tuning process. This typically occurs when the training job failed or did not emit an objective metric.</p>
-    pub fn failed(&self) -> i32 {
+    pub fn failed(&self) -> ::std::option::Option<i32> {
         self.failed
     }
 }
@@ -86,9 +86,9 @@ impl ObjectiveStatusCountersBuilder {
     /// Consumes the builder and constructs a [`ObjectiveStatusCounters`](crate::types::ObjectiveStatusCounters).
     pub fn build(self) -> crate::types::ObjectiveStatusCounters {
         crate::types::ObjectiveStatusCounters {
-            succeeded: self.succeeded.unwrap_or_default(),
-            pending: self.pending.unwrap_or_default(),
-            failed: self.failed.unwrap_or_default(),
+            succeeded: self.succeeded,
+            pending: self.pending,
+            failed: self.failed,
         }
     }
 }

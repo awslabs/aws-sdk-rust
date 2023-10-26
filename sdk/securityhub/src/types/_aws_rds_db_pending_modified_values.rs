@@ -7,21 +7,21 @@ pub struct AwsRdsDbPendingModifiedValues {
     /// <p>The new DB instance class for the DB instance.</p>
     pub db_instance_class: ::std::option::Option<::std::string::String>,
     /// <p>The new value of the allocated storage for the DB instance.</p>
-    pub allocated_storage: i32,
+    pub allocated_storage: ::std::option::Option<i32>,
     /// <p>The new master user password for the DB instance.</p>
     pub master_user_password: ::std::option::Option<::std::string::String>,
     /// <p>The new port for the DB instance.</p>
-    pub port: i32,
+    pub port: ::std::option::Option<i32>,
     /// <p>The new backup retention period for the DB instance.</p>
-    pub backup_retention_period: i32,
+    pub backup_retention_period: ::std::option::Option<i32>,
     /// <p>Indicates that a single Availability Zone DB instance is changing to a multiple Availability Zone deployment.</p>
-    pub multi_az: bool,
+    pub multi_az: ::std::option::Option<bool>,
     /// <p>The new engine version for the DB instance.</p>
     pub engine_version: ::std::option::Option<::std::string::String>,
     /// <p>The new license model value for the DB instance.</p>
     pub license_model: ::std::option::Option<::std::string::String>,
     /// <p>The new provisioned IOPS value for the DB instance.</p>
-    pub iops: i32,
+    pub iops: ::std::option::Option<i32>,
     /// <p>The new DB instance identifier for the DB instance.</p>
     pub db_instance_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The new storage type for the DB instance.</p>
@@ -41,7 +41,7 @@ impl AwsRdsDbPendingModifiedValues {
         self.db_instance_class.as_deref()
     }
     /// <p>The new value of the allocated storage for the DB instance.</p>
-    pub fn allocated_storage(&self) -> i32 {
+    pub fn allocated_storage(&self) -> ::std::option::Option<i32> {
         self.allocated_storage
     }
     /// <p>The new master user password for the DB instance.</p>
@@ -49,15 +49,15 @@ impl AwsRdsDbPendingModifiedValues {
         self.master_user_password.as_deref()
     }
     /// <p>The new port for the DB instance.</p>
-    pub fn port(&self) -> i32 {
+    pub fn port(&self) -> ::std::option::Option<i32> {
         self.port
     }
     /// <p>The new backup retention period for the DB instance.</p>
-    pub fn backup_retention_period(&self) -> i32 {
+    pub fn backup_retention_period(&self) -> ::std::option::Option<i32> {
         self.backup_retention_period
     }
     /// <p>Indicates that a single Availability Zone DB instance is changing to a multiple Availability Zone deployment.</p>
-    pub fn multi_az(&self) -> bool {
+    pub fn multi_az(&self) -> ::std::option::Option<bool> {
         self.multi_az
     }
     /// <p>The new engine version for the DB instance.</p>
@@ -69,7 +69,7 @@ impl AwsRdsDbPendingModifiedValues {
         self.license_model.as_deref()
     }
     /// <p>The new provisioned IOPS value for the DB instance.</p>
-    pub fn iops(&self) -> i32 {
+    pub fn iops(&self) -> ::std::option::Option<i32> {
         self.iops
     }
     /// <p>The new DB instance identifier for the DB instance.</p>
@@ -345,14 +345,14 @@ impl AwsRdsDbPendingModifiedValuesBuilder {
     pub fn build(self) -> crate::types::AwsRdsDbPendingModifiedValues {
         crate::types::AwsRdsDbPendingModifiedValues {
             db_instance_class: self.db_instance_class,
-            allocated_storage: self.allocated_storage.unwrap_or_default(),
+            allocated_storage: self.allocated_storage,
             master_user_password: self.master_user_password,
-            port: self.port.unwrap_or_default(),
-            backup_retention_period: self.backup_retention_period.unwrap_or_default(),
-            multi_az: self.multi_az.unwrap_or_default(),
+            port: self.port,
+            backup_retention_period: self.backup_retention_period,
+            multi_az: self.multi_az,
             engine_version: self.engine_version,
             license_model: self.license_model,
-            iops: self.iops.unwrap_or_default(),
+            iops: self.iops,
             db_instance_identifier: self.db_instance_identifier,
             storage_type: self.storage_type,
             ca_certificate_identifier: self.ca_certificate_identifier,

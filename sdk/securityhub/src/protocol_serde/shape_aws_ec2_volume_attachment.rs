@@ -6,14 +6,14 @@ pub fn ser_aws_ec2_volume_attachment(
     if let Some(var_1) = &input.attach_time {
         object.key("AttachTime").string(var_1.as_str());
     }
-    if input.delete_on_termination {
-        object.key("DeleteOnTermination").boolean(input.delete_on_termination);
+    if let Some(var_2) = &input.delete_on_termination {
+        object.key("DeleteOnTermination").boolean(*var_2);
     }
-    if let Some(var_2) = &input.instance_id {
-        object.key("InstanceId").string(var_2.as_str());
+    if let Some(var_3) = &input.instance_id {
+        object.key("InstanceId").string(var_3.as_str());
     }
-    if let Some(var_3) = &input.status {
-        object.key("Status").string(var_3.as_str());
+    if let Some(var_4) = &input.status {
+        object.key("Status").string(var_4.as_str());
     }
     Ok(())
 }

@@ -9,7 +9,9 @@ pub struct DnsRequestAction {
     /// <p>The network connection protocol observed in the activity that prompted GuardDuty to generate the finding.</p>
     pub protocol: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the targeted port is blocked.</p>
-    pub blocked: bool,
+    pub blocked: ::std::option::Option<bool>,
+    /// <p>The second and top level domain involved in the activity that prompted GuardDuty to generate this finding.</p>
+    pub domain_with_suffix: ::std::option::Option<::std::string::String>,
 }
 impl DnsRequestAction {
     /// <p>The domain information for the DNS query.</p>
@@ -21,8 +23,12 @@ impl DnsRequestAction {
         self.protocol.as_deref()
     }
     /// <p>Indicates whether the targeted port is blocked.</p>
-    pub fn blocked(&self) -> bool {
+    pub fn blocked(&self) -> ::std::option::Option<bool> {
         self.blocked
+    }
+    /// <p>The second and top level domain involved in the activity that prompted GuardDuty to generate this finding.</p>
+    pub fn domain_with_suffix(&self) -> ::std::option::Option<&str> {
+        self.domain_with_suffix.as_deref()
     }
 }
 impl DnsRequestAction {
@@ -39,6 +45,7 @@ pub struct DnsRequestActionBuilder {
     pub(crate) domain: ::std::option::Option<::std::string::String>,
     pub(crate) protocol: ::std::option::Option<::std::string::String>,
     pub(crate) blocked: ::std::option::Option<bool>,
+    pub(crate) domain_with_suffix: ::std::option::Option<::std::string::String>,
 }
 impl DnsRequestActionBuilder {
     /// <p>The domain information for the DNS query.</p>
@@ -83,12 +90,27 @@ impl DnsRequestActionBuilder {
     pub fn get_blocked(&self) -> &::std::option::Option<bool> {
         &self.blocked
     }
+    /// <p>The second and top level domain involved in the activity that prompted GuardDuty to generate this finding.</p>
+    pub fn domain_with_suffix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.domain_with_suffix = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The second and top level domain involved in the activity that prompted GuardDuty to generate this finding.</p>
+    pub fn set_domain_with_suffix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.domain_with_suffix = input;
+        self
+    }
+    /// <p>The second and top level domain involved in the activity that prompted GuardDuty to generate this finding.</p>
+    pub fn get_domain_with_suffix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_with_suffix
+    }
     /// Consumes the builder and constructs a [`DnsRequestAction`](crate::types::DnsRequestAction).
     pub fn build(self) -> crate::types::DnsRequestAction {
         crate::types::DnsRequestAction {
             domain: self.domain,
             protocol: self.protocol,
-            blocked: self.blocked.unwrap_or_default(),
+            blocked: self.blocked,
+            domain_with_suffix: self.domain_with_suffix,
         }
     }
 }

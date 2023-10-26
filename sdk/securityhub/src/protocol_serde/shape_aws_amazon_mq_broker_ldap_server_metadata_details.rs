@@ -21,23 +21,23 @@ pub fn ser_aws_amazon_mq_broker_ldap_server_metadata_details(
     if let Some(var_6) = &input.role_search_matching {
         object.key("RoleSearchMatching").string(var_6.as_str());
     }
-    if input.role_search_subtree {
-        object.key("RoleSearchSubtree").boolean(input.role_search_subtree);
+    if let Some(var_7) = &input.role_search_subtree {
+        object.key("RoleSearchSubtree").boolean(*var_7);
     }
-    if let Some(var_7) = &input.service_account_username {
-        object.key("ServiceAccountUsername").string(var_7.as_str());
+    if let Some(var_8) = &input.service_account_username {
+        object.key("ServiceAccountUsername").string(var_8.as_str());
     }
-    if let Some(var_8) = &input.user_base {
-        object.key("UserBase").string(var_8.as_str());
+    if let Some(var_9) = &input.user_base {
+        object.key("UserBase").string(var_9.as_str());
     }
-    if let Some(var_9) = &input.user_role_name {
-        object.key("UserRoleName").string(var_9.as_str());
+    if let Some(var_10) = &input.user_role_name {
+        object.key("UserRoleName").string(var_10.as_str());
     }
-    if let Some(var_10) = &input.user_search_matching {
-        object.key("UserSearchMatching").string(var_10.as_str());
+    if let Some(var_11) = &input.user_search_matching {
+        object.key("UserSearchMatching").string(var_11.as_str());
     }
-    if input.user_search_subtree {
-        object.key("UserSearchSubtree").boolean(input.user_search_subtree);
+    if let Some(var_12) = &input.user_search_subtree {
+        object.key("UserSearchSubtree").boolean(*var_12);
     }
     Ok(())
 }

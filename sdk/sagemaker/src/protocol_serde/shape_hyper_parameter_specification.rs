@@ -18,14 +18,14 @@ pub fn ser_hyper_parameter_specification(
         crate::protocol_serde::shape_parameter_range::ser_parameter_range(&mut object_5, var_4)?;
         object_5.finish();
     }
-    if input.is_tunable {
-        object.key("IsTunable").boolean(input.is_tunable);
+    if let Some(var_6) = &input.is_tunable {
+        object.key("IsTunable").boolean(*var_6);
     }
-    if input.is_required {
-        object.key("IsRequired").boolean(input.is_required);
+    if let Some(var_7) = &input.is_required {
+        object.key("IsRequired").boolean(*var_7);
     }
-    if let Some(var_6) = &input.default_value {
-        object.key("DefaultValue").string(var_6.as_str());
+    if let Some(var_8) = &input.default_value {
+        object.key("DefaultValue").string(var_8.as_str());
     }
     Ok(())
 }

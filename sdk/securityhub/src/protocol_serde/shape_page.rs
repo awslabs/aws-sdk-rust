@@ -3,23 +3,23 @@ pub fn ser_page(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Page,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if input.page_number != 0 {
+    if let Some(var_1) = &input.page_number {
         object.key("PageNumber").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.page_number).into()),
+            ::aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if let Some(var_1) = &input.line_range {
+    if let Some(var_2) = &input.line_range {
         #[allow(unused_mut)]
-        let mut object_2 = object.key("LineRange").start_object();
-        crate::protocol_serde::shape_range::ser_range(&mut object_2, var_1)?;
-        object_2.finish();
+        let mut object_3 = object.key("LineRange").start_object();
+        crate::protocol_serde::shape_range::ser_range(&mut object_3, var_2)?;
+        object_3.finish();
     }
-    if let Some(var_3) = &input.offset_range {
+    if let Some(var_4) = &input.offset_range {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("OffsetRange").start_object();
-        crate::protocol_serde::shape_range::ser_range(&mut object_4, var_3)?;
-        object_4.finish();
+        let mut object_5 = object.key("OffsetRange").start_object();
+        crate::protocol_serde::shape_range::ser_range(&mut object_5, var_4)?;
+        object_5.finish();
     }
     Ok(())
 }

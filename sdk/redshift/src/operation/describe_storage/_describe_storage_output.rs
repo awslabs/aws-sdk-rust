@@ -4,18 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeStorageOutput {
     /// <p>The total amount of storage currently used for snapshots.</p>
-    pub total_backup_size_in_mega_bytes: f64,
+    pub total_backup_size_in_mega_bytes: ::std::option::Option<f64>,
     /// <p>The total amount of storage currently provisioned.</p>
-    pub total_provisioned_storage_in_mega_bytes: f64,
+    pub total_provisioned_storage_in_mega_bytes: ::std::option::Option<f64>,
     _request_id: Option<String>,
 }
 impl DescribeStorageOutput {
     /// <p>The total amount of storage currently used for snapshots.</p>
-    pub fn total_backup_size_in_mega_bytes(&self) -> f64 {
+    pub fn total_backup_size_in_mega_bytes(&self) -> ::std::option::Option<f64> {
         self.total_backup_size_in_mega_bytes
     }
     /// <p>The total amount of storage currently provisioned.</p>
-    pub fn total_provisioned_storage_in_mega_bytes(&self) -> f64 {
+    pub fn total_provisioned_storage_in_mega_bytes(&self) -> ::std::option::Option<f64> {
         self.total_provisioned_storage_in_mega_bytes
     }
 }
@@ -80,8 +80,8 @@ impl DescribeStorageOutputBuilder {
     /// Consumes the builder and constructs a [`DescribeStorageOutput`](crate::operation::describe_storage::DescribeStorageOutput).
     pub fn build(self) -> crate::operation::describe_storage::DescribeStorageOutput {
         crate::operation::describe_storage::DescribeStorageOutput {
-            total_backup_size_in_mega_bytes: self.total_backup_size_in_mega_bytes.unwrap_or_default(),
-            total_provisioned_storage_in_mega_bytes: self.total_provisioned_storage_in_mega_bytes.unwrap_or_default(),
+            total_backup_size_in_mega_bytes: self.total_backup_size_in_mega_bytes,
+            total_provisioned_storage_in_mega_bytes: self.total_provisioned_storage_in_mega_bytes,
             _request_id: self._request_id,
         }
     }

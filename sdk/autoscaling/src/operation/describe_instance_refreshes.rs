@@ -365,3 +365,6 @@ mod _describe_instance_refreshes_output;
 
 /// Builders
 pub mod builders;
+
+/// Paginator for this operation
+pub mod paginator;

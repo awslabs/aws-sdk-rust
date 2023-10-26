@@ -15,7 +15,7 @@ pub struct DebugRuleConfiguration {
     /// <p>The instance type to deploy a custom rule for debugging a training job.</p>
     pub instance_type: ::std::option::Option<crate::types::ProcessingInstanceType>,
     /// <p>The size, in GB, of the ML storage volume attached to the processing instance.</p>
-    pub volume_size_in_gb: i32,
+    pub volume_size_in_gb: ::std::option::Option<i32>,
     /// <p>Runtime configuration for rule container.</p>
     pub rule_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
@@ -41,7 +41,7 @@ impl DebugRuleConfiguration {
         self.instance_type.as_ref()
     }
     /// <p>The size, in GB, of the ML storage volume attached to the processing instance.</p>
-    pub fn volume_size_in_gb(&self) -> i32 {
+    pub fn volume_size_in_gb(&self) -> ::std::option::Option<i32> {
         self.volume_size_in_gb
     }
     /// <p>Runtime configuration for rule container.</p>
@@ -188,7 +188,7 @@ impl DebugRuleConfigurationBuilder {
             s3_output_path: self.s3_output_path,
             rule_evaluator_image: self.rule_evaluator_image,
             instance_type: self.instance_type,
-            volume_size_in_gb: self.volume_size_in_gb.unwrap_or_default(),
+            volume_size_in_gb: self.volume_size_in_gb,
             rule_parameters: self.rule_parameters,
         }
     }

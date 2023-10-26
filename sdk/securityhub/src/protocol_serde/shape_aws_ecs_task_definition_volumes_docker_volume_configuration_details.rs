@@ -3,34 +3,34 @@ pub fn ser_aws_ecs_task_definition_volumes_docker_volume_configuration_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if input.autoprovision {
-        object.key("Autoprovision").boolean(input.autoprovision);
+    if let Some(var_1) = &input.autoprovision {
+        object.key("Autoprovision").boolean(*var_1);
     }
-    if let Some(var_1) = &input.driver {
-        object.key("Driver").string(var_1.as_str());
+    if let Some(var_2) = &input.driver {
+        object.key("Driver").string(var_2.as_str());
     }
-    if let Some(var_2) = &input.driver_opts {
+    if let Some(var_3) = &input.driver_opts {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("DriverOpts").start_object();
-        for (key_4, value_5) in var_2 {
+        let mut object_4 = object.key("DriverOpts").start_object();
+        for (key_5, value_6) in var_3 {
             {
-                object_3.key(key_4.as_str()).string(value_5.as_str());
+                object_4.key(key_5.as_str()).string(value_6.as_str());
             }
         }
-        object_3.finish();
+        object_4.finish();
     }
-    if let Some(var_6) = &input.labels {
+    if let Some(var_7) = &input.labels {
         #[allow(unused_mut)]
-        let mut object_7 = object.key("Labels").start_object();
-        for (key_8, value_9) in var_6 {
+        let mut object_8 = object.key("Labels").start_object();
+        for (key_9, value_10) in var_7 {
             {
-                object_7.key(key_8.as_str()).string(value_9.as_str());
+                object_8.key(key_9.as_str()).string(value_10.as_str());
             }
         }
-        object_7.finish();
+        object_8.finish();
     }
-    if let Some(var_10) = &input.scope {
-        object.key("Scope").string(var_10.as_str());
+    if let Some(var_11) = &input.scope {
+        object.key("Scope").string(var_11.as_str());
     }
     Ok(())
 }

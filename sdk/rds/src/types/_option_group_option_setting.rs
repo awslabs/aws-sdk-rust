@@ -15,9 +15,9 @@ pub struct OptionGroupOptionSetting {
     /// <p>Indicates the acceptable values for the option group option.</p>
     pub allowed_values: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether this option group option can be changed from the default value.</p>
-    pub is_modifiable: bool,
+    pub is_modifiable: ::std::option::Option<bool>,
     /// <p>Indicates whether a value must be specified for this option setting of the option group option.</p>
-    pub is_required: bool,
+    pub is_required: ::std::option::Option<bool>,
     /// <p>The minimum DB engine version required for the corresponding allowed value for this option setting.</p>
     pub minimum_engine_version_per_allowed_value: ::std::option::Option<::std::vec::Vec<crate::types::MinimumEngineVersionPerAllowedValue>>,
 }
@@ -43,11 +43,11 @@ impl OptionGroupOptionSetting {
         self.allowed_values.as_deref()
     }
     /// <p>Indicates whether this option group option can be changed from the default value.</p>
-    pub fn is_modifiable(&self) -> bool {
+    pub fn is_modifiable(&self) -> ::std::option::Option<bool> {
         self.is_modifiable
     }
     /// <p>Indicates whether a value must be specified for this option setting of the option group option.</p>
-    pub fn is_required(&self) -> bool {
+    pub fn is_required(&self) -> ::std::option::Option<bool> {
         self.is_required
     }
     /// <p>The minimum DB engine version required for the corresponding allowed value for this option setting.</p>
@@ -207,8 +207,8 @@ impl OptionGroupOptionSettingBuilder {
             default_value: self.default_value,
             apply_type: self.apply_type,
             allowed_values: self.allowed_values,
-            is_modifiable: self.is_modifiable.unwrap_or_default(),
-            is_required: self.is_required.unwrap_or_default(),
+            is_modifiable: self.is_modifiable,
+            is_required: self.is_required,
             minimum_engine_version_per_allowed_value: self.minimum_engine_version_per_allowed_value,
         }
     }

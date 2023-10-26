@@ -368,6 +368,11 @@ pub fn ser_create_db_instance_input_input(
     if let Some(var_138) = &input.db_system_id {
         scope_137.string(var_138);
     }
+    #[allow(unused_mut)]
+    let mut scope_139 = writer.prefix("DedicatedLogVolume");
+    if let Some(var_140) = &input.dedicated_log_volume {
+        scope_139.boolean(*var_140);
+    }
     writer.finish();
     Ok(::aws_smithy_http::body::SdkBody::from(out))
 }

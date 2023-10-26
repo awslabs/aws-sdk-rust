@@ -22,6 +22,9 @@ impl ListDatasetEntriesInputBuilder {
 }
 /// Fluent builder constructing a request to `ListDatasetEntries`.
 ///
+/// <note>
+/// <p>This operation applies only to Amazon Rekognition Custom Labels.</p>
+/// </note>
 /// <p> Lists the entries (images) within a dataset. An entry is a JSON Line that contains the information for a single image, including the image location, assigned labels, and object location bounding boxes. For more information, see <a href="https://docs.aws.amazon.com/rekognition/latest/customlabels-dg/md-manifest-files.html">Creating a manifest file</a>.</p>
 /// <p>JSON Lines in the response include information about non-terminal errors found in the dataset. Non terminal errors are reported in <code>errors</code> lists within each JSON Line. The same information is reported in the training and testing validation result manifests that Amazon Rekognition Custom Labels creates during model training. </p>
 /// <p>You can filter the response in variety of ways, such as choosing which labels to return and returning JSON Lines created after a specific date. </p>

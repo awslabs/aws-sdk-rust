@@ -3,113 +3,113 @@ pub fn ser_aws_cloud_watch_alarm_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsCloudWatchAlarmDetails,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if input.actions_enabled {
-        object.key("ActionsEnabled").boolean(input.actions_enabled);
+    if let Some(var_1) = &input.actions_enabled {
+        object.key("ActionsEnabled").boolean(*var_1);
     }
-    if let Some(var_1) = &input.alarm_actions {
-        let mut array_2 = object.key("AlarmActions").start_array();
-        for item_3 in var_1 {
+    if let Some(var_2) = &input.alarm_actions {
+        let mut array_3 = object.key("AlarmActions").start_array();
+        for item_4 in var_2 {
             {
-                array_2.value().string(item_3.as_str());
+                array_3.value().string(item_4.as_str());
             }
         }
-        array_2.finish();
+        array_3.finish();
     }
-    if let Some(var_4) = &input.alarm_arn {
-        object.key("AlarmArn").string(var_4.as_str());
+    if let Some(var_5) = &input.alarm_arn {
+        object.key("AlarmArn").string(var_5.as_str());
     }
-    if let Some(var_5) = &input.alarm_configuration_updated_timestamp {
-        object.key("AlarmConfigurationUpdatedTimestamp").string(var_5.as_str());
+    if let Some(var_6) = &input.alarm_configuration_updated_timestamp {
+        object.key("AlarmConfigurationUpdatedTimestamp").string(var_6.as_str());
     }
-    if let Some(var_6) = &input.alarm_description {
-        object.key("AlarmDescription").string(var_6.as_str());
+    if let Some(var_7) = &input.alarm_description {
+        object.key("AlarmDescription").string(var_7.as_str());
     }
-    if let Some(var_7) = &input.alarm_name {
-        object.key("AlarmName").string(var_7.as_str());
+    if let Some(var_8) = &input.alarm_name {
+        object.key("AlarmName").string(var_8.as_str());
     }
-    if let Some(var_8) = &input.comparison_operator {
-        object.key("ComparisonOperator").string(var_8.as_str());
+    if let Some(var_9) = &input.comparison_operator {
+        object.key("ComparisonOperator").string(var_9.as_str());
     }
-    if input.datapoints_to_alarm != 0 {
+    if let Some(var_10) = &input.datapoints_to_alarm {
         object.key("DatapointsToAlarm").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.datapoints_to_alarm).into()),
+            ::aws_smithy_types::Number::NegInt((*var_10).into()),
         );
     }
-    if let Some(var_9) = &input.dimensions {
-        let mut array_10 = object.key("Dimensions").start_array();
-        for item_11 in var_9 {
+    if let Some(var_11) = &input.dimensions {
+        let mut array_12 = object.key("Dimensions").start_array();
+        for item_13 in var_11 {
             {
                 #[allow(unused_mut)]
-                let mut object_12 = array_10.value().start_object();
+                let mut object_14 = array_12.value().start_object();
                 crate::protocol_serde::shape_aws_cloud_watch_alarm_dimensions_details::ser_aws_cloud_watch_alarm_dimensions_details(
-                    &mut object_12,
-                    item_11,
+                    &mut object_14,
+                    item_13,
                 )?;
-                object_12.finish();
+                object_14.finish();
             }
         }
-        array_10.finish();
+        array_12.finish();
     }
-    if let Some(var_13) = &input.evaluate_low_sample_count_percentile {
-        object.key("EvaluateLowSampleCountPercentile").string(var_13.as_str());
+    if let Some(var_15) = &input.evaluate_low_sample_count_percentile {
+        object.key("EvaluateLowSampleCountPercentile").string(var_15.as_str());
     }
-    if input.evaluation_periods != 0 {
+    if let Some(var_16) = &input.evaluation_periods {
         object.key("EvaluationPeriods").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.evaluation_periods).into()),
+            ::aws_smithy_types::Number::NegInt((*var_16).into()),
         );
     }
-    if let Some(var_14) = &input.extended_statistic {
-        object.key("ExtendedStatistic").string(var_14.as_str());
+    if let Some(var_17) = &input.extended_statistic {
+        object.key("ExtendedStatistic").string(var_17.as_str());
     }
-    if let Some(var_15) = &input.insufficient_data_actions {
-        let mut array_16 = object.key("InsufficientDataActions").start_array();
-        for item_17 in var_15 {
+    if let Some(var_18) = &input.insufficient_data_actions {
+        let mut array_19 = object.key("InsufficientDataActions").start_array();
+        for item_20 in var_18 {
             {
-                array_16.value().string(item_17.as_str());
+                array_19.value().string(item_20.as_str());
             }
         }
-        array_16.finish();
+        array_19.finish();
     }
-    if let Some(var_18) = &input.metric_name {
-        object.key("MetricName").string(var_18.as_str());
+    if let Some(var_21) = &input.metric_name {
+        object.key("MetricName").string(var_21.as_str());
     }
-    if let Some(var_19) = &input.namespace {
-        object.key("Namespace").string(var_19.as_str());
+    if let Some(var_22) = &input.namespace {
+        object.key("Namespace").string(var_22.as_str());
     }
-    if let Some(var_20) = &input.ok_actions {
-        let mut array_21 = object.key("OkActions").start_array();
-        for item_22 in var_20 {
+    if let Some(var_23) = &input.ok_actions {
+        let mut array_24 = object.key("OkActions").start_array();
+        for item_25 in var_23 {
             {
-                array_21.value().string(item_22.as_str());
+                array_24.value().string(item_25.as_str());
             }
         }
-        array_21.finish();
+        array_24.finish();
     }
-    if input.period != 0 {
+    if let Some(var_26) = &input.period {
         object.key("Period").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.period).into()),
+            ::aws_smithy_types::Number::NegInt((*var_26).into()),
         );
     }
-    if let Some(var_23) = &input.statistic {
-        object.key("Statistic").string(var_23.as_str());
+    if let Some(var_27) = &input.statistic {
+        object.key("Statistic").string(var_27.as_str());
     }
-    if input.threshold != 0.0 {
+    if let Some(var_28) = &input.threshold {
         object.key("Threshold").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::Float((input.threshold).into()),
+            ::aws_smithy_types::Number::Float((*var_28).into()),
         );
     }
-    if let Some(var_24) = &input.threshold_metric_id {
-        object.key("ThresholdMetricId").string(var_24.as_str());
+    if let Some(var_29) = &input.threshold_metric_id {
+        object.key("ThresholdMetricId").string(var_29.as_str());
     }
-    if let Some(var_25) = &input.treat_missing_data {
-        object.key("TreatMissingData").string(var_25.as_str());
+    if let Some(var_30) = &input.treat_missing_data {
+        object.key("TreatMissingData").string(var_30.as_str());
     }
-    if let Some(var_26) = &input.unit {
-        object.key("Unit").string(var_26.as_str());
+    if let Some(var_31) = &input.unit {
+        object.key("Unit").string(var_31.as_str());
     }
     Ok(())
 }

@@ -7,15 +7,15 @@ pub struct AwsSecretsManagerSecretDetails {
     /// <p>Defines the rotation schedule for the secret.</p>
     pub rotation_rules: ::std::option::Option<crate::types::AwsSecretsManagerSecretRotationRules>,
     /// <p>Whether the rotation occurred within the specified rotation frequency.</p>
-    pub rotation_occurred_within_frequency: bool,
+    pub rotation_occurred_within_frequency: ::std::option::Option<bool>,
     /// <p>The ARN, Key ID, or alias of the KMS key used to encrypt the <code>SecretString</code> or <code>SecretBinary</code> values for versions of this secret.</p>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>Whether rotation is enabled.</p>
-    pub rotation_enabled: bool,
+    pub rotation_enabled: ::std::option::Option<bool>,
     /// <p>The ARN of the Lambda function that rotates the secret.</p>
     pub rotation_lambda_arn: ::std::option::Option<::std::string::String>,
     /// <p>Whether the secret is deleted.</p>
-    pub deleted: bool,
+    pub deleted: ::std::option::Option<bool>,
     /// <p>The name of the secret.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The user-provided description of the secret.</p>
@@ -27,7 +27,7 @@ impl AwsSecretsManagerSecretDetails {
         self.rotation_rules.as_ref()
     }
     /// <p>Whether the rotation occurred within the specified rotation frequency.</p>
-    pub fn rotation_occurred_within_frequency(&self) -> bool {
+    pub fn rotation_occurred_within_frequency(&self) -> ::std::option::Option<bool> {
         self.rotation_occurred_within_frequency
     }
     /// <p>The ARN, Key ID, or alias of the KMS key used to encrypt the <code>SecretString</code> or <code>SecretBinary</code> values for versions of this secret.</p>
@@ -35,7 +35,7 @@ impl AwsSecretsManagerSecretDetails {
         self.kms_key_id.as_deref()
     }
     /// <p>Whether rotation is enabled.</p>
-    pub fn rotation_enabled(&self) -> bool {
+    pub fn rotation_enabled(&self) -> ::std::option::Option<bool> {
         self.rotation_enabled
     }
     /// <p>The ARN of the Lambda function that rotates the secret.</p>
@@ -43,7 +43,7 @@ impl AwsSecretsManagerSecretDetails {
         self.rotation_lambda_arn.as_deref()
     }
     /// <p>Whether the secret is deleted.</p>
-    pub fn deleted(&self) -> bool {
+    pub fn deleted(&self) -> ::std::option::Option<bool> {
         self.deleted
     }
     /// <p>The name of the secret.</p>
@@ -192,11 +192,11 @@ impl AwsSecretsManagerSecretDetailsBuilder {
     pub fn build(self) -> crate::types::AwsSecretsManagerSecretDetails {
         crate::types::AwsSecretsManagerSecretDetails {
             rotation_rules: self.rotation_rules,
-            rotation_occurred_within_frequency: self.rotation_occurred_within_frequency.unwrap_or_default(),
+            rotation_occurred_within_frequency: self.rotation_occurred_within_frequency,
             kms_key_id: self.kms_key_id,
-            rotation_enabled: self.rotation_enabled.unwrap_or_default(),
+            rotation_enabled: self.rotation_enabled,
             rotation_lambda_arn: self.rotation_lambda_arn,
-            deleted: self.deleted.unwrap_or_default(),
+            deleted: self.deleted,
             name: self.name,
             description: self.description,
         }

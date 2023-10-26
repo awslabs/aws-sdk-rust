@@ -9,23 +9,23 @@ pub fn ser_aws_ec2_network_interface_attachment(
     if let Some(var_2) = &input.attachment_id {
         object.key("AttachmentId").string(var_2.as_str());
     }
-    if input.delete_on_termination {
-        object.key("DeleteOnTermination").boolean(input.delete_on_termination);
+    if let Some(var_3) = &input.delete_on_termination {
+        object.key("DeleteOnTermination").boolean(*var_3);
     }
-    if input.device_index != 0 {
+    if let Some(var_4) = &input.device_index {
         object.key("DeviceIndex").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.device_index).into()),
+            ::aws_smithy_types::Number::NegInt((*var_4).into()),
         );
     }
-    if let Some(var_3) = &input.instance_id {
-        object.key("InstanceId").string(var_3.as_str());
+    if let Some(var_5) = &input.instance_id {
+        object.key("InstanceId").string(var_5.as_str());
     }
-    if let Some(var_4) = &input.instance_owner_id {
-        object.key("InstanceOwnerId").string(var_4.as_str());
+    if let Some(var_6) = &input.instance_owner_id {
+        object.key("InstanceOwnerId").string(var_6.as_str());
     }
-    if let Some(var_5) = &input.status {
-        object.key("Status").string(var_5.as_str());
+    if let Some(var_7) = &input.status {
+        object.key("Status").string(var_7.as_str());
     }
     Ok(())
 }

@@ -5,11 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HyperParameterTuningJobConsumedResources {
     /// <p>The wall clock runtime in seconds used by your hyperparameter tuning job.</p>
-    pub runtime_in_seconds: i32,
+    pub runtime_in_seconds: ::std::option::Option<i32>,
 }
 impl HyperParameterTuningJobConsumedResources {
     /// <p>The wall clock runtime in seconds used by your hyperparameter tuning job.</p>
-    pub fn runtime_in_seconds(&self) -> i32 {
+    pub fn runtime_in_seconds(&self) -> ::std::option::Option<i32> {
         self.runtime_in_seconds
     }
 }
@@ -44,7 +44,7 @@ impl HyperParameterTuningJobConsumedResourcesBuilder {
     /// Consumes the builder and constructs a [`HyperParameterTuningJobConsumedResources`](crate::types::HyperParameterTuningJobConsumedResources).
     pub fn build(self) -> crate::types::HyperParameterTuningJobConsumedResources {
         crate::types::HyperParameterTuningJobConsumedResources {
-            runtime_in_seconds: self.runtime_in_seconds.unwrap_or_default(),
+            runtime_in_seconds: self.runtime_in_seconds,
         }
     }
 }

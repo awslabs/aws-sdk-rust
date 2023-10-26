@@ -16,7 +16,7 @@ pub struct FailoverState {
     /// <p>The Amazon Resource Name (ARN) of the Aurora DB cluster that is currently being promoted, and which is associated with this state.</p>
     pub to_db_cluster_arn: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the operation is a global switchover or a global failover. If data loss is allowed, then the operation is a global failover. Otherwise, it's a switchover.</p>
-    pub is_data_loss_allowed: bool,
+    pub is_data_loss_allowed: ::std::option::Option<bool>,
 }
 impl FailoverState {
     /// <p>The current status of the global cluster. Possible values are as follows:</p>
@@ -37,7 +37,7 @@ impl FailoverState {
         self.to_db_cluster_arn.as_deref()
     }
     /// <p>Indicates whether the operation is a global switchover or a global failover. If data loss is allowed, then the operation is a global failover. Otherwise, it's a switchover.</p>
-    pub fn is_data_loss_allowed(&self) -> bool {
+    pub fn is_data_loss_allowed(&self) -> ::std::option::Option<bool> {
         self.is_data_loss_allowed
     }
 }
@@ -135,7 +135,7 @@ impl FailoverStateBuilder {
             status: self.status,
             from_db_cluster_arn: self.from_db_cluster_arn,
             to_db_cluster_arn: self.to_db_cluster_arn,
-            is_data_loss_allowed: self.is_data_loss_allowed.unwrap_or_default(),
+            is_data_loss_allowed: self.is_data_loss_allowed,
         }
     }
 }

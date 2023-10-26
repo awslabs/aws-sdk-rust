@@ -119,6 +119,16 @@ pub(crate) fn lens_list_custom_routing_accelerators_output_accelerators(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn lens_list_custom_routing_endpoint_groups_output_endpoint_groups(
+    input: crate::operation::list_custom_routing_endpoint_groups::ListCustomRoutingEndpointGroupsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::CustomRoutingEndpointGroup>> {
+    let input = match input.endpoint_groups {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_list_custom_routing_listeners_output_listeners(
     input: crate::operation::list_custom_routing_listeners::ListCustomRoutingListenersOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::CustomRoutingListener>> {

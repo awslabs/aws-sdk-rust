@@ -9,7 +9,7 @@ pub struct ModelDashboardModelCard {
     /// <p>The name of a model card.</p>
     pub model_card_name: ::std::option::Option<::std::string::String>,
     /// <p>The model card version.</p>
-    pub model_card_version: i32,
+    pub model_card_version: ::std::option::Option<i32>,
     /// <p>The model card status.</p>
     pub model_card_status: ::std::option::Option<crate::types::ModelCardStatus>,
     /// <p>The KMS Key ID (<code>KMSKeyId</code>) for encryption of model card information.</p>
@@ -39,7 +39,7 @@ impl ModelDashboardModelCard {
         self.model_card_name.as_deref()
     }
     /// <p>The model card version.</p>
-    pub fn model_card_version(&self) -> i32 {
+    pub fn model_card_version(&self) -> ::std::option::Option<i32> {
         self.model_card_version
     }
     /// <p>The model card status.</p>
@@ -283,7 +283,7 @@ impl ModelDashboardModelCardBuilder {
         crate::types::ModelDashboardModelCard {
             model_card_arn: self.model_card_arn,
             model_card_name: self.model_card_name,
-            model_card_version: self.model_card_version.unwrap_or_default(),
+            model_card_version: self.model_card_version,
             model_card_status: self.model_card_status,
             security_config: self.security_config,
             creation_time: self.creation_time,

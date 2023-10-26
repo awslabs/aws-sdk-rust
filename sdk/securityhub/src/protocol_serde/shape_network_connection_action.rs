@@ -27,8 +27,8 @@ pub fn ser_network_connection_action(
     if let Some(var_8) = &input.protocol {
         object.key("Protocol").string(var_8.as_str());
     }
-    if input.blocked {
-        object.key("Blocked").boolean(input.blocked);
+    if let Some(var_9) = &input.blocked {
+        object.key("Blocked").boolean(*var_9);
     }
     Ok(())
 }

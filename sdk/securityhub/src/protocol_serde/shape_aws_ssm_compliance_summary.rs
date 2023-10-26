@@ -6,92 +6,92 @@ pub fn ser_aws_ssm_compliance_summary(
     if let Some(var_1) = &input.status {
         object.key("Status").string(var_1.as_str());
     }
-    if input.compliant_critical_count != 0 {
+    if let Some(var_2) = &input.compliant_critical_count {
         object.key("CompliantCriticalCount").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.compliant_critical_count).into()),
+            ::aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
-    if input.compliant_high_count != 0 {
+    if let Some(var_3) = &input.compliant_high_count {
         object.key("CompliantHighCount").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.compliant_high_count).into()),
+            ::aws_smithy_types::Number::NegInt((*var_3).into()),
         );
     }
-    if input.compliant_medium_count != 0 {
+    if let Some(var_4) = &input.compliant_medium_count {
         object.key("CompliantMediumCount").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.compliant_medium_count).into()),
+            ::aws_smithy_types::Number::NegInt((*var_4).into()),
         );
     }
-    if let Some(var_2) = &input.execution_type {
-        object.key("ExecutionType").string(var_2.as_str());
+    if let Some(var_5) = &input.execution_type {
+        object.key("ExecutionType").string(var_5.as_str());
     }
-    if input.non_compliant_critical_count != 0 {
+    if let Some(var_6) = &input.non_compliant_critical_count {
         object.key("NonCompliantCriticalCount").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.non_compliant_critical_count).into()),
+            ::aws_smithy_types::Number::NegInt((*var_6).into()),
         );
     }
-    if input.compliant_informational_count != 0 {
+    if let Some(var_7) = &input.compliant_informational_count {
         object.key("CompliantInformationalCount").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.compliant_informational_count).into()),
+            ::aws_smithy_types::Number::NegInt((*var_7).into()),
         );
     }
-    if input.non_compliant_informational_count != 0 {
+    if let Some(var_8) = &input.non_compliant_informational_count {
         object.key("NonCompliantInformationalCount").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.non_compliant_informational_count).into()),
+            ::aws_smithy_types::Number::NegInt((*var_8).into()),
         );
     }
-    if input.compliant_unspecified_count != 0 {
+    if let Some(var_9) = &input.compliant_unspecified_count {
         object.key("CompliantUnspecifiedCount").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.compliant_unspecified_count).into()),
+            ::aws_smithy_types::Number::NegInt((*var_9).into()),
         );
     }
-    if input.non_compliant_low_count != 0 {
+    if let Some(var_10) = &input.non_compliant_low_count {
         object.key("NonCompliantLowCount").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.non_compliant_low_count).into()),
+            ::aws_smithy_types::Number::NegInt((*var_10).into()),
         );
     }
-    if input.non_compliant_high_count != 0 {
+    if let Some(var_11) = &input.non_compliant_high_count {
         object.key("NonCompliantHighCount").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.non_compliant_high_count).into()),
+            ::aws_smithy_types::Number::NegInt((*var_11).into()),
         );
     }
-    if input.compliant_low_count != 0 {
+    if let Some(var_12) = &input.compliant_low_count {
         object.key("CompliantLowCount").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.compliant_low_count).into()),
+            ::aws_smithy_types::Number::NegInt((*var_12).into()),
         );
     }
-    if let Some(var_3) = &input.compliance_type {
-        object.key("ComplianceType").string(var_3.as_str());
+    if let Some(var_13) = &input.compliance_type {
+        object.key("ComplianceType").string(var_13.as_str());
     }
-    if let Some(var_4) = &input.patch_baseline_id {
-        object.key("PatchBaselineId").string(var_4.as_str());
+    if let Some(var_14) = &input.patch_baseline_id {
+        object.key("PatchBaselineId").string(var_14.as_str());
     }
-    if let Some(var_5) = &input.overall_severity {
-        object.key("OverallSeverity").string(var_5.as_str());
+    if let Some(var_15) = &input.overall_severity {
+        object.key("OverallSeverity").string(var_15.as_str());
     }
-    if input.non_compliant_medium_count != 0 {
+    if let Some(var_16) = &input.non_compliant_medium_count {
         object.key("NonCompliantMediumCount").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.non_compliant_medium_count).into()),
+            ::aws_smithy_types::Number::NegInt((*var_16).into()),
         );
     }
-    if input.non_compliant_unspecified_count != 0 {
+    if let Some(var_17) = &input.non_compliant_unspecified_count {
         object.key("NonCompliantUnspecifiedCount").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.non_compliant_unspecified_count).into()),
+            ::aws_smithy_types::Number::NegInt((*var_17).into()),
         );
     }
-    if let Some(var_6) = &input.patch_group {
-        object.key("PatchGroup").string(var_6.as_str());
+    if let Some(var_18) = &input.patch_group {
+        object.key("PatchGroup").string(var_18.as_str());
     }
     Ok(())
 }

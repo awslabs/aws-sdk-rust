@@ -7,7 +7,7 @@ pub struct ShadowModelVariantConfig {
     /// <p>The name of the shadow variant.</p>
     pub shadow_model_variant_name: ::std::option::Option<::std::string::String>,
     /// <p> The percentage of inference requests that Amazon SageMaker replicates from the production variant to the shadow variant. </p>
-    pub sampling_percentage: i32,
+    pub sampling_percentage: ::std::option::Option<i32>,
 }
 impl ShadowModelVariantConfig {
     /// <p>The name of the shadow variant.</p>
@@ -15,7 +15,7 @@ impl ShadowModelVariantConfig {
         self.shadow_model_variant_name.as_deref()
     }
     /// <p> The percentage of inference requests that Amazon SageMaker replicates from the production variant to the shadow variant. </p>
-    pub fn sampling_percentage(&self) -> i32 {
+    pub fn sampling_percentage(&self) -> ::std::option::Option<i32> {
         self.sampling_percentage
     }
 }
@@ -66,7 +66,7 @@ impl ShadowModelVariantConfigBuilder {
     pub fn build(self) -> crate::types::ShadowModelVariantConfig {
         crate::types::ShadowModelVariantConfig {
             shadow_model_variant_name: self.shadow_model_variant_name,
-            sampling_percentage: self.sampling_percentage.unwrap_or_default(),
+            sampling_percentage: self.sampling_percentage,
         }
     }
 }

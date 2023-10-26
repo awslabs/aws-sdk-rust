@@ -3,46 +3,44 @@ pub fn ser_aws_network_firewall_firewall_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsNetworkFirewallFirewallDetails,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if input.delete_protection {
-        object.key("DeleteProtection").boolean(input.delete_protection);
+    if let Some(var_1) = &input.delete_protection {
+        object.key("DeleteProtection").boolean(*var_1);
     }
-    if let Some(var_1) = &input.description {
-        object.key("Description").string(var_1.as_str());
+    if let Some(var_2) = &input.description {
+        object.key("Description").string(var_2.as_str());
     }
-    if let Some(var_2) = &input.firewall_arn {
-        object.key("FirewallArn").string(var_2.as_str());
+    if let Some(var_3) = &input.firewall_arn {
+        object.key("FirewallArn").string(var_3.as_str());
     }
-    if let Some(var_3) = &input.firewall_id {
-        object.key("FirewallId").string(var_3.as_str());
+    if let Some(var_4) = &input.firewall_id {
+        object.key("FirewallId").string(var_4.as_str());
     }
-    if let Some(var_4) = &input.firewall_name {
-        object.key("FirewallName").string(var_4.as_str());
+    if let Some(var_5) = &input.firewall_name {
+        object.key("FirewallName").string(var_5.as_str());
     }
-    if let Some(var_5) = &input.firewall_policy_arn {
-        object.key("FirewallPolicyArn").string(var_5.as_str());
+    if let Some(var_6) = &input.firewall_policy_arn {
+        object.key("FirewallPolicyArn").string(var_6.as_str());
     }
-    if input.firewall_policy_change_protection {
-        object
-            .key("FirewallPolicyChangeProtection")
-            .boolean(input.firewall_policy_change_protection);
+    if let Some(var_7) = &input.firewall_policy_change_protection {
+        object.key("FirewallPolicyChangeProtection").boolean(*var_7);
     }
-    if input.subnet_change_protection {
-        object.key("SubnetChangeProtection").boolean(input.subnet_change_protection);
+    if let Some(var_8) = &input.subnet_change_protection {
+        object.key("SubnetChangeProtection").boolean(*var_8);
     }
-    if let Some(var_6) = &input.subnet_mappings {
-        let mut array_7 = object.key("SubnetMappings").start_array();
-        for item_8 in var_6 {
+    if let Some(var_9) = &input.subnet_mappings {
+        let mut array_10 = object.key("SubnetMappings").start_array();
+        for item_11 in var_9 {
             {
                 #[allow(unused_mut)]
-                let mut object_9 = array_7.value().start_object();
-                crate::protocol_serde::shape_aws_network_firewall_firewall_subnet_mappings_details::ser_aws_network_firewall_firewall_subnet_mappings_details(&mut object_9, item_8)?;
-                object_9.finish();
+                let mut object_12 = array_10.value().start_object();
+                crate::protocol_serde::shape_aws_network_firewall_firewall_subnet_mappings_details::ser_aws_network_firewall_firewall_subnet_mappings_details(&mut object_12, item_11)?;
+                object_12.finish();
             }
         }
-        array_7.finish();
+        array_10.finish();
     }
-    if let Some(var_10) = &input.vpc_id {
-        object.key("VpcId").string(var_10.as_str());
+    if let Some(var_13) = &input.vpc_id {
+        object.key("VpcId").string(var_13.as_str());
     }
     Ok(())
 }

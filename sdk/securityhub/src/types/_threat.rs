@@ -9,7 +9,7 @@ pub struct Threat {
     /// <p>The severity of the threat. </p>
     pub severity: ::std::option::Option<::std::string::String>,
     /// <p>This total number of items in which the threat has been detected. </p>
-    pub item_count: i32,
+    pub item_count: ::std::option::Option<i32>,
     /// <p>Provides information about the file paths that were affected by the threat. </p>
     pub file_paths: ::std::option::Option<::std::vec::Vec<crate::types::FilePaths>>,
 }
@@ -23,7 +23,7 @@ impl Threat {
         self.severity.as_deref()
     }
     /// <p>This total number of items in which the threat has been detected. </p>
-    pub fn item_count(&self) -> i32 {
+    pub fn item_count(&self) -> ::std::option::Option<i32> {
         self.item_count
     }
     /// <p>Provides information about the file paths that were affected by the threat. </p>
@@ -115,7 +115,7 @@ impl ThreatBuilder {
         crate::types::Threat {
             name: self.name,
             severity: self.severity,
-            item_count: self.item_count.unwrap_or_default(),
+            item_count: self.item_count,
             file_paths: self.file_paths,
         }
     }

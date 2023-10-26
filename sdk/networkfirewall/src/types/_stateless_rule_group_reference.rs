@@ -7,7 +7,7 @@ pub struct StatelessRuleGroupReference {
     /// <p>The Amazon Resource Name (ARN) of the stateless rule group.</p>
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>An integer setting that indicates the order in which to run the stateless rule groups in a single <code>FirewallPolicy</code>. Network Firewall applies each stateless rule group to a packet starting with the group that has the lowest priority setting. You must ensure that the priority settings are unique within each policy.</p>
-    pub priority: i32,
+    pub priority: ::std::option::Option<i32>,
 }
 impl StatelessRuleGroupReference {
     /// <p>The Amazon Resource Name (ARN) of the stateless rule group.</p>
@@ -15,7 +15,7 @@ impl StatelessRuleGroupReference {
         self.resource_arn.as_deref()
     }
     /// <p>An integer setting that indicates the order in which to run the stateless rule groups in a single <code>FirewallPolicy</code>. Network Firewall applies each stateless rule group to a packet starting with the group that has the lowest priority setting. You must ensure that the priority settings are unique within each policy.</p>
-    pub fn priority(&self) -> i32 {
+    pub fn priority(&self) -> ::std::option::Option<i32> {
         self.priority
     }
 }
@@ -66,7 +66,7 @@ impl StatelessRuleGroupReferenceBuilder {
     pub fn build(self) -> crate::types::StatelessRuleGroupReference {
         crate::types::StatelessRuleGroupReference {
             resource_arn: self.resource_arn,
-            priority: self.priority.unwrap_or_default(),
+            priority: self.priority,
         }
     }
 }

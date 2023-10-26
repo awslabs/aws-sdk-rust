@@ -6,10 +6,10 @@ pub fn ser_aws_lambda_function_layer(
     if let Some(var_1) = &input.arn {
         object.key("Arn").string(var_1.as_str());
     }
-    if input.code_size != 0 {
+    if let Some(var_2) = &input.code_size {
         object.key("CodeSize").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.code_size).into()),
+            ::aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
     Ok(())

@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails {
     /// <p>The hard limit for the ulimit type.</p>
-    pub hard_limit: i32,
+    pub hard_limit: ::std::option::Option<i32>,
     /// <p>The type of the ulimit. Valid values are as follows:</p>
     /// <ul>
     /// <li> <p> <code>core</code> </p> </li>
@@ -26,11 +26,11 @@ pub struct AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails {
     /// </ul>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The soft limit for the ulimit type.</p>
-    pub soft_limit: i32,
+    pub soft_limit: ::std::option::Option<i32>,
 }
 impl AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails {
     /// <p>The hard limit for the ulimit type.</p>
-    pub fn hard_limit(&self) -> i32 {
+    pub fn hard_limit(&self) -> ::std::option::Option<i32> {
         self.hard_limit
     }
     /// <p>The type of the ulimit. Valid values are as follows:</p>
@@ -55,7 +55,7 @@ impl AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails {
         self.name.as_deref()
     }
     /// <p>The soft limit for the ulimit type.</p>
-    pub fn soft_limit(&self) -> i32 {
+    pub fn soft_limit(&self) -> ::std::option::Option<i32> {
         self.soft_limit
     }
 }
@@ -171,9 +171,9 @@ impl AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetailsBuilder {
     /// Consumes the builder and constructs a [`AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails`](crate::types::AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails).
     pub fn build(self) -> crate::types::AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails {
         crate::types::AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails {
-            hard_limit: self.hard_limit.unwrap_or_default(),
+            hard_limit: self.hard_limit,
             name: self.name,
-            soft_limit: self.soft_limit.unwrap_or_default(),
+            soft_limit: self.soft_limit,
         }
     }
 }

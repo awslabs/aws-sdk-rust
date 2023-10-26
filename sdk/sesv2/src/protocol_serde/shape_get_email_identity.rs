@@ -122,6 +122,9 @@ pub(crate) fn de_get_email_identity(
                 "Tags" => {
                     builder = builder.set_tags(crate::protocol_serde::shape_tag_list::de_tag_list(tokens)?);
                 }
+                "VerificationInfo" => {
+                    builder = builder.set_verification_info(crate::protocol_serde::shape_verification_info::de_verification_info(tokens)?);
+                }
                 "VerificationStatus" => {
                     builder = builder.set_verification_status(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

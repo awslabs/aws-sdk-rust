@@ -71,6 +71,17 @@ where
                         "ErrorDetails" => {
                             builder = builder.set_error_details(crate::protocol_serde::shape_error_details::de_error_details(tokens)?);
                         }
+                        "EngineVersion" => {
+                            builder = builder.set_engine_version(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "AvailablePluginProperties" => {
+                            builder = builder
+                                .set_available_plugin_properties(crate::protocol_serde::shape_plugin_properties::de_plugin_properties(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

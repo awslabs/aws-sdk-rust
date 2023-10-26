@@ -3,23 +3,23 @@ pub fn ser_aws_ec2_launch_template_data_instance_market_options_spot_options_det
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetails,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if input.block_duration_minutes != 0 {
+    if let Some(var_1) = &input.block_duration_minutes {
         object.key("BlockDurationMinutes").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.block_duration_minutes).into()),
+            ::aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if let Some(var_1) = &input.instance_interruption_behavior {
-        object.key("InstanceInterruptionBehavior").string(var_1.as_str());
+    if let Some(var_2) = &input.instance_interruption_behavior {
+        object.key("InstanceInterruptionBehavior").string(var_2.as_str());
     }
-    if let Some(var_2) = &input.max_price {
-        object.key("MaxPrice").string(var_2.as_str());
+    if let Some(var_3) = &input.max_price {
+        object.key("MaxPrice").string(var_3.as_str());
     }
-    if let Some(var_3) = &input.spot_instance_type {
-        object.key("SpotInstanceType").string(var_3.as_str());
+    if let Some(var_4) = &input.spot_instance_type {
+        object.key("SpotInstanceType").string(var_4.as_str());
     }
-    if let Some(var_4) = &input.valid_until {
-        object.key("ValidUntil").string(var_4.as_str());
+    if let Some(var_5) = &input.valid_until {
+        object.key("ValidUntil").string(var_5.as_str());
     }
     Ok(())
 }

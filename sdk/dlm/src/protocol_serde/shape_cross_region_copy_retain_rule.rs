@@ -3,14 +3,14 @@ pub fn ser_cross_region_copy_retain_rule(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CrossRegionCopyRetainRule,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if input.interval != 0 {
+    if let Some(var_1) = &input.interval {
         object.key("Interval").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.interval).into()),
+            ::aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if let Some(var_1) = &input.interval_unit {
-        object.key("IntervalUnit").string(var_1.as_str());
+    if let Some(var_2) = &input.interval_unit {
+        object.key("IntervalUnit").string(var_2.as_str());
     }
     Ok(())
 }

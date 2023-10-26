@@ -3,35 +3,35 @@ pub fn ser_aws_elasticsearch_domain_elasticsearch_cluster_config_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsElasticsearchDomainElasticsearchClusterConfigDetails,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if input.dedicated_master_count != 0 {
+    if let Some(var_1) = &input.dedicated_master_count {
         object.key("DedicatedMasterCount").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.dedicated_master_count).into()),
+            ::aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if input.dedicated_master_enabled {
-        object.key("DedicatedMasterEnabled").boolean(input.dedicated_master_enabled);
+    if let Some(var_2) = &input.dedicated_master_enabled {
+        object.key("DedicatedMasterEnabled").boolean(*var_2);
     }
-    if let Some(var_1) = &input.dedicated_master_type {
-        object.key("DedicatedMasterType").string(var_1.as_str());
+    if let Some(var_3) = &input.dedicated_master_type {
+        object.key("DedicatedMasterType").string(var_3.as_str());
     }
-    if input.instance_count != 0 {
+    if let Some(var_4) = &input.instance_count {
         object.key("InstanceCount").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.instance_count).into()),
+            ::aws_smithy_types::Number::NegInt((*var_4).into()),
         );
     }
-    if let Some(var_2) = &input.instance_type {
-        object.key("InstanceType").string(var_2.as_str());
+    if let Some(var_5) = &input.instance_type {
+        object.key("InstanceType").string(var_5.as_str());
     }
-    if let Some(var_3) = &input.zone_awareness_config {
+    if let Some(var_6) = &input.zone_awareness_config {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("ZoneAwarenessConfig").start_object();
-        crate::protocol_serde::shape_aws_elasticsearch_domain_elasticsearch_cluster_config_zone_awareness_config_details::ser_aws_elasticsearch_domain_elasticsearch_cluster_config_zone_awareness_config_details(&mut object_4, var_3)?;
-        object_4.finish();
+        let mut object_7 = object.key("ZoneAwarenessConfig").start_object();
+        crate::protocol_serde::shape_aws_elasticsearch_domain_elasticsearch_cluster_config_zone_awareness_config_details::ser_aws_elasticsearch_domain_elasticsearch_cluster_config_zone_awareness_config_details(&mut object_7, var_6)?;
+        object_7.finish();
     }
-    if input.zone_awareness_enabled {
-        object.key("ZoneAwarenessEnabled").boolean(input.zone_awareness_enabled);
+    if let Some(var_8) = &input.zone_awareness_enabled {
+        object.key("ZoneAwarenessEnabled").boolean(*var_8);
     }
     Ok(())
 }

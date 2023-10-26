@@ -18,8 +18,8 @@ pub fn ser_processing_output(
         crate::protocol_serde::shape_processing_feature_store_output::ser_processing_feature_store_output(&mut object_5, var_4)?;
         object_5.finish();
     }
-    if input.app_managed {
-        object.key("AppManaged").boolean(input.app_managed);
+    if let Some(var_6) = &input.app_managed {
+        object.key("AppManaged").boolean(*var_6);
     }
     Ok(())
 }

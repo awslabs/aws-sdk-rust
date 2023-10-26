@@ -3,14 +3,14 @@ pub fn ser_firewall_policy_stateless_rule_group_references_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::FirewallPolicyStatelessRuleGroupReferencesDetails,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if input.priority != 0 {
+    if let Some(var_1) = &input.priority {
         object.key("Priority").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.priority).into()),
+            ::aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if let Some(var_1) = &input.resource_arn {
-        object.key("ResourceArn").string(var_1.as_str());
+    if let Some(var_2) = &input.resource_arn {
+        object.key("ResourceArn").string(var_2.as_str());
     }
     Ok(())
 }

@@ -12,7 +12,7 @@ pub struct DbProxyTargetGroup {
     /// <p>The Amazon Resource Name (ARN) representing the target group.</p>
     pub target_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether this target group is the first one used for connection requests by the associated proxy. Because each proxy is currently associated with a single target group, currently this setting is always <code>true</code>.</p>
-    pub is_default: bool,
+    pub is_default: ::std::option::Option<bool>,
     /// <p>The current status of this target group. A status of <code>available</code> means the target group is correctly associated with a database. Other values indicate that you must wait for the target group to be ready, or take some action to resolve an issue.</p>
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>The settings that determine the size and behavior of the connection pool for the target group.</p>
@@ -36,7 +36,7 @@ impl DbProxyTargetGroup {
         self.target_group_arn.as_deref()
     }
     /// <p>Indicates whether this target group is the first one used for connection requests by the associated proxy. Because each proxy is currently associated with a single target group, currently this setting is always <code>true</code>.</p>
-    pub fn is_default(&self) -> bool {
+    pub fn is_default(&self) -> ::std::option::Option<bool> {
         self.is_default
     }
     /// <p>The current status of this target group. A status of <code>available</code> means the target group is correctly associated with a database. Other values indicate that you must wait for the target group to be ready, or take some action to resolve an issue.</p>
@@ -195,7 +195,7 @@ impl DbProxyTargetGroupBuilder {
             db_proxy_name: self.db_proxy_name,
             target_group_name: self.target_group_name,
             target_group_arn: self.target_group_arn,
-            is_default: self.is_default.unwrap_or_default(),
+            is_default: self.is_default,
             status: self.status,
             connection_pool_config: self.connection_pool_config,
             created_date: self.created_date,

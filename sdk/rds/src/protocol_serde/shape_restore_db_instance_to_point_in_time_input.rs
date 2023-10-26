@@ -265,6 +265,11 @@ pub fn ser_restore_db_instance_to_point_in_time_input_input(
             ::aws_smithy_types::Number::NegInt((*var_101).into()),
         );
     }
+    #[allow(unused_mut)]
+    let mut scope_102 = writer.prefix("DedicatedLogVolume");
+    if let Some(var_103) = &input.dedicated_log_volume {
+        scope_102.boolean(*var_103);
+    }
     writer.finish();
     Ok(::aws_smithy_http::body::SdkBody::from(out))
 }

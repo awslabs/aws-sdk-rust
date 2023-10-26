@@ -271,6 +271,8 @@ pub type DisassociateOpsItemRelatedItemErrorKind = DisassociateOpsItemRelatedIte
 pub enum DisassociateOpsItemRelatedItemError {
     /// <p>An error occurred on the server side.</p>
     InternalServerError(crate::types::error::InternalServerError),
+    /// <p>The specified OpsItem is in the process of being deleted.</p>
+    OpsItemConflictException(crate::types::error::OpsItemConflictException),
     /// <p>A specified parameter argument isn't valid. Verify the available arguments and try again.</p>
     OpsItemInvalidParameterException(crate::types::error::OpsItemInvalidParameterException),
     /// <p>The specified OpsItem ID doesn't exist. Verify the ID and try again.</p>
@@ -296,6 +298,7 @@ impl ::std::fmt::Display for DisassociateOpsItemRelatedItemError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
             Self::InternalServerError(_inner) => _inner.fmt(f),
+            Self::OpsItemConflictException(_inner) => _inner.fmt(f),
             Self::OpsItemInvalidParameterException(_inner) => _inner.fmt(f),
             Self::OpsItemNotFoundException(_inner) => _inner.fmt(f),
             Self::OpsItemRelatedItemAssociationNotFoundException(_inner) => _inner.fmt(f),
@@ -307,6 +310,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for DisassociateO
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::InternalServerError(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::OpsItemConflictException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::OpsItemInvalidParameterException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::OpsItemNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::OpsItemRelatedItemAssociationNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
@@ -347,6 +351,7 @@ impl DisassociateOpsItemRelatedItemError {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         match self {
             Self::InternalServerError(e) => e.meta(),
+            Self::OpsItemConflictException(e) => e.meta(),
             Self::OpsItemInvalidParameterException(e) => e.meta(),
             Self::OpsItemNotFoundException(e) => e.meta(),
             Self::OpsItemRelatedItemAssociationNotFoundException(e) => e.meta(),
@@ -356,6 +361,10 @@ impl DisassociateOpsItemRelatedItemError {
     /// Returns `true` if the error kind is `DisassociateOpsItemRelatedItemError::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(self, Self::InternalServerError(_))
+    }
+    /// Returns `true` if the error kind is `DisassociateOpsItemRelatedItemError::OpsItemConflictException`.
+    pub fn is_ops_item_conflict_exception(&self) -> bool {
+        matches!(self, Self::OpsItemConflictException(_))
     }
     /// Returns `true` if the error kind is `DisassociateOpsItemRelatedItemError::OpsItemInvalidParameterException`.
     pub fn is_ops_item_invalid_parameter_exception(&self) -> bool {
@@ -374,6 +383,7 @@ impl ::std::error::Error for DisassociateOpsItemRelatedItemError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
             Self::InternalServerError(_inner) => ::std::option::Option::Some(_inner),
+            Self::OpsItemConflictException(_inner) => ::std::option::Option::Some(_inner),
             Self::OpsItemInvalidParameterException(_inner) => ::std::option::Option::Some(_inner),
             Self::OpsItemNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::OpsItemRelatedItemAssociationNotFoundException(_inner) => ::std::option::Option::Some(_inner),

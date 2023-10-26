@@ -8,7 +8,7 @@ pub struct AwsWafRegionalRateBasedRuleMatchPredicate {
     pub data_id: ::std::option::Option<::std::string::String>,
     /// <p>If set to <code>true</code>, then the rule actions are performed on requests that match the predicate settings.</p>
     /// <p>If set to <code>false</code>, then the rule actions are performed on all requests except those that match the predicate settings.</p>
-    pub negated: bool,
+    pub negated: ::std::option::Option<bool>,
     /// <p>The type of predicate. Valid values are as follows:</p>
     /// <ul>
     /// <li> <p> <code>ByteMatch</code> </p> </li>
@@ -28,7 +28,7 @@ impl AwsWafRegionalRateBasedRuleMatchPredicate {
     }
     /// <p>If set to <code>true</code>, then the rule actions are performed on requests that match the predicate settings.</p>
     /// <p>If set to <code>false</code>, then the rule actions are performed on all requests except those that match the predicate settings.</p>
-    pub fn negated(&self) -> bool {
+    pub fn negated(&self) -> ::std::option::Option<bool> {
         self.negated
     }
     /// <p>The type of predicate. Valid values are as follows:</p>
@@ -137,7 +137,7 @@ impl AwsWafRegionalRateBasedRuleMatchPredicateBuilder {
     pub fn build(self) -> crate::types::AwsWafRegionalRateBasedRuleMatchPredicate {
         crate::types::AwsWafRegionalRateBasedRuleMatchPredicate {
             data_id: self.data_id,
-            negated: self.negated.unwrap_or_default(),
+            negated: self.negated,
             r#type: self.r#type,
         }
     }

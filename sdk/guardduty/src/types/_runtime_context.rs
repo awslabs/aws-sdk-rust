@@ -41,7 +41,7 @@ pub struct RuntimeContext {
     /// <p>Represents the communication protocol associated with the address. For example, the address family <code>AF_INET</code> is used for IP version of 4 protocol.</p>
     pub address_family: ::std::option::Option<::std::string::String>,
     /// <p>Specifies a particular protocol within the address family. Usually there is a single protocol in address families. For example, the address family <code>AF_INET</code> only has the IP protocol.</p>
-    pub iana_protocol_number: i32,
+    pub iana_protocol_number: ::std::option::Option<i32>,
     /// <p>Specifies the Region of a process's address space such as stack and heap.</p>
     pub memory_regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -119,7 +119,7 @@ impl RuntimeContext {
         self.address_family.as_deref()
     }
     /// <p>Specifies a particular protocol within the address family. Usually there is a single protocol in address families. For example, the address family <code>AF_INET</code> only has the IP protocol.</p>
-    pub fn iana_protocol_number(&self) -> i32 {
+    pub fn iana_protocol_number(&self) -> ::std::option::Option<i32> {
         self.iana_protocol_number
     }
     /// <p>Specifies the Region of a process's address space such as stack and heap.</p>
@@ -473,7 +473,7 @@ impl RuntimeContextBuilder {
             shell_history_file_path: self.shell_history_file_path,
             target_process: self.target_process,
             address_family: self.address_family,
-            iana_protocol_number: self.iana_protocol_number.unwrap_or_default(),
+            iana_protocol_number: self.iana_protocol_number,
             memory_regions: self.memory_regions,
         }
     }

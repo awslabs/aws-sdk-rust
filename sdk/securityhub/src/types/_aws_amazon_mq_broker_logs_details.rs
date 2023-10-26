@@ -5,9 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsAmazonMqBrokerLogsDetails {
     /// <p> Activates audit logging. Every user management action made using JMX or the ActiveMQ Web Console is logged. Doesn't apply to RabbitMQ brokers. </p>
-    pub audit: bool,
+    pub audit: ::std::option::Option<bool>,
     /// <p> Activates general logging. </p>
-    pub general: bool,
+    pub general: ::std::option::Option<bool>,
     /// <p> The location of the CloudWatch Logs log group where audit logs are sent. </p>
     pub audit_log_group: ::std::option::Option<::std::string::String>,
     /// <p> The location of the CloudWatch Logs log group where general logs are sent. </p>
@@ -17,11 +17,11 @@ pub struct AwsAmazonMqBrokerLogsDetails {
 }
 impl AwsAmazonMqBrokerLogsDetails {
     /// <p> Activates audit logging. Every user management action made using JMX or the ActiveMQ Web Console is logged. Doesn't apply to RabbitMQ brokers. </p>
-    pub fn audit(&self) -> bool {
+    pub fn audit(&self) -> ::std::option::Option<bool> {
         self.audit
     }
     /// <p> Activates general logging. </p>
-    pub fn general(&self) -> bool {
+    pub fn general(&self) -> ::std::option::Option<bool> {
         self.general
     }
     /// <p> The location of the CloudWatch Logs log group where audit logs are sent. </p>
@@ -128,8 +128,8 @@ impl AwsAmazonMqBrokerLogsDetailsBuilder {
     /// Consumes the builder and constructs a [`AwsAmazonMqBrokerLogsDetails`](crate::types::AwsAmazonMqBrokerLogsDetails).
     pub fn build(self) -> crate::types::AwsAmazonMqBrokerLogsDetails {
         crate::types::AwsAmazonMqBrokerLogsDetails {
-            audit: self.audit.unwrap_or_default(),
-            general: self.general.unwrap_or_default(),
+            audit: self.audit,
+            general: self.general,
             audit_log_group: self.audit_log_group,
             general_log_group: self.general_log_group,
             pending: self.pending,

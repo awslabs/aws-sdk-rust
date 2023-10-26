@@ -12,7 +12,7 @@ pub struct AwsDynamoDbTableRestoreSummary {
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     pub restore_date_time: ::std::option::Option<::std::string::String>,
     /// <p>Whether a restore is currently in progress.</p>
-    pub restore_in_progress: bool,
+    pub restore_in_progress: ::std::option::Option<bool>,
 }
 impl AwsDynamoDbTableRestoreSummary {
     /// <p>The ARN of the source backup from which the table was restored.</p>
@@ -29,7 +29,7 @@ impl AwsDynamoDbTableRestoreSummary {
         self.restore_date_time.as_deref()
     }
     /// <p>Whether a restore is currently in progress.</p>
-    pub fn restore_in_progress(&self) -> bool {
+    pub fn restore_in_progress(&self) -> ::std::option::Option<bool> {
         self.restore_in_progress
     }
 }
@@ -115,7 +115,7 @@ impl AwsDynamoDbTableRestoreSummaryBuilder {
             source_backup_arn: self.source_backup_arn,
             source_table_arn: self.source_table_arn,
             restore_date_time: self.restore_date_time,
-            restore_in_progress: self.restore_in_progress.unwrap_or_default(),
+            restore_in_progress: self.restore_in_progress,
         }
     }
 }

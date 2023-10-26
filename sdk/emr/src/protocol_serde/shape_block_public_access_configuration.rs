@@ -57,47 +57,45 @@ pub fn ser_block_public_access_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::BlockPublicAccessConfiguration,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    {
-        object
-            .key("BlockPublicSecurityGroupRules")
-            .boolean(input.block_public_security_group_rules);
+    if let Some(var_1) = &input.block_public_security_group_rules {
+        object.key("BlockPublicSecurityGroupRules").boolean(*var_1);
     }
-    if let Some(var_1) = &input.permitted_public_security_group_rule_ranges {
-        let mut array_2 = object.key("PermittedPublicSecurityGroupRuleRanges").start_array();
-        for item_3 in var_1 {
+    if let Some(var_2) = &input.permitted_public_security_group_rule_ranges {
+        let mut array_3 = object.key("PermittedPublicSecurityGroupRuleRanges").start_array();
+        for item_4 in var_2 {
             {
                 #[allow(unused_mut)]
-                let mut object_4 = array_2.value().start_object();
-                crate::protocol_serde::shape_port_range::ser_port_range(&mut object_4, item_3)?;
-                object_4.finish();
+                let mut object_5 = array_3.value().start_object();
+                crate::protocol_serde::shape_port_range::ser_port_range(&mut object_5, item_4)?;
+                object_5.finish();
             }
         }
-        array_2.finish();
+        array_3.finish();
     }
-    if let Some(var_5) = &input.classification {
-        object.key("Classification").string(var_5.as_str());
+    if let Some(var_6) = &input.classification {
+        object.key("Classification").string(var_6.as_str());
     }
-    if let Some(var_6) = &input.configurations {
-        let mut array_7 = object.key("Configurations").start_array();
-        for item_8 in var_6 {
+    if let Some(var_7) = &input.configurations {
+        let mut array_8 = object.key("Configurations").start_array();
+        for item_9 in var_7 {
             {
                 #[allow(unused_mut)]
-                let mut object_9 = array_7.value().start_object();
-                crate::protocol_serde::shape_configuration::ser_configuration(&mut object_9, item_8)?;
-                object_9.finish();
+                let mut object_10 = array_8.value().start_object();
+                crate::protocol_serde::shape_configuration::ser_configuration(&mut object_10, item_9)?;
+                object_10.finish();
             }
         }
-        array_7.finish();
+        array_8.finish();
     }
-    if let Some(var_10) = &input.properties {
+    if let Some(var_11) = &input.properties {
         #[allow(unused_mut)]
-        let mut object_11 = object.key("Properties").start_object();
-        for (key_12, value_13) in var_10 {
+        let mut object_12 = object.key("Properties").start_object();
+        for (key_13, value_14) in var_11 {
             {
-                object_11.key(key_12.as_str()).string(value_13.as_str());
+                object_12.key(key_13.as_str()).string(value_14.as_str());
             }
         }
-        object_11.finish();
+        object_12.finish();
     }
     Ok(())
 }

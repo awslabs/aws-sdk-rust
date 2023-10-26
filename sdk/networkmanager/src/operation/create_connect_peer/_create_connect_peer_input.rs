@@ -17,6 +17,8 @@ pub struct CreateConnectPeerInput {
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The client token associated with the request.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
+    /// <p>The subnet ARN for the Connect peer.</p>
+    pub subnet_arn: ::std::option::Option<::std::string::String>,
 }
 impl CreateConnectPeerInput {
     /// <p>The ID of the connection attachment.</p>
@@ -47,6 +49,10 @@ impl CreateConnectPeerInput {
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
+    /// <p>The subnet ARN for the Connect peer.</p>
+    pub fn subnet_arn(&self) -> ::std::option::Option<&str> {
+        self.subnet_arn.as_deref()
+    }
 }
 impl CreateConnectPeerInput {
     /// Creates a new builder-style object to manufacture [`CreateConnectPeerInput`](crate::operation::create_connect_peer::CreateConnectPeerInput).
@@ -66,6 +72,7 @@ pub struct CreateConnectPeerInputBuilder {
     pub(crate) inside_cidr_blocks: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
+    pub(crate) subnet_arn: ::std::option::Option<::std::string::String>,
 }
 impl CreateConnectPeerInputBuilder {
     /// <p>The ID of the connection attachment.</p>
@@ -178,6 +185,20 @@ impl CreateConnectPeerInputBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
+    /// <p>The subnet ARN for the Connect peer.</p>
+    pub fn subnet_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.subnet_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The subnet ARN for the Connect peer.</p>
+    pub fn set_subnet_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.subnet_arn = input;
+        self
+    }
+    /// <p>The subnet ARN for the Connect peer.</p>
+    pub fn get_subnet_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subnet_arn
+    }
     /// Consumes the builder and constructs a [`CreateConnectPeerInput`](crate::operation::create_connect_peer::CreateConnectPeerInput).
     pub fn build(
         self,
@@ -190,6 +211,7 @@ impl CreateConnectPeerInputBuilder {
             inside_cidr_blocks: self.inside_cidr_blocks,
             tags: self.tags,
             client_token: self.client_token,
+            subnet_arn: self.subnet_arn,
         })
     }
 }

@@ -6,9 +6,9 @@ pub struct DescribeOrganizationConfigurationOutput {
     /// <p>Indicates whether GuardDuty is automatically enabled for accounts added to the organization.</p>
     /// <p>Even though this is still supported, we recommend using <code>AutoEnableOrganizationMembers</code> to achieve the similar results.</p>
     #[deprecated(note = "This field is deprecated, use AutoEnableOrganizationMembers instead")]
-    pub auto_enable: bool,
+    pub auto_enable: ::std::option::Option<bool>,
     /// <p>Indicates whether the maximum number of allowed member accounts are already associated with the delegated administrator account for your organization.</p>
-    pub member_account_limit_reached: bool,
+    pub member_account_limit_reached: ::std::option::Option<bool>,
     /// <p>Describes which data sources are enabled automatically for member accounts.</p>
     #[deprecated(note = "This parameter is deprecated, use Features instead")]
     pub data_sources: ::std::option::Option<crate::types::OrganizationDataSourceConfigurationsResult>,
@@ -29,11 +29,11 @@ impl DescribeOrganizationConfigurationOutput {
     /// <p>Indicates whether GuardDuty is automatically enabled for accounts added to the organization.</p>
     /// <p>Even though this is still supported, we recommend using <code>AutoEnableOrganizationMembers</code> to achieve the similar results.</p>
     #[deprecated(note = "This field is deprecated, use AutoEnableOrganizationMembers instead")]
-    pub fn auto_enable(&self) -> bool {
+    pub fn auto_enable(&self) -> ::std::option::Option<bool> {
         self.auto_enable
     }
     /// <p>Indicates whether the maximum number of allowed member accounts are already associated with the delegated administrator account for your organization.</p>
-    pub fn member_account_limit_reached(&self) -> bool {
+    pub fn member_account_limit_reached(&self) -> ::std::option::Option<bool> {
         self.member_account_limit_reached
     }
     /// <p>Describes which data sources are enabled automatically for member accounts.</p>
@@ -210,8 +210,8 @@ impl DescribeOrganizationConfigurationOutputBuilder {
     /// Consumes the builder and constructs a [`DescribeOrganizationConfigurationOutput`](crate::operation::describe_organization_configuration::DescribeOrganizationConfigurationOutput).
     pub fn build(self) -> crate::operation::describe_organization_configuration::DescribeOrganizationConfigurationOutput {
         crate::operation::describe_organization_configuration::DescribeOrganizationConfigurationOutput {
-            auto_enable: self.auto_enable.unwrap_or_default(),
-            member_account_limit_reached: self.member_account_limit_reached.unwrap_or_default(),
+            auto_enable: self.auto_enable,
+            member_account_limit_reached: self.member_account_limit_reached,
             data_sources: self.data_sources,
             features: self.features,
             next_token: self.next_token,

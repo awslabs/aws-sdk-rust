@@ -7,7 +7,7 @@ pub struct ResizeInfo {
     /// <p>Returns the value <code>ClassicResize</code>.</p>
     pub resize_type: ::std::option::Option<::std::string::String>,
     /// <p>A boolean value indicating if the resize operation can be cancelled.</p>
-    pub allow_cancel_resize: bool,
+    pub allow_cancel_resize: ::std::option::Option<bool>,
 }
 impl ResizeInfo {
     /// <p>Returns the value <code>ClassicResize</code>.</p>
@@ -15,7 +15,7 @@ impl ResizeInfo {
         self.resize_type.as_deref()
     }
     /// <p>A boolean value indicating if the resize operation can be cancelled.</p>
-    pub fn allow_cancel_resize(&self) -> bool {
+    pub fn allow_cancel_resize(&self) -> ::std::option::Option<bool> {
         self.allow_cancel_resize
     }
 }
@@ -66,7 +66,7 @@ impl ResizeInfoBuilder {
     pub fn build(self) -> crate::types::ResizeInfo {
         crate::types::ResizeInfo {
             resize_type: self.resize_type,
-            allow_cancel_resize: self.allow_cancel_resize.unwrap_or_default(),
+            allow_cancel_resize: self.allow_cancel_resize,
         }
     }
 }

@@ -12,10 +12,10 @@ pub fn ser_aws_cloud_front_distribution_origin_ssl_protocols(
         }
         array_2.finish();
     }
-    if input.quantity != 0 {
+    if let Some(var_4) = &input.quantity {
         object.key("Quantity").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.quantity).into()),
+            ::aws_smithy_types::Number::NegInt((*var_4).into()),
         );
     }
     Ok(())

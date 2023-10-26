@@ -5,23 +5,23 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LabelCountersForWorkteam {
     /// <p>The total number of data objects labeled by a human worker.</p>
-    pub human_labeled: i32,
+    pub human_labeled: ::std::option::Option<i32>,
     /// <p>The total number of data objects that need to be labeled by a human worker.</p>
-    pub pending_human: i32,
+    pub pending_human: ::std::option::Option<i32>,
     /// <p>The total number of tasks in the labeling job.</p>
-    pub total: i32,
+    pub total: ::std::option::Option<i32>,
 }
 impl LabelCountersForWorkteam {
     /// <p>The total number of data objects labeled by a human worker.</p>
-    pub fn human_labeled(&self) -> i32 {
+    pub fn human_labeled(&self) -> ::std::option::Option<i32> {
         self.human_labeled
     }
     /// <p>The total number of data objects that need to be labeled by a human worker.</p>
-    pub fn pending_human(&self) -> i32 {
+    pub fn pending_human(&self) -> ::std::option::Option<i32> {
         self.pending_human
     }
     /// <p>The total number of tasks in the labeling job.</p>
-    pub fn total(&self) -> i32 {
+    pub fn total(&self) -> ::std::option::Option<i32> {
         self.total
     }
 }
@@ -86,9 +86,9 @@ impl LabelCountersForWorkteamBuilder {
     /// Consumes the builder and constructs a [`LabelCountersForWorkteam`](crate::types::LabelCountersForWorkteam).
     pub fn build(self) -> crate::types::LabelCountersForWorkteam {
         crate::types::LabelCountersForWorkteam {
-            human_labeled: self.human_labeled.unwrap_or_default(),
-            pending_human: self.pending_human.unwrap_or_default(),
-            total: self.total.unwrap_or_default(),
+            human_labeled: self.human_labeled,
+            pending_human: self.pending_human,
+            total: self.total,
         }
     }
 }

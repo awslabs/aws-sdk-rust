@@ -35,7 +35,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = "0.56.1"
-//! aws-sdk-entityresolution = "0.5.0"
+//! aws-sdk-entityresolution = "0.6.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
@@ -152,13 +152,13 @@ pub use config::Config;
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`CreateMatchingWorkflow`](crate::operation::create_matching_workflow) operation has
-/// a [`Client::create_matching_workflow`], function which returns a builder for that operation.
+/// For example, the [`CreateIdMappingWorkflow`](crate::operation::create_id_mapping_workflow) operation has
+/// a [`Client::create_id_mapping_workflow`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.create_matching_workflow()
+/// let result = client.create_id_mapping_workflow()
 ///     .workflow_name("example")
 ///     .send()
 ///     .await;

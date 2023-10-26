@@ -13,6 +13,7 @@
 /// # let resolutiontype = unimplemented!();
 /// match resolutiontype {
 ///     ResolutionType::MlMatching => { /* ... */ },
+///     ResolutionType::Provider => { /* ... */ },
 ///     ResolutionType::RuleMatching => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -44,6 +45,8 @@ pub enum ResolutionType {
     #[allow(missing_docs)] // documentation missing in model
     MlMatching,
     #[allow(missing_docs)] // documentation missing in model
+    Provider,
+    #[allow(missing_docs)] // documentation missing in model
     RuleMatching,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
@@ -52,6 +55,7 @@ impl ::std::convert::From<&str> for ResolutionType {
     fn from(s: &str) -> Self {
         match s {
             "ML_MATCHING" => ResolutionType::MlMatching,
+            "PROVIDER" => ResolutionType::Provider,
             "RULE_MATCHING" => ResolutionType::RuleMatching,
             other => ResolutionType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
@@ -69,13 +73,14 @@ impl ResolutionType {
     pub fn as_str(&self) -> &str {
         match self {
             ResolutionType::MlMatching => "ML_MATCHING",
+            ResolutionType::Provider => "PROVIDER",
             ResolutionType::RuleMatching => "RULE_MATCHING",
             ResolutionType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ML_MATCHING", "RULE_MATCHING"]
+        &["ML_MATCHING", "PROVIDER", "RULE_MATCHING"]
     }
 }
 impl ::std::convert::AsRef<str> for ResolutionType {

@@ -6,26 +6,26 @@ pub fn ser_create_rule(
     if let Some(var_1) = &input.location {
         object.key("Location").string(var_1.as_str());
     }
-    if input.interval != 0 {
+    if let Some(var_2) = &input.interval {
         object.key("Interval").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.interval).into()),
+            ::aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
-    if let Some(var_2) = &input.interval_unit {
-        object.key("IntervalUnit").string(var_2.as_str());
+    if let Some(var_3) = &input.interval_unit {
+        object.key("IntervalUnit").string(var_3.as_str());
     }
-    if let Some(var_3) = &input.times {
-        let mut array_4 = object.key("Times").start_array();
-        for item_5 in var_3 {
+    if let Some(var_4) = &input.times {
+        let mut array_5 = object.key("Times").start_array();
+        for item_6 in var_4 {
             {
-                array_4.value().string(item_5.as_str());
+                array_5.value().string(item_6.as_str());
             }
         }
-        array_4.finish();
+        array_5.finish();
     }
-    if let Some(var_6) = &input.cron_expression {
-        object.key("CronExpression").string(var_6.as_str());
+    if let Some(var_7) = &input.cron_expression {
+        object.key("CronExpression").string(var_7.as_str());
     }
     Ok(())
 }

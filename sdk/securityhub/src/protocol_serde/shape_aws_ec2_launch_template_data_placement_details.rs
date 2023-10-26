@@ -18,17 +18,17 @@ pub fn ser_aws_ec2_launch_template_data_placement_details(
     if let Some(var_5) = &input.host_resource_group_arn {
         object.key("HostResourceGroupArn").string(var_5.as_str());
     }
-    if input.partition_number != 0 {
+    if let Some(var_6) = &input.partition_number {
         object.key("PartitionNumber").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.partition_number).into()),
+            ::aws_smithy_types::Number::NegInt((*var_6).into()),
         );
     }
-    if let Some(var_6) = &input.spread_domain {
-        object.key("SpreadDomain").string(var_6.as_str());
+    if let Some(var_7) = &input.spread_domain {
+        object.key("SpreadDomain").string(var_7.as_str());
     }
-    if let Some(var_7) = &input.tenancy {
-        object.key("Tenancy").string(var_7.as_str());
+    if let Some(var_8) = &input.tenancy {
+        object.key("Tenancy").string(var_8.as_str());
     }
     Ok(())
 }

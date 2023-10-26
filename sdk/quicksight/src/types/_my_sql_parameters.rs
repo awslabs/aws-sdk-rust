@@ -7,7 +7,7 @@ pub struct MySqlParameters {
     /// <p>Host.</p>
     pub host: ::std::option::Option<::std::string::String>,
     /// <p>Port.</p>
-    pub port: i32,
+    pub port: ::std::option::Option<i32>,
     /// <p>Database.</p>
     pub database: ::std::option::Option<::std::string::String>,
 }
@@ -17,7 +17,7 @@ impl MySqlParameters {
         self.host.as_deref()
     }
     /// <p>Port.</p>
-    pub fn port(&self) -> i32 {
+    pub fn port(&self) -> ::std::option::Option<i32> {
         self.port
     }
     /// <p>Database.</p>
@@ -87,7 +87,7 @@ impl MySqlParametersBuilder {
     pub fn build(self) -> crate::types::MySqlParameters {
         crate::types::MySqlParameters {
             host: self.host,
-            port: self.port.unwrap_or_default(),
+            port: self.port,
             database: self.database,
         }
     }

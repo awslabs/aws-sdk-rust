@@ -43,9 +43,9 @@ pub struct ExportTask {
     /// </ul>
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>The progress of the snapshot or cluster export task as a percentage.</p>
-    pub percent_progress: i32,
+    pub percent_progress: ::std::option::Option<i32>,
     /// <p>The total amount of data exported, in gigabytes.</p>
-    pub total_extracted_data_in_gb: i32,
+    pub total_extracted_data_in_gb: ::std::option::Option<i32>,
     /// <p>The reason the export failed, if it failed.</p>
     pub failure_cause: ::std::option::Option<::std::string::String>,
     /// <p>A warning about the snapshot or cluster export task.</p>
@@ -114,11 +114,11 @@ impl ExportTask {
         self.status.as_deref()
     }
     /// <p>The progress of the snapshot or cluster export task as a percentage.</p>
-    pub fn percent_progress(&self) -> i32 {
+    pub fn percent_progress(&self) -> ::std::option::Option<i32> {
         self.percent_progress
     }
     /// <p>The total amount of data exported, in gigabytes.</p>
-    pub fn total_extracted_data_in_gb(&self) -> i32 {
+    pub fn total_extracted_data_in_gb(&self) -> ::std::option::Option<i32> {
         self.total_extracted_data_in_gb
     }
     /// <p>The reason the export failed, if it failed.</p>
@@ -452,8 +452,8 @@ impl ExportTaskBuilder {
             iam_role_arn: self.iam_role_arn,
             kms_key_id: self.kms_key_id,
             status: self.status,
-            percent_progress: self.percent_progress.unwrap_or_default(),
-            total_extracted_data_in_gb: self.total_extracted_data_in_gb.unwrap_or_default(),
+            percent_progress: self.percent_progress,
+            total_extracted_data_in_gb: self.total_extracted_data_in_gb,
             failure_cause: self.failure_cause,
             warning_message: self.warning_message,
             source_type: self.source_type,

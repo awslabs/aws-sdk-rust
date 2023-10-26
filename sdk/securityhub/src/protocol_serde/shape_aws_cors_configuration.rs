@@ -12,41 +12,41 @@ pub fn ser_aws_cors_configuration(
         }
         array_2.finish();
     }
-    if input.allow_credentials {
-        object.key("AllowCredentials").boolean(input.allow_credentials);
+    if let Some(var_4) = &input.allow_credentials {
+        object.key("AllowCredentials").boolean(*var_4);
     }
-    if let Some(var_4) = &input.expose_headers {
-        let mut array_5 = object.key("ExposeHeaders").start_array();
-        for item_6 in var_4 {
+    if let Some(var_5) = &input.expose_headers {
+        let mut array_6 = object.key("ExposeHeaders").start_array();
+        for item_7 in var_5 {
             {
-                array_5.value().string(item_6.as_str());
+                array_6.value().string(item_7.as_str());
             }
         }
-        array_5.finish();
+        array_6.finish();
     }
-    if input.max_age != 0 {
+    if let Some(var_8) = &input.max_age {
         object.key("MaxAge").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.max_age).into()),
+            ::aws_smithy_types::Number::NegInt((*var_8).into()),
         );
     }
-    if let Some(var_7) = &input.allow_methods {
-        let mut array_8 = object.key("AllowMethods").start_array();
-        for item_9 in var_7 {
+    if let Some(var_9) = &input.allow_methods {
+        let mut array_10 = object.key("AllowMethods").start_array();
+        for item_11 in var_9 {
             {
-                array_8.value().string(item_9.as_str());
+                array_10.value().string(item_11.as_str());
             }
         }
-        array_8.finish();
+        array_10.finish();
     }
-    if let Some(var_10) = &input.allow_headers {
-        let mut array_11 = object.key("AllowHeaders").start_array();
-        for item_12 in var_10 {
+    if let Some(var_12) = &input.allow_headers {
+        let mut array_13 = object.key("AllowHeaders").start_array();
+        for item_14 in var_12 {
             {
-                array_11.value().string(item_12.as_str());
+                array_13.value().string(item_14.as_str());
             }
         }
-        array_11.finish();
+        array_13.finish();
     }
     Ok(())
 }

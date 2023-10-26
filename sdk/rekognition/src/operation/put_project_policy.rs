@@ -267,7 +267,7 @@ pub enum PutProjectPolicyError {
     InvalidParameterException(crate::types::error::InvalidParameterException),
     /// <p>The supplied revision id for the project policy is invalid.</p>
     InvalidPolicyRevisionIdException(crate::types::error::InvalidPolicyRevisionIdException),
-    /// <p>An Amazon Rekognition service limit was exceeded. For example, if you start too many Amazon Rekognition Video jobs concurrently, calls to start operations (<code>StartLabelDetection</code>, for example) will raise a <code>LimitExceededException</code> exception (HTTP status code: 400) until the number of concurrently running jobs is below the Amazon Rekognition service limit. </p>
+    /// <p>An Amazon Rekognition service limit was exceeded. For example, if you start too many jobs concurrently, subsequent calls to start operations (ex: <code>StartLabelDetection</code>) will raise a <code>LimitExceededException</code> exception (HTTP status code: 400) until the number of concurrently running jobs is below the Amazon Rekognition service limit. </p>
     LimitExceededException(crate::types::error::LimitExceededException),
     /// <p>The format of the project policy document that you supplied to <code>PutProjectPolicy</code> is incorrect. </p>
     MalformedPolicyDocumentException(crate::types::error::MalformedPolicyDocumentException),

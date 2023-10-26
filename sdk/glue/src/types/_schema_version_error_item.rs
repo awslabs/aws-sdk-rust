@@ -5,13 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SchemaVersionErrorItem {
     /// <p>The version number of the schema.</p>
-    pub version_number: i64,
+    pub version_number: ::std::option::Option<i64>,
     /// <p>The details of the error for the schema version.</p>
     pub error_details: ::std::option::Option<crate::types::ErrorDetails>,
 }
 impl SchemaVersionErrorItem {
     /// <p>The version number of the schema.</p>
-    pub fn version_number(&self) -> i64 {
+    pub fn version_number(&self) -> ::std::option::Option<i64> {
         self.version_number
     }
     /// <p>The details of the error for the schema version.</p>
@@ -65,7 +65,7 @@ impl SchemaVersionErrorItemBuilder {
     /// Consumes the builder and constructs a [`SchemaVersionErrorItem`](crate::types::SchemaVersionErrorItem).
     pub fn build(self) -> crate::types::SchemaVersionErrorItem {
         crate::types::SchemaVersionErrorItem {
-            version_number: self.version_number.unwrap_or_default(),
+            version_number: self.version_number,
             error_details: self.error_details,
         }
     }

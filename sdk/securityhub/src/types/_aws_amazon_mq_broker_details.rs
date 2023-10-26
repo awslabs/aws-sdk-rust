@@ -7,7 +7,7 @@ pub struct AwsAmazonMqBrokerDetails {
     /// <p> The authentication strategy used to secure the broker. The default is <code>SIMPLE</code>. </p>
     pub authentication_strategy: ::std::option::Option<::std::string::String>,
     /// <p> Whether automatically upgrade new minor versions for brokers, as new versions are released and supported by Amazon MQ. Automatic upgrades occur during the scheduled maintenance window of the broker or after a manual broker reboot. </p>
-    pub auto_minor_version_upgrade: bool,
+    pub auto_minor_version_upgrade: ::std::option::Option<bool>,
     /// <p> The Amazon Resource Name (ARN) of the broker. </p>
     pub broker_arn: ::std::option::Option<::std::string::String>,
     /// <p>The broker's name. </p>
@@ -31,7 +31,7 @@ pub struct AwsAmazonMqBrokerDetails {
     /// <p> The scheduled time period (UTC) during which Amazon MQ begins to apply pending updates or patches to the broker. </p>
     pub maintenance_window_start_time: ::std::option::Option<crate::types::AwsAmazonMqBrokerMaintenanceWindowStartTimeDetails>,
     /// <p> Permits connections from applications outside of the VPC that hosts the broker's subnets. </p>
-    pub publicly_accessible: bool,
+    pub publicly_accessible: ::std::option::Option<bool>,
     /// <p> The list of rules (one minimum, 125 maximum) that authorize connections to brokers. </p>
     pub security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p> The broker's storage type. </p>
@@ -47,7 +47,7 @@ impl AwsAmazonMqBrokerDetails {
         self.authentication_strategy.as_deref()
     }
     /// <p> Whether automatically upgrade new minor versions for brokers, as new versions are released and supported by Amazon MQ. Automatic upgrades occur during the scheduled maintenance window of the broker or after a manual broker reboot. </p>
-    pub fn auto_minor_version_upgrade(&self) -> bool {
+    pub fn auto_minor_version_upgrade(&self) -> ::std::option::Option<bool> {
         self.auto_minor_version_upgrade
     }
     /// <p> The Amazon Resource Name (ARN) of the broker. </p>
@@ -95,7 +95,7 @@ impl AwsAmazonMqBrokerDetails {
         self.maintenance_window_start_time.as_ref()
     }
     /// <p> Permits connections from applications outside of the VPC that hosts the broker's subnets. </p>
-    pub fn publicly_accessible(&self) -> bool {
+    pub fn publicly_accessible(&self) -> ::std::option::Option<bool> {
         self.publicly_accessible
     }
     /// <p> The list of rules (one minimum, 125 maximum) that authorize connections to brokers. </p>
@@ -423,7 +423,7 @@ impl AwsAmazonMqBrokerDetailsBuilder {
     pub fn build(self) -> crate::types::AwsAmazonMqBrokerDetails {
         crate::types::AwsAmazonMqBrokerDetails {
             authentication_strategy: self.authentication_strategy,
-            auto_minor_version_upgrade: self.auto_minor_version_upgrade.unwrap_or_default(),
+            auto_minor_version_upgrade: self.auto_minor_version_upgrade,
             broker_arn: self.broker_arn,
             broker_name: self.broker_name,
             deployment_mode: self.deployment_mode,
@@ -435,7 +435,7 @@ impl AwsAmazonMqBrokerDetailsBuilder {
             ldap_server_metadata: self.ldap_server_metadata,
             logs: self.logs,
             maintenance_window_start_time: self.maintenance_window_start_time,
-            publicly_accessible: self.publicly_accessible.unwrap_or_default(),
+            publicly_accessible: self.publicly_accessible,
             security_groups: self.security_groups,
             storage_type: self.storage_type,
             subnet_ids: self.subnet_ids,

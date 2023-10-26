@@ -25,7 +25,7 @@ pub struct ScalingPolicy {
     /// </ul>
     pub status: ::std::option::Option<crate::types::ScalingStatusType>,
     /// <p>Amount of adjustment to make, based on the scaling adjustment type.</p>
-    pub scaling_adjustment: i32,
+    pub scaling_adjustment: ::std::option::Option<i32>,
     /// <p>The type of adjustment to make to a fleet's instance count.</p>
     /// <ul>
     /// <li> <p> <b>ChangeInCapacity</b> -- add (or subtract) the scaling adjustment value from the current instance count. Positive values scale up while negative values scale down.</p> </li>
@@ -36,7 +36,7 @@ pub struct ScalingPolicy {
     /// <p>Comparison operator to use when measuring a metric against the threshold value.</p>
     pub comparison_operator: ::std::option::Option<crate::types::ComparisonOperatorType>,
     /// <p>Metric value used to trigger a scaling event.</p>
-    pub threshold: f64,
+    pub threshold: ::std::option::Option<f64>,
     /// <p>Length of time (in minutes) the metric must be at or beyond the threshold before a scaling event is triggered.</p>
     pub evaluation_periods: ::std::option::Option<i32>,
     /// <p>Name of the Amazon GameLift-defined metric that is used to trigger a scaling adjustment. For detailed descriptions of fleet metrics, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html">Monitor Amazon GameLift with Amazon CloudWatch</a>. </p>
@@ -93,7 +93,7 @@ impl ScalingPolicy {
         self.status.as_ref()
     }
     /// <p>Amount of adjustment to make, based on the scaling adjustment type.</p>
-    pub fn scaling_adjustment(&self) -> i32 {
+    pub fn scaling_adjustment(&self) -> ::std::option::Option<i32> {
         self.scaling_adjustment
     }
     /// <p>The type of adjustment to make to a fleet's instance count.</p>
@@ -110,7 +110,7 @@ impl ScalingPolicy {
         self.comparison_operator.as_ref()
     }
     /// <p>Metric value used to trigger a scaling event.</p>
-    pub fn threshold(&self) -> f64 {
+    pub fn threshold(&self) -> ::std::option::Option<f64> {
         self.threshold
     }
     /// <p>Length of time (in minutes) the metric must be at or beyond the threshold before a scaling event is triggered.</p>
@@ -471,10 +471,10 @@ impl ScalingPolicyBuilder {
             fleet_arn: self.fleet_arn,
             name: self.name,
             status: self.status,
-            scaling_adjustment: self.scaling_adjustment.unwrap_or_default(),
+            scaling_adjustment: self.scaling_adjustment,
             scaling_adjustment_type: self.scaling_adjustment_type,
             comparison_operator: self.comparison_operator,
-            threshold: self.threshold.unwrap_or_default(),
+            threshold: self.threshold,
             evaluation_periods: self.evaluation_periods,
             metric_name: self.metric_name,
             policy_type: self.policy_type,

@@ -6,34 +6,34 @@ pub fn ser_aws_ec2_network_acl_entry(
     if let Some(var_1) = &input.cidr_block {
         object.key("CidrBlock").string(var_1.as_str());
     }
-    if input.egress {
-        object.key("Egress").boolean(input.egress);
+    if let Some(var_2) = &input.egress {
+        object.key("Egress").boolean(*var_2);
     }
-    if let Some(var_2) = &input.icmp_type_code {
+    if let Some(var_3) = &input.icmp_type_code {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("IcmpTypeCode").start_object();
-        crate::protocol_serde::shape_icmp_type_code::ser_icmp_type_code(&mut object_3, var_2)?;
-        object_3.finish();
+        let mut object_4 = object.key("IcmpTypeCode").start_object();
+        crate::protocol_serde::shape_icmp_type_code::ser_icmp_type_code(&mut object_4, var_3)?;
+        object_4.finish();
     }
-    if let Some(var_4) = &input.ipv6_cidr_block {
-        object.key("Ipv6CidrBlock").string(var_4.as_str());
+    if let Some(var_5) = &input.ipv6_cidr_block {
+        object.key("Ipv6CidrBlock").string(var_5.as_str());
     }
-    if let Some(var_5) = &input.port_range {
+    if let Some(var_6) = &input.port_range {
         #[allow(unused_mut)]
-        let mut object_6 = object.key("PortRange").start_object();
-        crate::protocol_serde::shape_port_range_from_to::ser_port_range_from_to(&mut object_6, var_5)?;
-        object_6.finish();
+        let mut object_7 = object.key("PortRange").start_object();
+        crate::protocol_serde::shape_port_range_from_to::ser_port_range_from_to(&mut object_7, var_6)?;
+        object_7.finish();
     }
-    if let Some(var_7) = &input.protocol {
-        object.key("Protocol").string(var_7.as_str());
+    if let Some(var_8) = &input.protocol {
+        object.key("Protocol").string(var_8.as_str());
     }
-    if let Some(var_8) = &input.rule_action {
-        object.key("RuleAction").string(var_8.as_str());
+    if let Some(var_9) = &input.rule_action {
+        object.key("RuleAction").string(var_9.as_str());
     }
-    if input.rule_number != 0 {
+    if let Some(var_10) = &input.rule_number {
         object.key("RuleNumber").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.rule_number).into()),
+            ::aws_smithy_types::Number::NegInt((*var_10).into()),
         );
     }
     Ok(())

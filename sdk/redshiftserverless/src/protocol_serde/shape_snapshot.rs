@@ -139,6 +139,20 @@ where
                                 crate::protocol_serde::shape_account_id_list::de_account_id_list(tokens)?,
                             );
                         }
+                        "adminPasswordSecretArn" => {
+                            builder = builder.set_admin_password_secret_arn(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "adminPasswordSecretKmsKeyId" => {
+                            builder = builder.set_admin_password_secret_kms_key_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

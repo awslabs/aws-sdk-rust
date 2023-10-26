@@ -15,7 +15,7 @@ pub struct RegionDescription {
     /// <p>Contains VPC information for the <code>CreateDirectory</code> or <code>CreateMicrosoftAD</code> operation.</p>
     pub vpc_settings: ::std::option::Option<crate::types::DirectoryVpcSettings>,
     /// <p>The desired number of domain controllers in the specified Region for the specified directory.</p>
-    pub desired_number_of_domain_controllers: i32,
+    pub desired_number_of_domain_controllers: ::std::option::Option<i32>,
     /// <p>Specifies when the Region replication began.</p>
     pub launch_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time that the Region status was last updated.</p>
@@ -45,7 +45,7 @@ impl RegionDescription {
         self.vpc_settings.as_ref()
     }
     /// <p>The desired number of domain controllers in the specified Region for the specified directory.</p>
-    pub fn desired_number_of_domain_controllers(&self) -> i32 {
+    pub fn desired_number_of_domain_controllers(&self) -> ::std::option::Option<i32> {
         self.desired_number_of_domain_controllers
     }
     /// <p>Specifies when the Region replication began.</p>
@@ -217,7 +217,7 @@ impl RegionDescriptionBuilder {
             region_type: self.region_type,
             status: self.status,
             vpc_settings: self.vpc_settings,
-            desired_number_of_domain_controllers: self.desired_number_of_domain_controllers.unwrap_or_default(),
+            desired_number_of_domain_controllers: self.desired_number_of_domain_controllers,
             launch_time: self.launch_time,
             status_last_updated_date_time: self.status_last_updated_date_time,
             last_updated_date_time: self.last_updated_date_time,

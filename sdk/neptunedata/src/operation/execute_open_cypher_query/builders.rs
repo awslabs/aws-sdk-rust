@@ -25,6 +25,13 @@ impl ExecuteOpenCypherQueryInputBuilder {
 /// <p>Executes an openCypher query. See <a href="https://docs.aws.amazon.com/neptune/latest/userguide/access-graph-opencypher.html">Accessing the Neptune Graph with openCypher</a> for more information.</p>
 /// <p>Neptune supports building graph applications using openCypher, which is currently one of the most popular query languages among developers working with graph databases. Developers, business analysts, and data scientists like openCypher's declarative, SQL-inspired syntax because it provides a familiar structure in which to querying property graphs.</p>
 /// <p>The openCypher language was originally developed by Neo4j, then open-sourced in 2015 and contributed to the <a href="https://opencypher.org/">openCypher project</a> under an Apache 2 open-source license.</p>
+/// <p>Note that when invoking this operation in a Neptune cluster that has IAM authentication enabled, the IAM user or role making the request must have a policy attached that allows one of the following IAM actions in that cluster, depending on the query:</p>
+/// <ul>
+/// <li> <p> <a href="https://docs.aws.amazon.com/neptune/latest/userguide/iam-dp-actions.html#readdataviaquery">neptune-db:ReadDataViaQuery</a> </p> </li>
+/// <li> <p> <a href="https://docs.aws.amazon.com/neptune/latest/userguide/iam-dp-actions.html#writedataviaquery">neptune-db:WriteDataViaQuery</a> </p> </li>
+/// <li> <p> <a href="https://docs.aws.amazon.com/neptune/latest/userguide/iam-dp-actions.html#deletedataviaquery">neptune-db:DeleteDataViaQuery</a> </p> </li>
+/// </ul>
+/// <p>Note also that the <a href="https://docs.aws.amazon.com/neptune/latest/userguide/iam-data-condition-keys.html#iam-neptune-condition-keys">neptune-db:QueryLanguage:Opencypher</a> IAM condition key can be used in the policy document to restrict the use of openCypher queries (see <a href="https://docs.aws.amazon.com/neptune/latest/userguide/iam-data-condition-keys.html">Condition keys available in Neptune IAM data-access policy statements</a>).</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ExecuteOpenCypherQueryFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

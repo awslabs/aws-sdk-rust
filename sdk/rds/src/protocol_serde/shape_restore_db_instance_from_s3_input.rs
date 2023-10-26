@@ -299,6 +299,11 @@ pub fn ser_restore_db_instance_from_s3_input_input(
     if let Some(var_111) = &input.master_user_secret_kms_key_id {
         scope_110.string(var_111);
     }
+    #[allow(unused_mut)]
+    let mut scope_112 = writer.prefix("DedicatedLogVolume");
+    if let Some(var_113) = &input.dedicated_log_volume {
+        scope_112.boolean(*var_113);
+    }
     writer.finish();
     Ok(::aws_smithy_http::body::SdkBody::from(out))
 }

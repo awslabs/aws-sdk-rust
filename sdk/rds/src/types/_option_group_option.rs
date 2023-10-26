@@ -15,7 +15,7 @@ pub struct OptionGroupOption {
     /// <p>The minimum required engine version for the option to be applied.</p>
     pub minimum_required_minor_engine_version: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the option requires a port.</p>
-    pub port_required: bool,
+    pub port_required: ::std::option::Option<bool>,
     /// <p>If the option requires a port, specifies the default port for the option.</p>
     pub default_port: ::std::option::Option<i32>,
     /// <p>The options that are prerequisites for this option.</p>
@@ -23,13 +23,13 @@ pub struct OptionGroupOption {
     /// <p>The options that conflict with this option.</p>
     pub options_conflicts_with: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Persistent options can't be removed from an option group while DB instances are associated with the option group. If you disassociate all DB instances from the option group, your can remove the persistent option from the option group.</p>
-    pub persistent: bool,
+    pub persistent: ::std::option::Option<bool>,
     /// <p>Permanent options can never be removed from an option group. An option group containing a permanent option can't be removed from a DB instance.</p>
-    pub permanent: bool,
+    pub permanent: ::std::option::Option<bool>,
     /// <p>If true, you must enable the Auto Minor Version Upgrade setting for your DB instance before you can use this option. You can enable Auto Minor Version Upgrade when you first create your DB instance, or by modifying your DB instance later.</p>
-    pub requires_auto_minor_engine_version_upgrade: bool,
+    pub requires_auto_minor_engine_version_upgrade: ::std::option::Option<bool>,
     /// <p>If true, you can only use this option with a DB instance that is in a VPC.</p>
-    pub vpc_only: bool,
+    pub vpc_only: ::std::option::Option<bool>,
     /// <p>If true, you can change the option to an earlier version of the option. This only applies to options that have different versions available.</p>
     pub supports_option_version_downgrade: ::std::option::Option<bool>,
     /// <p>The option settings that are available (and the default value) for each option in an option group.</p>
@@ -61,7 +61,7 @@ impl OptionGroupOption {
         self.minimum_required_minor_engine_version.as_deref()
     }
     /// <p>Indicates whether the option requires a port.</p>
-    pub fn port_required(&self) -> bool {
+    pub fn port_required(&self) -> ::std::option::Option<bool> {
         self.port_required
     }
     /// <p>If the option requires a port, specifies the default port for the option.</p>
@@ -77,19 +77,19 @@ impl OptionGroupOption {
         self.options_conflicts_with.as_deref()
     }
     /// <p>Persistent options can't be removed from an option group while DB instances are associated with the option group. If you disassociate all DB instances from the option group, your can remove the persistent option from the option group.</p>
-    pub fn persistent(&self) -> bool {
+    pub fn persistent(&self) -> ::std::option::Option<bool> {
         self.persistent
     }
     /// <p>Permanent options can never be removed from an option group. An option group containing a permanent option can't be removed from a DB instance.</p>
-    pub fn permanent(&self) -> bool {
+    pub fn permanent(&self) -> ::std::option::Option<bool> {
         self.permanent
     }
     /// <p>If true, you must enable the Auto Minor Version Upgrade setting for your DB instance before you can use this option. You can enable Auto Minor Version Upgrade when you first create your DB instance, or by modifying your DB instance later.</p>
-    pub fn requires_auto_minor_engine_version_upgrade(&self) -> bool {
+    pub fn requires_auto_minor_engine_version_upgrade(&self) -> ::std::option::Option<bool> {
         self.requires_auto_minor_engine_version_upgrade
     }
     /// <p>If true, you can only use this option with a DB instance that is in a VPC.</p>
-    pub fn vpc_only(&self) -> bool {
+    pub fn vpc_only(&self) -> ::std::option::Option<bool> {
         self.vpc_only
     }
     /// <p>If true, you can change the option to an earlier version of the option. This only applies to options that have different versions available.</p>
@@ -409,14 +409,14 @@ impl OptionGroupOptionBuilder {
             engine_name: self.engine_name,
             major_engine_version: self.major_engine_version,
             minimum_required_minor_engine_version: self.minimum_required_minor_engine_version,
-            port_required: self.port_required.unwrap_or_default(),
+            port_required: self.port_required,
             default_port: self.default_port,
             options_depended_on: self.options_depended_on,
             options_conflicts_with: self.options_conflicts_with,
-            persistent: self.persistent.unwrap_or_default(),
-            permanent: self.permanent.unwrap_or_default(),
-            requires_auto_minor_engine_version_upgrade: self.requires_auto_minor_engine_version_upgrade.unwrap_or_default(),
-            vpc_only: self.vpc_only.unwrap_or_default(),
+            persistent: self.persistent,
+            permanent: self.permanent,
+            requires_auto_minor_engine_version_upgrade: self.requires_auto_minor_engine_version_upgrade,
+            vpc_only: self.vpc_only,
             supports_option_version_downgrade: self.supports_option_version_downgrade,
             option_group_option_settings: self.option_group_option_settings,
             option_group_option_versions: self.option_group_option_versions,

@@ -5,13 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RuleGroupSourceStatelessRulesDetails {
     /// <p>Indicates the order in which to run this rule relative to all of the rules in the stateless rule group.</p>
-    pub priority: i32,
+    pub priority: ::std::option::Option<i32>,
     /// <p>Provides the definition of the stateless rule.</p>
     pub rule_definition: ::std::option::Option<crate::types::RuleGroupSourceStatelessRuleDefinition>,
 }
 impl RuleGroupSourceStatelessRulesDetails {
     /// <p>Indicates the order in which to run this rule relative to all of the rules in the stateless rule group.</p>
-    pub fn priority(&self) -> i32 {
+    pub fn priority(&self) -> ::std::option::Option<i32> {
         self.priority
     }
     /// <p>Provides the definition of the stateless rule.</p>
@@ -65,7 +65,7 @@ impl RuleGroupSourceStatelessRulesDetailsBuilder {
     /// Consumes the builder and constructs a [`RuleGroupSourceStatelessRulesDetails`](crate::types::RuleGroupSourceStatelessRulesDetails).
     pub fn build(self) -> crate::types::RuleGroupSourceStatelessRulesDetails {
         crate::types::RuleGroupSourceStatelessRulesDetails {
-            priority: self.priority.unwrap_or_default(),
+            priority: self.priority,
             rule_definition: self.rule_definition,
         }
     }

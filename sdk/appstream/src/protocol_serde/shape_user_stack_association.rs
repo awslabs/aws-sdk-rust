@@ -12,8 +12,8 @@ pub fn ser_user_stack_association(
     if let Some(var_3) = &input.authentication_type {
         object.key("AuthenticationType").string(var_3.as_str());
     }
-    if input.send_email_notification {
-        object.key("SendEmailNotification").boolean(input.send_email_notification);
+    if let Some(var_4) = &input.send_email_notification {
+        object.key("SendEmailNotification").boolean(*var_4);
     }
     Ok(())
 }

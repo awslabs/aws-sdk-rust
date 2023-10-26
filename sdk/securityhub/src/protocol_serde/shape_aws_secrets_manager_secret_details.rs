@@ -9,28 +9,26 @@ pub fn ser_aws_secrets_manager_secret_details(
         crate::protocol_serde::shape_aws_secrets_manager_secret_rotation_rules::ser_aws_secrets_manager_secret_rotation_rules(&mut object_2, var_1)?;
         object_2.finish();
     }
-    if input.rotation_occurred_within_frequency {
-        object
-            .key("RotationOccurredWithinFrequency")
-            .boolean(input.rotation_occurred_within_frequency);
+    if let Some(var_3) = &input.rotation_occurred_within_frequency {
+        object.key("RotationOccurredWithinFrequency").boolean(*var_3);
     }
-    if let Some(var_3) = &input.kms_key_id {
-        object.key("KmsKeyId").string(var_3.as_str());
+    if let Some(var_4) = &input.kms_key_id {
+        object.key("KmsKeyId").string(var_4.as_str());
     }
-    if input.rotation_enabled {
-        object.key("RotationEnabled").boolean(input.rotation_enabled);
+    if let Some(var_5) = &input.rotation_enabled {
+        object.key("RotationEnabled").boolean(*var_5);
     }
-    if let Some(var_4) = &input.rotation_lambda_arn {
-        object.key("RotationLambdaArn").string(var_4.as_str());
+    if let Some(var_6) = &input.rotation_lambda_arn {
+        object.key("RotationLambdaArn").string(var_6.as_str());
     }
-    if input.deleted {
-        object.key("Deleted").boolean(input.deleted);
+    if let Some(var_7) = &input.deleted {
+        object.key("Deleted").boolean(*var_7);
     }
-    if let Some(var_5) = &input.name {
-        object.key("Name").string(var_5.as_str());
+    if let Some(var_8) = &input.name {
+        object.key("Name").string(var_8.as_str());
     }
-    if let Some(var_6) = &input.description {
-        object.key("Description").string(var_6.as_str());
+    if let Some(var_9) = &input.description {
+        object.key("Description").string(var_9.as_str());
     }
     Ok(())
 }

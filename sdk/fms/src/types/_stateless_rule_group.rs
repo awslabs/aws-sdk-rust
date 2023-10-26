@@ -9,7 +9,7 @@ pub struct StatelessRuleGroup {
     /// <p>The resource ID of the rule group.</p>
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The priority of the rule group. Network Firewall evaluates the stateless rule groups in a firewall policy starting from the lowest priority setting. </p>
-    pub priority: i32,
+    pub priority: ::std::option::Option<i32>,
 }
 impl StatelessRuleGroup {
     /// <p>The name of the rule group.</p>
@@ -21,7 +21,7 @@ impl StatelessRuleGroup {
         self.resource_id.as_deref()
     }
     /// <p>The priority of the rule group. Network Firewall evaluates the stateless rule groups in a firewall policy starting from the lowest priority setting. </p>
-    pub fn priority(&self) -> i32 {
+    pub fn priority(&self) -> ::std::option::Option<i32> {
         self.priority
     }
 }
@@ -88,7 +88,7 @@ impl StatelessRuleGroupBuilder {
         crate::types::StatelessRuleGroup {
             rule_group_name: self.rule_group_name,
             resource_id: self.resource_id,
-            priority: self.priority.unwrap_or_default(),
+            priority: self.priority,
         }
     }
 }

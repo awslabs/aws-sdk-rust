@@ -21,7 +21,7 @@ impl super::Client {
     ///   - [`ml_framework(Option<String>)`](crate::operation::describe_image_version::DescribeImageVersionOutput::ml_framework): <p>The machine learning framework vended in the image version.</p>
     ///   - [`programming_lang(Option<String>)`](crate::operation::describe_image_version::DescribeImageVersionOutput::programming_lang): <p>The supported programming language and its version.</p>
     ///   - [`processor(Option<Processor>)`](crate::operation::describe_image_version::DescribeImageVersionOutput::processor): <p>Indicates CPU or GPU compatibility.</p>  <ul>   <li> <p> <code>CPU</code>: The image version is compatible with CPU.</p> </li>   <li> <p> <code>GPU</code>: The image version is compatible with GPU.</p> </li>  </ul>
-    ///   - [`horovod(bool)`](crate::operation::describe_image_version::DescribeImageVersionOutput::horovod): <p>Indicates Horovod compatibility.</p>
+    ///   - [`horovod(Option<bool>)`](crate::operation::describe_image_version::DescribeImageVersionOutput::horovod): <p>Indicates Horovod compatibility.</p>
     ///   - [`release_notes(Option<String>)`](crate::operation::describe_image_version::DescribeImageVersionOutput::release_notes): <p>The maintainer description of the image version.</p>
     /// - On failure, responds with [`SdkError<DescribeImageVersionError>`](crate::operation::describe_image_version::DescribeImageVersionError)
     pub fn describe_image_version(&self) -> crate::operation::describe_image_version::builders::DescribeImageVersionFluentBuilder {

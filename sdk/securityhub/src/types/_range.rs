@@ -5,23 +5,23 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Range {
     /// <p>The number of lines (for a line range) or characters (for an offset range) from the beginning of the file to the end of the sensitive data.</p>
-    pub start: i64,
+    pub start: ::std::option::Option<i64>,
     /// <p>The number of lines (for a line range) or characters (for an offset range) from the beginning of the file to the end of the sensitive data.</p>
-    pub end: i64,
+    pub end: ::std::option::Option<i64>,
     /// <p>In the line where the sensitive data starts, the column within the line where the sensitive data starts.</p>
-    pub start_column: i64,
+    pub start_column: ::std::option::Option<i64>,
 }
 impl Range {
     /// <p>The number of lines (for a line range) or characters (for an offset range) from the beginning of the file to the end of the sensitive data.</p>
-    pub fn start(&self) -> i64 {
+    pub fn start(&self) -> ::std::option::Option<i64> {
         self.start
     }
     /// <p>The number of lines (for a line range) or characters (for an offset range) from the beginning of the file to the end of the sensitive data.</p>
-    pub fn end(&self) -> i64 {
+    pub fn end(&self) -> ::std::option::Option<i64> {
         self.end
     }
     /// <p>In the line where the sensitive data starts, the column within the line where the sensitive data starts.</p>
-    pub fn start_column(&self) -> i64 {
+    pub fn start_column(&self) -> ::std::option::Option<i64> {
         self.start_column
     }
 }
@@ -86,9 +86,9 @@ impl RangeBuilder {
     /// Consumes the builder and constructs a [`Range`](crate::types::Range).
     pub fn build(self) -> crate::types::Range {
         crate::types::Range {
-            start: self.start.unwrap_or_default(),
-            end: self.end.unwrap_or_default(),
-            start_column: self.start_column.unwrap_or_default(),
+            start: self.start,
+            end: self.end,
+            start_column: self.start_column,
         }
     }
 }

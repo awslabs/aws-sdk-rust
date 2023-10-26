@@ -22,7 +22,10 @@ impl StopProjectVersionInputBuilder {
 }
 /// Fluent builder constructing a request to `StopProjectVersion`.
 ///
-/// <p>Stops a running model. The operation might take a while to complete. To check the current status, call <code>DescribeProjectVersions</code>. </p>
+/// <note>
+/// <p>This operation applies only to Amazon Rekognition Custom Labels.</p>
+/// </note>
+/// <p>Stops a running model. The operation might take a while to complete. To check the current status, call <code>DescribeProjectVersions</code>. Only applies to Custom Labels projects.</p>
 /// <p>This operation requires permissions to perform the <code>rekognition:StopProjectVersion</code> action.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StopProjectVersionFluentBuilder {
@@ -111,19 +114,19 @@ impl StopProjectVersionFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the model version that you want to delete.</p>
+    /// <p>The Amazon Resource Name (ARN) of the model version that you want to stop.</p>
     /// <p>This operation requires permissions to perform the <code>rekognition:StopProjectVersion</code> action.</p>
     pub fn project_version_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.project_version_arn(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the model version that you want to delete.</p>
+    /// <p>The Amazon Resource Name (ARN) of the model version that you want to stop.</p>
     /// <p>This operation requires permissions to perform the <code>rekognition:StopProjectVersion</code> action.</p>
     pub fn set_project_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_project_version_arn(input);
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the model version that you want to delete.</p>
+    /// <p>The Amazon Resource Name (ARN) of the model version that you want to stop.</p>
     /// <p>This operation requires permissions to perform the <code>rekognition:StopProjectVersion</code> action.</p>
     pub fn get_project_version_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_project_version_arn()

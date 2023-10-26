@@ -5,11 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ThreatsDetectedItemCount {
     /// <p>Total number of infected files.</p>
-    pub files: i32,
+    pub files: ::std::option::Option<i32>,
 }
 impl ThreatsDetectedItemCount {
     /// <p>Total number of infected files.</p>
-    pub fn files(&self) -> i32 {
+    pub fn files(&self) -> ::std::option::Option<i32> {
         self.files
     }
 }
@@ -43,8 +43,6 @@ impl ThreatsDetectedItemCountBuilder {
     }
     /// Consumes the builder and constructs a [`ThreatsDetectedItemCount`](crate::types::ThreatsDetectedItemCount).
     pub fn build(self) -> crate::types::ThreatsDetectedItemCount {
-        crate::types::ThreatsDetectedItemCount {
-            files: self.files.unwrap_or_default(),
-        }
+        crate::types::ThreatsDetectedItemCount { files: self.files }
     }
 }

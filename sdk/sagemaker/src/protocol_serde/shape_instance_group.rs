@@ -6,14 +6,14 @@ pub fn ser_instance_group(
     if let Some(var_1) = &input.instance_type {
         object.key("InstanceType").string(var_1.as_str());
     }
-    {
+    if let Some(var_2) = &input.instance_count {
         object.key("InstanceCount").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.instance_count).into()),
+            ::aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
-    if let Some(var_2) = &input.instance_group_name {
-        object.key("InstanceGroupName").string(var_2.as_str());
+    if let Some(var_3) = &input.instance_group_name {
+        object.key("InstanceGroupName").string(var_3.as_str());
     }
     Ok(())
 }

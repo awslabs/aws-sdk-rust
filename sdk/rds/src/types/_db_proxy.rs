@@ -26,13 +26,13 @@ pub struct DbProxy {
     /// <p>The endpoint that you can use to connect to the DB proxy. You include the endpoint value in the connection string for a database client application.</p>
     pub endpoint: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether Transport Layer Security (TLS) encryption is required for connections to the proxy.</p>
-    pub require_tls: bool,
+    pub require_tls: ::std::option::Option<bool>,
     /// <p>The number of seconds a connection to the proxy can have no activity before the proxy drops the client connection. The proxy keeps the underlying database connection open and puts it back into the connection pool for reuse by later connection requests.</p>
     /// <p>Default: 1800 (30 minutes)</p>
     /// <p>Constraints: 1 to 28,800</p>
-    pub idle_client_timeout: i32,
+    pub idle_client_timeout: ::std::option::Option<i32>,
     /// <p>Indicates whether the proxy includes detailed information about SQL statements in its logs. This information helps you to debug issues involving SQL behavior or the performance and scalability of the proxy connections. The debug information includes the text of SQL statements that you submit through the proxy. Thus, only enable this setting when needed for debugging, and only when you have security measures in place to safeguard any sensitive information that appears in the logs.</p>
-    pub debug_logging: bool,
+    pub debug_logging: ::std::option::Option<bool>,
     /// <p>The date and time when the proxy was first created.</p>
     pub created_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time when the proxy was last updated.</p>
@@ -80,17 +80,17 @@ impl DbProxy {
         self.endpoint.as_deref()
     }
     /// <p>Indicates whether Transport Layer Security (TLS) encryption is required for connections to the proxy.</p>
-    pub fn require_tls(&self) -> bool {
+    pub fn require_tls(&self) -> ::std::option::Option<bool> {
         self.require_tls
     }
     /// <p>The number of seconds a connection to the proxy can have no activity before the proxy drops the client connection. The proxy keeps the underlying database connection open and puts it back into the connection pool for reuse by later connection requests.</p>
     /// <p>Default: 1800 (30 minutes)</p>
     /// <p>Constraints: 1 to 28,800</p>
-    pub fn idle_client_timeout(&self) -> i32 {
+    pub fn idle_client_timeout(&self) -> ::std::option::Option<i32> {
         self.idle_client_timeout
     }
     /// <p>Indicates whether the proxy includes detailed information about SQL statements in its logs. This information helps you to debug issues involving SQL behavior or the performance and scalability of the proxy connections. The debug information includes the text of SQL statements that you submit through the proxy. Thus, only enable this setting when needed for debugging, and only when you have security measures in place to safeguard any sensitive information that appears in the logs.</p>
-    pub fn debug_logging(&self) -> bool {
+    pub fn debug_logging(&self) -> ::std::option::Option<bool> {
         self.debug_logging
     }
     /// <p>The date and time when the proxy was first created.</p>
@@ -377,9 +377,9 @@ impl DbProxyBuilder {
             auth: self.auth,
             role_arn: self.role_arn,
             endpoint: self.endpoint,
-            require_tls: self.require_tls.unwrap_or_default(),
-            idle_client_timeout: self.idle_client_timeout.unwrap_or_default(),
-            debug_logging: self.debug_logging.unwrap_or_default(),
+            require_tls: self.require_tls,
+            idle_client_timeout: self.idle_client_timeout,
+            debug_logging: self.debug_logging,
             created_date: self.created_date,
             updated_date: self.updated_date,
         }

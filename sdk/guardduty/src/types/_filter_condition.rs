@@ -7,9 +7,9 @@ pub struct FilterCondition {
     /// <p>Represents an <i>equal</i> <b></b> condition to be applied to a single field when querying for scan entries.</p>
     pub equals_value: ::std::option::Option<::std::string::String>,
     /// <p>Represents a <i>greater than</i> condition to be applied to a single field when querying for scan entries.</p>
-    pub greater_than: i64,
+    pub greater_than: ::std::option::Option<i64>,
     /// <p>Represents a <i>less than</i> condition to be applied to a single field when querying for scan entries.</p>
-    pub less_than: i64,
+    pub less_than: ::std::option::Option<i64>,
 }
 impl FilterCondition {
     /// <p>Represents an <i>equal</i> <b></b> condition to be applied to a single field when querying for scan entries.</p>
@@ -17,11 +17,11 @@ impl FilterCondition {
         self.equals_value.as_deref()
     }
     /// <p>Represents a <i>greater than</i> condition to be applied to a single field when querying for scan entries.</p>
-    pub fn greater_than(&self) -> i64 {
+    pub fn greater_than(&self) -> ::std::option::Option<i64> {
         self.greater_than
     }
     /// <p>Represents a <i>less than</i> condition to be applied to a single field when querying for scan entries.</p>
-    pub fn less_than(&self) -> i64 {
+    pub fn less_than(&self) -> ::std::option::Option<i64> {
         self.less_than
     }
 }
@@ -87,8 +87,8 @@ impl FilterConditionBuilder {
     pub fn build(self) -> crate::types::FilterCondition {
         crate::types::FilterCondition {
             equals_value: self.equals_value,
-            greater_than: self.greater_than.unwrap_or_default(),
-            less_than: self.less_than.unwrap_or_default(),
+            greater_than: self.greater_than,
+            less_than: self.less_than,
         }
     }
 }

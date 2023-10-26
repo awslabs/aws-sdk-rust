@@ -5,43 +5,43 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsOpenSearchServiceDomainClusterConfigDetails {
     /// <p>The number of data nodes to use in the OpenSearch domain.</p>
-    pub instance_count: i32,
+    pub instance_count: ::std::option::Option<i32>,
     /// <p>Whether UltraWarm is enabled.</p>
-    pub warm_enabled: bool,
+    pub warm_enabled: ::std::option::Option<bool>,
     /// <p>The number of UltraWarm instances.</p>
-    pub warm_count: i32,
+    pub warm_count: ::std::option::Option<i32>,
     /// <p>Whether to use a dedicated master node for the OpenSearch domain. A dedicated master node performs cluster management tasks, but does not hold data or respond to data upload requests.</p>
-    pub dedicated_master_enabled: bool,
+    pub dedicated_master_enabled: ::std::option::Option<bool>,
     /// <p>Configuration options for zone awareness. Provided if <code>ZoneAwarenessEnabled</code> is <code>true</code>.</p>
     pub zone_awareness_config: ::std::option::Option<crate::types::AwsOpenSearchServiceDomainClusterConfigZoneAwarenessConfigDetails>,
     /// <p>The number of instances to use for the master node. If this attribute is specified, then <code>DedicatedMasterEnabled</code> must be <code>true</code>.</p>
-    pub dedicated_master_count: i32,
+    pub dedicated_master_count: ::std::option::Option<i32>,
     /// <p>The instance type for your data nodes.</p>
     /// <p>For a list of valid values, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/supported-instance-types.html">Supported instance types in Amazon OpenSearch Service</a> in the <i>Amazon OpenSearch Service Developer Guide</i>.</p>
     pub instance_type: ::std::option::Option<::std::string::String>,
     /// <p>The type of UltraWarm instance.</p>
     pub warm_type: ::std::option::Option<::std::string::String>,
     /// <p>Whether to enable zone awareness for the OpenSearch domain. When zone awareness is enabled, OpenSearch Service allocates the cluster's nodes and replica index shards across Availability Zones (AZs) in the same Region. This prevents data loss and minimizes downtime if a node or data center fails.</p>
-    pub zone_awareness_enabled: bool,
+    pub zone_awareness_enabled: ::std::option::Option<bool>,
     /// <p>The hardware configuration of the computer that hosts the dedicated master node.</p>
     /// <p>If this attribute is specified, then <code>DedicatedMasterEnabled</code> must be <code>true</code>. </p>
     pub dedicated_master_type: ::std::option::Option<::std::string::String>,
 }
 impl AwsOpenSearchServiceDomainClusterConfigDetails {
     /// <p>The number of data nodes to use in the OpenSearch domain.</p>
-    pub fn instance_count(&self) -> i32 {
+    pub fn instance_count(&self) -> ::std::option::Option<i32> {
         self.instance_count
     }
     /// <p>Whether UltraWarm is enabled.</p>
-    pub fn warm_enabled(&self) -> bool {
+    pub fn warm_enabled(&self) -> ::std::option::Option<bool> {
         self.warm_enabled
     }
     /// <p>The number of UltraWarm instances.</p>
-    pub fn warm_count(&self) -> i32 {
+    pub fn warm_count(&self) -> ::std::option::Option<i32> {
         self.warm_count
     }
     /// <p>Whether to use a dedicated master node for the OpenSearch domain. A dedicated master node performs cluster management tasks, but does not hold data or respond to data upload requests.</p>
-    pub fn dedicated_master_enabled(&self) -> bool {
+    pub fn dedicated_master_enabled(&self) -> ::std::option::Option<bool> {
         self.dedicated_master_enabled
     }
     /// <p>Configuration options for zone awareness. Provided if <code>ZoneAwarenessEnabled</code> is <code>true</code>.</p>
@@ -49,7 +49,7 @@ impl AwsOpenSearchServiceDomainClusterConfigDetails {
         self.zone_awareness_config.as_ref()
     }
     /// <p>The number of instances to use for the master node. If this attribute is specified, then <code>DedicatedMasterEnabled</code> must be <code>true</code>.</p>
-    pub fn dedicated_master_count(&self) -> i32 {
+    pub fn dedicated_master_count(&self) -> ::std::option::Option<i32> {
         self.dedicated_master_count
     }
     /// <p>The instance type for your data nodes.</p>
@@ -62,7 +62,7 @@ impl AwsOpenSearchServiceDomainClusterConfigDetails {
         self.warm_type.as_deref()
     }
     /// <p>Whether to enable zone awareness for the OpenSearch domain. When zone awareness is enabled, OpenSearch Service allocates the cluster's nodes and replica index shards across Availability Zones (AZs) in the same Region. This prevents data loss and minimizes downtime if a node or data center fails.</p>
-    pub fn zone_awareness_enabled(&self) -> bool {
+    pub fn zone_awareness_enabled(&self) -> ::std::option::Option<bool> {
         self.zone_awareness_enabled
     }
     /// <p>The hardware configuration of the computer that hosts the dedicated master node.</p>
@@ -248,15 +248,15 @@ impl AwsOpenSearchServiceDomainClusterConfigDetailsBuilder {
     /// Consumes the builder and constructs a [`AwsOpenSearchServiceDomainClusterConfigDetails`](crate::types::AwsOpenSearchServiceDomainClusterConfigDetails).
     pub fn build(self) -> crate::types::AwsOpenSearchServiceDomainClusterConfigDetails {
         crate::types::AwsOpenSearchServiceDomainClusterConfigDetails {
-            instance_count: self.instance_count.unwrap_or_default(),
-            warm_enabled: self.warm_enabled.unwrap_or_default(),
-            warm_count: self.warm_count.unwrap_or_default(),
-            dedicated_master_enabled: self.dedicated_master_enabled.unwrap_or_default(),
+            instance_count: self.instance_count,
+            warm_enabled: self.warm_enabled,
+            warm_count: self.warm_count,
+            dedicated_master_enabled: self.dedicated_master_enabled,
             zone_awareness_config: self.zone_awareness_config,
-            dedicated_master_count: self.dedicated_master_count.unwrap_or_default(),
+            dedicated_master_count: self.dedicated_master_count,
             instance_type: self.instance_type,
             warm_type: self.warm_type,
-            zone_awareness_enabled: self.zone_awareness_enabled.unwrap_or_default(),
+            zone_awareness_enabled: self.zone_awareness_enabled,
             dedicated_master_type: self.dedicated_master_type,
         }
     }

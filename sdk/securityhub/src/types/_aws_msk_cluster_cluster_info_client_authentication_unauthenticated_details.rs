@@ -5,11 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsMskClusterClusterInfoClientAuthenticationUnauthenticatedDetails {
     /// <p> Indicates whether unauthenticated is allowed or not.</p>
-    pub enabled: bool,
+    pub enabled: ::std::option::Option<bool>,
 }
 impl AwsMskClusterClusterInfoClientAuthenticationUnauthenticatedDetails {
     /// <p> Indicates whether unauthenticated is allowed or not.</p>
-    pub fn enabled(&self) -> bool {
+    pub fn enabled(&self) -> ::std::option::Option<bool> {
         self.enabled
     }
 }
@@ -43,8 +43,6 @@ impl AwsMskClusterClusterInfoClientAuthenticationUnauthenticatedDetailsBuilder {
     }
     /// Consumes the builder and constructs a [`AwsMskClusterClusterInfoClientAuthenticationUnauthenticatedDetails`](crate::types::AwsMskClusterClusterInfoClientAuthenticationUnauthenticatedDetails).
     pub fn build(self) -> crate::types::AwsMskClusterClusterInfoClientAuthenticationUnauthenticatedDetails {
-        crate::types::AwsMskClusterClusterInfoClientAuthenticationUnauthenticatedDetails {
-            enabled: self.enabled.unwrap_or_default(),
-        }
+        crate::types::AwsMskClusterClusterInfoClientAuthenticationUnauthenticatedDetails { enabled: self.enabled }
     }
 }

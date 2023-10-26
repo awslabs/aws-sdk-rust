@@ -6,19 +6,19 @@
 pub struct AwsRedshiftClusterRestoreStatus {
     /// <p>The number of megabytes per second being transferred from the backup storage. Returns the average rate for a completed backup.</p>
     /// <p>This field is only updated when you restore to DC2 and DS2 node types.</p>
-    pub current_restore_rate_in_mega_bytes_per_second: f64,
+    pub current_restore_rate_in_mega_bytes_per_second: ::std::option::Option<f64>,
     /// <p>The amount of time an in-progress restore has been running, or the amount of time it took a completed restore to finish.</p>
     /// <p>This field is only updated when you restore to DC2 and DS2 node types.</p>
-    pub elapsed_time_in_seconds: i64,
+    pub elapsed_time_in_seconds: ::std::option::Option<i64>,
     /// <p>The estimate of the time remaining before the restore is complete. Returns 0 for a completed restore.</p>
     /// <p>This field is only updated when you restore to DC2 and DS2 node types.</p>
-    pub estimated_time_to_completion_in_seconds: i64,
+    pub estimated_time_to_completion_in_seconds: ::std::option::Option<i64>,
     /// <p>The number of megabytes that were transferred from snapshot storage.</p>
     /// <p>This field is only updated when you restore to DC2 and DS2 node types.</p>
-    pub progress_in_mega_bytes: i64,
+    pub progress_in_mega_bytes: ::std::option::Option<i64>,
     /// <p>The size of the set of snapshot data that was used to restore the cluster.</p>
     /// <p>This field is only updated when you restore to DC2 and DS2 node types.</p>
-    pub snapshot_size_in_mega_bytes: i64,
+    pub snapshot_size_in_mega_bytes: ::std::option::Option<i64>,
     /// <p>The status of the restore action.</p>
     /// <p>Valid values: <code>starting</code> | <code>restoring</code> | <code>completed</code> | <code>failed</code> </p>
     pub status: ::std::option::Option<::std::string::String>,
@@ -26,27 +26,27 @@ pub struct AwsRedshiftClusterRestoreStatus {
 impl AwsRedshiftClusterRestoreStatus {
     /// <p>The number of megabytes per second being transferred from the backup storage. Returns the average rate for a completed backup.</p>
     /// <p>This field is only updated when you restore to DC2 and DS2 node types.</p>
-    pub fn current_restore_rate_in_mega_bytes_per_second(&self) -> f64 {
+    pub fn current_restore_rate_in_mega_bytes_per_second(&self) -> ::std::option::Option<f64> {
         self.current_restore_rate_in_mega_bytes_per_second
     }
     /// <p>The amount of time an in-progress restore has been running, or the amount of time it took a completed restore to finish.</p>
     /// <p>This field is only updated when you restore to DC2 and DS2 node types.</p>
-    pub fn elapsed_time_in_seconds(&self) -> i64 {
+    pub fn elapsed_time_in_seconds(&self) -> ::std::option::Option<i64> {
         self.elapsed_time_in_seconds
     }
     /// <p>The estimate of the time remaining before the restore is complete. Returns 0 for a completed restore.</p>
     /// <p>This field is only updated when you restore to DC2 and DS2 node types.</p>
-    pub fn estimated_time_to_completion_in_seconds(&self) -> i64 {
+    pub fn estimated_time_to_completion_in_seconds(&self) -> ::std::option::Option<i64> {
         self.estimated_time_to_completion_in_seconds
     }
     /// <p>The number of megabytes that were transferred from snapshot storage.</p>
     /// <p>This field is only updated when you restore to DC2 and DS2 node types.</p>
-    pub fn progress_in_mega_bytes(&self) -> i64 {
+    pub fn progress_in_mega_bytes(&self) -> ::std::option::Option<i64> {
         self.progress_in_mega_bytes
     }
     /// <p>The size of the set of snapshot data that was used to restore the cluster.</p>
     /// <p>This field is only updated when you restore to DC2 and DS2 node types.</p>
-    pub fn snapshot_size_in_mega_bytes(&self) -> i64 {
+    pub fn snapshot_size_in_mega_bytes(&self) -> ::std::option::Option<i64> {
         self.snapshot_size_in_mega_bytes
     }
     /// <p>The status of the restore action.</p>
@@ -179,11 +179,11 @@ impl AwsRedshiftClusterRestoreStatusBuilder {
     /// Consumes the builder and constructs a [`AwsRedshiftClusterRestoreStatus`](crate::types::AwsRedshiftClusterRestoreStatus).
     pub fn build(self) -> crate::types::AwsRedshiftClusterRestoreStatus {
         crate::types::AwsRedshiftClusterRestoreStatus {
-            current_restore_rate_in_mega_bytes_per_second: self.current_restore_rate_in_mega_bytes_per_second.unwrap_or_default(),
-            elapsed_time_in_seconds: self.elapsed_time_in_seconds.unwrap_or_default(),
-            estimated_time_to_completion_in_seconds: self.estimated_time_to_completion_in_seconds.unwrap_or_default(),
-            progress_in_mega_bytes: self.progress_in_mega_bytes.unwrap_or_default(),
-            snapshot_size_in_mega_bytes: self.snapshot_size_in_mega_bytes.unwrap_or_default(),
+            current_restore_rate_in_mega_bytes_per_second: self.current_restore_rate_in_mega_bytes_per_second,
+            elapsed_time_in_seconds: self.elapsed_time_in_seconds,
+            estimated_time_to_completion_in_seconds: self.estimated_time_to_completion_in_seconds,
+            progress_in_mega_bytes: self.progress_in_mega_bytes,
+            snapshot_size_in_mega_bytes: self.snapshot_size_in_mega_bytes,
             status: self.status,
         }
     }

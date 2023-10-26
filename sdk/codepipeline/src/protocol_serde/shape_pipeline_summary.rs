@@ -28,6 +28,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "pipelineType" => {
+                            builder = builder.set_pipeline_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::PipelineType::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         "created" => {
                             builder = builder.set_created(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                 tokens.next(),

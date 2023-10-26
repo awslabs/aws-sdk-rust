@@ -43,6 +43,8 @@ pub(crate) mod shape_get_server_details;
 
 pub(crate) mod shape_get_server_strategies;
 
+pub(crate) mod shape_list_analyzable_servers;
+
 pub(crate) mod shape_list_application_components;
 
 pub(crate) mod shape_list_collectors;
@@ -81,6 +83,8 @@ pub(crate) mod shape_dependency_exception;
 
 pub(crate) mod shape_internal_server_exception;
 
+pub(crate) mod shape_list_analyzable_servers_input;
+
 pub(crate) mod shape_list_application_components_input;
 
 pub(crate) mod shape_list_servers_input;
@@ -108,6 +112,8 @@ pub(crate) mod shape_update_application_component_config_input;
 pub(crate) mod shape_update_server_config_input;
 
 pub(crate) mod shape_validation_exception;
+
+pub(crate) mod shape_analyzable_server_summary_list;
 
 pub(crate) mod shape_application_component_detail;
 
@@ -150,6 +156,8 @@ pub(crate) mod shape_server_strategies;
 pub(crate) mod shape_source_code;
 
 pub(crate) mod shape_strategy_option;
+
+pub(crate) mod shape_analyzable_server_summary;
 
 pub(crate) mod shape_app_unit_error;
 

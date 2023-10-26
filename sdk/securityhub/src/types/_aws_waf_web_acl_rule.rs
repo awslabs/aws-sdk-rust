@@ -14,7 +14,7 @@ pub struct AwsWafWebAclRule {
     /// <p> <code>ActivatedRule</code>|<code>OverrideAction</code> applies only when updating or adding a <code>RuleGroup</code> to a web ACL. In this case you do not use <code>ActivatedRule</code> <code>Action</code>. For all other update requests, <code>ActivatedRule</code> <code>Action</code> is used instead of <code>ActivatedRule</code> <code>OverrideAction</code>.</p>
     pub override_action: ::std::option::Option<crate::types::WafOverrideAction>,
     /// <p>Specifies the order in which the rules in a web ACL are evaluated. Rules with a lower value for <code>Priority</code> are evaluated before rules with a higher value. The value must be a unique integer. If you add multiple rules to a web ACL, the values do not need to be consecutive.</p>
-    pub priority: i32,
+    pub priority: ::std::option::Option<i32>,
     /// <p>The identifier for a rule.</p>
     pub rule_id: ::std::option::Option<::std::string::String>,
     /// <p>The rule type.</p>
@@ -39,7 +39,7 @@ impl AwsWafWebAclRule {
         self.override_action.as_ref()
     }
     /// <p>Specifies the order in which the rules in a web ACL are evaluated. Rules with a lower value for <code>Priority</code> are evaluated before rules with a higher value. The value must be a unique integer. If you add multiple rules to a web ACL, the values do not need to be consecutive.</p>
-    pub fn priority(&self) -> i32 {
+    pub fn priority(&self) -> ::std::option::Option<i32> {
         self.priority
     }
     /// <p>The identifier for a rule.</p>
@@ -183,7 +183,7 @@ impl AwsWafWebAclRuleBuilder {
             action: self.action,
             excluded_rules: self.excluded_rules,
             override_action: self.override_action,
-            priority: self.priority.unwrap_or_default(),
+            priority: self.priority,
             rule_id: self.rule_id,
             r#type: self.r#type,
         }

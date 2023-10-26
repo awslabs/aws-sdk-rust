@@ -184,6 +184,13 @@ pub(crate) fn de_get_run_task(
                         ::aws_smithy_types::date_time::Format::DateTimeWithOffset,
                     )?);
                 }
+                "failureReason" => {
+                    builder = builder.set_failure_reason(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 "gpus" => {
                     builder = builder.set_gpus(
                         ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?

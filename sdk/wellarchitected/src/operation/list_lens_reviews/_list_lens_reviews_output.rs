@@ -8,7 +8,7 @@ pub struct ListLensReviewsOutput {
     pub workload_id: ::std::option::Option<::std::string::String>,
     /// <p>The milestone number.</p>
     /// <p>A workload can have a maximum of 100 milestones.</p>
-    pub milestone_number: i32,
+    pub milestone_number: ::std::option::Option<i32>,
     /// <p>List of lens summaries of lens reviews of a workload.</p>
     pub lens_review_summaries: ::std::option::Option<::std::vec::Vec<crate::types::LensReviewSummary>>,
     /// <p>The token to use to retrieve the next set of results.</p>
@@ -22,7 +22,7 @@ impl ListLensReviewsOutput {
     }
     /// <p>The milestone number.</p>
     /// <p>A workload can have a maximum of 100 milestones.</p>
-    pub fn milestone_number(&self) -> i32 {
+    pub fn milestone_number(&self) -> ::std::option::Option<i32> {
         self.milestone_number
     }
     /// <p>List of lens summaries of lens reviews of a workload.</p>
@@ -135,7 +135,7 @@ impl ListLensReviewsOutputBuilder {
     pub fn build(self) -> crate::operation::list_lens_reviews::ListLensReviewsOutput {
         crate::operation::list_lens_reviews::ListLensReviewsOutput {
             workload_id: self.workload_id,
-            milestone_number: self.milestone_number.unwrap_or_default(),
+            milestone_number: self.milestone_number,
             lens_review_summaries: self.lens_review_summaries,
             next_token: self.next_token,
             _request_id: self._request_id,

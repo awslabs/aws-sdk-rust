@@ -6,11 +6,11 @@ pub fn ser_aws_iam_policy_version(
     if let Some(var_1) = &input.version_id {
         object.key("VersionId").string(var_1.as_str());
     }
-    if input.is_default_version {
-        object.key("IsDefaultVersion").boolean(input.is_default_version);
+    if let Some(var_2) = &input.is_default_version {
+        object.key("IsDefaultVersion").boolean(*var_2);
     }
-    if let Some(var_2) = &input.create_date {
-        object.key("CreateDate").string(var_2.as_str());
+    if let Some(var_3) = &input.create_date {
+        object.key("CreateDate").string(var_3.as_str());
     }
     Ok(())
 }

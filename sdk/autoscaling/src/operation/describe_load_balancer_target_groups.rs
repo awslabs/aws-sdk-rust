@@ -372,3 +372,6 @@ mod _describe_load_balancer_target_groups_output;
 
 /// Builders
 pub mod builders;
+
+/// Paginator for this operation
+pub mod paginator;

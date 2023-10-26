@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NetworkAclEntry {
     /// <p> The rule number for the entry. For example <i>100</i>. All the network ACL entries are processed in ascending order by rule number. </p>
-    pub rule_number: i32,
+    pub rule_number: ::std::option::Option<i32>,
     /// <p> The protocol number. A value of <i>-1</i> means all the protocols. </p>
     pub protocol: ::std::option::Option<::std::string::String>,
     /// <p> Indicates whether to allow or deny the traffic that matches the rule. </p>
@@ -19,7 +19,7 @@ pub struct NetworkAclEntry {
 }
 impl NetworkAclEntry {
     /// <p> The rule number for the entry. For example <i>100</i>. All the network ACL entries are processed in ascending order by rule number. </p>
-    pub fn rule_number(&self) -> i32 {
+    pub fn rule_number(&self) -> ::std::option::Option<i32> {
         self.rule_number
     }
     /// <p> The protocol number. A value of <i>-1</i> means all the protocols. </p>
@@ -149,7 +149,7 @@ impl NetworkAclEntryBuilder {
     /// Consumes the builder and constructs a [`NetworkAclEntry`](crate::types::NetworkAclEntry).
     pub fn build(self) -> crate::types::NetworkAclEntry {
         crate::types::NetworkAclEntry {
-            rule_number: self.rule_number.unwrap_or_default(),
+            rule_number: self.rule_number,
             protocol: self.protocol,
             rule_action: self.rule_action,
             port_range: self.port_range,

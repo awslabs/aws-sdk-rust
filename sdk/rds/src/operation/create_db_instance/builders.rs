@@ -2378,4 +2378,18 @@ impl CreateDBInstanceFluentBuilder {
     pub fn get_db_system_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_db_system_id()
     }
+    /// <p>Indicates whether the DB instance has a dedicated log volume (DLV) enabled.</p>
+    pub fn dedicated_log_volume(mut self, input: bool) -> Self {
+        self.inner = self.inner.dedicated_log_volume(input);
+        self
+    }
+    /// <p>Indicates whether the DB instance has a dedicated log volume (DLV) enabled.</p>
+    pub fn set_dedicated_log_volume(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_dedicated_log_volume(input);
+        self
+    }
+    /// <p>Indicates whether the DB instance has a dedicated log volume (DLV) enabled.</p>
+    pub fn get_dedicated_log_volume(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dedicated_log_volume()
+    }
 }

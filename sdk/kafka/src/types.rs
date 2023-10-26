@@ -23,6 +23,12 @@ pub use crate::types::_iam::Iam;
 
 pub use crate::types::_scram::Scram;
 
+pub use crate::types::_replicator_state::ReplicatorState;
+
+pub use crate::types::_topic_replication_update::TopicReplicationUpdate;
+
+pub use crate::types::_consumer_group_replication_update::ConsumerGroupReplicationUpdate;
+
 pub use crate::types::_logging_info::LoggingInfo;
 
 pub use crate::types::_broker_logs::BrokerLogs;
@@ -68,6 +74,14 @@ pub use crate::types::_broker_ebs_volume_info::BrokerEbsVolumeInfo;
 pub use crate::types::_vpc_connection::VpcConnection;
 
 pub use crate::types::_vpc_connection_state::VpcConnectionState;
+
+pub use crate::types::_replicator_summary::ReplicatorSummary;
+
+pub use crate::types::_replication_info_summary::ReplicationInfoSummary;
+
+pub use crate::types::_kafka_cluster_summary::KafkaClusterSummary;
+
+pub use crate::types::_amazon_msk_cluster::AmazonMskCluster;
 
 pub use crate::types::_node_info::NodeInfo;
 
@@ -145,6 +159,20 @@ pub use crate::types::_client_vpc_connection::ClientVpcConnection;
 
 pub use crate::types::_compatible_kafka_version::CompatibleKafkaVersion;
 
+pub use crate::types::_replication_state_info::ReplicationStateInfo;
+
+pub use crate::types::_replication_info_description::ReplicationInfoDescription;
+
+pub use crate::types::_topic_replication::TopicReplication;
+
+pub use crate::types::_target_compression_type::TargetCompressionType;
+
+pub use crate::types::_consumer_group_replication::ConsumerGroupReplication;
+
+pub use crate::types::_kafka_cluster_description::KafkaClusterDescription;
+
+pub use crate::types::_kafka_cluster_client_vpc_config::KafkaClusterClientVpcConfig;
+
 pub use crate::types::_cluster_operation_v2::ClusterOperationV2;
 
 pub use crate::types::_cluster_operation_v2_serverless::ClusterOperationV2Serverless;
@@ -153,11 +181,17 @@ pub use crate::types::_vpc_connection_info_serverless::VpcConnectionInfoServerle
 
 pub use crate::types::_cluster_operation_v2_provisioned::ClusterOperationV2Provisioned;
 
+pub use crate::types::_replication_info::ReplicationInfo;
+
+pub use crate::types::_kafka_cluster::KafkaCluster;
+
 pub use crate::types::_serverless_request::ServerlessRequest;
 
 pub use crate::types::_provisioned_request::ProvisionedRequest;
 
 pub use crate::types::_unprocessed_scram_secret::UnprocessedScramSecret;
+
+mod _amazon_msk_cluster;
 
 mod _broker_az_distribution;
 
@@ -213,6 +247,10 @@ mod _configuration_state;
 
 mod _connectivity_info;
 
+mod _consumer_group_replication;
+
+mod _consumer_group_replication_update;
+
 mod _ebs_storage_info;
 
 mod _encryption_at_rest;
@@ -232,6 +270,14 @@ mod _iam;
 mod _jmx_exporter;
 
 mod _jmx_exporter_info;
+
+mod _kafka_cluster;
+
+mod _kafka_cluster_client_vpc_config;
+
+mod _kafka_cluster_description;
+
+mod _kafka_cluster_summary;
 
 mod _kafka_version;
 
@@ -265,6 +311,18 @@ mod _provisioned_throughput;
 
 mod _public_access;
 
+mod _replication_info;
+
+mod _replication_info_description;
+
+mod _replication_info_summary;
+
+mod _replication_state_info;
+
+mod _replicator_state;
+
+mod _replicator_summary;
+
 mod _s3;
 
 mod _sasl;
@@ -285,7 +343,13 @@ mod _storage_info;
 
 mod _storage_mode;
 
+mod _target_compression_type;
+
 mod _tls;
+
+mod _topic_replication;
+
+mod _topic_replication_update;
 
 mod _unauthenticated;
 

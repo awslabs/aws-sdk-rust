@@ -11,6 +11,8 @@ pub use crate::types::_scheduled_action::ScheduledActionBuilder;
 
 pub use crate::types::_package_details::PackageDetailsBuilder;
 
+pub use crate::types::_plugin_properties::PluginPropertiesBuilder;
+
 pub use crate::types::_error_details::ErrorDetailsBuilder;
 
 pub use crate::types::_package_source::PackageSourceBuilder;
@@ -126,6 +128,8 @@ pub use crate::types::_domain_package_details::DomainPackageDetailsBuilder;
 pub use crate::types::_instance_type_details::InstanceTypeDetailsBuilder;
 
 pub use crate::types::_domain_info::DomainInfoBuilder;
+
+pub use crate::types::_domain_maintenance_details::DomainMaintenanceDetailsBuilder;
 
 pub use crate::types::_upgrade_history::UpgradeHistoryBuilder;
 

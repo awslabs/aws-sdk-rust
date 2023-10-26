@@ -111,6 +111,12 @@ impl DescribeExportConfigurationsFluentBuilder {
         self.config_override = config_override;
         self
     }
+    /// Create a paginator for this request
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::describe_export_configurations::paginator::DescribeExportConfigurationsPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(self) -> crate::operation::describe_export_configurations::paginator::DescribeExportConfigurationsPaginator {
+        crate::operation::describe_export_configurations::paginator::DescribeExportConfigurationsPaginator::new(self.handle, self.inner)
+    }
     /// Appends an item to `exportIds`.
     ///
     /// To override the contents of this collection use [`set_export_ids`](Self::set_export_ids).

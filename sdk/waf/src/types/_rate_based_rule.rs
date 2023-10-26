@@ -25,7 +25,7 @@ pub struct RateBasedRule {
     /// <p>The field that AWS WAF uses to determine if requests are likely arriving from single source and thus subject to rate monitoring. The only valid value for <code>RateKey</code> is <code>IP</code>. <code>IP</code> indicates that requests arriving from the same IP address are subject to the <code>RateLimit</code> that is specified in the <code>RateBasedRule</code>.</p>
     pub rate_key: ::std::option::Option<crate::types::RateKey>,
     /// <p>The maximum number of requests, which have an identical value in the field specified by the <code>RateKey</code>, allowed in a five-minute period. If the number of requests exceeds the <code>RateLimit</code> and the other predicates specified in the rule are also met, AWS WAF triggers the action that is specified for this rule.</p>
-    pub rate_limit: i64,
+    pub rate_limit: ::std::option::Option<i64>,
 }
 impl RateBasedRule {
     /// <p>A unique identifier for a <code>RateBasedRule</code>. You use <code>RuleId</code> to get more information about a <code>RateBasedRule</code> (see <code>GetRateBasedRule</code>), update a <code>RateBasedRule</code> (see <code>UpdateRateBasedRule</code>), insert a <code>RateBasedRule</code> into a <code>WebACL</code> or delete one from a <code>WebACL</code> (see <code>UpdateWebACL</code>), or delete a <code>RateBasedRule</code> from AWS WAF (see <code>DeleteRateBasedRule</code>).</p>
@@ -49,7 +49,7 @@ impl RateBasedRule {
         self.rate_key.as_ref()
     }
     /// <p>The maximum number of requests, which have an identical value in the field specified by the <code>RateKey</code>, allowed in a five-minute period. If the number of requests exceeds the <code>RateLimit</code> and the other predicates specified in the rule are also met, AWS WAF triggers the action that is specified for this rule.</p>
-    pub fn rate_limit(&self) -> i64 {
+    pub fn rate_limit(&self) -> ::std::option::Option<i64> {
         self.rate_limit
     }
 }
@@ -170,7 +170,7 @@ impl RateBasedRuleBuilder {
             metric_name: self.metric_name,
             match_predicates: self.match_predicates,
             rate_key: self.rate_key,
-            rate_limit: self.rate_limit.unwrap_or_default(),
+            rate_limit: self.rate_limit,
         }
     }
 }

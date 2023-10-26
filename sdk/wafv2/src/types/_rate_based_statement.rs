@@ -44,7 +44,7 @@ pub struct RateBasedStatement {
     /// <li> <p>If you aggregate on just the IP address, this is the limit on requests from any single IP address. </p> </li>
     /// <li> <p>If you aggregate on the HTTP method and the query argument name "city", then this is the limit on requests for any single method, city pair. </p> </li>
     /// </ul>
-    pub limit: i64,
+    pub limit: ::std::option::Option<i64>,
     /// <p>Setting that indicates how to aggregate the request counts. </p> <note>
     /// <p>Web requests that are missing any of the components specified in the aggregation keys are omitted from the rate-based rule evaluation and handling. </p>
     /// </note>
@@ -72,7 +72,7 @@ impl RateBasedStatement {
     /// <li> <p>If you aggregate on just the IP address, this is the limit on requests from any single IP address. </p> </li>
     /// <li> <p>If you aggregate on the HTTP method and the query argument name "city", then this is the limit on requests for any single method, city pair. </p> </li>
     /// </ul>
-    pub fn limit(&self) -> i64 {
+    pub fn limit(&self) -> ::std::option::Option<i64> {
         self.limit
     }
     /// <p>Setting that indicates how to aggregate the request counts. </p> <note>
@@ -248,7 +248,7 @@ impl RateBasedStatementBuilder {
     /// Consumes the builder and constructs a [`RateBasedStatement`](crate::types::RateBasedStatement).
     pub fn build(self) -> crate::types::RateBasedStatement {
         crate::types::RateBasedStatement {
-            limit: self.limit.unwrap_or_default(),
+            limit: self.limit,
             aggregate_key_type: self.aggregate_key_type,
             scope_down_statement: self.scope_down_statement,
             forwarded_ip_config: self.forwarded_ip_config,

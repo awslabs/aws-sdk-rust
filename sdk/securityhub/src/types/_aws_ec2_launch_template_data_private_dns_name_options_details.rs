@@ -5,19 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEc2LaunchTemplateDataPrivateDnsNameOptionsDetails {
     /// <p> Indicates whether to respond to DNS queries for instance hostnames with DNS AAAA records. </p>
-    pub enable_resource_name_dns_aaaa_record: bool,
+    pub enable_resource_name_dns_aaaa_record: ::std::option::Option<bool>,
     /// <p> Indicates whether to respond to DNS queries for instance hostnames with DNS A records. </p>
-    pub enable_resource_name_dns_a_record: bool,
+    pub enable_resource_name_dns_a_record: ::std::option::Option<bool>,
     /// <p> The type of hostname for EC2 instances. </p>
     pub hostname_type: ::std::option::Option<::std::string::String>,
 }
 impl AwsEc2LaunchTemplateDataPrivateDnsNameOptionsDetails {
     /// <p> Indicates whether to respond to DNS queries for instance hostnames with DNS AAAA records. </p>
-    pub fn enable_resource_name_dns_aaaa_record(&self) -> bool {
+    pub fn enable_resource_name_dns_aaaa_record(&self) -> ::std::option::Option<bool> {
         self.enable_resource_name_dns_aaaa_record
     }
     /// <p> Indicates whether to respond to DNS queries for instance hostnames with DNS A records. </p>
-    pub fn enable_resource_name_dns_a_record(&self) -> bool {
+    pub fn enable_resource_name_dns_a_record(&self) -> ::std::option::Option<bool> {
         self.enable_resource_name_dns_a_record
     }
     /// <p> The type of hostname for EC2 instances. </p>
@@ -86,8 +86,8 @@ impl AwsEc2LaunchTemplateDataPrivateDnsNameOptionsDetailsBuilder {
     /// Consumes the builder and constructs a [`AwsEc2LaunchTemplateDataPrivateDnsNameOptionsDetails`](crate::types::AwsEc2LaunchTemplateDataPrivateDnsNameOptionsDetails).
     pub fn build(self) -> crate::types::AwsEc2LaunchTemplateDataPrivateDnsNameOptionsDetails {
         crate::types::AwsEc2LaunchTemplateDataPrivateDnsNameOptionsDetails {
-            enable_resource_name_dns_aaaa_record: self.enable_resource_name_dns_aaaa_record.unwrap_or_default(),
-            enable_resource_name_dns_a_record: self.enable_resource_name_dns_a_record.unwrap_or_default(),
+            enable_resource_name_dns_aaaa_record: self.enable_resource_name_dns_aaaa_record,
+            enable_resource_name_dns_a_record: self.enable_resource_name_dns_a_record,
             hostname_type: self.hostname_type,
         }
     }

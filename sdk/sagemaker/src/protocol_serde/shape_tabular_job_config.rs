@@ -21,19 +21,17 @@ pub fn ser_tabular_job_config(
     if let Some(var_6) = &input.mode {
         object.key("Mode").string(var_6.as_str());
     }
-    if input.generate_candidate_definitions_only {
-        object
-            .key("GenerateCandidateDefinitionsOnly")
-            .boolean(input.generate_candidate_definitions_only);
+    if let Some(var_7) = &input.generate_candidate_definitions_only {
+        object.key("GenerateCandidateDefinitionsOnly").boolean(*var_7);
     }
-    if let Some(var_7) = &input.problem_type {
-        object.key("ProblemType").string(var_7.as_str());
+    if let Some(var_8) = &input.problem_type {
+        object.key("ProblemType").string(var_8.as_str());
     }
-    if let Some(var_8) = &input.target_attribute_name {
-        object.key("TargetAttributeName").string(var_8.as_str());
+    if let Some(var_9) = &input.target_attribute_name {
+        object.key("TargetAttributeName").string(var_9.as_str());
     }
-    if let Some(var_9) = &input.sample_weight_attribute_name {
-        object.key("SampleWeightAttributeName").string(var_9.as_str());
+    if let Some(var_10) = &input.sample_weight_attribute_name {
+        object.key("SampleWeightAttributeName").string(var_10.as_str());
     }
     Ok(())
 }

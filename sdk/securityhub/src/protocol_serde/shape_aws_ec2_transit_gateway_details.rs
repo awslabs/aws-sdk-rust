@@ -42,10 +42,10 @@ pub fn ser_aws_ec2_transit_gateway_details(
     if let Some(var_13) = &input.multicast_support {
         object.key("MulticastSupport").string(var_13.as_str());
     }
-    if input.amazon_side_asn != 0 {
+    if let Some(var_14) = &input.amazon_side_asn {
         object.key("AmazonSideAsn").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.amazon_side_asn).into()),
+            ::aws_smithy_types::Number::NegInt((*var_14).into()),
         );
     }
     Ok(())

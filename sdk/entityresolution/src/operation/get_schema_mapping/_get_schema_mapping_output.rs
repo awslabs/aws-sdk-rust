@@ -17,6 +17,8 @@ pub struct GetSchemaMappingOutput {
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>Specifies whether the schema mapping has been applied to a workflow.</p>
+    pub has_workflows: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }
 impl GetSchemaMappingOutput {
@@ -48,6 +50,10 @@ impl GetSchemaMappingOutput {
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
+    /// <p>Specifies whether the schema mapping has been applied to a workflow.</p>
+    pub fn has_workflows(&self) -> ::std::option::Option<bool> {
+        self.has_workflows
+    }
 }
 impl ::aws_http::request_id::RequestId for GetSchemaMappingOutput {
     fn request_id(&self) -> Option<&str> {
@@ -72,6 +78,7 @@ pub struct GetSchemaMappingOutputBuilder {
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) has_workflows: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }
 impl GetSchemaMappingOutputBuilder {
@@ -185,6 +192,20 @@ impl GetSchemaMappingOutputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
+    /// <p>Specifies whether the schema mapping has been applied to a workflow.</p>
+    pub fn has_workflows(mut self, input: bool) -> Self {
+        self.has_workflows = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether the schema mapping has been applied to a workflow.</p>
+    pub fn set_has_workflows(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.has_workflows = input;
+        self
+    }
+    /// <p>Specifies whether the schema mapping has been applied to a workflow.</p>
+    pub fn get_has_workflows(&self) -> &::std::option::Option<bool> {
+        &self.has_workflows
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -204,6 +225,7 @@ impl GetSchemaMappingOutputBuilder {
             created_at: self.created_at,
             updated_at: self.updated_at,
             tags: self.tags,
+            has_workflows: self.has_workflows,
             _request_id: self._request_id,
         }
     }

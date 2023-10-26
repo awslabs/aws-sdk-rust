@@ -9,16 +9,16 @@ pub fn ser_resource_limits(
             ::aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    {
+    if let Some(var_2) = &input.max_parallel_training_jobs {
         object.key("MaxParallelTrainingJobs").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.max_parallel_training_jobs).into()),
+            ::aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
-    if let Some(var_2) = &input.max_runtime_in_seconds {
+    if let Some(var_3) = &input.max_runtime_in_seconds {
         object.key("MaxRuntimeInSeconds").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_2).into()),
+            ::aws_smithy_types::Number::NegInt((*var_3).into()),
         );
     }
     Ok(())

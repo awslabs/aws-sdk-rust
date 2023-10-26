@@ -18,41 +18,41 @@ pub fn ser_aws_auto_scaling_auto_scaling_group_details(
     if let Some(var_5) = &input.health_check_type {
         object.key("HealthCheckType").string(var_5.as_str());
     }
-    if input.health_check_grace_period != 0 {
+    if let Some(var_6) = &input.health_check_grace_period {
         object.key("HealthCheckGracePeriod").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.health_check_grace_period).into()),
+            ::aws_smithy_types::Number::NegInt((*var_6).into()),
         );
     }
-    if let Some(var_6) = &input.created_time {
-        object.key("CreatedTime").string(var_6.as_str());
+    if let Some(var_7) = &input.created_time {
+        object.key("CreatedTime").string(var_7.as_str());
     }
-    if let Some(var_7) = &input.mixed_instances_policy {
+    if let Some(var_8) = &input.mixed_instances_policy {
         #[allow(unused_mut)]
-        let mut object_8 = object.key("MixedInstancesPolicy").start_object();
-        crate::protocol_serde::shape_aws_auto_scaling_auto_scaling_group_mixed_instances_policy_details::ser_aws_auto_scaling_auto_scaling_group_mixed_instances_policy_details(&mut object_8, var_7)?;
-        object_8.finish();
+        let mut object_9 = object.key("MixedInstancesPolicy").start_object();
+        crate::protocol_serde::shape_aws_auto_scaling_auto_scaling_group_mixed_instances_policy_details::ser_aws_auto_scaling_auto_scaling_group_mixed_instances_policy_details(&mut object_9, var_8)?;
+        object_9.finish();
     }
-    if let Some(var_9) = &input.availability_zones {
-        let mut array_10 = object.key("AvailabilityZones").start_array();
-        for item_11 in var_9 {
+    if let Some(var_10) = &input.availability_zones {
+        let mut array_11 = object.key("AvailabilityZones").start_array();
+        for item_12 in var_10 {
             {
                 #[allow(unused_mut)]
-                let mut object_12 = array_10.value().start_object();
-                crate::protocol_serde::shape_aws_auto_scaling_auto_scaling_group_availability_zones_list_details::ser_aws_auto_scaling_auto_scaling_group_availability_zones_list_details(&mut object_12, item_11)?;
-                object_12.finish();
+                let mut object_13 = array_11.value().start_object();
+                crate::protocol_serde::shape_aws_auto_scaling_auto_scaling_group_availability_zones_list_details::ser_aws_auto_scaling_auto_scaling_group_availability_zones_list_details(&mut object_13, item_12)?;
+                object_13.finish();
             }
         }
-        array_10.finish();
+        array_11.finish();
     }
-    if let Some(var_13) = &input.launch_template {
+    if let Some(var_14) = &input.launch_template {
         #[allow(unused_mut)]
-        let mut object_14 = object.key("LaunchTemplate").start_object();
-        crate::protocol_serde::shape_aws_auto_scaling_auto_scaling_group_launch_template_launch_template_specification::ser_aws_auto_scaling_auto_scaling_group_launch_template_launch_template_specification(&mut object_14, var_13)?;
-        object_14.finish();
+        let mut object_15 = object.key("LaunchTemplate").start_object();
+        crate::protocol_serde::shape_aws_auto_scaling_auto_scaling_group_launch_template_launch_template_specification::ser_aws_auto_scaling_auto_scaling_group_launch_template_launch_template_specification(&mut object_15, var_14)?;
+        object_15.finish();
     }
-    if input.capacity_rebalance {
-        object.key("CapacityRebalance").boolean(input.capacity_rebalance);
+    if let Some(var_16) = &input.capacity_rebalance {
+        object.key("CapacityRebalance").boolean(*var_16);
     }
     Ok(())
 }

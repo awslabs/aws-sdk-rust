@@ -7,7 +7,7 @@ pub struct DbInstanceStatusInfo {
     /// <p>This value is currently "read replication."</p>
     pub status_type: ::std::option::Option<::std::string::String>,
     /// <p>A Boolean value that is true if the instance is operating normally, or false if the instance is in an error state.</p>
-    pub normal: bool,
+    pub normal: ::std::option::Option<bool>,
     /// <p>The status of the DB instance. For a StatusType of read replica, the values can be replicating, replication stop point set, replication stop point reached, error, stopped, or terminated.</p>
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>Details of the error if there is an error for the instance. If the instance isn't in an error state, this value is blank.</p>
@@ -19,7 +19,7 @@ impl DbInstanceStatusInfo {
         self.status_type.as_deref()
     }
     /// <p>A Boolean value that is true if the instance is operating normally, or false if the instance is in an error state.</p>
-    pub fn normal(&self) -> bool {
+    pub fn normal(&self) -> ::std::option::Option<bool> {
         self.normal
     }
     /// <p>The status of the DB instance. For a StatusType of read replica, the values can be replicating, replication stop point set, replication stop point reached, error, stopped, or terminated.</p>
@@ -108,7 +108,7 @@ impl DbInstanceStatusInfoBuilder {
     pub fn build(self) -> crate::types::DbInstanceStatusInfo {
         crate::types::DbInstanceStatusInfo {
             status_type: self.status_type,
-            normal: self.normal.unwrap_or_default(),
+            normal: self.normal,
             status: self.status,
             message: self.message,
         }

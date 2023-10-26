@@ -21,38 +21,38 @@ pub fn ser_aws_ecs_task_definition_container_definitions_linux_parameters_detail
         }
         array_4.finish();
     }
-    if input.init_process_enabled {
-        object.key("InitProcessEnabled").boolean(input.init_process_enabled);
+    if let Some(var_7) = &input.init_process_enabled {
+        object.key("InitProcessEnabled").boolean(*var_7);
     }
-    if input.max_swap != 0 {
+    if let Some(var_8) = &input.max_swap {
         object.key("MaxSwap").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.max_swap).into()),
+            ::aws_smithy_types::Number::NegInt((*var_8).into()),
         );
     }
-    if input.shared_memory_size != 0 {
+    if let Some(var_9) = &input.shared_memory_size {
         object.key("SharedMemorySize").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.shared_memory_size).into()),
+            ::aws_smithy_types::Number::NegInt((*var_9).into()),
         );
     }
-    if input.swappiness != 0 {
+    if let Some(var_10) = &input.swappiness {
         object.key("Swappiness").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.swappiness).into()),
+            ::aws_smithy_types::Number::NegInt((*var_10).into()),
         );
     }
-    if let Some(var_7) = &input.tmpfs {
-        let mut array_8 = object.key("Tmpfs").start_array();
-        for item_9 in var_7 {
+    if let Some(var_11) = &input.tmpfs {
+        let mut array_12 = object.key("Tmpfs").start_array();
+        for item_13 in var_11 {
             {
                 #[allow(unused_mut)]
-                let mut object_10 = array_8.value().start_object();
-                crate::protocol_serde::shape_aws_ecs_task_definition_container_definitions_linux_parameters_tmpfs_details::ser_aws_ecs_task_definition_container_definitions_linux_parameters_tmpfs_details(&mut object_10, item_9)?;
-                object_10.finish();
+                let mut object_14 = array_12.value().start_object();
+                crate::protocol_serde::shape_aws_ecs_task_definition_container_definitions_linux_parameters_tmpfs_details::ser_aws_ecs_task_definition_container_definitions_linux_parameters_tmpfs_details(&mut object_14, item_13)?;
+                object_14.finish();
             }
         }
-        array_8.finish();
+        array_12.finish();
     }
     Ok(())
 }

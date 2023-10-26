@@ -3,16 +3,16 @@ pub fn ser_retention_properties(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RetentionProperties,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    {
+    if let Some(var_1) = &input.memory_store_retention_period_in_hours {
         object.key("MemoryStoreRetentionPeriodInHours").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.memory_store_retention_period_in_hours).into()),
+            ::aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    {
+    if let Some(var_2) = &input.magnetic_store_retention_period_in_days {
         object.key("MagneticStoreRetentionPeriodInDays").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.magnetic_store_retention_period_in_days).into()),
+            ::aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
     Ok(())

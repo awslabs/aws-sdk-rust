@@ -5,9 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsElbLoadBalancerHealthCheck {
     /// <p>The number of consecutive health check successes required before the instance is moved to the Healthy state.</p>
-    pub healthy_threshold: i32,
+    pub healthy_threshold: ::std::option::Option<i32>,
     /// <p>The approximate interval, in seconds, between health checks of an individual instance.</p>
-    pub interval: i32,
+    pub interval: ::std::option::Option<i32>,
     /// <p>The instance that is being checked. The target specifies the protocol and port. The available protocols are TCP, SSL, HTTP, and HTTPS. The range of valid ports is 1 through 65535.</p>
     /// <p>For the HTTP and HTTPS protocols, the target also specifies the ping path.</p>
     /// <p>For the TCP protocol, the target is specified as <code>TCP: <i>
@@ -20,17 +20,17 @@ pub struct AwsElbLoadBalancerHealthCheck {
     /// <path to ping></path></i> </code>.</p>
     pub target: ::std::option::Option<::std::string::String>,
     /// <p>The amount of time, in seconds, during which no response means a failed health check.</p>
-    pub timeout: i32,
+    pub timeout: ::std::option::Option<i32>,
     /// <p>The number of consecutive health check failures that must occur before the instance is moved to the Unhealthy state.</p>
-    pub unhealthy_threshold: i32,
+    pub unhealthy_threshold: ::std::option::Option<i32>,
 }
 impl AwsElbLoadBalancerHealthCheck {
     /// <p>The number of consecutive health check successes required before the instance is moved to the Healthy state.</p>
-    pub fn healthy_threshold(&self) -> i32 {
+    pub fn healthy_threshold(&self) -> ::std::option::Option<i32> {
         self.healthy_threshold
     }
     /// <p>The approximate interval, in seconds, between health checks of an individual instance.</p>
-    pub fn interval(&self) -> i32 {
+    pub fn interval(&self) -> ::std::option::Option<i32> {
         self.interval
     }
     /// <p>The instance that is being checked. The target specifies the protocol and port. The available protocols are TCP, SSL, HTTP, and HTTPS. The range of valid ports is 1 through 65535.</p>
@@ -47,11 +47,11 @@ impl AwsElbLoadBalancerHealthCheck {
         self.target.as_deref()
     }
     /// <p>The amount of time, in seconds, during which no response means a failed health check.</p>
-    pub fn timeout(&self) -> i32 {
+    pub fn timeout(&self) -> ::std::option::Option<i32> {
         self.timeout
     }
     /// <p>The number of consecutive health check failures that must occur before the instance is moved to the Unhealthy state.</p>
-    pub fn unhealthy_threshold(&self) -> i32 {
+    pub fn unhealthy_threshold(&self) -> ::std::option::Option<i32> {
         self.unhealthy_threshold
     }
 }
@@ -173,11 +173,11 @@ impl AwsElbLoadBalancerHealthCheckBuilder {
     /// Consumes the builder and constructs a [`AwsElbLoadBalancerHealthCheck`](crate::types::AwsElbLoadBalancerHealthCheck).
     pub fn build(self) -> crate::types::AwsElbLoadBalancerHealthCheck {
         crate::types::AwsElbLoadBalancerHealthCheck {
-            healthy_threshold: self.healthy_threshold.unwrap_or_default(),
-            interval: self.interval.unwrap_or_default(),
+            healthy_threshold: self.healthy_threshold,
+            interval: self.interval,
             target: self.target,
-            timeout: self.timeout.unwrap_or_default(),
-            unhealthy_threshold: self.unhealthy_threshold.unwrap_or_default(),
+            timeout: self.timeout,
+            unhealthy_threshold: self.unhealthy_threshold,
         }
     }
 }

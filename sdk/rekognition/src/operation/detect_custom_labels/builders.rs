@@ -22,6 +22,9 @@ impl DetectCustomLabelsInputBuilder {
 }
 /// Fluent builder constructing a request to `DetectCustomLabels`.
 ///
+/// <note>
+/// <p>This operation applies only to Amazon Rekognition Custom Labels.</p>
+/// </note>
 /// <p>Detects custom labels in a supplied image by using an Amazon Rekognition Custom Labels model. </p>
 /// <p>You specify which version of a model version to use by using the <code>ProjectVersionArn</code> input parameter. </p>
 /// <p>You pass the input image as base64-encoded image bytes or as a reference to an image in an Amazon S3 bucket. If you use the AWS CLI to call Amazon Rekognition operations, passing image bytes is not supported. The image must be either a PNG or JPEG formatted file. </p>
@@ -118,17 +121,17 @@ impl DetectCustomLabelsFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The ARN of the model version that you want to use.</p>
+    /// <p>The ARN of the model version that you want to use. Only models associated with Custom Labels projects accepted by the operation. If a provided ARN refers to a model version associated with a project for a different feature type, then an InvalidParameterException is returned.</p>
     pub fn project_version_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.project_version_arn(input.into());
         self
     }
-    /// <p>The ARN of the model version that you want to use.</p>
+    /// <p>The ARN of the model version that you want to use. Only models associated with Custom Labels projects accepted by the operation. If a provided ARN refers to a model version associated with a project for a different feature type, then an InvalidParameterException is returned.</p>
     pub fn set_project_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_project_version_arn(input);
         self
     }
-    /// <p>The ARN of the model version that you want to use.</p>
+    /// <p>The ARN of the model version that you want to use. Only models associated with Custom Labels projects accepted by the operation. If a provided ARN refers to a model version associated with a project for a different feature type, then an InvalidParameterException is returned.</p>
     pub fn get_project_version_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_project_version_arn()
     }

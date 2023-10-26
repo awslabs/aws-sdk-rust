@@ -686,6 +686,32 @@ pub fn de_cluster(decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder) -> Resu
                 builder = builder.set_custom_domain_certificate_expiry_date(var_55);
             }
             ,
+            s if s.matches("MasterPasswordSecretArn") /* MasterPasswordSecretArn com.amazonaws.redshift#Cluster$MasterPasswordSecretArn */ =>  {
+                let var_56 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_master_password_secret_arn(var_56);
+            }
+            ,
+            s if s.matches("MasterPasswordSecretKmsKeyId") /* MasterPasswordSecretKmsKeyId com.amazonaws.redshift#Cluster$MasterPasswordSecretKmsKeyId */ =>  {
+                let var_57 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_master_password_secret_kms_key_id(var_57);
+            }
+            ,
             _ => {}
         }
     }

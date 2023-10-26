@@ -7,7 +7,7 @@ pub struct ModelLatencyThreshold {
     /// <p>The model latency percentile threshold. Acceptable values are <code>P95</code> and <code>P99</code>. For custom load tests, specify the value as <code>P95</code>.</p>
     pub percentile: ::std::option::Option<::std::string::String>,
     /// <p>The model latency percentile value in milliseconds.</p>
-    pub value_in_milliseconds: i32,
+    pub value_in_milliseconds: ::std::option::Option<i32>,
 }
 impl ModelLatencyThreshold {
     /// <p>The model latency percentile threshold. Acceptable values are <code>P95</code> and <code>P99</code>. For custom load tests, specify the value as <code>P95</code>.</p>
@@ -15,7 +15,7 @@ impl ModelLatencyThreshold {
         self.percentile.as_deref()
     }
     /// <p>The model latency percentile value in milliseconds.</p>
-    pub fn value_in_milliseconds(&self) -> i32 {
+    pub fn value_in_milliseconds(&self) -> ::std::option::Option<i32> {
         self.value_in_milliseconds
     }
 }
@@ -66,7 +66,7 @@ impl ModelLatencyThresholdBuilder {
     pub fn build(self) -> crate::types::ModelLatencyThreshold {
         crate::types::ModelLatencyThreshold {
             percentile: self.percentile,
-            value_in_milliseconds: self.value_in_milliseconds.unwrap_or_default(),
+            value_in_milliseconds: self.value_in_milliseconds,
         }
     }
 }
