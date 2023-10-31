@@ -44,6 +44,7 @@ jobs:
       LAMBDA_CODE_S3_BUCKET_NAME: ${{ secrets.CANARY_LAMBDA_CODE_S3_BUCKET }}
       LAMBDA_TEST_S3_BUCKET_NAME: ${{ secrets.CANARY_LAMBDA_TEST_S3_BUCKET }}
       LAMBDA_EXECUTION_ROLE_ARN: ${{ secrets.CANARY_LAMBDA_EXECUTION_ROLE_ARN }}
+      LAMBDA_TEST_S3_MRAP_BUCKET_ARN: ${{ secrets.CANARY_LAMBDA_TEST_S3_MRAP_BUCKET_ARN }}
     permissions:
       id-token: write
       contents: read
@@ -89,4 +90,5 @@ jobs:
                 --lambda-code-s3-bucket-name ${LAMBDA_CODE_S3_BUCKET_NAME} \
                 --lambda-test-s3-bucket-name ${LAMBDA_TEST_S3_BUCKET_NAME} \
                 --lambda-execution-role-arn ${LAMBDA_EXECUTION_ROLE_ARN} \
+                --lambda-test-s3-mrap-bucket-arn ${LAMBDA_TEST_S3_MRAP_BUCKET_ARN} \
                 --musl
